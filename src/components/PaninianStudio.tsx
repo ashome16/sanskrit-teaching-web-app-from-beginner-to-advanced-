@@ -202,6 +202,8 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
   const [activeLakara, setActiveLakara] = useState<LakaraId | 'krt'>('lat');
   const [selectedVoice, setSelectedVoice] = useState<VoiceType>('parasmaipada');
   const [isCausative, setIsCausative] = useState(false);
+  const [showVoiceLakaraGuide, setShowVoiceLakaraGuide] = useState(false);
+  const [activeGuideTab, setActiveGuideTab] = useState<'voice' | 'causative' | 'lakaras' | 'krt'>('voice');
 
   // Comparator state
   const [compLakara, setCompLakara] = useState<LakaraId>('lat');
@@ -543,6 +545,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                   type="button"
                   className={`dp-voice-btn${selectedVoice === 'parasmaipada' ? ' dp-voice-btn--active' : ''}`}
                   onClick={() => setSelectedVoice('parasmaipada')}
+                  title="Parasmaipadam: Active voice where action fruit goes to another (e.g. पठति, गच्छति)"
                 >
                   परस्मैपदम् (Active)
                 </button>
@@ -550,6 +553,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                   type="button"
                   className={`dp-voice-btn${selectedVoice === 'atmanepada' ? ' dp-voice-btn--active' : ''}`}
                   onClick={() => setSelectedVoice('atmanepada')}
+                  title="Ātmanepadam: Middle/Reflexive voice where action fruit stays with oneself (e.g. लभते, वर्धते)"
                 >
                   आत्मनेपदम् (Middle / Reflexive)
                 </button>
@@ -562,12 +566,395 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                   className={`dp-causative-toggle${isCausative ? ' dp-causative-toggle--active' : ''}`}
                   onClick={() => setIsCausative((prev) => !prev)}
                   aria-pressed={isCausative}
+                  title="णिच्-प्रत्ययः: Causes another agent to perform the action (e.g. पाठयति = teaches/causes to read)"
                 >
                   <span className="dp-causative-icon">{isCausative ? '⚡' : '⚙️'}</span>
                   <span>{isCausative ? 'णिजन्तः (प्रेरणार्थक Active)' : 'णिच्-प्रत्ययः (Causative Engine)'}</span>
                 </button>
               </div>
+
+              {/* Morphology Guide Trigger */}
+              <button
+                type="button"
+                className={`dp-guide-trigger-btn${showVoiceLakaraGuide ? ' dp-guide-trigger-btn--active' : ''}`}
+                onClick={() => setShowVoiceLakaraGuide((prev) => !prev)}
+                aria-expanded={showVoiceLakaraGuide}
+                title="Click to read detailed explanations of Voice, Causative, Lakāras, and Participles"
+              >
+                <span>💡</span>
+                <span>{showVoiceLakaraGuide ? 'Hide Guide' : 'What each represents'}</span>
+              </button>
             </div>
+
+            {/* Morphology Guide Panel */}
+            {showVoiceLakaraGuide && (
+              <div className="dp-morph-guide-panel">
+                <div className="dp-mg-header">
+                  <div className="dp-mg-title-wrap">
+                    <span className="dp-mg-badge">Pāṇinian Morphological Guide</span>
+                    <h4 className="dp-mg-title">Understanding Voice, Causatives, Lakāras &amp; Participles</h4>
+                  </div>
+                  <div className="dp-mg-tabs">
+                    <button
+                      type="button"
+                      className={`dp-mg-tab-btn${activeGuideTab === 'voice' ? ' active' : ''}`}
+                      onClick={() => setActiveGuideTab('voice')}
+                    >
+                      🗣️ पदम् (Voice)
+                    </button>
+                    <button
+                      type="button"
+                      className={`dp-mg-tab-btn${activeGuideTab === 'causative' ? ' active' : ''}`}
+                      onClick={() => setActiveGuideTab('causative')}
+                    >
+                      ⚙️ णिच् (Causative)
+                    </button>
+                    <button
+                      type="button"
+                      className={`dp-mg-tab-btn${activeGuideTab === 'lakaras' ? ' active' : ''}`}
+                      onClick={() => setActiveGuideTab('lakaras')}
+                    >
+                      ⏱️ ५ लकाराः (Tenses &amp; Moods)
+                    </button>
+                    <button
+                      type="button"
+                      className={`dp-mg-tab-btn${activeGuideTab === 'krt' ? ' active' : ''}`}
+                      onClick={() => setActiveGuideTab('krt')}
+                    >
+                      📜 कृदन्ताः (Participles)
+                    </button>
+                  </div>
+                </div>
+
+                <div className="dp-mg-content">
+                  {/* TAB 1: VOICE */}
+                  {activeGuideTab === 'voice' && (
+                    <div className="dp-mg-section">
+                      <div className="dp-mg-grid-2">
+                        <div className="dp-mg-card">
+                          <div className="dp-mg-card-badge parasmaipada">Active Voice · परस्मैपदम्</div>
+                          <h5 className="dp-mg-card-title">परस्मैपदम् (Parasmaipadam) — &quot;Word for Another&quot;</h5>
+                          <p className="dp-mg-card-desc">
+                            <strong>Etymology:</strong> <em>Parasmai</em> (for someone else) + <em>Padam</em> (word).
+                          </p>
+                          <p className="dp-mg-card-desc">
+                            <strong>What it represents:</strong> An action whose result or fruit (<em>Kriyā-phala</em>) is directed outward or primarily benefits someone other than the agent, or standard direct actions.
+                          </p>
+                          <div className="dp-mg-card-formula">
+                            <strong>Standard Tiṅ Suffixes:</strong> तिप्, तस्, झि... (ति, तः, अन्ति / सि, थः, थ / मि, वः, मः)
+                          </div>
+                          <div className="dp-mg-card-examples">
+                            <strong>Examples:</strong>
+                            <ul>
+                              <li><strong>पठति (paṭhati):</strong> He reads/studies (general direct action).</li>
+                              <li><strong>गच्छति (gacchati):</strong> He goes.</li>
+                              <li><strong>पचति (pacati):</strong> Devadatta cooks rice for others (such as guests or family).</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div className="dp-mg-card">
+                          <div className="dp-mg-card-badge atmanepada">Middle / Reflexive Voice · आत्मनेपदम्</div>
+                          <h5 className="dp-mg-card-title">आत्मनेपदम् (Ātmanepadam) — &quot;Word for Oneself&quot;</h5>
+                          <p className="dp-mg-card-desc">
+                            <strong>Etymology:</strong> <em>Ātmane</em> (for oneself) + <em>Padam</em> (word).
+                          </p>
+                          <p className="dp-mg-card-desc">
+                            <strong>What it represents:</strong> An action whose consequence, psychological experience, or fruit stays with or affects the doer (Pāṇini 1.3.72: <em>स्वरितञितः कर्त्रभिप्राये क्रियाफले</em>). Used for reflexive actions, internal feelings, receiving, and passive voice.
+                          </p>
+                          <div className="dp-mg-card-formula">
+                            <strong>Standard Tiṅ Suffixes:</strong> त, आताम्, झ... (ते, एते, अन्ते / से, येथे, ध्वे / ए, वहे, महे)
+                          </div>
+                          <div className="dp-mg-card-examples">
+                            <strong>Examples:</strong>
+                            <ul>
+                              <li><strong>लभते (labhate):</strong> He obtains / gains for himself.</li>
+                              <li><strong>वर्धते (vardhate):</strong> He grows / thrives internally.</li>
+                              <li><strong>मोदते (modate):</strong> He rejoices / feels delight.</li>
+                              <li><strong>पचते (pacate):</strong> Devadatta cooks rice for his own consumption.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="dp-mg-note-box">
+                        <strong>💡 उभयपदम् (Ubhayapadam - Dual Voice Roots):</strong> Many roots (e.g. <em>कृ, पच्, याच्, भुज्</em>) can conjugate in BOTH voices. In classical Sanskrit, a speaker intentionally chooses Parasmaipada when performing an action for others, and Ātmanepada when doing it for themselves (e.g., <em>करोति</em> = does for someone else vs. <em>कुरुते</em> = does for oneself; <em>यजति</em> = priests offering for a patron vs. <em>यजते</em> = patron offering for own spiritual merit).
+                      </div>
+                    </div>
+                  )}
+
+                  {/* TAB 2: CAUSATIVE ENGINE */}
+                  {activeGuideTab === 'causative' && (
+                    <div className="dp-mg-section">
+                      <div className="dp-mg-card">
+                        <div className="dp-mg-card-badge causative">Causative Engine · णिजन्तः / हेतुमण्णिच्</div>
+                        <h5 className="dp-mg-card-title">णिच्-प्रत्ययः (Ṇic Suffix) — Inducing Another to Act</h5>
+                        <p className="dp-mg-card-desc">
+                          <strong>Pāṇini Sūtra:</strong> <em>हेतुमति च (३.१.२६)</em> — When an agent (प्रयोजक कर्ता) prompts, commands, inspires, or causes another agent (प्रयोज्य कर्ता) to perform the action, the affix <strong>णिच्</strong> is appended to the verbal root.
+                        </p>
+                        <div className="dp-mg-card-formula">
+                          <strong>Pāṇinian Derivation Formula:</strong><br />
+                          Root + णिच् (leaves <em>i</em>) + Vikaraṇa शप् (<em>a</em>) ➔ <strong>Causative Base in <em>-aya-</em></strong> + Tiṅ terminations
+                        </div>
+
+                        <div className="dp-mg-subheading">Vowel Strengthening Rules in Causatives:</div>
+                        <div className="dp-mg-grid-3">
+                          <div className="dp-mg-subcard">
+                            <span className="dp-mg-sc-title">1. Final Vowels ➔ Vṛddhi</span>
+                            <p>Roots ending in vowels undergo maximum lengthening (Vṛddhi):</p>
+                            <code>कृ ➔ कारयति (causes to do)</code><br />
+                            <code>नी ➔ नाययति (causes to lead)</code><br />
+                            <code>भू ➔ भावयति (causes to be / manifests)</code>
+                          </div>
+                          <div className="dp-mg-subcard">
+                            <span className="dp-mg-sc-title">2. Medial Short &#39;a&#39; ➔ Vṛddhi (ā)</span>
+                            <p>Penultimate short &#39;a&#39; lengthens into &#39;ā&#39;:</p>
+                            <code>पठ् ➔ पाठयति (causes to read / teaches)</code><br />
+                            <code>चल् ➔ चालयति (drives / causes to move)</code><br />
+                            <code>खाद् ➔ खादयति (feeds / causes to eat)</code>
+                          </div>
+                          <div className="dp-mg-subcard">
+                            <span className="dp-mg-sc-title">3. Medial i, u, ṛ ➔ Guṇa</span>
+                            <p>Short medial vowels upgrade to their Guṇa grade:</p>
+                            <code>लिख् ➔ लेखयति (causes to write)</code><br />
+                            <code>बुध् ➔ बोधयति (awakens / causes to know)</code><br />
+                            <code>दृश् ➔ दर्शयति (shows / causes to see)</code>
+                          </div>
+                        </div>
+
+                        <div className="dp-mg-contrast-table-wrap">
+                          <strong>Side-by-Side Comparison: Basic vs. Causative</strong>
+                          <table className="dp-mg-table">
+                            <thead>
+                              <tr>
+                                <th>Basic Root &amp; Form</th>
+                                <th>Meaning</th>
+                                <th>Causative Form (णिजन्तः)</th>
+                                <th>Causative Meaning</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><strong>पठति</strong> (paṭhati)</td>
+                                <td>He reads / studies</td>
+                                <td><strong>पाठयति</strong> (pāṭhayati)</td>
+                                <td>He teaches / causes to read</td>
+                              </tr>
+                              <tr>
+                                <td><strong>गच्छति</strong> (gacchati)</td>
+                                <td>He goes</td>
+                                <td><strong>गमयति</strong> (gamayati)</td>
+                                <td>He leads / sends / causes to go</td>
+                              </tr>
+                              <tr>
+                                <td><strong>पश्यति</strong> (paśyati)</td>
+                                <td>He sees</td>
+                                <td><strong>दर्शयति</strong> (darśayati)</td>
+                                <td>He shows / reveals / displays</td>
+                              </tr>
+                              <tr>
+                                <td><strong>करोति</strong> (karoti)</td>
+                                <td>He does / makes</td>
+                                <td><strong>कारयति</strong> (kārayati)</td>
+                                <td>He gets done / causes to make</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* TAB 3: THE 5 LAKARAS */}
+                  {activeGuideTab === 'lakaras' && (
+                    <div className="dp-mg-section">
+                      <div className="dp-mg-intro">
+                        <strong>Why are they called लकार (Lakāra)?</strong> In Pāṇinian grammar, all 10 Sanskrit tense and mood markers begin with the letter <strong>ल् (L)</strong>. The 5 core Lakāras represent the fundamental temporal and modal spectrum of Sanskrit expression:
+                      </div>
+
+                      <div className="dp-mg-lakara-grid">
+                        {/* Lat */}
+                        <div className="dp-mg-lakara-card">
+                          <div className="dp-mg-lc-badge">१. लट्-लकारः · Present Tense</div>
+                          <h5 className="dp-mg-lc-title">लट् (Laṭ) — Present Indicative (वर्तमान काल)</h5>
+                          <div className="dp-mg-lc-sutra">📜 वर्तमाने लट् (३.२.१२३)</div>
+                          <p className="dp-mg-lc-desc">
+                            <strong>What it represents:</strong> Actions currently in progress, habitual everyday routines, or universal timeless truths happening in present time.
+                          </p>
+                          <div className="dp-mg-lc-example">
+                            <strong>Example:</strong> सः ग्रन्थं पठति। (He reads the text.) / सूर्यः प्रकाशते। (The sun shines.)
+                          </div>
+                        </div>
+
+                        {/* Lrt */}
+                        <div className="dp-mg-lakara-card">
+                          <div className="dp-mg-lc-badge">२. लृट्-लकारः · Future Tense</div>
+                          <h5 className="dp-mg-lc-title">लृट् (Lṛṭ) — Simple Future (भविष्यत् काल)</h5>
+                          <div className="dp-mg-lc-sutra">📜 लृट् शेषे च (३.३.१३)</div>
+                          <p className="dp-mg-lc-desc">
+                            <strong>What it represents:</strong> General future actions that will take place later (tomorrow, next year, or in future time). Distinctive marker: the <em>-sya- / -iṣya-</em> infix.
+                          </p>
+                          <div className="dp-mg-lc-example">
+                            <strong>Example:</strong> वयं श्वः गमिष्यामः। (We will go tomorrow.) / ज्ञानं लप्स्यते। (He will attain knowledge.)
+                          </div>
+                        </div>
+
+                        {/* Lang */}
+                        <div className="dp-mg-lakara-card">
+                          <div className="dp-mg-lc-badge">३. लङ्-लकारः · Past Imperfect</div>
+                          <h5 className="dp-mg-lc-title">लङ् (Laṅ) — Past Imperfect (अनद्यतन-भूतकाल)</h5>
+                          <div className="dp-mg-lc-sutra">📜 अनद्यतने लङ् (३.२.१११)</div>
+                          <p className="dp-mg-lc-desc">
+                            <strong>What it represents:</strong> Historical or narrative past actions that took place prior to today (<em>an-adyatana</em> = not of today). Characterized by the augment prefix <strong>अ-</strong> (अडागम) before the root.
+                          </p>
+                          <div className="dp-mg-lc-example">
+                            <strong>Example:</strong> रामः वनम् अगच्छत्। (Rama went to the forest.) / शिष्यः पाठम् अपठत्। (The student read the lesson.)
+                          </div>
+                        </div>
+
+                        {/* Lot */}
+                        <div className="dp-mg-lakara-card">
+                          <div className="dp-mg-lc-badge">४. लोट्-लकारः · Imperative Mood</div>
+                          <h5 className="dp-mg-lc-title">लोट् (Loṭ) — Imperative &amp; Benedictive (आज्ञा / प्रार्थना)</h5>
+                          <div className="dp-mg-lc-sutra">📜 लोट् च (३.३.१६२)</div>
+                          <p className="dp-mg-lc-desc">
+                            <strong>What it represents:</strong> Orders, commands, polite requests, permissions, invitations, and auspicious blessings (&quot;let him do&quot;, &quot;please do&quot;, &quot;may it be so&quot;).
+                          </p>
+                          <div className="dp-mg-lc-example">
+                            <strong>Example:</strong> त्वं सत्यं वद। (Speak the truth!) / सर्वे भवन्तु सुखिनः। (May all beings be happy!)
+                          </div>
+                        </div>
+
+                        {/* Vidhiling */}
+                        <div className="dp-mg-lakara-card full-width">
+                          <div className="dp-mg-lc-badge">५. विधिलिङ्-लकारः · Potential / Optative</div>
+                          <h5 className="dp-mg-lc-title">विधिलिङ् (Vidhiliṅ) — Potential &amp; Duty (विधि / सम्भावना / कर्तव्यम्)</h5>
+                          <div className="dp-mg-lc-sutra">📜 विधिनिमन्त्रणामन्त्रणाधीष्टसंप्रश्नप्रार्थनेषु लिङ् (३.३.१६१)</div>
+                          <p className="dp-mg-lc-desc">
+                            <strong>What it represents:</strong> Moral prescription, ethical duty (&quot;should / ought to&quot;), possibility, hypothetical scenarios, and polite advice. Distinctive marker: the modal vowel <em>-e-</em> (or <em>-ī-</em> in Ātmanepada).
+                          </p>
+                          <div className="dp-mg-lc-example">
+                            <strong>Example:</strong> छात्रः प्रतिदिनं पठेत्। (A student ought to study daily.) / धर्मेण वर्धेत। (One should prosper by righteousness.)
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* TAB 4: KRT PARTICIPLES */}
+                  {activeGuideTab === 'krt' && (
+                    <div className="dp-mg-section">
+                      <div className="dp-mg-intro">
+                        <strong>What is a कृदन्तः (Kṛdanta)?</strong> Unlike <em>Tiṅ-anta</em> finite verbs (which conjugate by 1st, 2nd, 3rd person like <em>paṭhati</em>), <strong>कृदन्ताः</strong> are primary verbal suffixes attached directly to roots to create <strong>verbal adjectives, participles, infinitives, and gerunds</strong>. They either decline through 7 cases, 3 genders, and 3 numbers, or function as indeclinables (अव्यय).
+                      </div>
+
+                      <div className="dp-mg-krt-grid">
+                        {/* Kta */}
+                        <div className="dp-mg-krt-card">
+                          <span className="dp-mg-kc-badge">Past Passive / Active</span>
+                          <h5 className="dp-mg-kc-title">१. क्त (Kta) — Completed Past Participle</h5>
+                          <div className="dp-mg-kc-sutra">📜 क्तक्तवतू निष्ठा (१.१.२६)</div>
+                          <p className="dp-mg-kc-desc">
+                            <strong>What it represents:</strong> Completed past action. Passive for transitive verbs (&quot;done, read&quot;); active for intransitive motion verbs (&quot;gone, arrived&quot;). Declines like <em>Rāma / Latā / Phalam</em>.
+                          </p>
+                          <div className="dp-mg-kc-example">
+                            <code>कृतः / कृता / कृतम् (done)</code><br />
+                            <code>पठितम् पुस्तकम् (the book that was read)</code><br />
+                            <code>रामः वनं गतः (Rama has gone to the forest)</code>
+                          </div>
+                        </div>
+
+                        {/* Ktavatu */}
+                        <div className="dp-mg-krt-card">
+                          <span className="dp-mg-kc-badge">Past Active Participle</span>
+                          <h5 className="dp-mg-kc-title">२. क्तवतु (Ktavatu) — Past Active Participle</h5>
+                          <div className="dp-mg-kc-sutra">📜 क्तक्तवतू निष्ठा (१.१.२६)</div>
+                          <p className="dp-mg-kc-desc">
+                            <strong>What it represents:</strong> Completed past action in active voice, directly qualifying the nominative agent (&quot;he who did / having done&quot;). Ends in <em>-vān</em> (Masc) and <em>-vatī</em> (Fem).
+                          </p>
+                          <div className="dp-mg-kc-example">
+                            <code>पठितवान् (he read) / पठितवती (she read)</code><br />
+                            <code>कृतवान् (he did) / गतवान् (he went)</code>
+                          </div>
+                        </div>
+
+                        {/* Tumun */}
+                        <div className="dp-mg-krt-card">
+                          <span className="dp-mg-kc-badge">Infinitive of Purpose</span>
+                          <h5 className="dp-mg-kc-title">३. तुमुन् (Tumun) — Infinitive (&quot;In Order To&quot;)</h5>
+                          <div className="dp-mg-kc-sutra">📜 तुमुन्ण्वुलौ क्रियायां क्रियार्थायाम् (३.३.१०)</div>
+                          <p className="dp-mg-kc-desc">
+                            <strong>What it represents:</strong> Purpose of action (&quot;in order to do&quot;, &quot;to read&quot;). Ends in <em>-tum</em> and is an indeclinable (अव्यय).
+                          </p>
+                          <div className="dp-mg-kc-example">
+                            <code>पठितुम् (in order to read)</code><br />
+                            <code>गन्तुम् (in order to go) / कर्तुम् (in order to do)</code><br />
+                            <code>सः पठितुं गच्छति। (He goes in order to study.)</code>
+                          </div>
+                        </div>
+
+                        {/* Ktva / Lyap */}
+                        <div className="dp-mg-krt-card">
+                          <span className="dp-mg-kc-badge">Gerund / Absolutive</span>
+                          <h5 className="dp-mg-kc-title">४. क्त्वा / ल्यप् (Ktvā / Lyap) — &quot;Having Done&quot;</h5>
+                          <div className="dp-mg-kc-sutra">📜 समानकर्तृकयोः पूर्वकाले (३.४.२१)</div>
+                          <p className="dp-mg-kc-desc">
+                            <strong>What it represents:</strong> Prior action completed by the same subject before another action (&quot;having read, he goes home&quot;). <strong>क्त्वा</strong> is used without prefixes; with prefixes (Upasargas), it mutates into <strong>ल्यप्</strong>. Both are indeclinables (अव्यय).
+                          </p>
+                          <div className="dp-mg-kc-example">
+                            <code>पठित्वा (having read) / गत्वा (having gone)</code><br />
+                            <code>आगत्य (having arrived) / प्रणम्य (having bowed)</code>
+                          </div>
+                        </div>
+
+                        {/* Shatr */}
+                        <div className="dp-mg-krt-card">
+                          <span className="dp-mg-kc-badge">Present Continuous (Parasmaipada)</span>
+                          <h5 className="dp-mg-kc-title">५. शतृ (Śatṛ) — Present Active Participle</h5>
+                          <div className="dp-mg-kc-sutra">📜 लटः शतृशानचावप्रथमासमानाधिकरणे (३.२.१२४)</div>
+                          <p className="dp-mg-kc-desc">
+                            <strong>What it represents:</strong> Ongoing simultaneous action in the present for Parasmaipada roots (&quot;while doing / -ing&quot;). Ends in <em>-an</em> (Masc) and <em>-atī / -antī</em> (Fem).
+                          </p>
+                          <div className="dp-mg-kc-example">
+                            <code>पठन् (while reading) / गच्छन् (while walking)</code><br />
+                            <code>बालकः हसन् वदति। (The boy speaks while laughing.)</code>
+                          </div>
+                        </div>
+
+                        {/* Shanac */}
+                        <div className="dp-mg-krt-card">
+                          <span className="dp-mg-kc-badge">Present Continuous (Ātmanepada)</span>
+                          <h5 className="dp-mg-kc-title">६. शानच् (Śānac) — Present Middle / Passive Participle</h5>
+                          <div className="dp-mg-kc-sutra">📜 लटः शतृशानचौ (३.२.१२४)</div>
+                          <p className="dp-mg-kc-desc">
+                            <strong>What it represents:</strong> Ongoing simultaneous action in the present for Ātmanepada and Passive verbs (&quot;while experiencing / being done&quot;). Ends in <em>-māna</em>.
+                          </p>
+                          <div className="dp-mg-kc-example">
+                            <code>लभमानः (while obtaining) / मोदमानः (rejoicing)</code><br />
+                            <code>क्रियमाणं कार्यम् (the work currently being done)</code>
+                          </div>
+                        </div>
+
+                        {/* Tavyat / Aniyar */}
+                        <div className="dp-mg-krt-card full-width">
+                          <span className="dp-mg-kc-badge">Gerundive of Obligation</span>
+                          <h5 className="dp-mg-kc-title">७. तव्यत् / अनीयर् (Tavyat / Anīyar) — Duty &amp; Necessity</h5>
+                          <div className="dp-mg-kc-sutra">📜 तव्यत्तव्यानीयरः (३.१.९६)</div>
+                          <p className="dp-mg-kc-desc">
+                            <strong>What it represents:</strong> Moral necessity, fitness, or obligation (&quot;ought to be done&quot;, &quot;worthy of being studied&quot;, &quot;must be observed&quot;). Decline like nouns/adjectives in all 3 genders.
+                          </p>
+                          <div className="dp-mg-kc-example">
+                            <code>कर्तव्यम् / करणीयम् (duty / that which ought to be done)</code><br />
+                            <code>पठितव्यः / पठनीयः ग्रन्थः (a book worthy of being read)</code><br />
+                            <code>सत्यं वदितव्यम्। (Truth must be spoken.)</code>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Lakāra Navigation Tabs */}
             <div className="dp-lakara-tabs" role="tablist" aria-label="Select Lakāra or Participles">
@@ -594,6 +981,34 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                 <span className="dp-lakara-tab-sa">कृदन्ताः (Participles)</span>
                 <span className="dp-lakara-tab-en">क्त / तुमुन् / क्त्वा</span>
               </button>
+            </div>
+
+            {/* Contextual Active Selection Pill */}
+            <div className="dp-active-context-pill">
+              <span className="dp-ac-icon">👉</span>
+              <div className="dp-ac-content">
+                {activeLakara === 'lat' && (
+                  <span><strong>लट्-लकारः (Present Indicative):</strong> Ongoing, habitual, or universal present actions happening right now (<em>वर्तमाने लट् ३.२.१२३</em>). Suffixes: -ति, -तः, -अन्ति...</span>
+                )}
+                {activeLakara === 'lrt' && (
+                  <span><strong>लृट्-लकारः (Simple Future):</strong> General future actions that will take place in subsequent time (<em>लृट् शेषे च ३.३.१३</em>). Infix: <em>-sya- / -iṣya-</em>.</span>
+                )}
+                {activeLakara === 'lang' && (
+                  <span><strong>लङ्-लकारः (Past Imperfect):</strong> Narrative past actions not of today (<em>अनद्यतने लङ् ३.२.१११</em>), taking the augment prefix <strong>अ-</strong> (अडागम).</span>
+                )}
+                {activeLakara === 'lot' && (
+                  <span><strong>लोट्-लकारः (Imperative / Benedictive):</strong> Commands, directions, polite requests, permissions, and blessings (<em>लोट् च ३.३.१६२</em>).</span>
+                )}
+                {activeLakara === 'vidhiling' && (
+                  <span><strong>विधिलिङ्-लकारः (Potential / Optative):</strong> Ethical duty, moral advice, &#39;should / ought to&#39;, and possibility (<em>३.३.१६१</em>), taking modal infix <em>-e-</em>.</span>
+                )}
+                {activeLakara === 'krt' && (
+                  <span><strong>कृदन्ताः (Participles):</strong> Primary verbal adjectives, gerunds, and infinitives derived directly from roots (क्त, क्तवतु, तुमुन्, क्त्वा, ल्यप्, शतृ, शानच्, तव्यत्, अनीयर्).</span>
+                )}
+              </div>
+              <span className="dp-ac-voice-tag">
+                {isCausative ? '⚡ Causative (णिजन्तः)' : selectedVoice === 'atmanepada' ? '🛡️ Ātmanepada (Middle)' : '⚔️ Parasmaipada (Active)'}
+              </span>
             </div>
           </div>
 
