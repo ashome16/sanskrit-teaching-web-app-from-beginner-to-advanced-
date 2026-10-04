@@ -453,7 +453,7 @@ const Grammar: React.FC<GrammarProps> = ({
         <header className="grammar-page-header">
           {renderBreadcrumb('पाणिनीय-धातुपाठ-प्रयोगशाला (Pāṇinian Studio)')}
         </header>
-        <PaninianStudio onGoBack={goBackToShelf} />
+        <PaninianStudio onGoBack={goBackToShelf} onGoHome={onGoHome} />
       </section>
     );
   }

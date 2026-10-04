@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   DHATUPATHA_ARTICLES,
   type DhatupathaArticle,
@@ -6,18 +6,26 @@ import {
 import { playPronunciation } from '../utils/pronunciation';
 
 interface DhatupathaArticlesProps {
+  initialArticleId?: string;
   onDeconstructWord?: (word: string) => void;
   onGenerateDhatu?: (dhatuId: string) => void;
 }
 
 export const DhatupathaArticles: React.FC<DhatupathaArticlesProps> = ({
+  initialArticleId,
   onDeconstructWord,
   onGenerateDhatu,
 }) => {
   const [selectedArticleId, setSelectedArticleId] = useState<string>(
-    DHATUPATHA_ARTICLES[0].id
+    initialArticleId || DHATUPATHA_ARTICLES[0].id
   );
   const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    if (initialArticleId) {
+      setSelectedArticleId(initialArticleId);
+    }
+  }, [initialArticleId]);
 
   const activeArticle =
     DHATUPATHA_ARTICLES.find((a) => a.id === selectedArticleId) ||

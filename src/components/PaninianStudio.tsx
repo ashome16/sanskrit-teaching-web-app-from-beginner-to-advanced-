@@ -23,6 +23,7 @@ export type StudioMode = 'deconstructor' | 'generator' | 'comparator' | 'quiz' |
 
 type PaninianStudioProps = {
   onGoBack?: () => void;
+  onGoHome?: () => void;
 };
 
 interface CategorizedWord {
@@ -187,7 +188,7 @@ const COMPARATOR_PRESETS: ComparatorPreset[] = [
   },
 ];
 
-const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
+const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) => {
   const [mode, setMode] = useState<StudioMode>('generator');
   const [dhatuLibrary, setDhatuLibrary] = useState<DhatuEntry[]>([]);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -202,8 +203,9 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
   const [activeLakara, setActiveLakara] = useState<LakaraId | 'krt'>('lat');
   const [selectedVoice, setSelectedVoice] = useState<VoiceType>('parasmaipada');
   const [isCausative, setIsCausative] = useState(false);
-  const [showVoiceLakaraGuide, setShowVoiceLakaraGuide] = useState(false);
+  const [showVoiceLakaraGuide, setShowVoiceLakaraGuide] = useState(true);
   const [activeGuideTab, setActiveGuideTab] = useState<'voice' | 'causative' | 'lakaras' | 'krt'>('voice');
+  const [selectedArticleId, setSelectedArticleId] = useState<string>('intro-dhatupatha');
 
   // Comparator state
   const [compLakara, setCompLakara] = useState<LakaraId>('lat');
@@ -432,11 +434,43 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
               Pāṇinian Derivation Engine, Voice &amp; Causative Studio, Paradigm Comparator &amp; Deconstructor
             </p>
           </div>
-          {onGoBack && (
-            <button type="button" className="grammar-back" onClick={onGoBack}>
-              ← Back to Grammar Shelf
+          <div className="dp-studio-header-actions">
+            <button
+              type="button"
+              className="dp-header-guide-btn"
+              onClick={() => {
+                setMode('generator');
+                setShowVoiceLakaraGuide(true);
+                setTimeout(() => {
+                  const el = document.getElementById('morphology-guide-panel');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 50);
+              }}
+              title="Jump to the morphological explanation of Voice, Causative, Lakāras and Participles"
+            >
+              💡 Grammar Guide &amp; Explanations
             </button>
-          )}
+            {onGoBack && (
+              <button
+                type="button"
+                className="grammar-back"
+                onClick={onGoBack}
+                title="Return to the main Grammar Articles & Masterclasses Shelf"
+              >
+                ← Back to Grammar Shelf
+              </button>
+            )}
+            {onGoHome && (
+              <button
+                type="button"
+                className="grammar-home"
+                onClick={onGoHome}
+                title="Return to Deepakam Lessons & Dashboard"
+              >
+                🏠 Home
+              </button>
+            )}
+          </div>
         </div>
 
         {/* 6 Core Modes Switcher */}
@@ -544,7 +578,10 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                 <button
                   type="button"
                   className={`dp-voice-btn${selectedVoice === 'parasmaipada' ? ' dp-voice-btn--active' : ''}`}
-                  onClick={() => setSelectedVoice('parasmaipada')}
+                  onClick={() => {
+                    setSelectedVoice('parasmaipada');
+                    setActiveGuideTab('voice');
+                  }}
                   title="Parasmaipadam: Active voice where action fruit goes to another (e.g. पठति, गच्छति)"
                 >
                   परस्मैपदम् (Active)
@@ -552,7 +589,10 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                 <button
                   type="button"
                   className={`dp-voice-btn${selectedVoice === 'atmanepada' ? ' dp-voice-btn--active' : ''}`}
-                  onClick={() => setSelectedVoice('atmanepada')}
+                  onClick={() => {
+                    setSelectedVoice('atmanepada');
+                    setActiveGuideTab('voice');
+                  }}
                   title="Ātmanepadam: Middle/Reflexive voice where action fruit stays with oneself (e.g. लभते, वर्धते)"
                 >
                   आत्मनेपदम् (Middle / Reflexive)
@@ -564,7 +604,13 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                 <button
                   type="button"
                   className={`dp-causative-toggle${isCausative ? ' dp-causative-toggle--active' : ''}`}
-                  onClick={() => setIsCausative((prev) => !prev)}
+                  onClick={() => {
+                    setIsCausative((prev) => {
+                      const next = !prev;
+                      if (next) setActiveGuideTab('causative');
+                      return next;
+                    });
+                  }}
                   aria-pressed={isCausative}
                   title="णिच्-प्रत्ययः: Causes another agent to perform the action (e.g. पाठयति = teaches/causes to read)"
                 >
@@ -582,13 +628,13 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                 title="Click to read detailed explanations of Voice, Causative, Lakāras, and Participles"
               >
                 <span>💡</span>
-                <span>{showVoiceLakaraGuide ? 'Hide Guide' : 'What each represents'}</span>
+                <span>{showVoiceLakaraGuide ? 'Hide Explanations' : 'Grammar Explanations'}</span>
               </button>
             </div>
 
             {/* Morphology Guide Panel */}
             {showVoiceLakaraGuide && (
-              <div className="dp-morph-guide-panel">
+              <div className="dp-morph-guide-panel" id="morphology-guide-panel">
                 <div className="dp-mg-header">
                   <div className="dp-mg-title-wrap">
                     <span className="dp-mg-badge">Pāṇinian Morphological Guide</span>
@@ -680,6 +726,20 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                       <div className="dp-mg-note-box">
                         <strong>💡 उभयपदम् (Ubhayapadam - Dual Voice Roots):</strong> Many roots (e.g. <em>कृ, पच्, याच्, भुज्</em>) can conjugate in BOTH voices. In classical Sanskrit, a speaker intentionally chooses Parasmaipada when performing an action for others, and Ātmanepada when doing it for themselves (e.g., <em>करोति</em> = does for someone else vs. <em>कुरुते</em> = does for oneself; <em>यजति</em> = priests offering for a patron vs. <em>यजते</em> = patron offering for own spiritual merit).
                       </div>
+
+                      <div className="dp-mg-treatise-link-wrap">
+                        <button
+                          type="button"
+                          className="dp-mg-treatise-btn"
+                          onClick={() => {
+                            setSelectedArticleId('pada-vyavastha');
+                            setMode('articles');
+                            window.scrollTo({ top: 100, behavior: 'smooth' });
+                          }}
+                        >
+                          📖 Read In-Depth Treatise on पद-व्यवस्था (Voice Architecture) ➔
+                        </button>
+                      </div>
                     </div>
                   )}
 
@@ -761,6 +821,20 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                             </tbody>
                           </table>
                         </div>
+
+                        <div className="dp-mg-treatise-link-wrap">
+                          <button
+                            type="button"
+                            className="dp-mg-treatise-btn"
+                            onClick={() => {
+                              setSelectedArticleId('verb-machine-deconstruction');
+                              setMode('articles');
+                              window.scrollTo({ top: 100, behavior: 'smooth' });
+                            }}
+                          >
+                            📖 Read In-Depth Treatise on Verb Machine &amp; Causatives (हेतुमण्णिच्) ➔
+                          </button>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -837,6 +911,20 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                             <strong>Example:</strong> छात्रः प्रतिदिनं पठेत्। (A student ought to study daily.) / धर्मेण वर्धेत। (One should prosper by righteousness.)
                           </div>
                         </div>
+                      </div>
+
+                      <div className="dp-mg-treatise-link-wrap">
+                        <button
+                          type="button"
+                          className="dp-mg-treatise-btn"
+                          onClick={() => {
+                            setSelectedArticleId('pancha-lakaras');
+                            setMode('articles');
+                            window.scrollTo({ top: 100, behavior: 'smooth' });
+                          }}
+                        >
+                          📖 Read In-Depth Treatise on पञ्चलकाराः (The 5 Core Tenses &amp; Moods) ➔
+                        </button>
                       </div>
                     </div>
                   )}
@@ -950,6 +1038,20 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                           </div>
                         </div>
                       </div>
+
+                      <div className="dp-mg-treatise-link-wrap">
+                        <button
+                          type="button"
+                          className="dp-mg-treatise-btn"
+                          onClick={() => {
+                            setSelectedArticleId('krt-pratyayas-guide');
+                            setMode('articles');
+                            window.scrollTo({ top: 100, behavior: 'smooth' });
+                          }}
+                        >
+                          📖 Read In-Depth Treatise on कृत्-प्रत्यय-मार्गदर्शिका (Primary Participles) ➔
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -965,7 +1067,10 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                   role="tab"
                   aria-selected={activeLakara === l.id}
                   className={`dp-lakara-tab${activeLakara === l.id ? ' dp-lakara-tab--active' : ''}`}
-                  onClick={() => setActiveLakara(l.id)}
+                  onClick={() => {
+                    setActiveLakara(l.id);
+                    setActiveGuideTab('lakaras');
+                  }}
                 >
                   <span className="dp-lakara-tab-sa">{l.nameSa}</span>
                   <span className="dp-lakara-tab-en">{l.nameEn.split(' ')[0]}</span>
@@ -976,7 +1081,10 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                 role="tab"
                 aria-selected={activeLakara === 'krt'}
                 className={`dp-lakara-tab${activeLakara === 'krt' ? ' dp-lakara-tab--active' : ''}`}
-                onClick={() => setActiveLakara('krt')}
+                onClick={() => {
+                  setActiveLakara('krt');
+                  setActiveGuideTab('krt');
+                }}
               >
                 <span className="dp-lakara-tab-sa">कृदन्ताः (Participles)</span>
                 <span className="dp-lakara-tab-en">क्त / तुमुन् / क्त्वा</span>
@@ -1006,9 +1114,27 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                   <span><strong>कृदन्ताः (Participles):</strong> Primary verbal adjectives, gerunds, and infinitives derived directly from roots (क्त, क्तवतु, तुमुन्, क्त्वा, ल्यप्, शतृ, शानच्, तव्यत्, अनीयर्).</span>
                 )}
               </div>
-              <span className="dp-ac-voice-tag">
-                {isCausative ? '⚡ Causative (णिजन्तः)' : selectedVoice === 'atmanepada' ? '🛡️ Ātmanepada (Middle)' : '⚔️ Parasmaipada (Active)'}
-              </span>
+              <div className="dp-ac-actions">
+                <button
+                  type="button"
+                  className="dp-ac-guide-btn"
+                  onClick={() => {
+                    setShowVoiceLakaraGuide(true);
+                    if (activeLakara === 'krt') setActiveGuideTab('krt');
+                    else setActiveGuideTab('lakaras');
+                    setTimeout(() => {
+                      const el = document.getElementById('morphology-guide-panel');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }, 50);
+                  }}
+                  title="View full explanation and sūtra"
+                >
+                  📖 View Rule
+                </button>
+                <span className="dp-ac-voice-tag">
+                  {isCausative ? '⚡ Causative (णिजन्तः)' : selectedVoice === 'atmanepada' ? '🛡️ Ātmanepada (Middle)' : '⚔️ Parasmaipada (Active)'}
+                </span>
+              </div>
             </div>
           </div>
 
@@ -1887,6 +2013,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
       {/* ================================================================= */}
       {mode === 'articles' && (
         <DhatupathaArticles
+          initialArticleId={selectedArticleId}
           onDeconstructWord={(word) => {
             setDeconInput(word);
             handleDeconstruct(word);

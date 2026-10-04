@@ -1000,6 +1000,37 @@
   margin-bottom: 1.25rem;
 }
 
+.dp-studio-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.dp-header-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid #fbbf24;
+  background: #f59e0b;
+  color: #78350f;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s ease;
+}
+
+.dp-header-guide-btn:hover {
+  background: #d97706;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+}
+
 .dp-studio-main-title {
   margin: 0;
   font-size: 1.65rem;
@@ -4284,6 +4315,33 @@
   margin-bottom: 0.25rem;
 }
 
+.dp-mg-treatise-link-wrap {
+  margin-top: 0.85rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dp-mg-treatise-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #0f766e;
+  background: #f0fdfa;
+  color: #0f766e;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.dp-mg-treatise-btn:hover {
+  background: #0f766e;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 /* Active Context Pill */
 .dp-active-context-pill {
   display: flex;
@@ -4307,6 +4365,31 @@
 .dp-ac-content {
   flex: 1 1 auto;
   line-height: 1.45;
+}
+
+.dp-ac-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.dp-ac-guide-btn {
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  border: 1.5px solid #166534;
+  background: #ffffff;
+  color: #166534;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.dp-ac-guide-btn:hover {
+  background: #166534;
+  color: #ffffff;
 }
 
 .dp-ac-voice-tag {
@@ -4419,6 +4502,28 @@
   background: #047857;
   color: #ecfdf5;
   border-color: #10b981;
+}
+
+[data-theme='dark'] .dp-mg-treatise-btn {
+  background: #134e4a;
+  border-color: #2dd4bf;
+  color: #ccfbf1;
+}
+
+[data-theme='dark'] .dp-mg-treatise-btn:hover {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .dp-ac-guide-btn {
+  background: #064e3b;
+  border-color: #34d399;
+  color: #a7f3d0;
+}
+
+[data-theme='dark'] .dp-ac-guide-btn:hover {
+  background: #059669;
+  color: #ffffff;
 }
 
 /* Printable Worksheet Styles */

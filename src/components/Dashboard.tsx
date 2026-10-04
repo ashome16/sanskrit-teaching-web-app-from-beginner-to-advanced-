@@ -1109,7 +1109,8 @@ const Dashboard: React.FC = () => {
         )}
         {activeView === 'dhatupatha' && (
           <PaninianStudio
-            onGoBack={() => navigateToView('home')}
+            onGoBack={() => handleOpenGrammar('home')}
+            onGoHome={() => navigateToView('home')}
           />
         )}
         {activeView === 'vedic-maths' && (
