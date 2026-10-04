@@ -17,7 +17,7 @@
 }
 
 
-/* Puzzle is the first block under the site header. Instructions and shelf tools follow it. */
+/* Title first, then the puzzle card. Instructions and shelf tools follow the card. */
 .board-puzzle-stage {
   margin: 0;
 }

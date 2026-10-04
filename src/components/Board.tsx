@@ -859,7 +859,7 @@ const Board: React.FC<BoardProps> = ({
   const [fallbackPuzzles, setFallbackPuzzles] = useState<BoardPuzzle[]>([]);
   const [packLabels, setPackLabels] = useState<PackLabel[]>([]);
   const [visitorBlocks, setVisitorBlocks] = useState<VisitorBlock[]>([]);
-  const [activeShelf, setActiveShelf] = useState<ShelfId>(() => (localStorage.getItem('last-board-shelf') as ShelfId) || 'prarambhah');
+  const [activeShelf, setActiveShelf] = useState<ShelfId>('prarambhah');
   const [chosen, setChosen] = useState<string[]>([]);
   const [checked, setChecked] = useState(false);
   const [wrongAttempt, setWrongAttempt] = useState(false);
@@ -1372,7 +1372,6 @@ const Board: React.FC<BoardProps> = ({
     setChecked(false);
     setWrongAttempt(false);
     setChosen([]);
-    localStorage.setItem('last-board-shelf', nextShelf);
     setTimeout(() => {
       puzzleBoardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 60);
@@ -1454,7 +1453,6 @@ const Board: React.FC<BoardProps> = ({
     if (playingRef.current) stopBoardPlayAll();
     if (match.shelfId !== activeShelf) {
       setActiveShelf(match.shelfId);
-      localStorage.setItem('last-board-shelf', match.shelfId);
     }
     setPuzzleIndexByShelf((current) => ({
       ...current,
@@ -1784,6 +1782,47 @@ const Board: React.FC<BoardProps> = ({
   }, [handStep, puzzleIndex, activeShelf, puzzleView]);
 
   return <main className="board-shell">
+    {/* Top Website Navigation Breadcrumbs & Badge */}
+    <div className="board-top-nav">
+      <nav className="board-breadcrumbs" aria-label="Website Navigation">
+        {onNavigateToHome && (
+          <>
+            <button type="button" className="board-nav-link" onClick={onNavigateToHome} title="Go to Homepage">
+              🏠 Home
+            </button>
+            <span className="board-nav-sep" aria-hidden="true">/</span>
+          </>
+        )}
+        <span className="board-nav-current">🧩 जोडो Tile Puzzle</span>
+      </nav>
+      <div className="board-site-shortcuts">
+        {onNavigateToReader && (
+          <button type="button" className="board-shortcut-btn" onClick={onNavigateToReader}>
+            📖 Deepakam Reader
+          </button>
+        )}
+        {onNavigateToVarnamala && (
+          <button type="button" className="board-shortcut-btn" onClick={onNavigateToVarnamala}>
+            🔤 Alphabet &amp; Syllables
+          </button>
+        )}
+        {onNavigateToGrammar && (
+          <button type="button" className="board-shortcut-btn" onClick={onNavigateToGrammar}>
+            📚 Grammar
+          </button>
+        )}
+      </div>
+    </div>
+
+    <div className="board-heading">
+      <div>
+        <p className="eyebrow">शब्द-निर्माण-क्रीडा · BUILD SANSKRIT WORDS</p>
+        <h2>जोडो · Tile Puzzle Studio</h2>
+        <p>Blend sounds into words, solve puzzles, and discover daily Sanskrit vocabulary.</p>
+      </div>
+      <div className="board-mark" aria-hidden="true">ॐ</div>
+    </div>
+
     <div className="board-puzzle-stage">
     <div className="board-tip-row">
       <p className="board-tip" aria-live="polite">{nextCue.text || 'Tap the marked cream tile.'}</p>
@@ -2381,47 +2420,6 @@ const Board: React.FC<BoardProps> = ({
         </div>
       </div>
     )}
-
-    {/* Top Website Navigation Breadcrumbs & Badge */}
-    <div className="board-top-nav">
-      <nav className="board-breadcrumbs" aria-label="Website Navigation">
-        {onNavigateToHome && (
-          <>
-            <button type="button" className="board-nav-link" onClick={onNavigateToHome} title="Go to Homepage">
-              🏠 Home
-            </button>
-            <span className="board-nav-sep" aria-hidden="true">/</span>
-          </>
-        )}
-        <span className="board-nav-current">🧩 जोडो Tile Puzzle</span>
-      </nav>
-      <div className="board-site-shortcuts">
-        {onNavigateToReader && (
-          <button type="button" className="board-shortcut-btn" onClick={onNavigateToReader}>
-            📖 Deepakam Reader
-          </button>
-        )}
-        {onNavigateToVarnamala && (
-          <button type="button" className="board-shortcut-btn" onClick={onNavigateToVarnamala}>
-            🔤 Alphabet &amp; Syllables
-          </button>
-        )}
-        {onNavigateToGrammar && (
-          <button type="button" className="board-shortcut-btn" onClick={onNavigateToGrammar}>
-            📚 Grammar
-          </button>
-        )}
-      </div>
-    </div>
-
-    <div className="board-heading">
-      <div>
-        <p className="eyebrow">शब्द-निर्माण-क्रीडा · BUILD SANSKRIT WORDS</p>
-        <h2>जोडो · Tile Puzzle Studio</h2>
-        <p>Blend sounds into words, solve puzzles, and discover daily Sanskrit vocabulary.</p>
-      </div>
-      <div className="board-mark" aria-hidden="true">ॐ</div>
-    </div>
 
     </div>
 
