@@ -2323,6 +2323,18 @@ Mūrti  (Embodied Form / Physical Density in Space)`,
             meaning: 'Twenty varāṭakas are designated as one kākiṇī; four kākiṇīs constitute one paṇa.',
             source: 'Śrīdharācārya · Triśatikā (Pāṭīgaṇita-sāra, 8th c. CE)',
           },
+          {
+            sanskrit: 'द्रोणस्तु खार्याः खलु षोडशांशः स्यादाढको द्रोणचतुर्थभागः ।\nप्रस्थश्चतुर्थांश इहाढकस्य प्रस्थाङ्घ्रिराद्यैः कुडवः प्रदिष्टः ॥',
+            transliteration: 'droṇastu khāryāḥ khalu ṣoḍaśāṃśaḥ syādāḍhako droṇacaturthabhāgaḥ | prasthaścaturthāṃśa ihāḍhakasya prasthāṅghrirādyaiḥ kuḍavaḥ pradiṣṭaḥ ||',
+            meaning: 'A Droṇa is one-sixteenth of a Khārī; an Āḍhaka is one-fourth of a Droṇa; a Prastha is one-fourth of an Āḍhaka; and a Kuḍava is declared to be one-fourth of a Prastha. (1 Khārī = 16 Droṇas = 64 Āḍhakas = 256 Prasthas = 1,024 Kuḍavas).',
+            source: 'Bhāskarāchārya · Līlāvatī · Chapter 1 (Paribhāṣā), Verse 7',
+          },
+          {
+            sanskrit: 'षोडशद्रोणा जाङ्गलानाम् । चतुर्विंशतिरानूप्यानाम् । त्रयोदश चाश्मकानाम् । त्रयोविंशतिरवान्तीनाम् । अमितमपरान्तानां हैमन्यानां च ॥',
+            transliteration: 'ṣoḍaśadroṇā jāṅgalānām | caturviṃśatirānūpyānām | trayodaśa cāśmakānām | trayoviṃśatiravāntīnām | amitamaparāntānāṃ haimanyānāṃ ca ||',
+            meaning: 'Sixteen Droṇas of rain is the annual baseline for arid zones; twenty-four Droṇas for moist fertile zones; thirteen and a half Droṇas for rocky Aśmaka; twenty-three Droṇas for Avantī; and unlimited rainfall occurs in coastal Konkan (Aparānta) and the Himalayas.',
+            source: 'Kauṭilya · Arthaśāstra · Book 2, Chapter 24 (Sītādhyakṣa / Rain Gauge & Agro-Statecraft)',
+          },
         ],
         table: {
           headers: ['Denomination (Sanskrit / Classical)', 'Shell Count (Varāṭaka)', 'Value Ratio', 'Physical & Economic Marketplace Reality'],

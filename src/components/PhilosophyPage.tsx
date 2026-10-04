@@ -3817,6 +3817,57 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 </div>
               </div>
 
+              {/* Volumetric Capacity & The World's First Rain Gauge */}
+              <div className="philosophy-card" style={{ background: '#f0fdf4', border: '1.5px solid #86efac', margin: '1.25rem 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#166534', textTransform: 'uppercase' }}>
+                    Volumetric Dry &amp; Liquid Metrology · Līlāvatī Chapter 1 (Verse 7)
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handlePlayAudio('द्रोणस्तु खार्याः खलु षोडशांशः स्यादाढको द्रोणचतुर्थभागः । प्रस्थश्चतुर्थांश इहाढकस्य प्रस्थाङ्घ्रिराद्यैः कुडवः प्रदिष्टः ॥')}
+                    style={{
+                      padding: '0.2rem 0.6rem',
+                      fontSize: '0.76rem',
+                      borderRadius: '6px',
+                      border: '1px solid #86efac',
+                      background: '#ffffff',
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                      color: '#166534',
+                    }}
+                  >
+                    🔊 Chant Droṇa Metrology
+                  </button>
+                </div>
+                <div style={{ fontSize: '1.02rem', fontWeight: 800, color: '#14532d', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+                  द्रोणस्तु खार्याः खलु षोडशांशः स्यादाढको द्रोणचतुर्थभागः ।<br />
+                  प्रस्थश्चतुर्थांश इहाढकस्य प्रस्थाङ्घ्रिराद्यैः कुडवः प्रदिष्टः ॥<br />
+                  <span style={{ fontSize: '0.9rem', fontWeight: 600, color: '#15803d' }}>
+                    droṇastu khāryāḥ khalu ṣoḍaśāṃśaḥ syādāḍhako droṇacaturthabhāgaḥ |<br />
+                    prasthaścaturthāṃśa ihāḍhakasya prasthāṅghrirādyaiḥ kuḍavaḥ pradiṣṭaḥ ||
+                  </span>
+                </div>
+                <p style={{ margin: '0.4rem 0', fontSize: '0.88rem', color: '#14532d', lineHeight: 1.5 }}>
+                  <strong>The Volumetric Hierarchy:</strong> 1 Khārī (खारी) = 16 Droṇas (द्रोण) · 1 Droṇa = 4 Āḍhakas (आढक) · 1 Āḍhaka = 4 Prasthas (प्रस्थ) · 1 Prastha = 4 Kuḍavas (कुडव). (1 Khārī = 1,024 Kuḍavas).
+                </p>
+
+                <div style={{ background: '#ffffff', padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid #bbf7d0', marginTop: '0.75rem' }}>
+                  <h4 style={{ margin: '0 0 0.35rem', fontSize: '0.94rem', fontWeight: 800, color: '#166534' }}>
+                    🌧️ The World’s Earliest State Rain Gauge: Varṣāmāna (वर्षामानम्) in Kauṭilya’s Arthaśāstra
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#15803d', lineHeight: 1.5 }}>
+                    Centuries before Bhāskara codified these units, the <em>Arthaśāstra</em> (Book 2, Chapters 19 &amp; 24, c. 300 BCE) deployed the exact same <strong>Droṇa (द्रोण)</strong> metric to construct history’s first standardized meteorological network:
+                  </p>
+                  <ul style={{ margin: '0.4rem 0 0', paddingLeft: '1.2rem', fontSize: '0.82rem', color: '#14532d', lineHeight: 1.5 }}>
+                    <li><strong>Standardized Gauge Bowl:</strong> Rain was caught in circular bowls measuring 1 <em>Aratni</em> (approx. 18 inches / 24 aṅgulas) in mouth diameter set up before royal warehouses.</li>
+                    <li><strong>The Droṇa Metric:</strong> 1 Droṇa of water (approx. 13.2 kg) corresponded to approximately 1.5 to 2 inches of uniform surface rainfall.</li>
+                    <li><strong>Agro-Climatic Zoning:</strong> Annual rainfall was calibrated regionally: 16 Droṇas for arid zones (<em>Jāṅgala</em>), 24 Droṇas for fertile moist zones (<em>Anūpa</em>), 13.5 Droṇas for the Deccan plateau (<em>Aśmaka</em>), 23 Droṇas for Malwa (<em>Avantī</em>), and unlimited for coastal Konkan (<em>Aparānta</em>) and the Himalayas.</li>
+                    <li><strong>Dynamic Tax Governance:</strong> State agricultural ministers (<em>Sītādhyakṣa</em>) linked agricultural taxation and seed-sowing advisories (millets vs. paddy) in real time to the Droṇas recorded at regional rain stations.</li>
+                  </ul>
+                </div>
+              </div>
+
               <div className="philosophy-card" style={{ background: '#f0fdfa', border: '1.5px solid #99f6e4', margin: '1rem 0' }}>
                 <p style={{ margin: 0, fontStyle: 'italic', fontSize: '0.92rem', color: '#134e4a', lineHeight: 1.6 }}>
                   <strong>Historical Continuity:</strong> Four centuries before Bhāskara, Śrīdharācārya’s <em>Triśatikā</em> (8th c. CE) formulated this exact ratio: <code>20 varāṭakas = 1 kākiṇī</code>. Two centuries after Bhāskara, Nārāyaṇa Paṇḍita’s <em>Gaṇita Kaumudī</em> (1356 CE) opened its metrology chapter with the identical shell sequence. Cowrie shells functioned as India’s standardized national computational bedrock for well over a thousand years.
