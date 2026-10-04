@@ -1478,7 +1478,7 @@ const Board: React.FC<BoardProps> = ({
       : (isPrashnaPart ? 'प्रश्न' : (activeBoardShelf?.skin ?? ''));
   const displayPackTitle = isPrashnaPart ? 'प्रश्न-पदानि' : packTitle;
   const displayPackGloss = isPrashnaPart ? 'who · what · where · when · how' : packGloss;
-  // जोडो: no Part banner — board-tip alone covers the instructions
+  // जोडो: no Part banner — the in-card next cue covers the tap instructions
   const phaseBanner = isPrashnaPart
     ? 'Part 2 — question words.'
     : '';
@@ -1825,7 +1825,9 @@ const Board: React.FC<BoardProps> = ({
 
     <div className="board-puzzle-stage">
     <div className="board-tip-row">
-      <p className="board-tip" aria-live="polite">{nextCue.text || 'Tap the marked cream tile.'}</p>
+      {(!activePuzzle || loading || error) && (
+        <p className="board-tip" aria-live="polite">{nextCue.text || 'Tap the marked cream tile.'}</p>
+      )}
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
@@ -1947,13 +1949,16 @@ const Board: React.FC<BoardProps> = ({
           </ol>
         )}
 
-        <div className="puzzle-lead">
-          <div className="puzzle-lead-graphic" aria-hidden="true">{puzzleGraphic}</div>
-          <p className={`puzzle-lead-word${learnPulse ? ' learn-word--settle' : ''}${leadMark}`}>{leadWord}</p>
-          <p className={`puzzle-lead-english${meaningShown ? leadMark : ''}`} aria-hidden={!meaningShown}>
-            {meaningShown ? leadEnglish : ''}
-          </p>
-        </div>
+        {/* जोडो heading already shows picture, word, and English. Skip the lead so they are not repeated. */}
+        {!(isJodoSkin && !isLearnPhase) && (
+          <div className="puzzle-lead">
+            <div className="puzzle-lead-graphic" aria-hidden="true">{puzzleGraphic}</div>
+            <p className={`puzzle-lead-word${learnPulse ? ' learn-word--settle' : ''}${leadMark}`}>{leadWord}</p>
+            <p className={`puzzle-lead-english${meaningShown ? leadMark : ''}`} aria-hidden={!meaningShown}>
+              {meaningShown ? leadEnglish : ''}
+            </p>
+          </div>
+        )}
 
         {isLearnPhase ? (
           <div className={`learn-card${learnPulse ? ' learn-card--settling' : ''}`}>
@@ -1981,7 +1986,7 @@ const Board: React.FC<BoardProps> = ({
                 </button>
               ))}
             </div>
-            <p className="board-next-hint">{nextCue.text}</p>
+            <p className="board-next-hint" aria-live="polite">{nextCue.text}</p>
             <div className="puzzle-actions">
               <button ref={nextBtnRef} className="next-button learn-next" type="button" onClick={onNextOrAgain}>
                 {isLastPuzzle ? 'Play Again' : 'Next'}
@@ -1993,8 +1998,9 @@ const Board: React.FC<BoardProps> = ({
             {isJodoSkin ? (
               <div className="jodo-prompt-card">
                 <div className="jodo-goal-bar">
+                  <span className="puzzle-lead-graphic" aria-hidden="true">{puzzleGraphic}</span>
                   <span className="jodo-goal-tag">🎯 जोडो (Join):</span>
-                  <span className="jodo-goal-target">{activePuzzle.target}</span>
+                  <span className={`jodo-goal-target${leadMark}`}>{activePuzzle.target}</span>
                   {meaningShown && activePuzzle.english && (
                     <span className={`jodo-goal-meaning${leadMark}`} title="Meaning in English">
                       ({activePuzzle.english})
@@ -2021,14 +2027,11 @@ const Board: React.FC<BoardProps> = ({
                     ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
                     : renderPromptWithHole(activePuzzle.prompt ?? activePuzzle.target)}
                 </p>
-                {meaningShown && isPrashnaPart && activePuzzle.english && (
-                  <p className={`prashna-english-clue${leadMark}`}>({activePuzzle.english})</p>
-                )}
               </div>
             )}
 
             {!(checked && isCorrect) && (
-              <p className="board-next-hint">{nextCue.text}</p>
+              <p className="board-next-hint" aria-live="polite">{nextCue.text}</p>
             )}
             <div className="tile-row">
               {shownTiles.map((tile, index) => {
@@ -2056,7 +2059,7 @@ const Board: React.FC<BoardProps> = ({
 
             {checked && isCorrect && (
               <div className="puzzle-result correct">
-                <p className="board-next-hint">{nextCue.text}</p>
+                <p className="board-next-hint" aria-live="polite">{nextCue.text}</p>
                 {hasNextPuzzle && (
                   <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>
                     {isLastPuzzle ? 'Play Again' : 'Next'}
@@ -2067,9 +2070,6 @@ const Board: React.FC<BoardProps> = ({
                   <span className="success-text">उत्तमम्! Correct!</span>
                 </div>
                 <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
-                {meaningShown && activePuzzle.english ? (
-                  <p className={`result-english${leadMark}`}>{activePuzzle.english}</p>
-                ) : null}
                 <div className="result-audio-row">
                   <button
                     className="hear-button hear-button--inline hear-button--subtle"
