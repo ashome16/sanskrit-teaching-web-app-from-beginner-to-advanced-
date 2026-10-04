@@ -64,6 +64,35 @@ export interface GuruParamparaMember {
   quote?: string;
 }
 
+export interface HistoriographicalPillar {
+  id: string;
+  pillarNumber: number;
+  title: string;
+  sanskritTitle: string;
+  teluguTitle: string;
+  shortSummary: string;
+  fullDescription: string;
+  icon: string;
+  historiographicalImpact: string;
+  keyExamples: string[];
+}
+
+export interface ShakaMathematician {
+  id: string;
+  name: string;
+  teluguName: string;
+  sanskritName: string;
+  shakaYear: string;
+  shakaNumeric: number;
+  ceYear: string;
+  ceNumeric: number;
+  century: string;
+  primaryTreatise: string;
+  sanskritTreatise?: string;
+  contributions: string;
+  focusArea: 'Astronomy & Siddhanta' | 'Arithmetic & Algebra' | 'Geometry & Trigonometry' | 'Commentary & Reconstruction' | 'Observational & Calendrical';
+}
+
 /** Diagrams rendered by VedicArticleFigure.tsx (clean HTML/SVG, no ASCII art). */
 export type VedicArticleFigureId =
   | 'algebra-lineage'
@@ -210,6 +239,360 @@ export const GURU_PARAMPARA: GuruParamparaMember[] = [
       'Interactive digital Gurukuls (such as EdNet Learn) offering gamified mental math to millions of CBSE and global students.',
       'Eradicating math anxiety worldwide by cultivating holistic mental pattern recognition.'
     ]
+  }
+];
+
+export const HISTORIOGRAPHICAL_FRAMEWORK: HistoriographicalPillar[] = [
+  {
+    id: 'oral-transmission',
+    pillarNumber: 1,
+    title: 'The Guru-Paramparā & Oral Transmission',
+    sanskritTitle: '॥ गुरुपरम्परा मौखिकपरम्परा च ॥',
+    teluguTitle: 'గురు-శిష్య పరంపర మరియు మౌఖిక ప్రసారం',
+    shortSummary: 'Mnemonic Sūtras structured for rhythmic recitation and memory retention; written text was a secondary storage mechanism.',
+    fullDescription: 'Evaluating the historical timeline of Indian mathematical development requires accounting for several unique cultural mechanisms. Ancient Indian scientific systems prioritized phonetic mnemonic verses (Sūtras and Kārikās) specifically structured for rhythmic recitation, metered cadence (Anuṣṭubh, Triṣṭubh, Āryā), and flawless memory retention. Knowledge was passed down dynamically through generations of gurus and disciples. Textual transcription came centuries later as a secondary storage mechanism, meaning that a mathematical theorem was typically integrated into oral tradition long before it was committed to a physical medium. Western philological models that equate text absence with scientific absence consistently misjudge the true antiquity of Indian discoveries.',
+    icon: '🗣️',
+    historiographicalImpact: 'Oral formulation preceded manuscript transcription by centuries. Surviving written dates do not mark the genesis of a mathematical theorem.',
+    keyExamples: [
+      'Vedic Śulba Sūtras recited orally across centuries before written redaction in Śrautasūtra codices.',
+      'Paninian phonetic grammar (Aṣṭādhyāyī) memorized through rhythmic sūtra chains with built-in checksums.',
+      'Āryabhaṭīya 121 verses memorized verbatim by 5th-century astronomy students before calculating planetary motions.'
+    ]
+  },
+  {
+    id: 'talapatra-perishability',
+    pillarNumber: 2,
+    title: 'The Perishability of Tālapatra (Palm-Leaf Manuscripts)',
+    sanskritTitle: '॥ तालपत्रनाशशीलता ग्रन्थसंरक्षणं च ॥',
+    teluguTitle: 'తాళపత్ర గ్రంథాల నశ్వరత మరియు పునర్లేఖనం',
+    shortSummary: 'Organic palm leaves and birch bark decay rapidly in tropical monsoons, requiring cyclical manual recopying every few centuries.',
+    fullDescription: 'Unlike the arid sands of Egypt or Mesopotamia where clay cuneiform tablets and stone stelae survived millennia undisturbed, the primary physical writing materials in India were organic Tālapatra (palm leaves from Corypha umbraculifera) and Bhūrjapatra (Himalayan birch bark). These organic plant fibers decay rapidly under tropical monsoon humidity, mould, and insect infestation (silverfish and bookworms), having a natural lifespan of merely 300 to 500 years. This required continuous manual recopying by generations of scribes. Whenever wars, famines, or political disruptions severed the unbroken recopying chain, priceless original scientific manuscripts vanished forever.',
+    icon: '🌿',
+    historiographicalImpact: 'Surviving palm-leaf manuscripts are almost invariably late medieval copies (14th–18th century CE), even when their internal mathematical algorithms originate from classical antiquity or the Vedic epoch.',
+    keyExamples: [
+      'Kerala School astronomical manuscripts preserved via continuous palm-leaf recopying cycles in illams (hereditary homes).',
+      'Birch-bark preservation in cold, dry Himalayan regions (e.g. Kashmir), which enabled the survival of the Bakhshālī folios.',
+      'Frequent scribal errors, glosses, and regional script variations (Grantha, Śāradā, Telugu, Devanāgarī) requiring philological textual collation.'
+    ]
+  },
+  {
+    id: 'archaeological-floor',
+    pillarNumber: 3,
+    title: 'The Fallacy of "Discovery" & Archaeological Floor Dating',
+    sanskritTitle: '॥ कालसीमावादः कालनिर्णयभ्रमश्च ॥',
+    teluguTitle: 'పురావస్తు ఆధారాల పరిమితి (Terminus Ante Quem)',
+    shortSummary: 'Surviving physical artifacts provide a terminus ante quem (baseline floor date proving it existed by that date), not a historical ceiling for invention.',
+    fullDescription: 'A common historiographical error is equating the carbon-dated age of a found physical object with the absolute moment of its scientific invention. In classical philology, the oldest surviving copy of a text acts as a terminus ante quem (the latest possible date before which the theorem was already established), never a historical ceiling for its origins. When radiocarbon dating placed portions of the Bakhshālī Manuscript between 224 and 383 CE, some commentators mistakenly labeled this the "invention date" of zero. In truth, the Bakhshālī text is a practical merchant handbook; standard mathematical notation in an everyday calculation manual proves the decimal place-value system and zero were already standardized and deeply integrated into daily commerce centuries before that manuscript folio was penned.',
+    icon: '🏛️',
+    historiographicalImpact: 'Physical artifact dating establishes an indisputable chronological floor (terminus ante quem). It never represents the initial moment of intellectual creation.',
+    keyExamples: [
+      'Bakhshālī Manuscript (carbon-dated to 3rd/4th c. CE): proves practical commercial use of dot zero centuries before formal astronomical codification.',
+      'Baudhāyana Śulba Sūtra (800 BCE floor): geometric altar construction rules predate Pythagoras by centuries despite later surviving manuscript copies.',
+      'Piṅgala\'s Chandaḥśāstra (300 BCE): contains binary sequences and Meru Prastāra (Pascal\'s triangle) centuries before European formalization.'
+    ]
+  },
+  {
+    id: 'burnt-libraries',
+    pillarNumber: 4,
+    title: 'Lost Treatises and Burnt Libraries',
+    sanskritTitle: '॥ नष्टग्रन्थाः दग्धविश्वविद्यालयाः भाष्यपरम्परा च ॥',
+    teluguTitle: 'దహనమైన విశ్వవిద్యాలయాలు మరియు భాష్యాల పునర్నిర్మాణం',
+    shortSummary: 'The destruction of Nālandā, Takṣaśilā, and Vikramaśīlā destroyed countless source texts; knowledge survived through decentralized commentaries (Bhāṣyas).',
+    fullDescription: 'The destruction of monumental ancient universities and academic centers like Nālandā, Takṣaśilā, and Vikramaśīlā resulted in the catastrophic loss of countless original scientific treatises. The three monumental multi-story libraries of Nālandā (Ratnasāgara, Ratnodadhi, and Ratnarañjaka) burned for months, consuming millions of foundational works. Consequently, modern historians heavily rely on later computational commentaries (Bhāṣyas and Ṭīkās). Students and later masters frequently quoted verbatim, referenced, or systematically reconstructed the mathematical proofs of their gurus’ lost source books, thereby preserving the unbroken ancestral lineage of scientific discoveries across decentralized regional traditions.',
+    icon: '🔥',
+    historiographicalImpact: 'Modern scholarship reconstructs lost primary treatises through explicit citations in surviving commentaries (e.g. Bhaṭṭotpala citing lost works of Varāhamihira, Nīlakaṇṭha citing lost Kerala astronomers).',
+    keyExamples: [
+      'Burning of Nālandā University (1193 CE) destroyed foundational texts of Gupta-era geometry and spherical astronomy.',
+      'Bhaṭṭotpala (966 CE / 888 Shaka): reconstructed lost planetary verses from Varāhamihira and ancient astronomers through his detailed commentaries.',
+      'Raṅganātha (1603 CE / 1525 Shaka): preserved the esoteric spherical trigonometry of the Sūrya Siddhānta in his Gūḍhārthaprakāśikā.'
+    ]
+  },
+  {
+    id: 'shared-homonyms',
+    pillarNumber: 5,
+    title: 'The Phenomenon of Shared Homonyms',
+    sanskritTitle: '॥ समनामकविद्वांसः कालभेदनिर्णयश्च ॥',
+    teluguTitle: 'సమనామ పండితుల వర్గీకరణ (Āryabhaṭa I vs II, Bhāskara I vs II)',
+    shortSummary: 'Recurrence of identical names across centuries causes confusion; disambiguating them requires internal textual and algebraic forensic analysis.',
+    fullDescription: 'A major source of chronological confusion in Indian historiography is the recurrence of identical scholastic names across centuries. Master scholars often adopted or were given revered names honoring ancient luminaries. Differentiating them requires precise internal textual analysis of their relative algebraic complexities, astronomical parameters, and computational styles: Āryabhaṭa I (5th c. CE / 398 Shaka) authored the foundational Āryabhaṭīya, while Āryabhaṭa II (10th c. CE / 875 Shaka) authored the Mahā-Siddhānta with an entirely distinct numerical cipher system. Similarly, Bhāskara I (7th c. CE) discovered the rational sine approximation formula, whereas Bhāskara II / Bhāskarācārya (12th c. CE / 1036 Shaka) authored the Siddhānta Śiromaṇi, Līlāvatī, and pioneer calculus concepts.',
+    icon: '⚖️',
+    historiographicalImpact: 'Conflating separate scholars sharing the same name distorts the historical trajectory of mathematics. Disambiguation requires forensic analysis of mathematical parameters and linguistic idiom.',
+    keyExamples: [
+      'Āryabhaṭa I (476 CE) vs. Āryabhaṭa II (953 CE): distinguished by 500 years, distinct sine tables, and differing alphabetical encryption schemes.',
+      'Bhāskara I (600–629 CE) vs. Bhāskara II (1114–1185 CE): separated by over five centuries; Bhāskara II developed the cyclic Cakravala method for Pell\'s equation.',
+      'Gaṅgādhara I vs. Gaṅgādhara II (1586 CE / 1508 Shaka): distinguished by their specific commentaries on Līlāvatī and astronomical Karaṇa treatises.'
+    ]
+  }
+];
+
+export const SHAKA_TO_CE_OFFSET = 78;
+
+export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
+  {
+    id: 'aryabhata-1',
+    name: 'Aryabhata I',
+    teluguName: 'మొదటి ఆర్యభటుడు',
+    sanskritName: 'प्रथमः आर्यभटः',
+    shakaYear: '398 (Birth)',
+    shakaNumeric: 398,
+    ceYear: '476 CE',
+    ceNumeric: 476,
+    century: '5th Century CE',
+    primaryTreatise: 'Āryabhaṭīya (ఆర్యభటీయం)',
+    contributions: 'Authored the Āryabhaṭīya. Calculated π ≈ 3.1416, introduced fundamental Trigonometric Sine Tables (Jya), formulated the Kuṭṭaka pulverizer for linear indeterminate equations, and correctly postulated a rotating, spherical Earth revolving around the sun.',
+    focusArea: 'Astronomy & Siddhanta'
+  },
+  {
+    id: 'varahamihira',
+    name: 'Varahamihira',
+    teluguName: 'వరాహమిహిరుడు',
+    sanskritName: 'वराहमिहिरः',
+    shakaYear: '427',
+    shakaNumeric: 427,
+    ceYear: '505 CE',
+    ceNumeric: 505,
+    century: '6th Century CE',
+    primaryTreatise: 'Pañcasiddhāntikā (పంచసిద్ధాంతిక), Bṛhat Saṃhitā',
+    contributions: 'Compiled the Pañcasiddhāntikā. Advanced combinatorics, early forms of Pascal\'s triangle for permutations (Meru Prastāra applications), fundamental trigonometric identities (sin² x + cos² x = 1), and optical reflection theories.',
+    focusArea: 'Astronomy & Siddhanta'
+  },
+  {
+    id: 'brahmagupta',
+    name: 'Brahmagupta',
+    teluguName: 'బ్రహ్మగుప్తుడు',
+    sanskritName: 'ब्रह्मगुप्तः',
+    shakaYear: '520',
+    shakaNumeric: 520,
+    ceYear: '598 CE',
+    ceNumeric: 598,
+    century: '6th–7th Century CE',
+    primaryTreatise: 'Brāhmasphuṭasiddhānta (బ్రహ్మస్ఫుటసిద్ధాంతం), Khaṇḍakhādyaka',
+    contributions: 'Authored Brāhmasphuṭasiddhānta. First in world history to formalize Zero as an operational number, established complete arithmetic laws for negative numbers (Ṝṇa), solved Cyclic Quadrilateral Areas (Brahmagupta\'s Formula), and introduced the Bhāvanā algebraic composition law.',
+    focusArea: 'Arithmetic & Algebra'
+  },
+  {
+    id: 'lallacharya',
+    name: 'Lallacharya',
+    teluguName: 'లల్లాచార్యులు',
+    sanskritName: 'लल्लाचार्यः',
+    shakaYear: '≈ 560',
+    shakaNumeric: 560,
+    ceYear: '638 CE',
+    ceNumeric: 638,
+    century: '7th Century CE',
+    primaryTreatise: 'Śiṣyadhīvṛddhida Tantra (శిష్యధీవృద్ధిద తంత్రం)',
+    contributions: 'Authored Śiṣyadhīvṛddhida Tantra. Specialized in planetary true longitudes, eclipses, celestial sphere geometry, and sophisticated observational instruments (Yantras including the armillary sphere, gnomon, and water clocks).',
+    focusArea: 'Observational & Calendrical'
+  },
+  {
+    id: 'mahaviracharya',
+    name: 'Mahaviracharya',
+    teluguName: 'మహావీరుడు / మహావీరాచార్యుడు',
+    sanskritName: 'महावीराचार्यः',
+    shakaYear: '≈ 775',
+    shakaNumeric: 775,
+    ceYear: '853 CE',
+    ceNumeric: 853,
+    century: '9th Century CE',
+    primaryTreatise: 'Gaṇitasārasaṅgraha (గణితసారసంగ్రహం)',
+    contributions: 'Authored Gaṇitasārasaṅgraha. Explicitly separated pure mathematics from astronomy. Codified comprehensive laws for operations with fractions, geometric progression series, combinatorics/permutations (nCr), and quadratic equation solutions.',
+    focusArea: 'Arithmetic & Algebra'
+  },
+  {
+    id: 'aryabhata-2',
+    name: 'Aryabhata II',
+    teluguName: 'రెండవ ఆర్యభటుడు',
+    sanskritName: 'द्वितीयः आर्यभटः',
+    shakaYear: '≈ 875',
+    shakaNumeric: 875,
+    ceYear: '953 CE',
+    ceNumeric: 953,
+    century: '10th Century CE',
+    primaryTreatise: 'Mahāsiddhānta (మహాసిద్ధాంతం)',
+    contributions: 'Authored the Mahā-Siddhānta. Invented an innovative verbal system to cryptographically encode numerical values into alphabetic syllables, improved lunar node tracking, and refined planetary latitude algorithms.',
+    focusArea: 'Astronomy & Siddhanta'
+  },
+  {
+    id: 'bhattotpala',
+    name: 'Bhattotpala',
+    teluguName: 'భట్టోత్పలుడు',
+    sanskritName: 'भट्टोत्पलः',
+    shakaYear: '888',
+    shakaNumeric: 888,
+    ceYear: '966 CE',
+    ceNumeric: 966,
+    century: '10th Century CE',
+    primaryTreatise: 'Cintāmaṇi Commentary on Bṛhat Saṃhitā & Khaṇḍakhādyaka',
+    contributions: 'Master commentator who mathematically reconstructed several lost verses and computational proofs of Varāhamihira and early Vedic astronomers, preserving critical ancient methodologies that would otherwise have vanished.',
+    focusArea: 'Commentary & Reconstruction'
+  },
+  {
+    id: 'sripati',
+    name: 'Sripati',
+    teluguName: 'శ్రీపతి',
+    sanskritName: 'श्रीपतिः',
+    shakaYear: '961',
+    shakaNumeric: 961,
+    ceYear: '1039 CE',
+    ceNumeric: 1039,
+    century: '11th Century CE',
+    primaryTreatise: 'Siddhāntaśekhara (సిద్ధాంతశేఖరం), Gaṇitatilaka',
+    contributions: 'Authored Siddhāntaśekhara. Advanced algebraic equations, simultaneous linear and quadratic equations, combinations, and the structural mechanics of planetary inequalities (including the moon\'s second inequality / evection).',
+    focusArea: 'Arithmetic & Algebra'
+  },
+  {
+    id: 'maheshvara',
+    name: 'Maheshvara',
+    teluguName: 'మహేశ్వరుడు',
+    sanskritName: 'महेश्वरः',
+    shakaYear: '≈ 1000',
+    shakaNumeric: 1000,
+    ceYear: '1078 CE',
+    ceNumeric: 1078,
+    century: '11th Century CE',
+    primaryTreatise: 'Vṛttasatakam (వృత్తశతకం), Jyotiṣa Śāstra',
+    contributions: 'Renowned mathematical astronomer and astrologer of Vijjadavida; father and primary guru of the legendary mathematician Bhāskara II (Bhāskarācārya), establishing the rigorous scholastic foundation culminating in Siddhānta Śiromaṇi.',
+    focusArea: 'Commentary & Reconstruction'
+  },
+  {
+    id: 'bhaskara-2',
+    name: 'Bhaskara II (Bhaskaracharya)',
+    teluguName: 'భాస్కరాచార్యుడు',
+    sanskritName: 'भास्कराचार्यः',
+    shakaYear: '1036 (Birth) / 1072',
+    shakaNumeric: 1072,
+    ceYear: '1114 / 1150 CE',
+    ceNumeric: 1150,
+    century: '12th Century CE',
+    primaryTreatise: 'Siddhānta Śiromaṇi (Līlāvatī, Bījagaṇita, Grahagaṇita, Golādhyāya)',
+    contributions: 'Synthesized classical Indian mathematics. Formulated early concepts of differential calculus (instantaneous motion d(sin θ) = cos θ dθ), solved indeterminate quadratic equations via the cyclic Cakravala algorithm, and established infinite division (a / 0 = ∞).',
+    focusArea: 'Arithmetic & Algebra'
+  },
+  {
+    id: 'nrisimha-1',
+    name: 'Nrisimha I',
+    teluguName: 'నృసింహుడు-1',
+    sanskritName: 'नृसिंहः प्रथमः',
+    shakaYear: '1480',
+    shakaNumeric: 1480,
+    ceYear: '1558 CE',
+    ceNumeric: 1558,
+    century: '16th Century CE',
+    primaryTreatise: 'Vāsanāvārttika (వాసనావార్తిక - Commentary on Siddhānta Śiromaṇi)',
+    contributions: 'Commentated extensively on solar and lunar eclipse geometry, parallax (Lambana) calculations, and the rigorous orbital geometry of planetary positions.',
+    focusArea: 'Astronomy & Siddhanta'
+  },
+  {
+    id: 'raghunatha',
+    name: 'Raghunatha',
+    teluguName: 'రఘునాథుడు',
+    sanskritName: 'रघुनाथः',
+    shakaYear: '1484',
+    shakaNumeric: 1484,
+    ceYear: '1562 CE',
+    ceNumeric: 1562,
+    century: '16th Century CE',
+    primaryTreatise: 'Commentary on Karaṇakutūhala',
+    contributions: 'Refined algorithms for local horizon coordinates, gnomon shadow calculations (Śaṅku-Chāyā), and celestial spherical trigonometry.',
+    focusArea: 'Geometry & Trigonometry'
+  },
+  {
+    id: 'shiva',
+    name: 'Shiva',
+    teluguName: 'శివుడు',
+    sanskritName: 'शिवः',
+    shakaYear: '1510 (Birth)',
+    shakaNumeric: 1510,
+    ceYear: '1588 CE',
+    ceNumeric: 1588,
+    century: '16th Century CE',
+    primaryTreatise: 'Muhūrtacintāmaṇi Ṭīkā, Jātakatilaka',
+    contributions: 'Contributed deep analytical geometric breakdowns of celestial path intersections, planetary conjunctions (Yuti), and spherical orbital transitions.',
+    focusArea: 'Geometry & Trigonometry'
+  },
+  {
+    id: 'gangadhara-2',
+    name: 'Gangadhara-2',
+    teluguName: 'గంగాధరుడు-2',
+    sanskritName: 'गङ्गाधरः द्वितीयः',
+    shakaYear: '1508',
+    shakaNumeric: 1508,
+    ceYear: '1586 CE',
+    ceNumeric: 1586,
+    century: '16th Century CE',
+    primaryTreatise: 'Manorañjanī (Commentary on Līlāvatī)',
+    contributions: 'Authored highly specialized local computational treatises detailing algorithmic shortcuts for standard Luni-Solar calendar tracking, root extractions, and arithmetic series.',
+    focusArea: 'Observational & Calendrical'
+  },
+  {
+    id: 'munishvara',
+    name: 'Munishvara',
+    teluguName: 'మునీశ్వరుడు',
+    sanskritName: 'मुनीश्वरः',
+    shakaYear: '1525 (Birth)',
+    shakaNumeric: 1525,
+    ceYear: '1603 CE',
+    ceNumeric: 1603,
+    century: '16th–17th Century CE',
+    primaryTreatise: 'Siddhānta Sārvabhauma (సిద్ధాంతసార్వభౌమం), Marīci',
+    contributions: 'Authored Siddhānta Sārvabhauma. Fierce intellectual rival of Kamalākara; heavily critiqued prevailing planetary model dimensions and defended Āryabhaṭan cosmological frameworks with rigorous mathematical proofs.',
+    focusArea: 'Astronomy & Siddhanta'
+  },
+  {
+    id: 'ranganatha',
+    name: 'Ranganatha',
+    teluguName: 'రంగనాథుడు',
+    sanskritName: 'रङ्गनाथः',
+    shakaYear: '≈ 1525',
+    shakaNumeric: 1525,
+    ceYear: '1603 CE',
+    ceNumeric: 1603,
+    century: '16th–17th Century CE',
+    primaryTreatise: 'Gūḍhārthaprakāśikā (గూఢార్థప్రకాశిక - Commentary on Sūrya Siddhānta)',
+    contributions: 'Wrote the Gūḍhārthaprakāśikā, a pivotal mathematical commentary explaining the complex geometry, epicyclic models, and sexagesimal time intervals inside the Sūrya Siddhānta.',
+    focusArea: 'Commentary & Reconstruction'
+  },
+  {
+    id: 'dadabhattudu',
+    name: 'Dadabhattudu',
+    teluguName: 'దాదాభట్టుడు',
+    sanskritName: 'दादाभट्टः',
+    shakaYear: '1626',
+    shakaNumeric: 1626,
+    ceYear: '1704 CE',
+    ceNumeric: 1704,
+    century: '17th–18th Century CE',
+    primaryTreatise: 'Grahaṇasāraḥ, Karaṇapaddhati Commentary',
+    contributions: 'Systematized planetary orbital equations into easy-to-use tabular guides (Koṣṭhakas) for regional astronomers, reducing complex multi-step computations to instant lookups.',
+    focusArea: 'Observational & Calendrical'
+  },
+  {
+    id: 'jayasimha',
+    name: 'Jayasimha (Sawai Jai Singh II)',
+    teluguName: 'జయసింహుడు',
+    sanskritName: 'सवाई जयसिंहः',
+    shakaYear: '1650',
+    shakaNumeric: 1650,
+    ceYear: '1728 CE',
+    ceNumeric: 1728,
+    century: '17th–18th Century CE',
+    primaryTreatise: 'Zīj-i Muḥammad Shāhī, Jantar Mantar Observatories',
+    contributions: 'Royal patron and astronomer-mathematician who spearheaded the reconciliation of traditional computational Siddhāntas with contemporary global datasets. Built 5 monumental stone astronomical observatories (Jantar Mantar).',
+    focusArea: 'Observational & Calendrical'
+  },
+  {
+    id: 'chintamani-dikshit',
+    name: 'Chintamani Dikshit',
+    teluguName: 'చింతామణి దీక్షిత్',
+    sanskritName: 'चिन्तामणिदीक्षितः',
+    shakaYear: '≈ 1658 (Birth)',
+    shakaNumeric: 1658,
+    ceYear: '1736 CE',
+    ceNumeric: 1736,
+    century: '17th–18th Century CE',
+    primaryTreatise: 'Golānandaḥ, Adhikamāsanirṇayaḥ',
+    contributions: 'Specialized in algorithmic mathematics for tracking rare celestial conjunctions, solar and lunar eclipse limits, and calculating exact Adhika Māsa adjustments with sexagesimal fractional time algorithms.',
+    focusArea: 'Observational & Calendrical'
   }
 ];
 
@@ -604,6 +987,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     subtitle: 'The master-disciple lineage that revived, preserved, and continues to propagate this cosmic science for humanity.',
     readingTime: '8 min read',
     badge: 'Sacred Lineage & History',
+    prequel: { id: 'historiographical-framework-indian-mathematics', label: 'Historiographical Framework & Shaka Chronology' },
     sections: [
       {
         title: 'Vedic Mathematics as Living Vidya',
@@ -1379,6 +1763,126 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'The 5 Sthānas (Ālīḍha, Pratyālīḍha, Samapada, Vaiśākha, Maṇḍala) exploit precise geometric polygons to optimize center of gravity and string recoil.',
       'The Sanskrit root Sthā (स्था) is the direct ancestor of English "stance", "station", "state", and "constant".',
       'Lakṣya-Vedha (target focus) in Dhanurveda represents the martial realization of Yogic Dhāraṇā (one-pointed attention).'
+    ],
+    next: { id: 'historiographical-framework-indian-mathematics', label: 'Historiographical Framework & Shaka Chronology' }
+  },
+  {
+    id: 'historiographical-framework-indian-mathematics',
+    slug: 'historiographical-framework-and-shaka-chronology',
+    title: 'Historiographical Framework & Shaka Chronology: The True Antiquity of Indian Mathematics',
+    sanskritTitle: '॥ भारतीयगणितस्य इतिहासदर्शनम् शकाब्दक्रमश्च ॥',
+    subtitle: 'Evaluating oral Guru-Paramparā transmission, Tālapatra decay, terminus ante quem baselines, burnt libraries, and the formula: CE = Shaka + 78.',
+    readingTime: '9 min read',
+    badge: 'Historiography & Timeline',
+    prequel: { id: 'dhanurveda-geometry-phonetics', label: 'Dhanurveda: The Sacred Science of the Bow' },
+    next: { id: 'source-lineage', label: 'The Living Lineage: Guru Parampara' },
+    sections: [
+      {
+        title: 'Beyond Western Philological Dating: The Indian Epistemic Framework',
+        sanskritTitle: 'पाश्चात्त्य-कालनिर्णय-सीमा · भारतीय-ज्ञानपरम्परा',
+        paragraphs: [
+          'Evaluating the historical timeline of Indian mathematical development requires accounting for several unique cultural mechanisms, preservation methods, and catastrophic historical disruptions.',
+          'Relying solely on standard 19th-century Western philological dating methods—which presuppose that an idea only exists from the earliest physically surviving written copy—fundamentally misinterprets the true antiquity and continuity of Indian scientific achievements.',
+          'In ancient and classical India, scientific advancement was embedded in a living, oral, and cyclical pedagogical matrix where written manuscripts served merely as auxiliary backups rather than the originators of knowledge.'
+        ],
+        highlight: 'Western philological models equate the absence of physical paper with the absence of mathematical knowledge; the Indian Guru-Paramparā operated on living mnemonic mastery centuries before text transcription.'
+      },
+      {
+        title: 'Pillar 1: The Guru-Paramparā & Oral Mnemonic Sūtras',
+        sanskritTitle: 'प्रथमः स्तम्भः · गुरुपरम्परा मौखिकपरम्परा च',
+        paragraphs: [
+          'Ancient Indian scientific systems prioritized phonetic mnemonic verses (Sūtras and Kārikās) specifically structured for rhythmic recitation, strict metrical cadence (Anuṣṭubh, Triṣṭubh, Āryā), and flawless auditory memory retention.',
+          'Knowledge was transmitted dynamically through generations of gurus and disciples (Guru-Śiṣya Paramparā). Mathematical proofs, astronomical constants, and algorithmic rules were memorized as chanted poetry, reinforced by built-in numerical encryption schemes such as Kaṭapayādi and Āryabhaṭa’s alphabetic numerals.',
+          'Textual transcription occurred centuries after a mathematical theorem had already reached full maturity in oral discourse. Consequently, assigning the historical birth of an algorithm to the date of its earliest physical codex represents a profound chronological distortion.'
+        ],
+        terms: [
+          { sa: 'गुरुपरम्परा', iast: 'Guru-Paramparā', gloss: 'Unbroken lineage of master and initiated disciple' },
+          { sa: 'मौखिकपरम्परा', iast: 'Maukhika-Paramparā', gloss: 'Oral recitation and transmission of scientific texts' },
+          { sa: 'छन्दस्', iast: 'Chandas', gloss: 'Poetic meter acting as a built-in algorithmic checksum' }
+        ],
+        highlight: 'Sanskrit Sūtras were engineered as algorithmic verses with metrical constraints that prevented corruptions or omitted terms during centuries of oral recitation.'
+      },
+      {
+        title: 'Pillar 2: The Perishability of Tālapatra (Palm-Leaf Manuscripts)',
+        sanskritTitle: 'द्वितीयः स्तम्भः · तालपत्रनाशशीलता ग्रन्थसंरक्षणं च',
+        paragraphs: [
+          'Unlike the arid climates of Egypt, Sumer, and the Levant—where clay cuneiform tablets and papyri survived intact for millennia under dry sand—the primary physical writing media across the Indian subcontinent were organic Tālapatra (palm leaves of Corypha umbraculifera) and Bhūrjapatra (Himalayan birch bark).',
+          'In tropical monsoon climates, humidity, seasonal floods, mold, and destructive insects (silverfish and subterranean termites) cause organic palm leaves to physically disintegrate within 300 to 500 years.',
+          'As a result, scientific preservation depended entirely on a continuous cyclical recopying tradition: every few generations, scribes copied aging manuscripts onto fresh leaves. When wars, social upheavals, or famine severed this recopying chain in a region, foundational primary manuscripts perished, leaving their proofs preserved only as quotations within surviving secondary commentaries (Bhāṣyas).'
+        ],
+        terms: [
+          { sa: 'तालपत्र', iast: 'Tālapatra', gloss: 'Processed palm-leaf folio, primary historical writing medium in South Asia' },
+          { sa: 'भूर्जपत्र', iast: 'Bhūrjapatra', gloss: 'Himalayan birch bark used in Kashmir and northern high-altitude regions' },
+          { sa: 'पुनर्लेखनम्', iast: 'Punarlekhana', gloss: 'The institutional cycle of copying decaying manuscripts every 300–400 years' }
+        ],
+        highlight: 'Surviving palm-leaf manuscripts are almost invariably 14th to 18th-century copies, even when the mathematical equations inscribed on them date back to the 1st millennium BCE.'
+      },
+      {
+        title: 'Pillar 3: The Fallacy of "Discovery" & Archaeological Floor Dating',
+        sanskritTitle: 'तृतीयः स्तम्भः · कालसीमावादः कालनिर्णयभ्रमश्च (Terminus Ante Quem)',
+        paragraphs: [
+          'A pervasive error in modern historiography is equating the radiocarbon-dated age of an excavated physical manuscript with the absolute chronological moment of scientific invention.',
+          'In rigorous historical method, an excavated manuscript establishes only a terminus ante quem (the latest possible date before which the knowledge must have already existed), never a historical ceiling (terminus a quo).',
+          'A prime example is the celebrated Bakhshālī Manuscript: when carbon dating placed folios between 224 and 383 CE, sensational headlines proclaimed the 3rd century as the "birth of zero." In reality, the Bakhshālī text is an everyday computational handbook compiled for traveling merchants and accountants. The casual, ubiquitous presence of operational dot zero in a merchant ledger demonstrates that place-value arithmetic had already been standardized, widely disseminated, and used for centuries prior to that surviving physical specimen.'
+        ],
+        terms: [
+          { sa: 'कालसीमा', iast: 'Kāla-Sīmā', gloss: 'Terminus ante quem: the latest baseline date proving established existence' },
+          { sa: 'बख्शाली-ग्रन्थः', iast: 'Bakhshālī Grantha', gloss: 'Birch-bark mathematical manuscript with early operational dot zero' }
+        ],
+        highlight: 'Surviving artifacts represent the latest physical floor of an idea, not its moment of discovery. A practical trade manual using zero proves the math was already conventional wisdom.'
+      },
+      {
+        title: 'Pillar 4: Lost Treatises and Burnt Libraries: Reconstructing from Bhāṣyas',
+        sanskritTitle: 'चतुर्थः स्तम्भः · नष्टग्रन्थाः दग्धविश्वविद्यालयाः भाष्यपरम्परा च',
+        paragraphs: [
+          'The catastrophic destruction of India’s premier academic centers—most notoriously the burning of Nālandā University (1193 CE), whose three monumental multi-story libraries (Ratnasāgara, Ratnodadhi, and Ratnarañjaka) held millions of scientific manuscripts that burned continuously for months—wiped out countless original master treatises.',
+          'In response to such widespread textual loss, modern historians must rely on later computational commentaries (Bhāṣyas and Ṭīkās). Ancient Indian pedagogical etiquette mandated that commentators quote their predecessors verbatim before providing explanatory steps.',
+          'Master commentators like Bhaṭṭotpala (966 CE), Śaṅkara Vāriyar, and Raṅganātha (1603 CE) systematically cited, quoted, and geometrically reconstructed theorems from ancient source works that were burned or lost to history, enabling modern scholarship to verify lineages that would otherwise be invisible.'
+        ],
+        terms: [
+          { sa: 'भाष्य', iast: 'Bhāṣya', gloss: 'Explanatory commentary containing verbatim quotes and proofs of earlier works' },
+          { sa: 'टीका', iast: 'Ṭīkā', gloss: 'Sub-commentary providing mathematical derivations and step-by-step glosses' },
+          { sa: 'धर्मगञ्ज', iast: 'Dharma-Gañja', gloss: 'The vast three-building library complex of Nālandā University' }
+        ],
+        highlight: 'Modern historians reconstruct burned ancient masterpieces through the meticulous quotations preserved in decentralized regional Bhāṣyas and Ṭīkās.'
+      },
+      {
+        title: 'Pillar 5: Disentangling Shared Homonyms: Forensic Algebra',
+        sanskritTitle: 'पञ्चमः स्तम्भः · समनामकविद्वांसः कालभेदनिर्णयश्च',
+        paragraphs: [
+          'A recurring source of chronological confusion in Indian historiography is the repetition of identical scholastic names across epochs. Master mathematicians frequently adopted revered names to honor legendary forebears.',
+          'Disentangling these figures requires rigorous internal algebraic and astronomical forensics rather than superficial name matching:',
+          '• Āryabhaṭa I (476 CE / 398 Shaka) vs. Āryabhaṭa II (c. 953 CE / 875 Shaka): Āryabhaṭa I calculated π ≈ 3.1416, authored the Āryabhaṭīya, and introduced foundational sine tables. Āryabhaṭa II lived five centuries later, authored the Mahāsiddhānta, and used an entirely different Katapayadi-style syllable cipher.',
+          '• Bhāskara I (600–629 CE) vs. Bhāskara II / Bhāskarācārya (1114–1185 CE / 1036 Shaka): Bhāskara I discovered the famous rational sine approximation formula. Bhāskara II, writing 500 years later at Vijjadavida, authored the Siddhānta Śiromaṇi, solved Pell’s equation via the cyclic Cakravāla algorithm, and formulated precursors of differential calculus.',
+          '• Gaṅgādhara I vs. Gaṅgādhara II (1586 CE / 1508 Shaka): Gaṅgādhara II specialized in localized calendar tracking algorithms and commentaries on Līlāvatī.'
+        ],
+        terms: [
+          { sa: 'आर्यभटः प्रथमः', iast: 'Āryabhaṭa I', gloss: '5th-century astronomer-mathematician of Kusumapura (476 CE)' },
+          { sa: 'भास्कराचार्यः', iast: 'Bhāskarācārya', gloss: '12th-century author of Siddhānta Śiromaṇi & Līlāvatī (1114 CE)' },
+          { sa: 'चक्रवाल', iast: 'Cakravāla', gloss: 'Cyclic algorithm for indeterminate quadratic equations Nx² + 1 = y²' }
+        ],
+        highlight: 'Internal mathematical forensics—comparing algebraic notation, sine precision, planetary parameters, and cipher systems—allows scholars to separate homonymous masters separated by centuries.'
+      },
+      {
+        title: 'The Astronomical Epoch: Converting Shaka Era to Common Era (CE)',
+        sanskritTitle: 'शकाब्दस्य कालक्रमः · साकल्यसूत्रम् (CE = Shaka + 78)',
+        paragraphs: [
+          'Across traditional Indian astronomy (Siddhānta Jyotiṣa), the standard chronological epoch is the Śālivāhana Śaka Era, which commenced in 78 CE. From Varāhamihira and Brahmagupta to Sawai Jai Singh II, astronomers registered their planetary ephemerides and birth years in Shaka years.',
+          'To map Indian astronomical milestones to the global Gregorian Common Era (CE), historians apply the exact mathematical offset formula:',
+          '$$\\mathbf{\\text{CE}} = \\mathbf{\\text{Shaka Year}} + \\mathbf{78} \\qquad\\Longleftrightarrow\\qquad \\mathbf{\\text{Shaka Year}} = \\mathbf{\\text{CE}} - \\mathbf{78}$$',
+          'For example: Āryabhaṭa I was born in 398 Shaka (398 + 78 = 476 CE); Brahmagupta wrote the Brāhmasphuṭasiddhānta in 520 Shaka (520 + 78 = 598 CE); and Sawai Jai Singh II constructed the Jantar Mantar observatories around 1650 Shaka (1650 + 78 = 1728 CE).'
+        ],
+        highlight: 'The formula CE = Shaka + 78 harmonizes classical Siddhāntic astronomical chronologies with global comparative history.'
+      }
+    ],
+    quote: 'Indian mathematics did not begin when ink touched parchment; it flourished through rhythmic oral transmission, survived monsoon decay through cyclical recopying, outlived the ashes of burnt libraries through loving commentaries, and speaks to us today across the Shaka calendar.',
+    keyTakeaways: [
+      'The 5 Historiographical Pillars: (1) Oral Guru-Paramparā, (2) Tālapatra monsoon perishability, (3) Terminus ante quem artifact dating, (4) Reconstruction through Bhāṣyas, (5) Forensic disambiguation of shared homonyms.',
+      'Surviving palm-leaf manuscripts are late medieval copies of ancient oral formulations; lack of early paper does not imply lack of mathematical theorems.',
+      'The Bakhshālī Manuscript (3rd c. CE) provides a terminus ante quem floor, proving operational zero was already standard practice in trade.',
+      'Destruction of Nālandā, Takṣaśilā, and Vikramaśīlā led to preservation through decentralized commentaries by Bhaṭṭotpala, Nīlakaṇṭha, and Raṅganātha.',
+      'Āryabhaṭa I (476 CE) and II (953 CE), and Bhāskara I (7th c.) and II (12th c.) are distinct figures distinguished by their algebraic and astronomical complexity.',
+      'The standard calendar conversion formula CE = Shaka + 78 connects classical Indian Siddhāntas directly to global historical timelines.'
     ]
   },
 ];

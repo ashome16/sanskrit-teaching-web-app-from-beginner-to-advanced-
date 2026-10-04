@@ -7,6 +7,9 @@ import {
   VEDIC_QUIZ_QUESTIONS,
   VEDIC_ARTICLES,
   GURU_PARAMPARA,
+  HISTORIOGRAPHICAL_FRAMEWORK,
+  SHAKA_TO_CE_OFFSET,
+  SHAKA_ERA_CHRONOLOGY,
   VEDIC_SUBSUTRA_WORKSHEETS,
   type VedicSutra,
   type VedicSubSutraWorksheet,
@@ -515,6 +518,14 @@ ${bodyHtml}
   const [dhanurElevB, setDhanurElevB] = useState<number>(15);
   const [activePhoneticLetter, setActivePhoneticLetter] = useState<string>('ṭa');
 
+  // Historiography & Shaka Chronology States
+  const [paramparaSubTab, setParamparaSubTab] = useState<'all' | 'historiography' | 'shaka-matrix' | 'lineage'>('all');
+  const [shakaInputYear, setShakaInputYear] = useState<number>(520);
+  const [chronoSearch, setChronoSearch] = useState<string>('');
+  const [chronoFilter, setChronoFilter] = useState<string>('all');
+  const [expandedPillarId, setExpandedPillarId] = useState<string | null>(null);
+  const [selectedMathematicianId, setSelectedMathematicianId] = useState<string | null>(null);
+
   // Sutra Directory States
   const [sutraSearch, setSutraSearch] = useState('');
   const [sutraFilter, setSutraFilter] = useState<string>('all');
@@ -621,7 +632,16 @@ ${bodyHtml}
       scrollId = 'vedic-tabs';
     } else if (clean === 'parampara') {
       setActiveTab('parampara');
+      setParamparaSubTab('all');
       scrollId = 'vedic-tabs';
+    } else if (clean === 'shaka-matrix' || clean === 'shaka-chronology') {
+      setActiveTab('parampara');
+      setParamparaSubTab('shaka-matrix');
+      scrollId = 'shaka-matrix-section';
+    } else if (clean === 'historiography') {
+      setActiveTab('parampara');
+      setParamparaSubTab('historiography');
+      scrollId = 'historiography-section';
     } else if (clean === 'quiz') {
       setActiveTab('quiz');
       scrollId = 'vedic-tabs';
@@ -4453,106 +4473,595 @@ ${bodyHtml}
         {/* ==================================================================
             TAB: GURU PARAMPARA & THE SOURCE (SACRED LINEAGE)
             ================================================================== */}
-        {activeTab === 'parampara' && (
-          <div className="parampara-container">
-            <div className="parampara-hero-crest">
-              <div className="parampara-badge-pill">
-                <span>॥ मूलस्रोतः गुरुपरम्परा च ॥</span>
-                <span>·</span>
-                <span>The Sacred Awakening &amp; The Living Lineage</span>
-              </div>
-              <h1 className="parampara-title">The Lineage of Continuity</h1>
-              <p className="parampara-subtitle">
-                Vedic Mathematics is far more than an ultra-efficient system of calculation; it is a living stream of knowledge (Vidya) flowing through an ancient spiritual lineage. Meet the visionary masters who revived, guarded, and spread this wisdom worldwide.
-              </p>
-            </div>
+        {/* ==================================================================
+            TAB: GURU PARAMPARA, HISTORIOGRAPHY & SHAKA CHRONOLOGY (TRACK 3 · STEP 8)
+            ================================================================== */}
+        {activeTab === 'parampara' && (() => {
+          const convertedCeYear = shakaInputYear + SHAKA_TO_CE_OFFSET;
+          const matchedAstronomer = SHAKA_ERA_CHRONOLOGY.find(
+            (m) => m.shakaNumeric === shakaInputYear
+          );
+          const nearbyAstronomers = !matchedAstronomer
+            ? SHAKA_ERA_CHRONOLOGY.filter(
+                (m) => Math.abs(m.shakaNumeric - shakaInputYear) <= 25
+              )
+            : [];
 
-            {/* Lineage Member Cards */}
-            <div className="parampara-lineage-flow">
-              {GURU_PARAMPARA.map((member) => (
-                <div key={member.id} className="lineage-card">
-                  <div className="lineage-header">
-                    <div className="lineage-identity">
-                      <div className="lineage-avatar-icon">{member.imageIcon}</div>
-                      <div className="lineage-names">
-                        <span className="lineage-name-sa">{member.sanskritName}</span>
-                        <h2 className="lineage-name-en">{member.name}</h2>
+          const filteredChronology = SHAKA_ERA_CHRONOLOGY.filter((item) => {
+            const matchesFilter =
+              chronoFilter === 'all' ||
+              (chronoFilter === 'astronomy' && item.focusArea === 'Astronomy & Siddhanta') ||
+              (chronoFilter === 'algebra' && item.focusArea === 'Arithmetic & Algebra') ||
+              (chronoFilter === 'geometry' && item.focusArea === 'Geometry & Trigonometry') ||
+              (chronoFilter === 'commentary' && item.focusArea === 'Commentary & Reconstruction') ||
+              (chronoFilter === 'observational' && item.focusArea === 'Observational & Calendrical');
+
+            const searchClean = chronoSearch.trim().toLowerCase();
+            const matchesSearch =
+              !searchClean ||
+              item.name.toLowerCase().includes(searchClean) ||
+              item.teluguName.toLowerCase().includes(searchClean) ||
+              item.sanskritName.toLowerCase().includes(searchClean) ||
+              item.primaryTreatise.toLowerCase().includes(searchClean) ||
+              item.contributions.toLowerCase().includes(searchClean) ||
+              item.century.toLowerCase().includes(searchClean) ||
+              item.shakaYear.toLowerCase().includes(searchClean) ||
+              item.ceYear.toLowerCase().includes(searchClean);
+
+            return matchesFilter && matchesSearch;
+          });
+
+          return (
+            <div className="parampara-container">
+              {/* Hero Crest */}
+              <div className="parampara-hero-crest">
+                <div className="parampara-badge-pill">
+                  <span>॥ मूलस्रोतः इतिहासदर्शनम् शकाब्दक्रमश्च ॥</span>
+                  <span>·</span>
+                  <span>Track 3: Heritage &amp; Epistemology · Step 8</span>
+                </div>
+                <h1 className="parampara-title">Historiographical Framework &amp; The Living Lineage</h1>
+                <p className="parampara-subtitle">
+                  Vedic Mathematics and Indian Astronomy form an unbroken continuum spanning millennia—from phonetic oral transmission and palm-leaf manuscripts to classical Siddhāntic astronomy (Shaka Era) and 21st-century microchip computing.
+                </p>
+
+                {/* Sub-Navigation Pills */}
+                <div className="parampara-subnav-bar">
+                  <div className="parampara-subnav-pills">
+                    <button
+                      type="button"
+                      className={`parampara-subnav-pill ${paramparaSubTab === 'all' ? 'active' : ''}`}
+                      onClick={() => setParamparaSubTab('all')}
+                    >
+                      🌟 All Dimensions
+                    </button>
+                    <button
+                      type="button"
+                      className={`parampara-subnav-pill ${paramparaSubTab === 'historiography' ? 'active' : ''}`}
+                      onClick={() => setParamparaSubTab('historiography')}
+                    >
+                      📜 5 Historiographical Pillars
+                    </button>
+                    <button
+                      type="button"
+                      className={`parampara-subnav-pill ${paramparaSubTab === 'shaka-matrix' ? 'active' : ''}`}
+                      onClick={() => setParamparaSubTab('shaka-matrix')}
+                    >
+                      ⏱️ Shaka ⟷ CE Matrix ({SHAKA_ERA_CHRONOLOGY.length} Masters)
+                    </button>
+                    <button
+                      type="button"
+                      className={`parampara-subnav-pill ${paramparaSubTab === 'lineage' ? 'active' : ''}`}
+                      onClick={() => setParamparaSubTab('lineage')}
+                    >
+                      🕉️ Modern Guru Paramparā
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    className="parampara-article-cta-btn"
+                    onClick={() => {
+                      setActiveTab('articles');
+                      setSelectedArticleId('historiographical-framework-indian-mathematics');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    📖 Read Masterclass Article →
+                  </button>
+                </div>
+              </div>
+
+              {/* SECTION 1: 5 HISTORIOGRAPHICAL PILLARS */}
+              {(paramparaSubTab === 'all' || paramparaSubTab === 'historiography') && (
+                <div id="historiography-section" className="parampara-section-block">
+                  <div className="section-block-header">
+                    <div className="section-block-badge">॥ पञ्च इतिहास-स्तम्भाः ॥ · Philological Foundations</div>
+                    <h2 className="section-block-title">The 5 Historiographical Pillars of Indian Mathematics</h2>
+                    <p className="section-block-desc">
+                      Why standard Western philological dating models often misjudge the antiquity of Indian sciences: the interplay of oral Guru-Paramparā transmission, tropical palm-leaf decay, archaeological floor dates (<em>terminus ante quem</em>), burnt university libraries, and shared homonyms.
+                    </p>
+                  </div>
+
+                  {/* 3 Core Historical Contrasts */}
+                  <div className="historiography-contrasts-grid">
+                    <div className="contrast-card">
+                      <div className="contrast-icon">🌿</div>
+                      <h4 className="contrast-title">Monsoon vs Arid Sands</h4>
+                      <p className="contrast-desc">
+                        Unlike Egyptian papyrus or Sumerian clay that lasted 4,000 years in dry sands, organic <strong>Tālapatra (palm leaves)</strong> decay within 300–500 years under tropical humidity and silverfish, requiring constant manual recopying (<em>punarlekhana</em>). Surviving manuscripts are almost always late copies of ancient originals.
+                      </p>
+                    </div>
+                    <div className="contrast-card">
+                      <div className="contrast-icon">🗣️</div>
+                      <h4 className="contrast-title">Oral Sūtras vs Paper Ceilings</h4>
+                      <p className="contrast-desc">
+                        Knowledge was memorized through metered <strong>Sūtras (Anuṣṭubh, Āryā)</strong> with built-in phonetic checksums and mathematical ciphers (Kaṭapayādi). Theorems lived in the disciplined memory of gurus and disciples centuries before being written down. <em>Text absence does not mean idea absence.</em>
+                      </p>
+                    </div>
+                    <div className="contrast-card">
+                      <div className="contrast-icon">🏛️</div>
+                      <h4 className="contrast-title">Floor Date (Terminus Ante Quem)</h4>
+                      <p className="contrast-desc">
+                        An excavated manuscript date marks the latest date by which the math was already in routine use, not its birthday. The <strong>Bakhshālī Manuscript (3rd c. CE)</strong> was a merchant’s trade ledger; a standard dot zero in everyday accounting proves the decimal system was standard practice centuries prior.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* The 5 Pillar Detail Cards */}
+                  <div className="historiography-pillars-list">
+                    {HISTORIOGRAPHICAL_FRAMEWORK.map((pillar) => {
+                      const isExpanded = expandedPillarId === pillar.id;
+                      return (
+                        <div key={pillar.id} className="pillar-card">
+                          <div className="pillar-header">
+                            <div className="pillar-title-wrap">
+                              <span className="pillar-badge">Pillar #{pillar.pillarNumber}</span>
+                              <span className="pillar-icon">{pillar.icon}</span>
+                              <div>
+                                <div className="pillar-sa-title">{pillar.sanskritTitle}</div>
+                                <h3 className="pillar-en-title">{pillar.title}</h3>
+                                <div className="pillar-te-title">తెలుగు: {pillar.teluguTitle}</div>
+                              </div>
+                            </div>
+                            <button
+                              type="button"
+                              className="pillar-toggle-btn"
+                              onClick={() => setExpandedPillarId(isExpanded ? null : pillar.id)}
+                            >
+                              {isExpanded ? '▲ Hide Details' : '▼ Deep Analysis'}
+                            </button>
+                          </div>
+
+                          <p className="pillar-summary">{pillar.shortSummary}</p>
+
+                          {isExpanded && (
+                            <div className="pillar-expanded-body">
+                              <div className="pillar-full-desc">{pillar.fullDescription}</div>
+                              
+                              <div className="pillar-impact-box">
+                                <div className="pillar-impact-label">💡 Historiographical Reality &amp; Methodological Rule:</div>
+                                <div className="pillar-impact-text">{pillar.historiographicalImpact}</div>
+                              </div>
+
+                              <div className="pillar-examples-wrap">
+                                <div className="pillar-examples-label">🔍 Canonical Historical Evidence:</div>
+                                <ul className="pillar-examples-list">
+                                  {pillar.keyExamples.map((ex, eIdx) => (
+                                    <li key={eIdx}>{ex}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* SECTION 2: SHAKA ERA CONVERTER & CHRONOLOGY MATRIX */}
+              {(paramparaSubTab === 'all' || paramparaSubTab === 'shaka-matrix') && (
+                <div id="shaka-matrix-section" className="parampara-section-block">
+                  <div className="section-block-header">
+                    <div className="section-block-badge">॥ शकाब्द-रूपान्तरणम् कालक्रम-सारणी च ॥ · Siddhāntic Epoch</div>
+                    <h2 className="section-block-title">Chronological Matrix: Shaka Era to Common Era (CE)</h2>
+                    <p className="section-block-desc">
+                      The standard astronomical epoch across classical Indian treatises is the Śālivāhana Śaka Era (began 78 CE). Use the interactive converter and explore the matrix of 19 master astronomers and mathematicians with their Telugu, Sanskrit, and English titles.
+                    </p>
+                  </div>
+
+                  {/* Interactive Shaka-to-CE Converter Tool */}
+                  <div className="shaka-converter-studio">
+                    <div className="converter-formula-banner">
+                      <span className="formula-badge">Mathematical Offset Formula</span>
+                      <div className="formula-equation">
+                        <strong>CE</strong> = <strong>Shaka Year</strong> + <strong>78</strong>
+                        <span className="formula-sep">⟷</span>
+                        <strong>Shaka Year</strong> = <strong>CE</strong> - <strong>78</strong>
+                      </div>
+                      <p className="formula-note">
+                        Established in 78 CE to mark the Śaka epoch; all classical ephemerides from Varāhamihira to Sawai Jai Singh II register celestial movements in this calendar.
+                      </p>
+                    </div>
+
+                    <div className="converter-interactive-row">
+                      <div className="converter-input-box">
+                        <label htmlFor="shaka-input" className="converter-label">
+                          Enter Shaka Era Year:
+                        </label>
+                        <div className="converter-input-wrap">
+                          <input
+                            id="shaka-input"
+                            type="number"
+                            className="converter-num-input"
+                            value={shakaInputYear}
+                            onChange={(e) => setShakaInputYear(Number(e.target.value) || 0)}
+                            min={0}
+                            max={3000}
+                          />
+                          <span className="converter-unit">Shaka</span>
+                        </div>
+                      </div>
+
+                      <div className="converter-equal-sign">=</div>
+
+                      <div className="converter-output-box">
+                        <div className="converter-output-label">Converted Common Era:</div>
+                        <div className="converter-output-val">{convertedCeYear} CE</div>
+                        <div className="converter-output-sub">
+                          ({shakaInputYear} + {SHAKA_TO_CE_OFFSET} = {convertedCeYear})
+                        </div>
                       </div>
                     </div>
-                    <span className="lineage-badge-pill">{member.badge}</span>
+
+                    {/* Matched Astronomer Highlight */}
+                    {matchedAstronomer && (
+                      <div className="converter-match-card exact">
+                        <div className="match-tag">🎯 Exact Landmark Astronomer Match!</div>
+                        <div className="match-title">
+                          <span className="match-te">{matchedAstronomer.teluguName}</span>
+                          <span className="match-sep">·</span>
+                          <span className="match-en">{matchedAstronomer.name}</span>
+                          <span className="match-sa">({matchedAstronomer.sanskritName})</span>
+                        </div>
+                        <div className="match-meta">
+                          <span>📅 {matchedAstronomer.shakaYear} Shaka ({matchedAstronomer.ceYear})</span>
+                          <span>·</span>
+                          <span>📜 Treatise: {matchedAstronomer.primaryTreatise}</span>
+                          <span>·</span>
+                          <span className="match-focus-pill">{matchedAstronomer.focusArea}</span>
+                        </div>
+                        <p className="match-desc">{matchedAstronomer.contributions}</p>
+                      </div>
+                    )}
+
+                    {!matchedAstronomer && nearbyAstronomers.length > 0 && (
+                      <div className="converter-match-card nearby">
+                        <div className="match-tag">🔍 Epoch Contemporaries (within 25 years):</div>
+                        <div className="nearby-chips">
+                          {nearbyAstronomers.map((ast) => (
+                            <button
+                              key={ast.id}
+                              type="button"
+                              className="nearby-chip-btn"
+                              onClick={() => setShakaInputYear(ast.shakaNumeric)}
+                            >
+                              {ast.teluguName} ({ast.name}) · {ast.shakaYear} Shaka ({ast.ceYear})
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Quick Preset Buttons */}
+                    <div className="converter-presets-wrap">
+                      <div className="presets-label">⚡ Jump to Landmark Astronomical Epochs:</div>
+                      <div className="presets-grid">
+                        {SHAKA_ERA_CHRONOLOGY.map((ast) => (
+                          <button
+                            key={ast.id}
+                            type="button"
+                            className={`preset-btn ${shakaInputYear === ast.shakaNumeric ? 'active' : ''}`}
+                            onClick={() => setShakaInputYear(ast.shakaNumeric)}
+                          >
+                            <span className="preset-name">{ast.name}</span>
+                            <span className="preset-year">{ast.shakaNumeric} Shaka → {ast.ceNumeric} CE</span>
+                          </button>
+                        ))}
+                        <button
+                          type="button"
+                          className={`preset-btn present ${shakaInputYear === 1946 ? 'active' : ''}`}
+                          onClick={() => setShakaInputYear(1946)}
+                        >
+                          <span className="preset-name">Present Indian National Calendar</span>
+                          <span className="preset-year">1946 Shaka → 2024 CE</span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="lineage-role-period">
-                    <span className="lineage-role">{member.role}</span>
-                    <span className="lineage-period">📅 {member.period}</span>
+                  {/* Filterable Chronological Matrix Table */}
+                  <div className="chrono-matrix-directory">
+                    <div className="matrix-controls-bar">
+                      <div className="matrix-search-box">
+                        <span className="search-icon">🔍</span>
+                        <input
+                          type="text"
+                          className="matrix-search-input"
+                          placeholder="Search by Telugu (మొదటి ఆర్యభటుడు), Sanskrit, English, treatise, century..."
+                          value={chronoSearch}
+                          onChange={(e) => setChronoSearch(e.target.value)}
+                        />
+                        {chronoSearch && (
+                          <button
+                            type="button"
+                            className="search-clear-btn"
+                            onClick={() => setChronoSearch('')}
+                          >
+                            ✕
+                          </button>
+                        )}
+                      </div>
+
+                      <div className="matrix-filter-pills">
+                        <button
+                          type="button"
+                          className={`matrix-filter-pill ${chronoFilter === 'all' ? 'active' : ''}`}
+                          onClick={() => setChronoFilter('all')}
+                        >
+                          All ({SHAKA_ERA_CHRONOLOGY.length})
+                        </button>
+                        <button
+                          type="button"
+                          className={`matrix-filter-pill ${chronoFilter === 'astronomy' ? 'active' : ''}`}
+                          onClick={() => setChronoFilter('astronomy')}
+                        >
+                          🪐 Astronomy &amp; Siddhānta
+                        </button>
+                        <button
+                          type="button"
+                          className={`matrix-filter-pill ${chronoFilter === 'algebra' ? 'active' : ''}`}
+                          onClick={() => setChronoFilter('algebra')}
+                        >
+                          🧮 Arithmetic &amp; Algebra
+                        </button>
+                        <button
+                          type="button"
+                          className={`matrix-filter-pill ${chronoFilter === 'geometry' ? 'active' : ''}`}
+                          onClick={() => setChronoFilter('geometry')}
+                        >
+                          📐 Geometry &amp; Trigonometry
+                        </button>
+                        <button
+                          type="button"
+                          className={`matrix-filter-pill ${chronoFilter === 'commentary' ? 'active' : ''}`}
+                          onClick={() => setChronoFilter('commentary')}
+                        >
+                          📜 Commentary &amp; Reconstruction
+                        </button>
+                        <button
+                          type="button"
+                          className={`matrix-filter-pill ${chronoFilter === 'observational' ? 'active' : ''}`}
+                          onClick={() => setChronoFilter('observational')}
+                        >
+                          ⏱️ Observational &amp; Calendrical
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="matrix-results-count">
+                      Showing <strong>{filteredChronology.length}</strong> of {SHAKA_ERA_CHRONOLOGY.length} classical masters
+                    </div>
+
+                    {/* Desktop Responsive Table */}
+                    <div className="chrono-table-container">
+                      <table className="chrono-table">
+                        <thead>
+                          <tr>
+                            <th>Mathematician &amp; Lineage</th>
+                            <th>Shaka Era</th>
+                            <th>Common Era (CE = Shaka + 78)</th>
+                            <th>Century</th>
+                            <th>Primary Treatise</th>
+                            <th>Landmark Mathematical &amp; Astronomical Contributions</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {filteredChronology.map((m) => {
+                            const isSelected = selectedMathematicianId === m.id;
+                            return (
+                              <tr
+                                key={m.id}
+                                className={`chrono-row ${isSelected ? 'selected' : ''}`}
+                                onClick={() => setSelectedMathematicianId(isSelected ? null : m.id)}
+                              >
+                                <td className="chrono-cell-name">
+                                  <div className="name-te">{m.teluguName}</div>
+                                  <div className="name-en">{m.name}</div>
+                                  <div className="name-sa">{m.sanskritName}</div>
+                                  <span className="focus-tag">{m.focusArea}</span>
+                                </td>
+                                <td className="chrono-cell-shaka">
+                                  <span className="shaka-badge">{m.shakaYear}</span>
+                                </td>
+                                <td className="chrono-cell-ce">
+                                  <span className="ce-badge">{m.ceYear}</span>
+                                </td>
+                                <td className="chrono-cell-century">{m.century}</td>
+                                <td className="chrono-cell-treatise">
+                                  <em>{m.primaryTreatise}</em>
+                                </td>
+                                <td className="chrono-cell-contrib">{m.contributions}</td>
+                                <td className="chrono-cell-action">
+                                  <button
+                                    type="button"
+                                    className="test-converter-btn"
+                                    title="Load into Shaka-to-CE Converter"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setShakaInputYear(m.shakaNumeric);
+                                      const el = document.getElementById('shaka-matrix-section');
+                                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    }}
+                                  >
+                                    ⚡ Calculate
+                                  </button>
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    {/* Mobile View: Cards */}
+                    <div className="chrono-cards-mobile">
+                      {filteredChronology.map((m) => (
+                        <div key={m.id} className="chrono-mobile-card">
+                          <div className="mobile-card-header">
+                            <div>
+                              <div className="mobile-te-name">{m.teluguName}</div>
+                              <h4 className="mobile-en-name">{m.name}</h4>
+                              <div className="mobile-sa-name">{m.sanskritName}</div>
+                            </div>
+                            <span className="focus-tag">{m.focusArea}</span>
+                          </div>
+
+                          <div className="mobile-era-row">
+                            <span className="shaka-badge">Shaka: {m.shakaYear}</span>
+                            <span className="era-arrow">➜</span>
+                            <span className="ce-badge">{m.ceYear}</span>
+                            <span className="century-badge">{m.century}</span>
+                          </div>
+
+                          <div className="mobile-treatise">
+                            <strong>Treatise:</strong> <em>{m.primaryTreatise}</em>
+                          </div>
+
+                          <p className="mobile-contrib">{m.contributions}</p>
+
+                          <button
+                            type="button"
+                            className="test-converter-btn mobile"
+                            onClick={() => {
+                              setShakaInputYear(m.shakaNumeric);
+                              const el = document.getElementById('shaka-matrix-section');
+                              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }}
+                          >
+                            ⚡ Test in Shaka Converter ({m.shakaNumeric} + 78 = {m.ceNumeric})
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* SECTION 3: THE LIVING GURU PARAMPARA */}
+              {(paramparaSubTab === 'all' || paramparaSubTab === 'lineage') && (
+                <div className="parampara-section-block">
+                  <div className="section-block-header">
+                    <div className="section-block-badge">॥ आधुनिक-पुनरुत्थानम् ॥ · The Modern Renaissance</div>
+                    <h2 className="section-block-title">The Sacred Awakening &amp; Modern Revival Lineage</h2>
+                    <p className="section-block-desc">
+                      From Swami Bharati Krishna Tirtha’s 8 years of solitary tapasya in the Sringeri forests (1911–1918) to international textbook publications, university lectures, and 21st-century VLSI microchip multipliers.
+                    </p>
                   </div>
 
-                  <p className="lineage-desc">{member.description}</p>
+                  <div className="parampara-lineage-flow">
+                    {GURU_PARAMPARA.map((member) => (
+                      <div key={member.id} className="lineage-card">
+                        <div className="lineage-header">
+                          <div className="lineage-identity">
+                            <div className="lineage-avatar-icon">{member.imageIcon}</div>
+                            <div className="lineage-names">
+                              <span className="lineage-name-sa">{member.sanskritName}</span>
+                              <h2 className="lineage-name-en">{member.name}</h2>
+                            </div>
+                          </div>
+                          <span className="lineage-badge-pill">{member.badge}</span>
+                        </div>
 
-                  <div className="lineage-contributions">
-                    <div className="lineage-contributions-title">Historic Milestones &amp; Contributions:</div>
-                    {member.keyContributions.map((c, cIdx) => (
-                      <div key={cIdx} className="lineage-contribution-bullet">
-                        <span>{c}</span>
+                        <div className="lineage-role-period">
+                          <span className="lineage-role">{member.role}</span>
+                          <span className="lineage-period">📅 {member.period}</span>
+                        </div>
+
+                        <p className="lineage-desc">{member.description}</p>
+
+                        <div className="lineage-contributions">
+                          <div className="lineage-contributions-title">Historic Milestones &amp; Contributions:</div>
+                          {member.keyContributions.map((c, cIdx) => (
+                            <div key={cIdx} className="lineage-contribution-bullet">
+                              <span>{c}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {member.quote && (
+                          <div className="lineage-quote">
+                            &ldquo;{member.quote}&rdquo;
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
-
-                  {member.quote && (
-                    <div className="lineage-quote">
-                      &ldquo;{member.quote}&rdquo;
-                    </div>
-                  )}
                 </div>
-              ))}
-            </div>
+              )}
 
-                        <div className="vedic-next-track-card">
-              <div className="vedic-next-track-header">
-                <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 4</span>
-                <h3 className="vedic-next-track-title">Step 9: Speed Math Challenge &amp; Quiz</h3>
-                <p className="vedic-next-track-desc">
-                  Test your grasp of the 16 Sūtras and mental calculation shortcuts with interactive, timed self-assessment questions.
-                </p>
-              </div>
-              <div className="vedic-next-track-actions">
-                <button
-                  type="button"
-                  className="article-interactive-cta"
-                  onClick={() => {
-                    setActiveTab('quiz');
-                    const el = document.getElementById('vedic-tabs');
-                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
-                >
-                  ⚡ Take Speed Math Challenge Quiz →
-                </button>
-                <button
-                  type="button"
-                  className="article-pager-btn"
-                  onClick={() => {
-                    setActiveTab('articles');
-                    const el = document.getElementById('vedic-tabs');
-                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
-                >
-                  📖 Explore Masterclass Articles
-                </button>
-                <button
-                  type="button"
-                  className="article-pager-btn"
-                  onClick={() => {
-                    setActiveTab('logic');
-                    const el = document.getElementById('vedic-tabs');
-                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
-                >
-                  ← Back to 7. Logic &amp; Language
-                </button>
+              {/* Next Track Card */}
+              <div className="vedic-next-track-card">
+                <div className="vedic-next-track-header">
+                  <span className="vedic-next-track-badge">Next Step in Vedic Mathematics · Track 4</span>
+                  <h3 className="vedic-next-track-title">Step 9: Speed Math Challenge &amp; Quiz</h3>
+                  <p className="vedic-next-track-desc">
+                    Test your grasp of the 16 Sūtras, mental calculation shortcuts, and astronomical timekeeping with interactive, timed self-assessment questions.
+                  </p>
+                </div>
+                <div className="vedic-next-track-actions">
+                  <button
+                    type="button"
+                    className="article-interactive-cta"
+                    onClick={() => {
+                      setActiveTab('quiz');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    ⚡ Take Speed Math Challenge Quiz →
+                  </button>
+                  <button
+                    type="button"
+                    className="article-pager-btn"
+                    onClick={() => {
+                      setActiveTab('articles');
+                      setSelectedArticleId('historiographical-framework-indian-mathematics');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    📖 Read Historiography Masterclass
+                  </button>
+                  <button
+                    type="button"
+                    className="article-pager-btn"
+                    onClick={() => {
+                      setActiveTab('logic');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    ← Back to 7. Logic &amp; Language
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
 
         {activeTab === 'quiz' && (
           <div className="quiz-container">
