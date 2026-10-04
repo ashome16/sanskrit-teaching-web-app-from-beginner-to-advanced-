@@ -272,6 +272,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
       if (selectedCategory === 'vedic_math' && item.category !== 'maths') return false;
       if (selectedCategory === 'cbse' && item.category !== 'lessons' && item.category !== 'grammar') return false;
       if (selectedCategory === 'lessons' && item.category !== 'lessons') return false;
+      if (selectedCategory === 'philosophy' && item.target.view !== 'philosophy' && item.category !== 'guides') return false;
 
       const targetString = [
         item.title,
@@ -609,7 +610,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     <input
                       type="text"
                       className="bodhi-search-input"
-                      placeholder="Ask Bodhi: vidya, kṛtrima, AI, sandhi, retroflex, zero..."
+                      placeholder="Ask Bodhi: Ujjain, GPS temple, prime meridian, sandhi, AI, zero..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                     />
@@ -758,6 +759,39 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                     </span>
                                   )}
                                 </div>
+
+                                {item.relatedView && (
+                                  <div style={{ marginTop: '0.65rem', display: 'flex', justifyContent: 'flex-end' }}>
+                                    <button
+                                      type="button"
+                                      className="bodhi-guide-btn"
+                                      onClick={() => {
+                                        updateIsOpen(false);
+                                        if (item.relatedView === 'philosophy' && item.id.includes('ujjain')) {
+                                          if (onSearchResultNavigate) {
+                                            onSearchResultNavigate({
+                                              id: 'darshana-essay-ujjain-geodesy',
+                                              title: 'Madhya-Rekhā: Ujjain, the Sacred Meridian',
+                                              category: 'maths',
+                                              categoryLabel: 'Darśana Essay',
+                                              badgeEmoji: '🧭',
+                                              badgeColor: '#0284c7',
+                                              description: 'Ujjain Prime Meridian & Geodesy',
+                                              keywords: [],
+                                              target: { view: 'philosophy', philosophyEssay: 'ujjain_geodesy' },
+                                            });
+                                          } else if (onNavigateView) {
+                                            onNavigateView('philosophy');
+                                          }
+                                        } else if (onNavigateView) {
+                                          onNavigateView(item.relatedView);
+                                        }
+                                      }}
+                                    >
+                                      {item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`}
+                                    </button>
+                                  </div>
+                                )}
                               </article>
                             ))}
                           </div>
