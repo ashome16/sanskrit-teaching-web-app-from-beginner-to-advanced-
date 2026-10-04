@@ -1514,6 +1514,37 @@
   gap: 0.5rem;
 }
 
+/* Play all sits beside the lakāra name, not with Copy / Print. */
+.dp-lakara-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+  min-width: 0;
+}
+
+.dp-lakara-title-en {
+  color: #44403c;
+}
+
+.dp-lakara-title .dp-playall {
+  min-height: 44px;
+  min-width: 44px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .dp-lakara-title .dp-playall {
+    width: auto;
+  }
+}
+
+.dp-cell.dp-cell--speaking,
+.dp-cell.dp-cell--speaking:hover {
+  background: #fef3c7;
+  box-shadow: inset 0 0 0 2px #d97706;
+}
+
 .dp-table-scroll {
   overflow-x: auto;
 }
@@ -3893,6 +3924,7 @@
   .dp-table-actions,
   .dp-audio-mini,
   .dp-audio-inline,
+  .dp-lakara-playall,
   .grammar-back,
   .dp-toast {
     display: none !important;

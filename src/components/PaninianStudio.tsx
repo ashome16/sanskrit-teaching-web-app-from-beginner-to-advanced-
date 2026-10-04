@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import type { DhatuEntry } from '../types/linguistics';
 import { loadDhatupatha } from '../utils/dhatupatha';
-import { playPronunciation } from '../utils/pronunciation';
+import { playBilingualSequence, playPronunciation } from '../utils/pronunciation';
+import { personNumberEnglish } from '../utils/personGloss';
 import {
   LAKARAS,
   type LakaraId,
@@ -297,6 +298,157 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
   const causativeInfo = useMemo(() => {
     return getCausativeInfo(currentDhatu);
   }, [currentDhatu]);
+
+  // Play all on the lakāra 3×3 (not the root library, not the Laṭ card).
+  const [playingAll, setPlayingAll] = useState(false);
+  const [speakingIndex, setSpeakingIndex] = useState<number | null>(null);
+  const stopPlayRef = useRef<(() => void) | null>(null);
+  const resumeIndexRef = useRef(0);
+  const playTokenRef = useRef(0);
+  const playAllBtnRef = useRef<HTMLDivElement | null>(null);
+
+  const playCells = useMemo(() => {
+    if (activeLakara === 'krt' || !conjugationTable) return [];
+    const list: { sanskrit: string; english: string }[] = [];
+    conjugationTable.forEach((row, pIdx) => {
+      row.forEach((cell, nIdx) => {
+        const gloss = personNumberEnglish(currentDhatu, pIdx, nIdx).trim();
+        list.push({
+          sanskrit: cell.full,
+          english: gloss || (cell.meaningEn || '').trim(),
+        });
+      });
+    });
+    return list;
+  }, [conjugationTable, activeLakara, currentDhatu]);
+
+  const playCellsRef = useRef(playCells);
+  playCellsRef.current = playCells;
+
+  const playbackKey = `${selectedDhatuId}|${activeLakara}|${selectedVoice}|${isCausative ? 'c' : 'b'}|${mode}`;
+
+  useEffect(() => {
+    playTokenRef.current += 1;
+    stopPlayRef.current?.();
+    stopPlayRef.current = null;
+    resumeIndexRef.current = 0;
+    setPlayingAll(false);
+    setSpeakingIndex(null);
+    return () => {
+      playTokenRef.current += 1;
+      stopPlayRef.current?.();
+      stopPlayRef.current = null;
+    };
+  }, [playbackKey]);
+
+  // Pin Pause under the site header. Fixed, not sticky: .dashboard is a scroll
+  // container unless overflow is clipped (see .dashboard--dhatupatha).
+  useEffect(() => {
+    if (!playingAll) return;
+    const btn = playAllBtnRef.current;
+    const place = () => {
+      const header = document.querySelector<HTMLElement>('.dashboard-header');
+      const bottom = header ? header.getBoundingClientRect().bottom : 0;
+      const top = bottom > 8 ? Math.round(bottom) : 0;
+      btn?.style.setProperty('--dp-stick-top', `${top}px`);
+    };
+    place();
+    const header = document.querySelector('.dashboard-header');
+    const observer = header ? new ResizeObserver(place) : null;
+    if (header && observer) observer.observe(header);
+    window.addEventListener('scroll', place, true);
+    window.addEventListener('resize', place);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('scroll', place, true);
+      window.removeEventListener('resize', place);
+    };
+  }, [playingAll]);
+
+  useEffect(() => {
+    if (!playingAll || speakingIndex === null) return;
+    const el = document.querySelector<HTMLElement>(`[data-lakara-cell="${speakingIndex}"]`);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const btn = playAllBtnRef.current;
+    const barBottom = btn ? btn.getBoundingClientRect().bottom : 0;
+    const topLimit = Math.max(8, barBottom + 12);
+    const viewH = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top >= topLimit && rect.bottom <= viewH - 8) return;
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    el.style.scrollMarginTop = `${Math.round(topLimit)}px`;
+    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+  }, [playingAll, speakingIndex]);
+
+  const cancelLakaraPlay = () => {
+    playTokenRef.current += 1;
+    stopPlayRef.current?.();
+    stopPlayRef.current = null;
+  };
+
+  const startLakaraPlayAll = (start: number) => {
+    cancelLakaraPlay();
+    const list = playCellsRef.current;
+    if (!list.length) return;
+    const index = start >= list.length ? 0 : Math.max(0, start);
+    const slice = list.slice(index);
+    const token = playTokenRef.current;
+    resumeIndexRef.current = index;
+    setPlayingAll(true);
+    setSpeakingIndex(index);
+    stopPlayRef.current = playBilingualSequence(slice, {
+      gapMs: 250,
+      onItem: (itemIndex) => {
+        if (playTokenRef.current !== token) return;
+        const absolute = index + itemIndex;
+        resumeIndexRef.current = absolute;
+        setSpeakingIndex(absolute);
+      },
+      onDone: () => {
+        if (playTokenRef.current !== token) return;
+        stopPlayRef.current = null;
+        setPlayingAll(false);
+        setSpeakingIndex(null);
+        resumeIndexRef.current = 0;
+      },
+    });
+  };
+
+  const toggleLakaraPlayAll = () => {
+    if (playingAll) {
+      cancelLakaraPlay();
+      setPlayingAll(false);
+      setSpeakingIndex(null);
+      return;
+    }
+    startLakaraPlayAll(resumeIndexRef.current);
+  };
+
+  const speakLakaraCell = (cellIndex: number) => {
+    // A single 🔊 cancels Play all. Next Play all starts at the first cell.
+    cancelLakaraPlay();
+    setPlayingAll(false);
+    resumeIndexRef.current = 0;
+    const cell = playCellsRef.current[cellIndex];
+    if (!cell) {
+      setSpeakingIndex(null);
+      return;
+    }
+    const token = playTokenRef.current;
+    setSpeakingIndex(cellIndex);
+    stopPlayRef.current = playBilingualSequence([{ sanskrit: cell.sanskrit, english: cell.english }], {
+      gapMs: 250,
+      onItem: () => {
+        if (playTokenRef.current !== token) return;
+        setSpeakingIndex(cellIndex);
+      },
+      onDone: () => {
+        if (playTokenRef.current !== token) return;
+        stopPlayRef.current = null;
+        setSpeakingIndex(null);
+      },
+    });
+  };
 
   // Comparator resolved entities
   const compDhatuA = useMemo(() => {
@@ -637,10 +789,45 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
 
           {/* 3×3 Conjugation Table */}
           {activeLakara !== 'krt' && conjugationTable && activeLakaraInfo && (
+            <>
+            {playingAll && (
+              <div
+                ref={playAllBtnRef}
+                className="dp-playback-bar dp-playback-bar--live"
+                role="region"
+                aria-label="Play all"
+              >
+                <button
+                  type="button"
+                  className="dp-playall dp-playall--active"
+                  onClick={toggleLakaraPlayAll}
+                  aria-pressed={true}
+                  aria-label="Pause. Reads the nine forms in Sanskrit and English"
+                >
+                  ⏸ Pause
+                </button>
+              </div>
+            )}
             <div className="dp-table-wrapper">
               <div className="dp-lakara-meta-banner">
-                <div>
-                  <strong>{activeLakaraInfo.nameSa}</strong> ({activeLakaraInfo.nameEn}) · <em>{activeLakaraInfo.tenseCategory}</em>
+                <div className="dp-lakara-title">
+                  <strong>{activeLakaraInfo.nameSa}</strong>
+                  <span className="dp-lakara-title-en">
+                    ({activeLakaraInfo.nameEn}) · <em>{activeLakaraInfo.tenseCategory}</em>
+                  </span>
+                  <button
+                    type="button"
+                    className={`dp-playall dp-lakara-playall${playingAll ? ' dp-playall--active' : ''}`}
+                    onClick={toggleLakaraPlayAll}
+                    aria-pressed={playingAll}
+                    aria-label={
+                      playingAll
+                        ? 'Pause. Reads the nine forms in Sanskrit and English'
+                        : 'Play all nine forms in Sanskrit and English'
+                    }
+                  >
+                    {playingAll ? '⏸ Pause' : '▶ Play all'}
+                  </button>
                   <span className="dp-lakara-badge-voice">
                     {isCausative ? 'णिजन्तः (प्रेरणार्थक)' : selectedVoice === 'atmanepada' ? 'आत्मनेपदम्' : 'परस्मैपदम्'}
                   </span>
@@ -688,15 +875,25 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                           {PERSON_LABELS[pIdx].sa}
                           <span className="dp-th-sub">{PERSON_LABELS[pIdx].en}</span>
                         </th>
-                        {row.map((cell) => (
-                          <td key={cell.full} className="dp-cell">
+                        {row.map((cell, nIdx) => {
+                          const cellIndex = pIdx * 3 + nIdx;
+                          const speaking = speakingIndex === cellIndex;
+                          const gloss = playCells[cellIndex]?.english || cell.meaningEn;
+                          return (
+                          <td
+                            key={`${pIdx}-${nIdx}`}
+                            className={`dp-cell${speaking ? ' dp-cell--speaking' : ''}`}
+                            data-lakara-cell={cellIndex}
+                            aria-current={speaking ? 'true' : undefined}
+                          >
                             <div className="dp-cell-word-row">
                               <span className="dp-cell-word">{cell.full}</span>
                               <button
                                 type="button"
                                 className="dp-audio-mini"
-                                onClick={() => playPronunciation(cell.full)}
+                                onClick={() => speakLakaraCell(cellIndex)}
                                 title={`Pronounce ${cell.full}`}
+                                aria-label={`${cell.full}: ${gloss}`}
                               >
                                 🔊
                               </button>
@@ -707,7 +904,8 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
                               <span className="dp-f-suffix">+{cell.suffixPart}</span>
                             </div>
                           </td>
-                        ))}
+                          );
+                        })}
                       </tr>
                     ))}
                   </tbody>
@@ -715,9 +913,10 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack }) => {
               </div>
 
               <div className="dp-table-legend">
-                <span>💡 <strong>Color Breakdown:</strong> <span className="dp-legend-root">Root / Stem (धातु/अङ्ग)</span> + <span className="dp-legend-suffix">Tiṅ Suffix (प्रत्यय)</span>. Tap 🔊 on any cell to hear authentic Sanskrit pronunciation.</span>
+                <span>💡 <strong>Color Breakdown:</strong> <span className="dp-legend-root">Root / Stem (धातु/अङ्ग)</span> + <span className="dp-legend-suffix">Tiṅ Suffix (प्रत्यय)</span>. Tap 🔊 on any cell to hear that form in Sanskrit, then English.</span>
               </div>
             </div>
+            </>
           )}
 
           {/* Kṛt Participles Cards */}
