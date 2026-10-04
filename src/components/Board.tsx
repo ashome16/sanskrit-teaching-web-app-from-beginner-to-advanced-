@@ -1,7 +1,8 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import '../styles/board.css';
 import { iconForExampleWord } from '../data/exampleIcons';
-import { playPronunciation } from '../utils/pronunciation';
+import { getSpeechGeneration, playPronunciation, stopPronunciation } from '../utils/pronunciation';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
 
@@ -148,6 +149,116 @@ function evaluateChosen(puzzle: BoardPuzzle | null, tiles: string[]): boolean {
   return glueMatchesTarget(tiles, target);
 }
 
+
+type SolvingMove = { indices: number[]; selection: string[] };
+
+function isKaAaPair(picked: string[]) {
+  if (picked.length !== 2) return false;
+  const set = new Set(picked.map((tile) => tile.normalize('NFC')));
+  return set.size === 2 && set.has('क') && (set.has('आ') || set.has('ा'));
+}
+
+/** Tiles that solve this puzzle, in the order glueTiles matches the target. */
+function findSolvingSelection(puzzle: BoardPuzzle): SolvingMove | null {
+  const target = ((puzzle.answer ?? puzzle.target) || '').normalize('NFC');
+  if (!target) return null;
+  const tiles = (puzzle.tiles || []).map((tile) => cleanTile(tile));
+  const wholeAt = tiles.findIndex((tile) => tile.normalize('NFC') === target);
+  if (wholeAt >= 0) {
+    const selection = [tiles[wholeAt]];
+    return evaluateChosen(puzzle, selection) ? { indices: [wholeAt], selection } : null;
+  }
+
+  const permute = (items: number[]): number[][] => {
+    if (items.length <= 1) return [items.slice()];
+    const out: number[][] = [];
+    items.forEach((item, index) => {
+      permute([...items.slice(0, index), ...items.slice(index + 1)]).forEach((tail) => {
+        out.push([item, ...tail]);
+      });
+    });
+    return out;
+  };
+
+  const combosOf = (size: number): number[][] => {
+    const out: number[][] = [];
+    const walk = (start: number, acc: number[]) => {
+      if (acc.length === size) {
+        out.push(acc.slice());
+        return;
+      }
+      for (let i = start; i < tiles.length; i += 1) {
+        acc.push(i);
+        walk(i + 1, acc);
+        acc.pop();
+      }
+    };
+    walk(0, []);
+    return out;
+  };
+
+  for (const size of [2, 3, 1]) {
+    if (tiles.length < size) continue;
+    for (const combo of combosOf(size)) {
+      const visual = combo.map((index) => tiles[index]);
+      // Prefer the on-screen order when that glue equals the target (no swap).
+      if (glueTiles(visual) === target && evaluateChosen(puzzle, visual)) {
+        return { indices: combo.slice(), selection: visual };
+      }
+      for (const order of permute(combo)) {
+        if (order.every((index, at) => index === combo[at])) continue;
+        const selection = order.map((index) => tiles[index]);
+        if (glueTiles(selection) === target && evaluateChosen(puzzle, selection)) {
+          return { indices: order, selection };
+        }
+      }
+      if (target === 'का' && isKaAaPair(visual)) {
+        const kaAt = combo.find((index) => tiles[index].normalize('NFC') === 'क');
+        const vowelAt = combo.find((index) => tiles[index].normalize('NFC') !== 'क');
+        if (kaAt === undefined || vowelAt === undefined) continue;
+        const selection = [tiles[kaAt], tiles[vowelAt]];
+        if (evaluateChosen(puzzle, selection)) return { indices: [kaAt, vowelAt], selection };
+      }
+    }
+  }
+  return null;
+}
+
+function tapSequence(faces: string[]) {
+  if (faces.length <= 1) return `Tap ${faces[0] || ''}.`;
+  if (faces.length === 2) return `Tap ${faces[0]}, then ${faces[1]}.`;
+  return `Tap ${faces.slice(0, -1).join(', then ')}, then ${faces[faces.length - 1]}.`;
+}
+
+/** One line naming the next click, using the tiles actually on screen.
+ *  A correct tap clears the ring (Click Next). It never retargets index 0,
+ *  including a one-tile answer such as नदी in the 6th slot. */
+function describeNextTap(
+  puzzle: BoardPuzzle | null,
+  chosen: string[],
+  flags: { learn: boolean; solved: boolean; last: boolean },
+): { text: string; markIndex: number | null } {
+  if (!puzzle) return { text: '', markIndex: null };
+  if (flags.learn || flags.solved || evaluateChosen(puzzle, chosen)) {
+    return { text: flags.last ? 'Click Play Again.' : 'Click Next.', markIndex: null };
+  }
+  const move = findSolvingSelection(puzzle);
+  if (!move) return { text: 'Tap a cream tile.', markIndex: null };
+  const faces = move.indices.map((index) => cleanTile(puzzle.tiles[index] || ''));
+  const left = chosen.map((tile) => cleanTile(tile).normalize('NFC'));
+  const remain: number[] = [];
+  for (let i = 0; i < faces.length; i += 1) {
+    const at = left.indexOf(faces[i].normalize('NFC'));
+    if (at >= 0) left.splice(at, 1);
+    else remain.push(i);
+  }
+  if (!remain.length) return { text: 'Click Next.', markIndex: null };
+  const remainFaces = remain.map((index) => faces[index]);
+  const text = remain.length === faces.length ? tapSequence(faces) : tapSequence(remainFaces);
+  return { text, markIndex: move.indices[remain[0]] ?? null };
+}
+
+
 function highlightedSentence(sentence: string | undefined, highlight: string | undefined, tapHighlight: string | undefined) {
   if (!sentence || !highlight) return sentence;
   const matchStart = sentence.indexOf(highlight);
@@ -220,84 +331,18 @@ function renderJodoSentenceWithSlot(
   );
 }
 
-/** Render a standard fill-in / sentence prompt with an interactive tactile slot. */
-function renderStandardPromptWithSlot(
-  puzzle: BoardPuzzle,
-  chosen: string[],
-  checked: boolean,
-  isCorrect: boolean,
-  wrongAttempt: boolean
-): React.ReactNode {
-  const prompt = (puzzle.prompt || '').normalize('NFC');
-  const sentence = (puzzle.sentence || '').normalize('NFC');
-  const target = (puzzle.target || '').normalize('NFC');
-  const chosenWord = chosen.length > 0 ? cleanTile(chosen[0]) : '';
-
-  let slotStatus: 'empty' | 'filled' | 'correct' | 'wrong' = 'empty';
-  if (chosenWord) {
-    if (checked && isCorrect) slotStatus = 'correct';
-    else if (wrongAttempt) slotStatus = 'wrong';
-    else slotStatus = 'filled';
-  }
-
-  const slotNode = (
-    <span
-      className={`interactive-slot interactive-slot--${slotStatus}`}
-      aria-label={chosenWord ? `Selected: ${chosenWord}` : 'Blank slot: tap a tile'}
-    >
-      {chosenWord ? (
-        <span className="slot-pill-content">
-          {slotStatus === 'correct' && (
-            <span className="slot-status-icon slot-status-icon--ok" aria-hidden="true">✓</span>
-          )}
-          {slotStatus === 'wrong' && (
-            <span className="slot-status-icon slot-status-icon--err" aria-hidden="true">✗</span>
-          )}
-          <span className="slot-pill-word">{chosenWord}</span>
-        </span>
-      ) : (
-        <span className="slot-pill-placeholder">
-          <span className="slot-dash-line" aria-hidden="true">••••</span>
-          <span className="slot-hint-text">रिक्तम्</span>
-        </span>
-      )}
-    </span>
-  );
-
-  // If prompt has underscores (e.g. "____ मन्दं चलति।" or "____रदः गजः मन्दं चलति।")
-  const underscoreRegex = /_{2,}/;
-  if (underscoreRegex.test(prompt)) {
-    const parts = prompt.split(underscoreRegex);
-    return (
-      <span className="standard-sentence-wrap">
-        {parts[0] ? <span className="sentence-text-chunk">{parts[0]}</span> : null}
-        {slotNode}
-        {parts[1] ? <span className="sentence-text-chunk">{parts[1]}</span> : null}
-      </span>
-    );
-  }
-
-  // If sentence contains target and target is not empty
-  if (sentence && target && sentence.includes(target)) {
-    const matchIdx = sentence.indexOf(target);
-    const before = sentence.slice(0, matchIdx);
-    const after = sentence.slice(matchIdx + target.length);
-    return (
-      <span className="standard-sentence-wrap">
-        {before ? <span className="sentence-text-chunk">{before}</span> : null}
-        {slotNode}
-        {after ? <span className="sentence-text-chunk">{after}</span> : null}
-      </span>
-    );
-  }
-
-  // Standalone word or custom question prompt
-  const displayPrompt = prompt || target;
-  return (
-    <span className="standard-sentence-wrap standalone-target">
-      <span className="target-main-word">{displayPrompt}</span>
-    </span>
-  );
+/** Underscores in a prompt are the answer slot a whole-word tile can lock into. */
+function renderPromptWithHole(text: string): React.ReactNode {
+  const parts = text.split('____');
+  if (parts.length === 1) return text;
+  const nodes: React.ReactNode[] = [];
+  parts.forEach((part, index) => {
+    if (part) nodes.push(part);
+    if (index < parts.length - 1) {
+      nodes.push(<span key={`hole-${index}`} className="board-answer-hole">____</span>);
+    }
+  });
+  return <>{nodes}</>;
 }
 
 
@@ -791,6 +836,18 @@ function activeSectionChipId(chips: BoardSectionChip[], puzzleIndex: number): st
   return active;
 }
 
+/** Guess window before English and Sanskrit audio. Play all uses the same gap.
+ *  Must be a real delay — never speak in the same turn that shows the puzzle. */
+const PUZZLE_REVEAL_MS = 4000;
+
+/** Sanskrit only. Learn cards speak the target; other puzzles speak the sentence, else the word. */
+function spokenSanskrit(puzzle: BoardPuzzle, learn: boolean): string {
+  if (learn) return puzzle.target || '';
+  const sentence = (puzzle.sentence || '').trim();
+  if (sentence) return sentence;
+  return (puzzle.answer ?? puzzle.target) || '';
+}
+
 const Board: React.FC<BoardProps> = ({
   onNavigateToHome,
   onNavigateToReader,
@@ -802,7 +859,7 @@ const Board: React.FC<BoardProps> = ({
   const [fallbackPuzzles, setFallbackPuzzles] = useState<BoardPuzzle[]>([]);
   const [packLabels, setPackLabels] = useState<PackLabel[]>([]);
   const [visitorBlocks, setVisitorBlocks] = useState<VisitorBlock[]>([]);
-  const [activeShelf, setActiveShelf] = useState<ShelfId>(() => (localStorage.getItem('last-board-shelf') as ShelfId) || 'prarambhah');
+  const [activeShelf, setActiveShelf] = useState<ShelfId>('prarambhah');
   const [chosen, setChosen] = useState<string[]>([]);
   const [checked, setChecked] = useState(false);
   const [wrongAttempt, setWrongAttempt] = useState(false);
@@ -836,6 +893,32 @@ const Board: React.FC<BoardProps> = ({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isSearchOpen]);
+  const [playingAll, setPlayingAll] = useState(false);
+  /** Index into the real join order while Hand is showing. Null means the hand is off. */
+  const [handStep, setHandStep] = useState<number | null>(null);
+  const handRef = useRef<HTMLDivElement | null>(null);
+  const [dimOthers, setDimOthers] = useState(false);
+  const [solverIndices, setSolverIndices] = useState<number[]>([]);
+  const [lockIndex, setLockIndex] = useState<number | null>(null);
+  const [joinGhost, setJoinGhost] = useState<{ word: string; left: number; top: number } | null>(null);
+  const [learnPulse, setLearnPulse] = useState(false);
+  const [meaningShown, setMeaningShown] = useState(false);
+  const [leadHighlight, setLeadHighlight] = useState(false);
+  const playingRef = useRef(false);
+  const playTokenRef = useRef(0);
+  const playTimersRef = useRef<number[]>([]);
+  const playWakeRef = useRef<Array<() => void>>([]);
+  const playDockRef = useRef<HTMLDivElement | null>(null);
+  const revealTimerRef = useRef<number | null>(null);
+  const revealSpeakTimerRef = useRef<number | null>(null);
+  const revealGenRef = useRef<number | null>(null);
+  const revealWatchRef = useRef(0);
+  const playCtxRef = useRef({
+    activePuzzles: [] as BoardPuzzle[],
+    activeShelf: 'prarambhah' as ShelfId,
+    puzzleIndex: 0,
+    applySelection: (_tiles: string[]) => {},
+  });
   const [showHelp, setShowHelp] = useState<boolean>(() => {
     try {
       return localStorage.getItem('jodo-help-collapsed') !== 'true';
@@ -916,6 +999,34 @@ const Board: React.FC<BoardProps> = ({
     ? Math.max(0, Math.min(rawPuzzleIndex, activePuzzles.length - 1))
     : 0;
   const activePuzzle = activePuzzles[puzzleIndex] ?? activePuzzles[0] ?? fallbackPuzzles[0] ?? null;
+  // Freeze the on-screen tile order for this puzzle. A click must not sort the
+  // chosen tile to index 0 (the नदी card's next puzzle starts with that word).
+  const tileOrderRef = useRef<{ key: string; tiles: string[] } | null>(null);
+  const tileOrderKey = `${activeShelf}\0${puzzleIndex}\0${activePuzzle?.target ?? ''}\0${activePuzzle?.prompt ?? ''}\0${activePuzzle?.sentence ?? ''}`;
+  const sourceTiles = activePuzzle?.tiles ?? [];
+  const sameTileBag = (left: string[], right: string[]) => {
+    if (left.length !== right.length) return false;
+    const counts = new Map<string, number>();
+    left.forEach((tile) => {
+      const key = cleanTile(tile);
+      counts.set(key, (counts.get(key) ?? 0) + 1);
+    });
+    return right.every((tile) => {
+      const key = cleanTile(tile);
+      const leftCount = counts.get(key) ?? 0;
+      if (leftCount <= 0) return false;
+      counts.set(key, leftCount - 1);
+      return true;
+    });
+  };
+  if (!tileOrderRef.current || tileOrderRef.current.key !== tileOrderKey || !sameTileBag(tileOrderRef.current.tiles, sourceTiles)) {
+    tileOrderRef.current = { key: tileOrderKey, tiles: sourceTiles.slice() };
+  }
+  const shownTiles = tileOrderRef.current.tiles;
+  const puzzleView = useMemo(() => {
+    if (!activePuzzle) return null;
+    return shownTiles === activePuzzle.tiles ? activePuzzle : { ...activePuzzle, tiles: shownTiles };
+  }, [activePuzzle, shownTiles]);
   const activePackLabel = packLabels.find((item) => item.title === activeBoardShelf?.native) ?? null;
   const packTitle = activePackLabel?.title ?? activeBoardShelf?.native ?? '';
   const packGloss = activePackLabel?.gloss ?? '';
@@ -923,10 +1034,337 @@ const Board: React.FC<BoardProps> = ({
   const isLearnPhase = puzzlePhase === 'learn';
   const isMatchMeaningPhase = puzzlePhase === 'match-meaning';
 
-  const isCorrect = evaluateChosen(activePuzzle, chosen);
+  const isCorrect = evaluateChosen(puzzleView, chosen);
+
+
+  const clearBoardMotion = () => {
+    puzzleBoardRef.current?.querySelectorAll<HTMLElement>('[data-board-tile]').forEach((el) => {
+      el.getAnimations().forEach((anim) => anim.cancel());
+    });
+    setDimOthers(false);
+    setSolverIndices([]);
+    setLockIndex(null);
+    setJoinGhost(null);
+    setLearnPulse(false);
+  };
+
+  const clearRevealTimer = () => {
+    if (revealTimerRef.current != null) {
+      window.clearTimeout(revealTimerRef.current);
+      revealTimerRef.current = null;
+    }
+    if (revealSpeakTimerRef.current != null) {
+      window.clearTimeout(revealSpeakTimerRef.current);
+      revealSpeakTimerRef.current = null;
+    }
+  };
+
+  const clearLeadHighlight = () => {
+    revealWatchRef.current += 1;
+    revealGenRef.current = null;
+    setLeadHighlight(false);
+  };
+
+  /** Highlight while the auto-started Sanskrit clip is the current playback. */
+  const speakLead = (spoken: string) => {
+    const textToSpeak = (spoken || '').trim();
+    if (!textToSpeak) {
+      clearLeadHighlight();
+      return;
+    }
+    const before = getSpeechGeneration();
+    playPronunciation(textToSpeak);
+    const gen = getSpeechGeneration();
+    if (gen === before) {
+      clearLeadHighlight();
+      return;
+    }
+    revealGenRef.current = gen;
+    setLeadHighlight(true);
+    const watch = revealWatchRef.current + 1;
+    revealWatchRef.current = watch;
+    const startedAt = Date.now();
+    let sawSpeaking = false;
+    const tick = () => {
+      if (revealWatchRef.current !== watch) return;
+      if (getSpeechGeneration() !== gen) {
+        setLeadHighlight(false);
+        if (revealGenRef.current === gen) revealGenRef.current = null;
+        return;
+      }
+      const synth = window.speechSynthesis;
+      const active = !!(synth && (synth.speaking || synth.pending));
+      if (active) sawSpeaking = true;
+      if (sawSpeaking && !active) {
+        setLeadHighlight(false);
+        if (revealGenRef.current === gen) revealGenRef.current = null;
+        return;
+      }
+      if (!sawSpeaking && Date.now() - startedAt > 6000) {
+        setLeadHighlight(false);
+        return;
+      }
+      window.setTimeout(tick, 160);
+    };
+    window.setTimeout(tick, 200);
+  };
+
+  const playSleep = (ms: number) => new Promise<void>((resolve) => {
+    let settled = false;
+    const done = () => {
+      if (settled) return;
+      settled = true;
+      window.clearTimeout(timer);
+      playWakeRef.current = playWakeRef.current.filter((fn) => fn !== done);
+      playTimersRef.current = playTimersRef.current.filter((id) => id !== timer);
+      resolve();
+    };
+    const timer = window.setTimeout(done, ms);
+    playTimersRef.current.push(timer);
+    playWakeRef.current.push(done);
+  });
+
+  const nextPaint = () => new Promise<void>((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+  });
+
+  /** Pause: stop timers, speech, and in-progress motion. Leave this puzzle unsolved. */
+  const stopBoardPlayAll = () => {
+    if (!playingRef.current) return;
+    playTokenRef.current += 1;
+    playingRef.current = false;
+    setPlayingAll(false);
+    playTimersRef.current.forEach((id) => window.clearTimeout(id));
+    playTimersRef.current = [];
+    const wake = playWakeRef.current.splice(0);
+    wake.forEach((fn) => fn());
+    clearRevealTimer();
+    clearLeadHighlight();
+    stopPronunciation();
+    clearBoardMotion();
+    setChosen([]);
+    setChecked(false);
+    setWrongAttempt(false);
+  };
+
+  const finishBoardPlayAll = (token: number) => {
+    if (token !== playTokenRef.current) return;
+    playingRef.current = false;
+    setPlayingAll(false);
+    clearBoardMotion();
+  };
+
+  const animateBoardJoin = async (token: number, puzzle: BoardPuzzle, move: SolvingMove) => {
+    const alive = () => token === playTokenRef.current && playingRef.current;
+    const root = puzzleBoardRef.current;
+    if (!root) return false;
+    const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-board-tile]'));
+    const movers: HTMLButtonElement[] = [];
+    for (const index of move.indices) {
+      const el = buttons.find((button) => Number(button.dataset.boardTile) === index);
+      if (!el) return false;
+      movers.push(el);
+    }
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    const centerOf = (rect: DOMRect) => ({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+    const answerEl = root.querySelector<HTMLElement>('.jodo-blank-slot')
+      || root.querySelector<HTMLElement>('.board-answer-hole')
+      || root.querySelector<HTMLElement>('.puzzle-prompt');
+    const rects = movers.map((el) => el.getBoundingClientRect());
+    const centers = rects.map(centerOf);
+    const slotCenter = answerEl ? centerOf(answerEl.getBoundingClientRect()) : null;
+    const meet = slotCenter ?? {
+      x: centers.reduce((sum, point) => sum + point.x, 0) / centers.length,
+      y: centers.reduce((sum, point) => sum + point.y, 0) / centers.length,
+    };
+    const single = movers.length === 1;
+    setSolverIndices(move.indices);
+    const tileCount = root.querySelectorAll('[data-board-tile]').length;
+    setDimOthers(tileCount > movers.length);
+    if (single) setLockIndex(move.indices[0] ?? null);
+
+    const fly = (el: HTMLButtonElement, tx: number, ty: number, withPop: boolean) => {
+      const frames: Keyframe[] = reduce
+        ? [
+          { transform: 'translate(0px, 0px) scale(1)', offset: 0 },
+          { transform: 'translate(0px, 0px) scale(1.14)', offset: 0.55 },
+          { transform: 'translate(0px, 0px) scale(1)', offset: 1 },
+        ]
+        : withPop
+          ? [
+            { transform: 'translate(0px, 0px) scale(1)', offset: 0 },
+            { transform: `translate(${tx * 0.14}px, ${ty * 0.14 - 12}px) scale(1.08)`, offset: 0.16 },
+            { transform: `translate(${tx}px, ${ty}px) scale(1.02)`, offset: 0.7 },
+            { transform: `translate(${tx}px, ${ty}px) scale(1.16)`, offset: 0.86 },
+            { transform: `translate(${tx}px, ${ty}px) scale(1)`, offset: 1 },
+          ]
+          : [
+            { transform: 'translate(0px, 0px) scale(1)', offset: 0 },
+            { transform: `translate(${tx * 0.16}px, ${ty * 0.16 - 14}px) scale(1.08)`, offset: 0.2 },
+            { transform: `translate(${tx}px, ${ty}px) scale(1.05)`, offset: 1 },
+          ];
+      return el.animate(frames, {
+        duration: reduce ? 420 : withPop ? 1650 : 1150,
+        easing: reduce ? 'ease-out' : 'cubic-bezier(0.22, 0.82, 0.2, 1)',
+        fill: 'forwards',
+      }).finished.catch(() => undefined);
+    };
+
+    if (single) {
+      const from = centers[0];
+      const tx = reduce || !from ? 0 : meet.x - from.x;
+      const ty = reduce || !from ? 0 : meet.y - from.y;
+      await fly(movers[0], tx, ty, true);
+      return alive();
+    }
+
+    if (!reduce) {
+      await Promise.all(movers.map((el, index) => {
+        const spread = movers.length === 2 ? (index === 0 ? -26 : 26) : (index - (movers.length - 1) / 2) * 36;
+        const from = centers[index];
+        const tx = meet.x - from.x + spread;
+        const ty = meet.y - from.y;
+        return fly(el, tx, ty, false);
+      }));
+    }
+    if (!alive()) return false;
+
+    const word = ((puzzle.answer ?? puzzle.target) || '').normalize('NFC');
+    movers.forEach((el) => {
+      el.animate(
+        [{ opacity: 1 }, { opacity: 0 }],
+        { duration: reduce ? 180 : 260, fill: 'forwards', easing: 'ease-out' },
+      );
+    });
+    const slotNow = root.querySelector<HTMLElement>('.jodo-blank-slot')
+      || root.querySelector<HTMLElement>('.board-answer-hole')
+      || root.querySelector<HTMLElement>('.puzzle-prompt');
+    const landed = slotNow ? centerOf(slotNow.getBoundingClientRect()) : meet;
+    setJoinGhost({ word, left: landed.x, top: landed.y });
+    await playSleep(reduce ? 420 : 520);
+    return alive();
+  };
+
+  const runBoardPlayAll = async (token: number, shelf: ShelfId, startIndex: number) => {
+    const alive = () => token === playTokenRef.current && playingRef.current;
+    let index = startIndex;
+    while (alive()) {
+      if (playCtxRef.current.activeShelf !== shelf) {
+        finishBoardPlayAll(token);
+        return;
+      }
+      const puzzle = playCtxRef.current.activePuzzles[index];
+      if (!puzzle) {
+        finishBoardPlayAll(token);
+        return;
+      }
+      if (playCtxRef.current.puzzleIndex !== index) {
+        setPuzzleIndexByShelf((current) => ({ ...current, [shelf]: index }));
+      }
+      setChosen([]);
+      setChecked(false);
+      setWrongAttempt(false);
+      clearBoardMotion();
+      setMeaningShown(false);
+      clearLeadHighlight();
+      await nextPaint();
+      if (!alive()) return;
+
+      const fresh = playCtxRef.current.activePuzzles[index] ?? puzzle;
+      const learn = (fresh.phase || '').trim() === 'learn';
+      if (!learn) {
+        const move = findSolvingSelection(fresh);
+        if (move) {
+          const joined = await animateBoardJoin(token, fresh, move);
+          if (!alive()) return;
+          if (joined) {
+            playCtxRef.current.applySelection(move.selection);
+            await nextPaint();
+            if (!alive()) return;
+            clearBoardMotion();
+          }
+        }
+      } else {
+        setLearnPulse(true);
+      }
+      if (!alive()) return;
+      // Picture and Sanskrit word stay up; English stays hidden through the guess gap.
+      // The mount effect must not also speak — its timer was cleared in startBoardPlayAll.
+      setMeaningShown(false);
+      clearRevealTimer();
+      await playSleep(PUZZLE_REVEAL_MS);
+      if (!alive()) return;
+      setMeaningShown(true);
+      await playSleep(0);
+      if (!alive()) return;
+      speakLead(spokenSanskrit(fresh, learn));
+      await playSleep(1800);
+      if (!alive()) return;
+      if (learn) setLearnPulse(false);
+
+      if (index + 1 >= playCtxRef.current.activePuzzles.length) {
+        finishBoardPlayAll(token);
+        return;
+      }
+      index += 1;
+    }
+  };
+
+  const startBoardPlayAll = () => {
+    if (playingRef.current) {
+      stopBoardPlayAll();
+      return;
+    }
+    if (!activePuzzles.length || !activePuzzle) return;
+    setHandStep(null);
+    clearRevealTimer();
+    clearLeadHighlight();
+    setMeaningShown(false);
+    stopPronunciation();
+    const token = playTokenRef.current + 1;
+    playTokenRef.current = token;
+    playingRef.current = true;
+    setPlayingAll(true);
+    void runBoardPlayAll(token, activeShelf, puzzleIndex);
+  };
+
+  useLayoutEffect(() => {
+    if (!playingAll) return undefined;
+    const place = () => {
+      const header = document.querySelector<HTMLElement>('.dashboard-header');
+      const bottom = header ? header.getBoundingClientRect().bottom : 0;
+      const dock = playDockRef.current;
+      if (!dock) return;
+      if (bottom > 8) dock.style.setProperty('--board-playall-top', `${Math.round(bottom)}px`);
+      else dock.style.removeProperty('--board-playall-top');
+    };
+    place();
+    const header = document.querySelector('.dashboard-header');
+    const observer = header ? new ResizeObserver(place) : null;
+    if (header && observer) observer.observe(header);
+    window.addEventListener('scroll', place, true);
+    window.addEventListener('resize', place);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('scroll', place, true);
+      window.removeEventListener('resize', place);
+    };
+  }, [playingAll]);
+
+  useEffect(() => () => {
+    playTokenRef.current += 1;
+    playTimersRef.current.forEach((id) => window.clearTimeout(id));
+    playWakeRef.current.splice(0).forEach((fn) => fn());
+    clearRevealTimer();
+    // Leaving /board cancels the guess timer and any auto Sanskrit still queued.
+    stopPronunciation();
+    playingRef.current = false;
+    revealGenRef.current = null;
+  }, []);
 
   const chooseShelf = (nextShelf: ShelfId) => {
     const switched = nextShelf !== activeShelf;
+    if (switched) stopBoardPlayAll();
     setActiveShelf(nextShelf);
     if (switched) {
       setPuzzleIndexByShelf((current) => ({ ...current, [nextShelf]: 0 }));
@@ -934,7 +1372,6 @@ const Board: React.FC<BoardProps> = ({
     setChecked(false);
     setWrongAttempt(false);
     setChosen([]);
-    localStorage.setItem('last-board-shelf', nextShelf);
     setTimeout(() => {
       puzzleBoardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 60);
@@ -1013,9 +1450,9 @@ const Board: React.FC<BoardProps> = ({
   }, [searchQuery, searchScope, activeShelf, allShelvesWithPuzzles]);
 
   const handleSelectSearchResult = (match: BoardSearchMatch) => {
+    if (playingRef.current) stopBoardPlayAll();
     if (match.shelfId !== activeShelf) {
       setActiveShelf(match.shelfId);
-      localStorage.setItem('last-board-shelf', match.shelfId);
     }
     setPuzzleIndexByShelf((current) => ({
       ...current,
@@ -1041,7 +1478,7 @@ const Board: React.FC<BoardProps> = ({
       : (isPrashnaPart ? 'प्रश्न' : (activeBoardShelf?.skin ?? ''));
   const displayPackTitle = isPrashnaPart ? 'प्रश्न-पदानि' : packTitle;
   const displayPackGloss = isPrashnaPart ? 'who · what · where · when · how' : packGloss;
-  // जोडो: no Part banner — board-tip alone covers the instructions
+  // जोडो: no Part banner — the in-card next cue covers the tap instructions
   const phaseBanner = isPrashnaPart
     ? 'Part 2 — question words.'
     : '';
@@ -1096,9 +1533,21 @@ const Board: React.FC<BoardProps> = ({
     }
   };
 
+  playCtxRef.current = {
+    activePuzzles,
+    activeShelf,
+    puzzleIndex,
+    applySelection,
+  };
+
   const toggleTile = (tile: string) => {
     const clean = cleanTile(tile);
     if (!clean) return;
+    // Drop any play-all fly transform so the clicked tile cannot stay visually moved.
+    clearBoardMotion();
+    setHandStep(null);
+    // A tap during Auto play stops the show and becomes a normal manual tap.
+    if (playingRef.current) stopBoardPlayAll();
     // Selecting a tile must always work — never freeze. Wrong/other click replaces and re-evaluates.
     if (!isJodoSkin) {
       applySelection([clean]);
@@ -1149,16 +1598,54 @@ const Board: React.FC<BoardProps> = ({
     setChosen([]);
   };
 
-  // Unlock cream tiles on every puzzle advance / shelf change (guards race or sticky checked+chosen,
-  // especially back-to-back same targets like नदी → नदी).
+  // Clear a finished selection only when the shelf or puzzle actually changes.
+  // A cream-tile click does not change puzzleIndex, so it must not wipe `chosen`
+  // and send the next mark back to tile 0 (नदी at slot 6, then the next card).
   useEffect(() => {
     setChosen([]);
     setChecked(false);
     setWrongAttempt(false);
+    setHandStep(null);
   }, [puzzleIndex, activeShelf]);
+
+  // Picture + Sanskrit word first. English text waits PUZZLE_REVEAL_MS.
+  // This path stays silent: Auto play is the only sequence that speaks, and Hear
+  // speaks only when that button is tapped. Do not clear chosen or the puzzle index.
+  const puzzleIdentity = `${activeShelf}:${puzzleIndex}:${loading ? 1 : 0}:${activePuzzle?.target ?? ''}:${activePuzzle?.prompt ?? ''}`;
+  useEffect(() => {
+    clearLeadHighlight();
+    clearRevealTimer();
+    if (playingRef.current) return undefined;
+    setMeaningShown(false);
+    const puzzle = activePuzzle;
+    if (loading || !puzzle) return undefined;
+    const startedAt = Date.now();
+    const arm = (delay: number) => {
+      const timer = window.setTimeout(() => {
+        if (revealTimerRef.current === timer) revealTimerRef.current = null;
+        if (playingRef.current) return;
+        const elapsed = Date.now() - startedAt;
+        if (elapsed < PUZZLE_REVEAL_MS - 25) {
+          arm(PUZZLE_REVEAL_MS - elapsed);
+          return;
+        }
+        setMeaningShown(true);
+      }, delay);
+      revealTimerRef.current = timer;
+    };
+    arm(PUZZLE_REVEAL_MS);
+    return () => {
+      clearRevealTimer();
+      // Leaving this card stops a manual clip. Auto play owns its own speech.
+      if (!playingRef.current) stopPronunciation();
+    };
+    // Puzzle identity is the trigger. Do not depend on the puzzle object reference.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [puzzleIdentity]);
 
   /** Navigate to previous puzzle on this shelf. */
   const goPrev = () => {
+    if (playingRef.current) stopBoardPlayAll();
     if (!activePuzzles.length) return;
     setPuzzleIndexByShelf((current) => {
       const idx = current[activeShelf] ?? 0;
@@ -1170,6 +1657,7 @@ const Board: React.FC<BoardProps> = ({
 
   /** Advance without wrapping — used by Next and auto-advance. */
   const goNext = () => {
+    if (playingRef.current) stopBoardPlayAll();
     if (!activePuzzles.length) return;
     setPuzzleIndexByShelf((current) => {
       const idx = current[activeShelf] ?? 0;
@@ -1181,6 +1669,7 @@ const Board: React.FC<BoardProps> = ({
 
   /** Again on the last puzzle — restart shelf at 0. */
   const restartShelf = () => {
+    if (playingRef.current) stopBoardPlayAll();
     if (!activePuzzles.length) return;
     setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: 0 }));
     resetPuzzleUi();
@@ -1191,19 +1680,9 @@ const Board: React.FC<BoardProps> = ({
     else goNext();
   };
 
-  // After a correct cream-tile reveal, auto-advance so later मात्रा rows still appear if Next is missed.
-  // Learn cards never auto-advance — child must hear, then click Next.
-  // Do not wrap on the last puzzle (that felt like the chain broke).
-  useEffect(() => {
-    if (isLearnPhase) return undefined;
-    if (!checked || !isCorrect || activePuzzles.length < 2) return undefined;
-    if (puzzleIndex + 1 >= activePuzzles.length) return undefined;
-    const timer = window.setTimeout(() => {
-      goNext();
-    }, 8000);
-    return () => window.clearTimeout(timer);
-    // goNext closes over puzzleIndex/activeShelf; listing those deps avoids stale advance / double-fire.
-  }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length, isLearnPhase]);
+  // A correct tap stays on this card (Click Next). It must not advance the shelf:
+  // the following puzzle can list the same word in slot 1 and would look like the
+  // tile jumped there and was tagged next again. Auto play is what walks forward.
 
   const sectionChips: BoardSectionChip[] =
     activeShelf === 'prarambhah' ? buildMatraSectionChips(activePuzzles)
@@ -1222,6 +1701,7 @@ const Board: React.FC<BoardProps> = ({
   }, [activeChipId, isChipsExpanded]);
 
   const jumpToSection = (start: number) => {
+    if (playingRef.current) stopBoardPlayAll();
     if (start < 0 || !activePuzzles.length) return;
     const clamped = Math.max(0, Math.min(start, activePuzzles.length - 1));
     setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: clamped }));
@@ -1236,7 +1716,70 @@ const Board: React.FC<BoardProps> = ({
   const activeStep = (checked && isCorrect) ? 2 : 1;
   const graphicWord = ((activePuzzle?.answer ?? activePuzzle?.target ?? activePuzzle?.highlight) || '').normalize('NFC');
   const puzzleGraphic = graphicWord ? iconForExampleWord(graphicWord) : '✨';
+  const leadWord = (activePuzzle?.answer ?? activePuzzle?.target) || '';
+  const leadEnglish = isLearnPhase
+    ? (activePuzzle?.gloss ?? activePuzzle?.english ?? '')
+    : (activePuzzle?.english ?? '');
+  const leadMark = leadHighlight ? ' puzzle-lead-highlight' : '';
   const activeShelfInfo = SHELF_DESCRIPTIONS[activeShelf];
+  const nextCue = describeNextTap(puzzleView, chosen, {
+    learn: isLearnPhase,
+    solved: checked && isCorrect,
+    last: isLastPuzzle,
+  });
+  const markedTile = playingAll ? null : nextCue.markIndex;
+
+  const stopHand = () => setHandStep(null);
+
+  /** Silent hand. First press points at the real next tile; another press shows the following join tap. */
+  const onHand = () => {
+    if (playingRef.current) stopBoardPlayAll();
+    stopPronunciation();
+    const move = puzzleView ? findSolvingSelection(puzzleView) : null;
+    const indices = move?.indices ?? [];
+    if (!indices.length) {
+      stopHand();
+      return;
+    }
+    setHandStep((current) => {
+      if (current == null) {
+        const marked = nextCue.markIndex;
+        const at = marked == null ? 0 : indices.indexOf(marked);
+        return at >= 0 ? at : 0;
+      }
+      return current + 1 < indices.length ? current + 1 : null;
+    });
+  };
+
+  useLayoutEffect(() => {
+    if (handStep == null) return undefined;
+    const move = puzzleView ? findSolvingSelection(puzzleView) : null;
+    const tileIndex = move?.indices[handStep];
+    if (tileIndex == null) return undefined;
+    const place = () => {
+      const node = handRef.current;
+      const el = puzzleBoardRef.current?.querySelector<HTMLElement>(`[data-board-tile="${tileIndex}"]`);
+      if (!node || !el) return;
+      const rect = el.getBoundingClientRect();
+      node.style.left = `${rect.left + rect.width * 0.62}px`;
+      node.style.top = `${rect.top + rect.height * 0.58}px`;
+    };
+    const kick = () => {
+      const node = handRef.current;
+      if (!node) return;
+      node.style.animation = 'none';
+      void node.offsetWidth;
+      node.style.animation = '';
+    };
+    place();
+    kick();
+    window.addEventListener('scroll', place, true);
+    window.addEventListener('resize', place);
+    return () => {
+      window.removeEventListener('scroll', place, true);
+      window.removeEventListener('resize', place);
+    };
+  }, [handStep, puzzleIndex, activeShelf, puzzleView]);
 
   return <main className="board-shell">
     {/* Top Website Navigation Breadcrumbs & Badge */}
@@ -1280,6 +1823,316 @@ const Board: React.FC<BoardProps> = ({
       <div className="board-mark" aria-hidden="true">ॐ</div>
     </div>
 
+    <nav className="wing-nav" aria-label="Shelves">
+      {shelfButtons.map((item) => (
+        <button
+          key={item.id}
+          className={activeShelf === item.id ? 'wing-button active' : 'wing-button'}
+          onClick={() => chooseShelf(item.id)}
+        >
+          {SHELF_DESCRIPTIONS[item.id]?.icon ? `${SHELF_DESCRIPTIONS[item.id].icon} ` : ''}{item.label}
+        </button>
+      ))}
+    </nav>
+
+    <div className="board-puzzle-stage">
+    <div className="board-tip-row">
+      {(!activePuzzle || loading || error) && (
+        <p className="board-tip" aria-live="polite">{nextCue.text || 'Tap the marked cream tile.'}</p>
+      )}
+      {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
+      <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
+    </div>
+
+    {loading && <p className="board-status">Loading today&apos;s shelf…</p>}
+    {error && <p className="board-status error">{error}</p>}
+
+    {!loading && !error && activePuzzle && <>
+      <section ref={puzzleBoardRef} className="puzzle-board">
+        <div className="puzzle-meta">
+          <div className="meta-left">
+            <span className="meta-skin-badge">{displaySkin}</span>
+            <span className="meta-hint-pill">
+              {isLearnPhase
+                ? '📖 Learn word'
+                : isJodoSkin
+                  ? '🎯 जोडो · Join tiles'
+                  : '👆 1 tile → Next'}
+            </span>
+          </div>
+          <div className="board-playall-slot">
+            {playingAll ? (
+              <span className="board-playall-spacer" aria-hidden="true" />
+            ) : (
+              <button
+                type="button"
+                className="board-playall"
+                onClick={startBoardPlayAll}
+                aria-pressed={false}
+                title="Auto play: picture and Sanskrit word, then English and audio, then the next puzzle"
+                aria-label="Auto play puzzles on this shelf"
+              >
+                ▶ Auto play
+              </button>
+            )}
+            <button
+              type="button"
+              className="board-playall board-playall--hand"
+              onClick={onHand}
+              aria-pressed={handStep != null}
+              title="Hand: point at the next tile with no audio. Press again for the next tap."
+              aria-label={handStep == null ? 'Show a hand on the next tile' : 'Show the hand on the next tap'}
+            >
+              ✋ Hand
+            </button>
+            {handStep != null && !playingAll && (
+              <button
+                type="button"
+                className="board-playall board-playall--pause"
+                onClick={stopHand}
+                title="Pause the hand"
+                aria-label="Pause the hand"
+              >
+                ⏸ Pause
+              </button>
+            )}
+          </div>
+          {playingAll && typeof document !== 'undefined' && createPortal(
+            <div ref={playDockRef} className="board-playall-dock" role="region" aria-label="Auto play">
+              <button
+                type="button"
+                className="board-playall board-playall--pause"
+                onClick={stopBoardPlayAll}
+                aria-pressed
+                title="Pause auto play"
+                aria-label="Pause auto play"
+              >
+                ⏸ Pause
+              </button>
+            </div>,
+            document.body,
+          )}
+          <div className="puzzle-nav-controls">
+            <button
+              type="button"
+              className="puzzle-nav-arrow"
+              onClick={goPrev}
+              disabled={puzzleIndex <= 0}
+              title="Previous Puzzle (पूर्वतन-पहेलिका)"
+              aria-label="Previous Puzzle"
+            >
+              ◀
+            </button>
+            <span className="meta-progress">
+              <strong>{puzzleIndex + 1}</strong> <span className="meta-total">/ {activePuzzles.length}</span>
+            </span>
+            <button
+              type="button"
+              className="puzzle-nav-arrow"
+              onClick={goNext}
+              disabled={puzzleIndex + 1 >= activePuzzles.length}
+              title="Next Puzzle (अग्रिम-पहेलिका)"
+              aria-label="Next Puzzle"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+
+        <div className="puzzle-progress-track" aria-hidden="true">
+          <div
+            className="puzzle-progress-bar"
+            style={{ width: `${Math.min(100, Math.round(((puzzleIndex + 1) / Math.max(1, activePuzzles.length)) * 100))}%` }}
+          />
+        </div>
+
+        {!isLearnPhase && !isJodoSkin && (
+          <ol className="puzzle-steps" aria-label="Puzzle steps">
+            <li className={activeStep === 1 ? 'active' : undefined}>
+              <span className="step-num" aria-hidden="true">1</span>
+              <span className="step-label">
+                <>Click a cream tile <small>(numbers on tiles)</small></>
+              </span>
+            </li>
+            <li className={activeStep === 2 ? 'active' : undefined}>
+              <span className="step-num" aria-hidden="true">2</span>
+              <span className="step-label">Click Next</span>
+            </li>
+          </ol>
+        )}
+
+        {/* जोडो heading already shows picture, word, and English. Skip the lead so they are not repeated. */}
+        {!(isJodoSkin && !isLearnPhase) && (
+          <div className="puzzle-lead">
+            <div className="puzzle-lead-graphic" aria-hidden="true">{puzzleGraphic}</div>
+            <p className={`puzzle-lead-word${learnPulse ? ' learn-word--settle' : ''}${leadMark}`}>{leadWord}</p>
+            <p className={`puzzle-lead-english${meaningShown ? leadMark : ''}`} aria-hidden={!meaningShown}>
+              {meaningShown ? leadEnglish : ''}
+            </p>
+          </div>
+        )}
+
+        {isLearnPhase ? (
+          <div className={`learn-card${learnPulse ? ' learn-card--settling' : ''}`}>
+            <button
+              className="hear-button"
+              type="button"
+              onClick={() => playPronunciation(activePuzzle.target)}
+            >
+              🔊 Hear
+            </button>
+            <div className="tile-row learn-tile-row">
+              {shownTiles.map((tile, index) => (
+                <button
+                  key={`${tile}-${index}`}
+                  className="puzzle-tile"
+                  type="button"
+                  data-board-tile={index}
+                  onClick={() => {
+                    if (playingRef.current) stopBoardPlayAll();
+                    playPronunciation(cleanTile(tile));
+                  }}
+                >
+                  <span className="tile-num" aria-hidden="true">{index + 1}</span>
+                  <span>{tile}</span>
+                </button>
+              ))}
+            </div>
+            <p className="board-next-hint" aria-live="polite">{nextCue.text}</p>
+            <div className="puzzle-actions">
+              <button ref={nextBtnRef} className="next-button learn-next" type="button" onClick={onNextOrAgain}>
+                {isLastPuzzle ? 'Play Again' : 'Next'}
+              </button>
+            </div>
+          </div>
+        ) : (
+          <>
+            {isJodoSkin ? (
+              <div className="jodo-prompt-card">
+                <div className="jodo-goal-bar">
+                  <span className="puzzle-lead-graphic" aria-hidden="true">{puzzleGraphic}</span>
+                  <span className="jodo-goal-tag">🎯 जोडो (Join):</span>
+                  <span className={`jodo-goal-target${leadMark}`}>{activePuzzle.target}</span>
+                  {meaningShown && activePuzzle.english && (
+                    <span className={`jodo-goal-meaning${leadMark}`} title="Meaning in English">
+                      ({activePuzzle.english})
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    className="jodo-sound-btn"
+                    onClick={() => playPronunciation(activePuzzle.target)}
+                    title={`Hear pronunciation for ${activePuzzle.target}`}
+                    aria-label={`Hear ${activePuzzle.target}`}
+                  >
+                    🔊
+                  </button>
+                </div>
+                <div className="jodo-sentence-line">
+                  {renderJodoSentenceWithSlot(activePuzzle.sentence, activePuzzle.target, chosen)}
+                </div>
+              </div>
+            ) : (
+              <div className="standard-prompt-block">
+                <p className="puzzle-prompt">
+                  {isMatchMeaningPhase
+                    ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
+                    : renderPromptWithHole(activePuzzle.prompt ?? activePuzzle.target)}
+                </p>
+              </div>
+            )}
+
+            {!(checked && isCorrect) && (
+              <p className="board-next-hint" aria-live="polite">{nextCue.text}</p>
+            )}
+            <div className="tile-row">
+              {shownTiles.map((tile, index) => {
+                const classes = ['puzzle-tile'];
+                if (chosen.includes(cleanTile(tile))) classes.push('chosen');
+                if (playingAll && dimOthers && !solverIndices.includes(index)) classes.push('puzzle-tile--dim');
+                if (playingAll && solverIndices.includes(index)) classes.push('puzzle-tile--magnet');
+                if (lockIndex === index) classes.push('puzzle-tile--lock');
+                if (markedTile === index) classes.push('puzzle-tile--next');
+                return (
+                  <button
+                    key={`${tile}-${index}`}
+                    type="button"
+                    data-board-tile={index}
+                    className={classes.join(' ')}
+                    onClick={() => toggleTile(tile)}
+                  >
+                    <span className="tile-num" aria-hidden="true">{index + 1}</span>
+                    <span>{tile}</span>
+                    {markedTile === index && <em className="tile-next-tag">next</em>}
+                  </button>
+                );
+              })}
+            </div>
+
+            {checked && isCorrect && (
+              <div className="puzzle-result correct">
+                <p className="board-next-hint" aria-live="polite">{nextCue.text}</p>
+                {hasNextPuzzle && (
+                  <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>
+                    {isLastPuzzle ? 'Play Again' : 'Next'}
+                  </button>
+                )}
+                <div className="puzzle-success-banner">
+                  <span className="success-emoji">🎉</span>
+                  <span className="success-text">उत्तमम्! Correct!</span>
+                </div>
+                <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
+                <div className="result-audio-row">
+                  <button
+                    className="hear-button hear-button--inline hear-button--subtle"
+                    type="button"
+                    onClick={() => playPronunciation(activePuzzle.sentence || activePuzzle.target)}
+                    title="Hear complete sentence"
+                  >
+                    🔊 Hear Sentence
+                  </button>
+                  {isJodoSkin && activePuzzle.target && (
+                    <button
+                      className="hear-button hear-button--inline hear-button--subtle"
+                      type="button"
+                      onClick={() => playPronunciation(activePuzzle.target)}
+                      title={`Hear letter sound: ${activePuzzle.target}`}
+                    >
+                      🔊 Hear &apos;{activePuzzle.target}&apos;
+                    </button>
+                  )}
+                </div>
+                {activePuzzle.explanation && <p className="result-explanation">💡 {activePuzzle.explanation}</p>}
+                {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
+              </div>
+            )}
+            {wrongAttempt && (
+              <div className="puzzle-result wrong-feedback">
+                <span className="wrong-icon">🤔</span>
+                <div className="wrong-content">
+                  <strong>{wrongAttemptMessage}</strong>
+                  <button type="button" className="reset-try-btn" onClick={resetPuzzleUi}>Reset selection</button>
+                </div>
+              </div>
+            )}
+          </>
+        )}
+      </section>
+
+      {packTitle && <div className="pack-shelf" aria-label="Packs">
+        <div className="pack-card active">
+          <strong>{displayPackTitle}</strong>
+          {displayPackGloss && <small>{displayPackGloss}</small>}
+        </div>
+      </div>}
+
+      {activeShelf === 'sariram' && <aside className="board-sidebar" aria-label="Body anecdote">
+        <p>{BODY_ANECDOTE}</p>
+      </aside>}
+    </>}
+
+    </div>
+
     {/* Instructions Banner for Beginners (Collapsible) */}
     <div className="jodo-guide-banner">
       <div className="jodo-guide-header" onClick={toggleHelp} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleHelp(); }}>
@@ -1295,32 +2148,21 @@ const Board: React.FC<BoardProps> = ({
         <div className="jodo-guide-content">
           <div className="jodo-guide-step">
             <span className="jodo-step-badge">Step 1</span>
-            <p><strong>Observe the target word</strong> displayed in large Sanskrit letters inside the puzzle card.</p>
+            <p><strong>Read the word</strong> in large Sanskrit letters on the card.</p>
           </div>
           <div className="jodo-guide-step">
             <span className="jodo-step-badge">Step 2</span>
-            <p><strong>Tap cream tiles in sequence</strong> to blend consonants and vowel matras (e.g., tap <span className="jodo-sample-tile">क</span> then <span className="jodo-sample-tile">ा</span> to make <span className="jodo-sample-tile">का</span>).</p>
+            <p><strong>Tap cream tiles in order</strong> — <span className="jodo-sample-tile">क</span> then <span className="jodo-sample-tile">ा</span> makes <span className="jodo-sample-tile">का</span>.</p>
           </div>
           <div className="jodo-guide-step">
             <span className="jodo-step-badge">Step 3</span>
-            <p><strong>Success!</strong> The illustration, meaning, and sentence will appear automatically. Tap <span className="jodo-sample-next">Next Puzzle ▶</span> to advance.</p>
+            <p><strong>Picture, meaning, and sentence appear</strong> — tap <span className="jodo-sample-next">Next Puzzle ▶</span>.</p>
           </div>
         </div>
       )}
     </div>
 
-    <nav className="wing-nav" aria-label="Shelves">
-      {shelfButtons.map((item) => (
-        <button
-          key={item.id}
-          className={activeShelf === item.id ? 'wing-button active' : 'wing-button'}
-          onClick={() => chooseShelf(item.id)}
-        >
-          {SHELF_DESCRIPTIONS[item.id]?.icon ? `${SHELF_DESCRIPTIONS[item.id].icon} ` : ''}{item.label}
-        </button>
-      ))}
-    </nav>
-
+    <div className="board-after-puzzle">
     {/* Search Bar for Tile Puzzles */}
     <section className="board-search-section" aria-label="Search Tile Puzzles">
       <div className="board-search-bar-wrap">
@@ -1579,293 +2421,23 @@ const Board: React.FC<BoardProps> = ({
       </div>
     )}
 
-    <div className="board-tip-row">
-      <p className="board-tip">
-        <span className="tip-bulb" aria-hidden="true">💡</span>
-        {isLearnPhase
-          ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
-          : isJodoSkin
-            ? <>Click letter chips to join them (e.g. क then आ) — picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
-            : emphasizeTipText('Click a cream tile. The picture and sentence appear. Then Click Next.')}
-      </p>
-      {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
-      <button className="welcome-open" type="button" aria-label="Open Welcome Guide" onClick={() => setWelcomeOpen(true)}>
-        <span className="welcome-open-icon">?</span>
-        <span className="welcome-open-label">Guide</span>
-      </button>
     </div>
 
-    {loading && <p className="board-status">Loading today&apos;s shelf…</p>}
-    {error && <p className="board-status error">{error}</p>}
+    {handStep != null && typeof document !== 'undefined' && createPortal(
+      <div ref={handRef} className="board-hand" aria-hidden="true">👆</div>,
+      document.body,
+    )}
 
-    {!loading && !error && activePuzzle && <>
-      {packTitle && (
-        <div className="pack-shelf" aria-label="Category Pack">
-          <div className="pack-card active">
-            <span className="pack-card-icon">{activeShelfInfo?.icon || '🌿'}</span>
-            <strong className="pack-card-title">{displayPackTitle}</strong>
-            {displayPackGloss && (
-              <>
-                <span className="pack-card-sep" aria-hidden="true">•</span>
-                <span className="pack-card-gloss">{displayPackGloss}</span>
-              </>
-            )}
-          </div>
-        </div>
-      )}
-
-      <section ref={puzzleBoardRef} className="puzzle-board">
-        <div className="puzzle-meta">
-          <div className="meta-left">
-            <span className="meta-skin-badge">{displaySkin}</span>
-            <span className="meta-hint-pill">
-              {isLearnPhase
-                ? '📖 Learn word'
-                : isJodoSkin
-                  ? '🎯 जोडो · Join tiles'
-                  : '👆 1 tile → Next'}
-            </span>
-            {activeShelfInfo && (
-              <span className="meta-shelf-name">
-                {activeShelfInfo.icon} {activeShelfInfo.title.split('·')[0].trim()}
-              </span>
-            )}
-          </div>
-          <div className="puzzle-nav-controls">
-            <button
-              type="button"
-              className="puzzle-nav-arrow"
-              onClick={goPrev}
-              disabled={puzzleIndex <= 0}
-              title="Previous Puzzle (पूर्वतन-पहेलिका)"
-              aria-label="Previous Puzzle"
-            >
-              ◀
-            </button>
-            <span className="meta-progress">
-              <strong>{puzzleIndex + 1}</strong> <span className="meta-total">/ {activePuzzles.length}</span>
-            </span>
-            <button
-              type="button"
-              className="puzzle-nav-arrow"
-              onClick={goNext}
-              disabled={puzzleIndex + 1 >= activePuzzles.length}
-              title="Next Puzzle (अग्रिम-पहेलिका)"
-              aria-label="Next Puzzle"
-            >
-              ▶
-            </button>
-          </div>
-        </div>
-
-        <div className="puzzle-progress-track" aria-hidden="true">
-          <div
-            className="puzzle-progress-bar"
-            style={{ width: `${Math.min(100, Math.round(((puzzleIndex + 1) / Math.max(1, activePuzzles.length)) * 100))}%` }}
-          />
-        </div>
-
-        {!isLearnPhase && !isJodoSkin && (
-          <ol className="puzzle-steps" aria-label="Puzzle steps">
-            <li className={activeStep === 1 ? 'active' : 'completed'}>
-              <span className="step-num" aria-hidden="true">
-                {activeStep === 2 ? '✓' : '1'}
-              </span>
-              <span className="step-label">
-                {activeStep === 2 ? (
-                  <>Cream tile placed</>
-                ) : (
-                  <>Click a cream tile <small>(numbers on tiles)</small></>
-                )}
-              </span>
-            </li>
-            <li className={activeStep === 2 ? 'active ready-next' : undefined}>
-              <span className="step-num" aria-hidden="true">2</span>
-              <span className="step-label">Click Next Puzzle ▶</span>
-            </li>
-          </ol>
-        )}
-
-        {isLearnPhase ? (
-          <div className="learn-card">
-            <p className="learn-word">{activePuzzle.target}</p>
-            <p className="learn-gloss">{activePuzzle.gloss ?? activePuzzle.english}</p>
-            <button
-              className="hear-button"
-              type="button"
-              onClick={() => playPronunciation(activePuzzle.target)}
-            >
-              🔊 Hear
-            </button>
-            <div className="tile-row learn-tile-row">
-              {activePuzzle.tiles.map((tile, index) => (
-                <button
-                  key={`${tile}-${index}`}
-                  className="puzzle-tile"
-                  type="button"
-                  onClick={() => playPronunciation(cleanTile(tile))}
-                >
-                  <span className="tile-num" aria-hidden="true">{index + 1}</span>
-                  <span className="tile-sanskrit">{tile}</span>
-                </button>
-              ))}
-            </div>
-            <div className="puzzle-actions">
-              <button ref={nextBtnRef} className="next-button learn-next" type="button" onClick={onNextOrAgain}>
-                {isLastPuzzle ? 'Play Again ↺' : 'I learnt it · Next ▶'}
-              </button>
-            </div>
-          </div>
-        ) : (
-          <>
-            {isJodoSkin ? (
-              <div className="jodo-prompt-card">
-                <div className="jodo-goal-bar">
-                  <span className="jodo-goal-tag">🎯 जोडो (Join):</span>
-                  <span className="jodo-goal-target">{activePuzzle.target}</span>
-                  {activePuzzle.english && (
-                    <span className="jodo-goal-meaning" title="Meaning in English">
-                      ({activePuzzle.english})
-                    </span>
-                  )}
-                  <button
-                    type="button"
-                    className="jodo-sound-btn"
-                    onClick={() => playPronunciation(activePuzzle.target)}
-                    title={`Hear pronunciation for ${activePuzzle.target}`}
-                    aria-label={`Hear ${activePuzzle.target}`}
-                  >
-                    🔊 Hear
-                  </button>
-                </div>
-                <div className="jodo-sentence-line">
-                  {renderJodoSentenceWithSlot(activePuzzle.sentence, activePuzzle.target, chosen)}
-                </div>
-              </div>
-            ) : (
-              <div className="standard-prompt-card">
-                <div className="standard-prompt-header">
-                  <div className="prompt-header-left">
-                    <span className="prompt-type-badge">
-                      {isMatchMeaningPhase
-                        ? '📖 अर्थ-मेलनम् · Match Meaning'
-                        : hasBlank
-                          ? '✨ रिक्त-स्थानं पूरयत · Fill Blank'
-                          : '🎯 शब्द-परिचयः · Target Word'}
-                    </span>
-                    {activePuzzle.english && (
-                      <span className="prompt-english-hint" title="English translation/meaning">
-                        ({activePuzzle.english})
-                      </span>
-                    )}
-                  </div>
-                  <button
-                    type="button"
-                    className="prompt-sound-btn"
-                    onClick={() => playPronunciation(activePuzzle.sentence || activePuzzle.target)}
-                    title={`Hear pronunciation: ${activePuzzle.sentence || activePuzzle.target}`}
-                    aria-label={`Hear ${activePuzzle.sentence || activePuzzle.target}`}
-                  >
-                    🔊 Hear
-                  </button>
-                </div>
-                <div className="standard-sentence-line">
-                  {renderStandardPromptWithSlot(activePuzzle, chosen, checked, isCorrect, wrongAttempt)}
-                </div>
-                {isPrashnaPart && activePuzzle.english && (
-                  <p className="prashna-english-clue">({activePuzzle.english})</p>
-                )}
-              </div>
-            )}
-
-            <div className="tile-row" role="group" aria-label="Answer cream tiles">
-              {activePuzzle.tiles.map((tile, index) => {
-                const clean = cleanTile(tile);
-                const isSelected = chosen.includes(clean);
-                let tileStatusClass = '';
-                if (isSelected) {
-                  if (checked && isCorrect) tileStatusClass = 'chosen correct';
-                  else if (wrongAttempt) tileStatusClass = 'chosen wrong';
-                  else tileStatusClass = 'chosen';
-                }
-                return (
-                  <button
-                    key={`${tile}-${index}`}
-                    type="button"
-                    className={`puzzle-tile ${tileStatusClass}`}
-                    onClick={() => toggleTile(tile)}
-                    aria-pressed={isSelected}
-                    aria-label={`Tile ${index + 1}: ${tile}`}
-                  >
-                    <span className="tile-num" aria-hidden="true">{index + 1}</span>
-                    <span className="tile-sanskrit">{tile}</span>
-                    {isSelected && checked && isCorrect && (
-                      <span className="tile-badge-correct" aria-hidden="true">✓</span>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-
-            {checked && isCorrect && (
-              <div className="puzzle-result correct">
-                <div className="puzzle-success-banner">
-                  <span className="success-emoji">🎉</span>
-                  <span className="success-text">उत्तमम्! Correct!</span>
-                </div>
-                <div className="puzzle-graphic-pedestal">
-                  <div className="puzzle-graphic" aria-hidden="true">{puzzleGraphic}</div>
-                </div>
-                <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
-                <p className="result-english">{activePuzzle.english}</p>
-                <div className="result-audio-row">
-                  <button
-                    className="hear-button hear-button--inline"
-                    type="button"
-                    onClick={() => playPronunciation(activePuzzle.sentence || activePuzzle.target)}
-                    title="Hear complete sentence"
-                  >
-                    🔊 Hear Sentence
-                  </button>
-                  {isJodoSkin && activePuzzle.target && (
-                    <button
-                      className="hear-button hear-button--inline hear-button--subtle"
-                      type="button"
-                      onClick={() => playPronunciation(activePuzzle.target)}
-                      title={`Hear letter sound: ${activePuzzle.target}`}
-                    >
-                      🔊 Hear &apos;{activePuzzle.target}&apos;
-                    </button>
-                  )}
-                </div>
-                {activePuzzle.explanation && <p className="result-explanation">💡 {activePuzzle.explanation}</p>}
-                {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
-                {hasNextPuzzle && (
-                  <button ref={nextBtnRef} className="next-button next-button--celebrate" type="button" onClick={onNextOrAgain}>
-                    {isLastPuzzle ? 'Play Again ↺' : 'Next Puzzle ▶'}
-                  </button>
-                )}
-              </div>
-            )}
-            {wrongAttempt && (
-              <div className="puzzle-result wrong-feedback">
-                <span className="wrong-icon">🤔</span>
-                <div className="wrong-content">
-                  <strong>{wrongAttemptMessage}</strong>
-                  <button type="button" className="reset-try-btn" onClick={resetPuzzleUi}>
-                    ↺ Reset selection
-                  </button>
-                </div>
-              </div>
-            )}
-          </>
-        )}
-      </section>
-
-      {activeShelf === 'sariram' && <aside className="board-sidebar" aria-label="Body anecdote">
-        <p>{BODY_ANECDOTE}</p>
-      </aside>}
-    </>}
+    {joinGhost && typeof document !== 'undefined' && createPortal(
+      <div
+        className="board-join-ghost board-join-ghost--pop"
+        style={{ left: joinGhost.left, top: joinGhost.top }}
+        aria-hidden="true"
+      >
+        {joinGhost.word}
+      </div>,
+      document.body,
+    )}
 
     {welcomeOpen && <>
       <div className="welcome-scrim" role="presentation" onClick={() => setWelcomeOpen(false)} />

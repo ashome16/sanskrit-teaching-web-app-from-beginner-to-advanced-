@@ -775,6 +775,27 @@
   gap: 0.4rem;
 }
 
+.dp-lat-title {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+/* Laṭ header only — do not restyle the Dhātupāṭha toolbar .dp-playall. */
+.dp-lat-title .dp-playall {
+  min-height: 44px;
+  min-width: 44px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .dp-lat-title .dp-playall {
+    width: auto;
+  }
+}
+
 .dp-lat-source {
   font-size: 0.72rem;
   font-weight: 700;
@@ -929,6 +950,27 @@
   background: #e6f7f5;
   border-color: #99d5cd;
   outline: none;
+}
+
+.dp-lat-cell.dp-lat-cell--speaking,
+.dp-lat-cell.dp-lat-cell--speaking:hover,
+.dp-lat-cell.dp-lat-cell--speaking:focus-visible {
+  background: #fef3c7;
+  border-color: #d97706;
+  box-shadow: inset 0 0 0 1px #d97706;
+  outline: none;
+}
+
+.dp-lat-cell--speaking .dp-lat-speak {
+  opacity: 1;
+}
+
+.dp-lat-cell--speaking .dp-lat-form,
+.dp-lat-cell--speaking .dp-lat-gloss {
+  color: #92400e;
+  background: #fde68a;
+  border-radius: 4px;
+  padding: 0 0.15rem;
 }
 
 .dp-lat-form {
@@ -1510,6 +1552,123 @@
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+
+/* Play all sits beside the lakāra name, not with Copy / Print. */
+.dp-lakara-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+  min-width: 0;
+}
+
+.dp-lakara-title-en {
+  color: #44403c;
+}
+
+.dp-lakara-title .dp-playall {
+  min-height: 44px;
+  min-width: 44px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .dp-lakara-title .dp-playall,
+  .dp-lakara-word-actions .dp-playall,
+  .dp-lakara-word-actions .dp-step-btn,
+  .dp-lakara-playnext .dp-playall {
+    width: auto;
+  }
+}
+
+.dp-cell.dp-cell--speaking,
+.dp-cell.dp-cell--speaking:hover {
+  background: #fef3c7;
+  box-shadow: inset 0 0 0 2px #d97706;
+}
+
+/* Form and the written English sentence highlight together; the formula does not. */
+.dp-cell.dp-cell--speaking .dp-cell-word,
+.dp-cell.dp-cell--speaking .dp-cell-meaning {
+  color: #92400e;
+  background: #fde68a;
+  border-radius: 4px;
+}
+
+.dp-cell.dp-cell--speaking .dp-cell-word {
+  padding: 0 0.2rem;
+}
+
+.dp-cell.dp-cell--speaking .dp-cell-meaning {
+  display: inline-block;
+  padding: 0.05rem 0.28rem;
+}
+
+/* Lakāra panel: root word, then the 3×3. Play sits with the word; Play next is only a skip. */
+.dp-lakara-wordline {
+  background: #fffefb;
+  border: 1px solid #e8e2d4;
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.dp-lakara-word {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.7rem;
+}
+
+.dp-lakara-word-sa {
+  font-size: 2.15rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f766e;
+}
+
+.dp-lakara-word-iast {
+  font-size: 1.25rem;
+  color: #44403c;
+}
+
+.dp-lakara-word--speaking .dp-lakara-word-sa,
+.dp-lakara-word--speaking .dp-lakara-word-iast {
+  color: #92400e;
+  background: #fde68a;
+  box-shadow: inset 0 0 0 2px #d97706;
+  border-radius: 8px;
+  padding: 0 0.28rem;
+}
+
+.dp-lakara-sense {
+  margin: 0.4rem 0 0.75rem;
+  color: #44403c;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.dp-lakara-word-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dp-lakara-word-actions .dp-step-btn,
+.dp-lakara-word-actions .dp-playall,
+.dp-lakara-playnext .dp-playall {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.dp-lakara-playnext {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.75rem 1.25rem 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
 
 .dp-table-scroll {
   overflow-x: auto;
@@ -4540,6 +4699,10 @@
   .dp-table-actions,
   .dp-audio-mini,
   .dp-audio-inline,
+  .dp-lakara-playall,
+  .dp-lakara-word-actions,
+  .dp-lakara-playnext,
+  .dp-playback-bar--live,
   .grammar-back,
   .dp-toast,
   .dp-morph-guide-panel,

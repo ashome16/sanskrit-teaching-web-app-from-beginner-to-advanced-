@@ -17,6 +17,8 @@ import '../styles/dhatupatha.css';
 type DhatupathaBrowserProps = {
   onGoBack?: () => void;
   onSelectDhatu?: (dhatuId: string, action: 'generator' | 'deconstructor' | 'comparator') => void;
+  /** Ids in the order currently on screen (gaṇa or theme, after filters). */
+  onBrowseOrder?: (ids: string[]) => void;
 };
 
 const GANA_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
@@ -73,7 +75,7 @@ const loadDhatuSpeed = (): DhatuSpeed => {
 const rateForSpeed = (speed: DhatuSpeed): number =>
   DHATU_SPEEDS.find((item) => item.id === speed)?.rate ?? 1;
 
-const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack, onSelectDhatu }) => {
+const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack, onSelectDhatu, onBrowseOrder }) => {
   const [entries, setEntries] = useState<DhatuEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -207,6 +209,12 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack, onSelec
 
   const ordered = useMemo(() => sections.flatMap((section) => section.roots), [sections]);
   filteredRef.current = ordered;
+  const onBrowseOrderRef = useRef(onBrowseOrder);
+  onBrowseOrderRef.current = onBrowseOrder;
+
+  useEffect(() => {
+    onBrowseOrderRef.current?.(ordered.map((entry) => entry.id || entry.devanagari));
+  }, [ordered]);
 
   // A new search, gaṇa, voice, or CBSE filter shows a different list — drop the old queue.
   useEffect(() => {

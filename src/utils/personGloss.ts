@@ -26,7 +26,7 @@ const SHEET_VERB: Record<string, string> = {
   bhu: 'be, become',
   kr: 'do, make',
   gam: 'go',
-  path: 'read, study',
+  path: 'read',
   likh: 'write',
   drsh: 'see',
   shru: 'hear',

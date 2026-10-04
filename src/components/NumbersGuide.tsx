@@ -1,4 +1,5 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
+import { createPortal } from 'react-dom';
 import {
   SANSKRIT_NUMBERS_1_TO_100,
   GENDER_DECLENSIONS_1_TO_4,
@@ -137,9 +138,13 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
 
-  // Cleanup audio on unmount
+  // Cleanup audio on unmount. Mark the dashboard so its overflow box does not
+  // swallow a fixed Pause bar on phones (same scrollport bug as Dhātupāṭha).
   useEffect(() => {
+    const dash = document.querySelector('.dashboard');
+    dash?.classList.add('dashboard--numbers');
     return () => {
+      dash?.classList.remove('dashboard--numbers');
       stopPlaySequenceRef.current?.();
       stopPronunciation();
     };
@@ -148,6 +153,7 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
   const handleSpeak = (word: string) => {
     stopPlaySequenceRef.current?.();
     stopPlaySequenceRef.current = null;
+    resumeRef.current = null;
     setPlayingGroup(null);
     stopPronunciation();
 
@@ -193,37 +199,64 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
     [filteredNumbers],
   );
 
-  /** Cancel a running ▶ Play all (Stop button, tab / filter change, unmount). */
-  const stopPlayAll = () => {
+  /** Where to resume after Pause. Cleared when the queue finishes or the list changes. */
+  const resumeRef = useRef<{ groupId: string; index: number } | null>(null);
+  const dockRef = useRef<HTMLDivElement | null>(null);
+
+  /** Cancel a running ▶ Play all (Pause, tab / filter change, unmount). */
+  const stopPlayAll = (resetIndex: boolean) => {
     stopPlaySequenceRef.current?.();
     stopPlaySequenceRef.current = null;
     stopPronunciation();
     setPlayingGroup(null);
     setPlayingWord(null);
+    if (resetIndex) resumeRef.current = null;
   };
 
   // ▶ Play all — speaks each word in order through playSequence, which uses the
   // same speakConfigured() pipeline (voice, rate, pitch) as playPronunciation /
-  // each card's tap-to-hear. Tapping the running group's button again stops it.
-  const handleTogglePlayGroup = (groupId: string, words: string[]) => {
-    const wasPlayingThis = playingGroup === groupId;
-    stopPlayAll();
-    if (wasPlayingThis || !words.length) return;
-
+  // each card's tap-to-hear. No extra rate is passed. Pause keeps the index.
+  const beginGroup = (groupId: string, words: string[], startIndex: number) => {
+    stopPlaySequenceRef.current?.();
+    stopPlaySequenceRef.current = null;
+    stopPronunciation();
+    if (!words.length) {
+      setPlayingGroup(null);
+      setPlayingWord(null);
+      resumeRef.current = null;
+      return;
+    }
+    const index = startIndex >= words.length ? 0 : Math.max(0, startIndex);
+    const slice = words.slice(index);
+    resumeRef.current = { groupId, index };
     setPlayingGroup(groupId);
-    stopPlaySequenceRef.current = playSequence(words, {
+    setPlayingWord(slice[0] ?? null);
+    stopPlaySequenceRef.current = playSequence(slice, {
       gapMs: 600,
-      onItem: (word, index) => {
+      onItem: (word, itemIndex) => {
         // Highlight only. (Calling onSelectWord here would re-speak via the parent
         // and cancel the queue.)
-        setPlayingWord(words[index] ?? word);
+        const abs = index + itemIndex;
+        resumeRef.current = { groupId, index: abs };
+        setPlayingWord(words[abs] ?? word);
       },
       onDone: () => {
         stopPlaySequenceRef.current = null;
         setPlayingGroup(null);
         setPlayingWord(null);
+        resumeRef.current = null;
       },
     });
+  };
+
+  const handleTogglePlayGroup = (groupId: string, words: string[]) => {
+    if (playingGroup === groupId) {
+      stopPlayAll(false);
+      return;
+    }
+    const resume = resumeRef.current;
+    const start = resume?.groupId === groupId ? resume.index : 0;
+    beginGroup(groupId, words, start);
   };
 
   const handleTogglePlayAll = () =>
@@ -234,30 +267,108 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
 
   // Changing tab, decade or search mid-playback cancels Play all.
   useEffect(() => {
-    if (!stopPlaySequenceRef.current) return;
-    stopPlaySequenceRef.current();
+    if (!stopPlaySequenceRef.current && !resumeRef.current) return;
+    stopPlaySequenceRef.current?.();
     stopPlaySequenceRef.current = null;
     stopPronunciation();
+    resumeRef.current = null;
     setPlayingGroup(null);
     setPlayingWord(null);
   }, [activeTab, selectedDecade, searchQuery]);
 
-  // While playing, gently bring the current item into view if it is off-screen.
+  // Pin Pause under the site header (or the screen top once that header has
+  // scrolled away). The button is portaled to document.body: the grammar
+  // dashboard is an overflow box, so an in-flow fixed control scrolls off
+  // on a phone.
+  useLayoutEffect(() => {
+    if (!isPlayingAll) return;
+    const place = () => {
+      const header = document.querySelector<HTMLElement>('.dashboard-header');
+      const bottom = header ? header.getBoundingClientRect().bottom : 0;
+      const dock = dockRef.current;
+      if (!dock) return;
+      if (bottom > 8) dock.style.setProperty('--num-stick-top', `${Math.round(bottom)}px`);
+      else dock.style.removeProperty('--num-stick-top');
+    };
+    place();
+    const header = document.querySelector('.dashboard-header');
+    const observer = header ? new ResizeObserver(place) : null;
+    if (header && observer) observer.observe(header);
+    window.addEventListener('scroll', place, true);
+    window.addEventListener('resize', place);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('scroll', place, true);
+      window.removeEventListener('resize', place);
+    };
+  }, [isPlayingAll, playingGroup]);
+
+  // Keep the number being spoken just below the fixed Pause bar, not under it.
   useEffect(() => {
     if (!isPlayingAll || !playingWord || !guideRef.current) return;
     const el = Array.from(guideRef.current.querySelectorAll<HTMLElement>('[data-play-word]')).find(
       (node) => node.dataset.playWord === playingWord,
     );
     if (!el) return;
-    const rect = el.getBoundingClientRect();
     const viewH = window.innerHeight || document.documentElement.clientHeight;
-    const offScreen = rect.top < 0 || rect.bottom > viewH;
-    if (!offScreen) return;
+    const dock = dockRef.current;
+    const barBottom = dock ? dock.getBoundingClientRect().bottom : 0;
+    let portTop = 0;
+    let parent: HTMLElement | null = el.parentElement;
+    while (parent) {
+      const style = getComputedStyle(parent);
+      const scrolls = /(auto|scroll)/.test(style.overflowY) && parent.scrollHeight > parent.clientHeight + 1;
+      if (scrolls) {
+        portTop = parent.getBoundingClientRect().top;
+        break;
+      }
+      parent = parent.parentElement;
+    }
+    const topLimit = Math.max(8, barBottom + 12);
+    const clearance = Math.max(8, topLimit - portTop);
+    el.style.scrollMarginTop = `${Math.round(clearance)}px`;
+    const rect = el.getBoundingClientRect();
+    const covered = rect.top < topLimit - 4;
+    const above = rect.bottom < topLimit;
+    const below = rect.top > viewH - 24;
+    if (!covered && !above && !below) return;
     const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center', inline: 'nearest' });
+    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start', inline: 'nearest' });
   }, [isPlayingAll, playingWord]);
 
-  const playButtonLabel = (groupId: string, idle: string) => (playingGroup === groupId ? '■ Stop' : idle);
+  const renderPlayButton = (
+    groupId: string,
+    idle: string,
+    onClick: () => void,
+    opts: { className: string; titleIdle: string; titleActive: string; ariaIdle: string; ariaActive: string; disabled?: boolean },
+  ) => {
+    const active = playingGroup === groupId;
+    const button = (
+      <button
+        type="button"
+        className={`${opts.className}${active ? ` ${opts.className}--playing` : ''}`}
+        onClick={onClick}
+        aria-pressed={active}
+        disabled={!active && !!opts.disabled}
+        title={active ? opts.titleActive : opts.titleIdle}
+        aria-label={active ? opts.ariaActive : opts.ariaIdle}
+      >
+        {active ? '⏸ Pause' : idle}
+      </button>
+    );
+    if (!active || typeof document === 'undefined') return button;
+    return (
+      <>
+        <span className="num-play-slot" aria-hidden="true" />
+        {createPortal(
+          <div ref={dockRef} className="num-playback-dock" role="region" aria-label="Playback">
+            {button}
+          </div>,
+          document.body,
+        )}
+      </>
+    );
+  };
 
   // Quiz questions bank
   const quizQuestions: QuizQuestion[] = useMemo(() => [
@@ -464,22 +575,20 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
                 />
               </div>
 
-              <button
-                type="button"
-                className={`num-play-all-btn${playingGroup === 'all' ? ' num-play-all-btn--playing' : ''}`}
-                onClick={handleTogglePlayAll}
-                aria-pressed={playingGroup === 'all'}
-                disabled={playingGroup !== 'all' && filteredNumbers.length === 0}
-                title={
-                  playingGroup === 'all'
-                    ? 'Stop playback'
-                    : selectedDecade === 'all' && !searchQuery.trim()
+              {renderPlayButton('all', '▶ Play all', handleTogglePlayAll, {
+                className: 'num-play-all-btn',
+                disabled: filteredNumbers.length === 0,
+                titleActive: 'Pause playback',
+                ariaActive: 'Pause speaking numbers',
+                titleIdle:
+                  selectedDecade === 'all' && !searchQuery.trim()
                     ? 'Hear every number 1–100 in order'
-                    : 'Hear every number shown below, in order'
-                }
-              >
-                {playButtonLabel('all', '▶ Play all')}
-              </button>
+                    : 'Hear every number shown below, in order',
+                ariaIdle:
+                  selectedDecade === 'all' && !searchQuery.trim()
+                    ? 'Play all numbers 1 to 100'
+                    : 'Play all numbers shown',
+              })}
             </div>
 
             {/* Decade filter chips */}
@@ -515,16 +624,18 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
                         {from === 1 ? '0' : from}–{to}
                       </span>
                     </h3>
-                    <button
-                      type="button"
-                      className={`num-play-group-btn${sectionPlaying ? ' num-play-group-btn--playing' : ''}`}
-                      onClick={() => handleTogglePlayGroup(section.id, section.items.map((item) => item.word))}
-                      aria-pressed={sectionPlaying}
-                      aria-label={sectionPlaying ? `Stop ${from}–${to}` : `Play all numbers ${from}–${to}`}
-                      title={sectionPlaying ? 'Stop this group' : `Hear ${from}–${to} in order`}
-                    >
-                      {playButtonLabel(section.id, '▶ Play')}
-                    </button>
+                    {renderPlayButton(
+                      section.id,
+                      '▶ Play',
+                      () => handleTogglePlayGroup(section.id, section.items.map((item) => item.word)),
+                      {
+                        className: 'num-play-group-btn',
+                        titleActive: 'Pause playback',
+                        ariaActive: `Pause numbers ${from}–${to}`,
+                        titleIdle: `Hear ${from}–${to} in order`,
+                        ariaIdle: `Play all numbers ${from}–${to}`,
+                      },
+                    )}
                   </header>
 
                   <div className="num-grid">
@@ -815,15 +926,18 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
           </div>
 
           <div className="num-tab-playbar">
-            <button
-              type="button"
-              className={`num-play-all-btn${playingGroup === 'ordinals' ? ' num-play-all-btn--playing' : ''}`}
-              onClick={() => handleTogglePlayGroup('ordinals', ORDINAL_NUMBERS_LIST.map((ord) => ord.masculine))}
-              aria-pressed={playingGroup === 'ordinals'}
-              title={playingGroup === 'ordinals' ? 'Stop playback' : 'Hear every ordinal (masculine form) in order'}
-            >
-              {playButtonLabel('ordinals', '▶ Play all')}
-            </button>
+            {renderPlayButton(
+              'ordinals',
+              '▶ Play all',
+              () => handleTogglePlayGroup('ordinals', ORDINAL_NUMBERS_LIST.map((ord) => ord.masculine)),
+              {
+                className: 'num-play-all-btn',
+                titleActive: 'Pause playback',
+                ariaActive: 'Pause speaking ordinals',
+                titleIdle: 'Hear every ordinal (masculine form) in order',
+                ariaIdle: 'Play all ordinals',
+              },
+            )}
             <span className="num-tab-playbar-hint">Plays the पुंलिङ्गम् (masculine) form of each ordinal, in order.</span>
           </div>
 
@@ -922,15 +1036,18 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
           </div>
 
           <div className="num-tab-playbar">
-            <button
-              type="button"
-              className={`num-play-all-btn${playingGroup === 'vedic' ? ' num-play-all-btn--playing' : ''}`}
-              onClick={() => handleTogglePlayGroup('vedic', VEDIC_LARGE_NUMBERS.map((item) => item.sanskritName))}
-              aria-pressed={playingGroup === 'vedic'}
-              title={playingGroup === 'vedic' ? 'Stop playback' : 'Hear every power of ten in order'}
-            >
-              {playButtonLabel('vedic', '▶ Play all')}
-            </button>
+            {renderPlayButton(
+              'vedic',
+              '▶ Play all',
+              () => handleTogglePlayGroup('vedic', VEDIC_LARGE_NUMBERS.map((item) => item.sanskritName)),
+              {
+                className: 'num-play-all-btn',
+                titleActive: 'Pause playback',
+                ariaActive: 'Pause speaking powers of ten',
+                titleIdle: 'Hear every power of ten in order',
+                ariaIdle: 'Play all powers of ten',
+              },
+            )}
             <span className="num-tab-playbar-hint">एकम् → परार्धम् · every power of ten, smallest to largest.</span>
           </div>
 
