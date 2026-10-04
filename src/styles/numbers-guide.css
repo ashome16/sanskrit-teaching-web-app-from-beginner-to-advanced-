@@ -310,6 +310,51 @@
   .num-play-group-btn--playing { animation: none; }
 }
 
+/* Pause is portaled to <body> while a queue speaks, so it stays on screen
+   (including phones) instead of scrolling away with the number list.
+   --num-stick-top is the site header's bottom edge; when that header has
+   left the screen the bar sits in the safe area. */
+.num-playback-dock {
+  position: fixed;
+  top: var(--num-stick-top, env(safe-area-inset-top, 0px));
+  left: 0.5rem;
+  right: 0.5rem;
+  z-index: 240;
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem 0.55rem;
+  border-radius: 14px;
+  border: 1px solid #99f6e4;
+  background: rgba(255, 254, 249, 0.98);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18);
+}
+
+.num-playback-dock .num-play-all-btn,
+.num-playback-dock .num-play-group-btn {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 28rem;
+  min-height: 44px;
+}
+
+.num-play-slot {
+  display: inline-block;
+  min-height: 44px;
+  min-width: 6.75rem;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+  .num-playback-dock {
+    left: 0.35rem;
+    right: 0.35rem;
+    padding: 0.35rem 0.45rem;
+  }
+  .num-toolbar-top > .num-play-slot {
+    flex: 1 1 100%;
+  }
+}
+
 .num-tab-playbar {
   display: flex;
   flex-wrap: wrap;
@@ -1637,6 +1682,11 @@
     background: rgba(15, 118, 110, 0.15);
     border-color: rgba(45, 212, 191, 0.35);
   }
+  .num-playback-dock {
+    background: rgba(22, 23, 29, 0.98);
+    border-color: rgba(45, 212, 191, 0.35);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+  }
   .num-tab-playbar-hint { color: #5eead4; }
   .num-bodhi-banner {
     background: #16171d;
@@ -1709,6 +1759,11 @@
 [data-theme='dark'] .num-tab-playbar {
   background: rgba(15, 118, 110, 0.15);
   border-color: rgba(45, 212, 191, 0.35);
+}
+[data-theme='dark'] .num-playback-dock {
+  background: rgba(22, 23, 29, 0.98);
+  border-color: rgba(45, 212, 191, 0.35);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
 }
 [data-theme='dark'] .num-tab-playbar-hint { color: #5eead4; }
 [data-theme='dark'] .num-bodhi-banner {
