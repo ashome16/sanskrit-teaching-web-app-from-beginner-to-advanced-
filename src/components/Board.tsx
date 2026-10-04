@@ -1,7 +1,8 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import '../styles/board.css';
 import { iconForExampleWord } from '../data/exampleIcons';
-import { playPronunciation } from '../utils/pronunciation';
+import { playPronunciation, stopPronunciation } from '../utils/pronunciation';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
 
@@ -148,6 +149,117 @@ function evaluateChosen(puzzle: BoardPuzzle | null, tiles: string[]): boolean {
   return glueMatchesTarget(tiles, target);
 }
 
+
+type SolvingMove = { indices: number[]; selection: string[] };
+
+function isKaAaPair(picked: string[]) {
+  if (picked.length !== 2) return false;
+  const set = new Set(picked.map((tile) => tile.normalize('NFC')));
+  return set.size === 2 && set.has('क') && (set.has('आ') || set.has('ा'));
+}
+
+/** Tiles that solve this puzzle, in the order glueTiles matches the target. */
+function findSolvingSelection(puzzle: BoardPuzzle): SolvingMove | null {
+  const target = ((puzzle.answer ?? puzzle.target) || '').normalize('NFC');
+  if (!target) return null;
+  const tiles = (puzzle.tiles || []).map((tile) => cleanTile(tile));
+  const wholeAt = tiles.findIndex((tile) => tile.normalize('NFC') === target);
+  if (wholeAt >= 0) {
+    const selection = [tiles[wholeAt]];
+    return evaluateChosen(puzzle, selection) ? { indices: [wholeAt], selection } : null;
+  }
+
+  const permute = (items: number[]): number[][] => {
+    if (items.length <= 1) return [items.slice()];
+    const out: number[][] = [];
+    items.forEach((item, index) => {
+      permute([...items.slice(0, index), ...items.slice(index + 1)]).forEach((tail) => {
+        out.push([item, ...tail]);
+      });
+    });
+    return out;
+  };
+
+  const combosOf = (size: number): number[][] => {
+    const out: number[][] = [];
+    const walk = (start: number, acc: number[]) => {
+      if (acc.length === size) {
+        out.push(acc.slice());
+        return;
+      }
+      for (let i = start; i < tiles.length; i += 1) {
+        acc.push(i);
+        walk(i + 1, acc);
+        acc.pop();
+      }
+    };
+    walk(0, []);
+    return out;
+  };
+
+  for (const size of [2, 3, 1]) {
+    if (tiles.length < size) continue;
+    for (const combo of combosOf(size)) {
+      const visual = combo.map((index) => tiles[index]);
+      // Prefer the on-screen order when that glue equals the target (no swap).
+      if (glueTiles(visual) === target && evaluateChosen(puzzle, visual)) {
+        return { indices: combo.slice(), selection: visual };
+      }
+      for (const order of permute(combo)) {
+        if (order.every((index, at) => index === combo[at])) continue;
+        const selection = order.map((index) => tiles[index]);
+        if (glueTiles(selection) === target && evaluateChosen(puzzle, selection)) {
+          return { indices: order, selection };
+        }
+      }
+      if (target === 'का' && isKaAaPair(visual)) {
+        const kaAt = combo.find((index) => tiles[index].normalize('NFC') === 'क');
+        const vowelAt = combo.find((index) => tiles[index].normalize('NFC') !== 'क');
+        if (kaAt === undefined || vowelAt === undefined) continue;
+        const selection = [tiles[kaAt], tiles[vowelAt]];
+        if (evaluateChosen(puzzle, selection)) return { indices: [kaAt, vowelAt], selection };
+      }
+    }
+  }
+  return null;
+}
+
+function tapSequence(faces: string[]) {
+  if (faces.length <= 1) return `Tap ${faces[0] || ''}.`;
+  if (faces.length === 2) return `Tap ${faces[0]}, then ${faces[1]}.`;
+  return `Tap ${faces.slice(0, -1).join(', then ')}, then ${faces[faces.length - 1]}.`;
+}
+
+/** One line naming the next click, using the tiles actually on screen. */
+function describeNextTap(
+  puzzle: BoardPuzzle | null,
+  chosen: string[],
+  flags: { learn: boolean; solved: boolean; last: boolean },
+): { text: string; markIndex: number | null } {
+  if (!puzzle) return { text: '', markIndex: null };
+  if (flags.learn || flags.solved) {
+    return { text: flags.last ? 'Click Play Again.' : 'Click Next.', markIndex: null };
+  }
+  const move = findSolvingSelection(puzzle);
+  if (!move) return { text: 'Tap a cream tile.', markIndex: null };
+  const faces = move.indices.map((index) => cleanTile(puzzle.tiles[index] || ''));
+  if (faces.length === 1) {
+    return { text: `Tap the cream tile ${faces[0]}.`, markIndex: move.indices[0] ?? null };
+  }
+  const left = chosen.map((tile) => cleanTile(tile).normalize('NFC'));
+  const remain: number[] = [];
+  for (let i = 0; i < faces.length; i += 1) {
+    const at = left.indexOf(faces[i].normalize('NFC'));
+    if (at >= 0) left.splice(at, 1);
+    else remain.push(i);
+  }
+  if (!remain.length) return { text: 'Click Next.', markIndex: null };
+  const remainFaces = remain.map((index) => faces[index]);
+  const text = remain.length === faces.length ? tapSequence(faces) : tapSequence(remainFaces);
+  return { text, markIndex: move.indices[remain[0]] ?? null };
+}
+
+
 function highlightedSentence(sentence: string | undefined, highlight: string | undefined, tapHighlight: string | undefined) {
   if (!sentence || !highlight) return sentence;
   const matchStart = sentence.indexOf(highlight);
@@ -218,6 +330,20 @@ function renderJodoSentenceWithSlot(
       {after}
     </>
   );
+}
+
+/** Underscores in a prompt are the answer slot a whole-word tile can lock into. */
+function renderPromptWithHole(text: string): React.ReactNode {
+  const parts = text.split('____');
+  if (parts.length === 1) return text;
+  const nodes: React.ReactNode[] = [];
+  parts.forEach((part, index) => {
+    if (part) nodes.push(part);
+    if (index < parts.length - 1) {
+      nodes.push(<span key={`hole-${index}`} className="board-answer-hole">____</span>);
+    }
+  });
+  return <>{nodes}</>;
 }
 
 
@@ -756,6 +882,23 @@ const Board: React.FC<BoardProps> = ({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isSearchOpen]);
+  const [playingAll, setPlayingAll] = useState(false);
+  const [dimOthers, setDimOthers] = useState(false);
+  const [solverIndices, setSolverIndices] = useState<number[]>([]);
+  const [lockIndex, setLockIndex] = useState<number | null>(null);
+  const [joinGhost, setJoinGhost] = useState<{ word: string; left: number; top: number } | null>(null);
+  const [learnPulse, setLearnPulse] = useState(false);
+  const playingRef = useRef(false);
+  const playTokenRef = useRef(0);
+  const playTimersRef = useRef<number[]>([]);
+  const playWakeRef = useRef<Array<() => void>>([]);
+  const playDockRef = useRef<HTMLDivElement | null>(null);
+  const playCtxRef = useRef({
+    activePuzzles: [] as BoardPuzzle[],
+    activeShelf: 'prarambhah' as ShelfId,
+    puzzleIndex: 0,
+    applySelection: (_tiles: string[]) => {},
+  });
   const [showHelp, setShowHelp] = useState<boolean>(() => {
     try {
       return localStorage.getItem('jodo-help-collapsed') !== 'true';
@@ -845,8 +988,262 @@ const Board: React.FC<BoardProps> = ({
 
   const isCorrect = evaluateChosen(activePuzzle, chosen);
 
+
+  const clearBoardMotion = () => {
+    puzzleBoardRef.current?.querySelectorAll<HTMLElement>('[data-board-tile]').forEach((el) => {
+      el.getAnimations().forEach((anim) => anim.cancel());
+    });
+    setDimOthers(false);
+    setSolverIndices([]);
+    setLockIndex(null);
+    setJoinGhost(null);
+    setLearnPulse(false);
+  };
+
+  const playSleep = (ms: number) => new Promise<void>((resolve) => {
+    let settled = false;
+    const done = () => {
+      if (settled) return;
+      settled = true;
+      window.clearTimeout(timer);
+      playWakeRef.current = playWakeRef.current.filter((fn) => fn !== done);
+      playTimersRef.current = playTimersRef.current.filter((id) => id !== timer);
+      resolve();
+    };
+    const timer = window.setTimeout(done, ms);
+    playTimersRef.current.push(timer);
+    playWakeRef.current.push(done);
+  });
+
+  const nextPaint = () => new Promise<void>((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+  });
+
+  /** Pause: stop timers, speech, and in-progress motion. Leave this puzzle unsolved. */
+  const stopBoardPlayAll = () => {
+    if (!playingRef.current) return;
+    playTokenRef.current += 1;
+    playingRef.current = false;
+    setPlayingAll(false);
+    playTimersRef.current.forEach((id) => window.clearTimeout(id));
+    playTimersRef.current = [];
+    const wake = playWakeRef.current.splice(0);
+    wake.forEach((fn) => fn());
+    stopPronunciation();
+    clearBoardMotion();
+    setChosen([]);
+    setChecked(false);
+    setWrongAttempt(false);
+  };
+
+  const finishBoardPlayAll = (token: number) => {
+    if (token !== playTokenRef.current) return;
+    playingRef.current = false;
+    setPlayingAll(false);
+    clearBoardMotion();
+  };
+
+  const animateBoardJoin = async (token: number, puzzle: BoardPuzzle, move: SolvingMove) => {
+    const alive = () => token === playTokenRef.current && playingRef.current;
+    const root = puzzleBoardRef.current;
+    if (!root) return false;
+    const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-board-tile]'));
+    const movers: HTMLButtonElement[] = [];
+    for (const index of move.indices) {
+      const el = buttons.find((button) => Number(button.dataset.boardTile) === index);
+      if (!el) return false;
+      movers.push(el);
+    }
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    const centerOf = (rect: DOMRect) => ({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+    const answerEl = root.querySelector<HTMLElement>('.jodo-blank-slot')
+      || root.querySelector<HTMLElement>('.board-answer-hole')
+      || root.querySelector<HTMLElement>('.puzzle-prompt');
+    const rects = movers.map((el) => el.getBoundingClientRect());
+    const centers = rects.map(centerOf);
+    const slotCenter = answerEl ? centerOf(answerEl.getBoundingClientRect()) : null;
+    const meet = slotCenter ?? {
+      x: centers.reduce((sum, point) => sum + point.x, 0) / centers.length,
+      y: centers.reduce((sum, point) => sum + point.y, 0) / centers.length,
+    };
+    const single = movers.length === 1;
+    setSolverIndices(move.indices);
+    const tileCount = root.querySelectorAll('[data-board-tile]').length;
+    setDimOthers(tileCount > movers.length);
+    if (single) setLockIndex(move.indices[0] ?? null);
+
+    const fly = (el: HTMLButtonElement, tx: number, ty: number, withPop: boolean) => {
+      const frames: Keyframe[] = reduce
+        ? [
+          { transform: 'translate(0px, 0px) scale(1)', offset: 0 },
+          { transform: 'translate(0px, 0px) scale(1.14)', offset: 0.55 },
+          { transform: 'translate(0px, 0px) scale(1)', offset: 1 },
+        ]
+        : withPop
+          ? [
+            { transform: 'translate(0px, 0px) scale(1)', offset: 0 },
+            { transform: `translate(${tx * 0.14}px, ${ty * 0.14 - 12}px) scale(1.08)`, offset: 0.16 },
+            { transform: `translate(${tx}px, ${ty}px) scale(1.02)`, offset: 0.7 },
+            { transform: `translate(${tx}px, ${ty}px) scale(1.16)`, offset: 0.86 },
+            { transform: `translate(${tx}px, ${ty}px) scale(1)`, offset: 1 },
+          ]
+          : [
+            { transform: 'translate(0px, 0px) scale(1)', offset: 0 },
+            { transform: `translate(${tx * 0.16}px, ${ty * 0.16 - 14}px) scale(1.08)`, offset: 0.2 },
+            { transform: `translate(${tx}px, ${ty}px) scale(1.05)`, offset: 1 },
+          ];
+      return el.animate(frames, {
+        duration: reduce ? 420 : withPop ? 1650 : 1150,
+        easing: reduce ? 'ease-out' : 'cubic-bezier(0.22, 0.82, 0.2, 1)',
+        fill: 'forwards',
+      }).finished.catch(() => undefined);
+    };
+
+    if (single) {
+      const from = centers[0];
+      const tx = reduce || !from ? 0 : meet.x - from.x;
+      const ty = reduce || !from ? 0 : meet.y - from.y;
+      await fly(movers[0], tx, ty, true);
+      return alive();
+    }
+
+    if (!reduce) {
+      await Promise.all(movers.map((el, index) => {
+        const spread = movers.length === 2 ? (index === 0 ? -26 : 26) : (index - (movers.length - 1) / 2) * 36;
+        const from = centers[index];
+        const tx = meet.x - from.x + spread;
+        const ty = meet.y - from.y;
+        return fly(el, tx, ty, false);
+      }));
+    }
+    if (!alive()) return false;
+
+    const word = ((puzzle.answer ?? puzzle.target) || '').normalize('NFC');
+    movers.forEach((el) => {
+      el.animate(
+        [{ opacity: 1 }, { opacity: 0 }],
+        { duration: reduce ? 180 : 260, fill: 'forwards', easing: 'ease-out' },
+      );
+    });
+    const slotNow = root.querySelector<HTMLElement>('.jodo-blank-slot')
+      || root.querySelector<HTMLElement>('.board-answer-hole')
+      || root.querySelector<HTMLElement>('.puzzle-prompt');
+    const landed = slotNow ? centerOf(slotNow.getBoundingClientRect()) : meet;
+    setJoinGhost({ word, left: landed.x, top: landed.y });
+    await playSleep(reduce ? 420 : 520);
+    return alive();
+  };
+
+  const runBoardPlayAll = async (token: number, shelf: ShelfId, startIndex: number) => {
+    const alive = () => token === playTokenRef.current && playingRef.current;
+    let index = startIndex;
+    while (alive()) {
+      if (playCtxRef.current.activeShelf !== shelf) {
+        finishBoardPlayAll(token);
+        return;
+      }
+      const puzzle = playCtxRef.current.activePuzzles[index];
+      if (!puzzle) {
+        finishBoardPlayAll(token);
+        return;
+      }
+      if (playCtxRef.current.puzzleIndex !== index) {
+        setPuzzleIndexByShelf((current) => ({ ...current, [shelf]: index }));
+      }
+      setChosen([]);
+      setChecked(false);
+      setWrongAttempt(false);
+      clearBoardMotion();
+      await nextPaint();
+      if (!alive()) return;
+
+      const fresh = playCtxRef.current.activePuzzles[index] ?? puzzle;
+      const learn = (fresh.phase || '').trim() === 'learn';
+      if (learn) {
+        setLearnPulse(true);
+        playPronunciation(fresh.target);
+        await playSleep(1800);
+        if (!alive()) return;
+        setLearnPulse(false);
+      } else {
+        const move = findSolvingSelection(fresh);
+        if (!move) {
+          await playSleep(320);
+          if (!alive()) return;
+        } else {
+          const joined = await animateBoardJoin(token, fresh, move);
+          if (!alive()) return;
+          if (!joined) {
+            await playSleep(280);
+            if (!alive()) return;
+          } else {
+            const word = ((fresh.answer ?? fresh.target) || '').normalize('NFC');
+            playCtxRef.current.applySelection(move.selection);
+            await nextPaint();
+            if (!alive()) return;
+            clearBoardMotion();
+            playPronunciation(word);
+            await playSleep(1800);
+            if (!alive()) return;
+          }
+        }
+      }
+
+      if (index + 1 >= playCtxRef.current.activePuzzles.length) {
+        finishBoardPlayAll(token);
+        return;
+      }
+      index += 1;
+    }
+  };
+
+  const startBoardPlayAll = () => {
+    if (playingRef.current) {
+      stopBoardPlayAll();
+      return;
+    }
+    if (!activePuzzles.length || !activePuzzle) return;
+    const token = playTokenRef.current + 1;
+    playTokenRef.current = token;
+    playingRef.current = true;
+    setPlayingAll(true);
+    void runBoardPlayAll(token, activeShelf, puzzleIndex);
+  };
+
+  useLayoutEffect(() => {
+    if (!playingAll) return undefined;
+    const place = () => {
+      const header = document.querySelector<HTMLElement>('.dashboard-header');
+      const bottom = header ? header.getBoundingClientRect().bottom : 0;
+      const dock = playDockRef.current;
+      if (!dock) return;
+      if (bottom > 8) dock.style.setProperty('--board-playall-top', `${Math.round(bottom)}px`);
+      else dock.style.removeProperty('--board-playall-top');
+    };
+    place();
+    const header = document.querySelector('.dashboard-header');
+    const observer = header ? new ResizeObserver(place) : null;
+    if (header && observer) observer.observe(header);
+    window.addEventListener('scroll', place, true);
+    window.addEventListener('resize', place);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('scroll', place, true);
+      window.removeEventListener('resize', place);
+    };
+  }, [playingAll]);
+
+  useEffect(() => () => {
+    playTokenRef.current += 1;
+    playTimersRef.current.forEach((id) => window.clearTimeout(id));
+    playWakeRef.current.splice(0).forEach((fn) => fn());
+    if (playingRef.current) stopPronunciation();
+    playingRef.current = false;
+  }, []);
+
   const chooseShelf = (nextShelf: ShelfId) => {
     const switched = nextShelf !== activeShelf;
+    if (switched) stopBoardPlayAll();
     setActiveShelf(nextShelf);
     if (switched) {
       setPuzzleIndexByShelf((current) => ({ ...current, [nextShelf]: 0 }));
@@ -933,6 +1330,7 @@ const Board: React.FC<BoardProps> = ({
   }, [searchQuery, searchScope, activeShelf, allShelvesWithPuzzles]);
 
   const handleSelectSearchResult = (match: BoardSearchMatch) => {
+    if (playingRef.current) stopBoardPlayAll();
     if (match.shelfId !== activeShelf) {
       setActiveShelf(match.shelfId);
       localStorage.setItem('last-board-shelf', match.shelfId);
@@ -1016,9 +1414,18 @@ const Board: React.FC<BoardProps> = ({
     }
   };
 
+  playCtxRef.current = {
+    activePuzzles,
+    activeShelf,
+    puzzleIndex,
+    applySelection,
+  };
+
   const toggleTile = (tile: string) => {
     const clean = cleanTile(tile);
     if (!clean) return;
+    // A tap during Play all stops the show and becomes a normal manual tap.
+    if (playingRef.current) stopBoardPlayAll();
     // Selecting a tile must always work — never freeze. Wrong/other click replaces and re-evaluates.
     if (!isJodoSkin) {
       applySelection([clean]);
@@ -1079,6 +1486,7 @@ const Board: React.FC<BoardProps> = ({
 
   /** Navigate to previous puzzle on this shelf. */
   const goPrev = () => {
+    if (playingRef.current) stopBoardPlayAll();
     if (!activePuzzles.length) return;
     setPuzzleIndexByShelf((current) => {
       const idx = current[activeShelf] ?? 0;
@@ -1090,6 +1498,7 @@ const Board: React.FC<BoardProps> = ({
 
   /** Advance without wrapping — used by Next and auto-advance. */
   const goNext = () => {
+    if (playingRef.current) stopBoardPlayAll();
     if (!activePuzzles.length) return;
     setPuzzleIndexByShelf((current) => {
       const idx = current[activeShelf] ?? 0;
@@ -1101,6 +1510,7 @@ const Board: React.FC<BoardProps> = ({
 
   /** Again on the last puzzle — restart shelf at 0. */
   const restartShelf = () => {
+    if (playingRef.current) stopBoardPlayAll();
     if (!activePuzzles.length) return;
     setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: 0 }));
     resetPuzzleUi();
@@ -1115,6 +1525,7 @@ const Board: React.FC<BoardProps> = ({
   // Learn cards never auto-advance — child must hear, then click Next.
   // Do not wrap on the last puzzle (that felt like the chain broke).
   useEffect(() => {
+    if (playingRef.current) return undefined;
     if (isLearnPhase) return undefined;
     if (!checked || !isCorrect || activePuzzles.length < 2) return undefined;
     if (puzzleIndex + 1 >= activePuzzles.length) return undefined;
@@ -1123,7 +1534,7 @@ const Board: React.FC<BoardProps> = ({
     }, 8000);
     return () => window.clearTimeout(timer);
     // goNext closes over puzzleIndex/activeShelf; listing those deps avoids stale advance / double-fire.
-  }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length, isLearnPhase]);
+  }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length, isLearnPhase, playingAll]);
 
   const sectionChips: BoardSectionChip[] =
     activeShelf === 'prarambhah' ? buildMatraSectionChips(activePuzzles)
@@ -1142,6 +1553,7 @@ const Board: React.FC<BoardProps> = ({
   }, [activeChipId, isChipsExpanded]);
 
   const jumpToSection = (start: number) => {
+    if (playingRef.current) stopBoardPlayAll();
     if (start < 0 || !activePuzzles.length) return;
     const clamped = Math.max(0, Math.min(start, activePuzzles.length - 1));
     setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: clamped }));
@@ -1157,6 +1569,12 @@ const Board: React.FC<BoardProps> = ({
   const graphicWord = ((activePuzzle?.answer ?? activePuzzle?.target ?? activePuzzle?.highlight) || '').normalize('NFC');
   const puzzleGraphic = graphicWord ? iconForExampleWord(graphicWord) : '✨';
   const activeShelfInfo = SHELF_DESCRIPTIONS[activeShelf];
+  const nextCue = describeNextTap(activePuzzle, chosen, {
+    learn: isLearnPhase,
+    solved: checked && isCorrect,
+    last: isLastPuzzle,
+  });
+  const markedTile = playingAll ? null : nextCue.markIndex;
 
   return <main className="board-shell">
     {/* Top Website Navigation Breadcrumbs & Badge */}
@@ -1500,11 +1918,7 @@ const Board: React.FC<BoardProps> = ({
     )}
 
     <div className="board-tip-row">
-      <p className="board-tip">{isLearnPhase
-        ? <>Hear the word, read the meaning, then <strong className="tip-next">Click Next</strong>.</>
-        : isJodoSkin
-          ? <>Click letter chips to join them (e.g. क then आ) — picture and sentence appear. Then <strong className="tip-next">Click Next</strong>.</>
-          : emphasizeTipText('Click a cream tile. The picture and sentence appear. Then Click Next.')}</p>
+      <p className="board-tip" aria-live="polite">{nextCue.text || 'Tap the marked cream tile.'}</p>
       {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
       <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
@@ -1532,6 +1946,37 @@ const Board: React.FC<BoardProps> = ({
                   : '👆 1 tile → Next'}
             </span>
           </div>
+          <div className="board-playall-slot">
+            {playingAll ? (
+              <span className="board-playall-spacer" aria-hidden="true" />
+            ) : (
+              <button
+                type="button"
+                className="board-playall"
+                onClick={startBoardPlayAll}
+                aria-pressed={false}
+                title="Show how the tiles on this shelf join, starting here"
+                aria-label="Play all puzzles on this shelf"
+              >
+                ▶ Play all
+              </button>
+            )}
+          </div>
+          {playingAll && typeof document !== 'undefined' && createPortal(
+            <div ref={playDockRef} className="board-playall-dock" role="region" aria-label="Play all">
+              <button
+                type="button"
+                className="board-playall board-playall--pause"
+                onClick={stopBoardPlayAll}
+                aria-pressed
+                title="Pause play all"
+                aria-label="Pause play all"
+              >
+                ⏸ Pause
+              </button>
+            </div>,
+            document.body,
+          )}
           <div className="puzzle-nav-controls">
             <button
               type="button"
@@ -1582,8 +2027,8 @@ const Board: React.FC<BoardProps> = ({
         )}
 
         {isLearnPhase ? (
-          <div className="learn-card">
-            <p className="learn-word">{activePuzzle.target}</p>
+          <div className={`learn-card${learnPulse ? ' learn-card--settling' : ''}`}>
+            <p className={`learn-word${learnPulse ? ' learn-word--settle' : ''}`}>{activePuzzle.target}</p>
             <p className="learn-gloss">{activePuzzle.gloss ?? activePuzzle.english}</p>
             <button
               className="hear-button"
@@ -1598,16 +2043,20 @@ const Board: React.FC<BoardProps> = ({
                   key={`${tile}-${index}`}
                   className="puzzle-tile"
                   type="button"
-                  onClick={() => playPronunciation(cleanTile(tile))}
+                  onClick={() => {
+                    if (playingRef.current) stopBoardPlayAll();
+                    playPronunciation(cleanTile(tile));
+                  }}
                 >
                   <span className="tile-num" aria-hidden="true">{index + 1}</span>
                   <span>{tile}</span>
                 </button>
               ))}
             </div>
+            <p className="board-next-hint">{nextCue.text}</p>
             <div className="puzzle-actions">
               <button ref={nextBtnRef} className="next-button learn-next" type="button" onClick={onNextOrAgain}>
-                {isLastPuzzle ? 'Play Again ↺' : 'I learnt it · Next ▶'}
+                {isLastPuzzle ? 'Play Again' : 'Next'}
               </button>
             </div>
           </div>
@@ -1642,7 +2091,7 @@ const Board: React.FC<BoardProps> = ({
                 <p className="puzzle-prompt">
                   {isMatchMeaningPhase
                     ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
-                    : (activePuzzle.prompt ?? activePuzzle.target)}
+                    : renderPromptWithHole(activePuzzle.prompt ?? activePuzzle.target)}
                 </p>
                 {isPrashnaPart && activePuzzle.english && (
                   <p className="prashna-english-clue">({activePuzzle.english})</p>
@@ -1650,17 +2099,41 @@ const Board: React.FC<BoardProps> = ({
               </div>
             )}
 
+            {!(checked && isCorrect) && (
+              <p className="board-next-hint">{nextCue.text}</p>
+            )}
             <div className="tile-row">
-              {activePuzzle.tiles.map((tile, index) => (
-                <button key={`${tile}-${index}`} className={chosen.includes(cleanTile(tile)) ? 'puzzle-tile chosen' : 'puzzle-tile'} onClick={() => toggleTile(tile)}>
-                  <span className="tile-num" aria-hidden="true">{index + 1}</span>
-                  <span>{tile}</span>
-                </button>
-              ))}
+              {activePuzzle.tiles.map((tile, index) => {
+                const classes = ['puzzle-tile'];
+                if (chosen.includes(cleanTile(tile))) classes.push('chosen');
+                if (playingAll && dimOthers && !solverIndices.includes(index)) classes.push('puzzle-tile--dim');
+                if (playingAll && solverIndices.includes(index)) classes.push('puzzle-tile--magnet');
+                if (lockIndex === index) classes.push('puzzle-tile--lock');
+                if (markedTile === index) classes.push('puzzle-tile--next');
+                return (
+                  <button
+                    key={`${tile}-${index}`}
+                    type="button"
+                    data-board-tile={index}
+                    className={classes.join(' ')}
+                    onClick={() => toggleTile(tile)}
+                  >
+                    <span className="tile-num" aria-hidden="true">{index + 1}</span>
+                    <span>{tile}</span>
+                    {markedTile === index && <em className="tile-next-tag">next</em>}
+                  </button>
+                );
+              })}
             </div>
 
             {checked && isCorrect && (
               <div className="puzzle-result correct">
+                <p className="board-next-hint">{nextCue.text}</p>
+                {hasNextPuzzle && (
+                  <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>
+                    {isLastPuzzle ? 'Play Again' : 'Next'}
+                  </button>
+                )}
                 <div className="puzzle-success-banner">
                   <span className="success-emoji">🎉</span>
                   <span className="success-text">उत्तमम्! Correct!</span>
@@ -1670,7 +2143,7 @@ const Board: React.FC<BoardProps> = ({
                 <p className="result-english">{activePuzzle.english}</p>
                 <div className="result-audio-row">
                   <button
-                    className="hear-button hear-button--inline"
+                    className="hear-button hear-button--inline hear-button--subtle"
                     type="button"
                     onClick={() => playPronunciation(activePuzzle.sentence || activePuzzle.target)}
                     title="Hear complete sentence"
@@ -1690,7 +2163,6 @@ const Board: React.FC<BoardProps> = ({
                 </div>
                 {activePuzzle.explanation && <p className="result-explanation">💡 {activePuzzle.explanation}</p>}
                 {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
-                {hasNextPuzzle && <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>{isLastPuzzle ? 'Play Again ↺' : 'Next Puzzle ▶'}</button>}
               </div>
             )}
             {wrongAttempt && (
@@ -1710,6 +2182,17 @@ const Board: React.FC<BoardProps> = ({
         <p>{BODY_ANECDOTE}</p>
       </aside>}
     </>}
+
+    {joinGhost && typeof document !== 'undefined' && createPortal(
+      <div
+        className="board-join-ghost board-join-ghost--pop"
+        style={{ left: joinGhost.left, top: joinGhost.top }}
+        aria-hidden="true"
+      >
+        {joinGhost.word}
+      </div>,
+      document.body,
+    )}
 
     {welcomeOpen && <>
       <div className="welcome-scrim" role="presentation" onClick={() => setWelcomeOpen(false)} />

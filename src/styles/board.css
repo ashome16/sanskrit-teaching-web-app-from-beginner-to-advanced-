@@ -1826,3 +1826,222 @@
   }
 }
 
+
+/* Play all — board-only. Does not restyle the numbers guide or Dhātupāṭha bars. */
+.board-playall-slot {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 7.75rem;
+}
+
+.board-playall-spacer {
+  display: inline-block;
+  min-height: 44px;
+  min-width: 7.75rem;
+}
+
+.board-playall {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.45rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: #9a3423;
+  color: #fffdf8;
+  font: 800 0.95rem/1 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #6f2418, 0 6px 16px rgba(154, 52, 35, 0.28);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.board-playall:hover,
+.board-playall:focus-visible {
+  background: #7f2b1d;
+}
+
+.board-playall:focus-visible {
+  outline: 3px solid #fcd34d;
+  outline-offset: 2px;
+}
+
+.board-playall-dock {
+  position: fixed;
+  top: var(--board-playall-top, env(safe-area-inset-top, 0px));
+  left: 0.5rem;
+  right: 0.5rem;
+  z-index: 260;
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem 0.55rem;
+  border-radius: 14px;
+  border: 1px solid #f0d7a2;
+  background: rgba(255, 254, 249, 0.98);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18);
+}
+
+.board-playall-dock .board-playall,
+.board-playall--pause {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 28rem;
+  min-height: 44px;
+}
+
+.board-next-hint {
+  margin: 0.15rem 0 0.7rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(252, 211, 77, 0.65);
+  background: rgba(245, 158, 11, 0.16);
+  color: #fff7e8;
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.board-tip {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+}
+
+.board-answer-hole {
+  font: inherit;
+}
+
+.puzzle-tile--next {
+  z-index: 3;
+  border-color: #f59e0b;
+  box-shadow:
+    0 5px 0 #d97706,
+    0 0 0 4px rgba(245, 158, 11, 0.45),
+    0 10px 22px rgba(245, 158, 11, 0.35);
+}
+
+.tile-next-tag {
+  position: absolute;
+  top: -11px;
+  left: 6px;
+  z-index: 4;
+  margin: 0;
+  padding: 0.22rem 0.42rem;
+  border-radius: 999px;
+  background: #9a3423;
+  color: #fffdf8;
+  font: 800 0.72rem/1 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+.puzzle-tile--dim {
+  opacity: 0.34;
+  filter: saturate(0.45);
+}
+
+.puzzle-tile--dim:hover,
+.puzzle-tile--dim:active {
+  transform: none;
+}
+
+.puzzle-tile--magnet,
+.puzzle-tile--magnet:hover,
+.puzzle-tile--magnet:active {
+  z-index: 8;
+  transition: none !important;
+  border-color: #f59e0b;
+  box-shadow:
+    0 18px 32px rgba(0, 0, 0, 0.42),
+    0 0 0 3px rgba(252, 211, 77, 0.95);
+}
+
+.puzzle-tile--lock {
+  animation: board-tile-lockglow 0.48s ease-out;
+}
+
+@keyframes board-tile-lockglow {
+  0% { box-shadow: 0 0 0 0 rgba(252, 211, 77, 0.15), 0 8px 16px rgba(0, 0, 0, 0.2); }
+  55% { box-shadow: 0 0 0 8px rgba(252, 211, 77, 0.55), 0 18px 32px rgba(0, 0, 0, 0.38); }
+  100% { box-shadow: 0 0 0 3px rgba(252, 211, 77, 0.9), 0 14px 26px rgba(0, 0, 0, 0.32); }
+}
+
+.board-join-ghost {
+  position: fixed;
+  z-index: 230;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.4rem;
+  min-height: 3.3rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 14px;
+  border: 2px solid #f59e0b;
+  background: linear-gradient(180deg, #fffdf8 0%, #f4eee2 100%);
+  color: #1d332a;
+  font: 800 2rem/1.1 'Noto Sans Devanagari', Georgia, serif;
+  pointer-events: none;
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.28),
+    0 0 0 6px rgba(245, 158, 11, 0.35);
+}
+
+.board-join-ghost--pop {
+  animation: board-join-pop 0.5s cubic-bezier(0.22, 0.9, 0.28, 1) both;
+}
+
+.board-join-ghost::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 18px;
+  border: 2px solid rgba(252, 211, 77, 0.95);
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.55);
+  animation: board-join-ring 0.5s ease-out both;
+}
+
+@keyframes board-join-pop {
+  0% { transform: translate(-50%, -50%) scale(0.45); }
+  58% { transform: translate(-50%, -50%) scale(1.16); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes board-join-ring {
+  0% { opacity: 0.15; transform: scale(0.82); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.learn-word--settle {
+  display: inline-block;
+  animation: board-learn-settle 0.7s cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+@keyframes board-learn-settle {
+  0% { transform: scale(0.92); }
+  45% { transform: scale(1.08); text-shadow: 0 0 18px rgba(252, 211, 77, 0.85); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .board-join-ghost--pop,
+  .board-join-ghost::after,
+  .learn-word--settle,
+  .puzzle-tile--lock {
+    animation-duration: 0.32s;
+  }
+}
+
+@media (max-width: 768px) {
+  .board-playall-dock {
+    left: 0.35rem;
+    right: 0.35rem;
+  }
+  .puzzle-meta .board-playall-slot {
+    flex: 1 1 auto;
+  }
+}
