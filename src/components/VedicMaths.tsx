@@ -17,6 +17,7 @@ import {
   BHUTA_SANKHYA_DIGITS,
   BHASKARA_DOB_RECORD,
   SURYA_SIDDHANTA_MANGALACHARANA,
+  COSMIC_BRIDGE_DATA,
   type VedicSutra,
   type VedicSubSutraWorksheet,
   type VedicSubSutraProblem
@@ -551,6 +552,12 @@ ${bodyHtml}
   const [varnaVarZ, setVarnaVarZ] = useState<number>(2);
   const [varnaPreset, setVarnaPreset] = useState<'linear' | 'quadratic' | 'trivariate'>('linear');
   const [customBhutaYear, setCustomBhutaYear] = useState<string>('1036');
+
+  // Cosmic Bridge States
+  const [selectedBridgeMode, setSelectedBridgeMode] = useState<'triad' | 'spans' | 'resonance'>('triad');
+  const [selectedBridgeNodeId, setSelectedBridgeNodeId] = useState<string>('sanskrit');
+  const [selectedResonanceFlowId, setSelectedResonanceFlowId] = useState<string>('flow-cosmology');
+  const [activeBridgeSpanId, setActiveBridgeSpanId] = useState<string>('span-phonetics');
 
   // Sutra Directory States
   const [sutraSearch, setSutraSearch] = useState('');
@@ -7298,6 +7305,280 @@ ${bodyHtml}
                         </p>
                       </div>
                     </div>
+                  </div>
+
+                  {/* ==================================================================
+                      THE COSMIC BRIDGE: MATHEMATICS (UNIVERSE) ⇄ HUMANS (SANSKRIT)
+                      ================================================================== */}
+                  <div id="cosmic-bridge-section" className="cosmic-bridge-box">
+                    <div className="cosmic-bridge-header">
+                      <div className="epistemology-hero-badge" style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b', borderColor: 'rgba(245, 158, 11, 0.3)' }}>
+                        <span>॥ विश्व-मानव-संस्कृत-गणित-सेतुः ॥</span>
+                        <span>·</span>
+                        <span>The Cosmic Bridge of Interconnectedness</span>
+                      </div>
+                      <h3 className="cosmic-bridge-title">
+                        Mathematics (Universe) ⇄ Humans (Sanskrit)
+                      </h3>
+                      <p className="cosmic-bridge-desc">
+                        {COSMIC_BRIDGE_DATA.coreThesis}
+                      </p>
+                      <div className="cosmic-bridge-motto">
+                        <strong>Philosophical Axiom:</strong> <em>{COSMIC_BRIDGE_DATA.philosophicalMotto}</em> — {COSMIC_BRIDGE_DATA.mottoTranslation}
+                      </div>
+                    </div>
+
+                    {/* Mode Navigation Tabs */}
+                    <div className="cosmic-bridge-nav">
+                      <button
+                        type="button"
+                        className={`cosmic-mode-btn${selectedBridgeMode === 'triad' ? ' active' : ''}`}
+                        onClick={() => setSelectedBridgeMode('triad')}
+                      >
+                        🏛️ The Cosmic Triad
+                      </button>
+                      <button
+                        type="button"
+                        className={`cosmic-mode-btn${selectedBridgeMode === 'spans' ? ' active' : ''}`}
+                        onClick={() => setSelectedBridgeMode('spans')}
+                      >
+                        🌉 The 5 Bridge Spans
+                      </button>
+                      <button
+                        type="button"
+                        className={`cosmic-mode-btn${selectedBridgeMode === 'resonance' ? ' active' : ''}`}
+                        onClick={() => setSelectedBridgeMode('resonance')}
+                      >
+                        ⚡ Resonance Matrix
+                      </button>
+                      <button
+                        type="button"
+                        className="cosmic-mode-btn article-link"
+                        onClick={() => {
+                          setSelectedArticleId('cosmic-bridge-math-human-sanskrit');
+                          setActiveTab('articles');
+                          const el = document.getElementById('vedic-tabs');
+                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }}
+                      >
+                        📖 Read Full Article →
+                      </button>
+                    </div>
+
+                    {/* MODE 1: TRIAD VIEW */}
+                    {selectedBridgeMode === 'triad' && (
+                      <div className="cosmic-triad-view">
+                        <div className="cosmic-triad-visual-card">
+                          <svg viewBox="0 0 700 380" className="cosmic-triad-svg">
+                            <defs>
+                              <linearGradient id="gradUnivApp" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#38bdf8" />
+                                <stop offset="100%" stopColor="#0284c7" />
+                              </linearGradient>
+                              <linearGradient id="gradHumApp" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#818cf8" />
+                                <stop offset="100%" stopColor="#4f46e5" />
+                              </linearGradient>
+                              <linearGradient id="gradSansApp" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#f59e0b" />
+                                <stop offset="100%" stopColor="#d97706" />
+                              </linearGradient>
+                            </defs>
+
+                            {/* Connecting Triangle Flow Lines */}
+                            <line x1="350" y1="70" x2="160" y2="290" stroke="#38bdf8" strokeWidth="2.5" strokeDasharray="6 6" className="flow-dash" opacity="0.8" />
+                            <line x1="350" y1="70" x2="540" y2="290" stroke="#f59e0b" strokeWidth="2.5" strokeDasharray="6 6" className="flow-dash" opacity="0.8" />
+                            <line x1="160" y1="290" x2="540" y2="290" stroke="#818cf8" strokeWidth="2.5" strokeDasharray="6 6" className="flow-dash" opacity="0.8" />
+
+                            {/* Center Core: Śabda-Brahman */}
+                            <circle cx="350" cy="220" r="42" fill="#1e1b4b" stroke="#a5b4fc" strokeWidth="2" />
+                            <text x="350" y="215" fontSize="13" fontWeight="bold" fill="#f8fafc" textAnchor="middle">शब्दब्रह्म</text>
+                            <text x="350" y="232" fontSize="10" fill="#cbd5e1" textAnchor="middle">Śabda-Brahman</text>
+
+                            {/* Vertex 1: Universe */}
+                            <g onClick={() => setSelectedBridgeNodeId('universe')} style={{ cursor: 'pointer' }}>
+                              <circle cx="350" cy="70" r={selectedBridgeNodeId === 'universe' ? 56 : 50} fill="url(#gradUnivApp)" stroke={selectedBridgeNodeId === 'universe' ? '#ffffff' : '#bae6fd'} strokeWidth={selectedBridgeNodeId === 'universe' ? 3 : 1.5} />
+                              <text x="350" y="60" fontSize="18" textAnchor="middle">🌌</text>
+                              <text x="350" y="78" fontSize="12" fontWeight="900" fill="#ffffff" textAnchor="middle">UNIVERSE</text>
+                              <text x="350" y="93" fontSize="9.5" fontWeight="600" fill="#e0f2fe" textAnchor="middle">Mathematics · Ṛta</text>
+                            </g>
+
+                            {/* Vertex 2: Humans */}
+                            <g onClick={() => setSelectedBridgeNodeId('humans')} style={{ cursor: 'pointer' }}>
+                              <circle cx="160" cy="290" r={selectedBridgeNodeId === 'humans' ? 56 : 50} fill="url(#gradHumApp)" stroke={selectedBridgeNodeId === 'humans' ? '#ffffff' : '#c7d2fe'} strokeWidth={selectedBridgeNodeId === 'humans' ? 3 : 1.5} />
+                              <text x="160" y="280" fontSize="18" textAnchor="middle">🧠</text>
+                              <text x="160" y="298" fontSize="12" fontWeight="900" fill="#ffffff" textAnchor="middle">HUMANS</text>
+                              <text x="160" y="313" fontSize="9.5" fontWeight="600" fill="#e0e7ff" textAnchor="middle">Consciousness · Draṣṭā</text>
+                            </g>
+
+                            {/* Vertex 3: Sanskrit */}
+                            <g onClick={() => setSelectedBridgeNodeId('sanskrit')} style={{ cursor: 'pointer' }}>
+                              <circle cx="540" cy="290" r={selectedBridgeNodeId === 'sanskrit' ? 56 : 50} fill="url(#gradSansApp)" stroke={selectedBridgeNodeId === 'sanskrit' ? '#ffffff' : '#fde68a'} strokeWidth={selectedBridgeNodeId === 'sanskrit' ? 3 : 1.5} />
+                              <text x="540" y="280" fontSize="18" textAnchor="middle">🕉️</text>
+                              <text x="540" y="298" fontSize="12" fontWeight="900" fill="#ffffff" textAnchor="middle">SANSKRIT</text>
+                              <text x="540" y="313" fontSize="9.5" fontWeight="600" fill="#fef3c7" textAnchor="middle">The Algorithmic Bridge</text>
+                            </g>
+
+                            {/* Connecting Labels */}
+                            <rect x="200" y="150" width="114" height="24" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="1" />
+                            <text x="257" y="166" fontSize="9" fontWeight="700" fill="#7dd3fc" textAnchor="middle">Physical Laws (c, G, π)</text>
+
+                            <rect x="385" y="150" width="124" height="24" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="1" />
+                            <text x="447" y="166" fontSize="9" fontWeight="700" fill="#fcd34d" textAnchor="middle">Pāṇinian Algorithm Engine</text>
+
+                            <rect x="288" y="315" width="124" height="24" rx="12" fill="#0f172a" stroke="#818cf8" strokeWidth="1" />
+                            <text x="350" y="331" fontSize="9" fontWeight="700" fill="#c7d2fe" textAnchor="middle">Acoustic Matrix (Śikṣā)</text>
+                          </svg>
+                          <div style={{ textAlign: 'center', fontSize: '0.8rem', color: '#94a3b8', marginTop: '0.5rem' }}>
+                            💡 Click on any node (Universe, Humans, or Sanskrit) above to inspect its epistemic function.
+                          </div>
+                        </div>
+
+                        {/* Selected Node Details Card */}
+                        {(() => {
+                          const activeNode = COSMIC_BRIDGE_DATA.nodes.find((n) => n.id === selectedBridgeNodeId) || COSMIC_BRIDGE_DATA.nodes[2];
+                          return (
+                            <div className="cosmic-node-detail-card">
+                              <div className="cosmic-node-header">
+                                <div className="cosmic-node-avatar">{activeNode.icon}</div>
+                                <div>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                                    <h4 className="cosmic-node-name">{activeNode.name}</h4>
+                                    <span className="cosmic-node-sa">{activeNode.sanskritName}</span>
+                                    <span className="cosmic-node-role-badge">{activeNode.role}</span>
+                                  </div>
+                                  <p className="cosmic-node-desc">{activeNode.description}</p>
+                                </div>
+                              </div>
+
+                              <div className="cosmic-node-axiom">
+                                <strong>Epistemic Axiom:</strong> {activeNode.epistemicAxiom}
+                              </div>
+
+                              <div className="cosmic-node-facets-grid">
+                                {activeNode.facets.map((facet, idx) => (
+                                  <div key={idx} className="cosmic-facet-card">
+                                    <div className="cosmic-facet-title">{idx + 1}. {facet.title}</div>
+                                    <div className="cosmic-facet-desc">{facet.desc}</div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })()}
+                      </div>
+                    )}
+
+                    {/* MODE 2: THE 5 SPANS VIEW */}
+                    {selectedBridgeMode === 'spans' && (
+                      <div className="cosmic-spans-view">
+                        <div className="cosmic-spans-nav">
+                          {COSMIC_BRIDGE_DATA.spans.map((span) => (
+                            <button
+                              key={span.id}
+                              type="button"
+                              className={`cosmic-span-pill${activeBridgeSpanId === span.id ? ' active' : ''}`}
+                              onClick={() => setActiveBridgeSpanId(span.id)}
+                            >
+                              <span>Span {span.spanNumber}:</span> {span.title}
+                            </button>
+                          ))}
+                        </div>
+
+                        {(() => {
+                          const activeSpan = COSMIC_BRIDGE_DATA.spans.find((s) => s.id === activeBridgeSpanId) || COSMIC_BRIDGE_DATA.spans[0];
+                          return (
+                            <div className="cosmic-span-card">
+                              <div className="cosmic-span-header">
+                                <div>
+                                  <span className="cosmic-span-badge">Bridge Span {activeSpan.spanNumber} · {activeSpan.domain}</span>
+                                  <h4 className="cosmic-span-title">{activeSpan.title}</h4>
+                                  <div className="cosmic-span-sa">{activeSpan.sanskritTitle}</div>
+                                </div>
+                                <div className="cosmic-span-treatise">
+                                  <span>📜</span>
+                                  <span>{activeSpan.ancientTreatise}</span>
+                                </div>
+                              </div>
+
+                              <div className="cosmic-span-body">
+                                <div className="cosmic-span-row">
+                                  <strong>How the Bridge Works:</strong>
+                                  <p>{activeSpan.mechanism}</p>
+                                </div>
+                                <div className="cosmic-span-row">
+                                  <strong>Modern Scientific Parallel:</strong>
+                                  <p>{activeSpan.scientificParallel}</p>
+                                </div>
+                                <div className="cosmic-span-formula">
+                                  <strong>Key Mathematical / Textual Formula:</strong>
+                                  <code>{activeSpan.keyFormulaOrShloka}</code>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })()}
+                      </div>
+                    )}
+
+                    {/* MODE 3: RESONANCE MATRIX VIEW */}
+                    {selectedBridgeMode === 'resonance' && (
+                      <div className="cosmic-resonance-view">
+                        <p style={{ fontSize: '0.9rem', color: '#475569', marginBottom: '1rem' }}>
+                          Select a domain to observe how reality moves seamlessly across the 4 stages of the bridge:
+                        </p>
+                        <div className="cosmic-flow-selector">
+                          {COSMIC_BRIDGE_DATA.flows.map((flow) => (
+                            <button
+                              key={flow.id}
+                              type="button"
+                              className={`cosmic-flow-btn${selectedResonanceFlowId === flow.id ? ' active' : ''}`}
+                              onClick={() => setSelectedResonanceFlowId(flow.id)}
+                            >
+                              <span>{flow.icon}</span>
+                              <span>{flow.domain}</span>
+                            </button>
+                          ))}
+                        </div>
+
+                        {(() => {
+                          const activeFlow = COSMIC_BRIDGE_DATA.flows.find((f) => f.id === selectedResonanceFlowId) || COSMIC_BRIDGE_DATA.flows[0];
+                          return (
+                            <div className="cosmic-resonance-pipeline">
+                              <div className="cosmic-res-stage">
+                                <div className="cosmic-res-stage-num">Stage 1 · Universe</div>
+                                <div className="cosmic-res-stage-title">🌌 Cosmic Reality</div>
+                                <div className="cosmic-res-stage-desc">{activeFlow.cosmicManifestation}</div>
+                              </div>
+
+                              <div className="cosmic-res-arrow">➔</div>
+
+                              <div className="cosmic-res-stage">
+                                <div className="cosmic-res-stage-num">Stage 2 · Mathematics</div>
+                                <div className="cosmic-res-stage-title">📐 Mathematical Law</div>
+                                <div className="cosmic-res-stage-desc">{activeFlow.mathematicalSyntax}</div>
+                              </div>
+
+                              <div className="cosmic-res-arrow">➔</div>
+
+                              <div className="cosmic-res-stage highlight">
+                                <div className="cosmic-res-stage-num">Stage 3 · The Bridge</div>
+                                <div className="cosmic-res-stage-title">🕉️ Sanskrit Acoustic Code</div>
+                                <div className="cosmic-res-stage-desc">{activeFlow.sanskritAcousticBridge}</div>
+                              </div>
+
+                              <div className="cosmic-res-arrow">➔</div>
+
+                              <div className="cosmic-res-stage">
+                                <div className="cosmic-res-stage-num">Stage 4 · Consciousness</div>
+                                <div className="cosmic-res-stage-title">👁️ Human Realization</div>
+                                <div className="cosmic-res-stage-desc">{activeFlow.humanConsciousRealization}</div>
+                              </div>
+                            </div>
+                          );
+                        })()}
+                      </div>
+                    )}
                   </div>
                 </div>
               )}

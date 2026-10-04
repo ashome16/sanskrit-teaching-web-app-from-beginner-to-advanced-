@@ -1199,6 +1199,196 @@ export const SURYA_SIDDHANTA_MANGALACHARANA: SuryaSiddhantaMangalacharana = {
   epistemologyConclusion: 'To ancient Indian mathematical astronomers, practicing Gaṇita was not detached secular bookkeeping, but the highest form of epistemological worship. Decoding planetary periods, eclipses, and trigonometry was viewed as the most direct method to interface with the mind of cosmic consciousness.'
 };
 
+export interface CosmicBridgeNode {
+  id: string;
+  name: string;
+  sanskritName: string;
+  icon: string;
+  role: string;
+  dimension: string;
+  description: string;
+  epistemicAxiom: string;
+  facets: { title: string; desc: string }[];
+}
+
+export interface CosmicBridgeSpan {
+  id: string;
+  spanNumber: number;
+  title: string;
+  sanskritTitle: string;
+  domain: string;
+  mechanism: string;
+  scientificParallel: string;
+  ancientTreatise: string;
+  keyFormulaOrShloka: string;
+}
+
+export interface CosmicResonanceFlow {
+  id: string;
+  domain: string;
+  domainSa: string;
+  icon: string;
+  cosmicManifestation: string;
+  mathematicalSyntax: string;
+  sanskritAcousticBridge: string;
+  humanConsciousRealization: string;
+}
+
+export interface CosmicBridgeData {
+  title: string;
+  sanskritTitle: string;
+  philosophicalMotto: string;
+  mottoTranslation: string;
+  coreThesis: string;
+  nodes: CosmicBridgeNode[];
+  spans: CosmicBridgeSpan[];
+  flows: CosmicResonanceFlow[];
+}
+
+export const COSMIC_BRIDGE_DATA: CosmicBridgeData = {
+  title: 'The Bridge of Interconnectedness: Mathematics (Universe) ⇄ Humans (Sanskrit)',
+  sanskritTitle: '॥ विश्व-मानव-संस्कृत-गणित-सेतुः ॥',
+  philosophicalMotto: 'यथा पिण्डे तथा ब्रह्माण्डे · शब्दब्रह्म-गणित-समन्वयः',
+  mottoTranslation: '"As is the microcosm (the human), so is the macrocosm (the universe) — The seamless harmony of Cosmic Sound and Universal Mathematics."',
+  coreThesis: 'In classical Indian thought, the Universe is the objective mathematical reality, the Human is the conscious observer, and Sanskrit is the acoustic, algorithmic, and harmonic bridge designed to tune human consciousness into the mathematical syntax of the cosmos.',
+  nodes: [
+    {
+      id: 'universe',
+      name: 'Universe (Cosmos)',
+      sanskritName: 'ब्रह्माण्डम् · प्रकृतिः ऋतं च',
+      icon: '🌌',
+      role: 'The Objective Reality / Physical Fabric',
+      dimension: 'Spacetime, Invariant Laws & Energy Rhythms',
+      description: 'The universe is not arbitrary matter or chaotic noise; it is governed by immutable mathematical invariants (Ṛta, universal constants: c, G, ℏ, π). In the Sūrya Siddhānta, the physical cosmos with its gravitational curvature and elliptical planetary motions is revered as "Samasta-jagad-ādhāra-mūrti"—the visible geometric body of unmanifest consciousness (Brahman).',
+      epistemicAxiom: 'Mathematics is not an artificial invention of human convention; it is the inherent code and geometry of the Universe itself.',
+      facets: [
+        { title: 'Avyakta to Vyakta', desc: 'The unmanifest potential (quantum vacuum / Śūnya) crystallizing into manifest physical coordinates and equations.' },
+        { title: 'Cosmic Periodicities', desc: 'Cyclic planetary orbits, solar equinoxes, and gravitational orbital resonances behaving as periodic harmonic functions.' },
+        { title: 'Universal Invariants', desc: 'Fundamental dimensionless constants and geometric symmetries structuring atoms, stars, and galaxies.' }
+      ]
+    },
+    {
+      id: 'humans',
+      name: 'Humans (Consciousness)',
+      sanskritName: 'मानवः · पिण्डः द्रष्टा चैतन्यं च',
+      icon: '🧠',
+      role: 'The Subjective Observer & Microcosm (Piṇḍa)',
+      dimension: 'Neural Cognition, Vocal Apparatus & Antaḥkaraṇa',
+      description: 'The human being is the conscious observer (Draṣṭā) and the microcosm (Piṇḍa). Endowed with an internal cognitive instrument (Antaḥkaraṇa: Manas, Buddhi, Ahaṅkāra, Citta) and an articulatory vocal tract with five distinct acoustic resonance cavities, the human is the universe contemplating its own nature.',
+      epistemicAxiom: 'Yathā Piṇḍe Tathā Brahmāṇḍe — The laws that govern human neurological perception and acoustic speech are a direct holographic reflection of cosmic laws.',
+      facets: [
+        { title: 'The Observer (Draṣṭā)', desc: 'Consciousness actively witnessing, measuring, and collapsing potentiality into definite knowledge.' },
+        { title: 'Vocal Microcosm', desc: 'An intricate biological synthesizer capable of generating precise acoustic frequencies across five articulatory positions.' },
+        { title: 'Cognitive Liberation (Mokṣa)', desc: 'The human intellect finding ultimate fulfillment by perceiving underlying mathematical unity behind superficial diversity.' }
+      ]
+    },
+    {
+      id: 'sanskrit',
+      name: 'Sanskrit (The Bridge)',
+      sanskritName: 'संस्कृतम् · शब्दब्रह्म कलन-सेतुश्च',
+      icon: '🕉️',
+      role: 'The Acoustic & Algorithmic Bridge',
+      dimension: 'Phonetic Matrix, Generative Grammar & Metric Ciphers',
+      description: 'Sanskrit (literally "perfected, refined, mathematically constructed") is neither an accidental dialect nor an arbitrary human vernacular. It is a scientifically engineered acoustic-algorithmic interface. Its 50 sound coordinates (Varṇas) map the human vocal tract directly to cosmic wave mechanics, while its rule-based generative grammar mirrors formal algorithmic computation.',
+      epistemicAxiom: 'Śabda-Brahman — Sound vibration and mathematical law are two sides of the same universal reality; Sanskrit is the harmonic instrument linking human vocalization to cosmic order.',
+      facets: [
+        { title: 'Articulatory Geometry (Śikṣā)', desc: 'Five mouth positions (Kaṇṭha to Oṣṭha) corresponding to the five cosmic elements (Space to Earth).' },
+        { title: 'Pāṇinian Generative Machine', desc: '3,959 algebraic sūtras deriving infinite semantic vocabulary from root primitives through formal algorithmic logic.' },
+        { title: 'Unified Semantic-Numerical Code', desc: 'Elimination of the barrier between word and number via Bhūta-Saṅkhyā and Kaṭapayādi ciphers.' }
+      ]
+    }
+  ],
+  spans: [
+    {
+      id: 'span-phonetics',
+      spanNumber: 1,
+      title: 'Acoustic Geometry & Vocal Resonance',
+      sanskritTitle: 'वर्णमालायाः ज्यामितिः · शिक्षाशास्त्रम्',
+      domain: 'Phonetics & Wave Mechanics (Śikṣā)',
+      mechanism: 'The 50 Varṇas are not arranged randomly like Latin ABC; they form a strict two-dimensional mathematical matrix ordered by articulatory points of origin: Kaṇṭhya (Throat/Velar), Tālavya (Palate), Mūrdhanya (Cerebral/Retroflex), Dantya (Dental), and Oṣṭhya (Labial). These five vocal cavities physically correspond to the five cosmic elements (Ākāśa, Vāyu, Tejas, Jala, Pṛthvī).',
+      scientificParallel: 'Acoustic wave theory and resonant cavity harmonics: vocal tract resonances (formants) correspond directly to fundamental frequency standing waves in physical acoustics.',
+      ancientTreatise: 'Pāṇinīya Śikṣā & Ṛgveda-Prātiśākhya',
+      keyFormulaOrShloka: 'आत्मा बुद्ध्या समेत्यार्थान् मनो युङ्क्ते विवक्षया । मनः कायाग्निमाहन्ति स प्रेरयति मारुतम् ॥ (Pāṇinīya Śikṣā 6)'
+    },
+    {
+      id: 'span-grammar',
+      spanNumber: 2,
+      title: 'Generative Algorithmic Computation',
+      sanskritTitle: 'व्याकरणम् · सार्वभौम-तार्किक-यन्त्रम्',
+      domain: 'Formal Generative Grammar & AI (Vyākaraṇa)',
+      mechanism: 'Pāṇini’s Aṣṭādhyāyī (c. 500 BCE) operates as a formal Turing-complete generative engine consisting of 3,959 sūtras. Every word is algebraically derived from approximately 2,000 verbal roots (Dhātus) and affixes (Pratyayas) via context-free rewrite rules. In 1985, NASA researcher Rick Briggs demonstrated that Sanskrit is the only natural language whose grammatical precision allows direct semantic knowledge representation for artificial intelligence without syntactic ambiguity.',
+      scientificParallel: 'Chomsky Normal Form, context-free generative grammars, and Backus-Naur Form (BNF) in computer programming compilers.',
+      ancientTreatise: 'Pāṇini’s Aṣṭādhyāyī & Bhartṛhari’s Vākyapadīya',
+      keyFormulaOrShloka: 'धातु + प्रत्यय → पदम् (Algebraic Function: f(Dhātu, Pratyaya) = Pada)'
+    },
+    {
+      id: 'span-metrics',
+      spanNumber: 3,
+      title: 'Periodic Metrics & Binary Combinatorics',
+      sanskritTitle: 'छन्दःशास्त्रम् · द्वि-आधारीय-कलनम्',
+      domain: 'Combinatorics & Periodic Wavefunctions (Chandas)',
+      mechanism: 'In Piṅgala’s Chandaḥśāstra (3rd c. BCE), Sanskrit poetic meter is analyzed through binary states: Laghu (Light/Short = 0) and Guru (Heavy/Long = 1). Through metric combinations, Piṅgala discovered binary numbers (2000 years before Leibniz), permutations (Prastāra), binomial coefficients and Pascal’s Triangle (Meru-Prastāra), and Fibonacci sequences (Mātrā-meru). Chanting metered verses aligns neural brainwaves with periodic wave functions.',
+      scientificParallel: 'Binary digital logic, Fourier harmonic series, and EEG neural phase-locking with rhythmic auditory stimulation.',
+      ancientTreatise: 'Piṅgala’s Chandaḥśāstra & Kedārabhaṭṭa’s Vṛttaratnākara',
+      keyFormulaOrShloka: 'परे पूर्णम् (Piṅgala 8.34 — Rule for generating binomial coefficients / Meru-Prastāra)'
+    },
+    {
+      id: 'span-ciphers',
+      spanNumber: 4,
+      title: 'Unified Semantic-Numerical Ciphers',
+      sanskritTitle: 'सङ्ख्या-शब्द-ऐक्यम् · भूतसङ्ख्या कटपयादि च',
+      domain: 'Cryptographic Information Encoding',
+      mechanism: 'In Western convention, letters and numbers are strictly segregated. In Sanskrit, words ARE numbers and numbers ARE concepts. Systems like Bhūta-Saṅkhyā (mapping digits to cosmic constants: Rasa=6, Guṇa=3, Pūrṇa=0, Mahī=1) and Kaṭapayādi (mapping consonants to decimal digits) allow astronomers to embed complex planetary tables and mathematical constants (such as Mādhava’s 31-decimal π) into devotional verses that endure for millennia without manuscript decay.',
+      scientificParallel: 'Lossless cryptographic hashing, error-correcting codes, and high-density holographic data compression.',
+      ancientTreatise: 'Bhāskarācārya’s Siddhānta Śiromaṇi & Mādhava’s Karaṇapaddhati',
+      keyFormulaOrShloka: 'अङ्कानां वामतो गतिः (Numbers proceed from right to left in verse ciphers)'
+    },
+    {
+      id: 'span-epistemology',
+      spanNumber: 5,
+      title: 'The Sacred Epistemological Loop',
+      sanskritTitle: 'ज्ञानयज्ञः · परब्रह्मार्पणम् लोकसङ्ग्रहश्च',
+      domain: 'Integral Epistemology & Non-Individualism',
+      mechanism: 'Science and spirituality in India were never in conflict. Mathematics was revered as the supreme eye of sacred knowledge (Jyotiṣaṁ Netram Ucyate). Truth was not an individual ego property to be commercialized or weaponized; it was discovered through Guru-Bhakti as a trans-personal current flowing from Paramātmā. By using Sanskrit to formulate cosmic mathematics, human consciousness participates in Jñāna-Yajña—offering understanding back to the cosmic whole for the welfare of all beings (Lokasaṅgraha).',
+      scientificParallel: 'Participatory anthropic principle (John Wheeler: "It from Bit") and quantum observer-participancy.',
+      ancientTreatise: 'Sūrya Siddhānta & Bhagavad Gītā (4.33)',
+      keyFormulaOrShloka: 'अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने । समस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥'
+    }
+  ],
+  flows: [
+    {
+      id: 'flow-cosmology',
+      domain: 'Planetary Orbits & Celestial Time',
+      domainSa: 'ग्रहगतिः कालचक्रं च',
+      icon: '🪐',
+      cosmicManifestation: 'Planetary synodic revolutions, precession of the equinoxes, and celestial orbital geometry across millions of years.',
+      mathematicalSyntax: 'Spherical trigonometry (Jyā, Koṭi-jyā), epicyclic gearings, and differential calculus rates: d(sin θ) = cos θ dθ (Bhāskara II).',
+      sanskritAcousticBridge: 'Bhūta-Saṅkhyā and Kaṭapayādi metric verses encoding orbital parameters (e.g. Mahāyuga = 4,320,000 solar years) with flawless mnemonic preservation.',
+      humanConsciousRealization: 'Accurate eclipse prediction, agricultural seasonal coordination, and intellectual contemplation of cosmic eternity (Kāla-Cakra).'
+    },
+    {
+      id: 'flow-quantum',
+      domain: 'Primordial Potential & The Void (Zero)',
+      domainSa: 'शून्यं अव्यक्तं च',
+      icon: '🌌',
+      cosmicManifestation: 'The quantum vacuum state; undifferentiated singularity prior to cosmic inflation and coordinate boundaries.',
+      mathematicalSyntax: 'Śūnya (0) as both number and operator; Avyakta Gaṇitam (unexpressed multivariate algebra using color variables); infinity (a / 0 = ∞).',
+      sanskritAcousticBridge: 'The Sanskrit word "Śūnya" embodies dual metaphysical meaning: hollow/void (nothingness) and swollen/pregnant (infinite potential of creation).',
+      humanConsciousRealization: 'Experiencing inner stillness in Samādhi; recognizing that the individual ego (Ahaṅkāra) is zero when uncoupled from cosmic awareness (Brahman).'
+    },
+    {
+      id: 'flow-waves',
+      domain: 'Harmonic Waves & Physical Sound',
+      domainSa: 'नादब्रह्म स्पन्दश्च',
+      icon: '🌊',
+      cosmicManifestation: 'Electromagnetic radiation, cosmic microwave background, and acoustic vibrations propagating through matter.',
+      mathematicalSyntax: 'Periodic functions f(t) = f(t+T), harmonic integer ratios, binary combinatorics (Piṅgala), and golden ratio self-similarity.',
+      sanskritAcousticBridge: 'Māheśvara Sūtras and 5 vocal places of articulation mapping to natural wave harmonics; metered recitation entraining acoustic waveforms.',
+      humanConsciousRealization: 'Nāda-Yoga: Recitation of Sanskrit mantras physically induces coherent neural theta/alpha wave synchronization across brain hemispheres.'
+    }
+  ]
+};
+
 export const VEDIC_ARTICLES: VedicArticle[] = [
   {
     id: 'magic-intro',
@@ -1590,7 +1780,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     subtitle: 'The master-disciple lineage that revived, preserved, and continues to propagate this cosmic science for humanity.',
     readingTime: '8 min read',
     badge: 'Sacred Lineage & History',
-    prequel: { id: 'historiographical-framework-indian-mathematics', label: 'Historiographical Framework & Shaka Chronology' },
+    prequel: { id: 'cosmic-bridge-math-human-sanskrit', label: 'The Cosmic Bridge: Mathematics (Universe) ⇄ Humans (Sanskrit)' },
     sections: [
       {
         title: 'Vedic Mathematics as Living Vidya',
@@ -2655,7 +2845,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     readingTime: '13 min read',
     badge: 'Algebra & Cosmic Epistemology',
     prequel: { id: 'kerala-school-calculus-infinite-series', label: 'The Kerala School: Infinite Series & Calculus' },
-    next: { id: 'source-lineage', label: 'The Living Lineage: Guru Parampara' },
+    next: { id: 'cosmic-bridge-math-human-sanskrit', label: 'The Cosmic Bridge: Mathematics (Universe) ⇄ Humans (Sanskrit)' },
     sections: [
       {
         title: 'The Cryptographic Genius of Bhāskarācārya’s Date of Birth',
@@ -2763,6 +2953,102 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Bhāskara II utilized the Varṇa system of color names (Kālaka [black/x], Nīlaka [blue/y], Pītaka [yellow/z], Haritaka [green/w], and Rūpa [constants]) to formulate multivariate equations.',
       'The Sūrya Siddhānta opening shloka "Acintyāvyaktarūpāya" presents a mathematician’s vision of Brahman: the unmanifest quantum vacuum (Acintya-Avyakta), the generator of physical constants (Nirguṇa-Guṇātman), and the physical cosmos as its living geometric body (Mūrti).',
       'In the Golādhyāya, Bhāskara II articulated the law of gravitational attraction (Ākṛṣṭi-Śakti) and the self-suspending nature of the spherical Earth (Dhāraṇātmikā Śaktiḥ) centuries before modern European physics.'
+    ]
+  },
+  {
+    id: 'cosmic-bridge-math-human-sanskrit',
+    slug: 'the-cosmic-bridge-mathematics-universe-humans-sanskrit',
+    title: 'The Cosmic Bridge: Mathematics (Universe) ⇄ Humans (Sanskrit)',
+    sanskritTitle: '॥ विश्व-मानव-संस्कृत-गणित-सेतुः ॥',
+    subtitle: 'How the acoustic, algorithmic, and metrical architecture of Sanskrit bridges human consciousness directly to the mathematical fabric of the cosmos.',
+    readingTime: '14 min read',
+    badge: 'Cosmic Bridge & Epistemology',
+    prequel: { id: 'bhaskara-algebra-cosmic-consciousness', label: 'Bhāskarācārya: D.O.B., The Two Algebras & Cosmic Consciousness' },
+    next: { id: 'source-lineage', label: 'The Living Lineage: Guru Parampara' },
+    sections: [
+      {
+        title: 'The Triad of Interconnectedness: Universe, Humans & The Bridge',
+        sanskritTitle: 'त्रिवेणी-तत्त्वम् · ब्रह्माण्डम् मानवः सेतुश्च',
+        paragraphs: [
+          'In modern disciplinary silos, astrophysics, human psychology, and formal linguistics are treated as three separate universes. In traditional Indian thought—as highlighted in the landmark expositions of Dr. Remella Avadhanulu—they form an indivisible, holographic triad: The Universe (the objective mathematical reality), Humans (the subjective conscious observer), and Sanskrit (the resonating algorithmic bridge).',
+          'Galileo Galilei famously stated in 1623 that "The Book of Nature is written in mathematical language." Thousands of years earlier, the seers of the Vedas and the astronomers of the Sūrya Siddhānta realized that the cosmos does not merely contain mathematics—it IS mathematics in operation. The universe operates by Ṛta (immutable cosmic order, physical invariants, and geometric periodicities). Matter and spacetime curvature are the visible, geometric embodiment (Mūrti) of unmanifest potential (Avyakta).',
+          'At the second vertex of this triad stands the Human Being—the microcosm (Piṇḍa). Endowed with consciousness (Caitanya), a four-fold cognitive apparatus (Antaḥkaraṇa: sensory processing [Manas], discerning intellect [Buddhi], individuation [Ahaṅkāra], and subconscious memory [Citta]), and an articulatory vocal synthesizer, the human is not a detached foreign observer, but the cosmos awakening to its own lawful splendor.',
+          'Between the vast macrocosm and the human microcosm lies the fundamental question of epistemology: How does finite human consciousness decode, compute, and align with the infinite mathematical laws of the universe? The ancient answer is Saṃskṛtam (Sanskrit)—not a casual historical vernacular, but a deliberately engineered, acoustic-algorithmic bridge.'
+        ],
+        terms: [
+          { sa: 'ऋतम्', iast: 'Ṛtam', gloss: 'Immutable cosmic order, physical law, and mathematical harmony governing the universe' },
+          { sa: 'पिण्ड-ब्रह्माण्ड-ऐक्यम्', iast: 'Piṇḍa-Brahmāṇḍa-Aikyam', gloss: 'Holographic axiom: "Yathā piṇḍe tathā brahmāṇḍe" (as is the microcosm, so is the macrocosm)' },
+          { sa: 'शब्दब्रह्म', iast: 'Śabda-Brahman', gloss: 'Ultimate Reality conceived as primordial cosmic sound vibration and harmonic frequency' },
+          { sa: 'अन्तःकरण', iast: 'Antaḥkaraṇa', gloss: 'Four-fold human cognitive organ: Manas (sensory), Buddhi (intellect), Ahaṅkāra (ego), Citta (memory)' }
+        ],
+        highlight: 'Sanskrit is the acoustic and algorithmic bridge that tunes human neural consciousness into the pre-existing mathematical frequencies of the cosmos.'
+      },
+      {
+        title: 'Span 1 & 2: Acoustic Geometry (Śikṣā) and the Pāṇinian Algorithm (Vyākaraṇa)',
+        sanskritTitle: 'वर्णमाला-यन्त्रम् · पाणिनीय-सार्वभौम-व्याकरणम्',
+        paragraphs: [
+          'The first span of the bridge is acoustic and physical: the science of Sanskrit phonology (Śikṣā). Unlike alphabets that evolve arbitrarily, the 50 Varṇas (phonetic units) of Sanskrit form a rigorous two-dimensional coordinate matrix mapped precisely to the human vocal tract across five articulatory positions:',
+          '1. Kaṇṭhya (Throat / Velar): Guttural sound cavity ↔ Cosmic Element: Ākāśa (Space/Ether)',
+          '2. Tālavya (Palate / Palatal): Palatal resonant cavity ↔ Cosmic Element: Vāyu (Air/Motion)',
+          '3. Mūrdhanya (Roof / Retroflex): Cerebral acoustic focus ↔ Cosmic Element: Tejas (Fire/Energy)',
+          '4. Dantya (Teeth / Dental): Dental constriction ↔ Cosmic Element: Jala (Water/Flow)',
+          '5. Oṣṭhya (Lips / Labial): Labial enclosure ↔ Cosmic Element: Pṛthvī (Earth/Solidification)',
+          'When a human articulates Sanskrit sounds, the airflow (Prāṇa) systematically stimulates acoustic standing waves that physically mirror the five elemental phases of physical matter.',
+          'The second span of the bridge is algorithmic: Pāṇini’s Aṣṭādhyāyī (c. 500 BCE). Consisting of 3,959 algebraic sūtras, Pāṇini created the world’s first formal, context-free generative grammar. Words are not memorized lists; they are dynamic mathematical functions where roots (Dhātus) transform into words (Padas) through rigorous rewrite operators: f(Dhātu, Pratyaya) = Pada.',
+          'In his seminal 1985 paper published in AI Magazine, NASA scientist Rick Briggs demonstrated that while natural human languages like English are plagued by syntactic ambiguities that confuse machine logic, Sanskrit’s grammatical case system (Kāraka) and algorithmic root structure allow direct semantic knowledge representation. Pāṇini’s architecture anticipates the Backus-Naur Form (BNF) used in modern computer compilers by two and a half millennia.'
+        ],
+        terms: [
+          { sa: 'शिक्षा', iast: 'Śikṣā', gloss: 'Phonetic science mapping vocal tract acoustic cavities to cosmic elements' },
+          { sa: 'अष्टाध्यायी', iast: 'Aṣṭādhyāyī', gloss: 'Pāṇini\'s 3,959-sūtra generative grammar, the world\'s first formal programming language' },
+          { sa: 'धातु', iast: 'Dhātu', gloss: 'Verbal primitives / root semantic seeds from which all vocabulary is algorithmically generated' },
+          { sa: 'कारक', iast: 'Kāraka', gloss: 'Deep semantic relation system connecting nouns to actions without syntactic ambiguity' }
+        ],
+        highlight: 'Pāṇini’s grammar is not a set of linguistic conventions, but a formal Turing-complete computing engine that translates human thought into unambiguous algorithmic structures.'
+      },
+      {
+        title: 'Span 3 & 4: Binary Metrics (Chandas) and the Fusion of Word & Number',
+        sanskritTitle: 'द्वि-आधारीय-छन्दः · सङ्ख्या-शब्द-समन्वयः',
+        paragraphs: [
+          'The third span of the bridge connects human rhythmic speech to periodic wavefunctions: the science of metric prosody (Chandaḥśāstra). In the 3rd century BCE, the master mathematician Piṅgala analyzed poetic meter through two fundamental duration states: Laghu (short/light, denoted 0) and Guru (long/heavy, denoted 1).',
+          'Through this binary analysis, Piṅgala discovered the binary numerical system millennia before Gottfried Wilhelm Leibniz (1703). To systematically enumerate all possible meters of n syllables (2ⁿ), Piṅgala formulated the Prastāra algorithm, discovered the binomial expansion and Pascal\'s Triangle (which he named Meru-Prastāra, "The Staircase of Mount Meru"), and uncovered the Fibonacci sequence (Mātrā-meru) in rhythmic mora distributions.',
+          'Modern cognitive neuroscience confirms that reciting metered verses (such as the 8-syllable Anuṣṭubh or 11-syllable Triṣṭubh) induces neural phase-locking, synchronizing EEG alpha and theta oscillations across both cerebral hemispheres.',
+          'The fourth span of the bridge dissolves the artificial Western barrier between letters and numbers. Through ciphers like Bhūta-Saṅkhyā and Kaṭapayādi, Sanskrit achieves lossless semantic-numerical unification. In Bhūta-Saṅkhyā, words denoting immutable cosmic concepts become digits (Rasa = 6, Guṇa = 3, Pūrṇa = 0, Mahī = 1 → 1036 Shaka = 1114 CE birth of Bhāskara II). In Kaṭapayādi, letters encode high-precision floating point constants into devotional hymns.',
+          'A spectacular historical example is Mādhava of Sangamagrama’s 14th-century trigonometric verse encoding the value of π to 31 decimal places (3.141592653589793238462643383279...). The verse functions simultaneously as a devotional prayer and an astronomical constant with zero corruption over centuries of oral and manuscript transmission.'
+        ],
+        terms: [
+          { sa: 'छन्दःशास्त्र', iast: 'Chandaḥśāstra', gloss: 'Piṅgala\'s treatise on binary metrics, combinatorics, and harmonic periodic sequences' },
+          { sa: 'मेरुप्रस्तार', iast: 'Meru-Prastāra', gloss: 'Pyramidal expansion of binomial coefficients, formulated centuries before Blaise Pascal' },
+          { sa: 'कटपयादि', iast: 'Kaṭapayādi', gloss: 'Alphanumeric cipher mapping consonants directly to digits 0–9 for high-density mnemonic encoding' },
+          { sa: 'अङ्कपाश', iast: 'Aṅka-Pāśa', gloss: 'Combinatorial analysis of permutations and sequences in Indian mathematics' }
+        ],
+        highlight: 'Piṅgala formulated binary numbers, permutations, and Pascal’s Triangle not through abstract silicon circuits, but through the musical rhythm of human poetry.'
+      },
+      {
+        title: 'Span 5: The Sacred Epistemological Loop (Yathā Piṇḍe Tathā Brahmāṇḍe)',
+        sanskritTitle: 'महावाक्य-सेतुः · यथा पिण्डे तथा ब्रह्माण्डे',
+        paragraphs: [
+          'The fifth and culminating span completes the circle: the non-individualistic epistemological loop between Creator, Creation, and Conscious Observer. In the Upaniṣadic vision, the cosmos is not an inanimate clockwork machine to be dominated and exploited. It is an intelligent, self-aware continuum.',
+          'The ancient axiom "Yathā piṇḍe tathā brahmāṇḍe" ("As in the individual body, so in the cosmic body") asserts that human consciousness possesses the holographic capacity to understand the universe because the same consciousness that orchestrates galactic rotations is the very consciousness that animates the human observer (Draṣṭā).',
+          'When Indian mathematicians like Āryabhaṭa, Brahmagupta, and Bhāskarācārya computed planetary periods, tracked solar eclipses, or derived the cyclic Cakravāla algorithm for indeterminate quadratic equations, they did not regard mathematics as secular trade craft. To them, Gaṇita was Darśana—a direct contemplative window into the mind of the Supreme Cosmic Architect (Paramātmā).',
+          'Because knowledge was understood to originate from the Divine through the transparent lineage of the Guru-Śiṣya Paramparā, discoveries were accompanied by profound humility (Nirahaṅkāratvam). Treatises began with Maṅgalācaraṇa invocations and concluded with dedications to universal peace. Mathematics and Sanskrit together transformed the human intellect into a consecrated vessel (Jñāna-Yajña), enabling humanity to live in harmonic resonance with the cosmos.'
+        ],
+        terms: [
+          { sa: 'दर्शन', iast: 'Darśana', gloss: 'Contemplative perception of reality; mathematics as a sacred window into cosmic truth' },
+          { sa: 'ज्ञानयज्ञ', iast: 'Jñāna-Yajña', gloss: 'The sacred offering of knowledge and understanding for cosmic harmony and liberation' },
+          { sa: 'निरहङ्कारत्वम्', iast: 'Nirahaṅkāratvam', gloss: 'Total freedom from ego-ownership, acknowledging the Divine as the sole source of truth' },
+          { sa: 'लोकसङ्ग्रह', iast: 'Lokasaṅgraha', gloss: 'The universal welfare and cosmic balance of all living beings as the ultimate purpose of science' }
+        ],
+        highlight: 'In the Indian worldview, mathematics is the geometry of God, human consciousness is the sacred witness, and Sanskrit is the harmonic bridge that unites them.'
+      }
+    ],
+    quote: 'Yathā piṇḍe tathā brahmāṇḍe — The universe is the objective mathematical poem, human consciousness is the attentive listener, and Sanskrit is the metric grammar through which both commune in eternal harmony.',
+    keyTakeaways: [
+      'The Universe, Humans, and Sanskrit form an unbroken triad: Objective Mathematical Reality, Conscious Observer, and Resonating Algorithmic Bridge.',
+      'Sanskrit’s 50 Varṇas are an acoustic coordinate grid mapped across five vocal cavities that physically correspond to the five cosmic elements (Space to Earth).',
+      'Pāṇini’s Aṣṭādhyāyī (3,959 sūtras) is the world’s first formal, context-free generative grammar, functioning as an unambiguous algebraic logic engine.',
+      'Piṅgala’s Chandaḥśāstra discovered binary computing (0/1), permutations (Prastāra), Pascal’s Triangle (Meru-Prastāra), and Fibonacci sequences through poetic meter.',
+      'Cryptographic systems (Bhūta-Saṅkhyā and Kaṭapayādi) eliminated the divide between letters and numbers, allowing 31-decimal astronomical constants to be preserved in devotional poetry.',
+      'Under the sacred epistemology of Yathā Piṇḍe Tathā Brahmāṇḍe, mathematics is practiced as Darśana—a non-individualistic offering (Jñāna-Yajña) connecting human consciousness back to Paramātmā.'
     ]
   }
 ];

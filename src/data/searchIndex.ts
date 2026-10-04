@@ -1172,6 +1172,60 @@ export const SEARCH_INDEX: SearchItem[] = [
     },
   },
   {
+    id: 'math-cosmic-bridge-universe-humans-sanskrit',
+    title: 'The Cosmic Bridge: Mathematics (Universe) ⇄ Humans (Sanskrit)',
+    subtitle: 'The Triad of Interconnectedness, 5 Bridge Spans & Cosmic Resonance Matrix',
+    category: 'maths',
+    categoryLabel: 'Vedic Maths · Sacred Cybernetics',
+    badgeEmoji: '🌉',
+    badgeColor: '#4f46e5',
+    description:
+      'An interactive synthesis demonstrating how Sanskrit acts as the acoustic (Śikṣā), algorithmic (Pāṇini), metrical (Piṅgala), and cryptographic (Bhūta-Saṅkhyā/Kaṭapayādi) bridge connecting human consciousness to the mathematical fabric of the cosmos.',
+    keywords: [
+      'cosmic bridge',
+      'mathematics universe humans sanskrit',
+      'bridge of interconnectedness',
+      'shabda brahman',
+      'paninian algorithm',
+      'pingala binary',
+      'yatha pinde tatha brahmande',
+      'darshana',
+      'acoustic geometry',
+      'rick briggs nasa',
+      'remella avadhanulu',
+      'विश्व-मानव-संस्कृत-गणित-सेतुः'
+    ],
+    target: {
+      view: 'vedic-maths',
+      vedicAnchor: 'cosmic-bridge-section',
+    },
+  },
+  {
+    id: 'math-cosmic-bridge-masterclass-article',
+    title: 'Masterclass Article: The Cosmic Bridge (Mathematics, Universe, Humans & Sanskrit)',
+    subtitle: 'In-Depth Epistemic Treatise · Acoustic Geometry, Pāṇinian BNF, Binary Prosody & Yathā Piṇḍe Tathā Brahmāṇḍe',
+    category: 'maths',
+    categoryLabel: 'Vedic Maths · Masterclass Article',
+    badgeEmoji: '📜',
+    badgeColor: '#0284c7',
+    description:
+      'Masterclass article detailing the five spans of the cosmic bridge: vocal tract coordinate matrix, context-free generative grammar, periodic metrics, semantic-number ciphers, and non-individualistic epistemology.',
+    keywords: [
+      'cosmic bridge article',
+      'mathematics universe sanskrit',
+      'pāṇinian algorithm bnf',
+      'pingala meru prastara',
+      'katapayadi pi 31 decimals',
+      'bhuta sankhya',
+      'avadhanulu bridge',
+      'darshana math'
+    ],
+    target: {
+      view: 'vedic-maths',
+      vedicAnchor: 'article-the-cosmic-bridge-mathematics-universe-humans-sanskrit',
+    },
+  },
+  {
     id: 'math-sacred-epistemology-guru-bhakti',
     title: 'Sacred Epistemology: Guru-Bhakti, Paramātmā & Non-Individualism in Indian Science',
     subtitle: 'Vinaya, Apauruṣeyatva & Lokasaṅgraha · Science and Spirituality as a Unified Sacred Inquiry',
