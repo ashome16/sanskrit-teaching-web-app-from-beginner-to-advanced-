@@ -537,7 +537,7 @@ ${bodyHtml}
   const [inverseSineS, setInverseSineS] = useState<number>(0.5);
 
   // Historiography & Shaka Chronology States
-  const [paramparaSubTab, setParamparaSubTab] = useState<'all' | 'historiography' | 'shaka-matrix' | 'lineage'>('all');
+  const [paramparaSubTab, setParamparaSubTab] = useState<'all' | 'historiography' | 'shaka-matrix' | 'lineage' | 'epistemology'>('all');
   const [shakaInputYear, setShakaInputYear] = useState<number>(520);
   const [chronoSearch, setChronoSearch] = useState<string>('');
   const [chronoFilter, setChronoFilter] = useState<string>('all');
@@ -693,6 +693,10 @@ ${bodyHtml}
       setActiveTab('parampara');
       setParamparaSubTab('historiography');
       scrollId = 'historiography-section';
+    } else if (clean === 'sacred-epistemology' || clean === 'knowledge-humility' || clean === 'guru-bhakti') {
+      setActiveTab('parampara');
+      setParamparaSubTab('epistemology');
+      scrollId = 'sacred-epistemology-section';
     } else if (clean === 'quiz') {
       setActiveTab('quiz');
       scrollId = 'vedic-tabs';
@@ -6694,6 +6698,13 @@ ${bodyHtml}
                     >
                       🕉️ Modern Guru Paramparā
                     </button>
+                    <button
+                      type="button"
+                      className={`parampara-subnav-pill ${paramparaSubTab === 'epistemology' ? 'active' : ''}`}
+                      onClick={() => setParamparaSubTab('epistemology')}
+                    >
+                      🙏 Sacred Epistemology &amp; Guru-Bhakti
+                    </button>
                   </div>
                   <button
                     type="button"
@@ -7147,6 +7158,130 @@ ${bodyHtml}
                         )}
                       </div>
                     ))}
+                  </div>
+                </div>
+              )}
+
+              {/* SECTION 4: SACRED EPISTEMOLOGY, GURU-BHAKTI & NON-INDIVIDUALISTIC KNOWLEDGE */}
+              {(paramparaSubTab === 'all' || paramparaSubTab === 'epistemology') && (
+                <div id="sacred-epistemology-section" className="parampara-section-block sacred-epistemology-section">
+                  <div className="epistemology-hero-card">
+                    <div className="epistemology-hero-badge">
+                      <span>॥ ज्ञानयज्ञः परब्रह्मार्पणम् ॥ · Sacred Epistemology</span>
+                    </div>
+                    <h2 className="epistemology-hero-title">
+                      Humility, Guru-Bhakti &amp; Paramātmā as the Supreme Source of Knowledge
+                    </h2>
+                    <p className="epistemology-hero-desc">
+                      In the classical Indian tradition, <strong>science and spirituality were never independent or compartmentalized</strong>. Mathematical theorems and astronomical models were never viewed as individualistic property—neither in their cosmic cause (<em>Hetu</em>) nor in their worldly purpose (<em>Prayojana</em>). Knowledge was understood as an eternal, trans-personal current of consciousness flowing from the Supreme Source through the transparent humility of the Guru-Paramparā.
+                    </p>
+                    <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                      <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.85rem', fontWeight: 700 }}>
+                        🙏 Vinaya &amp; Non-Ego Ownership
+                      </span>
+                      <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.85rem', fontWeight: 700 }}>
+                        ⚛️ Vijñāna as an Integral Wing of Jñāna
+                      </span>
+                      <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.85rem', fontWeight: 700 }}>
+                        🌍 Lokasaṅgraha: Universal Service
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Four Epistemological Pillars */}
+                  <div className="epistemology-four-pillars-grid">
+                    {/* Pillar 1 */}
+                    <div className="epistemology-pillar-card">
+                      <div className="epistemology-pillar-num">Pillar 1 · निरहङ्कारत्वम्</div>
+                      <div className="epistemology-pillar-title">Total Absence of Ego-Ownership (Ahaṅkāra)</div>
+                      <div className="epistemology-pillar-sa">गुरुभक्तिः विसर्जनम् च · Instrument of Truth</div>
+                      <p className="epistemology-pillar-text">
+                        Ancient Indian scholars never claimed personal pride over mathematical discoveries. Treatises invariably began with an auspicious invocation (<em>Maṅgalācaraṇa</em>), bowing first to their immediate guru, their ancestral lineage, and the Supreme Divine. The scholar regarded their intellect as merely a consecrated instrument (<em>Nimitta-Mātra</em>).
+                      </p>
+                      <div className="epistemology-shloka-quote">
+                        &ldquo;सदसज्ज्ञानसमुद्रात् समुद्धृतं देवताप्रसादेन । सज्ज्ञानोत्तमरत्नं मయా निमग्नं स्वमतिनावा ॥&rdquo;<br />
+                        <span style={{ fontSize: '0.8rem', color: '#475569' }}>
+                          — Āryabhaṭa I (Āryabhaṭīya, Golapāda 50): &quot;By the grace of the Supreme Cosmic Deity (Svayambhū), this supreme jewel of true knowledge was brought up from the deep ocean of truth and error by the boat of my intellect.&quot;
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Pillar 2 */}
+                    <div className="epistemology-pillar-card">
+                      <div className="epistemology-pillar-num">Pillar 2 · अपौरुषेयत्वम्</div>
+                      <div className="epistemology-pillar-title">Paramātmā as the Primordial Source</div>
+                      <div className="epistemology-pillar-sa">सनातन-ज्ञानप्रवाहः · Cosmic Code &amp; Ṛta</div>
+                      <p className="epistemology-pillar-text">
+                        Knowledge (<em>Vidyā</em>) was considered <em>Anādi</em> (beginningless) and <em>Apauruṣeya</em> (trans-personal). Mathematical constants (such as π, φ, and orbital resonances) were understood as the fundamental geometric syntax of Cosmic Consciousness (<em>Brahman</em>). The human mind is not an &quot;inventor&quot; of laws, but a disciplined antenna or seer (<em>Draṣṭā</em>) tuning into eternal cosmic order (<em>Ṛta</em>).
+                      </p>
+                      <div className="epistemology-shloka-quote">
+                        &ldquo;नृत्तावसाने नटराजराजो ननाद ढक्कां नवपञ्चवारम्...&rdquo;<br />
+                        <span style={{ fontSize: '0.8rem', color: '#475569' }}>
+                          — Just as Pāṇini attributed the foundational phonetics of Sanskrit grammar to the Damaru of Lord Śiva (Naṭarāja), astronomers attributed celestial motions directly to the self-revealing Sūrya-Nārāyaṇa.
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Pillar 3 */}
+                    <div className="epistemology-pillar-card">
+                      <div className="epistemology-pillar-num">Pillar 3 · ज्ञान-विज्ञान-समन्वयः</div>
+                      <div className="epistemology-pillar-title">Indivisibility of Science &amp; Spirituality</div>
+                      <div className="epistemology-pillar-sa">अपराविद्या पराविद्यायाः सोपानम्</div>
+                      <p className="epistemology-pillar-text">
+                        Unlike the historical European conflict between empirical science and religious dogma, Indian <em>Darśana</em> unified empirical science (<em>Aparā-Vidyā</em>) and transcendent Self-knowledge (<em>Parā-Vidyā</em>). Mathematics (<em>Gaṇita</em>) was revered as the sacred eye of the Veda (<em>Jyotiṣaṁ Netram Ucyate</em>). Tracking planetary orbits and calculating eclipses was viewed as an active contemplative meditation (<em>Upāsanā</em>) upon the manifest body (<em>Mūrti</em>) of the Absolute.
+                      </p>
+                      <div className="epistemology-shloka-quote">
+                        &ldquo;अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने । समस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥&rdquo;<br />
+                        <span style={{ fontSize: '0.8rem', color: '#475569' }}>
+                          — Sūrya Siddhānta (1.1): The physical spacetime continuum and celestial geometry are the literal living body (Mūrti) of Brahman.
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Pillar 4 */}
+                    <div className="epistemology-pillar-card">
+                      <div className="epistemology-pillar-num">Pillar 4 · लोकसङ्ग्रहः</div>
+                      <div className="epistemology-pillar-title">The Non-Individualistic Purpose (Prayojana)</div>
+                      <div className="epistemology-pillar-sa">ज्ञानयज्ञः सर्वभूतहिते रतिश्च</div>
+                      <p className="epistemology-pillar-text">
+                        Knowledge was never hoarded behind paywalls, intellectual monopoly, or competitive vanity. Its purpose was <strong>Lokasaṅgraha</strong> (the welfare and balance of the entire cosmos) and <strong>Mokṣa</strong> (spiritual liberation through the perception of mathematical unity). The generation and transmission of truth was understood as <em>Jñāna-Yajña</em>—a reciprocal sacred offering.
+                      </p>
+                      <div className="epistemology-shloka-quote">
+                        &ldquo;श्रेयान् द्रव्यमयाद्यज्ञाज्ज्ञानयज्ञः परन्तप । सर्वं कर्माखिलं पार्थ ज्ञाने परिसमाप्यते ॥&rdquo;<br />
+                        <span style={{ fontSize: '0.8rem', color: '#475569' }}>
+                          — Bhagavad Gītā (4.33): The sharing and offering of sacred knowledge is superior to material sacrifice; all action finds its ultimate fulfillment in self-illumined understanding.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Cause and Purpose Breakdown Box */}
+                  <div className="epistemology-cause-effect-box">
+                    <div className="epistemology-ce-title">
+                      <span>⚖️</span>
+                      <span>The Non-Individualistic Architecture of Knowledge: Cause (Hetu) &amp; Effect (Prayojana)</span>
+                    </div>
+                    <div className="epistemology-ce-grid">
+                      <div className="epistemology-ce-col">
+                        <div className="epistemology-ce-col-title">
+                          <span>🌱</span>
+                          <span>In Terms of its Cause (Hetu): Trans-Personal Origin</span>
+                        </div>
+                        <p className="epistemology-ce-col-desc">
+                          No single human ego can claim to have created a truth from scratch. Every algebraic theorem and trigonometric table is the distilled fruition of an unbroken <strong>Guru-Śiṣya Paramparā</strong> supported by centuries of collective Tapasya. The scholar stands on the shoulders of masters, acknowledging their guru as the mirror through which the light of Paramātmā shines.
+                        </p>
+                      </div>
+
+                      <div className="epistemology-ce-col">
+                        <div className="epistemology-ce-col-title">
+                          <span>🌊</span>
+                          <span>In Terms of its Purpose (Prayojana): Universal Welfare</span>
+                        </div>
+                        <p className="epistemology-ce-col-desc">
+                          Information and matter were never treated as commodities for individualistic exploitation. Mathematical astronomy served the agrarian rhythms of society, the alignment of sacred rituals, navigation across oceans, and above all, the purification of the intellect (<em>Citta-Śuddhi</em>) to free the human soul from the delusion of separateness.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}
