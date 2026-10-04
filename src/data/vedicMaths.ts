@@ -417,6 +417,20 @@ export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
     focusArea: 'Observational & Calendrical'
   },
   {
+    id: 'sridhara',
+    name: 'Sridhara (Sridharacharya)',
+    teluguName: 'శ్రీధరుడు (శ్రీధరాచార్యుడు)',
+    sanskritName: 'श्रीधराचार्यः',
+    shakaYear: '≈ 721',
+    shakaNumeric: 721,
+    ceYear: '≈ 799 CE',
+    ceNumeric: 799,
+    century: '8th–9th Century CE',
+    primaryTreatise: 'Pāṭīgaṇita (పాటీగణితం), Triśatikā',
+    contributions: 'Authored Pāṭīgaṇita and Triśatikā. Formulated the universal algebraic method for solving quadratic equations ax² + bx + c = 0 by multiplying both sides by 4a (the celebrated Sridharacharya Formula: x = (-b ± √(b² - 4ac)) / (2a)), authored practical commercial arithmetic algorithms, and gave early rules for zero operations.',
+    focusArea: 'Arithmetic & Algebra'
+  },
+  {
     id: 'mahaviracharya',
     name: 'Mahaviracharya',
     teluguName: 'మహావీరుడు / మహావీరాచార్యుడు',
@@ -429,6 +443,20 @@ export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
     primaryTreatise: 'Gaṇitasārasaṅgraha (గణితసారసంగ్రహం)',
     contributions: 'Authored Gaṇitasārasaṅgraha. Explicitly separated pure mathematics from astronomy. Codified comprehensive laws for operations with fractions, geometric progression series, combinatorics/permutations (nCr), and quadratic equation solutions.',
     focusArea: 'Arithmetic & Algebra'
+  },
+  {
+    id: 'prithudaka-swami',
+    name: 'Prithudaka Swami (Chaturveda Prithudakasvamin)',
+    teluguName: 'చతుర్వేద పృథూదకస్వామి',
+    sanskritName: 'चतुर्वेद-पृथूदकस्वामी',
+    shakaYear: '782',
+    shakaNumeric: 782,
+    ceYear: '860 CE',
+    ceNumeric: 860,
+    century: '9th Century CE',
+    primaryTreatise: 'Vāsanābhāṣya on Brāhmasphuṭasiddhānta & Khaṇḍakhādyaka',
+    contributions: 'Pivotal master commentator on Brahmagupta; introduced the world’s first systematic step-by-step algebraic proofs, formalized the use of abbreviations and symbols for unknown variables and operations, and clarified Brahmagupta’s Kuṭṭaka and Pell\'s equation methods.',
+    focusArea: 'Commentary & Reconstruction'
   },
   {
     id: 'aryabhata-2',
@@ -585,18 +613,32 @@ export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
     focusArea: 'Geometry & Trigonometry'
   },
   {
-    id: 'shiva',
-    name: 'Shiva',
-    teluguName: 'శివుడు',
-    sanskritName: 'शिवः',
-    shakaYear: '1510 (Birth)',
-    shakaNumeric: 1510,
-    ceYear: '1588 CE',
-    ceNumeric: 1588,
+    id: 'mallari',
+    name: 'Mallari',
+    teluguName: 'మల్లారి',
+    sanskritName: 'मल्लारिः',
+    shakaYear: '≈ 1497',
+    shakaNumeric: 1497,
+    ceYear: '1575 CE',
+    ceNumeric: 1575,
     century: '16th Century CE',
-    primaryTreatise: 'Muhūrtacintāmaṇi Ṭīkā, Jātakatilaka',
-    contributions: 'Contributed deep analytical geometric breakdowns of celestial path intersections, planetary conjunctions (Yuti), and spherical orbital transitions.',
-    focusArea: 'Geometry & Trigonometry'
+    primaryTreatise: 'Grahalāghava Ṭīkā, Commentary on Līlāvatī',
+    contributions: 'Son of Divākara of Golagrāma; wrote the premier explanatory commentary on Gaṇeśa Daivajña\'s Grahalāghava, providing accessible step-by-step geometric breakdowns for planetary calculations without complex spherical trigonometry, and authored detailed expositions on Bhāskara II\'s Līlāvatī arithmetic.',
+    focusArea: 'Commentary & Reconstruction'
+  },
+  {
+    id: 'dinakara',
+    name: 'Dinakara',
+    teluguName: 'దినకరుడు',
+    sanskritName: 'दिनकरः',
+    shakaYear: '1500',
+    shakaNumeric: 1500,
+    ceYear: '1578 CE',
+    ceNumeric: 1578,
+    century: '16th Century CE',
+    primaryTreatise: 'Candrārkī (చంద్రార్కీ), Kheṭakasiddhi, Dinakara-Sāraṇī',
+    contributions: 'Renowned astronomer of Gujarat who compiled high-precision astronomical computation tables (Sāraṇīs) around Shaka 1500 (1578 CE); designed user-friendly tabular algorithms allowing regional Pañcāṅga makers to compute solar-lunar positions and eclipse timings without executing massive multi-step equations.',
+    focusArea: 'Observational & Calendrical'
   },
   {
     id: 'gangadhara-2',
@@ -613,6 +655,48 @@ export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
     focusArea: 'Observational & Calendrical'
   },
   {
+    id: 'shiva',
+    name: 'Shiva',
+    teluguName: 'శివుడు',
+    sanskritName: 'शिवः',
+    shakaYear: '1510 (Birth)',
+    shakaNumeric: 1510,
+    ceYear: '1588 CE',
+    ceNumeric: 1588,
+    century: '16th Century CE',
+    primaryTreatise: 'Muhūrtacintāmaṇi Ṭīkā, Jātakatilaka',
+    contributions: 'Contributed deep analytical geometric breakdowns of celestial path intersections, planetary conjunctions (Yuti), and spherical orbital transitions.',
+    focusArea: 'Geometry & Trigonometry'
+  },
+  {
+    id: 'ramabhata',
+    name: 'Ramabhata',
+    teluguName: 'రామభటుడు',
+    sanskritName: 'रामभटः',
+    shakaYear: '≈ 1512',
+    shakaNumeric: 1512,
+    ceYear: '1590 CE',
+    ceNumeric: 1590,
+    century: '16th Century CE',
+    primaryTreatise: 'Karaṇa-Prakāśikā (కరణప్రకాశిక), Grahaṇa-Sāraṇī',
+    contributions: 'Specialized in practical Karaṇa literature; created condensed computational handbooks with streamlined trigonometric lookups enabling field astronomers to determine eclipse phases (Sparśa, Madhya, Mokṣa) rapidly with high local precision.',
+    focusArea: 'Observational & Calendrical'
+  },
+  {
+    id: 'krishna-daivajna',
+    name: 'Krishna Daivajna (Krishna)',
+    teluguName: 'కృష్ణుడు (కృష్ణ దైవజ్ఞుడు)',
+    sanskritName: 'कृष्णदैवज्ञः',
+    shakaYear: '≈ 1522',
+    shakaNumeric: 1522,
+    ceYear: '1600 CE',
+    ceNumeric: 1600,
+    century: '16th–17th Century CE',
+    primaryTreatise: 'Bījapallava (బీజపల్లవం - Commentary on Bījagaṇita)',
+    contributions: 'Court astronomer to Emperor Jahangir and nephew of Ranganatha; authored the foundational algebraic commentary Bījapallava, giving the world rigorous analytical step-by-step proofs for Bhāskara II\'s Cakravāla algorithm, negative number multiplication, and quadratic indeterminate equations.',
+    focusArea: 'Arithmetic & Algebra'
+  },
+  {
     id: 'munishvara',
     name: 'Munishvara',
     teluguName: 'మునీశ్వరుడు',
@@ -622,8 +706,8 @@ export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
     ceYear: '1603 CE',
     ceNumeric: 1603,
     century: '16th–17th Century CE',
-    primaryTreatise: 'Siddhānta Sārvabhauma (సిద్ధాంతసార్వభౌమం), Marīci',
-    contributions: 'Authored Siddhānta Sārvabhauma. Fierce intellectual rival of Kamalākara; heavily critiqued prevailing planetary model dimensions and defended Āryabhaṭan cosmological frameworks with rigorous mathematical proofs.',
+    primaryTreatise: 'Siddhānta Sārvabhauma (సిద్ధాంతసార్వభౌమం), Marīci, Līlāvatīvivṛti',
+    contributions: 'Authored Siddhānta Sārvabhauma and the celebrated commentary Līlāvatīvivṛti on Bhāskara II\'s Līlāvatī; compiled precise trigonometric sine tables, defended Āryabhaṭan cosmological frameworks, and resolved planetary epicyclic ambiguities.',
     focusArea: 'Astronomy & Siddhanta'
   },
   {
@@ -637,8 +721,22 @@ export const SHAKA_ERA_CHRONOLOGY: ShakaMathematician[] = [
     ceNumeric: 1603,
     century: '16th–17th Century CE',
     primaryTreatise: 'Gūḍhārthaprakāśikā (గూఢార్థప్రకాశిక - Commentary on Sūrya Siddhānta)',
-    contributions: 'Wrote the Gūḍhārthaprakāśikā, a pivotal mathematical commentary explaining the complex geometry, epicyclic models, and sexagesimal time intervals inside the Sūrya Siddhānta.',
+    contributions: 'Father of Munishvara; authored the Gūḍhārthaprakāśikā (1603 CE), the supreme verse-by-verse explanatory commentary preserving the original parameters and trigonometric geometry of the Sūrya Siddhānta from corruption.',
     focusArea: 'Commentary & Reconstruction'
+  },
+  {
+    id: 'vishnu-astronomer',
+    name: 'Vishnu',
+    teluguName: 'విష్ణువు',
+    sanskritName: 'विष्णुः',
+    shakaYear: '1530',
+    shakaNumeric: 1530,
+    ceYear: '1608 CE',
+    ceNumeric: 1608,
+    century: '17th Century CE',
+    primaryTreatise: 'Sūryapakṣa-Śaraṇa-Karaṇa (సూర్యపక్ష-శరణ-కరణం)',
+    contributions: 'Astronomer of the Sūrya Siddhānta tradition who updated planetary mean parameters and computational algorithms to conform with contemporary naked-eye and gnomon observations, keeping traditional lunisolar calendar calculations astronomically accurate.',
+    focusArea: 'Astronomy & Siddhanta'
   },
   {
     id: 'dadabhattudu',
