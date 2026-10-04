@@ -8,6 +8,130 @@ import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadQuizSheet } from '../utils/contentDownload';
 import '../styles/quiz-section.css';
 
+export type QuizTrackId = 'all' | 'class7' | 'class8' | 'class9' | 'grammar' | 'vedic_maths';
+
+interface QuizTrack {
+  id: QuizTrackId;
+  label: string;
+  sublabel: string;
+  icon: string;
+  countBadge: string;
+  requiresAllChapters?: boolean;
+}
+
+export const QUIZ_TRACKS: QuizTrack[] = [
+  {
+    id: 'all',
+    label: 'All Topics',
+    sublabel: 'Full Curriculum',
+    icon: '🎯',
+    countBadge: '1,557 Qs',
+  },
+  {
+    id: 'class7',
+    label: 'Class 7 Deepakam',
+    sublabel: '14 Lessons & Appendices',
+    icon: '📚',
+    countBadge: '486 Qs',
+  },
+  {
+    id: 'class8',
+    label: 'Class 8 Sanskrit',
+    sublabel: '16 Chapters & Appendices',
+    icon: '🏛️',
+    countBadge: '490 Qs',
+    requiresAllChapters: true,
+  },
+  {
+    id: 'class9',
+    label: 'Class 9 Sanskrit',
+    sublabel: '16 Chapters & Appendices',
+    icon: '🌸',
+    countBadge: '480 Qs',
+    requiresAllChapters: true,
+  },
+  {
+    id: 'grammar',
+    label: 'Grammar & Foundations',
+    sublabel: 'Vyākaraṇa & Varṇamālā',
+    icon: '📐',
+    countBadge: '96 Qs',
+  },
+  {
+    id: 'vedic_maths',
+    label: 'Vedic Mathematics',
+    sublabel: 'Speed Sutras & Calculation',
+    icon: '⚡',
+    countBadge: '5 Qs',
+  },
+];
+
+export const TRACK_CATEGORY_IDS: Record<QuizTrackId, string[]> = {
+  all: [],
+  class7: [
+    'cbse_deepakam',
+    'deep_ch1',
+    'deep_ch2',
+    'deep_ch3',
+    'deep_ch4',
+    'deep_ch5',
+    'deep_ch6',
+    'deep_ch7',
+    'deep_ch8',
+    'deep_ch9',
+    'deep_ch10',
+    'deep_ch11',
+    'deep_ch12',
+    'deep_ch13',
+    'deep_ch14',
+  ],
+  class8: [
+    'grade8_all',
+    'grade8_prarthana',
+    'grade8_ch1',
+    'grade8_ch2',
+    'grade8_ch3',
+    'grade8_ch4',
+    'grade8_ch5',
+    'grade8_ch6',
+    'grade8_ch7',
+    'grade8_ch8',
+    'grade8_ch9',
+    'grade8_ch10',
+    'grade8_ch11',
+    'grade8_ch12',
+    'grade8_ch13',
+    'grade8_app1',
+    'grade8_app2',
+    'grade8_app3',
+  ],
+  class9: [
+    'grade9_all',
+    'grade9_ch1',
+    'grade9_ch2',
+    'grade9_ch3',
+    'grade9_ch4',
+    'grade9_ch5',
+    'grade9_ch6',
+    'grade9_ch7',
+    'grade9_ch8',
+    'grade9_ch9',
+    'grade9_ch10',
+    'grade9_ch11',
+    'grade9_ch12',
+    'grade9_samasa',
+    'grade9_vachya',
+    'grade9_shabda',
+    'grade9_dhatu',
+  ],
+  grammar: ['grammar_all', 'grammar', 'varnamala'],
+  vedic_maths: ['vedic_maths'],
+};
+
+const formatPillLabel = (label: string): string => {
+  return label.replace(/\s*\([^)]*(?:Quizzes|Qs|Chapters)[^)]*\)$/i, '').trim();
+};
+
 interface QuizSectionProps {
   onGoHome?: () => void;
   onOpenWorksheets?: () => void;
@@ -20,6 +144,8 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   onOpenReader,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [activeTrack, setActiveTrack] = useState<QuizTrackId>('all');
+  const [chapterSearch, setChapterSearch] = useState<string>('');
   const [activeQuestions, setActiveQuestions] = useState<QuizQuestionItem[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
@@ -63,9 +189,32 @@ const QuizSection: React.FC<QuizSectionProps> = ({
 
   const filteredQuestions = useMemo(() => {
     if (selectedCategory === 'all') return publicQuestions;
+    if (selectedCategory === 'grade8_all') {
+      return publicQuestions.filter((q) => String(q.category).startsWith('grade8'));
+    }
+    if (selectedCategory === 'grade9_all') {
+      return publicQuestions.filter((q) => String(q.category).startsWith('grade9'));
+    }
+    if (selectedCategory === 'grammar_all') {
+      return publicQuestions.filter((q) => q.category === 'grammar' || q.category === 'varnamala');
+    }
+    if (selectedCategory === 'cbse_deepakam') {
+      return publicQuestions.filter(
+        (q) =>
+          q.category === 'cbse_deepakam' ||
+          (typeof q.category === 'string' && q.category.startsWith('deep_ch'))
+      );
+    }
     if (selectedCategory === 'deep_ch1') {
       return publicQuestions.filter(
-        (q) => q.chapterRef?.includes('Chapter 1') || q.chapterRef?.includes('वन्दे भारतमातरम्')
+        (q) =>
+          q.category === 'cbse_deepakam' ||
+          q.category === 'deep_ch1' ||
+          ((q.chapterRef?.includes('Chapter 1:') || q.chapterRef?.includes('वन्दे भारतमातरम्')) &&
+            q.category !== 'grammar' &&
+            !String(q.category).startsWith('deep_ch1') &&
+            !String(q.category).startsWith('grade8') &&
+            !String(q.category).startsWith('grade9'))
       );
     }
     if (selectedCategory === 'deep_ch2') {
@@ -133,26 +282,82 @@ const QuizSection: React.FC<QuizSectionProps> = ({
         (q) => q.category === 'deep_ch14' || q.chapterRef?.includes('शब्दरूपाणि')
       );
     }
-    return publicQuestions.filter(
-      (q) =>
-        q.category === selectedCategory ||
-        (selectedCategory === 'cbse_deepakam' &&
-          (q.category === 'deep_ch1' ||
-            q.category === 'deep_ch2' ||
-            q.category === 'deep_ch3' ||
-            q.category === 'deep_ch4' ||
-            q.category === 'deep_ch5' ||
-            q.category === 'deep_ch6' ||
-            q.category === 'deep_ch7' ||
-            q.category === 'deep_ch8' ||
-            q.category === 'deep_ch9' ||
-            q.category === 'deep_ch10' ||
-            q.category === 'deep_ch11' ||
-            q.category === 'deep_ch12' ||
-            q.category === 'deep_ch13' ||
-            q.category === 'deep_ch14'))
-    );
+    return publicQuestions.filter((q) => q.category === selectedCategory);
   }, [selectedCategory, publicQuestions]);
+
+  const activeTrackObj = useMemo(
+    () => QUIZ_TRACKS.find((t) => t.id === activeTrack) || QUIZ_TRACKS[0],
+    [activeTrack]
+  );
+
+  const currentCategoryItem = useMemo(
+    () => QUIZ_CATEGORIES.find((c) => c.id === selectedCategory),
+    [selectedCategory]
+  );
+
+  const getCategoryCount = useMemo(() => {
+    return (catId: string): number => {
+      if (catId === 'all') return publicQuestions.length;
+      if (catId === 'grade8_all') return publicQuestions.filter((q) => String(q.category).startsWith('grade8')).length;
+      if (catId === 'grade9_all') return publicQuestions.filter((q) => String(q.category).startsWith('grade9')).length;
+      if (catId === 'grammar_all') return publicQuestions.filter((q) => q.category === 'grammar' || q.category === 'varnamala').length;
+      if (catId === 'cbse_deepakam') {
+        return publicQuestions.filter(
+          (q) => q.category === 'cbse_deepakam' || (typeof q.category === 'string' && q.category.startsWith('deep_ch'))
+        ).length;
+      }
+      if (catId === 'deep_ch1') {
+        return publicQuestions.filter(
+          (q) =>
+            q.category === 'cbse_deepakam' ||
+            q.category === 'deep_ch1' ||
+            ((q.chapterRef?.includes('Chapter 1:') || q.chapterRef?.includes('वन्दे भारतमातरम्')) &&
+              q.category !== 'grammar' &&
+              !String(q.category).startsWith('deep_ch1') &&
+              !String(q.category).startsWith('grade8') &&
+              !String(q.category).startsWith('grade9'))
+        ).length;
+      }
+      return publicQuestions.filter((q) => q.category === catId).length;
+    };
+  }, [publicQuestions]);
+
+  const displayedCategories = useMemo(() => {
+    let list = visibleCategories;
+    if (activeTrack !== 'all') {
+      const allowed = new Set(TRACK_CATEGORY_IDS[activeTrack]);
+      list = list.filter((cat) => allowed.has(cat.id));
+    }
+    if (chapterSearch.trim()) {
+      const query = chapterSearch.toLowerCase().trim();
+      list = list.filter(
+        (cat) =>
+          cat.label.toLowerCase().includes(query) ||
+          cat.id.toLowerCase().includes(query)
+      );
+    }
+    return list;
+  }, [activeTrack, chapterSearch, visibleCategories]);
+
+  const handleSelectTrack = (trackId: QuizTrackId) => {
+    if ((trackId === 'class8' || trackId === 'class9') && !canReadAllChapters) {
+      if (gateReason === 'guest') {
+        openAuthModal('register');
+      } else {
+        openPaymentModal('unlock_paid_features');
+      }
+      setShowUpgradePrompt(true);
+      return;
+    }
+    setActiveTrack(trackId);
+    setChapterSearch('');
+    if (trackId === 'all') setSelectedCategory('all');
+    else if (trackId === 'class7') setSelectedCategory('cbse_deepakam');
+    else if (trackId === 'class8') setSelectedCategory('grade8_all');
+    else if (trackId === 'class9') setSelectedCategory('grade9_all');
+    else if (trackId === 'grammar') setSelectedCategory('grammar_all');
+    else if (trackId === 'vedic_maths') setSelectedCategory('vedic_maths');
+  };
 
   const requireDownloadAccess = (): boolean => {
     if (canDownload) {
@@ -410,34 +615,200 @@ const QuizSection: React.FC<QuizSectionProps> = ({
       {/* View 1: Quiz Home / Mode Picker */}
       {!activeQuestions ? (
         <>
-          {/* Category Filter Bar */}
-          <div className="quiz-categories-bar">
-            {visibleCategories.map((cat) => (
-              <button
-                key={cat.id}
-                type="button"
-                className={`quiz-cat-pill${selectedCategory === cat.id ? ' active' : ''}`}
-                onClick={() => setSelectedCategory(cat.id)}
-              >
-                <span>{cat.icon}</span>
-                <span>{cat.label}</span>
-              </button>
-            ))}
+          {/* Tier 1: Primary Curriculum Track Tabs */}
+          <nav className="quiz-tracks-nav" aria-label="Curriculum Tracks">
+            {QUIZ_TRACKS.map((track) => {
+              const isLocked = track.requiresAllChapters && !canReadAllChapters;
+              const isActive = activeTrack === track.id;
+              return (
+                <button
+                  key={track.id}
+                  type="button"
+                  className={`quiz-track-tab${isActive ? ' active' : ''}`}
+                  onClick={() => handleSelectTrack(track.id)}
+                  title={isLocked ? `${track.label} (Premium Access Required)` : track.label}
+                >
+                  <span className="quiz-track-tab-icon">{track.icon}</span>
+                  <div className="quiz-track-tab-text">
+                    <span className="quiz-track-tab-title">
+                      {track.label} {isLocked ? '🔒' : ''}
+                    </span>
+                    <span className="quiz-track-tab-sub">{track.sublabel}</span>
+                  </div>
+                  <span className="quiz-track-tab-badge">{track.countBadge}</span>
+                </button>
+              );
+            })}
+          </nav>
+
+          {/* Tier 2: Contextual Chapter Panel */}
+          <div className="quiz-chapter-panel">
+            <div className="quiz-chapter-panel-header">
+              <h3 className="quiz-chapter-panel-title">
+                <span>{activeTrack === 'all' && !chapterSearch.trim() ? '🎯' : activeTrackObj.icon}</span>
+                <span>
+                  {activeTrack === 'all'
+                    ? chapterSearch.trim()
+                      ? `Matching Chapters (${displayedCategories.length})`
+                      : 'Curriculum Tracks Overview'
+                    : `${activeTrackObj.label} Chapters`}
+                </span>
+                <span className="quiz-chapter-panel-badge">
+                  {activeTrack === 'all' && !chapterSearch.trim()
+                    ? '5 Tracks · 1,557 Qs'
+                    : `${displayedCategories.length} Topics`}
+                </span>
+              </h3>
+
+              <div className="quiz-chapter-search-box">
+                <span aria-hidden="true">🔍</span>
+                <input
+                  type="text"
+                  className="quiz-chapter-search-input"
+                  placeholder={
+                    activeTrack === 'all'
+                      ? 'Search all 51+ chapters & shlokas...'
+                      : `Search ${activeTrackObj.label} chapters...`
+                  }
+                  value={chapterSearch}
+                  onChange={(e) => setChapterSearch(e.target.value)}
+                />
+                {chapterSearch && (
+                  <button
+                    type="button"
+                    className="quiz-chapter-search-clear"
+                    onClick={() => setChapterSearch('')}
+                    title="Clear search"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* When 'all' track has no active search: Render curated Curriculum Overview Cards */}
+            {activeTrack === 'all' && !chapterSearch.trim() ? (
+              <div className="quiz-overview-grid">
+                {QUIZ_TRACKS.filter((t) => t.id !== 'all').map((track) => {
+                  const isLocked = track.requiresAllChapters && !canReadAllChapters;
+                  return (
+                    <button
+                      key={track.id}
+                      type="button"
+                      className="quiz-overview-card"
+                      onClick={() => handleSelectTrack(track.id)}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '0.75rem' }}>
+                        <span style={{ fontSize: '2.2rem', lineHeight: 1 }}>{track.icon}</span>
+                        <div>
+                          <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#1f2937' }}>
+                            {track.label} {isLocked ? '🔒' : ''}
+                          </div>
+                          <div style={{ fontSize: '0.8rem', color: '#786b59', fontWeight: 600, marginTop: '0.15rem' }}>
+                            {track.sublabel}
+                          </div>
+                        </div>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '0.5rem', borderTop: '1px solid #f4ede2' }}>
+                        <span
+                          style={{
+                            fontSize: '0.76rem',
+                            fontWeight: 800,
+                            padding: '0.2rem 0.6rem',
+                            borderRadius: '999px',
+                            background: '#fef3c7',
+                            color: '#92400e',
+                            border: '1px solid #fde68a',
+                          }}
+                        >
+                          {track.countBadge}
+                        </span>
+                        <span style={{ fontSize: '0.86rem', fontWeight: 800, color: '#b3472f' }}>
+                          {isLocked ? 'Unlock Track ➔' : 'Explore Chapters ➔'}
+                        </span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            ) : (
+              /* Specific track or active search: Scoped Chapter Pills */
+              <div className="quiz-categories-bar">
+                {displayedCategories.length === 0 ? (
+                  <div style={{ padding: '1rem', color: '#786b59', fontStyle: 'italic', fontSize: '0.9rem' }}>
+                    No chapters match "{chapterSearch}". Try searching by chapter name or Sanskrit keyword.
+                  </div>
+                ) : (
+                  displayedCategories.map((cat) => {
+                    const isSelected = selectedCategory === cat.id;
+                    const count = getCategoryCount(cat.id);
+                    return (
+                      <button
+                        key={cat.id}
+                        type="button"
+                        className={`quiz-cat-pill${isSelected ? ' active' : ''}`}
+                        onClick={() => setSelectedCategory(cat.id)}
+                      >
+                        <span>{cat.icon}</span>
+                        <span>{formatPillLabel(cat.label)}</span>
+                        {count > 0 && <span className="quiz-pill-count">{count} Qs</span>}
+                      </button>
+                    );
+                  })
+                )}
+              </div>
+            )}
           </div>
 
-          {/* Individual Chapter / Topic Quizzes (if available) */}
-          {availableSubQuizzes.length > 0 && (
+          {/* Active Topic Summary Card */}
+          <div className="quiz-active-topic-card">
+            <div className="quiz-active-topic-header">
+              <span className="quiz-active-topic-icon">{currentCategoryItem?.icon || '🎯'}</span>
+              <div>
+                <div className="quiz-active-topic-tag">
+                  {activeTrackObj.label} · Active Selection
+                </div>
+                <h3 className="quiz-active-topic-title">
+                  {currentCategoryItem ? formatPillLabel(currentCategoryItem.label) : 'All Topics (समग्र-प्रश्नोत्तरी)'}
+                </h3>
+              </div>
+            </div>
+            <div className="quiz-active-topic-stats">
+              <span className="quiz-active-stat-badge">
+                🎯 {filteredQuestions.length} Questions Available
+              </span>
+              {availableSubQuizzes.length > 0 && (
+                <span className="quiz-active-stat-badge">
+                  📋 {availableSubQuizzes.length} Practice Quizzes
+                </span>
+              )}
+              <button
+                type="button"
+                className={`quiz-download-btn${canDownload ? '' : ' locked'}`}
+                onClick={handleDownloadFilteredQuiz}
+                style={{ padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}
+                title={canDownload ? 'Download printable practice sheet' : 'Paid subscription required to download'}
+              >
+                {canDownload ? '📥 Download Printable Sheet' : '🔒 Download Sheet (Paid)'}
+              </button>
+            </div>
+          </div>
+
+          {/* Individual Chapter / Topic Quizzes (if available and focused) */}
+          {availableSubQuizzes.length > 0 && selectedCategory !== 'all' && (
             <div style={{ marginBottom: '1.75rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.85rem' }}>
                 <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#2b2118', margin: 0 }}>
                   📋 Individual Practice Quizzes ({availableSubQuizzes.length} Available)
                 </h3>
                 <span style={{ fontSize: '0.85rem', color: '#78350f', fontWeight: 700 }}>
-                  Select any quiz to test 5 specific MCQs
+                  {availableSubQuizzes.length > 15
+                    ? `Showing 12 of ${availableSubQuizzes.length} · Pick a specific chapter above to focus`
+                    : 'Select any quiz to test 5 specific MCQs'}
                 </span>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '0.85rem' }}>
-                {availableSubQuizzes.map((sq) => (
+                {(availableSubQuizzes.length > 15 ? availableSubQuizzes.slice(0, 12) : availableSubQuizzes).map((sq) => (
                   <button
                     key={sq.title}
                     type="button"
