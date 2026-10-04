@@ -247,7 +247,7 @@ const Dashboard: React.FC = () => {
   const [grammarTargetTopic, setGrammarTargetTopic] = useState<GrammarTopic>('home');
   const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(null);
   const [vedicTarget, setVedicTarget] = useState<{ tab: VedicTab; anchor?: string; key: number }>({ tab: 'sutras', key: 0 });
-  const [philosophyEssay, setPhilosophyEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind'>('ai_sanskrit');
+  const [philosophyEssay, setPhilosophyEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy'>('ai_sanskrit');
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);

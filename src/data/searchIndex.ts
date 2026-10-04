@@ -36,7 +36,7 @@ export interface SearchTarget {
   /** Course Addendum unit to open (view: 'course'), e.g. 'addendum-mantras-shlokas'. */
   courseAddendumId?: string;
   courseMode?: 'curriculum' | 'addendum' | 'flashcards' | 'exam';
-  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind';
+  philosophyEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy';
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero' | 'kerala';
   /** /vedic-maths anchor: 'zero', 'sutra-<id>', 'solver-<key>' (see vedicLearningPath.ts), 'article-<slug>'. */
   vedicAnchor?: string;
@@ -3412,6 +3412,47 @@ export const SEARCH_INDEX: SearchItem[] = [
     target: {
       view: 'philosophy',
       philosophyEssay: 'lilavati_math',
+    },
+  },
+  {
+    id: 'darshana-essay-ujjain-geodesy',
+    title: 'Madhya-Rekhā: Ujjain, the Sacred Meridian & Ancient Indian Geodesy',
+    subtitle: 'Zero Longitude, 12-Aṅgula Śaṅku Latitude, Eclipse Deśāntara & Doṅglā Zero Shadow',
+    category: 'maths',
+    categoryLabel: 'Darśana Essay',
+    badgeEmoji: '🧭',
+    badgeColor: '#0284c7',
+    description:
+      'Centuries before Greenwich: explore Ujjain (Avantī) as the ancient Prime Meridian (0°), the 12-Aṅgula Śaṅku latitude, eclipse-based Deśāntara longitude, Jya trigonometry, and the Doṅglā Observatory.',
+    keywords: [
+      'ujjain',
+      'avanti',
+      'madhya rekha',
+      'prime meridian',
+      'zero longitude',
+      'shanku',
+      'gnomon',
+      'latitude',
+      'akshamsa',
+      'palabha',
+      'deshantara',
+      'longitude',
+      'lunar eclipse',
+      'gps temple',
+      'mahakaleshwar',
+      'mangalnath',
+      'surya siddhanta',
+      'dongla observatory',
+      'zero shadow day',
+      'jya',
+      'sine',
+      'brahmagupta',
+      'varahamihira',
+      'bhaskara',
+    ],
+    target: {
+      view: 'philosophy',
+      philosophyEssay: 'ujjain_geodesy',
     },
   },
   {

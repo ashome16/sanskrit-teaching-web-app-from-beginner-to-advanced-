@@ -11,6 +11,7 @@ import {
 import { TurangaBandhaChessboard } from './TurangaBandhaChessboard';
 import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
 import { CymaticsHarmonicsStudio } from './CymaticsHarmonicsStudio';
+import { UjjainGeodesyStudio } from './UjjainGeodesyStudio';
 
 export interface PhilosophyPageProps {
   onOpenRegister?: () => void;
@@ -21,7 +22,7 @@ export interface PhilosophyPageProps {
   onOpenGrammarArticle?: (articleId: string) => void;
   /** Open a Course Addendum unit (e.g. Mantras & Ślokas). */
   onOpenCourseAddendum?: (addendumId: string) => void;
-  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind';
+  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy';
 }
 
 const GLOSSARY: { term: string; meaning: string }[] = [
@@ -100,6 +101,14 @@ const GLOSSARY: { term: string; meaning: string }[] = [
   { term: 'pūrvapakṣa · siddhānta (पूर्वपक्षः · सिद्धान्तः)', meaning: 'the opponent’s view, stated first and at full strength · the established conclusion' },
   { term: 'vāda · jalpa · vitaṇḍā (वादः · जल्पः · वितण्डा)', meaning: 'truth-seeking discussion · debate to win · purely destructive cavil (Nyāya Sūtra 1.2.1–3)' },
   { term: 'vivarta · pariṇāma (विवर्तः · परिणामः)', meaning: 'apparent transformation (Advaita’s account of the world) · real transformation (as milk into curd; Sāṅkhya’s prakṛti)' },
+  { term: 'madhya-rekhā (मध्यरेखा)', meaning: 'the prime meridian of ancient Indian astronomy passing through Ujjain (0° longitude)' },
+  { term: 'deśāntara (देशान्तरम्)', meaning: 'terrestrial longitude; difference in location calculated as a time delta from the Ujjain meridian' },
+  { term: 'akṣāṃśa (अक्षांशः)', meaning: 'terrestrial latitude; angular distance from the equator calculated from equinoctial gnomon shadows' },
+  { term: 'palabhā / akṣabhā (पलभा)', meaning: 'noon shadow of a 12-aṅgula gnomon on the equinox day, used to derive local latitude' },
+  { term: 'śaṅku (शङ्कुः)', meaning: 'canonical 12-aṅgula vertical gnomon rod mounted on a leveled horizontal surface' },
+  { term: 'ardha-jyā / jyā (अर्धज्या / ज्या)', meaning: 'half-chord; the foundational Indian trigonometric sine function (R sin θ)' },
+  { term: 'koṭijyā (कोटिज्या)', meaning: 'cosine function; adjacent perpendicular baseline in the unit circle (R cos θ)' },
+  { term: 'nirchāyā-divasa (निर्छाया-दिवसः)', meaning: 'Zero Shadow Day; when the midday sun reaches the 90° overhead zenith on the Tropic of Cancer' },
 ];
 
 const DEFAULT_TITLE =
@@ -152,10 +161,16 @@ const MEDHA_ESSAY_TITLE =
 const MEDHA_ESSAY_DESC =
   'Medhā, antaḥkaraṇa and the witness (sākṣī): Descartes, physicalism and the hard problem set beside Vedānta, Sāṅkhya-Yoga (YS 1.2) and Buddhist anattā.';
 
+const UJJAIN_ESSAY_TITLE =
+  'Madhya-Rekhā: Ujjain, the Sacred Meridian & Ancient Indian Geodesy · Darśana | EdNet Learn Gurukul';
+const UJJAIN_ESSAY_DESC =
+  'Centuries before Greenwich: explore Ujjain (Avanti) as the ancient Prime Meridian (0°), the 12-Angula Shanku latitude, eclipse-based Deshantara longitude, and Jya trigonometry.';
+
 /** Essays that own a URL hash (deep link + section chips prefixed with the same key). */
 const ESSAY_HASHES = {
   shad_darshana: 'shad-darshana',
   medha_mind: 'medha',
+  ujjain_geodesy: 'ujjain',
 } as const;
 
 const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
@@ -168,7 +183,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenCourseAddendum,
   initialEssay = 'ai_sanskrit',
 }) => {
-  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind'>(initialEssay);
+  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy'>(initialEssay);
   const [glossaryOpen, setGlossaryOpen] = useState(false);
 
   useEffect(() => {
@@ -177,7 +192,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     }
   }, [initialEssay]);
 
-  // Deep links: /philosophy#medha opens the Medhā essay tab; /philosophy#shad-darshana opens Six Lenses.
+  // Deep links: /philosophy#medha opens the Medhā essay tab; /philosophy#shad-darshana opens Six Lenses; /philosophy#ujjain opens Ujjain.
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const hash = window.location.hash;
@@ -230,6 +245,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     } else if (activeEssay === 'medha_mind') {
       currentTitle = MEDHA_ESSAY_TITLE;
       currentDesc = MEDHA_ESSAY_DESC;
+    } else if (activeEssay === 'ujjain_geodesy') {
+      currentTitle = UJJAIN_ESSAY_TITLE;
+      currentDesc = UJJAIN_ESSAY_DESC;
     }
 
     const prevTitle = document.title;
@@ -467,6 +485,20 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             <div>
               <span className="philosophy-essay-tab-title">मेधा · Medhā and the Mind</span>
               <span className="philosophy-essay-tab-sub">Two Ways of Looking at Consciousness · Antaḥkaraṇa · Sākṣī</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            className={`philosophy-essay-tab ${activeEssay === 'ujjain_geodesy' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveEssay('ujjain_geodesy');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            <span className="philosophy-essay-tab-icon" aria-hidden="true">🧭</span>
+            <div>
+              <span className="philosophy-essay-tab-title">मध्यरेखा · Ujjain: The Sacred Meridian &amp; Geodesy</span>
+              <span className="philosophy-essay-tab-sub">Ancient Prime Meridian (0°) · Śaṅku Latitude · Eclipse Longitude · Doṅglā Zero Shadow</span>
             </div>
           </button>
         </nav>
@@ -4921,6 +4953,453 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   }}
                 >
                   🤖 Why Learn Sanskrit in the Age of AI ➔
+                </button>
+                <button
+                  type="button"
+                  className="philosophy-action-btn"
+                  style={{ background: '#b45309' }}
+                  onClick={() => {
+                    setActiveEssay('sunyat_anantam');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  🌌 Śūnyāt Anantam ➔
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* =========================================================================
+            ESSAY 10: मध्यरेखा · Ujjain: The Sacred Meridian & Ancient Indian Geodesy
+           ========================================================================= */}
+        {activeEssay === 'ujjain_geodesy' && (
+          <div className="philosophy-essay-body" id="ujjain">
+            <header className="philosophy-hero">
+              <span className="philosophy-kicker">Gurukul Darśana · Masterclass 10 · मध्यरेखा · खगोल-भूगोल-गणितम्</span>
+              <h1 className="philosophy-title">
+                Madhya-Rekhā: Ujjain, the Sacred Meridian &amp; Ancient Indian Geodesy
+              </h1>
+              <p className="philosophy-mantra">
+                उज्जयिनी · मध्यरेखा · देशान्तरम् · अक्षांशः · शङ्कुः · अर्धज्या
+              </p>
+              <p className="philosophy-secondary">
+                The World’s First Prime Meridian (0°) · 12-Aṅgula Śaṅku Latitude · Eclipse Longitude Synchrony · Doṅglā Zero Shadow Day
+              </p>
+
+              <blockquote className="philosophy-pull-quote" style={{ maxWidth: '44rem', margin: '1.25rem auto 0.75rem' }}>
+                <p>
+                  “Centuries before the global community established Greenwich, England, as the baseline for world time in 1884, Indian astronomers and mathematicians looked to the sacred city of Ujjain (historically known as Avantī) as the center of the coordinate world. Revered as the prime meridian of antiquity, Ujjain served as the primary coordinate hub where cosmology, sacred geography, spherical trigonometry, and empirical geodesy converged.”
+                </p>
+              </blockquote>
+
+              <div className="philosophy-journey" style={{ marginTop: '1rem' }}>
+                <AudioChip term="मध्यरेखा" label="मध्यरेखा (Prime Meridian)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="उज्जयिनी" label="उज्जयिनी (Avantī)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="अक्षांशः" label="अक्षांशः (Latitude)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="देशान्तरम्" label="देशान्तरम् (Longitude)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="शङ्कुः" label="शङ्कुः (Gnomon)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="अर्धज्या" label="अर्धज्या (Half-Chord / Sine)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="दोङ्गला" label="दोङ्गला (Doṅglā Node)" />
+                <span className="philosophy-mantra-sep">·</span>
+                <AudioChip term="महाकालः" label="महाकालः (Lord of Time)" />
+              </div>
+            </header>
+
+            {/* Interactive Geodesy Studio */}
+            <UjjainGeodesyStudio onPlayAudio={handlePlayAudio} />
+
+            {/* Section 1: The Geodetic Axis */}
+            <section className="philosophy-section" id="ujjain-prime-meridian">
+              <h2>1. The Geodetic Axis: Ujjain (Avantī) as the Ancient Prime Meridian (मध्यरेखा)</h2>
+              <p>
+                In ancient Indian mathematical astronomy (<em>Jyotiṣa-siddhānta</em>), terrestrial coordinates were anchored to an absolute, geodetically grounded baseline centered on <strong>Ujjain</strong> (ancient <em>Avantī</em>, 23° 10&apos; N, 75° 46&apos; E). This baseline was designated the <strong>Madhya-Rekhā</strong> (Central Meridian) or <strong>Yāmyottara-Rekhā</strong> (North-South Great Circle), functioning as the ancient world&apos;s zero longitude (0°).
+              </p>
+
+              <div className="philosophy-card" style={{ background: '#f8fafc', border: '1.5px solid #cbd5e1', margin: '1.25rem 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0369a1', textTransform: 'uppercase' }}>
+                    Sūryasiddhānta · Chapter 1 (Verses 62–67) · The Prime Meridian of India
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handlePlayAudio('राक्षसालयदेवौकःशैलमध्यगता हि या । रोहितकमवन्ती च तथा सन्निहितं सरः ॥')}
+                    style={{
+                      padding: '0.2rem 0.6rem',
+                      fontSize: '0.76rem',
+                      borderRadius: '6px',
+                      border: '1px solid #bae6fd',
+                      background: '#ffffff',
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                      color: '#0369a1',
+                    }}
+                  >
+                    🔊 Chant Meridian Sūtra
+                  </button>
+                </div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0c4a6e', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+                  राक्षसालयदेवौकःशैलमध्यगता हि या ।<br />
+                  रोहितकमवन्ती च तथा सन्निहितं सरः ॥<br />
+                  <span style={{ fontSize: '0.9rem', fontWeight: 600, color: '#0284c7' }}>
+                    rākṣasālayadevaukaḥśailamadhyagatā hi yā |<br />
+                    rohitakamavantī ca tathā sannihitaṃ saraḥ ||
+                  </span>
+                </div>
+                <p style={{ margin: '0.4rem 0', fontSize: '0.88rem', color: '#334155', lineHeight: 1.5 }}>
+                  <em>“The great circle that passes between the abode of the demons (Laṅkā on the equator) and the mount of the gods (Meru at the North Pole), cutting through Rohitaka (modern Rohtak), Avantī (Ujjain), and the sacred lake (Kurukṣetra), is the Central Meridian of the Earth.”</em>
+                </p>
+              </div>
+
+              <div
+                style={{
+                  background: '#0f172a',
+                  color: '#e2e8f0',
+                  padding: '1.25rem',
+                  borderRadius: '12px',
+                  fontFamily: 'monospace',
+                  fontSize: '0.82rem',
+                  lineHeight: 1.5,
+                  overflowX: 'auto',
+                  margin: '1.25rem 0',
+                }}
+              >
+{`                      [ NORTH POLE / SUMERU ]  (+90° Latitude)
+                                 |
+                                 |
+                          [ HIMALAYAS ]
+                                 |
+                          [ KURUKṢETRA ]
+                                 |
+                           [ ROHĪTAKA ]
+                                 |
+         TROPIC OF CANCER        |
+    <-------------------------[ UJJAIN ]-------------------------> (Summer Solstice Zenith)
+         (23° 10' N)       (Avantī / 0° Long)
+                                 |
+                           [ MĀHIṢMATĪ ]
+                                 |
+                                 |
+                      [ LAṄKĀ / EQUATORIAL NODE ] (0° Lat, 0° Long)
+                                 |
+                                 |
+                      [ SOUTH POLE / BAḌAVĀMUKHA ] (-90° Latitude)`}
+              </div>
+
+              <p>
+                Ujjain was not selected arbitrarily. It occupied a unique cosmic crossroads: it lay directly on the <strong>Tropic of Cancer</strong> during antiquity. On the summer solstice, the midday sun sat at the absolute 90° zenith, casting <strong>zero shadow</strong>. This allowed astronomers to calibrate fundamental solar metrics—obliquity of the ecliptic, equinoctial precession, and the exact length of the tropical year—with zero shadow-edge distortion.
+              </p>
+            </section>
+
+            {/* Section 2: The GPS Temples */}
+            <section className="philosophy-section" id="gps-temples">
+              <h2>2. The &quot;GPS Temples&quot;: Sanctuaries as Geodetic and Planetary Anchors</h2>
+              <p>
+                In classical India, major temple shrines were built not solely as devotional spaces, but as permanent, rock-solid geodetic benchmarks calibrated to the celestial grid.
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                    🕉️ Mahākāleśvara Jyotirlinga: The Anchor of Time
+                  </h3>
+                  <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                    Lord Shiva is worshipped here as <strong>Mahākāla</strong>—the Lord of Absolute Time. Purāṇic literature styles the Garbhagṛha of Mahākāleśvara as the <strong>Nābhideśa</strong> (&quot;Navel of the Earth&quot;). The temple pinnacle and lingam formed the physical point-zero benchmark to which planetary ephemerides (<em>Pañcāṅgas</em>) reduced planetary longitudes and tithi timings.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                    🔴 Maṅgalanātha Temple: The Planetary Observatory of Mars
+                  </h3>
+                  <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                    Revered in tradition as the mythological birthplace of Mars (<em>Bhauma-Janmasthāna</em>). Located north of Ujjain along the Shipra, its latitude provided an unobstructed southern horizon and optimal orbital trajectory for observing the retrograde loops (<em>Vakra-gati</em>) and 687-day synodic orbits of the red planet.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 3: Latitude via Shanku */}
+            <section className="philosophy-section" id="shanku-latitude">
+              <h2>3. Latitude Determination (अक्षांशः): The Trigonometry of the 12-Aṅgula Śaṅku</h2>
+              <p>
+                While latitude calculation in early Europe often required unwieldy astrolabes, Indian astronomers standardized on a brilliantly elegant instrument: the <strong>Dvādaśāṅgula-Śaṅku</strong> (a canonical 12-finger vertical gnomon rod).
+              </p>
+
+              <div className="philosophy-card" style={{ background: '#f0fdf4', border: '1.5px solid #86efac', margin: '1.25rem 0' }}>
+                <h4 style={{ margin: '0 0 0.5rem', color: '#166534', fontSize: '1rem', fontWeight: 800 }}>
+                  The Equinoctial Noon Shadow (Palabhā / Akṣabhā)
+                </h4>
+                <p style={{ margin: '0 0 0.5rem', fontSize: '0.88rem', color: '#14532d', lineHeight: 1.6 }}>
+                  On the equinox day (<em>Viṣuvat</em>), the Sun sits directly above the terrestrial equator (declination δ = 0°). The shadow cast by the 12-Aṅgula Śaṅku at exact solar noon forms a right-angled triangle with the rod:
+                </p>
+                <div style={{ background: '#ffffff', padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid #bbf7d0', fontFamily: 'monospace', fontSize: '0.92rem', color: '#14532d' }}>
+                  tan(φ) = (Palabhā, s₀) / 12 &nbsp;&nbsp;|&nbsp;&nbsp; Hypotenuse (Chāyā-karṇa, k) = √(144 + s₀²)
+                </div>
+                <p style={{ margin: '0.5rem 0 0', fontSize: '0.84rem', color: '#15803d', lineHeight: 1.5 }}>
+                  At Ujjain (23° 10&apos; N), the equinoctial noon shadow measures exactly <strong>5.14 Aṅgulas</strong>. At the equator (Laṅkā), s₀ = 0. In Kurukṣetra, s₀ = 6.89 Aṅgulas. Using this single benchmark, local latitude was established anywhere without needing to know mechanical clock time.
+                </p>
+              </div>
+            </section>
+
+            {/* Section 4: Longitude via Eclipses */}
+            <section className="philosophy-section" id="deshantara-longitude">
+              <h2>4. Longitude Determination (देशान्तरम्): Celestial Synchronization via Lunar Eclipses</h2>
+              <p>
+                Longitude (<em>Deśāntara</em>) presents a fundamental challenge: because the Earth rotates, distance along an east-west axis translates directly into a difference in local time. In the absence of chronometers, the astronomers of Ujjain achieved synchronization through a celestial broadcaster: <strong>the lunar eclipse (चन्द्रग्रहणम्)</strong>.
+              </p>
+
+              <div
+                style={{
+                  background: '#042f2e',
+                  color: '#ccfbf1',
+                  padding: '1.25rem',
+                  borderRadius: '12px',
+                  fontFamily: 'monospace',
+                  fontSize: '0.82rem',
+                  lineHeight: 1.5,
+                  overflowX: 'auto',
+                  margin: '1.25rem 0',
+                }}
+              >
+{`       [ TOTAL LUNAR ECLIPSE OCCURS ]  <--- Absolute Cosmic Timestamp (Worldwide Instant)
+                      |
+         +------------+------------+
+         |                         |
+         v                         v
+   [ UJJAIN OBSERVATORY ]     [ EASTERN STATION / PĀṬALIPUTRA ]
+   Local Ingress Time (t₁):   Local Ingress Time (t₂):
+   10:00 PM (by Ghaṭī water-clock)  10:37 PM (by Ghaṭī water-clock)
+         \\                         /
+          \\                       /
+           +----------+----------+
+                      |
+                      v
+          Time Difference (Δt) = t₂ - t₁ = 37.3 minutes
+                 Δt = 1.55 Ghaṭikās (Nāḍīs)
+                      |
+                      v
+      Compute Longitude in Yojanas / Degrees:
+      Δλ = (Δt in minutes) / 4 min/deg = 9.32° East
+      Deśāntara = (Δt / 60) × Earth's Circumference at Latitude φ`}
+              </div>
+
+              <p>
+                Bhāskara II in his <em>Siddhānta-śiromaṇi</em> formulated the exact reduction of equatorial circumference (C₀) to the parallel of observer&apos;s latitude:
+              </p>
+              <div style={{ background: '#f8fafc', padding: '0.85rem 1.25rem', borderRadius: '8px', border: '1px solid #cbd5e1', fontFamily: 'monospace', fontSize: '0.94rem', color: '#0f172a', margin: '0.75rem 0' }}>
+                C<sub>φ</sub> = C₀ · cos(φ) = C₀ · (Lamba-jyā / R) &nbsp;&nbsp;|&nbsp;&nbsp; Deśāntara (Yojanas) = (Δt / 60 Ghaṭikās) × C<sub>φ</sub>
+              </div>
+              <p>
+                By establishing this network across royal observatories, ancient cartographers mapped the Indian subcontinent with astonishing precision.
+              </p>
+            </section>
+
+            {/* Section 5: Jya vs Greek Chords */}
+            <section className="philosophy-section" id="jya-trigonometry">
+              <h2>5. Trigonometric Paradigm Shift: Indian Jyā (Half-Chord) vs. Greek Chords</h2>
+              <p>
+                Modern global trigonometry is built on the <strong>Sine function</strong>. The word &quot;Sine&quot; itself is an etymological relic of the Ujjain School: Sanskrit <em>Ardha-jyā</em> (half-chord) was shortened to <em>Jyā</em> or <em>Jīvā</em>, translated into Arabic as <em>Jiba</em> (written <em>jb</em>), misread by Gerard of Cremona in Toledo as <em>Jaib</em> (&quot;bay / fold of garment&quot;), and translated into Latin as <strong>Sinus</strong>.
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#fffbeb', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #fde68a' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1rem', fontWeight: 800, color: '#92400e' }}>
+                    🏛️ The Greek Chord System (Hipparchus / Ptolemy)
+                  </h3>
+                  <p style={{ fontSize: '0.85rem', color: '#78350f', lineHeight: 1.5, margin: 0 }}>
+                    Relied on the full chord spanning a double arc: <code>crd(2θ) = 2R sin(θ)</code>. Because it spanned both sides of the circle, solving right-angled triangles required awkward geometric transformations and constant root extractions.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f0fdf4', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #86efac' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1rem', fontWeight: 800, color: '#166534' }}>
+                    🇮🇳 The Indian Jyā System (Āryabhaṭa / Brahmagupta)
+                  </h3>
+                  <p style={{ fontSize: '0.85rem', color: '#14532d', lineHeight: 1.5, margin: 0 }}>
+                    Cut the chord directly in half, creating <strong>Ardha-jyā</strong> (Jyā, <code>R sin θ</code>) and <strong>Koṭijyā</strong> (<code>R cos θ</code>). This embedded a natural right-angled triangle directly inside the circle: <code>Jyā² + Koṭi² = R²</code>, giving birth to analytical trigonometry and differential calculus precursors.
+                  </p>
+                </div>
+              </div>
+
+              <div className="philosophy-card" style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', margin: '1rem 0' }}>
+                <h4 style={{ margin: '0 0 0.35rem', fontSize: '0.94rem', fontWeight: 800, color: '#0f172a' }}>
+                  Brahmagupta’s Second-Order Quadratic Interpolation (665 CE)
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.86rem', color: '#475569', lineHeight: 1.5 }}>
+                  In the <em>Khaṇḍakhādyaka</em>, Brahmagupta invented the world’s first quadratic interpolation formula to calculate intermediate sine values—anticipating Newton-Stirling interpolation by over 1,000 years:
+                </p>
+                <div style={{ margin: '0.5rem 0 0', padding: '0.5rem 0.75rem', background: '#ffffff', borderRadius: '6px', fontFamily: 'monospace', fontSize: '0.88rem', color: '#0f172a', border: '1px solid #e2e8f0' }}>
+                  f(x₀ + th) ≈ f₀ + t · ((Δ₁ + Δ₀) / 2) + (t² / 2) · (Δ₁ - Δ₀)
+                </div>
+              </div>
+            </section>
+
+            {/* Section 6: Terrestrial Scale */}
+            <section className="philosophy-section" id="terrestrial-scale">
+              <h2>6. Terrestrial Dimensions: Sūryasiddhānta vs. Modern Satellite Geodesy</h2>
+              <p>
+                The <em>Sūryasiddhānta</em> rejected mythological cosmographies of flat earths or serpentine supports. It modeled Earth as a free-floating sphere in vacuum:
+              </p>
+
+              <div className="philosophy-card" style={{ background: '#eff6ff', border: '1.5px solid #93c5fd', margin: '1rem 0' }}>
+                <div style={{ fontSize: '1rem', fontWeight: 800, color: '#1e3a8a', lineHeight: 1.6 }}>
+                  सर्वतः पर्वताकारैः पुरैश्च बहुविस्तरैः । भूगोलः सर्वतो वृत्तः कन्दुकवद्व्योम्नि तिष्ठति ॥<br />
+                  <span style={{ fontSize: '0.86rem', fontWeight: 600, color: '#2563eb' }}>
+                    “The terrestrial globe, round like a ball, stands unsupported in space, covered on all sides by mountains, cities, and oceans.”
+                  </span>
+                </div>
+              </div>
+
+              <div style={{ overflowX: 'auto', margin: '1.25rem 0' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
+                  <thead>
+                    <tr style={{ background: '#f1f5f9', borderBottom: '2px solid #cbd5e1' }}>
+                      <th style={{ padding: '0.65rem 0.85rem', textAlign: 'left', fontWeight: 800 }}>Dimension / Metric</th>
+                      <th style={{ padding: '0.65rem 0.85rem', textAlign: 'left', fontWeight: 800 }}>Surya Siddhanta (Ujjain)</th>
+                      <th style={{ padding: '0.65rem 0.85rem', textAlign: 'left', fontWeight: 800 }}>Modern WGS-84 Datum</th>
+                      <th style={{ padding: '0.65rem 0.85rem', textAlign: 'left', fontWeight: 800 }}>Accuracy Ratio</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.65rem 0.85rem', fontWeight: 700 }}>Earth&apos;s Diameter</td>
+                      <td style={{ padding: '0.65rem 0.85rem' }}>1,600 Yojanas ≈ 12,752 km</td>
+                      <td style={{ padding: '0.65rem 0.85rem' }}>12,756 km (Equatorial)</td>
+                      <td style={{ padding: '0.65rem 0.85rem', color: '#059669', fontWeight: 700 }}>99.65% (0.35% error)</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.65rem 0.85rem', fontWeight: 700 }}>Earth&apos;s Circumference</td>
+                      <td style={{ padding: '0.65rem 0.85rem' }}>5,026.5 Yojanas ≈ 40,061 km</td>
+                      <td style={{ padding: '0.65rem 0.85rem' }}>40,075 km (Equatorial)</td>
+                      <td style={{ padding: '0.65rem 0.85rem', color: '#059669', fontWeight: 700 }}>99.84% (0.16% error)</td>
+                    </tr>
+                    <tr>
+                      <td style={{ padding: '0.65rem 0.85rem', fontWeight: 700 }}>Length of Solar Year</td>
+                      <td style={{ padding: '0.65rem 0.85rem' }}>365.2563627 days</td>
+                      <td style={{ padding: '0.65rem 0.85rem' }}>365.2563630 days</td>
+                      <td style={{ padding: '0.65rem 0.85rem', color: '#059669', fontWeight: 700 }}>&lt; 0.03 sec variance</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Section 7: Axial Precession & Dongla */}
+            <section className="philosophy-section" id="dongla-zero-shadow">
+              <h2>7. Axial Precession &amp; Southward Migration: From Ujjain to Doṅglā Village</h2>
+              <p>
+                Earth&apos;s rotational axis is not fixed in space. It undergoes a 25,772-year equinoctial precession cycle (<em>Ayanāṃśa</em>) and an obliquity oscillation (22.1° to 24.5°). Because of this, the physical latitude where the Sun hits an absolute 90° zenith on the summer solstice—the Tropic of Cancer—<strong>drifts southward at approximately 14.5 meters per year</strong>.
+              </p>
+
+              <div
+                style={{
+                  background: '#18181b',
+                  color: '#f4f4f5',
+                  padding: '1.25rem',
+                  borderRadius: '12px',
+                  fontFamily: 'monospace',
+                  fontSize: '0.82rem',
+                  lineHeight: 1.5,
+                  overflowX: 'auto',
+                  margin: '1.25rem 0',
+                }}
+              >
+{`       [ FIXED MERIDIAN OF UJJAIN (75° 46' E) ]
+                         |
+                         |   ~30 km Northward Geodetic Offset
+                         |   due to 2,300 Years of Precession
+                         |
+                         v
+    +-----------------------------------------+ <--- TROPIC OF CANCER TODAY (23° 26' 14" N)
+    |  DOṄGLĀ VILLAGE                         |      Varāhamihira Observatory
+    |  (Modern Zero-Shadow Coordinate Node)   |      [Zero Shadow Day: June 21]
+    +-----------------------------------------+
+                         |
+                         | (Annual southward migration: ~14.5 meters per year)
+                         |
+                         v
+    +-----------------------------------------+ <--- TROPIC OF CANCER IN ANTIQUITY (c. 300 BCE)
+    |  UJJAIN (Avantī)                        |      Mahākāleśvara Temple
+    |  (Historical Madhya-Rekhā Center)       |      Latitude: 23° 10' 58" N
+    +-----------------------------------------+`}
+              </div>
+
+              <p>
+                Over the past 2,300 years, the Tropic of Cancer has migrated approximately <strong>30 kilometers north</strong> of the Mahākāleśvara temple to the rural village of <strong>Doṅglā</strong>. To honor this living astronomical lineage, India established the <strong>Varāhamihira Astronomical Observatory</strong> at Doṅglā. Every June 21 at local solar noon, researchers and students gather to observe <strong>Zero Shadow Day (निर्छाया-दिवसः)</strong>, watching gnomons and towers cast no shadow beneath the midday sun.
+              </p>
+            </section>
+
+            {/* Section 8: Epistemological Transmission */}
+            <section className="philosophy-section" id="transmission-ujjain">
+              <h2>8. Epistemological Transmission: From the Ujjain Academy to Baghdad &amp; Europe</h2>
+              <p>
+                The mathematical discoveries of Ujjain did not remain isolated. Between the 8th and 13th centuries, they traveled across cultural spheres, providing the computational foundation for global science:
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#f8fafc', padding: '1rem', borderRadius: '10px', border: '1px solid #cbd5e1' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0284c7' }}>VECTOR 1 (773 CE)</span>
+                  <h4 style={{ margin: '0.25rem 0 0.35rem', fontSize: '0.96rem', fontWeight: 800, color: '#0f172a' }}>The Baghdad Embassy</h4>
+                  <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
+                    An astronomical mission from Ujjain traveled to the court of Abbasid Caliph Al-Manṣūr. Brahmagupta&apos;s works were translated into Arabic as <em>Zīj al-Sindhind</em> by al-Fazārī and Yaʿqūb ibn Ṭāriq, introducing zero (<em>ṣifr</em>) and base-10 algebra to the Islamic world.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', padding: '1rem', borderRadius: '10px', border: '1px solid #cbd5e1' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#059669' }}>VECTOR 2 (825 CE)</span>
+                  <h4 style={{ margin: '0.25rem 0 0.35rem', fontSize: '0.96rem', fontWeight: 800, color: '#0f172a' }}>Al-Khwārizmī’s Synthesis</h4>
+                  <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
+                    Working at the House of Wisdom, Al-Khwārizmī wrote <em>The Book of Addition and Subtraction According to Hindu Calculation</em>. His Latinized name gave birth to <strong>Algorithm</strong>, and his title gave birth to <strong>Algebra</strong>.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', padding: '1rem', borderRadius: '10px', border: '1px solid #cbd5e1' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#d97706' }}>VECTOR 3 (1202 CE)</span>
+                  <h4 style={{ margin: '0.25rem 0 0.35rem', fontSize: '0.96rem', fontWeight: 800, color: '#0f172a' }}>Fibonacci’s Liber Abaci</h4>
+                  <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
+                    Leonardo Fibonacci encountered the Indian numeral system in North Africa. His <em>Liber Abaci</em> declared the method of the Hindus superior to Roman numerals, sparking the European commercial revolution and Renaissance mathematics.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Bodhi's note */}
+            <div className="philosophy-learner-box">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
+                <BodhiAvatar mood="reading" size="sm" showHalo={false} />
+                <h3 style={{ margin: 0 }}>Bodhi’s Study Note · Coordinates of Mind and Space</h3>
+              </div>
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.6, color: '#134e4a', margin: '0 0 1rem' }}>
+                Notice how the ancient astronomers never divorced geography from inner consciousness. In the <em>Sūryasiddhānta</em>, locating oneself on the terrestrial globe was the first prerequisite for orienting the soul toward the cosmos. When you calculate your latitude using a 12-Aṅgula Śaṅku, you are standing on the exact same geometric ground that Varāhamihira and Bhāskara walked at Avantī over a millennium ago.
+              </p>
+              <div className="philosophy-action-buttons">
+                <button
+                  type="button"
+                  className="philosophy-action-btn"
+                  onClick={() => {
+                    setActiveEssay('lilavati_math');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  🪷 The Poetic Equation (Līlāvatī) ➔
+                </button>
+                <button
+                  type="button"
+                  className="philosophy-action-btn"
+                  style={{ background: '#0284c7' }}
+                  onClick={() => {
+                    setActiveEssay('pingala_binary');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  ⚡ The Binary Blueprint (Piṅgala) ➔
                 </button>
                 <button
                   type="button"
