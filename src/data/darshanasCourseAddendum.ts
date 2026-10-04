@@ -2161,8 +2161,47 @@ Mūrti  (Embodied Form / Physical Density in Space)`,
         },
       },
       {
+        anchorId: 'applied-volumetric-vyavaharas',
+        heading: '3. Applied Solid Geometry: The Volumetric Vyavahāras (खात-चिति-क्रकच-व्यवहाराः)',
+        subheading: 'Khāta (Excavation) · Citi (Brick Stacks) · Krakaca (Sawing Metrics) · The Dimensional Ghanahasta Protocol',
+        paragraphs: [
+          'In classical Indian mathematics, geometry was never confined to motionless lines drawn in dust. In the specialized Vyavahāra (applied practice) chapters of the Līlāvatī, Bhāskarāchārya translates 3D spatial mensuration into real-world civil engineering, architecture, forestry, and economic costing.',
+          'The fundamental spatial unit across all 3D calculations is the घनहस्तः (Ghanahastaḥ — Cubic Cubit), representing the volume of a solid cube measuring one Hasta (cubit) on each side.',
+          '1. खातव्यवहारः (Khāta-vyavahāraḥ — Excavation Mensuration): Applied to step-wells (Vāpī), storage tanks (Taḍāga), and moats. Bhāskara classifies excavations into three topological forms: Sama-khāta (uniform rectangular pits where Volume = Length × Width × Depth), Viṣama-khāta (irregular surfaces where mean averages of length, width, and depth are calculated across survey points), and Asama-khāta (sloping, stepped frustums). For Asama-khāta, Bhāskara formulates the exact prismoidal frustum volume: V = (h / 3) × (A₁ + A₂ + √(A₁ × A₂)), centuries before modern calculus.',
+          '2. चितिव्यवहारः (Citi-vyavahāraḥ — Brick Stacks & Masonry): Rooted in Vedic altar construction (Śyena-citi) and applied to fortress walls and temple superstructures. Rather than counting individual bricks, architects calculate the overall 3D volume of the wall (Length × Width × Height in Ghanahastas) and divide by the volume of a single brick to determine the exact brick quota required, preventing procurement deficits or costly surplus waste.',
+          '3. क्रकचव्यवहारः (Krakaca-vyavahāraḥ — Timber Geometry & Sawing Work): Krakaca denotes the two-man carpenter’s pull-saw. To process cylindrical logs, Bhāskara calculates the rectangular core area from circumference (Pariṇāha) and length (Dīrgha). Sawyers were commercially billed not per log, but by the total superficial cutting area severed by the blade (Length × Thickness × Number of Cuts), cross-referenced with species density tariffs (hardwood Sal vs. medium Teak vs. soft Pine).',
+        ],
+        sutras: [
+          {
+            sanskrit: 'क्षेत्रफलं वेधगुणं घनहस्ताः स्युः समाह्वये खाते ।\nमुखतलयोः क्षेत्रफले तद्घातान्मूलमपि तयोर्युक्तम् ॥\nवेधघ्नं त्रिभिराप्तं समखाते घनफलं सूक्ष्मम् ॥',
+            transliteration: 'kṣetraphalaṃ vedhaguṇaṃ ghanahastāḥ syuḥ samāhvaye khāte | mukhatalayoḥ kṣetraphale tadghātānmūlamapi tayoryuktam || vedhaghnaṃ tribhirāptaṃ samakhāte ghanaphalaṃ sūkṣmam ||',
+            meaning: 'In a regular pit, area multiplied by depth yields cubic cubits. For a sloping prismoidal excavation, adding the top area, bottom area, and the square root of their product, multiplying by depth, and dividing by three yields the exact mathematical volume (Sūkṣma Ghana).',
+            source: 'Bhāskarāchārya · Līlāvatī · Khāta-vyavahāra (Excavation Section)',
+          },
+          {
+            sanskrit: 'चितौ क्षेत्रफलं वेधगुणं घनहस्ताः स्युः ।\nइष्टकाया घनेन भक्ते भवेदिष्टकासङ्ख्या ॥',
+            transliteration: 'citau kṣetraphalaṃ vedhaguṇaṃ ghanahastāḥ syuḥ | iṣṭakāyā ghanena bhakte bhavediṣṭakāsaṅkhyā ||',
+            meaning: 'In a brick structure (Citi), surface area multiplied by height gives volume in cubic cubits (Ghanahastas). Dividing this total volume by the volume of a single unit brick yields the exact total number of bricks required.',
+            source: 'Bhāskarāchārya · Līlāvatī · Citi-vyavahāra (Masonry Section)',
+          },
+        ],
+        table: {
+          headers: ['Vyavahāra Branch', 'Physical Application', 'Volumetric Metric (Ghanahasta)', 'Civil & Economic Logistical Output'],
+          rows: [
+            ['खातव्यवहारः (Khāta)', 'Ponds, step-wells, irrigation tanks, moats', 'V = (h/3) × (A₁ + A₂ + √(A₁A₂))', 'Excavation labor shifts (Puruṣa-pramāṇa), cartage distances, and coin wages'],
+            ['चितिव्यवहारः (Citi)', 'Altar piles, fortress walls, temple sanctums', 'N = (Stack Volume) / (Brick Volume)', 'Kiln manufacturing quotas, structural clay requirements, and zero material waste'],
+            ['क्रकचव्यवहारः (Krakaca)', 'Timber logging, beam squaring, plank slicing', 'Cut Area = Length × Thickness × Cuts', 'Commercial billing based on physical thermodynamic saw work and wood density'],
+          ],
+        },
+        callout: {
+          title: 'The Dimensional Protocol of Classical Mensuration',
+          text: '“Linear dimensions (Hasta) ➔ Multiplied (Guṇana) ➔ Spatial cube (Ghanahasta) ➔ Algorithmic division (Bhāgahāra) ➔ Real-world labor, materials, and coin wages. In Bhāskara’s hands, mathematics was never divorced from the earth; it was the practical architecture of civil civilization.”',
+          type: 'insight',
+        },
+      },
+      {
         anchorId: 'swarm-of-bees-quadratic',
-        heading: '3. Resolution of the Classic "Swarm of Bees" Riddle',
+        heading: '4. Resolution of the Classic "Swarm of Bees" Riddle',
         subheading: 'Multi-Step Radical Equations Disguised as a Woodland Pastoral · Quadratic Resolution',
         paragraphs: [
           'The poetic riddle of the swarming bees demonstrates Bhāskara’s genius for disguising a rigorous multi-step quadratic equation as a romantic woodland narrative.',
@@ -2194,7 +2233,7 @@ Mūrti  (Embodied Form / Physical Density in Space)`,
       },
       {
         anchorId: 'broken-necklace-fractions',
-        heading: '4. The Broken Necklace: Elevating a Lover’s Quarrel into Fractional Arithmetic',
+        heading: '5. The Broken Necklace: Elevating a Lover’s Quarrel into Fractional Arithmetic',
         subheading: 'Linear Algebraic Balance · Least Common Multiple (LCM) · Playful Sensual Poetry',
         paragraphs: [
           'Another spectacular example of elevating human emotion into mathematical inquiry occurs in Bhāskara’s broken necklace riddle, situated during a lover’s playful embrace:',
@@ -2220,7 +2259,7 @@ Mūrti  (Embodied Form / Physical Density in Space)`,
       },
       {
         anchorId: 'geometry-peacock-lotus',
-        heading: '5. Geometry in Nature: The Perched Peacock and the Wind-Blown Lotus',
+        heading: '6. Geometry in Nature: The Perched Peacock and the Wind-Blown Lotus',
         subheading: 'Pythagorean Hypotenuse · Equidistant Dynamic Flight · Submerged Aquatic Geometry',
         paragraphs: [
           'Bhāskara’s geometric problems are celebrated for transforming static Euclidean theorems into living natural kinetic scenes:',
@@ -2242,7 +2281,7 @@ Mūrti  (Embodied Form / Physical Density in Space)`,
       },
       {
         anchorId: 'sanskrit-aesthetics-philosophy',
-        heading: '6. Sanskrit Aesthetics: Mnemonic Rhythms and the Evocation of Rasa',
+        heading: '7. Sanskrit Aesthetics: Mnemonic Rhythms and the Evocation of Rasa',
         subheading: 'Chandas as Data Compression · Mathematics as Ānanda · The Cosmic Harmony of Number',
         paragraphs: [
           'Why did Indian mathematicians write advanced treatises in metered Sanskrit poetry rather than prose?',
@@ -2258,7 +2297,7 @@ Mūrti  (Embodied Form / Physical Density in Space)`,
       },
       {
         anchorId: 'lilavati-cowrie-currency-place-value',
-        heading: '7. The Micro-Currency Foundation: Cowrie Shells (Varāṭaka), Global Trade & Physical Place-Value',
+        heading: '8. The Micro-Currency Foundation: Cowrie Shells (Varāṭaka), Global Trade & Physical Place-Value',
         subheading: 'Līlāvatī Chapter 1 Metrology · Varāṭaka vs Botanical Seeds · Maldivian Monsoon Aquaculture · The Physical Vehicle of Decimal Computation',
         paragraphs: [
           'In Chapter 1 of the Līlāvatī (the Paribhāṣā or definition chapter), Bhāskarāchārya does not open his foundational mathematical treatise with astronomical infinities or dry algebraic symbols. Instead, he anchors the entire computational system in the daily retail reality of the common person: the cowrie seashell (वराटक / varāṭaka).',

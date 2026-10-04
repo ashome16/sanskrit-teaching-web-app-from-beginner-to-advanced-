@@ -3248,12 +3248,13 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginTop: '1rem' }} aria-label="Artwork thematic navigation">
                 <a href="#lilavati-divide" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🪷 1. Shattering the Divide</a>
                 <a href="#lilavati-parikarma" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🔢 2. Śleṣa &amp; Parikarmāṣṭakam</a>
-                <a href="#lilavati-bees" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐝 3. Swarm of Bees (Quadratic)</a>
-                <a href="#lilavati-necklace" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📿 4. Broken Necklace (Fractions)</a>
-                <a href="#lilavati-peacock-lotus" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🦚 5. Peacock &amp; Lotus (Geometry)</a>
-                <a href="#lilavati-studio" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚙️ 6. Interactive Riddle Studio</a>
-                <a href="#lilavati-currency" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐚 7. Cowrie Currency (Varāṭaka) &amp; Place-Value</a>
-                <a href="#lilavati-aesthetics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎨 8. Sanskrit Aesthetics &amp; Rasa</a>
+                <a href="#lilavati-vyavahara" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📐 3. Volumetric Vyavahāras</a>
+                <a href="#lilavati-bees" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐝 4. Swarm of Bees (Quadratic)</a>
+                <a href="#lilavati-necklace" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📿 5. Broken Necklace (Fractions)</a>
+                <a href="#lilavati-peacock-lotus" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🦚 6. Peacock &amp; Lotus (Geometry)</a>
+                <a href="#lilavati-studio" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚙️ 7. Interactive Riddle Studio</a>
+                <a href="#lilavati-currency" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐚 8. Cowrie Currency (Varāṭaka) &amp; Place-Value</a>
+                <a href="#lilavati-aesthetics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎨 9. Sanskrit Aesthetics &amp; Rasa</a>
               </div>
             </figure>
 
@@ -3470,9 +3471,131 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Section 3: Resolution of the Swarm of Bees Riddle */}
+            {/* Section 3: Applied Volumetric Vyavaharas */}
+            <section className="philosophy-section" id="lilavati-vyavahara" aria-labelledby="heading-lilavati-vyavahara">
+              <h2 id="heading-lilavati-vyavahara">3. Applied Solid Geometry: The Volumetric Vyavahāras (खात-चिति-क्रकच-व्यवहाराः)</h2>
+              <p className="philosophy-lead">
+                In classical Indian mathematics, geometry was never confined to motionless lines drawn in dust. In the <em>Vyavahāra</em> (applied computational practice) chapters of the <em>Līlāvatī</em>, Bhāskarāchārya translates 3D solid mensuration into real-world civil engineering, architecture, forestry, and economic costing.
+              </p>
+              <p>
+                The fundamental spatial metric across all three-dimensional calculations is the <strong>घनहस्तः (<em>Ghanahastaḥ</em> — Cubic Cubit)</strong>: the volume of a solid cube measuring one <em>Hasta</em> (approx. 18–24 inches) on each side (1 Hasta³).
+              </p>
+
+              {/* The Three Volumetric Pillars */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem', margin: '1.25rem 0' }}>
+                {/* 1. Khata-vyavahara */}
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #cbd5e1' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.4rem' }}>
+                    <span style={{ fontSize: '1.25rem' }}>⛏️</span>
+                    <h3 style={{ margin: 0, fontSize: '1.02rem', fontWeight: 800, color: '#0f172a' }}>
+                      1. खातव्यवहारः (Khāta-vyavahāraḥ)
+                    </h3>
+                  </div>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#0f766e', textTransform: 'uppercase' }}>
+                    Earthwork &amp; Excavation Calculus
+                  </span>
+                  <p style={{ fontSize: '0.84rem', color: '#475569', lineHeight: 1.5, margin: '0.4rem 0' }}>
+                    Used for step-wells (<em>Vāpī</em>), storage reservoirs (<em>Taḍāga</em>), and temple foundations. Bhāskara classifies pits into three topographies:
+                  </p>
+                  <ul style={{ fontSize: '0.82rem', color: '#334155', paddingLeft: '1.1rem', margin: 0, lineHeight: 1.5 }}>
+                    <li><strong>समखातम् (Sama):</strong> Uniform rectangular trench: Volume = Length × Width × Depth (in <em>Ghanahasta</em>).</li>
+                    <li><strong>विषमखातम् (Viṣama):</strong> Irregular depths/banks; calculated by taking mean averages (Madhya-māna) of length, width, and depth across multi-point surveys.</li>
+                    <li><strong>असमखातम् (Asama / Prismoidal):</strong> Sloping stepped tanks. Bhāskara formulates the exact prismoidal frustum volume (<em>Sūkṣma-ghana</em>):
+                      <div style={{ fontFamily: 'monospace', fontSize: '0.8rem', background: '#ffffff', padding: '0.35rem 0.5rem', borderRadius: '5px', margin: '0.3rem 0', border: '1px solid #cbd5e1' }}>
+                        V = (h / 3) × (A₁ + A₂ + √(A₁ × A₂))
+                      </div>
+                      Centuries before modern calculus, matching the frustum formula for any truncated pyramid!
+                    </li>
+                  </ul>
+                  <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: '#0f766e', background: '#f0fdfa', padding: '0.4rem', borderRadius: '6px' }}>
+                    <strong>Logistical Output:</strong> Volume converts directly into laborer shifts (<em>Puruṣa-pramāṇa</em>), soil transport distance, and coin wages.
+                  </div>
+                </div>
+
+                {/* 2. Citi-vyavahara */}
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #cbd5e1' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.4rem' }}>
+                    <span style={{ fontSize: '1.25rem' }}>🧱</span>
+                    <h3 style={{ margin: 0, fontSize: '1.02rem', fontWeight: 800, color: '#0f172a' }}>
+                      2. चितिव्यवहारः (Citi-vyavahāraḥ)
+                    </h3>
+                  </div>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#b45309', textTransform: 'uppercase' }}>
+                    Brick Stacks &amp; Masonry Planning
+                  </span>
+                  <p style={{ fontSize: '0.84rem', color: '#475569', lineHeight: 1.5, margin: '0.4rem 0' }}>
+                    Originating in Vedic altar construction (<em>Śyena-citi</em>) and applied to royal fortress walls and temple superstructures:
+                  </p>
+                  <ul style={{ fontSize: '0.82rem', color: '#334155', paddingLeft: '1.1rem', margin: 0, lineHeight: 1.5 }}>
+                    <li><strong>Stack Footprint:</strong> Calculates total 3D wall volume without counting individual bricks:
+                      <div style={{ fontFamily: 'monospace', fontSize: '0.8rem', background: '#ffffff', padding: '0.35rem 0.5rem', borderRadius: '5px', margin: '0.3rem 0', border: '1px solid #cbd5e1' }}>
+                        Stack Volume = L × W × H (in Ghanahastas)
+                      </div>
+                    </li>
+                    <li><strong>Unit Division (Bhāgahāra):</strong> Divides overall stack volume by unit brick volume (in fractional <em>Ghanahastas</em>):
+                      <div style={{ fontFamily: 'monospace', fontSize: '0.8rem', background: '#ffffff', padding: '0.35rem 0.5rem', borderRadius: '5px', margin: '0.3rem 0', border: '1px solid #cbd5e1' }}>
+                        Total Bricks = (Stack Volume) / (Unit Brick Volume)
+                      </div>
+                    </li>
+                  </ul>
+                  <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: '#b45309', background: '#fffbeb', padding: '0.4rem', borderRadius: '6px' }}>
+                    <strong>Architectural Impact:</strong> Eliminated material guesswork, allowing builders to kiln exact brick quotas before ground-breaking.
+                  </div>
+                </div>
+
+                {/* 3. Krakaca-vyavahara */}
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #cbd5e1' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.4rem' }}>
+                    <span style={{ fontSize: '1.25rem' }}>🪚</span>
+                    <h3 style={{ margin: 0, fontSize: '1.02rem', fontWeight: 800, color: '#0f172a' }}>
+                      3. क्रकचव्यवहारः (Krakaca-vyavahāraḥ)
+                    </h3>
+                  </div>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#4338ca', textTransform: 'uppercase' }}>
+                    Timber Geometry &amp; Sawing Metrics
+                  </span>
+                  <p style={{ fontSize: '0.84rem', color: '#475569', lineHeight: 1.5, margin: '0.4rem 0' }}>
+                    <em>Krakaca</em> literally denotes the carpenter’s pull-saw. Formulates commercial billing for sawing timber logs into planks:
+                  </p>
+                  <ul style={{ fontSize: '0.82rem', color: '#334155', paddingLeft: '1.1rem', margin: 0, lineHeight: 1.5 }}>
+                    <li><strong>Cylindrical Core:</strong> Measures circumference (<em>Pariṇāha</em>) and length (<em>Dīrgha</em>) to calculate usable rectangular timber cross-section (<em>Caturaśrīkaraṇa</em>).</li>
+                    <li><strong>Surface-Area Cleared:</strong> Ancient sawyers were not billed per log, but by total cross-sectional area severed by the blade:
+                      <div style={{ fontFamily: 'monospace', fontSize: '0.8rem', background: '#ffffff', padding: '0.35rem 0.5rem', borderRadius: '5px', margin: '0.3rem 0', border: '1px solid #cbd5e1' }}>
+                        Cut Area = Length × Thickness × Number of Cuts
+                      </div>
+                    </li>
+                    <li><strong>Wood Density Index:</strong> Differentiated labor tariffs based on hardness: hardwood Sal (<em>Śāla</em>) &amp; Acacia vs. medium Teak vs. soft Pine.</li>
+                  </ul>
+                  <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: '#4338ca', background: '#eef2ff', padding: '0.4rem', borderRadius: '6px' }}>
+                    <strong>Commercial Reality:</strong> Standardized industrial billing based on physical thermodynamic work accomplished.
+                  </div>
+                </div>
+              </div>
+
+              {/* The Dimensional Pipeline Diagram */}
+              <div className="philosophy-card" style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', margin: '1rem 0' }}>
+                <h4 style={{ margin: '0 0 0.4rem', fontSize: '0.94rem', fontWeight: 800, color: '#0f172a' }}>
+                  The Dimensional Pipeline of Classical Indian Mensuration:
+                </h4>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', fontSize: '0.84rem', fontWeight: 700, color: '#334155', padding: '0.5rem 0' }}>
+                  <span style={{ background: '#ffffff', padding: '0.4rem 0.75rem', borderRadius: '6px', border: '1px solid #cbd5e1' }}>
+                    📏 Linear Dimensions (हस्त / Hasta)
+                  </span>
+                  <span style={{ color: '#0f766e' }}>➔ गुणनम् (Multiplication) ➔</span>
+                  <span style={{ background: '#e0f2fe', padding: '0.4rem 0.75rem', borderRadius: '6px', border: '1px solid #7dd3fc', color: '#0369a1' }}>
+                    🧊 3D Solid Measure (घनहस्त / Ghanahasta)
+                  </span>
+                  <span style={{ color: '#0f766e' }}>➔ भागहारः (Division / Ratio) ➔</span>
+                  <span style={{ background: '#fef3c7', padding: '0.4rem 0.75rem', borderRadius: '6px', border: '1px solid #fde68a', color: '#92400e' }}>
+                    💰 Labor Shifts, Brick Counts &amp; Coin Wages
+                  </span>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 4: Resolution of the Swarm of Bees Riddle */}
             <section className="philosophy-section" id="lilavati-bees" aria-labelledby="heading-lilavati-bees">
-              <h2 id="heading-lilavati-bees">3. Resolution of the Classic &quot;Swarm of Bees&quot; Riddle</h2>
+              <h2 id="heading-lilavati-bees">4. Resolution of the Classic &quot;Swarm of Bees&quot; Riddle</h2>
               <p className="philosophy-lead">
                 The poetic riddle of the swarming bees demonstrates Bhāskara’s ability to disguise a multi-step quadratic equation as a romantic woodland narrative.
               </p>
@@ -3503,9 +3626,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </p>
             </section>
 
-            {/* Section 4: The Broken Necklace */}
+            {/* Section 5: The Broken Necklace */}
             <section className="philosophy-section" id="lilavati-necklace" aria-labelledby="heading-lilavati-necklace">
-              <h2 id="heading-lilavati-necklace">4. The Broken Necklace: Elevating a Lover’s Quarrel into Fractions</h2>
+              <h2 id="heading-lilavati-necklace">5. The Broken Necklace: Elevating a Lover’s Quarrel into Fractions</h2>
               <p className="philosophy-lead">
                 Another spectacular instance of elevating the mundane to the magical occurs in a problem regarding a broken pearl necklace during a passionate embrace:
               </p>
@@ -3523,9 +3646,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Section 5: Geometry Puzzles: The Peacock and the Lotus */}
+            {/* Section 6: Geometry Puzzles: The Peacock and the Lotus */}
             <section className="philosophy-section" id="lilavati-peacock-lotus" aria-labelledby="heading-lilavati-peacock-lotus">
-              <h2 id="heading-lilavati-peacock-lotus">5. Geometry in Nature: The Perched Peacock and the Wind-Blown Lotus</h2>
+              <h2 id="heading-lilavati-peacock-lotus">6. Geometry in Nature: The Perched Peacock and the Wind-Blown Lotus</h2>
               <p className="philosophy-lead">
                 Bhāskara transforms geometric constraints into living kinetic scenes rather than static chalkboard figures:
               </p>
@@ -3558,9 +3681,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Section 6: Interactive Riddle Studio */}
+            {/* Section 7: Interactive Riddle Studio */}
             <section className="philosophy-section" id="lilavati-studio" aria-labelledby="heading-lilavati-studio">
-              <h2 id="heading-lilavati-studio">6. Interactive Riddle Studio: Solve Bhāskara’s Four Riddles</h2>
+              <h2 id="heading-lilavati-studio">7. Interactive Riddle Studio: Solve Bhāskara’s Four Riddles</h2>
               <p className="philosophy-lead">
                 Experiment with the interactive sliders below to solve the quadratic bee swarm, string the pearls, calculate the peacock’s dive, measure the lake depth, and convert cowrie shell currency into silver and gold:
               </p>
@@ -3569,9 +3692,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               <LilavatiPoeticMathStudio onPlayAudio={handlePlayAudio} />
             </section>
 
-            {/* Section 7: Cowrie Shell Currency & Place-Value */}
+            {/* Section 8: Cowrie Shell Currency & Place-Value */}
             <section className="philosophy-section" id="lilavati-currency" aria-labelledby="heading-lilavati-currency">
-              <h2 id="heading-lilavati-currency">7. The Micro-Currency Foundation: Cowrie Shells (Varāṭaka), Global Trade &amp; Physical Place-Value</h2>
+              <h2 id="heading-lilavati-currency">8. The Micro-Currency Foundation: Cowrie Shells (Varāṭaka), Global Trade &amp; Physical Place-Value</h2>
               <p className="philosophy-lead">
                 In Chapter 1 of the <em>Līlāvatī</em> (the <em>Paribhāṣā</em> metrological chapter), Bhāskarāchārya does not begin with abstract cosmic numbers. Instead, he anchors mathematical calculation in the tangible micro-currency of the common person: the cowrie seashell (वराटक / <em>varāṭaka</em>).
               </p>
@@ -3701,9 +3824,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Section 8: Sanskrit Aesthetics & Rasa */}
+            {/* Section 9: Sanskrit Aesthetics & Rasa */}
             <section className="philosophy-section" id="lilavati-aesthetics" aria-labelledby="heading-lilavati-aesthetics">
-              <h2 id="heading-lilavati-aesthetics">8. Sanskrit Aesthetics: The Philosophy Behind the Poetry</h2>
+              <h2 id="heading-lilavati-aesthetics">9. Sanskrit Aesthetics: The Philosophy Behind the Poetry</h2>
               <p className="philosophy-lead">
                 The synthesis of quantitative mathematics and high poetry was the absolute norm in classical Sanskrit text production, driven by a profound educational philosophy:
               </p>
