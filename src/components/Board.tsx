@@ -837,8 +837,9 @@ function activeSectionChipId(chips: BoardSectionChip[], puzzleIndex: number): st
   return active;
 }
 
-/** Guess window before English and Sanskrit audio. Play all uses the same gap. */
-const PUZZLE_REVEAL_MS = 3200;
+/** Guess window before English and Sanskrit audio. Play all uses the same gap.
+ *  Must be a real delay — never speak in the same turn that shows the puzzle. */
+const PUZZLE_REVEAL_MS = 4000;
 
 /** Sanskrit only. Learn cards speak the target; other puzzles speak the sentence, else the word. */
 function spokenSanskrit(puzzle: BoardPuzzle, learn: boolean): string {
@@ -907,6 +908,7 @@ const Board: React.FC<BoardProps> = ({
   const playWakeRef = useRef<Array<() => void>>([]);
   const playDockRef = useRef<HTMLDivElement | null>(null);
   const revealTimerRef = useRef<number | null>(null);
+  const revealSpeakTimerRef = useRef<number | null>(null);
   const revealGenRef = useRef<number | null>(null);
   const revealWatchRef = useRef(0);
   const playCtxRef = useRef({
@@ -1020,6 +1022,10 @@ const Board: React.FC<BoardProps> = ({
     if (revealTimerRef.current != null) {
       window.clearTimeout(revealTimerRef.current);
       revealTimerRef.current = null;
+    }
+    if (revealSpeakTimerRef.current != null) {
+      window.clearTimeout(revealSpeakTimerRef.current);
+      revealSpeakTimerRef.current = null;
     }
   };
 
@@ -1253,10 +1259,14 @@ const Board: React.FC<BoardProps> = ({
       }
       if (!alive()) return;
       // Picture and Sanskrit word stay up; English stays hidden through the guess gap.
+      // The mount effect must not also speak — its timer was cleared in startBoardPlayAll.
       setMeaningShown(false);
+      clearRevealTimer();
       await playSleep(PUZZLE_REVEAL_MS);
       if (!alive()) return;
       setMeaningShown(true);
+      await playSleep(0);
+      if (!alive()) return;
       speakLead(spokenSanskrit(fresh, learn));
       await playSleep(1800);
       if (!alive()) return;
@@ -1314,8 +1324,11 @@ const Board: React.FC<BoardProps> = ({
     playTokenRef.current += 1;
     playTimersRef.current.forEach((id) => window.clearTimeout(id));
     playWakeRef.current.splice(0).forEach((fn) => fn());
-    if (playingRef.current) stopPronunciation();
+    clearRevealTimer();
+    // Leaving /board cancels the guess timer and any auto Sanskrit still queued.
+    stopPronunciation();
     playingRef.current = false;
+    revealGenRef.current = null;
   }, []);
 
   const chooseShelf = (nextShelf: ShelfId) => {
@@ -1561,26 +1574,43 @@ const Board: React.FC<BoardProps> = ({
     setWrongAttempt(false);
   }, [puzzleIndex, activeShelf]);
 
-  // First view is picture + Sanskrit only. After the guess gap, show English and speak Sanskrit.
+  // Picture + Sanskrit word render with English hidden. Speech is NOT started on this
+  // tick: a window timer (PUZZLE_REVEAL_MS) must elapse after the puzzle is on screen.
   // Play all owns that timing itself, so this effect must not also speak.
+  // This is the only auto-speak path on /board (no welcome, learn-card, or Play-all autostart).
   useEffect(() => {
-    setMeaningShown(false);
     clearLeadHighlight();
     clearRevealTimer();
-    const puzzle = activePuzzle;
-    if (!puzzle) return undefined;
     if (playingRef.current) return undefined;
+    setMeaningShown(false);
+    const puzzle = activePuzzle;
+    if (loading || !puzzle) return undefined;
     const learn = (puzzle.phase || '').trim() === 'learn';
-    const timer = window.setTimeout(() => {
-      if (revealTimerRef.current === timer) revealTimerRef.current = null;
-      if (playingRef.current) return;
-      setMeaningShown(true);
-      speakLead(spokenSanskrit(puzzle, learn));
-    }, PUZZLE_REVEAL_MS);
-    revealTimerRef.current = timer;
+    const spoken = spokenSanskrit(puzzle, learn);
+    const startedAt = Date.now();
+    const arm = (delay: number) => {
+      const timer = window.setTimeout(() => {
+        if (revealTimerRef.current === timer) revealTimerRef.current = null;
+        if (playingRef.current) return;
+        const elapsed = Date.now() - startedAt;
+        if (elapsed < PUZZLE_REVEAL_MS - 25) {
+          arm(PUZZLE_REVEAL_MS - elapsed);
+          return;
+        }
+        setMeaningShown(true);
+        // Next macrotask: not the same tick as revealing English or showing the puzzle.
+        const speakTimer = window.setTimeout(() => {
+          if (revealSpeakTimerRef.current === speakTimer) revealSpeakTimerRef.current = null;
+          if (playingRef.current) return;
+          speakLead(spoken);
+        }, 0);
+        revealSpeakTimerRef.current = speakTimer;
+      }, delay);
+      revealTimerRef.current = timer;
+    };
+    arm(PUZZLE_REVEAL_MS);
     return () => {
-      window.clearTimeout(timer);
-      if (revealTimerRef.current === timer) revealTimerRef.current = null;
+      clearRevealTimer();
       if (revealGenRef.current != null && getSpeechGeneration() === revealGenRef.current) {
         stopPronunciation();
       }
@@ -1588,7 +1618,7 @@ const Board: React.FC<BoardProps> = ({
     };
     // speakLead/clearLeadHighlight identity changes every render; puzzle identity is the trigger.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [puzzleIndex, activeShelf, activePuzzle]);
+  }, [puzzleIndex, activeShelf, loading, activePuzzle]);
 
   /** Navigate to previous puzzle on this shelf. */
   const goPrev = () => {
@@ -1688,45 +1718,280 @@ const Board: React.FC<BoardProps> = ({
   const markedTile = playingAll ? null : nextCue.markIndex;
 
   return <main className="board-shell">
-    {/* Top Website Navigation Breadcrumbs & Badge */}
-    <div className="board-top-nav">
-      <nav className="board-breadcrumbs" aria-label="Website Navigation">
-        {onNavigateToHome && (
-          <>
-            <button type="button" className="board-nav-link" onClick={onNavigateToHome} title="Go to Homepage">
-              🏠 Home
-            </button>
-            <span className="board-nav-sep" aria-hidden="true">/</span>
-          </>
-        )}
-        <span className="board-nav-current">🧩 जोडो Tile Puzzle</span>
-      </nav>
-      <div className="board-site-shortcuts">
-        {onNavigateToReader && (
-          <button type="button" className="board-shortcut-btn" onClick={onNavigateToReader}>
-            📖 Deepakam Reader
-          </button>
-        )}
-        {onNavigateToVarnamala && (
-          <button type="button" className="board-shortcut-btn" onClick={onNavigateToVarnamala}>
-            🔤 Alphabet &amp; Syllables
-          </button>
-        )}
-        {onNavigateToGrammar && (
-          <button type="button" className="board-shortcut-btn" onClick={onNavigateToGrammar}>
-            📚 Grammar
-          </button>
-        )}
-      </div>
+    <div className="board-puzzle-stage">
+    <div className="board-tip-row">
+      <p className="board-tip" aria-live="polite">{nextCue.text || 'Tap the marked cream tile.'}</p>
+      {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
+      <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
     </div>
 
-    <div className="board-heading">
-      <div>
-        <p className="eyebrow">शब्द-निर्माण-क्रीडा · BUILD SANSKRIT WORDS</p>
-        <h2>जोडो · Tile Puzzle Studio</h2>
-        <p>Blend sounds into words, solve puzzles, and discover daily Sanskrit vocabulary.</p>
-      </div>
-      <div className="board-mark" aria-hidden="true">ॐ</div>
+    {loading && <p className="board-status">Loading today&apos;s shelf…</p>}
+    {error && <p className="board-status error">{error}</p>}
+
+    {!loading && !error && activePuzzle && <>
+      <section ref={puzzleBoardRef} className="puzzle-board">
+        <div className="puzzle-meta">
+          <div className="meta-left">
+            <span className="meta-skin-badge">{displaySkin}</span>
+            <span className="meta-hint-pill">
+              {isLearnPhase
+                ? '📖 Learn word'
+                : isJodoSkin
+                  ? '🎯 जोडो · Join tiles'
+                  : '👆 1 tile → Next'}
+            </span>
+          </div>
+          <div className="board-playall-slot">
+            {playingAll ? (
+              <span className="board-playall-spacer" aria-hidden="true" />
+            ) : (
+              <button
+                type="button"
+                className="board-playall"
+                onClick={startBoardPlayAll}
+                aria-pressed={false}
+                title="Show how the tiles on this shelf join, starting here"
+                aria-label="Play all puzzles on this shelf"
+              >
+                ▶ Play all
+              </button>
+            )}
+          </div>
+          {playingAll && typeof document !== 'undefined' && createPortal(
+            <div ref={playDockRef} className="board-playall-dock" role="region" aria-label="Play all">
+              <button
+                type="button"
+                className="board-playall board-playall--pause"
+                onClick={stopBoardPlayAll}
+                aria-pressed
+                title="Pause play all"
+                aria-label="Pause play all"
+              >
+                ⏸ Pause
+              </button>
+            </div>,
+            document.body,
+          )}
+          <div className="puzzle-nav-controls">
+            <button
+              type="button"
+              className="puzzle-nav-arrow"
+              onClick={goPrev}
+              disabled={puzzleIndex <= 0}
+              title="Previous Puzzle (पूर्वतन-पहेलिका)"
+              aria-label="Previous Puzzle"
+            >
+              ◀
+            </button>
+            <span className="meta-progress">
+              <strong>{puzzleIndex + 1}</strong> <span className="meta-total">/ {activePuzzles.length}</span>
+            </span>
+            <button
+              type="button"
+              className="puzzle-nav-arrow"
+              onClick={goNext}
+              disabled={puzzleIndex + 1 >= activePuzzles.length}
+              title="Next Puzzle (अग्रिम-पहेलिका)"
+              aria-label="Next Puzzle"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+
+        <div className="puzzle-progress-track" aria-hidden="true">
+          <div
+            className="puzzle-progress-bar"
+            style={{ width: `${Math.min(100, Math.round(((puzzleIndex + 1) / Math.max(1, activePuzzles.length)) * 100))}%` }}
+          />
+        </div>
+
+        {!isLearnPhase && !isJodoSkin && (
+          <ol className="puzzle-steps" aria-label="Puzzle steps">
+            <li className={activeStep === 1 ? 'active' : undefined}>
+              <span className="step-num" aria-hidden="true">1</span>
+              <span className="step-label">
+                <>Click a cream tile <small>(numbers on tiles)</small></>
+              </span>
+            </li>
+            <li className={activeStep === 2 ? 'active' : undefined}>
+              <span className="step-num" aria-hidden="true">2</span>
+              <span className="step-label">Click Next</span>
+            </li>
+          </ol>
+        )}
+
+        <div className="puzzle-lead">
+          <div className="puzzle-lead-graphic" aria-hidden="true">{puzzleGraphic}</div>
+          <p className={`puzzle-lead-word${learnPulse ? ' learn-word--settle' : ''}${leadMark}`}>{leadWord}</p>
+          <p className={`puzzle-lead-english${meaningShown ? leadMark : ''}`} aria-hidden={!meaningShown}>
+            {meaningShown ? leadEnglish : ''}
+          </p>
+        </div>
+
+        {isLearnPhase ? (
+          <div className={`learn-card${learnPulse ? ' learn-card--settling' : ''}`}>
+            <button
+              className="hear-button"
+              type="button"
+              onClick={() => playPronunciation(activePuzzle.target)}
+            >
+              🔊 Hear
+            </button>
+            <div className="tile-row learn-tile-row">
+              {activePuzzle.tiles.map((tile, index) => (
+                <button
+                  key={`${tile}-${index}`}
+                  className="puzzle-tile"
+                  type="button"
+                  onClick={() => {
+                    if (playingRef.current) stopBoardPlayAll();
+                    playPronunciation(cleanTile(tile));
+                  }}
+                >
+                  <span className="tile-num" aria-hidden="true">{index + 1}</span>
+                  <span>{tile}</span>
+                </button>
+              ))}
+            </div>
+            <p className="board-next-hint">{nextCue.text}</p>
+            <div className="puzzle-actions">
+              <button ref={nextBtnRef} className="next-button learn-next" type="button" onClick={onNextOrAgain}>
+                {isLastPuzzle ? 'Play Again' : 'Next'}
+              </button>
+            </div>
+          </div>
+        ) : (
+          <>
+            {isJodoSkin ? (
+              <div className="jodo-prompt-card">
+                <div className="jodo-goal-bar">
+                  <span className="jodo-goal-tag">🎯 जोडो (Join):</span>
+                  <span className="jodo-goal-target">{activePuzzle.target}</span>
+                  {meaningShown && activePuzzle.english && (
+                    <span className={`jodo-goal-meaning${leadMark}`} title="Meaning in English">
+                      ({activePuzzle.english})
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    className="jodo-sound-btn"
+                    onClick={() => playPronunciation(activePuzzle.target)}
+                    title={`Hear pronunciation for ${activePuzzle.target}`}
+                    aria-label={`Hear ${activePuzzle.target}`}
+                  >
+                    🔊
+                  </button>
+                </div>
+                <div className="jodo-sentence-line">
+                  {renderJodoSentenceWithSlot(activePuzzle.sentence, activePuzzle.target, chosen)}
+                </div>
+              </div>
+            ) : (
+              <div className="standard-prompt-block">
+                <p className="puzzle-prompt">
+                  {isMatchMeaningPhase
+                    ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
+                    : renderPromptWithHole(activePuzzle.prompt ?? activePuzzle.target)}
+                </p>
+                {meaningShown && isPrashnaPart && activePuzzle.english && (
+                  <p className={`prashna-english-clue${leadMark}`}>({activePuzzle.english})</p>
+                )}
+              </div>
+            )}
+
+            {!(checked && isCorrect) && (
+              <p className="board-next-hint">{nextCue.text}</p>
+            )}
+            <div className="tile-row">
+              {activePuzzle.tiles.map((tile, index) => {
+                const classes = ['puzzle-tile'];
+                if (chosen.includes(cleanTile(tile))) classes.push('chosen');
+                if (playingAll && dimOthers && !solverIndices.includes(index)) classes.push('puzzle-tile--dim');
+                if (playingAll && solverIndices.includes(index)) classes.push('puzzle-tile--magnet');
+                if (lockIndex === index) classes.push('puzzle-tile--lock');
+                if (markedTile === index) classes.push('puzzle-tile--next');
+                return (
+                  <button
+                    key={`${tile}-${index}`}
+                    type="button"
+                    data-board-tile={index}
+                    className={classes.join(' ')}
+                    onClick={() => toggleTile(tile)}
+                  >
+                    <span className="tile-num" aria-hidden="true">{index + 1}</span>
+                    <span>{tile}</span>
+                    {markedTile === index && <em className="tile-next-tag">next</em>}
+                  </button>
+                );
+              })}
+            </div>
+
+            {checked && isCorrect && (
+              <div className="puzzle-result correct">
+                <p className="board-next-hint">{nextCue.text}</p>
+                {hasNextPuzzle && (
+                  <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>
+                    {isLastPuzzle ? 'Play Again' : 'Next'}
+                  </button>
+                )}
+                <div className="puzzle-success-banner">
+                  <span className="success-emoji">🎉</span>
+                  <span className="success-text">उत्तमम्! Correct!</span>
+                </div>
+                <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
+                {meaningShown && activePuzzle.english ? (
+                  <p className={`result-english${leadMark}`}>{activePuzzle.english}</p>
+                ) : null}
+                <div className="result-audio-row">
+                  <button
+                    className="hear-button hear-button--inline hear-button--subtle"
+                    type="button"
+                    onClick={() => playPronunciation(activePuzzle.sentence || activePuzzle.target)}
+                    title="Hear complete sentence"
+                  >
+                    🔊 Hear Sentence
+                  </button>
+                  {isJodoSkin && activePuzzle.target && (
+                    <button
+                      className="hear-button hear-button--inline hear-button--subtle"
+                      type="button"
+                      onClick={() => playPronunciation(activePuzzle.target)}
+                      title={`Hear letter sound: ${activePuzzle.target}`}
+                    >
+                      🔊 Hear &apos;{activePuzzle.target}&apos;
+                    </button>
+                  )}
+                </div>
+                {activePuzzle.explanation && <p className="result-explanation">💡 {activePuzzle.explanation}</p>}
+                {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
+              </div>
+            )}
+            {wrongAttempt && (
+              <div className="puzzle-result wrong-feedback">
+                <span className="wrong-icon">🤔</span>
+                <div className="wrong-content">
+                  <strong>{wrongAttemptMessage}</strong>
+                  <button type="button" className="reset-try-btn" onClick={resetPuzzleUi}>Reset selection</button>
+                </div>
+              </div>
+            )}
+          </>
+        )}
+      </section>
+
+      {packTitle && <div className="pack-shelf" aria-label="Packs">
+        <div className="pack-card active">
+          <strong>{displayPackTitle}</strong>
+          {displayPackGloss && <small>{displayPackGloss}</small>}
+        </div>
+      </div>}
+
+      {activeShelf === 'sariram' && <aside className="board-sidebar" aria-label="Body anecdote">
+        <p>{BODY_ANECDOTE}</p>
+      </aside>}
+    </>}
+
     </div>
 
     {/* Instructions Banner for Beginners (Collapsible) */}
@@ -1758,6 +2023,7 @@ const Board: React.FC<BoardProps> = ({
       )}
     </div>
 
+    <div className="board-after-puzzle">
     <nav className="wing-nav" aria-label="Shelves">
       {shelfButtons.map((item) => (
         <button
@@ -2028,278 +2294,48 @@ const Board: React.FC<BoardProps> = ({
       </div>
     )}
 
-    <div className="board-tip-row">
-      <p className="board-tip" aria-live="polite">{nextCue.text || 'Tap the marked cream tile.'}</p>
-      {phaseBanner ? <p className="board-phase">{phaseBanner}</p> : null}
-      <button className="welcome-open" type="button" aria-label="Open Welcome" onClick={() => setWelcomeOpen(true)}>?</button>
-    </div>
-
-    {loading && <p className="board-status">Loading today&apos;s shelf…</p>}
-    {error && <p className="board-status error">{error}</p>}
-
-    {!loading && !error && activePuzzle && <>
-      {packTitle && <div className="pack-shelf" aria-label="Packs">
-        <div className="pack-card active">
-          <strong>{displayPackTitle}</strong>
-          {displayPackGloss && <small>{displayPackGloss}</small>}
-        </div>
-      </div>}
-
-      <section ref={puzzleBoardRef} className="puzzle-board">
-        <div className="puzzle-meta">
-          <div className="meta-left">
-            <span className="meta-skin-badge">{displaySkin}</span>
-            <span className="meta-hint-pill">
-              {isLearnPhase
-                ? '📖 Learn word'
-                : isJodoSkin
-                  ? '🎯 जोडो · Join tiles'
-                  : '👆 1 tile → Next'}
-            </span>
-          </div>
-          <div className="board-playall-slot">
-            {playingAll ? (
-              <span className="board-playall-spacer" aria-hidden="true" />
-            ) : (
-              <button
-                type="button"
-                className="board-playall"
-                onClick={startBoardPlayAll}
-                aria-pressed={false}
-                title="Show how the tiles on this shelf join, starting here"
-                aria-label="Play all puzzles on this shelf"
-              >
-                ▶ Play all
-              </button>
-            )}
-          </div>
-          {playingAll && typeof document !== 'undefined' && createPortal(
-            <div ref={playDockRef} className="board-playall-dock" role="region" aria-label="Play all">
-              <button
-                type="button"
-                className="board-playall board-playall--pause"
-                onClick={stopBoardPlayAll}
-                aria-pressed
-                title="Pause play all"
-                aria-label="Pause play all"
-              >
-                ⏸ Pause
-              </button>
-            </div>,
-            document.body,
-          )}
-          <div className="puzzle-nav-controls">
-            <button
-              type="button"
-              className="puzzle-nav-arrow"
-              onClick={goPrev}
-              disabled={puzzleIndex <= 0}
-              title="Previous Puzzle (पूर्वतन-पहेलिका)"
-              aria-label="Previous Puzzle"
-            >
-              ◀
-            </button>
-            <span className="meta-progress">
-              <strong>{puzzleIndex + 1}</strong> <span className="meta-total">/ {activePuzzles.length}</span>
-            </span>
-            <button
-              type="button"
-              className="puzzle-nav-arrow"
-              onClick={goNext}
-              disabled={puzzleIndex + 1 >= activePuzzles.length}
-              title="Next Puzzle (अग्रिम-पहेलिका)"
-              aria-label="Next Puzzle"
-            >
-              ▶
-            </button>
-          </div>
-        </div>
-
-        <div className="puzzle-progress-track" aria-hidden="true">
-          <div
-            className="puzzle-progress-bar"
-            style={{ width: `${Math.min(100, Math.round(((puzzleIndex + 1) / Math.max(1, activePuzzles.length)) * 100))}%` }}
-          />
-        </div>
-
-        {!isLearnPhase && !isJodoSkin && (
-          <ol className="puzzle-steps" aria-label="Puzzle steps">
-            <li className={activeStep === 1 ? 'active' : undefined}>
-              <span className="step-num" aria-hidden="true">1</span>
-              <span className="step-label">
-                <>Click a cream tile <small>(numbers on tiles)</small></>
-              </span>
-            </li>
-            <li className={activeStep === 2 ? 'active' : undefined}>
-              <span className="step-num" aria-hidden="true">2</span>
-              <span className="step-label">Click Next</span>
-            </li>
-          </ol>
-        )}
-
-        <div className="puzzle-lead">
-          <div className="puzzle-lead-graphic" aria-hidden="true">{puzzleGraphic}</div>
-          <p className={`puzzle-lead-word${learnPulse ? ' learn-word--settle' : ''}${leadMark}`}>{leadWord}</p>
-          <p className={`puzzle-lead-english${meaningShown ? leadMark : ''}`} aria-hidden={!meaningShown}>
-            {meaningShown ? leadEnglish : ''}
-          </p>
-        </div>
-
-        {isLearnPhase ? (
-          <div className={`learn-card${learnPulse ? ' learn-card--settling' : ''}`}>
-            <button
-              className="hear-button"
-              type="button"
-              onClick={() => playPronunciation(activePuzzle.target)}
-            >
-              🔊 Hear
-            </button>
-            <div className="tile-row learn-tile-row">
-              {activePuzzle.tiles.map((tile, index) => (
-                <button
-                  key={`${tile}-${index}`}
-                  className="puzzle-tile"
-                  type="button"
-                  onClick={() => {
-                    if (playingRef.current) stopBoardPlayAll();
-                    playPronunciation(cleanTile(tile));
-                  }}
-                >
-                  <span className="tile-num" aria-hidden="true">{index + 1}</span>
-                  <span>{tile}</span>
-                </button>
-              ))}
-            </div>
-            <p className="board-next-hint">{nextCue.text}</p>
-            <div className="puzzle-actions">
-              <button ref={nextBtnRef} className="next-button learn-next" type="button" onClick={onNextOrAgain}>
-                {isLastPuzzle ? 'Play Again' : 'Next'}
-              </button>
-            </div>
-          </div>
-        ) : (
+    {/* Top Website Navigation Breadcrumbs & Badge */}
+    <div className="board-top-nav">
+      <nav className="board-breadcrumbs" aria-label="Website Navigation">
+        {onNavigateToHome && (
           <>
-            {isJodoSkin ? (
-              <div className="jodo-prompt-card">
-                <div className="jodo-goal-bar">
-                  <span className="jodo-goal-tag">🎯 जोडो (Join):</span>
-                  <span className="jodo-goal-target">{activePuzzle.target}</span>
-                  {meaningShown && activePuzzle.english && (
-                    <span className={`jodo-goal-meaning${leadMark}`} title="Meaning in English">
-                      ({activePuzzle.english})
-                    </span>
-                  )}
-                  <button
-                    type="button"
-                    className="jodo-sound-btn"
-                    onClick={() => playPronunciation(activePuzzle.target)}
-                    title={`Hear pronunciation for ${activePuzzle.target}`}
-                    aria-label={`Hear ${activePuzzle.target}`}
-                  >
-                    🔊
-                  </button>
-                </div>
-                <div className="jodo-sentence-line">
-                  {renderJodoSentenceWithSlot(activePuzzle.sentence, activePuzzle.target, chosen)}
-                </div>
-              </div>
-            ) : (
-              <div className="standard-prompt-block">
-                <p className="puzzle-prompt">
-                  {isMatchMeaningPhase
-                    ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
-                    : renderPromptWithHole(activePuzzle.prompt ?? activePuzzle.target)}
-                </p>
-                {meaningShown && isPrashnaPart && activePuzzle.english && (
-                  <p className={`prashna-english-clue${leadMark}`}>({activePuzzle.english})</p>
-                )}
-              </div>
-            )}
-
-            {!(checked && isCorrect) && (
-              <p className="board-next-hint">{nextCue.text}</p>
-            )}
-            <div className="tile-row">
-              {activePuzzle.tiles.map((tile, index) => {
-                const classes = ['puzzle-tile'];
-                if (chosen.includes(cleanTile(tile))) classes.push('chosen');
-                if (playingAll && dimOthers && !solverIndices.includes(index)) classes.push('puzzle-tile--dim');
-                if (playingAll && solverIndices.includes(index)) classes.push('puzzle-tile--magnet');
-                if (lockIndex === index) classes.push('puzzle-tile--lock');
-                if (markedTile === index) classes.push('puzzle-tile--next');
-                return (
-                  <button
-                    key={`${tile}-${index}`}
-                    type="button"
-                    data-board-tile={index}
-                    className={classes.join(' ')}
-                    onClick={() => toggleTile(tile)}
-                  >
-                    <span className="tile-num" aria-hidden="true">{index + 1}</span>
-                    <span>{tile}</span>
-                    {markedTile === index && <em className="tile-next-tag">next</em>}
-                  </button>
-                );
-              })}
-            </div>
-
-            {checked && isCorrect && (
-              <div className="puzzle-result correct">
-                <p className="board-next-hint">{nextCue.text}</p>
-                {hasNextPuzzle && (
-                  <button ref={nextBtnRef} className="next-button" type="button" onClick={onNextOrAgain}>
-                    {isLastPuzzle ? 'Play Again' : 'Next'}
-                  </button>
-                )}
-                <div className="puzzle-success-banner">
-                  <span className="success-emoji">🎉</span>
-                  <span className="success-text">उत्तमम्! Correct!</span>
-                </div>
-                <p className="result-sanskrit">{highlightedSentence(activePuzzle.sentence, activePuzzle.highlight, activePuzzle.tapHighlight)}</p>
-                {meaningShown && activePuzzle.english ? (
-                  <p className={`result-english${leadMark}`}>{activePuzzle.english}</p>
-                ) : null}
-                <div className="result-audio-row">
-                  <button
-                    className="hear-button hear-button--inline hear-button--subtle"
-                    type="button"
-                    onClick={() => playPronunciation(activePuzzle.sentence || activePuzzle.target)}
-                    title="Hear complete sentence"
-                  >
-                    🔊 Hear Sentence
-                  </button>
-                  {isJodoSkin && activePuzzle.target && (
-                    <button
-                      className="hear-button hear-button--inline hear-button--subtle"
-                      type="button"
-                      onClick={() => playPronunciation(activePuzzle.target)}
-                      title={`Hear letter sound: ${activePuzzle.target}`}
-                    >
-                      🔊 Hear &apos;{activePuzzle.target}&apos;
-                    </button>
-                  )}
-                </div>
-                {activePuzzle.explanation && <p className="result-explanation">💡 {activePuzzle.explanation}</p>}
-                {activePuzzle.seed && <p className="result-seed">{activePuzzle.seed}</p>}
-              </div>
-            )}
-            {wrongAttempt && (
-              <div className="puzzle-result wrong-feedback">
-                <span className="wrong-icon">🤔</span>
-                <div className="wrong-content">
-                  <strong>{wrongAttemptMessage}</strong>
-                  <button type="button" className="reset-try-btn" onClick={resetPuzzleUi}>Reset selection</button>
-                </div>
-              </div>
-            )}
+            <button type="button" className="board-nav-link" onClick={onNavigateToHome} title="Go to Homepage">
+              🏠 Home
+            </button>
+            <span className="board-nav-sep" aria-hidden="true">/</span>
           </>
         )}
-      </section>
+        <span className="board-nav-current">🧩 जोडो Tile Puzzle</span>
+      </nav>
+      <div className="board-site-shortcuts">
+        {onNavigateToReader && (
+          <button type="button" className="board-shortcut-btn" onClick={onNavigateToReader}>
+            📖 Deepakam Reader
+          </button>
+        )}
+        {onNavigateToVarnamala && (
+          <button type="button" className="board-shortcut-btn" onClick={onNavigateToVarnamala}>
+            🔤 Alphabet &amp; Syllables
+          </button>
+        )}
+        {onNavigateToGrammar && (
+          <button type="button" className="board-shortcut-btn" onClick={onNavigateToGrammar}>
+            📚 Grammar
+          </button>
+        )}
+      </div>
+    </div>
 
-      {activeShelf === 'sariram' && <aside className="board-sidebar" aria-label="Body anecdote">
-        <p>{BODY_ANECDOTE}</p>
-      </aside>}
-    </>}
+    <div className="board-heading">
+      <div>
+        <p className="eyebrow">शब्द-निर्माण-क्रीडा · BUILD SANSKRIT WORDS</p>
+        <h2>जोडो · Tile Puzzle Studio</h2>
+        <p>Blend sounds into words, solve puzzles, and discover daily Sanskrit vocabulary.</p>
+      </div>
+      <div className="board-mark" aria-hidden="true">ॐ</div>
+    </div>
+
+    </div>
 
     {joinGhost && typeof document !== 'undefined' && createPortal(
       <div
