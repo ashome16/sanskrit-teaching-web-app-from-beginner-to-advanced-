@@ -51,7 +51,10 @@ export function stripDiacritics(text: string): string {
 
 export function devanagariToAscii(text: string): string {
   if (!text) return '';
-  return text.split('').map((ch) => DEVANAGARI_MAP[ch] || ch).join('');
+  return text
+    .split('')
+    .map((ch) => (DEVANAGARI_MAP[ch] !== undefined ? DEVANAGARI_MAP[ch] : ch))
+    .join('');
 }
 
 export function normalizeSearchText(text: string): string {
@@ -71,6 +74,7 @@ export function normalizeSearchText(text: string): string {
  * 2. Diacritic-stripped match (e.g., 'vidya' matches 'vidyā')
  * 3. Devanagari transliteration match (e.g., 'vidya' matches 'विद्या', or 'विद्या' matches 'vidyā')
  * 4. Fuzzy phonetics (e.g., 'shiva' matches 'śiva', 'rishi' matches 'ṛṣi')
+ * 5. Synonym / regional variants (e.g., 'ujjain' <-> 'ujjayini' <-> 'avanti' <-> 'उज्जैन' <-> 'उज्जयिनी')
  */
 export function matchesSearchQuery(target: string, query: string): boolean {
   if (!query.trim()) return true;
@@ -86,6 +90,12 @@ export function matchesSearchQuery(target: string, query: string): boolean {
   const normQuery = normalizeSearchText(query);
 
   if (normTarget.includes(normQuery)) return true;
+
+  // Ujjain / Ujjayini / Avanti synonym and script matching
+  const isUjjainQuery = /^(ujjain|ujjayini|ujjayani|avanti|avantika|उज्जैन|उज्जयिनी|अवन्ती)$/i.test(rawQueryLower);
+  if (isUjjainQuery && /ujjain|ujjayini|avanti|avantika|उज्जैन|उज्जयिनी|अवन्ती|मध्यरेखा|madhya\s*rekha|prime\s*meridian/i.test(rawTargetLower)) {
+    return true;
+  }
 
   // Check token by token
   const queryTokens = normQuery.split(/\s+/).filter(Boolean);
