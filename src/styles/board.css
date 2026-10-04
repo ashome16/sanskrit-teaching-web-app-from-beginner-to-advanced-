@@ -1907,8 +1907,9 @@
 .board-playall-slot {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
   min-height: 44px;
-  min-width: 7.75rem;
 }
 
 .board-playall-spacer {
@@ -1961,11 +1962,47 @@
 }
 
 .board-playall-dock .board-playall,
-.board-playall--pause {
+.board-playall-dock .board-playall--pause {
   flex: 1 1 auto;
   width: 100%;
   max-width: 28rem;
   min-height: 44px;
+}
+
+.board-playall--hand {
+  background: #1d4f3e;
+  box-shadow: 0 2px 0 #14382c, 0 6px 16px rgba(29, 79, 62, 0.28);
+}
+
+.board-playall--hand:hover,
+.board-playall--hand:focus-visible {
+  background: #163d30;
+}
+
+.board-playall--hand[aria-pressed="true"] {
+  background: #0f2e24;
+  box-shadow: 0 2px 0 #0b241c, 0 0 0 3px rgba(252, 211, 77, 0.85);
+}
+
+.board-hand {
+  position: fixed;
+  z-index: 240;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin: 0;
+  pointer-events: none;
+  font-size: 2.35rem;
+  line-height: 1;
+  transform: translate(-20%, -70%);
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.35));
+  animation: board-hand-tap 0.95s ease-in-out both;
+}
+
+@keyframes board-hand-tap {
+  0% { transform: translate(-70%, -130%) scale(1); }
+  50% { transform: translate(-20%, -70%) scale(1); }
+  72% { transform: translate(-8%, -28%) scale(0.86); }
+  100% { transform: translate(-20%, -70%) scale(1); }
 }
 
 .board-next-hint {
@@ -2107,7 +2144,8 @@
   .board-join-ghost--pop,
   .board-join-ghost::after,
   .learn-word--settle,
-  .puzzle-tile--lock {
+  .puzzle-tile--lock,
+  .board-hand {
     animation-duration: 0.32s;
   }
 }

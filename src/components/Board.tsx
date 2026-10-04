@@ -230,22 +230,21 @@ function tapSequence(faces: string[]) {
   return `Tap ${faces.slice(0, -1).join(', then ')}, then ${faces[faces.length - 1]}.`;
 }
 
-/** One line naming the next click, using the tiles actually on screen. */
+/** One line naming the next click, using the tiles actually on screen.
+ *  A correct tap clears the ring (Click Next). It never retargets index 0,
+ *  including a one-tile answer such as नदी in the 6th slot. */
 function describeNextTap(
   puzzle: BoardPuzzle | null,
   chosen: string[],
   flags: { learn: boolean; solved: boolean; last: boolean },
 ): { text: string; markIndex: number | null } {
   if (!puzzle) return { text: '', markIndex: null };
-  if (flags.learn || flags.solved) {
+  if (flags.learn || flags.solved || evaluateChosen(puzzle, chosen)) {
     return { text: flags.last ? 'Click Play Again.' : 'Click Next.', markIndex: null };
   }
   const move = findSolvingSelection(puzzle);
   if (!move) return { text: 'Tap a cream tile.', markIndex: null };
   const faces = move.indices.map((index) => cleanTile(puzzle.tiles[index] || ''));
-  if (faces.length === 1) {
-    return { text: `Tap the cream tile ${faces[0]}.`, markIndex: move.indices[0] ?? null };
-  }
   const left = chosen.map((tile) => cleanTile(tile).normalize('NFC'));
   const remain: number[] = [];
   for (let i = 0; i < faces.length; i += 1) {
@@ -895,6 +894,9 @@ const Board: React.FC<BoardProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isSearchOpen]);
   const [playingAll, setPlayingAll] = useState(false);
+  /** Index into the real join order while Hand is showing. Null means the hand is off. */
+  const [handStep, setHandStep] = useState<number | null>(null);
+  const handRef = useRef<HTMLDivElement | null>(null);
   const [dimOthers, setDimOthers] = useState(false);
   const [solverIndices, setSolverIndices] = useState<number[]>([]);
   const [lockIndex, setLockIndex] = useState<number | null>(null);
@@ -997,6 +999,34 @@ const Board: React.FC<BoardProps> = ({
     ? Math.max(0, Math.min(rawPuzzleIndex, activePuzzles.length - 1))
     : 0;
   const activePuzzle = activePuzzles[puzzleIndex] ?? activePuzzles[0] ?? fallbackPuzzles[0] ?? null;
+  // Freeze the on-screen tile order for this puzzle. A click must not sort the
+  // chosen tile to index 0 (the नदी card's next puzzle starts with that word).
+  const tileOrderRef = useRef<{ key: string; tiles: string[] } | null>(null);
+  const tileOrderKey = `${activeShelf}\0${puzzleIndex}\0${activePuzzle?.target ?? ''}\0${activePuzzle?.prompt ?? ''}\0${activePuzzle?.sentence ?? ''}`;
+  const sourceTiles = activePuzzle?.tiles ?? [];
+  const sameTileBag = (left: string[], right: string[]) => {
+    if (left.length !== right.length) return false;
+    const counts = new Map<string, number>();
+    left.forEach((tile) => {
+      const key = cleanTile(tile);
+      counts.set(key, (counts.get(key) ?? 0) + 1);
+    });
+    return right.every((tile) => {
+      const key = cleanTile(tile);
+      const leftCount = counts.get(key) ?? 0;
+      if (leftCount <= 0) return false;
+      counts.set(key, leftCount - 1);
+      return true;
+    });
+  };
+  if (!tileOrderRef.current || tileOrderRef.current.key !== tileOrderKey || !sameTileBag(tileOrderRef.current.tiles, sourceTiles)) {
+    tileOrderRef.current = { key: tileOrderKey, tiles: sourceTiles.slice() };
+  }
+  const shownTiles = tileOrderRef.current.tiles;
+  const puzzleView = useMemo(() => {
+    if (!activePuzzle) return null;
+    return shownTiles === activePuzzle.tiles ? activePuzzle : { ...activePuzzle, tiles: shownTiles };
+  }, [activePuzzle, shownTiles]);
   const activePackLabel = packLabels.find((item) => item.title === activeBoardShelf?.native) ?? null;
   const packTitle = activePackLabel?.title ?? activeBoardShelf?.native ?? '';
   const packGloss = activePackLabel?.gloss ?? '';
@@ -1004,7 +1034,7 @@ const Board: React.FC<BoardProps> = ({
   const isLearnPhase = puzzlePhase === 'learn';
   const isMatchMeaningPhase = puzzlePhase === 'match-meaning';
 
-  const isCorrect = evaluateChosen(activePuzzle, chosen);
+  const isCorrect = evaluateChosen(puzzleView, chosen);
 
 
   const clearBoardMotion = () => {
@@ -1286,6 +1316,7 @@ const Board: React.FC<BoardProps> = ({
       return;
     }
     if (!activePuzzles.length || !activePuzzle) return;
+    setHandStep(null);
     clearRevealTimer();
     clearLeadHighlight();
     setMeaningShown(false);
@@ -1514,7 +1545,10 @@ const Board: React.FC<BoardProps> = ({
   const toggleTile = (tile: string) => {
     const clean = cleanTile(tile);
     if (!clean) return;
-    // A tap during Play all stops the show and becomes a normal manual tap.
+    // Drop any play-all fly transform so the clicked tile cannot stay visually moved.
+    clearBoardMotion();
+    setHandStep(null);
+    // A tap during Auto play stops the show and becomes a normal manual tap.
     if (playingRef.current) stopBoardPlayAll();
     // Selecting a tile must always work — never freeze. Wrong/other click replaces and re-evaluates.
     if (!isJodoSkin) {
@@ -1566,18 +1600,20 @@ const Board: React.FC<BoardProps> = ({
     setChosen([]);
   };
 
-  // Unlock cream tiles on every puzzle advance / shelf change (guards race or sticky checked+chosen,
-  // especially back-to-back same targets like नदी → नदी).
+  // Clear a finished selection only when the shelf or puzzle actually changes.
+  // A cream-tile click does not change puzzleIndex, so it must not wipe `chosen`
+  // and send the next mark back to tile 0 (नदी at slot 6, then the next card).
   useEffect(() => {
     setChosen([]);
     setChecked(false);
     setWrongAttempt(false);
+    setHandStep(null);
   }, [puzzleIndex, activeShelf]);
 
-  // Picture + Sanskrit word render with English hidden. Speech is NOT started on this
-  // tick: a window timer (PUZZLE_REVEAL_MS) must elapse after the puzzle is on screen.
-  // Play all owns that timing itself, so this effect must not also speak.
-  // This is the only auto-speak path on /board (no welcome, learn-card, or Play-all autostart).
+  // Picture + Sanskrit word first. English text waits PUZZLE_REVEAL_MS.
+  // This path stays silent: Auto play is the only sequence that speaks, and Hear
+  // speaks only when that button is tapped. Do not clear chosen or the puzzle index.
+  const puzzleIdentity = `${activeShelf}:${puzzleIndex}:${loading ? 1 : 0}:${activePuzzle?.target ?? ''}:${activePuzzle?.prompt ?? ''}`;
   useEffect(() => {
     clearLeadHighlight();
     clearRevealTimer();
@@ -1585,8 +1621,6 @@ const Board: React.FC<BoardProps> = ({
     setMeaningShown(false);
     const puzzle = activePuzzle;
     if (loading || !puzzle) return undefined;
-    const learn = (puzzle.phase || '').trim() === 'learn';
-    const spoken = spokenSanskrit(puzzle, learn);
     const startedAt = Date.now();
     const arm = (delay: number) => {
       const timer = window.setTimeout(() => {
@@ -1598,27 +1632,18 @@ const Board: React.FC<BoardProps> = ({
           return;
         }
         setMeaningShown(true);
-        // Next macrotask: not the same tick as revealing English or showing the puzzle.
-        const speakTimer = window.setTimeout(() => {
-          if (revealSpeakTimerRef.current === speakTimer) revealSpeakTimerRef.current = null;
-          if (playingRef.current) return;
-          speakLead(spoken);
-        }, 0);
-        revealSpeakTimerRef.current = speakTimer;
       }, delay);
       revealTimerRef.current = timer;
     };
     arm(PUZZLE_REVEAL_MS);
     return () => {
       clearRevealTimer();
-      if (revealGenRef.current != null && getSpeechGeneration() === revealGenRef.current) {
-        stopPronunciation();
-      }
-      clearLeadHighlight();
+      // Leaving this card stops a manual clip. Auto play owns its own speech.
+      if (!playingRef.current) stopPronunciation();
     };
-    // speakLead/clearLeadHighlight identity changes every render; puzzle identity is the trigger.
+    // Puzzle identity is the trigger. Do not depend on the puzzle object reference.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [puzzleIndex, activeShelf, loading, activePuzzle]);
+  }, [puzzleIdentity]);
 
   /** Navigate to previous puzzle on this shelf. */
   const goPrev = () => {
@@ -1657,20 +1682,9 @@ const Board: React.FC<BoardProps> = ({
     else goNext();
   };
 
-  // After a correct cream-tile reveal, auto-advance so later मात्रा rows still appear if Next is missed.
-  // Learn cards never auto-advance — child must hear, then click Next.
-  // Do not wrap on the last puzzle (that felt like the chain broke).
-  useEffect(() => {
-    if (playingRef.current) return undefined;
-    if (isLearnPhase) return undefined;
-    if (!checked || !isCorrect || activePuzzles.length < 2) return undefined;
-    if (puzzleIndex + 1 >= activePuzzles.length) return undefined;
-    const timer = window.setTimeout(() => {
-      goNext();
-    }, 8000);
-    return () => window.clearTimeout(timer);
-    // goNext closes over puzzleIndex/activeShelf; listing those deps avoids stale advance / double-fire.
-  }, [checked, isCorrect, puzzleIndex, activeShelf, activePuzzles.length, isLearnPhase, playingAll]);
+  // A correct tap stays on this card (Click Next). It must not advance the shelf:
+  // the following puzzle can list the same word in slot 1 and would look like the
+  // tile jumped there and was tagged next again. Auto play is what walks forward.
 
   const sectionChips: BoardSectionChip[] =
     activeShelf === 'prarambhah' ? buildMatraSectionChips(activePuzzles)
@@ -1710,12 +1724,64 @@ const Board: React.FC<BoardProps> = ({
     : (activePuzzle?.english ?? '');
   const leadMark = leadHighlight ? ' puzzle-lead-highlight' : '';
   const activeShelfInfo = SHELF_DESCRIPTIONS[activeShelf];
-  const nextCue = describeNextTap(activePuzzle, chosen, {
+  const nextCue = describeNextTap(puzzleView, chosen, {
     learn: isLearnPhase,
     solved: checked && isCorrect,
     last: isLastPuzzle,
   });
   const markedTile = playingAll ? null : nextCue.markIndex;
+
+  const stopHand = () => setHandStep(null);
+
+  /** Silent hand. First press points at the real next tile; another press shows the following join tap. */
+  const onHand = () => {
+    if (playingRef.current) stopBoardPlayAll();
+    stopPronunciation();
+    const move = puzzleView ? findSolvingSelection(puzzleView) : null;
+    const indices = move?.indices ?? [];
+    if (!indices.length) {
+      stopHand();
+      return;
+    }
+    setHandStep((current) => {
+      if (current == null) {
+        const marked = nextCue.markIndex;
+        const at = marked == null ? 0 : indices.indexOf(marked);
+        return at >= 0 ? at : 0;
+      }
+      return current + 1 < indices.length ? current + 1 : null;
+    });
+  };
+
+  useLayoutEffect(() => {
+    if (handStep == null) return undefined;
+    const move = puzzleView ? findSolvingSelection(puzzleView) : null;
+    const tileIndex = move?.indices[handStep];
+    if (tileIndex == null) return undefined;
+    const place = () => {
+      const node = handRef.current;
+      const el = puzzleBoardRef.current?.querySelector<HTMLElement>(`[data-board-tile="${tileIndex}"]`);
+      if (!node || !el) return;
+      const rect = el.getBoundingClientRect();
+      node.style.left = `${rect.left + rect.width * 0.62}px`;
+      node.style.top = `${rect.top + rect.height * 0.58}px`;
+    };
+    const kick = () => {
+      const node = handRef.current;
+      if (!node) return;
+      node.style.animation = 'none';
+      void node.offsetWidth;
+      node.style.animation = '';
+    };
+    place();
+    kick();
+    window.addEventListener('scroll', place, true);
+    window.addEventListener('resize', place);
+    return () => {
+      window.removeEventListener('scroll', place, true);
+      window.removeEventListener('resize', place);
+    };
+  }, [handStep, puzzleIndex, activeShelf, puzzleView]);
 
   return <main className="board-shell">
     <div className="board-puzzle-stage">
@@ -1750,22 +1816,43 @@ const Board: React.FC<BoardProps> = ({
                 className="board-playall"
                 onClick={startBoardPlayAll}
                 aria-pressed={false}
-                title="Show how the tiles on this shelf join, starting here"
-                aria-label="Play all puzzles on this shelf"
+                title="Auto play: picture and Sanskrit word, then English and audio, then the next puzzle"
+                aria-label="Auto play puzzles on this shelf"
               >
-                ▶ Play all
+                ▶ Auto play
+              </button>
+            )}
+            <button
+              type="button"
+              className="board-playall board-playall--hand"
+              onClick={onHand}
+              aria-pressed={handStep != null}
+              title="Hand: point at the next tile with no audio. Press again for the next tap."
+              aria-label={handStep == null ? 'Show a hand on the next tile' : 'Show the hand on the next tap'}
+            >
+              ✋ Hand
+            </button>
+            {handStep != null && !playingAll && (
+              <button
+                type="button"
+                className="board-playall board-playall--pause"
+                onClick={stopHand}
+                title="Pause the hand"
+                aria-label="Pause the hand"
+              >
+                ⏸ Pause
               </button>
             )}
           </div>
           {playingAll && typeof document !== 'undefined' && createPortal(
-            <div ref={playDockRef} className="board-playall-dock" role="region" aria-label="Play all">
+            <div ref={playDockRef} className="board-playall-dock" role="region" aria-label="Auto play">
               <button
                 type="button"
                 className="board-playall board-playall--pause"
                 onClick={stopBoardPlayAll}
                 aria-pressed
-                title="Pause play all"
-                aria-label="Pause play all"
+                title="Pause auto play"
+                aria-label="Pause auto play"
               >
                 ⏸ Pause
               </button>
@@ -1839,11 +1926,12 @@ const Board: React.FC<BoardProps> = ({
               🔊 Hear
             </button>
             <div className="tile-row learn-tile-row">
-              {activePuzzle.tiles.map((tile, index) => (
+              {shownTiles.map((tile, index) => (
                 <button
                   key={`${tile}-${index}`}
                   className="puzzle-tile"
                   type="button"
+                  data-board-tile={index}
                   onClick={() => {
                     if (playingRef.current) stopBoardPlayAll();
                     playPronunciation(cleanTile(tile));
@@ -1904,7 +1992,7 @@ const Board: React.FC<BoardProps> = ({
               <p className="board-next-hint">{nextCue.text}</p>
             )}
             <div className="tile-row">
-              {activePuzzle.tiles.map((tile, index) => {
+              {shownTiles.map((tile, index) => {
                 const classes = ['puzzle-tile'];
                 if (chosen.includes(cleanTile(tile))) classes.push('chosen');
                 if (playingAll && dimOthers && !solverIndices.includes(index)) classes.push('puzzle-tile--dim');
@@ -2336,6 +2424,11 @@ const Board: React.FC<BoardProps> = ({
     </div>
 
     </div>
+
+    {handStep != null && typeof document !== 'undefined' && createPortal(
+      <div ref={handRef} className="board-hand" aria-hidden="true">👆</div>,
+      document.body,
+    )}
 
     {joinGhost && typeof document !== 'undefined' && createPortal(
       <div
