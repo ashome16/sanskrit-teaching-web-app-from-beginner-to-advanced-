@@ -52,7 +52,7 @@ const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((res
 
 const SITE_ORIGIN_PATTERN = /^https?:\/\/(www\.)?ednetlearn\.in/i;
 
-const MARKDOWN_TOKEN_PATTERN = /(\[[^\]]+\]\(https?:\/\/[^\s)]+\)|https?:\/\/[^\s)<>]+|\*\*[^*]+\*\*|`[^`]+`)/g;
+const MARKDOWN_TOKEN_PATTERN = /(\[[^\]]+\]\(https?:\/\/[^\s)]+\)|https?:\/\/[^\s)<>]+|\*\*[^*]+\*\*|\*(?!\*)[^*]+\*|`[^`]+`)/g;
 const DEVANAGARI_WORD_PATTERN = /([\u0901-\u0963\u0970-\u097F\u200C\u200D]+(?:[-—][\u0901-\u0963\u0970-\u097F\u200C\u200D]+)*)/g;
 
 /** Renders Devanagari Sanskrit words as interactive tap-to-pronounce saffron pills */
@@ -138,6 +138,16 @@ const renderRichArticleText = (text: string, baseKeyPrefix = 'rich'): React.Reac
       );
     }
 
+    // Markdown italic: *content*
+    if (part.startsWith('*') && part.endsWith('*') && !part.startsWith('**') && part.length >= 2) {
+      const italicContent = part.slice(1, -1);
+      return (
+        <em key={key}>
+          {renderDevanagariWords(italicContent, `${key}-em`)}
+        </em>
+      );
+    }
+
     // Inline code: `code`
     if (part.startsWith('`') && part.endsWith('`') && part.length >= 2) {
       return (
@@ -189,6 +199,15 @@ const renderArticleBlocks = (blocks: ArticleBlock[]) => {
       );
     }
     if (block.type === 'list') {
+      if (block.ordered) {
+        return (
+          <ol key={index} className="grammar-article-list grammar-article-list-ordered" start={block.start || 1}>
+            {block.items.map((item, itemIndex) => (
+              <li key={itemIndex}>{renderRichArticleText(item, `li-${index}-${itemIndex}`)}</li>
+            ))}
+          </ol>
+        );
+      }
       return (
         <ul key={index} className="grammar-article-list">
           {block.items.map((item, itemIndex) => (

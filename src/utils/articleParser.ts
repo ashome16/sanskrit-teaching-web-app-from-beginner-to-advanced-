@@ -1,7 +1,7 @@
 export type ArticleBlock =
   | { type: 'subheading'; text: string }
   | { type: 'paragraph'; text: string }
-  | { type: 'list'; items: string[] }
+  | { type: 'list'; items: string[]; ordered?: boolean; start?: number }
   | { type: 'table'; headers: string[]; rows: string[][] }
   | { type: 'code'; text: string }
   | { type: 'image'; src: string; alt: string; caption?: string }
@@ -36,6 +36,8 @@ export function parseArticle(raw: string): ParsedArticle {
 
   let paragraphLines: string[] = [];
   let listItems: string[] = [];
+  let listOrdered = false;
+  let listStart = 1;
   let tableRows: string[][] = [];
   let inCodeBlock = false;
   let codeLines: string[] = [];
@@ -49,8 +51,14 @@ export function parseArticle(raw: string): ParsedArticle {
 
   const flushList = () => {
     if (listItems.length > 0) {
-      blocks.push({ type: 'list', items: listItems });
+      blocks.push({
+        type: 'list',
+        items: listItems,
+        ...(listOrdered ? { ordered: true, start: listStart } : {}),
+      });
       listItems = [];
+      listOrdered = false;
+      listStart = 1;
     }
   };
 
@@ -201,12 +209,23 @@ export function parseArticle(raw: string): ParsedArticle {
       continue;
     }
 
-    if (line.startsWith('- ') || line.startsWith('* ') || /^\d+\.\s+/.test(line)) {
+    const numMatch = line.match(/^(\d+)\.\s+/);
+    if (line.startsWith('- ') || line.startsWith('* ') || numMatch) {
       flushParagraph();
       flushTable();
-      const text = line.startsWith('- ') || line.startsWith('* ')
-        ? line.slice(2).trim()
-        : line.replace(/^\d+\.\s+/, '').trim();
+      const isNum = !!numMatch;
+      if (listItems.length > 0 && isNum !== listOrdered) {
+        flushList();
+      }
+      if (listItems.length === 0) {
+        listOrdered = isNum;
+        if (isNum && numMatch) {
+          listStart = parseInt(numMatch[1], 10);
+        }
+      }
+      const text = isNum
+        ? line.replace(/^\d+\.\s+/, '').trim()
+        : line.slice(2).trim();
       listItems.push(text);
       continue;
     }
