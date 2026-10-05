@@ -1259,6 +1259,10 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
     case 'grid-three-step-path':
     case 'shaka-ce-offset':
     case 'coefficient-vector-156':
+    case 'fluid-crosswise':
+    case 'tirtha-lineage-path':
+    case 'bhuta-sankhya-reversal':
+    case 'siksha-five-places':
       return <ArticleSchematic id={id} />;
     default:
       return null;

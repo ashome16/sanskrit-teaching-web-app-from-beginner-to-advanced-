@@ -154,7 +154,11 @@ export type VedicArticleFigureId =
   | 'yuktibhasa-octant'
   | 'grid-three-step-path'
   | 'shaka-ce-offset'
-  | 'coefficient-vector-156';
+  | 'coefficient-vector-156'
+  | 'fluid-crosswise'
+  | 'tirtha-lineage-path'
+  | 'bhuta-sankhya-reversal'
+  | 'siksha-five-places';
 
 export interface VedicArticleSection {
   title: string;
@@ -1513,6 +1517,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       },
       {
         title: 'The Symmetrical Dance across Positional Space',
+        figure: 'fluid-crosswise',
         paragraphs: [
           'When multiplying two 2-digit numbers, the Vedic system maps out a symmetrical dance across positional space. Instead of treating the digits as isolated steps, it visualizes the geometric interaction of the columns all at once.',
           'Instead of treating the place values as static boxes, the Vedic method views them as a unified structural matrix. The carrying over of numbers becomes a smooth, fluid stream rather than a disjointed secondary operation.'
@@ -1811,6 +1816,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       },
       {
         title: 'The Lineage of Continuity: Guarding and Expanding the Flame',
+        figure: 'tirtha-lineage-path',
         paragraphs: [
           'A Guru’s work flourishes through their disciples. The survival and global reach of Vedic Mathematics are due to a dedicated Parampara—a chain of practitioners who took Swamiji’s vision and built upon it:',
           '• Manjula Trivedi: As Swamiji’s devoted disciple, she lovingly transcribed his final dictations, took meticulous care of the sole surviving manuscript, and ensured its publication in 1965 through the Motilal Banarsidass publishers.',
@@ -2864,6 +2870,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       {
         title: 'The Cryptographic Genius of Bhāskarācārya’s Date of Birth',
         sanskritTitle: 'गूढ-जन्मवर्षम् · रसगुणपूर्णमहीसमशकनृपसमये',
+        figure: 'bhuta-sankhya-reversal',
         paragraphs: [
           'In classical Indian civilization, mathematical genius was inseparable from poetic mastery. When Bhāskarācārya II (1114–1185 CE), the supreme polymath of the 12th century, recorded his date of birth and the timing of his magnum opus Siddhānta Śiromaṇi, he did not use mundane digits. Instead, he encoded his autobiography in an immortal Sanskrit metric verse found in the Praśnādhyāya section of the Golādhyāya:',
           'रसगुणपूर्णमहीसमशकनृपसमये भवन्ममोत्पत्तिः ।\nरसगुणवर्षेण मया सिद्धान्तशिरोमणि रचितः ॥',
@@ -3000,6 +3007,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       {
         title: 'Span 1 & 2: Acoustic Geometry (Śikṣā) and the Pāṇinian Algorithm (Vyākaraṇa)',
         sanskritTitle: 'वर्णमाला-यन्त्रम् · पाणिनीय-सार्वभौम-व्याकरणम्',
+        figure: 'siksha-five-places',
         paragraphs: [
           'The first span of the bridge is acoustic and physical: the science of Sanskrit phonology (Śikṣā). Unlike alphabets that evolve arbitrarily, the 50 Varṇas (phonetic units) of Sanskrit form a rigorous two-dimensional coordinate matrix mapped precisely to the human vocal tract across five articulatory positions:',
           '1. Kaṇṭhya (Throat / Velar): Guttural sound cavity ↔ Cosmic Element: Ākāśa (Space/Ether)',

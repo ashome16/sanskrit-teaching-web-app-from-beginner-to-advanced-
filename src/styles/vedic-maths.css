@@ -7397,16 +7397,17 @@
 
 
 
-/* Dark schematic panels for six articles. Scoped; does not restyle the page. */
+/* Pale schematic cards. Scoped; does not restyle the Ujjain studio. */
 .schematic-panel {
-  background: #0f172a;
+  background: #fffdf8;
+  border: 1px solid #e7efe3;
   border-radius: 14px;
   padding: 1.15rem 1rem 1rem;
   margin: 1.25rem 0;
   width: 100%;
   max-width: 640px;
   box-sizing: border-box;
-  color: #e2e8f0;
+  color: #334155;
 }
 .schematic-panel svg {
   width: 100%;
@@ -7421,7 +7422,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: #38bdf8;
+  color: #0f766e;
 }
 .schematic-caption {
   margin: 0.75rem 0 0;
@@ -7430,7 +7431,7 @@
   font-size: 0.82rem;
   font-weight: 600;
   line-height: 1.45;
-  color: #94a3b8;
+  color: #475569;
 }
 .schematic-stance-grid {
   display: grid;
@@ -7452,7 +7453,7 @@
   font-size: 0.75rem;
   font-weight: 650;
   line-height: 1.35;
-  color: #cbd5e1;
+  color: #475569;
 }
 
 /* Child article: light meadow page, cute animal cards (not the dark Ujjain diagrams). */

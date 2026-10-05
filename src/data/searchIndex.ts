@@ -591,6 +591,39 @@ export const SEARCH_INDEX: SearchItem[] = [
       grammarArticleId: 'vakyapadiya-and-ai',
     },
   },
+  {
+    id: 'art-naming-the-colossal',
+    title: 'दशगुणोत्तरसंज्ञाः महासङ्ख्याश्च · Naming the Colossal: How Indian Texts Counted Past a Million',
+    subtitle: 'Named powers of ten from the Yajurveda, the Rāmāyaṇa, the Lalitavistara, and the Līlāvatī',
+    category: 'grammar',
+    categoryLabel: 'Article · Number names',
+    badgeEmoji: '🌌',
+    badgeColor: '#b45309',
+    description:
+      'How Indian texts named powers of ten past a million: the thirteen Vedic decuple rungs, the Vālmīki Rāmāyaṇa census, the Lalitavistara, Līlāvatī’s eighteen places, and the Jaina names for the uncountable.',
+    keywords: [
+      'naming the colossal',
+      'dashagunottara',
+      'dasagunottara',
+      'parardha',
+      'ayuta',
+      'prayuta',
+      'arbuda',
+      'yajurveda numbers',
+      'ramayana census',
+      'lalitavistara',
+      'jaina infinity',
+      'powers of ten',
+      'दशगुणोत्तर',
+      'परार्ध',
+      'अयुत',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'naming-the-colossal',
+    },
+  },
 
   // =========================================================================
   // 2. INTERACTIVE GRAMMAR GUIDES & TOOLS
