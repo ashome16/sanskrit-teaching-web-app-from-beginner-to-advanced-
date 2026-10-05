@@ -838,7 +838,7 @@ const Dashboard: React.FC = () => {
           <img src="/logo.jpg" alt="Interactive Sanskrit language learning dashboard for school children" className="dashboard-brand-logo-img" />
           <div className="dashboard-brand-text-col">
             <span className="dashboard-title">EdNet Learn Gurukul</span>
-            <span className="dashboard-brand-sub">संस्कृत-शिक्षणम् · NCERT Deepakam (NEP, CBSE exam)</span>
+            <span className="dashboard-brand-sub">संस्कृत-शिक्षणम् · NCERT · CBSE</span>
           </div>
         </button>
         <nav className="dashboard-nav" aria-label="Main learning views">
@@ -888,9 +888,9 @@ const Dashboard: React.FC = () => {
                 type="button"
                 className={activeView === 'reader' && lesson.id !== 'varnamala' && !lesson.id.startsWith('grade8_') && !lesson.id.startsWith('grade9_') ? 'active' : ''}
                 onClick={() => openDeepakam()}
-                title="Deepakam 7th grade · दीपकम · Class 7 Sanskrit"
+                title="Deepakam 7th · दीपकम · Class 7 Sanskrit"
               >
-                Deepakam 7th grade · दीपकम
+                Deepakam 7th · दीपकम
               </button>
               <button
                 type="button"
@@ -902,9 +902,9 @@ const Dashboard: React.FC = () => {
                     openDeepakam('grade8_prarthana');
                   }
                 }}
-                title={canReadAllChapters ? 'Deepakam 8th grade · दीपकम · Class 8 Sanskrit' : 'Sign in to access Deepakam 8th grade'}
+                title={canReadAllChapters ? 'Deepakam 8th · दीपकम · Class 8 Sanskrit' : 'Sign in to access Deepakam 8th'}
               >
-                Deepakam 8th grade · दीपकम
+                Deepakam 8th · दीपकम
               </button>
               <button
                 type="button"
