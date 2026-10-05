@@ -704,6 +704,10 @@ ${bodyHtml}
       setActiveTab('parampara');
       setParamparaSubTab('epistemology');
       scrollId = 'sacred-epistemology-section';
+    } else if (clean === 'cosmic-bridge-section' || clean === 'cosmic-bridge') {
+      setActiveTab('parampara');
+      setParamparaSubTab('epistemology');
+      scrollId = 'cosmic-bridge-section';
     } else if (clean === 'quiz') {
       setActiveTab('quiz');
       scrollId = 'vedic-tabs';
