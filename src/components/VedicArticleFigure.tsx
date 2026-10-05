@@ -1,5 +1,6 @@
 import { useState, type MouseEvent, type ReactNode } from 'react';
 import type { VedicArticleFigureId } from '../data/vedicMaths';
+import ArticleSchematic from './ArticleSchematics';
 
 /** Diagrams for Vedic Maths articles: clean HTML/SVG (no ASCII art, no math library needed). */
 const Sup = ({ children }: { children: ReactNode }) => <sup>{children}</sup>;
@@ -1252,6 +1253,13 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
       return <VakyapadiyaSemanticNet />;
     case 'bhishma-adhika-masa':
       return <BhishmaAdhikaMasaFigure />;
+    case 'sulba-148-rectangle':
+    case 'dhanurveda-five-sthanas':
+    case 'yuktibhasa-octant':
+    case 'grid-three-step-path':
+    case 'shaka-ce-offset':
+    case 'coefficient-vector-156':
+      return <ArticleSchematic id={id} />;
     default:
       return null;
   }

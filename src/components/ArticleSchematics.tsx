@@ -1,0 +1,417 @@
+import type { ReactNode } from 'react';
+import type { VedicArticleFigureId } from '../data/vedicMaths';
+
+const SANS = "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+
+function Panel({
+  kicker,
+  caption,
+  maxWidth = 560,
+  children,
+}: {
+  kicker: string;
+  caption: string;
+  maxWidth?: number;
+  children: ReactNode;
+}) {
+  return (
+    <figure className="schematic-panel" style={{ maxWidth }}>
+      <figcaption className="schematic-kicker">{kicker}</figcaption>
+      {children}
+      <p className="schematic-caption">{caption}</p>
+    </figure>
+  );
+}
+
+/** Śulba Sūtra 1.48: rectangle, flank, lateral side, diagonal chord, both areas. */
+function SulbaRectangle() {
+  return (
+    <Panel
+      kicker="Śulba Sūtra 1.48"
+      caption="The diagonal chord of a rectangle produces both areas which its flank (horizontal base) and lateral (vertical height) sides produce separately."
+    >
+      <svg viewBox="0 0 420 400" role="img" aria-labelledby="sulba-148-title" style={{ fontFamily: SANS }}>
+        <title id="sulba-148-title">
+          A rectangle. The diagonal chord produces both the area of the flank and the area of the lateral side.
+        </title>
+        <defs>
+          <path id="sulba-flank" d="M156 156 H312" />
+          <path id="sulba-diag" d="M156 156 L312 48" />
+        </defs>
+        {/* area the lateral side produces */}
+        <rect x="48" y="48" width="108" height="108" fill="#38bdf8" fillOpacity="0.14" stroke="#38bdf8" strokeWidth="3" />
+        {/* area the flank produces */}
+        <rect x="156" y="156" width="156" height="156" fill="#f59e0b" fillOpacity="0.14" stroke="#f59e0b" strokeWidth="3" />
+        {/* rectangle: the other two sides */}
+        <path d="M156 48 H312 V156" fill="#1e293b" stroke="#64748b" strokeWidth="3" />
+        {/* lateral (vertical height) */}
+        <line x1="156" y1="48" x2="156" y2="156" stroke="#38bdf8" strokeWidth="6" strokeLinecap="round" />
+        {/* flank (horizontal base) */}
+        <line x1="156" y1="156" x2="312" y2="156" stroke="#f59e0b" strokeWidth="6" strokeLinecap="round" />
+        {/* diagonal chord */}
+        <line x1="156" y1="156" x2="312" y2="48" stroke="#34d399" strokeWidth="5" strokeLinecap="round" />
+        {/* right angle where flank meets lateral */}
+        <path d="M156 140 H172 V156" fill="none" stroke="#f472b6" strokeWidth="2.5" />
+        <text x="168" y="70" fill="#e2e8f0" fontSize="13" fontWeight="700">rectangle</text>
+        <text
+          x="40"
+          y="102"
+          fill="#38bdf8"
+          fontSize="12"
+          fontWeight="700"
+          textAnchor="middle"
+          transform="rotate(-90 40 102)"
+        >
+          tiryaṅmānī
+        </text>
+        <text x="102" y="108" fill="#7dd3fc" fontSize="13" fontWeight="700" textAnchor="middle">
+          lateral
+        </text>
+        <text x="102" y="126" fill="#7dd3fc" fontSize="12" fontWeight="700" textAnchor="middle">
+          area
+        </text>
+        <text fill="#fbbf24" fontSize="13" fontWeight="700" dy="16">
+          <textPath href="#sulba-flank" startOffset="14%">
+            pārśvamānī · flank
+          </textPath>
+        </text>
+        <text x="234" y="250" fill="#fbbf24" fontSize="14" fontWeight="700" textAnchor="middle">
+          flank area
+        </text>
+        <text fill="#34d399" fontSize="13" fontWeight="700" dy="-8">
+          <textPath href="#sulba-diag" startOffset="18%">
+            diagonal chord
+          </textPath>
+        </text>
+        <text x="330" y="78" fill="#f472b6" fontSize="13" fontWeight="700">
+          produces
+        </text>
+        <text x="330" y="98" fill="#f472b6" fontSize="13" fontWeight="700">
+          both areas
+        </text>
+      </svg>
+    </Panel>
+  );
+}
+
+function StanceShape({ kind, color }: { kind: string; color: string }) {
+  if (kind === 'alidha') {
+    return (
+      <g>
+        <polygon points="22,104 138,104 138,36" fill={color} fillOpacity="0.12" stroke={color} strokeWidth="5" strokeLinejoin="round" />
+        <path d="M138 88 H122 V104" fill="none" stroke="#f472b6" strokeWidth="2.5" />
+      </g>
+    );
+  }
+  if (kind === 'pratyalidha') {
+    return (
+      <g>
+        <polygon points="22,104 22,36 138,104" fill={color} fillOpacity="0.12" stroke={color} strokeWidth="5" strokeLinejoin="round" />
+        <path d="M22 88 H38 V104" fill="none" stroke="#f472b6" strokeWidth="2.5" />
+      </g>
+    );
+  }
+  if (kind === 'samapada') {
+    return <rect x="52" y="18" width="56" height="92" fill={color} fillOpacity="0.12" stroke={color} strokeWidth="5" />;
+  }
+  if (kind === 'vaisakha') {
+    const h = 52 * (Math.sqrt(3) / 2);
+    const tri = `46,${14 + h} 78,14 110,${14 + h}`;
+    return (
+      <g>
+        <polygon points={tri} fill="none" stroke="#38bdf8" strokeWidth="4" strokeLinejoin="round" />
+        <polygon points="28,78 132,78 112,112 48,112" fill="none" stroke="#f472b6" strokeWidth="4" strokeLinejoin="round" />
+      </g>
+    );
+  }
+  const hex = Array.from({ length: 6 }, (_, i) => {
+    const a = (Math.PI / 180) * (-90 + i * 60);
+    return `${(118 + 28 * Math.cos(a)).toFixed(1)},${(62 + 28 * Math.sin(a)).toFixed(1)}`;
+  }).join(' ');
+  return (
+    <g>
+      <circle cx="48" cy="62" r="30" fill="none" stroke="#38bdf8" strokeWidth="4" />
+      <polygon points={hex} fill="none" stroke="#f472b6" strokeWidth="4" strokeLinejoin="round" />
+    </g>
+  );
+}
+
+/** Five Sthānas, each with the geometric form named in the article. */
+function DhanurvedaSthanas() {
+  const stances = [
+    { name: 'Ālīḍha', form: 'Right-angled scalene triangle', kind: 'alidha', color: '#f59e0b' },
+    { name: 'Pratyālīḍha', form: 'Reflected / inverted right-angled triangle', kind: 'pratyalidha', color: '#38bdf8' },
+    { name: 'Samapada', form: 'Symmetrical vertical rectangle / square', kind: 'samapada', color: '#34d399' },
+    { name: 'Vaiśākha', form: 'Equilateral triangle / isosceles trapezoid', kind: 'vaisakha', color: '#f472b6' },
+    { name: 'Maṇḍala', form: 'Circle / regular hexagon', kind: 'mandala', color: '#fbbf24' },
+  ];
+  return (
+    <Panel
+      kicker="Five Sthānas"
+      caption="Ālīḍha a right-angled scalene triangle, Pratyālīḍha its reflection, Samapada a symmetrical vertical rectangle / square, Vaiśākha an equilateral triangle / isosceles trapezoid, Maṇḍala a circle / regular hexagon."
+      maxWidth={720}
+    >
+      <div className="schematic-stance-grid">
+        {stances.map((s) => (
+          <div key={s.name} className="schematic-stance">
+            <svg viewBox="0 0 160 124" role="img" aria-label={`${s.name}: ${s.form}`}>
+              <StanceShape kind={s.kind} color={s.color} />
+            </svg>
+            <div className="schematic-stance-name" style={{ color: s.color }}>{s.name}</div>
+            <div className="schematic-stance-form">{s.form}</div>
+          </div>
+        ))}
+      </div>
+    </Panel>
+  );
+}
+
+/** Yuktibhāṣā octant: square around the circle, 45° tangent equal to R, split into n. */
+function YuktibhasaOctant() {
+  const cx = 176;
+  const cy = 206;
+  const R = 150;
+  const left = cx - R;
+  const top = cy - R;
+  const right = cx + R;
+  const c45 = Math.cos(Math.PI / 4);
+  const s45 = Math.sin(Math.PI / 4);
+  const arcR = 34;
+  const n = 4;
+  const ticks = Array.from({ length: n + 1 }, (_, i) => cy - (i * R) / n);
+  return (
+    <Panel
+      kicker="Caturaśra · octant"
+      caption="A circle of radius R inscribed within a square. The tangent from the point of tangency to the corner of the octant equals R, since tan 45° = 1, and is divided into n sections of length Δx = R/n."
+    >
+      <svg viewBox="0 0 460 430" role="img" aria-labelledby="octant-title" style={{ fontFamily: SANS }}>
+        <title id="octant-title">
+          Square around a circle, 45 degree tangent equal to the radius, tangent split into n pieces.
+        </title>
+        <rect x={left} y={top} width={R * 2} height={R * 2} fill="none" stroke="#f59e0b" strokeWidth="4" />
+        <circle cx={cx} cy={cy} r={R} fill="none" stroke="#38bdf8" strokeWidth="3" />
+        <path
+          d={`M ${cx} ${cy} L ${right} ${cy} A ${R} ${R} 0 0 0 ${cx + R * c45} ${cy - R * s45} Z`}
+          fill="#f472b6"
+          fillOpacity="0.16"
+        />
+        <line x1={cx} y1={cy} x2={right} y2={cy} stroke="#f59e0b" strokeWidth="5" strokeLinecap="round" />
+        <line x1={right} y1={cy} x2={right} y2={top} stroke="#f472b6" strokeWidth="6" strokeLinecap="round" />
+        {ticks.map((y) => (
+          <line key={y} x1={right - 8} y1={y} x2={right + 14} y2={y} stroke="#f472b6" strokeWidth="3" strokeLinecap="round" />
+        ))}
+        {ticks.slice(1, n).map((y) => (
+          <line
+            key={`ray-${y}`}
+            x1={cx}
+            y1={cy}
+            x2={right}
+            y2={y}
+            stroke="#38bdf8"
+            strokeWidth="2"
+            strokeDasharray="5 4"
+          />
+        ))}
+        <line x1={cx} y1={cy} x2={right} y2={ticks[2]} stroke="#34d399" strokeWidth="4" strokeLinecap="round" />
+        <line x1={cx} y1={cy} x2={right} y2={top} stroke="#fbbf24" strokeWidth="3" />
+        <circle cx={cx} cy={cy} r="4" fill="#f8fafc" />
+        <path
+          d={`M ${cx + arcR} ${cy} A ${arcR} ${arcR} 0 0 0 ${cx + arcR * c45} ${cy - arcR * s45}`}
+          fill="none"
+          stroke="#f472b6"
+          strokeWidth="3"
+        />
+        <text x={left} y={top - 14} fill="#f59e0b" fontSize="14" fontWeight="700">Caturaśra</text>
+        <text x={(cx + right) / 2} y={cy - 10} fill="#fbbf24" fontSize="14" fontWeight="700" textAnchor="middle">R</text>
+        <text x={cx - 16} y={cy + 22} fill="#f8fafc" fontSize="14" fontWeight="700">O</text>
+        <text x={cx + arcR + 8} y={cy - arcR + 4} fill="#f472b6" fontSize="13" fontWeight="700">45°</text>
+        <text x={right + 22} y={(top + cy) / 2 - 16} fill="#f472b6" fontSize="14" fontWeight="700">R</text>
+        <text x={right + 22} y={top + 28} fill="#f9a8d4" fontSize="12" fontWeight="700">Δx = R/n</text>
+        <text x={right + 22} y={cy + 22} fill="#f9a8d4" fontSize="12" fontWeight="700">n pieces</text>
+        <text x={(cx + right) / 2 - 6} y={(cy + ticks[2]) / 2 - 8} fill="#34d399" fontSize="13" fontWeight="700">Kara</text>
+        <text x={right - 36} y={ticks[2] - 8} fill="#7dd3fc" fontSize="13" fontWeight="700">Pᵢ</text>
+        <text x={cx} y={top + R * 2 + 28} fill="#7dd3fc" fontSize="13" fontWeight="700" textAnchor="middle">Samakhaṇḍa</text>
+      </svg>
+    </Panel>
+  );
+}
+
+/** Three-node path: India → al-Khwarizmi → Fibonacci, Liber Abaci (1202). */
+function GridPath() {
+  const nodes = [
+    {
+      kicker: 'Antiquity (India)',
+      lines: ['Aryabhata', 'Brahmagupta'],
+      stroke: '#f59e0b',
+    },
+    {
+      kicker: 'The Islamic Golden Age',
+      lines: ['Muhammad ibn Musa al-Khwarizmi'],
+      stroke: '#38bdf8',
+    },
+    {
+      kicker: 'The Renaissance (Europe)',
+      lines: ['Leonardo Fibonacci', 'Liber Abaci, 1202'],
+      stroke: '#34d399',
+    },
+  ];
+  const boxH = 96;
+  const gap = 36;
+  return (
+    <Panel
+      kicker="The numerical grid"
+      caption="Antiquity (India): Aryabhata and Brahmagupta. Then Muhammad ibn Musa al-Khwarizmi. Then Leonardo Fibonacci, Liber Abaci in 1202."
+      maxWidth={480}
+    >
+      <svg viewBox={`0 0 400 ${nodes.length * boxH + (nodes.length - 1) * gap + 8}`} role="img" aria-labelledby="grid-path-title" style={{ fontFamily: SANS }}>
+        <title id="grid-path-title">
+          Three-step path: India, Aryabhata and Brahmagupta, to al-Khwarizmi, to Fibonacci’s Liber Abaci, 1202.
+        </title>
+        {nodes.map((node, i) => {
+          const y = i * (boxH + gap);
+          return (
+            <g key={node.kicker}>
+              {i > 0 && (
+                <g>
+                  <line x1="200" y1={y - gap + 4} x2="200" y2={y - 10} stroke="#f472b6" strokeWidth="4" strokeLinecap="round" />
+                  <polygon points={`192,${y - 14} 208,${y - 14} 200,${y - 2}`} fill="#f472b6" />
+                </g>
+              )}
+              <rect x="24" y={y} width="352" height={boxH} rx="12" fill="#1e293b" stroke={node.stroke} strokeWidth="4" />
+              <text x="200" y={y + 28} fill={node.stroke} fontSize="12" fontWeight="700" textAnchor="middle">
+                {node.kicker}
+              </text>
+              {node.lines.map((line, li) => (
+                <text
+                  key={line}
+                  x="200"
+                  y={y + 54 + li * 22}
+                  fill="#f8fafc"
+                  fontSize={line.length > 28 ? 14 : 16}
+                  fontWeight="700"
+                  textAnchor="middle"
+                >
+                  {line}
+                </text>
+              ))}
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** CE = Shaka + 78, example 398 Shaka → 476 CE. Both counts drawn the same way. */
+function ShakaOffset() {
+  return (
+    <Panel
+      kicker="CE = Shaka + 78"
+      caption="CE = Shaka + 78, and Shaka = CE − 78. Example: 398 Shaka + 78 = 476 CE."
+      maxWidth={520}
+    >
+      <svg viewBox="0 0 440 250" role="img" aria-labelledby="shaka-offset-title" style={{ fontFamily: SANS }}>
+        <title id="shaka-offset-title">CE equals Shaka plus 78. 398 Shaka maps to 476 CE.</title>
+        <text x="220" y="32" fill="#f8fafc" fontSize="18" fontWeight="700" textAnchor="middle">
+          <tspan fill="#38bdf8">CE</tspan>
+          <tspan> = </tspan>
+          <tspan fill="#fbbf24">Shaka</tspan>
+          <tspan> + </tspan>
+          <tspan fill="#f472b6">78</tspan>
+        </text>
+        <text x="220" y="60" fill="#f8fafc" fontSize="18" fontWeight="700" textAnchor="middle">
+          <tspan fill="#fbbf24">Shaka</tspan>
+          <tspan> = </tspan>
+          <tspan fill="#38bdf8">CE</tspan>
+          <tspan> − </tspan>
+          <tspan fill="#f472b6">78</tspan>
+        </text>
+        <rect x="16" y="96" width="150" height="100" rx="12" fill="#1e293b" stroke="#f59e0b" strokeWidth="4" />
+        <text x="91" y="140" fill="#fbbf24" fontSize="28" fontWeight="700" textAnchor="middle">398</text>
+        <text x="91" y="170" fill="#fde68a" fontSize="16" fontWeight="700" textAnchor="middle">Shaka</text>
+        <text x="196" y="158" fill="#f472b6" fontSize="22" fontWeight="700" textAnchor="middle">+ 78</text>
+        <text x="248" y="158" fill="#e2e8f0" fontSize="22" fontWeight="700" textAnchor="middle">=</text>
+        <rect x="274" y="96" width="150" height="100" rx="12" fill="#1e293b" stroke="#38bdf8" strokeWidth="4" />
+        <text x="349" y="140" fill="#38bdf8" fontSize="28" fontWeight="700" textAnchor="middle">476</text>
+        <text x="349" y="170" fill="#7dd3fc" fontSize="16" fontWeight="700" textAnchor="middle">CE</text>
+        <text x="220" y="230" fill="#f8fafc" fontSize="15" fontWeight="700" textAnchor="middle">
+          398 Shaka → 476 CE
+        </text>
+      </svg>
+    </Panel>
+  );
+}
+
+/** Same [1, 5, 6] layout for 12 × 13 = 156 and (x + 2)(x + 3) = x² + 5x + 6. */
+function CoefficientVector() {
+  const slots = [
+    { coef: '1', arith: '100', alg: 'x²', color: '#f59e0b' },
+    { coef: '5', arith: '50', alg: '5x', color: '#38bdf8' },
+    { coef: '6', arith: '6', alg: '6', color: '#34d399' },
+  ];
+  const box = (y: number) =>
+    slots.map((s, i) => {
+      const x = 28 + i * 132;
+      return (
+        <g key={`${y}-${s.coef}`}>
+          <rect x={x} y={y} width="112" height="58" rx="10" fill="#1e293b" stroke={s.color} strokeWidth="4" />
+          <text x={x + 56} y={y + 38} fill={s.color} fontSize="26" fontWeight="700" textAnchor="middle">
+            {s.coef}
+          </text>
+        </g>
+      );
+    });
+  const under = (y: number, key: 'arith' | 'alg') =>
+    slots.map((s, i) => (
+      <text key={`${key}-${s.coef}`} x={84 + i * 132} y={y} fill={s.color} fontSize="16" fontWeight="700" textAnchor="middle">
+        {s[key]}
+      </text>
+    ));
+  return (
+    <Panel
+      kicker="[1, 5, 6]"
+      caption="Arithmetic (Base 10): 12 × 13 = (1 · 10 + 2)(1 · 10 + 3) = 100 + 50 + 6 = 156. Algebra (Base x): (x + 2)(x + 3) = (1 · x + 2)(1 · x + 3) = x² + 5x + 6. The same coefficient structure [1, 5, 6]."
+      maxWidth={560}
+    >
+      <svg viewBox="0 0 500 400" role="img" aria-labelledby="coef-title" style={{ fontFamily: SANS }}>
+        <title id="coef-title">
+          The same coefficients 1, 5, and 6 for 12 times 13 equals 156 and for (x + 2)(x + 3) equals x squared plus 5x plus 6.
+        </title>
+        <text x="20" y="24" fill="#f59e0b" fontSize="14" fontWeight="700">Arithmetic (Base 10)</text>
+        <text x="20" y="50" fill="#f8fafc" fontSize="13" fontWeight="700">
+          12 × 13 = (1 · 10 + 2)(1 · 10 + 3)
+        </text>
+        {box(66)}
+        {under(150, 'arith')}
+        <text x="150" y="150" fill="#94a3b8" fontSize="16" fontWeight="700" textAnchor="middle">+</text>
+        <text x="282" y="150" fill="#94a3b8" fontSize="16" fontWeight="700" textAnchor="middle">+</text>
+        <text x="430" y="150" fill="#f8fafc" fontSize="15" fontWeight="700">= 156</text>
+        <text x="220" y="196" fill="#f472b6" fontSize="18" fontWeight="700" textAnchor="middle">[1, 5, 6]</text>
+        <line x1="28" y1="214" x2="412" y2="214" stroke="#334155" strokeWidth="2" />
+        <text x="20" y="244" fill="#38bdf8" fontSize="14" fontWeight="700">Algebra (Base x)</text>
+        <text x="20" y="270" fill="#f8fafc" fontSize="13" fontWeight="700">
+          (x + 2)(x + 3) = (1 · x + 2)(1 · x + 3)
+        </text>
+        {box(286)}
+        {under(370, 'alg')}
+        <text x="150" y="370" fill="#94a3b8" fontSize="16" fontWeight="700" textAnchor="middle">+</text>
+        <text x="282" y="370" fill="#94a3b8" fontSize="16" fontWeight="700" textAnchor="middle">+</text>
+      </svg>
+    </Panel>
+  );
+}
+
+const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
+  'sulba-148-rectangle': SulbaRectangle,
+  'dhanurveda-five-sthanas': DhanurvedaSthanas,
+  'yuktibhasa-octant': YuktibhasaOctant,
+  'grid-three-step-path': GridPath,
+  'shaka-ce-offset': ShakaOffset,
+  'coefficient-vector-156': CoefficientVector,
+};
+
+export default function ArticleSchematic({ id }: { id: VedicArticleFigureId }) {
+  const Draw = SCHEMATICS[id];
+  if (!Draw) return null;
+  return <Draw />;
+}

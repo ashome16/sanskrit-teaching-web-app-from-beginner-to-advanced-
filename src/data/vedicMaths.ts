@@ -148,7 +148,13 @@ export type VedicArticleFigureId =
   | 'panchanga-compared'
   | 'named-powers-three'
   | 'vakyapadiya-semantic-net'
-  | 'bhishma-adhika-masa';
+  | 'bhishma-adhika-masa'
+  | 'sulba-148-rectangle'
+  | 'dhanurveda-five-sthanas'
+  | 'yuktibhasa-octant'
+  | 'grid-three-step-path'
+  | 'shaka-ce-offset'
+  | 'coefficient-vector-156';
 
 export interface VedicArticleSection {
   title: string;
@@ -1466,7 +1472,8 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           '• Antiquity (India): Scholars like Aryabhata and Brahmagupta formalized the rules of Zero (शून्य) and refined the decimal notation system in seminal treatises such as Aryabhatiya and Brahmasphutasiddhanta.',
           '• The Islamic Golden Age (Middle East): Persian mathematician Muhammad ibn Musa al-Khwarizmi studied these Indian texts, translating them into Arabic. His foundational treatise introduced decimal computation to the Western world, giving us the word "Algorithm", derived from his own name.',
           '• The Renaissance (Europe): Italian mathematician Leonardo Fibonacci discovered this positional system while traveling through North Africa. Recognizing that it was infinitely superior to Roman numerals, he published Liber Abaci in 1202, finally convincing European merchants, scientists, and universities to adopt the Hindu-Arabic numeral system.'
-        ]
+        ],
+        figure: 'grid-three-step-path',
       }
     ],
     quote: 'By declaring that a symbol\'s value is entirely dictated by its position, ancient Indian mathematicians unlocked infinite computational scaling with just ten digits.',
@@ -1754,7 +1761,8 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           '• Arithmetic (Base 10): 12 × 13 = (1 · 10 + 2)(1 · 10 + 3) = 100 + 50 + 6 = 156.',
           '• Algebra (Base x): (x + 2)(x + 3) = (1 · x + 2)(1 · x + 3) = x² + 5x + 6.',
           'Notice the identical coefficient structure: [1, 5, 6]. Vedic Mathematics recognizes this beautiful, fundamental truth.'
-        ]
+        ],
+        figure: 'coefficient-vector-156',
       },
       {
         title: 'Bridging Basic Counting and Abstract Mathematics',
@@ -2416,6 +2424,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           '(Dīrghacaturaśrasyākṣṇayā rajjuḥ pārśvamānī tiryaṅmānī ca yatpṛthagbhūte kurutastadubhayaṃ karoti.)',
           'Translation: "The diagonal chord of a rectangle produces both areas which its flank (horizontal base) and lateral (vertical height) sides produce separately."'
         ],
+        figure: 'sulba-148-rectangle',
         highlight: 'Diagonal² = Base² + Height² (c² = a² + b²). Baudhāyana formulated this theorem as an exact geometric law of areas produced by stretched cords (Rajju).'
       },
       {
@@ -2531,6 +2540,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           { sa: 'वैशाख', iast: 'Vaiśākha', gloss: 'Wide equilateral squat for drawing heavy iron bows' },
           { sa: 'मण्डल', iast: 'Maṇḍala', gloss: 'Circular 360-degree pivot stance for chariot archers' }
         ],
+        figure: 'dhanurveda-five-sthanas',
         highlight: 'The 5 stances distribute body weight and ground geometry to balance recoil and kinetic force: Scalene Triangle (Ālīḍha), Inverted Triangle (Pratyālīḍha), Rectangle (Samapada), Trapezoid (Vaiśākha), and Circle (Maṇḍala).'
       },
       {
@@ -2665,6 +2675,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           '$$\\mathbf{\\text{CE}} = \\mathbf{\\text{Shaka Year}} + \\mathbf{78} \\qquad\\Longleftrightarrow\\qquad \\mathbf{\\text{Shaka Year}} = \\mathbf{\\text{CE}} - \\mathbf{78}$$',
           'For example: Āryabhaṭa I was born in 398 Shaka (398 + 78 = 476 CE); Brahmagupta wrote the Brāhmasphuṭasiddhānta in 520 Shaka (520 + 78 = 598 CE); and Sawai Jai Singh II constructed the Jantar Mantar observatories around 1650 Shaka (1650 + 78 = 1728 CE).'
         ],
+        figure: 'shaka-ce-offset',
         highlight: 'The formula CE = Shaka + 78 harmonizes classical Siddhāntic astronomical chronologies with global comparative history.'
       }
     ],
@@ -2734,6 +2745,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           { sa: 'कर्ण', iast: 'Karṇa / Kara', gloss: 'Hypotenuse ray connecting center to the tangent intersection' },
           { sa: 'वारसङ्कलितम्', iast: 'Vārasaṅkalitam', gloss: 'Repeated nested summation mirroring Riemann integral sums' }
         ],
+        figure: 'yuktibhasa-octant',
         highlight: 'Jyeshthadeva’s proof in the Yuktibhāṣā constitutes the earliest documented geometric integration of an algebraic rational function in human history.'
       },
       {
