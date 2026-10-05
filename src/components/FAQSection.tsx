@@ -50,10 +50,11 @@ const FAQ_DATA: FAQItem[] = [
 ];
 
 interface FAQSectionProps {
+  /** Unused: FAQ sits at the bottom of home, which carries no sign-up / trial pitch. */
   onOpenRegister?: () => void;
 }
 
-const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
+const FAQSection: React.FC<FAQSectionProps> = () => {
   const [openItem, setOpenItem] = useState<string | null>('faq-trial');
   const { currentUser, openPaymentModal, getTrialDaysRemaining } = useAuthStore();
   const trialActive =
@@ -62,6 +63,8 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
     typeof currentUser.trialEndsAt === 'number' &&
     currentUser.trialEndsAt > Date.now();
   const trialDaysLeft = getTrialDaysRemaining();
+  // Pay CTA only once the trial has ended (no subscribe pitch for guests or mid-trial learners on home).
+  const trialExpired = !!currentUser && currentUser.planStatus === 'expired';
   const trialEndsLabel =
     trialActive && currentUser?.trialEndsAt
       ? new Date(currentUser.trialEndsAt).toLocaleDateString('en-IN', {
@@ -89,7 +92,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
 
         {/* Pricing & Trial Callout Banner */}
         <div className="faq-pricing-callout">
-          <div className="faq-pricing-badge">🎉 Special Launch Offer</div>
+          <div className="faq-pricing-badge">💡 Plans &amp; Access</div>
           <h3 className="faq-pricing-headline">2 Weeks Free Access for All New Learners</h3>
           <p className="faq-pricing-text">
             Explore all 15 Deepakam chapters, interactive audio, and grammar shelves without any upfront commitment.
@@ -99,21 +102,25 @@ const FAQSection: React.FC<FAQSectionProps> = ({ onOpenRegister }) => {
             <span className="faq-pricing-rate-sub">after 14-day free access · no auto-debit</span>
           </div>
           <div className="faq-pricing-actions">
-            {!currentUser && onOpenRegister && (
-              <button type="button" className="faq-pricing-cta" onClick={onOpenRegister}>
-                Create Free Account & Start 2-Week Trial ➔
+            {trialActive && (
+              <button
+                type="button"
+                className="faq-pricing-pay-cta"
+                onClick={() => openPaymentModal()}
+              >
+                {`🎉 Trial active until ${trialEndsLabel}`}
               </button>
             )}
-            <button
-              type="button"
-              className="faq-pricing-pay-cta"
-              onClick={() => openPaymentModal()}
-            >
-              {trialActive
-                ? `🎉 Trial active until ${trialEndsLabel} · Pay after trial`
-                : RAZORPAY_CTA_LABEL}
-            </button>
-            {!trialActive && (
+            {trialExpired && (
+              <button
+                type="button"
+                className="faq-pricing-pay-cta"
+                onClick={() => openPaymentModal()}
+              >
+                {RAZORPAY_CTA_LABEL}
+              </button>
+            )}
+            {trialExpired && (
               <p
                 style={{
                   margin: 0,

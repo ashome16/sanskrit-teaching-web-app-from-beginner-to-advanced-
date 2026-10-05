@@ -768,7 +768,7 @@ const HomePage: React.FC<HomePageProps> = ({
                   Complete Course · 6 Modules
                 </span>
                 <span style={{ color: '#99f6e4', fontSize: '0.8rem', fontWeight: 700 }}>
-                  Free Trial Open · All 28 Lessons · ₹200 Full Access
+                  All 28 Lessons · Audio · Interactive Drills
                 </span>
               </div>
               <h3 style={{ fontSize: '1.45rem', fontWeight: 900, color: '#fef08a', margin: '0 0 0.35rem', fontFamily: 'Noto Sans Devanagari, serif' }}>

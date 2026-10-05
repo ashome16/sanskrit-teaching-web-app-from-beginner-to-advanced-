@@ -455,11 +455,11 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
                   <button type="button" className="worksheet-print-primary-btn" onClick={() => openAuthModal('register')}>
                     {PAID_FEATURE_GATE.ctaGuest}
                   </button>
-                ) : (
+                ) : gateReason === 'expired' ? (
                   <button type="button" className="worksheet-print-primary-btn" onClick={() => openPaymentModal('unlock_paid_features')}>
                     {PAID_FEATURE_GATE.ctaSubscribe}
                   </button>
-                )}
+                ) : null}
                 <button type="button" className="worksheet-toolbar-btn" onClick={() => setShowUpgradePrompt(false)}>
                   Dismiss
                 </button>

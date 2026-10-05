@@ -114,7 +114,7 @@ const GLOSSARY: { term: string; meaning: string }[] = [
 const DEFAULT_TITLE =
   'Online Sanskrit & Vedic Math Classes for Kids | EdNet Learn Gurukul';
 const DEFAULT_DESC =
-  'Unlock your child\'s potential with interactive Sanskrit and Vedic Math for kids. Start a 14-day free trial, then pay ₹200 once — no auto-debit.';
+  'Unlock your child\'s potential with interactive Sanskrit and Vedic Math for kids. Start learning with a 14-day free trial.';
 
 const AI_ESSAY_TITLE =
   'Why Learn a Language — Especially Sanskrit — in the Age of AI · Darśana | EdNet Learn Gurukul';
@@ -1220,7 +1220,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 Discover gaṇita-śāstra not as a race, but as a journey — from Śūnya to Ananta.
               </p>
               <p className="philosophy-cta-note">
-                14-day free trial, then one-time ₹200. No auto-debit. Renew anytime.
+                14-day free trial · No payment needed to start.
               </p>
               <div className="philosophy-cta-actions">
                 {onOpenRegister && (
@@ -1885,7 +1885,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   philosophy, and poetry.
                 </p>
                 <p className="philosophy-cta-note">
-                  14-day free trial, then one-time ₹200. No auto-debit. Renew anytime.
+                  14-day free trial · No payment needed to start.
                 </p>
                 <div className="philosophy-cta-actions">
                   {onOpenRegister && (

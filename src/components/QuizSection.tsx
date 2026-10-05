@@ -627,11 +627,11 @@ const QuizSection: React.FC<QuizSectionProps> = ({
               <button type="button" className="quiz-retry-btn" onClick={() => openAuthModal('register')}>
                 {PAID_FEATURE_GATE.ctaGuest}
               </button>
-            ) : (
+            ) : gateReason === 'expired' ? (
               <button type="button" className="quiz-retry-btn" onClick={() => openPaymentModal('unlock_paid_features')}>
                 {PAID_FEATURE_GATE.ctaSubscribe}
               </button>
-            )}
+            ) : null}
             <button type="button" className="quiz-home-btn" onClick={() => setShowUpgradePrompt(false)}>
               Dismiss
             </button>
@@ -978,10 +978,10 @@ const QuizSection: React.FC<QuizSectionProps> = ({
             </button>
           </div>
 
-          {!canDownload && (
+          {!canDownload && gateReason === 'expired' && (
             <div className="quiz-subscription-pitch-card">
               <div className="quiz-pitch-header">
-                <span className="quiz-pitch-badge">⭐ Subscribed Members Only</span>
+                <span className="quiz-pitch-badge">⭐ Free trial ended · Full access</span>
                 <h4 className="quiz-pitch-title">Unlock Full Graded Answers &amp; Detailed Evaluation Reports</h4>
                 <p className="quiz-pitch-desc">
                   Accelerate Sanskrit and Vedic Maths fluency. Subscribed students get CBSE teacher-reviewed answer explanations, unlimited quiz submissions, verified performance certificates, and printable evaluation reports.
@@ -1010,7 +1010,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                 className="quiz-pitch-cta-btn"
                 onClick={() => openPaymentModal('unlock_paid_features')}
               >
-                🚀 Upgrade to Full Access for ₹299 / Month
+                🔒 Pay ₹200 once · Unlock Full Access
               </button>
             </div>
           )}

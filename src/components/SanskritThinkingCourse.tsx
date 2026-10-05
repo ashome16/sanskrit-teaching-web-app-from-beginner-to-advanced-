@@ -567,15 +567,19 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
 
             {hasPaid ? (
               <span className="stc-sub-pill stc-sub-pill--active">
-                ⭐ ₹200 Active Access · Worksheets &amp; Answer Keys Unlocked
+                ⭐ Full Access Active · Worksheets &amp; Answer Keys Unlocked
               </span>
             ) : inTrial ? (
-              <span className="stc-sub-pill stc-sub-pill--trial" onClick={onOpenPayment} style={{ cursor: 'pointer' }}>
-                🎁 14-Day Free Trial · All 28 Lessons Open · Tap to Unlock Downloads (₹200)
+              <span className="stc-sub-pill stc-sub-pill--trial">
+                🎁 Free Trial · All 28 Lessons Open
+              </span>
+            ) : currentUser ? (
+              <span className="stc-sub-pill stc-sub-pill--guest" onClick={onOpenPayment} style={{ cursor: 'pointer' }}>
+                🔒 Free trial ended · Pay ₹200 once to unlock downloads
               </span>
             ) : (
               <span className="stc-sub-pill stc-sub-pill--guest" onClick={onOpenRegister} style={{ cursor: 'pointer' }}>
-                ✨ Free Trial Available · Sign In / Register (₹200 One-Time Access)
+                ✨ Sign In / Register to save progress
               </span>
             )}
           </div>
@@ -1284,7 +1288,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     className="stc-worksheet-btn"
                     onClick={() => handleWorksheetDownloadClick(currentLesson)}
                   >
-                    <span>🔒</span> Unlock Downloads (₹200)
+                    <span>🔒</span> {inTrial ? 'Downloads unlock after your trial' : currentUser ? 'Unlock Downloads (₹200 once)' : 'Sign in to download'}
                   </button>
                 )}
               </div>

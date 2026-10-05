@@ -246,10 +246,6 @@ const PaymentModal: React.FC = () => {
             <>
               <span className="payment-plan-badge">{PAID_FEATURE_GATE.badge}</span>
               <h2 id="payment-modal-title" className="payment-modal-title">{PAID_FEATURE_GATE.title}</h2>
-              <div className="payment-modal-price-row">
-                <span className="payment-price-currency">₹200</span>
-                <span className="payment-price-period"> once</span>
-              </div>
               <p className="payment-trial-note">
                 {paidFeatureGateBodyWithTrialEnd(trialEndsFormatted)}
               </p>
@@ -281,8 +277,7 @@ const PaymentModal: React.FC = () => {
               <div className="payment-success-icon" style={{ background: '#fef3c7', color: '#b45309' }}>👤</div>
               <h3 className="payment-success-title">Account required</h3>
               <p className="payment-success-sub" style={{ maxWidth: '28rem', margin: '0 auto' }}>
-                Please create a free account first. You get a 14-day free trial. After you sign up,
-                you can pay ₹200 once via Razorpay when needed.
+                Please create a free account first to start learning with a 14-day free trial.
               </p>
               <div style={{ marginTop: '1.35rem', display: 'flex', flexWrap: 'wrap', gap: '0.65rem', justifyContent: 'center' }}>
                 <button type="button" className="receipt-done-btn" onClick={goRegister}
@@ -303,7 +298,32 @@ const PaymentModal: React.FC = () => {
               <h3 className="payment-success-title">Enjoy your free trial</h3>
               <p className="payment-success-sub" style={{ maxWidth: '28rem', margin: '0 auto' }}>
                 Your free trial is active until <strong>{trialEndsFormatted}</strong>. Enjoy learning —
-                you can pay ₹200 once via Razorpay when the trial ends.
+                no payment is needed during your trial.
+              </p>
+              <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
+                <button type="button" className="receipt-done-btn" onClick={handleClose}
+                  style={{ background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)', color: '#fff', border: 'none', borderRadius: '8px', padding: '0.65rem 1.4rem', fontWeight: 700, fontSize: '0.9rem', cursor: 'pointer' }}>
+                  Continue Learning
+                </button>
+              </div>
+              {isAdminLoggedIn && (
+                <div style={{ marginTop: '1.35rem', paddingTop: '1rem', borderTop: '1px dashed #e2e8f0', textAlign: 'center' }}>
+                  <button type="button" onClick={() => setAdminPreviewPay(true)}
+                    style={{ background: '#fff', color: '#0f766e', border: '1.5px solid #0f766e', borderRadius: '8px', padding: '0.5rem 0.95rem', fontWeight: 700, fontSize: '0.8rem', cursor: 'pointer' }}>
+                    Admin: preview pay form
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        ) : showPaidFeatureGate ? (
+          <div className="payment-modal-body">
+            <div className="payment-success-box" style={{ padding: '1.5rem 1.75rem' }}>
+              <div className="payment-success-icon" style={{ background: '#fef3c7', color: '#b45309' }}>📚</div>
+              <h3 className="payment-success-title">Keep learning during your trial</h3>
+              <p className="payment-success-sub" style={{ maxWidth: '28rem', margin: '0 auto' }}>
+                Lessons, audio, and practice stay open throughout your free trial. Downloads, answer keys,
+                and quiz assessment reports become available with full access when your trial period ends.
               </p>
               <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
                 <button type="button" className="receipt-done-btn" onClick={handleClose}
@@ -382,11 +402,6 @@ const PaymentModal: React.FC = () => {
             )}
 
             <div className="payment-modal-body">
-              {showPaidFeatureGate && (
-                <p style={{ margin: '0 0 1rem', textAlign: 'center', fontSize: '0.88rem', color: '#92400e', fontWeight: 600, lineHeight: 1.45 }}>
-                  Your free trial stays active for browsing. Subscribe now if you need downloads, answer keys, or quiz assessment reports.
-                </p>
-              )}
               <div style={{ padding: '0.25rem 0 1rem' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem', justifyContent: 'center' }}>
                   <button type="button" onClick={handleRazorpayPay} disabled={razorpayBusy}

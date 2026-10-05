@@ -15,7 +15,7 @@ export interface CbseSanskritGuidePageProps {
 const DEFAULT_TITLE =
   'Online Sanskrit & Vedic Math Classes for Kids | EdNet Learn Gurukul';
 const DEFAULT_DESC =
-  'Unlock your child\'s potential with interactive Sanskrit and Vedic Math for kids. Start a 14-day free trial, then pay ₹200 once — no auto-debit.';
+  'Unlock your child\'s potential with interactive Sanskrit and Vedic Math for kids. Start learning with a 14-day free trial.';
 
 const PAGE_TITLE =
   'CBSE NCERT Sanskrit Exam Guide (Classes 7–10) | EdNet Learn Gurukul';
@@ -1107,7 +1107,7 @@ const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
             from middle school through Class 10 Board prep.
           </p>
           <p className="philosophy-cta-note">
-            14-day free trial, then one-time ₹200. No auto-debit. Renew anytime.
+            14-day free trial · No payment needed to start.
           </p>
           <div className="philosophy-cta-actions">
             {onOpenRegister && (

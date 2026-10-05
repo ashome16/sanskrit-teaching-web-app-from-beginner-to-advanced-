@@ -294,14 +294,16 @@ const UserProfileModal: React.FC = () => {
                             dateStyle: 'medium',
                           })
                         : 'the end of your paid period'
-                    }. Renew with another one-time ₹200 payment when it expires.`
+                    }. You can renew anytime after it expires.`
                   : currentUser.planStatus === 'trial'
                   ? `Your 14-day free access is active. Enjoy unlimited access to all 15 Deepakam chapters, interactive audio exercises, and Jodo puzzles.`
                   : `Your trial has expired. Pay one-time ₹200 to regain full access to all 15 chapters and interactive audio features.`}
               </p>
-              <div className="profile-membership-price">
-                One-time ₹200 · Pay via <strong>Razorpay / UPI / QR</strong> · No auto-debit
-              </div>
+              {currentUser.planStatus === 'expired' && (
+                <div className="profile-membership-price">
+                  One-time ₹200 · Pay via <strong>Razorpay / UPI / QR</strong> · No auto-debit
+                </div>
+              )}
 
               <div style={{ marginTop: '0.9rem', display: 'flex', flexWrap: 'wrap', gap: '0.55rem' }}>
                 <button

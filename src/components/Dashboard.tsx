@@ -347,6 +347,26 @@ const Dashboard: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // FAQ is rendered at the bottom of the home page; /faq (and footer/support FAQ links) scroll to it.
+  const [faqScrollKey, setFaqScrollKey] = useState(0);
+  useEffect(() => {
+    if (activeView !== 'faq') return;
+    let attempts = 0;
+    let timer: number | undefined;
+    const tryScroll = () => {
+      const el = document.getElementById('faq-section');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+      if (attempts++ < 20) timer = window.setTimeout(tryScroll, 100);
+    };
+    timer = window.setTimeout(tryScroll, 60);
+    return () => {
+      if (timer) window.clearTimeout(timer);
+    };
+  }, [activeView, faqScrollKey]);
+
   // Deep link into a Course Addendum unit (e.g. Mantras & Ślokas) + remount key.
   const [courseAddendumTarget, setCourseAddendumTarget] = useState<{ id: string; key: number } | null>(null);
 
@@ -356,7 +376,12 @@ const Dashboard: React.FC = () => {
   ) => {
     setQuizAnchor(null);
     if (view !== 'course') setCourseAddendumTarget(null);
-    if (view === 'home' || view === 'faq' || view === 'philosophy' || view === 'cbse-guide' || view === 'resources') {
+    if (view === 'faq') {
+      setActiveView('faq');
+      setFaqScrollKey((k) => k + 1);
+      return;
+    }
+    if (view === 'home' || view === 'philosophy' || view === 'cbse-guide' || view === 'resources') {
       setActiveView(view);
       return;
     }
@@ -992,15 +1017,6 @@ const Dashboard: React.FC = () => {
             <span className="dashboard-nav-primary">संस्कृत-चिन्तनम्</span>
             <span className="dashboard-nav-secondary">Course (6 Mod)</span>
           </button>
-          <button
-            type="button"
-            className={`dashboard-nav-faq dashboard-nav-item${activeView === 'faq' ? ' active' : ''}`}
-            onClick={() => navigateToView('faq')}
-            title="View FAQ & Pricing"
-          >
-            <img src="/nav/nav-faq.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-            <span className="dashboard-nav-primary">FAQ &amp; Pricing</span>
-          </button>
         </nav>
 
         <div className="dashboard-header-user" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
@@ -1052,7 +1068,7 @@ const Dashboard: React.FC = () => {
         </div>
       </header>
 
-      {activeView === 'home' && (
+      {(activeView === 'home' || activeView === 'faq') && (
         <HomePage
           onOpenReader={(lessonId) => openDeepakam(lessonId)}
           onOpenBoard={() => navigateToView('board')}
@@ -1070,9 +1086,8 @@ const Dashboard: React.FC = () => {
           onOpenCourse={() => navigateToView('course')}
         />
       )}
-      {activeView === 'faq' && (
-        <FAQSection onOpenRegister={() => openAuthModal('register')} />
-      )}
+      {/* FAQ lives at the bottom of the home page (no longer in the top menu). /faq scrolls here. */}
+      {(activeView === 'home' || activeView === 'faq') && <FAQSection />}
       {activeView === 'philosophy' && (
         <PhilosophyPage
           initialEssay={philosophyEssay}
