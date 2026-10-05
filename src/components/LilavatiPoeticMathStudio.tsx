@@ -209,9 +209,16 @@ export const ORBIT_STYLES: Record<number, { bg: string; border: string; text: st
   10: { bg: '#fee2e2', border: '#ef4444', text: '#991b1b', label: 'Orbit 10: Absolute Center 2×2', syl: 'र (ra)', count: 4 },
 };
 
+export const SARVATO_4X4_GRID = [
+  ['भ (BHA)', 'र (RA)', 'त (TA)', 'वी (VEE)'],
+  ['र (RA)', 'म (MA)', 'व (VA)', 'त (TA)'],
+  ['त (TA)', 'व (VA)', 'म (MA)', 'र (RA)'],
+  ['वी (VEE)', 'त (TA)', 'र (RA)', 'भ (BHA)'],
+];
+
 export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlayAudio }) => {
   const [activeTab, setActiveTab] = useState<
-    'bees' | 'necklace' | 'peacock' | 'lotus' | 'currency' | 'sukshma_kala' | 'maha_kala' | 'anka_pasa'
+    'bees' | 'necklace' | 'peacock' | 'lotus' | 'currency' | 'sukshma_kala' | 'maha_kala' | 'anka_pasa' | 'chhaya'
   >('bees');
 
   // Sub-mode inside anka_pasa:
@@ -231,10 +238,18 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   const [raghavaDirection, setRaghavaDirection] = useState<'anuloma' | 'viloma'>('anuloma');
 
   // Interactive state for Sarvatobhadra
+  const [sarvatoGridSize, setSarvatoGridSize] = useState<'8x8' | '4x4'>('4x4');
   const [sarvatoHoveredCell, setSarvatoHoveredCell] = useState<{ r: number; c: number; orbitId: number } | null>(null);
   const [sarvatoReadMode, setSarvatoReadMode] = useState<
     'normal' | 'row0_fwd' | 'row0_rev' | 'col0_down' | 'col0_up' | 'perimeter'
   >('normal');
+
+  // Interactive state for Chāyā-Vyavahāra (Gnomons, Shadows & Heights)
+  const [gnomonRodHeight, setGnomonRodHeight] = useState<number>(12); // Standard 12 aṅgulas (Śaṅku)
+  const [shadowOne, setShadowOne] = useState<number>(4); // S1
+  const [shadowTwo, setShadowTwo] = useState<number>(7); // S2
+  const [surveyorDistance, setSurveyorDistance] = useState<number>(30); // D
+  const [palabhaShadow, setPalabhaShadow] = useState<number>(5.3); // Equinoctial noon shadow for Ujjain (~23.18° N latitude)
 
   // Interactive state for Peacock & Snake
   const [pillarHeight, setPillarHeight] = useState<number>(9);
@@ -362,6 +377,12 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
     factorial(multisetShields);
   const multisetPermutations = multisetDenominator > 0 ? Math.round(multisetNumerator / multisetDenominator) : 0;
 
+  // Chāyā-Vyavahāra (Gnomons, Shadows & Heights) Calculations:
+  const shadowDelta = shadowTwo - shadowOne;
+  const calculatedCliffHeight = shadowDelta > 0 ? (gnomonRodHeight * surveyorDistance) / shadowDelta : 0;
+  const firstCliffDistance = shadowDelta > 0 ? (shadowOne * surveyorDistance) / shadowDelta : 0;
+  const derivedLatitudeDeg = (Math.atan(palabhaShadow / 12) * 180) / Math.PI;
+
   return (
     <div
       style={{
@@ -380,10 +401,10 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
             Interactive Mathematical Poetry Studio
           </span>
           <h3 style={{ margin: '0.25rem 0 0', fontSize: '1.35rem', fontWeight: 800, color: '#0f172a' }}>
-            लीलावती (Līlāvatī) · Poetic Puzzles & Micro-Currency of Bhāskara II
+            लीलावती (Līlāvatī) · Poetic Puzzles &amp; Micro-Currency of Bhāskara II
           </h3>
           <p style={{ margin: '0.25rem 0 0', fontSize: '0.88rem', color: '#64748b' }}>
-            Quadratic Equations, Fractional Rhythms, Pythagorean Geometry & Cowrie Place-Value (1114 CE)
+            Quadratic Equations, Fractional Rhythms, Pythagorean Geometry &amp; Cowrie Place-Value (1114 CE)
           </p>
         </div>
 
@@ -398,6 +419,7 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
             { id: 'sukshma_kala', label: '🪷 Micro Time (Sūkṣma Kāla)', sub: 'Lotus & Needle' },
             { id: 'maha_kala', label: '🌌 Cosmic Kalpa & Ahargaṇa', sub: 'Surya Siddhanta' },
             { id: 'anka_pasa', label: '🔱 Combinatorics & Gatika Kāvya', sub: 'Aṅka-Pāśa & Grids' },
+            { id: 'chhaya', label: '☀️ Gnomon Shadows (Chāyā)', sub: 'Double-Shadows & Heights' },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -2352,19 +2374,132 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
                   </button>
                 </div>
 
-                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #e2e8f0', marginBottom: '1rem', textAlign: 'center' }}>
-                  <div style={{ fontSize: '1.16rem', fontWeight: 800, color: '#0f766e', lineHeight: 1.7 }}>
-                    देवाकानिनिकावादेवा वाकास्वस्वस्वस्वकावा ।<br />
-                    कास्वभव्यव्यभस्वका निस्वव्यररव्यस्वनि ॥
-                  </div>
-                  <div style={{ fontSize: '0.86rem', fontWeight: 600, color: '#475569', fontFamily: 'monospace', marginTop: '0.35rem' }}>
-                    devākāninikāvādevā vākāsvasvasvasvakāvā |<br />
-                    kāsvabhavyavyabhasvakā nisvavyararavyasvani ||
-                  </div>
-                  <p style={{ margin: '0.45rem 0 0', fontSize: '0.82rem', color: '#64748b', fontStyle: 'italic' }}>
-                    &ldquo;O divine Lord who grants desires and protects the righteous! In battle, your enemies are vanquished by your radiant auspiciousness; your speech is self-illuminating, destroying all sorrow...&rdquo;
-                  </p>
+                {/* Grid Size Switcher (4x4 Pedagogical vs 8x8 Masterpiece) */}
+                <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
+                  <button
+                    type="button"
+                    onClick={() => setSarvatoGridSize('4x4')}
+                    style={{
+                      padding: '0.5rem 0.95rem',
+                      borderRadius: '8px',
+                      border: sarvatoGridSize === '4x4' ? '2px solid #0d9488' : '1px solid #cbd5e1',
+                      background: sarvatoGridSize === '4x4' ? '#f0fdfa' : '#ffffff',
+                      color: sarvatoGridSize === '4x4' ? '#0f766e' : '#475569',
+                      fontWeight: 800,
+                      fontSize: '0.84rem',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    🟩 4×4 Pedagogical Model (BHA-RA-TA-VEE-RA)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSarvatoGridSize('8x8')}
+                    style={{
+                      padding: '0.5rem 0.95rem',
+                      borderRadius: '8px',
+                      border: sarvatoGridSize === '8x8' ? '2px solid #0d9488' : '1px solid #cbd5e1',
+                      background: sarvatoGridSize === '8x8' ? '#f0fdfa' : '#ffffff',
+                      color: sarvatoGridSize === '8x8' ? '#0f766e' : '#475569',
+                      fontWeight: 800,
+                      fontSize: '0.84rem',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    🔲 8×8 Canonical Masterpiece (Kirātārjunīya 15.25)
+                  </button>
                 </div>
+
+                {/* 4x4 Grid Visualizer */}
+                {sarvatoGridSize === '4x4' && (
+                  <div style={{ background: '#ffffff', padding: '1.25rem', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '1.25rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0d9488', textTransform: 'uppercase' }}>
+                        Pedagogical 4×4 Symmetric Phonetic Matrix
+                      </span>
+                      <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#065f46', background: '#ecfdf5', padding: '0.2rem 0.6rem', borderRadius: '6px' }}>
+                        D₄ Degrees of Freedom = n(n+2)/8 = 4(6)/8 = 3 Generators
+                      </span>
+                    </div>
+
+                    <p style={{ fontSize: '0.84rem', color: '#475569', lineHeight: 1.55, margin: '0 0 1rem' }}>
+                      To see how dihedral group symmetries operate on syllables before tackling a 64-character matrix, this 4×4 grid arranges the phrase <strong>&ldquo;BHA-RA-TA-VEE-RA&rdquo;</strong> (Brave Indian Warrior) symmetrically with <strong>&ldquo;RA-MA-VA-TA&rdquo;</strong>. Notice that every row is identical to its column (M[i, j] = M[j, i]), and opposite rows invert in retrograde!
+                    </p>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem', maxWidth: '340px', margin: '0 auto 1.25rem' }}>
+                      {SARVATO_4X4_GRID.map((row, r) =>
+                        row.map((cell, c) => {
+                          const isCorner = (r === 0 || r === 3) && (c === 0 || c === 3);
+                          const isCenter = (r === 1 || r === 2) && (c === 1 || c === 2);
+                          return (
+                            <div
+                              key={`${r}-${c}`}
+                              style={{
+                                aspectRatio: '1',
+                                borderRadius: '8px',
+                                background: isCorner ? '#fef3c7' : isCenter ? '#fee2e2' : '#dbeafe',
+                                border: isCorner ? '1.5px solid #f59e0b' : isCenter ? '1.5px solid #ef4444' : '1.5px solid #3b82f6',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontWeight: 800,
+                                fontSize: '0.92rem',
+                                color: isCorner ? '#92400e' : isCenter ? '#991b1b' : '#1e40af',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.04)',
+                              }}
+                            >
+                              <span>{cell.split(' ')[0]}</span>
+                              <span style={{ fontSize: '0.68rem', fontWeight: 600 }}>{cell.split(' ')[1]}</span>
+                            </div>
+                          );
+                        })
+                      )}
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.65rem' }}>
+                      <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0f766e', textTransform: 'uppercase' }}>➡️ Row 1 Forward</div>
+                        <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#0f172a' }}>BHA - RA - TA - VEE</div>
+                        <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Brave warrior (Line 1)</div>
+                      </div>
+                      <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0f766e', textTransform: 'uppercase' }}>⬇️ Column 1 Downward</div>
+                        <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#0f172a' }}>BHA - RA - TA - VEE</div>
+                        <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Identical to Row 1!</div>
+                      </div>
+                      <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0f766e', textTransform: 'uppercase' }}>⬅️ Row 4 Backward</div>
+                        <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#0f172a' }}>VEE - TA - RA - BHA</div>
+                        <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Symmetric retrograde!</div>
+                      </div>
+                      <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0f766e', textTransform: 'uppercase' }}>⬆️ Column 4 Upward</div>
+                        <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#0f172a' }}>VEE - TA - RA - BHA</div>
+                        <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Identical to Row 4 reverse!</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* 8x8 Grid Canonical View */}
+                {sarvatoGridSize === '8x8' && (
+                  <div>
+                    <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #e2e8f0', marginBottom: '1rem', textAlign: 'center' }}>
+                      <div style={{ fontSize: '1.16rem', fontWeight: 800, color: '#0f766e', lineHeight: 1.7 }}>
+                        देवाकानिनिकावादेवा वाकास्वस्वस्वस्वकावा ।<br />
+                        कास्वभव्यव्यभस्वका निस्वव्यररव्यस्वनि ॥
+                      </div>
+                      <div style={{ fontSize: '0.86rem', fontWeight: 600, color: '#475569', fontFamily: 'monospace', marginTop: '0.35rem' }}>
+                        devākāninikāvādevā vākāsvasvasvasvakāvā |<br />
+                        kāsvabhavyavyabhasvakā nisvavyararavyasvani ||
+                      </div>
+                      <p style={{ margin: '0.45rem 0 0', fontSize: '0.82rem', color: '#64748b', fontStyle: 'italic' }}>
+                        &ldquo;O divine Lord who grants desires and protects the righteous! In battle, your enemies are vanquished by your radiant auspiciousness; your speech is self-illuminating, destroying all sorrow...&rdquo;
+                      </p>
+                    </div>
 
                 {/* Read Mode Selector Tabs */}
                 <div style={{ marginBottom: '1rem' }}>
@@ -2534,8 +2669,10 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
                   </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
+        </div>
+      )}
 
           {/* SUB-MODE 4: THE KNIGHT’S TOUR GRID (TURAṄGA-BANDHA) */}
           {ankaSubMode === 'turanga_tour' && (
@@ -2565,6 +2702,278 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
               <TurangaBandhaChessboard onPlayAudio={onPlayAudio} />
             </div>
           )}
+        </div>
+      )}
+
+      {/* =========================================================================
+          TAB 9: CHHAYA-VYAVAHARA (GNOMONS, DOUBLE SHADOWS & EARTH CURVATURE)
+         ========================================================================= */}
+      {activeTab === 'chhaya' && (
+        <div>
+          {/* Classic Sanskrit Verse Banner */}
+          <div style={{ background: '#fefce8', border: '1.5px solid #fef08a', borderRadius: '12px', padding: '1.2rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                Līlāvatī Chapter 10 · Chāyā-Vyavahāra (छायाव्यवहारः / Shadow Calculations &amp; Gnomons)
+              </span>
+              <button
+                type="button"
+                onClick={() => onPlayAudio?.('छायान्तरभक्ते द्विशङ्कुविवरे शङ्कुगुणे स्तम्भः')}
+                style={{
+                  padding: '0.25rem 0.65rem',
+                  fontSize: '0.76rem',
+                  borderRadius: '6px',
+                  border: '1px solid #fde047',
+                  background: '#ffffff',
+                  cursor: 'pointer',
+                  fontWeight: 700,
+                  color: '#854d0e',
+                }}
+              >
+                🔊 Chant Chāyā Shloka
+              </button>
+            </div>
+            <div style={{ fontSize: '1.08rem', fontWeight: 800, color: '#713f12', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+              छायान्तरभक्ते द्विशङ्कुविवरे शङ्कुगुणे स्तम्भः ।<br />
+              छायागुणितस्तम्भो विभक्तशङ्कुः प्रमाणं स्यात् ॥
+            </div>
+            <div style={{ fontSize: '0.88rem', fontWeight: 600, color: '#a16207', marginBottom: '0.45rem' }}>
+              chāyāntarabhakte dviśaṅkuvivare śaṅkuguṇe stambhaḥ |<br />
+              chāyāguṇitastambho vibhaktaśaṅkuḥ pramāṇaṃ syāt ||
+            </div>
+            <p style={{ margin: 0, fontSize: '0.86rem', color: '#854d0e', lineHeight: 1.55 }}>
+              <strong>Poetic Translation:</strong> <em>&ldquo;Multiply the distance between the two gnomons (D) by the standard gnomon height (g), and divide by the difference between the two cast shadows (S₂ - S₁); the result is the true height of the distant cliff or pillar! Furthermore, multiplying the first shadow by the height and dividing by the gnomon gives the exact distance to the base.&rdquo;</em>
+            </p>
+          </div>
+
+          {/* Section A: The Double-Shadow Riddle (Dvi-Chāyā) */}
+          <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0d9488', textTransform: 'uppercase' }}>
+                  Problem 1 · Measuring Inaccessible Heights (Dvi-Chāyā)
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>
+                  📐 The Cliff &amp; Bamboo Riddle: Height from Two Gnomon Shadows
+                </h4>
+              </div>
+              <div style={{ background: '#ecfdf5', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #a7f3d0', fontSize: '0.84rem', fontWeight: 800, color: '#065f46', fontFamily: 'monospace' }}>
+                H = (g × D) / (S₂ - S₁)
+              </div>
+            </div>
+
+            <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5, margin: '0 0 1rem' }}>
+              When the base of a tall object (a steep cliff, mountain peak, or guarded temple spire) is physically inaccessible, you cannot measure horizontal distance directly. Bhāskarācārya solves this using two gnomon stations in line with the light source, exploiting the properties of similar triangles without requiring trigonometric lookup tables!
+            </p>
+
+            {/* Interactive Sliders Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem', marginBottom: '1.15rem' }}>
+              {/* Gnomon Height (g) */}
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>Vertical Gnomon (g / Śaṅku):</span>
+                  <span style={{ fontWeight: 800, color: '#0d9488' }}>{gnomonRodHeight} Aṅgulas</span>
+                </div>
+                <input
+                  type="range"
+                  min={6}
+                  max={24}
+                  value={gnomonRodHeight}
+                  onChange={(e) => setGnomonRodHeight(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: '#0d9488' }}
+                />
+                <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Standard Vedic astronomical rod = 12 Aṅgulas (1 Vitasti / hand span)</div>
+              </div>
+
+              {/* Shadow 1 (S1) */}
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>First Shadow (S₁):</span>
+                  <span style={{ fontWeight: 800, color: '#0284c7' }}>{shadowOne} units</span>
+                </div>
+                <input
+                  type="range"
+                  min={1}
+                  max={shadowTwo - 1}
+                  value={shadowOne}
+                  onChange={(e) => setShadowOne(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: '#0284c7' }}
+                />
+                <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Shadow cast at station 1 closer to object</div>
+              </div>
+
+              {/* Shadow 2 (S2) */}
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>Second Shadow (S₂):</span>
+                  <span style={{ fontWeight: 800, color: '#7c3aed' }}>{shadowTwo} units</span>
+                </div>
+                <input
+                  type="range"
+                  min={shadowOne + 1}
+                  max={20}
+                  value={shadowTwo}
+                  onChange={(e) => setShadowTwo(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: '#7c3aed' }}
+                />
+                <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Shadow cast after walking distance D backward (S₂ &gt; S₁)</div>
+              </div>
+
+              {/* Distance D */}
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>Surveyor Distance (D):</span>
+                  <span style={{ fontWeight: 800, color: '#d97706' }}>{surveyorDistance} units</span>
+                </div>
+                <input
+                  type="range"
+                  min={10}
+                  max={100}
+                  step={5}
+                  value={surveyorDistance}
+                  onChange={(e) => setSurveyorDistance(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: '#d97706' }}
+                />
+                <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Distance moved backwards between station 1 and station 2</div>
+              </div>
+            </div>
+
+            {/* Live Calculation Banner */}
+            <div style={{ background: '#ecfdf5', border: '1.5px solid #a7f3d0', borderRadius: '10px', padding: '1.15rem', marginBottom: '1.15rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#065f46', textTransform: 'uppercase' }}>
+                  Bhāskarācārya&apos;s Solution:
+                </span>
+                <span style={{ fontSize: '0.82rem', fontWeight: 700, color: '#047857', fontFamily: 'monospace' }}>
+                  ΔS = S₂ - S₁ = {shadowTwo} - {shadowOne} = {shadowDelta} units
+                </span>
+              </div>
+
+              <div style={{ fontSize: '1.45rem', fontWeight: 900, color: '#047857', marginBottom: '0.35rem' }}>
+                H = ({gnomonRodHeight} × {surveyorDistance}) / ({shadowTwo} - {shadowOne}) = {calculatedCliffHeight.toFixed(1)} Units Height!
+              </div>
+
+              <div style={{ fontSize: '0.86rem', color: '#065f46', lineHeight: 1.5 }}>
+                • <strong>Distance to Inaccessible Base (X₁):</strong> ({shadowOne} × {surveyorDistance}) / {shadowDelta} = <strong>{firstCliffDistance.toFixed(1)} units</strong> from station 1.<br />
+                • <strong>Canonical Textbook Example:</strong> With g = 12, S₁ = 4, S₂ = 7, D = 30: H = (12 × 30) / (7 - 4) = 360 / 3 = <strong>120 units</strong>!
+              </div>
+            </div>
+
+            {/* Diagram of Similar Triangles */}
+            <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #e2e8f0', padding: '1rem', textAlign: 'center' }}>
+              <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                Geometric Ray Tracing: Similar Triangles formed by Gnomon &amp; Object
+              </div>
+              <svg viewBox="0 0 600 200" style={{ width: '100%', maxHeight: '200px' }}>
+                {/* Ground */}
+                <line x1="20" y1="170" x2="580" y2="170" stroke="#94a3b8" strokeWidth="2.5" />
+                {/* Cliff/Object */}
+                <rect x="50" y="30" width="30" height="140" fill="#cbd5e1" stroke="#475569" strokeWidth="2" />
+                <text x="65" y="20" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#0f172a">Cliff (H = {calculatedCliffHeight.toFixed(0)})</text>
+                {/* Gnomon 1 */}
+                <line x1="220" y1="170" x2="220" y2="130" stroke="#0d9488" strokeWidth="3" />
+                <text x="220" y="122" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#0d9488">g = {gnomonRodHeight}</text>
+                {/* Shadow 1 */}
+                <line x1="220" y1="170" x2="270" y2="170" stroke="#0284c7" strokeWidth="4" />
+                <text x="245" y="185" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#0284c7">S₁={shadowOne}</text>
+                {/* Gnomon 2 */}
+                <line x1="390" y1="170" x2="390" y2="130" stroke="#0d9488" strokeWidth="3" />
+                <text x="390" y="122" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#0d9488">g = {gnomonRodHeight}</text>
+                {/* Shadow 2 */}
+                <line x1="390" y1="170" x2="470" y2="170" stroke="#7c3aed" strokeWidth="4" />
+                <text x="430" y="185" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#7c3aed">S₂={shadowTwo}</text>
+                {/* Distance D between stations */}
+                <line x1="220" y1="192" x2="390" y2="192" stroke="#d97706" strokeWidth="1.5" strokeDasharray="4,4" />
+                <text x="305" y="196" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#d97706">Distance D = {surveyorDistance}</text>
+                {/* Sun icon */}
+                <circle cx="530" cy="35" r="14" fill="#fbbf24" stroke="#f59e0b" strokeWidth="2" />
+                <text x="530" y="39" textAnchor="middle" fontSize="14">☀️</text>
+              </svg>
+            </div>
+          </div>
+
+          {/* Section B: Celestial Gnomon & Earth's Curvature (Palabhā & Latitude) */}
+          <div style={{ background: '#eff6ff', border: '1.5px solid #bfdbfe', borderRadius: '12px', padding: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#2563eb', textTransform: 'uppercase' }}>
+                  Astronomy &amp; Spherical Geodesy (Dig-Deśa-Kāla-Jñāna)
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#1e3a8a' }}>
+                  🌍 Palabhā (पलभा): Deriving Local Latitude &amp; Earth’s Spherical Curvature
+                </h4>
+              </div>
+              <div style={{ background: '#dbeafe', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #93c5fd', fontSize: '0.84rem', fontWeight: 800, color: '#1e40af', fontFamily: 'monospace' }}>
+                tan(φ) = Palabhā / 12
+              </div>
+            </div>
+
+            <p style={{ fontSize: '0.86rem', color: '#1e3a8a', lineHeight: 1.5, margin: '0 0 1rem' }}>
+              In ancient Indian astronomy, the shadow cast by a 12-aṅgula vertical gnomon at exact local solar noon on the <strong>Equinox</strong> (when solar declination δ = 0) is called the <strong>Palabhā (पलभा)</strong> or <strong>Viṣuvad-Bhā</strong>. Because the Sun is directly overhead at the terrestrial equator, the zenith angle of the Sun at your location equals your geographic latitude (<strong>Akṣāṃśa / अक्षांश</strong>)!
+            </p>
+
+            {/* Interactive Slider for Palabhā */}
+            <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bfdbfe', marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <label style={{ fontSize: '0.84rem', fontWeight: 700, color: '#334155' }}>
+                  Noon Equinoctial Shadow of 12-Aṅgula Gnomon (Palabhā):
+                </label>
+                <span style={{ fontSize: '1rem', fontWeight: 800, color: '#2563eb' }}>
+                  {palabhaShadow} Aṅgulas
+                </span>
+              </div>
+              <input
+                type="range"
+                min={0}
+                max={15}
+                step={0.1}
+                value={palabhaShadow}
+                onChange={(e) => setPalabhaShadow(parseFloat(e.target.value))}
+                style={{ width: '100%', accentColor: '#2563eb', marginBottom: '0.75rem' }}
+              />
+
+              {/* Geographic Presets */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                {[
+                  { label: 'Ujjain (Ancient Prime Meridian)', shadow: 5.3, lat: '23.2° N (Tropic of Cancer)' },
+                  { label: 'Kanchipuram (South India)', shadow: 2.8, lat: '12.8° N' },
+                  { label: 'Varanasi (Kāśī)', shadow: 6.2, lat: '25.3° N' },
+                  { label: 'Kashmir (Śāradā Pīṭha)', shadow: 8.2, lat: '34.3° N' },
+                ].map((preset) => (
+                  <button
+                    key={preset.label}
+                    type="button"
+                    onClick={() => setPalabhaShadow(preset.shadow)}
+                    style={{
+                      padding: '0.3rem 0.65rem',
+                      borderRadius: '6px',
+                      border: Math.abs(palabhaShadow - preset.shadow) < 0.1 ? '1.5px solid #2563eb' : '1px solid #cbd5e1',
+                      background: Math.abs(palabhaShadow - preset.shadow) < 0.1 ? '#dbeafe' : '#f8fafc',
+                      color: Math.abs(palabhaShadow - preset.shadow) < 0.1 ? '#1e40af' : '#475569',
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    📍 {preset.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Derived Latitude Banner */}
+            <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #93c5fd', padding: '1rem' }}>
+              <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#1e40af', textTransform: 'uppercase' }}>
+                Derived Terrestrial Latitude (Akṣāṃśa φ):
+              </div>
+              <div style={{ fontSize: '1.45rem', fontWeight: 900, color: '#1d4ed8', marginTop: '0.2rem' }}>
+                φ = arctan({palabhaShadow} / 12) = {derivedLatitudeDeg.toFixed(2)}° North
+              </div>
+              <p style={{ margin: '0.4rem 0 0', fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
+                💡 <strong>Earth Circumference Determination:</strong> By measuring the difference in Palabhā between two observatories along the same meridian (such as Lanka on the equator and Ujjain at 23.2° N) separated by known road distance, Āryabhaṭa and Bhāskarācārya calculated the Earth’s spherical circumference as <strong>4,967 Yojanas (~39,960 km)</strong>, within 1% of the modern satellite value (40,075 km)!
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </div>

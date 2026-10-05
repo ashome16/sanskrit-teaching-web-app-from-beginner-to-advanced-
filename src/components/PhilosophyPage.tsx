@@ -3294,6 +3294,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <a href="#lilavati-video-archives" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎥 14. Dr. Remella Avadhanulu Archives</a>
                 <a href="#lilavati-combinatorics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🔱 15. Aṅka-Pāśa &amp; 10-Armed Shiva</a>
                 <a href="#lilavati-gatika-kavya" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🔄 16. Gatika Kāvya &amp; Sarvatobhadra</a>
+                <a href="#lilavati-chhaya" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>☀️ 17. Chāyā Gnomons &amp; Bījagaṇita</a>
               </div>
             </figure>
 
@@ -4773,6 +4774,161 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
                   >
                     ⚙️ Explore Interactive Gatika Kāvya &amp; Knight’s Tour Studio ➔
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 17: Chāyā-Vyavahāra: Gnomons, Inaccessible Heights, Earth Curvature & Bījagaṇita Negative Numbers */}
+            <section className="philosophy-section" id="lilavati-chhaya" aria-labelledby="heading-lilavati-chhaya">
+              <h2 id="heading-lilavati-chhaya">
+                17. Chāyā-Vyavahāra: Shadows, Gnomons (Śaṅku), Earth Curvature &amp; Bījagaṇita’s Negative Numbers
+              </h2>
+              <p className="philosophy-lead">
+                In Chapter 10 of the <em>Līlāvatī</em>, titled <strong>Chāyā-Vyavahāra (छायाव्यवहारः / Shadow Computations)</strong>, Bhāskarācārya bridges abstract geometry with empirical field surveying and celestial geodesy. By tracking the shadow cast by a simple vertical rod—the <strong>Gnomon (Śaṅku / शङ्कु)</strong>, standardized at 12 finger-widths (<em>Aṅgulas</em>)—ancient Indian mathematicians measured inaccessible heights, local terrestrial latitudes, and the spherical curvature of the Earth without trigonometric lookup tables.
+              </p>
+
+              {/* Subsection 17.1: The Double-Shadow Theorem */}
+              <div className="philosophy-card" style={{ background: '#fefce8', border: '1.5px solid #fef08a', margin: '1.5rem 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                    Sanskrit Shadow Shloka · Līlāvatī Chapter 10
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handlePlayAudio('छायान्तरभक्ते द्विशङ्कुविवरे शङ्कुगुणे स्तम्भः')}
+                    style={{
+                      padding: '0.25rem 0.65rem',
+                      fontSize: '0.76rem',
+                      borderRadius: '6px',
+                      border: '1px solid #fde047',
+                      background: '#ffffff',
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                      color: '#854d0e',
+                    }}
+                  >
+                    🔊 Chant Chāyā Shloka
+                  </button>
+                </div>
+
+                <div style={{ fontSize: '1.08rem', fontWeight: 800, color: '#713f12', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+                  छायान्तरभक्ते द्विशङ्कुविवरे शङ्कुगुणे स्तम्भः ।<br />
+                  छायागुणितस्तम्भो विभक्तशङ्कुः प्रमाणं स्यात् ॥
+                </div>
+                <div style={{ fontSize: '0.86rem', fontWeight: 600, color: '#a16207', marginBottom: '0.45rem', fontFamily: 'monospace' }}>
+                  chāyāntarabhakte dviśaṅkuvivare śaṅkuguṇe stambhaḥ |<br />
+                  chāyāguṇitastambho vibhaktaśaṅkuḥ pramāṇaṃ syāt ||
+                </div>
+                <p style={{ margin: 0, fontSize: '0.86rem', color: '#854d0e', lineHeight: 1.55 }}>
+                  <strong>Poetic Translation:</strong> <em>&ldquo;Divide the product of the distance between the two gnomons (D) and the gnomon height (g) by the difference of the two cast shadows (S₂ - S₁); the quotient is the true height of the inaccessible cliff, tower, or bamboo tree! Multiplying the first shadow by this height and dividing by the gnomon gives the exact distance from station 1 to the base.&rdquo;</em>
+                </p>
+
+                {/* Mathematical Derivation Box */}
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #fef08a', marginTop: '1rem' }}>
+                  <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#b45309', marginBottom: '0.35rem' }}>
+                    📐 Similar Triangles Derivation (Dvi-Chāyā Theorem)
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.6, fontFamily: 'monospace' }}>
+                    Let g = 12 (gnomon rod height), S₁ = shadow at station 1, S₂ = shadow at station 2.<br />
+                    Let D = horizontal distance the surveyor stepped backward from station 1 to station 2.<br />
+                    Let H = unknown height of the cliff, and X₁ = unknown distance from station 1 to the cliff base.<br />
+                    1. By similar triangles at Station 1: H / (X₁ + S₁) = g / S₁  ⟹  X₁ = S₁(H - g) / g<br />
+                    2. By similar triangles at Station 2: H / (X₁ + D + S₂) = g / S₂  ⟹  X₁ + D = S₂(H - g) / g<br />
+                    3. Subtracting (1) from (2): D = (S₂ - S₁) × (H - g) / g  ⟹  <strong>H = [g × D / (S₂ - S₁)]</strong>
+                  </div>
+                  <div style={{ marginTop: '0.65rem', background: '#fefce8', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid #fef08a', fontSize: '0.82rem', color: '#92400e' }}>
+                    <strong>Canonical Example:</strong> A 12-unit gnomon (g = 12) casts shadow S₁ = 4 units. Moving backward D = 30 units, the gnomon casts S₂ = 7 units.<br />
+                    Height H = (12 × 30) / (7 - 4) = 360 / 3 = <strong>120 units</strong>!<br />
+                    Distance X₁ = (4 × 30) / (7 - 4) = 120 / 3 = <strong>40 units</strong>!
+                  </div>
+                </div>
+              </div>
+
+              {/* Subsection 17.2: Palabhā & Earth Curvature */}
+              <div className="philosophy-card" style={{ background: '#eff6ff', border: '1.5px solid #bfdbfe', margin: '1.5rem 0' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#2563eb', textTransform: 'uppercase' }}>
+                  Celestial Gnomon &amp; Spherical Geodesy (Dig-Deśa-Kāla-Jñāna)
+                </span>
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#1e3a8a' }}>
+                  🌍 Palabhā (पलभा): Deriving Local Latitude &amp; The Earth&apos;s Spherical Circumference
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#1e3a8a', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  The 12-aṅgula gnomon was also India&apos;s primary astronomical instrument. On the equinox (when solar declination is zero), the noon shadow is called the <strong>Palabhā (पलभा)</strong>. Because the Sun is directly overhead at the terrestrial equator at noon, the angle of the shadow at your local meridian directly yields your geographic latitude:
+                </p>
+
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bfdbfe', marginBottom: '1rem' }}>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#1d4ed8', fontFamily: 'monospace', textAlign: 'center', marginBottom: '0.5rem' }}>
+                    tan(φ) = Palabhā / 12  ⟹  Latitude φ = arctan(Palabhā / 12)
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem', marginTop: '0.75rem' }}>
+                    <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#0284c7' }}>📍 Ujjain (Prime Meridian of India)</div>
+                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 5.3 aṅgulas ⟹ <strong>φ ≈ 23.2° N</strong> (Tropic of Cancer)</div>
+                    </div>
+                    <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#0284c7' }}>📍 Kanchipuram (South India)</div>
+                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 2.8 aṅgulas ⟹ <strong>φ ≈ 12.8° N</strong></div>
+                    </div>
+                    <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#0284c7' }}>📍 Varanasi (Kāśī)</div>
+                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 6.2 aṅgulas ⟹ <strong>φ ≈ 25.3° N</strong></div>
+                    </div>
+                    <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#0284c7' }}>📍 Kashmir (Śāradā Pīṭha)</div>
+                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 8.2 aṅgulas ⟹ <strong>φ ≈ 34.3° N</strong></div>
+                    </div>
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.5, margin: '0.85rem 0 0' }}>
+                    <strong>Planetary Circumference:</strong> Measuring the difference in Palabhā (Δφ) between two cities along the same longitude separated by distance <em>K</em> yielded the Earth’s spherical circumference: <em>C = (360° / Δφ) × K ≈ 4,967 Yojanas (~39,960 km)</em>, matching modern satellite measurements (40,075 km) to within 1%!
+                  </p>
+                </div>
+              </div>
+
+              {/* Subsection 17.3: Bījagaṇita Negative Numbers & Zero */}
+              <div className="philosophy-card" style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', margin: '1.5rem 0' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#7c3aed', textTransform: 'uppercase' }}>
+                  Bījagaṇita Algebra · Ṛṇa, Dhana &amp; Khaharā Rāśiḥ
+                </span>
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#4c1d95' }}>
+                  ⚡ The Arithmetic of Debts (Ṛṇa) &amp; Fortunes (Dhana): Signed Numbers &amp; Infinity
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  In his algebraic companion text <em>Bījagaṇita</em>, Bhāskarācārya formalized the arithmetic of signed numbers and infinity centuries ahead of European algebra:
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem', marginBottom: '1rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#7c3aed', marginBottom: '0.3rem' }}>
+                      ➕ ➖ Signed Arithmetic (Dhana &amp; Ṛṇa)
+                    </div>
+                    <ul style={{ fontSize: '0.78rem', color: '#334155', paddingLeft: '1.2rem', margin: 0, lineHeight: 1.6 }}>
+                      <li><strong>Dhana × Dhana = Dhana:</strong> (+a) × (+b) = +ab</li>
+                      <li><strong>Ṛṇa × Ṛṇa = Dhana:</strong> (-a) × (-b) = +ab (Product of two negatives is positive)</li>
+                      <li><strong>Dhana × Ṛṇa = Ṛṇa:</strong> (+a) × (-b) = -ab</li>
+                      <li><strong>Square of a negative:</strong> (-a)² = +a²; a negative number has no real square root in standard arithmetic.</li>
+                    </ul>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#7c3aed', marginBottom: '0.3rem' }}>
+                      ♾️ Khaharā Rāśiḥ (Division by Zero = Infinity)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#334155', lineHeight: 1.55, margin: 0 }}>
+                      Bhāskara defined <em>a / 0 = ∞</em> (Khahara). In a famous poetic verse, he compares the mathematical infinite to the Supreme Lord:
+                      <br />
+                      <em>&ldquo;Just as in the infinite Brahman (Lord Viṣṇu), though countless beings and universes enter during cosmic dissolution (Pralaya) or emerge during creation (Sṛṣṭi), no change or diminution occurs—so also, to the quantity whose divisor is zero (Khahara), nothing is added or diminished when finite numbers are added or subtracted.&rdquo;</em>
+                    </p>
+                  </div>
+                </div>
+
+                <div style={{ textAlign: 'center' }}>
+                  <a
+                    href="#lilavati-studio"
+                    className="philosophy-cta-secondary"
+                    style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
+                  >
+                    ⚙️ Launch Interactive Gnomon Shadow &amp; Height Studio ➔
                   </a>
                 </div>
               </div>
