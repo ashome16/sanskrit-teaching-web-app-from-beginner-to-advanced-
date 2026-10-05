@@ -7,6 +7,8 @@ In Sanskrit grammar, tenses and moods are called **Lakāras (लकाराः)
 ---
 
 ## 1. The 9 Universal Endings of Laṭ Lakāra
+[[figure:lat-nine-endings]]
+
 In Sanskrit, verbs decline across **3 Persons (Puruṣas)** and **3 Numbers (Vacanas)**, forming a 3×3 grid of 9 forms:
 
 | Person (पुरुषः) | Singular (एकवचनम्) | Dual (द्विवचनम्) | Plural (बहुवचनम्) | English Meaning |

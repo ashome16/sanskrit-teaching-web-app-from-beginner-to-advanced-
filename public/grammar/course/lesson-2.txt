@@ -18,6 +18,8 @@ Sanskrit consonants are organized with mathematical perfection along the human v
 ---
 
 ## 2. Grouped Consonants: The 5 Varga Families (वर्गीयाः)
+[[figure:five-varga-families]]
+
 There are **25 grouped consonants**, divided into 5 rows (Vargas) of 5 letters each. Each row corresponds to one of the 5 vocal places.
 
 | Varga (Row) | Unvoiced Unaspirated | Unvoiced Aspirated | Voiced Unaspirated | Voiced Aspirated | Nasal (Anunāsika) |

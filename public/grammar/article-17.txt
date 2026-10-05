@@ -30,6 +30,8 @@ Ancient Śābdabodha Dependency Graph:
 
 ## 2 · The Core Architecture of Bhartṛhari’s Vākyapadīya
 
+[[figure:vakyapadiya-three-kandas]]
+
 Bhartṛhari’s *Vākyapadīya* is divided into three kāṇḍas (books): the *Brahmakāṇḍa* (on the metaphysics of speech), the *Vākyakāṇḍa* (on the sentence and its indivisible meaning), and the *Padakāṇḍa* (on words, relations, and kārakas).
 
 Rather than viewing words as isolated, static tiles strung together mechanically, Bhartṛhari establishes a dynamic cognitive model organized around three operational pillars:

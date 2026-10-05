@@ -15,6 +15,8 @@ Devanāgarī is written from **left to right**. A defining feature of this scrip
 ---
 
 ## 2. Introduction to Vowels: Svara (स्वर)
+[[figure:thirteen-vowels-matra]]
+
 In Sanskrit grammar, vowels are called **Svara**. These are sounds that can be pronounced independently without the help of any other letter. 
 
 Sanskrit traditionally recognizes **13 primary vowels**, which are categorized based on their duration of utterance (called **Mātrā**).

@@ -7,6 +7,8 @@ Sanskrit is not a collection of arbitrary words memorized by rote. It is a gener
 ---
 
 ## 1. The Two Pillars of Sanskrit Words
+[[figure:two-pada-pillars]]
+
 In Sanskrit, every inflected word used in a sentence is called a **Pada (पदम्)**. Pāṇini’s golden rule states:
 > **अपदं न प्रयुञ्जीत** (*Apadaṁ na prayuñjīta*)  
 > *"Never use a raw, uninflected word in a sentence."*

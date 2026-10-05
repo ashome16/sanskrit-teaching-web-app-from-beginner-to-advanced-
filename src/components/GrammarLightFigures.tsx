@@ -521,6 +521,256 @@ function HarappanBrickRatio() {
   );
 }
 
+
+/** Article 1: two parallel tracks named in the opening. */
+function TwoParallelTracks() {
+  const tracks = [
+    { n: '1', title: 'Spiritual', sa: 'शब्द · मन्त्र', clue: 'precise chant · vibration' },
+    { n: '2', title: 'Scientific', sa: 'स्थान · व्याकरण', clue: 'vocal map · structure' },
+  ];
+  const cellW = 200;
+  const gap = 36;
+  const w = tracks.length * cellW + (tracks.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Two parallel tracks"
+      caption="The article’s opening claim: Sanskrit evolved along a spiritual track and a scientific track that fuse mystical resonance with analytical precision."
+      maxWidth={520}
+    >
+      <svg viewBox={`0 0 ${w} 130`} role="img" aria-labelledby="tracks2-title" style={{ fontFamily: SANS }}>
+        <title id="tracks2-title">Two parallel tracks: spiritual purpose and scientific purpose.</title>
+        {tracks.map((t, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={t.n}>
+              {i > 0 && (
+                <g>
+                  <line x1={x - gap + 6} y1="58" x2={x - 10} y2="58" stroke="#0f766e" strokeWidth="4" strokeLinecap="round" />
+                  <text x={x - gap / 2} y="48" fill="#0f766e" fontSize="12" fontWeight="800" textAnchor="middle">+</text>
+                </g>
+              )}
+              <rect x={x} y="12" width={cellW} height="100" rx="12" fill="#fff7ed" stroke={i === 0 ? '#fdba74' : '#86efac'} strokeWidth="4" />
+              <text x={x + cellW / 2} y="38" fill="#0f766e" fontSize="14" fontWeight="800" textAnchor="middle">{t.n}</text>
+              <text x={x + cellW / 2} y="62" fill="#9a3412" fontSize="16" fontWeight="800" textAnchor="middle">{t.title}</text>
+              <text x={x + cellW / 2} y="84" fill="#3a2414" fontSize="14" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{t.sa}</text>
+              <text x={x + cellW / 2} y="104" fill="#475569" fontSize="11" fontWeight="600" textAnchor="middle">{t.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Article 17: three kāṇḍas of the Vākyapadīya. */
+function VakyapadiyaThreeKandas() {
+  const books = [
+    { n: '1', sa: 'ब्रह्मकाण्ड', en: 'Brahmakāṇḍa', clue: 'metaphysics of speech' },
+    { n: '2', sa: 'वाक्यकाण्ड', en: 'Vākyakāṇḍa', clue: 'sentence · indivisible meaning' },
+    { n: '3', sa: 'पदकाण्ड', en: 'Padakāṇḍa', clue: 'words · relations · kārakas' },
+  ];
+  const cellW = 168;
+  const gap = 12;
+  const w = books.length * cellW + (books.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Vākyapadīya · three kāṇḍas"
+      caption="The article’s three books: Brahmakāṇḍa on the metaphysics of speech, Vākyakāṇḍa on the sentence and its indivisible meaning, and Padakāṇḍa on words, relations, and kārakas."
+      maxWidth={600}
+    >
+      <svg viewBox={`0 0 ${w} 120`} role="img" aria-labelledby="kanda3-title" style={{ fontFamily: SANS }}>
+        <title id="kanda3-title">Three kandas of Bhartrhari’s Vakyapadiya.</title>
+        {books.map((b, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={b.n}>
+              <rect x={x} y="8" width={cellW} height="100" rx="12" fill="#fff7ed" stroke="#38bdf8" strokeWidth="3" />
+              <text x={x + cellW / 2} y="32" fill="#0f766e" fontSize="13" fontWeight="800" textAnchor="middle">{b.n}</text>
+              <text x={x + cellW / 2} y="56" fill="#3a2414" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{b.sa}</text>
+              <text x={x + cellW / 2} y="78" fill="#0369a1" fontSize="12" fontWeight="700" textAnchor="middle">{b.en}</text>
+              <text x={x + cellW / 2} y="98" fill="#475569" fontSize="10" fontWeight="600" textAnchor="middle">{b.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course lesson 1: thirteen primary vowels by mātrā group. */
+function ThirteenVowelsMatra() {
+  const groups = [
+    {
+      title: 'Hrasva · 1 mātrā',
+      stroke: '#86efac',
+      items: ['अ', 'इ', 'उ', 'ऋ', 'ऌ'],
+    },
+    {
+      title: 'Dīrgha · 2 mātrās',
+      stroke: '#fdba74',
+      items: ['आ', 'ई', 'ऊ', 'ॠ'],
+    },
+    {
+      title: 'Samyukta · 2 mātrās',
+      stroke: '#38bdf8',
+      items: ['ए', 'ऐ', 'ओ', 'औ'],
+    },
+  ];
+  const cellW = 188;
+  const gap = 12;
+  const w = groups.length * cellW + (groups.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Thirteen vowels · by mātrā"
+      caption="The lesson’s 13 primary vowels: five short (1 mātrā), four long (2 mātrās), and four diphthongs / compound vowels (also 2 mātrās)."
+      maxWidth={640}
+    >
+      <svg viewBox={`0 0 ${w} 140`} role="img" aria-labelledby="vow13-title" style={{ fontFamily: SANS }}>
+        <title id="vow13-title">Thirteen Sanskrit vowels grouped by duration.</title>
+        {groups.map((g, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={g.title}>
+              <rect x={x} y="8" width={cellW} height="120" rx="12" fill="#fff7ed" stroke={g.stroke} strokeWidth="3" />
+              <text x={x + cellW / 2} y="32" fill="#0f766e" fontSize="12" fontWeight="800" textAnchor="middle">{g.title}</text>
+              <text x={x + cellW / 2} y="68" fill="#3a2414" fontSize="20" fontWeight="700" textAnchor="middle" fontFamily={DEV}>
+                {g.items.join(' ')}
+              </text>
+              <text x={x + cellW / 2} y="104" fill="#475569" fontSize="12" fontWeight="700" textAnchor="middle">{g.items.length} sounds</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course lesson 2: five varga families from the grouped-consonant table. */
+function FiveVargaFamilies() {
+  const vargas = [
+    { n: '1', sa: 'क-वर्ग', en: 'Ka-varga', clue: 'क ख ग घ ङ' },
+    { n: '2', sa: 'च-वर्ग', en: 'Ca-varga', clue: 'च छ ज झ ञ' },
+    { n: '3', sa: 'ट-वर्ग', en: 'Ṭa-varga', clue: 'ट ठ ड ढ ण' },
+    { n: '4', sa: 'त-वर्ग', en: 'Ta-varga', clue: 'त थ द ध न' },
+    { n: '5', sa: 'प-वर्ग', en: 'Pa-varga', clue: 'प फ ब भ म' },
+  ];
+  const cellW = 112;
+  const gap = 10;
+  const w = vargas.length * cellW + (vargas.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Five varga families"
+      caption="The lesson’s 25 grouped consonants: five rows of five, each row a varga matching one articulation place from throat to lips."
+      maxWidth={640}
+    >
+      <svg viewBox={`0 0 ${w} 120`} role="img" aria-labelledby="varga5-title" style={{ fontFamily: SANS }}>
+        <title id="varga5-title">Five Sanskrit varga consonant families.</title>
+        {vargas.map((v, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={v.n}>
+              <rect x={x} y="8" width={cellW} height="100" rx="12" fill="#fff7ed" stroke="#fdba74" strokeWidth="3" />
+              <text x={x + cellW / 2} y="30" fill="#0f766e" fontSize="13" fontWeight="800" textAnchor="middle">{v.n}</text>
+              <text x={x + cellW / 2} y="52" fill="#3a2414" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{v.sa}</text>
+              <text x={x + cellW / 2} y="74" fill="#9a3412" fontSize="12" fontWeight="700" textAnchor="middle">{v.en}</text>
+              <text x={x + cellW / 2} y="96" fill="#475569" fontSize="10" fontWeight="600" textAnchor="middle" fontFamily={DEV}>{v.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course lesson 3: Subanta and Tiṅanta as the two pada pillars. */
+function TwoPadaPillars() {
+  const pillars = [
+    { n: '1', sa: 'सुबन्त', en: 'Subanta', clue: 'nouns · pronouns · adjectives' },
+    { n: '2', sa: 'तिङन्त', en: 'Tiṅanta', clue: 'verbs · tense · person · number' },
+  ];
+  const cellW = 210;
+  const gap = 40;
+  const w = pillars.length * cellW + (pillars.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Two pillars of Pada"
+      caption="The lesson’s rule: every finished word (pada) is either Subanta (nominal, with case endings) or Tiṅanta (verbal, with conjugational endings)."
+      maxWidth={560}
+    >
+      <svg viewBox={`0 0 ${w} 130`} role="img" aria-labelledby="pada2-title" style={{ fontFamily: SANS }}>
+        <title id="pada2-title">Two pillars of Sanskrit words: Subanta and Tinanta.</title>
+        {pillars.map((p, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={p.n}>
+              {i > 0 && (
+                <text x={x - gap / 2} y="68" fill="#0f766e" fontSize="18" fontWeight="800" textAnchor="middle">or</text>
+              )}
+              <rect x={x} y="12" width={cellW} height="100" rx="12" fill="#fff7ed" stroke={i === 0 ? '#fdba74' : '#86efac'} strokeWidth="4" />
+              <text x={x + cellW / 2} y="38" fill="#0f766e" fontSize="14" fontWeight="800" textAnchor="middle">{p.n}</text>
+              <text x={x + cellW / 2} y="62" fill="#3a2414" fontSize="18" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{p.sa}</text>
+              <text x={x + cellW / 2} y="84" fill="#9a3412" fontSize="13" fontWeight="700" textAnchor="middle">{p.en}</text>
+              <text x={x + cellW / 2} y="104" fill="#475569" fontSize="11" fontWeight="600" textAnchor="middle">{p.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course lesson 7: nine Laṭ endings across person × number. */
+function LatNineEndings() {
+  const headers = ['Person', 'एक · 1', 'द्वि · 2', 'बहु · 3+'];
+  const rows = [
+    { g: 'प्रथम · 3rd', e1: '-ति', e2: '-तः', e3: '-अन्ति' },
+    { g: 'मध्यम · 2nd', e1: '-सि', e2: '-थः', e3: '-थ' },
+    { g: 'उत्तम · 1st', e1: '-मि', e2: '-वः', e3: '-मः' },
+  ];
+  const colW = [140, 90, 90, 90];
+  const xOf = (c: number) => 4 + colW.slice(0, c).reduce((a, b) => a + b, 0);
+  const w = colW.reduce((a, b) => a + b, 0) + 8;
+  const rowH = 44;
+  const h = (rows.length + 1) * rowH + 8;
+  return (
+    <Panel
+      kicker="Laṭ · nine endings"
+      caption="The lesson’s 3×3 Laṭ grid: Prathama, Madhyama, and Uttama across singular, dual, and plural — ti-taḥ-anti / si-thaḥ-tha / mi-vaḥ-maḥ."
+      maxWidth={560}
+    >
+      <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-labelledby="lat9-title" style={{ fontFamily: SANS }}>
+        <title id="lat9-title">Nine present-tense verb endings for Lat lakara.</title>
+        {headers.map((hlabel, c) => (
+          <g key={hlabel}>
+            <rect x={xOf(c)} y="4" width={colW[c]} height={rowH} fill="#ecfdf5" stroke="#86efac" strokeWidth="2" />
+            <text x={xOf(c) + colW[c] / 2} y="32" fill="#0f766e" fontSize="13" fontWeight="800" textAnchor="middle">{hlabel}</text>
+          </g>
+        ))}
+        {rows.map((r, ri) => {
+          const y = 4 + (ri + 1) * rowH;
+          const cells = [r.g, r.e1, r.e2, r.e3];
+          return cells.map((cell, c) => (
+            <g key={`${ri}-${c}`}>
+              <rect x={xOf(c)} y={y} width={colW[c]} height={rowH} fill="#fff7ed" stroke="#fdba74" strokeWidth="2" />
+              <text
+                x={xOf(c) + colW[c] / 2}
+                y={y + 28}
+                fill="#3a2414"
+                fontSize={c === 0 ? 12 : 16}
+                fontWeight="700"
+                textAnchor="middle"
+                fontFamily={c === 0 ? SANS : DEV}
+              >
+                {cell}
+              </text>
+            </g>
+          ));
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
 const FIGURES: Record<string, () => ReactNode> = {
   'vibhakti-eight-cases': () => <VibhaktiEightCases />,
   'dasagana-ten-classes': () => <DasaganaTenClasses />,
@@ -534,6 +784,12 @@ const FIGURES: Record<string, () => ReactNode> = {
   'panchanga-five-limbs': () => <PanchangaFiveLimbs />,
   'dasagunottara-thirteen-rungs': () => <DasagunottaraThirteenRungs />,
   'harappan-brick-ratio': () => <HarappanBrickRatio />,
+  'two-parallel-tracks': () => <TwoParallelTracks />,
+  'vakyapadiya-three-kandas': () => <VakyapadiyaThreeKandas />,
+  'thirteen-vowels-matra': () => <ThirteenVowelsMatra />,
+  'five-varga-families': () => <FiveVargaFamilies />,
+  'two-pada-pillars': () => <TwoPadaPillars />,
+  'lat-nine-endings': () => <LatNineEndings />,
 };
 
 export function isGrammarLightFigure(id: string): boolean {
