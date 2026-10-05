@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-label="A cartoon dog with its hips up">
+  <rect width="320" height="240" rx="28" fill="#fff8ef"/>
+  <ellipse cx="160" cy="206" rx="118" ry="16" fill="#d7f3cf"/>
+  <circle cx="46" cy="42" r="10" fill="#ffe08a"/>
+  <circle cx="274" cy="36" r="7" fill="#ffd0e0"/>
+  
+  <path d="M70 170 L110 110 L210 110 L250 170" fill="#f6d39b" stroke="#e0b06a" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="118" cy="108" r="22" fill="#f6d39b"/>
+  <path d="M100 100 L96 78 L118 96 Z" fill="#e7b56a"/>
+  <path d="M136 98 L150 78 L140 104 Z" fill="#e7b56a"/>
+  <circle cx="112" cy="106" r="3" fill="#3d3428"/>
+  <circle cx="128" cy="106" r="3" fill="#3d3428"/>
+  <ellipse cx="120" cy="116" rx="6" ry="4" fill="#e0899a"/>
+  <path d="M248 150 Q270 130 258 172" fill="none" stroke="#e0b06a" stroke-width="6" stroke-linecap="round"/>
+
+</svg>

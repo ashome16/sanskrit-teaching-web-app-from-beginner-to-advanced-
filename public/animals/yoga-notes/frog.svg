@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-label="A cartoon frog">
+  <rect width="320" height="240" rx="28" fill="#fff8ef"/>
+  <ellipse cx="160" cy="206" rx="118" ry="16" fill="#d7f3cf"/>
+  <circle cx="46" cy="42" r="10" fill="#ffe08a"/>
+  <circle cx="274" cy="36" r="7" fill="#ffd0e0"/>
+  
+  <ellipse cx="160" cy="150" rx="58" ry="36" fill="#8ed37a"/>
+  <circle cx="124" cy="124" r="18" fill="#8ed37a"/>
+  <circle cx="196" cy="124" r="18" fill="#8ed37a"/>
+  <circle cx="124" cy="124" r="7" fill="#fff"/>
+  <circle cx="196" cy="124" r="7" fill="#fff"/>
+  <circle cx="124" cy="124" r="3" fill="#3d3428"/>
+  <circle cx="196" cy="124" r="3" fill="#3d3428"/>
+  <path d="M148 156 Q160 166 172 156" fill="none" stroke="#3d8f4a" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="108" cy="176" rx="18" ry="8" fill="#7bc86a"/>
+  <ellipse cx="214" cy="176" rx="18" ry="8" fill="#7bc86a"/>
+
+</svg>

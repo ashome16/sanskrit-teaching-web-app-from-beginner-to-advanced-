@@ -164,6 +164,8 @@ export interface VedicArticleSection {
   paragraphs: string[];
   /** Diagram shown after the paragraphs. */
   figure?: VedicArticleFigureId;
+  /** Cute drawings in public/, one picture per pose or sound. */
+  pictures?: { src: string; alt: string; caption: string }[];
   highlight?: string;
   /** Site deep links (/vedic-maths#<anchor>) shown under the section. */
   links?: { anchor: string; label: string }[];
@@ -3061,6 +3063,190 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Piṅgala’s Chandaḥśāstra discovered binary computing (0/1), permutations (Prastāra), Pascal’s Triangle (Meru-Prastāra), and Fibonacci sequences through poetic meter.',
       'Cryptographic systems (Bhūta-Saṅkhyā and Kaṭapayādi) eliminated the divide between letters and numbers, allowing 31-decimal astronomical constants to be preserved in devotional poetry.',
       'Under the sacred epistemology of Yathā Piṇḍe Tathā Brahmāṇḍe, mathematics is practiced as Darśana—a non-individualistic offering (Jñāna-Yajña) connecting human consciousness back to Paramātmā.'
+    ]
+  },
+  {
+    id: 'animal-names-yoga-sounds',
+    slug: 'animal-names-yoga-sounds',
+    title: 'Animal Names: Yoga Shapes and Singing Notes',
+    sanskritTitle: '॥ पशु-नामानि · आसन-आकृतयः गान-स्वराश्च ॥',
+    subtitle: 'Some poses are named for an animal\'s shape. One old book says animals call seven singing notes. Those notes are not alphabet letters.',
+    readingTime: '8 min read',
+    badge: 'For young readers · Animals',
+    sections: [
+      {
+        title: 'A name is not a birthday',
+        sanskritTitle: 'नाम आकृतिं वदति · न जन्मदिनम्',
+        paragraphs: [
+          'Some yoga shapes wear an animal\'s name. The body looks a little like that animal.',
+          'A name is not the same as a story that an old book invented the shape.',
+          'When a book describes a pose, this page says what that book says.',
+          'When a classroom uses a newer name, this page says the name is newer.',
+          'If a year appears below, it is the year of a copy people can still read. It is not the day a pose began.'
+        ],
+        highlight: 'Ask a teacher before you try a shape with your body. The pictures here are animals, not photos of people.'
+      },
+      {
+        title: 'Lion: a sitting pose with an open mouth',
+        sanskritTitle: 'सिंहासनम्',
+        paragraphs: [
+          'Two yoga books name a lion seat, siṃhāsana. Siṃha means a lion.',
+          'It is a sitting pose. The mouth is open. The hands rest on the knees or the thighs. The eyes look toward the tip of the nose.',
+          'The open mouth is the lion part. This is not a pose on hands and knees.',
+          'The Haṭhapradīpikā says this. In one English translation the verses are numbered 52 to 54 in chapter 1. The Light on Hatha Yoga project reports a copy of that book dated 1496. That year belongs to the copy.',
+          'The Gheraṇḍa Saṃhitā says it too, in the lesson on thirty-two seats: व्यक्तवक्त्रो … सिंहासनं. Vyaktavaktra means the mouth is open. James Mallinson reports that the oldest dated copy he knows was copied in Bengal in 1802. That year belongs to the copy.'
+        ],
+        pictures: [
+          { src: '/animals/yoga-notes/lion.svg', alt: 'A gentle cartoon lion with a small open mouth', caption: 'Lion seat. The book\'s shape is a person sitting, mouth open, like a lion\'s face.' }
+        ]
+      },
+      {
+        title: 'Cobra: head up like a hood',
+        sanskritTitle: 'भुजङ्गासनम्',
+        paragraphs: [
+          'The same Gheraṇḍa lesson names bhujaṅgāsana. Bhujaṅga means a snake.',
+          'The lines say: place the body on the ground from the toes to the navel, hold the earth with the palms, and lift the head like a hood.',
+          'अङ्गुष्ठनाभिपर्यन्तमधोभूमौ विनिन्यसेत् । करतलाभ्यां धरां धृत्वोर्ध्वं शीर्षं फणीव हि ।',
+          'That shape is close to the cobra pose in class today. The book describes it. The book does not say it invented it. The 1802 date above is still only a copy\'s date.'
+        ],
+        pictures: [
+          { src: '/animals/yoga-notes/cobra.svg', alt: 'A friendly cartoon snake with a small hood', caption: 'Cobra pose. The book says the head lifts like a snake\'s hood.' }
+        ]
+      },
+      {
+        title: 'Peacock: a straight body on the hands',
+        sanskritTitle: 'मयूरासनम्',
+        paragraphs: [
+          'The Gheraṇḍa lesson also names mayūrāsana. Mayūra means a peacock.',
+          'The lines say the palms press the ground, the belly rests near the elbows, and the body lifts straight, like a stick.',
+          'The long straight body is the bird part of the name.',
+          'This is a strong balance. A teacher helps. This page is not asking you to try it alone.'
+        ],
+        pictures: [
+          { src: '/animals/yoga-notes/peacock.svg', alt: 'A cartoon peacock with a small fan of tail spots', caption: 'Peacock pose. The book\'s shape is a straight body lifted on the hands.' }
+        ]
+      },
+      {
+        title: 'Tortoise and fish: names the book gives',
+        sanskritTitle: 'कूर्मासनम् · मत्स्यासनम्',
+        paragraphs: [
+          'The same lesson names kūrma, a tortoise. The ankles cross, and the body, head, and neck stay straight. The tucked seat is the tortoise part.',
+          'It also names matsya, a fish. The lines say to lie on the back, from a cross-legged seat, with the elbows around the head.',
+          'The body does not turn into a fish. The book only gives the name.'
+        ],
+        pictures: [
+          { src: '/animals/yoga-notes/tortoise.svg', alt: 'A cartoon tortoise with a round shell', caption: 'Tortoise seat. A sitting pose. The book does not draw a shell on the person.' },
+          { src: '/animals/yoga-notes/fish.svg', alt: 'A cartoon fish', caption: 'Fish seat. The book means a person lying back, not a swimming fish.' }
+        ]
+      },
+      {
+        title: 'Frog: the book\'s frog is not every class frog',
+        sanskritTitle: 'मण्डूकासनम्',
+        paragraphs: [
+          'Maṇḍūka means a frog. In the Gheraṇḍa lesson the soles of the feet go toward the back, the two big toes touch, and the knees come forward.',
+          'The next lines start from that seat, hold the head with the elbows, and say the pose is upturned like a bheka. Bheka is another word for a frog.',
+          'A wide frog on the classroom floor is a newer shape with a newer name. Do not mix the two.'
+        ],
+        pictures: [
+          { src: '/animals/yoga-notes/frog.svg', alt: 'A cartoon frog', caption: 'The picture is the animal. The book\'s frog seat is a kneeling shape, not every frog you see in class.' }
+        ]
+      },
+      {
+        title: 'Camel: three different uses of one word',
+        sanskritTitle: 'उष्ट्रः',
+        paragraphs: [
+          'Uṣṭra means a camel. The word shows up in more than one place, and the shapes are not the same.',
+          'A commentary on Yoga Sūtra 2.46 lists uṣṭraniṣadana, sitting like a camel. It also lists sitting like a krauñca bird and sitting like an elephant. It gives the names. It does not say where the hands and feet go. So we cannot draw those as classroom poses.',
+          'The Gheraṇḍa lesson describes a different camel seat. You lie face down, place the feet on the back, hold them with the hands, and draw the belly and the mouth in. The book says yogins call that the camel seat.',
+          'The kneeling backbend that many classes call camel is a third shape. People named it for a camel\'s hump. The old books on this page do not describe that kneeling shape.'
+        ],
+        pictures: [
+          { src: '/animals/yoga-notes/camel.svg', alt: 'A cartoon camel with one hump', caption: 'Camel. The drawing is only the animal. The book\'s camel seat is not the kneeling backbend.' }
+        ]
+      },
+      {
+        title: 'Cow-face is not cow pose',
+        sanskritTitle: 'गोमुखासनम्',
+        paragraphs: [
+          'Gomukha means a cow\'s face. The Gheraṇḍa lesson says the feet go beside the back and the pose has the shape of a cow\'s face.',
+          'That is a sitting pose. It is not the hands-and-knees cow pose of today\'s class.'
+        ],
+        pictures: [
+          { src: '/animals/yoga-notes/cow-face.svg', alt: 'A cartoon cow face', caption: 'Cow-face pose. The name is the face, not a cow standing on hands and knees.' }
+        ]
+      },
+      {
+        title: 'Cat, cow, and downward dog: newer names for shapes',
+        sanskritTitle: 'मार्जरी · बितिला · अधोमुखश्वानः',
+        paragraphs: [
+          'Cat pose in class is hands and knees, with the back rounded, like a cat stretching. Teachers call it mārjārī-āsana or biḍālāsana. Mārjāra and biḍāla are words for a cat.',
+          'We did not find that hands-and-knees shape in the Haṭhapradīpikā or the Gheraṇḍa Saṃhitā.',
+          'Another manual, the Haṭhābhyāsapaddhati, names a different pose: mārjārottānāsana, the upturned cat. Jason Birch\'s translation says the person is placed like an upturned dog, then touches each knee to an ear. Jacqueline Hargreaves quoted that translation in 2015. That pose is not today\'s cat.',
+          'Cow pose in class dips the back while you are on hands and knees. Teachers call it bitilāsana. Bitila is a word for a cow. We did not find this name in the two books above. It is a modern name for a shape.',
+          'Downward-facing dog lifts the hips, like a dog stretching. B. K. S. Iyengar\'s book Light on Yoga, printed in 1966, gives this shape the name adho mukha śvānāsana, dog with the face down. The year 1966 is the printing of that book. It is not a claim that nobody stretched this way before.',
+          'The Haṭhābhyāsapaddhati also names an upturned dog, śvottānāsana. Its upturned cat starts from that dog. We will not pretend that older dog is today\'s pose.'
+        ],
+        pictures: [
+          { src: '/animals/yoga-notes/cat.svg', alt: 'A cartoon cat stretching its back', caption: 'Today\'s cat pose is named for this stretch. An older book\'s upturned cat is a different shape.' },
+          { src: '/animals/yoga-notes/cow.svg', alt: 'A cartoon cow', caption: 'Today\'s cow pose is named for the dipped back. Cow-face pose is a different, older name.' },
+          { src: '/animals/yoga-notes/dog.svg', alt: 'A cartoon dog with its hips high', caption: 'Downward-facing dog. A 1966 book prints this name for the hips-high shape.' }
+        ]
+      },
+      {
+        title: 'Singing notes that animals call',
+        sanskritTitle: 'नारदीयशिक्षा · सप्त स्वराः',
+        paragraphs: [
+          'The Nāradīya Śikṣā is a book about Vedic sound and song.',
+          'In its first part, fifth section, it says some animals call the seven singing notes.',
+          'The notes are ṣaḍja, ṛṣabha, gāndhāra, madhyama, pañcama, dhaivata, and niṣāda. Singers say sa, ri, ga, ma, pa, dha, ni.',
+          'These are notes for singing. They are not the letters of the alphabet.',
+          'The book uses vadati and vakti, which mean calls or says, and rambhanti, which means they bellow. It does not say a letter comes from an animal.',
+          'We are not giving a year for this book. We do not have a copy-date to put here, and we will not guess when the book began.'
+        ],
+        highlight: 'षड्जं वदति मयूरो गावो रम्भन्ति चर्षभम् । अजाविके तु गान्धारं क्रौञ्चो वदति मध्यमम् ।'
+      },
+      {
+        title: 'Seven animals, seven notes',
+        sanskritTitle: 'मयूरः गावः अजाविका क्रौञ्चः कोकिलः अश्वः कुञ्जरः',
+        paragraphs: [
+          'A peacock, mayūra, calls ṣaḍja.',
+          'Cows, gāvaḥ, bellow ṛṣabha.',
+          'A goat and a sheep call gāndhāra. The book\'s word ajāvike means those two together.',
+          'A krauñca calls madhyama. People often explain krauñca as a heron or a crane. We keep the book\'s word.',
+          'A cuckoo, kokila, calls pañcama. In the copy on Wikisource, the words just before the cuckoo are पूष्पसाधारणे माले. Those words are not clear, so we do not add a season.',
+          'A horse, aśva, calls dhaivata.',
+          'An elephant, kuñjara, calls niṣāda.',
+          'The same section also says the breath roars like a bull, and that is why the note is called ṛṣabha. That is the book\'s story for the name. A bull did not invent the note.',
+          'It also says cows are glad when gāndhāra is sung, and it offers that as a reason for the name. That sentence belongs to the book. We do not turn it into a bigger history.',
+          'अश्वस्तु धैवतं वक्ति निषादं वक्ति कुञ्जरः ।'
+        ],
+        pictures: [
+          { src: '/animals/yoga-notes/peacock.svg', alt: 'A cartoon peacock', caption: 'Peacock calls ṣaḍja (sa).' },
+          { src: '/animals/yoga-notes/cow.svg', alt: 'A cartoon cow', caption: 'Cows bellow ṛṣabha (ri).' },
+          { src: '/animals/yoga-notes/goat-sheep.svg', alt: 'A cartoon goat and sheep', caption: 'A goat and a sheep call gāndhāra (ga).' },
+          { src: '/animals/yoga-notes/heron.svg', alt: 'A cartoon long-legged bird', caption: 'A krauñca bird calls madhyama (ma).' },
+          { src: '/animals/yoga-notes/cuckoo.svg', alt: 'A cartoon cuckoo', caption: 'A cuckoo calls pañcama (pa).' },
+          { src: '/animals/yoga-notes/horse.svg', alt: 'A cartoon horse', caption: 'A horse calls dhaivata (dha).' },
+          { src: '/animals/yoga-notes/elephant.svg', alt: 'A cartoon elephant', caption: 'An elephant calls niṣāda (ni).' }
+        ]
+      },
+      {
+        title: 'What this page will not say',
+        sanskritTitle: 'यन्न वदामः',
+        paragraphs: [
+          'Some classrooms say a letter of the alphabet comes from a peacock, an elephant, or another animal.',
+          'That claim is not in the Nāradīya Śikṣā verses above. Those charts are teaching aids. They are not this book\'s words.',
+          'This page does not say an old book invented a modern studio pose.',
+          'The commentary on Yoga Sūtra 2.46, in the text used here, lists the animal seats in these words: krauñcaniṣadanaṃ hastiniṣadanam uṣṭraniṣadanaṃ. Names only. No shapes.'
+        ]
+      }
+    ],
+    quote: 'A pose can be named for an animal\'s shape. A singing note can be what a book says an animal calls. Neither story means an alphabet letter was born from that animal.',
+    keyTakeaways: [
+      'Lion, cobra, peacock, tortoise, fish, frog, camel, and cow-face are names in the Gheraṇḍa Saṃhitā. Lion is also in the Haṭhapradīpikā. The shapes are the ones those books describe.',
+      'A Haṭhapradīpikā copy reported by the Light on Hatha Yoga project is dated 1496. A dated Gheraṇḍa copy Mallinson reports was copied in Bengal in 1802. Those years are copy dates.',
+      'Today\'s cat, cow, downward-facing dog, kneeling camel, and wide floor-frog are newer names for shapes. Do not mix them with the older names that look similar.',
+      'The Nāradīya Śikṣā says a peacock, cows, a goat and a sheep, a krauñca, a cuckoo, a horse, and an elephant call the seven singing notes. It does not say alphabet letters come from animals.'
     ]
   }
 ];

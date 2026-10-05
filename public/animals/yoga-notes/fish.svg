@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-label="A cartoon fish">
+  <rect width="320" height="240" rx="28" fill="#fff8ef"/>
+  <ellipse cx="160" cy="206" rx="118" ry="16" fill="#d7f3cf"/>
+  <circle cx="46" cy="42" r="10" fill="#ffe08a"/>
+  <circle cx="274" cy="36" r="7" fill="#ffd0e0"/>
+  
+  <ellipse cx="160" cy="140" rx="62" ry="32" fill="#7ec8e3"/>
+  <path d="M214 140 L248 116 L248 164 Z" fill="#5dade2"/>
+  <circle cx="124" cy="134" r="5" fill="#3d3428"/>
+  <path d="M150 140 Q170 150 190 140" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <path d="M160 108 Q170 90 180 110" fill="#9ad7ef"/>
+
+</svg>

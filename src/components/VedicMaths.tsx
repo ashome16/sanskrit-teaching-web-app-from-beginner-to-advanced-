@@ -7835,7 +7835,7 @@ ${bodyHtml}
             </div>
 
             {/* Active Article Reading Presentation */}
-            <article className="article-reading-card" id="vedic-article-card">
+            <article className={`article-reading-card${currentArticle.id === 'animal-names-yoga-sounds' ? ' article-reading-card--meadow' : ''}`} id="vedic-article-card">
               {currentArticle.prequel && (
                 <a
                   className="article-series-link article-series-link--prequel"
@@ -7877,6 +7877,16 @@ ${bodyHtml}
                   {sec.paragraphs.map((p, pIdx) => (
                     <p key={pIdx} className="article-p">{p}</p>
                   ))}
+                  {sec.pictures && sec.pictures.length > 0 && (
+                    <div className="article-animal-grid">
+                      {sec.pictures.map((pic) => (
+                        <figure key={pic.src + pic.caption} className="article-animal-card">
+                          <img src={pic.src} alt={pic.alt} />
+                          <figcaption>{pic.caption}</figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  )}
                   {sec.figure && <VedicArticleFigure id={sec.figure} />}
                   {sec.terms && sec.terms.length > 0 && (
                     <div className="article-terms" aria-label="Tap to hear Sanskrit terms">

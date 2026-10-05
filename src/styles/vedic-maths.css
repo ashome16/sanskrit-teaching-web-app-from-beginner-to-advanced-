@@ -7454,3 +7454,47 @@
   line-height: 1.35;
   color: #cbd5e1;
 }
+
+/* Child article: light meadow page, cute animal cards (not the dark Ujjain diagrams). */
+.article-reading-card--meadow {
+  background: linear-gradient(180deg, #fffdf8 0%, #f4fbf6 55%, #fff8ef 100%);
+  border-color: #e4f0d8;
+}
+
+.article-reading-card--meadow .article-p {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  max-width: 42rem;
+}
+
+.article-animal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.article-animal-card {
+  margin: 0;
+  background: #fffefb;
+  border: 1px solid #f0e2c4;
+  border-radius: 18px;
+  padding: 0.55rem 0.55rem 0.75rem;
+  box-shadow: 0 2px 8px rgba(120, 90, 40, 0.05);
+}
+
+.article-animal-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  background: #fff8ef;
+}
+
+.article-animal-card figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #3f4d3a;
+  text-align: center;
+}

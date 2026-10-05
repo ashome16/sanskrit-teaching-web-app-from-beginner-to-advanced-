@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-label="A friendly cartoon snake with a small hood">
+  <rect width="320" height="240" rx="28" fill="#fff8ef"/>
+  <ellipse cx="160" cy="206" rx="118" ry="16" fill="#d7f3cf"/>
+  <circle cx="46" cy="42" r="10" fill="#ffe08a"/>
+  <circle cx="274" cy="36" r="7" fill="#ffd0e0"/>
+  
+  <path d="M150 190 Q120 160 150 140 Q190 112 160 90" fill="none" stroke="#7dcea0" stroke-width="16" stroke-linecap="round"/>
+  <ellipse cx="160" cy="78" rx="36" ry="28" fill="#8ed6ad"/>
+  <ellipse cx="160" cy="84" rx="18" ry="16" fill="#fff8ef"/>
+  <circle cx="152" cy="80" r="3.5" fill="#3d3428"/>
+  <circle cx="168" cy="80" r="3.5" fill="#3d3428"/>
+  <path d="M154 90 Q160 95 166 90" fill="none" stroke="#3d8f66" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="210" cy="150" r="8" fill="#ffd6e7"/>
+
+</svg>

@@ -833,6 +833,17 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     relatedView: 'grammar',
     relatedGrammarArticleId: 'legacy-of-indian-metrology',
   },
+  {
+    id: 'qa-animal-names-yoga-sounds',
+    category: 'vedic_math',
+    question: 'Where can I read about yoga poses named for animals, and singing notes linked to animals?',
+    sanskritQuestion: 'पशु-नामकानि आसनानि गान-स्वराश्च कुत्र पठनीयाः?',
+    shortAnswer: 'Open “Animal Names: Yoga Shapes and Singing Notes” on the Vedic Maths page.',
+    detailedAnswer: 'That page is for young readers. It says which animal poses a book actually describes (lion, cobra, peacock, and others), and which classroom names are newer (cat, cow, downward-facing dog). It also gives the seven singing notes the Nāradīya Śikṣā says animals call. It does not say alphabet letters come from animals.',
+    tip: 'Search cat pose, cobra, naradiya, or singing notes.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-animal-names-yoga-sounds',
+  },
 ];
 
 export const BODHI_WORD_SUGGESTIONS: BodhiWordSuggestion[] = [
