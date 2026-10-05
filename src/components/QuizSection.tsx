@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { QUIZ_CATEGORIES, QUIZ_QUESTIONS, type QuizQuestionItem } from '../data/quizData';
+import { anchorForLiteratureCategory, categoryForLiteratureAnchor } from '../data/literatureGrammarQuizzes';
 import { playPronunciation } from '../utils/pronunciation';
 import { useAppStore } from '../store';
 import { useAuthStore } from '../store/authStore';
@@ -19,13 +20,20 @@ interface QuizTrack {
   requiresAllChapters?: boolean;
 }
 
+const isLiteratureGrammarCategory = (category: string): boolean =>
+  category === 'grammar' || category === 'varnamala' || category.startsWith('lit_grammar');
+
+const ALL_QUIZ_COUNT = QUIZ_QUESTIONS.length;
+const GRAMMAR_QUIZ_COUNT = QUIZ_QUESTIONS.filter((q) => isLiteratureGrammarCategory(q.category)).length;
+const formatQuizCount = (count: number): string => `${count.toLocaleString('en-US')} Qs`;
+
 export const QUIZ_TRACKS: QuizTrack[] = [
   {
     id: 'all',
     label: 'All Topics',
     sublabel: 'Full Curriculum',
     icon: '🎯',
-    countBadge: '1,557 Qs',
+    countBadge: formatQuizCount(ALL_QUIZ_COUNT),
   },
   {
     id: 'class7',
@@ -53,9 +61,9 @@ export const QUIZ_TRACKS: QuizTrack[] = [
   {
     id: 'grammar',
     label: 'Grammar & Foundations',
-    sublabel: 'Vyākaraṇa & Varṇamālā',
+    sublabel: 'Vyākaraṇa, Varṇamālā & literature lines',
     icon: '📐',
-    countBadge: '96 Qs',
+    countBadge: formatQuizCount(GRAMMAR_QUIZ_COUNT),
   },
   {
     id: 'vedic_maths',
@@ -124,7 +132,7 @@ export const TRACK_CATEGORY_IDS: Record<QuizTrackId, string[]> = {
     'grade9_shabda',
     'grade9_dhatu',
   ],
-  grammar: ['grammar_all', 'grammar', 'varnamala'],
+  grammar: ['grammar_all', 'grammar', 'lit_grammar_basic', 'lit_grammar_middle', 'lit_grammar_higher', 'varnamala'],
   vedic_maths: ['vedic_maths'],
 };
 
@@ -136,12 +144,15 @@ interface QuizSectionProps {
   onGoHome?: () => void;
   onOpenWorksheets?: () => void;
   onOpenReader?: () => void;
+  /** Opens one literature-grammar quiz, e.g. lit-grammar-basic. */
+  initialAnchor?: string | null;
 }
 
 const QuizSection: React.FC<QuizSectionProps> = ({
   onGoHome,
   onOpenWorksheets,
   onOpenReader,
+  initialAnchor,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeTrack, setActiveTrack] = useState<QuizTrackId>('all');
@@ -156,6 +167,22 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   const [showReview, setShowReview] = useState<boolean>(false);
   const [showUpgradePrompt, setShowUpgradePrompt] = useState<boolean>(false);
   const [showHistoryModal, setShowHistoryModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!initialAnchor) return;
+    const categoryId = categoryForLiteratureAnchor(initialAnchor);
+    if (!categoryId) return;
+    setActiveTrack('grammar');
+    setSelectedCategory(categoryId);
+    setChapterSearch('');
+  }, [initialAnchor]);
+
+  useEffect(() => {
+    if (!initialAnchor) return;
+    if (categoryForLiteratureAnchor(initialAnchor) !== selectedCategory) return;
+    document.getElementById(initialAnchor)?.scrollIntoView({ block: 'start' });
+  }, [initialAnchor, selectedCategory, activeTrack]);
+
 
   const { recordQuizAttempt, progress } = useAppStore();
   const quizAttempts = progress?.quizzesCompleted || [];
@@ -196,7 +223,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
       return publicQuestions.filter((q) => String(q.category).startsWith('grade9'));
     }
     if (selectedCategory === 'grammar_all') {
-      return publicQuestions.filter((q) => q.category === 'grammar' || q.category === 'varnamala');
+      return publicQuestions.filter((q) => isLiteratureGrammarCategory(q.category));
     }
     if (selectedCategory === 'cbse_deepakam') {
       return publicQuestions.filter(
@@ -300,7 +327,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
       if (catId === 'all') return publicQuestions.length;
       if (catId === 'grade8_all') return publicQuestions.filter((q) => String(q.category).startsWith('grade8')).length;
       if (catId === 'grade9_all') return publicQuestions.filter((q) => String(q.category).startsWith('grade9')).length;
-      if (catId === 'grammar_all') return publicQuestions.filter((q) => q.category === 'grammar' || q.category === 'varnamala').length;
+      if (catId === 'grammar_all') return publicQuestions.filter((q) => isLiteratureGrammarCategory(q.category)).length;
       if (catId === 'cbse_deepakam') {
         return publicQuestions.filter(
           (q) => q.category === 'cbse_deepakam' || (typeof q.category === 'string' && q.category.startsWith('deep_ch'))
@@ -655,7 +682,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                 </span>
                 <span className="quiz-chapter-panel-badge">
                   {activeTrack === 'all' && !chapterSearch.trim()
-                    ? '5 Tracks · 1,557 Qs'
+                    ? `5 Tracks · ${formatQuizCount(ALL_QUIZ_COUNT)}`
                     : `${displayedCategories.length} Topics`}
                 </span>
               </h3>
@@ -746,6 +773,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                       <button
                         key={cat.id}
                         type="button"
+                        id={anchorForLiteratureCategory(cat.id) || undefined}
                         className={`quiz-cat-pill${isSelected ? ' active' : ''}`}
                         onClick={() => setSelectedCategory(cat.id)}
                       >
@@ -804,7 +832,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                 <span style={{ fontSize: '0.85rem', color: '#78350f', fontWeight: 700 }}>
                   {availableSubQuizzes.length > 15
                     ? `Showing 12 of ${availableSubQuizzes.length} · Pick a specific chapter above to focus`
-                    : 'Select any quiz to test 5 specific MCQs'}
+                    : 'Select a quiz to practise its questions'}
                 </span>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '0.85rem' }}>
@@ -842,7 +870,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                         {sq.title}
                       </div>
                       <div style={{ fontSize: '0.8rem', color: '#b3472f', fontWeight: 700, marginTop: '0.25rem' }}>
-                        🎯 {sq.count} Questions · 50 Points
+                        🎯 {sq.count} Questions · {sq.count * 10} Points
                       </div>
                     </div>
                     <span style={{ fontSize: '1.2rem', color: '#b3472f', marginLeft: '0.5rem', flexShrink: 0 }}>➔</span>

@@ -40,6 +40,8 @@ export interface SearchTarget {
   mathsTab?: 'sutras' | 'altars' | 'multiplication' | 'divisibility' | 'zero' | 'kerala';
   /** /vedic-maths anchor: 'zero', 'sutra-<id>', 'solver-<key>' (see vedicLearningPath.ts), 'article-<slug>'. */
   vedicAnchor?: string;
+  /** /quiz anchor for a literature-grammar quiz, e.g. 'lit-grammar-basic'. */
+  quizAnchor?: string;
   worksheetsCategory?: string;
   openBodhi?: boolean;
   bodhiTab?: 'context' | 'qa' | 'subhashita' | 'phrases';
@@ -3551,6 +3553,93 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: {
       view: 'quiz',
+    },
+  },
+
+  {
+    id: 'quiz-lit-grammar-basic',
+    title: 'Basic: Sandhi, vibhakti, gender, and verb agreement',
+    subtitle: 'Four questions · Baudhāyana Śulbasūtra and Arthaśāstra',
+    category: 'tools',
+    categoryLabel: 'Assessment · Quiz',
+    badgeEmoji: '🧵',
+    badgeColor: '#b45309',
+    description:
+      'A basic grammar quiz on sandhi, case, gender, and verb agreement. Each question uses a line preserved in the Baudhāyana Śulbasūtra (1.12) or the Kauṭilīya Arthaśāstra (1.1.1).',
+    keywords: [
+      'sandhi',
+      'vibhakti',
+      'gender',
+      'verb agreement',
+      'sulbasutra',
+      'baudhayana',
+      'arthashastra',
+      'literature grammar',
+      'basic grammar quiz',
+      'lit-grammar-basic',
+      'सन्धि',
+      'विभक्ति',
+    ],
+    target: {
+      view: 'quiz',
+      quizAnchor: 'lit-grammar-basic',
+    },
+  },
+  {
+    id: 'quiz-lit-grammar-middle',
+    title: 'Middle: Kāraka, samāsa, and lakāra',
+    subtitle: 'Four questions · Arthaśāstra, Śulbasūtra, and Nāradīya Śikṣā',
+    category: 'tools',
+    categoryLabel: 'Assessment · Quiz',
+    badgeEmoji: '📐',
+    badgeColor: '#b45309',
+    description:
+      'A middle grammar quiz on kāraka, samāsa, and lakāra, from Kauṭilīya Arthaśāstra 1.1.1, Baudhāyana Śulbasūtra 1.12, and Nāradīya Śikṣā 1.5.3.',
+    keywords: [
+      'karaka',
+      'samasa',
+      'lakara',
+      'tatpurusha',
+      'karmadharaya',
+      'naradiya shiksha',
+      'middle grammar quiz',
+      'lit-grammar-middle',
+      'कारक',
+      'समास',
+      'लकार',
+    ],
+    target: {
+      view: 'quiz',
+      quizAnchor: 'lit-grammar-middle',
+    },
+  },
+  {
+    id: 'quiz-lit-grammar-higher',
+    title: 'Higher: A Pāṇini sūtra in use, a Śikṣā note, and a Līlāvatī line',
+    subtitle: 'Three questions · ādgunaḥ, a throat-note, and khahara',
+    category: 'tools',
+    categoryLabel: 'Assessment · Quiz',
+    badgeEmoji: '🪷',
+    badgeColor: '#7c2d12',
+    description:
+      'A higher grammar quiz: Aṣṭādhyāyī 6.1.87 आद्गुणः as printed in Nāradīya Śikṣā 1.5.3, the throat-and-chest note in Nāradīya Śikṣā 1.5.5, and स्यात् in Bhāskara’s Līlāvatī zero-operations verse.',
+    keywords: [
+      'panini',
+      'adgunah',
+      '6.1.87',
+      'shiksha',
+      'naradiya',
+      'lilavati',
+      'khahara',
+      'vidhiling',
+      'higher grammar quiz',
+      'lit-grammar-higher',
+      'आद्गुणः',
+      'खहर',
+    ],
+    target: {
+      view: 'quiz',
+      quizAnchor: 'lit-grammar-higher',
     },
   },
   {

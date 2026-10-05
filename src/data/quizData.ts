@@ -1,3 +1,5 @@
+import { LITERATURE_GRAMMAR_QUESTIONS } from './literatureGrammarQuizzes';
+
 export interface QuizQuestionItem {
   id: string;
   category: string;
@@ -31,6 +33,9 @@ export const QUIZ_CATEGORIES = [
   { id: 'deep_ch14', label: 'Appendix 1: शब्दरूपाणि (7 Quizzes · 35 Qs)', icon: '📊' },
   { id: 'cbse_deepakam', label: 'CBSE Deepakam Class 7 (दीपकम्)', icon: '📚' },
   { id: 'grammar', label: 'Vyākaraṇa / Grammar (11 Quizzes · 93 Qs)', icon: '📐' },
+  { id: 'lit_grammar_basic', label: 'Basic: Sandhi, vibhakti, gender, and verb agreement (4 Qs)', icon: '🧵' },
+  { id: 'lit_grammar_middle', label: 'Middle: Kāraka, samāsa, and lakāra (4 Qs)', icon: '📐' },
+  { id: 'lit_grammar_higher', label: 'Higher: A Pāṇini sūtra in use, a Śikṣā note, and a Līlāvatī line (3 Qs)', icon: '🪷' },
   { id: 'vedic_maths', label: 'Vedic Mathematics (वैदिक-गणितम्)', icon: '⚡' },
   { id: 'varnamala', label: 'Alphabet & Syllables (वर्णमाला)', icon: '🔤' },
   { id: 'grammar_all', label: 'All Grammar & Foundations (व्याकरणम् एवं वर्णमाला)', icon: '📐' },
@@ -27113,3 +27118,5 @@ export const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     points: 10
   }
 ];
+
+QUIZ_QUESTIONS.push(...LITERATURE_GRAMMAR_QUESTIONS);

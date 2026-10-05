@@ -772,7 +772,19 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                       className="bodhi-guide-btn"
                                       onClick={() => {
                                         updateIsOpen(false);
-                                        if (item.relatedVedicAnchor && onSearchResultNavigate) {
+                                        if (item.relatedQuizAnchor && onSearchResultNavigate) {
+                                          onSearchResultNavigate({
+                                            id: item.id,
+                                            title: item.shortAnswer,
+                                            category: 'tools',
+                                            categoryLabel: 'Assessment · Quiz',
+                                            badgeEmoji: '🎯',
+                                            badgeColor: '#b45309',
+                                            description: item.shortAnswer,
+                                            keywords: [],
+                                            target: { view: 'quiz', quizAnchor: item.relatedQuizAnchor },
+                                          });
+                                        } else if (item.relatedVedicAnchor && onSearchResultNavigate) {
                                           onSearchResultNavigate({
                                             id: item.id,
                                             title: item.question,
@@ -821,7 +833,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                         }
                                       }}
                                     >
-                                      {item.relatedVedicAnchor || item.relatedGrammarArticleId ? 'Open this article ➔' : item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`}
+                                      {item.relatedQuizAnchor ? 'Open this quiz ➔' : item.relatedVedicAnchor || item.relatedGrammarArticleId ? 'Open this article ➔' : item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`}
                                     </button>
                                   </div>
                                 )}

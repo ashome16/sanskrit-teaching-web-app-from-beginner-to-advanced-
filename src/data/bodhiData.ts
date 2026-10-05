@@ -50,6 +50,8 @@ export interface BodhiQAItem {
   relatedVedicAnchor?: string;
   /** Opens this grammar-shelf article (same landing as site search). */
   relatedGrammarArticleId?: string;
+  /** Opens this quiz anchor on /quiz (same landing as site search). */
+  relatedQuizAnchor?: string;
 }
 
 export interface BodhiWordSuggestion {
@@ -1096,6 +1098,39 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     tip: 'Search vakyapadiya on the grammar shelf.',
     relatedView: 'grammar',
     relatedGrammarArticleId: 'vakyapadiya-and-ai',
+  },
+  {
+    id: 'qa-lit-grammar-basic',
+    category: 'grammar',
+    question: 'Where is the basic quiz on sandhi, vibhakti, gender, and verb agreement?',
+    sanskritQuestion: 'सन्धि-विभक्ति-लिङ्ग-वचन-प्रश्नोत्तरी कुत्र?',
+    shortAnswer: 'Open “Basic: Sandhi, vibhakti, gender, and verb agreement” on the quiz page.',
+    detailedAnswer: 'That quiz has four questions. The lines are the ones preserved in Baudhāyana Śulbasūtra 1.12 and Kauṭilīya Arthaśāstra 1.1.1. The Deepakam lesson quiz is still there beside it.',
+    tip: 'Search lit-grammar-basic, sulbasutra, or arthashastra.',
+    relatedView: 'quiz',
+    relatedQuizAnchor: 'lit-grammar-basic',
+  },
+  {
+    id: 'qa-lit-grammar-middle',
+    category: 'grammar',
+    question: 'Where is the middle quiz on kāraka, samāsa, and lakāra?',
+    sanskritQuestion: 'कारक-समास-लकार-प्रश्नोत्तरी कुत्र?',
+    shortAnswer: 'Open “Middle: Kāraka, samāsa, and lakāra” on the quiz page.',
+    detailedAnswer: 'That quiz has four questions, from Arthaśāstra 1.1.1, Baudhāyana Śulbasūtra 1.12, and Nāradīya Śikṣā 1.5.3.',
+    tip: 'Search lit-grammar-middle, karaka, or lakara.',
+    relatedView: 'quiz',
+    relatedQuizAnchor: 'lit-grammar-middle',
+  },
+  {
+    id: 'qa-lit-grammar-higher',
+    category: 'grammar',
+    question: 'Where is the higher quiz on a Pāṇini sūtra, a Śikṣā note, and a Līlāvatī line?',
+    sanskritQuestion: 'आद्गुणः शिक्षा लीलावती-प्रश्नोत्तरी च कुत्र?',
+    shortAnswer: 'Open “Higher: A Pāṇini sūtra in use, a Śikṣā note, and a Līlāvatī line” on the quiz page.',
+    detailedAnswer: 'That quiz has three questions: आद्गुणः as the Nāradīya Śikṣā prints चर्षभम्, the throat-and-chest note in the same Śikṣā, and स्यात् in the Līlāvatī line on खहर.',
+    tip: 'Search lit-grammar-higher, adgunah, or lilavati.',
+    relatedView: 'quiz',
+    relatedQuizAnchor: 'lit-grammar-higher',
   },
 ];
 

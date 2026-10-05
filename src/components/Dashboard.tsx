@@ -16,6 +16,7 @@ import GlobalSearchModal from './GlobalSearchModal';
 import VoiceSettingsModal from './VoiceSettingsModal';
 import { getSearchShortcut } from '../utils/platformShortcut';
 import type { SearchItem, SearchTarget } from '../data/searchIndex';
+import { categoryForLiteratureAnchor } from '../data/literatureGrammarQuizzes';
 import type { VedicTab } from './VedicMaths';
 import type { GrammarTopic } from './Grammar';
 
@@ -247,6 +248,14 @@ const Dashboard: React.FC = () => {
   const [grammarTargetTopic, setGrammarTargetTopic] = useState<GrammarTopic>('home');
   const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(null);
   const [vedicTarget, setVedicTarget] = useState<{ tab: VedicTab; anchor?: string; key: number }>({ tab: 'sutras', key: 0 });
+  const [quizAnchor, setQuizAnchor] = useState<string | null>(() => {
+    try {
+      if (pathToView(window.location.pathname) !== 'quiz') return null;
+      return categoryForLiteratureAnchor(window.location.hash) ? window.location.hash.replace(/^#/, '') : null;
+    } catch {
+      return null;
+    }
+  });
   const [philosophyEssay, setPhilosophyEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy'>('ai_sanskrit');
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
@@ -345,6 +354,7 @@ const Dashboard: React.FC = () => {
     view: DashboardView,
     lessonId?: string
   ) => {
+    setQuizAnchor(null);
     if (view !== 'course') setCourseAddendumTarget(null);
     if (view === 'home' || view === 'faq' || view === 'philosophy' || view === 'cbse-guide' || view === 'resources') {
       setActiveView(view);
@@ -415,6 +425,14 @@ const Dashboard: React.FC = () => {
       else if (target.mathsTab === 'altars') tab = 'geometry';
       setVedicTarget((prev) => ({ tab, anchor, key: prev.key + 1 }));
       navigateToView('vedic-maths');
+      return;
+    }
+
+    if (target.view === 'quiz') {
+      navigateToView('quiz');
+      if (target.quizAnchor && categoryForLiteratureAnchor(target.quizAnchor)) {
+        setQuizAnchor(target.quizAnchor);
+      }
       return;
     }
 
@@ -566,8 +584,14 @@ const Dashboard: React.FC = () => {
       const onBarakhadi = activeView === 'reader' && lessons[lessonIndex]?.id === 'barakhadi';
       const desired = onBarakhadi ? '/barakhadi' : viewToPath(activeView);
       const current = window.location.pathname.replace(/\/+$/, '') || '/';
+      const quizHash =
+        activeView === 'quiz' && quizAnchor && categoryForLiteratureAnchor(quizAnchor)
+          ? `#${quizAnchor}`
+          : '';
       if (current !== desired) {
-        window.history.pushState({ view: activeView }, '', desired);
+        window.history.pushState({ view: activeView }, '', desired + quizHash);
+      } else if (quizHash && window.location.hash !== quizHash) {
+        window.history.pushState({ view: activeView }, '', desired + quizHash);
       }
 
       // Dynamically update document title & meta tags for SEO & social sharing
@@ -586,7 +610,7 @@ const Dashboard: React.FC = () => {
       if (canonicalEl) canonicalEl.setAttribute('href', canonicalHref);
     } catch {}
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeView, lessons[lessonIndex]?.id]);
+  }, [activeView, lessons[lessonIndex]?.id, quizAnchor]);
 
   useEffect(() => {
     const onPop = () => {
@@ -1129,6 +1153,7 @@ const Dashboard: React.FC = () => {
         )}
         {activeView === 'quiz' && (
           <QuizSection
+            initialAnchor={quizAnchor}
             onGoHome={() => setActiveView('home')}
             onOpenWorksheets={() => handleOpenWorksheets('all')}
             onOpenReader={() => openDeepakam()}
