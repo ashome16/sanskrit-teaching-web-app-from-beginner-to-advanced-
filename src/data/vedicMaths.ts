@@ -3090,6 +3090,29 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           { sa: 'क्रमपरिवर्तन', iast: 'Krama-Parivartana', gloss: 'Permutations of distinct elements and multisets' }
         ],
         highlight: 'Bhāskarācārya solved distinct and multiset permutations in 1150 CE: proving that a 10-armed Shiva yields 3,628,800 sculptures (10!), while a 12-armed deity with 5 lotuses, 3 tridents, 2 swords, and 2 shields yields 166,320 distinct statues [12! / (5! × 3! × 2! × 2!)].'
+      },
+      {
+        title: 'Combinatorics Applied to Inverted Poetry (Gatika Kāvya) & The Sarvato-Bhadra Magic Grid',
+        sanskritTitle: 'गतिककाव्यम् · सर्वतोभद्र-व्यूहः चतुरङ्ग-तुरङ्गबन्धश्च',
+        paragraphs: [
+          'In classical Sanskrit tradition, the intersection of mathematical combinatorics (Aṅka-Pāśa), metrics (Chandaḥ-Śāstra), and geometric constraint poetics (Chitrakāvya) produced structural wordplay and reversible architectures unparalleled in world literature.',
+          '1. Inverted Palindromic Poetry (Gatapratyāgata / Anuloma-Viloma):',
+          'Linear poetics treats a verse as a vector c = [c₁, c₂, ..., cₙ]. Reversing this sequence applies an exchange permutation matrix P where P[i, j] = 1 when j = n - i + 1. An exact palindrome (Gatapratyāgata) satisfies P · c = c. A famous case is Māgha’s Śiśupālavadha (19.40): "Taṃ bhāratātamābhātaṃ taṃ bhātātamabhāratam | Taṃ bhāratātamābhātaṃ taṃ bhātātamabhāratam ||" which reads identically forward and backward letter-by-letter in praise of Lord Kṛṣṇa.',
+          'Even more astonishing is Arasanipalai Veṅkaṭādhvarin’s 17th-century masterpiece Rāghavayādavīyam: a 30-verse epic where reading forward (Anuloma) narrates the Rāmāyaṇa (Lord Rāma), but reading the exact same syllables backwards (Viloma) narrates the Bhāgavatam (Lord Kṛṣṇa). Sanskrit’s case-inflected grammar and samāsa rules permit dynamic semantic reinterpretation across retrograde inversion.',
+          '2. The Sarvato-Bhadra Grid (Perfect 8×8 Multi-Directional Magic Square):',
+          'The Sarvato-Bhadra ("auspicious from all directions") is an 8×8 matrix of 64 syllables invariant under the Dihedral Group D₄ (the 8 reflection and rotation symmetries of a square).',
+          'Mathematical 10-Degree-of-Freedom Theorem: Under D₄ group actions, the 64 entries partition into 4 diagonal orbits of size 4 (16 cells) and 6 off-diagonal orbits of size 8 (48 cells), totaling 64 cells. The poet has ONLY 10 INDEPENDENT GENERATOR SYLLABLES [n(n+2)/8 = 8(10)/8 = 10] to compose all 64 cells while satisfying Anuṣṭubh meter (8 syllables × 4 pādas), grammatical cohesion, and aesthetic meaning!',
+          'A canonical example is Bhāravi’s Kirātārjunīya (15.25): "Devākāninikāvādevā vākāsvasvasvasvakāvā | kāsvabhavyavyabhasvakā nisvavyararavyasvani ||" which reads identically across Row 1 L-to-R, Row 8 R-to-L, Column 1 Top-to-Bottom, and Column 8 Bottom-to-Top.',
+          '3. Move-Constrained Grids: The Knight’s Tour (Turaṅga-Bandha):',
+          'In Pādukā-Sahasram (13th c. CE, Verses 929 & 930), Vedānta Deśika composed an 8×4 chessboard grid that reads linearly as Verse 929, but when traversed via legal chess Knight (L-shaped) moves traces an open Hamiltonian path that yields Verse 930—anticipating Leonhard Euler’s 1759 paper on the Knight’s Tour by 500 years (and Rudraṭa by 900 years).'
+        ],
+        terms: [
+          { sa: 'गतप्रत्यागत', iast: 'Gatapratyāgata', gloss: 'Exact syllabic palindrome where the second half or entire verse reverses identically' },
+          { sa: 'अनुलोम-विलोम', iast: 'Anuloma-Viloma', gloss: 'Bidirectional poetry where reading forward and backward produces two entirely different narratives' },
+          { sa: 'सर्वतोभद्र', iast: 'Sarvato-Bhadra', gloss: '8×8 matrix invariant under dihedral group D₄; readable from all 4 directions identically' },
+          { sa: 'तुरङ्गबन्ध', iast: 'Turaṅga-Bandha', gloss: 'Move-constrained poetic matrix forming a valid chess knight tour / Hamiltonian path' }
+        ],
+        highlight: 'The 8×8 Sarvato-Bhadra magic square is governed by the Dihedral Group D₄: its 64 cells collapse into exactly 10 independent degrees of freedom, proving that ancient Sanskrit poets solved rigorous group-theoretic constraints centuries before modern abstract algebra.'
       }
     ],
     quote: 'The Earth attracts by its own force whatever heavy thing is stationed in space; that object appears to fall, but in an omnidirectional cosmos, where could the spherical Earth itself fall? It rests suspended in the geometric body of the infinite.',
@@ -3104,7 +3127,8 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'The Ahargaṇa master celestial odometer mapped planetary positions via the Rule of Three, corrected by Mandaphala (eccentricity) and Śīghraphala (relative motion).',
       'The Saṅkalpa Mantra computes the exact elapsed age of our current Śveta-Varāha Kalpa as of 2026 CE: exactly 1,972,949,128 years (~1.973 billion years).',
       'The Sūrya Siddhānta sidereal year (365d 6h 12m 36.56s) is accurate to within 3.5 minutes of modern satellite data without mechanical clocks.',
-      'In Līlāvatī Ch. 13 (Aṅka-Pāśa), Bhāskarācārya established permutations of distinct items (10! = 3,628,800 variations for 10-armed Shiva) and multiset permutations with repetitions [n! / (n₁! × ... × nₖ!) = 166,320 for 12-armed deity with 5 lotuses, 3 tridents, 2 swords, 2 shields] 500 years before European mathematicians.'
+      'In Līlāvatī Ch. 13 (Aṅka-Pāśa), Bhāskarācārya established permutations of distinct items (10! = 3,628,800 variations for 10-armed Shiva) and multiset permutations with repetitions [n! / (n₁! × ... × nₖ!) = 166,320 for 12-armed deity with 5 lotuses, 3 tridents, 2 swords, 2 shields] 500 years before European mathematicians.',
+      'In Gatika Kāvya and Chitrakāvya, combinatorial rules govern inverted poetry: exact palindromes (P · c = c in Māgha 19.40), bidirectional epics (Rāghavayādavīyam telling Rāmāyaṇa forward and Bhāgavatam backward), and the 8×8 Sarvato-Bhadra magic square whose D₄ symmetry reduces 64 syllables to exactly 10 independent generator degrees of freedom.'
     ]
   },
   {

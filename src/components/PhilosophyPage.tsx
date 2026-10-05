@@ -3293,6 +3293,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <a href="#lilavati-sidereal-multiverse" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>☀️ 13. Sidereal Precision &amp; Multiverse</a>
                 <a href="#lilavati-video-archives" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎥 14. Dr. Remella Avadhanulu Archives</a>
                 <a href="#lilavati-combinatorics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🔱 15. Aṅka-Pāśa &amp; 10-Armed Shiva</a>
+                <a href="#lilavati-gatika-kavya" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🔄 16. Gatika Kāvya &amp; Sarvatobhadra</a>
               </div>
             </figure>
 
@@ -4497,6 +4498,284 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   </button>
                 </div>
               </section>
+            </section>
+
+            {/* Section 16: Gatika Kāvya & Chitrakāvya: Inverted Palindromes, The Sarvatobhadra 8×8 Matrix & Move-Constrained Grids */}
+            <section className="philosophy-section" id="lilavati-gatika-kavya" aria-labelledby="heading-lilavati-gatika-kavya">
+              <h2 id="heading-lilavati-gatika-kavya">
+                16. Gatika Kāvya &amp; Chitrakāvya: Inverted Palindromes, The Sarvato-Bhadra 8×8 Matrix &amp; Move-Constrained Grids
+              </h2>
+              <p className="philosophy-lead">
+                In classical Sanskrit literature, the intersection of mathematical combinatorics (<em>Aṅka-Pāśa</em>) and constrained poetics (<em>Chitrakāvya</em> / चित्रकाव्य) produced some of the most intellectually astonishing literary architecture in human history. By exploiting Sanskrit’s agglutinative morphology, inflected case system (<em>vibhakti</em>), and rich compound phonology (<em>sandhi</em>), ancient mathematicians and poets constructed verses that behave as <strong>reversible vectors</strong>, <strong>dihedral transformation groups</strong>, and <strong>graph-theoretic Hamiltonian paths</strong>.
+              </p>
+
+              {/* Subsection 16.1: Anuloma-Viloma & Inversion Permutation Matrices */}
+              <div className="philosophy-card" style={{ background: '#f5f3ff', border: '1.5px solid #ddd6fe', margin: '1.5rem 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#7c3aed', textTransform: 'uppercase' }}>
+                    Vector Combinatorics · Reversal Operators (P · c = c)
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handlePlayAudio('तं भारतातमाभातं तं भातातमभारतम्')}
+                    style={{
+                      padding: '0.25rem 0.65rem',
+                      fontSize: '0.76rem',
+                      borderRadius: '6px',
+                      border: '1px solid #c4b5fd',
+                      background: '#ffffff',
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                      color: '#6d28d9',
+                    }}
+                  >
+                    🔊 Chant Māgha 19.40
+                  </button>
+                </div>
+
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#4c1d95' }}>
+                  🔄 Inverted Palindromic Poetry: Gatapratyāgata &amp; Anuloma-Viloma
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#5b21b6', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  In linear algebra, reversing an ordered sequence of <em>n</em> syllables <strong>c = [c₁, c₂, ..., cₙ]ᵀ</strong> corresponds to multiplying by the <strong>backward identity permutation matrix P</strong>:
+                </p>
+
+                <div style={{ background: '#ede9fe', padding: '0.75rem', borderRadius: '8px', border: '1px solid #c4b5fd', fontFamily: 'monospace', fontSize: '0.82rem', color: '#4c1d95', marginBottom: '1rem', overflowX: 'auto' }}>
+                  P = [ [0, ..., 0, 1], [0, ..., 1, 0], ..., [1, 0, ..., 0] ]  where P · [c₁, c₂, ..., cₙ]ᵀ = [cₙ, cₙ₋₁, ..., c₁]ᵀ
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+                  {/* Case 1: Magha */}
+                  <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd6fe' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#7c3aed', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+                      Case 1 · Exact Syllabic Palindrome (Gatapratyāgata)
+                    </div>
+                    <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e1b4b', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+                      तं भारतातमाभातं तं भातातमभारतम् ।<br />
+                      तं भारतातमाभातं तं भातातमभारतम् ॥
+                    </div>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#6d28d9', fontFamily: 'monospace', marginBottom: '0.45rem' }}>
+                      taṃ bhā-ra-tā-tā-mā-bhā-taṃ taṃ bhā-tā-ta-ma-bhā-ra-tam (Māgha, Śiśupālavadha 19.40)
+                    </div>
+                    <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                      <strong>Eigenvector Property (P · c = c):</strong> Reading this verse forwards letter-by-letter or backwards letter-by-letter produces the exact identical phonetic sequence, identical Anuṣṭubh meter, and identical grammatical sense honoring Lord Kṛṣṇa&apos;s illumination of the battlefield.
+                    </p>
+                  </div>
+
+                  {/* Case 2: Raghava-Yadaviyam */}
+                  <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd6fe' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                      <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#d97706', textTransform: 'uppercase' }}>
+                        Case 2 · The Reversible Dual Epic (Anuloma-Viloma)
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => handlePlayAudio('वन्देऽहं देवदेवं तं श्रीदन्तं धरणीधरम्')}
+                        style={{
+                          padding: '0.2rem 0.5rem',
+                          fontSize: '0.72rem',
+                          borderRadius: '4px',
+                          border: '1px solid #fde68a',
+                          background: '#fef3c7',
+                          cursor: 'pointer',
+                          fontWeight: 700,
+                          color: '#b45309',
+                        }}
+                      >
+                        🔊 Chant Verse 1
+                      </button>
+                    </div>
+                    <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.2rem' }}>
+                      Arasanipalai Veṅkaṭādhvarin’s <em>Rāghavayādavīyam</em> (17th Century)
+                    </div>
+                    <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.5, margin: '0 0 0.5rem' }}>
+                      A 30-verse epic of breathtaking combinatorial genius:
+                    </p>
+                    <ul style={{ fontSize: '0.78rem', color: '#334155', paddingLeft: '1.2rem', margin: 0, lineHeight: 1.5 }}>
+                      <li><strong>Forward (Anuloma):</strong> Narrates the life of <strong>Lord Śrī Rāma (Rāmāyaṇa)</strong>.</li>
+                      <li><strong>Reverse (Viloma):</strong> The identical 32 syllables read backward narrate the divine sports of <strong>Lord Śrī Kṛṣṇa (Bhāgavatam)</strong>!</li>
+                      <li><em>Linguistic Mechanism:</em> Word boundaries, root stems, and case endings (<em>vibhakti</em>) dissolve and reassemble cleanly in retrograde without violating Sanskrit grammar.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Subsection 16.2: Sarvato-Bhadra & Dihedral Group D4 */}
+              <div className="philosophy-card" style={{ background: '#ecfdf5', border: '1.5px solid #a7f3d0', margin: '1.5rem 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#059669', textTransform: 'uppercase' }}>
+                    Group Theory · Dihedral Group D₄ &amp; 10 Degrees of Freedom
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handlePlayAudio('देवाकानिनिकावादेवा वाकास्वस्वस्वस्वकावा')}
+                    style={{
+                      padding: '0.25rem 0.65rem',
+                      fontSize: '0.76rem',
+                      borderRadius: '6px',
+                      border: '1px solid #6ee7b7',
+                      background: '#ffffff',
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                      color: '#047857',
+                    }}
+                  >
+                    🔊 Chant Kirātārjunīya 15.25
+                  </button>
+                </div>
+
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#064e3b' }}>
+                  🔲 The Sarvato-Bhadra 8×8 Matrix: Symmetry &amp; The 10-Parameter Freedom Theorem
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#065f46', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  The <strong>Sarvato-Bhadra</strong> (सर्वतोभद्र, meaning &quot;auspicious from all directions&quot;) is an 8×8 matrix of 64 syllables invariant under all 8 operations of the <strong>Dihedral Group D₄</strong> (horizontal reflection, vertical reflection, transposition across the main diagonal, and anti-diagonal reflection).
+                </p>
+
+                {/* Mathematical Proof of 10 Orbits */}
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #a7f3d0', marginBottom: '1.25rem' }}>
+                  <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#047857', marginBottom: '0.35rem' }}>
+                    📐 Mathematical Theorem: Why an 8×8 Sarvato-Bhadra Has Exactly 10 Independent Degrees of Freedom
+                  </div>
+                  <p style={{ fontSize: '0.82rem', color: '#334155', lineHeight: 1.55, margin: '0 0 0.5rem' }}>
+                    Let an 8×8 matrix <em>M</em> be invariant under <em>D₄</em>. By the Orbit-Stabilizer Theorem:
+                  </p>
+                  <div style={{ fontSize: '0.8rem', color: '#0f766e', lineHeight: 1.6, fontFamily: 'monospace' }}>
+                    1. Main Diagonal Cells (Stabilizer size 2): 16 cells partition into 16 / 4 = <strong>4 orbits of size 4</strong> (Corners, Sub-corners, Inner tips, Central 2×2).<br />
+                    2. Off-Diagonal Cells (Trivial stabilizer size 1): 48 cells partition into 48 / 8 = <strong>6 orbits of size 8</strong>.<br />
+                    3. Total Independent Generator Parameters = 4 + 6 = <strong>10 unique syllables!</strong><br />
+                    4. Total Cells = (4 × 4) + (6 × 8) = 16 + 48 = <strong>64 syllables</strong>.
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.5, margin: '0.5rem 0 0' }}>
+                    <em>Poetic Significance:</em> To author an authentic Sarvato-Bhadra, a Sanskrit poet cannot arbitrarily pick 64 words. The poet is constrained to select <strong>only 10 independent syllables</strong> that must concurrently form 4 grammatical pādas of 8 syllables, observe heavy-light (guru-laghu) metric laws, and express profound theological meaning!
+                  </p>
+                </div>
+
+                {/* Bharavi's Shloka & 8x8 Grid Display */}
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #a7f3d0', marginBottom: '1rem' }}>
+                  <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                    <div style={{ fontSize: '1.12rem', fontWeight: 800, color: '#065f46', lineHeight: 1.6 }}>
+                      देवाकानिनिकावादेवा वाकास्वस्वस्वस्वकावा ।<br />
+                      कास्वभव्यव्यभस्वका निस्वव्यररव्यस्वनि ॥
+                    </div>
+                    <div style={{ fontSize: '0.84rem', fontWeight: 600, color: '#047857', fontFamily: 'monospace', marginTop: '0.25rem' }}>
+                      devākāninikāvādevā vākāsvasvasvasvakāvā | kāsvabhavyavyabhasvakā nisvavyararavyasvani ||
+                    </div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b', fontStyle: 'italic', marginTop: '0.35rem' }}>
+                      — Mahākavi Bhāravi, <em>Kirātārjunīya</em> (Canto 15, Verse 25)
+                    </div>
+                  </div>
+
+                  {/* 8x8 Matrix Table */}
+                  <div style={{ overflowX: 'auto' }}>
+                    <table style={{ margin: '0 auto', borderCollapse: 'collapse', textAlign: 'center', fontSize: '0.85rem' }}>
+                      <thead>
+                        <tr style={{ background: '#f0fdf4', color: '#065f46', fontSize: '0.75rem' }}>
+                          <th style={{ padding: '0.35rem 0.5rem', border: '1px solid #bbf7d0' }}>Col</th>
+                          <th style={{ padding: '0.35rem 0.5rem', border: '1px solid #bbf7d0' }}>1</th>
+                          <th style={{ padding: '0.35rem 0.5rem', border: '1px solid #bbf7d0' }}>2</th>
+                          <th style={{ padding: '0.35rem 0.5rem', border: '1px solid #bbf7d0' }}>3</th>
+                          <th style={{ padding: '0.35rem 0.5rem', border: '1px solid #bbf7d0' }}>4</th>
+                          <th style={{ padding: '0.35rem 0.5rem', border: '1px solid #bbf7d0' }}>5</th>
+                          <th style={{ padding: '0.35rem 0.5rem', border: '1px solid #bbf7d0' }}>6</th>
+                          <th style={{ padding: '0.35rem 0.5rem', border: '1px solid #bbf7d0' }}>7</th>
+                          <th style={{ padding: '0.35rem 0.5rem', border: '1px solid #bbf7d0' }}>8</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { r: 'Row 1', syls: ['दे (de)', 'वा (vā)', 'का (kā)', 'नि (ni)', 'नि (ni)', 'का (kā)', 'वा (vā)', 'दे (de)'] },
+                          { r: 'Row 2', syls: ['वा (vā)', 'का (kā)', 'स्व (sva)', 'स्व (sva)', 'स्व (sva)', 'स्व (sva)', 'का (kā)', 'वा (vā)'] },
+                          { r: 'Row 3', syls: ['का (kā)', 'स्व (sva)', 'भ (bha)', 'व्य (vya)', 'व्य (vya)', 'भ (bha)', 'स्व (sva)', 'का (kā)'] },
+                          { r: 'Row 4', syls: ['नि (ni)', 'स्व (sva)', 'व्य (vya)', 'र (ra)', 'र (ra)', 'व्य (vya)', 'स्व (sva)', 'नि (ni)'] },
+                          { r: 'Row 5', syls: ['नि (ni)', 'स्व (sva)', 'व्य (vya)', 'र (ra)', 'र (ra)', 'व्य (vya)', 'स्व (sva)', 'नि (ni)'] },
+                          { r: 'Row 6', syls: ['का (kā)', 'स्व (sva)', 'भ (bha)', 'व्य (vya)', 'व्य (vya)', 'भ (bha)', 'स्व (sva)', 'का (kā)'] },
+                          { r: 'Row 7', syls: ['वा (vā)', 'का (kā)', 'स्व (sva)', 'स्व (sva)', 'स्व (sva)', 'स्व (sva)', 'का (kā)', 'वा (vā)'] },
+                          { r: 'Row 8', syls: ['दे (de)', 'वा (vā)', 'का (kā)', 'नि (ni)', 'नि (ni)', 'का (kā)', 'वा (vā)', 'दे (de)'] },
+                        ].map((row, idx) => (
+                          <tr key={row.r} style={{ background: idx % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
+                            <td style={{ padding: '0.35rem 0.5rem', fontWeight: 700, border: '1px solid #e2e8f0', color: '#475569', fontSize: '0.74rem' }}>{row.r}</td>
+                            {row.syls.map((s, cIdx) => (
+                              <td key={cIdx} style={{ padding: '0.4rem 0.6rem', border: '1px solid #e2e8f0', fontWeight: 700, color: '#0f172a' }}>
+                                {s}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div style={{ marginTop: '0.85rem', background: '#ecfdf5', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #a7f3d0', fontSize: '0.8rem', color: '#065f46' }}>
+                    ✨ <strong>Multi-Directional Equivalence:</strong><br />
+                    • <strong>Row 1 L → R</strong> = <code>devākāninikāvādevā</code> (Pāda 1)<br />
+                    • <strong>Row 8 R → L</strong> = <code>devākāninikāvādevā</code> (Identical!)<br />
+                    • <strong>Column 1 Top → Down</strong> = <code>devākāninikāvādevā</code> (Identical!)<br />
+                    • <strong>Column 8 Bottom → Up</strong> = <code>devākāninikāvādevā</code> (Identical!)
+                  </div>
+                </div>
+              </div>
+
+              {/* Subsection 16.3: Move-Constrained Grids & The Knight's Tour */}
+              <div className="philosophy-card" style={{ background: '#eff6ff', border: '1.5px solid #bfdbfe', margin: '1.5rem 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#2563eb', textTransform: 'uppercase' }}>
+                    Graph Theory &amp; Hamiltonian Paths · 13th Century CE
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handlePlayAudio('स्थिरागसां सदाराध्या')}
+                    style={{
+                      padding: '0.25rem 0.65rem',
+                      fontSize: '0.76rem',
+                      borderRadius: '6px',
+                      border: '1px solid #93c5fd',
+                      background: '#ffffff',
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                      color: '#1d4ed8',
+                    }}
+                  >
+                    🔊 Chant Pādukā-Sahasram 929
+                  </button>
+                </div>
+
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#1e3a8a' }}>
+                  ♞ Move-Constrained Grids: Turaṅga-Bandha (The Knight’s Tour)
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#1e3a8a', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  In the <em>Chitra-Paddhati</em> of his 1,008-verse masterpiece <em>Pādukā-Sahasram</em> (c. 13th century CE), <strong>Vedānta Deśika</strong> achieved a monumental breakthrough in discrete mathematics, anticipating Leonhard Euler’s 1759 treatment of the Knight&apos;s Tour by 500 years:
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #bfdbfe' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#1d4ed8', marginBottom: '0.2rem' }}>
+                      📖 Verse 929: Linear Row-by-Row Traversal
+                    </div>
+                    <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                      Written on an 8×4 chessboard (32 syllables). Reading across rows 1, 2, 3, and 4 yields Verse 929, an Anuṣṭubh hymn to Lord Rāma&apos;s holy sandals: <em>sthirāgasāṁ sadārādhyā vihatākatatāmatā...</em>
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #bfdbfe' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#1d4ed8', marginBottom: '0.2rem' }}>
+                      ♞ Verse 930: Open Hamiltonian Knight&apos;s Path
+                    </div>
+                    <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                      Starting at square (1, 1) and leaping strictly along valid chess Knight (L-shaped) moves through all 32 squares without repeating any square produces <strong>Verse 930</strong>: <em>sthitā rasāṁ sadā mātā rasatāmasatāṁ hitā...</em>
+                    </p>
+                  </div>
+                </div>
+
+                <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+                  <a
+                    href="#lilavati-studio"
+                    className="philosophy-cta-secondary"
+                    style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
+                  >
+                    ⚙️ Explore Interactive Gatika Kāvya &amp; Knight’s Tour Studio ➔
+                  </a>
+                </div>
+              </div>
             </section>
           </div>
         )}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TurangaBandhaChessboard } from './TurangaBandhaChessboard';
 
 interface LilavatiStudioProps {
   onPlayAudio?: (term: string) => void;
@@ -160,10 +161,63 @@ export const PLANETARY_MAHAYUGA_REVOLUTIONS: Record<string, { name: string; name
   rahu_node: { name: 'Moon Node (Rāhu / Retrograde)', nameSa: 'राहुः (वक्रगतिः)', revs: 232238, symbol: '☊', orbitalPeriodDays: 6794.4 },
 };
 
+export const MAGHA_PALINDROME_SYLLABLES: { dev: string; iast: string }[] = [
+  { dev: 'तं', iast: 'taṃ' }, { dev: 'भा', iast: 'bhā' }, { dev: 'र', iast: 'ra' }, { dev: 'ता', iast: 'tā' },
+  { dev: 'ता', iast: 'tā' }, { dev: 'मा', iast: 'mā' }, { dev: 'भा', iast: 'bhā' }, { dev: 'तं', iast: 'taṃ' },
+  { dev: 'तं', iast: 'taṃ' }, { dev: 'भा', iast: 'bhā' }, { dev: 'ता', iast: 'tā' }, { dev: 'त', iast: 'ta' },
+  { dev: 'म', iast: 'ma' }, { dev: 'भा', iast: 'bhā' }, { dev: 'र', iast: 'ra' }, { dev: 'तं', iast: 'taṃ' }
+];
+
+export const RAGHAVA_YADAVIYAM_DATA = {
+  anuloma: {
+    hero: '🏹 Śrī Rāma (Story of Rāmāyaṇa)',
+    textSa: 'वन्देऽहं देवदेवं तं श्रीदन्तं धरणीधरम् । रमामलं केवलं तं भव्याराध्यं नमाम्यहम् ॥',
+    iast: "vande'haṃ devadevaṃ taṃ śrīdantaṃ dharaṇīdharam | ramāmalaṃ kevalaṃ taṃ bhavyārādhyaṃ namāmyaham ||",
+    meaning: '“I bow down to Lord Śrī Rāma, God of Gods, who grants spiritual splendor, who upholds the Earth, who is pure with Lakṣmī, singular and ever-worshipped by the noble.”',
+    syllables: ['वन्', 'दे', 'हं', 'दे', 'व', 'दे', 'वं', 'तं', 'श्री', 'दन्', 'तं', 'ध', 'र', 'णी', 'ध', 'रम्', 'र', 'मा', 'म', 'लं', 'के', 'व', 'लं', 'तं', 'भ', 'व्या', 'रा', 'ध्यं', 'न', 'मा', 'म्य', 'हम्'],
+  },
+  viloma: {
+    hero: '🪈 Śrī Kṛṣṇa (Story of Bhāgavatam)',
+    textSa: 'हंम्यामानं ध्याराव्यभंतं लंवके लममारमा । रंधणीरधंतंद्रीशंतंदेवदेवमहंवन्दे ॥',
+    iast: "ham-mya-mā-naṃ dhyā-rā-vya-bhaṃ-taṃ laṃ-va-ke la-ma-mā-ra-mā | raṃ-dha-ṇī-ra-dhaṃ-taṃ-drī-śaṃ-taṃ-de-va-de-va-ma-haṃ-van-de ||",
+    meaning: '“I bow down to Lord Śrī Kṛṣṇa, the lover of Rādhā, whose body resembles fresh dark rain-clouds, master of divine flute melodies, ever-praised by the Vedic seers.”',
+    syllables: ['हम्', 'म्य', 'मा', 'न', 'ध्यं', 'रा', 'व्या', 'भ', 'तं', 'लं', 'व', 'के', 'लं', 'म', 'मा', 'र', 'रम्', 'ध', 'णी', 'र', 'ध', 'तं', 'दन्', 'श्री', 'तं', 'वं', 'दे', 'व', 'दे', 'हं', 'दे', 'वन्'],
+  },
+};
+
+export const SARVATOBHADRA_GRID: { dev: string; iast: string; orbitId: number }[][] = [
+  [{ dev: 'दे', iast: 'de', orbitId: 1 }, { dev: 'वा', iast: 'vā', orbitId: 2 }, { dev: 'का', iast: 'kā', orbitId: 3 }, { dev: 'नि', iast: 'ni', orbitId: 4 }, { dev: 'नि', iast: 'ni', orbitId: 4 }, { dev: 'का', iast: 'kā', orbitId: 3 }, { dev: 'वा', iast: 'vā', orbitId: 2 }, { dev: 'दे', iast: 'de', orbitId: 1 }],
+  [{ dev: 'वा', iast: 'vā', orbitId: 2 }, { dev: 'का', iast: 'kā', orbitId: 5 }, { dev: 'स्व', iast: 'sva', orbitId: 6 }, { dev: 'स्व', iast: 'sva', orbitId: 7 }, { dev: 'स्व', iast: 'sva', orbitId: 7 }, { dev: 'स्व', iast: 'sva', orbitId: 6 }, { dev: 'का', iast: 'kā', orbitId: 5 }, { dev: 'वा', iast: 'vā', orbitId: 2 }],
+  [{ dev: 'का', iast: 'kā', orbitId: 3 }, { dev: 'स्व', iast: 'sva', orbitId: 6 }, { dev: 'भ', iast: 'bha', orbitId: 8 }, { dev: 'व्य', iast: 'vya', orbitId: 9 }, { dev: 'व्य', iast: 'vya', orbitId: 9 }, { dev: 'भ', iast: 'bha', orbitId: 8 }, { dev: 'स्व', iast: 'sva', orbitId: 6 }, { dev: 'का', iast: 'kā', orbitId: 3 }],
+  [{ dev: 'नि', iast: 'ni', orbitId: 4 }, { dev: 'स्व', iast: 'sva', orbitId: 7 }, { dev: 'व्य', iast: 'vya', orbitId: 9 }, { dev: 'र', iast: 'ra', orbitId: 10 }, { dev: 'र', iast: 'ra', orbitId: 10 }, { dev: 'व्य', iast: 'vya', orbitId: 9 }, { dev: 'स्व', iast: 'sva', orbitId: 7 }, { dev: 'नि', iast: 'ni', orbitId: 4 }],
+  [{ dev: 'नि', iast: 'ni', orbitId: 4 }, { dev: 'स्व', iast: 'sva', orbitId: 7 }, { dev: 'व्य', iast: 'vya', orbitId: 9 }, { dev: 'र', iast: 'ra', orbitId: 10 }, { dev: 'र', iast: 'ra', orbitId: 10 }, { dev: 'व्य', iast: 'vya', orbitId: 9 }, { dev: 'स्व', iast: 'sva', orbitId: 7 }, { dev: 'नि', iast: 'ni', orbitId: 4 }],
+  [{ dev: 'का', iast: 'kā', orbitId: 3 }, { dev: 'स्व', iast: 'sva', orbitId: 6 }, { dev: 'भ', iast: 'bha', orbitId: 8 }, { dev: 'व्य', iast: 'vya', orbitId: 9 }, { dev: 'व्य', iast: 'vya', orbitId: 9 }, { dev: 'भ', iast: 'bha', orbitId: 8 }, { dev: 'स्व', iast: 'sva', orbitId: 6 }, { dev: 'का', iast: 'kā', orbitId: 3 }],
+  [{ dev: 'वा', iast: 'vā', orbitId: 2 }, { dev: 'का', iast: 'kā', orbitId: 5 }, { dev: 'स्व', iast: 'sva', orbitId: 6 }, { dev: 'स्व', iast: 'sva', orbitId: 7 }, { dev: 'स्व', iast: 'sva', orbitId: 7 }, { dev: 'स्व', iast: 'sva', orbitId: 6 }, { dev: 'का', iast: 'kā', orbitId: 5 }, { dev: 'वा', iast: 'vā', orbitId: 2 }],
+  [{ dev: 'दे', iast: 'de', orbitId: 1 }, { dev: 'वा', iast: 'vā', orbitId: 2 }, { dev: 'का', iast: 'kā', orbitId: 3 }, { dev: 'नि', iast: 'ni', orbitId: 4 }, { dev: 'नि', iast: 'ni', orbitId: 4 }, { dev: 'का', iast: 'kā', orbitId: 3 }, { dev: 'वा', iast: 'vā', orbitId: 2 }, { dev: 'दे', iast: 'de', orbitId: 1 }],
+];
+
+export const ORBIT_STYLES: Record<number, { bg: string; border: string; text: string; label: string; syl: string; count: number }> = {
+  1: { bg: '#fef3c7', border: '#f59e0b', text: '#92400e', label: 'Orbit 1: Outer 4 Corners', syl: 'दे (de)', count: 4 },
+  2: { bg: '#dbeafe', border: '#3b82f6', text: '#1e40af', label: 'Orbit 2: Outer Edge A', syl: 'वा (vā)', count: 8 },
+  3: { bg: '#dcfce7', border: '#22c55e', text: '#166534', label: 'Orbit 3: Outer Edge B', syl: 'का (kā)', count: 8 },
+  4: { bg: '#f3e8ff', border: '#a855f7', text: '#6b21a8', label: 'Orbit 4: Outer Mid-Spine', syl: 'नि (ni)', count: 8 },
+  5: { bg: '#ffedd5', border: '#f97316', text: '#9a3412', label: 'Orbit 5: Inner Corners', syl: 'का (kā)', count: 4 },
+  6: { bg: '#ccfbf1', border: '#14b8a6', text: '#115e59', label: 'Orbit 6: Concentric Ring A', syl: 'स्व (sva)', count: 8 },
+  7: { bg: '#fce7f3', border: '#ec4899', text: '#9d174d', label: 'Orbit 7: Concentric Ring B', syl: 'स्व (sva)', count: 8 },
+  8: { bg: '#e0e7ff', border: '#6366f1', text: '#3730a3', label: 'Orbit 8: Inner Diamond Tips', syl: 'भ (bha)', count: 4 },
+  9: { bg: '#fef9c3', border: '#eab308', text: '#854d0e', label: 'Orbit 9: Central Diamond', syl: 'व्य (vya)', count: 8 },
+  10: { bg: '#fee2e2', border: '#ef4444', text: '#991b1b', label: 'Orbit 10: Absolute Center 2×2', syl: 'र (ra)', count: 4 },
+};
+
 export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlayAudio }) => {
   const [activeTab, setActiveTab] = useState<
     'bees' | 'necklace' | 'peacock' | 'lotus' | 'currency' | 'sukshma_kala' | 'maha_kala' | 'anka_pasa'
   >('bees');
+
+  // Sub-mode inside anka_pasa:
+  const [ankaSubMode, setAnkaSubMode] = useState<
+    'shiva_multiset' | 'anuloma_viloma' | 'sarvatobhadra' | 'turanga_tour'
+  >('shiva_multiset');
 
   // Interactive state for Aṅka-Pāśa (Combinatorics: Shiva & Multiset Permutations)
   const [shivaDistinctCount, setShivaDistinctCount] = useState<number>(10);
@@ -171,6 +225,16 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   const [multisetTridents, setMultisetTridents] = useState<number>(3);
   const [multisetSwords, setMultisetSwords] = useState<number>(2);
   const [multisetShields, setMultisetShields] = useState<number>(2);
+
+  // Interactive state for Gatika Kāvya (Anuloma-Viloma palindrome)
+  const [palindromeCharIndex, setPalindromeCharIndex] = useState<number>(0);
+  const [raghavaDirection, setRaghavaDirection] = useState<'anuloma' | 'viloma'>('anuloma');
+
+  // Interactive state for Sarvatobhadra
+  const [sarvatoHoveredCell, setSarvatoHoveredCell] = useState<{ r: number; c: number; orbitId: number } | null>(null);
+  const [sarvatoReadMode, setSarvatoReadMode] = useState<
+    'normal' | 'row0_fwd' | 'row0_rev' | 'col0_down' | 'col0_up' | 'perimeter'
+  >('normal');
 
   // Interactive state for Peacock & Snake
   const [pillarHeight, setPillarHeight] = useState<number>(9);
@@ -333,7 +397,7 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
             { id: 'currency', label: '🐚 Cowrie Currency', sub: 'Place Value' },
             { id: 'sukshma_kala', label: '🪷 Micro Time (Sūkṣma Kāla)', sub: 'Lotus & Needle' },
             { id: 'maha_kala', label: '🌌 Cosmic Kalpa & Ahargaṇa', sub: 'Surya Siddhanta' },
-            { id: 'anka_pasa', label: '🔱 Combinatorics (Aṅka-Pāśa)', sub: '10-Armed Shiva' },
+            { id: 'anka_pasa', label: '🔱 Combinatorics & Gatika Kāvya', sub: 'Aṅka-Pāśa & Grids' },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -1656,8 +1720,44 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
             </p>
           </div>
 
-          {/* Section A: Distinct Items Permutations (10-Armed Shiva & 4-Armed Vishnu) */}
-          <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+          {/* Sub-Mode Selector Navigator */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.65rem', marginBottom: '1.25rem' }}>
+            {[
+              { id: 'shiva_multiset', label: '🔱 10-Armed Shiva & Multiset', desc: 'Factorials, Multisets & Temple Sculptures' },
+              { id: 'anuloma_viloma', label: '🔄 Inverted Palindromes (Viloma)', desc: 'Māgha 19.40 & Rāghavayādavīyam (Rāma/Kṛṣṇa)' },
+              { id: 'sarvatobhadra', label: '🔲 Sarvato-Bhadra (8×8 Grid)', desc: 'D₄ Dihedral Symmetry & 10 Degrees of Freedom' },
+              { id: 'turanga_tour', label: '♞ Knight’s Tour (Turaṅga-Bandha)', desc: 'Hamiltonian Paths & Graph Theory on Chessboard' },
+            ].map((sub) => (
+              <button
+                key={sub.id}
+                type="button"
+                onClick={() => setAnkaSubMode(sub.id as any)}
+                style={{
+                  padding: '0.75rem 0.95rem',
+                  borderRadius: '10px',
+                  border: ankaSubMode === sub.id ? '2px solid #0d9488' : '1px solid #cbd5e1',
+                  background: ankaSubMode === sub.id ? '#f0fdfa' : '#ffffff',
+                  color: ankaSubMode === sub.id ? '#0f766e' : '#334155',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  fontWeight: 700,
+                  transition: 'all 0.15s ease',
+                  boxShadow: ankaSubMode === sub.id ? '0 2px 8px rgba(13, 148, 136, 0.15)' : 'none',
+                }}
+              >
+                <div style={{ fontSize: '0.88rem', marginBottom: '0.2rem' }}>{sub.label}</div>
+                <div style={{ fontSize: '0.74rem', fontWeight: 500, color: ankaSubMode === sub.id ? '#0d9488' : '#64748b' }}>
+                  {sub.desc}
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* SUB-MODE 1: SHIVA & MULTISET COMBINATORICS */}
+          {ankaSubMode === 'shiva_multiset' && (
+            <div>
+              {/* Section A: Distinct Items Permutations (10-Armed Shiva & 4-Armed Vishnu) */}
+              <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
               <div>
                 <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0d9488', textTransform: 'uppercase' }}>
@@ -1906,6 +2006,565 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+          {/* SUB-MODE 2: INVERTED PALINDROMES (ANULOMA-VILOMA & RĀGHAVAYĀDAVĪYAM) */}
+          {ankaSubMode === 'anuloma_viloma' && (
+            <div>
+              {/* Theoretical Linear Algebra Formulation */}
+              <div style={{ background: '#f5f3ff', border: '1.5px solid #ddd6fe', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.65rem' }}>
+                  <div>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#7c3aed', textTransform: 'uppercase' }}>
+                      Linear Permutations &amp; Inversion Operators
+                    </span>
+                    <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#4c1d95' }}>
+                      🔄 Gatika Kāvya: Inversion Permutation Matrix P
+                    </h4>
+                  </div>
+                  <div style={{ background: '#ede9fe', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #c4b5fd', fontSize: '0.84rem', fontWeight: 800, color: '#5b21b6', fontFamily: 'monospace' }}>
+                    P · c = c (Palindrome) | P · c_Rāma = c_Kṛṣṇa
+                  </div>
+                </div>
+                <p style={{ fontSize: '0.86rem', color: '#5b21b6', lineHeight: 1.55, margin: 0 }}>
+                  In Sanskrit poetics (<em>Chitrakāvya</em>), the concept of <strong>Gatapratyāgata</strong> (syllabic palindrome) treats a line of verse as an ordered vector of syllables <strong>c = [c₁, c₂, ..., cₙ]</strong>. An inversion operator represented by the backward permutation matrix <strong>P</strong> maps index <em>i</em> to <em>(n - i + 1)</em>. When <strong>P · c = c</strong>, the line reads identically forward and backward. Even more astonishingly, when <strong>P · c_Rāma = c_Kṛṣṇa</strong>, reversing the exact syllables generates a completely different narrative in a different grammatical context!
+                </p>
+              </div>
+
+              {/* Sandbox 1: Māgha's Śiśupālavadha 19.40 */}
+              <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                  <div>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0d9488', textTransform: 'uppercase' }}>
+                      Case 1 · Exact Syllabic Palindrome (Gatapratyāgata)
+                    </span>
+                    <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.1rem', fontWeight: 800, color: '#0f172a' }}>
+                      📜 Māgha’s Śiśupālavadha (Canto 19, Verse 40)
+                    </h4>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => onPlayAudio?.('तं भारतातमाभातं तं भातातमभारतम्')}
+                    style={{
+                      padding: '0.3rem 0.75rem',
+                      borderRadius: '8px',
+                      background: '#ffffff',
+                      border: '1px solid #cbd5e1',
+                      cursor: 'pointer',
+                      fontSize: '0.8rem',
+                      fontWeight: 700,
+                      color: '#0f766e',
+                    }}
+                  >
+                    🔊 Chant Shloka
+                  </button>
+                </div>
+
+                {/* Shloka Display */}
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #e2e8f0', marginBottom: '1rem', textAlign: 'center' }}>
+                  <div style={{ fontSize: '1.18rem', fontWeight: 800, color: '#0f766e', letterSpacing: '0.04em', lineHeight: 1.7 }}>
+                    तं भारतातमाभातं तं भातातमभारतम् ।<br />
+                    तं भारतातमाभातं तं भातातमभारतम् ॥
+                  </div>
+                  <div style={{ fontSize: '0.88rem', fontWeight: 600, color: '#475569', marginTop: '0.35rem', fontFamily: 'monospace' }}>
+                    taṃ bhā-ra-tā-tā-mā-bhā-taṃ taṃ bhā-tā-ta-ma-bhā-ra-tam |<br />
+                    taṃ bhā-ra-tā-tā-mā-bhā-taṃ taṃ bhā-tā-ta-ma-bhā-ra-tam ||
+                  </div>
+                  <div style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '0.5rem', fontStyle: 'italic' }}>
+                    &ldquo;He (Lord Śrī Kṛṣṇa), whose glory shone forth brightly over the battlefield of Bhārata, who destroyed the sorrow of the oppressed and removed all sin...&rdquo;
+                  </div>
+                </div>
+
+                {/* Interactive 16-Syllable Mirror Scrubber */}
+                <div style={{ background: '#f0fdfa', border: '1px solid #ccfbf1', borderRadius: '10px', padding: '1rem', marginBottom: '1rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#0f766e', textTransform: 'uppercase' }}>
+                      Interactive Syllable Mirror Inspector (Forward Index i ⟷ Reverse Index 15 - i)
+                    </div>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#0d9488' }}>
+                      Inspecting Position: {palindromeCharIndex + 1} of 16
+                    </div>
+                  </div>
+
+                  {/* 16 Syllable Cards */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(16, 1fr)', gap: '0.25rem', overflowX: 'auto', paddingBottom: '0.5rem', marginBottom: '0.75rem' }}>
+                    {MAGHA_PALINDROME_SYLLABLES.map((s, idx) => {
+                      const isSelected = idx === palindromeCharIndex;
+                      const isMirror = idx === 15 - palindromeCharIndex;
+                      const isBoth = isSelected && isMirror;
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => setPalindromeCharIndex(idx)}
+                          style={{
+                            padding: '0.5rem 0.15rem',
+                            borderRadius: '6px',
+                            border: isBoth
+                              ? '2px solid #7c3aed'
+                              : isSelected
+                              ? '2px solid #0d9488'
+                              : isMirror
+                              ? '2px solid #f59e0b'
+                              : '1px solid #cbd5e1',
+                            background: isBoth
+                              ? '#ede9fe'
+                              : isSelected
+                              ? '#ccfbf1'
+                              : isMirror
+                              ? '#fef3c7'
+                              : '#ffffff',
+                            cursor: 'pointer',
+                            textAlign: 'center',
+                            transition: 'all 0.15s ease',
+                          }}
+                        >
+                          <div style={{ fontSize: '0.92rem', fontWeight: 800, color: '#0f172a' }}>{s.dev}</div>
+                          <div style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'monospace' }}>{s.iast}</div>
+                          <div style={{ fontSize: '0.62rem', fontWeight: 700, color: isSelected || isMirror ? '#0f766e' : '#94a3b8', marginTop: '0.15rem' }}>
+                            #{idx + 1}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Scrubber slider */}
+                  <input
+                    type="range"
+                    min={0}
+                    max={15}
+                    value={palindromeCharIndex}
+                    onChange={(e) => setPalindromeCharIndex(parseInt(e.target.value, 10))}
+                    style={{ width: '100%', accentColor: '#0d9488', marginBottom: '0.65rem' }}
+                  />
+
+                  {/* Mirror Pair Live Verification */}
+                  <div style={{ background: '#ffffff', border: '1px solid #a7f3d0', borderRadius: '8px', padding: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                      <span style={{ fontSize: '1.25rem' }}>🪞</span>
+                      <div style={{ fontSize: '0.86rem', color: '#065f46' }}>
+                        Position <strong>#{palindromeCharIndex + 1}</strong> [<code>{MAGHA_PALINDROME_SYLLABLES[palindromeCharIndex].dev}</code> / {MAGHA_PALINDROME_SYLLABLES[palindromeCharIndex].iast}]
+                        &nbsp;⟷&nbsp;
+                        Mirror Position <strong>#{16 - palindromeCharIndex}</strong> [<code>{MAGHA_PALINDROME_SYLLABLES[15 - palindromeCharIndex].dev}</code> / {MAGHA_PALINDROME_SYLLABLES[15 - palindromeCharIndex].iast}]
+                      </div>
+                    </div>
+                    <span style={{ background: '#dcfce7', color: '#166534', padding: '0.2rem 0.6rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 800 }}>
+                      ✓ EXACT SYLLABIC MATCH
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sandbox 2: The Two-in-One Miracle of Rāghavayādavīyam */}
+              <div style={{ background: '#fffbeb', border: '1.5px solid #fde68a', borderRadius: '12px', padding: '1.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                  <div>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#d97706', textTransform: 'uppercase' }}>
+                      Case 2 · The Reversible Epic (Anuloma-Viloma Kāvya)
+                    </span>
+                    <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.1rem', fontWeight: 800, color: '#78350f' }}>
+                      🏹 🪈 Arasanipalai Veṅkaṭādhvarin’s Rāghavayādavīyam (17th Century)
+                    </h4>
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.4rem' }}>
+                    <button
+                      type="button"
+                      onClick={() => setRaghavaDirection('anuloma')}
+                      style={{
+                        padding: '0.35rem 0.75rem',
+                        borderRadius: '6px',
+                        background: raghavaDirection === 'anuloma' ? '#d97706' : '#ffffff',
+                        color: raghavaDirection === 'anuloma' ? '#ffffff' : '#78350f',
+                        border: '1px solid #d97706',
+                        cursor: 'pointer',
+                        fontSize: '0.78rem',
+                        fontWeight: 700,
+                      }}
+                    >
+                      🏹 Forward: Śrī Rāma
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setRaghavaDirection('viloma')}
+                      style={{
+                        padding: '0.35rem 0.75rem',
+                        borderRadius: '6px',
+                        background: raghavaDirection === 'viloma' ? '#2563eb' : '#ffffff',
+                        color: raghavaDirection === 'viloma' ? '#ffffff' : '#1e40af',
+                        border: '1px solid #2563eb',
+                        cursor: 'pointer',
+                        fontSize: '0.78rem',
+                        fontWeight: 700,
+                      }}
+                    >
+                      🪈 Reverse: Śrī Kṛṣṇa
+                    </button>
+                  </div>
+                </div>
+
+                <p style={{ fontSize: '0.86rem', color: '#92400e', lineHeight: 1.5, margin: '0 0 1rem' }}>
+                  This entire 30-verse work is an astounding combinatorial marvel: read forward (<strong>Anuloma</strong>), it narrates the sacred history of <strong>Lord Śrī Rāma (Rāmāyaṇa)</strong>. Read backwards syllable-by-syllable (<strong>Viloma</strong>), the identical phonemes dissolve and recombine through Sanskrit grammar into the divine pastimes of <strong>Lord Śrī Kṛṣṇa (Bhāgavatam)</strong>!
+                </p>
+
+                {/* Active Direction Card */}
+                <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #fde68a', padding: '1.15rem', marginBottom: '1rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <div style={{ fontSize: '0.9rem', fontWeight: 800, color: raghavaDirection === 'anuloma' ? '#b45309' : '#1d4ed8' }}>
+                      {RAGHAVA_YADAVIYAM_DATA[raghavaDirection].hero}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => onPlayAudio?.(RAGHAVA_YADAVIYAM_DATA[raghavaDirection].textSa)}
+                      style={{
+                        padding: '0.25rem 0.6rem',
+                        borderRadius: '6px',
+                        border: '1px solid #e2e8f0',
+                        background: '#f8fafc',
+                        cursor: 'pointer',
+                        fontSize: '0.75rem',
+                        fontWeight: 700,
+                        color: '#475569',
+                      }}
+                    >
+                      🔊 Chant Verse
+                    </button>
+                  </div>
+
+                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a', lineHeight: 1.7, marginBottom: '0.35rem' }}>
+                    {RAGHAVA_YADAVIYAM_DATA[raghavaDirection].textSa}
+                  </div>
+                  <div style={{ fontSize: '0.86rem', fontWeight: 600, color: '#64748b', fontFamily: 'monospace', marginBottom: '0.5rem' }}>
+                    {RAGHAVA_YADAVIYAM_DATA[raghavaDirection].iast}
+                  </div>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#475569', lineHeight: 1.55 }}>
+                    <strong>Poetic Translation:</strong> {RAGHAVA_YADAVIYAM_DATA[raghavaDirection].meaning}
+                  </p>
+                </div>
+
+                {/* 32 Syllables Ribbon */}
+                <div style={{ background: '#fef3c7', borderRadius: '8px', padding: '0.75rem', border: '1px solid #fcd34d' }}>
+                  <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#92400e', marginBottom: '0.45rem', textTransform: 'uppercase' }}>
+                    32-Syllable Flow Direction: {raghavaDirection === 'anuloma' ? '➡️ Forward (1 to 32)' : '⬅️ Retrograde (32 down to 1)'}
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
+                    {RAGHAVA_YADAVIYAM_DATA[raghavaDirection].syllables.map((syl, i) => (
+                      <span
+                        key={i}
+                        style={{
+                          padding: '0.25rem 0.45rem',
+                          borderRadius: '4px',
+                          background: '#ffffff',
+                          border: '1px solid #fde68a',
+                          fontSize: '0.82rem',
+                          fontWeight: 700,
+                          color: raghavaDirection === 'anuloma' ? '#b45309' : '#1e40af',
+                        }}
+                      >
+                        {syl}
+                      </span>
+                    ))}
+                  </div>
+                  <div style={{ fontSize: '0.74rem', color: '#a16207', marginTop: '0.5rem' }}>
+                    💡 Notice how <code>vande&apos;haṃ</code> (I bow) forward mirrors into <code>huvande</code> reverse, and <code>ramāmalaṃ</code> (pure Rāma) mirrors into <code>lamamārama</code> (delighting Lakṣmī). Sanskrit’s highly inflected morphology allows reverse root concatenation without violating metric rules!
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* SUB-MODE 3: THE SARVATO-BHADRA 8x8 MAGIC GRID */}
+          {ankaSubMode === 'sarvatobhadra' && (
+            <div>
+              {/* Theoretical D4 Symmetry & 10 Degrees of Freedom Box */}
+              <div style={{ background: '#ecfdf5', border: '1.5px solid #a7f3d0', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.65rem' }}>
+                  <div>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#059669', textTransform: 'uppercase' }}>
+                      Dihedral Group D₄ &amp; Orbit-Stabilizer Theorem
+                    </span>
+                    <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#064e3b' }}>
+                      🔲 The 10-Parameter Freedom Theorem in Sarvato-Bhadra
+                    </h4>
+                  </div>
+                  <div style={{ background: '#d1fae5', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #6ee7b7', fontSize: '0.84rem', fontWeight: 800, color: '#047857' }}>
+                    Free Parameters: n(n+2)/8 = 8(10)/8 = 10 Syllables
+                  </div>
+                </div>
+
+                <p style={{ fontSize: '0.86rem', color: '#065f46', lineHeight: 1.55, margin: '0 0 0.85rem' }}>
+                  A <strong>Sarvato-Bhadra</strong> (सर्वतोभद्र, &quot;auspicious on every side&quot;) is an 8×8 square matrix of 64 syllables that can be read horizontally left-to-right, right-to-left, vertically top-to-bottom, bottom-to-top, and along concentric loops without altering the verse. Mathematically, it is invariant under the <strong>Dihedral Group D₄</strong> (the 8 symmetries of a square: 4 rotations and 4 reflections).
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.75rem', borderRadius: '8px', border: '1px solid #a7f3d0' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#047857', marginBottom: '0.2rem' }}>
+                      📐 Group Invariance Equations
+                    </div>
+                    <div style={{ fontSize: '0.76rem', color: '#065f46', fontFamily: 'monospace' }}>
+                      M[i, j] = M[i, 8 - j + 1] (Horizontal)<br />
+                      M[i, j] = M[8 - i + 1, j] (Vertical)<br />
+                      M[i, j] = M[j, i] (Transpose / Diagonal)<br />
+                      M[i, j] = M[8 - j + 1, 8 - i + 1] (Anti-Diagonal)
+                    </div>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.75rem', borderRadius: '8px', border: '1px solid #a7f3d0' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#047857', marginBottom: '0.2rem' }}>
+                      🔢 10 Orbits Partition
+                    </div>
+                    <div style={{ fontSize: '0.76rem', color: '#065f46', lineHeight: 1.5 }}>
+                      • <strong>4 Diagonal Orbits</strong> (size 4 each) = 16 cells<br />
+                      • <strong>6 Off-Diagonal Orbits</strong> (size 8 each) = 48 cells<br />
+                      • <strong>Total = 16 + 48 = 64 cells</strong> governed by just <strong>10 independent generator syllables!</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* The Canonical Shloka: Bhāravi's Kirātārjunīya 15.25 */}
+              <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                  <div>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0d9488', textTransform: 'uppercase' }}>
+                      Canonical Classical Masterpiece
+                    </span>
+                    <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.1rem', fontWeight: 800, color: '#0f172a' }}>
+                      📜 Mahākavi Bhāravi’s Kirātārjunīya (Canto 15, Verse 25)
+                    </h4>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => onPlayAudio?.('देवाकानिनिकावादेवा वाकास्वस्वस्वस्वकावा')}
+                    style={{
+                      padding: '0.3rem 0.75rem',
+                      borderRadius: '8px',
+                      background: '#ffffff',
+                      border: '1px solid #cbd5e1',
+                      cursor: 'pointer',
+                      fontSize: '0.8rem',
+                      fontWeight: 700,
+                      color: '#0f766e',
+                    }}
+                  >
+                    🔊 Chant Shloka
+                  </button>
+                </div>
+
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #e2e8f0', marginBottom: '1rem', textAlign: 'center' }}>
+                  <div style={{ fontSize: '1.16rem', fontWeight: 800, color: '#0f766e', lineHeight: 1.7 }}>
+                    देवाकानिनिकावादेवा वाकास्वस्वस्वस्वकावा ।<br />
+                    कास्वभव्यव्यभस्वका निस्वव्यररव्यस्वनि ॥
+                  </div>
+                  <div style={{ fontSize: '0.86rem', fontWeight: 600, color: '#475569', fontFamily: 'monospace', marginTop: '0.35rem' }}>
+                    devākāninikāvādevā vākāsvasvasvasvakāvā |<br />
+                    kāsvabhavyavyabhasvakā nisvavyararavyasvani ||
+                  </div>
+                  <p style={{ margin: '0.45rem 0 0', fontSize: '0.82rem', color: '#64748b', fontStyle: 'italic' }}>
+                    &ldquo;O divine Lord who grants desires and protects the righteous! In battle, your enemies are vanquished by your radiant auspiciousness; your speech is self-illuminating, destroying all sorrow...&rdquo;
+                  </p>
+                </div>
+
+                {/* Read Mode Selector Tabs */}
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#475569', textTransform: 'uppercase', marginBottom: '0.45rem' }}>
+                    Select Traversal Vector (Notice how every direction reads the identical verse!):
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                    {[
+                      { id: 'normal', label: '🎨 All 10 D₄ Orbits' },
+                      { id: 'row0_fwd', label: '➡️ Row 1: Forward (L → R)' },
+                      { id: 'row0_rev', label: '⬅️ Row 8: Backward (R → L)' },
+                      { id: 'col0_down', label: '⬇️ Column 1: Down (Top → Bottom)' },
+                      { id: 'col0_up', label: '⬆️ Column 8: Up (Bottom → Top)' },
+                      { id: 'perimeter', label: '🔲 Perimeter Outer Ring' },
+                    ].map((mode) => (
+                      <button
+                        key={mode.id}
+                        type="button"
+                        onClick={() => setSarvatoReadMode(mode.id as any)}
+                        style={{
+                          padding: '0.4rem 0.75rem',
+                          borderRadius: '8px',
+                          border: sarvatoReadMode === mode.id ? '2px solid #0d9488' : '1px solid #cbd5e1',
+                          background: sarvatoReadMode === mode.id ? '#f0fdfa' : '#ffffff',
+                          color: sarvatoReadMode === mode.id ? '#0f766e' : '#475569',
+                          fontWeight: 700,
+                          fontSize: '0.78rem',
+                          cursor: 'pointer',
+                          transition: 'all 0.15s ease',
+                        }}
+                      >
+                        {mode.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Active Traversal Reading Strip */}
+                {sarvatoReadMode !== 'normal' && (
+                  <div style={{ background: '#ecfdf5', border: '1px solid #a7f3d0', borderRadius: '8px', padding: '0.75rem', marginBottom: '1rem' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#065f46', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+                      Phonetic Traversal Output:
+                    </div>
+                    <div style={{ fontSize: '1rem', fontWeight: 800, color: '#047857' }}>
+                      {sarvatoReadMode === 'perimeter'
+                        ? 'Outer Ring (28 Syllables): de → vā → kā → ni → ni → kā → vā → de → vā → kā → ni → ni → kā → vā → de...'
+                        : 'दे वा का नि नि का वा दे (de - vā - kā - ni - ni - kā - vā - de) ≡ Verse Pāda 1!'}
+                    </div>
+                  </div>
+                )}
+
+                {/* Interactive 8x8 Grid */}
+                <div style={{ background: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '1rem', marginBottom: '1.25rem' }}>
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(8, 1fr)',
+                      gap: '0.35rem',
+                      maxWidth: '560px',
+                      margin: '0 auto',
+                    }}
+                  >
+                    {SARVATOBHADRA_GRID.map((row, r) =>
+                      row.map((cell, c) => {
+                        const styleInfo = ORBIT_STYLES[cell.orbitId];
+                        const isHoveredOrbit = sarvatoHoveredCell?.orbitId === cell.orbitId;
+
+                        // Traversal highlighting:
+                        let isTraversalActive = false;
+                        if (sarvatoReadMode === 'row0_fwd' && r === 0) isTraversalActive = true;
+                        if (sarvatoReadMode === 'row0_rev' && r === 7) isTraversalActive = true;
+                        if (sarvatoReadMode === 'col0_down' && c === 0) isTraversalActive = true;
+                        if (sarvatoReadMode === 'col0_up' && c === 7) isTraversalActive = true;
+                        if (sarvatoReadMode === 'perimeter' && (r === 0 || r === 7 || c === 0 || c === 7)) isTraversalActive = true;
+
+                        return (
+                          <div
+                            key={`${r}-${c}`}
+                            onMouseEnter={() => setSarvatoHoveredCell({ r, c, orbitId: cell.orbitId })}
+                            onMouseLeave={() => setSarvatoHoveredCell(null)}
+                            style={{
+                              aspectRatio: '1',
+                              borderRadius: '8px',
+                              border: isHoveredOrbit
+                                ? `2.5px solid ${styleInfo.border}`
+                                : isTraversalActive
+                                ? '2px solid #0d9488'
+                                : `1px solid ${styleInfo.border}88`,
+                              background: isHoveredOrbit
+                                ? styleInfo.bg
+                                : isTraversalActive
+                                ? '#ccfbf1'
+                                : sarvatoReadMode === 'normal'
+                                ? styleInfo.bg
+                                : '#ffffff',
+                              display: 'flex',
+                              flexDirection: 'column',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              cursor: 'pointer',
+                              transform: isHoveredOrbit ? 'scale(1.08)' : 'scale(1)',
+                              transition: 'all 0.15s ease',
+                              boxShadow: isHoveredOrbit ? '0 4px 12px rgba(0,0,0,0.12)' : 'none',
+                              zIndex: isHoveredOrbit ? 10 : 1,
+                            }}
+                          >
+                            <span style={{ fontSize: '1.15rem', fontWeight: 800, color: styleInfo.text, lineHeight: 1.1 }}>
+                              {cell.dev}
+                            </span>
+                            <span style={{ fontSize: '0.66rem', color: '#475569', fontFamily: 'monospace' }}>
+                              {cell.iast}
+                            </span>
+                            <span style={{ fontSize: '0.55rem', fontWeight: 700, color: '#94a3b8' }}>
+                              #{cell.orbitId}
+                            </span>
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
+
+                  {/* Active Cell Inspector Footer */}
+                  <div style={{ marginTop: '0.85rem', textAlign: 'center', minHeight: '1.8rem' }}>
+                    {sarvatoHoveredCell ? (
+                      <div style={{ fontSize: '0.84rem', color: '#0f172a', fontWeight: 600 }}>
+                        Cell [Row {sarvatoHoveredCell.r + 1}, Col {sarvatoHoveredCell.c + 1}] → Syllable: <strong>{SARVATOBHADRA_GRID[sarvatoHoveredCell.r][sarvatoHoveredCell.c].dev}</strong> ({SARVATOBHADRA_GRID[sarvatoHoveredCell.r][sarvatoHoveredCell.c].iast}) | Belongs to <strong>{ORBIT_STYLES[sarvatoHoveredCell.orbitId].label}</strong> ({ORBIT_STYLES[sarvatoHoveredCell.orbitId].count} symmetric D₄ reflections)
+                      </div>
+                    ) : (
+                      <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>
+                        Hover over any cell above to inspect its Dihedral D₄ symmetry orbit and reflection partners.
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Orbit Partition Breakdown Table */}
+                <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #e2e8f0', padding: '1rem' }}>
+                  <h5 style={{ margin: '0 0 0.65rem', fontSize: '0.88rem', fontWeight: 800, color: '#0f172a' }}>
+                    📊 The 10 Generator Orbits of Sarvato-Bhadra (Sum = 64 Cells)
+                  </h5>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.5rem' }}>
+                    {Object.entries(ORBIT_STYLES).map(([id, o]) => (
+                      <div
+                        key={id}
+                        onMouseEnter={() => setSarvatoHoveredCell({ r: 0, c: 0, orbitId: parseInt(id, 10) })}
+                        onMouseLeave={() => setSarvatoHoveredCell(null)}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          padding: '0.45rem 0.65rem',
+                          borderRadius: '6px',
+                          border: `1px solid ${o.border}`,
+                          background: o.bg,
+                          cursor: 'pointer',
+                        }}
+                      >
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                          <span style={{ fontSize: '0.95rem', fontWeight: 800, color: o.text }}>{o.syl}</span>
+                          <span style={{ fontSize: '0.72rem', color: '#475569' }}>{o.label}</span>
+                        </div>
+                        <span style={{ fontSize: '0.75rem', fontWeight: 800, color: o.text, background: '#ffffff', padding: '0.15rem 0.4rem', borderRadius: '4px' }}>
+                          {o.count} cells
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* SUB-MODE 4: THE KNIGHT’S TOUR GRID (TURAṄGA-BANDHA) */}
+          {ankaSubMode === 'turanga_tour' && (
+            <div>
+              {/* Context Banner */}
+              <div style={{ background: '#eff6ff', border: '1.5px solid #bfdbfe', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.65rem' }}>
+                  <div>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#2563eb', textTransform: 'uppercase' }}>
+                      Graph Theory &amp; Hamiltonian Paths (9th–13th Century CE)
+                    </span>
+                    <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#1e3a8a' }}>
+                      ♞ Move-Constrained Grids: Turaṅga-Bandha (The Knight’s Tour)
+                    </h4>
+                  </div>
+                  <div style={{ background: '#dbeafe', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #93c5fd', fontSize: '0.84rem', fontWeight: 800, color: '#1e40af' }}>
+                    Open Hamiltonian Path on G = (V, E)
+                  </div>
+                </div>
+
+                <p style={{ fontSize: '0.86rem', color: '#1e3a8a', lineHeight: 1.55, margin: 0 }}>
+                  Long before Leonhard Euler published his 1759 paper on the Knight&apos;s Tour, Sanskrit scholars like <strong>Rudraṭa</strong> (<em>Kāvyālaṅkāra</em>, 9th c.) and <strong>Vedānta Deśika</strong> (<em>Pādukā-Sahasram</em>, 13th c.) constructed move-constrained poetic matrices. In Deśika’s masterpiece, an 8×4 grid produces <strong>Verse 929</strong> when read row-by-row, but leaping along legal chess Knight moves traces an open Hamiltonian path that forms <strong>Verse 930</strong>!
+                </p>
+              </div>
+
+              {/* Embedded TurangaBandhaChessboard Component */}
+              <TurangaBandhaChessboard onPlayAudio={onPlayAudio} />
+            </div>
+          )}
         </div>
       )}
     </div>
