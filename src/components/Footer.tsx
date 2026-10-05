@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
               <div className="footer-brand-meta">
                 <h3 className="footer-brand-name">EdNet Learn Gurukul</h3>
-                <span className="footer-brand-tagline">संस्कृत-शिक्षणम् · CBSE / NCERT Deepakam</span>
+                <span className="footer-brand-tagline">संस्कृत-शिक्षणम् · NCERT Deepakam (NEP, CBSE exam)</span>
               </div>
             </div>
 
@@ -85,7 +85,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div className="footer-trust-chips">
-              <span className="footer-trust-chip">🛡️ CBSE Class 7 Aligned</span>
+              <span className="footer-trust-chip">🛡️ NCERT Deepakam · NEP / CBSE</span>
               <span className="footer-trust-chip">🇮🇳 NEP 2020 Compliant</span>
               <span className="footer-trust-chip">🔒 100% Secure Checkout</span>
             </div>
@@ -105,7 +105,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onOpenReader && onOpenReader('gsde101')}
                 >
                   <span className="nav-btn-icon">📖</span>
-                  <span className="nav-btn-text">CBSE Class 7 'दीपकम' (1–15)</span>
+                  <span className="nav-btn-text">Deepakam · दीपकम (1–15)</span>
                 </button>
               </li>
               <li>

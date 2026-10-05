@@ -876,7 +876,7 @@ ${bodyHtml}
                 className="vedic-header-nav-btn"
                 onClick={onOpenReader}
               >
-                📖 NCERT Class 7 Lessons
+                📖 Deepakam Lessons
               </button>
             )}
             {onGoHome && (

@@ -685,9 +685,9 @@ const HomePage: React.FC<HomePageProps> = ({
             type="button"
             className="home-btn-secondary"
             onClick={() => onOpenReader('gsde101')}
-            title="CBSE Class 7 NCERT Deepakam Textbook with Audio & Word Meanings"
+            title="NCERT Deepakam (NEP, CBSE exam) Textbook with Audio & Word Meanings"
           >
-            📖 CBSE Deepakam (Classes 6–8)
+            📖 NCERT Deepakam (NEP, CBSE exam)
           </button>
           {onOpenCbseGuide && (
             <button
@@ -970,7 +970,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <span className="home-pathway-badge home-pathway-badge--school">
                 School Curriculum
               </span>
-              <h3 className="home-pathway-title">🎒 CBSE &amp; NCERT Deepakam</h3>
+              <h3 className="home-pathway-title">🎒 NCERT Deepakam (NEP, CBSE exam)</h3>
               <p className="home-pathway-desc">
                 Follow all 15 Deepakam textbook chapters sequentially. Master shloka recitation, anvaya, sandhi, and exam question drills with word-by-word grammatical breakdowns.
               </p>
@@ -980,7 +980,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-pathway-btn"
               onClick={() => onOpenReader('gsde101')}
             >
-              Start CBSE Deepakam (Classes 6–8) ▶
+              Start NCERT Deepakam (NEP, CBSE exam) ▶
             </button>
           </div>
         </div>

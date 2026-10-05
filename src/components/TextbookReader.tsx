@@ -788,7 +788,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
   // Guests see Class 8 & Class 9 as requiring account; any registered user with an account may read.
   if (isCurriculumLesson && !canReadAllChapters) {
-    const gradeLabel = isGrade9Lesson ? 'CBSE Class 9 (शारदा)' : 'CBSE Class 8 (दीपकम)';
+    const gradeLabel = isGrade9Lesson ? 'शारदा (Class 9)' : 'Deepakam (Class 8)';
     return (
       <section className="textbook-reader">
         <div className="textbook-cbse-banner textbook-grade8-upcoming-banner">
@@ -873,12 +873,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               }`}
             >
               {isGrade9Lesson
-                ? 'CBSE Class 9'
+                ? 'शारदा'
                 : isGrade8Lesson
-                ? 'CBSE Class 8'
+                ? 'Deepakam'
                 : isGroupedLesson
                 ? 'मूल-संस्कृतम्'
-                : 'CBSE Class 7'}
+                : 'Deepakam'}
             </span>
             <select
               id="lesson-select"
@@ -895,7 +895,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               aria-label="Select Sanskrit chapter or lesson"
             >
               {/* Class 7 Lessons */}
-              <optgroup label="CBSE Class 7 · दीपकम (सप्तमी कक्षा)">
+              <optgroup label="Deepakam · दीपकम (सप्तमी कक्षा)">
                 {lessons
                   .filter(
                     (lesson) =>
@@ -920,7 +920,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
               {/* Class 8 Lessons */}
               {lessons.some((lesson) => lesson.id.startsWith('grade8_')) && (
-                <optgroup label="CBSE Class 8 · दीपकम (अष्टमी कक्षा)">
+                <optgroup label="Deepakam · दीपकम (अष्टमी कक्षा)">
                   {lessons
                     .filter((lesson) => lesson.id.startsWith('grade8_'))
                     .map((lesson) => (
@@ -938,7 +938,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
               {/* Class 9 Lessons */}
               {lessons.some((lesson) => lesson.id.startsWith('grade9_')) && (
-                <optgroup label="CBSE Class 9 · शारदा (नवमी कक्षा)">
+                <optgroup label="शारदा (नवमी कक्षा)">
                   {lessons
                     .filter((lesson) => lesson.id.startsWith('grade9_'))
                     .map((lesson) => (
@@ -2068,16 +2068,16 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <div className="grade-guide-header">
             <span className="grade-guide-badge">
               {activeLessonId.startsWith('grade9_')
-                ? 'CBSE Class 9 Sanskrit'
+                ? 'शारदा · Class 9'
                 : activeLessonId.startsWith('grade8_')
-                ? 'CBSE Class 8 Sanskrit'
-                : 'CBSE Class 7 Deepakam'}
+                ? 'Deepakam · Class 8'
+                : 'Deepakam · Class 7'}
             </span>
             <h4>📋 CBSE Sanskrit Exam Blueprint &amp; Question Directives</h4>
           </div>
           <p>
             {activeLessonId === 'gsde115'
-              ? 'Congratulations on completing all 15 lessons of CBSE Class 7 Deepakam! Prepare for your school and board exams with standardized instruction formulas (निर्देशाः), 10 core question words (क-कार शब्दाः), and grammatical directives.'
+              ? 'Congratulations on completing all 15 Deepakam Class 7 lessons! Prepare for your school and board exams with standardized instruction formulas (निर्देशाः), 10 core question words (क-कार शब्दाः), and grammatical directives.'
               : activeLessonId === 'grade9_ch3'
               ? 'Class 9 chapters completed! Master CBSE High School paper structure, अन्वय-पूरणम्, प्रश्ननिर्माणम्, and precision sentence corrections.'
               : activeLessonId === 'grade8_app1' || activeLessonId === 'grade8_ch13'
@@ -2364,7 +2364,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         onSelectLesson={(id) => onSelectLesson(id)}
         onOpenCbseGuide={onOpenCbseGuide}
         syllabus={GRADE_7_SYLLABUS}
-        gradeBadge="सप्तमकक्षा-पाठ्यक्रमः · NCERT / CBSE Class 7"
+        gradeBadge="सप्तमकक्षा-पाठ्यक्रमः · Deepakam (NEP, CBSE exam)"
         intro="Index of the Class 7 Deepakam lessons in this reader: chapters, extra study, and the two grammar appendices."
         coreLessonCount={12}
         appendixCount={2}
@@ -2389,7 +2389,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         onSelectLesson={(id) => onSelectLesson(id)}
         onOpenCbseGuide={onOpenCbseGuide}
         syllabus={GRADE_9_SYLLABUS}
-        gradeBadge="नवमकक्षा-पाठ्यक्रमः · NCERT / CBSE Class 9"
+        gradeBadge="नवमकक्षा-पाठ्यक्रमः · शारदा (NEP, CBSE exam)"
         intro="Index of the Class 9 Sharda lessons in this reader, including the prayer, twelve chapters, and grammar appendices."
         coreLessonCount={12}
         appendixCount={4}

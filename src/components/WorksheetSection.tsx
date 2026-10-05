@@ -69,8 +69,8 @@ const LEVEL_MENU_OPTIONS: LevelMenuOption[] = [
 
 const CHAPTER_SUBFILTERS = [
   { id: 'all_chapters', label: 'All Chapters (समग्र-पाठाः)' },
-  { id: 'grade8', label: 'Grade 8: दीपकम् (Class 8)' },
-  { id: 'grade9', label: 'Grade 9: शारदा (Class 9)' },
+  { id: 'grade8', label: 'Deepakam · दीपकम् (Class 8)' },
+  { id: 'grade9', label: 'शारदा (Class 9)' },
   { id: 'deep_ch1', label: 'Ch 1: वन्दे भारतमातरम्' },
   { id: 'deep_ch2', label: 'Ch 2: नित्यं पिबामः सुभाषितरसम्' },
   { id: 'deep_ch3', label: 'Ch 3: मित्राय नमः' },
@@ -235,7 +235,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
           <div>
             <h2 className="worksheet-title">कार्यपत्रिकाः · Printable Sanskrit Worksheets</h2>
             <p className="worksheet-subtitle">
-              Alphabet &amp; Syllables (वर्णमाला) · CBSE Class 7 &amp; 8 Deepakam · Grammar Drills · Vedic Maths
+              Alphabet &amp; Syllables (वर्णमाला) · Deepakam · शारदा · Grammar Drills · Vedic Maths
             </p>
           </div>
         </div>
