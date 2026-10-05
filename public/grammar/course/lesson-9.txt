@@ -7,6 +7,7 @@ In Kartari Prayoga, the subject (Kartā) performs the action.
 ---
 
 ## 1. The Two Golden Rules of Sanskrit Syntax
+[[figure:kartari-two-golden-rules]]
 
 ### Golden Rule 1: Subject is ALWAYS in Prathamā Vibhakti (Case 1)
 Whoever performs the action takes Case 1 (Nominative):

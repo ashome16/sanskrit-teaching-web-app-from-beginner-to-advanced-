@@ -2,6 +2,8 @@
 
 In Lesson 5, you mastered masculine nouns ending in short 'a' (Akārānta). In this lesson, we explore the feminine realm: **Strīliṅga (स्त्रीलिङ्ग)**.
 
+[[figure:two-feminine-stems]]
+
 The two most common feminine patterns in Sanskrit are:
 1. **Ākārānta (आकारान्त):** Stems ending in long **आ (ā)** (e.g. **लता** - creeper, **बालिका** - girl, **माला** - garland).
 2. **Īkārānta (ईकारान्त):** Stems ending in long **ई (ī)** (e.g. **नदी** - river, **जननी** - mother, **नारी** - woman).

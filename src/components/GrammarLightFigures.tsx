@@ -771,6 +771,223 @@ function LatNineEndings() {
   );
 }
 
+
+/** Course lesson 4: eight cases × three numbers = 24 forms. */
+function EightByThreeVacanas() {
+  const nums = [
+    { n: '1', sa: 'एकवचनम्', en: 'Ekavacana', clue: 'exactly one' },
+    { n: '2', sa: 'द्विवचनम्', en: 'Dvivacana', clue: 'exactly two' },
+    { n: '3', sa: 'बहुवचनम्', en: 'Bahuvacana', clue: 'three or more' },
+  ];
+  const cellW = 168;
+  const gap = 12;
+  const w = nums.length * cellW + (nums.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="8 cases × 3 numbers"
+      caption="The lesson’s grid: eight vibhaktis across singular, dual, and plural give 24 distinct forms for every declined noun."
+      maxWidth={600}
+    >
+      <svg viewBox={`0 0 ${w} 148`} role="img" aria-labelledby="vac3-title" style={{ fontFamily: SANS }}>
+        <title id="vac3-title">Three grammatical numbers: singular, dual, and plural.</title>
+        {nums.map((v, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={v.n}>
+              <rect x={x} y="8" width={cellW} height="100" rx="12" fill="#fff7ed" stroke="#fdba74" strokeWidth="3" />
+              <text x={x + cellW / 2} y="32" fill="#0f766e" fontSize="13" fontWeight="800" textAnchor="middle">{v.n}</text>
+              <text x={x + cellW / 2} y="56" fill="#3a2414" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{v.sa}</text>
+              <text x={x + cellW / 2} y="78" fill="#9a3412" fontSize="12" fontWeight="700" textAnchor="middle">{v.en}</text>
+              <text x={x + cellW / 2} y="98" fill="#475569" fontSize="11" fontWeight="600" textAnchor="middle">{v.clue}</text>
+            </g>
+          );
+        })}
+        <text x={w / 2} y="138" fill="#0f766e" fontSize="13" fontWeight="800" textAnchor="middle">8 vibhaktis × 3 vacanas = 24 forms</text>
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course lesson 5: dual column collapses to three endings. */
+function BalakaDualThreeEndings() {
+  const groups = [
+    { cases: '1 & 2', ending: '-ौ', example: 'बालकौ' },
+    { cases: '3, 4 & 5', ending: '-आभ्याम्', example: 'बालकाभ्याम्' },
+    { cases: '6 & 7', ending: '-योः', example: 'बालकयोः' },
+  ];
+  const cellW = 168;
+  const gap = 12;
+  const w = groups.length * cellW + (groups.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Dual column · three endings"
+      caption="The lesson’s memory hack: the dual (dvivacana) column for bālaka uses only three distinct endings across the eight cases."
+      maxWidth={600}
+    >
+      <svg viewBox={`0 0 ${w} 120`} role="img" aria-labelledby="dual3-title" style={{ fontFamily: SANS }}>
+        <title id="dual3-title">Three dual endings for akaraanta masculine nouns.</title>
+        {groups.map((g, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={g.cases}>
+              <rect x={x} y="8" width={cellW} height="100" rx="12" fill="#fff7ed" stroke="#86efac" strokeWidth="3" />
+              <text x={x + cellW / 2} y="30" fill="#0f766e" fontSize="12" fontWeight="800" textAnchor="middle">Cases {g.cases}</text>
+              <text x={x + cellW / 2} y="56" fill="#14532d" fontSize="18" fontWeight="800" textAnchor="middle" fontFamily={DEV}>{g.ending}</text>
+              <text x={x + cellW / 2} y="86" fill="#3a2414" fontSize="14" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{g.example}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course lesson 6: two common feminine stem patterns. */
+function TwoFeminineStems() {
+  const stems = [
+    { n: '1', sa: 'आकारान्त', en: 'Ākārānta', clue: 'long ā · e.g. latā' },
+    { n: '2', sa: 'ईकारान्त', en: 'Īkārānta', clue: 'long ī · e.g. nadī' },
+  ];
+  const cellW = 210;
+  const gap = 40;
+  const w = stems.length * cellW + (stems.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Two feminine patterns"
+      caption="The lesson’s two most common strīliṅga stems: Ākārānta (long ā, e.g. latā) and Īkārānta (long ī, e.g. nadī)."
+      maxWidth={560}
+    >
+      <svg viewBox={`0 0 ${w} 130`} role="img" aria-labelledby="stri2-title" style={{ fontFamily: SANS }}>
+        <title id="stri2-title">Two feminine noun patterns: akaranta and ikaranta.</title>
+        {stems.map((s, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={s.n}>
+              {i > 0 && (
+                <text x={x - gap / 2} y="68" fill="#0f766e" fontSize="18" fontWeight="800" textAnchor="middle">and</text>
+              )}
+              <rect x={x} y="12" width={cellW} height="100" rx="12" fill="#fff7ed" stroke={i === 0 ? '#fdba74' : '#38bdf8'} strokeWidth="4" />
+              <text x={x + cellW / 2} y="38" fill="#0f766e" fontSize="14" fontWeight="800" textAnchor="middle">{s.n}</text>
+              <text x={x + cellW / 2} y="62" fill="#3a2414" fontSize="18" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{s.sa}</text>
+              <text x={x + cellW / 2} y="84" fill="#9a3412" fontSize="13" fontWeight="700" textAnchor="middle">{s.en}</text>
+              <text x={x + cellW / 2} y="104" fill="#475569" fontSize="11" fontWeight="600" textAnchor="middle">{s.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course lesson 8: three puruṣas in Sanskrit order. */
+function ThreePurusaOrder() {
+  const persons = [
+    { n: '1', sa: 'प्रथमः', en: 'Prathama', clue: 'he / she / it · Eng. 3rd' },
+    { n: '2', sa: 'मध्यमः', en: 'Madhyama', clue: 'you · Eng. 2nd' },
+    { n: '3', sa: 'उत्तमः', en: 'Uttama', clue: 'I / we · Eng. 1st' },
+  ];
+  const cellW = 168;
+  const gap = 12;
+  const w = persons.length * cellW + (persons.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Three puruṣas · Sanskrit order"
+      caption="The lesson’s person order: outer world first (Prathama), then the listener (Madhyama), then the speaker (Uttama) — the reverse of English 1st–2nd–3rd."
+      maxWidth={600}
+    >
+      <svg viewBox={`0 0 ${w} 120`} role="img" aria-labelledby="pur3-title" style={{ fontFamily: SANS }}>
+        <title id="pur3-title">Three grammatical persons in Sanskrit order.</title>
+        {persons.map((p, i) => {
+          const x = 4 + i * (cellW + gap);
+          const stroke = i === 0 ? '#fdba74' : i === 1 ? '#86efac' : '#38bdf8';
+          return (
+            <g key={p.n}>
+              <rect x={x} y="8" width={cellW} height="100" rx="12" fill="#fff7ed" stroke={stroke} strokeWidth="3" />
+              <text x={x + cellW / 2} y="30" fill="#0f766e" fontSize="13" fontWeight="800" textAnchor="middle">{p.n}</text>
+              <text x={x + cellW / 2} y="54" fill="#3a2414" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{p.sa}</text>
+              <text x={x + cellW / 2} y="76" fill="#9a3412" fontSize="12" fontWeight="700" textAnchor="middle">{p.en}</text>
+              <text x={x + cellW / 2} y="96" fill="#475569" fontSize="10" fontWeight="600" textAnchor="middle">{p.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course lesson 9: two golden rules of Kartari syntax. */
+function KartariTwoGoldenRules() {
+  const rules = [
+    { n: '1', sa: 'प्रथमा', en: 'Subject = Case 1', clue: 'Kartā in Prathamā' },
+    { n: '2', sa: 'क्रिया', en: 'Verb matches', clue: 'person + number' },
+  ];
+  const cellW = 210;
+  const gap = 40;
+  const w = rules.length * cellW + (rules.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Kartari · two golden rules"
+      caption="The lesson’s active-voice syntax: the doer stays in Prathamā, and the verb agrees with that subject in person and number — gender does not change the present-tense verb."
+      maxWidth={560}
+    >
+      <svg viewBox={`0 0 ${w} 130`} role="img" aria-labelledby="kart2-title" style={{ fontFamily: SANS }}>
+        <title id="kart2-title">Two golden rules of Kartari Prayoga.</title>
+        {rules.map((r, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={r.n}>
+              {i > 0 && (
+                <text x={x - gap / 2} y="68" fill="#0f766e" fontSize="18" fontWeight="800" textAnchor="middle">+</text>
+              )}
+              <rect x={x} y="12" width={cellW} height="100" rx="12" fill="#fff7ed" stroke={i === 0 ? '#fdba74' : '#86efac'} strokeWidth="4" />
+              <text x={x + cellW / 2} y="38" fill="#0f766e" fontSize="14" fontWeight="800" textAnchor="middle">Rule {r.n}</text>
+              <text x={x + cellW / 2} y="62" fill="#3a2414" fontSize="18" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{r.sa}</text>
+              <text x={x + cellW / 2} y="84" fill="#9a3412" fontSize="13" fontWeight="700" textAnchor="middle">{r.en}</text>
+              <text x={x + cellW / 2} y="104" fill="#475569" fontSize="11" fontWeight="600" textAnchor="middle">{r.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course lesson 10: Avyaya remains unchanged across gender, case, number. */
+function AvyayaUnchanging() {
+  const axes = [
+    { sa: 'लिङ्ग', en: '3 genders', clue: 'identical' },
+    { sa: 'विभक्ति', en: '7 cases', clue: 'identical' },
+    { sa: 'वचन', en: '3 numbers', clue: 'identical' },
+  ];
+  const cellW = 148;
+  const gap = 12;
+  const w = axes.length * cellW + (axes.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Avyaya · never changes"
+      caption="The lesson’s definition: an Avyaya stays the same across all three genders, all seven cases, and all three numbers — e.g. atra, ca, api, na."
+      maxWidth={560}
+    >
+      <svg viewBox={`0 0 ${w} 148`} role="img" aria-labelledby="avy3-title" style={{ fontFamily: SANS }}>
+        <title id="avy3-title">Avyaya stays identical across gender, case, and number.</title>
+        {axes.map((a, i) => {
+          const x = 4 + i * (cellW + gap);
+          const stroke = i === 0 ? '#fdba74' : i === 1 ? '#86efac' : '#38bdf8';
+          return (
+            <g key={a.en}>
+              <rect x={x} y="8" width={cellW} height="100" rx="12" fill="#fff7ed" stroke={stroke} strokeWidth="3" />
+              <text x={x + cellW / 2} y="36" fill="#3a2414" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{a.sa}</text>
+              <text x={x + cellW / 2} y="62" fill="#9a3412" fontSize="13" fontWeight="700" textAnchor="middle">{a.en}</text>
+              <text x={x + cellW / 2} y="90" fill="#0f766e" fontSize="12" fontWeight="800" textAnchor="middle">{a.clue}</text>
+            </g>
+          );
+        })}
+        <text x={w / 2} y="138" fill="#475569" fontSize="12" fontWeight="700" textAnchor="middle" fontFamily={DEV}>अत्र · च · अपि · न …</text>
+      </svg>
+    </Panel>
+  );
+}
+
 const FIGURES: Record<string, () => ReactNode> = {
   'vibhakti-eight-cases': () => <VibhaktiEightCases />,
   'dasagana-ten-classes': () => <DasaganaTenClasses />,
@@ -790,6 +1007,12 @@ const FIGURES: Record<string, () => ReactNode> = {
   'five-varga-families': () => <FiveVargaFamilies />,
   'two-pada-pillars': () => <TwoPadaPillars />,
   'lat-nine-endings': () => <LatNineEndings />,
+  'eight-by-three-vacanas': () => <EightByThreeVacanas />,
+  'balaka-dual-three-endings': () => <BalakaDualThreeEndings />,
+  'two-feminine-stems': () => <TwoFeminineStems />,
+  'three-purusa-order': () => <ThreePurusaOrder />,
+  'kartari-two-golden-rules': () => <KartariTwoGoldenRules />,
+  'avyaya-unchanging': () => <AvyayaUnchanging />,
 };
 
 export function isGrammarLightFigure(id: string): boolean {

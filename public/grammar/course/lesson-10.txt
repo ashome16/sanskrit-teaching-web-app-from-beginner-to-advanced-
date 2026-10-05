@@ -7,6 +7,7 @@ Up to this point, you have learned nouns and verbs that decline and conjugate. I
 ---
 
 ## 1. What is an Avyaya?
+[[figure:avyaya-unchanging]]
 An **Avyaya** is a word that never changes its form. No matter what gender, case, or number surrounds it, an Avyaya remains perfectly constant:
 
 > **सदृशं त्रिषु लिङ्गेषु सर्वासु च विभक्तिषु ।**  

@@ -36,6 +36,7 @@ Sanskrit recognizes **8 Vibhaktis**, mapped to fundamental semantic roles called
 ---
 
 ## 3. The Three Grammatical Numbers (वचनानि)
+[[figure:eight-by-three-vacanas]]
 While modern European languages only have Singular (one) and Plural (more than one), Sanskrit has a precise intermediate form:
 1. **Ekavacanam (एकवचनम्):** Exactly one (e.g. one boy)
 2. **Dvivacanam (द्विवचनम्):** Exactly two (e.g. a pair of boys, two eyes, two hands)

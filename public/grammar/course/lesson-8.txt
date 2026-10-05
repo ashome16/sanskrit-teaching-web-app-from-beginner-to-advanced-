@@ -5,6 +5,7 @@ In Lesson 7, you learned the 9-ending grid for present tense verbs: *ti-taḥ-an
 ---
 
 ## 1. The Philosophical Inversion of Persons
+[[figure:three-purusa-order]]
 One of the most beautiful cultural differences in Sanskrit grammar is the order of grammatical persons:
 
 | Sanskrit Order | Term | Meaning | Equivalent in English |

@@ -26,6 +26,7 @@ Once you memorize this single paradigm using **बालक (Bālaka - boy)** or
 ---
 
 ## 2. Memory Hacks: Symmetry in the Grid
+[[figure:balaka-dual-three-endings]]
 Memorizing 24 separate cells sounds intimidating, but Sanskrit tables are deeply symmetrical:
 
 1. **The Dual Column (द्विवचनम्) has only 3 distinct endings!**
