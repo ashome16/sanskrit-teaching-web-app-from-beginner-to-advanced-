@@ -4955,6 +4955,86 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   </a>
                 </div>
               </div>
+
+              {/* Subsection 17.4: Quadratic Equations with Dual Roots: The Leaping Monkeys */}
+              <div className="philosophy-card" style={{ background: '#fefce8', border: '1.5px solid #fef08a', margin: '1.5rem 0' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                  Bījagaṇita Varga-Samīkaraṇa · Śrīdhara&apos;s Method &amp; Dual Real Roots
+                </span>
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#713f12' }}>
+                  🐒 The Leaping Monkeys Riddle: Recognizing Two Real Positive Roots
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#713f12', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  Before Bhāskarācārya, algebraists often calculated only one root. In the <em>Bījagaṇita</em>, Bhāskara formalized <strong>Śrīdhara&apos;s Method</strong> of completing the square (multiplying by 4a and adding b²) and established that quadratic equations possess <strong>two real solutions</strong>:
+                </p>
+
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #fef08a', marginBottom: '1rem' }}>
+                  <div style={{ fontSize: '1.02rem', fontWeight: 800, color: '#713f12', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+                    यूथाष्टमांशस्य च वर्गमुक्ताः क्रीडन्ति कान्तारगताः कपीन्द्राः ।<br />
+                    द्वादश दृश्यन्ते कलहायमानास्ततो वद द्युतिन् यूथप्रमाणम् ॥
+                  </div>
+                  <p style={{ margin: '0.3rem 0 0.85rem', fontSize: '0.85rem', color: '#854d0e', lineHeight: 1.55 }}>
+                    <em>&ldquo;One-eighth of a monkey troop squared are frolicking joyfully in the forest; the remaining twelve are screeching on the hill. Tell me, how many monkeys compose the entire troop?&rdquo;</em>
+                  </p>
+                  <div style={{ background: '#fef9c3', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fde047', fontSize: '0.82rem', color: '#854d0e', fontFamily: 'monospace', lineHeight: 1.7 }}>
+                    Equation: (x / 8)² + 12 = x  ⟹  x² - 64x + 768 = 0<br />
+                    Multiplying by 4a (4): 4x² - 256x = -3072<br />
+                    Adding b² (4096) to complete square: (2x - 64)² = 4096 - 3072 = 1024<br />
+                    2x - 64 = ± √1024 = ± 32  ⟹  <strong>x = (64 ± 32) / 2</strong><br />
+                    • <strong>Root 1:</strong> x₁ = (64 + 32) / 2 = <strong>48 monkeys</strong> [(48/8)² + 12 = 36 + 12 = 48]<br />
+                    • <strong>Root 2:</strong> x₂ = (64 - 32) / 2 = <strong>16 monkeys</strong> [(16/8)² + 12 = 4 + 12 = 16]
+                  </div>
+                  <p style={{ margin: '0.85rem 0 0', fontSize: '0.82rem', color: '#713f12', lineHeight: 1.55 }}>
+                    Bhāskarācārya explains that both 16 and 48 monkeys are legitimate physical realities. For equations yielding a negative root, he comments that while mathematically sound as a directional vector or debt, the negative root must be set aside when counting discrete physical entities like troops or years.
+                  </p>
+                </div>
+              </div>
+
+              {/* Subsection 17.5: Obliquity of the Ecliptic (Krānti), Sine Tables & Eclipses */}
+              <div className="philosophy-card" style={{ background: '#f0fdf4', border: '1.5px solid #bbf7d0', margin: '1.5rem 0' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#16a34a', textTransform: 'uppercase' }}>
+                  Spherical Astronomy &amp; Celestial Mechanics · Golādhyāya
+                </span>
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#14532d' }}>
+                  🌌 Obliquity of the Ecliptic (Krānti = 24°), Jyā Sine Tables &amp; Eclipse Geometry
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#14532d', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  The seasonal drift of gnomon shadows is caused by the Earth&apos;s axial tilt, recognized by Indian astronomers as <strong>Krānti-Pāta (ε = 24°)</strong>. This spherical trigonometry powered the daily panchang calendar and the exact prediction of planetary eclipses:
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem', marginBottom: '1rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #bbf7d0' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#16a34a', marginBottom: '0.3rem' }}>
+                      ☀️ Seasonal Declination &amp; Solstice Tracking
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#334155', lineHeight: 1.6, margin: 0 }}>
+                      The Sun&apos;s daily declination (δ) from solar longitude (λ) is:<br />
+                      <strong style={{ fontFamily: 'monospace' }}>sin(δ) = sin(λ) × sin(24°)</strong><br />
+                      Zenith distance at noon is <strong>Z = θ - δ</strong>. At summer solstice in Ujjain (θ ≈ 23.2°, δ = +24°), Z ≈ 0° producing the famous <em>Zero Shadow Day</em>! At winter solstice (δ = -24°), Z = θ + 24°, casting the longest shadow of the year.
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #bbf7d0' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#16a34a', marginBottom: '0.3rem' }}>
+                      📐 The Sine Tables (Jyā) &amp; Bhāskara I Formula
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#334155', lineHeight: 1.6, margin: 0 }}>
+                      To compute trigonometric angles without calculators, Āryabhaṭa tabulated 24 sine table differences. In 629 CE, Bhāskara I formulated the world&apos;s first continuous rational sine approximation formula:<br />
+                      <strong style={{ fontFamily: 'monospace' }}>sin(θ) ≈ 16θ(π - θ) / [5π² - 4θ(π - θ)]</strong><br />
+                      With maximum error under 1.9%, Indian astronomers computed celestial coordinates with breathtaking accuracy!
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #bbf7d0' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#16a34a', marginBottom: '0.3rem' }}>
+                      🌑 Eclipse Predictions (Grahaṇa-Sādhana)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#334155', lineHeight: 1.6, margin: 0 }}>
+                      Eclipses were computed as pure geometric intersections of the Sun and Moon with the lunar nodes (<strong>Rāhu &amp; Ketu</strong>). By calculating diurnal parallax (<strong>Lambana</strong> in longitude and <strong>Nati</strong> in latitude), astronomers predicted solar and lunar eclipse timings down to the minute.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
         )}

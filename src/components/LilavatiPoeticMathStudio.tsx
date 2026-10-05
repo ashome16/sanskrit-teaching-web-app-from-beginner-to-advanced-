@@ -266,6 +266,17 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   const [bijaSqrtInput, setBijaSqrtInput] = useState<number>(-25);
   const [bijaKhaharaAdd, setBijaKhaharaAdd] = useState<number>(100);
 
+  // Interactive state for Seasonal Solar Tilt (Krānti) & Solstice Shadow Tracking
+  const [seasonalSolarLongitude, setSeasonalSolarLongitude] = useState<number>(90); // 90° = Summer Solstice (Karka Saṅkrānti)
+  const [seasonalObserverLat, setSeasonalObserverLat] = useState<number>(23.2); // Ujjain (~23.18° N)
+
+  // Interactive state for Leaping Monkeys (Quadratic Equations with Dual Real Roots)
+  const [monkeyDivisor, setMonkeyDivisor] = useState<number>(8); // 1/8th squared
+  const [monkeysOnHill, setMonkeysOnHill] = useState<number>(12); // 12 on hill
+  const [customQuadA, setCustomQuadA] = useState<number>(1);
+  const [customQuadB, setCustomQuadB] = useState<number>(-4);
+  const [customQuadC, setCustomQuadC] = useState<number>(-12);
+
   // Interactive state for Peacock & Snake
   const [pillarHeight, setPillarHeight] = useState<number>(9);
   const [snakeDistMultiplier, setSnakeDistMultiplier] = useState<number>(3); // 3x pillar height = 27
@@ -430,6 +441,32 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
       bijaResultDesc = `(${numA >= 0 ? `+${numA}` : numA}) ÷ (${numB >= 0 ? `+${numB}` : numB}) = ${bijaResultNum}`;
     }
   }
+
+  // Seasonal Solar Tilt (Krānti) & Solstice Shadows:
+  const obliquityDeg = 24.0; // Ancient Indian standard maximum tilt (Krānti-Pāta)
+  const obliquityRad = (obliquityDeg * Math.PI) / 180;
+  const solarLongRad = (seasonalSolarLongitude * Math.PI) / 180;
+  const sinDeclination = Math.sin(solarLongRad) * Math.sin(obliquityRad);
+  const declinationRad = Math.asin(sinDeclination);
+  const declinationDeg = (declinationRad * 180) / Math.PI;
+  const zenithDistanceDeg = seasonalObserverLat - declinationDeg;
+  const zenithDistanceRad = (zenithDistanceDeg * Math.PI) / 180;
+  const seasonalShadowLength = 12 * Math.tan(Math.abs(zenithDistanceRad));
+  const isZeroShadowDay = Math.abs(zenithDistanceDeg) < 0.6;
+  const currentRashiForSeason = ZODIAC_SIGNS[Math.floor((seasonalSolarLongitude % 360) / 30)] || ZODIAC_SIGNS[0];
+
+  // Leaping Monkeys Quadratic Riddle: (x / k)^2 + m = x => x^2 - k^2 x + k^2 m = 0
+  const kSquared = monkeyDivisor * monkeyDivisor;
+  const monkeyQuadB = -kSquared;
+  const monkeyQuadC = kSquared * monkeysOnHill;
+  const monkeyDisc = monkeyQuadB * monkeyQuadB - 4 * 1 * monkeyQuadC;
+  const monkeyRoot1 = monkeyDisc >= 0 ? (-monkeyQuadB + Math.sqrt(monkeyDisc)) / 2 : 0;
+  const monkeyRoot2 = monkeyDisc >= 0 ? (-monkeyQuadB - Math.sqrt(monkeyDisc)) / 2 : 0;
+
+  // Custom Quadratic Solver (Śrīdhara's Method): ax^2 + bx + c = 0
+  const customDisc = customQuadB * customQuadB - 4 * customQuadA * customQuadC;
+  const customRoot1 = customQuadA !== 0 && customDisc >= 0 ? (-customQuadB + Math.sqrt(customDisc)) / (2 * customQuadA) : null;
+  const customRoot2 = customQuadA !== 0 && customDisc >= 0 ? (-customQuadB - Math.sqrt(customDisc)) / (2 * customQuadA) : null;
 
   return (
     <div
@@ -3223,6 +3260,147 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
               </div>
             </div>
           </div>
+
+          {/* Section D: Obliquity of the Ecliptic (Krānti) & Seasonal Shadow Tracker */}
+          <div style={{ background: '#fffbeb', border: '1.5px solid #fde68a', borderRadius: '12px', padding: '1.25rem', marginTop: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase' }}>
+                  Seasonal Gnomon Dynamics · Krānti-Pāta (क्रांतिपातः / Obliquity = 24°)
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#78350f' }}>
+                  ☀️ Obliquity of the Ecliptic &amp; Seasonal Shadow Shifts
+                </h4>
+              </div>
+              <div style={{ background: '#fef3c7', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #fcd34d', fontSize: '0.84rem', fontWeight: 800, color: '#92400e', fontFamily: 'monospace' }}>
+                sin(δ) = sin(λ) × sin(24°) · Z = θ - δ
+              </div>
+            </div>
+
+            <p style={{ fontSize: '0.86rem', color: '#78350f', lineHeight: 1.5, margin: '0 0 1rem' }}>
+              Ancient Indian astronomers understood that the Sun does not travel along the celestial equator, but on an inclined path (the ecliptic) tilted at <strong>Krānti-Pāta (ε = 24°)</strong>. Because of this axial obliquity, the solar declination (<strong>δ / Krānti</strong>) and the noon shadow of a 12-aṅgula gnomon shift dynamically every day across the tropical year.
+            </p>
+
+            {/* Solstice & Equinox Presets */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem', marginBottom: '1rem' }}>
+              {[
+                { label: '🌻 Summer Solstice (Karka Saṅkrānti)', lon: 90, desc: 'λ = 90° · Max North Tilt (+24°) · Shortest Shadow' },
+                { label: '🍂 Autumnal Equinox (Tulā Saṅkrānti)', lon: 180, desc: 'λ = 180° · Zero Tilt (0°) · Shadow = Palabhā' },
+                { label: '❄️ Winter Solstice (Makara Saṅkrānti)', lon: 270, desc: 'λ = 270° · Max South Tilt (-24°) · Longest Shadow' },
+                { label: '🌸 Vernal Equinox (Meṣa Saṅkrānti)', lon: 0, desc: 'λ = 0° · Zero Tilt (0°) · Shadow = Palabhā' },
+              ].map((preset) => (
+                <button
+                  key={preset.label}
+                  type="button"
+                  onClick={() => setSeasonalSolarLongitude(preset.lon)}
+                  style={{
+                    padding: '0.4rem 0.75rem',
+                    borderRadius: '8px',
+                    border: seasonalSolarLongitude === preset.lon ? '1.5px solid #b45309' : '1px solid #cbd5e1',
+                    background: seasonalSolarLongitude === preset.lon ? '#fef3c7' : '#ffffff',
+                    color: seasonalSolarLongitude === preset.lon ? '#92400e' : '#334155',
+                    fontSize: '0.78rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                  }}
+                >
+                  <div>{preset.label}</div>
+                  <div style={{ fontSize: '0.68rem', color: '#64748b' }}>{preset.desc}</div>
+                </button>
+              ))}
+            </div>
+
+            {/* Sliders for Seasonal Tracking */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.85rem', marginBottom: '1rem' }}>
+              {/* Solar Longitude (λ) */}
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #fde68a' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>Solar Celestial Longitude (λ / Sāyana):</span>
+                  <span style={{ fontWeight: 800, color: '#d97706' }}>{seasonalSolarLongitude}°</span>
+                </div>
+                <input
+                  type="range"
+                  min={0}
+                  max={359}
+                  step={1}
+                  value={seasonalSolarLongitude}
+                  onChange={(e) => setSeasonalSolarLongitude(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: '#d97706' }}
+                />
+                <div style={{ fontSize: '0.72rem', color: '#64748b' }}>
+                  Current Zodiac Station: <strong>{currentRashiForSeason}</strong>
+                </div>
+              </div>
+
+              {/* Observer Latitude (θ) */}
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #fde68a' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>Observer Latitude (Akṣāṃśa θ):</span>
+                  <span style={{ fontWeight: 800, color: '#0284c7' }}>{seasonalObserverLat.toFixed(1)}° N</span>
+                </div>
+                <input
+                  type="range"
+                  min={0}
+                  max={45}
+                  step={0.5}
+                  value={seasonalObserverLat}
+                  onChange={(e) => setSeasonalObserverLat(parseFloat(e.target.value))}
+                  style={{ width: '100%', accentColor: '#0284c7' }}
+                />
+                <div style={{ fontSize: '0.72rem', color: '#64748b' }}>
+                  Ujjain = 23.2° N · Equator = 0° · Kashmir = 34.3° N
+                </div>
+              </div>
+            </div>
+
+            {/* Seasonal Shadow Output Banner */}
+            <div style={{ background: '#ffffff', borderRadius: '10px', border: '1.5px solid #fcd34d', padding: '1.15rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '0.85rem' }}>
+                <div style={{ background: '#fefce8', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fef08a' }}>
+                  <div style={{ fontSize: '0.76rem', fontWeight: 700, color: '#854d0e', textTransform: 'uppercase' }}>
+                    Solar Declination (Krānti δ):
+                  </div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 900, color: declinationDeg >= 0 ? '#15803d' : '#b45309', marginTop: '0.2rem' }}>
+                    {declinationDeg >= 0 ? `+${declinationDeg.toFixed(2)}° (North)` : `${declinationDeg.toFixed(2)}° (South)`}
+                  </div>
+                  <div style={{ fontSize: '0.74rem', color: '#854d0e', marginTop: '0.2rem' }}>
+                    sin(δ) = sin({seasonalSolarLongitude}°) × sin(24°) = {sinDeclination.toFixed(4)}
+                  </div>
+                </div>
+
+                <div style={{ background: '#fefce8', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fef08a' }}>
+                  <div style={{ fontSize: '0.76rem', fontWeight: 700, color: '#854d0e', textTransform: 'uppercase' }}>
+                    Solar Zenith Distance (Z):
+                  </div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#78350f', marginTop: '0.2rem' }}>
+                    Z = {zenithDistanceDeg.toFixed(2)}°
+                  </div>
+                  <div style={{ fontSize: '0.74rem', color: '#854d0e', marginTop: '0.2rem' }}>
+                    Z = θ - δ = {seasonalObserverLat.toFixed(1)}° - ({declinationDeg.toFixed(1)}°)
+                  </div>
+                </div>
+
+                <div style={{ background: isZeroShadowDay ? '#ecfdf5' : '#fefce8', padding: '0.85rem', borderRadius: '8px', border: isZeroShadowDay ? '1.5px solid #a7f3d0' : '1px solid #fef08a' }}>
+                  <div style={{ fontSize: '0.76rem', fontWeight: 700, color: isZeroShadowDay ? '#065f46' : '#854d0e', textTransform: 'uppercase' }}>
+                    Noon Shadow Length (S):
+                  </div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 900, color: isZeroShadowDay ? '#059669' : '#0f172a', marginTop: '0.2rem' }}>
+                    {isZeroShadowDay ? '0.0 Aṅgulas!' : `${seasonalShadowLength.toFixed(2)} Aṅgulas`}
+                  </div>
+                  <div style={{ fontSize: '0.74rem', color: isZeroShadowDay ? '#065f46' : '#854d0e', marginTop: '0.2rem' }}>
+                    S = 12 × tan(|Z|) · {zenithDistanceDeg >= 0 ? 'Shadow points North' : 'Shadow points South'}
+                  </div>
+                </div>
+              </div>
+
+              {isZeroShadowDay && (
+                <div style={{ marginTop: '0.85rem', background: '#ecfdf5', padding: '0.75rem', borderRadius: '8px', border: '1px solid #a7f3d0', fontSize: '0.84rem', color: '#065f46' }}>
+                  ☀️ <strong>Zero Shadow Day (शून्यछाया दिवस)!</strong> Because the observer latitude ({seasonalObserverLat.toFixed(1)}°) matches the Sun&apos;s tropical declination ({declinationDeg.toFixed(1)}°), the Sun is directly vertical at the zenith at solar noon. The 12-aṅgula gnomon casts zero shadow—a phenomenon celebrated annually at the Tropic of Cancer in Ujjain!
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       )}
 
@@ -3618,6 +3796,171 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
                   Invariance Axiom: ∞ ± k = ∞ (Infinite reservoir remains unchanging)
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Section 4: Solving Quadratic Equations with Dual Real Roots (The Leaping Monkeys Riddle) */}
+          <div style={{ background: '#fefce8', border: '1.5px solid #fef08a', borderRadius: '12px', padding: '1.25rem', marginTop: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                  Bījagaṇita Varga-Samīkaraṇa · Dual Real Roots &amp; Śrīdhara&apos;s Method
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#713f12' }}>
+                  🐒 The Leaping Monkeys Riddle: Dual Positive Real Solutions
+                </h4>
+              </div>
+              <div style={{ background: '#fef9c3', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #fde047', fontSize: '0.84rem', fontWeight: 800, color: '#854d0e', fontFamily: 'monospace' }}>
+                (x/8)² + 12 = x ⟹ x = 48 or 16
+              </div>
+            </div>
+
+            {/* Shloka Box */}
+            <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #fef08a', padding: '1rem', marginBottom: '1rem' }}>
+              <div style={{ fontSize: '1.02rem', fontWeight: 800, color: '#713f12', lineHeight: 1.6, marginBottom: '0.3rem' }}>
+                यूथाष्टमांशस्य च वर्गमुक्ताः क्रीडन्ति कान्तारगताः कपीन्द्राः ।<br />
+                द्वादश दृश्यन्ते कलहायमानास्ततो वद द्युतिन् यूथप्रमाणम् ॥
+              </div>
+              <p style={{ margin: '0.35rem 0 0', fontSize: '0.86rem', color: '#854d0e', lineHeight: 1.55 }}>
+                <strong>The Riddle:</strong> <em>&ldquo;One-eighth of the total number of monkeys in a troop squared are frolicking joyfully in the grove; the remaining twelve monkeys are seen chattering and screeching on the hill. Tell me, wise mathematician, how many monkeys are in the troop altogether?&rdquo;</em>
+              </p>
+            </div>
+
+            {/* Interactive Sliders for Riddle Parameters */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem', marginBottom: '1rem' }}>
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #fef08a' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>Troop Fraction (1/k):</span>
+                  <span style={{ fontWeight: 800, color: '#854d0e' }}>1/{monkeyDivisor}th</span>
+                </div>
+                <input
+                  type="range"
+                  min={4}
+                  max={12}
+                  value={monkeyDivisor}
+                  onChange={(e) => setMonkeyDivisor(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: '#854d0e' }}
+                />
+                <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Canonical Riddle: k = 8 (one-eighth squared)</div>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #fef08a' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>Remaining Monkeys on Hill (m):</span>
+                  <span style={{ fontWeight: 800, color: '#d97706' }}>{monkeysOnHill} monkeys</span>
+                </div>
+                <input
+                  type="range"
+                  min={6}
+                  max={30}
+                  value={monkeysOnHill}
+                  onChange={(e) => setMonkeysOnHill(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: '#d97706' }}
+                />
+                <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Canonical Riddle: m = 12 screaming on the hill</div>
+              </div>
+            </div>
+
+            {/* Śrīdhara's Method Proof Breakdown */}
+            <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #e2e8f0', padding: '1rem', marginBottom: '1rem' }}>
+              <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
+                📐 Śrīdhara&apos;s Quadratic Method (Completing the Square by Multiplying by 4a):
+              </div>
+              <div style={{ fontSize: '0.82rem', color: '#334155', fontFamily: 'monospace', lineHeight: 1.7 }}>
+                1. Set up equation: (x / {monkeyDivisor})² + {monkeysOnHill} = x<br />
+                2. Clear fraction by multiplying by {kSquared}: x² - {kSquared}x + {monkeyQuadC} = 0<br />
+                3. Quadratic coefficients: a = 1, b = {monkeyQuadB}, c = {monkeyQuadC}<br />
+                4. Discriminant: D = b² - 4ac = ({monkeyQuadB})² - 4(1)({monkeyQuadC}) = {monkeyQuadB * monkeyQuadB} - {4 * monkeyQuadC} = <strong>{monkeyDisc} = ({Math.sqrt(monkeyDisc)}²)</strong><br />
+                5. Roots: x = [-b ± √D] / 2a = [{Math.abs(monkeyQuadB)} ± {Math.sqrt(monkeyDisc)}] / 2
+              </div>
+
+              {/* Dual Solution Cards */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.85rem', marginTop: '0.85rem' }}>
+                <div style={{ background: '#ecfdf5', padding: '0.85rem', borderRadius: '8px', border: '1.5px solid #a7f3d0' }}>
+                  <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#065f46', textTransform: 'uppercase' }}>
+                    Root 1 (Positive Addition):
+                  </div>
+                  <div style={{ fontSize: '1.45rem', fontWeight: 900, color: '#047857', marginTop: '0.2rem' }}>
+                    x₁ = ({Math.abs(monkeyQuadB)} + {Math.sqrt(monkeyDisc)}) / 2 = {monkeyRoot1} Monkeys
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#065f46', marginTop: '0.25rem' }}>
+                    ✓ Verification: ({monkeyRoot1}/{monkeyDivisor})² + {monkeysOnHill} = {Math.pow(monkeyRoot1/monkeyDivisor, 2)} + {monkeysOnHill} = {monkeyRoot1}!
+                  </div>
+                </div>
+
+                <div style={{ background: '#ecfdf5', padding: '0.85rem', borderRadius: '8px', border: '1.5px solid #a7f3d0' }}>
+                  <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#065f46', textTransform: 'uppercase' }}>
+                    Root 2 (Positive Subtraction):
+                  </div>
+                  <div style={{ fontSize: '1.45rem', fontWeight: 900, color: '#047857', marginTop: '0.2rem' }}>
+                    x₂ = ({Math.abs(monkeyQuadB)} - {Math.sqrt(monkeyDisc)}) / 2 = {monkeyRoot2} Monkeys
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#065f46', marginTop: '0.25rem' }}>
+                    ✓ Verification: ({monkeyRoot2}/{monkeyDivisor})² + {monkeysOnHill} = {Math.pow(monkeyRoot2/monkeyDivisor, 2)} + {monkeysOnHill} = {monkeyRoot2}!
+                  </div>
+                </div>
+              </div>
+
+              <p style={{ margin: '0.85rem 0 0', fontSize: '0.84rem', color: '#854d0e', lineHeight: 1.5 }}>
+                💡 <strong>Bhāskarācārya&apos;s Epistemological Discovery:</strong> Prior mathematicians often stopped after calculating the first root. Bhāskara explicitly proves that both 48 and 16 monkeys are legitimate physical solutions satisfying the conditions of the poem.
+              </p>
+            </div>
+
+            {/* Custom Quadratic & Negative Roots Commentary */}
+            <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #e2e8f0', padding: '1rem' }}>
+              <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#7c3aed', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+                Custom Quadratic Explorer &amp; Bhāskara&apos;s Negative Root (Ṛṇa) Doctrine
+              </div>
+              <p style={{ fontSize: '0.82rem', color: '#475569', margin: '0 0 0.75rem' }}>
+                Test quadratic equations where one of the roots is negative (e.g., ax² + bx + c = 0):
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.65rem', marginBottom: '0.85rem' }}>
+                <div>
+                  <label style={{ fontSize: '0.76rem', fontWeight: 700, color: '#334155' }}>Coefficient a:</label>
+                  <input
+                    type="number"
+                    value={customQuadA}
+                    onChange={(e) => setCustomQuadA(parseInt(e.target.value, 10) || 1)}
+                    style={{ width: '100%', padding: '0.35rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.82rem' }}
+                  />
+                </div>
+                <div>
+                  <label style={{ fontSize: '0.76rem', fontWeight: 700, color: '#334155' }}>Coefficient b:</label>
+                  <input
+                    type="number"
+                    value={customQuadB}
+                    onChange={(e) => setCustomQuadB(parseInt(e.target.value, 10) || 0)}
+                    style={{ width: '100%', padding: '0.35rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.82rem' }}
+                  />
+                </div>
+                <div>
+                  <label style={{ fontSize: '0.76rem', fontWeight: 700, color: '#334155' }}>Coefficient c:</label>
+                  <input
+                    type="number"
+                    value={customQuadC}
+                    onChange={(e) => setCustomQuadC(parseInt(e.target.value, 10) || 0)}
+                    style={{ width: '100%', padding: '0.35rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.82rem' }}
+                  />
+                </div>
+              </div>
+
+              {customDisc >= 0 && customRoot1 !== null && customRoot2 !== null ? (
+                <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '8px', border: '1px solid #cbd5e1' }}>
+                  <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#0f172a' }}>
+                    Roots: x₁ = {customRoot1.toFixed(2)}, x₂ = {customRoot2.toFixed(2)}
+                  </div>
+                  {(customRoot1 < 0 || customRoot2 < 0) && (
+                    <div style={{ marginTop: '0.4rem', fontSize: '0.8rem', color: '#991b1b', lineHeight: 1.5 }}>
+                      📜 <strong>Bhāskara&apos;s Ruling on Negative Roots:</strong> <em>&ldquo;When a root evaluates to a negative number (Ṛṇa), it is mathematically true as a directional vector, retrograde distance, or financial debt. However, if the question pertains to counting physical monkeys, people, or ages, the negative solution must be discarded as non-viable in physical reality.&rdquo;</em>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div style={{ background: '#fef2f2', padding: '0.75rem', borderRadius: '8px', border: '1px solid #fecaca', fontSize: '0.82rem', color: '#991b1b' }}>
+                  Discriminant D = {customDisc} &lt; 0 ⟹ Roots are complex numbers (Kṛteḥ Asambhavāt)!
+                </div>
+              )}
             </div>
           </div>
         </div>
