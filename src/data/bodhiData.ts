@@ -46,6 +46,8 @@ export interface BodhiQAItem {
   audioDevanagari?: string;
   tip?: string;
   relatedView?: string;
+  /** Opens this article anchor on /vedic-maths (same landing as site search). */
+  relatedVedicAnchor?: string;
 }
 
 export interface BodhiWordSuggestion {
@@ -706,6 +708,51 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     audioDevanagari: 'दोङ्गला कर्कटक्रान्तिवृत्तम् अयनांशः उज्जयिनी',
     tip: 'Visit Doṅglā on June 21st (Summer Solstice) to experience the true Zero Shadow Day where shadows vanish at local solar noon!',
     relatedView: 'philosophy',
+  },
+
+  {
+    id: 'qa-even-prime-baudhayana',
+    category: 'vedic_math',
+    question: 'Where can I read about the even prime, Baudhāyana, and the Śulba Sūtras?',
+    sanskritQuestion: 'सम-अभाज्य-संख्या बौधायन-शुल्बसूत्रं च कुत्र पठनीयम्?',
+    shortAnswer: 'Open “The Ancient Roots of the Even Prime” on the Vedic Maths page.',
+    detailedAnswer: 'That article shows why 2 is the only even prime, how the Taittirīya Saṃhitā chants even (Yugma) and odd (Ayugma), and how Baudhāyana’s Śulba Sūtra stated the diagonal theorem and the sacred triples long before Pythagoras.',
+    tip: 'Search the Gurukul for even prime, baudhayana, or sulba.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-baudhayana-even-prime-geometry',
+  },
+  {
+    id: 'qa-birth-of-the-grid',
+    category: 'vedic_math',
+    question: 'Where is the article on the birth of the grid, al-Khwarizmi, and Fibonacci?',
+    sanskritQuestion: 'ग्रिड-जन्म अल-ख्वारिज्मी फिबोनाच्चि-कथा च कुत्र?',
+    shortAnswer: 'Open “The Birth of the Grid” on the Vedic Maths page.',
+    detailedAnswer: 'It follows the decimal place-value grid and śūnya from India through al-Khwarizmi’s Arabic treatises — the source of the word algorithm — to Fibonacci’s Liber Abaci, which carried the system into Europe.',
+    tip: 'Try searching grid, khwarizmi, or fibonacci.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-birth-of-the-grid',
+  },
+  {
+    id: 'qa-shaka-chronology',
+    category: 'vedic_math',
+    question: 'Where can I read the historiographical framework and Shaka (Saka) chronology?',
+    sanskritQuestion: 'इतिहासदर्शनं शक-कालक्रमश्च कुत्र वर्णितौ?',
+    shortAnswer: 'Open “Historiographical Framework & Shaka Chronology” on the Vedic Maths page.',
+    detailedAnswer: 'The article sets out the pillars of Indian mathematical history — oral paramparā, palm-leaf decay, and the dating floor — and the Shaka-to-Common-Era conversion, CE = Shaka + 78. Shaka is also spelled Saka.',
+    tip: 'Search shaka, saka, or chronology.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-historiographical-framework-and-shaka-chronology',
+  },
+  {
+    id: 'qa-universal-engine-algebra',
+    category: 'vedic_math',
+    question: 'Where is the Universal Engine of Algebra article?',
+    sanskritQuestion: 'बीजगणितस्य सार्वभौम-यन्त्रं कुत्र पठनीयम्?',
+    shortAnswer: 'Open “The Universal Engine of Algebra” on the Vedic Maths page.',
+    detailedAnswer: 'It treats algebra as generalized arithmetic: base 10 for numbers and base x for polynomials, so 12 × 13 and (x + 2)(x + 3) share one coefficient pattern.',
+    tip: 'Search algebra or universal engine.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-universal-engine-of-algebra',
   },
 ];
 

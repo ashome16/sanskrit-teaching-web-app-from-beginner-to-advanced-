@@ -9,7 +9,7 @@ import {
   BODHI_WORD_SUGGESTIONS,
 } from '../data/bodhiData';
 import { SEARCH_INDEX, type SearchItem } from '../data/searchIndex';
-import { matchesSearchQuery } from '../utils/searchNormalizer';
+import { matchesSearchQuery, normalizeSearchText } from '../utils/searchNormalizer';
 import {
   speakAsBodhi,
   splitBodhiSegments,
@@ -283,6 +283,11 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
       ].join(' ');
 
       return matchesSearchQuery(targetString, q);
+    }).sort((a, b) => {
+      const qNorm = normalizeSearchText(q);
+      const aTitle = normalizeSearchText(a.title).includes(qNorm) ? 2 : 0;
+      const bTitle = normalizeSearchText(b.title).includes(qNorm) ? 2 : 0;
+      return bTitle - aTitle;
     }).slice(0, 6);
   }, [searchQuery, selectedCategory]);
 
@@ -767,7 +772,19 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                       className="bodhi-guide-btn"
                                       onClick={() => {
                                         updateIsOpen(false);
-                                        if (item.relatedView === 'philosophy' && item.id.includes('ujjain')) {
+                                        if (item.relatedVedicAnchor && onSearchResultNavigate) {
+                                          onSearchResultNavigate({
+                                            id: item.id,
+                                            title: item.question,
+                                            category: 'maths',
+                                            categoryLabel: 'Vedic Maths · Article',
+                                            badgeEmoji: '📖',
+                                            badgeColor: '#b45309',
+                                            description: item.shortAnswer,
+                                            keywords: [],
+                                            target: { view: 'vedic-maths', vedicAnchor: item.relatedVedicAnchor },
+                                          });
+                                        } else if (item.relatedView === 'philosophy' && item.id.includes('ujjain')) {
                                           if (onSearchResultNavigate) {
                                             onSearchResultNavigate({
                                               id: 'darshana-essay-ujjain-geodesy',
@@ -788,7 +805,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                         }
                                       }}
                                     >
-                                      {item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`}
+                                      {item.relatedVedicAnchor ? 'Open this article ➔' : item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`}
                                     </button>
                                   </div>
                                 )}

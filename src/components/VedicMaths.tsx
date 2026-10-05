@@ -7855,7 +7855,7 @@ ${bodyHtml}
               </div>
 
               <div className="article-sa-heading">{currentArticle.sanskritTitle}</div>
-              <h1 className="article-en-heading">{currentArticle.title}</h1>
+              <h1 className="article-en-heading" id={articleAnchor(currentArticle.id)}>{currentArticle.title}</h1>
               <p className="article-subtitle">{currentArticle.subtitle}</p>
 
               {/* Sections */}

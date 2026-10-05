@@ -999,7 +999,7 @@ const Dashboard: React.FC = () => {
           </button>
           <button
             type="button"
-            className="dashboard-search-trigger-btn"
+            className="dashboard-search-trigger-btn dashboard-search-trigger-btn--site"
             onClick={() => setIsSearchModalOpen(true)}
             title={searchShortcut.searchTitle}
             aria-label="Search site and articles"

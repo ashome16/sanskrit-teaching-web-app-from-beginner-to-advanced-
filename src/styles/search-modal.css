@@ -580,3 +580,42 @@
     display: none;
   }
 }
+
+/* Site search only (not the Voices control): a little larger, with a solid fill and border. */
+.dashboard-search-trigger-btn.dashboard-search-trigger-btn--site {
+  padding: 0.48rem 1.05rem;
+  font-size: 0.92rem;
+  background: #fff1e4;
+  border: 2px solid #b3472f;
+  color: #8f3a22;
+  box-shadow: 0 1px 4px rgba(179, 71, 47, 0.18);
+}
+
+.dashboard-search-trigger-btn.dashboard-search-trigger-btn--site .dashboard-search-trigger-icon {
+  font-size: 1.12rem;
+}
+
+.dashboard-search-trigger-btn.dashboard-search-trigger-btn--site .dashboard-search-trigger-text {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #8f3a22;
+}
+
+.dashboard-search-trigger-btn.dashboard-search-trigger-btn--site .dashboard-search-trigger-kbd {
+  background: #fff;
+  border-color: #e7cfc4;
+  color: #8f3a22;
+}
+
+@media (max-width: 900px) {
+  .dashboard-search-trigger-btn.dashboard-search-trigger-btn--site {
+    min-width: 42px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
+    border-width: 2px;
+    justify-content: center;
+    gap: 0;
+  }
+}
