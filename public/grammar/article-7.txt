@@ -7,6 +7,8 @@ Let's unlock the secret code of how words are built by looking at Upsarg (prefix
 
 ## 1. The Front-Helpers: Upsarg (उपसर्ग)
 
+[[figure:upsarg-pratyaya-blocks]]
+
 An Upsarg is a letter or group of letters that attaches to the very front of a base word. You can think of an Upsarg like a cool cap or a pair of superhero sunglasses you put on before walking out the door. It completely changes your look — and it completely alters the word's meaning!
 
 Without an Upsarg, a word just does its normal job. But with it, the word gets a brand-new direction.

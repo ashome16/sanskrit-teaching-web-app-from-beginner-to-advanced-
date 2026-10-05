@@ -16,6 +16,8 @@ Think of the kāraka as the invisible underlying function, and the vibhakti as t
 
 ## 2. The 8 Vibhaktis: The Case Matrix
 
+[[figure:vibhakti-eight-cases]]
+
 Here's how the physical cases line up with their foundational kāraka roles, in plain language:
 
 | Case | English name | Kāraka | Function | Simple clue |

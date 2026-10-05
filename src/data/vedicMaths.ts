@@ -3418,6 +3418,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       {
         title: 'Seven animals, seven notes',
         sanskritTitle: 'मयूरः गावः अजाविका क्रौञ्चः कोकिलः अश्वः कुञ्जरः',
+        figure: 'animal-yoga-saptaswara-wheel',
         paragraphs: [
           'A peacock, mayūra, calls ṣaḍja.',
           'Cows, gāvaḥ, bellow ṛṣabha.',

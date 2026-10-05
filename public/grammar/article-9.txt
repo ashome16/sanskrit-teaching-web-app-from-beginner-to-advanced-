@@ -30,6 +30,8 @@ Sanskrit recognizes an intermediate, dedicated category for pairs:
 
 ## 3. लिङ्ग-वचन-कोष्ठकम् — The Master Matrix
 
+[[figure:linga-vachana-grid]]
+
 Observe how the endings change with mathematical consistency across each gender and number:
 
 | प्रातिपदिकम् (Stem) | लिङ्गम् (Gender) | एकवचनम् (1) | द्विवचनम् (2) | बहुवचनम् (3+) |

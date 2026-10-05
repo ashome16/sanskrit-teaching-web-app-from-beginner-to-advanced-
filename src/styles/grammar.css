@@ -2033,3 +2033,41 @@ ol.grammar-article-list-ordered li::marker {
   background: #134e4a;
 }
 
+
+
+/* Pale schematic cards for grammar article diagrams (same light style as Vedic schematics). */
+.schematic-panel {
+  background: #fffdf8;
+  border: 1px solid #e7efe3;
+  border-radius: 14px;
+  padding: 1.15rem 1rem 1rem;
+  margin: 1.25rem 0;
+  width: 100%;
+  max-width: 640px;
+  box-sizing: border-box;
+  color: #334155;
+}
+.schematic-panel svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+.schematic-kicker {
+  margin: 0 0 0.65rem;
+  text-align: center;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #0f766e;
+}
+.schematic-caption {
+  margin: 0.75rem 0 0;
+  text-align: center;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #475569;
+}

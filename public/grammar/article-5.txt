@@ -15,6 +15,8 @@ According to Vedic tradition, these sounds are not human inventions but primordi
 
 ## The Ten Classifications (Daśagaṇāḥ)
 
+[[figure:dasagana-ten-classes]]
+
 To manage and conjugate these foundational roots smoothly, Pāṇini categorized the approximately 2,000 root words into ten distinct classes, known as the Daśagaṇāḥ (दशगणाः).
 
 Each Gaṇa (class) is named after the very first root word listed in its group and requires a specific structural marker (called a Vikaraṇapratyaya) to turn the raw root into a functional verbal stem.

@@ -13,6 +13,7 @@ import VibhaktiGuide from './VibhaktiGuide';
 import PaninianStudio from './PaninianStudio';
 import { NumbersGuide } from './NumbersGuide';
 import KatapayadiManuscriptFigure from './KatapayadiManuscriptFigure';
+import GrammarLightFigure, { isGrammarLightFigure } from './GrammarLightFigures';
 import VedicArticleFigure from './VedicArticleFigure';
 import type { VedicArticleFigureId } from '../data/vedicMaths';
 import {
@@ -256,6 +257,9 @@ const renderArticleBlocks = (blocks: ArticleBlock[]) => {
     if (block.type === 'figure') {
       if (block.id === 'katapayadi-matrix') {
         return <KatapayadiManuscriptFigure key={index} />;
+      }
+      if (isGrammarLightFigure(block.id)) {
+        return <GrammarLightFigure key={index} id={block.id} />;
       }
       return (
         <figure className="grammar-article-figure-container" key={index}>

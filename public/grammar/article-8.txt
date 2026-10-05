@@ -9,6 +9,8 @@ Let us explore each symbol, its Sanskrit name, its visual form, and its grammati
 
 ---
 
+[[figure:sanskrit-symbols-strip]]
+
 ## 1. पूर्णविरामः / एकदण्डः — The Single Daṇḍa (। )
 
 - **Visual Symbol:** `।` (a single vertical line)

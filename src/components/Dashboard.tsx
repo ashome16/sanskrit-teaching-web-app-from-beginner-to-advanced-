@@ -923,9 +923,6 @@ const Dashboard: React.FC = () => {
               >
                 CBSE Guide
               </button>
-              <button type="button" className="dashboard-nav-soon" disabled aria-disabled="true" title="Class 9 CBSE - Coming soon">
-                9th (CBSE)
-              </button>
             </div>
           </div>
           <button
