@@ -2965,6 +2965,104 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           { sa: 'गोलाध्याय', iast: 'Golādhyāya', gloss: 'The fourth book of Siddhānta Śiromaṇi dedicated to celestial spheres and cosmic physics' }
         ],
         highlight: 'Five hundred years before Newton, Bhāskarācārya formulated the principle of cosmic gravitational attraction (Ākṛṣṭi-Śakti), explaining that spherical Earth holds all objects toward its center by its own inherent force.'
+      },
+      {
+        title: 'The Lotus-Needle Metaphor (Sūdi): Sūkṣma Kāla & The Sub-Microsecond Ladder',
+        sanskritTitle: 'सूक्ष्मकालः · त्रुटिर्लवश्च कमलोत्पन्न-दृष्टान्तः',
+        paragraphs: [
+          'In his celebrated lectures on ancient Indian science and linguistics, Dr. Remella Avadhanulu points to a poetic yet mathematically rigorous aspect of ancient Indian microscopic time (Sūkṣma Kāla): because ancient astronomers had no quartz crystals or mechanical escapement clocks, they grounded sub-microsecond temporal increments in vivid physical analogies drawn from nature.',
+          '1. The Lotus Needle Metaphor (Sūdi / సూది):',
+          '• Truṭi (త్రుటి / त्रुटि): Defined as the exact time taken by a sharp needle (sūdi) to pierce completely through a single fresh lotus petal. In astronomical commentaries, it is also formulated as the time a needle takes to enter and exit a stack of 100 tightly layered lotus petals. Mathematically, 1 Truṭi = 1 / 32,400,000 of a second (~30.86 Nanoseconds!).',
+          '• Lavamu (లవము / लवम्): The next sequential step in microscopic time. Defined as the time taken for the needle to pass through an entire intact blossom, or structurally computed as 100 Truṭis = 1 Vedha, and 3 Vedhas = 1 Lavamu (300 Truṭis ≈ 9.26 Microseconds).',
+          '2. Amūrta Kāla vs. Mūrta Kāla:',
+          '• Amūrtakālam (అమూర్త కాలం / अमूर्तकालः — Formless Time): Refers to time scales too fast for human senses to perceive directly (Truṭi, Lava, Tatpara, Para). Because these units possess no visible "body" (mūrti) in daily human experience, the ancients deployed the lotus-needle puncture analogy to give the mind an intuitive physical anchor for nanoseconds.',
+          '• Mūrtakālam (మూర్త కాలం / मूर्तकालः — Manifest Time): Refers to perceptible temporal units anchored to biological and astronomical actions: beginning at 1 Nimeṣa (blink of an eye), 1 Prāṇa (4-second respiratory cycle chanting 10 long syllables), up through Vighaṭikā (24 s), Ghaṭikā (24 min), and Ahorātra (24 hours).',
+          '3. The Sexagesimal (Base-60) Micro-Scale Ladder:',
+          '• 1 Civil Day (Ahorātramu): 60 Ghaḍiyalu = 86,400 Seconds (24 Hours)',
+          '• 1 Ghaḍiya: 60 Vighaḍiyalu = 1,440 Seconds (24 Minutes)',
+          '• 1 Vighaḍiya: 6 Prāṇamulu = 24 Seconds',
+          '• 1 Prāṇamu: 10 Dīrghākṣarālu = 4.0 Seconds (Adult resting respiratory cycle)',
+          '• 1 Liptā: 60 Viliptalu = 2/5 Second (0.4 Seconds / 400 ms)',
+          '• 1 Viliptā: 60 Paramulu = 1/150 Second (~6.67 Milliseconds, matching 144 Hz display refresh rates)',
+          '• 1 Paramu: 60 Tatparalu = 1/9,000 Second (~111.1 Microseconds)',
+          '• 1 Tatpara: 60 Truṭulu = 1/540,000 Second (~1.85 Microseconds, ultrasonic wave transit over 0.63 mm)',
+          '• 1 Truṭi: 1/32,400,000 Second (~30.86 Nanoseconds, light travels 9.25 meters; ~100 CPU clock cycles at 3.2 GHz)'
+        ],
+        terms: [
+          { sa: 'त्रुटि', iast: 'Truṭi', gloss: '1/32,400,000 s (~30.86 ns); needle piercing 1 lotus petal' },
+          { sa: 'लव', iast: 'Lava', gloss: '300 Truṭis (~9.26 µs); needle piercing complete blossom' },
+          { sa: 'अमूर्तकाल', iast: 'Amūrta-Kāla', gloss: 'Formless, sub-sensory temporal scales (sub-second)' },
+          { sa: 'मूर्तकाल', iast: 'Mūrta-Kāla', gloss: 'Manifest, biologically perceptible temporal units (Nimeṣa to Ahorātra)' }
+        ],
+        highlight: 'Ancient Indian astronomers defined nanoseconds using the lotus-needle metaphor: 1 Truṭi (~30.86 ns) is the time required for a needle to puncture a fresh lotus petal.'
+      },
+      {
+        title: 'The Master Celestial Odometer: Ahargaṇa & Planetary Calculations',
+        sanskritTitle: 'अहर्गणः · ग्रहाणां मध्यम-स्फुट-स्पष्टीकरणम्',
+        paragraphs: [
+          'In texts like the Sūrya Siddhānta, microscopic and macroscopic time units were not merely contemplative exercises; they formed the baseline variables for a master celestial odometer called Ahargaṇa (अहर्गण / అహర్గణ — literally, "a collection of days").',
+          '1. The Rigorous Computational Pipeline:',
+          '[Total Solar Years Elapsed in Kalpa] ➔ [Convert to Lunar Months & Add Intercalary Adhikamāsas] ➔ [Convert to Tithis & Deduct Omitted Days (Kṣaya Tithis)] ➔ [Civil Days Elapsed Since Epoch (Ahargaṇa)].',
+          '2. The Rule of Proportion (Trairāśika / Rule of Three):',
+          'Every planet was assigned a fixed, immutable integer number of complete orbital revolutions per Mahāyuga (4,320,000 solar years). Once the Ahargaṇa (civil days elapsed from creation/epoch to target sunrise) was computed, the mean longitude of any planet was derived with zero ambiguity:',
+          'Mean Longitude = (Total Planetary Revolutions in Yuga × Elapsed Ahargaṇa) / Total Civil Days in Yuga',
+          '3. True Position Corrections (Spaṣṭa-Graha):',
+          'This calculation established the "mean" planetary coordinate assuming uniform circular motion. To obtain the "true" observed coordinate, astronomers applied two geometric trigonometric corrections using sine tables (Jyā):',
+          '• Mandaphala (Equation of Center): Corrected for non-circular orbital eccentricity (Keplerian elliptical acceleration near perihelion).',
+          '• Śīghraphala (Equation of Conjunction / Parallax): Corrected for relative motion of the observer stationed on a revolving Earth looking at interior/exterior planets.'
+        ],
+        terms: [
+          { sa: 'अहर्गण', iast: 'Ahargaṇa', gloss: 'Sum of civil days elapsed from cosmic epoch to target sunrise' },
+          { sa: 'त्रैराशिक', iast: 'Trairāśika', gloss: 'Rule of Three proportion formula for celestial mechanics' },
+          { sa: 'मन्दफल', iast: 'Mandaphala', gloss: 'Trigonometric equation of center for orbital eccentricity' },
+          { sa: 'शीघ्रफल', iast: 'Śīghraphala', gloss: 'Trigonometric equation of conjunction for geocentric relative motion' }
+        ],
+        highlight: 'The Ahargaṇa master odometer mapped planetary revolutions across 4.32 million years into daily celestial coordinates using the Rule of Three, corrected by Mandaphala and Śīghraphala trigonometric tables.'
+      },
+      {
+        title: 'The Saṅkalpa Mantra Timestamp: Calculating the Exact Age of Śveta-Varāha Kalpa',
+        sanskritTitle: 'सङ्कल्प-मन्त्रः · श्वेतवाराहकल्पस्य काल-गणना',
+        paragraphs: [
+          'Every morning across India, traditional Vedic almanacs (Panchangas) begin rituals with the Saṅkalpa Mantra—a living cosmic coordinate timestamp indicating our exact position within Brahma’s day:',
+          '"...Adya Brahmane, Dvitīya Parārdhe, Śrī Śveta-Varāha Kalpe, Vaivasvata Manvantare, Aṣṭāviṃśatitame Kaliyuge, Prathama Pāde..."',
+          'Let us calculate the exact elapsed age of our current creation cycle (Śveta-Varāha Kalpa) as of 2026 CE:',
+          '• Step 1: 6 Elapsed Manvantaras (6 × 71 Mahāyugas) = 426 × 4,320,000 = 1,840,320,000 Years',
+          '• Step 2: 7 Sandhi Junction Periods (7 × 1,728,000 Kṛta Yuga length) = 12,096,000 Years',
+          '• Step 3: 27 Completed Mahāyugas in the 7th Manvantara (27 × 4,320,000) = 116,640,000 Years',
+          '• Step 4: 3 Completed Eras in the 28th Cycle (Satya 1.728M + Tretā 1.296M + Dvāpara 864k) = 3,888,000 Years',
+          '• Step 5: Elapsed Years in Kali Yuga to 2026 CE (Epoch starts Feb 18, 3102 BCE = 3102 + 2026) = 5,128 Years',
+          'Grand Total Elapsed Age of Śveta-Varāha Kalpa = 1,840,320,000 + 12,096,000 + 116,640,000 + 3,888,000 + 5,128 = 1,972,949,128 Years!',
+          'Out of Brahma’s 4.32 Billion-Year Day, exactly ~1.973 Billion years have elapsed—placing our solar system approximately 45.6% into its diurnal life cycle.'
+        ],
+        terms: [
+          { sa: 'सङ्कल्प', iast: 'Saṅkalpa', gloss: 'Ritual intent and cosmic coordinate declaration of spacetime' },
+          { sa: 'श्वेतवाराहकल्प', iast: 'Śveta-Varāha Kalpa', gloss: 'The present Day of Brahma, spanning 4.32 billion years' },
+          { sa: 'सन्धि', iast: 'Sandhi', gloss: 'Cosmic twilight transition period equal to 1 Satya Yuga (1,728,000 yrs)' }
+        ],
+        highlight: 'The daily Saṅkalpa Mantra preserves an exact mathematical ledger of cosmic time: as of 2026 CE, exactly 1,972,949,128 years (~1.973 billion) have elapsed in our current Kalpa.'
+      },
+      {
+        title: 'Sidereal Year Precision Down to the Second & Modern Astrophysical Concordance',
+        sanskritTitle: 'सौरवर्ष-मानम् · आधुनिक-खगोलभौतिकशास्त्रेण साम्यम्',
+        paragraphs: [
+          'To determine the length of a solar year without modern instrumentation, Sūrya Siddhānta evaluated the total number of civil days (Bhūmi Sāvana Dināni) across a Mahāyuga (4,320,000 solar years): exactly 1,577,917,828 civil days.',
+          'Length of 1 Solar Year = 1,577,917,828 / 4,320,000 = 365.25875648 Days.',
+          'Extracting time increments: 365 Days, 6 Hours, 12 Minutes, 36.56 Seconds.',
+          'Comparison with Modern Sidereal Data:',
+          '• Sūrya Siddhānta Sidereal Year: 365d 06h 12m 36.56s',
+          '• Modern Satellite Sidereal Year: 365d 06h 09m 09.76s (Variance of only ~3 minutes 27 seconds across millennia!)',
+          'Astrophysical Concordance:',
+          '• Age of Earth/Sun: 1 Kalpa (4.32 Billion Years) matches radiometric dating of solar system collapse (~4.54 Billion Years).',
+          '• Cyclic Cosmology: Brahma’s 311.04 Trillion Year lifespan mirrors Sir Roger Penrose’s Conformal Cyclic Cosmology (CCC).',
+          '• Multiverse: Infinite Brahmāṇḍas floating like bubbles in the causal ocean anticipate eternal inflation and quantum multiverse topologies.',
+          'Dr. Remella Avadhanulu’s research video archives (Shri Veda Bharathi) feature detailed expositions of these verses: Līlāvatī Gaṇitam (https://www.youtube.com/watch?v=SuEoIxU8itY) and Sūrya Siddhānta Ahargaṇa (https://www.youtube.com/watch?v=7u7Nl0pBh2Y&t=1380).'
+        ],
+        terms: [
+          { sa: 'सावनदिन', iast: 'Sāvana-Dina', gloss: 'Civil day measured from sunrise to sunrise (1,577,917,828 per Mahāyuga)' },
+          { sa: 'नाक्षत्रवर्ष', iast: 'Nākṣatra-Varṣa', gloss: 'Sidereal year measured against background stars (365d 6h 12m 36.56s)' },
+          { sa: 'ब्रह्माण्ड', iast: 'Brahmāṇḍa', gloss: 'Cosmic egg / bubble universe coexisting within an infinite multiverse' }
+        ],
+        highlight: 'The Sūrya Siddhānta sidereal year (365d 6h 12m 36.56s) achieves 99.999% accuracy against modern satellite data, while its 4.32-billion-year Kalpa mirrors the radiometric age of the solar system.'
       }
     ],
     quote: 'The Earth attracts by its own force whatever heavy thing is stationed in space; that object appears to fall, but in an omnidirectional cosmos, where could the spherical Earth itself fall? It rests suspended in the geometric body of the infinite.',
@@ -2974,7 +3072,11 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Vyakta Gaṇitam is the mathematics of manifest concrete quantities (arithmetic, commercial math, geometry in Līlāvatī); Avyakta Gaṇitam is unmanifest symbolic multivariate algebra (Bījagaṇita).',
       'Bhāskara II utilized the Varṇa system of color names (Kālaka [black/x], Nīlaka [blue/y], Pītaka [yellow/z], Haritaka [green/w], and Rūpa [constants]) to formulate multivariate equations.',
       'The Sūrya Siddhānta opening shloka "Acintyāvyaktarūpāya" presents a mathematician’s vision of Brahman: the unmanifest quantum vacuum (Acintya-Avyakta), the generator of physical constants (Nirguṇa-Guṇātman), and the physical cosmos as its living geometric body (Mūrti).',
-      'In the Golādhyāya, Bhāskara II articulated the law of gravitational attraction (Ākṛṣṭi-Śakti) and the self-suspending nature of the spherical Earth (Dhāraṇātmikā Śaktiḥ) centuries before modern European physics.'
+      'In the Golādhyāya, Bhāskara II articulated the law of gravitational attraction (Ākṛṣṭi-Śakti) and the self-suspending nature of the spherical Earth (Dhāraṇātmikā Śaktiḥ) centuries before modern European physics.',
+      'Dr. Remella Avadhanulu highlights the Lotus Needle Metaphor: 1 Truṭi (~30.86 ns) is the time for a needle to pierce 1 lotus petal, anchoring Amūrta Kāla (formless time) in an intuitive physical baseline.',
+      'The Ahargaṇa master celestial odometer mapped planetary positions via the Rule of Three, corrected by Mandaphala (eccentricity) and Śīghraphala (relative motion).',
+      'The Saṅkalpa Mantra computes the exact elapsed age of our current Śveta-Varāha Kalpa as of 2026 CE: exactly 1,972,949,128 years (~1.973 billion years).',
+      'The Sūrya Siddhānta sidereal year (365d 6h 12m 36.56s) is accurate to within 3.5 minutes of modern satellite data without mechanical clocks.'
     ]
   },
   {

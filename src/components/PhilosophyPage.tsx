@@ -3287,6 +3287,11 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <a href="#lilavati-studio" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚙️ 7. Interactive Riddle Studio</a>
                 <a href="#lilavati-currency" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🐚 8. Cowrie Currency (Varāṭaka) &amp; Place-Value</a>
                 <a href="#lilavati-aesthetics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎨 9. Sanskrit Aesthetics &amp; Rasa</a>
+                <a href="#lilavati-sukshma-kala" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🪷 10. Lotus Needle &amp; Sūkṣma Kāla</a>
+                <a href="#lilavati-ahargana" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🧭 11. Ahargaṇa Celestial Odometer</a>
+                <a href="#lilavati-kalpa-age" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🗓️ 12. Kalpa Age (1.97 Billion Yrs)</a>
+                <a href="#lilavati-sidereal-multiverse" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>☀️ 13. Sidereal Precision &amp; Multiverse</a>
+                <a href="#lilavati-video-archives" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎥 14. Dr. Remella Avadhanulu Archives</a>
               </div>
             </figure>
 
@@ -3925,8 +3930,409 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 </li>
               </ul>
 
-              {/* Call to Action Navigation */}
-              <section className="philosophy-cta" aria-labelledby="lilavati-cta-heading" style={{ marginTop: '2.5rem' }}>
+            {/* Section 10: Sūkṣma Kāla & The Lotus Needle Metaphor */}
+            <section className="philosophy-section" id="lilavati-sukshma-kala" aria-labelledby="heading-lilavati-sukshma-kala">
+              <h2 id="heading-lilavati-sukshma-kala">10. The Lotus Needle Metaphor: Sūkṣma Kāla (Microscopic Time: Truṭi, Lava &amp; Amūrta vs. Mūrta Kāla)</h2>
+              <p className="philosophy-lead">
+                In his acclaimed research lectures, <strong>Dr. Remella Avadhanulu</strong> highlights a poetic and rigorous aspect of ancient Indian microscopic time (<em>Sūkṣma Kāla</em>): because units like microseconds and nanoseconds could not be registered on mechanical pendulum clocks, ancient scientists invented vivid physical baselines grounded in nature to define them.
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', margin: '1.25rem 0' }}>
+                <div className="philosophy-card" style={{ background: '#fdf4ff', border: '1.5px solid #f0abfc' }}>
+                  <h3 style={{ margin: '0 0 0.35rem', fontSize: '1.05rem', fontWeight: 800, color: '#86198f' }}>
+                    🪷 The Truṭi (త్రుటి / त्रुटि)
+                  </h3>
+                  <p style={{ fontSize: '0.88rem', color: '#701a75', lineHeight: 1.55, margin: 0 }}>
+                    Defined as the exact time required for a sharp needle (<em>sūdi / सूचि</em>) to pierce completely through a single petal of a fresh lotus. In astronomical commentaries, it is described as the time a needle takes to enter and exit a stack of 100 tightly layered lotus petals.
+                    <br /><br />
+                    <strong>Mathematical Value:</strong> Exactly <strong>1 / 32,400,000 of a second</strong> (~30.86 nanoseconds)! In 30.86 nanoseconds, light travels approximately 9.25 meters in vacuum, and a modern 3.2 GHz computer processor completes roughly 100 clock cycles.
+                  </p>
+                </div>
+
+                <div className="philosophy-card" style={{ background: '#fdf2f8', border: '1.5px solid #fbcfe8' }}>
+                  <h3 style={{ margin: '0 0 0.35rem', fontSize: '1.05rem', fontWeight: 800, color: '#9d174d' }}>
+                    🌸 The Lavamu (లవము / लवम्)
+                  </h3>
+                  <p style={{ fontSize: '0.88rem', color: '#831843', lineHeight: 1.55, margin: 0 }}>
+                    The next sequential step up in microscopic time. Depending on the Purāṇa or astronomical text referenced:
+                    <br />
+                    • The time taken for the needle to pass completely through an entire intact, multi-layered lotus blossom.
+                    <br />
+                    • Or structurally calculated as: <code>100 Truṭis = 1 Vedha</code>, and <code>3 Vedhas = 1 Lavamu</code> (300 Truṭis ≈ 9.26 microseconds).
+                  </p>
+                </div>
+              </div>
+
+              {/* Amūrta vs Mūrta Kāla */}
+              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem', margin: '1.25rem 0' }}>
+                <h3 style={{ margin: '0 0 0.5rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                  ⏳ Amūrta Kāla vs. Mūrta Kāla: Why the Metaphor Exists
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginTop: '0.75rem' }}>
+                  <div style={{ background: '#f8fafc', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #db2777' }}>
+                    <strong style={{ color: '#9d174d' }}>Amūrtakālam (అమూర్త కాలం / अमूर्तकालः):</strong>
+                    <p style={{ margin: '0.35rem 0 0', fontSize: '0.86rem', color: '#475569', lineHeight: 1.5 }}>
+                      Literally translates to &quot;unmanifested or formless time.&quot; Refers to abstract time scales too fast for human senses to perceive directly (such as <em>Truṭi</em>, <em>Lavamu</em>, <em>Tatpara</em>, and <em>Param</em>). Because these units have no visible body (<em>mūrti</em>) in daily human life, the ancients used the swift piercing of a lotus petal to provide an intuitive physical baseline for a fraction of a microsecond.
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#f8fafc', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #16a34a' }}>
+                    <strong style={{ color: '#166534' }}>Mūrtakālam (మూర్త కాలం / मूर्तकालः):</strong>
+                    <p style={{ margin: '0.35rem 0 0', fontSize: '0.86rem', color: '#475569', lineHeight: 1.5 }}>
+                      Translates to &quot;manifested time with a physical form.&quot; Encompasses time scales directly aligned with human experience and natural biological actions: beginning at 1 <em>Nimeṣa</em> (the time it takes to blink your eye) and expanding to 1 <em>Prāṇa</em> (4-second breath cycle chanting 10 long syllables), up to <em>Ghaṭikās</em> (24 minutes), hours, days, and seasons.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sexagesimal Sub-Second Ladder Table */}
+              <div style={{ overflowX: 'auto', margin: '1.25rem 0' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.84rem', background: '#ffffff', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                  <thead>
+                    <tr style={{ background: '#f8fafc', borderBottom: '2px solid #cbd5e1', textAlign: 'left' }}>
+                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Ancient Unit (Sanskrit / Telugu)</th>
+                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Base-60 Subdivision</th>
+                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Exact Fraction of a Second</th>
+                      <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Modern Equivalent &amp; Physical Analogy</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.55rem 0.85rem', fontWeight: 700, color: '#334155' }}>1 Ahorātramu (అహోరాత్రము)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>60 Ghaḍiyalu</td>
+                      <td style={{ padding: '0.55rem 0.85rem', fontFamily: 'monospace' }}>86,400 Seconds</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#475569' }}>24 Hours (Full day-and-night solar cycle)</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                      <td style={{ padding: '0.55rem 0.85rem', fontWeight: 700, color: '#334155' }}>1 Ghaḍiya (ఘడియ / घटिका)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>60 Vighaḍiyalu</td>
+                      <td style={{ padding: '0.55rem 0.85rem', fontFamily: 'monospace' }}>1,440 Seconds</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#475569' }}>24 Minutes (Time of sinking clepsydra bowl)</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.55rem 0.85rem', fontWeight: 700, color: '#334155' }}>1 Vighaḍiya (విఘడియ / विघटिका)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>60 Prāṇamulu</td>
+                      <td style={{ padding: '0.55rem 0.85rem', fontFamily: 'monospace' }}>24 Seconds</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#475569' }}>24 Seconds (Span of 6 human respiratory breaths)</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                      <td style={{ padding: '0.55rem 0.85rem', fontWeight: 700, color: '#334155' }}>1 Prāṇamu (ప్రాణము / प्राणः)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>10 Dīrghākṣarālu</td>
+                      <td style={{ padding: '0.55rem 0.85rem', fontFamily: 'monospace' }}>4.0 Seconds</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#475569' }}>Time to pronounce 10 long syllables at unhurried tempo</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.55rem 0.85rem', fontWeight: 700, color: '#334155' }}>1 Liptā (లిప్త / लिप्ता)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>60 Viliptalu</td>
+                      <td style={{ padding: '0.55rem 0.85rem', fontFamily: 'monospace' }}>2/5 Second (0.4 s)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#475569' }}>400 Milliseconds (Time of a single human eye blink)</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                      <td style={{ padding: '0.55rem 0.85rem', fontWeight: 700, color: '#334155' }}>1 Viliptā (విలిప్త / विलिप्ता)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>60 Paramulu</td>
+                      <td style={{ padding: '0.55rem 0.85rem', fontFamily: 'monospace' }}>1/150 Second (~0.00667 s)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#475569' }}>6.67 Milliseconds (~144 Hz display refresh frame rate)</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.55rem 0.85rem', fontWeight: 700, color: '#334155' }}>1 Paramu (పరము / परम्)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>60 Tatparalu</td>
+                      <td style={{ padding: '0.55rem 0.85rem', fontFamily: 'monospace' }}>1/9,000 Second (~0.000111 s)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#475569' }}>111.1 Microseconds (Acoustic inner-ear frequency limit)</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                      <td style={{ padding: '0.55rem 0.85rem', fontWeight: 700, color: '#334155' }}>1 Tatpara (తత్పర / तत्परम्)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#0d9488', fontWeight: 700 }}>60 Truṭulu</td>
+                      <td style={{ padding: '0.55rem 0.85rem', fontFamily: 'monospace' }}>1/540,000 Second (~1.85 µs)</td>
+                      <td style={{ padding: '0.55rem 0.85rem', color: '#475569' }}>1.85 Microseconds (Distance sound travels 0.63 mm in air)</td>
+                    </tr>
+                    <tr style={{ background: '#fdf4ff' }}>
+                      <td style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#86198f' }}>1 Truṭi (త్రుటి / त्रुटिः)</td>
+                      <td style={{ padding: '0.65rem 0.85rem', color: '#86198f', fontWeight: 800 }}>Base Fundamental Atom</td>
+                      <td style={{ padding: '0.65rem 0.85rem', fontFamily: 'monospace', fontWeight: 800, color: '#86198f' }}>
+                        1/32,400,000 s (~30.86 ns)
+                      </td>
+                      <td style={{ padding: '0.65rem 0.85rem', color: '#701a75', fontWeight: 600 }}>
+                        30.86 Nanoseconds (Needle piercing 1 lotus petal; light travels 9.25 m)
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Section 11: Celestial Odometer: Ahargaṇa & Rule of Three */}
+            <section className="philosophy-section" id="lilavati-ahargana" aria-labelledby="heading-lilavati-ahargana">
+              <h2 id="heading-lilavati-ahargana">11. The Master Celestial Odometer: Ahargaṇa, Mean Longitudes &amp; Trigonometric Corrections</h2>
+              <p className="philosophy-lead">
+                In treatises like the <em>Sūrya Siddhānta</em>, microscopic and macroscopic time units were not merely contemplative abstractions—they formed the baseline mathematical inputs for a master celestial odometer called <strong>Ahargaṇa (अहर्गण / అహర్గణ)</strong>, literally translating to &quot;a collection of civil days.&quot;
+              </p>
+
+              <div style={{ background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '12px', padding: '1.25rem', margin: '1.25rem 0' }}>
+                <h3 style={{ margin: '0 0 0.5rem', fontSize: '1.02rem', fontWeight: 800, color: '#0f172a' }}>
+                  The Rigorous Computational Sequence
+                </h3>
+                <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', margin: '0.75rem 0', fontSize: '0.86rem', fontWeight: 700, color: '#0f766e' }}>
+                  <span style={{ background: '#ecfdf5', padding: '0.4rem 0.75rem', borderRadius: '6px', border: '1px solid #a7f3d0' }}>
+                    1. Total Solar Years Elapsed in Kalpa
+                  </span>
+                  <span>➔</span>
+                  <span style={{ background: '#ecfdf5', padding: '0.4rem 0.75rem', borderRadius: '6px', border: '1px solid #a7f3d0' }}>
+                    2. Convert to Lunar Months &amp; Add Intercalary Months (Adhikamāsa)
+                  </span>
+                  <span>➔</span>
+                  <span style={{ background: '#ecfdf5', padding: '0.4rem 0.75rem', borderRadius: '6px', border: '1px solid #a7f3d0' }}>
+                    3. Convert to Lunar Days (Tithis) &amp; Deduct Omitted Days (Kṣaya Tithis)
+                  </span>
+                  <span>➔</span>
+                  <span style={{ background: '#0f766e', color: '#ffffff', padding: '0.4rem 0.75rem', borderRadius: '6px' }}>
+                    4. Civil Days Elapsed Since Epoch (Ahargaṇa)
+                  </span>
+                </div>
+
+                <div style={{ marginTop: '1rem' }}>
+                  <h4 style={{ margin: '0 0 0.35rem', fontSize: '0.94rem', fontWeight: 800, color: '#0f172a' }}>
+                    The Rule of Proportion (Trairāśika / Rule of Three)
+                  </h4>
+                  <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5 }}>
+                    Every celestial body was assigned an exact integer number of complete orbital revolutions per Mahāyuga (4,320,000 solar years). Once the Ahargaṇa (total civil days elapsed from the epoch to the target sunrise) was calculated, the mean longitude of any planet was derived with zero ambiguity:
+                  </p>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0', fontFamily: 'monospace', fontSize: '0.95rem', color: '#0f766e', fontWeight: 700 }}>
+                    Mean Longitude = (Total Planetary Revolutions in Yuga × Elapsed Ahargaṇa) / Total Civil Days in Yuga
+                  </div>
+                </div>
+
+                <div style={{ marginTop: '1rem' }}>
+                  <h4 style={{ margin: '0 0 0.35rem', fontSize: '0.94rem', fontWeight: 800, color: '#0f172a' }}>
+                    True Position Corrections (Spaṣṭa-Graha)
+                  </h4>
+                  <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5 }}>
+                    This yielded the &quot;mean&quot; position assuming uniform circular motion. To determine the &quot;true&quot; observed celestial position (<em>Spaṣṭa-Graha</em>), Indian astronomers applied sophisticated geometric corrections using sine tables (<em>Jyā</em>):
+                  </p>
+                  <ul style={{ margin: '0.4rem 0 0', paddingLeft: '1.2rem', fontSize: '0.85rem', color: '#475569', lineHeight: 1.5 }}>
+                    <li><strong>Mandaphala (Equation of Center):</strong> Corrected for orbital eccentricity and non-uniform orbital speed when closest to perihelion vs. aphelion.</li>
+                    <li><strong>Śīghraphala (Equation of Conjunction / Parallax):</strong> Corrected for the relative motion of the observer stationed upon a revolving Earth viewing outer and inner planets.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 12: Calculating Exact Elapsed Age of Current Kalpa */}
+            <section className="philosophy-section" id="lilavati-kalpa-age" aria-labelledby="heading-lilavati-kalpa-age">
+              <h2 id="heading-lilavati-kalpa-age">12. The Cosmic Timestamp: Calculating the Exact Elapsed Age of Śrī Śveta-Varāha Kalpa (1,972,949,128 Years as of 2026)</h2>
+              <p className="philosophy-lead">
+                Every morning across the Indian subcontinent, traditional practitioners begin daily rituals by reciting the <strong>Saṅkalpa Mantra</strong>. Far from being a superstitious recitation, this verse functions as a rigorous cosmic coordinate timestamp stating where our planet sits within the current day of creation:
+              </p>
+
+              <div className="philosophy-card" style={{ background: '#f0fdfa', border: '1.5px solid #99f6e4', margin: '1.25rem 0' }}>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#134e4a', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+                  ...अद्य ब्रह्मणो द्वितीये परार्धे श्रीश्वेतवाराहकल्पे वैवस्वतमन्वन्तरॆ अष्टाविंशतितमे कलियुगे प्रथमपादे...<br />
+                  <span style={{ fontSize: '0.92rem', fontWeight: 600, color: '#0f766e' }}>
+                    ...Adya Brahmano Dvitīye Parārdhe Śrī Śveta-Varāha Kalpe Vaivasvata Manvantare Aṣṭāviṃśatitame Kaliyuge Prathama Pāde...
+                  </span>
+                </div>
+                <p style={{ margin: 0, fontSize: '0.86rem', color: '#115e59', lineHeight: 1.5 }}>
+                  <strong>The Literal Cosmic Translation:</strong> &quot;Today, in the second half of Brahma&apos;s lifespan (Dvitīya Parārdhe), during the day of the White Boar (Śveta-Varāha Kalpa), in the 7th epoch of Vaivasvata Manu, in the 28th Mahāyuga cycle, in the first quarter of the Kali era...&quot;
+                </p>
+              </div>
+
+              {/* Step by step derivation */}
+              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem', margin: '1.25rem 0' }}>
+                <h3 style={{ margin: '0 0 0.75rem', fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+                  Step-by-Step Numerical Derivation (Anchor Year 2026 CE)
+                </h3>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.85rem' }}>
+                  <div style={{ background: '#f8fafc', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0f766e' }}>Step 1: 6 Completed Manvantaras</div>
+                    <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', margin: '0.2rem 0' }}>1,840,320,000 Years</div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b' }}>6 Eras × 71 Mahāyugas = 426 × 4,320,000 years</div>
+                  </div>
+
+                  <div style={{ background: '#f8fafc', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0f766e' }}>Step 2: 7 Sandhi Junction Periods</div>
+                    <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', margin: '0.2rem 0' }}>12,096,000 Years</div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b' }}>7 Junctions × 1,728,000 (length of 1 Kṛta Yuga)</div>
+                  </div>
+
+                  <div style={{ background: '#f8fafc', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0f766e' }}>Step 3: 27 Completed Mahāyugas</div>
+                    <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', margin: '0.2rem 0' }}>116,640,000 Years</div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b' }}>27 Cycles in 7th Era × 4,320,000 years</div>
+                  </div>
+
+                  <div style={{ background: '#f8fafc', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0f766e' }}>Step 4: 3 Completed Eras in 28th Cycle</div>
+                    <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', margin: '0.2rem 0' }}>3,888,000 Years</div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Satya (1.728M) + Tretā (1.296M) + Dvāpara (864k)</div>
+                  </div>
+
+                  <div style={{ background: '#f8fafc', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0f766e' }}>Step 5: Kali Yuga Elapsed to 2026 CE</div>
+                    <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', margin: '0.2rem 0' }}>5,128 Years</div>
+                    <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Epoch starts Feb 18, 3102 BCE (3,102 + 2026 = 5,128)</div>
+                  </div>
+
+                  <div style={{ background: '#ecfdf5', padding: '0.85rem', borderRadius: '8px', border: '1.5px solid #a7f3d0' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#065f46' }}>🌟 Grand Total Elapsed Age</div>
+                    <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#047857', margin: '0.2rem 0', fontFamily: 'monospace' }}>
+                      1,972,949,128 Years!
+                    </div>
+                    <div style={{ fontSize: '0.78rem', color: '#065f46' }}>~1.973 Billion Years into our 4.32 Billion-Year Kalpa</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 13: Sidereal Year Precision & Multiverse Concordance */}
+            <section className="philosophy-section" id="lilavati-sidereal-multiverse" aria-labelledby="heading-lilavati-sidereal-multiverse">
+              <h2 id="heading-lilavati-sidereal-multiverse">13. Precision of the Sidereal Year down to the Second &amp; Modern Astrophysical Concordance</h2>
+              <p className="philosophy-lead">
+                To find the duration of a solar year without the luxury of atomic stopwatches, the <em>Sūrya Siddhānta</em> evaluated the total number of civil days that elapse over a massive cosmic cycle (Mahāyuga), ensuring that micro-fluctuations averaged out to zero:
+              </p>
+
+              <div className="philosophy-card" style={{ background: '#fffbeb', border: '1.5px solid #fde68a', margin: '1.25rem 0' }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#92400e', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+                  The Canonical Sidereal Ratio
+                </div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#78350f', fontFamily: 'monospace' }}>
+                  1,577,917,828 Civil Days / 4,320,000 Solar Years = 365.25875648 Days
+                </div>
+                <div style={{ fontSize: '0.94rem', fontWeight: 700, color: '#b45309', marginTop: '0.4rem' }}>
+                  ➔ 365 Days, 6 Hours, 12 Minutes, 36.56 Seconds
+                </div>
+                <p style={{ margin: '0.5rem 0 0', fontSize: '0.86rem', color: '#92400e', lineHeight: 1.5 }}>
+                  Because ancient Indian astronomy is <strong>Sidereal (Nirayana)</strong>—measured against fixed background stars rather than the shifting equinoxes—this ancient value matches modern satellite data for the Sidereal Year (365d 6h 9m 10s) to within <strong>3.5 minutes</strong> across millennia, calculated purely through geometric observation.
+                </p>
+              </div>
+
+              {/* Astrophysics Table */}
+              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem', margin: '1.25rem 0' }}>
+                <h3 style={{ margin: '0 0 0.75rem', fontSize: '1.02rem', fontWeight: 800, color: '#0f172a' }}>
+                  Astrophysical Concordance: Ancient Cosmology vs. Modern Science
+                </h3>
+                <div style={{ overflowX: 'auto' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.84rem' }}>
+                    <thead>
+                      <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e8f0', textAlign: 'left' }}>
+                        <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Cosmological Concept</th>
+                        <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Ancient Indian Calculation</th>
+                        <th style={{ padding: '0.65rem 0.85rem', fontWeight: 800, color: '#0f172a' }}>Modern Astrophysical Equivalent</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9' }}>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Age of the Earth / Solar System</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#0f766e', fontWeight: 700 }}>
+                          1 Kalpa = 4.32 Billion Years<br />
+                          <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Lifespan of a single day-cycle before dissolution (Pralaya)</span>
+                        </td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>
+                          ~4.54 Billion Years<br />
+                          <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Radiometric dating places solar nebula collapse at this exact window</span>
+                        </td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9', background: '#fafafa' }}>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>Cyclic Cosmologies</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#0f766e', fontWeight: 700 }}>
+                          Brahma’s Lifespan = 311.04 Trillion Years<br />
+                          <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Creation (Sṛṣṭi) and total dissolution (Mahāpralaya) repeating endlessly</span>
+                        </td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>
+                          Conformal Cyclic Cosmology (CCC)<br />
+                          <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Sir Roger Penrose: universe cycles through infinite aeons without a single beginning</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style={{ padding: '0.6rem 0.85rem', fontWeight: 700, color: '#334155' }}>The Multiverse</td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#0f766e', fontWeight: 700 }}>
+                          Infinite Brahmāṇḍas<br />
+                          <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Countless universes floating like bubbles in the causal cosmic ocean</span>
+                        </td>
+                        <td style={{ padding: '0.6rem 0.85rem', color: '#475569' }}>
+                          Eternal Chaotic Inflation &amp; Many-Worlds<br />
+                          <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Quantum mechanics: our universe is one pocket in an infinite multiverse manifold</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 14: Dr. Remella Avadhanulu Video Archives */}
+            <section className="philosophy-section" id="lilavati-video-archives" aria-labelledby="heading-lilavati-video-archives">
+              <h2 id="heading-lilavati-video-archives">14. Video Archives: Dr. Remella Avadhanulu’s Līlāvatī Gaṇitam Masterclass</h2>
+              <p className="philosophy-lead">
+                To experience these mathematical shlokas, Telugu and Sanskrit commentaries, and geometric demonstrations directly from the scholar who popularized their computational elegance, explore the recorded video archives of <strong>Dr. Remella Avadhanulu (Shri Veda Bharathi)</strong>:
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#ffffff', border: '1.5px solid #cbd5e1', borderRadius: '12px', padding: '1.25rem', boxShadow: '0 4px 12px rgba(15, 23, 42, 0.05)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '1.4rem' }}>🪷</span>
+                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                      Līlāvatī Gaṇitam: Poetic Math &amp; Quadratic Riddles
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.5, margin: '0 0 1rem' }}>
+                    Dr. Remella Avadhanulu breaks down the classic verses of Bhāskarāchārya: the swarm of bees, the wind-blown lotus, and how Sanskrit poetry encoded mathematical rigor.
+                  </p>
+                  <a
+                    href="https://www.youtube.com/watch?v=SuEoIxU8itY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.45rem',
+                      padding: '0.55rem 1rem',
+                      background: '#ef4444',
+                      color: '#ffffff',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      fontWeight: 700,
+                      fontSize: '0.84rem',
+                    }}
+                  >
+                    ▶ Watch Līlāvatī Gaṇitam on YouTube
+                  </a>
+                </div>
+
+                <div style={{ background: '#ffffff', border: '1.5px solid #cbd5e1', borderRadius: '12px', padding: '1.25rem', boxShadow: '0 4px 12px rgba(15, 23, 42, 0.05)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '1.4rem' }}>🧭</span>
+                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                      Sūrya Siddhānta: Ahargaṇa &amp; Cosmic Time Architecture
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.5, margin: '0 0 1rem' }}>
+                    Detailed lecture analyzing the Ahargaṇa celestial odometer, the sexagesimal micro-second units (Truṭi, Lava, Tatpara), and planetary positions derived via the Rule of Three.
+                  </p>
+                  <a
+                    href="https://www.youtube.com/watch?v=7u7Nl0pBh2Y&t=1380"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.45rem',
+                      padding: '0.55rem 1rem',
+                      background: '#0284c7',
+                      color: '#ffffff',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      fontWeight: 700,
+                      fontSize: '0.84rem',
+                    }}
+                  >
+                    ▶ Watch Sūrya Siddhānta &amp; Ahargaṇa
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* Call to Action Navigation */}
+            <section className="philosophy-cta" aria-labelledby="lilavati-cta-heading" style={{ marginTop: '2.5rem' }}>
                 <h2 id="lilavati-cta-heading">Awaken Your Mathematical Imagination</h2>
                 <p>
                   Explore Masterclass 9 in the Course Addendum or delve into interactive Vedic Math drills.
