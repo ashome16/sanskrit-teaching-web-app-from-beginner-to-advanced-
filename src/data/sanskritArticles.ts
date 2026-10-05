@@ -53,6 +53,10 @@ export const SANSKRIT_ARTICLE_META: Record<string, { titleSa: string; blurbSa: s
     titleSa: 'संस्कृत-मार्गदर्शिका · Beginner\'s Roadmap',
     blurbSa: 'ध्वनिः → भाषाप्रयोगः → कथापठनम् → शास्त्रपाठः — कुतः आरभेत, किं क्रमेण पठेत्, कथम् अभ्यसेत् च।',
   },
+  'animal-names-yoga-shapes-singing-notes': {
+    titleSa: 'प्राणिनामानि योगासनानि सप्तस्वराश्च · Animal Names: Yoga Shapes & Singing Notes',
+    blurbSa: 'प्रकृतेः जीवन्त-प्रयोगशाला — जीवविज्ञानम्, पशूनां स्पन्दनं, योगासनानि, नारदीयशिक्षायाः सप्तस्वराश्च।',
+  },
 };
 
 export const SANSKRIT_ARTICLES: Record<string, ParsedArticle> = {

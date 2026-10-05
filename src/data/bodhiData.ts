@@ -724,7 +724,6 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     tip: 'Visit Doṅglā on June 21st (Summer Solstice) to experience the true Zero Shadow Day where shadows vanish at local solar noon!',
     relatedView: 'philosophy',
   },
-
   {
     id: 'qa-even-prime-baudhayana',
     category: 'vedic_math',
@@ -1669,6 +1668,28 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     detailedAnswer: 'That studio conjugates roots, compares paradigms, and opens the Dhātupāṭha articles.',
     tip: 'Search dhatupatha, or paninian studio.',
     relatedView: 'dhatupatha',
+  },
+  {
+    id: 'qa-animal-yoga-shapes',
+    category: 'grammar',
+    question: 'Why are so many Yoga Asanas named after animals (Cobra, Cat, Dog, Tortoise, Peacock)?',
+    sanskritQuestion: 'योगासनानि पशूनां नामभिः किमर्थं प्रसिद्धाः सन्ति?',
+    shortAnswer: 'Ancient yogis practiced biomimicry: observing that wild animals never suffer from spinal degeneration, they modeled asanas (Cobra, Cat, Dog, Tortoise, Peacock) to heal human posture and still the mind.',
+    detailedAnswer: 'Sitting in chairs for long hours causes thoracic kyphosis, psoas shortening, and shallow panic breathing. The ancient masters of Haṭha Yoga observed that wild animals maintain dynamic spinal health through natural kinetic waves: Bhujaṅgāsana (Cobra) strengthens the multifidi and erector spinae without wrist loading; Mārjārāsana (Cat) pumps synovial fluid across intervertebral discs; Adho Mukha Śvānāsana (Downward Dog) decompresses the posterior chain; Mayūrāsana (Peacock) compresses the abdominal aorta to flush digestive organs and burn metabolic toxins (āma); and Kūrmāsana (Tortoise) embodies sensory withdrawal (Pratyāhāra, Gītā 2.58).',
+    audioDevanagari: 'भुजङ्गासनम् मार्जारासनम् कूर्मासनम् मयूरासनम् सिंहासनम्',
+    tip: 'Read Article 18 in the Grammar section to explore the complete interactive matrix of animal names and yoga shapes!',
+    relatedView: 'grammar',
+  },
+  {
+    id: 'qa-animal-singing-notes-sapta-swara',
+    category: 'philosophy',
+    question: 'How did the 7 musical notes (Sa Re Ga Ma Pa Dha Ni) originate from animal cries?',
+    sanskritQuestion: 'सप्तस्वराः (स रे ग म प ध नि) पशूनां पक्षिणां च ध्वनेः कथम् आविर्भूताः?',
+    shortAnswer: 'According to the Nāradīya Śikṣā and Saṅgīta Ratnākara, the 7 swaras originated from nature: Sa from the Peacock, Re from the Bull, Ga from the Goat, Ma from the Crane, Pa from the Cuckoo, Dha from the Horse, and Ni from the Elephant.',
+    detailedAnswer: 'Classical Indian musicology (Gāndharva Veda) did not separate human music from the acoustic frequencies of nature. The foundational shloka declares: "षड्जं वदति मयूरो गावो रम्भन्ति चर्षभम् । अजाविकं तु गान्धारं क्रौञ्चः क्वणति मध्यमम् ॥ पुष्पसाधारणे काले पिकः कूजति पञ्चमम् । धैवतं हेषते वाजी निषादं बृंहते गजः ॥" Sa (Ṣaḍja) is the rain call of the Peacock; Re (Ṛṣabha) is the lowing of the Bull/Cow; Ga (Gāndhāra) is the bleat of the Goat; Ma (Madhyama) is the mournful cry of the Crane; Pa (Pañcama) is the spring whistle of the Cuckoo; Dha (Dhaivata) is the spirited neigh of the Horse; and Ni (Niṣāda) is the seismic infrasound trumpet of the Elephant!',
+    audioDevanagari: 'षड्जं वदति मयूरो गावो रम्भन्ति चर्षभम् अजाविकं तु गान्धारं क्रौञ्चः क्वणति मध्यमम्',
+    tip: 'Try the interactive sound synthesizer in Article 18 to hear the exact frequency of each animal note in real time!',
+    relatedView: 'grammar',
   },
 ];
 

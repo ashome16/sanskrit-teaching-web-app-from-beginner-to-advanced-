@@ -5,7 +5,7 @@ export type ArticleBlock =
   | { type: 'table'; headers: string[]; rows: string[][] }
   | { type: 'code'; text: string }
   | { type: 'image'; src: string; alt: string; caption?: string }
-  | { type: 'figure'; id: string }
+  | { type: 'figure'; id: string; caption?: string }
   | { type: 'quote'; text: string };
 
 export interface ParsedArticle {
@@ -136,6 +136,32 @@ export function parseArticle(raw: string): ParsedArticle {
       flushTable();
       blocks.push({ type: 'figure', id: figureMatch[1] });
       continue;
+    }
+
+    if (line.startsWith(':::figure ') || line.startsWith('[figure:')) {
+      flushParagraph();
+      flushList();
+      flushTable();
+      let id = '';
+      let caption: string | undefined;
+      if (line.startsWith(':::figure ')) {
+        const rest = line.slice(10).trim();
+        const m = rest.match(/^(\S+)(?:\s+["'](.*?)["'])?/);
+        if (m) {
+          id = m[1];
+          caption = m[2];
+        }
+      } else {
+        const m = line.match(/^\[figure:([^\]\s]+)(?:\s+["'](.*?)["'])?\]/);
+        if (m) {
+          id = m[1];
+          caption = m[2];
+        }
+      }
+      if (id) {
+        blocks.push({ type: 'figure', id, caption });
+        continue;
+      }
     }
 
     if (line.startsWith('![') && line.includes('](') && line.endsWith(')')) {

@@ -1,6 +1,7 @@
-import { useState, type MouseEvent, type ReactNode } from 'react';
+import { useState, useRef, type MouseEvent, type ReactNode } from 'react';
 import type { VedicArticleFigureId } from '../data/vedicMaths';
 import ArticleSchematic from './ArticleSchematics';
+import { playPronunciation } from '../utils/pronunciation';
 
 /** Diagrams for Vedic Maths articles: clean HTML/SVG (no ASCII art, no math library needed). */
 const Sup = ({ children }: { children: ReactNode }) => <sup>{children}</sup>;
@@ -1207,8 +1208,778 @@ const BhishmaAdhikaMasaFigure = () => {
   );
 };
 
+const SVARA_DATA = [
+  {
+    note: 'Sa',
+    svaraFull: 'Ṣaḍja',
+    svaraDeva: 'षड्जम्',
+    freq: 261.63,
+    ratio: '1:1',
+    shrutis: 4,
+    shrutiNames: ['Tīvrā (तीव्रा)', 'Kumudvatī (कुमुद्वती)', 'Mandā (मन्दा)', 'Chandovatī (छन्दोवती)'],
+    animalSa: 'मयूरः',
+    animalIast: 'Mayūraḥ',
+    animalEn: 'Peacock',
+    animalEmoji: '🦚',
+    root: '√mī / √mā (to utter joy, caller of rain)',
+    cryDesc: 'Piercing, trumpet-like call welcoming gathering monsoon clouds.',
+    shlokaPāda: 'षड्जं वदति मयूरो...',
+    asanaSa: 'मयूरासनम्',
+    asanaIast: 'Mayūrāsana',
+    asanaEn: 'Peacock Pose',
+    asanaShape: 'Horizontal plank balanced on elbows pressed into epigastric plexus',
+    biomechanics: 'Compresses abdominal aorta, flushes liver/spleen, burns āma (metabolic toxins).',
+    cakra: 'Mūlādhāra (Earth)',
+    rasa: 'Vīra (Heroic) / Raudra',
+    color: '#059669',
+  },
+  {
+    note: 'Re',
+    svaraFull: 'Ṛṣabha',
+    svaraDeva: 'ऋषभम्',
+    freq: 293.66,
+    ratio: '9:8',
+    shrutis: 3,
+    shrutiNames: ['Dayāvatī (दयावती)', 'Rañjanī (रञ्जनी)', 'Raktikā (रक्तिका)'],
+    animalSa: 'वृषभः / गौः',
+    animalIast: 'Vṛṣabhaḥ / Gauḥ',
+    animalEn: 'Bull / Cow',
+    animalEmoji: '🐂',
+    root: '√vṛṣ (to shower virility, power, abundance)',
+    cryDesc: 'Deep, resonant, diaphragmatic lowing of cattle calling their calves across pastures.',
+    shlokaPāda: 'गावो रम्भन्ति चर्षभम्...',
+    asanaSa: 'गोमुखासनम्',
+    asanaIast: 'Gomukhāsana',
+    asanaEn: 'Cow Face Pose',
+    asanaShape: 'Crossed-knee seated fold with interlaced backward arm grip behind spine',
+    biomechanics: 'Releases chronic shoulder/chest impingement, opens axillary lymph, calms heart rate.',
+    cakra: 'Svādhiṣṭhāna (Water)',
+    rasa: 'Vīra / Raudra',
+    color: '#d97706',
+  },
+  {
+    note: 'Ga',
+    svaraFull: 'Gāndhāra',
+    svaraDeva: 'गान्धारम्',
+    freq: 329.63,
+    ratio: '5:4',
+    shrutis: 2,
+    shrutiNames: ['Raudrī (रौद्री)', 'Krodhā (क्रोधा)'],
+    animalSa: 'अजः / मेषः',
+    animalIast: 'Ajaḥ / Meṣaḥ',
+    animalEn: 'Goat / Sheep',
+    animalEmoji: '🐐',
+    root: '√aj (nimble wanderer of rocky crags)',
+    cryDesc: 'Quick, agile, high-pitched nasal bleat echoing off mountain cliffs.',
+    shlokaPāda: 'अजाविकं तु गान्धारं...',
+    asanaSa: 'अजपादासनम्',
+    asanaIast: 'Aja-Pādāsana',
+    asanaEn: 'One-Legged Mountain Balance',
+    asanaShape: 'Elevated single-leg mountain balance mimicking mountain goat footwork',
+    biomechanics: 'Strengthens ankles, knee ligaments, proprioception, and mental agility.',
+    cakra: 'Maṇipūra (Fire)',
+    rasa: 'Karuṇa (Pathos & Tenderness)',
+    color: '#ea580c',
+  },
+  {
+    note: 'Ma',
+    svaraFull: 'Madhyama',
+    svaraDeva: 'मध्यमम्',
+    freq: 349.23,
+    ratio: '4:3',
+    shrutis: 4,
+    shrutiNames: ['Vajrikā (वज्रिका)', 'Prasāriṇī (प्रसारिणी)', 'Prīti (प्रीति)', 'Mārjanī (मार्जनी)'],
+    animalSa: 'क्रौञ्चः / बकः',
+    animalIast: 'Krauñcaḥ / Bakaḥ',
+    animalEn: 'Heron / Crane',
+    animalEmoji: '🪶',
+    root: '√kruñc (curving neck with penetrating call)',
+    cryDesc: 'Piercing, eerie, haunting water-bird call echoing over tranquil lakes.',
+    shlokaPāda: 'क्रौञ्चः क्वणति मध्यमम्...',
+    asanaSa: 'बकासनम् / क्रौञ्चासनम्',
+    asanaIast: 'Bakāsana / Krauñcāsana',
+    asanaEn: 'Crane / Heron Pose',
+    asanaShape: 'Knees tucked into triceps arm balance / straight seated leg-to-chest extension',
+    biomechanics: 'Activates Uḍḍīyana Bandha, stabilizes wrist and shoulder girdles, cultivates stillness.',
+    cakra: 'Anāhata (Air / Heart)',
+    rasa: 'Hāsya (Joyous) / Śṛṅgāra',
+    color: '#0284c7',
+  },
+  {
+    note: 'Pa',
+    svaraFull: 'Pañcama',
+    svaraDeva: 'पञ्चमम्',
+    freq: 392.00,
+    ratio: '3:2',
+    shrutis: 4,
+    shrutiNames: ['Kṣiti (क्षिति)', 'Raktā (रक्ता)', 'Sandīpanī (सन्दीपनी)', 'Ālāpinī (आलापिनी)'],
+    animalSa: 'पिकः / कोकिलः',
+    animalIast: 'Pikaḥ / Kokilaḥ',
+    animalEn: 'Cuckoo / Asian Koel',
+    animalEmoji: '🐦',
+    root: 'Onomatopoeic koku; seasonal harbinger of spring',
+    cryDesc: 'Pure sinusoidal, flute-like two-tone whistle echoing as mangoes blossom.',
+    shlokaPāda: 'पुष्पसाधारणे काले पिकः कूजति पञ्चमम्...',
+    asanaSa: 'काकपीठासनम्',
+    asanaIast: 'Kākapīṭhāsana',
+    asanaEn: 'Open-Throat Bird Seat',
+    asanaShape: 'Lifted sternum, retracted scapulae, unrestricted throat opening',
+    biomechanics: 'Expands pulmonary lung apices, stimulates thyroid and parathyroid glands.',
+    cakra: 'Viśuddha (Ether / Throat)',
+    rasa: 'Śṛṅgāra (Love, Melody, Devotion)',
+    color: '#7c3aed',
+  },
+  {
+    note: 'Dha',
+    svaraFull: 'Dhaivata',
+    svaraDeva: 'धैवतम्',
+    freq: 440.00,
+    ratio: '5:3',
+    shrutis: 3,
+    shrutiNames: ['Madantī (मदन्ती)', 'Rohiṇī (रोहिणी)', 'Ramyā (रम्या)'],
+    animalSa: 'वाजी / अश्वः',
+    animalIast: 'Vājī / Aśvaḥ',
+    animalEn: 'Horse / Stallion',
+    animalEmoji: '🐎',
+    root: '√aś (to pervade space, sprint with boundless vigor)',
+    cryDesc: 'Spirited, rhythmic, high-frequency neighing (heṣā) of a galloping warhorse.',
+    shlokaPāda: 'धैवतं हेषते वाजी...',
+    asanaSa: 'अश्वसञ्चालनासनम्',
+    asanaIast: 'Aśva Sañcalanāsana',
+    asanaEn: 'Equestrian Lunge Pose',
+    asanaShape: 'Deep low stride lunge, hips sinking forward, spine rising like a rearing stallion',
+    biomechanics: 'Stretches the iliopsoas, strengthens gluteal stabilizers, unleashes kinetic drive.',
+    cakra: 'Ājñā (Third Eye)',
+    rasa: 'Vīra (Heroic Vigor) / Bībhatsa',
+    color: '#db2777',
+  },
+  {
+    note: 'Ni',
+    svaraFull: 'Niṣāda',
+    svaraDeva: 'निषादम्',
+    freq: 493.88,
+    ratio: '15:8',
+    shrutis: 2,
+    shrutiNames: ['Ugrā (उग्रा)', 'Kṣobhiṇī (क्षोभिणी)'],
+    animalSa: 'गजः / मातङ्गः',
+    animalIast: 'Gajaḥ / Mātaṅgaḥ',
+    animalEn: 'Elephant',
+    animalEmoji: '🐘',
+    root: '√gaj (to trumpet/thunder deeply); ni-ṣīdati (settles into rest)',
+    cryDesc: 'Low-frequency seismic infrasound rumble and earth-shaking resonant trumpet.',
+    shlokaPāda: 'निषादं बृंहते गजः...',
+    asanaSa: 'गजाकरासनम्',
+    asanaIast: 'Gajākarāsana',
+    asanaEn: 'Elephant Trunk Pose',
+    asanaShape: 'Arm-balance with one leg hooked over shoulder like a raised prehensile trunk',
+    biomechanics: 'Enormous pelvic floor integration (Mūla Bandha), deep core and wrist compression.',
+    cakra: 'Sahasrāra (Crown / Ground)',
+    rasa: 'Karuṇa / Śānta',
+    color: '#475569',
+  },
+];
+
+const BESTIARY_DATA = [
+  {
+    emoji: '🐍',
+    sanskrit: 'भुजङ्गासनम्',
+    iast: 'Bhujaṅgāsana',
+    english: 'Cobra Pose',
+    animal: 'Bhujaṅga (Curves-Goer / Serpent)',
+    movement: 'Spinal Extension',
+    benefit: 'Strengthens erector spinae & multifidi without hand loading; expands thoracic cage, awakens Kuṇḍalinī.',
+    verse: 'हठयोगप्रदीपिका: देहाग्निं वर्धयेन्नित्यं सर्वदोषविनाशनम्।',
+  },
+  {
+    emoji: '🐈',
+    sanskrit: 'मार्जारासनम्',
+    iast: 'Mārjārāsana',
+    english: 'Cat Pose',
+    animal: 'Mārjāra (Obsessive Self-Cleaner / Cat)',
+    movement: 'Axial Spinal Wave (Flexion/Extension)',
+    benefit: 'Restores intervertebral disc hydration, calms sympathetic nervous tone, synchronizes breath.',
+    verse: 'मार्जारवत् शरीरं संकोच्य प्रसारयेत्।',
+  },
+  {
+    emoji: '🐕',
+    sanskrit: 'अधोमुखश्वानासनम्',
+    iast: 'Adho Mukha Śvānāsana',
+    english: 'Downward-Facing Dog',
+    animal: 'Śvāna (Eager Fast-Breather / Dog)',
+    movement: 'Inverted Posterior Chain Traction',
+    benefit: 'Full-body spinal decompression, hamstring/calf lengthening, cerebral oxygen perfusion.',
+    verse: 'श्वानेन तुल्यं पृष्ठं वितत्य तिष्ठेत्।',
+  },
+  {
+    emoji: '🐢',
+    sanskrit: 'कूर्मासनम्',
+    iast: 'Kūrmāsana',
+    english: 'Tortoise Pose',
+    animal: 'Kūrma (Deliberate Dweller / Tortoise)',
+    movement: 'Full Anterior Flexion & Seal',
+    benefit: 'Embodiment of Pratyāhāra (sensory withdrawal); shields nervous system from external sensory overload.',
+    verse: 'गीता २.५८: यदा संहरते चायं कूर्मोऽङ्गानीव सर्वशः।',
+  },
+  {
+    emoji: '🐟',
+    sanskrit: 'मत्स्यासनम्',
+    iast: 'Matsyāsana',
+    english: 'Fish Pose',
+    animal: 'Matsya (Joyful Water Swimmer / Fish)',
+    movement: 'Cervical & Thoracic Arch',
+    benefit: 'Opens Viśuddha cakra, relieves asthma/bronchospasm, enables effortless floating in water.',
+    verse: 'घेरण्डसंहिता: मत्स्यासनं तु कण्ठस्थदोषहृत् प्लवनक्षमम्।',
+  },
+  {
+    emoji: '🦁',
+    sanskrit: 'सिंहासनम्',
+    iast: 'Siṃhāsana',
+    english: 'Lion Pose',
+    animal: 'Siṃha (Fearless Slayer / King of Beasts)',
+    movement: 'Cranial, Mandibular & Vocal Purge',
+    benefit: 'Extends tongue (Jihvā-bandha), stimulates carotid sinus, purges throat irritation and social anxiety.',
+    verse: 'हठयोगप्रदीपिका: आसनोत्तममेतद्धि त्रितयस्य विमुक्तये।',
+  },
+  {
+    emoji: '🦅',
+    sanskrit: 'गरुडासनम्',
+    iast: 'Garuḍāsana',
+    english: 'Eagle Pose',
+    animal: 'Garuḍa (Celestial Serpent-Devourer)',
+    movement: 'Limb Occlusion & Vascular Flush',
+    benefit: 'Compresses major joint blood supplies, flushing organs with freshly oxygenated blood upon unwind; single-pointed focus (Dhāraṇā).',
+    verse: 'एकपादेन संतिष्ठेद् गरुडस्य गतेरिव।',
+  },
+  {
+    emoji: '🦂',
+    sanskrit: 'वृश्चिकासनम्',
+    iast: 'Vṛścikāsana',
+    english: 'Scorpion Pose',
+    animal: 'Vṛścika (Stinger / Scorpion)',
+    movement: 'Forearm Inversion & Deep Backbend',
+    benefit: 'Transmutes the ego sting; arches feet down towards crown of the head (Sahasrāra) in submission.',
+    verse: 'वृश्चिकवत् पुच्छं शिरसि निदध्यात्।',
+  },
+  {
+    emoji: '🐫',
+    sanskrit: 'उष्ट्रासनम्',
+    iast: 'Uṣṭrāsana',
+    english: 'Camel Pose',
+    animal: 'Uṣṭra (Desert-Enduring Beast of Burden)',
+    movement: 'Kneeling Anterior Thoracic Opening',
+    benefit: 'Combats sedentary sitting slouch, expands Anāhata cakra, stretches quadriceps and psoas.',
+    verse: 'जानुभ्यां भूमिमाश्रित्य पृष्ठं नम्य प्रसारयेत्।',
+  },
+  {
+    emoji: '🐸',
+    sanskrit: 'मण्डूकासनम्',
+    iast: 'Maṇḍūkāsana',
+    english: 'Frog Pose',
+    animal: 'Maṇḍūka / Bheka (Leaping Rain Dweller)',
+    movement: 'Abdominal Compression & Hip Abduction',
+    benefit: 'Deep intra-abdominal massage stimulating insulin secretion from pancreas; restores pelvic mobility.',
+    verse: 'घेरण्डसंहिता: मण्डूकासनमुद्राभ्यां देहस्य लघुता भवेत्।',
+  },
+];
+
+const AnimalYogaSaptaswaraFigure = () => {
+  const [selectedIdx, setSelectedIdx] = useState<number>(0);
+  const [activeTab, setActiveTab] = useState<'svara' | 'bestiary' | 'shlokas'>('svara');
+  const [isPlayingSeq, setIsPlayingSeq] = useState<boolean>(false);
+  const audioTimerRef = useRef<number | null>(null);
+
+  const active = SVARA_DATA[selectedIdx];
+
+  const playSynthNote = (freq: number, duration = 0.8) => {
+    try {
+      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+      gain.gain.setValueAtTime(0.001, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.28, ctx.currentTime + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + duration);
+    } catch {
+      // Audio unsupported or blocked
+    }
+  };
+
+  const handleSelectNote = (idx: number) => {
+    setSelectedIdx(idx);
+    const item = SVARA_DATA[idx];
+    playSynthNote(item.freq);
+    playPronunciation(item.animalSa);
+  };
+
+  const playAscendingOctave = () => {
+    if (isPlayingSeq) return;
+    setIsPlayingSeq(true);
+    let step = 0;
+
+    const playNext = () => {
+      if (step < SVARA_DATA.length) {
+        setSelectedIdx(step);
+        playSynthNote(SVARA_DATA[step].freq, 0.65);
+        step++;
+        audioTimerRef.current = window.setTimeout(playNext, 680);
+      } else {
+        setIsPlayingSeq(false);
+      }
+    };
+
+    playNext();
+  };
+
+  return (
+    <div
+      style={{
+        background: 'linear-gradient(135deg, #fdfbf7 0%, #fffbf0 50%, #f8fafc 100%)',
+        border: '2px solid #e2d8b8',
+        borderRadius: '16px',
+        padding: '1.5rem',
+        boxShadow: '0 8px 30px rgba(0,0,0,0.06)',
+        color: '#1e293b',
+        fontFamily: 'inherit',
+      }}
+    >
+      {/* Header */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.2rem' }}>
+        <div>
+          <span style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 800, color: '#b45309' }}>
+            नादब्रह्म · जीवविज्ञानम् · हठयोगश्च
+          </span>
+          <h3 style={{ margin: '0.2rem 0', fontSize: '1.35rem', color: '#78350f', fontWeight: 800 }}>
+            Animal Names, Yoga Shapes &amp; The 7 Singing Notes
+          </h3>
+          <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569' }}>
+            Explore how ancient India derived the 7 musical swaras from animal calls and modeled asanas on animal spines.
+          </p>
+        </div>
+
+        {/* Tab Controls */}
+        <div style={{ display: 'flex', gap: '0.4rem', background: '#f1f5f9', padding: '4px', borderRadius: '10px' }}>
+          <button
+            type="button"
+            onClick={() => setActiveTab('svara')}
+            style={{
+              padding: '0.4rem 0.8rem',
+              borderRadius: '7px',
+              border: 'none',
+              background: activeTab === 'svara' ? '#b45309' : 'transparent',
+              color: activeTab === 'svara' ? '#fff' : '#475569',
+              fontWeight: 700,
+              fontSize: '0.82rem',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+            }}
+          >
+            🎵 7 Svaras &amp; Animals
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('bestiary')}
+            style={{
+              padding: '0.4rem 0.8rem',
+              borderRadius: '7px',
+              border: 'none',
+              background: activeTab === 'bestiary' ? '#b45309' : 'transparent',
+              color: activeTab === 'bestiary' ? '#fff' : '#475569',
+              fontWeight: 700,
+              fontSize: '0.82rem',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+            }}
+          >
+            🧘 10 Yoga Asana Shapes
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('shlokas')}
+            style={{
+              padding: '0.4rem 0.8rem',
+              borderRadius: '7px',
+              border: 'none',
+              background: activeTab === 'shlokas' ? '#b45309' : 'transparent',
+              color: activeTab === 'shlokas' ? '#fff' : '#475569',
+              fontWeight: 700,
+              fontSize: '0.82rem',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+            }}
+          >
+            📜 Canonical Shlokas
+          </button>
+        </div>
+      </div>
+
+      {/* TAB 1: 7 SVARAS & ANIMALS */}
+      {activeTab === 'svara' && (
+        <div>
+          {/* Note Selection Bar */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.2rem' }}>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+              {SVARA_DATA.map((item, idx) => {
+                const isSelected = selectedIdx === idx;
+                return (
+                  <button
+                    key={item.note}
+                    type="button"
+                    onClick={() => handleSelectNote(idx)}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      padding: '0.5rem 0.85rem',
+                      borderRadius: '10px',
+                      border: isSelected ? `2px solid ${item.color}` : '1px solid #cbd5e1',
+                      background: isSelected ? item.color : '#ffffff',
+                      color: isSelected ? '#ffffff' : '#334155',
+                      cursor: 'pointer',
+                      boxShadow: isSelected ? `0 4px 12px ${item.color}40` : '0 1px 3px rgba(0,0,0,0.05)',
+                      transform: isSelected ? 'scale(1.05)' : 'scale(1)',
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    <span style={{ fontSize: '1.25rem', fontWeight: 900 }}>{item.note}</span>
+                    <span style={{ fontSize: '0.75rem', opacity: isSelected ? 0.95 : 0.7 }}>{item.animalEmoji}</span>
+                    <span style={{ fontSize: '0.68rem', fontWeight: 600, opacity: isSelected ? 0.9 : 0.6 }}>{item.freq.toFixed(0)}Hz</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <button
+              type="button"
+              onClick={playAscendingOctave}
+              disabled={isPlayingSeq}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                padding: '0.6rem 1.1rem',
+                borderRadius: '8px',
+                border: 'none',
+                background: isPlayingSeq ? '#94a3b8' : '#047857',
+                color: '#ffffff',
+                fontWeight: 700,
+                fontSize: '0.85rem',
+                cursor: isPlayingSeq ? 'default' : 'pointer',
+                boxShadow: '0 2px 8px rgba(4,120,87,0.25)',
+              }}
+            >
+              {isPlayingSeq ? '⏳ Playing Scale…' : '▶ Play Ascending Octave (आरोहण)'}
+            </button>
+          </div>
+
+          {/* Active Note Spotlight Card */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.2rem',
+              background: '#ffffff',
+              border: `1.5px solid ${active.color}40`,
+              borderRadius: '12px',
+              padding: '1.2rem',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
+            }}
+          >
+            {/* Animal Column */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
+                <span style={{ fontSize: '2.5rem', lineHeight: 1 }}>{active.animalEmoji}</span>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <span style={{ fontSize: '1.3rem', fontWeight: 900, color: active.color }}>
+                      {active.animalSa}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => playPronunciation(active.animalSa)}
+                      style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
+                      title="Hear Sanskrit pronunciation"
+                    >
+                      🔊
+                    </button>
+                  </div>
+                  <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 600 }}>
+                    {active.animalIast} · {active.animalEn}
+                  </span>
+                </div>
+              </div>
+
+              <div style={{ fontSize: '0.82rem', background: '#f8fafc', padding: '0.6rem 0.8rem', borderRadius: '8px', borderLeft: `3px solid ${active.color}` }}>
+                <strong>Root Etymology:</strong> {active.root}
+              </div>
+
+              <div style={{ fontSize: '0.82rem', color: '#334155' }}>
+                <strong>Acoustic Signature:</strong> {active.cryDesc}
+              </div>
+
+              <div style={{ fontSize: '0.78rem', color: '#64748b', fontStyle: 'italic' }}>
+                📖 Nāradīya Śikṣā: &ldquo;{active.shlokaPāda}&rdquo;
+              </div>
+            </div>
+
+            {/* Yoga Shape Column */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                <span style={{ fontSize: '1.8rem' }}>🧘</span>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <span style={{ fontSize: '1.15rem', fontWeight: 800, color: '#78350f' }}>
+                      {active.asanaSa}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => playPronunciation(active.asanaSa)}
+                      style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1rem' }}
+                      title="Hear Asana pronunciation"
+                    >
+                      🔊
+                    </button>
+                  </div>
+                  <span style={{ fontSize: '0.82rem', color: '#b45309', fontWeight: 600 }}>
+                    {active.asanaIast} ({active.asanaEn})
+                  </span>
+                </div>
+              </div>
+
+              <div style={{ fontSize: '0.82rem', color: '#334155' }}>
+                <strong>Postural Geometry:</strong> {active.asanaShape}
+              </div>
+
+              <div style={{ fontSize: '0.82rem', color: '#047857', background: '#f0fdf4', padding: '0.5rem 0.7rem', borderRadius: '6px' }}>
+                <strong>Biomechanical Benefit:</strong> {active.biomechanics}
+              </div>
+            </div>
+
+            {/* Svara & Physics Column */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', borderLeft: '1px solid #f1f5f9', paddingLeft: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <span style={{ fontSize: '1.4rem', fontWeight: 900, color: active.color }}>{active.note}</span>
+                  <span style={{ fontSize: '0.9rem', color: '#475569', marginLeft: '0.4rem', fontWeight: 700 }}>
+                    {active.svaraDeva} ({active.svaraFull})
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => playSynthNote(active.freq, 1.0)}
+                  style={{
+                    padding: '0.3rem 0.7rem',
+                    borderRadius: '6px',
+                    border: `1px solid ${active.color}`,
+                    background: `${active.color}15`,
+                    color: active.color,
+                    fontWeight: 700,
+                    fontSize: '0.78rem',
+                    cursor: 'pointer',
+                  }}
+                >
+                  🔔 Play {active.freq.toFixed(1)} Hz
+                </button>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem', fontSize: '0.78rem' }}>
+                <div style={{ background: '#f8fafc', padding: '0.4rem', borderRadius: '6px' }}>
+                  <span style={{ color: '#64748b' }}>Frequency Ratio:</span> <strong>{active.ratio}</strong>
+                </div>
+                <div style={{ background: '#f8fafc', padding: '0.4rem', borderRadius: '6px' }}>
+                  <span style={{ color: '#64748b' }}>Śrutis (Microtones):</span> <strong>{active.shrutis}</strong>
+                </div>
+                <div style={{ background: '#f8fafc', padding: '0.4rem', borderRadius: '6px' }}>
+                  <span style={{ color: '#64748b' }}>Cakra / Element:</span> <strong>{active.cakra}</strong>
+                </div>
+                <div style={{ background: '#f8fafc', padding: '0.4rem', borderRadius: '6px' }}>
+                  <span style={{ color: '#64748b' }}>Musical Rasa:</span> <strong>{active.rasa}</strong>
+                </div>
+              </div>
+
+              <div style={{ fontSize: '0.74rem', color: '#64748b' }}>
+                <strong>Microtone Names:</strong> {active.shrutiNames.join(' · ')}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* TAB 2: BESTIARY OF 10 YOGA SHAPES */}
+      {activeTab === 'bestiary' && (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+          {BESTIARY_DATA.map((item) => (
+            <div
+              key={item.iast}
+              style={{
+                background: '#ffffff',
+                border: '1px solid #e2e8f0',
+                borderRadius: '10px',
+                padding: '1rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.5rem',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '1.8rem' }}>{item.emoji}</span>
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                      <strong style={{ fontSize: '1rem', color: '#92400e' }}>{item.sanskrit}</strong>
+                      <button
+                        type="button"
+                        onClick={() => playPronunciation(item.sanskrit)}
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.9rem' }}
+                        title="Hear pronunciation"
+                      >
+                        🔊
+                      </button>
+                    </div>
+                    <span style={{ fontSize: '0.78rem', color: '#64748b' }}>{item.iast} · {item.english}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ fontSize: '0.78rem', color: '#0369a1', fontWeight: 600 }}>
+                🐾 {item.animal}
+              </div>
+
+              <div style={{ fontSize: '0.76rem', background: '#f1f5f9', padding: '0.3rem 0.6rem', borderRadius: '5px' }}>
+                <strong>Spinal Action:</strong> {item.movement}
+              </div>
+
+              <div style={{ fontSize: '0.78rem', color: '#334155', lineHeight: 1.4 }}>
+                {item.benefit}
+              </div>
+
+              <div style={{ fontSize: '0.72rem', color: '#64748b', fontStyle: 'italic', marginTop: 'auto', borderTop: '1px dashed #e2e8f0', paddingTop: '0.4rem' }}>
+                {item.verse}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* TAB 3: CANONICAL SHLOKAS */}
+      {activeTab === 'shlokas' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          {/* Shloka 1: Nāradīya Śikṣā */}
+          <div style={{ background: '#ffffff', border: '1.5px solid #fed7aa', borderRadius: '12px', padding: '1.2rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem' }}>
+              <strong style={{ color: '#c2410c', fontSize: '1rem' }}>
+                १. नारदीय-शिक्षा (१.५.१–२) एवं सङ्गीतरत्नाकरः (१.३.४६–४७)
+              </strong>
+              <button
+                type="button"
+                onClick={() => playPronunciation('षड्जं वदति मयूरो गावो रम्भन्ति चर्षभम्। अजाविकं तु गान्धारं क्रौञ्चः क्वणति मध्यमम्। पुष्पसाधारणे काले पिकः कूजति पञ्चमम्। धैवतं हेषते वाजी निषादं बृंहते गजः॥')}
+                style={{
+                  padding: '0.3rem 0.8rem',
+                  borderRadius: '6px',
+                  border: '1px solid #c2410c',
+                  background: '#fff7ed',
+                  color: '#c2410c',
+                  fontWeight: 700,
+                  fontSize: '0.8rem',
+                  cursor: 'pointer',
+                }}
+              >
+                🔊 Recite Full Verse
+              </button>
+            </div>
+
+            <pre
+              style={{
+                fontFamily: 'serif',
+                fontSize: '1.05rem',
+                lineHeight: 1.8,
+                color: '#7c2d12',
+                background: '#fffbf5',
+                padding: '1rem',
+                borderRadius: '8px',
+                borderLeft: '4px solid #ea580c',
+                margin: 0,
+                whiteSpace: 'pre-wrap',
+              }}
+            >
+              षड्जं वदति मयूरो गावो रम्भन्ति चर्षभम् ।{'\n'}
+              अजाविकं तु गान्धारं क्रौञ्चः क्वणति मध्यमम् ॥{'\n'}
+              पुष्पसाधारणे काले पिकः कूजति पञ्चमम् ।{'\n'}
+              धैवतं हेषते वाजी निषादं बृंहते गजः ॥
+            </pre>
+
+            <div style={{ marginTop: '0.8rem', fontSize: '0.85rem', color: '#334155', lineHeight: 1.6 }}>
+              <strong>English Translation:</strong> Ṣaḍja (Sa) is uttered by the peacock; cows/bulls low to sound Ṛṣabha (Re); goats and sheep bleat Gāndhāra (Ga); the crane sounds Madhyama (Ma); in the temperate blossoming spring, the cuckoo warbles Pañcama (Pa); the horse neighs Dhaivata (Dha); and the elephant trumpets Niṣāda (Ni).
+            </div>
+          </div>
+
+          {/* Shloka 2: Bhagavad Gītā 2.58 */}
+          <div style={{ background: '#ffffff', border: '1.5px solid #bbf7d0', borderRadius: '12px', padding: '1.2rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem' }}>
+              <strong style={{ color: '#15803d', fontSize: '1rem' }}>
+                २. श्रीमद्भगवद्गीता (२.५८) — कूर्मासनं प्रत्याहारश्च
+              </strong>
+              <button
+                type="button"
+                onClick={() => playPronunciation('यदा संहरते चायं कूर्मोऽङ्गानीव सर्वशः। इन्द्रियाणीन्द्रियार्थेभ्यस्तस्य प्रज्ञा प्रतिष्ठिता॥')}
+                style={{
+                  padding: '0.3rem 0.8rem',
+                  borderRadius: '6px',
+                  border: '1px solid #15803d',
+                  background: '#f0fdf4',
+                  color: '#15803d',
+                  fontWeight: 700,
+                  fontSize: '0.8rem',
+                  cursor: 'pointer',
+                }}
+              >
+                🔊 Recite Verse
+              </button>
+            </div>
+
+            <pre
+              style={{
+                fontFamily: 'serif',
+                fontSize: '1.05rem',
+                lineHeight: 1.8,
+                color: '#14532d',
+                background: '#f8fafc',
+                padding: '1rem',
+                borderRadius: '8px',
+                borderLeft: '4px solid #16a34a',
+                margin: 0,
+                whiteSpace: 'pre-wrap',
+              }}
+            >
+              यदा संहरते चायं कूर्मोऽङ्गानीव सर्वशः ।{'\n'}
+              इन्द्रियाणीन्द्रियार्थेभ्यस्तस्य प्रज्ञा प्रतिष्ठिता ॥
+            </pre>
+
+            <div style={{ marginTop: '0.8rem', fontSize: '0.85rem', color: '#334155', lineHeight: 1.6 }}>
+              <strong>English Translation:</strong> When, like a tortoise retracting its limbs from all sides into its shell, the practitioner completely withdraws the senses from external sense-objects, their spiritual wisdom (prajñā) is stabilized.
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId }) {
   switch (id) {
+    case 'animal-yoga-saptaswara-wheel':
+      return <AnimalYogaSaptaswaraFigure />;
     case 'algebra-lineage':
       return <Lineage />;
     case 'algebra-three-phases':

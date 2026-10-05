@@ -158,7 +158,8 @@ export type VedicArticleFigureId =
   | 'fluid-crosswise'
   | 'tirtha-lineage-path'
   | 'bhuta-sankhya-reversal'
-  | 'siksha-five-places';
+  | 'siksha-five-places'
+  | 'animal-yoga-saptaswara-wheel';
 
 export interface VedicArticleSection {
   title: string;

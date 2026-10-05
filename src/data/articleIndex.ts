@@ -128,4 +128,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'वाक्यपदीयं कृत्रिमप्रज्ञा च · Bhartṛhari’s Vākyapadīya & Modern AI',
     cardBlurb: 'Computational Optimization in Classical Semantics: Connecting Bhartṛhari’s Sphoṭa & Kāraka framework to Rick Briggs’ 1985 NASA AI research and modern transformers.',
   },
+  {
+    id: 'animal-names-yoga-shapes-singing-notes',
+    file: 'grammar/article-18.txt',
+    emoji: '🦚',
+    cardTitle: 'प्राणिनामानि योगासनानि सप्तस्वराश्च · Animal Names: Yoga Shapes & Singing Notes',
+    cardBlurb: 'How ancient India unified Sanskrit bio-linguistics, animal-inspired yoga asanas, and the 7 musical swaras (Sa Re Ga Ma Pa Dha Ni) derived from nature’s acoustic calls.',
+  },
 ];

@@ -13,6 +13,8 @@ import VibhaktiGuide from './VibhaktiGuide';
 import PaninianStudio from './PaninianStudio';
 import { NumbersGuide } from './NumbersGuide';
 import KatapayadiManuscriptFigure from './KatapayadiManuscriptFigure';
+import VedicArticleFigure from './VedicArticleFigure';
+import type { VedicArticleFigureId } from '../data/vedicMaths';
 import '../styles/grammar.css';
 
 export type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'numbers' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'dhatupatha' | 'article';
@@ -693,16 +695,27 @@ const Grammar: React.FC<GrammarProps> = ({
                   </figure>
                 );
               }
+              if (block.type === 'figure') {
+                if (block.id === 'katapayadi-matrix') {
+                  return <KatapayadiManuscriptFigure key={index} />;
+                }
+                return (
+                  <figure className="grammar-article-figure-container" key={index}>
+                    <VedicArticleFigure id={block.id as VedicArticleFigureId} />
+                    {block.caption && (
+                      <figcaption className="grammar-article-image-caption">
+                        {renderRichArticleText(block.caption, `fig-cap-${index}`)}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+              }
               if (block.type === 'code') {
                 return (
                   <pre className="grammar-article-code" key={index}>
                     <code>{block.text}</code>
                   </pre>
                 );
-              }
-              if (block.type === 'figure') {
-                if (block.id !== 'katapayadi-matrix') return null;
-                return <KatapayadiManuscriptFigure key={index} />;
               }
               return (
                 <p key={index} className="grammar-article-paragraph">
