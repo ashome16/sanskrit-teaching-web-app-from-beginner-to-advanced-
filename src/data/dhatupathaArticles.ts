@@ -86,6 +86,8 @@ export interface DhatupathaArticle {
   badgeColor: string;
   readTime: string;
   summary: string;
+  /** Optional pale-card GrammarLightFigure id shown under the summary. */
+  figure?: string;
   suggestedAction?: {
     type: 'deconstruct' | 'generate';
     targetWord?: string;
@@ -105,6 +107,7 @@ export const DHATUPATHA_ARTICLES: DhatupathaArticle[] = [
     readTime: '6 min read',
     summary:
       'Discover the structural genius of Maharshi Pāṇini’s verbal lexicon. Learn how 2,000 verbal roots generate the entire Sanskrit universe of words through mathematical precision and silent code-letters (इत्-संज्ञा).',
+    figure: 'five-upadesas-pillars',
     suggestedAction: {
       type: 'deconstruct',
       targetWord: 'भवति',
@@ -174,6 +177,7 @@ export const DHATUPATHA_ARTICLES: DhatupathaArticle[] = [
     readTime: '9 min read',
     summary:
       'In Sanskrit grammar, the 2,000+ verbal roots (dhātus) are systematically organized into 10 distinct classes called Gaṇas. Each class acts like a specific workshop or structural template, dictating root-vowel strengthening (Guṇa) and conjugational infixes (Vikaraṇas).',
+    figure: 'vikarana-ten-map',
     suggestedAction: {
       type: 'generate',
       dhatuId: 'bhu',
@@ -621,6 +625,7 @@ export const DHATUPATHA_ARTICLES: DhatupathaArticle[] = [
     readTime: '7 min read',
     summary:
       'Uncover the spiritual and philosophical logic behind Sanskrit verbal voice. Learn why some actions point outward (Parasmaipada) while others reflect upon the self (Ātmanepada), and how Ubhayapada roots offer subtle poetic nuance.',
+    figure: 'three-verbal-voices',
     suggestedAction: {
       type: 'deconstruct',
       targetWord: 'कुरुते',
@@ -674,6 +679,7 @@ export const DHATUPATHA_ARTICLES: DhatupathaArticle[] = [
     readTime: '9 min read',
     summary:
       'A comprehensive guide to the 5 Lakāras required for CBSE, NCERT, and competitive Sanskrit exams: Present (लट्), Future (लृट्), Past (लङ्), Imperative (लोट्), and Potential (विधिलिङ्).',
+    figure: 'five-core-lakaras',
     suggestedAction: {
       type: 'generate',
       dhatuId: 'gam',
@@ -719,6 +725,7 @@ export const DHATUPATHA_ARTICLES: DhatupathaArticle[] = [
     readTime: '8 min read',
     summary:
       'Learn how Sanskrit transforms verbs into nouns, adjectives, and indeclinable gerunds using Kṛt suffixes. Master the strict rule governing when to use क्त्वा vs. ल्यप् and how to construct sentences.',
+    figure: 'ktva-lyap-fork',
     suggestedAction: {
       type: 'deconstruct',
       targetWord: 'आगत्य',
@@ -776,6 +783,7 @@ export const DHATUPATHA_ARTICLES: DhatupathaArticle[] = [
     readTime: '7 min read',
     summary:
       'Step inside the computational mechanics of Pāṇinian phonology. Understand the exact algorithmic steps behind why "भू + अति" turns into "भवति" and "नी + अति" turns into "नयति".',
+    figure: 'three-vowel-grades',
     suggestedAction: {
       type: 'deconstruct',
       targetWord: 'पठितुम्',

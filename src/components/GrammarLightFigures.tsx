@@ -988,6 +988,234 @@ function AvyayaUnchanging() {
   );
 }
 
+
+/** Dhātupāṭha intro: five Upadeśa pillars. */
+function FiveUpadesasPillars() {
+  const pillars = [
+    { sa: 'सूत्र', en: 'Sūtra', clue: 'engine' },
+    { sa: 'धातु', en: 'Dhātu', clue: 'roots' },
+    { sa: 'गण', en: 'Gaṇa', clue: 'groups' },
+    { sa: 'उणादि', en: 'Uṇādi', clue: 'nouns' },
+    { sa: 'लिङ्ग', en: 'Liṅga', clue: 'gender' },
+  ];
+  const cellW = 100;
+  const gap = 10;
+  const w = pillars.length * cellW + (pillars.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Five Upadeśas"
+      caption="The article’s five foundational texts: Sūtrapāṭha, Dhātupāṭha, Gaṇapāṭha, Uṇādipāṭha, and Liṅgānuśāsana — without the root catalog, the Aṣṭādhyāyī cannot fire."
+      maxWidth={640}
+    >
+      <svg viewBox={`0 0 ${w} 120`} role="img" aria-labelledby="upa5-title" style={{ fontFamily: SANS }}>
+        <title id="upa5-title">Five Pāṇinian Upadeśa pillars.</title>
+        {pillars.map((p, i) => {
+          const x = 4 + i * (cellW + gap);
+          const stroke = ['#fdba74', '#86efac', '#38bdf8', '#c4b5fd', '#f9a8d4'][i];
+          return (
+            <g key={p.en}>
+              <rect x={x} y="8" width={cellW} height="100" rx="12" fill="#fff7ed" stroke={stroke} strokeWidth="3" />
+              <text x={x + cellW / 2} y="30" fill="#0f766e" fontSize="12" fontWeight="800" textAnchor="middle">{i + 1}</text>
+              <text x={x + cellW / 2} y="54" fill="#3a2414" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{p.sa}</text>
+              <text x={x + cellW / 2} y="76" fill="#9a3412" fontSize="12" fontWeight="700" textAnchor="middle">{p.en}</text>
+              <text x={x + cellW / 2} y="96" fill="#475569" fontSize="11" fontWeight="600" textAnchor="middle">{p.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Dhātupāṭha 10 Gaṇas: compact vikaraṇa map. */
+function VikaranaTenMap() {
+  const rows = [
+    [
+      { n: '1', sa: 'भ्वादि', v: 'शप्' },
+      { n: '2', sa: 'अदादि', v: 'लुक्' },
+      { n: '3', sa: 'जुहोत्यादि', v: 'श्लु' },
+      { n: '4', sa: 'दिवादि', v: 'श्यन्' },
+      { n: '5', sa: 'स्वादि', v: 'श्नु' },
+    ],
+    [
+      { n: '6', sa: 'तुदादि', v: 'श' },
+      { n: '7', sa: 'रुधादि', v: 'श्नम्' },
+      { n: '8', sa: 'तनादि', v: 'उ' },
+      { n: '9', sa: 'क्र्यादि', v: 'श्ना' },
+      { n: '10', sa: 'चुरादि', v: 'णिच्' },
+    ],
+  ];
+  const cellW = 112;
+  const cellH = 72;
+  const gap = 10;
+  const cols = 5;
+  const w = cols * cellW + (cols - 1) * gap + 8;
+  const h = 2 * cellH + gap + 8;
+  return (
+    <Panel
+      kicker="Ten Gaṇas · vikaraṇa"
+      caption="Each workshop’s conjugational marker from the article: theme vowel, zero, reduplication, -ya-, -nu-, nasal infix, -nā-, or causative ṇic."
+      maxWidth={640}
+    >
+      <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-labelledby="vik10-title" style={{ fontFamily: SANS }}>
+        <title id="vik10-title">Ten Gaṇa classes with their Vikaraṇa markers.</title>
+        {rows.flatMap((row, ri) =>
+          row.map((c, ci) => {
+            const x = 4 + ci * (cellW + gap);
+            const y = 4 + ri * (cellH + gap);
+            const stroke = ri === 0 ? '#fdba74' : '#86efac';
+            return (
+              <g key={c.n}>
+                <rect x={x} y={y} width={cellW} height={cellH} rx="12" fill="#fff7ed" stroke={stroke} strokeWidth="3" />
+                <text x={x + 12} y={y + 22} fill="#0f766e" fontSize="12" fontWeight="800">{c.n}</text>
+                <text x={x + cellW / 2} y={y + 40} fill="#3a2414" fontSize="13" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{c.sa}</text>
+                <text x={x + cellW / 2} y={y + 60} fill="#9a3412" fontSize="12" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{c.v}</text>
+              </g>
+            );
+          })
+        )}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Pada-vyavasthā: three verbal voices. */
+function ThreeVerbalVoices() {
+  const voices = [
+    { sa: 'परस्मैपदम्', en: 'Parasmaipada', clue: 'fruit → another' },
+    { sa: 'आत्मनेपदम्', en: 'Ātmanepada', clue: 'fruit → self' },
+    { sa: 'उभयपदम्', en: 'Ubhayapada', clue: 'both voices' },
+  ];
+  const cellW = 168;
+  const gap = 14;
+  const w = voices.length * cellW + (voices.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Three verbal voices"
+      caption="The article’s padā distinction: action-fruit directed outward, returned to the agent, or available in both voices for poetic nuance."
+      maxWidth={600}
+    >
+      <svg viewBox={`0 0 ${w} 120`} role="img" aria-labelledby="pada3-title" style={{ fontFamily: SANS }}>
+        <title id="pada3-title">Parasmaipada, Ātmanepada, and Ubhayapada.</title>
+        {voices.map((v, i) => {
+          const x = 4 + i * (cellW + gap);
+          const stroke = i === 0 ? '#fdba74' : i === 1 ? '#86efac' : '#38bdf8';
+          return (
+            <g key={v.en}>
+              <rect x={x} y="8" width={cellW} height="100" rx="12" fill="#fff7ed" stroke={stroke} strokeWidth="3" />
+              <text x={x + cellW / 2} y="36" fill="#3a2414" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{v.sa}</text>
+              <text x={x + cellW / 2} y="60" fill="#9a3412" fontSize="12" fontWeight="700" textAnchor="middle">{v.en}</text>
+              <text x={x + cellW / 2} y="88" fill="#475569" fontSize="12" fontWeight="600" textAnchor="middle">{v.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Five school Lakāras. */
+function FiveCoreLakaras() {
+  const lakaras = [
+    { sa: 'लट्', en: 'Present', clue: '-ति' },
+    { sa: 'लृट्', en: 'Future', clue: '-ष्य-' },
+    { sa: 'लङ्', en: 'Past', clue: 'अ- …' },
+    { sa: 'लोट्', en: 'Imperative', clue: '-तु' },
+    { sa: 'विधिलिङ्', en: 'Potential', clue: '-एत्' },
+  ];
+  const cellW = 108;
+  const gap = 10;
+  const w = lakaras.length * cellW + (lakaras.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Five school Lakāras"
+      caption="CBSE/NCERT core set from the article: Laṭ, Lṛṭ, Laṅ, Loṭ, and Vidhiliṅ — with the exam thumb-rules for spotting each."
+      maxWidth={640}
+    >
+      <svg viewBox={`0 0 ${w} 120`} role="img" aria-labelledby="lak5-title" style={{ fontFamily: SANS }}>
+        <title id="lak5-title">Five core school Lakāras with identifying markers.</title>
+        {lakaras.map((l, i) => {
+          const x = 4 + i * (cellW + gap);
+          const stroke = ['#fdba74', '#86efac', '#38bdf8', '#c4b5fd', '#f9a8d4'][i];
+          return (
+            <g key={l.sa}>
+              <rect x={x} y="8" width={cellW} height="100" rx="12" fill="#fff7ed" stroke={stroke} strokeWidth="3" />
+              <text x={x + cellW / 2} y="34" fill="#3a2414" fontSize="18" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{l.sa}</text>
+              <text x={x + cellW / 2} y="58" fill="#9a3412" fontSize="12" fontWeight="700" textAnchor="middle">{l.en}</text>
+              <text x={x + cellW / 2} y="86" fill="#0f766e" fontSize="13" fontWeight="800" textAnchor="middle" fontFamily={DEV}>{l.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Kṛt golden fork: ktvā vs lyap. */
+function KtvaLyapFork() {
+  return (
+    <Panel
+      kicker="क्त्वा vs ल्यप्"
+      caption="The article’s golden rule: bare root → क्त्वा (-tvā); root with an upasarga (other than nañ) → ल्यप् (-ya)."
+      maxWidth={560}
+    >
+      <svg viewBox="0 0 520 168" role="img" aria-labelledby="ktva-title" style={{ fontFamily: SANS }}>
+        <title id="ktva-title">Ktvā for bare roots; Lyap when a prefix is present.</title>
+        <rect x="170" y="8" width="180" height="48" rx="12" fill="#ecfdf5" stroke="#86efac" strokeWidth="3" />
+        <text x="260" y="38" fill="#14532d" fontSize="14" fontWeight="800" textAnchor="middle">Prior action · same agent</text>
+        <line x1="260" y1="56" x2="260" y2="78" stroke="#0f766e" strokeWidth="3" />
+        <line x1="120" y1="78" x2="400" y2="78" stroke="#0f766e" strokeWidth="3" />
+        <line x1="120" y1="78" x2="120" y2="92" stroke="#0f766e" strokeWidth="3" />
+        <line x1="400" y1="78" x2="400" y2="92" stroke="#0f766e" strokeWidth="3" />
+        <rect x="24" y="92" width="192" height="64" rx="12" fill="#fff7ed" stroke="#fdba74" strokeWidth="3" />
+        <text x="120" y="116" fill="#9a3412" fontSize="13" fontWeight="800" textAnchor="middle">No prefix</text>
+        <text x="120" y="140" fill="#3a2414" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily={DEV}>क्त्वा · गत्वा</text>
+        <rect x="304" y="92" width="192" height="64" rx="12" fill="#fff7ed" stroke="#38bdf8" strokeWidth="3" />
+        <text x="400" y="116" fill="#0369a1" fontSize="13" fontWeight="800" textAnchor="middle">With upasarga</text>
+        <text x="400" y="140" fill="#3a2414" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily={DEV}>ल्यप् · आगत्य</text>
+      </svg>
+    </Panel>
+  );
+}
+
+/** Guṇa–Vṛddhi ternary vowel scale. */
+function ThreeVowelGrades() {
+  const grades = [
+    { sa: 'मूल', en: 'Base', clue: 'इ उ ऋ', ex: 'i · u · ṛ' },
+    { sa: 'गुण', en: 'Guṇa', clue: 'ए ओ अर्', ex: 'e · o · ar' },
+    { sa: 'वृद्धि', en: 'Vṛddhi', clue: 'ऐ औ आर्', ex: 'ai · au · ār' },
+  ];
+  const cellW = 160;
+  const gap = 36;
+  const w = grades.length * cellW + (grades.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Three vowel grades"
+      caption="The article’s ternary scale: base vowels strengthen to Guṇa (a/e/o) and further to Vṛddhi (ā/ai/au) before strong suffixes."
+      maxWidth={600}
+    >
+      <svg viewBox={`0 0 ${w} 130`} role="img" aria-labelledby="guna3-title" style={{ fontFamily: SANS }}>
+        <title id="guna3-title">Base, Guṇa, and Vṛddhi vowel grades.</title>
+        {grades.map((g, i) => {
+          const x = 4 + i * (cellW + gap);
+          const stroke = i === 0 ? '#fdba74' : i === 1 ? '#86efac' : '#38bdf8';
+          return (
+            <g key={g.en}>
+              {i > 0 && (
+                <text x={x - gap / 2} y="68" fill="#0f766e" fontSize="20" fontWeight="800" textAnchor="middle">→</text>
+              )}
+              <rect x={x} y="12" width={cellW} height="100" rx="12" fill="#fff7ed" stroke={stroke} strokeWidth="4" />
+              <text x={x + cellW / 2} y="38" fill="#3a2414" fontSize="18" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{g.sa}</text>
+              <text x={x + cellW / 2} y="60" fill="#9a3412" fontSize="13" fontWeight="700" textAnchor="middle">{g.en}</text>
+              <text x={x + cellW / 2} y="86" fill="#0f766e" fontSize="13" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{g.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
 const FIGURES: Record<string, () => ReactNode> = {
   'vibhakti-eight-cases': () => <VibhaktiEightCases />,
   'dasagana-ten-classes': () => <DasaganaTenClasses />,
@@ -1013,6 +1241,12 @@ const FIGURES: Record<string, () => ReactNode> = {
   'three-purusa-order': () => <ThreePurusaOrder />,
   'kartari-two-golden-rules': () => <KartariTwoGoldenRules />,
   'avyaya-unchanging': () => <AvyayaUnchanging />,
+  'five-upadesas-pillars': () => <FiveUpadesasPillars />,
+  'vikarana-ten-map': () => <VikaranaTenMap />,
+  'three-verbal-voices': () => <ThreeVerbalVoices />,
+  'five-core-lakaras': () => <FiveCoreLakaras />,
+  'ktva-lyap-fork': () => <KtvaLyapFork />,
+  'three-vowel-grades': () => <ThreeVowelGrades />,
 };
 
 export function isGrammarLightFigure(id: string): boolean {

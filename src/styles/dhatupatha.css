@@ -4738,3 +4738,14 @@
     color: #000000 !important;
   }
 }
+
+
+/* Pale-card diagrams under Dhātupāṭha article summaries */
+.dp-article-figure-wrap {
+  margin: 1.25rem 0 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+.dp-article-figure-wrap .schematic-panel {
+  width: 100%;
+}

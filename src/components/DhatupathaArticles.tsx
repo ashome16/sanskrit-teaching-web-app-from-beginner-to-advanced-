@@ -4,6 +4,7 @@ import {
   type DhatupathaArticle,
 } from '../data/dhatupathaArticles';
 import { playPronunciation } from '../utils/pronunciation';
+import GrammarLightFigure, { isGrammarLightFigure } from './GrammarLightFigures';
 
 interface DhatupathaArticlesProps {
   initialArticleId?: string;
@@ -147,6 +148,12 @@ export const DhatupathaArticles: React.FC<DhatupathaArticlesProps> = ({
           <h3 className="dp-article-h2-en">{activeArticle.titleEn}</h3>
 
           <p className="dp-article-summary">{activeArticle.summary}</p>
+
+          {activeArticle.figure && isGrammarLightFigure(activeArticle.figure) && (
+            <div className="dp-article-figure-wrap">
+              <GrammarLightFigure id={activeArticle.figure} />
+            </div>
+          )}
 
           {activeArticle.suggestedAction && (
             <div className="dp-article-action-box">
