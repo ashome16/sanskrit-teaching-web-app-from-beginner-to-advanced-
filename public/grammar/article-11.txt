@@ -13,6 +13,8 @@ The name **Kaṭapayādi** is itself an ingenious self-referencing mnemonic: *k�
 
 In this system, Sanskrit consonants are divided into four systematic series mapped across digits **1 through 9**, with specific characters designated for **0**. Many letters share the same digit — and this deliberate phonetic freedom allowed poets to choose exact synonyms that fit both strict poetic meter (*chandas*) and spiritual meaning.
 
+[[figure:katapayadi-matrix]]
+
 | Digit | ka-group (क-वर्ग) | ṭa-group (ट-वर्ग) | pa-group (प-वर्ग) | ya-group (य-वर्ग) |
 | 1 | क ka | ट ṭa | प pa | य ya |
 | 2 | ख kha | ठ ṭha | फ pha | र ra |

@@ -12,6 +12,7 @@ import LingaVachanaGuide from './LingaVachanaGuide';
 import VibhaktiGuide from './VibhaktiGuide';
 import PaninianStudio from './PaninianStudio';
 import { NumbersGuide } from './NumbersGuide';
+import KatapayadiManuscriptFigure from './KatapayadiManuscriptFigure';
 import '../styles/grammar.css';
 
 export type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'numbers' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'dhatupatha' | 'article';
@@ -698,6 +699,10 @@ const Grammar: React.FC<GrammarProps> = ({
                     <code>{block.text}</code>
                   </pre>
                 );
+              }
+              if (block.type === 'figure') {
+                if (block.id !== 'katapayadi-matrix') return null;
+                return <KatapayadiManuscriptFigure key={index} />;
               }
               return (
                 <p key={index} className="grammar-article-paragraph">

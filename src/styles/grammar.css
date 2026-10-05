@@ -1658,3 +1658,31 @@
   color: #b45309;
   flex-shrink: 0;
 }
+
+/* Kaṭapayādi manuscript figure */
+.kata-ms-figure {
+  margin: 0.15rem 0 0.2rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.kata-ms-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.kata-ms-caption {
+  margin: 0.4rem 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #5c3b22;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+}
+
+@media (max-width: 640px) {
+  .kata-ms-caption {
+    font-size: 0.78rem;
+  }
+}

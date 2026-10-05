@@ -5,6 +5,7 @@ export type ArticleBlock =
   | { type: 'table'; headers: string[]; rows: string[][] }
   | { type: 'code'; text: string }
   | { type: 'image'; src: string; alt: string; caption?: string }
+  | { type: 'figure'; id: string }
   | { type: 'quote'; text: string };
 
 export interface ParsedArticle {
@@ -22,6 +23,7 @@ export interface ParsedArticle {
  *   - list item          -> consecutive lines starting with "- " become a list
  *   | a | b | c |        -> consecutive "| ... |" rows become a table (first row = header)
  *   ```                  -> a fenced block (```...```) becomes a preformatted code block
+ *   [[figure:id]]        -> an inline figure (rendered by the article view)
  *   blank line           -> separates blocks
  *   any other line       -> paragraph text (consecutive lines are joined with a space)
  */
@@ -124,6 +126,15 @@ export function parseArticle(raw: string): ParsedArticle {
       flushList();
       flushTable();
       blocks.push({ type: 'quote', text: line.slice(2).trim() });
+      continue;
+    }
+
+    const figureMatch = line.match(/^\[\[figure:([a-z0-9-]+)\]\]$/);
+    if (figureMatch) {
+      flushParagraph();
+      flushList();
+      flushTable();
+      blocks.push({ type: 'figure', id: figureMatch[1] });
       continue;
     }
 
