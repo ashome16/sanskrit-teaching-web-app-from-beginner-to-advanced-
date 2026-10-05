@@ -3063,6 +3063,33 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           { sa: 'ब्रह्माण्ड', iast: 'Brahmāṇḍa', gloss: 'Cosmic egg / bubble universe coexisting within an infinite multiverse' }
         ],
         highlight: 'The Sūrya Siddhānta sidereal year (365d 6h 12m 36.56s) achieves 99.999% accuracy against modern satellite data, while its 4.32-billion-year Kalpa mirrors the radiometric age of the solar system.'
+      },
+      {
+        title: 'Combinatorics in the Līlāvatī: The Aṅka-Pāśa & The Varied Forms of Lord Shiva',
+        sanskritTitle: 'अङ्कपाशः · शम्भोः दशबाहु-मूर्तिभेदाः बहुसमूह-क्रमपरिवर्तनं च',
+        paragraphs: [
+          'In Chapter 13 of the Līlāvatī, titled Aṅka-Pāśa (अङ्कपाशः / Net of Numbers), Bhāskarācārya establishes foundational rules for combinations and permutations, long before they were formalized in European mathematics.',
+          'True to his pedagogy, he frames deep mathematics around sacred temple iconography:',
+          '1. The 10-Armed Shiva Problem (🔱 Distinct Permutations n!):',
+          '"Lord Shiva holds 10 distinct objects/weapons in his ten hands: a noose (pāśa), a goad (aṅkuśa), a snake (sarpa), a drum (ḍamaru), a skull (kapāla), a trident (triśūla), a bow (dhanus), an arrow (bāṇa), a sword (khaḍga), and a shield (kheṭa). Tell me, wise mathematician, in how many distinct variations can icons of Lord Shiva be sculpted by swapping the positions of these 10 items in his hands?"',
+          'Bhāskarācārya outlines the rule for permutations of n distinct objects: multiply numbers sequentially from 1 up to n (factorial n!). For 10 unique weapons: 10! = 10 × 9 × 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 3,628,800 distinct sculptures!',
+          'He cross-references Lord Hari (Vishnu): holding 4 distinct emblems (Mace, Discus, Conch, Lotus), yielding 4! = 24 canonical Caturviṃśati Mūrtis (Keśava, Nārāyaṇa, Mādhava, etc.).',
+          '2. Bhāskarācārya’s Rule for Identical Items (Multiset Permutations):',
+          'When computing total permutations where some elements repeat, you find the total factorial of all items as if unique, then divide by the sequential products of the factorials of each repeated element:',
+          'P = n! / (n₁! × n₂! × ... × nₖ!)',
+          '3. The 12-Armed Deity Temple Sculpture Example:',
+          'Imagine a statue of a 12-armed deity holding: 5 Identical Lotuses 🪷, 3 Identical Tridents 🔱, 2 Identical Swords ⚔️, and 2 Identical Shields 🛡️.',
+          '• Total Hands n = 12 (12! = 479,001,600)',
+          '• Denominator = 5! × 3! × 2! × 2! = 120 × 6 × 2 × 2 = 2,880',
+          '• Total Distinct Sculptural Variations = 479,001,600 / 2,880 = 166,320 unique statues!',
+          'Temple sculptors (Śilpis) utilized these exact permutations to ensure that no two carved deities in a grand temple complex were duplicates, anticipating Marin Mersenne (1636) and Jakob Bernoulli (1713) by more than 500 years.'
+        ],
+        terms: [
+          { sa: 'अङ्कपाश', iast: 'Aṅka-Pāśa', gloss: 'Net of numbers; combinatorics and permutations chapter of Līlāvatī' },
+          { sa: 'मूर्तिभेद', iast: 'Mūrti-Bheda', gloss: 'Iconographic sculptural variations obtained by permuting deity hand emblems' },
+          { sa: 'क्रमपरिवर्तन', iast: 'Krama-Parivartana', gloss: 'Permutations of distinct elements and multisets' }
+        ],
+        highlight: 'Bhāskarācārya solved distinct and multiset permutations in 1150 CE: proving that a 10-armed Shiva yields 3,628,800 sculptures (10!), while a 12-armed deity with 5 lotuses, 3 tridents, 2 swords, and 2 shields yields 166,320 distinct statues [12! / (5! × 3! × 2! × 2!)].'
       }
     ],
     quote: 'The Earth attracts by its own force whatever heavy thing is stationed in space; that object appears to fall, but in an omnidirectional cosmos, where could the spherical Earth itself fall? It rests suspended in the geometric body of the infinite.',
@@ -3076,7 +3103,8 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Dr. Remella Avadhanulu highlights the Lotus Needle Metaphor: 1 Truṭi (~30.86 ns) is the time for a needle to pierce 1 lotus petal, anchoring Amūrta Kāla (formless time) in an intuitive physical baseline.',
       'The Ahargaṇa master celestial odometer mapped planetary positions via the Rule of Three, corrected by Mandaphala (eccentricity) and Śīghraphala (relative motion).',
       'The Saṅkalpa Mantra computes the exact elapsed age of our current Śveta-Varāha Kalpa as of 2026 CE: exactly 1,972,949,128 years (~1.973 billion years).',
-      'The Sūrya Siddhānta sidereal year (365d 6h 12m 36.56s) is accurate to within 3.5 minutes of modern satellite data without mechanical clocks.'
+      'The Sūrya Siddhānta sidereal year (365d 6h 12m 36.56s) is accurate to within 3.5 minutes of modern satellite data without mechanical clocks.',
+      'In Līlāvatī Ch. 13 (Aṅka-Pāśa), Bhāskarācārya established permutations of distinct items (10! = 3,628,800 variations for 10-armed Shiva) and multiset permutations with repetitions [n! / (n₁! × ... × nₖ!) = 166,320 for 12-armed deity with 5 lotuses, 3 tridents, 2 swords, 2 shields] 500 years before European mathematicians.'
     ]
   },
   {

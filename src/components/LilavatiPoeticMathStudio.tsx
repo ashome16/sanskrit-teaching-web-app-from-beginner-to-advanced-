@@ -162,8 +162,15 @@ export const PLANETARY_MAHAYUGA_REVOLUTIONS: Record<string, { name: string; name
 
 export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlayAudio }) => {
   const [activeTab, setActiveTab] = useState<
-    'bees' | 'necklace' | 'peacock' | 'lotus' | 'currency' | 'sukshma_kala' | 'maha_kala'
+    'bees' | 'necklace' | 'peacock' | 'lotus' | 'currency' | 'sukshma_kala' | 'maha_kala' | 'anka_pasa'
   >('bees');
+
+  // Interactive state for Aṅka-Pāśa (Combinatorics: Shiva & Multiset Permutations)
+  const [shivaDistinctCount, setShivaDistinctCount] = useState<number>(10);
+  const [multisetLotuses, setMultisetLotuses] = useState<number>(5);
+  const [multisetTridents, setMultisetTridents] = useState<number>(3);
+  const [multisetSwords, setMultisetSwords] = useState<number>(2);
+  const [multisetShields, setMultisetShields] = useState<number>(2);
 
   // Interactive state for Peacock & Snake
   const [pillarHeight, setPillarHeight] = useState<number>(9);
@@ -270,6 +277,27 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
     'Pisces (Mīna / మీనం)',
   ];
 
+  // Aṅka-Pāśa (Combinatorics) Calculations:
+  const factorial = (n: number): number => {
+    if (n <= 1) return 1;
+    let res = 1;
+    for (let i = 2; i <= n; i++) res *= i;
+    return res;
+  };
+
+  // Distinct items (10-armed Shiva, 4-armed Vishnu):
+  const shivaDistinctPermutations = factorial(shivaDistinctCount);
+
+  // Multiset items (Repeated Deity Weapons):
+  const totalMultisetHands = multisetLotuses + multisetTridents + multisetSwords + multisetShields;
+  const multisetNumerator = factorial(totalMultisetHands);
+  const multisetDenominator =
+    factorial(multisetLotuses) *
+    factorial(multisetTridents) *
+    factorial(multisetSwords) *
+    factorial(multisetShields);
+  const multisetPermutations = multisetDenominator > 0 ? Math.round(multisetNumerator / multisetDenominator) : 0;
+
   return (
     <div
       style={{
@@ -305,6 +333,7 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
             { id: 'currency', label: '🐚 Cowrie Currency', sub: 'Place Value' },
             { id: 'sukshma_kala', label: '🪷 Micro Time (Sūkṣma Kāla)', sub: 'Lotus & Needle' },
             { id: 'maha_kala', label: '🌌 Cosmic Kalpa & Ahargaṇa', sub: 'Surya Siddhanta' },
+            { id: 'anka_pasa', label: '🔱 Combinatorics (Aṅka-Pāśa)', sub: '10-Armed Shiva' },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -1581,6 +1610,300 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
               >
                 ▶ Sūrya Siddhānta: Ahargaṇa &amp; Cosmic Time
               </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =========================================================================
+          TAB 8: ANKA-PASA (COMBINATORICS & 10-ARMED SHIVA)
+         ========================================================================= */}
+      {activeTab === 'anka_pasa' && (
+        <div>
+          {/* Classic Sanskrit Verse */}
+          <div style={{ background: '#fefce8', border: '1.5px solid #fef08a', borderRadius: '12px', padding: '1.2rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                Līlāvatī Chapter 13 · Aṅka-Pāśa (अङ्कपाशः / Net of Numbers)
+              </span>
+              <button
+                type="button"
+                onClick={() => onPlayAudio?.('पाशाङ्कुशाक्षडमरुककपालशूलैः')}
+                style={{
+                  padding: '0.25rem 0.65rem',
+                  fontSize: '0.76rem',
+                  borderRadius: '6px',
+                  border: '1px solid #fde047',
+                  background: '#ffffff',
+                  cursor: 'pointer',
+                  fontWeight: 700,
+                  color: '#854d0e',
+                }}
+              >
+                🔊 Chant Shambhu &amp; Hari Verse
+              </button>
+            </div>
+            <div style={{ fontSize: '1.08rem', fontWeight: 800, color: '#713f12', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+              पाशाङ्कुशाक्षडमरुककपालशूलैः खट्वाङ्गशक्तिशरचापयुतैर्भवन्ति ।<br />
+              अन्योन्यहस्तकलितैः कति मूर्तिभेदाः शम्भोर्हरेरिव गदारिजशङ्खपद्मैः ॥
+            </div>
+            <div style={{ fontSize: '0.88rem', fontWeight: 600, color: '#a16207', marginBottom: '0.45rem' }}>
+              pāśāṅkuśākṣaḍamarukakapālaśūlaiḥ khaṭvāṅgaśaktiśaracāpayutairbhavanti |<br />
+              anyonyahastakalitaiḥ kati mūrtibhedāḥ śambhorhareriva gadārijaśaṅkhapadmaiḥ ||
+            </div>
+            <p style={{ margin: 0, fontSize: '0.86rem', color: '#854d0e', lineHeight: 1.55 }}>
+              <strong>Poetic Translation:</strong> <em>&quot;Lord Shiva holds 10 distinct sacred items in his ten hands: a noose (pāśa), a goad (aṅkuśa), a snake/rosary (akṣa), a drum (ḍamaru), a skull (kapāla), a trident (śūla), a club (khaṭvāṅga), a spear/sword (śakti), an arrow (śara), and a bow (cāpa). Tell me, wise mathematician, how many distinct form-variations (mūrtibhedāḥ) can be sculpted by swapping these items among his hands—just as Lord Hari (Vishnu) has 24 forms with his mace (gadā), discus (ari), conch (śaṅkha), and lotus (padma)?&quot;</em>
+            </p>
+          </div>
+
+          {/* Section A: Distinct Items Permutations (10-Armed Shiva & 4-Armed Vishnu) */}
+          <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0d9488', textTransform: 'uppercase' }}>
+                  Problem 1 · Distinct Items Permutation ($n!$)
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>
+                  🔱 The 10-Armed Shiva Problem: 3,628,800 Sacred Iconographies
+                </h4>
+              </div>
+              <div style={{ background: '#ecfdf5', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #a7f3d0', fontSize: '0.84rem', fontWeight: 800, color: '#065f46' }}>
+                Formula: P(n) = n!
+              </div>
+            </div>
+
+            <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5, margin: '0 0 1rem' }}>
+              Bhāskarācārya outlines the fundamental rule for permutations of <em>n</em> unique objects: multiply all sequential integers from 1 up to <em>n</em> (modern <strong>factorial $n!$</strong>).
+            </p>
+
+            {/* 10 Sacred Weapons Chips */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.5rem', marginBottom: '1.15rem' }}>
+              {[
+                { name: '1. Pāśa (पाश)', icon: '🪢', gloss: 'Noose' },
+                { name: '2. Aṅkuśa (अङ्कुश)', icon: '🪝', gloss: 'Elephant Goad' },
+                { name: '3. Sarpa (सर्प / अक्ष)', icon: '🐍', gloss: 'Snake / Rosary' },
+                { name: '4. Ḍamaru (डमरु)', icon: '🥁', gloss: 'Hourglass Drum' },
+                { name: '5. Kapāla (कपाल)', icon: '💀', gloss: 'Skull-cup' },
+                { name: '6. Triśūla (त्रिशूल)', icon: '🔱', gloss: 'Trident' },
+                { name: '7. Dhanus (धनुस्)', icon: '🏹', gloss: 'Pināka Bow' },
+                { name: '8. Bāṇa (बाण)', icon: '🎯', gloss: 'Sacred Arrow' },
+                { name: '9. Khaḍga (खड्ग)', icon: '⚔️', gloss: 'Sword / Staff' },
+                { name: '10. Kheṭa (खेट)', icon: '🛡️', gloss: 'Shield / Spear' },
+              ].map((item, idx) => (
+                <div
+                  key={item.name}
+                  style={{
+                    background: idx < shivaDistinctCount ? '#ffffff' : '#f1f5f9',
+                    border: idx < shivaDistinctCount ? '1.5px solid #0d9488' : '1px dashed #cbd5e1',
+                    borderRadius: '8px',
+                    padding: '0.5rem',
+                    textAlign: 'center',
+                    opacity: idx < shivaDistinctCount ? 1 : 0.45,
+                    transition: 'all 0.15s ease',
+                  }}
+                >
+                  <div style={{ fontSize: '1.25rem' }}>{item.icon}</div>
+                  <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0f172a', marginTop: '0.15rem' }}>{item.name}</div>
+                  <div style={{ fontSize: '0.7rem', color: '#64748b' }}>{item.gloss}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Interactive Slider for Distinct Hands */}
+            <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #cbd5e1', marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                <label style={{ fontSize: '0.84rem', fontWeight: 700, color: '#334155' }}>
+                  Adjust Number of Distinct Deity Hands (n):
+                </label>
+                <span style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0d9488' }}>
+                  n = {shivaDistinctCount} Hands
+                </span>
+              </div>
+              <input
+                type="range"
+                min={3}
+                max={12}
+                step={1}
+                value={shivaDistinctCount}
+                onChange={(e) => setShivaDistinctCount(Number(e.target.value))}
+                style={{ width: '100%', accentColor: '#0d9488' }}
+              />
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8', marginTop: '0.2rem' }}>
+                <span>3 Hands (6)</span>
+                <span>4 Hands: Vishnu (24)</span>
+                <span>10 Hands: Shiva (3,628,800)</span>
+                <span>12 Hands (479M)</span>
+              </div>
+            </div>
+
+            {/* Permutation Calculation Result Box */}
+            <div style={{ background: '#ecfdf5', border: '1.5px solid #a7f3d0', borderRadius: '10px', padding: '1rem' }}>
+              <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#065f46', textTransform: 'uppercase' }}>
+                Factorial Calculation Breakdown:
+              </div>
+              <div style={{ fontSize: '0.94rem', color: '#047857', fontFamily: 'monospace', margin: '0.3rem 0', wordBreak: 'break-all' }}>
+                {shivaDistinctCount}! = {Array.from({ length: shivaDistinctCount }, (_, i) => shivaDistinctCount - i).join(' × ')}
+              </div>
+              <div style={{ fontSize: '1.35rem', fontWeight: 900, color: '#065f46', marginTop: '0.4rem' }}>
+                = {shivaDistinctPermutations.toLocaleString()} Unique Statues!
+              </div>
+
+              {/* Special callout for Vishnu 4! vs Shiva 10! */}
+              <div style={{ marginTop: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #bbf7d0', fontSize: '0.84rem', color: '#065f46' }}>
+                {shivaDistinctCount === 10 ? (
+                  <span>
+                    🔱 <strong>Bhāskarācārya’s Verification:</strong> A temple sculptor has exactly <strong>3,628,800</strong> distinct arrangements to sculpt a 10-armed Shiva with these 10 sacred weapons!
+                  </span>
+                ) : shivaDistinctCount === 4 ? (
+                  <span>
+                    🪷 <strong>Lord Hari (Vishnu) Caturviṃśati Mūrtis:</strong> 4! = 4 × 3 × 2 × 1 = <strong>24 canonical forms</strong> of Vishnu (Keśava, Nārāyaṇa, Mādhava, Govinda, etc.) distinguished entirely by how the Conch, Discus, Mace, and Lotus are assigned across his 4 hands!
+                  </span>
+                ) : (
+                  <span>
+                    📐 For {shivaDistinctCount} unique weapons, the factorial grows to <strong>{shivaDistinctPermutations.toLocaleString()}</strong> distinct iconographic possibilities.
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Section B: Multiset Permutations (Repeated Deity Items) */}
+          <div style={{ background: '#f8fafc', border: '1.5px solid #cbd5e1', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase' }}>
+                  Problem 2 · Permutations with Repetitions (Multiset)
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>
+                  🪷 The 12-Armed Deity: Bhāskarācārya’s Multiset Formula
+                </h4>
+              </div>
+              <div style={{ background: '#fef3c7', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #fde68a', fontSize: '0.84rem', fontWeight: 800, color: '#92400e' }}>
+                Formula: n! / (n₁! × n₂! × ... × nₖ!)
+              </div>
+            </div>
+
+            <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5, margin: '0 0 1rem' }}>
+              When certain weapons are identical—such as multiple lotuses or tridents—permutations among identical items produce no visible visual distinction. Bhāskarācārya gave the exact rule: <strong>calculate total factorial n! as if all items were unique, then divide by the product of factorials of each identical group</strong>:
+            </p>
+
+            {/* Interactive Sliders for the 4 Weapon Groups */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem', marginBottom: '1.15rem' }}>
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                  <span style={{ fontSize: '0.84rem', fontWeight: 700, color: '#0f172a' }}>🪷 Identical Lotuses:</span>
+                  <span style={{ fontSize: '0.92rem', fontWeight: 800, color: '#0d9488' }}>{multisetLotuses} ({multisetLotuses}! = {factorial(multisetLotuses)})</span>
+                </div>
+                <input
+                  type="range"
+                  min={1}
+                  max={8}
+                  value={multisetLotuses}
+                  onChange={(e) => setMultisetLotuses(Number(e.target.value))}
+                  style={{ width: '100%', accentColor: '#0d9488' }}
+                />
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                  <span style={{ fontSize: '0.84rem', fontWeight: 700, color: '#0f172a' }}>🔱 Identical Tridents:</span>
+                  <span style={{ fontSize: '0.92rem', fontWeight: 800, color: '#0d9488' }}>{multisetTridents} ({multisetTridents}! = {factorial(multisetTridents)})</span>
+                </div>
+                <input
+                  type="range"
+                  min={1}
+                  max={6}
+                  value={multisetTridents}
+                  onChange={(e) => setMultisetTridents(Number(e.target.value))}
+                  style={{ width: '100%', accentColor: '#0d9488' }}
+                />
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                  <span style={{ fontSize: '0.84rem', fontWeight: 700, color: '#0f172a' }}>⚔️ Identical Swords:</span>
+                  <span style={{ fontSize: '0.92rem', fontWeight: 800, color: '#0d9488' }}>{multisetSwords} ({multisetSwords}! = {factorial(multisetSwords)})</span>
+                </div>
+                <input
+                  type="range"
+                  min={1}
+                  max={4}
+                  value={multisetSwords}
+                  onChange={(e) => setMultisetSwords(Number(e.target.value))}
+                  style={{ width: '100%', accentColor: '#0d9488' }}
+                />
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                  <span style={{ fontSize: '0.84rem', fontWeight: 700, color: '#0f172a' }}>🛡️ Identical Shields:</span>
+                  <span style={{ fontSize: '0.92rem', fontWeight: 800, color: '#0d9488' }}>{multisetShields} ({multisetShields}! = {factorial(multisetShields)})</span>
+                </div>
+                <input
+                  type="range"
+                  min={1}
+                  max={4}
+                  value={multisetShields}
+                  onChange={(e) => setMultisetShields(Number(e.target.value))}
+                  style={{ width: '100%', accentColor: '#0d9488' }}
+                />
+              </div>
+            </div>
+
+            {/* Multiset Calculation Step-by-Step Box */}
+            <div style={{ background: '#fffbeb', border: '1.5px solid #fde68a', borderRadius: '10px', padding: '1.15rem' }}>
+              <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#92400e', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
+                Live Multiset Permutation Derivation:
+              </div>
+              <div style={{ fontSize: '0.9rem', color: '#78350f', lineHeight: 1.6 }}>
+                <strong>Total Deity Hands (n):</strong> {multisetLotuses} + {multisetTridents} + {multisetSwords} + {multisetShields} = <strong>{totalMultisetHands} Hands</strong><br />
+                <strong>Numerator (n!):</strong> {totalMultisetHands}! = {multisetNumerator.toLocaleString()}<br />
+                <strong>Denominator (∏ nᵢ!):</strong> {multisetLotuses}! × {multisetTridents}! × {multisetSwords}! × {multisetShields}! = {factorial(multisetLotuses)} × {factorial(multisetTridents)} × {factorial(multisetSwords)} × {factorial(multisetShields)} = <strong>{multisetDenominator.toLocaleString()}</strong>
+              </div>
+
+              <div style={{ margin: '0.85rem 0', padding: '0.75rem', background: '#ffffff', borderRadius: '8px', border: '1px solid #fde68a', fontFamily: 'monospace', fontSize: '0.95rem', color: '#b45309' }}>
+                Distinct Arrangements = {multisetNumerator.toLocaleString()} / {multisetDenominator.toLocaleString()}
+              </div>
+
+              <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#78350f' }}>
+                = {multisetPermutations.toLocaleString()} Unique Statues!
+              </div>
+
+              {totalMultisetHands === 12 && multisetLotuses === 5 && multisetTridents === 3 && multisetSwords === 2 && multisetShields === 2 && (
+                <div style={{ marginTop: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #fde68a', fontSize: '0.84rem', color: '#92400e' }}>
+                  🏛️ <strong>The Canonical 12-Armed Deity Solution:</strong><br />
+                  <div style={{ fontFamily: 'monospace', margin: '0.35rem 0', fontWeight: 700, color: '#b45309' }}>
+                    12! / (5! × 3! × 2! × 2!) = 479,001,600 / (120 × 6 × 2 × 2) = 479,001,600 / 2,880 = 166,320
+                  </div>
+                  A master sculptor can sculpt 166,320 completely distinct versions of this 12-armed deity without duplicating any hand configuration!
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Historical & Architectural Significance Box */}
+          <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1.15rem' }}>
+            <h4 style={{ margin: '0 0 0.4rem', fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+              📜 Historical Precedence: Bhāskarācārya vs. European Combinatorics
+            </h4>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem', marginTop: '0.6rem' }}>
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#0f766e', marginBottom: '0.2rem' }}>
+                  🏛️ Practical Application in Temple Architecture
+                </div>
+                <p style={{ fontSize: '0.82rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                  Guilds of Indian master sculptors (<em>Śilpis</em> and <em>Sthapatis</em>) used Aṅka-Pāśa rules to sculpt thousands of relief murtis along temple corridors (such as Khajuraho, Madurai, and Belur) ensuring mathematical variety without accidental repetition.
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#0f766e', marginBottom: '0.2rem' }}>
+                  ⏳ 500-Year European Chronological Lag
+                </div>
+                <p style={{ fontSize: '0.82rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                  While Bhāskara II formalized both distinct and multiset factorials in 1150 CE, European mathematicians did not publish multiset permutations until Marin Mersenne (1636 CE) and Jakob Bernoulli’s <em>Ars Conjectandi</em> (1713 CE).
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -3292,6 +3292,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <a href="#lilavati-kalpa-age" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🗓️ 12. Kalpa Age (1.97 Billion Yrs)</a>
                 <a href="#lilavati-sidereal-multiverse" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>☀️ 13. Sidereal Precision &amp; Multiverse</a>
                 <a href="#lilavati-video-archives" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🎥 14. Dr. Remella Avadhanulu Archives</a>
+                <a href="#lilavati-combinatorics" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>🔱 15. Aṅka-Pāśa &amp; 10-Armed Shiva</a>
               </div>
             </figure>
 
@@ -4327,6 +4328,128 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   >
                     ▶ Watch Sūrya Siddhānta &amp; Ahargaṇa
                   </a>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 15: Aṅka-Pāśa: Combinatorics & The Varied Forms of Lord Shiva */}
+            <section className="philosophy-section" id="lilavati-combinatorics" aria-labelledby="heading-lilavati-combinatorics">
+              <h2 id="heading-lilavati-combinatorics">15. Aṅka-Pāśa: Combinatorics, Factorials &amp; The Varied Forms of Lord Shiva</h2>
+              <p className="philosophy-lead">
+                In Chapter 13 of the <em>Līlāvatī</em>, titled <strong>Aṅka-Pāśa (अङ्कपाशः / Net of Numbers)</strong>, Bhāskarācārya sets up foundational laws for permutations and combinations, long before they were formalized in European mathematics. True to his signature pedagogy, he frames deep combinatorial principles around religious iconography to engage and inspire his students:
+              </p>
+
+              {/* Shambhu & Hari Shloka */}
+              <div className="philosophy-card" style={{ background: '#fefce8', border: '1.5px solid #fef08a', margin: '1.25rem 0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                    Sanskrit Combinatorics Verse · Upajāti Meter (Līlāvatī Ch. 13)
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handlePlayAudio('पाशाङ्कुशाक्षडमरुककपालशूलैः')}
+                    style={{
+                      padding: '0.2rem 0.6rem',
+                      fontSize: '0.76rem',
+                      borderRadius: '6px',
+                      border: '1px solid #fde047',
+                      background: '#ffffff',
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                      color: '#854d0e',
+                    }}
+                  >
+                    🔊 Chant Shambhu &amp; Hari Verse
+                  </button>
+                </div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#713f12', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+                  पाशाङ्कुशाक्षडमरुककपालशूलैः खट्वाङ्गशक्तिशरचापयुतैर्भवन्ति ।<br />
+                  अन्योन्यहस्तकलितैः कति मूर्तिभेदाः शम्भोर्हरेरिव गदारिजशङ्खपद्मैः ॥
+                </div>
+                <div style={{ fontSize: '0.88rem', fontWeight: 600, color: '#a16207', marginBottom: '0.45rem' }}>
+                  pāśāṅkuśākṣaḍamarukakapālaśūlaiḥ khaṭvāṅgaśaktiśaracāpayutairbhavanti |<br />
+                  anyonyahastakalitaiḥ kati mūrtibhedāḥ śambhorhareriva gadārijaśaṅkhapadmaiḥ ||
+                </div>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#713f12', lineHeight: 1.55 }}>
+                  <strong>The Literal Mathematical Riddle:</strong> <em>&quot;Lord Shiva holds 10 distinct objects/weapons in his ten hands: a noose (pāśa), a goad (aṅkuśa), a snake/rosary (akṣa), a drum (ḍamaru), a skull-cup (kapāla), a trident (śūla), a club (khaṭvāṅga), a spear/sword (śakti), an arrow (śara), and a bow (cāpa). Tell me, wise mathematician, in how many distinct variations (mūrtibhedāḥ) can icons of Lord Shiva be sculpted by swapping the positions of these 10 items in his hands—just as Lord Hari (Vishnu) has 24 forms with his mace (gadā), discus (ari), conch (śaṅkha), and lotus (padma)?&quot;</em>
+                </p>
+              </div>
+
+              {/* Two Column Grid: Shiva & Hari vs Multiset */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', margin: '1.25rem 0' }}>
+                {/* Column 1: The 10-Armed Shiva & 4-Armed Vishnu */}
+                <div style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: '12px', border: '1.5px solid #cbd5e1' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.4rem' }}>
+                    <span style={{ fontSize: '1.4rem' }}>🔱</span>
+                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                      The 10-Armed Shiva Problem (10! = 3,628,800)
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.55 }}>
+                    Bhāskarācārya explicitly states the rule for permutations of <em>n</em> distinct objects: multiply the numbers sequentially from 1 up to <em>n</em> (modern <strong>factorial $n!$</strong>).
+                  </p>
+
+                  <div style={{ background: '#ffffff', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0', fontFamily: 'monospace', fontSize: '0.86rem', color: '#0f766e', margin: '0.75rem 0' }}>
+                    10! = 10 × 9 × 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1<br />
+                    <strong>10! = 3,628,800 distinct sculptures!</strong>
+                  </div>
+
+                  <p style={{ fontSize: '0.84rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
+                    A master sculptor carving the cosmic dance of Shiva in a rock-cut cave temple has over 3.6 million mathematically non-repeating iconographic configurations!
+                  </p>
+
+                  <div style={{ marginTop: '0.75rem', background: '#ecfdf5', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #a7f3d0' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#065f46', marginBottom: '0.2rem' }}>
+                      🪷 The 4-Armed Vishnu (Hari) Verification:
+                    </div>
+                    <div style={{ fontSize: '0.82rem', color: '#047857', lineHeight: 1.45 }}>
+                      For Lord Vishnu holding 4 unique sacred emblems (Śaṅkha, Cakra, Gadā, Padma), the calculation is $4! = 4 \times 3 \times 2 \times 1 = \mathbf{24}$. These are the celebrated <strong>Caturviṃśati Mūrtis</strong> (Keśava, Nārāyaṇa, Mādhava, Govinda, etc.) documented in the Agamas!
+                    </div>
+                  </div>
+                </div>
+
+                {/* Column 2: Multiset Permutations (Repeated Weapons) */}
+                <div style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: '12px', border: '1.5px solid #cbd5e1' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.4rem' }}>
+                    <span style={{ fontSize: '1.4rem' }}>🪷</span>
+                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                      Bhāskarācārya’s Rule for Identical Items (Multiset)
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.55 }}>
+                    In the same chapter, Bhāskara addresses permutations with repetitions: when some held items are identical, swapping them produces no visually distinct statue. He introduces the exact multiset formula:
+                  </p>
+
+                  <div style={{ background: '#ffffff', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0', fontFamily: 'monospace', fontSize: '0.92rem', color: '#b45309', margin: '0.75rem 0', textAlign: 'center' }}>
+                    P = n! / (n₁! × n₂! × ... × nₖ!)
+                  </div>
+
+                  <div style={{ background: '#fffbeb', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #fde68a' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#92400e', marginBottom: '0.25rem' }}>
+                      🏛️ The 12-Armed Deity Temple Sculpture Example:
+                    </div>
+                    <p style={{ fontSize: '0.82rem', color: '#78350f', lineHeight: 1.5, margin: 0 }}>
+                      Imagine a 12-armed deity statue given 12 items: <strong>5 Identical Lotuses</strong> 🪷, <strong>3 Identical Tridents</strong> 🔱, <strong>2 Identical Swords</strong> ⚔️, and <strong>2 Identical Shields</strong> 🛡️.
+                    </p>
+                    <div style={{ fontFamily: 'monospace', fontSize: '0.8rem', background: '#ffffff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #fde68a', margin: '0.4rem 0', color: '#78350f' }}>
+                      Total Hands: n = 12 (12! = 479,001,600)<br />
+                      Denominator: 5! × 3! × 2! × 2! = 120 × 6 × 2 × 2 = 2,880<br />
+                      <strong>Result: 479,001,600 / 2,880 = 166,320 Statues!</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Historical Precedence Callout */}
+              <div className="philosophy-callout" style={{ margin: '1.25rem 0' }}>
+                <span className="philosophy-callout-icon" aria-hidden="true">💡</span>
+                <div>
+                  <h3 className="philosophy-callout-title">
+                    Five Centuries Ahead of European Combinatorics
+                  </h3>
+                  <p className="philosophy-callout-text">
+                    In Europe, permutations of multisets with repeated elements were only formally analyzed in the 17th and 18th centuries by Marin Mersenne (1636 CE) and Jakob Bernoulli in his landmark treatise <em>Ars Conjectandi</em> (1713 CE). Bhāskarācārya had not only derived and proved these formulas in 1150 CE, but synthesized them into the living architectural science of Indian temple sculpture.
+                  </p>
                 </div>
               </div>
             </section>
