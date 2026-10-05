@@ -986,8 +986,8 @@ export const BHUTA_SANKHYA_DIGITS: BhutaSankhyaDigit[] = [
     cosmicConcepts: ['Pūrṇa (Fullness)', 'Śūnya (Void)', 'Kha (Ether/Sky)', 'Ākāśa (Space)', 'Gagana (Firmament)', 'Ananta (Infinite Space)'],
     cosmicConceptsSa: ['पूर्ण', 'शून्य', 'ख', 'आकाश', 'गगन', 'अनन्त'],
     cosmicConceptsTe: ['పూర్ణ', 'శూన్య', 'ఖ', 'ఆకాశ', 'గగన', 'అనంత'],
-    philosophicalSymbolism: 'Represents Brahman in its unmanifest, limitless state—both completely empty of finite shapes and full of infinite potential.',
-    keyWordsExample: 'Pūrṇa (used in Bhāskarācārya’s birth chronogram)'
+    philosophicalSymbolism: 'In Sanskrit thought, śūnya (void/emptiness) and pūrṇa (fullness/wholeness) name the same digit: absolute empty and absolute complete as two sides of one coin — the unmanifest from which everything arises and into which it dissolves.',
+    keyWordsExample: 'Pūrṇa / Śūnya (used in Bhāskarācārya’s birth chronogram)'
   },
   {
     digit: 1,
@@ -2882,17 +2882,20 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           '• Guṇa (గుణ / गुण — Fundamental Qualities): In Sāṅkhya philosophy and natural metaphysics, there are 3 cosmic Gunas (Sattva, Rajas, Tamas) → Digit 3.',
           '• Pūrṇa (పూర్ణ / पूर्ण — Fullness / Void): The cosmic zero (Śūnya), representing both infinite fullness and spatial void → Digit 0.',
           '• Mahī (మహీ / मही — The Earth): In Indian cosmology, there is 1 physical Earth supporting living beings → Digit 1.',
+          'Śūnya and Pūrṇa — a philosophical pair for zero: In Sanskrit thought, śūnya (शून्य) can point both to void or emptiness and, paired with pūrṇa (पूर्ण, fullness or wholeness), to a meeting of emptiness and totality. Absolute void and absolute completeness are treated as two sides of the same coin — not merely a bare absence of value. In this framing, emptiness is completeness: what arises from that unconditioned fullness–void also dissolves back into it. Bhūta-Saṅkhyā therefore names the digit zero with both words; Bhāskara’s chronogram uses Pūrṇa for this zero.',
           'The Rule of Reversal (Aṅkānāṃ Vāmato Gatiḥ): The foundational cryptographic axiom of Indian numerical poetry mandates that numbers are read from right to left (least significant digit to most significant digit). Assembling the tokens gives 6, 3, 0, 1. Reversing them produces Shaka Year 1036.',
           'Conversion to Common Era (CE): Using the standard historical offset CE = Shaka + 78, we calculate 1036 + 78 = 1114 CE! Thus, Bhāskara II was born exactly in 1114 CE.',
           'Age of Composition: The second line proclaims "Rasa-Guṇa-Varṣeṇa" (రసగుణవర్షేణ). Using the same Bhūta-Saṅkhyā values (Rasa = 6, Guṇa = 3) and applying the rule of reversal, this directly represents 36 years of age. Therefore, Bhāskara completed the Siddhānta Śiromaṇi at age 36 in the year 1150 CE (1114 + 36 = 1150 CE), creating the most celebrated mathematical astronomy textbook in Indian history.'
         ],
         terms: [
           { sa: 'भूतसङ्ख्या', iast: 'Bhūta-Saṅkhyā', gloss: 'Object-number word numeral cryptographic system' },
+          { sa: 'शून्य', iast: 'Śūnya', gloss: 'Void / emptiness; word-numeral for digit 0, paired with pūrṇa' },
+          { sa: 'पूर्ण', iast: 'Pūrṇa', gloss: 'Fullness / wholeness; word-numeral for digit 0 in Bhāskara’s chronogram' },
           { sa: 'अङ्कानां वामतो गतिः', iast: 'Aṅkānāṃ Vāmato Gatiḥ', gloss: 'Universal rule of reversal: numbers proceed from right to left' },
           { sa: 'शकसंवत्', iast: 'Śaka-Saṃvat', gloss: 'Shaka Era calendar starting in 78 CE (CE = Shaka + 78)' },
           { sa: 'सिद्धान्तशिरोमणि', iast: 'Siddhānta Śiromaṇi', gloss: 'Crown Jewel of Treatises, composed by Bhāskara II in 1150 CE' }
         ],
-        highlight: 'Bhāskarācārya encrypted his 1114 CE birth date into a four-word poetic riddle (Rasa-Guṇa-Pūrṇa-Mahī) that preserved his exact chronology against a thousand years of manuscript copying errors.'
+        highlight: 'Bhāskarācārya encrypted his 1114 CE birth date into a four-word poetic riddle (Rasa-Guṇa-Pūrṇa-Mahī) that preserved his exact chronology against a thousand years of manuscript copying errors. For zero, Bhūta-Saṅkhyā pairs śūnya (void) with pūrṇa (fullness) — emptiness and totality as two sides of one coin.'
       },
       {
         title: 'The Two Types of Mathematics: Vyakta Gaṇitam vs. Avyakta Gaṇitam',
@@ -3162,6 +3165,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     quote: 'The Earth attracts by its own force whatever heavy thing is stationed in space; that object appears to fall, but in an omnidirectional cosmos, where could the spherical Earth itself fall? It rests suspended in the geometric body of the infinite.',
     keyTakeaways: [
       'Bhāskarācārya II encoded his birth year (1114 CE) and composition age (36 years in 1150 CE) in the famous Bhūta-Saṅkhyā shloka: "Rasa-Guṇa-Pūrṇa-Mahī-sama-śaka-nṛpa-samaye".',
+      'In Bhūta-Saṅkhyā, digit zero is named by both śūnya (void/emptiness) and pūrṇa (fullness/wholeness): emptiness and totality as two sides of the same coin — not merely a bare absence of value.',
       'The foundational cryptographic rule Aṅkānāṃ Vāmato Gatiḥ (numbers move to the left) converts the digits 6, 3, 0, 1 into Shaka 1036, which resolves to 1114 CE via CE = Shaka + 78.',
       'Vyakta Gaṇitam is the mathematics of manifest concrete quantities (arithmetic, commercial math, geometry in Līlāvatī); Avyakta Gaṇitam is unmanifest symbolic multivariate algebra (Bījagaṇita).',
       'Bhāskara II utilized the Varṇa system of color names (Kālaka [black/x], Nīlaka [blue/y], Pītaka [yellow/z], Haritaka [green/w], and Rūpa [constants]) to formulate multivariate equations.',

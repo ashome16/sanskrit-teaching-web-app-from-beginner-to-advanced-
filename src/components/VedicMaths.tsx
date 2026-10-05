@@ -657,6 +657,10 @@ ${bodyHtml}
     } else if (clean === 'bhaskara-dob' || clean === 'bhuta-sankhya') {
       setActiveTab('algebra');
       scrollId = 'bhaskara-dob-section';
+    } else if (clean === 'shunya-purna' || clean === 'bhuta-shunya-purna') {
+      setActiveTab('algebra');
+      setSelectedBhutaDigit(0);
+      scrollId = 'bhuta-shunya-purna';
     } else if (clean === 'vyakta-avyakta' || clean === 'varna-algebra') {
       setActiveTab('algebra');
       scrollId = 'vyakta-avyakta-section';
@@ -3168,6 +3172,16 @@ ${bodyHtml}
                 <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.55 }}>
                   Click on any digit from 0 to 9 to inspect its traditional Sanskrit and Telugu cosmological word mappings used across ancient Indian astronomical treatises:
                 </p>
+
+                <div id="bhuta-shunya-purna" className="bhuta-shunya-purna-callout">
+                  <div className="bhuta-shunya-purna-label">Śūnya &amp; Pūrṇa · Digit 0</div>
+                  <p>
+                    In Sanskrit thought, <strong>śūnya</strong> (शून्य — void, emptiness) and <strong>pūrṇa</strong> (पूर्ण — fullness, wholeness)
+                    name the same Bhūta-Saṅkhyā digit. Emptiness and totality meet as two sides of one coin — not merely a bare absence of value.
+                    Absolute void and absolute completeness point to the same unconditioned ground: what arises from it also dissolves back into it.
+                    Bhāskara’s chronogram uses <em>Pūrṇa</em> for this zero.
+                  </p>
+                </div>
 
                 <div className="bhuta-digit-tabs">
                   {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((digit) => (
