@@ -1,0 +1,59 @@
+# Lesson 7: Introduction to Present Tense (Laṭ Lakāra)
+
+Up to this point, you have focused on nouns (Subanta). Now, we ignite action: the verbs (**Tiṅanta**).
+
+In Sanskrit grammar, tenses and moods are called **Lakāras (लकाराः)** because all 10 of them begin with the auspicious letter **ल (la)**. The most important one for beginners is **Laṭ Lakāra (लट् लकार)**, which indicates the **Present Tense (वर्तमान-काल)**.
+
+---
+
+## 1. The 9 Universal Endings of Laṭ Lakāra
+In Sanskrit, verbs decline across **3 Persons (Puruṣas)** and **3 Numbers (Vacanas)**, forming a 3×3 grid of 9 forms:
+
+| Person (पुरुषः) | Singular (एकवचनम्) | Dual (द्विवचनम्) | Plural (बहुवचनम्) | English Meaning |
+| :--- | :--- | :--- | :--- | :--- |
+| **Prathama (प्रथमः)** | **-ति** (*-ti*) | **-तः** (*-taḥ*) | **-अन्ति** (*-anti*) | He / She / It / They |
+| **Madhyama (मध्यमः)** | **-सि** (*-si*) | **-थः** (*-thaḥ*) | **-थ** (*-tha*) | You / You two / You all |
+| **Uttama (उत्तमः)** | **-मि** (*-mi*) | **-वः** (*-vaḥ*) | **-मः** (*-maḥ*) | I / We two / We all |
+
+> **Chant Formula:**  
+> *ति - तः - अन्ति*  
+> *सि - थः - थ*  
+> *मि - वः - मः*  
+> *(ti - taḥ - anti / si - thaḥ - tha / mi - vaḥ - maḥ)*
+
+---
+
+## 2. Conjugating Common Roots
+
+### A. √पठ् (paṭh - To Read / Study)
+| Person | Singular | Dual | Plural |
+| :--- | :--- | :--- | :--- |
+| **Prathama** | **पठति** (*paṭhati* - He/She reads) | **पठतः** (*paṭhataḥ* - They two read) | **पठन्ति** (*paṭhanti* - They read) |
+| **Madhyama** | **पठसि** (*paṭhasi* - You read) | **पठथः** (*paṭhathaḥ* - You two read) | **पठथ** (*paṭhatha* - You all read) |
+| **Uttama** | **पठामि** (*paṭhāmi* - I read) | **पठावः** (*paṭhāvaḥ* - We two read) | **पठामः** (*paṭhāmaḥ* - We read) |
+
+> **Vowel Lengthening Note:** Notice that before the first-person endings (**-मि, -वः, -मः**), the stem vowel **अ** elongates to long **आ** (*paṭhati* → *paṭhāmi*, *paṭhāvaḥ*, *paṭhāmaḥ*).
+
+---
+
+### B. √गम् (gam - To Go)
+The root **√गम्** takes the modified base **गच्छ (gaccha)** in present tense:
+- **गच्छति** (*gacchati* - He goes)
+- **गच्छतः** (*gacchataḥ* - They two go)
+- **गच्छन्ति** (*gacchati* - They all go)
+- **गच्छसि** (*gacchasi* - You go)
+- **गच्छामि** (*gacchāmi* - I go)
+
+---
+
+### C. √लिख् (likh - To Write)
+- **लिखति** (*likhati* - He writes)
+- **लिखसि** (*likhasi* - You write)
+- **लिखामि** (*likhāmi* - I write)
+
+---
+
+## 3. Practice Exercises
+1. Conjugate **√खाद् (khād - to eat)** in first person singular ("I eat"): **खादामि**.
+2. Translate: "They two write": **लिखतः** (Prathama puruṣa, dual).
+3. Translate: "You all read": **पठथ** (Madhyama puruṣa, plural).

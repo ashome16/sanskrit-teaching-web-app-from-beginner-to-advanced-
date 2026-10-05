@@ -1,0 +1,81 @@
+# Lesson 10: Introduction to Avyayas (Indeclinables) and Simple Dialogues
+
+Congratulations on reaching the final lesson of the Beginner Vyākaraṇa Course! 
+
+Up to this point, you have learned nouns and verbs that decline and conjugate. In this lesson, we introduce the secret spice of natural Sanskrit conversations: **Avyayas (अव्ययानि - Indeclinables)**.
+
+---
+
+## 1. What is an Avyaya?
+An **Avyaya** is a word that never changes its form. No matter what gender, case, or number surrounds it, an Avyaya remains perfectly constant:
+
+> **सदृशं त्रिषु लिङ्गेषु सर्वासु च विभक्तिषु ।**  
+> **वचनेषु च सर्वेषु यन्न व्येति तदव्ययम् ॥**  
+> *(That which remains identical across all 3 genders, all 7 cases, and all 3 numbers without changing is called an Avyaya.)*
+
+---
+
+## 2. Everyday Avyayas You Need to Know
+
+### A. Spatial & Question Avyayas
+- **अत्र** (*atra*) = Here
+- **तत्र** (*tatra*) = There
+- **कुत्र** (*kutra*) = Where?
+- **सर्वत्र** (*sarvatra*) = Everywhere
+- **कथम्** (*katham*) = How?
+- **किम्** (*kim*) = What / Why?
+- **किमर्थम्** (*kimartham*) = Why / For what reason?
+
+### B. Logical & Connecting Avyayas
+- **च** (*ca*) = And  
+  *(Placed after the word it connects! e.g., **रामः लक्ष्मणः च** = Rama and Lakshmana)*
+- **अपि** (*api*) = Also / Even  
+  *(e.g., **अहमपि गच्छामि** = I also am going)*
+- **सह** (*saha*) = Together with  
+  *(The noun preceding 'saha' takes Case 3! e.g., **मित्रेण सह** = with a friend)*
+- **अधुना / इदानीम्** (*adhunā / idānīm*) = Now
+- **सदा / सर्वदा** (*sadā / sarvadā*) = Always
+- **न** (*na*) = No / Not
+
+---
+
+## 3. Real Sanskrit Dialogues (सम्भाषणम्)
+Now you have all the tools to speak and understand live Sanskrit! Practice these 4 daily dialogues:
+
+### Dialogue 1: Greeting & Introduction
+- **कः:** नमो नमः! भवतः नाम किम्? (*Namo namaḥ! Bhavataḥ nāma kim?* - Greetings! What is your name?)
+- **खः:** मम नाम राहुलः। भवत्याः नाम किम्? (*Mama nāma Rāhulaḥ. Bhavatyāḥ nāma kim?* - My name is Rahul. What is your name? [to a female])
+- **कः:** मम नाम प्रिया। भवान् कथम् अस्ति? (*Mama nāma Priyā. Bhavān katham asti?* - My name is Priya. How are you?)
+- **खः:** अहं कुशली अस्मि। धन्यवादः! (*Ahaṁ kuśalī asmi. Dhanyavādaḥ!* - I am well. Thank you!)
+
+---
+
+### Dialogue 2: Where are you going?
+- **राहुलः:** प्रिये! त्वं कुत्र गच्छसि? (*Priye! Tvam kutra gacchasi?* - Priya! Where are you going?)
+- **प्रिया:** अहम् अधुना विद्यालयं गच्छामि। (*Aham adhunā vidyālayaṁ gacchāmi.* - I am going to school now.)
+- **राहुलः:** त्वया सह कः गच्छति? (*Tvayā saha kaḥ gacchati?* - Who is going with you?)
+- **प्रिया:** मया सह मम मित्रम् अपि गच्छति। (*Mayā saha mama mitram api gacchati.* - My friend is also going with me.)
+
+---
+
+### Dialogue 3: What are you doing?
+- **शिक्षकः:** बालकाः! यूयं किं कुरुथ? (*Bālakāḥ! Yūyaṁ kiṁ kurutha?* - Boys! What are you all doing?)
+- **बालकाः:** आचार्य! वयं संस्कृत-पुस्तकं पठामः। (*Ācārya! Vayaṁ saṁskṛta-pustakaṁ paṭhāmaḥ.* - Respected teacher! We are reading a Sanskrit book.)
+- **शिक्षकः:** उत्तमम्! (*Uttamam!* - Excellent!)
+
+---
+
+## 4. Course Completion Milestone 🎓
+You have completed all 10 lessons of the **Sanskrit Vyākaraṇa Course**:
+1. Devanāgarī Script & 13 Vowels
+2. 33 Consonants & 5 Vocal Sthānas
+3. Verbal Roots (Dhātu) & Nominal Stems (Prātipadika)
+4. 8 Vibhaktis & Kāraka Semantic Roles
+5. Masculine Nouns in 'a' (Bālaka)
+6. Feminine Nouns in 'ā' and 'ī' (Latā & Nadī)
+7. Present Tense (Laṭ Lakāra: ti-taḥ-anti)
+8. 3 Persons (Puruṣa) & Pronoun Alignment
+9. Active Voice Syntax (Kartari Prayoga)
+10. Avyayas & Everyday Spoken Sanskrit
+
+You are now equipped to read Sanskrit sentences, analyze noun cases, identify verb roots, and explore the classical literature and linguistics masterclasses!

@@ -1691,6 +1691,17 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     tip: 'Try the interactive sound synthesizer in Article 18 to hear the exact frequency of each animal note in real time!',
     relatedView: 'grammar',
   },
+  {
+    id: 'qa-vyakarana-beginner-course',
+    category: 'grammar',
+    question: 'Where can an absolute beginner start learning Sanskrit grammar systematically?',
+    sanskritQuestion: 'संस्कृत-व्याकरणस्य आरम्भिक-पाठ्यक्रमः कुत्र प्राप्यते?',
+    shortAnswer: 'Open the "10-Part Beginner Course" under the Vyākaraṇa section for a sequential 10-lesson track from phonetics to sentence construction.',
+    detailedAnswer: 'The Vyākaraṇa section features a systematic 10-lesson curriculum divided into 4 sequential modules: Module 1 covers Devanāgarī, the 13 vowels, 33 consonants, and roots vs stems; Module 2 explores noun declensions (Vibhakti) with Bālaka, Latā, and Nadī; Module 3 covers present tense verb conjugations (Laṭ Lakāra) and the 3 persons (Puruṣa); and Module 4 synthesizes active voice sentence structure (Kartari Prayoga) and essential conversational indeclinables (Avyayas).',
+    audioDevanagari: 'व्याकरण-पाठ्यक्रमः वर्णाः विभक्तयः लकाराः वाक्य-रचना',
+    tip: 'Click on Lesson 1: Introduction to Devanāgarī & Vowels under the Vyākaraṇa tab to start your journey!',
+    relatedView: 'grammar',
+  },
 ];
 
 export const BODHI_WORD_SUGGESTIONS: BodhiWordSuggestion[] = [

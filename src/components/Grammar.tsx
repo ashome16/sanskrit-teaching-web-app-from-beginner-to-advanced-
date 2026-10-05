@@ -15,9 +15,38 @@ import { NumbersGuide } from './NumbersGuide';
 import KatapayadiManuscriptFigure from './KatapayadiManuscriptFigure';
 import VedicArticleFigure from './VedicArticleFigure';
 import type { VedicArticleFigureId } from '../data/vedicMaths';
+import {
+  VYAKARANA_MODULES,
+  VYAKARANA_LESSONS,
+  getLessonById,
+  getNextLesson,
+  getPrevLesson,
+} from '../data/vyakaranaCourseData';
+import type { ArticleBlock } from '../utils/articleParser';
 import '../styles/grammar.css';
 
-export type GrammarTopic = 'home' | 'vibhakti' | 'linga-vachana' | 'numbers' | 'samyukta' | 'sound-teams' | 'science-of-sound' | 'dhatupatha' | 'article';
+export type GrammarTopic =
+  | 'home'
+  | 'course-lesson'
+  | 'vibhakti'
+  | 'linga-vachana'
+  | 'numbers'
+  | 'samyukta'
+  | 'sound-teams'
+  | 'science-of-sound'
+  | 'dhatupatha'
+  | 'article';
+
+const MASTERCLASS_IDS = [
+  'beginners-roadmap',
+  'katapayadi-number-words',
+  'animal-names-yoga-shapes-singing-notes',
+  'vakyapadiya-and-ai',
+  'indian-calendar-precision',
+  'naming-the-colossal',
+  'legacy-of-indian-metrology',
+  'sanskrit-in-english',
+];
 
 const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
 
@@ -143,9 +172,102 @@ const renderRichArticleText = (text: string, baseKeyPrefix = 'rich'): React.Reac
   });
 };
 
+const renderArticleBlocks = (blocks: ArticleBlock[]) => {
+  return blocks.map((block, index) => {
+    if (block.type === 'subheading') {
+      return (
+        <h3 key={index} className="grammar-article-subheading">
+          {renderRichArticleText(block.text, `h3-${index}`)}
+        </h3>
+      );
+    }
+    if (block.type === 'quote') {
+      return (
+        <blockquote key={index} className="grammar-article-quote">
+          {renderRichArticleText(block.text, `quote-${index}`)}
+        </blockquote>
+      );
+    }
+    if (block.type === 'list') {
+      return (
+        <ul key={index} className="grammar-article-list">
+          {block.items.map((item, itemIndex) => (
+            <li key={itemIndex}>{renderRichArticleText(item, `li-${index}-${itemIndex}`)}</li>
+          ))}
+        </ul>
+      );
+    }
+    if (block.type === 'table') {
+      return (
+        <div className="grammar-article-table-wrap" key={index}>
+          <table className="grammar-article-table">
+            <thead>
+              <tr>
+                {block.headers.map((header, headerIndex) => (
+                  <th key={headerIndex}>{renderRichArticleText(header, `th-${index}-${headerIndex}`)}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((row, rowIndex) => (
+                <tr key={rowIndex}>
+                  {row.map((cell, cellIndex) => (
+                    <td key={cellIndex}>{renderRichArticleText(cell, `td-${index}-${rowIndex}-${cellIndex}`)}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+    if (block.type === 'image') {
+      const src = block.src.startsWith('http') || block.src.startsWith('/') ? block.src : `./${block.src}`;
+      return (
+        <figure className="grammar-article-image-wrap" key={index}>
+          <img src={src} alt={block.alt} className="grammar-article-image" loading="lazy" />
+          {block.caption && (
+            <figcaption className="grammar-article-image-caption">
+              {renderRichArticleText(block.caption, `cap-${index}`)}
+            </figcaption>
+          )}
+        </figure>
+      );
+    }
+    if (block.type === 'figure') {
+      if (block.id === 'katapayadi-matrix') {
+        return <KatapayadiManuscriptFigure key={index} />;
+      }
+      return (
+        <figure className="grammar-article-figure-container" key={index}>
+          <VedicArticleFigure id={block.id as VedicArticleFigureId} />
+          {block.caption && (
+            <figcaption className="grammar-article-image-caption">
+              {renderRichArticleText(block.caption, `fig-cap-${index}`)}
+            </figcaption>
+          )}
+        </figure>
+      );
+    }
+    if (block.type === 'code') {
+      return (
+        <pre className="grammar-article-code" key={index}>
+          <code>{block.text}</code>
+        </pre>
+      );
+    }
+    return (
+      <p key={index} className="grammar-article-paragraph">
+        {renderRichArticleText(block.text, `p-${index}`)}
+      </p>
+    );
+  });
+};
+
 export type GrammarProps = {
   initialTopic?: GrammarTopic;
   initialArticleId?: string | null;
+  initialLessonId?: string | null;
   onGoHome?: () => void;
   onOpenWorksheets?: () => void;
   onOpenQuiz?: () => void;
@@ -154,12 +276,26 @@ export type GrammarProps = {
 const Grammar: React.FC<GrammarProps> = ({
   initialTopic = 'home',
   initialArticleId = null,
+  initialLessonId = null,
   onGoHome,
   onOpenWorksheets,
   onOpenQuiz,
 }) => {
-  const [topic, setTopic] = useState<GrammarTopic>(initialTopic);
-  const [activeArticleId, setActiveArticleId] = useState<string | null>(initialArticleId);
+  const [topic, setTopic] = useState<GrammarTopic>(() => {
+    if (initialLessonId) return 'course-lesson';
+    if (initialArticleId && initialArticleId.startsWith('lesson-')) return 'course-lesson';
+    return initialTopic;
+  });
+  const [activeArticleId, setActiveArticleId] = useState<string | null>(() => {
+    if (initialArticleId && !initialArticleId.startsWith('lesson-')) return initialArticleId;
+    return null;
+  });
+  const [activeLessonId, setActiveLessonId] = useState<string | null>(() => {
+    if (initialLessonId) return initialLessonId;
+    if (initialArticleId && initialArticleId.startsWith('lesson-')) return initialArticleId;
+    return null;
+  });
+  const [courseViewTab, setCourseViewTab] = useState<'course' | 'masterclasses' | 'studios'>('course');
   const [searchFilter, setSearchFilter] = useState('');
   const [articles, setArticles] = useState<Record<string, ParsedArticle>>({});
   const [articleError, setArticleError] = useState(false);
@@ -218,18 +354,40 @@ const Grammar: React.FC<GrammarProps> = ({
     explanationStopRef.current = stopFn;
   };
 
+  const activeLesson = activeLessonId ? getLessonById(activeLessonId) : undefined;
+
   const goBackToShelf = () => {
     stopAllBodhiSpeech();
     setTopic('home');
     setActiveArticleId(null);
+    setActiveLessonId(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const goBackToCourse = () => {
+    stopAllBodhiSpeech();
+    setTopic('home');
+    setActiveArticleId(null);
+    setActiveLessonId(null);
+    setCourseViewTab('course');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const openArticle = (id: string) => {
     stopAllBodhiSpeech();
     setActiveArticleId(id);
+    setActiveLessonId(null);
     setArticleError(false);
     setTopic('article');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const openLesson = (id: string) => {
+    stopAllBodhiSpeech();
+    setActiveLessonId(id);
+    setActiveArticleId(null);
+    setArticleError(false);
+    setTopic('course-lesson');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -237,7 +395,7 @@ const Grammar: React.FC<GrammarProps> = ({
     return () => {
       stopAllBodhiSpeech();
     };
-  }, [topic, activeArticleId]);
+  }, [topic, activeArticleId, activeLessonId]);
 
   const renderBreadcrumb = (currentTitle: string) => (
     <div className="grammar-header-nav">
@@ -246,16 +404,33 @@ const Grammar: React.FC<GrammarProps> = ({
           type="button"
           className="grammar-breadcrumb-link"
           onClick={goBackToShelf}
-          title="Return to Grammar Shelf with all articles"
+          title="Return to Vyākaraṇa Overview"
         >
-          📚 व्याकरणम् (Grammar Shelf)
+          📚 व्याकरणम् (Vyākaraṇa)
         </button>
+        {topic === 'course-lesson' && (
+          <>
+            <span className="grammar-breadcrumb-sep" aria-hidden="true">›</span>
+            <button
+              type="button"
+              className="grammar-breadcrumb-link"
+              onClick={goBackToCourse}
+              title="Return to 10-Lesson Course Curriculum"
+            >
+              🎓 10-Lesson Course
+            </button>
+          </>
+        )}
         <span className="grammar-breadcrumb-sep" aria-hidden="true">›</span>
         <span className="grammar-breadcrumb-current">{currentTitle}</span>
       </nav>
       <nav className="grammar-nav" aria-label="Grammar page navigation">
-        <button type="button" className="grammar-back" onClick={goBackToShelf}>
-          ← Back to All Articles
+        <button
+          type="button"
+          className="grammar-back"
+          onClick={topic === 'course-lesson' ? goBackToCourse : goBackToShelf}
+        >
+          {topic === 'course-lesson' ? '← Back to Course' : '← Back to Overview'}
         </button>
         {onGoHome && (
           <button type="button" className="grammar-home" onClick={onGoHome}>
@@ -273,6 +448,14 @@ const Grammar: React.FC<GrammarProps> = ({
         .catch(() => setArticleError(true));
     }
   }, [topic, activeArticleMeta, articles, articleError]);
+
+  useEffect(() => {
+    if (topic === 'course-lesson' && activeLesson && !articles[activeLesson.id] && !articleError) {
+      fetchText(activeLesson.file)
+        .then((text) => setArticles((prev) => ({ ...prev, [activeLesson.id]: parseArticle(text) })))
+        .catch(() => setArticleError(true));
+    }
+  }, [topic, activeLesson, articles, articleError]);
 
   if (topic === 'vibhakti') {
     return (
@@ -472,6 +655,145 @@ const Grammar: React.FC<GrammarProps> = ({
     );
   }
 
+  if (topic === 'course-lesson' && activeLesson) {
+    const lessonArticle = articles[activeLesson.id];
+    const prevLesson = getPrevLesson(activeLesson.id);
+    const nextLesson = getNextLesson(activeLesson.id);
+    const moduleInfo = VYAKARANA_MODULES.find((m) => m.id === activeLesson.moduleId);
+
+    return (
+      <section className="grammar-page" aria-label={`Vyākaraṇa ${activeLesson.title}`}>
+        <header className="grammar-page-header">
+          {renderBreadcrumb(activeLesson.title)}
+          <div className="grammar-module-tag-row" style={{ marginTop: '0.75rem' }}>
+            <span className="grammar-module-pill" style={{ background: moduleInfo?.color || '#0f766e' }}>
+              {moduleInfo?.badge || 'Module'} · Lesson {activeLesson.lessonNumber} of 10
+            </span>
+            <span className="grammar-lesson-num-pill">{activeLesson.titleSa}</span>
+          </div>
+          <h2 className="grammar-title" style={{ marginTop: '0.4rem' }}>{activeLesson.title}</h2>
+          <p className="grammar-lead">{activeLesson.summary}</p>
+        </header>
+
+        {/* Bodhi Mascot Companion */}
+        <div className="grammar-bodhi-companion-card">
+          <div className="grammar-bodhi-companion-avatar">
+            <BodhiAvatar
+              size="md"
+              mood="scholar"
+              showHalo={true}
+              isSpeaking={activeSpokenWord !== null}
+            />
+          </div>
+          <div className="grammar-bodhi-companion-content">
+            <div className="grammar-bodhi-companion-header">
+              <div className="grammar-bodhi-title-row">
+                <span className="grammar-bodhi-name">बोधिः (Bodhi)</span>
+                <span className="grammar-bodhi-badge">Lesson Tutor</span>
+              </div>
+            </div>
+
+            <p className="grammar-bodhi-speech">
+              Welcome to <strong>{activeLesson.title}</strong>. Practice pronouncing each highlighted Sanskrit term below, then read through the rules, paradigms, and examples.
+            </p>
+
+            <div className="grammar-bodhi-key-words">
+              <span className="grammar-bodhi-key-words-label">Key Concepts:</span>
+              <div className="grammar-bodhi-chips">
+                {activeLesson.keyConcepts.map((concept, idx) => (
+                  <span key={idx} className="grammar-lesson-tag">{concept}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Interactive Studio Callout if connected */}
+        {activeLesson.interactiveStudioTopic && (
+          <div className="grammar-lesson-studio-callout">
+            <div className="grammar-lesson-studio-callout-text">
+              🔬 <strong>Interactive Lab:</strong> Practice this concept live in our dedicated studio: {activeLesson.interactiveStudioLabel}
+            </div>
+            <button
+              type="button"
+              className="grammar-lesson-studio-btn"
+              onClick={() => {
+                stopAllBodhiSpeech();
+                setTopic(activeLesson.interactiveStudioTopic!);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            >
+              Open Studio →
+            </button>
+          </div>
+        )}
+
+        {/* Lesson Markdown Body */}
+        {lessonArticle ? (
+          <article className="grammar-article">
+            {renderArticleBlocks(lessonArticle.blocks)}
+          </article>
+        ) : (
+          <div style={{ textAlign: 'center', padding: '3rem', color: '#64748b' }}>
+            <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📖</div>
+            <p>Loading {activeLesson.title}...</p>
+          </div>
+        )}
+
+        {/* Suggested Practice Drill */}
+        <div className="grammar-lesson-practice-box" style={{
+          margin: '2rem 0 1rem 0',
+          padding: '1.25rem 1.5rem',
+          background: '#fffdf5',
+          border: '1.5px solid #fef08a',
+          borderRadius: '12px',
+        }}>
+          <h4 style={{ margin: '0 0 0.5rem 0', color: '#854d0e', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '1rem', fontWeight: 800 }}>
+            <span>📝</span> Suggested Lesson Drill &amp; Self-Check
+          </h4>
+          <p style={{ margin: 0, fontSize: '0.92rem', color: '#713f12', lineHeight: 1.5 }}>
+            {activeLesson.suggestedPractice}
+          </p>
+        </div>
+
+        {/* Navigation Footer */}
+        <footer className="grammar-lesson-nav-footer">
+          {prevLesson ? (
+            <button
+              type="button"
+              className="grammar-lesson-nav-btn grammar-lesson-nav-prev"
+              onClick={() => openLesson(prevLesson.id)}
+            >
+              ← Previous: Lesson {prevLesson.lessonNumber}
+            </button>
+          ) : <div />}
+
+          <button
+            type="button"
+            className="grammar-footer-btn"
+            onClick={goBackToCourse}
+          >
+            📋 All Lessons Overview
+          </button>
+
+          {nextLesson ? (
+            <button
+              type="button"
+              className="grammar-lesson-nav-btn grammar-lesson-nav-next"
+              onClick={() => openLesson(nextLesson.id)}
+            >
+              Next: Lesson {nextLesson.lessonNumber} →
+            </button>
+          ) : (
+            <div style={{ fontWeight: 800, color: '#047857', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+              <span>🎉</span> Course Completed!
+            </div>
+          )}
+        </footer>
+      </section>
+    );
+  }
+
   if (topic === 'article') {
     const displayArticle = activeArticle;
     const displayTitle = displayArticle?.title || activeArticleMeta?.cardTitle || 'Article';
@@ -634,95 +956,7 @@ const Grammar: React.FC<GrammarProps> = ({
         )}
         {displayArticle && (
           <article className="grammar-article">
-            {displayArticle.blocks.map((block, index) => {
-              if (block.type === 'subheading') {
-                return (
-                  <h3 key={index} className="grammar-article-subheading">
-                    {renderRichArticleText(block.text, `sub-${index}`)}
-                  </h3>
-                );
-              }
-              if (block.type === 'quote') {
-                return (
-                  <blockquote key={index} className="grammar-article-quote">
-                    {renderRichArticleText(block.text, `quote-${index}`)}
-                  </blockquote>
-                );
-              }
-              if (block.type === 'list') {
-                return (
-                  <ul className="grammar-article-list" key={index}>
-                    {block.items.map((item, itemIndex) => (
-                      <li key={itemIndex}>{renderRichArticleText(item, `li-${index}-${itemIndex}`)}</li>
-                    ))}
-                  </ul>
-                );
-              }
-              if (block.type === 'table') {
-                return (
-                  <div className="grammar-article-table-wrap" key={index}>
-                    <table className="grammar-article-table">
-                      <thead>
-                        <tr>
-                          {block.headers.map((header, headerIndex) => (
-                            <th key={headerIndex}>{renderRichArticleText(header, `th-${index}-${headerIndex}`)}</th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {block.rows.map((row, rowIndex) => (
-                          <tr key={rowIndex}>
-                            {row.map((cell, cellIndex) => (
-                              <td key={cellIndex}>{renderRichArticleText(cell, `td-${index}-${rowIndex}-${cellIndex}`)}</td>
-                            ))}
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                );
-              }
-              if (block.type === 'image') {
-                const src = block.src.startsWith('http') || block.src.startsWith('/') ? block.src : `./${block.src}`;
-                return (
-                  <figure className="grammar-article-image-wrap" key={index}>
-                    <img src={src} alt={block.alt} className="grammar-article-image" loading="lazy" />
-                    {block.caption && (
-                      <figcaption className="grammar-article-image-caption">
-                        {renderRichArticleText(block.caption, `cap-${index}`)}
-                      </figcaption>
-                    )}
-                  </figure>
-                );
-              }
-              if (block.type === 'figure') {
-                if (block.id === 'katapayadi-matrix') {
-                  return <KatapayadiManuscriptFigure key={index} />;
-                }
-                return (
-                  <figure className="grammar-article-figure-container" key={index}>
-                    <VedicArticleFigure id={block.id as VedicArticleFigureId} />
-                    {block.caption && (
-                      <figcaption className="grammar-article-image-caption">
-                        {renderRichArticleText(block.caption, `fig-cap-${index}`)}
-                      </figcaption>
-                    )}
-                  </figure>
-                );
-              }
-              if (block.type === 'code') {
-                return (
-                  <pre className="grammar-article-code" key={index}>
-                    <code>{block.text}</code>
-                  </pre>
-                );
-              }
-              return (
-                <p key={index} className="grammar-article-paragraph">
-                  {renderRichArticleText(block.text, `p-${index}`)}
-                </p>
-              );
-            })}
+            {renderArticleBlocks(displayArticle.blocks)}
             <footer className="grammar-article-footer">
               <button
                 type="button"
@@ -815,6 +1049,17 @@ const Grammar: React.FC<GrammarProps> = ({
 
   const qClean = searchFilter.trim().toLowerCase();
 
+  const filteredLessons = qClean
+    ? VYAKARANA_LESSONS.filter(
+        (l) =>
+          l.title.toLowerCase().includes(qClean) ||
+          l.titleSa.toLowerCase().includes(qClean) ||
+          l.summary.toLowerCase().includes(qClean) ||
+          l.keyConcepts.some((c) => c.toLowerCase().includes(qClean)) ||
+          `lesson ${l.lessonNumber}`.includes(qClean)
+      )
+    : VYAKARANA_LESSONS;
+
   const filteredInteractive = qClean
     ? INTERACTIVE_TOPICS.filter(
         (t) =>
@@ -824,7 +1069,9 @@ const Grammar: React.FC<GrammarProps> = ({
       )
     : INTERACTIVE_TOPICS;
 
-  const filteredArticles = qClean
+  const masterclassArticles = ARTICLES.filter((art) => MASTERCLASS_IDS.includes(art.id));
+
+  const filteredMasterclasses = qClean
     ? ARTICLES.filter((art) => {
         const saMeta = SANSKRIT_ARTICLE_META[art.id];
         const text = (
@@ -852,16 +1099,16 @@ const Grammar: React.FC<GrammarProps> = ({
         }
         return false;
       })
-    : ARTICLES;
+    : masterclassArticles;
 
-  const totalMatches = filteredInteractive.length + filteredArticles.length;
+  const totalMatches = filteredLessons.length + filteredMasterclasses.length + filteredInteractive.length;
 
   return (
     <section className="grammar-page" aria-label="Grammar">
       <header className="grammar-page-header">
-        <h2 className="grammar-title">व्याकरणम् · Grammar Shelf</h2>
+        <h2 className="grammar-title">व्याकरणम् · Sanskrit Vyākaraṇa</h2>
         <p className="grammar-lead">
-          Explore interactive declension guides, verb engines, and in-depth masterclass articles on Sanskrit linguistics and mathematics.
+          A structured 10-lesson curriculum from phonetics to syntax, paired with interactive studios and scholarly masterclasses.
         </p>
       </header>
 
@@ -872,10 +1119,10 @@ const Grammar: React.FC<GrammarProps> = ({
           <input
             type="text"
             className="grammar-search-input"
-            placeholder="Search articles & guides (e.g. Kaṭapayādi, Sandhi, Vibhakti, Phi, Pi, 1-100 Numbers)..."
+            placeholder="Search lessons, cases, verbs, or masterclasses (e.g. Vowels, Vibhakti, Laṭ Lakāra, Kaṭapayādi)..."
             value={searchFilter}
             onChange={(e) => setSearchFilter(e.target.value)}
-            aria-label="Filter grammar articles and topics"
+            aria-label="Filter grammar lessons, articles and topics"
           />
           {searchFilter && (
             <button
@@ -891,66 +1138,256 @@ const Grammar: React.FC<GrammarProps> = ({
         </div>
         {searchFilter && (
           <div className="grammar-search-count-badge">
-            Found {totalMatches} matching {totalMatches === 1 ? 'topic' : 'topics'}
+            Found {totalMatches} matching {totalMatches === 1 ? 'item' : 'items'}
           </div>
         )}
       </div>
 
+      {/* 3 Main Sections of Vyakarana: 10-Lesson Course, Masterclasses, Studios */}
       {!qClean && (
-        <button
-          type="button"
-          className="grammar-start-here-banner"
-          onClick={() => openArticle('beginners-roadmap')}
-          title="Open: A Beginner's Roadmap to Learning Sanskrit"
-        >
-          <span className="grammar-start-here-emoji" aria-hidden="true">🧭</span>
-          <span className="grammar-start-here-text">
-            <strong>New to Sanskrit? Start here.</strong> A beginner's roadmap: what to learn first, in what order, and an 8-week starter plan.
-          </span>
-          <span className="grammar-start-here-arrow" aria-hidden="true">→</span>
-        </button>
+        <div className="grammar-view-tabs" role="tablist" aria-label="Vyakarana sections">
+          <button
+            type="button"
+            className={`grammar-view-tab${courseViewTab === 'course' ? ' active' : ''}`}
+            onClick={() => setCourseViewTab('course')}
+            role="tab"
+            aria-selected={courseViewTab === 'course'}
+          >
+            <span>🎓 10-Part Beginner Course</span>
+            <span className="grammar-view-tab-count">10</span>
+          </button>
+          <button
+            type="button"
+            className={`grammar-view-tab${courseViewTab === 'masterclasses' ? ' active' : ''}`}
+            onClick={() => setCourseViewTab('masterclasses')}
+            role="tab"
+            aria-selected={courseViewTab === 'masterclasses'}
+          >
+            <span>📚 Linguistics Masterclasses</span>
+            <span className="grammar-view-tab-count">{masterclassArticles.length}</span>
+          </button>
+          <button
+            type="button"
+            className={`grammar-view-tab${courseViewTab === 'studios' ? ' active' : ''}`}
+            onClick={() => setCourseViewTab('studios')}
+            role="tab"
+            aria-selected={courseViewTab === 'studios'}
+          >
+            <span>🛠️ Interactive Studios &amp; Labs</span>
+            <span className="grammar-view-tab-count">{INTERACTIVE_TOPICS.length}</span>
+          </button>
+        </div>
       )}
 
-      <div className="grammar-shelf">
-        {filteredInteractive.map((t) => (
-          <button
-            key={t.id}
-            type="button"
-            className="grammar-card grammar-card--ready"
-            style={{
-              borderColor: t.borderColor,
-              background: t.bgGradient,
-            }}
-            onClick={() => setTopic(t.id)}
-          >
-            <span className="grammar-card-title" style={{ color: t.color }}>
-              {t.title}
-            </span>
-            <span className="grammar-card-blurb">{t.blurb}</span>
-          </button>
-        ))}
+      {/* Search Results View */}
+      {qClean && totalMatches > 0 && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', marginTop: '1rem' }}>
+          {filteredLessons.length > 0 && (
+            <div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f766e', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span>🎓</span> Matching Course Lessons ({filteredLessons.length})
+              </h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+                {filteredLessons.map((l) => (
+                  <button
+                    key={l.id}
+                    type="button"
+                    className="grammar-course-lesson-card"
+                    onClick={() => openLesson(l.id)}
+                  >
+                    <div>
+                      <div className="grammar-lesson-card-top">
+                        <span className="grammar-lesson-num-pill">Lesson {l.lessonNumber}</span>
+                        <span className="grammar-lesson-card-emoji">{l.emoji}</span>
+                      </div>
+                      <h4 className="grammar-lesson-card-title">{l.title}</h4>
+                      <p className="grammar-lesson-card-desc">{l.summary}</p>
+                    </div>
+                    <div className="grammar-lesson-card-cta">
+                      <span>Open Lesson →</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
-        {filteredArticles.map((item) => (
+          {filteredMasterclasses.length > 0 && (
+            <div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#b45309', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span>📚</span> Matching Masterclass Articles ({filteredMasterclasses.length})
+              </h3>
+              <div className="grammar-shelf">
+                {filteredMasterclasses.map((item) => (
+                  <button
+                    type="button"
+                    className="grammar-card grammar-card--ready"
+                    key={item.id}
+                    onClick={() => openArticle(item.id)}
+                  >
+                    <span className="grammar-card-title">
+                      {item.emoji} {item.cardTitle}
+                    </span>
+                    <span className="grammar-card-blurb">{item.cardBlurb}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {filteredInteractive.length > 0 && (
+            <div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1d4ed8', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span>🛠️</span> Matching Interactive Studios ({filteredInteractive.length})
+              </h3>
+              <div className="grammar-shelf">
+                {filteredInteractive.map((t) => (
+                  <button
+                    key={t.id}
+                    type="button"
+                    className="grammar-card grammar-card--ready"
+                    style={{
+                      borderColor: t.borderColor,
+                      background: t.bgGradient,
+                    }}
+                    onClick={() => setTopic(t.id)}
+                  >
+                    <span className="grammar-card-title" style={{ color: t.color }}>
+                      {t.title}
+                    </span>
+                    <span className="grammar-card-blurb">{t.blurb}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Course Track: 10 Lessons in 4 Modules */}
+      {!qClean && courseViewTab === 'course' && (
+        <div className="grammar-course-overview">
+          {VYAKARANA_MODULES.map((module) => {
+            const moduleLessons = VYAKARANA_LESSONS.filter((l) => module.lessonIds.includes(l.id));
+            return (
+              <div key={module.id} className="grammar-module-section">
+                <div className="grammar-module-header">
+                  <div className="grammar-module-badge-wrap" style={{ border: `2px solid ${module.color}` }}>
+                    <span>{module.emoji}</span>
+                  </div>
+                  <div className="grammar-module-info">
+                    <div className="grammar-module-tag-row">
+                      <span className="grammar-module-pill" style={{ background: module.color }}>
+                        {module.badge}
+                      </span>
+                      <span className="grammar-module-title-sa">{module.titleSa}</span>
+                    </div>
+                    <h3 className="grammar-module-title">{module.title}</h3>
+                    <p className="grammar-module-summary">{module.summary}</p>
+                  </div>
+                </div>
+
+                <div className="grammar-module-lessons-list">
+                  {moduleLessons.map((lesson) => (
+                    <button
+                      key={lesson.id}
+                      type="button"
+                      className="grammar-course-lesson-card"
+                      onClick={() => openLesson(lesson.id)}
+                    >
+                      <div>
+                        <div className="grammar-lesson-card-top">
+                          <span className="grammar-lesson-num-pill">Lesson {lesson.lessonNumber}</span>
+                          <span className="grammar-lesson-card-emoji">{lesson.emoji}</span>
+                        </div>
+                        <h4 className="grammar-lesson-card-title">{lesson.title}</h4>
+                        <p className="grammar-lesson-card-desc">{lesson.summary}</p>
+                        <div className="grammar-lesson-card-tags">
+                          {lesson.keyConcepts.slice(0, 3).map((tag, tIdx) => (
+                            <span key={tIdx} className="grammar-lesson-tag">{tag}</span>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="grammar-lesson-card-cta">
+                        <span>Start Lesson →</span>
+                        {lesson.interactiveStudioLabel && (
+                          <span className="grammar-lesson-studio-badge">
+                            ⚡ Lab Attached
+                          </span>
+                        )}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Masterclasses Track */}
+      {!qClean && courseViewTab === 'masterclasses' && (
+        <>
           <button
             type="button"
-            className="grammar-card grammar-card--ready"
-            key={item.id}
-            onClick={() => openArticle(item.id)}
+            className="grammar-start-here-banner"
+            onClick={() => openArticle('beginners-roadmap')}
+            title="Open: A Beginner's Roadmap to Learning Sanskrit"
           >
-            <span className="grammar-card-title">
-              {item.emoji} {item.cardTitle}
+            <span className="grammar-start-here-emoji" aria-hidden="true">🧭</span>
+            <span className="grammar-start-here-text">
+              <strong>New to Sanskrit? Start here.</strong> A beginner's roadmap: what to learn first, in what order, and an 8-week starter plan.
             </span>
-            <span className="grammar-card-blurb">{item.cardBlurb}</span>
+            <span className="grammar-start-here-arrow" aria-hidden="true">→</span>
           </button>
-        ))}
-      </div>
+
+          <div className="grammar-shelf">
+            {masterclassArticles.map((item) => (
+              <button
+                type="button"
+                className="grammar-card grammar-card--ready"
+                key={item.id}
+                onClick={() => openArticle(item.id)}
+              >
+                <span className="grammar-card-title">
+                  {item.emoji} {item.cardTitle}
+                </span>
+                <span className="grammar-card-blurb">{item.cardBlurb}</span>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+
+      {/* Interactive Studios & Labs Track */}
+      {!qClean && courseViewTab === 'studios' && (
+        <div className="grammar-shelf">
+          {INTERACTIVE_TOPICS.map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              className="grammar-card grammar-card--ready"
+              style={{
+                borderColor: t.borderColor,
+                background: t.bgGradient,
+              }}
+              onClick={() => setTopic(t.id)}
+            >
+              <span className="grammar-card-title" style={{ color: t.color }}>
+                {t.title}
+              </span>
+              <span className="grammar-card-blurb">{t.blurb}</span>
+            </button>
+          ))}
+        </div>
+      )}
 
       {totalMatches === 0 && (
         <div className="grammar-no-results-card">
           <span className="grammar-no-results-emoji" aria-hidden="true">🔍</span>
           <h4 className="grammar-no-results-title">No matching grammar topics found</h4>
           <p className="grammar-no-results-text">
-            No topics matched &ldquo;{searchFilter}&rdquo;. Try searching for &ldquo;Kaṭapayādi&rdquo;, &ldquo;Vibhakti&rdquo;, &ldquo;Sandhi&rdquo;, &ldquo;Dhātupāṭha&rdquo;, or &ldquo;Numbers&rdquo;.
+            No topics matched &ldquo;{searchFilter}&rdquo;. Try searching for &ldquo;Vowels&rdquo;, &ldquo;Vibhakti&rdquo;, &ldquo;Laṭ Lakāra&rdquo;, &ldquo;Kaṭapayādi&rdquo;, or &ldquo;Avyaya&rdquo;.
           </p>
           <button
             type="button"

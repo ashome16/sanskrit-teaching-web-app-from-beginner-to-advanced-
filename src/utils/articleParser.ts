@@ -194,10 +194,20 @@ export function parseArticle(raw: string): ParsedArticle {
       continue;
     }
 
-    if (line.startsWith('- ')) {
+    if (line === '---' || line === '***' || line === '___') {
+      flushParagraph();
+      flushList();
+      flushTable();
+      continue;
+    }
+
+    if (line.startsWith('- ') || line.startsWith('* ') || /^\d+\.\s+/.test(line)) {
       flushParagraph();
       flushTable();
-      listItems.push(line.slice(2).trim());
+      const text = line.startsWith('- ') || line.startsWith('* ')
+        ? line.slice(2).trim()
+        : line.replace(/^\d+\.\s+/, '').trim();
+      listItems.push(text);
       continue;
     }
 

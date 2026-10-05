@@ -1693,3 +1693,334 @@
     font-size: 0.78rem;
   }
 }
+
+/* ==========================================================================
+   Vyākaraṇa Course Layout, Modules, Lesson Cards & Lesson Reader
+   ========================================================================== */
+.grammar-view-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem 0;
+  padding: 0.35rem;
+  background: #f1f5f9;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.grammar-view-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #64748b;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.grammar-view-tab:hover {
+  color: #1e293b;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.grammar-view-tab.active {
+  color: #0f766e;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.grammar-view-tab-count {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.grammar-view-tab.active .grammar-view-tab-count {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+/* Course Curriculum Container */
+.grammar-course-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.grammar-module-section {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.grammar-module-section:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.grammar-module-header {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #fafaf9 0%, #f5f5f4 100%);
+  border-bottom: 1px solid #e7e5e4;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.grammar-module-badge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.grammar-module-info {
+  flex: 1;
+}
+
+.grammar-module-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.grammar-module-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+.grammar-module-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1c1917;
+}
+
+.grammar-module-title-sa {
+  font-size: 0.92rem;
+  color: #78716c;
+  font-weight: 600;
+  margin-left: 0.4rem;
+}
+
+.grammar-module-summary {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #57534e;
+}
+
+.grammar-module-lessons-list {
+  padding: 1rem 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.grammar-course-lesson-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.15rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font: inherit;
+  color: inherit;
+}
+
+.grammar-course-lesson-card:hover {
+  border-color: #0f766e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.1);
+}
+
+.grammar-lesson-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.grammar-lesson-num-pill {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: #f0fdf4;
+  color: #047857;
+  border: 1px solid #bbf7d0;
+}
+
+.grammar-lesson-card-emoji {
+  font-size: 1.2rem;
+}
+
+.grammar-lesson-card-title {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.35;
+}
+
+.grammar-lesson-card-desc {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #475569;
+  flex: 1;
+}
+
+.grammar-lesson-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.grammar-lesson-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.grammar-lesson-card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.6rem;
+  border-top: 1px dashed #e2e8f0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.grammar-lesson-studio-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #b45309;
+  background: #fef3c7;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+/* Lesson Reader Navigation Footer */
+.grammar-lesson-nav-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1.5px solid #e2e8f0;
+}
+
+.grammar-lesson-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.15rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font: inherit;
+}
+
+.grammar-lesson-nav-prev {
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.grammar-lesson-nav-prev:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.grammar-lesson-nav-next {
+  background: #0f766e;
+  color: #ffffff;
+  border: 1px solid #0f766e;
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.25);
+}
+
+.grammar-lesson-nav-next:hover {
+  background: #0b504b;
+  transform: translateY(-1px);
+}
+
+.grammar-lesson-studio-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+  border: 1.5px solid #99f6e4;
+  border-radius: 12px;
+}
+
+.grammar-lesson-studio-callout-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #115e59;
+}
+
+.grammar-lesson-studio-btn {
+  background: #0f766e;
+  color: #ffffff;
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.2);
+}
+
+.grammar-lesson-studio-btn:hover {
+  background: #134e4a;
+}
+

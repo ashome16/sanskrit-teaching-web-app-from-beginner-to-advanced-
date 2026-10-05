@@ -1,0 +1,77 @@
+# Lesson 8: The Three Persons (Puruṣa) and Numbers (Vacana)
+
+In Lesson 7, you learned the 9-ending grid for present tense verbs: *ti-taḥ-anti / si-thaḥ-tha / mi-vaḥ-maḥ*. In this lesson, we examine the pronouns that align with each of these forms: **Puruṣa (पुरुषः)** and **Vacana (वचनम्)**.
+
+---
+
+## 1. The Philosophical Inversion of Persons
+One of the most beautiful cultural differences in Sanskrit grammar is the order of grammatical persons:
+
+| Sanskrit Order | Term | Meaning | Equivalent in English |
+| :--- | :--- | :--- | :--- |
+| **1. First (प्रथमः)** | **Prathama Puruṣa** | The world around us: He, She, It, or any noun | 3rd Person in English |
+| **2. Middle (मध्यमः)** | **Madhyama Puruṣa** | The listener directly in front of you: You | 2nd Person in English |
+| **3. Highest (उत्तमः)** | **Uttama Puruṣa** | The inner observer: I, We | 1st Person in English |
+
+In Western grammar, "I" comes first (*First Person*). In Sanskrit grammar, the outer world and the listener are honored first, while the personal self is called *Uttama* (the ultimate inner conscious witness).
+
+---
+
+## 2. The Pronoun Master Matrix
+
+### A. Prathama Puruṣa (He / She / It / They)
+- **Masculine:**
+  - **सः** (*saḥ* = He)
+  - **तौ** (*tau* = They two)
+  - **ते** (*te* = They all)
+- **Feminine:**
+  - **सा** (*sā* = She)
+  - **ते** (*te* = They two)
+  - **ताः** (*tāḥ* = They all)
+- **Neuter:**
+  - **तत्** (*tat* = That)
+  - **ते** (*te* = Those two)
+  - **तानि** (*tāni* = Those all)
+
+> *Every noun (बालकः, लता, फलम्) always takes Prathama Puruṣa!*
+
+---
+
+### B. Madhyama Puruṣa (You)
+Gender-neutral (the same for boys and girls):
+- **त्वम्** (*tvam* = You)
+- **युवाम्** (*yuvām* = You two)
+- **यूयम्** (*yūyam* = You all)
+
+---
+
+### C. Uttama Puruṣa (I / We)
+Gender-neutral:
+- **अहम्** (*aham* = I)
+- **आवाम्** (*āvām* = We two)
+- **वयम्** (*vayam* = We all)
+
+---
+
+## 3. The Complete Pronoun-Verb Harmony
+
+| Pronoun | Verb (√पठ् - To Read) | Complete Sentence | Meaning |
+| :--- | :--- | :--- | :--- |
+| **सः** (*saḥ*) | **पठति** (*paṭhati*) | **सः पठति** | He reads. |
+| **तौ** (*tau*) | **पठतः** (*paṭhataḥ*) | **तौ पठतः** | They two read. |
+| **ते** (*te*) | **पठन्ति** (*paṭhanti*) | **ते पठन्ति** | They all read. |
+| **त्वम्** (*tvam*) | **पठसि** (*paṭhasi*) | **त्वं पठसि** | You read. |
+| **युवाम्** (*yuvām*) | **पठथः** (*paṭhathaḥ*) | **युवां पठथः** | You two read. |
+| **यूयम्** (*yūyam*) | **पठथ** (*paṭhatha*) | **यूयं पठथ** | You all read. |
+| **अहम्** (*aham*) | **पठामि** (*paṭhāmi*) | **अहं पठामि** | I read. |
+| **आवाम्** (*āvām*) | **पठावः** (*paṭhāvaḥ*) | **आवां पठावः** | We two read. |
+| **वयम्** (*vayam*) | **पठामः** (*paṭhāmaḥ*) | **वयं पठामः** | We all read. |
+
+---
+
+## 4. Practice Exercises
+- Complete the pair:
+  1. **अहम्** + गम् → **अहं गच्छामि** (I go)
+  2. **त्वम्** + लिख् → **त्वं लिखसि** (You write)
+  3. **वयम्** + खाद् → **वयं खादामः** (We eat)
+  4. **ते** + गम् → **ते गच्छन्ति** (They go)
