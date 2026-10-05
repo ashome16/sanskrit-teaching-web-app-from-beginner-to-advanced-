@@ -4858,30 +4858,42 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 </p>
 
                 <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #bfdbfe', marginBottom: '1rem' }}>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#1d4ed8', fontFamily: 'monospace', textAlign: 'center', marginBottom: '0.5rem' }}>
-                    tan(φ) = Palabhā / 12  ⟹  Latitude φ = arctan(Palabhā / 12)
+                  <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1d4ed8', fontFamily: 'monospace', textAlign: 'center', marginBottom: '0.4rem' }}>
+                    tan(θ) = Palabhā / 12  &amp;  sin(θ) = Palabhā / Akṣa-Karṇa
                   </div>
+                  <div style={{ fontSize: '0.84rem', color: '#334155', textAlign: 'center', marginBottom: '0.85rem' }}>
+                    Where <strong>Akṣa-Karṇa (अक्षकर्ण / Latitude Hypotenuse)</strong> = √(12² + Palabhā²)
+                  </div>
+
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem', marginTop: '0.75rem' }}>
                     <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                       <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#0284c7' }}>📍 Ujjain (Prime Meridian of India)</div>
-                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 5.3 aṅgulas ⟹ <strong>φ ≈ 23.2° N</strong> (Tropic of Cancer)</div>
+                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 5.14 aṅgulas ⟹ <strong>θ ≈ 23.2° N</strong> (Tropic of Cancer)</div>
                     </div>
                     <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                       <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#0284c7' }}>📍 Kanchipuram (South India)</div>
-                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 2.8 aṅgulas ⟹ <strong>φ ≈ 12.8° N</strong></div>
+                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 2.72 aṅgulas ⟹ <strong>θ ≈ 12.8° N</strong></div>
                     </div>
                     <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                       <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#0284c7' }}>📍 Varanasi (Kāśī)</div>
-                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 6.2 aṅgulas ⟹ <strong>φ ≈ 25.3° N</strong></div>
+                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 5.67 aṅgulas ⟹ <strong>θ ≈ 25.3° N</strong></div>
                     </div>
                     <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                       <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#0284c7' }}>📍 Kashmir (Śāradā Pīṭha)</div>
-                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 8.2 aṅgulas ⟹ <strong>φ ≈ 34.3° N</strong></div>
+                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>Palabhā ≈ 8.18 aṅgulas ⟹ <strong>θ ≈ 34.3° N</strong></div>
                     </div>
                   </div>
-                  <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.5, margin: '0.85rem 0 0' }}>
-                    <strong>Planetary Circumference:</strong> Measuring the difference in Palabhā (Δφ) between two cities along the same longitude separated by distance <em>K</em> yielded the Earth’s spherical circumference: <em>C = (360° / Δφ) × K ≈ 4,967 Yojanas (~39,960 km)</em>, matching modern satellite measurements (40,075 km) to within 1%!
-                  </p>
+
+                  <div style={{ background: '#eff6ff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #bfdbfe', marginTop: '0.85rem' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#1e40af', marginBottom: '0.25rem' }}>
+                      🌐 Dual-City Meridional Geodesy (Paridhi &amp; Vyāsa):
+                    </div>
+                    <div style={{ fontSize: '0.82rem', color: '#1e3a8a', lineHeight: 1.6 }}>
+                      By measuring the Palabhā difference (Δθ) between two stations along the same meridian (such as Lanka on the equator at 0° N and Ujjain at 23.2° N) separated by known road distance in Yojanas, Indian astronomers calculated the Earth’s spherical circumference and diameter:<br />
+                      <strong style={{ fontFamily: 'monospace' }}>Total Circumference = (Distance between Cities × 360°) / Δθ</strong><br />
+                      Bhāskarācārya computed Earth&apos;s diameter as <strong>1,581 Yojanas</strong> (≈ 12,719 km) and circumference as <strong>4,967 Yojanas</strong> (≈ 39,960 km), matching NASA satellite mean diameter (12,742 km) and circumference (40,075 km) to within <strong>0.3% error</strong>!
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -4891,35 +4903,46 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   Bījagaṇita Algebra · Ṛṇa, Dhana &amp; Khaharā Rāśiḥ
                 </span>
                 <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#4c1d95' }}>
-                  ⚡ The Arithmetic of Debts (Ṛṇa) &amp; Fortunes (Dhana): Signed Numbers &amp; Infinity
+                  ⚡ The Arithmetic of Debts (Ṛṇa) &amp; Wealth (Dhana): Signed Numbers &amp; Infinity
                 </h3>
                 <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
-                  In his algebraic companion text <em>Bījagaṇita</em>, Bhāskarācārya formalized the arithmetic of signed numbers and infinity centuries ahead of European algebra:
+                  In his algebraic masterwork <em>Bījagaṇita</em>, Bhāskarācārya formalized the operational axioms of signed quantities using the concrete economic metaphors of assets (<em>Dhana / Svam = Wealth</em>) and liabilities (<em>Ṛṇa / Kṣaya = Debt</em>):
                 </p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem', marginBottom: '1rem' }}>
                   <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                     <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#7c3aed', marginBottom: '0.3rem' }}>
-                      ➕ ➖ Signed Arithmetic (Dhana &amp; Ṛṇa)
+                      ➕ ➖ Addition &amp; Subtraction
                     </div>
                     <ul style={{ fontSize: '0.78rem', color: '#334155', paddingLeft: '1.2rem', margin: 0, lineHeight: 1.6 }}>
-                      <li><strong>Dhana × Dhana = Dhana:</strong> (+a) × (+b) = +ab</li>
-                      <li><strong>Ṛṇa × Ṛṇa = Dhana:</strong> (-a) × (-b) = +ab (Product of two negatives is positive)</li>
-                      <li><strong>Dhana × Ṛṇa = Ṛṇa:</strong> (+a) × (-b) = -ab</li>
-                      <li><strong>Square of a negative:</strong> (-a)² = +a²; a negative number has no real square root in standard arithmetic.</li>
+                      <li><strong>Adding Debts:</strong> (-a) + (-b) = -(a+b) (Adding two liabilities deepens debt).</li>
+                      <li><strong>Debt + Wealth:</strong> (+a) + (-b) = a - b (Sum of wealth and debt is their difference).</li>
+                      <li><strong>Subtracting a Debt:</strong> (+a) - (-b) = a + b (Canceling or forgiving a debt is equivalent to gaining wealth!).</li>
                     </ul>
                   </div>
 
                   <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                     <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#7c3aed', marginBottom: '0.3rem' }}>
-                      ♾️ Khaharā Rāśiḥ (Division by Zero = Infinity)
+                      ✖️ ➗ Multiplication, Division &amp; Radicals
                     </div>
-                    <p style={{ fontSize: '0.78rem', color: '#334155', lineHeight: 1.55, margin: 0 }}>
-                      Bhāskara defined <em>a / 0 = ∞</em> (Khahara). In a famous poetic verse, he compares the mathematical infinite to the Supreme Lord:
-                      <br />
-                      <em>&ldquo;Just as in the infinite Brahman (Lord Viṣṇu), though countless beings and universes enter during cosmic dissolution (Pralaya) or emerge during creation (Sṛṣṭi), no change or diminution occurs—so also, to the quantity whose divisor is zero (Khahara), nothing is added or diminished when finite numbers are added or subtracted.&rdquo;</em>
-                    </p>
+                    <ul style={{ fontSize: '0.78rem', color: '#334155', paddingLeft: '1.2rem', margin: 0, lineHeight: 1.6 }}>
+                      <li><strong>Dhana × Dhana = Dhana:</strong> (+a) × (+b) = +ab (Product of wealths is wealth).</li>
+                      <li><strong>Ṛṇa × Ṛṇa = Dhana:</strong> (-a) × (-b) = +ab (Negation of a debt is an asset).</li>
+                      <li><strong>Dhana × Ṛṇa = Ṛṇa:</strong> (+a) × (-b) = -ab (Asset scaled by debt is liability).</li>
+                      <li><strong>Square Root Limit (Kṛteḥ Asambhavāt):</strong> (+x)² = +x² and (-x)² = +x²; therefore, a negative number cannot have a real square root (√-x² ∉ ℝ), anticipating imaginary numbers (i = √-1)!</li>
+                    </ul>
                   </div>
+                </div>
+
+                <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '1rem' }}>
+                  <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#7c3aed', marginBottom: '0.3rem' }}>
+                    ♾️ Khaharā Rāśiḥ (Division by Zero = Infinity &amp; Viṣṇu Invariance)
+                  </div>
+                  <p style={{ fontSize: '0.78rem', color: '#334155', lineHeight: 1.55, margin: 0 }}>
+                    Bhāskara defined <em>a / 0 = ∞</em> (Khahara) and proved that <strong>∞ ± k = ∞</strong>. In <em>Bījagaṇita</em> (1.20), he wrote:
+                    <br />
+                    <em>&ldquo;Just as in the infinite, immutable Lord Viṣṇu (Acyuta), there is no change when countless beings and universes enter Him at cosmic dissolution (Laya) or emerge from Him at creation (Sṛṣṭi), even so, in this Khahara quantity, no alteration occurs whether finite quantities are added or subtracted.&rdquo;</em>
+                  </p>
                 </div>
 
                 <div style={{ textAlign: 'center' }}>
@@ -4928,7 +4951,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                     className="philosophy-cta-secondary"
                     style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
                   >
-                    ⚙️ Launch Interactive Gnomon Shadow &amp; Height Studio ➔
+                    ⚙️ Explore Interactive Gnomon Shadows &amp; Bījagaṇita Algebra in Studio ➔
                   </a>
                 </div>
               </div>

@@ -218,7 +218,7 @@ export const SARVATO_4X4_GRID = [
 
 export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlayAudio }) => {
   const [activeTab, setActiveTab] = useState<
-    'bees' | 'necklace' | 'peacock' | 'lotus' | 'currency' | 'sukshma_kala' | 'maha_kala' | 'anka_pasa' | 'chhaya'
+    'bees' | 'necklace' | 'peacock' | 'lotus' | 'currency' | 'sukshma_kala' | 'maha_kala' | 'anka_pasa' | 'chhaya' | 'bijaganita'
   >('bees');
 
   // Sub-mode inside anka_pasa:
@@ -250,6 +250,21 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   const [shadowTwo, setShadowTwo] = useState<number>(7); // S2
   const [surveyorDistance, setSurveyorDistance] = useState<number>(30); // D
   const [palabhaShadow, setPalabhaShadow] = useState<number>(5.3); // Equinoctial noon shadow for Ujjain (~23.18° N latitude)
+
+  // Interactive state for Dual-City Geodesy (Lanka vs Ujjain / Earth Circumference)
+  const [geodesyPreset, setGeodesyPreset] = useState<'lanka_ujjain' | 'ujjain_kashmir' | 'custom'>('lanka_ujjain');
+  const [geodesyLat1, setGeodesyLat1] = useState<number>(0.0); // Lanka (Equator)
+  const [geodesyLat2, setGeodesyLat2] = useState<number>(23.2); // Ujjain
+  const [geodesyDistanceYojanas, setGeodesyDistanceYojanas] = useState<number>(320);
+
+  // Interactive state for Bījagaṇita Algebra (Signed Arithmetic & Zero)
+  const [bijaOp, setBijaOp] = useState<'+' | '-' | '*' | '/' | 'sqrt'>('*');
+  const [bijaValA, setBijaValA] = useState<number>(5);
+  const [bijaSignA, setBijaSignA] = useState<'dhana' | 'rina'>('rina'); // -5
+  const [bijaValB, setBijaValB] = useState<number>(3);
+  const [bijaSignB, setBijaSignB] = useState<'dhana' | 'rina'>('rina'); // -3
+  const [bijaSqrtInput, setBijaSqrtInput] = useState<number>(-25);
+  const [bijaKhaharaAdd, setBijaKhaharaAdd] = useState<number>(100);
 
   // Interactive state for Peacock & Snake
   const [pillarHeight, setPillarHeight] = useState<number>(9);
@@ -381,7 +396,40 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   const shadowDelta = shadowTwo - shadowOne;
   const calculatedCliffHeight = shadowDelta > 0 ? (gnomonRodHeight * surveyorDistance) / shadowDelta : 0;
   const firstCliffDistance = shadowDelta > 0 ? (shadowOne * surveyorDistance) / shadowDelta : 0;
+  const akshaKarna = Math.sqrt(144 + palabhaShadow * palabhaShadow);
+  const derivedSinTheta = akshaKarna > 0 ? palabhaShadow / akshaKarna : 0;
   const derivedLatitudeDeg = (Math.atan(palabhaShadow / 12) * 180) / Math.PI;
+
+  // Dual-City Geodesy (Lanka vs Ujjain / Earth Circumference):
+  const deltaLatitudeDeg = Math.abs(geodesyLat2 - geodesyLat1);
+  const computedCircumferenceYojanas = deltaLatitudeDeg > 0 ? (geodesyDistanceYojanas * 360) / deltaLatitudeDeg : 0;
+  const computedDiameterYojanas = computedCircumferenceYojanas > 0 ? computedCircumferenceYojanas / Math.PI : 0;
+  const computedCircumferenceKm = computedCircumferenceYojanas * 8.045;
+  const computedDiameterKm = computedDiameterYojanas * 8.045;
+
+  // Bījagaṇita Calculations:
+  const numA = bijaSignA === 'dhana' ? bijaValA : -bijaValA;
+  const numB = bijaSignB === 'dhana' ? bijaValB : -bijaValB;
+  let bijaResultNum: number | string = 0;
+  let bijaResultDesc = '';
+  if (bijaOp === '+') {
+    bijaResultNum = numA + numB;
+    bijaResultDesc = `(${numA >= 0 ? `+${numA}` : numA}) + (${numB >= 0 ? `+${numB}` : numB}) = ${bijaResultNum >= 0 ? `+${bijaResultNum}` : bijaResultNum}`;
+  } else if (bijaOp === '-') {
+    bijaResultNum = numA - numB;
+    bijaResultDesc = `(${numA >= 0 ? `+${numA}` : numA}) - (${numB >= 0 ? `+${numB}` : numB}) = ${bijaResultNum >= 0 ? `+${bijaResultNum}` : bijaResultNum}`;
+  } else if (bijaOp === '*') {
+    bijaResultNum = numA * numB;
+    bijaResultDesc = `(${numA >= 0 ? `+${numA}` : numA}) × (${numB >= 0 ? `+${numB}` : numB}) = ${bijaResultNum >= 0 ? `+${bijaResultNum}` : bijaResultNum}`;
+  } else if (bijaOp === '/') {
+    if (numB === 0) {
+      bijaResultNum = 'Khahara (खहर / ∞)';
+      bijaResultDesc = `${numA} / 0 = Khahara (Infinity)`;
+    } else {
+      bijaResultNum = Number((numA / numB).toFixed(2));
+      bijaResultDesc = `(${numA >= 0 ? `+${numA}` : numA}) ÷ (${numB >= 0 ? `+${numB}` : numB}) = ${bijaResultNum}`;
+    }
+  }
 
   return (
     <div
@@ -419,7 +467,8 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
             { id: 'sukshma_kala', label: '🪷 Micro Time (Sūkṣma Kāla)', sub: 'Lotus & Needle' },
             { id: 'maha_kala', label: '🌌 Cosmic Kalpa & Ahargaṇa', sub: 'Surya Siddhanta' },
             { id: 'anka_pasa', label: '🔱 Combinatorics & Gatika Kāvya', sub: 'Aṅka-Pāśa & Grids' },
-            { id: 'chhaya', label: '☀️ Gnomon Shadows (Chāyā)', sub: 'Double-Shadows & Heights' },
+            { id: 'chhaya', label: '☀️ Gnomon Shadows (Chāyā)', sub: 'Double-Shadows & Latitude' },
+            { id: 'bijaganita', label: '🧮 Bījagaṇita Algebra', sub: 'Ṛṇa, Dhana & Khahara' },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -2961,17 +3010,614 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
               </div>
             </div>
 
-            {/* Derived Latitude Banner */}
-            <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #93c5fd', padding: '1rem' }}>
-              <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#1e40af', textTransform: 'uppercase' }}>
-                Derived Terrestrial Latitude (Akṣāṃśa φ):
+            {/* Derived Latitude Banner & Akṣa-Karṇa Triangle */}
+            <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #93c5fd', padding: '1rem', marginBottom: '1.25rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', alignItems: 'center' }}>
+                <div>
+                  <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#1e40af', textTransform: 'uppercase' }}>
+                    Derived Terrestrial Latitude (Akṣāṃśa θ):
+                  </div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#1d4ed8', marginTop: '0.2rem' }}>
+                    θ = {derivedLatitudeDeg.toFixed(2)}° North
+                  </div>
+                  <div style={{ fontSize: '0.84rem', color: '#334155', marginTop: '0.35rem', lineHeight: 1.5 }}>
+                    • <strong>Vertical Altitude (Gnomon):</strong> 12 Aṅgulas<br />
+                    • <strong>Horizontal Base (Palabhā):</strong> {palabhaShadow} Aṅgulas<br />
+                    • <strong>Hypotenuse (Akṣa-Karṇa):</strong> √(12² + {palabhaShadow}²) = <strong>{akshaKarna.toFixed(2)} Aṅgulas</strong><br />
+                    • <strong>Native Indian Sine (Akṣa-Jyā):</strong> sin(θ) = Palabhā / Akṣa-Karṇa = {palabhaShadow} / {akshaKarna.toFixed(2)} = <strong>{derivedSinTheta.toFixed(4)}</strong>
+                  </div>
+                </div>
+
+                {/* SVG Triangle of Akṣa-Karṇa */}
+                <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0', textAlign: 'center' }}>
+                  <div style={{ fontSize: '0.74rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', marginBottom: '0.3rem' }}>
+                    Akṣa-Karṇa (अक्षकर्ण) Right-Angle Geometry
+                  </div>
+                  <svg viewBox="0 0 220 120" style={{ width: '100%', maxHeight: '110px' }}>
+                    {/* Triangle */}
+                    <polygon points="30,100 190,100 30,20" fill="#e0f2fe" stroke="#0284c7" strokeWidth="2" />
+                    {/* Vertical: Gnomon = 12 */}
+                    <text x="18" y="65" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0369a1">12</text>
+                    {/* Base: Palabha */}
+                    <text x="110" y="114" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0284c7">Palabhā = {palabhaShadow}</text>
+                    {/* Hypotenuse: Aksha Karna */}
+                    <text x="125" y="50" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#7c3aed" transform="rotate(-26, 125, 50)">
+                      Karṇa = {akshaKarna.toFixed(1)}
+                    </text>
+                    {/* Angle theta arc */}
+                    <path d="M 60,100 A 30,30 0 0,0 55,87" fill="none" stroke="#d97706" strokeWidth="2" />
+                    <text x="70" y="93" fontSize="10" fontWeight="bold" fill="#d97706">θ={derivedLatitudeDeg.toFixed(1)}°</text>
+                  </svg>
+                </div>
               </div>
-              <div style={{ fontSize: '1.45rem', fontWeight: 900, color: '#1d4ed8', marginTop: '0.2rem' }}>
-                φ = arctan({palabhaShadow} / 12) = {derivedLatitudeDeg.toFixed(2)}° North
+            </div>
+          </div>
+
+          {/* Section C: Earth Curvature & Dual-City Geodesy (Paridhi & Vyāsa) */}
+          <div style={{ background: '#f0fdf4', border: '1.5px solid #bbf7d0', borderRadius: '12px', padding: '1.25rem', marginTop: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#16a34a', textTransform: 'uppercase' }}>
+                  Spherical Geodesy · Bhūgola (भूगोल) &amp; Meridian Arc Measurement
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#14532d' }}>
+                  🌍 Calculating Earth&apos;s Spherical Circumference &amp; Diameter (Vyāsa)
+                </h4>
               </div>
-              <p style={{ margin: '0.4rem 0 0', fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
-                💡 <strong>Earth Circumference Determination:</strong> By measuring the difference in Palabhā between two observatories along the same meridian (such as Lanka on the equator and Ujjain at 23.2° N) separated by known road distance, Āryabhaṭa and Bhāskarācārya calculated the Earth’s spherical circumference as <strong>4,967 Yojanas (~39,960 km)</strong>, within 1% of the modern satellite value (40,075 km)!
+              <div style={{ background: '#dcfce7', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #86efac', fontSize: '0.84rem', fontWeight: 800, color: '#166534', fontFamily: 'monospace' }}>
+                Circumference = (Distance × 360°) / Δθ
+              </div>
+            </div>
+
+            <p style={{ fontSize: '0.86rem', color: '#166534', lineHeight: 1.5, margin: '0 0 1rem' }}>
+              In the <em>Sūrya Siddhānta</em> and Bhāskarācārya&apos;s <em>Golādhyāya</em>, the Earth is established as a suspended sphere (<em>Bhūgola</em>). If two observers set up 12-aṅgula gnomons along the same longitudinal meridian at different latitudes at equinoctial noon, the difference in latitude (Δθ) equals the angular arc subtended at the Earth&apos;s core! Knowing the overland distance in Yojanas, a simple Rule of Three yields the Earth&apos;s total circumference and diameter.
+            </p>
+
+            {/* Presets */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+              {[
+                {
+                  id: 'lanka_ujjain',
+                  label: '🏛️ Lanka (Equator, 0° N) to Ujjain (Tropic of Cancer, 23.2° N)',
+                  lat1: 0.0,
+                  lat2: 23.2,
+                  dist: 320,
+                  sub: 'Ancient Prime Meridian (Yāmyottara-Rekhā) · 320 Yojanas',
+                },
+                {
+                  id: 'ujjain_kashmir',
+                  label: '🏔️ Ujjain (23.2° N) to Kashmir / Śāradā Pīṭha (34.3° N)',
+                  lat1: 23.2,
+                  lat2: 34.3,
+                  dist: 153,
+                  sub: 'Northern Observatory Meridian · 153 Yojanas',
+                },
+              ].map((p) => (
+                <button
+                  key={p.id}
+                  type="button"
+                  onClick={() => {
+                    setGeodesyPreset(p.id as any);
+                    setGeodesyLat1(p.lat1);
+                    setGeodesyLat2(p.lat2);
+                    setGeodesyDistanceYojanas(p.dist);
+                  }}
+                  style={{
+                    padding: '0.45rem 0.8rem',
+                    borderRadius: '8px',
+                    border: geodesyPreset === p.id ? '1.5px solid #16a34a' : '1px solid #cbd5e1',
+                    background: geodesyPreset === p.id ? '#dcfce7' : '#ffffff',
+                    color: geodesyPreset === p.id ? '#14532d' : '#334155',
+                    fontSize: '0.78rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                  }}
+                >
+                  <div>{p.label}</div>
+                  <div style={{ fontSize: '0.7rem', color: '#64748b' }}>{p.sub}</div>
+                </button>
+              ))}
+            </div>
+
+            {/* Sliders for Geodesy */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem', marginBottom: '1rem' }}>
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>Station 1 Latitude (θ₁):</span>
+                  <span style={{ fontWeight: 800, color: '#16a34a' }}>{geodesyLat1.toFixed(1)}° N</span>
+                </div>
+                <input
+                  type="range"
+                  min={0}
+                  max={60}
+                  step={0.5}
+                  value={geodesyLat1}
+                  onChange={(e) => {
+                    setGeodesyPreset('custom');
+                    setGeodesyLat1(parseFloat(e.target.value));
+                  }}
+                  style={{ width: '100%', accentColor: '#16a34a' }}
+                />
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>Station 2 Latitude (θ₂):</span>
+                  <span style={{ fontWeight: 800, color: '#0284c7' }}>{geodesyLat2.toFixed(1)}° N</span>
+                </div>
+                <input
+                  type="range"
+                  min={0}
+                  max={60}
+                  step={0.5}
+                  value={geodesyLat2}
+                  onChange={(e) => {
+                    setGeodesyPreset('custom');
+                    setGeodesyLat2(parseFloat(e.target.value));
+                  }}
+                  style={{ width: '100%', accentColor: '#0284c7' }}
+                />
+              </div>
+
+              <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem' }}>
+                  <span>Overland Distance (Yojanas):</span>
+                  <span style={{ fontWeight: 800, color: '#d97706' }}>{geodesyDistanceYojanas} Yojanas</span>
+                </div>
+                <input
+                  type="range"
+                  min={50}
+                  max={800}
+                  step={10}
+                  value={geodesyDistanceYojanas}
+                  onChange={(e) => {
+                    setGeodesyPreset('custom');
+                    setGeodesyDistanceYojanas(parseInt(e.target.value, 10));
+                  }}
+                  style={{ width: '100%', accentColor: '#d97706' }}
+                />
+                <div style={{ fontSize: '0.72rem', color: '#64748b' }}>1 Yojana ≈ 8.045 km (Indian astronomical standard)</div>
+              </div>
+            </div>
+
+            {/* Geodesy Calculation Result Banner */}
+            <div style={{ background: '#ffffff', borderRadius: '10px', border: '1.5px solid #86efac', padding: '1.15rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#166534', textTransform: 'uppercase' }}>
+                  Spherical Geodesic Solution:
+                </span>
+                <span style={{ fontSize: '0.84rem', fontWeight: 700, color: '#15803d', fontFamily: 'monospace' }}>
+                  Δθ = |{geodesyLat2.toFixed(1)}° - {geodesyLat1.toFixed(1)}°| = {deltaLatitudeDeg.toFixed(1)}°
+                </span>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '1rem', marginTop: '0.5rem' }}>
+                <div style={{ background: '#f0fdf4', padding: '0.85rem', borderRadius: '8px', border: '1px solid #bbf7d0' }}>
+                  <div style={{ fontSize: '0.76rem', fontWeight: 700, color: '#166534', textTransform: 'uppercase' }}>
+                    Calculated Circumference (Paridhi):
+                  </div>
+                  <div style={{ fontSize: '1.35rem', fontWeight: 900, color: '#15803d', marginTop: '0.2rem' }}>
+                    {computedCircumferenceYojanas.toFixed(1)} Yojanas
+                  </div>
+                  <div style={{ fontSize: '0.82rem', color: '#166534', marginTop: '0.2rem' }}>
+                    ≈ <strong>{computedCircumferenceKm.toFixed(0)} km</strong> (Satellite: 40,075 km)
+                  </div>
+                </div>
+
+                <div style={{ background: '#f0fdf4', padding: '0.85rem', borderRadius: '8px', border: '1px solid #bbf7d0' }}>
+                  <div style={{ fontSize: '0.76rem', fontWeight: 700, color: '#166534', textTransform: 'uppercase' }}>
+                    Calculated Earth Diameter (Vyāsa):
+                  </div>
+                  <div style={{ fontSize: '1.35rem', fontWeight: 900, color: '#15803d', marginTop: '0.2rem' }}>
+                    {computedDiameterYojanas.toFixed(1)} Yojanas
+                  </div>
+                  <div style={{ fontSize: '0.82rem', color: '#166534', marginTop: '0.2rem' }}>
+                    ≈ <strong>{computedDiameterKm.toFixed(0)} km</strong> (Satellite mean: 12,742 km)
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ marginTop: '0.85rem', fontSize: '0.84rem', color: '#166534', lineHeight: 1.5 }}>
+                🏆 <strong>Bhāskarācārya&apos;s Canonical Measure in Golādhyāya:</strong> Earth&apos;s diameter was computed as exactly <strong>1,581 Yojanas</strong> and circumference as <strong>4,967 Yojanas (~39,960 km)</strong>. Converted using 1 Yojana = 8.045 km, his diameter is <strong>12,719 km</strong>—achieving <strong>99.82% concordance</strong> with NASA satellite metrics (12,742 km) centuries before modern space geodesy!
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =========================================================================
+          TAB 10: 🧮 BĪJAGAṆITA ALGEBRA (Ṛṇa, Dhana & Khahara)
+          ========================================================================= */}
+      {activeTab === 'bijaganita' && (
+        <div>
+          {/* Sanskrit Banner */}
+          <div style={{ background: '#fdf2f8', border: '1.5px solid #fbcfe8', borderRadius: '12px', padding: '1.2rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#9d174d', textTransform: 'uppercase' }}>
+                Bījagaṇita (बीजगणितम्) · Signed Numbers &amp; Division by Zero (1150 CE)
+              </span>
+              <button
+                type="button"
+                onClick={() => onPlayAudio?.('ऋणयोः स्वयोः घाते स्वम् ऋणस्वयोः घाते ऋणम्')}
+                style={{
+                  padding: '0.25rem 0.65rem',
+                  fontSize: '0.76rem',
+                  borderRadius: '6px',
+                  border: '1px solid #f472b6',
+                  background: '#ffffff',
+                  cursor: 'pointer',
+                  fontWeight: 700,
+                  color: '#9d174d',
+                }}
+              >
+                🔊 Chant Bījagaṇita Axiom
+              </button>
+            </div>
+            <div style={{ fontSize: '1.08rem', fontWeight: 800, color: '#831843', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+              ऋणयोः स्वयोर्घाते स्वं स्याद् ऋणस्वयोर्वधे ऋणम् ।<br />
+              ऋणं शोधितं स्वं भवति स्वं च ऋणम् ॥
+            </div>
+            <div style={{ fontSize: '0.88rem', fontWeight: 600, color: '#be185d', marginBottom: '0.45rem' }}>
+              ṛṇayoḥ svayorghāte svaṃ syād ṛṇasvayorvadhe ṛṇam |<br />
+              ṛṇaṃ śodhitaṃ svaṃ bhavati svaṃ ca ṛṇam ||
+            </div>
+            <p style={{ margin: 0, fontSize: '0.86rem', color: '#9d174d', lineHeight: 1.55 }}>
+              <strong>Poetic Translation:</strong> <em>&ldquo;The product of two debts (negatives) or two wealths (positives) is wealth (positive). The product of a debt and wealth is a debt. When subtracting, subtract a debt by turning it into wealth, and subtract wealth by turning it into debt!&rdquo;</em>
+            </p>
+          </div>
+
+          {/* Section 1: Wealth & Debt Interactive Arithmetic Lab */}
+          <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#ec4899', textTransform: 'uppercase' }}>
+                  Axiomatic Operations
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>
+                  💰 Dhana (Wealth / +) &amp; Ṛṇa (Debt / -) Calculator
+                </h4>
+              </div>
+              <div style={{ display: 'flex', gap: '0.35rem' }}>
+                {(['+', '-', '*', '/'] as const).map((op) => (
+                  <button
+                    key={op}
+                    type="button"
+                    onClick={() => setBijaOp(op)}
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '8px',
+                      border: bijaOp === op ? '2px solid #db2777' : '1px solid #cbd5e1',
+                      background: bijaOp === op ? '#fdf2f8' : '#ffffff',
+                      color: bijaOp === op ? '#be185d' : '#475569',
+                      fontSize: '1rem',
+                      fontWeight: 800,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {op === '*' ? '×' : op === '/' ? '÷' : op}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5, margin: '0 0 1rem' }}>
+              While European algebra considered negative numbers &ldquo;fictitious&rdquo; or &ldquo;absurd&rdquo; until the 17th century, Bhāskarācārya formulated them using the intuitive economic model of assets (<em>Dhana</em>) and liabilities (<em>Ṛṇa</em>).
+            </p>
+
+            {/* Operands Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginBottom: '1.15rem' }}>
+              {/* Operand A */}
+              <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '0.84rem', fontWeight: 700, color: '#334155' }}>Operand A (First Quantity):</span>
+                  <span style={{ fontSize: '1rem', fontWeight: 800, color: bijaSignA === 'dhana' ? '#16a34a' : '#dc2626' }}>
+                    {bijaSignA === 'dhana' ? `+${bijaValA} (Wealth)` : `-${bijaValA} (Debt)`}
+                  </span>
+                </div>
+                {/* Sign Selector */}
+                <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.65rem' }}>
+                  <button
+                    type="button"
+                    onClick={() => setBijaSignA('dhana')}
+                    style={{
+                      flex: 1,
+                      padding: '0.35rem',
+                      borderRadius: '6px',
+                      border: bijaSignA === 'dhana' ? '1.5px solid #16a34a' : '1px solid #cbd5e1',
+                      background: bijaSignA === 'dhana' ? '#dcfce7' : '#f8fafc',
+                      color: bijaSignA === 'dhana' ? '#166534' : '#475569',
+                      fontWeight: 700,
+                      fontSize: '0.78rem',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    🪙 Dhana (Wealth / +)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setBijaSignA('rina')}
+                    style={{
+                      flex: 1,
+                      padding: '0.35rem',
+                      borderRadius: '6px',
+                      border: bijaSignA === 'rina' ? '1.5px solid #dc2626' : '1px solid #cbd5e1',
+                      background: bijaSignA === 'rina' ? '#fee2e2' : '#f8fafc',
+                      color: bijaSignA === 'rina' ? '#991b1b' : '#475569',
+                      fontWeight: 700,
+                      fontSize: '0.78rem',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    📜 Ṛṇa (Debt / -)
+                  </button>
+                </div>
+                <input
+                  type="range"
+                  min={1}
+                  max={20}
+                  value={bijaValA}
+                  onChange={(e) => setBijaValA(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: bijaSignA === 'dhana' ? '#16a34a' : '#dc2626' }}
+                />
+              </div>
+
+              {/* Operand B */}
+              <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                  <span style={{ fontSize: '0.84rem', fontWeight: 700, color: '#334155' }}>Operand B (Second Quantity):</span>
+                  <span style={{ fontSize: '1rem', fontWeight: 800, color: bijaSignB === 'dhana' ? '#16a34a' : '#dc2626' }}>
+                    {bijaSignB === 'dhana' ? `+${bijaValB} (Wealth)` : `-${bijaValB} (Debt)`}
+                  </span>
+                </div>
+                {/* Sign Selector */}
+                <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.65rem' }}>
+                  <button
+                    type="button"
+                    onClick={() => setBijaSignB('dhana')}
+                    style={{
+                      flex: 1,
+                      padding: '0.35rem',
+                      borderRadius: '6px',
+                      border: bijaSignB === 'dhana' ? '1.5px solid #16a34a' : '1px solid #cbd5e1',
+                      background: bijaSignB === 'dhana' ? '#dcfce7' : '#f8fafc',
+                      color: bijaSignB === 'dhana' ? '#166534' : '#475569',
+                      fontWeight: 700,
+                      fontSize: '0.78rem',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    🪙 Dhana (Wealth / +)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setBijaSignB('rina')}
+                    style={{
+                      flex: 1,
+                      padding: '0.35rem',
+                      borderRadius: '6px',
+                      border: bijaSignB === 'rina' ? '1.5px solid #dc2626' : '1px solid #cbd5e1',
+                      background: bijaSignB === 'rina' ? '#fee2e2' : '#f8fafc',
+                      color: bijaSignB === 'rina' ? '#991b1b' : '#475569',
+                      fontWeight: 700,
+                      fontSize: '0.78rem',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    📜 Ṛṇa (Debt / -)
+                  </button>
+                </div>
+                <input
+                  type="range"
+                  min={0}
+                  max={20}
+                  value={bijaValB}
+                  onChange={(e) => setBijaValB(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: bijaSignB === 'dhana' ? '#16a34a' : '#dc2626' }}
+                />
+              </div>
+            </div>
+
+            {/* Result Box */}
+            <div style={{ background: '#fdf2f8', border: '1.5px solid #fbcfe8', borderRadius: '10px', padding: '1.15rem', marginBottom: '1.15rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.35rem' }}>
+                <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#9d174d', textTransform: 'uppercase' }}>
+                  Bījagaṇita Axiom Result:
+                </span>
+                <span style={{ fontSize: '0.9rem', fontWeight: 800, color: '#be185d', fontFamily: 'monospace' }}>
+                  {bijaResultDesc}
+                </span>
+              </div>
+
+              <div style={{ fontSize: '1.55rem', fontWeight: 900, color: typeof bijaResultNum === 'number' && bijaResultNum < 0 ? '#dc2626' : '#15803d', marginTop: '0.2rem' }}>
+                Result = {typeof bijaResultNum === 'number' ? (bijaResultNum >= 0 ? `+${bijaResultNum} (Dhana / Wealth)` : `${bijaResultNum} (Ṛṇa / Debt)`) : bijaResultNum}
+              </div>
+
+              {/* Economic Metaphor Explanation */}
+              <div style={{ marginTop: '0.65rem', fontSize: '0.86rem', color: '#831843', lineHeight: 1.5 }}>
+                {bijaOp === '*' && bijaSignA === 'rina' && bijaSignB === 'rina' && (
+                  <span>
+                    💡 <strong>The Magic of Negatives:</strong> <em>&ldquo;(-a) × (-b) = +(ab)&rdquo;</em> — Negating a debt or removing a liability represents an economic asset! In Indian algebra, reversing a debt vector yields positive wealth.
+                  </span>
+                )}
+                {bijaOp === '-' && bijaSignB === 'rina' && (
+                  <span>
+                    💡 <strong>Subtracting a Debt:</strong> <em>&ldquo;(+a) - (-b) = a + b&rdquo;</em> — If someone forgives or cancels a debt of ₹{bijaValB} that you owe, your personal net worth increases by ₹{bijaValB}!
+                  </span>
+                )}
+                {bijaOp === '+' && bijaSignA === 'rina' && bijaSignB === 'rina' && (
+                  <span>
+                    💡 <strong>Accumulating Debts:</strong> <em>&ldquo;(-a) + (-b) = -(a+b)&rdquo;</em> — Adding two debts together simply produces a larger total debt liability.
+                  </span>
+                )}
+                {bijaOp === '*' && ((bijaSignA === 'dhana' && bijaSignB === 'rina') || (bijaSignA === 'rina' && bijaSignB === 'dhana')) && (
+                  <span>
+                    💡 <strong>Debt Multiplier:</strong> <em>&ldquo;(+a) × (-b) = -(ab)&rdquo;</em> — Scaling an asset by a negative debt factor results in an overall debt liability.
+                  </span>
+                )}
+                {bijaOp === '/' && bijaValB === 0 && (
+                  <span>
+                    🌌 <strong>Division by Zero:</strong> When you divide any finite quantity by zero, it does not blow up into an error—it expands into the infinite cosmic reservoir called <strong>Khahara (खहर)</strong>!
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Section 2: The Radical / Square Root Breakthrough (Kṛteḥ Asambhavāt) */}
+          <div style={{ background: '#fffbeb', border: '1.5px solid #fde68a', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase' }}>
+                  The Boundary of Real Numbers · Precursor to Imaginary Numbers (i)
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#78350f' }}>
+                  📐 The Square Root Breakthrough: Kṛteḥ Asambhavāt (कृतेः असम्भवात्)
+                </h4>
+              </div>
+              <div style={{ background: '#fef3c7', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #fcd34d', fontSize: '0.84rem', fontWeight: 800, color: '#92400e', fontFamily: 'monospace' }}>
+                (+x)² = +x² &amp; (-x)² = +x² ⟹ √(-x²) ∉ ℝ
+              </div>
+            </div>
+
+            <p style={{ fontSize: '0.86rem', color: '#78350f', lineHeight: 1.5, margin: '0 0 1rem' }}>
+              Bhāskarācārya formulated a profound law in the <em>Bījagaṇita</em>: <em>&ldquo;A positive number has two square roots (positive and negative). However, a negative number cannot have any real square root, because it is not a square (kṛteḥ asambhavāt).&rdquo;</em>
+            </p>
+
+            {/* Interactive Square Root Tester */}
+            <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #fde68a', marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.84rem', fontWeight: 700, color: '#334155' }}>
+                  Select Quantity to Evaluate Square Root:
+                </span>
+                <span style={{ fontSize: '1.1rem', fontWeight: 900, color: bijaSqrtInput < 0 ? '#dc2626' : '#15803d' }}>
+                  x = {bijaSqrtInput}
+                </span>
+              </div>
+              <input
+                type="range"
+                min={-100}
+                max={100}
+                step={1}
+                value={bijaSqrtInput}
+                onChange={(e) => setBijaSqrtInput(parseInt(e.target.value, 10))}
+                style={{ width: '100%', accentColor: bijaSqrtInput < 0 ? '#dc2626' : '#15803d', marginBottom: '0.75rem' }}
+              />
+
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                {[25, 49, 100, -16, -25, -64].map((presetVal) => (
+                  <button
+                    key={presetVal}
+                    type="button"
+                    onClick={() => setBijaSqrtInput(presetVal)}
+                    style={{
+                      padding: '0.3rem 0.65rem',
+                      borderRadius: '6px',
+                      border: bijaSqrtInput === presetVal ? '1.5px solid #b45309' : '1px solid #cbd5e1',
+                      background: bijaSqrtInput === presetVal ? '#fef3c7' : '#f8fafc',
+                      color: bijaSqrtInput === presetVal ? '#92400e' : '#475569',
+                      fontSize: '0.76rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Test x = {presetVal}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Evaluation Banner */}
+            {bijaSqrtInput >= 0 ? (
+              <div style={{ background: '#ecfdf5', border: '1.5px solid #a7f3d0', borderRadius: '10px', padding: '1rem' }}>
+                <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#065f46', textTransform: 'uppercase' }}>
+                  Real Dual Square Root:
+                </div>
+                <div style={{ fontSize: '1.45rem', fontWeight: 900, color: '#047857', marginTop: '0.2rem' }}>
+                  √({bijaSqrtInput}) = ± {Math.sqrt(bijaSqrtInput).toFixed(2)}
+                </div>
+                <p style={{ margin: '0.35rem 0 0', fontSize: '0.84rem', color: '#065f46', lineHeight: 1.5 }}>
+                  Both (+{Math.sqrt(bijaSqrtInput).toFixed(2)})² and (-{Math.sqrt(bijaSqrtInput).toFixed(2)})² equal +{bijaSqrtInput}.
+                </p>
+              </div>
+            ) : (
+              <div style={{ background: '#fef2f2', border: '1.5px solid #fecaca', borderRadius: '10px', padding: '1rem' }}>
+                <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#991b1b', textTransform: 'uppercase' }}>
+                  कृतेः असम्भवात् (Kṛteḥ Asambhavāt) · Real Square Root Does Not Exist!
+                </div>
+                <div style={{ fontSize: '1.35rem', fontWeight: 900, color: '#dc2626', marginTop: '0.2rem' }}>
+                  √({bijaSqrtInput}) = Non-Existent in Real Arithmetic! (Modern Complex: ± {Math.sqrt(Math.abs(bijaSqrtInput)).toFixed(2)} i)
+                </div>
+                <p style={{ margin: '0.4rem 0 0', fontSize: '0.84rem', color: '#991b1b', lineHeight: 1.5 }}>
+                  Bhāskarācārya noted: <em>&ldquo;Since the square of an asset is positive and the square of a debt is also positive, a negative number cannot be a square. Therefore, no real number multiplied by itself can equal a negative debt!&rdquo;</em> This profound insight anticipated the discovery of imaginary numbers (<strong>i = √-1</strong>) by 400 years!
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Section 3: Khaharā Rāśiḥ (Infinity & Lord Viṣṇu Invariance) */}
+          <div style={{ background: '#f5f3ff', border: '1.5px solid #ddd6fe', borderRadius: '12px', padding: '1.25rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#6d28d9', textTransform: 'uppercase' }}>
+                  Mathematical Infinity &amp; Cosmic Metaphysics (Bījagaṇita 1.20)
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#4c1d95' }}>
+                  🌌 Khaharā Rāśiḥ (खहर): Division by Zero &amp; The Invariant Viṣṇu
+                </h4>
+              </div>
+              <div style={{ background: '#ede9fe', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #c4b5fd', fontSize: '0.84rem', fontWeight: 800, color: '#5b21b6', fontFamily: 'monospace' }}>
+                a / 0 = ∞ · (∞ ± k = ∞)
+              </div>
+            </div>
+
+            <p style={{ fontSize: '0.86rem', color: '#4c1d95', lineHeight: 1.5, margin: '0 0 1rem' }}>
+              When a finite positive or negative quantity is divided by cipher (zero), Bhāskarācārya terms the result <strong>Khahara</strong> (खहर — &ldquo;divided by Kha/Sky/Zero&rdquo;). He establishes that adding or subtracting finite numbers from Khahara does not alter it, offering one of the most famous verses in the history of mathematics:
+            </p>
+
+            <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #c4b5fd', padding: '1rem', marginBottom: '1rem' }}>
+              <div style={{ fontSize: '1.02rem', fontWeight: 800, color: '#5b21b6', lineHeight: 1.6, marginBottom: '0.3rem' }}>
+                अस्मिन् विकारः खहरे न राशावपि प्रविष्टेष्वपि निःसृतेषु ।<br />
+                बहुष्वपि स्याल्लयसृष्टिकालेऽनन्तेऽच्युते भूतगणेषु यद्वत् ॥
+              </div>
+              <div style={{ fontSize: '0.84rem', fontWeight: 600, color: '#7c3aed', marginBottom: '0.4rem' }}>
+                asmin vikāraḥ khahare na rāśāvapi praviṣṭeṣvapi niḥsṛteṣu |<br />
+                bahuṣvapi syāllayasṛṣṭikāle&apos;nante&apos;cyute bhūtagaṇeṣu yadvat ||
+              </div>
+              <p style={{ margin: 0, fontSize: '0.84rem', color: '#4c1d95', lineHeight: 1.55 }}>
+                <em>&ldquo;In this Khahara quantity, there is no change or variation even if many quantities enter it or are taken away from it—just as in the infinite, immutable Lord Viṣṇu (Acyuta), there is no change when countless beings and universes enter Him at cosmic dissolution (Laya) or emerge from Him at the dawn of creation (Sṛṣṭi).&rdquo;</em>
               </p>
+            </div>
+
+            {/* Interactive Addition to Infinity Slider */}
+            <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd6fe' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.84rem', fontWeight: 700, color: '#334155' }}>
+                  Add / Subtract Finite Quantity (k) from Khahara (∞):
+                </span>
+                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#6d28d9' }}>
+                  k = {bijaKhaharaAdd}
+                </span>
+              </div>
+              <input
+                type="range"
+                min={-1000}
+                max={1000}
+                step={50}
+                value={bijaKhaharaAdd}
+                onChange={(e) => setBijaKhaharaAdd(parseInt(e.target.value, 10))}
+                style={{ width: '100%', accentColor: '#6d28d9', marginBottom: '0.75rem' }}
+              />
+
+              <div style={{ background: '#ede9fe', padding: '0.85rem', borderRadius: '8px', textAlign: 'center' }}>
+                <div style={{ fontSize: '1.35rem', fontWeight: 900, color: '#5b21b6' }}>
+                  Khahara (∞) {bijaKhaharaAdd >= 0 ? `+ ${bijaKhaharaAdd}` : `- ${Math.abs(bijaKhaharaAdd)}`} = Khahara (∞)
+                </div>
+                <div style={{ fontSize: '0.8rem', color: '#6d28d9', marginTop: '0.2rem' }}>
+                  Invariance Axiom: ∞ ± k = ∞ (Infinite reservoir remains unchanging)
+                </div>
+              </div>
             </div>
           </div>
         </div>
