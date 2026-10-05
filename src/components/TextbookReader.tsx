@@ -1003,9 +1003,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className="textbook-action-chip"
                 onClick={onOpenCbseGuide}
-                title="Open CBSE Sanskrit Exam Blueprint & Question Paper Guide"
+                title="Open CBSE Exam Guide"
               >
-                📋 CBSE Guide
+                📋 CBSE Exam Guide
               </button>
             )}
             {!isGrade8Lesson && !isGrade9Lesson && !isGroupedLesson && (

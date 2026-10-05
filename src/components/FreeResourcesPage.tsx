@@ -522,8 +522,8 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
               </button>
             )}
             {onOpenCbseGuide && (
-              <button type="button" className="philosophy-crumb-btn" onClick={onOpenCbseGuide} title="Open CBSE Sanskrit Guide">
-                CBSE Guide
+              <button type="button" className="philosophy-crumb-btn" onClick={onOpenCbseGuide} title="Open CBSE Exam Guide">
+                CBSE Exam Guide
               </button>
             )}
             {onOpenPhilosophy && (

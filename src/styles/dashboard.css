@@ -310,7 +310,27 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #8a7f72;
-  padding: 0 0.25rem;
+  padding: 0.15rem 0.35rem;
+  margin: 0;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1.2;
+  text-align: left;
+}
+
+button.dashboard-nav-group-label:hover {
+  color: #b3472f;
+  background: rgba(179, 71, 47, 0.08);
+}
+
+button.dashboard-nav-group-label.dashboard-nav-group-label--active,
+button.dashboard-nav-group-label:focus-visible {
+  color: #b3472f;
+  background: rgba(179, 71, 47, 0.12);
+  outline: none;
 }
 
 .dashboard-nav-group-label .dashboard-nav-icon {

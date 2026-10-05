@@ -874,11 +874,16 @@ const Dashboard: React.FC = () => {
           <div
             className={`dashboard-nav-group${(activeView === 'reader' && lesson.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
           >
-            <span className="dashboard-nav-group-label">
+            <button
+              type="button"
+              className={`dashboard-nav-group-label${activeView === 'cbse-guide' ? ' dashboard-nav-group-label--active' : ''}`}
+              onClick={() => navigateToView('cbse-guide')}
+              title="CBSE NCERT Sanskrit Exam Blueprint, Syllabus & Question Paper Guide"
+            >
               <img src="/nav/nav-deepakam.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={18} height={18} />
-              NCERT Deepakam (NEP, CBSE exam)
-            </span>
-            <div className="dashboard-nav-sub" role="group" aria-label="NCERT Deepakam grades and exam guide">
+              CBSE Exam Guide
+            </button>
+            <div className="dashboard-nav-sub" role="group" aria-label="Deepakam 7th, Deepakam 8th, and शारदा lessons">
               <button
                 type="button"
                 className={activeView === 'reader' && lesson.id !== 'varnamala' && !lesson.id.startsWith('grade8_') && !lesson.id.startsWith('grade9_') ? 'active' : ''}
@@ -914,14 +919,6 @@ const Dashboard: React.FC = () => {
                 title={canReadAllChapters ? 'शारदा · Class 9 Sanskrit' : 'Sign in to access शारदा Class 9'}
               >
                 शारदा
-              </button>
-              <button
-                type="button"
-                className={activeView === 'cbse-guide' ? 'active' : ''}
-                onClick={() => navigateToView('cbse-guide')}
-                title="CBSE NCERT Sanskrit Exam Blueprint, Syllabus & Question Paper Guide"
-              >
-                CBSE Guide
               </button>
             </div>
           </div>
