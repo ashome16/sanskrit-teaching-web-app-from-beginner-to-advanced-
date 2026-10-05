@@ -48,6 +48,8 @@ export interface BodhiQAItem {
   relatedView?: string;
   /** Opens this article anchor on /vedic-maths (same landing as site search). */
   relatedVedicAnchor?: string;
+  /** Opens this grammar-shelf article (same landing as site search). */
+  relatedGrammarArticleId?: string;
 }
 
 export interface BodhiWordSuggestion {
@@ -753,6 +755,83 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     tip: 'Search algebra or universal engine.',
     relatedView: 'vedic-maths',
     relatedVedicAnchor: 'article-universal-engine-of-algebra',
+  },
+  {
+    id: 'qa-magic-of-numbers',
+    category: 'vedic_math',
+    question: 'Where can I read the introduction to Vedic Mathematics — the Magic of Numbers?',
+    sanskritQuestion: 'सङ्ख्यानां विस्मयः वैदिक-गणित-परिचयश्च कुत्र पठनीयः?',
+    shortAnswer: 'Open “The Magic of Numbers” on the Vedic Maths page.',
+    detailedAnswer: 'That article introduces Vedic Mathematics as mental calculation compiled by Swami Bharati Krishna Tirtha: sixteen sūtras and thirteen sub-sūtras, faster than column arithmetic, with a digital-root (bījāṅka) check.',
+    tip: 'Search magic of numbers or vedic maths introduction.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-magic-of-numbers',
+  },
+  {
+    id: 'qa-fluid-space',
+    category: 'vedic_math',
+    question: 'Where is the article on place value as fluid space and Ūrdhva-Tiryagbhyām?',
+    sanskritQuestion: 'स्थानमानं द्रव-आकाशवत् ऊर्ध्वतिर्यग्भ्यां च कुत्र वर्णितम्?',
+    shortAnswer: 'Open “The Vedic Approach: Treating Place Value as Fluid Space” on the Vedic Maths page.',
+    detailedAnswer: 'It contrasts rigid school columns with continuous place-value space, and shows how Ūrdhva-Tiryagbhyām multiplies by working all positions at once.',
+    tip: 'Search fluid space or urdhva tiryagbhyam.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-fluid-space-simultaneous-processing',
+  },
+  {
+    id: 'qa-tirtha-lineage',
+    category: 'vedic_math',
+    question: 'Where can I read about Swami Bharati Krishna Tirtha and the Vedic Maths lineage?',
+    sanskritQuestion: 'स्वामि-भारती-कृष्ण-तीर्थस्य गुरु-परम्परा च कुत्र?',
+    shortAnswer: 'Open “The Source & The Living Lineage” on the Vedic Maths page.',
+    detailedAnswer: 'The article follows Swami Bharati Krishna Tirtha (1884–1960), who reconstructed the sixteen sūtras, and the teacher-student line that still teaches them.',
+    tip: 'Search tirtha, bharati krishna, or living lineage.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-source-and-guru-parampara',
+  },
+  {
+    id: 'qa-geometry-of-the-infinite',
+    category: 'vedic_math',
+    question: 'Where is the Geometry of the Infinite — maths and the sacred together?',
+    sanskritQuestion: 'अनन्तस्य ज्यामितिः लौकिक-पारमार्थिक-मैत्री च कुत्र?',
+    shortAnswer: 'Open “The Geometry of the Infinite” on the Vedic Maths page.',
+    detailedAnswer: 'It takes down the wall between classroom mathematics and sacred metaphysics, and follows number and geometric symmetry from forest hermitages to modern calculation.',
+    tip: 'Search geometry of the infinite or secular and sacred.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-geometry-of-the-infinite',
+  },
+  {
+    id: 'qa-vakyapadiya-ai',
+    category: 'philosophy',
+    question: 'Where can I read Bhartṛhari’s Vākyapadīya and its link to modern AI?',
+    sanskritQuestion: 'भर्तृहरेः वाक्यपदीयं कृत्रिमप्रज्ञा-सम्बन्धश्च कुत्र?',
+    shortAnswer: 'Open “Vākyapadīya and Modern AI” on the Vedic Maths page.',
+    detailedAnswer: 'The article connects Bhartṛhari’s sentence-holism (sphoṭa) and kāraka logic with Rick Briggs’ 1985 NASA paper on Sanskrit as an unambiguous knowledge language.',
+    tip: 'Search vakyapadiya, bhartrhari, sphota, or rick briggs.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-vakyapadiya-and-ai',
+  },
+  {
+    id: 'qa-indian-calendar-366',
+    category: 'vedic_math',
+    question: 'Where is the article on the Indian calendar and the 366-day Vedic year?',
+    sanskritQuestion: 'भारतीय-पञ्चाङ्गं षट्षष्ट्यधिक-त्रिशत-दिन-वर्षं च कुत्र?',
+    shortAnswer: 'Open “The Indian Calendar & 366-Day Vedic Year” on the grammar shelf.',
+    detailedAnswer: 'That grammar article explains why the Vedic solar year and Adhika Māsa were already self-correcting, including Lagadha’s 366-day year, so the calendar did not need a Gregorian patch.',
+    tip: 'Search 366-day, lagadha, or indian calendar.',
+    relatedView: 'grammar',
+    relatedGrammarArticleId: 'indian-calendar-precision',
+  },
+  {
+    id: 'qa-legacy-metrology',
+    category: 'vedic_math',
+    question: 'Where can I read about Indian metrology, Muziris bullion, and Harappan weights?',
+    sanskritQuestion: 'तुलामानं धातुशुद्धिः हडप्पा-मानं च कुत्र?',
+    shortAnswer: 'Open “The Legacy of Indian Metrology” on the grammar shelf.',
+    detailedAnswer: 'The article covers Harappan 4:2:1 bricks and binary weights, Roman coins treated as bullion at Muziris, and Kauṭilya’s rules for checking market scales.',
+    tip: 'Search muziris, bullion, harappan bricks, or metrology.',
+    relatedView: 'grammar',
+    relatedGrammarArticleId: 'legacy-of-indian-metrology',
   },
 ];
 

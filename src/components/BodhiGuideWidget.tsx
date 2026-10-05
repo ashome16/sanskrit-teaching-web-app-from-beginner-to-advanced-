@@ -784,6 +784,22 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                             keywords: [],
                                             target: { view: 'vedic-maths', vedicAnchor: item.relatedVedicAnchor },
                                           });
+                                        } else if (item.relatedGrammarArticleId && onSearchResultNavigate) {
+                                          onSearchResultNavigate({
+                                            id: item.id,
+                                            title: item.question,
+                                            category: 'grammar',
+                                            categoryLabel: 'Article · Grammar',
+                                            badgeEmoji: '📖',
+                                            badgeColor: '#b45309',
+                                            description: item.shortAnswer,
+                                            keywords: [],
+                                            target: {
+                                              view: 'grammar',
+                                              grammarTopic: 'article',
+                                              grammarArticleId: item.relatedGrammarArticleId,
+                                            },
+                                          });
                                         } else if (item.relatedView === 'philosophy' && item.id.includes('ujjain')) {
                                           if (onSearchResultNavigate) {
                                             onSearchResultNavigate({
@@ -805,7 +821,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                         }
                                       }}
                                     >
-                                      {item.relatedVedicAnchor ? 'Open this article ➔' : item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`}
+                                      {item.relatedVedicAnchor || item.relatedGrammarArticleId ? 'Open this article ➔' : item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`}
                                     </button>
                                   </div>
                                 )}
