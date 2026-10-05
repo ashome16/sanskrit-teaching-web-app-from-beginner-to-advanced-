@@ -883,9 +883,9 @@ const Dashboard: React.FC = () => {
                 type="button"
                 className={activeView === 'reader' && lesson.id !== 'varnamala' && !lesson.id.startsWith('grade8_') && !lesson.id.startsWith('grade9_') ? 'active' : ''}
                 onClick={() => openDeepakam()}
-                title="NCERT Deepakam · Class 7 Sanskrit"
+                title="Deepakam 7th grade · दीपकम · Class 7 Sanskrit"
               >
-                Deepakam
+                Deepakam 7th grade · दीपकम
               </button>
               <button
                 type="button"
@@ -897,9 +897,9 @@ const Dashboard: React.FC = () => {
                     openDeepakam('grade8_prarthana');
                   }
                 }}
-                title={canReadAllChapters ? 'NCERT Deepakam · Class 8 Sanskrit' : 'Sign in to access Deepakam Class 8'}
+                title={canReadAllChapters ? 'Deepakam 8th grade · दीपकम · Class 8 Sanskrit' : 'Sign in to access Deepakam 8th grade'}
               >
-                Deepakam
+                Deepakam 8th grade · दीपकम
               </button>
               <button
                 type="button"

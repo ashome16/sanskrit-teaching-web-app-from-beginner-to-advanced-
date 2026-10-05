@@ -37,14 +37,14 @@ export const QUIZ_TRACKS: QuizTrack[] = [
   },
   {
     id: 'class7',
-    label: 'Class 7 Deepakam',
+    label: 'Deepakam 7th grade · दीपकम',
     sublabel: '14 Lessons & Appendices',
     icon: '📚',
     countBadge: '486 Qs',
   },
   {
     id: 'class8',
-    label: 'Class 8 Sanskrit',
+    label: 'Deepakam 8th grade · दीपकम',
     sublabel: '16 Chapters & Appendices',
     icon: '🏛️',
     countBadge: '490 Qs',
@@ -52,7 +52,7 @@ export const QUIZ_TRACKS: QuizTrack[] = [
   },
   {
     id: 'class9',
-    label: 'Class 9 Sanskrit',
+    label: 'शारदा · Class 9',
     sublabel: '16 Chapters & Appendices',
     icon: '🌸',
     countBadge: '480 Qs',

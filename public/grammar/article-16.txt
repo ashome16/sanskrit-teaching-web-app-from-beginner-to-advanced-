@@ -10,6 +10,7 @@ The ancient Indian approach to metrics reveals a civilization that valued extrem
 Millennia before the modern International System of Units (SI), the urban centers of the Indus Valley Civilization (Mohenjo-Daro, Harappa, Lothal, Dholavira, Kalibangan) practiced unprecedented physical standardization across more than one million square kilometers:
 
 ### The 4 : 2 : 1 Architectural Brick Ratio
+[[figure:harappan-brick-ratio]]
 Every single commercial brick across hundreds of Harappan cities was baked to a strict, immutable proportion:
 $$\text{Length} : \text{Width} : \text{Thickness} = 4 : 2 : 1$$
 Typical residential bricks measured 28 × 14 × 7 cm, while monumental city wall bricks measured 40 × 20 × 10 cm. This universal 4:2:1 ratio provided optimal structural interlocking, distributing stress evenly to survive soil shifts and seismic tremors for over four thousand years.

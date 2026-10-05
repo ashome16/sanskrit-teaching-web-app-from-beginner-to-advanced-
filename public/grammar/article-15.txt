@@ -8,6 +8,8 @@ This cosmic imagination was not merely poetic: it directly fostered a culture of
 
 ## 1 · Vedic Number Names: The Thirteen Decuple Rungs
 
+[[figure:dasagunottara-thirteen-rungs]]
+
 The Vājasaneyi Saṃhitā of the White Yajurveda (17.2), also preserved in the Taittirīya Saṃhitā (4.4.11.4) and Maitrāyaṇī Saṃhitā, documents a systematic thirteen-step decuple ladder where each named rank is ten times the preceding one (*daśaguṇottaram*):
 
 | Rank | Sanskrit Name | IAST | Value (Power of 10) | Modern English Equivalent |

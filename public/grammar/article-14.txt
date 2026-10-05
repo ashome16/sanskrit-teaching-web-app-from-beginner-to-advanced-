@@ -40,6 +40,8 @@ Taking one ahorātra as a standard mean civil day of 24 hours (86,400 seconds), 
 
 ## 3 · What a Pañcāṅga Tracks: The Five Limbs of Celestial Reality
 
+[[figure:panchanga-five-limbs]]
+
 Unlike a flat civil wall calendar, a Pañcāṅga (पञ्चाङ्ग) is a multi-dimensional astronomical almanac tracking five fundamental cosmic variables:
 
 1. **Tithi (तिथि)**: The lunar day, defined strictly as the time taken for the moon to separate from the sun by 12 degrees of celestial longitude. Because the moon travels in an elliptical orbit and its speed varies according to Keplerian dynamics, a tithi varies from about 19 to 26 hours.

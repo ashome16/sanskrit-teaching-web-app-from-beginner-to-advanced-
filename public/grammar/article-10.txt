@@ -64,6 +64,8 @@ Let us learn them using a standard masculine noun ending in "a": बालक (B
 - Example Word: हे बालक! (He bālaka!) — O Boy!
 - Sentence: हे बालक! अत्र आगच्छ। (He bālaka! atra āgaccha.) = O Boy! Come here.
 
+[[figure:balaka-suffix-strip]]
+
 ## 💡 Quick Memory Trick Table (Masculine Singular)
 | Vibhakti (Case) | English Indicator | Suffix Sound | Example Word |
 | 1. Prathamā (प्रथमा) | (Subject) | -aḥ (ः) | बालकः (Bālakaḥ) |

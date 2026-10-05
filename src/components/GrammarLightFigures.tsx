@@ -272,6 +272,255 @@ function BeginnerRoadmapPhases() {
   );
 }
 
+
+/** Article 2: five mouth zones from throat to lips. */
+function MouthFiveZones() {
+  const zones = [
+    { n: '1', sa: 'कण्ठ्य', en: 'Velar', clue: 'क · ग · [k] [ɡ]' },
+    { n: '2', sa: 'तालव्य', en: 'Palatal', clue: 'च · ज · [c] [ɟ]' },
+    { n: '3', sa: 'मूर्धन्य', en: 'Retroflex', clue: 'ट · ड · [ʈ] [ɖ]' },
+    { n: '4', sa: 'दन्त्य', en: 'Dental', clue: 'त · द · [t̪] [d̪]' },
+    { n: '5', sa: 'ओष्ठ्य', en: 'Labial', clue: 'प · ब · [p] [b]' },
+  ];
+  const cellW = 112;
+  const gap = 10;
+  const w = zones.length * cellW + (zones.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Five mouth zones"
+      caption="The article’s throat-to-lips highway: velar, palatal, retroflex, dental, and labial — the same inside-to-outside order the IPA chart uses."
+      maxWidth={640}
+    >
+      <svg viewBox={`0 0 ${w} 120`} role="img" aria-labelledby="mouth5-title" style={{ fontFamily: SANS }}>
+        <title id="mouth5-title">Five articulation zones from throat to lips with sample Sanskrit and IPA stops.</title>
+        {zones.map((z, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={z.n}>
+              {i > 0 && (
+                <g>
+                  <line x1={x - gap + 4} y1="56" x2={x - 8} y2="56" stroke="#0f766e" strokeWidth="3" strokeLinecap="round" />
+                  <polygon points={`${x - 12},50 ${x - 12},62 ${x - 2},56`} fill="#0f766e" />
+                </g>
+              )}
+              <rect x={x} y="8" width={cellW} height="100" rx="12" fill="#fff7ed" stroke="#86efac" strokeWidth="3" />
+              <text x={x + cellW / 2} y="30" fill="#0f766e" fontSize="13" fontWeight="800" textAnchor="middle">{z.n}</text>
+              <text x={x + cellW / 2} y="52" fill="#3a2414" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{z.sa}</text>
+              <text x={x + cellW / 2} y="74" fill="#9a3412" fontSize="12" fontWeight="700" textAnchor="middle">{z.en}</text>
+              <text x={x + cellW / 2} y="94" fill="#475569" fontSize="10" fontWeight="600" textAnchor="middle">{z.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Article 10: Bālaka masculine singular suffix series from the memory trick table. */
+function BalakaSuffixStrip() {
+  const items = [
+    { n: '1', suf: '-अः', word: 'बालकः' },
+    { n: '2', suf: '-अम्', word: 'बालकम्' },
+    { n: '3', suf: '-एन', word: 'बालकेन' },
+    { n: '4', suf: '-आय', word: 'बालकाय' },
+    { n: '5', suf: '-आत्', word: 'बालकात्' },
+    { n: '6', suf: '-स्य', word: 'बालकस्य' },
+    { n: '7', suf: '-ए', word: 'बालके' },
+    { n: '8', suf: 'हे … !', word: 'हे बालक!' },
+  ];
+  const cellW = 78;
+  const gap = 8;
+  const w = items.length * cellW + (items.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Bālaka suffix series"
+      caption="The article’s memory strip for masculine singular a-stems: -aḥ, -am, -ena, -āya, -āt, -asya, -e, and He … !"
+      maxWidth={720}
+    >
+      <svg viewBox={`0 0 ${w} 110`} role="img" aria-labelledby="balaka-title" style={{ fontFamily: SANS }}>
+        <title id="balaka-title">Eight singular suffixes for Bālaka across the eight vibhaktis.</title>
+        {items.map((it, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={it.n}>
+              <rect x={x} y="8" width={cellW} height="90" rx="12" fill="#fff7ed" stroke="#fdba74" strokeWidth="3" />
+              <text x={x + cellW / 2} y="30" fill="#0f766e" fontSize="12" fontWeight="800" textAnchor="middle">{it.n}</text>
+              <text x={x + cellW / 2} y="56" fill="#9a3412" fontSize="14" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{it.suf}</text>
+              <text x={x + cellW / 2} y="82" fill="#3a2414" fontSize="11" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{it.word}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Article 12: three roads Sanskrit words took into English. */
+function EnglishThreeRoads() {
+  const roads = [
+    { n: '1', title: 'Ancient trade', clue: 'sugar · ginger · orange' },
+    { n: '2', title: 'Colonial & scholarly', clue: 'jungle · shampoo · guru' },
+    { n: '3', title: 'Spiritual wave', clue: 'yoga · karma · mantra' },
+  ];
+  const cellW = 170;
+  const gap = 16;
+  const w = roads.length * cellW + (roads.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Three roads into English"
+      caption="The article’s three routes: an older trade path, a colonial and scholarly wave, and a later spiritual vocabulary wave."
+      maxWidth={600}
+    >
+      <svg viewBox={`0 0 ${w} 120`} role="img" aria-labelledby="roads-title" style={{ fontFamily: SANS }}>
+        <title id="roads-title">Three routes by which Sanskrit words entered English.</title>
+        {roads.map((r, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={r.n}>
+              {i > 0 && (
+                <text x={x - gap / 2} y="62" fill="#0f766e" fontSize="18" fontWeight="800" textAnchor="middle">·</text>
+              )}
+              <rect x={x} y="12" width={cellW} height="92" rx="12" fill="#fff7ed" stroke="#38bdf8" strokeWidth="3" />
+              <text x={x + cellW / 2} y="38" fill="#0f766e" fontSize="14" fontWeight="800" textAnchor="middle">Road {r.n}</text>
+              <text x={x + cellW / 2} y="62" fill="#0369a1" fontSize="13" fontWeight="700" textAnchor="middle">{r.title}</text>
+              <text x={x + cellW / 2} y="86" fill="#475569" fontSize="11" fontWeight="600" textAnchor="middle">{r.clue}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Article 14: five limbs a Pañcāṅga tracks. */
+function PanchangaFiveLimbs() {
+  const limbs = [
+    { n: '1', sa: 'तिथि', en: 'Tithi' },
+    { n: '2', sa: 'वार', en: 'Vāra' },
+    { n: '3', sa: 'नक्षत्र', en: 'Nakṣatra' },
+    { n: '4', sa: 'योग', en: 'Yoga' },
+    { n: '5', sa: 'करण', en: 'Karaṇa' },
+  ];
+  const cellW = 112;
+  const gap = 10;
+  const w = limbs.length * cellW + (limbs.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Pañcāṅga · five limbs"
+      caption="The article’s five cosmic variables: tithi, vāra, nakṣatra, yoga, and karaṇa."
+      maxWidth={640}
+    >
+      <svg viewBox={`0 0 ${w} 100`} role="img" aria-labelledby="panca5-title" style={{ fontFamily: SANS }}>
+        <title id="panca5-title">Five limbs of a Pañcāṅga almanac.</title>
+        {limbs.map((L, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={L.n}>
+              <rect x={x} y="8" width={cellW} height="80" rx="12" fill="#fff7ed" stroke="#86efac" strokeWidth="3" />
+              <text x={x + cellW / 2} y="32" fill="#0f766e" fontSize="13" fontWeight="800" textAnchor="middle">{L.n}</text>
+              <text x={x + cellW / 2} y="56" fill="#14532d" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{L.sa}</text>
+              <text x={x + cellW / 2} y="76" fill="#475569" fontSize="12" fontWeight="600" textAnchor="middle">{L.en}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Article 15: thirteen decuple rungs from Eka to Parārdha. */
+function DasagunottaraThirteenRungs() {
+  const rungs = [
+    { sa: 'एक', p: '10⁰' },
+    { sa: 'दश', p: '10¹' },
+    { sa: 'शत', p: '10²' },
+    { sa: 'सहस्र', p: '10³' },
+    { sa: 'अयुत', p: '10⁴' },
+    { sa: 'नियुत', p: '10⁵' },
+    { sa: 'प्रयुत', p: '10⁶' },
+    { sa: 'अर्बुद', p: '10⁷' },
+    { sa: 'न्यर्बुद', p: '10⁸' },
+    { sa: 'समुद्र', p: '10⁹' },
+    { sa: 'मध्य', p: '10¹⁰' },
+    { sa: 'अन्त', p: '10¹¹' },
+    { sa: 'परार्ध', p: '10¹²' },
+  ];
+  const cols = 7;
+  const cellW = 88;
+  const cellH = 58;
+  const gap = 8;
+  const rows = Math.ceil(rungs.length / cols);
+  const w = cols * cellW + (cols - 1) * gap + 8;
+  const h = rows * cellH + (rows - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Daśaguṇottaram · thirteen rungs"
+      caption="The article’s Vedic ladder: each named rank is ten times the one before it, from Eka (10⁰) to Parārdha (10¹²)."
+      maxWidth={700}
+    >
+      <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-labelledby="rungs13-title" style={{ fontFamily: SANS }}>
+        <title id="rungs13-title">Thirteen named powers of ten from Eka to Parārdha.</title>
+        {rungs.map((r, i) => {
+          const col = i % cols;
+          const row = Math.floor(i / cols);
+          const x = 4 + col * (cellW + gap);
+          const y = 4 + row * (cellH + gap);
+          return (
+            <g key={r.sa}>
+              <rect x={x} y={y} width={cellW} height={cellH} rx="12" fill="#fff7ed" stroke="#fdba74" strokeWidth="3" />
+              <text x={x + cellW / 2} y={y + 24} fill="#3a2414" fontSize="13" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{r.sa}</text>
+              <text x={x + cellW / 2} y={y + 44} fill="#0f766e" fontSize="12" fontWeight="800" textAnchor="middle">{r.p}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Article 16: Harappan brick length : width : thickness = 4 : 2 : 1. */
+function HarappanBrickRatio() {
+  const L = 240;
+  const W = 120;
+  const T = 60;
+  const ox = 80;
+  const oy = 48;
+  return (
+    <Panel
+      kicker="Harappan brick · 4 : 2 : 1"
+      caption="The article’s architectural proportion: length : width : thickness = 4 : 2 : 1 (for example 28 × 14 × 7 cm)."
+      maxWidth={520}
+    >
+      <svg viewBox="0 0 480 240" role="img" aria-labelledby="brick-title" style={{ fontFamily: SANS }}>
+        <title id="brick-title">A brick drawn in 4 to 2 to 1 proportions for length, width, and thickness.</title>
+        {/* isometric-ish brick: front, top, side */}
+        <polygon
+          points={`${ox},${oy + T} ${ox + L},${oy + T} ${ox + L},${oy + T + W} ${ox},${oy + T + W}`}
+          fill="#fff7ed"
+          stroke="#fdba74"
+          strokeWidth="3"
+        />
+        <polygon
+          points={`${ox},${oy + T} ${ox + 40},${oy} ${ox + L + 40},${oy} ${ox + L},${oy + T}`}
+          fill="#ffedd5"
+          stroke="#fdba74"
+          strokeWidth="3"
+        />
+        <polygon
+          points={`${ox + L},${oy + T} ${ox + L + 40},${oy} ${ox + L + 40},${oy + W} ${ox + L},${oy + T + W}`}
+          fill="#fed7aa"
+          stroke="#fdba74"
+          strokeWidth="3"
+        />
+        <text x={ox + L / 2} y={oy + T + W / 2 + 6} fill="#9a3412" fontSize="16" fontWeight="800" textAnchor="middle">4 · length</text>
+        <text x={ox + L + 58} y={oy + T + W / 2} fill="#0f766e" fontSize="14" fontWeight="800" textAnchor="middle">2</text>
+        <text x={ox + L + 58} y={oy + T + W / 2 + 18} fill="#0f766e" fontSize="12" fontWeight="700" textAnchor="middle">width</text>
+        <text x={ox + L / 2 + 20} y={oy + 22} fill="#0369a1" fontSize="14" fontWeight="800" textAnchor="middle">1 · thickness</text>
+      </svg>
+    </Panel>
+  );
+}
+
 const FIGURES: Record<string, () => ReactNode> = {
   'vibhakti-eight-cases': () => <VibhaktiEightCases />,
   'dasagana-ten-classes': () => <DasaganaTenClasses />,
@@ -279,6 +528,12 @@ const FIGURES: Record<string, () => ReactNode> = {
   'sanskrit-symbols-strip': () => <SanskritSymbolsStrip />,
   'linga-vachana-grid': () => <LingaVachanaGrid />,
   'beginner-roadmap-phases': () => <BeginnerRoadmapPhases />,
+  'mouth-five-zones': () => <MouthFiveZones />,
+  'balaka-suffix-strip': () => <BalakaSuffixStrip />,
+  'english-three-roads': () => <EnglishThreeRoads />,
+  'panchanga-five-limbs': () => <PanchangaFiveLimbs />,
+  'dasagunottara-thirteen-rungs': () => <DasagunottaraThirteenRungs />,
+  'harappan-brick-ratio': () => <HarappanBrickRatio />,
 };
 
 export function isGrammarLightFigure(id: string): boolean {

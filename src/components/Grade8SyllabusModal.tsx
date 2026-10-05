@@ -62,7 +62,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
   onSelectLesson,
   onOpenCbseGuide,
   syllabus,
-  gradeBadge = 'अष्टमकक्षा-पाठ्यक्रमः · Deepakam (NEP, CBSE exam)',
+  gradeBadge = 'अष्टमकक्षा-पाठ्यक्रमः · Deepakam 8th grade · दीपकम',
   intro = 'Complete index of all 13 textbook chapters, introductory prayers, and grammatical appendices with exact page references.',
   coreLessonCount = 13,
   appendixCount = 3,
