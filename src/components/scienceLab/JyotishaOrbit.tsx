@@ -171,6 +171,13 @@ function naksFor(angle: number): number {
   return Math.floor(a / ((2 * Math.PI) / 27)) % 27;
 }
 
+/** Candra's direction from Pṛthivī against the fixed-star frame: sky angle, counter-clockwise on screen. */
+function naksAngle(s: SimState): number {
+  const [, earth, moon] = s.bodies;
+  if (!moon) return 0;
+  return Math.atan2(-(moon.y - earth.y), moon.x - earth.x);
+}
+
 const unwrap = (d: number) => {
   let x = d;
   while (x > Math.PI) x -= 2 * Math.PI;
@@ -211,7 +218,7 @@ const step = (s: SimState) => {
     if (dm < 5) s.status = 'moon-crash';
     else if (dm > MOON_R * 4.5) s.status = 'moon-lost';
     // Direction from Pṛthivī to Candra against the far-away stars
-    const ma = Math.atan2(-(moon.y - earth.y), moon.x - earth.x);
+    const ma = naksAngle(s);
     const d = unwrap(ma - s.moonPrevAngle);
     s.moonAngle += d;
     s.moonPrevAngle = ma;
@@ -289,17 +296,34 @@ const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTr
       ctx.stroke();
     });
   }
-  // line of sight Pṛthivī → Candra → nakṣatra ring
-  if (moon && s.status !== 'escaped') {
-    const ang = Math.atan2(moon.y - earth.y, moon.x - earth.x);
-    ctx.setLineDash([4, 5]);
+  // Line of sight. The nakṣatras stand for very distant stars, so only Candra's DIRECTION from Pṛthivī matters
+  // (the same angle that picks s.naksIdx). Show it twice: a short ray from Pṛthivī through Candra, and the same
+  // direction carried to the ring's centre, pointing at the highlighted segment.
+  if (moon && s.moonOn && s.status !== 'escaped') {
+    const ang = -naksAngle(s); // back to canvas orientation (y down)
+    const ux = Math.cos(ang);
+    const uy = Math.sin(ang);
+    ctx.strokeStyle = 'rgba(250, 204, 21, 0.75)';
+    ctx.lineWidth = 1.2;
     ctx.beginPath();
     ctx.moveTo(earth.x, earth.y);
-    ctx.lineTo(C + Math.cos(ang) * R1, C + Math.sin(ang) * R1);
-    ctx.strokeStyle = 'rgba(250, 204, 21, 0.6)';
+    ctx.lineTo(earth.x + ux * 46, earth.y + uy * 46);
+    ctx.stroke();
+    ctx.setLineDash([4, 5]);
+    ctx.strokeStyle = 'rgba(250, 204, 21, 0.5)';
     ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(C + ux * (SUN_RADIUS + 10), C + uy * (SUN_RADIUS + 10));
+    ctx.lineTo(C + ux * (R1 - 2), C + uy * (R1 - 2));
     ctx.stroke();
     ctx.setLineDash([]);
+    ctx.fillStyle = 'rgba(250, 204, 21, 0.9)';
+    ctx.beginPath();
+    ctx.moveTo(C + ux * R1, C + uy * R1);
+    ctx.lineTo(C + ux * (R1 - 10) - uy * 4, C + uy * (R1 - 10) + ux * 4);
+    ctx.lineTo(C + ux * (R1 - 10) + uy * 4, C + uy * (R1 - 10) - ux * 4);
+    ctx.closePath();
+    ctx.fill();
   }
   // Sūrya
   const sg = ctx.createRadialGradient(sun.x, sun.y, 4, sun.x, sun.y, SUN_RADIUS * 2);
@@ -346,7 +370,9 @@ const JyotishaOrbit: React.FC = () => {
   const [showTrails, setShowTrails] = useState(true);
   const [playing, setPlaying] = useState(false);
   const sim = useRef<SimState>(makeState(1, 1, 1, true));
-  const [read, setRead] = useState({ t: 0, years: 0, moonOrbits: 0, naks: 0, crossed: 0, status: 'ok' as SimState['status'], speed: 1, dist: 1 });
+  const naksRef = useRef<HTMLElement>(null);
+  const hudNaksRef = useRef<HTMLSpanElement>(null);
+  const [read, setRead] = useState({ t: 0, years: 0, moonOrbits: 0, crossed: 0, status: 'ok' as SimState['status'], speed: 1, dist: 1 });
 
   const refresh = useCallback(() => {
     const s = sim.current;
@@ -355,7 +381,6 @@ const JyotishaOrbit: React.FC = () => {
       t: s.t,
       years: Math.abs(s.earthAngle) / (2 * Math.PI),
       moonOrbits: Math.abs(s.moonAngle) / (2 * Math.PI),
-      naks: s.naksIdx,
       crossed: s.naksCrossed,
       status: s.status,
       speed: Math.hypot(earth.vx - sun.vx, earth.vy - sun.vy) / Math.sqrt(GM_SUN / A_EARTH),
@@ -374,7 +399,18 @@ const JyotishaOrbit: React.FC = () => {
       cv.height = SIZE * dpr;
     }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    draw(ctx, sim.current, script, showTrails);
+    const s = sim.current;
+    draw(ctx, s, script, showTrails);
+    // The ring highlight and the nakṣatra readouts come from the same index in the same frame.
+    const i = s.naksIdx;
+    cv.dataset.naks = String(i);
+    const full = `${NAKSHATRAS[i].dev} · ${NAKSHATRAS[i].iast}`;
+    if (naksRef.current && naksRef.current.textContent !== full) {
+      naksRef.current.textContent = full;
+      naksRef.current.dataset.idx = String(i);
+    }
+    const short = naksName(i, script);
+    if (hudNaksRef.current && hudNaksRef.current.textContent !== short) hudNaksRef.current.textContent = short;
   }, [script, showTrails]);
 
   const reset = useCallback(
@@ -386,9 +422,10 @@ const JyotishaOrbit: React.FC = () => {
     [sunF, earthF, speedF, moonOn, refresh, paint],
   );
 
+  // Re-paint when Candra is toggled so the freshly mounted readouts get filled in.
   useEffect(() => {
     paint();
-  }, [paint]);
+  }, [paint, moonOn]);
 
   useEffect(() => {
     if (!playing) return;
@@ -457,13 +494,13 @@ const JyotishaOrbit: React.FC = () => {
             <HudFrame
               accent="#818cf8"
               tl={<>t {read.t.toFixed(1)} s</>}
-              tr={moonOn ? <>{naksName(read.naks, script)}</> : <>orbits {read.years.toFixed(2)}</>}
+              tr={moonOn ? <span ref={hudNaksRef} data-testid="orbit-hud-naks" /> : <>orbits {read.years.toFixed(2)}</>}
               bl={<>v ×{read.speed.toFixed(2)} · r ×{read.dist.toFixed(2)}</>}
               br={moonOn ? <>{read.crossed} nakṣatras</> : <>{read.status === 'ok' ? 'stable' : read.status}</>}
             >
               <canvas ref={canvasRef} className="vl-stage vl-stage--orbit" width={SIZE} height={SIZE} data-testid="orbit-canvas" aria-label="Orbit sandbox with Sūrya, Pṛthivī and Candra inside the ring of 27 nakṣatras" role="img" />
             </HudFrame>
-            <p className="vl-hud-caption">Not to scale: sizes, distances and Pṛthivī’s mass are stretched so you can see Candra.</p>
+            <p className="vl-hud-caption">Not to scale: sizes, distances and Pṛthivī’s mass are stretched so you can see Candra. The stars are so far away that only direction matters, so the dashed pointer carries Candra’s direction from Pṛthivī to the centre of the ring. Nakṣatras run Aśvinī → Bharaṇī → Kṛttikā… counter-clockwise, the way Candra moves.</p>
           </div>
           <div className="vl-controls">
             <div className="vl-leds">
@@ -499,7 +536,7 @@ const JyotishaOrbit: React.FC = () => {
               <span>Distance (× start)</span><b>{read.dist.toFixed(2)}</b>
               {moonOn && (
                 <>
-                  <span>Candra is in</span><b className="vl-naks" data-testid="orbit-naks">{NAKSHATRAS[read.naks].dev} · {NAKSHATRAS[read.naks].iast}</b>
+                  <span>Candra is in</span><b className="vl-naks" data-testid="orbit-naks" ref={naksRef} />
                   <span>Candra orbits (vs stars)</span><b>{read.moonOrbits.toFixed(2)}</b>
                   <span>Nakṣatras crossed</span><b data-testid="orbit-crossed">{read.crossed}</b>
                 </>

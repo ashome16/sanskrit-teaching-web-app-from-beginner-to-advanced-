@@ -860,6 +860,12 @@ const AsatoMa: React.FC = () => {
     liquid: L('Drava', 'Liquid', 'द्रव'),
     gas: L('Vāṣpa', 'Gas', 'वाष्प'),
   };
+  // Narrow screens: Devanagari and/or the short English word only, so the HUD readout is not cut off.
+  const stateShort: Record<Phase, string> = {
+    solid: lang === 'modern' ? 'Solid' : lang === 'sanskrit' ? 'घन' : 'घन · Solid',
+    liquid: lang === 'modern' ? 'Liquid' : lang === 'sanskrit' ? 'द्रव' : 'द्रव · Liquid',
+    gas: lang === 'modern' ? 'Gas' : lang === 'sanskrit' ? 'वाष्प' : 'वाष्प · Gas',
+  };
   const burnedWood = sid === 'wood' && burned;
   const v = vrms(T, burnedWood ? 44.01 : sub.massU);
   const tStr = T < 10 ? T.toFixed(1) : String(Math.round(T));
@@ -1002,7 +1008,7 @@ const AsatoMa: React.FC = () => {
               accent={view === 'sat' ? '#22d3ee' : '#facc15'}
               tl={<>T {tStr} K</>}
               tr={<>{view === 'sat' ? L('SAT', 'ATOM VIEW') : L('ASAT', 'EVERYDAY')}</>}
-              bl={<>v<sub>rms</sub> {Math.round(v)} m/s · {stateLabel[sid === 'wood' && !burned ? 'solid' : phase]}</>}
+              bl={<>v<sub>rms</sub> {Math.round(v)} m/s · <span className="vl-hud-long">{stateLabel[sid === 'wood' && !burned ? 'solid' : phase]}</span><span className="vl-hud-short" data-testid="asato-hud-short">{stateShort[sid === 'wood' && !burned ? 'solid' : phase]}</span></>}
               br={<span ref={countHudRef}>N {startCount(sid, coef.o2)} atoms</span>}
             >
               <canvas ref={canvasRef} className="vl-stage vl-stage--asato" width={W} height={H} data-testid="asato-canvas" data-view={view} role="img" aria-label={`Sealed chamber, ${view === 'sat' ? 'atom view' : 'everyday view'}`} />

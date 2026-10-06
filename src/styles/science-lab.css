@@ -640,6 +640,12 @@
   .vl-dial { min-width: 80px; }
   .vl-hud-read { font-size: 0.62rem; }
 }
+.vl-hud-short { display: none; }
+@media (max-width: 520px) {
+  .vl-hud-long { display: none; }
+  .vl-hud-short { display: inline; }
+  .vl-hud-bl { max-width: 62%; }
+}
 @media (prefers-reduced-motion: reduce) {
   .vl-hud-overlay::after { animation: none; display: none; }
   .vl-led, .vl-level-bar > span { transition: none; }
