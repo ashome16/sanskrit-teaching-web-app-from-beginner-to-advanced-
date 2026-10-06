@@ -846,7 +846,7 @@
 .cy-hub::after { content: ''; position: absolute; inset: -12px; border-radius: 50%; border: 2px solid rgba(194, 65, 12, 0.35); animation: cy-ring 2.8s ease-out infinite; }
 .cy-hub span { font-family: 'Noto Sans Devanagari', serif; font-weight: 900; font-size: calc(1.15rem * var(--cy-zoom)); color: var(--cy-terra); line-height: 1.15; }
 .cy-hub small { font-size: 0.56rem; font-weight: 700; color: #7c2d12; text-align: center; line-height: 1.1; }
-.cy-board--2 .cy-hub { top: 34%; }
+.cy-board--2 .cy-hub { top: calc((0.8rem + 44px) * var(--cy-zoom)); }
 
 .cy-ticker {
   margin-top: 0.7rem;
@@ -958,3 +958,47 @@
   .cy-badge, .cy-hub::after, .cy-chip.is-sel, .cy-placed, .cy-feed.is-new, .cy-zone.is-wrong { animation: none; }
   .cy-zone { transition: none; }
 }
+
+/* Chaturyoni v2: field notes (operational definitions) and the specimen readout. */
+.cy-head-btns { display: inline-flex; gap: 0.4rem; align-items: center; }
+.cy-notes {
+  min-height: 40px; padding: 0 0.7rem; border-radius: 12px; border: 2px solid var(--cy-jade); background: #ecfdf5; color: var(--cy-jade);
+  font-weight: 800; font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem;
+}
+.cy-notes.is-on { background: var(--cy-jade); color: #fff; }
+.cy-zone-tag {
+  margin-top: 0.15rem; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--z); background: #fffdf8; border: 1px solid color-mix(in srgb, var(--z) 35%, transparent);
+  border-radius: 999px; padding: 0.05rem 0.45rem;
+}
+.cy-zone-def { display: block; max-width: 34ch; font-size: 0.74rem; line-height: 1.4; color: #4a2f17; margin-top: 0.25rem; }
+.cy-zone-modern { display: block; margin-top: 0.2rem; color: #0f766e; font-weight: 700; }
+
+.cy-readout { background: #fff; border: 1.5px solid #f1d5ad; border-radius: 12px; padding: 0.55rem 0.6rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.cy-ro-head { display: flex; align-items: center; gap: 0.45rem; font-size: 0.86rem; }
+.cy-ro-head [lang='sa'] { font-family: 'Noto Sans Devanagari', serif; color: var(--cy-terra); font-weight: 700; }
+.cy-ro-head i { color: #8a5a2b; font-size: 0.78rem; }
+.cy-ro-icon { font-size: 1.4rem; line-height: 1; }
+.cy-ro-label { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cy-jade); margin-top: 0.15rem; }
+.cy-ro-chain { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; }
+.cy-ro-step {
+  display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.15; min-width: 0;
+  border: 1.5px solid var(--z); background: var(--zt); border-radius: 9px; padding: 0.2rem 0.4rem;
+}
+.cy-ro-step b { font-family: 'Noto Sans Devanagari', serif; color: var(--z); font-size: 0.86rem; line-height: 1.45; }
+.cy-ro-step i { font-size: 0.72rem; color: var(--z); font-weight: 700; }
+.cy-ro-step small { font-size: 0.64rem; color: #57381c; }
+.cy-ro-step.is-locked { border-style: dashed; background: #faf5ec; border-color: #c9a37a; flex-direction: row; align-items: center; gap: 0.25rem; color: #8a5a2b; }
+.cy-ro-arrow { color: var(--cy-copper); font-weight: 800; }
+.cy-ro-lin { display: flex; flex-direction: column; gap: 0.05rem; font-size: 0.8rem; line-height: 1.4; }
+.cy-ro-lin b { color: var(--cy-ink); }
+.cy-ro-lin i { color: #8a5a2b; font-size: 0.76rem; }
+.cy-ro-lin p { margin: 0.1rem 0 0; color: #4a2f17; font-size: 0.78rem; }
+@media (max-width: 640px) {
+  .cy-notes span { display: none; }
+  .cy-zone-def { font-size: 0.7rem; }
+  .cy-zone-tag { font-size: 0.56rem; }
+}
+@media (max-width: 640px) { .cy-board--2 .cy-hub { top: calc((0.8rem + 36px) * var(--cy-zoom)); } }
+.cy-zone { line-height: 1.3; }
+.cy-zone-tag { line-height: 1.3; border-radius: 10px; }
