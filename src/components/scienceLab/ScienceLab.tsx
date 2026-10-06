@@ -6,6 +6,7 @@ const ParamanuBuilder = lazy(() => import('./ParamanuBuilder'));
 const PrakritiBalance = lazy(() => import('./PrakritiBalance'));
 const JyotishaOrbit = lazy(() => import('./JyotishaOrbit'));
 const SrishtiLoom = lazy(() => import('./SrishtiLoom'));
+const NadaBrahman = lazy(() => import('./NadaBrahman'));
 const AsatoMa = lazy(() => import('./AsatoMa'));
 
 const LAB_SEGMENTS: {
@@ -57,6 +58,16 @@ const LAB_SEGMENTS: {
     blurb: 'The Loom of Āruṇi: gather a scattered cloud, hold it steady, then let it dissolve.',
     tint: '#ffe4e6',
     ink: '#be123c',
+  },
+  {
+    id: 'nada-brahman',
+    icon: '🪕',
+    dev: 'नाद-ब्रह्म',
+    title: 'Cosmic Sitār · Nāda Brahman',
+    subject: 'Sound · Waves · Music',
+    blurb: 'Pluck a real standing-wave string, pick harmonics 1–5 (śabda to gandha) and tune the tension to match target notes.',
+    tint: '#ede9fe',
+    ink: '#6d28d9',
   },
   {
     id: 'asato-ma',
@@ -191,6 +202,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {active === 'prakriti' && <PrakritiBalance />}
           {active === 'jyotisha' && <JyotishaOrbit />}
           {active === 'srishti-sthiti-laya' && <SrishtiLoom />}
+          {active === 'nada-brahman' && <NadaBrahman />}
           {active === 'asato-ma' && <AsatoMa />}
         </Suspense>
       </section>

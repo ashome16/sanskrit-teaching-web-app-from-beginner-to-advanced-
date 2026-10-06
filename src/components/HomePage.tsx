@@ -845,7 +845,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 Vijñāna Lab · विज्ञान-प्रयोगशाला
               </h3>
               <p style={{ margin: 0, fontSize: '0.92rem', color: '#475569', lineHeight: 1.5, maxWidth: '44rem' }}>
-                Play with science and learn the Sanskrit words for it: build paramāṇus, balance vāta-pitta-kapha, run a real-gravity orbit through the 27 nakṣatras, weave the Loom of Āruṇi, and burn a log while counting every atom.
+                Play with science and learn the Sanskrit words for it: build paramāṇus, balance vāta-pitta-kapha, run a real-gravity orbit through the 27 nakṣatras, weave the Loom of Āruṇi, tune the Cosmic Sitār, and burn a log while counting every atom.
               </p>
             </div>
             <span style={{ background: '#0f766e', color: '#ffffff', padding: '0.65rem 1.3rem', borderRadius: '10px', fontWeight: 800, fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
