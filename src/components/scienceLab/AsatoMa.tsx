@@ -42,13 +42,14 @@ interface Substance {
   startT: number;
   color: string;
   sp: number; // lattice spacing on screen, px
+  thetaE: number; // rough Einstein temperature, K: sets the zero-point (ground-state) jitter floor
 }
 
 const SUBSTANCES: Record<SubstanceId, Substance> = {
-  gold: { id: 'gold', name: 'Gold', dev: 'सुवर्ण', iast: 'suvarṇa', formula: 'Au', massU: 196.97, massNote: 'one Au atom, 196.97 u', melt: 1337.33, boil: 3243, startT: 300, color: '#eab308', sp: 24 },
-  wood: { id: 'wood', name: 'Wood', dev: 'काष्ठ', iast: 'kāṣṭha', formula: 'mostly cellulose (C₆H₁₀O₅)ₙ', massU: 12.011, massNote: 'one C atom, 12.011 u, for comparison', melt: null, boil: null, startT: 300, color: '#b45309', sp: 30 },
-  water: { id: 'water', name: 'Water', dev: 'जल', iast: 'jala', formula: 'H₂O', massU: 18.015, massNote: 'one H₂O molecule, 18.015 u', melt: 273.15, boil: 373.15, startT: 300, color: '#38bdf8', sp: 30 },
-  ice: { id: 'ice', name: 'Ice', dev: 'हिम', iast: 'hima', formula: 'H₂O', massU: 18.015, massNote: 'one H₂O molecule, 18.015 u', melt: 273.15, boil: 373.15, startT: 250, color: '#bae6fd', sp: 30 },
+  gold: { id: 'gold', name: 'Gold', dev: 'सुवर्ण', iast: 'suvarṇa', formula: 'Au', massU: 196.97, massNote: 'one Au atom, 196.97 u', melt: 1337.33, boil: 3243, startT: 300, color: '#eab308', sp: 24, thetaE: 125 },
+  wood: { id: 'wood', name: 'Wood', dev: 'काष्ठ', iast: 'kāṣṭha', formula: 'mostly cellulose (C₆H₁₀O₅)ₙ', massU: 12.011, massNote: 'one C atom, 12.011 u, for comparison', melt: null, boil: null, startT: 300, color: '#b45309', sp: 30, thetaE: 0 },
+  water: { id: 'water', name: 'Water', dev: 'जल', iast: 'jala', formula: 'H₂O', massU: 18.015, massNote: 'one H₂O molecule, 18.015 u', melt: 273.15, boil: 373.15, startT: 300, color: '#38bdf8', sp: 30, thetaE: 180 },
+  ice: { id: 'ice', name: 'Ice', dev: 'हिम', iast: 'hima', formula: 'H₂O', massU: 18.015, massNote: 'one H₂O molecule, 18.015 u', melt: 273.15, boil: 373.15, startT: 250, color: '#bae6fd', sp: 30, thetaE: 180 },
 };
 
 const phaseOf = (s: Substance, T: number): Phase => {
@@ -73,6 +74,34 @@ const glowRGB = (T: number): [number, number, number] => {
   return [c(r), c(g), c(b)];
 };
 const glowAlpha = (T: number) => Math.max(0, Math.min(0.85, (T - 750) / 900));
+
+/**
+ * Effective temperature for lattice jitter in an Einstein solid: ⟨u²⟩ ∝ (θ/2)·coth(θ/2T).
+ * Well above θ it is just T (jitter ∝ √T); near 0 K it levels off at θ/2, the quantum zero-point jitter.
+ */
+const jitterT = (T: number, thetaE: number) => (thetaE <= 0 ? T : (thetaE / 2) / Math.tanh(thetaE / (2 * Math.max(T, 1e-3))));
+
+/** Share of an ideal blackbody's thermal radiation that falls in visible light (380–750 nm), from Planck's law. */
+const visibleFraction = (T: number) => {
+  if (T < 250) return 0;
+  const c2 = 0.014388; // hc/k, m·K
+  const a = c2 / (750e-9 * T);
+  const b = c2 / (380e-9 * T);
+  const n = 120;
+  const h = (b - a) / n;
+  const f = (x: number) => x ** 3 / Math.expm1(x);
+  let sum = f(a) + f(b);
+  for (let i = 1; i < n; i += 1) sum += (i % 2 ? 4 : 2) * f(a + i * h);
+  return ((15 / Math.PI ** 4) * sum * h) / 3;
+};
+const fmtPct = (frac: number) => {
+  const pc = frac * 100;
+  if (pc <= 0) return '0%';
+  if (pc < 0.01) return '<0.01%';
+  if (pc < 1) return `${pc.toFixed(2)}%`;
+  if (pc < 10) return `${pc.toFixed(1)}%`;
+  return `${Math.round(pc)}%`;
+};
 
 interface Atom {
   el: El;
@@ -159,13 +188,13 @@ const ATOM_STYLE: Record<El, { r: number; fill: string; stroke: string }> = {
 const speedHue = (sp: number) => 230 - 230 * Math.max(0, Math.min(1, sp / 320));
 
 const TERMS: LabTerm[] = [
-  { dev: 'असत्', iast: 'asat', en: 'non-being, the unreal', note: 'BU 1.3.28 glosses it as death (mṛtyu)' },
-  { dev: 'सत्', iast: 'sat', en: 'being, the real', note: 'BU 1.3.28 glosses it as immortality (amṛta)' },
-  { dev: 'तमस्', iast: 'tamas', en: 'darkness' },
-  { dev: 'ज्योतिस्', iast: 'jyotis', en: 'light' },
+  { dev: 'असत्', iast: 'asat', tag: 'DATA STREAM // Perceptual Matrix', game: 'The surface layer of changing names and shapes.', en: 'non-being, the unreal', note: 'BU 1.3.28 glosses it as death (mṛtyu)' },
+  { dev: 'सत्', iast: 'sat', tag: 'CORE CONSTANT // the real, the unchanging', game: 'In this lab: what stays conserved, like atom count and mass.', en: 'being, the real', note: 'BU 1.3.28 glosses it as immortality (amṛta)' },
+  { dev: 'तमस्', iast: 'tamas', tag: 'STATUS EFFECT // Perceptual Darkness', game: 'Judging a system only by its surface.', en: 'darkness' },
+  { dev: 'ज्योतिस्', iast: 'jyotis', tag: 'SYSTEM UPGRADE // Illuminating Data', game: 'Switching to measurements: thermal speeds, particle counts, emitted light.', en: 'light' },
+  { dev: 'नामरूप', iast: 'nāma-rūpa', tag: 'CONFIG FILE // UI Skins', game: 'The names and outer forms we give matter, e.g. calling the same H₂O particles ‘ice’ or ‘steam’.', en: 'name and form' },
   { dev: 'मृत्यु', iast: 'mṛtyu', en: 'death' },
   { dev: 'अमृत', iast: 'amṛta', en: 'immortality, the deathless' },
-  { dev: 'नामरूप', iast: 'nāma-rūpa', en: 'name and form' },
   { dev: 'माया', iast: 'māyā', en: 'appearance, power of appearing', note: 'developed in later Vedānta' },
   { dev: 'अविद्या', iast: 'avidyā', en: 'not-knowing, ignorance', note: 'developed in later Vedānta' },
   { dev: 'ताप', iast: 'tāpa', en: 'heat, temperature' },
@@ -421,8 +450,9 @@ const AsatoMa: React.FC = () => {
       }
     } else if (ph === 'solid') {
       // Each atom jiggles about its lattice site (an Ornstein–Uhlenbeck oscillator).
-      // The jiggle amplitude grows with √T, about a tenth of the spacing near melting.
-      const A = 0.16 * S.sp * Math.sqrt(temp / (S.melt || 600));
+      // The jiggle amplitude grows with √T, about a tenth of the spacing near melting; near 0 K it levels off at the
+      // quantum zero-point jitter instead of reaching zero (Einstein model, see jitterT).
+      const A = 0.16 * S.sp * Math.sqrt(jitterT(temp, S.thetaE) / (S.melt || 600));
       const om = 30;
       const ga = 6;
       const sig = A * om * Math.sqrt(2 * ga);
@@ -627,8 +657,15 @@ const AsatoMa: React.FC = () => {
       ctx.restore();
     }
     // Bonds: a fixed lattice in a solid; short-lived bonds that break and re-form in a liquid.
-    ctx.strokeStyle = 'rgba(148,163,184,0.35)';
-    ctx.lineWidth = 1.5;
+    // Crystals get the "matrix overwatch" look: thin cyan bond lines that fade as the solid nears its melting point.
+    if (s === 'wood') {
+      ctx.strokeStyle = 'rgba(148,163,184,0.35)';
+      ctx.lineWidth = 1.5;
+    } else {
+      const fade = ph === 'solid' ? Math.max(0.22, Math.min(0.7, 0.7 - 0.45 * (temp / (S.melt || 600)))) : 0.14;
+      ctx.strokeStyle = `rgba(34,211,238,${fade.toFixed(3)})`;
+      ctx.lineWidth = 1;
+    }
     ctx.beginPath();
     if (s === 'wood') {
       for (let i = 0; i < list.length; i += 1) {
@@ -657,6 +694,21 @@ const AsatoMa: React.FC = () => {
       }
     }
     ctx.stroke();
+    const bondPath = s !== 'wood' && ph === 'solid' ? new Path2D() : null;
+    if (bondPath) {
+      // Same neighbour bonds, kept for the overlay drawn on top of the atoms below.
+      const lim2 = (1.15 * S.sp) ** 2;
+      for (let i = 0; i < list.length; i += 1) {
+        for (let j = i + 1; j < list.length; j += 1) {
+          const dx = list[i].x - list[j].x;
+          const dy = list[i].y - list[j].y;
+          if (dx * dx + dy * dy < lim2) {
+            bondPath.moveTo(list[i].x, list[i].y);
+            bondPath.lineTo(list[j].x, list[j].y);
+          }
+        }
+      }
+    }
     // Atoms
     list.forEach((a) => {
       if (a.el === 'W') {
@@ -689,6 +741,24 @@ const AsatoMa: React.FC = () => {
         ctx.fill();
       }
     });
+    // Matrix-overwatch lattice overlay (crystals only): thin bond lines and alpha/beta node markers over the atoms,
+    // fading out as the solid approaches its melting point. Gone once it melts.
+    if (bondPath) {
+      const k = Math.max(0, Math.min(1, 1 - (temp / (S.melt || 600)) ** 1.5));
+      if (k > 0.02) {
+        ctx.save();
+        ctx.strokeStyle = `rgba(103,232,249,${(0.55 * k).toFixed(3)})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke(bondPath);
+        list.forEach((a, i) => {
+          ctx.beginPath();
+          ctx.arc(a.x, a.y, 1.8, 0, 2 * Math.PI);
+          ctx.fillStyle = i % 2 ? `rgba(240,171,252,${(0.9 * k).toFixed(3)})` : `rgba(34,211,238,${(0.9 * k).toFixed(3)})`;
+          ctx.fill();
+        });
+        ctx.restore();
+      }
+    }
     // Velocity arrows
     if (showArrows) {
       ctx.strokeStyle = 'rgba(224,242,254,0.9)';
@@ -818,8 +888,9 @@ const AsatoMa: React.FC = () => {
     // Live atom-count meter (read straight from the simulation, every few frames)
     if (st.frame % 10 === 0) {
       const n = atomCount(atoms.current);
-      const txt = `${n} atoms`;
-      if (countHudRef.current && countHudRef.current.textContent !== `N ${txt}`) countHudRef.current.textContent = `N ${txt}`;
+      const hud = `N ${n} atoms`;
+      const txt = `${n} PARAMĀṆUS`;
+      if (countHudRef.current && countHudRef.current.textContent !== hud) countHudRef.current.textContent = hud;
       if (countRef.current && countRef.current.textContent !== txt) countRef.current.textContent = txt;
     }
   };
@@ -869,14 +940,33 @@ const AsatoMa: React.FC = () => {
   const burnedWood = sid === 'wood' && burned;
   const v = vrms(T, burnedWood ? 44.01 : sub.massU);
   const tStr = T < 10 ? T.toFixed(1) : String(Math.round(T));
-  const crystal =
-    sid === 'wood' || phase !== 'solid'
-      ? null
-      : T / (sub.melt || 1) < 0.01
-        ? 'calm, near-perfect'
-        : T / (sub.melt || 1) < 0.6
-          ? 'gently vibrating'
-          : 'vibrating hard, close to melting';
+  const meltRatio = T / (sub.melt || 1);
+  const lattice =
+    sid === 'wood'
+      ? burned
+        ? 'Matrix rewritten: the same atoms, regrouped into free CO₂ and H₂O molecules.'
+        : 'Locked polymer chains (cellulose). Atoms jitter about fixed sites; heated in air it burns, it does not melt.'
+      : phase === 'gas'
+        ? 'Lattice offline. Free-flying particles, no fixed sites, bouncing off the chamber walls.'
+        : phase === 'liquid'
+          ? 'Grid dissolved. Bonds break and re-form as particles slide past each other.'
+          : meltRatio < 0.01
+            ? 'Near-perfect crystalline grid. Only quantum zero-point jitter remains.'
+            : meltRatio < 0.6
+              ? 'Stable crystalline grid. Atoms jitter around fixed lattice sites.'
+              : 'Resonant, high-frequency agitation approaching phase transition.';
+  const photon =
+    phase === 'gas' && T >= GLOW_K
+      ? 'Not modelled for hot gas'
+      : glowing
+        ? `${fmtPct(visibleFraction(T))} Visible Emission`
+        : '0% Visible Emission';
+  const TL = (long: string, short: string) => (
+    <span className="vl-tl">
+      <span className="vl-tl-long">{long}</span>
+      <span className="vl-tl-short">{short}</span>
+    </span>
+  );
 
   const steps = [
     { key: 's1', dev: 'असतो मा सद्गमय', iast: 'asato mā sad gamaya', modern: 'Scan with Viveka to the atom view', ok: done.s1 },
@@ -957,11 +1047,16 @@ const AsatoMa: React.FC = () => {
             {lvl === 1 && (
               <>
                 <h4>🔨 Level 1 · The Forge of Kaṇāda · <span lang="sa">काणाद</span> {lv.l1 && '✓'}</h4>
-                <p>Cool gold below {COLD_K} K and watch its atoms settle into a calm, near-perfect crystal. The jiggle on each lattice site grows with √T, so near absolute zero it almost stops.</p>
+                <p data-testid="asato-l1-mission">
+                  <b className="vl-mission-tag">MISSION CRITERIA:</b> Extract thermal energy from the gold matrix until system
+                  temperature drops below {COLD_K} K. Force the chaotic atomic vibrations to collapse into a near-perfect crystalline
+                  grid. As absolute zero approaches, track lattice jitter (it shrinks roughly as{' '}
+                  <span className="vl-sqrt" role="math" aria-label="the square root of T">√<span className="vl-sqrt-arg">T</span></span>) and
+                  observe the quantum ground-state limit: the jitter never reaches exactly zero, and absolute zero itself can’t be reached.
+                </p>
                 <p className="vl-small">
                   Kaṇāda, to whom the Vaiśeṣika Sūtra is attributed, pictured matter as tiny paramāṇus; the level name is just for
-                  the game. ❄️ Friendly fact: you can get very close to absolute zero (0 K), but never quite reach it, and even
-                  then quantum physics says atoms keep a tiny jiggle.
+                  the game.
                 </p>
               </>
             )}
@@ -1012,6 +1107,11 @@ const AsatoMa: React.FC = () => {
               br={<span ref={countHudRef}>N {startCount(sid, coef.o2)} atoms</span>}
             >
               <canvas ref={canvasRef} className="vl-stage vl-stage--asato" width={W} height={H} data-testid="asato-canvas" data-view={view} role="img" aria-label={`Sealed chamber, ${view === 'sat' ? 'atom view' : 'everyday view'}`} />
+              {view === 'sat' && sid !== 'wood' && (
+                <div className="vl-overwatch vl-mono" aria-hidden="true" data-testid="asato-overwatch">
+                  <span className="vl-overwatch-dot" />MATRIX OVERWATCH: <b>ACTIVE</b>
+                </div>
+              )}
             </HudFrame>
             <p className="vl-hud-caption">
               {sid === 'wood'
@@ -1054,16 +1154,29 @@ const AsatoMa: React.FC = () => {
               </div>
             </div>
             <p className="vl-small">Drag the dial, scroll on it, or use the arrow keys (Shift for big steps). Log scale, {T_MIN}–{T_MAX} K.</p>
-            <div className="vl-readout-grid" data-testid="asato-readouts">
-              <span>State</span><b data-testid="asato-state">{sid === 'wood' && !burned ? stateLabel.solid : stateLabel[phase]}</b>
-              <span>Substance</span><b>{sub.formula}</b>
-              {sub.melt && <><span>Melts / boils</span><b>{sub.melt} K / {sub.boil} K</b></>}
-              <span>Thermal speed v<sub>rms</sub></span><b data-testid="asato-vrms">{Math.round(v)} m/s</b>
-              <span>Atoms in chamber</span><b data-testid="asato-count" ref={countRef}>{startCount(sid, coef.o2)} atoms</b>
-              {crystal && <><span>Crystal</span><b data-testid="asato-crystal">{crystal}</b></>}
-              <span>{L('Varṇa', 'Glow', 'वर्ण')}</span><b>{glowing ? 'glowing (approx. colour)' : 'none visible'}</b>
+            <div className="vl-readout-grid vl-telemetry" data-testid="asato-readouts">
+              {TL('TARGET MATRIX', 'MATRIX')}<b>{sub.formula}</b>
+              {TL('STRUCTURAL PHASE', 'PHASE')}<b data-testid="asato-state">{sid === 'wood' && !burned ? stateLabel.solid : stateLabel[phase]}</b>
+              {sub.melt && <>{TL('PHASE THRESHOLDS', 'THRESHOLDS')}<b title="Melting point | boiling point, at normal air pressure">{sub.melt} K | {sub.boil} K</b></>}
+              <span className="vl-tl" title="This readout is a speed: the thermal (root-mean-square) speed v_rms = √(3kT/m)">
+                <span className="vl-tl-long">KINETIC ACCELERATION</span>
+                <span className="vl-tl-short">KINETIC</span>
+                <small className="vl-tl-sub">v<sub>rms</sub></small>
+              </span>
+              <b data-testid="asato-vrms">{Math.round(v)} m/s</b>
+              {TL('PARTICLE COUNT', 'PARTICLES')}<b data-testid="asato-count" ref={countRef}>{startCount(sid, coef.o2)} PARAMĀṆUS</b>
+              <span className="vl-tl vl-tl-row">
+                <span className="vl-tl-long">LATTICE BEHAVIOR</span>
+                <span className="vl-tl-short">LATTICE</span>
+              </span>
+              <b className="vl-tl-row vl-tl-text" data-testid="asato-crystal">{lattice}</b>
+              <span className="vl-tl vl-tl-row" title="Share of an ideal glowing body's thermal radiation that falls in visible light (380–750 nm); an estimate from Planck's law. Most of the rest is infrared.">
+                <span className="vl-tl-long">PHOTON SPECTRUM</span>
+                <span className="vl-tl-short">PHOTONS</span>
+              </span>
+              <b className="vl-tl-row vl-tl-text" data-testid="asato-photon">{photon}{glowing && <small className="vl-tl-sub"> (approx. glow colour)</small>}</b>
             </div>
-            <p className="vl-small">v<sub>rms</sub> = √(3kT/m), with k = 1.380649 × 10⁻²³ J/K and m = {burnedWood ? 'one CO₂ molecule, 44.01 u' : sub.massNote}. Heat is atoms moving: hotter means faster.</p>
+            <p className="vl-small">Kinetic readout is the thermal speed v<sub>rms</sub> = √(3kT/m), with k = 1.380649 × 10⁻²³ J/K and m = {burnedWood ? 'one CO₂ molecule, 44.01 u' : sub.massNote}. Heat is atoms moving: hotter means faster. Photon spectrum: the share of an ideal glowing body’s light that is visible; the rest is mostly infrared.</p>
             {sid === 'wood' && <p className="vl-msg">{woodState}</p>}
             {(sid === 'ice' || sid === 'water') && <p className="vl-small">Ice, water and steam are one substance, H₂O. Turn past 273 K and 373 K and watch the name change with the form.</p>}
             {sid === 'gold' && T < COLD_K && <p className="vl-msg is-ok">❄️ Below {COLD_K} K: a calm crystal. Absolute zero itself can never quite be reached, only approached.</p>}
@@ -1118,14 +1231,23 @@ const AsatoMa: React.FC = () => {
       </div>
 
       <div className="vl-grid-2">
-        <section className="vl-panel vl-tradition" aria-label="Bṛhadāraṇyaka Upaniṣad 1.3.28">
-          <h3 className="vl-panel-title">📜 Bṛhadāraṇyaka Upaniṣad 1.3.28</h3>
+        <section className="vl-panel vl-tradition vl-lore" aria-label="Lore Terminal Alpha: Bṛhadāraṇyaka Upaniṣad 1.3.28" data-testid="asato-lore-alpha">
+          <h3 className="vl-panel-title">📜 <span className="vl-lore-title">Lore Terminal Alpha <i>//</i> Bṛhadāraṇyaka 1.3.28</span></h3>
+          <p>
+            <b className="vl-mission-tag">DATABASE RECORD:</b> The <em>Abhyāroha</em> (‘Ascent’) verses, recited with the
+            pavamāna chants and preserved in the <em>Bṛhadāraṇyaka Upaniṣad</em>. Its first line asks to be led from{' '}
+            <em>asat</em> to <em>sat</em>, and the Upaniṣad itself explains: <em>asat</em> is death, <em>sat</em> is immortality.
+          </p>
+          <p>
+            <b className="vl-mission-tag">GAME MODE:</b> in this lab we borrow that ascent as a lens. Look past changing
+            macroscopic variables to find what is conserved underneath.
+          </p>
           <figure className="vl-quote">
             <blockquote lang="sa">असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥</blockquote>
             <div className="vl-term-iast">asato mā sad gamaya | tamaso mā jyotir gamaya | mṛtyor mā’mṛtaṃ gamaya ||</div>
             <figcaption>Lead me from the unreal to the real. Lead me from darkness to light. Lead me from death to immortality.</figcaption>
           </figure>
-          <p className="vl-small">These are the <em>abhyāroha</em> (“ascent”) verses, recited with the pavamāna chants. The Upaniṣad then explains each line itself:</p>
+          <p className="vl-small">The Upaniṣad explains each line itself:</p>
           <figure className="vl-quote">
             <blockquote lang="sa">मृत्युर्वा असत् सदमृतम्</blockquote>
             <div className="vl-term-iast">mṛtyur vā asat, sad amṛtam</div>
@@ -1142,16 +1264,20 @@ const AsatoMa: React.FC = () => {
             <figcaption>Of the third line: “here nothing is hidden”. Its meaning is plain.</figcaption>
           </figure>
         </section>
-        <section className="vl-panel vl-tradition vl-tradition--spanda" aria-label="Māyā and avidyā in later Vedānta">
-          <h3 className="vl-panel-title">🎭 Māyā and avidyā · later Vedānta</h3>
+        <section className="vl-panel vl-tradition vl-tradition--spanda vl-lore" aria-label="Lore Terminal Beta: the philosophy of Māyā in later Vedānta" data-testid="asato-lore-beta">
+          <h3 className="vl-panel-title">🎭 <span className="vl-lore-title">Lore Terminal Beta <i>//</i> The Philosophy of Māyā</span></h3>
           <p>
-            The idea of a “veil of <strong lang="sa">माया māyā</strong>” and of <strong lang="sa">अविद्या avidyā</strong>{' '}
-            (not-knowing) belongs to later Vedānta, especially the Advaita tradition associated with Śaṅkara (c. 8th century
-            CE). These teachers used the words to explain how one reality appears as many names and forms (nāma-rūpa).
+            <b className="vl-mission-tag">ENGINE RULES:</b> In later Vedānta, the changing world is described through{' '}
+            <strong lang="sa">नामरूप Nāma-Rūpa</strong> (name and form) and <strong lang="sa">माया Māyā</strong>. Matter melts,
+            boils and burns, creating the look of destruction. Deploy the Viveka Scanner to override{' '}
+            <strong lang="sa">अविद्या Avidyā</strong> (perceptual blindspots) and track the atoms that persist under every change
+            in the chamber.
           </p>
           <p className="vl-small">
-            <b>A separate layer.</b> The prayer itself does not use these words. This segment’s title borrows the later image
-            and keeps it apart from what BU 1.3.28 says.
+            <b>A separate layer.</b> Māyā as a doctrine, and avidyā (literally “not-knowing”), are developed in later Vedānta,
+            especially the Advaita tradition associated with Śaṅkara (c. 8th century CE). The pair nāma-rūpa is older: the
+            Upaniṣads already use it (e.g. BU 1.4.7). The prayer in BU 1.3.28 uses none of these words; this segment’s title
+            borrows the later image and keeps it apart from what the prayer says.
           </p>
         </section>
       </div>
@@ -1165,7 +1291,7 @@ const AsatoMa: React.FC = () => {
         </ul>
       </section>
 
-      <TermPanel terms={TERMS} />
+      <TermPanel title="Vocabulary Codices // Sanskrit words in this lab" terms={TERMS} />
     </div>
   );
 };

@@ -8,6 +8,9 @@ export interface LabTerm {
   iast: string;
   en: string;
   note?: string;
+  /** Optional game-style codex tag, e.g. "DATA STREAM // Perceptual Matrix". The plain meaning (en) then shows as a small line. */
+  tag?: string;
+  game?: string;
 }
 
 /** Tap a term to hear it with the site's generic Sanskrit pronunciation helper. */
@@ -28,7 +31,9 @@ export const TermPanel: React.FC<{ title?: string; terms: LabTerm[] }> = ({ titl
           >
             <span className="vl-term-dev" lang="sa">{t.dev}</span>
             <span className="vl-term-iast">{t.iast}</span>
-            <span className="vl-term-en">{t.en}</span>
+            {t.tag && <span className="vl-term-tag">{t.tag}</span>}
+            {t.game && <span className="vl-term-game">{t.game}</span>}
+            <span className={t.tag ? 'vl-term-dict' : 'vl-term-en'}>{t.tag ? `${t.iast}: ${t.en}` : t.en}</span>
             {t.note && <span className="vl-term-note">{t.note}</span>}
           </button>
         </li>
