@@ -892,7 +892,7 @@ const Dashboard: React.FC = () => {
                 <img src="/nav/nav-deepakam.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={18} height={18} />
                 CBSE Exam Guide
               </button>
-              <div className="dashboard-nav-sub" role="group" aria-label="Deepakam 7th, Deepakam 8th, and शारदा lessons">
+              <div className="dashboard-nav-sub" role="group" aria-label="Deepakam 7th, Deepakam 8th, and 9th Grade शारदा lessons">
                 <button
                   type="button"
                   className={activeView === 'reader' && lesson.id !== 'varnamala' && !lesson.id.startsWith('grade8_') && !lesson.id.startsWith('grade9_') ? 'active' : ''}
@@ -925,9 +925,9 @@ const Dashboard: React.FC = () => {
                       openDeepakam('grade9_prarthana');
                     }
                   }}
-                  title={canReadAllChapters ? 'शारदा · Class 9 Sanskrit' : 'Sign in to access शारदा Class 9'}
+                  title={canReadAllChapters ? '9th Grade · शारदा · Class 9 Sanskrit' : 'Sign in to access शारदा Class 9'}
                 >
-                  शारदा
+                  9th Grade · शारदा
                 </button>
               </div>
             </div>
