@@ -271,6 +271,7 @@ const Dashboard: React.FC = () => {
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
   const searchShortcut = getSearchShortcut();
   const [bodhiGuideInitialTab, setBodhiGuideInitialTab] = useState<'context' | 'qa' | 'subhashita' | 'phrases'>('context');
+  const [bodhiGuideQuestionId, setBodhiGuideQuestionId] = useState<string | null>(null);
   const {
     currentUser,
     openAuthModal,
@@ -441,6 +442,7 @@ const Dashboard: React.FC = () => {
       if (target.bodhiTab) {
         setBodhiGuideInitialTab(target.bodhiTab);
       }
+      setBodhiGuideQuestionId(target.bodhiQuestionId || null);
       setIsBodhiGuideOpen(true);
       return;
     }
@@ -1291,8 +1293,12 @@ const Dashboard: React.FC = () => {
         onNavigateView={navigateToView}
         onOpenVarnamala={openVarnamala}
         forceOpen={isBodhiGuideOpen}
-        onOpenChange={setIsBodhiGuideOpen}
+        onOpenChange={(open) => {
+          setIsBodhiGuideOpen(open);
+          if (!open) setBodhiGuideQuestionId(null);
+        }}
         initialTab={bodhiGuideInitialTab}
+        initialQuestionId={bodhiGuideQuestionId}
         onSearchResultNavigate={handleSearchResultNavigate}
       />
 

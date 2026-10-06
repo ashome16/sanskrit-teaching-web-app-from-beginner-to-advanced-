@@ -1551,3 +1551,181 @@
     font-size: 0.7rem;
   }
 }
+
+/* ✨ Did you know? — Micro-Anecdotes in Ask Bodhi */
+.bodhi-anecdote-strip {
+  margin: 0.65rem 0 0.6rem;
+  padding: 0.55rem 0.7rem 0.6rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
+  border: 1px dashed #fdba74;
+}
+
+.bodhi-anecdote-strip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.bodhi-anecdote-strip-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #9a3412;
+}
+
+.bodhi-anecdote-random {
+  background: #ffffff;
+  border: 1px solid #fdba74;
+  color: #9a3412;
+  border-radius: 999px;
+  padding: 0.22rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.bodhi-anecdote-random:hover {
+  background: #ffedd5;
+  transform: rotate(-2deg) scale(1.03);
+}
+
+.bodhi-anecdote-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.bodhi-anecdote-chip {
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #7c2d12;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.bodhi-anecdote-chip:hover {
+  border-color: #fb923c;
+  background: #fff7ed;
+}
+
+.bodhi-anecdote-chip.active {
+  background: #9a3412;
+  border-color: #9a3412;
+  color: #ffffff;
+}
+
+.bodhi-anecdote-pop {
+  position: relative;
+  margin: 0 0 0.75rem;
+  padding: 0.85rem 1rem 0.8rem;
+  border-radius: 14px;
+  background: #fffbeb;
+  border: 2px solid #fcd34d;
+  box-shadow: 0 6px 18px rgba(154, 52, 18, 0.12);
+  animation: bodhi-anecdote-pop-in 0.28s ease-out;
+}
+
+@keyframes bodhi-anecdote-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.bodhi-anecdote-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.5rem;
+  border: none;
+  background: transparent;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: #92400e;
+  cursor: pointer;
+}
+
+.bodhi-anecdote-graphic {
+  font-size: 1.9rem;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.bodhi-anecdote-hook {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #b45309;
+  margin: 0 1.2rem 0.3rem 0;
+  line-height: 1.4;
+}
+
+.bodhi-anecdote-title {
+  margin: 0 0 0.3rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.bodhi-anecdote-story {
+  margin: 0 0 0.55rem;
+  font-size: 0.83rem;
+  color: #334155;
+  line-height: 1.55;
+}
+
+.bodhi-anecdote-science {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 10px;
+  padding: 0.5rem 0.65rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: #065f46;
+}
+
+.bodhi-anecdote-science p {
+  margin: 0.2rem 0 0;
+  line-height: 1.5;
+  color: #064e3b;
+}
+
+.bodhi-anecdote-tip {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  color: #92400e;
+  line-height: 1.45;
+}
+
+.bodhi-anecdote-source {
+  margin: 0 0 0.5rem;
+  font-size: 0.72rem;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.bodhi-anecdote-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bodhi-anecdote-pop {
+    animation: none;
+  }
+  .bodhi-anecdote-random:hover {
+    transform: none;
+  }
+}

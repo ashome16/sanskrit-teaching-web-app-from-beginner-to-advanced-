@@ -7,6 +7,8 @@ import {
   BODHI_CONTEXT_TIPS,
   BODHI_QA_LIBRARY,
   BODHI_WORD_SUGGESTIONS,
+  BODHI_ANECDOTES,
+  type BodhiQAItem,
 } from '../data/bodhiData';
 import { SEARCH_INDEX, type SearchItem } from '../data/searchIndex';
 import { matchesSearchQuery, normalizeSearchText } from '../utils/searchNormalizer';
@@ -28,7 +30,12 @@ interface BodhiGuideWidgetProps {
   onOpenChange?: (open: boolean) => void;
   initialTab?: GuideTab;
   onSearchResultNavigate?: (item: SearchItem) => void;
+  /** Bodhi Q&A id from site search; a Micro-Anecdote id opens that story. */
+  initialQuestionId?: string | null;
 }
+
+/** Ask Bodhi library plus the ✨ Did you know? Micro-Anecdotes. */
+const BODHI_QA_WITH_ANECDOTES: BodhiQAItem[] = [...BODHI_QA_LIBRARY, ...BODHI_ANECDOTES];
 
 type GuideTab = 'context' | 'qa' | 'subhashita' | 'phrases';
 
@@ -69,8 +76,11 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
   onOpenChange,
   initialTab,
   onSearchResultNavigate,
+  initialQuestionId,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  // ✨ Did you know? — the Micro-Anecdote currently popped up in Ask Bodhi.
+  const [storyId, setStoryId] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<GuideTab>(initialTab || 'context');
   const [mood, setMood] = useState<BodhiMood>('namaste');
   const [subhashitaIdx, setSubhashitaIdx] = useState(0);
@@ -101,6 +111,15 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
       setActiveTab(initialTab);
     }
   }, [initialTab]);
+
+  // Site search → a Micro-Anecdote: open Ask Bodhi with that story popped up.
+  useEffect(() => {
+    if (forceOpen && initialQuestionId && BODHI_ANECDOTES.some((a) => a.id === initialQuestionId)) {
+      setActiveTab('qa');
+      setSearchQuery('');
+      setStoryId(initialQuestionId);
+    }
+  }, [forceOpen, initialQuestionId]);
 
   const updateIsOpen = (nextOpen: boolean) => {
     setIsOpen(nextOpen);
@@ -186,7 +205,10 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
 
   // Stop Bodhi when the guide closes or the widget unmounts.
   useEffect(() => {
-    if (!isOpen) stopSpeaking();
+    if (!isOpen) {
+      stopSpeaking();
+      setStoryId(null);
+    }
   }, [isOpen]);
   useEffect(() => () => stopSpeaking(), []);
 
@@ -306,7 +328,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
 
   // Filter Q&A with diacritic & phonetic awareness
   const filteredQA = useMemo(() => {
-    let list = BODHI_QA_LIBRARY;
+    let list = BODHI_QA_WITH_ANECDOTES;
     if (selectedCategory !== 'all') {
       list = list.filter((item) => item.category === selectedCategory);
     }
@@ -323,6 +345,116 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
     }
     return list;
   }, [selectedCategory, searchQuery]);
+
+  // "Open this lab / article / quiz" from a Bodhi answer (same landing as site search).
+  const openRelated = (item: BodhiQAItem) => {
+    if (!item.relatedView) return;
+    updateIsOpen(false);
+    if (item.relatedQuizAnchor && onSearchResultNavigate) {
+      onSearchResultNavigate({
+        id: item.id,
+        title: item.shortAnswer,
+        category: 'tools',
+        categoryLabel: 'Assessment · Quiz',
+        badgeEmoji: '🎯',
+        badgeColor: '#b45309',
+        description: item.shortAnswer,
+        keywords: [],
+        target: { view: 'quiz', quizAnchor: item.relatedQuizAnchor },
+      });
+    } else if (item.relatedView === 'science-lab' && onSearchResultNavigate) {
+      onSearchResultNavigate({
+        id: item.id,
+        title: item.question,
+        category: 'tools',
+        categoryLabel: 'Interactive Lab',
+        badgeEmoji: '🔬',
+        badgeColor: '#0f766e',
+        description: item.shortAnswer,
+        keywords: [],
+        target: { view: 'science-lab', labAnchor: item.relatedLabAnchor },
+      });
+    } else if (item.relatedVedicAnchor && onSearchResultNavigate) {
+      onSearchResultNavigate({
+        id: item.id,
+        title: item.question,
+        category: 'maths',
+        categoryLabel: 'Vedic Maths · Article',
+        badgeEmoji: '📖',
+        badgeColor: '#b45309',
+        description: item.shortAnswer,
+        keywords: [],
+        target: { view: 'vedic-maths', vedicAnchor: item.relatedVedicAnchor },
+      });
+    } else if (item.relatedGrammarTopic && onSearchResultNavigate) {
+      onSearchResultNavigate({
+        id: item.id,
+        title: item.question,
+        category: 'grammar',
+        categoryLabel: 'Guide · Grammar',
+        badgeEmoji: '📖',
+        badgeColor: '#b45309',
+        description: item.shortAnswer,
+        keywords: [],
+        target: {
+          view: 'grammar',
+          grammarTopic: item.relatedGrammarTopic,
+        },
+      });
+    } else if (item.relatedGrammarArticleId && onSearchResultNavigate) {
+      onSearchResultNavigate({
+        id: item.id,
+        title: item.question,
+        category: 'grammar',
+        categoryLabel: 'Article · Grammar',
+        badgeEmoji: '📖',
+        badgeColor: '#b45309',
+        description: item.shortAnswer,
+        keywords: [],
+        target: {
+          view: 'grammar',
+          grammarTopic: 'article',
+          grammarArticleId: item.relatedGrammarArticleId,
+        },
+      });
+    } else if (item.relatedView === 'philosophy' && item.id.includes('ujjain')) {
+      if (onSearchResultNavigate) {
+        onSearchResultNavigate({
+          id: 'darshana-essay-ujjain-geodesy',
+          title: 'Madhya-Rekhā: Ujjain, the Sacred Meridian',
+          category: 'maths',
+          categoryLabel: 'Darśana Essay',
+          badgeEmoji: '🧭',
+          badgeColor: '#0284c7',
+          description: 'Ujjain Prime Meridian & Geodesy',
+          keywords: [],
+          target: { view: 'philosophy', philosophyEssay: 'ujjain_geodesy' },
+        });
+      } else if (onNavigateView) {
+        onNavigateView('philosophy');
+      }
+    } else if (onNavigateView) {
+      onNavigateView(item.relatedView);
+    }
+  };
+
+  const relatedLabelFor = (item: BodhiQAItem) =>
+    item.relatedLabel ?? (item.relatedView === 'science-lab' ? '🔬 Open this lab ➔' : item.relatedQuizAnchor ? 'Open this quiz ➔' : item.relatedGrammarTopic ? 'Open this guide ➔' : item.relatedVedicAnchor || item.relatedGrammarArticleId ? 'Open this article ➔' : item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`);
+
+  const currentStory = BODHI_ANECDOTES.find((a) => a.id === storyId) || null;
+
+  const openStory = (id: string) => {
+    stopSpeaking();
+    setStoryId(id);
+    setMood('celebrate');
+    setTimeout(() => setMood('scholar'), 1200);
+  };
+
+  // 🎲 Tell me a story — a random anecdote, never the same one twice in a row.
+  const tellRandomStory = () => {
+    const pool = BODHI_ANECDOTES.filter((a) => a.id !== storyId);
+    openStory(pool[Math.floor(Math.random() * pool.length)].id);
+  };
 
   const handleNextSubhashita = () => {
     stopSpeaking();
@@ -648,6 +780,77 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     </div>
                   )}
 
+                  {/* ✨ Did you know? — Micro-Anecdotes */}
+                  <div className="bodhi-anecdote-strip" data-testid="bodhi-anecdote-strip">
+                    <div className="bodhi-anecdote-strip-head">
+                      <span className="bodhi-anecdote-strip-title">✨ Did you know?</span>
+                      <button type="button" className="bodhi-anecdote-random" onClick={tellRandomStory}>
+                        🎲 Tell me a story
+                      </button>
+                    </div>
+                    <div className="bodhi-anecdote-chips">
+                      {BODHI_ANECDOTES.map((a) => (
+                        <button
+                          key={a.id}
+                          type="button"
+                          className={`bodhi-anecdote-chip ${storyId === a.id ? 'active' : ''}`}
+                          aria-pressed={storyId === a.id}
+                          data-testid={`anecdote-chip-${a.id}`}
+                          onClick={() => (storyId === a.id ? setStoryId(null) : openStory(a.id))}
+                          title={a.shortAnswer}
+                        >
+                          <span aria-hidden="true">{a.emoji}</span> {a.question.split(':')[0]}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {currentStory && (
+                    <article className="bodhi-anecdote-pop" data-testid="bodhi-anecdote-pop" aria-live="polite">
+                      <button
+                        type="button"
+                        className="bodhi-anecdote-close"
+                        onClick={() => setStoryId(null)}
+                        aria-label="Close story"
+                        title="Close story"
+                      >
+                        ×
+                      </button>
+                      <div className="bodhi-anecdote-graphic" aria-hidden="true">{currentStory.emoji}</div>
+                      <div className="bodhi-anecdote-hook">{currentStory.shortAnswer}</div>
+                      <h5 className="bodhi-anecdote-title">{currentStory.question}</h5>
+                      {currentStory.sanskritQuestion && (
+                        <div className="bodhi-qa-sanskrit-q">{currentStory.sanskritQuestion}</div>
+                      )}
+                      <p className="bodhi-anecdote-story">
+                        <FollowAlongText
+                          text={currentStory.detailedAnswer}
+                          lang="en"
+                          activeChunk={chunkFor(currentStory.detailedAnswer)}
+                        />
+                        {renderEnglishSpeakBtn(currentStory.detailedAnswer, 'this story')}
+                      </p>
+                      {currentStory.science && (
+                        <div className="bodhi-anecdote-science">
+                          <strong>🔬 The science bit</strong>
+                          <p>{currentStory.science}</p>
+                        </div>
+                      )}
+                      {currentStory.tip && <p className="bodhi-anecdote-tip">💡 {currentStory.tip}</p>}
+                      {currentStory.source && <p className="bodhi-anecdote-source">📜 {currentStory.source}</p>}
+                      <div className="bodhi-anecdote-actions">
+                        {currentStory.relatedView && (
+                          <button type="button" className="bodhi-guide-btn" onClick={() => openRelated(currentStory)}>
+                            {relatedLabelFor(currentStory)}
+                          </button>
+                        )}
+                        <button type="button" className="bodhi-anecdote-random" onClick={tellRandomStory}>
+                          🎲 Another story
+                        </button>
+                      </div>
+                    </article>
+                  )}
+
                   <div className="bodhi-category-chips">
                     {[
                       { id: 'all', label: 'All Topics' },
@@ -657,6 +860,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                       { id: 'cbse', label: '🎯 CBSE Exams' },
                       { id: 'vedic_math', label: '⚡ Vedic Math' },
                       { id: 'philosophy', label: '🌿 Philosophy' },
+                      { id: 'anecdote', label: '✨ Did you know?' },
                     ].map((cat) => (
                       <button
                         key={cat.id}
@@ -738,12 +942,14 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                           <div className="bodhi-qa-list">
                             {filteredQA.map((item) => (
                               <article key={item.id} className="bodhi-qa-card">
-                                <h5 className="bodhi-qa-question">{item.question}</h5>
+                                <h5 className="bodhi-qa-question">{item.emoji && <span aria-hidden="true">{item.emoji} </span>}{item.question}</h5>
                                 {item.sanskritQuestion && (
                                   <div className="bodhi-qa-sanskrit-q">{item.sanskritQuestion}</div>
                                 )}
                                 <div className="bodhi-qa-short">{item.shortAnswer}</div>
                                 <div className="bodhi-qa-details">{item.detailedAnswer}</div>
+                                {item.science && <div className="bodhi-qa-details"><strong>🔬 The science bit:</strong> {item.science}</div>}
+                                {item.source && <div className="bodhi-anecdote-source">📜 {item.source}</div>}
 
                                 <div className="bodhi-qa-bottom-bar">
                                   {item.audioDevanagari ? (
@@ -770,97 +976,9 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                     <button
                                       type="button"
                                       className="bodhi-guide-btn"
-                                      onClick={() => {
-                                        updateIsOpen(false);
-                                        if (item.relatedQuizAnchor && onSearchResultNavigate) {
-                                          onSearchResultNavigate({
-                                            id: item.id,
-                                            title: item.shortAnswer,
-                                            category: 'tools',
-                                            categoryLabel: 'Assessment · Quiz',
-                                            badgeEmoji: '🎯',
-                                            badgeColor: '#b45309',
-                                            description: item.shortAnswer,
-                                            keywords: [],
-                                            target: { view: 'quiz', quizAnchor: item.relatedQuizAnchor },
-                                          });
-                                        } else if (item.relatedView === 'science-lab' && onSearchResultNavigate) {
-                                          onSearchResultNavigate({
-                                            id: item.id,
-                                            title: item.question,
-                                            category: 'tools',
-                                            categoryLabel: 'Interactive Lab',
-                                            badgeEmoji: '🔬',
-                                            badgeColor: '#0f766e',
-                                            description: item.shortAnswer,
-                                            keywords: [],
-                                            target: { view: 'science-lab', labAnchor: item.relatedLabAnchor },
-                                          });
-                                        } else if (item.relatedVedicAnchor && onSearchResultNavigate) {
-                                          onSearchResultNavigate({
-                                            id: item.id,
-                                            title: item.question,
-                                            category: 'maths',
-                                            categoryLabel: 'Vedic Maths · Article',
-                                            badgeEmoji: '📖',
-                                            badgeColor: '#b45309',
-                                            description: item.shortAnswer,
-                                            keywords: [],
-                                            target: { view: 'vedic-maths', vedicAnchor: item.relatedVedicAnchor },
-                                          });
-                                        } else if (item.relatedGrammarTopic && onSearchResultNavigate) {
-                                          onSearchResultNavigate({
-                                            id: item.id,
-                                            title: item.question,
-                                            category: 'grammar',
-                                            categoryLabel: 'Guide · Grammar',
-                                            badgeEmoji: '📖',
-                                            badgeColor: '#b45309',
-                                            description: item.shortAnswer,
-                                            keywords: [],
-                                            target: {
-                                              view: 'grammar',
-                                              grammarTopic: item.relatedGrammarTopic,
-                                            },
-                                          });
-                                        } else if (item.relatedGrammarArticleId && onSearchResultNavigate) {
-                                          onSearchResultNavigate({
-                                            id: item.id,
-                                            title: item.question,
-                                            category: 'grammar',
-                                            categoryLabel: 'Article · Grammar',
-                                            badgeEmoji: '📖',
-                                            badgeColor: '#b45309',
-                                            description: item.shortAnswer,
-                                            keywords: [],
-                                            target: {
-                                              view: 'grammar',
-                                              grammarTopic: 'article',
-                                              grammarArticleId: item.relatedGrammarArticleId,
-                                            },
-                                          });
-                                        } else if (item.relatedView === 'philosophy' && item.id.includes('ujjain')) {
-                                          if (onSearchResultNavigate) {
-                                            onSearchResultNavigate({
-                                              id: 'darshana-essay-ujjain-geodesy',
-                                              title: 'Madhya-Rekhā: Ujjain, the Sacred Meridian',
-                                              category: 'maths',
-                                              categoryLabel: 'Darśana Essay',
-                                              badgeEmoji: '🧭',
-                                              badgeColor: '#0284c7',
-                                              description: 'Ujjain Prime Meridian & Geodesy',
-                                              keywords: [],
-                                              target: { view: 'philosophy', philosophyEssay: 'ujjain_geodesy' },
-                                            });
-                                          } else if (onNavigateView) {
-                                            onNavigateView('philosophy');
-                                          }
-                                        } else if (onNavigateView) {
-                                          onNavigateView(item.relatedView);
-                                        }
-                                      }}
+                                      onClick={() => openRelated(item)}
                                     >
-                                      {item.relatedView === 'science-lab' ? '🔬 Open this lab ➔' : item.relatedQuizAnchor ? 'Open this quiz ➔' : item.relatedGrammarTopic ? 'Open this guide ➔' : item.relatedVedicAnchor || item.relatedGrammarArticleId ? 'Open this article ➔' : item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`}
+                                      {relatedLabelFor(item)}
                                     </button>
                                   </div>
                                 )}
@@ -893,12 +1011,14 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     <div className="bodhi-qa-list" style={{ marginTop: '0.85rem' }}>
                       {filteredQA.map((item) => (
                         <article key={item.id} className="bodhi-qa-card">
-                          <h5 className="bodhi-qa-question">{item.question}</h5>
+                          <h5 className="bodhi-qa-question">{item.emoji && <span aria-hidden="true">{item.emoji} </span>}{item.question}</h5>
                           {item.sanskritQuestion && (
                             <div className="bodhi-qa-sanskrit-q">{item.sanskritQuestion}</div>
                           )}
                           <div className="bodhi-qa-short">{item.shortAnswer}</div>
                           <div className="bodhi-qa-details">{item.detailedAnswer}</div>
+                          {item.science && <div className="bodhi-qa-details"><strong>🔬 The science bit:</strong> {item.science}</div>}
+                          {item.source && <div className="bodhi-anecdote-source">📜 {item.source}</div>}
 
                           <div className="bodhi-qa-bottom-bar">
                             {item.audioDevanagari ? (

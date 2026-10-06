@@ -38,7 +38,7 @@ export interface BodhiContextTip {
 
 export interface BodhiQAItem {
   id: string;
-  category: 'pronunciation' | 'grammar' | 'cbse' | 'vedic_math' | 'philosophy' | 'engineering';
+  category: 'pronunciation' | 'grammar' | 'cbse' | 'vedic_math' | 'philosophy' | 'engineering' | 'anecdote';
   question: string;
   sanskritQuestion?: string;
   shortAnswer: string;
@@ -54,6 +54,11 @@ export interface BodhiQAItem {
   relatedQuizAnchor?: string;
   /** Opens this Vijñāna Lab segment on /science-lab (same landing as site search). */
   relatedLabAnchor?: string;
+  /** Micro-Anecdotes only: small inline emoji graphic, the science bit, the source line and a custom link label. */
+  emoji?: string;
+  science?: string;
+  source?: string;
+  relatedLabel?: string;
   /** Opens this grammar-shelf guide (same landing as site search). */
   relatedGrammarTopic?:
     | 'home'
@@ -88,6 +93,62 @@ export const BODHI_PROFILE = {
   greetingText: 'नमस्ते। अहं बोधिः — भवतः संस्कृत-सखा। (Namaste. I am Bodhi — your Gurukul Sanskrit friend. Ask me anything.)',
   audioGreeting: 'नमस्ते। अहं बोधिः।',
 };
+
+/**
+ * ✨ Did you know? — Bodhi’s Micro-Anecdotes.
+ * Short, playful stories with a hook, the science bit and a source line.
+ * Merged into the Ask Bodhi library (category 'anecdote') and searchable via site search.
+ */
+export const BODHI_ANECDOTES: BodhiQAItem[] = [
+  {
+    id: 'qa-anecdote-sarpakavu',
+    category: 'anecdote',
+    emoji: '🐍🌳',
+    question: 'Sarpakāvu: the little forests nobody was allowed to cut',
+    sanskritQuestion: 'Sarpakāvu · the sacred serpent groves of Kerala',
+    shortAnswer: '✨ Did you know Kerala families kept little wild forests that no one was allowed to cut?',
+    detailedAnswer:
+      'Picture a house in Kerala with a shady, tangled patch of trees in one corner of the compound. That is a sarpakāvu, a sacred serpent grove (kāvu means grove). Families and temples left these patches untouched for the nāgas, the serpent deities, often with a small shrine of stone snake images where lamps were lit. The custom was simple and strict: no cutting branches, no clearing the undergrowth, and no harming the snakes. 🐍 Level unlocked: Grove Guardian!',
+    science:
+      'Today ecologists study sacred groves like these as small pockets of biodiversity. Because people left them alone for generations, they can shelter rare and native plants, insects, birds, frogs and, yes, snakes. Their shade and thick leaf litter help keep the soil moist and help rainwater soak in, which helps keep nearby ponds and wells recharged. A custom of respect ended up working like a tiny conservation plan.',
+    source: 'Sarpakāvu is a Malayalam word. Sacred groves are found across India; Kerala’s serpent groves are among the best known.',
+    tip: 'Next time you see an old tree that nobody cuts, ask whose home it is: birds, bees, or a whole hidden ecosystem!',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-kerala-school-calculus-and-infinite-series',
+    relatedLabel: '📐 Another Kerala story: the Kerala School of Mathematics ➔',
+  },
+  {
+    id: 'qa-anecdote-valmika',
+    category: 'anecdote',
+    emoji: '🐜💧',
+    question: 'Valmīka: the anthill that hinted at hidden water',
+    sanskritQuestion: 'वल्मीकः (valmīka) · anthill, termite mound',
+    shortAnswer: '✨ Did you know? How did people look for hidden underground water without machines?',
+    detailedAnswer:
+      'Meet the ancient water detective! The Bṛhat Saṃhitā, an encyclopaedic work attributed to Varāhamihira (c. 6th century CE), has a whole chapter on finding groundwater called Dakārgala, on underground water veins (chapter 54 in N. Chidambaram Iyer’s English translation; some Sanskrit editions number it 53). It reads the land like a map of clues: which trees grow there, the colour of the soil, rocks and animals. One clue (54.9): “If there be an ant-hill to the east of the Jambū and near it, there runs a current to the south of the ant-hill at the depth of two men. The water will be very sweet.” A “man” (puruṣa) is a unit of depth, roughly a person’s height. 🔍 Clue found: +10 Detective XP!',
+    science:
+      'Why would an anthill be a clue? Termites need moisture to survive, and some kinds dig tunnels down toward damp soil and build their mounds from that moist earth, so a mound can hint that moisture is near. Modern researchers have tested such traditional signs, with mixed results. So it is a clue, not a guarantee: today groundwater experts confirm with surveys and test drilling.',
+    source: 'Bṛhat Saṃhitā 54.9 (Dakārgala): जम्बूवृक्षस्य प्राग्वल्मीको यदि भवेत्समीपस्थः । तस्माद्दक्षिणपार्श्वे सलिलं पुरुषद्वये स्वादु ॥ Tr. N. Chidambaram Iyer (1884), via wisdomlib.org.',
+    tip: 'Fun fact: the poet Vālmīki’s name is traditionally linked to valmīka, after the legend that an anthill grew over him while he sat in meditation.',
+    audioDevanagari: 'वल्मीकः',
+  },
+  {
+    id: 'qa-anecdote-bhrigu-plants',
+    category: 'anecdote',
+    emoji: '🌿👂',
+    question: 'Plants that sense: Bhṛgu’s answer to Bharadvāja',
+    sanskritQuestion: 'जीवं पश्यामि वृक्षाणाम् (jīvaṃ paśyāmi vṛkṣāṇām) · “I see life in trees”',
+    shortAnswer: '✨ Did you know? Can a plant sense the world? A Mahābhārata sage argued it can!',
+    detailedAnswer:
+      'In a dialogue preserved in the Mahābhārata’s Śānti Parva (the Mokṣadharma section), the sage Bharadvāja throws down a challenge: trees don’t move, don’t hear, don’t see, can’t smell or taste, so how can they be living things made of the five elements? Sage Bhṛgu answers point by point. 🍂 Touch: in heat, leaves, bark, fruit and flowers wilt and dry up. 🌩️ Hearing: the crash of wind, fire and thunder makes fruit and flowers drop. 👀 Sight: a creeper winds its way all around a tree, and a blind thing cannot find its way. 👃 Smell: good and bad odours and incense smoke affect how trees thrive and flower. 💧 Taste: trees drink water through their roots, like sipping through a lotus stalk, and they fall ill and can be cured. They feel pleasure and pain, he says, and grow back when cut. His verdict: “I see life in trees; they are not without awareness.” 🏆 Debate won: +1 Wisdom!',
+    science:
+      'In these texts plants are sthāvara (immobile beings) and yet jīva (living). Modern research agrees plants are far from passive: they sense light, touch and damage, and signal with chemicals and electrical signals. In the early 1900s the Indian scientist Jagadish Chandra Bose built sensitive instruments to measure the electrical responses of plants. Whether plants actually feel anything is still debated, so Bhṛgu’s argument is a brilliant observation, not a lab proof.',
+    source: 'Mahābhārata, Śānti Parva, Bhṛgu–Bharadvāja dialogue: 12.177.10–18 in the Critical Edition; Section CLXXXIV (184) in K. M. Ganguli’s translation; 12.185 in the Gita Press edition.',
+    tip: 'Watch a creeper for a week and mark where its tip points each day. What do you think it is “looking” for?',
+    relatedView: 'science-lab',
+    relatedLabel: '🔬 Open this lab ➔',
+  },
+];
 
 export const BODHI_SUBHASHITAS: Subhashita[] = [
   {
