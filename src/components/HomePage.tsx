@@ -4,6 +4,7 @@ import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
 import BodhiAvatar from './BodhiAvatar';
+import HomeLabBanner from './HomeLabBanner';
 import { getSearchShortcut } from '../utils/platformShortcut';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
@@ -23,7 +24,7 @@ export interface HomePageProps {
   onOpenSearch?: () => void;
   onOpenResources?: () => void;
   onOpenCourse?: () => void;
-  onOpenScienceLab?: () => void;
+  onOpenScienceLab?: (segment?: string) => void;
 }
 
 interface DemoWord {
@@ -804,55 +805,8 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         )}
 
-        {/* Vijñāna Lab card: free science sandboxes with Sanskrit terms */}
-        {onOpenScienceLab && (
-          <div
-            className="home-lab-card"
-            role="button"
-            tabIndex={0}
-            onClick={onOpenScienceLab}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onOpenScienceLab();
-              }
-            }}
-            style={{
-              marginTop: '1rem',
-              background: '#fffdf8',
-              border: '1.5px solid #ccfbf1',
-              borderRadius: '16px',
-              padding: '1.1rem 1.4rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: '1rem',
-              cursor: 'pointer',
-              textAlign: 'left',
-              boxShadow: '0 4px 14px rgba(15, 118, 110, 0.08)',
-            }}
-            data-testid="home-science-lab-card"
-          >
-            <div style={{ flex: 1, minWidth: '260px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem', flexWrap: 'wrap' }}>
-                <span style={{ background: '#ccfbf1', color: '#0f766e', padding: '0.15rem 0.6rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase' }}>
-                  New · Free for everyone
-                </span>
-                <span style={{ fontSize: '1.05rem' }} aria-hidden="true">⚛️ 🌿 🪐 🧵 🪕 🕯️ 🦢</span>
-              </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 900, color: '#134e4a', margin: '0 0 0.3rem', fontFamily: 'Noto Sans Devanagari, serif' }}>
-                Vijñāna Lab · विज्ञान-प्रयोगशाला
-              </h3>
-              <p style={{ margin: 0, fontSize: '0.92rem', color: '#475569', lineHeight: 1.5, maxWidth: '44rem' }}>
-                Boot up the ultimate reality simulator: forge Paramāṇus, balance the Prakṛti Biosphere, master the Jyotiṣa Gravity Sandbox, weave the Loom of Āruṇi, tune the Cosmic Sitār, fire up the Viveka Scanner behind the Veil of Māyā, and sort living beings on the Chaturyoni Spawn Map. Decode the Sanskrit names behind the cosmos.
-              </p>
-            </div>
-            <span style={{ background: '#0f766e', color: '#ffffff', padding: '0.65rem 1.3rem', borderRadius: '10px', fontWeight: 800, fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
-              Open the Lab →
-            </span>
-          </div>
-        )}
+        {/* Vijñāna Lab banner: free science sandboxes with Sanskrit terms */}
+        {onOpenScienceLab && <HomeLabBanner onOpen={onOpenScienceLab} />}
 
         {/* Live Platform Highlights */}
         <div className="home-stats-grid">

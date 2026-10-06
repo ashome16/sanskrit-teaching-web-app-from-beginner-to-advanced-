@@ -1115,7 +1115,7 @@ const Dashboard: React.FC = () => {
           onOpenSearch={() => setIsSearchModalOpen(true)}
           onOpenResources={() => navigateToView('resources')}
           onOpenCourse={() => navigateToView('course')}
-          onOpenScienceLab={() => openScienceLab()}
+          onOpenScienceLab={(segment) => openScienceLab(segment)}
         />
       )}
       {/* FAQ lives at the bottom of the home page (no longer in the top menu). /faq scrolls here. */}
