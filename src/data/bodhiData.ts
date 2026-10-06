@@ -52,6 +52,8 @@ export interface BodhiQAItem {
   relatedGrammarArticleId?: string;
   /** Opens this quiz anchor on /quiz (same landing as site search). */
   relatedQuizAnchor?: string;
+  /** Opens this Vijñāna Lab segment on /science-lab (same landing as site search). */
+  relatedLabAnchor?: string;
   /** Opens this grammar-shelf guide (same landing as site search). */
   relatedGrammarTopic?:
     | 'home'
@@ -401,6 +403,18 @@ export const BODHI_CONTEXT_TIPS: Record<string, BodhiContextTip> = {
       'Keep your picture sentences (चित्र-वर्णनम्) simple: Subject + Object + Verb (लट्-लकार).',
     ],
     bodhiAdvice: 'Exam confidence comes from familiar patterns. Follow the section blueprints step-by-step, and Sanskrit will be your highest-scoring subject!',
+  },
+  'science-lab': {
+    viewId: 'science-lab',
+    title: 'Vijñāna Lab · Science Sandboxes',
+    sanskritTitle: 'विज्ञान-प्रयोगशाला',
+    summary: 'Four hands-on sandboxes: build paramāṇus, balance the doṣas, run a real-gravity orbit through the 27 nakṣatras, and play the Loom of Āruṇi.',
+    bulletPoints: [
+      'Tap any Sanskrit word in a term panel to hear it.',
+      'Each sandbox has quick challenges with instant feedback: try them after you play.',
+      'Old texts and modern science ask different questions. Look for the labels “traditionally”, “attributed to” and “modern comparison (for fun)”.',
+    ],
+    bodhiAdvice: 'Play first, then name what you saw in Sanskrit. A word you have touched and moved stays with you longer!',
   },
   faq: {
     viewId: 'faq',
@@ -1713,6 +1727,65 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     audioDevanagari: 'व्याकरण-पाठ्यक्रमः वर्णाः विभक्तयः लकाराः वाक्य-रचना',
     tip: 'Click on Lesson 1: Introduction to Devanāgarī & Vowels under the Vyākaraṇa tab to start your journey!',
     relatedView: 'grammar',
+  },
+  {
+    id: 'qa-lab-vijnana',
+    category: 'engineering',
+    question: 'What is the Vijñāna Lab (विज्ञान-प्रयोगशाला)?',
+    sanskritQuestion: 'विज्ञान-प्रयोगशाला का?',
+    shortAnswer: 'A free set of four science sandboxes with Sanskrit terms beside them, at /science-lab.',
+    detailedAnswer: 'Vijñāna Lab has four interactive sandboxes: the Vaiśeṣika Paramāṇu Builder (#paramanu), Prakṛti Balance (#prakriti), the Jyotiṣa Orbit Sandbox (#jyotisha) and the Sṛṣṭi · Sthiti · Laya wave lab (#srishti-sthiti-laya). Each has a core idea, the sandbox, a Sanskrit term panel you can tap to hear, and quick challenges. It is open to guests.',
+    audioDevanagari: 'विज्ञान-प्रयोगशाला',
+    tip: 'Open it from the home page card or the साधनानि (tools) page, or search “science lab”.',
+    relatedView: 'science-lab',
+  },
+  {
+    id: 'qa-lab-paramanu',
+    category: 'philosophy',
+    question: 'What is a paramāṇu, and is it the same as an atom?',
+    sanskritQuestion: 'परमाणुः कः?',
+    shortAnswer: 'In the Vaiśeṣika Sūtra, attributed to Kaṇāda, a paramāṇu is an indivisible, imperceptible particle. It is an ancient philosophical idea, not the same as the modern atom.',
+    detailedAnswer: 'In the classical Nyāya-Vaiśeṣika account, two paramāṇus join into a dvyaṇuka, and three dvyaṇukas join into a tryaṇuka (also called trasareṇu), the first perceptible size, often compared to a mote of dust in a sunbeam. Paramāṇus come in four kinds: pṛthivī, ap, tejas and vāyu. Ākāśa is one of the five mahābhūtas but is not atomic: it is one and all-pervading. It is a fascinating early way of thinking about tiny building blocks, not modern atomic theory.',
+    audioDevanagari: 'परमाणु द्व्यणुक त्र्यणुक',
+    tip: 'Try the Paramāṇu Builder in the Vijñāna Lab and join two paramāṇus yourself.',
+    relatedView: 'science-lab',
+    relatedLabAnchor: 'paramanu',
+  },
+  {
+    id: 'qa-lab-prakriti',
+    category: 'philosophy',
+    question: 'What are vāta, pitta and kapha, and how does Prakṛti Balance use them?',
+    sanskritQuestion: 'वात-पित्त-कफाः के?',
+    shortAnswer: 'They are the three doṣas of Āyurveda: vāta (vāyu + ākāśa), pitta (tejas + ap) and kapha (pṛthivī + ap). The game asks you to bring all three into sama (balance).',
+    detailedAnswer: 'Vāta is described as dry, cold, light and mobile; pitta as hot and sharp; kapha as heavy, cold, moist and stable. In Prakṛti Balance you change season, heat, cold, dryness, moisture and activity and watch the three gauges move. It also has a bhūta cell map, clearly marked as a teaching analogy. It is a traditional way of describing balance and a learning game, not medical advice.',
+    audioDevanagari: 'वात पित्त कफ',
+    tip: 'Open Prakṛti Balance and try the “damp, rainy, lazy day” scenario.',
+    relatedView: 'science-lab',
+    relatedLabAnchor: 'prakriti',
+  },
+  {
+    id: 'qa-lab-jyotisha',
+    category: 'philosophy',
+    question: 'How many nakṣatras does the Moon pass through in one orbit?',
+    sanskritQuestion: 'चन्द्रः कति नक्षत्राणि गच्छति?',
+    shortAnswer: 'All 27: Candra goes round the starry sky in about 27.3 days (a sidereal month), so roughly one nakṣatra per day.',
+    detailedAnswer: 'The 27 nakṣatras run from Aśvinī to Revatī. In the Jyotiṣa Orbit Sandbox, Sūrya, Pṛthivī and Candra move under real Newtonian gravity. You can change masses and Pṛthivī’s starting speed: too slow and it falls in, faster than about √2 times circular speed and it escapes. The panel also lists the graha names; Rāhu and Ketu are the lunar nodes, points rather than bodies.',
+    audioDevanagari: 'नक्षत्र चन्द्र सूर्य पृथिवी',
+    tip: 'Run the orbit sandbox and watch the “Nakṣatras crossed” counter.',
+    relatedView: 'science-lab',
+    relatedLabAnchor: 'jyotisha',
+  },
+  {
+    id: 'qa-lab-srishti',
+    category: 'philosophy',
+    question: 'What is the Sṛṣṭi · Sthiti · Laya wave lab (the Loom of Āruṇi)?',
+    sanskritQuestion: 'सृष्टि-स्थिति-लयाः के?',
+    shortAnswer: 'A four-step quest: gather a scattered cloud (sṛṣṭi), hold it steady (sthiti), then let it dissolve (laya), with Uddālaka Āruṇi’s examples from the Chāndogya Upaniṣad.',
+    detailedAnswer: 'Sṛṣṭi–sthiti–laya is a widely used traditional cycle of emergence, sustenance and absorption. In Chāndogya Upaniṣad chapter 6, Uddālaka Āruṇi teaches that sat (being) alone was in the beginning, and uses clay, gold and iron (one substance, many forms) and salt dissolved in water (present though unseen). He asks, “katham asataḥ saj jāyeta?” (how could being come from non-being?), so in the game particles never appear from nothing. The word spanda (vibration) comes from the later Kashmir Śaiva Spanda tradition, a separate tradition shown side by side. Any link to entropy is labelled a modern comparison for fun, not what the texts say.',
+    audioDevanagari: 'सृष्टि स्थिति लय',
+    tip: 'Tune Spandana near 3 Hz and raise Prāṇa to make the particles gather.',
+    relatedView: 'science-lab',
+    relatedLabAnchor: 'srishti-sthiti-laya',
   },
 ];
 

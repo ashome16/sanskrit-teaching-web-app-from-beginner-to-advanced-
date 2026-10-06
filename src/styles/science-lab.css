@@ -1,0 +1,362 @@
+/* Vijñāna Lab · विज्ञान-प्रयोगशाला: pale, playful cards in the light-figures palette. */
+.vl-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+  color: #334155;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Devanagari', sans-serif;
+}
+.vl-page [lang='sa'] { font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', serif; }
+.vl-hero {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  background: #fffdf8;
+  border: 1px solid #e7efe3;
+  border-radius: 18px;
+  padding: 1.25rem 1.5rem;
+}
+.vl-hero-text { flex: 1 1 520px; min-width: 0; }
+.vl-hero-art { flex: 0 0 200px; }
+.vl-hero-art svg { width: 100%; height: auto; display: block; }
+.vl-kicker { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #0f766e; }
+.vl-title { margin: 0.25rem 0 0.4rem; font-size: clamp(1.45rem, 3.2vw, 2.1rem); font-weight: 900; color: #1e293b; line-height: 1.2; }
+.vl-lead { margin: 0 0 0.75rem; font-size: 0.98rem; line-height: 1.55; color: #475569; max-width: 46rem; }
+
+.vl-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1.1rem 0 1.4rem;
+}
+.vl-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-decoration: none;
+  color: #334155;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 0.9rem 0.95rem 0.8rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.vl-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08); }
+.vl-card.is-active { box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1); }
+.vl-card-icon { font-size: 1.6rem; line-height: 1; }
+.vl-card-subject { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+.vl-card-title { font-weight: 800; font-size: 1rem; color: #1e293b; }
+.vl-card-dev { font-size: 0.95rem; color: #475569; }
+.vl-card-blurb { font-size: 0.84rem; line-height: 1.4; color: #475569; flex: 1; }
+.vl-card-go { font-size: 0.82rem; font-weight: 800; margin-top: 0.3rem; }
+
+.vl-segment { scroll-margin-top: 90px; }
+.vl-seg-title { font-size: clamp(1.2rem, 2.6vw, 1.55rem); font-weight: 900; margin: 0.2rem 0 0.8rem; }
+.vl-seg-dev { font-weight: 600; color: #64748b; font-size: 0.9em; }
+.vl-loading { padding: 3rem 1rem; text-align: center; color: #64748b; font-weight: 700; }
+
+.vl-sim { display: flex; flex-direction: column; gap: 0.9rem; }
+.vl-core {
+  background: #f0fdfa;
+  border: 1px solid #ccfbf1;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+.vl-core-tag { font-size: 0.75rem; font-weight: 800; color: #0f766e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+.vl-core-note { margin-top: 0.5rem; font-size: 0.88rem; color: #475569; background: #fffdf8; border-radius: 10px; padding: 0.45rem 0.65rem; }
+.vl-banner {
+  background: #fefce8;
+  border: 1px solid #fde68a;
+  color: #713f12;
+  border-radius: 12px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.92rem;
+}
+.vl-note, .vl-msg {
+  background: #fffdf8;
+  border: 1px solid #e7efe3;
+  border-radius: 12px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.vl-msg { border-left: 4px solid #14b8a6; min-height: 1.5em; }
+.vl-msg.is-alert { border-left-color: #f97316; background: #fff7ed; }
+
+.vl-stage-wrap { width: 100%; }
+.vl-stage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid #e7efe3;
+  background: #fffdf8;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.vl-stage--orbit { aspect-ratio: 1 / 1; max-width: 640px; margin: 0 auto; }
+.vl-stage--paramanu { max-width: 860px; margin: 0 auto; }
+.vl-stage--loom { aspect-ratio: 2 / 1; }
+.vl-svg-label { font-size: 12px; font-weight: 700; fill: #334155; font-family: system-ui, sans-serif; }
+.vl-svg-small { font-size: 10px; font-weight: 600; fill: #64748b; font-family: system-ui, sans-serif; }
+.vl-svg-dev { font-size: 14px; font-weight: 700; fill: #334155; font-family: 'Noto Sans Devanagari', serif; }
+.vl-item, .vl-tray-well { touch-action: none; }
+
+.vl-readouts { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.vl-readout {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.86rem;
+}
+.vl-readout b { color: #0f766e; }
+
+.vl-btn-row { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center; }
+.vl-btn {
+  background: #0f766e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 0.95rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-height: 40px;
+}
+.vl-btn:hover { filter: brightness(1.05); }
+.vl-btn--ghost { background: #fff; color: #0f766e; border: 1.5px solid #99f6e4; }
+.vl-btn--gold { background: #ca8a04; }
+.vl-btn--red { background: #dc2626; }
+.vl-chip {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  min-height: 36px;
+}
+.vl-chip.is-on { background: #ccfbf1; border-color: #14b8a6; color: #0f766e; }
+.vl-check { display: flex; gap: 0.4rem; align-items: center; font-size: 0.88rem; font-weight: 600; }
+
+.vl-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: #fffdf8;
+  border: 1px solid #e7efe3;
+  border-radius: 14px;
+  padding: 0.85rem;
+}
+.vl-slider { display: grid; grid-template-columns: 1fr; gap: 0.2rem; font-size: 0.86rem; }
+.vl-slider-label { font-weight: 700; color: #334155; }
+.vl-slider input[type='range'] { width: 100%; accent-color: #0f766e; height: 28px; }
+.vl-slider select { padding: 0.4rem; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 0.9rem; background: #fff; }
+.vl-slider-val { font-size: 0.8rem; color: #64748b; }
+.vl-res { display: block; height: 6px; background: #f1f5f9; border-radius: 999px; overflow: hidden; }
+.vl-res span { display: block; height: 100%; background: #22c55e; border-radius: 999px; transition: width 0.15s; }
+.vl-small { font-size: 0.8rem; color: #64748b; line-height: 1.45; margin: 0; }
+.vl-center { text-align: center; margin-top: 0.35rem; }
+
+.vl-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; align-items: start; }
+.vl-panel {
+  background: #fffdf8;
+  border: 1px solid #e7efe3;
+  border-radius: 14px;
+  padding: 0.85rem 0.95rem;
+  margin-bottom: 0.9rem;
+}
+.vl-grid-2 > .vl-panel { margin-bottom: 0; }
+.vl-panel-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+.vl-panel-hint { margin-left: auto; font-size: 0.72rem; font-weight: 700; color: #94a3b8; }
+.vl-score { margin-left: auto; font-size: 0.78rem; font-weight: 800; color: #15803d; background: #dcfce7; border-radius: 999px; padding: 0.1rem 0.55rem; }
+
+.vl-term-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.45rem; }
+.vl-term {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.45rem 0.6rem;
+  cursor: pointer;
+  color: #334155;
+}
+.vl-term:hover { border-color: #5eead4; background: #f0fdfa; }
+.vl-term-dev { font-size: 1.08rem; font-weight: 700; color: #1e293b; font-family: 'Noto Sans Devanagari', serif; }
+.vl-term-iast { font-size: 0.84rem; font-style: italic; color: #0f766e; }
+.vl-term-en { font-size: 0.82rem; color: #475569; }
+.vl-term-note { font-size: 0.74rem; color: #94a3b8; }
+
+.vl-ch-list { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+.vl-ch-q { margin: 0 0 0.35rem; font-weight: 700; font-size: 0.9rem; }
+.vl-ch-opts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.vl-ch-opt {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.84rem;
+  cursor: pointer;
+  color: #334155;
+  min-height: 34px;
+}
+.vl-ch-opt:hover { border-color: #94a3b8; }
+.vl-ch-opt.is-right { background: #dcfce7; border-color: #22c55e; color: #166534; font-weight: 700; }
+.vl-ch-opt.is-wrong { background: #fee2e2; border-color: #f87171; color: #991b1b; }
+.vl-ch-feedback { margin: 0.35rem 0 0; font-size: 0.82rem; }
+.vl-ch-feedback.is-right { color: #166534; }
+.vl-ch-feedback.is-wrong { color: #991b1b; }
+
+.vl-sort-cards, .vl-sort-bins { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem; }
+.vl-sort-card {
+  background: #fff;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #334155;
+}
+.vl-sort-card.is-selected { border-style: solid; border-color: #0f766e; background: #ccfbf1; }
+.vl-sort-card.is-done { border-style: solid; border-color: #86efac; background: #f0fdf4; color: #166534; cursor: default; }
+.vl-sort-bin {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.45rem 0.8rem;
+  font-weight: 800;
+  font-size: 0.86rem;
+  cursor: pointer;
+  color: #334155;
+}
+.vl-sort-bin:hover { background: #f0fdfa; border-color: #5eead4; }
+.vl-sort-msg { margin: 0; font-size: 0.84rem; color: #475569; }
+
+.vl-scenarios { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.vl-prakriti-grid { display: grid; grid-template-columns: minmax(240px, 320px) minmax(0, 1fr); gap: 0.9rem; align-items: start; }
+.vl-sama {
+  text-align: center;
+  font-weight: 800;
+  border-radius: 12px;
+  padding: 0.55rem;
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+.vl-sama.is-ok { background: #dcfce7; color: #166534; border-color: #86efac; }
+.vl-dosha-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; }
+.vl-dosha-card { background: #fffdf8; border: 1.5px solid; border-radius: 12px; padding: 0.55rem 0.7rem; }
+.vl-dosha-name { font-weight: 800; font-size: 1rem; }
+.vl-missions { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; }
+.vl-missions li.is-ok { color: #166534; font-weight: 700; }
+.vl-analogy-tag {
+  display: inline-block;
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #7c2d12;
+  background: #ffedd5;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+.vl-cell { width: 100%; height: auto; display: block; margin-bottom: 0.5rem; }
+.vl-cell-part { cursor: pointer; }
+.vl-cell-part:hover { filter: drop-shadow(0 0 4px #5eead4); }
+.vl-cell-part.is-selected { filter: drop-shadow(0 0 6px #14b8a6); }
+.vl-cell-part.is-done { opacity: 0.85; }
+
+.vl-orbit-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, 1fr); gap: 0.9rem; align-items: start; }
+.vl-readout-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  font-size: 0.86rem;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+}
+.vl-readout-grid b { color: #0f766e; text-align: right; }
+.vl-naks { font-family: 'Noto Sans Devanagari', system-ui, sans-serif; }
+.vl-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-bottom: 0.5rem; }
+.vl-table th, .vl-table td { text-align: left; padding: 0.3rem 0.4rem; border-bottom: 1px solid #f1f5f9; }
+.vl-table th { font-size: 0.75rem; color: #64748b; text-transform: uppercase; }
+.vl-details summary { cursor: pointer; font-weight: 700; font-size: 0.88rem; color: #4338ca; margin-top: 0.4rem; }
+.vl-naks-list { columns: 2; font-size: 0.84rem; margin: 0.4rem 0 0; padding-left: 1.4rem; }
+
+.vl-quest-head { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; justify-content: space-between; }
+.vl-quest-title { margin: 0; font-size: 1.1rem; font-weight: 900; color: #1e293b; }
+.vl-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.45rem; }
+.vl-steps li {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #64748b;
+}
+.vl-steps li.is-now { border-color: #14b8a6; background: #f0fdfa; color: #0f766e; }
+.vl-steps li.is-done { border-color: #86efac; background: #f0fdf4; color: #166534; }
+.vl-step-n {
+  display: inline-flex;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid currentColor;
+  font-size: 0.75rem;
+  margin-right: 0.2rem;
+}
+.vl-loom-controls { display: flex; flex-direction: column; gap: 0.6rem; background: #fffdf8; border: 1px solid #e7efe3; border-radius: 14px; padding: 0.8rem; }
+.vl-loom-sliders { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; }
+.vl-tradition p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.5rem; }
+.vl-tradition--spanda { background: #faf5ff; border-color: #e9d5ff; }
+.vl-quote { margin: 0 0 0.7rem; padding: 0.5rem 0.7rem; background: #fff; border-left: 3px solid #ca8a04; border-radius: 8px; }
+.vl-quote blockquote { margin: 0; font-size: 1.05rem; font-weight: 700; color: #1e293b; font-family: 'Noto Sans Devanagari', serif; }
+.vl-quote figcaption { font-size: 0.84rem; color: #475569; margin-top: 0.15rem; }
+.vl-list { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.88rem; line-height: 1.5; }
+.vl-modern { background: #eff6ff; border-color: #bfdbfe; }
+.vl-footnote { margin-top: 1.5rem; font-size: 0.8rem; color: #94a3b8; text-align: center; }
+
+@media (max-width: 960px) {
+  .vl-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vl-orbit-grid, .vl-prakriti-grid { grid-template-columns: 1fr; }
+  .vl-loom-sliders { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .vl-page { padding: 0.75rem 0.6rem 2.5rem; }
+  .vl-hero { padding: 1rem; }
+  .vl-hero-art { display: none; }
+  .vl-grid-2 { grid-template-columns: 1fr; }
+  .vl-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vl-loom-sliders { grid-template-columns: 1fr; }
+  .vl-dosha-cards { grid-template-columns: 1fr; }
+  .vl-card { padding: 0.75rem; }
+  .vl-card-blurb { display: none; }
+  .vl-stage--paramanu .vl-svg-small { font-size: 13px; }
+  .vl-stage--paramanu .vl-svg-label { font-size: 16px; }
+  .vl-stage--paramanu .vl-svg-dev { font-size: 18px; }
+}

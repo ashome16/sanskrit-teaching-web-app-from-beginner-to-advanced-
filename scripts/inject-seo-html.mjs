@@ -30,6 +30,7 @@ const PATH_BY_VIEW = {
   resources: '/resources',
   philosophy: '/philosophy',
   faq: '/faq',
+  'science-lab': '/science-lab',
 };
 
 const REQUIRED_PATHS = [
@@ -47,6 +48,7 @@ const REQUIRED_PATHS = [
   '/resources',
   '/philosophy',
   '/faq',
+  '/science-lab',
 ];
 
 function extractObjectLiteral(source, exportName) {

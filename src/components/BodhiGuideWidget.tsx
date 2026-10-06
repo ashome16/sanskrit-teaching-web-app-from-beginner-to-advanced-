@@ -784,6 +784,18 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                             keywords: [],
                                             target: { view: 'quiz', quizAnchor: item.relatedQuizAnchor },
                                           });
+                                        } else if (item.relatedView === 'science-lab' && onSearchResultNavigate) {
+                                          onSearchResultNavigate({
+                                            id: item.id,
+                                            title: item.question,
+                                            category: 'tools',
+                                            categoryLabel: 'Interactive Lab',
+                                            badgeEmoji: '🔬',
+                                            badgeColor: '#0f766e',
+                                            description: item.shortAnswer,
+                                            keywords: [],
+                                            target: { view: 'science-lab', labAnchor: item.relatedLabAnchor },
+                                          });
                                         } else if (item.relatedVedicAnchor && onSearchResultNavigate) {
                                           onSearchResultNavigate({
                                             id: item.id,
@@ -848,7 +860,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                         }
                                       }}
                                     >
-                                      {item.relatedQuizAnchor ? 'Open this quiz ➔' : item.relatedGrammarTopic ? 'Open this guide ➔' : item.relatedVedicAnchor || item.relatedGrammarArticleId ? 'Open this article ➔' : item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`}
+                                      {item.relatedView === 'science-lab' ? '🔬 Open this lab ➔' : item.relatedQuizAnchor ? 'Open this quiz ➔' : item.relatedGrammarTopic ? 'Open this guide ➔' : item.relatedVedicAnchor || item.relatedGrammarArticleId ? 'Open this article ➔' : item.id.includes('ujjain') ? '🧭 Open Ujjain Studio & Article ➔' : `Explore in ${item.relatedView} ➔`}
                                     </button>
                                   </div>
                                 )}

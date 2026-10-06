@@ -23,6 +23,7 @@ export interface FreeResourcesPageProps {
   onOpenRegister?: () => void;
   onOpenQuiz?: () => void;
   onOpenWorksheets?: () => void;
+  onOpenScienceLab?: () => void;
 }
 
 interface ResourceLink {
@@ -388,6 +389,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
   onOpenRegister,
   onOpenQuiz,
   onOpenWorksheets,
+  onOpenScienceLab,
 }) => {
   const [activeTab, setActiveTab] = useState<MainTab>('feed');
   const [selectedCategory, setSelectedCategory] = useState<ResourceCategory>('all');
@@ -626,6 +628,38 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
             Welcome to the <strong>Gurukul Live Feed &amp; Resources Hub</strong>! Whether preparing for CBSE Class 7/8 exams, joining the <em>National Sanskrit Olympiad 2026</em>, or exploring classical dictionaries, sync upcoming dates directly to your calendar or download 1-click printable revision sheets below.
           </p>
         </BodhiTipCallout>
+
+        {/* Vijñāna Lab: interactive science tools with Sanskrit terms */}
+        {onOpenScienceLab && (
+          <button
+            type="button"
+            onClick={onOpenScienceLab}
+            data-testid="resources-science-lab-card"
+            style={{
+              display: 'flex',
+              width: '100%',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '0.75rem',
+              margin: '1.25rem 0 0',
+              padding: '0.95rem 1.2rem',
+              background: '#f0fdfa',
+              border: '1.5px solid #99f6e4',
+              borderRadius: '14px',
+              cursor: 'pointer',
+              textAlign: 'left',
+              color: '#134e4a',
+            }}
+          >
+            <span style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem', flex: 1, minWidth: '240px' }}>
+              <span style={{ fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', color: '#0f766e' }}>Interactive tool · Free</span>
+              <span style={{ fontSize: '1.08rem', fontWeight: 900 }}>🔬 Vijñāna Lab · विज्ञान-प्रयोगशाला</span>
+              <span style={{ fontSize: '0.88rem', color: '#475569' }}>Paramāṇu Builder · Prakṛti Balance · Jyotiṣa Orbit Sandbox · Sṛṣṭi-Sthiti-Laya wave lab</span>
+            </span>
+            <span style={{ fontWeight: 800, color: '#0f766e', whiteSpace: 'nowrap' }}>Open the Lab →</span>
+          </button>
+        )}
 
         {/* Main Tab Segment Switcher */}
         <div

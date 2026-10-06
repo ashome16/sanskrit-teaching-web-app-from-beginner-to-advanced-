@@ -29,6 +29,7 @@ const QuizSection = lazy(() => import('./QuizSection'));
 const WorksheetSection = lazy(() => import('./WorksheetSection'));
 const PaninianStudio = lazy(() => import('./PaninianStudio'));
 const SanskritThinkingCourse = lazy(() => import('./SanskritThinkingCourse'));
+const ScienceLab = lazy(() => import('./scienceLab/ScienceLab'));
 
 const ViewLoader = () => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '5rem 1rem', minHeight: '60vh', color: '#273b35' }}>
@@ -68,7 +69,8 @@ type DashboardView =
   | 'cbse-guide'
   | 'resources'
   | 'dhatupatha'
-  | 'course';
+  | 'course'
+  | 'science-lab';
 
 const PHILOSOPHY_PATHS = new Set([
   '/philosophy',
@@ -148,6 +150,10 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     title: 'Frequently Asked Questions & Help | EdNet Learn Gurukul',
     desc: 'Find answers about subscriptions, UPI payments, NCERT curriculum coverage, interactive puzzles, and learning Sanskrit online.',
   },
+  'science-lab': {
+    title: 'Vijñāna Lab · विज्ञान-प्रयोगशाला: Science Sandboxes with Sanskrit | EdNet Learn',
+    desc: 'Free interactive science sandboxes with Sanskrit terms: build Vaiśeṣika paramāṇus, balance vāta-pitta-kapha, run a real-gravity orbit through the 27 nakṣatras, and play the Sṛṣṭi-Sthiti-Laya wave lab.',
+  },
   dhatupatha: {
     title: 'Dhātupāṭha & Pāṇinian Verb Engine: 5 Lakāras & Kṛt Pratyayas | EdNet Learn',
     desc: 'Explore the classical Pāṇinian Dhātupāṭha library with 5 CBSE Lakāra conjugations (लट्, लृट्, लङ्, लोट्, विधिलिङ्), Kṛt participles, reverse word deconstructor, and pratyaya quiz.',
@@ -175,6 +181,7 @@ const pathToView = (pathname: string): DashboardView | null => {
   if (clean === '/board' || clean === '/jodo' || clean === '/puzzles') return 'board';
   if (clean === '/reader' || clean === '/varnamala' || clean === '/lessons' || clean === '/barakhadi') return 'reader';
   if (clean === '/faq' || clean === '/help') return 'faq';
+  if (clean === '/science-lab' || clean === '/vijnana-lab') return 'science-lab';
   return null;
 };
 
@@ -191,6 +198,7 @@ const viewToPath = (view: DashboardView): string => {
   if (view === 'board') return '/board';
   if (view === 'reader') return '/reader';
   if (view === 'faq') return '/faq';
+  if (view === 'science-lab') return '/science-lab';
   return '/';
 };
 
@@ -207,7 +215,8 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'philosophy' ||
   saved === 'cbse-guide' ||
   saved === 'resources' ||
-  saved === 'dhatupatha';
+  saved === 'dhatupatha' ||
+  saved === 'science-lab';
 
 
 /** Strip punctuation / digits so only the Devanagari token remains for analysis. */
@@ -308,7 +317,7 @@ const Dashboard: React.FC = () => {
       return targetView !== 'home';
     }
     // smart_freemium mode (default & recommended):
-    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide' || targetView === 'resources' || targetView === 'dhatupatha') return false;
+    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide' || targetView === 'resources' || targetView === 'dhatupatha' || targetView === 'science-lab') return false;
     if (targetView === 'reader') {
       const lessonToCheck = targetLessonId || lessons[lessonIndex]?.id;
       // Varṇamālā and Chapter 1 (gsde101) are free for guests!
@@ -367,6 +376,13 @@ const Dashboard: React.FC = () => {
     };
   }, [activeView, faqScrollKey]);
 
+  // Deep link into a Vijñāna Lab segment (#paramanu, #prakriti, #jyotisha, #srishti-sthiti-laya) + remount key.
+  const [labTarget, setLabTarget] = useState<{ segment: string | null; key: number }>({ segment: null, key: 0 });
+  const openScienceLab = (segment?: string) => {
+    setLabTarget((prev) => ({ segment: segment || null, key: prev.key + 1 }));
+    navigateToView('science-lab');
+  };
+
   // Deep link into a Course Addendum unit (e.g. Mantras & Ślokas) + remount key.
   const [courseAddendumTarget, setCourseAddendumTarget] = useState<{ id: string; key: number } | null>(null);
 
@@ -381,7 +397,7 @@ const Dashboard: React.FC = () => {
       setFaqScrollKey((k) => k + 1);
       return;
     }
-    if (view === 'home' || view === 'philosophy' || view === 'cbse-guide' || view === 'resources') {
+    if (view === 'home' || view === 'philosophy' || view === 'cbse-guide' || view === 'resources' || view === 'science-lab') {
       setActiveView(view);
       return;
     }
@@ -479,6 +495,11 @@ const Dashboard: React.FC = () => {
     }
 
 
+    if (target.view === 'science-lab') {
+      openScienceLab(target.labAnchor);
+      return;
+    }
+
     if (target.view === 'philosophy') {
       if (target.philosophyEssay) {
         setPhilosophyEssay(target.philosophyEssay);
@@ -569,7 +590,8 @@ const Dashboard: React.FC = () => {
         target === 'faq' ||
         target === 'philosophy' ||
         target === 'cbse-guide' ||
-        target === 'resources'
+        target === 'resources' ||
+        target === 'science-lab'
       ) {
         if (target === 'grammar') {
           setGrammarResetKey((k) => k + 1);
@@ -582,10 +604,10 @@ const Dashboard: React.FC = () => {
   // Guard against stale localStorage pointing to gated content for guest visitors
   useEffect(() => {
     if (!currentUser) {
-      if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources') {
+      if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources' && activeView !== 'science-lab') {
         setActiveView('home');
       } else if (accessMode === 'smart_freemium') {
-        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources') {
+        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources' && activeView !== 'science-lab') {
           setActiveView('home');
         } else if (activeView === 'reader') {
           const currId = lessons[lessonIndex]?.id;
@@ -1091,6 +1113,7 @@ const Dashboard: React.FC = () => {
           onOpenSearch={() => setIsSearchModalOpen(true)}
           onOpenResources={() => navigateToView('resources')}
           onOpenCourse={() => navigateToView('course')}
+          onOpenScienceLab={() => openScienceLab()}
         />
       )}
       {/* FAQ lives at the bottom of the home page (no longer in the top menu). /faq scrolls here. */}
@@ -1126,9 +1149,18 @@ const Dashboard: React.FC = () => {
           onOpenRegister={() => openAuthModal('register')}
           onOpenQuiz={() => navigateToView('quiz')}
           onOpenWorksheets={() => handleOpenWorksheets('all')}
+          onOpenScienceLab={() => openScienceLab()}
         />
       )}
       <Suspense fallback={<ViewLoader />}>
+        {activeView === 'science-lab' && (
+          <ScienceLab
+            key={`lab-${labTarget.key}`}
+            initialSegment={labTarget.segment}
+            onGoHome={() => navigateToView('home')}
+            onOpenResources={() => navigateToView('resources')}
+          />
+        )}
         {activeView === 'board' && (
           <Board
             onNavigateToHome={() => setActiveView('home')}
@@ -1245,6 +1277,7 @@ const Dashboard: React.FC = () => {
           onOpenRoadmap={() => handleOpenGrammar('article', 'beginners-roadmap')}
           onOpenBodhi={() => setIsBodhiGuideOpen(true)}
           onOpenCourse={() => navigateToView('course')}
+          onOpenScienceLab={() => openScienceLab()}
         />
       )}
 

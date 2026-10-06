@@ -23,6 +23,7 @@ export interface HomePageProps {
   onOpenSearch?: () => void;
   onOpenResources?: () => void;
   onOpenCourse?: () => void;
+  onOpenScienceLab?: () => void;
 }
 
 interface DemoWord {
@@ -514,6 +515,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenSearch,
   onOpenResources,
   onOpenCourse,
+  onOpenScienceLab,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -799,6 +801,56 @@ const HomePage: React.FC<HomePageProps> = ({
             >
               Start Course →
             </button>
+          </div>
+        )}
+
+        {/* Vijñāna Lab card: free science sandboxes with Sanskrit terms */}
+        {onOpenScienceLab && (
+          <div
+            className="home-lab-card"
+            role="button"
+            tabIndex={0}
+            onClick={onOpenScienceLab}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onOpenScienceLab();
+              }
+            }}
+            style={{
+              marginTop: '1rem',
+              background: '#fffdf8',
+              border: '1.5px solid #ccfbf1',
+              borderRadius: '16px',
+              padding: '1.1rem 1.4rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '1rem',
+              cursor: 'pointer',
+              textAlign: 'left',
+              boxShadow: '0 4px 14px rgba(15, 118, 110, 0.08)',
+            }}
+            data-testid="home-science-lab-card"
+          >
+            <div style={{ flex: 1, minWidth: '260px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem', flexWrap: 'wrap' }}>
+                <span style={{ background: '#ccfbf1', color: '#0f766e', padding: '0.15rem 0.6rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase' }}>
+                  New · Free for everyone
+                </span>
+                <span style={{ fontSize: '1.05rem' }} aria-hidden="true">⚛️ 🌿 🪐 🧵</span>
+              </div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 900, color: '#134e4a', margin: '0 0 0.3rem', fontFamily: 'Noto Sans Devanagari, serif' }}>
+                Vijñāna Lab · विज्ञान-प्रयोगशाला
+              </h3>
+              <p style={{ margin: 0, fontSize: '0.92rem', color: '#475569', lineHeight: 1.5, maxWidth: '44rem' }}>
+                Play with science and learn the Sanskrit words for it: build paramāṇus, balance vāta-pitta-kapha, run a real-gravity orbit through the 27 nakṣatras, and weave the Loom of Āruṇi.
+              </p>
+            </div>
+            <span style={{ background: '#0f766e', color: '#ffffff', padding: '0.65rem 1.3rem', borderRadius: '10px', fontWeight: 800, fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
+              Open the Lab →
+            </span>
           </div>
         )}
 

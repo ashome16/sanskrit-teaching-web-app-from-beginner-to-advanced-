@@ -18,6 +18,7 @@ export interface FooterProps {
   onOpenResources?: () => void;
   onOpenRoadmap?: () => void;
   onOpenCourse?: () => void;
+  onOpenScienceLab?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -36,6 +37,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenResources,
   onOpenRoadmap,
   onOpenCourse,
+  onOpenScienceLab,
 }) => {
   const [legalModal, setLegalModal] = useState<LegalModalType>(null);
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
@@ -191,6 +193,18 @@ export const Footer: React.FC<FooterProps> = ({
                   >
                     <span className="nav-btn-icon">🧠</span>
                     <span className="nav-btn-text">संस्कृत-चिन्तनम् (Complete Course)</span>
+                  </button>
+                </li>
+              )}
+              {onOpenScienceLab && (
+                <li>
+                  <button
+                    type="button"
+                    className="footer-nav-btn"
+                    onClick={onOpenScienceLab}
+                  >
+                    <span className="nav-btn-icon">🔬</span>
+                    <span className="nav-btn-text">Vijñāna Lab · विज्ञान-प्रयोगशाला</span>
                   </button>
                 </li>
               )}

@@ -31,6 +31,8 @@
     { "source": "/philosophy/", "destination": "/philosophy/index.html" },
     { "source": "/faq", "destination": "/faq/index.html" },
     { "source": "/faq/", "destination": "/faq/index.html" },
+    { "source": "/science-lab", "destination": "/science-lab/index.html" },
+    { "source": "/science-lab/", "destination": "/science-lab/index.html" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
