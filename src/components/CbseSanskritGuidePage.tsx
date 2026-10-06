@@ -3,6 +3,7 @@ import '../styles/philosophy.css';
 import '../styles/cbse-guide.css';
 
 import { playPronunciation } from '../utils/pronunciation';
+import GrammarLightFigure from './GrammarLightFigures';
 
 export interface CbseSanskritGuidePageProps {
   onOpenRegister?: () => void;
@@ -665,6 +666,10 @@ const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="light-fig-wrap">
+            <GrammarLightFigure id="cbse-blueprint-bars" />
           </div>
 
           <p className="cbse-guide-note">

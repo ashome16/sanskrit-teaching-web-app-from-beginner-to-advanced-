@@ -2034,6 +2034,7 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
     case 'tirtha-lineage-path':
     case 'bhuta-sankhya-reversal':
     case 'siksha-five-places':
+    case 'vedic-four-pillars':
       return <ArticleSchematic id={id} />;
     default:
       return null;

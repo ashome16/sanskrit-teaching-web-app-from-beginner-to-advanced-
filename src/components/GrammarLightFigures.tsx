@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import '../styles/light-figures.css';
 
 const SANS = "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 const DEV = "'Noto Sans Devanagari', Georgia, serif";
@@ -1216,6 +1217,308 @@ function ThreeVowelGrades() {
   );
 }
 
+
+/* ------------------------------------------------------------------
+   Batch: CBSE guide, Darśana essays, Saṃskṛta-cintanam lessons.
+   ------------------------------------------------------------------ */
+
+/** Shared manuscript paper backdrop (palm-leaf / paper tone, double rule). */
+function ManuscriptPaper({ id, w, h }: { id: string; w: number; h: number }) {
+  return (
+    <>
+      <defs>
+        <linearGradient id={`${id}-paper`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#fbf1dc" />
+          <stop offset="60%" stopColor="#f6e6c4" />
+          <stop offset="100%" stopColor="#efd9ac" />
+        </linearGradient>
+        <pattern id={`${id}-laid`} width="6" height="6" patternUnits="userSpaceOnUse">
+          <path d="M0 5.5 H6" stroke="#b8894e" strokeWidth="0.35" opacity="0.22" />
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width={w} height={h} rx="10" fill={`url(#${id}-paper)`} />
+      <rect x="0" y="0" width={w} height={h} rx="10" fill={`url(#${id}-laid)`} />
+      <rect x="8" y="8" width={w - 16} height={h - 16} rx="6" fill="none" stroke="#4a2e18" strokeWidth="1.8" />
+      <rect x="13" y="13" width={w - 26} height={h - 26} rx="4" fill="none" stroke="#4a2e18" strokeWidth="0.6" />
+    </>
+  );
+}
+
+/** CBSE Exam Guide: 80-mark paper and 180-minute clock, split by खण्ड. */
+function CbseBlueprintBars() {
+  const left = 20;
+  const span = 560;
+  const sections = [
+    { sa: 'खण्ड क', en: 'Unseen', marks: 10, min: 20, stroke: '#fdba74', fill: '#fff7ed' },
+    { sa: 'खण्ड ख', en: 'Writing', marks: 15, min: 35, stroke: '#86efac', fill: '#f0fdf4' },
+    { sa: 'खण्ड ग', en: 'Grammar', marks: 25, min: 40, stroke: '#38bdf8', fill: '#f0f9ff' },
+    { sa: 'खण्ड घ', en: 'Literature', marks: 30, min: 55, stroke: '#c4b5fd', fill: '#f5f3ff' },
+  ];
+  const markX: number[] = [];
+  const minX: number[] = [];
+  let mAcc = 0;
+  let tAcc = 0;
+  sections.forEach((s) => {
+    markX.push(left + (mAcc / 80) * span);
+    minX.push(left + (tAcc / 180) * span);
+    mAcc += s.marks;
+    tAcc += s.min;
+  });
+  const reviewX = left + (tAcc / 180) * span;
+  return (
+    <Panel
+      kicker="Class 10 paper · marks and minutes"
+      caption="The blueprint table as two bars: 80 marks across the four खण्ड, and 150 writing minutes plus the 30-minute review the guide recommends — 3 hours in all."
+      maxWidth={640}
+    >
+      <svg viewBox="0 0 600 224" role="img" aria-labelledby="cbse-bp-title" style={{ fontFamily: SANS }}>
+        <title id="cbse-bp-title">Marks 10, 15, 25, 30 and minutes 20, 35, 40, 55 plus 30 review for sections ka to gha.</title>
+        <text x={left} y="18" fill="#0f766e" fontSize="12" fontWeight="800">MARKS · 80</text>
+        {sections.map((s, i) => {
+          const x = markX[i];
+          const w = (s.marks / 80) * span;
+          return (
+            <g key={`m-${s.sa}`}>
+              <rect x={x + 2} y="26" width={w - 4} height="72" rx="10" fill={s.fill} stroke={s.stroke} strokeWidth="3" />
+              <text x={x + w / 2} y="50" fill="#3a2414" fontSize="14" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{s.sa}</text>
+              <text x={x + w / 2} y="68" fill="#475569" fontSize="11" fontWeight="600" textAnchor="middle">{s.en}</text>
+              <text x={x + w / 2} y="89" fill="#9a3412" fontSize="14" fontWeight="800" textAnchor="middle">{s.marks}</text>
+            </g>
+          );
+        })}
+        <text x={left} y="128" fill="#0f766e" fontSize="12" fontWeight="800">MINUTES · 180</text>
+        {sections.map((s, i) => {
+          const x = minX[i];
+          const w = (s.min / 180) * span;
+          return (
+            <g key={`t-${s.sa}`}>
+              <rect x={x + 2} y="136" width={w - 4} height="52" rx="10" fill={s.fill} stroke={s.stroke} strokeWidth="3" />
+              <text x={x + w / 2} y="160" fill="#3a2414" fontSize="13" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{s.sa.replace('खण्ड ', '')}</text>
+              <text x={x + w / 2} y="178" fill="#9a3412" fontSize="12" fontWeight="800" textAnchor="middle">{s.min} min</text>
+            </g>
+          );
+        })}
+        <rect x={reviewX + 2} y="136" width={(30 / 180) * span - 4} height="52" rx="10" fill="#f8fafc" stroke="#94a3b8" strokeWidth="2.5" strokeDasharray="6 4" />
+        <text x={reviewX + ((30 / 180) * span) / 2} y="160" fill="#475569" fontSize="12" fontWeight="700" textAnchor="middle">review</text>
+        <text x={reviewX + ((30 / 180) * span) / 2} y="178" fill="#475569" fontSize="12" fontWeight="800" textAnchor="middle">30 min</text>
+        <text x="300" y="214" fill="#64748b" fontSize="11" fontWeight="600" textAnchor="middle">+ 20-mark internal assessment, outside the 3-hour paper</text>
+      </svg>
+    </Panel>
+  );
+}
+
+/** Ṣaḍ-darśana: the six schools in their three traditional pairs. */
+function ShadDarshanaThreePairs() {
+  const pairs = [
+    {
+      role: 'logic + ontology',
+      a: { sa: 'न्यायः', en: 'Nyāya', q: 'How do we know?' },
+      b: { sa: 'वैशेषिकः', en: 'Vaiśeṣika', q: 'What exists?' },
+    },
+    {
+      role: 'psychology + practice',
+      a: { sa: 'साङ्ख्यम्', en: 'Sāṅkhya', q: 'What is experience made of?' },
+      b: { sa: 'योगः', en: 'Yoga', q: 'How do we verify it directly?' },
+    },
+    {
+      role: 'interpretation + synthesis',
+      a: { sa: 'मीमांसा', en: 'Mīmāṃsā', q: 'What does the text enjoin?' },
+      b: { sa: 'वेदान्तः', en: 'Vedānta', q: 'What is the ultimate ground?' },
+    },
+  ];
+  const colW = 190;
+  const gap = 14;
+  const x0 = 26;
+  const W = x0 * 2 + pairs.length * colW + (pairs.length - 1) * gap;
+  const H = 306;
+  const ink = '#3a2414';
+  return (
+    <Panel
+      kicker="षड्दर्शनानि · three pairs"
+      caption="The article’s traditional pairing — Nyāya with Vaiśeṣika, Sāṅkhya with Yoga, Mīmāṃsā with Vedānta — each school with its central question from the comparison table."
+      maxWidth={640}
+    >
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="shad3-title" style={{ fontFamily: SANS }}>
+        <title id="shad3-title">Six darśanas grouped in three pairs, each with its central question.</title>
+        <ManuscriptPaper id="shad3" w={W} h={H} />
+        <text x={W / 2} y="42" fill={ink} fontSize="20" fontWeight="700" textAnchor="middle" fontFamily={DEV}>षड्दर्शनानि</text>
+        {pairs.map((p, i) => {
+          const x = x0 + i * (colW + gap);
+          const card = (c: { sa: string; en: string; q: string }, y: number) => (
+            <g>
+              <rect x={x + 8} y={y} width={colW - 16} height="78" rx="10" fill="#fffaf0" stroke="#7c4a24" strokeWidth="1.6" />
+              <text x={x + colW / 2} y={y + 26} fill={ink} fontSize="16" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{c.sa}</text>
+              <text x={x + colW / 2} y={y + 45} fill="#9a3412" fontSize="12" fontWeight="700" textAnchor="middle">{c.en}</text>
+              <text x={x + colW / 2} y={y + 65} fill="#5c3b22" fontSize="11" fontWeight="600" textAnchor="middle" fontStyle="italic">{c.q}</text>
+            </g>
+          );
+          return (
+            <g key={p.role}>
+              <rect x={x} y="58" width={colW} height="210" rx="12" fill="none" stroke="#7c4a24" strokeWidth="1.2" strokeDasharray="5 4" />
+              {card(p.a, 68)}
+              <text x={x + colW / 2} y="164" fill="#0f766e" fontSize="16" fontWeight="800" textAnchor="middle">+</text>
+              {card(p.b, 172)}
+              <text x={x + colW / 2} y="284" fill="#5c3b22" fontSize="11" fontWeight="700" textAnchor="middle">{p.role}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Medhā essay: five kośas of the Taittirīya Upaniṣad, nested. */
+function PanchaKosaSheaths() {
+  const layers = [
+    { sa: 'अन्नमयः', en: 'annamaya · body of food' },
+    { sa: 'प्राणमयः', en: 'prāṇamaya · vital breath' },
+    { sa: 'मनोमयः', en: 'manomaya · mind' },
+    { sa: 'विज्ञानमयः', en: 'vijñānamaya · discerning intellect' },
+    { sa: 'आनन्दमयः', en: 'ānandamaya · bliss' },
+  ];
+  const W = 540;
+  const H = 380;
+  const fills = ['#f8ead0', '#f5e3c2', '#f2dcb4', '#efd5a7', '#ecce9b'];
+  return (
+    <Panel
+      kicker="पञ्च कोशाः · five sheaths"
+      caption="The five sheaths as the essay lists them, outermost to innermost. The ātman is drawn in the middle, but the essay’s point is that it pervades every layer without being any of them."
+      maxWidth={600}
+    >
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="kosa5-title" style={{ fontFamily: SANS }}>
+        <title id="kosa5-title">Five nested sheaths from food body to bliss, with the ātman pervading all.</title>
+        <ManuscriptPaper id="kosa5" w={W} h={H} />
+        {layers.map((l, i) => {
+          const x = 26 + i * 30;
+          const y = 24 + i * 28;
+          const w = W - 52 - i * 60;
+          const h = H - 48 - i * 56;
+          return (
+            <g key={l.sa}>
+              <rect x={x} y={y} width={w} height={h} rx={22 - i * 2} fill={fills[i]} stroke="#7c4a24" strokeWidth={i === 0 ? 2 : 1.4} />
+              <text x={W / 2} y={y + 21} textAnchor="middle">
+                <tspan fill="#3a2414" fontSize="15" fontWeight="700" fontFamily={DEV}>{l.sa}</tspan>
+                <tspan fill="#5c3b22" fontSize="11" fontWeight="600" dx="8">{l.en}</tspan>
+              </text>
+            </g>
+          );
+        })}
+        <ellipse cx={W / 2} cy="205" rx="104" ry="27" fill="#fffaf0" stroke="#b45309" strokeWidth="1.6" strokeDasharray="4 3" />
+        <text x={W / 2} y="203" fill="#3a2414" fontSize="17" fontWeight="700" textAnchor="middle" fontFamily={DEV}>आत्मन्</text>
+        <text x={W / 2} y="220" fill="#9a3412" fontSize="10.5" fontWeight="700" textAnchor="middle">ātman · in all, none of them</text>
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course 3.4: six kārakas as roles around the action. */
+function KarakaActionHub() {
+  const left = [
+    { sa: 'कर्ता', en: 'Agent', q: 'Who?', ex: 'रामः' },
+    { sa: 'कर्म', en: 'Object', q: 'Whom / what?', ex: 'रामम्' },
+    { sa: 'करण', en: 'Instrument', q: 'With what?', ex: 'रामेण' },
+  ];
+  const right = [
+    { sa: 'सम्प्रदान', en: 'Recipient', q: 'For whom?', ex: 'रामाय' },
+    { sa: 'अपादान', en: 'Source', q: 'From where?', ex: 'रामात्' },
+    { sa: 'अधिकरण', en: 'Location', q: 'Where?', ex: 'रामे' },
+  ];
+  const cardW = 168;
+  const cardH = 66;
+  const ys = [16, 122, 228];
+  const cx = 290;
+  const cy = 159;
+  const strokes = ['#fdba74', '#86efac', '#38bdf8', '#c4b5fd', '#f9a8d4', '#fcd34d'];
+  const card = (c: (typeof left)[number], x: number, y: number, stroke: string, n: number) => (
+    <g key={c.sa}>
+      <rect x={x} y={y} width={cardW} height={cardH} rx="12" fill="#fff7ed" stroke={stroke} strokeWidth="3" />
+      <text x={x + 12} y={y + 25} fill="#0f766e" fontSize="12" fontWeight="800">{n}</text>
+      <text x={x + 28} y={y + 26} fill="#3a2414" fontSize="15" fontWeight="700" fontFamily={DEV}>{c.sa}</text>
+      <text x={x + cardW - 12} y={y + 26} fill="#3a2414" fontSize="14" fontWeight="700" textAnchor="end" fontFamily={DEV}>{c.ex}</text>
+      <text x={x + 12} y={y + 50} fill="#9a3412" fontSize="11.5" fontWeight="700">{c.en}<tspan fill="#475569" fontWeight="600">{` · ${c.q}`}</tspan></text>
+    </g>
+  );
+  return (
+    <Panel
+      kicker="Six kārakas · roles around the action"
+      caption="Lesson 3.4’s map: each kāraka is a role around the action, and its case ending carries the role — so the words can move around and the meaning holds. षष्ठी (relation) and सम्बोधनम् (address) sit outside the six."
+      maxWidth={640}
+    >
+      <svg viewBox="0 0 580 318" role="img" aria-labelledby="karaka6-title" style={{ fontFamily: SANS }}>
+        <title id="karaka6-title">The action in the centre with six kāraka roles around it, each with its question and a Rāma example.</title>
+        {ys.map((y, i) => (
+          <g key={`l-${y}`}>
+            <line x1={8 + cardW} y1={y + cardH / 2} x2={cx - 74} y2={cy} stroke="#0f766e" strokeWidth="2.5" strokeLinecap="round" />
+            <line x1={580 - 8 - cardW} y1={y + cardH / 2} x2={cx + 74} y2={cy} stroke="#0f766e" strokeWidth="2.5" strokeLinecap="round" />
+            {card(left[i], 8, y, strokes[i], i + 1)}
+            {card(right[i], 580 - 8 - cardW, y, strokes[i + 3], i + 4)}
+          </g>
+        ))}
+        <ellipse cx={cx} cy={cy} rx="76" ry="38" fill="#ecfdf5" stroke="#0f766e" strokeWidth="3" />
+        <text x={cx} y={cy - 3} fill="#14532d" fontSize="18" fontWeight="700" textAnchor="middle" fontFamily={DEV}>क्रिया</text>
+        <text x={cx} y={cy + 17} fill="#0f766e" fontSize="12" fontWeight="800" textAnchor="middle">the action</text>
+      </svg>
+    </Panel>
+  );
+}
+
+/** Course 3.6: which member of a samāsa carries the weight. */
+function SamasaHeadDominance() {
+  const types = [
+    { sa: 'अव्ययीभावः', en: 'Avyayībhāva', a: 'यथा', b: 'शक्ति', lead: 'a', note: 'first word leads' },
+    { sa: 'तत्पुरुषः', en: 'Tatpuruṣa', a: 'राज', b: 'पुरुषः', lead: 'b', note: 'second word leads' },
+    { sa: 'द्वन्द्वः', en: 'Dvandva', a: 'माता', b: 'पितरौ', lead: 'both', note: 'both equal · “and”' },
+    { sa: 'बहुव्रीहिः', en: 'Bahuvrīhi', a: 'पीत', b: 'अम्बरः', lead: 'out', note: 'points outside · Viṣṇu' },
+  ];
+  const cardW = 282;
+  const cardH = 132;
+  const gap = 12;
+  const lead = { fill: '#ccfbf1', stroke: '#0f766e', w: 3.5 };
+  const plain = { fill: '#ffffff', stroke: '#fdba74', w: 2.5 };
+  return (
+    <Panel
+      kicker="Samāsa · who carries the weight?"
+      caption="Lesson 3.6’s four main types, sorted by the dominant member: the first word, the second, both equally, or someone outside the compound altogether. Teal = the word in charge."
+      maxWidth={640}
+    >
+      <svg viewBox={`0 0 ${cardW * 2 + gap + 8} ${cardH * 2 + gap + 8}`} role="img" aria-labelledby="samasa4-title" style={{ fontFamily: SANS }}>
+        <title id="samasa4-title">Four samāsa types with the dominant member highlighted.</title>
+        {types.map((t, i) => {
+          const x = 4 + (i % 2) * (cardW + gap);
+          const y = 4 + Math.floor(i / 2) * (cardH + gap);
+          const out = t.lead === 'out';
+          const boxW = out ? 70 : 96;
+          const ax = out ? x + 12 : x + cardW / 2 - boxW - 6;
+          const bx = ax + boxW + 12;
+          const sa = t.lead === 'a' || t.lead === 'both' ? lead : plain;
+          const sb = t.lead === 'b' || t.lead === 'both' ? lead : plain;
+          return (
+            <g key={t.en}>
+              <rect x={x} y={y} width={cardW} height={cardH} rx="12" fill="#fff7ed" stroke="#fdba74" strokeWidth="2" />
+              <text x={x + 14} y={y + 26} fill="#3a2414" fontSize="15" fontWeight="700" fontFamily={DEV}>{t.sa}</text>
+              <text x={x + cardW - 14} y={y + 25} fill="#9a3412" fontSize="12" fontWeight="700" textAnchor="end">{t.en}</text>
+              <rect x={ax} y={y + 44} width={boxW} height="42" rx="10" fill={sa.fill} stroke={sa.stroke} strokeWidth={sa.w} />
+              <text x={ax + boxW / 2} y={y + 71} fill="#3a2414" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{t.a}</text>
+              <text x={ax + boxW + 6} y={y + 70} fill="#64748b" fontSize="13" fontWeight="800" textAnchor="middle">+</text>
+              <rect x={bx} y={y + 44} width={boxW} height="42" rx="10" fill={sb.fill} stroke={sb.stroke} strokeWidth={sb.w} />
+              <text x={bx + boxW / 2} y={y + 71} fill="#3a2414" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily={DEV}>{t.b}</text>
+              {out && (
+                <g>
+                  <line x1={bx + boxW + 4} y1={y + 65} x2={bx + boxW + 22} y2={y + 65} stroke="#0f766e" strokeWidth="2.5" />
+                  <path d={`M${bx + boxW + 22} ${y + 59} L${bx + boxW + 30} ${y + 65} L${bx + boxW + 22} ${y + 71} Z`} fill="#0f766e" />
+                  <rect x={bx + boxW + 32} y={y + 44} width="72" height="42" rx="10" fill={lead.fill} stroke={lead.stroke} strokeWidth={lead.w} strokeDasharray="5 3" />
+                  <text x={bx + boxW + 68} y={y + 71} fill="#3a2414" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily={DEV}>विष्णुः</text>
+                </g>
+              )}
+              <text x={x + cardW / 2} y={y + 114} fill="#0f766e" fontSize="12" fontWeight="800" textAnchor="middle">{t.note}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
 const FIGURES: Record<string, () => ReactNode> = {
   'vibhakti-eight-cases': () => <VibhaktiEightCases />,
   'dasagana-ten-classes': () => <DasaganaTenClasses />,
@@ -1247,6 +1550,11 @@ const FIGURES: Record<string, () => ReactNode> = {
   'five-core-lakaras': () => <FiveCoreLakaras />,
   'ktva-lyap-fork': () => <KtvaLyapFork />,
   'three-vowel-grades': () => <ThreeVowelGrades />,
+  'cbse-blueprint-bars': () => <CbseBlueprintBars />,
+  'shad-darshana-three-pairs': () => <ShadDarshanaThreePairs />,
+  'pancha-kosa-sheaths': () => <PanchaKosaSheaths />,
+  'karaka-action-hub': () => <KarakaActionHub />,
+  'samasa-head-dominance': () => <SamasaHeadDominance />,
 };
 
 export function isGrammarLightFigure(id: string): boolean {

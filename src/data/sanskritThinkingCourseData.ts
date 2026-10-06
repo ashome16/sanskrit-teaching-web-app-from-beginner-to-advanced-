@@ -33,6 +33,8 @@ export interface CourseLesson {
   titleDevanagari: string;
   titleEnglish: string;
   shortDescription: string;
+  /** Optional pale-card GrammarLightFigure id shown after The Idea body. */
+  figure?: string;
   
   // 1. The Idea
   ideaConcept: {
@@ -1129,6 +1131,7 @@ export const COURSE_MODULES: CourseModule[] = [
         titleDevanagari: 'कारकाणि एवं सप्त-विभक्तयः',
         titleEnglish: "The Vibhaktis as a Sentence's \"Roles\" (Kārakas)",
         shortDescription: 'Case endings declare role, giving Sanskrit freedom from rigid English word order.',
+        figure: 'karaka-action-hub',
         ideaConcept: {
           heading: 'The 7 Vibhaktis: Syntax Held in Suffixes',
           summary: 'In English, "The dog bites the man" means something very different from "The man bites the dog" because English relies on word order. In Sanskrit, you can scramble the words in any order, and the meaning stays 100% identical!',
@@ -1285,6 +1288,7 @@ export const COURSE_MODULES: CourseModule[] = [
         titleDevanagari: 'समासाः · अर्थ-संक्षेपः',
         titleEnglish: 'Compounds (Samāsas): Packing Meaning Tightly',
         shortDescription: 'Fusing multiple words into single conceptual compounds for immense information density.',
+        figure: 'samasa-head-dominance',
         ideaConcept: {
           heading: 'Compression: Stacking Ideas into One Word',
           summary: 'In English, you can say "the flower of the forest" or "forest flower". Sanskrit takes compounding to high mathematical art, fusing multiple words into a single compound (समास) while dropping internal case endings.',

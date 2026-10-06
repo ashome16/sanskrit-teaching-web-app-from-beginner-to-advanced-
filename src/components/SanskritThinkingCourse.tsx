@@ -26,6 +26,7 @@ import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
 import { CymaticsHarmonicsStudio } from './CymaticsHarmonicsStudio';
 import SanskritFlashcardStudio from './SanskritFlashcardStudio';
 import SanskritGrandExam from './SanskritGrandExam';
+import GrammarLightFigure, { isGrammarLightFigure } from './GrammarLightFigures';
 
 /** Sidebar / nav label for an addendum unit. */
 const addendumPartLabel = (art: DarshanaAddendumArticle): string =>
@@ -997,6 +998,11 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
               {currentLesson.ideaConcept.body.map((p, idx) => (
                 <p key={idx} style={{ lineHeight: 1.6, color: '#334155', margin: '0 0 0.75rem' }}>{p}</p>
               ))}
+              {currentLesson.figure && isGrammarLightFigure(currentLesson.figure) && (
+                <div className="light-fig-wrap">
+                  <GrammarLightFigure id={currentLesson.figure} />
+                </div>
+              )}
               <div className="stc-idea-takeaway">
                 🔑 <strong>Key Takeaway:</strong> {currentLesson.ideaConcept.keyTakeaway}
               </div>

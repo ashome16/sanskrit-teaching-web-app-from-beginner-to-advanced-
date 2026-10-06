@@ -569,6 +569,56 @@ function SikshaFivePlaces() {
   );
 }
 
+
+/** Magic of Numbers: the article's four cognitive pillars. */
+function VedicFourPillars() {
+  const pillars = [
+    { n: '1', title: 'Less fear', clue: 'one-line mental steps', sub: 'phobia → confidence', stroke: '#fdba74' },
+    { n: '2', title: 'Less to memorise', clue: 'tables up to 9', sub: 'sūtras do the rest', stroke: '#86efac' },
+    { n: '3', title: 'Brain workout', clue: 'patterns · memory', sub: 'a gym for the mind', stroke: '#38bdf8' },
+    { n: '4', title: 'Instant check', clue: 'digit roots', sub: 'बीजाङ्क · Beejank', stroke: '#c4b5fd' },
+  ];
+  const cellW = 140;
+  const gap = 12;
+  const w = pillars.length * cellW + (pillars.length - 1) * gap + 8;
+  return (
+    <Panel
+      kicker="Four cognitive pillars"
+      caption="The article’s four reasons to try it, resting on the 16 sūtras and 13 sub-sūtras: less maths fear, very little to memorise (tables up to 9), a workout for pattern-spotting, and a quick digit-root (बीजाङ्क) check on every answer."
+      maxWidth={620}
+    >
+      <svg viewBox={`0 0 ${w} 164`} role="img" aria-labelledby="vm4-title" style={{ fontFamily: SANS }}>
+        <title id="vm4-title">Four pillars of Vedic Maths from the article.</title>
+        <rect x="4" y="136" width={w - 8} height="24" rx="8" fill="#fef3c7" stroke="#fcd34d" strokeWidth="2" />
+        <text x={w / 2} y="153" fill="#92400e" fontSize="11.5" fontWeight="800" textAnchor="middle">16 sūtras · 13 sub-sūtras</text>
+        {pillars.map((p, i) => {
+          const x = 4 + i * (cellW + gap);
+          return (
+            <g key={p.n}>
+              <rect x={x + 6} y="8" width={cellW - 12} height="124" rx="12" fill="#fff7ed" stroke={p.stroke} strokeWidth="3" />
+              <circle cx={x + cellW / 2} cy="32" r="13" fill="#ecfdf5" stroke="#0f766e" strokeWidth="2" />
+              <text x={x + cellW / 2} y="37" fill="#0f766e" fontSize="13" fontWeight="800" textAnchor="middle">{p.n}</text>
+              <text x={x + cellW / 2} y="66" fill="#9a3412" fontSize="12.5" fontWeight="800" textAnchor="middle">{p.title}</text>
+              <text x={x + cellW / 2} y="90" fill="#334155" fontSize="11.5" fontWeight="700" textAnchor="middle">{p.clue}</text>
+              <text
+                x={x + cellW / 2}
+                y="112"
+                fill="#475569"
+                fontSize="11"
+                fontWeight="600"
+                textAnchor="middle"
+                fontFamily={i === 3 ? "'Noto Sans Devanagari', Georgia, serif" : SANS}
+              >
+                {p.sub}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
 const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
   'sulba-148-rectangle': SulbaRectangle,
   'dhanurveda-five-sthanas': DhanurvedaSthanas,
@@ -580,6 +630,7 @@ const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
   'tirtha-lineage-path': TirthaLineagePath,
   'bhuta-sankhya-reversal': BhutaReversal,
   'siksha-five-places': SikshaFivePlaces,
+  'vedic-four-pillars': VedicFourPillars,
 };
 
 export default function ArticleSchematic({ id }: { id: VedicArticleFigureId }) {

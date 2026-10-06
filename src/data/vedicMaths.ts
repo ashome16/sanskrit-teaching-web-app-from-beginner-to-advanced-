@@ -159,7 +159,8 @@ export type VedicArticleFigureId =
   | 'tirtha-lineage-path'
   | 'bhuta-sankhya-reversal'
   | 'siksha-five-places'
-  | 'animal-yoga-saptaswara-wheel';
+  | 'animal-yoga-saptaswara-wheel'
+  | 'vedic-four-pillars';
 
 export interface VedicArticleSection {
   title: string;
@@ -1436,7 +1437,8 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           '2. Minimal Memorization: You only need to know basic single-digit tables up to 9. The elegant sutra formulas handle multi-digit arithmetic dynamically.',
           '3. Enhances Brain Agility: Acts as a workout gym for your mind, sharpening working memory, structural pattern visualization, and hemispheric brain coordination.',
           '4. Built-in Instant Verification: Formulas feature rapid cross-checking tools (such as digital roots / बीजाङ्क Beejank) that verify calculation accuracy in under two seconds.'
-        ]
+        ],
+        figure: 'vedic-four-pillars'
       }
     ],
     quote: 'Unlike standard classroom math, this system relies on 16 core Sutras that describe the way the human mind naturally processes numbers, honoring a traditional Indian insight: that absolute truth, whether spiritual or mathematical, is inherently simple and harmonious.',

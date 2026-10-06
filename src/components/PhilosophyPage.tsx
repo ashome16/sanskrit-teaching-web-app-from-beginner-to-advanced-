@@ -12,6 +12,7 @@ import { TurangaBandhaChessboard } from './TurangaBandhaChessboard';
 import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
 import { CymaticsHarmonicsStudio } from './CymaticsHarmonicsStudio';
 import { UjjainGeodesyStudio } from './UjjainGeodesyStudio';
+import GrammarLightFigure from './GrammarLightFigures';
 
 export interface PhilosophyPageProps {
   onOpenRegister?: () => void;
@@ -5477,6 +5478,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 Mīmāṃsā a theory of interpretation, and Vedānta a synthesis. Traditionally they are even grouped in
                 pairs — Nyāya with Vaiśeṣika, Sāṅkhya with Yoga, Mīmāṃsā with Vedānta.
               </p>
+              <div className="light-fig-wrap">
+                <GrammarLightFigure id="shad-darshana-three-pairs" />
+              </div>
             </section>
 
             {/* Debate */}
@@ -5765,6 +5769,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 them without being any of them — is the <strong lang="sa">आत्मन् (ātman)</strong>, which Advaita Vedānta
                 identifies with Brahman, the ground of all that is.
               </p>
+              <div className="light-fig-wrap">
+                <GrammarLightFigure id="pancha-kosa-sheaths" />
+              </div>
               <p>
                 Mind and intellect belong to the <em>sūkṣma śarīra</em>, the subtle body, together with the senses and
                 the vital breaths. They are made of subtle matter, not of consciousness itself. The Kena Upaniṣad quoted
