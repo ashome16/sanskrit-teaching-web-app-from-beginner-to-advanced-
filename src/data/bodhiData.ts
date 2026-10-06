@@ -146,7 +146,8 @@ export const BODHI_ANECDOTES: BodhiQAItem[] = [
     source: 'Mahābhārata, Śānti Parva, Bhṛgu–Bharadvāja dialogue: 12.177.10–18 in the Critical Edition; Section CLXXXIV (184) in K. M. Ganguli’s translation; 12.185 in the Gita Press edition.',
     tip: 'Watch a creeper for a week and mark where its tip points each day. What do you think it is “looking” for?',
     relatedView: 'science-lab',
-    relatedLabel: '🔬 Open this lab ➔',
+    relatedLabAnchor: 'chaturyoni',
+    relatedLabel: '🔬 Open this lab: Chaturyoni Spawn Map (Sthāvara–Jaṅgama) ➔',
   },
 ];
 
