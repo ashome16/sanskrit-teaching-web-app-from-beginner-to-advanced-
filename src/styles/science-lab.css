@@ -379,3 +379,279 @@
   .vl-stage--paramanu .vl-svg-label { font-size: 16px; }
   .vl-stage--paramanu .vl-svg-dev { font-size: 18px; }
 }
+
+/* ======================================================================
+   Dark "active sandbox" console: play areas (viewport + control deck).
+   Text colours are chosen for ≥ 4.5:1 contrast on the charcoal base.
+   ====================================================================== */
+.vl-mono { font-family: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+.vl-sandbox {
+  --sb-base: #030712;
+  --sb-panel: #0b1220;
+  --sb-line: #1e293b;
+  --sb-text: #e5e7eb;
+  --sb-dim: #9ca3af;
+  --sb-cyan: #22d3ee;
+  --sb-blue: #60a5fa;
+  position: relative;
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(34, 211, 238, 0.08), transparent 60%),
+    radial-gradient(100% 70% at 100% 100%, rgba(96, 165, 250, 0.08), transparent 60%),
+    var(--sb-base);
+  color: var(--sb-text);
+  border: 1px solid #111827;
+  border-radius: 20px;
+  padding: 0.9rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 30px rgba(2, 6, 23, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 0;
+}
+.vl-sandbox :focus-visible { outline: 2px solid #67e8f9; outline-offset: 2px; }
+.vl-sandbox .vl-controls,
+.vl-sandbox .vl-loom-controls {
+  background: linear-gradient(180deg, #0f172a, #0b1220);
+  border: 1px solid var(--sb-line);
+  border-radius: 16px;
+  padding: 0.8rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.vl-sandbox .vl-small, .vl-sandbox .vl-slider-label, .vl-sandbox .vl-check { color: var(--sb-dim); }
+.vl-sandbox .vl-slider-label { color: #cbd5e1; }
+.vl-sandbox .vl-readout-grid { background: #050b16; border: 1px solid var(--sb-line); color: #cbd5e1; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 0.8rem; }
+.vl-sandbox .vl-readout-grid b { color: #67e8f9; }
+.vl-sandbox .vl-readout { background: #050b16; border-color: var(--sb-line); color: #cbd5e1; }
+.vl-sandbox .vl-readout b { color: #67e8f9; }
+.vl-sandbox .vl-msg, .vl-sandbox .vl-note { background: #0b1220; border-color: var(--sb-line); color: #e5e7eb; }
+.vl-sandbox .vl-msg { border-left-color: var(--sb-cyan); }
+.vl-sandbox .vl-msg.is-ok { background: #052e1a; color: #bbf7d0; border-left-color: #4ade80; }
+.vl-sandbox .vl-msg.is-alert { background: #2a1405; color: #fed7aa; }
+.vl-sandbox .vl-table th { color: var(--sb-dim); }
+.vl-sandbox .vl-table th, .vl-sandbox .vl-table td { border-bottom-color: var(--sb-line); }
+.vl-sandbox .vl-table tr.is-on td { background: rgba(250, 204, 21, 0.12); }
+.vl-sandbox .vl-target { background: #1c1305; border-color: #92400e; color: #fde68a; }
+.vl-sandbox .vl-target .vl-small { color: #fcd34d; }
+.vl-sandbox .vl-steps li { background: #0b1220; border-color: var(--sb-line); color: #cbd5e1; }
+.vl-sandbox .vl-steps li.is-now { border-color: var(--sb-cyan); background: #062a33; color: #a5f3fc; box-shadow: 0 0 12px rgba(34, 211, 238, 0.25); }
+.vl-sandbox .vl-steps li.is-done { border-color: #22c55e; background: #052e1a; color: #bbf7d0; }
+.vl-sandbox .vl-step-n { background: transparent; }
+.vl-sandbox .vl-sama { background: #0b1220; color: #cbd5e1; border-color: var(--sb-line); }
+.vl-sandbox .vl-sama.is-ok { background: #052e1a; color: #bbf7d0; border-color: #22c55e; box-shadow: 0 0 18px rgba(34, 197, 94, 0.25); }
+.vl-sandbox .vl-panel { background: #0b1220; border-color: var(--sb-line); color: var(--sb-text); }
+.vl-sandbox .vl-panel-title { color: #f1f5f9; }
+.vl-sandbox .vl-score { background: #052e1a; color: #86efac; }
+.vl-sandbox .vl-score--off { background: #2a1405; color: #fdba74; }
+.vl-sandbox .vl-stepper { background: #050b16; border-color: var(--sb-line); }
+.vl-sandbox .vl-stepper button { background: #111827; color: #67e8f9; }
+.vl-sandbox .vl-btn { background: linear-gradient(180deg, #0e7490, #155e75); color: #ecfeff; border: 1px solid #22d3ee55; box-shadow: 0 0 10px rgba(34, 211, 238, 0.18); }
+.vl-sandbox .vl-btn--ghost { background: #0b1220; color: #a5f3fc; border: 1.5px solid #164e63; box-shadow: none; }
+.vl-sandbox .vl-btn--gold { background: linear-gradient(180deg, #a16207, #854d0e); color: #fefce8; border-color: #facc1555; box-shadow: 0 0 10px rgba(250, 204, 21, 0.2); }
+.vl-sandbox .vl-btn--red { background: linear-gradient(180deg, #b91c1c, #991b1b); color: #fef2f2; border-color: #f8717155; box-shadow: 0 0 10px rgba(248, 113, 113, 0.2); }
+.vl-sandbox select { background: #050b16; color: #e5e7eb; border: 1px solid var(--sb-line); border-radius: 8px; padding: 0.35rem; }
+.vl-sandbox .vl-res { background: #111827; }
+.vl-sandbox .vl-stage { border: none; border-radius: 0; background: #030712; }
+
+/* HUD frame around each viewport */
+.vl-hud {
+  --accent: #22d3ee;
+  position: relative;
+  padding: 7px;
+  border-radius: 16px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 3px),
+    linear-gradient(145deg, #374151, #111827 35%, #1f2937 65%, #0b0f19);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 55%, transparent),
+    0 0 22px color-mix(in srgb, var(--accent) 28%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  min-width: 0;
+}
+.vl-hud-screen { position: relative; border-radius: 10px; overflow: hidden; background: #030712; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06); }
+.vl-hud-screen > canvas, .vl-hud-screen > svg { display: block; width: 100%; height: auto; }
+.vl-hud-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3px),
+    linear-gradient(rgba(34, 211, 238, 0.06) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgba(34, 211, 238, 0.06) 1px, transparent 1px) 0 0 / 32px 32px;
+  mix-blend-mode: screen;
+}
+.vl-hud-overlay::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 18%;
+  top: -20%;
+  background: linear-gradient(180deg, transparent, rgba(34, 211, 238, 0.06), transparent);
+  animation: vl-sweep 6s linear infinite;
+}
+@keyframes vl-sweep { to { top: 110%; } }
+.vl-hud-read {
+  position: absolute;
+  pointer-events: none;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: #a5f3fc;
+  background: rgba(3, 7, 18, 0.72);
+  border: 1px solid rgba(34, 211, 238, 0.28);
+  border-radius: 6px;
+  padding: 0.15rem 0.4rem;
+  text-shadow: 0 0 6px rgba(34, 211, 238, 0.45);
+  max-width: 48%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vl-hud-tl { top: 8px; left: 8px; }
+.vl-hud-tr { top: 8px; right: 8px; text-align: right; }
+.vl-hud-bl { bottom: 8px; left: 8px; }
+.vl-hud-br { bottom: 8px; right: 8px; text-align: right; }
+.vl-hud-corner { position: absolute; width: 22px; height: 22px; border: 2px solid var(--accent); filter: drop-shadow(0 0 4px var(--accent)); pointer-events: none; }
+.vl-hud-c1 { top: -3px; left: -3px; border-right: none; border-bottom: none; border-top-left-radius: 8px; }
+.vl-hud-c2 { top: -3px; right: -3px; border-left: none; border-bottom: none; border-top-right-radius: 8px; }
+.vl-hud-c3 { bottom: -3px; left: -3px; border-right: none; border-top: none; border-bottom-left-radius: 8px; }
+.vl-hud-c4 { bottom: -3px; right: -3px; border-left: none; border-top: none; border-bottom-right-radius: 8px; }
+.vl-hud-caption { font-size: 0.75rem; color: var(--sb-dim, #9ca3af); text-align: center; margin: 0.35rem 0 0; }
+
+/* Rotary dial */
+.vl-dials { display: flex; flex-wrap: wrap; gap: 0.6rem 0.9rem; justify-content: space-around; }
+.vl-dial { --c: #22d3ee; display: flex; flex-direction: column; align-items: center; gap: 0.15rem; min-width: 92px; max-width: 140px; text-align: center; }
+.vl-dial-knob { border-radius: 50%; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+.vl-dial-knob:active { cursor: grabbing; }
+.vl-dial-knob:focus-visible { outline: 2px solid #67e8f9; outline-offset: 3px; }
+.vl-dial.is-disabled { opacity: 0.45; }
+.vl-dial.is-disabled .vl-dial-knob { cursor: not-allowed; }
+.vl-dial-track { fill: none; stroke: #1f2937; stroke-width: 5; stroke-linecap: round; }
+.vl-dial-value { fill: none; stroke: var(--c); stroke-width: 5; stroke-linecap: round; filter: drop-shadow(0 0 4px var(--c)); }
+.vl-dial-tick { stroke: #4b5563; stroke-width: 1.5; }
+.vl-dial-body { fill: #111827; stroke: #374151; stroke-width: 1; }
+.vl-dial-cap { stroke: #4b5563; stroke-width: 1; }
+.vl-dial-pointer { stroke: var(--c); stroke-width: 3; stroke-linecap: round; filter: drop-shadow(0 0 3px var(--c)); }
+.vl-dial-label { font-size: 0.78rem; font-weight: 700; color: #cbd5e1; line-height: 1.25; }
+.vl-dial-value-text { font-size: 0.82rem; color: #67e8f9; text-shadow: 0 0 6px rgba(34, 211, 238, 0.4); }
+
+/* Glow slider (styled native range) */
+.vl-gslider { --c: #22d3ee; --pct: 50%; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; min-width: 0; }
+.vl-gslider-head { display: flex; justify-content: space-between; gap: 0.5rem; align-items: baseline; }
+.vl-gslider-label { color: #cbd5e1; font-weight: 700; }
+.vl-gslider-head b { color: #67e8f9; font-size: 0.82rem; text-shadow: 0 0 6px rgba(34, 211, 238, 0.4); }
+.vl-gslider input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 26px;
+  background: transparent;
+  margin: 0;
+  cursor: pointer;
+}
+.vl-gslider input[type='range']::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--c) 0 var(--pct), #1f2937 var(--pct) 100%);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--c) 45%, transparent), inset 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.vl-gslider input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f8fafc, #94a3b8 45%, #334155);
+  border: 2px solid var(--c);
+  box-shadow: 0 0 10px var(--c);
+}
+.vl-gslider input[type='range']::-moz-range-track { height: 8px; border-radius: 999px; background: #1f2937; }
+.vl-gslider input[type='range']::-moz-range-progress { height: 8px; border-radius: 999px; background: var(--c); box-shadow: 0 0 10px var(--c); }
+.vl-gslider input[type='range']::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #cbd5e1; border: 2px solid var(--c); box-shadow: 0 0 10px var(--c); }
+.vl-gslider input[type='range']:focus-visible { outline: 2px solid #67e8f9; outline-offset: 3px; border-radius: 6px; }
+.vl-gslider.is-disabled { opacity: 0.5; }
+
+/* LED toggle buttons */
+.vl-leds { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.vl-led {
+  --c: #22d3ee;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 40px;
+  padding: 0.35rem 0.75rem 0.35rem 0.55rem;
+  border-radius: 10px;
+  border: 1px solid #263244;
+  background: linear-gradient(180deg, #1f2937, #111827);
+  color: #d1d5db;
+  font-weight: 700;
+  font-size: 0.86rem;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 2px 0 #020617;
+  transition: transform 0.08s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  text-align: left;
+}
+.vl-led:hover { border-color: color-mix(in srgb, var(--c) 60%, #263244); }
+.vl-led:active { transform: translateY(1px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05); }
+.vl-led:disabled { opacity: 0.45; cursor: not-allowed; }
+.vl-led-dot { flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; background: #374151; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.7); }
+.vl-led.is-on { color: #f9fafb; border-color: var(--c); box-shadow: 0 0 12px color-mix(in srgb, var(--c) 40%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+.vl-led.is-on .vl-led-dot { background: var(--c); box-shadow: 0 0 8px var(--c), 0 0 2px #fff; }
+.vl-led--action .vl-led-dot { background: color-mix(in srgb, var(--c) 55%, #111827); }
+.vl-led--big { min-height: 52px; font-size: 1rem; padding: 0.5rem 1rem 0.5rem 0.8rem; width: 100%; }
+.vl-led--big .vl-led-dot { width: 14px; height: 14px; }
+.vl-led-text small { display: block; font-size: 0.72rem; font-weight: 600; color: #9ca3af; }
+.vl-led.is-on .vl-led-text small { color: #cbd5e1; }
+
+/* Asato mā: levels */
+.vl-levels { display: flex; flex-direction: column; gap: 0.55rem; }
+.vl-level-bar { position: relative; height: 10px; border-radius: 999px; background: #111827; border: 1px solid #1f2937; overflow: hidden; }
+.vl-level-bar > span { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, #22d3ee, #a78bfa, #facc15); box-shadow: 0 0 12px rgba(34, 211, 238, 0.6); transition: width 0.4s ease; }
+.vl-badges { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+.vl-badge {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  text-align: left;
+  border-radius: 14px;
+  border: 1px solid #1f2937;
+  background: linear-gradient(180deg, #111827, #0b1220);
+  color: #cbd5e1;
+  padding: 0.5rem 0.65rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+  min-height: 52px;
+}
+.vl-badge-icon { font-size: 1.5rem; filter: grayscale(0.7); opacity: 0.75; }
+.vl-badge b { display: block; color: #f1f5f9; font-size: 0.86rem; }
+.vl-badge.is-sel { border-color: #22d3ee; box-shadow: 0 0 12px rgba(34, 211, 238, 0.3); }
+.vl-badge.is-done { border-color: #facc15; background: linear-gradient(180deg, #1c1505, #0b1220); }
+.vl-badge.is-done .vl-badge-icon { filter: none; opacity: 1; text-shadow: 0 0 10px rgba(250, 204, 21, 0.8); }
+.vl-level-card { background: #0b1220; border: 1px solid #1f2937; border-radius: 14px; padding: 0.7rem 0.85rem; font-size: 0.9rem; line-height: 1.5; color: #e5e7eb; }
+.vl-level-card h4 { margin: 0 0 0.3rem; font-size: 1rem; color: #f8fafc; }
+.vl-level-card p { margin: 0 0 0.4rem; }
+.vl-level-card .vl-small { color: #9ca3af; }
+.vl-tip { border-bottom: 1px dotted #9ca3af; cursor: help; }
+.vl-sealed { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.75rem; font-weight: 800; color: #fde68a; background: #1c1305; border: 1px solid #92400e; border-radius: 999px; padding: 0.1rem 0.55rem; }
+.vl-stage--asato { aspect-ratio: 8 / 5; }
+
+@media (max-width: 640px) {
+  .vl-sandbox { padding: 0.55rem; border-radius: 16px; }
+  .vl-badges { grid-template-columns: 1fr; }
+  .vl-dial { min-width: 80px; }
+  .vl-hud-read { font-size: 0.62rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vl-hud-overlay::after { animation: none; display: none; }
+  .vl-led, .vl-level-bar > span { transition: none; }
+}
+.vl-loom-deck { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 0.8rem; align-items: center; }
+.vl-loom-faders { display: flex; flex-direction: column; gap: 0.7rem; }
+.vl-dial-group { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+.vl-dial-group .vl-res { width: 92px; }
+@media (max-width: 640px) { .vl-loom-deck { grid-template-columns: 1fr; } }
+.vl-sandbox .vl-svg-label { fill: #e5e7eb; }
+.vl-sandbox .vl-svg-small { fill: #cbd5e1; }
+.vl-sandbox .vl-svg-dev { fill: #f1f5f9; }
+.vl-hud .vl-stage--paramanu, .vl-hud .vl-stage--orbit { max-width: none; }
+.vl-sandbox .vl-prakriti-grid { grid-template-columns: minmax(260px, 360px) minmax(0, 1fr); }
+@media (max-width: 960px) { .vl-sandbox .vl-prakriti-grid { grid-template-columns: 1fr; } }

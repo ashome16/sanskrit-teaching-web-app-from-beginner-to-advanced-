@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
+import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 
 type Script = 'dev' | 'iast' | 'en';
 
@@ -233,10 +234,17 @@ const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTr
   ctx.clearRect(0, 0, SIZE, SIZE);
   // sky
   const g = ctx.createRadialGradient(C, C, 40, C, C, C);
-  g.addColorStop(0, '#fffbeb');
-  g.addColorStop(1, '#eef2ff');
+  g.addColorStop(0, '#0b1026');
+  g.addColorStop(1, '#030712');
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, SIZE, SIZE);
+  // faint background stars (fixed pattern)
+  ctx.fillStyle = 'rgba(226,232,240,0.55)';
+  for (let i = 0; i < 90; i += 1) {
+    const x = (i * 197.3) % SIZE;
+    const y = (i * 131.7 + (i % 7) * 41) % SIZE;
+    ctx.fillRect(x, y, i % 9 === 0 ? 1.6 : 1, i % 9 === 0 ? 1.6 : 1);
+  }
   // nakṣatra ring
   const R1 = 262;
   const R2 = 312;
@@ -249,9 +257,9 @@ const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTr
     ctx.arc(C, C, R1, a1, a0, false);
     ctx.closePath();
     const active = s.moonOn && i === s.naksIdx;
-    ctx.fillStyle = active ? 'rgba(250, 204, 21, 0.55)' : i % 2 ? 'rgba(224, 231, 255, 0.85)' : 'rgba(237, 233, 254, 0.85)';
+    ctx.fillStyle = active ? 'rgba(250, 204, 21, 0.38)' : i % 2 ? 'rgba(99, 102, 241, 0.16)' : 'rgba(139, 92, 246, 0.12)';
     ctx.fill();
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.5)';
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.35)';
     ctx.lineWidth = 0.6;
     ctx.stroke();
     const mid = -(i + 0.5) * seg;
@@ -260,7 +268,7 @@ const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTr
     let rot = mid + Math.PI / 2;
     if (Math.sin(mid) > 0) rot += Math.PI;
     ctx.rotate(rot);
-    ctx.fillStyle = active ? '#713f12' : '#475569';
+    ctx.fillStyle = active ? '#fde68a' : '#cbd5e1';
     ctx.font = `${active ? 700 : 500} ${script === 'dev' ? 11 : 9.5}px "Noto Sans Devanagari", system-ui, sans-serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
@@ -270,7 +278,7 @@ const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTr
   const [sun, earth, moon] = s.bodies;
   // trails
   if (showTrails) {
-    const colors = ['rgba(234,88,12,0.35)', 'rgba(37,99,235,0.55)', 'rgba(100,116,139,0.55)'];
+    const colors = ['rgba(251,146,60,0.4)', 'rgba(96,165,250,0.75)', 'rgba(203,213,225,0.6)'];
     s.trails.forEach((tr, i) => {
       if (tr.length < 2 || i === 0) return;
       ctx.beginPath();
@@ -288,7 +296,7 @@ const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTr
     ctx.beginPath();
     ctx.moveTo(earth.x, earth.y);
     ctx.lineTo(C + Math.cos(ang) * R1, C + Math.sin(ang) * R1);
-    ctx.strokeStyle = 'rgba(202, 138, 4, 0.7)';
+    ctx.strokeStyle = 'rgba(250, 204, 21, 0.6)';
     ctx.lineWidth = 1;
     ctx.stroke();
     ctx.setLineDash([]);
@@ -308,19 +316,23 @@ const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTr
     ctx.fillStyle = color;
     ctx.fillText(txt, x, y);
   };
-  label(BODY_NAMES.sun[script], sun.x, sun.y + SUN_RADIUS + 22, '#b45309');
+  label(BODY_NAMES.sun[script], sun.x, sun.y + SUN_RADIUS + 22, '#fbbf24');
   // Pṛthivī
-  ctx.fillStyle = '#2563eb';
+  ctx.save();
+  ctx.shadowColor = '#60a5fa';
+  ctx.shadowBlur = 10;
+  ctx.fillStyle = '#3b82f6';
   ctx.beginPath();
   ctx.arc(earth.x, earth.y, 6, 0, 2 * Math.PI);
   ctx.fill();
-  label(BODY_NAMES.earth[script], earth.x, earth.y - 22, '#1d4ed8');
+  ctx.restore();
+  label(BODY_NAMES.earth[script], earth.x, earth.y - 22, '#93c5fd');
   if (moon) {
-    ctx.fillStyle = '#64748b';
+    ctx.fillStyle = '#e2e8f0';
     ctx.beginPath();
     ctx.arc(moon.x, moon.y, 3, 0, 2 * Math.PI);
     ctx.fill();
-    label(BODY_NAMES.moon[script], moon.x + 16, moon.y + 16, '#475569');
+    label(BODY_NAMES.moon[script], moon.x + 16, moon.y + 16, '#e2e8f0');
   }
 };
 
@@ -439,57 +451,62 @@ const JyotishaOrbit: React.FC = () => {
         orbit, falling in, or escaping, and see which nakṣatra Candra is in as it goes round.
       </CoreIdea>
 
-      <div className="vl-orbit-grid">
-        <div className="vl-stage-wrap">
-          <canvas ref={canvasRef} className="vl-stage vl-stage--orbit" width={SIZE} height={SIZE} data-testid="orbit-canvas" aria-label="Orbit sandbox with Sūrya, Pṛthivī and Candra inside the ring of 27 nakṣatras" role="img" />
-          <p className="vl-small vl-center">Not to scale: sizes, distances and Pṛthivī’s mass are stretched so you can see Candra.</p>
-        </div>
-        <div className="vl-controls">
-          <div className="vl-btn-row">
-            <button type="button" className="vl-btn" onClick={() => setPlaying((p) => !p)} data-testid="orbit-play">{playing ? '⏸ Pause' : '▶ Play'}</button>
-            <button type="button" className="vl-btn vl-btn--ghost" onClick={() => { setPlaying(false); reset(); }}>↺ Reset</button>
+      <div className="vl-sandbox" data-testid="orbit-sandbox">
+        <div className="vl-orbit-grid">
+          <div className="vl-stage-wrap">
+            <HudFrame
+              accent="#818cf8"
+              tl={<>t {read.t.toFixed(1)} s</>}
+              tr={moonOn ? <>{naksName(read.naks, script)}</> : <>orbits {read.years.toFixed(2)}</>}
+              bl={<>v ×{read.speed.toFixed(2)} · r ×{read.dist.toFixed(2)}</>}
+              br={moonOn ? <>{read.crossed} nakṣatras</> : <>{read.status === 'ok' ? 'stable' : read.status}</>}
+            >
+              <canvas ref={canvasRef} className="vl-stage vl-stage--orbit" width={SIZE} height={SIZE} data-testid="orbit-canvas" aria-label="Orbit sandbox with Sūrya, Pṛthivī and Candra inside the ring of 27 nakṣatras" role="img" />
+            </HudFrame>
+            <p className="vl-hud-caption">Not to scale: sizes, distances and Pṛthivī’s mass are stretched so you can see Candra.</p>
           </div>
-          <label className="vl-slider">
-            <span className="vl-slider-label">☀️ Sūrya mass ×{sunF.toFixed(2)}</span>
-            <input type="range" min={0.5} max={2} step={0.05} value={sunF} onChange={(e) => onSun(Number(e.target.value))} data-testid="orbit-sun-mass" />
-          </label>
-          <label className="vl-slider">
-            <span className="vl-slider-label">🌍 Pṛthivī mass ×{earthF.toFixed(2)}</span>
-            <input type="range" min={0.5} max={1.5} step={0.05} value={earthF} onChange={(e) => onEarth(Number(e.target.value))} />
-          </label>
-          <label className="vl-slider">
-            <span className="vl-slider-label">💨 Pṛthivī starting speed ×{speedF.toFixed(2)} of circular</span>
-            <input type="range" min={0.2} max={1.8} step={0.05} value={speedF} onChange={(e) => onSpeed(Number(e.target.value))} data-testid="orbit-speed" />
-          </label>
-          <div className="vl-btn-row">
-            <button type="button" className="vl-chip" onClick={() => preset(0.3)} data-testid="orbit-too-slow">🐢 Too slow</button>
-            <button type="button" className="vl-chip" onClick={() => preset(1)}>🙂 Just right</button>
-            <button type="button" className="vl-chip" onClick={() => preset(1.5)}>🚀 Too fast</button>
-          </div>
-          <div className="vl-btn-row" role="radiogroup" aria-label="Name script">
-            {(['dev', 'iast', 'en'] as Script[]).map((sc) => (
-              <button key={sc} type="button" role="radio" aria-checked={script === sc} className={`vl-chip${script === sc ? ' is-on' : ''}`} onClick={() => setScript(sc)}>
-                {sc === 'dev' ? 'देवनागरी' : sc === 'iast' ? 'IAST' : 'English'}
-              </button>
-            ))}
-          </div>
-          <label className="vl-check"><input type="checkbox" checked={showTrails} onChange={(e) => setShowTrails(e.target.checked)} /> Show path trails</label>
-          <label className="vl-check"><input type="checkbox" checked={moonOn} onChange={(e) => { setMoonOn(e.target.checked); setPlaying(false); reset(sunF, earthF, speedF, e.target.checked); }} /> Include Candra</label>
+          <div className="vl-controls">
+            <div className="vl-leds">
+              <LedButton kind="toggle" on={playing} color="#4ade80" onClick={() => setPlaying((p) => !p)} testId="orbit-play">{playing ? '⏸ Pause' : '▶ Play'}</LedButton>
+              <LedButton kind="action" onClick={() => { setPlaying(false); reset(); }} testId="orbit-reset">↺ Reset</LedButton>
+            </div>
+            <div className="vl-dials">
+              <DialKnob label={<>☀️ Sūrya mass</>} ariaLabel="Sūrya mass, times normal" value={sunF} min={0.5} max={2} step={0.05} onChange={onSun} format={(x) => `×${x.toFixed(2)}`} color="#fbbf24" testId="orbit-sun-mass" />
+              <DialKnob label={<>🌍 Pṛthivī mass</>} ariaLabel="Pṛthivī mass, times normal" value={earthF} min={0.5} max={1.5} step={0.05} onChange={onEarth} format={(x) => `×${x.toFixed(2)}`} color="#60a5fa" testId="orbit-earth-mass" />
+            </div>
+            <GlowSlider label={<>💨 Pṛthivī starting speed</>} value={speedF} min={0.2} max={1.8} step={0.05} onChange={onSpeed} valueText={`×${speedF.toFixed(2)} of circular`} color="#22d3ee" ariaLabel="Pṛthivī starting speed, times circular speed" testId="orbit-speed" />
+            <div className="vl-leds">
+              <LedButton kind="action" color="#fb923c" onClick={() => preset(0.3)} testId="orbit-too-slow">🐢 Too slow</LedButton>
+              <LedButton kind="action" color="#4ade80" onClick={() => preset(1)} testId="orbit-just-right">🙂 Just right</LedButton>
+              <LedButton kind="action" color="#f472b6" onClick={() => preset(1.5)} testId="orbit-too-fast">🚀 Too fast</LedButton>
+            </div>
+            <div className="vl-leds" role="radiogroup" aria-label="Name script">
+              {(['dev', 'iast', 'en'] as Script[]).map((sc) => (
+                <LedButton key={sc} kind="radio" on={script === sc} color="#a78bfa" onClick={() => setScript(sc)}>
+                  {sc === 'dev' ? 'देवनागरी' : sc === 'iast' ? 'IAST' : 'English'}
+                </LedButton>
+              ))}
+            </div>
+            <div className="vl-leds">
+              <LedButton kind="toggle" on={showTrails} color="#60a5fa" onClick={() => setShowTrails((x) => !x)} testId="orbit-trails">Path trails</LedButton>
+              <LedButton kind="toggle" on={moonOn} color="#e2e8f0" onClick={() => { const nx = !moonOn; setMoonOn(nx); setPlaying(false); reset(sunF, earthF, speedF, nx); }} testId="orbit-moon">Include Candra</LedButton>
+            </div>
 
-          <div className="vl-readout-grid" data-testid="orbit-readouts">
-            <span>Time</span><b data-testid="orbit-time">{read.t.toFixed(1)} s</b>
-            <span>Pṛthivī orbits</span><b>{read.years.toFixed(2)}</b>
-            <span>Speed (× circular)</span><b>{read.speed.toFixed(2)}</b>
-            <span>Distance (× start)</span><b>{read.dist.toFixed(2)}</b>
-            {moonOn && (
-              <>
-                <span>Candra is in</span><b className="vl-naks" data-testid="orbit-naks">{NAKSHATRAS[read.naks].dev} · {NAKSHATRAS[read.naks].iast}</b>
-                <span>Candra orbits (vs stars)</span><b>{read.moonOrbits.toFixed(2)}</b>
-                <span>Nakṣatras crossed</span><b data-testid="orbit-crossed">{read.crossed}</b>
-              </>
-            )}
+            <div className="vl-readout-grid" data-testid="orbit-readouts">
+              <span>Time</span><b data-testid="orbit-time">{read.t.toFixed(1)} s</b>
+              <span>Pṛthivī orbits</span><b>{read.years.toFixed(2)}</b>
+              <span>Speed (× circular)</span><b>{read.speed.toFixed(2)}</b>
+              <span>Distance (× start)</span><b>{read.dist.toFixed(2)}</b>
+              {moonOn && (
+                <>
+                  <span>Candra is in</span><b className="vl-naks" data-testid="orbit-naks">{NAKSHATRAS[read.naks].dev} · {NAKSHATRAS[read.naks].iast}</b>
+                  <span>Candra orbits (vs stars)</span><b>{read.moonOrbits.toFixed(2)}</b>
+                  <span>Nakṣatras crossed</span><b data-testid="orbit-crossed">{read.crossed}</b>
+                </>
+              )}
+            </div>
+            <p className={`vl-msg${read.status === 'ok' ? '' : ' is-alert'}`} role="status" data-testid="orbit-status">{statusMsg[read.status]}</p>
           </div>
-          <p className={`vl-msg${read.status === 'ok' ? '' : ' is-alert'}`} role="status" data-testid="orbit-status">{statusMsg[read.status]}</p>
         </div>
       </div>
 

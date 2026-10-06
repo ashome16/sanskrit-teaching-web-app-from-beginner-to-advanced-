@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
+import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 
 type LangMode = 'both' | 'sanskrit' | 'modern';
 type Phase = 'cloud' | 'srishti' | 'sthiti' | 'laya' | 'done';
@@ -14,13 +15,13 @@ const F0 = 3; // natural frequency of the loom, Hz
 const HOLD_SECONDS = 4;
 
 const BANDS = [
-  { key: 'srishti', dev: 'सृष्टि', sk: 'Sṛṣṭi', modern: 'Emergence', fill: 'rgba(250, 204, 21, 0.16)', strong: 'rgba(250, 204, 21, 0.32)', ink: '#a16207' },
-  { key: 'sthiti', dev: 'स्थिति', sk: 'Sthiti', modern: 'Sustenance', fill: 'rgba(59, 130, 246, 0.12)', strong: 'rgba(59, 130, 246, 0.26)', ink: '#1d4ed8' },
-  { key: 'laya', dev: 'लय', sk: 'Laya', modern: 'Absorption', fill: 'rgba(239, 68, 68, 0.11)', strong: 'rgba(239, 68, 68, 0.24)', ink: '#b91c1c' },
+  { key: 'srishti', dev: 'सृष्टि', sk: 'Sṛṣṭi', modern: 'Emergence', fill: 'rgba(250, 204, 21, 0.08)', strong: 'rgba(250, 204, 21, 0.2)', ink: '#fde047' },
+  { key: 'sthiti', dev: 'स्थिति', sk: 'Sthiti', modern: 'Sustenance', fill: 'rgba(59, 130, 246, 0.1)', strong: 'rgba(59, 130, 246, 0.24)', ink: '#93c5fd' },
+  { key: 'laya', dev: 'लय', sk: 'Laya', modern: 'Absorption', fill: 'rgba(239, 68, 68, 0.09)', strong: 'rgba(239, 68, 68, 0.22)', ink: '#fca5a5' },
 ] as const;
 
 /** Trivṛtkaraṇa colours (Chāndogya 6.4): red = fire, white = water, black = food. */
-const KIND_COLORS = ['#dc2626', '#f8fafc', '#1e293b'];
+const KIND_COLORS = ['#ef4444', '#f8fafc', '#334155'];
 
 interface P {
   x: number;
@@ -235,7 +236,7 @@ const SrishtiLoom: React.FC = () => {
     const ph = phaseRef.current;
     const active = ph === 'cloud' ? -1 : ph === 'done' ? -1 : bandIndex(ph);
     ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = '#fffdf8';
+    ctx.fillStyle = '#030712';
     ctx.fillRect(0, 0, W, H);
     BANDS.forEach((b, i) => {
       ctx.fillStyle = i === active ? b.strong : b.fill;
@@ -243,9 +244,9 @@ const SrishtiLoom: React.FC = () => {
       ctx.fillStyle = b.ink;
       ctx.font = '700 14px "Noto Sans Devanagari", system-ui, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(lab(b.sk, b.modern, b.dev), i * BAND + BAND / 2, 22);
+      ctx.fillText(lab(b.sk, b.modern, b.dev), i * BAND + BAND / 2, 50);
       if (i > 0) {
-        ctx.strokeStyle = 'rgba(148,163,184,0.5)';
+        ctx.strokeStyle = 'rgba(148,163,184,0.35)';
         ctx.setLineDash([4, 4]);
         ctx.beginPath();
         ctx.moveTo(i * BAND, 30);
@@ -262,9 +263,13 @@ const SrishtiLoom: React.FC = () => {
       if (x === 0) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
     }
-    ctx.strokeStyle = 'rgba(15, 118, 110, 0.55)';
+    ctx.save();
+    ctx.shadowColor = '#2dd4bf';
+    ctx.shadowBlur = 10;
+    ctx.strokeStyle = 'rgba(45, 212, 191, 0.8)';
     ctx.lineWidth = 2;
     ctx.stroke();
+    ctx.restore();
     // particles
     s.ps.forEach((p) => {
       ctx.globalAlpha = p.a;
@@ -285,7 +290,7 @@ const SrishtiLoom: React.FC = () => {
         ctx.fillStyle = KIND_COLORS[p.kind];
         ctx.fill();
       }
-      ctx.strokeStyle = 'rgba(71,85,105,0.6)';
+      ctx.strokeStyle = 'rgba(226,232,240,0.6)';
       ctx.lineWidth = 0.6;
       ctx.beginPath();
       ctx.arc(pt.x, pt.y, mx ? 4.5 : 3.8, 0, 2 * Math.PI);
@@ -293,7 +298,7 @@ const SrishtiLoom: React.FC = () => {
     });
     ctx.globalAlpha = 1;
     // Kāla axis
-    ctx.strokeStyle = '#334155';
+    ctx.strokeStyle = '#94a3b8';
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.moveTo(10, AXIS_Y);
@@ -302,13 +307,13 @@ const SrishtiLoom: React.FC = () => {
     ctx.moveTo(W - 14, AXIS_Y);
     ctx.lineTo(W - 22, AXIS_Y + 5);
     ctx.stroke();
-    ctx.fillStyle = '#334155';
+    ctx.fillStyle = '#cbd5e1';
     ctx.font = '600 12px "Noto Sans Devanagari", system-ui, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillText(lab('Kāla', 'Time', 'काल') + ' →', 12, AXIS_Y + 20);
+    ctx.textAlign = 'center';
+    ctx.fillText(lab('Kāla', 'Time', 'काल') + ' →', W / 2, AXIS_Y + 20);
     // "now" marker on the Kāla axis
     const nowX = ph === 'cloud' ? 8 : ph === 'done' ? W - 20 : bandIndex(ph) * BAND + BAND / 2;
-    ctx.fillStyle = '#0f766e';
+    ctx.fillStyle = '#2dd4bf';
     ctx.beginPath();
     ctx.moveTo(nowX, AXIS_Y - 2);
     ctx.lineTo(nowX - 7, AXIS_Y - 14);
@@ -395,78 +400,82 @@ const SrishtiLoom: React.FC = () => {
         </div>
       </div>
 
-      <ol className="vl-steps" data-testid="loom-steps">
-        {steps.map((s, i) => (
-          <li key={s.id} className={`${s.done ? 'is-done' : ''}${phase === s.id && !s.done ? ' is-now' : ''}`}>
-            <span className="vl-step-n">{s.done ? '✓' : i + 1}</span> {s.label}
-          </li>
-        ))}
-      </ol>
+      <div className="vl-sandbox" data-testid="loom-sandbox">
+        <ol className="vl-steps" data-testid="loom-steps">
+          {steps.map((s, i) => (
+            <li key={s.id} className={`${s.done ? 'is-done' : ''}${phase === s.id && !s.done ? ' is-now' : ''}`}>
+              <span className="vl-step-n">{s.done ? '✓' : i + 1}</span> {s.label}
+            </li>
+          ))}
+        </ol>
 
-      <div className="vl-stage-wrap">
-        <canvas ref={canvasRef} className="vl-stage vl-stage--loom" width={W} height={H} data-testid="loom-canvas" role="img" aria-label="Wave lab canvas with Sṛṣṭi, Sthiti and Laya bands along the Kāla (time) axis" />
-      </div>
-
-      <div className="vl-loom-controls">
-        <div className="vl-btn-row">
-          <button type="button" className="vl-btn" onClick={() => setPlaying((p) => !p)} data-testid="loom-play">{playing ? '⏸ Pause' : '▶ Play'}</button>
-          {phase === 'cloud' && (
-            <button type="button" className="vl-btn vl-btn--gold" onClick={() => { goPhase('srishti'); setPlaying(true); }} data-testid="loom-begin">
-              Begin {L('Sṛṣṭi', 'emergence')} →
-            </button>
-          )}
-          {sthitiDone && (
-            <button type="button" className="vl-btn vl-btn--red" onClick={() => { sim.current.layaT = 0; goPhase('laya'); setPlaying(true); }} data-testid="loom-laya">
-              Set off {L('Laya', 'absorption')} →
-            </button>
-          )}
-          {phase === 'done' && (
-            <button type="button" className="vl-btn vl-btn--gold" onClick={() => restart()}>↺ Begin a new cycle</button>
-          )}
-          <button type="button" className={`vl-chip${mixed ? ' is-on' : ''}`} onClick={() => setMixed((m) => !m)} data-testid="loom-mix" title="Trivṛtkaraṇa: make every particle threefold">
-            🔴⚪⚫ {L('Trivṛtkaraṇa', 'Mix three')}
-          </button>
-          <button type="button" className="vl-btn vl-btn--ghost" onClick={() => { setPlaying(false); restart(); }}>Reset</button>
+        <div className="vl-stage-wrap">
+          <HudFrame
+            accent="#fb7185"
+            tl={<>{L('Spandana', 'f')} {freq.toFixed(1)} Hz</>}
+            tr={<>{phase === 'cloud' ? 'READY' : phase === 'done' ? 'CYCLE DONE' : L(BANDS[bandIndex(phase)].sk, BANDS[bandIndex(phase)].modern).toUpperCase()}</>}
+            bl={<>{L('Vyakta', 'Manifest')} {read.manifest}/{read.total}</>}
+            br={<>{L('Vikṣepa', 'Scatter')} {Math.round(read.scatter)}%</>}
+          >
+            <canvas ref={canvasRef} className="vl-stage vl-stage--loom" width={W} height={H} data-testid="loom-canvas" role="img" aria-label="Wave lab canvas with Sṛṣṭi, Sthiti and Laya bands along the Kāla (time) axis" />
+          </HudFrame>
         </div>
-        <div className="vl-loom-sliders">
-          <label className="vl-slider">
-            <span className="vl-slider-label">{L('Kāla', 'Time speed', 'काल')} ×{kala.toFixed(2)}</span>
-            <input type="range" min={0.25} max={2} step={0.05} value={kala} onChange={(e) => setKala(Number(e.target.value))} />
-          </label>
-          <label className="vl-slider">
-            <span className="vl-slider-label">{L('Spandana', 'Vibration frequency', 'स्पन्दन')} {freq.toFixed(1)} Hz</span>
-            <input type="range" min={0.5} max={6} step={0.1} value={freq} onChange={(e) => setFreq(Number(e.target.value))} data-testid="loom-freq" />
-            <span className="vl-res" title="How strongly the loom responds at this frequency"><span style={{ width: `${Math.round(res * 100)}%` }} /></span>
-          </label>
-          <label className="vl-slider">
-            <span className="vl-slider-label">{L('Prāṇa', 'Energy', 'प्राण')} {prana}</span>
-            <input type="range" min={0} max={100} step={1} value={prana} onChange={(e) => setPrana(Number(e.target.value))} data-testid="loom-prana" />
-          </label>
-          <label className="vl-slider">
-            <span className="vl-slider-label">{L('Ghanatva', 'Particle density', 'घनत्व')} {density}</span>
-            <input type="range" min={30} max={180} step={10} value={density} disabled={phase !== 'cloud'} onChange={(e) => onDensity(Number(e.target.value))} />
-          </label>
+
+        <div className="vl-loom-controls">
+          <div className="vl-leds">
+            <LedButton kind="toggle" on={playing} color="#4ade80" onClick={() => setPlaying((p) => !p)} testId="loom-play">{playing ? '⏸ Pause' : '▶ Play'}</LedButton>
+            {phase === 'cloud' && (
+              <button type="button" className="vl-btn vl-btn--gold" onClick={() => { goPhase('srishti'); setPlaying(true); }} data-testid="loom-begin">
+                Begin {L('Sṛṣṭi', 'emergence')} →
+              </button>
+            )}
+            {sthitiDone && (
+              <button type="button" className="vl-btn vl-btn--red" onClick={() => { sim.current.layaT = 0; goPhase('laya'); setPlaying(true); }} data-testid="loom-laya">
+                Set off {L('Laya', 'absorption')} →
+              </button>
+            )}
+            {phase === 'done' && (
+              <button type="button" className="vl-btn vl-btn--gold" onClick={() => restart()}>↺ Begin a new cycle</button>
+            )}
+            <LedButton kind="toggle" on={mixed} color="#f87171" onClick={() => setMixed((m) => !m)} testId="loom-mix" title="Trivṛtkaraṇa: make every particle threefold">
+              🔴⚪⚫ {L('Trivṛtkaraṇa', 'Mix three')}
+            </LedButton>
+            <LedButton kind="action" onClick={() => { setPlaying(false); restart(); }} testId="loom-reset">Reset</LedButton>
+          </div>
+          <div className="vl-loom-deck">
+            <div className="vl-dials">
+              <div className="vl-dial-group">
+                <DialKnob label={<>{L('Spandana', 'Vibration frequency', 'स्पन्दन')}</>} ariaLabel="Vibration frequency in hertz" value={freq} min={0.5} max={6} step={0.1} onChange={setFreq} format={(x) => `${x.toFixed(1)} Hz`} color="#2dd4bf" testId="loom-freq" />
+                <span className="vl-res" title="How strongly the loom responds at this frequency" aria-label={`Response ${Math.round(res * 100)} percent`}><span style={{ width: `${Math.round(res * 100)}%` }} /></span>
+              </div>
+              <DialKnob label={<>{L('Prāṇa', 'Energy', 'प्राण')}</>} ariaLabel="Energy" value={prana} min={0} max={100} step={1} onChange={setPrana} format={(x) => `${Math.round(x)}`} color="#facc15" testId="loom-prana" />
+            </div>
+            <div className="vl-loom-faders">
+              <GlowSlider label={<>{L('Kāla', 'Time speed', 'काल')}</>} value={kala} min={0.25} max={2} step={0.05} onChange={setKala} valueText={`×${kala.toFixed(2)}`} color="#a78bfa" ariaLabel="Time speed" testId="loom-kala" />
+              <GlowSlider label={<>{L('Ghanatva', 'Particle density', 'घनत्व')}</>} value={density} min={30} max={180} step={10} onChange={onDensity} valueText={String(density)} disabled={phase !== 'cloud'} color="#60a5fa" ariaLabel="Particle density" testId="loom-density" />
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className="vl-readouts" data-testid="loom-readouts">
-        <span className="vl-readout">{L('Spandana', 'Frequency')}: <b>{freq.toFixed(1)} Hz</b></span>
-        <span className="vl-readout">{L('Taraṅga-vega', 'Wave speed')}: <b>{Math.round(freq * WAVELENGTH)} px/s</b></span>
-        <span className="vl-readout">{L('Vyakta', 'Manifest')}: <b data-testid="loom-manifest">{read.manifest}</b> / {read.total}</span>
-        <span className="vl-readout">{L('Vikṣepa', 'Scatter')}: <b data-testid="loom-scatter">{Math.round(read.scatter)}%</b></span>
-        {phase === 'sthiti' && <span className="vl-readout">{L('Sthiti', 'Steady')}: <b>{Math.min(HOLD_SECONDS, read.hold).toFixed(1)} / {HOLD_SECONDS} s</b></span>}
-      </div>
+        <div className="vl-readouts" data-testid="loom-readouts">
+          <span className="vl-readout">{L('Spandana', 'Frequency')}: <b>{freq.toFixed(1)} Hz</b></span>
+          <span className="vl-readout">{L('Taraṅga-vega', 'Wave speed')}: <b>{Math.round(freq * WAVELENGTH)} px/s</b></span>
+          <span className="vl-readout">{L('Vyakta', 'Manifest')}: <b data-testid="loom-manifest">{read.manifest}</b> / {read.total}</span>
+          <span className="vl-readout">{L('Vikṣepa', 'Scatter')}: <b data-testid="loom-scatter">{Math.round(read.scatter)}%</b></span>
+          {phase === 'sthiti' && <span className="vl-readout">{L('Sthiti', 'Steady')}: <b>{Math.min(HOLD_SECONDS, read.hold).toFixed(1)} / {HOLD_SECONDS} s</b></span>}
+        </div>
 
-      <p className="vl-msg" role="status" data-testid="loom-msg">
-        {phase === 'cloud' && 'Step 1: a scattered cloud of particles. The total never changes: in this game particles never appear from nothing, they only change form. Press “Begin”.'}
-        {phase === 'srishti' && (res * prana / 100 > 0.3
-          ? 'The loom is humming! Particles are gathering onto the wave…'
-          : 'Step 2: tune Spandana near the loom’s natural frequency (watch the green bar) and raise Prāṇa until the particles gather.')}
-        {phase === 'sthiti' && !sthitiDone && `Step 3: keep the pattern steady for ${HOLD_SECONDS} seconds. Too much Prāṇa (over 85) makes it jitter; drifting off the natural frequency loosens it.`}
-        {sthitiDone && '🌿 Steady! The Vedic word ṛta (ऋत) names cosmic order: the regular way the seasons, days and stars keep their course. Now set off Laya.'}
-        {phase === 'laya' && 'Step 4: Laya. The binding lets go; particles spread out and fade from view, but none is destroyed: they become unmanifest (avyakta).'}
-        {phase === 'done' && '✨ The cycle is complete. Every particle is still on the loom, only faded. In the traditional picture, laya is followed by a new sṛṣṭi.'}
-      </p>
+        <p className="vl-msg" role="status" data-testid="loom-msg">
+          {phase === 'cloud' && 'Step 1: a scattered cloud of particles. The total never changes: in this game particles never appear from nothing, they only change form. Press “Begin”.'}
+          {phase === 'srishti' && (res * prana / 100 > 0.3
+            ? 'The loom is humming! Particles are gathering onto the wave…'
+            : 'Step 2: tune Spandana near the loom’s natural frequency (watch the green bar) and raise Prāṇa until the particles gather.')}
+          {phase === 'sthiti' && !sthitiDone && `Step 3: keep the pattern steady for ${HOLD_SECONDS} seconds. Too much Prāṇa (over 85) makes it jitter; drifting off the natural frequency loosens it.`}
+          {sthitiDone && '🌿 Steady! The Vedic word ṛta (ऋत) names cosmic order: the regular way the seasons, days and stars keep their course. Now set off Laya.'}
+          {phase === 'laya' && 'Step 4: Laya. The binding lets go; particles spread out and fade from view, but none is destroyed: they become unmanifest (avyakta).'}
+          {phase === 'done' && '✨ The cycle is complete. Every particle is still on the loom, only faded. In the traditional picture, laya is followed by a new sṛṣṭi.'}
+        </p>
+      </div>
 
       <div className="vl-grid-2">
         <section className="vl-panel vl-tradition" aria-label="Uddālaka Āruṇi">

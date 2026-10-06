@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
+import { DialKnob, HudFrame, LedButton } from './controls';
 
 type Ritu = 'sisira' | 'vasanta' | 'grishma' | 'varsha' | 'sarad' | 'hemanta';
 
@@ -75,12 +76,8 @@ const CHALLENGES: LabChallenge[] = [
   { q: 'Is this balance game medical advice?', options: ['Yes', 'No, it is a learning game'], answer: 1, explain: 'Always ask a doctor about health. This game only teaches the traditional vocabulary.' },
 ];
 
-const Slider: React.FC<{ label: string; value: number; onChange: (n: number) => void; testId: string }> = ({ label, value, onChange, testId }) => (
-  <label className="vl-slider">
-    <span className="vl-slider-label">{label}</span>
-    <input type="range" min={0} max={10} step={1} value={value} onChange={(e) => onChange(Number(e.target.value))} data-testid={testId} />
-    <span className="vl-slider-val">{value}</span>
-  </label>
+const Dial: React.FC<{ label: string; value: number; onChange: (n: number) => void; testId: string; color: string }> = ({ label, value, onChange, testId, color }) => (
+  <DialKnob label={label} ariaLabel={label.replace(/^\S+\s/, '')} value={value} min={0} max={10} step={1} onChange={onChange} format={(x) => `${Math.round(x)} / 10`} color={color} size={78} testId={testId} />
 );
 
 type CellPart = 'membrane' | 'cytoplasm' | 'mito' | 'gas' | 'space';
@@ -195,67 +192,77 @@ const PrakritiBalance: React.FC = () => {
         each other.
       </CoreIdea>
 
-      <div className="vl-scenarios">
-        {SCENARIOS.map((s) => (
-          <button key={s.label} type="button" className="vl-chip" onClick={() => setEnv(s.env)}>{s.label}</button>
-        ))}
-      </div>
-
-      <div className="vl-prakriti-grid">
-        <div className="vl-controls">
-          <label className="vl-slider">
-            <span className="vl-slider-label">Ṛtu · season</span>
-            <select value={env.ritu} onChange={(e) => setEnv((x) => ({ ...x, ritu: e.target.value as Ritu }))} data-testid="ritu-select">
-              {RITU_ORDER.map((r) => (
-                <option key={r} value={r}>{RITU[r].dev} · {RITU[r].iast} ({RITU[r].en})</option>
-              ))}
-            </select>
-          </label>
-          <Slider label="🔥 Heat" value={env.heat} onChange={set('heat')} testId="slider-heat" />
-          <Slider label="❄️ Cold" value={env.cold} onChange={set('cold')} testId="slider-cold" />
-          <Slider label="🏜️ Dryness" value={env.dry} onChange={set('dry')} testId="slider-dry" />
-          <Slider label="💧 Moisture" value={env.moist} onChange={set('moist')} testId="slider-moist" />
-          <Slider label="🏃 Activity" value={env.activity} onChange={set('activity')} testId="slider-activity" />
-          <p className="vl-small">Season nudges are simplified from traditional ṛtucaryā descriptions.</p>
+      <div className="vl-sandbox" data-testid="prakriti-sandbox">
+        <div className="vl-leds vl-scenarios">
+          {SCENARIOS.map((s) => (
+            <LedButton key={s.label} kind="action" color="#4ade80" onClick={() => setEnv(s.env)}>{s.label}</LedButton>
+          ))}
         </div>
 
-        <svg viewBox="0 0 420 300" className="vl-stage vl-stage--prakriti" role="img" aria-label="Doṣa balance scene" data-testid="prakriti-stage">
-          <rect x={0} y={0} width={420} height={300} rx={16} fill={allSama ? '#f0fdf4' : '#fffdf8'} />
-          {/* ground */}
-          <path d="M0 262 Q210 236 420 262 L420 300 L0 300 Z" fill="#dcfce7" />
-          {/* cairn */}
-          <g transform="translate(90 250)">
-            <ellipse cx={0} cy={0} rx={52} ry={10} fill="#bbf7d0" />
-            {DOSHA.slice().reverse().map((d, i) => (
-              <g key={d.key} transform={`translate(0 ${-18 - i * 40}) rotate(${tilt(lv[d.key])})`}>
-                <ellipse cx={0} cy={0} rx={44 - i * 7} ry={18} fill={d.soft} stroke={d.color} strokeWidth={2.5} />
-                <text x={0} y={5} textAnchor="middle" className="vl-svg-dev" fill={d.color}>{d.dev}</text>
-              </g>
-            ))}
-            {allSama && <text x={0} y={-150} textAnchor="middle" fontSize={26}>🌼</text>}
-          </g>
-          {/* gauges */}
-          {DOSHA.map((d, i) => {
-            const x = 210 + i * 70;
-            const h = 200;
-            const top = 40;
-            const y = (n: number) => top + h - (n / 100) * h;
-            return (
-              <g key={d.key}>
-                <rect x={x - 16} y={top} width={32} height={h} rx={16} fill="#f8fafc" stroke="#e2e8f0" />
-                <rect x={x - 16} y={y(SAMA_HI)} width={32} height={y(SAMA_LO) - y(SAMA_HI)} fill="#bbf7d0" opacity={0.8} />
-                <rect x={x - 11} y={y(lv[d.key])} width={22} height={top + h - y(lv[d.key])} rx={11} fill={d.color} opacity={0.85} />
-                <text x={x} y={top - 10} textAnchor="middle" className="vl-svg-dev" fill={d.color}>{d.dev}</text>
-                <text x={x} y={top + h + 18} textAnchor="middle" className="vl-svg-small">{d.iast} {Math.round(lv[d.key])}</text>
-              </g>
-            );
-          })}
-          <text x={12} y={22} className="vl-svg-small">green band = sama</text>
-        </svg>
-      </div>
+        <div className="vl-prakriti-grid">
+          <div className="vl-controls">
+            <div className="vl-slider-label">Ṛtu · season</div>
+            <div className="vl-leds" role="radiogroup" aria-label="Season">
+              {RITU_ORDER.map((r) => (
+                <LedButton key={r} kind="radio" on={env.ritu === r} color="#facc15" onClick={() => setEnv((x) => ({ ...x, ritu: r }))} testId={`ritu-${r}`} title={RITU[r].en}>
+                  <span lang="sa">{RITU[r].dev}</span> {RITU[r].iast}
+                </LedButton>
+              ))}
+            </div>
+            <div className="vl-dials">
+              <Dial label="🔥 Heat" value={env.heat} onChange={set('heat')} testId="slider-heat" color="#fb923c" />
+              <Dial label="❄️ Cold" value={env.cold} onChange={set('cold')} testId="slider-cold" color="#7dd3fc" />
+              <Dial label="🏜️ Dryness" value={env.dry} onChange={set('dry')} testId="slider-dry" color="#fcd34d" />
+              <Dial label="💧 Moisture" value={env.moist} onChange={set('moist')} testId="slider-moist" color="#38bdf8" />
+              <Dial label="🏃 Activity" value={env.activity} onChange={set('activity')} testId="slider-activity" color="#a78bfa" />
+            </div>
+            <p className="vl-small">Season nudges are simplified from traditional ṛtucaryā descriptions.</p>
+          </div>
 
-      <div className={`vl-sama ${allSama ? 'is-ok' : ''}`} role="status" data-testid="prakriti-status">
-        {allSama ? '✨ समः · sama! All three doṣas are in balance.' : 'Not yet sama. Move the sliders until all three gauges sit in the green band.'}
+          <HudFrame
+            accent={allSama ? '#4ade80' : '#22d3ee'}
+            bl={<>V {Math.round(lv.vata)} · P {Math.round(lv.pitta)} · K {Math.round(lv.kapha)}</>}
+            br={<>{allSama ? 'SAMA ✓' : 'NOT SAMA'}</>}
+          >
+            <svg viewBox="0 0 420 300" className="vl-stage vl-stage--prakriti" role="img" aria-label="Doṣa balance scene" data-testid="prakriti-stage">
+              <rect x={0} y={0} width={420} height={300} fill={allSama ? '#052e1a' : '#030712'} />
+              {/* ground */}
+              <path d="M0 262 Q210 236 420 262 L420 300 L0 300 Z" fill="#064e3b" opacity={0.7} />
+              {/* cairn */}
+              <g transform="translate(90 250)">
+                <ellipse cx={0} cy={0} rx={52} ry={10} fill="#065f46" />
+                {DOSHA.slice().reverse().map((d, i) => (
+                  <g key={d.key} transform={`translate(0 ${-18 - i * 40}) rotate(${tilt(lv[d.key])})`}>
+                    <ellipse cx={0} cy={0} rx={44 - i * 7} ry={18} fill={d.color} fillOpacity={0.35} stroke={d.soft} strokeWidth={2.5} />
+                    <text x={0} y={5} textAnchor="middle" className="vl-svg-dev">{d.dev}</text>
+                  </g>
+                ))}
+                {allSama && <text x={0} y={-150} textAnchor="middle" fontSize={26}>🌼</text>}
+              </g>
+              {/* gauges */}
+              {DOSHA.map((d, i) => {
+                const x = 210 + i * 70;
+                const h = 200;
+                const top = 40;
+                const y = (n: number) => top + h - (n / 100) * h;
+                return (
+                  <g key={d.key}>
+                    <rect x={x - 16} y={top} width={32} height={h} rx={16} fill="#0b1220" stroke="#334155" />
+                    <rect x={x - 16} y={y(SAMA_HI)} width={32} height={y(SAMA_LO) - y(SAMA_HI)} fill="#22c55e" opacity={0.28} />
+                    <rect x={x - 11} y={y(lv[d.key])} width={22} height={top + h - y(lv[d.key])} rx={11} fill={d.soft} opacity={0.9} style={{ filter: `drop-shadow(0 0 4px ${d.soft})` }} />
+                    <text x={x} y={top - 10} textAnchor="middle" className="vl-svg-dev">{d.dev}</text>
+                    <text x={x} y={top + h + 18} textAnchor="middle" className="vl-svg-small">{d.iast} {Math.round(lv[d.key])}</text>
+                  </g>
+                );
+              })}
+              <text x={12} y={22} className="vl-svg-small">green band = sama</text>
+            </svg>
+          </HudFrame>
+        </div>
+
+        <div className={`vl-sama ${allSama ? 'is-ok' : ''}`} role="status" data-testid="prakriti-status">
+          {allSama ? '✨ समः · sama! All three doṣas are in balance.' : 'Not yet sama. Turn the dials until all three gauges sit in the green band.'}
+        </div>
       </div>
 
       <div className="vl-dosha-cards">

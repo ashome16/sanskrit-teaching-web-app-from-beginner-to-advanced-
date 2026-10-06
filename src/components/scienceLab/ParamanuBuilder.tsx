@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
+import { HudFrame, LedButton } from './controls';
 import { localPoint } from './geometry';
 
 type Bhuta = 'prthivi' | 'ap' | 'tejas' | 'vayu';
@@ -323,6 +324,20 @@ const ParamanuBuilder: React.FC = () => {
     commit(res.list);
   };
 
+  /** Keyboard-friendly: drop one paramāṇu of a bhūta into an open patch of sky. */
+  const addOne = (b: Bhuta) => {
+    let spot = randomSpot();
+    for (let k = 0; k < 30; k += 1) {
+      const c = randomSpot();
+      if (itemsRef.current.every((i) => Math.hypot(i.x - c.x, i.y - c.y) > 70)) {
+        spot = c;
+        break;
+      }
+    }
+    commit([...itemsRef.current, { id: nextId++, kind: 'p', bhuta: b, ...spot, n: 1 }]);
+    setMsg(`A ${BHUTA_INFO[b].iast} paramāṇu (magnified!) is in the sky. Drag it onto another of the same bhūta to join them.`);
+  };
+
   /** Keyboard / test helper: add two earth paramāṇus and join them. */
   const demoJoin = () => {
     // Find an open patch of sky so the demo pair only meets each other.
@@ -363,86 +378,97 @@ const ParamanuBuilder: React.FC = () => {
         first size that can be perceived.
       </CoreIdea>
 
-      <div className="vl-stage-wrap">
-        <svg
-          ref={svgRef}
-          className="vl-stage vl-stage--paramanu"
-          viewBox={`0 0 ${W} ${H}`}
-          role="application"
-          aria-label="Paramāṇu builder sandbox"
-          data-testid="paramanu-stage"
-          onPointerMove={onMove}
-          onPointerUp={onUp}
-          onPointerCancel={onUp}
-        >
-          <defs>
-            <linearGradient id="vl-akasha" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stopColor="#f0f9ff" />
-              <stop offset="1" stopColor="#fdf4ff" />
-            </linearGradient>
-            <linearGradient id="vl-beam" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stopColor="#fde68a" stopOpacity="0.55" />
-              <stop offset="1" stopColor="#fde68a" stopOpacity="0" />
-            </linearGradient>
-            <radialGradient id="vl-mote">
-              <stop offset="0" stopColor="#fde047" stopOpacity="0.8" />
-              <stop offset="1" stopColor="#fde047" stopOpacity="0" />
-            </radialGradient>
-          </defs>
-          {/* Ākāśa: the space itself */}
-          <rect x={0} y={0} width={W} height={H} rx={16} fill="url(#vl-akasha)" />
-          <polygon points={`${W - 60},0 ${W},0 ${TRAY_W + 120},${H} ${TRAY_W + 10},${H}`} fill="url(#vl-beam)" />
-          {Array.from({ length: 36 }, (_, i) => (
-            <circle key={i} cx={TRAY_W + ((i * 137) % (W - TRAY_W))} cy={(i * 89) % H} r={1.2} fill="#c4b5fd" opacity={0.6} />
-          ))}
-          <text x={W - 14} y={24} textAnchor="end" className="vl-svg-label">आकाश · ākāśa: the space itself</text>
-          <text x={W - 14} y={40} textAnchor="end" className="vl-svg-small">one, all-pervading, not made of paramāṇus</text>
-          <text x={W - 14} y={H - 12} textAnchor="end" className="vl-svg-small">☀️ sunbeam: where a tryaṇuka-sized mote would glint</text>
-
-          {/* Tray */}
-          <rect x={6} y={6} width={TRAY_W - 12} height={H - 12} rx={14} fill="#fffdf8" stroke="#e7efe3" />
-          <text x={TRAY_W / 2} y={30} textAnchor="middle" className="vl-svg-label">Tray</text>
-          <text x={TRAY_W / 2} y={44} textAnchor="middle" className="vl-svg-small">drag or tap</text>
-          {BHUTAS.map((b, i) => (
-            <g
-              key={b}
-              className="vl-tray-well"
-              data-testid={`tray-${b}`}
-              onPointerDown={(e) => startTray(b, e)}
-              style={{ cursor: 'grab' }}
+      <div className="vl-sandbox" data-testid="paramanu-sandbox">
+        <div className="vl-stage-wrap">
+          <HudFrame accent="#facc15" tr={<>P {counts.p} · D {counts.d} · T {counts.t}</>} br={<>ĀKĀŚA · all-pervading</>}>
+            <svg
+              ref={svgRef}
+              className="vl-stage vl-stage--paramanu"
+              viewBox={`0 0 ${W} ${H}`}
+              role="application"
+              aria-label="Paramāṇu builder sandbox"
+              data-testid="paramanu-stage"
+              onPointerMove={onMove}
+              onPointerUp={onUp}
+              onPointerCancel={onUp}
             >
-              <rect x={14} y={trayY(i) - 6} width={TRAY_W - 28} height={76} rx={12} fill={BHUTA_INFO[b].soft} stroke={BHUTA_INFO[b].color} strokeOpacity={0.35} />
-              <circle cx={TRAY_W / 2 - 12} cy={trayY(i) + 16} r={7} fill={BHUTA_INFO[b].color} />
-              <circle cx={TRAY_W / 2 + 4} cy={trayY(i) + 12} r={7} fill={BHUTA_INFO[b].color} opacity={0.75} />
-              <circle cx={TRAY_W / 2 + 14} cy={trayY(i) + 22} r={7} fill={BHUTA_INFO[b].color} opacity={0.55} />
-              <text x={TRAY_W / 2} y={trayY(i) + 46} textAnchor="middle" className="vl-svg-dev">{BHUTA_INFO[b].dev}</text>
-              <text x={TRAY_W / 2} y={trayY(i) + 62} textAnchor="middle" className="vl-svg-small">{BHUTA_INFO[b].iast} · {BHUTA_INFO[b].en}</text>
-            </g>
-          ))}
+              <defs>
+                <linearGradient id="vl-akasha" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stopColor="#0b1026" />
+                  <stop offset="1" stopColor="#1a1033" />
+                </linearGradient>
+                <linearGradient id="vl-beam" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stopColor="#fde68a" stopOpacity="0.22" />
+                  <stop offset="1" stopColor="#fde68a" stopOpacity="0" />
+                </linearGradient>
+                <radialGradient id="vl-mote">
+                  <stop offset="0" stopColor="#fde047" stopOpacity="0.8" />
+                  <stop offset="1" stopColor="#fde047" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+              {/* Ākāśa: the space itself */}
+              <rect x={0} y={0} width={W} height={H} rx={16} fill="url(#vl-akasha)" />
+              <polygon points={`${W - 60},0 ${W},0 ${TRAY_W + 120},${H} ${TRAY_W + 10},${H}`} fill="url(#vl-beam)" />
+              {Array.from({ length: 36 }, (_, i) => (
+                <circle key={i} cx={TRAY_W + ((i * 137) % (W - TRAY_W))} cy={(i * 89) % H} r={1.2} fill="#e9d5ff" opacity={0.7} />
+              ))}
+              <text x={W - 14} y={54} textAnchor="end" className="vl-svg-label">आकाश · ākāśa: the space itself</text>
+              <text x={W - 14} y={70} textAnchor="end" className="vl-svg-small">one, all-pervading, not made of paramāṇus</text>
+              <text x={W - 14} y={H - 40} textAnchor="end" className="vl-svg-small">☀️ sunbeam: where a tryaṇuka-sized mote would glint</text>
 
-          {items.map((it) => (
-            <g
-              key={it.id}
-              data-kind={it.kind}
-              data-bhuta={it.bhuta}
-              className="vl-item"
-              onPointerDown={(e) => startItem(it, e)}
-              style={{ cursor: 'grab' }}
-            >
-              <ItemShape it={it} />
-            </g>
-          ))}
-        </svg>
-      </div>
+              {/* Tray */}
+              <rect x={6} y={6} width={TRAY_W - 12} height={H - 12} rx={14} fill="#0b1220" stroke="#334155" />
+              <text x={TRAY_W / 2} y={30} textAnchor="middle" className="vl-svg-label">Tray</text>
+              <text x={TRAY_W / 2} y={44} textAnchor="middle" className="vl-svg-small">drag or tap</text>
+              {BHUTAS.map((b, i) => (
+                <g
+                  key={b}
+                  className="vl-tray-well"
+                  data-testid={`tray-${b}`}
+                  onPointerDown={(e) => startTray(b, e)}
+                  style={{ cursor: 'grab' }}
+                >
+                  <rect x={14} y={trayY(i) - 6} width={TRAY_W - 28} height={76} rx={12} fill={BHUTA_INFO[b].color} fillOpacity={0.22} stroke={BHUTA_INFO[b].soft} strokeOpacity={0.5} />
+                  <circle cx={TRAY_W / 2 - 12} cy={trayY(i) + 16} r={7} fill={BHUTA_INFO[b].soft} />
+                  <circle cx={TRAY_W / 2 + 4} cy={trayY(i) + 12} r={7} fill={BHUTA_INFO[b].soft} opacity={0.75} />
+                  <circle cx={TRAY_W / 2 + 14} cy={trayY(i) + 22} r={7} fill={BHUTA_INFO[b].soft} opacity={0.55} />
+                  <text x={TRAY_W / 2} y={trayY(i) + 46} textAnchor="middle" className="vl-svg-dev">{BHUTA_INFO[b].dev}</text>
+                  <text x={TRAY_W / 2} y={trayY(i) + 62} textAnchor="middle" className="vl-svg-small">{BHUTA_INFO[b].iast} · {BHUTA_INFO[b].en}</text>
+                </g>
+              ))}
 
-      <div className="vl-readouts">
-        <span className="vl-readout"><b>{counts.p}</b> paramāṇu</span>
-        <span className="vl-readout"><b>{counts.d}</b> dvyaṇuka</span>
-        <span className="vl-readout"><b>{counts.t}</b> tryaṇuka</span>
-        <button type="button" className="vl-btn" onClick={demoJoin} data-testid="paramanu-demo">Show me a join</button>
-        <button type="button" className="vl-btn vl-btn--ghost" onClick={() => { commit([]); setMsg('Fresh sky! Drag a paramāṇu from the tray.'); }}>Reset</button>
+              {items.map((it) => (
+                <g
+                  key={it.id}
+                  data-kind={it.kind}
+                  data-bhuta={it.bhuta}
+                  className="vl-item"
+                  onPointerDown={(e) => startItem(it, e)}
+                  style={{ cursor: 'grab' }}
+                >
+                  <ItemShape it={it} />
+                </g>
+              ))}
+            </svg>
+          </HudFrame>
+        </div>
+
+        <div className="vl-leds" role="group" aria-label="Add a paramāṇu">
+          {BHUTAS.map((b) => (
+            <LedButton key={b} kind="action" color={BHUTA_INFO[b].soft} onClick={() => addOne(b)} testId={`paramanu-add-${b}`}>
+              {BHUTA_INFO[b].icon} + <span lang="sa">{BHUTA_INFO[b].dev}</span> {BHUTA_INFO[b].iast}
+            </LedButton>
+          ))}
+        </div>
+        <div className="vl-readouts">
+          <span className="vl-readout"><b>{counts.p}</b> paramāṇu</span>
+          <span className="vl-readout"><b>{counts.d}</b> dvyaṇuka</span>
+          <span className="vl-readout"><b>{counts.t}</b> tryaṇuka</span>
+          <LedButton kind="action" color="#facc15" onClick={demoJoin} testId="paramanu-demo">Show me a join</LedButton>
+          <LedButton kind="action" onClick={() => { commit([]); setMsg('Fresh sky! Drag a paramāṇu from the tray.'); }} testId="paramanu-reset">Reset</LedButton>
+        </div>
+        <p className="vl-msg" role="status" data-testid="paramanu-msg">{msg}</p>
       </div>
-      <p className="vl-msg" role="status" data-testid="paramanu-msg">{msg}</p>
 
       <div className="vl-note">
         <strong>Why is ākāśa not in the tray?</strong> Ākāśa is one of the pañca-mahābhūtas (five great elements), but in

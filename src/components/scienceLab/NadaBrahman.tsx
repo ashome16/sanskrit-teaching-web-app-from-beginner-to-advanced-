@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
+import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 
 type LangMode = 'both' | 'sanskrit' | 'modern';
 
@@ -41,11 +42,11 @@ interface Harmonic {
 }
 
 const HARMONICS: Harmonic[] = [
-  { n: 1, tan: 'śabda', tanDev: 'शब्द', tanEn: 'sound', bhuta: 'ākāśa', bhutaDev: 'आकाश', bhutaEn: 'space', color: '#6366f1' },
-  { n: 2, tan: 'sparśa', tanDev: 'स्पर्श', tanEn: 'touch', bhuta: 'vāyu', bhutaDev: 'वायु', bhutaEn: 'air', color: '#0ea5e9' },
-  { n: 3, tan: 'rūpa', tanDev: 'रूप', tanEn: 'form, sight', bhuta: 'tejas', bhutaDev: 'तेजस्', bhutaEn: 'fire, light', color: '#f97316' },
-  { n: 4, tan: 'rasa', tanDev: 'रस', tanEn: 'taste', bhuta: 'ap', bhutaDev: 'अप्', bhutaEn: 'water', color: '#14b8a6' },
-  { n: 5, tan: 'gandha', tanDev: 'गन्ध', tanEn: 'smell', bhuta: 'pṛthivī', bhutaDev: 'पृथिवी', bhutaEn: 'earth', color: '#a16207' },
+  { n: 1, tan: 'śabda', tanDev: 'शब्द', tanEn: 'sound', bhuta: 'ākāśa', bhutaDev: 'आकाश', bhutaEn: 'space', color: '#818cf8' },
+  { n: 2, tan: 'sparśa', tanDev: 'स्पर्श', tanEn: 'touch', bhuta: 'vāyu', bhutaDev: 'वायु', bhutaEn: 'air', color: '#38bdf8' },
+  { n: 3, tan: 'rūpa', tanDev: 'रूप', tanEn: 'form, sight', bhuta: 'tejas', bhutaDev: 'तेजस्', bhutaEn: 'fire, light', color: '#fb923c' },
+  { n: 4, tan: 'rasa', tanDev: 'रस', tanEn: 'taste', bhuta: 'ap', bhutaDev: 'अप्', bhutaEn: 'water', color: '#2dd4bf' },
+  { n: 5, tan: 'gandha', tanDev: 'गन्ध', tanEn: 'smell', bhuta: 'pṛthivī', bhutaDev: 'पृथिवी', bhutaEn: 'earth', color: '#fbbf24' },
 ];
 
 const TARGETS = [
@@ -210,21 +211,20 @@ const NadaBrahman: React.FC = () => {
       cv.height = H * dpr;
     }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const { n: k, T: tension, amp: a, playing: isPlaying, lang: lm, f: freq } = live.current;
+    const { n: k, T: tension, amp: a, playing: isPlaying, f: freq } = live.current;
     if (isPlaying) clock.current += Math.min(0.05, dt);
     const t = clock.current;
     const hm = HARMONICS[k - 1];
-    const lab = (sk: string, modern: string) => (lm === 'modern' ? modern : lm === 'sanskrit' ? sk : `${sk} · ${modern}`);
 
     ctx.clearRect(0, 0, W, H);
     const bg = ctx.createLinearGradient(0, 0, 0, H);
-    bg.addColorStop(0, '#fffbeb');
-    bg.addColorStop(1, '#fef3c7');
+    bg.addColorStop(0, '#0b1222');
+    bg.addColorStop(1, '#030712');
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, W, H);
 
     // Neck and gourd (decoration only)
-    ctx.fillStyle = 'rgba(146,64,14,0.07)';
+    ctx.fillStyle = 'rgba(148,163,184,0.08)';
     ctx.beginPath();
     ctx.roundRect(X0 + 10, Y0 + 92, X1 - X0 - 60, 14, 7);
     ctx.fill();
@@ -248,7 +248,7 @@ const NadaBrahman: React.FC = () => {
 
     // Envelope (where the string can reach)
     ctx.setLineDash([5, 5]);
-    ctx.strokeStyle = 'rgba(100,116,139,0.45)';
+    ctx.strokeStyle = 'rgba(148,163,184,0.5)';
     ctx.lineWidth = 1;
     [1, -1].forEach((s) => {
       ctx.beginPath();
@@ -263,10 +263,10 @@ const NadaBrahman: React.FC = () => {
 
     // The string
     const tight = tension > 50;
-    ctx.strokeStyle = tight ? '#dc2626' : hm.color;
+    ctx.strokeStyle = tight ? '#f87171' : hm.color;
     ctx.lineWidth = 3;
-    ctx.shadowColor = tight ? 'rgba(220,38,38,0.4)' : 'rgba(0,0,0,0.15)';
-    ctx.shadowBlur = 6;
+    ctx.shadowColor = tight ? 'rgba(248,113,113,0.8)' : hm.color;
+    ctx.shadowBlur = 12;
     ctx.beginPath();
     for (let x = X0; x <= X1; x += 2) {
       const y = yAt(x, phase);
@@ -283,43 +283,36 @@ const NadaBrahman: React.FC = () => {
       const x = X0 + (len * j) / k;
       ctx.beginPath();
       ctx.arc(x, yAt(x, 0), j === 0 || j === k ? 6 : 4.5, 0, 2 * Math.PI);
-      ctx.fillStyle = j === 0 || j === k ? '#334155' : '#ffffff';
+      ctx.fillStyle = j === 0 || j === k ? '#e5e7eb' : '#030712';
       ctx.fill();
-      ctx.strokeStyle = '#334155';
+      ctx.strokeStyle = '#e5e7eb';
       ctx.lineWidth = 1.5;
       ctx.stroke();
       if (j > 0 && j < k) {
-        ctx.fillStyle = '#475569';
+        ctx.fillStyle = '#cbd5e1';
         ctx.fillText('node', x, yAt(x, 0) + 22);
       }
     }
     for (let j = 0; j < k; j += 1) {
       const x = X0 + (len * (j + 0.5)) / k;
-      ctx.fillStyle = 'rgba(71,85,105,0.7)';
+      ctx.fillStyle = 'rgba(203,213,225,0.85)';
       ctx.fillText('antinode', x, Math.max(44, Y0 - (a / 100) * 70 - 10));
     }
 
     // Fixed ends
-    ctx.fillStyle = '#78350f';
+    ctx.fillStyle = '#a16207';
     ctx.fillRect(X0 - 10, Y0 - 24, 8, 48);
     ctx.fillRect(X1 + 2, Y0 - 24, 8, 48);
-    ctx.fillStyle = '#78350f';
+    ctx.fillStyle = '#fcd34d';
     ctx.font = '600 11px system-ui, sans-serif';
     ctx.fillText('fixed end', X0 - 6, Y0 + 40);
     ctx.fillText('fixed end', X1 + 6, Y0 + 40);
 
     // Labels
     ctx.textAlign = 'left';
-    ctx.fillStyle = '#64748b';
+    ctx.fillStyle = '#9ca3af';
     ctx.font = '600 11px system-ui, sans-serif';
-    ctx.fillText(`Motion slowed down for your eyes; the real string vibrates ${Math.round(freq)} times a second. Sag is exaggerated.`, 14, H - 12);
-    ctx.textAlign = 'right';
-    ctx.fillStyle = hm.color;
-    ctx.font = '700 15px "Noto Sans Devanagari", system-ui, sans-serif';
-    ctx.fillText(`n = ${k} · ${lab(`${hm.tanDev} ${hm.tan}`, hm.tanEn)}`, W - 14, 26);
-    ctx.textAlign = 'left';
-    ctx.fillStyle = '#0f766e';
-    ctx.fillText(`${freq.toFixed(1)} Hz`, 14, 26);
+    ctx.fillText(`Motion slowed down for your eyes; the real string vibrates ${Math.round(freq)} times a second. Sag is exaggerated.`, 14, H - 40);
   }, []);
 
   useEffect(() => {
@@ -375,87 +368,101 @@ const NadaBrahman: React.FC = () => {
         </div>
       </div>
 
-      <ol className="vl-steps vl-steps--3" data-testid="nada-steps">
-        {TARGETS.map((tg, i) => (
-          <li key={tg.note} className={`${matched[i] ? 'is-done' : ''}${i === round && !matched[i] ? ' is-now' : ''}`}>
-            <span className="vl-step-n">{matched[i] ? '✓' : i + 1}</span> {L('Svara', 'Match', 'स्वर')} {tg.note} · {tg.f.toFixed(2)} Hz
-          </li>
-        ))}
-      </ol>
+      <div className="vl-sandbox" data-testid="nada-sandbox">
+        <ol className="vl-steps vl-steps--3" data-testid="nada-steps">
+          {TARGETS.map((tg, i) => (
+            <li key={tg.note} className={`${matched[i] ? 'is-done' : ''}${i === round && !matched[i] ? ' is-now' : ''}`}>
+              <span className="vl-step-n">{matched[i] ? '✓' : i + 1}</span> {L('Svara', 'Match', 'स्वर')} {tg.note} · {tg.f.toFixed(2)} Hz
+            </li>
+          ))}
+        </ol>
 
-      <div className="vl-orbit-grid">
-        <div className="vl-stage-wrap">
-          <canvas ref={canvasRef} className="vl-stage vl-stage--nada" width={W} height={H} data-testid="nada-canvas" role="img" aria-label={`A string vibrating in harmonic ${n} at ${f.toFixed(1)} hertz`} />
-          <div className="vl-btn-row vl-nada-harmonics" role="radiogroup" aria-label="Harmonic">
-            {HARMONICS.map((h) => (
-              <button key={h.n} type="button" role="radio" aria-checked={n === h.n} className={`vl-chip${n === h.n ? ' is-on' : ''}`} onClick={() => pickN(h.n)} data-testid={`nada-h-${h.n}`}>
-                n={h.n} · {lang === 'modern' ? h.tanEn : lang === 'sanskrit' ? `${h.tanDev} ${h.tan}` : `${h.tanDev} ${h.tan}`}
-              </button>
-            ))}
+        <div className="vl-orbit-grid">
+          <div className="vl-stage-wrap">
+            <HudFrame
+              accent={hm.color}
+              tl={<>f {f.toFixed(1)} Hz</>}
+              tr={<>n={n} · {lang === 'modern' ? hm.tanEn : `${hm.tanDev} ${hm.tan}`}</>}
+              bl={<>T {T.toFixed(1)} N · v {v.toFixed(0)} m/s</>}
+              br={<>{note.name} {note.cents >= 0 ? '+' : ''}{note.cents}¢</>}
+            >
+              <canvas ref={canvasRef} className="vl-stage vl-stage--nada" width={W} height={H} data-testid="nada-canvas" role="img" aria-label={`A string vibrating in harmonic ${n} at ${f.toFixed(1)} hertz`} />
+            </HudFrame>
+            <div className="vl-leds vl-nada-harmonics" role="radiogroup" aria-label="Harmonic">
+              {HARMONICS.map((h) => (
+                <LedButton key={h.n} kind="radio" on={n === h.n} color={h.color} onClick={() => pickN(h.n)} testId={`nada-h-${h.n}`}>
+                  n={h.n} · {lang === 'modern' ? h.tanEn : `${h.tanDev} ${h.tan}`}
+                </LedButton>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="vl-controls">
-          <div className="vl-target" data-testid="nada-target">
-            {round < TARGETS.length ? (
-              <>
-                <b>🎯 Target:</b> {target.note} = {target.f.toFixed(2)} Hz
-                <div className="vl-small">{target.hint}</div>
-              </>
-            ) : (
-              <b>All three notes matched.</b>
+          <div className="vl-controls">
+            <div className="vl-target" data-testid="nada-target">
+              {round < TARGETS.length ? (
+                <>
+                  <b>🎯 Target:</b> {target.note} = {target.f.toFixed(2)} Hz
+                  <div className="vl-small">{target.hint}</div>
+                </>
+              ) : (
+                <b>All three notes matched.</b>
+              )}
+            </div>
+            <GlowSlider
+              label={<>🪢 Tension T</>}
+              value={T}
+              min={T_MIN}
+              max={T_MAX}
+              step={0.1}
+              onChange={changeT}
+              valueText={`${T.toFixed(1)} N`}
+              color={T > 50 ? '#f87171' : hm.color}
+              ariaLabel="String tension in newtons"
+              testId="nada-tension"
+            />
+            <div className="vl-leds">
+              <LedButton kind="action" onClick={() => changeT(T - 0.1)} testId="nada-tension-down">− 0.1 N</LedButton>
+              <LedButton kind="action" onClick={() => changeT(T + 0.1)} testId="nada-tension-up">+ 0.1 N</LedButton>
+            </div>
+            <div className="vl-dials">
+              <DialKnob label={<>〰️ Amplitude</>} ariaLabel="Amplitude in percent" value={amp} min={0} max={100} step={1} onChange={setAmp} format={(x) => `${Math.round(x)}%`} color={hm.color} testId="nada-amp" />
+              <div className="vl-leds" style={{ flexDirection: 'column', justifyContent: 'center' }}>
+                <LedButton kind="toggle" on={playing} color="#4ade80" onClick={() => setPlaying((x) => !x)} testId="nada-play">{playing ? '⏸ Pause' : '▶ Play'}</LedButton>
+                <LedButton kind="action" color={hm.color} onClick={pluck} testId="nada-pluck">🪕 Pluck</LedButton>
+                <LedButton kind="toggle" on={sound} color="#facc15" onClick={toggleSound} testId="nada-sound">{sound ? '🔊 Sound on (mute)' : '🔇 Sound off'}</LedButton>
+              </div>
+            </div>
+            <div className="vl-readout-grid" data-testid="nada-readouts">
+              <span>{L('Tanmātra', 'Subtle element', 'तन्मात्र')}</span><b data-testid="nada-tanmatra">{L(hm.tan, hm.tanEn, hm.tanDev)}</b>
+              <span>{L('Mahābhūta', 'Great element', 'महाभूत')}</span><b data-testid="nada-bhuta">{L(hm.bhuta, hm.bhutaEn, hm.bhutaDev)}</b>
+              <span>Frequency f</span><b data-testid="nada-freq">{f.toFixed(1)} Hz</b>
+              <span>Nearest note</span><b>{note.name} {note.cents >= 0 ? '+' : ''}{note.cents} cents</b>
+              <span>Wave speed √(T/μ)</span><b>{v.toFixed(0)} m/s</b>
+              <span>Wavelength 2L/n</span><b>{lambda.toFixed(2)} m</b>
+            </div>
+            {round < TARGETS.length && (
+              <p className={`vl-msg${inTune || matched[round] ? ' is-ok' : ''}`} data-testid="nada-feedback" role="status">{feedback}</p>
             )}
+            {round < TARGETS.length && !matched[round] && unreachable && (
+              <p className="vl-small">At n = {n}, {target.note} would need about {needT.toFixed(0)} N, outside this string’s {T_MIN}–{T_MAX} N range. Try another harmonic.</p>
+            )}
+            {T > 50 && <p className="vl-small">Very tight! Real strings can snap when over-tightened.</p>}
+            {round < TARGETS.length && matched[round] && (
+              <button type="button" className="vl-btn vl-btn--gold" onClick={nextRound} data-testid="nada-next">{round < TARGETS.length - 1 ? 'Next note →' : 'Finish →'}</button>
+            )}
+            <p className="vl-small">
+              f = n/(2L)·√(T/μ), the rule for an ideal string fixed at both ends (Mersenne’s laws, 1600s). Nominal string: L = 0.90 m,
+              μ = 0.55 g/m (about a 0.3 mm steel wire). A real pluck sounds many harmonics at once; here you pick one at a time.
+            </p>
           </div>
-          <label className="vl-slider">
-            <span className="vl-slider-label">🪢 Tension T: {T.toFixed(1)} N</span>
-            <input type="range" min={T_MIN} max={T_MAX} step={0.1} value={T} onChange={(e) => changeT(Number(e.target.value))} data-testid="nada-tension" />
-          </label>
-          <div className="vl-btn-row">
-            <button type="button" className="vl-btn vl-btn--ghost" onClick={() => changeT(T - 0.1)} data-testid="nada-tension-down" aria-label="Loosen by 0.1 newton">− 0.1 N</button>
-            <button type="button" className="vl-btn vl-btn--ghost" onClick={() => changeT(T + 0.1)} data-testid="nada-tension-up" aria-label="Tighten by 0.1 newton">+ 0.1 N</button>
-          </div>
-          <label className="vl-slider">
-            <span className="vl-slider-label">〰️ Amplitude: {amp}%</span>
-            <input type="range" min={0} max={100} step={1} value={amp} onChange={(e) => setAmp(Number(e.target.value))} data-testid="nada-amp" />
-          </label>
-          <div className="vl-btn-row">
-            <button type="button" className="vl-btn" onClick={() => setPlaying((p) => !p)} data-testid="nada-play">{playing ? '⏸ Pause' : '▶ Play'}</button>
-            <button type="button" className="vl-btn" onClick={pluck} data-testid="nada-pluck">🪕 Pluck</button>
-            <button type="button" className={`vl-btn vl-btn--ghost${sound ? ' is-on' : ''}`} onClick={toggleSound} aria-pressed={sound} data-testid="nada-sound">
-              {sound ? '🔊 Sound on (mute)' : '🔇 Sound off'}
-            </button>
-          </div>
-          <div className="vl-readout-grid" data-testid="nada-readouts">
-            <span>{L('Tanmātra', 'Subtle element', 'तन्मात्र')}</span><b data-testid="nada-tanmatra">{L(hm.tan, hm.tanEn, hm.tanDev)}</b>
-            <span>{L('Mahābhūta', 'Great element', 'महाभूत')}</span><b data-testid="nada-bhuta">{L(hm.bhuta, hm.bhutaEn, hm.bhutaDev)}</b>
-            <span>Frequency f</span><b data-testid="nada-freq">{f.toFixed(1)} Hz</b>
-            <span>Nearest note</span><b>{note.name} {note.cents >= 0 ? '+' : ''}{note.cents} cents</b>
-            <span>Wave speed √(T/μ)</span><b>{v.toFixed(0)} m/s</b>
-            <span>Wavelength 2L/n</span><b>{lambda.toFixed(2)} m</b>
-          </div>
-          {round < TARGETS.length && (
-            <p className={`vl-msg${inTune || matched[round] ? ' is-ok' : ''}`} data-testid="nada-feedback" role="status">{feedback}</p>
-          )}
-          {round < TARGETS.length && !matched[round] && unreachable && (
-            <p className="vl-small">At n = {n}, {target.note} would need about {needT.toFixed(0)} N, outside this string’s {T_MIN}–{T_MAX} N range. Try another harmonic.</p>
-          )}
-          {T > 50 && <p className="vl-small">Very tight! Real strings can snap when over-tightened.</p>}
-          {round < TARGETS.length && matched[round] && (
-            <button type="button" className="vl-btn vl-btn--gold" onClick={nextRound} data-testid="nada-next">{round < TARGETS.length - 1 ? 'Next note →' : 'Finish →'}</button>
-          )}
-          <p className="vl-small">
-            f = n/(2L)·√(T/μ), the rule for an ideal string fixed at both ends (Mersenne’s laws, 1600s). Nominal string: L = 0.90 m,
-            μ = 0.55 g/m (about a 0.3 mm steel wire). A real pluck sounds many harmonics at once; here you pick one at a time.
-          </p>
         </div>
+
+        {allDone && round >= TARGETS.length - 1 && (
+          <div className="vl-sama is-ok" role="status" data-testid="nada-win">
+            🌟 The Cosmic Sitār is in tune: three notes matched by tension and harmonic.
+            <button type="button" className="vl-btn vl-btn--ghost" onClick={restartQuest} style={{ marginLeft: '0.6rem' }}>↺ Play again</button>
+          </div>
+        )}
       </div>
-
-      {allDone && round >= TARGETS.length - 1 && (
-        <div className="vl-sama is-ok" role="status" data-testid="nada-win">
-          🌟 The Cosmic Sitār is in tune: three notes matched by tension and harmonic.
-          <button type="button" className="vl-btn vl-btn--ghost" onClick={restartQuest} style={{ marginLeft: '0.6rem' }}>↺ Play again</button>
-        </div>
-      )}
-
       <div className="vl-grid-2">
         <section className="vl-panel vl-tradition" aria-label="Nāda-brahman and the praṇava">
           <h3 className="vl-panel-title">📜 Nāda-brahman and oṃ</h3>
