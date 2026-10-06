@@ -7263,7 +7263,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     badgeEmoji: '🔬',
     badgeColor: '#0f766e',
     description:
-      'PhET-style science play with Sanskrit beside it: the Vaiśeṣika Paramāṇu Builder, Prakṛti Balance, the Jyotiṣa Orbit Sandbox, the Sṛṣṭi · Sthiti · Laya wave lab, the Cosmic Sitār (Nāda Brahman) and The Veil of Māyā (Asato mā). Free for guests.',
+      'PhET-style science play with Sanskrit beside it: the Paramāṇu Builder, Prakṛti Biosphere, Jyotiṣa Gravity Sandbox, The Loom of Āruṇi (Sṛṣṭi · Sthiti · Laya), Cosmic Sitār Tuning (Nāda Brahman) and The Veil of Māyā (Asato mā). Free for guests.',
     keywords: [
       'vijnana lab',
       'vijñāna',
@@ -7284,7 +7284,7 @@ export const SEARCH_INDEX: SearchItem[] = [
   },
   {
     id: 'lab-paramanu',
-    title: 'Vaiśeṣika Paramāṇu Builder · परमाणु',
+    title: 'Paramāṇu Builder · परमाणु-निर्माणम्',
     subtitle: 'Vijñāna Lab · Physics & Chemistry · #paramanu',
     category: 'tools',
     categoryLabel: 'Interactive Lab',
@@ -7293,6 +7293,10 @@ export const SEARCH_INDEX: SearchItem[] = [
     description:
       'Drag paramāṇus of pṛthivī, ap, tejas and vāyu: two make a dvyaṇuka, three dvyaṇukas make a tryaṇuka (the first perceptible size). Ākāśa is the all-pervading background. Based on the Vaiśeṣika Sūtra attributed to Kaṇāda.',
     keywords: [
+      'Vaiśeṣika Paramāṇu Builder',
+      'vaisheshika paramanu builder',
+      'paramanu builder',
+      'परमाणु-निर्माणम्',
       'paramanu',
       'paramāṇu',
       'atom',
@@ -7317,7 +7321,7 @@ export const SEARCH_INDEX: SearchItem[] = [
   },
   {
     id: 'lab-prakriti',
-    title: 'Prakṛti Balance · प्रकृति-सन्तुलनम्',
+    title: 'Prakṛti Biosphere · प्रकृति-सन्तुलनम्',
     subtitle: 'Vijñāna Lab · Biology & Ecology · #prakriti',
     category: 'tools',
     categoryLabel: 'Interactive Lab',
@@ -7326,6 +7330,10 @@ export const SEARCH_INDEX: SearchItem[] = [
     description:
       'Slide season (ṛtu), heat, cold, dryness, moisture and activity to move the vāta, pitta and kapha gauges into sama, then match cell parts to the bhūtas (a teaching analogy). A learning game, not medical advice.',
     keywords: [
+      'Prakṛti Balance',
+      'prakriti balance',
+      'prakriti biosphere',
+      'biosphere',
       'prakriti',
       'prakṛti',
       'dosha',
@@ -7350,7 +7358,7 @@ export const SEARCH_INDEX: SearchItem[] = [
   },
   {
     id: 'lab-jyotisha',
-    title: 'Jyotiṣa Orbit Sandbox · ज्योतिष',
+    title: 'Jyotiṣa Gravity Sandbox · ज्योतिष-कक्षा',
     subtitle: 'Vijñāna Lab · Astronomy · #jyotisha',
     category: 'tools',
     categoryLabel: 'Interactive Lab',
@@ -7359,6 +7367,12 @@ export const SEARCH_INDEX: SearchItem[] = [
     description:
       'A real Newtonian gravity sandbox with Sūrya, Pṛthivī and Candra: change mass and speed, see orbits, falling in and escaping, and watch Candra move through the 27 nakṣatras. Includes graha names and Rāhu/Ketu as lunar nodes.',
     keywords: [
+      'Jyotiṣa Orbit Sandbox',
+      'jyotisha orbit sandbox',
+      'orbit sandbox',
+      'jyotisha gravity sandbox',
+      'gravity sandbox',
+      'ज्योतिष-कक्षा',
       'jyotisha',
       'jyotiṣa',
       'orbit',
@@ -7385,7 +7399,7 @@ export const SEARCH_INDEX: SearchItem[] = [
   },
   {
     id: 'lab-srishti-sthiti-laya',
-    title: 'Sṛṣṭi · Sthiti · Laya Wave Lab · The Loom of Āruṇi',
+    title: 'The Loom of Āruṇi · सृष्टि-स्थिति-लय',
     subtitle: 'Vijñāna Lab · Waves, order & change · #srishti-sthiti-laya',
     category: 'tools',
     categoryLabel: 'Interactive Lab',
@@ -7394,6 +7408,11 @@ export const SEARCH_INDEX: SearchItem[] = [
     description:
       'A four-step quest: gather a scattered cloud with Spandana and Prāṇa (sṛṣṭi), hold it steady (sthiti, with ṛta), then let it dissolve (laya). Uddālaka Āruṇi’s clay, gold, iron and salt examples from Chāndogya Upaniṣad 6, with the later Kashmir Śaiva Spanda tradition shown separately.',
     keywords: [
+      'Sṛṣṭi · Sthiti · Laya Wave Lab',
+      'srishti sthiti laya wave lab',
+      'wave lab',
+      'loom of aruni',
+      'loom',
       'srishti',
       'sṛṣṭi',
       'sthiti',
@@ -7425,7 +7444,7 @@ export const SEARCH_INDEX: SearchItem[] = [
   },
   {
     id: 'lab-nada-brahman',
-    title: 'Cosmic Sitār · Nāda Brahman · नाद-ब्रह्म',
+    title: 'Cosmic Sitār Tuning · नाद-ब्रह्म',
     subtitle: 'Vijñāna Lab · Sound, waves & music · #nada-brahman',
     category: 'tools',
     categoryLabel: 'Interactive Lab',
@@ -7434,6 +7453,10 @@ export const SEARCH_INDEX: SearchItem[] = [
     description:
       'A real standing-wave string: pick harmonics n = 1–5 labelled śabda, sparśa, rūpa, rasa and gandha (with their Sāṅkhya mahābhūtas), tune the tension, and read the true frequency f = n/(2L)·√(T/μ). Match three target notes in the Cosmic Sitār quest. With nāda-brahman in the Saṅgīta-ratnākara, āhata and anāhata sound, and oṃ in the Māṇḍūkya Upaniṣad.',
     keywords: [
+      'Cosmic Sitār · Nāda Brahman',
+      'cosmic sitar nada brahman',
+      'cosmic sitar tuning',
+      'sitar tuning',
       'nada brahman',
       'nāda brahman',
       'nada brahma',
@@ -7476,7 +7499,7 @@ export const SEARCH_INDEX: SearchItem[] = [
   },
   {
     id: 'lab-asato-ma',
-    title: 'The Veil of Māyā · Asato mā sadgamaya · असतो मा सद्गमय',
+    title: 'The Veil of Māyā · असतो मा सद्गमय',
     subtitle: 'Vijñāna Lab · Matter, heat & chemistry · #asato-ma',
     category: 'tools',
     categoryLabel: 'Interactive Lab',
@@ -7485,6 +7508,9 @@ export const SEARCH_INDEX: SearchItem[] = [
     description:
       'Pick gold, wood, water or ice; switch from the everyday (Asat) view to the atom (Sat) view; slide the temperature through real melting and boiling points with a live v_rms = √(3kT/m); heat gold till it glows; and burn a log while C, H and O counts stay the same. With Bṛhadāraṇyaka Upaniṣad 1.3.28 and its own gloss.',
     keywords: [
+      'The Veil of Māyā · Asato mā sadgamaya',
+      'veil of maya',
+      'viveka scanner',
       'asato ma',
       'asato ma sadgamaya',
       'asato mā sad gamaya',
