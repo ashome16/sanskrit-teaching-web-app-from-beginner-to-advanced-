@@ -3372,7 +3372,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         sanskritTitle: 'उष्ट्रः',
         paragraphs: [
           'Uṣṭra means a camel. The word shows up in more than one place, and the shapes are not the same.',
-          'A commentary on Yoga Sūtra 2.46 lists uṣṭraniṣadana, sitting like a camel. It also lists sitting like a krauñca bird and sitting like an elephant. It gives the names. It does not say where the hands and feet go. So we cannot draw those as classroom poses.',
+          'A commentary (bhāṣya, भाष्य) on Yoga Sūtra 2.46 lists uṣṭraniṣadana, sitting like a camel. It also lists sitting like a krauñca bird and sitting like an elephant. It gives the names. It does not say where the hands and feet go. So we cannot draw those as classroom poses.',
           'The Gheraṇḍa lesson describes a different camel seat. You lie face down, place the feet on the back, hold them with the hands, and draw the belly and the mouth in. The book says yogins call that the camel seat.',
           'The kneeling backbend that many classes call camel is a third shape. People named it for a camel\'s hump. The old books on this page do not describe that kneeling shape.'
         ],
@@ -3454,7 +3454,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           'Some classrooms say a letter of the alphabet comes from a peacock, an elephant, or another animal.',
           'That claim is not in the Nāradīya Śikṣā verses above. Those charts are teaching aids. They are not this book\'s words.',
           'This page does not say an old book invented a modern studio pose.',
-          'The commentary on Yoga Sūtra 2.46, in the text used here, lists the animal seats in these words: krauñcaniṣadanaṃ hastiniṣadanam uṣṭraniṣadanaṃ. Names only. No shapes.'
+          'The commentary (bhāṣya, भाष्य) on Yoga Sūtra 2.46, in the text used here, lists the animal seats in these words: krauñcaniṣadanaṃ hastiniṣadanam uṣṭraniṣadanaṃ. Names only. No shapes.'
         ]
       }
     ],

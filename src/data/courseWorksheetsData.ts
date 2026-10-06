@@ -3184,7 +3184,7 @@ export const COURSE_LESSON_WORKSHEETS: Record<string, CourseLessonWorksheet> = {
             optionsOrHints: [
               'गौतम, कणाद, कपिल, पतञ्जलि, जैमिनि, बादरायण',
               'पाणिनि, कात्यायन, पतञ्जलि',
-              'शङ्कर, रामानुज, मध्व'
+              'आदि शङ्कराचार्य, रामानुज, मध्व'
             ],
             answer: '१. न्याय (Nyāya) → ऋषि गौतम (Nyāya Sūtras - Formal Logic & Epistemology)\n२. वैशेषिक (Vaiśeṣika) → ऋषि कणाद (Vaiśeṣika Sūtras - Atomic Physics & Categories)\n३. साङ्ख्य (Sāṅkhya) → ऋषि कपिल (Sāṅkhya Sūtras/Kārikā - Dualistic Cosmology & 25 Tattvas)\n४. योग (Yoga) → ऋषि पतञ्जलि (Yoga Sūtras - 8 Limbs & Mental Stillness)\n५. मीमांसा (Mīmāṁsā) → ऋषि जैमिनि (Mīmāṁsā Sūtras - Hermeneutics & Acoustic Duty)\n६. वेदान्त (Vedānta) → ऋषि बादरायण / व्यास (Brahma Sūtras - Non-Dual Ultimate Reality).',
             explanation: 'The six schools operate as three complementary pairs: Nyāya-Vaiśeṣika, Sāṅkhya-Yoga, and Mīmāṁsā-Vedānta.'
@@ -3247,7 +3247,7 @@ export const COURSE_LESSON_WORKSHEETS: Record<string, CourseLessonWorksheet> = {
             promptDevanagari: 'कथं साङ्ख्य-योग-वेदान्त-दर्शनानि सोपानवत् (Staircase) परस्परं पूरयन्ति?',
             promptEnglish: 'Analyze how Sāṅkhya, Yoga, and Vedānta form an integrated, non-contradictory 3-stage staircase of conscious realization.',
             marks: 7,
-            answer: 'The Progressive Epistemological Staircase:\n१. Stage 1 — Sāṅkhya (Theoretical Taxonomy): Kapila dissects reality into 25 Tattvas, fundamentally distinguishing the conscious witnessing subject (Puruṣa) from changing physical and mental nature (Prakṛti). This provides the intellectual roadmap.\n२. Stage 2 — Yoga (Empirical Methodology): Patañjali takes Sāṅkhya’s map and provides the clinical laboratory technology: "योगश्चित्तवृत्तिनिरोधः" (Yoga is the intentional stilling of the oscillations of the mind). Through the 8 limbs, mental turbulence ceases, allowing the witness to abide in its true identity ("तदा द्रष्टुः स्वरूपेऽवस्थानम्").\n३. Stage 3 — Vedānta (Non-Dual Realization): Bādarāyaṇa and Śaṅkara complete the ascent. They show that Sāṅkhya’s dualism was only a provisional pedagogical step. Once the mind is stilled, the observer discovers that Puruṣa and Prakṛti are not two alienated realities, but waves in the infinite, undivided ocean of Non-Dual Brahman ("सर्वं खल्विदं ब्रह्म").',
+            answer: 'The Progressive Epistemological Staircase:\n१. Stage 1 — Sāṅkhya (Theoretical Taxonomy): Kapila dissects reality into 25 Tattvas, fundamentally distinguishing the conscious witnessing subject (Puruṣa) from changing physical and mental nature (Prakṛti). This provides the intellectual roadmap.\n२. Stage 2 — Yoga (Empirical Methodology): Patañjali takes Sāṅkhya’s map and provides the clinical laboratory technology: "योगश्चित्तवृत्तिनिरोधः" (Yoga is the intentional stilling of the oscillations of the mind). Through the 8 limbs, mental turbulence ceases, allowing the witness to abide in its true identity ("तदा द्रष्टुः स्वरूपेऽवस्थानम्").\n३. Stage 3 — Vedānta (Non-Dual Realization): Bādarāyaṇa and Ādi Śaṅkarācārya complete the ascent. They show that Sāṅkhya’s dualism was only a provisional pedagogical step. Once the mind is stilled, the observer discovers that Puruṣa and Prakṛti are not two alienated realities, but waves in the infinite, undivided ocean of Non-Dual Brahman ("सर्वं खल्विदं ब्रह्म").',
             explanation: 'Transforms apparent philosophical conflicts into sequential stages of human cognitive maturation.'
           }
         ]

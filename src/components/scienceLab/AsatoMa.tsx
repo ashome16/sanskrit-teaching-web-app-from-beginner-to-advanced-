@@ -1278,7 +1278,7 @@ const AsatoMa: React.FC = () => {
           </p>
           <p className="vl-small">
             <b>A separate layer.</b> Māyā as a doctrine, and avidyā (literally “not-knowing”), are developed in later Vedānta,
-            especially the Advaita tradition associated with Śaṅkara (c. 8th century CE). The pair nāma-rūpa is older: the
+            especially the Advaita tradition associated with Ādi Śaṅkarācārya (c. 8th century CE). The pair nāma-rūpa is older: the
             Upaniṣads already use it (e.g. BU 1.4.7). The prayer in BU 1.3.28 uses none of these words; this segment’s title
             borrows the later image and keeps it apart from what the prayer says.
           </p>

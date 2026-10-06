@@ -225,7 +225,7 @@ const Chaturyoni: React.FC = () => {
         fourfold layout is preserved in <em>Manusmṛti</em> (1.43–46), which sorts beings into four groups: womb-born
         (placental vivipary), egg-born (oviparous), sweat/moisture-born (an old belief in generation from moisture and heat),
         and earth-sprouting plants. The <em>Chāndogya Upaniṣad</em> (6.3.1), generally dated earlier, names only three:
-        āṇḍaja, jīvaja and udbhijja; Śaṅkara’s commentary explains the missing sweat-born as folded into these groups. Match
+        āṇḍaja, jīvaja and udbhijja; Ādi Śaṅkarācārya’s commentary (bhāṣya, भाष्य) explains the missing sweat-born as folded into these groups. Match
         each specimen to the text’s group, then check what modern biology says.
       </CoreIdea>
 
@@ -484,7 +484,7 @@ const Chaturyoni: React.FC = () => {
             <figcaption>“Of these beings there are only three seeds: the egg-born, the born-from-a-living-being, and the sprouting.”</figcaption>
           </figure>
           <p className="vl-small">
-            Only three here, with no svedaja. Śaṅkara’s commentary folds the sweat-born into the egg-born and sprouting groups.
+            Only three here, with no svedaja. Ādi Śaṅkarācārya’s commentary (bhāṣya, भाष्य) folds the sweat-born into the egg-born and sprouting groups.
           </p>
         </section>
         <section className="cy-lore" aria-label="Aitareya Upaniṣad 3.3">

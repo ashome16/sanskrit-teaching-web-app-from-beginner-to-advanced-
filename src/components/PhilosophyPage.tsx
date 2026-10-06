@@ -5387,7 +5387,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </p>
               <ul>
                 <li>
-                  <strong>Śaṅkara’s Advaita</strong> (non-dualism): Brahman alone is ultimately real, and the self is
+                  <strong>Ādi Śaṅkarācārya’s Advaita</strong> (non-dualism): Brahman alone is ultimately real, and the self is
                   not other than Brahman. The world is <em>vivarta</em>, an apparent transformation — as a rope appears
                   as a snake — real for practical purposes, but not independently real.
                 </li>
@@ -5490,7 +5490,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <strong>The opponent goes first.</strong> Classical Indian philosophical writing has a signature form:
                 before you state your own view, you present the <strong lang="sa">पूर्वपक्ष (pūrvapakṣa)</strong> — the
                 opposing position — in its strongest form. Only then comes the reply and the established conclusion
-                (<em>siddhānta</em>). Śaṅkara, Kumārila and countless others often stated their opponents’ arguments so
+                (<em>siddhānta</em>). Ādi Śaṅkarācārya, Kumārila and countless others often stated their opponents’ arguments so
                 fully that such passages remain valuable sources for the schools they opposed.
               </p>
               <p>
@@ -5500,7 +5500,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 the Upaniṣads, whose subject is Brahman rather than ritual action, point beyond action to knowledge —
                 while Mīmāṃsakas pressed back that the Veda is fundamentally about what is to be done. The Brahma Sūtra
                 itself devotes a whole section to critiquing Sāṅkhya’s unconscious prakṛti as a first cause
-                (BS 2.2.1 ff.) and Vaiśeṣika’s atoms (the argument continues in BS 2.2, around sūtras 11–17 in Śaṅkara’s
+                (BS 2.2.1 ff.) and Vaiśeṣika’s atoms (the argument continues in BS 2.2, around sūtras 11–17 in Ādi Śaṅkarācārya’s
                 numbering). Sāṅkhya was critiqued by nearly everyone. And the Cārvākas, who accepted perception alone,
                 and the Jainas, with their doctrine of many-sidedness (<em>anekāntavāda</em>), were part of the
                 conversation throughout.
