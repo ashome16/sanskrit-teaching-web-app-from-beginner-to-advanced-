@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { CoreIdea, TermPanel, type LabTerm } from './common';
 import { DialKnob, HudFrame, LedButton } from './controls';
 import { isSmallScreen, prefersReducedMotion } from './motion';
+import MatrixOverwatch from './MatrixOverwatch';
 
 type LangMode = 'both' | 'sanskrit' | 'modern';
 type SubstanceId = 'gold' | 'wood' | 'water' | 'ice';
@@ -1229,6 +1230,8 @@ const AsatoMa: React.FC = () => {
         <strong>How much of an atom is empty space?</strong> Almost all of it: the nucleus is tiny compared with the atom.
         Yet a gold bar really is solid. Electric forces between atoms hold them in place and push back when you press.
       </div>
+
+      <MatrixOverwatch />
 
       <div className="vl-grid-2">
         <section className="vl-panel vl-tradition vl-lore" aria-label="Lore Terminal Alpha: Bṛhadāraṇyaka Upaniṣad 1.3.28" data-testid="asato-lore-alpha">

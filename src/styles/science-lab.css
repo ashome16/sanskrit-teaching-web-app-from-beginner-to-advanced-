@@ -697,3 +697,58 @@
 .vl-term-tag { font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em; color: #0e7490; }
 .vl-term-game { font-size: 0.8rem; color: #334155; line-height: 1.35; }
 .vl-term-dict { font-size: 0.72rem; font-style: italic; color: #64748b; }
+
+/* Asato mā · Matrix Overwatch phonon lattice */
+.vl-mo { margin: 0.9rem auto; max-width: 880px; }
+.vl-mo-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4rem 0.9rem; }
+.vl-mo-title { margin: 0; font-size: 1.05rem; font-weight: 900; color: #f1f5f9; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; letter-spacing: 0.02em; }
+.vl-mo-title i { font-style: normal; color: #e879f9; }
+.vl-mo-legend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; font-size: 0.76rem; color: #cbd5e1; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; }
+.vl-mo-legend li { display: inline-flex; align-items: center; gap: 0.35rem; }
+.vl-mo-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.vl-mo-dot--a { background: #22d3ee; box-shadow: 0 0 8px #22d3ee; }
+.vl-mo-dot--b { background: #e879f9; box-shadow: 0 0 8px #e879f9; width: 8px; height: 8px; }
+.vl-mo-bondkey { width: 18px; height: 2px; background: linear-gradient(90deg, #22d3ee 50%, #e879f9 50%); display: inline-block; }
+.vl-mo-card { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #1f2937; box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.25), 0 0 22px rgba(34, 211, 238, 0.12); background: #030712; }
+.vl-mo-canvas { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; }
+.vl-mo-tl, .vl-mo-bl, .vl-mo-warn { position: absolute; pointer-events: none; font-size: 0.72rem; letter-spacing: 0.08em; color: #a5f3fc; background: rgba(3, 7, 18, 0.72); border: 1px solid rgba(34, 211, 238, 0.3); border-radius: 6px; padding: 0.15rem 0.45rem; white-space: nowrap; text-shadow: 0 0 6px rgba(34, 211, 238, 0.45); }
+.vl-mo-tl { top: 10px; left: 10px; display: inline-flex; align-items: center; gap: 0.4rem; }
+.vl-mo-tl b { color: #67e8f9; }
+.vl-mo-bl { bottom: 10px; left: 10px; }
+.vl-mo-bl b { color: #e879f9; text-shadow: 0 0 6px rgba(232, 121, 249, 0.6); }
+.vl-mo-live { width: 7px; height: 7px; border-radius: 50%; background: #475569; }
+.vl-mo-live.is-on { background: #22d3ee; box-shadow: 0 0 8px #22d3ee; animation: vl-ow-pulse 1.4s ease-in-out infinite; }
+.vl-mo-warn { top: 44px; left: 50%; transform: translateX(-50%); color: #fecaca; border-color: rgba(248, 113, 113, 0.6); background: rgba(69, 10, 10, 0.8); text-shadow: 0 0 6px rgba(248, 113, 113, 0.6); font-weight: 800; animation: vl-mo-blink 0.9s steps(2, start) infinite; }
+@keyframes vl-mo-blink { to { opacity: 0.45; } }
+.vl-mo-pause { position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; color: #e0f2fe; background: radial-gradient(circle at 35% 30%, #1e293b, #0b1220); border: 1.5px solid rgba(34, 211, 238, 0.6); box-shadow: 0 0 12px rgba(34, 211, 238, 0.35); }
+.vl-mo-pause:hover { border-color: #e879f9; box-shadow: 0 0 14px rgba(232, 121, 249, 0.45); }
+.vl-mo-pause[aria-pressed='true'] { color: #f0abfc; border-color: #e879f9; }
+.vl-mo-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; background: #f1f5f9; border-radius: 14px; padding: 0.6rem 0.75rem; color: #0f172a; }
+.vl-mo-stats > div { display: flex; flex-direction: column; gap: 0.05rem; min-width: 0; }
+.vl-mo-stats span { font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 0.68rem; letter-spacing: 0.07em; color: #64748b; font-weight: 700; }
+.vl-mo-stats b { font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 1.25rem; color: #0f172a; }
+.vl-mo-stats small { font-size: 0.68rem; color: #64748b; }
+.vl-mo-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem 1rem; }
+.vl-mo-controls .vl-small { font-size: 0.74rem; }
+.vl-mo-seg-wrap { display: flex; flex-direction: column; gap: 0.35rem; }
+.vl-mo-seg-label { font-size: 0.85rem; font-weight: 700; color: #cbd5e1; }
+.vl-mo-seg { display: grid; grid-template-columns: 1fr 1fr; background: #050b16; border: 1px solid #1f2937; border-radius: 12px; padding: 3px; gap: 3px; }
+.vl-mo-seg button { min-height: 40px; border: none; border-radius: 9px; background: transparent; color: #94a3b8; font-weight: 800; font-size: 0.86rem; cursor: pointer; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; }
+.vl-mo-seg button.is-on { background: linear-gradient(180deg, #0e7490, #155e75); color: #ecfeff; box-shadow: 0 0 10px rgba(34, 211, 238, 0.3); }
+.vl-mo-seg button:last-child.is-on { background: linear-gradient(180deg, #a21caf, #86198f); box-shadow: 0 0 10px rgba(232, 121, 249, 0.35); }
+.vl-mo-mode-note, .vl-mo-foot { margin: 0; }
+@media (max-width: 640px) {
+  .vl-mo-controls { grid-template-columns: 1fr; }
+  .vl-mo-tl, .vl-mo-bl, .vl-mo-warn { font-size: 0.56rem; padding: 0.1rem 0.35rem; }
+  .vl-mo-warn { top: 36px; }
+  .vl-mo-pause { width: 36px; height: 36px; top: 6px; right: 6px; }
+  .vl-mo-tl { top: 8px; left: 8px; }
+  .vl-mo-bl { bottom: 8px; left: 8px; }
+  .vl-mo-stats { padding: 0.5rem; gap: 0.35rem; }
+  .vl-mo-stats b { font-size: 1rem; }
+  .vl-mo-stats span { font-size: 0.6rem; letter-spacing: 0.03em; }
+  .vl-mo-stats small { font-size: 0.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vl-mo-live.is-on, .vl-mo-warn { animation: none; }
+}
