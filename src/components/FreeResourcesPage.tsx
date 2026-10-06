@@ -655,7 +655,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
             <span style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem', flex: 1, minWidth: '240px' }}>
               <span style={{ fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', color: '#0f766e' }}>Interactive tool · Free</span>
               <span style={{ fontSize: '1.08rem', fontWeight: 900 }}>🔬 Vijñāna Lab · विज्ञान-प्रयोगशाला</span>
-              <span style={{ fontSize: '0.88rem', color: '#475569' }}>Paramāṇu Builder · Prakṛti Biosphere · Jyotiṣa Gravity Sandbox · The Loom of Āruṇi · Cosmic Sitār Tuning · The Veil of Māyā</span>
+              <span style={{ fontSize: '0.88rem', color: '#475569' }}>Paramāṇu Builder · Prakṛti Biosphere · Jyotiṣa Gravity Sandbox · The Loom of Āruṇi · Cosmic Sitār Tuning · The Veil of Māyā · Chaturyoni Spawn Map</span>
             </span>
             <span style={{ fontWeight: 800, color: '#0f766e', whiteSpace: 'nowrap' }}>Open the Lab →</span>
           </button>

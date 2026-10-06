@@ -469,7 +469,7 @@ export const BODHI_CONTEXT_TIPS: Record<string, BodhiContextTip> = {
     viewId: 'science-lab',
     title: 'Vijñāna Lab · Science Sandboxes',
     sanskritTitle: 'विज्ञान-प्रयोगशाला',
-    summary: 'Hands-on sandboxes: build in the Paramāṇu Builder, balance the doṣas in the Prakṛti Biosphere, run the Jyotiṣa Gravity Sandbox through the 27 nakṣatras, play The Loom of Āruṇi, try Cosmic Sitār Tuning, and lift The Veil of Māyā from appearance to atoms.',
+    summary: 'Hands-on sandboxes: build in the Paramāṇu Builder, balance the doṣas in the Prakṛti Biosphere, run the Jyotiṣa Gravity Sandbox through the 27 nakṣatras, play The Loom of Āruṇi, try Cosmic Sitār Tuning, lift The Veil of Māyā from appearance to atoms, and sort living beings on the Chaturyoni Spawn Map.',
     bulletPoints: [
       'Tap any Sanskrit word in a term panel to hear it.',
       'Each sandbox has quick challenges with instant feedback: try them after you play.',
@@ -1795,7 +1795,7 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     question: 'What is the Vijñāna Lab (विज्ञान-प्रयोगशाला)?',
     sanskritQuestion: 'विज्ञान-प्रयोगशाला का?',
     shortAnswer: 'A free set of science sandboxes with Sanskrit terms beside them, at /science-lab.',
-    detailedAnswer: 'Vijñāna Lab has interactive sandboxes: the Paramāṇu Builder (#paramanu), Prakṛti Biosphere (#prakriti), Jyotiṣa Gravity Sandbox (#jyotisha), The Loom of Āruṇi · Sṛṣṭi · Sthiti · Laya (#srishti-sthiti-laya), Cosmic Sitār Tuning · Nāda Brahman (#nada-brahman) and The Veil of Māyā · Asato mā (#asato-ma). Each has a core idea, the sandbox, a Sanskrit term panel you can tap to hear, and quick challenges. It is open to guests.',
+    detailedAnswer: 'Vijñāna Lab has seven interactive sandboxes: the Paramāṇu Builder (#paramanu), Prakṛti Biosphere (#prakriti), Jyotiṣa Gravity Sandbox (#jyotisha), The Loom of Āruṇi · Sṛṣṭi · Sthiti · Laya (#srishti-sthiti-laya), Cosmic Sitār Tuning · Nāda Brahman (#nada-brahman), The Veil of Māyā · Asato mā (#asato-ma) and the Chaturyoni Spawn Map · ancient Indian biology (#chaturyoni). Each has a core idea, the sandbox and a Sanskrit term panel you can tap to hear; most also have quick challenges. It is open to guests.',
     audioDevanagari: 'विज्ञान-प्रयोगशाला',
     tip: 'Open it from the home page card or the साधनानि (tools) page, or search “science lab”.',
     relatedView: 'science-lab',
@@ -1871,6 +1871,18 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     tip: 'Open the lab, switch to Sat, then try melting ice past 273 K.',
     relatedView: 'science-lab',
     relatedLabAnchor: 'asato-ma',
+  },
+  {
+    id: 'qa-lab-chaturyoni',
+    category: 'philosophy',
+    question: 'What is Chaturyoni (चतुर्योनि), the four kinds of birth?',
+    sanskritQuestion: 'चतुर्योनिः का?',
+    shortAnswer: 'An old fourfold way of grouping living beings by how they come into being: jarāyuja (born from a womb), aṇḍaja (from an egg), svedaja (from moisture and heat) and udbhijja (sprouting from the earth). The four are listed in Manusmṛti 1.43–46 and named in Aitareya Upaniṣad 3.3; the Chāndogya Upaniṣad (6.3.1) gives only three.',
+    detailedAnswer: 'Manusmṛti 1.43 puts domestic and wild animals and humans among the womb-born; 1.44 puts birds, snakes, crocodiles, fish and tortoises among the egg-born; 1.45 says gnats, mosquitoes, lice, flies and bugs are sweat-born, arising from heat; 1.46 says all stationary (sthāvara) plants are udbhijja. The Chāndogya Upaniṣad (6.3.1) names only three seeds: āṇḍaja, jīvaja and udbhijja. Modern check: insects hatch from eggs; life does not arise on its own from sweat or heat (Redi 1668, Pasteur 1859–62). In the Chaturyoni Spawn Map you match specimens to the four groups, switch to Sthāvara / Jaṅgama (stationary or moving), and fill a plant shelf with Manusmṛti’s vanaspati (fruit without visible flowers, 1.47; figs fit, their tiny flowers hide inside the fruit), oṣadhi, creepers and grasses. A “modern comparison (for fun)” box sets the old groups beside today’s biology, which classifies by shared ancestry.',
+    audioDevanagari: 'जरायुज अण्डज स्वेदज उद्भिज्ज',
+    tip: 'Open the lab, pick the mosquito, and see what the modern check says.',
+    relatedView: 'science-lab',
+    relatedLabAnchor: 'chaturyoni',
   },
 ];
 

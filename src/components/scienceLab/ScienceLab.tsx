@@ -8,6 +8,7 @@ const JyotishaOrbit = lazy(() => import('./JyotishaOrbit'));
 const SrishtiLoom = lazy(() => import('./SrishtiLoom'));
 const NadaBrahman = lazy(() => import('./NadaBrahman'));
 const AsatoMa = lazy(() => import('./AsatoMa'));
+const Chaturyoni = lazy(() => import('./Chaturyoni'));
 
 const LAB_SEGMENTS: {
   id: LabSegmentId;
@@ -86,6 +87,17 @@ const LAB_SEGMENTS: {
     blurb: 'The ultimate perspective-shift puzzle. Fire up the Viveka Scanner to look past the everyday view (Asat) and see the atoms underneath (Sat). Melt, boil and burn, and the atom count never changes.',
     tint: '#fef9c3',
     ink: '#a16207',
+  },
+  {
+    id: 'chaturyoni',
+    icon: '🦢',
+    dev: 'चतुर्योनि-मानचित्रम्',
+    title: 'Chaturyoni Spawn Map',
+    subject: 'Life Science',
+    school: 'Chaturyoni (चतुर्योनि)',
+    blurb: 'Classification sandbox. Sort deer, swans, mosquitoes and lotuses into the four spawn classes of old Sanskrit texts: womb, egg, heat-mist and sprout. Unlock the plant shelf, then run the modern check.',
+    tint: '#ffedd5',
+    ink: '#c2410c',
   },
 ];
 
@@ -212,6 +224,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {active === 'srishti-sthiti-laya' && <SrishtiLoom />}
           {active === 'nada-brahman' && <NadaBrahman />}
           {active === 'asato-ma' && <AsatoMa />}
+          {active === 'chaturyoni' && <Chaturyoni />}
         </Suspense>
       </section>
 

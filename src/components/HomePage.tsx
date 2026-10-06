@@ -839,13 +839,13 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span style={{ background: '#ccfbf1', color: '#0f766e', padding: '0.15rem 0.6rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase' }}>
                   New · Free for everyone
                 </span>
-                <span style={{ fontSize: '1.05rem' }} aria-hidden="true">⚛️ 🌿 🪐 🧵 🪕 🕯️</span>
+                <span style={{ fontSize: '1.05rem' }} aria-hidden="true">⚛️ 🌿 🪐 🧵 🪕 🕯️ 🦢</span>
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 900, color: '#134e4a', margin: '0 0 0.3rem', fontFamily: 'Noto Sans Devanagari, serif' }}>
                 Vijñāna Lab · विज्ञान-प्रयोगशाला
               </h3>
               <p style={{ margin: 0, fontSize: '0.92rem', color: '#475569', lineHeight: 1.5, maxWidth: '44rem' }}>
-                Boot up the ultimate reality simulator: forge Paramāṇus, balance the Prakṛti Biosphere, master the Jyotiṣa Gravity Sandbox, weave the Loom of Āruṇi, tune the Cosmic Sitār, and fire up the Viveka Scanner behind the Veil of Māyā. Decode the Sanskrit names behind the cosmos.
+                Boot up the ultimate reality simulator: forge Paramāṇus, balance the Prakṛti Biosphere, master the Jyotiṣa Gravity Sandbox, weave the Loom of Āruṇi, tune the Cosmic Sitār, fire up the Viveka Scanner behind the Veil of Māyā, and sort living beings on the Chaturyoni Spawn Map. Decode the Sanskrit names behind the cosmos.
               </p>
             </div>
             <span style={{ background: '#0f766e', color: '#ffffff', padding: '0.65rem 1.3rem', borderRadius: '10px', fontWeight: 800, fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
