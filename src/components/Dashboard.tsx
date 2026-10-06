@@ -867,159 +867,166 @@ const Dashboard: React.FC = () => {
           </div>
         </button>
         <nav className="dashboard-nav" aria-label="Main learning views">
-          <button
-            type="button"
-            className={`dashboard-nav-home dashboard-nav-item${activeView === 'home' ? ' active' : ''}`}
-            onClick={() => setActiveView('home')}
-            title="Go to Homepage"
-          >
-            <img src="/nav/nav-home.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-            <span className="dashboard-nav-primary">Home</span>
-          </button>
-          <button
-            type="button"
-            className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'reader' && (lesson.id === 'varnamala' || lesson.id === 'barakhadi') ? ' active' : ''}`}
-            onClick={openVarnamala}
-            title="Open Alphabet & Syllables (वर्णमाला)"
-          >
-            <img src="/nav/nav-varnamala.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-            <span className="dashboard-nav-primary">वर्णमाला</span>
-            <span className="dashboard-nav-secondary">Alphabet &amp; Syllables</span>
-          </button>
-          <button
-            type="button"
-            className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'board' ? ' active' : ''}`}
-            onClick={() => navigateToView('board')}
-            title="Open जोडो tile puzzle"
-          >
-            <img src="/nav/nav-jodo.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-            <span className="dashboard-nav-primary">जोडो</span>
-            <span className="dashboard-nav-secondary">Tile Puzzle</span>
-          </button>
-          <div
-            className={`dashboard-nav-group${(activeView === 'reader' && lesson.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
-          >
+          {/* Desktop: row 1 sits between brand and tools (Home + CBSE Exam Guide group);
+              row 2 spans the full header width (learning tools). Mobile: rows flatten
+              into the single horizontal scroller. */}
+          <div className="dashboard-nav-row dashboard-nav-row--primary">
             <button
               type="button"
-              className={`dashboard-nav-group-label${activeView === 'cbse-guide' ? ' dashboard-nav-group-label--active' : ''}`}
-              onClick={() => navigateToView('cbse-guide')}
-              title="CBSE NCERT Sanskrit Exam Blueprint, Syllabus & Question Paper Guide"
+              className={`dashboard-nav-home dashboard-nav-item${activeView === 'home' ? ' active' : ''}`}
+              onClick={() => setActiveView('home')}
+              title="Go to Homepage"
             >
-              <img src="/nav/nav-deepakam.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={18} height={18} />
-              CBSE Exam Guide
+              <img src="/nav/nav-home.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+              <span className="dashboard-nav-primary">Home</span>
             </button>
-            <div className="dashboard-nav-sub" role="group" aria-label="Deepakam 7th, Deepakam 8th, and शारदा lessons">
+            <div
+              className={`dashboard-nav-group${(activeView === 'reader' && lesson.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
+            >
               <button
                 type="button"
-                className={activeView === 'reader' && lesson.id !== 'varnamala' && !lesson.id.startsWith('grade8_') && !lesson.id.startsWith('grade9_') ? 'active' : ''}
-                onClick={() => openDeepakam()}
-                title="Deepakam 7th · दीपकम · Class 7 Sanskrit"
+                className={`dashboard-nav-group-label${activeView === 'cbse-guide' ? ' dashboard-nav-group-label--active' : ''}`}
+                onClick={() => navigateToView('cbse-guide')}
+                title="CBSE NCERT Sanskrit Exam Blueprint, Syllabus & Question Paper Guide"
               >
-                Deepakam 7th · दीपकम
+                <img src="/nav/nav-deepakam.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={18} height={18} />
+                CBSE Exam Guide
               </button>
-              <button
-                type="button"
-                className={activeView === 'reader' && lesson.id.startsWith('grade8_') ? 'active' : ''}
-                onClick={() => {
-                  if (!canReadAllChapters) {
-                    openAuthModal('login');
-                  } else {
-                    openDeepakam('grade8_prarthana');
-                  }
-                }}
-                title={canReadAllChapters ? 'Deepakam 8th · दीपकम · Class 8 Sanskrit' : 'Sign in to access Deepakam 8th'}
-              >
-                Deepakam 8th · दीपकम
-              </button>
-              <button
-                type="button"
-                className={activeView === 'reader' && lesson.id.startsWith('grade9_') ? 'active' : ''}
-                onClick={() => {
-                  if (!canReadAllChapters) {
-                    openAuthModal('login');
-                  } else {
-                    openDeepakam('grade9_prarthana');
-                  }
-                }}
-                title={canReadAllChapters ? 'शारदा · Class 9 Sanskrit' : 'Sign in to access शारदा Class 9'}
-              >
-                शारदा
-              </button>
+              <div className="dashboard-nav-sub" role="group" aria-label="Deepakam 7th, Deepakam 8th, and शारदा lessons">
+                <button
+                  type="button"
+                  className={activeView === 'reader' && lesson.id !== 'varnamala' && !lesson.id.startsWith('grade8_') && !lesson.id.startsWith('grade9_') ? 'active' : ''}
+                  onClick={() => openDeepakam()}
+                  title="Deepakam 7th · दीपकम · Class 7 Sanskrit"
+                >
+                  Deepakam 7th · दीपकम
+                </button>
+                <button
+                  type="button"
+                  className={activeView === 'reader' && lesson.id.startsWith('grade8_') ? 'active' : ''}
+                  onClick={() => {
+                    if (!canReadAllChapters) {
+                      openAuthModal('login');
+                    } else {
+                      openDeepakam('grade8_prarthana');
+                    }
+                  }}
+                  title={canReadAllChapters ? 'Deepakam 8th · दीपकम · Class 8 Sanskrit' : 'Sign in to access Deepakam 8th'}
+                >
+                  Deepakam 8th · दीपकम
+                </button>
+                <button
+                  type="button"
+                  className={activeView === 'reader' && lesson.id.startsWith('grade9_') ? 'active' : ''}
+                  onClick={() => {
+                    if (!canReadAllChapters) {
+                      openAuthModal('login');
+                    } else {
+                      openDeepakam('grade9_prarthana');
+                    }
+                  }}
+                  title={canReadAllChapters ? 'शारदा · Class 9 Sanskrit' : 'Sign in to access शारदा Class 9'}
+                >
+                  शारदा
+                </button>
+              </div>
             </div>
           </div>
-          <button
-            type="button"
-            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'grammar' ? ' active' : ''}`}
-            onClick={handleOpenGrammar}
-            title="Open Grammar shelf with all articles"
-          >
-            <img src="/nav/nav-grammar.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-            <span className="dashboard-nav-primary">Vyākaraṇa</span>
-            <span className="dashboard-nav-secondary">Grammar</span>
-          </button>
-          <button
-            type="button"
-            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'dhatupatha' ? ' active' : ''}`}
-            onClick={() => navigateToView('dhatupatha')}
-            title="Pāṇinian Dhātupāṭha Studio - 5 Lakāras, Kṛt pratyayas & word deconstructor"
-          >
-            <img src="/nav/nav-dhatu.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-            <span className="dashboard-nav-primary">धातुपाठः</span>
-            <span className="dashboard-nav-secondary">Dhātupāṭha</span>
-          </button>
-          <button
-            type="button"
-            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'vedic-maths' ? ' active' : ''}`}
-            onClick={() => navigateToView('vedic-maths')}
-            title="Open Vedic Mathematics (वैदिक-गणितम्)"
-          >
-            <img src="/nav/nav-vedic.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-            <span className="dashboard-nav-primary">वैदिक-गणितम्</span>
-            <span className="dashboard-nav-secondary">Vedic Maths</span>
-          </button>
-          <button
-            type="button"
-            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'quiz' ? ' active' : ''}`}
-            onClick={() => navigateToView('quiz')}
-            title="Open Sanskrit & Vedic Maths Quiz (प्रश्नोत्तरी)"
-          >
-            <img src="/nav/nav-quiz.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-            <span className="dashboard-nav-primary">प्रश्नोत्तरी</span>
-            <span className="dashboard-nav-secondary">Quiz</span>
-          </button>
-          <button
-            type="button"
-            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'worksheets' ? ' active' : ''}`}
-            onClick={() => navigateToView('worksheets')}
-            title="Open Printable Worksheets (कार्यपत्रिकाः)"
-          >
-            <img src="/nav/nav-worksheets.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-            <span className="dashboard-nav-primary">कार्यपत्रिकाः</span>
-            <span className="dashboard-nav-secondary">Worksheets</span>
-          </button>
-          <button
-            type="button"
-            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'resources' ? ' active' : ''}`}
-            onClick={() => navigateToView('resources')}
-            title="Open Sanskrit Resources, Live News & Events Feed (साधनानि)"
-          >
-            <img src="/nav/nav-resources.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-            <span className="dashboard-nav-primary">साधनानि</span>
-            <span className="dashboard-nav-secondary">Live &amp; Events</span>
-          </button>
-          <button
-            type="button"
-            className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'course' ? ' active' : ''}`}
-            onClick={() => navigateToView('course')}
-            title="संस्कृत-चिन्तनम् · Complete Sanskrit as a Way of Thinking Course"
-          >
-            <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🧠</span>
-            <span className="dashboard-nav-primary">संस्कृत-चिन्तनम्</span>
-            <span className="dashboard-nav-secondary">Course (6 Mod)</span>
-          </button>
+          <div className="dashboard-nav-row dashboard-nav-row--secondary">
+            <button
+              type="button"
+              className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'reader' && (lesson.id === 'varnamala' || lesson.id === 'barakhadi') ? ' active' : ''}`}
+              onClick={openVarnamala}
+              title="Open Alphabet & Syllables (वर्णमाला)"
+            >
+              <img src="/nav/nav-varnamala.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+              <span className="dashboard-nav-primary">वर्णमाला</span>
+              <span className="dashboard-nav-secondary">Alphabet &amp; Syllables</span>
+            </button>
+            <button
+              type="button"
+              className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'board' ? ' active' : ''}`}
+              onClick={() => navigateToView('board')}
+              title="Open जोडो tile puzzle"
+            >
+              <img src="/nav/nav-jodo.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+              <span className="dashboard-nav-primary">जोडो</span>
+              <span className="dashboard-nav-secondary">Tile Puzzle</span>
+            </button>
+            <button
+              type="button"
+              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'grammar' ? ' active' : ''}`}
+              onClick={handleOpenGrammar}
+              title="Open Grammar shelf with all articles"
+            >
+              <img src="/nav/nav-grammar.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+              <span className="dashboard-nav-primary">Vyākaraṇa</span>
+              <span className="dashboard-nav-secondary">Grammar</span>
+            </button>
+            <button
+              type="button"
+              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'dhatupatha' ? ' active' : ''}`}
+              onClick={() => navigateToView('dhatupatha')}
+              title="Pāṇinian Dhātupāṭha Studio - 5 Lakāras, Kṛt pratyayas & word deconstructor"
+            >
+              <img src="/nav/nav-dhatu.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+              <span className="dashboard-nav-primary">धातुपाठः</span>
+              <span className="dashboard-nav-secondary">Dhātupāṭha</span>
+            </button>
+            <button
+              type="button"
+              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'vedic-maths' ? ' active' : ''}`}
+              onClick={() => navigateToView('vedic-maths')}
+              title="Open Vedic Mathematics (वैदिक-गणितम्)"
+            >
+              <img src="/nav/nav-vedic.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+              <span className="dashboard-nav-primary">वैदिक-गणितम्</span>
+              <span className="dashboard-nav-secondary">Vedic Maths</span>
+            </button>
+            <button
+              type="button"
+              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'quiz' ? ' active' : ''}`}
+              onClick={() => navigateToView('quiz')}
+              title="Open Sanskrit & Vedic Maths Quiz (प्रश्नोत्तरी)"
+            >
+              <img src="/nav/nav-quiz.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+              <span className="dashboard-nav-primary">प्रश्नोत्तरी</span>
+              <span className="dashboard-nav-secondary">Quiz</span>
+            </button>
+            <button
+              type="button"
+              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'worksheets' ? ' active' : ''}`}
+              onClick={() => navigateToView('worksheets')}
+              title="Open Printable Worksheets (कार्यपत्रिकाः)"
+            >
+              <img src="/nav/nav-worksheets.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+              <span className="dashboard-nav-primary">कार्यपत्रिकाः</span>
+              <span className="dashboard-nav-secondary">Worksheets</span>
+            </button>
+            <button
+              type="button"
+              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'resources' ? ' active' : ''}`}
+              onClick={() => navigateToView('resources')}
+              title="Open Sanskrit Resources, Live News & Events Feed (साधनानि)"
+            >
+              <img src="/nav/nav-resources.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
+              <span className="dashboard-nav-primary">साधनानि</span>
+              <span className="dashboard-nav-secondary">Live &amp; Events</span>
+            </button>
+            <button
+              type="button"
+              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'course' ? ' active' : ''}`}
+              onClick={() => navigateToView('course')}
+              title="संस्कृत-चिन्तनम् · Complete Sanskrit as a Way of Thinking Course"
+            >
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🧠</span>
+              <span className="dashboard-nav-primary">संस्कृत-चिन्तनम्</span>
+              <span className="dashboard-nav-secondary">Course (6 Mod)</span>
+            </button>
+          </div>
         </nav>
 
-        <div className="dashboard-header-user" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+        <div className="dashboard-header-user">
           <button
             type="button"
             className="dashboard-search-trigger-btn"
