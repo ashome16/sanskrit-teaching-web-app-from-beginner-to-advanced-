@@ -152,7 +152,7 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
   },
   'science-lab': {
     title: 'Vijñāna Lab · विज्ञान-प्रयोगशाला: Science Sandboxes with Sanskrit | EdNet Learn',
-    desc: 'Free interactive science sandboxes with Sanskrit terms: build Vaiśeṣika paramāṇus, balance vāta-pitta-kapha, run a real-gravity orbit through the 27 nakṣatras, play the Sṛṣṭi-Sthiti-Laya wave lab, tune a Nāda Brahman string, and see matter from appearance to atoms.',
+    desc: 'Boot up the ultimate reality simulator: free science sandboxes with Sanskrit names. Forge Vaiśeṣika paramāṇus, balance vāta-pitta-kapha, master real gravity through the 27 nakṣatras, weave the Loom of Āruṇi, tune the Cosmic Sitār and scan past the Veil of Māyā to the atoms.',
   },
   dhatupatha: {
     title: 'Dhātupāṭha & Pāṇinian Verb Engine: 5 Lakāras & Kṛt Pratyayas | EdNet Learn',

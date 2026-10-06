@@ -15,6 +15,8 @@ const LAB_SEGMENTS: {
   dev: string;
   title: string;
   subject: string;
+  /** Second half of the category line, after “//”. */
+  school: string;
   blurb: string;
   tint: string;
   ink: string;
@@ -23,9 +25,10 @@ const LAB_SEGMENTS: {
     id: 'paramanu',
     icon: '⚛️',
     dev: 'परमाणु-निर्माणम्',
-    title: 'Vaiśeṣika Paramāṇu Builder',
-    subject: 'Physics · Chemistry',
-    blurb: 'Join paramāṇus into dvyaṇukas and tryaṇukas, and sort things by the four atomic bhūtas.',
+    title: 'Paramāṇu Builder',
+    subject: 'Physics & Chemistry',
+    school: 'Vaiśeṣika (वैशेषिक)',
+    blurb: 'Forge matter from the smallest building blocks. Pair raw Paramāṇus into a Dvyaṇuka, then join three Dvyaṇukas into a Tryaṇuka, the first speck you could see. Sort the four atomic Bhūtas: only matching ones bond.',
     tint: '#fef3c7',
     ink: '#a16207',
   },
@@ -33,9 +36,10 @@ const LAB_SEGMENTS: {
     id: 'prakriti',
     icon: '🌿',
     dev: 'प्रकृति-सन्तुलनम्',
-    title: 'Prakṛti Balance',
-    subject: 'Biology · Ecology',
-    blurb: 'Tune season, heat and moisture to bring vāta, pitta and kapha into sama; map a cell to the bhūtas.',
+    title: 'Prakṛti Biosphere',
+    subject: 'Biology & Ecology',
+    school: 'Prakṛti Balance',
+    blurb: 'Elemental survival sandbox. Control the seasons, heat and moisture to bring Vāta, Pitta and Kapha into perfect balance. Then map a living cell to the five great elements (a teaching analogy).',
     tint: '#dcfce7',
     ink: '#15803d',
   },
@@ -43,19 +47,21 @@ const LAB_SEGMENTS: {
     id: 'jyotisha',
     icon: '🪐',
     dev: 'ज्योतिष-कक्षा',
-    title: 'Jyotiṣa Orbit Sandbox',
+    title: 'Jyotiṣa Gravity Sandbox',
     subject: 'Astronomy',
-    blurb: 'Real gravity with Sūrya, Pṛthivī and Candra. Watch Candra move through the 27 nakṣatras.',
+    school: 'Jyotiṣa (ज्योतिष-कक्षा)',
+    blurb: 'Real-time orbit simulator. Master gravity with Sūrya, Pṛthivī and Candra: too slow and you crash, too fast and you escape. Track Candra through the 27 Nakṣatras.',
     tint: '#e0e7ff',
     ink: '#4338ca',
   },
   {
     id: 'srishti-sthiti-laya',
     icon: '🧵',
-    dev: 'सृष्टि · स्थिति · लय',
-    title: 'Sṛṣṭi · Sthiti · Laya Wave Lab',
-    subject: 'Waves · Order & change',
-    blurb: 'The Loom of Āruṇi: gather a scattered cloud, hold it steady, then let it dissolve.',
+    dev: 'सृष्टि-स्थिति-लय',
+    title: 'The Loom of Āruṇi',
+    subject: 'Waves & Order',
+    school: 'Sṛṣṭi · Sthiti · Laya',
+    blurb: 'Particle survival challenge. Gather a wild, scattered cloud into shape (Sṛṣṭi), hold it steady (Sthiti), then set off Laya and watch it dissolve. Not one particle is lost.',
     tint: '#ffe4e6',
     ink: '#be123c',
   },
@@ -63,9 +69,10 @@ const LAB_SEGMENTS: {
     id: 'nada-brahman',
     icon: '🪕',
     dev: 'नाद-ब्रह्म',
-    title: 'Cosmic Sitār · Nāda Brahman',
-    subject: 'Sound · Waves · Music',
-    blurb: 'Pluck a real standing-wave string, pick harmonics 1–5 (śabda to gandha) and tune the tension to match target notes.',
+    title: 'Cosmic Sitār Tuning',
+    subject: 'Sound & Music',
+    school: 'Nāda Brahman',
+    blurb: 'String resonance simulator. Pluck a standing wave and switch between harmonics 1–5, from Śabda to Gandha. Tune the tension to hit the target notes.',
     tint: '#ede9fe',
     ink: '#6d28d9',
   },
@@ -73,9 +80,10 @@ const LAB_SEGMENTS: {
     id: 'asato-ma',
     icon: '🕯️',
     dev: 'असतो मा सद्गमय',
-    title: 'The Veil of Māyā · Asato mā sadgamaya',
-    subject: 'Matter · Heat · Chemistry',
-    blurb: 'Switch from the everyday look to the atoms, heat gold till it glows, and burn a log while counting every atom.',
+    title: 'The Veil of Māyā',
+    subject: 'Matter & Heat',
+    school: 'The Veil of Māyā (असतो मा सद्गमय)',
+    blurb: 'The ultimate perspective-shift puzzle. Fire up the Viveka Scanner to look past the everyday view (Asat) and see the atoms underneath (Sat). Melt, boil and burn, and the atom count never changes.',
     tint: '#fef9c3',
     ink: '#a16207',
   },
@@ -147,9 +155,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             Vijñāna Lab · <span lang="sa">विज्ञान-प्रयोगशाला</span>
           </h1>
           <p className="vl-lead">
-            Hands-on science sandboxes with Sanskrit words beside them. Drag, slide and press play, then check yourself with
-            quick challenges. Each idea is shown as the tradition preserves it, with a clear line between old texts and modern
-            science.
+            Boot up the ultimate reality simulator. Explore physics, chemistry, and biology through ancient lenses. Decode the
+            Sanskrit names behind the cosmos, master the particle fields, and conquer the challenges.
           </p>
           <div className="vl-btn-row">
             {onGoHome && <button type="button" className="vl-btn vl-btn--ghost" onClick={onGoHome}>← Home</button>}
@@ -184,9 +191,10 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             data-testid={`lab-card-${s.id}`}
           >
             <span className="vl-card-icon">{s.icon}</span>
-            <span className="vl-card-subject" style={{ color: s.ink }}>{s.subject}</span>
-            <span className="vl-card-title">{s.title}</span>
-            <span className="vl-card-dev" lang="sa">{s.dev}</span>
+            <span className="vl-card-subject" style={{ color: s.ink }}>{s.subject} <span aria-hidden="true">//</span> {s.school}</span>
+            <span className="vl-card-title">
+              {s.title} <span className="vl-card-slash" aria-hidden="true">//</span> <span className="vl-card-dev" lang="sa">{s.dev}</span>
+            </span>
             <span className="vl-card-blurb">{s.blurb}</span>
             <span className="vl-card-go" style={{ color: s.ink }}>{s.id === active ? 'Open below ↓' : 'Open →'}</span>
           </a>

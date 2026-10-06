@@ -26,7 +26,7 @@
 
 .vl-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.85rem;
   margin: 1.1rem 0 1.4rem;
 }
@@ -47,7 +47,8 @@
 .vl-card-icon { font-size: 1.6rem; line-height: 1; }
 .vl-card-subject { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
 .vl-card-title { font-weight: 800; font-size: 1rem; color: #1e293b; }
-.vl-card-dev { font-size: 0.95rem; color: #475569; }
+.vl-card-dev { font-size: 0.95rem; font-weight: 600; color: #475569; }
+.vl-card-slash { color: #94a3b8; font-weight: 600; }
 .vl-card-blurb { font-size: 0.84rem; line-height: 1.4; color: #475569; flex: 1; }
 .vl-card-go { font-size: 0.82rem; font-weight: 800; margin-top: 0.3rem; }
 
