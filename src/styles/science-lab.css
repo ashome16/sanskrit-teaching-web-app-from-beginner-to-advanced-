@@ -26,7 +26,7 @@
 
 .vl-cards {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 0.85rem;
   margin: 1.1rem 0 1.4rem;
 }
@@ -339,6 +339,17 @@
 .vl-quote figcaption { font-size: 0.84rem; color: #475569; margin-top: 0.15rem; }
 .vl-list { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.88rem; line-height: 1.5; }
 .vl-modern { background: #eff6ff; border-color: #bfdbfe; }
+.vl-steps--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.vl-stage--asato { aspect-ratio: 8 / 5; }
+.vl-toggle .vl-chip { flex: 1 1 0; font-size: 0.95rem; }
+.vl-score--off { color: #9a3412; background: #ffedd5; }
+.vl-eq { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
+.vl-stepper { display: inline-flex; align-items: center; gap: 0.3rem; background: #fff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 0.15rem 0.3rem; }
+.vl-stepper button { width: 32px; height: 32px; border-radius: 8px; border: none; background: #f1f5f9; font-size: 1.1rem; font-weight: 800; cursor: pointer; color: #0f766e; }
+.vl-stepper button:disabled { opacity: 0.4; cursor: default; }
+.vl-stepper b { min-width: 1.2rem; text-align: center; }
+.vl-count { max-width: 420px; }
+.vl-btn:disabled { opacity: 0.45; cursor: not-allowed; }
 .vl-footnote { margin-top: 1.5rem; font-size: 0.8rem; color: #94a3b8; text-align: center; }
 
 @media (max-width: 960px) {
@@ -352,6 +363,7 @@
   .vl-hero-art { display: none; }
   .vl-grid-2 { grid-template-columns: 1fr; }
   .vl-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vl-steps--3 { grid-template-columns: 1fr; }
   .vl-loom-sliders { grid-template-columns: 1fr; }
   .vl-dosha-cards { grid-template-columns: 1fr; }
   .vl-card { padding: 0.75rem; }

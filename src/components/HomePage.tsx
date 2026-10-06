@@ -839,13 +839,13 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span style={{ background: '#ccfbf1', color: '#0f766e', padding: '0.15rem 0.6rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase' }}>
                   New · Free for everyone
                 </span>
-                <span style={{ fontSize: '1.05rem' }} aria-hidden="true">⚛️ 🌿 🪐 🧵</span>
+                <span style={{ fontSize: '1.05rem' }} aria-hidden="true">⚛️ 🌿 🪐 🧵 🕯️</span>
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 900, color: '#134e4a', margin: '0 0 0.3rem', fontFamily: 'Noto Sans Devanagari, serif' }}>
                 Vijñāna Lab · विज्ञान-प्रयोगशाला
               </h3>
               <p style={{ margin: 0, fontSize: '0.92rem', color: '#475569', lineHeight: 1.5, maxWidth: '44rem' }}>
-                Play with science and learn the Sanskrit words for it: build paramāṇus, balance vāta-pitta-kapha, run a real-gravity orbit through the 27 nakṣatras, and weave the Loom of Āruṇi.
+                Play with science and learn the Sanskrit words for it: build paramāṇus, balance vāta-pitta-kapha, run a real-gravity orbit through the 27 nakṣatras, weave the Loom of Āruṇi, and burn a log while counting every atom.
               </p>
             </div>
             <span style={{ background: '#0f766e', color: '#ffffff', padding: '0.65rem 1.3rem', borderRadius: '10px', fontWeight: 800, fontSize: '0.92rem', whiteSpace: 'nowrap' }}>

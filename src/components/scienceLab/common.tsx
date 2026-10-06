@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { playPronunciation } from '../../utils/pronunciation';
 
-export type LabSegmentId = 'paramanu' | 'prakriti' | 'jyotisha' | 'srishti-sthiti-laya';
+export type LabSegmentId = 'paramanu' | 'prakriti' | 'jyotisha' | 'srishti-sthiti-laya' | 'asato-ma';
 
 export interface LabTerm {
   dev: string;

@@ -408,7 +408,7 @@ export const BODHI_CONTEXT_TIPS: Record<string, BodhiContextTip> = {
     viewId: 'science-lab',
     title: 'Vijñāna Lab · Science Sandboxes',
     sanskritTitle: 'विज्ञान-प्रयोगशाला',
-    summary: 'Four hands-on sandboxes: build paramāṇus, balance the doṣas, run a real-gravity orbit through the 27 nakṣatras, and play the Loom of Āruṇi.',
+    summary: 'Hands-on sandboxes: build paramāṇus, balance the doṣas, run a real-gravity orbit through the 27 nakṣatras, play the Loom of Āruṇi, and walk Asato mā from appearance to atoms.',
     bulletPoints: [
       'Tap any Sanskrit word in a term panel to hear it.',
       'Each sandbox has quick challenges with instant feedback: try them after you play.',
@@ -1733,8 +1733,8 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     category: 'engineering',
     question: 'What is the Vijñāna Lab (विज्ञान-प्रयोगशाला)?',
     sanskritQuestion: 'विज्ञान-प्रयोगशाला का?',
-    shortAnswer: 'A free set of four science sandboxes with Sanskrit terms beside them, at /science-lab.',
-    detailedAnswer: 'Vijñāna Lab has four interactive sandboxes: the Vaiśeṣika Paramāṇu Builder (#paramanu), Prakṛti Balance (#prakriti), the Jyotiṣa Orbit Sandbox (#jyotisha) and the Sṛṣṭi · Sthiti · Laya wave lab (#srishti-sthiti-laya). Each has a core idea, the sandbox, a Sanskrit term panel you can tap to hear, and quick challenges. It is open to guests.',
+    shortAnswer: 'A free set of science sandboxes with Sanskrit terms beside them, at /science-lab.',
+    detailedAnswer: 'Vijñāna Lab has interactive sandboxes: the Vaiśeṣika Paramāṇu Builder (#paramanu), Prakṛti Balance (#prakriti), the Jyotiṣa Orbit Sandbox (#jyotisha), the Sṛṣṭi · Sthiti · Laya wave lab (#srishti-sthiti-laya) and The Veil of Māyā · Asato mā (#asato-ma). Each has a core idea, the sandbox, a Sanskrit term panel you can tap to hear, and quick challenges. It is open to guests.',
     audioDevanagari: 'विज्ञान-प्रयोगशाला',
     tip: 'Open it from the home page card or the साधनानि (tools) page, or search “science lab”.',
     relatedView: 'science-lab',
@@ -1786,6 +1786,18 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     tip: 'Tune Spandana near 3 Hz and raise Prāṇa to make the particles gather.',
     relatedView: 'science-lab',
     relatedLabAnchor: 'srishti-sthiti-laya',
+  },
+  {
+    id: 'qa-lab-asato-ma',
+    category: 'philosophy',
+    question: 'What does “asato mā sad gamaya” mean, and what is the Veil of Māyā lab?',
+    sanskritQuestion: 'असतो मा सद्गमय इत्यस्य कः अर्थः?',
+    shortAnswer: 'It is a prayer from the Bṛhadāraṇyaka Upaniṣad (1.3.28): lead me from the unreal to the real, from darkness to light, from death to immortality. The Upaniṣad itself explains asat as death and sat as immortality.',
+    detailedAnswer: 'Right after the three lines, the Upaniṣad glosses them: “mṛtyur vā asat, sad amṛtam” (the unreal is death, the real is immortality) and “mṛtyur vai tamo, jyotir amṛtam” (darkness is death, light is immortality); of the third line it says the meaning is plain. In the lab, a playful Asat/Sat switch moves from the everyday look of gold, wood, water or ice to its atoms. You heat gold until it glows (approximate colour) and burn a log while the C, H and O counts stay the same: C₆H₁₀O₅ + 6 O₂ → 6 CO₂ + 5 H₂O. Māyā and avidyā are ideas from later Vedānta and are shown separately; links to conservation of mass or quantum physics sit in a “modern comparison (for fun)” box.',
+    audioDevanagari: 'असतो मा सद्गमय तमसो मा ज्योतिर्गमय मृत्योर्मा अमृतं गमय',
+    tip: 'Open the lab, switch to Sat, then try melting ice past 273 K.',
+    relatedView: 'science-lab',
+    relatedLabAnchor: 'asato-ma',
   },
 ];
 

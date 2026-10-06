@@ -6,6 +6,7 @@ const ParamanuBuilder = lazy(() => import('./ParamanuBuilder'));
 const PrakritiBalance = lazy(() => import('./PrakritiBalance'));
 const JyotishaOrbit = lazy(() => import('./JyotishaOrbit'));
 const SrishtiLoom = lazy(() => import('./SrishtiLoom'));
+const AsatoMa = lazy(() => import('./AsatoMa'));
 
 const LAB_SEGMENTS: {
   id: LabSegmentId;
@@ -56,6 +57,16 @@ const LAB_SEGMENTS: {
     blurb: 'The Loom of Āruṇi: gather a scattered cloud, hold it steady, then let it dissolve.',
     tint: '#ffe4e6',
     ink: '#be123c',
+  },
+  {
+    id: 'asato-ma',
+    icon: '🕯️',
+    dev: 'असतो मा सद्गमय',
+    title: 'The Veil of Māyā · Asato mā sadgamaya',
+    subject: 'Matter · Heat · Chemistry',
+    blurb: 'Switch from the everyday look to the atoms, heat gold till it glows, and burn a log while counting every atom.',
+    tint: '#fef9c3',
+    ink: '#a16207',
   },
 ];
 
@@ -180,6 +191,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {active === 'prakriti' && <PrakritiBalance />}
           {active === 'jyotisha' && <JyotishaOrbit />}
           {active === 'srishti-sthiti-laya' && <SrishtiLoom />}
+          {active === 'asato-ma' && <AsatoMa />}
         </Suspense>
       </section>
 
