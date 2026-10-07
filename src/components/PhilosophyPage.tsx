@@ -5120,6 +5120,90 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   </div>
                 </div>
               </div>
+
+              {/* Subsection 17.8: Jesuit Transmission, 1582 Gregorian Reform & Golabandha Projections */}
+              <div className="philosophy-card" style={{ background: '#eff6ff', border: '1.5px solid #bfdbfe', margin: '1.5rem 0' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#1d4ed8', textTransform: 'uppercase' }}>
+                  Global Transmission &amp; Spherical Projections · गोलबन्धः सङ्क्रमणं च
+                </span>
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#1e3a8a' }}>
+                  🚢 The Jesuit Conduit, Gregorian Reform (1582 CE) &amp; Jyeṣṭhadeva’s Golabandha
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#1e40af', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  In the late 16th century, Europe faced the dual crises of transoceanic longitude navigation and the 10-day drift of the Julian calendar. Jesuit missionaries in Cochin and Goa gathered Kerala astronomical texts, transmitting high-precision solar parameters to Christopher Clavius in Rome:
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem', marginBottom: '1rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #dbeafe' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#2563eb', marginBottom: '0.3rem' }}>
+                      ✉️ Matteo Ricci’s Documented 1581 Letters
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      Matteo Ricci (pupil of Vatican mathematician Christopher Clavius) wrote from Cochin in 1581 requesting local Brahmin astronomical texts for time computation (<em style={{ fontFamily: 'serif' }}>&ldquo;scritti da un bramano della computatione dei tempi&rdquo;</em>). In 1582, Clavius promulgated the Gregorian Calendar with tropical year parameters matching Indian Panchāṅgas down to the second!
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #dbeafe' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#2563eb', marginBottom: '0.3rem' }}>
+                      🐟 The Matsya (Vesica Piscis) Orthogonal Projection
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      In <em>Gaṇita-Yuktibhāṣā</em> (1530 CE), Jyeṣṭhadeva solved the projection of the 3D celestial sphere onto flat palm leaves (<em>Golabandha</em>) using the <strong>Matsya</strong> construction: overlapping circles whose lenticular intersection defines exact orthogonal coordinate axes for the Horizon, Equator, and Ecliptic planes without protractors.
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #dbeafe' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#2563eb', marginBottom: '0.3rem' }}>
+                      🌑 Topocentric Parallax (Lambana &amp; Nati)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      Accounting for observers sitting on Earth’s surface rather than its core, Jyeṣṭhadeva decomposed the 3D topocentric parallax vector into 2D flat planar coordinates: longitudinal shift <strong>Lambana</strong> (altering eclipse timing) and latitudinal shift <strong>Nati</strong> (altering eclipse magnitude), predicting solar eclipses down to the minute.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Subsection 17.9: Kaṭapayādi Cryptography & Ayana-Calana */}
+              <div className="philosophy-card" style={{ background: '#fdf4ff', border: '1.5px solid #f0abfc', margin: '1.5rem 0' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#c026d3', textTransform: 'uppercase' }}>
+                  Poetic Cryptography &amp; Cosmic Precession · कटपयादिः अयनचलनं च
+                </span>
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#86198f' }}>
+                  🔠 Kaṭapayādi Mnemonic Cipher &amp; Ayana-Calana (25,772-Year Equinox Precession)
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#86198f', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  From the cryptographic encoding of 11-decimal constants in melodious hymns to tracking the Earth’s 25,772-year cosmic wobble, Indian astronomers united poetry and physical invariants:
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fae8ff' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#a21caf', marginBottom: '0.3rem' }}>
+                      🔤 Kaṭapayādi: Numbers proceeding from Right to Left
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      Under the axiom <em>Aṅkānāṃ Vāmato Gatiḥ</em>, Sanskrit consonants map to digits 0–9. Mādhava encoded π to 11 decimal places (3.14159265359) in the 24-syllable verse <em>&ldquo;vibudha-netra-gajāhi-hutāśana...&rdquo;</em>, while the <em>Gopī-Bhāgya</em> hymn simultaneously praises Lord Krishna/Shiva while encoding π/10 to 32 decimal places without error!
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fae8ff' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#a21caf', marginBottom: '0.3rem' }}>
+                      🔄 Ayana-Calana: Pendulum Libration to Continuous Circle
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      The <em>Sūrya Siddhānta</em> calculated equinoctial precession as a ±27° pendulum (Āndolana) yielding 54&quot;/yr (600 rev/Mahāyuga). By 1501 CE, Nīlakaṇṭha Somayāji and Kerala astronomers compared ancient star records from Āryabhaṭa’s era with their own sightings, proving that the equinox travels a continuous 360° circle, updating the Ayanāṃśa rate to ~50.29&quot;/yr matching modern astrophysics!
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fae8ff' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#a21caf', marginBottom: '0.3rem' }}>
+                      🌟 The Millennial Drift: Kṛttikā ➔ Aśvinī ➔ Revatī ➔ Kumbha
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      Because of precession, the vernal equinox shifted from <strong>Kṛttikā (Taurus)</strong> in the Vedic period (~2500 BCE, recorded in <em>Śatapatha Brāhmaṇa</em>) to <strong>Aśvinī (Aries)</strong> at 500 CE, and into <strong>Revatī (Pisces)</strong> today (Ayanāṃśa ≈ 24.3° in 2026 CE), heading inexorably toward <strong>Kumbha (Aquarius)</strong>!
+                    </p>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
         )}

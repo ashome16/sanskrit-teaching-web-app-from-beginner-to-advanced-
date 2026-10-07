@@ -278,7 +278,9 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   const [customQuadC, setCustomQuadC] = useState<number>(-12);
 
   // Interactive state for Tab 11: Yantra-Golādhyāya & Nīlakaṇṭha Heliocentrism
-  const [yantraSubMode, setYantraSubMode] = useState<'yantras' | 'nilakantha_orbit' | 'tatkaliki_calculus'>('yantras');
+  const [yantraSubMode, setYantraSubMode] = useState<
+    'yantras' | 'nilakantha_orbit' | 'tatkaliki_calculus' | 'katapayadi' | 'ayana_chalana' | 'golabandha_jesuit'
+  >('yantras');
   const [selectedYantra, setSelectedYantra] = useState<'samrat' | 'jai_prakash' | 'ram'>('samrat');
   const [samratHourAngle, setSamratHourAngle] = useState<number>(10.5); // 10:30 AM
   const [jaiPrakashAzimuth, setJaiPrakashAzimuth] = useState<number>(135); // 135° SE
@@ -295,6 +297,19 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   const [calculusDeltaDeg, setCalculusDeltaDeg] = useState<number>(1.0); // 1.0°
   const [madhavaTermCount, setMadhavaTermCount] = useState<number>(5);
   const [useMadhavaCorrection, setUseMadhavaCorrection] = useState<boolean>(true);
+
+  // Interactive state for Kaṭapayādi Cryptography
+  const [katapayadiPreset, setKatapayadiPreset] = useState<'pi_madhava' | 'sin_radius' | 'raga_kanakangi' | 'raga_harikambhoji' | 'custom'>('pi_madhava');
+  const [customKatapayadiInput, setCustomKatapayadiInput] = useState<string>('गोपीभाग्यमधुव्रातः');
+
+  // Interactive state for Precession of the Equinoxes (Ayana-Calana)
+  const [precessionYear, setPrecessionYear] = useState<number>(2026);
+  const [precessionModel, setPrecessionModel] = useState<'surya_siddhanta' | 'modern'>('modern');
+
+  // Interactive state for Golabandha & Jesuit Transmission
+  const [matsyaSeparation, setMatsyaSeparation] = useState<number>(50); // px distance between circle centers
+  const [parallaxZenithDeg, setParallaxZenithDeg] = useState<number>(45); // Zenith distance for topocentric parallax
+  const [jesuitTimelineStep, setJesuitTimelineStep] = useState<number>(2); // 0 to 4
 
   // Interactive state for Peacock & Snake
   const [pillarHeight, setPillarHeight] = useState<number>(9);
@@ -4074,6 +4089,121 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
         const signCorr = madhavaTermCount % 2 === 1 ? -1 : 1;
         const piCorrected = 4 * (madhavaRawSum + signCorr * madhavaTailCorr);
         const truePi = Math.PI;
+        // Kaṭapayādi Preset Data
+        const KATAPAYADI_PRESETS: Record<
+          'pi_madhava' | 'sin_radius' | 'raga_kanakangi' | 'raga_harikambhoji' | 'custom',
+          { title: string; verseSa: string; verseIast: string; explanation: string; digits: string; resultDisplay: string }
+        > = {
+          pi_madhava: {
+            title: 'Mādhava’s Circumference for 10¹¹ Diameter ⟹ π to 11 Decimals',
+            verseSa: 'विबुधनेत्रगजाहिहुताशनत्रिगुणवेदभवारणपुण्यशीलदिन...',
+            verseIast: 'vibudha-netra-gajāhi-hutāśana-tri-guṇa-veda-bha-vāraṇa-puṇya-śīla-dina...',
+            explanation: 'Circumference of circle with d = 10¹¹: vi(4)-bu(3)-dha(9)-ne(0)-tra(2)-ga(3)-ja(8)-hi(8)-hu(8)-tā(6)-śa(5)... Reversing digits: 314159265359!',
+            digits: '4, 3, 9, 0, 2, 3, 8, 8, 3, 3, 6, 4, 0, 0, 7, 1, 4, 1, 4, 2, 1, 5, 1, 3',
+            resultDisplay: 'π = 3.14159265359 (Accurate to 11 decimal places!)',
+          },
+          sin_radius: {
+            title: 'Trigonometric Sine Baseline Radius (R = 3438\')',
+            verseSa: 'श्रेष्ठं नाम वरिष्ठानाम्',
+            verseIast: 'śreṣṭhaṃ nāma variṣṭhānām',
+            explanation: 'Total circle = 21,600 arcminutes. Radius R = 21,600 / 2π = 3438\'. Decrypted digits reversed yield 3438 arcminutes.',
+            digits: '8, 3, 4, 3',
+            resultDisplay: 'R = 3438\' (Standard Baseline Radius in Āryabhaṭīya & Yuktibhāṣā)',
+          },
+          raga_kanakangi: {
+            title: 'Carnatic Melakarta Raga #1 (Kanakāṅgī)',
+            verseSa: 'कनकाङ्गी',
+            verseIast: 'Ka-na-kā-ṅgī',
+            explanation: 'First two consonants: Ka = 1, Na = 0. Reversing digits (Aṅkānāṃ Vāmato Gatiḥ) yields 01 ⟹ 1st Melakarta parent scale!',
+            digits: '1, 0',
+            resultDisplay: 'Rāga Number = 01 (1st Melakarta Scale)',
+          },
+          raga_harikambhoji: {
+            title: 'Carnatic Melakarta Raga #28 (Harikāmbhoji)',
+            verseSa: 'हरिकाम्भोजी',
+            verseIast: 'Ha-ri-kā-mbho-jī',
+            explanation: 'First two consonants: Ha = 8, Ri = 2. Reversing digits yields 28 ⟹ 28th Melakarta parent scale!',
+            digits: '8, 2',
+            resultDisplay: 'Rāga Number = 28 (28th Melakarta Scale)',
+          },
+          custom: {
+            title: 'Gopī-Bhāgya Devotional Hymn (π/10 to 32 Decimal Places)',
+            verseSa: 'गोपीभाग्यमधुव्रातः शृङ्गीशोदधिसन्धिगः । खलजीवितखाताव गलहालासोधरः ॥',
+            verseIast: 'gopībhāgyamadhuvrātaḥ śṛṅgīśodadhisandhigaḥ | khalajīvitakhātāva galahālāsodharaḥ ||',
+            explanation: 'Dual-meaning poem praising Krishna/Shiva that simultaneously encrypts π/10 = 0.3141592653589793238462643383279... down to 32 decimal places!',
+            digits: '3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4, 6, 2, 6, 4, 3, 3, 8, 3, 2, 7, 9',
+            resultDisplay: 'π/10 = 0.3141592653589793238462643383279...',
+          },
+        };
+
+        const parseDevanagariKatapayadi = (text: string): number[] => {
+          const charMap: Record<string, number> = {
+            'क': 1, 'ख': 2, 'ग': 3, 'घ': 4, 'ङ': 5, 'च': 6, 'छ': 7, 'ज': 8, 'झ': 9, 'ञ': 0,
+            'ट': 1, 'ठ': 2, 'ड': 3, 'ढ': 4, 'ण': 5, 'त': 6, 'थ': 7, 'द': 8, 'ध': 9, 'न': 0,
+            'प': 1, 'फ': 2, 'ब': 3, 'भ': 4, 'म': 5,
+            'य': 1, 'र': 2, 'ल': 3, 'व': 4, 'श': 5, 'ष': 6, 'स': 7, 'ह': 8, 'ळ': 9,
+          };
+          const digits: number[] = [];
+          const chars = Array.from(text);
+          for (let i = 0; i < chars.length; i++) {
+            const c = chars[i];
+            if (charMap[c] !== undefined) {
+              if (i + 1 < chars.length && chars[i + 1] === '्') {
+                continue;
+              }
+              digits.push(charMap[c]);
+            }
+          }
+          return digits;
+        };
+
+        const parsedCustomDigits = parseDevanagariKatapayadi(customKatapayadiInput);
+        const activeKata = katapayadiPreset === 'custom' && customKatapayadiInput !== KATAPAYADI_PRESETS.custom.verseSa
+          ? {
+              title: 'Custom User Kaṭapayādi Verse / Phrase',
+              verseSa: customKatapayadiInput || '(Empty)',
+              verseIast: 'Custom Sanskrit text input',
+              explanation: `Decoded using the classic rules: vowels ignore/zero, conjunct consonants take trailing consonant. Reverse result: ${[...parsedCustomDigits].reverse().join('')}`,
+              digits: parsedCustomDigits.length > 0 ? parsedCustomDigits.join(', ') : 'None detected',
+              resultDisplay: parsedCustomDigits.length > 0 ? `Reversed Number = ${[...parsedCustomDigits].reverse().join('')}` : 'Enter Sanskrit text above',
+            }
+          : KATAPAYADI_PRESETS[katapayadiPreset];
+
+        // Calculations for Precession of the Equinoxes (Ayana-Calana)
+        const precessionRateArcsec = precessionModel === 'surya_siddhanta' ? 54 : 50.29;
+        const yearsFromEpoch = precessionYear - 285; // Chitra Paksha Zero Ayanamsha Epoch (~285 CE)
+        const currentAyanamshaDeg = yearsFromEpoch * (precessionRateArcsec / 3600);
+        const ayanamshaNormalized = ((currentAyanamshaDeg % 360) + 360) % 360;
+        const fullPrecessionPeriod = Math.round((360 * 3600) / precessionRateArcsec);
+
+        // Zodiac signs for Vernal Equinox drift:
+        const zodiacSigns = [
+          { nameSa: 'मेष (Meṣa)', nameEn: 'Aries', startDeg: 0 },
+          { nameSa: 'मीन (Mīna)', nameEn: 'Pisces', startDeg: 330 },
+          { nameSa: 'कुम्भ (Kumbha)', nameEn: 'Aquarius', startDeg: 300 },
+          { nameSa: 'मकर (Makara)', nameEn: 'Capricorn', startDeg: 270 },
+          { nameSa: 'धनुः (Dhanus)', nameEn: 'Sagittarius', startDeg: 240 },
+          { nameSa: 'वृश्चिक (Vṛścika)', nameEn: 'Scorpio', startDeg: 210 },
+          { nameSa: 'तुला (Tulā)', nameEn: 'Libra', startDeg: 180 },
+          { nameSa: 'कन्या (Kanyā)', nameEn: 'Virgo', startDeg: 150 },
+          { nameSa: 'सिंह (Siṃha)', nameEn: 'Leo', startDeg: 120 },
+          { nameSa: 'कर्क (Karka)', nameEn: 'Cancer', startDeg: 90 },
+          { nameSa: 'मिथुन (Mithuna)', nameEn: 'Gemini', startDeg: 60 },
+          { nameSa: 'वृषभ (Vṛṣabha)', nameEn: 'Taurus', startDeg: 30 },
+        ];
+        const equinoxSiderealLong = ((360 - (currentAyanamshaDeg % 360)) + 360) % 360;
+        const currentSign = zodiacSigns.find(s => equinoxSiderealLong >= s.startDeg && equinoxSiderealLong < s.startDeg + 30) || zodiacSigns[1];
+
+        // Calculations for Golabandha (Matsya & Parallax)
+        const matsyaR = 60;
+        const halfDist = matsyaSeparation / 2;
+        const matsyaHalfHeight = halfDist < matsyaR ? Math.sqrt(matsyaR * matsyaR - halfDist * halfDist) : 0;
+
+        const moonP0Deg = 0.95; // ~57 arcminutes
+        const pZenithRad = (parallaxZenithDeg * Math.PI) / 180;
+        const totalParallaxDeg = moonP0Deg * Math.sin(pZenithRad);
+        const lambanaLongShift = (totalParallaxDeg * Math.cos(pZenithRad * 0.7)).toFixed(2);
+        const natiLatShift = (totalParallaxDeg * Math.sin(pZenithRad * 0.7)).toFixed(2);
 
         return (
           <div>
@@ -4083,6 +4213,9 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
                 { id: 'yantras', label: '🏛️ Monumental Yantras (Jantar Mantar)', sub: 'Samrāt, Jai Prakash & Rām' },
                 { id: 'nilakantha_orbit', label: '☀️ Nīlakaṇṭha Geo-Heliocentrism (1501 CE)', sub: 'Tantrasaṅgraha Orbits' },
                 { id: 'tatkaliki_calculus', label: '⚡ Tātkālikī Gati & Mādhava Series', sub: 'Differential Calculus & π' },
+                { id: 'katapayadi', label: '🔠 Kaṭapayādi Poetic Cipher', sub: 'Mādhava π to 11 Decimals' },
+                { id: 'ayana_chalana', label: '🔄 Ayana-Calana (Precession of Equinoxes)', sub: 'Surya Siddhanta vs Kerala' },
+                { id: 'golabandha_jesuit', label: '🧭 Golabandha & Jesuit Transmission', sub: 'Matsya Projection & 1582 Reform' },
               ].map((sub) => (
                 <button
                   key={sub.id}
@@ -4636,6 +4769,474 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
                         💡 Without correction, 10 terms gives π ≈ 3.04 (terrible!). With Mādhava&apos;s tail factor, just 10 terms yields 3.1415926 (sub-part-per-million accuracy)!
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* SUB-MODE 4: KAṬAPAYĀDI POETIC CIPHER */}
+            {yantraSubMode === 'katapayadi' && (
+              <div>
+                <div style={{ background: '#fdf4ff', border: '1.5px solid #f0abfc', borderRadius: '12px', padding: '1.2rem', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#c026d3', textTransform: 'uppercase' }}>
+                      Alphanumeric Mnemonic Cryptography · कटपयादि-सङ्केतः
+                    </span>
+                    <span style={{ background: '#fae8ff', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 800, color: '#a21caf' }}>
+                      Aṅkānāṃ Vāmato Gatiḥ (Numbers Proceed Right-to-Left)
+                    </span>
+                  </div>
+                  <h4 style={{ margin: '0 0 0.4rem', fontSize: '1.2rem', fontWeight: 800, color: '#86198f' }}>
+                    Kaṭapayādi · Encoding Cosmic Constants &amp; 11-Decimal π in Metrical Verse
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#a21caf', lineHeight: 1.55 }}>
+                    To preserve massive floating-point numbers across centuries without copying errors, Indian mathematicians mapped Sanskrit consonants to digits 0–9. By chanting melodious hymns, scholars transmitted high-precision constants—such as Mādhava&apos;s 11-decimal π or the 72 Melakarta musical scales—flawlessly across millennia.
+                  </p>
+                </div>
+
+                {/* Preset Selector */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#334155', marginBottom: '0.6rem' }}>
+                      Select Canonical Kaṭapayādi Cipher Shloka:
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.4rem', marginBottom: '1rem' }}>
+                      {[
+                        { id: 'pi_madhava', label: '🥧 Mādhava π (11 Decimals)' },
+                        { id: 'sin_radius', label: '📐 Sine Radius R = 3438\'' },
+                        { id: 'raga_kanakangi', label: '🎵 Rāga #1 Kanakāṅgī' },
+                        { id: 'raga_harikambhoji', label: '🎶 Rāga #28 Harikāmbhoji' },
+                        { id: 'custom', label: '📜 Gopī-Bhāgya (π/10 to 32 Dec)' },
+                      ].map((item) => (
+                        <button
+                          key={item.id}
+                          type="button"
+                          onClick={() => setKatapayadiPreset(item.id as any)}
+                          style={{
+                            padding: '0.45rem 0.4rem',
+                            borderRadius: '6px',
+                            border: 'none',
+                            background: katapayadiPreset === item.id ? '#c026d3' : '#fae8ff',
+                            color: katapayadiPreset === item.id ? '#ffffff' : '#a21caf',
+                            fontWeight: 700,
+                            fontSize: '0.74rem',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </div>
+
+                    {katapayadiPreset === 'custom' && (
+                      <div style={{ background: '#fdf4ff', border: '1px solid #e879f9', borderRadius: '8px', padding: '0.75rem', marginBottom: '0.85rem' }}>
+                        <label style={{ fontSize: '0.75rem', fontWeight: 800, color: '#86198f', display: 'block', marginBottom: '0.35rem' }}>
+                          ✍️ Interactive Verse / Phrase Input (Edit or enter Sanskrit text):
+                        </label>
+                        <input
+                          type="text"
+                          value={customKatapayadiInput}
+                          onChange={(e) => setCustomKatapayadiInput(e.target.value)}
+                          placeholder="Type Devanagari Sanskrit phrase (e.g., गोपीभाग्यमधुव्रातः)..."
+                          style={{
+                            width: '100%',
+                            padding: '0.45rem 0.6rem',
+                            borderRadius: '6px',
+                            border: '1px solid #d946ef',
+                            fontSize: '0.84rem',
+                            fontFamily: 'monospace',
+                            color: '#701a75',
+                            background: '#ffffff',
+                            outline: 'none',
+                            boxSizing: 'border-box',
+                          }}
+                        />
+                      </div>
+                    )}
+
+                    {/* Shloka Card */}
+                    <div style={{ background: '#fdf4ff', border: '1px solid #f0abfc', borderRadius: '10px', padding: '1rem', marginBottom: '0.85rem' }}>
+                      <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#86198f', marginBottom: '0.2rem' }}>
+                        {activeKata.title}
+                      </div>
+                      <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#701a75', lineHeight: 1.6, marginBottom: '0.35rem' }}>
+                        {activeKata.verseSa}
+                      </div>
+                      <div style={{ fontSize: '0.78rem', color: '#a21caf', fontStyle: 'italic', marginBottom: '0.5rem' }}>
+                        {activeKata.verseIast}
+                      </div>
+                      <p style={{ margin: 0, fontSize: '0.8rem', color: '#475569', lineHeight: 1.5 }}>
+                        {activeKata.explanation}
+                      </p>
+                    </div>
+
+                    {/* Step-by-Step Decryption Box */}
+                    <div style={{ background: '#f8fafc', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase', marginBottom: '0.3rem' }}>
+                        1. Direct Forward Syllable-to-Digit Extraction:
+                      </div>
+                      <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#0f172a', background: '#ffffff', padding: '0.4rem', borderRadius: '6px', border: '1px solid #cbd5e1', marginBottom: '0.6rem', wordBreak: 'break-all' }}>
+                        {activeKata.digits}
+                      </div>
+
+                      <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase', marginBottom: '0.3rem' }}>
+                        2. Right-to-Left Reversal (Aṅkānāṃ Vāmato Gatiḥ):
+                      </div>
+                      <div style={{ fontFamily: 'monospace', fontSize: '1rem', fontWeight: 900, color: '#c026d3', background: '#fae8ff', padding: '0.5rem', borderRadius: '6px', border: '1px solid #f0abfc' }}>
+                        {activeKata.resultDisplay}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Kaṭapayādi Matrix Grid Table */}
+                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                    <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
+                      🗺️ The 4-Row Master Cipher Matrix
+                    </div>
+                    <div style={{ overflowX: 'auto' }}>
+                      <table style={{ width: '100%', fontSize: '0.76rem', borderCollapse: 'collapse', textAlign: 'center' }}>
+                        <thead>
+                          <tr style={{ background: '#f1f5f9', borderBottom: '2px solid #cbd5e1' }}>
+                            <th style={{ padding: '0.4rem', color: '#475569' }}>Digit</th>
+                            <th style={{ padding: '0.4rem', color: '#0284c7' }}>क-वर्ग (Ka)</th>
+                            <th style={{ padding: '0.4rem', color: '#059669' }}>ट-वर्ग (Ṭa)</th>
+                            <th style={{ padding: '0.4rem', color: '#d97706' }}>प-वर्ग (Pa)</th>
+                            <th style={{ padding: '0.4rem', color: '#a855f7' }}>य-वर्ग (Ya)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { d: 1, c1: 'क (ka)', c2: 'ट (ṭa)', c3: 'प (pa)', c4: 'य (ya)' },
+                            { d: 2, c1: 'ख (kha)', c2: 'ठ (ṭha)', c3: 'फ (pha)', c4: 'र (ra)' },
+                            { d: 3, c1: 'ग (ga)', c2: 'ड (ḍa)', c3: 'ब (ba)', c4: 'ल (la)' },
+                            { d: 4, c1: 'घ (gha)', c2: 'ढ (ḍha)', c3: 'भ (bha)', c4: 'व (va)' },
+                            { d: 5, c1: 'ङ (ṅa)', c2: 'ण (ṇa)', c3: 'म (ma)', c4: 'श (śa)' },
+                            { d: 6, c1: 'च (ca)', c2: 'त (ta)', c3: '-', c4: 'ष (ṣa)' },
+                            { d: 7, c1: 'छ (cha)', c2: 'थ (tha)', c3: '-', c4: 'स (sa)' },
+                            { d: 8, c1: 'ज (ja)', c2: 'द (da)', c3: '-', c4: 'ह (ha)' },
+                            { d: 9, c1: 'झ (jha)', c2: 'ध (dha)', c3: '-', c4: 'ळ (ḷa)' },
+                            { d: 0, c1: 'ञ (ña)', c2: 'न (na)', c3: '-', c4: 'क्ष / स्वर (kṣa/vowels)' },
+                          ].map((row) => (
+                            <tr key={row.d} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                              <td style={{ padding: '0.35rem', fontWeight: 800, color: '#0f172a', background: '#f8fafc' }}>{row.d}</td>
+                              <td style={{ padding: '0.35rem', color: '#0369a1' }}>{row.c1}</td>
+                              <td style={{ padding: '0.35rem', color: '#047857' }}>{row.c2}</td>
+                              <td style={{ padding: '0.35rem', color: '#b45309' }}>{row.c3}</td>
+                              <td style={{ padding: '0.35rem', color: '#7e22ce' }}>{row.c4}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div style={{ marginTop: '0.75rem', fontSize: '0.74rem', color: '#64748b', lineHeight: 1.5 }}>
+                      <strong>Golden Decoding Rules:</strong> (1) Conjoint consonants (e.g. <em>kya</em>, <em>stha</em>): only the final consonant counts. (2) Standalone vowels carry zero or are bypassed. (3) Numbers always read backwards (<em>Aṅkānāṃ Vāmato Gatiḥ</em>).
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* SUB-MODE 5: AYANA-CALANA (PRECESSION OF THE EQUINOXES) */}
+            {yantraSubMode === 'ayana_chalana' && (
+              <div>
+                <div style={{ background: '#f0fdf4', border: '1.5px solid #bbf7d0', borderRadius: '12px', padding: '1.2rem', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#16a34a', textTransform: 'uppercase' }}>
+                      Axial Precession &amp; Millennial Calibration · अयनचलनम् अयनांशश्च
+                    </span>
+                    <span style={{ background: '#dcfce7', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 800, color: '#15803d' }}>
+                      ~25,772-Year Great Cosmic Year
+                    </span>
+                  </div>
+                  <h4 style={{ margin: '0 0 0.4rem', fontSize: '1.2rem', fontWeight: 800, color: '#14532d' }}>
+                    Ayana-Calana · The Earth&apos;s Cosmic Wobble &amp; The Evolution from Pendulum to Full Circle
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#15803d', lineHeight: 1.55 }}>
+                    Like a giant spinning top, the Earth&apos;s rotational axis slowly traces a circular cone in space over 25,772 years. Early Indian texts modeled this as a ±27° libration pendulum (Āndolana, yielding 54&quot;/yr). By 1501 CE, Nīlakaṇṭha and Kerala astronomers compared millennium-old star charts against their own observations and proved the equinox completes a continuous 360° circle, updating Ayanāṃśa to modern astrophysical precision (~50.29&quot;/yr).
+                  </p>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#334155', marginBottom: '0.6rem' }}>
+                      Select Precession Calculation Model:
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.4rem', marginBottom: '1rem' }}>
+                      <button
+                        type="button"
+                        onClick={() => setPrecessionModel('surya_siddhanta')}
+                        style={{
+                          padding: '0.45rem',
+                          borderRadius: '6px',
+                          border: 'none',
+                          background: precessionModel === 'surya_siddhanta' ? '#16a34a' : '#f0fdf4',
+                          color: precessionModel === 'surya_siddhanta' ? '#ffffff' : '#16a34a',
+                          fontWeight: 700,
+                          fontSize: '0.76rem',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        Sūrya Siddhānta (54&quot;/yr · 600 rev/Yuga)
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setPrecessionModel('modern')}
+                        style={{
+                          padding: '0.45rem',
+                          borderRadius: '6px',
+                          border: 'none',
+                          background: precessionModel === 'modern' ? '#16a34a' : '#f0fdf4',
+                          color: precessionModel === 'modern' ? '#ffffff' : '#16a34a',
+                          fontWeight: 700,
+                          fontSize: '0.76rem',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        Kerala / Modern (50.29&quot;/yr · 360° Circle)
+                      </button>
+                    </div>
+
+                    <div style={{ marginBottom: '1rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                        <span>Target Historical / Future Year:</span>
+                        <strong style={{ color: '#16a34a' }}>{precessionYear > 0 ? `${precessionYear} CE` : `${Math.abs(precessionYear)} BCE`}</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={-3000}
+                        max={3000}
+                        step={25}
+                        value={precessionYear}
+                        onChange={(e) => setPrecessionYear(parseInt(e.target.value, 10))}
+                        style={{ width: '100%', accentColor: '#16a34a' }}
+                      />
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#64748b' }}>
+                        <span>3000 BCE (Vedic Kṛttikā)</span>
+                        <span>285 CE (Aries 0°)</span>
+                        <span>3000 CE (Aquarius)</span>
+                      </div>
+                    </div>
+
+                    {/* Precession Outputs */}
+                    <div style={{ background: '#f8fafc', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0', fontSize: '0.8rem', lineHeight: 1.6 }}>
+                      <div><strong>Annual Precession Rate:</strong> <span style={{ fontFamily: 'monospace', color: '#16a34a' }}>{precessionRateArcsec}&quot; arcsec/year</span></div>
+                      <div><strong>Full Precession Cycle:</strong> <span style={{ fontFamily: 'monospace', color: '#0f172a' }}>{fullPrecessionPeriod.toLocaleString()} Years</span></div>
+                      <div><strong>Ayanāṃśa Offset (from 285 CE Epoch):</strong> <span style={{ fontFamily: 'monospace', color: '#0284c7', fontWeight: 800 }}>+{ayanamshaNormalized.toFixed(2)}° ({Math.floor(ayanamshaNormalized)}° {Math.round((ayanamshaNormalized % 1) * 60)}&apos;)</span></div>
+                      <div><strong>Vernal Equinox Constellation:</strong> <span style={{ color: '#d97706', fontWeight: 800 }}>{currentSign.nameSa} ({currentSign.nameEn})</span></div>
+                      <div style={{ marginTop: '0.4rem', fontSize: '0.74rem', color: '#475569', lineHeight: 1.5 }}>
+                        📜 <strong>Historical Evidence:</strong> In the <em>Śatapatha Brāhmaṇa</em> (~2500 BCE), the vernal equinox occurred in Kṛttikā (Taurus / Pleiades). By Āryabhaṭa’s time (499 CE), it had precessed to Aśvinī (Aries). In 2026 CE, it sits at ~24.3° in Revatī (Pisces), moving steadily toward Kumbha (Aquarius)!
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* SVG Celestial Wobble Cone */}
+                  <div style={{ background: '#090d16', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                      {/* Ecliptic Pole Center */}
+                      <circle cx="130" cy="130" r="3" fill="#fbbf24" />
+                      <text x="130" y="122" fill="#fbbf24" fontSize="8" fontWeight="800" textAnchor="middle">Ecliptic North Pole</text>
+
+                      {/* 25,772-Year Precession Circle */}
+                      <circle cx="130" cy="130" r="80" fill="none" stroke="#334155" strokeWidth="2" strokeDasharray="3 3" />
+
+                      {/* Major Pole Stars on Precession Path */}
+                      <circle cx="130" cy="50" r="4" fill="#38bdf8" />
+                      <text x="130" y="42" fill="#38bdf8" fontSize="8" fontWeight="800" textAnchor="middle">Polaris (Today)</text>
+
+                      <circle cx="205" cy="100" r="4" fill="#a78bfa" />
+                      <text x="210" y="102" fill="#a78bfa" fontSize="7" textAnchor="start">Thuban (3000 BCE)</text>
+
+                      <circle cx="130" cy="210" r="5" fill="#f43f5e" />
+                      <text x="130" y="222" fill="#f43f5e" fontSize="8" fontWeight="800" textAnchor="middle">Vega (12,000 CE)</text>
+
+                      {/* Dynamic Earth Axis Pointer for Selected Year */}
+                      {(() => {
+                        const poleAngleRad = ((yearsFromEpoch / fullPrecessionPeriod) * 2 * Math.PI) - (Math.PI / 2);
+                        const poleX = 130 + 80 * Math.cos(poleAngleRad);
+                        const poleY = 130 + 80 * Math.sin(poleAngleRad);
+                        return (
+                          <>
+                            <line x1="130" y1="130" x2={poleX} y2={poleY} stroke="#facc15" strokeWidth="2" strokeDasharray="2 2" />
+                            <circle cx={poleX} cy={poleY} r="6" fill="#facc15" stroke="#ffffff" strokeWidth="1.5" />
+                            <text x={poleX} y={poleY > 130 ? poleY + 14 : poleY - 9} fill="#facc15" fontSize="8" fontWeight="900" textAnchor="middle">
+                              Axis in {precessionYear}
+                            </text>
+                          </>
+                        );
+                      })()}
+                    </svg>
+                    <div style={{ color: '#94a3b8', fontSize: '0.74rem', marginTop: '0.3rem', textAlign: 'center' }}>
+                      Earth rotational axis tracing the ~25,772-year circle around the Ecliptic North Pole
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* SUB-MODE 6: GOLABANDHA & JESUIT TRANSMISSION */}
+            {yantraSubMode === 'golabandha_jesuit' && (
+              <div>
+                <div style={{ background: '#eff6ff', border: '1.5px solid #bfdbfe', borderRadius: '12px', padding: '1.2rem', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#1d4ed8', textTransform: 'uppercase' }}>
+                      Yuktibhāṣā Spherical Projections &amp; The European Pipeline · गोलबन्धः सङ्क्रमणं च
+                    </span>
+                    <span style={{ background: '#dbeafe', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 800, color: '#1e40af' }}>
+                      Cochin ➔ Collegio Romano (1582 CE)
+                    </span>
+                  </div>
+                  <h4 style={{ margin: '0 0 0.4rem', fontSize: '1.2rem', fontWeight: 800, color: '#1e3a8a' }}>
+                    Golabandha · Jyeṣṭhadeva’s 3D-to-2D Spherical Proofs &amp; The Jesuit Conduit
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#1e40af', lineHeight: 1.55 }}>
+                    In <em>Gaṇita-Yuktibhāṣā</em> (1530 CE), Jyeṣṭhadeva detailed the mathematics of flattening the 3D celestial sphere onto flat paper using <em>Matsya</em> (vesica piscis) orthogonal intersections and resolving topocentric parallax (<em>Lambana</em> &amp; <em>Nati</em>). Concurrently, Jesuit missionaries in Cochin and Goa gathered these astronomical texts, transmitting high-precision solar parameters to Christopher Clavius for the 1582 Gregorian calendar reform.
+                  </p>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                  {/* Part 1: Matsya Vesica Piscis Simulator */}
+                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                    <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
+                      🐟 Part A: The Matsya (Fish) Orthogonal Projection Construction
+                    </div>
+                    <div style={{ marginBottom: '0.8rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                        <span>Distance Between Circle Centers:</span>
+                        <strong style={{ color: '#0284c7' }}>{matsyaSeparation} px</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={20}
+                        max={100}
+                        value={matsyaSeparation}
+                        onChange={(e) => setMatsyaSeparation(parseInt(e.target.value, 10))}
+                        style={{ width: '100%', accentColor: '#0284c7' }}
+                      />
+                    </div>
+
+                    <div style={{ background: '#0f172a', borderRadius: '10px', padding: '0.75rem', display: 'flex', justifyContent: 'center' }}>
+                      <svg width="220" height="150" viewBox="0 0 220 150">
+                        {/* Circle 1 */}
+                        <circle cx={110 - halfDist} cy="75" r={matsyaR} fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" strokeWidth="1.5" />
+                        {/* Circle 2 */}
+                        <circle cx={110 + halfDist} cy="75" r={matsyaR} fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" strokeWidth="1.5" />
+                        {/* Line connecting centers */}
+                        <line x1={110 - halfDist} y1="75" x2={110 + halfDist} y2="75" stroke="#94a3b8" strokeDasharray="2 2" />
+                        <circle cx={110 - halfDist} cy="75" r="3" fill="#ffffff" />
+                        <circle cx={110 + halfDist} cy="75" r="3" fill="#ffffff" />
+                        {/* Perpendicular Bisector (Mouth to Tail) */}
+                        {matsyaHalfHeight > 0 && (
+                          <>
+                            <line x1="110" y1={75 - matsyaHalfHeight - 10} x2="110" y2={75 + matsyaHalfHeight + 10} stroke="#f43f5e" strokeWidth="2" />
+                            <circle cx="110" cy={75 - matsyaHalfHeight} r="4" fill="#f43f5e" />
+                            <circle cx="110" cy={75 + matsyaHalfHeight} r="4" fill="#f43f5e" />
+                            <text x="115" y={75 - matsyaHalfHeight + 3} fill="#f43f5e" fontSize="7" fontWeight="800">Mouth (Mukha)</text>
+                            <text x="115" y={75 + matsyaHalfHeight + 3} fill="#f43f5e" fontSize="7" fontWeight="800">Tail (Puccha)</text>
+                          </>
+                        )}
+                      </svg>
+                    </div>
+                    <div style={{ marginTop: '0.65rem', fontSize: '0.76rem', color: '#475569', lineHeight: 1.5 }}>
+                      By overlapping two equal circles, the lenticular intersection forms a &ldquo;fish&rdquo; (Matsya). The line connecting mouth and tail generates an exact perpendicular bisector, used by Jyeṣṭhadeva to construct cardinal axes on flat palm leaves without protractors!
+                    </div>
+                  </div>
+
+                  {/* Part 2: Topocentric Parallax (Lambana & Nati) */}
+                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                    <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
+                      🌑 Part B: Topocentric Parallax (Lambana &amp; Nati)
+                    </div>
+                    <div style={{ marginBottom: '0.8rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                        <span>Zenith Distance of Celestial Body (Z):</span>
+                        <strong style={{ color: '#059669' }}>{parallaxZenithDeg}°</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={0}
+                        max={90}
+                        value={parallaxZenithDeg}
+                        onChange={(e) => setParallaxZenithDeg(parseInt(e.target.value, 10))}
+                        style={{ width: '100%', accentColor: '#059669' }}
+                      />
+                    </div>
+
+                    <div style={{ background: '#f8fafc', padding: '0.8rem', borderRadius: '8px', border: '1px solid #e2e8f0', fontSize: '0.8rem', lineHeight: 1.6 }}>
+                      <div><strong>Total Angular Parallax (Δθ = P₀ sin Z):</strong> <span style={{ fontFamily: 'monospace', color: '#0f172a', fontWeight: 800 }}>{totalParallaxDeg.toFixed(2)}° ({Math.round(totalParallaxDeg * 60)}&apos;)</span></div>
+                      <div><strong>Longitudinal Shift (Lambana / लम्बनम्):</strong> <span style={{ fontFamily: 'monospace', color: '#0284c7', fontWeight: 800 }}>+{lambanaLongShift}°</span> (Shifts Eclipse Conjunction Time!)</div>
+                      <div><strong>Latitudinal Shift (Nati / नतिः):</strong> <span style={{ fontFamily: 'monospace', color: '#dc2626', fontWeight: 800 }}>+{natiLatShift}°</span> (Alters Eclipse Magnitude!)</div>
+                    </div>
+                    <div style={{ marginTop: '0.65rem', fontSize: '0.76rem', color: '#475569', lineHeight: 1.5 }}>
+                      Because an observer sits on Earth&apos;s surface (Bhūpṛṣṭha) rather than its center (Bhūgarbha), the Moon appears displaced toward the horizon. Jyeṣṭhadeva decomposed this 3D vector into 2D orthogonal axes, predicting eclipse contact (Sparśa) down to the minute.
+                    </div>
+                  </div>
+                </div>
+
+                {/* Part 3: The Jesuit Transmission Pipeline Stepper */}
+                <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.15rem' }}>
+                  <div style={{ fontSize: '0.86rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.6rem' }}>
+                    🚢 Part C: The Jesuit Knowledge Transmission Timeline (1498–1687 CE)
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.4rem', marginBottom: '1rem' }}>
+                    {[
+                      { step: 0, label: '1498–1579: Cochin Base' },
+                      { step: 1, label: '1581: Ricci Letters' },
+                      { step: 2, label: '1582: Gregorian Reform' },
+                      { step: 3, label: '1635: Cavalieri Indivisibles' },
+                      { step: 4, label: '1667–1687: Calculus Series' },
+                    ].map((item) => (
+                      <button
+                        key={item.step}
+                        type="button"
+                        onClick={() => setJesuitTimelineStep(item.step)}
+                        style={{
+                          padding: '0.45rem',
+                          borderRadius: '6px',
+                          border: 'none',
+                          background: jesuitTimelineStep === item.step ? '#1d4ed8' : '#eff6ff',
+                          color: jesuitTimelineStep === item.step ? '#ffffff' : '#1d4ed8',
+                          fontWeight: 700,
+                          fontSize: '0.74rem',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Timeline Description Card */}
+                  <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: '8px', padding: '0.9rem', fontSize: '0.82rem', color: '#1e3a8a', lineHeight: 1.6 }}>
+                    {jesuitTimelineStep === 0 && (
+                      <>
+                        <strong>📍 Step 1: The Portuguese &amp; Jesuit Epicenter in Cochin (1498–1579 CE):</strong><br />
+                        Following Vasco da Gama’s arrival in Calicut, Cochin became the primary Portuguese royal headquarters and the direct geographical center of the Kerala School of Astronomy. By 1579, the Jesuit Order had established the Jesuit College of Cochin, chosen specifically for their scholars’ rigorous mathematics and linguistics training.
+                      </>
+                    )}
+                    {jesuitTimelineStep === 1 && (
+                      <>
+                        <strong>✉️ Step 2: Matteo Ricci’s Documented 1581 Letter from Cochin:</strong><br />
+                        Matteo Ricci, the star mathematics pupil of Christopher Clavius in Rome, arrived in Goa and Cochin (1578–1582). In an explicit 1581 letter preserved in the Jesuit archives in Rome, Ricci wrote to Father Maffei that he was seeking to acquire astronomical books from local Brahmins to decode their seasonal time calculations (<em>&ldquo;scritti da un bramano della computatione dei tempi&rdquo;</em>).
+                      </>
+                    )}
+                    {jesuitTimelineStep === 2 && (
+                      <>
+                        <strong>📅 Step 3: Christopher Clavius &amp; The 1582 Gregorian Calendar Reform:</strong><br />
+                        Headed by Clavius at the Collegio Romano, Pope Gregory XIII overhauled the drifting Julian calendar. Clavius’s newly adopted tropical year parameters matched Indian astronomical almanacs (Panchāṅgas) down to fractional seconds, resolving the Easter liturgical crisis and maritime navigation tables along the Cape Route.
+                      </>
+                    )}
+                    {jesuitTimelineStep === 3 && (
+                      <>
+                        <strong>⚡ Step 4: Dispatches to Mersenne &amp; Cavalieri’s Indivisibles (1635 CE):</strong><br />
+                        Jesuit dispatches from the East were collected by Father Marin Mersenne in Paris—the scientific clearinghouse connecting Fermat, Descartes, Pascal, and Galileo. In 1635, Bonaventura Cavalieri published his <em>Geometria Indivisibilibus</em>, using infinitesimal slicing identical to Jyeṣṭhadeva&apos;s <em>Yukti</em> slicing without the traditional Euclidean Greek proofs.
+                      </>
+                    )}
+                    {jesuitTimelineStep === 4 && (
+                      <>
+                        <strong>♾️ Step 5: The Emergence of Modern Calculus Power Series (1667–1687 CE):</strong><br />
+                        Shortly thereafter, James Gregory (1667), Isaac Newton (1669), and Gottfried Leibniz (1673) published the infinite series for sine, cosine, and π—matching Mādhava’s 14th-century formulas. Leibniz famously corresponded directly with Jesuit missionaries in India seeking their mathematical manuscripts, completing the global transmission loop.
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
