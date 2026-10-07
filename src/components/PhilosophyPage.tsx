@@ -5240,6 +5240,39 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   </div>
                 </div>
               </div>
+
+              {/* Subsection 17.10: Kuṭṭaka Planetary Synchronization & Yuktibhāṣā Circle Area Integration */}
+              <div className="philosophy-card" style={{ background: '#f0fdfa', border: '1.5px solid #99f6e4', margin: '1.5rem 0' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0d9488', textTransform: 'uppercase' }}>
+                  Indeterminate Algebra &amp; Infinitesimal Geometry · कुट्टकगणितं वृत्तक्षेत्रफलं च
+                </span>
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#134e4a' }}>
+                  🌌 Kuṭṭaka (The Pulverizer) &amp; Jyeṣṭhadeva’s Yuktibhāṣā Circle Area Integration
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#115e59', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  Classical Indian mathematics achieved unmatched depth in both discrete Diophantine algebra and continuous infinitesimal geometry—solving cosmic clock synchronization and proving circle integration centuries ahead of Europe:
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #ccfbf1' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#0f766e', marginBottom: '0.3rem' }}>
+                      ⚙️ Kuṭṭaka (कुट्टक): Linear Diophantine Pulverizer (499 CE)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#334155', lineHeight: 1.6, margin: 0 }}>
+                      Āryabhaṭa I invented the <em>Kuṭṭaka</em> method to solve <strong style={{ fontFamily: 'monospace' }}>ax - by = c</strong>. Successive Euclidean division generates a vertical quotient column called the <em>Vallī</em> (वल्ली / creeper). Bottom-up back-substitution (<em>Upasaṃhāra</em>) extracts integer solutions for orbital resets. For Planet A (15-day period, offset 3) and Planet B (22-day period, offset 7), solving 15y - 22z = 4 gives y = 12, z = 8, synchronizing both planets at exactly <strong style={{ color: '#0f766e' }}>Ahargaṇa x = 183 days</strong>!
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #ccfbf1' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#0f766e', marginBottom: '0.3rem' }}>
+                      🍕 Yuktibhāṣā Circle Area: Infinite Triangular Dissection (1530 CE)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#334155', lineHeight: 1.6, margin: 0 }}>
+                      In <em>Gaṇita-Yuktibhāṣā</em> (Chapter 6), Jyeṣṭhadeva proved <strong style={{ fontFamily: 'monospace' }}>Area = ½ C R = πR²</strong> by slicing the circle into <em>N</em> infinitesimal sectors with base <em>ds = C/N</em> and altitude <em>h → R</em>. Unrolling the wedges into an alternating saw-tooth strip creates a rectangle of width <strong style={{ color: '#0284c7' }}>½ C = πR</strong> and height <strong style={{ color: '#059669' }}>R</strong>, providing the world&apos;s first rigorous geometric Riemann sum centuries before Leibniz!
+                    </p>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
         )}

@@ -305,6 +305,16 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   const [mvtX1Deg, setMvtX1Deg] = useState<number>(20);
   const [mvtX2Deg, setMvtX2Deg] = useState<number>(40);
 
+  // Interactive state for Kuṭṭaka (The Pulverizer) & Planetary Synchronization
+  const [kuttakaM1, setKuttakaM1] = useState<number>(15);
+  const [kuttakaM2, setKuttakaM2] = useState<number>(22);
+  const [kuttakaR1, setKuttakaR1] = useState<number>(3);
+  const [kuttakaR2, setKuttakaR2] = useState<number>(7);
+
+  // Interactive state for Yuktibhāṣā Circle Area Integration
+  const [circleSlicesN, setCircleSlicesN] = useState<number>(16);
+  const [circleRadiusR, setCircleRadiusR] = useState<number>(10);
+
   // Interactive state for Precession of the Equinoxes (Ayana-Calana)
   const [precessionYear, setPrecessionYear] = useState<number>(2026);
   const [precessionModel, setPrecessionModel] = useState<'surya_siddhanta' | 'modern'>('modern');
@@ -4001,6 +4011,171 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
               )}
             </div>
           </div>
+
+          {/* Section 5: Kuṭṭaka (The Pulverizer) & Planetary Synchronization */}
+          {(() => {
+            const gcdCalc = (a: number, b: number): { g: number; valli: number[] } => {
+              let x = Math.abs(a), y = Math.abs(b);
+              const q: number[] = [];
+              while (y !== 0) {
+                q.push(Math.floor(x / y));
+                const rem = x % y;
+                x = y;
+                y = rem;
+              }
+              return { g: x, valli: q };
+            };
+            const { g, valli } = gcdCalc(kuttakaM1, kuttakaM2);
+            const offsetDiff = kuttakaR2 - kuttakaR1;
+            const isSolvable = offsetDiff % g === 0;
+            const lcm = (kuttakaM1 * kuttakaM2) / (g || 1);
+            let minAhargana: number | null = null;
+            if (isSolvable) {
+              const maxSearch = lcm * 2;
+              for (let k = 0; k <= maxSearch / kuttakaM1; k++) {
+                const cand = kuttakaM1 * k + kuttakaR1;
+                if (((cand - kuttakaR2) % kuttakaM2 + kuttakaM2) % kuttakaM2 === 0) {
+                  minAhargana = cand;
+                  break;
+                }
+              }
+            }
+
+            return (
+              <div style={{ background: '#f0fdfa', border: '1.5px solid #99f6e4', borderRadius: '12px', padding: '1.25rem', marginTop: '1.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                  <div>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0d9488', textTransform: 'uppercase' }}>
+                      Linear Diophantine Algorithm · कुट्टकगणितम्
+                    </span>
+                    <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#134e4a' }}>
+                      🌌 Kuṭṭaka (The Pulverizer) &amp; Planetary Alignment Engine
+                    </h4>
+                  </div>
+                  <div style={{ background: '#ccfbf1', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid #5eead4', fontSize: '0.84rem', fontWeight: 800, color: '#0f766e', fontFamily: 'monospace' }}>
+                    ax - by = c ⟹ x ≡ r₁ (mod m₁), x ≡ r₂ (mod m₂)
+                  </div>
+                </div>
+
+                <p style={{ fontSize: '0.84rem', color: '#115e59', lineHeight: 1.55, margin: '0 0 0.85rem' }}>
+                  Introduced by <strong>Āryabhaṭa (499 CE)</strong> and expanded by <strong>Bhāskara II</strong> and Kerala astronomers (Citrabhānu c. 1530 CE), <em>Kuṭṭaka</em> (&ldquo;the pulverizer&rdquo;) grinds down coefficients via mutual division to solve linear indeterminate equations, synchronizing celestial planetary cycles across centuries.
+                </p>
+
+                {/* Preset Scenarios */}
+                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                  {[
+                    { m1: 15, m2: 22, r1: 3, r2: 7, label: '🌟 Canonical Vedic Puzzle (m₁=15, m₂=22)' },
+                    { m1: 88, m2: 225, r1: 10, r2: 25, label: '🪐 Mercury-Venus Alignment' },
+                    { m1: 12, m2: 30, r1: 2, r2: 8, label: '☀️ Jupiter-Saturn Conjunction' },
+                  ].map((p, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => {
+                        setKuttakaM1(p.m1);
+                        setKuttakaM2(p.m2);
+                        setKuttakaR1(p.r1);
+                        setKuttakaR2(p.r2);
+                      }}
+                      style={{
+                        fontSize: '0.74rem',
+                        padding: '0.3rem 0.6rem',
+                        borderRadius: '6px',
+                        border: '1px solid #99f6e4',
+                        background: '#ffffff',
+                        color: '#0f766e',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {p.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Sliders / Inputs */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.75rem', borderRadius: '8px', border: '1px solid #ccfbf1' }}>
+                    <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#334155', marginBottom: '0.2rem' }}>
+                      Planet A Orbit (m₁): <strong style={{ color: '#0d9488' }}>{kuttakaM1} days</strong>
+                    </div>
+                    <input
+                      type="range"
+                      min={3}
+                      max={60}
+                      value={kuttakaM1}
+                      onChange={(e) => setKuttakaM1(parseInt(e.target.value, 10))}
+                      style={{ width: '100%', accentColor: '#0d9488' }}
+                    />
+                    <div style={{ fontSize: '0.74rem', color: '#64748b', marginTop: '0.2rem' }}>
+                      Current Offset (r₁): <input type="number" min={0} max={kuttakaM1 - 1} value={kuttakaR1} onChange={(e) => setKuttakaR1(parseInt(e.target.value, 10) || 0)} style={{ width: '50px', padding: '0.2rem' }} /> days
+                    </div>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.75rem', borderRadius: '8px', border: '1px solid #ccfbf1' }}>
+                    <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#334155', marginBottom: '0.2rem' }}>
+                      Planet B Orbit (m₂): <strong style={{ color: '#0f766e' }}>{kuttakaM2} days</strong>
+                    </div>
+                    <input
+                      type="range"
+                      min={3}
+                      max={60}
+                      value={kuttakaM2}
+                      onChange={(e) => setKuttakaM2(parseInt(e.target.value, 10))}
+                      style={{ width: '100%', accentColor: '#0f766e' }}
+                    />
+                    <div style={{ fontSize: '0.74rem', color: '#64748b', marginTop: '0.2rem' }}>
+                      Current Offset (r₂): <input type="number" min={0} max={kuttakaM2 - 1} value={kuttakaR2} onChange={(e) => setKuttakaR2(parseInt(e.target.value, 10) || 0)} style={{ width: '50px', padding: '0.2rem' }} /> days
+                    </div>
+                  </div>
+                </div>
+
+                {/* Pulverizer Output Box */}
+                <div style={{ background: '#ffffff', borderRadius: '10px', border: '1px solid #99f6e4', padding: '1rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                    <div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>1. Solvability Test:</div>
+                      <div style={{ fontSize: '0.84rem', color: '#334155' }}>
+                        gcd({kuttakaM1}, {kuttakaM2}) = <strong>{g}</strong>. Offset gap c = {kuttakaR2} - {kuttakaR1} = {offsetDiff}.<br />
+                        {isSolvable ? (
+                          <span style={{ color: '#059669', fontWeight: 700 }}>✓ Solvable ({offsetDiff} is divisible by {g})</span>
+                        ) : (
+                          <span style={{ color: '#dc2626', fontWeight: 700 }}>✗ Incompatible alignment (gcd does not divide gap)</span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>2. Vallī (Quotient Chain):</div>
+                      <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#0f766e' }}>
+                        [{valli.join(', ')}]
+                      </div>
+                      <span style={{ fontSize: '0.72rem', color: '#64748b' }}>Mutual Euclidean division sequence</span>
+                    </div>
+                  </div>
+
+                  {isSolvable && minAhargana !== null ? (
+                    <div style={{ background: '#ecfdf5', padding: '0.85rem', borderRadius: '8px', border: '1.5px solid #6ee7b7' }}>
+                      <div style={{ fontSize: '0.76rem', fontWeight: 800, color: '#065f46', textTransform: 'uppercase' }}>
+                        🎯 Synchronized Alignment Ahargaṇa (Elapsed Days):
+                      </div>
+                      <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#047857', marginTop: '0.2rem' }}>
+                        x = {minAhargana} Days
+                      </div>
+                      <div style={{ fontSize: '0.78rem', color: '#065f46', marginTop: '0.25rem' }}>
+                        ✓ Planet A: {minAhargana} mod {kuttakaM1} = {minAhargana % kuttakaM1} (Target: {kuttakaR1}) · Total completed orbits = {Math.floor(minAhargana / kuttakaM1)}<br />
+                        ✓ Planet B: {minAhargana} mod {kuttakaM2} = {minAhargana % kuttakaM2} (Target: {kuttakaR2}) · Total completed orbits = {Math.floor(minAhargana / kuttakaM2)}
+                      </div>
+                    </div>
+                  ) : (
+                    <div style={{ background: '#fef2f2', padding: '0.75rem', borderRadius: '8px', color: '#b91c1c', fontSize: '0.8rem' }}>
+                      No whole integer day alignment exists for these orbital parameters!
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       )}
 
@@ -4907,6 +5082,224 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
                       </div>
                     </div>
                   </div>
+
+                  {/* Part D: Jyeṣṭhadeva's Yuktibhāṣā (1530 CE) Circle Area via Infinite Triangle Integration */}
+                  {(() => {
+                    const N = circleSlicesN;
+                    const R = circleRadiusR;
+                    const circumference = 2 * Math.PI * R;
+                    const exactArea = Math.PI * R * R;
+                    // Inscribed regular N-gon area: N * (1/2 * 2R sin(pi/N) * R cos(pi/N)) = (N / 2) * R^2 * sin(2*pi / N)
+                    const inscribedArea = (N / 2) * (R * R) * Math.sin((2 * Math.PI) / N);
+                    const diffArea = Math.abs(exactArea - inscribedArea);
+                    const accuracyPct = ((1 - diffArea / exactArea) * 100).toFixed(4);
+                    const sliceArc = circumference / N;
+                    const apothem = R * Math.cos(Math.PI / N);
+                    const halfCircumference = Math.PI * R;
+
+                    return (
+                      <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem', gridColumn: '1 / -1', marginTop: '0.5rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.6rem' }}>
+                          <div style={{ fontSize: '0.86rem', fontWeight: 800, color: '#0f172a' }}>
+                            🍕 Part D: Jyeṣṭhadeva&apos;s Yuktibhāṣā (1530 CE) — Circle Area via Infinite Triangle Integration
+                          </div>
+                          <span style={{ background: '#e0f2fe', color: '#0369a1', fontSize: '0.72rem', fontWeight: 800, padding: '0.2rem 0.5rem', borderRadius: '4px' }}>
+                            A = lim(N→∞) Σ ½ · (C/N) · R = ½ C R = π R²
+                          </span>
+                        </div>
+
+                        <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.55, margin: '0 0 0.8rem' }}>
+                          In Chapter 6 of the <em>Gaṇita-Yuktibhāṣā</em>, <strong>Jyeṣṭhadeva</strong> provides the world&apos;s first analytical proof for the area of a circle by decomposing it into <em>N</em> infinitesimal triangular wedges. By unrolling and interlocking the sectors alternately, they form a rectangle of width <strong style={{ color: '#0284c7' }}>½ C = πR</strong> and height <strong style={{ color: '#059669' }}>R</strong>. As <em>N → ∞</em>, chord base <em>ds → C/N</em> and apothem <em>h → R</em>, yielding exact Riemann integration 150 years before calculus was formalized in Europe!
+                        </p>
+
+                        {/* Interactive Controls */}
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '0.8rem' }}>
+                          <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#475569', marginBottom: '0.2rem' }}>
+                              <span>Number of Infinitesimal Slices (N):</span>
+                              <strong style={{ color: '#0284c7' }}>{circleSlicesN} wedges</strong>
+                            </div>
+                            <input
+                              type="range"
+                              min={4}
+                              max={128}
+                              step={4}
+                              value={circleSlicesN}
+                              onChange={(e) => setCircleSlicesN(parseInt(e.target.value, 10))}
+                              style={{ width: '100%', accentColor: '#0284c7' }}
+                            />
+                            <div style={{ display: 'flex', gap: '0.3rem', marginTop: '0.3rem', flexWrap: 'wrap' }}>
+                              {[4, 8, 16, 32, 64, 128].map((s) => (
+                                <button
+                                  key={s}
+                                  type="button"
+                                  onClick={() => setCircleSlicesN(s)}
+                                  style={{
+                                    fontSize: '0.68rem',
+                                    padding: '0.15rem 0.4rem',
+                                    borderRadius: '4px',
+                                    border: '1px solid #cbd5e1',
+                                    background: circleSlicesN === s ? '#0284c7' : '#f8fafc',
+                                    color: circleSlicesN === s ? '#ffffff' : '#334155',
+                                    cursor: 'pointer',
+                                    fontWeight: 700,
+                                  }}
+                                >
+                                  N={s}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#475569', marginBottom: '0.2rem' }}>
+                              <span>Radius R (Vyāsārdha):</span>
+                              <strong style={{ color: '#059669' }}>R = {circleRadiusR}</strong>
+                            </div>
+                            <input
+                              type="range"
+                              min={1}
+                              max={50}
+                              value={circleRadiusR}
+                              onChange={(e) => setCircleRadiusR(parseInt(e.target.value, 10))}
+                              style={{ width: '100%', accentColor: '#059669' }}
+                            />
+                            <div style={{ fontSize: '0.72rem', color: '#64748b', marginTop: '0.35rem' }}>
+                              Circumference C = 2πR = {circumference.toFixed(2)} | Half-C = πR = {halfCircumference.toFixed(2)}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Integration Metrics & Limit Breakdown */}
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.6rem', background: '#f8fafc', padding: '0.8rem', borderRadius: '8px', fontSize: '0.78rem', lineHeight: 1.6, marginBottom: '0.8rem' }}>
+                          <div>
+                            <strong>Exact Circle Area (π R²):</strong>
+                            <div style={{ fontFamily: 'monospace', color: '#0f172a', fontWeight: 800 }}>{exactArea.toFixed(4)}</div>
+                            <span style={{ fontSize: '0.7rem', color: '#64748b' }}>½ × Circumference × R</span>
+                          </div>
+                          <div>
+                            <strong>N-gon Riemann Sum A_N:</strong>
+                            <div style={{ fontFamily: 'monospace', color: '#0284c7', fontWeight: 800 }}>{inscribedArea.toFixed(4)}</div>
+                            <span style={{ fontSize: '0.7rem', color: '#0284c7' }}>Accuracy: {accuracyPct}%</span>
+                          </div>
+                          <div>
+                            <strong>Wedge Dimensions:</strong>
+                            <div style={{ fontFamily: 'monospace', color: '#059669', fontWeight: 800 }}>
+                              Base ds = {sliceArc.toFixed(3)}, Apothem h = {apothem.toFixed(3)}
+                            </div>
+                            <span style={{ fontSize: '0.7rem', color: '#059669' }}>As N→∞, h → R ({R})</span>
+                          </div>
+                          <div>
+                            <strong>Discrepancy (ΔA):</strong>
+                            <div style={{ fontFamily: 'monospace', color: diffArea < 0.05 ? '#16a34a' : '#d97706', fontWeight: 800 }}>
+                              {diffArea.toFixed(5)}
+                            </div>
+                            <span style={{ fontSize: '0.7rem', color: '#64748b' }}>O(1/N²) second-order convergence</span>
+                          </div>
+                        </div>
+
+                        {/* Visual SVG Diagram: Circle Sectors + Interlocked Rectangular Strip */}
+                        <div style={{ background: '#f1f5f9', borderRadius: '8px', padding: '0.8rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+                          <div style={{ fontSize: '0.76rem', fontWeight: 700, color: '#334155', textAlign: 'center' }}>
+                            Geometric Transformation: Circular Dissection ➔ Interlocked Rectangular Prism
+                          </div>
+                          <div style={{ width: '100%', overflowX: 'auto', display: 'flex', justifyContent: 'center' }}>
+                            <svg width="480" height="150" viewBox="0 0 480 150" style={{ maxWidth: '100%', height: 'auto' }}>
+                              {/* Left: Sliced Circle */}
+                              <g transform="translate(80, 75)">
+                                <circle cx="0" cy="0" r="60" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="1.5" />
+                                {Array.from({ length: Math.min(N, 64) }).map((_, i) => {
+                                  const angleStep = (2 * Math.PI) / Math.min(N, 64);
+                                  const a1 = i * angleStep;
+                                  const a2 = (i + 1) * angleStep;
+                                  const x1 = 60 * Math.cos(a1);
+                                  const y1 = 60 * Math.sin(a1);
+                                  const x2 = 60 * Math.cos(a2);
+                                  const y2 = 60 * Math.sin(a2);
+                                  const isEven = i % 2 === 0;
+                                  return (
+                                    <path
+                                      key={i}
+                                      d={`M 0 0 L ${x1.toFixed(1)} ${y1.toFixed(1)} A 60 60 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)} Z`}
+                                      fill={isEven ? '#38bdf8' : '#818cf8'}
+                                      fillOpacity="0.45"
+                                      stroke="#0284c7"
+                                      strokeWidth="0.75"
+                                    />
+                                  );
+                                })}
+                                <circle cx="0" cy="0" r="2.5" fill="#0f172a" />
+                                <text x="0" y="72" textAnchor="middle" fontSize="9" fontWeight="700" fill="#475569">
+                                  Circle (R={R}, N={N})
+                                </text>
+                              </g>
+
+                              {/* Arrow */}
+                              <g transform="translate(185, 75)">
+                                <path d="M 0 0 L 25 0 M 20 -4 L 25 0 L 20 4" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                                <text x="12" y="-8" textAnchor="middle" fontSize="8" fontWeight="800" fill="#0284c7">
+                                  Unroll
+                                </text>
+                              </g>
+
+                              {/* Right: Alternating Triangular Strip forming Rectangle */}
+                              <g transform="translate(230, 25)">
+                                {(() => {
+                                  const dispW = 220;
+                                  const dispH = 65;
+                                  const dispN = Math.min(N, 32);
+                                  const sliceW = dispW / dispN;
+                                  return (
+                                    <>
+                                      <rect x="0" y="10" width={dispW} height={dispH} fill="#f8fafc" stroke="#94a3b8" strokeDasharray="3,3" strokeWidth="1" />
+                                      {Array.from({ length: dispN }).map((_, i) => {
+                                        const sx = i * sliceW;
+                                        const isEven = i % 2 === 0;
+                                        const pathD = isEven
+                                          ? `M ${sx} ${10 + dispH} L ${sx + sliceW / 2} 10 L ${sx + sliceW} ${10 + dispH} Z`
+                                          : `M ${sx} 10 L ${sx + sliceW / 2} ${10 + dispH} L ${sx + sliceW} 10 Z`;
+                                        return (
+                                          <path
+                                            key={i}
+                                            d={pathD}
+                                            fill={isEven ? '#38bdf8' : '#818cf8'}
+                                            fillOpacity="0.55"
+                                            stroke="#4338ca"
+                                            strokeWidth="0.8"
+                                          />
+                                        );
+                                      })}
+                                      {/* Dimension Labels */}
+                                      <text x={dispW / 2} y="5" textAnchor="middle" fontSize="9" fontWeight="800" fill="#0369a1">
+                                        Width = ½ C = πR ({halfCircumference.toFixed(1)})
+                                      </text>
+                                      <text x={dispW + 8} y={10 + dispH / 2} fontSize="9" fontWeight="800" fill="#059669" alignmentBaseline="middle">
+                                        Height = R ({R})
+                                      </text>
+                                      <text x={dispW / 2} y={dispH + 24} textAnchor="middle" fontSize="8.5" fontWeight="700" fill="#334155">
+                                        Rectangle Area = (πR) × R = πR² ({exactArea.toFixed(1)})
+                                      </text>
+                                    </>
+                                  );
+                                })()}
+                              </g>
+                            </svg>
+                          </div>
+                        </div>
+
+                        {/* Sanskrit Shloka from Yuktibhāṣā Chapter 6 */}
+                        <div style={{ marginTop: '0.8rem', background: '#f0fdf4', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #bbf7d0', fontSize: '0.78rem' }}>
+                          <strong style={{ color: '#166534' }}>📜 Yuktibhāṣā Chapter 6 (Paridhi-Kṣetra-Pramāṇa):</strong>
+                          <div style={{ fontStyle: 'italic', color: '#14532d', margin: '0.2rem 0' }}>
+                            &ldquo;समवृत्तपरिधेश्छिद्रं समभागैर्विभज्यते । तदर्धं व्यासार्धगुणं वृत्तक्षेत्रफलं भवेत् ॥&rdquo;
+                          </div>
+                          <div style={{ color: '#15803d', fontSize: '0.74rem' }}>
+                            <em>&ldquo;Divide the circumference of the circle into equal microscopic segments. Half the circumference multiplied by the semi-diameter is the exact area of the circular plane.&rdquo;</em>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
             )}

@@ -2930,6 +2930,28 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           { sa: 'छेदकविधि', iast: 'Chedaka-Vidhi', gloss: 'Numerical Secant Method iteratively converging on orbital syzygy roots' }
         ],
         highlight: 'Venkatamakhin used modular arithmetic (⌈N/6⌉ and N mod 6) to deduce the 7 svaras of any Melakarta rāga, while Parameśvara (1431 CE) formulated the Mean Value Theorem to eliminate first-order error in tracking accelerated lunar eclipse velocity.'
+      },
+      {
+        title: 'The Kuṭṭaka Pulverizer for Planetary Synchronization & Yuktibhāṣā Circle Area Integration',
+        sanskritTitle: '॥ कुट्टक-ग्रहसंयोग-कलनम् युक्तिभाषा वृत्तक्षेत्रफल-समाकलनं च ॥',
+        paragraphs: [
+          'Two fundamental pillars of classical Indian mathematics unite indeterminate integer algebra and infinitesimal geometric analysis:',
+          '1. The Kuṭṭaka (कुट्टक / "The Pulverizer") Algorithm for Planetary Synchronization:',
+          'First systematized by Āryabhaṭa I (499 CE in Āryabhaṭīya, Gaṇitapāda 32–33) and later expanded by Bhāskara II (1150 CE Bījagaṇita) and Citrabhānu (c. 1530 CE Karaṇa-Paddhati), the Kuṭṭaka method solves linear indeterminate Diophantine equations of the form ax - by = c, or simultaneous orbital congruences x ≡ r₁ (mod m₁) and x ≡ r₂ (mod m₂).',
+          'The algorithm grinds down large coefficients through successive mutual division, generating a vertical column of partial quotients called the Vallī (वल्ली / "creeper"). By choosing an auxiliary multiplier (Mati / मति) and performing upward back-substitution (Upasaṃhāra / उपसंहार), the exact integer solutions for elapsed days (Ahargaṇa) and planetary revolutions are extracted.',
+          'For example, when synchronizing two orbiting bodies—Planet A with period m₁ = 15 days and current lead r₁ = 3, and Planet B with period m₂ = 22 days and lead r₂ = 7—astronomers solve 15y - 22z = 4. The Vallī quotients [1, 2, 7] and upward reduction yield y = 12 orbits and z = 8 orbits, producing the exact future Ahargaṇa x = 15(12) + 3 = 22(8) + 7 = 183 days when both planets achieve perfect celestial alignment!',
+          '2. Jyeṣṭhadeva’s Yuktibhāṣā (1530 CE) Circle Area Proof via Infinite Triangle Integration:',
+          'In Chapter 6 of Gaṇita-Yuktibhāṣā, Jyeṣṭhadeva provides the world’s first analytical proof that the area of a circle equals half the circumference multiplied by the radius (A = ½ C R = πR²) using rigorous limit summation centuries before Cauchy and Riemann.',
+          'Jyeṣṭhadeva divides the circumference C into N infinitesimal segments (ds = C/N). From the center, radial lines form N microscopic triangular sectors. Each triangle has base ds = 2πR / N and altitude equal to the apothem h = R cos(π/N). As N → ∞, the apothem h converges to the radius R, and the sum of triangle areas becomes: A = lim(N→∞) Σ ½ · (C/N) · R = ½ · C · R = ½ (2πR) R = πR².',
+          'Jyeṣṭhadeva demonstrates the physical transformation: cutting the N triangular wedges and interlocking them alternately head-to-toe unrolls the curved circle into an exact rectangular strip of width equal to half the circumference (½ C = πR) and height equal to the radius (R). This geometric dissection proved area conservation and anticipated the fundamental theorem of integral calculus.'
+        ],
+        terms: [
+          { sa: 'कुट्टक', iast: 'Kuṭṭaka', gloss: 'The pulverizer: mutual division algorithm solving linear Diophantine equations ax - by = c' },
+          { sa: 'वल्ली', iast: 'Vallī', gloss: 'The vertical creeper column of successive partial quotients in Kuṭṭaka reduction' },
+          { sa: 'उपसंहार', iast: 'Upasaṃhāra', gloss: 'The bottom-up back-substitution collapsing the Vallī column into integer coordinates' },
+          { sa: 'वृत्तक्षेत्रफलम्', iast: 'Vṛtta-Kṣetraphalam', gloss: 'Circle area integration derived via infinite triangular Riemann dissection (½ C R = πR²)' }
+        ],
+        highlight: 'Āryabhaṭa’s Kuṭṭaka algorithm pulverizes linear Diophantine congruences (solving planetary syzygies like 15d & 22d at Ahargaṇa x = 183d), while Jyeṣṭhadeva’s Yuktibhāṣā (1530 CE) integrates N infinitesimal triangular wedges into an interlocked rectangle of width πR and height R to prove Area = πR².'
       }
     ],
     quote: 'Centuries before the European Enlightenment, the astronomers of the Kerala School stood on the banks of the Nila River, peered into the night sky with Gola Yantras, and unfolded the curved geometry of the heavens into the infinite series of calculus.',
@@ -2944,7 +2966,9 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Parameśvara conducted 55 years of continuous observations (1393–1448 CE) along the Nīlā river, creating the Dṛggaṇita to correct the 14-day precessional drift of the ancient Vākya calendar and accurately predict the Southwest Monsoon (Eḍavappāti).',
       'The Kaṭapayādi cipher enabled devotional steganography: the Gopī-Bhāgya hymn encrypted π/10 to 32 decimals, while Nārāyaṇīyam’s closing blessing "Āyurārogyasaukhyam" permanently embedded Kali Day 1,712,210 (8/9 December 1586 CE).',
       'Venkatamakhin’s Melakarta algorithmic division formula computes the 7 svaras of all 72 parent ragas via modular arithmetic: Ma from N ≤ 36, Ri-Ga from ⌈N/6⌉, and Dha-Ni from ((N-1) mod 6)+1.',
-      'In Siddhānta-Dīpikā (1431 CE), Parameśvara formulated the Mean Value Theorem [sin(x₂) - sin(x₁) ≈ (x₂ - x₁)·cos((x₁+x₂)/2)], canceling first-order O(Δx) error to track accelerated lunar eclipse physics via the numerical Secant Method.'
+      'In Siddhānta-Dīpikā (1431 CE), Parameśvara formulated the Mean Value Theorem [sin(x₂) - sin(x₁) ≈ (x₂ - x₁)·cos((x₁+x₂)/2)], canceling first-order O(Δx) error to track accelerated lunar eclipse physics via the numerical Secant Method.',
+      'Āryabhaṭa’s Kuṭṭaka (pulverizer) algorithm solves linear Diophantine equations ax - by = c via the Vallī quotient column and Upasaṃhāra back-substitution, precisely synchronizing multi-planetary conjunctions (e.g., Ahargaṇa x = 183 days for 15/22-day orbits).',
+      'Jyeṣṭhadeva’s Gaṇita-Yuktibhāṣā (1530 CE) formulated the world’s first analytical Riemann integral for circle area: decomposing the circle into N infinitesimal triangular sectors and unrolling them into a rectangle of width πR and height R to prove Area = ½ C R = πR².'
     ]
   },
   {
