@@ -299,7 +299,7 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   const [useMadhavaCorrection, setUseMadhavaCorrection] = useState<boolean>(true);
 
   // Interactive state for Kaṭapayādi Cryptography
-  const [katapayadiPreset, setKatapayadiPreset] = useState<'pi_madhava' | 'sin_radius' | 'raga_kanakangi' | 'raga_harikambhoji' | 'custom'>('pi_madhava');
+  const [katapayadiPreset, setKatapayadiPreset] = useState<'pi_madhava' | 'sin_radius' | 'narayaneeyam' | 'raga_kanakangi' | 'raga_harikambhoji' | 'custom'>('pi_madhava');
   const [customKatapayadiInput, setCustomKatapayadiInput] = useState<string>('गोपीभाग्यमधुव्रातः');
 
   // Interactive state for Precession of the Equinoxes (Ayana-Calana)
@@ -4091,7 +4091,7 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
         const truePi = Math.PI;
         // Kaṭapayādi Preset Data
         const KATAPAYADI_PRESETS: Record<
-          'pi_madhava' | 'sin_radius' | 'raga_kanakangi' | 'raga_harikambhoji' | 'custom',
+          'pi_madhava' | 'sin_radius' | 'narayaneeyam' | 'raga_kanakangi' | 'raga_harikambhoji' | 'custom',
           { title: string; verseSa: string; verseIast: string; explanation: string; digits: string; resultDisplay: string }
         > = {
           pi_madhava: {
@@ -4109,6 +4109,14 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
             explanation: 'Total circle = 21,600 arcminutes. Radius R = 21,600 / 2π = 3438\'. Decrypted digits reversed yield 3438 arcminutes.',
             digits: '8, 3, 4, 3',
             resultDisplay: 'R = 3438\' (Standard Baseline Radius in Āryabhaṭīya & Yuktibhāṣā)',
+          },
+          narayaneeyam: {
+            title: 'Nārāyaṇīyam Cosmic Completion Timestamp (1586 CE)',
+            verseSa: 'आयुरारोग्यसौख्यम्',
+            verseIast: 'ā-yu-rā-ro-gya-sau-khyam',
+            explanation: 'Final benediction of Melpathūr Nārāyaṇa Bhaṭṭathiri’s Nārāyaṇīyam at Guruvāyūr: "Long life, good health, and supreme happiness". Syllables decode to ā(0)-yu(1)-rā(2)-ro(2)-gya(1)-sau(7)-khyam(1). Inverted (Aṅkānāṃ Vāmato Gatiḥ), it yields Kali Day 1,712,210 ⟹ Sunday, 8/9 December 1586 CE!',
+            digits: '0, 1, 2, 2, 1, 7, 1',
+            resultDisplay: 'Kali Day 1,712,210 ⟹ Sunday, 8/9 December 1586 CE (Historic Completion Timestamp)',
           },
           raga_kanakangi: {
             title: 'Carnatic Melakarta Raga #1 (Kanakāṅgī)',
@@ -4804,9 +4812,10 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
                       {[
                         { id: 'pi_madhava', label: '🥧 Mādhava π (11 Decimals)' },
                         { id: 'sin_radius', label: '📐 Sine Radius R = 3438\'' },
+                        { id: 'narayaneeyam', label: '⏳ Nārāyaṇīyam Date (1586 CE)' },
                         { id: 'raga_kanakangi', label: '🎵 Rāga #1 Kanakāṅgī' },
                         { id: 'raga_harikambhoji', label: '🎶 Rāga #28 Harikāmbhoji' },
-                        { id: 'custom', label: '📜 Gopī-Bhāgya (π/10 to 32 Dec)' },
+                        { id: 'custom', label: '📜 Gopī-Bhāgya / Custom' },
                       ].map((item) => (
                         <button
                           key={item.id}
@@ -5067,6 +5076,47 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
                     </svg>
                     <div style={{ color: '#94a3b8', fontSize: '0.74rem', marginTop: '0.3rem', textAlign: 'center' }}>
                       Earth rotational axis tracing the ~25,772-year circle around the Ecliptic North Pole
+                    </div>
+                  </div>
+                </div>
+
+                {/* Realignment of the Vākya Calendar for Southwest Monsoon (Eḍavappāti) */}
+                <div style={{ background: '#ffffff', border: '1px solid #bbf7d0', borderRadius: '12px', padding: '1.1rem', marginTop: '1rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                    <span style={{ fontSize: '1.1rem' }}>🌧️</span>
+                    <div style={{ fontSize: '0.92rem', fontWeight: 800, color: '#166534' }}>
+                      Ayana-Calana &amp; The Southwest Monsoon (Eḍavappāti / ഇടवപ്പാति) Realignment
+                    </div>
+                  </div>
+                  <p style={{ fontSize: '0.82rem', color: '#374151', lineHeight: 1.6, margin: '0 0 0.75rem' }}>
+                    In Kerala, agricultural survival depended entirely on the timely arrival of the Southwest Monsoon (<em>Eḍavappāti</em>, hitting the coast around June 1–5 in mid-<em>Eḍavam</em> / Taurus). The ancient 4th-century <em>Vākya</em> calendar of Vararuci tracked planetary motions relative to fixed stars (<strong>Nirayana</strong>). However, weather systems and the Intertropical Convergence Zone (ITCZ) depend on the seasonal Sun (<strong>Sāyana</strong> / tropical year: 365.2422 days), which finishes ~20.4 minutes shorter than the sidereal year (365.2564 days).
+                  </p>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem' }}>
+                    <div style={{ background: '#f0fdf4', padding: '0.75rem', borderRadius: '8px', border: '1px solid #dcfce7' }}>
+                      <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#15803d', marginBottom: '0.2rem' }}>
+                        ⚠️ The 14-Day Seasonal Drift Crisis
+                      </div>
+                      <div style={{ fontSize: '0.75rem', color: '#475569', lineHeight: 1.5 }}>
+                        Every 71.6 years, the true seasons shift backward by 1 day relative to fixed stars. Over 1,000 years (from Vararuci to 1400 CE), the uncorrected Vākya calendar drifted by nearly <strong>14 full days</strong>! Farmers relying on archaic sidereal dates risked seeding paddy either too early (scorched by dry summer heat) or too late (drowned in flash monsoon torrents).
+                      </div>
+                    </div>
+
+                    <div style={{ background: '#f0fdf4', padding: '0.75rem', borderRadius: '8px', border: '1px solid #dcfce7' }}>
+                      <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#15803d', marginBottom: '0.2rem' }}>
+                        🔭 Parameśvara&apos;s 55-Year Empirical Vigil (1431 CE)
+                      </div>
+                      <div style={{ fontSize: '0.75rem', color: '#475569', lineHeight: 1.5 }}>
+                        On the banks of the Nīlā river, Parameśvara observed eclipses and solstices for 55 continuous years (1393–1448 CE), establishing <em>Dṛk-Gaṇita-Aikya</em> (दृग्गणितैक्य—concordance of calculation and observed sky). His <em>Dṛggaṇita</em> corrected the planetary parameters to match empirical nature.
+                      </div>
+                    </div>
+
+                    <div style={{ background: '#f0fdf4', padding: '0.75rem', borderRadius: '8px', border: '1px solid #dcfce7' }}>
+                      <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#15803d', marginBottom: '0.2rem' }}>
+                        ⚙️ The Rolling Ayanāṃśa Correction
+                      </div>
+                      <div style={{ fontSize: '0.75rem', color: '#475569', lineHeight: 1.5 }}>
+                        Kerala astronomers subtracted Ayanāṃśa from Nirayana solar longitudes: <span style={{ fontFamily: 'monospace', fontWeight: 700, color: '#16a34a' }}>λ_Sāyana = λ_Nirayana - Ayanāṃśa</span>. This isolated the Sun&apos;s true tropical declination (Krānti), predicting the thermodynamic monsoon onset to the exact week!
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -5202,6 +5202,24 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                       Because of precession, the vernal equinox shifted from <strong>Kṛttikā (Taurus)</strong> in the Vedic period (~2500 BCE, recorded in <em>Śatapatha Brāhmaṇa</em>) to <strong>Aśvinī (Aries)</strong> at 500 CE, and into <strong>Revatī (Pisces)</strong> today (Ayanāṃśa ≈ 24.3° in 2026 CE), heading inexorably toward <strong>Kumbha (Aquarius)</strong>!
                     </p>
                   </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fae8ff' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#a21caf', marginBottom: '0.3rem' }}>
+                      🌧️ Vākya Monsoon Realignment (Eḍavappāti &amp; Dṛggaṇita)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      Early <em>Vākya</em> calendars anchored to sidereal stars drifted by ~14 days over 1,000 years, risking agricultural failure when predicting the Southwest Monsoon (<em>Eḍavappāti</em>). Parameśvara observed for 55 continuous years (1393–1448 CE) on the Nīlā river, creating <em>Dṛggaṇita</em> (1431 CE) to subtract Ayanāṃśa and realign civil sowing (<em>Vithidal</em>) with true tropical solar declination!
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fae8ff' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#a21caf', marginBottom: '0.3rem' }}>
+                      ⏳ Nārāyaṇīyam Cosmic Timestamp (Kali Day 1,712,210)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      In 1586 CE at Guruvāyūr, Melpathūr Nārāyaṇa Bhaṭṭathiri concluded his masterpiece with the prayer <em>&ldquo;Āyurārogyasaukhyam&rdquo;</em> (&ldquo;Long life, health, and supreme happiness&rdquo;). Syllables decode to 0, 1, 2, 2, 1, 7, 1; reading backwards (<em>Aṅkānāṃ Vāmato Gatiḥ</em>) yields Kali Day <strong>1,712,210</strong> (Sunday, 8/9 Dec 1586 CE), immortalizing the text’s completion timestamp within a prayer!
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>

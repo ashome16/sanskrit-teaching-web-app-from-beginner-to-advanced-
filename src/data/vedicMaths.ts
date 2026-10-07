@@ -2881,6 +2881,30 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           { sa: 'नति', iast: 'Nati', gloss: 'Topocentric latitudinal parallax correction modifying lunar celestial latitude' }
         ],
         highlight: 'In Yuktibhāṣā (1530 CE), Jyeṣṭhadeva flattened the 3D celestial sphere into 2D planar charts using the Matsya orthogonal construction, gnomon triangulation, and topocentric parallax vector decomposition (Lambana and Nati).'
+      },
+      {
+        title: 'Vākya Calendar Realignment for Monsoons & Cryptographic Devotional Steganography',
+        sanskritTitle: 'वाक्य-पञ्चाङ्ग-संशोधनम् · एड़वप्पाति-वर्षर्तुः मन्दिरेषु गूढ-सङ्ख्याशास्त्राणि च',
+        paragraphs: [
+          'In South India, agricultural civil survival was bound inextricably to the timing of the Southwest Monsoon (Eḍavappāti / ഇടവപ്പാതി), which typically makes landfall along the Malabar Coast in the first week of June (the middle of the solar month of Eḍavam / Taurus). Traditional farmers and temple administrators scheduled seed broadcasting (Vithidal) based on the Vākya system—a set of mnemonic sentences formulated by Vararuci in the 4th century CE (Candravākyas) to track lunar and solar motion without spherical trigonometry tables.',
+          '1. The Seasonal Desynchronization of the Sidereal Vākya System:',
+          'Early Vākya models calculated planetary longitudes on a strictly Nirayana (sidereal) baseline, referenced against fixed stars like Spica (Chitrā). However, seasonal meteorological phenomena—atmospheric convection, the migration of the Intertropical Convergence Zone (ITCZ), and the thermodynamic monsoon wind reversal—are governed by the Sāyana (tropical) year (365.24219 days), which measures the Sun’s position relative to the physical equinoxes and solstices.',
+          'Because the sidereal year (365.25636 days) is approximately 20 minutes and 24 seconds longer than the tropical year, the physical seasons precess westward relative to the fixed stars at approximately 1 full day every 71.6 years (Ayana-Calana). Over the 1,000 years between Vararuci and the 15th century, the uncorrected sidereal Vākya calendar had drifted by nearly 14 days! Farmers relying on archaic sidereal tables faced agricultural catastrophe: sowing seeds either too late (drowning emerging seedlings in flash monsoon floods) or too early (scorching crops during the dry summer heat).',
+          '2. Parameśvara’s 55 Years of Observation & The Dṛggaṇita Revolution (1431 CE):',
+          'Recognizing this widening divergence between ancient algorithmic texts and physical celestial reality, Parameśvara of Vaṭaśśeri (c. 1380–1460 CE) established an observatory on the banks of the Bharathappuzha (Nīlā river) in Kerala. For 55 continuous years (1393–1448 CE), he rigorously tracked eclipses, solstices, and solar ingresses with naked eye and sighting instruments, formulating the landmark treatise Dṛggaṇita (1431 CE) under the supreme empirical principle of Dṛk-Gaṇita-Aikya (दृग्गणितैक्य—uncompromising concordance between mathematical calculation and observed sky).',
+          'To restore precision to monsoon forecasting, Kerala astronomers introduced a dynamic, rolling Ayanāṃśa subtraction correction: Sāyana Solar Longitude = Nirayana Solar Longitude - Ayanāṃśa. By isolating the Sun’s true tropical declination (Krānti), the updated Pañcāṅgas predicted the exact date the solar thermal trough triggered the monsoon winds, realigning the rural economy with the heavens.',
+          '3. Cryptographic Devotional Steganography in Temple Prayers:',
+          'Beyond functional astronomy, Kerala scholars utilized the many-to-one consonant mapping of the Kaṭapayādi cipher to write devotional poetry that secretly embedded high-precision mathematical data. Because multiple consonants map to each digit (e.g., 1 = Ka, Ṭa, Pa, Ya), poets could freely choose letters that conformed to rigorous Sanskrit meters (Chandas) and theological devotion while preserving encrypted numbers.',
+          '• The Gopī-Bhāgya Devotional Hymn: A celebrated 32-syllable dual-meaning prayer to Lord Krishna / Shiva: "Gopībhāgyamadhuvrātaḥ śṛṅgīśodadhisandhigaḥ | khalajīvitakhātāva galahālāsodharaḥ ||". While reading as a prayer for liberation from worldly poison, applying Kaṭapayādi extraction and the reversal rule (Aṅkānāṃ Vāmato Gatiḥ) decrypts the exact value of π/10 = 0.31415926535897932384626433832792... out to 32 decimal places!',
+          '• Melpathūr Nārāyaṇa Bhaṭṭathiri’s Nārāyaṇīyam Cosmic Timestamp (1586 CE): In the Guruvāyūr temple, Bhaṭṭathiri completed his 1,036-verse devotional masterpiece Nārāyaṇīyam on severe rheumatism. The final benediction concludes with the phrase: "Āyurārogyasaukhyam" (आयुरारोग्यसौख्यम्—"Long life, health, and supreme happiness"). Decoding each syllable (ā=0, yu=1, rā=2, ro=2, gya=1, sau=7, khyam=1) and reading backwards yields the number 1,712,210. This is the exact Kali Day Number (Ahargaṇa) elapsed since the start of Kali Yuga (3102 BCE), permanently timestamping the completion of the text to Sunday, 8/9 December 1586 CE within its very final prayer!'
+        ],
+        terms: [
+          { sa: 'एड़वप्पाति', iast: 'Eḍavappāti', gloss: 'The Southwest Monsoon of Kerala arriving in mid-Eḍavam (early June)' },
+          { sa: 'दृग्गणितैक्य', iast: 'Dṛk-Gaṇita-Aikya', gloss: 'Parameśvara’s principle: absolute concordance of mathematical computation and empirical observation' },
+          { sa: 'अहर्गण', iast: 'Ahargaṇa', gloss: 'Total count of elapsed days from the Kali Yuga epoch (18 Feb 3102 BCE)' },
+          { sa: 'आयुरारोग्यसौख्यम्', iast: 'Āyurārogyasaukhyam', gloss: 'Nārāyaṇīyam closing chronogram encoding Kali Ahargaṇa 1,712,210 (1586 CE)' }
+        ],
+        highlight: 'By subtracting Ayanāṃśa from the Vākya system, the Kerala School aligned agricultural sowing with the Southwest Monsoon (Eḍavappāti), while using Kaṭapayādi to hide 32-decimal π values and Kali Ahargaṇa timestamps inside everyday temple prayers.'
       }
     ],
     quote: 'Centuries before the European Enlightenment, the astronomers of the Kerala School stood on the banks of the Nila River, peered into the night sky with Gola Yantras, and unfolded the curved geometry of the heavens into the infinite series of calculus.',
@@ -2891,7 +2915,9 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Nilakantha Somayaji’s Tantrasaṅgraha (1501 CE) formulated a geo-heliocentric planetary model a century before Tycho Brahe and solved solar eclipse timing to the exact minute using differential parallax calculus (Lambana and Nati).',
       'The Kaṭapayādi cipher encoded high-precision floating point tables in metric verse, functioning as the indexing key for the 72 Melakarta ragas of Indian classical music.',
       'The Whish-Joseph Transmission Hypothesis documents how 16th-century Jesuit scholars (including Matteo Ricci) in Cochin and Goa collected Kerala astronomical texts, transmitting high-precision solar parameters to Christopher Clavius for the 1582 Gregorian calendar reform.',
-      'In Yuktibhāṣā, Jyeṣṭhadeva established Golabandha 3D-to-2D spherical projections: using the Matsya vesica piscis construction for orthogonal axes, gnomon triangulation, and decomposing topocentric parallax into longitudinal Lambana and latitudinal Nati.'
+      'In Yuktibhāṣā, Jyeṣṭhadeva established Golabandha 3D-to-2D spherical projections: using the Matsya vesica piscis construction for orthogonal axes, gnomon triangulation, and decomposing topocentric parallax into longitudinal Lambana and latitudinal Nati.',
+      'Parameśvara conducted 55 years of continuous observations (1393–1448 CE) along the Nīlā river, creating the Dṛggaṇita to correct the 14-day precessional drift of the ancient Vākya calendar and accurately predict the Southwest Monsoon (Eḍavappāti).',
+      'The Kaṭapayādi cipher enabled devotional steganography: the Gopī-Bhāgya hymn encrypted π/10 to 32 decimals, while Nārāyaṇīyam’s closing blessing "Āyurārogyasaukhyam" permanently embedded Kali Day 1,712,210 (8/9 December 1586 CE).'
     ]
   },
   {
