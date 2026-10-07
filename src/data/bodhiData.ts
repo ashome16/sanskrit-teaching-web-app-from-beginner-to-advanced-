@@ -470,7 +470,7 @@ export const BODHI_CONTEXT_TIPS: Record<string, BodhiContextTip> = {
     viewId: 'science-lab',
     title: 'Vijñāna Lab · Science Sandboxes',
     sanskritTitle: 'विज्ञान-प्रयोगशाला',
-    summary: 'Hands-on sandboxes: build in the Paramāṇu Builder, balance the doṣas in the Prakṛti Biosphere, run the Jyotiṣa Gravity Sandbox through the 27 nakṣatras, play The Loom of Āruṇi, try Cosmic Sitār Tuning, lift The Veil of Māyā from appearance to atoms, and sort living beings on the Chaturyoni Spawn Map.',
+    summary: 'Hands-on sandboxes: build in the Paramāṇu Builder, balance the doṣas in the Prakṛti Biosphere, run the Jyotiṣa Gravity Sandbox through the 27 nakṣatras, play The Loom of Āruṇi, try Cosmic Sitār Tuning, lift The Veil of Māyā from appearance to atoms, sort living beings on the Chaturyoni Spawn Map, and soft-land Somayāna Mission-03 (Chandrayaan).',
     bulletPoints: [
       'Tap any Sanskrit word in a term panel to hear it.',
       'Each sandbox has quick challenges with instant feedback: try them after you play.',
@@ -1796,7 +1796,7 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     question: 'What is the Vijñāna Lab (विज्ञान-प्रयोगशाला)?',
     sanskritQuestion: 'विज्ञान-प्रयोगशाला का?',
     shortAnswer: 'A free set of science sandboxes with Sanskrit terms beside them, at /science-lab.',
-    detailedAnswer: 'Vijñāna Lab has seven interactive sandboxes: the Paramāṇu Builder (#paramanu), Prakṛti Biosphere (#prakriti), Jyotiṣa Gravity Sandbox (#jyotisha), The Loom of Āruṇi · Sṛṣṭi · Sthiti · Laya (#srishti-sthiti-laya), Cosmic Sitār Tuning · Nāda Brahman (#nada-brahman), The Veil of Māyā · Asato mā (#asato-ma) and the Chaturyoni Spawn Map · ancient Indian biology (#chaturyoni). Each has a core idea, the sandbox and a Sanskrit term panel you can tap to hear; most also have quick challenges. It is open to guests.',
+    detailedAnswer: 'Vijñāna Lab has eight interactive sandboxes: the Paramāṇu Builder (#paramanu), Prakṛti Biosphere (#prakriti), Jyotiṣa Gravity Sandbox (#jyotisha), The Loom of Āruṇi · Sṛṣṭi · Sthiti · Laya (#srishti-sthiti-laya), Cosmic Sitār Tuning · Nāda Brahman (#nada-brahman), The Veil of Māyā · Asato mā (#asato-ma), the Chaturyoni Spawn Map · ancient Indian biology (#chaturyoni) and Somayāna Mission-03 · Chandrayaan (#chandrayaan). Each has a core idea, the sandbox and a Sanskrit term panel you can tap to hear; most also have quick challenges. It is open to guests.',
     audioDevanagari: 'विज्ञान-प्रयोगशाला',
     tip: 'Open it from the home page card or the साधनानि (tools) page, or search “science lab”.',
     relatedView: 'science-lab',
@@ -1883,7 +1883,19 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     audioDevanagari: 'जरायुज अण्डज स्वेदज उद्भिज्ज',
     tip: 'Open the lab, pick the mosquito, and see what the modern check says.',
     relatedView: 'science-lab',
-    relatedLabAnchor: 'chaturyoni',
+        relatedLabAnchor: 'chaturyoni',
+  },
+  {
+    id: 'qa-lab-chandrayaan',
+    category: 'engineering',
+    question: 'What is Somayāna Mission-03 / the Chandrayaan lab?',
+    sanskritQuestion: 'सोमयानं किम्?',
+    shortAnswer: 'A free lunar-landing sandbox at /science-lab#chandrayaan: circularise orbit, soft-land Vikram, drive Pragyan and LIBS-scan minerals with Sanskrit HUD labels.',
+    detailedAnswer: 'Three phases. Vyoma Insertion: burn Prāṇodana to match a ~100 km Candra-Kakṣyā. Vikram Descent: land near the south pole with lunar g ≈ 1.62 m/s²; soft-land if vertical Vega is under ~2 m/s (the planned Chandrayaan-3 envelope) and Samatva is level — otherwise a crash interrupt (विक्षेप दोषः) with a recalibration checklist. Pragyan Probe: drive the rover in a Sūrya illumination window and fire a LIBS-style scan. Pragyan’s real LIBS confirmed sulphur near the south pole (ISRO, 28 Aug 2023) and reported other elements; hydrogen/ice investigation was described as underway — the lab tags ap-tattva as a hunt, not as a confirmed ice find. Soft landing was 23 Aug 2023; the site was named Shiv Shakti Point. Sanskrit HUD words are teaching parallels, not a claim that Jyotiṣa secretly contains rocket equations.',
+    audioDevanagari: 'सोमयानं विक्रमः प्रज्ञानम्',
+    tip: 'Circularise first, then open Vikram Descent. Soft-land under 2 m/s vertical.',
+    relatedView: 'science-lab',
+    relatedLabAnchor: 'chandrayaan',
   },
 ];
 

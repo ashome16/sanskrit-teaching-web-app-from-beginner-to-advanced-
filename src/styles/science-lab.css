@@ -756,12 +756,9 @@
 /* Landing grid with 7 labs: 4 + 3 on desktop, 2 columns (last card full width) below 960px. */
 .vl-cards { grid-template-columns: repeat(12, minmax(0, 1fr)); }
 .vl-cards > .vl-card { grid-column: span 3; }
-.vl-cards > .vl-card:nth-child(n + 5) { grid-column: span 4; }
 @media (max-width: 960px) {
   .vl-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .vl-cards > .vl-card,
-  .vl-cards > .vl-card:nth-child(n + 5) { grid-column: span 1; }
-  .vl-cards > .vl-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .vl-cards > .vl-card { grid-column: span 1; }
 }
 
 /* Chaturyoni Spawn Map · Vedic Sandbox Palette (terracotta, parchment, jade, copper-plate). */
@@ -1002,3 +999,44 @@
 @media (max-width: 640px) { .cy-board--2 .cy-hub { top: calc((0.8rem + 36px) * var(--cy-zoom)); } }
 .cy-zone { line-height: 1.3; }
 .cy-zone-tag { line-height: 1.3; border-radius: 10px; }
+
+
+/* Chandrayaan / Somayāna Mission-03 */
+.cy-mission-lab { --cy-terra: #6366f1; --cy-jade: #22d3ee; --cy-copper: #818cf8; --cy-parch: #0f172a; --cy-ink: #e2e8f0; }
+.cy-mission-window {
+  background: linear-gradient(180deg, #0b1224, #111827);
+  border-color: #334155;
+  box-shadow: inset 0 0 0 4px #0f172a, inset 0 0 0 5px rgba(99,102,241,0.35), 0 4px 14px rgba(2,6,23,0.45);
+  color: #e2e8f0;
+}
+.cy-mission-window .cy-window-title { color: #a5b4fc; }
+.cy-mission-window .cy-window-title [lang='sa'] { color: #fde68a; }
+.cy-mission-phases { margin-bottom: 0.65rem; }
+.cy-mission-phases button:disabled { opacity: 0.35; cursor: not-allowed; }
+.cy-mission-stage { position: relative; }
+.cy-mission-canvas { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; border-radius: 8px; background: #020617; touch-action: none; }
+.cy-mission .vl-hud { margin: 0; }
+.cy-mission .cy-panel { background: linear-gradient(180deg, #111827, #0f172a); border-color: #334155; color: #e2e8f0; }
+.cy-mission .cy-stats > div { background: #1e293b; border-color: #334155; }
+.cy-mission .cy-stats span { color: #67e8f9; }
+.cy-mission .cy-stats b { color: #f8fafc; }
+.cy-mission .cy-label { color: #a5b4fc; }
+.cy-mission .cy-seg { background: #1e293b; }
+.cy-mission .cy-seg button { color: #cbd5e1; }
+.cy-mission .cy-seg button.is-on { background: #4f46e5; color: #fff; }
+.cy-mission .cy-reset { border-color: #22d3ee; background: #083344; color: #67e8f9; }
+.cy-mission .cy-ticker { background: #020617; border-color: #1e293b; color: #e2e8f0; }
+.cy-mission .cy-ticker.is-alert { border-color: #f97316; }
+.cy-crash {
+  position: absolute; inset: 8% 6%; background: rgba(15,23,42,0.94); border: 2px solid #f97316; border-radius: 14px;
+  padding: 1rem 1.1rem; color: #ffedd5; z-index: 5; overflow: auto;
+}
+.cy-crash h3 { margin: 0 0 0.5rem; color: #fdba74; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 1rem; }
+.cy-crash ul { margin: 0.4rem 0 0.8rem; padding-left: 1.1rem; font-size: 0.88rem; line-height: 1.45; }
+.cy-scan-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; font-size: 0.78rem; }
+.cy-scan-list li { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 0.25rem 0.45rem; color: #94a3b8; }
+.cy-scan-list li.is-got { border-color: #4ade80; color: #d9f99d; }
+@media (max-width: 640px) {
+  .cy-mission-canvas { aspect-ratio: 4 / 3; }
+  .cy-crash { inset: 4% 3%; font-size: 0.9rem; }
+}

@@ -18,6 +18,7 @@ const MODULES: LabModule[] = [
   { id: 'nada-brahman', icon: '🪕', title: 'Cosmic Sitār Tuning', dev: 'नाद-ब्रह्म', subject: 'Sound & Music' },
   { id: 'asato-ma', icon: '🕯️', title: 'The Veil of Māyā', dev: 'असतो मा सद्गमय', subject: 'Matter & Heat' },
   { id: 'chaturyoni', icon: '🦢', title: 'Chaturyoni Spawn Map', dev: 'चतुर्योनि-मानचित्रम्', subject: 'Life Science' },
+  { id: 'chandrayaan', icon: '🛰️', title: 'Somayāna Mission-03', dev: 'सोमयानम्', subject: 'Spaceflight' },
 ];
 
 const ROTATE_MS = 4200;
@@ -110,6 +111,15 @@ const Preview: React.FC<{ id: string }> = ({ id }) => {
               />
             )),
           )}
+        </svg>
+      );
+    case 'chandrayaan':
+      return (
+        <svg viewBox="0 0 240 140" aria-hidden="true" className="hlb-svg hlb-svg--chandra">
+          <circle cx="120" cy="78" r="36" fill="#94a3b8" />
+          <circle cx="108" cy="70" r="8" fill="rgba(15,23,42,0.35)" />
+          <ellipse cx="120" cy="78" rx="58" ry="28" fill="none" stroke="#67e8f9" strokeDasharray="4 4" className="hlb-orbit-path" />
+          <g className="hlb-earth-orbit"><g transform="translate(178 78)"><rect x="-5" y="-3" width="10" height="6" fill="#fde047" /><line x1="0" y1="3" x2="-10" y2="12" stroke="#fb923c" strokeWidth="2" className="hlb-wave--a" /></g></g>
         </svg>
       );
     case 'chaturyoni':

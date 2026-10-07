@@ -9,6 +9,7 @@ const SrishtiLoom = lazy(() => import('./SrishtiLoom'));
 const NadaBrahman = lazy(() => import('./NadaBrahman'));
 const AsatoMa = lazy(() => import('./AsatoMa'));
 const Chaturyoni = lazy(() => import('./Chaturyoni'));
+const Chandrayaan = lazy(() => import('./Chandrayaan'));
 
 const LAB_SEGMENTS: {
   id: LabSegmentId;
@@ -99,13 +100,27 @@ const LAB_SEGMENTS: {
     tint: '#ffedd5',
     ink: '#c2410c',
   },
+  {
+    id: 'chandrayaan',
+    icon: '🛰️',
+    dev: 'सोमयानम्',
+    title: 'Somayāna Mission-03',
+    subject: 'Spaceflight',
+    school: 'Chandrayaan (सोमयानम्)',
+    blurb: 'Lunar landing sandbox. Circularise Candra-Kakṣyā, soft-land Vikram at Shiv Shakti Point, then drive Pragyan and LIBS-scan Pṛthivī-tattva — with honest ISRO framing for sulphur and the ice hunt.',
+    tint: '#e0e7ff',
+    ink: '#3730a3',
+  },
 ];
 
 const SEGMENT_IDS = new Set<string>(LAB_SEGMENTS.map((s) => s.id));
+const HASH_ALIASES: Record<string, LabSegmentId> = { somayana: 'chandrayaan', 'soma-yana': 'chandrayaan' };
 const readHash = (): LabSegmentId | null => {
   try {
     const h = window.location.hash.replace(/^#/, '');
-    return SEGMENT_IDS.has(h) ? (h as LabSegmentId) : null;
+    if (SEGMENT_IDS.has(h)) return h as LabSegmentId;
+    if (HASH_ALIASES[h]) return HASH_ALIASES[h];
+    return null;
   } catch {
     return null;
   }
@@ -122,6 +137,7 @@ const SimLoader = () => <div className="vl-loading">Loading the lab bench…</di
 const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpenResources }) => {
   const [active, setActive] = useState<LabSegmentId>(() => {
     if (initialSegment && SEGMENT_IDS.has(initialSegment)) return initialSegment as LabSegmentId;
+    if (initialSegment && HASH_ALIASES[initialSegment]) return HASH_ALIASES[initialSegment];
     return readHash() || 'paramanu';
   });
   const simRef = useRef<HTMLDivElement>(null);
@@ -225,6 +241,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {active === 'nada-brahman' && <NadaBrahman />}
           {active === 'asato-ma' && <AsatoMa />}
           {active === 'chaturyoni' && <Chaturyoni />}
+          {active === 'chandrayaan' && <Chandrayaan />}
         </Suspense>
       </section>
 
