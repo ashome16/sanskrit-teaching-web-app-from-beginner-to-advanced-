@@ -1040,3 +1040,23 @@
   .cy-mission-canvas { aspect-ratio: 4 / 3; }
   .cy-crash { inset: 4% 3%; font-size: 0.9rem; }
 }
+.cy-crash-why { margin: 0 0 0.4rem; color: #fed7aa; font-weight: 700; }
+.cy-libs-pop {
+  position: absolute; z-index: 4; width: min(210px, calc(100% - 24px)); padding: 0.4rem 0.5rem 0.35rem;
+  background: rgba(2, 6, 23, 0.92); border: 1px solid #38bdf8; border-radius: 10px; color: #e2e8f0;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.35); font-size: 0.7rem; line-height: 1.3;
+}
+.cy-libs-head { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: baseline; padding-right: 1rem; }
+.cy-libs-head b { font-family: 'Noto Sans Devanagari', serif; font-size: 0.9rem; color: #fde68a; }
+.cy-libs-head span { color: #94a3b8; font-style: italic; }
+.cy-libs-spec { display: block; width: 100%; height: 46px; margin: 0.15rem 0; background: #020617; border-radius: 6px; }
+.cy-libs-pop small { color: #94a3b8; font-size: 0.62rem; }
+.cy-libs-x { position: absolute; top: 2px; right: 4px; border: none; background: none; color: #94a3b8; font-size: 1rem; cursor: pointer; line-height: 1; }
+@media (max-width: 640px) { .cy-libs-pop { font-size: 0.64rem; } .cy-libs-spec { height: 38px; } }
+.cy-hud-wrap { position: relative; }
+.cy-hud-wrap > .cy-crash { inset: 10% 7%; }
+@media (max-width: 640px) {
+  .cy-hud-wrap > .cy-crash { position: relative; inset: auto; margin-top: 0.6rem; overflow: visible; }
+  .cy-libs-pop small { display: block; line-height: 1.2; }
+}
+.cy-mission .cy-stats b[data-testid='cy-outcome'] { font-size: 0.82rem; letter-spacing: -0.01em; white-space: nowrap; }
