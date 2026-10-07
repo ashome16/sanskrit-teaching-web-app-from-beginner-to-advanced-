@@ -265,7 +265,7 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
       {
         id: 'srishti-q3',
         q: 'What does the cycle Sṛṣṭi · Sthiti · Laya represent in classical cosmological physics?',
-        options: ['Only mythic destruction', 'Emergence, Sustenance, and Dissolution / Conservation', 'Planetary eclipses', 'Medical diagnosis'],
+        options: ['Only literal destruction', 'Emergence, Sustenance, and Dissolution / Conservation', 'Planetary eclipses', 'Medical diagnosis'],
         correct: 1,
         explanation: 'It models the continuous cycle of emergence, stable balance, and reintegration where mass-energy is preserved.',
         sanskritContext: 'उत्पत्ति-स्थिति-लयाः।',

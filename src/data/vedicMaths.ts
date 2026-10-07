@@ -3607,6 +3607,216 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Today\'s cat, cow, downward-facing dog, kneeling camel, and wide floor-frog are newer names for shapes. Do not mix them with the older names that look similar.',
       'The Nāradīya Śikṣā says a peacock, cows, a goat and a sheep, a krauñca, a cuckoo, a horse, and an elephant call the seven singing notes. It does not say alphabet letters come from animals.'
     ]
+  },
+  {
+    id: 'art-rituparna-combinatorics',
+    slug: 'analytical-mind-of-ancient-india',
+    title: 'The Analytical Mind of Ancient India: From Vedic Combinatorics to Statistical Sampling',
+    sanskritTitle: 'प्राचीन-भारतस्य साङ्ख्यान-प्रज्ञा · मेरुप्रस्तारात् प्रतिदर्श-सिद्धान्तं यावत्',
+    subtitle: 'Long before inferential statistics and discrete mathematics in seventeenth-century Europe, classical Sanskrit scholarship systematically employed structural and statistical estimation in statecraft, metrics, and generative grammar.',
+    readingTime: '14 min',
+    badge: 'Sampling & Combinatorics',
+    sections: [
+      {
+        title: 'Rituparna’s Tree: The World’s Earliest Statistical Sampling',
+        sanskritTitle: 'ऋतुपर्णस्य विभीतक-प्रतिदर्श-गणनम्',
+        paragraphs: [
+          'Long before the development of modern probability theory and inferential statistics in seventeenth-century Europe, thinkers in ancient India were wrestling with quantitative estimation, empirical record-keeping, and discrete mathematics. Far from being confined to mysticism or speculative philosophy, classical Sanskrit scholarship systematically employed structural and statistical thinking in statecraft, literature, and mathematics.',
+          'The most vivid narrative precursor to statistical estimation appears in the Nalopākhyāna (the story of Nala and Damayantī) in the Vana Parva of the Mahābhārata. While traveling through the forest, King Rituparna encounters Prince Nala beside a sprawling Vibhītaka (Terminalia bellirica) tree. Rituparna makes a bold claim: without counting every individual element, he can deduce the total number of leaves and fruits on the entire tree.',
+          'The Methodology: Rituparna isolates a single representative branch, counts its leaves and nuts, and multiplies this sample by the estimated ratio of the branch to the canopy volume: Total Count ≈ (Sample Count in Selected Branch) × (Total Canopy Volume / Sample Branch Volume).',
+          'The Empirical Verification: Skeptical of such an impossible calculation, Prince Nala halts the chariot and meticulously counts every fruit on the felled tree, discovering Rituparna’s statistical estimate to be remarkably accurate.',
+          'The Conceptual Link: Rituparna explicitly attributes his ability to Saṅkhyāna (the science of numbers and quantitative calculation) and connects it directly to mastery of dice gambling (Akṣa-vidyā)—demonstrating that ancient thinkers understood the practical link between probabilistic estimation, randomness, and empirical sampling.'
+        ],
+        terms: [
+          { sa: 'साङ्ख्यानम्', iast: 'Saṅkhyāna', gloss: 'The science of quantitative estimation, calculation, and statistics' },
+          { sa: 'विभीतकः', iast: 'Vibhītaka', gloss: 'Terminalia bellirica tree, whose nuts served as ancient dice' },
+          { sa: 'अक्षविद्या', iast: 'Akṣa-vidyā', gloss: 'The science of dice gambling, randomness, and probability' }
+        ],
+        links: [
+          { anchor: 'rituparna', label: 'Interactive Laboratory: King Rituparna’s Sampling Lab (/science-lab#rituparna)' }
+        ]
+      },
+      {
+        title: 'Quantitative Statecraft in Kautilya’s Arthaśāstra',
+        sanskritTitle: 'कौटिलीय-अर्थशास्त्रे साङ्ख्यान-प्रशासनम्',
+        paragraphs: [
+          'Written in the 4th century BCE, Kautilya’s Arthaśāstra provides a masterclass in administrative data compilation and risk analysis.',
+          'Census & Demographic Tracking: The royal bureaucracy (Gopas) was tasked with collecting empirical data on every village: household counts, occupations, social distributions, land yields, domestic livestock, and tax revenues, creating an exhaustive empirical ledger.',
+          'Risk Premiums and Diversification: Rather than charging flat rates of interest, Kautilya instituted a tiered risk model. Standard commercial loans were set at 15% annually, but hazardous maritime trade ventures—subject to shipwrecks, storms, and piracy—were assigned rates as high as 240% to account for default risk.',
+          'Asset Protection: Merchants were explicitly instructed to divide cargo across multiple independent carriers to prevent catastrophic total loss, establishing an early version of portfolio diversification and risk management.'
+        ],
+        terms: [
+          { sa: 'गोपः', iast: 'Gopa', gloss: 'Village census and statistical survey officer in the Mauryan administration' },
+          { sa: 'समुद्र-संयानम्', iast: 'Samudra-saṃyāna', gloss: 'High-risk maritime trade voyage assigned tiered default-risk interest' }
+        ]
+      },
+      {
+        title: 'Pingala’s Chandaḥśāstra: Binary Systems and Combinatorics',
+        sanskritTitle: 'पिङ्गलाचार्यस्य मेरुप्रस्तारः · छन्दःशास्त्रम्',
+        paragraphs: [
+          'In the study of Sanskrit poetic meters (chandas), syllables are classified into two binary states: light (laghu, ˘) and heavy (guru, –). In the 2nd–3rd century BCE, Acharya Pingala sought to compute every possible combination of meters of length n.',
+          'Prastāra: Exhaustive binary permutations (2ⁿ) listing all meter arrangements systematically.',
+          'Saṅkhyā: Total combinations or powers of 2, calculating total possible meters for n syllables.',
+          'Meruprastāra: The "staircase of Mount Meru" — the exact binomial coefficient triangle (n choose k) representing combinations with k long syllables.',
+          'Pingala’s Meruprastāra preceded Blaise Pascal’s triangle by over a millennium and formed the foundational bedrock of combinatorial counting, binary expansion, and sequence theory.'
+        ],
+        terms: [
+          { sa: 'मेरुप्रस्तारः', iast: 'Meruprastāra', gloss: 'Binomial coefficient pyramid (Pascal’s triangle) in Pingala’s Chandaḥśāstra' },
+          { sa: 'प्रस्तारः', iast: 'Prastāra', gloss: 'Systematic binary combinatorial enumeration of poetic meters' },
+          { sa: 'लघु-गुरू', iast: 'Laghu-Gurū', gloss: 'Short (0) and long (1) binary prosodic states' }
+        ]
+      },
+      {
+        title: 'Algorithmic Precision in Pāṇini’s Aṣṭādhyāyī',
+        sanskritTitle: 'पाणिनि-सूत्राणाम् अल्गोरिदम-सौष्ठवम्',
+        paragraphs: [
+          'In the 5th–6th century BCE, the grammarian Pāṇini created a generative framework of roughly 4,000 rules (sūtras) that algorithmic computer scientists study today.',
+          'His rule precedence, meta-rules (paribhāṣā), and recursive structures foreshadowed formal language theory, Backus-Naur Form (BNF), and modern compiler design.',
+          'As NASA researcher Rick Briggs noted in 1985, Pāṇini’s Kāraka dependency system provides an unambiguous semantic knowledge representation structure that parallels modern AI dependency parsing.'
+        ],
+        terms: [
+          { sa: 'परिभाषा', iast: 'Paribhāṣā', gloss: 'Meta-rules governing rule precedence and operational scope' },
+          { sa: 'प्रत्याहारः', iast: 'Pratyāhāra', gloss: 'Algorithmic phonetic range compression codes from the Shiva Sutras' }
+        ]
+      },
+      {
+        title: 'Interactive Laboratory: The Rituparna Sampling Simulation',
+        sanskritTitle: 'ऋतुपर्ण-साङ्ख्यान-प्रयोगशाला',
+        paragraphs: [
+          'Step into the shoes of King Rituparna in our interactive Vigyan Lab sandbox. Select a sample branch, inspect the count, scale your multiplier, and compare your statistical estimate against the true population count.',
+          'Experience how increasing the sample fraction diminishes estimation error, just as King Rituparna taught Prince Nala in the Mahābhārata!'
+        ],
+        links: [
+          { anchor: 'rituparna', label: 'Open King Rituparna’s Sampling Lab (/science-lab#rituparna)' }
+        ]
+      }
+    ],
+    quote: 'Saṅkhyāna is not mere calculation; it is the eye that perceives order in randomness, extracting the truth of the whole from the study of the part.',
+    keyTakeaways: [
+      'King Rituparna in the Mahābhārata demonstrated the world’s earliest recorded statistical sampling, scaling branch counts to estimate total tree canopy fruits.',
+      'Rituparna linked sampling estimation to Akṣa-vidyā (dice probability), recognizing the unity of randomness and inferential estimation.',
+      'Kautilya’s Arthaśāstra instituted empirical village censuses and risk-adjusted maritime interest rates up to 240%, pioneering insurance risk pricing.',
+      'Acharya Pingala invented Meruprastāra (Pascal’s triangle) and binary permutations (Prastāra) over a millennium before European combinatorics.',
+      'Pāṇini’s Aṣṭādhyāyī created a complete generative rewrite engine of 4,000 algorithmic rules anticipating modern Backus-Naur Form.'
+    ]
+  },
+  {
+    id: 'art-agnichurna-pyrotechnics-rocketry',
+    slug: 'agnichurna-pyrotechnics-rocketry',
+    title: 'Agnicūrṇa to Aerospace: The Chemistry, Pyrotechnics & War Rocketry of Ancient & Medieval India',
+    sanskritTitle: 'अग्निचूर्ण-रसायनाद् व्योमयानं यावत् · प्राचीनाग्निबाण-विज्ञानम्',
+    subtitle: 'From the Atharvanarahasya and Śukranīti’s 5:1:1 gunpowder ratio to Deepavali Ulkā-Dāna, 12th-century Hoysala missile launch-racks, and the Mysorean iron-cased war rockets that revolutionized global aerospace propulsion.',
+    readingTime: '16 min',
+    badge: 'Chemistry & Rocketry',
+    sections: [
+      {
+        title: 'Formulas and Ingredients for "Fire-Powder"',
+        sanskritTitle: 'अग्निचूर्ण-निर्माण-विधिः · शुक्रीनीतिसारः',
+        paragraphs: [
+          'References to firecrackers, gunpowder ingredients, and incendiary devices exist across various eras of Sanskrit literature. While historians debate whether early texts describe modern propulsive gunpowder or incendiary formulations, several Sanskrit treatises document combustible chemical mixtures with precision.',
+          'Atharvanarahasya: This text explicitly outlines a formula combining charcoal, sulphur, and saltpetre (potassium nitrate)—the exact foundational ingredients used to manufacture traditional gunpowder and fireworks today.',
+          'Agnicūrṇa (अग्निचूर्ण): Literally translating to "fire-powder," this term appears across medieval Sanskrit texts to describe combustible chemical mixtures used for military applications and early pyrotechnic experiments.',
+          'The Śukranīti (Śukranītisāra), attributed to sage Śukrācārya, contains one of the most debated and explicit formulas for Agnicūrṇa: "Mix 5 parts of saltpetre (Suvarcilavaṇa) with 1 part of sulphur (Gandhaka) and 1 part of charcoal (Aṅgāra)."',
+          'The Technical Process: The charcoal is prepared from the wood of plants like Arka (Calotropis gigantea) and Snuhi (Euphorbia), burned in a tightly covered vessel so volatile smoke cannot escape. The mixture is soaked in the raw juices of Arka and Rasona (garlic) and dried under the sun.',
+          'Kautilya’s Arthaśāstra (c. 300 BCE – 300 CE): In Book 2, Chanakya references Agniyoga (the management and tactical deployment of fire/explosives), mixing saltpetre, resin, and plant barks to create incendiary devices and tactical smoke screens.',
+          'Nīti Prakāśikā: Authored by Sage Vaiśampāyana, this text details explosive mixtures and projectile projection tubes.'
+        ],
+        terms: [
+          { sa: 'अग्निचूर्णम्', iast: 'Agnicūrṇa', gloss: 'Fire-powder / explosive combustible mixture in Sanskrit treatises' },
+          { sa: 'सुवर्चिलवणम्', iast: 'Suvarcilavaṇa', gloss: 'Potassium nitrate (saltpetre), the primary oxidizing agent' },
+          { sa: 'गन्धकः', iast: 'Gandhaka', gloss: 'Sulphur, lowering ignition temperature and accelerating burn rate' },
+          { sa: 'अङ्गारः', iast: 'Aṅgāra', gloss: 'Charcoal carbon fuel prepared in closed vessels from Arka wood' }
+        ]
+      },
+      {
+        title: 'Pyrotechnic Names in the Kautuka Cintāmaṇi',
+        sanskritTitle: 'कौतुक-चिन्तामणौ उल्का-भेदाः',
+        paragraphs: [
+          'The Kautuka Cintāmaṇi, compiled by King Gajapati Prataparudradeva of Odisha (1497–1539 CE), provides a detailed look into fireworks nomenclature, demonstrating that mid-millennium India had evolved specific technical terms for different pyrotechnic effects:',
+          'Candrajyoti (चन्द्रज्योति): Literally "Moonlight flare" — a pyrotechnic mixture that produced a bright, sustained white light.',
+          'Chuchundarī-rasabāṇa (छुछुन्दरीरसबाण): The "Mole Rocket" — a fast, ground-zipping firework that darted erratically, similar to a modern ground spinner.',
+          'Cāmarabāṇa (चामरबाण): Named after the ceremonial whisk (cāmara), this device emitted a wide, bushy spray of golden or silver sparks.',
+          'Puṣpavarti (पुष्पवर्ति): Literally a "Flower Wick" — the direct historical predecessor to the modern handheld sparkler or phooljhadi.'
+        ],
+        terms: [
+          { sa: 'चन्द्रज्योतिः', iast: 'Candrajyoti', gloss: 'Moonlight flare yielding brilliant sustained white illumination' },
+          { sa: 'छुछुन्दरीबाणः', iast: 'Chuchundarī-bāṇa', gloss: 'Mole rocket, ground-spinning erratic pyrotechnic device' },
+          { sa: 'पुष्पवर्तिः', iast: 'Puṣpavarti', gloss: 'Flower wick, the direct Sanskrit ancestor of modern sparklers' }
+        ]
+      },
+      {
+        title: 'Accounts of Foreign Travelers',
+        sanskritTitle: 'विदेशी-यात्रिणां साक्ष्यम् · विजयनगर-वैभवम्',
+        paragraphs: [
+          'The structural transition of these Sanskrit formulas into grand public spectacles is validated by foreign travelers who visited India during the medieval era and documented its vibrant pyrotechnic culture:',
+          'Abdur Razzaq (1443 CE): An ambassador from Persia who visited the Vijayanagara Empire during the grand Mahānavamī (Dussehra) festival. He recorded in astonishment: "One cannot, without entering into great detail, mention all the various kinds of pyrotechny and squibs and various other amusements which were exhibited."',
+          'Ludovico di Varthema (c. 1500 CE): An Italian traveler who journeyed through southern India. He explicitly noted that the artisans of the Vijayanagara Empire were absolute "masters of producing fireworks", highlighting a thriving local industry long before European colonial influence took root.'
+        ]
+      },
+      {
+        title: 'The Evolution of Weapon Systems: From Śataghnī in Purāṇic Sanskrit Texts to Agnibāṇa',
+        sanskritTitle: 'शतघ्नीतः अग्निबाणं यावत् · होय्सलेश्वर-शिल्पकला',
+        paragraphs: [
+          'The conceptual and physical evolution of explosive propulsion in India transitioned smoothly from classical Purāṇic Sanskrit literature straight into battlefield rocketry.',
+          'The Śataghnī (शतघ्नी) in Purāṇic Texts: Literally translating to "that which subdues a hundred simultaneously", this defensive mechanism is frequently described in the Mahābhārata and Rāmāyaṇa. Traditional Purāṇic commentaries describe it as a massive iron-spiked rampart beam or weighted defensive battery deployed on fort parapets to shatter incoming infantry waves.',
+          'The Agnibāṇa (अग्निबाण) and Temple Reliefs: By the medieval era, projectile technology evolved into combustive fire-arrows. Remarkable 12th-century stone reliefs carved into the walls of the Hoysaleśvara Temple in Halebidu, Karnataka, explicitly depict warriors in combat operating missile launch pads holding arrays of combustive arrows—early projectiles tipped with chemical agnicūrṇa fire-powder mixtures.'
+        ],
+        terms: [
+          { sa: 'शतघ्नी', iast: 'Śataghnī', gloss: 'Defensive rampart weapon described in Purāṇic Sanskrit epics' },
+          { sa: 'अग्निबाणः', iast: 'Agnibāṇa', gloss: 'Fire-arrow / combustive missile depicted in Hoysala temple carvings' }
+        ]
+      },
+      {
+        title: 'The Shift from Oil Lamps to Festive Firecrackers',
+        sanskritTitle: 'दीपावली-दीपोत्सवात् उल्का-दानं यावत्',
+        paragraphs: [
+          'For centuries, Deepavali was celebrated primarily as a festival of silent illumination, defined by the lighting of clay dīpas (oil lamps) to signify the victory of spiritual light over darkness.',
+          'The historical evolution toward festive pyrotechnics occurred during the medieval era: royal records document that by the 1500s, grand firework spectacles had become staple entertainment for state events across Gujarat and Vijayanagara.',
+          'Purāṇic Sanskrit Integration: The Skanda Purāṇa formally integrated the ritual of Ulkā-Dāna (offering of handheld fire tubes/flares), using controlled sparks on Deepavali night to guide ancestral spirits (Pitṛs) back to their heavenly realm.',
+          'Modern Democratization: Following independence in 1947, indigenous manufacturing hubs—most notably Sivakasi in Tamil Nadu—scaled safe production to democratize sparklers and crackers across the entire subcontinent.'
+        ],
+        terms: [
+          { sa: 'उल्का-दानम्', iast: 'Ulkā-Dāna', gloss: 'Skanda Purāṇa ritual of raising handheld fire tubes during Deepavali' },
+          { sa: 'दीपोत्सवः', iast: 'Dīpotsava', gloss: 'The festival of clay oil lamps celebrating light and wisdom' }
+        ]
+      },
+      {
+        title: 'The Invention of the Modern War Rocket',
+        sanskritTitle: 'मैसूरु-लोहनालाग्निबाणः · पोलिलूर-युद्धम् (१७८०)',
+        paragraphs: [
+          'While early Asian cultures utilized bamboo-based fire-arrows or cardboard squibs, the invention of the modern, iron-cased military rocket occurred in 18th-century South India under Hyder Ali and Tipu Sultan of the Kingdom of Mysore.',
+          'The Metallic Breakthrough: Prior to this era, war rockets relied on packed cardboard or bamboo casings. These soft casings burst under heat, severely limiting propellant pressure. Hyder Ali revolutionized metallurgy by packing propellant inside tightly hammered soft-iron cylinders. This allowed vastly higher internal combustion pressures, generating immense thrust and extending battlefield range to an unprecedented 1.5 to 2.5 kilometers.',
+          'The Bāṇa-dāra Corps: Tipu Sultan weaponized this design on a massive scale through dedicated rocket corps called Bāṇa-dāra (rocket-bearers), strapping iron tubes to long bamboo stabilizers or sharp sword blades launched in coordinated salvos.',
+          'The Tārāmaṇḍalpets: Dedicated research laboratories and foundries called Tārāmaṇḍalpets ("star-cluster foundries") operated across Srirangapatna, Bangalore, Chitradurga, and Bidanur to mass-produce standardized iron-cased rockets.',
+          'Defeating the British at Pollilur (1780): During the Second Anglo-Mysore War, a devastating barrage of Mysorean iron rockets struck the British East India Company’s mobile ammunition caches, causing massive detonations and securing one of the most crushing defeats the Company ever suffered on Indian soil.'
+        ],
+        terms: [
+          { sa: 'लोहनालम्', iast: 'Lohanāla', gloss: 'Hammered soft-iron cylinder casing capable of containing extreme pressure' },
+          { sa: 'बाण-धारः', iast: 'Bāṇa-dhāra', gloss: 'Mysorean rocket artillery soldier attached to the Kacheri divisions' },
+          { sa: 'तारामण्डलपेट', iast: 'Tārāmaṇḍalpet', gloss: 'Specialized state rocketry and pyrotechnic foundries of Mysore' }
+        ]
+      },
+      {
+        title: 'Global Proliferation: From Mysore to Modern Spacecraft',
+        sanskritTitle: 'लण्डन-वुल्विच्-शस्त्रागारात् भारतीय-अन्तरिक्ष-अनुसन्धान-सङ्घटनं (ISRO) यावत्',
+        paragraphs: [
+          'Following the fall of Srirangapatna in 1799, the British military systematically stripped the fort of its military innovations, sending captured Mysorean rocket specimens to the Woolwich Royal Arsenal in London for scientific analysis.',
+          'The Congreve Rocket: At Woolwich, British engineer William Congreve reverse-engineered Tipu Sultan’s iron-cased blueprints. By copying the metallic compression principles, he developed the British "Congreve Rockets", deployed in the Napoleonic Wars and the War of 1812 (inspiring "the rockets\' red glare" in the U.S. National Anthem).',
+          'Bridging to Outer Space: The evolutionary chain of iron-cased propellant containment directly laid the foundation for modern aerospace engineering. When India birthed its space program (ISRO), it came full circle: the structural logic of utilizing high-pressure metallic chambers to burn solid propellants—first engineered in Karnataka foundries—remains the fundamental architecture behind the heavy-duty solid rocket boosters powering modern spacecraft like the PSLV and GSLV into orbit today.'
+        ],
+        links: [
+          { anchor: 'agnibana', label: 'Interactive Laboratory: Agnibāṇa Rocket & Pyrotechnic Alchemy Lab (/science-lab#agnibana)' }
+        ]
+      }
+    ],
+    quote: 'The journey from the handheld Ulkā-Dāna fire-torch to the high-pressure metallic boosters of ISRO is an unbroken continuum of Indian pyrotechnic and metallurgical ingenuity.',
+    keyTakeaways: [
+      'The Atharvanarahasya and Śukranītisāra preserve the 5:1:1 formula of saltpetre, sulphur, and Arka charcoal for Agnicūrṇa.',
+      'King Gajapati Prataparudradeva’s Kautuka Cintāmaṇi established sophisticated Sanskrit pyrotechnic nomenclature including Puṣpavarti (sparklers) and Chuchundarī-bāṇa.',
+      'Purāṇic Sanskrit texts recorded defensive Śataghnī mechanisms, while 12th-century Hoysaleśvara temple reliefs carved early missile launch pads.',
+      'The Kingdom of Mysore engineered the world’s first hammered iron-casing war rockets, achieving unprecedented chamber pressure and defeating British forces at Pollilur (1780).',
+      'Mysorean rocket metallurgy directly inspired Congreve rockets and forms the evolutionary heritage behind modern solid propellant space boosters (PSLV/GSLV).'
+    ]
   }
 ];
 
