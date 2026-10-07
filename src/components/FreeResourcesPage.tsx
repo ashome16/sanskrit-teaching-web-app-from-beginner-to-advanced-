@@ -10,6 +10,7 @@ import {
 } from '../data/resourcesData';
 import { downloadCalendarEvent, downloadResourceDocument } from '../utils/contentDownload';
 import BodhiTipCallout from './BodhiTipCallout';
+import { PosterLightbox } from './PosterLightbox';
 import '../styles/philosophy.css';
 import '../styles/free-resources.css';
 import '../styles/resources.css';
@@ -418,6 +419,18 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
     }, 5500);
     return () => clearInterval(timer);
   }, []);
+
+  // Esc closes the event-details and submit-event dialogs (the poster viewer handles its own Esc).
+  useEffect(() => {
+    if (!selectedItemModal && !isSubmitModalOpen) return undefined;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setSelectedItemModal(null);
+      setIsSubmitModalOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [selectedItemModal, isSubmitModalOpen]);
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -1215,13 +1228,13 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
       {/* EVENT DETAILS MODAL */}
       {selectedItemModal && (
         <div
-          className="resources-modal-backdrop"
+          className="resources-modal-overlay"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-event-title"
           onClick={() => setSelectedItemModal(null)}
         >
-          <div className="resources-modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="resources-modal-card" onClick={(e) => e.stopPropagation()}>
             <div className="resources-modal-header">
               <span
                 className="resource-card-badge"
@@ -1311,13 +1324,13 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
       {/* SUBMISSION MODAL FOR SCHOOLS AND TEACHERS */}
       {isSubmitModalOpen && (
         <div
-          className="resources-modal-backdrop"
+          className="resources-modal-overlay"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-submit-title"
           onClick={() => setIsSubmitModalOpen(false)}
         >
-          <div className="resources-modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="resources-modal-card" onClick={(e) => e.stopPropagation()}>
             <div className="resources-modal-header">
               <span className="resource-card-badge" style={{ background: '#fef3c7', color: '#92400e' }}>
                 📢 Sanskrit Community Notice Desk
@@ -1437,67 +1450,17 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
         </div>
       )}
 
-      {/* POSTER LIGHTBOX MODAL */}
-      {isPosterModalOpen && (
-        <div
-          className="resources-modal-backdrop"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-poster-title"
-          onClick={() => setIsPosterModalOpen(false)}
-        >
-          <div className="resources-modal-content" style={{ maxWidth: '900px' }} onClick={(e) => e.stopPropagation()}>
-            <div className="resources-modal-header">
-              <span className="resource-card-badge" style={{ background: '#ede9fe', color: '#6d28d9' }}>
-                EdNet Learn Vedic Maths Academy
-              </span>
-              <button
-                type="button"
-                className="resources-modal-close-btn"
-                onClick={() => setIsPosterModalOpen(false)}
-                aria-label="Close poster modal"
-              >
-                ✕
-              </button>
-            </div>
-
-            <h3 id="modal-poster-title" className="resources-modal-title" style={{ marginBottom: '0.25rem' }}>
-              16 Foundational Sutras of Vedic Mathematics
-              <span className="resource-card-title-sa">षोडश-वैदिक-गणित-सूत्राणि</span>
-            </h3>
-            <p style={{ margin: '0 0 1rem', fontSize: '0.88rem', color: '#4338ca', fontStyle: 'italic' }}>
-              "Vedic Mathematics is not just a method, it is a way of thinking."
-            </p>
-
-            <div className="vedic-modal-image-wrap">
-              <img
-                src="/vedic-sutras-poster-v3.webp"
-                alt="EdNet Learn poster: the 16 Vedic Mathematics sutras of Swami Bharati Krishna Tirtha in standard order (Ekādhikena Pūrveṇa to Guṇakasamuccayaḥ), each with Sanskrit name, IAST, English meaning, use and a worked example"
-                className="vedic-modal-image"
-              />
-            </div>
-
-            <div className="resources-modal-actions" style={{ justifyContent: 'space-between' }}>
-              <button
-                type="button"
-                className="resource-action-icon-btn"
-                onClick={() => setIsPosterModalOpen(false)}
-              >
-                <span>✕</span>
-                <span>Close</span>
-              </button>
-              <a
-                href="/vedic-sutras-poster-v3.png"
-                download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
-                className="vedic-poster-btn-primary"
-              >
-                <span>📥</span>
-                <span>Download High-Resolution Poster (PNG)</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* POSTER LIGHTBOX: full-screen, portaled to <body>, Esc / ✕ / backdrop to close */}
+      <PosterLightbox
+        open={isPosterModalOpen}
+        onClose={() => setIsPosterModalOpen(false)}
+        src="/vedic-sutras-poster-v3.webp"
+        fullSrc="/vedic-sutras-poster-v3.png"
+        alt="EdNet Learn poster: the 16 Vedic Mathematics sutras of Swami Bharati Krishna Tirtha in standard order (Ekādhikena Pūrveṇa to Guṇakasamuccayaḥ), each with Sanskrit name, IAST, English meaning, use and a worked example"
+        title="16 Foundational Sutras of Vedic Mathematics"
+        titleSa="षोडश-वैदिक-गणित-सूत्राणि"
+        downloadName="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
+      />
     </article>
   );
 };
