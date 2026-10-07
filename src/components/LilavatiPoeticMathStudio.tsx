@@ -301,6 +301,9 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   // Interactive state for Kaṭapayādi Cryptography
   const [katapayadiPreset, setKatapayadiPreset] = useState<'pi_madhava' | 'sin_radius' | 'narayaneeyam' | 'raga_kanakangi' | 'raga_harikambhoji' | 'custom'>('pi_madhava');
   const [customKatapayadiInput, setCustomKatapayadiInput] = useState<string>('गोपीभाग्यमधुव्रातः');
+  const [selectedMelakartaNum, setSelectedMelakartaNum] = useState<number>(15); // Default to Māyāmāḷavagauḷa (#15)
+  const [mvtX1Deg, setMvtX1Deg] = useState<number>(20);
+  const [mvtX2Deg, setMvtX2Deg] = useState<number>(40);
 
   // Interactive state for Precession of the Equinoxes (Ayana-Calana)
   const [precessionYear, setPrecessionYear] = useState<number>(2026);
@@ -4089,6 +4092,63 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
         const signCorr = madhavaTermCount % 2 === 1 ? -1 : 1;
         const piCorrected = 4 * (madhavaRawSum + signCorr * madhavaTailCorr);
         const truePi = Math.PI;
+
+        // Parameśvara Mean Value Theorem (1431 CE) Calculations
+        const mvtX1Rad = (mvtX1Deg * Math.PI) / 180;
+        const mvtX2Rad = (mvtX2Deg * Math.PI) / 180;
+        const mvtDeltaRad = mvtX2Rad - mvtX1Rad;
+        const mvtSecantSlope = Math.abs(mvtDeltaRad) > 1e-6 ? (Math.sin(mvtX2Rad) - Math.sin(mvtX1Rad)) / mvtDeltaRad : Math.cos(mvtX1Rad);
+        const mvtMidpointRad = (mvtX1Rad + mvtX2Rad) / 2;
+        const mvtMidpointDeg = (mvtX1Deg + mvtX2Deg) / 2;
+        const mvtTangentSlope = Math.cos(mvtMidpointRad);
+        const mvtEndpointSlope = Math.cos(mvtX1Rad);
+        const mvtMidpointError = Math.abs(mvtSecantSlope - mvtTangentSlope);
+        const mvtEndpointError = Math.abs(mvtSecantSlope - mvtEndpointSlope);
+
+        // Melakarta Algorithmic Division
+        const MELAKARTA_NAMES: Record<number, string> = {
+          1: 'Kanakāṅgī', 2: 'Ratnāṅgī', 3: 'Gānamūrti', 4: 'Vanaspati', 5: 'Mānavatī', 6: 'Tānarūpī',
+          7: 'Senāvatī', 8: 'Hanumatodi', 9: 'Dhenukā', 10: 'Nāṭakapriyā', 11: 'Kokilapriyā', 12: 'Rūpavatī',
+          13: 'Gāyakapriyā', 14: 'Vakuḷābharaṇam', 15: 'Māyāmāḷavagauḷa', 16: 'Cakravākam', 17: 'Sūryakāntam', 18: 'Hāṭakāmbharī',
+          19: 'Jhaṅkāradhvani', 20: 'Naṭabhairavī', 21: 'Kīravāṇī', 22: 'Kharaharapriyā', 23: 'Gaurīmanoharī', 24: 'Varuṇapriyā',
+          25: 'Mārarañjanī', 26: 'Cārukeśī', 27: 'Sārasāṅgī', 28: 'Harikāmbhoji', 29: 'Dhīraśaṅkarābharaṇa', 30: 'Nāganandinī',
+          31: 'Yāgapriyā', 32: 'Rāgavardhanī', 33: 'Gāṅgeyabhūṣaṇī', 34: 'Vāgadhīśvarī', 35: 'Śūlinī', 36: 'Calanāṭa',
+          37: 'Sālagam', 38: 'Jalārṇavam', 39: 'Jhālavarāḷi', 40: 'Navanītam', 41: 'Pāvani', 42: 'Raghupriyā',
+          43: 'Gavāmbhodhi', 44: 'Bhavapriyā', 45: 'Śubhapantuvarāḷi', 46: 'Ṣaḍvidhamārgiṇī', 47: 'Suvarṇāṅgī', 48: 'Divyamaṇi',
+          49: 'Dhavalāmbharī', 50: 'Nāmanārāyaṇī', 51: 'Kāmavardhanī', 52: 'Rāmapriyā', 53: 'Gamanāśrama', 54: 'Viśvambharī',
+          55: 'Śyāmalāṅgī', 56: 'Ṣaṇmukhapriyā', 57: 'Siṃhendramadhyamam', 58: 'Hemavatī', 59: 'Dharmavatī', 60: 'Nītīmati',
+          61: 'Kāntāmaṇi', 62: 'Ṛṣabhapriyā', 63: 'Latāṅgī', 64: 'Vācaspati', 65: 'Mechakalyāṇī', 66: 'Citrāmbarī',
+          67: 'Sucaritrā', 68: 'Jyotiṣsvarūpiṇī', 69: 'Dhātuvardhanī', 70: 'Nāsikābhūṣaṇī', 71: 'Kosalam', 72: 'Rasikapriyā',
+        };
+        const melaMaType = selectedMelakartaNum <= 36 ? 'Ma₁ (Śuddha Madhyama)' : 'Ma₂ (Prati Madhyama)';
+        const melaChakraNum = Math.ceil(selectedMelakartaNum / 6);
+        const CHAKRA_NAMES = [
+          'Indu (1)', 'Netra (2)', 'Agni (3)', 'Veda (4)', 'Bāṇa (5)', 'Ṛtu (6)',
+          'Ṛṣi (7)', 'Vasu (8)', 'Brahmā (9)', 'Diśi (10)', 'Rudra (11)', 'Āditya (12)',
+        ];
+        const melaChakraName = CHAKRA_NAMES[melaChakraNum - 1] || `Chakra ${melaChakraNum}`;
+        const melaRiGaIndex = ((melaChakraNum - 1) % 6) + 1;
+        const RIGA_COMBOS = [
+          { r: 'R₁ (Śuddha Ri)', g: 'G₁ (Śuddha Ga)', short: 'R₁-G₁' },
+          { r: 'R₁ (Śuddha Ri)', g: 'G₂ (Sādhāraṇa Ga)', short: 'R₁-G₂' },
+          { r: 'R₁ (Śuddha Ri)', g: 'G₃ (Antara Ga)', short: 'R₁-G₃' },
+          { r: 'R₂ (Catuśśruti Ri)', g: 'G₂ (Sādhāraṇa Ga)', short: 'R₂-G₂' },
+          { r: 'R₂ (Catuśśruti Ri)', g: 'G₃ (Antara Ga)', short: 'R₂-G₃' },
+          { r: 'R₃ (Ṣaṭśruti Ri)', g: 'G₃ (Antara Ga)', short: 'R₃-G₃' },
+        ];
+        const melaRiGa = RIGA_COMBOS[melaRiGaIndex - 1];
+        const melaDhaNiIndex = ((selectedMelakartaNum - 1) % 6) + 1;
+        const DHANI_COMBOS = [
+          { d: 'D₁ (Śuddha Dha)', n: 'N₁ (Śuddha Ni)', short: 'D₁-N₁' },
+          { d: 'D₁ (Śuddha Dha)', n: 'N₂ (Kaiśikī Ni)', short: 'D₁-N₂' },
+          { d: 'D₁ (Śuddha Dha)', n: 'N₃ (Kākalī Ni)', short: 'D₁-N₃' },
+          { d: 'D₂ (Catuśśruti Dha)', n: 'N₂ (Kaiśikī Ni)', short: 'D₂-N₂' },
+          { d: 'D₂ (Catuśśruti Dha)', n: 'N₃ (Kākalī Ni)', short: 'D₂-N₃' },
+          { d: 'D₃ (Ṣaṭśruti Dha)', n: 'N₃ (Kākalī Ni)', short: 'D₃-N₃' },
+        ];
+        const melaDhaNi = DHANI_COMBOS[melaDhaNiIndex - 1];
+        const melaRagaName = MELAKARTA_NAMES[selectedMelakartaNum] || `Mela #${selectedMelakartaNum}`;
+
         // Kaṭapayādi Preset Data
         const KATAPAYADI_PRESETS: Record<
           'pi_madhava' | 'sin_radius' | 'narayaneeyam' | 'raga_kanakangi' | 'raga_harikambhoji' | 'custom',
@@ -4778,6 +4838,75 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
                       </div>
                     </div>
                   </div>
+
+                  {/* Part C: Parameśvara's Mean Value Theorem (1431 CE) */}
+                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem', gridColumn: '1 / -1' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.6rem' }}>
+                      <div style={{ fontSize: '0.86rem', fontWeight: 800, color: '#0f172a' }}>
+                        📉 Part C: Parameśvara&apos;s Pre-Calculus Mean Value Theorem (1431 CE Siddhānta-Dīpikā)
+                      </div>
+                      <span style={{ background: '#ecfdf5', color: '#059669', fontSize: '0.72rem', fontWeight: 800, padding: '0.2rem 0.5rem', borderRadius: '4px' }}>
+                        Secant Slope = Tangent at Midpoint c = (x₁ + x₂)/2
+                      </span>
+                    </div>
+
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.55, margin: '0 0 0.8rem' }}>
+                      To track the non-linear acceleration of the Moon approaching perigee for eclipse syzygy, <strong>Vaṭaśśeri Parameśvara (1431 CE)</strong> proved that the finite change in Sine is bounded by the Cosine evaluated at the exact midpoint: <span style={{ fontFamily: 'monospace', fontWeight: 700, color: '#0284c7' }}>sin(x₂) - sin(x₁) ≈ (x₂ - x₁) · cos((x₁ + x₂)/2)</span>. This anticipates Cauchy&apos;s 19th-century Mean Value Theorem by over 400 years and eliminates first-order O(Δx) error!
+                    </p>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '0.8rem' }}>
+                      <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#475569', marginBottom: '0.2rem' }}>
+                          <span>Start Anomaly Angle x₁:</span>
+                          <strong style={{ color: '#0284c7' }}>{mvtX1Deg}°</strong>
+                        </div>
+                        <input
+                          type="range"
+                          min={0}
+                          max={70}
+                          value={mvtX1Deg}
+                          onChange={(e) => {
+                            const val = parseInt(e.target.value, 10);
+                            setMvtX1Deg(val);
+                            if (val >= mvtX2Deg) setMvtX2Deg(val + 5);
+                          }}
+                          style={{ width: '100%', accentColor: '#0284c7' }}
+                        />
+                      </div>
+
+                      <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#475569', marginBottom: '0.2rem' }}>
+                          <span>End Anomaly Angle x₂:</span>
+                          <strong style={{ color: '#059669' }}>{mvtX2Deg}°</strong>
+                        </div>
+                        <input
+                          type="range"
+                          min={mvtX1Deg + 1}
+                          max={90}
+                          value={mvtX2Deg}
+                          onChange={(e) => setMvtX2Deg(parseInt(e.target.value, 10))}
+                          style={{ width: '100%', accentColor: '#059669' }}
+                        />
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.6rem', background: '#f8fafc', padding: '0.8rem', borderRadius: '8px', fontSize: '0.78rem', lineHeight: 1.6 }}>
+                      <div>
+                        <strong>Secant Slope [sin(x₂) - sin(x₁)] / Δx:</strong>
+                        <div style={{ fontFamily: 'monospace', color: '#0f172a', fontWeight: 800 }}>{mvtSecantSlope.toFixed(6)}</div>
+                      </div>
+                      <div>
+                        <strong>Parameśvara Midpoint cos(c) at {mvtMidpointDeg.toFixed(1)}°:</strong>
+                        <div style={{ fontFamily: 'monospace', color: '#16a34a', fontWeight: 800 }}>{mvtTangentSlope.toFixed(6)}</div>
+                        <span style={{ fontSize: '0.7rem', color: '#16a34a' }}>Error: {mvtMidpointError.toFixed(6)} (O(Δx²) quadratic accuracy!)</span>
+                      </div>
+                      <div>
+                        <strong>Naive Endpoint cos(x₁) at {mvtX1Deg}°:</strong>
+                        <div style={{ fontFamily: 'monospace', color: '#dc2626' }}>{mvtEndpointSlope.toFixed(6)}</div>
+                        <span style={{ fontSize: '0.7rem', color: '#dc2626' }}>Error: {mvtEndpointError.toFixed(6)} (O(Δx) massive 1st-order error)</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
@@ -4939,6 +5068,85 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
                     </div>
                     <div style={{ marginTop: '0.75rem', fontSize: '0.74rem', color: '#64748b', lineHeight: 1.5 }}>
                       <strong>Golden Decoding Rules:</strong> (1) Conjoint consonants (e.g. <em>kya</em>, <em>stha</em>): only the final consonant counts. (2) Standalone vowels carry zero or are bypassed. (3) Numbers always read backwards (<em>Aṅkānāṃ Vāmato Gatiḥ</em>).
+                    </div>
+                  </div>
+                </div>
+
+                {/* Interactive Melakarta Raga Swara Division Calculator */}
+                <div style={{ background: '#ffffff', border: '1px solid #f0abfc', borderRadius: '12px', padding: '1.1rem', marginTop: '1.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.6rem' }}>
+                    <div style={{ fontSize: '0.92rem', fontWeight: 800, color: '#86198f' }}>
+                      🎵 Carnatic Melakarta Raga Svara Decoder · The Algorithmic Division Formula
+                    </div>
+                    <span style={{ background: '#fae8ff', color: '#a21caf', fontSize: '0.74rem', fontWeight: 800, padding: '0.2rem 0.55rem', borderRadius: '4px' }}>
+                      Venkatamakhin (1660 CE) · 72 Janaka Ragas
+                    </span>
+                  </div>
+
+                  <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.55, margin: '0 0 0.85rem' }}>
+                    Once a rāga&apos;s name is hashed to its index number <strong style={{ color: '#c026d3' }}>N (1..72)</strong> via Kaṭapayādi, the seven musical notes (svaras: <span style={{ fontFamily: 'monospace' }}>Sa, Ri, Ga, Ma, Pa, Dha, Ni</span>) are extracted deterministically through modular arithmetic:
+                  </p>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '1rem' }}>
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                        <span>Select Melakarta Index (N):</span>
+                        <strong style={{ color: '#c026d3', fontSize: '0.95rem' }}>#{selectedMelakartaNum} · {melaRagaName}</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={1}
+                        max={72}
+                        value={selectedMelakartaNum}
+                        onChange={(e) => setSelectedMelakartaNum(parseInt(e.target.value, 10))}
+                        style={{ width: '100%', accentColor: '#c026d3' }}
+                      />
+                      <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap', marginTop: '0.4rem' }}>
+                        {[
+                          { num: 1, label: '#1 Kanakāṅgī' },
+                          { num: 8, label: '#8 Hanumatodi' },
+                          { num: 15, label: '#15 Māyāmāḷavagauḷa' },
+                          { num: 22, label: '#22 Kharaharapriyā' },
+                          { num: 28, label: '#28 Harikāmbhoji' },
+                          { num: 29, label: '#29 Dhīraśaṅkarābharaṇa' },
+                          { num: 65, label: '#65 Mechakalyāṇī' },
+                        ].map((m) => (
+                          <button
+                            key={m.num}
+                            type="button"
+                            onClick={() => setSelectedMelakartaNum(m.num)}
+                            style={{
+                              fontSize: '0.7rem',
+                              padding: '0.2rem 0.4rem',
+                              borderRadius: '4px',
+                              border: selectedMelakartaNum === m.num ? '1px solid #c026d3' : '1px solid #e2e8f0',
+                              background: selectedMelakartaNum === m.num ? '#fae8ff' : '#f8fafc',
+                              color: selectedMelakartaNum === m.num ? '#86198f' : '#64748b',
+                              fontWeight: selectedMelakartaNum === m.num ? 700 : 500,
+                              cursor: 'pointer',
+                            }}
+                          >
+                            {m.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Step-by-step Division Breakdown */}
+                    <div style={{ background: '#fdf4ff', padding: '0.8rem', borderRadius: '8px', border: '1px solid #f5d0fe', fontSize: '0.78rem', lineHeight: 1.6 }}>
+                      <div><strong>1. Madhyama (Ma) Isolation:</strong> N {selectedMelakartaNum <= 36 ? '≤ 36' : '> 36'} ⟹ <span style={{ color: '#c026d3', fontWeight: 800 }}>{melaMaType}</span></div>
+                      <div><strong>2. Chakra Ceiling Division ⌈N/6⌉:</strong> ⌈{selectedMelakartaNum}/6⌉ = {melaChakraNum} ({melaChakraName}) ⟹ <span style={{ color: '#0284c7', fontWeight: 800 }}>{melaRiGa.r} + {melaRiGa.g}</span></div>
+                      <div><strong>3. Remainder Modulo ((N-1) mod 6)+1:</strong> Remainder = {melaDhaNiIndex} ⟹ <span style={{ color: '#059669', fontWeight: 800 }}>{melaDhaNi.d} + {melaDhaNi.n}</span></div>
+                    </div>
+                  </div>
+
+                  {/* Complete Svara Scale Pill */}
+                  <div style={{ background: '#f8fafc', padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <div style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700 }}>
+                      Complete 7-Svara Scale (Arohana / Avarohana):
+                    </div>
+                    <div style={{ fontFamily: 'monospace', fontSize: '0.92rem', fontWeight: 900, color: '#0f172a', background: '#ffffff', padding: '0.35rem 0.75rem', borderRadius: '6px', border: '1px solid #cbd5e1' }}>
+                      Sa — <span style={{ color: '#0284c7' }}>{melaRiGa.short.split('-')[0]}</span> — <span style={{ color: '#0284c7' }}>{melaRiGa.short.split('-')[1]}</span> — <span style={{ color: '#c026d3' }}>{selectedMelakartaNum <= 36 ? 'M₁' : 'M₂'}</span> — Pa — <span style={{ color: '#059669' }}>{melaDhaNi.short.split('-')[0]}</span> — <span style={{ color: '#059669' }}>{melaDhaNi.short.split('-')[1]}</span> — Ṡ
                     </div>
                   </div>
                 </div>

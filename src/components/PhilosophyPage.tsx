@@ -5220,6 +5220,24 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                       In 1586 CE at Guruvāyūr, Melpathūr Nārāyaṇa Bhaṭṭathiri concluded his masterpiece with the prayer <em>&ldquo;Āyurārogyasaukhyam&rdquo;</em> (&ldquo;Long life, health, and supreme happiness&rdquo;). Syllables decode to 0, 1, 2, 2, 1, 7, 1; reading backwards (<em>Aṅkānāṃ Vāmato Gatiḥ</em>) yields Kali Day <strong>1,712,210</strong> (Sunday, 8/9 Dec 1586 CE), immortalizing the text’s completion timestamp within a prayer!
                     </p>
                   </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fae8ff' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#a21caf', marginBottom: '0.3rem' }}>
+                      🎵 Melakarta Algorithmic Svara Division (Venkatamakhin 1660 CE)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      Carnatic music&apos;s 72 parent scales are an algebraic matrix: hashing the first two syllables gives index <em>N</em>. Madhyama is isolated via <em>N ≤ 36</em> (M₁ vs M₂), Ri-Ga pairs are derived by Chakra ceiling division <em>⌈N/6⌉</em>, and Dha-Ni pairs by remainder <em>((N-1) mod 6)+1</em>. Every scale is a deterministic mathematical theorem!
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fae8ff' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#a21caf', marginBottom: '0.3rem' }}>
+                      📉 Parameśvara&apos;s Mean Value Theorem (1431 CE Siddhānta-Dīpikā)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      Over 350 years before Cauchy, Parameśvara proved that the finite change in Sine is bounded by Cosine evaluated at the exact midpoint: <em>sin(x₂) - sin(x₁) ≈ (x₂ - x₁)·cos((x₁+x₂)/2)</em>. Evaluating at the midpoint cancels first-order error <em>O(Δx)</em>, allowing his <em>Dṛggaṇita</em> engine to track accelerated lunar eclipse physics via the numerical Secant Method!
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>

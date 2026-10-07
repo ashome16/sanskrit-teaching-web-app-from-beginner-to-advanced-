@@ -2905,6 +2905,31 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           { sa: 'आयुरारोग्यसौख्यम्', iast: 'Āyurārogyasaukhyam', gloss: 'Nārāyaṇīyam closing chronogram encoding Kali Ahargaṇa 1,712,210 (1586 CE)' }
         ],
         highlight: 'By subtracting Ayanāṃśa from the Vākya system, the Kerala School aligned agricultural sowing with the Southwest Monsoon (Eḍavappāti), while using Kaṭapayādi to hide 32-decimal π values and Kali Ahargaṇa timestamps inside everyday temple prayers.'
+      },
+      {
+        title: 'Carnatic Melakarta Algorithmic Division & Parameśvara’s Mean Value Theorem (1431 CE)',
+        sanskritTitle: 'मेलकर्ताराग-विभाजन-सूत्रम् · परमेश्वरस्य मध्यमान-प्रमेयम्',
+        paragraphs: [
+          'The intellectual synergy of the Kerala and broader South Indian mathematical tradition produced two crowning achievements that bridge high musicology and numerical calculus:',
+          '1. Venkatamakhin’s Algorithmic Division Formula for the 72 Melakarta Ragas (1660 CE):',
+          'In his Caturdaṇḍī Prakāśikā, Venkatamakhin organized the 72 fundamental 7-note parent scales (Janaka ragas) of Carnatic music into an algebraic taxonomy. Using the Kaṭapayādi cipher, any rāga’s name is hashed to its serial index N (1..72) from its first two syllables (Aṅkānāṃ Vāmato Gatiḥ). From N, an algorithmic division formula instantly deduces all seven svaras without rote memorization:',
+          '• Step 1: Madhyama Isolation: If N ≤ 36, take M₁ (Śuddha Madhyama); if N > 36, take M₂ (Prati Madhyama).',
+          '• Step 2: Chakra Ceiling Division: Chakra C = ⌈N / 6⌉ (from 1 to 12). C modulo 6 uniquely maps to one of 6 Ri-Ga combinations: 1 ⟹ R₁G₁, 2 ⟹ R₁G₂, 3 ⟹ R₁G₃, 4 ⟹ R₂G₂, 5 ⟹ R₂G₃, 6 ⟹ R₃G₃.',
+          '• Step 3: Remainder within Chakra: Remainder R = ((N - 1) mod 6) + 1. R uniquely maps to one of 6 Dha-Ni combinations: 1 ⟹ D₁N₁, 2 ⟹ D₁N₂, 3 ⟹ D₁N₃, 4 ⟹ D₂N₂, 5 ⟹ D₂N₃, 6 ⟹ D₃N₃.',
+          'For example, Māyāmāḷavagauḷa (Mā=5, Yā=1 ⟹ 15): 15 ≤ 36 ⟹ M₁; ⌈15/6⌉ = 3 (Agni Chakra) ⟹ R₁G₃; (15-1) mod 6 + 1 = 3 ⟹ D₁N₃, constructing S - R₁ - G₃ - M₁ - P - D₁ - N₃ - Ṡ with pure modular arithmetic!',
+          '2. Parameśvara’s Pre-Calculus Mean Value Theorem Proof (1431 CE Siddhānta-Dīpikā):',
+          'In European mathematical history, the Mean Value Theorem (MVT) for derivatives was formulated by Lagrange (1797) and Cauchy (1823). However, more than 350 years earlier, Vaṭaśśeri Parameśvara formulated a geometric version of this theorem in his Siddhānta-Dīpikā to track the accelerated velocity of the Moon approaching perigee during eclipses.',
+          'Parameśvara realized that evaluating planetary velocities at the endpoints of a time step introduces linear accumulation error O(Δx). He proved that the finite difference in the Sine function over an interval [x₁, x₂] is precisely bounded by the Cosine evaluated at the intermediate midpoint:',
+          'sin(x₂) - sin(x₁) ≈ (x₂ - x₁) · cos((x₁ + x₂) / 2)',
+          'Geometrically, the slope of the secant line between (x₁, sin x₁) and (x₂, sin x₂) is parallel to the tangent line touching the curve at the exact midpoint c = (x₁ + x₂)/2. By evaluating at the midpoint, the first-order Taylor error cancels out completely: [sin(x₀ + h) - sin(x₀ - h)] / 2h = cos(x₀) + O(h²). This quadratic accuracy allowed his Dṛggaṇita engine to converge on the exact minute of eclipse syzygy using the numerical Secant Method centuries ahead of European calculus!'
+        ],
+        terms: [
+          { sa: 'मेलकर्ताराग', iast: 'Melakartā-Rāga', gloss: 'The 72 fundamental 7-svara parent scales of Carnatic classical music' },
+          { sa: 'चक्र', iast: 'Chakra', gloss: 'The 12 groups of 6 ragas each, determining the Ri-Ga svara variants' },
+          { sa: 'मध्यमानप्रमेयम्', iast: 'Madhyamāna-Prameyam', gloss: 'Mean Value Theorem: bounding finite differences via midpoint derivatives' },
+          { sa: 'छेदकविधि', iast: 'Chedaka-Vidhi', gloss: 'Numerical Secant Method iteratively converging on orbital syzygy roots' }
+        ],
+        highlight: 'Venkatamakhin used modular arithmetic (⌈N/6⌉ and N mod 6) to deduce the 7 svaras of any Melakarta rāga, while Parameśvara (1431 CE) formulated the Mean Value Theorem to eliminate first-order error in tracking accelerated lunar eclipse velocity.'
       }
     ],
     quote: 'Centuries before the European Enlightenment, the astronomers of the Kerala School stood on the banks of the Nila River, peered into the night sky with Gola Yantras, and unfolded the curved geometry of the heavens into the infinite series of calculus.',
@@ -2917,7 +2942,9 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'The Whish-Joseph Transmission Hypothesis documents how 16th-century Jesuit scholars (including Matteo Ricci) in Cochin and Goa collected Kerala astronomical texts, transmitting high-precision solar parameters to Christopher Clavius for the 1582 Gregorian calendar reform.',
       'In Yuktibhāṣā, Jyeṣṭhadeva established Golabandha 3D-to-2D spherical projections: using the Matsya vesica piscis construction for orthogonal axes, gnomon triangulation, and decomposing topocentric parallax into longitudinal Lambana and latitudinal Nati.',
       'Parameśvara conducted 55 years of continuous observations (1393–1448 CE) along the Nīlā river, creating the Dṛggaṇita to correct the 14-day precessional drift of the ancient Vākya calendar and accurately predict the Southwest Monsoon (Eḍavappāti).',
-      'The Kaṭapayādi cipher enabled devotional steganography: the Gopī-Bhāgya hymn encrypted π/10 to 32 decimals, while Nārāyaṇīyam’s closing blessing "Āyurārogyasaukhyam" permanently embedded Kali Day 1,712,210 (8/9 December 1586 CE).'
+      'The Kaṭapayādi cipher enabled devotional steganography: the Gopī-Bhāgya hymn encrypted π/10 to 32 decimals, while Nārāyaṇīyam’s closing blessing "Āyurārogyasaukhyam" permanently embedded Kali Day 1,712,210 (8/9 December 1586 CE).',
+      'Venkatamakhin’s Melakarta algorithmic division formula computes the 7 svaras of all 72 parent ragas via modular arithmetic: Ma from N ≤ 36, Ri-Ga from ⌈N/6⌉, and Dha-Ni from ((N-1) mod 6)+1.',
+      'In Siddhānta-Dīpikā (1431 CE), Parameśvara formulated the Mean Value Theorem [sin(x₂) - sin(x₁) ≈ (x₂ - x₁)·cos((x₁+x₂)/2)], canceling first-order O(Δx) error to track accelerated lunar eclipse physics via the numerical Secant Method.'
     ]
   },
   {
