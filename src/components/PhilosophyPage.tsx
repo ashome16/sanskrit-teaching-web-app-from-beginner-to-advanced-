@@ -5036,6 +5036,90 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   </div>
                 </div>
               </div>
+
+              {/* Subsection 17.6: Epicycle Engines, Pulsating Radii & Instantaneous Velocity (Tātkālikī Gati) */}
+              <div className="philosophy-card" style={{ background: '#f8fafc', border: '1.5px solid #cbd5e1', margin: '1.5rem 0' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0369a1', textTransform: 'uppercase' }}>
+                  Differential Velocity &amp; Epicycle Dynamics · तात्कालिकी गतिः
+                </span>
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#0f172a' }}>
+                  ⚙️ Pulsating Epicycles, Instantaneous Velocity &amp; Mādhava’s Infinite Series
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#334155', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  To model non-uniform planetary orbits without Ptolemy’s controversial equant point, Indian astronomers designed <strong>pulsating epicycles</strong> (<em>Manda-Paridhi</em>), while Bhāskara II and Mādhava invented infinitesimal calculus centuries before Europe:
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem', marginBottom: '1rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#0284c7', marginBottom: '0.3rem' }}>
+                      🔄 Pulsating Epicycles vs. Ptolemy’s Equant
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      While Ptolemy’s <em>Almagest</em> held epicycle radii rigid and shifted the center of uniform motion to an artificial Equant, the <em>Sūrya Siddhānta</em> dynamically shrank the epicycle radius in odd quadrants: <strong style={{ fontFamily: 'monospace' }}>r(θ) = r_mean - Δr|sin θ|</strong>. This pulsating breathing of the epicycle modeled Keplerian elliptical velocity while preserving geometric harmony!
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#0284c7', marginBottom: '0.3rem' }}>
+                      ⚡ Instantaneous Velocity (Tātkālikī Gati, 1150 CE)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      In <em>Siddhānta Śiromaṇi</em>, Bhāskarācārya formulated differential motion: <strong style={{ fontFamily: 'monospace' }}>δ(sin θ) ≈ cos θ · δθ</strong>. He proved that when a planet reaches its maximum orbital anomaly or eclipse peak, its instantaneous differential velocity vanishes (<strong style={{ fontFamily: 'monospace' }}>dθ/dt = 0</strong>), discovering Fermat&apos;s theorem on stationary extrema 500 years early!
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#0284c7', marginBottom: '0.3rem' }}>
+                      ♾️ Mādhava’s Infinite Power Series &amp; Rational Corrections
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      In the 14th century, Mādhava of Saṅgamagrāma derived the infinite power series for π, sin, and cos (pre-dating Gregory, Newton, and Leibniz). By appending rational tail-correction terms <strong style={{ fontFamily: 'monospace' }}>C_n = n / (4n² + 1)</strong>, he calculated π to 11 decimal places with astonishing efficiency.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Subsection 17.7: Nīlakaṇṭha's Geo-Heliocentrism (1501 CE) & Monumental Yantras */}
+              <div className="philosophy-card" style={{ background: '#fefce8', border: '1.5px solid #fef08a', margin: '1.5rem 0' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                  Tantrasaṅgraha Breakthrough &amp; Stone Observatories · तन्त्रसङ्ग्रहः यन्त्रमन्त्राणि च
+                </span>
+                <h3 style={{ margin: '0.2rem 0 0.5rem', fontSize: '1.18rem', fontWeight: 800, color: '#713f12' }}>
+                  ☀️ Nīlakaṇṭha’s Geo-Heliocentrism (1501 CE) &amp; The Architecture of Jantar Mantar
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#713f12', lineHeight: 1.6, margin: '0 0 0.85rem' }}>
+                  In 1501 CE—87 years before Tycho Brahe in Europe—Nīlakaṇṭha Somayāji proved in the <em>Tantrasaṅgraha</em> that the five planets orbit the Sun, while the Sun loops around Earth. Later, Maharaja Sawai Jai Singh II cast these spherical equations into monumental stone observatories:
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fef08a' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#a16207', marginBottom: '0.3rem' }}>
+                      🪐 The Geo-Heliocentric Planetary Architecture
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      Nīlakaṇṭha recognized that the <em>Śīghra</em> apex is the physical Mean Sun: <strong style={{ fontFamily: 'monospace' }}>&ldquo;Śīghrocco Bhāskaraḥ proktaḥ&rdquo;</strong>. Mercury, Venus, Mars, Jupiter, and Saturn orbit the Sun in concentric circles, and the Sun carries them around Earth. In <em>Yuktibhāṣā</em> (1530 CE), Jyeṣṭhadeva proved this eliminated chaotic latitudinal deviations (<em>Vikṣepa</em>) for inner planets!
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fef08a' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#a16207', marginBottom: '0.3rem' }}>
+                      👁️ Dṛk-Gaṇita-Aikya: Why Retain Geocentric Output?
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      Indian astronomy was guided by <strong>Dṛk-Gaṇita-Aikya</strong> (the exact identity of observation and calculation). Because observers live on Earth, astronomical outputs must serve terrestrial sky navigation. Without a physical model of universal gravitation to explain why an Earth moving at 30 km/s retains its atmosphere and oceans, they preserved the geocentric output while adopting Sun-centered mathematics.
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #fef08a' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#a16207', marginBottom: '0.3rem' }}>
+                      🏛️ Monumental Precision Yantras (Jantar Mantar)
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                      To eliminate sighting instrument flexure, Jai Singh II built gigantic masonry instruments: <strong>Bṛhat Samrāt Yantra</strong> (27m equinoctial gnomon reading time to 2 seconds / 4mm shadow shift), <strong>Jai Prakash Yantra</strong> (twin sunken hemispherical bowls mapping 3D celestial coordinates to marble), and <strong>Rām Yantra</strong> (cylindrical pillars isolating orbital inclination <em>Vikṣepa</em>).
+                    </p>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
         )}

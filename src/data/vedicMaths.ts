@@ -3162,6 +3162,35 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           { sa: 'कपि-यूथ', iast: 'Kapi-Yūtha', gloss: 'The leaping monkeys quadratic riddle in Bījagaṇita exhibiting dual positive roots (x = 48 or 16)' }
         ],
         highlight: 'Bhāskarācārya used 12-aṅgula gnomons to measure unreachable cliffs, derived Earth’s 1,581-Yojana diameter (~12,719 km) to within 0.2% of satellite data, established signed arithmetic and Khahara infinity, proved dual real roots in the Leaping Monkeys quadratic riddle (x = 48 or 16), and tracked seasonal solstice shadows through the 24° obliquity of the ecliptic (Krānti).'
+      },
+      {
+        title: 'The Geo-Heliocentric Revolution (Nīlakaṇṭha 1501 CE), Yuktibhāṣā Proofs & Monumental Yantras of Jantar Mantar',
+        sanskritTitle: 'नीलकण्ठस्य सूर्यकेन्द्रिक-संशोधनम् · युक्तिभाषा-प्रमाणानि यन्त्रमन्त्राश्च',
+        paragraphs: [
+          'In his landmark 1501 CE astronomical treatise Tantrasaṅgraha, Nīlakaṇṭha Somayāji of the Kerala School formulated an epochal breakthrough that solved the ancient anomalies of planetary geometry: he proved that the five visible planets (Budha/Mercury, Śukra/Venus, Maṅgala/Mars, Guru/Jupiter, and Śani/Saturn) orbit the Sun in concentric circles, while the Sun, carrying this planetary system, revolves around the stationary Earth.',
+          '1. The Geo-Heliocentric Mathematical Breakthrough (87 Years Before Tycho Brahe):',
+          'Prior to Nīlakaṇṭha, astronomers applied two disconnected geometric corrections: the Manda loop (eccentricity) and the Śīghra loop (solar anomaly). Nīlakaṇṭha unified them into a coherent physical vector space by recognizing that the Śīghra apex was not an abstract geometric point, but the physical Mean Sun itself: "Śīghrocco Bhāskaraḥ proktaḥ" (The Mean Sun is the physical center of the planetary orbits). This cleanly explained why Mercury and Venus never wander far from the Sun, while outer planets exhibit retrograde loops during solar opposition—anticipating Tycho Brahe’s identical European system (1588 CE) by nearly a century.',
+          '2. Jyeṣṭhadeva’s Mathematical Justification in the Yuktibhāṣā (c. 1530 CE):',
+          'In the Yuktibhāṣā (the world’s first formal text on proof-based astronomy and calculus), Jyeṣṭhadeva proved that when planetary latitudinal deviations (Vikṣepa) are calculated under strict Earth-centered circles, the geometry becomes highly anomalous and non-linear. By mathematically anchoring planetary orbits to the Sun first, the latitudinal equations resolve into harmonious, regular curves. Later Kerala masters like Acyuta Piṣāraṭi (c. 1550–1621 CE) unified the Manda and Śīghra loops into an integrated heliocentric vector formulation.',
+          '3. Epistemological Anchor: Why Retain Geocentric Output? (Dṛk-Gaṇita-Aikya):',
+          'Kerala astronomers did not adopt full Copernican heliocentrism for two fundamental epistemological reasons:',
+          '• Dṛk-Gaṇita-Aikya (Identity of Observation and Calculation): The supreme goal of Indian astronomy was empirical concordance with what the human eye witnesses from Earth’s surface (eclipses, occultations, rising and setting). They treated Sun-centered math as the true kinematic reality, but transformed coordinates back to the terrestrial observer frame.',
+          '• Absence of Universal Gravitational Dynamics: Without Newtonian gravitational dynamics (F = G·m₁m₂/r²) and inertial frames, an Earth flying through the void at 30 km/s seemed physically impossible because heavy objects are seen falling directly toward Earth’s center without being stripped into space.',
+          '4. Translating Spherical Trigonometry into Monumental Stone Yantras:',
+          'In the 18th century, Maharaja Sawai Jai Singh II and Indian royal astronomers constructed monumental observatories (Jantar Mantar) at Jaipur, Delhi, Ujjain, Varanasi, and Mathura to physically realize the equations of Tantrasaṅgraha and Sūrya Siddhānta:',
+          '• Bṛhat Samrāt Yantra: The colossal 27-meter equinoctial gnomon angled at local latitude, splitting time down to a stunning 2-second resolution (4 mm arc displacement on curved marble quadrants) to compute the fractional Ahargaṇa needed for instantaneous velocity (Tātkālikī Gati).',
+          '• Jai Prakash Yantra: Sunken twin concave hemispherical marble bowls acting as mirrored, inverted maps of the celestial sphere. Crosswires suspended across the rim cast shadows of a central sighting plate, instantly outputting altitude, azimuth, and local zodiac coordinates simultaneously without manual calculation.',
+          '• Rām Yantra: Twin cylindrical stone structures with central vertical pillars and segmented radial pathways, designed to measure planetary latitudinal separation (Vikṣepa) and zenith angles directly without atmospheric distortion.'
+        ],
+        terms: [
+          { sa: 'तन्त्रसङ्ग्रह', iast: 'Tantrasaṅgraha', gloss: '1501 CE astronomical masterpiece by Nīlakaṇṭha establishing geo-heliocentric planetary orbits' },
+          { sa: 'शीघ्रोच्च', iast: 'Śīghrocca', gloss: 'The anomaly center identified by Nīlakaṇṭha as the physical Mean Sun for planetary orbits' },
+          { sa: 'दृग्गणितैक्य', iast: 'Dṛk-Gaṇita-Aikya', gloss: 'Axiom of exact concordance between physical observation and computational model' },
+          { sa: 'विक्षेप', iast: 'Vikṣepa', gloss: 'Planetary celestial latitude / latitudinal deviation from the ecliptic plane' },
+          { sa: 'सम्राट्-यन्त्र', iast: 'Samrāt-Yantra', gloss: 'Supreme equinoctial stone gnomon sundial capable of 2-second temporal precision' },
+          { sa: 'जयप्रकाश-यन्त्र', iast: 'Jai-Prakash-Yantra', gloss: 'Inverted hemispherical celestial bowl mapping 3D spherical coordinates directly on marble' }
+        ],
+        highlight: 'In 1501 CE (87 years before Tycho Brahe), Nīlakaṇṭha Somayāji formulated the Geo-Heliocentric model where the five planets orbit the Sun while the Sun orbits Earth, proven mathematically in Jyeṣṭhadeva’s Yuktibhāṣā, governed by Dṛk-Gaṇita-Aikya, and physically materialized in the monumental stone Yantras of Jantar Mantar.'
       }
     ],
     quote: 'The Earth attracts by its own force whatever heavy thing is stationed in space; that object appears to fall, but in an omnidirectional cosmos, where could the spherical Earth itself fall? It rests suspended in the geometric body of the infinite.',
@@ -3179,9 +3208,10 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'The Sūrya Siddhānta sidereal year (365d 6h 12m 36.56s) is accurate to within 3.5 minutes of modern satellite data without mechanical clocks.',
       'In Līlāvatī Ch. 13 (Aṅka-Pāśa), Bhāskarācārya established permutations of distinct items (10! = 3,628,800 variations for 10-armed Shiva) and multiset permutations with repetitions [n! / (n₁! × ... × nₖ!) = 166,320 for 12-armed deity with 5 lotuses, 3 tridents, 2 swords, 2 shields] 500 years before European mathematicians.',
       'In Gatika Kāvya and Chitrakāvya, combinatorial rules govern inverted poetry: exact palindromes (P · c = c in Māgha 19.40), bidirectional epics (Rāghavayādavīyam telling Rāmāyaṇa forward and Bhāgavatam backward), and the 8×8 Sarvato-Bhadra magic square whose D₄ symmetry reduces 64 syllables to exactly 10 independent generator degrees of freedom.',
-      'In Chāyā-Vyavahāra, the Double-Shadow theorem H = (g × D) / (S₂ - S₁) calculates inaccessible heights (e.g. 120-unit cliff from 12-unit gnomon with shadows 4 and 7 across 30 units) purely through linear differences of similar triangles without angle tables.',
+      'In Chāyā-Vyavahāra, the Double-Shadow theorem H = (g × D) / (S₂ - S₁) calculates inaccessible heights purely through linear differences of similar triangles without angle tables.',
       'Equinoctial noon shadows of the 12-aṅgula gnomon (Palabhā) yielded precise terrestrial latitudes tan(φ) = Palabhā / 12, allowing Indian astronomers to compute the Earth’s circumference (4,967 Yojanas ≈ 39,960 km) to within 0.3% of modern satellite measurements.',
-      'In Bījagaṇita, Bhāskarācārya established signed arithmetic (debt × debt = wealth, debt × wealth = debt), non-existence of real square roots for negatives, and division by zero as Khahara (a / 0 = ∞), proving its invariance under addition and subtraction (∞ ± k = ∞) with the metaphor of Lord Viṣṇu.'
+      'In Bījagaṇita, Bhāskarācārya established signed arithmetic (debt × debt = wealth, debt × wealth = debt), non-existence of real square roots for negatives, division by zero as Khahara (a / 0 = ∞), and proved dual positive real roots in the Leaping Monkeys quadratic riddle (x = 48 or 16).',
+      'In 1501 CE Tantrasaṅgraha, Nīlakaṇṭha Somayāji pioneered the Geo-Heliocentric model (planets orbit the Sun, Sun orbits Earth) 87 years before Tycho Brahe, justified by Jyeṣṭhadeva’s Yuktibhāṣā calculus proofs, bounded by Dṛk-Gaṇita-Aikya, and translated into monumental precision stone Yantras (Bṛhat Samrāt with 2-second resolution, Jai Prakash inverted hemispherical bowl, and Rām Yantra) at Jantar Mantar.'
     ]
   },
   {

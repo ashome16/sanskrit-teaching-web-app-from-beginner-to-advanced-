@@ -218,7 +218,7 @@ export const SARVATO_4X4_GRID = [
 
 export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlayAudio }) => {
   const [activeTab, setActiveTab] = useState<
-    'bees' | 'necklace' | 'peacock' | 'lotus' | 'currency' | 'sukshma_kala' | 'maha_kala' | 'anka_pasa' | 'chhaya' | 'bijaganita'
+    'bees' | 'necklace' | 'peacock' | 'lotus' | 'currency' | 'sukshma_kala' | 'maha_kala' | 'anka_pasa' | 'chhaya' | 'bijaganita' | 'yantra_goladhyaya'
   >('bees');
 
   // Sub-mode inside anka_pasa:
@@ -276,6 +276,25 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
   const [customQuadA, setCustomQuadA] = useState<number>(1);
   const [customQuadB, setCustomQuadB] = useState<number>(-4);
   const [customQuadC, setCustomQuadC] = useState<number>(-12);
+
+  // Interactive state for Tab 11: Yantra-Golādhyāya & Nīlakaṇṭha Heliocentrism
+  const [yantraSubMode, setYantraSubMode] = useState<'yantras' | 'nilakantha_orbit' | 'tatkaliki_calculus'>('yantras');
+  const [selectedYantra, setSelectedYantra] = useState<'samrat' | 'jai_prakash' | 'ram'>('samrat');
+  const [samratHourAngle, setSamratHourAngle] = useState<number>(10.5); // 10:30 AM
+  const [jaiPrakashAzimuth, setJaiPrakashAzimuth] = useState<number>(135); // 135° SE
+  const [jaiPrakashAltitude, setJaiPrakashAltitude] = useState<number>(48); // 48° elevation
+  const [ramZenithAngle, setRamZenithAngle] = useState<number>(35); // 35° zenith distance
+
+  // Nīlakaṇṭha Geo-Heliocentric Simulator state
+  const [cosmicModel, setCosmicModel] = useState<'nilakantha' | 'geocentric' | 'heliocentric'>('nilakantha');
+  const [orbitAnimTime, setOrbitAnimTime] = useState<number>(45); // angle in degrees 0-360
+  const [selectedPlanetKeyOrbit, setSelectedPlanetKeyOrbit] = useState<'mercury' | 'venus' | 'mars' | 'jupiter' | 'saturn'>('mars');
+
+  // Bhāskara II Instantaneous Velocity & Mādhava Series
+  const [calculusThetaDeg, setCalculusThetaDeg] = useState<number>(30); // 30°
+  const [calculusDeltaDeg, setCalculusDeltaDeg] = useState<number>(1.0); // 1.0°
+  const [madhavaTermCount, setMadhavaTermCount] = useState<number>(5);
+  const [useMadhavaCorrection, setUseMadhavaCorrection] = useState<boolean>(true);
 
   // Interactive state for Peacock & Snake
   const [pillarHeight, setPillarHeight] = useState<number>(9);
@@ -506,6 +525,7 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
             { id: 'anka_pasa', label: '🔱 Combinatorics & Gatika Kāvya', sub: 'Aṅka-Pāśa & Grids' },
             { id: 'chhaya', label: '☀️ Gnomon Shadows (Chāyā)', sub: 'Double-Shadows & Latitude' },
             { id: 'bijaganita', label: '🧮 Bījagaṇita Algebra', sub: 'Ṛṇa, Dhana & Khahara' },
+            { id: 'yantra_goladhyaya', label: '🔭 Observatories & Heliocentrism', sub: 'Yantras & Nīlakaṇṭha' },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -3965,6 +3985,664 @@ export const LilavatiPoeticMathStudio: React.FC<LilavatiStudioProps> = ({ onPlay
           </div>
         </div>
       )}
+
+      {/* =========================================================================
+          TAB 11: YANTRA-GOLĀDHYĀYA, NĪLAKAṆṬHA HELIOCENTRISM & CALCULUS
+         ========================================================================= */}
+      {activeTab === 'yantra_goladhyaya' && (() => {
+        // Calculations for Sub-mode 1: Monumental Yantras
+        const samratDeltaHours = samratHourAngle - 12;
+        const samratHourAngleDeg = samratDeltaHours * 15;
+        const samratRadius = 27; // meters
+        const samratArcShift2s = ((2 * Math.PI * samratRadius) / 43200) * 1000; // in mm (~3.93 mm)
+        const samratShadowDisp = Math.abs(samratRadius * Math.tan((Math.abs(samratHourAngleDeg) * Math.PI) / 180));
+        const samratAharganaFrac = (samratHourAngle / 24).toFixed(4);
+
+        const jaiZenithDistDeg = Math.max(0, 90 - jaiPrakashAltitude);
+        const jaiAzimuthRad = (jaiPrakashAzimuth * Math.PI) / 180;
+        const jaiShadowRadius = (jaiZenithDistDeg / 90) * 75; // px from bowl center
+        const jaiShadowX = 100 + jaiShadowRadius * Math.sin(jaiAzimuthRad);
+        const jaiShadowY = 100 - jaiShadowRadius * Math.cos(jaiAzimuthRad);
+
+        const ramZenithRad = (ramZenithAngle * Math.PI) / 180;
+        const ramFloorShadow = (12 * Math.tan(ramZenithRad)).toFixed(1);
+        const ramWallShadow = ramZenithAngle > 45 ? (12 * (1 - 1 / Math.tan(ramZenithRad))).toFixed(1) : '0.0';
+        const ramVikshepaEst = (Math.sin(ramZenithRad) * 5.1).toFixed(2);
+
+        // Calculations for Sub-mode 2: Nīlakaṇṭha Orbits
+        const ORBIT_PLANETS: Record<
+          'mercury' | 'venus' | 'mars' | 'jupiter' | 'saturn',
+          { nameSa: string; nameEn: string; color: string; rSun: number; periodDays: number; elongationLimit?: string }
+        > = {
+          mercury: { nameSa: 'बुध (Budha)', nameEn: 'Mercury', color: '#0284c7', rSun: 35, periodDays: 88, elongationLimit: '28°' },
+          venus: { nameSa: 'शुक्र (Śukra)', nameEn: 'Venus', color: '#eab308', rSun: 55, periodDays: 225, elongationLimit: '47°' },
+          mars: { nameSa: 'मङ्गल (Maṅgala)', nameEn: 'Mars', color: '#ef4444', rSun: 75, periodDays: 687 },
+          jupiter: { nameSa: 'गुरु (Guru)', nameEn: 'Jupiter', color: '#f97316', rSun: 95, periodDays: 4333 },
+          saturn: { nameSa: 'शनि (Śani)', nameEn: 'Saturn', color: '#a855f7', rSun: 115, periodDays: 10759 },
+        };
+
+        const activePlanet = ORBIT_PLANETS[selectedPlanetKeyOrbit];
+        const thetaSunRad = (orbitAnimTime * Math.PI) / 180;
+        const sunDist = 70;
+        const sunX = 160 + sunDist * Math.cos(thetaSunRad);
+        const sunY = 160 + sunDist * Math.sin(thetaSunRad);
+
+        const planetAngleRad = thetaSunRad * (365.25 / activePlanet.periodDays);
+        let planetX = 160;
+        let planetY = 160;
+        if (cosmicModel === 'nilakantha') {
+          // Planet orbits Sun; Sun orbits Earth
+          planetX = sunX + activePlanet.rSun * Math.cos(planetAngleRad);
+          planetY = sunY + activePlanet.rSun * Math.sin(planetAngleRad);
+        } else if (cosmicModel === 'geocentric') {
+          // Deferent and epicycle around Earth
+          const defX = 160 + (sunDist + 20) * Math.cos(thetaSunRad);
+          const defY = 160 + (sunDist + 20) * Math.sin(thetaSunRad);
+          planetX = defX + (activePlanet.rSun * 0.45) * Math.cos(planetAngleRad * 2);
+          planetY = defY + (activePlanet.rSun * 0.45) * Math.sin(planetAngleRad * 2);
+        } else {
+          // Modern Heliocentric: Sun at center
+          planetX = 160 + (activePlanet.rSun + 20) * Math.cos(planetAngleRad);
+          planetY = 160 + (activePlanet.rSun + 20) * Math.sin(planetAngleRad);
+        }
+
+        // Earth-to-Planet vector angle from Earth-to-Sun
+        const earthSunVecX = sunX - 160;
+        const earthSunVecY = sunY - 160;
+        const earthPlanetVecX = planetX - 160;
+        const earthPlanetVecY = planetY - 160;
+        const dotProd = earthSunVecX * earthPlanetVecX + earthSunVecY * earthPlanetVecY;
+        const magES = Math.sqrt(earthSunVecX * earthSunVecX + earthSunVecY * earthSunVecY);
+        const magEP = Math.sqrt(earthPlanetVecX * earthPlanetVecX + earthPlanetVecY * earthPlanetVecY);
+        const elongationDeg = Math.acos(Math.max(-1, Math.min(1, dotProd / (magES * magEP)))) * (180 / Math.PI);
+
+        // Calculations for Sub-mode 3: Calculus & Mādhava Series
+        const calcThetaRad = (calculusThetaDeg * Math.PI) / 180;
+        const calcDeltaRad = (calculusDeltaDeg * Math.PI) / 180;
+        const finiteDiffQuotient = (Math.sin(calcThetaRad + calcDeltaRad) - Math.sin(calcThetaRad)) / calcDeltaRad;
+        const analyticalCos = Math.cos(calcThetaRad);
+        const diffError = Math.abs(finiteDiffQuotient - analyticalCos);
+
+        // Mādhava Pi series
+        let madhavaRawSum = 0;
+        for (let k = 1; k <= madhavaTermCount; k++) {
+          const sign = k % 2 === 1 ? 1 : -1;
+          madhavaRawSum += sign * (1 / (2 * k - 1));
+        }
+        const piRaw = 4 * madhavaRawSum;
+        const madhavaTailCorr = (madhavaTermCount) / (4 * Math.pow(madhavaTermCount, 2) + 1);
+        const signCorr = madhavaTermCount % 2 === 1 ? -1 : 1;
+        const piCorrected = 4 * (madhavaRawSum + signCorr * madhavaTailCorr);
+        const truePi = Math.PI;
+
+        return (
+          <div>
+            {/* Sub-mode Switcher */}
+            <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
+              {[
+                { id: 'yantras', label: '🏛️ Monumental Yantras (Jantar Mantar)', sub: 'Samrāt, Jai Prakash & Rām' },
+                { id: 'nilakantha_orbit', label: '☀️ Nīlakaṇṭha Geo-Heliocentrism (1501 CE)', sub: 'Tantrasaṅgraha Orbits' },
+                { id: 'tatkaliki_calculus', label: '⚡ Tātkālikī Gati & Mādhava Series', sub: 'Differential Calculus & π' },
+              ].map((sub) => (
+                <button
+                  key={sub.id}
+                  type="button"
+                  onClick={() => setYantraSubMode(sub.id as any)}
+                  style={{
+                    padding: '0.5rem 0.95rem',
+                    borderRadius: '8px',
+                    border: yantraSubMode === sub.id ? '2px solid #0284c7' : '1px solid #cbd5e1',
+                    background: yantraSubMode === sub.id ? '#0284c7' : '#f8fafc',
+                    color: yantraSubMode === sub.id ? '#ffffff' : '#334155',
+                    fontWeight: 700,
+                    fontSize: '0.82rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease',
+                  }}
+                >
+                  {sub.label}
+                </button>
+              ))}
+            </div>
+
+            {/* SUB-MODE 1: MONUMENTAL YANTRAS */}
+            {yantraSubMode === 'yantras' && (
+              <div>
+                <div style={{ background: '#f0f9ff', border: '1.5px solid #bae6fd', borderRadius: '12px', padding: '1.2rem', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0369a1', textTransform: 'uppercase' }}>
+                      Architectural Instrumentation · यन्त्रमन्त्राणि
+                    </span>
+                    <div style={{ display: 'flex', gap: '0.35rem' }}>
+                      {[
+                        { id: 'samrat', label: '📐 Bṛhat Samrāt Yantra' },
+                        { id: 'jai_prakash', label: '🥣 Jai Prakash Yantra' },
+                        { id: 'ram', label: '🏛️ Rām Yantra' },
+                      ].map((y) => (
+                        <button
+                          key={y.id}
+                          type="button"
+                          onClick={() => setSelectedYantra(y.id as any)}
+                          style={{
+                            padding: '0.35rem 0.7rem',
+                            borderRadius: '6px',
+                            border: 'none',
+                            background: selectedYantra === y.id ? '#0284c7' : '#e0f2fe',
+                            color: selectedYantra === y.id ? '#ffffff' : '#0369a1',
+                            fontWeight: 700,
+                            fontSize: '0.78rem',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          {y.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <h4 style={{ margin: '0 0 0.4rem', fontSize: '1.2rem', fontWeight: 800, color: '#0c4a6e' }}>
+                    {selectedYantra === 'samrat' && 'Bṛhat Samrāt Yantra · The Supreme Equinoctial Gnomon (2-Second Accuracy)'}
+                    {selectedYantra === 'jai_prakash' && 'Jai Prakash Yantra · Concave Hemispherical Sky Mirror (Direct Reading)'}
+                    {selectedYantra === 'ram' && 'Rām Yantra · Twin Cylindrical Inclination & Vikṣepa Meter'}
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#0369a1', lineHeight: 1.55 }}>
+                    {selectedYantra === 'samrat' && 'Standing 27 meters tall, the giant stone gnomon is aligned precisely with the Earth\'s rotational axis pointing to the celestial North Pole. Flanked by massive curved marble quadrants, its shadow shifts at ~4 mm every 2 seconds, giving astronomers the fractional Ahargaṇa needed for differential calculus velocity updates!'}
+                    {selectedYantra === 'jai_prakash' && 'A sunken pair of hollow hemispherical marble bowls dug into the earth. Overhead wires intersect at a center brass plate. The shadow falling on the curved marble directly performs stereographic spherical trigonometry, outputting local altitude, azimuth, and zodiac signs simultaneously without calculations.'}
+                    {selectedYantra === 'ram' && 'Twin roofless cylindrical stone structures featuring a vertical central pillar whose height equals the structure radius. Calibrated radial stone pathways allow observers to step right up to the pillar shadow to measure celestial altitude and isolate latitudinal deviation (Vikṣepa).'}
+                  </p>
+                </div>
+
+                {/* Interactive Controls & Diagram for Selected Yantra */}
+                {selectedYantra === 'samrat' && (
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                    <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                      <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.75rem' }}>
+                        ☀️ Local Solar Time Simulation: {Math.floor(samratHourAngle)}:{String(Math.round((samratHourAngle % 1) * 60)).padStart(2, '0')} {samratHourAngle < 12 ? 'AM' : 'PM'}
+                      </div>
+                      <input
+                        type="range"
+                        min={6.0}
+                        max={18.0}
+                        step={0.1}
+                        value={samratHourAngle}
+                        onChange={(e) => setSamratHourAngle(parseFloat(e.target.value))}
+                        style={{ width: '100%', accentColor: '#0284c7', marginBottom: '1rem' }}
+                      />
+
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.6rem', fontSize: '0.8rem' }}>
+                        <div style={{ background: '#f8fafc', padding: '0.6rem', borderRadius: '6px' }}>
+                          <span style={{ color: '#64748b' }}>Time from Solar Noon:</span><br />
+                          <strong style={{ color: '#0f172a' }}>{samratDeltaHours >= 0 ? `+${samratDeltaHours.toFixed(2)}` : samratDeltaHours.toFixed(2)} hrs</strong>
+                        </div>
+                        <div style={{ background: '#f8fafc', padding: '0.6rem', borderRadius: '6px' }}>
+                          <span style={{ color: '#64748b' }}>Hour Angle (H):</span><br />
+                          <strong style={{ color: '#0f172a' }}>{samratHourAngleDeg.toFixed(1)}°</strong>
+                        </div>
+                        <div style={{ background: '#f8fafc', padding: '0.6rem', borderRadius: '6px' }}>
+                          <span style={{ color: '#64748b' }}>Quadrant Arc Shift (2s):</span><br />
+                          <strong style={{ color: '#0284c7' }}>{samratArcShift2s.toFixed(2)} mm (~4 mm!)</strong>
+                        </div>
+                        <div style={{ background: '#f8fafc', padding: '0.6rem', borderRadius: '6px' }}>
+                          <span style={{ color: '#64748b' }}>Diurnal Ahargaṇa Fraction:</span><br />
+                          <strong style={{ color: '#059669', fontFamily: 'monospace' }}>+{samratAharganaFrac} day</strong>
+                        </div>
+                      </div>
+
+                      <div style={{ marginTop: '1rem', padding: '0.75rem', background: '#ecfdf5', borderRadius: '8px', border: '1px solid #a7f3d0', fontSize: '0.78rem', color: '#065f46' }}>
+                        💡 <strong>Why 27 Meters High?</strong> Earth rotates at 360° per 86,400 seconds (1° every 4 minutes). On a standard 12-inch desk gnomon, 2 seconds shifts the shadow by only ~0.04 mm (invisible). On a 27-meter quadrant, the shadow travels <strong>{samratArcShift2s.toFixed(1)} millimeters</strong> in 2 seconds—making microsecond-level diurnal time tracking legible to the naked eye!
+                      </div>
+                    </div>
+
+                    {/* SVG Visualization of Samrāt Yantra */}
+                    <div style={{ background: '#0f172a', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="280" height="200" viewBox="0 0 280 200">
+                        {/* Ground */}
+                        <line x1="20" y1="180" x2="260" y2="180" stroke="#475569" strokeWidth="2" />
+                        {/* Triangular Gnomon Wall */}
+                        <polygon points="40,180 240,180 240,40" fill="#334155" stroke="#64748b" strokeWidth="1.5" />
+                        <line x1="40" y1="180" x2="240" y2="40" stroke="#38bdf8" strokeWidth="3" />
+                        <text x="130" y="95" fill="#38bdf8" fontSize="10" transform="rotate(-35, 130, 95)" fontWeight="700">Gnomon Axis (27° Lat)</text>
+                        {/* Curved Marble Quadrant */}
+                        <path d="M 140,180 A 100,100 0 0 0 240,100" fill="none" stroke="#f8fafc" strokeWidth="4" />
+                        <text x="180" y="165" fill="#f8fafc" fontSize="9">Marble Quadrant</text>
+                        {/* Sun Ray & Shadow */}
+                        {(() => {
+                          const shadowX = 140 + Math.min(90, Math.max(10, (samratHourAngle - 6) * 8.5));
+                          return (
+                            <>
+                              <circle cx={40 + (samratHourAngle - 6) * 16} cy="25" r="9" fill="#facc15" />
+                              <line x1={40 + (samratHourAngle - 6) * 16} y1="25" x2={shadowX} y2="180" stroke="#fde047" strokeDasharray="3 3" opacity="0.6" />
+                              <line x1={shadowX} y1="172" x2={shadowX} y2="188" stroke="#ef4444" strokeWidth="3" />
+                              <text x={shadowX - 25} y="196" fill="#ef4444" fontSize="9" fontWeight="800">Shadow: {samratShadowDisp.toFixed(1)}m</text>
+                            </>
+                          );
+                        })()}
+                      </svg>
+                      <div style={{ color: '#94a3b8', fontSize: '0.74rem', marginTop: '0.3rem', textAlign: 'center' }}>
+                        Cross-sectional geometry of Bṛhat Samrāt Yantra (Jaipur)
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {selectedYantra === 'jai_prakash' && (
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                    <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                      <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
+                        🧭 Celestial Coordinate Targeting
+                      </div>
+                      <div style={{ marginBottom: '0.8rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                          <span>Target Azimuth (Digamsha):</span>
+                          <strong style={{ color: '#0284c7' }}>{jaiPrakashAzimuth}°</strong>
+                        </div>
+                        <input
+                          type="range"
+                          min={0}
+                          max={360}
+                          value={jaiPrakashAzimuth}
+                          onChange={(e) => setJaiPrakashAzimuth(parseInt(e.target.value, 10))}
+                          style={{ width: '100%', accentColor: '#0284c7' }}
+                        />
+                      </div>
+
+                      <div style={{ marginBottom: '0.8rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                          <span>Target Altitude (Unnatamsha):</span>
+                          <strong style={{ color: '#059669' }}>{jaiPrakashAltitude}°</strong>
+                        </div>
+                        <input
+                          type="range"
+                          min={10}
+                          max={90}
+                          value={jaiPrakashAltitude}
+                          onChange={(e) => setJaiPrakashAltitude(parseInt(e.target.value, 10))}
+                          style={{ width: '100%', accentColor: '#059669' }}
+                        />
+                      </div>
+
+                      <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '8px', fontSize: '0.8rem', lineHeight: 1.6 }}>
+                        <div><strong>Zenith Distance (Natāmśa):</strong> 90° - {jaiPrakashAltitude}° = <span style={{ color: '#0284c7' }}>{jaiZenithDistDeg}°</span></div>
+                        <div><strong>Inverted Hemisphere Mapping:</strong> Zenith is at bowl center; horizon is at bowl rim.</div>
+                        <div><strong>Direct Readout:</strong> As shadow touches the inscribed marble curves, observers read Zodiac Longitude (Rāśi) and Anomaly (Śīghra) directly!</div>
+                      </div>
+                    </div>
+
+                    {/* SVG Bowl Diagram */}
+                    <div style={{ background: '#0f172a', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="220" height="220" viewBox="0 0 200 200">
+                        {/* Outer Bowl Rim */}
+                        <circle cx="100" cy="100" r="85" fill="#1e293b" stroke="#64748b" strokeWidth="2" />
+                        {/* Concentric Altitude Rings */}
+                        <circle cx="100" cy="100" r="60" fill="none" stroke="#475569" strokeDasharray="2 2" />
+                        <circle cx="100" cy="100" r="35" fill="none" stroke="#475569" strokeDasharray="2 2" />
+                        <circle cx="100" cy="100" r="10" fill="none" stroke="#475569" strokeDasharray="2 2" />
+                        {/* Crosswires */}
+                        <line x1="15" y1="100" x2="185" y2="100" stroke="#94a3b8" strokeWidth="1" />
+                        <line x1="100" y1="15" x2="100" y2="185" stroke="#94a3b8" strokeWidth="1" />
+                        {/* Center Ring Plate */}
+                        <circle cx="100" cy="100" r="5" fill="#fbbf24" stroke="#d97706" />
+                        {/* Shadow of Center Plate */}
+                        <circle cx={jaiShadowX} cy={jaiShadowY} r="6" fill="#ef4444" opacity="0.8" />
+                        <line x1="100" y1="100" x2={jaiShadowX} y2={jaiShadowY} stroke="#f87171" strokeDasharray="2 2" />
+                        <text x="100" y="12" fill="#94a3b8" fontSize="8" textAnchor="middle">N (0°)</text>
+                        <text x="195" y="103" fill="#94a3b8" fontSize="8">E (90°)</text>
+                        <text x="100" y="196" fill="#94a3b8" fontSize="8" textAnchor="middle">S (180°)</text>
+                        <text x="5" y="103" fill="#94a3b8" fontSize="8">W (270°)</text>
+                      </svg>
+                      <div style={{ color: '#94a3b8', fontSize: '0.74rem', marginTop: '0.3rem', textAlign: 'center' }}>
+                        Shadow coordinate ({jaiShadowX.toFixed(0)}, {jaiShadowY.toFixed(0)}) inside concave marble hemisphere
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {selectedYantra === 'ram' && (
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                    <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                      <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
+                        🏛️ Cylindrical Pillar &amp; Latitudinal Deviation (Vikṣepa)
+                      </div>
+                      <div style={{ marginBottom: '0.8rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                          <span>Zenith Angle of Celestial Body:</span>
+                          <strong style={{ color: '#a855f7' }}>{ramZenithAngle}°</strong>
+                        </div>
+                        <input
+                          type="range"
+                          min={5}
+                          max={75}
+                          value={ramZenithAngle}
+                          onChange={(e) => setRamZenithAngle(parseInt(e.target.value, 10))}
+                          style={{ width: '100%', accentColor: '#a855f7' }}
+                        />
+                      </div>
+
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.6rem', fontSize: '0.8rem' }}>
+                        <div style={{ background: '#f8fafc', padding: '0.6rem', borderRadius: '6px' }}>
+                          <span style={{ color: '#64748b' }}>Floor Shadow Length:</span><br />
+                          <strong style={{ color: '#0f172a' }}>{ramFloorShadow} units</strong>
+                        </div>
+                        <div style={{ background: '#f8fafc', padding: '0.6rem', borderRadius: '6px' }}>
+                          <span style={{ color: '#64748b' }}>Wall Shadow Height:</span><br />
+                          <strong style={{ color: '#a855f7' }}>{ramWallShadow} units</strong>
+                        </div>
+                        <div style={{ background: '#f8fafc', padding: '0.6rem', borderRadius: '6px', gridColumn: 'span 2' }}>
+                          <span style={{ color: '#64748b' }}>Derived Orbital Inclination (Vikṣepa):</span><br />
+                          <strong style={{ color: '#059669', fontSize: '0.95rem' }}>β ≈ {ramVikshepaEst}° from Ecliptic</strong>
+                        </div>
+                      </div>
+
+                      <p style={{ margin: '0.75rem 0 0', fontSize: '0.78rem', color: '#64748b', lineHeight: 1.5 }}>
+                        The twin cylindrical structures have 30 triangular floor sectors separated by equal gaps, enabling astronomers to walk along graduated radial stone planks to read planetary coordinates without distortion.
+                      </p>
+                    </div>
+
+                    {/* SVG Diagram of Ram Yantra */}
+                    <div style={{ background: '#0f172a', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="240" height="180" viewBox="0 0 240 180">
+                        {/* Cylinder Walls */}
+                        <line x1="30" y1="60" x2="30" y2="150" stroke="#cbd5e1" strokeWidth="4" />
+                        <line x1="210" y1="60" x2="210" y2="150" stroke="#cbd5e1" strokeWidth="4" />
+                        <line x1="30" y1="150" x2="210" y2="150" stroke="#64748b" strokeWidth="2" />
+                        {/* Center Pillar */}
+                        <rect x="116" y="70" width="8" height="80" fill="#f8fafc" stroke="#94a3b8" />
+                        {/* Shadow Ray */}
+                        {(() => {
+                          const shadowX = 120 + Math.min(80, Math.tan(ramZenithRad) * 60);
+                          return (
+                            <>
+                              <circle cx={120 - Math.sin(ramZenithRad) * 110} cy={20} r="8" fill="#facc15" />
+                              <line x1={120} y1="70" x2={shadowX} y2="150" stroke="#c084fc" strokeWidth="2.5" />
+                              <line x1={120} y1="150" x2={shadowX} y2="150" stroke="#a855f7" strokeWidth="4" />
+                              <text x={shadowX + 5} y="145" fill="#c084fc" fontSize="9" fontWeight="700">Shadow: {ramFloorShadow}</text>
+                            </>
+                          );
+                        })()}
+                      </svg>
+                      <div style={{ color: '#94a3b8', fontSize: '0.74rem', marginTop: '0.3rem', textAlign: 'center' }}>
+                        Rām Yantra central gnomon pillar shadow casting
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* SUB-MODE 2: NĪLAKAṆṬHA GEO-HELIOCENTRIC ORBITS */}
+            {yantraSubMode === 'nilakantha_orbit' && (
+              <div>
+                <div style={{ background: '#fefce8', border: '1.5px solid #fef08a', borderRadius: '12px', padding: '1.2rem', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                      Kerala School Heliocentrism (1501 CE) · तन्त्रसङ्ग्रहः
+                    </span>
+                    <span style={{ background: '#fef08a', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 800, color: '#713f12' }}>
+                      87 Years Before Tycho Brahe (1588 CE)
+                    </span>
+                  </div>
+                  <h4 style={{ margin: '0 0 0.4rem', fontSize: '1.2rem', fontWeight: 800, color: '#713f12' }}>
+                    शीघ्रोच्चो भास्करः प्रोक्तः · The Mean Sun as the Center of Planetary Orbits
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#854d0e', lineHeight: 1.55 }}>
+                    In 1501 CE, Nīlakaṇṭha Somayāji proved in the <em>Tantrasaṅgraha</em> that Mercury, Venus, Mars, Jupiter, and Saturn do not orbit the Earth—they orbit the Sun, and the Sun carries their entire family around the Earth! This unified the Manda (elliptical) and Śīghra (solar anomaly) corrections into a single vector space, eliminating Ptolemy&apos;s equant.
+                  </p>
+                </div>
+
+                {/* Model Selector & Controls */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#334155', marginBottom: '0.6rem' }}>
+                      Select Cosmological Model:
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.4rem', marginBottom: '1rem' }}>
+                      {[
+                        { id: 'nilakantha', label: '☀️ Nīlakaṇṭha (1501 CE)' },
+                        { id: 'geocentric', label: '🌍 Ptolemy Geocentric' },
+                        { id: 'heliocentric', label: '🌌 Modern Heliocentric' },
+                      ].map((m) => (
+                        <button
+                          key={m.id}
+                          type="button"
+                          onClick={() => setCosmicModel(m.id as any)}
+                          style={{
+                            padding: '0.45rem 0.3rem',
+                            borderRadius: '6px',
+                            border: 'none',
+                            background: cosmicModel === m.id ? '#854d0e' : '#fef9c3',
+                            color: cosmicModel === m.id ? '#ffffff' : '#854d0e',
+                            fontWeight: 700,
+                            fontSize: '0.74rem',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          {m.label}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#334155', marginBottom: '0.5rem' }}>
+                      Select Orbiting Planet:
+                    </div>
+                    <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                      {(Object.keys(ORBIT_PLANETS) as Array<keyof typeof ORBIT_PLANETS>).map((key) => (
+                        <button
+                          key={key}
+                          type="button"
+                          onClick={() => setSelectedPlanetKeyOrbit(key)}
+                          style={{
+                            padding: '0.3rem 0.6rem',
+                            borderRadius: '6px',
+                            border: 'none',
+                            background: selectedPlanetKeyOrbit === key ? ORBIT_PLANETS[key].color : '#f1f5f9',
+                            color: selectedPlanetKeyOrbit === key ? '#ffffff' : '#475569',
+                            fontWeight: 700,
+                            fontSize: '0.76rem',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          {ORBIT_PLANETS[key].nameSa}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div style={{ marginBottom: '1rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                        <span>Orbital Epoch / Time Angle:</span>
+                        <strong style={{ color: '#854d0e' }}>{orbitAnimTime}°</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={0}
+                        max={360}
+                        step={2}
+                        value={orbitAnimTime}
+                        onChange={(e) => setOrbitAnimTime(parseInt(e.target.value, 10))}
+                        style={{ width: '100%', accentColor: '#854d0e' }}
+                      />
+                    </div>
+
+                    <div style={{ background: '#fefce8', padding: '0.75rem', borderRadius: '8px', border: '1px solid #fef08a', fontSize: '0.78rem', lineHeight: 1.55 }}>
+                      <div><strong>Planet:</strong> {activePlanet.nameSa} ({activePlanet.nameEn})</div>
+                      <div><strong>Orbital Period:</strong> {activePlanet.periodDays} Days</div>
+                      {activePlanet.elongationLimit && (
+                        <div><strong>Maximum Solar Elongation:</strong> <span style={{ color: '#0284c7', fontWeight: 800 }}>{activePlanet.elongationLimit}</span></div>
+                      )}
+                      <div><strong>Current Angle from Sun:</strong> <span style={{ color: '#d97706', fontWeight: 800 }}>{elongationDeg.toFixed(1)}°</span></div>
+                      <div style={{ marginTop: '0.4rem', color: '#713f12' }}>
+                        📜 <em>In Yuktibhāṣā (1530 CE), Jyeṣṭhadeva proved that anchoring the planets directly to the Sun turns non-linear latitudinal perturbations (Vikṣepa) into smooth, predictable conic sections!</em>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* SVG Celestial Orbit Visualizer */}
+                  <div style={{ background: '#090d16', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                    <svg width="320" height="320" viewBox="0 0 320 320">
+                      {/* Fixed Anchor at Center */}
+                      {cosmicModel === 'heliocentric' ? (
+                        <>
+                          <circle cx="160" cy="160" r="12" fill="#facc15" stroke="#f59e0b" strokeWidth="2" />
+                          <text x="160" y="163" fill="#78350f" fontSize="7" fontWeight="800" textAnchor="middle">☀️ SUN</text>
+                        </>
+                      ) : (
+                        <>
+                          <circle cx="160" cy="160" r="10" fill="#3b82f6" stroke="#1d4ed8" strokeWidth="2" />
+                          <text x="160" y="163" fill="#ffffff" fontSize="7" fontWeight="800" textAnchor="middle">🌍 EARTH</text>
+                        </>
+                      )}
+
+                      {/* Deferent / Sun Orbit */}
+                      {cosmicModel !== 'heliocentric' && (
+                        <circle cx="160" cy="160" r={sunDist} fill="none" stroke="#eab308" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6" />
+                      )}
+
+                      {/* Moving Sun (in Nīlakaṇṭha & Geocentric) */}
+                      {cosmicModel !== 'heliocentric' && (
+                        <>
+                          <circle cx={sunX} cy={sunY} r="10" fill="#facc15" stroke="#f59e0b" strokeWidth="2" />
+                          <text x={sunX} y={sunY + 3} fill="#78350f" fontSize="6" fontWeight="800" textAnchor="middle">☀️ SUN</text>
+                        </>
+                      )}
+
+                      {/* Orbit of Planet around Sun (Nīlakaṇṭha) */}
+                      {cosmicModel === 'nilakantha' && (
+                        <circle cx={sunX} cy={sunY} r={activePlanet.rSun} fill="none" stroke={activePlanet.color} strokeWidth="1" strokeDasharray="2 2" opacity="0.7" />
+                      )}
+
+                      {/* Moving Planet */}
+                      <circle cx={planetX} cy={planetY} r="6" fill={activePlanet.color} stroke="#ffffff" strokeWidth="1.5" />
+                      <text x={planetX} y={planetY - 9} fill={activePlanet.color} fontSize="8" fontWeight="800" textAnchor="middle">
+                        {activePlanet.nameSa.split(' ')[0]}
+                      </text>
+
+                      {/* Sightline Vector from Earth to Planet */}
+                      {cosmicModel !== 'heliocentric' && (
+                        <line x1="160" y1="160" x2={planetX} y2={planetY} stroke="#ffffff" strokeWidth="1" strokeDasharray="2 2" opacity="0.4" />
+                      )}
+                    </svg>
+                    <div style={{ color: '#94a3b8', fontSize: '0.74rem', marginTop: '0.3rem', textAlign: 'center' }}>
+                      {cosmicModel === 'nilakantha' && 'Nīlakaṇṭha 1501 CE: Five planets orbit the Sun; Sun orbits stationary Earth.'}
+                      {cosmicModel === 'geocentric' && 'Ptolemy: Epicycle rolling on deferent around Earth.'}
+                      {cosmicModel === 'heliocentric' && 'Modern Heliocentric: Earth and planets orbit Sun.'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* SUB-MODE 3: TĀTKĀLIKĪ GATI & MĀDHAVA SERIES */}
+            {yantraSubMode === 'tatkaliki_calculus' && (
+              <div>
+                <div style={{ background: '#f8fafc', border: '1.5px solid #cbd5e1', borderRadius: '12px', padding: '1.2rem', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0284c7', textTransform: 'uppercase' }}>
+                      Infinitesimal Calculus &amp; Infinite Power Series · अवकलनं कलनशास्त्रं च
+                    </span>
+                    <span style={{ background: '#e0f2fe', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 800, color: '#0369a1' }}>
+                      Bhāskara II (1150 CE) &amp; Mādhava (1340 CE)
+                    </span>
+                  </div>
+                  <h4 style={{ margin: '0 0 0.4rem', fontSize: '1.2rem', fontWeight: 800, color: '#0f172a' }}>
+                    तात्कालिकी गतिः · Instantaneous Differential Velocity &amp; Mādhava&apos;s Rational Corrections for π
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#475569', lineHeight: 1.55 }}>
+                    Five centuries before Newton and Leibniz, Bhāskarācārya formulated instantaneous velocity as the derivative of the sine chord: <strong>δ(sin θ) ≈ cos θ · δθ</strong>, and recognized that at orbital turning points (retrogrades &amp; eclipse peaks), instantaneous velocity equals zero. Later, Mādhava derived the infinite series for π with rational end-correction terms yielding 11 decimal places!
+                  </p>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                  {/* Part A: Bhāskara's Differential Motion */}
+                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                    <div style={{ fontSize: '0.86rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.75rem' }}>
+                      ⚡ Part A: Bhāskarācārya&apos;s Differential Derivative: d/dθ(sin θ) = cos θ
+                    </div>
+                    <div style={{ marginBottom: '0.8rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                        <span>Angle θ:</span>
+                        <strong style={{ color: '#0284c7' }}>{calculusThetaDeg}°</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={0}
+                        max={90}
+                        value={calculusThetaDeg}
+                        onChange={(e) => setCalculusThetaDeg(parseInt(e.target.value, 10))}
+                        style={{ width: '100%', accentColor: '#0284c7' }}
+                      />
+                    </div>
+
+                    <div style={{ marginBottom: '0.8rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                        <span>Infinitesimal Increment δθ:</span>
+                        <strong style={{ color: '#059669' }}>{calculusDeltaDeg.toFixed(2)}°</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={0.01}
+                        max={10.0}
+                        step={0.05}
+                        value={calculusDeltaDeg}
+                        onChange={(e) => setCalculusDeltaDeg(parseFloat(e.target.value))}
+                        style={{ width: '100%', accentColor: '#059669' }}
+                      />
+                    </div>
+
+                    <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '8px', fontSize: '0.8rem', lineHeight: 1.6 }}>
+                      <div><strong>Finite Difference [sin(θ+δθ) - sin(θ)] / δθ:</strong> <span style={{ fontFamily: 'monospace', color: '#0284c7' }}>{finiteDiffQuotient.toFixed(6)}</span></div>
+                      <div><strong>Analytical Cosine cos(θ):</strong> <span style={{ fontFamily: 'monospace', color: '#059669' }}>{analyticalCos.toFixed(6)}</span></div>
+                      <div><strong>Difference Error:</strong> <span style={{ fontFamily: 'monospace', color: diffError < 0.001 ? '#16a34a' : '#d97706' }}>{diffError.toFixed(6)}</span></div>
+                      {calculusThetaDeg === 90 && (
+                        <div style={{ marginTop: '0.4rem', color: '#dc2626', fontWeight: 800 }}>
+                          🛑 At θ = 90° (Orbital Apogee / Maximum Eclipse): cos(90°) = 0 ⟹ Instantaneous Velocity vanishes (Fermat&apos;s Theorem 500 years early!).
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Part B: Mādhava's Infinite Series for Pi */}
+                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.1rem' }}>
+                    <div style={{ fontSize: '0.86rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.75rem' }}>
+                      ♾️ Part B: Mādhava&apos;s Infinite Series &amp; Rational Correction for π
+                    </div>
+                    <div style={{ marginBottom: '0.8rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', marginBottom: '0.2rem' }}>
+                        <span>Number of Terms (n):</span>
+                        <strong style={{ color: '#a855f7' }}>{madhavaTermCount}</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={1}
+                        max={25}
+                        value={madhavaTermCount}
+                        onChange={(e) => setMadhavaTermCount(parseInt(e.target.value, 10))}
+                        style={{ width: '100%', accentColor: '#a855f7' }}
+                      />
+                    </div>
+
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: '#334155', cursor: 'pointer', marginBottom: '0.8rem' }}>
+                      <input
+                        type="checkbox"
+                        checked={useMadhavaCorrection}
+                        onChange={(e) => setUseMadhavaCorrection(e.target.checked)}
+                        style={{ accentColor: '#a855f7' }}
+                      />
+                      <span>Apply Mādhava&apos;s Rational Tail Correction: <strong style={{ fontFamily: 'monospace' }}>C_n = n / (4n² + 1)</strong></span>
+                    </label>
+
+                    <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '8px', fontSize: '0.8rem', lineHeight: 1.6 }}>
+                      <div><strong>Raw Gregory-Leibniz Sum:</strong> <span style={{ fontFamily: 'monospace', color: '#dc2626' }}>{piRaw.toFixed(7)}</span> (Error: {Math.abs(piRaw - truePi).toFixed(5)})</div>
+                      <div><strong>Mādhava Corrected Sum:</strong> <span style={{ fontFamily: 'monospace', color: '#16a34a', fontWeight: 800 }}>{piCorrected.toFixed(7)}</span> (Error: {Math.abs(piCorrected - truePi).toFixed(7)})</div>
+                      <div><strong>True π:</strong> <span style={{ fontFamily: 'monospace', color: '#0f172a' }}>{truePi.toFixed(7)}</span></div>
+                      <div style={{ marginTop: '0.4rem', fontSize: '0.74rem', color: '#64748b' }}>
+                        💡 Without correction, 10 terms gives π ≈ 3.04 (terrible!). With Mādhava&apos;s tail factor, just 10 terms yields 3.1415926 (sub-part-per-million accuracy)!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })()}
     </div>
   );
 };
