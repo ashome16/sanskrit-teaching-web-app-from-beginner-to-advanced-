@@ -44,6 +44,7 @@ import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters
 import { playLessonText, playPronunciation } from '../utils/pronunciation';
 import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
 import { hasDevanagariLetter, isDandaOrVerseNumberToken } from '../utils/dandaSpeech';
+import { readerTokens } from '../utils/readerTokens';
 import '../styles/dashboard.css';
 
 /** Conjunct Games live under Grammar now — keep out of Deepakam nav. */
@@ -771,7 +772,7 @@ const Dashboard: React.FC = () => {
       setWordSelection(null);
       return;
     }
-    const raw = s.words?.length ? s.words : (s.sanskrit || '').split(/\s+/);
+    const raw = readerTokens(s);
     const candidates = raw
       .map((w) => cleanWord(w) || w.replace(/[॥।,;:!?—–\-…/()]+/g, '').trim())
       .filter((w) => hasDevanagariLetter(w));

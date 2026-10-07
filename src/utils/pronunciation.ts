@@ -454,8 +454,11 @@ export const playSequence = (
   options?: {
     gapMs?: number;
     onDone?: () => void;
-    /** Fired just before each item is spoken (for tile highlight). */
-    onItem?: (word: string, index: number) => void;
+    /**
+     * Fired just before each item is spoken (for tile highlight). `index` counts
+     * spoken items only; `sourceIndex` is the item's position in `values`.
+     */
+    onItem?: (word: string, index: number, sourceIndex: number) => void;
     /**
      * Lesson reader only. Bare numerals become Sanskrit cardinals and are
      * spoken as Devanagari (plain), not as Hindi digit names.
@@ -471,24 +474,24 @@ export const playSequence = (
   },
 ): (() => void) => {
   const gapMs = options?.gapMs ?? 220;
-  const items: { word: string; plain: boolean }[] = [];
-  for (const value of values) {
+  const items: { word: string; plain: boolean; source: number }[] = [];
+  for (const [source, value] of values.entries()) {
     // Skip daṇḍa / double daṇḍa / verse-number tokens so Play-all never says "danda".
     if (isDandaOrVerseNumberToken(value)) continue;
     if (options?.plainDevanagari) {
       const phrase = expandDigitsInLessonText(value).replace(/\s+/g, ' ').trim();
-      if (phrase) items.push({ word: phrase, plain: true });
+      if (phrase) items.push({ word: phrase, plain: true, source });
       continue;
     }
     // Lesson reader: any digit inside the line, not only a numeral-only token.
     if (options?.sanskritCardinals && /[0-9०-९]/.test(value)) {
       const phrase = stripDandaForSpeech(expandDigitsInLessonText(value)).replace(/\s+/g, ' ').trim();
-      if (phrase) items.push({ word: phrase, plain: true });
+      if (phrase) items.push({ word: phrase, plain: true, source });
       continue;
     }
     const word = cleanWord(value) || value.trim();
     if (word && isSanskritText(word)) {
-      items.push({ word, plain: false });
+      items.push({ word, plain: false, source });
     }
   }
 
@@ -530,7 +533,7 @@ export const playSequence = (
     const word = item.word;
     const itemIndex = index;
     index += 1;
-    options?.onItem?.(word, itemIndex);
+    options?.onItem?.(word, itemIndex, item.source);
 
     const after = () => {
       if (cancelled || settledForIndex === itemIndex) return;

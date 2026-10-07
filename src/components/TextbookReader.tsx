@@ -4,6 +4,7 @@ import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
 import { playLessonText, playPronunciation, playSequence, speakAsBodhi, stopPronunciation } from '../utils/pronunciation';
 import { setBarakhadiSpeechContext } from '../utils/macBarakhadiSpeech';
 import { hasDevanagariLetter, isDandaOrVerseNumberToken } from '../utils/dandaSpeech';
+import { readerSpeechItems, readerTokens } from '../utils/readerTokens';
 import {
   loadAnalyseGlosses,
   lookupAnalyseGloss,
@@ -336,6 +337,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   /** Lesson paragraphs only. Grouped charts (Varṇamālā / Numbers / बारहखड़ी) stay on isPlayingAll. */
   const [playAllPhase, setPlayAllPhase] = useState<'idle' | 'playing' | 'paused'>('idle');
   const [playingLetter, setPlayingLetter] = useState<string | null>(null);
+  /** Lesson Play all: display index of the word being spoken (highlight follows the voice). */
+  const [playingTokenIdx, setPlayingTokenIdx] = useState<number | null>(null);
   const [playingGroupIdx, setPlayingGroupIdx] = useState<number | null>(null);
   const [varnamalaSubMode, setVarnamalaSubMode] = useState<'sound' | 'writing' | 'worksheets'>('sound');
   const [numbersSubMode, setNumbersSubMode] = useState<'interactive' | 'tiles'>('interactive');
@@ -474,6 +477,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     setPlayAllPhase('idle');
     paragraphIndexRef.current = 0;
     setPlayingLetter(null);
+    setPlayingTokenIdx(null);
     setPlayingGroupIdx(null);
     clearTapChip();
   }, [activeLessonId, sentenceNumber]);
@@ -520,20 +524,17 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     clearTapChip();
   }, [isVarnamala, varnamalaSubMode]);
 
-  const speechItemsFromSentence = (item: LessonSentence): string[] => {
-    // Daṇḍa / double daṇḍa / verse numbers are punctuation — never queue them for speech.
-    if (item.words?.length) return item.words.filter((word) => !isDandaOrVerseNumberToken(word));
-    return (item.sanskrit || '')
-      .split(/\s+/)
-      .map((part) => part.replace(/[॥।,;:!?—–\-…/()]+/g, ''))
-      .filter((part) => hasDevanagariLetter(part));
-  };
+  /**
+   * Every word of the paragraph in reading order (इति, च, न … included), each
+   * with its display index. Daṇḍas, verse numbers and English glosses are not spoken.
+   */
+  const speechItemsFromSentence = (item: LessonSentence) => readerSpeechItems(readerTokens(item));
 
   const collectPlayAllItems = (): string[] => {
     if (isGroupedLesson && activeLesson) {
       return activeLesson.sentences.flatMap((group) => group.words || []);
     }
-    return speechItemsFromSentence(sentence);
+    return speechItemsFromSentence(sentence).map((item) => item.text);
   };
 
   /**
@@ -550,6 +551,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     setPlayAllPhase('playing');
     setIsPlayingAll(true);
     setPlayingGroupIdx(null);
+    setPlayingTokenIdx(null);
     if (start >= items.length) {
       if (sentenceNumber < totalSentences) {
         continueAfterAdvanceRef.current = true;
@@ -567,12 +569,14 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     const slice = items.slice(start);
     stopPlayAllRef.current?.();
     stopPlayAllRef.current = null;
-    stopPlayAllRef.current = playSequence(slice, {
+    stopPlayAllRef.current = playSequence(slice.map((item) => item.text), {
       gapMs: 240,
       sanskritCardinals: true,
-      onItem: (word, index) => {
-        paragraphIndexRef.current = start + index;
+      onItem: (word, _index, sourceIndex) => {
+        // Pause / resume replays this exact word.
+        paragraphIndexRef.current = start + sourceIndex;
         setPlayingLetter(word);
+        setPlayingTokenIdx(slice[sourceIndex]?.tokenIndex ?? null);
       },
       onDone: () => {
         stopPlayAllRef.current = null;
@@ -745,6 +749,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     ? (isPlayingAll && playingLetter ? playingLetter : tapPlayingLetter)
     : null;
   const nowPlayingMnemonic = nowPlayingLetter ? getLetterMnemonic(nowPlayingLetter) : undefined;
+  /** Paragraph words in reading order. Shown and spoken from the same list. */
+  const lessonTokens = !isGroupedLesson && sentence ? readerTokens(sentence) : [];
+  const speakingTokenIdx = !isGroupedLesson && playAllPhase === 'playing' ? playingTokenIdx : null;
   const studyJumps = isGroupedLesson ? {} : findStudyJumps(activeLesson);
   const nextLessonInTrack = (() => {
     const track = lessonTrack(activeLessonId);
@@ -1845,8 +1852,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   <div className="textbook-glossary-pair" style={{ marginTop: 0 }}>
                     <span className="textbook-glossary-label">📝 पाठ्य-टिप्पणी · Context &amp; Notes</span>
                     <p className="textbook-exercise-note-text">
-                      {sentence.words && sentence.words.length > 0 ? (
-                        sentence.words.map((word, idx) => {
+                      {lessonTokens.length > 0 ? (
+                        lessonTokens.map((word, idx) => {
                           const hasLetter = hasDevanagariLetter(word);
                           if (isDandaOrVerseNumberToken(word) || !hasLetter) {
                             return (
@@ -1860,11 +1867,14 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                             );
                           }
                           const cleaned = cleanWord(word);
-                          const isSelected = Boolean(cleanActiveWord && cleaned === cleanActiveWord);
+                          const isSelected = speakingTokenIdx !== null
+                            ? idx === speakingTokenIdx
+                            : Boolean(cleanActiveWord && cleaned === cleanActiveWord);
                           return (
                             <span
                               key={`${activeLessonId}-${sentenceNumber}-en-${idx}`}
-                              className={`interactive-word${isSelected ? ' interactive-word--active' : ''}`}
+                              data-token-index={idx}
+                              className={`interactive-word${isSelected ? ' interactive-word--active' : ''}${idx === speakingTokenIdx ? ' interactive-word--speaking' : ''}`}
                               onClick={() => handleSpokenWord(word)}
                               role="button"
                               tabIndex={0}
@@ -1965,7 +1975,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           ) : (
             <>
               <p className="textbook-sentence-sanskrit">
-                {sentence.words.map((word, idx) => {
+                {lessonTokens.map((word, idx) => {
                   // । ॥ (and verse numbers like ॥१॥) stay visible but are not clickable words.
                   if (isDandaOrVerseNumberToken(word)) {
                     return (
@@ -1978,12 +1988,23 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       </span>
                     );
                   }
+                  // While Play all speaks, only the word being spoken is lit (repeats light in order).
+                  if (!hasDevanagariLetter(word) && !/[०-९]/.test(word)) {
+                    return (
+                      <span key={`${activeLessonId}-${sentenceNumber}-${idx}`} className="textbook-punct-mark">
+                        {word}
+                      </span>
+                    );
+                  }
                   const cleaned = cleanWord(word);
-                  const isSelected = Boolean(cleanActiveWord && cleaned === cleanActiveWord);
+                  const isSelected = speakingTokenIdx !== null
+                    ? idx === speakingTokenIdx
+                    : Boolean(cleanActiveWord && cleaned === cleanActiveWord);
                   return (
                     <span
                       key={`${activeLessonId}-${sentenceNumber}-${idx}`}
-                      className={`interactive-word${isSelected ? ' interactive-word--active' : ''}`}
+                      data-token-index={idx}
+                      className={`interactive-word${isSelected ? ' interactive-word--active' : ''}${idx === speakingTokenIdx ? ' interactive-word--speaking' : ''}`}
                       onClick={() => handleSpokenWord(word)}
                       role="button"
                       tabIndex={0}
