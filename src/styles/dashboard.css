@@ -396,6 +396,18 @@ button.dashboard-nav-group-label:focus-visible,
   line-height: 1.15;
 }
 
+.dashboard-nav-sub-img {
+  width: 14px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-right: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .dashboard-nav button.dashboard-nav-soon,
 .dashboard-nav-sub button.dashboard-nav-soon {
   opacity: 0.5;

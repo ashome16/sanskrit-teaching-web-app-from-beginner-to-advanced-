@@ -60,14 +60,14 @@ export const QUIZ_TRACKS: QuizTrack[] = [
   },
   {
     id: 'grammar',
-    label: 'Grammar & Foundations',
-    sublabel: 'Vyākaraṇa, Varṇamālā & literature lines',
+    label: 'Vaidic Vyākaraṇam & Foundations',
+    sublabel: 'वैदिक-व्याकरणम्, Varṇamālā & literature lines',
     icon: '📐',
     countBadge: formatQuizCount(GRAMMAR_QUIZ_COUNT),
   },
   {
     id: 'vedic_maths',
-    label: 'Vedic Mathematics',
+    label: 'Vaidic Gaṇitam (वैदिक-गणितम्)',
     sublabel: 'Speed Sutras & Calculation',
     icon: '⚡',
     countBadge: '5 Qs',

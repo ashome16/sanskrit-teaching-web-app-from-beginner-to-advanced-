@@ -237,7 +237,7 @@ const step = (s: SimState) => {
 
 const naksName = (i: number, script: Script) => (script === 'dev' ? NAKSHATRAS[i].dev : NAKSHATRAS[i].iast);
 
-const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTrails: boolean) => {
+const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTrails: boolean, puranicMode: boolean = false) => {
   ctx.clearRect(0, 0, SIZE, SIZE);
   // sky
   const g = ctx.createRadialGradient(C, C, 40, C, C, C);
@@ -358,6 +358,85 @@ const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTr
     ctx.fill();
     label(BODY_NAMES.moon[script], moon.x + 16, moon.y + 16, '#e2e8f0');
   }
+
+  // Purāṇic Cosmic Mode Visuals
+  if (puranicMode) {
+    // 1. Dhruva-tārā (Pole Star) at Celestial Pivot (top center)
+    const dhruvaX = C;
+    const dhruvaY = 24;
+    ctx.save();
+    ctx.shadowColor = '#38bdf8';
+    ctx.shadowBlur = 14;
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.arc(dhruvaX, dhruvaY, 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.restore();
+
+    ctx.font = '700 10.5px "Noto Sans Devanagari", system-ui, sans-serif';
+    ctx.fillStyle = '#38bdf8';
+    ctx.textAlign = 'center';
+    ctx.fillText(script === 'dev' ? 'ध्रुव-तारा (Polar Axis)' : 'Dhruva (Polaris)', dhruvaX, dhruvaY - 8);
+
+    // Cosmic wind cord (Pravaha-vāyu) from Dhruva
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.22)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([3, 5]);
+    ctx.beginPath();
+    ctx.moveTo(dhruvaX, dhruvaY);
+    ctx.lineTo(earth.x, earth.y);
+    ctx.moveTo(dhruvaX, dhruvaY);
+    ctx.lineTo(sun.x, sun.y);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // 2. Śiśumāra (Planetary Porpoise / Dolphin Constellation) Cosmic Arc
+    ctx.strokeStyle = 'rgba(14, 165, 233, 0.35)';
+    ctx.lineWidth = 1.6;
+    ctx.beginPath();
+    ctx.arc(C, C, R1 - 8, -Math.PI * 0.85, Math.PI * 0.15, false);
+    ctx.stroke();
+
+    ctx.font = '600 10px "Noto Sans Devanagari", system-ui, sans-serif';
+    ctx.fillStyle = 'rgba(56, 189, 248, 0.8)';
+    ctx.fillText(script === 'dev' ? 'शिशुमार-मण्डलम् (Śiśumāra Arc)' : 'Śiśumāra Porpoise Arc', C, R1 - 18);
+
+    // 3. Rāhu & Ketu Lunar Nodes (Ecliptic Intersections)
+    const nodeR = A_EARTH;
+    const rahuAngle = -Math.PI * 0.25;
+    const ketuAngle = -Math.PI * 1.25;
+    const rahuX = C + Math.cos(rahuAngle) * nodeR;
+    const rahuY = C + Math.sin(rahuAngle) * nodeR;
+    const ketuX = C + Math.cos(ketuAngle) * nodeR;
+    const ketuY = C + Math.sin(ketuAngle) * nodeR;
+
+    ctx.fillStyle = '#f43f5e';
+    ctx.beginPath();
+    ctx.arc(rahuX, rahuY, 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.fillStyle = '#fda4af';
+    ctx.font = '700 10px system-ui, sans-serif';
+    ctx.fillText(script === 'dev' ? '☊ राहु' : '☊ Rāhu', rahuX, rahuY - 9);
+
+    ctx.fillStyle = '#8b5cf6';
+    ctx.beginPath();
+    ctx.arc(ketuX, ketuY, 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.fillStyle = '#c4b5fd';
+    ctx.fillText(script === 'dev' ? '☋ केतु' : '☋ Ketu', ketuX, ketuY + 14);
+
+    // 4. Sūrya 7 Metre-Horses visible spectrum solar rays
+    const specColors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#06b6d4', '#3b82f6', '#a855f7'];
+    for (let k = 0; k < 7; k++) {
+      const rayAngle = (k * Math.PI * 2) / 7 + s.t * 0.35;
+      ctx.strokeStyle = specColors[k];
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.moveTo(sun.x + Math.cos(rayAngle) * SUN_RADIUS, sun.y + Math.sin(rayAngle) * SUN_RADIUS);
+      ctx.lineTo(sun.x + Math.cos(rayAngle) * (SUN_RADIUS + 12), sun.y + Math.sin(rayAngle) * (SUN_RADIUS + 12));
+      ctx.stroke();
+    }
+  }
 };
 
 const JyotishaOrbit: React.FC = () => {
@@ -368,6 +447,7 @@ const JyotishaOrbit: React.FC = () => {
   const [moonOn, setMoonOn] = useState(true);
   const [script, setScript] = useState<Script>('iast');
   const [showTrails, setShowTrails] = useState(true);
+  const [puranicMode, setPuranicMode] = useState(false);
   const [playing, setPlaying] = useState(false);
   const sim = useRef<SimState>(makeState(1, 1, 1, true));
   const naksRef = useRef<HTMLElement>(null);
@@ -400,7 +480,7 @@ const JyotishaOrbit: React.FC = () => {
     }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const s = sim.current;
-    draw(ctx, s, script, showTrails);
+    draw(ctx, s, script, showTrails, puranicMode);
     // The ring highlight and the nakṣatra readouts come from the same index in the same frame.
     const i = s.naksIdx;
     cv.dataset.naks = String(i);
@@ -411,7 +491,7 @@ const JyotishaOrbit: React.FC = () => {
     }
     const short = naksName(i, script);
     if (hudNaksRef.current && hudNaksRef.current.textContent !== short) hudNaksRef.current.textContent = short;
-  }, [script, showTrails]);
+  }, [script, showTrails, puranicMode]);
 
   const reset = useCallback(
     (sf = sunF, ef = earthF, vf = speedF, mo = moonOn) => {
@@ -527,6 +607,7 @@ const JyotishaOrbit: React.FC = () => {
             <div className="vl-leds">
               <LedButton kind="toggle" on={showTrails} color="#60a5fa" onClick={() => setShowTrails((x) => !x)} testId="orbit-trails">Path trails</LedButton>
               <LedButton kind="toggle" on={moonOn} color="#e2e8f0" onClick={() => { const nx = !moonOn; setMoonOn(nx); setPlaying(false); reset(sunF, earthF, speedF, nx); }} testId="orbit-moon">Include Candra</LedButton>
+              <LedButton kind="toggle" on={puranicMode} color="#38bdf8" onClick={() => setPuranicMode((p) => !p)} testId="orbit-puranic">🏛️ Purāṇic Mode</LedButton>
             </div>
 
             <div className="vl-readout-grid" data-testid="orbit-readouts">
@@ -581,6 +662,65 @@ const JyotishaOrbit: React.FC = () => {
           <ChallengeList items={CHALLENGES} />
         </div>
       </div>
+
+      {/* Purāṇic Cosmic Mode Reference & Metaphors Panel */}
+      <section className="vl-panel" style={{ marginTop: '1.5rem', background: '#090d16', color: '#f8fafc', border: '1.5px solid #0284c7', borderRadius: '16px', padding: '1.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem', borderBottom: '1px solid rgba(56, 189, 248, 0.25)', paddingBottom: '0.75rem' }}>
+          <h3 style={{ margin: 0, fontSize: '1.25rem', color: '#38bdf8', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <span>🏛️</span> पौराणिक-खगोल-विज्ञान-रहस्यम् · Purāṇic Cosmic Metaphors &amp; Astronomy
+          </h3>
+          <span style={{ fontSize: '0.82rem', background: 'rgba(2, 132, 199, 0.25)', color: '#7dd3fc', padding: '0.25rem 0.65rem', borderRadius: '8px', border: '1px solid rgba(56, 189, 248, 0.4)' }}>
+            Bhāgavata Purāṇa 5.23 · Viṣṇu Purāṇa 2.12
+          </span>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+          {/* Metaphor 1: Sisumara */}
+          <div style={{ background: 'rgba(15, 23, 42, 0.65)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+            <h4 style={{ margin: '0 0 0.5rem 0', color: '#67e8f9', fontSize: '1rem' }}>
+              🐬 1. Śiśumāra (The Cosmic Porpoise)
+            </h4>
+            <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.5 }}>
+              In <em>Bhāgavata Purāṇa</em> (5.23.3), the entire celestial spherical wheel (<em>Jyotir-cakra</em>) is described as a coiled aquatic creature (Śiśumāra).
+              At the tip of its tail sits <strong>Dhruva (Polaris)</strong>, the stationary pivot of the North Celestial Pole. As Dhruva remains fixed, all planets, Nakṣatras, and the Saptarṣis (Ursa Major) rotate around it, bound by invisible cords of cosmic wind (<em>Pravaha-vāyu</em>).
+            </p>
+          </div>
+
+          {/* Metaphor 2: Surya Chariot */}
+          <div style={{ background: 'rgba(15, 23, 42, 0.65)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+            <h4 style={{ margin: '0 0 0.5rem 0', color: '#fde047', fontSize: '1rem' }}>
+              ☀️ 2. Sūrya’s 1-Wheeled Chariot &amp; 7 Metre-Horses
+            </h4>
+            <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.5 }}>
+              Sūrya traverses space in a chariot with <strong>one single wheel</strong> (<em>Eka-cakra</em>), symbolizing the 360-degree solar year (<em>Saṃvatsara</em>).
+              His chariot is pulled by <strong>7 horses</strong> named after the classical Vedic metres: <em>Gāyatrī, Uṣṇik, Anuṣṭubh, Bṛhatī, Paṅkti, Triṣṭubh, and Jagatī</em>.
+              Centuries before modern optics, this encoded the <strong>7 distinct spectral bands of visible sunlight</strong> (VIBGYOR) that emerge from white solar radiance!
+            </p>
+          </div>
+
+          {/* Metaphor 3: Rahu Ketu */}
+          <div style={{ background: 'rgba(15, 23, 42, 0.65)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+            <h4 style={{ margin: '0 0 0.5rem 0', color: '#f43f5e', fontSize: '1rem' }}>
+              🌑 3. Rāhu &amp; Ketu: The Lunar Orbital Nodes
+            </h4>
+            <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.5 }}>
+              Purāṇic texts portray Rāhu and Ketu as the severed head and serpent tail of Svarbhānu attempting to swallow the Sun and Moon.
+              In classical Indian astronomical physics (<em>Siddhānta</em>), Āryabhaṭa and Varāhamihira revealed they are the <strong>two mathematical intersection points</strong> where the Moon’s 5.14° inclined orbital plane cuts the Earth’s ecliptic plane. Eclipses can only physically happen when the Full/New Moon aligns directly at these nodes!
+            </p>
+          </div>
+
+          {/* Metaphor 4: Ayana Chalana */}
+          <div style={{ background: 'rgba(15, 23, 42, 0.65)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+            <h4 style={{ margin: '0 0 0.5rem 0', color: '#a78bfa', fontSize: '1rem' }}>
+              🔄 4. Ayana Chalana &amp; The Monsoon Clock
+            </h4>
+            <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.5 }}>
+              Purāṇas track the grand solar oscillations between <em>Uttarāyaṇa</em> (northern ascent) and <em>Dakṣiṇāyana</em> (southern descent).
+              Kerala school astronomers recognized the <strong>Precession of the Equinoxes (Ayana-calana)</strong>—a slow 50-arcsecond annual stellar drift (72 years per degree)—and continuously recalibrated the Vākya monsoon calendars so agricultural planting matched the physical solstice rather than sidereal star coordinates.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

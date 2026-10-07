@@ -1296,3 +1296,235 @@
     gap: 0.85rem;
   }
 }
+
+/* ==========================================================================
+   NCERT Textbook Showcase & Cover Profile Thumbnails
+   ========================================================================== */
+
+.home-ncert-showcase-section {
+  margin: 1.5rem 0 2rem;
+}
+
+.home-ncert-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.15rem;
+}
+
+.home-ncert-book-card {
+  background: #ffffff;
+  border: 1.5px solid #e7decb;
+  border-radius: 14px;
+  padding: 1.15rem;
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  box-shadow: 0 4px 14px rgba(180, 160, 140, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-ncert-book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(179, 71, 47, 0.15);
+  border-color: #d17a61;
+}
+
+.home-ncert-book-cover-wrap {
+  width: 88px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  position: relative;
+  background: #f8f6f0;
+}
+
+.home-ncert-book-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.home-ncert-book-card:hover .home-ncert-book-cover-img {
+  transform: scale(1.05);
+}
+
+.home-ncert-book-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.home-ncert-book-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.35rem;
+  align-self: flex-start;
+}
+
+.home-ncert-book-title-sa {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1f1a14;
+  margin: 0 0 0.15rem;
+  line-height: 1.25;
+}
+
+.home-ncert-book-subtitle {
+  font-size: 0.79rem;
+  color: #6b6258;
+  margin: 0 0 0.55rem;
+  line-height: 1.35;
+}
+
+.home-ncert-book-stats {
+  font-size: 0.74rem;
+  color: #8c7e6d;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.home-ncert-book-actions {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.home-ncert-book-btn-primary {
+  background: #b3472f;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.home-ncert-book-btn-primary:hover {
+  background: #8e3522;
+  box-shadow: 0 2px 8px rgba(179, 71, 47, 0.25);
+}
+
+.home-ncert-book-btn-secondary {
+  background: #f5ede0;
+  color: #78350f;
+  border: 1px solid #e8decb;
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.home-ncert-book-btn-secondary:hover {
+  background: #ebe0cf;
+  border-color: #d4c5b2;
+}
+
+/* Chapter Card Profile Picture Thumbnails */
+.home-chapter-profile-thumb {
+  width: 44px;
+  height: 58px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+  border: 1.5px solid #dcd1c0;
+  flex-shrink: 0;
+  background: #fbf9f5;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-chapter-card:hover .home-chapter-profile-thumb {
+  transform: scale(1.06);
+  box-shadow: 0 4px 12px rgba(179, 71, 47, 0.2);
+  border-color: #b3472f;
+}
+
+.home-chapter-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Grade Filter Pills */
+.home-grade-filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  padding: 0.45rem 0.75rem;
+  background: #f8f4eb;
+  border: 1px solid #e6dcce;
+  border-radius: 10px;
+}
+
+.home-grade-filter-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #786c5e;
+  text-transform: uppercase;
+  margin-right: 0.25rem;
+}
+
+.home-grade-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid #dacfc2;
+  background: #ffffff;
+  color: #4a4036;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.home-grade-filter-btn:hover {
+  background: #fcf9f2;
+  border-color: #b3472f;
+  color: #b3472f;
+}
+
+.home-grade-filter-btn.active {
+  background: #b3472f;
+  border-color: #b3472f;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(179, 71, 47, 0.25);
+}
+
+.home-grade-filter-thumb {
+  width: 16px;
+  height: 21px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+

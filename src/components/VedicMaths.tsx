@@ -905,7 +905,7 @@ ${bodyHtml}
           <span>16 Core Sutras &amp; 13 Sub-Sutras</span>
         </div>
         <h1 className="vedic-hero-title">
-          <span className="vedic-hero-title-sa">वैदिक-गणितम्</span> · Vedic Mathematics
+          <span className="vedic-hero-title-sa">वैदिक-गणितम्</span> · Vaidic Gaṇitam
         </h1>
         <p className="vedic-hero-subtitle">
           The Magic of Numbers &amp; The Architecture of Absolute Zero: An ultra-efficient system of mental calculation that allows people to solve arithmetic and algebraic problems 10 to 15 times faster than conventional methods.

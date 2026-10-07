@@ -2071,3 +2071,212 @@ ol.grammar-article-list-ordered li::marker {
   line-height: 1.45;
   color: #475569;
 }
+
+/* ==========================================================================
+   INLINE GRAMMAR LESSON QUIZ STYLES
+   ========================================================================== */
+.grammar-lesson-quiz-box {
+  margin: 2rem 0 1.25rem 0;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 1.35rem 1.6rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.grammar-lesson-quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1.5px solid #f1f5f9;
+  margin-bottom: 1.1rem;
+}
+
+.grammar-lesson-quiz-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.grammar-lesson-quiz-icon {
+  font-size: 1.6rem;
+}
+
+.grammar-lesson-quiz-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f766e;
+}
+
+.grammar-lesson-quiz-sub {
+  margin: 0.15rem 0 0 0;
+  font-size: 0.84rem;
+  color: #64748b;
+}
+
+.grammar-lesson-quiz-score-badge {
+  background: #f0fdf4;
+  color: #166534;
+  font-weight: 800;
+  font-size: 0.86rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #bbf7d0;
+  white-space: nowrap;
+}
+
+.grammar-lesson-quiz-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.grammar-inline-q-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+
+.grammar-inline-q-text {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.45;
+}
+
+.grammar-inline-q-num {
+  color: #0f766e;
+  font-weight: 800;
+}
+
+.grammar-inline-q-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.grammar-inline-opt-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.88rem;
+  color: #334155;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.grammar-inline-opt-btn:hover:not(:disabled) {
+  border-color: #0f766e;
+  background: #f0fdfa;
+  color: #0f766e;
+}
+
+.grammar-inline-opt-btn:disabled {
+  cursor: default;
+}
+
+.grammar-inline-opt-btn.is-correct {
+  background: #dcfce7 !important;
+  border-color: #22c55e !important;
+  color: #15803d !important;
+  font-weight: 700;
+}
+
+.grammar-inline-opt-btn.is-wrong {
+  background: #fee2e2 !important;
+  border-color: #ef4444 !important;
+  color: #b91c1c !important;
+}
+
+.grammar-inline-opt-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.grammar-inline-q-feedback {
+  margin-top: 0.65rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+}
+
+.grammar-inline-q-feedback.is-right {
+  background: #f0fdf4;
+  color: #166534;
+  border-left: 3px solid #22c55e;
+}
+
+.grammar-inline-q-feedback.is-wrong {
+  background: #fef2f2;
+  color: #991b1b;
+  border-left: 3px solid #ef4444;
+}
+
+.grammar-lesson-quiz-footer-cta {
+  margin-top: 1.25rem;
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.grammar-lesson-quiz-hub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+  transition: all 0.15s ease;
+}
+
+.grammar-lesson-quiz-hub-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.3);
+}
+
+.grammar-lesson-quiz-link-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.55rem;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.grammar-lesson-quiz-link-badge:hover {
+  background: #0f766e;
+  color: #ffffff;
+  border-color: #0f766e;
+}

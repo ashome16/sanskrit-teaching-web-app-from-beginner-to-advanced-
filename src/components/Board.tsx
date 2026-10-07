@@ -53,7 +53,7 @@ const SHELF_DESCRIPTIONS: Record<ShelfId, { title: string; desc: string; icon: s
     icon: '🪔',
   },
   krida: {
-    title: 'Vyakaran · व्याकरण',
+    title: 'Vaidic Vyakaran · वैदिक-व्याकरणम्',
     desc: 'Core grammar rules, vibhaktis & declensions',
     icon: '📖',
   },
@@ -72,7 +72,7 @@ const DEFAULT_SHELVES: ShelfButton[] = [
   { id: 'ganitam', label: 'Maths' },
   { id: 'bhugolah', label: 'Map' },
   { id: 'sanskritih', label: 'Sanskriti' },
-  { id: 'krida', label: 'Vyakaran · व्याकरण' },
+  { id: 'krida', label: 'Vaidic Vyakaran · वैदिक-व्याकरणम्' },
   { id: 'prakrtih', label: 'Nature' },
 ];
 

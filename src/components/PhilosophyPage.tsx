@@ -6430,7 +6430,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                     🔴 Maṅgalanātha Temple: The Planetary Observatory of Mars
                   </h3>
                   <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
-                    Revered in tradition as the mythological birthplace of Mars (<em>Bhauma-Janmasthāna</em>). Located north of Ujjain along the Shipra, its latitude provided an unobstructed southern horizon and optimal orbital trajectory for observing the retrograde loops (<em>Vakra-gati</em>) and 687-day synodic orbits of the red planet.
+                    Revered in Purāṇic Sanskrit texts as the traditional birthplace of Mars (<em>Bhauma-Janmasthāna</em>). Located north of Ujjain along the Shipra, its latitude provided an unobstructed southern horizon and optimal orbital trajectory for observing the retrograde loops (<em>Vakra-gati</em>) and 687-day synodic orbits of the red planet.
                   </p>
                 </div>
               </div>
@@ -6556,7 +6556,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             <section className="philosophy-section" id="terrestrial-scale">
               <h2>6. Terrestrial Dimensions: Sūryasiddhānta vs. Modern Satellite Geodesy</h2>
               <p>
-                The <em>Sūryasiddhānta</em> rejected mythological cosmographies of flat earths or serpentine supports. It modeled Earth as a free-floating sphere in vacuum:
+                The <em>Sūryasiddhānta</em> moved beyond allegorical cosmographies of flat earths or serpentine supports. It modeled Earth as a free-floating sphere in vacuum:
               </p>
 
               <div className="philosophy-card" style={{ background: '#eff6ff', border: '1.5px solid #93c5fd', margin: '1rem 0' }}>

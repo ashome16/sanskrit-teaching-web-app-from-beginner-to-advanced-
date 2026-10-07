@@ -240,7 +240,7 @@ const WordAnalyzerCard: React.FC<WordAnalyzerCardProps> = ({ selection }) => {
           {/* Grammatical Information — displayed as compact pills when inflection is detected */}
           {nounInflection && (nounInflection.gender || nounInflection.number || nounInflection.case !== undefined) && (
             <section className="wac-section wac-section--compact">
-              <h3 className="wac-section-title">Grammar (व्याकरणम्)</h3>
+              <h3 className="wac-section-title">Vaidic Vyākaraṇam (वैदिक-व्याकरणम्)</h3>
               <div className="wac-grammar-pills">
                 {nounInflection.gender && (
                   <div className="wac-grammar-pill">

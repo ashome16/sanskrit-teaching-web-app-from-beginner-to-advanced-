@@ -3,8 +3,12 @@ import { playPronunciation } from '../utils/pronunciation';
 import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
+import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
+import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
+import { NCERT_TEXTBOOKS, getTextbookMetaForLesson } from '../utils/textbookCovers';
 import BodhiAvatar from './BodhiAvatar';
 import HomeLabBanner from './HomeLabBanner';
+import VarnamalaFlashcardDownloadModal from './VarnamalaFlashcardDownloadModal';
 import { getSearchShortcut } from '../utils/platformShortcut';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
@@ -523,7 +527,11 @@ const HomePage: React.FC<HomePageProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const { isAdminLoggedIn, currentUser } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
+  const [isGrade7ModalOpen, setIsGrade7ModalOpen] = useState<boolean>(false);
   const [isGrade8ModalOpen, setIsGrade8ModalOpen] = useState<boolean>(false);
+  const [isGrade9ModalOpen, setIsGrade9ModalOpen] = useState<boolean>(false);
+  const [isFlashcardModalOpen, setIsFlashcardModalOpen] = useState<boolean>(false);
+  const [selectedGradeFilter, setSelectedGradeFilter] = useState<'all' | '7' | '8' | '9'>('all');
 
   const visibleChapters = CHAPTERS_INFO.filter(
     (ch) => canReadAllChapters || (!ch.id.startsWith('grade8_') && !ch.id.startsWith('grade9_'))
@@ -539,8 +547,14 @@ const HomePage: React.FC<HomePageProps> = ({
 
   const filteredChapters = visibleChapters.filter((ch) => {
     const matchesCategory = curriculumCategory === 'all' || ch.category === curriculumCategory;
+    const matchesGrade =
+      selectedGradeFilter === 'all' ||
+      (selectedGradeFilter === '7' && !ch.id.startsWith('grade8_') && !ch.id.startsWith('grade9_')) ||
+      (selectedGradeFilter === '8' && ch.id.startsWith('grade8_')) ||
+      (selectedGradeFilter === '9' && ch.id.startsWith('grade9_'));
+
     const query = searchQuery.trim().toLowerCase();
-    if (!query) return matchesCategory;
+    if (!query) return matchesCategory && matchesGrade;
 
     const matchesSearch =
       ch.title.toLowerCase().includes(query) ||
@@ -550,12 +564,21 @@ const HomePage: React.FC<HomePageProps> = ({
       (ch.grammarFocus ? ch.grammarFocus.toLowerCase().includes(query) : false) ||
       (ch.genreBadge ? ch.genreBadge.toLowerCase().includes(query) : false);
 
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesGrade && matchesSearch;
   });
+
+  const openGrade7Syllabus = () => {
+    setIsGrade7ModalOpen(true);
+  };
 
   const openGrade8Syllabus = () => {
     if (!canReadAllChapters) return;
     setIsGrade8ModalOpen(true);
+  };
+
+  const openGrade9Syllabus = () => {
+    if (!canReadAllChapters) return;
+    setIsGrade9ModalOpen(true);
   };
 
   const handleDemoClick = (demo: DemoWord) => {
@@ -669,9 +692,9 @@ const HomePage: React.FC<HomePageProps> = ({
             type="button"
             className="home-btn-accent"
             onClick={onOpenGrammar}
-            title="Grammar shelf - 7 Vibhaktis, Declensions, Conjugations & 17 Masterclasses"
+            title="Vaidic Vyākaraṇam shelf - 7 Vibhaktis, Declensions, Conjugations & 17 Masterclasses"
           >
-            📚 Vyākaraṇa (Grammar)
+            📚 Vaidic Vyākaraṇam (वैदिक-व्याकरणम्)
           </button>
           {onOpenVedicMaths && (
             <button
@@ -679,9 +702,9 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-btn-primary"
               style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', boxShadow: '0 4px 12px rgba(180, 83, 9, 0.25)' }}
               onClick={onOpenVedicMaths}
-              title="16 Vedic Math Sutras, Sub-sutras, and Lightning Mental Arithmetic"
+              title="16 Sutras, Sub-sutras, and Lightning Mental Arithmetic"
             >
-              📐 Vedic Maths (वैदिक-गणितम्)
+              📐 Vaidic Gaṇitam (वैदिक-गणितम्)
             </button>
           )}
           <button
@@ -933,7 +956,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <span className="home-pathway-badge home-pathway-badge--grammar">
                 Pāṇinian Grammar
               </span>
-              <h3 className="home-pathway-title">🌿 Dhātupāṭha &amp; Vyākaraṇa</h3>
+              <h3 className="home-pathway-title">🌿 Dhātupāṭha &amp; Vaidic Vyākaraṇam</h3>
               <p className="home-pathway-desc">
                 Explore the generative root science of Sanskrit. Deconstruct inflected words, generate 5-lakāra verb tables, master 7 vibhaktis (noun cases), and read 17 research masterclasses.
               </p>
@@ -943,7 +966,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-pathway-btn"
               onClick={onOpenDhatupatha || onOpenGrammar}
             >
-              Launch Dhātupāṭha &amp; Grammar ▶
+              Launch Dhātupāṭha &amp; Vaidic Vyākaraṇam ▶
             </button>
           </div>
 
@@ -954,7 +977,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span className="home-pathway-badge home-pathway-badge--maths">
                   Speed Math &amp; Heritage
                 </span>
-                <h3 className="home-pathway-title">⚡ Vedic Mental Mathematics</h3>
+                <h3 className="home-pathway-title">⚡ Vaidic Gaṇitam (वैदिक-गणितम्)</h3>
                 <p className="home-pathway-desc">
                   Compute 10–15× faster! Master all 16 Sutras &amp; 13 Sub-sutras, Bhāskarācārya's Līlāvatī poetic math, Piṅgala's binary Chandas, and Katapayadi mnemonics.
                 </p>
@@ -965,7 +988,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', color: '#ffffff', borderColor: '#b45309' }}
                 onClick={onOpenVedicMaths}
               >
-                Start Vedic Maths ▶
+                Start Vaidic Gaṇitam ▶
               </button>
             </div>
           )}
@@ -974,19 +997,48 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-pathway-card">
             <div>
               <span className="home-pathway-badge home-pathway-badge--school">
-                School Curriculum
+                NCERT Curriculum (Classes 7–9)
               </span>
-              <h3 className="home-pathway-title">🎒 NCERT Deepakam (NEP, CBSE exam)</h3>
+              <h3 className="home-pathway-title">🎒 NCERT Sanskrit Textbooks</h3>
               <p className="home-pathway-desc">
-                Follow all 15 Deepakam textbook chapters sequentially. Master shloka recitation, anvaya, sandhi, and exam question drills with word-by-word grammatical breakdowns.
+                Follow all 15 Deepakam (Class 7), 13 Deepakam (Class 8), and 12 Sharada (Class 9) chapters sequentially. Master shloka recitation, anvaya, sandhi, and exam question drills with word-by-word grammatical breakdowns.
               </p>
+              <div style={{ display: 'flex', gap: '0.5rem', margin: '0.65rem 0' }}>
+                {NCERT_TEXTBOOKS.map((tb) => (
+                  <div
+                    key={tb.id}
+                    title={`${tb.titleSa} · ${tb.classEn}`}
+                    style={{
+                      width: '40px',
+                      height: '54px',
+                      borderRadius: '5px',
+                      overflow: 'hidden',
+                      boxShadow: '0 2px 6px rgba(0,0,0,0.18)',
+                      border: '1px solid #d4c5b2',
+                      flexShrink: 0,
+                      cursor: 'pointer',
+                    }}
+                    onClick={() => {
+                      if (tb.id === 'class7') onOpenReader('gsde101');
+                      else if (tb.id === 'class8') onOpenReader(canReadAllChapters ? 'grade8_prarthana' : 'gsde101');
+                      else onOpenReader(canReadAllChapters ? 'grade9_prarthana' : 'gsde101');
+                    }}
+                  >
+                    <img
+                      src={tb.coverUrl}
+                      alt={tb.alt}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
             <button
               type="button"
               className="home-pathway-btn"
               onClick={() => onOpenReader('gsde101')}
             >
-              Start NCERT Deepakam (NEP, CBSE exam) ▶
+              Start NCERT Reader ▶
             </button>
           </div>
         </div>
@@ -1476,13 +1528,29 @@ const HomePage: React.FC<HomePageProps> = ({
                 <li>Conjunct consonants (संयुक्ताक्षर) and ligature breakdown</li>
               </ul>
             </div>
-            <button
-              type="button"
-              className="home-feature-btn"
-              onClick={onOpenVarnamala}
-            >
-              Explore Alphabet &amp; Syllables ▶
-            </button>
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto', flexWrap: 'wrap' }}>
+              <button
+                type="button"
+                className="home-feature-btn"
+                style={{ flex: 1, minWidth: '150px' }}
+                onClick={onOpenVarnamala}
+              >
+                Explore Letters ▶
+              </button>
+              <button
+                type="button"
+                className="home-feature-btn"
+                style={{
+                  background: 'linear-gradient(135deg, #0f766e 0%, #0d9488 100%)',
+                  color: '#ffffff',
+                  whiteSpace: 'nowrap',
+                }}
+                onClick={() => setIsFlashcardModalOpen(true)}
+                title="Download / Print Varṇamālā & Bārahkhaḍī Flashcards or PDF"
+              >
+                📥 Flashcards &amp; PDF
+              </button>
+            </div>
           </div>
 
           {/* Feature 4: Vyakarana Shelf */}
@@ -1490,9 +1558,9 @@ const HomePage: React.FC<HomePageProps> = ({
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">📚</span>
-                <span className="home-feature-badge">Grammar Shelf</span>
+                <span className="home-feature-badge">Vaidic Vyākaraṇam</span>
               </div>
-              <h3 className="home-feature-title">Vyākaraṇa &amp; Vibhakti Guide</h3>
+              <h3 className="home-feature-title">Vaidic Vyākaraṇam &amp; Vibhakti Guide</h3>
               <p className="home-feature-desc">
                 Demystify Sanskrit grammar! Access comprehensive declension tables (Shabdarupani) across all genders and numbers,
                 and verb conjugations (Dhaturupams) across all 5 school lakāras.
@@ -1508,7 +1576,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-feature-btn"
               onClick={onOpenGrammar}
             >
-              Browse Grammar Shelf ▶
+              Browse Vaidic Vyākaraṇam Shelf ▶
             </button>
           </div>
 
@@ -1554,7 +1622,7 @@ const HomePage: React.FC<HomePageProps> = ({
                   Speed Math
                 </span>
               </div>
-              <h3 className="home-feature-title">वैदिक-गणितम् (Vedic Mathematics)</h3>
+              <h3 className="home-feature-title">वैदिक-गणितम् (Vaidic Gaṇitam)</h3>
               <p className="home-feature-desc">
                 The Magic of Numbers: An ultra-efficient mental calculation system enabling arithmetic solutions 10 to 15 times
                 faster than conventional methods. Explore the 16 Sutras, interactive step-by-step visual solvers, and speed challenges!
@@ -1572,7 +1640,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', color: '#ffffff' }}
                 onClick={onOpenVedicMaths}
               >
-                Launch Vedic Mathematics ▶
+                Launch Vaidic Gaṇitam ▶
               </button>
             )}
           </div>
@@ -1616,59 +1684,99 @@ const HomePage: React.FC<HomePageProps> = ({
       <section className="home-curriculum-section">
         <div className="home-section-header">
           <span className="home-section-tag">Graded Literature &amp; School Curriculum</span>
-          <h2 className="home-section-title">Classical Literature &amp; NCERT Reader Directory (दीपकम् 6–8)</h2>
+          <h2 className="home-section-title">Classical Literature &amp; NCERT Reader Directory (दीपकम् ७–८ &amp; शारदा ९)</h2>
           <p className="home-section-subtitle">
-            Explore graded classical stories, shlokas, dialogues, and NCERT 'दीपकम्' chapters with line-by-line Sanskrit text, word analysis, and parallel translations—ideal for school board prep or classical literature reading.
+            Explore graded classical stories, shlokas, dialogues, and official NCERT Sanskrit textbooks—दीपकम् (Classes 7 &amp; 8) and शारदा (Class 9)—with line-by-line Sanskrit text, word analysis, and parallel translations.
           </p>
         </div>
 
-        {/* Grade 8 Syllabus Quick Banner — upcoming for guests; open for trial + paid (+ admin) */}
-        {canReadAllChapters ? (
-          <div
-            className="home-grade8-syllabus-banner"
-            onClick={openGrade8Syllabus}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') openGrade8Syllabus();
-            }}
-          >
-            <div className="g8-banner-left">
-              <span className="g8-banner-badge">✨ NEW CURRICULUM ADDITION</span>
-              <h3 className="g8-banner-title">अष्टमकक्षा-पाठानुक्रमणिका · Grade 8 Sanskrit Complete Syllabus</h3>
-              <p className="g8-banner-desc">
-                Explore all 13 textbook chapters, introductory prayers, and grammatical appendices with exact page numbers (Page iii to 173).
-              </p>
-            </div>
+        {/* NCERT Official Textbooks Showcase Hub */}
+        <div className="home-ncert-showcase-section" aria-label="NCERT Sanskrit Textbooks Showcase">
+          <div className="home-ncert-showcase-grid">
+            {NCERT_TEXTBOOKS.map((tb) => {
+              const isLocked = !canReadAllChapters && (tb.id === 'class8' || tb.id === 'class9');
+              return (
+                <div key={tb.id} className="home-ncert-book-card">
+                  <div className="home-ncert-book-cover-wrap">
+                    <img
+                      src={tb.coverUrl}
+                      alt={tb.alt}
+                      className="home-ncert-book-cover-img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="home-ncert-book-info">
+                    <span
+                      className="home-ncert-book-badge"
+                      style={{ background: `${tb.badgeColor}15`, color: tb.badgeColor, border: `1px solid ${tb.badgeColor}35` }}
+                    >
+                      {tb.classSa} · {tb.classEn}
+                    </span>
+                    <h3 className="home-ncert-book-title-sa">{tb.titleSa} ({tb.titleEn})</h3>
+                    <p className="home-ncert-book-subtitle">{tb.subtitle}</p>
+                    <div className="home-ncert-book-stats">
+                      📚 {tb.totalLessons} · 📄 {tb.pageSpan}
+                    </div>
+                    <div className="home-ncert-book-actions">
+                      <button
+                        type="button"
+                        className="home-ncert-book-btn-primary"
+                        onClick={() => {
+                          if (isLocked) {
+                            openGrade8Syllabus();
+                          } else {
+                            onOpenReader(tb.firstLessonId);
+                          }
+                        }}
+                      >
+                        📖 Read {tb.titleSa}
+                      </button>
+                      <button
+                        type="button"
+                        className="home-ncert-book-btn-secondary"
+                        onClick={() => {
+                          if (tb.id === 'class7') openGrade7Syllabus();
+                          else if (tb.id === 'class8') openGrade8Syllabus();
+                          else openGrade9Syllabus();
+                        }}
+                      >
+                        📜 Index (पाठानुक्रमणिका)
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Quick Grade Filter Bar */}
+        <div className="home-grade-filter-bar" role="group" aria-label="Filter by NCERT Class">
+          <span className="home-grade-filter-label">📚 Textbook Filter:</span>
+          {[
+            { id: 'all', label: 'All Classes (सर्वम्)', thumb: null },
+            { id: '7', label: 'दीपकम् · Class 7', thumb: '/textbooks/ncert-deepakam-class7.webp' },
+            { id: '8', label: 'दीपकम् · Class 8', thumb: '/textbooks/ncert-deepakam-class8.jpg' },
+            { id: '9', label: 'शारदा · Class 9', thumb: '/textbooks/ncert-sharada-class9.jpg' },
+          ].map((gradeTab) => (
             <button
+              key={gradeTab.id}
               type="button"
-              className="g8-banner-cta-btn"
-              onClick={(e) => {
-                e.stopPropagation();
-                openGrade8Syllabus();
-              }}
+              className={`home-grade-filter-btn ${selectedGradeFilter === gradeTab.id ? 'active' : ''}`}
+              onClick={() => setSelectedGradeFilter(gradeTab.id as any)}
             >
-              📜 View Table of Contents ➔
+              {gradeTab.thumb && (
+                <img
+                  src={gradeTab.thumb}
+                  alt=""
+                  className="home-grade-filter-thumb"
+                  aria-hidden="true"
+                />
+              )}
+              <span>{gradeTab.label}</span>
             </button>
-          </div>
-        ) : (
-          <div
-            className="home-grade8-syllabus-banner home-grade8-syllabus-banner--upcoming"
-            role="status"
-            aria-label="Class 8 CBSE Sanskrit — Upcoming"
-          >
-            <div className="g8-banner-left">
-              <span className="g8-banner-badge g8-banner-badge--upcoming">UPCOMING · शीघ्रम्</span>
-              <h3 className="g8-banner-title">अष्टमकक्षा · Class 8 Sanskrit (CBSE) — Coming Soon</h3>
-              <p className="g8-banner-desc">
-                Class 8 Deepakam chapters, quizzes, and worksheets are being prepared. Class 7 remains fully available now.
-              </p>
-            </div>
-            <span className="g8-banner-cta-btn g8-banner-cta-btn--soon" aria-hidden="true">
-              🔒 Coming Soon
-            </span>
-          </div>
-        )}
+          ))}
+        </div>
 
         {/* Search & Category Filter Controls */}
         <div className="home-curriculum-controls">
@@ -1746,9 +1854,16 @@ const HomePage: React.FC<HomePageProps> = ({
                       {ch.genreBadge && (
                         <span className="home-genre-badge">{ch.genreBadge}</span>
                       )}
+                    <div className="home-chapter-profile-thumb" title={getTextbookMetaForLesson(ch.id).tagline}>
+                      <img
+                        src={getTextbookMetaForLesson(ch.id).coverUrl}
+                        alt={getTextbookMetaForLesson(ch.id).alt}
+                        className="home-chapter-profile-img"
+                        loading="lazy"
+                      />
                     </div>
-                    <span className="home-chapter-icon">{ch.icon}</span>
                   </div>
+                </div>
 
                   <h4 className="home-chapter-title-sanskrit">{ch.title}</h4>
                   <p className="home-chapter-meaning-en">{ch.english}</p>
@@ -1853,6 +1968,24 @@ const HomePage: React.FC<HomePageProps> = ({
 
 
 
+      <Grade8SyllabusModal
+        isOpen={isGrade7ModalOpen}
+        onClose={() => setIsGrade7ModalOpen(false)}
+        onSelectLesson={(lessonId) => onOpenReader(lessonId)}
+        onOpenCbseGuide={onOpenCbseGuide}
+        syllabus={GRADE_7_SYLLABUS}
+        gradeBadge="सप्तमकक्षा-पाठ्यक्रमः · Deepakam 7th grade · दीपकम"
+        intro="Index of the Class 7 Deepakam lessons in this reader: chapters, extra study, and the two grammar appendices."
+        coreLessonCount={12}
+        appendixCount={2}
+        pageSpan="1–15"
+        pageStatSuffix="Deepakam lessons"
+        lessonIdPrefix="gsde"
+        accessGated={false}
+        examTitle="CBSE Class 7 Sanskrit Exam Guide & Question Directives"
+        examBlurb="The same CBSE Sanskrit exam guide used with this reader: question words, section instructions, and how the paper grows from Class 7."
+      />
+
       {canReadAllChapters && (
         <Grade8SyllabusModal
           isOpen={isGrade8ModalOpen}
@@ -1861,6 +1994,32 @@ const HomePage: React.FC<HomePageProps> = ({
           onOpenCbseGuide={onOpenCbseGuide}
         />
       )}
+
+      {canReadAllChapters && (
+        <Grade8SyllabusModal
+          isOpen={isGrade9ModalOpen}
+          onClose={() => setIsGrade9ModalOpen(false)}
+          onSelectLesson={(lessonId) => onOpenReader(lessonId)}
+          onOpenCbseGuide={onOpenCbseGuide}
+          syllabus={GRADE_9_SYLLABUS}
+          gradeBadge="नवमकक्षा-पाठ्यक्रमः · शारदा (Class 9) · CBSE"
+          intro="Complete index of all 12 textbook chapters, opening invocations, and grammatical appendices with exact page references."
+          coreLessonCount={12}
+          appendixCount={4}
+          pageSpan="Page 1 to 244"
+          pageStatSuffix="References"
+          lessonIdPrefix="grade9_"
+          accessGated={true}
+          examTitle="CBSE Class 9 Sanskrit Exam Guide & Question Directives"
+          examBlurb="Master high school paper structure: अन्वय-पूरणम्, प्रश्ननिर्माणम्, सन्धि-समास-प्रत्यय rules, and board scoring directives."
+        />
+      )}
+
+      <VarnamalaFlashcardDownloadModal
+        isOpen={isFlashcardModalOpen}
+        onClose={() => setIsFlashcardModalOpen(false)}
+        initialMode="varnamala"
+      />
     </main>
   );
 };

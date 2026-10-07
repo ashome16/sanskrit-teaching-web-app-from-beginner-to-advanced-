@@ -287,13 +287,368 @@ const renderArticleBlocks = (blocks: ArticleBlock[]) => {
   });
 };
 
+export interface LessonQuizQuestion {
+  q: string;
+  options: string[];
+  answer: number;
+  explain: string;
+}
+
+export interface LessonQuizInfo {
+  quizTitle: string;
+  anchor: string;
+  category: string;
+  questions: LessonQuizQuestion[];
+}
+
+export const LESSON_QUIZZES: Record<string, LessonQuizInfo> = {
+  'lesson-1': {
+    quizTitle: 'Devanāgarī Script & Svara Vowels Quiz',
+    anchor: 'lit-grammar-basic',
+    category: 'lit_grammar_basic',
+    questions: [
+      {
+        q: 'Which of the following is a Dīrgha (long) vowel in Sanskrit?',
+        options: ['अ (a)', 'आ (ā)', 'इ (i)', 'उ (u)'],
+        answer: 1,
+        explain: 'आ (ā) is a canonical long vowel (dīrgha-svara) lasting two mātrās.',
+      },
+      {
+        q: 'What is the continuous horizontal top banner line in Devanāgarī script called?',
+        options: ['शिरोरेखा (Shirorekha)', 'मात्रा (Mātrā)', 'दण्डः (Daṇḍa)', 'विसर्गः (Visarga)'],
+        answer: 0,
+        explain: 'The top line linking letters together is called the Shirorekha ("head line").',
+      },
+      {
+        q: 'What phonetic role does the Anusvāra (अं) play?',
+        options: ['A full vowel', 'A pure nasal resonance (नासिक्य)', 'A retroflex stop', 'A verb suffix'],
+        answer: 1,
+        explain: 'Anusvāra is an Ayogavāha producing pure nasal acoustic resonance after a vowel.',
+      },
+    ],
+  },
+  'lesson-2': {
+    quizTitle: 'Vyañjana Consonants & Sthāna Places Quiz',
+    anchor: 'lit-grammar-basic',
+    category: 'lit_grammar_basic',
+    questions: [
+      {
+        q: 'Which anatomical vocal place produces the Ka-varga (क, ख, ग, घ, ङ)?',
+        options: ['ओष्ठ्य (Lips)', 'तालव्य (Palate)', 'कण्ठ्य (Throat / Velar)', 'दन्त्य (Teeth)'],
+        answer: 2,
+        explain: 'Ka-varga starts deepest in the vocal tract at Kaṇṭha (the throat).',
+      },
+      {
+        q: 'What physiological mechanism distinguishes Alpaprāṇa from Mahāprāṇa consonants?',
+        options: ['Vocal cord pitch', 'Volume of exhaled breath puff', 'Tongue width', 'Syllable duration'],
+        answer: 1,
+        explain: 'Alpaprāṇa uses minimal breath; Mahāprāṇa produces an aspirated puff of warm air.',
+      },
+      {
+        q: 'To which class do the consonants य, र, ल, व belong?',
+        options: ['स्पर्श (Stops)', 'अन्तःस्थ (Semivowels)', 'ऊष्मन् (Sibilants)', 'अयोगवाह'],
+        answer: 1,
+        explain: 'They are Antaḥstha (intermediate sounds between vowels and consonants).',
+      },
+    ],
+  },
+  'lesson-3': {
+    quizTitle: 'Dhātu Roots & Prātipadika Stems Quiz',
+    anchor: 'grammar',
+    category: 'grammar',
+    questions: [
+      {
+        q: 'In Pāṇinian generative linguistics, what is a Dhātu?',
+        options: ['A completed sentence', 'The indestructible semantic verb root seed', 'A prefix only', 'A punctuation mark'],
+        answer: 1,
+        explain: 'A Dhātu is the elemental root from which all verbs and nouns are derived.',
+      },
+      {
+        q: 'What does the cardinal rule "अपदं न प्रयुञ्जीत" mandate?',
+        options: ['Never walk barefoot', 'Never use an uninflected raw root or crude stem in a sentence', 'Never write without ink', 'Never speak in public'],
+        answer: 1,
+        explain: 'In Sanskrit, a raw root or stem must receive case (Sup) or verbal (Tiṅ) endings before entering a sentence.',
+      },
+      {
+        q: 'What role do Upasargas (like सम्-, अनु-, प्र-) perform when attached to a Dhātu?',
+        options: ['They delete the root', 'They modify, redirect, or intensify the root meaning', 'They make the word feminine', 'They convert verbs into numbers'],
+        answer: 1,
+        explain: 'Upasargas dramatically modulate verb meanings (उपसर्गेण धात्वर्थो बलादन्यत्र नीयते).',
+      },
+    ],
+  },
+  'lesson-4': {
+    quizTitle: 'Vibhakti & Kāraka Case Roles Quiz',
+    anchor: 'lit-grammar-basic',
+    category: 'lit_grammar_basic',
+    questions: [
+      {
+        q: 'How many total Vibhaktis (grammatical cases) does Sanskrit employ?',
+        options: ['4 cases', '6 cases', '8 cases (7 cases + Sambodhana)', '12 cases'],
+        answer: 2,
+        explain: 'Sanskrit features 7 core case numbers plus Sambodhana (addressing/vocative).',
+      },
+      {
+        q: 'Which Vibhakti denotes the instrument or means by which an action is performed (Karaṇa)?',
+        options: ['Prathamā (Case 1)', 'Dvitīyā (Case 2)', 'Tṛtīyā (Case 3)', 'Caturthī (Case 4)'],
+        answer: 2,
+        explain: 'Tṛtīyā vibhakti marks the instrument or accomplice (e.g. हस्तेन - by hand).',
+      },
+      {
+        q: 'Which Kāraka role is paired with Pañcamī Vibhakti (Case 5)?',
+        options: ['Kartā (Doer)', 'Karma (Object)', 'Apādāna (Source / Separation)', 'Adhikaraṇa (Location)'],
+        answer: 2,
+        explain: 'Pañcamī denotes Apādāna (point of departure or source: वृक्षात् - from the tree).',
+      },
+    ],
+  },
+  'lesson-5': {
+    quizTitle: 'Akārānta Pulliṅga (Bālaka) Declension Quiz',
+    anchor: 'lit-grammar-basic',
+    category: 'lit_grammar_basic',
+    questions: [
+      {
+        q: 'What is the Prathamā Vibhakti Plural form of बालक (Bālaka)?',
+        options: ['बालकः', 'बालकौ', 'बालकाः', 'बालकम्'],
+        answer: 2,
+        explain: 'Singular: बालकः, Dual: बालकौ, Plural: बालकाः.',
+      },
+      {
+        q: 'In the dual column of Bālaka, which ending is shared by Cases 3, 4, and 5?',
+        options: ['-योः', '-आभ्याम्', '-एभ्यः', '-आणाम्'],
+        answer: 1,
+        explain: 'Cases 3, 4, and 5 dual always share -ābhyām (बालकाभ्याम्).',
+      },
+      {
+        q: 'Which form represents the Saptamī Vibhakti Singular (in the boy)?',
+        options: ['बालकाय', 'बालके', 'बालकस्य', 'बालकेन'],
+        answer: 1,
+        explain: 'Case 7 singular of akārānta pulliṅga ends in -e: बालके (in the boy).',
+      },
+    ],
+  },
+  'lesson-6': {
+    quizTitle: 'Ākārānta & Īkārānta Strīliṅga (Latā & Nadī) Quiz',
+    anchor: 'lit-grammar-basic',
+    category: 'lit_grammar_basic',
+    questions: [
+      {
+        q: 'How does the Case 1 Singular of लता (Latā) differ from masculine बालकः?',
+        options: ['Latā has no visarga (लता vs बालकः)', 'Latā has two visargas', 'Latā ends in halanta', 'There is no difference'],
+        answer: 0,
+        explain: 'Ākārānta feminine singular drops the visarga, ending in pure long -ā (लता).',
+      },
+      {
+        q: 'What is the Case 1 Dual of लता?',
+        options: ['लते', 'लताः', 'लताभ्याम्', 'लतासु'],
+        answer: 0,
+        explain: 'Case 1 Dual of Latā is लते (two vines).',
+      },
+      {
+        q: 'What is the Case 1 Plural of river (नदी - Nadī)?',
+        options: ['नदीः', 'नद्यः', 'नदीनाम्', 'नदीभिः'],
+        answer: 1,
+        explain: 'Case 1 forms: नदी, नद्यौ, नद्यः (rivers).',
+      },
+    ],
+  },
+  'lesson-7': {
+    quizTitle: 'Laṭ Lakāra Present Tense Conjugation Quiz',
+    anchor: 'lit-grammar-middle',
+    category: 'lit_grammar_middle',
+    questions: [
+      {
+        q: 'What is the third-person singular (Prathama Puruṣa Ekavacana) present tense ending?',
+        options: ['-सि (-si)', '-मि (-mi)', '-ति (-ti)', '-मः (-maḥ)'],
+        answer: 2,
+        explain: 'The universal present formula begins with -ति: पठति (he/she reads).',
+      },
+      {
+        q: 'Which Lakāra represents the present indicative tense in Sanskrit?',
+        options: ['लट् (Laṭ)', 'लृट् (Lṛṭ)', 'लङ् (Laṅ)', 'लोट् (Loṭ)'],
+        answer: 0,
+        explain: 'Laṭ (लट् लकारः) designates current present action.',
+      },
+      {
+        q: 'What happens to the stem vowel in first person (Uttama Puruṣa) present tense?',
+        options: ['It shortens', 'It lengthens to -ā (पठ + आमि = पठामि)', 'It turns into visarga', 'It vanishes'],
+        answer: 1,
+        explain: 'The stem vowel broadens before m and v: पठामि, पठावः, पठामः.',
+      },
+    ],
+  },
+  'lesson-8': {
+    quizTitle: 'Three Persons (Puruṣa) & Numbers (Vacana) Quiz',
+    anchor: 'lit-grammar-middle',
+    category: 'lit_grammar_middle',
+    questions: [
+      {
+        q: 'Which person does Sanskrit Prathama Puruṣa (प्रथम-पुरुषः) designate?',
+        options: ['I / We (1st person)', 'You (2nd person)', 'He / She / It / All third person nouns', 'Imperative'],
+        answer: 2,
+        explain: 'In Sanskrit, Prathama Puruṣa is 3rd Person (the external world); Uttama Puruṣa is I/We.',
+      },
+      {
+        q: 'Which pronoun agrees with the verb पठामि (paṭhāmi)?',
+        options: ['सः (Saḥ)', 'त्वम् (Tvam)', 'अहम् (Aham)', 'ते (Te)'],
+        answer: 2,
+        explain: 'अहम् is Uttama Puruṣa Singular, agreeing with -mi: अहम् पठामि (I read).',
+      },
+      {
+        q: 'What is the second person plural (Madhyama Puruṣa Bahuvacana) pronoun for "You all"?',
+        options: ['त्वम् (Tvam)', 'युवाम् (Yuvām)', 'यूयम् (Yūyam)', 'वयम् (Vayam)'],
+        answer: 2,
+        explain: 'त्वम् (You), युवाम् (You two), यूयम् (You all).',
+      },
+    ],
+  },
+  'lesson-9': {
+    quizTitle: 'Kartari Prayoga (Subject-Verb Agreement) Quiz',
+    anchor: 'lit-grammar-middle',
+    category: 'lit_grammar_middle',
+    questions: [
+      {
+        q: 'In active voice (Kartari Prayoga), what case must the Subject (Kartā) take?',
+        options: ['Dvitīyā (Case 2)', 'Prathamā (Case 1)', 'Ṣaṣṭhī (Case 6)', 'Saptamī (Case 7)'],
+        answer: 1,
+        explain: 'The Subject is in Prathamā Vibhakti (Case 1) in Kartari Prayoga.',
+      },
+      {
+        q: 'Do finite Sanskrit verbs change form according to the gender of the subject?',
+        options: ['Yes, masculine and feminine verbs differ', 'No, Sanskrit verbs have NO gender; only Person and Number', 'Only in past tense', 'Only in plural'],
+        answer: 1,
+        explain: 'Sanskrit verbs are genderless: बालकः पठति and बालिका पठति share the identical verb form.',
+      },
+      {
+        q: 'What case does the direct object (Karma) take in Kartari Prayoga?',
+        options: ['Prathamā (Case 1)', 'Dvitīyā (Case 2)', 'Tṛtīyā (Case 3)', 'Caturthī (Case 4)'],
+        answer: 1,
+        explain: 'The direct object takes Dvitīyā Vibhakti: बालकः पुस्तकं पठति.',
+      },
+    ],
+  },
+  'lesson-10': {
+    quizTitle: 'Avyayas (Indeclinables) & Spoken Sanskrit Quiz',
+    anchor: 'grammar',
+    category: 'grammar',
+    questions: [
+      {
+        q: 'What defines an Avyaya (अव्ययम्) in Sanskrit?',
+        options: ['A noun declining into 24 forms', 'A word that never changes across gender, number, or case', 'A verb form', 'An adjective only'],
+        answer: 1,
+        explain: 'सदृशं त्रिषु लिङ्गेषु सर्वासु च विभक्तिषु... यन्न व्येति तदव्ययम् (It never alters form under any inflection).',
+      },
+      {
+        q: 'How do you politely ask "What is your name?" to a gentleman in Sanskrit?',
+        options: ['भवतः नाम किम्?', 'भवत्याः नाम किम्?', 'मम नाम किम्?', 'कः त्वम्?'],
+        answer: 0,
+        explain: 'भवतः नाम किम्? (masculine polite) vs भवत्याः नाम किम्? (feminine polite).',
+      },
+      {
+        q: 'Which Avyaya means "also / too" in Sanskrit?',
+        options: ['च (ca)', 'अपि (api)', 'सह (saha)', 'कुत्र (kutra)'],
+        answer: 1,
+        explain: 'अपि means "also / even / too" (e.g. अहमपि गच्छामि - I am going too).',
+      },
+    ],
+  },
+};
+
+const LessonInlineQuiz: React.FC<{
+  quizInfo: LessonQuizInfo;
+  onOpenFullQuiz?: (anchor?: string) => void;
+}> = ({ quizInfo, onOpenFullQuiz }) => {
+  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
+  const correctCount = quizInfo.questions.filter((_, idx) => selectedAnswers[idx] === quizInfo.questions[idx].answer).length;
+
+  return (
+    <div className="grammar-lesson-quiz-box">
+      <div className="grammar-lesson-quiz-header">
+        <div className="grammar-lesson-quiz-title-row">
+          <span className="grammar-lesson-quiz-icon">🎯</span>
+          <div>
+            <h4 className="grammar-lesson-quiz-title">
+              ज्ञान-परीक्षा · {quizInfo.quizTitle}
+            </h4>
+            <p className="grammar-lesson-quiz-sub">
+              Test your grasp of this lesson's key rules with instant checks
+            </p>
+          </div>
+        </div>
+        <div className="grammar-lesson-quiz-score-badge">
+          {correctCount} / {quizInfo.questions.length} Correct
+        </div>
+      </div>
+
+      <div className="grammar-lesson-quiz-questions">
+        {quizInfo.questions.map((qItem, qIdx) => {
+          const selected = selectedAnswers[qIdx];
+          const hasAnswered = selected !== undefined;
+          const isCorrect = hasAnswered && selected === qItem.answer;
+
+          return (
+            <div key={qIdx} className="grammar-inline-q-item">
+              <p className="grammar-inline-q-text">
+                <span className="grammar-inline-q-num">Q{qIdx + 1}.</span> {qItem.q}
+              </p>
+              <div className="grammar-inline-q-options">
+                {qItem.options.map((opt, oIdx) => {
+                  let optClass = 'grammar-inline-opt-btn';
+                  if (hasAnswered) {
+                    if (oIdx === qItem.answer) optClass += ' is-correct';
+                    else if (oIdx === selected) optClass += ' is-wrong';
+                  }
+
+                  return (
+                    <button
+                      key={oIdx}
+                      type="button"
+                      className={optClass}
+                      onClick={() => {
+                        if (!hasAnswered) {
+                          setSelectedAnswers((prev) => ({ ...prev, [qIdx]: oIdx }));
+                        }
+                      }}
+                      disabled={hasAnswered}
+                    >
+                      <span className="grammar-inline-opt-letter">{String.fromCharCode(65 + oIdx)}</span>
+                      <span>{opt}</span>
+                    </button>
+                  );
+                })}
+              </div>
+              {hasAnswered && (
+                <div className={`grammar-inline-q-feedback ${isCorrect ? 'is-right' : 'is-wrong'}`}>
+                  <span>{isCorrect ? '✓ उत्कृष्टम् (Correct!)' : '✗ पुनः प्रयतताम् (Review):'}</span> {qItem.explain}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {onOpenFullQuiz && (
+        <div className="grammar-lesson-quiz-footer-cta">
+          <button
+            type="button"
+            className="grammar-lesson-quiz-hub-btn"
+            onClick={() => onOpenFullQuiz(quizInfo.anchor)}
+          >
+            <span>🎯 Open Full Vaidic Vyākaraṇam Quiz Hub for this Topic →</span>
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export type GrammarProps = {
   initialTopic?: GrammarTopic;
   initialArticleId?: string | null;
   initialLessonId?: string | null;
   onGoHome?: () => void;
   onOpenWorksheets?: () => void;
-  onOpenQuiz?: () => void;
+  onOpenQuiz?: (anchor?: string) => void;
 };
 
 const Grammar: React.FC<GrammarProps> = ({
@@ -429,7 +784,7 @@ const Grammar: React.FC<GrammarProps> = ({
           onClick={goBackToShelf}
           title="Return to Vyākaraṇa Overview"
         >
-          📚 व्याकरणम् (Vyākaraṇa)
+          📚 वैदिक-व्याकरणम् (Vaidic Vyākaraṇam)
         </button>
         {topic === 'course-lesson' && (
           <>
@@ -513,9 +868,9 @@ const Grammar: React.FC<GrammarProps> = ({
       <section className="grammar-page" aria-label="Conjunct games">
         <header className="grammar-page-header">
           {renderBreadcrumb('संयुक्त · Conjunct Games')}
-          <h2 className="grammar-title">संयुक्त · Conjunct Games</h2>
+          <h2 className="grammar-title">संयुक्त-क्रीडा-मण्डलम् · Conjunct Games Studio</h2>
           <p className="grammar-lead">
-            Three playground posters. Tap a game title to open or close its picture.
+            Tactile letter forges, vertical piggyback stackers, superhero shape-shifters, and 3-level quiz arena with score tracking &amp; comic guides!
           </p>
         </header>
         <ConjunctGames />
@@ -761,6 +1116,14 @@ const Grammar: React.FC<GrammarProps> = ({
             <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📖</div>
             <p>Loading {activeLesson.title}...</p>
           </div>
+        )}
+
+        {/* Inline Lesson Quiz */}
+        {LESSON_QUIZZES[activeLesson.id] && (
+          <LessonInlineQuiz
+            quizInfo={LESSON_QUIZZES[activeLesson.id]}
+            onOpenFullQuiz={onOpenQuiz}
+          />
         )}
 
         {/* Suggested Practice Drill */}
@@ -1129,9 +1492,9 @@ const Grammar: React.FC<GrammarProps> = ({
   return (
     <section className="grammar-page" aria-label="Grammar">
       <header className="grammar-page-header">
-        <h2 className="grammar-title">व्याकरणम् · Sanskrit Vyākaraṇa</h2>
+        <h2 className="grammar-title">वैदिक-व्याकरणम् · Vaidic Vyākaraṇam</h2>
         <p className="grammar-lead">
-          A structured 10-lesson curriculum from phonetics to syntax, paired with interactive studios and scholarly masterclasses.
+          A structured 10-lesson Vaidic Vyākaraṇam curriculum from phonetics to syntax, paired with interactive studios and scholarly masterclasses.
         </p>
       </header>
 
@@ -1228,6 +1591,19 @@ const Grammar: React.FC<GrammarProps> = ({
                     </div>
                     <div className="grammar-lesson-card-cta">
                       <span>Open Lesson →</span>
+                      {onOpenQuiz && (
+                        <span
+                          className="grammar-lesson-quiz-link-badge"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const q = LESSON_QUIZZES[l.id];
+                            onOpenQuiz(q?.anchor || 'grammar');
+                          }}
+                          title={`Take ${l.title} Quiz`}
+                        >
+                          🎯 Take Quiz
+                        </span>
+                      )}
                     </div>
                   </button>
                 ))}
@@ -1333,6 +1709,19 @@ const Grammar: React.FC<GrammarProps> = ({
                       </div>
                       <div className="grammar-lesson-card-cta">
                         <span>Start Lesson →</span>
+                        {onOpenQuiz && (
+                          <span
+                            className="grammar-lesson-quiz-link-badge"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              const q = LESSON_QUIZZES[lesson.id];
+                              onOpenQuiz(q?.anchor || 'grammar');
+                            }}
+                            title={`Take ${lesson.title} Quiz`}
+                          >
+                            🎯 Take Quiz
+                          </span>
+                        )}
                         {lesson.interactiveStudioLabel && (
                           <span className="grammar-lesson-studio-badge">
                             ⚡ Lab Attached

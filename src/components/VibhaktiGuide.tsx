@@ -133,7 +133,7 @@ const VibhaktiGuide: React.FC<VibhaktiGuideProps> = ({
     <div className="vi-container">
       {/* Header & Concept Introduction */}
       <header className="vi-header">
-        <div className="vi-badge">🏛️ व्याकरण-मूलम् · SANSKRIT NOUN CASES</div>
+        <div className="vi-badge">🏛️ वैदिक-व्याकरण-मूलम् · VAIDIC SANSKRIT NOUN CASES</div>
         <h1 className="vi-title">विभक्ति-परिचयः · Understanding Vibhaktis</h1>
         <p className="vi-subtitle">
           In English, prepositions like <em>to, by, for, from, of, in</em> connect a noun to a verb.

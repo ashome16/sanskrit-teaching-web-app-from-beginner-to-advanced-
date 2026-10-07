@@ -894,7 +894,7 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
         heading: 'गणपति-अथर्वशीर्षम् (मनु-स्वरूपम्) — The Mantra-Body of Oṃkāra',
         subheading: 'Atharvaveda · ga-kāraḥ pūrva-rūpam · The Acoustic & Visual Body of Gaṇeśa as ॐ',
         paragraphs: [
-          'The Gaṇapati Atharvaśīrṣa (Atharvaveda) reveals the profound esoteric science of the elephant-headed deity as the living embodiment of the Praṇava (OM). The sage does not treat Gaṇapati as a mythological character; he reveals his precise manu-svarūpa (the anatomy of his mantra-body).',
+          'The Gaṇapati Atharvaśīrṣa (Atharvaveda) reveals the profound esoteric science of the elephant-headed deity as the living embodiment of the Praṇava (OM). Rather than viewing Gaṇapati merely through later allegorical stories of Purāṇic Sanskrit texts, the sage reveals his precise Vedic manu-svarūpa (the anatomy of his mantra-body).',
           'The mantra breaks down the bīja “GAṂ” into its cosmic acoustic components: the opening guttural consonant (ga), the primordial short vowel (a), the nasal vibration (anusvāra), the focal point of consciousness (bindu), and the unstruck joining resonance (nāda) adorned with the tāra (OM).',
           'Recite this verse with deliberate clarity. Feel how the acoustic articulation precisely mirrors the physical iconography: the vast belly as the lower arc of ॐ, the curved trunk as the fluid nasal crescent, and the jewel on the forehead as the bindu.',
         ],
@@ -1173,7 +1173,7 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
         ],
         callout: {
           title: 'The Algorithmic Essence',
-          text: '“सम्यक् ख्यायते प्रकाश्यते वस्तुतत्त्वम् अनया इति साङ्ख्यम्” — Sankhya maps the cosmos not through mythological personification, but through precise numerical taxonomy and cause-and-effect invariants.',
+          text: '“सम्यक् ख्यायते प्रकाश्यते वस्तुतत्त्वम् अनया इति साङ्ख्यम्” — Sankhya maps the cosmos not through anthropomorphic personification, but through precise numerical taxonomy and cause-and-effect invariants, distinct from narrative-focused Purāṇic Sanskrit texts.',
           type: 'scientific',
         },
       },
@@ -1237,9 +1237,9 @@ export const DARSHANAS_COURSE_ADDENDUM: DarshanaAddendumArticle[] = [
       },
       {
         heading: 'The Mathematical Implications of Sankhya',
-        subheading: 'From Mythological Metaphor to Quantitative Taxonomy',
+        subheading: 'From Allegorical Metaphor to Quantitative Taxonomy (Harmonizing with Purāṇic Sanskrit Texts)',
         paragraphs: [
-          'By defining the universe as an exact sequence of 25 distinct categories, Sankhya fundamentally shifted Indian thought away from mythological explanations and toward quantitative analysis.',
+          'By defining the universe as an exact sequence of 25 distinct categories, Sankhya fundamentally complemented the allegorical cosmologies of Purāṇic Sanskrit texts by anchoring Indian philosophy in direct quantitative analysis.',
           'It proved that the physical universe is not chaotic; it is a highly ordered, structured system governed by cause and effect (Satkaryavada). If you know the exact composition of the cause, you can mathematically predict the nature of the effect.',
           'This precise, structured taxonomy of matter laid the conceptual foundation for ancient Indian sciences, including Ayurveda and, most notably, the evolution of structural mathematics.',
         ],

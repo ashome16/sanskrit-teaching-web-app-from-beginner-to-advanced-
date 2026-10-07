@@ -127,7 +127,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenGrammar}
                 >
                   <span className="nav-btn-icon">📚</span>
-                  <span className="nav-btn-text">व्याकरणम् · Noun &amp; Verb Tables</span>
+                  <span className="nav-btn-text">वैदिक-व्याकरणम् · Vaidic Vyākaraṇam</span>
                 </button>
               </li>
               <li>
@@ -147,7 +147,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenVedicMaths}
                 >
                   <span className="nav-btn-icon">⚡</span>
-                  <span className="nav-btn-text">वैदिक-गणितम् · 16 Vedic Sūtras</span>
+                  <span className="nav-btn-text">वैदिक-गणितम् · Vaidic Gaṇitam</span>
                 </button>
               </li>
               <li>

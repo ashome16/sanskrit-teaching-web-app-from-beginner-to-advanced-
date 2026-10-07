@@ -4,6 +4,7 @@ import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters } from '../utils/premiumAccess';
 import '../styles/grade8-syllabus.css';
 import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
+import { getTextbookMetaForLesson } from '../utils/textbookCovers';
 
 export interface SyllabusChapter {
   id: string;
@@ -148,12 +149,27 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
       <div className="g8-modal" onClick={(e) => e.stopPropagation()}>
         {/* Modal Header */}
         <div className="g8-modal-header">
-          <div className="g8-modal-title-box">
-            <span className="g8-badge-grade">{gradeBadge}</span>
-            <h2 id="g8-title">
-              <span>📜</span> पाठानुक्रमणिका (Table of Contents)
-            </h2>
-            <p>{intro}</p>
+          <div className="g8-modal-header-with-cover">
+            <div className="g8-modal-cover-thumb">
+              <img
+                src={
+                  gradeBadge.includes('नवम') || gradeBadge.includes('9')
+                    ? '/textbooks/ncert-sharada-class9.jpg'
+                    : gradeBadge.includes('सप्तम') || gradeBadge.includes('7')
+                    ? '/textbooks/ncert-deepakam-class7.webp'
+                    : '/textbooks/ncert-deepakam-class8.jpg'
+                }
+                alt="NCERT Sanskrit Textbook Cover"
+                className="g8-modal-cover-img"
+              />
+            </div>
+            <div className="g8-modal-title-box">
+              <span className="g8-badge-grade">{gradeBadge}</span>
+              <h2 id="g8-title">
+                <span>📜</span> पाठानुक्रमणिका (Table of Contents)
+              </h2>
+              <p>{intro}</p>
+            </div>
           </div>
           <button
             type="button"
@@ -253,6 +269,12 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
                 >
                   <div className="g8-card-top-row">
                     <div className="g8-card-badges">
+                      <img
+                        src={getTextbookMetaForLesson(ch.id).coverUrl}
+                        alt="NCERT Textbook"
+                        className="g8-ch-card-avatar"
+                        title={getTextbookMetaForLesson(ch.id).bookTitleSa}
+                      />
                       <span className="g8-ch-num-badge">
                         {ch.icon} {ch.chNumber}
                       </span>

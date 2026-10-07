@@ -10,6 +10,9 @@ const NadaBrahman = lazy(() => import('./NadaBrahman'));
 const AsatoMa = lazy(() => import('./AsatoMa'));
 const Chaturyoni = lazy(() => import('./Chaturyoni'));
 const Chandrayaan = lazy(() => import('./Chandrayaan'));
+const RituparnaSampling = lazy(() => import('./RituparnaSampling'));
+const AgnibanaRocketLab = lazy(() => import('./AgnibanaRocketLab'));
+const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 
 const LAB_SEGMENTS: {
   id: LabSegmentId;
@@ -111,10 +114,43 @@ const LAB_SEGMENTS: {
     tint: '#e0e7ff',
     ink: '#3730a3',
   },
+  {
+    id: 'rituparna',
+    icon: '🌳',
+    dev: 'ऋतुपर्ण-साङ्ख्यानम्',
+    title: 'Ṛtuparṇa Sampling Lab',
+    subject: 'Statistics & Estimation',
+    school: 'Saṅkhyāna (साङ्ख्यानम्)',
+    blurb: 'Rapid tree census and sampling theory from the Mahābhārata. King Ṛtuparṇa counts a single branch and instantly calculates the whole Vibhīdaka tree’s leaves and nuts. Test sampling bias vs full enumeration.',
+    tint: '#ecfdf5',
+    ink: '#047857',
+  },
+  {
+    id: 'agnibana',
+    icon: '🚀',
+    dev: 'अग्निबाण-क्रीडा',
+    title: 'Agnibāṇa & Fireworks Alchemy',
+    subject: 'Chemistry & Rocketry',
+    school: 'Śukranīti & Mysorean Artillery',
+    blurb: 'From the 12th-century Hoysaleśvara fire-arrows to Deepavali’s Ulkā-Dāna and the Mysorean hammered iron rockets that defeated British forces at Pollilur (1780) and inspired modern solid aerospace boosters.',
+    tint: '#fef2f2',
+    ink: '#b91c1c',
+  },
 ];
 
 const SEGMENT_IDS = new Set<string>(LAB_SEGMENTS.map((s) => s.id));
-const HASH_ALIASES: Record<string, LabSegmentId> = { somayana: 'chandrayaan', 'soma-yana': 'chandrayaan' };
+const HASH_ALIASES: Record<string, LabSegmentId> = {
+  somayana: 'chandrayaan',
+  'soma-yana': 'chandrayaan',
+  sampling: 'rituparna',
+  sankhyana: 'rituparna',
+  'rituparna-sampling': 'rituparna',
+  agnibana: 'agnibana',
+  fireworks: 'agnibana',
+  rocket: 'agnibana',
+  diwali: 'agnibana',
+  deepavali: 'agnibana',
+};
 const readHash = (): LabSegmentId | null => {
   try {
     const h = window.location.hash.replace(/^#/, '');
@@ -242,6 +278,12 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {active === 'asato-ma' && <AsatoMa />}
           {active === 'chaturyoni' && <Chaturyoni />}
           {active === 'chandrayaan' && <Chandrayaan />}
+          {active === 'rituparna' && <RituparnaSampling />}
+          {active === 'agnibana' && <AgnibanaRocketLab />}
+        </Suspense>
+
+        <Suspense fallback={<div className="vl-loading">Loading Bodhi Vijñāna Console…</div>}>
+          <LabBodhiConsole activeSegment={active} />
         </Suspense>
       </section>
 

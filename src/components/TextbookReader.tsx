@@ -22,6 +22,8 @@ import { VarnamalaWritingPad } from './VarnamalaWritingPad';
 import { ErrorBoundary } from './ErrorBoundary';
 import GunitaaksharaGuide from './GunitaaksharaGuide';
 import { NumbersGuide } from './NumbersGuide';
+import { getTextbookMetaForLesson } from '../utils/textbookCovers';
+import VarnamalaFlashcardDownloadModal from './VarnamalaFlashcardDownloadModal';
 import '../styles/textbook-reader.css';
 import '../styles/varnamala-studio.css';
 
@@ -329,6 +331,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const tileLabel = (letter: string) =>
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
+  const [isFlashcardDownloadOpen, setIsFlashcardDownloadOpen] = useState(false);
   const [isSoundVideoOpen, setIsSoundVideoOpen] = useState(true);
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
   const [isGunitaOpen, setIsGunitaOpen] = useState(false);
@@ -868,6 +871,23 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       <header className="textbook-top-bar">
         <div className="textbook-top-row">
           <div className="textbook-lesson-picker">
+            <button
+              type="button"
+              className="textbook-cover-avatar-btn"
+              onClick={() => {
+                if (isGrade9Lesson) setIsGrade9SyllabusOpen(true);
+                else if (isGrade8Lesson) setIsGrade8SyllabusOpen(true);
+                else if (!isGroupedLesson) setIsGrade7SyllabusOpen(true);
+              }}
+              title={`View ${getTextbookMetaForLesson(activeLessonId).bookTitleSa} Table of Contents (पाठानुक्रमणिका)`}
+              aria-label="View Syllabus"
+            >
+              <img
+                src={getTextbookMetaForLesson(activeLessonId).coverUrl}
+                alt={getTextbookMetaForLesson(activeLessonId).alt}
+                className="textbook-cover-avatar-img"
+              />
+            </button>
             <span
               className={`textbook-grade-badge ${
                 isGrade9Lesson
@@ -1554,6 +1574,25 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       loading="lazy"
                     />
                   </div>
+                </div>
+              )}
+
+              {(isVarnamala || activeLessonId === 'barakhadi') && (
+                <div className="varnamala-chart-toggle-wrap" style={{ marginTop: '0.65rem' }}>
+                  <button
+                    type="button"
+                    className="varnamala-chart-toggle"
+                    onClick={() => setIsFlashcardDownloadOpen(true)}
+                    style={{
+                      background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
+                      borderColor: '#10b981',
+                      color: '#065f46',
+                      fontWeight: 700,
+                    }}
+                  >
+                    <span>🖨️ Download / Print Flashcards &amp; PDF (वर्णमाला एवं बारहखड़ी)</span>
+                    <span className="varnamala-chart-toggle-arrow">📥</span>
+                  </button>
                 </div>
               )}
 
@@ -2422,6 +2461,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         accountNote="Class 9 lessons, worksheets, and quizzes are open to everyone with an account. Sign in or register for free to start learning!"
         examTitle="CBSE Class 9 Sanskrit Exam Guide & Question Directives"
         examBlurb="The same CBSE Sanskrit exam guide used with this reader: question words, section instructions, and board-pattern practice."
+      />
+      <VarnamalaFlashcardDownloadModal
+        isOpen={isFlashcardDownloadOpen}
+        onClose={() => setIsFlashcardDownloadOpen(false)}
+        initialMode={activeLessonId === 'barakhadi' ? 'barakhadi' : 'varnamala'}
       />
       {nowPlayingLetter ? (
         <div className="varna-now-playing" role="status" aria-live="polite">

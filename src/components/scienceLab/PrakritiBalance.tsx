@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
 import { DialKnob, HudFrame, LedButton } from './controls';
+import AyurvedaAttractions from './AyurvedaAttractions';
 
 type Ritu = 'sisira' | 'vasanta' | 'grishma' | 'varsha' | 'sarad' | 'hemanta';
 
@@ -291,6 +292,8 @@ const PrakritiBalance: React.FC = () => {
         </div>
         <ChallengeList items={CHALLENGES} />
       </div>
+
+      <AyurvedaAttractions />
     </div>
   );
 };

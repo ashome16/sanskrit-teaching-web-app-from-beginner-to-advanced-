@@ -236,7 +236,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-15',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-1',
     lessonNumber: '3.1',
     devanagari: 'धातुः',
@@ -251,7 +251,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-16',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-2',
     lessonNumber: '3.2',
     devanagari: 'लट्-लकारः',
@@ -266,7 +266,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-17',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-4',
     lessonNumber: '3.4',
     devanagari: 'कारकम्',
@@ -281,7 +281,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-18',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-4',
     lessonNumber: '3.4',
     devanagari: 'प्रथमा विभक्तिः (कर्ता)',
@@ -296,7 +296,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-19',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-4',
     lessonNumber: '3.4',
     devanagari: 'द्वितीया विभक्तिः (कर्म)',
@@ -311,7 +311,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-20',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-4',
     lessonNumber: '3.4',
     devanagari: 'तृतीया विभक्तिः (करणम्)',
@@ -326,7 +326,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-21',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-4',
     lessonNumber: '3.4',
     devanagari: 'चतुर्थी विभक्तिः (सम्प्रदानम्)',
@@ -341,7 +341,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-22',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-4',
     lessonNumber: '3.4',
     devanagari: 'पञ्चमी विभक्तिः (अपादानम्)',
@@ -356,7 +356,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-23',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-4',
     lessonNumber: '3.4',
     devanagari: 'षष्ठी विभक्तिः (सम्बन्धः)',
@@ -371,7 +371,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-24',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-4',
     lessonNumber: '3.4',
     devanagari: 'सप्तमी विभक्तिः (अधिकरणम्)',
@@ -386,7 +386,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-25',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-5',
     lessonNumber: '3.5',
     devanagari: 'सन्धिः',
@@ -401,7 +401,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-26',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-5',
     lessonNumber: '3.5',
     devanagari: 'यण्-सन्धिः (इको यणचि)',
@@ -416,7 +416,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
   {
     id: 'fc-27',
     moduleId: 3,
-    moduleName: 'Module 3: व्याकरणम् · Rules as Processing',
+    moduleName: 'Module 3: वैदिक-व्याकरणम् · Vaidic Vyākaraṇam (Rules as Processing)',
     lessonId: 'c-3-6',
     lessonNumber: '3.6',
     devanagari: 'समासः (तत्पुरुष / बहुव्रीहि / द्वन्द्व)',
@@ -840,7 +840,7 @@ export const SanskritFlashcardStudio: React.FC<SanskritFlashcardStudioProps> = (
         {[1, 2, 3, 4, 5, 6].map((modNum) => {
           const count = SANSKRIT_FLASHCARDS.filter((c) => c.moduleId === modNum).length;
           const isSelected = selectedModuleFilter === modNum;
-          const labels = ['1. ध्वनिः (Sound)', '2. लिपिः (Script)', '3. व्याकरणम् (Rules)', '4. वाक्यम् (Syntax)', '5. गणितम् (Science)', '6. दर्शनम् (Vision)'];
+          const labels = ['1. ध्वनिः (Sound)', '2. लिपिः (Script)', '3. वैदिक-व्याकरणम् (Vaidic Rules)', '4. वाक्यम् (Syntax)', '5. वैदिक-गणितम् (Vaidic Science)', '6. दर्शनम् (Vision)'];
 
           return (
             <button

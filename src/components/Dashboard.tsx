@@ -124,12 +124,12 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Printable & interactive CBSE Sanskrit worksheets, translation drills, sandhi practice, and NCERT Deepakam exercise solutions for students.',
   },
   'vedic-maths': {
-    title: 'Vedic Mathematics Mastery: 16 Sutras, Fast Mental Math & Astronomy | EdNet Gurukul',
+    title: 'Vaidic Gaṇitam Mastery (वैदिक-गणितम्): 16 Sutras, Fast Mental Math & Astronomy | EdNet Gurukul',
     desc: 'Master fast mental calculation, Vedic geometry, 16 Vedic mathematics sutras, 366-day Vedic astronomical calendar, and ancient metrology with interactive tools.',
   },
   grammar: {
-    title: 'Sanskrit Grammar Mastery: Shabdroop, Dhaturoop & Sandhi | EdNet Learn',
-    desc: 'Interactive Sanskrit grammar guide: declensions (shabdroop), verb conjugations (dhaturoop), sandhi rules, vibhakti charts, and phonetic audio.',
+    title: 'Vaidic Vyākaraṇam Mastery (वैदिक-व्याकरणम्): Shabdroop, Dhaturoop & Sandhi | EdNet Learn',
+    desc: 'Interactive Vaidic Vyākaraṇam guide: declensions (shabdroop), verb conjugations (dhaturoop), sandhi rules, vibhakti charts, and phonetic audio.',
   },
   quiz: {
     title: 'Interactive Sanskrit Quizzes & NCERT Chapter Tests | EdNet Learn',
@@ -924,6 +924,7 @@ const Dashboard: React.FC = () => {
                   onClick={() => openDeepakam()}
                   title="Deepakam 7th · दीपकम · Class 7 Sanskrit"
                 >
+                  <img src="/textbooks/ncert-deepakam-class7.webp" alt="Deepakam 7" className="dashboard-nav-sub-img" />
                   Deepakam 7th · दीपकम
                 </button>
                 <button
@@ -938,6 +939,7 @@ const Dashboard: React.FC = () => {
                   }}
                   title={canReadAllChapters ? 'Deepakam 8th · दीपकम · Class 8 Sanskrit' : 'Sign in to access Deepakam 8th'}
                 >
+                  <img src="/textbooks/ncert-deepakam-class8.jpg" alt="Deepakam 8" className="dashboard-nav-sub-img" />
                   Deepakam 8th · दीपकम
                 </button>
                 <button
@@ -952,6 +954,7 @@ const Dashboard: React.FC = () => {
                   }}
                   title={canReadAllChapters ? '9th Grade · शारदा · Class 9 Sanskrit' : 'Sign in to access शारदा Class 9'}
                 >
+                  <img src="/textbooks/ncert-sharada-class9.jpg" alt="Sharada 9" className="dashboard-nav-sub-img" />
                   9th Grade · शारदा
                 </button>
               </div>
@@ -982,11 +985,11 @@ const Dashboard: React.FC = () => {
               type="button"
               className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'grammar' ? ' active' : ''}`}
               onClick={handleOpenGrammar}
-              title="Open Grammar shelf with all articles"
+              title="Open Vaidic Vyākaraṇam shelf with all articles"
             >
               <img src="/nav/nav-grammar.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-primary">Vyākaraṇa</span>
-              <span className="dashboard-nav-secondary">Grammar</span>
+              <span className="dashboard-nav-primary">वैदिक-व्याकरणम्</span>
+              <span className="dashboard-nav-secondary">Vaidic Vyākaraṇam</span>
             </button>
             <button
               type="button"
@@ -1002,11 +1005,11 @@ const Dashboard: React.FC = () => {
               type="button"
               className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'vedic-maths' ? ' active' : ''}`}
               onClick={() => navigateToView('vedic-maths')}
-              title="Open Vedic Mathematics (वैदिक-गणितम्)"
+              title="Open Vaidic Gaṇitam (वैदिक-गणितम्)"
             >
               <img src="/nav/nav-vedic.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-primary">वैदिक-गणितम्</span>
-              <span className="dashboard-nav-secondary">Vedic Maths</span>
+              <span className="dashboard-nav-secondary">Vaidic Gaṇitam</span>
             </button>
             <button
               type="button"
@@ -1179,7 +1182,10 @@ const Dashboard: React.FC = () => {
             initialArticleId={grammarTargetArticleId}
             onGoHome={() => setActiveView('home')}
             onOpenWorksheets={() => handleOpenWorksheets('grammar')}
-            onOpenQuiz={() => navigateToView('quiz')}
+            onOpenQuiz={(anchor?: string) => {
+              if (anchor) setQuizAnchor(anchor);
+              navigateToView('quiz');
+            }}
           />
         )}
         {activeView === 'dhatupatha' && (
