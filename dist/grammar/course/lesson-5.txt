@@ -1,0 +1,58 @@
+# Lesson 5: Masculine Nouns Ending in 'a' (Akārānta Pulliṅga)
+
+In Lesson 4, you were introduced to the 8 Vibhaktis (cases) and 3 Vachanas (numbers). Now, we apply this framework to the most common noun pattern in Sanskrit: **Akārānta Pulliṅga (अकारान्त-पुंल्लिङ्ग)**.
+
+- **Akārānta (अकारान्त):** Any noun stem whose final letter is the short vowel **अ (a)**.  
+  *(e.g., ब् + आ + ल् + अ + क् + अ = बालक)*
+- **Pulliṅga (पुंल्लिङ्ग):** Masculine grammatical gender.
+
+Once you memorize this single paradigm using **बालक (Bālaka - boy)** or **राम (Rāma)**, you automatically unlock thousands of Sanskrit masculine nouns!
+
+---
+
+## 1. The Master Paradigm: बालक (Boy)
+
+| Case (विभक्तिः) | Singular (एकवचनम्) | Dual (द्विवचनम्) | Plural (बहुवचनम्) | Everyday Meaning (Singular) |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Prathamā** | **बालकः** (*bālakaḥ*) | **बालकौ** (*bālakau*) | **बालकाः** (*bālakāḥ*) | The boy (Subject) |
+| **2. Dvitīyā** | **बालकम्** (*bālakam*) | **बालकौ** (*bālakau*) | **बालकान्** (*bālakān*) | To the boy (Object) |
+| **3. Tṛtīyā** | **बालकेन** (*bālakena*) | **बालकाभ्याम्** (*bālakābhyām*) | **बालकैः** (*bālakaiḥ*) | By/with the boy |
+| **4. Caturthī** | **बालकाय** (*bālakāya*) | **बालकाभ्याम्** (*bālakābhyām*) | **बालकेभ्यः** (*bālakebhyaḥ*) | For the boy |
+| **5. Pañcamī** | **बालकात्** (*bālakāt*) | **बालकाभ्याम्** (*bālakābhyām*) | **बालकेभ्यः** (*bālakebhyaḥ*) | From the boy |
+| **6. Ṣaṣṭhī** | **बालकस्य** (*bālakasya*) | **बालकयोः** (*bālakayoḥ*) | **बालकानाम्** (*bālakānām*) | Of the boy / Boy's |
+| **7. Saptamī** | **बालके** (*bālake*) | **बालकयोः** (*bālakayoḥ*) | **बालकेषु** (*bālakeṣu*) | In / on the boy |
+| **8. Sambodhana** | **हे बालक!** (*he bālaka!*) | **हे बालकौ!** (*he bālakau!*) | **हे बालकाः!** (*he bālakāḥ!*) | O boy! (Calling) |
+
+---
+
+## 2. Memory Hacks: Symmetry in the Grid
+[[figure:balaka-dual-three-endings]]
+Memorizing 24 separate cells sounds intimidating, but Sanskrit tables are deeply symmetrical:
+
+1. **The Dual Column (द्विवचनम्) has only 3 distinct endings!**
+   - Cases 1 & 2 are identical: **-ौ** (*bālakau*)
+   - Cases 3, 4 & 5 are identical: **-ābhyām** (*bālakābhyām*)
+   - Cases 6 & 7 are identical: **-ayoḥ** (*bālakayoḥ*)
+2. **Plural Cases 4 & 5 are identical:**
+   - Both end in **-ebhyaḥ** (*bālakebhyaḥ*).
+3. **The 'm' sound marks objects and origins:**
+   - Case 2 singular always ends in **-म्** (*bālakam*).
+   - Case 5 singular ends in **-त्** (*bālakāt*).
+   - Case 6 singular ends in **-स्य** (*bālakasya*), identical to the English possessive *'s*!
+
+---
+
+## 3. Thousands of Words Follow This Exact Template
+Any masculine noun ending in 'a' declines with these exact suffixes:
+- **गज** (elephant) → *गजः, गजौ, गजाः...*
+- **वृक्ष** (tree) → *वृक्षः, वृक्षौ, वृक्षाः...*
+- **छात्र** (student) → *छात्रः, छात्रौ, छात्राः...*
+- **देव** (divine being) → *देवः, देवौ, देवाः...*
+- **सूर्य** (sun) → *सूर्यः, सूर्यौ, सूर्याः...*
+
+---
+
+## 4. Practice Exercises
+1. Decline the noun **गज (elephant)** in Case 3 singular (By the elephant): **गजेन**.
+2. Translate: "From the tree": **वृक्षात्** (Case 5 singular).
+3. Translate: "Of the students": **छात्राणाम्** (Case 6 plural).

@@ -1,0 +1,121 @@
+# Welcome to the Board
+
+One school. Seven shelves. Meaning first.
+A letter is a place on the breath. A word lives in a sentence.
+When you click the right cream tile, a picture and the Sanskrit sentence appear. English names the whole sentence — never the wrong tile.
+
+Tap the **?** any time to reopen this guide.
+
+---
+
+## How to play (every shelf)
+
+1. Pick a tab.
+2. Read the Target / blank.
+3. Tap the cream tile(s) on the chalkboard.
+4. If you are right, a picture and the Sanskrit sentence open right away (taught word marked). English is under them.
+5. Press **Next** for the next word on the **same** shelf.
+6. A wrong tap shows a tip — try another cream tile right away. Nothing freezes.
+
+---
+
+## 1. Beginners · मात्रा — read the yellow tip every time
+
+This shelf has two kinds of rows. The tip line and the mark **Click 1 tile** / **Click 2 tiles** tell you which kind you are on.
+
+### A. Join rows — click TWO tiles
+1. Click the consonant tile (for Day 1 that is **क**).
+2. Click the vowel tile (**आ**) — any order is fine.
+3. When the pair is right, the picture and sentence appear: **का बालिका पठति।** and *Who is the girl reading?*
+4. Click **Next** for the next word.
+
+**आ** is not glued on as a second letter. It becomes the mark **ा** on **क** → **का**.
+
+Same pattern: **म** then **आ** → **मा**; **स** then **आ** → **सा**; **बा** then **लः** → **बालः**.
+
+### B. Question-word rows — click ONE tile
+After the join rows, the Target looks like **____ बालकः धावति?**
+1. Click only **कः** (the whole word).
+2. Do not click a second tile — the picture and sentence appear at once.
+3. Click **Next**.
+
+Later blanks use **किम्**, **का**, **कुत्र**. Still one click each.
+
+If two tiles are gold by mistake, click the wrong one again to turn it off.
+
+
+## 2. nada · नाद-पथः — ONE tile
+
+Sound path: mouth-seats, then senses, then body names. Same tab. Use **Next**.
+
+1. Seats: **कण्ठस्य**, **तालस्य** …
+2. Senses: **नेत्रेण** … **मनः**
+3. Body: **हस्तेन** … **शरीरम्**
+
+Example: blank **गकारः ____** → tap **कण्ठस्य** → *The sound ga belongs to the throat repository.*
+
+Names only. No treatment, no biology lesson.
+
+---
+
+## 3. Vastu · वस्तु — ONE tile
+
+Things you can touch.
+
+- First rows: match the **verb** to the thing (**पुस्तकम्** → tap **पठति**).
+- Later rows (after Next): name the thing (**घटः**, **फलम्**, **कन्दुकः** …).
+
+One tile. Picture and sentence appear. Next.
+
+---
+
+## 4. Naksha · नक्शा — ONE tile
+
+Places on the map.
+
+- First: **सूर्यः** → tap **आकाशः**.
+- Then **नदी**, then house, path, city, mountain, forest, village, shop, field.
+
+**आकाशः** is never labeled “the sun.” English names the sentence.
+
+---
+
+## 5. Nature · प्रकृतिः — ONE tile
+
+Animals and plants in a blank.
+
+**____ मन्दं चलति।** → **गजः** → *The elephant walks slowly.*
+**Next** → **वृक्षः** / *The tree stands on the earth.*
+
+---
+
+## 6. Sanskriti · संस्कृतिः — ONE tile
+
+Heritage words. **तारा**, then **बीजम्**.
+Never show “one seed” on the tab.
+
+---
+
+## 7. Vyakaran · व्याकरण — ONE tile
+
+Doer + action. The doer is the prompt. You tap the **verb**.
+**बालकः** → **पठति** → *The boy reads.*
+Never print (Kartā) on a tile.
+
+---
+
+## Chrome (top)
+
+- **Board** — this play space
+- **Deepakam** — the book
+- **Analyse** — sealed word meanings (later)
+- **Vibhakti Guide** — case endings help
+
+संख्या / Sūtram are later doors, not shelves.
+
+---
+
+## Giving more sentences
+
+Send new lines any time: shelf · word · Sanskrit sentence · English.
+They append after the words already on that shelf. Week 1 stays first.

@@ -1,0 +1,69 @@
+# Lesson 2: Consonants (Vyañjana) & Pronunciation Places (Sthāna)
+
+In Lesson 1, you learned the 13 vowels (Svara), which ring freely on their own. In this lesson, we explore the consonants: **Vyañjana (व्यञ्जन)**. 
+
+In Sanskrit grammar, a consonant cannot be pronounced without the help of a vowel. When written alone, a pure consonant carries a small slanted stroke beneath it called a **Halanta (्)**, indicating an absence of a vowel (e.g., **क्**, **त्**, **म्**). When combined with the inherent short vowel **अ (a)**, it becomes fully voiced: **क (ka)**, **त (ta)**, **म (ma)**.
+
+---
+
+## 1. The 5 Articulation Places (उच्चारण-स्थानानि)
+Sanskrit consonants are organized with mathematical perfection along the human vocal tract, moving from the throat outward to the lips:
+
+1. **Kaṇṭhya (कण्ठ्य - Throat / Velar)**: Produced in the throat.
+2. **Tālavya (तालव्य - Hard Palate / Palatal)**: Produced with the flat of the tongue touching the roof behind teeth.
+3. **Mūrdhanya (मूर्धन्य - Roof / Retroflex)**: Produced by curling the tongue tip back to tap the hard palate.
+4. **Dantya (दन्त्य - Teeth / Dental)**: Produced with the tongue tip touching the back of the upper teeth.
+5. **Oṣṭhya (ओष्ठ्य - Lips / Labial)**: Produced using both lips.
+
+---
+
+## 2. Grouped Consonants: The 5 Varga Families (वर्गीयाः)
+[[figure:five-varga-families]]
+
+There are **25 grouped consonants**, divided into 5 rows (Vargas) of 5 letters each. Each row corresponds to one of the 5 vocal places.
+
+| Varga (Row) | Unvoiced Unaspirated | Unvoiced Aspirated | Voiced Unaspirated | Voiced Aspirated | Nasal (Anunāsika) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Ka-varga (Throat)** | **क** (ka) | **ख** (kha) | **ग** (ga) | **घ** (gha) | **ङ** (ṅa) |
+| **Ca-varga (Palate)** | **च** (ca) | **छ** (cha) | **ज** (ja) | **झ** (jha) | **ञ** (ña) |
+| **Ṭa-varga (Retroflex)** | **ट** (ṭa) | **ठ** (ṭha) | **ड** (ḍa) | **ढ** (ḍha) | **ण** (ṇa) |
+| **Ta-varga (Dental)** | **त** (ta) | **थ** (tha) | **द** (da) | **ध** (dha) | **न** (na) |
+| **Pa-varga (Lips)** | **प** (pa) | **फ** (pha) | **ब** (ba) | **भ** (bha) | **म** (ma) |
+
+### Breath Dynamics: Alpaprāṇa vs Mahāprāṇa
+- **Alpaprāṇa (अल्पप्राण - Little Breath)**: Columns 1, 3, and 5 require minimal air expulsion.
+- **Mahāprāṇa (महाप्राण - Big Breath)**: Columns 2 and 4 release a strong, audible burst of breath (h-sound).
+
+---
+
+## 3. Ungrouped Consonants (अवर्गीयाः)
+Beyond the 25 grouped consonants, there are **8 ungrouped consonants**:
+
+### A. Semivowels (Antaḥstha - अन्तःस्थाः)
+These stand between vowels and consonants:
+- **य** (ya) - Palatal (like *y* in *yard*)
+- **र** (ra) - Retroflex (light rolled or tapped *r*)
+- **ल** (la) - Dental (like *l* in *light*)
+- **व** (va) - Labio-dental (soft *v/w* sound with teeth gently touching lower lip)
+
+### B. Sibilants and Aspirate (Ūṣman - ऊष्माणः)
+These produce friction or breath warmth:
+- **श** (śa) - Palatal sibilant: tongue flat against palate, like the *sh* in *shoe* or *sugar*.
+- **ष** (ṣa) - Retroflex sibilant: tongue tip curled backward, producing a darker *sh* as in *shore*.
+- **स** (sa) - Dental sibilant: crisp *s* as in *sun*.
+- **ह** (ha) - Glottal aspirate: deep breath sound as in *home*.
+
+---
+
+## 4. IAST Transliteration Reference
+To read Sanskrit accurately in the Roman alphabet:
+- **Dots below letters (ṭ, ṭh, ḍ, ḍh, ṇ, ṣ)** indicate **Retroflex** sounds (curl tongue back).
+- **Letters without dots (t, th, d, dh, n, s)** indicate **Dental** sounds (tongue touches upper teeth).
+- **Acute accent (ś)** indicates the soft **Palatal** *sh* sound.
+
+---
+
+## 5. Practice Exercises
+- **Vocal Journey:** Chant slowly down the 5 rows: **क**, **च**, **ट**, **त**, **प**. Feel the sound moving outward from your throat to your lips!
+- **Breath Check:** Place your hand 2 inches in front of your mouth. Say **क (ka)** (no air on hand), then say **ख (kha)** (feel the burst of warm air).
+- **The Three S's:** Contrast **श (śa)**, **ष (ṣa)**, and **स (sa)**.
