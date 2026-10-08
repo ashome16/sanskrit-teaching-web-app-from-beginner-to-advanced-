@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-label="A cartoon tortoise">
+  <rect width="320" height="240" rx="28" fill="#fff8ef"/>
+  <ellipse cx="160" cy="206" rx="118" ry="16" fill="#d7f3cf"/>
+  <circle cx="46" cy="42" r="10" fill="#ffe08a"/>
+  <circle cx="274" cy="36" r="7" fill="#ffd0e0"/>
+  
+  <ellipse cx="166" cy="150" rx="70" ry="42" fill="#8dca7a"/>
+  <path d="M120 150 H210 M166 116 V184 M136 128 Q166 150 196 128 M136 172 Q166 150 196 172" fill="none" stroke="#5e9a52" stroke-width="3"/>
+  <circle cx="96" cy="150" r="18" fill="#b7e0a8"/>
+  <circle cx="90" cy="148" r="3" fill="#3d3428"/>
+  <circle cx="104" cy="148" r="3" fill="#3d3428"/>
+  <path d="M92 158 Q98 162 106 158" fill="none" stroke="#3d8f4a" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="130" cy="186" rx="10" ry="6" fill="#b7e0a8"/>
+  <ellipse cx="200" cy="186" rx="10" ry="6" fill="#b7e0a8"/>
+
+</svg>

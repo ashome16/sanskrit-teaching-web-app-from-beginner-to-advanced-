@@ -1,0 +1,5 @@
+# sushruta.txt  three tiles this ship. Full eight karmas wait.
+# kind|devanagari|iast|gloss|pack|seed
+tool|सूची|sūcī|needle (name)|sushruta-kosa|सूची = needle as a NAME. Match सीवनम्. Never how-deep.
+tool|यन्त्रम्|yantram|holder class|sushruta-kosa|यन्त्रम् is a type-word, as a coder lists types. Not a build.
+karma|सीवनम्|sīvanam|sewing-karma (name)|sushruta-kosa|सीवनम् is the sewing-NAME. Pair with सूची.

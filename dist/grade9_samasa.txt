@@ -1,0 +1,489 @@
+================================================================================
+कक्षा ९ संस्कृतम् (CBSE / NCERT शारदा - Sharda)
+परिशिष्टम् २ : समास-प्रकरणम् (समसनं समासः)
+(The Science of Compounding: Structural Morphology, Classification & Hermeneutics)
+पाठ्यपुस्तक पृष्ठानि: 177–195 (परिशिष्टम् २ — समासः)
+मुख्य-विषयाः: समास-परिभाषा, पूर्वपद-उत्तरपदे, विग्रहवाक्यम्, केवलसमासः, तत्पुरुषः, द्वन्द्वः, बहुव्रीहिः, अव्ययीभावः
+================================================================================
+
+================================================================================
+🌟 CURRICULUM FRAMEWORK & PEDAGOGICAL ALIGNMENT: CBSE & NCERT CLASS 9 SANSKRIT
+   Paninian Morpho-Syntax: Compounding (समसनं समासः) & Semantic Economy
+================================================================================
+
+The Central Board of Secondary Education (CBSE) and NCERT in the Class 9 Sanskrit
+curriculum ('शारदा' / 'Sharda', परिशिष्टम् २) present the comprehensive study of
+Samasa (समासः). Compounding is one of the crowning linguistic glories of the Sanskrit
+language, allowing complex thoughts, relationships, and descriptions to be condensed
+elegantly into compact single words (सङ्क्षेपणम् / समसनम्).
+
+In Paninian grammar, compounding represents a rigorous morpho-syntactic operation where
+two or more inflected substantives (सुबन्त-पदानि) possessing mutual semantic alliance
+(परस्परम् अन्वयः / सामर्थ्यम्) merge into a single nominal stem (प्रातिपदिकम्), shedding
+their internal case endings (सुपो धातुप्रातिपदिकयोः इति सुप्-लोपः), and acquiring a unified
+grammatical gender, number, and case ending.
+
+Pedagogical Core Objectives (NEP 2020 & CBSE Competencies):
+  1. Morphological Architecture (समास-संरचना):
+     - Identifying Purvapada (पूर्वपदम् - initial stem) and Uttarapada (उत्तरपदम् - final stem).
+     - Mastering case elision (सुप्-लोपः) during synthesis and re-insertion during Vigraha.
+  2. The Dual Vigraha Framework (विग्रहवाक्य-विवेकः):
+     - Svapada-vigraha (स्वपदविग्रहः): Explaining compounds using internal component words.
+     - Asvapada-vigraha (अस्वपदविग्रहः): Deploying external explanatory terms (in Nitya-samasa).
+  3. Syntactic Competence & Semantic Dominance (पदार्थ-प्राधान्यम्):
+     - Kevala-samasa (केवलसमासः): Generic, unclassified compound (e.g., भूतपूर्वः).
+     - Tatpurusha (तत्पुरुषः): Uttarapada-dominant (विभक्ति, कर्मधारय, द्विगु, नञ्, उपपद).
+     - Dvandva (द्वन्द्वः): Ubhayapada-dominant (इतरेतर, समाहार).
+     - Bahuvrihi (बहुव्रीहिः): Anyapada-dominant (external referent).
+     - Avyayibhava (अव्ययीभावः): Purvapada-dominant (indeclinable prefix governing adverbial neuter).
+  4. Diagnostic Verb-Testing Technique (क्रियापद-सम्बन्ध-परीक्षणम्):
+     - Appending a predicate verb to pinpoint which semantic element directly executes the action.
+
+================================================================================
+📖 Part 1: Complete Samasa Chapter Guide & Structural Classification
+================================================================================
+
+--------------------------------------------------------------------------------
+1. Definition & Core Foundational Components (समास-लक्षणं मूलभूत-तत्त्वानि च)
+--------------------------------------------------------------------------------
+[Definition]
+"समसनं समासः" (सङ्क्षेपणम् समासः) — अनेकपदानाम् एकपदीभवनं समासः।
+यदा द्वे वा बहूनि वा सुबन्तपदानि परस्परम् अन्वितानां सतां मिलित्वा एकं पदं भवन्ति, तदा सः समासः इति उच्यते। समासे पूर्वपदानां विभक्तीनां लोपः भवति, अन्ते च समस्तपदस्य एका एव विभक्तिः भवति।
+
+• Core Foundational Components:
+  १. पूर्वपदम् उत्तरपदं च (Initial & Subsequent Elements):
+     - समासे यत् प्रथमं पदं भवति तत् 'पूर्वपदम्', यत् च अनन्तरं भवति तत् 'उत्तरपदम्' उच्यते।
+     - यथा: 'सीतापतिः' इत्यत्र 'सीता' पूर्वपदम्, 'पतिः' उत्तरपदम्।
+  २. विग्रहवाक्यम् (Explanatory Analysis Sentence):
+     - समस्तपदस्य अर्थबोधकं वाक्यं 'विग्रहवाक्यम्' कथ्यते। एतत् द्विविधम्—
+       (क) स्वपदविग्रहः: यत्र समासघटकैः पदैः एव विग्रहः क्रियते (यथा: कृष्णस्य सखा = कृष्णसखा)।
+       (ख) अस्वपदविग्रहः: यत्र समासघटकपदव्यतिरिक्तैः अन्यपदैः विग्रहः क्रियते (नित्यसमासेषु दृश्यते, यथा: ग्रामान्तरम् = अन्यः ग्रामः)।
+  ३. परस्परम् अन्वयः (Syntactic Alliance / सामर्थ्यम्):
+     - समासः तदैव सम्भवति यदा पदानां मध्ये परस्परम् अन्वयः (सम्बन्धः) भवति।
+     - समीचीनः प्रयोगः: 'राज्ञः पुत्रः गच्छति' $\rightarrow$ 'राजपुत्रः गच्छति' (राज्ञः पुत्रेण सह अन्वयः अस्ति)।
+     - असमीचीनः प्रयोगः: 'भवति दर्शनं राज्ञः, पुत्रः कृषकस्य गच्छति' $\rightarrow$ अत्र 'राज्ञः' पदस्य अन्वयः 'दर्शनेन' सह अस्ति, न तु 'पुत्रेण' सह। अतः अत्र 'राजपुत्रः' इति समासः न भवति।
+
+--------------------------------------------------------------------------------
+2. The Broad Classification of Samasa (समास-वर्गीकरणम्)
+--------------------------------------------------------------------------------
+                            समासः (Compounding)
+                                     |
+             -------------------------------------------------
+            |                                                 |
+     १. केवलसमासः (General)                         २. विशेषसमासः (Special)
+                                                              |
+                 -----------------------------------------------------------------
+                |                        |                        |               |
+        क. तत्पुरुषसमासः          ख. द्वन्द्वसमासः          ग. बहुव्रीहिसमासः   घ. अव्ययीभावसमासः
+         (उत्तरपद-प्रधान)          (उभयपद-प्रधान)           (अन्यपद-प्रधान)     (पूर्वपद-प्रधान)
+
+१. केवलसमासः (General/Unclassified Compound):
+   - विशेषसंज्ञाविनिर्मुक्तः केवलसमासः।
+   - अयं समासः तत्पुरुषादिविशेषसंज्ञाभिः रहितः भवति।
+   - उदाहरणम्: पूर्वं भूतः = भूतपूर्वः (Happened earlier / Formerly existed).
+
+२. विशेषसमासः (The Four Special Compound Classes):
+
+क. तत्पुरुषसमासः (Uttarapada-Pradhana / Final Element Dominant):
+   - "प्रायेण उत्तरपदार्थप्रधानः तत्पुरुषः।"
+   - अत्र उत्तरपदस्य अर्थः मुख्यः भवति तथा क्रियायाः अन्वयः उत्तरपदेन सह भवति।
+   - भेदाः:
+     (१) विभक्तितत्पुरुषः (Six Case Variations):
+         • द्वितीयातत्पुरुषः: गृहं गतः = गृहगतः (Gone home).
+         • तृतीयातत्पुरुषः: नखैः भिन्नः = नखभिन्नः (Split by nails).
+         • चतुर्थीतत्पुरुषः: गवे हितम् = गोहितम् (Beneficial for cows).
+         • पञ्चमीतत्पुरुषः: चोरात् भयम् = चोरभयम् (Fear of thieves).
+         • षष्ठीतत्पुरुषः: वृक्षस्य मूलम् = वृक्षमूलम् (Root of a tree).
+         • सप्तमीतत्पुरुषः: कार्ये कुशलः = कार्यकुशलः (Skilled in work).
+     (२) कर्मधारयसमासः (Appositional/Descriptive Tatpurusha):
+         • यत्र पूर्वपदम् उत्तरपदं च समानाधिकरणि (समानविभक्तियुक्ते) भवतः।
+         • विशेषणपूर्वपदः: नीलो मेघः = नीलमेघः (Blue cloud).
+         • उपमानपूर्वपदः: मेघ इव श्यामः = मेघश्यामः (Dark like a rain cloud).
+         • अवधारणापूर्वपदः: विद्या इव धनम् = विद्याधनम् (Wealth in the form of knowledge).
+     (३) द्विगुसमासः (Numeral-First Tatpurusha):
+         • "सङ्ख्यापूर्वो द्विगुः।" पूर्वपदं सङ्ख्यावाचकं भवति, समाहारार्थे प्रयुज्यते।
+         • समाहारद्विगुः: त्रयाणां लोकानां समाहारः = त्रिलोकी (Gathering of the three worlds).
+     (४) नञ्-प्रभृतयः तत्पुरुषाः:
+         • नञ्-तत्पुरुषः: न धर्मः = अधर्मः (Non-righteousness).
+         • कुतत्पुरुषः: कुत्सितः पुत्रः = कुपुत्रः (Wretched son).
+         • प्रादितत्पुरुषः: प्रगतः आचार्यः = प्राचार्यः (Principal / Advanced teacher).
+         • उपपदतत्पुरुषः: कुम्भं करोति इति = कुम्भकारः (Potter).
+
+ख. द्वन्द्वसमासः (Ubhayapada-Pradhana / Both Elements Dominant):
+   - "प्रायेण उभयपदार्थप्रधानः द्वन्द्वः।" "चार्थे द्वन्द्वः।"
+   - अत्र सर्वेषां पदानां प्राधान्यं भवति तथा पदानि 'च' इत्यनेन योज्यन्ते।
+   - भेदाः:
+     (१) इतरेतरद्वन्द्वः: प्रत्येकं पदं स्वं पृथक् स्वरूपं रक्षति।
+         • द्विपदः: रामश्च कृष्णश्च = रामकृष्णौ (Dual ending).
+         • बहुपदः: रामश्च कृष्णश्च सुरेशश्च गिरीशश्च = रामकृष्णसुरेशगिरीशाः (Plural ending).
+     (२) समाहारद्वन्द्वः: मिलित्वा एकः समूहः (नपुंसकलिङ्ग-एकवचनम्) भवति।
+         • पाणी च पादौ च = पाणिपादम् (Hands and feet collective).
+         • संज्ञा च परिभाषा च = संज्ञापरिभाषम्.
+
+ग. बहुव्रीहिसमासः (Anyapada-Pradhana / External Element Dominant):
+   - "प्रायेण अन्यपदार्थप्रधानः बहुव्रीहिः।"
+   - अत्र पूर्वपदम् उत्तरपदं वा प्रधानं न भवति, अपितु पदद्वयं मिलित्वा अन्यमेव पदार्थं बोधयति।
+   - भेदाः:
+     (१) समानाधिकरण-बहुव्रीहिः (Six Case Meanings):
+         • तृतीयार्थः: पीतं क्षीरं येन सः = पीतक्षीरः (शिशुः - The infant who drank milk).
+         • षष्ठ्यर्थः: पीतम् अम्बरं यस्य सः = पीताम्बरः (विष्णुः - He whose garments are yellow).
+     (२) विशेषबहुव्रीहिः:
+         • व्यधिकरणबहुव्रीहिः: चक्रं पाणौ यस्य सः = चक्रपाणिः (विष्णुः - Discus in hand).
+         • उपमानपूर्वपदः: गजस्य आननमिव आननं यस्य सः = गजाननः (गणेशः - Elephant-faced).
+         • सहपूर्वपदः: शिष्येण सह वर्तते इति = सशिष्यः.
+
+घ. अव्ययीभावसमासः (Purvapada-Pradhana / Initial Element Dominant):
+   - "प्रायेण पूर्वपदार्थप्रधानः अव्ययीभावः।"
+   - अत्र पूर्वपदम् अव्ययं भवति, यस्य अर्थः प्रधानः भवति। समस्तपदम् अव्ययं भूत्वा नित्यं नपुंसकलिङ्गे एकवचने प्रयुज्यते।
+   - प्रमुखाः अर्थाः:
+     • समीपार्थे (Proximity): ग्रामस्य समीपे = उपग्रामम् (Near the village).
+     • अभावार्थे (Absence): मशकानाम् अभावः = निर्मशकम् (Free of mosquitoes).
+     • वीप्सार्थे (Repetition): दिने दिने = प्रतिदिनम् (Every day / Daily).
+     • पदार्थ-अनतिवृत्त्यर्थे (Limit): शक्तिम् अनतिक्रम्य = यथाशक्ति (According to one's ability).
+     • योग्यता-अर्थे: रूपस्य योग्यम् = अनुरूपम्.
+
+================================================================================
+✏️ Part 2: Exercise Answer Key & Master Analytical Charts
+================================================================================
+
+Text Verification Rule (क्रियापद-संयोजन-परीक्षणम्):
+To accurately diagnose the compound class, append a predicate verb to the phrase and observe which component directly executes the action:
+1. 'रामदूतः गच्छति' $\rightarrow$ Who goes? दूतः (Messenger) goes, not Rama. Hence, उत्तरपद is dominant $\rightarrow$ तत्पुरुषसमासः।
+2. 'राजेशसुरेशौ खादतः' $\rightarrow$ Who eats? Both Rajesh and Suresh eat. Hence, उभयपद is dominant $\rightarrow$ द्वन्द्वसमासः।
+3. 'पीताम्बरः पश्यति' $\rightarrow$ Who looks? Neither yellow nor garment looks; Lord Vishnu looks. Hence, अन्यपद is dominant $\rightarrow$ बहुव्रीहिसमासः।
+4. 'उपनगरं नदी प्रवहति' $\rightarrow$ The river flows near the city. Driven by 'उप' (समीपे). Hence, पूर्वपद is dominant $\rightarrow$ अव्ययीभावसमासः।
+
+================================================================================
+📝 Part 3: 3 Curated Worksheets (10 Questions Each with Step-by-Step Solutions)
+================================================================================
+
+--------------------------------------------------------------------------------
+📄 WORKSHEET 1: Structural Splits & Cases (विभक्तितत्पुरुषः कर्मधारयश्च)
+--------------------------------------------------------------------------------
+Direction: Supply the correct final compound or split form and name the Samasa case level.
+प्रश्न १: गृहं गतः $\rightarrow$ समस्तपदम्: ___________, समासभेदः: ___________
+• उत्तरम्: गृहगतः | द्वितीयातत्पुरुषः
+प्रश्न २: नखैः भिन्नः $\rightarrow$ समस्तपदम्: ___________, समासभेदः: ___________
+• उत्तरम्: नखभिन्नः | तृतीयातत्पुरुषः
+प्रश्न ३: वृक्षस्य मूलम् $\rightarrow$ समस्तपदम्: ___________, समासभेदः: ___________
+• उत्तरम्: वृक्षमूलम् | षष्ठीतत्पुरुषः
+प्रश्न ४: चोरात् भयम् $\rightarrow$ समस्तपदम्: ___________, समासभेदः: ___________
+• उत्तरम्: चोरभयम् | पञ्चमीतत्पुरुषः
+प्रश्न ५: कार्ये कुशलः $\rightarrow$ समस्तपदम्: ___________, समासभेदः: ___________
+• उत्तरम्: कार्यकुशलः | सप्तमीतत्पुरुषः
+प्रश्न ६: गवे हितम् $\rightarrow$ समस्तपदम्: ___________, समासभेदः: ___________
+• उत्तरम्: गोहितम् | चतुर्थीतत्पुरुषः
+प्रश्न ७: विग्रहवाक्यं लिखत: विद्याधनम् $\rightarrow$ ___________
+• उत्तरम्: विद्या एव धनम् / विद्या इव धनम् (अवधारणापूर्वपद-कर्मधारयः)
+प्रश्न ८: विग्रहवाक्यं लिखत: कुपुत्रः $\rightarrow$ ___________
+• उत्तरम्: कुत्सितः पुत्रः (कुतत्पुरुषः)
+प्रश्न ९: विग्रहवाक्यं लिखत: प्राचार्यः $\rightarrow$ ___________
+• उत्तरम्: प्रगतः आचार्यः (प्रादितत्पुरुषः)
+प्रश्न १०: विग्रहवाक्यं लिखत: भूतपूर्वः $\rightarrow$ ___________
+• उत्तरम्: पूर्वं भूतः (केवलसमासः)
+
+--------------------------------------------------------------------------------
+📄 WORKSHEET 2: Advanced Value Splits (द्वन्द्व-बहुव्रीहि-समास-विवेचनम्)
+--------------------------------------------------------------------------------
+Direction: Identify the sub-type and solve the compound expansions.
+प्रश्न १: रामश्च कृष्णश्च सुरेशश्च गिरीशश्च $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: रामकृष्णसुरेशगिरीशाः (बहुपद-इतरेतरद्वन्द्वः)
+प्रश्न २: पाणी च पादौ च $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: पाणिपादम् (नित्यसमाहारद्वन्द्वः)
+प्रश्न ३: संज्ञा च परिभाषा च $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: संज्ञापरिभाषम् (समाहारद्वन्द्वः)
+प्रश्न ४: चक्रं पाणौ यस्य सः $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: चक्रपाणिः (व्यधिकरण-बहुव्रीहिः — भगवान् विष्णुः)
+प्रश्न ५: पीतं क्षीरं येन सः $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: पीतक्षीरः (तृतीयार्थ-समानाधिकरण-बहुव्रीहिः — शिशुः)
+प्रश्न ६: विग्रहवाक्यं लिखत: सशिष्यः $\rightarrow$ ___________
+• उत्तरम्: शिष्येण सह वर्तते इति (सहपूर्वपद-बहुव्रीहिः)
+प्रश्न ७: विग्रहवाक्यं लिखत: द्वित्राः $\rightarrow$ ___________
+• उत्तरम्: द्वौ वा त्रयो वा (सङ्ख्योभयपद-बहुव्रीहिः)
+प्रश्न ८: विग्रहवाक्यं लिखत: अपुत्रः $\rightarrow$ ___________
+• उत्तरम्: अविद्यमानः पुत्रः यस्य सः (नञ्-बहुव्रीहिः)
+प्रश्न ९: विग्रहवाक्यं लिखत: बहुफलः $\rightarrow$ ___________
+• उत्तरम्: बहूनि फलानि यस्मिन् सः (सप्तम्यर्थ-बहुव्रीहिः — वृक्षः)
+प्रश्न १०: 'त्रिलोकी' पदे द्वन्द्वसमासः वर्तते अथवा द्विगुसमासः?
+• उत्तरम्: द्विगुसमासः (त्रयाणां लोकानां समाहारः इति द्विगुः)।
+
+--------------------------------------------------------------------------------
+📄 WORKSHEET 3: Adverbial Compounds (अव्ययीभाव-चक्रम्)
+--------------------------------------------------------------------------------
+Direction: Form Avyayibhava compounds from the following descriptions.
+प्रश्न १: ग्रामस्य समीपे $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: उपग्रामम् (समीपार्थे अव्ययीभावः)
+प्रश्न २: मशकानाम् अभावः $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: निर्मशकम् (अभावार्थे अव्ययीभावः)
+प्रश्न ३: रूपस्य योग्यम् $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: अनुरूपम् (योग्यतार्थे अव्ययीभावः)
+प्रश्न ४: दिने दिने $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: प्रतिदिनम् (वीप्सार्थे अव्ययीभावः)
+प्रश्न ५: शक्तिम् अनतिक्रम्य $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: यथाशक्ति (पदार्थानतिवृत्तौ अव्ययीभावः)
+प्रश्न ६: रामस्य पश्चात् $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: अनुरामम् (पश्चादर्थे अव्ययीभावः)
+प्रश्न ७: तृणम् अपि अपरित्यज्य $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: सतृणम् (साकल्ये अव्ययीभावः)
+प्रश्न ८: गङ्गायाः मध्ये $\rightarrow$ समस्तपदम्: ___________
+• उत्तरम्: मध्येगङ्गम् (अव्ययीभावः)
+प्रश्न ९: विग्रहवाक्यं लिखत: अधिविद्यालयम् $\rightarrow$ ___________
+• उत्तरम्: विद्यालये इति (विभक्त्यर्थे अव्ययीभावः)
+प्रश्न १०: विग्रहवाक्यं लिखत: अनुज्येष्ठम् $\rightarrow$ ___________
+• उत्तरम्: ज्येष्ठस्य आनुपूर्व्येण (आनुपूर्व्ये अव्ययीभावः)
+
+================================================================================
+🎯 Part 4: 3 Comprehensive Assessment Banks (30 MCQs with Balanced Keys & Rationales)
+================================================================================
+
+--------------------------------------------------------------------------------
+QUIZ 1: Baseline Structural Definitions (समास-मूलतत्त्वानि)
+--------------------------------------------------------------------------------
+
+1. Define the concise literal textual meaning of the grammatical term "समसनम्":
+   • (A) सङ्क्षेपणम् (Condensing / shortening multiple words into one)
+   • (B) प्रस्तारणम् (Expansion)
+   • (C) विभक्तिकल्पनाविरोधः
+   • (D) छन्दोरचना
+   उत्तरम्: (A) सङ्क्षेपणम् (Condensing / shortening multiple words into one)
+   Rationale: "समसनं समासः" — अनेकपदानाम् एकपदीभवनं सङ्क्षेपणं वा समासः उच्यते।
+
+2. What technical names are assigned respectively to the initial and trailing words of a compound?
+   • (A) धातुः प्रत्ययश्च
+   • (B) पूर्वपदम् उत्तरपदं च (Purvapada and Uttarapada)
+   • (C) उपमानम् उपमेयं च
+   • (D) कर्ता कर्म च
+   उत्तरम्: (B) पूर्वपदम् उत्तरपदं च (Purvapada and Uttarapada)
+   Rationale: समासे प्रथमं पदं 'पूर्वपदम्' द्वितीयं पदं च 'उत्तरपदम्' कथ्यते।
+
+3. What is the grammatical designation (सुबन्त) for the uninflected crude base after case elision?
+   • (A) तिङन्तम्
+   • (B) अव्ययम्
+   • (C) प्रातिपदिकम् (Nominal base stem)
+   • (D) निपातः
+   उत्तरम्: (C) प्रातिपदिकम् (Nominal base stem)
+   Rationale: समासस्य 'कृत्तद्धितसमासाश्च' इति प्रातिपदिकसंज्ञा भवति, ततः सुप्-लोपः क्रियते।
+
+4. What is the name of the explanatory analysis sentence that utilizes external words not present in the compound?
+   • (A) नित्यसमासः
+   • (B) स्वपदविग्रहः
+   • (C) केवलसमासः
+   • (D) अस्वपदविग्रहः (Asvapada-vigraha)
+   उत्तरम्: (D) अस्वपदविग्रहः (Asvapada-vigraha)
+   Rationale: समासघटकपदव्यतिरिक्तैः पदैः क्रियमाणः विग्रहः 'अस्वपदविग्रहः' कथ्यते।
+
+5. Why is compounding legally prohibited in: "भवति दर्शनं राज्ञः, पुत्रः कृषकस्य गच्छति"?
+   • (A) Because the target words lack mutual syntactic alliance (परस्परम् अन्वयः नास्ति)
+   • (B) Because 'राज्ञः' is in genitive case
+   • (C) Because 'पुत्रः' is masculine
+   • (D) Because there are too many words
+   उत्तरम्: (A) Because the target words lack mutual syntactic alliance (परस्परम् अन्वयः नास्ति)
+   Rationale: अत्र 'राज्ञः' पदस्य अन्वयः 'दर्शनेन' सह अस्ति, 'पुत्रेण' सह नास्ति; सामर्थ्याभावात् समासो न भवति।
+
+6. How many total primary structural subdivisions are established under 'विशेषसमासः'?
+   • (A) षट् (Six)
+   • (B) चत्वारः (Four— Tatpurusha, Dvandva, Bahuvrihi, Avyayibhava)
+   • (C) पञ्च (Five)
+   • (D) अष्टौ (Eight)
+   उत्तरम्: (B) चत्वारः (Four— Tatpurusha, Dvandva, Bahuvrihi, Avyayibhava)
+   Rationale: विशेषसमासस्य चत्वारः मुख्याः भेदाः सन्ति— तत्पुरुषः, द्वन्द्वः, बहुव्रीहिः, अव्ययीभावश्च।
+
+7. Which compound class retains only the generic concept of compounding without any specialized title?
+   • (A) कर्मधारयसमासः
+   • (B) द्विगुसमासः
+   • (C) केवलसमासः (Kevala-samasa)
+   • (D) तत्पुरुषसमासः
+   उत्तरम्: (C) केवलसमासः (Kevala-samasa)
+   Rationale: "विशेषसंज्ञाविनिर्मुक्तः केवलसमासः" — यथा 'भूतपूर्वः'।
+
+8. In synthesizing 'सीतापतिः' from 'सीतायाः पतिः', which internal grammatical markers undergo elision (लोपः)?
+   • (A) तिङ्-प्रत्ययाः
+   • (B) सन्धि-वर्णाः
+   • (C) सुप्-प्रत्ययौ (ङस् विभक्तिः सु विभक्तिश्च)
+   • (D) उपसर्गौ
+   उत्तरम्: (C) सुप्-प्रत्ययौ (ङस् विभक्तिः सु विभक्तिश्च)
+   Rationale: 'सुपो धातुप्रातिपदिकयोः' इति सूत्रेण पूर्वपदस्य ङस् (षष्ठी) विभक्तेः लोपः भवति।
+
+9. What element can you proactively append to a compound phrase to test which component dominates its meaning?
+   • (A) An indeclinable prefix
+   • (B) A finite predicate verb (क्रियापदम्)
+   • (C) A question mark
+   • (D) A second adjective
+   उत्तरम्: (B) A finite predicate verb (क्रियापदम्)
+   Rationale: क्रियापदं योजयित्वा क्रियायाः अन्वयः यस्मिन् पदे भवति, तस्यैव प्राधान्यं ज्ञायते।
+
+10. True or False: Multiple words can merge simultaneously into a single unified compound in a Dvandva Samasa.
+    • (A) False (केवल द्वयोः पदयोः समासः भवति)
+    • (B) True (सत्यम् — बहुपद-द्वन्द्वे युगपत् बहूनां पदानां समासो भवति)
+    • (C) True only for numbers
+    • (D) True only for neuter nouns
+    उत्तरम्: (B) True (सत्यम् — बहुपद-द्वन्द्वे युगपत् बहूनां पदानां समासो भवति)
+    Rationale: यथा: रामश्च कृष्णश्च सुरेशश्च गिरीशश्च = रामकृष्णसुरेशगिरीशाः।
+
+--------------------------------------------------------------------------------
+QUIZ 2: Identifying Dominant Elements (पदार्थप्राधान्यम्)
+--------------------------------------------------------------------------------
+
+1. Which fundamental compound class is technically defined as 'उत्तरपदार्थप्रधानः'?
+   • (A) तत्पुरुषसमासः (Tatpurusha Samasa)
+   • (B) अव्ययीभावसमासः
+   • (C) बहुव्रीहिसमासः
+   • (D) द्वन्द्वसमासः
+   उत्तरम्: (A) तत्पुरुषसमासः (Tatpurusha Samasa)
+   Rationale: "प्रायेण उत्तरपदार्थप्रधानः तत्पुरुषः।"
+
+2. Which major compound category is canonically defined as 'पूर्वपदार्थप्रधानः'?
+   • (A) द्वन्द्वसमासः
+   • (B) अव्ययीभावसमासः (Avyayibhava Samasa)
+   • (C) बहुव्रीहिसमासः
+   • (D) तत्पुरुषसमासः
+   उत्तरम्: (B) अव्ययीभावसमासः (Avyayibhava Samasa)
+   Rationale: "प्रायेण पूर्वपदार्थप्रधानः अव्ययीभावः।"
+
+3. What is the classical syntactic definition of 'अन्यपदार्थप्रधानः'?
+   • (A) द्वन्द्वसमासः
+   • (B) कर्मधारयसमासः
+   • (C) बहुव्रीहिसमासः (Focusing on an external referent)
+   • (D) केवलसमासः
+   उत्तरम्: (C) बहुव्रीहिसमासः (Focusing on an external referent)
+   Rationale: "प्रायेण अन्यपदार्थप्रधानः बहुव्रीहिः।"
+
+4. When both component words retain their equal prominence in the sentence (उभयपदार्थप्रधानः), which compound is formed?
+   • (A) तत्पुरुषसमासः
+   • (B) अव्ययीभावसमासः
+   • (C) बहुव्रीहिसमासः
+   • (D) द्वन्द्वसमासः (Dvandva Samasa)
+   उत्तरम्: (D) द्वन्द्वसमासः (Dvandva Samasa)
+   Rationale: "प्रायेण उभयपदार्थप्रधानः द्वन्द्वः।"
+
+5. In the compound 'चोरभयम्' (चोरात् भयम्), which element dictates the core meaning and governs sentence action?
+   • (A) भयम् (Fear / उत्तरपदम्)
+   • (B) चोरः (पूर्वपदम्)
+   • (C) Both equally
+   • (D) Neither (external)
+   उत्तरम्: (A) भयम् (Fear / उत्तरपदम्)
+   Rationale: अत्र मुख्यतया 'भयम्' एव अनुभूयते, अतः उत्तरपदार्थप्रधानः तत्पुरुषः।
+
+6. Identify the precise compound class of 'प्रतिदिनम्' (दिने दिने):
+   • (A) तत्पुरुषसमासः
+   • (B) अव्ययीभावसमासः (Avyayibhava Samasa)
+   • (C) द्वन्द्वसमासः
+   • (D) द्विगुसमासः
+   उत्तरम्: (B) अव्ययीभावसमासः (Avyayibhava Samasa)
+   Rationale: 'प्रति' इति अव्ययस्य वीप्सार्थे पूर्वपदार्थप्राधान्यात् अव्ययीभावः।
+
+7. When the classical compound 'पीताम्बरः' acts as the subject of an action (पीताम्बरः तिष्ठति), what does it denote?
+   • (A) Yellow color only
+   • (B) A silk cloth only
+   • (C) भगवान् विष्णुः (Lord Vishnu — The One who wears yellow garments)
+   • (D) An artist
+   उत्तरम्: (C) भगवान् विष्णुः (Lord Vishnu — The One who wears yellow garments)
+   Rationale: पीतम् अम्बरं यस्य सः पीताम्बरः (विष्णुः) — अन्यपदार्थप्रधानः बहुव्रीहिः।
+
+8. To which overarching compound family does 'कर्मधारयसमासः' belong as an appositional sub-branch?
+   • (A) अव्ययीभावसमासः
+   • (B) द्वन्द्वसमासः
+   • (C) बहुव्रीहिसमासः
+   • (D) तत्पुरुषसमासः (Tatpurusha Samasa)
+   उत्तरम्: (D) तत्पुरुषसमासः (Tatpurusha Samasa)
+   Rationale: "तत्पुरुषः समानाधिकरणः कर्मधारयः।"
+
+9. What morphological type of word must strictly occupy the Purvapada position in an Avyayibhava compound?
+   • (A) An indeclinable particle or prefix (अव्ययम् / उपसर्गः)
+   • (B) A numeral adjective
+   • (C) A finite verb
+   • (D) A proper noun
+   उत्तरम्: (A) An indeclinable particle or prefix (अव्ययम् / उपसर्गः)
+   Rationale: अव्ययीभावे पूर्वपदम् अव्ययं भवति तथा समस्तपदम् अपि अव्ययं संपद्यते।
+
+10. Complete the canonical textbook rule: "प्रायेण उत्तरपदार्थप्रधानः ___________।"
+    • (A) बहुव्रीहिः
+    • (B) तत्पुरुषः (Tatpurusha)
+    • (C) द्वन्द्वः
+    • (D) केवलः
+    उत्तरम्: (B) तत्पुरुषः (Tatpurusha)
+    Rationale: "प्रायेण उत्तरपदार्थप्रधानः तत्पुरुषः।"
+
+--------------------------------------------------------------------------------
+QUIZ 3: Compounding Rules & Splits (विग्रहवाक्यानि समस्तपदानि च)
+--------------------------------------------------------------------------------
+
+1. Provide the correct Vigraha-vakya expansion for: 'कार्ये कुशलः':
+   • (A) कार्यकुशलः (सप्तमीतत्पुरुषः)
+   • (B) कुशलकार्यम्
+   • (C) कार्येण कुशलः
+   • (D) कार्यस्य कुशलः
+   उत्तरम्: (A) कार्यकुशलः (सप्तमीतत्पुरुषः)
+   Rationale: 'कार्ये कुशलः' इति विग्रहे 'कार्यकुशलः' इति सप्तमीतत्पुरुषः भवति।
+
+2. Form the consolidated compound word for the expansion: "त्रयाणां लोकानां समाहारः":
+   • (A) त्रिलोकम्
+   • (B) त्रिलोकी (द्विगुसमासः)
+   • (C) त्रिलोकयः
+   • (D) त्रिलोकाः
+   उत्तरम्: (B) त्रिलोकी (द्विगुसमासः)
+   Rationale: सङ्ख्यापूर्वः द्विगुः समाहारे स्त्रीलिङ्गे 'त्रिलोकी' इति सिध्यति।
+
+3. What specific sub-type of descriptive compound is represented by: "नीलो मेघः = नीलमेघः"?
+   • (A) उपमानपूर्वपद-कर्मधारयः
+   • (B) अवधारणापूर्वपद-कर्मधारयः
+   • (C) विशेषणपूर्वपद-कर्मधारयः (Adjective-first Karmadharaya)
+   • (D) रूपक-कर्मधारयः
+   उत्तरम्: (C) विशेषणपूर्वपद-कर्मधारयः (Adjective-first Karmadharaya)
+   Rationale: 'नील' इति विशेषणं पूर्वपदे अस्ति, अतः विशेषणपूर्वपद-कर्मधारयः।
+
+4. Expand the compound 'कुम्भकारः' using its proper canonical Upapada format:
+   • (A) कुम्भस्य कारः
+   • (B) कुम्भेन करोति
+   • (C) कुम्भात् करोति
+   • (D) कुम्भं करोति इति (उपपद-तत्पुरुषः)
+   उत्तरम्: (D) कुम्भं करोति इति (उपपद-तत्पुरुषः)
+   Rationale: उपपदमतिङ् इति सूत्रेण 'कुम्भं करोति इति कुम्भकारः'।
+
+5. What is the consolidated compound word for the negative expansion: "न धर्मः"?
+   • (A) अधर्मः (नञ्-तत्पुरुषः)
+   • (B) अनधर्मः
+   • (C) कुधर्मः
+   • (D) विधर्मः
+   उत्तरम्: (A) अधर्मः (नञ्-तत्पुरुषः)
+   Rationale: व्यञ्जने परे नञ्-स्थान 'अ' भवति: न धर्मः = अधर्मः।
+
+6. Identify the precise sub-type of Dvandva instantiated in: 'पाणिपादम्':
+   • (A) इतरेतरद्वन्द्वः
+   • (B) नित्यसमाहारद्वन्द्वः (Collective Neuter Dvandva)
+   • (C) एकशेषद्वन्द्वः
+   • (D) बहुव्रीहिः
+   उत्तरम्: (B) नित्यसमाहारद्वन्द्वः (Collective Neuter Dvandva)
+   Rationale: प्राण्यङ्गानां द्वन्द्वः नित्यं समाहारे एकवद्भवति: पाणि च पादौ च = पाणिपादम्।
+
+7. Provide the canonical Vigraha-vakya split for the dynamic limit expression 'यथाशक्ति':
+   • (A) शक्तिः यथा
+   • (B) शक्तिम् अनतिक्रम्य (अव्ययीभावः)
+   • (C) शक्तेः अनुसारम्
+   • (D) शक्तौ इति
+   उत्तरम्: (B) शक्तिम् अनतिक्रम्य (अव्ययीभावः)
+   Rationale: 'यथा' इति अव्ययस्य पदार्थानतिवृत्तौ 'शक्तिम् अनतिक्रम्य = यथाशक्ति'।
+
+8. What does the compound 'निर्मशकम्' signify contextually?
+   • (A) मशकानाम् उपस्थितिः
+   • (B) मशकस्य समीपम्
+   • (C) मशकानाम् अभावः (Absence / freedom from mosquitoes)
+   • (D) मशकानां समूहः
+   उत्तरम्: (C) मशकानाम् अभावः (Absence / freedom from mosquitoes)
+   Rationale: 'निर्' इति अव्ययं अभावार्थे प्रयुज्यते: मशकानाम् अभावः = निर्मशकम्।
+
+9. Provide the consolidated compound form for: "रामश्च कृष्णश्च":
+   • (A) रामकृष्णाः
+   • (B) रामः कृष्णः
+   • (C) रामकृष्णे
+   • (D) रामकृष्णौ (इतरेतरद्वन्द्वः)
+   उत्तरम्: (D) रामकृष्णौ (इतरेतरद्वन्द्वः)
+   Rationale: द्वयोः पदयोः इतरेतरयोगे द्विवचनं भवति: रामकृष्णौ।
+
+10. Give the authoritative Vigraha expansion phrase for the compound 'गजाननः':
+    • (A) गजस्य आननम्
+    • (B) गजस्य आननमिव आननं यस्य सः (गणेशः)
+    • (C) गजे आननम्
+    • (D) गजश्च आननश्च
+    उत्तरम्: (B) गजस्य आननमिव आननं यस्य सः (गणेशः)
+    Rationale: उपमानपूर्वपद-बहुव्रीहिसमासः: गजस्य आननमिव आननं यस्य सः गजाननः।

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-label="A cartoon horse">
+  <rect width="320" height="240" rx="28" fill="#fff8ef"/>
+  <ellipse cx="160" cy="206" rx="118" ry="16" fill="#d7f3cf"/>
+  <circle cx="46" cy="42" r="10" fill="#ffe08a"/>
+  <circle cx="274" cy="36" r="7" fill="#ffd0e0"/>
+  
+  <ellipse cx="176" cy="156" rx="70" ry="32" fill="#f0c9a0"/>
+  <circle cx="112" cy="128" r="24" fill="#f0c9a0"/>
+  <path d="M96 112 Q70 90 92 100 Q80 120 100 118" fill="#c4845a"/>
+  <circle cx="104" cy="126" r="3" fill="#3d3428"/>
+  <circle cx="118" cy="126" r="3" fill="#3d3428"/>
+  <path d="M100 138 Q112 146 122 138" fill="none" stroke="#c4845a" stroke-width="2" stroke-linecap="round"/>
+  <path d="M230 148 Q252 130 240 166" fill="none" stroke="#e0b48a" stroke-width="6" stroke-linecap="round"/>
+
+</svg>

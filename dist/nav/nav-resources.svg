@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="globeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+  </defs>
+  <!-- Background soft circle -->
+  <circle cx="64" cy="64" r="58" fill="#f0f9ff" stroke="#bae6fd" stroke-width="4"/>
+  
+  <!-- Globe Meridian & Latitudes -->
+  <circle cx="64" cy="64" r="42" fill="none" stroke="url(#globeGrad)" stroke-width="5"/>
+  <ellipse cx="64" cy="64" rx="20" ry="42" fill="none" stroke="url(#globeGrad)" stroke-width="4" stroke-dasharray="2 1"/>
+  <path d="M24 64h80" fill="none" stroke="url(#globeGrad)" stroke-width="4"/>
+  <path d="M31 46h66" fill="none" stroke="url(#globeGrad)" stroke-width="3" opacity="0.7"/>
+  <path d="M31 82h66" fill="none" stroke="url(#globeGrad)" stroke-width="3" opacity="0.7"/>
+
+  <!-- Live Pulse Dot & Rings at top right -->
+  <circle cx="96" cy="30" r="14" fill="url(#badgeGrad)" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="96" cy="30" r="7" fill="#ffffff"/>
+  
+  <!-- Sanskrit Diacritic / Sparkle at top left -->
+  <path d="M32 26 L35 34 L43 37 L35 40 L32 48 L29 40 L21 37 L29 34 Z" fill="#eab308"/>
+</svg>
