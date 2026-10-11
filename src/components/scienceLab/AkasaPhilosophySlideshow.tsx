@@ -573,7 +573,7 @@ export const JOURNEY_STOPS: JourneyStop[] = [
     sanskritSutra: 'यतोऽभ्युदयनिःश्रेयससिद्धिः स धर्मः',
     sanskritSutraRef: 'Vaiśeṣika Sūtra 1.1.2 · "Dharma leads to material prosperity and spiritual liberation"',
     coreInsight:
-      'Why did ancient India research atomic physics? Not for weapons or corporate monopolies, but for ethical medicine (Ayurveda) and the liberation of human consciousness from fear of death.',
+      'Why did ancient India research atomic physics? Not for weapons or corporate monopolies, but for ethical medicine (Ayurveda), and discovering that Vigyana is not just about knowing how things work, but also realizing who you are.',
     dialogue: [
       {
         speaker: 'Bodhi',
@@ -595,9 +595,9 @@ export const JOURNEY_STOPS: JourneyStop[] = [
       },
       {
         speaker: 'Kaṇāda',
-        dev: 'यदा जानासि यत् शरीरं केवलं नश्वरः अणूनां संयोगः, आत्मा तु आकाशवत् नित्यः असङ्गः च, तदा मृत्यु-भयं विनश्यति! आकाशं ज्ञात्वा स्वयं जानीहि।',
-        en: 'When you realize that your physical body is merely a temporary conjunction of atoms, while your true consciousness is like Space—eternal, unstained, and immortal—all fear of death dissolves! Understand Space to know what you truly are.',
-        subText: 'Transcendence of the fear of death through atomic truth',
+        dev: 'यदा जानासि यत् शरीरं केवलं नश्वरः अणूनां संयोगः, आत्मा तु आकाशवत् नित्यः असङ्गः च, तदा विज्ञानं केवलं वस्तु-ज्ञानं न, अपि तु आत्म-ज्ञानम्! आकाशं ज्ञात्वा स्वयं जानीहि।',
+        en: 'When you realize that your physical body is merely a temporary conjunction of atoms, while your true consciousness is like Space—eternal, unstained, and immortal—Vigyana is not just about knowing how things work, but also realizing who you are! Understand Space to know what you truly are.',
+        subText: 'Vigyana: not just knowing how things work, but realizing who you are',
       },
     ],
     points: [
@@ -621,8 +621,8 @@ export const JOURNEY_STOPS: JourneyStop[] = [
       },
       {
         labelDev: 'अपवर्गः (Apavarga)',
-        labelEn: 'Spiritual Liberation',
-        desc: 'By realizing that the physical body is merely a temporary conjunction (Saṁyoga) of atoms in eternal space, human consciousness overcomes fear of death.',
+        labelEn: 'Self-Realization & Liberation',
+        desc: 'By realizing that the physical body is merely a temporary conjunction (Saṁyoga) of atoms in eternal space, Vigyana leads beyond mechanism to self-realization: knowing who you are.',
         icon: '🕊️',
       },
     ],
