@@ -58,34 +58,38 @@ export const DynamicGunaMatrix: React.FC = () => {
     );
   };
 
-  // Initialize Particles (28 Earth particles on left, 28 Water particles on right = 56 total)
-  useEffect(() => {
+  // Helper to initialize stratified particles (28 Oil on top, 28 Water on bottom = 56 total)
+  const initParticles = () => {
     const list: MatrixParticle[] = [];
-    // Cluster 1: Earth (dense, gold)
+    // Upper Layer: Oil / Taila (golden amber)
     for (let i = 0; i < 28; i++) {
       list.push({
-        x: 140 + (Math.random() * 90 - 45),
-        y: 190 + (Math.random() * 90 - 45),
-        vx: (Math.random() - 0.5) * 0.8,
-        vy: (Math.random() - 0.5) * 0.8,
-        radius: 5 + Math.random() * 2,
-        cluster: 'earth',
-        color: '#eab308',
+        x: 210 + Math.random() * 180,
+        y: 105 + Math.random() * 58,
+        vx: (Math.random() - 0.5) * 0.7,
+        vy: (Math.random() - 0.5) * 0.7,
+        radius: 4.5 + Math.random() * 1.8,
+        cluster: 'earth', // Taila / Non-Polar
+        color: '#f59e0b',
       });
     }
-    // Cluster 2: Water (slick, cyan)
+    // Lower Layer: Water / Ap (cyan)
     for (let i = 0; i < 28; i++) {
       list.push({
-        x: 460 + (Math.random() * 90 - 45),
-        y: 190 + (Math.random() * 90 - 45),
-        vx: (Math.random() - 0.5) * 0.8,
-        vy: (Math.random() - 0.5) * 0.8,
-        radius: 4.5 + Math.random() * 2,
-        cluster: 'water',
+        x: 220 + Math.random() * 160,
+        y: 190 + Math.random() * 65,
+        vx: (Math.random() - 0.5) * 0.7,
+        vy: (Math.random() - 0.5) * 0.7,
+        radius: 4.5 + Math.random() * 1.8,
+        cluster: 'water', // Ap / Polar Viscidity
         color: '#38bdf8',
       });
     }
     particlesRef.current = list;
+  };
+
+  useEffect(() => {
+    initParticles();
   }, []);
 
   // Main Canvas Render Loop
@@ -100,6 +104,8 @@ export const DynamicGunaMatrix: React.FC = () => {
     const render = () => {
       if (!running) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const time = Date.now() * 0.003;
 
       // Draw subtle background grid
       ctx.strokeStyle = 'rgba(56, 189, 248, 0.05)';
@@ -143,7 +149,6 @@ export const DynamicGunaMatrix: React.FC = () => {
         ctx.shadowColor = '#facc15';
         ctx.shadowBlur = 20;
 
-        const time = Date.now() * 0.003;
         for (let t = 0; t < 6; t++) {
           const angle = time + (t * Math.PI) / 3;
           const r = 24 + Math.sin(time * 2 + t) * 6;
@@ -159,66 +164,350 @@ export const DynamicGunaMatrix: React.FC = () => {
         return;
       }
 
-      // Particle physics influenced by Guṇa Triad
+      // =====================================================================
+      // STAGES 1 & 2: CLEAR LABORATORY CRUCIBLE / BOWL WITH TWO LAYERS
+      // =====================================================================
+      if (currentStage === 1 || currentStage === 2) {
+        // 1. Bowl Background Liquid Washes (Stratified Phases)
+        // Upper Oil Layer Wash (amber)
+        ctx.fillStyle = 'rgba(245, 158, 11, 0.08)';
+        ctx.beginPath();
+        ctx.moveTo(165, 75);
+        ctx.quadraticCurveTo(175, 125, 190, 175);
+        ctx.lineTo(410, 175);
+        ctx.quadraticCurveTo(425, 125, 435, 75);
+        ctx.closePath();
+        ctx.fill();
+
+        // Lower Water Layer Wash (cyan)
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.08)';
+        ctx.beginPath();
+        ctx.moveTo(190, 175);
+        ctx.quadraticCurveTo(200, 225, 215, 275);
+        ctx.quadraticCurveTo(300, 283, 385, 275);
+        ctx.quadraticCurveTo(400, 225, 410, 175);
+        ctx.closePath();
+        ctx.fill();
+
+        // 2. Clear Glass Bowl Outline & Specular Glare
+        ctx.strokeStyle = 'rgba(148, 163, 184, 0.45)';
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        ctx.moveTo(165, 75);
+        ctx.quadraticCurveTo(175, 175, 215, 275);
+        ctx.quadraticCurveTo(300, 283, 385, 275);
+        ctx.quadraticCurveTo(425, 175, 435, 75);
+        ctx.stroke();
+
+        // Glass Rim Top Ellipse
+        ctx.beginPath();
+        ctx.ellipse(300, 75, 135, 12, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(203, 213, 225, 0.5)';
+        ctx.lineWidth = 1.8;
+        ctx.stroke();
+
+        // Specular highlight on left curved wall
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(175, 95);
+        ctx.quadraticCurveTo(182, 175, 222, 265);
+        ctx.stroke();
+
+        // Tripod Stand underneath the bowl
+        ctx.strokeStyle = 'rgba(100, 116, 139, 0.6)';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.ellipse(300, 280, 90, 10, 0, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.strokeStyle = 'rgba(71, 85, 105, 0.65)';
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        ctx.moveTo(212, 282);
+        ctx.lineTo(192, 345);
+        ctx.moveTo(388, 282);
+        ctx.lineTo(408, 345);
+        ctx.moveTo(300, 288);
+        ctx.lineTo(300, 345);
+        ctx.stroke();
+
+        // Phase Labels on Left Edge
+        ctx.fillStyle = '#f59e0b';
+        ctx.font = '10px JetBrains Mono, monospace';
+        ctx.fillText('🛢️ तैल (Taila / Oil Phase)', 35, 130);
+        ctx.fillStyle = 'rgba(245, 158, 11, 0.7)';
+        ctx.font = '8.5px JetBrains Mono, monospace';
+        ctx.fillText('Non-Polar · Low Density', 35, 144);
+
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = '10px JetBrains Mono, monospace';
+        ctx.fillText('💧 अप् (Ap / Water Phase)', 35, 225);
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.7)';
+        ctx.font = '8.5px JetBrains Mono, monospace';
+        ctx.fillText('Polar Viscidity · High Sneha', 35, 239);
+
+        // ===================================================================
+        // STAGE 1: IMMISCIBLE MENISCUS & REPULSION GRAPHIC (NO RED RING)
+        // ===================================================================
+        if (currentStage === 1) {
+          if (!repulsionTriggered) {
+            // Calm, crisp meniscus line
+            ctx.beginPath();
+            ctx.moveTo(190, 175);
+            ctx.quadraticCurveTo(300, 178, 410, 175);
+            ctx.strokeStyle = 'rgba(148, 163, 184, 0.5)';
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([5, 4]);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            ctx.fillStyle = 'rgba(148, 163, 184, 0.75)';
+            ctx.font = '9px JetBrains Mono, monospace';
+            ctx.fillText('Meniscus Barrier (अन्तरपृष्ठ)', 422, 178);
+          } else {
+            // Repulsion Triggered: Dynamic Interfacial Tension Wave
+            ctx.beginPath();
+            for (let x = 190; x <= 410; x += 4) {
+              const waveY = 175 + Math.sin((x - 190) * 0.12 + time * 10) * 3.5;
+              x === 190 ? ctx.moveTo(x, waveY) : ctx.lineTo(x, waveY);
+            }
+            ctx.strokeStyle = '#f59e0b';
+            ctx.lineWidth = 2.5;
+            ctx.shadowColor = '#f59e0b';
+            ctx.shadowBlur = 8;
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+
+            // Opposing Kinetic Deflection Vectors (Arrow indicators showing mutual deflection)
+            const arrowXCoords = [235, 280, 320, 365];
+            arrowXCoords.forEach((ax) => {
+              // Amber Upward Arrow (Oil deflected upward)
+              ctx.strokeStyle = '#fbbf24';
+              ctx.fillStyle = '#fbbf24';
+              ctx.lineWidth = 1.8;
+              ctx.beginPath();
+              ctx.moveTo(ax, 167);
+              ctx.lineTo(ax, 153);
+              ctx.stroke();
+              ctx.beginPath();
+              ctx.moveTo(ax - 3.5, 160);
+              ctx.lineTo(ax, 151);
+              ctx.lineTo(ax + 3.5, 160);
+              ctx.stroke();
+
+              // Cyan Downward Arrow (Water deflected downward)
+              ctx.strokeStyle = '#38bdf8';
+              ctx.fillStyle = '#38bdf8';
+              ctx.lineWidth = 1.8;
+              ctx.beginPath();
+              ctx.moveTo(ax, 183);
+              ctx.lineTo(ax, 197);
+              ctx.stroke();
+              ctx.beginPath();
+              ctx.moveTo(ax - 3.5, 190);
+              ctx.lineTo(ax, 199);
+              ctx.lineTo(ax + 3.5, 190);
+              ctx.stroke();
+
+              // Deflection contact sparks
+              ctx.fillStyle = '#fef08a';
+              ctx.beginPath();
+              ctx.arc(ax, 175, 1.8, 0, Math.PI * 2);
+              ctx.fill();
+            });
+
+            // Diagnostic HUD Banner on Interface
+            ctx.fillStyle = '#fca5a5';
+            ctx.font = '9.5px JetBrains Mono, monospace';
+            ctx.fillText('⚡ INTERFACIAL REPULSION: SNEHA POLARITY BARRIER', 170, 52);
+          }
+        }
+
+        // ===================================================================
+        // STAGE 2: VEDIC AGNI / THERMAL FIRE UNDER BOWL (BREAK THE STATE MASK)
+        // ===================================================================
+        if (currentStage === 2) {
+          // 1. Burner Base Plate
+          ctx.fillStyle = '#334155';
+          ctx.fillRect(235, 334, 130, 6);
+
+          // 2. Animated Flame Tongues Licking Bottom of Vessel
+          for (let f = 0; f < 11; f++) {
+            const fx = 245 + f * 11;
+            const flameH = 26 + Math.sin(time * 6 + f * 1.5) * 8 + Math.cos(time * 9 + f * 0.7) * 4;
+            const tipY = 334 - flameH;
+            const grad = ctx.createLinearGradient(fx, 334, fx, tipY);
+            grad.addColorStop(0, '#dc2626');
+            grad.addColorStop(0.35, '#ea580c');
+            grad.addColorStop(0.7, '#f97316');
+            grad.addColorStop(1, '#fef08a');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.moveTo(fx - 6, 334);
+            ctx.quadraticCurveTo(fx - 4, (334 + tipY) / 2, fx, tipY);
+            ctx.quadraticCurveTo(fx + 4, (334 + tipY) / 2, fx + 6, 334);
+            ctx.closePath();
+            ctx.fill();
+          }
+
+          // 3. Thermal Glow Bathing Vessel Base
+          const fireGlow = ctx.createRadialGradient(300, 290, 8, 300, 290, 75);
+          fireGlow.addColorStop(0, 'rgba(234, 88, 12, 0.4)');
+          fireGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+          ctx.fillStyle = fireGlow;
+          ctx.beginPath();
+          ctx.arc(300, 290, 75, 0, Math.PI * 2);
+          ctx.fill();
+
+          // 4. Rising Thermal Embers around Bowl
+          for (let e = 0; e < 8; e++) {
+            const ey = 325 - ((time * 38 + e * 32) % 170);
+            const ex = 300 + Math.sin(ey * 0.05 + e * 2) * (50 + e * 8);
+            ctx.fillStyle = e % 2 === 0 ? '#facc15' : '#f97316';
+            ctx.beginPath();
+            ctx.arc(ex, ey, 2, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          // 5. Softened, Wavering Meniscus Boundary (Pīlupāka Disruption)
+          ctx.beginPath();
+          for (let x = 190; x <= 410; x += 5) {
+            const waveY = 175 + Math.sin((x - 190) * 0.06 + time * 3) * 5;
+            x === 190 ? ctx.moveTo(x, waveY) : ctx.lineTo(x, waveY);
+          }
+          ctx.strokeStyle = '#fb923c';
+          ctx.lineWidth = 2;
+          ctx.setLineDash([8, 6]);
+          ctx.stroke();
+          ctx.setLineDash([]);
+
+          // Informative Fire & Pīlupāka Labels
+          ctx.fillStyle = '#fdba74';
+          ctx.font = '9.5px JetBrains Mono, monospace';
+          ctx.fillText('🔥 तेजस् (TEJAS AGNI) · PĪLUPĀKA THERMAL DISSOCIATION', 160, 364);
+
+          ctx.fillStyle = '#fb923c';
+          ctx.font = '8.5px JetBrains Mono, monospace';
+          ctx.fillText('〰️ Boundary Softened (State Mask Breaking)', 422, 178);
+        }
+      }
+
+      // =====================================================================
+      // STAGE 3: COSMIC VĀYU WIND STREAMLINES (DYNAMIC PROPERTY SOUP)
+      // =====================================================================
+      if (currentStage === 3) {
+        ctx.strokeStyle = 'rgba(52, 211, 153, 0.22)';
+        ctx.lineWidth = 1.5;
+        for (let w = 0; w < 4; w++) {
+          const wy = 80 + w * 70;
+          ctx.beginPath();
+          for (let x = 0; x <= canvas.width; x += 20) {
+            const y = wy + Math.sin(x * 0.03 + time * 4 + w) * 12;
+            x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        }
+
+        ctx.fillStyle = '#6ee7b7';
+        ctx.font = '10px JetBrains Mono, monospace';
+        ctx.fillText('💨 वायोः संप्लवः (VĀYU WIND SWEEP) · DYNAMIC PROPERTY SOUP', 140, 36);
+      }
+
+      // =====================================================================
+      // PARTICLE PHYSICS & SIMULATION
+      // =====================================================================
       const particles = particlesRef.current;
       const speedMultiplier = 0.3 + (dravatva / 100) * 2.2 + (usna / 100) * 1.5;
-      const cohesionForce = (sneha / 100) * 0.06;
+      const cohesionForce = (sneha / 100) * 0.05;
 
-      // Centroids of the two clusters
-      let earthCx = 160;
-      let earthCy = 190;
-      let waterCx = 440;
-      let waterCy = 190;
-
-      // If repulsion triggered in Stage 1, push clusters apart
-      if (repulsionTriggered) {
-        earthCx = 110;
-        waterCx = 490;
-      }
-
-      // If in Stage 3 or 4: clusters blend toward center
-      if (currentStage >= 3) {
-        earthCx = 300;
-        waterCx = 300;
-      }
+      const oilTargetY = 130;
+      const waterTargetY = 225;
 
       particles.forEach((p) => {
-        // Cohesion pulls particle toward its target cluster center
-        const targetX = p.cluster === 'earth' ? earthCx : waterCx;
-        const targetY = p.cluster === 'earth' ? earthCy : waterCy;
+        if (currentStage === 1) {
+          // STAGE 1: Contained in stratified layers within the clear bowl
+          if (repulsionTriggered) {
+            // Attempting merge: pushed toward the meniscus (y = 175)
+            if (p.cluster === 'earth') {
+              p.vy += 0.45;
+              p.vx += (300 - p.x) * 0.01 + (Math.random() - 0.5) * 0.35;
+              // Repulsive deflection at meniscus
+              if (p.y >= 168) {
+                p.y = 166;
+                p.vy = -Math.abs(p.vy) * 1.5 - 1.0;
+                p.vx += (Math.random() - 0.5) * 1.8;
+              }
+            } else {
+              p.vy -= 0.45;
+              p.vx += (300 - p.x) * 0.01 + (Math.random() - 0.5) * 0.35;
+              // Repulsive deflection at meniscus
+              if (p.y <= 182) {
+                p.y = 184;
+                p.vy = Math.abs(p.vy) * 1.5 + 1.0;
+                p.vx += (Math.random() - 0.5) * 1.8;
+              }
+            }
+          } else {
+            // Calm circulation within respective layers
+            const targetY = p.cluster === 'earth' ? oilTargetY : waterTargetY;
+            p.vx += (300 - p.x) * (cohesionForce * 0.3) + (Math.random() - 0.5) * 0.3;
+            p.vy += (targetY - p.y) * (cohesionForce * 0.5) + (Math.random() - 0.5) * 0.3;
 
-        if (currentStage < 3) {
-          p.vx += (targetX - p.x) * cohesionForce;
-          p.vy += (targetY - p.y) * cohesionForce;
+            // Strict boundary containment at meniscus
+            if (p.cluster === 'earth' && p.y > 170) {
+              p.y = 170;
+              p.vy = -Math.abs(p.vy);
+            }
+            if (p.cluster === 'water' && p.y < 180) {
+              p.y = 180;
+              p.vy = Math.abs(p.vy);
+            }
+          }
+
+          // Bowl wall boundaries
+          if (p.cluster === 'earth') {
+            if (p.y < 85) { p.y = 85; p.vy = Math.abs(p.vy); }
+            if (p.x < 185) { p.x = 185; p.vx = Math.abs(p.vx); }
+            if (p.x > 415) { p.x = 415; p.vx = -Math.abs(p.vx); }
+          } else {
+            if (p.y > 268) { p.y = 268; p.vy = -Math.abs(p.vy); }
+            if (p.x < 205) { p.x = 205; p.vx = Math.abs(p.vx); }
+            if (p.x > 395) { p.x = 395; p.vx = -Math.abs(p.vx); }
+          }
+        } else if (currentStage === 2) {
+          // STAGE 2: Tejas Heating / Bowl on Fire
+          // High kinetic energy - boundary softens and becomes permeable!
+          p.vx += (300 - p.x) * 0.008 + (Math.random() - 0.5) * 1.4;
+          p.vy += (Math.random() - 0.5) * 1.4;
+
+          // Atoms freely circulate throughout the whole bowl across the softened boundary
+          if (p.y > 270) { p.y = 270; p.vy = -Math.abs(p.vy) * 1.2; }
+          if (p.y < 82) { p.y = 82; p.vy = Math.abs(p.vy) * 1.2; }
+          if (p.x < 180) { p.x = 180; p.vx = Math.abs(p.vx); }
+          if (p.x > 420) { p.x = 420; p.vx = -Math.abs(p.vx); }
         } else {
-          // In Stage 3, fluidity spreads particles freely across the entire box
-          p.vx += (Math.random() - 0.5) * 0.6;
-          p.vy += (Math.random() - 0.5) * 0.6;
+          // STAGES 3 & 4: Vāyu wind and universal property soup
+          p.vx += 0.25 + (Math.random() - 0.5) * 0.7;
+          p.vy += (Math.random() - 0.5) * 0.7;
+
+          if (currentStage === 4) {
+            p.vx += (300 - p.x) * 0.04;
+            p.vy += (190 - p.y) * 0.04;
+          }
+
+          // Full canvas bounds
+          if (p.x < 20) { p.x = 20; p.vx = Math.abs(p.vx); }
+          if (p.x > canvas.width - 20) { p.x = canvas.width - 20; p.vx = -Math.abs(p.vx); }
+          if (p.y < 20) { p.y = 20; p.vy = Math.abs(p.vy); }
+          if (p.y > canvas.height - 20) { p.y = canvas.height - 20; p.vy = -Math.abs(p.vy); }
         }
 
         // Apply velocity with damping
         p.x += p.vx * speedMultiplier;
         p.y += p.vy * speedMultiplier;
-        p.vx *= 0.94;
-        p.vy *= 0.94;
-
-        // Boundary bounce
-        if (p.x < 20) {
-          p.x = 20;
-          p.vx *= -1;
-        }
-        if (p.x > canvas.width - 20) {
-          p.x = canvas.width - 20;
-          p.vx *= -1;
-        }
-        if (p.y < 20) {
-          p.y = 20;
-          p.vy *= -1;
-        }
-        if (p.y > canvas.height - 20) {
-          p.y = canvas.height - 20;
-          p.vy *= -1;
-        }
+        p.vx *= 0.93;
+        p.vy *= 0.93;
 
         // Render particle
         ctx.beginPath();
@@ -230,59 +519,22 @@ export const DynamicGunaMatrix: React.FC = () => {
         ctx.shadowBlur = 0;
       });
 
-      // Draw connecting molecular threads if cohesion is active
-      if (currentStage >= 3 && sneha > 40) {
+      // Connecting molecular threads if cohesion is active in fluid soup
+      if ((currentStage >= 3 || currentStage === 2) && sneha > 35) {
         ctx.lineWidth = 0.8;
-        ctx.strokeStyle = 'rgba(254, 240, 138, 0.2)';
+        ctx.strokeStyle = 'rgba(254, 240, 138, 0.22)';
         for (let i = 0; i < particles.length; i += 3) {
           for (let j = i + 1; j < particles.length; j += 4) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 45) {
+            if (dist < 42) {
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
               ctx.stroke();
             }
           }
-        }
-      }
-
-      // Draw cluster boundary halos in Stage 1 & 2
-      if (currentStage === 1 || currentStage === 2) {
-        // Earth cluster halo
-        ctx.beginPath();
-        ctx.arc(earthCx, earthCy, 85, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(234, 179, 8, 0.35)';
-        ctx.lineWidth = 1.5;
-        ctx.setLineDash([6, 4]);
-        ctx.stroke();
-        ctx.setLineDash([]);
-        ctx.fillStyle = 'rgba(234, 179, 8, 0.8)';
-        ctx.font = '11px JetBrains Mono, monospace';
-        ctx.fillText('Pṛthivī Cluster (Solid Mask)', earthCx - 75, earthCy - 92);
-
-        // Water cluster halo
-        ctx.beginPath();
-        ctx.arc(waterCx, waterCy, 85, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
-        ctx.lineWidth = 1.5;
-        ctx.setLineDash([6, 4]);
-        ctx.stroke();
-        ctx.setLineDash([]);
-        ctx.fillStyle = 'rgba(56, 189, 248, 0.8)';
-        ctx.font = '11px JetBrains Mono, monospace';
-        ctx.fillText('Ap Cluster (Liquid Mask)', waterCx - 65, waterCy - 92);
-
-        // Repulsion shockwave rings if triggered
-        if (repulsionTriggered) {
-          const midX = (earthCx + waterCx) / 2;
-          ctx.beginPath();
-          ctx.arc(midX, 190, 42, 0, Math.PI * 2);
-          ctx.strokeStyle = '#f43f5e';
-          ctx.lineWidth = 3;
-          ctx.stroke();
         }
       }
 
@@ -433,6 +685,7 @@ export const DynamicGunaMatrix: React.FC = () => {
     setRepulsionTriggered(false);
     setIsSynergyLocked(false);
     setShowVictoryModal(false);
+    initParticles();
     setGuruSpeaker('Kaṇāda');
     setGuruDialogue(
       "Look closer, Learner. You speak of 'liquids' and 'solids' as if they are permanent iron cages. They are not. The states you see are merely an illusion—a passing mask worn by matter."
@@ -538,7 +791,12 @@ export const DynamicGunaMatrix: React.FC = () => {
             {/* Interactive In-Stage Overlays */}
             {repulsionTriggered && currentStage === 1 && (
               <div className="vl-stage-clash-toast">
-                ⚡ STRUCTURAL FRICTION: SNEHA POLARITY DIVERGENCE (OIL &amp; WATER SLIDE OFF)
+                ⚡ IMMISCIBLE INTERFACE: SNEHA POLARITY REPULSION (OIL &amp; WATER DEFLECT)
+              </div>
+            )}
+            {currentStage === 2 && (
+              <div className="vl-stage-clash-toast" style={{ borderColor: '#f97316', color: '#fdba74' }}>
+                🔥 THERMAL PĪLUPĀKA ACTIVE: TEJAS SOFTENS BOUNDARY · ATOMS AGITATING
               </div>
             )}
           </div>
