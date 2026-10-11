@@ -192,11 +192,25 @@ const QuizSection: React.FC<QuizSectionProps> = ({
 
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
 
+  const isFreeTrialQuizCategory = (catId: string) => {
+    return (
+      catId === 'grade8_prarthana' ||
+      catId === 'grade8_ch1' ||
+      catId === 'grade9_ch1' ||
+      catId === 'deep_ch1' ||
+      catId === 'cbse_deepakam' ||
+      catId === 'varnamala' ||
+      catId === 'grammar' ||
+      catId === 'grammar_all'
+    );
+  };
+
   const visibleCategories = useMemo(
     () =>
       QUIZ_CATEGORIES.filter(
         (cat) =>
           canReadAllChapters ||
+          isFreeTrialQuizCategory(cat.id) ||
           (!cat.id.startsWith('grade8') && !cat.id.startsWith('grade9'))
       ),
     [canReadAllChapters]
@@ -208,8 +222,9 @@ const QuizSection: React.FC<QuizSectionProps> = ({
         ? QUIZ_QUESTIONS
         : QUIZ_QUESTIONS.filter(
             (q) =>
-              !String(q.category).startsWith('grade8') &&
-              !String(q.category).startsWith('grade9')
+              isFreeTrialQuizCategory(String(q.category)) ||
+              (!String(q.category).startsWith('grade8') &&
+                !String(q.category).startsWith('grade9'))
           ),
     [canReadAllChapters]
   );
@@ -367,21 +382,12 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   }, [activeTrack, chapterSearch, visibleCategories]);
 
   const handleSelectTrack = (trackId: QuizTrackId) => {
-    if ((trackId === 'class8' || trackId === 'class9') && !canReadAllChapters) {
-      if (gateReason === 'guest') {
-        openAuthModal('register');
-      } else {
-        openPaymentModal('unlock_paid_features');
-      }
-      setShowUpgradePrompt(true);
-      return;
-    }
     setActiveTrack(trackId);
     setChapterSearch('');
     if (trackId === 'all') setSelectedCategory('all');
     else if (trackId === 'class7') setSelectedCategory('cbse_deepakam');
-    else if (trackId === 'class8') setSelectedCategory('grade8_all');
-    else if (trackId === 'class9') setSelectedCategory('grade9_all');
+    else if (trackId === 'class8') setSelectedCategory(canReadAllChapters ? 'grade8_all' : 'grade8_prarthana');
+    else if (trackId === 'class9') setSelectedCategory(canReadAllChapters ? 'grade9_all' : 'grade9_ch1');
     else if (trackId === 'grammar') setSelectedCategory('grammar_all');
     else if (trackId === 'vedic_maths') setSelectedCategory('vedic_maths');
   };
@@ -645,7 +651,8 @@ const QuizSection: React.FC<QuizSectionProps> = ({
           {/* Tier 1: Primary Curriculum Track Tabs */}
           <nav className="quiz-tracks-nav" aria-label="Curriculum Tracks">
             {QUIZ_TRACKS.map((track) => {
-              const isLocked = track.requiresAllChapters && !canReadAllChapters;
+              const hasTrialContent = track.id === 'class8' || track.id === 'class9';
+              const isLocked = track.requiresAllChapters && !canReadAllChapters && !hasTrialContent;
               const isActive = activeTrack === track.id;
               return (
                 <button
@@ -658,7 +665,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                   <span className="quiz-track-tab-icon">{track.icon}</span>
                   <div className="quiz-track-tab-text">
                     <span className="quiz-track-tab-title">
-                      {track.label} {isLocked ? '🔒' : ''}
+                      {track.label} {!canReadAllChapters && hasTrialContent ? '🎁' : isLocked ? '🔒' : ''}
                     </span>
                     <span className="quiz-track-tab-sub">{track.sublabel}</span>
                   </div>
@@ -717,7 +724,8 @@ const QuizSection: React.FC<QuizSectionProps> = ({
             {activeTrack === 'all' && !chapterSearch.trim() ? (
               <div className="quiz-overview-grid">
                 {QUIZ_TRACKS.filter((t) => t.id !== 'all').map((track) => {
-                  const isLocked = track.requiresAllChapters && !canReadAllChapters;
+                  const hasTrialContent = track.id === 'class8' || track.id === 'class9';
+                  const isLocked = track.requiresAllChapters && !canReadAllChapters && !hasTrialContent;
                   return (
                     <button
                       key={track.id}
@@ -729,7 +737,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                         <span style={{ fontSize: '2.2rem', lineHeight: 1 }}>{track.icon}</span>
                         <div>
                           <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#1f2937' }}>
-                            {track.label} {isLocked ? '🔒' : ''}
+                            {track.label} {!canReadAllChapters && hasTrialContent ? '🎁' : isLocked ? '🔒' : ''}
                           </div>
                           <div style={{ fontSize: '0.8rem', color: '#786b59', fontWeight: 600, marginTop: '0.15rem' }}>
                             {track.sublabel}
@@ -751,7 +759,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                           {track.countBadge}
                         </span>
                         <span style={{ fontSize: '0.86rem', fontWeight: 800, color: '#b3472f' }}>
-                          {isLocked ? 'Unlock Track ➔' : 'Explore Chapters ➔'}
+                          {isLocked ? 'Unlock Track ➔' : hasTrialContent && !canReadAllChapters ? 'Explore Free Trial ➔' : 'Explore Chapters ➔'}
                         </span>
                       </div>
                     </button>
@@ -769,16 +777,24 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                   displayedCategories.map((cat) => {
                     const isSelected = selectedCategory === cat.id;
                     const count = getCategoryCount(cat.id);
+                    const isTrialCat = isFreeTrialQuizCategory(cat.id);
+                    const isLockedCat = !canReadAllChapters && !isTrialCat && (cat.id.startsWith('grade8') || cat.id.startsWith('grade9'));
                     return (
                       <button
                         key={cat.id}
                         type="button"
                         id={anchorForLiteratureCategory(cat.id) || undefined}
                         className={`quiz-cat-pill${isSelected ? ' active' : ''}`}
-                        onClick={() => setSelectedCategory(cat.id)}
+                        onClick={() => {
+                          if (isLockedCat) {
+                            openAuthModal('register');
+                          } else {
+                            setSelectedCategory(cat.id);
+                          }
+                        }}
                       >
                         <span>{cat.icon}</span>
-                        <span>{formatPillLabel(cat.label)}</span>
+                        <span>{formatPillLabel(cat.label)} {isLockedCat ? '🔒' : isTrialCat && !canReadAllChapters && (cat.id.startsWith('grade8') || cat.id.startsWith('grade9')) ? '🎁' : ''}</span>
                         {count > 0 && <span className="quiz-pill-count">{count} Qs</span>}
                       </button>
                     );

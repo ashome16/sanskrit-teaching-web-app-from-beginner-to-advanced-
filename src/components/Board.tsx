@@ -103,7 +103,11 @@ const parseVisitor = (text: string): VisitorBlock[] => text.split(/\r?\n/).reduc
   if (trimmed.startsWith('# ')) return [...blocks, { heading: 'h2', text: trimmed.slice(2) }];
   return [...blocks, { heading: 'p', text: trimmed }];
 }, []);
-const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
+const fetchText = (name: string) => {
+  const base = import.meta.env.BASE_URL || '/';
+  const url = `${base.endsWith('/') ? base : base + '/'}${name}?t=${Date.now()}`;
+  return fetch(url).then((response) => response.text());
+};
 const cleanTile = (tile: string) => tile.replace(/\u200B/g, '').normalize('NFC').trim();
 
 // Independent vowel tiles must map to combining matras so glueTiles(क+ई)→की, क+ऊ→कू, etc.

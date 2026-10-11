@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
+import { BodhiLabAnecdote, ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
 import { DialKnob, HudFrame, LedButton } from './controls';
 import AyurvedaAttractions from './AyurvedaAttractions';
 
@@ -180,10 +180,103 @@ const PrakritiBalance: React.FC = () => {
   // Cairn of three stones: each tilts by how far its doṣa is from 50.
   const tilt = (n: number) => (n - 50) * 0.45;
 
+  // Nāḍī pulse diagnostics
+  const nadiGati = useMemo(() => {
+    if (allSama) return { name: 'Sama-Nāḍī (सम-नाडी)', desc: 'Harmonious, steady rhythm (सम-स्पन्दनम्)', icon: '🌸', color: '#16a34a' };
+    if (lv.pitta >= lv.vata && lv.pitta >= lv.kapha && lv.pitta > 55) {
+      return { name: 'Maṇḍūka-Gati (मण्डूक-गतिः)', desc: 'Sharp, jumping frog-like pulse (तीक्ष्ण-प्लवः · High Pitta)', icon: '🐸', color: '#ea580c' };
+    }
+    if (lv.vata >= lv.kapha && lv.vata > 55) {
+      return { name: 'Sarpa-Gati (सर्प-गतिः)', desc: 'Quick, winding, subtle snake-like pulse (चपल-गतिः · High Vāta)', icon: '🐍', color: '#7c3aed' };
+    }
+    if (lv.kapha > 55) {
+      return { name: 'Haṃsa-Gati (हंस-गतिः)', desc: 'Slow, deep, majestic swan-like pulse (गम्भीर-मन्द-गतिः · High Kapha)', icon: '🦢', color: '#0f766e' };
+    }
+    return { name: 'Madhyama-Gati (मध्यम-गतिः)', desc: 'Transitional mixed pulse rhythm', icon: '🌿', color: '#0284c7' };
+  }, [allSama, lv]);
+
+  const applyRemedy = (type: 'taila' | 'ghrita' | 'trikatu' | 'triphala') => {
+    if (type === 'taila') {
+      // Warm oil: increases moisture & heat, decreases dryness & cold
+      setEnv((e) => ({ ...e, dry: Math.max(1, e.dry - 4), moist: Math.min(10, e.moist + 3), cold: Math.max(1, e.cold - 3), heat: Math.min(10, e.heat + 2) }));
+    } else if (type === 'ghrita') {
+      // Cooling ghee: reduces heat, gentle cooling
+      setEnv((e) => ({ ...e, heat: Math.max(1, e.heat - 4), cold: Math.min(10, e.cold + 3), moist: Math.min(10, e.moist + 2) }));
+    } else if (type === 'trikatu') {
+      // Pungent spice: burns dampness & cold, stimulates metabolism
+      setEnv((e) => ({ ...e, moist: Math.max(1, e.moist - 4), dry: Math.min(10, e.dry + 3), heat: Math.min(10, e.heat + 3), activity: Math.min(10, e.activity + 2) }));
+    } else {
+      // Triphala Rasāyana: balances all dials towards 5
+      setEnv((e) => ({
+        ...e,
+        heat: Math.round((e.heat + 5) / 2),
+        cold: Math.round((e.cold + 5) / 2),
+        dry: Math.round((e.dry + 5) / 2),
+        moist: Math.round((e.moist + 5) / 2),
+        activity: Math.round((e.activity + 5) / 2),
+      }));
+    }
+  };
+
   return (
     <div className="vl-sim">
+      <BodhiLabAnecdote
+        title="Caraka & Suśruta: The Living Ecology of Health"
+        sanskritTitle="चरक-सुश्रुतयोः स्वास्थ्य-विज्ञानम्"
+        mood="meditate"
+        sutra={{
+          dev: 'समदोषः समाग्निश्च समधातुमलक्रियः । प्रसन्नात्मेन्द्रियमनाः स्वस्थ इत्यभिधीयते ॥',
+          iast: 'samadoṣaḥ samāgniś ca samadhātumalakriyaḥ | prasannātmendriyamanāḥ svastha ity abhidhīyate ||',
+          source: 'Suśruta Saṃhitā, Sūtrasthāna 15.41 (महर्षि-सुश्रुतः)',
+          meaning: 'One whose biological forces (doṣas) are balanced, whose metabolic fire (Agni) is even, whose tissues (dhātus) and waste processes function in harmony, and whose inner spirit, senses, and mind reside in serene clarity—such a person is truly termed Svastha (healthy).',
+        }}
+        anecdote={
+          <>
+            <p>
+              In the opening chapters of the <em>Caraka Saṃhitā</em>, the revered sages of ancient India gathered in the tranquil
+              foothills of the Himalayas. They observed a profound crisis: as human settlements grew complex, chronic diseases began to
+              impede people from fulfilling life’s four fundamental aims—righteous duty (<em>Dharma</em>), livelihood (<em>Artha</em>),
+              healthy desires (<em>Kāma</em>), and spiritual liberation (<em>Mokṣa</em>).
+            </p>
+            <blockquote style={{ borderLeft: '3px solid #10b981', margin: '0.65rem 0', paddingLeft: '0.85rem', fontStyle: 'italic', color: '#065f46' }}>
+              “Neither charms nor blind rituals can substitute for rigorous observation of nature. The human organism is an open
+              microcosm mirroring the macrocosm: yathā piṇḍe tathā brahmāṇḍe.”
+            </blockquote>
+            <p>
+              Without automated centrifuges or MRI scanners, ancient physicians developed extraordinarily refined observational diagnostics.
+              They mastered radial pulse tactile sensitivity (<em>Nāḍī-Parīkṣā</em>), identified diabetes (<em>Madhumeha</em>) by observing
+              ants attracted to sweet urine (centuries before Thomas Willis in Europe, 1674), and codified surgical anatomy in the <em>Suśruta Saṃhitā</em>,
+              pioneering reconstructive rhinoplasty flaps, cataract couching, and over 120 sterile surgical instruments designed after predatory birds and animals.
+            </p>
+          </>
+        }
+        epistemologyAndMethod={
+          <>
+            Āyurvedic science was governed by <strong>Yukti-Vyapāśraya</strong> (rational therapeutic logic) and threefold clinical diagnosis:
+            <strong>Darśana</strong> (visual inspection), <strong>Sparśana</strong> (palpation and pulse diagnosis), and <strong>Praśna</strong> (in-depth patient interrogation).
+            The body was conceptualized not as an inert machine, but as a dynamic thermodynamic process:
+            <em>Vāta</em> governs kinetic signaling and nervous impulses; <em>Pitta</em> coordinates enzymatic catalysis and thermal transformation;
+            <em>Kapha</em> regulates anabolism, fluid cohesion, and protective barriers.
+          </>
+        }
+        modernBridge={{
+          ancientConcept: 'Dynamic Homeostasis (Samatva), Circadian biology (Dinacaryā/Ṛtucaryā), and metabolic digestive fire (Jāṭharāgni).',
+          modernScience: 'Physiological Homeostasis (Walter Cannon, 1926), Circadian Rhythm molecular gene clocks (Nobel Prize in Medicine 2017), and the Gut Microbiome Axis.',
+          relevanceNote: 'Modern chronobiology and microbiome science directly vindicate the ancient prescription: eating during peak diurnal digestive fire and maintaining seasonal dietary adjustments prevents systemic inflammation.',
+        }}
+        societalValue={
+          <p>
+            In ancient India, the practice of medicine was protected by a sacred ethical oath: the physician must treat all living beings with
+            unconditional compassion (<em>Sarva-bhūteṣu maitrī</em>), never refusing care based on wealth or status.
+            Medical treatises were taught freely across great monastic universities like Takshashila and Nalanda.
+            Emperor Ashoka’s 3rd-century BCE edicts document the establishment of state-funded public dispensaries (<em>Ārogyaśālā</em>)
+            and veterinary hospitals across the subcontinent, affirming healthcare as a civilizational duty for the welfare of all life.
+          </p>
+        }
+      />
+
       <div className="vl-banner" role="note">
-        🌿 A traditional Āyurvedic way of describing balance. <strong>A learning game, not medical advice.</strong>
+        🌿 A traditional Āyurvedic way of describing dynamic balance. <strong>A learning game, not medical advice.</strong>
       </div>
       <CoreIdea>
         A traditional saying, <em lang="sa">yathā piṇḍe tathā brahmāṇḍe</em>, holds that the <strong>piṇḍa</strong> (body)
@@ -194,6 +287,74 @@ const PrakritiBalance: React.FC = () => {
       </CoreIdea>
 
       <div className="vl-sandbox" data-testid="prakriti-sandbox">
+        {/* Dynamic Nāḍī Pulse & Homeostasis HUD */}
+        <div
+          className="vl-nadi-hud"
+          style={{
+            background: 'linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 100%)',
+            border: `1.5px solid ${nadiGati.color}40`,
+            borderLeft: `5px solid ${nadiGati.color}`,
+            borderRadius: '14px',
+            padding: '0.85rem 1.1rem',
+            marginBottom: '0.85rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '0.75rem',
+          }}
+        >
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+              <span style={{ fontSize: '1.4rem' }}>{nadiGati.icon}</span>
+              <strong style={{ fontSize: '1.05rem', color: nadiGati.color }}>
+                {nadiGati.name} · Tactile Pulse Waveform
+              </strong>
+            </div>
+            <p style={{ margin: '0.2rem 0 0', fontSize: '0.84rem', color: '#334155' }}>
+              {nadiGati.desc}
+            </p>
+          </div>
+          <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#475569', alignSelf: 'center', marginRight: '0.2rem' }}>
+              Dravya-Guṇa Opposites:
+            </span>
+            <button
+              type="button"
+              className="vl-chip"
+              onClick={() => applyRemedy('taila')}
+              title="Warm sesame oil reduces cold, dry Vāta"
+            >
+              🫖 Uṣṇa-Taila (Calm Vāta)
+            </button>
+            <button
+              type="button"
+              className="vl-chip"
+              onClick={() => applyRemedy('ghrita')}
+              title="Cooling herbal ghee soothes fiery Pitta"
+            >
+              🥥 Śīta-Ghṛta (Soothe Pitta)
+            </button>
+            <button
+              type="button"
+              className="vl-chip"
+              onClick={() => applyRemedy('trikatu')}
+              title="Pungent ginger & pepper awakens sluggish Kapha"
+            >
+              🍯 Laghu-Trikaṭu (Awaken Kapha)
+            </button>
+            <button
+              type="button"
+              className="vl-chip"
+              style={{ background: '#dcfce7', borderColor: '#22c55e', color: '#15803d', fontWeight: 800 }}
+              onClick={() => applyRemedy('triphala')}
+              title="Tridoṣa Rasāyana gently harmonizes all three"
+            >
+              🌿 Triphalā (Samatva Harmonizer)
+            </button>
+          </div>
+        </div>
+
         <div className="vl-leds vl-scenarios">
           {SCENARIOS.map((s) => (
             <LedButton key={s.label} kind="action" color="#4ade80" onClick={() => setEnv(s.env)}>{s.label}</LedButton>

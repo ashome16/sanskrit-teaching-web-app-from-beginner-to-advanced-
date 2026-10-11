@@ -32,6 +32,52 @@ export function canAccessAllChapters(
   return Boolean(currentUser);
 }
 
+/**
+ * Lessons that are open under the free trial preview without requiring an account:
+ * - Content from the beginning: Alphabet (varnamala), Barakhadi, Samyukta (conjunct games), Numbers
+ * - Opening invocations & Chapter 1 across all grades:
+ *   - Class 7 Deepakam: gsde101 (Chapter 1)
+ *   - Class 8 Deepakam: grade8_prarthana (Invocation) & grade8_ch1 (Chapter 1)
+ *   - Class 9 Sharada: grade9_prarthana (Invocation) & grade9_ch1 (Chapter 1)
+ */
+export const FREE_TRIAL_OPEN_LESSON_IDS = [
+  'varnamala',
+  'barakhadi',
+  'samyukta',
+  'numbers',
+  'gsde101',
+  'grade8_prarthana',
+  'grade8_ch1',
+  'grade9_prarthana',
+  'grade9_ch1',
+] as const;
+
+export type FreeTrialOpenLessonId = typeof FREE_TRIAL_OPEN_LESSON_IDS[number];
+
+export function isFreeTrialOpenLesson(lessonId: string): boolean {
+  return (FREE_TRIAL_OPEN_LESSON_IDS as readonly string[]).includes(lessonId);
+}
+
+/**
+ * Worksheets that are open under the free trial preview without requiring an account:
+ * - Alphabet & Varnamala worksheets (category === 'varnamala')
+ * - Chapter 1 worksheets across all grades (Grade 7 Ch 1, Grade 8 Ch 1, Grade 9 Ch 1)
+ */
+export const FREE_TRIAL_OPEN_WORKSHEET_IDS = [
+  'ws-ch1',
+  'ws-grade8-ws1',
+  'ws-grade8-ws2',
+  'ws-grade8-ws3',
+  'ws-grade9-ch1-ws1',
+  'ws-grade9-ch1-ws2',
+  'ws-grade9-ch1-ws3',
+] as const;
+
+export function isFreeTrialOpenWorksheet(worksheetId: string, category?: string): boolean {
+  if (category === 'varnamala') return true;
+  return (FREE_TRIAL_OPEN_WORKSHEET_IDS as readonly string[]).includes(worksheetId);
+}
+
 export const ACCOUNT_OPEN_CHAPTER_IDS = [
   'grade8_prarthana',
   'grade8_ch1',
@@ -54,10 +100,8 @@ export function canAccessChapter(
   isAdminLoggedIn = false
 ): boolean {
   if (isAdminLoggedIn) return true;
-  if (chapterId.startsWith('grade8_') || chapterId.startsWith('grade9_')) {
-    return Boolean(currentUser);
-  }
-  return true;
+  if (isFreeTrialOpenLesson(chapterId)) return true;
+  return Boolean(currentUser);
 }
 
 /**

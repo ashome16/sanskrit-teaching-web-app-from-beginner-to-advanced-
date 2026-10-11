@@ -30,7 +30,7 @@ const PATH_BY_VIEW = {
   resources: '/resources',
   philosophy: '/philosophy',
   faq: '/faq',
-  'science-lab': '/science-lab',
+  'science-lab': '/vignana-lab',
 };
 
 const REQUIRED_PATHS = [
@@ -49,6 +49,7 @@ const REQUIRED_PATHS = [
   '/philosophy',
   '/faq',
   '/science-lab',
+  '/vignana-lab',
 ];
 
 function extractObjectLiteral(source, exportName) {
@@ -151,6 +152,13 @@ function applyMeta(html, meta, pathname) {
     `<meta name="twitter:description" content="${desc}" />`,
     'twitter:description',
   );
+  if (process.env.GITHUB_PAGES || process.env.GH_PAGES) {
+    const ghBase = '/sanskrit-teaching-web-app-from-beginner-to-advanced-';
+    out = out.replaceAll('href="/manifest.json"', `href="${ghBase}/manifest.json"`);
+    out = out.replaceAll('href="/favicon.ico"', `href="${ghBase}/favicon.ico"`);
+    out = out.replaceAll('href="/apple-touch-icon.png"', `href="${ghBase}/apple-touch-icon.png"`);
+    out = out.replaceAll('content="/logo.jpg"', `content="${ghBase}/logo.jpg"`);
+  }
   return out;
 }
 
@@ -167,6 +175,9 @@ for (const [view, pathname] of Object.entries(PATH_BY_VIEW)) {
   routes.push({ pathname, ...meta });
 }
 routes.push({ pathname: '/barakhadi', ...barakhadi });
+if (views['science-lab']) {
+  routes.push({ pathname: '/science-lab', ...views['science-lab'] });
+}
 
 const got = new Set(routes.map((route) => route.pathname));
 for (const pathname of REQUIRED_PATHS) {
@@ -198,3 +209,7 @@ for (const route of routes) {
 }
 
 console.log(`inject-seo-html: wrote ${routes.length} route shells`);
+
+// GitHub Pages SPA fallback: ensure 404.html serves the full root shell
+fs.copyFileSync(distIndex, path.join(root, 'dist/404.html'));
+console.log('inject-seo-html: generated dist/404.html for SPA routing fallback');

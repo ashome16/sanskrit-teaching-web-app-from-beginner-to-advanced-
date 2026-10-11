@@ -1,0 +1,904 @@
+/* ==========================================================================
+   Article Games Hub Styles · प्राचीन-विज्ञान-क्रीडाः
+   ========================================================================== */
+
+.ag-hub-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 1rem 1rem 3.5rem;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1e293b;
+  position: relative;
+}
+
+.ag-toast-pts {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  z-index: 9999;
+  animation: agSlideDown 0.35s ease;
+}
+
+@keyframes agSlideDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header Card */
+.ag-header-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.ag-header-text {
+  flex: 1 1 540px;
+  min-width: 0;
+}
+
+.ag-kicker {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #d97706;
+}
+
+.ag-title {
+  margin: 0.25rem 0 0.5rem;
+  font-size: clamp(1.4rem, 2.8vw, 1.95rem);
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.ag-lead {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0 0 1rem;
+}
+
+.ag-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+/* Vidya Scorecard */
+.ag-vidya-scorecard {
+  background: linear-gradient(135deg, #fefce8, #fef3c7);
+  border: 2px solid #fde68a;
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  min-width: 180px;
+}
+
+.ag-score-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #92400e;
+}
+
+.ag-score-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #b45309;
+  line-height: 1.1;
+  margin: 0.2rem 0;
+}
+
+.ag-score-pts {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #d97706;
+}
+
+.ag-score-rank {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #78350f;
+}
+
+/* Buttons */
+.ag-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.ag-btn--primary {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.ag-btn--primary:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+.ag-btn--ghost {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.ag-btn--ghost:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.ag-btn--fire {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.3);
+}
+
+.ag-btn--fire:hover {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+}
+
+/* Game Tabs Navigation */
+.ag-game-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.ag-tab-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.7rem 0.85rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.ag-tab-pill:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.ag-tab-pill.is-active {
+  background: #eff6ff;
+  border-color: #2563eb;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+}
+
+.ag-pill-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.ag-pill-names {
+  display: flex;
+  flex-direction: column;
+}
+
+.ag-pill-title {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+}
+
+.ag-pill-dev {
+  font-size: 0.74rem;
+  color: #64748b;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+/* Active Game Box */
+.ag-game-box {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+}
+
+.ag-game-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.ag-game-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.ag-game-sub {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #64748b;
+  max-width: 48rem;
+}
+
+/* ==========================================================================
+   GAME 1: RITUPARNA CANOPY ESTIMATOR
+   ========================================================================== */
+.ag-rituparna-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .ag-rituparna-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ag-tree-visual {
+  background: #f0fdf4;
+  border: 2px solid #bbf7d0;
+  border-radius: 18px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ag-tree-crown {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.ag-sector-pill {
+  background: #ffffff;
+  border: 2px solid #86efac;
+  border-radius: 12px;
+  padding: 0.65rem 0.75rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.ag-sector-pill:hover:not(:disabled) {
+  background: #dcfce7;
+  transform: scale(1.02);
+}
+
+.ag-sector-pill.is-sampled {
+  background: #15803d;
+  border-color: #166534;
+  color: #ffffff;
+}
+
+.ag-sector-pill.is-sampled .ag-sec-val {
+  color: #fef08a;
+  font-weight: 800;
+}
+
+.ag-sec-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ag-sec-val {
+  font-size: 0.88rem;
+  margin-top: 0.15rem;
+  color: #166534;
+}
+
+.ag-tree-trunk {
+  margin-top: 1rem;
+  background: #78350f;
+  color: #fef3c7;
+  padding: 0.45rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.ag-estimate-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  justify-content: center;
+}
+
+.ag-stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.88rem;
+}
+
+.ag-slider-wrap {
+  margin: 0.5rem 0;
+}
+
+.ag-slider-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.ag-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  accent-color: #059669;
+  cursor: pointer;
+}
+
+.ag-result-card {
+  border-radius: 14px;
+  padding: 1.1rem;
+  margin-top: 0.75rem;
+  animation: agSlideDown 0.3s ease;
+}
+
+.ag-result-card.is-gold {
+  background: #fefce8;
+  border: 2px solid #facc15;
+  color: #713f12;
+}
+
+.ag-result-card.is-silver {
+  background: #f1f5f9;
+  border: 2px solid #94a3b8;
+  color: #1e293b;
+}
+
+.ag-result-card.is-bronze {
+  background: #fff7ed;
+  border: 2px solid #fdba74;
+  color: #7c2d12;
+}
+
+.ag-result-badge {
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.ag-result-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.5rem;
+}
+
+.ag-result-note {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   GAME 2: AGNIKŪRṆA & SIEGE ARTILLERY
+   ========================================================================== */
+.ag-agnicurna-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .ag-agnicurna-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ag-card-step {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.ag-step-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ag-chem-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.84rem;
+}
+
+.ag-chem-row b {
+  color: #0284c7;
+}
+
+.ag-formula-status {
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.ag-formula-status.is-optimal {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.ag-formula-status.is-suboptimal {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.ag-casing-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.ag-casing-btn {
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  transition: all 0.15s ease;
+}
+
+.ag-casing-btn small {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.ag-casing-btn.is-selected {
+  border-color: #b91c1c;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.ag-target-box {
+  background: #fefce8;
+  border: 1px solid #fde68a;
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #713f12;
+}
+
+.ag-launch-result {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  animation: agSlideDown 0.3s ease;
+}
+
+.ag-launch-result.is-hit {
+  background: #dcfce7;
+  border: 2px solid #22c55e;
+  color: #14532d;
+}
+
+.ag-launch-result.is-burst {
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+  color: #7f1d1d;
+}
+
+.ag-launch-result.is-miss {
+  background: #eff6ff;
+  border: 2px solid #3b82f6;
+  color: #1e3a8a;
+}
+
+/* ==========================================================================
+   GAME 3: LĪLĀVATĪ RIDDLE QUEST
+   ========================================================================== */
+.ag-riddle-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.ag-riddle-tab {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ag-riddle-tab.is-active {
+  background: #7c3aed;
+  border-color: #6d28d9;
+  color: #ffffff;
+}
+
+.ag-verse-box {
+  background: #faf5ff;
+  border-left: 4px solid #9333ea;
+  border-radius: 12px;
+  padding: 0.9rem 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.ag-verse-trans {
+  font-size: 0.88rem;
+  color: #4b5563;
+  margin-top: 0.45rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.ag-math-breakdown {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.ag-swarm-inspection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.5rem;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-size: 0.82rem;
+  margin: 0.85rem 0;
+}
+
+/* ==========================================================================
+   GAME 4: KUṬṬAKA PULVERIZER
+   ========================================================================== */
+.ag-kuttaka-problem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.ag-problem-equation {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #c2410c;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 0.65rem 0.95rem;
+  border-radius: 10px;
+}
+
+.ag-problem-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.ag-ladder-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 0.5rem 0;
+}
+
+.ag-ladder-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.88rem;
+}
+
+.ag-kuttaka-input {
+  width: 60px;
+  padding: 0.35rem 0.5rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.ag-kuttaka-input:focus {
+  outline: none;
+  border-color: #c2410c;
+}
+
+.ag-kuttaka-solution {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  color: #065f46;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   GAME 5: PINGALA MERUPRASTĀRA
+   ========================================================================== */
+.ag-pingala-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .ag-pingala-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ag-meter-builder {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.ag-meter-display {
+  min-height: 60px;
+  background: #f0f9ff;
+  border: 2px dashed #bae6fd;
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.ag-empty-text {
+  font-size: 0.84rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+.ag-syl-token {
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.ag-syl-token.is-guru {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.ag-syl-token.is-laghu {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+}
+
+.ag-pad-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ag-pad-btn {
+  flex: 1;
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.ag-pad--laghu {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 2px solid #7dd3fc;
+}
+
+.ag-pad--laghu:hover {
+  background: #bae6fd;
+}
+
+.ag-pad--guru {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.ag-pad--guru:hover {
+  background: #0369a1;
+}
+
+.ag-pingala-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-size: 0.82rem;
+}
+
+/* Pyramid */
+.ag-meru-pyramid {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.ag-pyramid-title {
+  margin: 0 0 0.85rem;
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ag-pyramid-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.ag-pyramid-row {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.ag-pyramid-cell {
+  width: 32px;
+  height: 28px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+
+.ag-pyramid-cell.is-active-cell {
+  background: #0284c7;
+  border-color: #0369a1;
+  color: #ffffff;
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.4);
+}
+
+.ag-pyramid-legend {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+/* ==========================================================================
+   GAME 6: DHANURVEDA BALLISTICS
+   ========================================================================== */
+.ag-dhanur-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .ag-dhanur-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ag-stance-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+}
+
+.ag-stance-card {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  transition: all 0.15s ease;
+}
+
+.ag-stance-card b {
+  font-size: 0.88rem;
+  color: #0f172a;
+}
+
+.ag-stance-card span {
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+.ag-stance-card.is-active {
+  background: #fffbeb;
+  border-color: #d97706;
+}
+
+.ag-stance-card.is-active b {
+  color: #b45309;
+}
+
+.ag-flight-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  justify-content: center;
+}

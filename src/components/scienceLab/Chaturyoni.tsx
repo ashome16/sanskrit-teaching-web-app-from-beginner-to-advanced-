@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CoreIdea, TermPanel, type LabTerm } from './common';
+import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm } from './common';
 import { isSmallScreen, prefersReducedMotion } from './motion';
 
 type Mode = 'yoni' | 'sthiti' | 'plants';
@@ -215,11 +215,82 @@ const Chaturyoni: React.FC = () => {
     setFeed([]);
   };
 
+  type Stimulus = 'none' | 'pulse' | 'touch' | 'cold' | 'chloroform' | 'rinse';
+  const [stimulus, setStimulus] = useState<Stimulus>('none');
+  const [anesthetized, setAnesthetized] = useState(false);
+
+  const applyStimulus = (st: Stimulus) => {
+    if (st === 'chloroform') {
+      setAnesthetized(true);
+      setStimulus('chloroform');
+    } else if (st === 'rinse') {
+      setAnesthetized(false);
+      setStimulus('rinse');
+    } else {
+      setStimulus(st);
+    }
+  };
+
   const shown = cur || curPlaced;
   const shownZone = curPlaced ? zones.find((z) => z.id === here[curPlaced.id]) : null;
 
   return (
     <div className="vl-sim cy-sim">
+      <BodhiLabAnecdote
+        title="Parāśara, Manu & Sir J.C. Bose's Plant Galvanometer Discovery"
+        sanskritTitle="पराशरस्य वृक्षायुर्वेदः & जगदीश-चन्द्र-बोसस्य विद्युत्-प्रमाणम्"
+        mood="scholar"
+        sutra={{
+          dev: 'सुखदुःखयोश्च ग्रहणात् छिन्नस्य च विरोहणात् । जीवं पश्यामि वृक्षाणामचैतन्यं न विद्यते ॥\nअन्तःसंज्ञा भवन्त्येते सुखदुःखसमन्विताः ॥',
+          iast: 'sukhaduḥkhayoś ca grahaṇāt chinnasya ca virohaṇāt | jīvaṃ paśyāmi vṛkṣāṇām acaitanyaṃ na vidyate ||\nantaḥsaṃjñā bhavanty ete sukhaduḥkhasamanvitāḥ ||',
+          source: 'Mahābhārata, Śānti Parva 184.17 & Manusmṛti 1.49',
+          meaning: '“Because they experience sensations of pleasure and pain, and because they heal and regrow when cut, I perceive the life of trees: absence of consciousness does not exist in them.” In Manu: “These stationary plants possess internal consciousness (antaḥ-saṃjñā) and are endowed with inner sensations of joy and distress.”',
+        }}
+        anecdote={
+          <>
+            <p>
+              In ancient Indian civilizational science, flora and fauna were never regarded as inanimate, mechanical automations.
+              The sage <strong>Parāśara</strong> in the <em>Vṛkṣāyurveda</em> (c. 1st c. BCE – 4th c. CE) systematically detailed plant anatomy:
+              inner sap circulation (<em>Syandanā</em>), leaves absorbing sunlight and moisture to generate nutrition (<em>Āhārakaraṇa</em>),
+              and diseases diagnosed by seasonal dosha imbalances.
+            </p>
+            <p>
+              For centuries, European post-Cartesian science ridiculed the idea that plants could ‘feel’ or possess nervous reactivity.
+              Then in May 1901, at the Royal Society in London, the Bengali polymath <strong>Sir Jagadish Chandra Bose</strong>
+              demonstrated his self-engineered optical <strong>Crescograph and Galvanometer</strong>.
+              Attaching micro-electrodes to plants like the <em>Mimosa pudica</em>, <em>Banyan</em>, and <em>Desmodium</em>,
+              Bose proved that when stimulated by heat, mechanical pinch, or electrical shock, plants generate identical
+              <strong>electrical action potentials (depolarization waves)</strong> to animal muscles!
+            </p>
+            <blockquote style={{ borderLeft: '3px solid #16a34a', margin: '0.65rem 0', paddingLeft: '0.85rem', fontStyle: 'italic', color: '#15803d' }}>
+              “When chloroform was administered to the plant, its electrical pulse vanished into anesthesia;
+              when rinsed with fresh water, the life-pulse returned. There is no sharp barrier between the responsive life of plants and animals.”
+            </blockquote>
+          </>
+        }
+        epistemologyAndMethod={
+          <>
+            Bose achieved this breakthrough not by importing Western philosophical dogma, but by validating India’s ancient empirical premise:
+            that all manifestations of life share underlying unified consciousness (<em>Prajñā</em>).
+            He constructed sensitive instruments capable of measuring physical contractions down to 1/100,000th of an inch,
+            bridging ancient philosophical observation (*Pratyakṣa*) with rigorous quantitative laboratory proof.
+          </>
+        }
+        modernBridge={{
+          ancientConcept: 'Chaturyoni embryonic taxonomy, plant internal consciousness (Antaḥ-saṃjñā), and sap circulation (Syandanā in Vṛkṣāyurveda).',
+          modernScience: 'Phylogenetic cladistics, plant neurobiology (electrical action potentials through phloem plasmodesmata, auxin-mediated signal cascades), and mycorrhizal bio-networks.',
+          relevanceNote: 'Modern botany now confirms that plants actively communicate, warn neighboring trees of insect attacks through volatile airborne compounds, and possess sophisticated electrical signaling systems.',
+        }}
+        societalValue={
+          <p>
+            Recognizing trees and beasts as endowed with <em>Antaḥ-saṃjñā</em> fostered an indigenous conservation ethic millennia before modern environmentalism.
+            In ancient India, <strong>Vṛkṣa-Ropaṇa</strong> (sacred tree planting) and establishing community grove shelters (*Puṇyāraṇya*)
+            were celebrated as sacred societal acts for collective wellness (*Lokasaṃgraha*).
+            Emperor Ashoka’s 3rd-century BCE Rock Edicts explicitly established roadside herbal nurseries and shade trees for humans and animals alike.
+          </p>
+        }
+      />
+
       <CoreIdea>
         Ancient Indian texts classify life by origin (<em>Chaturyoni</em>) and by movement (<em>Sthāvara–Jaṅgama</em>). The
         fourfold layout is preserved in <em>Manusmṛti</em> (1.43–46), which sorts beings into four groups: womb-born
@@ -392,6 +463,58 @@ const Chaturyoni: React.FC = () => {
                 <b>{shown.lin.rank}</b>
                 <i>{shown.lin.sci}</i>
                 <p>{shown.lin.facts}</p>
+              </div>
+
+              <span className="cy-ro-label" style={{ color: '#10b981', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '0.65rem' }}>
+                <span>⚡ J.C. Bose Galvanometer Probe</span>
+                <small style={{ color: '#6ee7b7' }}>जगदीश-बोस-नाडी-यन्त्रम्</small>
+              </span>
+              <div className="cy-ro-galv" style={{ background: '#090d16', border: '1px solid #10b981', borderRadius: '6px', padding: '0.6rem', marginTop: '0.35rem' }} data-testid="cy-galv-panel">
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#cbd5e1' }}>
+                  <span>Stimulus: <b style={{ color: '#38bdf8' }}>{stimulus === 'none' ? 'Resting Baseline' : stimulus.toUpperCase()}</b></span>
+                  <span>{anesthetized ? '⚠️ Anesthetized' : '🟢 Responsive'}</span>
+                </div>
+                <svg viewBox="0 0 240 60" style={{ width: '100%', height: '54px', marginTop: '0.4rem', background: '#030712', borderRadius: '4px', border: '1px solid #1f2937' }} role="img" aria-label="Galvanometer action potential waveform">
+                  <line x1="0" y1="36" x2="240" y2="36" stroke="#374151" strokeDasharray="3 3" />
+                  <text x="5" y="33" fill="#6b7280" fontSize="8">-80 mV (Rest)</text>
+                  <text x="5" y="14" fill="#10b981" fontSize="8">+35 mV (Spike)</text>
+                  {anesthetized ? (
+                    <line x1="0" y1="36" x2="240" y2="36" stroke="#ef4444" strokeWidth="2" />
+                  ) : stimulus === 'none' ? (
+                    <path d="M 0 36 Q 60 35 120 36 T 240 36" stroke="#10b981" strokeWidth="1.6" fill="none" />
+                  ) : (
+                    <path
+                      d="M 0 36 L 50 36 Q 70 35 80 32 L 95 10 L 110 46 Q 130 38 160 36 L 240 36"
+                      stroke="#22c55e"
+                      strokeWidth="2.2"
+                      fill="none"
+                    />
+                  )}
+                </svg>
+                <div className="vl-btn-row" style={{ marginTop: '0.45rem', gap: '0.25rem', flexWrap: 'wrap' }}>
+                  <button type="button" className="vl-chip" style={{ fontSize: '0.75rem', padding: '0.2rem 0.45rem' }} onClick={() => applyStimulus('touch')} data-testid="cy-stim-touch">
+                    🍃 Touch
+                  </button>
+                  <button type="button" className="vl-chip" style={{ fontSize: '0.75rem', padding: '0.2rem 0.45rem' }} onClick={() => applyStimulus('pulse')} data-testid="cy-stim-pulse">
+                    ⚡ Electrical
+                  </button>
+                  <button type="button" className="vl-chip" style={{ fontSize: '0.75rem', padding: '0.2rem 0.45rem' }} onClick={() => applyStimulus('cold')} data-testid="cy-stim-cold">
+                    ❄️ Cold
+                  </button>
+                  <button type="button" className="vl-chip" style={{ fontSize: '0.75rem', padding: '0.2rem 0.45rem', color: '#f87171' }} onClick={() => applyStimulus('chloroform')} data-testid="cy-stim-chloroform">
+                    🧪 Chloroform
+                  </button>
+                  <button type="button" className="vl-chip" style={{ fontSize: '0.75rem', padding: '0.2rem 0.45rem', color: '#38bdf8' }} onClick={() => applyStimulus('rinse')} data-testid="cy-stim-rinse">
+                    💧 Rinse
+                  </button>
+                </div>
+                <p className="vl-small" style={{ margin: '0.35rem 0 0', fontSize: '0.75rem', color: '#94a3b8' }}>
+                  {anesthetized
+                    ? 'Dormancy: Chloroform suppresses electrical conductivity in plants and animals alike.'
+                    : stimulus !== 'none'
+                      ? '⚡ Depolarization spike (+38 mV) recorded: empirical proof of living cellular irritability (Antaḥ-saṃjñā)!'
+                      : 'Attach electrodes and apply stimulus to record bio-electrical action potential waves.'}
+                </p>
               </div>
             </section>
           )}

@@ -23,6 +23,7 @@ export interface PhilosophyPageProps {
   onOpenGrammarArticle?: (articleId: string) => void;
   /** Open a Course Addendum unit (e.g. Mantras & Ślokas). */
   onOpenCourseAddendum?: (addendumId: string) => void;
+  onOpenScienceLab?: (segment?: string) => void;
   initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy';
 }
 
@@ -182,6 +183,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onGoHome,
   onOpenGrammarArticle,
   onOpenCourseAddendum,
+  onOpenScienceLab,
   initialEssay = 'ai_sanskrit',
 }) => {
   const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy'>(initialEssay);
@@ -5884,6 +5886,63 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 do begin from different places, and the difference matters for how we study, how we live with
                 technology, and how we understand the word at the centre of this page: <strong>medhā</strong>.
               </p>
+
+              {/* Interactive Aruni Spotlight Callout */}
+              <div
+                style={{
+                  background: 'linear-gradient(135deg, rgba(244, 63, 94, 0.12) 0%, rgba(15, 23, 42, 0.95) 100%)',
+                  border: '1.5px solid rgba(244, 63, 94, 0.4)',
+                  borderRadius: '16px',
+                  padding: '1.25rem 1.5rem',
+                  margin: '1.25rem 0',
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '1.25rem',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <div style={{ flex: '1 1 360px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+                    <span style={{ fontSize: '1.4rem' }}>🧪</span>
+                    <span style={{ color: '#fb7185', fontWeight: 800, fontSize: '0.82rem', fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.05em' }}>
+                      PIONEERING NEUROSCIENCE // c. 800 BCE
+                    </span>
+                  </div>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.15rem', color: '#f8fafc', fontWeight: 800 }}>
+                    Sage Uddālaka Āruṇi: The Father of Empirical Philosophy
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.55 }}>
+                    In the Chāndogya Upaniṣad, Āruṇi conducted humanity’s earliest recorded metabolic neuroscience experiment:
+                    his son Śvetaketu fasted for 15 days, causing his memory to collapse completely until food restored his 16 cognitive Kalās
+                    (<em>“Anna-mayaṃ hi saumya manaḥ”</em>).
+                  </p>
+                </div>
+                {onOpenScienceLab && (
+                  <button
+                    type="button"
+                    onClick={() => onOpenScienceLab('srishti-sthiti-laya')}
+                    style={{
+                      background: 'linear-gradient(135deg, #f43f5e 0%, #be123c 100%)',
+                      color: '#ffffff',
+                      border: 'none',
+                      borderRadius: '10px',
+                      padding: '0.65rem 1.25rem',
+                      fontWeight: 700,
+                      fontSize: '0.86rem',
+                      cursor: 'pointer',
+                      boxShadow: '0 4px 15px rgba(244, 63, 94, 0.35)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.45rem',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    <span>▶ Launch Āruṇi’s 4 Empirical Labs</span>
+                  </button>
+                )}
+              </div>
             </section>
 
             {/* 1. Etymology */}

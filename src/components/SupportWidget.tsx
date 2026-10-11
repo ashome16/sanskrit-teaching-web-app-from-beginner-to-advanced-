@@ -27,6 +27,7 @@ export const SupportWidget: React.FC<SupportWidgetProps> = ({
           className="support-widget-trigger"
           onClick={() => setIsOpen(true)}
           title="Open Learner Care Desk"
+          aria-label="Open Learner Care Desk"
           aria-expanded="false"
         >
           <span className="support-trigger-icon">💬</span>

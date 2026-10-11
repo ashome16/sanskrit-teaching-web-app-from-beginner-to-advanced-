@@ -490,6 +490,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                       setShowMiniBubble(false);
                     }}
                     title="Dismiss bubble"
+                    aria-label="Dismiss bubble"
                   >
                     ×
                   </button>
@@ -538,6 +539,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     setMood('happy');
                   }}
                   title="Open Bodhi Gurukul Guide (बोधिः)"
+                  aria-label="Open Bodhi Gurukul Guide (बोधिः)"
                   aria-expanded={isOpen}
                 >
                   <div className="bodhi-trigger-avatar-wrap">

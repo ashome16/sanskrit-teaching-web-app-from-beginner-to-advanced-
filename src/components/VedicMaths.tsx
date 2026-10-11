@@ -30,10 +30,11 @@ import { VEDIC_LEARNING_PATH, VEDIC_PATH_SUTRA_IDS, vedicPathIndex } from '../da
 import { VedicLearningPath } from './VedicLearningPath';
 import VedicArticleFigure from './VedicArticleFigure';
 import { PosterLightbox } from './PosterLightbox';
+import ArticleGamesHub from './ArticleGamesHub';
 import '../styles/vedic-maths.css';
 import '../styles/resources.css';
 
-export type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'kerala' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay';
+export type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'kerala' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay' | 'games';
 type SolverKey = 'ekadhikena' | 'nikhilam-sub' | 'nikhilam-mul' | 'urdhva' | 'ekanyunena' | 'antya' | 'beejank';
 
 export interface VedicMathsProps {
@@ -725,6 +726,9 @@ ${bodyHtml}
     } else if (clean === 'articles' || clean === 'essay') {
       setActiveTab('articles');
       scrollId = 'vedic-tabs';
+    } else if (clean === 'games' || clean.startsWith('game-')) {
+      setActiveTab('games');
+      scrollId = 'vedic-tabs';
     } else {
       return false;
     }
@@ -1212,7 +1216,23 @@ ${bodyHtml}
                     <span className="vedic-tab-icon" aria-hidden="true">📖</span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Articles Masterclass</span>
-                      <span className="vedic-tab-sub">15 Illustrated Treatises</span>
+                      <span className="vedic-tab-sub">18 Illustrated Treatises</span>
+                    </div>
+                  </button>
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'games' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('games');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">12</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">🎮</span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">Games Arena · क्रीडा-शाला</span>
+                      <span className="vedic-tab-sub">6 Playable Article Games</span>
                     </div>
                   </button>
                 </div>
@@ -7877,6 +7897,65 @@ ${bodyHtml}
               <h1 className="article-en-heading" id={articleAnchor(currentArticle.id)}>{currentArticle.title}</h1>
               <p className="article-subtitle">{currentArticle.subtitle}</p>
 
+              {/* Optional Game Launcher Banner for this article */}
+              {(() => {
+                const gameMap: Record<string, { id: string; title: string; dev: string; icon: string }> = {
+                  'analytical-mind-of-ancient-india': { id: 'rituparna', title: 'Rituparna’s Canopy Estimator & Pingala Pyramid', dev: 'ऋतुपर्ण-प्रतिदर्श-क्रीडा', icon: '🌳' },
+                  'agnichurna-pyrotechnics-rocketry': { id: 'agnicurna', title: 'Śukranīti Agnicūrṇa & Mysorean Siege Artillery', dev: 'अग्निचूर्ण-क्षेपणास्त्र-क्रीडा', icon: '🚀' },
+                  'bhaskaracharya-dob-algebra-and-cosmic-consciousness': { id: 'lilavati', title: 'Līlāvatī’s Poetic Math Quest', dev: 'लीलावती-गणित-पहेलिका', icon: '🪷' },
+                  'universal-engine-of-algebra': { id: 'kuttaka', title: 'The Kuṭṭaka Pulverizer Engine', dev: 'कुट्टक-यन्त्रम्', icon: '🔨' },
+                  'dhanurveda-geometry-phonetics': { id: 'dhanurveda', title: 'Dhanurveda Stance & Ballistics Arena', dev: 'धनुर्वेद-लक्ष्यवेध-क्रीडा', icon: '🎯' },
+                };
+                const g = gameMap[currentArticle.slug];
+                if (!g) return null;
+                return (
+                  <div
+                    className="article-game-banner"
+                    style={{
+                      margin: '1rem 0 1.5rem',
+                      background: 'linear-gradient(135deg, #f0fdf4, #ecfdf5)',
+                      border: '2px solid #86efac',
+                      borderRadius: '14px',
+                      padding: '0.85rem 1.15rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      flexWrap: 'wrap',
+                      gap: '0.75rem',
+                    }}
+                  >
+                    <div>
+                      <div style={{ fontSize: '0.74rem', fontWeight: 800, textTransform: 'uppercase', color: '#15803d', letterSpacing: '0.05em' }}>
+                        🎮 Interactive Game Available
+                      </div>
+                      <div style={{ fontWeight: 800, fontSize: '0.96rem', color: '#0f172a' }}>
+                        {g.icon} {g.title} <span lang="sa" style={{ color: '#047857', fontWeight: 600 }}>({g.dev})</span>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      style={{
+                        background: '#0f172a',
+                        color: '#ffffff',
+                        border: 'none',
+                        borderRadius: '10px',
+                        padding: '0.5rem 0.95rem',
+                        fontWeight: 700,
+                        fontSize: '0.84rem',
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => {
+                        setActiveTab('games');
+                        const el = document.getElementById('vedic-tabs');
+                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }}
+                    >
+                      Play Game (क्रीडां क्रीड) →
+                    </button>
+                  </div>
+                );
+              })()}
+
               {/* Sections */}
               {currentArticle.sections.map((sec, sIdx) => (
                 <div key={sIdx} className="article-section-block">
@@ -8136,6 +8215,21 @@ ${bodyHtml}
               </div>
             </div>
           </div>
+        )}
+
+        {activeTab === 'games' && (
+          <ArticleGamesHub
+            onOpenArticle={(slug) => {
+              setActiveTab('articles');
+              const found = VEDIC_ARTICLES.find((a) => a.slug === slug);
+              if (found) selectArticle(found.id);
+              setTimeout(() => {
+                const el = document.getElementById('vedic-tabs');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 60);
+            }}
+            onGoHome={onGoHome}
+          />
         )}
 
       </main>

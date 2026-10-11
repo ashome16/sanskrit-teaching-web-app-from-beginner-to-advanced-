@@ -27,8 +27,9 @@ let inflight: Promise<AnalyseRegistry> | null = null;
 
 export const loadAnalyseGlosses = async (): Promise<AnalyseRegistry> => {
   if (cached) return cached;
-  if (inflight) return inflight;
-  inflight = fetch(`./analyse.json?t=${Date.now()}`)
+  const base = import.meta.env.BASE_URL || '/';
+  const url = `${base.endsWith('/') ? base : base + '/'}analyse.json?t=${Date.now()}`;
+  inflight = fetch(url)
     .then(async (response) => {
       if (!response.ok) return {};
       const data = (await response.json()) as AnalyseRegistry;

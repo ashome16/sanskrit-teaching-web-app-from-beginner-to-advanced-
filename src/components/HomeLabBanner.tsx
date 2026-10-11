@@ -198,13 +198,13 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
         <ul className="hlb-pills" aria-label="Lab modules">
           {MODULES.map((m) => (
             <li key={m.id}>
-              <a href={`/science-lab#${m.id}`} className="hlb-pill" onClick={(e) => open(e, m.id)} data-testid={`hlb-pill-${m.id}`}>
+              <a href={`/vignana-lab#${m.id}`} className="hlb-pill" onClick={(e) => open(e, m.id)} data-testid={`hlb-pill-${m.id}`}>
                 <span aria-hidden="true">{m.icon}</span> {m.title}
               </a>
             </li>
           ))}
         </ul>
-        <a href="/science-lab" className="hlb-cta" onClick={(e) => open(e)} data-testid="hlb-cta">
+        <a href="/vignana-lab" className="hlb-cta" onClick={(e) => open(e)} data-testid="hlb-cta">
           Open the Lab <span className="hlb-cta-arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -238,7 +238,7 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
           {MODULES.map((m, i) => (
             <a
               key={m.id}
-              href={`/science-lab#${m.id}`}
+              href={`/vignana-lab#${m.id}`}
               className={`hlb-slide${i === idx ? ' is-active' : ''}`}
               aria-hidden={i !== idx}
               tabIndex={i === idx ? 0 : -1}

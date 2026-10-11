@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { playPronunciation } from '../utils/pronunciation';
-import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { useAuthStore } from '../store/authStore';
-import { canAccessAllChapters } from '../utils/premiumAccess';
+import { canAccessAllChapters, isFreeTrialOpenLesson } from '../utils/premiumAccess';
 import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
 import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
 import { NCERT_TEXTBOOKS, getTextbookMetaForLesson } from '../utils/textbookCovers';
 import BodhiAvatar from './BodhiAvatar';
 import HomeLabBanner from './HomeLabBanner';
-import VarnamalaFlashcardDownloadModal from './VarnamalaFlashcardDownloadModal';
 import { getSearchShortcut } from '../utils/platformShortcut';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
+
+const Grade8SyllabusModal = lazy(() => import('./Grade8SyllabusModal').then((m) => ({ default: m.Grade8SyllabusModal })));
+const VarnamalaFlashcardDownloadModal = lazy(() => import('./VarnamalaFlashcardDownloadModal'));
 
 export interface HomePageProps {
   onOpenReader: (lessonId?: string) => void;
@@ -534,7 +535,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [selectedGradeFilter, setSelectedGradeFilter] = useState<'all' | '7' | '8' | '9'>('all');
 
   const visibleChapters = CHAPTERS_INFO.filter(
-    (ch) => canReadAllChapters || (!ch.id.startsWith('grade8_') && !ch.id.startsWith('grade9_'))
+    (ch) => canReadAllChapters || isFreeTrialOpenLesson(ch.id) || (!ch.id.startsWith('grade8_') && !ch.id.startsWith('grade9_'))
   );
 
   const categories = [
@@ -572,12 +573,10 @@ const HomePage: React.FC<HomePageProps> = ({
   };
 
   const openGrade8Syllabus = () => {
-    if (!canReadAllChapters) return;
     setIsGrade8ModalOpen(true);
   };
 
   const openGrade9Syllabus = () => {
-    if (!canReadAllChapters) return;
     setIsGrade9ModalOpen(true);
   };
 
@@ -598,6 +597,8 @@ const HomePage: React.FC<HomePageProps> = ({
             src="/logo.jpg"
             alt="EdNet Gurukul - Learn Sanskrit Online &amp; Vedic Mathematics"
             className="home-hero-logo"
+            width={68}
+            height={68}
           />
           <div className="home-hero-brand-details">
             <h2 className="home-hero-org-title">EdNet Learn Gurukul</h2>
@@ -1020,8 +1021,8 @@ const HomePage: React.FC<HomePageProps> = ({
                     }}
                     onClick={() => {
                       if (tb.id === 'class7') onOpenReader('gsde101');
-                      else if (tb.id === 'class8') onOpenReader(canReadAllChapters ? 'grade8_prarthana' : 'gsde101');
-                      else onOpenReader(canReadAllChapters ? 'grade9_prarthana' : 'gsde101');
+                      else if (tb.id === 'class8') onOpenReader('grade8_prarthana');
+                      else onOpenReader('grade9_prarthana');
                     }}
                   >
                     <img
@@ -1694,7 +1695,6 @@ const HomePage: React.FC<HomePageProps> = ({
         <div className="home-ncert-showcase-section" aria-label="NCERT Sanskrit Textbooks Showcase">
           <div className="home-ncert-showcase-grid">
             {NCERT_TEXTBOOKS.map((tb) => {
-              const isLocked = !canReadAllChapters && (tb.id === 'class8' || tb.id === 'class9');
               return (
                 <div key={tb.id} className="home-ncert-book-card">
                   <div className="home-ncert-book-cover-wrap">
@@ -1706,12 +1706,29 @@ const HomePage: React.FC<HomePageProps> = ({
                     />
                   </div>
                   <div className="home-ncert-book-info">
-                    <span
-                      className="home-ncert-book-badge"
-                      style={{ background: `${tb.badgeColor}15`, color: tb.badgeColor, border: `1px solid ${tb.badgeColor}35` }}
-                    >
-                      {tb.classSa} · {tb.classEn}
-                    </span>
+                    <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                      <span
+                        className="home-ncert-book-badge"
+                        style={{ background: `${tb.badgeColor}15`, color: tb.badgeColor, border: `1px solid ${tb.badgeColor}35` }}
+                      >
+                        {tb.classSa} · {tb.classEn}
+                      </span>
+                      {!canReadAllChapters && (
+                        <span
+                          style={{
+                            fontSize: '0.7rem',
+                            fontWeight: 700,
+                            padding: '0.15rem 0.5rem',
+                            borderRadius: '999px',
+                            background: 'rgba(16, 185, 129, 0.12)',
+                            color: '#059669',
+                            border: '1px solid rgba(16, 185, 129, 0.3)',
+                          }}
+                        >
+                          🎁 Free Trial Open
+                        </span>
+                      )}
+                    </div>
                     <h3 className="home-ncert-book-title-sa">{tb.titleSa} ({tb.titleEn})</h3>
                     <p className="home-ncert-book-subtitle">{tb.subtitle}</p>
                     <div className="home-ncert-book-stats">
@@ -1722,14 +1739,10 @@ const HomePage: React.FC<HomePageProps> = ({
                         type="button"
                         className="home-ncert-book-btn-primary"
                         onClick={() => {
-                          if (isLocked) {
-                            openGrade8Syllabus();
-                          } else {
-                            onOpenReader(tb.firstLessonId);
-                          }
+                          onOpenReader(tb.firstLessonId);
                         }}
                       >
-                        📖 Read {tb.titleSa}
+                        📖 Read {tb.titleSa} {!canReadAllChapters ? '(Free Trial)' : ''}
                       </button>
                       <button
                         type="button"
@@ -1968,58 +1981,64 @@ const HomePage: React.FC<HomePageProps> = ({
 
 
 
-      <Grade8SyllabusModal
-        isOpen={isGrade7ModalOpen}
-        onClose={() => setIsGrade7ModalOpen(false)}
-        onSelectLesson={(lessonId) => onOpenReader(lessonId)}
-        onOpenCbseGuide={onOpenCbseGuide}
-        syllabus={GRADE_7_SYLLABUS}
-        gradeBadge="सप्तमकक्षा-पाठ्यक्रमः · Deepakam 7th grade · दीपकम"
-        intro="Index of the Class 7 Deepakam lessons in this reader: chapters, extra study, and the two grammar appendices."
-        coreLessonCount={12}
-        appendixCount={2}
-        pageSpan="1–15"
-        pageStatSuffix="Deepakam lessons"
-        lessonIdPrefix="gsde"
-        accessGated={false}
-        examTitle="CBSE Class 7 Sanskrit Exam Guide & Question Directives"
-        examBlurb="The same CBSE Sanskrit exam guide used with this reader: question words, section instructions, and how the paper grows from Class 7."
-      />
+      <Suspense fallback={null}>
+        {isGrade7ModalOpen && (
+          <Grade8SyllabusModal
+            isOpen={isGrade7ModalOpen}
+            onClose={() => setIsGrade7ModalOpen(false)}
+            onSelectLesson={(lessonId) => onOpenReader(lessonId)}
+            onOpenCbseGuide={onOpenCbseGuide}
+            syllabus={GRADE_7_SYLLABUS}
+            gradeBadge="सप्तमकक्षा-पाठ्यक्रमः · Deepakam 7th grade · दीपकम"
+            intro="Index of the Class 7 Deepakam lessons in this reader: chapters, extra study, and the two grammar appendices."
+            coreLessonCount={12}
+            appendixCount={2}
+            pageSpan="1–15"
+            pageStatSuffix="Deepakam lessons"
+            lessonIdPrefix="gsde"
+            accessGated={false}
+            examTitle="CBSE Class 7 Sanskrit Exam Guide & Question Directives"
+            examBlurb="The same CBSE Sanskrit exam guide used with this reader: question words, section instructions, and how the paper grows from Class 7."
+          />
+        )}
 
-      {canReadAllChapters && (
-        <Grade8SyllabusModal
-          isOpen={isGrade8ModalOpen}
-          onClose={() => setIsGrade8ModalOpen(false)}
-          onSelectLesson={(lessonId) => onOpenReader(lessonId)}
-          onOpenCbseGuide={onOpenCbseGuide}
-        />
-      )}
+        {isGrade8ModalOpen && (
+          <Grade8SyllabusModal
+            isOpen={isGrade8ModalOpen}
+            onClose={() => setIsGrade8ModalOpen(false)}
+            onSelectLesson={(lessonId) => onOpenReader(lessonId)}
+            onOpenCbseGuide={onOpenCbseGuide}
+          />
+        )}
 
-      {canReadAllChapters && (
-        <Grade8SyllabusModal
-          isOpen={isGrade9ModalOpen}
-          onClose={() => setIsGrade9ModalOpen(false)}
-          onSelectLesson={(lessonId) => onOpenReader(lessonId)}
-          onOpenCbseGuide={onOpenCbseGuide}
-          syllabus={GRADE_9_SYLLABUS}
-          gradeBadge="नवमकक्षा-पाठ्यक्रमः · शारदा (Class 9) · CBSE"
-          intro="Complete index of all 12 textbook chapters, opening invocations, and grammatical appendices with exact page references."
-          coreLessonCount={12}
-          appendixCount={4}
-          pageSpan="Page 1 to 244"
-          pageStatSuffix="References"
-          lessonIdPrefix="grade9_"
-          accessGated={true}
-          examTitle="CBSE Class 9 Sanskrit Exam Guide & Question Directives"
-          examBlurb="Master high school paper structure: अन्वय-पूरणम्, प्रश्ननिर्माणम्, सन्धि-समास-प्रत्यय rules, and board scoring directives."
-        />
-      )}
+        {isGrade9ModalOpen && (
+          <Grade8SyllabusModal
+            isOpen={isGrade9ModalOpen}
+            onClose={() => setIsGrade9ModalOpen(false)}
+            onSelectLesson={(lessonId) => onOpenReader(lessonId)}
+            onOpenCbseGuide={onOpenCbseGuide}
+            syllabus={GRADE_9_SYLLABUS}
+            gradeBadge="नवमकक्षा-पाठ्यक्रमः · शारदा (Class 9) · CBSE"
+            intro="Complete index of all 12 textbook chapters, opening invocations, and grammatical appendices with exact page references."
+            coreLessonCount={12}
+            appendixCount={4}
+            pageSpan="Page 1 to 244"
+            pageStatSuffix="References"
+            lessonIdPrefix="grade9_"
+            accessGated={true}
+            examTitle="CBSE Class 9 Sanskrit Exam Guide & Question Directives"
+            examBlurb="Master high school paper structure: अन्वय-पूरणम्, प्रश्ननिर्माणम्, सन्धि-समास-प्रत्यय rules, and board scoring directives."
+          />
+        )}
 
-      <VarnamalaFlashcardDownloadModal
-        isOpen={isFlashcardModalOpen}
-        onClose={() => setIsFlashcardModalOpen(false)}
-        initialMode="varnamala"
-      />
+        {isFlashcardModalOpen && (
+          <VarnamalaFlashcardDownloadModal
+            isOpen={isFlashcardModalOpen}
+            onClose={() => setIsFlashcardModalOpen(false)}
+            initialMode="varnamala"
+          />
+        )}
+      </Suspense>
     </main>
   );
 };

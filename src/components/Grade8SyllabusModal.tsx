@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { GRADE_8_SYLLABUS } from '../data/grade8Syllabus';
 import { useAuthStore } from '../store/authStore';
-import { canAccessAllChapters } from '../utils/premiumAccess';
+import { canAccessAllChapters, isFreeTrialOpenLesson } from '../utils/premiumAccess';
 import '../styles/grade8-syllabus.css';
 import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
 import { getTextbookMetaForLesson } from '../utils/textbookCovers';
@@ -73,12 +73,12 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
   lessonIdPrefix = 'grade8_',
   knownLessonIds,
   accessGated = true,
-  accountNote = 'Class 8 lessons, worksheets, and quizzes are open to everyone with an account. Sign in or register for free to start learning!',
+  accountNote = 'Prārthanā & Chapter 1 are open under your 14-day free trial! Register or sign in for free to unlock all subsequent chapters.',
   examTitle = 'CBSE Class 8 Sanskrit Exam Guide & Question Directives',
   examBlurb = 'Master standardized instructions (यथानिर्देशम्, अन्वयः, घटनाक्रमः), 10 interrogative क-कार words, and grammatical components (कर्तृपदम्, क्रियापदम्) for board-pattern scoring.',
 }) => {
   const chapters: readonly SyllabusChapter[] = syllabus ?? GRADE_8_SYLLABUS;
-  const { isAdminLoggedIn, currentUser } = useAuthStore();
+  const { isAdminLoggedIn, currentUser, openAuthModal } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
@@ -231,7 +231,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
         <div className="g8-modal-body">
           {accessGated && !canReadAllChapters && (
             <div className="g8-upcoming-overlay-note" role="status">
-              <strong>ACCOUNT REQUIRED · लेखा आवश्यकः</strong>
+              <strong>🎁 FREE TRIAL PREVIEW · निःशुल्क-परीक्षणम्</strong>
               <span>{accountNote}</span>
             </div>
           )}
@@ -258,7 +258,8 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
               const inThisReader =
                 !knownLessonIds || knownLessonIds.includes(ch.id);
               const markedOpen = ch.status === 'available' || ch.id.startsWith(lessonIdPrefix);
-              const isAvailable = inThisReader && markedOpen && (!accessGated || canReadAllChapters);
+              const isTrialOpen = isFreeTrialOpenLesson(ch.id);
+              const isAvailable = inThisReader && markedOpen && (!accessGated || canReadAllChapters || isTrialOpen);
               const isSpeaking = speakingId === ch.id;
               const isVerseSpeaking = speakingId === `${ch.id}_verse`;
 
@@ -286,10 +287,12 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
 
                     <div className="g8-card-status">
                       {isAvailable ? (
-                        <span className="g8-status-pill ready">✅ Available in App</span>
+                        <span className={`g8-status-pill ${isTrialOpen && !canReadAllChapters ? 'ready' : 'ready'}`}>
+                          {isTrialOpen && !canReadAllChapters ? '🎁 Free Trial Open' : '✅ Available in App'}
+                        </span>
                       ) : (
                         <span className="g8-status-pill syllabus">
-                          {!accessGated || canReadAllChapters ? '📚 In Syllabus' : '⏳ UPCOMING · शीघ्रम्'}
+                          {!canReadAllChapters ? '🔒 Requires Free Account' : '📚 In Syllabus'}
                         </span>
                       )}
                     </div>
@@ -347,11 +350,21 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
                       >
                         📖 Open Interactive Lesson ➔
                       </button>
+                    ) : !canReadAllChapters ? (
+                      <button
+                        type="button"
+                        className="g8-action-btn-secondary"
+                        onClick={() => {
+                          onClose();
+                          openAuthModal('register');
+                        }}
+                        style={{ fontSize: '0.84rem', padding: '0.45rem 0.9rem', cursor: 'pointer' }}
+                      >
+                        🔒 Create Free Account to Read ➔
+                      </button>
                     ) : (
                       <span className="g8-card-ref-label">
-                        {!accessGated || canReadAllChapters
-                          ? `NCERT Prescribed Text · ${ch.page}`
-                          : 'Coming soon · This class content is being prepared'}
+                        NCERT Prescribed Text · {ch.page}
                       </span>
                     )}
                   </div>

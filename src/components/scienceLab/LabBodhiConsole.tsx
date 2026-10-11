@@ -187,7 +187,7 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
     faqs: [
       {
         q: 'How did Prince Nala verify King Rituparna’s bold claim?',
-        a: 'Skeptical of the estimate, Nala halted the chariot, felled the massive Vibhītaka tree, and counted every single nut and leaf, discovering Rituparna’s prediction was astonishingly exact.',
+        a: 'Skeptical of the estimate, Nala halted the chariot, felled the massive Vibhītaka tree, and counted every single nut and leaf, discovering Rituparna’s prediction was a remarkably close approximation (statistical estimate).',
         devAudio: 'ऋतुपर्णस्य साङ्ख्यानं विभीतकफलगणना',
       },
       {
@@ -224,25 +224,37 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
     ],
   },
   'srishti-sthiti-laya': {
-    title: 'The Loom of Āruṇi: Cosmic Conservation',
-    dev: 'सृष्टि-स्थिति-लय-चक्रम्',
+    title: 'Sage Uddālaka Āruṇi: The Loom of Conservation & Empirical Labs',
+    dev: 'उद्दालक-आरुणेः प्रत्यक्ष-विज्ञानम्',
     bodhiIntro:
-      'In Chāndogya Upaniṣad 6, sage Uddālaka Āruṇi instructs his son Śvetaketu: "Katham asataḥ saj jāyeta?" (How could being arise from non-being?). Nothing is created from nothing; matter cycles through emergence (Sṛṣṭi), sustained order (Sthiti), and dissolution (Laya).',
+      'Welcome to the laboratory of Sage Uddālaka Āruṇi (c. 8th–7th c. BCE), the world’s first documented natural scientist! Through four brilliant empirical experiments—salt-water dissolution, banyan seed cleavage, 15-day fasting neuroscience, and clay/gold metallurgy—Uddālaka taught his son Śvetaketu that reality cannot come from nothing, the mind is biological, and all existence shares one single subtle substrate: Tat Tvam Asi!',
     keyConcepts: [
-      { label: 'Ex Nihilo Nihil Fit', text: 'Being (Sat) cannot arise from non-being (Asat); conservation of substance.' },
-      { label: 'Salt in Water Metaphor', text: 'Just as salt dissolved in water is invisible yet pervades every drop, Sat is everywhere.' },
-      { label: 'Spandana (स्पन्दनम्)', text: 'The ceaseless micro-vibration pulsing through all manifest reality.' },
+      { label: 'Ex Nihilo Nihil Fit', text: 'Being (Sat) cannot arise from non-being (Asat); conservation of substance (Katham asataḥ saj jāyeta).' },
+      { label: 'Salt in Water (लवण-जलम्)', text: 'Invisible subtle reality permeates every drop: taste confirms what eyes cannot see.' },
+      { label: 'Banyan Seed (न्यग्रोध-बीजम्)', text: 'The colossal 100-foot tree emerges from the subtle unmanifest power (Aṇiman) inside the tiny seed.' },
+      { label: 'Biological Mind (अन्नमयम् मनः)', text: 'Food splits 3 ways (waste, flesh, mind); a 15-day fast collapses memory until food restores it.' },
+      { label: 'Tat Tvam Asi (तत् त्वम् असि)', text: '“That Thou Art”: The timeless Mahāvākya unifying individual self with cosmic Being.' },
     ],
     faqs: [
+      {
+        q: 'Why is Sage Uddālaka Āruṇi celebrated as the world’s first natural scientist?',
+        a: 'Flourishing centuries before Greek pre-Socratics like Thales or Democritus, Āruṇi based his philosophy entirely on empirical observation, repeatability, and inductive reasoning rather than supernatural dogmas or blind ritual.',
+        devAudio: 'उद्दालक आरुणिः प्रत्यक्ष-वादी',
+      },
+      {
+        q: 'How did Āruṇi’s 15-day fasting test prove the mind is biological?',
+        a: 'In Chāndogya 6.7, Śvetaketu drank water (preserving life-breath) but fasted from food for 15 days. His memory and cognitive Kalās failed completely. When he ate rice and ghee on day 16, memory rushed back—proving the brain is physically nourished by food (Anna-mayaṃ hi saumya manaḥ).',
+        devAudio: 'अन्नमयं हि सोम्य मनः',
+      },
       {
         q: 'What is the clay metaphor (Mṛttikā-dṛṣṭānta)?',
         a: 'By knowing a single lump of clay, all objects made of clay are known: their varying names are mere linguistic convention (Vācārambhaṇam), while clay alone is the true reality.',
         devAudio: 'वाचारम्भणं विकारो नामधेयं मृत्तिकेत्येव सत्यम्',
       },
       {
-        q: 'How does Laya differ from total annihilation?',
-        a: 'Laya is involution or dissolution back into the unmanifest causal ground (Prakṛti / Sat). Energy and particles are never lost or destroyed.',
-        devAudio: 'न नाशः अपि तु लयः',
+        q: 'What does the Banyan seed experiment demonstrate?',
+        a: 'When a tiny banyan seed is cleaved open, one sees “nothing at all” (Na kiñcana). Yet from that very unmanifest subtle potency (Aṇiman), a colossal multi-rooted tree arises—showing how the invisible commands manifest reality.',
+        devAudio: 'अण्व्यः धानाः महान् न्यग्रोधः',
       },
     ],
     quizzes: [
@@ -264,11 +276,19 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
       },
       {
         id: 'srishti-q3',
-        q: 'What does the cycle Sṛṣṭi · Sthiti · Laya represent in classical cosmological physics?',
-        options: ['Only literal destruction', 'Emergence, Sustenance, and Dissolution / Conservation', 'Planetary eclipses', 'Medical diagnosis'],
+        q: 'What happens to Śvetaketu’s Vedic recall after fasting from food for 15 days?',
+        options: ['Memory fails completely until food is consumed', 'He recites faster', 'Nothing changes', 'He speaks a new language'],
+        correct: 0,
+        explanation: 'The mind is constructed from food (Anna-mayaṃ manaḥ). Fasting collapsed his 16 cognitive Kalās, which revived upon eating.',
+        sanskritContext: 'अन्नमयं हि सोम्य मन आपोमयः प्राणः।',
+      },
+      {
+        id: 'srishti-q4',
+        q: 'What does the invisible core of the cleaved Banyan seed (Nyagrodha) prove?',
+        options: ['The seed was hollow and useless', 'The colossal tree arises from unmanifest subtle potency (Aṇiman)', 'Banyan trees need no soil', 'Trees grow from rain alone'],
         correct: 1,
-        explanation: 'It models the continuous cycle of emergence, stable balance, and reintegration where mass-energy is preserved.',
-        sanskritContext: 'उत्पत्ति-स्थिति-लयाः।',
+        explanation: 'The invisible essence (Aṇiman) contains the entire generative blueprint of the massive tree.',
+        sanskritContext: 'एतस्य वै सोम्यैषोऽणिम्न एवं महान्न्यग्रोधस्तिष्ठति।',
       },
     ],
   },

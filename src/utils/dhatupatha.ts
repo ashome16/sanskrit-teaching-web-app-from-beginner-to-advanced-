@@ -43,7 +43,9 @@ export async function loadDhatupatha(): Promise<DhatuEntry[]> {
   if (cache) return cache;
   if (inflight) return inflight;
 
-  inflight = fetch('./dhatupatha.json')
+  const base = import.meta.env.BASE_URL || '/';
+  const url = `${base.endsWith('/') ? base : base + '/'}dhatupatha.json`;
+  inflight = fetch(url)
     .then(async (res) => {
       if (!res.ok) throw new Error(`Failed to load dhatupatha.json (${res.status})`);
       const data = (await res.json()) as unknown;

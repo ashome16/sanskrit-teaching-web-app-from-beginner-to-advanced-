@@ -1,0 +1,59 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ards-project/ard-spec/main/spec/schemas/ai-catalog.schema.json",
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "EdNet Learn Gurukul",
+    "identifier": "did:web:ednetlearn.in",
+    "documentationUrl": "https://ednetlearn.in/"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ednetlearn:module:sanskrit-thinking-course",
+      "displayName": "Sanskrit Thinking Course (संस्कृत-चिन्तनम्)",
+      "type": "text/html",
+      "url": "https://ednetlearn.in/course"
+    },
+    {
+      "identifier": "urn:ednetlearn:module:interactive-reader",
+      "displayName": "Graded Sanskrit Reader (दीपकम & शारदा)",
+      "type": "text/html",
+      "url": "https://ednetlearn.in/reader"
+    },
+    {
+      "identifier": "urn:ednetlearn:module:paninian-grammar",
+      "displayName": "Paninian Grammar & Dhatupatha Engine",
+      "type": "text/html",
+      "url": "https://ednetlearn.in/grammar"
+    },
+    {
+      "identifier": "urn:ednetlearn:module:vedic-maths",
+      "displayName": "16 Vedic Math Sutras & Lilavati Studio",
+      "type": "text/html",
+      "url": "https://ednetlearn.in/vedic-maths"
+    },
+    {
+      "identifier": "urn:ednetlearn:module:vijnana-science-lab",
+      "displayName": "Vijnana Science Laboratory (विज्ञान-प्रयोगशाला)",
+      "type": "text/html",
+      "url": "https://ednetlearn.in/vignana-lab"
+    },
+    {
+      "identifier": "urn:ednetlearn:module:cbse-sanskrit-guide",
+      "displayName": "CBSE Sanskrit Exam Blueprint & Syllabus Guide",
+      "type": "text/html",
+      "url": "https://ednetlearn.in/cbse-sanskrit-guide"
+    },
+    {
+      "identifier": "urn:ednetlearn:module:vocabulary-puzzles",
+      "displayName": "Interactive Sanskrit Word Puzzles (शब्द-पहेलिकाः)",
+      "type": "text/html",
+      "url": "https://ednetlearn.in/board"
+    },
+    {
+      "identifier": "urn:ednetlearn:module:sad-darshanas",
+      "displayName": "Six Orthodox Systems of Philosophy (षड्दर्शनानि)",
+      "type": "text/html",
+      "url": "https://ednetlearn.in/philosophy"
+    }
+  ]
+}

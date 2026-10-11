@@ -1,16 +1,42 @@
 import type { Lesson, LessonsRegistry } from '../types/chapters';
-import lessonsData from './chapters.json';
+import { LESSON_STUBS } from './lessonStubs';
 
-// varnamala.txt (the alphabet guide) is first; gsde101.txt (Lesson 1) follows.
-export const LESSONS: Lesson[] = (lessonsData as LessonsRegistry).lessons;
+// Lightweight stubs for initial fast render without bundling 2.7MB chapters.json into the entry chunk
+export const LESSONS: Lesson[] = LESSON_STUBS;
 
 export const getLessonById = (id: string): Lesson | undefined =>
   LESSONS.find((lesson) => lesson.id === id);
 
-// Cache-busted runtime fetch of chapters.json so freshly regenerated lesson
-// content (e.g. after re-running extract_txt.py) shows up without a hard reload.
+let cachedChapters: Lesson[] | null = null;
+
+// Cache-busted runtime fetch of chapters.json from public/ (or dynamic chunk import fallback)
 export const fetchLatestChapters = async (): Promise<Lesson[]> => {
-  const response = await fetch(`./chapters.json?t=${Date.now()}`);
-  const data = (await response.json()) as LessonsRegistry;
-  return data.lessons;
+  if (cachedChapters && cachedChapters.length > 0) {
+    return cachedChapters;
+  }
+  try {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const chaptersUrl = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}chapters.json?t=${Date.now()}`;
+    const response = await fetch(chaptersUrl);
+    if (response.ok) {
+      const data = (await response.json()) as LessonsRegistry;
+      if (data?.lessons?.length) {
+        cachedChapters = data.lessons;
+        return data.lessons;
+      }
+    }
+  } catch {
+    /* fallback to dynamic import chunk */
+  }
+  try {
+    const mod = await import('./chapters.json');
+    const data = mod.default as LessonsRegistry;
+    if (data?.lessons?.length) {
+      cachedChapters = data.lessons;
+      return data.lessons;
+    }
+  } catch {
+    /* fallback to stubs */
+  }
+  return LESSON_STUBS;
 };

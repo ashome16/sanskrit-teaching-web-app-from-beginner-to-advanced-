@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
-import { CoreIdea, TermPanel, ChallengeList, type LabTerm, type LabChallenge } from './common';
+import { BodhiLabAnecdote, CoreIdea, TermPanel, ChallengeList, type LabTerm, type LabChallenge } from './common';
 import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
 
@@ -194,12 +194,14 @@ export const AgnibanaRocketLab: React.FC = () => {
   // --- TAB 2: MYSOREAN ROCKET LAUNCH STAND STATES ---
   const [casingType, setCasingType] = useState<'bamboo' | 'iron'>('iron');
   const [hasSwordBlade, setHasSwordBlade] = useState<boolean>(true);
+  const [launchAngle, setLaunchAngle] = useState<number>(45);
   const [launching, setLaunching] = useState<boolean>(false);
   const [launchResult, setLaunchResult] = useState<{
     success: boolean;
     range: number;
     altitude: number;
     pressure: number;
+    angle: number;
     message: string;
   } | null>(null);
 
@@ -211,6 +213,9 @@ export const AgnibanaRocketLab: React.FC = () => {
 
     // Internal combustion pressure based on chemistry
     const peakPressure = Math.round((combustionQuality.eff / 100) * 75 + 15); // atm
+    const rad = (launchAngle * Math.PI) / 180;
+    const angleEfficiency = Math.sin(2 * rad); // peaks at 45° = 1.0
+    const altitudeScale = Math.pow(Math.sin(rad), 2) / 0.5; // normalized so 45° = 1.0
 
     setTimeout(() => {
       if (casingType === 'bamboo') {
@@ -219,17 +224,19 @@ export const AgnibanaRocketLab: React.FC = () => {
           soundEffects.playPuzzleSnap();
           setLaunchResult({
             success: false,
-            range: 145,
-            altitude: 40,
+            range: Math.max(30, Math.round(145 * angleEfficiency)),
+            altitude: Math.max(15, Math.round(40 * altitudeScale)),
             pressure: peakPressure,
+            angle: launchAngle,
             message: '💥 CASING RUPTURE! Soft bamboo cylinder cracked at 22 atm. Gas leaked early with severe thrust loss.',
           });
         } else {
           setLaunchResult({
             success: true,
-            range: 280,
-            altitude: 90,
+            range: Math.round(280 * angleEfficiency),
+            altitude: Math.round(90 * altitudeScale),
             pressure: peakPressure,
+            angle: launchAngle,
             message: 'Mild low-thrust launch. Bamboo survived only due to weak under-oxidized propellant.',
           });
         }
@@ -237,13 +244,15 @@ export const AgnibanaRocketLab: React.FC = () => {
         // Hammered iron succeeds and delivers tremendous range
         soundEffects.playSuccessDing();
         const baseRange = 1800 + (hasSwordBlade ? 350 : 0);
-        const finalRange = Math.round(baseRange * (combustionQuality.eff / 100));
+        const finalRange = Math.round(baseRange * (combustionQuality.eff / 100) * angleEfficiency);
+        const finalAltitude = Math.round(420 * (combustionQuality.eff / 100) * altitudeScale);
         setLaunchResult({
           success: true,
           range: finalRange,
-          altitude: 420,
+          altitude: finalAltitude,
           pressure: peakPressure,
-          message: `🚀 HISTORIC SUCCESS! Hammered iron withstood ${peakPressure} atm internal chamber pressure. ${
+          angle: launchAngle,
+          message: `🚀 HISTORIC SUCCESS! Hammered iron withstood ${peakPressure} atm internal chamber pressure at ${launchAngle}° elevation. ${
             hasSwordBlade ? 'Sword blade aerodynamic stabilizer sustained lethal trajectory!' : ''
           }`,
         });
@@ -686,6 +695,34 @@ export const AgnibanaRocketLab: React.FC = () => {
                 </div>
               </div>
 
+              {/* Elevation Angle Slider */}
+              <div style={{ marginBottom: '1.2rem', padding: '0.75rem', background: '#f8fafc', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.86rem', fontWeight: 700, marginBottom: '0.35rem' }}>
+                  <label htmlFor="artillery-angle-slider" style={{ color: '#334155' }}>
+                    Artillery Elevation Angle (क्षेप-कोणः)
+                  </label>
+                  <span style={{ color: '#0f766e', fontWeight: 800 }}>{launchAngle}°</span>
+                </div>
+                <input
+                  id="artillery-angle-slider"
+                  type="range"
+                  min="15"
+                  max="75"
+                  step="5"
+                  value={launchAngle}
+                  onChange={(e) => {
+                    setLaunchAngle(Number(e.target.value));
+                    soundEffects.playStrokeChime();
+                  }}
+                  style={{ width: '100%', accentColor: '#0f766e', cursor: 'pointer' }}
+                />
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#64748b', marginTop: '0.2rem' }}>
+                  <span>15° (Flat graze)</span>
+                  <span style={{ fontWeight: 700, color: '#0f766e' }}>45° (Maximum Range)</span>
+                  <span>75° (High mortar arc)</span>
+                </div>
+              </div>
+
               {/* Launch Action */}
               <button
                 type="button"
@@ -718,8 +755,8 @@ export const AgnibanaRocketLab: React.FC = () => {
                 <line x1="160" y1="200" x2="110" y2="100" stroke="#475569" strokeWidth="4" />
                 <line x1="85" y1="150" x2="135" y2="150" stroke="#64748b" strokeWidth="2.5" />
 
-                {/* Rocket Cylinder */}
-                <g transform="rotate(-35 110 100)">
+                {/* Rocket Cylinder rotated by launch angle */}
+                <g transform={`rotate(-${launchAngle} 110 100)`}>
                   {/* Casing Tube */}
                   <rect
                     x="110"
@@ -764,10 +801,38 @@ export const AgnibanaRocketLab: React.FC = () => {
                   <div style={{ fontWeight: 800, fontSize: '0.88rem', color: launchResult.success ? '#065f46' : '#991b1b' }}>
                     {launchResult.message}
                   </div>
-                  <div style={{ display: 'flex', gap: '1rem', marginTop: '0.4rem', fontSize: '0.82rem', color: '#475569' }}>
+                  <div style={{ display: 'flex', gap: '1rem', marginTop: '0.4rem', fontSize: '0.82rem', color: '#475569', flexWrap: 'wrap' }}>
                     <span>Max Range: <strong>{launchResult.range} meters</strong></span>
                     <span>Apogee: <strong>{launchResult.altitude} m</strong></span>
                     <span>Chamber Pressure: <strong>{launchResult.pressure} atm</strong></span>
+                    <span>Angle: <strong>{launchResult.angle}°</strong></span>
+                  </div>
+
+                  {/* Trajectory Arc SVG Visualization */}
+                  <div style={{ marginTop: '0.65rem', background: '#0a0f1d', borderRadius: '8px', padding: '0.6rem', border: '1px solid #1e293b' }}>
+                    <div style={{ fontSize: '0.72rem', color: '#38bdf8', fontWeight: 700, marginBottom: '0.3rem' }}>
+                      📐 Ballistic Trajectory Arc (प्रक्षेप-पथः): Range = {launchResult.range}m · Apogee = {launchResult.altitude}m
+                    </div>
+                    <svg viewBox="0 0 300 85" style={{ width: '100%', height: 'auto', display: 'block' }}>
+                      <line x1="10" y1="75" x2="290" y2="75" stroke="#475569" strokeWidth="1" />
+                      <path
+                        d={`M 20 75 Q 150 ${Math.max(10, 75 - Math.min(60, (launchResult.altitude / 450) * 60))} 280 75`}
+                        fill="none"
+                        stroke={launchResult.success ? '#10b981' : '#ef4444'}
+                        strokeWidth="2.5"
+                        strokeDasharray={launchResult.success ? undefined : '4 4'}
+                      />
+                      <circle cx="20" cy="75" r="4" fill="#f59e0b" />
+                      <circle cx="150" cy={Math.max(10, 75 - Math.min(60, (launchResult.altitude / 450) * 60))} r="4" fill="#38bdf8" />
+                      <circle cx="280" cy="75" r="4" fill={launchResult.success ? '#10b981' : '#ef4444'} />
+                      <text x="20" y="67" fontSize="8" fill="#94a3b8">Origin</text>
+                      <text x="150" y={Math.max(14, 70 - Math.min(60, (launchResult.altitude / 450) * 60))} fontSize="8" fill="#38bdf8" textAnchor="middle">
+                        Apogee ({launchResult.altitude}m)
+                      </text>
+                      <text x="280" y="67" fontSize="8" fill="#10b981" textAnchor="end">
+                        Impact ({launchResult.range}m)
+                      </text>
+                    </svg>
                   </div>
                 </div>
               )}
@@ -925,6 +990,47 @@ export const AgnibanaRocketLab: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Bodhi Vijñāna Micro-Anecdote & Civilizational Monograph */}
+      <BodhiLabAnecdote
+        title="Śukranīti, Mysorean Metallurgy & The Aerospace Continuum"
+        sanskritTitle="अग्निचूर्ण-यन्त्रविद्या च"
+        mood="scholar"
+        sutra={{
+          dev: 'सुवर्चिलवणात् पञ्च पलगन्धात् पलं तथा। अङ्गारस्य पलं चैव संमर्द्य चूर्णयेद् दृढम्॥',
+          iast: 'suvarcilavaṇāt pañca palagandhāt palaṃ tathā | aṅgārasya palaṃ caiva saṃmardya cūrṇayed dṛḍham ||',
+          source: 'Śukranīti 4.7.192–194 (महर्षि-शुक्राचार्यः)',
+          meaning: 'Take five parts of Suvarcilavaṇa (saltpetre / KNO₃), one part of Gandhaka (sulphur / S), and one part of Aṅgāra (carbon charcoal / C); pulverize and blend them thoroughly to produce high-thrust Agnicūrṇa.',
+        }}
+        anecdote={
+          <>
+            <p>
+              Centuries before European manuals codified gunpowder formulas, the <em>Śukranīti</em> recorded the exact <strong>5:1:1 stoichiometric ratio</strong> for high-thrust pyrotechnic propellant (<em>Agnicūrṇa</em>). The text prescribed preparing the charcoal from <em>Arka</em> (Calotropis) wood burned in sealed earthen pots, ensuring an ultra-porous microscopic network of capillary void channels that accelerated internal flame deflagration to over 600 m/s.
+            </p>
+            <p>
+              During the Anglo-Mysore Wars of the late 18th century, Hyder Ali and Tipu Sultan instituted the world’s first industrial state rocketry foundries (<em>Tāramaṇḍalpeṭ</em>) in Srirangapatna and Bangalore. By replacing weak bamboo casings with seamless, hammered soft-iron cylinders, Mysorean rockets sustained internal gas pressures exceeding <strong>80 atmospheres</strong> without rupturing. At the 1780 Battle of Pollilur, the Mysorean <em>Bāṇa-dāra</em> corps unleashed these screaming iron projectiles, detonating British ammunition wagons in one of the East India Company’s most crushing tactical reversals.
+            </p>
+            <blockquote style={{ borderLeft: '3px solid #0d9488', margin: '0.65rem 0', paddingLeft: '0.85rem', fontStyle: 'italic', color: '#047857' }}>
+              “Over a hundred captured Mysorean iron rockets were shipped to the Royal Woolwich Arsenal in England. Col. William Congreve reverse-engineered their metallurgical casings and nozzle expansion ratios—giving rise to the Congreve rocket that later inspired ‘the rockets’ red glare’ in the United States national anthem.”
+            </blockquote>
+          </>
+        }
+        epistemologyAndMethod={
+          <>
+            Indigenous Indian chemistry (<em>Rasāyana</em>) and metallurgy (<em>Dhātu-vāda</em>) advanced through rigorous empirical trial in sealed crucibles (<em>Andha-Mūṣā</em>). Rather than relying on trial-and-error mysticism, Indian alchemists analyzed ignition temperatures, burn rates, and tensile chamber containment. The aerodynamic addition of a 1-meter sword blade lashed to the bamboo shaft provided rotational stabilizing moment-of-inertia, demonstrating practical aerodynamic engineering centuries before modern wind tunnels.
+          </>
+        }
+        modernBridge={{
+          ancientConcept: 'Hammered soft-iron pressure cylinders (sustaining 80+ atm) and cast solid propellant grains bound with organic resins.',
+          modernScience: 'High-strength maraging steel motor casings and hydroxyl-terminated polybutadiene (HTPB) solid propellant boosters in modern space launch vehicles.',
+          relevanceNote: 'India’s aerospace prowess is an unbroken technological continuum. The high-pressure solid casing lineage pioneered in Karnataka’s foundries evolved directly into the massive solid strap-on boosters (S200 boosters on LVM3) that powered Chandrayaan-3 and Aditya-L1 toward the stars.',
+        }}
+        societalValue={
+          <>
+            Science in India was grounded in continuous societal need and ethical civilizational responsibility. Rocketry originated not merely for battlefield defense against colonial encroachment, but for cultural and spiritual illumination: Handheld sky tubes (<em>Ulkā-Dāna</em>) in the <em>Skanda Purāṇa</em> illuminated nocturnal pathways for ancestral spirits during Deepavali, evolving into the artistic firework formulas of the <em>Kautuka Cintāmaṇi</em>. In modern democratic India, this sacred rocketry legacy was reimagined by Dr. Vikram Sarabhai and Dr. A.P.J. Abdul Kalam not for imperial conquest, but as a technological engine for collective human welfare (<em>Lokasaṃgraha</em>)—delivering cyclone warning systems, agricultural tele-monitoring, and satellite communication to remote rural schools.
+          </>
+        }
+      />
 
       {/* Sanskrit Terms Panel */}
       <TermPanel terms={AGNIBANA_TERMS} title="Sanskrit Pyrotechnic & Aerospace Terminology" />

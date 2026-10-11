@@ -1,8 +1,26 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
+import { BodhiLabAnecdote, ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
 import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 
 type LangMode = 'both' | 'sanskrit' | 'modern';
+type VisualMode = 'wave' | 'cymatics' | 'sarana';
+
+interface SaranaData {
+  step: number;
+  name: string;
+  dev: string;
+  cents: number;
+  beatHz: number;
+  desc: string;
+}
+
+const SARANA_DATA: SaranaData[] = [
+  { step: 0, name: 'Sāmya (Unison Reference)', dev: 'ध्रुव-साम्यम्', cents: 0, beatHz: 0, desc: 'Calā and Acalā vīṇās tuned to exact unison (0 cents). Zero acoustic beating.' },
+  { step: 1, name: '1st Saraṇā: Pramāṇa Śruti', dev: 'प्रमाण-श्रुतिः', cents: -21.5, beatHz: 5.5, desc: 'Calā lowered by 1 Śruti (Pramāṇa Śruti ≈ 81/80 comma, ~21.5¢). Produces audible acoustic beating against the control.' },
+  { step: 2, name: '2nd Saraṇā: Dviśruti Shift', dev: 'द्विश्रुति-सारणा', cents: -45.0, beatHz: 11.5, desc: 'Calā lowered by 2 Śrutis. Gāndhāra & Niṣāda merge into adjacent notes.' },
+  { step: 3, name: '3rd Saraṇā: Triśruti Shift', dev: 'त्रिश्रुति-सारणा', cents: -67.5, beatHz: 17.5, desc: 'Calā lowered by 3 Śrutis. Ṛṣabha & Dhaivata enter resonance alignment.' },
+  { step: 4, name: '4th Saraṇā: Catuḥśruti Cycle', dev: 'चतुःश्रुति-सारणा', cents: -90.0, beatHz: 23.5, desc: 'Calā lowered by 4 Śrutis. Closes the full 22-Śruti microtonal cycle empirically!' },
+];
 
 const W = 720;
 const H = 300;
@@ -93,6 +111,8 @@ const getCtx = () => {
 const NadaBrahman: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [lang, setLang] = useState<LangMode>('both');
+  const [visualMode, setVisualMode] = useState<VisualMode>('wave');
+  const [saranaStep, setSaranaStep] = useState<number>(0);
   const [n, setN] = useState(1);
   const [T, setT] = useState(T_START);
   const [amp, setAmp] = useState(60);
@@ -102,15 +122,18 @@ const NadaBrahman: React.FC = () => {
   const [matched, setMatched] = useState<boolean[]>([false, false, false]);
 
   const f = stringFreq(n, T);
-  const live = useRef({ n, T, amp, playing, lang, f });
+  const curSarana = SARANA_DATA[saranaStep];
+  const saranaF = f * Math.pow(2, curSarana.cents / 1200);
+
+  const live = useRef({ n, T, amp, playing, lang, f, visualMode, saranaStep, saranaF });
   useEffect(() => {
-    live.current = { n, T, amp, playing, lang, f };
-  }, [n, T, amp, playing, lang, f]);
+    live.current = { n, T, amp, playing, lang, f, visualMode, saranaStep, saranaF };
+  }, [n, T, amp, playing, lang, f, visualMode, saranaStep, saranaF]);
   const pluckAt = useRef(-10);
   const clock = useRef(0);
 
   // ---- optional tone (off by default) ----
-  const audio = useRef<{ osc: OscillatorNode; gain: GainNode } | null>(null);
+  const audio = useRef<{ osc: OscillatorNode; oscTest?: OscillatorNode; gain: GainNode } | null>(null);
   const sustainGain = useCallback((a: number, isPlaying: boolean) => (isPlaying ? 0.03 * (a / 100) : 0), []);
   const startAudio = () => {
     const ctx = getCtx();
@@ -124,7 +147,17 @@ const NadaBrahman: React.FC = () => {
     gain.gain.value = 0;
     osc.connect(gain).connect(ctx.destination);
     osc.start();
-    audio.current = { osc, gain };
+
+    let oscTest: OscillatorNode | undefined;
+    if (visualMode === 'sarana') {
+      oscTest = ctx.createOscillator();
+      oscTest.type = 'triangle';
+      oscTest.frequency.value = saranaF;
+      oscTest.connect(gain);
+      oscTest.start();
+    }
+
+    audio.current = { osc, oscTest, gain };
     gain.gain.setTargetAtTime(sustainGain(amp, playing), ctx.currentTime, 0.05);
   };
   const stopAudio = () => {
@@ -135,6 +168,7 @@ const NadaBrahman: React.FC = () => {
       const ctx = a.osc.context;
       a.gain.gain.setTargetAtTime(0, ctx.currentTime, 0.03);
       a.osc.stop(ctx.currentTime + 0.2);
+      if (a.oscTest) a.oscTest.stop(ctx.currentTime + 0.2);
     } catch {
       /* ignore */
     }
@@ -144,8 +178,11 @@ const NadaBrahman: React.FC = () => {
     if (!a) return;
     const ctx = a.osc.context;
     a.osc.frequency.setTargetAtTime(f, ctx.currentTime, 0.02);
+    if (a.oscTest) {
+      a.oscTest.frequency.setTargetAtTime(saranaF, ctx.currentTime, 0.02);
+    }
     a.gain.gain.setTargetAtTime(sustainGain(amp, playing), ctx.currentTime, 0.08);
-  }, [f, amp, playing, sustainGain]);
+  }, [f, saranaF, amp, playing, sustainGain]);
   useEffect(() => () => stopAudio(), []);
 
   const toggleSound = () => {
@@ -223,6 +260,168 @@ const NadaBrahman: React.FC = () => {
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, W, H);
 
+    // Check visual mode:
+    if (live.current.visualMode === 'cymatics') {
+      // -------------------------------------------------------------
+      // 2D Chladni Cymatics Mandala Plate
+      // -------------------------------------------------------------
+      const cx = W / 2;
+      const cy = H / 2;
+      const R = 115;
+
+      // Resonant brass plate rim
+      const brassGrad = ctx.createRadialGradient(cx, cy, R * 0.2, cx, cy, R);
+      brassGrad.addColorStop(0, '#1e1b4b');
+      brassGrad.addColorStop(0.7, '#0f172a');
+      brassGrad.addColorStop(0.96, '#1e293b');
+      brassGrad.addColorStop(1, '#d97706');
+      ctx.fillStyle = brassGrad;
+      ctx.beginPath();
+      ctx.arc(cx, cy, R, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      // Delicate concentric brass rings
+      ctx.strokeStyle = 'rgba(245,158,11,0.2)';
+      ctx.lineWidth = 1;
+      for (let r = 25; r < R; r += 25) {
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+        ctx.stroke();
+      }
+
+      // Dynamic sand grains settling along Chladni nodal lines
+      const since = t - pluckAt.current;
+      const pluckEnv = since >= 0 && since < 3 ? Math.exp(-since / 0.8) : 0;
+      const jitterA = (a / 100) * (6 * pluckEnv + (isPlaying ? 1.2 : 0));
+
+      // Draw mathematical nodal lines
+      ctx.strokeStyle = hm.color;
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([4, 4]);
+
+      // Nodal rings
+      for (let ring = 1; ring <= k; ring++) {
+        const radRing = (R * ring) / (k + 1);
+        ctx.beginPath();
+        ctx.arc(cx, cy, radRing, 0, 2 * Math.PI);
+        ctx.stroke();
+      }
+      // Nodal radial spokes
+      const numSpokes = k * 2;
+      for (let sp = 0; sp < numSpokes; sp++) {
+        const ang = (sp * Math.PI) / k + (isPlaying ? Math.sin(t * 0.5) * 0.02 : 0);
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(cx + Math.cos(ang) * R, cy + Math.sin(ang) * R);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+
+      // Draw 240 sand particles
+      ctx.fillStyle = '#fef08a';
+      const numGrains = 220;
+      for (let g = 0; g < numGrains; g++) {
+        const ringIdx = (g % k) + 1;
+        const radBase = (R * ringIdx) / (k + 1);
+        const angBase = (Math.floor(g / k) * (2 * Math.PI)) / (numGrains / k);
+        const jx = (Math.sin(g * 17.3 + t * 12) * jitterA);
+        const jy = (Math.cos(g * 29.1 + t * 14) * jitterA);
+        const px = cx + Math.cos(angBase) * radBase + jx;
+        const py = cy + Math.sin(angBase) * radBase + jy;
+
+        ctx.beginPath();
+        ctx.arc(px, py, 1.8, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+
+      // Title overlay on plate
+      ctx.font = '600 13px system-ui, sans-serif';
+      ctx.fillStyle = '#fef08a';
+      ctx.textAlign = 'center';
+      ctx.fillText(`नाद-मण्डलम् · Chladni Cymatics Yantra (Mode n = ${k})`, cx, 28);
+      ctx.font = '11px system-ui, sans-serif';
+      ctx.fillStyle = '#94a3b8';
+      ctx.fillText(`Acoustic vibration structures matter into sacred geometry · Sand settles along nodal lines`, cx, H - 18);
+      return;
+    }
+
+    if (live.current.visualMode === 'sarana') {
+      // -------------------------------------------------------------
+      // Bharata Muni's Saraṇā Catuṣṭayī Twin-Vīṇā Comparison
+      // -------------------------------------------------------------
+      const curS = SARANA_DATA[live.current.saranaStep];
+      const testF = live.current.saranaF;
+      const beatF = curS.beatHz;
+
+      // Top string: Acalā-Vīṇā (Fixed Reference Control Harp)
+      const yAcala = 85;
+      const yCala = 215;
+      const yBeats = 150;
+      const len = X1 - X0;
+
+      // Draw control string (Acalā)
+      const phaseA = Math.cos(2 * Math.PI * (0.5 + freq / 250) * t);
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2.5;
+      ctx.shadowColor = '#38bdf8';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      for (let x = X0; x <= X1; x += 3) {
+        const u = (x - X0) / len;
+        const y = yAcala + ((a / 100) * 16) * Math.sin(Math.PI * u) * phaseA;
+        if (x === X0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // Draw test string (Calā)
+      const phaseC = Math.cos(2 * Math.PI * (0.5 + testF / 250) * t);
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 2.5;
+      ctx.shadowColor = '#f59e0b';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      for (let x = X0; x <= X1; x += 3) {
+        const u = (x - X0) / len;
+        const y = yCala + ((a / 100) * 16) * Math.sin(Math.PI * u) * phaseC;
+        if (x === X0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // Middle composite acoustic interference beat waveform
+      const beatEnv = Math.cos(2 * Math.PI * (beatF * 0.5) * t);
+      ctx.strokeStyle = 'rgba(236,72,153,0.85)';
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      for (let x = X0; x <= X1; x += 3) {
+        const u = (x - X0) / len;
+        const carrier = Math.sin(2 * Math.PI * 4 * u + t * 4);
+        const y = yBeats + 24 * beatEnv * Math.sin(Math.PI * u) * carrier;
+        if (x === X0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      // Labels
+      ctx.font = '700 12px system-ui, sans-serif';
+      ctx.fillStyle = '#38bdf8';
+      ctx.textAlign = 'left';
+      ctx.fillText(`अचला वीणा (Acalā Vīṇā · Fixed Control) : ${freq.toFixed(1)} Hz`, X0, yAcala - 24);
+
+      ctx.fillStyle = '#f59e0b';
+      ctx.fillText(`चला वीणा (Calā Vīṇā · Test Harp) : ${testF.toFixed(1)} Hz (${curS.cents >= 0 ? '0' : curS.cents}¢)`, X0, yCala + 36);
+
+      ctx.fillStyle = '#ec4899';
+      ctx.textAlign = 'center';
+      ctx.fillText(`श्रुति-संवाद & आघातः · Interference Beats: ${beatF > 0 ? `${beatF.toFixed(1)} Hz` : 'Zero (In Unison)'}`, W / 2, yBeats - 14);
+
+      return;
+    }
+
+    // Default mode: 1D Standing Wave
     // Neck and gourd (decoration only)
     ctx.fillStyle = 'rgba(148,163,184,0.08)';
     ctx.beginPath();
@@ -350,6 +549,58 @@ const NadaBrahman: React.FC = () => {
 
   return (
     <div className="vl-sim">
+      <BodhiLabAnecdote
+        title="Bharata Muni & The Twin-Vīṇā Acoustic Calibration"
+        sanskritTitle="भरतमुनेः सारणा-चतुष्टयी & नाद-विज्ञानम्"
+        mood="scholar"
+        sutra={{
+          dev: 'तत्र द्वाविंशतिः श्रुतयः । तत्र श्रुतिनिदर्शनं द्वे वीणे तुल्यप्रमाणतन्त्रीस्तम्भे… ॥',
+          iast: 'tatra dvāviṃśatiḥ śrutayaḥ | tatra śrutinidarśanaṃ dve vīṇe tulyapramāṇatantrīstambhe… ||',
+          source: 'Nāṭyaśāstra, Adhyāya 28 (भरतमुनिः, c. 200 BCE – 200 CE)',
+          meaning: 'There are twenty-two microtonal intervals (śrutis) in the octave. Their empirical demonstration is performed with two vīṇās of identical string dimensions, bridge gauge, and tuning…',
+        }}
+        anecdote={
+          <>
+            <p>
+              Two thousand years before modern audio oscilloscopes and frequency counters, the sage <strong>Bharata Muni</strong>{' '}
+              engineered history’s earliest recorded controlled laboratory acoustic experiment: the <strong>Saraṇā Catuṣṭayī</strong>{' '}
+              (the fourfold progressive tuning calibration).
+            </p>
+            <p>
+              To settle the debate on whether the human ear perceives discrete microtonal intervals, Bharata built two identical harps:
+              the <em>Acalā-Vīṇā</em> (the immovable experimental control group) and the <em>Calā-Vīṇā</em> (the adjustable test harp).
+              By lowering the strings of the test harp through four calculated steps (<em>Saraṇās</em>) and listening for acoustic beating
+              and harmonic resonance against the control, Bharata proved empirically that the octave is divided into exactly{' '}
+              <strong>22 discernible microtones (Śrutis)</strong>.
+            </p>
+            <blockquote style={{ borderLeft: '3px solid #8b5cf6', margin: '0.65rem 0', paddingLeft: '0.85rem', fontStyle: 'italic', color: '#6d28d9' }}>
+              “Sound (Nāda) is not an arbitrary aesthetic invention; it is mathematical vibration (Spanda) governed by physical proportions.
+              When strings vibrate in pure ratios, the mind experiences natural emotional resonance (Rasa).”
+            </blockquote>
+          </>
+        }
+        epistemologyAndMethod={
+          <>
+            Bharata’s twin-vīṇā design was a textbook prototype of the modern scientific method: isolating a single variable against an identical control group.
+            Centuries later, in 1210 CE, <strong>Śārṅgadeva</strong> (<em>Saṅgītaratnākara</em>) formulated mathematical permutations of musical rhythms
+            (<em>Prastāra</em>), which mapped binary combinations and Fibonacci-like series centuries before European algebra.
+          </>
+        }
+        modernBridge={{
+          ancientConcept: 'The 22-Śruti logarithmic microtonal scale, harmonic overtones (Svara-tanmātras), and standing wave nodal geometry.',
+          modernScience: 'Acoustic standing waves (f = n/(2L)√(T/μ)), Chladni cymatics nodal patterns, and logarithmic psycho-acoustics (cents / equal temperament).',
+          relevanceNote: 'Indian classical music is applied psycho-acoustics: rāgas use mathematically calibrated frequencies to induce specific neural and autonomic states.',
+        }}
+        societalValue={
+          <p>
+            In ancient India, sound was revered as <strong>Nāda-Brahman</strong>—the sacred sonic substrate of consciousness.
+            Music was cultivated not for superficial commercial noise, but as a communal, therapeutic science (*Gandharva-vidyā*).
+            It was deployed in public theatre and temple celebrations to dissolve social anxiety, align collective consciousness,
+            and inspire moral courage for societal well-being (*Lokasaṃgraha*).
+          </p>
+        }
+      />
+
       <CoreIdea>
         Later Indian music, yoga and tantra texts speak of <strong>nāda-brahman</strong>: ultimate reality as sound. Here you
         play with a real vibrating string. Pick a harmonic, tune the tension, and the frequency comes straight from the physics
@@ -379,15 +630,63 @@ const NadaBrahman: React.FC = () => {
 
         <div className="vl-orbit-grid">
           <div className="vl-stage-wrap">
+            <div className="vl-btn-row" style={{ marginBottom: '0.65rem', justifyContent: 'center' }}>
+              <button
+                type="button"
+                className={`vl-chip${visualMode === 'wave' ? ' is-on' : ''}`}
+                onClick={() => setVisualMode('wave')}
+                data-testid="nada-mode-wave"
+              >
+                〰️ Standing Wave (तन्त्री)
+              </button>
+              <button
+                type="button"
+                className={`vl-chip${visualMode === 'cymatics' ? ' is-on' : ''}`}
+                onClick={() => setVisualMode('cymatics')}
+                data-testid="nada-mode-cymatics"
+              >
+                💠 Chladni Cymatics Mandala (नाद-मण्डलम्)
+              </button>
+              <button
+                type="button"
+                className={`vl-chip${visualMode === 'sarana' ? ' is-on' : ''}`}
+                onClick={() => setVisualMode('sarana')}
+                data-testid="nada-mode-sarana"
+              >
+                ⚖️ Bharata's Saraṇā Calibration (सारणा-चतुष्टयी)
+              </button>
+            </div>
             <HudFrame
-              accent={hm.color}
+              accent={visualMode === 'cymatics' ? '#f59e0b' : visualMode === 'sarana' ? '#ec4899' : hm.color}
               tl={<>f {f.toFixed(1)} Hz</>}
-              tr={<>n={n} · {lang === 'modern' ? hm.tanEn : `${hm.tanDev} ${hm.tan}`}</>}
+              tr={<>{visualMode === 'sarana' ? `Calā: ${saranaF.toFixed(1)} Hz` : `n=${n} · ${lang === 'modern' ? hm.tanEn : `${hm.tanDev} ${hm.tan}`}`}</>}
               bl={<>T {T.toFixed(1)} N · v {v.toFixed(0)} m/s</>}
               br={<>{note.name} {note.cents >= 0 ? '+' : ''}{note.cents}¢</>}
             >
               <canvas ref={canvasRef} className="vl-stage vl-stage--nada" width={W} height={H} data-testid="nada-canvas" role="img" aria-label={`A string vibrating in harmonic ${n} at ${f.toFixed(1)} hertz`} />
             </HudFrame>
+            {visualMode === 'sarana' && (
+              <div className="vl-panel vl-tradition" style={{ marginTop: '0.75rem', padding: '0.85rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <b style={{ color: '#facc15', fontSize: '0.95rem' }}>{curSarana.dev} · {curSarana.name}</b>
+                  <span className="vl-chip is-on">{curSarana.cents >= 0 ? '0 ¢' : `${curSarana.cents} ¢`} · {curSarana.beatHz} Hz Beats</span>
+                </div>
+                <p className="vl-small" style={{ margin: '0.4rem 0' }}>{curSarana.desc}</p>
+                <div className="vl-btn-row" style={{ gap: '0.35rem', marginTop: '0.4rem' }}>
+                  {SARANA_DATA.map((s) => (
+                    <button
+                      key={s.step}
+                      type="button"
+                      className={`vl-chip${saranaStep === s.step ? ' is-on' : ''}`}
+                      onClick={() => setSaranaStep(s.step)}
+                      data-testid={`nada-sarana-${s.step}`}
+                    >
+                      {s.step === 0 ? '0: Sāmya' : `Saraṇā ${s.step}`}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="vl-leds vl-nada-harmonics" role="radiogroup" aria-label="Harmonic">
               {HARMONICS.map((h) => (
                 <LedButton key={h.n} kind="radio" on={n === h.n} color={h.color} onClick={() => pickN(h.n)} testId={`nada-h-${h.n}`}>

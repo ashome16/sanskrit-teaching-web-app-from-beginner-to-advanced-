@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { CoreIdea, TermPanel, type LabTerm } from './common';
+import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm } from './common';
 import { DialKnob, HudFrame, LedButton } from './controls';
 import { isSmallScreen, prefersReducedMotion } from './motion';
 import MatrixOverwatch from './MatrixOverwatch';
@@ -229,6 +229,7 @@ const AsatoMa: React.FC = () => {
   const [done, setDone] = useState({ s1: false, s2: false, s3: false });
   const [trails, setTrails] = useState(true);
   const [arrows, setArrows] = useState(false);
+  const [probedAtom, setProbedAtom] = useState<{ el: El; massU: number; v: number; eKin: number; x: number; y: number } | null>(null);
   const [levels, setLevels] = useState<Levels>(loadLevels);
   const [lvl, setLvl] = useState<LevelNo>(() => {
     const l = loadLevels();
@@ -239,10 +240,48 @@ const AsatoMa: React.FC = () => {
   const scan = useRef<{ dir: 1 | -1; t: number } | null>(null);
   const glitch = useRef(0);
   const fx = useRef({ frame: 0, ema: 16, low: false, lastPhase: 'solid' as Phase, gasV: 0 });
-  const live = useRef({ sid, view, T, burned, trails, arrows });
+  const live = useRef({ sid, view, T, burned, trails, arrows, probedAtom });
   useEffect(() => {
-    live.current = { sid, view, T, burned, trails, arrows };
-  }, [sid, view, T, burned, trails, arrows]);
+    live.current = { sid, view, T, burned, trails, arrows, probedAtom };
+  }, [sid, view, T, burned, trails, arrows, probedAtom]);
+
+  const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    const cv = canvasRef.current;
+    if (!cv) return;
+    const rect = cv.getBoundingClientRect();
+    const scaleX = W / rect.width;
+    const scaleY = H / rect.height;
+    const clickX = (e.clientX - rect.left) * scaleX;
+    const clickY = (e.clientY - rect.top) * scaleY;
+
+    const list = atoms.current;
+    let best: Atom | null = null;
+    let minDist = 30;
+    for (const a of list) {
+      const d = Math.hypot(a.x - clickX, a.y - clickY);
+      if (d < minDist) {
+        minDist = d;
+        best = a;
+      }
+    }
+    if (best) {
+      const massMap: Record<El, number> = { Au: 196.97, C: 12.011, H: 1.008, O: 15.999, W: 18.015 };
+      const mU = massMap[best.el];
+      const sp = Math.hypot(best.vx, best.vy) * 2.8;
+      const massKg = mU * AMU;
+      const eKinAttoJ = 0.5 * massKg * (sp * sp) * 1e18;
+      setProbedAtom({
+        el: best.el,
+        massU: mU,
+        v: sp,
+        eKin: eKinAttoJ,
+        x: best.x,
+        y: best.y,
+      });
+    } else {
+      setProbedAtom(null);
+    }
+  };
 
   const sub = SUBSTANCES[sid];
   const phase: Phase = sid === 'wood' ? (burned ? 'gas' : 'solid') : phaseOf(sub, T);
@@ -785,6 +824,31 @@ const AsatoMa: React.FC = () => {
         ctx.fill();
       });
     }
+    // Probed atom reticle & crosshair
+    const prb = live.current.probedAtom;
+    if (prb) {
+      ctx.save();
+      ctx.strokeStyle = '#22d3ee';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(prb.x, prb.y, 14, 0, 2 * Math.PI);
+      ctx.stroke();
+      ctx.strokeStyle = 'rgba(34,211,238,0.45)';
+      ctx.beginPath();
+      ctx.arc(prb.x, prb.y, 20, 0, 2 * Math.PI);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(prb.x - 24, prb.y);
+      ctx.lineTo(prb.x - 14, prb.y);
+      ctx.moveTo(prb.x + 14, prb.y);
+      ctx.lineTo(prb.x + 24, prb.y);
+      ctx.moveTo(prb.x, prb.y - 24);
+      ctx.lineTo(prb.x, prb.y - 14);
+      ctx.moveTo(prb.x, prb.y + 14);
+      ctx.lineTo(prb.x, prb.y + 24);
+      ctx.stroke();
+      ctx.restore();
+    }
   };
 
   const paint = (dt: number) => {
@@ -995,6 +1059,59 @@ const AsatoMa: React.FC = () => {
 
   return (
     <div className="vl-sim">
+      <BodhiLabAnecdote
+        title="Nāgārjuna, Kaṇāda & The Sealed Crucible of Invariant Sat"
+        sanskritTitle="नागार्जुन-कणादयोः मूषा-विज्ञानं & सत्-नियमः"
+        mood="meditate"
+        sutra={{
+          dev: 'असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥\nसदकारणवन्नित्यम् । तस्य कार्यं लिङ्गम् ॥',
+          iast: 'asato mā sad gamaya | tamaso mā jyotir gamaya | mṛtyor mā’mṛtaṃ gamaya ||\nsad akāraṇavan nityam | tasya kāryaṃ liṅgam ||',
+          source: 'Bṛhadāraṇyaka Upaniṣad 1.3.28 & Vaiśeṣika Sūtra 4.1.1 (कणादः)',
+          meaning: '“Lead me from the unreal (macroscopic appearance) to the real (underlying invariant Sat); from perceptual darkness to illumination; from dissolution to immortality.” In Vaiśeṣika: That Sat which is eternal and uncaused is the atom (paramāṇu); the phenomenal effect is the empirical proof of its reality.',
+        }}
+        anecdote={
+          <>
+            <p>
+              The ancient prayer <em>“Asato mā sad gamaya”</em> is often recited as an invocation for inner illumination,
+              yet its philosophical core is also the foundation of physical science: piercing beyond deceptive sensory impressions
+              (<em>Asat</em>, <em>Nāmarūpa</em>) to discover invariant physical realities (<em>Sat</em>) that remain strictly conserved across transformations.
+            </p>
+            <p>
+              Centuries before Antoine Lavoisier weighed closed glass retorts in Paris, ancient Indian masters of metallurgy and <em>Rasāyana</em>
+              (such as <strong>Nāgārjuna</strong> in the <em>Rasaratnākara</em>, c. 8th–10th century CE) perfected the technology of the
+              <strong>Andha-Mūṣā</strong> (hermetically sealed blind crucible). To convert minerals into stable, therapeutic calces (<em>Bhasmas</em>),
+              they ignited materials inside clay-sealed crucibles and weighed them before and after intense heat (<em>Māraṇa</em> / <em>Puṭapāka</em>).
+            </p>
+            <blockquote style={{ borderLeft: '3px solid #22d3ee', margin: '0.65rem 0', paddingLeft: '0.85rem', fontStyle: 'italic', color: '#0891b2' }}>
+              “When wood burns or ice vanishes into vapour, common sight perceives annihilation.
+              Yet reason (Yukti) proves that no constituent particle (Paramāṇu) is lost: they merely regroup into invisible vapors.
+              Sat never becomes Asat.”
+            </blockquote>
+          </>
+        }
+        epistemologyAndMethod={
+          <>
+            In classical Nyāya and Vaiśeṣika epistemology, <strong>Pratyakṣa</strong> (direct sensory perception) must be authenticated by{' '}
+            <strong>Yukti</strong> (reasoned inference) and verified <strong>Pramāṇa</strong>. When burning wood seems to ‘disappear’ into smoke,
+            superficial observation fails; but inside a sealed vessel, mass conservation reveals the underlying invariant.
+            Ancient Indian metallurgical traditions developed 16 distinct crucible types and standardized pyrometric tests to ensure exact repeatability.
+          </>
+        }
+        modernBridge={{
+          ancientConcept: 'The Sat-kāryavāda principle (nothing emerges from non-being, nothing is annihilated), Paramāṇu conservation, and sealed Andha-Mūṣā crucibles.',
+          modernScience: 'The Law of Conservation of Mass (Lavoisier, 1789), Dalton’s atomic theory, and quantum electrodynamics (mostly-empty atoms maintaining repulsive lattice rigidity).',
+          relevanceNote: 'Modern physics confirms both scales: macroscopic gold is genuinely solid to our touch due to electron degeneracy forces, while atomically it is 99.999% empty space. Both views are mathematically rigorous in their respective frames.',
+        }}
+        societalValue={
+          <p>
+            In ancient India, the pursuit of <em>Satya</em> (truth) was inseparable from <em>Lokasaṃgraha</em> (societal upliftment).
+            Discernment (<em>Viveka</em>) freed people from superstitious fears of death and natural destruction.
+            Crucible sciences directly powered public health—producing non-toxic mineral nano-medicines (*Rasauṣadhi*) administered in state infirmaries,
+            and weather-resistant metallurgy such as the famous rust-resistant 1,600-year-old Iron Pillar of Delhi.
+          </p>
+        }
+      />
+
       <CoreIdea>
         A famous prayer from the <em>Bṛhadāraṇyaka Upaniṣad</em> (1.3.28) asks to be led from asat to sat, from darkness
         to light, from death to immortality. In this game, the <strong>Viveka Scanner</strong> (viveka: discernment) is a
@@ -1102,18 +1219,58 @@ const AsatoMa: React.FC = () => {
           <div className="vl-stage-wrap">
             <HudFrame
               accent={view === 'sat' ? '#22d3ee' : '#facc15'}
-              tl={<>T {tStr} K</>}
+              tl={<>T {tStr} K · P {(T * (phase === 'gas' ? 0.08 : 0.01)).toFixed(2)} atm</>}
               tr={<>{view === 'sat' ? L('SAT', 'ATOM VIEW') : L('ASAT', 'EVERYDAY')}</>}
               bl={<>v<sub>rms</sub> {Math.round(v)} m/s · <span className="vl-hud-long">{stateLabel[sid === 'wood' && !burned ? 'solid' : phase]}</span><span className="vl-hud-short" data-testid="asato-hud-short">{stateShort[sid === 'wood' && !burned ? 'solid' : phase]}</span></>}
-              br={<span ref={countHudRef}>N {startCount(sid, coef.o2)} atoms</span>}
+              br={<span ref={countHudRef}>N {startCount(sid, coef.o2)} atoms · 100.000 g</span>}
             >
-              <canvas ref={canvasRef} className="vl-stage vl-stage--asato" width={W} height={H} data-testid="asato-canvas" data-view={view} role="img" aria-label={`Sealed chamber, ${view === 'sat' ? 'atom view' : 'everyday view'}`} />
+              <canvas
+                ref={canvasRef}
+                className="vl-stage vl-stage--asato"
+                width={W}
+                height={H}
+                data-testid="asato-canvas"
+                data-view={view}
+                onClick={handleCanvasClick}
+                style={{ cursor: 'crosshair' }}
+                role="img"
+                aria-label={`Sealed chamber, ${view === 'sat' ? 'atom view' : 'everyday view'}. Tap an atom to inspect its mass and energy.`}
+              />
               {view === 'sat' && sid !== 'wood' && (
                 <div className="vl-overwatch vl-mono" aria-hidden="true" data-testid="asato-overwatch">
                   <span className="vl-overwatch-dot" />MATRIX OVERWATCH: <b>ACTIVE</b>
                 </div>
               )}
             </HudFrame>
+            <div className="vl-panel vl-tradition" style={{ marginTop: '0.65rem', padding: '0.75rem', border: '1px solid rgba(34,211,238,0.35)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.4rem' }}>
+                <b style={{ color: '#22d3ee', fontSize: '0.9rem' }}>
+                  ⚖️ Andha-Mūṣā Invariant Ledger (अन्ध-मूषा द्रव्यमानम्)
+                </b>
+                <span className="vl-chip is-on" style={{ color: '#4ade80' }}>
+                  100.000 g INVARIANT (सत्) ✓
+                </span>
+              </div>
+              <p className="vl-small" style={{ margin: '0.35rem 0' }}>
+                Hermetically sealed crucible: tap any atom on the canvas to deploy the <strong>Paramāṇu Micro-Spectrometer</strong> probe.
+              </p>
+              {probedAtom && (
+                <div style={{ background: 'rgba(34,211,238,0.08)', border: '1px solid #22d3ee', borderRadius: '6px', padding: '0.55rem', marginTop: '0.4rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <b style={{ color: '#cffafe', fontSize: '0.85rem' }}>
+                      🎯 Micro-Spectrometer: {probedAtom.el === 'W' ? 'H₂O Molecule' : `${probedAtom.el} Atom`}
+                    </b>
+                    <button type="button" className="vl-btn vl-btn--ghost" onClick={() => setProbedAtom(null)} style={{ padding: '0.1rem 0.4rem', fontSize: '0.75rem' }}>✕ Close</button>
+                  </div>
+                  <div className="vl-readout-grid" style={{ marginTop: '0.35rem' }}>
+                    <span>Mass</span><b>{probedAtom.massU.toFixed(3)} u</b>
+                    <span>Thermal Velocity</span><b>{Math.round(probedAtom.v)} m/s</b>
+                    <span>Kinetic Energy</span><b>{probedAtom.eKin < 0.01 ? '<0.01' : probedAtom.eKin.toFixed(2)} aJ</b>
+                    <span>Conservation</span><b style={{ color: '#4ade80' }}>CONSERVED SAT ✓</b>
+                  </div>
+                </div>
+              )}
+            </div>
             <p className="vl-hud-caption">
               {sid === 'wood'
                 ? burned

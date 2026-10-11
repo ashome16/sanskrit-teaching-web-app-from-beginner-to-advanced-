@@ -16,23 +16,27 @@
     <meta name="keywords" content="learn Sanskrit online, learn Sanskrit from scratch, Sanskrit for beginners, speak Sanskrit, Sanskrit learning app, Sanskrit language course, learn Devanagari, Sanskrit alphabet audio, varnamala, barakhadi, Sanskrit grammar, paninian grammar, dhatupatha, vedic mathematics, shlokas with meaning, samskrutam, cbse sanskrit class 6 7 8, ncert sanskrit deepakam, sanskrit word puzzles" />
     <meta name="theme-color" content="#273b35" />
     <link rel="canonical" href="https://ednetlearn.in/cbse-sanskrit-guide" />
-    <link rel="manifest" href="/sanskrit-teaching-web-app-from-beginner-to-advanced-/manifest.json" />
+    <link rel="manifest" href="/manifest.json" />
     <meta property="og:title" content="CBSE NCERT Sanskrit Exam Guide (Classes 7–10) | EdNet Learn Gurukul" />
     <meta property="og:description" content="Master CBSE NCERT Sanskrit exams for Classes 7–10: section blueprint, question terminology, Kim-family keywords, and exam-day strategy." />
     <meta property="og:url" content="https://ednetlearn.in/cbse-sanskrit-guide" />
-    <meta property="og:image" content="/sanskrit-teaching-web-app-from-beginner-to-advanced-/logo.jpg" />
+    <meta property="og:image" content="/logo.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="EdNet Learn Gurukul" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CBSE NCERT Sanskrit Exam Guide (Classes 7–10) | EdNet Learn Gurukul" />
     <meta name="twitter:description" content="Master CBSE NCERT Sanskrit exams for Classes 7–10: section blueprint, question terminology, Kim-family keywords, and exam-day strategy." />
-    <meta name="twitter:image" content="/sanskrit-teaching-web-app-from-beginner-to-advanced-/logo.jpg" />
+    <meta name="twitter:image" content="/logo.jpg" />
     <title>CBSE NCERT Sanskrit Exam Guide (Classes 7–10) | EdNet Learn Gurukul</title>
-    <link rel="icon" type="image/x-icon" href="/sanskrit-teaching-web-app-from-beginner-to-advanced-/favicon.ico" />
-    <link rel="apple-touch-icon" href="/sanskrit-teaching-web-app-from-beginner-to-advanced-/apple-touch-icon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" />
+    </noscript>
     <script type="application/ld+json">
 [
   {
@@ -140,9 +144,10 @@
   }
 ]
 </script>
-    <script type="module" crossorigin src="/sanskrit-teaching-web-app-from-beginner-to-advanced-/assets/index-CeLA49lB.js"></script>
-    <link rel="modulepreload" crossorigin href="/sanskrit-teaching-web-app-from-beginner-to-advanced-/assets/jsx-runtime-Cltr0gcK.js">
-    <link rel="stylesheet" crossorigin href="/sanskrit-teaching-web-app-from-beginner-to-advanced-/assets/index-Bx7S02J6.css">
+    <script type="module" crossorigin src="/assets/index-B7GI6QDU.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-hePW80VL.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-core-CuflRKyP.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DexQ13RY.css">
   </head>
   <body>
     <div id="app">
@@ -150,6 +155,19 @@
         <div style="font-size: 2.75rem; margin-bottom: 0.75rem;">🕉️</div>
         <h2 style="margin: 0; font-size: 1.35rem; font-weight: 800; color: #0f766e; letter-spacing: -0.01em;">EdNet Learn Gurukul</h2>
         <p style="margin: 0.35rem 0 0 0; font-size: 0.92rem; color: #78716c; font-weight: 600;">संस्कृत-शिक्षणम् · Loading Gurukul...</p>
+        <div id="gurukul-loading-fallback" style="margin-top: 1rem; display: none;">
+          <p style="font-size: 0.85rem; color: #a16207; margin-bottom: 0.5rem;">If the module does not load automatically, tap below:</p>
+          <button type="button" onclick="window.location.reload(true)" style="background: #0f766e; color: #ffffff; border: none; padding: 0.45rem 1rem; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.88rem; box-shadow: 0 2px 6px rgba(15,118,110,0.25);">🔄 Reload App</button>
+        </div>
+        <script>
+          setTimeout(function() {
+            var fb = document.getElementById('gurukul-loading-fallback');
+            var app = document.getElementById('app');
+            if (fb && app && !document.querySelector('.dashboard')) {
+              fb.style.display = 'block';
+            }
+          }, 5000);
+        </script>
       </div>
       <noscript>
         <div style="padding: 2rem; font-family: sans-serif; color: #273b35; max-width: 900px; margin: 0 auto; line-height: 1.6;">

@@ -2,6 +2,9 @@ import React, { useState, useMemo } from 'react';
 import { playPronunciation } from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
 import '../styles/conjunct-games.css';
+import conjunctGame1 from '../assets/images/conjunct-game1.jpg';
+import conjunctGame2 from '../assets/images/conjunct-game2.jpg';
+import conjunctGame3 from '../assets/images/conjunct-game3.jpg';
 
 // ---------------------------------------------------------------------------
 // DATA: Game 1 - Drop the Stick (दण्ड-त्यागः)
@@ -592,7 +595,7 @@ const CONJUNCT_POSTERS = [
     number: 'GAME 1',
     title: 'The "Drop the Stick" Game · दण्ड-त्यागः',
     subtitle: 'Vertical stem consonants drop their stick to hug their friend',
-    src: './conjunct-game1.jpg',
+    src: conjunctGame1,
     alt: 'Sanskrit conjunct consonant Drop the Stick game for kids',
     rule: 'Rule: Letters with a walking stick on the right (स, प, त, न, म, च, ब) drop their stick, turn skinny (स्, प्, त्, न्), and hold hands with their friend (स्त, प्य, त्य)!',
   },
@@ -601,7 +604,7 @@ const CONJUNCT_POSTERS = [
     number: 'GAME 2',
     title: 'The "Piggyback Ride" Stacking Game · ऊर्ध्वाधः संयोगः',
     subtitle: 'Chubby round letters give friends a ride underneath',
-    src: './conjunct-game2.jpg',
+    src: conjunctGame2,
     alt: 'Sanskrit conjunct Piggyback Ride stacking game for school children',
     rule: 'Rule: Round letters without sticks (द, ट, ठ, ड, ढ, ह) cannot drop a stick. Instead, the second letter scoots right underneath them for a piggyback ride (द्व, ट्ट, द्ध, ह्म)!',
   },
@@ -610,7 +613,7 @@ const CONJUNCT_POSTERS = [
     number: 'GAME 3',
     title: 'The Superhero Shape-Shifters · रूपांतरिणः महावीराः',
     subtitle: 'Secret agents that fuse into completely brand new superhero symbols',
-    src: './conjunct-game3.jpg',
+    src: conjunctGame3,
     alt: 'Sanskrit conjunct Superhero Shape-Shifters game for beginners',
     rule: 'Rule: When secret agent letters team up, they morph into completely new superhero symbols: क् + ष = क्ष (The Shield), त् + र = त्र (The Rocket), ज् + ञ = ज्ञ (The Seer)!',
   },

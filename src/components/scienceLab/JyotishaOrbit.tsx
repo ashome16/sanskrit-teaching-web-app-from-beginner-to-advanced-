@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
+import { BodhiLabAnecdote, ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
 import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 
 type Script = 'dev' | 'iast' | 'en';
@@ -237,7 +237,14 @@ const step = (s: SimState) => {
 
 const naksName = (i: number, script: Script) => (script === 'dev' ? NAKSHATRAS[i].dev : NAKSHATRAS[i].iast);
 
-const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTrails: boolean, puranicMode: boolean = false) => {
+const draw = (
+  ctx: CanvasRenderingContext2D,
+  s: SimState,
+  script: Script,
+  showTrails: boolean,
+  puranicMode: boolean = false,
+  eclipseMode: boolean = false,
+) => {
   ctx.clearRect(0, 0, SIZE, SIZE);
   // sky
   const g = ctx.createRadialGradient(C, C, 40, C, C, C);
@@ -437,6 +444,53 @@ const draw = (ctx: CanvasRenderingContext2D, s: SimState, script: Script, showTr
       ctx.stroke();
     }
   }
+
+  // 5. Āryabhaṭa Shadow Projection & Eclipse Geometry Mode (499 CE)
+  if (eclipseMode) {
+    const edx = earth.x - sun.x;
+    const edy = earth.y - sun.y;
+    const edist = Math.hypot(edx, edy) || 1;
+    const nx = edx / edist;
+    const ny = edy / edist;
+    const shadowLen = 210;
+    const shadowEndX = earth.x + nx * shadowLen;
+    const shadowEndY = earth.y + ny * shadowLen;
+    const px = -ny * 14;
+    const py = nx * 14;
+
+    ctx.save();
+    const shadowGrad = ctx.createLinearGradient(earth.x, earth.y, shadowEndX, shadowEndY);
+    shadowGrad.addColorStop(0, 'rgba(15, 23, 42, 0.85)');
+    shadowGrad.addColorStop(0.7, 'rgba(15, 23, 42, 0.45)');
+    shadowGrad.addColorStop(1, 'rgba(15, 23, 42, 0.05)');
+    ctx.fillStyle = shadowGrad;
+    ctx.beginPath();
+    ctx.moveTo(earth.x - px * 0.4, earth.y - py * 0.4);
+    ctx.lineTo(shadowEndX - px, shadowEndY - py);
+    ctx.lineTo(shadowEndX + px, shadowEndY + py);
+    ctx.lineTo(earth.x + px * 0.4, earth.y + py * 0.4);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.strokeStyle = 'rgba(239, 68, 68, 0.55)';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+
+    ctx.font = '700 10.5px "Noto Sans Devanagari", system-ui, sans-serif';
+    ctx.fillStyle = '#fca5a5';
+    ctx.textAlign = 'center';
+    ctx.fillText('भूच्छाया · Bhūcchāyā (Earth Shadow Cone)', shadowEndX, shadowEndY + 14);
+
+    // Optical sightline from Sun through Earth
+    ctx.strokeStyle = 'rgba(250, 204, 21, 0.35)';
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.moveTo(sun.x, sun.y);
+    ctx.lineTo(shadowEndX, shadowEndY);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.restore();
+  }
 };
 
 const JyotishaOrbit: React.FC = () => {
@@ -448,6 +502,7 @@ const JyotishaOrbit: React.FC = () => {
   const [script, setScript] = useState<Script>('iast');
   const [showTrails, setShowTrails] = useState(true);
   const [puranicMode, setPuranicMode] = useState(false);
+  const [eclipseMode, setEclipseMode] = useState(false);
   const [playing, setPlaying] = useState(false);
   const sim = useRef<SimState>(makeState(1, 1, 1, true));
   const naksRef = useRef<HTMLElement>(null);
@@ -480,7 +535,7 @@ const JyotishaOrbit: React.FC = () => {
     }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const s = sim.current;
-    draw(ctx, s, script, showTrails, puranicMode);
+    draw(ctx, s, script, showTrails, puranicMode, eclipseMode);
     // The ring highlight and the nakṣatra readouts come from the same index in the same frame.
     const i = s.naksIdx;
     cv.dataset.naks = String(i);
@@ -491,7 +546,7 @@ const JyotishaOrbit: React.FC = () => {
     }
     const short = naksName(i, script);
     if (hudNaksRef.current && hudNaksRef.current.textContent !== short) hudNaksRef.current.textContent = short;
-  }, [script, showTrails, puranicMode]);
+  }, [script, showTrails, puranicMode, eclipseMode]);
 
   const reset = useCallback(
     (sf = sunF, ef = earthF, vf = speedF, mo = moonOn) => {
@@ -561,6 +616,56 @@ const JyotishaOrbit: React.FC = () => {
 
   return (
     <div className="vl-sim">
+      <BodhiLabAnecdote
+        title="Āryabhaṭa & Bhāskara: The Rotating Earth & Universal Gravity"
+        sanskritTitle="आर्यभट-भास्कराचार्ययोः खगोल-विज्ञानम्"
+        mood="scholar"
+        sutra={{
+          dev: 'अनुलोमगतिर्नौस्थः पश्यत्यचलं विलोमगं यद्वत् । अचलानि भानि तद्वत् समपश्चिमगानि लङ्कायाम् ॥',
+          iast: 'anulomagatir nausthaḥ paśyaty acalaṃ vilomagaṃ yadvat | acalāni bhāni tadvat samapaścimagāni laṅkāyām ||',
+          source: 'Āryabhaṭīya, Golapāda 9 (आर्यभटः, 499 CE)',
+          meaning: 'Just as a person in a forward-moving boat sees stationary objects on the bank moving backwards, so does an observer on Earth see the stationary stars appear to move due west, caused by the daily eastward rotation of the Earth on its axis.',
+        }}
+        anecdote={
+          <>
+            <p>
+              In 499 CE, from the observatory towers of Pāṭaliputra (modern Patna), the 23-year-old astronomer <strong>Āryabhaṭa</strong>{' '}
+              composed the revolutionary <em>Āryabhaṭīya</em>. At a time when ancient Mediterranean astronomy held that the Earth was stationary
+              and the crystal spheres rotated around it, Āryabhaṭa proved through spherical trigonometry that the Earth rotates daily on its axis,
+              and that the Moon and wandering planets (<em>Grahas</em>) do not produce their own light, but shine entirely by reflected sunlight.
+            </p>
+            <blockquote style={{ borderLeft: '3px solid #6366f1', margin: '0.65rem 0', paddingLeft: '0.85rem', fontStyle: 'italic', color: '#3730a3' }}>
+              “Eclipses are neither mythical demons swallowing deities nor wrathful omens: they are pure optical shadow geometries (Bhūcchāyā).
+              When the Moon enters the dark conical shadow of the Earth, a lunar eclipse occurs. When the Moon passes between Earth and Sun, its shadow sweeps the terrestrial sphere.”
+            </blockquote>
+            <p>
+              Centuries later, in 1150 CE, <strong>Bhāskara II</strong> (<em>Siddhānta Śiromaṇi</em>) formulated the physical mechanism:
+              <em>“Akṛṣṭi-śaktiś ca mahī…”</em> (The Earth possesses an attractive force: it pulls whatever heavy object is in space toward itself by its own nature, so that it appears to fall).
+              This clear statement of universal gravitational attraction anticipated Newton by more than five centuries.
+            </p>
+          </>
+        }
+        epistemologyAndMethod={
+          <>
+            Indian astronomy (*Jyotiṣa-Siddhānta*) was strictly grounded in <strong>Gaṇita</strong> (mathematical computation) and
+            <strong>Pratyakṣa-Pramāṇa</strong> (verifiable observation). Astronomers measured planetary speeds, equinoctial precession (*Ayanāṃśa*),
+            and orbital eccentricities using gnomons (*Śaṅku*), water clepsydras (*Ghaṭikā-Yantra*), and meridian sighting circles at Ujjain—the Greenwich of the ancient world.
+          </>
+        }
+        modernBridge={{
+          ancientConcept: 'Earth’s axial rotation, planetary reflection of sunlight, lunar node geometries (Rāhu/Ketu), and attractive gravitational force (Ākṛṣṭi-śakti).',
+          modernScience: 'Keplerian orbital dynamics, celestial mechanics, shadow umbra/penumbra geometry, and Newtonian universal gravitation.',
+          relevanceNote: 'The Kerala School (Mādhava, 14th c.) developed calculus infinite series (Taylor series for sine and cosine) centuries before Europe, explicitly to solve planetary position differential equations.',
+        }}
+        societalValue={
+          <p>
+            Astronomy in India was never a secret privilege guarded for autocratic rule. Compiled in memorable Sanskrit metrical sūtras,
+            it was transmitted publicly to regulate agricultural sowing seasons, calculate monsoonal tides for ocean-going merchant fleets,
+            and synchronize civil calendars across kingdoms for the harmonious benefit of society (*Lokasaṃgraha*).
+          </p>
+        }
+      />
+
       <CoreIdea>
         In <strong lang="sa">ज्योतिष jyotiṣa</strong>, the traditional study of the heavenly lights, careful watchers tracked
         the Moon against 27 <strong>nakṣatras</strong> (star-markers). This sandbox uses real Newtonian gravity: every body
@@ -608,6 +713,7 @@ const JyotishaOrbit: React.FC = () => {
               <LedButton kind="toggle" on={showTrails} color="#60a5fa" onClick={() => setShowTrails((x) => !x)} testId="orbit-trails">Path trails</LedButton>
               <LedButton kind="toggle" on={moonOn} color="#e2e8f0" onClick={() => { const nx = !moonOn; setMoonOn(nx); setPlaying(false); reset(sunF, earthF, speedF, nx); }} testId="orbit-moon">Include Candra</LedButton>
               <LedButton kind="toggle" on={puranicMode} color="#38bdf8" onClick={() => setPuranicMode((p) => !p)} testId="orbit-puranic">🏛️ Purāṇic Mode</LedButton>
+              <LedButton kind="toggle" on={eclipseMode} color="#f43f5e" onClick={() => setEclipseMode((x) => !x)} testId="orbit-eclipse">🌑 Āryabhaṭa Shadow Tracer</LedButton>
             </div>
 
             <div className="vl-readout-grid" data-testid="orbit-readouts">

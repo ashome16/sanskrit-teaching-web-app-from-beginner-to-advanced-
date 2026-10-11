@@ -1,19 +1,10 @@
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import HomePage from './HomePage';
 import FAQSection from './FAQSection';
-import PhilosophyPage from './PhilosophyPage';
-import CbseSanskritGuidePage from './CbseSanskritGuidePage';
-import FreeResourcesPage from './FreeResourcesPage';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
-import AuthModal from './AuthModal';
-import UserProfileModal from './UserProfileModal';
-import PaymentModal from './PaymentModal';
-import AdminModal from './AdminModal';
 import Footer from './Footer';
-import SupportWidget from './SupportWidget';
-import BodhiGuideWidget from './BodhiGuideWidget';
-import GlobalSearchModal from './GlobalSearchModal';
-import VoiceSettingsModal from './VoiceSettingsModal';
+const SupportWidget = lazy(() => import('./SupportWidget'));
+const BodhiGuideWidget = lazy(() => import('./BodhiGuideWidget'));
 import { getSearchShortcut } from '../utils/platformShortcut';
 import type { SearchItem, SearchTarget } from '../data/searchIndex';
 import { categoryForLiteratureAnchor } from '../data/literatureGrammarQuizzes';
@@ -21,6 +12,9 @@ import type { VedicTab } from './VedicMaths';
 import type { GrammarTopic } from './Grammar';
 
 // Lazy-loaded heavy modules for fast initial homepage performance
+const PhilosophyPage = lazy(() => import('./PhilosophyPage'));
+const CbseSanskritGuidePage = lazy(() => import('./CbseSanskritGuidePage'));
+const FreeResourcesPage = lazy(() => import('./FreeResourcesPage'));
 const TextbookReader = lazy(() => import('./TextbookReader'));
 const Board = lazy(() => import('./Board'));
 const Grammar = lazy(() => import('./Grammar'));
@@ -31,6 +25,14 @@ const PaninianStudio = lazy(() => import('./PaninianStudio'));
 const SanskritThinkingCourse = lazy(() => import('./SanskritThinkingCourse'));
 const ScienceLab = lazy(() => import('./scienceLab/ScienceLab'));
 
+// Lazy-loaded dialogs & modals
+const AuthModal = lazy(() => import('./AuthModal'));
+const UserProfileModal = lazy(() => import('./UserProfileModal'));
+const PaymentModal = lazy(() => import('./PaymentModal'));
+const AdminModal = lazy(() => import('./AdminModal'));
+const GlobalSearchModal = lazy(() => import('./GlobalSearchModal'));
+const VoiceSettingsModal = lazy(() => import('./VoiceSettingsModal'));
+
 const ViewLoader = () => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '5rem 1rem', minHeight: '60vh', color: '#273b35' }}>
     <div style={{ width: '42px', height: '42px', border: '3px solid #e2e8f0', borderTopColor: '#273b35', borderRadius: '50%', animation: 'spin 0.75s linear infinite' }} />
@@ -39,7 +41,7 @@ const ViewLoader = () => (
   </div>
 );
 import { useAuthStore } from '../store/authStore';
-import { canAccessAllChapters } from '../utils/premiumAccess';
+import { canAccessAllChapters, isFreeTrialOpenLesson } from '../utils/premiumAccess';
 import { LESSONS as STATIC_LESSONS, fetchLatestChapters } from '../data/chapters';
 import { playLessonText, playPronunciation } from '../utils/pronunciation';
 import { expandDigitsInLessonText } from '../utils/lessonNumberSpeech';
@@ -182,7 +184,13 @@ const pathToView = (pathname: string): DashboardView | null => {
   if (clean === '/board' || clean === '/jodo' || clean === '/puzzles') return 'board';
   if (clean === '/reader' || clean === '/varnamala' || clean === '/lessons' || clean === '/barakhadi') return 'reader';
   if (clean === '/faq' || clean === '/help') return 'faq';
-  if (clean === '/science-lab' || clean === '/vijnana-lab') return 'science-lab';
+  if (
+    clean === '/vignana-lab' ||
+    clean === '/vignana' ||
+    clean === '/vijnana-lab' ||
+    clean === '/vijnana' ||
+    clean === '/science-lab'
+  ) return 'science-lab';
   return null;
 };
 
@@ -199,7 +207,12 @@ const viewToPath = (view: DashboardView): string => {
   if (view === 'board') return '/board';
   if (view === 'reader') return '/reader';
   if (view === 'faq') return '/faq';
-  if (view === 'science-lab') return '/science-lab';
+  if (view === 'science-lab') {
+    if (typeof window !== 'undefined' && window.location.pathname.replace(/\/+$/, '') === '/science-lab') {
+      return '/science-lab';
+    }
+    return '/vignana-lab';
+  }
   return '/';
 };
 
@@ -322,8 +335,9 @@ const Dashboard: React.FC = () => {
     if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide' || targetView === 'resources' || targetView === 'dhatupatha' || targetView === 'science-lab') return false;
     if (targetView === 'reader') {
       const lessonToCheck = targetLessonId || lessons[lessonIndex]?.id;
-      // Varṇamālā and Chapter 1 (gsde101) are free for guests!
-      if (lessonToCheck === 'varnamala' || lessonToCheck === 'gsde101') {
+      // Content from the beginning (Alphabet, Barakhadi, Samyukta, Numbers)
+      // and opening/first chapters across all grades (Class 7, 8, 9) are open under free trial!
+      if (lessonToCheck && isFreeTrialOpenLesson(lessonToCheck)) {
         return false;
       }
       return true;
@@ -885,7 +899,7 @@ const Dashboard: React.FC = () => {
           onClick={handleBrandClick}
           title="EdNet Learn Gurukul - Go to Homepage"
         >
-          <img src="/logo.jpg" alt="Interactive Sanskrit language learning dashboard for school children" className="dashboard-brand-logo-img" />
+          <img src="/logo.jpg" alt="Interactive Sanskrit language learning dashboard for school children" className="dashboard-brand-logo-img" width={48} height={48} />
           <div className="dashboard-brand-text-col">
             <span className="dashboard-title">EdNet Learn Gurukul</span>
             <span className="dashboard-brand-sub">संस्कृत-शिक्षणम् · NCERT · CBSE</span>
@@ -1124,41 +1138,42 @@ const Dashboard: React.FC = () => {
       )}
       {/* FAQ lives at the bottom of the home page (no longer in the top menu). /faq scrolls here. */}
       {(activeView === 'home' || activeView === 'faq') && <FAQSection />}
-      {activeView === 'philosophy' && (
-        <PhilosophyPage
-          initialEssay={philosophyEssay}
-          onOpenRegister={() => openAuthModal('register')}
-          onOpenVedicMaths={() => navigateToView('vedic-maths')}
-          onOpenVarnamala={openVarnamala}
-          onOpenReader={() => navigateToView('reader')}
-          onGoHome={() => navigateToView('home')}
-          onOpenGrammarArticle={(articleId) => handleOpenGrammar('article', articleId)}
-          onOpenCourseAddendum={openCourseAddendum}
-        />
-      )}
-      {activeView === 'cbse-guide' && (
-        <CbseSanskritGuidePage
-          onOpenRegister={() => openAuthModal('register')}
-          onGoHome={() => navigateToView('home')}
-          onOpenPhilosophy={() => navigateToView('philosophy')}
-          onOpenGrammar={handleOpenGrammar}
-          onOpenResources={() => navigateToView('resources')}
-        />
-      )}
-      {activeView === 'resources' && (
-        <FreeResourcesPage
-          onGoHome={() => navigateToView('home')}
-          onOpenGrammar={handleOpenGrammar}
-          onOpenRoadmap={() => handleOpenGrammar('article', 'beginners-roadmap')}
-          onOpenCbseGuide={() => navigateToView('cbse-guide')}
-          onOpenPhilosophy={() => navigateToView('philosophy')}
-          onOpenRegister={() => openAuthModal('register')}
-          onOpenQuiz={() => navigateToView('quiz')}
-          onOpenWorksheets={() => handleOpenWorksheets('all')}
-          onOpenScienceLab={() => openScienceLab()}
-        />
-      )}
       <Suspense fallback={<ViewLoader />}>
+        {activeView === 'philosophy' && (
+          <PhilosophyPage
+            initialEssay={philosophyEssay}
+            onOpenRegister={() => openAuthModal('register')}
+            onOpenVedicMaths={() => navigateToView('vedic-maths')}
+            onOpenVarnamala={openVarnamala}
+            onOpenReader={() => navigateToView('reader')}
+            onGoHome={() => navigateToView('home')}
+            onOpenGrammarArticle={(articleId) => handleOpenGrammar('article', articleId)}
+            onOpenCourseAddendum={openCourseAddendum}
+            onOpenScienceLab={(segment) => openScienceLab(segment)}
+          />
+        )}
+        {activeView === 'cbse-guide' && (
+          <CbseSanskritGuidePage
+            onOpenRegister={() => openAuthModal('register')}
+            onGoHome={() => navigateToView('home')}
+            onOpenPhilosophy={() => navigateToView('philosophy')}
+            onOpenGrammar={handleOpenGrammar}
+            onOpenResources={() => navigateToView('resources')}
+          />
+        )}
+        {activeView === 'resources' && (
+          <FreeResourcesPage
+            onGoHome={() => navigateToView('home')}
+            onOpenGrammar={handleOpenGrammar}
+            onOpenRoadmap={() => handleOpenGrammar('article', 'beginners-roadmap')}
+            onOpenCbseGuide={() => navigateToView('cbse-guide')}
+            onOpenPhilosophy={() => navigateToView('philosophy')}
+            onOpenRegister={() => openAuthModal('register')}
+            onOpenQuiz={() => navigateToView('quiz')}
+            onOpenWorksheets={() => handleOpenWorksheets('all')}
+            onOpenScienceLab={() => openScienceLab()}
+          />
+        )}
         {activeView === 'science-lab' && (
           <ScienceLab
             key={`lab-${labTarget.key}`}
@@ -1290,40 +1305,44 @@ const Dashboard: React.FC = () => {
         />
       )}
 
-      <SupportWidget
-        onOpenFAQ={() => navigateToView('faq')}
-        onOpenWorksheets={() => handleOpenWorksheets('all')}
-      />
+      <Suspense fallback={null}>
+        <SupportWidget
+          onOpenFAQ={() => navigateToView('faq')}
+          onOpenWorksheets={() => handleOpenWorksheets('all')}
+        />
 
-      <BodhiGuideWidget
-        activeView={activeView}
-        onNavigateView={navigateToView}
-        onOpenVarnamala={openVarnamala}
-        forceOpen={isBodhiGuideOpen}
-        onOpenChange={(open) => {
-          setIsBodhiGuideOpen(open);
-          if (!open) setBodhiGuideQuestionId(null);
-        }}
-        initialTab={bodhiGuideInitialTab}
-        initialQuestionId={bodhiGuideQuestionId}
-        onSearchResultNavigate={handleSearchResultNavigate}
-      />
+        <BodhiGuideWidget
+          activeView={activeView}
+          onNavigateView={navigateToView}
+          onOpenVarnamala={openVarnamala}
+          forceOpen={isBodhiGuideOpen}
+          onOpenChange={(open) => {
+            setIsBodhiGuideOpen(open);
+            if (!open) setBodhiGuideQuestionId(null);
+          }}
+          initialTab={bodhiGuideInitialTab}
+          initialQuestionId={bodhiGuideQuestionId}
+          onSearchResultNavigate={handleSearchResultNavigate}
+        />
 
-      <GlobalSearchModal
-        isOpen={isSearchModalOpen}
-        onClose={() => setIsSearchModalOpen(false)}
-        onNavigate={handleSearchResultNavigate}
-      />
-
-      <VoiceSettingsModal
-        isOpen={isVoiceModalOpen}
-        onClose={() => setIsVoiceModalOpen(false)}
-      />
-
-      <AuthModal />
-      <UserProfileModal />
-      <PaymentModal />
-      <AdminModal />
+        {isSearchModalOpen && (
+          <GlobalSearchModal
+            isOpen={isSearchModalOpen}
+            onClose={() => setIsSearchModalOpen(false)}
+            onNavigate={handleSearchResultNavigate}
+          />
+        )}
+        {isVoiceModalOpen && (
+          <VoiceSettingsModal
+            isOpen={isVoiceModalOpen}
+            onClose={() => setIsVoiceModalOpen(false)}
+          />
+        )}
+        <AuthModal />
+        <UserProfileModal />
+        <PaymentModal />
+        <AdminModal />
+      </Suspense>
     </div>
   );
 };

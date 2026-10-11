@@ -37,3 +37,8 @@ workers/**/node_modules
 _kalpana_batches/
 scratch/
 
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example

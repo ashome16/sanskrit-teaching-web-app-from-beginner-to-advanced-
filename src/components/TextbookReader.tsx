@@ -12,7 +12,7 @@ import {
   type AnalyseRegistry,
 } from '../utils/analyseGloss';
 import { useAuthStore } from '../store/authStore';
-import { canAccessAllChapters } from '../utils/premiumAccess';
+import { canAccessAllChapters, isFreeTrialOpenLesson, canAccessChapter } from '../utils/premiumAccess';
 import { Grade8SyllabusModal } from './Grade8SyllabusModal';
 import { BodhiAvatar } from './BodhiAvatar';
 import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
@@ -322,7 +322,6 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
   const isGrade8Lesson = activeLessonId.startsWith('grade8_');
   const isGrade9Lesson = activeLessonId.startsWith('grade9_');
-  const isCurriculumLesson = isGrade8Lesson || isGrade9Lesson;
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
   const isNumbers = activeLessonId === 'numbers';
@@ -796,9 +795,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     return best;
   })();
 
-  // Guests see Class 8 & Class 9 as requiring account; any registered user with an account may read.
-  if (isCurriculumLesson && !canReadAllChapters) {
-    const gradeLabel = isGrade9Lesson ? 'शारदा (Class 9)' : 'Deepakam 8th grade · दीपकम';
+  // Free trial open lessons (foundations + opening invocations & Chapter 1 in all grades) are open to everyone.
+  // Subsequent chapters require an account (free 14-day trial registration).
+  const isLessonAccessible = canAccessChapter(activeLessonId, currentUser, isAdminLoggedIn);
+  if (!isLessonAccessible) {
+    const gradeLabel = isGrade9Lesson
+      ? 'शारदा (Class 9)'
+      : isGrade8Lesson
+      ? 'Deepakam 8th grade · दीपकम'
+      : 'Class 7 Deepakam · दीपकम';
     return (
       <section className="textbook-reader">
         <div className="textbook-cbse-banner textbook-grade8-upcoming-banner">
@@ -806,12 +811,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             ACCOUNT REQUIRED · लेखा आवश्यकः
           </span>
           <span className="textbook-cbse-title">
-            {gradeLabel} lessons, worksheets, and quizzes are open to everyone with an account.
+            {gradeLabel} advanced lessons are open to everyone with a free account.
           </span>
         </div>
         <div className="textbook-grade8-upcoming-note">
           <p>
-            Please sign in to your account or register for free below to read all Class 8 and Class 9 lessons, practice interactive quizzes, and explore chapter worksheets.
+            You are exploring under our free trial preview! The beginning modules (Alphabet, Barakhadi, Samyukta, Numbers) and the opening invocations &amp; Chapter 1 across all grades (Class 7, 8, and 9) are completely free to explore. Sign in or register for free below to unlock all remaining chapters.
           </p>
           <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', flexWrap: 'wrap' }}>
             <button
@@ -857,7 +862,37 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 cursor: 'pointer',
               }}
             >
-              📖 Continue to Class 7 Deepakam
+              📖 Read Class 7 Ch 1 (Free Trial)
+            </button>
+            <button
+              type="button"
+              onClick={() => onSelectLesson('grade8_prarthana')}
+              style={{
+                background: '#fef3c7',
+                color: '#92400e',
+                border: '1px solid #fde68a',
+                borderRadius: '8px',
+                padding: '0.6rem 1rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              🪕 Read Class 8 Prarthana (Free Trial)
+            </button>
+            <button
+              type="button"
+              onClick={() => onSelectLesson('grade9_prarthana')}
+              style={{
+                background: '#ede9fe',
+                color: '#5b21b6',
+                border: '1px solid #ddd6fe',
+                borderRadius: '8px',
+                padding: '0.6rem 1rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              🌸 Read Class 9 Prarthana (Free Trial)
             </button>
           </div>
         </div>
@@ -933,11 +968,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       lesson.id !== 'numbers' &&
                       lesson.id !== 'barakhadi'
                   )
-                  .map((lesson) => (
-                    <option key={lesson.id} value={lesson.id}>
-                      {lesson.title}
-                    </option>
-                  ))}
+                  .map((lesson) => {
+                    const isTrialOpen = isFreeTrialOpenLesson(lesson.id);
+                    const isLocked = !canReadAllChapters && !isTrialOpen;
+                    return (
+                      <option key={lesson.id} value={lesson.id}>
+                        {lesson.title}{isTrialOpen && !canReadAllChapters ? ' · 🎁 Free Trial' : isLocked ? ' · 🔒 Account' : ''}
+                      </option>
+                    );
+                  })}
                 {onOpenCbseGuide && (
                   <option value="__cbse_guide__">
                     📋 CBSE Class 7 Exam Guide &amp; Question Directives
@@ -950,11 +989,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 <optgroup label="Deepakam 8th grade · दीपकम (अष्टमी कक्षा)">
                   {lessons
                     .filter((lesson) => lesson.id.startsWith('grade8_'))
-                    .map((lesson) => (
-                      <option key={lesson.id} value={lesson.id}>
-                        {lesson.title}
-                      </option>
-                    ))}
+                    .map((lesson) => {
+                      const isTrialOpen = isFreeTrialOpenLesson(lesson.id);
+                      const isLocked = !canReadAllChapters && !isTrialOpen;
+                      return (
+                        <option key={lesson.id} value={lesson.id}>
+                          {lesson.title}{isTrialOpen && !canReadAllChapters ? ' · 🎁 Free Trial' : isLocked ? ' · 🔒 Account' : ''}
+                        </option>
+                      );
+                    })}
                   {onOpenCbseGuide && (
                     <option value="__cbse_guide__">
                       📋 CBSE Class 8 Exam Guide &amp; Question Directives
@@ -968,11 +1011,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 <optgroup label="शारदा (नवमी कक्षा)">
                   {lessons
                     .filter((lesson) => lesson.id.startsWith('grade9_'))
-                    .map((lesson) => (
-                      <option key={lesson.id} value={lesson.id}>
-                        {lesson.title}
-                      </option>
-                    ))}
+                    .map((lesson) => {
+                      const isTrialOpen = isFreeTrialOpenLesson(lesson.id);
+                      const isLocked = !canReadAllChapters && !isTrialOpen;
+                      return (
+                        <option key={lesson.id} value={lesson.id}>
+                          {lesson.title}{isTrialOpen && !canReadAllChapters ? ' · 🎁 Free Trial' : isLocked ? ' · 🔒 Account' : ''}
+                        </option>
+                      );
+                    })}
                   {onOpenCbseGuide && (
                     <option value="__cbse_guide__">
                       📋 CBSE Class 9 Exam Guide &amp; Question Directives
@@ -981,24 +1028,26 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 </optgroup>
               )}
 
-              {/* Foundations (Alphabet & Numbers) */}
+              {/* Foundations (Alphabet, Barakhadi, Samyukta, Numbers) */}
               {lessons.some(
                 (lesson) =>
                   lesson.id === 'varnamala' ||
                   lesson.id === 'numbers' ||
-                  lesson.id === 'barakhadi'
+                  lesson.id === 'barakhadi' ||
+                  lesson.id === 'samyukta'
               ) && (
-                <optgroup label="Foundations (मूल-संस्कृतम्)">
+                <optgroup label="Foundations (मूल-संस्कृतम् · 🎁 Free Trial Open)">
                   {lessons
                     .filter(
                       (lesson) =>
                         lesson.id === 'varnamala' ||
                         lesson.id === 'numbers' ||
-                        lesson.id === 'barakhadi'
+                        lesson.id === 'barakhadi' ||
+                        lesson.id === 'samyukta'
                     )
                     .map((lesson) => (
                       <option key={lesson.id} value={lesson.id}>
-                        {lesson.title}
+                        {lesson.title}{!canReadAllChapters ? ' · 🎁 Free Trial' : ''}
                       </option>
                     ))}
                 </optgroup>

@@ -49,7 +49,11 @@ const MASTERCLASS_IDS = [
   'sanskrit-in-english',
 ];
 
-const fetchText = (name: string) => fetch(`./${name}?t=${Date.now()}`).then((response) => response.text());
+const fetchText = (name: string) => {
+  const base = import.meta.env.BASE_URL || '/';
+  const url = `${base.endsWith('/') ? base : base + '/'}${name}?t=${Date.now()}`;
+  return fetch(url).then((response) => response.text());
+};
 
 const SITE_ORIGIN_PATTERN = /^https?:\/\/(www\.)?ednetlearn\.in/i;
 

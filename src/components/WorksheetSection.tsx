@@ -1,7 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { WORKSHEETS, type Worksheet } from '../data/worksheetData';
 import { useAuthStore } from '../store/authStore';
-import { canAccessAllChapters, canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
+import {
+  canAccessAllChapters,
+  canDownloadContent,
+  getDownloadGateReason,
+  isFreeTrialOpenWorksheet,
+} from '../utils/premiumAccess';
 import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadWorksheet } from '../utils/contentDownload';
 import '../styles/worksheet-section.css';
@@ -123,19 +128,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
     setSelectedChapterSubfilter(resolved.subfilter);
   }, [initialCategory]);
 
-  const publicWorksheets = useMemo(
-    () =>
-      canReadAllChapters
-        ? WORKSHEETS
-        : WORKSHEETS.filter(
-            (ws) =>
-              ws.category !== 'grade8' &&
-              ws.category !== 'grade9' &&
-              !ws.id.startsWith('ws-grade8-') &&
-              !ws.id.startsWith('ws-grade9-')
-          ),
-    [canReadAllChapters]
-  );
+  const publicWorksheets = useMemo(() => WORKSHEETS, []);
 
   const filteredWorksheets = useMemo(() => {
     if (activeLevel === 'varnamala') {
@@ -153,11 +146,10 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
           (ws) =>
             ws.category === 'cbse_ch' ||
             ws.id.startsWith('ws-ch') ||
-            (canReadAllChapters &&
-              (ws.category === 'grade8' ||
-                ws.category === 'grade9' ||
-                ws.id.startsWith('ws-grade8-') ||
-                ws.id.startsWith('ws-grade9-')))
+            ws.category === 'grade8' ||
+            ws.category === 'grade9' ||
+            ws.id.startsWith('ws-grade8-') ||
+            ws.id.startsWith('ws-grade9-')
         );
       }
       if (selectedChapterSubfilter === 'grade8') {
@@ -181,7 +173,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
     }
     // 'all'
     return publicWorksheets;
-  }, [activeLevel, selectedChapterSubfilter, publicWorksheets, canReadAllChapters]);
+  }, [activeLevel, selectedChapterSubfilter, publicWorksheets]);
 
   const currentLevelOption = useMemo(
     () => LEVEL_MENU_OPTIONS.find((opt) => opt.id === activeLevel) || LEVEL_MENU_OPTIONS[0],
@@ -313,19 +305,6 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
                     {ch.label}
                   </button>
                 ))}
-                {isAdminLoggedIn && (
-                  <button
-                    type="button"
-                    role="tab"
-                    aria-selected={selectedChapterSubfilter === 'grade8'}
-                    className={`worksheet-chapter-pill${
-                      selectedChapterSubfilter === 'grade8' ? ' active' : ''
-                    }`}
-                    onClick={() => setSelectedChapterSubfilter('grade8')}
-                  >
-                    🪕 Grade 8 (अष्टमकक्षा)
-                  </button>
-                )}
               </div>
             </div>
           )}
@@ -346,32 +325,66 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
 
           {/* Worksheet Cards Grid */}
           <div className="worksheet-grid">
-            {filteredWorksheets.map((ws) => (
-              <div key={ws.id} className="worksheet-card">
-                <div className="worksheet-card-top">
-                  <span className="worksheet-card-badge">{ws.grade}</span>
-                  <span className="worksheet-card-marks">{ws.totalMarks} Marks</span>
-                </div>
+            {filteredWorksheets.map((ws) => {
+              const isTrial = isFreeTrialOpenWorksheet(ws.id, ws.category);
+              const isLocked = !canReadAllChapters && !isTrial;
+              return (
+                <div key={ws.id} className="worksheet-card">
+                  <div className="worksheet-card-top">
+                    <span className="worksheet-card-badge">{ws.grade}</span>
+                    {isTrial && !canReadAllChapters && (
+                      <span
+                        className="worksheet-card-badge"
+                        style={{
+                          background: '#dcfce7',
+                          color: '#15803d',
+                          border: '1px solid #86efac',
+                          fontWeight: 700,
+                        }}
+                      >
+                        🎁 Free Trial Open
+                      </span>
+                    )}
+                    {isLocked && (
+                      <span
+                        className="worksheet-card-badge"
+                        style={{
+                          background: '#fef3c7',
+                          color: '#b45309',
+                          border: '1px solid #fde68a',
+                          fontWeight: 700,
+                        }}
+                      >
+                        🔒 Account Required
+                      </span>
+                    )}
+                    <span className="worksheet-card-marks">{ws.totalMarks} Marks</span>
+                  </div>
 
-                <h3 className="worksheet-card-title">{ws.title}</h3>
-                <p className="worksheet-card-desc">{ws.description}</p>
+                  <h3 className="worksheet-card-title">{ws.title}</h3>
+                  <p className="worksheet-card-desc">{ws.description}</p>
 
-                <div className="worksheet-card-footer">
-                  <span className="worksheet-card-time">⏱️ {ws.timeLimit}</span>
-                  <button
-                    type="button"
-                    className="worksheet-view-btn"
-                    onClick={() => {
-                      setActiveWorksheet(ws);
-                      setShowAnswerKey(false);
-                    }}
-                  >
-                    <span>🖨️</span>
-                    <span>View &amp; Print Sheet</span>
-                  </button>
+                  <div className="worksheet-card-footer">
+                    <span className="worksheet-card-time">⏱️ {ws.timeLimit}</span>
+                    <button
+                      type="button"
+                      className="worksheet-view-btn"
+                      onClick={() => {
+                        if (isLocked) {
+                          openAuthModal('register');
+                          return;
+                        }
+                        setActiveWorksheet(ws);
+                        setShowAnswerKey(false);
+                      }}
+                    >
+                      <span>{isLocked ? '🔒' : '🖨️'}</span>
+                      <span>{isLocked ? 'Register Free to Unlock' : 'View & Print Sheet'}</span>
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </>
       ) : (

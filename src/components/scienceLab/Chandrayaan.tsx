@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { CoreIdea, TermPanel, type LabTerm } from './common';
+import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm } from './common';
 import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 import { isSmallScreen, prefersReducedMotion } from './motion';
 
@@ -177,6 +177,8 @@ const Chandrayaan: React.FC = () => {
   const [tithi, setTithi] = useState(7);
   const [scanned, setScanned] = useState<string[]>([]);
   const [scanMsg, setScanMsg] = useState('Roll Pragyan onto a glowing spot, then fire LIBS.');
+  const [tuningWl, setTuningWl] = useState(550);
+  const [laserPower, setLaserPower] = useState(60);
   const [pop, setPop] = useState<{ mid: string; left: number; anchorY: number; n: number } | null>(null);
   const [hud, setHud] = useState<Hud>({
     altKm: 150, ecc: 0.45, vega: 1.6, g: MOON_G, h: DESCENT_H0, vy: 5, attitude: 0, fuel: 100, battery: 100,
@@ -844,6 +846,59 @@ const Chandrayaan: React.FC = () => {
       data-att={hud.attitude.toFixed(2)}
       data-rover={`${hud.rx.toFixed(2)},${hud.ry.toFixed(2)},${hud.heading.toFixed(1)}`}
     >
+      <BodhiLabAnecdote
+        title="Bhāskara II, Vikram Sarabhai & The Ethics of Space Science"
+        sanskritTitle="भास्कराचार्यस्य आकृष्टिशक्तिः & विक्रम-साराभाई-महोदयस्य राष्ट्र-सेवा"
+        mood="scholar"
+        sutra={{
+          dev: 'आकृष्टिशक्तिश्च मही तया यत् खस्थं गुरु स्वाभिमुखं स्वशक्त्या ।\nआकृष्यते तत् पततीव भाति समे समन्तात् क्व पतत्वियं खे ॥',
+          iast: 'ākṛṣṭiśaktiś ca mahī tayā yat khasthaṃ guru svābhimukhaṃ svaśaktyā |\nākṛṣyate tat patatīva bhāti same samantāt kva patatv iyaṃ khe ||',
+          source: 'Siddhānta Śiromaṇi, Golādhyāya, Bhuvanakośa 6 (भास्कराचार्यः II, 1150 CE)',
+          meaning: '“The Earth possesses an attractive force (ākṛṣṭi-śakti / gravity), by which it draws towards itself whatever heavy object is in the skies. That object appears to fall; but since space is equal in all directions, whither could the spherical Earth itself fall in empty space?”',
+        }}
+        anecdote={
+          <>
+            <p>
+              Five centuries before Isaac Newton published the inverse-square law of universal gravitation, the 12th-century astronomer-mathematician{' '}
+              <strong>Bhāskarācārya II</strong> formulated the concept of <strong>Ākṛṣṭi-śakti</strong> (inherent attractive force / gravity).
+              Bhāskara proved that heavenly bodies are held by mutual attractive forces, and that the Earth does not rest upon tortoises or elephants
+              nor "fall through space", because in isotropic space there is neither an absolute "up" nor "down".
+            </p>
+            <p>
+              Centuries later, when <strong>Dr. Vikram Sarabhai</strong> established India’s space program in 1962—launching the first sounding rocket
+              from the coastal sands of Thumba using a local church as the control room—he rooted Indian aerospace in a profoundly ethical civilizational philosophy:
+              India was not interested in space for geopolitical vanity, military hegemony, or imperial prestige.
+              Instead, space science was dedicated as a direct instrument to eliminate poverty, predict devastating tropical cyclones,
+              deliver tele-medicine and agricultural guidance to remote villages, and elevate human dignity (<em>Lokasaṃgraha</em>).
+            </p>
+            <blockquote style={{ borderLeft: '3px solid #38bdf8', margin: '0.65rem 0', paddingLeft: '0.85rem', fontStyle: 'italic', color: '#0284c7' }}>
+              “On 23 August 2023, India’s Chandrayaan-3 soft-landed at Shiv Shakti Point near the lunar south pole—confirming in-situ sulphur
+              and mapping polar elemental deposits with homegrown frugality, mathematical genius, and humanitarian purpose.”
+            </blockquote>
+          </>
+        }
+        epistemologyAndMethod={
+          <>
+            From Ujjain’s ancient prime meridian observatories (Varāhamihira, Brahmagupta) and the Kerala School’s calculus (Mādhava’s infinite series)
+            to Sriharikota and ISRO, Indian scientific application has relied on <strong>Yukti</strong> (frugal, reasoned problem-solving).
+            Chandrayaan-3 navigated complex gravity-assist slingshots and closed-loop hazard-detection throttling, demonstrating that indigenous
+            continuity thrives through disciplined mathematical rigor rather than excessive consumption of resources.
+          </>
+        }
+        modernBridge={{
+          ancientConcept: 'Bhāskara’s Ākṛṣṭi-śakti (gravitational attraction), celestial kinematics, and Panchabhūta elemental taxonomy (Gandhaka, Ayas, Ap).',
+          modernScience: 'Orbital velocity transfer mechanics (v = √(GM/r)), lunar descent braking burns, and in-situ Laser-Induced Breakdown Spectroscopy (LIBS).',
+          relevanceNote: 'Pragyan’s LIBS verified sulphur (gandhaka) near the lunar south pole, giving global planetary science vital clues about early lunar magma oceans and volcanic history.',
+        }}
+        societalValue={
+          <p>
+            Indian space exploration stands as an exemplar of <strong>Sarva-bhūta-hita</strong> (technology for the welfare of all beings).
+            By pioneering low-cost, exceptionally reliable planetary missions, India democratized space science for the Global South,
+            proving that civilizational knowledge should never be a weapon of dominance, but an open tool of shared enlightenment and human betterment.
+          </p>
+        }
+      />
+
       <CoreIdea>
         Chandrayaan-3 (ISRO) soft-landed Vikram near the lunar south pole on 23 August 2023; the site was named Shiv Shakti Point.
         This sandbox uses Sanskrit HUD labels for modern flight quantities — teaching parallels, not a claim that Jyotiṣa proves orbital mechanics.
@@ -884,7 +939,7 @@ const Chandrayaan: React.FC = () => {
               <div className="cy-mission-stage" data-testid="cy-mission-stage">
                 <canvas ref={canvasRef} className="cy-mission-canvas" data-testid="cy-mission-canvas" aria-label="Chandrayaan mission sandbox" />
                 {phase === 'rover' && pop && popM && (
-                  <div className="cy-libs-pop" ref={popRef} key={pop.n} style={{ left: pop.left, top: 34 }} role="status" data-testid="cy-libs-pop">
+                  <div className="cy-libs-pop" ref={popRef} key={pop.n} style={{ left: pop.left, top: 34, width: '220px' }} role="status" data-testid="cy-libs-pop">
                     <button type="button" className="cy-libs-x" onClick={() => setPop(null)} aria-label="Close spectrum">×</button>
                     <div className="cy-libs-head">
                       <b lang="sa">{popM.shard}</b> <span>{popM.shardIast}</span>
@@ -898,13 +953,75 @@ const Chandrayaan: React.FC = () => {
                         </g>
                       ))}
                       <path d="M4 36 C 50 33, 120 32, 196 35" fill="none" stroke="#1e293b" />
+                      {/* Tuned detector reticle */}
+                      <line
+                        x1={4 + ((tuningWl - 350) / 600) * 192}
+                        y1="4"
+                        x2={4 + ((tuningWl - 350) / 600) * 192}
+                        y2="38"
+                        stroke="#38bdf8"
+                        strokeWidth="1.5"
+                        strokeDasharray="2 2"
+                      />
                       {popM.lines.map((nm, i) => {
                         const x = 4 + ((nm - 350) / 600) * 192;
-                        return <line key={nm} x1={x} y1="37" x2={x} y2={10 + (i % 3) * 7} stroke={popM.color} strokeWidth="1.6" />;
+                        const match = Math.abs(tuningWl - nm) < 25;
+                        return (
+                          <line
+                            key={nm}
+                            x1={x}
+                            y1="37"
+                            x2={x}
+                            y2={10 + (i % 3) * 7}
+                            stroke={match ? '#4ade80' : popM.color}
+                            strokeWidth={match ? '2.4' : '1.6'}
+                          />
+                        );
                       })}
                       <text x={Math.min(186, 4 + ((popM.lines[0] - 350) / 600) * 192 + 6)} y="12" fontSize="8" fill={popM.color} fontWeight="700">{popM.id}</text>
                     </svg>
-                    <small>{popM.en} · illustrative lines (nm), not Pragyan data</small>
+                    <div style={{ marginTop: '0.35rem', display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8' }}>
+                        <span>Wavelength Filter:</span>
+                        <b style={{ color: '#38bdf8' }}>{tuningWl} nm</b>
+                      </div>
+                      <input
+                        type="range"
+                        min={350}
+                        max={950}
+                        step={5}
+                        value={tuningWl}
+                        onChange={(e) => setTuningWl(Number(e.target.value))}
+                        style={{ width: '100%', height: '4px', accentColor: '#38bdf8' }}
+                        aria-label="Filter wavelength in nanometers"
+                        data-testid="cy-tuning-wl"
+                      />
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8', marginTop: '0.15rem' }}>
+                        <span>Laser Pulse Energy:</span>
+                        <b style={{ color: '#fb923c' }}>{laserPower} mJ</b>
+                      </div>
+                      <input
+                        type="range"
+                        min={20}
+                        max={100}
+                        step={5}
+                        value={laserPower}
+                        onChange={(e) => setLaserPower(Number(e.target.value))}
+                        style={{ width: '100%', height: '4px', accentColor: '#fb923c' }}
+                        aria-label="Laser pulse energy in millijoules"
+                        data-testid="cy-laser-power"
+                      />
+                    </div>
+                    {popM.lines.some((l) => Math.abs(tuningWl - l) < 25) && laserPower >= 40 ? (
+                      <div style={{ color: '#4ade80', fontSize: '0.74rem', fontWeight: 'bold', marginTop: '0.25rem' }}>
+                        ✨ RESONANCE LOCKED · {popM.id} ({popM.lines.join(', ')} nm)
+                      </div>
+                    ) : (
+                      <small style={{ color: '#fb923c' }}>
+                        {laserPower < 40 ? 'Boost laser pulse to ≥ 40 mJ' : `Align slider with ${popM.id} emission peak`}
+                      </small>
+                    )}
+                    <small style={{ marginTop: '0.2rem' }}>{popM.en} · in-situ LIBS spectroscopy</small>
                   </div>
                 )}
               </div>
