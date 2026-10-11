@@ -563,13 +563,13 @@ export const JOURNEY_STOPS: JourneyStop[] = [
     id: 8,
     icon: '🌿',
     placeNameDev: 'विज्ञान-आश्रमः',
-    placeNameEn: 'Purpose of Science - Vigyana',
+    placeNameEn: 'Why Learn Science - Purpose of Vigyana',
     eraSetting: 'Sacred Banyan Hermitage · Sunset Twilight · Ethical Science',
     accentColor: '#eab308',
     bgGradient: 'linear-gradient(180deg, #422006 0%, #0f172a 100%)',
     category: 'Philosophy & Ethics (ऋषि-चरितम् एवं विज्ञानम्)',
-    titleDev: 'महर्षिः कणादः · Purpose of Science - Vigyana (विज्ञानम्)',
-    titleEn: 'Purpose of Science - Vigyana (विज्ञानम्)',
+    titleDev: 'महर्षिः कणादः · Why Learn Science - Purpose of Vigyana (विज्ञानम्)',
+    titleEn: 'Why Learn Science - Purpose of Vigyana',
     sanskritSutra: 'यतोऽभ्युदयनिःश्रेयससिद्धिः स धर्मः',
     sanskritSutraRef: 'Vaiśeṣika Sūtra 1.1.2 · "Dharma leads to material prosperity and spiritual liberation"',
     coreInsight:
@@ -579,7 +579,7 @@ export const JOURNEY_STOPS: JourneyStop[] = [
         speaker: 'Bodhi',
         dev: 'भगवन्! अस्माकं भौतिक-शास्त्रस्य परमं प्रयोजनं किम्?',
         en: 'Gurudeva! What is the supreme purpose of science (Vigyana)?',
-        subText: 'The ethical and existential question of science',
+        subText: 'Why learn science: understanding the purpose of Vigyana',
       },
       {
         speaker: 'Kaṇāda',
@@ -1294,7 +1294,7 @@ export const ScenicStage: React.FC<{ stop: JourneyStop; activeSpeaker: 'Bodhi' |
 
             {/* Ayurvedic Mortar-Pestle on Stone Altar */}
             <g transform="translate(400, 270)">
-              <rect x="-80" y="10" width="160" height="40" rx="8" fill="#334155" />
+              <rect x="-120" y="10" width="240" height="40" rx="8" fill="#334155" />
               {/* Granite Mortar */}
               <ellipse cx="0" cy="0" rx="34" ry="14" fill="#1e293b" stroke="#64748b" strokeWidth="2" />
               <path d="M -34 0 Q -38 24 0 28 Q 38 24 34 0 Z" fill="#0f172a" />
@@ -1304,8 +1304,8 @@ export const ScenicStage: React.FC<{ stop: JourneyStop; activeSpeaker: 'Bodhi' |
               <circle cx="-6" cy="-14" r="3" fill="#86efac" opacity="0.75" />
               <circle cx="8" cy="-20" r="4" fill="#fef08a" opacity="0.75" />
 
-              <text x="0" y="42" textAnchor="middle" fill="#fef08a" fontSize="11" fontWeight="800">
-                Purpose of Science - Vigyana (विज्ञानम्)
+              <text x="0" y="42" textAnchor="middle" fill="#fef08a" fontSize="10.5" fontWeight="800">
+                Why Learn Science - Purpose of Vigyana
               </text>
             </g>
 
