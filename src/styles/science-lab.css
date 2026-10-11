@@ -13386,4 +13386,501 @@
   border-top: 1px solid rgba(148, 163, 184, 0.2);
 }
 
+/* ==========================================================================
+   📱 COMPREHENSIVE MOBILE VIEWPORT OPTIMIZATIONS (VIJÑĀNA LAB & ALL LAB ENGINES)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* 1. Page Container & Layout Boundaries */
+  .vl-page {
+    padding: 0.75rem 0.6rem 2.5rem;
+    border-radius: 16px;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* 2. Hero Battlestation */
+  .vl-hero {
+    flex-direction: column;
+    padding: 1.1rem 0.95rem;
+    gap: 0.85rem;
+    border-radius: 16px;
+  }
+  .vl-hero-text {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+  .vl-hero-art {
+    display: none;
+  }
+  .vl-title {
+    font-size: clamp(1.4rem, 5.2vw, 1.85rem);
+    line-height: 1.25;
+    word-break: break-word;
+  }
+  .vl-lead {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    margin-bottom: 0.65rem;
+  }
+  .vl-hud-telemetry {
+    gap: 0.35rem;
+    margin: 0.5rem 0 0.85rem;
+  }
+  .vl-hud-pill {
+    font-size: 0.66rem;
+    padding: 0.22rem 0.55rem;
+  }
+  .vl-btn-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .vl-btn--cyber,
+  .vl-btn--cyber-ghost {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 0.65rem 1rem;
+    font-size: 0.82rem;
+  }
+
+  /* 3. Category Filter Tabs */
+  .vl-cat-tabs-wrap {
+    margin: 1rem 0 0.75rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.35rem;
+  }
+  .vl-cat-tabs-wrap::-webkit-scrollbar {
+    display: none;
+  }
+  .vl-cat-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.45rem;
+    width: max-content;
+  }
+  .vl-cat-tab {
+    font-size: 0.72rem;
+    padding: 0.38rem 0.75rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* 4. Sector Grid Cards */
+  .vl-cards {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 0.75rem 0 1.5rem;
+  }
+  .vl-card {
+    padding: 0.85rem;
+    border-radius: 14px;
+  }
+  .vl-card-main-title {
+    font-size: 1.05rem;
+  }
+  .vl-card-dev-title {
+    font-size: 0.84rem;
+  }
+  .vl-card-school {
+    font-size: 0.72rem;
+  }
+  .vl-card-status {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  /* 5. Tactical Simulation Sector Title */
+  .vl-seg-title {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.75rem;
+    gap: 0.35rem;
+  }
+  .vl-seg-dev {
+    display: block;
+    width: 100%;
+    font-size: 0.82rem;
+    margin-top: 0.15rem;
+  }
+
+  /* 6. Paramanu Builder Hub & Stations Grid */
+  .vl-lab-category-bar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.4rem;
+    gap: 0.35rem;
+  }
+  .vl-lab-category-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .vl-lab-category-btn {
+    font-size: 0.74rem;
+    padding: 0.35rem 0.65rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .vl-lab-stations-grid {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+  .vl-lab-station-card {
+    padding: 0.65rem 0.75rem;
+    border-radius: 10px;
+  }
+
+  /* 7. Akasa Game Baseplate & Top Controls */
+  .akasa-game-wrap {
+    padding: 0.85rem 0.65rem;
+    border-radius: 14px;
+    margin: 0.75rem 0;
+    overflow-x: hidden;
+  }
+  .akasa-top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+  .akasa-title {
+    font-size: 1.18rem;
+  }
+  .akasa-subtitle {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+  .akasa-controls-row {
+    gap: 0.35rem;
+  }
+  .akasa-pill {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.55rem;
+    min-height: 30px;
+  }
+  .akasa-mode-selector-bar {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    margin: 0.75rem 0 1rem;
+  }
+  .akasa-mode-btn {
+    padding: 0.75rem 0.85rem;
+    gap: 0.65rem;
+    border-radius: 12px;
+  }
+  .akasa-mode-icon {
+    font-size: 1.5rem;
+  }
+  .akasa-mode-name {
+    font-size: 0.88rem;
+  }
+  .akasa-mode-sub {
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  /* 8. Interactive Gaming Studio Layout */
+  .akasa-studio-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .akasa-studio-stage-col {
+    order: -1;
+    width: 100%;
+  }
+  .akasa-stage-container,
+  .akasa-studio-stage-col .akasa-stage-container {
+    height: clamp(280px, 52vh, 350px) !important;
+    border-radius: 12px;
+  }
+  .akasa-potter-wheel-stage {
+    max-width: min(250px, 72vw);
+  }
+  .akasa-guru-artisan-wrap {
+    max-width: min(250px, 72vw);
+  }
+  .akasa-guru-artisan-svg {
+    max-height: 270px;
+  }
+  .akasa-guru-artisan-banner {
+    max-width: min(240px, 68vw);
+    padding: 0.35rem 0.5rem;
+  }
+  .akasa-artisan-tag {
+    font-size: 0.62rem;
+  }
+  .akasa-artisan-action-desc {
+    font-size: 0.65rem !important;
+    line-height: 1.35 !important;
+  }
+  .akasa-studio-comic-col {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    min-height: 220px;
+    border-radius: 12px;
+  }
+  .akasa-comic-master-bar {
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.55rem 0.65rem;
+  }
+  .akasa-master-btn {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.76rem;
+  }
+  .akasa-comic-scroll {
+    padding: 0.6rem;
+    gap: 0.6rem;
+    max-height: 320px;
+  }
+  .akasa-comic-panel {
+    padding: 0.55rem 0.65rem;
+  }
+  .akasa-comic-text {
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+  }
+  .akasa-phase1-elements-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .akasa-phase1-element-card {
+    padding: 0.75rem 0.85rem;
+  }
+  .akasa-p1-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+  .akasa-p1-header-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .akasa-p1-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .akasa-p1-forge-btn {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.78rem;
+  }
+  .akasa-p2-tray-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.45rem;
+  }
+  .akasa-p2-tray-card {
+    padding: 0.5rem 0.6rem;
+  }
+  .akasa-p2-direct-btn {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  /* 9. Timeline Dialogue Journey Slideshow */
+  .akasa-journey-wrapper {
+    padding: 0.85rem 0.65rem;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+    overflow-x: hidden;
+  }
+  .akasa-journey-topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .akasa-journey-topbar > div {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .akasa-video-tour-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.45rem 0.85rem;
+  }
+  .akasa-journey-trail-container {
+    margin-bottom: 0.85rem;
+    padding: 0.25rem 0 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .akasa-journey-waypoint {
+    min-width: 70px;
+    padding: 0.3rem 0.45rem;
+  }
+  .akasa-waypoint-icon {
+    font-size: 1.15rem;
+  }
+  .akasa-scene-stage-wrapper {
+    border-radius: 12px;
+    margin-bottom: 0.85rem;
+  }
+  .akasa-scene-svg {
+    max-height: 250px;
+  }
+  .akasa-journey-dialogue-section {
+    padding: 0.85rem 0.75rem;
+    border-radius: 12px;
+    margin-bottom: 0.85rem;
+  }
+  .akasa-dialogue-sec-title {
+    font-size: 0.88rem;
+  }
+  .akasa-dialogue-turn-row {
+    gap: 0.45rem;
+  }
+  .akasa-dialogue-turn-avatar-col {
+    min-width: 44px;
+  }
+  .akasa-turn-speaker-badge {
+    font-size: 0.56rem;
+    padding: 0.08rem 0.25rem;
+  }
+  .akasa-dialogue-bubble {
+    padding: 0.6rem 0.75rem;
+    border-radius: 10px;
+  }
+  .akasa-bubble-speaker-name {
+    font-size: 0.7rem;
+  }
+  .akasa-bubble-sanskrit {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+  .akasa-bubble-english {
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+  .akasa-bubble-annotation {
+    font-size: 0.68rem;
+  }
+  .akasa-vault-container {
+    border-radius: 12px;
+    margin-bottom: 0.85rem;
+  }
+  .akasa-vault-header-toggle {
+    padding: 0.75rem 0.85rem;
+  }
+  .akasa-vault-content-body {
+    padding: 0.85rem 0.75rem;
+  }
+  .akasa-slide-points-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+  .akasa-slideshow-bottom-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .akasa-step-act-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* 10. Auto-Play Movie Mode */
+  .akasa-autoplay-wrap {
+    padding: 0.85rem 0.65rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow-x: hidden;
+  }
+  .akasa-autoplay-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .akasa-autoplay-title {
+    font-size: 0.92rem;
+  }
+  .akasa-autoplay-acts-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.35rem;
+    gap: 0.35rem;
+  }
+  .akasa-autoplay-acts-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .akasa-autoplay-act-pill {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    padding: 0.28rem 0.55rem;
+  }
+  .akasa-autoplay-stage {
+    min-height: 200px;
+    padding: 0.75rem 0.65rem;
+    border-radius: 10px;
+  }
+  .akasa-autoplay-dialog-box {
+    padding: 0.65rem 0.75rem;
+  }
+  .akasa-autoplay-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .akasa-autoplay-controls > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* 11. Bodhi Console */
+  .vl-bodhi-console {
+    padding: 0.85rem;
+    border-radius: 14px;
+    margin-top: 1.5rem;
+  }
+  .vl-bodhi-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+  .vl-points-toast {
+    position: static;
+    margin-bottom: 0.75rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .vl-vidya-badge {
+    width: 100%;
+    min-width: 0;
+    padding: 0.55rem 0.75rem;
+  }
+}
+
+/* Extra Compact Phones (iPhone SE, smaller Android devices <= 400px) */
+@media (max-width: 400px) {
+  .vl-page {
+    padding: 0.5rem 0.35rem 2rem;
+  }
+  .akasa-game-wrap,
+  .akasa-journey-wrapper,
+  .akasa-autoplay-wrap {
+    padding: 0.65rem 0.45rem;
+  }
+  .akasa-stage-container,
+  .akasa-studio-stage-col .akasa-stage-container {
+    height: 270px !important;
+  }
+  .akasa-potter-wheel-stage,
+  .akasa-guru-artisan-wrap {
+    max-width: 220px;
+  }
+  .akasa-p2-tray-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
