@@ -37,7 +37,6 @@ export const DynamicGunaMatrix: React.FC = () => {
   const [guruSpeaker, setGuruSpeaker] = useState<'Kaṇāda' | 'System'>('Kaṇāda');
   const [isSynergyLocked, setIsSynergyLocked] = useState(false);
   const [showVictoryModal, setShowVictoryModal] = useState(false);
-  const [showGuide, setShowGuide] = useState(true);
 
   // Canvas Refs & Simulation
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -494,7 +493,7 @@ export const DynamicGunaMatrix: React.FC = () => {
         />
       )}
 
-      {/* 🎮 INTERACTIVE LABORATORY BENCH (SINGLE CLEAR SEQUENCE) */}
+      {/* 🎮 INTERACTIVE LABORATORY BENCH (CLEAR STREAMLINED SEQUENCE) */}
       <div
         ref={interactiveBenchRef}
         className="vl-guna-interactive-bench"
@@ -502,109 +501,126 @@ export const DynamicGunaMatrix: React.FC = () => {
         aria-label="Interactive Guna Workbench"
         style={{ scrollMarginTop: '1.5rem' }}
       >
-        {/* 🧭 HOW TO PLAY · 4-STAGE PROGRESSION TOWARDS SAMAVĀYA */}
-        <div className="akasa-how-to-play-bar" role="region" aria-label="How to play matrix instructions">
-          <div className="akasa-htp-header">
-            <div className="akasa-htp-title">
-              <span>🧭 HOW TO PLAY · 4-STAGE PROGRESSION TOWARDS SAMAVĀYA</span>
+        {/* 1. Interactive Simulation Stage (Canvas) */}
+        <div className="vl-matrix-canvas-card">
+          <div className="vl-matrix-stage-toolbar">
+            <div className="vl-stage-mission-indicator">
+              <span className="vl-step-indicator">STAGE {currentStage}/4:</span>{' '}
+              <strong>
+                {currentStage === 1 && 'The Illusion of Separation (Oil & Water)'}
+                {currentStage === 2 && 'Break the State Mask (Injecting Thermal Tejas)'}
+                {currentStage === 3 && 'Dynamic Property Soup (Sweeping Vāyu)'}
+                {currentStage === 4 && 'Samavāya Inherence Achieved (Trasareṇu Created)'}
+              </strong>
             </div>
-            <button
-              type="button"
-              className="akasa-htp-toggle"
-              onClick={() => setShowGuide(!showGuide)}
-            >
-              {showGuide ? 'Hide Instructions Guide ▲' : 'Show Instructions Guide ▼'}
-            </button>
+            <div className="vl-stage-status-chips">
+              <span className="vl-status-chip">
+                {currentStage < 4 ? 'Atoms: 56 Paramāṇus' : 'Atoms: Dancing Trasareṇu Motes'}
+              </span>
+              <span className="vl-status-chip">
+                {currentStage === 1 && 'Phase: Immiscible (High Sneha Friction)'}
+                {currentStage === 2 && 'Phase: Thermal Agitation (Pīlupāka Heat Active)'}
+                {currentStage === 3 && (isSynergyLocked ? '✨ 45%–65% Synergy Locked' : 'Phase: Free Atom Soup (Tune Sliders)')}
+                {currentStage === 4 && 'State: Intramolecular Samavāya Inherence'}
+              </span>
+            </div>
           </div>
 
-          {showGuide && (
-            <div className="akasa-htp-steps-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-              {/* Step 1: Illusion of Separation */}
-              <div className={`akasa-htp-step${currentStage === 1 ? ' is-active' : currentStage > 1 ? ' is-completed' : ''}`}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-                  <span className="akasa-step-num">1</span>
-                  {currentStage === 1 ? (
-                    <span style={{ fontSize: '0.68rem', color: '#facc15', fontWeight: 800, background: 'rgba(250, 204, 21, 0.15)', padding: '0.15rem 0.5rem', borderRadius: '6px', border: '1px solid #facc15' }}>
-                      👉 ACTIVE
-                    </span>
-                  ) : currentStage > 1 ? (
-                    <span style={{ fontSize: '0.72rem', color: '#86efac', fontWeight: 800 }}>✓ DONE</span>
-                  ) : null}
-                </div>
-                <div>
-                  <strong>1. Illusion of Separation</strong>
-                  <p>Click &ldquo;1. Attempt Merge&rdquo; to observe immiscible clusters repelling with high Sneha (Cohesion) friction.</p>
-                </div>
-              </div>
+          <div className="vl-canvas-wrapper" style={{ position: 'relative', width: '100%', height: '380px' }}>
+            <canvas
+              ref={canvasRef}
+              width={600}
+              height={380}
+              className="vl-matrix-canvas"
+              style={{ width: '100%', height: '100%', display: 'block', borderRadius: '12px', background: '#050914' }}
+            />
 
-              {/* Step 2: Break the State Mask */}
-              <div className={`akasa-htp-step${currentStage === 2 ? ' is-active' : currentStage > 2 ? ' is-completed' : ''}`}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-                  <span className="akasa-step-num">2</span>
-                  {currentStage === 2 ? (
-                    <span style={{ fontSize: '0.68rem', color: '#facc15', fontWeight: 800, background: 'rgba(250, 204, 21, 0.15)', padding: '0.15rem 0.5rem', borderRadius: '6px', border: '1px solid #facc15' }}>
-                      👉 ACTIVE
-                    </span>
-                  ) : currentStage > 2 ? (
-                    <span style={{ fontSize: '0.72rem', color: '#86efac', fontWeight: 800 }}>✓ DONE</span>
-                  ) : null}
-                </div>
-                <div>
-                  <strong>2. Break the State Mask</strong>
-                  <p>Click &ldquo;2. Inject Tejas&rdquo; to introduce thermal heat and soften rigid interfacial boundaries.</p>
-                </div>
+            {/* Interactive In-Stage Overlays */}
+            {repulsionTriggered && currentStage === 1 && (
+              <div className="vl-stage-clash-toast">
+                ⚡ STRUCTURAL FRICTION: SNEHA POLARITY DIVERGENCE (OIL &amp; WATER SLIDE OFF)
               </div>
+            )}
+          </div>
 
-              {/* Step 3: Dynamic Property Soup */}
-              <div className={`akasa-htp-step${currentStage === 3 ? ' is-active' : currentStage > 3 ? ' is-completed' : ''}`}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-                  <span className="akasa-step-num">3</span>
-                  {currentStage === 3 ? (
-                    <span style={{ fontSize: '0.68rem', color: isSynergyLocked ? '#86efac' : '#facc15', fontWeight: 800, background: isSynergyLocked ? 'rgba(16, 185, 129, 0.2)' : 'rgba(250, 204, 21, 0.15)', padding: '0.15rem 0.5rem', borderRadius: '6px', border: `1px solid ${isSynergyLocked ? '#10b981' : '#facc15'}` }}>
-                      {isSynergyLocked ? '✨ LOCKED' : '👉 ACTIVE'}
-                    </span>
-                  ) : currentStage > 3 ? (
-                    <span style={{ fontSize: '0.72rem', color: '#86efac', fontWeight: 800 }}>✓ DONE</span>
-                  ) : null}
-                </div>
-                <div>
-                  <strong>3. Dynamic Property Soup</strong>
-                  <p>Click &ldquo;3. Sweep Vāyu&rdquo; to dissolve clusters into 56 free atoms, then adjust sliders into the 45%–65% Synergy Window.</p>
-                </div>
-              </div>
+          {/* Action Toolbar to Drive the Sequence */}
+          <div className="vl-matrix-action-toolbar">
+            <button
+              type="button"
+              className={`vl-btn vl-btn--cyber${currentStage === 1 ? ' is-pulsing' : ''}`}
+              onClick={handleAttemptMerge}
+              title="Step 1: Attempt to mix the two unmixable clusters"
+            >
+              1. Attempt Merge (The Oil &amp; Water Dilemma)
+            </button>
 
-              {/* Step 4: Inseparable Inherence */}
-              <div className={`akasa-htp-step${currentStage === 4 ? ' is-active is-completed' : ''}`}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-                  <span className="akasa-step-num">4</span>
-                  {currentStage === 4 ? (
-                    <span style={{ fontSize: '0.72rem', color: '#facc15', fontWeight: 800, background: 'rgba(250, 204, 21, 0.2)', padding: '0.15rem 0.5rem', borderRadius: '6px', border: '1px solid #facc15' }}>
-                      🎉 TRANSCENDED
-                    </span>
-                  ) : null}
-                </div>
-                <div>
-                  <strong>4. Inseparable Inherence</strong>
-                  <p>Click &ldquo;4. BIND SAMAVĀYA&rdquo; to collapse the amorphous cloud into the dancing sunbeam motes of the Trasareṇu!</p>
-                </div>
-              </div>
-            </div>
-          )}
+            <button
+              type="button"
+              className={`vl-btn vl-btn--cyber${currentStage === 2 ? ' is-pulsing' : ''}`}
+              onClick={handleInjectTejas}
+              title="Step 2: Inject heat to break the rigid boundaries"
+            >
+              2. Inject Tejas (Break the State Mask)
+            </button>
+
+            <button
+              type="button"
+              className={`vl-btn vl-btn--cyber${currentStage === 3 ? ' is-pulsing' : ''}`}
+              onClick={handleSweepVayu}
+              title="Step 3: Sweep Vayu to create dynamic property soup"
+            >
+              3. Sweep Vāyu (Dynamic Property Soup)
+            </button>
+
+            <button
+              type="button"
+              disabled={!isSynergyLocked}
+              className={`vl-btn vl-btn--gold${isSynergyLocked ? ' is-unlocked-glow is-pulsing' : ''}`}
+              onClick={handleSamavayaBinding}
+              title={isSynergyLocked ? 'Step 4: Bind into Trasarenu in eternal Akasa!' : 'Step 4: Complete Step 3 slider tuning first'}
+            >
+              4. ⚛️ BIND SAMAVĀYA IN ĀKĀŚA
+            </button>
+          </div>
         </div>
 
         {/* 2. Real-Time Guṇa Triad Sliders (त्रिगुणात्मक-पर्यावरणम्) */}
-        <div className="vl-guna-triad-card" role="region" aria-label="The Guna Triad Sliders">
+        <div
+          className="vl-guna-triad-card"
+          role="region"
+          aria-label="The Guna Triad Sliders"
+          style={{
+            borderColor: currentStage === 3 ? (isSynergyLocked ? '#10b981' : '#facc15') : 'rgba(148, 163, 184, 0.25)',
+            boxShadow: currentStage === 3 ? '0 0 20px rgba(250, 204, 21, 0.15)' : 'none',
+          }}
+        >
           <div className="vl-triad-header">
             <div>
               <h3 className="vl-triad-title">
-                <span>📊 THE GUṆA TRIAD (त्रिगुणात्मक-पर्यावरणम्)</span>
+                <span>
+                  {currentStage === 3
+                    ? '📊 THE GUṆA TRIAD · STEP 3 ACTIVE TUNING'
+                    : currentStage === 4
+                    ? '📊 THE GUṆA TRIAD · EQUILIBRIUM ACHIEVED'
+                    : '📊 THE GUṆA TRIAD (त्रिगुणात्मक-पर्यावरणम्)'}
+                </span>
               </h3>
               <div className="vl-triad-sub">
-                Balance all 3 sliders into the illuminated <strong>Synergy Window (45% – 65%)</strong> to unlock Samavāya!
+                {currentStage === 3
+                  ? '🎯 Step 3 Active: Tune all 3 sliders into the illuminated Synergy Window (45% – 65%) to unlock Step 4!'
+                  : currentStage === 4
+                  ? '✨ Guṇa-Sāmyam Complete: Thermodynamic equilibrium maintained within the Tryaṇuka bonds.'
+                  : `Current baseline properties: High Sneha (${sneha}%), Low Dravatva (${dravatva}%), Low Uṣṇa (${usna}%). Complete Steps 1 & 2 above before manual tuning.`}
               </div>
             </div>
             <div className={`vl-synergy-badge${isSynergyLocked ? ' is-locked' : ''}`}>
-              {isSynergyLocked ? '✨ SYNERGY LOCKED (साम्य-सिद्धम्)' : '⚡ BALANCING REQUIRED'}
+              {currentStage === 3
+                ? isSynergyLocked
+                  ? '✨ SYNERGY LOCKED (Click Step 4 Above!)'
+                  : '⚡ TUNE SLIDERS INTO 45%–65%'
+                : currentStage === 4
+                ? '✨ EQUILIBRIUM ACHIEVED'
+                : '🔒 ACTIVE IN STEP 3'}
             </div>
           </div>
 
@@ -713,85 +729,6 @@ export const DynamicGunaMatrix: React.FC = () => {
           </div>
         </div>
 
-        {/* 3. Interactive Simulation Stage (Canvas) */}
-        <div className="vl-matrix-canvas-card">
-          <div className="vl-matrix-stage-toolbar">
-            <div className="vl-stage-mission-indicator">
-              <span className="vl-step-indicator">STAGE {currentStage}/4:</span>{' '}
-              <strong>
-                {currentStage === 1 && 'The Illusion of Separation (Oil & Water)'}
-                {currentStage === 2 && 'Injecting Tejas (Breaking the State Mask)'}
-                {currentStage === 3 && 'Dynamic Property Soup (Calibrating Guṇa Triad)'}
-                {currentStage === 4 && 'Samavāya Inherence Achieved (Trasareṇu Created)'}
-              </strong>
-            </div>
-            <div className="vl-stage-status-chips">
-              <span className="vl-status-chip">Atoms: 56 Paramāṇus</span>
-              <span className="vl-status-chip">Medium: Ākāśa Continuum</span>
-              <span className={`vl-status-chip${isSynergyLocked ? ' is-synergy' : ''}`}>
-                {isSynergyLocked ? '✨ 45%–65% Synergy Locked' : 'Target: 45%–65% Synergy'}
-              </span>
-            </div>
-          </div>
-
-          <div className="vl-canvas-wrapper" style={{ position: 'relative', width: '100%', height: '380px' }}>
-            <canvas
-              ref={canvasRef}
-              width={600}
-              height={380}
-              className="vl-matrix-canvas"
-              style={{ width: '100%', height: '100%', display: 'block', borderRadius: '12px', background: '#050914' }}
-            />
-
-            {/* Interactive In-Stage Overlays */}
-            {repulsionTriggered && currentStage === 1 && (
-              <div className="vl-stage-clash-toast">
-                ⚡ STRUCTURAL FRICTION: SNEHA POLARITY DIVERGENCE (OIL &amp; WATER SLIDE OFF)
-              </div>
-            )}
-          </div>
-
-          {/* Action Toolbar to Drive the Sequence */}
-          <div className="vl-matrix-action-toolbar">
-            <button
-              type="button"
-              className={`vl-btn vl-btn--cyber${currentStage === 1 ? ' is-pulsing' : ''}`}
-              onClick={handleAttemptMerge}
-              title="Step 1: Attempt to mix the two unmixable clusters"
-            >
-              1. Attempt Merge (The Oil &amp; Water Dilemma)
-            </button>
-
-            <button
-              type="button"
-              className={`vl-btn vl-btn--cyber${currentStage === 2 ? ' is-pulsing' : ''}`}
-              onClick={handleInjectTejas}
-              title="Step 2: Inject heat to break the rigid boundaries"
-            >
-              2. Inject Tejas (Break the State Mask)
-            </button>
-
-            <button
-              type="button"
-              className={`vl-btn vl-btn--cyber${currentStage === 3 ? ' is-pulsing' : ''}`}
-              onClick={handleSweepVayu}
-              title="Step 3: Sweep Vayu to create dynamic property soup"
-            >
-              3. Sweep Vāyu (Dynamic Property Soup)
-            </button>
-
-            <button
-              type="button"
-              disabled={!isSynergyLocked}
-              className={`vl-btn vl-btn--gold${isSynergyLocked ? ' is-unlocked-glow is-pulsing' : ''}`}
-              onClick={handleSamavayaBinding}
-              title={isSynergyLocked ? 'Step 4: Bind into Trasarenu in eternal Akasa!' : 'Step 4: Align sliders into 45%-65% window first'}
-            >
-              4. ⚛️ BIND SAMAVĀYA IN ĀKĀŚA
-            </button>
-          </div>
-        </div>
-
         {/* 4. Sage Kaṇāda Companion Commentary HUD */}
         <aside className="vl-matrix-guru-hud" role="region" aria-label="Kaṇāda's Real-time Commentary">
           <div className="vl-dialogue-avatar-wrap">
@@ -823,16 +760,17 @@ export const DynamicGunaMatrix: React.FC = () => {
 
             <div className="vl-victory-desc">
               <p style={{ margin: '0 0 0.65rem', lineHeight: 1.6 }}>
-                <strong>&ldquo;Superficial forms have faded. By manipulating the invisible threads of reality (Guṇas), you have forged true Harmony (Samavāya). The illusion of division is shattered.&rdquo;</strong>
+                <strong>&ldquo;Superficial forms have faded. What we call Samavāya—the inseparable relationship between a whole and its parts—modern science observes as the transition from a mere physical mixture to an intrinsic chemical compound.&rdquo;</strong>
               </p>
-              <div style={{ background: 'rgba(15, 23, 42, 0.7)', padding: '0.75rem 1rem', borderRadius: '10px', borderLeft: '3px solid #facc15', fontSize: '0.84rem', color: '#cbd5e1' }}>
-                <p style={{ margin: '0 0 0.4rem' }}>
-                  <strong>🔬 The Modern &amp; Ancient Physical Synthesis:</strong>
+              <div style={{ background: 'rgba(15, 23, 42, 0.85)', padding: '0.75rem 1rem', borderRadius: '10px', borderLeft: '3px solid #facc15', fontSize: '0.84rem', color: '#cbd5e1' }}>
+                <p style={{ margin: '0 0 0.5rem', color: '#fde047', fontWeight: 800 }}>
+                  🔬 Kaṇāda&rsquo;s Vaiśeṣika Framework ⇄ Modern Chemical Observations:
                 </p>
-                <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 1.5 }}>
-                  <li><strong>Polarity vs Boxes:</strong> Oil and water don&rsquo;t separate because of a &ldquo;liquid box&rdquo;—they separate because of <em>Sneha</em> (polarity / intermolecular cohesion).</li>
-                  <li><strong>Thermal Dissolution:</strong> Injecting <em>Tejas</em> (kinetic heat) lowered cohesion, breaking phase boundaries into amorphous readiness.</li>
-                  <li><strong>Dynamic Property Soup:</strong> Matter is constantly undulating across parameters. When balanced, atoms bind through <em>Samavāya</em> into the celestial <strong>Trasareṇu</strong>.</li>
+                <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 1.6 }}>
+                  <li><strong>संयोग (Saṁyoga) ⇄ Mechanical Mixtures:</strong> Distinct phases (oil &amp; water) held by temporary interfacial tension.</li>
+                  <li><strong>पाकज-परमाणु (Pākaja-Paramāṇu) ⇄ Activation Energy:</strong> Thermal kinetic energy breaking intermolecular bonds into reactive states.</li>
+                  <li><strong>गुण-साम्य (Guṇa-Sāmya) ⇄ Thermodynamic Equilibrium:</strong> Balancing entropy, temperature, and fluidity until phases can transition.</li>
+                  <li><strong>समवाय (Samavāya) ⇄ Chemical Bonding:</strong> Strong, localized bonds forming an entirely new unified substance.</li>
                 </ul>
               </div>
             </div>

@@ -2,82 +2,132 @@ import React, { useEffect, useRef, useState } from 'react';
 import { soundEffects } from '../../utils/soundEffects';
 import { gunaAudio } from './gunaAudioEngine';
 
+interface SynthesisRow {
+  sanskrit: string;
+  vaisheshikaDesc: string;
+  modernConcept: string;
+  modernDesc: string;
+}
+
 interface MovieAct {
   actNumber: number;
   icon: string;
   titleDev: string;
   titleEn: string;
+  visualContext: string;
   bodhiQuestion: string;
   kanadaAnswer: string;
+  kanadaConclusion?: string;
   sutraInsight: string;
   elementColor: string;
   soundType: 'friction' | 'heat' | 'wind' | 'samavaya';
+  synthesisTable?: SynthesisRow[];
 }
 
 const MOVIE_ACTS: MovieAct[] = [
   {
     actNumber: 1,
     icon: '🛢️💧',
-    titleDev: 'अङ्कः १ · अवस्था-भ्रमः (The Illusion of Separation)',
+    titleDev: 'अङ्क १ - अवस्था-भ्रमः (The Illusion of Separation)',
     titleEn: 'Act 1: The Illusion of Phase Separation (Oil & Water Dilemma)',
+    visualContext:
+      'Water (Ap) and Oil (Taila) separated by a stark, polarized boundary of interfacial friction.',
     bodhiQuestion:
       'Guru Kaṇāda, why do oil and water stubbornly repel each other? Are they forever trapped in rigid, unmixable liquid cages?',
     kanadaAnswer:
-      'No, Bodhi! The "solid, liquid, gas" boxes you see are merely an illusion—a passing mask worn by matter. Immiscibility is caused by an acute polarity mismatch in Sneha (स्नेह - cohesive viscidity). Water molecules cling with high cohesive attraction, forcing non-polar oil outward with interfacial friction!',
+      'No, Bodhi! The static "solid, liquid, gas" boundaries you see are merely an illusion—a passing mask worn by matter. This separation is caused by a fundamental structural mismatch in Sneha (cohesive viscidity). Water molecules cling tightly to their own kind, forcing non-polar oil outward with intense interfacial friction. They seem unmixable only because their current, unexcited properties (Guṇas) cannot find a common ground for true contact (Saṁyoga).',
     sutraInsight:
-      'नियतगुणसंयोगाद् द्रव्यविलक्षणत्वम् · Differentiation of substances arises from specific guṇa conjunctions (Vaiśeṣika Sūtra 2.1.2)',
+      'नियतगुणसंयोगाद् द्रव्यविशेशलक्षणम् — Differentiation of substances arises from specific guṇa conjunctions (Vaiśeṣika Sūtra 2.1.2)',
     elementColor: '#eab308',
     soundType: 'friction',
   },
   {
     actNumber: 2,
     icon: '🔥⚡',
-    titleDev: 'अङ्कः २ · तेजः-संयोगः (Breaking the State Mask)',
+    titleDev: 'अङ्क २ - तेजः-संयोगः (Breaking the State Mask)',
     titleEn: 'Act 2: Breaking the State Mask (Injecting Thermal Tejas)',
+    visualContext:
+      'Thermal kinetic energy waves striking the molecules, causing intense vibration and loosening the boundary.',
     bodhiQuestion:
       'How can we shatter this rigid interfacial boundary and dissolve their separation?',
     kanadaAnswer:
-      'Inject Tejas (तेजः - thermal kinetic heat)! As thermal agitation rises, the intense kinetic energy disrupts existing molecular conjunctions (संयोग-विनाशः). Thermal excitation softens interfacial friction and melts the rigid mask of state!',
+      'We must inject Tejas (तेजस् — thermal kinetic heat)! As thermal agitation rises, the intense kinetic energy disrupts the existing molecular conjunctions. This process initiates Pīlupāka—the thermal cooking and breaking down of individual atomic clusters. Thermal excitation softens the interfacial friction, melting away the rigid mask of their current state. By heating them, we force the macro-structures to dismantle into their underlying, reactive elements.',
     sutraInsight:
-      'पाकज-गुणाः संयोगविभागाभ्याम् · Thermal kinetic energy breaks existing bonds to alter atomic qualities (Vaiśeṣika Sūtra 7.1.6)',
+      'पाकज-गुणा संयोगविभागाभ्याम् — Thermal kinetic energy breaks existing bonds to alter atomic qualities (Vaiśeṣika Sūtra 7.1.6)',
     elementColor: '#f97316',
     soundType: 'heat',
   },
   {
     actNumber: 3,
     icon: '💨🌀',
-    titleDev: 'अङ्कः ३ · गुण-साम्यम् (Dynamic Property Soup)',
+    titleDev: 'अङ्क ३ - गुण-साम्यम् (The Dynamic Property Soup)',
     titleEn: 'Act 3: Dynamic Property Soup (Sweeping Vāyu & Guṇa Balancing)',
+    visualContext:
+      'A swirling, balanced atomic cloud where Vāyu vectors actively blend the free, liberated atoms.',
     bodhiQuestion:
-      'The cosmic wind of Vāyu has swept the clusters into 56 free Paramāṇus! What is the secret to bringing them into harmonious fusion?',
+      'The cosmic wind of Vāyu has swept the broken clusters into free, isolated Paramāṇus! But they fly wildly in chaos. What is the secret to bringing them into harmonious, permanent fusion?',
     kanadaAnswer:
-      'Tune the Guṇa Triad! Matter is an undulating property soup. Adjust Cohesion (Sneha), Fluidity (Dravatva), and Kinetic Heat (Uṣṇa) into the 45%–65% Synergy Window. When the qualities harmonize (साम्य), the false illusion of separation dissolves completely!',
+      'Chaos precedes order, Bodhi. Matter is now an undulating property soup. To bridge them, you must bring the Guṇa Triad into absolute equilibrium (Sāmya). You must balance Sneha (Cohesion) to eliminate interfacial rejection, Dravatva (Fluidity) to allow structural mobility, and Uṣṇa (Kinetic Heat) to maintain the reaction threshold. When these qualities achieve harmony, the false illusion of structural separation dissolves. In this state of balance, the isolated identities of the original components are entirely undone, preparing the free atoms to form something unified.',
     sutraInsight:
-      'गुणानां साम्येन कार्योत्पत्तिः · Creation and transformation emerge when underlying qualities achieve equilibrium (Praśastapāda Bhāṣya)',
+      'गुणानां साम्येन कार्योत्पत्तिः — Creation and transformation emerge when underlying qualities achieve equilibrium (Praśastapāda Bhāṣya)',
     elementColor: '#10b981',
     soundType: 'wind',
   },
   {
     actNumber: 4,
     icon: '✨🌌',
-    titleDev: 'अङ्कः ४ · समवाय-सिद्धिः (Inseparable Inherence)',
-    titleEn: 'Act 4: Inseparable Inherence (Binding Samavāya into Trasareṇu)',
+    titleDev: 'अङ्क ४ - समवाय-सिद्धिः (Inseparable Inherence & Modern Synthesis)',
+    titleEn: 'Act 4: Inseparable Inherence & Modern Chemical Synthesis',
+    visualContext:
+      'The highly excited atomic cloud collapses inward, locking into strong, stable Tryanukas (Triads). The interface splits to show a direct parallel: Kaṇāda’s Samavāya framework mapping onto modern intramolecular chemical bonding and phase dissolution.',
     bodhiQuestion:
-      'Deva, what happens when we bind them through Samavāya?',
+      'Deva! The free, isolated atoms have instantly snapped together. Should we call this state permanent?',
     kanadaAnswer:
-      'Inseparable Inherence (समवायः)! The free atoms collapse inward and bind permanently into dancing Tryaṇukas (त्रसरेणु)—the luminous motes seen dancing in sunbeams. Matter has transcended its illusion and exists harmonized in eternal Space (Ākāśa)!',
+      'Nothing in the manifest universe is truly permanent (Anitya), Bodhi. Instead, recognize this as an inseparable structural integrity. The highly excited atoms have bound into Tryanukas (त्रसरेणु)—forming a bond so strong that the components cannot be isolated without completely destroying the identity of the new macro-substance. Look closely at how this ancient insight mirrors the natural philosophy of the modern era:',
+    kanadaConclusion:
+      'What we call Samavāya—the inseparable relationship between a whole and its parts—modern science observes as the transition from a mere physical mixture to an intrinsic chemical compound. The original phases are gone; a unified substance is born.',
     sutraInsight:
-      'अयुतसिद्धयोरिहाधार्यभूतः सम्बन्धः समवायः · Samavāya is the eternal, inseparable inherence of parts within the whole (Vaiśeṣika Sūtra / Tarkasaṁgraha)',
+      'अयुतसिद्धयोरिहाधार्यभूतः सम्बन्धः समवायः — Samavāya is the eternal, inseparable inherence of parts within the whole (Vaiśeṣika Sūtra / Tarkasaṁgraha)',
     elementColor: '#a855f7',
     soundType: 'samavaya',
+    synthesisTable: [
+      {
+        sanskrit: 'संयोग (Saṁyoga)',
+        vaisheshikaDesc: 'Contingent, mechanical contact',
+        modernConcept: 'Mechanical Mixtures & Suspensions',
+        modernDesc:
+          'Two distinct phases (like oil and water) held by temporary interfacial tension that can be easily separated.',
+      },
+      {
+        sanskrit: 'पाकज-परमाणु (Pākaja-Paramāṇu)',
+        vaisheshikaDesc: 'Thermal activation of fundamental units',
+        modernConcept: 'Activation Energy & Radical Dissociation',
+        modernDesc:
+          'Thermal kinetic energy breaking intermolecular bonds to generate highly reactive, free elemental states.',
+      },
+      {
+        sanskrit: 'गुण-साम्य (Guṇa-Sāmya)',
+        vaisheshikaDesc: 'Equilibrium of underlying qualities',
+        modernConcept: 'Thermodynamic Equilibrium',
+        modernDesc:
+          'Tuning temperature, entropy, and structural fluidity until the free energy allows phases to transition.',
+      },
+      {
+        sanskrit: 'समवाय (Samavāya)',
+        vaisheshikaDesc: 'Inseparable, internal inherence',
+        modernConcept: 'Intramolecular Chemical Bonding',
+        modernDesc:
+          'The formation of strong, localized covalent or ionic bonds that create an entirely new chemical entity with distinct properties.',
+      },
+    ],
   },
 ];
 
-// Helper to strip markdown and bracketed annotations for natural, soft speech synthesis
+// Helper to strip markdown, special symbols, and parenthetical annotations for natural speech
 const formatForPleasantSpeech = (text: string): string => {
   return text
-    .replace(/\(.*?\)/g, '') // remove parenthetical Sanskrit or transliterations
-    .replace(/[\[\]{}*_~`#]/g, '') // strip markdown characters
+    .replace(/\(.*?\)/g, '')
+    .replace(/[\[\]{}*_~`#]/g, '')
     .replace(/➔|—|–/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -118,14 +168,14 @@ const getIndianAccentVoice = (
   });
 
   if (speaker === 'Bodhi') {
-    // Disciple Bodhi: youthful, bright Indian voice
+    // Disciple Bodhi: youthful, inquisitive Indian voice
     const bodhiVoice = indianVoices.find((v) =>
       /veena|heera|lekha|neerja|swara|kalpana|priya|ananya|aditi|female|girl/i.test(v.name)
     );
     if (bodhiVoice) return bodhiVoice;
     if (indianVoices.length > 0) return indianVoices[0];
   } else {
-    // Sage Kaṇāda: deep, contemplative Indian guru voice
+    // Maharṣi Kaṇāda: deep, contemplative Indian guru voice
     const kanadaVoice = indianVoices.find((v) =>
       /rishi|ravi|madhur|hemant|male|man|google हिन्दी|google hindi/i.test(v.name)
     );
@@ -165,7 +215,14 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
   const [activeSpeaker, setActiveSpeaker] = useState<'Bodhi' | 'Kaṇāda' | null>(null);
 
   const autoPlayTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isPlayingRef = useRef<boolean>(isPlaying);
+  const isCancellingRef = useRef<boolean>(false);
   const act = MOVIE_ACTS[currentActIdx];
+
+  // Keep isPlayingRef in sync
+  useEffect(() => {
+    isPlayingRef.current = isPlaying;
+  }, [isPlaying]);
 
   // Preload voices
   useEffect(() => {
@@ -199,7 +256,10 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
 
   // Handle Speech & Auto-Play Transition Loop
   useEffect(() => {
-    if (autoPlayTimerRef.current) clearTimeout(autoPlayTimerRef.current);
+    if (autoPlayTimerRef.current) {
+      clearTimeout(autoPlayTimerRef.current);
+      autoPlayTimerRef.current = null;
+    }
 
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       window.speechSynthesis.cancel();
@@ -210,47 +270,61 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
 
     if (!voiceEnabled || typeof window === 'undefined' || !('speechSynthesis' in window)) {
       // Simple timer when voice is disabled
-      const timerDuration = speedMultiplier === 1 ? 6800 : 4500;
+      const timerDuration = speedMultiplier === 1 ? (act.actNumber === 4 ? 12000 : 7800) : (act.actNumber === 4 ? 8000 : 5200);
       autoPlayTimerRef.current = setTimeout(() => {
+        if (!isPlayingRef.current || isCancellingRef.current) return;
         if (currentActIdx < MOVIE_ACTS.length - 1) {
           setCurrentActIdx((i) => i + 1);
         } else {
+          isPlayingRef.current = false;
           setIsPlaying(false);
         }
       }, timerDuration);
       return;
     }
 
-    // Two-turn speech orchestration: Bodhi first, then Guru Kaṇāda
+    // Two-turn speech orchestration: Bodhi first, then Maharṣi Kaṇāda
     const speakBodhi = () => {
-      if (!isPlaying) return;
+      if (!isPlayingRef.current || isCancellingRef.current) return;
       setActiveSpeaker('Bodhi');
 
       const cleanText = formatForPleasantSpeech(act.bodhiQuestion);
       const utterance = new SpeechSynthesisUtterance(cleanText);
-      utterance.volume = 0.76;
+      utterance.volume = 0.78;
       utterance.pitch = 1.08; // Youthful disciple
       utterance.rate = speedMultiplier === 1 ? 0.92 : 1.15;
       const voice = getIndianAccentVoice('Bodhi');
       if (voice) utterance.voice = voice;
 
       utterance.onend = () => {
-        autoPlayTimerRef.current = setTimeout(speakKanada, 700);
+        if (!isPlayingRef.current || isCancellingRef.current) return;
+        autoPlayTimerRef.current = setTimeout(() => {
+          if (!isPlayingRef.current || isCancellingRef.current) return;
+          speakKanada();
+        }, 700);
       };
-      utterance.onerror = () => {
-        autoPlayTimerRef.current = setTimeout(speakKanada, 500);
+      utterance.onerror = (e) => {
+        if (!isPlayingRef.current || isCancellingRef.current) return;
+        if (e && (e.error === 'canceled' || e.error === 'interrupted')) return;
+        autoPlayTimerRef.current = setTimeout(() => {
+          if (!isPlayingRef.current || isCancellingRef.current) return;
+          speakKanada();
+        }, 500);
       };
 
       window.speechSynthesis.speak(utterance);
     };
 
     const speakKanada = () => {
-      if (!isPlaying) return;
+      if (!isPlayingRef.current || isCancellingRef.current) return;
       setActiveSpeaker('Kaṇāda');
 
-      const cleanText = formatForPleasantSpeech(act.kanadaAnswer);
+      const fullKanadaText = act.kanadaConclusion
+        ? `${act.kanadaAnswer} ${act.kanadaConclusion}`
+        : act.kanadaAnswer;
+      const cleanText = formatForPleasantSpeech(fullKanadaText);
       const utterance = new SpeechSynthesisUtterance(cleanText);
-      utterance.volume = 0.82;
+      utterance.volume = 0.84;
       utterance.pitch = 0.86; // Deep meditative guru
       utterance.rate = speedMultiplier === 1 ? 0.84 : 1.05;
       const voice = getIndianAccentVoice('Kaṇāda');
@@ -258,24 +332,31 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
 
       utterance.onend = () => {
         setActiveSpeaker(null);
+        if (!isPlayingRef.current || isCancellingRef.current) return;
         autoPlayTimerRef.current = setTimeout(() => {
+          if (!isPlayingRef.current || isCancellingRef.current) return;
           if (currentActIdx < MOVIE_ACTS.length - 1) {
             setCurrentActIdx((i) => i + 1);
             soundEffects.playStrokeChime();
           } else {
+            isPlayingRef.current = false;
             setIsPlaying(false);
           }
-        }, 1800);
+        }, act.actNumber === 4 ? 4000 : 2000);
       };
-      utterance.onerror = () => {
+      utterance.onerror = (e) => {
         setActiveSpeaker(null);
+        if (!isPlayingRef.current || isCancellingRef.current) return;
+        if (e && (e.error === 'canceled' || e.error === 'interrupted')) return;
         autoPlayTimerRef.current = setTimeout(() => {
+          if (!isPlayingRef.current || isCancellingRef.current) return;
           if (currentActIdx < MOVIE_ACTS.length - 1) {
             setCurrentActIdx((i) => i + 1);
           } else {
+            isPlayingRef.current = false;
             setIsPlaying(false);
           }
-        }, 1200);
+        }, 1500);
       };
 
       window.speechSynthesis.speak(utterance);
@@ -284,7 +365,10 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
     speakBodhi();
 
     return () => {
-      if (autoPlayTimerRef.current) clearTimeout(autoPlayTimerRef.current);
+      if (autoPlayTimerRef.current) {
+        clearTimeout(autoPlayTimerRef.current);
+        autoPlayTimerRef.current = null;
+      }
       if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
         window.speechSynthesis.cancel();
       }
@@ -293,15 +377,38 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
 
   const togglePlay = () => {
     const nextState = !isPlaying;
+    isPlayingRef.current = nextState;
     setIsPlaying(nextState);
-    if (!nextState && typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
+
+    if (!nextState) {
+      // PAUSING: stop speech and all pending timers immediately
+      isCancellingRef.current = true;
+      if (autoPlayTimerRef.current) {
+        clearTimeout(autoPlayTimerRef.current);
+        autoPlayTimerRef.current = null;
+      }
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
       setActiveSpeaker(null);
+      setTimeout(() => {
+        isCancellingRef.current = false;
+      }, 100);
+    } else {
+      isCancellingRef.current = false;
     }
     soundEffects.playStrokeChime();
   };
 
   const handleNext = () => {
+    if (autoPlayTimerRef.current) {
+      clearTimeout(autoPlayTimerRef.current);
+      autoPlayTimerRef.current = null;
+    }
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      setActiveSpeaker(null);
+    }
     if (currentActIdx < MOVIE_ACTS.length - 1) {
       setCurrentActIdx((i) => i + 1);
     } else {
@@ -311,6 +418,14 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
   };
 
   const handlePrev = () => {
+    if (autoPlayTimerRef.current) {
+      clearTimeout(autoPlayTimerRef.current);
+      autoPlayTimerRef.current = null;
+    }
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      setActiveSpeaker(null);
+    }
     if (currentActIdx > 0) {
       setCurrentActIdx((i) => i - 1);
     } else {
@@ -320,20 +435,34 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
   };
 
   const handleReplay = () => {
+    if (autoPlayTimerRef.current) {
+      clearTimeout(autoPlayTimerRef.current);
+      autoPlayTimerRef.current = null;
+    }
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      setActiveSpeaker(null);
+    }
     setCurrentActIdx(0);
+    isPlayingRef.current = true;
     setIsPlaying(true);
     soundEffects.playStrokeChime();
   };
 
-  // Click on single speaker dialogue to re-hear it
+  // Re-hear a specific speaker's dialogue turn
   const handleManualSpeakTurn = (speaker: 'Bodhi' | 'Kaṇāda') => {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
     window.speechSynthesis.cancel();
 
-    const text = speaker === 'Bodhi' ? act.bodhiQuestion : act.kanadaAnswer;
+    const text =
+      speaker === 'Bodhi'
+        ? act.bodhiQuestion
+        : act.kanadaConclusion
+        ? `${act.kanadaAnswer} ${act.kanadaConclusion}`
+        : act.kanadaAnswer;
     const cleanText = formatForPleasantSpeech(text);
     const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.volume = 0.78;
+    utterance.volume = 0.8;
     const voice = getIndianAccentVoice(speaker);
     if (voice) utterance.voice = voice;
 
@@ -439,6 +568,27 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
           <span style={{ fontSize: '2rem' }}>{act.icon}</span>
         </div>
 
+        {/* Visual Context Banner */}
+        <div
+          style={{
+            background: 'rgba(15, 23, 42, 0.75)',
+            borderLeft: `3px solid ${act.elementColor}`,
+            padding: '0.45rem 0.75rem',
+            borderRadius: '6px',
+            margin: '0.55rem 0 0.4rem',
+            fontSize: '0.78rem',
+            color: '#cbd5e1',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.4rem',
+          }}
+        >
+          <span style={{ fontSize: '0.9rem' }}>👁️</span>
+          <span>
+            <strong>Visual Context:</strong> {act.visualContext}
+          </span>
+        </div>
+
         {/* Dynamic Visual Stage Area */}
         <div className="akasa-autoplay-visual">
           <svg
@@ -460,10 +610,10 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
             {/* Background Cosmic Glow */}
             <ellipse cx="270" cy="105" rx="230" ry="90" fill="url(#gunaNebula)" />
 
-            {/* ACT 1 ANIMATION: Immiscible Oil & Water clusters repelling with Sneha friction */}
+            {/* ACT 1 ANIMATION: Polarized Water & Oil boundary with interfacial friction */}
             {act.actNumber === 1 && (
               <g>
-                {/* Water Cluster (Cyan / Left) */}
+                {/* Water (Ap) Cluster (Cyan / Left) */}
                 <g transform="translate(140, 105)">
                   <circle cx="0" cy="0" r="42" fill="rgba(14, 165, 233, 0.18)" stroke="#38bdf8" strokeWidth="2" strokeDasharray="4 2" />
                   <circle cx="-16" cy="-12" r="8" fill="#38bdf8" />
@@ -472,27 +622,26 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
                   <circle cx="16" cy="12" r="7.5" fill="#0ea5e9" />
                   <circle cx="0" cy="0" r="8.5" fill="#7dd3fc" />
                   <text x="0" y="58" textAnchor="middle" fill="#7dd3fc" fontSize="11" fontWeight="800">
-                    💧 Water (High Sneha)
+                    💧 Water (Ap · High Sneha)
                   </text>
                 </g>
 
                 {/* Repulsion Interface Clash */}
                 <g transform="translate(270, 105)">
                   <line x1="0" y1="-65" x2="0" y2="65" stroke="#ef4444" strokeWidth="3" strokeDasharray="6 3" />
-                  {/* Repulsive force arrows */}
                   <path d="M -15 -20 L -30 -20 M -24 -26 L -30 -20 L -24 -14" stroke="#ef4444" strokeWidth="2.5" fill="none" />
                   <path d="M 15 -20 L 30 -20 M 24 -26 L 30 -20 L 24 -14" stroke="#ef4444" strokeWidth="2.5" fill="none" />
                   <path d="M -15 20 L -30 20 M -24 14 L -30 20 L -24 26" stroke="#ef4444" strokeWidth="2.5" fill="none" />
                   <path d="M 15 20 L 30 20 M 24 14 L 30 20 L 24 26" stroke="#ef4444" strokeWidth="2.5" fill="none" />
                   <text x="0" y="-72" textAnchor="middle" fill="#fca5a5" fontSize="10.5" fontWeight="900">
-                    ⚡ SNEHA FRICTION CLASH
+                    ⚡ INTERFACIAL FRICTION
                   </text>
                   <text x="0" y="80" textAnchor="middle" fill="#fca5a5" fontSize="9.5" fontWeight="700">
-                    Polarity Mismatch · Immiscible
+                    Structural Sneha Mismatch
                   </text>
                 </g>
 
-                {/* Oil Cluster (Amber / Right) */}
+                {/* Oil (Taila) Cluster (Amber / Right) */}
                 <g transform="translate(400, 105)">
                   <circle cx="0" cy="0" r="42" fill="rgba(234, 179, 8, 0.18)" stroke="#eab308" strokeWidth="2" strokeDasharray="4 2" />
                   <circle cx="-14" cy="-14" r="8" fill="#eab308" />
@@ -501,7 +650,7 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
                   <circle cx="16" cy="14" r="7" fill="#eab308" />
                   <circle cx="0" cy="0" r="8.5" fill="#fef08a" />
                   <text x="0" y="58" textAnchor="middle" fill="#fde047" fontSize="11" fontWeight="800">
-                    🛢️ Oil (Non-Polar Clump)
+                    🛢️ Oil (Taila · Non-Polar)
                   </text>
                 </g>
               </g>
@@ -510,7 +659,6 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
             {/* ACT 2 ANIMATION: Thermal Tejas injection breaking interfacial mask */}
             {act.actNumber === 2 && (
               <g>
-                {/* Softening Boundary in Center */}
                 <ellipse cx="270" cy="105" rx="140" ry="60" fill="rgba(249, 115, 22, 0.15)" stroke="#f97316" strokeWidth="2" strokeDasharray="8 4" />
 
                 {/* Thermal Flame Pillars */}
@@ -527,7 +675,7 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
                   );
                 })}
 
-                {/* Agitated dissolving atoms */}
+                {/* Vibrating agitated atoms */}
                 <circle cx="190" cy="100" r="8" fill="#38bdf8" opacity="0.9" />
                 <circle cx="215" cy="85" r="7" fill="#facc15" opacity="0.9" />
                 <circle cx="240" cy="115" r="7.5" fill="#38bdf8" opacity="0.9" />
@@ -536,22 +684,21 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
                 <circle cx="350" cy="95" r="8" fill="#facc15" opacity="0.9" />
 
                 <text x="270" y="42" textAnchor="middle" fill="#fdba74" fontSize="11" fontWeight="900">
-                  🔥 तेजः-संयोगः (Injecting Tejas Thermal Heat)
+                  🔥 पीलुपाक-प्रक्रिया (Pīlupāka · Thermal Cooking)
                 </text>
                 <text x="270" y="175" textAnchor="middle" fill="#fde047" fontSize="10.5" fontWeight="800">
-                  Thermal Kinetic Agitation Disintegrates Rigid Interfacial Bonds
+                  Tejas Agitation Dismantles Macro-Structures into Reactive Elements
                 </text>
               </g>
             )}
 
-            {/* ACT 3 ANIMATION: 56 free Paramāṇus in Dynamic Property Soup & Synergy Window */}
+            {/* ACT 3 ANIMATION: Swirling balanced cloud blended by Vāyu vectors */}
             {act.actNumber === 3 && (
               <g>
-                {/* 45% - 65% Synergy Target Glow Orbit */}
                 <circle cx="270" cy="105" r="76" fill="rgba(16, 185, 129, 0.12)" stroke="#10b981" strokeWidth="2.5" strokeDasharray="5 3" />
                 <circle cx="270" cy="105" r="45" fill="rgba(16, 185, 129, 0.08)" stroke="#34d399" strokeWidth="1.5" />
 
-                {/* Free Atoms swirling in dynamic soup */}
+                {/* Swirling liberated Paramāṇus */}
                 {Array.from({ length: 28 }, (_, i) => {
                   const angle = (i / 28) * Math.PI * 2;
                   const rad = 25 + ((i * 17) % 55);
@@ -571,49 +718,64 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
                   );
                 })}
 
-                {/* Dynamic kinetic vortex arrows */}
+                {/* Vāyu kinetic vortex vectors blending the atoms */}
                 <path d="M 230 45 Q 270 30 310 45" fill="none" stroke="#6ee7b7" strokeWidth="2" strokeDasharray="4 2" />
                 <path d="M 310 165 Q 270 180 230 165" fill="none" stroke="#6ee7b7" strokeWidth="2" strokeDasharray="4 2" />
 
                 <text x="270" y="28" textAnchor="middle" fill="#6ee7b7" fontSize="11" fontWeight="900">
-                  🌀 45%–65% SYNERGY WINDOW (साम्य-सिद्धम्)
+                  💨 VĀYU VECTORS &amp; GUṆA-SĀMYAM EQUILIBRIUM
                 </text>
                 <text x="270" y="192" textAnchor="middle" fill="#a7f3d0" fontSize="10" fontWeight="700">
-                  Vāyu sweeps atoms free · Guṇa Triad balanced into dynamic equilibrium
+                  Dynamic Property Soup: Sneha, Dravatva &amp; Uṣṇa in absolute balance
                 </text>
               </g>
             )}
 
-            {/* ACT 4 ANIMATION: Samavāya Binding into dancing Trasareṇu motes */}
+            {/* ACT 4 ANIMATION: Interface split showing Tryanuka collapse + Modern bonding */}
             {act.actNumber === 4 && (
               <g>
-                {/* Luminous Sunbeam Rays streaming through Space */}
-                <polygon points="170,0 210,0 370,210 330,210" fill="rgba(250, 204, 21, 0.1)" />
-                <polygon points="230,0 270,0 430,210 390,210" fill="rgba(250, 204, 21, 0.16)" />
-
-                {/* Outer Inseparable Inherence Ether Aura */}
-                <ellipse cx="270" cy="105" rx="150" ry="70" fill="none" stroke="#c084fc" strokeWidth="1.8" opacity="0.6" strokeDasharray="6 3" />
-
-                {/* Dancing Trasareṇu Triads in Sunbeam */}
-                <g transform="translate(230, 95)">
-                  <circle cx="0" cy="-10" r="6" fill="#facc15" stroke="#ffffff" strokeWidth="1.5" />
-                  <circle cx="-9" cy="6" r="6" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.5" />
-                  <circle cx="9" cy="6" r="6" fill="#f97316" stroke="#ffffff" strokeWidth="1.5" />
-                  <circle cx="0" cy="0" r="16" fill="rgba(250, 204, 21, 0.25)" />
+                {/* Left Half: Kaṇāda's Tryaṇuka / Trasareṇu collapse */}
+                <g transform="translate(180, 105)">
+                  <ellipse cx="0" cy="0" rx="75" ry="55" fill="rgba(168, 85, 247, 0.15)" stroke="#c084fc" strokeWidth="1.5" strokeDasharray="4 2" />
+                  {/* Tryaṇuka Triad */}
+                  <circle cx="0" cy="-14" r="7" fill="#facc15" stroke="#ffffff" strokeWidth="1.5" />
+                  <circle cx="-12" cy="10" r="7" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.5" />
+                  <circle cx="12" cy="10" r="7" fill="#f97316" stroke="#ffffff" strokeWidth="1.5" />
+                  <circle cx="0" cy="0" r="22" fill="rgba(250, 204, 21, 0.2)" />
+                  <text x="0" y="44" textAnchor="middle" fill="#fef08a" fontSize="9.5" fontWeight="800">
+                    त्रसरेणुः (Tryaṇuka)
+                  </text>
+                  <text x="0" y="58" textAnchor="middle" fill="#c084fc" fontSize="8" fontWeight="700">
+                    Inseparable Inherence
+                  </text>
                 </g>
 
-                <g transform="translate(310, 115)">
-                  <circle cx="0" cy="-10" r="6" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.5" />
-                  <circle cx="-9" cy="6" r="6" fill="#facc15" stroke="#ffffff" strokeWidth="1.5" />
-                  <circle cx="9" cy="6" r="6" fill="#a855f7" stroke="#ffffff" strokeWidth="1.5" />
-                  <circle cx="0" cy="0" r="16" fill="rgba(168, 85, 247, 0.25)" />
-                </g>
-
-                <text x="270" y="32" textAnchor="middle" fill="#c084fc" fontSize="11" fontWeight="900">
-                  ✨ समवायः (Inseparable Inherence) in Eternal Ākāśa
+                {/* Golden Center Synthesis Portal */}
+                <line x1="270" y1="20" x2="270" y2="190" stroke="#facc15" strokeWidth="2.5" strokeDasharray="5 3" />
+                <circle cx="270" cy="105" r="14" fill="#0f172a" stroke="#facc15" strokeWidth="2" />
+                <text x="270" y="109" textAnchor="middle" fill="#facc15" fontSize="11" fontWeight="900">
+                  ⇄
                 </text>
-                <text x="270" y="184" textAnchor="middle" fill="#fde047" fontSize="10.5" fontWeight="800">
-                  ☀️ Dancing Trasareṇu Sunbeam Motes: Transcending Rigid State Masks!
+
+                {/* Right Half: Modern Intramolecular Chemical Bonding */}
+                <g transform="translate(360, 105)">
+                  <ellipse cx="0" cy="0" rx="75" ry="55" fill="rgba(14, 165, 233, 0.15)" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="4 2" />
+                  {/* Molecular Covalent Bonding Orbital */}
+                  <ellipse cx="-14" cy="0" rx="18" ry="12" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
+                  <ellipse cx="14" cy="0" rx="18" ry="12" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
+                  <circle cx="-14" cy="0" r="7" fill="#38bdf8" />
+                  <circle cx="14" cy="0" r="7" fill="#0284c7" />
+                  <circle cx="0" cy="0" r="4" fill="#ffffff" />
+                  <text x="0" y="44" textAnchor="middle" fill="#7dd3fc" fontSize="9.5" fontWeight="800">
+                    Chemical Compound
+                  </text>
+                  <text x="0" y="58" textAnchor="middle" fill="#93c5fd" fontSize="8" fontWeight="700">
+                    Intramolecular Bonding
+                  </text>
+                </g>
+
+                <text x="270" y="22" textAnchor="middle" fill="#fde047" fontSize="11" fontWeight="900">
+                  ✨ SAMAVĀYA ⇄ MODERN CHEMICAL BONDING SYNTHESIS
                 </text>
               </g>
             )}
@@ -628,57 +790,141 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
               display: 'flex',
               alignItems: 'flex-start',
               gap: '0.65rem',
-              marginBottom: '0.45rem',
+              marginBottom: '0.55rem',
               cursor: 'pointer',
-              padding: '0.2rem',
+              padding: '0.3rem',
               borderRadius: '6px',
-              backgroundColor: activeSpeaker === 'Bodhi' ? 'rgba(56, 189, 248, 0.12)' : 'transparent',
+              backgroundColor: activeSpeaker === 'Bodhi' ? 'rgba(56, 189, 248, 0.15)' : 'transparent',
               transition: 'background 0.2s ease',
             }}
             onClick={() => handleManualSpeakTurn('Bodhi')}
             title="Click to hear Bodhi speak"
           >
-            <span style={{ fontSize: '1.4rem' }}>🧑‍🎓</span>
+            <span style={{ fontSize: '1.45rem' }}>🧑‍🎓</span>
             <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <strong style={{ color: '#7dd3fc', fontSize: '0.85rem' }}>शिष्यः बोधिः (Disciple Bodhi):</strong>
+                <strong style={{ color: '#7dd3fc', fontSize: '0.86rem' }}>शिष्यः बोधिः (Disciple Bodhi):</strong>
                 {activeSpeaker === 'Bodhi' && (
                   <span style={{ fontSize: '0.68rem', color: '#38bdf8', fontWeight: 700 }}>🔊 Speaking...</span>
                 )}
               </div>
-              <div style={{ color: '#f1f5f9', fontSize: '0.86rem', lineHeight: 1.45 }}>{act.bodhiQuestion}</div>
+              <div style={{ color: '#f1f5f9', fontSize: '0.86rem', lineHeight: 1.5, marginTop: '0.15rem' }}>
+                &ldquo;{act.bodhiQuestion}&rdquo;
+              </div>
             </div>
           </div>
 
-          {/* Guru Kaṇāda Answer */}
+          {/* Maharṣi Kaṇāda Answer */}
           <div
             style={{
               display: 'flex',
               alignItems: 'flex-start',
               gap: '0.65rem',
-              paddingTop: '0.45rem',
+              paddingTop: '0.55rem',
               borderTop: '1px solid rgba(148, 163, 184, 0.2)',
               cursor: 'pointer',
-              padding: '0.35rem 0.2rem 0.2rem',
+              padding: '0.4rem 0.3rem 0.3rem',
               borderRadius: '6px',
-              backgroundColor: activeSpeaker === 'Kaṇāda' ? 'rgba(250, 204, 21, 0.12)' : 'transparent',
+              backgroundColor: activeSpeaker === 'Kaṇāda' ? 'rgba(250, 204, 21, 0.15)' : 'transparent',
               transition: 'background 0.2s ease',
             }}
             onClick={() => handleManualSpeakTurn('Kaṇāda')}
-            title="Click to hear Guru Kaṇāda speak"
+            title="Click to hear Maharṣi Kaṇāda speak"
           >
-            <span style={{ fontSize: '1.4rem' }}>🧘‍♂️</span>
+            <span style={{ fontSize: '1.45rem' }}>🧘‍♂️</span>
             <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <strong style={{ color: '#fef08a', fontSize: '0.85rem' }}>महर्षिः कणादः (Sage Kaṇāda):</strong>
+                <strong style={{ color: '#fef08a', fontSize: '0.86rem' }}>महर्षिः कणादः (Maharṣi Kaṇāda):</strong>
                 {activeSpeaker === 'Kaṇāda' && (
                   <span style={{ fontSize: '0.68rem', color: '#facc15', fontWeight: 700 }}>🔊 Speaking...</span>
                 )}
               </div>
-              <div style={{ color: '#e2e8f0', fontSize: '0.86rem', lineHeight: 1.45 }}>{act.kanadaAnswer}</div>
-              <div style={{ fontStyle: 'italic', color: '#94a3b8', fontSize: '0.74rem', marginTop: '0.25rem' }}>
-                💡 Sūtra: {act.sutraInsight}
+              <div style={{ color: '#e2e8f0', fontSize: '0.86rem', lineHeight: 1.55, marginTop: '0.2rem' }}>
+                &ldquo;{act.kanadaAnswer}&rdquo;
               </div>
+
+              {/* Sūtra Citation Badge */}
+              <div
+                style={{
+                  background: 'rgba(15, 23, 42, 0.85)',
+                  borderLeft: '3px solid #facc15',
+                  padding: '0.35rem 0.65rem',
+                  borderRadius: '6px',
+                  marginTop: '0.45rem',
+                  fontSize: '0.76rem',
+                  color: '#cbd5e1',
+                }}
+              >
+                💡 <strong>Sūtra:</strong> {act.sutraInsight}
+              </div>
+
+              {/* ACT 4 SPECIAL: The Ancient & Modern Synthesis Parallel Table */}
+              {act.synthesisTable && (
+                <div style={{ marginTop: '0.85rem' }}>
+                  <div style={{ color: '#fde047', fontWeight: 800, fontSize: '0.86rem', marginBottom: '0.45rem' }}>
+                    🔬 Kaṇāda&rsquo;s Vaiśeṣika Framework ⇄ Modern Chemical Observations
+                  </div>
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr',
+                      gap: '0.5rem',
+                      background: 'rgba(15, 23, 42, 0.9)',
+                      border: '1px solid rgba(148, 163, 184, 0.25)',
+                      borderRadius: '8px',
+                      padding: '0.6rem',
+                      overflowX: 'auto',
+                    }}
+                  >
+                    {act.synthesisTable.map((row, rIdx) => (
+                      <div
+                        key={rIdx}
+                        style={{
+                          display: 'grid',
+                          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                          gap: '0.65rem',
+                          padding: '0.55rem',
+                          background: rIdx % 2 === 0 ? 'rgba(30, 41, 59, 0.6)' : 'rgba(15, 23, 42, 0.6)',
+                          borderRadius: '6px',
+                          borderLeft: '3px solid #38bdf8',
+                        }}
+                      >
+                        <div>
+                          <strong style={{ color: '#fef08a', fontSize: '0.82rem', display: 'block' }}>
+                            {row.sanskrit}
+                          </strong>
+                          <span style={{ color: '#94a3b8', fontSize: '0.75rem' }}>{row.vaisheshikaDesc}</span>
+                        </div>
+                        <div>
+                          <strong style={{ color: '#7dd3fc', fontSize: '0.82rem', display: 'block' }}>
+                            {row.modernConcept}
+                          </strong>
+                          <span style={{ color: '#cbd5e1', fontSize: '0.75rem', lineHeight: 1.4, display: 'block' }}>
+                            {row.modernDesc}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Act 4 Concluding Reflection */}
+              {act.kanadaConclusion && (
+                <div
+                  style={{
+                    color: '#e2e8f0',
+                    fontSize: '0.86rem',
+                    lineHeight: 1.55,
+                    marginTop: '0.65rem',
+                    fontStyle: 'italic',
+                    paddingLeft: '0.5rem',
+                    borderLeft: '2px solid rgba(250, 204, 21, 0.6)',
+                  }}
+                >
+                  &ldquo;{act.kanadaConclusion}&rdquo;
+                </div>
+              )}
             </div>
           </div>
         </div>
