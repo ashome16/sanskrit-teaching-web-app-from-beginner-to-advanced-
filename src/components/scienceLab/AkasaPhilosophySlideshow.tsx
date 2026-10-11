@@ -1437,24 +1437,69 @@ const formatForPleasantSpeech = (text: string): string => {
     .trim();
 };
 
-const getPleasantVoice = (speaker: 'Bodhi' | 'Kaṇāda'): SpeechSynthesisVoice | null => {
+const getIndianAccentVoice = (speaker: 'Bodhi' | 'Kaṇāda'): SpeechSynthesisVoice | null => {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return null;
   const voices = window.speechSynthesis.getVoices();
   if (!voices || voices.length === 0) return null;
 
-  const enVoices = voices.filter((v) => v.lang && v.lang.toLowerCase().startsWith('en'));
+  // Filter for authentic Indian English (en-IN) and Hindi (hi-IN) voices
+  const indianVoices = voices.filter((v) => {
+    const lang = (v.lang || '').toLowerCase().replace(/_/g, '-');
+    const name = (v.name || '').toLowerCase();
+    return (
+      lang === 'en-in' ||
+      lang === 'hi-in' ||
+      lang.startsWith('en-in') ||
+      lang.startsWith('hi-in') ||
+      name.includes('india') ||
+      name.includes('indian') ||
+      name.includes('hindi') ||
+      name.includes('हिन्दी') ||
+      name.includes('rishi') ||
+      name.includes('veena') ||
+      name.includes('lekha') ||
+      name.includes('neerja') ||
+      name.includes('heera') ||
+      name.includes('ravi') ||
+      name.includes('madhur') ||
+      name.includes('swara') ||
+      name.includes('hemant') ||
+      name.includes('kalpana')
+    );
+  });
+
+  if (speaker === 'Bodhi') {
+    // Disciple Bodhi: youthful, bright Indian voice (female/youthful timbre)
+    const bodhiVoice = indianVoices.find((v) =>
+      /veena|heera|lekha|neerja|swara|kalpana|priya|ananya|aditi|female|girl/i.test(v.name)
+    );
+    if (bodhiVoice) return bodhiVoice;
+    if (indianVoices.length > 0) return indianVoices[0];
+  } else {
+    // Sage Kaṇāda: deep, contemplative Indian guru voice (male/serene timbre)
+    const kanadaVoice = indianVoices.find((v) =>
+      /rishi|ravi|madhur|hemant|male|man|google हिन्दी|google hindi/i.test(v.name)
+    );
+    if (kanadaVoice) return kanadaVoice;
+    // If multiple Indian voices exist, choose an alternative distinct voice for the guru
+    if (indianVoices.length > 1) {
+      return indianVoices[1];
+    }
+    if (indianVoices.length > 0) return indianVoices[0];
+  }
+
+  // Graceful fallback for systems without Indian TTS: select distinct English voices
+  const enVoices = voices.filter((v) => (v.lang || '').toLowerCase().startsWith('en'));
   const candidatePool = enVoices.length > 0 ? enVoices : voices;
 
   if (speaker === 'Bodhi') {
-    // Gentle, clear, pleasant voice for the youthful student
     const match = candidatePool.find((v) =>
-      /Samantha|Victoria|Karen|Moira|Google US English|Zira|Jenny|en-US-Standard|Natural/i.test(v.name)
+      /samantha|victoria|karen|moira|zira|jenny|female|natural/i.test(v.name)
     );
     return match || candidatePool[0] || null;
   } else {
-    // Grounded, warm, serene voice for Sage Kaṇāda
     const match = candidatePool.find((v) =>
-      /Daniel|Rishi|Oliver|Google UK English Male|David|Alex|George|Guy|en-GB-Standard|Natural/i.test(v.name)
+      /daniel|oliver|david|alex|george|guy|male|natural/i.test(v.name)
     );
     return match || candidatePool[1] || candidatePool[0] || null;
   }
@@ -1541,18 +1586,19 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
           const cleanText = formatForPleasantSpeech(turn.en);
           const utterance = new SpeechSynthesisUtterance(cleanText);
 
-          // Pleasant soft mode: gentle volume and calm natural cadence
-          utterance.volume = 0.72;
-          const voice = getPleasantVoice(turn.speaker);
+          // Pleasant soft mode: gentle volume and authentic Indian character cadence
+          utterance.volume = 0.74;
+          const voice = getIndianAccentVoice(turn.speaker);
           if (voice) utterance.voice = voice;
 
-          // Bodhi: gentle youthful seeker; Kaṇāda: calm, tranquil sage
+          // Bodhi: youthful disciple with lively inquisitive Indian cadence
+          // Sage Kaṇāda: deep, meditative guru with measured philosophical pacing
           if (turn.speaker === 'Bodhi') {
-            utterance.pitch = 1.02;
-            utterance.rate = 0.88;
+            utterance.pitch = 1.08;
+            utterance.rate = 0.92;
           } else {
-            utterance.pitch = 0.94;
-            utterance.rate = 0.86;
+            utterance.pitch = 0.86;
+            utterance.rate = 0.84;
           }
 
           utterance.onend = () => {
@@ -1632,16 +1678,18 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
 
     const cleanText = formatForPleasantSpeech(turn.en);
     const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.volume = 0.72; // Pleasant soft mode
-    const voice = getPleasantVoice(turn.speaker);
+    utterance.volume = 0.74; // Pleasant soft mode
+    const voice = getIndianAccentVoice(turn.speaker);
     if (voice) utterance.voice = voice;
 
+    // Bodhi: youthful disciple with lively inquisitive Indian cadence
+    // Sage Kaṇāda: deep, meditative guru with measured philosophical pacing
     if (turn.speaker === 'Bodhi') {
-      utterance.pitch = 1.02;
-      utterance.rate = 0.88;
+      utterance.pitch = 1.08;
+      utterance.rate = 0.92;
     } else {
-      utterance.pitch = 0.94;
-      utterance.rate = 0.86;
+      utterance.pitch = 0.86;
+      utterance.rate = 0.84;
     }
 
     utterance.onend = () => {
