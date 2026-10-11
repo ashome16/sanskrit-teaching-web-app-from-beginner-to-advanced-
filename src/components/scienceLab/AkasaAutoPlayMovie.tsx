@@ -389,7 +389,7 @@ export const AkasaAutoPlayMovie: React.FC<AkasaAutoPlayMovieProps> = ({
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem', paddingTop: '0.4rem', borderTop: '1px solid rgba(148, 163, 184, 0.2)' }}>
             <span style={{ fontSize: '1.4rem' }}>🧘‍♂️</span>
             <div>
-              <strong style={{ color: '#fef08a', fontSize: '0.85rem' }}>महर्षिः कणादः (Sage Kaṇāda):</strong>
+              <strong style={{ color: '#fef08a', fontSize: '0.85rem' }}>गुरुः कणादः (Guru Kaṇāda):</strong>
               <div style={{ color: '#e2e8f0', fontSize: '0.86rem', lineHeight: 1.45 }}>{act.kanadaAnswer}</div>
               <div style={{ fontStyle: 'italic', color: '#94a3b8', fontSize: '0.74rem', marginTop: '0.25rem' }}>
                 💡 Sūtra: {act.sutraInsight}

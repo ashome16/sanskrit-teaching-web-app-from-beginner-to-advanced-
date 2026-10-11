@@ -6,7 +6,7 @@ import { soundEffects } from '../../utils/soundEffects';
 // =========================================================================
 
 export interface JourneyDialogueTurn {
-  speaker: 'Bodhi' | 'Kaṇāda';
+  speaker: 'Bodhi' | 'Kaṇāda' | 'Guru';
   dev: string;
   en: string;
   subText?: string;
@@ -723,7 +723,7 @@ export const JourneyKanadaAvatar: React.FC<{ size?: number; isSpeaking?: boolean
   <div
     className={`akasa-journey-avatar-frame is-kanada${isSpeaking ? ' is-speaking-pulse' : ''}`}
     style={{ width: size, height: size }}
-    title="महर्षिः कणादः (Maharshi Kaṇāda - Founder of Vaiśeṣika)"
+    title="गुरुः कणादः (Guru Kaṇāda - Revered Master)"
   >
     <svg viewBox="0 0 100 100" width={size} height={size}>
       <defs>
@@ -787,7 +787,7 @@ export const JourneyKanadaAvatar: React.FC<{ size?: number; isSpeaking?: boolean
 // SCENIC GRAPHIC VIEWPORTS (DEDICATED SVG ANIMATION STAGES)
 // =========================================================================
 
-export const ScenicStage: React.FC<{ stop: JourneyStop; activeSpeaker: 'Bodhi' | 'Kaṇāda' | null }> = ({
+export const ScenicStage: React.FC<{ stop: JourneyStop; activeSpeaker: 'Bodhi' | 'Kaṇāda' | 'Guru' | null }> = ({
   stop,
   activeSpeaker,
 }) => {
@@ -1368,18 +1368,18 @@ export const ScenicStage: React.FC<{ stop: JourneyStop; activeSpeaker: 'Bodhi' |
             height="105"
             rx="12"
             fill="rgba(15, 23, 42, 0.88)"
-            stroke={activeSpeaker === 'Kaṇāda' ? '#f59e0b' : 'rgba(245, 158, 11, 0.3)'}
-            strokeWidth={activeSpeaker === 'Kaṇāda' ? 2.5 : 1}
+            stroke={activeSpeaker === 'Kaṇāda' || activeSpeaker === 'Guru' ? '#f59e0b' : 'rgba(245, 158, 11, 0.3)'}
+            strokeWidth={activeSpeaker === 'Kaṇāda' || activeSpeaker === 'Guru' ? 2.5 : 1}
           />
           <foreignObject x="10" y="10" width="150" height="85">
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-              <JourneyKanadaAvatar size={48} isSpeaking={activeSpeaker === 'Kaṇāda'} />
+              <JourneyKanadaAvatar size={48} isSpeaking={activeSpeaker === 'Kaṇāda' || activeSpeaker === 'Guru'} />
               <div>
                 <strong style={{ color: '#fef08a', fontSize: '0.85rem', display: 'block' }}>
-                  महर्षिः कणादः
+                  गुरुः कणादः (Guru)
                 </strong>
-                <span style={{ color: '#94a3b8', fontSize: '0.7rem' }}>Founding Master</span>
-                {activeSpeaker === 'Kaṇāda' && (
+                <span style={{ color: '#94a3b8', fontSize: '0.7rem' }}>Revered Master</span>
+                {(activeSpeaker === 'Kaṇāda' || activeSpeaker === 'Guru') && (
                   <span className="akasa-speaking-tag is-kanada">🔊 Speaking</span>
                 )}
               </div>
@@ -1437,7 +1437,7 @@ const formatForPleasantSpeech = (text: string): string => {
     .trim();
 };
 
-const getIndianAccentVoice = (speaker: 'Bodhi' | 'Kaṇāda'): SpeechSynthesisVoice | null => {
+const getIndianAccentVoice = (speaker: 'Bodhi' | 'Kaṇāda' | 'Guru'): SpeechSynthesisVoice | null => {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return null;
   const voices = window.speechSynthesis.getVoices();
   if (!voices || voices.length === 0) return null;
@@ -1517,7 +1517,7 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
   const [currentStopIndex, setCurrentStopIndex] = useState(0);
   const [isVideoAutoTour, setIsVideoAutoTour] = useState(false);
   const [activeTurnIndex, setActiveTurnIndex] = useState<number | null>(null);
-  const [activeSpeaker, setActiveSpeaker] = useState<'Bodhi' | 'Kaṇāda' | null>(null);
+  const [activeSpeaker, setActiveSpeaker] = useState<'Bodhi' | 'Kaṇāda' | 'Guru' | null>(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [showFullVault, setShowFullVault] = useState(true);
 
@@ -1731,7 +1731,7 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
   };
 
   return (
-    <div className="akasa-journey-wrapper" role="region" aria-label="Bodhi & Sage Kaṇāda Dialogue Journey">
+    <div className="akasa-journey-wrapper" role="region" aria-label="Bodhi & Guru Dialogue Journey">
       {/* =====================================================================
           1. TOP CONTROLS: TIMELINE VIDEO TOUR SWITCHER & QUICK ACTIONS
           ===================================================================== */}
@@ -1829,11 +1829,11 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <span style={{ fontSize: '1.2rem' }}>💬</span>
             <h3 className="akasa-dialogue-sec-title">
-              संवादः · Two Minds in Inquiry at {activeStop.placeNameEn}
+              संवादः · Bodhi & Guru in Inquiry at {activeStop.placeNameEn}
             </h3>
           </div>
           <span style={{ fontSize: '0.74rem', color: '#94a3b8' }}>
-            Click any speech bubble to hear dialogue audio
+            Click any speech bubble to hear Bodhi or Guru speak
           </span>
         </div>
 
@@ -1855,7 +1855,7 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
                     <JourneyKanadaAvatar size={42} isSpeaking={isTurnActive} />
                   )}
                   <span className={`akasa-turn-speaker-badge ${isBodhi ? 'is-bodhi' : 'is-kanada'}`}>
-                    {isBodhi ? 'Bodhi (शिष्यः)' : 'Kaṇāda (ऋषिः)'}
+                    {isBodhi ? 'Bodhi (शिष्यः)' : 'Guru (गुरुः)'}
                   </span>
                 </div>
 
@@ -1867,7 +1867,7 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
                 >
                   <div className="akasa-bubble-top">
                     <span className="akasa-bubble-speaker-name">
-                      {isBodhi ? '🧑‍🎓 Bodhi asks:' : '🧘‍♂️ Sage Kaṇāda explains:'}
+                      {isBodhi ? '🧑‍🎓 Bodhi asks:' : '🧘‍♂️ Guru explains:'}
                     </span>
                     {isTurnActive && isSpeaking && (
                       <span style={{ fontSize: '0.72rem', color: '#fef08a', fontWeight: 600 }}>
