@@ -1,0 +1,479 @@
+import React, { useState } from 'react';
+import { soundEffects } from '../utils/soundEffects';
+
+export interface BodhiWisdomData {
+  anecdoteTitle: string;
+  historicalPeriod: string;
+  anecdoteStory: string;
+  sanskritVerse?: string;
+  sanskritVerseMeaning?: string;
+  uniquePlayingMethodology: string;
+  civilizationalContinuity: string;
+  empiricalObservation: string;
+  societalWelfare: string;
+}
+
+export const BODHI_GAME_WISDOM: Record<string, BodhiWisdomData> = {
+  rituparna: {
+    anecdoteTitle: 'The King Who Counted the Vibhītaka Tree from a Galloping Chariot',
+    historicalPeriod: 'Mahābhārata Era (Vana Parva) · ~1000–800 BCE',
+    anecdoteStory:
+      'In the Mahābhārata (Vana Parva), King Nala was traveling in deep distress, disguised as the humble charioteer Bāhuka for King Rituparna of Ayodhyā. As their chariot sped past a massive Vibhītaka tree (Terminalia bellirica), Rituparna glanced at the towering canopy and casually remarked: "On that single branched limb there are 2,095 leaves and 50 nuts; the rest of the tree holds exactly one hundred times that count." Nala, stunned and sceptical, halted the chariot to fell and count the branches. To his sheer astonishment, Rituparna’s estimate was precise to within a fraction of a percent! Rituparna revealed that he possessed the Akṣahṛdaya—the ancient science of dice combinatorics and branch-canopy statistical sampling. In exchange for this mathematical secret, Nala gave Rituparna his supreme mastery of horsemanship (Aśvahṛdaya).',
+    sanskritVerse: 'संख्याने च प्रवीणेऽहम् अक्षहृदयवेदिता। विभीतकस्य शाखायामेकस्यां सन्ति विंशतिः शतानि फलानि च पञ्चाशत्॥',
+    sanskritVerseMeaning:
+      '"I am adept in estimation and know the heart of dice-numbers. On one branch of this Vibhītaka tree reside twenty hundred leaves and fifty fruits; the rest hold one hundred times more."',
+    uniquePlayingMethodology:
+      'Monte Carlo Stratified Ratio Estimation — Instead of counting thousands of items one-by-one, players sample distinct tree sectors, determine the fruit-to-volume ratio, and scale up by total canopy volume to estimate the whole population within a narrow statistical margin of error.',
+    civilizationalContinuity:
+      'Modern forestry, crop yield forecasting, ecological surveys, and demographic polling rely on the exact same stratified random sampling and ratio estimation pioneered in Rituparna’s Akṣahṛdaya three millennia ago.',
+    empiricalObservation:
+      'Pratyakṣa (direct observation) of natural branching architecture: recognizing that biological growth follows scale-invariant distribution ratios that can be measured empirically rather than guessed mythologically.',
+    societalWelfare:
+      'Lokasaṅgraha in statecraft: rapid canopy estimation enabled ancient agrarian kingdoms to forecast grain and fruit yields, prepare famine relief reserves, and levy fair, uncorrupt taxation on harvests.',
+  },
+
+  agnicurna: {
+    anecdoteTitle: 'From Śukranīti’s Fire-Powder to Tipu Sultan’s Iron Aerospace Rockets',
+    historicalPeriod: 'Śukranīti-sāra (~10th–14th c. CE) to Mysorean Rocketry (1780–1799 CE)',
+    anecdoteStory:
+      'Centuries before modern propellants were formalized, the Śukranīti-sāra documented Agnicūrṇa (fire-powder): 5 parts purified Suvarcilāvaṇa (potassium nitrate / saltpetre), 1 part Gandhaka (sulphur), and 1 part Aṅgāra (charcoal derived from the Arka / Calotropis or Snuhi plant, carbonized in an airtight oxygen-deprived pot). In the 18th century, Hyder Ali and Tipu Sultan of Mysore advanced this indigenous chemistry by encasing the propellant in forged soft-iron cylinders rather than Chinese bamboo or paper tubes. At the battles of Pollilur (1780) and Seringapatam (1799), Mysorean rocket brigades (Bāṇadārs) pulverized British infantry columns from over a kilometer away. British inventor William Congreve took captured Mysorean rockets to the Royal Arsenal in Woolwich to reverse-engineer them, creating modern British military artillery rocketry.',
+    sanskritVerse: 'सुवर्चिलवणात् पञ्च भागाः गन्धकतो हरेत्। अन्तर्धूमविपक्वेन स्नुह्यर्ककाष्ठजेन च॥',
+    sanskritVerseMeaning:
+      '"Take five parts of saltpetre, one part of sulphur, and one part of charcoal cooked in an airtight vessel from Snuhi or Arka wood; grind together with juice to make the master propellant Agnicūrṇa."',
+    uniquePlayingMethodology:
+      'Stoichiometric Fuel Formulation & Parabolic Mortar Ballistics — Adjust the chemical slider ratios (Saltpetre : Sulphur : Charcoal) to achieve stoichiometric ignition pressure, then calibrate mortar elevation angle and powder charge to arc payloads over siege bastions into target zones.',
+    civilizationalContinuity:
+      'The stoichiometric oxidation of solid fuel and metal-cased combustion chambers are the direct mechanical ancestors of modern solid rocket boosters, including ISRO’s PSLV strap-ons and modern aerospace propulsion.',
+    empiricalObservation:
+      'Rigorous material experimentation: identifying why light, porous Arka charcoal burns exponentially faster than heavy hardwoods, and establishing chemical purification (Śodhana) protocols for crystalline saltpetre.',
+    societalWelfare:
+      'Fortification engineering (Durga-rakṣā) and defensive technology: providing sovereign societies with the technological means to defend agrarian communities and cultural centers against predatory invasion.',
+  },
+
+  lilavati: {
+    anecdoteTitle: 'Mathematics as Loving Poetry: Bhāskara II and the Floating Cup',
+    historicalPeriod: '1150 CE · Siddhānta-śiromaṇi (Patan / Ujjain)',
+    anecdoteStory:
+      'Bhāskarācārya (Bhāskara II) authored the Līlāvatī as the opening volume of his magnum opus Siddhānta-śiromaṇi. According to tradition, when a stray pearl from his beloved daughter Līlāvatī’s bridal gown slipped into the water-clock (Ghaṭikā-yantra) and obstructed the orifice, the auspicious wedding hour passed unobserved. To comfort his daughter, Bhāskara promised: "I will write a book in your name that will endure as long as the sun and stars shine." He cast advanced algebra, indeterminate equations, and geometric series into enchanting Sanskrit verses about playful monkeys leaping through boughs, swarming bees diving into lotuses, and pearls scattered on royal carpets—proving that mathematics can be an art of joy, empathy, and aesthetic splendor.',
+    sanskritVerse: 'अये बाले लीलावति प्रविमलमते ब्रूहि गणिते... हारं मुक्ताफलानां भुवि पतितमभूत् व्योममार्गे प्रयाते॥',
+    sanskritVerseMeaning:
+      '"O graceful maiden Līlāvatī, endowed with clear intellect, solve this riddle: a necklace of pearls broke in play; one-sixth scattered on the floor, one-fifth lay in the bed, one-third was caught by the maiden..."',
+    uniquePlayingMethodology:
+      'Poetic Inverse Algebra & Visual Fraction Decomposition — Deconstruct Sanskrit poetic word problems into algebraic fractions, manipulate visual portion-bars of swarming bees and scattered pearls, and execute backward operations (Vilomagati) to recover the unknown original quantity.',
+    civilizationalContinuity:
+      'Bhāskara recognized centuries before modern pedagogy that mathematics flourishes best not through punitive abstraction, but through storytelling, emotional connection, and aesthetic delight. His methods laid the groundwork for modern algebraic problem-solving.',
+    empiricalObservation:
+      'Observation of the living ecosystem: grounding mathematical variables in the physical behaviors of bees, lotuses, swans, and peacocks so abstract logic never disconnected from lived sensory experience.',
+    societalWelfare:
+      'Democratization of mathematical literacy: composing arithmetic in melodious meter meant that merchants, artisans, and women across society could memorize, chant, and apply complex commercial maths effortlessly without elite gatekeeping.',
+  },
+
+  kuttaka: {
+    anecdoteTitle: 'Āryabhaṭa’s Cosmic Pulverizer for Grand Planetary Alignments',
+    historicalPeriod: '499 CE · Āryabhaṭīya (Kusumapura / Pāṭaliputra)',
+    anecdoteStory:
+      'In 499 CE, at the young age of 23, Āryabhaṭa composed the Āryabhaṭīya. To resolve the ultimate astronomical puzzle of his era—determining the grand celestial cycle (Mahāyuga) when all seven planetary bodies, the sun, and the moon simultaneously align at the zero point of the zodiac despite radically mismatched orbital periods—he invented Kuṭṭaka (literally "the pulverizer" or "crusher"). Kuṭṭaka pulverizes indeterminate linear equations of the form ax - by = c down to unity through reciprocal continuous division. European mathematicians including Bachet (1612), Fermat, and Euler independently re-derived this 1,200 years later under the name of the Extended Euclidean Algorithm.',
+    sanskritVerse: 'अधिकाग्रभागहारं छिन्द्यादूनाग्रभागहारेण। शेषपरस्परभक्तं मतिगुणमग्रान्तरे क्षिप्तम्॥',
+    sanskritVerseMeaning:
+      '"Divide the divisor of the greater remainder by the divisor of the lesser remainder; mutually divide the remainders, multiply by an assumed integer (Mati), and add the difference to pulverize the equation."',
+    uniquePlayingMethodology:
+      'Continuous Division Ladder & Mati Inversion — Step through Āryabhaṭa’s quotient column (Vallī / vine ladder), generate the intermediate division quotients, select the clever multiplier (Mati), and wind up the ladder from bottom to top to reveal the integer solutions x and y.',
+    civilizationalContinuity:
+      'Āryabhaṭa’s Kuṭṭaka is the exact mathematical engine powering modern public-key cryptography (RSA), modular inverse computation, and secure digital data transmission across global internet infrastructure today.',
+    empiricalObservation:
+      'Precise empirical astronomy: tracking planetary motions across decades from his observatory at Taregana to formulate exact orbital constants rather than relying on philosophical speculation.',
+    societalWelfare:
+      'Synchronizing pan-Indian civil calendars (Pañcāṅga): accurate planetary ephemerides ensured agrarian communities across the subcontinent could anticipate seasonal monsoons, river flooding, and planting windows with astronomical precision.',
+  },
+
+  pingala: {
+    anecdoteTitle: 'The Grammarian Who Discovered Binary Code & Pascal’s Triangle',
+    historicalPeriod: 'Chandaḥśāstra · ~300–200 BCE',
+    anecdoteStory:
+      'While analyzing the rhythmic structure of Vedic and classical Sanskrit poetry, the scholar Ācārya Piṅgala sought a systematic method to catalogue every possible permutation of short syllables (Laghu, 1 beat) and long syllables (Guru, 2 beats) for any meter of n syllables. In his Chandaḥśāstra, he formulated: (1) Prastāra—the systematic binary expansion of permutations; (2) Naṣṭa & Uddiṣṭa—algorithms for direct binary-to-decimal and decimal-to-binary conversion; (3) Śūnya—the explicit symbol for zero used as a place marker; and (4) Meruprastāra—the triangular staircase of binomial coefficients, which European texts attributed to Blaise Pascal 1,800 years later! Halāyudha’s 10th-century commentary on Piṅgala also unlocks the Mātrāmeru (the Fibonacci numbers) centuries before Leonardo of Pisa.',
+    sanskritVerse: 'परे पूर्णमिति। परे पूर्णं पूर्वं शून्यम्... एकाधिके द्विरुक्ते तद्गुणम्॥',
+    sanskritVerseMeaning:
+      '"Place a one for the Guru and zero for the Laghu; when one is added, double the prior value... Thus unfolds the Meruprastāra pyramid of all meters."',
+    uniquePlayingMethodology:
+      'Binary Metrical Syllable Builder & Pascal Pyramid Assembly — Compose Sanskrit poetic rhythms using Laghu (•) and Guru (—), convert them directly into binary digits (0 and 1), and build the triangular Meruprastāra step-by-step by summing adjacent cells to reveal binomial coefficients.',
+    civilizationalContinuity:
+      'Piṅgala’s binary encoding, base-2 arithmetic, and combinatorial recursions are the conceptual foundation of modern computer science, Boolean logic, information theory, and digital semiconductors.',
+    empiricalObservation:
+      'Acoustic and phonetic analysis: empirical mapping of the physiological duration of human vocal breath and structural combinatorics of language.',
+    societalWelfare:
+      'Error-free oral preservation of civilizational knowledge: strict metrical checksums ensured that vast libraries of medicine, astronomy, and philosophy survived for thousands of years without corruption or transcription drift.',
+  },
+
+  dhanurveda: {
+    anecdoteTitle: 'The Sacred Science of the Bow: Biomechanics and the Matsya-Yantra',
+    historicalPeriod: 'Dhanurveda-saṃhitā & Epic Tradition · ~1000–500 BCE',
+    anecdoteStory:
+      'In classical Indian civilization, archery was not mere brute martial force; it was formalized as an Upaveda (applied science)—Dhanurveda. Ancient masters catalogued five foundational biomechanical stances (Sthāna): Pratyālīḍha (rear-braced power stance), Ālīḍha (forward-thrust advance), Samapāda (neutral bilateral balance), Maṇḍala (360-degree rotational readiness), and Vaiśākha (wide grounded stability). Master archers studied air resistance (Vāyu-vega), gravity droop (Guru-bhāra), and feather stabilization (Pakṣa-saṃskāra). The ultimate demonstration was Arjuna at the Svayamvara: piercing the revolving overhead Matsya-yantra by gazing solely at its moving reflection in a pool of vibrating oil—uniting fluid optics, geometric angles, and mental stillness.',
+    sanskritVerse: 'धनुर्वेदं प्रवक्ष्यामि सर्वशत्रुनिवर्हणम्। आस्थानं मण्डलं विद्धि वैशाखं समपादकम्॥',
+    sanskritVerseMeaning:
+      '"I expound Dhanurveda, the science of the bow: understand the geometry of stances—Maṇḍala, Vaiśākha, Samapāda, Ālīḍha, and Pratyālīḍha—which align bone and bowstring."',
+    uniquePlayingMethodology:
+      'Biomechanical Stance Geometry & Parabolic Flight Physics — Choose between the 5 classical Dhanurveda stances to optimize stability and draw tension, compensate for variable crosswinds, and compute launch elevation angle and pull draw-force to pierce targets downrange.',
+    civilizationalContinuity:
+      'The systematic study of musculoskeletal center-of-mass, aerodynamic feather stabilization, and parabolic projectile dynamics directly prefigured modern Newtonian ballistics, biomechanics, and aerospace aerodynamics.',
+    empiricalObservation:
+      'Empirical ballistics and optical physics: studying how vibrations on liquid surfaces affect optical reflection, and how feather cut angles induce gyroscopic spin stabilization in flight.',
+    societalWelfare:
+      'Dharma-yuddha (ethical defense): ancient Indian martial sciences were governed by strict moral codes protecting non-combatants, farmers, and natural habitats, viewing weapon proficiency as a duty to preserve civilizational peace.',
+  },
+
+  metrology: {
+    anecdoteTitle: 'Kauṭilya’s Pautavādhyakṣa and the Incorruptible Guñjā Seed',
+    historicalPeriod: 'Arthaśāstra of Kauṭilya · 4th c. BCE (with roots in Harappan Metrology ~2600 BCE)',
+    anecdoteStory:
+      'In the 4th century BCE, Kauṭilya’s Arthaśāstra established the office of the Pautavādhyakṣa—the royal Superintendent of Weights and Measures. To eradicate commercial fraud and protect consumers, Kauṭilya anchored mass standardization in an incorruptible biological constant: the tiny, remarkably uniform red-and-black seed of the Guñjā (Abrus precatorius / Raktikā, ~105–120 mg). Exactly 5 Guñjā seeds equaled 1 Māṣa; 16 Māṣas equaled 1 Suvarṇa or Karṣa (~11.6 grams, matching standard silver punch-marked coins). Even two millennia earlier, the Harappan civilization operated a precise binary-decimal chert weight system across thousands of kilometers with negligible tolerance.',
+    sanskritVerse: 'पौतवाध्यक्षः पौतवं कारयेत्। गुञ्जापञ्चकं माषकः। ते षोडश सुवर्णः... समतुला विशुद्धा॥',
+    sanskritVerseMeaning:
+      '"The Superintendent of Weights shall standardize balances; five Guñjā seeds make one Māṣa; sixteen of those make one Suvarṇa; balances must be rigorously verified without bias."',
+    uniquePlayingMethodology:
+      'Dual-Pan Beam Balance (Tulā) Calibration — Calibrate an authentic two-pan balance, counterweigh historical antique coins (Kārṣāpaṇa, Suvarṇa, Dīnāra) against natural Guñjā seeds and Māṣa weights, and identify clipped or counterfeit coins through precise weight equilibrium.',
+    civilizationalContinuity:
+      'Modern metrology defines units of measurement using immutable natural constants (like the speed of light or Cesium atomic oscillations); ancient India pioneered this exact philosophy by anchoring mass in genetic botanical constants rather than capricious royal decrees.',
+    empiricalObservation:
+      'Statistical biological metrology: surveying thousands of wild botanical seeds to discover standard distribution deviations and designing sensitive fulcrum pivots that dampen air turbulence.',
+    societalWelfare:
+      'Consumer equity and economic justice: establishing strict public inspection of marketplace scales so that everyday citizens, weavers, and farmers were never defrauded by deceitful traders.',
+  },
+
+  madhavapi: {
+    anecdoteTitle: 'Madhava by the Bharathappuzha: Calculus 300 Years Before Europe',
+    historicalPeriod: 'Kerala School of Astronomy & Mathematics · 1340–1425 CE',
+    anecdoteStory:
+      'In the peaceful village of Saṅgamagrāma by the Bharathappuzha river in Kerala, the visionary astronomer-mathematician Mādhava made one of humanity’s greatest conceptual breakthroughs: crossing the threshold from finite algebra to infinite analysis. Mādhava derived the infinite series for π: π/4 = 1 - 1/3 + 1/5 - 1/7 + ... (known in Europe centuries later as the Leibniz series). Realizing that this series converges with painful slowness (requiring 500 terms just for two decimals), Mādhava and his school invented higher-order correction terms (Antya-saṃskāra / tail corrections). With only 10 terms and his tail correction, Mādhava computed π accurately to 11 decimal places, and later to 13 decimal places!',
+    sanskritVerse: 'व्यासे वारिधिनिहते रूपहृते व्याससागराभिहते। त्रिशरादिविषमसंख्याभक्तमृणं स्वं पृथक् कुर्यात्॥',
+    sanskritVerseMeaning:
+      '"Multiply the diameter by four and divide by one; subtract and add successively the diameter multiplied by four divided by the odd numbers three, five, and so on... Thus π is derived from infinity."',
+    uniquePlayingMethodology:
+      'Infinite Series Convergence & Yuktibhāṣā Tail Acceleration — Accumulate terms of the alternating Madhava series one-by-one, observe the slow zigzagging convergence toward π, and toggle on Mādhava’s polynomial Antya-saṃskāra correction factor to instantly leap to high precision.',
+    civilizationalContinuity:
+      'Madhava’s series for π, sine, and cosine constitute the historical foundation of infinite series expansions and mathematical calculus, formulated in the Malayalam treatise Yuktibhāṣā (1530 CE) well before Newton and Leibniz.',
+    empiricalObservation:
+      'Geometric chord dissection: conceptualizing circular arcs as limits of infinitely tiny chords (Cāpa-śoṣaṇa) through rigorous geometric proof rather than unsupported assertion.',
+    societalWelfare:
+      'Precision maritime navigation: accurate trigonometric tables enabled Indian Ocean merchant fleets to calculate navigational latitudes across monsoon sea routes with unprecedented safety.',
+  },
+
+  colossal: {
+    anecdoteTitle: 'Prince Siddhārtha Astonishes the Royal Mathematician with 10⁵³',
+    historicalPeriod: 'Lalitavistara Sūtra & Vedic Era · ~6th–4th c. BCE',
+    anecdoteStory:
+      'In the ancient Buddhist text Lalitavistara, Prince Siddhārtha (later Gautama Buddha) is tested by the great royal mathematician Arjuna to prove his intellectual fitness for marriage to Princess Gopā. Arjuna asks: "Do you know the counting beyond a hundred Koṭis (10⁷)?" Siddhārtha calmly recites the decimal scales beyond Ayuta, Niyuta, Prayuta, and Koṭi, through Kaṅkara, Vivara, Kshobhya, and Vivaha, reaching Tallakṣaṇa (10⁵³), and continuing into higher concentric numerical systems up to 10⁴²¹! While ancient Greece and Rome possessed words that halted at the myriad (10,000) and viewed the infinite with trepidation, ancient India embraced boundless cosmological numbers with named, base-10 precision.',
+    sanskritVerse: 'शतं कोटीनां अयुतं भवति। अयुतं शतं नियुतमिति कथ्यते... तलक्षणं नाम महागणितम्॥',
+    sanskritVerseMeaning:
+      '"A hundred Koṭis make an Ayuta; a hundred Ayutas make a Niyuta... progressing without end to Tallakṣaṇa (10⁵³), the supreme pinnacle of cosmological numeration."',
+    uniquePlayingMethodology:
+      'Cosmic Power Dials & Exponential Place-Value Unlocking — Spin the decimal magnitude dials from single units through Koṭi (10⁷), Śaṅku (10¹³), Mahāpadma (10¹⁵), and Tallakṣaṇa (10⁵³), unlocking historical Sanskrit milestones and mapping each magnitude to physical cosmological analogies.',
+    civilizationalContinuity:
+      'The naming of decimal powers up to 10⁵³ and beyond provided the cognitive architecture for modern scientific notation (a × 10ᵇ) and cosmological astrophysics, enabling humanity to quantify atomic particles and intergalactic voids.',
+    empiricalObservation:
+      'Deep cosmological contemplation: synthesizing the microscopically small (Paramāṇu / indivisible particle) with the astronomically vast (Yojana across cosmic space).',
+    societalWelfare:
+      'Liberating human consciousness from parochial horizons: placing human life within deep geological time (Kalpas of 4.32 billion years), cultivating humility, reverence for nature, and psychological equanimity.',
+  },
+
+  swara: {
+    anecdoteTitle: 'When Bharata Muni Listened to the Forest: The Bioacoustics of Saptasvara',
+    historicalPeriod: 'Nāradīya Śikṣā & Nāṭyaśāstra · ~200 BCE – 200 CE',
+    anecdoteStory:
+      'In the Nāradīya Śikṣā and Bharata Muni’s Nāṭyaśāstra, the seven fundamental musical notes (Saptasvara: Sa, Re, Ga, Ma, Pa, Dha, Ni) were not arbitrary mathematical abstractions; they were directly mapped to the innate acoustic calls of animals in their natural habitats: Ṣaḍja (Sa) is the cry of the dancing peacock (Mayūra); Ṛṣabha (Re) is the bellows of the bull (Vṛṣabha); Gāndhāra (Ga) is the bleat of the goat (Aja); Madhyama (Ma) is the call of the heron (Krauñca); Pañcama (Pa) is the song of the Indian cuckoo (Kokila); Dhaivata (Dha) is the neigh of the horse (Aśva); and Niṣāda (Ni) is the trumpet of the elephant (Gaja). Ancient Indian musicology was an empirical bioacoustic science of living resonance.',
+    sanskritVerse: 'षड्जं वदति मयूरो गावो रम्भन्ति चार्षभम्। अजा तु गान्धारं क्रौञ्चः क्वणति मध्यमम्॥',
+    sanskritVerseMeaning:
+      '"The peacock utters Ṣaḍja, the bull roars Ṛṣabha, the goat bleats Gāndhāra, the heron sounds Madhyama, the cuckoo sings Pañcama in the blossoming spring."',
+    uniquePlayingMethodology:
+      'Web Audio Acoustic Frequency Synthesizer & Natural Scale Weaver — Tap real animal sound totems to trigger pure synthesized frequencies matching classical 22-Śruti Indian modal ratios, compose ancient melodic phrases (Rāga-ālāpa), and test your ear against frequency microtones.',
+    civilizationalContinuity:
+      'Indian acoustic science established microtonal intervals (22 Śrutis), consonant harmonic ratios (Vādī-Saṃvādī), and psychoacoustic modes centuries before Western equal-temperament debates, anticipating modern acoustics and music therapy.',
+    empiricalObservation:
+      'Natural bioacoustic observation: rigorous listening to animal vocal tract formants and pitch modulation in natural environments.',
+    societalWelfare:
+      'Rāga-cikitsā (therapeutic psychoacoustics): harnessing sound frequencies to balance human emotional states (Bhāva and Rasa), soothe anxiety, and foster communal harmony during collective cultural gatherings.',
+  },
+
+  calendar: {
+    anecdoteTitle: 'Sage Lagadha’s 5-Year Yuga and the Two Resynchronizing Leap Months',
+    historicalPeriod: 'Vedāṅga Jyotiṣa · ~1400–1200 BCE',
+    anecdoteStory:
+      'Three thousand years ago, Sage Lagadha authored the Vedāṅga Jyotiṣa, the earliest formal astronomical manual of India. He tackled an inescapable civilizational dilemma: a solar year spans approximately 365.25 days, while 12 lunar months (Tithis) span only ~354 days—an annual drift of ~11.25 days. Left uncorrected, seasonal festivals, harvesting schedules, and monsoon rains would drift across the calendar within decades! Lagadha devised an ingenious 5-year cycle (Yuga) of 1,830 solar days and 62 lunar synodic months, containing exactly 2 intercalary leap months (Adhikamāsa)—one inserted at the midpoint of year 3, and one at the end of year 5—perfectly reuniting sun and moon.',
+    sanskritVerse: 'द्विरुक्तेऽब्दे पञ्चमे च अधिमासो विधीयते। सूर्यस्य चन्द्रस्य च सङ्गमः कालचक्रके॥',
+    sanskritVerseMeaning:
+      '"In the middle of the third year and at the end of the fifth year, an intercalary month is ordained, reuniting the sun and moon upon the great wheel of time."',
+    uniquePlayingMethodology:
+      '5-Year Yuga Dual-Orbit Synchronization Wheel — Rotate the concentric Solar and Lunar calendar wheels across the 5-year cycle, observe accumulating lunar-solar day drift, and manually insert the 2 Adhikamāsa intercalary months at the exact astronomical moments to restore seasonal balance.',
+    civilizationalContinuity:
+      'Lagadha’s lunisolar synchronization engine remains the unbroken mathematical basis of the traditional Indian Pañcāṅga used by over 1.4 billion people today, predating both the Greek Metonic cycle and Roman Julian calendar reforms.',
+    empiricalObservation:
+      'Systematic gnomon (Śaṅku) shadow measurements: tracking the daily noon shadow to identify exact winter and summer solstices (Uttarāyaṇa and Dakṣiṇāyana) over continuous multi-year cycles.',
+    societalWelfare:
+      'Agrarian synchronization: enabling farming communities to anticipate monsoon arrivals, sow crops at optimal moisture windows, and protect food security across diverse regional climates.',
+  },
+
+  altar: {
+    anecdoteTitle: 'Baudhāyana and the Sacred Diagonal: Unlocking √2 in 800 BCE',
+    historicalPeriod: 'Baudhāyana Śulba Sūtra · ~800 BCE',
+    anecdoteStory:
+      'In the 8th century BCE, Vedic ritual architects constructing fire altars (Citi) such as the Falcon altar (Śyena-citi) faced a geometric conundrum: they needed to double the area of a square altar without altering its shape or proportions. Baudhāyana solved this in the Śulba Sūtras by demonstrating that the diagonal of a square produces an area twice the size of the square itself (Dīrghacaturaśrasyākṣṇayārajjuḥ)—stating the geometric theorem centuries before Pythagoras. To construct this diagonal using rope chords (Śulba), Baudhāyana derived an astonishing approximation for the square root of 2: 1 + 1/3 + 1/(3×4) - 1/(3×4×34) = 577/408 ≈ 1.4142156..., correct to five decimal places!',
+    sanskritVerse: 'दीर्घचतुरश्रस्याक्ष्णयारज्जुः पार्श्वमानी तिर्यङ्मानी च यत्पृथग्भूते कुरुतस्तदुभयं करोति॥',
+    sanskritVerseMeaning:
+      '"The diagonal rope of a rectangle produces both the areas which its length and breadth produce separately; thus is the area doubled with geometric perfection."',
+    uniquePlayingMethodology:
+      'Śulba Geometric Rope Manipulation & Area Doubling — Manipulate geometric cord pegs on a virtual altar grid, construct diagonal squares, apply Baudhāyana’s 4-term fraction approximation for √2, and balance the 200 consecrated bricks of the sacred Falcon altar (Śyena-citi).',
+    civilizationalContinuity:
+      'The Śulba Sūtras represent the earliest recorded constructive geometry in world literature, pioneering irrational number approximations, area-conserving shape transformations, and geometric algebra.',
+    empiricalObservation:
+      'Hands-on empirical rope-and-peg (Śulba) cord mechanics: testing physical geometric properties directly on earth rather than treating geometry as detached theoretical symbols.',
+    societalWelfare:
+      'Seismic architectural engineering: the precise interlocking brick masonry developed for Vedic altars formed the technological foundation for ancient Indian earthquake-resilient stone temples and civic town planning.',
+  },
+
+  vinculum: {
+    anecdoteTitle: 'Brahmagupta’s Negative Numbers and the Fluid Vinculum Bar',
+    historicalPeriod: 'Brāhmasphuṭasiddhānta (628 CE) to Vedic Mathematics',
+    anecdoteStory:
+      'While ancient Mediterranean mathematicians dismissed negative numbers as "impossible" and "absurd" well into the 17th century, the 7th-century Indian master Brahmagupta established complete formal arithmetic laws for negative quantities (Ṛṇa / debt), positive quantities (Dhana / fortune), and zero (Kha / Śūnya). Later Indian calculators harnessed this symmetry through the Rekhāṅka or Vinculum bar—placing a bar over high digits (6, 7, 8, 9) to convert them into small positive digits with negative complements (e.g. 19 = 21̄ = 20 - 1). By viewing place value as fluid, bidirectional space, cumbersome multiplications with exhausting carries become swift mental additions and subtractions.',
+    sanskritVerse: 'ऋणयोर्धनयोर्घातः स्वं भवति ऋणधनयोर्वधः ऋणम्। धनर्णयोर्वधोऽपि ऋणमेव भवति॥',
+    sanskritVerseMeaning:
+      '"The product of two debts or two fortunes is a fortune; the product of a debt and a fortune is a debt; zero multiplied by anything is zero."',
+    uniquePlayingMethodology:
+      'Digit Transmutation & Mental Multiplication Chamber — Select cumbersome digits (7, 8, 9), apply the Nikhilam complement rule to place vinculum bars, watch the digits convert into small numbers with negative bar-values, and solve multi-digit multiplications without burdensome carryovers.',
+    civilizationalContinuity:
+      'The vinculum and signed-digit representations form the exact basis of modern high-speed computer ALU arithmetic, including Booth’s multiplication algorithm and redundant binary arithmetic used in ultra-fast microprocessor hardware.',
+    empiricalObservation:
+      'Cognitive psychological ergonomics: recognizing working-memory limitations of human mental calculation and designing fluid symbolic notations that minimize mental fatigue.',
+    societalWelfare:
+      'Empowering public commerce: rapid mental arithmetic allowed ordinary marketplace shopkeepers, weavers, and treasurers to calculate ledgers with lightning speed and absolute transparency.',
+  },
+};
+
+export const CivilizationalManifestoBanner: React.FC = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <aside className="ag-manifesto-banner" aria-label="Civilizational Knowledge Manifesto">
+      <div className="ag-manifesto-glow" aria-hidden="true" />
+      <div className="ag-manifesto-content">
+        <div className="ag-manifesto-header">
+          <div className="ag-manifesto-badge">
+            <span className="ag-manifesto-icon">🏛️</span>
+            <span>The Living Stream · प्राचीन-विज्ञान-सन्ततिः</span>
+          </div>
+          <button
+            type="button"
+            className="ag-manifesto-toggle-btn"
+            onClick={() => setExpanded((prev) => !prev)}
+            aria-expanded={expanded}
+          >
+            {expanded ? '▲ Collapse Manifesto' : '▼ Read Civilizational Manifesto'}
+          </button>
+        </div>
+
+        <h3 className="ag-manifesto-title">
+          Science is an Evolving Human Tapestry, Not a Modern Monopoly
+        </h3>
+
+        <p className="ag-manifesto-p">
+          Modern technology moves at a dizzying pace, yet scientific inquiry did not magically begin in the modern era. Across millennia, human civilizations systematically observed nature, tested hypotheses, and built rigorous models. <strong>India, as an unbroken continuous civilization</strong>, nurtured profound traditions of mathematics, astronomy, metallurgy, medicine, and linguistics that remain foundational to modern practice today.
+        </p>
+
+        {expanded && (
+          <div className="ag-manifesto-details">
+            <div className="ag-manifesto-grid">
+              <div className="ag-mcard">
+                <div className="ag-mcard-icon">👁️</div>
+                <h4 className="ag-mcard-title">Pratyakṣa · Close Empirical Observation</h4>
+                <p className="ag-mcard-body">
+                  Ancient Indian scientific traditions rejected blind dogma. Truth was rooted in <em>Pratyakṣa</em> (direct observation), verified through <em>Yukti</em> (reasoned deduction), and tested in <em>Prayoga</em> (practical application). From biological seed metrology to astronomical solstice tracking, observation was the bedrock of knowledge.
+                </p>
+              </div>
+
+              <div className="ag-mcard">
+                <div className="ag-mcard-icon">⏳</div>
+                <h4 className="ag-mcard-title">Evaluated for Their Contemporary Times</h4>
+                <p className="ag-mcard-body">
+                  Ancient methods must not be judged by the industrial speed of microprocessors, but evaluated within their contemporary eras—in which they were remarkably advanced, pioneering the decimal place-value system, binary logic, infinite series, spherical trigonometry, and zinc distillation centuries before the rest of the world.
+                </p>
+              </div>
+
+              <div className="ag-mcard">
+                <div className="ag-mcard-icon">🌍</div>
+                <h4 className="ag-mcard-title">Lokasaṅgraha · Science for Societal Welfare</h4>
+                <p className="ag-mcard-body">
+                  Knowledge in ancient India was not conceived as a tool for weaponized exploitation or private greed. Its ethical purpose was <em>Lokasaṅgraha</em> (universal sustenance) and <em>Sarvajanahita</em> (the well-being of all living beings)—codified in accessible poetry so knowledge was shared openly across society.
+                </p>
+              </div>
+
+              <div className="ag-mcard">
+                <div className="ag-mcard-icon">🔗</div>
+                <h4 className="ag-mcard-title">Direct Ancestry to Modern Science</h4>
+                <p className="ag-mcard-body">
+                  From RSA encryption algorithms rooted in Āryabhaṭa’s Kuṭṭaka to computer ALU circuits running on Brahmagupta’s vinculum logic, modern science stands directly on the shoulders of these ancient indigenous discoveries.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </aside>
+  );
+};
+
+export interface BodhiWisdomCardProps {
+  gameId: string;
+  gameTitle: string;
+}
+
+export const BodhiWisdomCard: React.FC<BodhiWisdomCardProps> = ({ gameId, gameTitle }) => {
+  const data = BODHI_GAME_WISDOM[gameId] || BODHI_GAME_WISDOM.rituparna;
+  const [activeTab, setActiveTab] = useState<'anecdote' | 'continuity' | 'empirical' | 'methodology'>('anecdote');
+  const [isOpen, setIsOpen] = useState<boolean>(true);
+
+  const switchTab = (tab: 'anecdote' | 'continuity' | 'empirical' | 'methodology') => {
+    soundEffects.playPuzzleSnap();
+    setActiveTab(tab);
+  };
+
+  return (
+    <div className={`ag-bodhi-card ${isOpen ? 'is-open' : 'is-collapsed'}`} aria-label={`Bodhi Wisdom for ${gameTitle}`}>
+      {/* Bodhi Header */}
+      <div className="ag-bodhi-header">
+        <div className="ag-bodhi-avatar-group">
+          <div className="ag-bodhi-avatar" aria-hidden="true">
+            🦉
+          </div>
+          <div className="ag-bodhi-title-area">
+            <div className="ag-bodhi-kicker">
+              <span>बोधिसत्त्व-मार्गदर्शकः · Bodhi’s Wisdom Lab</span>
+              <span className="ag-bodhi-period-badge">{data.historicalPeriod}</span>
+            </div>
+            <h3 className="ag-bodhi-headline">{data.anecdoteTitle}</h3>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          className="ag-bodhi-toggle"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-expanded={isOpen}
+          aria-label={isOpen ? 'Collapse Bodhi Wisdom' : 'Expand Bodhi Wisdom'}
+        >
+          {isOpen ? '▲ Hide Bodhi Guide' : '▼ Bodhi’s Insights'}
+        </button>
+      </div>
+
+      {isOpen && (
+        <div className="ag-bodhi-body">
+          {/* Tabs */}
+          <div className="ag-bodhi-tabs" role="tablist">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'anecdote'}
+              className={`ag-bodhi-tab ${activeTab === 'anecdote' ? 'is-active' : ''}`}
+              onClick={() => switchTab('anecdote')}
+            >
+              📜 Bodhi’s Anecdote & History
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'continuity'}
+              className={`ag-bodhi-tab ${activeTab === 'continuity' ? 'is-active' : ''}`}
+              onClick={() => switchTab('continuity')}
+            >
+              🔬 Civilizational Continuity
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'empirical'}
+              className={`ag-bodhi-tab ${activeTab === 'empirical' ? 'is-active' : ''}`}
+              onClick={() => switchTab('empirical')}
+            >
+              🏛️ Pratyakṣa & Lokasaṅgraha
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'methodology'}
+              className={`ag-bodhi-tab ${activeTab === 'methodology' ? 'is-active' : ''}`}
+              onClick={() => switchTab('methodology')}
+            >
+              🎮 Playing Methodology
+            </button>
+          </div>
+
+          {/* Tab Content Panes */}
+          <div className="ag-bodhi-pane">
+            {activeTab === 'anecdote' && (
+              <div className="ag-pane-anecdote">
+                <p className="ag-bodhi-story-text">{data.anecdoteStory}</p>
+                {data.sanskritVerse && (
+                  <div className="ag-bodhi-verse-box">
+                    <div className="ag-verse-tag">मूल-संस्कृत-श्लोकः (Original Shloka)</div>
+                    <div className="ag-verse-text" lang="sa">
+                      {data.sanskritVerse}
+                    </div>
+                    {data.sanskritVerseMeaning && (
+                      <div className="ag-verse-meaning">
+                        <strong>Translation:</strong> {data.sanskritVerseMeaning}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {activeTab === 'continuity' && (
+              <div className="ag-pane-continuity">
+                <div className="ag-continuity-callout">
+                  <div className="ag-continuity-icon">⚡</div>
+                  <div>
+                    <h4 className="ag-continuity-head">Line of Descent to Modern Science</h4>
+                    <p className="ag-continuity-text">{data.civilizationalContinuity}</p>
+                  </div>
+                </div>
+                <div className="ag-continuity-note">
+                  <em>
+                    Notice how this discovery was not an isolated lucky fluke: it evolved through systematic transmission, rigorous testing, and continuous refinement across generations of scholars.
+                  </em>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'empirical' && (
+              <div className="ag-pane-empirical">
+                <div className="ag-dual-pillars">
+                  <div className="ag-pillar-card">
+                    <div className="ag-pillar-badge">प्रत्यक्षम् · Pratyakṣa</div>
+                    <h4 className="ag-pillar-title">Close Empirical Observation</h4>
+                    <p className="ag-pillar-desc">{data.empiricalObservation}</p>
+                  </div>
+
+                  <div className="ag-pillar-card">
+                    <div className="ag-pillar-badge">लोकसंग्रहः · Lokasaṅgraha</div>
+                    <h4 className="ag-pillar-title">Knowledge for Societal Betterment</h4>
+                    <p className="ag-pillar-desc">{data.societalWelfare}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'methodology' && (
+              <div className="ag-pane-methodology">
+                <div className="ag-methodology-box">
+                  <div className="ag-method-tag">Lab Methodology Guide</div>
+                  <h4 className="ag-method-title">Unique Interactive Mechanics for this Lab</h4>
+                  <p className="ag-method-desc">{data.uniquePlayingMethodology}</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};

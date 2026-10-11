@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { soundEffects } from '../utils/soundEffects';
+import { BodhiWisdomCard, CivilizationalManifestoBanner } from './BodhiWisdomCard';
 import '../styles/article-games.css';
 
 export interface ArticleGamesHubProps {
@@ -2312,6 +2313,9 @@ export const ArticleGamesHub: React.FC<ArticleGamesHubProps> = ({
         </div>
       </header>
 
+      {/* Civilizational Manifesto Banner */}
+      <CivilizationalManifestoBanner />
+
       {/* Game Selector Tabs */}
       <nav className="ag-game-tabs" aria-label="Article games navigation">
         {GAMES.map((g) => (
@@ -2333,8 +2337,10 @@ export const ArticleGamesHub: React.FC<ArticleGamesHubProps> = ({
         ))}
       </nav>
 
-      {/* Active Game Area */}
+      {/* Active Game Area with Bodhi's Wisdom */}
       <main className="ag-active-arena">
+        <BodhiWisdomCard gameId={currentGame.id} gameTitle={currentGame.title} />
+
         {activeGameId === 'rituparna' && <RituparnaGame onScore={addScore} />}
         {activeGameId === 'agnicurna' && <AgnicurnaGame onScore={addScore} />}
         {activeGameId === 'lilavati' && <LilavatiGame onScore={addScore} />}
