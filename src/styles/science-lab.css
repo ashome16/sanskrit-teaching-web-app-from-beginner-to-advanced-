@@ -13882,5 +13882,150 @@
   }
 }
 
+/* =========================================================================
+   HOW TO PLAY: 4-STAGE PROGRESSION TOWARDS SAMAVĀYA & GUṆA MATRIX
+   ========================================================================= */
+.akasa-how-to-play-bar {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(56, 189, 248, 0.25);
+  border-radius: 14px;
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.akasa-htp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.akasa-htp-title {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #fde047;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.akasa-htp-toggle {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  color: #94a3b8;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.akasa-htp-toggle:hover {
+  color: #f8fafc;
+  border-color: #38bdf8;
+}
+
+.akasa-htp-steps-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.akasa-htp-step {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.akasa-htp-step.is-active {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.45) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1.5px solid #facc15;
+  box-shadow: 0 0 16px rgba(250, 204, 21, 0.25);
+  transform: translateY(-1px);
+}
+
+.akasa-htp-step.is-completed {
+  border-color: rgba(16, 185, 129, 0.5);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.akasa-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #38bdf8;
+  color: #0f172a;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.akasa-htp-step.is-active .akasa-step-num {
+  background: #facc15;
+  color: #0f172a;
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
+}
+
+.akasa-htp-step.is-completed .akasa-step-num {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.akasa-htp-step strong {
+  display: block;
+  font-size: 0.88rem;
+  color: #f1f5f9;
+  margin-bottom: 0.25rem;
+}
+
+.akasa-htp-step.is-active strong {
+  color: #fde047;
+}
+
+.akasa-htp-step p {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.akasa-htp-step.is-active p {
+  color: #cbd5e1;
+}
+
+.vl-status-chip.is-synergy {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+  color: #86efac;
+  font-weight: 800;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+}
+
+.vl-btn.is-unlocked-glow {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%) !important;
+  color: #0f172a !important;
+  font-weight: 900 !important;
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.6) !important;
+}
+
+.vl-guna-interactive-bench {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+
 
 

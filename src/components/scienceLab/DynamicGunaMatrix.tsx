@@ -1,93 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { playPronunciation } from '../../utils/pronunciation';
-
-// Zero-dependency Web Audio Synthesizer for Guna Matrix
-class GunaAudioEngine {
-  private ctx: AudioContext | null = null;
-  public enabled: boolean = true;
-
-  private getContext(): AudioContext | null {
-    if (typeof window === 'undefined') return null;
-    if (!this.ctx) {
-      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      if (AudioCtx) this.ctx = new AudioCtx();
-    }
-    if (this.ctx && this.ctx.state === 'suspended') {
-      void this.ctx.resume().catch(() => {});
-    }
-    return this.ctx;
-  }
-
-  playTone(freq: number, duration: number = 0.4, type: OscillatorType = 'sine', gainVal: number = 0.25) {
-    if (!this.enabled) return;
-    try {
-      const ctx = this.getContext();
-      if (!ctx) return;
-      const now = ctx.currentTime;
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, now);
-      gain.gain.setValueAtTime(gainVal, now);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start(now);
-      osc.stop(now + duration);
-    } catch {}
-  }
-
-  playRepulsionFriction() {
-    this.playTone(180, 0.45, 'sawtooth', 0.2);
-    setTimeout(() => this.playTone(160, 0.35, 'sawtooth', 0.2), 60);
-  }
-
-  playHeatCrackle() {
-    this.playTone(420, 0.2, 'triangle', 0.15);
-    setTimeout(() => this.playTone(550, 0.2, 'sine', 0.15), 50);
-  }
-
-  playWindWhoosh() {
-    this.playTone(320, 0.5, 'sine', 0.2);
-    setTimeout(() => this.playTone(380, 0.5, 'sine', 0.18), 100);
-  }
-
-  playSynergyLock() {
-    this.playTone(392, 0.6, 'sine', 0.2); // G4
-    setTimeout(() => this.playTone(523.25, 0.8, 'sine', 0.25), 120); // C5
-  }
-
-  playSamavayaImplosion() {
-    if (!this.enabled) return;
-    try {
-      const ctx = this.getContext();
-      if (!ctx) return;
-      const now = ctx.currentTime;
-
-      // Downward frequency sweep implosion
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(600, now);
-      osc.frequency.exponentialRampToValueAtTime(120, now + 0.6);
-      gain.gain.setValueAtTime(0.3, now);
-      gain.gain.linearRampToValueAtTime(0.01, now + 0.6);
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start(now);
-      osc.stop(now + 0.6);
-
-      // Succeeded by celestial harmonic burst
-      setTimeout(() => {
-        this.playTone(528, 2.5, 'sine', 0.35); // 528Hz Transformation
-        this.playTone(264, 2.5, 'sine', 0.25);
-        this.playTone(792, 2.0, 'sine', 0.2);
-      }, 620);
-    } catch {}
-  }
-}
-
-const audio = new GunaAudioEngine();
+import { gunaAudio } from './gunaAudioEngine';
+import { GunaMatrixIntroMovie } from './GunaMatrixIntroMovie';
 
 // Particle Definition for Dynamic Canvas
 interface MatrixParticle {
@@ -101,6 +15,10 @@ interface MatrixParticle {
 }
 
 export const DynamicGunaMatrix: React.FC = () => {
+  // Intro Movie & Interactive Workbench Ref
+  const [showIntroMovie, setShowIntroMovie] = useState<boolean>(true);
+  const interactiveBenchRef = useRef<HTMLDivElement>(null);
+
   // 4-Stage Progressive Missions
   const [currentStage, setCurrentStage] = useState<1 | 2 | 3 | 4>(1);
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -141,7 +59,7 @@ export const DynamicGunaMatrix: React.FC = () => {
     );
   };
 
-  // Initialize Particles (30 Earth particles on left, 30 Water particles on right)
+  // Initialize Particles (28 Earth particles on left, 28 Water particles on right = 56 total)
   useEffect(() => {
     const list: MatrixParticle[] = [];
     // Cluster 1: Earth (dense, gold)
@@ -286,10 +204,22 @@ export const DynamicGunaMatrix: React.FC = () => {
         p.vy *= 0.94;
 
         // Boundary bounce
-        if (p.x < 20) { p.x = 20; p.vx *= -1; }
-        if (p.x > canvas.width - 20) { p.x = canvas.width - 20; p.vx *= -1; }
-        if (p.y < 20) { p.y = 20; p.vy *= -1; }
-        if (p.y > canvas.height - 20) { p.y = canvas.height - 20; p.vy *= -1; }
+        if (p.x < 20) {
+          p.x = 20;
+          p.vx *= -1;
+        }
+        if (p.x > canvas.width - 20) {
+          p.x = canvas.width - 20;
+          p.vx *= -1;
+        }
+        if (p.y < 20) {
+          p.y = 20;
+          p.vy *= -1;
+        }
+        if (p.y > canvas.height - 20) {
+          p.y = canvas.height - 20;
+          p.vy *= -1;
+        }
 
         // Render particle
         ctx.beginPath();
@@ -372,8 +302,8 @@ export const DynamicGunaMatrix: React.FC = () => {
   const toggleAudio = () => {
     const next = !soundEnabled;
     setSoundEnabled(next);
-    audio.enabled = next;
-    if (next) audio.playTone(392, 0.3);
+    gunaAudio.setSoundEnabled(next);
+    if (next) gunaAudio.playTone(392, 0.3);
   };
 
   // =========================================================================
@@ -381,10 +311,12 @@ export const DynamicGunaMatrix: React.FC = () => {
   // =========================================================================
   const handleAttemptMerge = () => {
     setRepulsionTriggered(true);
-    audio.playRepulsionFriction();
+    gunaAudio.playRepulsionFriction();
 
     setGuruSpeaker('System');
-    setGuruDialogue('⚠️ Incompatible Guṇa Rejection — Structural Friction High (Polarity & Sneha Mismatch). Particles sliding apart like oil and water!');
+    setGuruDialogue(
+      '⚠️ Incompatible Guṇa Rejection — Structural Friction High (Polarity & Sneha Mismatch). Particles sliding apart like oil and water!'
+    );
 
     setTimeout(() => {
       setGuruSpeaker('Kaṇāda');
@@ -398,7 +330,7 @@ export const DynamicGunaMatrix: React.FC = () => {
   // STAGE 2: INJECT TEJAS CATALYST (BREAKING THE STATE MASK)
   // =========================================================================
   const handleInjectTejas = () => {
-    audio.playHeatCrackle();
+    gunaAudio.playHeatCrackle();
     setRepulsionTriggered(false);
 
     // Increase heat, decrease cohesion
@@ -410,7 +342,7 @@ export const DynamicGunaMatrix: React.FC = () => {
     setCurrentStage(2);
     setGuruSpeaker('Kaṇāda');
     setGuruDialogue(
-      "“Heat (Tejas) disrupts the boundary bonds. As Uṣṇa rises, the rigid localized Cohesion (Sneha) drops. The states soften into an amorphous, receptive field! Now introduce Vāyu to calibrate the fluid dance.”"
+      '“Heat (Tejas) disrupts the boundary bonds. As Uṣṇa rises, the rigid localized Cohesion (Sneha) drops. The states soften into an amorphous, receptive field! Now introduce Vāyu to calibrate the fluid dance.”'
     );
   };
 
@@ -418,20 +350,20 @@ export const DynamicGunaMatrix: React.FC = () => {
   // STAGE 3: INTRODUCE VĀYU WINDS (DYNAMIC PROPERTY SOUP)
   // =========================================================================
   const handleSweepVayu = () => {
-    audio.playWindWhoosh();
+    gunaAudio.playWindWhoosh();
     const nextDravatva = 56;
     setDravatva(nextDravatva);
 
     setCurrentStage(3);
     setGuruSpeaker('Kaṇāda');
     setGuruDialogue(
-      "“Dravatva (Fluidity) spikes! The clusters break apart entirely into an undulating property soup. They are neither rigid solids nor isolated liquids—keep all three Gunas within the Synergy Window (45%–65%)!”"
+      '“Dravatva (Fluidity) spikes! The clusters break apart entirely into an undulating property soup. They are neither rigid solids nor isolated liquids—keep all three Gunas within the Synergy Window (45%–65%)!”'
     );
 
     // Check if synergy window is met
     if (checkSynergy(sneha, nextDravatva, usna)) {
       setIsSynergyLocked(true);
-      audio.playSynergyLock();
+      gunaAudio.playSynergyLock();
     }
   };
 
@@ -441,8 +373,14 @@ export const DynamicGunaMatrix: React.FC = () => {
     let d = dravatva;
     let u = usna;
 
-    if (type === 'sneha') { s = val; setSneha(val); }
-    if (type === 'dravatva') { d = val; setDravatva(val); }
+    if (type === 'sneha') {
+      s = val;
+      setSneha(val);
+    }
+    if (type === 'dravatva') {
+      d = val;
+      setDravatva(val);
+    }
     if (type === 'usna') {
       u = val;
       setUsna(val);
@@ -455,9 +393,11 @@ export const DynamicGunaMatrix: React.FC = () => {
     setIsSynergyLocked(locked);
 
     if (locked) {
-      audio.playTone(523.25, 0.25);
+      gunaAudio.playTone(523.25, 0.25);
       setGuruSpeaker('Kaṇāda');
-      setGuruDialogue('“Synergy Locked! Molecular polarities and thermal energies harmonized across space. The Guna Triad is ready for Samavāya binding!”');
+      setGuruDialogue(
+        '“Synergy Locked! Molecular polarities and thermal energies harmonized across space. The Guna Triad is ready for Samavāya binding!”'
+      );
     } else if (u > 85) {
       setGuruSpeaker('System');
       setGuruDialogue('⚠️ Overheated! Thermal agitation too high — atoms scattering uncontrollably!');
@@ -472,12 +412,12 @@ export const DynamicGunaMatrix: React.FC = () => {
   // =========================================================================
   const handleSamavayaBinding = () => {
     if (!isSynergyLocked) return;
-    audio.playSamavayaImplosion();
+    gunaAudio.playSamavayaImplosion();
     setCurrentStage(4);
 
     setGuruSpeaker('Kaṇāda');
     setGuruDialogue(
-      "“Superficial forms have faded. By manipulating the invisible threads of reality (Gunas), you have forged true Harmony (Samavaya). The illusion of division is shattered.”"
+      '“Superficial forms have faded. By manipulating the invisible threads of reality (Gunas), you have forged true Harmony (Samavaya). The illusion of division is shattered.”'
     );
 
     setTimeout(() => {
@@ -519,6 +459,15 @@ export const DynamicGunaMatrix: React.FC = () => {
         <div className="vl-matrix-controls-tray">
           <button
             type="button"
+            className={`vl-chip${showIntroMovie ? ' is-active' : ''}`}
+            onClick={() => setShowIntroMovie(!showIntroMovie)}
+            title="Toggle 4-stage introductory story walkthrough video"
+            style={{ fontWeight: 800 }}
+          >
+            {showIntroMovie ? '🎬 Hide Intro Video ▲' : '🎬 Watch Intro Video ▼'}
+          </button>
+          <button
+            type="button"
             className="vl-chip"
             onClick={toggleAudio}
             title="Toggle matrix synthesis sounds"
@@ -536,281 +485,333 @@ export const DynamicGunaMatrix: React.FC = () => {
         </div>
       </div>
 
-      {/* 🧭 HOW TO PLAY · 4-STAGE SEQUENCE INSTRUCTIONS */}
-      <div className="akasa-how-to-play-bar" role="region" aria-label="How to play matrix instructions">
-        <div className="akasa-htp-header">
-          <div className="akasa-htp-title">
-            <span>🧭 HOW TO PLAY · 4-STAGE PROGRESSION TOWARDS SAMAVĀYA</span>
-          </div>
-          <button
-            type="button"
-            className="akasa-htp-toggle"
-            onClick={() => setShowGuide(!showGuide)}
-          >
-            {showGuide ? 'Hide Instructions Guide ▲' : 'Show Instructions Guide ▼'}
-          </button>
-        </div>
+      {/* 🎬 INTRODUCTORY CINEMATIC STORY (4 ACTS) */}
+      {showIntroMovie && (
+        <GunaMatrixIntroMovie
+          onSwitchToInteractive={() => {
+            interactiveBenchRef.current?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        />
+      )}
 
-        {showGuide && (
-          <div className="akasa-htp-steps-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-            <div className={`akasa-htp-step${currentStage === 1 ? ' is-active' : ''}`}>
-              <span className="akasa-step-num">1</span>
-              <div>
-                <strong>1. Illusion of Separation</strong>
-                <p>Click &ldquo;1. Attempt Merge&rdquo; to observe immiscible clusters repelling with high Sneha (Cohesion) friction.</p>
+      {/* 🎮 INTERACTIVE LABORATORY BENCH (SINGLE CLEAR SEQUENCE) */}
+      <div
+        ref={interactiveBenchRef}
+        className="vl-guna-interactive-bench"
+        role="region"
+        aria-label="Interactive Guna Workbench"
+        style={{ scrollMarginTop: '1.5rem' }}
+      >
+        {/* 🧭 HOW TO PLAY · 4-STAGE PROGRESSION TOWARDS SAMAVĀYA */}
+        <div className="akasa-how-to-play-bar" role="region" aria-label="How to play matrix instructions">
+          <div className="akasa-htp-header">
+            <div className="akasa-htp-title">
+              <span>🧭 HOW TO PLAY · 4-STAGE PROGRESSION TOWARDS SAMAVĀYA</span>
+            </div>
+            <button
+              type="button"
+              className="akasa-htp-toggle"
+              onClick={() => setShowGuide(!showGuide)}
+            >
+              {showGuide ? 'Hide Instructions Guide ▲' : 'Show Instructions Guide ▼'}
+            </button>
+          </div>
+
+          {showGuide && (
+            <div className="akasa-htp-steps-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+              {/* Step 1: Illusion of Separation */}
+              <div className={`akasa-htp-step${currentStage === 1 ? ' is-active' : currentStage > 1 ? ' is-completed' : ''}`}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                  <span className="akasa-step-num">1</span>
+                  {currentStage === 1 ? (
+                    <span style={{ fontSize: '0.68rem', color: '#facc15', fontWeight: 800, background: 'rgba(250, 204, 21, 0.15)', padding: '0.15rem 0.5rem', borderRadius: '6px', border: '1px solid #facc15' }}>
+                      👉 ACTIVE
+                    </span>
+                  ) : currentStage > 1 ? (
+                    <span style={{ fontSize: '0.72rem', color: '#86efac', fontWeight: 800 }}>✓ DONE</span>
+                  ) : null}
+                </div>
+                <div>
+                  <strong>1. Illusion of Separation</strong>
+                  <p>Click &ldquo;1. Attempt Merge&rdquo; to observe immiscible clusters repelling with high Sneha (Cohesion) friction.</p>
+                </div>
               </div>
-            </div>
-            <div className={`akasa-htp-step${currentStage === 2 ? ' is-active' : ''}`}>
-              <span className="akasa-step-num">2</span>
-              <div>
-                <strong>2. Break the State Mask</strong>
-                <p>Click &ldquo;2. Inject Tejas&rdquo; to introduce thermal heat and soften rigid interfacial boundaries.</p>
+
+              {/* Step 2: Break the State Mask */}
+              <div className={`akasa-htp-step${currentStage === 2 ? ' is-active' : currentStage > 2 ? ' is-completed' : ''}`}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                  <span className="akasa-step-num">2</span>
+                  {currentStage === 2 ? (
+                    <span style={{ fontSize: '0.68rem', color: '#facc15', fontWeight: 800, background: 'rgba(250, 204, 21, 0.15)', padding: '0.15rem 0.5rem', borderRadius: '6px', border: '1px solid #facc15' }}>
+                      👉 ACTIVE
+                    </span>
+                  ) : currentStage > 2 ? (
+                    <span style={{ fontSize: '0.72rem', color: '#86efac', fontWeight: 800 }}>✓ DONE</span>
+                  ) : null}
+                </div>
+                <div>
+                  <strong>2. Break the State Mask</strong>
+                  <p>Click &ldquo;2. Inject Tejas&rdquo; to introduce thermal heat and soften rigid interfacial boundaries.</p>
+                </div>
               </div>
-            </div>
-            <div className={`akasa-htp-step${currentStage === 3 ? ' is-active' : ''}`}>
-              <span className="akasa-step-num">3</span>
-              <div>
-                <strong>3. Dynamic Property Soup</strong>
-                <p>Click &ldquo;3. Sweep Vāyu&rdquo; to dissolve clusters into 56 free atoms, then adjust sliders into the 45%–65% Synergy Window.</p>
+
+              {/* Step 3: Dynamic Property Soup */}
+              <div className={`akasa-htp-step${currentStage === 3 ? ' is-active' : currentStage > 3 ? ' is-completed' : ''}`}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                  <span className="akasa-step-num">3</span>
+                  {currentStage === 3 ? (
+                    <span style={{ fontSize: '0.68rem', color: isSynergyLocked ? '#86efac' : '#facc15', fontWeight: 800, background: isSynergyLocked ? 'rgba(16, 185, 129, 0.2)' : 'rgba(250, 204, 21, 0.15)', padding: '0.15rem 0.5rem', borderRadius: '6px', border: `1px solid ${isSynergyLocked ? '#10b981' : '#facc15'}` }}>
+                      {isSynergyLocked ? '✨ LOCKED' : '👉 ACTIVE'}
+                    </span>
+                  ) : currentStage > 3 ? (
+                    <span style={{ fontSize: '0.72rem', color: '#86efac', fontWeight: 800 }}>✓ DONE</span>
+                  ) : null}
+                </div>
+                <div>
+                  <strong>3. Dynamic Property Soup</strong>
+                  <p>Click &ldquo;3. Sweep Vāyu&rdquo; to dissolve clusters into 56 free atoms, then adjust sliders into the 45%–65% Synergy Window.</p>
+                </div>
               </div>
-            </div>
-            <div className={`akasa-htp-step${currentStage === 4 ? ' is-active' : ''}`}>
-              <span className="akasa-step-num">4</span>
-              <div>
-                <strong>4. Inseparable Inherence</strong>
-                <p>Click &ldquo;4. BIND SAMAVĀYA&rdquo; to collapse the amorphous cloud into the dancing sunbeam motes of the Trasareṇu!</p>
+
+              {/* Step 4: Inseparable Inherence */}
+              <div className={`akasa-htp-step${currentStage === 4 ? ' is-active is-completed' : ''}`}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                  <span className="akasa-step-num">4</span>
+                  {currentStage === 4 ? (
+                    <span style={{ fontSize: '0.72rem', color: '#facc15', fontWeight: 800, background: 'rgba(250, 204, 21, 0.2)', padding: '0.15rem 0.5rem', borderRadius: '6px', border: '1px solid #facc15' }}>
+                      🎉 TRANSCENDED
+                    </span>
+                  ) : null}
+                </div>
+                <div>
+                  <strong>4. Inseparable Inherence</strong>
+                  <p>Click &ldquo;4. BIND SAMAVĀYA&rdquo; to collapse the amorphous cloud into the dancing sunbeam motes of the Trasareṇu!</p>
+                </div>
               </div>
-            </div>
-          </div>
-        )}
-
-        <div className="akasa-objective-beacon">
-          <span className="akasa-objective-badge">🎯 OBJECTIVE (STAGE {currentStage}/4)</span>
-          <span className="akasa-objective-text">
-            {currentStage === 1 && '👉 Step 1: Click button "1. Attempt Merge" below to observe immiscible Sneha rejection.'}
-            {currentStage === 2 && '👉 Step 2: Click button "2. Inject Tejas" below to break the rigid structural barrier.'}
-            {currentStage === 3 && (isSynergyLocked ? '✨ Synergy Locked! Click button "4. ⚛️ BIND SAMAVĀYA IN ĀKĀŚA" to achieve the finale!' : '👉 Step 3: Adjust the 3 sliders (Sneha, Dravatva, Uṣṇa) into the green 45%–65% Synergy Window.')}
-            {currentStage === 4 && '🎉 Stage Complete! Samavāya Inherence Achieved — Reality has transcended rigid state masks.'}
-          </span>
-        </div>
-      </div>
-
-      {/* 2. Real-Time Guṇa Triad Sliders (त्रिगुणात्मक-पर्यावरणम्) */}
-      <div className="vl-guna-triad-card" role="region" aria-label="The Guna Triad Sliders">
-        <div className="vl-triad-header">
-          <div>
-            <h3 className="vl-triad-title">
-              <span>📊 THE GUṆA TRIAD (त्रिगुणात्मक-पर्यावरणम्)</span>
-            </h3>
-            <div className="vl-triad-sub">
-              Balance all 3 sliders into the illuminated <strong>Synergy Window (45% – 65%)</strong> to unlock Samavāya!
-            </div>
-          </div>
-          <div className={`vl-synergy-badge${isSynergyLocked ? ' is-locked' : ''}`}>
-            {isSynergyLocked ? '✨ SYNERGY LOCKED (साम्य-सिद्धम्)' : '⚡ BALANCING REQUIRED'}
-          </div>
-        </div>
-
-        <div className="vl-triad-sliders-grid">
-          {/* Slider 1: Sneha (Cohesion / Polarity) */}
-          <div className="vl-triad-slider-row">
-            <div className="vl-ts-label-wrap">
-              <span className="vl-ts-dev" lang="sa">स्नेह</span>
-              <span className="vl-ts-iast">Sneha</span>
-              <span className="vl-ts-en">(Cohesion / Viscidity)</span>
-              <button
-                type="button"
-                className="vl-word-pronounce-btn"
-                onClick={() => playPronunciation('स्नेह')}
-                style={{ fontSize: '0.72rem', padding: '0.1rem 0.4rem', marginLeft: 'auto' }}
-              >
-                🔊
-              </button>
-            </div>
-            <div className="vl-slider-track-wrap">
-              <input
-                type="range"
-                min={0}
-                max={100}
-                value={sneha}
-                onChange={(e) => handleSliderChange('sneha', Number(e.target.value))}
-                className="vl-guna-range vl-guna-range--sneha"
-              />
-              <div className="vl-synergy-target-zone" style={{ left: '45%', width: '20%' }} />
-            </div>
-            <div className="vl-ts-val-wrap">
-              <span className="vl-ts-val">{sneha}%</span>
-              <span className="vl-ts-note">
-                {sneha > 70 ? 'High Rigidity / Clumping' : sneha < 30 ? 'Low Cohesion' : 'Receptive Cohesion'}
-              </span>
-            </div>
-          </div>
-
-          {/* Slider 2: Dravatva (Fluidity / Mobility) */}
-          <div className="vl-triad-slider-row">
-            <div className="vl-ts-label-wrap">
-              <span className="vl-ts-dev" lang="sa">द्रवत्व</span>
-              <span className="vl-ts-iast">Dravatva</span>
-              <span className="vl-ts-en">(Fluidity / Mobility)</span>
-              <button
-                type="button"
-                className="vl-word-pronounce-btn"
-                onClick={() => playPronunciation('द्रवत्व')}
-                style={{ fontSize: '0.72rem', padding: '0.1rem 0.4rem', marginLeft: 'auto' }}
-              >
-                🔊
-              </button>
-            </div>
-            <div className="vl-slider-track-wrap">
-              <input
-                type="range"
-                min={0}
-                max={100}
-                value={dravatva}
-                onChange={(e) => handleSliderChange('dravatva', Number(e.target.value))}
-                className="vl-guna-range vl-guna-range--dravatva"
-              />
-              <div className="vl-synergy-target-zone" style={{ left: '45%', width: '20%' }} />
-            </div>
-            <div className="vl-ts-val-wrap">
-              <span className="vl-ts-val">{dravatva}%</span>
-              <span className="vl-ts-note">
-                {dravatva < 30 ? 'Static Resistance' : dravatva > 75 ? 'Hyper-Flow' : 'Equilibrium Glide'}
-              </span>
-            </div>
-          </div>
-
-          {/* Slider 3: Uṣṇa (Kinetic Heat / Transformation) */}
-          <div className="vl-triad-slider-row">
-            <div className="vl-ts-label-wrap">
-              <span className="vl-ts-dev" lang="sa">उष्ण</span>
-              <span className="vl-ts-iast">Uṣṇa (Tejas)</span>
-              <span className="vl-ts-en">(Kinetic Heat)</span>
-              <button
-                type="button"
-                className="vl-word-pronounce-btn"
-                onClick={() => playPronunciation('उष्ण')}
-                style={{ fontSize: '0.72rem', padding: '0.1rem 0.4rem', marginLeft: 'auto' }}
-              >
-                🔊
-              </button>
-            </div>
-            <div className="vl-slider-track-wrap">
-              <input
-                type="range"
-                min={0}
-                max={100}
-                value={usna}
-                onChange={(e) => handleSliderChange('usna', Number(e.target.value))}
-                className="vl-guna-range vl-guna-range--usna"
-              />
-              <div className="vl-synergy-target-zone" style={{ left: '45%', width: '20%' }} />
-            </div>
-            <div className="vl-ts-val-wrap">
-              <span className="vl-ts-val">{usna}%</span>
-              <span className="vl-ts-note">
-                {usna < 25 ? 'Cold Lock' : usna > 80 ? 'Kinetic Chaos' : 'Catalytic Thermal Balance'}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* 3. Interactive Simulation Stage (Canvas) */}
-      <div className="vl-matrix-canvas-card">
-        <div className="vl-matrix-stage-toolbar">
-          <div className="vl-stage-mission-indicator">
-            <span className="vl-step-indicator">STAGE {currentStage}/4:</span>{' '}
-            <strong>
-              {currentStage === 1 && 'The Illusion of Separation (Oil & Water)'}
-              {currentStage === 2 && 'Injecting the Catalyst (Breaking State)'}
-              {currentStage === 3 && 'The Wind Calibration (Dynamic Property Soup)'}
-              {currentStage === 4 && 'The Samavāya Binding Achieved'}
-            </strong>
-          </div>
-          <div className="vl-stage-status-chips">
-            <span className="vl-status-chip">Atoms: 56 Paramāṇus</span>
-            <span className="vl-status-chip">Medium: Ākāśa Continuum</span>
-          </div>
-        </div>
-
-        <div className="vl-canvas-wrapper" style={{ position: 'relative', width: '100%', height: '380px' }}>
-          <canvas
-            ref={canvasRef}
-            width={600}
-            height={380}
-            className="vl-matrix-canvas"
-            style={{ width: '100%', height: '100%', display: 'block', borderRadius: '12px', background: '#050914' }}
-          />
-
-          {/* Interactive In-Stage Overlays */}
-          {repulsionTriggered && currentStage === 1 && (
-            <div className="vl-stage-clash-toast">
-              ⚡ STRUCTURAL FRICTION: SNEHA POLARITY DIVERGENCE (OIL &amp; WATER SLIDE OFF)
             </div>
           )}
         </div>
 
-        {/* Action Toolbar to Drive the Sequence */}
-        <div className="vl-matrix-action-toolbar">
-          <button
-            type="button"
-            className={`vl-btn vl-btn--cyber${currentStage === 1 ? ' is-pulsing' : ''}`}
-            onClick={handleAttemptMerge}
-            title="Attempt to mix the two unmixable clusters"
-          >
-            1. Attempt Merge (The Oil &amp; Water Dilemma)
-          </button>
-
-          <button
-            type="button"
-            className={`vl-btn vl-btn--cyber${currentStage === 2 ? ' is-pulsing' : ''}`}
-            onClick={handleInjectTejas}
-            title="Inject heat to break the rigid boundaries"
-          >
-            2. Inject Tejas (Break the State Mask)
-          </button>
-
-          <button
-            type="button"
-            className={`vl-btn vl-btn--cyber${currentStage === 3 ? ' is-pulsing' : ''}`}
-            onClick={handleSweepVayu}
-            title="Sweep Vayu to create dynamic property soup"
-          >
-            3. Sweep Vāyu (Dynamic Property Soup)
-          </button>
-
-          <button
-            type="button"
-            disabled={!isSynergyLocked}
-            className={`vl-btn vl-btn--gold${isSynergyLocked ? ' is-unlocked-glow' : ''}`}
-            onClick={handleSamavayaBinding}
-            title={isSynergyLocked ? 'Bind into Trasarenu!' : 'Align sliders into 45%-65% window first'}
-          >
-            4. ⚛️ BIND SAMAVĀYA IN ĀKĀŚA
-          </button>
-        </div>
-      </div>
-
-      {/* 4. Sage Kaṇāda Companion Commentary HUD */}
-      <aside className="vl-matrix-guru-hud" role="region" aria-label="Kaṇāda's Real-time Commentary">
-        <div className="vl-dialogue-avatar-wrap">
-          <div className="vl-dialogue-avatar is-speaking">
-            {guruSpeaker === 'Kaṇāda' ? '🧘‍♂️' : '⚠️'}
-          </div>
-        </div>
-        <div className="vl-dialogue-content">
-          <div className="vl-dialogue-header">
-            <div className="vl-dialogue-speaker">
-              <span>{guruSpeaker === 'Kaṇāda' ? 'महर्षि-कणाद उवाच · SAGE KAṆĀDA' : 'ENGINE DIAGNOSTIC'}</span>
+        {/* 2. Real-Time Guṇa Triad Sliders (त्रिगुणात्मक-पर्यावरणम्) */}
+        <div className="vl-guna-triad-card" role="region" aria-label="The Guna Triad Sliders">
+          <div className="vl-triad-header">
+            <div>
+              <h3 className="vl-triad-title">
+                <span>📊 THE GUṆA TRIAD (त्रिगुणात्मक-पर्यावरणम्)</span>
+              </h3>
+              <div className="vl-triad-sub">
+                Balance all 3 sliders into the illuminated <strong>Synergy Window (45% – 65%)</strong> to unlock Samavāya!
+              </div>
             </div>
-            <span className="vl-hud-pill">REALITY CALIBRATION</span>
+            <div className={`vl-synergy-badge${isSynergyLocked ? ' is-locked' : ''}`}>
+              {isSynergyLocked ? '✨ SYNERGY LOCKED (साम्य-सिद्धम्)' : '⚡ BALANCING REQUIRED'}
+            </div>
           </div>
-          <p className="vl-dialogue-text" style={{ fontStyle: guruSpeaker === 'Kaṇāda' ? 'italic' : 'normal' }}>
-            {guruDialogue}
-          </p>
+
+          <div className="vl-triad-sliders-grid">
+            {/* Slider 1: Sneha (Cohesion / Polarity) */}
+            <div className="vl-triad-slider-row">
+              <div className="vl-ts-label-wrap">
+                <span className="vl-ts-dev" lang="sa">स्नेह</span>
+                <span className="vl-ts-iast">Sneha</span>
+                <span className="vl-ts-en">(Cohesion / Viscidity)</span>
+                <button
+                  type="button"
+                  className="vl-word-pronounce-btn"
+                  onClick={() => playPronunciation('स्नेह')}
+                  style={{ fontSize: '0.72rem', padding: '0.1rem 0.4rem', marginLeft: 'auto' }}
+                >
+                  🔊
+                </button>
+              </div>
+              <div className="vl-slider-track-wrap">
+                <input
+                  type="range"
+                  min={0}
+                  max={100}
+                  value={sneha}
+                  onChange={(e) => handleSliderChange('sneha', Number(e.target.value))}
+                  className="vl-guna-range vl-guna-range--sneha"
+                />
+                <div className="vl-synergy-target-zone" style={{ left: '45%', width: '20%' }} />
+              </div>
+              <div className="vl-ts-val-wrap">
+                <span className="vl-ts-val">{sneha}%</span>
+                <span className="vl-ts-note">
+                  {sneha > 70 ? 'High Rigidity / Clumping' : sneha < 30 ? 'Low Cohesion' : 'Receptive Cohesion'}
+                </span>
+              </div>
+            </div>
+
+            {/* Slider 2: Dravatva (Fluidity / Mobility) */}
+            <div className="vl-triad-slider-row">
+              <div className="vl-ts-label-wrap">
+                <span className="vl-ts-dev" lang="sa">द्रवत्व</span>
+                <span className="vl-ts-iast">Dravatva</span>
+                <span className="vl-ts-en">(Fluidity / Mobility)</span>
+                <button
+                  type="button"
+                  className="vl-word-pronounce-btn"
+                  onClick={() => playPronunciation('द्रवत्व')}
+                  style={{ fontSize: '0.72rem', padding: '0.1rem 0.4rem', marginLeft: 'auto' }}
+                >
+                  🔊
+                </button>
+              </div>
+              <div className="vl-slider-track-wrap">
+                <input
+                  type="range"
+                  min={0}
+                  max={100}
+                  value={dravatva}
+                  onChange={(e) => handleSliderChange('dravatva', Number(e.target.value))}
+                  className="vl-guna-range vl-guna-range--dravatva"
+                />
+                <div className="vl-synergy-target-zone" style={{ left: '45%', width: '20%' }} />
+              </div>
+              <div className="vl-ts-val-wrap">
+                <span className="vl-ts-val">{dravatva}%</span>
+                <span className="vl-ts-note">
+                  {dravatva < 30 ? 'Static Resistance' : dravatva > 75 ? 'Hyper-Flow' : 'Equilibrium Glide'}
+                </span>
+              </div>
+            </div>
+
+            {/* Slider 3: Uṣṇa (Kinetic Heat / Transformation) */}
+            <div className="vl-triad-slider-row">
+              <div className="vl-ts-label-wrap">
+                <span className="vl-ts-dev" lang="sa">उष्ण</span>
+                <span className="vl-ts-iast">Uṣṇa (Tejas)</span>
+                <span className="vl-ts-en">(Kinetic Heat)</span>
+                <button
+                  type="button"
+                  className="vl-word-pronounce-btn"
+                  onClick={() => playPronunciation('उष्ण')}
+                  style={{ fontSize: '0.72rem', padding: '0.1rem 0.4rem', marginLeft: 'auto' }}
+                >
+                  🔊
+                </button>
+              </div>
+              <div className="vl-slider-track-wrap">
+                <input
+                  type="range"
+                  min={0}
+                  max={100}
+                  value={usna}
+                  onChange={(e) => handleSliderChange('usna', Number(e.target.value))}
+                  className="vl-guna-range vl-guna-range--usna"
+                />
+                <div className="vl-synergy-target-zone" style={{ left: '45%', width: '20%' }} />
+              </div>
+              <div className="vl-ts-val-wrap">
+                <span className="vl-ts-val">{usna}%</span>
+                <span className="vl-ts-note">
+                  {usna < 25 ? 'Cold Lock' : usna > 80 ? 'Kinetic Chaos' : 'Catalytic Thermal Balance'}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-      </aside>
+
+        {/* 3. Interactive Simulation Stage (Canvas) */}
+        <div className="vl-matrix-canvas-card">
+          <div className="vl-matrix-stage-toolbar">
+            <div className="vl-stage-mission-indicator">
+              <span className="vl-step-indicator">STAGE {currentStage}/4:</span>{' '}
+              <strong>
+                {currentStage === 1 && 'The Illusion of Separation (Oil & Water)'}
+                {currentStage === 2 && 'Injecting Tejas (Breaking the State Mask)'}
+                {currentStage === 3 && 'Dynamic Property Soup (Calibrating Guṇa Triad)'}
+                {currentStage === 4 && 'Samavāya Inherence Achieved (Trasareṇu Created)'}
+              </strong>
+            </div>
+            <div className="vl-stage-status-chips">
+              <span className="vl-status-chip">Atoms: 56 Paramāṇus</span>
+              <span className="vl-status-chip">Medium: Ākāśa Continuum</span>
+              <span className={`vl-status-chip${isSynergyLocked ? ' is-synergy' : ''}`}>
+                {isSynergyLocked ? '✨ 45%–65% Synergy Locked' : 'Target: 45%–65% Synergy'}
+              </span>
+            </div>
+          </div>
+
+          <div className="vl-canvas-wrapper" style={{ position: 'relative', width: '100%', height: '380px' }}>
+            <canvas
+              ref={canvasRef}
+              width={600}
+              height={380}
+              className="vl-matrix-canvas"
+              style={{ width: '100%', height: '100%', display: 'block', borderRadius: '12px', background: '#050914' }}
+            />
+
+            {/* Interactive In-Stage Overlays */}
+            {repulsionTriggered && currentStage === 1 && (
+              <div className="vl-stage-clash-toast">
+                ⚡ STRUCTURAL FRICTION: SNEHA POLARITY DIVERGENCE (OIL &amp; WATER SLIDE OFF)
+              </div>
+            )}
+          </div>
+
+          {/* Action Toolbar to Drive the Sequence */}
+          <div className="vl-matrix-action-toolbar">
+            <button
+              type="button"
+              className={`vl-btn vl-btn--cyber${currentStage === 1 ? ' is-pulsing' : ''}`}
+              onClick={handleAttemptMerge}
+              title="Step 1: Attempt to mix the two unmixable clusters"
+            >
+              1. Attempt Merge (The Oil &amp; Water Dilemma)
+            </button>
+
+            <button
+              type="button"
+              className={`vl-btn vl-btn--cyber${currentStage === 2 ? ' is-pulsing' : ''}`}
+              onClick={handleInjectTejas}
+              title="Step 2: Inject heat to break the rigid boundaries"
+            >
+              2. Inject Tejas (Break the State Mask)
+            </button>
+
+            <button
+              type="button"
+              className={`vl-btn vl-btn--cyber${currentStage === 3 ? ' is-pulsing' : ''}`}
+              onClick={handleSweepVayu}
+              title="Step 3: Sweep Vayu to create dynamic property soup"
+            >
+              3. Sweep Vāyu (Dynamic Property Soup)
+            </button>
+
+            <button
+              type="button"
+              disabled={!isSynergyLocked}
+              className={`vl-btn vl-btn--gold${isSynergyLocked ? ' is-unlocked-glow is-pulsing' : ''}`}
+              onClick={handleSamavayaBinding}
+              title={isSynergyLocked ? 'Step 4: Bind into Trasarenu in eternal Akasa!' : 'Step 4: Align sliders into 45%-65% window first'}
+            >
+              4. ⚛️ BIND SAMAVĀYA IN ĀKĀŚA
+            </button>
+          </div>
+        </div>
+
+        {/* 4. Sage Kaṇāda Companion Commentary HUD */}
+        <aside className="vl-matrix-guru-hud" role="region" aria-label="Kaṇāda's Real-time Commentary">
+          <div className="vl-dialogue-avatar-wrap">
+            <div className="vl-dialogue-avatar is-speaking">
+              {guruSpeaker === 'Kaṇāda' ? '🧘‍♂️' : '⚠️'}
+            </div>
+          </div>
+          <div className="vl-dialogue-content">
+            <div className="vl-dialogue-header">
+              <div className="vl-dialogue-speaker">
+                <span>{guruSpeaker === 'Kaṇāda' ? 'महर्षि-कणाद उवाच · SAGE KAṆĀDA' : 'ENGINE DIAGNOSTIC'}</span>
+              </div>
+              <span className="vl-hud-pill">REALITY CALIBRATION</span>
+            </div>
+            <p className="vl-dialogue-text" style={{ fontStyle: guruSpeaker === 'Kaṇāda' ? 'italic' : 'normal' }}>
+              {guruDialogue}
+            </p>
+          </div>
+        </aside>
+      </div>
 
       {/* 5. Victory Modal: State Transcended */}
       {showVictoryModal && (
