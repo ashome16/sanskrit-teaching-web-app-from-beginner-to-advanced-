@@ -282,7 +282,7 @@ export const JOURNEY_STOPS: JourneyStop[] = [
       {
         speaker: 'Bodhi',
         dev: 'भगवन्! पृथिव्यादयः चत्वारः स्पर्शन गृह्यन्ते। आकाशस्तु अप्रत्यक्षः! तस्य सद्भावे किं प्रमाणम्?',
-        en: 'Lord! Earth, Water, Fire, and Air are known by touch and sight. But Space is invisible! How can we scientifically prove its existence?',
+        en: 'Gurudeva! Earth, Water, Fire, and Air are known by touch and sight. But Space is invisible! How can we scientifically prove its existence?',
         subText: 'The challenge of proving an imperceptible reality',
       },
       {
@@ -562,14 +562,14 @@ export const JOURNEY_STOPS: JourneyStop[] = [
   {
     id: 8,
     icon: '🌿',
-    placeNameDev: 'लोकसंग्रह-आश्रमः',
-    placeNameEn: 'The Hermitage of Compassion & Liberation',
-    eraSetting: 'Sacred Banyan Hermitage · Sunset Twilight · Ayurvedic Mortar',
+    placeNameDev: 'विज्ञान-आश्रमः',
+    placeNameEn: 'Purpose of Science - Vigyana',
+    eraSetting: 'Sacred Banyan Hermitage · Sunset Twilight · Ethical Science',
     accentColor: '#eab308',
     bgGradient: 'linear-gradient(180deg, #422006 0%, #0f172a 100%)',
-    category: 'Biography & Ethos (ऋषि-चरितम् एवं लोकायतनम्)',
-    titleDev: 'महर्षिः कणादः · Sage Kaṇāda & Ethical Naturalism',
-    titleEn: 'The Philosopher of Rice Grains, Science & Compassion',
+    category: 'Philosophy & Ethics (ऋषि-चरितम् एवं विज्ञानम्)',
+    titleDev: 'महर्षिः कणादः · Purpose of Science - Vigyana (विज्ञानम्)',
+    titleEn: 'Purpose of Science - Vigyana (विज्ञानम्)',
     sanskritSutra: 'यतोऽभ्युदयनिःश्रेयससिद्धिः स धर्मः',
     sanskritSutraRef: 'Vaiśeṣika Sūtra 1.1.2 · "Dharma leads to material prosperity and spiritual liberation"',
     coreInsight:
@@ -578,7 +578,7 @@ export const JOURNEY_STOPS: JourneyStop[] = [
       {
         speaker: 'Bodhi',
         dev: 'भगवन्! अस्माकं भौतिक-शास्त्रस्य परमं प्रयोजनं किम्?',
-        en: 'Lord! What is the supreme purpose of all our atomic and spatial physics?',
+        en: 'Gurudeva! What is the supreme purpose of science (Vigyana)?',
         subText: 'The ethical and existential question of science',
       },
       {
@@ -1305,7 +1305,7 @@ export const ScenicStage: React.FC<{ stop: JourneyStop; activeSpeaker: 'Bodhi' |
               <circle cx="8" cy="-20" r="4" fill="#fef08a" opacity="0.75" />
 
               <text x="0" y="42" textAnchor="middle" fill="#fef08a" fontSize="11" fontWeight="800">
-                लोकसंग्रहः · Compassionate Medicine &amp; Liberation (अपवर्गः)
+                Purpose of Science - Vigyana (विज्ञानम्)
               </text>
             </g>
 
