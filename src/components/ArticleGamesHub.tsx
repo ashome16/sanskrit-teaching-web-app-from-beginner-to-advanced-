@@ -18,7 +18,10 @@ type GameId =
   | 'metrology'
   | 'madhavapi'
   | 'colossal'
-  | 'swara';
+  | 'swara'
+  | 'calendar'
+  | 'altar'
+  | 'vinculum';
 
 interface GameMetadata {
   id: GameId;
@@ -131,6 +134,36 @@ const GAMES: GameMetadata[] = [
     articleTitle: 'Animal Names: Yoga Shapes and Singing Notes',
     badge: 'Musicology & Acoustics',
     color: '#e11d48',
+  },
+  {
+    id: 'calendar',
+    icon: '☀️',
+    devTitle: 'वेदाङ्ग-ज्योतिष-कालचक्रम्',
+    title: 'Vedāṅga Jyotiṣa Calendar Wheel',
+    articleSlug: 'ganita-and-the-calendar',
+    articleTitle: 'Gaṇita and the Calendar — Precision of Indian Astronomy & 366-Day Vedic Year',
+    badge: 'Vedic Astronomy',
+    color: '#eab308',
+  },
+  {
+    id: 'altar',
+    icon: '🔥',
+    devTitle: 'बौधायन-वेदी-निर्माणम्',
+    title: 'Baudhāyana Fire Altar Architect',
+    articleSlug: 'baudhayana-even-prime-geometry',
+    articleTitle: 'The Ancient Roots of the Even Prime: Baudhayana & Vedic Geometry Mapped 2',
+    badge: 'Śulba Geometry',
+    color: '#ea580c',
+  },
+  {
+    id: 'vinculum',
+    icon: '✨',
+    devTitle: 'रेखाङ्क-शोधन-यन्त्रम्',
+    title: 'The Vinculum Number Alchemist',
+    articleSlug: 'fluid-space-simultaneous-processing',
+    articleTitle: 'The Vedic Approach: Treating Place Value as Fluid Space',
+    badge: 'Fluid Space Arithmetic',
+    color: '#8b5cf6',
   },
 ];
 
@@ -1728,6 +1761,467 @@ const SaptaswaraWeaverGame: React.FC<{ onScore: (pts: number) => void }> = ({ on
 };
 
 // ============================================================================
+// GAME 11: VEDĀṄGA JYOTIṢA CALENDAR WHEEL (वेदाङ्ग-ज्योतिष-कालचक्रम्)
+// ============================================================================
+const NAKSHATRAS = [
+  'Aśvinī', 'Bharaṇī', 'Kṛttikā', 'Rohiṇī', 'Mṛgaśīrṣa', 'Ārdrā',
+  'Punarvasu', 'Puṣya', 'Āśleṣā', 'Maghā', 'Pūrva-Phalgunī', 'Uttara-Phalgunī',
+  'Hasta', 'Citrā', 'Svātī', 'Viśākhā', 'Anurādhā', 'Jyeṣṭhā',
+  'Mūla', 'Pūrvāṣāḍhā', 'Uttarāṣāḍhā', 'Śravaṇa', 'Dhaniṣṭhā', 'Śatabhiṣaj',
+  'Pūrva-Bhādrapadā', 'Uttara-Bhādrapadā', 'Revatī'
+];
+
+const JyotishaCalendarGame: React.FC<{ onScore: (pts: number) => void }> = ({ onScore }) => {
+  const [lunarMonth, setLunarMonth] = useState<number>(1);
+  const [adhikamasaInserted, setAdhikamasaInserted] = useState<number>(0);
+  const [lastSyncedMonth, setLastSyncedMonth] = useState<number>(0);
+
+  const rawDriftDays = Math.max(0, Math.round((lunarMonth - adhikamasaInserted * 30) * 0.98));
+  const isDriftHigh = rawDriftDays >= 25;
+
+  const sunAngle = (lunarMonth * 30) % 360;
+  const moonAngle = (lunarMonth * 390) % 360;
+  const currentNakshatraIdx = Math.floor((moonAngle / 360) * 27) % 27;
+
+  const advanceMonth = () => {
+    soundEffects.playStrokeChime();
+    if (lunarMonth < 60) {
+      setLunarMonth((prev) => prev + 1);
+    }
+  };
+
+  const insertAdhikamasa = () => {
+    if (isDriftHigh) {
+      soundEffects.playCelebrationChime();
+      setAdhikamasaInserted((prev) => prev + 1);
+      setLastSyncedMonth(lunarMonth);
+      onScore(40);
+    } else {
+      soundEffects.playPuzzleSnap();
+    }
+  };
+
+  const resetYuga = () => {
+    soundEffects.playStrokeChime();
+    setLunarMonth(1);
+    setAdhikamasaInserted(0);
+    setLastSyncedMonth(0);
+  };
+
+  return (
+    <div className="ag-game-box">
+      <div className="ag-game-head">
+        <div>
+          <h3 className="ag-game-title">☀️ Vedāṅga Jyotiṣa Calendar Wheel</h3>
+          <p className="ag-game-sub">
+            Lagadha’s <i>Vedāṅga Jyotiṣa</i> tracks the 5-year Yuga (1,830 days, 62 synodic months, 67 sidereal months). Advance the lunar months, monitor solar-lunar drift, and insert the sacred <b>Adhikamāsa (अधिकमासः)</b> at months 30 &amp; 60 to harmonize seasons!
+          </p>
+        </div>
+        <button type="button" className="ag-btn ag-btn--ghost" onClick={resetYuga}>
+          ↺ Reset 5-Year Yuga
+        </button>
+      </div>
+
+      <div className="ag-calendar-layout">
+        <div className="ag-calendar-controls">
+          <div className="ag-chem-row">
+            <label htmlFor="calendarMonthInput">Lunar Month (चान्द्रमासः): <b>Month {lunarMonth} of 60</b> (Year {Math.ceil(lunarMonth / 12)})</label>
+            <input
+              id="calendarMonthInput"
+              type="range"
+              min="1"
+              max="60"
+              value={lunarMonth}
+              onChange={(e) => setLunarMonth(parseInt(e.target.value, 10))}
+              className="ag-slider"
+            />
+          </div>
+
+          <div className="ag-pad-buttons">
+            <button type="button" className="ag-btn ag-btn--primary" onClick={advanceMonth} disabled={lunarMonth >= 60}>
+              ⏭️ Advance 1 Month
+            </button>
+            <button
+              type="button"
+              className={`ag-btn ${isDriftHigh ? 'ag-btn--primary' : 'ag-btn--ghost'}`}
+              onClick={insertAdhikamasa}
+              disabled={!isDriftHigh}
+            >
+              🌕 Insert Adhikamāsa (+40 pts)
+            </button>
+          </div>
+
+          <div className="ag-drift-card">
+            <div className="ag-drift-label">
+              <span>Seasonal Drift (ऋत्वन्तरालम्):</span>
+              <b>{rawDriftDays} days</b>
+            </div>
+            <div className="ag-drift-bar-wrap">
+              <div
+                className="ag-drift-bar-fill"
+                style={{ width: `${Math.min(100, (rawDriftDays / 30) * 100)}%` }}
+              />
+            </div>
+            {isDriftHigh ? (
+              <div className="ag-drift-warning">
+                ⚠️ Solar-lunar divergence critical (&gt;25 days)! Tap &quot;Insert Adhikamāsa&quot; to restore solstice harmony!
+              </div>
+            ) : (
+              <div style={{ fontSize: '0.78rem', color: '#64748b' }}>
+                ✓ Seasons synchronized with celestial Nakṣatras.
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="ag-zodiac-card">
+          <div className="ag-zodiac-wheel-box">
+            <div
+              className="ag-celestial-sun"
+              style={{
+                transform: `rotate(${sunAngle}deg) translate(80px) rotate(-${sunAngle}deg)`,
+              }}
+              title="Sūrya (Sun)"
+            >
+              ☀️
+            </div>
+
+            <div
+              className="ag-celestial-moon"
+              style={{
+                transform: `rotate(${moonAngle}deg) translate(50px) rotate(-${moonAngle}deg)`,
+              }}
+              title="Candra (Moon)"
+            >
+              🌙
+            </div>
+
+            <div style={{ textAlign: 'center', zIndex: 2 }}>
+              <div style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Current Nakṣatra</div>
+              <div style={{ fontSize: '0.92rem', fontWeight: 800, color: '#38bdf8' }}>
+                {NAKSHATRAS[currentNakshatraIdx]}
+              </div>
+            </div>
+          </div>
+
+          <div style={{ fontSize: '0.82rem', color: '#cbd5e1', textAlign: 'center' }}>
+            Adhikamāsas Inserted in this Yuga: <b>{adhikamasaInserted} / 2</b>
+            {lastSyncedMonth > 0 && <span> (Last synced at Month {lastSyncedMonth})</span>}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// GAME 12: BAUDHĀYANA FIRE ALTAR ARCHITECT (बौधायन-वेदी-निर्माणम्)
+// ============================================================================
+const BaudhayanaAltarGame: React.FC<{ onScore: (pts: number) => void }> = ({ onScore }) => {
+  const [altarSide] = useState<number>(4);
+  const [showDiagonalAltar, setShowDiagonalAltar] = useState<boolean>(false);
+  const [cordStep, setCordStep] = useState<number>(1);
+  const [completedCord, setCompletedCord] = useState<boolean>(false);
+
+  const baseArea = altarSide * altarSide;
+  const diagonalArea = baseArea * 2;
+
+  const cordValues = [
+    { step: 1, text: 'Base Measure (प्रमाण-रज्जुः)', val: 1.000000, frac: '1' },
+    { step: 2, text: 'Add 1/3 (तृतीयभाग-संयोजनम्)', val: 1 + 1 / 3, frac: '1 + 1/3' },
+    { step: 3, text: 'Add 1/(3×4) = 1/12 (चतुर्भाग-संयोजनम्)', val: 1 + 1 / 3 + 1 / 12, frac: '1 + 1/3 + 1/12' },
+    { step: 4, text: 'Subtract 1/(3×4×34) = 1/408 (चतुस्त्रिंशोनम्)', val: 577 / 408, frac: '577 / 408' },
+  ];
+
+  const currentCord = cordValues[cordStep - 1];
+
+  const advanceCord = () => {
+    soundEffects.playStrokeChime();
+    if (cordStep < 4) {
+      const next = cordStep + 1;
+      setCordStep(next);
+      if (next === 4) {
+        soundEffects.playCelebrationChime();
+        setCompletedCord(true);
+        onScore(45);
+      }
+    }
+  };
+
+  const toggleDiagonal = () => {
+    soundEffects.playPuzzleSnap();
+    setShowDiagonalAltar((prev) => !prev);
+    if (!showDiagonalAltar) {
+      onScore(20);
+    }
+  };
+
+  return (
+    <div className="ag-game-box">
+      <div className="ag-game-head">
+        <div>
+          <h3 className="ag-game-title">🔥 Baudhāyana Fire Altar Architect</h3>
+          <p className="ag-game-sub">
+            The <i>Baudhāyana Śulba Sūtra</i> (c. 800 BCE) formulates the geometry of sacred altars (Vedi). Master the diagonal cord theorem (<i>akṣṇayā rajjuḥ</i>) to double the sacred hearth area and reconstruct the ancient 4-part cord formula for \(\sqrt{2}\)!
+          </p>
+        </div>
+      </div>
+
+      <div className="ag-altar-layout">
+        <div className="ag-altar-canvas-card">
+          <svg className="ag-altar-svg-wrap" viewBox="0 0 240 240">
+            <defs>
+              <pattern id="altarGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#fde68a" strokeWidth="0.8" />
+              </pattern>
+            </defs>
+            <rect width="240" height="240" fill="url(#altarGrid)" />
+
+            <rect
+              x="60"
+              y="60"
+              width="120"
+              height="120"
+              fill="#fed7aa"
+              stroke="#ea580c"
+              strokeWidth="2.5"
+            />
+
+            <line
+              x1="60"
+              y1="180"
+              x2="180"
+              y2="60"
+              stroke="#b91c1c"
+              strokeWidth="3"
+              strokeDasharray={showDiagonalAltar ? 'none' : '4,4'}
+            />
+
+            {showDiagonalAltar && (
+              <polygon
+                points="60,180 180,60 240,120 120,240"
+                fill="#fde047"
+                fillOpacity="0.55"
+                stroke="#ca8a04"
+                strokeWidth="2.5"
+              />
+            )}
+          </svg>
+
+          <div style={{ textAlign: 'center' }}>
+            <div>Base Altar Area: <b>{baseArea} sq. units</b></div>
+            {showDiagonalAltar && (
+              <div style={{ color: '#b45309', fontWeight: 800, marginTop: '0.25rem' }}>
+                ✨ Doubled Altar Area on Diagonal: <b>{diagonalArea} sq. units (Exact 2×)!</b>
+              </div>
+            )}
+          </div>
+
+          <button type="button" className="ag-btn ag-btn--primary" onClick={toggleDiagonal}>
+            {showDiagonalAltar ? '↺ Reset Altar' : '📐 Stretch Diagonal Cord & Double Altar'}
+          </button>
+        </div>
+
+        <div className="ag-cord-calc-card">
+          <h4 style={{ margin: 0, color: '#0f172a' }}>
+            Śulba Cord \(\sqrt{2}\) Formula: <i>karaṇīṃ tṛtīyena vardhayet...</i>
+          </h4>
+          <p style={{ margin: 0, fontSize: '0.82rem', color: '#64748b' }}>
+            Baudhāyana adds 1/3, then 1/12, then subtracts 1/408 to calculate \(\sqrt{2}\) with 5-decimal accuracy!
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+            {cordValues.map((item) => (
+              <div
+                key={item.step}
+                className={`ag-cord-step-item ${cordStep >= item.step ? 'is-active' : ''}`}
+              >
+                <div>
+                  <b>Step {item.step}:</b> {item.text}
+                </div>
+                <code>{item.val.toFixed(8)}</code>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ background: '#f8fafc', padding: '0.75rem', borderRadius: '10px', fontSize: '0.86rem' }}>
+            <div>Calculated \(\sqrt{2}\): <b>{currentCord.val.toFixed(8)}</b> ({currentCord.frac})</div>
+            <div>True \(\sqrt{2}\): <code>1.41421356</code> (Difference: {Math.abs(currentCord.val - Math.SQRT2).toFixed(8)})</div>
+          </div>
+
+          <button
+            type="button"
+            className="ag-btn ag-btn--primary"
+            onClick={advanceCord}
+            disabled={cordStep >= 4}
+          >
+            {completedCord ? '✅ Śulba Cord Verified! (+45 pts)' : 'Add Next Cord Segment →'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// GAME 13: THE VINCULUM NUMBER ALCHEMIST (रेखाङ्क-शोधक-यन्त्रम्)
+// ============================================================================
+interface VinculumPuzzle {
+  id: string;
+  original: number;
+  vinculumRepresentation: string;
+  expandedCalculation: string;
+  mentalMultiplier: string;
+  result: number;
+}
+
+const VINCULUM_PUZZLES: VinculumPuzzle[] = [
+  {
+    id: 'p1',
+    original: 89,
+    vinculumRepresentation: '1 1̄ 1̄',
+    expandedCalculation: '100 - 10 - 1 = 89',
+    mentalMultiplier: '89 × 11 = (11̄1̄) × 11 = 979',
+    result: 979,
+  },
+  {
+    id: 'p2',
+    original: 298,
+    vinculumRepresentation: '3 0 2̄',
+    expandedCalculation: '300 + 0 - 2 = 298',
+    mentalMultiplier: '298 × 5 = (302̄) × 5 = 1500 - 10 = 1490',
+    result: 1490,
+  },
+  {
+    id: 'p3',
+    original: 3899,
+    vinculumRepresentation: '4 1̄ 0 1̄',
+    expandedCalculation: '4000 - 100 + 0 - 1 = 3899',
+    mentalMultiplier: '3899 × 2 = (41̄01̄) × 2 = 8000 - 200 - 2 = 7798',
+    result: 7798,
+  },
+];
+
+const VinculumGame: React.FC<{ onScore: (pts: number) => void }> = ({ onScore }) => {
+  const [selectedPuzzleIdx, setSelectedPuzzleIdx] = useState<number>(0);
+  const [isTransmuted, setIsTransmuted] = useState<boolean>(false);
+  const [solvedMultiplication, setSolvedMultiplication] = useState<boolean>(false);
+
+  const currentPuzzle = VINCULUM_PUZZLES[selectedPuzzleIdx];
+
+  const handleTransmute = () => {
+    soundEffects.playStrokeChime();
+    setIsTransmuted(true);
+  };
+
+  const handleSolve = () => {
+    soundEffects.playCelebrationChime();
+    setSolvedMultiplication(true);
+    onScore(35);
+  };
+
+  const switchPuzzle = (idx: number) => {
+    soundEffects.playPuzzleSnap();
+    setSelectedPuzzleIdx(idx);
+    setIsTransmuted(false);
+    setSolvedMultiplication(false);
+  };
+
+  return (
+    <div className="ag-game-box">
+      <div className="ag-game-head">
+        <div>
+          <h3 className="ag-game-title">✨ The Vinculum Number Alchemist</h3>
+          <p className="ag-game-sub">
+            In Vaidic Gaṇitam, numbers with heavy digits (6, 7, 8, 9) are transmuted into light digits (\(\le 5\)) using the <b>Rekhāṅka (रेखाङ्क / Vinculum)</b> bar. Math becomes effortless without large multiplication tables!
+          </p>
+        </div>
+      </div>
+
+      <div className="ag-vinculum-layout">
+        <div className="ag-vinculum-stage">
+          <div className="ag-vinculum-comparison">
+            <div className="ag-vinculum-box">
+              <div className="ag-box-tag">Standard Heavy Digits</div>
+              <div className="ag-vinculum-digits">{currentPuzzle.original}</div>
+            </div>
+
+            <div style={{ fontSize: '1.5rem', color: '#64748b' }}>➔</div>
+
+            <div className={`ag-vinculum-box ${isTransmuted ? 'is-transmuted' : ''}`}>
+              <div className="ag-box-tag">Alchemical Vinculum Form (रेखाङ्क)</div>
+              {isTransmuted ? (
+                <div className="ag-vinculum-digits">
+                  {currentPuzzle.vinculumRepresentation.split(' ').map((digit, dIdx) => (
+                    <span key={dIdx} className={digit.includes('̄') ? 'ag-vbar-digit' : ''}>
+                      {digit.replace('̄', '')}
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <div style={{ fontSize: '1.1rem', color: '#94a3b8', padding: '0.4rem 0' }}>
+                  [Click Transmute to Cast Rekhāṅka]
+                </div>
+              )}
+            </div>
+          </div>
+
+          <button
+            type="button"
+            className="ag-btn ag-btn--primary"
+            onClick={handleTransmute}
+            disabled={isTransmuted}
+          >
+            🔮 Transmute Heavy Digits (निखिलं नवतश्चरमं दशतः)
+          </button>
+
+          {isTransmuted && (
+            <div style={{ width: '100%', background: '#f8fafc', padding: '1rem', borderRadius: '12px', textAlign: 'center' }}>
+              <div style={{ fontSize: '0.9rem', color: '#334155' }}>
+                Decomposition: <b>{currentPuzzle.expandedCalculation}</b>
+              </div>
+              <div style={{ marginTop: '0.6rem', fontSize: '1rem', fontWeight: 800, color: '#6d28d9' }}>
+                Mental Multiplication: {currentPuzzle.mentalMultiplier}
+              </div>
+              {!solvedMultiplication ? (
+                <button
+                  type="button"
+                  className="ag-btn ag-btn--primary"
+                  style={{ marginTop: '0.75rem' }}
+                  onClick={handleSolve}
+                >
+                  ⚡ Verify Speed Calculation (+35 pts)
+                </button>
+              ) : (
+                <div style={{ marginTop: '0.6rem', color: '#15803d', fontWeight: 800 }}>
+                  ✅ Verified in a fraction of a second!
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        <div className="ag-vinculum-puzzles">
+          {VINCULUM_PUZZLES.map((pz, idx) => (
+            <button
+              key={pz.id}
+              type="button"
+              className={`ag-vpuzzle-card ${idx === selectedPuzzleIdx ? 'is-active' : ''}`}
+              onClick={() => switchPuzzle(idx)}
+            >
+              <b>Challenge {idx + 1}: Transmute {pz.original}</b>
+              <span style={{ fontSize: '0.8rem', color: '#64748b' }}>
+                Turn cumbersome digits into pure subtraction complements
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
 // MAIN ARTICLE GAMES HUB CONTAINER
 // ============================================================================
 export const ArticleGamesHub: React.FC<ArticleGamesHubProps> = ({
@@ -1789,7 +2283,7 @@ export const ArticleGamesHub: React.FC<ArticleGamesHubProps> = ({
             Games of Ancient India · <span lang="sa">प्राचीन-विज्ञान-क्रीडाः</span>
           </h2>
           <p className="ag-lead">
-            Play interactive games based on our published articles: test King Rituparna’s tree sampling, formulate Śukranīti rocket propellant, solve Līlāvatī’s poetic riddles, pulverize Diophantine equations with Kuṭṭaka, master Dhanurveda ballistics, balance antique coins with botanical Guñjā seeds, accelerate Madhava’s infinite Pi series, unlock cosmic powers in the Colossal Vault, and weave classical rāgas with animal Saptasvara tones.
+            Play interactive games based on our published articles: test King Rituparna’s tree sampling, formulate Śukranīti rocket propellant, solve Līlāvatī’s poetic riddles, pulverize Diophantine equations with Kuṭṭaka, master Dhanurveda ballistics, balance antique coins with botanical Guñjā seeds, accelerate Madhava’s infinite Pi series, unlock cosmic powers in the Colossal Vault, weave animal Saptasvara music, synchronize the Vedāṅga Jyotiṣa calendar wheel, double Baudhāyana fire altars, and transmute heavy numbers with Vinculum alchemy.
           </p>
           <div className="ag-header-actions">
             {onGoHome && (
@@ -1851,6 +2345,9 @@ export const ArticleGamesHub: React.FC<ArticleGamesHubProps> = ({
         {activeGameId === 'madhavapi' && <MadhavaPiGame onScore={addScore} />}
         {activeGameId === 'colossal' && <ColossalVaultGame onScore={addScore} />}
         {activeGameId === 'swara' && <SaptaswaraWeaverGame onScore={addScore} />}
+        {activeGameId === 'calendar' && <JyotishaCalendarGame onScore={addScore} />}
+        {activeGameId === 'altar' && <BaudhayanaAltarGame onScore={addScore} />}
+        {activeGameId === 'vinculum' && <VinculumGame onScore={addScore} />}
       </main>
     </div>
   );

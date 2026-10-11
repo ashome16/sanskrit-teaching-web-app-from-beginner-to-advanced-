@@ -7914,6 +7914,9 @@ ${bodyHtml}
                   'kerala-school-calculus-and-infinite-series': { id: 'madhavapi', title: 'Madhava’s Infinite Pi Accelerator', dev: 'माधव-अनन्त-श्रेणी-त्वरकः', icon: '♾️' },
                   'naming-the-colossal': { id: 'colossal', title: 'The Colossal Powers Vault', dev: 'सङ्ख्या-विस्तार-भाण्डागारः', icon: '🌌' },
                   'animal-names-yoga-sounds': { id: 'swara', title: 'Animal Swara Melodic Weaver', dev: 'सप्तस्वर-नाद-चक्रम्', icon: '🎵' },
+                  'ganita-and-the-calendar': { id: 'calendar', title: 'Vedāṅga Jyotiṣa Calendar Wheel', dev: 'वेदाङ्ग-ज्योतिष-कालचक्रम्', icon: '☀️' },
+                  'baudhayana-even-prime-geometry': { id: 'altar', title: 'Baudhāyana Fire Altar Architect', dev: 'बौधायन-वेदी-निर्माणम्', icon: '🔥' },
+                  'fluid-space-simultaneous-processing': { id: 'vinculum', title: 'The Vinculum Number Alchemist', dev: 'रेखाङ्क-शोधन-यन्त्रम्', icon: '✨' },
                 };
                 const g = gameMap[currentArticle.slug];
                 if (!g) return null;
