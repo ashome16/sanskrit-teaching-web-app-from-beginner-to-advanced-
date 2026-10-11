@@ -65,7 +65,7 @@ const INITIAL_CORPOREAL_SLOTS: TryanukaSlotState[] = [
     roleDev: 'समवायि-कारणम् (Material Body)',
     roleEn: 'Inseparable Material Cause',
     explanation: 'Earth supplies the physical atoms and mass of the vessel. The pot is made OF earth.',
-    inquiryBodhi: 'Gurudeva, how does clay form the vessel? Why is earth called the material cause?',
+    inquiryBodhi: 'Deva, how does clay form the vessel? Why is earth called the material cause?',
     teachingKanada: 'Earth supplies the physical atoms (Paramāṇus). The pot is made directly of earth; without earth atoms, no physical vessel can exist.',
     count: 0,
     isReady: false,
@@ -162,7 +162,7 @@ const INITIAL_COMIC_PANELS: ComicPanelEntry[] = [
   {
     id: 'panel-0',
     speaker: 'Bodhi',
-    text: 'Gurudeva, the potter is at the wheel. How do the 5 elements come together to create a new pot?',
+    text: 'Deva, the potter is at the wheel. How do the 5 elements come together to create a new pot?',
     time: 'Step 1',
     role: 'The Inquirer',
     avatar: '🧑‍🎓',
@@ -735,7 +735,7 @@ export interface WheelObservationDialogue {
 export const WHEEL_STAGE_OBSERVATION_DIALOGUES: Record<number, WheelObservationDialogue> = {
   0: {
     title: 'चरण ० · आरम्भः एवं निमित्त-कारणम् (The Potter at the Wheel)',
-    bodhi: 'Gurudeva, who is this craftsman, and what is his role in creating the vessel?',
+    bodhi: 'Deva, who is this craftsman, and what is his role in creating the vessel?',
     kanada:
       'He is the Kulāla (Potter) — the classic Nimitta-Kāraṇa (Instrumental Cause)! His turning stick (daṇḍa) and hands impart rotational velocity (Vega). But he cannot make a pot without matter. Direct Element #1 (Earth) into the wheel to throw the clay!',
   },
@@ -770,7 +770,7 @@ export const WHEEL_STAGE_OBSERVATION_DIALOGUES: Record<number, WheelObservationD
   5: {
     title: 'चरण ५ · घटाकाश-सिद्धिः (The Revelation of All-Pervading Space)',
     bodhi:
-      'Gurudeva! We forged 4 elements on the wheel, but how does the potter add the 5th element—Space (Ākāśa)?',
+      'Deva! We forged 4 elements on the wheel, but how does the potter add the 5th element—Space (Ākāśa)?',
     kanada:
       'The potter did not manufacture Space! Space is Vibhu (all-pervading) and partless. By building the 4 atomic walls around emptiness, the potter merely enclosed the pre-existing void (Ghaṭākāśa). Strike the pot—Sound (Śabda) is the proof of Space!',
   },
@@ -2291,7 +2291,7 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
         setTimeout(() => {
           logDialogue('Kaṇāda', 'Air imparts kinetic momentum (vega) to turn the wheel, and evaporates moisture to dry the pot.');
           setTimeout(() => {
-            logDialogue('Bodhi', 'Gurudeva! Earth, Water, Fire, and Air are all swirling inside. How are we going to add the 5th element (Ākāśa)? We don’t have a 5th Tryaṇuka!');
+            logDialogue('Bodhi', 'Deva! Earth, Water, Fire, and Air are all swirling inside. How are we going to add the 5th element (Ākāśa)? We don’t have a 5th Tryaṇuka!');
             setTimeout(() => {
               logDialogue(
                 'Kaṇāda',
@@ -2636,7 +2636,7 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
                       <div className="akasa-space-speech">
                         <strong style={{ color: '#38bdf8' }}>🧑‍🎓 शिष्यः बोधिः · Bodhi (The Inquirer):</strong>
                         <p style={{ color: '#f8fafc' }}>
-                          "Gurudeva! We have forged all 4 corporeal Tryaṇukas: Earth (🪨), Water (💧), Fire (🔥), and Air (💨). But where is the 5th Tryaṇuka for Space (Ākāśa)? Why can’t we build a Tryaṇuka of space on our atomic workbench?"
+                          "Deva! We have forged all 4 corporeal Tryaṇukas: Earth (🪨), Water (💧), Fire (🔥), and Air (💨). But where is the 5th Tryaṇuka for Space (Ākāśa)? Why can’t we build a Tryaṇuka of space on our atomic workbench?"
                         </p>
                       </div>
                     </div>
@@ -3217,7 +3217,7 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
                       <div className="akasa-space-speech">
                         <strong style={{ color: '#38bdf8' }}>🧑‍🎓 शिष्यः बोधिः · Bodhi (The Inquirer):</strong>
                         <p style={{ color: '#f8fafc', fontWeight: 600 }}>
-                          "Gurudeva! Earth (🪨), Water (💧), Fire (🔥), and Air (💨) are all swirling on the wheel. But <strong>how are we going to add the 5th element—Space (Ākāśa)?</strong> We don’t have a 5th Tryaṇuka to drop in!"
+                          "Deva! Earth (🪨), Water (💧), Fire (🔥), and Air (💨) are all swirling on the wheel. But <strong>how are we going to add the 5th element—Space (Ākāśa)?</strong> We don’t have a 5th Tryaṇuka to drop in!"
                         </p>
                       </div>
                     </div>
@@ -3381,7 +3381,7 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
                       <div className="akasa-space-speech">
                         <strong style={{ color: '#38bdf8' }}>🧑‍🎓 शिष्यः बोधिः · Bodhi (Realization Awakened):</strong>
                         <p style={{ color: '#f8fafc', fontWeight: 600 }}>
-                          "Gurudeva! Now the truth shines with blinding clarity! We spent all our energy forging Earth, Water, Fire, and Air. But the entire purpose of the pot is the <strong>emptiness inside</strong>! We did not create Space—we merely sculpted a boundary around it!"
+                          "Deva! Now the truth shines with blinding clarity! We spent all our energy forging Earth, Water, Fire, and Air. But the entire purpose of the pot is the <strong>emptiness inside</strong>! We did not create Space—we merely sculpted a boundary around it!"
                         </p>
                       </div>
                     </div>

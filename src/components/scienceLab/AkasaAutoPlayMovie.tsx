@@ -20,7 +20,7 @@ const MOVIE_ACTS: MovieAct[] = [
     icon: '⚛️',
     titleDev: 'अङ्कः १ · परमाणु एवं द्व्यणुक-सृष्टिः',
     titleEn: 'Act 1: The Indivisible Seed (Paramāṇu ➔ Dvyaṇuka ➔ Tryaṇuka)',
-    bodhiQuestion: 'Gurudeva, what is the smallest building block of matter in physical reality?',
+    bodhiQuestion: 'Deva, what is the smallest building block of matter in physical reality?',
     kanadaAnswer:
       'The uncaused, indivisible Paramāṇu (परमाणु). It has no parts and cannot be destroyed. Two unite via Saṁyoga to forge a Dvyaṇuka (द्व्यणुक), and three Dvyaṇukas bind into a visible Tryaṇuka (त्रसरेणु) dancing in the sunbeam!',
     sutraInsight: 'नित्यं परिमण्डलम् (Paramāṇus are eternal spherical unities) · Vaiśeṣika Sūtra 7.1.20',

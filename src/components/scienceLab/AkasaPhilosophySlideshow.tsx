@@ -68,8 +68,8 @@ export const JOURNEY_STOPS: JourneyStop[] = [
     dialogue: [
       {
         speaker: 'Bodhi',
-        dev: 'गुरुदेव! प्रभाते एतानि शालिकणानि पतन्ति। यदि कणः विभज्यते, किं अनन्तं विभाजनं स्यात्?',
-        en: 'Gurudeva! Look at these single rice grains fallen in the dawn mist. If we divide matter endlessly, does it divide to infinite nothingness?',
+        dev: 'देव! प्रभाते एतानि शालिकणानि पतन्ति। यदि कणः विभज्यते, किं अनन्तं विभाजनं स्यात्?',
+        en: 'Deva! Look at these single rice grains fallen in the dawn mist. If we divide matter endlessly, does it divide to infinite nothingness?',
         subText: 'Questioning infinite divisibility & the threshold of matter',
       },
       {
@@ -210,8 +210,8 @@ export const JOURNEY_STOPS: JourneyStop[] = [
     dialogue: [
       {
         speaker: 'Bodhi',
-        dev: 'गुरुदेव! आम-घटः कृष्णः मृदुश्च आसीत्। कुलालस्तु तं भ्राष्ट्रे निक्षिपति। कथं स रक्तः दृढः च अभवत्?',
-        en: 'Gurudeva! The raw mud pot was dark and soft. The potter placed it into the roaring kiln. How did it permanently turn hard and terracotta red?',
+        dev: 'देव! आम-घटः कृष्णः मृदुश्च आसीत्। कुलालस्तु तं भ्राष्ट्रे निक्षिपति। कथं स रक्तः दृढः च अभवत्?',
+        en: 'Deva! The raw mud pot was dark and soft. The potter placed it into the roaring kiln. How did it permanently turn hard and terracotta red?',
         subText: 'The mystery of irreversible ceramic vitrification',
       },
       {
@@ -281,8 +281,8 @@ export const JOURNEY_STOPS: JourneyStop[] = [
     dialogue: [
       {
         speaker: 'Bodhi',
-        dev: 'भगवन्! पृथिव्यादयः चत्वारः स्पर्शन गृह्यन्ते। आकाशस्तु अप्रत्यक्षः! तस्य सद्भावे किं प्रमाणम्?',
-        en: 'Gurudeva! Earth, Water, Fire, and Air are known by touch and sight. But Space is invisible! How can we scientifically prove its existence?',
+        dev: 'देव! पृथिव्यादयः चत्वारः स्पर्शन गृह्यन्ते। आकाशस्तु अप्रत्यक्षः! तस्य सद्भावे किं प्रमाणम्?',
+        en: 'Deva! Earth, Water, Fire, and Air are known by touch and sight. But Space is invisible! How can we scientifically prove its existence?',
         subText: 'The challenge of proving an imperceptible reality',
       },
       {
@@ -352,8 +352,8 @@ export const JOURNEY_STOPS: JourneyStop[] = [
     dialogue: [
       {
         speaker: 'Bodhi',
-        dev: 'गुरुदेव! यदा कुलालः घटं रचयति, किं स घटे नूतनं आकाशं जनयति?',
-        en: 'Gurudeva! When the potter molds the clay pot, does he create new space inside it?',
+        dev: 'देव! यदा कुलालः घटं रचयति, किं स घटे नूतनं आकाशं जनयति?',
+        en: 'Deva! When the potter molds the clay pot, does he create new space inside it?',
         subText: 'The illusion of creating or capturing space',
       },
       {
@@ -500,8 +500,8 @@ export const JOURNEY_STOPS: JourneyStop[] = [
     dialogue: [
       {
         speaker: 'Bodhi',
-        dev: 'गुरुदेव! पश्यतु भविष्ये जॉन-डाल्टन् (John Dalton) तथा क्वाण्टम्-वैज्ञानिकाः अणुकणान् अन्वेषयन्ति!',
-        en: 'Gurudeva! Look into the future—John Dalton and quantum physicists are investigating the indivisible atom!',
+        dev: 'देव! पश्यतु भविष्ये जॉन-डाल्टन् (John Dalton) तथा क्वाण्टम्-वैज्ञानिकाः अणुकणान् अन्वेषयन्ति!',
+        en: 'Deva! Look into the future—John Dalton and quantum physicists are investigating the indivisible atom!',
         subText: 'Observing the historical convergence of atomism',
       },
       {
@@ -577,8 +577,8 @@ export const JOURNEY_STOPS: JourneyStop[] = [
     dialogue: [
       {
         speaker: 'Bodhi',
-        dev: 'भगवन्! अस्माकं भौतिक-शास्त्रस्य परमं प्रयोजनं किम्?',
-        en: 'Gurudeva! What is the supreme purpose of science (Vigyana)?',
+        dev: 'देव! अस्माकं भौतिक-शास्त्रस्य परमं प्रयोजनं किम्?',
+        en: 'Deva! What is the supreme purpose of science (Vigyana)?',
         subText: 'Why learn science: understanding the purpose of Vigyana',
       },
       {
@@ -1693,7 +1693,7 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
             🧭 संवाद-यात्रा · The Philosophical Dialogue Journey
           </span>
           <span className="akasa-journey-place-chip" style={{ borderColor: activeStop.accentColor }}>
-            Stop {currentStopIndex + 1}/8: {activeStop.placeNameEn}
+            Station {currentStopIndex + 1}/8: {activeStop.placeNameEn}
           </span>
         </div>
 
