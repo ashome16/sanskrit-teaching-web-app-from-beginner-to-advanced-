@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ednetlearn.in/sitemap.xml
+# LLM and AI agent documentation
+# https://llmstxt.org/
+# https://ednetlearn.in/llms.txt

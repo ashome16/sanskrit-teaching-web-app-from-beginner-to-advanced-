@@ -1,0 +1,2 @@
+var e=()=>{try{return window.matchMedia(`(prefers-reduced-motion: reduce)`).matches}catch{return!1}},t=()=>{try{return window.matchMedia(`(max-width: 700px)`).matches}catch{return!1}};export{e as n,t};
+//# sourceMappingURL=motion-DS2E91l1.js.map

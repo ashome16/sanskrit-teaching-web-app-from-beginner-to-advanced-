@@ -1,0 +1,50 @@
+# EdNet Learn Gurukul — Comprehensive Sanskrit Curriculum & Platform Documentation
+
+> EdNet Learn Gurukul (https://ednetlearn.in/) provides open-access and structured interactive education in Classical and Vedic Sanskrit, Indian mathematics, epistemology, and historical sciences.
+
+## Overview & Pedagogical Architecture
+
+The curriculum bridges traditional Gurukul pedagogy (direct auditory immersion, sūtra memorization, and close observational analysis) with modern computational linguistics and cognitive science.
+
+### 1. Sanskrit Thinking Course (`/course`)
+- A 28-lesson systematic framework modeling Sanskrit as an algorithmic information system:
+  1. Phonetic Encoding (Śikṣā): Sound as precise acoustic coordinates in the vocal tract (kaṇṭha, tālu, mūrdhā, danta, oṣṭha).
+  2. Morphological Generation (Vyākaraṇa): Root (dhātu) + Affix (pratyaya) synthesis producing context-invariant words.
+  3. Semantic Resolution (Nirukta & Mīmāṃsā): Sentence-level meaning derived through Ākāṅkṣā (mutual dependency), Yogyatā (semantic fitness), and Sannidhi (proximity).
+
+### 2. Graded NCERT Textbooks & Deepakam Reader (`/reader`)
+- Full digital reader for CBSE/NCERT Class 7 (Deepakam 7), Class 8 (Deepakam 8), and Class 9 (Sharada 9).
+- Sentence-by-sentence audio synthesized with authentic Indian Sanskrit prosody.
+- Word-level morpheme breakdown, sandhi splitting, grammatical classification (Prātipadika, Liṅga, Vibhakti, Vacana, Dhātu, Lakāra, Puruṣa).
+
+### 3. Paninian Grammar Engine (`/grammar`)
+- Ashtadhyayi Sūtra Lookup: Interactive rule dependency graphs for sandhi, samāsa, and subanta/tiṅanta derivations.
+- Dhātupāṭha Database: 2,000+ verbal roots categorized across the 10 Gaṇas (Bhavādi to Curādi) with transitive/intransitive markings (Parasmaipada, Ātmanepada, Ubhayapada).
+- Vibhakti Tables: Noun paradigms for masculine, feminine, and neuter stems in vowel (ajanta) and consonant (halanta) endings.
+
+### 4. Vedic Mathematics & Līlāvatī (`/vedic-maths`)
+- 16 Primary Sūtras: Ekādhikena Pūrveṇa, Nikhilam Navataścaramam Daśataḥ, Ūrdhva-Tiryagbhyām, Parāvartya Yojayet, etc.
+- 13 Sub-Sūtras (Upa-sūtras) with step-by-step arithmetic sandboxes.
+- Līlāvatī Poetic Math Studio: Rhymed riddles from Bhāskarācārya II with graphical proofs.
+
+### 5. Vijñāna Science Laboratory (`/vignana-lab`, aliased at `/science-lab`)
+- 10 interactive physics and natural science simulators connecting ancient Indian discoveries to modern physics:
+  - SEC-01: Paramāṇu Builder (Kaṇāda's atomic theory & Pīlupāka thermal transitions)
+  - SEC-02: Prakṛti Balance (Tridoṣa homeostasis & Suśruta nāḍī waveform diagnostics)
+  - SEC-03: Jyotiṣa Orbit (Āryabhaṭa's heliocentric model, Earth umbra cone, and lunar eclipse geometry)
+  - SEC-04: Sṛṣṭi-Sthiti-Laya Loom (Conservation of matter/energy from Chāndogya Upaniṣad)
+  - SEC-05: Nāda Brahman (Chladni cymatics sand patterns & Bharata Muni's 22 Śrutis)
+  - SEC-06: Asato Mā Metallurgy (Nāgārjuna's closed crucible sealed smelting & mass conservation)
+  - SEC-07: Catur-Yoni Bio-Sensors (Parāśara's plant physiology & Sir J.C. Bose plant galvanometer)
+  - SEC-08: Chandrayaan Moon Landing (ISRO lunar orbital dynamics & LIBS laser spectroscopy)
+  - SEC-09: Ṛtuparṇa Sampling Lab (Akṣahṛdaya Monte Carlo cluster variance convergence)
+  - SEC-10: Agnibāṇa Rocketry (Śukranīti 5:1:1 gun propellant ratio & iron casing ballistic trajectories)
+
+### 6. Six Orthodox Systems of Philosophy (`/philosophy`)
+- Systematic exploration of the Ṣaḍ-Darśanas:
+  - Nyāya (Epistemology & Logic: Pratyakṣa, Anumāna, Upamāna, Śabda)
+  - Vaiśeṣika (Atomism, Categories, and Physics: Dravya, Guṇa, Karma, Sāmānya, Viśeṣa, Samavāya)
+  - Sāṅkhya (Dualism of Puruṣa & Prakṛti, 24 Tattvas)
+  - Yoga (Patañjali's Aṣṭāṅga Yoga, Citta-vṛtti-nirodha)
+  - Mīmāṃsā (Vedic Hermeneutics, Sentence analysis, Dharma)
+  - Vedānta (Non-dual consciousness, Upaniṣadic inquiries, Brahman & Māyā)
