@@ -1751,19 +1751,6 @@ export const Akasa2DCollisionCanvas: React.FC<Akasa2DCollisionCanvasProps> = ({
 
   return (
     <div className="akasa-collision-hud-wrap" role="region" aria-label="Cosmic 2D Collision Canvas">
-      {/* Top Telemetry Bar */}
-      <div className="akasa-collision-top-bar">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span style={{ color: '#38bdf8', fontWeight: 900 }}>▶️ Play · Creation of the Pot</span>
-          <span style={{ fontSize: '0.72rem', background: 'rgba(56, 189, 248, 0.2)', padding: '0.1rem 0.5rem', borderRadius: '6px', color: '#7dd3fc' }}>
-            {rapidStage === 5 ? '✓ 5/5 STAGES UNITED' : isFiring ? `⚡ COLLIDING #${rapidStage}/4` : 'AWAITING PLAY'}
-          </span>
-        </div>
-        <div style={{ color: '#cbd5e1', fontSize: '0.72rem' }}>
-          ĀKĀŚA · Omnipresent Potential Space
-        </div>
-      </div>
-
       {/* Cosmic Ākāśa SVG Canvas */}
       <svg viewBox="0 0 620 370" className="akasa-collision-svg" aria-label="Matter Collision and Space Revelation Stage">
         <defs>
@@ -2073,7 +2060,6 @@ export interface AkasaSutraGameProps {
 export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation }) => {
   // Navigation Tabs: 'game' (Potter's Wheel), 'relationships' (Article), 'quiz' (Mastery Quiz)
   const [activeTab, setActiveTab] = useState<'game' | 'relationships' | 'quiz'>('game');
-  const [soundEnabled, setSoundEnabled] = useState(true);
 
   // 2-Page mode: 1 = Phase 1 Atomic Genesis Workshop, 2 = Phase 2 Potter's Wheel & Space
   const [gamePhase, setGamePhase] = useState<1 | 2>(1);
@@ -2148,14 +2134,6 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
       });
     }
   }, [comicStrip]);
-
-  // Audio Toggle
-  const toggleAudio = () => {
-    const next = !soundEnabled;
-    setSoundEnabled(next);
-    audio.enabled = next;
-    if (next) audio.playTone(392, 0.3);
-  };
 
   // Add dialogue entry
   const logDialogue = (speaker: 'Bodhi' | 'Kaṇāda' | 'Pariśeṣa', text: string) => {
@@ -2236,23 +2214,6 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
           isReady,
         };
       })
-    );
-  };
-
-  // Fast-Forge All 4 Corporeal Slots
-  const handleFastForgeAll = () => {
-    audio.playTone(392, 0.4);
-    soundEffects.playTrasarenuChime();
-    setSlots((prev) =>
-      prev.map((s) => ({
-        ...s,
-        count: 6,
-        isReady: true,
-      }))
-    );
-    logDialogue(
-      'Kaṇāda',
-      'All 4 corporeal Tryaṇukas (Earth, Water, Fire, Air) are ready! Read our discussion on why Space has no atoms, then direct the 4 elements into the Potter’s Wheel.'
     );
   };
 
@@ -2473,77 +2434,6 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
         </button>
       </div>
 
-      {/* 2. MASTER START THE GAME CONTROL BAR */}
-      <div className="akasa-mission-bar" id="akasa-start-game-anchor">
-        <div className="akasa-mission-info">
-          <button
-            type="button"
-            className="akasa-mission-badge akasa-start-game-btn"
-            onClick={() => {
-              setGamePhase(1);
-              audio.playTone(523.25, 0.2);
-              const target = document.getElementById('akasa-forge-area');
-              target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
-            title="Jump to the interactive Element Forge below"
-          >
-            ▶️ Phase 1: Atomic Forge
-          </button>
-          <span>
-            {activeTab === 'game'
-              ? 'Phase 1 Workshop: Forge 4 corporeal Tryaṇukas (Earth, Water, Fire, Air) below ➔ Move to Phase 2 Potter’s Wheel!'
-              : activeTab === 'relationships'
-              ? 'Timeline Video Tour: Bodhi and Sage Kaṇāda visit 8 conceptual locations exploring atomic genesis, causality, and all-pervading Space!'
-              : 'Test your understanding of ancient Indian causality and atomic inherence!'}
-          </span>
-        </div>
-
-        <div className="akasa-mission-actions">
-          {activeTab === 'game' && (
-            <>
-              <button
-                type="button"
-                className="akasa-pill is-gold"
-                onClick={handleFastForgeAll}
-                title="Instantly make all 4 corporeal Tryaṇukas ready"
-              >
-                ⚡ Fast-Forge 4
-              </button>
-              <button
-                type="button"
-                className="akasa-pill is-danger"
-                onClick={handleResetWorkshop}
-                title="Reset workshop: Clear wheel and return all Aṇu units (अणवः) to zero"
-              >
-                🔄 Reset Workshop
-              </button>
-            </>
-          )}
-
-          <a
-            href="/AKASA_SUTRA_KANADA_LEARNING_GUIDE.txt"
-            download="AKASA_SUTRA_KANADA_LEARNING_GUIDE.txt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="akasa-pill is-gold"
-            title="Download complete learning guide text file (steps, Sage Kaṇāda biography, causality)"
-            style={{ textDecoration: 'none' }}
-          >
-            📄 Guide (.txt)
-          </a>
-
-          <button
-            type="button"
-            className="akasa-pill"
-            onClick={toggleAudio}
-            title="Toggle Web Audio sound synthesis"
-          >
-            {soundEnabled ? '🔊 Audio on' : '🔇 Audio off'}
-          </button>
-        </div>
-      </div>
-
-      {/* =========================================================================
       {/* =========================================================================
           TAB 1: POTTER'S WHEEL GAMEPLAY ARENA (AUTO-PLAY & INTERACTIVE MODES)
           ========================================================================= */}
@@ -2558,6 +2448,17 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
             <h2 className="akasa-hero-title">
               🏺 Atomic Genesis of 4 Elements ➔ The Potter’s Wheel ➔ All-Pervading Space
             </h2>
+            <div className="akasa-interactive-reset-wrap" style={{ marginTop: '0.5rem', marginBottom: '0.65rem', display: 'flex', justifyContent: 'center' }}>
+              <button
+                type="button"
+                className="akasa-stage-reset-btn"
+                onClick={handleResetWorkshop}
+                title="Reset workshop: Clear wheel and return all Aṇu units to zero"
+                style={{ padding: '0.45rem 1.15rem', fontSize: '0.84rem' }}
+              >
+                🔄 Reset Workshop
+              </button>
+            </div>
             <p className="akasa-hero-desc">
               Welcome to the ancient Indian atomic physics quest! Watch below how 4 corporeal Tryaṇukas collide and shape a clay pot—revealing that <strong>Space (Ākāśa)</strong> is not an empty nothingness, but the eternal all-pervading medium that holds reality together!
             </p>
@@ -2946,14 +2847,6 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
                     title="Reset workshop: Clear wheel and return all Aṇu units (अणवः) to zero"
                   >
                     🔄 Reset Workshop
-                  </button>
-                  <button
-                    type="button"
-                    className="akasa-stage-fast-btn"
-                    onClick={handleFastForgeAll}
-                    title="Instantly make all 4 corporeal Tryaṇukas ready"
-                  >
-                    ⚡ Fast-Forge 4 Elements
                   </button>
                 </div>
               </div>

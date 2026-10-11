@@ -506,6 +506,7 @@ ${bodyHtml}
 
   // Article Reader State
   const [selectedArticleId, setSelectedArticleId] = useState<string>('magic-intro');
+  const [selectedGameId, setSelectedGameId] = useState<string>('rituparna');
 
   // Absolute Zero & Place Value States
   const [romanInputNum, setRomanInputNum] = useState<number>(3888);
@@ -727,6 +728,10 @@ ${bodyHtml}
       setActiveTab('articles');
       scrollId = 'vedic-tabs';
     } else if (clean === 'games' || clean.startsWith('game-')) {
+      if (clean.startsWith('game-')) {
+        const targetGame = clean.replace('game-', '');
+        setSelectedGameId(targetGame);
+      }
       setActiveTab('games');
       scrollId = 'vedic-tabs';
     } else {
@@ -7905,6 +7910,10 @@ ${bodyHtml}
                   'bhaskaracharya-dob-algebra-and-cosmic-consciousness': { id: 'lilavati', title: 'Līlāvatī’s Poetic Math Quest', dev: 'लीलावती-गणित-पहेलिका', icon: '🪷' },
                   'universal-engine-of-algebra': { id: 'kuttaka', title: 'The Kuṭṭaka Pulverizer Engine', dev: 'कुट्टक-यन्त्रम्', icon: '🔨' },
                   'dhanurveda-geometry-phonetics': { id: 'dhanurveda', title: 'Dhanurveda Stance & Ballistics Arena', dev: 'धनुर्वेद-लक्ष्यवेध-क्रीडा', icon: '🎯' },
+                  'before-the-carat': { id: 'metrology', title: 'The Ancient Metrology Scale', dev: 'गुञ्जा-तुला-सन्तुलनम्', icon: '⚖️' },
+                  'kerala-school-calculus-and-infinite-series': { id: 'madhavapi', title: 'Madhava’s Infinite Pi Accelerator', dev: 'माधव-अनन्त-श्रेणी-त्वरकः', icon: '♾️' },
+                  'naming-the-colossal': { id: 'colossal', title: 'The Colossal Powers Vault', dev: 'सङ्ख्या-विस्तार-भाण्डागारः', icon: '🌌' },
+                  'animal-names-yoga-sounds': { id: 'swara', title: 'Animal Swara Melodic Weaver', dev: 'सप्तस्वर-नाद-चक्रम्', icon: '🎵' },
                 };
                 const g = gameMap[currentArticle.slug];
                 if (!g) return null;
@@ -7945,6 +7954,7 @@ ${bodyHtml}
                         cursor: 'pointer',
                       }}
                       onClick={() => {
+                        setSelectedGameId(g.id);
                         setActiveTab('games');
                         const el = document.getElementById('vedic-tabs');
                         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -8219,6 +8229,7 @@ ${bodyHtml}
 
         {activeTab === 'games' && (
           <ArticleGamesHub
+            initialGameId={selectedGameId}
             onOpenArticle={(slug) => {
               setActiveTab('articles');
               const found = VEDIC_ARTICLES.find((a) => a.slug === slug);

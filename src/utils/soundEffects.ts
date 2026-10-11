@@ -365,6 +365,33 @@ class SoundEffectsEngine {
       });
     } catch {}
   }
+
+  /**
+   * Pure melodious Indian classical Swara tone with gentle bell envelope
+   */
+  playSwara(freq: number, duration: number = 0.4): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, now);
+
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.25, now + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(now);
+      osc.stop(now + duration + 0.05);
+    } catch {}
+  }
 }
 
 export const soundEffects = new SoundEffectsEngine();

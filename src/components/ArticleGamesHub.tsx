@@ -8,7 +8,17 @@ export interface ArticleGamesHubProps {
   onGoHome?: () => void;
 }
 
-type GameId = 'rituparna' | 'agnicurna' | 'lilavati' | 'kuttaka' | 'pingala' | 'dhanurveda';
+type GameId =
+  | 'rituparna'
+  | 'agnicurna'
+  | 'lilavati'
+  | 'kuttaka'
+  | 'pingala'
+  | 'dhanurveda'
+  | 'metrology'
+  | 'madhavapi'
+  | 'colossal'
+  | 'swara';
 
 interface GameMetadata {
   id: GameId;
@@ -81,6 +91,46 @@ const GAMES: GameMetadata[] = [
     articleTitle: 'Dhanurveda: Sacred Science of the Bow, Ballistics & 5 Stances',
     badge: 'Geometry & Physics',
     color: '#d97706',
+  },
+  {
+    id: 'metrology',
+    icon: '⚖️',
+    devTitle: 'गुञ्जा-तुला-सन्तुलनम्',
+    title: 'The Ancient Metrology Scale',
+    articleSlug: 'before-the-carat',
+    articleTitle: 'Before the Carat — Seeds, Slate, and the Metrology of Ancient India',
+    badge: 'Metrology & Weights',
+    color: '#059669',
+  },
+  {
+    id: 'madhavapi',
+    icon: '♾️',
+    devTitle: 'माधव-अनन्त-श्रेणी-त्वरकः',
+    title: 'Madhava’s Infinite Pi Accelerator',
+    articleSlug: 'kerala-school-calculus-and-infinite-series',
+    articleTitle: 'The Kerala School: Madhava, Yuktibhāṣā & The Invention of Calculus',
+    badge: 'Calculus & Infinite Series',
+    color: '#2563eb',
+  },
+  {
+    id: 'colossal',
+    icon: '🌌',
+    devTitle: 'सङ्ख्या-विस्तार-भाण्डागारः',
+    title: 'The Colossal Powers Vault',
+    articleSlug: 'naming-the-colossal',
+    articleTitle: 'Naming the Colossal — How Indian Texts Counted Past a Million',
+    badge: 'Cosmic Numeration',
+    color: '#9333ea',
+  },
+  {
+    id: 'swara',
+    icon: '🎵',
+    devTitle: 'सप्तस्वर-नाद-चक्रम्',
+    title: 'Animal Swara Melodic Weaver',
+    articleSlug: 'animal-names-yoga-sounds',
+    articleTitle: 'Animal Names: Yoga Shapes and Singing Notes',
+    badge: 'Musicology & Acoustics',
+    color: '#e11d48',
   },
 ];
 
@@ -1027,6 +1077,657 @@ const DhanurvedaGame: React.FC<{ onScore: (pts: number) => void }> = ({ onScore 
 };
 
 // ============================================================================
+// GAME 7: THE ANCIENT METROLOGY SCALE (गुञ्जा-तुला)
+// ============================================================================
+interface ArtifactItem {
+  id: string;
+  name: string;
+  devName: string;
+  sourceText: string;
+  weightGunja: number;
+  desc: string;
+}
+
+const METROLOGY_ARTIFACTS: ArtifactItem[] = [
+  {
+    id: 'karsapana',
+    name: 'Mauryan Silver Kārṣāpaṇa Coin',
+    devName: 'मौर्य-कार्षापणम्',
+    sourceText: 'Arthaśāstra (Book 2, Ch 19): 1 Kārṣāpaṇa = 32 Raktikās',
+    weightGunja: 32,
+    desc: 'Punch-marked silver coin of the Maurya Empire (~3.87 grams). Counterweight must equal exactly 32 seeds.',
+  },
+  {
+    id: 'suvarna',
+    name: 'Gupta Imperial Suvarṇa Gold Dinar',
+    devName: 'गुप्त-सुवर्ण-दीनारः',
+    sourceText: 'Caraka Saṃhitā & Manu Smṛti: 1 Suvarṇa = 1 Karṣa = 80 Guñjās',
+    weightGunja: 80,
+    desc: 'Heavy pure gold coin minted by Samudragupta (~9.68 grams). Equaled 80 natural botanical Guñjā seeds.',
+  },
+  {
+    id: 'vaidurya',
+    name: 'Royal Vaidūrya (Cat’s Eye Chrysoberyl)',
+    devName: 'राज-वैदूर्य-रत्नम्',
+    sourceText: 'Ratnaparīkṣā: Gemologist balance standard',
+    weightGunja: 16,
+    desc: 'Precious royal gemstone (~1.94 grams) tested on jeweller’s sensitive balances.',
+  },
+  {
+    id: 'bhasma',
+    name: 'Ayurvedic Rasāyana Gold Bhasma Dose',
+    devName: 'रस-चिकित्सा-स्वर्णभस्म',
+    sourceText: 'Śārṅgadhara Saṃhitā: Medicinal micro-weight',
+    weightGunja: 4,
+    desc: 'Incinerated medicinal gold elixir measured in microscopic 4-seed precision units (~0.48 grams).',
+  },
+];
+
+const MetrologyGame: React.FC<{ onScore: (pts: number) => void }> = ({ onScore }) => {
+  const [selectedIdx, setSelectedIdx] = useState(0);
+  const [rightUnits, setRightUnits] = useState<number>(0);
+  const [balancedSuccess, setBalancedSuccess] = useState<boolean>(false);
+
+  const currentArtifact = METROLOGY_ARTIFACTS[selectedIdx];
+  const diff = rightUnits - currentArtifact.weightGunja;
+  const tiltDeg = Math.max(-22, Math.min(22, diff * 1.4));
+
+  const addWeight = (units: number) => {
+    soundEffects.playPuzzleSnap();
+    const next = rightUnits + units;
+    setRightUnits(next);
+    if (next === currentArtifact.weightGunja) {
+      soundEffects.playCelebrationChime();
+      setBalancedSuccess(true);
+      onScore(35);
+    } else {
+      setBalancedSuccess(false);
+    }
+  };
+
+  const resetPan = () => {
+    soundEffects.playStrokeChime();
+    setRightUnits(0);
+    setBalancedSuccess(false);
+  };
+
+  const selectArtifact = (idx: number) => {
+    soundEffects.playPuzzleSnap();
+    setSelectedIdx(idx);
+    setRightUnits(0);
+    setBalancedSuccess(false);
+  };
+
+  return (
+    <div className="ag-game-box">
+      <div className="ag-game-head">
+        <div>
+          <h3 className="ag-game-title">⚖️ The Ancient Metrology Scale (गुञ्जा-तुला)</h3>
+          <p className="ag-game-sub">
+            Before standard metallic gram weights, ancient India used nature’s cryptographically uniform seed — the scarlet <b>Raktikā / Guñjā</b> (Abrus precatorius, ~0.121g). Balance the antique artifact on the dual-pan beam balance!
+          </p>
+        </div>
+        <button type="button" className="ag-btn ag-btn--ghost" onClick={resetPan}>
+          ↺ Empty Pan
+        </button>
+      </div>
+
+      <div className="ag-metrology-layout">
+        {/* Artifact Picker */}
+        <div className="ag-artifact-selector">
+          <label className="ag-slider-label">Select Antiquity to Weigh:</label>
+          <div className="ag-artifact-cards">
+            {METROLOGY_ARTIFACTS.map((art, idx) => (
+              <button
+                key={art.id}
+                type="button"
+                className={`ag-artifact-card ${idx === selectedIdx ? 'is-active' : ''}`}
+                onClick={() => selectArtifact(idx)}
+              >
+                <div className="ag-art-title">{art.name}</div>
+                <div className="ag-art-dev" lang="sa">{art.devName}</div>
+                <div className="ag-art-src">{art.sourceText}</div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Visual Balance Scale */}
+        <div className="ag-scale-display">
+          <div className="ag-beam-stage">
+            <div className="ag-fulcrum-pivot">
+              <div
+                className="ag-beam-arm"
+                style={{ transform: `rotate(${tiltDeg}deg)` }}
+              >
+                {/* Left Pan */}
+                <div className="ag-pan-container ag-pan--left">
+                  <div className="ag-pan-ropes" />
+                  <div className="ag-pan-plate">
+                    <span className="ag-pan-label">Artifact</span>
+                    <span className="ag-pan-weight">{currentArtifact.weightGunja} Guñjās</span>
+                  </div>
+                </div>
+
+                {/* Central Needle */}
+                <div className="ag-beam-needle" />
+
+                {/* Right Pan */}
+                <div className="ag-pan-container ag-pan--right">
+                  <div className="ag-pan-ropes" />
+                  <div className="ag-pan-plate">
+                    <span className="ag-pan-label">Counterweights</span>
+                    <span className="ag-pan-weight">{rightUnits} Guñjās</span>
+                  </div>
+                </div>
+              </div>
+              <div className="ag-fulcrum-base" />
+            </div>
+          </div>
+
+          <div className="ag-scale-status">
+            {diff === 0 ? (
+              <span className="ag-status-badge is-balanced">
+                ✅ सम-तुला (Equilibrium Achieved)!
+              </span>
+            ) : diff < 0 ? (
+              <span className="ag-status-badge is-left-heavy">
+                ⬅️ Left Heavy: Need {Math.abs(diff)} more Guñjās
+              </span>
+            ) : (
+              <span className="ag-status-badge is-right-heavy">
+                ➡️ Right Heavy: Excess by {diff} Guñjās!
+              </span>
+            )}
+          </div>
+
+          {/* Botanical & Traditional Weights Rack */}
+          <div className="ag-weights-dock">
+            <div className="ag-dock-title">Add Counterweights (तुला-मानम्):</div>
+            <div className="ag-dock-buttons">
+              <button
+                type="button"
+                className="ag-weight-btn"
+                onClick={() => addWeight(1)}
+              >
+                🔴 1 Guñjā (रक्तिका · 1 seed)
+              </button>
+              <button
+                type="button"
+                className="ag-weight-btn"
+                onClick={() => addWeight(5)}
+              >
+                🌾 1 Māṣa (माषः · 5 seeds)
+              </button>
+              <button
+                type="button"
+                className="ag-weight-btn"
+                onClick={() => addWeight(16)}
+              >
+                🪙 1 Dharaṇa (धरणम् · 16 seeds)
+              </button>
+              <button
+                type="button"
+                className="ag-weight-btn"
+                onClick={() => addWeight(40)}
+              >
+                ⚖️ 1/2 Karṣa (अर्धकर्षः · 40 seeds)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {balancedSuccess && (
+        <div className="ag-launch-result is-hit">
+          ✨ <b>EXACT WEIGHING CONFIRMED! (+35 pts)</b>
+          <p>
+            {currentArtifact.name} weighs exactly <b>{currentArtifact.weightGunja} Guñjā seeds</b> (\(\approx {(currentArtifact.weightGunja * 0.121).toFixed(2)}\) grams). {currentArtifact.desc}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// ============================================================================
+// GAME 8: MADHAVA’S INFINITE PI ACCELERATOR (माधव-परिधि-त्वरकः)
+// ============================================================================
+const MadhavaPiGame: React.FC<{ onScore: (pts: number) => void }> = ({ onScore }) => {
+  const [numTerms, setNumTerms] = useState<number>(6);
+  const [correctionMode, setCorrectionMode] = useState<'none' | 'f1' | 'f2' | 'f3'>('none');
+  const [rewarded, setRewarded] = useState<boolean>(false);
+
+  const TRUE_PI = '3.141592653589793';
+
+  const approxPi = useMemo(() => {
+    let sum = 0;
+    for (let k = 1; k <= numTerms; k++) {
+      const sign = k % 2 === 1 ? 1 : -1;
+      sum += sign / (2 * k - 1);
+    }
+    const n = numTerms;
+    const signCorrection = n % 2 === 1 ? -1 : 1;
+    let rn = 0;
+    if (correctionMode === 'f1') {
+      rn = 1 / (4 * n);
+    } else if (correctionMode === 'f2') {
+      rn = n / (4 * n * n + 1);
+    } else if (correctionMode === 'f3') {
+      rn = (n * n + 1) / (4 * Math.pow(n, 3) + 5 * n);
+    }
+
+    return 4 * (sum + signCorrection * rn);
+  }, [numTerms, correctionMode]);
+
+  const approxStr = approxPi.toFixed(15);
+
+  const matchedDigitsCount = useMemo(() => {
+    let count = 0;
+    for (let i = 0; i < TRUE_PI.length; i++) {
+      if (approxStr[i] === TRUE_PI[i]) {
+        count++;
+      } else {
+        break;
+      }
+    }
+    return count;
+  }, [approxStr]);
+
+  const testConvergence = () => {
+    if (matchedDigitsCount >= 8 && !rewarded) {
+      soundEffects.playCelebrationChime();
+      setRewarded(true);
+      onScore(45);
+    } else {
+      soundEffects.playStrokeChime();
+    }
+  };
+
+  return (
+    <div className="ag-game-box">
+      <div className="ag-game-head">
+        <div>
+          <h3 className="ag-game-title">♾️ Madhava’s Infinite Pi Accelerator</h3>
+          <p className="ag-game-sub">
+            Madhava of Sangamagrama (1340–1425 CE) formulated the infinite series for \(\pi\) centuries ahead of Newton and Leibniz, inventing fast-converging rational remainder corrections (*Antya-saṃskāra*).
+          </p>
+        </div>
+      </div>
+
+      <div className="ag-madhava-layout">
+        {/* Controls */}
+        <div className="ag-madhava-controls">
+          <div className="ag-chem-row">
+            <label htmlFor="piTermsInput">Number of Series Terms (N): <b>{numTerms}</b></label>
+            <input
+              id="piTermsInput"
+              type="range"
+              min="1"
+              max="35"
+              value={numTerms}
+              onChange={(e) => {
+                setNumTerms(parseInt(e.target.value, 10));
+                testConvergence();
+              }}
+              className="ag-slider"
+            />
+          </div>
+
+          <div className="ag-correction-selector">
+            <label className="ag-slider-label">Engage Kerala Remainder Correction (*Antya-saṃskāra*):</label>
+            <div className="ag-correction-options">
+              <button
+                type="button"
+                className={`ag-corr-btn ${correctionMode === 'none' ? 'is-active' : ''}`}
+                onClick={() => {
+                  setCorrectionMode('none');
+                  testConvergence();
+                }}
+              >
+                <b>Uncorrected Leibniz Series</b>
+                <span>R_N = 0 · Ultra slow! Needs 500,000 terms for 5 digits</span>
+              </button>
+              <button
+                type="button"
+                className={`ag-corr-btn ${correctionMode === 'f1' ? 'is-active' : ''}`}
+                onClick={() => {
+                  setCorrectionMode('f1');
+                  testConvergence();
+                }}
+              >
+                <b>1st Correction: R_N = 1 / (4N)</b>
+                <span>Rapid acceleration · Cancels first-order oscillation</span>
+              </button>
+              <button
+                type="button"
+                className={`ag-corr-btn ${correctionMode === 'f2' ? 'is-active' : ''}`}
+                onClick={() => {
+                  setCorrectionMode('f2');
+                  testConvergence();
+                }}
+              >
+                <b>2nd Correction: R_N = N / (4N² + 1)</b>
+                <span>Madhava’s refinement · High precision in few terms</span>
+              </button>
+              <button
+                type="button"
+                className={`ag-corr-btn ${correctionMode === 'f3' ? 'is-active' : ''}`}
+                onClick={() => {
+                  setCorrectionMode('f3');
+                  testConvergence();
+                }}
+              >
+                <b>Yuktibhāṣā 3rd: R_N = (N² + 1) / (4N³ + 5N)</b>
+                <span>🚀 Rocket convergence! 9+ digits in under 12 terms!</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Readout and comparison */}
+        <div className="ag-pi-readout-card">
+          <div className="ag-readout-head">
+            <span>Accuracy: <b>{matchedDigitsCount} exact digits</b></span>
+            <span>True \(\pi\): <code>{TRUE_PI}</code></span>
+          </div>
+
+          <div className="ag-digits-box">
+            {approxStr.split('').map((ch, idx) => {
+              const isMatch = idx < matchedDigitsCount;
+              return (
+                <span
+                  key={idx}
+                  className={`ag-digit-cell ${isMatch ? 'is-correct' : 'is-mismatch'}`}
+                >
+                  {ch}
+                </span>
+              );
+            })}
+          </div>
+
+          <div className="ag-series-formula-box">
+            <code>
+              {`\\pi / 4 = 1 - 1/3 + 1/5 - ... ± 1/${2 * numTerms - 1}${correctionMode !== 'none' ? ` ± R_{${numTerms}}` : ''}`}
+            </code>
+          </div>
+
+          {matchedDigitsCount >= 8 && (
+            <div className="ag-convergence-toast">
+              🎉 <b>Sublime Kerala Convergence!</b> With just {numTerms} terms and Yuktibhāṣā rational corrections, you calculated \(\pi\) past 8 decimal places!
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// GAME 9: THE COLOSSAL POWERS VAULT (सङ्ख्या-विस्तार-भाण्डागारः)
+// ============================================================================
+interface VaultRiddle {
+  id: string;
+  riddle: string;
+  context: string;
+  exponent: number;
+  correctName: string;
+  sanskrit: string;
+  options: string[];
+}
+
+const VAULT_RIDDLES: VaultRiddle[] = [
+  {
+    id: 'ayuta',
+    riddle: 'A monarch pledges 100 Crore coins to a university. In Vedic decimal nomenclature, what is 100 Crore (1 Billion = 10⁹)?',
+    context: 'From the Yajurveda Saṃhitā decimal series (daśa, śata, sahasra, ayuta, niyuta...)',
+    exponent: 9,
+    correctName: 'Ayuta (अयुतम्)',
+    sanskrit: 'अयुतं दशकोटयः',
+    options: ['Ayuta (अयुतम्)', 'Prayuta (प्रयुतम्)', 'Arbuda (अर्बुदम्)', 'Kharva (खर्वम्)'],
+  },
+  {
+    id: 'kankara',
+    riddle: 'How many seconds elapse in an entire Mahāyuga of 4,320,000 solar years (~1.36 × 10¹⁴ seconds)? Which ancient class covers 10¹³?',
+    context: 'Lalitavistara Sutra decimal hierarchy',
+    exponent: 13,
+    correctName: 'Kaṅkara (कङ्करम्)',
+    sanskrit: 'शतसहस्रकोट्यः कङ्करम्',
+    options: ['Kaṅkara (कङ्करम्)', 'Padma (पद्मम्)', 'Vivara (विवरम्)', 'Kṣobhya (क्षोभ्यः)'],
+  },
+  {
+    id: 'vivara',
+    riddle: 'The classic Buddhist metaphor compares immense numbers to the sands of the River Gaṅgā (~10¹⁵ grains). What is 10¹⁵?',
+    context: 'Lalitavistara counting dialogue with the arithmetician Arjuna',
+    exponent: 15,
+    correctName: 'Vivara (विवरम्)',
+    sanskrit: 'दशकङ्करं विवरम्',
+    options: ['Vivara (विवरम्)', 'Kṣema (क्षेमम्)', 'Tallakṣaṇa (तल्लक्षणम्)', 'Śaṅku (शङ्कुः)'],
+  },
+  {
+    id: 'tallaksana',
+    riddle: 'In the supreme decimal counting tournament, Prince Siddhartha finishes the hundredth scale at 10⁵³. What is this pinnacle power?',
+    context: 'The ultimate named exponent in Buddhist canonical mathematics',
+    exponent: 53,
+    correctName: 'Tallakṣaṇa (तल्लक्षणम्)',
+    sanskrit: 'परम-गणित-सीमा तल्लक्षणम्',
+    options: ['Tallakṣaṇa (तल्लक्षणम्)', 'Mahākṣobhya (महाक्षोभ्यः)', 'Ananta (अनन्तम्)', 'Dhvajāgra (ध्वजाग्रम्)'],
+  },
+];
+
+const ColossalVaultGame: React.FC<{ onScore: (pts: number) => void }> = ({ onScore }) => {
+  const [currentIdx, setCurrentIdx] = useState<number>(0);
+  const [unlockedCount, setUnlockedCount] = useState<number>(0);
+  const [feedback, setFeedback] = useState<string | null>(null);
+
+  const riddle = VAULT_RIDDLES[currentIdx];
+
+  const handleSelectOption = (opt: string) => {
+    if (opt === riddle.correctName) {
+      soundEffects.playCelebrationChime();
+      const nextCount = unlockedCount + 1;
+      setUnlockedCount(nextCount);
+      setFeedback(`✨ Correct! 10^${riddle.exponent} is ${riddle.correctName} (${riddle.sanskrit})`);
+      onScore(35);
+      if (currentIdx < VAULT_RIDDLES.length - 1) {
+        setTimeout(() => {
+          setCurrentIdx(currentIdx + 1);
+          setFeedback(null);
+        }, 1200);
+      }
+    } else {
+      soundEffects.playPuzzleSnap();
+      setFeedback(`❌ Incorrect. Try again! Think of the power 10^${riddle.exponent}.`);
+    }
+  };
+
+  const resetVault = () => {
+    soundEffects.playStrokeChime();
+    setCurrentIdx(0);
+    setUnlockedCount(0);
+    setFeedback(null);
+  };
+
+  return (
+    <div className="ag-game-box">
+      <div className="ag-game-head">
+        <div>
+          <h3 className="ag-game-title">🌌 The Colossal Powers Vault (सङ्ख्या-विस्तार-भाण्डागारः)</h3>
+          <p className="ag-game-sub">
+            In the <i>Lalitavistara</i>, Prince Siddhartha astonishes the court mathematicians by reciting named powers of 10 from <i>Koṭi</i> (\(10^7\)) up to <i>Tallakṣaṇa</i> (\(10^{53}\)). Match cosmic quantities to unlock the vault!
+          </p>
+        </div>
+        <button type="button" className="ag-btn ag-btn--ghost" onClick={resetVault}>
+          ↺ Reset Vault
+        </button>
+      </div>
+
+      <div className="ag-vault-layout">
+        <div className="ag-vault-door">
+          <div className="ag-vault-lock-status">
+            <span className="ag-vault-icon">🔐</span>
+            <div className="ag-vault-progress">
+              <b>Vault Bolts Disengaged: {unlockedCount} / {VAULT_RIDDLES.length}</b>
+              <div className="ag-vault-bolts">
+                {VAULT_RIDDLES.map((r, i) => (
+                  <span
+                    key={r.id}
+                    className={`ag-bolt-indicator ${i < unlockedCount ? 'is-open' : ''}`}
+                  >
+                    10^{r.exponent}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="ag-riddle-card">
+            <div className="ag-riddle-header">
+              <span className="ag-riddle-tag">Challenge {currentIdx + 1} of {VAULT_RIDDLES.length}</span>
+              <span className="ag-riddle-exp">Scale: 10^{riddle.exponent}</span>
+            </div>
+            <p className="ag-riddle-question">{riddle.riddle}</p>
+            <div className="ag-riddle-context">📜 Context: {riddle.context}</div>
+
+            <div className="ag-riddle-options">
+              {riddle.options.map((opt) => (
+                <button
+                  key={opt}
+                  type="button"
+                  className="ag-opt-btn"
+                  onClick={() => handleSelectOption(opt)}
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+
+            {feedback && (
+              <div className={`ag-riddle-feedback ${feedback.startsWith('✨') ? 'is-success' : 'is-error'}`}>
+                {feedback}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// GAME 10: ANIMAL SWARA MELODIC WEAVER (सप्तस्वर-नाद-चक्रम्)
+// ============================================================================
+interface SwaraAnimal {
+  swara: string;
+  name: string;
+  animal: string;
+  animalSkt: string;
+  freq: number;
+  icon: string;
+  desc: string;
+}
+
+const SWARAS: SwaraAnimal[] = [
+  { swara: 'Sa', name: 'Ṣaḍja (षड्जः)', animal: 'Peacock', animalSkt: 'मयूरः', freq: 261.63, icon: '🦚', desc: 'The fundamental root of the 6 organs, sounding like a calling peacock.' },
+  { swara: 'Re', name: 'Ṛṣabha (ऋषभः)', animal: 'Bull', animalSkt: 'वृषभः', freq: 293.66, icon: '🐂', desc: 'Low resonant bellow of the sovereign bull in pasture.' },
+  { swara: 'Ga', name: 'Gāndhāra (गान्धारः)', animal: 'Goat', animalSkt: 'अजः', freq: 329.63, icon: '🐐', desc: 'Gentle, melodic mid-register cry of the mountain goat.' },
+  { swara: 'Ma', name: 'Madhyama (मध्यमः)', animal: 'Heron', animalSkt: 'क्रौञ्चः', freq: 349.23, icon: '🦩', desc: 'The pure central pivot note, sounding like a wading wetland heron.' },
+  { swara: 'Pa', name: 'Pañcama (पञ्चमः)', animal: 'Cuckoo', animalSkt: 'कोकिलः', freq: 392.00, icon: '🐦', desc: 'Sweet, resonant spring melody of the Indian black cuckoo.' },
+  { swara: 'Dha', name: 'Dhaivata (धैवतः)', animal: 'Horse', animalSkt: 'अश्वः', freq: 440.00, icon: '🐎', desc: 'Bright, galloping neigh of the proud Vedic courser.' },
+  { swara: 'Ni', name: 'Niṣāda (निषादः)', animal: 'Elephant', animalSkt: 'गजः', freq: 493.88, icon: '🐘', desc: 'Deep, trumpeting high note of the noble royal tusker.' },
+];
+
+const SaptaswaraWeaverGame: React.FC<{ onScore: (pts: number) => void }> = ({ onScore }) => {
+  const [playedNotes, setPlayedNotes] = useState<string[]>([]);
+  const targetMelody = useMemo(() => ['Sa', 'Re', 'Ga', 'Pa', 'Dha'], []); // Rāga Bhūpālī motif
+  const [questSolved, setQuestSolved] = useState<boolean>(false);
+
+  const playNote = (item: SwaraAnimal) => {
+    soundEffects.playSwara(item.freq, 0.45);
+    const updated = [...playedNotes, item.swara].slice(-7);
+    setPlayedNotes(updated);
+
+    const endsWithTarget = targetMelody.every((m, idx) => updated[updated.length - targetMelody.length + idx] === m);
+    if (endsWithTarget && !questSolved) {
+      soundEffects.playCelebrationChime();
+      setQuestSolved(true);
+      onScore(35);
+    }
+  };
+
+  const clearMelody = () => {
+    soundEffects.playStrokeChime();
+    setPlayedNotes([]);
+    setQuestSolved(false);
+  };
+
+  return (
+    <div className="ag-game-box">
+      <div className="ag-game-head">
+        <div>
+          <h3 className="ag-game-title">🎵 Animal Swara Melodic Weaver (सप्तस्वर-नाद-चक्रम्)</h3>
+          <p className="ag-game-sub">
+            The <i>Nāradīya Śikṣā</i> and classical Indian musicology reveal that the 7 sacred musical notes (*Saptasvara*) were learned by ancient sages directly from the animal sounds of pristine nature. Tap each animal to hear its synthesized acoustic tone!
+          </p>
+        </div>
+        <button type="button" className="ag-btn ag-btn--ghost" onClick={clearMelody}>
+          ↺ Reset Notes
+        </button>
+      </div>
+
+      <div className="ag-swara-layout">
+        {/* Swara Keyboard */}
+        <div className="ag-swara-keys-grid">
+          {SWARAS.map((item) => (
+            <button
+              key={item.swara}
+              type="button"
+              className="ag-swara-card"
+              onClick={() => playNote(item)}
+            >
+              <span className="ag-swara-icon">{item.icon}</span>
+              <span className="ag-swara-note">{item.swara}</span>
+              <span className="ag-swara-name">{item.name}</span>
+              <span className="ag-swara-animal">{item.animalSkt} · {item.animal}</span>
+              <span className="ag-swara-freq">{item.freq.toFixed(1)} Hz</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Melodic Ribbon */}
+        <div className="ag-melody-ribbon">
+          <div className="ag-ribbon-title">Melody Ribbon:</div>
+          <div className="ag-ribbon-notes">
+            {playedNotes.length === 0 ? (
+              <span className="ag-empty-notes">Tap animals above to weave your melody...</span>
+            ) : (
+              playedNotes.map((n, i) => (
+                <span key={i} className="ag-note-chip">{n}</span>
+              ))
+            )}
+          </div>
+        </div>
+
+        {/* Raga Challenge Card */}
+        <div className="ag-raga-quest-card">
+          <div className="ag-quest-head">
+            🎼 <b>Ancient Rāga Challenge: Play the Pentatonic Motif of Rāga Bhūpālī</b>
+          </div>
+          <p className="ag-quest-desc">
+            Play the 5 ancient notes in sequence: <b>Sa ➔ Re ➔ Ga ➔ Pa ➔ Dha</b> (Peacock ➔ Bull ➔ Goat ➔ Cuckoo ➔ Horse).
+          </p>
+          {questSolved && (
+            <div className="ag-quest-success">
+              ✨ <b>RĀGA BHŪPĀLĪ HARMONIZED! (+35 pts)</b> You have woven the dawn scale celebrated across three millennia of Indian musicology!
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
 // MAIN ARTICLE GAMES HUB CONTAINER
 // ============================================================================
 export const ArticleGamesHub: React.FC<ArticleGamesHubProps> = ({
@@ -1040,6 +1741,12 @@ export const ArticleGamesHub: React.FC<ArticleGamesHubProps> = ({
     }
     return 'rituparna';
   });
+
+  useEffect(() => {
+    if (initialGameId && GAMES.some((g) => g.id === initialGameId)) {
+      setActiveGameId(initialGameId as GameId);
+    }
+  }, [initialGameId]);
 
   const [vidyaPoints, setVidyaPoints] = useState<number>(() => {
     try {
@@ -1082,7 +1789,7 @@ export const ArticleGamesHub: React.FC<ArticleGamesHubProps> = ({
             Games of Ancient India · <span lang="sa">प्राचीन-विज्ञान-क्रीडाः</span>
           </h2>
           <p className="ag-lead">
-            Play interactive games based on our published articles: test King Rituparna’s tree sampling, formulate Śukranīti rocket propellant, solve Līlāvatī’s poetic riddles, pulverize Diophantine equations with Kuṭṭaka, and loose arrows with Dhanurveda geometry.
+            Play interactive games based on our published articles: test King Rituparna’s tree sampling, formulate Śukranīti rocket propellant, solve Līlāvatī’s poetic riddles, pulverize Diophantine equations with Kuṭṭaka, master Dhanurveda ballistics, balance antique coins with botanical Guñjā seeds, accelerate Madhava’s infinite Pi series, unlock cosmic powers in the Colossal Vault, and weave classical rāgas with animal Saptasvara tones.
           </p>
           <div className="ag-header-actions">
             {onGoHome && (
@@ -1140,6 +1847,10 @@ export const ArticleGamesHub: React.FC<ArticleGamesHubProps> = ({
         {activeGameId === 'kuttaka' && <KuttakaGame onScore={addScore} />}
         {activeGameId === 'pingala' && <PingalaGame onScore={addScore} />}
         {activeGameId === 'dhanurveda' && <DhanurvedaGame onScore={addScore} />}
+        {activeGameId === 'metrology' && <MetrologyGame onScore={addScore} />}
+        {activeGameId === 'madhavapi' && <MadhavaPiGame onScore={addScore} />}
+        {activeGameId === 'colossal' && <ColossalVaultGame onScore={addScore} />}
+        {activeGameId === 'swara' && <SaptaswaraWeaverGame onScore={addScore} />}
       </main>
     </div>
   );
