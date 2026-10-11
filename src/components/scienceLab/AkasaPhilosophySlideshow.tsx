@@ -1395,6 +1395,71 @@ export const ScenicStage: React.FC<{ stop: JourneyStop; activeSpeaker: 'Bodhi' |
 // MASTER TIMELINE JOURNEY SLIDESHOW COMPONENT
 // =========================================================================
 
+// Phonetic pronunciation sanitizer and soft voice selector for browser speech synthesis
+const formatForPleasantSpeech = (text: string): string => {
+  return text
+    // Strip Sanskrit inside brackets/parentheses e.g. (शब्द-गुणः), [द्रव्य], (विज्ञानम्)
+    .replace(/\s*\([^\)]*[\u0900-\u097F][^\)]*\)/g, '')
+    .replace(/\s*\[[^\]]*[\u0900-\u097F][^\]]*\]/g, '')
+    .replace(/\([^\)]*\)/g, '')
+    .replace(/\[[^\]]*\]/g, '')
+    // Phonetic replacements for Sanskrit terminology to ensure clear, soft English pronunciation
+    .replace(/Ākāśa/gi, 'Aakasha')
+    .replace(/Ghaṭākāśa/gi, 'Ghata-aakasha')
+    .replace(/Mahākāśa/gi, 'Maha-aakasha')
+    .replace(/Kaṇāda/gi, 'Kanada')
+    .replace(/Tryaṇuka/gi, 'Tryanuka')
+    .replace(/Dvyaṇuka/gi, 'Dvyanuka')
+    .replace(/Paramāṇu/gi, 'Paramanu')
+    .replace(/Pīlukapāka/gi, 'Peeluka-paaka')
+    .replace(/Pīṭharapāka/gi, 'Peethara-paaka')
+    .replace(/Pṛthivī/gi, 'Prithivi')
+    .replace(/Tejas/gi, 'Tejas')
+    .replace(/Vāyu/gi, 'Vaayu')
+    .replace(/Vijñāna/gi, 'Vigyana')
+    .replace(/Lokasaṁgraha/gi, 'Loka-sangraha')
+    .replace(/Guṇa/gi, 'Guna')
+    .replace(/Dravya/gi, 'Dravya')
+    .replace(/Saṁyoga/gi, 'Samyoga')
+    .replace(/Vibhāga/gi, 'Vibhaga')
+    .replace(/Apavarga/gi, 'Apavarga')
+    .replace(/Śabda/gi, 'Shabda')
+    .replace(/Sūtra/gi, 'Sutra')
+    .replace(/Vaiśeṣika/gi, 'Vaisheshika')
+    .replace(/Pratyakṣa/gi, 'Pratyaksha')
+    .replace(/Anumāna/gi, 'Anumana')
+    .replace(/Upamāna/gi, 'Upamana')
+    // Remove raw Devanagari script so TTS engines do not stutter
+    .replace(/[\u0900-\u097F]/g, '')
+    // Normalize punctuation & whitespace
+    .replace(/[^\w\s.,!?'’"—-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+};
+
+const getPleasantVoice = (speaker: 'Bodhi' | 'Kaṇāda'): SpeechSynthesisVoice | null => {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return null;
+  const voices = window.speechSynthesis.getVoices();
+  if (!voices || voices.length === 0) return null;
+
+  const enVoices = voices.filter((v) => v.lang && v.lang.toLowerCase().startsWith('en'));
+  const candidatePool = enVoices.length > 0 ? enVoices : voices;
+
+  if (speaker === 'Bodhi') {
+    // Gentle, clear, pleasant voice for the youthful student
+    const match = candidatePool.find((v) =>
+      /Samantha|Victoria|Karen|Moira|Google US English|Zira|Jenny|en-US-Standard|Natural/i.test(v.name)
+    );
+    return match || candidatePool[0] || null;
+  } else {
+    // Grounded, warm, serene voice for Sage Kaṇāda
+    const match = candidatePool.find((v) =>
+      /Daniel|Rishi|Oliver|Google UK English Male|David|Alex|George|Guy|en-GB-Standard|Natural/i.test(v.name)
+    );
+    return match || candidatePool[1] || candidatePool[0] || null;
+  }
+};
+
 interface AkasaPhilosophySlideshowProps {
   onTakeQuiz?: () => void;
   onReturnToGame?: () => void;
@@ -1409,11 +1474,26 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
   const [activeTurnIndex, setActiveTurnIndex] = useState<number | null>(null);
   const [activeSpeaker, setActiveSpeaker] = useState<'Bodhi' | 'Kaṇāda' | null>(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [tourSpeed, setTourSpeed] = useState<'normal' | 'fast'>('normal');
   const [showFullVault, setShowFullVault] = useState(true);
 
   const activeStop = JOURNEY_STOPS[currentStopIndex];
   const autoTourTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Preload voices for natural, soft speech synthesis
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.getVoices();
+      const onVoicesChanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+      window.speechSynthesis.onvoiceschanged = onVoicesChanged;
+      return () => {
+        if (window.speechSynthesis.onvoiceschanged === onVoicesChanged) {
+          window.speechSynthesis.onvoiceschanged = null;
+        }
+      };
+    }
+  }, []);
 
   // Stop speech when changing stops or unmounting
   useEffect(() => {
@@ -1437,6 +1517,11 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
   useEffect(() => {
     if (!isVideoAutoTour) {
       if (autoTourTimerRef.current) clearTimeout(autoTourTimerRef.current);
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      setIsSpeaking(false);
+      setActiveSpeaker(null);
       return;
     }
 
@@ -1453,36 +1538,41 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
 
         if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
           window.speechSynthesis.cancel();
-          const utterance = new SpeechSynthesisUtterance(turn.en);
-          // Bodhi: higher pitch, energetic; Kaṇāda: deep, calm
+          const cleanText = formatForPleasantSpeech(turn.en);
+          const utterance = new SpeechSynthesisUtterance(cleanText);
+
+          // Pleasant soft mode: gentle volume and calm natural cadence
+          utterance.volume = 0.72;
+          const voice = getPleasantVoice(turn.speaker);
+          if (voice) utterance.voice = voice;
+
+          // Bodhi: gentle youthful seeker; Kaṇāda: calm, tranquil sage
           if (turn.speaker === 'Bodhi') {
-            utterance.pitch = 1.15;
-            utterance.rate = tourSpeed === 'fast' ? 1.15 : 0.98;
+            utterance.pitch = 1.02;
+            utterance.rate = 0.88;
           } else {
-            utterance.pitch = 0.88;
-            utterance.rate = tourSpeed === 'fast' ? 1.1 : 0.92;
+            utterance.pitch = 0.94;
+            utterance.rate = 0.86;
           }
 
           utterance.onend = () => {
             turnIdx++;
-            const pauseTime = tourSpeed === 'fast' ? 1200 : 2000;
-            autoTourTimerRef.current = setTimeout(playNextTurn, pauseTime);
+            autoTourTimerRef.current = setTimeout(playNextTurn, 1800);
           };
 
           utterance.onerror = () => {
             turnIdx++;
-            autoTourTimerRef.current = setTimeout(playNextTurn, 1500);
+            autoTourTimerRef.current = setTimeout(playNextTurn, 1400);
           };
 
           setIsSpeaking(true);
           window.speechSynthesis.speak(utterance);
         } else {
           turnIdx++;
-          autoTourTimerRef.current = setTimeout(playNextTurn, tourSpeed === 'fast' ? 2500 : 4000);
+          autoTourTimerRef.current = setTimeout(playNextTurn, 3200);
         }
       } else {
         // Dialogue complete for this stop: smoothly proceed to the next stop!
-        const advanceDelay = tourSpeed === 'fast' ? 2200 : 3500;
         autoTourTimerRef.current = setTimeout(() => {
           if (currentStopIndex < JOURNEY_STOPS.length - 1) {
             setCurrentStopIndex((prev) => prev + 1);
@@ -1492,7 +1582,7 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
             setIsVideoAutoTour(false);
             soundEffects.playTrasarenuChime();
           }
-        }, advanceDelay);
+        }, 2800);
       }
     };
 
@@ -1504,7 +1594,7 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
         window.speechSynthesis.cancel();
       }
     };
-  }, [isVideoAutoTour, currentStopIndex, tourSpeed]);
+  }, [isVideoAutoTour, currentStopIndex]);
 
   // Keyboard navigation (Left / Right Arrow)
   useEffect(() => {
@@ -1540,52 +1630,19 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
     setActiveTurnIndex(turnIndex);
     setActiveSpeaker(turn.speaker);
 
-    const utterance = new SpeechSynthesisUtterance(turn.en);
+    const cleanText = formatForPleasantSpeech(turn.en);
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    utterance.volume = 0.72; // Pleasant soft mode
+    const voice = getPleasantVoice(turn.speaker);
+    if (voice) utterance.voice = voice;
+
     if (turn.speaker === 'Bodhi') {
-      utterance.pitch = 1.15;
-      utterance.rate = 0.98;
+      utterance.pitch = 1.02;
+      utterance.rate = 0.88;
     } else {
-      utterance.pitch = 0.88;
-      utterance.rate = 0.92;
+      utterance.pitch = 0.94;
+      utterance.rate = 0.86;
     }
-
-    utterance.onend = () => {
-      setIsSpeaking(false);
-      setActiveSpeaker(null);
-      setActiveTurnIndex(null);
-    };
-    utterance.onerror = () => {
-      setIsSpeaking(false);
-      setActiveSpeaker(null);
-      setActiveTurnIndex(null);
-    };
-
-    setIsSpeaking(true);
-    window.speechSynthesis.speak(utterance);
-  };
-
-  // Speak the entire stop overview narration
-  const handleSpeakFullStop = () => {
-    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
-
-    if (isSpeaking && activeTurnIndex === -1) {
-      window.speechSynthesis.cancel();
-      setIsSpeaking(false);
-      setActiveSpeaker(null);
-      setActiveTurnIndex(null);
-      return;
-    }
-
-    window.speechSynthesis.cancel();
-    soundEffects.playTrasarenuChime();
-
-    const textToSpeak = `${activeStop.titleEn}. ${activeStop.coreInsight} ${activeStop.dialogue.map((d) => `${d.speaker} says: ${d.en}`).join(' ')}`;
-    const utterance = new SpeechSynthesisUtterance(textToSpeak);
-    utterance.rate = 0.94;
-    utterance.pitch = 1.0;
-
-    setActiveTurnIndex(-1);
-    setActiveSpeaker('Kaṇāda');
 
     utterance.onend = () => {
       setIsSpeaking(false);
@@ -1640,52 +1697,30 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
           </span>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
-          {/* Timeline Video Auto-Play Button */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+          {/* Simple Play / Pause Button */}
           <button
             type="button"
             className={`akasa-video-tour-btn${isVideoAutoTour ? ' is-active' : ''}`}
             onClick={() => {
               const next = !isVideoAutoTour;
               setIsVideoAutoTour(next);
-              if (next) soundEffects.playTrasarenuChime();
+              if (next) {
+                soundEffects.playTrasarenuChime();
+              } else {
+                if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+                  window.speechSynthesis.cancel();
+                }
+                setIsSpeaking(false);
+                setActiveSpeaker(null);
+                setActiveTurnIndex(null);
+              }
             }}
-            title="Play the 8 stops automatically as an animated timeline video with character voice dialogues"
+            title={isVideoAutoTour ? 'Pause Timeline Journey' : 'Play Timeline Journey'}
+            style={{ fontSize: '0.92rem', padding: '0.45rem 1.4rem', fontWeight: 800 }}
           >
-            <span>{isVideoAutoTour ? '⏸️ Pause Timeline Video' : '🎬 Play Timeline Video Tour'}</span>
+            <span>{isVideoAutoTour ? '⏸️ Pause' : '▶️ Play'}</span>
           </button>
-
-          {/* Speed Toggle */}
-          {isVideoAutoTour && (
-            <button
-              type="button"
-              className="akasa-pill"
-              onClick={() => setTourSpeed((s) => (s === 'normal' ? 'fast' : 'normal'))}
-              title="Toggle Tour Playback Speed"
-            >
-              ⚡ {tourSpeed === 'normal' ? '1x Normal' : '1.3x Fast'}
-            </button>
-          )}
-
-          {/* Full Stop Narration */}
-          <button
-            type="button"
-            className={`akasa-slideshow-audio-btn${isSpeaking && activeTurnIndex === -1 ? ' is-playing' : ''}`}
-            onClick={handleSpeakFullStop}
-            title="Listen to complete narration of this stop"
-          >
-            <span>{isSpeaking && activeTurnIndex === -1 ? '⏹️ Stop' : '🔊 Listen to Stop'}</span>
-          </button>
-
-          <a
-            href="/AKASA_SUTRA_KANADA_LEARNING_GUIDE.txt"
-            download="AKASA_SUTRA_KANADA_LEARNING_GUIDE.txt"
-            className="akasa-pill is-gold"
-            style={{ textDecoration: 'none', padding: '0.35rem 0.75rem', fontSize: '0.75rem' }}
-            title="Download full 10-section study compendium text file"
-          >
-            📥 Full Compendium (.txt)
-          </a>
         </div>
       </div>
 
@@ -1786,17 +1821,11 @@ export const AkasaPhilosophySlideshow: React.FC<AkasaPhilosophySlideshowProps> =
                     <span className="akasa-bubble-speaker-name">
                       {isBodhi ? '🧑‍🎓 Bodhi asks:' : '🧘‍♂️ Sage Kaṇāda explains:'}
                     </span>
-                    <button
-                      type="button"
-                      className="akasa-bubble-audio-btn"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleSpeakDialogueTurn(tIdx);
-                      }}
-                      title="Play speech narration for this line"
-                    >
-                      {isTurnActive && isSpeaking ? '⏹️ Playing' : '🔊 Listen'}
-                    </button>
+                    {isTurnActive && isSpeaking && (
+                      <span style={{ fontSize: '0.72rem', color: '#fef08a', fontWeight: 600 }}>
+                        🔊 Speaking
+                      </span>
+                    )}
                   </div>
 
                   {/* Sanskrit Text */}
