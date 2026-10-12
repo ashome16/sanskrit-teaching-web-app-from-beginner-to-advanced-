@@ -3556,25 +3556,45 @@ ${bodyHtml}
                     Curated Documentary by <strong>Conscious Cosmos</strong> · Timestamp: starts at 0:11
                   </div>
                 </div>
-                <a
-                  href="https://www.youtube.com/watch?v=bp9m53Tp6xg&t=11s"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    background: '#dc2626',
-                    color: '#ffffff',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '8px',
-                    fontWeight: 700,
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                  }}
-                >
-                  <span>▶ Watch on YouTube</span>
-                </a>
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <a
+                    href="/science-lab#vedic-geometry"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+                      color: '#090e17',
+                      padding: '0.5rem 1rem',
+                      borderRadius: '8px',
+                      fontWeight: 800,
+                      fontSize: '0.85rem',
+                      textDecoration: 'none',
+                      boxShadow: '0 2px 8px rgba(245, 158, 11, 0.3)',
+                    }}
+                  >
+                    <span>📐 Launch Living Geometry Lab &amp; Treatise ➔</span>
+                  </a>
+                  <a
+                    href="https://www.youtube.com/watch?v=bp9m53Tp6xg&t=11s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      background: '#dc2626',
+                      color: '#ffffff',
+                      padding: '0.5rem 1rem',
+                      borderRadius: '8px',
+                      fontWeight: 700,
+                      fontSize: '0.85rem',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    <span>▶ YouTube</span>
+                  </a>
+                </div>
               </div>
             </div>
 

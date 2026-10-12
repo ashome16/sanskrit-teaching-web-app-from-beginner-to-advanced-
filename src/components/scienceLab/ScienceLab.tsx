@@ -12,6 +12,7 @@ const Chaturyoni = lazy(() => import('./Chaturyoni'));
 const Chandrayaan = lazy(() => import('./Chandrayaan'));
 const RituparnaSampling = lazy(() => import('./RituparnaSampling'));
 const AgnibanaRocketLab = lazy(() => import('./AgnibanaRocketLab'));
+const VedicGeometryLab = lazy(() => import('./VedicGeometryLab'));
 const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 
 export type LabCategory = 'all' | 'matter' | 'cosmos' | 'life' | 'waves';
@@ -179,6 +180,20 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     ink: '#f87171',
     glow: '#ef4444',
   },
+  {
+    id: 'vedic-geometry',
+    code: 'SEC-11',
+    icon: '📐',
+    dev: 'जीवन्त-रेखागणितम्',
+    title: 'The Living Geometry of the Gurukul',
+    subject: 'Rekhā-Gaṇita & Śulba',
+    school: 'Śulba Sūtras & Conscious Cosmos',
+    category: 'waves',
+    blurb: 'Explore how Sanskrit root actions encode living geometry. Features the Conscious Cosmos documentary masterclass, interactive 8-archetype shape morpher, and the universal actions of rotation and extension.',
+    tint: 'rgba(245, 158, 11, 0.12)',
+    ink: '#fde047',
+    glow: '#f59e0b',
+  },
 ];
 
 
@@ -194,6 +209,13 @@ const HASH_ALIASES: Record<string, LabSegmentId> = {
   rocket: 'agnibana',
   diwali: 'agnibana',
   deepavali: 'agnibana',
+  geometry: 'vedic-geometry',
+  'vedic-geometry': 'vedic-geometry',
+  'rekha-ganita': 'vedic-geometry',
+  'rekhaganita': 'vedic-geometry',
+  shulba: 'vedic-geometry',
+  sulba: 'vedic-geometry',
+  'conscious-cosmos': 'vedic-geometry',
 };
 const readHash = (): LabSegmentId | null => {
   try {
@@ -299,7 +321,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             Boot up the ultimate reality sandbox. Hack into ancient atomic physics, orbital gravity, cymatic sand harmonics, and aerospace metallurgy through interactive laboratory simulations. Decode Sanskrit sūtras and conquer each scientific challenge.
           </p>
           <div className="vl-hud-telemetry">
-            <span className="vl-hud-pill"><span>🕹️</span> 10 ACTIVE SECTORS</span>
+            <span className="vl-hud-pill"><span>🕹️</span> {LAB_SEGMENTS.length} ACTIVE SECTORS</span>
             <span className="vl-hud-pill"><span>⚡</span> 60 FPS QUANTUM ENGINE</span>
             <span className="vl-hud-pill"><span>📜</span> SŪTRA ARCHIVES</span>
             <span className="vl-hud-pill"><span>🧠</span> BODHI AI GUIDE</span>
@@ -353,28 +375,28 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             className={`vl-cat-tab${filterCat === 'matter' ? ' is-active' : ''}`}
             onClick={() => setFilterCat('matter')}
           >
-            <span className="vl-cat-icon">⚛️</span> MATTER &amp; ENERGY (3)
+            <span className="vl-cat-icon">⚛️</span> MATTER &amp; ENERGY ({LAB_SEGMENTS.filter((s) => s.category === 'matter').length})
           </button>
           <button
             type="button"
             className={`vl-cat-tab${filterCat === 'cosmos' ? ' is-active' : ''}`}
             onClick={() => setFilterCat('cosmos')}
           >
-            <span className="vl-cat-icon">🪐</span> COSMOS &amp; SPACE (2)
+            <span className="vl-cat-icon">🪐</span> COSMOS &amp; SPACE ({LAB_SEGMENTS.filter((s) => s.category === 'cosmos').length})
           </button>
           <button
             type="button"
             className={`vl-cat-tab${filterCat === 'life' ? ' is-active' : ''}`}
             onClick={() => setFilterCat('life')}
           >
-            <span className="vl-cat-icon">🌿</span> LIFE &amp; ECOLOGY (2)
+            <span className="vl-cat-icon">🌿</span> LIFE &amp; ECOLOGY ({LAB_SEGMENTS.filter((s) => s.category === 'life').length})
           </button>
           <button
             type="button"
             className={`vl-cat-tab${filterCat === 'waves' ? ' is-active' : ''}`}
             onClick={() => setFilterCat('waves')}
           >
-            <span className="vl-cat-icon">📐</span> WAVES &amp; MATH (3)
+            <span className="vl-cat-icon">📐</span> WAVES &amp; MATH ({LAB_SEGMENTS.filter((s) => s.category === 'waves').length})
           </button>
         </div>
       </div>
@@ -410,6 +432,12 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               <div className="vl-track-header">
                 <span className="vl-track-title"><span>🚀</span> TRACK V: AEROSPACE BALLISTICS &amp; METALLURGY</span>
                 <span className="vl-track-subtitle">अग्निबाण-शास्त्रम् · SEC-10</span>
+              </div>
+            )}
+            {filterCat === 'all' && s.id === 'vedic-geometry' && (
+              <div className="vl-track-header" style={{ borderColor: 'rgba(245, 158, 11, 0.45)' }}>
+                <span className="vl-track-title" style={{ color: '#fde047' }}><span>📐</span> TRACK VI: SACRED GEOMETRY &amp; GURUKUL CONSCIOUSNESS</span>
+                <span className="vl-track-subtitle" style={{ color: '#fcd34d' }}>जीवन्त-रेखागणितम् · SEC-11 (CONSCIOUS COSMOS)</span>
               </div>
             )}
             <a
@@ -564,6 +592,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {active === 'srishti-sthiti-laya' && <SrishtiLoom />}
           {active === 'rituparna' && <RituparnaSampling />}
           {active === 'agnibana' && <AgnibanaRocketLab />}
+          {active === 'vedic-geometry' && <VedicGeometryLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
         </Suspense>
 
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BodhiAvatar, { type BodhiMood } from '../BodhiAvatar';
 import { playPronunciation, speakAsBodhi, type BodhiSpeechLang } from '../../utils/pronunciation';
 
-export type LabSegmentId = 'paramanu' | 'prakriti' | 'jyotisha' | 'srishti-sthiti-laya' | 'nada-brahman' | 'asato-ma' | 'chaturyoni' | 'chandrayaan' | 'rituparna' | 'agnibana';
+export type LabSegmentId = 'paramanu' | 'prakriti' | 'jyotisha' | 'srishti-sthiti-laya' | 'nada-brahman' | 'asato-ma' | 'chaturyoni' | 'chandrayaan' | 'rituparna' | 'agnibana' | 'vedic-geometry';
 
 export interface LabSegmentProps {
   onNextLab?: () => void;

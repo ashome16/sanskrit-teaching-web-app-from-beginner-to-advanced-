@@ -1328,23 +1328,44 @@ const HomePage: React.FC<HomePageProps> = ({
               </div>
               <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <span style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Curated by Conscious Cosmos</span>
-                {onOpenVedicMaths && (
-                  <button
-                    type="button"
-                    onClick={onOpenVedicMaths}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      color: '#b45309',
-                      fontWeight: 700,
-                      fontSize: '0.82rem',
-                      cursor: 'pointer',
-                      textDecoration: 'underline',
-                    }}
-                  >
-                    Explore Vedic Maths ➔
-                  </button>
-                )}
+                <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                  {onOpenScienceLab && (
+                    <button
+                      type="button"
+                      onClick={() => onOpenScienceLab('vedic-geometry')}
+                      style={{
+                        background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+                        border: 'none',
+                        color: '#ffffff',
+                        fontWeight: 800,
+                        fontSize: '0.8rem',
+                        padding: '0.35rem 0.75rem',
+                        borderRadius: '6px',
+                        cursor: 'pointer',
+                        boxShadow: '0 2px 8px rgba(245, 158, 11, 0.25)',
+                      }}
+                    >
+                      Open Vedic Geometry Lab ➔
+                    </button>
+                  )}
+                  {onOpenVedicMaths && (
+                    <button
+                      type="button"
+                      onClick={onOpenVedicMaths}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        color: '#b45309',
+                        fontWeight: 700,
+                        fontSize: '0.8rem',
+                        cursor: 'pointer',
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      Vedic Maths ➔
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </div>

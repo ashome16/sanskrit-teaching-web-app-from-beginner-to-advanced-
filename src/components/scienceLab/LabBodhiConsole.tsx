@@ -572,6 +572,62 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
       },
     ],
   },
+  'vedic-geometry': {
+    title: 'The Living Geometry of the Gurukul',
+    dev: 'गुरुकुलस्य जीवन्त-रेखागणितम्',
+    bodhiIntro:
+      'Welcome to the Living Geometry bench! In the Gurukul tradition, geometry is not abstract formalism; it is consciousness in motion. Root actions (Dhātus) like Rikh (scratching a trajectory) generate Rekhā (lines), Vṛt (revolving) generates Vṛtta (circles), and Ghana unites cubic volume with crystallization phase chemistry. Explore with Bodhi below!',
+    keyConcepts: [
+      { label: 'Rikh to Rekhā (ऋख् ➔ रेखा)', text: 'A line is the physical trajectory of a moving point of energy.' },
+      { label: 'Trikoṇamiti (त्रिकोणमिति)', text: 'Tri (3) + Koṇa (corner) + Miti (measure) = direct ancestor of trigonometry.' },
+      { label: 'Vṛt to Vṛtta (वृत् ➔ वृत्तम्)', text: 'The circle is the structural outcome of continuous rotation.' },
+      { label: 'Brahmāṇḍa (ब्रह्माण्डम्)', text: 'Cosmic Egg/Ellipsoid: planets orbit in ovals (Aṇḍa-ākāra), anticipating Kepler.' },
+      { label: 'Ghana Solidification (घनः)', text: 'Unites volume geometry with the physical phase change of crystalline solidification.' },
+    ],
+    faqs: [
+      {
+        q: 'Why did the Gurukul model ground geometry in Sanskrit roots (Dhātus)?',
+        a: 'Because language in Sanskrit is action-centric. A shape is never a static arbitrary label, but the direct structural fingerprint of the physical event that created it.',
+        devAudio: 'धातोः नाम निष्पद्यते',
+      },
+      {
+        q: 'What are the two primary universal actions behind all forms?',
+        a: 'The Activity of Rotation (governed by Vṛt, driving orbits and atomic spins) and the Activity of Extension (governed by Rikh/Tanu, driving waves, crystal lattices, and root sprouting).',
+        devAudio: 'घूर्णनं प्रसरणं च',
+      },
+    ],
+    quizzes: [
+      {
+        id: 'geo-q1',
+        q: 'Which Sanskrit root action defines a circle (Vṛtta) as a rotational event rather than a static curve?',
+        options: ['Rikh (ऋख् - to scratch)', 'Vṛt (वृत् - to roll or revolve)', 'Han (हन् - to solidify)', 'Tan (तन् - to stretch)'],
+        correct: 1,
+        explanation: 'Root Vṛt means to roll, turn, or revolve, teaching that a circle is the structural outcome of rotation.',
+        sanskritContext: 'वृत् वर्तने धातुः।',
+      },
+      {
+        id: 'geo-q2',
+        q: 'How does the term Ghana (घन) unite geometry with physical chemistry?',
+        options: [
+          'It only measures 2D perimeter cords.',
+          'It denotes both a 3D geometric cube and the solid crystalline state of matter (phase change).',
+          'It refers strictly to atmospheric vapor.',
+          'It calculates planetary eclipses.',
+        ],
+        correct: 1,
+        explanation: 'Ghana means both a geometric cube ($a^3$) and solid crystal (like ice), joining volume mathematics with crystallization chemistry.',
+        sanskritContext: 'घनः मूर्तिः स्फटिकश्च।',
+      },
+      {
+        id: 'geo-q3',
+        q: 'What astronomical shape was encoded in the Vedic name for the cosmos, Brahmāṇḍa (ब्रह्माण्ड)?',
+        options: ['Perfect static circle', 'Infinite flat plane', 'Aṇḍa-ākāra (Oval / Ellipsoid)', 'Cubic prism'],
+        correct: 2,
+        explanation: 'Aṇḍa means egg. Naming the universe Brahmāṇḍa recognized that orbital geometries are ovals rather than simplistic circles.',
+        sanskritContext: 'ब्रह्म च तदण्डं च ब्रह्माण्डम्।',
+      },
+    ],
+  },
 };
 
 const RANKS = [
