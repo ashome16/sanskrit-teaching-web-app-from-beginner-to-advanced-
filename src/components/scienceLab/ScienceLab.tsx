@@ -13,6 +13,7 @@ const Chandrayaan = lazy(() => import('./Chandrayaan'));
 const RituparnaSampling = lazy(() => import('./RituparnaSampling'));
 const AgnibanaRocketLab = lazy(() => import('./AgnibanaRocketLab'));
 const VedicGeometryLab = lazy(() => import('./VedicGeometryLab'));
+const MantraAcousticsLab = lazy(() => import('./MantraAcousticsLab'));
 const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 
 export type LabCategory = 'all' | 'matter' | 'cosmos' | 'life' | 'waves';
@@ -194,6 +195,20 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     ink: '#fde047',
     glow: '#f59e0b',
   },
+  {
+    id: 'mantra-acoustics',
+    code: 'SEC-12',
+    icon: '🎶',
+    dev: 'मन्त्राकौस्टिक्स् · पदार्थस्य वाक्',
+    title: 'Mantra Acoustics & The Language of Matter',
+    subject: 'Harmonic Scale & Phonetic Physics',
+    school: 'Sāma Veda & Taittirīya Saṃhitā',
+    category: 'waves',
+    blurb: 'Sound discovered as a physical law: the natural Harmonic Series (1/2, 1/3, 1/4... 1/7), Saptak vs. Solfège, Sāma Veda animal resonances, Chandas Mātrā decoupling, and the Chamakam square number code.',
+    tint: 'rgba(168, 85, 247, 0.12)',
+    ink: '#c084fc',
+    glow: '#a855f7',
+  },
 ];
 
 
@@ -216,6 +231,12 @@ const HASH_ALIASES: Record<string, LabSegmentId> = {
   shulba: 'vedic-geometry',
   sulba: 'vedic-geometry',
   'conscious-cosmos': 'vedic-geometry',
+  mantra: 'mantra-acoustics',
+  'mantra-acoustics': 'mantra-acoustics',
+  acoustics: 'mantra-acoustics',
+  saptak: 'mantra-acoustics',
+  chandas: 'mantra-acoustics',
+  chamakam: 'mantra-acoustics',
 };
 const readHash = (): LabSegmentId | null => {
   try {
@@ -440,6 +461,12 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 <span className="vl-track-subtitle" style={{ color: '#fcd34d' }}>जीवन्त-रेखागणितम् · SEC-11 (CONSCIOUS COSMOS)</span>
               </div>
             )}
+            {filterCat === 'all' && s.id === 'mantra-acoustics' && (
+              <div className="vl-track-header" style={{ borderColor: 'rgba(168, 85, 247, 0.45)' }}>
+                <span className="vl-track-title" style={{ color: '#c084fc' }}><span>🎶</span> TRACK VII: MANTRA ACOUSTICS &amp; THE HARMONIC CODE</span>
+                <span className="vl-track-subtitle" style={{ color: '#e9d5ff' }}>नाद-पदार्थ-विज्ञानम् · SEC-12 (ACCIDENTAL SYMPHONY &amp; CHAMAKAM)</span>
+              </div>
+            )}
             <a
               href={`/vignana-lab#${s.id}`}
               className={`vl-card${s.id === active ? ' is-active' : ''}`}
@@ -593,6 +620,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {active === 'rituparna' && <RituparnaSampling />}
           {active === 'agnibana' && <AgnibanaRocketLab />}
           {active === 'vedic-geometry' && <VedicGeometryLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+          {active === 'mantra-acoustics' && <MantraAcousticsLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
         </Suspense>
 
 
@@ -660,9 +688,9 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             </div>
           </div>
 
-          {/* All 10 Sectors Grid Strip */}
+          {/* All Sectors Grid Strip */}
           <div className="vl-nlg-strip-wrap">
-            <span className="vl-nlg-strip-title">EXPLORE ALL 10 SCIENCE SECTORS:</span>
+            <span className="vl-nlg-strip-title">EXPLORE ALL {LAB_SEGMENTS.length} SCIENCE SECTORS:</span>
             <div className="vl-nlg-strip">
               {LAB_SEGMENTS.map((s, idx) => (
                 <button
@@ -703,7 +731,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           <span className="vl-dock-pulse" aria-hidden="true" />
           <span className="vl-dock-curr-code">{seg.code}</span>
           <span className="vl-dock-curr-title">{seg.icon} {seg.title}</span>
-          <span className="vl-dock-curr-count">({currentIndex + 1}/10)</span>
+          <span className="vl-dock-curr-count">({currentIndex + 1}/{LAB_SEGMENTS.length})</span>
         </div>
 
         <button
