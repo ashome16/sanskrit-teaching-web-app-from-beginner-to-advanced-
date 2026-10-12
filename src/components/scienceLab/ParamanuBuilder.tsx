@@ -7,6 +7,7 @@ import { soundEffects } from '../../utils/soundEffects';
 import { PadarthasExplorer } from './PadarthasExplorer';
 import { AkasaSutraGame } from './AkasaSutraGame';
 import { DynamicGunaMatrix } from './DynamicGunaMatrix';
+import { BhutaReconstructor } from './BhutaReconstructor';
 
 type Bhuta = 'prthivi' | 'ap' | 'tejas' | 'vayu';
 type Kind = 'p' | 'd' | 't';
@@ -140,61 +141,6 @@ const SORT_CARDS: SortCard[] = [
 const SORT_BINS: { id: Bhuta | 'akasha'; label: string }[] = [
   ...BHUTAS.map((b) => ({ id: b, label: `${BHUTA_INFO[b].icon} ${BHUTA_INFO[b].iast}` })),
   { id: 'akasha', label: '🌌 ākāśa' },
-];
-
-// Reconstruct Macro Elements Data
-interface MacroTarget {
-  id: Bhuta;
-  name: string;
-  sanskrit: string;
-  icon: string;
-  title: string;
-  desc: string;
-  color: string;
-  unlockedTitle: string;
-}
-
-const MACRO_TARGETS: MacroTarget[] = [
-  {
-    id: 'prthivi',
-    name: 'Earth Solid Block',
-    sanskrit: 'पार्थिव-शिला',
-    icon: '🪨',
-    title: 'Solid Terracotta Crystal (पार्थिव-द्रव्य)',
-    desc: 'Dense, rigid geometric crystal lattice exhibiting smell (gandha) and structural cohesion.',
-    color: '#d97706',
-    unlockedTitle: 'Crystalline Stone & Terracotta Brick',
-  },
-  {
-    id: 'ap',
-    name: 'Water Liquid Pool',
-    sanskrit: 'आप्य-द्रव',
-    icon: '💧',
-    title: 'Fluid Hydrodynamic Basin (आप्य-द्रव्य)',
-    desc: 'Viscous, surface-tension water pool showing taste (rasa) and fluid coldness (śīta).',
-    color: '#0284c7',
-    unlockedTitle: 'Flowing Dewdrop & Monsoon Pool',
-  },
-  {
-    id: 'tejas',
-    name: 'Fire Radiant Plasma',
-    sanskrit: 'तैजस-ज्वाला',
-    icon: '🔥',
-    title: 'Sacred Agni Plasma (तैजस-द्रव्य)',
-    desc: 'Upward-leaping luminous flame manifesting intense form/light (rūpa) and heat (uṣṇa).',
-    color: '#ea580c',
-    unlockedTitle: 'Sacred Homa Flame & Solar Ray',
-  },
-  {
-    id: 'vayu',
-    name: 'Air Aerodynamic Vortex',
-    sanskrit: 'वायव्य-चक्र',
-    icon: '🌬️',
-    title: 'Kinetic Atmospheric Streamline (वायव्य-द्रव्य)',
-    desc: 'Swirling velocity vortex showing tactile touch (sparśa) and transverse motion (gamana).',
-    color: '#8b5cf6',
-    unlockedTitle: 'Swirling Atmospheric Prāṇa Vortex',
-  },
 ];
 
 type MirrorBhuta = 'prthivi' | 'ap' | 'tejas' | 'vayu' | 'akasha';
@@ -2206,10 +2152,6 @@ export const ParamanuBuilder: React.FC = () => {
   const currentQuestIdx = questSteps.findIndex((s) => !s.isDone);
   const currentQuest = currentQuestIdx === -1 ? questSteps[4] : questSteps[currentQuestIdx];
 
-  const currentMacroObj = MACRO_TARGETS.find((m) => m.id === selectedMacroTarget)!;
-  const currentStock = macroTryanukaStock[selectedMacroTarget];
-  const isCurrentMacroUnlocked = macroUnlocked[selectedMacroTarget] || currentStock >= 3;
-
   return (
     <div className="vl-sim">
       <BodhiLabAnecdote
@@ -3093,181 +3035,19 @@ export const ParamanuBuilder: React.FC = () => {
             </div>
           </div>
 
-      {/* 🔬 [ NEW: BHOOTA RECONSTRUCTOR ] Macro-Structure Showcase */}
-      <section className="vl-reconstructor-panel" aria-label="Bhoota Reconstructor Sandbox">
-        <div className="vl-reconstructor-header">
-          <div>
-            <h3 className="vl-reconstructor-title">
-              <span>🏗️ BHOOTA RECONSTRUCTOR (स्थूल-द्रव्य-निर्माणम्)</span>
-            </h3>
-            <p style={{ margin: '0.2rem 0 0', fontSize: '0.84rem', color: '#94a3b8' }}>
-              Scale up from quantum triads! Combine 3 Tryaṇukas (18 Paramāṇus) to materialize a tangible macroscopic block of matter.
-            </p>
-          </div>
-          <div className="vl-reconstructor-tabs">
-            {MACRO_TARGETS.map((t) => (
-              <button
-                key={t.id}
-                type="button"
-                className={`vl-reconstructor-tab${selectedMacroTarget === t.id ? ' is-active' : ''}`}
-                onClick={() => setSelectedMacroTarget(t.id)}
-              >
-                {t.icon} {t.name}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="vl-reconstructor-stage">
-          {/* Macroscopic Visualizer Box */}
-          <div className="vl-reconstructor-canvas-wrap">
-            <svg viewBox="0 0 320 320" style={{ width: '100%', height: '100%', display: 'block' }}>
-              <defs>
-                <radialGradient id="macroEarth" cx="40%" cy="30%" r="70%">
-                  <stop offset="0%" stopColor="#fef3c7" />
-                  <stop offset="40%" stopColor="#d97706" />
-                  <stop offset="100%" stopColor="#78350f" />
-                </radialGradient>
-                <radialGradient id="macroWater" cx="35%" cy="30%" r="65%">
-                  <stop offset="0%" stopColor="#e0f2fe" />
-                  <stop offset="45%" stopColor="#0284c7" />
-                  <stop offset="100%" stopColor="#082f49" />
-                </radialGradient>
-                <radialGradient id="macroFire" cx="50%" cy="40%" r="60%">
-                  <stop offset="0%" stopColor="#fef08a" />
-                  <stop offset="45%" stopColor="#ea580c" />
-                  <stop offset="100%" stopColor="#7c2d12" />
-                </radialGradient>
-                <radialGradient id="macroAir" cx="50%" cy="50%" r="60%">
-                  <stop offset="0%" stopColor="#ede9fe" />
-                  <stop offset="50%" stopColor="#8b5cf6" />
-                  <stop offset="100%" stopColor="#2e1065" />
-                </radialGradient>
-              </defs>
-
-              {/* Grid backdrop */}
-              <circle cx={160} cy={160} r={140} fill="none" stroke="rgba(56, 189, 248, 0.15)" strokeWidth={1} strokeDasharray="4 4" />
-              <circle cx={160} cy={160} r={95} fill="none" stroke="rgba(56, 189, 248, 0.22)" strokeWidth={1} />
-
-              {isCurrentMacroUnlocked ? (
-                // UNLOCKED MACRO STRUCTURE
-                <g>
-                  {selectedMacroTarget === 'prthivi' && (
-                    <g>
-                      {/* Terracotta crystalline stone cluster */}
-                      <polygon points="160,55 245,115 225,235 95,235 75,115" fill="url(#macroEarth)" stroke="#fbbf24" strokeWidth={3} />
-                      <polygon points="160,55 225,235 160,265 95,235" fill="rgba(0,0,0,0.25)" />
-                      <line x1="160" y1="55" x2="160" y2="265" stroke="#fef3c7" strokeWidth={2} />
-                      <text x={160} y={155} textAnchor="middle" fill="#fff" fontSize={14} fontWeight={800} filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
-                        🪨 PARTHIVA SILA
-                      </text>
-                      <text x={160} y={178} textAnchor="middle" fill="#fef3c7" fontSize={11} fontWeight={600}>
-                        Gandha (Smell) Unlocked
-                      </text>
-                    </g>
-                  )}
-                  {selectedMacroTarget === 'ap' && (
-                    <g>
-                      {/* Rippling liquid dewdrop basin */}
-                      <circle cx={160} cy={165} r={85} fill="url(#macroWater)" stroke="#38bdf8" strokeWidth={3} />
-                      <ellipse cx={160} cy={165} rx={65} ry={35} fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth={2} />
-                      <ellipse cx={160} cy={165} rx={35} ry={18} fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth={1.5} />
-                      <text x={160} y={155} textAnchor="middle" fill="#fff" fontSize={14} fontWeight={800} filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
-                        💧 AAPYA DRAVA
-                      </text>
-                      <text x={160} y={178} textAnchor="middle" fill="#e0f2fe" fontSize={11} fontWeight={600}>
-                        Rasa (Taste & Cold) Unlocked
-                      </text>
-                    </g>
-                  )}
-                  {selectedMacroTarget === 'tejas' && (
-                    <g>
-                      {/* Sacred dancing homa flame */}
-                      <path d="M160,40 Q215,120 205,190 Q195,255 160,265 Q125,255 115,190 Q105,120 160,40 Z" fill="url(#macroFire)" stroke="#f97316" strokeWidth={3} />
-                      <path d="M160,95 Q190,150 185,200 Q180,240 160,245 Q140,240 135,200 Q130,150 160,95 Z" fill="#fef08a" opacity={0.8} />
-                      <text x={160} y={175} textAnchor="middle" fill="#7c2d12" fontSize={14} fontWeight={900}>
-                        🔥 TAIJASA JWALA
-                      </text>
-                      <text x={160} y={196} textAnchor="middle" fill="#c2410c" fontSize={11} fontWeight={700}>
-                        Rupa (Radiant Light) Unlocked
-                      </text>
-                    </g>
-                  )}
-                  {selectedMacroTarget === 'vayu' && (
-                    <g>
-                      {/* Atmospheric dynamic spiral vortex */}
-                      <circle cx={160} cy={160} r={80} fill="url(#macroAir)" stroke="#a855f7" strokeWidth={3} />
-                      <path d="M120,130 Q160,90 200,130 T220,190 T140,210 T110,160" fill="none" stroke="#ede9fe" strokeWidth={3.5} strokeLinecap="round" strokeDasharray="6 4" />
-                      <text x={160} y={155} textAnchor="middle" fill="#fff" fontSize={14} fontWeight={800} filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
-                        🌬️ VAYAVYA CHAKRA
-                      </text>
-                      <text x={160} y={178} textAnchor="middle" fill="#ede9fe" fontSize={11} fontWeight={600}>
-                        Sparsa (Kinetic Touch) Unlocked
-                      </text>
-                    </g>
-                  )}
-                </g>
-              ) : (
-                // LOCKED CHOPPED PREVIEW
-                <g>
-                  <circle cx={160} cy={160} r={70} fill="#0b1220" stroke="#475569" strokeWidth={2} strokeDasharray="5 5" />
-                  <text x={160} y={145} textAnchor="middle" fontSize={32}>🔒</text>
-                  <text x={160} y={185} textAnchor="middle" fill="#94a3b8" fontSize={12} fontWeight={700}>
-                    LOCKED ({currentStock} / 3 Tryaṇukas)
-                  </text>
-                  <text x={160} y={202} textAnchor="middle" fill="#64748b" fontSize={10}>
-                    Needs {3 - currentStock} more Tryaṇuka(s)
-                  </text>
-                </g>
-              )}
-            </svg>
-          </div>
-
-          {/* Reconstructor Controls & Progress */}
-          <div className="vl-reconstructor-progress-card">
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
-                <strong style={{ fontSize: '1.05rem', color: '#f8fafc' }}>
-                  {currentMacroObj.title}
-                </strong>
-                <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: '#38bdf8' }}>
-                  {currentStock} / 3 TRYAṆUKAS
-                </span>
-              </div>
-              <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.5 }}>
-                {currentMacroObj.desc}
-              </p>
-            </div>
-
-            <div className="vl-reconstructor-progress-bar">
-              <div
-                className="vl-reconstructor-progress-fill"
-                style={{ width: `${(currentStock / 3) * 100}%` }}
-              />
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.6rem' }}>
-              <div style={{ fontSize: '0.82rem', color: isCurrentMacroUnlocked ? '#86efac' : '#94a3b8' }}>
-                {isCurrentMacroUnlocked ? (
-                  <span>🎉 <strong>Solid Block Materialized!</strong> Macro properties now perceptible.</span>
-                ) : (
-                  <span>Formula: 3 Tryaṇukas = 9 Dvyaṇukas = 18 Paramāṇus required.</span>
-                )}
-              </div>
-              <div style={{ display: 'flex', gap: '0.5rem' }}>
-                <button
-                  type="button"
-                  className="vl-btn vl-btn--cyber"
-                  onClick={() => forgeTryanukaForReconstructor(selectedMacroTarget)}
-                  style={{ fontSize: '0.82rem', padding: '0.4rem 0.85rem' }}
-                >
-                  ⚡ Synthesize Tryaṇuka ({currentStock + 1}/3)
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 🔬 [ THE RIGOROUS 3-STEP BHOOTA RECONSTRUCTOR ] */}
+      <BhutaReconstructor
+        initialBhuta={selectedMacroTarget}
+        onSelectBhuta={setSelectedMacroTarget}
+        unlockedBhutas={macroUnlocked}
+        macroStock={macroTryanukaStock}
+        onTryanukaForged={(bhuta) => forgeTryanukaForReconstructor(bhuta)}
+        onBhutaMaterialized={(bhuta) => {
+          setMacroUnlocked((u) => ({ ...u, [bhuta]: true }));
+          setMacroTryanukaStock((prev) => ({ ...prev, [bhuta]: 3 }));
+          soundEffects.playCelebrationChime();
+        }}
+      />
         </>
       )}
 
