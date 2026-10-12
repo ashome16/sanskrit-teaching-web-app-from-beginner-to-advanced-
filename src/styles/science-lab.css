@@ -8282,9 +8282,25 @@
   font-size: 0.78rem;
   font-weight: 700;
   color: #94a3b8;
-  padding: 0.3rem 0.55rem;
+  padding: 0.35rem 0.65rem;
   border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
   transition: all 0.2s ease;
+}
+
+.vl-stepper-step:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+.vl-stepper-step:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
 }
 
 .vl-stepper-step.is-current {
@@ -8303,10 +8319,26 @@
 .vl-stepper-step.is-ready {
   color: #fde047;
   border: 1px dashed rgba(250, 204, 21, 0.6);
+  background: rgba(250, 204, 21, 0.05);
 }
 
-.vl-stepper-step.is-locked {
-  opacity: 0.5;
+.vl-stepper-step.is-ready:hover {
+  background: rgba(250, 204, 21, 0.15);
+  color: #fef08a;
+}
+
+.vl-matrix-next-banner {
+  margin: 0.65rem 0;
+  padding: 0.6rem 0.95rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.84rem;
 }
 
 .vl-stepper-num {

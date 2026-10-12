@@ -638,7 +638,7 @@ export const DynamicGunaMatrix: React.FC = () => {
   // STAGE 2: INJECT TEJAS CATALYST (BREAKING THE STATE MASK)
   // =========================================================================
   const handleInjectTejas = () => {
-    if (maxUnlockedStage < 2) return;
+    setStage1Done(true);
     setCurrentStage(2);
     setRepulsionTriggered(false);
     setStage2Done(true);
@@ -663,9 +663,11 @@ export const DynamicGunaMatrix: React.FC = () => {
   // STAGE 3: INTRODUCE VĀYU WINDS (DYNAMIC PROPERTY SOUP)
   // =========================================================================
   const handleSweepVayu = () => {
-    if (maxUnlockedStage < 3) return;
+    setStage1Done(true);
+    setStage2Done(true);
     setCurrentStage(3);
     setRepulsionTriggered(false);
+    setMaxUnlockedStage((prev) => Math.max(prev, 3) as 1 | 2 | 3 | 4);
     gunaAudio.playWindWhoosh();
 
     // Initialize the soup outside the 45%-65% target so the user actively tunes!
@@ -676,13 +678,37 @@ export const DynamicGunaMatrix: React.FC = () => {
 
     setGuruSpeaker('Kaṇāda');
     setGuruDialogue(
-      '“Vāyu sweeps matter into 56 free Paramāṇus! But they are in disequilibrium. 🎯 MISSION: Tune all 3 sliders into the 45%–65% Synergy Window (गुण-साम्यम्). Once balanced, Samavāya can bind!”'
+      '“Vāyu sweeps matter into 56 free Paramāṇus! But they are in disequilibrium. 🎯 MISSION: Tune all 3 sliders into the 45%–65% Synergy Window (गुण-साम्यम्) or click \'⚡ Auto-Tune Guṇa-Sāmya\'. Once balanced, Samavāya can bind!”'
+    );
+  };
+
+  // Auto-tune all 3 Guṇas to 50% (Guṇa-Sāmya equilibrium)
+  const handleAutoTuneSamya = () => {
+    setStage1Done(true);
+    setStage2Done(true);
+    setCurrentStage(3);
+    setRepulsionTriggered(false);
+    setMaxUnlockedStage(4);
+    setSneha(50);
+    setDravatva(50);
+    setUsna(50);
+    setIsSynergyLocked(true);
+    gunaAudio.playTone(523.25, 0.25);
+    gunaAudio.playSynergyLock();
+    setGuruSpeaker('Kaṇāda');
+    setGuruDialogue(
+      '“✨ Guṇa-Sāmyam (गुण-साम्यम्) Achieved! All 3 qualities are perfectly harmonized at 50% Equilibrium. The structural barrier is dissolved—click \'4. BIND SAMAVĀYA\' to forge the Tryaṇuka compound!”'
     );
   };
 
   // Manual Slider Adjustments with real-time synergy evaluation
   const handleSliderChange = (type: 'sneha' | 'dravatva' | 'usna', val: number) => {
-    if (currentStage < 3) return;
+    if (currentStage < 3) {
+      setCurrentStage(3);
+      setStage1Done(true);
+      setStage2Done(true);
+      setMaxUnlockedStage(3);
+    }
 
     let s = type === 'sneha' ? val : sneha;
     let d = type === 'dravatva' ? val : dravatva;
@@ -716,7 +742,15 @@ export const DynamicGunaMatrix: React.FC = () => {
   // STAGE 4: THE SAMAVĀYA BINDING (STATE TRANSCENDED)
   // =========================================================================
   const handleSamavayaBinding = () => {
-    if (!isSynergyLocked) return;
+    setStage1Done(true);
+    setStage2Done(true);
+    if (!isSynergyLocked) {
+      setSneha(50);
+      setDravatva(50);
+      setUsna(50);
+      setIsSynergyLocked(true);
+    }
+    setMaxUnlockedStage(4);
     gunaAudio.playSamavayaImplosion();
     setCurrentStage(4);
 
@@ -815,7 +849,7 @@ export const DynamicGunaMatrix: React.FC = () => {
         <div className="vl-matrix-canvas-card">
           <div className="vl-matrix-stage-toolbar">
             <div className="vl-stage-mission-indicator">
-              <span className="vl-step-indicator">STAGE {currentStage}/4:</span>{' '}
+              <span className="vl-step-indicator">STAGE {currentStage}/4 · PROGRESS: {maxUnlockedStage}/4</span>{' '}
               <strong>
                 {currentStage === 1 && 'The Illusion of Separation (Oil & Water)'}
                 {currentStage === 2 && 'Break the State Mask (Injecting Thermal Tejas)'}
@@ -825,55 +859,65 @@ export const DynamicGunaMatrix: React.FC = () => {
             </div>
           </div>
 
-          {/* Visual 4-Step Pipeline Header */}
+          {/* Visual 4-Step Interactive Pipeline Header */}
           <div className="vl-matrix-stepper-track" role="navigation" aria-label="4-Step Progression Towards Samavāya">
-            <div className={`vl-stepper-step ${currentStage === 1 ? 'is-current' : stage1Done ? 'is-passed' : ''}`}>
+            <button
+              type="button"
+              className={`vl-stepper-step ${currentStage === 1 ? 'is-current' : stage1Done ? 'is-passed' : 'is-ready'}`}
+              onClick={handleAttemptMerge}
+              title="Click to activate Step 1: The Oil & Water Dilemma"
+            >
               <span className="vl-stepper-num">{stage1Done ? '✓' : '1'}</span>
               <span className="vl-stepper-label">1. Oil &amp; Water Dilemma</span>
-            </div>
+            </button>
             <span className="vl-stepper-arrow" aria-hidden="true">➔</span>
-            <div
+            <button
+              type="button"
               className={`vl-stepper-step ${
                 currentStage === 2
                   ? 'is-current'
                   : stage2Done
                   ? 'is-passed'
-                  : maxUnlockedStage >= 2
-                  ? 'is-ready'
-                  : 'is-locked'
+                  : 'is-ready'
               }`}
+              onClick={handleInjectTejas}
+              title="Click to activate Step 2: Inject Tejas (Break State Mask)"
             >
               <span className="vl-stepper-num">{stage2Done ? '✓' : '2'}</span>
               <span className="vl-stepper-label">2. Inject Tejas</span>
-            </div>
+            </button>
             <span className="vl-stepper-arrow" aria-hidden="true">➔</span>
-            <div
+            <button
+              type="button"
               className={`vl-stepper-step ${
                 currentStage === 3
                   ? 'is-current'
                   : isSynergyLocked
                   ? 'is-passed'
-                  : maxUnlockedStage >= 3
-                  ? 'is-ready'
-                  : 'is-locked'
+                  : 'is-ready'
               }`}
+              onClick={handleSweepVayu}
+              title="Click to activate Step 3: Sweep Vāyu (Dynamic Property Soup)"
             >
               <span className="vl-stepper-num">{isSynergyLocked ? '✓' : '3'}</span>
               <span className="vl-stepper-label">3. Sweep Vāyu</span>
-            </div>
+            </button>
             <span className="vl-stepper-arrow" aria-hidden="true">➔</span>
-            <div
+            <button
+              type="button"
               className={`vl-stepper-step ${
                 currentStage === 4
                   ? 'is-current'
                   : isSynergyLocked
                   ? 'is-ready'
-                  : 'is-locked'
+                  : 'is-ready'
               }`}
+              onClick={handleSamavayaBinding}
+              title="Click to activate Step 4: Bind Samavāya in Ākāśa"
             >
               <span className="vl-stepper-num">{currentStage === 4 ? '✨' : '4'}</span>
               <span className="vl-stepper-label">4. Bind Samavāya</span>
-            </div>
+            </button>
           </div>
 
           <div className="vl-canvas-wrapper" style={{ position: 'relative', width: '100%', height: '380px' }}>
@@ -898,7 +942,107 @@ export const DynamicGunaMatrix: React.FC = () => {
             )}
           </div>
 
-          {/* Action Toolbar to Drive the Strict 4-Stage Sequence */}
+          {/* Sequential Next-Step Guidance Banner */}
+          <div className="vl-matrix-next-banner" style={{
+            margin: '0.65rem 0',
+            padding: '0.6rem 0.95rem',
+            background: 'rgba(15, 23, 42, 0.85)',
+            border: '1px solid rgba(56, 189, 248, 0.3)',
+            borderRadius: '10px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '0.6rem',
+            fontSize: '0.84rem'
+          }}>
+            <div>
+              {currentStage === 1 && (
+                <span>
+                  📍 <strong>Step 1 Active:</strong> Meniscus friction causes deflection. Click next to ignite Agni:
+                </span>
+              )}
+              {currentStage === 2 && (
+                <span>
+                  📍 <strong>Step 2 Active:</strong> Agni softened interfacial tension (Pīlupāka). Click next to sweep Vāyu:
+                </span>
+              )}
+              {currentStage === 3 && (
+                <span>
+                  📍 <strong>Step 3 Active:</strong> 56 Paramāṇus liberated into soup. {isSynergyLocked ? '✨ Guṇa-Sāmyam locked! Ready to bind:' : 'Tune sliders to 45%–65% (or 1-click auto-balance):'}
+                </span>
+              )}
+              {currentStage === 4 && (
+                <span>
+                  🎉 <strong>Step 4 Complete:</strong> Samavāya Inherence established! Tryaṇuka compounds forged.
+                </span>
+              )}
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              {currentStage === 1 && (
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--cyber is-pulsing"
+                  style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+                  onClick={handleInjectTejas}
+                >
+                  Proceed to Step 2: Inject Tejas ➔
+                </button>
+              )}
+              {currentStage === 2 && (
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--cyber is-pulsing"
+                  style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+                  onClick={handleSweepVayu}
+                >
+                  Proceed to Step 3: Sweep Vāyu ➔
+                </button>
+              )}
+              {currentStage === 3 && !isSynergyLocked && (
+                <>
+                  <button
+                    type="button"
+                    className="vl-btn vl-btn--secondary"
+                    style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem', borderColor: '#10b981', color: '#86efac' }}
+                    onClick={handleAutoTuneSamya}
+                  >
+                    ⚡ Auto-Tune (50%)
+                  </button>
+                  <button
+                    type="button"
+                    className="vl-btn vl-btn--gold is-pulsing"
+                    style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+                    onClick={handleSamavayaBinding}
+                  >
+                    ✨ Balance &amp; Bind Samavāya ➔
+                  </button>
+                </>
+              )}
+              {currentStage === 3 && isSynergyLocked && (
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--gold is-pulsing"
+                  style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+                  onClick={handleSamavayaBinding}
+                >
+                  ✨ Proceed to Step 4: Bind Samavāya ➔
+                </button>
+              )}
+              {currentStage === 4 && (
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--secondary"
+                  style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+                  onClick={handleResetMatrix}
+                >
+                  🔄 Reset Crucible
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Action Toolbar to Drive the 4-Stage Sequence */}
           <div className="vl-matrix-action-toolbar">
             {/* Step 1 */}
             <button
@@ -917,63 +1061,45 @@ export const DynamicGunaMatrix: React.FC = () => {
                 ? !stage1Done
                   ? '👉 1. Attempt Merge (The Oil & Water Dilemma)'
                   : '✓ 1. Merge Attempted (Friction Observed)'
-                : '✓ 1. Attempt Merge (View Cold Crucible)'}
+                : '✓ 1. Attempt Merge (Oil & Water)'}
             </button>
 
             {/* Step 2 */}
             <button
               type="button"
-              disabled={maxUnlockedStage < 2}
               className={`vl-btn vl-btn--cyber ${
-                maxUnlockedStage < 2
-                  ? ''
-                  : currentStage === 2
+                currentStage === 2
                   ? 'is-active is-pulsing'
-                  : maxUnlockedStage > 2
+                  : stage2Done
                   ? 'is-completed'
-                  : 'is-unlocked is-pulsing'
+                  : 'is-pulsing'
               }`}
               onClick={handleInjectTejas}
-              title={
-                maxUnlockedStage < 2
-                  ? 'Locked: Complete Step 1 first'
-                  : 'Step 2: Inject heat to break rigid boundaries with Vedic Agni'
-              }
+              title="Step 2: Inject heat to break rigid boundaries with Vedic Agni"
             >
-              {maxUnlockedStage < 2
-                ? '🔒 2. Inject Tejas (Locked: Complete Step 1)'
-                : currentStage === 2
+              {currentStage === 2
                 ? '🔥 2. Tejas Active (Boundary Softened)'
-                : maxUnlockedStage > 2
-                ? '✓ 2. Tejas Injected (View Heated Crucible)'
+                : stage2Done
+                ? '✓ 2. Tejas Injected (Boundary Softened)'
                 : '👉 2. Inject Tejas (Break the State Mask)'}
             </button>
 
             {/* Step 3 */}
             <button
               type="button"
-              disabled={maxUnlockedStage < 3}
               className={`vl-btn vl-btn--cyber ${
-                maxUnlockedStage < 3
-                  ? ''
-                  : currentStage === 3
+                currentStage === 3
                   ? isSynergyLocked
                     ? 'is-active is-completed'
                     : 'is-active is-pulsing'
                   : currentStage > 3
                   ? 'is-completed'
-                  : 'is-unlocked is-pulsing'
+                  : 'is-ready'
               }`}
               onClick={handleSweepVayu}
-              title={
-                maxUnlockedStage < 3
-                  ? 'Locked: Complete Step 2 first'
-                  : 'Step 3: Sweep Vāyu to create property soup and tune sliders'
-              }
+              title="Step 3: Sweep Vāyu to create property soup and tune sliders"
             >
-              {maxUnlockedStage < 3
-                ? '🔒 3. Sweep Vāyu (Locked: Complete Step 2)'
-                : currentStage === 3
+              {currentStage === 3
                 ? isSynergyLocked
                   ? '✓ 3. Guṇa-Sāmya Achieved (45%–65%)'
                   : '🌀 3. Tuning Sliders (Target: 45%–65%)'
@@ -985,26 +1111,38 @@ export const DynamicGunaMatrix: React.FC = () => {
             {/* Step 4 */}
             <button
               type="button"
-              disabled={!isSynergyLocked}
               className={`vl-btn vl-btn--gold ${
-                !isSynergyLocked
-                  ? ''
-                  : currentStage === 4
+                currentStage === 4
                   ? 'is-active is-completed'
-                  : 'is-unlocked-glow is-pulsing'
+                  : isSynergyLocked
+                  ? 'is-unlocked-glow is-pulsing'
+                  : 'is-ready'
               }`}
               onClick={handleSamavayaBinding}
-              title={
-                isSynergyLocked
-                  ? 'Step 4: Click to bind into Trasareṇu in eternal Ākāśa!'
-                  : 'Locked: Balance all 3 sliders into 45%–65% window first'
-              }
+              title="Step 4: Click to bind into Trasareṇu in eternal Ākāśa! (Auto-balances if needed)"
             >
               {currentStage === 4
                 ? '⚛️ 4. Samavāya Bound in Ākāśa'
                 : isSynergyLocked
                 ? '✨ 4. ⚛️ BIND SAMAVĀYA IN ĀKĀŚA'
-                : '🔒 4. BIND SAMAVĀYA (Balance Sliders 45%–65%)'}
+                : '⚛️ 4. BIND SAMAVĀYA (Balance & Bind)'}
+            </button>
+
+            {/* Quick Auto-Tune Action */}
+            <button
+              type="button"
+              className="vl-btn vl-btn--secondary"
+              onClick={handleAutoTuneSamya}
+              title="Instantly set Sneha, Dravatva & Uṣṇa to 50% equilibrium"
+              style={{
+                fontSize: '0.8rem',
+                padding: '0.45rem 0.8rem',
+                borderColor: '#10b981',
+                color: '#86efac',
+                background: 'rgba(16, 185, 129, 0.12)',
+              }}
+            >
+              ⚡ Auto-Tune Guṇa-Sāmya (50%)
             </button>
           </div>
         </div>
@@ -1040,11 +1178,9 @@ export const DynamicGunaMatrix: React.FC = () => {
               </div>
             </div>
             <div className={`vl-synergy-badge${isSynergyLocked ? ' is-locked' : ''}`}>
-              {currentStage >= 3
-                ? isSynergyLocked
-                  ? '✨ SYNERGY LOCKED · CLICK STEP 4 ABOVE!'
-                  : '⚡ TUNE SLIDERS TO 45%–65%'
-                : '🔒 ACTIVE IN STEP 3'}
+              {isSynergyLocked
+                ? '✨ SYNERGY LOCKED · CLICK STEP 4 ABOVE!'
+                : '⚡ TUNE SLIDERS TO 45%–65%'}
             </div>
           </div>
 
@@ -1097,7 +1233,7 @@ export const DynamicGunaMatrix: React.FC = () => {
             }}
           >
             <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#e2e8f0' }}>LIVE EQUILIBRIUM CHECKLIST:</span>
-            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
               <span style={{ fontSize: '0.76rem', padding: '0.2rem 0.55rem', borderRadius: '6px', background: sneha >= 45 && sneha <= 65 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(239, 68, 68, 0.15)', border: `1px solid ${sneha >= 45 && sneha <= 65 ? '#10b981' : '#ef4444'}`, color: sneha >= 45 && sneha <= 65 ? '#86efac' : '#fca5a5', fontWeight: 700 }}>
                 Sneha: {sneha}% {sneha >= 45 && sneha <= 65 ? '✅ (45–65%)' : sneha < 45 ? '▲ Need ≥45%' : '▼ Need ≤65%'}
               </span>
@@ -1108,8 +1244,24 @@ export const DynamicGunaMatrix: React.FC = () => {
                 Uṣṇa: {usna}% {usna >= 45 && usna <= 65 ? '✅ (45–65%)' : usna < 45 ? '▲ Need ≥45%' : '▼ Need ≤65%'}
               </span>
             </div>
-            <div style={{ fontSize: '0.78rem', fontWeight: 800, color: isSynergyLocked ? '#86efac' : '#facc15' }}>
-              {isSynergyLocked ? '✨ 3/3 BALANCED · UNLOCKED!' : `${(sneha >= 45 && sneha <= 65 ? 1 : 0) + (dravatva >= 45 && dravatva <= 65 ? 1 : 0) + (usna >= 45 && usna <= 65 ? 1 : 0)}/3 Balanced`}
+            <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+              <div style={{ fontSize: '0.78rem', fontWeight: 800, color: isSynergyLocked ? '#86efac' : '#facc15' }}>
+                {isSynergyLocked ? '✨ 3/3 BALANCED · UNLOCKED!' : `${(sneha >= 45 && sneha <= 65 ? 1 : 0) + (dravatva >= 45 && dravatva <= 65 ? 1 : 0) + (usna >= 45 && usna <= 65 ? 1 : 0)}/3 Balanced`}
+              </div>
+              <button
+                type="button"
+                className="vl-btn vl-btn--secondary"
+                onClick={handleAutoTuneSamya}
+                style={{
+                  fontSize: '0.72rem',
+                  padding: '0.2rem 0.55rem',
+                  borderColor: '#10b981',
+                  color: '#86efac',
+                  background: 'rgba(16, 185, 129, 0.15)',
+                }}
+              >
+                ⚡ Auto-Tune 50%
+              </button>
             </div>
           </div>
 
@@ -1144,10 +1296,9 @@ export const DynamicGunaMatrix: React.FC = () => {
                   min={0}
                   max={100}
                   value={sneha}
-                  disabled={currentStage < 3}
                   onChange={(e) => handleSliderChange('sneha', Number(e.target.value))}
                   className="vl-guna-range vl-guna-range--sneha"
-                  style={{ opacity: currentStage < 3 ? 0.5 : 1, cursor: currentStage < 3 ? 'not-allowed' : 'pointer' }}
+                  style={{ cursor: 'pointer' }}
                 />
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', color: '#64748b', marginTop: '0.2rem' }}>
                   <span>0%</span>
@@ -1201,10 +1352,9 @@ export const DynamicGunaMatrix: React.FC = () => {
                   min={0}
                   max={100}
                   value={dravatva}
-                  disabled={currentStage < 3}
                   onChange={(e) => handleSliderChange('dravatva', Number(e.target.value))}
                   className="vl-guna-range vl-guna-range--dravatva"
-                  style={{ opacity: currentStage < 3 ? 0.5 : 1, cursor: currentStage < 3 ? 'not-allowed' : 'pointer' }}
+                  style={{ cursor: 'pointer' }}
                 />
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', color: '#64748b', marginTop: '0.2rem' }}>
                   <span>0%</span>
@@ -1258,10 +1408,9 @@ export const DynamicGunaMatrix: React.FC = () => {
                   min={0}
                   max={100}
                   value={usna}
-                  disabled={currentStage < 3}
                   onChange={(e) => handleSliderChange('usna', Number(e.target.value))}
                   className="vl-guna-range vl-guna-range--usna"
-                  style={{ opacity: currentStage < 3 ? 0.5 : 1, cursor: currentStage < 3 ? 'not-allowed' : 'pointer' }}
+                  style={{ cursor: 'pointer' }}
                 />
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', color: '#64748b', marginTop: '0.2rem' }}>
                   <span>0%</span>
