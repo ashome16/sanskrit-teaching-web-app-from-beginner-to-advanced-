@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { BodhiLabAnecdote, ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
+import { BodhiLabAnecdote, ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm, type LabSegmentProps } from './common';
 import { GlowSlider, HudFrame, LedButton } from './controls';
 import { localPoint } from './geometry';
 import { playPronunciation } from '../../utils/pronunciation';
@@ -1616,7 +1616,7 @@ export const PARAMANU_MODULES: ModuleItem[] = [
   },
 ];
 
-export const ParamanuBuilder: React.FC = () => {
+export const ParamanuBuilder: React.FC<LabSegmentProps> = ({ onNextLab }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [items, setItemsState] = useState<Item[]>([]);
   const itemsRef = useRef<Item[]>([]);
@@ -4818,19 +4818,29 @@ export const ParamanuBuilder: React.FC = () => {
           >
             ⬅ Prev Station
           </button>
-          <button
-            type="button"
-            className="vl-tour-btn is-next"
-            onClick={() => handleTourNav('next')}
-            disabled={activeModule.order === PARAMANU_MODULES.length}
-            title={activeModule.order < PARAMANU_MODULES.length ? `Next: ${PARAMANU_MODULES[activeModule.order].title}` : 'Last station'}
-          >
-            {activeModule.order < PARAMANU_MODULES.length
-              ? `Next Station (${PARAMANU_MODULES[activeModule.order].title}) ➔`
-              : 'Station Completed ✓'}
-          </button>
+          {activeModule.order < PARAMANU_MODULES.length ? (
+            <button
+              type="button"
+              className="vl-tour-btn is-next"
+              onClick={() => handleTourNav('next')}
+              title={`Next: ${PARAMANU_MODULES[activeModule.order].title}`}
+            >
+              Next Station ({PARAMANU_MODULES[activeModule.order].title}) ➔
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="vl-tour-btn is-next"
+              onClick={() => onNextLab?.()}
+              title="Proceed to Next Lab: SEC-02 The Veil of Māyā"
+              style={{ background: 'linear-gradient(135deg, #eab308, #f59e0b)', color: '#090e17', fontWeight: 800 }}
+            >
+              🚀 Proceed to Next Lab (The Veil of Māyā) ➔
+            </button>
+          )}
         </div>
       </div>
+
 
       {/* 🏆 [ COSMIC GENESIS VICTORY CELEBRATION MODAL ] */}
       {showVictoryModal && (
@@ -4868,9 +4878,23 @@ export const ParamanuBuilder: React.FC = () => {
               </div>
             </div>
             <div className="vl-victory-btn-group">
+              {onNextLab && (
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--cyber"
+                  onClick={() => {
+                    setShowVictoryModal(false);
+                    setHasClaimedVictory(true);
+                    onNextLab();
+                  }}
+                  style={{ background: 'linear-gradient(135deg, #eab308, #f59e0b)', color: '#090e17', fontWeight: 800 }}
+                >
+                  🚀 Proceed to Next Lab: SEC-02 The Veil of Māyā ➔
+                </button>
+              )}
               <button
                 type="button"
-                className="vl-btn vl-btn--cyber"
+                className="vl-btn vl-btn--cyber-ghost"
                 onClick={() => {
                   setShowVictoryModal(false);
                   setHasClaimedVictory(true);
@@ -4890,6 +4914,7 @@ export const ParamanuBuilder: React.FC = () => {
                 🪞 Explore Bio-Cosmic Mirror (Body & Mind) →
               </button>
             </div>
+
           </div>
         </div>
       )}

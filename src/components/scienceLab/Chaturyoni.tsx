@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm } from './common';
+import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm, type LabSegmentProps } from './common';
 import { isSmallScreen, prefersReducedMotion } from './motion';
 
 type Mode = 'yoni' | 'sthiti' | 'plants';
@@ -149,7 +149,7 @@ type Feed = { id: number; ok: boolean; sa: string; en: string; modern?: string }
 
 const emptyPlaced = (): Record<Mode, Record<string, string>> => ({ yoni: {}, sthiti: {}, plants: {} });
 
-const Chaturyoni: React.FC = () => {
+const Chaturyoni: React.FC<LabSegmentProps> = ({ onNextLab }) => {
   const [mode, setMode] = useState<Mode>('yoni');
   const [placed, setPlaced] = useState(emptyPlaced);
   const [misses, setMisses] = useState<Record<Mode, number>>({ yoni: 0, sthiti: 0, plants: 0 });
@@ -664,8 +664,57 @@ const Chaturyoni: React.FC = () => {
       </section>
 
       <TermPanel title="Vocabulary Codex // Sanskrit words in this lab" terms={TERMS} />
+
+      {onNextLab && (
+        <div
+          className="vl-panel"
+          style={{
+            marginTop: '1.5rem',
+            background: 'linear-gradient(135deg, rgba(249,115,22,0.1), rgba(99,102,241,0.1))',
+            border: '1.5px solid rgba(99,102,241,0.4)',
+            borderRadius: '16px',
+            padding: '1.25rem 1.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1rem',
+            flexWrap: 'wrap',
+          }}
+        >
+          <div>
+            <span style={{ fontSize: '0.72rem', color: '#a5b4fc', fontFamily: 'JetBrains Mono, monospace', fontWeight: 800 }}>
+              LIFE SCIENCES COMPLETE // ADVANCE TO CELESTIAL MECHANICS
+            </span>
+            <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', color: '#f8fafc', fontWeight: 900 }}>
+              SEC-05 Jyotiṣa Gravity Sandbox · Orbital Mechanics
+            </h4>
+            <p style={{ margin: '0.2rem 0 0', fontSize: '0.82rem', color: '#cbd5e1' }}>
+              Transition from biological galvanometry into the cosmic orbital dynamics of Sūrya, Pṛthivī, and Candra!
+            </p>
+          </div>
+
+          <button
+            type="button"
+            className="vl-btn vl-btn--cyber"
+            onClick={onNextLab}
+            style={{
+              padding: '0.7rem 1.3rem',
+              fontSize: '0.9rem',
+              fontWeight: 800,
+              background: 'linear-gradient(135deg, #6366f1, #38bdf8)',
+              color: '#090e17',
+              border: 'none',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            <span>ENTER JYOTIṢA LAB ➔</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Chaturyoni;
+

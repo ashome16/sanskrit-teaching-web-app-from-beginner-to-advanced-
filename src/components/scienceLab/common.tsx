@@ -4,6 +4,42 @@ import { playPronunciation, speakAsBodhi, type BodhiSpeechLang } from '../../uti
 
 export type LabSegmentId = 'paramanu' | 'prakriti' | 'jyotisha' | 'srishti-sthiti-laya' | 'nada-brahman' | 'asato-ma' | 'chaturyoni' | 'chandrayaan' | 'rituparna' | 'agnibana';
 
+export interface LabSegmentProps {
+  onNextLab?: () => void;
+  onPrevLab?: () => void;
+}
+
+export const LabNextAction: React.FC<{
+  nextTitle: string;
+  nextCode?: string;
+  nextDev?: string;
+  nextIcon?: string;
+  onNextLab?: () => void;
+  message?: string;
+}> = ({ nextTitle, nextCode, nextDev, nextIcon, onNextLab, message }) => {
+  if (!onNextLab) return null;
+  return (
+    <div className="vl-panel vl-lab-next-action-card">
+      <div className="vl-next-action-text">
+        <span className="vl-next-action-badge">🎯 SECTOR COMPLETE // NEXT ADVENTURE</span>
+        {nextDev && <div className="vl-next-action-dev" lang="sa">{nextDev}</div>}
+        <h4 className="vl-next-action-title">
+          {message || `Advance to Next Sector: ${nextCode ? `${nextCode} · ` : ''}${nextTitle}`}
+        </h4>
+      </div>
+      <button
+        type="button"
+        className="vl-btn vl-btn--cyber vl-btn--next-action"
+        onClick={onNextLab}
+        aria-label={`Enter Next Lab: ${nextTitle}`}
+      >
+        <span>{nextIcon ? `${nextIcon} ` : ''}PROCEED TO NEXT LAB ➔</span>
+      </button>
+    </div>
+  );
+};
+
+
 export interface LabTerm {
   dev: string;
   iast: string;

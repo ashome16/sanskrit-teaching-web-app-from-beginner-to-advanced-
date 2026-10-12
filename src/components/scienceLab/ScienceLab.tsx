@@ -32,6 +32,7 @@ export interface LabSegmentConfig {
 }
 
 const LAB_SEGMENTS: LabSegmentConfig[] = [
+  // 1. Matter & The Elementary Crucible
   {
     id: 'paramanu',
     code: 'SEC-01',
@@ -47,12 +48,28 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     glow: '#f59e0b',
   },
   {
-    id: 'prakriti',
+    id: 'asato-ma',
     code: 'SEC-02',
+    icon: '🕯️',
+    dev: 'असतो मा सद्गमय',
+    title: 'The Veil of Māyā',
+    subject: 'Mass Invariance',
+    school: 'Andha-Mūṣā Crucible (रसशास्त्र)',
+    category: 'matter',
+    blurb: 'Fire up the Viveka Scanner to look past everyday illusion (Asat) and see the invariant atoms underneath (Sat). Melt, boil and burn, and mass remains 100.000g constant.',
+    tint: 'rgba(234, 179, 8, 0.12)',
+    ink: '#fde047',
+    glow: '#eab308',
+  },
+
+  // 2. Biology & Life Systems (All Biology Labs Sequenced Together!)
+  {
+    id: 'prakriti',
+    code: 'SEC-03',
     icon: '🌿',
     dev: 'प्रकृति-सन्तुलनम्',
     title: 'Prakṛti Biosphere',
-    subject: 'Bio-Homeostasis',
+    subject: 'Cellular Homeostasis',
     school: 'Tridoṣa Engine (आयुर्वेद)',
     category: 'life',
     blurb: 'Elemental survival sandbox. Control the seasons, heat and moisture to bring Vāta, Pitta and Kapha into dynamic balance with real-time Nāḍī waveform feedback.',
@@ -61,8 +78,24 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     glow: '#10b981',
   },
   {
+    id: 'chaturyoni',
+    code: 'SEC-04',
+    icon: '🦢',
+    dev: 'चतुर्योनि-मानचित्रम्',
+    title: 'Chaturyoni Spawn Map',
+    subject: 'Bio-Galvanometry',
+    school: 'Vṛkṣāyurveda & J.C. Bose',
+    category: 'life',
+    blurb: 'Ancient 4-fold taxonomy engine paired with Sir J.C. Bose’s plant galvanometer probe, tracking real-time microvolt action potentials to electrical and tactile stimuli.',
+    tint: 'rgba(249, 115, 22, 0.12)',
+    ink: '#fb923c',
+    glow: '#f97316',
+  },
+
+  // 3. Cosmos & Planetary Motion
+  {
     id: 'jyotisha',
-    code: 'SEC-03',
+    code: 'SEC-05',
     icon: '🪐',
     dev: 'ज्योतिष-कक्षा',
     title: 'Jyotiṣa Gravity Sandbox',
@@ -75,22 +108,24 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     glow: '#6366f1',
   },
   {
-    id: 'srishti-sthiti-laya',
-    code: 'SEC-04',
-    icon: '🧵',
-    dev: 'सृष्टि-स्थिति-लय',
-    title: 'The Loom of Āruṇi',
-    subject: 'Conservation Field',
-    school: 'Satkāryavāda (साङ्ख्य)',
-    category: 'waves',
-    blurb: 'Quantum particle survival challenge. Gather a wild, scattered cloud into shape (Sṛṣṭi), hold it steady (Sthiti), then set off Laya. Not a single quantum of reality is lost.',
-    tint: 'rgba(244, 63, 94, 0.12)',
-    ink: '#fb7185',
-    glow: '#f43f5e',
+    id: 'chandrayaan',
+    code: 'SEC-06',
+    icon: '🛰️',
+    dev: 'सोमयानम्',
+    title: 'Somayāna Mission-03',
+    subject: 'Lunar Telemetry',
+    school: 'ISRO Chandrayaan-3',
+    category: 'cosmos',
+    blurb: 'Lunar landing sandbox. Circularise lunar orbit, execute precision soft-landing at Shiv Shakti Point, then tune LIBS laser pulses to detect sulphur and polar water ice.',
+    tint: 'rgba(6, 182, 212, 0.12)',
+    ink: '#38bdf8',
+    glow: '#06b6d4',
   },
+
+  // 4. Harmonics, Conservation & Aerospace
   {
     id: 'nada-brahman',
-    code: 'SEC-05',
+    code: 'SEC-07',
     icon: '🪕',
     dev: 'नाद-ब्रह्म',
     title: 'Cosmic Sitār Tuning',
@@ -103,46 +138,18 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     glow: '#a855f7',
   },
   {
-    id: 'asato-ma',
-    code: 'SEC-06',
-    icon: '🕯️',
-    dev: 'असतो मा सद्गमय',
-    title: 'The Veil of Māyā',
-    subject: 'Mass Invariance',
-    school: 'Andha-Mūṣā Crucible (रसशास्त्र)',
-    category: 'matter',
-    blurb: 'Fire up the Viveka Scanner to look past everyday illusion (Asat) and see the invariant atoms underneath (Sat). Melt, boil and burn, and mass remains 100.000g constant.',
-    tint: 'rgba(234, 179, 8, 0.12)',
-    ink: '#fde047',
-    glow: '#eab308',
-  },
-  {
-    id: 'chaturyoni',
-    code: 'SEC-07',
-    icon: '🦢',
-    dev: 'चतुर्योनि-मानचित्रम्',
-    title: 'Chaturyoni Spawn Map',
-    subject: 'Bio-Galvanometry',
-    school: 'Vṛkṣāyurveda & J.C. Bose',
-    category: 'life',
-    blurb: 'Ancient 4-fold taxonomy engine paired with Sir J.C. Bose’s plant galvanometer probe, tracking real-time microvolt action potentials to electrical and tactile stimuli.',
-    tint: 'rgba(249, 115, 22, 0.12)',
-    ink: '#fb923c',
-    glow: '#f97316',
-  },
-  {
-    id: 'chandrayaan',
+    id: 'srishti-sthiti-laya',
     code: 'SEC-08',
-    icon: '🛰️',
-    dev: 'सोमयानम्',
-    title: 'Somayāna Mission-03',
-    subject: 'Lunar Telemetry',
-    school: 'ISRO Chandrayaan-3',
-    category: 'cosmos',
-    blurb: 'Lunar landing sandbox. Circularise lunar orbit, execute precision soft-landing at Shiv Shakti Point, then tune LIBS laser pulses to detect sulphur and polar water ice.',
-    tint: 'rgba(6, 182, 212, 0.12)',
-    ink: '#38bdf8',
-    glow: '#06b6d4',
+    icon: '🧵',
+    dev: 'सृष्टि-स्थिति-लय',
+    title: 'The Loom of Āruṇi',
+    subject: 'Conservation Field',
+    school: 'Satkāryavāda (साङ्ख्य)',
+    category: 'waves',
+    blurb: 'Quantum particle survival challenge. Gather a wild, scattered cloud into shape (Sṛṣṭi), hold it steady (Sthiti), then set off Laya. Not a single quantum of reality is lost.',
+    tint: 'rgba(244, 63, 94, 0.12)',
+    ink: '#fb7185',
+    glow: '#f43f5e',
   },
   {
     id: 'rituparna',
@@ -173,6 +180,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     glow: '#ef4444',
   },
 ];
+
 
 const SEGMENT_IDS = new Set<string>(LAB_SEGMENTS.map((s) => s.id));
 const HASH_ALIASES: Record<string, LabSegmentId> = {
@@ -253,6 +261,28 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
   }, []);
 
   const seg = LAB_SEGMENTS.find((s) => s.id === active)!;
+
+  const currentIndex = useMemo(() => {
+    const idx = LAB_SEGMENTS.findIndex((s) => s.id === active);
+    return idx >= 0 ? idx : 0;
+  }, [active]);
+
+  const prevSeg = useMemo(() => {
+    const idx = currentIndex > 0 ? currentIndex - 1 : LAB_SEGMENTS.length - 1;
+    return LAB_SEGMENTS[idx];
+  }, [currentIndex]);
+
+  const nextSeg = useMemo(() => {
+    const idx = currentIndex < LAB_SEGMENTS.length - 1 ? currentIndex + 1 : 0;
+    return LAB_SEGMENTS[idx];
+  }, [currentIndex]);
+
+  const handleNavigateLab = (targetId: LabSegmentId) => {
+    setActive(targetId);
+    window.requestAnimationFrame(() => {
+      simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
 
   return (
     <div className="vl-page">
@@ -406,26 +436,193 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
       </nav>
 
       <section id={active} ref={simRef} className="vl-segment" aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
+        {/* Top Quick-Navigation HUD Bar */}
+        <nav className="vl-lab-bench-nav" aria-label="Sector navigation bar">
+          <button
+            type="button"
+            className="vl-lab-nav-btn vl-lab-nav-btn--prev"
+            onClick={() => handleNavigateLab(prevSeg.id)}
+            title={`Previous Lab: ${prevSeg.code} ${prevSeg.title}`}
+          >
+            <span className="vl-nav-arrow" aria-hidden="true">◀</span>
+            <span className="vl-nav-meta">
+              <span className="vl-nav-dir">PREV LAB</span>
+              <span className="vl-nav-label">{prevSeg.icon} {prevSeg.code} · {prevSeg.title}</span>
+            </span>
+          </button>
+
+          <div className="vl-lab-nav-status">
+            <div className="vl-nav-badge">
+              <span className="vl-hud-blink">●</span> SECTOR {String(currentIndex + 1).padStart(2, '0')} / {String(LAB_SEGMENTS.length).padStart(2, '0')}
+            </div>
+            <div className="vl-nav-pills-row" role="tablist" aria-label="Direct sector jump">
+              {LAB_SEGMENTS.map((s, idx) => (
+                <button
+                  key={s.id}
+                  type="button"
+                  className={`vl-nav-step-dot${s.id === active ? ' is-active' : ''}`}
+                  onClick={() => handleNavigateLab(s.id)}
+                  title={`${s.code}: ${s.title} (${s.dev})`}
+                  aria-label={`Jump to ${s.code} ${s.title}`}
+                >
+                  <span className="vl-step-num">{idx + 1}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <button
+            type="button"
+            className="vl-lab-nav-btn vl-lab-nav-btn--next"
+            onClick={() => handleNavigateLab(nextSeg.id)}
+            title={`Next Lab: ${nextSeg.code} ${nextSeg.title}`}
+          >
+            <span className="vl-nav-meta vl-nav-meta--right">
+              <span className="vl-nav-dir">NEXT LAB ➔</span>
+              <span className="vl-nav-label">{nextSeg.icon} {nextSeg.code} · {nextSeg.title}</span>
+            </span>
+            <span className="vl-nav-arrow" aria-hidden="true">▶</span>
+          </button>
+        </nav>
+
         <h2 id={`vl-h-${active}`} className="vl-seg-title" style={{ color: seg.ink }}>
           <span aria-hidden="true">{seg.icon}</span> {seg.title} <span className="vl-seg-dev" lang="sa">{seg.dev}</span>
         </h2>
         <Suspense fallback={<SimLoader />}>
-          {active === 'paramanu' && <ParamanuBuilder />}
-          {active === 'prakriti' && <PrakritiBalance />}
-          {active === 'jyotisha' && <JyotishaOrbit />}
-          {active === 'srishti-sthiti-laya' && <SrishtiLoom />}
-          {active === 'nada-brahman' && <NadaBrahman />}
+          {active === 'paramanu' && <ParamanuBuilder onNextLab={() => handleNavigateLab(nextSeg.id)} />}
           {active === 'asato-ma' && <AsatoMa />}
-          {active === 'chaturyoni' && <Chaturyoni />}
+          {active === 'prakriti' && <PrakritiBalance onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+          {active === 'chaturyoni' && <Chaturyoni onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+          {active === 'jyotisha' && <JyotishaOrbit />}
           {active === 'chandrayaan' && <Chandrayaan />}
+          {active === 'nada-brahman' && <NadaBrahman />}
+          {active === 'srishti-sthiti-laya' && <SrishtiLoom />}
           {active === 'rituparna' && <RituparnaSampling />}
           {active === 'agnibana' && <AgnibanaRocketLab />}
         </Suspense>
+
+
+        {/* Bottom Next Lab Gateway Card */}
+        <div className="vl-next-lab-gateway" style={{ '--next-glow': nextSeg.glow, '--next-ink': nextSeg.ink, '--next-tint': nextSeg.tint } as React.CSSProperties}>
+          <div className="vl-nlg-header">
+            <div className="vl-nlg-kicker">
+              <span className="vl-hud-blink">●</span> SECTOR {seg.code} SIMULATION BENCH // NEXT EXPEDITION AVAILABLE
+            </div>
+            <div className="vl-nlg-title-row">
+              <h3 className="vl-nlg-heading">
+                Ready for the Next Vijñāna Exploration?
+              </h3>
+              <span className="vl-nlg-counter">
+                {currentIndex + 1} of {LAB_SEGMENTS.length} Sectors Explored
+              </span>
+            </div>
+          </div>
+
+          <div className="vl-nlg-card">
+            <div className="vl-nlg-card-left">
+              <div className="vl-nlg-icon-circle">
+                <span className="vl-nlg-big-icon" aria-hidden="true">{nextSeg.icon}</span>
+                <span className="vl-nlg-code-badge">{nextSeg.code}</span>
+              </div>
+              <div className="vl-nlg-card-details">
+                <div className="vl-nlg-dev" lang="sa">{nextSeg.dev}</div>
+                <h4 className="vl-nlg-lab-title">{nextSeg.title}</h4>
+                <div className="vl-nlg-tags">
+                  <span className="vl-nlg-tag vl-nlg-tag--subj">{nextSeg.subject}</span>
+                  <span className="vl-nlg-tag vl-nlg-tag--school">ARCHIVE // {nextSeg.school}</span>
+                  <span className="vl-nlg-tag vl-nlg-tag--cat">{nextSeg.category.toUpperCase()}</span>
+                </div>
+                <p className="vl-nlg-blurb">{nextSeg.blurb}</p>
+              </div>
+            </div>
+
+            <div className="vl-nlg-card-actions">
+              <button
+                type="button"
+                className="vl-btn vl-btn--cyber vl-btn--nlg-proceed"
+                onClick={() => handleNavigateLab(nextSeg.id)}
+                aria-label={`Enter Next Lab: ${nextSeg.title}`}
+              >
+                <span>ENTER NEXT LAB: {nextSeg.title}</span>
+                <span className="vl-nlg-arrow-icon" aria-hidden="true">➔</span>
+              </button>
+
+              <div className="vl-nlg-sub-row">
+                <button
+                  type="button"
+                  className="vl-nlg-sub-btn"
+                  onClick={() => handleNavigateLab(prevSeg.id)}
+                >
+                  ◀ Previous Lab: {prevSeg.code}
+                </button>
+                <button
+                  type="button"
+                  className="vl-nlg-sub-btn"
+                  onClick={() => simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                >
+                  ▲ Back to Top
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* All 10 Sectors Grid Strip */}
+          <div className="vl-nlg-strip-wrap">
+            <span className="vl-nlg-strip-title">EXPLORE ALL 10 SCIENCE SECTORS:</span>
+            <div className="vl-nlg-strip">
+              {LAB_SEGMENTS.map((s, idx) => (
+                <button
+                  key={s.id}
+                  type="button"
+                  className={`vl-nlg-strip-btn${s.id === active ? ' is-current' : ''}`}
+                  onClick={() => handleNavigateLab(s.id)}
+                  title={`${s.code}: ${s.title}`}
+                >
+                  <span className="vl-nlg-strip-idx">{idx + 1}</span>
+                  <span className="vl-nlg-strip-icon">{s.icon}</span>
+                  <span className="vl-nlg-strip-code">{s.code}</span>
+                  <span className="vl-nlg-strip-name">{s.title}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
 
         <Suspense fallback={<div className="vl-loading">Loading Bodhi Vijñāna Console…</div>}>
           <LabBodhiConsole activeSegment={active} />
         </Suspense>
       </section>
+
+      {/* Floating Bottom Quick-Dock Bar */}
+      <aside className="vl-floating-dock" aria-label="Quick lab switcher">
+        <button
+          type="button"
+          className="vl-dock-btn vl-dock-btn--prev"
+          onClick={() => handleNavigateLab(prevSeg.id)}
+          title={`Previous: ${prevSeg.code} ${prevSeg.title}`}
+        >
+          <span className="vl-dock-arrow" aria-hidden="true">◀</span>
+          <span className="vl-dock-text">{prevSeg.icon} {prevSeg.code}</span>
+        </button>
+
+        <div className="vl-dock-current">
+          <span className="vl-dock-pulse" aria-hidden="true" />
+          <span className="vl-dock-curr-code">{seg.code}</span>
+          <span className="vl-dock-curr-title">{seg.icon} {seg.title}</span>
+          <span className="vl-dock-curr-count">({currentIndex + 1}/10)</span>
+        </div>
+
+        <button
+          type="button"
+          className="vl-dock-btn vl-dock-btn--next"
+          onClick={() => handleNavigateLab(nextSeg.id)}
+          title={`Next: ${nextSeg.code} ${nextSeg.title}`}
+        >
+          <span className="vl-dock-text">Next: {nextSeg.icon} {nextSeg.code}</span>
+          <span className="vl-dock-arrow" aria-hidden="true">➔</span>
+        </button>
+      </aside>
+
 
       <p className="vl-footnote">
         Content note: the lab uses “traditionally”, “attributed to” and “preserved in” on purpose. Old texts and modern science
