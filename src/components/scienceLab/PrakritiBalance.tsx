@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { BodhiLabAnecdote, ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
-import { DialKnob, LedButton } from './controls';
+import { DialKnob, GlowSlider, LedButton } from './controls';
 import AyurvedaAttractions from './AyurvedaAttractions';
 import { soundEffects } from '../../utils/soundEffects';
 
@@ -76,23 +76,23 @@ const SAMA_HI = 60;
 const inSama = (n: number) => n >= SAMA_LO && n <= SAMA_HI;
 
 const DOSHA = [
-  { key: 'vata' as const, dev: 'वात', iast: 'vāta', color: '#8b5cf6', soft: '#c4b5fd', bhuta: 'vāyu + ākāśa', vector: 'Kinetic Flux & Transport Velocity (V⃗)', q: 'dry · cold · light · mobile · kinetic' },
+  { key: 'vata' as const, dev: 'वात', iast: 'vāta', color: '#a855f7', soft: '#c4b5fd', bhuta: 'vāyu + ākāśa', vector: 'Kinetic Flux & Transport Velocity (V⃗)', q: 'dry · cold · light · mobile · kinetic' },
   { key: 'pitta' as const, dev: 'पित्त', iast: 'pitta', color: '#f97316', soft: '#fdba74', bhuta: 'tejas + ap', vector: 'Enzymatic Catalysis Rate & Thermal Flux (ΔH)', q: 'hot · sharp · penetrating · metabolic' },
   { key: 'kapha' as const, dev: 'कफ', iast: 'kapha', color: '#10b981', soft: '#6ee7b7', bhuta: 'pṛthivī + ap', vector: 'Structural Viscosity & Volumetric Density (ρ)', q: 'heavy · cold · moist · stable · structural' },
 ];
 
 const TERMS: LabTerm[] = [
-  { dev: 'यथा पिण्डे तथा ब्रह्माण्डे', iast: 'yathā piṇḍe tathā brahmāṇḍe', en: 'As in the body (microcosm), so in the cosmos (macrocosm)', note: 'the foundation of indigenous systems biology' },
+  { dev: 'यथा पिण्डे तथा ब्रह्माण्डे', iast: 'yathā piṇḍe tathā brahmāṇḍe', en: 'As in the body (microcosm), so in the cosmos (macrocosm)', note: 'the core systems biology principle: cellular micro-system resonance with seasonal environments' },
   { dev: 'समत्व', iast: 'samatva', en: 'Dynamic Homeostasis / Equilibrium', note: 'the viable physiological window (40–60%)' },
-  { dev: 'द्रव्य-गुण-कर्म', iast: 'dravya-guṇa-karma', en: 'Substance, Quality, and Action', note: 'triad of pharmacological counter-forces' },
-  { dev: 'वात', iast: 'vāta', en: 'Kinetic transport vector (V⃗)', note: 'Vāyu + Ākāśa: diffusion, ion pumps, neural firing' },
-  { dev: 'पित्त', iast: 'pitta', en: 'Thermal & metabolic flux vector (ΔH)', note: 'Tejas + Ap: ATP hydrolysis, enzymatic digestion' },
-  { dev: 'कफ', iast: 'kapha', en: 'Structural viscosity & density (ρ)', note: 'Pṛthivī + Ap: cytoskeletal stability, lipid hydration' },
-  { dev: 'मण्डूक-गति', iast: 'maṇḍūka-gati', en: 'Frog-like pulse waveform (Pitta signature)', note: 'sharp, turbulent high-frequency kinetic spikes' },
-  { dev: 'सर्प-गति', iast: 'sarpa-gati', en: 'Snake-like pulse waveform (Vāta signature)', note: 'rapid, winding, irregular low-viscosity oscillations' },
-  { dev: 'हंस-गति', iast: 'haṁsa-gati', en: 'Swan-like pulse waveform (Kapha signature)', note: 'slow, deep, majestic high-viscosity rhythm' },
-  { dev: 'ऋतुचर्या', iast: 'ṛtucaryā', en: 'Seasonal adaptation protocol', note: 'countering macro-environmental perturbations' },
-  { dev: 'आम-शोधन', iast: 'āma-śodhana', en: 'Cellular autophagy & metabolic detoxification', note: 'purging oxidized cellular aggregates' },
+  { dev: 'द्रव्य-गुण-कर्म', iast: 'dravya-guṇa-karma', en: 'Substance, Quality, and Action', note: 'pharmacological counter-forces neutralizing thermodynamic stressors' },
+  { dev: 'वात', iast: 'vāta', en: 'Kinetic transport vector (V⃗)', note: 'Vāyu + Ākāśa: active diffusion, ion pumps, neural transmission' },
+  { dev: 'पित्त', iast: 'pitta', en: 'Thermal & metabolic flux vector (ΔH)', note: 'Tejas + Ap: mitochondrial respiration, ATP hydrolysis, enzymatic digestion' },
+  { dev: 'कफ', iast: 'kapha', en: 'Structural viscosity & density (ρ)', note: 'Pṛthivī + Ap: cytoskeletal matrix, lipid bilayer stability, solvent hydration' },
+  { dev: 'मण्डूक-गति', iast: 'maṇḍūka-gati', en: 'Frog-like pulse waveform (Pitta signature)', note: 'sharp, turbulent high-frequency kinetic spikes indicating thermal stress' },
+  { dev: 'सर्प-गति', iast: 'sarpa-gati', en: 'Snake-like pulse waveform (Vāta signature)', note: 'rapid, winding, irregular low-viscosity oscillations from shear stress' },
+  { dev: 'हंस-गति', iast: 'haṁsa-gati', en: 'Swan-like pulse waveform (Kapha signature)', note: 'slow, deep, majestic broad waves from high viscous density' },
+  { dev: 'ऋतुचर्या', iast: 'ṛtucaryā', en: 'Seasonal adaptation protocol', note: 'active counter-measures against external environmental perturbations' },
+  { dev: 'आम-शोधन', iast: 'āma-śodhana', en: 'Cellular autophagy & metabolic detoxification', note: 'purging oxidized cellular aggregates and metabolic debris' },
 ];
 
 const CHALLENGES: LabChallenge[] = [
@@ -140,6 +140,17 @@ const CHALLENGES: LabChallenge[] = [
     answer: 1,
     explain: 'Maṇḍūka-Gati mathematically reflects turbulent kinetic transitions caused by high thermal flux (ΔH) and sharp pulse velocity, manifesting tactilely as a leaping, bounding frog-like wave.',
   },
+  {
+    q: 'What is the systems biology role of Pṛthivī (Earth) in cellular architecture?',
+    options: [
+      'It sends telepathic signals to other cells.',
+      'The dense cytoskeletal matrix (microtubules & actin filaments) providing physical geometry and mechanical Young’s modulus rigidity against deformation.',
+      'It turns all water into gas.',
+      'It absorbs all nutrients into the vacuum.',
+    ],
+    answer: 1,
+    explain: 'Pṛthivī is physical density and structural cohesion (Khaṭinatva). Microtubules and microfilaments construct the architectural scaffold that gives the cell its shape and mechanical stability.',
+  },
 ];
 
 type CellOrganelle = 'akasa' | 'vayu' | 'tejas' | 'ap' | 'prthivi';
@@ -158,8 +169,8 @@ const ORGANELLES: Record<CellOrganelle, OrganelleData> = {
     element: 'Ākāśa (Space)',
     dev: 'आकाश',
     title: 'The Intracellular Void',
-    functionalRole: 'Structural volume of cytosol & lumen permitting molecular diffusion without steric crowding.',
-    biophysicalMetric: 'Cytosolic Mean Free Path & Steric Clearance',
+    functionalRole: 'Structural volume of cytosol & lumen permitting molecular diffusion trajectories without steric crowding.',
+    biophysicalMetric: 'Cytosolic Mean Free Path (λ ≈ 24 nm) & Steric Clearance',
     icon: '🌌',
     color: '#a855f7',
   },
@@ -167,8 +178,8 @@ const ORGANELLES: Record<CellOrganelle, OrganelleData> = {
     element: 'Vāyu (Air)',
     dev: 'वायु',
     title: 'Transmembrane Transport & Flux',
-    functionalRole: 'Active kinetic movement of ions (Na⁺/K⁺ ATPase pumps) and respiratory gas exchange (O₂ influx, CO₂ efflux).',
-    biophysicalMetric: 'Electrochemical Ion Flux (V⃗ = 1.4 m/s)',
+    functionalRole: 'Active kinetic movement of ions (Na⁺/K⁺ ATPase pumps) and gas exchange (O₂ influx, CO₂ efflux).',
+    biophysicalMetric: 'Electrochemical Ion Flux (V⃗ = 1.4 m/s) & Diffusion Velocity',
     icon: '💨',
     color: '#38bdf8',
   },
@@ -177,7 +188,7 @@ const ORGANELLES: Record<CellOrganelle, OrganelleData> = {
     dev: 'तेजस्',
     title: 'Mitochondrial ATP Synthesis',
     functionalRole: 'Metabolic transformations, enzymatic catalysis, and electron transport chain breakdown.',
-    biophysicalMetric: 'Proton Gradient (ΔΨm = -140 mV) & ATP Yield',
+    biophysicalMetric: 'Proton Gradient (ΔΨm = -140 mV) & Thermal Flux (ΔH)',
     icon: '🔥',
     color: '#f97316',
   },
@@ -186,7 +197,7 @@ const ORGANELLES: Record<CellOrganelle, OrganelleData> = {
     dev: 'अप्',
     title: 'Cytoplasmic Hydration & Bilayer Solvent',
     functionalRole: 'Fluid solvent matrix supporting protein folding, osmotic turgor, and lipid bilayer mobility.',
-    biophysicalMetric: 'Osmotic Turgor Pressure & Lipid Fluidity (η)',
+    biophysicalMetric: 'Osmotic Turgor Pressure (P ≈ 180 kPa) & Fluidity (η)',
     icon: '💧',
     color: '#06b6d4',
   },
@@ -195,7 +206,7 @@ const ORGANELLES: Record<CellOrganelle, OrganelleData> = {
     dev: 'पृथिवी',
     title: 'The Cytoskeletal Matrix',
     functionalRole: 'Dense structural polymers (microtubules, actin filaments) providing physical geometry and mechanical rigidity.',
-    biophysicalMetric: 'Cytoskeletal Young’s Modulus (E = 2.4 kPa)',
+    biophysicalMetric: 'Cytoskeletal Young’s Modulus (E = 2.4 kPa) & Viscous Density (ρ)',
     icon: '🪨',
     color: '#10b981',
   },
@@ -205,15 +216,235 @@ const Dial: React.FC<{ label: string; value: number; onChange: (n: number) => vo
   <DialKnob label={label} ariaLabel={label.replace(/^\S+\s/, '')} value={value} min={0} max={10} step={1} onChange={onChange} format={(x) => `${Math.round(x)} / 10`} color={color} size={78} testId={testId} />
 );
 
+// =========================================================================
+// 🔬 DYNAMIC MORPHING SVG CELL VECTOR VISUALIZER
+// =========================================================================
+const DynamicCellSvg: React.FC<{
+  lv: { vata: number; pitta: number; kapha: number };
+  env: Env;
+  selectedOrganelle: CellOrganelle;
+  onSelectOrganelle: (o: CellOrganelle) => void;
+  time: number;
+  mini?: boolean;
+}> = ({ lv, env, selectedOrganelle, onSelectOrganelle, time, mini = false }) => {
+  const cx = mini ? 150 : 230;
+  const cy = mini ? 100 : 150;
+
+  // Hydration turgor: swelling with Ap (moist) vs shrinking with Dryness
+  const turgorScale = (0.85 + (env.moist / 10) * 0.25 - (env.dry / 10) * 0.15) * (mini ? 0.65 : 1);
+  const rx = (mini ? 110 : 178) * turgorScale;
+  const ry = (mini ? 70 : 112) * turgorScale;
+
+  // Membrane wave vibration intensity based on Vāta & Pitta, damped by Kapha
+  const vataWobble = (lv.vata / 100) * (mini ? 6 : 14);
+  const pittaWobble = (lv.pitta / 100) * (mini ? 3 : 7);
+  const kaphaDamping = Math.max(0.25, 1 - (lv.kapha - 40) / 100);
+  const totalWobble = (vataWobble + pittaWobble) * kaphaDamping;
+
+  // Generate 36 smooth points around perimeter
+  const numPoints = 36;
+  const points: { x: number; y: number }[] = [];
+  for (let i = 0; i < numPoints; i++) {
+    const angle = (i / numPoints) * Math.PI * 2;
+    const wave =
+      Math.sin(angle * 6 + time * 5) * totalWobble +
+      Math.cos(angle * 3 - time * 3) * (totalWobble * 0.5);
+    const rCurrentX = rx + wave;
+    const rCurrentY = ry + wave * 0.8;
+    const px = cx + Math.cos(angle) * rCurrentX;
+    const py = cy + Math.sin(angle) * rCurrentY;
+    points.push({ x: px, y: py });
+  }
+
+  let d = `M ${points[0].x.toFixed(1)} ${points[0].y.toFixed(1)}`;
+  for (let i = 0; i < numPoints; i++) {
+    const curr = points[i];
+    const next = points[(i + 1) % numPoints];
+    const midX = (curr.x + next.x) / 2;
+    const midY = (curr.y + next.y) / 2;
+    d += ` Q ${curr.x.toFixed(1)} ${curr.y.toFixed(1)} ${midX.toFixed(1)} ${midY.toFixed(1)}`;
+  }
+  d += ' Z';
+
+  const isPittaSpike = lv.pitta > 60;
+  const isVataSpike = lv.vata > 60;
+  const isKaphaHeavy = lv.kapha > 60;
+
+  const membraneColor = isPittaSpike
+    ? '#f97316'
+    : isVataSpike
+    ? '#a855f7'
+    : isKaphaHeavy
+    ? '#10b981'
+    : '#38bdf8';
+
+  const membraneGlow = isPittaSpike
+    ? 'rgba(249, 115, 22, 0.7)'
+    : isVataSpike
+    ? 'rgba(168, 85, 247, 0.6)'
+    : isKaphaHeavy
+    ? 'rgba(16, 185, 129, 0.5)'
+    : 'rgba(56, 189, 248, 0.4)';
+
+  const cytoskeletalThickness = mini ? 1 : Math.max(1, (lv.kapha / 100) * 3.5);
+  const pittaPulse = 1 + Math.sin(time * 6) * ((lv.pitta / 100) * 0.15);
+
+  const viewBox = mini ? '0 0 300 200' : '0 0 460 300';
+
+  // Drifting diffusion particles for Ākāśa (Space)
+  const particles = [
+    { bx: 150, by: 110, p: 0.2 },
+    { bx: 280, by: 120, p: 0.8 },
+    { bx: 180, by: 190, p: 1.4 },
+    { bx: 310, by: 170, p: 2.1 },
+    { bx: 140, by: 160, p: 2.7 },
+    { bx: 260, by: 210, p: 3.3 },
+  ];
+
+  return (
+    <svg viewBox={viewBox} style={{ width: '100%', maxHeight: mini ? '180px' : '300px', display: 'block' }}>
+      <defs>
+        <radialGradient id={`cytoGrad-${mini ? 'mini' : 'full'}`} cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#0b1329" />
+          <stop offset="70%" stopColor="#082f49" stopOpacity="0.85" />
+          <stop offset="100%" stopColor="#0369a1" stopOpacity="0.45" />
+        </radialGradient>
+        <filter id={`cellGlow-${mini ? 'mini' : 'full'}`} x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation={mini ? 2 : 4} result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+
+      {/* 1. Ākāśa - Intracellular Void & Cytoplasm Membrane */}
+      <path
+        d={d}
+        fill={`url(#cytoGrad-${mini ? 'mini' : 'full'})`}
+        stroke={membraneColor}
+        strokeWidth={mini ? 2.5 : 4}
+        style={{
+          filter: `drop-shadow(0 0 ${mini ? 4 : 8}px ${membraneGlow})`,
+          cursor: 'pointer',
+          transition: 'stroke 0.3s ease',
+        }}
+        onClick={() => onSelectOrganelle('akasa')}
+      />
+
+      {/* Ākāśa Diffusion Trajectory Particles */}
+      {!mini && particles.map((pt, idx) => {
+        const px = pt.bx + Math.sin(time * 2 + pt.p) * 16;
+        const py = pt.by + Math.cos(time * 2 + pt.p) * 12;
+        return (
+          <circle
+            key={idx}
+            cx={px}
+            cy={py}
+            r={selectedOrganelle === 'akasa' ? 3 : 1.8}
+            fill="#c084fc"
+            opacity={0.65}
+          />
+        );
+      })}
+
+      {/* 2. Pṛthivī - Cytoskeletal Actin & Microtubule Matrix */}
+      <g
+        stroke="#10b981"
+        strokeWidth={cytoskeletalThickness}
+        opacity={selectedOrganelle === 'prthivi' ? 0.95 : 0.45}
+        style={{ cursor: 'pointer', transition: 'stroke-width 0.25s ease' }}
+        onClick={() => onSelectOrganelle('prthivi')}
+      >
+        <path d={`M ${cx - rx * 0.75} ${cy} Q ${cx - rx * 0.3} ${cy - ry * 0.45} ${cx} ${cy - ry * 0.3} T ${cx + rx * 0.75} ${cy}`} fill="none" strokeDasharray="4 3" />
+        <path d={`M ${cx - rx * 0.65} ${cy + ry * 0.35} Q ${cx} ${cy + ry * 0.55} ${cx + rx * 0.55} ${cy + ry * 0.35}`} fill="none" strokeDasharray="4 3" />
+        <path d={`M ${cx - rx * 0.25} ${cy - ry * 0.65} Q ${cx - rx * 0.05} ${cy} ${cx} ${cy + ry * 0.65}`} fill="none" strokeDasharray="4 3" />
+        <path d={`M ${cx + rx * 0.3} ${cy - ry * 0.65} Q ${cx + rx * 0.15} ${cy} ${cx + rx * 0.35} ${cy + ry * 0.6}`} fill="none" strokeDasharray="4 3" />
+      </g>
+
+      {/* 3. Tejas - Mitochondria & ATP Synthesis */}
+      <g
+        style={{ cursor: 'pointer' }}
+        onClick={() => onSelectOrganelle('tejas')}
+        filter={selectedOrganelle === 'tejas' || isPittaSpike ? `url(#cellGlow-${mini ? 'mini' : 'full'})` : undefined}
+      >
+        {/* Mito Left */}
+        <g transform={`translate(${cx - (mini ? 55 : 95)}, ${cy - (mini ? 25 : 40)}) scale(${pittaPulse * (mini ? 0.65 : 1)})`}>
+          <ellipse cx={0} cy={0} rx={32} ry={17} fill="#7c2d12" stroke="#ea580c" strokeWidth={2.5} />
+          <path d="M -22 0 Q -11 -10 0 0 T 22 0" fill="none" stroke="#fde047" strokeWidth={1.8} />
+          {!mini && <text x={0} y={4} textAnchor="middle" fontSize={8.5} fill="#fef08a" fontWeight="bold">ATP (तेजस्)</text>}
+        </g>
+        {/* Mito Right */}
+        <g transform={`translate(${cx + (mini ? 55 : 95)}, ${cy + (mini ? 25 : 35)}) scale(${pittaPulse * (mini ? 0.6 : 0.95)})`}>
+          <ellipse cx={0} cy={0} rx={28} ry={15} fill="#7c2d12" stroke="#ea580c" strokeWidth={2.5} />
+          <path d="M -18 0 Q -9 -8 0 0 T 18 0" fill="none" stroke="#fde047" strokeWidth={1.6} />
+        </g>
+      </g>
+
+      {/* 4. Nucleus Center */}
+      <circle cx={cx} cy={cy} r={mini ? 18 : 34} fill="#1e1b4b" stroke="#6366f1" strokeWidth={mini ? 2 : 3} />
+      <circle cx={cx} cy={cy} r={mini ? 8 : 14} fill="#4338ca" />
+      {!mini && <text x={cx} y={cy + 4} textAnchor="middle" fontSize={9.5} fill="#e0e7ff" fontWeight="bold">NUCLEUS</text>}
+
+      {/* 5. Vāyu - Transmembrane Transport Pumps */}
+      <g
+        style={{ cursor: 'pointer' }}
+        onClick={() => onSelectOrganelle('vayu')}
+        filter={selectedOrganelle === 'vayu' ? `url(#cellGlow-${mini ? 'mini' : 'full'})` : undefined}
+      >
+        {/* Top Pump */}
+        <rect x={cx - 15} y={cy - ry - 7} width={30} height={14} rx={4} fill="#0284c7" stroke="#38bdf8" strokeWidth={2} />
+        <circle cx={cx - 6 + Math.sin(time * 6) * 6} cy={cy - ry} r={3} fill="#facc15" />
+        {!mini && <text x={cx} y={cy - ry - 12} textAnchor="middle" fontSize={8} fill="#38bdf8" fontWeight="bold">Na⁺/K⁺ (वायु)</text>}
+
+        {/* Gas Exchange Arrows */}
+        {!mini && (
+          <>
+            <path d={`M ${cx + rx + 8} ${cy - 15} L ${cx + rx - 18} ${cy - 5}`} stroke="#a78bfa" strokeWidth={2} />
+            <text x={cx + rx + 14} y={cy - 12} fontSize={8} fill="#a78bfa" fontWeight="bold">O₂ In</text>
+            <path d={`M ${cx + rx - 15} ${cy + 15} L ${cx + rx + 12} ${cy + 25}`} stroke="#f43f5e" strokeWidth={2} />
+            <text x={cx + rx + 16} y={cy + 30} fontSize={8} fill="#f43f5e" fontWeight="bold">CO₂ Out</text>
+          </>
+        )}
+      </g>
+
+      {/* 6. Ap - Hydration Solvent Beads */}
+      <g
+        style={{ cursor: 'pointer' }}
+        onClick={() => onSelectOrganelle('ap')}
+      >
+        <circle cx={cx - (mini ? 35 : 60)} cy={cy + (mini ? 30 : 50)} r={mini ? 9 : 15} fill="rgba(6, 182, 212, 0.25)" stroke="#06b6d4" strokeWidth={1.5} />
+        {!mini && <text x={cx - 60} y={cy + 54} textAnchor="middle" fontSize={7.5} fill="#67e8f9">H₂O (अप्)</text>}
+        <circle cx={cx + (mini ? 35 : 55)} cy={cy - (mini ? 30 : 50)} r={mini ? 8 : 13} fill="rgba(6, 182, 212, 0.25)" stroke="#06b6d4" strokeWidth={1.5} />
+        {!mini && <text x={cx + 55} y={cy - 46} textAnchor="middle" fontSize={7.5} fill="#67e8f9">H₂O</text>}
+      </g>
+
+      {/* Live HUD Readout at bottom */}
+      {!mini && (
+        <text x={cx} y={290} textAnchor="middle" fontSize={9} fill="#94a3b8" fontFamily="JetBrains Mono, monospace">
+          TURGOR: {Math.round(rx * 0.72)} kPa · SHEAR VIBRATION: {lv.vata}% · THERMAL FLUX: {lv.pitta}%
+        </text>
+      )}
+    </svg>
+  );
+};
+
 export const PrakritiBalance: React.FC = () => {
-  // Phase Nav: 1 = Sub-Cellular Composition, 2 = Thermodynamic Vectors, 3 = Diagnostic Feedback Loop
+  // Phase Nav: 1 = Sub-Cellular Composition, 2 = Thermodynamic Drivers, 3 = Diagnostic Feedback Loop
   const [activePhase, setActivePhase] = useState<1 | 2 | 3>(2);
   const [selectedOrganelle, setSelectedOrganelle] = useState<CellOrganelle>('tejas');
+  const [exploredOrganelles, setExploredOrganelles] = useState<Set<CellOrganelle>>(new Set(['tejas']));
   const [env, setEnv] = useState<Env>(SCENARIOS[0].env);
   const [gameScore, setGameScore] = useState<number>(150);
   const [activeActions, setActiveActions] = useState<Record<string, boolean>>({});
+  const [animTick, setAnimTick] = useState<number>(0);
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  // Animation timer for membrane waves & organelle pulsations
+  useEffect(() => {
+    const id = setInterval(() => {
+      setAnimTick((t) => (t + 0.05) % 100);
+    }, 50);
+    return () => clearInterval(id);
+  }, []);
 
   // Compute live interdependent Doṣas
   const lv = useMemo(() => calculateThermodynamicDoshas(env), [env]);
@@ -221,6 +452,44 @@ export const PrakritiBalance: React.FC = () => {
 
   const setParam = (k: keyof Env) => (n: number) => {
     setEnv((e) => ({ ...e, [k]: n }));
+  };
+
+  // Interdependent Direct Tri-Doṣa Slider Handler
+  const handleAdjustDosha = (target: 'vata' | 'pitta' | 'kapha', newVal: number) => {
+    if (target === 'pitta') {
+      const delta = newVal - lv.pitta;
+      setEnv((prev) => ({
+        ...prev,
+        heat: Math.max(0, Math.min(10, Math.round(prev.heat + delta * 0.08))),
+        cold: Math.max(0, Math.min(10, Math.round(prev.cold - delta * 0.06))),
+        moist: Math.max(0, Math.min(10, Math.round(prev.moist - delta * 0.05))), // Kapha thins
+        activity: Math.max(0, Math.min(10, Math.round(prev.activity + delta * 0.04))), // Vāta accelerates
+      }));
+    } else if (target === 'vata') {
+      const delta = newVal - lv.vata;
+      setEnv((prev) => ({
+        ...prev,
+        dry: Math.max(0, Math.min(10, Math.round(prev.dry + delta * 0.08))),
+        moist: Math.max(0, Math.min(10, Math.round(prev.moist - delta * 0.06))),
+        cold: Math.max(0, Math.min(10, Math.round(prev.cold + delta * 0.04))),
+        activity: Math.max(0, Math.min(10, Math.round(prev.activity + delta * 0.05))),
+      }));
+    } else if (target === 'kapha') {
+      const delta = newVal - lv.kapha;
+      setEnv((prev) => ({
+        ...prev,
+        moist: Math.max(0, Math.min(10, Math.round(prev.moist + delta * 0.08))),
+        dry: Math.max(0, Math.min(10, Math.round(prev.dry - delta * 0.06))),
+        activity: Math.max(0, Math.min(10, Math.round(prev.activity - delta * 0.05))), // Transport slows
+        heat: Math.max(0, Math.min(10, Math.round(prev.heat - delta * 0.04))), // Heat buffered
+      }));
+    }
+  };
+
+  const handleSelectOrganelle = (org: CellOrganelle) => {
+    soundEffects.playPuzzleSnap();
+    setSelectedOrganelle(org);
+    setExploredOrganelles((prev) => new Set([...prev, org]));
   };
 
   // Pulse Waveform diagnostics
@@ -422,7 +691,8 @@ export const PrakritiBalance: React.FC = () => {
   const missions = [
     { label: 'Achieve Dynamic Samatva: All three vectors within 40–60% window', ok: allSama },
     { label: 'Counter Harsh Summer (Grīṣma): Bring Pitta below 60% via Śīta-Ghṛta', ok: lv.pitta <= 60 },
-    { label: 'Map All 5 Sub-Cellular Organelles in Phase 1', ok: true },
+    { label: 'Stabilize Vāta Kinetic Flux: Keep membrane shear within 40–60%', ok: inSama(lv.vata) },
+    { label: 'Map All 5 Sub-Cellular Organelles in Phase 1', ok: exploredOrganelles.size >= 5 },
   ];
 
   // Barycentric centroid calculation for Tri-Doṣa Vector Triangle
@@ -501,7 +771,7 @@ export const PrakritiBalance: React.FC = () => {
       <div className="vl-mission-dash">
         <div className="vl-dash-top-bar">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-            <span className="vl-dash-station-pill">🟢 BIO-DYNAMIC BENCH: STATION 2 / 8</span>
+            <span className="vl-dash-station-pill">🟢 BIO-DYNAMIC BENCH: STATION 4 / 8</span>
             <span style={{ fontSize: '0.88rem', fontWeight: 800, color: '#f8fafc' }}>
               CELLULAR HOMEOSTASIS CRUCIBLE (समत्व-परीक्षणम्)
             </span>
@@ -520,7 +790,7 @@ export const PrakritiBalance: React.FC = () => {
               Affects: Heat <strong>[{env.heat}/10]</strong> | Dryness <strong>[{env.dry}/10]</strong> | Moisture <strong>[{env.moist}/10]</strong>
             </span>
           </div>
-          <div style={{ display: 'flex', gap: '0.35rem' }}>
+          <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
             {RITU_ORDER.map((r) => (
               <button
                 key={r}
@@ -568,7 +838,7 @@ export const PrakritiBalance: React.FC = () => {
             )}
             {allSama && (
               <li style={{ color: '#86efac' }}>
-                * All three thermodynamic forces are centered within the viable homeostasis window (40–60%). Cytoplasm, pumps, and organelles operate harmoniously.
+                * All three thermodynamic forces are centered within the viable homeostasis window (40–60%). Cytoplasm, ion pumps, and organelles operate in harmonious resonance.
               </li>
             )}
           </ul>
@@ -673,7 +943,10 @@ export const PrakritiBalance: React.FC = () => {
         <button
           type="button"
           className={`vl-phase-step-btn${activePhase === 1 ? ' is-active' : ''}`}
-          onClick={() => setActivePhase(1)}
+          onClick={() => {
+            setActivePhase(1);
+            soundEffects.playPuzzleSnap();
+          }}
         >
           <span className="vl-phase-step-num">PHASE 1 · SUB-CELLULAR COMPOSITION</span>
           <span className="vl-phase-step-title">🔬 Pañcamahābhūta Molecular Map</span>
@@ -681,7 +954,10 @@ export const PrakritiBalance: React.FC = () => {
         <button
           type="button"
           className={`vl-phase-step-btn${activePhase === 2 ? ' is-active' : ''}`}
-          onClick={() => setActivePhase(2)}
+          onClick={() => {
+            setActivePhase(2);
+            soundEffects.playPuzzleSnap();
+          }}
         >
           <span className="vl-phase-step-num">PHASE 2 · THERMODYNAMIC DRIVERS</span>
           <span className="vl-phase-step-title">⚖️ Tri-Doṣa Vector Balancing</span>
@@ -689,7 +965,10 @@ export const PrakritiBalance: React.FC = () => {
         <button
           type="button"
           className={`vl-phase-step-btn${activePhase === 3 ? ' is-active' : ''}`}
-          onClick={() => setActivePhase(3)}
+          onClick={() => {
+            setActivePhase(3);
+            soundEffects.playPuzzleSnap();
+          }}
         >
           <span className="vl-phase-step-num">PHASE 3 · MACRO-SYSTEM FEEDBACK</span>
           <span className="vl-phase-step-title">📈 Pulse Waveform Analysis (Nāḍī)</span>
@@ -703,122 +982,42 @@ export const PrakritiBalance: React.FC = () => {
         <div className="vl-sandbox">
           <div className="vl-grid-2">
             <div>
-              <h3 style={{ margin: '0 0 0.5rem', fontSize: '1.15rem', color: '#f8fafc' }}>
-                🧬 Pañcamahābhūta Sub-Cellular Organelle Map
-              </h3>
-              <p style={{ fontSize: '0.85rem', color: '#cbd5e1', lineHeight: 1.55, margin: '0 0 1rem' }}>
-                The five elements in systems biology are not arbitrary symbols: each corresponds to an explicit structural and kinetic mechanism of the cell:
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
+                <h3 style={{ margin: 0, fontSize: '1.15rem', color: '#f8fafc' }}>
+                  🧬 Dynamic Cell Vector Visualizer (सजीव-कोशिका)
+                </h3>
+                <span className="vl-dash-station-pill">
+                  TURGOR: {Math.round(140 + env.moist * 5 - env.dry * 3)} kPa
+                </span>
+              </div>
+              <p style={{ fontSize: '0.85rem', color: '#cbd5e1', lineHeight: 1.55, margin: '0 0 0.85rem' }}>
+                The five elements in systems biology are not static symbols: watch how active hydration (Ap) swells the lipid boundary while kinetic shear (Vāta) creates membrane oscillations. Click any organelle to inspect its biophysical vector:
               </p>
 
-              {/* Interactive Dynamic Morphing Cell SVG */}
-              <div style={{ background: '#020617', padding: '1rem', borderRadius: '14px', border: '1px solid rgba(56, 189, 248, 0.25)', textAlign: 'center' }}>
-                <svg viewBox="0 0 460 300" style={{ width: '100%', maxHeight: '280px', display: 'block' }}>
-                  {/* Outer lipid membrane with Vāta kinetic undulations and Ap osmotic turgor */}
-                  <defs>
-                    <radialGradient id="cytoGrad" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#0f172a" />
-                      <stop offset="70%" stopColor="#082f49" stopOpacity="0.8" />
-                      <stop offset="100%" stopColor="#0369a1" stopOpacity="0.4" />
-                    </radialGradient>
-                    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="3" result="blur" />
-                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
-                  </defs>
-
-                  {/* 1. Cytoplasm & Intracellular Void (Ākāśa) */}
-                  <ellipse
-                    cx={230}
-                    cy={150}
-                    rx={185}
-                    ry={115}
-                    fill="url(#cytoGrad)"
-                    stroke="#0284c7"
-                    strokeWidth={4}
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => setSelectedOrganelle('akasa')}
-                  />
-
-                  {/* 2. Microtubule / Actin Cytoskeleton Matrix (Pṛthivī) */}
-                  <g
-                    stroke="#10b981"
-                    strokeWidth={1.5}
-                    opacity={selectedOrganelle === 'prthivi' ? 0.9 : 0.4}
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => setSelectedOrganelle('prthivi')}
-                  >
-                    <path d="M 80 140 Q 150 90 230 110 T 380 150" fill="none" strokeDasharray="3,3" />
-                    <path d="M 100 170 Q 200 200 300 180 T 370 140" fill="none" strokeDasharray="3,3" />
-                    <path d="M 180 60 Q 220 140 240 240" fill="none" strokeDasharray="3,3" />
-                    <path d="M 280 65 Q 260 150 300 235" fill="none" strokeDasharray="3,3" />
-                  </g>
-
-                  {/* 3. Mitochondria (Tejas) */}
-                  <g
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => setSelectedOrganelle('tejas')}
-                    filter={selectedOrganelle === 'tejas' ? 'url(#glowFilter)' : undefined}
-                  >
-                    {/* Mito 1 */}
-                    <ellipse cx={130} cy={110} rx={34} ry={18} fill="#7c2d12" stroke="#ea580c" strokeWidth={2.5} />
-                    <path d="M 106 110 Q 118 98 130 110 T 154 110" fill="none" stroke="#fed7aa" strokeWidth={1.8} />
-                    <text x={130} y={114} textAnchor="middle" fontSize={9} fill="#fef08a" fontWeight="bold">ATP (तेजस्)</text>
-
-                    {/* Mito 2 */}
-                    <ellipse cx={330} cy={180} rx={30} ry={16} fill="#7c2d12" stroke="#ea580c" strokeWidth={2.5} />
-                    <path d="M 310 180 Q 320 170 330 180 T 350 180" fill="none" stroke="#fed7aa" strokeWidth={1.8} />
-                  </g>
-
-                  {/* 4. Nucleus Center */}
-                  <circle cx={230} cy={150} r={36} fill="#1e1b4b" stroke="#6366f1" strokeWidth={3} />
-                  <circle cx={230} cy={150} r={14} fill="#4338ca" />
-                  <text x={230} y={154} textAnchor="middle" fontSize={10} fill="#e0e7ff" fontWeight="bold">NUCLEUS</text>
-
-                  {/* 5. Transmembrane Ion Pumps (Vāyu) */}
-                  <g
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => setSelectedOrganelle('vayu')}
-                    filter={selectedOrganelle === 'vayu' ? 'url(#glowFilter)' : undefined}
-                  >
-                    {/* Top Ion Pump */}
-                    <rect x={215} y={30} width={30} height={12} rx={4} fill="#0284c7" stroke="#38bdf8" strokeWidth={2} />
-                    <path d="M 230 18 L 230 46" stroke="#38bdf8" strokeWidth={2.5} markerEnd="url(#arrBlue)" />
-                    <text x={230} y={14} textAnchor="middle" fontSize={8} fill="#38bdf8" fontWeight="bold">Na⁺/K⁺ (वायु)</text>
-
-                    {/* Gas Exchange Arrows */}
-                    <path d="M 405 130 L 375 142" stroke="#a78bfa" strokeWidth={2} />
-                    <text x={415} y={130} fontSize={8} fill="#a78bfa">O₂ In</text>
-                    <path d="M 380 160 L 410 172" stroke="#f43f5e" strokeWidth={2} />
-                    <text x={415} y={178} fontSize={8} fill="#f43f5e">CO₂ Out</text>
-                  </g>
-
-                  {/* 6. Hydration Solvent (Ap) */}
-                  <g
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => setSelectedOrganelle('ap')}
-                  >
-                    <circle cx={170} cy={200} r={16} fill="rgba(6, 182, 212, 0.25)" stroke="#06b6d4" strokeWidth={1.5} />
-                    <text x={170} y={204} textAnchor="middle" fontSize={8} fill="#67e8f9">H₂O (अप्)</text>
-                    <circle cx={290} cy={95} r={14} fill="rgba(6, 182, 212, 0.25)" stroke="#06b6d4" strokeWidth={1.5} />
-                    <text x={290} y={98} textAnchor="middle" fontSize={8} fill="#67e8f9">H₂O</text>
-                  </g>
-                </svg>
+              {/* Dynamic Morphing Cell SVG */}
+              <div style={{ background: '#020617', padding: '0.75rem', borderRadius: '14px', border: '1px solid rgba(56, 189, 248, 0.25)', textAlign: 'center' }}>
+                <DynamicCellSvg
+                  lv={lv}
+                  env={env}
+                  selectedOrganelle={selectedOrganelle}
+                  onSelectOrganelle={handleSelectOrganelle}
+                  time={animTick}
+                  mini={false}
+                />
               </div>
 
-              {/* Selector Buttons */}
+              {/* Organelle Quick Select Chips */}
               <div style={{ display: 'flex', gap: '0.45rem', marginTop: '0.85rem', flexWrap: 'wrap' }}>
                 {(Object.keys(ORGANELLES) as CellOrganelle[]).map((org) => (
                   <button
                     key={org}
                     type="button"
                     className={`vl-chip${selectedOrganelle === org ? ' is-active' : ''}`}
-                    onClick={() => {
-                      soundEffects.playPuzzleSnap();
-                      setSelectedOrganelle(org);
-                    }}
+                    onClick={() => handleSelectOrganelle(org)}
                     style={{
                       borderColor: selectedOrganelle === org ? ORGANELLES[org].color : undefined,
                       color: selectedOrganelle === org ? ORGANELLES[org].color : undefined,
+                      fontWeight: selectedOrganelle === org ? 800 : 500,
                     }}
                   >
                     {ORGANELLES[org].icon} {ORGANELLES[org].element}
@@ -854,7 +1053,7 @@ export const PrakritiBalance: React.FC = () => {
                           fontWeight: 800,
                         }}
                       >
-                        SUB-CELLULAR MECHANIC
+                        SUB-CELLULAR ARCHETYPE
                       </span>
                     </div>
 
@@ -903,49 +1102,91 @@ export const PrakritiBalance: React.FC = () => {
           ========================================================================= */}
       {activePhase === 2 && (
         <div className="vl-sandbox" data-testid="prakriti-sandbox">
-          <div className="vl-prakriti-grid">
-            {/* Left Column: Environmental Dials */}
-            <div className="vl-controls">
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                <span className="vl-slider-label">Ṛtu · Season Stressor</span>
-                <span style={{ fontSize: '0.78rem', color: '#f59e0b', fontWeight: 700 }}>
-                  {RITU[env.ritu].iast.toUpperCase()}
-                </span>
+          <div className="vl-grid-2" style={{ gap: '1.25rem', marginBottom: '1rem' }}>
+            {/* Left Column: Interdependent Thermodynamic Vector Sliders */}
+            <div style={{ background: 'rgba(15, 23, 42, 0.9)', padding: '1.15rem', borderRadius: '14px', border: '1px solid rgba(148, 163, 184, 0.2)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
+                <strong style={{ color: '#7dd3fc', fontSize: '0.92rem' }}>
+                  ⚡ INTERDEPENDENT THERMODYNAMIC VECTOR SLIDERS
+                </strong>
+                <span className="vl-dash-station-pill">CROSS-COUPLED</span>
               </div>
-              <div className="vl-leds" role="radiogroup" aria-label="Season">
-                {RITU_ORDER.map((r) => (
-                  <LedButton
-                    key={r}
-                    kind="radio"
-                    on={env.ritu === r}
-                    color="#facc15"
-                    onClick={() => setEnv((x) => ({ ...x, ritu: r }))}
-                    testId={`ritu-${r}`}
-                    title={RITU[r].en}
-                  >
-                    <span lang="sa">{RITU[r].dev}</span> {RITU[r].iast}
-                  </LedButton>
-                ))}
+              <p style={{ margin: '0 0 1rem', fontSize: '0.8rem', color: '#cbd5e1', lineHeight: 1.5 }}>
+                Notice how the 3 forces operate in mutual resonance: sliding <strong>Pitta (Thermal)</strong> up automatically heats &amp; thins <strong>Kapha (Viscosity)</strong> down while accelerating <strong>Vāta (Speed)</strong>!
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.95rem' }}>
+                <GlowSlider
+                  label="वात Vāta · Kinetic Flux & Speed (V⃗)"
+                  value={lv.vata}
+                  min={10}
+                  max={95}
+                  step={2}
+                  color="#a855f7"
+                  valueText={`${lv.vata}% (Shear: ${lv.vata > 60 ? '⚠️ High' : '✓ Normal'})`}
+                  onChange={(v) => handleAdjustDosha('vata', v)}
+                />
+                <GlowSlider
+                  label="पित्त Pitta · Thermal Flux & Catalysis (ΔH)"
+                  value={lv.pitta}
+                  min={10}
+                  max={95}
+                  step={2}
+                  color="#f97316"
+                  valueText={`${lv.pitta}% (Heat: ${lv.pitta > 60 ? '🔥 Spiking' : '✓ Normal'})`}
+                  onChange={(v) => handleAdjustDosha('pitta', v)}
+                />
+                <GlowSlider
+                  label="कफ Kapha · Structural Viscosity & Density (ρ)"
+                  value={lv.kapha}
+                  min={10}
+                  max={95}
+                  step={2}
+                  color="#10b981"
+                  valueText={`${lv.kapha}% (Viscosity: ${lv.kapha > 60 ? '💧 Heavy' : '✓ Normal'})`}
+                  onChange={(v) => handleAdjustDosha('kapha', v)}
+                />
               </div>
 
-              <div className="vl-dials" style={{ marginTop: '1rem' }}>
-                <Dial label="🔥 Heat" value={env.heat} onChange={setParam('heat')} testId="slider-heat" color="#fb923c" />
-                <Dial label="❄️ Cold" value={env.cold} onChange={setParam('cold')} testId="slider-cold" color="#7dd3fc" />
-                <Dial label="🏜️ Dryness" value={env.dry} onChange={setParam('dry')} testId="slider-dry" color="#fcd34d" />
-                <Dial label="💧 Moisture" value={env.moist} onChange={setParam('moist')} testId="slider-moist" color="#38bdf8" />
-                <Dial label="🏃 Activity" value={env.activity} onChange={setParam('activity')} testId="slider-activity" color="#a78bfa" />
+              {/* Environmental Dial Controls */}
+              <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid rgba(148, 163, 184, 0.15)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
+                  <span className="vl-slider-label">Ṛtu · Seasonal Stressor</span>
+                  <span style={{ fontSize: '0.78rem', color: '#f59e0b', fontWeight: 700 }}>
+                    {RITU[env.ritu].iast.toUpperCase()} ({RITU[env.ritu].dev})
+                  </span>
+                </div>
+                <div className="vl-leds" role="radiogroup" aria-label="Season">
+                  {RITU_ORDER.map((r) => (
+                    <LedButton
+                      key={r}
+                      kind="radio"
+                      on={env.ritu === r}
+                      color="#facc15"
+                      onClick={() => setEnv((x) => ({ ...x, ritu: r }))}
+                      testId={`ritu-${r}`}
+                      title={RITU[r].en}
+                    >
+                      <span lang="sa">{RITU[r].dev}</span> {RITU[r].iast}
+                    </LedButton>
+                  ))}
+                </div>
+
+                <div className="vl-dials" style={{ marginTop: '0.85rem' }}>
+                  <Dial label="🔥 Heat" value={env.heat} onChange={setParam('heat')} testId="slider-heat" color="#fb923c" />
+                  <Dial label="❄️ Cold" value={env.cold} onChange={setParam('cold')} testId="slider-cold" color="#7dd3fc" />
+                  <Dial label="🏜️ Dryness" value={env.dry} onChange={setParam('dry')} testId="slider-dry" color="#fcd34d" />
+                  <Dial label="💧 Moisture" value={env.moist} onChange={setParam('moist')} testId="slider-moist" color="#38bdf8" />
+                  <Dial label="🏃 Activity" value={env.activity} onChange={setParam('activity')} testId="slider-activity" color="#a78bfa" />
+                </div>
               </div>
-              <p className="vl-small" style={{ marginTop: '0.65rem' }}>
-                💡 <em>Thermodynamic Interdependence:</em> Increasing heat directly elevates thermal flux (Pitta),
-                which fluidizes structural polymers (Kapha ↓) and accelerates molecular speed (Vāta ↑).
-              </p>
             </div>
 
-            {/* Right Column: Live Vector Triangle & Thermodynamic Gauges */}
+            {/* Right Column: Live Vector Triangle & Mini Cell Response */}
             <div className="vl-vector-triangle-card">
               <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                 <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#7dd3fc' }}>
-                  📐 TRI-DOṢA THERMODYNAMIC VECTOR TRIANGLE
+                  📐 TRI-DOṢA VECTOR TRIANGLE &amp; CENTROID
                 </span>
                 <span
                   style={{
@@ -963,7 +1204,7 @@ export const PrakritiBalance: React.FC = () => {
               </div>
 
               {/* Equilateral Vector Triangle SVG */}
-              <svg viewBox="0 0 320 250" style={{ width: '100%', maxHeight: '230px' }} data-testid="prakriti-stage">
+              <svg viewBox="0 0 320 250" style={{ width: '100%', maxHeight: '220px' }} data-testid="prakriti-stage">
                 {/* Triangle Base */}
                 <polygon
                   points="160,30 40,210 280,210"
@@ -1007,6 +1248,21 @@ export const PrakritiBalance: React.FC = () => {
                 <circle cx={centroid.x} cy={centroid.y} r={16} fill="none" stroke={allSama ? '#34d399' : '#f43f5e'} strokeWidth={1} opacity={0.6} />
               </svg>
 
+              {/* Live Morphing Cell Mini Preview */}
+              <div style={{ width: '100%', marginTop: '0.75rem', background: 'rgba(2, 6, 23, 0.7)', borderRadius: '10px', padding: '0.45rem', border: '1px solid rgba(56, 189, 248, 0.15)' }}>
+                <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block', marginBottom: '0.2rem', textAlign: 'center' }}>
+                  LIVE MEMBRANE MORPHING RESPONSE
+                </span>
+                <DynamicCellSvg
+                  lv={lv}
+                  env={env}
+                  selectedOrganelle={selectedOrganelle}
+                  onSelectOrganelle={handleSelectOrganelle}
+                  time={animTick}
+                  mini={true}
+                />
+              </div>
+
               {/* Vector Readings Bar */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.65rem', width: '100%', marginTop: '0.75rem' }}>
                 {DOSHA.map((d) => (
@@ -1030,7 +1286,7 @@ export const PrakritiBalance: React.FC = () => {
             </div>
           </div>
 
-          <div className={`vl-sama ${allSama ? 'is-ok' : ''}`} role="status" data-testid="prakriti-status" style={{ marginTop: '1rem' }}>
+          <div className={`vl-sama ${allSama ? 'is-ok' : ''}`} role="status" data-testid="prakriti-status">
             {allSama
               ? '✨ समत्वम् · Samatva! All three biophysical vectors sit inside the 40–60% homeostatic equilibrium circle.'
               : 'Disruption Active! Deploy Dravya-Guṇa formulations or adjust seasonal stressors to bring the centroid inside the Samatva circle.'}
