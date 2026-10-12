@@ -7494,6 +7494,81 @@
   }
 }
 
+.vl-matrix-stepper-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 12px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.vl-stepper-step {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #94a3b8;
+  padding: 0.3rem 0.55rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.vl-stepper-step.is-current {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+}
+
+.vl-stepper-step.is-passed {
+  color: #86efac;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid #10b981;
+}
+
+.vl-stepper-step.is-ready {
+  color: #fde047;
+  border: 1px dashed rgba(250, 204, 21, 0.6);
+}
+
+.vl-stepper-step.is-locked {
+  opacity: 0.5;
+}
+
+.vl-stepper-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.vl-stepper-step.is-current .vl-stepper-num {
+  background: #38bdf8;
+  color: #04101e;
+}
+
+.vl-stepper-step.is-passed .vl-stepper-num {
+  background: #10b981;
+  color: #04101e;
+}
+
+.vl-stepper-arrow {
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
 .vl-matrix-action-toolbar {
   display: flex;
   gap: 0.65rem;
@@ -7511,11 +7586,50 @@
   transform: none !important;
 }
 
+.vl-matrix-action-toolbar .vl-btn.is-active {
+  border: 2px solid #38bdf8 !important;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.5) !important;
+  transform: translateY(-1px);
+}
+
 .vl-matrix-action-toolbar .vl-btn.is-completed {
   background: rgba(16, 185, 129, 0.15) !important;
   border-color: #10b981 !important;
   color: #86efac !important;
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.2) !important;
+}
+
+.vl-matrix-action-toolbar .vl-btn.is-unlocked {
+  border-color: #38bdf8 !important;
+  color: #e0f2fe !important;
+}
+
+.vl-matrix-action-toolbar .vl-btn.is-pulsing {
+  animation: vlActionPulse 1.8s infinite alternate ease-in-out;
+}
+
+@keyframes vlActionPulse {
+  0% {
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.8), 0 0 35px rgba(56, 189, 248, 0.35);
+    border-color: #38bdf8;
+  }
+}
+
+.vl-matrix-action-toolbar .vl-btn.is-unlocked-glow {
+  animation: vlGoldActionPulse 1.6s infinite alternate ease-in-out !important;
+}
+
+@keyframes vlGoldActionPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 28px rgba(250, 204, 21, 0.9), 0 0 40px rgba(234, 179, 8, 0.4);
+    border-color: #facc15;
+  }
 }
 
 .vl-matrix-guru-hud {
