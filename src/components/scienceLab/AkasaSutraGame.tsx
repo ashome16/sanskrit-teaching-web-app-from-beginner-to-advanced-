@@ -243,6 +243,45 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     explanation: 'Ākāśa is omnipresent and provides unobstructed space (Avakāśa). Only a vessel containing space within can function as a pot.',
     kanadaQuote: 'You cannot hold the board of space, but without space inside, no vessel could ever hold a single drop.',
   },
+  {
+    id: 6,
+    question: 'How did Sage Kaṇāda define the Trasareṇu (Tryaṇuka) as the epistemic bridge between mathematics and physical perception?',
+    options: [
+      'A) It is the largest planet visible in the night sky',
+      'B) It is the smallest macroscopic cluster (3 dyads / 6 atoms) capable of scattering sunlight, observed as a dancing mote in a window sunbeam',
+      'C) It is an imaginary mathematical point with no connection to observation',
+      'D) It is an indivisible particle with zero dimension',
+    ],
+    correctIndex: 1,
+    explanation: 'A Paramāṇu (0D) and Dvyaṇuka (1D) have no spatial volume and cannot scatter photons. Only when three dyads cluster into a Tryaṇuka does 3D volume (Mahatva) emerge, crossing the physical threshold of light scattering (Rayleigh/Mie threshold).',
+    kanadaQuote: 'The mote dancing in the sunbeam (त्रसरेणु) is where the invisible seed of matter first greets the eye of the observer.',
+  },
+  {
+    id: 7,
+    question: 'What is the Rigorous 3-Step Construction sequence from fundamental atoms to macroscopic physical reality?',
+    options: [
+      'A) 1. Dimerization (Dvyaṇuka) ➔ 2. Dimensional Emergence (Tryaṇuka) ➔ 3. Lattice Crystallization (Bhūta-Pracaya)',
+      'B) 1. Boiling ➔ 2. Freezing ➔ 3. Dissolving',
+      'C) 1. Complete Destruction ➔ 2. Chaos ➔ 3. Accidental Form',
+      'D) 1. Spinning wheel ➔ 2. Adding water ➔ 3. Painting color',
+    ],
+    correctIndex: 0,
+    explanation: 'Two 0D atoms dimerize into a Dvyaṇuka (Step 1), three dyads cluster into a 3D unit cell with volume (Step 2: Tryaṇuka), and billions of Tryaṇukas undergo long-range periodic lattice ordering (Step 3: Pracaya-Viśeṣa) to manifest macroscopic density and sensory signatures.',
+    kanadaQuote: 'From the imperceptible pair to the three-fold cluster, and thence to the macroscopic crystal lattice—such is the order of manifestation.',
+  },
+  {
+    id: 8,
+    question: 'In Vaiśeṣika ontology, which Padārtha guarantees that two identical Paramāṇus of Earth never lose their unique identity?',
+    options: [
+      'A) Sāmānya (Generality / Universals)',
+      'B) Viśeṣa (Ultimate Quantum Individuality)',
+      'C) Karma (Kinetic Action)',
+      'D) Abhāva (Absence)',
+    ],
+    correctIndex: 1,
+    explanation: 'Viśeṣa is the category of ultimate distinctness inhering in eternal, indivisible atoms, preventing primordial particles from collapsing into identical indistinguishability.',
+    kanadaQuote: 'Each eternal seed carries its own ultimate uniqueness (Viśeṣa); without it, the universe would collapse into indistinguishable uniformity.',
+  },
 ];
 
 // =========================================================================

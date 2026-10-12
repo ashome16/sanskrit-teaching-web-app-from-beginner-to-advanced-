@@ -77,50 +77,190 @@ const FUNNY_GURU_QUOTES = [
 ];
 
 const TERMS: LabTerm[] = [
-  { dev: 'परमाणु', iast: 'paramāṇu', en: 'the smallest, indivisible, imperceptible particle', note: 'parama (utmost) + aṇu (tiny)' },
-  { dev: 'द्व्यणुक', iast: 'dvyaṇuka', en: 'two paramāṇus joined into a Dvyaṇuka [द्व्यणुकम्]', note: 'still too small to see' },
-  { dev: 'त्र्यणुक', iast: 'tryaṇuka', en: 'three dvyaṇukas joined into a Tryaṇuka [त्र्यणुकम्]', note: 'also called trasareṇu; the first perceptible size' },
-  { dev: 'त्रसरेणु', iast: 'trasareṇu', en: 'a mote seen dancing in a sunbeam', note: 'the classic comparison for a tryaṇuka' },
-  { dev: 'कणाद', iast: 'Kaṇāda', en: 'sage to whom the Vaiśeṣika Sūtra is attributed' },
-  { dev: 'अदृष्ट', iast: 'adṛṣṭa', en: 'the unseen cosmic moral/physical order', note: 'drives primal combination of atoms' },
-  { dev: 'नित्य-कारण', iast: 'nitya kāraṇa', en: 'eternal uncaused foundation', note: 'paramāṇu has no parts and no cause' },
-  { dev: 'अनित्य-कार्य', iast: 'anitya kārya', en: 'transient emergent effect', note: 'all compounds are created and dissolvable' },
-  { dev: 'पृथिवी', iast: 'pṛthivī', en: 'earth', note: 'special quality: gandha (smell)' },
-  { dev: 'अप्', iast: 'ap', en: 'water', note: 'special quality: rasa (taste)' },
-  { dev: 'तेजस्', iast: 'tejas', en: 'fire / light', note: 'special quality: rūpa (colour, form)' },
-  { dev: 'वायु', iast: 'vāyu', en: 'air', note: 'special quality: sparśa (touch)' },
-  { dev: 'आकाश', iast: 'ākāśa', en: 'ether / space', note: 'quality: śabda (sound); one and all-pervading, not atomic' },
+  // 1. Fundamental Atomic Units (परमाणु-सिद्धान्तः)
+  { dev: 'परमाणु', iast: 'paramāṇu', en: 'the smallest, indivisible, imperceptible particle (0D point)', note: 'parama (utmost) + aṇu (tiny); eternal uncaused seed' },
+  { dev: 'द्व्यणुक', iast: 'dvyaṇuka', en: 'binary dyad: two paramāṇus joined by kinetic conjunction (1D line)', note: 'possesses minuteness (aṇutva) and short length (hrasvatva); imperceptible' },
+  { dev: 'त्र्यणुक', iast: 'tryaṇuka', en: 'triad: three dvyaṇukas clustered in 3D spatial arrangement (3D volume)', note: 'also called trasareṇu; the fundamental threshold of visual magnitude (mahattva)' },
+  { dev: 'त्रसरेणु', iast: 'trasareṇu', en: 'the epistemic bridge: a dust mote dancing in a shaft of sunlight', note: 'smallest macroscopic unit capable of scattering electromagnetic light waves' },
+  { dev: 'अदृष्ट', iast: 'adṛṣṭa', en: 'the unseen cosmic moral/physical order', note: 'catalytic driver of initial atomic motion and creation' },
+  { dev: 'नित्य-कारण', iast: 'nitya kāraṇa', en: 'eternal uncaused foundation', note: 'paramāṇu has no composite parts and cannot be destroyed' },
+  { dev: 'अनित्य-कार्य', iast: 'anitya kārya', en: 'transient emergent effect / compound', note: 'all physical compounds from dvyaṇukas to mountains are created and dissolvable' },
+
+  // 2. The 3-Step Construction Framework (स्थूल-द्रव्य-निर्माणम्)
+  { dev: 'संयोग', iast: 'saṁyoga', en: 'binary conjunction / contact', note: 'Step 1: localized conjunction driving dimerization' },
+  { dev: 'अणुत्व', iast: 'aṇutva', en: 'atomic minuteness', note: 'the irreducible scalar magnitude of an isolated paramāṇu' },
+  { dev: 'ह्रस्वत्व', iast: 'hrasvatva', en: 'short linear measure', note: 'the one-dimensional length property of a dvyaṇuka dyad' },
+  { dev: 'प्रचय', iast: 'pracaya', en: 'triadic spatial clustering / non-coplanar aggregation', note: 'Step 2: folding 3 dyads into a 3D unit cell' },
+  { dev: 'महत्त्व', iast: 'mahattva', en: 'spatial magnitude / 3D structural volume', note: 'emergent dimensional extension enabling physical visibility' },
+  { dev: 'प्रचय-विशेष', iast: 'pracaya-viśeṣa', en: 'macroscopic lattice ordering / space group symmetry', note: 'Step 3: long-range periodic crystal packing dictating macroscopic density' },
+  { dev: 'कठिनत्व', iast: 'kaṭhinatva', en: 'structural cohesion and mechanical hardness', note: 'emergent property dictated by the atomic packing factor (APF)' },
+  { dev: 'चाक्षुष', iast: 'cākṣuṣa', en: 'perceptible to the visual faculty (ocularly visible)', note: 'property unlocked exclusively at the tryaṇuka / trasareṇu threshold' },
+  { dev: 'अतीन्द्रिय', iast: 'atīndriya', en: 'trans-sensory / beyond the threshold of human senses', note: 'solitary paramāṇus and binary dyads are atīndriya (imperceptible)' },
+
+  // 3. The Epistemic Bridge to Perception (कणाद-प्रमाण-सेतुः)
+  { dev: 'जालसूर्यमरीचि', iast: 'jālasūryamarīci', en: 'sunbeam through a latticed window', note: 'classical empirical laboratory setting for observing trasareṇu motes' },
+  { dev: 'प्रकीर्णन', iast: 'prakīrṇana', en: 'light scattering (Rayleigh & Mie scattering)', note: 'photons interacting with particles comparable to electromagnetic wavelengths' },
+  { dev: 'अनुमान', iast: 'anumāna', en: 'rational deduction / logical inference', note: 'method used by Kaṇāda to derive indivisible atoms from observed sunbeam motes' },
+  { dev: 'प्रत्यक्ष', iast: 'pratyakṣa', en: 'direct sensory perception / empirical observation', note: 'the sensory threshold crossed when tryaṇukas scatter sunlight' },
+
+  // 4. The Six Padārthas (वैशेषिक षट्-पदार्थाः)
+  { dev: 'पदार्थ', iast: 'padārtha', en: 'category of knowable reality (ontological category)', note: '“pada-artha” = that which can be named, known, and conceptualized' },
+  { dev: 'द्रव्य', iast: 'dravya', en: 'substance / ontological substrate', note: 'the foundational substrate containing qualities and kinetic actions (9 dravyas)' },
+  { dev: 'गुण', iast: 'guṇa', en: 'inherent quality / static energetic property', note: '24 classical qualities (smell, taste, color, touch, number, dimension, etc.)' },
+  { dev: 'कर्म', iast: 'karma', en: 'motion / dynamic kinematics', note: '5 motions: utkṣepaṇa (up), avakṣepaṇa (down), ākuñcana (contraction), prasāraṇa (expansion), gamana (locomotion)' },
+  { dev: 'सामान्य', iast: 'sāmānya', en: 'generality / universal essence', note: 'the common generic identity shared across multiple individuals (e.g. dravyatva, gotva)' },
+  { dev: 'विशेष', iast: 'viśeṣa', en: 'ultimate individuality / quantum differentiation', note: 'the unique metaphysical signature distinguishing two otherwise identical paramāṇus' },
+  { dev: 'समवाय', iast: 'samavāya', en: 'inseparable inherence / structural binding', note: 'eternal organic relation binding quality to substance, whole to parts, action to mover' },
+  { dev: 'अभाव', iast: 'abhāva', en: 'non-existence / categorical absence', note: 'the 7th ontological category added in later Nyāya-Vaiśeṣika' },
+
+  // 5. Dynamic Guṇa Matrix & Chemical Transformations (गुण-पाक-प्रक्रिया)
+  { dev: 'स्नेह', iast: 'sneha', en: 'viscidity / cohesive intermolecular bonding', note: 'exclusive to Ap (water); enables clay particles to cohere into dough' },
+  { dev: 'द्रवत्व', iast: 'dravatva', en: 'fluidity / ability to flow', note: 'present in water inherently, and in earth/metals when melted by heat' },
+  { dev: 'उष्ण', iast: 'uṣṇa', en: 'heat / thermal energy', note: 'catalyst that disrupts atomic conjunctions and triggers quality transformation' },
+  { dev: 'पीलुपाक', iast: 'pīlupāka', en: 'atom-by-atom thermal baking (Vaiśeṣika doctrine)', note: 'pīlu (atom) + pāka (baking); heat dissociates compounds to atomic level before recombining' },
+  { dev: 'पिठरपाक', iast: 'piṭharapāka', en: 'holistic vessel baking (Nyāya doctrine)', note: 'piṭhara (pot) + pāka (baking); heat transforms properties through porous channels without atomic disruption' },
+
+  // 6. The Five Elemental Bhūtas (पञ्च-महाभूतानि)
+  { dev: 'पृथिवी', iast: 'pṛthivī', en: 'earth element', note: 'special defining quality: gandha (smell); solid state ballast' },
+  { dev: 'अप्', iast: 'ap', en: 'water element', note: 'special defining quality: rasa (taste); provides cohesive sneha' },
+  { dev: 'तेजस्', iast: 'tejas', en: 'fire / radiant energy', note: 'special defining quality: rūpa (color, form, radiation); drives pāka' },
+  { dev: 'वायु', iast: 'vāyu', en: 'air / gaseous kinetic medium', note: 'special defining quality: sparśa (touch, pressure); drives kinetic momentum' },
+  { dev: 'आकाश', iast: 'ākāśa', en: 'ether / continuous all-pervading space', note: 'special defining quality: śabda (sound); singular, infinite continuum (vibhu)' },
+
+  // 7. Sage Kaṇāda & Methodology (महर्षि-कणादः)
+  { dev: 'कणाद', iast: 'Kaṇāda', en: 'Sage Kaṇāda (Maharishi Kaṇāda / Kāśyapa)', note: 'kaṇa (atom/grain) + ada (gatherer/eater); pioneer of Indian atomism (~6th c. BCE)' },
+  { dev: 'शीलोञ्छ-वृत्ति', iast: 'śīloñcha-vṛtti', en: 'austere gleaning vow of field grains', note: 'ascetic practice of collecting fallen grains; mirrored his search for the ultimate particle of matter' },
 ];
 
 const CHALLENGES: LabChallenge[] = [
+  // Challenge 1: Dvyaṇuka Dimerization
   {
-    q: 'How many paramāṇus join to make one dvyaṇuka?',
-    options: ['1', '2', '3', '4'],
+    q: 'How many zero-dimensional paramāṇus join in Step 1 (Dimerization) to make one Dvyaṇuka?',
+    options: ['1 paramāṇu', '2 paramāṇus', '3 paramāṇus', '6 paramāṇus'],
     answer: 1,
-    explain: 'Dvi means two: a dvyaṇuka is an indivisible pair of two identical paramāṇus.',
+    explain: 'Dvi means two: two 0D indivisible paramāṇus undergo localized conjunction (saṁyoga) driven by kinetic karma to forge an imperceptible 1D dyad (dvyaṇuka).',
   },
+  // Challenge 2: Tryaṇuka / Trasareṇu Composition
   {
-    q: 'In the classical Vaiśeṣika account, a tryaṇuka (trasareṇu) is composed of…',
-    options: ['three paramāṇus', 'three dvyaṇukas (six paramāṇus)', 'two dvyaṇukas', 'pure ākāśa'],
-    answer: 1,
-    explain: 'Three dvyaṇukas (six paramāṇus in total) constitute a tryaṇuka, reaching the threshold of visual perception.',
-  },
-  {
-    q: 'Why is ākāśa the background canvas in this builder, rather than an atom in the tray?',
+    q: 'In Sage Kaṇāda’s framework, what constitutes a Tryaṇuka (Trasareṇu)?',
     options: [
-      'It is too heavy to lift',
-      'In Vaiśeṣika it is one, continuous, and all-pervading (vibhu), not made of atomic parts',
-      'It was an accidental omission by early commentators',
-      'It is chemically identical to vāyu',
+      'Three isolated paramāṇus',
+      'Three dvyaṇukas (six paramāṇus total) clustered in 3D',
+      'Two dvyaṇukas and one fire atom',
+      'An infinite cloud of unbonded energy',
     ],
     answer: 1,
-    explain: 'Ākāśa is one of the five mahābhūtas, but Vaiśeṣika categorizes it as a singular, infinite continuum that provides space for all atomic actions.',
+    explain: 'Three linear dvyaṇukas cluster in a non-coplanar spatial arrangement (pracaya) to compose a Tryaṇuka (6 paramāṇus in total), breaking through into three-dimensional volume.',
   },
+  // Challenge 3: Epistemic Bridge to Perception
   {
-    q: 'What is the special sensory quality (guṇa) belonging solely to Pṛthivī (Earth)?',
-    options: ['Śabda (sound)', 'Gandha (smell)', 'Rasa (taste)', 'Rūpa (light/form)'],
+    q: 'Why does human visual perception suddenly emerge at the Tryaṇuka / Trasareṇu level, but not at the Dvyaṇuka level?',
+    options: [
+      'Dvyaṇukas are repelled by human retinas',
+      'A Dvyaṇuka has length but zero volume; only triadic clustering introduces 3D spatial magnitude (Mahatva) capable of scattering light waves',
+      'Dvyaṇukas only exist in total darkness',
+      'Tryaṇukas possess psychic consciousness',
+    ],
     answer: 1,
-    explain: 'Gandha (smell) is the exclusive defining guṇa of earth atoms; wherever smell resides, pṛthivī is present.',
+    explain: 'Kaṇāda deduced that zero-dimensional atoms and one-dimensional dyads possess no spatial volume. Only when three dyads fold into 3D does spatial magnitude (Mahatva) emerge, reaching the Rayleigh/Mie threshold where electromagnetic light waves scatter.',
+  },
+  // Challenge 4: The Sunbeam Window Mote
+  {
+    q: 'What real-world empirical observation led Sage Kaṇāda to deduce the Trasareṇu as the smallest visible unit of matter?',
+    options: [
+      'Sparks flying from a blacksmith’s anvil',
+      'Microscopic dust motes dancing in a shaft of sunlight streaming through a lattice window (Jāla-sūrya-marīci)',
+      'Water droplets condensing on a cold copper pot',
+      'Grains of sand rolling down a riverbank',
+    ],
+    answer: 1,
+    explain: 'Vaiśeṣika Sūtra 4.1.6 identifies the dancing dust mote illuminated in a window sunbeam (जालसूर्यमरीचिस्थं त्रसरेणुम्) as the absolute smallest macroscopic entity accessible to the visual sense (cākṣuṣa).',
+  },
+  // Challenge 5: Step 3 Macroscopic Crystallization
+  {
+    q: 'In Step 3 of the Bhoota Reconstructor, how does macroscopic bulk matter acquire density and definitive sensory qualities (like Earth’s Gandha)?',
+    options: [
+      'Individual atoms each have tiny noses and smell',
+      'Through Pracaya-Viśeṣa: long-range periodic geometric lattice ordering where collective packing symmetry triggers emergent sensory signatures',
+      'By dipping the atoms in chemical liquid',
+      'Through spontaneous magical manifestation without cause',
+    ],
+    answer: 1,
+    explain: 'Pracaya-Viśeṣa (macroscopic arrangement and crystal space-group symmetry) dictates material density and triggers the emergent manifestation of definitive sensory signatures (like Earth’s smell and hardness).',
+  },
+  // Challenge 6: The Six Padārthas - Inseparable Inherence
+  {
+    q: 'Which of the Six Padārthas (षट्-पदार्थाः) represents the eternal, inseparable bond between a substance and its inherent quality (e.g. terracotta ceramic and its red color)?',
+    options: ['Karma (Action)', 'Sāmānya (Universal)', 'Samavāya (Inseparable Inherence)', 'Viśeṣa (Individuality)'],
+    answer: 2,
+    explain: 'Samavāya is the eternal, structural inherence relation. Unlike temporary contact (saṁyoga), you cannot remove a quality (like redness or scent) from its inhering substrate without destroying the substance itself.',
+  },
+  // Challenge 7: Kinematics - The 5 Karmas
+  {
+    q: 'In Vaiśeṣika kinematics, how many fundamental types of physical action (Karma) are recognized?',
+    options: [
+      '2 (Forward and Backward)',
+      '5 (Upward, Downward, Contraction, Expansion, and General Locomotion)',
+      '10 (One for each cardinal direction)',
+      'Infinite chaotic movements',
+    ],
+    answer: 1,
+    explain: 'Vaiśeṣika classifies all motion into 5 distinct Karmas: Utkṣepaṇa (upward), Avakṣepaṇa (downward), Ākuñcana (contraction), Prasāraṇa (expansion), and Gamana (locomotion/translation).',
+  },
+  // Challenge 8: Chemical Debate - Pīlupāka vs Piṭharapāka
+  {
+    q: 'How does Sage Kaṇāda’s Pīlupāka theory of ceramic baking differ from the rival Nyāya school’s Piṭharapāka theory?',
+    options: [
+      'Kaṇāda claimed pots cannot be baked with fire',
+      'Pīlupāka asserts heat dissociates compounds down to individual paramāṇus before changing qualities, whereas Piṭharapāka asserts the entire pot transforms as a whole through porous heat penetration',
+      'Piṭharapāka claims atoms are destroyed forever',
+      'There is no difference between the two theories',
+    ],
+    answer: 1,
+    explain: 'Pīlu means atom: Vaiśeṣika argues thermal energy breaks all dyadic bonds, alters atomic qualities (dark clay -> red ceramic), and re-crystallizes them. Nyāya argues the pot remains structurally intact while heat permeates its microscopic pores (piṭhara).',
+  },
+  // Challenge 9: Dynamic Guṇa Matrix & States of Matter
+  {
+    q: 'Why are solid, liquid, and gas regarded as dynamic fluid states rather than rigid phases in Vaiśeṣika physics?',
+    options: [
+      'Because ancient India had no thermometers',
+      'Because states are an emergent continuum governed by varying proportions of cohesive viscosity (Sneha), fluidity (Dravatva), and thermal energy (Uṣṇa)',
+      'Because matter changes state only once every hundred years',
+      'Because only water can change shape',
+    ],
+    answer: 1,
+    explain: 'In the Dynamic Guṇa Matrix, solid, liquid, and gas are not rigid modern phase categories, but fluid combinations of underlying qualitative energies (Sneha, Dravatva, Uṣṇa) modulated by thermal input.',
+  },
+  // Challenge 10: 4-Step Synthesis Sequence
+  {
+    q: 'In the Dynamic Guṇa Matrix lab, what is the correct operational sequence to resolve the Oil & Water dilemma and synthesize an integrated compound?',
+    options: [
+      '1. Freeze -> 2. Shatter -> 3. Evaporate -> 4. Dissolve',
+      '1. Attempt Merge (Friction) ➔ 2. Inject Tejas (Break Mask) ➔ 3. Sweep Vāyu (Dynamic Soup) ➔ 4. Bind Samavāya in Ākāśa',
+      '1. Add Earth ➔ 2. Add Salt ➔ 3. Spin Wheel ➔ 4. Cool Down',
+      '1. Bind Samavāya first before adding any heat',
+    ],
+    answer: 1,
+    explain: 'The 4-step sequence models physical phase transitions: first confronting high Sneha friction, injecting Tejas to overcome latent transition barriers, sweeping Vāyu to disperse properties, and finally anchoring the unified compound through Samavāya.',
+  },
+  // Challenge 11: Quantum Uniqueness (Viśeṣa)
+  {
+    q: 'What ontological category in Vaiśeṣika explains why two solitary paramāṇus of Earth, identical in every measurable quality, remain distinct individual entities?',
+    options: ['Sāmānya (Generality)', 'Viśeṣa (Ultimate Individuality)', 'Abhāva (Absence)', 'Prakṛti (Nature)'],
+    answer: 1,
+    explain: 'Viśeṣa (from which Vaiśeṣika gets its name) is the ultimate differentiator that gives eternal, partless atoms their unique quantum individuality, preventing them from collapsing into indistinguishable identity.',
+  },
+  // Challenge 12: Dual Monikers of Sage Kaṇāda
+  {
+    q: 'What is the profound dual significance behind the name “Kaṇāda” (महर्षि-कणादः)?',
+    options: [
+      'It means a fierce warrior who fought in the Mahabharata',
+      'It honors both his scientific genius (analyzing the cosmos through infinitesimal particles / kaṇa) and his austere ascetic lifestyle (gleaning discarded grain seeds in harvested fields)',
+      'It refers to someone who sings melodious Vedic chants',
+      'It was a nickname given by Greek philosophers',
+    ],
+    answer: 1,
+    explain: 'Kaṇa means both atom/particle and grain of food. As a natural philosopher, he gathered fundamental atoms; as a yogi practicing Śīloñcha-vṛtti, he ate only single dropped grains gleaned from reaped fields.',
   },
 ];
 
@@ -136,6 +276,10 @@ const SORT_CARDS: SortCard[] = [
   { label: '🍃 A mountain breeze', answer: 'vayu', why: 'Continuous movement and pressure belong to vāyu.' },
   { label: '👃 Petrichor (smell of wet earth)', answer: 'prthivi', why: 'Smell (gandha) is the unique defining guṇa of pṛthivī.' },
   { label: '🔔 The resonant ringing of a temple bell', answer: 'akasha', why: 'Sound (śabda) propagates exclusively through the continuum of ākāśa.' },
+  { label: '☀️ Dancing dust mote in a sunbeam (Trasareṇu)', answer: 'prthivi', why: 'The Tryaṇuka particulate mote dancing in a sunbeam is solid earth matter (pṛthivī) scattering light.' },
+  { label: '🍯 Thick viscous molten honey', answer: 'ap', why: 'High viscidity (Sneha) and fluidity (Dravatva) characterize the cohesive fluid state governed by Ap.' },
+  { label: '⚡ Lightning bolt across the monsoon storm', answer: 'tejas', why: 'High-energy electrical thermal discharge and radiant illumination are Tejas (Vidyut).' },
+  { label: '🌪️ Whistling atmospheric pressure front', answer: 'vayu', why: 'Kinetic gas pressure, movement, and intangible touch are Vāyu.' },
 ];
 
 const SORT_BINS: { id: Bhuta | 'akasha'; label: string }[] = [
