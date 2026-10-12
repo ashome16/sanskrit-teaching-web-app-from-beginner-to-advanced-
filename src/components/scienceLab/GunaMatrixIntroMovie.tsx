@@ -201,6 +201,17 @@ const getIndianAccentVoice = (
   }
 };
 
+// Persistent module-level reference to prevent browser GC from prematurely killing active speech
+export let globalLiveUtterance: SpeechSynthesisUtterance | null = null;
+
+// Split text into natural conversational sentence units
+const splitIntoSentences = (text: string): string[] => {
+  const clean = formatForPleasantSpeech(text);
+  const matches = clean.match(/[^.!?]+[.!?]+|[^.!?]+$/g);
+  if (!matches || matches.length === 0) return [clean];
+  return matches.map((s) => s.trim()).filter((s) => s.length > 0);
+};
+
 interface GunaMatrixIntroMovieProps {
   onSwitchToInteractive: () => void;
 }
@@ -215,6 +226,8 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
   const [activeSpeaker, setActiveSpeaker] = useState<'Bodhi' | 'Kaṇāda' | null>(null);
 
   const autoPlayTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const currentSentenceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const keepaliveTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const isPlayingRef = useRef<boolean>(isPlaying);
   const isCancellingRef = useRef<boolean>(false);
   const act = MOVIE_ACTS[currentActIdx];
@@ -240,6 +253,24 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
     }
   }, []);
 
+  // Chrome speech synthesis keepalive heartbeat
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      keepaliveTimerRef.current = setInterval(() => {
+        if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+          window.speechSynthesis.pause();
+          window.speechSynthesis.resume();
+        }
+      }, 9000);
+    }
+    return () => {
+      if (keepaliveTimerRef.current) {
+        clearInterval(keepaliveTimerRef.current);
+        keepaliveTimerRef.current = null;
+      }
+    };
+  }, []);
+
   // Play corresponding sound effect when act changes
   useEffect(() => {
     if (act.soundType === 'friction') {
@@ -254,8 +285,88 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
     }
   }, [currentActIdx, act.soundType]);
 
+  // Sentence-by-sentence speaking queue with persistent GC protection
+  const speakSentences = (
+    sentences: string[],
+    voice: SpeechSynthesisVoice | null,
+    pitch: number,
+    rate: number,
+    volume: number,
+    speaker: 'Bodhi' | 'Kaṇāda',
+    onComplete: () => void
+  ) => {
+    if (!isPlayingRef.current || isCancellingRef.current) return;
+    if (!sentences || sentences.length === 0) {
+      onComplete();
+      return;
+    }
+
+    setActiveSpeaker(speaker);
+    let sIdx = 0;
+
+    const speakNextSentence = () => {
+      if (!isPlayingRef.current || isCancellingRef.current) {
+        globalLiveUtterance = null;
+        return;
+      }
+
+      if (sIdx >= sentences.length) {
+        globalLiveUtterance = null;
+        onComplete();
+        return;
+      }
+
+      const sentenceText = sentences[sIdx].trim();
+      if (!sentenceText) {
+        sIdx++;
+        speakNextSentence();
+        return;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(sentenceText);
+      utterance.volume = volume;
+      utterance.pitch = pitch;
+      utterance.rate = rate;
+      if (voice) utterance.voice = voice;
+
+      // Keep persistent reference in both module and window to defeat GC
+      globalLiveUtterance = utterance;
+      if (typeof window !== 'undefined') {
+        (window as any).__liveGunaUtterance = utterance;
+      }
+
+      utterance.onend = () => {
+        globalLiveUtterance = null;
+        if (!isPlayingRef.current || isCancellingRef.current) return;
+        sIdx++;
+        // Natural 180ms breath pause between sentences
+        currentSentenceTimerRef.current = setTimeout(() => {
+          speakNextSentence();
+        }, 180);
+      };
+
+      utterance.onerror = (e) => {
+        globalLiveUtterance = null;
+        if (!isPlayingRef.current || isCancellingRef.current) return;
+        if (e && (e.error === 'canceled' || e.error === 'interrupted')) return;
+        sIdx++;
+        currentSentenceTimerRef.current = setTimeout(() => {
+          speakNextSentence();
+        }, 100);
+      };
+
+      window.speechSynthesis.speak(utterance);
+    };
+
+    speakNextSentence();
+  };
+
   // Handle Speech & Auto-Play Transition Loop
   useEffect(() => {
+    if (currentSentenceTimerRef.current) {
+      clearTimeout(currentSentenceTimerRef.current);
+      currentSentenceTimerRef.current = null;
+    }
     if (autoPlayTimerRef.current) {
       clearTimeout(autoPlayTimerRef.current);
       autoPlayTimerRef.current = null;
@@ -263,6 +374,7 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
 
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       window.speechSynthesis.cancel();
+      globalLiveUtterance = null;
       setActiveSpeaker(null);
     }
 
@@ -286,85 +398,66 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
     // Two-turn speech orchestration: Bodhi first, then Maharṣi Kaṇāda
     const speakBodhi = () => {
       if (!isPlayingRef.current || isCancellingRef.current) return;
-      setActiveSpeaker('Bodhi');
-
-      const cleanText = formatForPleasantSpeech(act.bodhiQuestion);
-      const utterance = new SpeechSynthesisUtterance(cleanText);
-      utterance.volume = 0.78;
-      utterance.pitch = 1.08; // Youthful disciple
-      utterance.rate = speedMultiplier === 1 ? 0.92 : 1.15;
+      const bodhiSentences = splitIntoSentences(act.bodhiQuestion);
       const voice = getIndianAccentVoice('Bodhi');
-      if (voice) utterance.voice = voice;
 
-      utterance.onend = () => {
-        if (!isPlayingRef.current || isCancellingRef.current) return;
-        autoPlayTimerRef.current = setTimeout(() => {
+      speakSentences(
+        bodhiSentences,
+        voice,
+        1.08,
+        speedMultiplier === 1 ? 0.92 : 1.15,
+        0.78,
+        'Bodhi',
+        () => {
           if (!isPlayingRef.current || isCancellingRef.current) return;
-          speakKanada();
-        }, 700);
-      };
-      utterance.onerror = (e) => {
-        if (!isPlayingRef.current || isCancellingRef.current) return;
-        if (e && (e.error === 'canceled' || e.error === 'interrupted')) return;
-        autoPlayTimerRef.current = setTimeout(() => {
-          if (!isPlayingRef.current || isCancellingRef.current) return;
-          speakKanada();
-        }, 500);
-      };
-
-      window.speechSynthesis.speak(utterance);
+          setActiveSpeaker(null);
+          autoPlayTimerRef.current = setTimeout(() => {
+            if (!isPlayingRef.current || isCancellingRef.current) return;
+            speakKanada();
+          }, 650);
+        }
+      );
     };
 
     const speakKanada = () => {
       if (!isPlayingRef.current || isCancellingRef.current) return;
-      setActiveSpeaker('Kaṇāda');
-
-      const fullKanadaText = act.kanadaConclusion
+      const fullText = act.kanadaConclusion
         ? `${act.kanadaAnswer} ${act.kanadaConclusion}`
         : act.kanadaAnswer;
-      const cleanText = formatForPleasantSpeech(fullKanadaText);
-      const utterance = new SpeechSynthesisUtterance(cleanText);
-      utterance.volume = 0.84;
-      utterance.pitch = 0.86; // Deep meditative guru
-      utterance.rate = speedMultiplier === 1 ? 0.84 : 1.05;
+      const kanadaSentences = splitIntoSentences(fullText);
       const voice = getIndianAccentVoice('Kaṇāda');
-      if (voice) utterance.voice = voice;
 
-      utterance.onend = () => {
-        setActiveSpeaker(null);
-        if (!isPlayingRef.current || isCancellingRef.current) return;
-        autoPlayTimerRef.current = setTimeout(() => {
+      speakSentences(
+        kanadaSentences,
+        voice,
+        0.86,
+        speedMultiplier === 1 ? 0.85 : 1.05,
+        0.84,
+        'Kaṇāda',
+        () => {
+          setActiveSpeaker(null);
           if (!isPlayingRef.current || isCancellingRef.current) return;
-          if (currentActIdx < MOVIE_ACTS.length - 1) {
-            setCurrentActIdx((i) => i + 1);
-            soundEffects.playStrokeChime();
-          } else {
-            isPlayingRef.current = false;
-            setIsPlaying(false);
-          }
-        }, act.actNumber === 4 ? 4000 : 2000);
-      };
-      utterance.onerror = (e) => {
-        setActiveSpeaker(null);
-        if (!isPlayingRef.current || isCancellingRef.current) return;
-        if (e && (e.error === 'canceled' || e.error === 'interrupted')) return;
-        autoPlayTimerRef.current = setTimeout(() => {
-          if (!isPlayingRef.current || isCancellingRef.current) return;
-          if (currentActIdx < MOVIE_ACTS.length - 1) {
-            setCurrentActIdx((i) => i + 1);
-          } else {
-            isPlayingRef.current = false;
-            setIsPlaying(false);
-          }
-        }, 1500);
-      };
-
-      window.speechSynthesis.speak(utterance);
+          autoPlayTimerRef.current = setTimeout(() => {
+            if (!isPlayingRef.current || isCancellingRef.current) return;
+            if (currentActIdx < MOVIE_ACTS.length - 1) {
+              setCurrentActIdx((i) => i + 1);
+              soundEffects.playStrokeChime();
+            } else {
+              isPlayingRef.current = false;
+              setIsPlaying(false);
+            }
+          }, act.actNumber === 4 ? 3500 : 1800);
+        }
+      );
     };
 
     speakBodhi();
 
     return () => {
+      if (currentSentenceTimerRef.current) {
+        clearTimeout(currentSentenceTimerRef.current);
+        currentSentenceTimerRef.current = null;
+      }
       if (autoPlayTimerRef.current) {
         clearTimeout(autoPlayTimerRef.current);
         autoPlayTimerRef.current = null;
@@ -372,6 +465,7 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
       if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
         window.speechSynthesis.cancel();
       }
+      globalLiveUtterance = null;
     };
   }, [currentActIdx, isPlaying, speedMultiplier, voiceEnabled]);
 
@@ -383,6 +477,10 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
     if (!nextState) {
       // PAUSING: stop speech and all pending timers immediately
       isCancellingRef.current = true;
+      if (currentSentenceTimerRef.current) {
+        clearTimeout(currentSentenceTimerRef.current);
+        currentSentenceTimerRef.current = null;
+      }
       if (autoPlayTimerRef.current) {
         clearTimeout(autoPlayTimerRef.current);
         autoPlayTimerRef.current = null;
@@ -390,6 +488,7 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
       if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
         window.speechSynthesis.cancel();
       }
+      globalLiveUtterance = null;
       setActiveSpeaker(null);
       setTimeout(() => {
         isCancellingRef.current = false;
@@ -401,12 +500,17 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
   };
 
   const handleNext = () => {
+    if (currentSentenceTimerRef.current) {
+      clearTimeout(currentSentenceTimerRef.current);
+      currentSentenceTimerRef.current = null;
+    }
     if (autoPlayTimerRef.current) {
       clearTimeout(autoPlayTimerRef.current);
       autoPlayTimerRef.current = null;
     }
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       window.speechSynthesis.cancel();
+      globalLiveUtterance = null;
       setActiveSpeaker(null);
     }
     if (currentActIdx < MOVIE_ACTS.length - 1) {
@@ -418,12 +522,17 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
   };
 
   const handlePrev = () => {
+    if (currentSentenceTimerRef.current) {
+      clearTimeout(currentSentenceTimerRef.current);
+      currentSentenceTimerRef.current = null;
+    }
     if (autoPlayTimerRef.current) {
       clearTimeout(autoPlayTimerRef.current);
       autoPlayTimerRef.current = null;
     }
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       window.speechSynthesis.cancel();
+      globalLiveUtterance = null;
       setActiveSpeaker(null);
     }
     if (currentActIdx > 0) {
@@ -435,12 +544,17 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
   };
 
   const handleReplay = () => {
+    if (currentSentenceTimerRef.current) {
+      clearTimeout(currentSentenceTimerRef.current);
+      currentSentenceTimerRef.current = null;
+    }
     if (autoPlayTimerRef.current) {
       clearTimeout(autoPlayTimerRef.current);
       autoPlayTimerRef.current = null;
     }
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       window.speechSynthesis.cancel();
+      globalLiveUtterance = null;
       setActiveSpeaker(null);
     }
     setCurrentActIdx(0);
@@ -452,7 +566,16 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
   // Re-hear a specific speaker's dialogue turn
   const handleManualSpeakTurn = (speaker: 'Bodhi' | 'Kaṇāda') => {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+    if (currentSentenceTimerRef.current) {
+      clearTimeout(currentSentenceTimerRef.current);
+      currentSentenceTimerRef.current = null;
+    }
+    if (autoPlayTimerRef.current) {
+      clearTimeout(autoPlayTimerRef.current);
+      autoPlayTimerRef.current = null;
+    }
     window.speechSynthesis.cancel();
+    globalLiveUtterance = null;
 
     const text =
       speaker === 'Bodhi'
@@ -460,24 +583,15 @@ export const GunaMatrixIntroMovie: React.FC<GunaMatrixIntroMovieProps> = ({
         : act.kanadaConclusion
         ? `${act.kanadaAnswer} ${act.kanadaConclusion}`
         : act.kanadaAnswer;
-    const cleanText = formatForPleasantSpeech(text);
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.volume = 0.8;
+
+    const sentences = splitIntoSentences(text);
     const voice = getIndianAccentVoice(speaker);
-    if (voice) utterance.voice = voice;
+    const pitch = speaker === 'Bodhi' ? 1.08 : 0.86;
+    const rate = speaker === 'Bodhi' ? 0.92 : 0.85;
 
-    if (speaker === 'Bodhi') {
-      utterance.pitch = 1.08;
-      utterance.rate = 0.92;
-    } else {
-      utterance.pitch = 0.86;
-      utterance.rate = 0.84;
-    }
-
-    setActiveSpeaker(speaker);
-    utterance.onend = () => setActiveSpeaker(null);
-    utterance.onerror = () => setActiveSpeaker(null);
-    window.speechSynthesis.speak(utterance);
+    speakSentences(sentences, voice, pitch, rate, 0.8, speaker, () => {
+      setActiveSpeaker(null);
+    });
   };
 
   return (
