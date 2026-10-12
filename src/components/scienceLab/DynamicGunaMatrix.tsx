@@ -823,17 +823,6 @@ export const DynamicGunaMatrix: React.FC = () => {
                 {currentStage === 4 && 'Samavāya Inherence Achieved (Trasareṇu Created)'}
               </strong>
             </div>
-            <div className="vl-stage-status-chips">
-              <span className="vl-status-chip">
-                {currentStage < 4 ? 'Atoms: 56 Paramāṇus' : 'Atoms: Dancing Trasareṇu Motes'}
-              </span>
-              <span className="vl-status-chip">
-                {currentStage === 1 && 'Phase: Immiscible (High Sneha Friction)'}
-                {currentStage === 2 && 'Phase: Thermal Agitation (Pīlupāka Heat Active)'}
-                {currentStage === 3 && (isSynergyLocked ? '✨ 45%–65% Synergy Locked' : 'Phase: Free Atom Soup (Tune Sliders)')}
-                {currentStage === 4 && 'State: Intramolecular Samavāya Inherence'}
-              </span>
-            </div>
           </div>
 
           {/* Visual 4-Step Pipeline Header */}
