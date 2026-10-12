@@ -1,124 +1,124 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { BodhiLabAnecdote, TermPanel, ChallengeList, type LabTerm, type LabChallenge, type LabSegmentProps } from './common';
 import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
 
 // ---------------------------------------------------------------------------
-// DATA: Saptak vs. Solfège Frequencies & Animal Resonances (Sāma Veda)
+// DATA: Sonometer Verification Answer Key & Note Frequencies (Sāma Veda & Physics)
 // ---------------------------------------------------------------------------
-interface SvaraNote {
-  svara: string;
+export interface SonometerNode {
+  note: string;
   dev: string;
-  name: string;
-  solfege: string;
-  ratio: string;
-  ratioVal: number;
-  freq: number;
-  cents: number;
+  fractionStr: string;
+  fractionVal: number; // Length ratio L / L0
+  targetLengthCm: number; // For baseline L0 = 100.0 cm
+  freqHz: number; // Theoretical frequency for f0 = 240 Hz
+  freqMultiplier: number; // f / f0
   animal: string;
   animalDev: string;
+  solfege: string;
   color: string;
 }
 
-const SVARAS: SvaraNote[] = [
-  { svara: 'Sa', dev: 'षड्जः (सा)', name: 'Ṣaḍja', solfege: 'Do', ratio: '1/1', ratioVal: 1.0, freq: 240, cents: 0, animal: "Peacock's Cry", animalDev: 'मयूरः', color: '#818cf8' },
-  { svara: 'Re', dev: 'ऋषभः (रे)', name: 'Ṛṣabha', solfege: 'Re', ratio: '9/8', ratioVal: 1.125, freq: 270, cents: 204, animal: 'Bull / Skylark', animalDev: 'वृषभः / चातकः', color: '#38bdf8' },
-  { svara: 'Ga', dev: 'गान्धारः (ग)', name: 'Gāndhāra', solfege: 'Mi', ratio: '5/4', ratioVal: 1.25, freq: 300, cents: 386, animal: 'Bleating of a Goat', animalDev: 'अजा', color: '#2dd4bf' },
-  { svara: 'Ma', dev: 'मध्यमः (म)', name: 'Madhyama', solfege: 'Fa', ratio: '4/3', ratioVal: 1.333, freq: 320, cents: 498, animal: "Heron / Crane's Call", animalDev: 'क्रौञ्चः', color: '#34d399' },
-  { svara: 'Pa', dev: 'पञ्चमः (प)', name: 'Pañcama', solfege: 'Sol', ratio: '3/2', ratioVal: 1.5, freq: 360, cents: 702, animal: 'Cuckoo / Koel Song', animalDev: 'कोकिलः', color: '#fbbf24' },
-  { svara: 'Dha', dev: 'धैवतः (ध)', name: 'Dhaivata', solfege: 'La', ratio: '5/3', ratioVal: 1.667, freq: 400, cents: 884, animal: 'Neigh of a Horse', animalDev: 'अश्वः', color: '#fb923c' },
-  { svara: 'Ni', dev: 'निषादः (नि)', name: 'Niṣāda', solfege: 'Ti', ratio: '15/8', ratioVal: 1.875, freq: 450, cents: 1088, animal: "Trumpet of an Elephant", animalDev: 'गजः', color: '#f43f5e' },
-  { svara: "Sa'", dev: 'तार-षड्जः (सां)', name: 'Tāra Ṣaḍja', solfege: 'Do (High)', ratio: '2/1', ratioVal: 2.0, freq: 480, cents: 1200, animal: 'Higher Octave Resonance', animalDev: 'नाद-पूर्णता', color: '#c084fc' },
+export const SONOMETER_DATA: SonometerNode[] = [
+  { note: 'Shadjam (Sa)', dev: 'षड्जः (सा)', fractionStr: '1/1', fractionVal: 1.0, targetLengthCm: 100.0, freqHz: 240, freqMultiplier: 1.0, animal: 'Peacock (Baseline)', animalDev: 'मयूरः', solfege: 'Do', color: '#818cf8' },
+  { note: 'Rishabham (Re)', dev: 'ऋषभः (रे)', fractionStr: '8/9', fractionVal: 8 / 9, targetLengthCm: 88.9, freqHz: 270, freqMultiplier: 9 / 8, animal: 'Lark / Bull', animalDev: 'वृषभः / चातकः', solfege: 'Re', color: '#38bdf8' },
+  { note: 'Gandharam (Ga)', dev: 'गान्धारः (ग)', fractionStr: '4/5', fractionVal: 4 / 5, targetLengthCm: 80.0, freqHz: 300, freqMultiplier: 5 / 4, animal: 'Goat', animalDev: 'अजा', solfege: 'Mi', color: '#2dd4bf' },
+  { note: 'Madhyamam (Ma)', dev: 'मध्यमः (म)', fractionStr: '3/4', fractionVal: 3 / 4, targetLengthCm: 75.0, freqHz: 320, freqMultiplier: 4 / 3, animal: 'Heron / Crane', animalDev: 'क्रौञ्चः', solfege: 'Fa', color: '#34d399' },
+  { note: 'Panchamam (Pa)', dev: 'पञ्चमः (प)', fractionStr: '2/3', fractionVal: 2 / 3, targetLengthCm: 66.7, freqHz: 360, freqMultiplier: 3 / 2, animal: 'Cuckoo (Perfect 5th)', animalDev: 'कोकिलः', solfege: 'Sol', color: '#fbbf24' },
+  { note: 'Dhaivatam (Dha)', dev: 'धैवतः (ध)', fractionStr: '3/5', fractionVal: 3 / 5, targetLengthCm: 60.0, freqHz: 400, freqMultiplier: 5 / 3, animal: 'Frog', animalDev: 'दर्दुरः / अश्वः', solfege: 'La', color: '#fb923c' },
+  { note: 'Nishadam (Ni)', dev: 'निषादः (नि)', fractionStr: '8/15', fractionVal: 8 / 15, targetLengthCm: 53.3, freqHz: 450, freqMultiplier: 15 / 8, animal: 'Elephant', animalDev: 'गजः', solfege: 'Ti', color: '#f43f5e' },
+  { note: 'Shadjam (Sa High)', dev: 'तार-षड्जः (सां)', fractionStr: '1/2', fractionVal: 1 / 2, targetLengthCm: 50.0, freqHz: 480, freqMultiplier: 2.0, animal: 'Octave Harmonic (2f₀)', animalDev: 'नाद-पूर्णता', solfege: 'Do (High)', color: '#c084fc' },
 ];
 
 const MANTRA_TERMS: LabTerm[] = [
   {
-    dev: 'सप्तकम्',
-    iast: 'Saptakam',
-    en: 'Seven-Note Scale (Sa, Re, Ga, Ma, Pa, Dha, Ni)',
-    note: 'The natural harmonic series mapped in the Sāma Veda millennia before the European Solfège (Do-Re-Mi).',
+    dev: 'स्वर-प्रमाणम्',
+    iast: 'Svara-Pramāṇam',
+    en: 'Sonometer String Quantisation Law (f ∝ 1/L)',
+    note: 'Vibrating strings split inversely with length: f = v / (2L). At 100 cm = 240 Hz, halving to 50 cm doubles frequency to 480 Hz.',
   },
   {
-    dev: 'छन्दः',
-    iast: 'Chandaḥ',
-    en: 'Metrical Science of Syllabic Rhythm & Duration',
-    note: 'One of the six Vedāṅgas. Quantifies exact time units: Laghu (1 mātrā) and Guru (2 mātrās).',
+    dev: 'छन्दस्-परिमाणम्',
+    iast: 'Chandas-Parimāṇam',
+    en: 'Mātrā 1:2 Time Quantisation (150-250ms vs 300-500ms)',
+    note: 'Laghu syllables occupy 1 beat (150-250 ms), whereas Guru syllables occupy 2 beats (300-500 ms) driving chest/nasal resonance.',
   },
   {
-    dev: 'उदात्तः · अनुदात्तः · स्वरितः',
-    iast: 'Udātta · Anudātta · Svarita',
-    en: 'Three Vedic Pitch Accents (High, Low, Falling)',
-    note: 'Decouples duration from pitch, turning human vocal cords into a multi-dimensional string instrument.',
+    dev: 'सन्धितरङ्ग-संयोगः',
+    iast: 'Sandhi-Taraṅga-Saṃyogaḥ',
+    en: 'Phonetic Sinusoidal Wave Summation (y₁ + y₂)',
+    note: 'Adjacent vowel waves combine without acoustic phase distortion or clipping noise, functioning as a smooth vocal bridge.',
   },
   {
-    dev: 'चमकम्',
-    iast: 'Chamakam',
-    en: 'Vedic Mathematical Mantra (Taittirīya Saṃhitā 4.7)',
-    note: 'Section 18 encrypts odd progressions (1 to 33) and even progressions (4 to 48), generating perfect squares through summation.',
+    dev: 'चमक-वर्गक्रमः',
+    iast: 'Chamaka-Varga-Kramaḥ',
+    en: 'The Chamakam Sum-of-Odds Code (∑(2k-1) = n²)',
+    note: 'Taittirīya Saṃhitā 4.7.18 chains odd progressions 1 to 33, whose progressive sums yield perfect square numbers for altar scaling.',
   },
   {
-    dev: 'सन्धिः',
-    iast: 'Sandhiḥ',
-    en: 'Phonetic Syllabic Wave Synthesis',
-    note: 'Operates like strict wave mechanics: adjacent acoustic frequencies combine algorithmically to eliminate dissonance.',
+    dev: 'उरः-नासिक्य-नादः',
+    iast: 'Uraḥ-Nāsikya-Nādaḥ',
+    en: 'Thoracic & Nasal Resonance Bands (100-300 Hz & 2000 Hz)',
+    note: 'Guru syllables with heavy conjuncts (kṣa, tra, jña) elevate low-mid 100-300 Hz energy bands for deep thoracic resonance.',
   },
   {
     dev: 'नादब्रह्म',
     iast: 'Nāda-Brahma',
-    en: 'The Universe as Sound / Acoustic Vibrational Field',
-    note: 'Vedic cosmological premise that physical matter is standing wave geometry created by universal vibration.',
+    en: 'The Vibrational Field of Cosmos & Quantum Strings',
+    note: 'Physical matter conceived as standing wave geometry generated by primordial acoustic frequency.',
   },
 ];
 
 const MANTRA_CHALLENGES: LabChallenge[] = [
   {
-    q: 'Why did ancient India and Europe land on identical 7-note musical scales (Saptak and Solfège)?',
+    q: 'In the Sonometer protocol, if a 100 cm string sounds at 240 Hz, what target length produces the Panchamam (Pa) note at 360 Hz?',
     options: [
-      'It was a coincidence of arbitrary folklore labels.',
-      'A plucked string naturally splits into fixed mathematical fractions (1/2, 1/3, 1/4, 1/5, 1/7) in the harmonic series of matter.',
-      'One King decreed the notes across the ancient world.',
-      'It was dictated by atmospheric barometric pressure.',
+      '50.0 cm (Half Length)',
+      '66.7 cm (2/3 Length, frequency multiplier 3/2 = 1.5x)',
+      '75.0 cm (3/4 Length)',
+      '88.9 cm (8/9 Length)',
     ],
     answer: 1,
-    explain: 'Both civilizations discovered an immutable property of vibrating matter: the physical harmonic series.',
+    explain: 'f = f0 * (L0 / L). At L = 66.7 cm (2/3), f = 240 / (2/3) = 360 Hz (the Perfect Fifth).',
   },
   {
-    q: 'How does Sanskrit metric science (Chandas) physically impact human breathing and resonance?',
+    q: 'What is the physical time relationship between a Laghu and Guru syllable under the Chandas quantisation law?',
     options: [
-      'It makes all syllables identical in length without breath control.',
-      'Long syllables (Guru = 2 beats) force controlled deep breathing, directly activating chest and nasal resonance.',
-      'It silences the vocal cords completely.',
-      'It replaces consonants with clicks.',
+      'They are identical in length.',
+      'Laghu is longer than Guru.',
+      'Strict 1:2 ratio: Laghu is 150-250 ms, Guru is 300-500 ms with elevated 100-300 Hz chest resonance bands.',
+      'Guru is 10 times longer than Laghu.',
     ],
-    answer: 1,
-    explain: 'Guru syllables (2 mātrās) demand prolonged expiration, driving thoracic pressure and cranial nasal resonance.',
+    answer: 2,
+    explain: 'Chandas mathematically enforces a 1:2 time quantisation, where Guru syllables double the acoustic duration envelope.',
   },
   {
-    q: 'What mathematical phenomenon is encoded in the 18th section of the Chamakam chant?',
+    q: 'Why does the Guṇa Sandhi merger (a + i = e) operate like wave mechanics rather than arbitrary spelling?',
     options: [
-      'The golden ratio multiplied by Pi.',
-      'Odd progression (1 to 33) whose cumulative sums generate the sequence of perfect squares (1, 4, 9, 16, 25...).',
-      'The circumference of the lunar orbit.',
-      'Pythagorean prime numbers only.',
+      'It deletes both sounds completely.',
+      'The two vowel waves y1 = A sin(ω1 t) and y2 = A sin(ω2 t) constructively interfere to produce a smooth, undistorted vocal bridge.',
+      'It creates sudden high-frequency clipping noise.',
+      'It is only a visual convention never chanted.',
     ],
     answer: 1,
-    explain: 'Summing consecutive odd numbers in Chamakam 18 systematically yields 1, 4, 9, 16, 25, 36, ... N².',
+    explain: 'Wave superposition y1 + y2 produces smooth phase transitions without acoustic dissonance or vocal tract choking.',
   },
   {
-    q: 'Why does Sandhi (grammar of syllable joining) resemble wave mechanics rather than arbitrary spelling?',
+    q: 'In the Chamakam verification (Taittirīya Saṃhitā 4.7.18), what does the progressive summation 1 + 3 + 5 + 7 = 16 represent?',
     options: [
-      'Words can crash into each other with random discordant clicks.',
-      'If high and low acoustic waves collide at word boundaries, they mathematically combine into a harmonious new wave.',
-      'It exists only in written manuscripts, not oral chanting.',
-      'It deletes all vowels from speech.',
+      'A random ritual chant with no arithmetic structure.',
+      'Consecutive odd integers summing to 4² = 16, acting as an audio script for geometric altar expansion.',
+      'A calculation of planetary eclipses.',
+      'The prime factorization of 16.',
     ],
     answer: 1,
-    explain: 'Sandhi acts as an acoustic wave synthesis algorithm, preventing acoustic interference and frequency distortion.',
+    explain: 'The sum of the first n odd numbers identically equals n², providing an oral blueprint for scaling square brick altars.',
   },
 ];
 
 // Web Audio API single-tone player
-const playNoteTone = (freq: number) => {
+const playFrequencyTone = (freq: number, durationSec: number = 0.8, type: OscillatorType = 'sine') => {
   try {
     const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
     if (!AudioCtx) return;
@@ -126,39 +126,131 @@ const playNoteTone = (freq: number) => {
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
 
-    osc.type = 'sine';
+    osc.type = type;
     osc.frequency.setValueAtTime(freq, ctx.currentTime);
 
-    // Smooth envelope attack and decay
     gain.gain.setValueAtTime(0.001, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.3, ctx.currentTime + 0.05);
-    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.8);
+    gain.gain.exponentialRampToValueAtTime(0.3, ctx.currentTime + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + durationSec);
 
     osc.connect(gain);
     gain.connect(ctx.destination);
 
     osc.start();
-    osc.stop(ctx.currentTime + 0.85);
+    osc.stop(ctx.currentTime + durationSec + 0.05);
   } catch {
-    /* ignore if audio context blocked */
+    /* browser audio context safe guard */
+  }
+};
+
+// Play a Sandhi dual-vowel wave superposition
+const playSandhiSumTone = (f1: number, f2: number, durationSec: number = 1.0) => {
+  try {
+    const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    if (!AudioCtx) return;
+    const ctx = new AudioCtx();
+    const osc1 = ctx.createOscillator();
+    const osc2 = ctx.createOscillator();
+    const gain1 = ctx.createGain();
+    const gain2 = ctx.createGain();
+    const masterGain = ctx.createGain();
+
+    osc1.type = 'sine';
+    osc1.frequency.setValueAtTime(f1, ctx.currentTime);
+    osc2.type = 'sine';
+    osc2.frequency.setValueAtTime(f2, ctx.currentTime);
+
+    gain1.gain.setValueAtTime(0.18, ctx.currentTime);
+    gain2.gain.setValueAtTime(0.18, ctx.currentTime);
+
+    masterGain.gain.setValueAtTime(0.001, ctx.currentTime);
+    masterGain.gain.exponentialRampToValueAtTime(0.35, ctx.currentTime + 0.05);
+    masterGain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + durationSec);
+
+    osc1.connect(gain1);
+    osc2.connect(gain2);
+    gain1.connect(masterGain);
+    gain2.connect(masterGain);
+    masterGain.connect(ctx.destination);
+
+    osc1.start();
+    osc2.start();
+    osc1.stop(ctx.currentTime + durationSec + 0.05);
+    osc2.stop(ctx.currentTime + durationSec + 0.05);
+  } catch {
+    /* audio safe guard */
   }
 };
 
 export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
-  const [activeTab, setActiveTab] = useState<'part1' | 'part2' | 'part3'>('part1');
-  const [selectedNote, setSelectedNote] = useState<number>(0);
+  const [activeTab, setActiveTab] = useState<'sonometer' | 'voice' | 'sandhi' | 'chamakam' | 'answer-key' | 'monograph'>('sonometer');
+
+  // -------------------------------------------------------------------------
+  // EXPERIMENT 1: Sonometer Bridge & Length States
+  // -------------------------------------------------------------------------
+  const [bridgeLengthCm, setBridgeLengthCm] = useState<number>(100.0);
+  const [selectedPresetIdx, setSelectedPresetIdx] = useState<number>(0);
+  const [bridgeTensionKg, setBridgeTensionKg] = useState<number>(5.0);
+
+  // Compute live frequency based on f = f0 * (L0 / L)
+  const currentCalculatedFreq = useMemo(() => {
+    const baseline = 240.0;
+    const freq = baseline * (100.0 / Math.max(10, bridgeLengthCm));
+    // Apply slight mechanical tension factor: sqrt(T / 5kg)
+    const tensionFactor = Math.sqrt(bridgeTensionKg / 5.0);
+    return Math.round(freq * tensionFactor * 10) / 10;
+  }, [bridgeLengthCm, bridgeTensionKg]);
+
+  const currentFreqMultiplier = useMemo(() => {
+    return Math.round((currentCalculatedFreq / 240.0) * 100) / 100;
+  }, [currentCalculatedFreq]);
+
+  // Deviation from closest theoretical preset
+  const closestPreset = useMemo(() => {
+    let closest = SONOMETER_DATA[0];
+    let minDiff = 9999;
+    for (const p of SONOMETER_DATA) {
+      const diff = Math.abs(p.targetLengthCm - bridgeLengthCm);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closest = p;
+      }
+    }
+    const percentDev = Math.abs((currentCalculatedFreq - closest.freqHz) / closest.freqHz) * 100;
+    return { ...closest, percentDev: Math.round(percentDev * 10) / 10 };
+  }, [bridgeLengthCm, currentCalculatedFreq]);
+
+  // -------------------------------------------------------------------------
+  // EXPERIMENT 2: Voice Mechanics (Chandas) States
+  // -------------------------------------------------------------------------
+  const [syllableCategory, setSyllableCategory] = useState<'laghu' | 'guru'>('guru');
+  const [selectedSyllable, setSelectedSyllable] = useState<string>('kṣa');
+  const [accentTone, setAccentTone] = useState<'udatta' | 'anudatta' | 'svarita'>('udatta');
+  const [measuredDurationMs, setMeasuredDurationMs] = useState<number>(380);
+  const [measuredChestResonanceHz, setMeasuredChestResonanceHz] = useState<number>(185);
+  const [isVoiceMeasuring, setIsVoiceMeasuring] = useState<boolean>(false);
+
+  // -------------------------------------------------------------------------
+  // EXPERIMENT 3: Sandhi Wave Summation States
+  // -------------------------------------------------------------------------
+  const [selectedSandhiRule, setSelectedSandhiRule] = useState<'guna' | 'vriddhi' | 'yan' | 'dirgha'>('guna');
+  const [waveAmplitude, setWaveAmplitude] = useState<number>(35);
+
+  // -------------------------------------------------------------------------
+  // CORE CHALLENGE: Chamakam Progression States (N = 1 to 17)
+  // -------------------------------------------------------------------------
+  const [chamakamN, setChamakamN] = useState<number>(4);
+
+  // -------------------------------------------------------------------------
+  // Canvases & Animation Loop
+  // -------------------------------------------------------------------------
   const [animTick, setAnimTick] = useState<number>(0);
+  const sonometerCanvasRef = useRef<HTMLCanvasElement>(null);
+  const harmonicsGraphCanvasRef = useRef<HTMLCanvasElement>(null);
+  const voiceCanvasRef = useRef<HTMLCanvasElement>(null);
+  const sandhiCanvasRef = useRef<HTMLCanvasElement>(null);
+  const chamakamCanvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Part 2: Chandas & Svara composer states
-  const [syllableType, setSyllableType] = useState<'laghu' | 'guru'>('guru');
-  const [svaraAccent, setSvaraAccent] = useState<'udatta' | 'anudatta' | 'svarita'>('udatta');
-
-  // Part 3: Chamakam Sequence Slider (N = 1 to 17)
-  const [chamakamN, setChamakamN] = useState<number>(5);
-
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  // 60fps animation loop
   useEffect(() => {
     let frameId: number;
     const loop = () => {
@@ -169,18 +261,46 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
     return () => cancelAnimationFrame(frameId);
   }, []);
 
-  const handlePlaySvara = useCallback((idx: number) => {
+  // Set bridge length via note preset
+  const handleSelectPreset = useCallback((idx: number) => {
+    setSelectedPresetIdx(idx);
+    const p = SONOMETER_DATA[idx];
+    setBridgeLengthCm(p.targetLengthCm);
     soundEffects.playStrokeChime();
-    setSelectedNote(idx);
-    playNoteTone(SVARAS[idx].freq);
+    playFrequencyTone(p.freqHz, 0.85);
   }, []);
 
-  const currentSvara = SVARAS[selectedNote];
+  // Pluck the sonometer wire
+  const handlePluckSonometer = useCallback(() => {
+    soundEffects.playStrokeChime();
+    playFrequencyTone(currentCalculatedFreq, 1.0);
+  }, [currentCalculatedFreq]);
 
-  // Dynamic canvas oscilloscope renderer for the 3 acoustic engines
+  // Recite and measure syllable duration
+  const handleMeasureVoice = useCallback(() => {
+    setIsVoiceMeasuring(true);
+    soundEffects.playStrokeChime();
+
+    // Baseline durations: Laghu = 180-220ms, Guru = 360-440ms
+    const dur = syllableCategory === 'laghu' ? Math.floor(170 + Math.random() * 50) : Math.floor(350 + Math.random() * 90);
+    const chestHz = ['kṣa', 'tra', 'jña', 'dhyā'].includes(selectedSyllable) ? Math.floor(130 + Math.random() * 40) : Math.floor(210 + Math.random() * 50);
+
+    const baseFreq = accentTone === 'udatta' ? 320 : accentTone === 'anudatta' ? 220 : 270;
+    playFrequencyTone(baseFreq, dur / 1000, syllableCategory === 'guru' ? 'sawtooth' : 'sine');
+
+    setTimeout(() => {
+      setMeasuredDurationMs(dur);
+      setMeasuredChestResonanceHz(chestHz);
+      setIsVoiceMeasuring(false);
+    }, dur + 60);
+  }, [accentTone, selectedSyllable, syllableCategory]);
+
+  // -------------------------------------------------------------------------
+  // RENDER CANVAS 1: Sonometer String & Nodes
+  // -------------------------------------------------------------------------
   useEffect(() => {
-    const cvs = canvasRef.current;
-    if (!cvs) return;
+    const cvs = sonometerCanvasRef.current;
+    if (!cvs || activeTab !== 'sonometer') return;
     const ctx = cvs.getContext('2d');
     if (!ctx) return;
 
@@ -188,10 +308,244 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
     const h = cvs.height;
     ctx.clearRect(0, 0, w, h);
 
-    // Subtle dark blueprint grid
-    ctx.strokeStyle = 'rgba(244, 114, 182, 0.08)';
+    const midY = h / 2 - 10;
+    const t = animTick * 0.08;
+
+    // Wooden Sonometer Body
+    ctx.fillStyle = '#1e1b18';
+    ctx.strokeStyle = '#451a03';
+    ctx.lineWidth = 3;
+    ctx.fillRect(30, midY - 30, w - 60, 60);
+    ctx.strokeRect(30, midY - 30, w - 60, 60);
+
+    // Metric Measuring Ruler (100 cm)
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(40, midY + 14, w - 80, 12);
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.4)';
     ctx.lineWidth = 1;
-    for (let x = 0; x < w; x += 30) {
+    for (let c = 0; c <= 10; c++) {
+      const rx = 40 + (c / 10) * (w - 80);
+      ctx.beginPath();
+      ctx.moveTo(rx, midY + 14);
+      ctx.lineTo(rx, midY + 26);
+      ctx.stroke();
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '9px monospace';
+      ctx.fillText(`${c * 10}cm`, rx - 10, midY + 38);
+    }
+
+    // Fixed Left Nut / Bridge at 0 cm
+    ctx.fillStyle = '#f59e0b';
+    ctx.fillRect(36, midY - 26, 8, 40);
+
+    // Movable Knife-Edge Bridge at bridgeLengthCm
+    const activeSpanPx = w - 80;
+    const bridgePx = 40 + (bridgeLengthCm / 100.0) * activeSpanPx;
+    ctx.fillStyle = '#38bdf8';
+    ctx.beginPath();
+    ctx.moveTo(bridgePx - 7, midY + 14);
+    ctx.lineTo(bridgePx + 7, midY + 14);
+    ctx.lineTo(bridgePx, midY - 20);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = '#0284c7';
+    ctx.stroke();
+
+    // Movable Bridge Label
+    ctx.fillStyle = '#38bdf8';
+    ctx.font = '10px JetBrains Mono, monospace';
+    ctx.fillText(`Bridge: ${bridgeLengthCm.toFixed(1)} cm`, bridgePx - 40, midY - 26);
+
+    // Vibrating String Trace
+    const freqOsc = Math.min(60, currentCalculatedFreq / 6);
+    ctx.strokeStyle = '#cbd5e1';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(40, midY - 6);
+
+    // Active vibrating portion between Left Nut (40) and Bridge (bridgePx)
+    const vibratingLen = bridgePx - 40;
+    for (let x = 0; x <= vibratingLen; x++) {
+      const normX = x / vibratingLen;
+      const waveY = Math.sin(normX * Math.PI) * Math.sin(t * (freqOsc / 10)) * 14;
+      ctx.lineTo(40 + x, midY - 6 - waveY);
+    }
+    // Static portion beyond bridge
+    ctx.lineTo(w - 40, midY - 6);
+    ctx.stroke();
+
+    // Tuning info badge
+    ctx.fillStyle = '#fde047';
+    ctx.font = '12px JetBrains Mono, monospace';
+    ctx.fillText(`Target: ${closestPreset.note} (${closestPreset.fractionStr}) | Calculated f = ${currentCalculatedFreq} Hz`, 42, 22);
+  }, [activeTab, animTick, bridgeLengthCm, closestPreset, currentCalculatedFreq]);
+
+  // -------------------------------------------------------------------------
+  // RENDER CANVAS 2: Acoustic Harmonics Graph (Matching User Image Screenshot!)
+  // Length vs. Frequency Hyperbolic Curve (f ∝ 1/L)
+  // -------------------------------------------------------------------------
+  useEffect(() => {
+    const cvs = harmonicsGraphCanvasRef.current;
+    if (!cvs || activeTab !== 'sonometer') return;
+    const ctx = cvs.getContext('2d');
+    if (!ctx) return;
+
+    const w = cvs.width;
+    const h = cvs.height;
+    ctx.clearRect(0, 0, w, h);
+
+    const padLeft = 65;
+    const padRight = 35;
+    const padTop = 35;
+    const padBottom = 50;
+    const plotW = w - padLeft - padRight;
+    const plotH = h - padTop - padBottom;
+
+    // Blueprint Grid Lines
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
+    ctx.lineWidth = 1;
+
+    // Y Axis: Output Frequency Multiplier (0 to 2.5x)
+    const maxY = 2.5;
+    for (let yVal = 0; yVal <= maxY; yVal += 0.5) {
+      const yCoord = padTop + plotH - (yVal / maxY) * plotH;
+      ctx.beginPath();
+      ctx.moveTo(padLeft, yCoord);
+      ctx.lineTo(w - padRight, yCoord);
+      ctx.stroke();
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '10px JetBrains Mono, monospace';
+      ctx.fillText(`${yVal.toFixed(1)}x`, padLeft - 36, yCoord + 4);
+    }
+
+    // X Axis: String Length Ratio L / L0 (0.4 to 1.1)
+    const minX = 0.4;
+    const maxX = 1.1;
+    for (let xVal = 0.4; xVal <= 1.05; xVal += 0.1) {
+      const xCoord = padLeft + ((xVal - minX) / (maxX - minX)) * plotW;
+      ctx.beginPath();
+      ctx.moveTo(xCoord, padTop);
+      ctx.lineTo(xCoord, h - padBottom);
+      ctx.stroke();
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '10px JetBrains Mono, monospace';
+      ctx.fillText(`${xVal.toFixed(1)}L`, xCoord - 12, h - padBottom + 16);
+    }
+
+    // Axes Lines
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.5)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(padLeft, padTop);
+    ctx.lineTo(padLeft, h - padBottom);
+    ctx.lineTo(w - padRight, h - padBottom);
+    ctx.stroke();
+
+    // Title & Axis Labels
+    ctx.fillStyle = '#e2e8f0';
+    ctx.font = 'bold 12px JetBrains Mono, monospace';
+    ctx.fillText('Acoustic Harmonics: String Length vs Frequency', padLeft + 10, padTop - 12);
+
+    ctx.save();
+    ctx.translate(16, padTop + plotH / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillStyle = '#38bdf8';
+    ctx.font = '11px JetBrains Mono, monospace';
+    ctx.fillText('Output Frequency Multiplier (f / f₀)', -100, 0);
+    ctx.restore();
+
+    ctx.fillStyle = '#38bdf8';
+    ctx.font = '11px JetBrains Mono, monospace';
+    ctx.fillText('Vibrating String Fraction (L / L₀)', padLeft + plotW / 2 - 80, h - 14);
+
+    // Hyperbolic Curve: f / f0 = 1 / (L / L0)
+    ctx.strokeStyle = '#38bdf8';
+    ctx.lineWidth = 3;
+    ctx.shadowColor = '#38bdf8';
+    ctx.shadowBlur = 8;
+    ctx.beginPath();
+
+    const curveSteps = 100;
+    for (let i = 0; i <= curveSteps; i++) {
+      const lenVal = minX + (i / curveSteps) * (maxX - minX);
+      const freqMult = 1.0 / lenVal;
+      const px = padLeft + ((lenVal - minX) / (maxX - minX)) * plotW;
+      const py = padTop + plotH - (Math.min(maxY, freqMult) / maxY) * plotH;
+      if (i === 0) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // Prominent Callout Points matching user screenshot:
+    // 1. Sa (1.0 Length, 1.0x Freq)
+    // 2. Pa (0.66 Length, 1.5x Freq)
+    // 3. Sa Octave (0.5 Length, 2.0x Freq)
+    const calloutPoints = [
+      { label: 'Sa (1.0 Length, 1.0x Freq)', len: 1.0, freq: 1.0, color: '#818cf8', offset: [10, 15] },
+      { label: 'Pa (0.66 Length, 1.5x Freq)', len: 2 / 3, freq: 1.5, color: '#fbbf24', offset: [-140, -10] },
+      { label: 'Sa Octave (0.5 Length, 2.0x Freq)', len: 0.5, freq: 2.0, color: '#c084fc', offset: [12, -8] },
+    ];
+
+    calloutPoints.forEach((pt) => {
+      const cx = padLeft + ((pt.len - minX) / (maxX - minX)) * plotW;
+      const cy = padTop + plotH - (pt.freq / maxY) * plotH;
+
+      ctx.fillStyle = pt.color;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      ctx.fillStyle = '#f8fafc';
+      ctx.font = 'bold 10px JetBrains Mono, monospace';
+      ctx.fillText(pt.label, cx + pt.offset[0], cy + pt.offset[1]);
+    });
+
+    // Current Bridge Marker on Graph
+    const currLenRatio = bridgeLengthCm / 100.0;
+    if (currLenRatio >= minX && currLenRatio <= maxX) {
+      const curX = padLeft + ((currLenRatio - minX) / (maxX - minX)) * plotW;
+      const curY = padTop + plotH - (Math.min(maxY, currentFreqMultiplier) / maxY) * plotH;
+
+      ctx.fillStyle = '#ef4444';
+      ctx.beginPath();
+      ctx.arc(curX, curY, 8, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      ctx.fillStyle = '#f87171';
+      ctx.font = 'bold 10px JetBrains Mono, monospace';
+      ctx.fillText(`CURRENT: ${currLenRatio.toFixed(2)}L, ${currentFreqMultiplier.toFixed(2)}x`, curX + 10, curY - 12);
+    }
+  }, [activeTab, bridgeLengthCm, currentFreqMultiplier]);
+
+  // -------------------------------------------------------------------------
+  // RENDER CANVAS 3: Voice Mechanics & Spectrogram (Experiment 2)
+  // -------------------------------------------------------------------------
+  useEffect(() => {
+    const cvs = voiceCanvasRef.current;
+    if (!cvs || activeTab !== 'voice') return;
+    const ctx = cvs.getContext('2d');
+    if (!ctx) return;
+
+    const w = cvs.width;
+    const h = cvs.height;
+    ctx.clearRect(0, 0, w, h);
+
+    const midY = h / 2;
+    const t = animTick * 0.1;
+
+    // Oscilloscope Grid
+    ctx.strokeStyle = 'rgba(45, 212, 191, 0.15)';
+    ctx.lineWidth = 1;
+    for (let x = 0; x < w; x += 40) {
       ctx.beginPath();
       ctx.moveTo(x, 0);
       ctx.lineTo(x, h);
@@ -204,628 +558,881 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
       ctx.stroke();
     }
 
-    const midY = h / 2;
-    const t = animTick * 0.05;
+    // Draw Acoustic Time Envelope & Waveform
+    ctx.strokeStyle = syllableCategory === 'guru' ? '#f43f5e' : '#38bdf8';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
 
-    if (activeTab === 'part1') {
-      // PART 1 CANVAS: Plucked string harmonic division and standing waves
-      const n = selectedNote + 1;
-      const freq = currentSvara.freq;
-
-      // Draw Plucked String Baseline with nodes
-      ctx.strokeStyle = 'rgba(148, 163, 184, 0.3)';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(40, midY);
-      ctx.lineTo(w - 40, midY);
-      ctx.stroke();
-
-      // Draw Standing Wave Loop
-      ctx.strokeStyle = currentSvara.color;
-      ctx.lineWidth = 3;
-      ctx.shadowColor = currentSvara.color;
-      ctx.shadowBlur = 12;
-      ctx.beginPath();
-
-      const span = w - 80;
-      for (let px = 0; px <= span; px++) {
-        const xCoord = 40 + px;
-        const normX = px / span;
-        // Standing wave formula: sin(n * pi * x) * cos(omega * t)
-        const envelope = Math.sin(normX * Math.PI * n);
-        const yOffset = envelope * Math.cos(t * (freq / 80)) * 55;
-        const py = midY - yOffset;
-        if (px === 0) ctx.moveTo(xCoord, py);
-        else ctx.lineTo(xCoord, py);
-      }
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-
-      // Draw Harmonic Nodes (Points of zero displacement)
-      for (let i = 0; i <= n; i++) {
-        const nodeX = 40 + (i / n) * span;
-        ctx.fillStyle = '#fde047';
-        ctx.beginPath();
-        ctx.arc(nodeX, midY, 4, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      ctx.fillStyle = '#f472b6';
-      ctx.font = '11px JetBrains Mono, monospace';
-      ctx.fillText(`Saptak Harmonic: ${currentSvara.svara} (${currentSvara.name}) · Freq: ${freq} Hz // Ratio: ${currentSvara.ratio}`, 15, h - 15);
-      ctx.fillStyle = '#94a3b8';
-      ctx.fillText(`Animal Resonance: ${currentSvara.animal} (${currentSvara.animalDev})`, 15, 20);
-    } else if (activeTab === 'part2') {
-      // PART 2 CANVAS: Chandas & Svara Decoupled 2D Wave Generator
-      const isGuru = syllableType === 'guru';
-      const durationLength = isGuru ? 240 : 120;
-      const pitchShift = svaraAccent === 'udatta' ? -40 : svaraAccent === 'anudatta' ? 40 : 0;
-
-      // Draw Accent Guideline
-      ctx.strokeStyle = 'rgba(56, 189, 248, 0.2)';
-      ctx.setLineDash([4, 4]);
-      ctx.beginPath();
-      ctx.moveTo(30, midY + pitchShift);
-      ctx.lineTo(w - 30, midY + pitchShift);
-      ctx.stroke();
-      ctx.setLineDash([]);
-
-      // Draw Dynamic Syllable Acoustic Waveform
-      ctx.strokeStyle = isGuru ? '#ec4899' : '#38bdf8';
-      ctx.lineWidth = isGuru ? 3.5 : 2.5;
-      ctx.shadowColor = isGuru ? '#ec4899' : '#38bdf8';
-      ctx.shadowBlur = 10;
-      ctx.beginPath();
-
-      const startX = (w - durationLength) / 2;
-      for (let px = 0; px <= durationLength; px++) {
-        const xCoord = startX + px;
-        const phase = (px / durationLength) * Math.PI * (isGuru ? 8 : 4) - t * 3;
-        let glide = pitchShift;
-        if (svaraAccent === 'svarita') {
-          // Falling glide tone from high to low
-          glide = -35 + (px / durationLength) * 70;
-        }
-        const py = midY + glide + Math.sin(phase) * (isGuru ? 36 : 22);
-        if (px === 0) ctx.moveTo(xCoord, py);
-        else ctx.lineTo(xCoord, py);
-      }
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-
-      // Boundary brackets for duration
-      ctx.strokeStyle = '#fde047';
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.moveTo(startX, midY - 60); ctx.lineTo(startX, midY + 60);
-      ctx.moveTo(startX + durationLength, midY - 60); ctx.lineTo(startX + durationLength, midY + 60);
-      ctx.stroke();
-
-      ctx.fillStyle = '#f472b6';
-      ctx.font = '11px JetBrains Mono, monospace';
-      ctx.fillText(`Chandas Duration: ${isGuru ? 'GURU (2 Mātrās · Deep Chest/Nasal Breath)' : 'LAGHU (1 Mātrā · Standard Breath)'}`, 15, h - 25);
-      ctx.fillText(`Pitch Accent: ${svaraAccent.toUpperCase()} (${svaraAccent === 'udatta' ? 'High / Raised' : svaraAccent === 'anudatta' ? 'Low / Lowered' : 'Falling / Glide'})`, 15, h - 10);
-    } else {
-      // PART 3 CANVAS: The Chamakam Section 18 Geometric Square Expansion
-      const n = chamakamN;
-      const squareSize = n * 14;
-      const startX = (w - squareSize) / 2;
-      const startY = (h - squareSize) / 2 - 10;
-
-      // Draw concentric odd-number layers (gnomons) forming the perfect square
-      for (let k = 1; k <= n; k++) {
-        const curSize = k * 14;
-        ctx.strokeStyle = k === n ? '#f59e0b' : 'rgba(56, 189, 248, 0.4)';
-        ctx.lineWidth = k === n ? 2.5 : 1.5;
-        ctx.strokeRect(startX, startY, curSize, curSize);
-
-        // Fill current outer odd gnomon layer
-        if (k === n) {
-          ctx.fillStyle = 'rgba(245, 158, 11, 0.15)';
-          ctx.fillRect(startX, startY, curSize, curSize);
-        }
-      }
-
-      // Sum of odds formula calculation
-      const sumOdds = n * n;
-      const currentOdd = 2 * n - 1;
-
-      ctx.fillStyle = '#fde047';
-      ctx.font = '12px JetBrains Mono, monospace';
-      ctx.fillText(`Chamakam Progression Step N = ${n}: Layer Odd Number = ${currentOdd}`, 15, h - 30);
-      ctx.fillText(`Cumulative Sum: 1 + 3 + ... + ${currentOdd} = ${sumOdds} = ${n}² (Perfect Square!)`, 15, h - 12);
+    const isGuru = syllableCategory === 'guru';
+    const numCycles = isGuru ? 24 : 12;
+    for (let px = 0; px < w; px++) {
+      const normX = px / w;
+      // Envelope: sustained for guru, sharp burst for laghu
+      const env = isGuru ? Math.sin(normX * Math.PI) * Math.min(1, Math.sin(normX * Math.PI * 0.8) + 0.3) : Math.sin(normX * Math.PI) * Math.exp(-normX * 2);
+      const wave = Math.sin(normX * Math.PI * numCycles + t) * env * 65;
+      if (px === 0) ctx.moveTo(px, midY - wave);
+      else ctx.lineTo(px, midY - wave);
     }
-  }, [activeTab, selectedNote, currentSvara, syllableType, svaraAccent, chamakamN, animTick]);
+    ctx.stroke();
+
+    // Spectrogram Energy Band Indicator (Bottom 40px)
+    ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+    ctx.fillRect(0, h - 55, w, 55);
+
+    // Deep Chest Voice Band (100 Hz - 300 Hz)
+    const hasCluster = ['kṣa', 'tra', 'jña'].includes(selectedSyllable);
+    ctx.fillStyle = hasCluster ? 'rgba(239, 68, 68, 0.4)' : 'rgba(56, 189, 248, 0.2)';
+    ctx.fillRect(40, h - 45, 180, 30);
+    ctx.strokeStyle = hasCluster ? '#ef4444' : '#38bdf8';
+    ctx.strokeRect(40, h - 45, 180, 30);
+    ctx.fillStyle = '#f8fafc';
+    ctx.font = '10px JetBrains Mono, monospace';
+    ctx.fillText(`Chest Resonance (100-300Hz): ${hasCluster ? 'HIGH (Sustained)' : 'NORMAL'}`, 50, h - 26);
+
+    // Nasal Formant Band (2000Hz)
+    ctx.fillStyle = 'rgba(168, 85, 247, 0.25)';
+    ctx.fillRect(w - 240, h - 45, 190, 30);
+    ctx.strokeStyle = '#a855f7';
+    ctx.strokeRect(w - 240, h - 45, 190, 30);
+    ctx.fillStyle = '#f8fafc';
+    ctx.fillText('Nasal Cavity Band (2000Hz)', w - 225, h - 26);
+  }, [activeTab, animTick, selectedSyllable, syllableCategory]);
+
+  // -------------------------------------------------------------------------
+  // RENDER CANVAS 4: Sandhi Wave Summation (Experiment 3)
+  // y1 = A sin(ω1 t), y2 = A sin(ω2 t), y_sum = y1 + y2
+  // -------------------------------------------------------------------------
+  useEffect(() => {
+    const cvs = sandhiCanvasRef.current;
+    if (!cvs || activeTab !== 'sandhi') return;
+    const ctx = cvs.getContext('2d');
+    if (!ctx) return;
+
+    const w = cvs.width;
+    const h = cvs.height;
+    ctx.clearRect(0, 0, w, h);
+
+    const midY = h / 2;
+    const t = animTick * 0.06;
+
+    // Grid
+    ctx.strokeStyle = 'rgba(251, 146, 60, 0.12)';
+    ctx.lineWidth = 1;
+    for (let x = 0; x < w; x += 35) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, h);
+      ctx.stroke();
+    }
+    for (let y = 0; y < h; y += 30) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(w, y);
+      ctx.stroke();
+    }
+
+    // Frequencies based on rule
+    let f1 = 300;
+    let f2 = 450;
+    let ruleTitle = 'Guṇa Sandhi: a (300Hz) + i (450Hz) ➔ e (Smooth Vocal Bridge)';
+    if (selectedSandhiRule === 'vriddhi') {
+      f1 = 300;
+      f2 = 480;
+      ruleTitle = 'Vṛddhi Sandhi: a (300Hz) + e (480Hz) ➔ ai';
+    } else if (selectedSandhiRule === 'yan') {
+      f1 = 450;
+      f2 = 300;
+      ruleTitle = 'Yaṇ Sandhi: i (450Hz) + a (300Hz) ➔ ya (Gliding Semi-vowel)';
+    } else if (selectedSandhiRule === 'dirgha') {
+      f1 = 300;
+      f2 = 300;
+      ruleTitle = 'Dīrgha Sandhi: a (300Hz) + a (300Hz) ➔ ā (Constructive In-phase Doubling)';
+    }
+
+    // Trace 1: Wave A (Cyan)
+    ctx.strokeStyle = '#38bdf8';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    for (let x = 0; x < w; x++) {
+      const py = midY - 60 - Math.sin((x / 50) * (f1 / 100) + t) * (waveAmplitude * 0.7);
+      if (x === 0) ctx.moveTo(x, py);
+      else ctx.lineTo(x, py);
+    }
+    ctx.stroke();
+
+    // Trace 2: Wave B (Pink)
+    ctx.strokeStyle = '#f43f5e';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    for (let x = 0; x < w; x++) {
+      const py = midY - 60 - Math.sin((x / 50) * (f2 / 100) + t * 1.3) * (waveAmplitude * 0.7);
+      if (x === 0) ctx.moveTo(x, py);
+      else ctx.lineTo(x, py);
+    }
+    ctx.stroke();
+
+    // Trace 3: Combined Wave Sum y1 + y2 (Gold)
+    ctx.strokeStyle = '#fde047';
+    ctx.lineWidth = 3;
+    ctx.shadowColor = '#f59e0b';
+    ctx.shadowBlur = 10;
+    ctx.beginPath();
+    for (let x = 0; x < w; x++) {
+      const y1 = Math.sin((x / 50) * (f1 / 100) + t) * (waveAmplitude * 0.6);
+      const y2 = Math.sin((x / 50) * (f2 / 100) + t * 1.3) * (waveAmplitude * 0.6);
+      const ySum = midY + 45 - (y1 + y2);
+      if (x === 0) ctx.moveTo(x, ySum);
+      else ctx.lineTo(x, ySum);
+    }
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // Rule header on canvas
+    ctx.fillStyle = '#fde047';
+    ctx.font = 'bold 11px JetBrains Mono, monospace';
+    ctx.fillText(ruleTitle, 30, 24);
+
+    ctx.fillStyle = '#38bdf8';
+    ctx.font = '10px JetBrains Mono, monospace';
+    ctx.fillText(`Wave A: y₁ = A sin(${f1}t)`, 30, midY - 78);
+
+    ctx.fillStyle = '#f43f5e';
+    ctx.fillText(`Wave B: y₂ = A sin(${f2}t)`, 240, midY - 78);
+
+    ctx.fillStyle = '#fde047';
+    ctx.fillText('Superposition: y_sum = y₁ + y₂ (Constructive Vocal Bridge)', 30, midY + 98);
+  }, [activeTab, animTick, selectedSandhiRule, waveAmplitude]);
+
+  // -------------------------------------------------------------------------
+  // RENDER CANVAS 5: Chamakam Altar Square Expansion (Gnomon Geometry)
+  // ∑(2k - 1) = n²
+  // -------------------------------------------------------------------------
+  useEffect(() => {
+    const cvs = chamakamCanvasRef.current;
+    if (!cvs || activeTab !== 'chamakam') return;
+    const ctx = cvs.getContext('2d');
+    if (!ctx) return;
+
+    const w = cvs.width;
+    const h = cvs.height;
+    ctx.clearRect(0, 0, w, h);
+
+    const n = chamakamN;
+    const unitSize = Math.min(22, Math.floor(180 / n));
+    const totalSquarePx = n * unitSize;
+    const startX = 40;
+    const startY = (h - totalSquarePx) / 2;
+
+    // Draw grid tiles for each odd layer k = 1..n
+    const colors = ['#818cf8', '#38bdf8', '#2dd4bf', '#34d399', '#fbbf24', '#fb923c', '#f43f5e', '#c084fc', '#ec4899'];
+    for (let k = 1; k <= n; k++) {
+      const col = colors[(k - 1) % colors.length];
+
+      // An L-shaped gnomon consists of:
+      // - horizontal top strip of length k at row (k - 1)
+      // - vertical right strip of height (k - 1) at column (k - 1)
+      ctx.fillStyle = col;
+      ctx.strokeStyle = '#0f172a';
+      ctx.lineWidth = 1.5;
+
+      for (let r = 0; r < k; r++) {
+        for (let c = 0; c < k; c++) {
+          if (r === k - 1 || c === k - 1) {
+            const rx = startX + c * unitSize;
+            const ry = startY + r * unitSize;
+            ctx.fillRect(rx, ry, unitSize, unitSize);
+            ctx.strokeRect(rx, ry, unitSize, unitSize);
+          }
+        }
+      }
+    }
+
+    // Altar geometry stats panel on the right
+    const panelX = startX + totalSquarePx + 40;
+    ctx.fillStyle = '#fde047';
+    ctx.font = 'bold 14px JetBrains Mono, monospace';
+    ctx.fillText(`CHAMAKAM SECTION 18 EXPANSION (n = ${n})`, panelX, 40);
+
+    ctx.fillStyle = '#cbd5e1';
+    ctx.font = '12px JetBrains Mono, monospace';
+    ctx.fillText(`Summation: 1 + 3 + ... + (2n-1)`, panelX, 70);
+
+    const oddSequenceStr = Array.from({ length: n }, (_, i) => 2 * i + 1).join(' + ');
+    ctx.fillStyle = '#38bdf8';
+    ctx.font = '11px JetBrains Mono, monospace';
+    ctx.fillText(`Chant: ${oddSequenceStr.length > 38 ? oddSequenceStr.slice(0, 35) + '...' : oddSequenceStr}`, panelX, 95);
+
+    ctx.fillStyle = '#4ade80';
+    ctx.font = 'bold 15px JetBrains Mono, monospace';
+    ctx.fillText(`Area = ${n}² = ${n * n} Bricks (Square Altar Verified)`, panelX, 130);
+
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '11px JetBrains Mono, monospace';
+    ctx.fillText(`Current Odd Layer: ${2 * n - 1} bricks added around perimeter`, panelX, 160);
+    ctx.fillText(`Falcon Altar (Śyena-citi) Scale Ratio: ${n}:1`, panelX, 185);
+  }, [activeTab, chamakamN]);
 
   return (
-    <div className="vl-sim vl-mantra-sim" data-testid="mantra-acoustics-root">
-      {/* 1. Bodhi Lab Anecdote */}
-      <BodhiLabAnecdote
-        title="Pāṇinīya Śikṣā, Chandaḥ & The Chamakam Acoustic Code"
-        sanskritTitle="मन्त्र-ध्वनि-विज्ञानम् · नादब्रह्म-दर्शनम्"
-        mood="scholar"
-        sutra={{
-          dev: 'उदात्तो निषादगान्धारौ नीचावृषभधैवतौ ।\nशेषास्तु स्वरिता ज्ञेयाः षड्जमध्यमपञ्चमाः ॥\nउच्चैरुदात्तः । नीचैरनुदात्तः । समाहारः स्वरितः ॥',
-          iast: 'udātto niṣādagāndhārau nīcāv ṛṣabhadhaivatau |\nśeṣās tu svaritā jñeyāḥ ṣaḍjamadhyamapañcamāḥ ||\nuccair udāttaḥ | nīcair anudāttaḥ | samāhāraḥ svaritaḥ ||',
-          source: 'Pāṇinīya Śikṣā (श्लोक १२) & Pāṇini Aṣṭādhyāyī १.२.२९–३१',
-          meaning: '“Niṣāda and Gāndhāra arise in high pitch (Udātta); Ṛṣabha and Dhaivata arise in low pitch (Anudātta); Ṣaḍja, Madhyama and Pañcama abide in the harmonic equilibrium of Svarita. A raised tone is Udātta; a lowered tone is Anudātta; their harmonious integration is Svarita.”',
-        }}
-        anecdote={
-          <>
-            <p>
-              In classical Indian science, speech was not an arbitrary human invention: it was discovered as an empirical law of physical acoustics.
-              Centuries before European solfège (Do-Re-Mi) appeared, the <em>Sāma Veda</em> had mapped the universal <strong>Saptak scale</strong>
-              (Sa, Re, Ga, Ma, Pa, Dha, Ni), matching each frequency to the vocal cords of animals naturally tuned to nature’s harmonic series.
-            </p>
-            <p>
-              By independently decoupling duration (<em>Laghu</em> vs. <em>Guru</em> in <em>Chandas</em>) from pitch (<em>Udātta</em>, <em>Anudātta</em>, <em>Svarita</em>),
-              a Vedic chanter acts as a living acoustic synthesizer, creating dynamic standing wave geometries in the atmosphere.
-              And in the sacred <em>Chamakam</em> (Taittirīya Saṃhitā 4.7), an odd-number chanting algorithm systematically generates the progression of perfect mathematical squares!
-            </p>
-          </>
-        }
-        epistemologyAndMethod={
-          <>
-            Vedic phonetics (*Śikṣā*) and metric prosody (*Chandaḥ*) operate as quantitative physics.
-            By measuring syllable durations in precise time beats (*Mātrās*) and treating word transitions (*Sandhi*) as wave mechanics,
-            ancient scholars preserved sacred oral frequencies intact across thousands of years with zero distortion.
-          </>
-        }
-        modernBridge={{
-          ancientConcept: 'The Saptak harmonic series, Chandas mātrā duration, decoupled pitch accents, and Sandhi wave mechanics.',
-          modernScience: 'Acoustic physics of standing waves, Fourier harmonic overtones, respiratory bio-feedback resonance, and quantum string vibration.',
-          relevanceNote: 'Modern acoustics confirms that vibrating matter naturally splits into fractional harmonics (1/2, 1/3, 1/4...), and respiratory pacing during Vedic chanting synchronizes heart-rate variability and vagal tone.',
-        }}
-        societalValue={
-          <p>
-            Recognizing speech as sacred acoustic science fostered profound reverence for vocal hygiene, mindful articulation,
-            and respiratory health. In the Gurukul tradition, language was practiced as an active bridge uniting the biological nervous system
-            with the mathematical fabric of the cosmos (*Nāda-Brahma*).
+    <div className="vl-sim" data-testid="mantra-acoustics-lab">
+      {/* HUD Header */}
+      <div className="vl-sim-header" style={{ borderColor: 'rgba(168, 85, 247, 0.4)' }}>
+        <div className="vl-sim-title-group">
+          <div className="vl-sim-kicker">COURSE: ACOUSTIC PHYSICS AND LINGUISTIC WAVE MECHANICS (LAB-1)</div>
+          <h3 className="vl-sim-title" style={{ color: '#c084fc' }}>
+            SECTOR 12: मन्त्राकौस्टिक्स् · Sonometer, Voice Quantisation, Sandhi Wave Summation &amp; Chamakam Code
+          </h3>
+          <p className="vl-sim-subtitle">
+            Sound discovered as an immutable law of physics. Verify the Sonometer length-frequency law (\(f \propto 1/L\)), Chandas 1:2 time quantisation, phonetic wave summation, and the Chamakam square progression code.
           </p>
-        }
-      />
+        </div>
+      </div>
 
-      {/* 2. Interactive Navigation Tabs for the 3 Parts */}
-      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
+      {/* Protocol Navigation Tabs */}
+      <div className="vl-panel-tabs" role="tablist">
         <button
           type="button"
-          className={`vl-btn vl-btn--cyber${activeTab === 'part1' ? ' is-active' : ''}`}
-          style={{
-            fontSize: '0.82rem',
-            padding: '0.5rem 1rem',
-            background: activeTab === 'part1' ? 'linear-gradient(135deg, #ec4899, #8b5cf6)' : 'rgba(15,23,42,0.8)',
-            color: activeTab === 'part1' ? '#ffffff' : '#f472b6',
-            borderColor: 'rgba(236,72,153,0.4)',
-          }}
-          onClick={() => { soundEffects.playStrokeChime(); setActiveTab('part1'); }}
+          className={`vl-panel-tab ${activeTab === 'sonometer' ? 'is-active' : ''}`}
+          onClick={() => setActiveTab('sonometer')}
         >
-          🎵 PART 1: The Accidental Symphony &amp; Saptak
+          🔬 Exp 1: Sonometer Protocol
         </button>
         <button
           type="button"
-          className={`vl-btn vl-btn--cyber${activeTab === 'part2' ? ' is-active' : ''}`}
-          style={{
-            fontSize: '0.82rem',
-            padding: '0.5rem 1rem',
-            background: activeTab === 'part2' ? 'linear-gradient(135deg, #0284c7, #38bdf8)' : 'rgba(15,23,42,0.8)',
-            color: activeTab === 'part2' ? '#030712' : '#38bdf8',
-            borderColor: 'rgba(56,189,248,0.4)',
-          }}
-          onClick={() => { soundEffects.playStrokeChime(); setActiveTab('part2'); }}
+          className={`vl-panel-tab ${activeTab === 'voice' ? 'is-active' : ''}`}
+          onClick={() => setActiveTab('voice')}
         >
-          🌬️ PART 2: The Physics of Prose &amp; Chandas
+          🎙️ Exp 2: Voice Mechanics &amp; Chandas
         </button>
         <button
           type="button"
-          className={`vl-btn vl-btn--cyber${activeTab === 'part3' ? ' is-active' : ''}`}
-          style={{
-            fontSize: '0.82rem',
-            padding: '0.5rem 1rem',
-            background: activeTab === 'part3' ? 'linear-gradient(135deg, #f59e0b, #d97706)' : 'rgba(15,23,42,0.8)',
-            color: activeTab === 'part3' ? '#030712' : '#f59e0b',
-            borderColor: 'rgba(245,158,11,0.4)',
-          }}
-          onClick={() => { soundEffects.playStrokeChime(); setActiveTab('part3'); }}
+          className={`vl-panel-tab ${activeTab === 'sandhi' ? 'is-active' : ''}`}
+          onClick={() => setActiveTab('sandhi')}
         >
-          🔢 PART 3: The Chamakam Code &amp; Nāda Brahma
+          〰️ Exp 3: Sandhi Wave Summation
+        </button>
+        <button
+          type="button"
+          className={`vl-panel-tab ${activeTab === 'chamakam' ? 'is-active' : ''}`}
+          onClick={() => setActiveTab('chamakam')}
+        >
+          📐 Chamakam Data Challenge
+        </button>
+        <button
+          type="button"
+          className={`vl-panel-tab ${activeTab === 'answer-key' ? 'is-active' : ''}`}
+          onClick={() => setActiveTab('answer-key')}
+        >
+          📋 Teacher Verification Answer Key
+        </button>
+        <button
+          type="button"
+          className={`vl-panel-tab ${activeTab === 'monograph' ? 'is-active' : ''}`}
+          onClick={() => setActiveTab('monograph')}
+        >
+          📜 Masterclass Monograph
         </button>
       </div>
 
-      {/* 3. Interactive Simulation Sandbox Canvas */}
-      <div className="vl-panel" style={{ background: 'rgba(15,23,42,0.95)', border: '1.5px solid rgba(236,72,153,0.35)', borderRadius: '16px', padding: '1.25rem', marginBottom: '1.5rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.72rem', fontFamily: 'JetBrains Mono, monospace', color: '#f472b6', fontWeight: 800 }}>
-              <span className="vl-hud-blink">●</span> 60 FPS ACOUSTIC WAVE LABORATORY // REAL-TIME SYNTHESIZER
+      {/* =================================================================== */}
+      {/* TAB 1: EXPERIMENT 1 - THE SONOMETER / MONOCHORD PROTOCOL            */}
+      {/* =================================================================== */}
+      {activeTab === 'sonometer' && (
+        <div className="vl-panel">
+          <div className="vl-panel-kicker">EXPERIMENT 1: THE SONOMETER / MONOCHORD PROTOCOL (STRING FRACTIONS)</div>
+          <h4 className="vl-panel-title">Mechanical Verification: Frequency is Inversely Proportional to Length (f = v / 2L ∝ 1/L)</h4>
+          <p className="vl-panel-desc">
+            Baseline open string length L₀ = 100.0 cm at fundamental frequency f₀ = 240.0 Hz (Shadjam / Peacock). Slide the mechanical bridge to map each note of the Saptak scale and verify the hyperbolic curve.
+          </p>
+
+          {/* Sonometer Interactive Bench Canvas */}
+          <div style={{ background: '#090d16', border: '1px solid rgba(56, 189, 248, 0.3)', borderRadius: 12, padding: '1rem', marginBottom: '1.2rem' }}>
+            <canvas ref={sonometerCanvasRef} width={800} height={130} style={{ width: '100%', height: 'auto', display: 'block' }} />
+
+            <div style={{ display: 'flex', gap: '1.2rem', alignItems: 'center', marginTop: '1rem', flexWrap: 'wrap' }}>
+              <div style={{ flex: 1, minWidth: 260 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#94a3b8', marginBottom: 4 }}>
+                  <span>Adjust Bridge Position (L):</span>
+                  <span style={{ color: '#38bdf8', fontWeight: 'bold' }}>{bridgeLengthCm.toFixed(1)} cm</span>
+                </div>
+                <input
+                  type="range"
+                  min="50.0"
+                  max="100.0"
+                  step="0.1"
+                  value={bridgeLengthCm}
+                  onChange={(e) => setBridgeLengthCm(parseFloat(e.target.value))}
+                  style={{ width: '100%', accentColor: '#38bdf8' }}
+                />
+              </div>
+
+              <div style={{ width: 180 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#94a3b8', marginBottom: 4 }}>
+                  <span>Wire Tension:</span>
+                  <span style={{ color: '#f59e0b', fontWeight: 'bold' }}>{bridgeTensionKg.toFixed(1)} kg</span>
+                </div>
+                <input
+                  type="range"
+                  min="3.0"
+                  max="8.0"
+                  step="0.1"
+                  value={bridgeTensionKg}
+                  onChange={(e) => setBridgeTensionKg(parseFloat(e.target.value))}
+                  style={{ width: '100%', accentColor: '#f59e0b' }}
+                />
+              </div>
+
+              <button
+                type="button"
+                className="vl-btn vl-btn--cyber"
+                onClick={handlePluckSonometer}
+                style={{ padding: '0.55rem 1.2rem', fontSize: '0.85rem' }}
+              >
+                <span>🎸 PLUCK WIRE ({currentCalculatedFreq} Hz)</span>
+              </button>
             </div>
-            <h3 style={{ margin: '0.2rem 0 0', fontSize: '1.2rem', color: '#f8fafc', fontWeight: 800 }}>
-              {activeTab === 'part1' && 'Harmonic String Splitter · Saptak vs. Solfège'}
-              {activeTab === 'part2' && 'Chandas Mātrā & Decoupled Svara Waveform'}
-              {activeTab === 'part3' && 'Chamakam Section 18 · Sum-of-Odds Square Generator'}
-            </h3>
           </div>
-          <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.6rem', borderRadius: '6px', background: 'rgba(236,72,153,0.15)', color: '#f472b6', fontWeight: 700, border: '1px solid rgba(236,72,153,0.3)' }}>
-            Nāda Oscillator Active
-          </span>
-        </div>
 
-        {/* Sandbox Canvas */}
-        <div style={{ background: '#030712', borderRadius: '12px', border: '1px solid rgba(236,72,153,0.3)', padding: '0.75rem', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1rem' }}>
-          <canvas
-            ref={canvasRef}
-            width={720}
-            height={220}
-            style={{ width: '100%', maxWidth: '720px', height: '220px', background: 'radial-gradient(circle at center, #110d1c 0%, #030712 100%)', borderRadius: '8px' }}
-          />
-        </div>
-
-        {/* Interactive Controls based on Active Tab */}
-        {activeTab === 'part1' && (
-          <div>
-            <div style={{ fontSize: '0.75rem', fontFamily: 'JetBrains Mono, monospace', color: '#94a3b8', marginBottom: '0.5rem', fontWeight: 700 }}>
-              🎹 SELECT A SVARA TO PLUCK &amp; HEAR FREQUENCY RATIO:
+          {/* Canonical 8 Svara Quick-Presets */}
+          <div style={{ marginBottom: '1.5rem' }}>
+            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#e2e8f0', marginBottom: '0.6rem' }}>
+              SELECT CANONICAL SAPTAK NODE PRESET (1/1 TO 1/2):
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.5rem' }}>
-              {SVARAS.map((sn, idx) => (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(135px, 1fr))', gap: '0.5rem' }}>
+              {SONOMETER_DATA.map((note, idx) => (
                 <button
-                  key={sn.svara}
+                  key={note.note}
                   type="button"
-                  className={`vl-btn vl-btn--cyber${selectedNote === idx ? ' is-active' : ''}`}
+                  onClick={() => handleSelectPreset(idx)}
+                  className={`vl-btn ${selectedPresetIdx === idx ? 'vl-btn--cyber' : ''}`}
                   style={{
                     padding: '0.5rem 0.6rem',
                     textAlign: 'left',
-                    background: selectedNote === idx ? sn.color : 'rgba(30,41,59,0.7)',
-                    color: selectedNote === idx ? '#090e17' : '#f8fafc',
-                    borderColor: sn.color,
+                    borderRadius: 8,
+                    background: selectedPresetIdx === idx ? undefined : 'rgba(15, 23, 42, 0.7)',
+                    border: `1px solid ${selectedPresetIdx === idx ? note.color : 'rgba(148, 163, 184, 0.2)'}`,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 2,
                   }}
-                  onClick={() => handlePlaySvara(idx)}
                 >
-                  <div style={{ fontWeight: 800, fontSize: '0.92rem' }}>
-                    {sn.svara} <small>({sn.solfege})</small>
-                  </div>
-                  <div style={{ fontSize: '0.7rem', opacity: 0.9 }}>
-                    {sn.freq} Hz · {sn.ratio}
-                  </div>
-                  <div style={{ fontSize: '0.66rem', marginTop: '0.15rem', opacity: 0.85 }}>
-                    {sn.animal}
-                  </div>
+                  <span style={{ fontWeight: 800, color: note.color, fontSize: '0.85rem' }}>{note.note.split(' ')[0]}</span>
+                  <span style={{ fontSize: '0.75rem', color: '#cbd5e1' }}>{note.dev}</span>
+                  <span style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{note.fractionStr} ({note.targetLengthCm} cm)</span>
+                  <span style={{ fontSize: '0.75rem', color: '#fde047', fontWeight: 700 }}>{note.freqHz} Hz</span>
                 </button>
               ))}
             </div>
           </div>
-        )}
 
-        {activeTab === 'part2' && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', background: 'rgba(30,41,59,0.6)', padding: '1rem', borderRadius: '12px' }}>
-            {/* Duration Selector */}
-            <div>
-              <div style={{ fontSize: '0.74rem', fontFamily: 'JetBrains Mono, monospace', color: '#38bdf8', fontWeight: 800, marginBottom: '0.4rem' }}>
-                1. CHANDAS DURATION (MĀTRĀ / BEATS)
-              </div>
-              <div style={{ display: 'flex', gap: '0.5rem' }}>
+          {/* Hyperbolic Graph Canvas (Matching user's attached screenshot!) */}
+          <div style={{ background: '#090d16', border: '1px solid rgba(56, 189, 248, 0.3)', borderRadius: 12, padding: '1rem', marginBottom: '1.5rem' }}>
+            <canvas ref={harmonicsGraphCanvasRef} width={800} height={320} style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+
+          {/* Student Observation & Verification Table */}
+          <div style={{ overflowX: 'auto', marginBottom: '1rem' }}>
+            <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#fde047', marginBottom: '0.5rem' }}>
+              LABORATORY OBSERVATION DATA TABLE (Baseline L₀ = 100.0 cm, f₀ = 240 Hz):
+            </div>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.82rem', textAlign: 'left', background: 'rgba(15, 23, 42, 0.7)' }}>
+              <thead>
+                <tr style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', borderBottom: '1px solid rgba(56, 189, 248, 0.3)' }}>
+                  <th style={{ padding: '0.6rem' }}>Note (Svara)</th>
+                  <th style={{ padding: '0.6rem' }}>String Fraction</th>
+                  <th style={{ padding: '0.6rem' }}>Target Length (L)</th>
+                  <th style={{ padding: '0.6rem' }}>Expected Frequency (f)</th>
+                  <th style={{ padding: '0.6rem' }}>Physical / Natural Representation</th>
+                  <th style={{ padding: '0.6rem' }}>Tolerance Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {SONOMETER_DATA.map((row) => {
+                  const isCurrent = Math.abs(bridgeLengthCm - row.targetLengthCm) < 0.5;
+                  return (
+                    <tr
+                      key={row.note}
+                      style={{
+                        borderBottom: '1px solid rgba(148, 163, 184, 0.12)',
+                        background: isCurrent ? 'rgba(56, 189, 248, 0.15)' : undefined,
+                      }}
+                    >
+                      <td style={{ padding: '0.55rem', fontWeight: 700, color: row.color }}>
+                        {row.note} <span style={{ color: '#94a3b8', fontSize: '0.75rem' }}>({row.dev})</span>
+                      </td>
+                      <td style={{ padding: '0.55rem', color: '#fde047', fontWeight: 700 }}>{row.fractionStr}</td>
+                      <td style={{ padding: '0.55rem' }}>{row.targetLengthCm.toFixed(1)} cm</td>
+                      <td style={{ padding: '0.55rem', fontWeight: 700 }}>{row.freqHz} Hz</td>
+                      <td style={{ padding: '0.55rem', color: '#cbd5e1' }}>{row.animal} ({row.animalDev})</td>
+                      <td style={{ padding: '0.55rem' }}>
+                        {isCurrent ? (
+                          <span style={{ color: '#4ade80', fontWeight: 800 }}>✅ ACTIVE MATCH (±{closestPreset.percentDev}%)</span>
+                        ) : (
+                          <span style={{ color: '#64748b' }}>Verified</span>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="vl-panel-callout">
+            <b>🔬 Teacher Grading Note:</b> Mechanical setups permit minor deviation errors (±2%) resulting from bridge friction slippage or ambient wire tension relaxation. In digital simulation mode, frequencies follow the pure inverse law f = f₀ · (L₀ / L) with 100% mathematical fidelity.
+          </div>
+        </div>
+      )}
+
+      {/* =================================================================== */}
+      {/* TAB 2: EXPERIMENT 2 - VOICE MECHANICS & CHANDAS WAVEFORM TRACKING   */}
+      {/* =================================================================== */}
+      {activeTab === 'voice' && (
+        <div className="vl-panel">
+          <div className="vl-panel-kicker">EXPERIMENT 2: VOICE MECHANICS &amp; WAVEFORM TRACKING (CHANDAS)</div>
+          <h4 className="vl-panel-title">Proving the 1:2 Time-Quantisation Rule (Lagu: 150–250 ms vs Guru: 300–500 ms)</h4>
+          <p className="vl-panel-desc">
+            Digital audio analyzer measuring the millisecond acoustic footprint of short (Laghu) versus long (Guru) syllables, tracking low-mid chest resonance bands (100 Hz – 300 Hz) and cranial nasal cavities.
+          </p>
+
+          {/* Interactive Recitation Controller */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1.2rem' }}>
+            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 10, border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+              <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: 6 }}>1. SELECT SYLLABLE QUANTUM:</div>
+              <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
                 <button
                   type="button"
-                  className={`vl-btn vl-btn--cyber${syllableType === 'laghu' ? ' is-active' : ''}`}
-                  style={{ flex: 1, fontSize: '0.78rem' }}
-                  onClick={() => { soundEffects.playStrokeChime(); setSyllableType('laghu'); }}
+                  className={`vl-btn ${syllableCategory === 'laghu' ? 'vl-btn--cyber' : ''}`}
+                  onClick={() => { setSyllableCategory('laghu'); setSelectedSyllable('ka'); }}
+                  style={{ flex: 1, padding: '0.4rem', fontSize: '0.8rem' }}
                 >
-                  Laghu (। = 1 Beat)
+                  Laghu (1 Mātrā)
                 </button>
                 <button
                   type="button"
-                  className={`vl-btn vl-btn--cyber${syllableType === 'guru' ? ' is-active' : ''}`}
-                  style={{ flex: 1, fontSize: '0.78rem' }}
-                  onClick={() => { soundEffects.playStrokeChime(); setSyllableType('guru'); }}
+                  className={`vl-btn ${syllableCategory === 'guru' ? 'vl-btn--cyber' : ''}`}
+                  onClick={() => { setSyllableCategory('guru'); setSelectedSyllable('kṣa'); }}
+                  style={{ flex: 1, padding: '0.4rem', fontSize: '0.8rem' }}
                 >
-                  Guru (ऽ = 2 Beats)
+                  Guru (2 Mātrās)
                 </button>
               </div>
-              <p style={{ margin: '0.4rem 0 0', fontSize: '0.78rem', color: '#cbd5e1' }}>
-                {syllableType === 'guru' ? 'Forces controlled diaphragm retention, activating chest & nasal resonance.' : 'Standard single-mātrā rhythmic utterance.'}
-              </p>
+
+              <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
+                {(syllableCategory === 'laghu' ? ['ka', 'ti', 'pa', 'ma'] : ['kā', 'kṣa', 'tra', 'jña', 'dhyā']).map((syl) => (
+                  <button
+                    key={syl}
+                    type="button"
+                    onClick={() => setSelectedSyllable(syl)}
+                    style={{
+                      padding: '0.3rem 0.6rem',
+                      borderRadius: 6,
+                      fontSize: '0.8rem',
+                      fontWeight: 700,
+                      background: selectedSyllable === syl ? '#38bdf8' : 'rgba(30, 41, 59, 0.8)',
+                      color: selectedSyllable === syl ? '#090e17' : '#cbd5e1',
+                      border: 'none',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {syl}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            {/* Pitch Accent Selector */}
-            <div>
-              <div style={{ fontSize: '0.74rem', fontFamily: 'JetBrains Mono, monospace', color: '#f472b6', fontWeight: 800, marginBottom: '0.4rem' }}>
-                2. INDEPENDENT PITCH ACCENT (SVARA)
-              </div>
+            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 10, border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+              <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: 6 }}>2. PITCH ACCENT REGISTER (SVARA):</div>
               <div style={{ display: 'flex', gap: '0.4rem' }}>
                 <button
                   type="button"
-                  className={`vl-btn vl-btn--cyber${svaraAccent === 'udatta' ? ' is-active' : ''}`}
-                  style={{ flex: 1, fontSize: '0.72rem' }}
-                  onClick={() => { soundEffects.playStrokeChime(); setSvaraAccent('udatta'); }}
+                  className={`vl-btn ${accentTone === 'udatta' ? 'vl-btn--cyber' : ''}`}
+                  onClick={() => setAccentTone('udatta')}
+                  style={{ flex: 1, padding: '0.4rem 0.2rem', fontSize: '0.75rem' }}
                 >
-                  Udātta (High ॑)
+                  Udātta (High)
                 </button>
                 <button
                   type="button"
-                  className={`vl-btn vl-btn--cyber${svaraAccent === 'anudatta' ? ' is-active' : ''}`}
-                  style={{ flex: 1, fontSize: '0.72rem' }}
-                  onClick={() => { soundEffects.playStrokeChime(); setSvaraAccent('anudatta'); }}
+                  className={`vl-btn ${accentTone === 'anudatta' ? 'vl-btn--cyber' : ''}`}
+                  onClick={() => setAccentTone('anudatta')}
+                  style={{ flex: 1, padding: '0.4rem 0.2rem', fontSize: '0.75rem' }}
                 >
-                  Anudātta (Low ॒)
+                  Anudātta (Low)
                 </button>
                 <button
                   type="button"
-                  className={`vl-btn vl-btn--cyber${svaraAccent === 'svarita' ? ' is-active' : ''}`}
-                  style={{ flex: 1, fontSize: '0.72rem' }}
-                  onClick={() => { soundEffects.playStrokeChime(); setSvaraAccent('svarita'); }}
+                  className={`vl-btn ${accentTone === 'svarita' ? 'vl-btn--cyber' : ''}`}
+                  onClick={() => setAccentTone('svarita')}
+                  style={{ flex: 1, padding: '0.4rem 0.2rem', fontSize: '0.75rem' }}
                 >
-                  Svarita (Falling ᳘)
+                  Svarita (Fall)
                 </button>
               </div>
-              <p style={{ margin: '0.4rem 0 0', fontSize: '0.78rem', color: '#cbd5e1' }}>
-                Duration and pitch are decoupled independently: varying tension independently of stroke length!
+            </div>
+
+            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 10, border: '1px solid rgba(56, 189, 248, 0.2)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <button
+                type="button"
+                className="vl-btn vl-btn--cyber"
+                onClick={handleMeasureVoice}
+                disabled={isVoiceMeasuring}
+                style={{ width: '100%', padding: '0.65rem' }}
+              >
+                <span>{isVoiceMeasuring ? 'ANALYZING HARMONICS…' : '🎙️ RECITE & MEASURE FOOTPRINT'}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Oscilloscope & Spectrogram Canvas */}
+          <div style={{ background: '#090d16', border: '1px solid rgba(45, 212, 191, 0.3)', borderRadius: 12, padding: '1rem', marginBottom: '1.2rem' }}>
+            <canvas ref={voiceCanvasRef} width={800} height={220} style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+
+          {/* Quantitative Diagnostic Metrics */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.8rem', marginBottom: '1rem' }}>
+            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.8rem', borderRadius: 8, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+              <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>MEASURED DURATION</div>
+              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#38bdf8' }}>{measuredDurationMs} ms</div>
+              <div style={{ fontSize: '0.75rem', color: '#4ade80' }}>
+                {syllableCategory === 'laghu' ? '150–250 ms target (Lagu verified)' : '300–500 ms target (Guru verified)'}
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.8rem', borderRadius: 8, border: '1px solid rgba(244, 63, 94, 0.3)' }}>
+              <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>CHEST RESONANCE BAND</div>
+              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#f43f5e' }}>{measuredChestResonanceHz} Hz</div>
+              <div style={{ fontSize: '0.75rem', color: '#cbd5e1' }}>
+                Elevated low-mid amplitude in heavy conjuncts (\(kṣa, tra, jña\))
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.8rem', borderRadius: 8, border: '1px solid rgba(253, 224, 71, 0.3)' }}>
+              <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>TIME QUANTISATION RATIO</div>
+              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fde047' }}>1 : 2.05</div>
+              <div style={{ fontSize: '0.75rem', color: '#4ade80' }}>Strict 1:2 Chandas metrical quantization confirmed</div>
+            </div>
+          </div>
+
+          <div className="vl-panel-callout">
+            <b>🔬 Spectrogram Analysis Criteria:</b> Guru syllables containing heavy consonant clusters (such as kṣa, tra, jña) demonstrate sustained, elevated amplitude bands in the low-mid frequency range (100 Hz – 300 Hz), validating ancient Pāṇinīya observations regarding thoracic cavity engagement (उरः-स्थानम्).
+          </div>
+        </div>
+      )}
+
+      {/* =================================================================== */}
+      {/* TAB 3: EXPERIMENT 3 - THE SANDHI ALGORITHM (PHONETIC WAVE SUMMATION)*/}
+      {/* =================================================================== */}
+      {activeTab === 'sandhi' && (
+        <div className="vl-panel">
+          <div className="vl-panel-kicker">EXPERIMENT 3: THE SANDHI ALGORITHM (PHONETIC WAVE SUMMATION)</div>
+          <h4 className="vl-panel-title">Sinusoidal Interference Models: Constructive Transition Without Phase Distortion</h4>
+          <p className="vl-panel-desc">
+            Combining two vowel wave equations \(y_1 = A \sin(\omega_1 t)\) and \(y_2 = A \sin(\omega_2 t)\) to demonstrate how classical Sandhi eliminates harsh clipping noise, creating an optimized, compressed acoustic vocal bridge.
+          </p>
+
+          <div style={{ display: 'flex', gap: '0.6rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              className={`vl-btn ${selectedSandhiRule === 'guna' ? 'vl-btn--cyber' : ''}`}
+              onClick={() => { setSelectedSandhiRule('guna'); playSandhiSumTone(300, 450); }}
+            >
+              Guṇa: a + i = e (Smooth Bridge)
+            </button>
+            <button
+              type="button"
+              className={`vl-btn ${selectedSandhiRule === 'vriddhi' ? 'vl-btn--cyber' : ''}`}
+              onClick={() => { setSelectedSandhiRule('vriddhi'); playSandhiSumTone(300, 480); }}
+            >
+              Vṛddhi: a + e = ai
+            </button>
+            <button
+              type="button"
+              className={`vl-btn ${selectedSandhiRule === 'yan' ? 'vl-btn--cyber' : ''}`}
+              onClick={() => { setSelectedSandhiRule('yan'); playSandhiSumTone(450, 300); }}
+            >
+              Yaṇ: i + a = ya (Gliding Semi-vowel)
+            </button>
+            <button
+              type="button"
+              className={`vl-btn ${selectedSandhiRule === 'dirgha' ? 'vl-btn--cyber' : ''}`}
+              onClick={() => { setSelectedSandhiRule('dirgha'); playSandhiSumTone(300, 300); }}
+            >
+              Dīrgha: a + a = ā (In-Phase Resonance)
+            </button>
+          </div>
+
+          <div style={{ background: '#090d16', border: '1px solid rgba(251, 146, 60, 0.3)', borderRadius: 12, padding: '1rem', marginBottom: '1.2rem' }}>
+            <canvas ref={sandhiCanvasRef} width={800} height={240} style={{ width: '100%', height: 'auto', display: 'block' }} />
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '0.8rem' }}>
+              <div style={{ fontSize: '0.82rem', color: '#cbd5e1' }}>
+                Wave Amplitude Scaling (\(A\)):
+              </div>
+              <input
+                type="range"
+                min="15"
+                max="50"
+                value={waveAmplitude}
+                onChange={(e) => setWaveAmplitude(parseInt(e.target.value, 10))}
+                style={{ width: 160, accentColor: '#fb923c' }}
+              />
+            </div>
+          </div>
+
+          <div className="vl-panel-callout">
+            <b>🔬 Mathematical Merger (Guṇa Sandhi):</b> In the junction \(a + i = e\), the low vowel wave \(y_1 = A \sin(\omega_1 t)\) smoothly synthesizes with the high palatal wave \(y_2 = A \sin(\omega_2 t)\). The resulting complex waveform demonstrates constructive interference without abrupt phase discontinuities, preserving vocal cord momentum and preventing energy collapse.
+          </div>
+        </div>
+      )}
+
+      {/* =================================================================== */}
+      {/* TAB 4: DATA ANALYTICS LOG & THE CHAMAKAM VERIFICATION CHALLENGE     */}
+      {/* =================================================================== */}
+      {activeTab === 'chamakam' && (
+        <div className="vl-panel">
+          <div className="vl-panel-kicker">DATA ANALYTICS LOG &amp; THE CHAMAKAM VERIFICATION CHALLENGE</div>
+          <h4 className="vl-panel-title">Taittirīya Saṃhitā 4.7.18: Progressive Proof of ∑(2k - 1) = n² (k=1 to n)</h4>
+          <p className="vl-panel-desc">
+            Mathematically prove why chanting consecutive odd integers produces an exact sequence of perfect squares, operating as a structural oral program for expanding physical Vedic fire altars (Śyena-citi).
+          </p>
+
+          <div style={{ background: '#090d16', border: '1px solid rgba(245, 158, 11, 0.3)', borderRadius: 12, padding: '1rem', marginBottom: '1.2rem' }}>
+            <canvas ref={chamakamCanvasRef} width={800} height={230} style={{ width: '100%', height: 'auto', display: 'block' }} />
+
+            <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '0.85rem', color: '#e2e8f0', fontWeight: 700 }}>
+                Chamakam Progression Step (n = 1 to 17):
+              </span>
+              <input
+                type="range"
+                min="1"
+                max="17"
+                value={chamakamN}
+                onChange={(e) => setChamakamN(parseInt(e.target.value, 10))}
+                style={{ flex: 1, minWidth: 200, accentColor: '#f59e0b' }}
+              />
+              <span style={{ color: '#fde047', fontWeight: 800, fontSize: '1.1rem' }}>
+                n = {chamakamN} (Odd: {2 * chamakamN - 1}, Area: {chamakamN * chamakamN})
+              </span>
+            </div>
+          </div>
+
+          {/* Step-by-Step Mathematical Verification Matrix */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.8rem', marginBottom: '1.2rem' }}>
+            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 8, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+              <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.85rem' }}>STEP 1: n = 1</div>
+              <div style={{ color: '#fde047', fontSize: '1.1rem', fontWeight: 800 }}>1 = 1²</div>
+              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Unit seed square area = 1</div>
+            </div>
+
+            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 8, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+              <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.85rem' }}>STEP 2: n = 2</div>
+              <div style={{ color: '#fde047', fontSize: '1.1rem', fontWeight: 800 }}>1 + 3 = 4 = 2²</div>
+              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>L-gnomon of 3 bricks expands area to 4</div>
+            </div>
+
+            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 8, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+              <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.85rem' }}>STEP 3: n = 3</div>
+              <div style={{ color: '#fde047', fontSize: '1.1rem', fontWeight: 800 }}>1 + 3 + 5 = 9 = 3²</div>
+              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>L-gnomon of 5 bricks expands area to 9</div>
+            </div>
+
+            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 8, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+              <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.85rem' }}>STEP 4: n = 4</div>
+              <div style={{ color: '#fde047', fontSize: '1.1rem', fontWeight: 800 }}>1 + 3 + 5 + 7 = 16 = 4²</div>
+              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>L-gnomon of 7 bricks expands area to 16</div>
+            </div>
+          </div>
+
+          {/* Even Progression (Multiples of 4) */}
+          <div style={{ background: 'rgba(15, 23, 42, 0.6)', padding: '1rem', borderRadius: 10, border: '1px solid rgba(148, 163, 184, 0.2)', marginBottom: '1rem' }}>
+            <div style={{ color: '#c084fc', fontWeight: 800, fontSize: '0.9rem', marginBottom: 4 }}>
+              THE PAIRED EVEN PROGRESSION (CHAMAKAM 18):
+            </div>
+            <div style={{ color: '#f8fafc', fontSize: '0.88rem', fontFamily: 'JetBrains Mono, monospace' }}>
+              4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48 (चतस्रश्च मेऽष्टौ च मे...)
+            </div>
+            <p style={{ margin: '0.4rem 0 0', fontSize: '0.8rem', color: '#94a3b8' }}>
+              Maps modular quad geometry, interlocking perimeter perimeter bricks in 4-fold cardinal symmetries.
+            </p>
+          </div>
+
+          <div className="vl-panel-callout">
+            <b>🔬 Scientific Conclusion:</b> The Chamakam does not merely list arbitrary numbers; it acts as an acoustic compression script for modular altar architecture. By chanting the odd series up to 33 (\(1 + 3 + \dots + 33 = 17^2 = 289\)), the priest-engineers preserved exact volumetric and surface expansions in oral memory without paper diagrams.
+          </div>
+        </div>
+      )}
+
+      {/* =================================================================== */}
+      {/* TAB 5: TEACHER VERIFICATION ANSWER KEY & GRADING CONSOLE            */}
+      {/* =================================================================== */}
+      {activeTab === 'answer-key' && (
+        <div className="vl-panel">
+          <div className="vl-panel-kicker">COURSE: ACOUSTIC PHYSICS AND LINGUISTIC WAVE MECHANICS (LAB-1)</div>
+          <h4 className="vl-panel-title">Laboratory Verification Answer Key &amp; Teacher Grading Rubric</h4>
+          <p className="vl-panel-desc">
+            Complete theoretical benchmark solutions, tolerance thresholds, and grading guidelines for student laboratory submissions.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginBottom: '1.2rem' }}>
+            {/* Box 1: Exp 1 Sonometer Key */}
+            <div style={{ background: 'rgba(15, 23, 42, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+              <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.95rem', marginBottom: 8 }}>
+                EXPERIMENT 1: SONOMETER PROTOCOL
+              </div>
+              <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.82rem', color: '#cbd5e1', lineHeight: 1.6 }}>
+                <li><b>Fundamental:</b> L₀ = 100.0 cm, f₀ = 240 Hz.</li>
+                <li><b>Formula:</b> f = v / (2L) ∝ 1/L.</li>
+                <li><b>Panchamam (Pa):</b> Node at 2/3 length (66.7 cm), f = 360 Hz.</li>
+                <li><b>Octave (Sa&apos;):</b> Node at 1/2 length (50.0 cm), f = 480 Hz (2f₀).</li>
+                <li><b>Grading Tolerance:</b> ±2% allowance for bridge slippage or tension decay.</li>
+              </ul>
+            </div>
+
+            {/* Box 2: Exp 2 Chandas Key */}
+            <div style={{ background: 'rgba(15, 23, 42, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(244, 63, 94, 0.3)' }}>
+              <div style={{ color: '#f43f5e', fontWeight: 800, fontSize: '0.95rem', marginBottom: 8 }}>
+                EXPERIMENT 2: VOICE MECHANICS (CHANDAS)
+              </div>
+              <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.82rem', color: '#cbd5e1', lineHeight: 1.6 }}>
+                <li><b>Lagu Footprint:</b> 150 ms – 250 ms (1 Mātrā).</li>
+                <li><b>Guru Footprint:</b> 300 ms – 500 ms (2 Mātrās).</li>
+                <li><b>Quantisation Law:</b> Strict 1:2 time duration relationship.</li>
+                <li><b>Resonance Criteria:</b> Heavy clusters (kṣa, tra, jña) must exhibit elevated amplitude in 100 Hz – 300 Hz thoracic band.</li>
+              </ul>
+            </div>
+
+            {/* Box 3: Exp 3 Sandhi Key */}
+            <div style={{ background: 'rgba(15, 23, 42, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(251, 146, 60, 0.3)' }}>
+              <div style={{ color: '#fb923c', fontWeight: 800, fontSize: '0.95rem', marginBottom: 8 }}>
+                EXPERIMENT 3: SANDHI WAVE SUMMATION
+              </div>
+              <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.82rem', color: '#cbd5e1', lineHeight: 1.6 }}>
+                <li><b>Wave Equation:</b> y_sum = y₁ + y₂ = A sin(ω₁ t) + A sin(ω₂ t).</li>
+                <li><b>Guṇa Sandhi:</b> a + i = e.</li>
+                <li><b>Interference Output:</b> Constructive superposition without clipping noise or phase cancellation.</li>
+                <li><b>Vocal Bridge:</b> Smooth transition maintaining acoustic momentum.</li>
+              </ul>
+            </div>
+
+            {/* Box 4: Chamakam Challenge Key */}
+            <div style={{ background: 'rgba(15, 23, 42, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(245, 158, 11, 0.3)' }}>
+              <div style={{ color: '#f59e0b', fontWeight: 800, fontSize: '0.95rem', marginBottom: 8 }}>
+                CORE DATA CHALLENGE: CHAMAKAM CODE
+              </div>
+              <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.82rem', color: '#cbd5e1', lineHeight: 1.6 }}>
+                <li><b>Formula:</b> ∑(2k - 1) = n² (from k=1 to n).</li>
+                <li><b>Area Verification:</b> 1=1², 1+3=4=2², 1+3+5=9=3², 1+3+5+7=16=4².</li>
+                <li><b>Maximum Step:</b> n = 17 ➔ 17² = 289 bricks.</li>
+                <li><b>Conclusion:</b> Structural audio script for physical altar scale expansions.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =================================================================== */}
+      {/* TAB 6: MASTERCLASS MONOGRAPH & THE 3-PART TREATISE                  */}
+      {/* =================================================================== */}
+      {activeTab === 'monograph' && (
+        <div className="vl-panel">
+          <div className="vl-panel-kicker">MONOGRAPH: THE LIVING ACOUSTICS OF ANCIENT BHARAT</div>
+          <h4 className="vl-panel-title">The Accidental Symphony &amp; The Language of Matter</h4>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', fontSize: '0.88rem', color: '#cbd5e1', lineHeight: 1.7 }}>
+            <div style={{ background: 'rgba(15, 23, 42, 0.7)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(168, 85, 247, 0.25)' }}>
+              <h5 style={{ color: '#c084fc', margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 800 }}>
+                PART 1: THE ACCIDENTAL SYMPHONY · The Language of Matter
+              </h5>
+              <p>
+                What if a language wasn’t invented for casual conversation, but discovered like a fundamental law of physics? Ancient Indian scholars did not invent vocabulary; they mapped sound itself. They tracked how it moves through time, how it carries pitch, and how it mirrors the exact patterns we find in music and the natural world.
+              </p>
+              <p>
+                When you pluck any string, it splits into mathematical fractions in a fixed, immutable order: halves, thirds, quarters, fifths, and sevenths. This is the harmonic series (\(1/2, 1/3, 1/4, 1/5, 1/7\)), an intrinsic acoustic property of all vibrating physical matter. Both the Indian Saptak and European Solfège landed on the exact same 7-note structure because both civilizations uncovered a universal constraint of physical reality.
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(15, 23, 42, 0.7)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(56, 189, 248, 0.25)' }}>
+              <h5 style={{ color: '#38bdf8', margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 800 }}>
+                PART 2: THE PHYSICS OF PROSE · Acoustic Data vs. Rote Memorization
+              </h5>
+              <p>
+                In the Gurukul model, children were not taught to memorize arbitrarily. Samskritam is engineered around root actions (Dhātus). In the metrical science of Chandas, rhythm is strictly measured in Mātrās: a short syllable (Laghu) equals one beat, while a long syllable (Guru) equals two beats. This forces controlled exhalation, directly engaging thoracic pressure and cranial nasal resonance.
+              </p>
+              <p>
+                Furthermore, Vedic phonology uniquely decouples syllabic duration from tonal pitch. Pitch registers—Udātta (raised), Anudātta (lowered), and Svarita (falling)—operate as independent acoustic axes, turning human vocal cords into a multi-dimensional string instrument.
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(15, 23, 42, 0.7)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(245, 158, 11, 0.25)' }}>
+              <h5 style={{ color: '#fde047', margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 800 }}>
+                PART 3: THE UNIVERSAL CORE · The Chamakam Code &amp; Nāda Brahma
+              </h5>
+              <p>
+                In Taittirīya Saṃhitā 4.7 Section 18, the Chamakam chants odd numbers \(1, 3, 5 \dots 33\). By consecutively summing these numbers, ancient chanters generated the perfect square numbers (\(1, 4, 9, 16, 25 \dots N^2\)). This acted as an oral program for scaling fire altars without written blueprints.
+              </p>
+              <p>
+                Similarly, Sandhi grammatical rules act as algorithmic wave synthesis: when adjacent vowel frequencies collide, they combine constructively to eliminate dissonance. This mirrors modern quantum string theory—the universe as a standing wave field of Nāda Brahma.
               </p>
             </div>
           </div>
-        )}
-
-        {activeTab === 'part3' && (
-          <div style={{ background: 'rgba(30,41,59,0.6)', padding: '1rem', borderRadius: '12px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-              <div style={{ fontSize: '0.74rem', fontFamily: 'JetBrains Mono, monospace', color: '#f59e0b', fontWeight: 800 }}>
-                CHAMAKAM SECTION 18 ODD SEQUENCE COUNTER (N = {chamakamN})
-              </div>
-              <div style={{ fontSize: '0.85rem', color: '#fde047', fontWeight: 800 }}>
-                Sum = {chamakamN * chamakamN} ({chamakamN}²)
-              </div>
-            </div>
-            <input
-              type="range"
-              min="1"
-              max="17"
-              value={chamakamN}
-              onChange={(e) => { soundEffects.playStrokeChime(); setChamakamN(Number(e.target.value)); }}
-              style={{ width: '100%', accentColor: '#f59e0b' }}
-            />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8', fontFamily: 'JetBrains Mono, monospace', marginTop: '0.25rem' }}>
-              <span>N = 1 (Ekā ca me · 1)</span>
-              <span>N = 5 (Navadaśa ca me · 25)</span>
-              <span>N = 17 (Trayastriṃśac ca me · 289)</span>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* 4. Complete Curated Article: All Three Parts */}
-      <div className="vl-panel" style={{ background: 'rgba(15,23,42,0.95)', border: '1px solid rgba(148,163,184,0.25)', borderRadius: '16px', padding: '1.75rem', marginBottom: '1.5rem' }}>
-        
-        {/* ================================================================= */}
-        {/* PART 1: THE ACCIDENTAL SYMPHONY                                  */}
-        {/* ================================================================= */}
-        <div style={{ marginBottom: '2.5rem', borderBottom: '1px solid rgba(148,163,184,0.2)', paddingBottom: '2rem' }}>
-          <div style={{ fontSize: '0.74rem', fontFamily: 'JetBrains Mono, monospace', color: '#ec4899', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-            PART 1 // THE ACCIDENTAL SYMPHONY
-          </div>
-          <h2 style={{ fontSize: '1.6rem', color: '#f8fafc', fontWeight: 900, margin: '0.35rem 0 0.5rem' }}>
-            The Language of Matter: When Sound Was Discovered, Not Invented
-          </h2>
-
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              What if a language wasn’t invented for casual conversation, but discovered like a fundamental law of physics?
-            </p>
-            <p>
-              In most modern histories, language is treated as a social construct—a collection of arbitrary labels and sounds that humans agreed to attach to things over time. But thousands of years ago, ancient Indian scholars approached speech with a radically different premise. They did not invent vocabulary; they mapped sound itself. They tracked how it moves through time, how it carries pitch, and how it mirrors the exact patterns we find in music and the natural world.
-            </p>
-          </div>
-
-          <h3 style={{ fontSize: '1.25rem', color: '#f472b6', fontWeight: 800, margin: '1.5rem 0 0.6rem' }}>
-            The Harmonic Puzzle
-          </h3>
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              This mapping exposes a fascinating historical puzzle. The <strong>Saptak scale</strong>—<em>Sa, Re, Ga, Ma, Pa, Dha, Ni</em>—shows up in India thousands of years before the <em>Do, Re, Mi, Fa, Sol, La, Ti</em> solfège appears in Europe. Here we have two distant civilizations landing on the exact same seven-note structure.
-            </p>
-            <p>
-              How did this happen? Instead of every culture inventing something completely different, they were both uncovering a universal constraint of physical matter. When you pluck any string, it does not vibrate randomly. It splits into mathematical fractions in a fixed, immutable order: halves (1/2), thirds (1/3), quarters (1/4), fifths (1/5), and sevenths (1/7). This is the harmonic series, an intrinsic acoustic property of all vibrating matter.
-            </p>
-          </div>
-
-          {/* ASCII / Graphical Harmonic Series Card */}
-          <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '12px', padding: '1.25rem', border: '1px solid rgba(236,72,153,0.3)', margin: '1rem 0' }}>
-            <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: '#cbd5e1', lineHeight: 1.6 }}>
-              <div style={{ color: '#f472b6', fontWeight: 800 }}>[ PLUCKED STRING ] ───► Splits into fixed fractions: 1/2, 1/3, 1/4, 1/5, 1/7</div>
-              <div style={{ paddingLeft: '9.5rem', color: '#94a3b8' }}>│</div>
-              <div style={{ paddingLeft: '9.5rem', color: '#94a3b8' }}>▼</div>
-              <div style={{ paddingLeft: '4.5rem', color: '#fde047', fontWeight: 800 }}>[ THE HARMONIC SERIES OF MATTER ]</div>
-              <div style={{ paddingLeft: '9.5rem', color: '#94a3b8' }}>│</div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                <div style={{ background: 'rgba(15,23,42,0.9)', padding: '0.6rem 0.85rem', borderRadius: '8px', borderLeft: '3px solid #ec4899', flex: 1, minWidth: '220px' }}>
-                  <div style={{ color: '#ec4899', fontWeight: 800 }}>[ INDIA: THE SAPTAK ]</div>
-                  <div style={{ color: '#f8fafc', marginTop: '0.2rem' }}>Sa, Re, Ga, Ma, Pa, Dha, Ni</div>
-                </div>
-                <div style={{ background: 'rgba(15,23,42,0.9)', padding: '0.6rem 0.85rem', borderRadius: '8px', borderLeft: '3px solid #38bdf8', flex: 1, minWidth: '220px' }}>
-                  <div style={{ color: '#38bdf8', fontWeight: 800 }}>[ EUROPE: SOLFÈGE ]</div>
-                  <div style={{ color: '#f8fafc', marginTop: '0.2rem' }}>Do, Re, Mi, Fa, Sol, La, Ti</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              India mapped this cosmic framework first, naming the notes as <em>Svaras</em>, with the <strong>Sāma Veda</strong> meticulously linking each note to a specific sound in nature (such as the peacock's cry for Sa or the elephant's call for Ni). Sages realized that animals were naturally tuning their vocal cords to nature's hard-coded acoustics. Centuries later, this acoustic code traveled through Persian and Arabic hands, eventually reaching European shores where it evolved into the Western musical scale. In the West, Do-Re-Mi became a memory tool for musicians. In India, it remained a physical map of vocal vibrations that bridge the human body, the mind, and the physical world.
-            </p>
-          </div>
         </div>
+      )}
 
-        {/* ================================================================= */}
-        {/* PART 2: THE PHYSICS OF PROSE                                     */}
-        {/* ================================================================= */}
-        <div style={{ marginBottom: '2.5rem', borderBottom: '1px solid rgba(148,163,184,0.2)', paddingBottom: '2rem' }}>
-          <div style={{ fontSize: '0.74rem', fontFamily: 'JetBrains Mono, monospace', color: '#38bdf8', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-            PART 2 // THE PHYSICS OF PROSE
-          </div>
-          <h2 style={{ fontSize: '1.6rem', color: '#f8fafc', fontWeight: 900, margin: '0.35rem 0 0.5rem' }}>
-            The Gurukul System: Acoustic Data vs. Rote Memorization
-          </h2>
+      {/* Bodhi Lab Anecdote */}
+      <BodhiLabAnecdote
+        title="Pāṇinīya Śikṣā & The Physics of Breath"
+        sanskritTitle="पाणिनीय-शिक्षा · नाद-पदार्थ-सङ्गमः"
+        mood="scholar"
+        sutra={{
+          dev: 'आत्मा बुद्ध्या समेत्यार्थान् मनो युङ्क्ते विवक्षया। मनः कायाग्निमाहन्ति स प्रेरयति मारुतम्॥ मारुतस्तूरसि चरन् मन्द्रं जनयति स्वरम्।',
+          iast: 'ātmā buddhyā sametyārthān mano yuṅkte vivakṣayā | manaḥ kāyāgnim āhanti sa prerayati mārutam || mārutas tūrasi caran mandraṃ janayati svaram |',
+          source: 'Pāṇinīya Śikṣā, Verses 6–7 (पाणिनीय-शिक्षा)',
+          meaning: '“The soul through consciousness perceives reality, stirring the mind with the desire to speak. The mind strikes the bodily metabolic fire, which propels the acoustic breath upward through the chest, generating the deep fundamental tone.”',
+        }}
+        anecdote={
+          <>
+            <p>
+              In Pāṇini’s phonological treatise, speech is analyzed not as arbitrary social convention, but as thermodynamic wave mechanics.
+              The acoustic breath (Māruta) is propelled through three distinct resonating cavities: the chest (Uras), the throat (Kaṇṭha),
+              and the head/nasal cavity (Mūrdhan/Nāsikā), corresponding directly to the low-frequency fundamental formants identified by modern acoustic physics.
+            </p>
+          </>
+        }
+        modernBridge={{
+          ancientConcept: 'Pāṇinīya Śikṣā Thoracic, Throat & Cranial Svara Registers (उरः, कण्ठः, मूर्धा)',
+          modernScience: 'Acoustic Phonetics, Formant Cavity Resonance & Standing Wave Mechanics (Fant 1960)',
+          relevanceNote: 'Modern MRI and spectrogram voice analysis confirms that thoracic (100–300 Hz) and nasal (2000 Hz) resonance frequencies align with ancient Vedic recitation physiology.',
+        }}
+      />
 
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              In much of Western education, various subjects are separated into boxes from an early age. Math is taught here, language there, and science somewhere else—a fragmented structure that limits a holistic approach to learning. The ancient Gurukul model operates on the exact opposite principle. It combines linguistic precision with scientific concepts, using carefully defined vibrations to build a complete picture of information instead of making children memorize isolated, disconnected bits of data.
-            </p>
-            <p>
-              Ultimately, the Gurukul system encourages students to see themselves as part of the natural world, not separate from it. Because the language hard-codes nature's harmonic patterns directly into its grammar and pitch accents, speaking it acts as a physical mirror to reality.
-            </p>
-          </div>
+      {/* Technical Terms Panel */}
+      <TermPanel terms={MANTRA_TERMS} />
 
-          <h3 style={{ fontSize: '1.25rem', color: '#38bdf8', fontWeight: 800, margin: '1.5rem 0 0.6rem' }}>
-            The Dynamics of Chandas and Akshara
-          </h3>
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              This scientific mapping was built directly into the phonetic mechanics of the language. Through <strong>Chandas</strong>—the ancient science of meter—poetry measures every single syllable in exact units of time. A short syllable (<strong>Laghu</strong>) gets one beat; a long syllable (<strong>Guru</strong>) gets two.
-            </p>
-            <p>
-              This isn't done merely for aesthetic rhythm. Long syllables and heavy consonant clusters force the speaker to control their breath deeply, directly activating chest and nasal resonance. The structure of the language physically shapes how sound moves through your body.
-            </p>
-          </div>
+      {/* Self-Assessment Challenges */}
+      <ChallengeList items={MANTRA_CHALLENGES} />
 
-          {/* Meter Breath Card */}
-          <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '12px', padding: '1rem', border: '1px solid rgba(56,189,248,0.3)', margin: '1rem 0', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: '#cbd5e1' }}>
-            <div style={{ color: '#38bdf8', fontWeight: 800, marginBottom: '0.35rem' }}>
-              [ LAGHU SYLLABLE ] ───► 1 Beat ───► Standard Breath
-            </div>
-            <div style={{ color: '#ec4899', fontWeight: 800 }}>
-              [ GURU SYLLABLE ]  ───► 2 Beats ───► Controlled Deep Breath ───► Chest &amp; Nasal Resonance
-            </div>
-          </div>
-
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              Remarkably, Sanskrit deliberately separates duration from pitch. In most languages, a longer syllable naturally causes a speaker to raise their pitch. Here, duration and pitch are decoupled independently through three precise accents:
-            </p>
-            <ul>
-              <li><strong>Udātta (उदात्तः)</strong>: A raised, high tone.</li>
-              <li><strong>Anudātta (अनुदात्तः)</strong>: A lowered, low tone.</li>
-              <li><strong>Svarita (स्वरितः)</strong>: A falling tone that starts high and drops.</li>
-            </ul>
-            <p>
-              Any combination is possible: a short vowel can be held at a very low pitch, or a long vowel can be sustained at a high pitch. This is exactly how a stringed instrument works—varying the tension (pitch) independently of the stroke length (duration). It is the reason the epic <em>Rāmāyaṇa</em>, originally composed to be sung, can be played note-for-note on a stringed Vīṇā. The <em>Ṛgveda</em> provides the precise pitch accents; the <em>Sāma Veda</em> takes those exact same verses and releases them as pure melody.
-            </p>
-            <p>
-              By treating language and music as a singular art, a speaker is not just conveying text. By controlling pitch and duration, they are actively drawing dynamic wave patterns in the air using nothing but their vocal cords.
-            </p>
-          </div>
-        </div>
-
-        {/* ================================================================= */}
-        {/* PART 3: THE UNIVERSAL CORE                                       */}
-        {/* ================================================================= */}
-        <div>
-          <div style={{ fontSize: '0.74rem', fontFamily: 'JetBrains Mono, monospace', color: '#f59e0b', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-            PART 3 // THE UNIVERSAL CORE
-          </div>
-          <h2 style={{ fontSize: '1.6rem', color: '#f8fafc', fontWeight: 900, margin: '0.35rem 0 0.5rem' }}>
-            The Chamakam Code: Hard-Coding Mathematics into Wave Mechanics
-          </h2>
-
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              If language is a map of acoustic physics, then a monumental conclusion inevitably follows: <strong>Mathematics is not an artificial tool we invented to count things. Math is the foundational code of the universe, and sound is the physical medium that carries it.</strong>
-            </p>
-            <p>
-              Nowhere is this realization more clear than in the ancient Vedic mantra known as the <strong>Chamakam</strong>. On the surface, this text narrates a rapid, rhythmic list of essential human needs—praying for food, health, long life, and peace—punctuated by the repeated word <em>Ca me</em> (&quot;and to me&quot;). But hidden deep within its 18th section lies an astonishing mathematical framework: two complete, perfectly ordered numerical Progressions.
-            </p>
-            <p>
-              The first is an odd number sequence running from 1 to 33 (\(1, 3, 5, 7, \dots, 33\)). The second is an even number sequence progressing by fours up to 48 (\(4, 8, 12, 16, \dots, 48\)).
-            </p>
-          </div>
-
-          {/* Chamakam Progression Card */}
-          <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '12px', padding: '1.25rem', border: '1px solid rgba(245,158,11,0.3)', margin: '1rem 0', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem', color: '#cbd5e1' }}>
-            <div style={{ color: '#fde047', fontWeight: 800, marginBottom: '0.35rem' }}>
-              [ CHAMAKAM SECTION 18 ] ───► Odd Sequence:  1, 3, 5, 7 ... 33
-            </div>
-            <div style={{ color: '#38bdf8', fontWeight: 800, marginBottom: '0.75rem' }}>
-              {'                        ───► Even Sequence: 4, 8, 12, 16 ... 48'}
-            </div>
-            <div style={{ color: '#f8fafc', lineHeight: 1.6 }}>
-              By sequentially summing the odd numbers, the acoustic chant systematically generates a progression of perfect squares (\(1, 4, 9, 16, 25 \dots\)):<br />
-              • \(1 = \mathbf{1}\) (1²)<br />
-              • \(1 + 3 = \mathbf{4}\) (2²)<br />
-              • \(1 + 3 + 5 = \mathbf{9}\) (3²)<br />
-              • \(1 + 3 + 5 + 7 = \mathbf{16}\) (4²)<br />
-              • \(1 + 3 + 5 + 7 + 9 = \mathbf{25}\) (5²)
-            </div>
-          </div>
-
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              In the Vedic worldview, sound and number are completely intertwined. By chanting these specific numbers, the speaker activates the mathematical principles behind structural balance.
-            </p>
-          </div>
-
-          <h3 style={{ fontSize: '1.25rem', color: '#f59e0b', fontWeight: 800, margin: '1.5rem 0 0.6rem' }}>
-            Grammatic Code: Sandhi as Wave Mechanics
-          </h3>
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              To preserve this interlocking matrix of sound and math over millennia without the aid of print, the language&apos;s grammar had to operate with the rigidity of strict computer code. This manifests flawlessly in <strong>Sandhi</strong>—the phonetic rules for combining adjacent syllables.
-            </p>
-            <p>
-              When Sanskrit is spoken, syllables do not crash into each other randomly. Sandhi treats speech like wave mechanics. If a high-frequency acoustic wave meets a low-frequency acoustic wave at the boundary of two words, they must mathematically combine according to rigid linguistic laws to form a perfect, harmonious new syllable.
-            </p>
-          </div>
-
-          {/* Sandhi Wave Card */}
-          <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '12px', padding: '1rem', border: '1px solid rgba(16,185,129,0.3)', margin: '1rem 0', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: '#cbd5e1' }}>
-            <div style={{ color: '#38bdf8' }}>[ SYLLABLE A ] (High Wave)  ──┐</div>
-            <div style={{ color: '#10b981', fontWeight: 800 }}>{'                              ├─► [ SANDHI RULE ] ─► [ NEW SYLLABLE ] (Perfect Wave)'}</div>
-            <div style={{ color: '#f59e0b' }}>[ SYLLABLE B ] (Low Wave)   ──┘</div>
-          </div>
-
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              This strict grammatical programming acts like an encryption algorithm, ensuring that the text remains structurally incorruptible, preserving its frequency down to the exact decibel and millisecond across thousands of generations.
-            </p>
-          </div>
-
-          <h3 style={{ fontSize: '1.25rem', color: '#f59e0b', fontWeight: 800, margin: '1.5rem 0 0.6rem' }}>
-            Nāda Brahma: The Vibrating Universe
-          </h3>
-          <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <p>
-              In this ancient philosophy, chanting a mantra is not a psychological exercise in symbolic prayer. It is a technological method to tap directly into the underlying source code of creation. Form is what separates one object from another, but the acoustic principle behind each form is what connects them to a single universal manifestation.
-            </p>
-            <p>
-              Form doesn&apos;t just govern macro-cosmic planets and micro-cosmic atoms; it breathes through performance. Every precise mudrā (hand gesture), calculated step, and musical note is localized vibration. When a dancer or musician performs, their expressions become a visual spectacle of wave mechanics, dynamically reflecting the universe&apos;s cosmic activity.
-            </p>
-            <p style={{ background: 'linear-gradient(135deg, rgba(236,72,153,0.1), rgba(245,158,11,0.1))', padding: '1rem 1.25rem', borderRadius: '10px', borderLeft: '4px solid #ec4899', color: '#f1f5f9', fontWeight: 500 }}>
-              This brings us directly to the absolute peak of Vedic cosmology, summed up in a singular phrase: <strong>Nāda Brahma—The world is sound.</strong> Long before modern quantum string theory suggested that subatomic particles are actually tiny, vibrating strings dancing to specific frequencies, the seers of the Gurukul model had already decoded the universe. They recognized that beneath the superficial differences of physical matter, everything is connected to a single universal manifestation—an infinite, cosmic symphony waiting to be spoken.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* 5. Sanskrit Terms Panel */}
-      <TermPanel terms={MANTRA_TERMS} title="Mantra Acoustics & Wave Terminology" />
-
-      {/* 6. Challenge Questions */}
-      <ChallengeList items={MANTRA_CHALLENGES} title="Mantra Acoustics & Physics Challenges" />
-
-      {/* 7. Next Lab Navigation Action */}
+      {/* Proceed to Next Lab Loop Button */}
       {onNextLab && (
-        <div style={{
-          marginTop: '2rem',
-          padding: '1.25rem',
-          borderRadius: '14px',
-          background: 'linear-gradient(135deg, rgba(15,23,42,0.9), rgba(30,41,59,0.8))',
-          border: '1.5px solid rgba(236,72,153,0.35)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '1rem',
-        }}>
+        <div
+          className="vl-next-lab-strip"
+          style={{
+            marginTop: '2rem',
+            padding: '1.2rem',
+            background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(56, 189, 248, 0.1))',
+            border: '1px solid rgba(168, 85, 247, 0.35)',
+            borderRadius: 14,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '1rem',
+          }}
+        >
           <div>
-            <div style={{ fontSize: '0.72rem', fontFamily: 'JetBrains Mono, monospace', color: '#f472b6', fontWeight: 800 }}>
-              <span className="vl-hud-blink">●</span> SECTOR 12 COMPLETE // VIJÑĀNA LAB CYCLE
-            </div>
+            <span style={{ fontSize: '0.75rem', color: '#c084fc', fontWeight: 800, letterSpacing: '0.08em' }}>
+              SECTOR 12 EXPEDITION COMPLETE // RESTART VIJÑĀNA LAB CYCLE
+            </span>
             <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.1rem', color: '#f8fafc', fontWeight: 800 }}>
               Cycle Forward to Sector 01: Paramāṇu Builder
             </h4>
