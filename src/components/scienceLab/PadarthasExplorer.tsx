@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { soundEffects } from '../../utils/soundEffects';
+import { PadarthaVisualizer, type PadarthaKey } from './PadarthaVisualizer';
 
 export interface PadarthasExplorerProps {
   onPronounce: (word: string) => void;
@@ -11,6 +12,7 @@ type PadarthaTab = 'tree' | 'gunas' | 'karmas' | 'pilupaka' | 'kanada' | 'catego
 
 // 1. The Six Padārthas Definitions
 interface PadarthaItem {
+  key: PadarthaKey;
   dev: string;
   iast: string;
   en: string;
@@ -18,10 +20,12 @@ interface PadarthaItem {
   badge: string;
   role: string;
   icon: string;
+  color: string;
 }
 
 const PADARTHAS_DATA: PadarthaItem[] = [
   {
+    key: 'dravya',
     dev: 'द्रव्य',
     iast: 'Dravya',
     en: 'Substance / Entity',
@@ -29,8 +33,10 @@ const PADARTHAS_DATA: PadarthaItem[] = [
     badge: 'Category 1 · Substratum',
     role: 'Structure & Substance',
     icon: '🧱',
+    color: '#38bdf8',
   },
   {
+    key: 'guna',
     dev: 'गुण',
     iast: 'Guṇa',
     en: 'Inherent Quality',
@@ -38,8 +44,10 @@ const PADARTHAS_DATA: PadarthaItem[] = [
     badge: 'Category 2 · Characteristics',
     role: 'Principles of Property',
     icon: '✨',
+    color: '#ec4899',
   },
   {
+    key: 'karma',
     dev: 'कर्म',
     iast: 'Karma',
     en: 'Action / Motion',
@@ -47,8 +55,10 @@ const PADARTHAS_DATA: PadarthaItem[] = [
     badge: 'Category 3 · Kinematics',
     role: 'Structure & Substance',
     icon: '⚡',
+    color: '#f59e0b',
   },
   {
+    key: 'samanya',
     dev: 'सामान्य',
     iast: 'Sāmānya',
     en: 'Generality / Universals',
@@ -56,8 +66,10 @@ const PADARTHAS_DATA: PadarthaItem[] = [
     badge: 'Category 4 · Universals',
     role: 'Principles of Property',
     icon: '🌐',
+    color: '#10b981',
   },
   {
+    key: 'visesa',
     dev: 'विशेष',
     iast: 'Viśeṣa',
     en: 'Ultimate Particularity',
@@ -65,8 +77,10 @@ const PADARTHAS_DATA: PadarthaItem[] = [
     badge: 'Category 5 · Individuation',
     role: 'Principles of Property',
     icon: '💎',
+    color: '#a855f7',
   },
   {
+    key: 'samavaya',
     dev: 'समवाय',
     iast: 'Samavāya',
     en: 'Inseparable Inherence',
@@ -74,6 +88,7 @@ const PADARTHAS_DATA: PadarthaItem[] = [
     badge: 'Category 6 · Inherence',
     role: 'Principles of Property',
     icon: '🔗',
+    color: '#6366f1',
   },
 ];
 
@@ -466,7 +481,8 @@ export const PadarthasExplorer: React.FC<PadarthasExplorerProps> = ({
   onPronounce,
   activeAudioWord,
 }) => {
-  const [activeTab, setActiveTab] = useState<PadarthaTab>('tree');
+  const [activeTab, setActiveTab] = useState<PadarthaTab>('categories');
+  const [activePadarthaKey, setActivePadarthaKey] = useState<PadarthaKey>('dravya');
   const [selectedGunaCat, setSelectedGunaCat] = useState<GunaCategory>('all');
   const [activeGunaModal, setActiveGunaModal] = useState<GunaDetail | null>(null);
   const [activeKarmaAnimation, setActiveKarmaAnimation] = useState<string | null>('gamana');
@@ -494,8 +510,25 @@ export const PadarthasExplorer: React.FC<PadarthasExplorerProps> = ({
           </p>
         </div>
 
-        {/* Global Quick Pronunciations */}
+        {/* Global Quick Pronunciations & Gateway Actions */}
         <div className="vl-quick-audio-tray">
+          <button
+            type="button"
+            className="vl-word-pronounce-btn"
+            onClick={() => {
+              setActiveTab('categories');
+              soundEffects.playCelebrationChime();
+            }}
+            style={{
+              background: 'linear-gradient(135deg, rgba(2, 132, 199, 0.3) 0%, rgba(99, 102, 241, 0.3) 100%)',
+              borderColor: '#38bdf8',
+              color: '#ffffff',
+              fontWeight: 800,
+            }}
+            title="Launch the Interactive Holographic Gateway Visualizer"
+          >
+            <span>✨ Animated Gateway Visualizer</span>
+          </button>
           <button
             type="button"
             className="vl-word-pronounce-btn"
@@ -1278,7 +1311,7 @@ export const PadarthasExplorer: React.FC<PadarthasExplorerProps> = ({
       )}
 
       {/* =========================================================================
-          VIEW 6: 🏛️ THE SIX PADĀRTHAS TAXONOMY (FULL MATRIX)
+          VIEW 6: 🏛️ THE SIX PADĀRTHAS TAXONOMY & HOLOGRAPHIC GATEWAY (FULL MATRIX)
           ========================================================================= */}
       {activeTab === 'categories' && (
         <div className="vl-categories-view">
@@ -1286,50 +1319,141 @@ export const PadarthasExplorer: React.FC<PadarthasExplorerProps> = ({
             <div>
               <h3 className="vl-subhead-title">षट्-पदार्थाः · THE SIX CATEGORIES OF BEING</h3>
               <p className="vl-subhead-desc">
-                Everything that exists can be classified into these six fundamental padārthas. Click on any category to listen to its pronunciation.
+                Everything that exists can be classified into these six fundamental padārthas. Experience each animated quantum model and click any card to inspect its physics!
               </p>
             </div>
           </div>
 
+          {/* 🌟 HOLOGRAPHIC ANIMATED PADĀRTHA GATEWAY VISUALIZER */}
+          <PadarthaVisualizer
+            initialPadartha={activePadarthaKey}
+            onSelectPadartha={(k) => setActivePadarthaKey(k)}
+            onPronounce={onPronounce}
+          />
+
           <div className="vl-padarthas-grid">
-            {PADARTHAS_DATA.map((p) => (
-              <div
-                key={p.iast}
-                className="vl-padartha-card"
-                onClick={() => onPronounce(p.dev)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') onPronounce(p.dev);
-                }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span className="vl-padartha-badge">{p.badge}</span>
-                  <span style={{ fontSize: '1.25rem' }}>{p.icon}</span>
-                </div>
-                <div className="vl-padartha-title">
-                  <span lang="sa" style={{ color: '#38bdf8' }}>{p.dev}</span> · {p.iast}{' '}
-                  <span style={{ fontSize: '0.8em', color: '#94a3b8', fontWeight: 600 }}>({p.en})</span>
-                </div>
-                <div style={{ fontSize: '0.74rem', color: '#818cf8', marginBottom: '0.4rem', fontWeight: 700 }}>
-                  TREE BRANCH: {p.role.toUpperCase()}
-                </div>
-                <p className="vl-padartha-desc">{p.desc}</p>
-                <div style={{ marginTop: '0.65rem' }}>
-                  <button
-                    type="button"
-                    className="vl-word-pronounce-btn"
-                    onClick={(e) => {
-                      e.stopPropagation();
+            {PADARTHAS_DATA.map((p) => {
+              const isSelected = activePadarthaKey === p.key;
+              return (
+                <div
+                  key={p.iast}
+                  className={`vl-padartha-card${isSelected ? ' is-selected' : ''}`}
+                  onClick={() => {
+                    setActivePadarthaKey(p.key);
+                    onPronounce(p.dev);
+                    soundEffects.playPuzzleSnap();
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  style={{
+                    borderColor: isSelected ? p.color : undefined,
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      setActivePadarthaKey(p.key);
                       onPronounce(p.dev);
-                    }}
-                    style={{ fontSize: '0.78rem' }}
-                  >
-                    🔊 Pronounce <strong>{p.dev}</strong>
-                  </button>
+                    }
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span className="vl-padartha-badge" style={{ color: p.color }}>{p.badge}</span>
+                    <span style={{ fontSize: '1.25rem' }}>{p.icon}</span>
+                  </div>
+
+                  {/* 🎨 Mini Animated SVG Visual Badge */}
+                  <div className="vl-padartha-card-mini-visual">
+                    {p.key === 'dravya' && (
+                      <svg viewBox="0 0 160 40" style={{ width: '100%', height: '100%' }}>
+                        <circle cx="80" cy="20" r="6" fill="#38bdf8" />
+                        <ellipse cx="80" cy="20" rx="35" ry="12" fill="none" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.7">
+                          <animateTransform attributeName="transform" type="rotate" from="0 80 20" to="360 80 20" dur="6s" repeatCount="indefinite" />
+                        </ellipse>
+                        <circle cx="115" cy="20" r="3" fill="#ffffff">
+                          <animateTransform attributeName="transform" type="rotate" from="0 80 20" to="360 80 20" dur="6s" repeatCount="indefinite" />
+                        </circle>
+                      </svg>
+                    )}
+                    {p.key === 'guna' && (
+                      <svg viewBox="0 0 160 40" style={{ width: '100%', height: '100%' }}>
+                        <line x1="25" y1="20" x2="65" y2="20" stroke="#ffffff" strokeWidth="2.5" opacity="0.8" />
+                        <polygon points="65,8 85,20 65,32" fill="rgba(236, 72, 153, 0.3)" stroke="#ec4899" strokeWidth="1.5" />
+                        <line x1="85" y1="20" x2="135" y2="10" stroke="#f59e0b" strokeWidth="2" />
+                        <line x1="85" y1="20" x2="138" y2="20" stroke="#10b981" strokeWidth="2" />
+                        <line x1="85" y1="20" x2="135" y2="30" stroke="#a855f7" strokeWidth="2" />
+                      </svg>
+                    )}
+                    {p.key === 'karma' && (
+                      <svg viewBox="0 0 160 40" style={{ width: '100%', height: '100%' }}>
+                        <path d="M 30,20 Q 80,5 130,20" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="4 4" />
+                        <circle cx="80" cy="20" r="6" fill="#f59e0b">
+                          <animate attributeName="cx" values="30;130;30" dur="2.4s" repeatCount="indefinite" />
+                          <animate attributeName="cy" values="20;12;20" dur="2.4s" repeatCount="indefinite" />
+                        </circle>
+                        <polygon points="135,20 125,15 125,25" fill="#f59e0b" />
+                      </svg>
+                    )}
+                    {p.key === 'samanya' && (
+                      <svg viewBox="0 0 160 40" style={{ width: '100%', height: '100%' }}>
+                        <circle cx="80" cy="20" r="14" fill="none" stroke="#10b981" strokeWidth="1.5" opacity="0.4">
+                          <animate attributeName="r" values="6;24;6" dur="3s" repeatCount="indefinite" />
+                          <animate attributeName="opacity" values="0.8;0.1;0.8" dur="3s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="45" cy="20" r="4.5" fill="#10b981" />
+                        <circle cx="80" cy="20" r="6.5" fill="#34d399" />
+                        <circle cx="115" cy="20" r="4.5" fill="#10b981" />
+                        <line x1="45" y1="20" x2="115" y2="20" stroke="#10b981" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
+                      </svg>
+                    )}
+                    {p.key === 'visesa' && (
+                      <svg viewBox="0 0 160 40" style={{ width: '100%', height: '100%' }}>
+                        <circle cx="55" cy="20" r="12" fill="none" stroke="#a855f7" strokeWidth="1.5" />
+                        <circle cx="55" cy="20" r="4" fill="#c084fc">
+                          <animate attributeName="r" values="3;6;3" dur="1.8s" repeatCount="indefinite" />
+                        </circle>
+                        <text x="80" y="24" textAnchor="middle" fill="#fef08a" fontSize="14" fontWeight="bold">≠</text>
+                        <circle cx="105" cy="20" r="12" fill="none" stroke="#a855f7" strokeWidth="1.5" />
+                        <polygon points="105,15 110,24 100,24" fill="#e879f9">
+                          <animateTransform attributeName="transform" type="rotate" from="0 105 20" to="360 105 20" dur="4s" repeatCount="indefinite" />
+                        </polygon>
+                      </svg>
+                    )}
+                    {p.key === 'samavaya' && (
+                      <svg viewBox="0 0 160 40" style={{ width: '100%', height: '100%' }}>
+                        <circle cx="45" cy="20" r="6" fill="#6366f1" />
+                        <circle cx="115" cy="20" r="6" fill="#ec4899" />
+                        <path d="M 45,20 C 65,5 95,35 115,20" fill="none" stroke="#818cf8" strokeWidth="2.5" />
+                        <path d="M 45,20 C 65,35 95,5 115,20" fill="none" stroke="#f472b6" strokeWidth="2.5" />
+                      </svg>
+                    )}
+                  </div>
+
+                  <div className="vl-padartha-title">
+                    <span lang="sa" style={{ color: p.color }}>{p.dev}</span> · {p.iast}{' '}
+                    <span style={{ fontSize: '0.8em', color: '#94a3b8', fontWeight: 600 }}>({p.en})</span>
+                  </div>
+                  <div style={{ fontSize: '0.74rem', color: '#818cf8', marginBottom: '0.4rem', fontWeight: 700 }}>
+                    TREE BRANCH: {p.role.toUpperCase()}
+                  </div>
+                  <p className="vl-padartha-desc">{p.desc}</p>
+                  <div style={{ marginTop: '0.65rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <button
+                      type="button"
+                      className="vl-word-pronounce-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onPronounce(p.dev);
+                      }}
+                      style={{ fontSize: '0.78rem' }}
+                    >
+                      🔊 Pronounce <strong>{p.dev}</strong>
+                    </button>
+                    <span style={{ fontSize: '0.74rem', color: p.color, fontWeight: 700 }}>
+                      {isSelected ? '👉 Active' : 'Visualize ➔'}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}

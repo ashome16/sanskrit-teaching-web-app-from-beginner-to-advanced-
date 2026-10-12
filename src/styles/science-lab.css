@@ -4893,6 +4893,276 @@
   margin: 0;
 }
 
+/* =========================================================================
+   12B. [ THE SIX PADĀRTHAS ANIMATED HOLOGRAPHIC GATEWAY VISUALIZER ]
+   ========================================================================= */
+
+.vl-padartha-holo-stage {
+  background: #060a14;
+  border: 1.5px solid rgba(56, 189, 248, 0.28);
+  border-radius: 18px;
+  padding: 1.25rem;
+  margin: 1.25rem 0 1.5rem;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.12);
+}
+
+.vl-padartha-holo-stage.is-compact {
+  padding: 0.9rem;
+  margin: 0.8rem 0;
+}
+
+.vl-padartha-holo-nav {
+  display: flex;
+  gap: 0.55rem;
+  overflow-x: auto;
+  padding-bottom: 0.65rem;
+  margin-bottom: 1.15rem;
+  scrollbar-width: thin;
+}
+
+.vl-padartha-holo-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1.5px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1 0 auto;
+  min-width: 140px;
+}
+
+.vl-padartha-holo-tab:hover {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+.vl-padartha-holo-tab.is-active {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+.vl-holo-tab-icon {
+  font-size: 1.35rem;
+}
+
+.vl-holo-tab-labels {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.vl-holo-tab-dev {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.2;
+}
+
+.vl-holo-tab-iast {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+}
+
+.vl-padartha-showcase-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 480px) 1fr;
+  gap: 1.35rem;
+}
+
+@media (max-width: 860px) {
+  .vl-padartha-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vl-padartha-canvas-card {
+  background: #090e17;
+  border: 1.5px solid rgba(56, 189, 248, 0.25);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.vl-padartha-canvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.9rem;
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.vl-padartha-holo-tag {
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.vl-padartha-canvas-viewport {
+  width: 100%;
+  position: relative;
+  background: #040814;
+}
+
+.vl-padartha-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vl-padartha-dock {
+  background: rgba(15, 23, 42, 0.8);
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+  padding: 0.75rem 1rem;
+}
+
+.vl-dock-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.vl-dock-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.vl-dock-btn {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 6px;
+  color: #94a3b8;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vl-dock-btn:hover {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+.vl-dock-btn.is-active {
+  background: #0284c7;
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+}
+
+.vl-padartha-info-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1.5px solid rgba(56, 189, 248, 0.2);
+  border-radius: 14px;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.vl-info-sutra-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.vl-info-sutra-badge {
+  font-size: 0.68rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: 0.06em;
+}
+
+.vl-info-sanskrit-sutra {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fef08a;
+  margin: 0;
+  line-height: 1.45;
+  font-family: 'Noto Sans Devanagari', 'Sanskrit Text', serif;
+}
+
+.vl-info-section {
+  border-left: 3px solid #38bdf8;
+  padding-left: 0.75rem;
+}
+
+.vl-info-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.vl-info-text {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.vl-info-prompt-box {
+  margin-top: auto;
+  background: rgba(2, 132, 199, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.vl-prompt-icon {
+  font-size: 1.1rem;
+}
+
+.vl-prompt-text {
+  font-size: 0.78rem;
+  color: #bae6fd;
+  line-height: 1.4;
+}
+
+/* Enhanced Cards in Grid */
+.vl-padartha-card.is-selected {
+  border-color: #38bdf8;
+  background: #0f1c30;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+  transform: translateY(-2px);
+}
+
+.vl-padartha-card-mini-visual {
+  width: 100%;
+  height: 44px;
+  background: #030712;
+  border-radius: 8px;
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  margin: 0.45rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
 /* ==========================================================================
    COSMIC MIRROR LINK: YAT PIṆḌE TAT BRAHMĀṆḌE (MICROCOSM & MACROCOSM)
    ========================================================================== */

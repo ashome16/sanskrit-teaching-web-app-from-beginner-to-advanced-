@@ -1,27 +1,84 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { PadarthaVisualizer, type PadarthaKey, PADARTHA_METAS } from './scienceLab/PadarthaVisualizer';
+import { playPronunciation } from '../utils/pronunciation';
 
 export const SixPadarthas: React.FC = () => {
-  const padarthas = [
-    { title: "🪨 Dravya (Substance)", desc: "The foundational substrate of reality. Includes the 9 eternal substances: Earth, Water, Fire, Air, Space, Time, Direction, Soul, and Mind." },
-    { title: "🎨 Guṇa (Quality)", desc: "The static attributes inherent in Dravya. Includes properties like color, taste, smell, hot/cold metrics, and quantitative atomic volume." },
-    { title: "⚡ Karma (Action/Motion)", desc: "The kinetic force belonging exclusively to material substances, causing physical separation, compression, and velocity displacement." },
-    { title: "🌀 Sāmānya (Generality)", desc: "The universal template essence or class properties shared across identical entities (e.g., what makes all earth paramāṇus share Earthness)." },
-    { title: "Viśeṣa (Particularity)", desc: "The ultimate individualizing factor that distinguishes identical eternal atoms from one another at the microscopic boundary." },
-    { title: "🔗 Samavāya (Inherence)", desc: "The eternal, inseparable relationship connecting qualities or actions permanently to their primary base substance." }
-  ];
+  const [selectedKey, setSelectedKey] = useState<PadarthaKey>('dravya');
 
   return (
-    <div style={{ marginTop: '40px', padding: '20px', background: '#0d1b2a', borderRadius: '8px', border: '1px solid #1b263b', color: '#e0e1dd' }}>
-      <h3 style={{ color: '#00b4d8', borderBottom: '2px solid #1b263b', paddingBottom: '10px' }}>🏛️ The Six Padārthas Gateway (वैशेषिक षट्-पदार्थाः)</h3>
-      <p style={{ color: '#a8dadc', fontSize: '0.95rem' }}>Explore the ontological taxonomy framework of ancient Indian atomic physics:</p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '15px', marginTop: '20px' }}>
-        {padarthas.map((p, idx) => (
-          <div key={idx} style={{ background: '#1b263b', padding: '15px', borderRadius: '6px', borderLeft: '4px solid #ffd700' }}>
-            <h4 style={{ margin: '0 0 8px 0', color: '#ffd700' }}>{p.title}</h4>
-            <p style={{ margin: '0', fontSize: '0.88rem', lineHeight: '1.5', color: '#e0e1dd' }}>{p.desc}</p>
-          </div>
-        ))}
+    <div style={{ marginTop: '40px', padding: '24px', background: '#090e17', borderRadius: '18px', border: '1.5px solid rgba(56, 189, 248, 0.28)', color: '#e0e1dd', boxShadow: '0 10px 35px rgba(0,0,0,0.6)' }}>
+      <div style={{ borderBottom: '1.5px solid rgba(56, 189, 248, 0.2)', paddingBottom: '14px', marginBottom: '18px' }}>
+        <div style={{ display: 'inline-block', fontSize: '0.72rem', fontFamily: 'JetBrains Mono, monospace', fontWeight: 800, color: '#38bdf8', background: 'rgba(56, 189, 248, 0.12)', border: '1px solid rgba(56, 189, 248, 0.3)', borderRadius: '999px', padding: '0.2rem 0.65rem', marginBottom: '0.5rem' }}>
+          PHYSICAL ONTOLOGY & NATURAL PHILOSOPHY
+        </div>
+        <h3 style={{ color: '#f8fafc', margin: '0 0 6px 0', fontSize: '1.35rem', fontWeight: 900, display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span>🏛️ The Six Padārthas Gateway (वैशेषिक षट्-पदार्थाः)</span>
+        </h3>
+        <p style={{ color: '#94a3b8', fontSize: '0.92rem', margin: 0, lineHeight: 1.55 }}>
+          Explore Sage Kaṇāda's rigorous ontological taxonomy: 6 fundamental categories of reality mapping physical substances, energetic qualities, kinetic motion, universal symmetries, quantum uniqueness, and eternal structural inherence.
+        </p>
+      </div>
+
+      {/* 🌟 Dynamic 60fps Animated Holographic Gateway Visualizer */}
+      <PadarthaVisualizer
+        initialPadartha={selectedKey}
+        onSelectPadartha={setSelectedKey}
+        onPronounce={(word) => playPronunciation(word)}
+      />
+
+      {/* Grid of the 6 Categories with interactive selection */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px', marginTop: '20px' }}>
+        {(Object.keys(PADARTHA_METAS) as PadarthaKey[]).map((key) => {
+          const p = PADARTHA_METAS[key];
+          const isSelected = selectedKey === key;
+          return (
+            <div
+              key={key}
+              onClick={() => {
+                setSelectedKey(key);
+                playPronunciation(p.dev);
+              }}
+              style={{
+                background: isSelected ? 'rgba(15, 28, 48, 0.95)' : '#0b1322',
+                padding: '16px',
+                borderRadius: '12px',
+                border: isSelected ? `2px solid ${p.color}` : '1.5px solid rgba(148, 163, 184, 0.18)',
+                boxShadow: isSelected ? `0 0 20px ${p.glowColor}` : 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                <span style={{ fontSize: '1.25rem' }}>{p.icon}</span>
+                <span style={{ fontSize: '0.7rem', color: p.color, fontWeight: 800, fontFamily: 'JetBrains Mono, monospace' }}>
+                  {p.badge}
+                </span>
+              </div>
+              <h4 style={{ margin: '0 0 6px 0', color: '#f8fafc', fontSize: '1rem', fontWeight: 800 }}>
+                <span style={{ color: p.color }}>{p.dev}</span> · {p.iast} ({p.en})
+              </h4>
+              <p style={{ margin: '0 0 10px 0', fontSize: '0.84rem', lineHeight: '1.5', color: '#cbd5e1' }}>
+                {p.principle}
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: '#94a3b8', borderTop: '1px solid rgba(148, 163, 184, 0.15)', paddingTop: '8px' }}>
+                <span>{isSelected ? '👉 Active Visual' : 'Click to Visualize'}</span>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    playPronunciation(p.dev);
+                  }}
+                  style={{ background: 'transparent', border: 'none', color: '#38bdf8', cursor: 'pointer', fontWeight: 700 }}
+                >
+                  🔊 Pronounce
+                </button>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 };
+
+export default SixPadarthas;
