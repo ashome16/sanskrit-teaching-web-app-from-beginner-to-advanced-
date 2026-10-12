@@ -19,8 +19,11 @@ export const DynamicGunaMatrix: React.FC = () => {
   const [showIntroMovie, setShowIntroMovie] = useState<boolean>(true);
   const interactiveBenchRef = useRef<HTMLDivElement>(null);
 
-  // 4-Stage Progressive Missions
+  // 4-Stage Progressive Missions (Strict 1 -> 2 -> 3 -> 4 Sequence)
   const [currentStage, setCurrentStage] = useState<1 | 2 | 3 | 4>(1);
+  const [maxUnlockedStage, setMaxUnlockedStage] = useState<1 | 2 | 3 | 4>(1);
+  const [stage1Done, setStage1Done] = useState(false);
+  const [stage2Done, setStage2Done] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
 
   // The Guṇa Triad (Sliders 0 - 100)
@@ -159,6 +162,15 @@ export const DynamicGunaMatrix: React.FC = () => {
           ctx.fill();
         }
         ctx.shadowBlur = 0;
+
+        ctx.fillStyle = '#fde047';
+        ctx.font = 'bold 11px JetBrains Mono, monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('⚛️ SAMAVĀYA (समवाय) INHERENCE ESTABLISHED', cx, 42);
+        ctx.fillStyle = '#cbd5e1';
+        ctx.font = '9.5px JetBrains Mono, monospace';
+        ctx.fillText('Cyan (Ap) & Amber (Taila) inseparably bound at 45%–65% Guṇa Equilibrium!', cx, 58);
+        ctx.textAlign = 'start';
 
         animFrameRef.current = requestAnimationFrame(render);
         return;
@@ -412,6 +424,41 @@ export const DynamicGunaMatrix: React.FC = () => {
         ctx.fillStyle = '#6ee7b7';
         ctx.font = '10px JetBrains Mono, monospace';
         ctx.fillText('💨 वायोः संप्लवः (VĀYU WIND SWEEP) · DYNAMIC PROPERTY SOUP', 140, 36);
+
+        // Live In-Canvas Guṇa-Sāmya Target HUD Box (45%–65% Window)
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
+        ctx.strokeStyle = isSynergyLocked ? '#10b981' : 'rgba(56, 189, 248, 0.45)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        if (ctx.roundRect) {
+          ctx.roundRect(canvas.width - 245, 12, 230, 96, 8);
+        } else {
+          ctx.rect(canvas.width - 245, 12, 230, 96);
+        }
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = isSynergyLocked ? '#34d399' : '#38bdf8';
+        ctx.font = 'bold 9.5px JetBrains Mono, monospace';
+        ctx.fillText('🎯 GUṆA-SĀMYAM (45%–65% TARGET)', canvas.width - 235, 28);
+
+        const sOk = sneha >= 45 && sneha <= 65;
+        const dOk = dravatva >= 45 && dravatva <= 65;
+        const uOk = usna >= 45 && usna <= 65;
+
+        ctx.font = '9px JetBrains Mono, monospace';
+        ctx.fillStyle = sOk ? '#4ade80' : '#f87171';
+        ctx.fillText(`Sneha: ${sneha}% ${sOk ? '✅ [Balanced]' : sneha < 45 ? '▲ Need ≥45%' : '▼ Need ≤65%'}`, canvas.width - 235, 46);
+
+        ctx.fillStyle = dOk ? '#4ade80' : '#f87171';
+        ctx.fillText(`Dravatva: ${dravatva}% ${dOk ? '✅ [Balanced]' : dravatva < 45 ? '▲ Need ≥45%' : '▼ Need ≤65%'}`, canvas.width - 235, 64);
+
+        ctx.fillStyle = uOk ? '#4ade80' : '#f87171';
+        ctx.fillText(`Uṣṇa: ${usna}% ${uOk ? '✅ [Balanced]' : usna < 45 ? '▲ Need ≥45%' : '▼ Need ≤65%'}`, canvas.width - 235, 82);
+
+        ctx.fillStyle = isSynergyLocked ? '#facc15' : '#94a3b8';
+        ctx.font = 'bold 9px JetBrains Mono, monospace';
+        ctx.fillText(isSynergyLocked ? '✨ 3/3 Sāmyam! Click Step 4' : 'Balance all 3 into 45%–65% to bind', canvas.width - 235, 98);
       }
 
       // =====================================================================
@@ -560,8 +607,13 @@ export const DynamicGunaMatrix: React.FC = () => {
   // =========================================================================
   // STAGE 1: ATTEMPT MERGE (STRUCTURAL FRICTION & THE OIL-WATER DILEMMA)
   // =========================================================================
+  // =========================================================================
+  // STAGE 1: ATTEMPT MERGE (STRUCTURAL FRICTION & THE OIL-WATER DILEMMA)
+  // =========================================================================
   const handleAttemptMerge = () => {
     setRepulsionTriggered(true);
+    setStage1Done(true);
+    setMaxUnlockedStage((prev) => Math.max(prev, 2) as 1 | 2 | 3 | 4);
     gunaAudio.playRepulsionFriction();
 
     setGuruSpeaker('System');
@@ -572,28 +624,31 @@ export const DynamicGunaMatrix: React.FC = () => {
     setTimeout(() => {
       setGuruSpeaker('Kaṇāda');
       setGuruDialogue(
-        "“Why do oil and water drift apart? It is not because they belong to different boxes called 'liquids.' It is because their inherent Cohesion (Sneha) and Fluidity (Dravatva) possess distinct cosmic signatures that refuse to intertwine. Alter the medium, not the particle!”"
+        "“Notice the violent deflection at the meniscus boundary! Water and oil stubbornly repel due to incompatible Sneha (cohesive viscidity). Step 1 complete. Now click '2. Inject Tejas' to heat the crucible and soften the interfacial mask!”"
       );
-    }, 1600);
+    }, 1200);
   };
 
   // =========================================================================
   // STAGE 2: INJECT TEJAS CATALYST (BREAKING THE STATE MASK)
   // =========================================================================
   const handleInjectTejas = () => {
-    gunaAudio.playHeatCrackle();
+    if (maxUnlockedStage < 2) return;
     setRepulsionTriggered(false);
-
-    // Increase heat, decrease cohesion
-    const nextUsna = 58;
-    const nextSneha = 54;
-    setUsna(nextUsna);
-    setSneha(nextSneha);
-
     setCurrentStage(2);
+    setStage2Done(true);
+    setMaxUnlockedStage((prev) => Math.max(prev, 3) as 1 | 2 | 3 | 4);
+
+    gunaAudio.playHeatCrackle();
+
+    // Heat softens the boundary, but matter is not yet in equilibrium
+    setUsna(50);
+    setSneha(70);
+    setDravatva(25);
+
     setGuruSpeaker('Kaṇāda');
     setGuruDialogue(
-      '“Heat (Tejas) disrupts the boundary bonds. As Uṣṇa rises, the rigid localized Cohesion (Sneha) drops. The states soften into an amorphous, receptive field! Now introduce Vāyu to calibrate the fluid dance.”'
+      '“Active Vedic Agni ignites under the crucible! Heat (Tejas) disrupts existing conjunctions (Pīlupāka) and wavers the boundary. Step 2 complete. Now click \'3. Sweep Vāyu\' to dissolve matter into free Paramāṇus and tune the Guṇa Triad!”'
     );
   };
 
@@ -601,60 +656,51 @@ export const DynamicGunaMatrix: React.FC = () => {
   // STAGE 3: INTRODUCE VĀYU WINDS (DYNAMIC PROPERTY SOUP)
   // =========================================================================
   const handleSweepVayu = () => {
-    gunaAudio.playWindWhoosh();
-    const nextDravatva = 56;
-    setDravatva(nextDravatva);
-
+    if (maxUnlockedStage < 3) return;
     setCurrentStage(3);
+    gunaAudio.playWindWhoosh();
+
+    // Initialize the soup outside the 45%-65% target so the user actively tunes!
+    setSneha(75); // High cohesion: clumping
+    setDravatva(30); // Low fluidity: stiff resistance
+    setUsna(35); // Low heat: cold lock
+    setIsSynergyLocked(false);
+
     setGuruSpeaker('Kaṇāda');
     setGuruDialogue(
-      '“Dravatva (Fluidity) spikes! The clusters break apart entirely into an undulating property soup. They are neither rigid solids nor isolated liquids—keep all three Gunas within the Synergy Window (45%–65%)!”'
+      '“Vāyu sweeps matter into 56 free Paramāṇus! But they are in disequilibrium. 🎯 MISSION: Tune all 3 sliders into the 45%–65% Synergy Window (गुण-साम्यम्). Once balanced, Samavāya can bind!”'
     );
-
-    // Check if synergy window is met
-    if (checkSynergy(sneha, nextDravatva, usna)) {
-      setIsSynergyLocked(true);
-      gunaAudio.playSynergyLock();
-    }
   };
 
   // Manual Slider Adjustments with real-time synergy evaluation
   const handleSliderChange = (type: 'sneha' | 'dravatva' | 'usna', val: number) => {
-    let s = sneha;
-    let d = dravatva;
-    let u = usna;
+    if (currentStage < 3) return;
 
-    if (type === 'sneha') {
-      s = val;
-      setSneha(val);
-    }
-    if (type === 'dravatva') {
-      d = val;
-      setDravatva(val);
-    }
-    if (type === 'usna') {
-      u = val;
-      setUsna(val);
-      // Thermal heating naturally reduces cohesion
-      s = Math.max(10, Math.min(95, 95 - val * 0.7));
-      setSneha(Math.round(s));
-    }
+    let s = type === 'sneha' ? val : sneha;
+    let d = type === 'dravatva' ? val : dravatva;
+    let u = type === 'usna' ? val : usna;
+
+    if (type === 'sneha') setSneha(val);
+    if (type === 'dravatva') setDravatva(val);
+    if (type === 'usna') setUsna(val);
 
     const locked = checkSynergy(s, d, u);
     setIsSynergyLocked(locked);
 
     if (locked) {
+      setMaxUnlockedStage(4);
       gunaAudio.playTone(523.25, 0.25);
+      gunaAudio.playSynergyLock();
       setGuruSpeaker('Kaṇāda');
       setGuruDialogue(
-        '“Synergy Locked! Molecular polarities and thermal energies harmonized across space. The Guna Triad is ready for Samavāya binding!”'
+        '“✨ Guṇa-Sāmyam (गुण-साम्यम्) Achieved! All 3 qualities are locked in the 45%–65% Equilibrium Window. The structural barrier is gone—click \'4. BIND SAMAVĀYA\' to forge the Tryaṇuka compound!”'
       );
     } else if (u > 85) {
       setGuruSpeaker('System');
-      setGuruDialogue('⚠️ Overheated! Thermal agitation too high — atoms scattering uncontrollably!');
+      setGuruDialogue('⚠️ Overheated (>85%)! Thermal agitation too high — atoms scattering uncontrollably!');
     } else if (u < 25) {
       setGuruSpeaker('System');
-      setGuruDialogue('⚠️ Too cold! Cohesion rigidified into unmixable phase separation.');
+      setGuruDialogue('⚠️ Too cold (<25%)! Cohesion rigidified into unmixable phase separation.');
     }
   };
 
@@ -668,7 +714,7 @@ export const DynamicGunaMatrix: React.FC = () => {
 
     setGuruSpeaker('Kaṇāda');
     setGuruDialogue(
-      '“Superficial forms have faded. By manipulating the invisible threads of reality (Gunas), you have forged true Harmony (Samavaya). The illusion of division is shattered.”'
+      '“Superficial forms have faded! By tuning the invisible threads of reality into the 45%–65% equilibrium, you have forged true Inherence (Samavāya). The Tryaṇukas dance in eternal space!”'
     );
 
     setTimeout(() => {
@@ -679,6 +725,9 @@ export const DynamicGunaMatrix: React.FC = () => {
   // Reset to Stage 1
   const handleResetMatrix = () => {
     setCurrentStage(1);
+    setMaxUnlockedStage(1);
+    setStage1Done(false);
+    setStage2Done(false);
     setSneha(85);
     setDravatva(20);
     setUsna(15);
@@ -802,42 +851,49 @@ export const DynamicGunaMatrix: React.FC = () => {
           </div>
 
           {/* Action Toolbar to Drive the Sequence */}
+          {/* Action Toolbar to Drive the Strict 4-Stage Sequence */}
           <div className="vl-matrix-action-toolbar">
+            {/* Step 1 */}
             <button
               type="button"
-              className={`vl-btn vl-btn--cyber${currentStage === 1 ? ' is-pulsing' : ''}`}
+              className={`vl-btn vl-btn--cyber${currentStage === 1 && !stage1Done ? ' is-pulsing' : ''}${stage1Done ? ' is-completed' : ''}`}
               onClick={handleAttemptMerge}
               title="Step 1: Attempt to mix the two unmixable clusters"
             >
-              1. Attempt Merge (The Oil &amp; Water Dilemma)
+              {stage1Done ? '✓ 1. Merge Attempted (Friction Observed)' : '👉 1. Attempt Merge (The Oil & Water Dilemma)'}
             </button>
 
+            {/* Step 2 */}
             <button
               type="button"
-              className={`vl-btn vl-btn--cyber${currentStage === 2 ? ' is-pulsing' : ''}`}
+              disabled={maxUnlockedStage < 2}
+              className={`vl-btn vl-btn--cyber${maxUnlockedStage === 2 && currentStage < 2 ? ' is-pulsing' : ''}${stage2Done ? ' is-completed' : ''}`}
               onClick={handleInjectTejas}
-              title="Step 2: Inject heat to break the rigid boundaries"
+              title={maxUnlockedStage < 2 ? 'Locked: Complete Step 1 first' : 'Step 2: Inject heat to break rigid boundaries'}
             >
-              2. Inject Tejas (Break the State Mask)
+              {maxUnlockedStage < 2 ? '🔒 2. Inject Tejas (Locked)' : stage2Done ? '✓ 2. Tejas Injected (Boundary Softened)' : '👉 2. Inject Tejas (Break the State Mask)'}
             </button>
 
+            {/* Step 3 */}
             <button
               type="button"
-              className={`vl-btn vl-btn--cyber${currentStage === 3 ? ' is-pulsing' : ''}`}
+              disabled={maxUnlockedStage < 3}
+              className={`vl-btn vl-btn--cyber${maxUnlockedStage === 3 && currentStage < 3 ? ' is-pulsing' : ''}${isSynergyLocked ? ' is-completed' : ''}`}
               onClick={handleSweepVayu}
-              title="Step 3: Sweep Vayu to create dynamic property soup"
+              title={maxUnlockedStage < 3 ? 'Locked: Complete Step 2 first' : 'Step 3: Sweep Vāyu to create property soup'}
             >
-              3. Sweep Vāyu (Dynamic Property Soup)
+              {maxUnlockedStage < 3 ? '🔒 3. Sweep Vāyu (Locked)' : isSynergyLocked ? '✓ 3. Guṇa-Sāmya Achieved (45%–65%)' : '👉 3. Sweep Vāyu (Dynamic Property Soup)'}
             </button>
 
+            {/* Step 4 */}
             <button
               type="button"
               disabled={!isSynergyLocked}
               className={`vl-btn vl-btn--gold${isSynergyLocked ? ' is-unlocked-glow is-pulsing' : ''}`}
               onClick={handleSamavayaBinding}
-              title={isSynergyLocked ? 'Step 4: Bind into Trasarenu in eternal Akasa!' : 'Step 4: Complete Step 3 slider tuning first'}
+              title={isSynergyLocked ? 'Step 4: Click to bind into Trasareṇu in eternal Ākāśa!' : 'Locked: Balance all 3 sliders into 45%–65% window first'}
             >
-              4. ⚛️ BIND SAMAVĀYA IN ĀKĀŚA
+              {isSynergyLocked ? '✨ 4. ⚛️ BIND SAMAVĀYA IN ĀKĀŚA' : '🔒 4. BIND SAMAVĀYA (Balance 45%–65%)'}
             </button>
           </div>
         </div>
@@ -848,43 +904,116 @@ export const DynamicGunaMatrix: React.FC = () => {
           role="region"
           aria-label="The Guna Triad Sliders"
           style={{
-            borderColor: currentStage === 3 ? (isSynergyLocked ? '#10b981' : '#facc15') : 'rgba(148, 163, 184, 0.25)',
-            boxShadow: currentStage === 3 ? '0 0 20px rgba(250, 204, 21, 0.15)' : 'none',
+            borderColor: currentStage >= 3 ? (isSynergyLocked ? '#10b981' : '#facc15') : 'rgba(148, 163, 184, 0.25)',
+            boxShadow: currentStage >= 3 ? '0 0 20px rgba(250, 204, 21, 0.15)' : 'none',
           }}
         >
+          {/* Header */}
           <div className="vl-triad-header">
             <div>
               <h3 className="vl-triad-title">
                 <span>
                   {currentStage === 3
-                    ? '📊 THE GUṆA TRIAD · STEP 3 ACTIVE TUNING'
+                    ? (isSynergyLocked ? '✨ 3/3 GUṆA-SĀMYA ACHIEVED (Ready for Step 4!)' : '📊 STEP 3 ACTIVE: TUNE INTO 45% – 65% SYNERGY WINDOW')
                     : currentStage === 4
-                    ? '📊 THE GUṆA TRIAD · EQUILIBRIUM ACHIEVED'
+                    ? '📊 THE GUṆA TRIAD · SAMAVĀYA EQUILIBRIUM ACHIEVED'
                     : '📊 THE GUṆA TRIAD (त्रिगुणात्मक-पर्यावरणम्)'}
                 </span>
               </h3>
               <div className="vl-triad-sub">
                 {currentStage === 3
-                  ? '🎯 Step 3 Active: Tune all 3 sliders into the illuminated Synergy Window (45% – 65%) to unlock Step 4!'
+                  ? '🎯 Target Rule: Balance all 3 sliders into the 45% – 65% window to eliminate friction and enable binding!'
                   : currentStage === 4
                   ? '✨ Guṇa-Sāmyam Complete: Thermodynamic equilibrium maintained within the Tryaṇuka bonds.'
-                  : `Current baseline properties: High Sneha (${sneha}%), Low Dravatva (${dravatva}%), Low Uṣṇa (${usna}%). Complete Steps 1 & 2 above before manual tuning.`}
+                  : `Baseline state: Sneha (${sneha}%), Dravatva (${dravatva}%), Uṣṇa (${usna}%). Complete Steps 1 & 2 above to unlock manual tuning.`}
               </div>
             </div>
             <div className={`vl-synergy-badge${isSynergyLocked ? ' is-locked' : ''}`}>
-              {currentStage === 3
+              {currentStage >= 3
                 ? isSynergyLocked
-                  ? '✨ SYNERGY LOCKED (Click Step 4 Above!)'
-                  : '⚡ TUNE SLIDERS INTO 45%–65%'
-                : currentStage === 4
-                ? '✨ EQUILIBRIUM ACHIEVED'
+                  ? '✨ SYNERGY LOCKED · CLICK STEP 4 ABOVE!'
+                  : '⚡ TUNE SLIDERS TO 45%–65%'
                 : '🔒 ACTIVE IN STEP 3'}
+            </div>
+          </div>
+
+          {/* Dedicated 45%-65% Equilibrium Explainer Card */}
+          <div
+            style={{
+              background: 'rgba(15, 23, 42, 0.85)',
+              border: '1px solid rgba(56, 189, 248, 0.25)',
+              borderRadius: '10px',
+              padding: '0.85rem 1rem',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+              gap: '0.75rem',
+            }}
+          >
+            <div style={{ background: 'rgba(30, 41, 59, 0.6)', padding: '0.6rem 0.75rem', borderRadius: '8px', borderLeft: '3px solid #38bdf8' }}>
+              <div style={{ color: '#93c5fd', fontSize: '0.82rem', fontWeight: 800 }}>❄️ Below 45%: Cold Lock</div>
+              <div style={{ color: '#94a3b8', fontSize: '0.74rem', marginTop: '0.2rem' }}>
+                Too rigid or clumpy. High interfacial friction repels substances apart like unheated oil and water.
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(16, 185, 129, 0.12)', padding: '0.6rem 0.75rem', borderRadius: '8px', border: '1.5px solid #10b981', boxShadow: '0 0 12px rgba(16, 185, 129, 0.2)' }}>
+              <div style={{ color: '#86efac', fontSize: '0.84rem', fontWeight: 900 }}>✨ 45% – 65%: Guṇa-Sāmya</div>
+              <div style={{ color: '#e2e8f0', fontSize: '0.74rem', marginTop: '0.2rem' }}>
+                <strong>PERFECT BINDING ZONE!</strong> Cohesive rejection drops to 0, fluidity allows mobility, and thermal energy reaches Tryaṇuka binding threshold.
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(30, 41, 59, 0.6)', padding: '0.6rem 0.75rem', borderRadius: '8px', borderLeft: '3px solid #f97316' }}>
+              <div style={{ color: '#fdba74', fontSize: '0.82rem', fontWeight: 800 }}>💥 Above 65%: Kinetic Chaos</div>
+              <div style={{ color: '#94a3b8', fontSize: '0.74rem', marginTop: '0.2rem' }}>
+                Overheated or hyper-fluid. Excessive agitation scatters atoms before permanent bonds can form.
+              </div>
+            </div>
+          </div>
+
+          {/* Live 3-Guṇa Equilibrium Checklist */}
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '0.5rem',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              background: 'rgba(2, 6, 23, 0.6)',
+              padding: '0.65rem 0.85rem',
+              borderRadius: '8px',
+              border: '1px solid rgba(148, 163, 184, 0.2)',
+            }}
+          >
+            <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#e2e8f0' }}>LIVE EQUILIBRIUM CHECKLIST:</span>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '0.76rem', padding: '0.2rem 0.55rem', borderRadius: '6px', background: sneha >= 45 && sneha <= 65 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(239, 68, 68, 0.15)', border: `1px solid ${sneha >= 45 && sneha <= 65 ? '#10b981' : '#ef4444'}`, color: sneha >= 45 && sneha <= 65 ? '#86efac' : '#fca5a5', fontWeight: 700 }}>
+                Sneha: {sneha}% {sneha >= 45 && sneha <= 65 ? '✅ (45–65%)' : sneha < 45 ? '▲ Need ≥45%' : '▼ Need ≤65%'}
+              </span>
+              <span style={{ fontSize: '0.76rem', padding: '0.2rem 0.55rem', borderRadius: '6px', background: dravatva >= 45 && dravatva <= 65 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(239, 68, 68, 0.15)', border: `1px solid ${dravatva >= 45 && dravatva <= 65 ? '#10b981' : '#ef4444'}`, color: dravatva >= 45 && dravatva <= 65 ? '#86efac' : '#fca5a5', fontWeight: 700 }}>
+                Dravatva: {dravatva}% {dravatva >= 45 && dravatva <= 65 ? '✅ (45–65%)' : dravatva < 45 ? '▲ Need ≥45%' : '▼ Need ≤65%'}
+              </span>
+              <span style={{ fontSize: '0.76rem', padding: '0.2rem 0.55rem', borderRadius: '6px', background: usna >= 45 && usna <= 65 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(239, 68, 68, 0.15)', border: `1px solid ${usna >= 45 && usna <= 65 ? '#10b981' : '#ef4444'}`, color: usna >= 45 && usna <= 65 ? '#86efac' : '#fca5a5', fontWeight: 700 }}>
+                Uṣṇa: {usna}% {usna >= 45 && usna <= 65 ? '✅ (45–65%)' : usna < 45 ? '▲ Need ≥45%' : '▼ Need ≤65%'}
+              </span>
+            </div>
+            <div style={{ fontSize: '0.78rem', fontWeight: 800, color: isSynergyLocked ? '#86efac' : '#facc15' }}>
+              {isSynergyLocked ? '✨ 3/3 BALANCED · UNLOCKED!' : `${(sneha >= 45 && sneha <= 65 ? 1 : 0) + (dravatva >= 45 && dravatva <= 65 ? 1 : 0) + (usna >= 45 && usna <= 65 ? 1 : 0)}/3 Balanced`}
             </div>
           </div>
 
           <div className="vl-triad-sliders-grid">
             {/* Slider 1: Sneha (Cohesion / Polarity) */}
-            <div className="vl-triad-slider-row">
+            <div
+              className="vl-triad-slider-row"
+              style={{
+                borderRadius: '10px',
+                padding: '0.85rem',
+                border: sneha >= 45 && sneha <= 65 ? '1px solid #10b981' : '1px solid rgba(148, 163, 184, 0.2)',
+                background: sneha >= 45 && sneha <= 65 ? 'rgba(16, 185, 129, 0.05)' : 'transparent',
+                boxShadow: sneha >= 45 && sneha <= 65 ? '0 0 10px rgba(16, 185, 129, 0.15)' : 'none',
+              }}
+            >
               <div className="vl-ts-label-wrap">
                 <span className="vl-ts-dev" lang="sa">स्नेह</span>
                 <span className="vl-ts-iast">Sneha</span>
@@ -898,27 +1027,50 @@ export const DynamicGunaMatrix: React.FC = () => {
                   🔊
                 </button>
               </div>
-              <div className="vl-slider-track-wrap">
+              <div className="vl-slider-track-wrap" style={{ position: 'relative' }}>
                 <input
                   type="range"
                   min={0}
                   max={100}
                   value={sneha}
+                  disabled={currentStage < 3}
                   onChange={(e) => handleSliderChange('sneha', Number(e.target.value))}
                   className="vl-guna-range vl-guna-range--sneha"
+                  style={{ opacity: currentStage < 3 ? 0.5 : 1, cursor: currentStage < 3 ? 'not-allowed' : 'pointer' }}
                 />
-                <div className="vl-synergy-target-zone" style={{ left: '45%', width: '20%' }} />
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', color: '#64748b', marginTop: '0.2rem' }}>
+                  <span>0%</span>
+                  <span style={{ color: sneha >= 45 && sneha <= 65 ? '#86efac' : '#94a3b8', fontWeight: 800 }}>
+                    [ 45% ── GOLDEN EQUILIBRIUM ZONE ── 65% ]
+                  </span>
+                  <span>100%</span>
+                </div>
               </div>
               <div className="vl-ts-val-wrap">
-                <span className="vl-ts-val">{sneha}%</span>
-                <span className="vl-ts-note">
-                  {sneha > 70 ? 'High Rigidity / Clumping' : sneha < 30 ? 'Low Cohesion' : 'Receptive Cohesion'}
+                <span className="vl-ts-val" style={{ color: sneha >= 45 && sneha <= 65 ? '#86efac' : '#f1f5f9' }}>
+                  {sneha}%
+                </span>
+                <span className="vl-ts-note" style={{ color: sneha >= 45 && sneha <= 65 ? '#86efac' : '#94a3b8' }}>
+                  {sneha >= 45 && sneha <= 65
+                    ? '🟢 Balanced (45%–65% Equilibrium)'
+                    : sneha > 65
+                    ? '🔴 High Rigidity / Clumping (Need ≤65%)'
+                    : '🔴 Low Cohesion (Need ≥45%)'}
                 </span>
               </div>
             </div>
 
             {/* Slider 2: Dravatva (Fluidity / Mobility) */}
-            <div className="vl-triad-slider-row">
+            <div
+              className="vl-triad-slider-row"
+              style={{
+                borderRadius: '10px',
+                padding: '0.85rem',
+                border: dravatva >= 45 && dravatva <= 65 ? '1px solid #10b981' : '1px solid rgba(148, 163, 184, 0.2)',
+                background: dravatva >= 45 && dravatva <= 65 ? 'rgba(16, 185, 129, 0.05)' : 'transparent',
+                boxShadow: dravatva >= 45 && dravatva <= 65 ? '0 0 10px rgba(16, 185, 129, 0.15)' : 'none',
+              }}
+            >
               <div className="vl-ts-label-wrap">
                 <span className="vl-ts-dev" lang="sa">द्रवत्व</span>
                 <span className="vl-ts-iast">Dravatva</span>
@@ -932,27 +1084,50 @@ export const DynamicGunaMatrix: React.FC = () => {
                   🔊
                 </button>
               </div>
-              <div className="vl-slider-track-wrap">
+              <div className="vl-slider-track-wrap" style={{ position: 'relative' }}>
                 <input
                   type="range"
                   min={0}
                   max={100}
                   value={dravatva}
+                  disabled={currentStage < 3}
                   onChange={(e) => handleSliderChange('dravatva', Number(e.target.value))}
                   className="vl-guna-range vl-guna-range--dravatva"
+                  style={{ opacity: currentStage < 3 ? 0.5 : 1, cursor: currentStage < 3 ? 'not-allowed' : 'pointer' }}
                 />
-                <div className="vl-synergy-target-zone" style={{ left: '45%', width: '20%' }} />
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', color: '#64748b', marginTop: '0.2rem' }}>
+                  <span>0%</span>
+                  <span style={{ color: dravatva >= 45 && dravatva <= 65 ? '#86efac' : '#94a3b8', fontWeight: 800 }}>
+                    [ 45% ── GOLDEN EQUILIBRIUM ZONE ── 65% ]
+                  </span>
+                  <span>100%</span>
+                </div>
               </div>
               <div className="vl-ts-val-wrap">
-                <span className="vl-ts-val">{dravatva}%</span>
-                <span className="vl-ts-note">
-                  {dravatva < 30 ? 'Static Resistance' : dravatva > 75 ? 'Hyper-Flow' : 'Equilibrium Glide'}
+                <span className="vl-ts-val" style={{ color: dravatva >= 45 && dravatva <= 65 ? '#86efac' : '#f1f5f9' }}>
+                  {dravatva}%
+                </span>
+                <span className="vl-ts-note" style={{ color: dravatva >= 45 && dravatva <= 65 ? '#86efac' : '#94a3b8' }}>
+                  {dravatva >= 45 && dravatva <= 65
+                    ? '🟢 Balanced (Equilibrium Glide)'
+                    : dravatva < 45
+                    ? '🔴 Static Resistance (Need ≥45%)'
+                    : '🔴 Hyper-Flow Chaos (Need ≤65%)'}
                 </span>
               </div>
             </div>
 
             {/* Slider 3: Uṣṇa (Kinetic Heat / Transformation) */}
-            <div className="vl-triad-slider-row">
+            <div
+              className="vl-triad-slider-row"
+              style={{
+                borderRadius: '10px',
+                padding: '0.85rem',
+                border: usna >= 45 && usna <= 65 ? '1px solid #10b981' : '1px solid rgba(148, 163, 184, 0.2)',
+                background: usna >= 45 && usna <= 65 ? 'rgba(16, 185, 129, 0.05)' : 'transparent',
+                boxShadow: usna >= 45 && usna <= 65 ? '0 0 10px rgba(16, 185, 129, 0.15)' : 'none',
+              }}
+            >
               <div className="vl-ts-label-wrap">
                 <span className="vl-ts-dev" lang="sa">उष्ण</span>
                 <span className="vl-ts-iast">Uṣṇa (Tejas)</span>
@@ -966,21 +1141,35 @@ export const DynamicGunaMatrix: React.FC = () => {
                   🔊
                 </button>
               </div>
-              <div className="vl-slider-track-wrap">
+              <div className="vl-slider-track-wrap" style={{ position: 'relative' }}>
                 <input
                   type="range"
                   min={0}
                   max={100}
                   value={usna}
+                  disabled={currentStage < 3}
                   onChange={(e) => handleSliderChange('usna', Number(e.target.value))}
                   className="vl-guna-range vl-guna-range--usna"
+                  style={{ opacity: currentStage < 3 ? 0.5 : 1, cursor: currentStage < 3 ? 'not-allowed' : 'pointer' }}
                 />
-                <div className="vl-synergy-target-zone" style={{ left: '45%', width: '20%' }} />
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', color: '#64748b', marginTop: '0.2rem' }}>
+                  <span>0%</span>
+                  <span style={{ color: usna >= 45 && usna <= 65 ? '#86efac' : '#94a3b8', fontWeight: 800 }}>
+                    [ 45% ── GOLDEN EQUILIBRIUM ZONE ── 65% ]
+                  </span>
+                  <span>100%</span>
+                </div>
               </div>
               <div className="vl-ts-val-wrap">
-                <span className="vl-ts-val">{usna}%</span>
-                <span className="vl-ts-note">
-                  {usna < 25 ? 'Cold Lock' : usna > 80 ? 'Kinetic Chaos' : 'Catalytic Thermal Balance'}
+                <span className="vl-ts-val" style={{ color: usna >= 45 && usna <= 65 ? '#86efac' : '#f1f5f9' }}>
+                  {usna}%
+                </span>
+                <span className="vl-ts-note" style={{ color: usna >= 45 && usna <= 65 ? '#86efac' : '#94a3b8' }}>
+                  {usna >= 45 && usna <= 65
+                    ? '🟢 Balanced (Catalytic Equilibrium)'
+                    : usna < 45
+                    ? '🔴 Cold Lock (Need ≥45%)'
+                    : '🔴 Kinetic Chaos (Need ≤65%)'}
                 </span>
               </div>
             </div>

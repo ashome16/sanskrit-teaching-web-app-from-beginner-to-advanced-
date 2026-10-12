@@ -7503,6 +7503,21 @@
   padding-top: 0.5rem;
 }
 
+.vl-matrix-action-toolbar .vl-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(0.6);
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.vl-matrix-action-toolbar .vl-btn.is-completed {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: #10b981 !important;
+  color: #86efac !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2) !important;
+}
+
 .vl-matrix-guru-hud {
   display: flex;
   gap: 1rem;
