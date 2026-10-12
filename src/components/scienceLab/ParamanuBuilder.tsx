@@ -8,6 +8,7 @@ import { PadarthasExplorer } from './PadarthasExplorer';
 import { AkasaSutraGame } from './AkasaSutraGame';
 import { DynamicGunaMatrix } from './DynamicGunaMatrix';
 import { BhutaReconstructor } from './BhutaReconstructor';
+import { AtomismHistoryVisualizer } from './AtomismHistoryVisualizer';
 
 type Bhuta = 'prthivi' | 'ap' | 'tejas' | 'vayu';
 type Kind = 'p' | 'd' | 't';
@@ -4452,6 +4453,13 @@ export const ParamanuBuilder: React.FC = () => {
                 </div>
               );
             })()}
+
+            {/* 🎨 [ NEW: INTERACTIVE ATOMIC MODEL EVOLUTION SIMULATOR & GRAPHICS ] */}
+            <AtomismHistoryVisualizer
+              activeIndex={activeTimelineIndex}
+              onSelectIndex={(idx) => setActiveTimelineIndex(idx)}
+              onPronounce={handlePronounce}
+            />
           </section>
         </>
       )}

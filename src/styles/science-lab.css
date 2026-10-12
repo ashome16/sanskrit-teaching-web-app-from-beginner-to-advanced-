@@ -15339,6 +15339,325 @@
   border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
+/* =========================================================================
+   13. ATOMISM HISTORY VISUALIZER GRAPHICS (HISTORY OF ATOMISM PAGE)
+   ========================================================================= */
+.vl-atomism-visualizer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-top: 1.25rem;
+}
+
+.vl-atomism-header-card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(245, 158, 11, 0.05);
+}
+
+.vl-atomism-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.vl-atomism-title {
+  margin: 0.35rem 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #fef08a;
+}
+
+.vl-atomism-sanskrit {
+  font-family: 'Noto Sans Devanagari', serif;
+  color: #fed7aa;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.vl-atomism-meta-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.vl-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.7);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.vl-meta-highlight {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #86efac;
+  letter-spacing: 0.5px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.vl-era-switcher-pills {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.vl-era-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #94a3b8;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.vl-era-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+.vl-era-pill-btn.is-active {
+  color: #fef08a;
+  background: rgba(245, 158, 11, 0.15);
+  border-color: #f59e0b;
+}
+
+.vl-era-pill-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.vl-atomism-summary-text {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Canvas stage wrap */
+.vl-atomism-canvas-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #060a14;
+}
+
+.vl-atomism-canvas {
+  width: 100%;
+  height: 380px;
+  display: block;
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  border-radius: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vl-atomism-canvas-toolbar {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.vl-canvas-tool-group {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.vl-sim-btn {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  color: #e2e8f0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.vl-sim-btn:hover {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  border-color: #38bdf8;
+}
+
+/* Scale Ladder Card */
+.vl-scale-ladder-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(56, 189, 248, 0.25);
+  border-radius: 16px;
+  padding: 1.15rem 1.35rem;
+}
+
+.vl-scale-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.vl-scale-title {
+  margin: 0;
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.vl-scale-sub {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 0.2rem;
+}
+
+.vl-scale-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.6rem;
+  margin: 0.75rem 0;
+}
+
+.vl-scale-node-btn {
+  padding: 0.65rem 0.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.vl-scale-node-btn:hover {
+  transform: translateY(-2px);
+}
+
+.vl-scale-node-btn.is-active {
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.25);
+}
+
+.vl-scale-node-exp {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.vl-scale-node-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0.25rem 0 0.15rem;
+}
+
+.vl-scale-node-size {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.vl-scale-detail-box {
+  background: rgba(2, 6, 23, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Paradigm Matrix Comparison Table */
+.vl-paradigm-matrix-wrap {
+  background: rgba(15, 23, 42, 0.92);
+  border: 1.5px solid rgba(245, 158, 11, 0.3);
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+  margin-top: 0.85rem;
+}
+
+.vl-matrix-table-scroll {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.vl-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  text-align: left;
+}
+
+.vl-matrix-table th {
+  background: rgba(30, 41, 59, 0.9);
+  color: #fef08a;
+  padding: 0.75rem 0.85rem;
+  font-weight: 800;
+  border-bottom: 1.5px solid rgba(245, 158, 11, 0.3);
+  white-space: nowrap;
+}
+
+.vl-matrix-table td {
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.vl-matrix-table tr:hover td {
+  background: rgba(56, 189, 248, 0.05);
+}
+
+@media (max-width: 768px) {
+  .vl-atomism-canvas {
+    height: 300px;
+  }
+  .vl-scale-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 
 
