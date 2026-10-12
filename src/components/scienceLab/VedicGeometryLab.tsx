@@ -982,14 +982,103 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
           </div>
         </div>
 
-        {/* Section 0: Introduction */}
+        {/* Section 0: The Educational Paradox & Unified Knowledge */}
         <div style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.7, marginBottom: '1.75rem' }}>
           <p>
-            In much of Western education, various subjects are separated into boxes from an early age. Math is taught here, language there, and science somewhere else—a fragmented structure that limits a holistic approach to learning. The ancient Gurukul model operates on the exact opposite principle. It combines linguistic precision with scientific concepts, using carefully defined words to build a complete picture of information instead of making children memorize isolated bits of data.
+            In the modern educational framework, subjects are often taught as isolated silos. A student sits through a mathematics class drawing abstract shapes on a chalkboard, moves to a chemistry lab to observe molecular transitions, and later studies language as a mere tool for social utility. The connection between the three is rarely made.
           </p>
           <p>
-            Ultimately, the Gurukul system encourages students to see themselves as part of the natural world, not separate from it. By utilizing <strong>Samskritam (Sanskrit)</strong>—a language explicitly engineered around root actions (<em>Dhātus</em>)—the name of a shape is never just an arbitrary label or a sound attached to a picture. Instead, geometric names directly describe the phenomenon that creates the shape.
+            In the ancient Gurukul model, however, knowledge was structured to prevent this fragmentation. By utilizing <strong>Samskritam (Sanskrit)</strong>—a language engineered with mathematical and phonetic precision—the Gurukul system ensured that the name of any entity immediately revealed its inherent physics, geometry, and functional reality. In this system, data was never disconnected; instead, it built a holistic, deeply unified picture of the cosmos.
           </p>
+          <p>
+            Ultimately, the Gurukul system encourages students to see themselves as part of the natural world, not separate from it. By building vocabulary systematically around root actions (<em>Dhātus</em>), the name of a shape is never just an arbitrary label or a sound attached to a picture. Instead, geometric names directly describe the phenomenon that creates the shape.
+          </p>
+        </div>
+
+        {/* Section: Language as a Scientific Tool */}
+        <div style={{ marginBottom: '2rem', background: 'rgba(30,41,59,0.5)', padding: '1.25rem', borderRadius: '12px', border: '1px solid rgba(56,189,248,0.2)' }}>
+          <h3 style={{ fontSize: '1.2rem', color: '#38bdf8', fontWeight: 800, margin: '0 0 0.75rem' }}>
+            Language as a Scientific Tool
+          </h3>
+          <p style={{ fontSize: '0.9rem', color: '#cbd5e1', lineHeight: 1.65, margin: '0 0 1rem' }}>
+            In Sanskrit, words are not arbitrary labels assigned by social convention. They are built systematically from root actions (<em>Dhātus</em>). When a student learns the name of a shape, they are simultaneously learning the dynamic physical process that creates it. Consider three foundational geometric concepts:
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
+            <div style={{ background: 'rgba(15,23,42,0.8)', padding: '1rem', borderRadius: '10px', border: '1px solid rgba(6,182,212,0.3)' }}>
+              <h4 style={{ margin: '0 0 0.35rem', color: '#06b6d4', fontSize: '1rem', fontWeight: 800 }}>
+                1. Vṛtta (वृत्त) – The Circle
+              </h4>
+              <p style={{ margin: 0, fontSize: '0.85rem', color: '#cbd5e1', lineHeight: 1.55 }}>
+                Derived from the verbal root <em>Vṛt</em> (वृत्), meaning to roll, turn, or revolve. With the past participle suffix, <em>Vṛtta</em> literally translates to &quot;that which has been continuously turned or rolled.&quot; The language does not treat a circle as a static form on a page. It defines the circle through its generation—the physics of continuous rotation around a central axis.
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(15,23,42,0.8)', padding: '1rem', borderRadius: '10px', border: '1px solid rgba(245,158,11,0.3)' }}>
+              <h4 style={{ margin: '0 0 0.35rem', color: '#f59e0b', fontSize: '1rem', fontWeight: 800 }}>
+                2. Trikoṇa (त्रिकोण) – The Triangle
+              </h4>
+              <p style={{ margin: 0, fontSize: '0.85rem', color: '#cbd5e1', lineHeight: 1.55 }}>
+                Combines the prefix <em>Tri</em> (three) and the base word <em>Koṇa</em> (angle or corner). Rather than just giving the shape an arbitrary title, the word explicitly dictates its structural properties. <em>Koṇa</em> traces back to roots signifying an intermediate point or bend, mapping the exact intersections that give the shape structural strength.
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(15,23,42,0.8)', padding: '1rem', borderRadius: '10px', border: '1px solid rgba(234,179,8,0.3)' }}>
+              <h4 style={{ margin: '0 0 0.35rem', color: '#fde047', fontSize: '1rem', fontWeight: 800 }}>
+                3. Ghana (घन) – The Cube or Solid
+              </h4>
+              <p style={{ margin: 0, fontSize: '0.85rem', color: '#cbd5e1', lineHeight: 1.55 }}>
+                Masterfully collapses the artificial boundary between mathematics and chemistry. In geometry, <em>Ghana</em> identifies a cube; in physical science, it means solid, dense, or crystal. The word identifies the process of solidification. When liquid freezes, molecules lock into a structured crystalline cube. The Gurukul model taught the chemistry of phase changes alongside the mathematics of volume.
+              </p>
+            </div>
+          </div>
+
+          {/* ASCII / Visual Flow Representation */}
+          <div style={{ background: '#020617', padding: '0.85rem 1.25rem', borderRadius: '8px', border: '1px solid rgba(148,163,184,0.2)', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem', color: '#fde047', overflowX: 'auto' }}>
+            <div style={{ color: '#94a3b8', marginBottom: '0.35rem' }}>// THE ROOT GENERATION PROCESS:</div>
+            <div>[ PHYSICAL ACTION ]                     [ GEOMETRIC FORM ]</div>
+            <div style={{ color: '#38bdf8' }}>Vṛt (Continuous Rolling)        ───&gt;   Vṛtta (Circle)</div>
+            <div style={{ color: '#f59e0b' }}>Koṇa (Three-Way Bending)         ───&gt;   Trikoṇa (Triangle)</div>
+            <div style={{ color: '#4ade80' }}>Ghana (Phase Solidification)    ───&gt;   Ghana (Cube / Solid Crystal)</div>
+          </div>
+        </div>
+
+        {/* Section: Rekha Ganit: The Ultimate Bridge */}
+        <div style={{ marginBottom: '2rem' }}>
+          <h3 style={{ fontSize: '1.25rem', color: '#fde047', fontWeight: 800, borderLeft: '4px solid #f59e0b', paddingLeft: '0.75rem', marginBottom: '0.75rem' }}>
+            Rekhā Gaṇita: The Ultimate Bridge
+          </h3>
+          <p style={{ fontSize: '0.9rem', color: '#cbd5e1', lineHeight: 1.65 }}>
+            To map these universal movements, the Gurukul utilized <strong>Rekhā Gaṇita (रेखागणित)</strong>—traditionally translated as geometry. But its etymological roots run much deeper. <em>Rekhā</em> comes from the root <em>Rikh</em>, meaning to scratch, scrape, sketch, or trace a path. A <em>Rekhā</em> (line) is the literal physical trajectory left behind by a moving point of energy. Therefore, Rekhā Gaṇita is not just the calculation of static lines, but the mathematics of traced pathways and living functions.
+          </p>
+          <p style={{ fontSize: '0.9rem', color: '#cbd5e1', lineHeight: 1.65 }}>
+            Because it focuses on the underlying forces that shape reality, Rekhā Gaṇita serves as the ultimate bridge between three seemingly distinct realms:
+          </p>
+
+          <div style={{ marginTop: '1rem', background: 'rgba(2,6,23,0.85)', borderRadius: '10px', border: '1px solid rgba(148,163,184,0.2)', overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.86rem', textAlign: 'left' }}>
+              <thead>
+                <tr style={{ background: 'rgba(30,41,59,0.9)', borderBottom: '1px solid rgba(148,163,184,0.2)' }}>
+                  <th style={{ padding: '0.75rem 1rem', color: '#38bdf8', fontFamily: 'JetBrains Mono, monospace', width: '30%' }}>DIMENSION</th>
+                  <th style={{ padding: '0.75rem 1rem', color: '#f59e0b', fontFamily: 'JetBrains Mono, monospace' }}>REALIZATION OF REKHĀ GAṆITA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid rgba(148,163,184,0.1)' }}>
+                  <td style={{ padding: '0.75rem 1rem', color: '#60a5fa', fontWeight: 700 }}>Modern Design Engineering</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>It provides the predictive mathematics, structural optimization, and dynamic load-bearing calculations required to build stable technology.</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid rgba(148,163,184,0.1)' }}>
+                  <td style={{ padding: '0.75rem 1rem', color: '#34d399', fontWeight: 700 }}>Physical Sciences</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>It maps the phase changes of matter (Ghana), the trajectories of orbits (Vṛtta), and the vectors of physical forces.</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '0.75rem 1rem', color: '#c084fc', fontWeight: 700 }}>Spiritual Realization</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>It offers the profound recognition that geometry is consciousness in motion—the sacred, orderly architecture through which the unmanifested universe prints itself into physical creation.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         {/* Section 1: The Geometry of Root Actions */}
@@ -1019,7 +1108,8 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
               </h4>
               <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.55 }}>
                 In most languages, names are disconnected, but Sanskrit tracks linguistic evolution alongside structural geometry:
-                <strong> Trikoṇa</strong> combines <em>Tri</em> (three) and <em>Koṇa</em> (angle/corner). Through Indo-European linguistic pathways, Tri became three and Koṇa became corner.
+                <strong> Trikoṇa</strong> combines <em>Tri</em> (three) and <em>Koṇa</em> (angle/corner). Through Indo-European linguistic pathways, <em>Tri</em> became three and <em>Koṇa</em> became corner.
+                <strong> Catuṣkoṇa</strong> (चतुष्कोण) naturally follows as a four-angled quadrilateral.
                 By adding the Sanskrit word for measurement, <em>Miti</em> (मिति), to the root, a student derives <strong>Trikoṇamiti</strong>—the direct etymological and conceptual ancestor of modern Trigonometry.
               </p>
             </div>
@@ -1030,7 +1120,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                 ⭕ Vṛtta (वृत्त) &amp; Vartula (वर्तुल) – The Circle
               </h4>
               <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.55 }}>
-                The word for a circle, <em>Vṛtta</em>, stems from the root <em>Vṛt</em> (वृत्), meaning to roll, turn, or revolve. Its derivative, <em>Vartula</em>, literally describes the rolling, turning motion that forms the circle itself. A child isn't just told a circle is round; they are taught that a circle is the structural outcome of rotation.
+                The word for a circle, <em>Vṛtta</em>, stems from the root <em>Vṛt</em> (वृत्), meaning to roll, turn, or revolve. Its derivative, <em>Vartula</em>, literally describes the rolling, turning motion that forms the circle itself. A child isn&apos;t just told a circle is round; they are taught that a circle is the structural outcome of rotation.
               </p>
             </div>
 
@@ -1040,7 +1130,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                 🌐 Gola (गोल) &amp; Bhūgola (भूगोल) – The Sphere &amp; Planet
               </h4>
               <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.55 }}>
-                The word <em>Gola</em> denotes a sphere, capturing the dual physical properties of roundness and hollowness. Because of this definition, a child learning the word for a sphere is learning the shape of our planet at the exact same time. The Sanskrit word for geography and the Earth is <strong>Bhūgola</strong> (भू-गोल)—a direct, ancient reference to the Earth's round, spherical form.
+                The word <em>Gola</em> denotes a sphere, capturing the dual physical properties of roundness and hollowness. Because of this definition, a child learning the word for a sphere is learning the shape of our planet at the exact same time. The Sanskrit word for geography and the Earth is <strong>Bhūgola</strong> (भू-गोल)—a direct, ancient reference to the Earth&apos;s round, spherical form.
               </p>
             </div>
 
@@ -1095,7 +1185,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(148,163,184,0.1)' }}>
                   <td style={{ padding: '0.65rem 1rem', color: '#f1f5f9', fontWeight: 700 }}>Brahmāṇḍa (Cosmic Egg)</td>
-                  <td style={{ padding: '0.65rem 1rem', color: '#cbd5e1' }}>Astronomy (The universe is an oval/ellipsoid)</td>
+                  <td style={{ padding: '0.65rem 1rem', color: '#cbd5e1' }}>Astronomy (The universe is an oval / ellipsoid)</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(148,163,184,0.1)' }}>
                   <td style={{ padding: '0.65rem 1rem', color: '#f1f5f9', fontWeight: 700 }}>Śaṅkha (Sea Shell)</td>
@@ -1116,7 +1206,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             2. Shapes as Universal Events
           </h3>
           <p style={{ fontSize: '0.9rem', color: '#cbd5e1', lineHeight: 1.65 }}>
-            True knowledge in the Vedic paradigm isn't just about knowing facts; it is about realizing your fundamental relationship with everything. Form is what separates one object from another, but the principle behind each form is what connects them to each other and to a single universal manifestation.
+            True knowledge in the Vedic paradigm isn&apos;t just about knowing facts; it is about realizing your fundamental relationship with everything. Form is what separates one object from another, but the principle behind each form is what connects them to each other and to a single universal manifestation.
           </p>
           <p style={{ fontSize: '0.9rem', color: '#cbd5e1', lineHeight: 1.65 }}>
             When a modern child learns shapes through plastic blocks, the focus lands entirely on the static form. Gurukul teaching ensures the child understands that form has a deeper foundation: shapes are the living events driving cosmic existence. All around us, creation appears as a chaotic mix of different activities, but in reality, it is highly unified into two primary actions:
@@ -1157,7 +1247,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
               Geometry in Sacred Art and Performance
             </h4>
             <p style={{ margin: 0, fontSize: '0.88rem', color: '#cbd5e1', lineHeight: 1.6 }}>
-              Form doesn't just govern macro-cosmic planets and micro-cosmic atoms; it translates directly into sacred art. In traditional Indian culture, dance and music are not mere entertainment—they are spiritual performances of creation itself. Every precise mudrā (hand gesture), every calculated step, and every musical note is localized vibration. When a dancer moves, their body becomes a visual spectacle of geometry, dynamically reflecting the universe's cosmic activity.
+              Form doesn&apos;t just govern macro-cosmic planets and micro-cosmic atoms; it translates directly into sacred art. In traditional Indian culture, dance and music are not mere entertainment—they are spiritual performances of creation itself. Every precise mudrā (hand gesture), every calculated step, and every musical note is localized vibration. When a dancer moves, their body becomes a visual spectacle of geometry, dynamically reflecting the universe&apos;s cosmic activity.
             </p>
           </div>
 
@@ -1185,7 +1275,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
           padding: '1.25rem',
           borderRadius: '14px',
           background: 'linear-gradient(135deg, rgba(15,23,42,0.9), rgba(30,41,59,0.8))',
-          border: '1.5px solid rgba(56,189,248,0.35)',
+          border: '1.5px solid rgba(168,85,247,0.35)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -1193,14 +1283,14 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
           gap: '1rem',
         }}>
           <div>
-            <div style={{ fontSize: '0.72rem', fontFamily: 'JetBrains Mono, monospace', color: '#38bdf8', fontWeight: 800 }}>
-              <span className="vl-hud-blink">●</span> SECTOR 11 COMPLETE // VIJÑĀNA CURRICULUM EXPLORATION
+            <div style={{ fontSize: '0.72rem', fontFamily: 'JetBrains Mono, monospace', color: '#c084fc', fontWeight: 800 }}>
+              <span className="vl-hud-blink">●</span> SECTOR 11 COMPLETE // ADVANCE TO SECTOR 12
             </div>
             <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.1rem', color: '#f8fafc', fontWeight: 800 }}>
-              Cycle Forward to Sector 01: Paramāṇu Builder
+              Proceed to Sector 12: Mantra Acoustics &amp; The Language of Matter
             </h4>
             <p style={{ margin: '0.2rem 0 0', fontSize: '0.82rem', color: '#cbd5e1' }}>
-              Loop back into the atomic crucible of Kaṇāda and the foundational building blocks of reality!
+              Explore how sound was discovered as an immutable law of physics: Saptak harmonics, Chandas 1:2 quantisation, and the Chamakam code!
             </p>
           </div>
 
@@ -1212,14 +1302,14 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
               padding: '0.7rem 1.3rem',
               fontSize: '0.9rem',
               fontWeight: 800,
-              background: 'linear-gradient(135deg, #f59e0b, #38bdf8)',
+              background: 'linear-gradient(135deg, #c084fc, #38bdf8)',
               color: '#090e17',
               border: 'none',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
             }}
           >
-            <span>ENTER PARAMĀṆU LAB ➔</span>
+            <span>ENTER MANTRA ACOUSTICS LAB ➔</span>
           </button>
         </div>
       )}
