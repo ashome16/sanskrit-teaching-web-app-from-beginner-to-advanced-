@@ -1178,9 +1178,14 @@ const TIMELINE_NODES: TimelineNode[] = [
           text: 'Kaṇāda observed the microscopic dust motes dancing in shafts of sunlight passing through a lattice window. He deduced that this mote is the absolute smallest unit of visible matter.',
         },
         {
-          title: 'The Modern Parallel',
+          title: 'The Modern Parallel (Rayleigh-Mie Scattering)',
           icon: '🔬',
           text: 'This is the exact physical threshold of Rayleigh and Mie Scattering. An object smaller than the wavelength of visible light cannot reflect or scatter photons; it remains invisible. The Trasareṇu represents the exact cluster size where matter finally interacts with electromagnetic waves.',
+        },
+        {
+          title: 'The Pīlupāka Chemical Dissociation Threshold',
+          icon: '🔥',
+          text: 'In his famous kiln experiment (पीलुपाक-भ्राष्ट्रम्), Kaṇāda deduced that baking earthenware causes Tejas (thermal energy) to penetrate porous structures, breaking dyads into free Paramāṇus (Vibhāga), transmuting their color from unbaked grey to terracotta red, and recombining them into fresh ceramic bonds (Saṁyoga). This established the atomic theory of chemical reactions!',
         },
       ],
     },
@@ -1558,8 +1563,21 @@ export const PARAMANU_MODULES: ModuleItem[] = [
     description: 'Kaṇāda’s theory of chemical transformation: how thermal energy dissociates bonds to bake clay into ringing ceramic.',
   },
   {
-    id: 'padarthas',
+    id: 'history',
     order: 4,
+    category: 'philosophy',
+    categoryTitle: 'Science & Philosophy',
+    categoryIcon: '🏛️',
+    icon: '📜',
+    title: 'History of Atomism',
+    sanskrit: 'परमाणु-इतिहासः',
+    badge: 'Timeline',
+    subtitle: 'Kaṇāda to Quantum Theory',
+    description: 'Trace 2,600 years of atomic thought comparing Sage Kaṇāda (6th c. BCE) with Greek atomism, Dalton, Rutherford, and quantum field theory.',
+  },
+  {
+    id: 'padarthas',
+    order: 5,
     category: 'philosophy',
     categoryTitle: 'Science & Philosophy',
     categoryIcon: '🏛️',
@@ -1572,7 +1590,7 @@ export const PARAMANU_MODULES: ModuleItem[] = [
   },
   {
     id: 'biocosmic',
-    order: 5,
+    order: 6,
     category: 'philosophy',
     categoryTitle: 'Science & Philosophy',
     categoryIcon: '🏛️',
@@ -1582,19 +1600,6 @@ export const PARAMANU_MODULES: ModuleItem[] = [
     badge: 'Body & Mind',
     subtitle: 'Microcosm & Macrocosm',
     description: '“यत् पिण्डे तद् ब्रह्माण्डे” — connecting the 5 laboratory elements to human sense organs (Indriyas), body tissues, and Ayurvedic Tridoṣas.',
-  },
-  {
-    id: 'history',
-    order: 6,
-    category: 'mastery',
-    categoryTitle: 'History & Mastery',
-    categoryIcon: '📜',
-    icon: '📜',
-    title: 'History of Atomism',
-    sanskrit: 'परमाणु-इतिहासः',
-    badge: 'Timeline',
-    subtitle: 'Kaṇāda to Quantum Theory',
-    description: 'Trace 2,600 years of atomic thought comparing Sage Kaṇāda (6th c. BCE) with Greek atomism, Dalton, Rutherford, and quantum field theory.',
   },
   {
     id: 'quiz',
@@ -1623,6 +1628,7 @@ export const ParamanuBuilder: React.FC = () => {
 
   // Sector Tab Navigation & Mobile Touch States
   const [activeSector, setActiveSector] = useState<ParamanuSector>('game');
+  const [historySubView, setHistorySubView] = useState<'timeline' | 'pilupaka_lab' | 'comparative'>('timeline');
   const [showVictoryModal, setShowVictoryModal] = useState<boolean>(false);
   const [hasClaimedVictory, setHasClaimedVictory] = useState<boolean>(false);
   const [selectedForFusion, setSelectedForFusion] = useState<number | null>(null);
@@ -3221,6 +3227,49 @@ export const ParamanuBuilder: React.FC = () => {
           soundEffects.playCelebrationChime();
         }}
       />
+
+      {/* 📜 [ SEQUENTIAL BRIDGE: PĪLUPĀKA TO ATOMISM HISTORY ] */}
+      <div className="vl-station-bridge-card">
+        <div className="vl-station-bridge-glow" />
+        <div className="vl-station-bridge-content">
+          <div className="vl-station-bridge-badge">
+            <span>🚀 NEXT IN LAB SEQUENCE</span>
+            <span>स्थानम् ३ ➔ स्थानम् ४</span>
+          </div>
+          <h4 className="vl-station-bridge-title">
+            📜 Pīlupāka to Atomic History: Kaṇāda’s Chemical Kiln in the 2,600-Year Timeline
+          </h4>
+          <p className="vl-station-bridge-desc">
+            You have observed how thermal Tejas breaks molecular bonds (<strong>Vibhāga</strong>) down to individual atoms before recombining them into new ceramic qualities (<strong>Saṁyoga</strong>). In Vaiśeṣika epistemology, this kiln experiment was Sage Kaṇāda&apos;s physical proof that fundamental matter is atomic and transformable! Continue into Station 4 to compare Kaṇāda&apos;s atomic theory directly against Democritus&apos;s Greek void, John Dalton&apos;s chemical mass laws, and modern quantum fields.
+          </p>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '0.85rem' }}>
+            <button
+              type="button"
+              className="vl-btn vl-btn--gold is-pulsing"
+              onClick={() => {
+                handleSelectModule('history');
+                setHistorySubView('timeline');
+                soundEffects.playCelebrationChime();
+              }}
+              style={{ fontSize: '0.92rem', padding: '0.55rem 1.25rem' }}
+            >
+              📜 Continue to Station 4: History of Atomism ➔
+            </button>
+            <button
+              type="button"
+              className="vl-btn vl-btn--cyber"
+              onClick={() => {
+                handleSelectModule('history');
+                setHistorySubView('pilupaka_lab');
+                soundEffects.playElementSummon('tejas');
+              }}
+              style={{ fontSize: '0.85rem', padding: '0.55rem 1rem' }}
+            >
+              🔥 Open Combined Pīlupāka-History Suite
+            </button>
+          </div>
+        </div>
+      </div>
         </>
       )}
 
@@ -4368,99 +4417,354 @@ export const ParamanuBuilder: React.FC = () => {
       )}
 
       {/* =========================================================================
-          SECTOR 4: 📜 TIMELINE & HISTORY OF ATOMIC THEORY
+          SECTOR 4: 📜 TIMELINE & HISTORY OF ATOMIC THEORY (COMBINED SUITE)
           ========================================================================= */}
       {activeSector === 'history' && (
         <>
-          {/* 📜 [ NEW: KAṆĀDA'S OBSERVED TIMELINE ] Conceptual Evolution of Atomic Theory */}
-          <section className="vl-timeline-section" aria-label="Timeline of Atomic Theory">
-            <h3 className="vl-timeline-title">
-              <span>⏳ KAṆĀDA’S OBSERVED TIMELINE (परमाणु-सिद्धान्तस्य विकासः)</span>
-            </h3>
-            <p style={{ margin: '0 0 0.85rem', fontSize: '0.86rem', color: '#fed7aa', lineHeight: 1.5 }}>
-              Trace how Sage Kaṇāda’s conceptual foundations in 6th-century BCE India connect to Greek atomism,
-              Dalton’s stoichiometry, and quantum field theory. Kaṇāda derived his system from philosophical logic (<em>Anumāna</em>)
-              and acute observation (<em>Pratyakṣa</em>) rather than modern particle colliders.
-            </p>
+          {/* Integrated History Suite Sub-Navigation */}
+          <div className="vl-history-suite-nav" role="tablist" aria-label="History of Atomism Views">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={historySubView === 'timeline'}
+              className={`vl-history-sub-tab${historySubView === 'timeline' ? ' is-active' : ''}`}
+              onClick={() => {
+                setHistorySubView('timeline');
+                soundEffects.playPuzzleSnap();
+              }}
+            >
+              📜 2,600-Year Atomic Timeline & Simulator
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={historySubView === 'pilupaka_lab'}
+              className={`vl-history-sub-tab${historySubView === 'pilupaka_lab' ? ' is-active' : ''}`}
+              onClick={() => {
+                setHistorySubView('pilupaka_lab');
+                soundEffects.playElementSummon('tejas');
+              }}
+            >
+              🔥 Kaṇāda&apos;s Pīlupāka Oven (Integrated Kiln Lab)
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={historySubView === 'comparative'}
+              className={`vl-history-sub-tab${historySubView === 'comparative' ? ' is-active' : ''}`}
+              onClick={() => {
+                setHistorySubView('comparative');
+                soundEffects.playCelebrationChime();
+              }}
+            >
+              ⚖️ Comparative Dialectic (Vedic vs Greek vs Dalton)
+            </button>
+          </div>
 
-            {/* Timeline Horizontal Stepper */}
-            <div className="vl-timeline-slider-track">
-              {TIMELINE_NODES.map((node, idx) => (
-                <div
-                  key={node.name}
-                  className={`vl-timeline-node${activeTimelineIndex === idx ? ' is-active' : ''}`}
-                  onClick={() => setActiveTimelineIndex(idx)}
-                >
-                  <div className="vl-timeline-node-era">{node.era}</div>
-                  <div className="vl-timeline-node-name">{node.name}</div>
-                  <div className="vl-timeline-node-core">{node.devanagari}</div>
-                </div>
-              ))}
-            </div>
+          {/* Sub-view 1: 📜 2,600-Year Timeline */}
+          {historySubView === 'timeline' && (
+            <section className="vl-timeline-section" aria-label="Timeline of Atomic Theory">
+              <h3 className="vl-timeline-title">
+                <span>⏳ KAṆĀDA’S OBSERVED TIMELINE (परमाणु-सिद्धान्तस्य विकासः)</span>
+              </h3>
+              <p style={{ margin: '0 0 0.85rem', fontSize: '0.86rem', color: '#fed7aa', lineHeight: 1.5 }}>
+                Trace how Sage Kaṇāda’s conceptual foundations in 6th-century BCE India connect to Greek atomism,
+                Dalton’s stoichiometry, and quantum field theory. Kaṇāda derived his system from philosophical logic (<em>Anumāna</em>)
+                and acute observation (<em>Pratyakṣa</em>) rather than modern particle colliders.
+              </p>
 
-            {/* Selected Milestone Deep-Dive Card */}
-            {(() => {
-              const sel = TIMELINE_NODES[activeTimelineIndex];
-              return (
-                <div className="vl-timeline-detail-card">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.65rem' }}>
-                    <div>
-                      <h4 style={{ margin: 0, fontSize: '1.15rem', color: '#fef08a', fontWeight: 800 }}>
-                        {sel.name} · <span lang="sa">{sel.devanagari}</span>
-                      </h4>
-                      <span style={{ fontSize: '0.82rem', color: '#fbbf24', fontFamily: 'JetBrains Mono, monospace' }}>
-                        📍 {sel.location} · {sel.era}
-                      </span>
-                    </div>
-                    <span className="vl-hud-pill">METHOD: {sel.method}</span>
+              {/* Timeline Horizontal Stepper */}
+              <div className="vl-timeline-slider-track">
+                {TIMELINE_NODES.map((node, idx) => (
+                  <div
+                    key={node.name}
+                    className={`vl-timeline-node${activeTimelineIndex === idx ? ' is-active' : ''}`}
+                    onClick={() => setActiveTimelineIndex(idx)}
+                  >
+                    <div className="vl-timeline-node-era">{node.era}</div>
+                    <div className="vl-timeline-node-name">{node.name}</div>
+                    <div className="vl-timeline-node-core">{node.devanagari}</div>
                   </div>
-                  <div style={{ background: 'rgba(0,0,0,0.3)', padding: '0.75rem 0.95rem', borderRadius: '10px', marginBottom: '0.65rem', borderLeft: '3px solid #f59e0b' }}>
-                    <strong style={{ color: '#f8fafc', fontSize: '0.92rem' }}>Core Discovery: </strong>
-                    <span style={{ color: '#fed7aa', fontSize: '0.9rem' }}>{sel.coreIdea}</span>
-                  </div>
-                  <p style={{ margin: 0, fontSize: '0.88rem', color: '#cbd5e1', lineHeight: 1.6 }}>
-                    💡 <strong>Historical Context & Epistemic Value: </strong> {sel.insight}
-                  </p>
+                ))}
+              </div>
 
-                  {/* Epistemic Bridge Deep-Dive Callout */}
-                  {sel.epistemicBridge && (
-                    <div className="vl-epistemic-bridge-box">
-                      <div className="vl-epistemic-bridge-header">
-                        <span className="vl-epistemic-badge">EPISTEMOLOGICAL THRESHOLD</span>
-                        <h4 className="vl-epistemic-title">
-                          ✨ {sel.epistemicBridge.title}
+              {/* Selected Milestone Deep-Dive Card */}
+              {(() => {
+                const sel = TIMELINE_NODES[activeTimelineIndex];
+                return (
+                  <div className="vl-timeline-detail-card">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.65rem' }}>
+                      <div>
+                        <h4 style={{ margin: 0, fontSize: '1.15rem', color: '#fef08a', fontWeight: 800 }}>
+                          {sel.name} · <span lang="sa">{sel.devanagari}</span>
                         </h4>
-                        <div className="vl-epistemic-subhead">
-                          {sel.epistemicBridge.subhead}
+                        <span style={{ fontSize: '0.82rem', color: '#fbbf24', fontFamily: 'JetBrains Mono, monospace' }}>
+                          📍 {sel.location} · {sel.era}
+                        </span>
+                      </div>
+                      <span className="vl-hud-pill">METHOD: {sel.method}</span>
+                    </div>
+                    <div style={{ background: 'rgba(0,0,0,0.3)', padding: '0.75rem 0.95rem', borderRadius: '10px', marginBottom: '0.65rem', borderLeft: '3px solid #f59e0b' }}>
+                      <strong style={{ color: '#f8fafc', fontSize: '0.92rem' }}>Core Discovery: </strong>
+                      <span style={{ color: '#fed7aa', fontSize: '0.9rem' }}>{sel.coreIdea}</span>
+                    </div>
+                    <p style={{ margin: 0, fontSize: '0.88rem', color: '#cbd5e1', lineHeight: 1.6 }}>
+                      💡 <strong>Historical Context & Epistemic Value: </strong> {sel.insight}
+                    </p>
+
+                    {/* Epistemic Bridge Deep-Dive Callout */}
+                    {sel.epistemicBridge && (
+                      <div className="vl-epistemic-bridge-box">
+                        <div className="vl-epistemic-bridge-header">
+                          <span className="vl-epistemic-badge">EPISTEMOLOGICAL THRESHOLD</span>
+                          <h4 className="vl-epistemic-title">
+                            ✨ {sel.epistemicBridge.title}
+                          </h4>
+                          <div className="vl-epistemic-subhead">
+                            {sel.epistemicBridge.subhead}
+                          </div>
+                        </div>
+                        <p className="vl-epistemic-lead">
+                          {sel.epistemicBridge.lead}
+                        </p>
+                        <div className="vl-epistemic-bullets-grid">
+                          {sel.epistemicBridge.bullets.map((b, bIdx) => (
+                            <div key={bIdx} className="vl-epistemic-bullet-card">
+                              <div className="vl-epistemic-bullet-title">
+                                <span>{b.icon}</span>
+                                <strong>{b.title}</strong>
+                              </div>
+                              <p className="vl-epistemic-bullet-desc">{b.text}</p>
+                            </div>
+                          ))}
                         </div>
                       </div>
-                      <p className="vl-epistemic-lead">
-                        {sel.epistemicBridge.lead}
-                      </p>
-                      <div className="vl-epistemic-bullets-grid">
-                        {sel.epistemicBridge.bullets.map((b, bIdx) => (
-                          <div key={bIdx} className="vl-epistemic-bullet-card">
-                            <div className="vl-epistemic-bullet-title">
-                              <span>{b.icon}</span>
-                              <strong>{b.title}</strong>
-                            </div>
-                            <p className="vl-epistemic-bullet-desc">{b.text}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })()}
+                    )}
+                  </div>
+                );
+              })()}
 
-            {/* 🎨 [ NEW: INTERACTIVE ATOMIC MODEL EVOLUTION SIMULATOR & GRAPHICS ] */}
-            <AtomismHistoryVisualizer
-              activeIndex={activeTimelineIndex}
-              onSelectIndex={(idx) => setActiveTimelineIndex(idx)}
-              onPronounce={handlePronounce}
-            />
-          </section>
+              {/* 🎨 [ INTERACTIVE ATOMIC MODEL EVOLUTION SIMULATOR & GRAPHICS ] */}
+              <AtomismHistoryVisualizer
+                activeIndex={activeTimelineIndex}
+                onSelectIndex={(idx) => setActiveTimelineIndex(idx)}
+                onPronounce={handlePronounce}
+              />
+            </section>
+          )}
+
+          {/* Sub-view 2: 🔥 Kaṇāda's Pīlupāka Oven (Integrated Kiln Lab) */}
+          {historySubView === 'pilupaka_lab' && (
+            <section className="vl-timeline-section" aria-label="Integrated Pīlupāka Kiln Lab">
+              <div className="vl-history-pilupaka-bridge-intro">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.45rem' }}>
+                  <span className="vl-hud-pill">HISTORICAL CHEMICAL APPARATUS · 6TH C. BCE</span>
+                  <strong style={{ color: '#fef08a', fontSize: '1.05rem' }}>
+                    Sage Kaṇāda’s Pīlupāka Crucible: The Empirical Birth of Atomic Chemistry
+                  </strong>
+                </div>
+                <p style={{ margin: 0, fontSize: '0.86rem', color: '#fed7aa', lineHeight: 1.6 }}>
+                  Unlike Greek philosophers who posited atomism purely through abstract thought experiments, Sage Kaṇāda cited the physical earthenware kiln (भ्राष्ट्रम्) to demonstrate that macroscopic changes in color, smell, and ring occur because thermal Agni energy breaks dyadic bonds (<em>Vibhāga</em>) into individual atoms (<em>Paramāṇus</em>) before recombining them into new bonds (<em>Saṁyoga</em>). Operate Kaṇāda’s kiln and reconstruct macro-matter directly below:
+                </p>
+              </div>
+
+              {/* Pīlupāka Chemical Heat Transformation Crucible */}
+              <div
+                className="vl-pilupaka-crucible"
+                style={{
+                  background: 'linear-gradient(180deg, #fffbeb 0%, #fff7ed 100%)',
+                  border: '1.5px solid #fed7aa',
+                  borderRadius: '16px',
+                  padding: '1.15rem 1.4rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.85rem',
+                  marginBottom: '1.25rem',
+                  boxShadow: '0 8px 24px rgba(234, 88, 12, 0.12)',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.65rem' }}>
+                  <div>
+                    <strong style={{ color: '#c2410c', fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span>🔥 Pīlupāka Thermal Reactor (वैशेषिक पीलुपाक-प्रक्रिया)</span>
+                    </strong>
+                    <p style={{ margin: '0.25rem 0 0', fontSize: '0.86rem', color: '#78350f', lineHeight: 1.55 }}>
+                      Kaṇāda’s pioneering theory of chemical transformation: heat (Tejas) penetrates molecular bonds, dissociates dyads (vibhāga), and recombines atoms into baked terracotta pottery or ripened fruits.
+                    </p>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                    <LedButton
+                      kind="action"
+                      color="#f97316"
+                      disabled={isBaking}
+                      onClick={triggerPilupaka}
+                      testId="paramanu-pilupaka-btn"
+                    >
+                      {isBaking ? '⏳ Dissociating Bonds…' : '🔥 Trigger Pīlupāka Thermal Bake'}
+                    </LedButton>
+                  </div>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '0.75rem' }}>
+                  <GlowSlider
+                    label="तेजस् · Agni Heat Level"
+                    value={agniHeat}
+                    min={10}
+                    max={100}
+                    step={5}
+                    onChange={setAgniHeat}
+                    color="#ea580c"
+                    valueText={`${Math.round(agniHeat)}% Heat (Tejas)`}
+                  />
+                  <span style={{ fontSize: '0.82rem', color: agniHeat > 60 ? '#c2410c' : '#b45309', fontWeight: 800 }}>
+                    {agniHeat > 60 ? '⚡ High Agni: Sufficient for bond dissociation (Vibhāga)' : '🌡️ Warm Agni: Atoms remain bound'}
+                  </span>
+                </div>
+              </div>
+
+              {/* 🔬 [ THE RIGOROUS 3-STEP BHOOTA RECONSTRUCTOR ] */}
+              <BhutaReconstructor
+                initialBhuta={selectedMacroTarget}
+                onSelectBhuta={setSelectedMacroTarget}
+                unlockedBhutas={macroUnlocked}
+                macroStock={macroTryanukaStock}
+                onTryanukaForged={(bhuta) => forgeTryanukaForReconstructor(bhuta)}
+                onBhutaMaterialized={(bhuta) => {
+                  setMacroUnlocked((u) => ({ ...u, [bhuta]: true }));
+                  setMacroTryanukaStock((prev) => ({ ...prev, [bhuta]: 3 }));
+                  soundEffects.playCelebrationChime();
+                }}
+              />
+
+              <div style={{ marginTop: '1.2rem', textAlign: 'center' }}>
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--gold"
+                  onClick={() => {
+                    setHistorySubView('timeline');
+                    soundEffects.playPuzzleSnap();
+                  }}
+                  style={{ fontSize: '0.88rem', padding: '0.5rem 1.25rem' }}
+                >
+                  📜 Return to 2,600-Year Timeline ➔
+                </button>
+              </div>
+            </section>
+          )}
+
+          {/* Sub-view 3: ⚖️ Comparative Dialectic */}
+          {historySubView === 'comparative' && (
+            <section className="vl-timeline-section" aria-label="Comparative Dialectic">
+              <div className="vl-comparative-dialectic-header">
+                <span className="vl-hud-pill">CROSS-CIVILIZATION PHILOSOPHY</span>
+                <h3 className="vl-timeline-title" style={{ marginTop: '0.4rem' }}>
+                  <span>⚖️ THE THREE FOUNDATIONAL PILLARS OF CLASSICAL ATOMISM</span>
+                </h3>
+                <p style={{ margin: '0 0 1rem', fontSize: '0.88rem', color: '#fed7aa', lineHeight: 1.6 }}>
+                  Compare how ancient India, classical Greece, and 19th-century Britain independently deduced the fundamental particulate nature of matter:
+                </p>
+              </div>
+
+              <div className="vl-grid-3" style={{ gap: '1rem', marginBottom: '1.25rem' }}>
+                <div className="vl-comparative-card" style={{ borderColor: '#f59e0b', background: 'rgba(245, 158, 11, 0.06)' }}>
+                  <div className="vl-comparative-badge" style={{ background: '#f59e0b', color: '#1e293b' }}>
+                    🇮🇳 VAIŚEṢIKA (~600 BCE)
+                  </div>
+                  <h4 style={{ color: '#fef08a', margin: '0.5rem 0 0.35rem' }}>महर्षि-कणाद (Sage Kaṇāda)</h4>
+                  <ul className="vl-comparative-list">
+                    <li><strong>Particle:</strong> Paramāṇu (indivisible point-seed endowed with intrinsic Guṇas).</li>
+                    <li><strong>Bonding:</strong> 2 atoms = Dvyaṇuka; 3 dyads = Tryaṇuka (spatial volume emerges).</li>
+                    <li><strong>Chemical Change:</strong> <em>Pīlupāka-vāda</em> (heat dissociates bonds down to individual atoms before recombining).</li>
+                    <li><strong>Space:</strong> <em>Ākāśa</em> is not void; it is a continuous physical substrate carrying sound vibration.</li>
+                  </ul>
+                </div>
+
+                <div className="vl-comparative-card" style={{ borderColor: '#06b6d4', background: 'rgba(6, 182, 212, 0.06)' }}>
+                  <div className="vl-comparative-badge" style={{ background: '#06b6d4', color: '#0f172a' }}>
+                    🇬🇷 GREEK ATOMISM (~400 BCE)
+                  </div>
+                  <h4 style={{ color: '#a5f3fc', margin: '0.5rem 0 0.35rem' }}>Democritus & Leucippus</h4>
+                  <ul className="vl-comparative-list">
+                    <li><strong>Particle:</strong> Atomos (hard, unalterable geometric shape with interlocking hooks).</li>
+                    <li><strong>Bonding:</strong> Purely mechanical entanglement of hooks and ball-joints.</li>
+                    <li><strong>Chemical Change:</strong> No internal bond breaking; only mechanical rearrangement.</li>
+                    <li><strong>Space:</strong> <em>Kenon</em> (absolute empty void / non-being through which atoms fall).</li>
+                  </ul>
+                </div>
+
+                <div className="vl-comparative-card" style={{ borderColor: '#10b981', background: 'rgba(16, 185, 129, 0.06)' }}>
+                  <div className="vl-comparative-badge" style={{ background: '#10b981', color: '#064e3b' }}>
+                    🇬🇧 MODERN STOICHIOMETRY (1803 CE)
+                  </div>
+                  <h4 style={{ color: '#a7f3d0', margin: '0.5rem 0 0.35rem' }}>John Dalton</h4>
+                  <ul className="vl-comparative-list">
+                    <li><strong>Particle:</strong> Spherical billiard-ball atoms of fixed characteristic mass weights.</li>
+                    <li><strong>Bonding:</strong> Definite whole-number proportion compounds (e.g., 2:1 in H₂O).</li>
+                    <li><strong>Chemical Change:</strong> Recombination of indestructible mass units into compound molecules.</li>
+                    <li><strong>Space:</strong> Classical Newtonian absolute space.</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Comparative Matrix Table */}
+              <div className="vl-paradigm-matrix-wrap" style={{ marginTop: '0' }}>
+                <h4 style={{ color: '#fef08a', margin: '0 0 0.65rem', fontSize: '0.98rem' }}>
+                  📊 Epistemic Side-by-Side Synthesis
+                </h4>
+                <div className="vl-matrix-table-scroll">
+                  <table className="vl-matrix-table">
+                    <thead>
+                      <tr>
+                        <th>Concept Dimension</th>
+                        <th>Sage Kaṇāda (Vaiśeṣika)</th>
+                        <th>Democritus (Greece)</th>
+                        <th>John Dalton (Modern Chemistry)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style={{ fontWeight: 800, color: '#f59e0b' }}>Indivisible Atom</td>
+                        <td>Paramāṇu (Eternal, spherical, carries cardinal sensory guṇa)</td>
+                        <td>Atomos (Eternal, rigid geometric polyhedra with hooks)</td>
+                        <td>Mass-specific spherical chemical atom (Indivisible until 1897)</td>
+                      </tr>
+                      <tr>
+                        <td style={{ fontWeight: 800, color: '#f59e0b' }}>Chemical Transformation</td>
+                        <td><strong>Pīlupāka-vāda:</strong> Heat penetrates pores, dissociates bonds (vibhāga), transforms atomic qualities, and recombines (saṁyoga)</td>
+                        <td>Mechanical entanglement and disentanglement in the void; atoms themselves never dissociate or alter</td>
+                        <td>Separation and combination of mass spheres in fixed stoichiometric proportions</td>
+                      </tr>
+                      <tr>
+                        <td style={{ fontWeight: 800, color: '#f59e0b' }}>Nature of Space / Void</td>
+                        <td><strong>Ākāśa:</strong> Continuous ubiquitous substance; medium of sound waves (Śabda)</td>
+                        <td><strong>Kenon:</strong> Total empty void / non-existence</td>
+                        <td>Empty 3D Euclidean container space</td>
+                      </tr>
+                      <tr>
+                        <td style={{ fontWeight: 800, color: '#f59e0b' }}>Perceptual Threshold</td>
+                        <td><strong>Trasareṇu (Tryaṇuka):</strong> 6 atoms; minimum structural unit scattering visible light in sunbeams</td>
+                        <td>Atoms imperceptible; clusters form bulk matter by aggregate density</td>
+                        <td>Macroscopic volume ratios and balance weight measurements</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div style={{ marginTop: '1.2rem', textAlign: 'center' }}>
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--cyber"
+                  onClick={() => {
+                    setHistorySubView('pilupaka_lab');
+                    soundEffects.playElementSummon('tejas');
+                  }}
+                  style={{ fontSize: '0.88rem', padding: '0.5rem 1.25rem' }}
+                >
+                  🔥 Test Kaṇāda&apos;s Pīlupāka Oven in Action ➔
+                </button>
+              </div>
+            </section>
+          )}
         </>
       )}
 

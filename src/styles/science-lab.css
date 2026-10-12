@@ -15658,6 +15658,151 @@
   }
 }
 
+/* =========================================================================
+   PĪLUPĀKA & ATOMISM HISTORY SEQUENTIAL INTEGRATION SUITE
+   ========================================================================= */
+
+.vl-history-suite-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  background: rgba(15, 23, 42, 0.75);
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.vl-history-sub-tab {
+  flex: 1;
+  min-width: 220px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.vl-history-sub-tab:hover {
+  background: rgba(30, 41, 59, 0.8);
+  color: #f8fafc;
+}
+
+.vl-history-sub-tab.is-active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(234, 88, 12, 0.2) 100%);
+  border-color: #f59e0b;
+  color: #fef08a;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.3);
+}
+
+.vl-history-pilupaka-bridge-intro {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  border-radius: 14px;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.vl-station-bridge-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1.5px solid #f59e0b;
+  border-radius: 16px;
+  padding: 1.35rem 1.6rem;
+  margin-top: 1.4rem;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+}
+
+.vl-station-bridge-glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.vl-station-bridge-content {
+  position: relative;
+  z-index: 1;
+}
+
+.vl-station-bridge-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fef08a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  margin-bottom: 0.65rem;
+}
+
+.vl-station-bridge-title {
+  margin: 0 0 0.45rem;
+  font-size: 1.15rem;
+  color: #fef08a;
+  font-weight: 900;
+}
+
+.vl-station-bridge-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #fed7aa;
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+.vl-comparative-card {
+  border: 1.5px solid rgba(148, 163, 184, 0.25);
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vl-comparative-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.vl-comparative-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+}
+
+.vl-comparative-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.vl-comparative-list li {
+  margin-bottom: 0.4rem;
+}
+
 
 
 

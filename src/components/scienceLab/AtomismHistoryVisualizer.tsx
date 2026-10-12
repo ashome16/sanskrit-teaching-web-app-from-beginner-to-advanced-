@@ -21,14 +21,15 @@ interface MilestoneVisualMeta {
 
 const MILESTONE_METAS: MilestoneVisualMeta[] = [
   {
-    title: 'The Trasareṇu & Sunbeam Threshold',
-    sanskrit: 'त्रसरेणुः तथा जालसूर्यमरीचिः',
+    title: 'The Trasareṇu & Pīlupāka Oven (Light Scattering & Thermal Chemistry)',
+    sanskrit: 'त्रसरेणुः तथा पीलुपाक-भ्राष्ट्रम्',
     era: '~6th c. BCE',
     thinker: 'Sage Kaṇāda (महर्षि-कणादः)',
-    visualBadge: '✨ LIGHT-SCATTERING MOTE THRESHOLD',
+    visualBadge: '✨ LIGHT-SCATTERING MOTE & PĪLUPĀKA THERMAL KILN',
     conceptSummary:
-      '0D Paramāṇu seeds combine into 2D Dvyaṇuka dyads, which cluster into 3D Tryaṇukas (Trasareṇu). First unit capable of scattering visible light in sunbeams.',
-    epistemicFocus: 'The structural emergence of magnitude (Mahatva) and the Rayleigh-Mie scattering boundary.',
+      '0D Paramāṇu seeds combine into 2D Dvyaṇuka dyads, which cluster into 3D Tryaṇukas (Trasareṇu)—the first unit scattering sunbeams. In the Pīlupāka Kiln, Tejas heat dissociates dyad bonds (vibhāga) down to individual atoms before recombining (saṁyoga) into baked terracotta red.',
+    epistemicFocus:
+      'The structural emergence of magnitude (Mahatva), Rayleigh-Mie scattering threshold, and atomic chemical bond dissociation via Pīlupāka thermal kinetics.',
     physicsAccent: '#f59e0b',
     physicsGlow: 'rgba(245, 158, 11, 0.4)',
   },
@@ -194,19 +195,32 @@ export const AtomismHistoryVisualizer: React.FC<AtomismHistoryVisualizerProps> =
   const [clinamenTriggered, setClinamenTriggered] = useState<boolean>(false);
   const [condensateActive, setCondensateActive] = useState<boolean>(false);
   const [sunbeamFilterBoost, setSunbeamFilterBoost] = useState<boolean>(true);
+  const [pilupakaBakeActive, setPilupakaBakeActive] = useState<boolean>(false);
 
   const meta = MILESTONE_METAS[activeIndex] || MILESTONE_METAS[0];
 
   // =========================================================================
   // INTERACTIVE ACTION TRIGGERS
   // =========================================================================
+  const handleSunbeamFilter = () => {
+    setActionPulse((prev) => prev + 1);
+    setPilupakaBakeActive(false);
+    setSunbeamFilterBoost((prev) => !prev);
+    soundEffects.playTrasarenuChime();
+  };
+
   const handleTriggerAction = () => {
     setActionPulse((prev) => prev + 1);
 
     if (activeIndex === 0) {
-      // Kaṇāda: intensify sunbeam and trigger Trasareṇu chime
-      setSunbeamFilterBoost((prev) => !prev);
-      soundEffects.playTrasarenuChime();
+      // Kaṇāda: toggle Pīlupāka kiln bake vs sunbeam
+      const next = !pilupakaBakeActive;
+      setPilupakaBakeActive(next);
+      if (next) {
+        soundEffects.playElementSummon('tejas');
+      } else {
+        soundEffects.playTrasarenuChime();
+      }
     } else if (activeIndex === 1) {
       // Democritus: agitate void
       soundEffects.playPuzzleSnap();
@@ -306,68 +320,100 @@ export const AtomismHistoryVisualizer: React.FC<AtomismHistoryVisualizerProps> =
       // 1. SAGE KAṆĀDA: SUNBEAM MOTE & TRASAREṆU SCATTERING (INDEX 0)
       // =====================================================================
       if (activeIndex === 0) {
-        // Lattice window top-left
-        ctx.fillStyle = '#1e293b';
-        ctx.fillRect(20, 20, 90, 110);
-        ctx.strokeStyle = '#f59e0b';
-        ctx.lineWidth = 2.5;
-        ctx.strokeRect(20, 20, 90, 110);
+        if (pilupakaBakeActive) {
+          // Blazing Vedic Agni Kiln (Tejas flames)
+          const fireGrad = ctx.createLinearGradient(120, h - 30, 120, h - 160);
+          fireGrad.addColorStop(0, 'rgba(239, 68, 68, 0.85)');
+          fireGrad.addColorStop(0.5, 'rgba(249, 115, 22, 0.6)');
+          fireGrad.addColorStop(1, 'rgba(250, 204, 21, 0)');
+          ctx.fillStyle = fireGrad;
+          for (let fx = 80; fx < 380; fx += 22) {
+            const fH = 55 + Math.sin(t * 8 + fx) * 26;
+            ctx.beginPath();
+            ctx.moveTo(fx, h - 25);
+            ctx.quadraticCurveTo(fx + 11, h - 25 - fH, fx + 22, h - 25);
+            ctx.fill();
+          }
 
-        // Lattice wooden bars (Jālamārga)
-        ctx.strokeStyle = 'rgba(245, 158, 11, 0.5)';
-        ctx.lineWidth = 1.5;
-        for (let lx = 35; lx < 110; lx += 15) {
+          // Terracotta clay jar inside crucible
+          ctx.fillStyle = '#b45309';
           ctx.beginPath();
-          ctx.moveTo(lx, 20);
-          ctx.lineTo(lx, 130);
-          ctx.stroke();
-        }
-        for (let ly = 35; ly < 130; ly += 18) {
-          ctx.beginPath();
-          ctx.moveTo(20, ly);
-          ctx.lineTo(110, ly);
-          ctx.stroke();
-        }
-
-        ctx.fillStyle = '#fbbf24';
-        ctx.font = 'bold 8.5px JetBrains Mono, monospace';
-        ctx.fillText('जालमार्गः (Lattice Window)', 22, 145);
-
-        // Radiant golden diagonal sunlight beam
-        const beamGrad = ctx.createLinearGradient(65, 75, 580, 360);
-        const opacity = sunbeamFilterBoost ? 0.35 : 0.18;
-        beamGrad.addColorStop(0, `rgba(254, 240, 138, ${opacity * 1.5})`);
-        beamGrad.addColorStop(0.5, `rgba(245, 158, 11, ${opacity})`);
-        beamGrad.addColorStop(1, 'rgba(245, 158, 11, 0)');
-
-        ctx.beginPath();
-        ctx.moveTo(40, 50);
-        ctx.lineTo(110, 130);
-        ctx.lineTo(620, 370);
-        ctx.lineTo(440, 370);
-        ctx.closePath();
-        ctx.fillStyle = beamGrad;
-        ctx.fill();
-
-        // Dancing golden motes (Trasareṇu)
-        dustMotes.forEach((m) => {
-          m.x += m.vx + Math.sin(t + m.phase) * 0.3;
-          m.y += m.vy + Math.cos(t + m.phase) * 0.3;
-          if (m.x < 120) m.x = 480;
-          if (m.x > 500) m.x = 130;
-          if (m.y < 70) m.y = 320;
-          if (m.y > 330) m.y = 80;
-
-          ctx.beginPath();
-          ctx.arc(m.x, m.y, m.size, 0, Math.PI * 2);
-          ctx.fillStyle = '#fef08a';
-          ctx.shadowColor = '#facc15';
-          ctx.shadowBlur = 6;
+          ctx.ellipse(220, h - 110, 52, 42, 0, 0, Math.PI * 2);
           ctx.fill();
-          ctx.shadowBlur = 0;
-        });
+          ctx.strokeStyle = '#f97316';
+          ctx.lineWidth = 2.5;
+          ctx.stroke();
 
-        // Magnified Triadic Unit Callout Lens (Tryaṇuka / Trasareṇu)
+          ctx.fillStyle = '#fef08a';
+          ctx.font = 'bold 10px JetBrains Mono, monospace';
+          ctx.fillText('🔥 पीलुपाक-भ्राष्ट्रम् (Pīlupāka Kiln)', 150, h - 170);
+          ctx.fillStyle = '#fed7aa';
+          ctx.font = '8.5px JetBrains Mono, monospace';
+          ctx.fillText('Tejas heat dissociates dyad bonds (Vibhāga)', 150, h - 154);
+        } else {
+          // Lattice window top-left
+          ctx.fillStyle = '#1e293b';
+          ctx.fillRect(20, 20, 90, 110);
+          ctx.strokeStyle = '#f59e0b';
+          ctx.lineWidth = 2.5;
+          ctx.strokeRect(20, 20, 90, 110);
+
+          // Lattice wooden bars (Jālamārga)
+          ctx.strokeStyle = 'rgba(245, 158, 11, 0.5)';
+          ctx.lineWidth = 1.5;
+          for (let lx = 35; lx < 110; lx += 15) {
+            ctx.beginPath();
+            ctx.moveTo(lx, 20);
+            ctx.lineTo(lx, 130);
+            ctx.stroke();
+          }
+          for (let ly = 35; ly < 130; ly += 18) {
+            ctx.beginPath();
+            ctx.moveTo(20, ly);
+            ctx.lineTo(110, ly);
+            ctx.stroke();
+          }
+
+          ctx.fillStyle = '#fbbf24';
+          ctx.font = 'bold 8.5px JetBrains Mono, monospace';
+          ctx.fillText('जालमार्गः (Lattice Window)', 22, 145);
+
+          // Radiant golden diagonal sunlight beam
+          const beamGrad = ctx.createLinearGradient(65, 75, 580, 360);
+          const opacity = sunbeamFilterBoost ? 0.35 : 0.18;
+          beamGrad.addColorStop(0, `rgba(254, 240, 138, ${opacity * 1.5})`);
+          beamGrad.addColorStop(0.5, `rgba(245, 158, 11, ${opacity})`);
+          beamGrad.addColorStop(1, 'rgba(245, 158, 11, 0)');
+
+          ctx.beginPath();
+          ctx.moveTo(40, 50);
+          ctx.lineTo(110, 130);
+          ctx.lineTo(620, 370);
+          ctx.lineTo(440, 370);
+          ctx.closePath();
+          ctx.fillStyle = beamGrad;
+          ctx.fill();
+
+          // Dancing golden motes (Trasareṇu)
+          dustMotes.forEach((m) => {
+            m.x += m.vx + Math.sin(t + m.phase) * 0.3;
+            m.y += m.vy + Math.cos(t + m.phase) * 0.3;
+            if (m.x < 120) m.x = 480;
+            if (m.x > 500) m.x = 130;
+            if (m.y < 70) m.y = 320;
+            if (m.y > 330) m.y = 80;
+
+            ctx.beginPath();
+            ctx.arc(m.x, m.y, m.size, 0, Math.PI * 2);
+            ctx.fillStyle = '#fef08a';
+            ctx.shadowColor = '#facc15';
+            ctx.shadowBlur = 6;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          });
+        }
+
+        // Magnified Triadic Unit Callout Lens (Tryaṇuka / Trasareṇu or Pīlupāka Dissociation)
         const cx = 520;
         const cy = 160;
         const cr = 85;
@@ -377,39 +423,41 @@ export const AtomismHistoryVisualizer: React.FC<AtomismHistoryVisualizerProps> =
         ctx.arc(cx, cy, cr, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
         ctx.fill();
-        ctx.strokeStyle = '#f59e0b';
+        ctx.strokeStyle = pilupakaBakeActive ? '#f97316' : '#f59e0b';
         ctx.lineWidth = 2.5;
         ctx.stroke();
 
-        ctx.fillStyle = '#fde047';
+        ctx.fillStyle = pilupakaBakeActive ? '#fb923c' : '#fde047';
         ctx.font = 'bold 9px JetBrains Mono, monospace';
         ctx.textAlign = 'center';
-        ctx.fillText('त्रसरेणु-आकृतिः (Tryaṇuka Core)', cx, cy - 65);
+        ctx.fillText(pilupakaBakeActive ? '🔥 पीलुपाकः (Bond Dissociation)' : 'त्रसरेणु-आकृतिः (Tryaṇuka Core)', cx, cy - 65);
         ctx.fillStyle = '#cbd5e1';
         ctx.font = '8px JetBrains Mono, monospace';
-        ctx.fillText('3 Dvyaṇuka Dyads = 6 Atoms', cx, cy - 52);
+        ctx.fillText(pilupakaBakeActive ? 'Vibhāga (Separation) ➔ Saṁyoga (Re-bond)' : '3 Dvyaṇuka Dyads = 6 Atoms', cx, cy - 52);
 
-        // 3D Triad Pyramid Geometry
-        const triadR = 32 + Math.sin(t * 2) * 3;
+        // 3D Triad Pyramid Geometry / Thermal Dissociation
+        const triadR = 32 + (pilupakaBakeActive ? Math.sin(t * 8) * 12 : Math.sin(t * 2) * 3);
         const nodes = [
           { x: cx, y: cy - triadR * 0.8 },
           { x: cx - triadR * 0.86, y: cy + triadR * 0.5 },
           { x: cx + triadR * 0.86, y: cy + triadR * 0.5 },
         ];
 
-        // Light wave scattering rings (Rayleigh / Mie Scattering threshold!)
+        // Light wave scattering rings or Thermal heat waves
         const waveProgress = (t * 2.5) % 1;
         ctx.beginPath();
         ctx.arc(cx, cy, 20 + waveProgress * 65, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(254, 240, 138, ${1 - waveProgress})`;
+        ctx.strokeStyle = pilupakaBakeActive
+          ? `rgba(249, 115, 22, ${1 - waveProgress})`
+          : `rgba(254, 240, 138, ${1 - waveProgress})`;
         ctx.lineWidth = 1.8;
         ctx.setLineDash([4, 4]);
         ctx.stroke();
         ctx.setLineDash([]);
 
-        // Triad Dyad link bars
-        ctx.strokeStyle = '#38bdf8';
-        ctx.lineWidth = 2.2;
+        // Triad Dyad link bars (Flickering / breaking if Pīlupāka is active!)
+        ctx.strokeStyle = pilupakaBakeActive ? 'rgba(239, 68, 68, 0.5)' : '#38bdf8';
+        ctx.lineWidth = pilupakaBakeActive ? 1.5 : 2.2;
         ctx.beginPath();
         ctx.moveTo(nodes[0].x, nodes[0].y);
         ctx.lineTo(nodes[1].x, nodes[1].y);
@@ -417,27 +465,28 @@ export const AtomismHistoryVisualizer: React.FC<AtomismHistoryVisualizerProps> =
         ctx.closePath();
         ctx.stroke();
 
-        // 6 Atoms (2 on each dyad edge)
+        // 6 Atoms (2 on each dyad edge) - turn glowing terracotta red if baking!
         nodes.forEach((n, idx) => {
           const next = nodes[(idx + 1) % 3];
           const midX = (n.x + next.x) / 2;
           const midY = (n.y + next.y) / 2;
 
-          // Atoms
           [n, { x: midX, y: midY }].forEach((atom, aIdx) => {
             ctx.beginPath();
             ctx.arc(atom.x, atom.y, 6.5, 0, Math.PI * 2);
-            ctx.fillStyle = aIdx === 0 ? '#facc15' : '#38bdf8';
-            ctx.shadowColor = '#fef08a';
+            ctx.fillStyle = pilupakaBakeActive
+              ? (aIdx === 0 ? '#ea580c' : '#f97316')
+              : (aIdx === 0 ? '#facc15' : '#38bdf8');
+            ctx.shadowColor = pilupakaBakeActive ? '#ef4444' : '#fef08a';
             ctx.shadowBlur = 8;
             ctx.fill();
             ctx.shadowBlur = 0;
           });
         });
 
-        ctx.fillStyle = '#86efac';
+        ctx.fillStyle = pilupakaBakeActive ? '#fdba74' : '#86efac';
         ctx.font = 'bold 8.5px JetBrains Mono, monospace';
-        ctx.fillText('Photons Scatter (λ ≈ 500nm)', cx, cy + 62);
+        ctx.fillText(pilupakaBakeActive ? 'Baking into Terracotta Red Ceramic' : 'Photons Scatter (λ ≈ 500nm)', cx, cy + 62);
         ctx.textAlign = 'start';
       }
 
@@ -998,24 +1047,54 @@ export const AtomismHistoryVisualizer: React.FC<AtomismHistoryVisualizerProps> =
           </div>
 
           <div className="vl-canvas-action-trigger">
-            <button
-              type="button"
-              className="vl-btn vl-btn--gold is-pulsing"
-              onClick={handleTriggerAction}
-              style={{
-                fontSize: '0.82rem',
-                padding: '0.4rem 0.85rem',
-                borderColor: meta.physicsAccent,
-              }}
-            >
-              {activeIndex === 0 && '☀️ Intensify Sunbeam & Scatter Photons'}
-              {activeIndex === 1 && '💥 Agitate Greek Void (Kinetic Impulse)'}
-              {activeIndex === 2 && '⚡ Trigger Clinamen (Microscopic Swerve)'}
-              {activeIndex === 3 && '⚗️ Synthesize Compound (H₂O & CO₂)'}
-              {activeIndex === 4 && '🧲 Deflect Cathode Ray Beam'}
-              {activeIndex === 5 && '✨ Trigger Quantum Leap (n=3 ➔ n=1)'}
-              {activeIndex === 6 && (condensateActive ? '🔥 Warm to Fluid Field' : '❄️ Condense Bose State (Absolute 0)')}
-            </button>
+            {activeIndex === 0 ? (
+              <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--cyber"
+                  onClick={handleSunbeamFilter}
+                  style={{
+                    fontSize: '0.8rem',
+                    padding: '0.4rem 0.8rem',
+                  }}
+                  title="Intensify sunbeam and observe light scattering off Trasareṇu motes"
+                >
+                  ☀️ Filter Sunbeam (Trasareṇu)
+                </button>
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--gold is-pulsing"
+                  onClick={handleTriggerAction}
+                  style={{
+                    fontSize: '0.8rem',
+                    padding: '0.4rem 0.85rem',
+                    borderColor: pilupakaBakeActive ? '#f97316' : '#f59e0b',
+                    boxShadow: pilupakaBakeActive ? '0 0 16px rgba(249, 115, 22, 0.6)' : undefined,
+                  }}
+                  title="Activate Kaṇāda's Pīlupāka kiln to view thermal bond dissociation"
+                >
+                  {pilupakaBakeActive ? '☀️ Return to Sunbeam View' : '🔥 Activate Pīlupāka Oven Bake'}
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                className="vl-btn vl-btn--gold is-pulsing"
+                onClick={handleTriggerAction}
+                style={{
+                  fontSize: '0.82rem',
+                  padding: '0.4rem 0.85rem',
+                  borderColor: meta.physicsAccent,
+                }}
+              >
+                {activeIndex === 1 && '💥 Agitate Greek Void (Kinetic Impulse)'}
+                {activeIndex === 2 && '⚡ Trigger Clinamen (Microscopic Swerve)'}
+                {activeIndex === 3 && '⚗️ Synthesize Compound (H₂O & CO₂)'}
+                {activeIndex === 4 && '🧲 Deflect Cathode Ray Beam'}
+                {activeIndex === 5 && '✨ Trigger Quantum Leap (n=3 ➔ n=1)'}
+                {activeIndex === 6 && (condensateActive ? '🔥 Warm to Fluid Field' : '❄️ Condense Bose State (Absolute 0)')}
+              </button>
+            )}
           </div>
         </div>
       </div>
