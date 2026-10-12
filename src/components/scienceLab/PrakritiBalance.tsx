@@ -451,6 +451,18 @@ export const PrakritiBalance: React.FC<LabSegmentProps> = ({ onNextLab }) => {
 
   return (
     <div className="vl-sim" data-testid="prakriti-balance-root">
+      {/* Biological Continuum Track Stage 1 Callout */}
+      <div className="vl-bio-continuum-banner" role="region" aria-label="Life Sciences Continuum Stage 1">
+        <div className="vl-bio-continuum-title">
+          <span className="vl-hud-blink">●</span> STAGE 1 OF BIOLOGICAL CONTINUUM // जीव-विज्ञान-परम्परा · सूक्ष्म-सृष्टि-विज्ञानम्
+        </div>
+        <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.84rem', color: '#cbd5e1', lineHeight: 1.5 }}>
+          Welcome to the <strong>Biology &amp; Life Sciences Track</strong>. We begin at the <strong>microscopic, sub-cellular scale</strong>:
+          balancing thermodynamic Tridoṣa ion forces, mitochondrial ATP synthesis, and lipid bilayers under seasonal stressors (<em>Ṛtucaryā</em>).
+          Next in <em>SEC-04 Chaturyoni</em>, you will scale upward to multicellular embryogenesis and plant action potentials.
+        </p>
+      </div>
+
       {/* Educational Anecdote */}
       <BodhiLabAnecdote
         title="Yathā Piṇḍe Tathā Brahmāṇḍe · The Cellular Microcosm"

@@ -381,57 +381,88 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
 
       <nav className="vl-cards" aria-label="Vijñāna Lab simulations">
         {visibleSegments.map((s) => (
-          <a
-            key={s.id}
-            href={`/vignana-lab#${s.id}`}
-            className={`vl-card${s.id === active ? ' is-active' : ''}`}
-            style={{
-              '--card-tint': s.tint,
-              '--card-ink': s.ink,
-              '--card-glow': s.glow,
-            } as React.CSSProperties}
-            onClick={(e) => {
-              e.preventDefault();
-              setActive(s.id);
-              if (s.id === active) simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
-            aria-current={s.id === active ? 'true' : undefined}
-            data-testid={`lab-card-${s.id}`}
-          >
-            <div className="vl-card-corner-accent" aria-hidden="true" />
-            <div className="vl-card-header">
-              <span className="vl-card-icon-pill">
-                {s.icon}
-              </span>
-              <div className="vl-card-header-tags">
-                <span className="vl-card-sector-tag">{s.code}</span>
-                <span className="vl-card-badge-cat" style={{ color: s.ink, borderColor: `${s.glow}55` }}>
-                  {s.subject}
-                </span>
+          <React.Fragment key={s.id}>
+            {filterCat === 'all' && s.id === 'paramanu' && (
+              <div className="vl-track-header">
+                <span className="vl-track-title"><span>⚛️</span> TRACK I: MATTER &amp; MASS CONSERVATION</span>
+                <span className="vl-track-subtitle">पदार्थ-विज्ञानम् · SEC-01 &amp; SEC-02</span>
               </div>
-            </div>
-
-            <div className="vl-card-body">
-              <div className="vl-card-dev-title" lang="sa">{s.dev}</div>
-              <div className="vl-card-main-title">{s.title}</div>
-              <div className="vl-card-school" style={{ color: s.ink }}>
-                <span className="vl-card-school-badge">ARCHIVE // {s.school}</span>
+            )}
+            {filterCat === 'all' && s.id === 'prakriti' && (
+              <div className="vl-track-header" style={{ borderColor: 'rgba(16, 185, 129, 0.45)' }}>
+                <span className="vl-track-title" style={{ color: '#34d399' }}><span>🌿</span> TRACK II: LIFE SCIENCES &amp; BIOLOGICAL CONTINUUM</span>
+                <span className="vl-track-subtitle" style={{ color: '#6ee7b7' }}>जीव-विज्ञान-परम्परा · SEC-03 &amp; SEC-04</span>
               </div>
-              <p className="vl-card-blurb">{s.blurb}</p>
-            </div>
+            )}
+            {filterCat === 'all' && s.id === 'jyotisha' && (
+              <div className="vl-track-header">
+                <span className="vl-track-title"><span>🪐</span> TRACK III: COSMOS &amp; SPACE EXPLORATION</span>
+                <span className="vl-track-subtitle">खगोल-विज्ञानम् · SEC-05 &amp; SEC-06</span>
+              </div>
+            )}
+            {filterCat === 'all' && s.id === 'nada-brahman' && (
+              <div className="vl-track-header">
+                <span className="vl-track-title"><span>📐</span> TRACK IV: WAVES, CYMATICS &amp; STATISTICS</span>
+                <span className="vl-track-subtitle">नाद-साङ्ख्य-विज्ञानम् · SEC-07, 08 &amp; 09</span>
+              </div>
+            )}
+            {filterCat === 'all' && s.id === 'agnibana' && (
+              <div className="vl-track-header">
+                <span className="vl-track-title"><span>🚀</span> TRACK V: AEROSPACE BALLISTICS &amp; METALLURGY</span>
+                <span className="vl-track-subtitle">अग्निबाण-शास्त्रम् · SEC-10</span>
+              </div>
+            )}
+            <a
+              href={`/vignana-lab#${s.id}`}
+              className={`vl-card${s.id === active ? ' is-active' : ''}`}
+              style={{
+                '--card-tint': s.tint,
+                '--card-ink': s.ink,
+                '--card-glow': s.glow,
+              } as React.CSSProperties}
+              onClick={(e) => {
+                e.preventDefault();
+                setActive(s.id);
+                if (s.id === active) simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              aria-current={s.id === active ? 'true' : undefined}
+              data-testid={`lab-card-${s.id}`}
+            >
+              <div className="vl-card-corner-accent" aria-hidden="true" />
+              <div className="vl-card-header">
+                <span className="vl-card-icon-pill">
+                  {s.icon}
+                </span>
+                <div className="vl-card-header-tags">
+                  <span className="vl-card-sector-tag">{s.code}</span>
+                  <span className="vl-card-badge-cat" style={{ color: s.ink, borderColor: `${s.glow}55` }}>
+                    {s.subject}
+                  </span>
+                </div>
+              </div>
 
-            <div className="vl-card-footer">
-              {s.id === active ? (
-                <span className="vl-card-status is-active" style={{ background: s.glow, color: '#090e17' }}>
-                  <span className="vl-card-pulse-dot" /> ENGAGED ON BENCH ↓
-                </span>
-              ) : (
-                <span className="vl-card-status" style={{ color: s.ink, borderColor: `${s.glow}66` }}>
-                  INITIALIZE SIM ▶
-                </span>
-              )}
-            </div>
-          </a>
+              <div className="vl-card-body">
+                <div className="vl-card-dev-title" lang="sa">{s.dev}</div>
+                <div className="vl-card-main-title">{s.title}</div>
+                <div className="vl-card-school" style={{ color: s.ink }}>
+                  <span className="vl-card-school-badge">ARCHIVE // {s.school}</span>
+                </div>
+                <p className="vl-card-blurb">{s.blurb}</p>
+              </div>
+
+              <div className="vl-card-footer">
+                {s.id === active ? (
+                  <span className="vl-card-status is-active" style={{ background: s.glow, color: '#090e17' }}>
+                    <span className="vl-card-pulse-dot" /> ENGAGED ON BENCH ↓
+                  </span>
+                ) : (
+                  <span className="vl-card-status" style={{ color: s.ink, borderColor: `${s.glow}66` }}>
+                    INITIALIZE SIM ▶
+                  </span>
+                )}
+              </div>
+            </a>
+          </React.Fragment>
         ))}
       </nav>
 
@@ -484,6 +515,40 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             <span className="vl-nav-arrow" aria-hidden="true">▶</span>
           </button>
         </nav>
+
+        {/* Biological Continuum Track Banner for Life Sciences */}
+        {seg.category === 'life' && (
+          <div className="vl-bio-continuum-banner" role="region" aria-label="Life Sciences Continuum Track">
+            <div className="vl-bio-continuum-title">
+              <span className="vl-hud-blink">●</span> BIOLOGICAL CONTINUUM TRACK // जीव-विज्ञान-परम्परा (CELLULAR ➔ ORGANISMAL)
+            </div>
+            <div className="vl-bio-continuum-steps">
+              <button
+                type="button"
+                className={`vl-bio-step${active === 'prakriti' ? ' is-current' : ' is-done'}`}
+                onClick={() => handleNavigateLab('prakriti')}
+              >
+                <span className="vl-bio-step-num">STAGE 1 · SEC-03</span>
+                <span className="vl-bio-step-name">🌿 Prakṛti Biosphere</span>
+                <span className="vl-bio-step-sub">Sub-Cellular Homeostasis &amp; Tridoṣa Ion Balance</span>
+              </button>
+
+              <div className="vl-bio-step-connector" aria-hidden="true">
+                ──(Scaling to Organism)──▶
+              </div>
+
+              <button
+                type="button"
+                className={`vl-bio-step${active === 'chaturyoni' ? ' is-current' : ''}`}
+                onClick={() => handleNavigateLab('chaturyoni')}
+              >
+                <span className="vl-bio-step-num">STAGE 2 · SEC-04</span>
+                <span className="vl-bio-step-name">🦢 Chaturyoni Spawn Map</span>
+                <span className="vl-bio-step-sub">Whole-Organism Taxonomy &amp; Plant Galvanometry</span>
+              </button>
+            </div>
+          </div>
+        )}
 
         <h2 id={`vl-h-${active}`} className="vl-seg-title" style={{ color: seg.ink }}>
           <span aria-hidden="true">{seg.icon}</span> {seg.title} <span className="vl-seg-dev" lang="sa">{seg.dev}</span>

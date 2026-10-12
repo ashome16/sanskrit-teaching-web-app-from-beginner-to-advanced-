@@ -16459,3 +16459,127 @@
     width: 100%;
   }
 }
+
+/* =========================================================================
+   Vijñāna Lab - Biological Continuum Track (जीव-विज्ञान-परम्परा)
+   ========================================================================= */
+
+.vl-bio-continuum-banner {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(249, 115, 22, 0.12));
+  border: 1.5px solid rgba(16, 185, 129, 0.35);
+  border-radius: 14px;
+  padding: 0.85rem 1.15rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vl-bio-continuum-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.vl-bio-continuum-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.vl-bio-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  flex: 1 1 200px;
+  transition: all 0.2s ease;
+}
+
+.vl-bio-step.is-current {
+  border-color: #34d399;
+  background: rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.25);
+}
+
+.vl-bio-step.is-done {
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.vl-bio-step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #a7f3d0;
+  letter-spacing: 0.05em;
+}
+
+.vl-bio-step-name {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.vl-bio-step-sub {
+  font-size: 0.74rem;
+  color: #cbd5e1;
+}
+
+.vl-bio-step-connector {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #f97316;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Track Header on Landing Cards Grid */
+.vl-track-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.vl-track-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.vl-track-subtitle {
+  font-size: 0.76rem;
+  color: #94a3b8;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@media (max-width: 640px) {
+  .vl-bio-continuum-steps {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .vl-bio-step-connector {
+    transform: rotate(90deg);
+    margin: 0.25rem 0;
+  }
+}

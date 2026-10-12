@@ -236,6 +236,18 @@ const Chaturyoni: React.FC<LabSegmentProps> = ({ onNextLab }) => {
 
   return (
     <div className="vl-sim cy-sim">
+      {/* Biological Continuum Track Stage 2 Callout */}
+      <div className="vl-bio-continuum-banner" role="region" aria-label="Life Sciences Continuum Stage 2">
+        <div className="vl-bio-continuum-title">
+          <span className="vl-hud-blink">●</span> STAGE 2 OF BIOLOGICAL CONTINUUM // जीव-विज्ञान-परम्परा · स्थूल-सृष्टि-विज्ञानम्
+        </div>
+        <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.84rem', color: '#cbd5e1', lineHeight: 1.5 }}>
+          Having balanced <strong>sub-cellular homeostasis and Tridoṣa ion gradients</strong> in <em>SEC-03 Prakṛti Biosphere</em>,
+          we now scale upward to <strong>multicellular organismal taxonomy (Chaturyoni &amp; Sthāvara-Jaṅgama)</strong> and Sir J.C. Bose’s revolutionary
+          laboratory verification of plant neurobiology and electrical action potentials.
+        </p>
+      </div>
+
       <BodhiLabAnecdote
         title="Parāśara, Manu & Sir J.C. Bose's Plant Galvanometer Discovery"
         sanskritTitle="पराशरस्य वृक्षायुर्वेदः & जगदीश-चन्द्र-बोसस्य विद्युत्-प्रमाणम्"
