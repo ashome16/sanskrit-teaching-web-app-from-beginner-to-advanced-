@@ -1000,6 +1000,12 @@ interface TimelineNode {
   method: string;
   coreIdea: string;
   insight: string;
+  epistemicBridge?: {
+    title: string;
+    subhead: string;
+    lead: string;
+    bullets: { title: string; icon: string; text: string }[];
+  };
 }
 
 const TIMELINE_NODES: TimelineNode[] = [
@@ -1011,6 +1017,28 @@ const TIMELINE_NODES: TimelineNode[] = [
     method: 'Anumāna (Logic) & Pratyakṣa (Observation)',
     coreIdea: 'Paramāṇu: Indivisible, eternal seeds uniting into Dvyaṇuka & Tryaṇuka; Pīlupāka thermal change.',
     insight: 'Kaṇāda derived the atomic threshold mathematically to avoid the infinite regress (anavasthā) fallacy. He observed sunbeam motes (trasareṇu) as the physical bridge to perception.',
+    epistemicBridge: {
+      title: 'The Trasareṇu: The Epistemic Bridge to Perception',
+      subhead: 'Sage Kaṇāda (महर्षि-कणादः) · वैशेषिक-दर्शनम्',
+      lead: 'Kaṇāda recognized that human senses cannot perceive a zero-dimensional point (Paramāṇu) or a two-dimensional linear link (Dvyaṇuka). The transition from abstract mathematics to observable physical reality requires a structural threshold:',
+      bullets: [
+        {
+          title: 'The Leap to Magnitude (Mahatva)',
+          icon: '📐',
+          text: 'A single Paramāṇu has zero dimension. A Dvyaṇuka (dyad) possesses length but zero volume. Only when three dyads cluster into a triad (Tryaṇuka / Trasareṇu) does three-dimensional spatial volume suddenly emerge.',
+        },
+        {
+          title: 'The Light-Scattering Criterion',
+          icon: '☀️',
+          text: 'Kaṇāda observed the microscopic dust motes dancing in shafts of sunlight passing through a lattice window. He deduced that this mote is the absolute smallest unit of visible matter.',
+        },
+        {
+          title: 'The Modern Parallel',
+          icon: '🔬',
+          text: 'This is the exact physical threshold of Rayleigh and Mie Scattering. An object smaller than the wavelength of visible light cannot reflect or scatter photons; it remains invisible. The Trasareṇu represents the exact cluster size where matter finally interacts with electromagnetic waves.',
+        },
+      ],
+    },
   },
   {
     era: '~400 BCE',
@@ -4248,6 +4276,35 @@ export const ParamanuBuilder: React.FC = () => {
                   <p style={{ margin: 0, fontSize: '0.88rem', color: '#cbd5e1', lineHeight: 1.6 }}>
                     💡 <strong>Historical Context & Epistemic Value: </strong> {sel.insight}
                   </p>
+
+                  {/* Epistemic Bridge Deep-Dive Callout */}
+                  {sel.epistemicBridge && (
+                    <div className="vl-epistemic-bridge-box">
+                      <div className="vl-epistemic-bridge-header">
+                        <span className="vl-epistemic-badge">EPISTEMOLOGICAL THRESHOLD</span>
+                        <h4 className="vl-epistemic-title">
+                          ✨ {sel.epistemicBridge.title}
+                        </h4>
+                        <div className="vl-epistemic-subhead">
+                          {sel.epistemicBridge.subhead}
+                        </div>
+                      </div>
+                      <p className="vl-epistemic-lead">
+                        {sel.epistemicBridge.lead}
+                      </p>
+                      <div className="vl-epistemic-bullets-grid">
+                        {sel.epistemicBridge.bullets.map((b, bIdx) => (
+                          <div key={bIdx} className="vl-epistemic-bullet-card">
+                            <div className="vl-epistemic-bullet-title">
+                              <span>{b.icon}</span>
+                              <strong>{b.title}</strong>
+                            </div>
+                            <p className="vl-epistemic-bullet-desc">{b.text}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })()}

@@ -1263,6 +1263,45 @@ export const BhutaReconstructor: React.FC<BhutaReconstructorProps> = ({
               </p>
             </div>
 
+            {/* The Trasareṇu: The Epistemic Bridge to Perception */}
+            <div className="br-epistemic-bridge-box">
+              <div className="br-epistemic-bridge-badge">
+                EPISTEMIC BRIDGE · महर्षि-कणादः
+              </div>
+              <h4 className="br-epistemic-bridge-title">
+                ☀️ The Trasareṇu: The Epistemic Bridge to Perception
+              </h4>
+              <div className="br-epistemic-bridge-sub">
+                Sage Kaṇāda (महर्षि-कणादः) · वैशेषिक-दर्शनम्
+              </div>
+              <p className="br-epistemic-bridge-lead">
+                Kaṇāda recognized that human senses cannot perceive a zero-dimensional point (Paramāṇu) or a two-dimensional linear link (Dvyaṇuka). The transition from abstract mathematics to observable physical reality requires a structural threshold:
+              </p>
+              <div className="br-epistemic-bridge-bullets">
+                <div className="br-epistemic-bridge-bullet">
+                  <span className="br-ebb-icon">📐</span>
+                  <div>
+                    <strong>The Leap to Magnitude (Mahatva): </strong>
+                    <span>A single Paramāṇu has zero dimension. A Dvyaṇuka (dyad) possesses length but zero volume. Only when three dyads cluster into a triad (Tryaṇuka / Trasareṇu) does three-dimensional spatial volume suddenly emerge.</span>
+                  </div>
+                </div>
+                <div className="br-epistemic-bridge-bullet">
+                  <span className="br-ebb-icon">☀️</span>
+                  <div>
+                    <strong>The Light-Scattering Criterion: </strong>
+                    <span>Kaṇāda observed the microscopic dust motes dancing in shafts of sunlight passing through a lattice window. He deduced that this mote is the absolute smallest unit of visible matter.</span>
+                  </div>
+                </div>
+                <div className="br-epistemic-bridge-bullet">
+                  <span className="br-ebb-icon">🔬</span>
+                  <div>
+                    <strong>The Modern Parallel: </strong>
+                    <span>This is the exact physical threshold of Rayleigh and Mie Scattering. An object smaller than the wavelength of visible light cannot reflect or scatter photons; it remains invisible. The Trasareṇu represents the exact cluster size where matter finally interacts with electromagnetic waves.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* 3D Geometry Puzzle Controls */}
             <div className="br-control-panel">
               {/* Slider 1: Folding Angle out of 2D plane */}

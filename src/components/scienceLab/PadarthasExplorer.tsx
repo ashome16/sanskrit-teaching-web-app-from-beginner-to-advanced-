@@ -1301,6 +1301,53 @@ export const PadarthasExplorer: React.FC<PadarthasExplorerProps> = ({
             </div>
           </div>
 
+          {/* The Trasareṇu: The Epistemic Bridge to Perception */}
+          <div className="vl-epistemic-bridge-box" style={{ marginBottom: '1.25rem' }}>
+            <div className="vl-epistemic-bridge-header">
+              <span className="vl-epistemic-badge">EPISTEMOLOGICAL THRESHOLD · KAṆĀDA'S CRITERION</span>
+              <h4 className="vl-epistemic-title">
+                ✨ The Trasareṇu: The Epistemic Bridge to Perception
+              </h4>
+              <div className="vl-epistemic-subhead">
+                Sage Kaṇāda (महर्षि-कणादः) · वैशेषिक-दर्शनम्
+              </div>
+            </div>
+            <p className="vl-epistemic-lead">
+              Kaṇāda recognized that human senses cannot perceive a zero-dimensional point (Paramāṇu) or a two-dimensional linear link (Dvyaṇuka). The transition from abstract mathematics to observable physical reality requires a structural threshold:
+            </p>
+            <div className="vl-epistemic-bullets-grid">
+              <div className="vl-epistemic-bullet-card">
+                <div className="vl-epistemic-bullet-title">
+                  <span>📐</span>
+                  <strong>The Leap to Magnitude (Mahatva)</strong>
+                </div>
+                <p className="vl-epistemic-bullet-desc">
+                  A single Paramāṇu has zero dimension. A Dvyaṇuka (dyad) possesses length but zero volume. Only when three dyads cluster into a triad (Tryaṇuka / Trasareṇu) does three-dimensional spatial volume suddenly emerge.
+                </p>
+              </div>
+
+              <div className="vl-epistemic-bullet-card">
+                <div className="vl-epistemic-bullet-title">
+                  <span>☀️</span>
+                  <strong>The Light-Scattering Criterion</strong>
+                </div>
+                <p className="vl-epistemic-bullet-desc">
+                  Kaṇāda observed the microscopic dust motes dancing in shafts of sunlight passing through a lattice window. He deduced that this mote is the absolute smallest unit of visible matter.
+                </p>
+              </div>
+
+              <div className="vl-epistemic-bullet-card">
+                <div className="vl-epistemic-bullet-title">
+                  <span>🔬</span>
+                  <strong>The Modern Parallel</strong>
+                </div>
+                <p className="vl-epistemic-bullet-desc">
+                  This is the exact physical threshold of Rayleigh and Mie Scattering. An object smaller than the wavelength of visible light cannot reflect or scatter photons; it remains invisible. The Trasareṇu represents the exact cluster size where matter finally interacts with electromagnetic waves.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="vl-kanada-footer-note">
             <span className="vl-spark-icon">✨</span>
             <span>
