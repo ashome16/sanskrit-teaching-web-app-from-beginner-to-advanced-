@@ -11,6 +11,7 @@
     "optimize:images": "python3 scripts/optimize-images.py",
     "razorpay:local": "node scripts/razorpay-subscribe-server.mjs",
     "deploy:pages": "GITHUB_PAGES=true npm run build && npx gh-pages -d dist",
+    "deploy:cloudflare": "GITHUB_PAGES='' GH_PAGES='' npm run build && rm -f dist/wrangler.json && rm -rf .wrangler/deploy && wrangler pages deploy dist --project-name sanskrit-teaching-web-app --branch main",
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
