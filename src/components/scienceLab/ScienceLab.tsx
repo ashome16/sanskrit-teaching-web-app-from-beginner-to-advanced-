@@ -332,9 +332,6 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
       <header className="vl-hero">
         <div className="vl-hero-glow" aria-hidden="true" />
         <div className="vl-hero-text">
-          <div className="vl-kicker">
-            <span className="vl-hud-blink">● SYSTEM ONLINE</span> // VIJÑĀNA LAB ENGINE v2.6 // SŪTRA PROTOCOL
-          </div>
           <h1 className="vl-title">
             VIJÑĀNA LAB <span className="vl-title-badge">PROYOG</span> · <span lang="sa" className="vl-title-dev">विज्ञान-प्रयोगशाला</span>
           </h1>
