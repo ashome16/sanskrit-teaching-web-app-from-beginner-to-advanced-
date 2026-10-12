@@ -496,7 +496,14 @@ const DhatupathaBrowser: React.FC<DhatupathaBrowserProps> = ({ onGoBack, onSelec
         {open && (
           <div className="dp-detail" onClick={(e) => e.stopPropagation()}>
             {renderStepControls(key)}
-            <LatFormsTable key={key} entry={entry} />
+            <LatFormsTable
+              key={key}
+              entry={entry}
+              onBeforeSpeak={() => {
+                // Same rule as a single 🔊: a Laṭ form or table Play all ends the root queue.
+                if (playingAll) stopPlayAll(false);
+              }}
+            />
             {(entry.examples ?? []).length > 0 && (
               <>
                 <h4 className="dp-detail-heading">Quick examples</h4>
