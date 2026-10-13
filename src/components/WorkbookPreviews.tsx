@@ -20,13 +20,13 @@ const BOOKS: Book[] = [
     id: 'festival',
     title: '🪔 Festival Workbook',
     pdf: '/downloads/sanskrit-festival-workbook.pdf',
-    pages: 23,
+    pages: 34,
     color: '#c2410c',
     shots: [
       { n: 1, label: 'Cover' },
       { n: 3, label: 'Dīpāvalī' },
-      { n: 17, label: 'Seasons' },
-      { n: 19, label: 'Months' },
+      { n: 25, label: 'Adornment' },
+      { n: 28, label: 'Seasons' },
     ],
   },
   {

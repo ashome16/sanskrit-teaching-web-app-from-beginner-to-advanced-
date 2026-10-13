@@ -4819,14 +4819,14 @@ export const SEARCH_INDEX: SearchItem[] = [
   {
     id: 'tool-festival-workbook',
     title: 'Free Sanskrit Festival Workbook (PDF) · संस्कृत-उत्सव-अभ्यास-पुस्तिका',
-    subtitle: '23 printable A4 pages · festivals, ślokas, seasons (ऋतवः), months (मासाः), quiz & greetings',
+    subtitle: '34 printable A4 pages · festivals, ślokas, festive adornment (अलङ्काराः), seasons (ऋतवः), months (मासाः), quiz & greetings',
     category: 'tools',
     categoryLabel: 'Study Material · PDF',
     badgeEmoji: '🪔',
     badgeColor: '#c2410c',
     description:
-      'A free printable festival workbook: Dīpāvalī (दीपः, रङ्गवल्ली, शुभं करोति कल्याणम्…), Gaṇeśa Caturthī (मोदकः, वक्रतुण्ड महाकाय…), Navarātri and Vijayadaśamī (शमीवृक्षः, या देवी सर्वभूतेषु…), Oṇam (महाबलिः, पुष्परङ्गवल्ली / pookkalam, सर्वे भवन्तु सुखिनः…), Makara Saṅkrānti (उत्तरायणम्, तिलगुडम्), Holi and Rakṣābandhana (येन बद्धो बली राजा…), plus the six seasons (वसन्तः, ग्रीष्मः, वर्षाः, शरत्, हेमन्तः, शिशिरः) with their lunar months, the twelve months चैत्रः … फाल्गुनः with festivals and the 12 rāśi months, a mixed quiz, festival greetings (दीपावलीशुभाशयाः …) and an answer key. Download from the homepage or the Worksheets page (/downloads/sanskrit-festival-workbook.pdf).',
-    keywords: ['festival workbook', 'festivals', 'diwali sanskrit', 'deepavali', 'ganesh chaturthi', 'dasara', 'navaratri', 'onam', 'sankranti', 'holi', 'raksha bandhan', 'seasons', 'ritu', 'ऋतवः', 'shloka', 'greetings', 'free pdf', 'उत्सवाः'],
+      'A free printable festival workbook: Dīpāvalī (दीपः, रङ्गवल्ली, शुभं करोति कल्याणम्…), Gaṇeśa Caturthī (मोदकः, वक्रतुण्ड महाकाय…), Navarātri (या देवी सर्वभूतेषु…, गरबा), Dasarā / Vijayadaśamī (शमीवृक्षः, शमी शमयते पापम्…), Oṇam (महाबलिः, पुष्परङ्गवल्ली / pookkalam, सर्वे भवन्तु सुखिनः…), Makara Saṅkrānti (उत्तरायणम्, तिलगुडम्), Holi, Mahāśivarātri (बिल्वपत्रम्, ॐ नमः शिवाय, कर्पूरगौरं करुणावतारम्…), Rakṣābandhana (येन बद्धो बली राजा…), Rāma Navamī (श्रीराम राम रामेति…), Kṛṣṇa Janmāṣṭamī (वेणुः, नवनीतम्, वसुदेवसुतं देवम्…), a festive adornment section (शृङ्गारः / अलङ्कारः: शाटी, बिन्दुः, कुण्डलम्, कङ्कणम्, नूपुरम्, मेन्धिका, वेणी) with a label-the-picture exercise and a colour-the-rangoli page, plus the six seasons (वसन्तः, ग्रीष्मः, वर्षाः, शरत्, हेमन्तः, शिशिरः) with their lunar months, the twelve months चैत्रः … फाल्गुनः with festivals and the 12 rāśi months, a mixed quiz, festival greetings (दीपावलीशुभाशयाः …) and an answer key. Download from the homepage or the Worksheets page (/downloads/sanskrit-festival-workbook.pdf).',
+    keywords: ['festival workbook', 'festivals', 'diwali sanskrit', 'deepavali', 'ganesh chaturthi', 'dasara', 'navaratri', 'onam', 'sankranti', 'holi', 'raksha bandhan', 'janmashtami', 'krishna', 'rama navami', 'shivaratri', 'vijayadashami', 'adornment', 'jewellery', 'shringar', 'alankara', 'अलङ्काराः', 'rangoli colouring', 'seasons', 'ritu', 'ऋतवः', 'shloka', 'greetings', 'free pdf', 'उत्सवाः'],
     target: {
       view: 'worksheets',
     },
