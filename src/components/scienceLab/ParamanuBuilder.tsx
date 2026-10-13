@@ -1530,11 +1530,11 @@ export const PARAMANU_MODULES: ModuleItem[] = [
     categoryTitle: 'Interactive Labs',
     categoryIcon: '🎮',
     icon: '🏺',
-    title: 'Potter’s Wheel Quest',
-    sanskrit: 'कुलाल-चक्रम्',
+    title: 'ākāśa-sūtra Board',
+    sanskrit: 'आकाश-सूत्रम्',
     badge: 'Main Quest',
-    subtitle: 'Atomic Genesis ➔ Potter’s Wheel',
-    description: 'Stage 1–4 atomic genesis of 4 corporeal Tryaṇukas ➔ Sage Kaṇāda’s Potter’s Wheel ➔ All-pervading Space revelation.',
+    subtitle: '16 steps · aṇu ➔ pot ➔ ākāśa',
+    description: 'One path, 16 steps: join aṇu (indivisible matter) into dvyaṇukas and tryaṇukas, build a clay pot and a flame, then dissolve it all to find what remains. Cites Kaṇāda’s Vaiśeṣika Sūtra 4.1.1 (the uncaused aṇu is eternal; the caused pot is temporary) and 4.1.2 (its effect is the evidence). Vaiśeṣika view, not modern physics.',
   },
   {
     id: 'guna_matrix',
@@ -2340,53 +2340,34 @@ export const ParamanuBuilder: React.FC<LabSegmentProps> = ({ onNextLab }) => {
         sutra={{
           dev: 'सदकारणवन्नित्यम् ॥ तस्य कार्यं लिङ्गम् ॥',
           iast: 'sad-akāraṇavan-nityam || tasya kāryaṃ liṅgam ||',
-          source: 'Vaiśeṣika Sūtra 4.1.1–4.1.2 (महर्षि-कणादः)',
-          meaning: 'Sūtra 4.1.1: “That which is existent (sat) and yet uncaused (akāraṇavat) is eternal (nityam).” · Sūtra 4.1.2: “Its effect (kāryam — the observable macroscopic creation) is the inferential evidence (liṅgam) of its existence.”',
+          source: 'Vaiśeṣika Sūtra 4.1.1–4.1.2 (महर्षि-कणादः, Sage Kaṇāda)',
+          meaning: '4.1.1: “That which is existent and yet uncaused is eternal” (sat = existent, akāraṇavat = uncaused, nityam = eternal). A clay pot is caused, so it is temporary; the paramāṇu exists but is made from no prior part, so in Vaiśeṣika it is eternal. 4.1.2: “Its effect is the evidence (of its existence)” (tasya = of that, kāryam = effect, liṅgam = mark/evidence). Single paramāṇus are invisible; visible effects such as a pot, cloth or mountain are the inferential proof that they exist. This is the Vaiśeṣika view, not modern physics: modern atoms are divisible.',
         }}
         anecdote={
           <>
             <p>
-              Centuries before Democritus or John Dalton, the sage <strong>Kaṇāda</strong> (Ulūka) walked the harvested fields of
+              Long before John Dalton, the sage <strong>Kaṇāda</strong> (Ulūka) walked the harvested fields of
               Prabhasa. While others rushed by, Kaṇāda knelt in the dust, carefully gathering single, discarded grains of rice.
               When astonished villagers asked why a great philosopher spent his days picking up stray grains, Kaṇāda replied:
             </p>
-            <blockquote style={{ borderLeft: '3px solid #f59e0b', margin: '0.65rem 0', paddingLeft: '0.85rem', fontStyle: 'italic', color: '#fde047' }}>
+            <blockquote style={{ borderLeft: '3px solid #f59e0b', margin: '0.65rem 0', paddingLeft: '0.85rem', fontStyle: 'italic', color: '#92400e' }}>
               “A solitary grain may appear worthless, yet a full granary is nothing other than these solitary grains brought together.
               In truth, this entire cosmos—mountains, oceans, and living bodies—is built of ultimate, indivisible seeds.
-              Nothing macroscopic exists without its atomic foundation.”
+              Nothing visible exists without that invisible foundation.”
             </blockquote>
             <p>
               Observing dust motes (<em>trasareṇu</em>) dancing in a ray of sunlight streaming through a lattice window,
-              Kaṇāda formulated the <em>Vaiśeṣika</em> philosophy: matter is composed of imperceptible atoms that join in pairs
-              (<em>dvyaṇuka</em>) and triplets (<em>tryaṇuka</em>) to give rise to the tangible world. The visible granary or dust mote
-              is the direct manifest effect (<em>kāryam</em>) providing undeniable evidence (<em>liṅgam</em>) of the indestructible grain.
+              Kaṇāda formulated the <em>Vaiśeṣika</em> philosophy: matter is composed of imperceptible aṇu (indivisible matter) that join in pairs
+              (<em>dvyaṇuka</em>) and triplets (<em>tryaṇuka</em>) to give rise to the tangible world.
             </p>
           </>
         }
         epistemologyAndMethod={
           <>
-            <p>
-              Kaṇāda rejected dogma in favor of <strong>Pratyakṣa</strong> (acute observation) and <strong>Anumāna</strong> (rigorous logical inference).
-              He formulated the twin pillars of atomic epistemology in <em>Vaiśeṣika Sūtra</em> 4.1.1 and 4.1.2:
-            </p>
-            <ul style={{ paddingLeft: '1.2rem', margin: '0.5rem 0', lineHeight: 1.55 }}>
-              <li>
-                <strong>सदकारणवन्नित्यम् (sad-akāraṇavan-nityam · VS 4.1.1):</strong> Gross physical objects (such as an earthen clay pot or a piece of cloth)
-                are temporary (<em>anitya</em>) because they are caused by prior components (clay, threads). When smashed, the pot perishes.
-                However, the ultimate indivisible components—the atoms (<em>Paramaṇus</em>)—pre-exist all creation. Because they exist (<em>sat</em>)
-                without being manufactured out of any prior component (<em>akāraṇavat</em>), they can never be decomposed or destroyed, making them fundamentally eternal (<em>nityam</em>).
-              </li>
-              <li>
-                <strong>तस्य कार्यं लिङ्गम् (tasya kāryaṃ liṅgam · VS 4.1.2):</strong> A single atom is microscopic and completely invisible (<em>atīndriya</em>)
-                to the naked eye. How can we prove its existence? The effect (<em>kāryam</em>)—the macroscopic world of pots, mountains, water, and cloth—serves
-                as the logical mark and proof (<em>liṅgam</em>) that indestructible atomic seeds must exist. An effect cannot exist without a fundamental material cause.
-              </li>
-            </ul>
-            <p>
-              Furthermore, physical division cannot continue infinitely: if any object could be divided without end, a tiny mustard seed
-              (<em>sarṣapa</em>) and Mount Meru would mathematically contain the exact same infinite number of constituent parts—a logical absurdity
-              (<em>anavasthā</em>). Therefore, an absolute, indivisible physical limit must exist: the <strong>Paramāṇu</strong>.
-            </p>
+            Kaṇāda rejected dogma in favor of <strong>Pratyakṣa</strong> (acute observation) and <strong>Anumāna</strong> (rigorous logical inference).
+            He reasoned that physical division cannot continue infinitely: if any object could be divided without end, a tiny mustard seed
+            (<em>sarṣapa</em>) and Mount Meru would mathematically contain the exact same infinite number of constituent parts—a logical absurdity
+            (<em>anavasthā</em>). Therefore, an absolute, indivisible physical limit must exist: the <strong>Paramāṇu</strong>.
           </>
         }
         modernBridge={{
@@ -3074,176 +3055,31 @@ export const ParamanuBuilder: React.FC<LabSegmentProps> = ({ onNextLab }) => {
         </div>
 
         {/* Cause and Effect Sandbox Banner: Nitya Kāraṇa & Anitya Kārya */}
-        <div className="vl-karana-karya-banner" role="region" aria-label="Cause and Effect Principle: Sūtras 4.1.1 & 4.1.2">
+        <div className="vl-karana-karya-banner" role="region" aria-label="Cause and Effect Principle">
           <div className="vl-karana-box">
             <div className="vl-box-title">
               <span>⚛️ नित्य-कारणम् (Nitya Kāraṇa)</span>
-              <span style={{ fontSize: '0.75rem', color: '#38bdf8', fontFamily: 'JetBrains Mono, monospace' }}>SŪTRA 4.1.1 · ETERNAL CAUSE</span>
-            </div>
-            <div className="vl-sutra-verse" lang="sa">सदकारणवन्नित्यम् ॥</div>
-            <div className="vl-sutra-iast-line">sad-akāraṇavan-nityam</div>
-            <div className="vl-word-pills">
-              <span className="vl-word-pill">
-                <span className="vl-word-pill-term">सत् (sat)</span>
-                <span className="vl-word-pill-mean">Existent / real</span>
-              </span>
-              <span className="vl-word-pill">
-                <span className="vl-word-pill-term">अकारणवत् (akāraṇavat)</span>
-                <span className="vl-word-pill-mean">Uncaused (a- + kāraṇa + -vat)</span>
-              </span>
-              <span className="vl-word-pill">
-                <span className="vl-word-pill-term">नित्यम् (nityam)</span>
-                <span className="vl-word-pill-mean">Eternal / indestructible</span>
-              </span>
+              <span style={{ fontSize: '0.75rem', color: '#38bdf8', fontFamily: 'JetBrains Mono, monospace' }}>ETERNAL CAUSE</span>
             </div>
             <p className="vl-box-desc">
-              <strong>“That which is existent and yet uncaused is eternal.”</strong> Gross physical objects (like an earthen clay pot)
-              are temporary because they are caused by something else (clay). The primordial <strong>Paramāṇu</strong> has no prior cause
-              (<em>akāraṇavat</em>); because it is uncaused and indivisible, it can never be destroyed, making it fundamentally eternal (<em>nityam</em>).
+              The fundamental <strong>Paramāṇu</strong> has no parts and no cause (<em>akāraṇavat</em>). It is indivisible,
+              imperishable, and eternal. It cannot be destroyed by fire, water, or weapon.
             </p>
           </div>
           <div className="vl-karya-box">
             <div className="vl-box-title">
               <span>✨ अनित्य-कार्यम् (Anitya Kārya)</span>
-              <span style={{ fontSize: '0.75rem', color: '#ea580c', fontFamily: 'JetBrains Mono, monospace' }}>SŪTRA 4.1.2 · EFFECT AS EVIDENCE</span>
-            </div>
-            <div className="vl-sutra-verse" lang="sa">तस्य कार्यं लिङ्गम् ॥</div>
-            <div className="vl-sutra-iast-line">tasya kāryaṃ liṅgam</div>
-            <div className="vl-word-pills">
-              <span className="vl-word-pill">
-                <span className="vl-word-pill-term">तस्य (tasya)</span>
-                <span className="vl-word-pill-mean">Of that (the eternal atom)</span>
-              </span>
-              <span className="vl-word-pill">
-                <span className="vl-word-pill-term">कार्यम् (kāryam)</span>
-                <span className="vl-word-pill-mean">Effect / macroscopic creation</span>
-              </span>
-              <span className="vl-word-pill">
-                <span className="vl-word-pill-term">लिङ्गम् (liṅgam)</span>
-                <span className="vl-word-pill-mean">Mark / inferential token</span>
-              </span>
+              <span style={{ fontSize: '0.75rem', color: '#ea580c', fontFamily: 'JetBrains Mono, monospace' }}>TRANSIENT EFFECT</span>
             </div>
             <p className="vl-box-desc">
-              <strong>“Its effect (the visible world/creation) is the evidence of its existence.”</strong> Single atoms are sub-microscopic
-              and invisible to the naked human eye. The effect (<em>kāryam</em>)—the macroscopic reality around us—serves as the logical proof
-              and mark (<em>liṅgam</em>) that fundamental building blocks exist. In this simulator: combinations are transient
-              (<em>anitya</em>), while the total invariant atoms (<strong>{totalParamanus}</strong>) persist conserved!
+              The combined <strong>Dvyaṇuka</strong> and <strong>Tryaṇuka</strong> are transient effects (<em>kārya</em>).
+              They form via conjunction (<em>saṃyoga</em>) and dissolve via disjunction (<em>vibhāga</em>). Total invariant atoms: <strong>{totalParamanus}</strong>.
             </p>
           </div>
         </div>
 
         <p className="vl-msg" role="status" data-testid="paramanu-msg">{msg}</p>
       </div>
-
-      {/* 📜 Sage Kaṇāda's Epistemological Sūtras 4.1.1 & 4.1.2 Master Card */}
-      <section className="vl-panel vl-kanada-sutra-card" aria-label="Sage Kaṇāda Vaiśeṣika Sūtra 4.1.1 & 4.1.2 Precision Master Card">
-        <div className="vl-panel-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
-          <span>⚛️ Sage Kaṇāda’s Dual Axioms // Vaiśeṣika Sūtra 4.1.1 &amp; 4.1.2 (वैशेषिक-सूत्रम्)</span>
-          <span className="vl-score" style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '0.2rem 0.6rem', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 700 }}>
-            ATOMIC ONTOLOGY &amp; EPISTEMOLOGY
-          </span>
-        </div>
-        <p style={{ margin: '0 0 0.85rem', fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.55 }}>
-          Sage Kaṇāda systematically deduces the existence and conservation of the atom through two consecutive, interlocked aphorisms in Book 4 of the <em>Vaiśeṣika Sūtra</em>.
-          Tap the listen buttons to hear the authentic Sanskrit recitation:
-        </p>
-
-        <div className="vl-kanada-grid">
-          {/* Card 1: Sutra 4.1.1 */}
-          <div style={{ background: 'rgba(15, 23, 42, 0.85)', border: '1.5px solid rgba(56, 189, 248, 0.35)', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38bdf8', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                  Axiom 1 · The Nature of the Eternal Cause (नित्य-कारण-लक्षणम्)
-                </span>
-                <button
-                  type="button"
-                  className="vl-btn vl-btn--compact"
-                  style={{ fontSize: '0.75rem', padding: '0.2rem 0.55rem', background: 'rgba(56, 189, 248, 0.15)', border: '1px solid rgba(56, 189, 248, 0.4)', color: '#7dd3fc', borderRadius: '6px' }}
-                  onClick={() => playPronunciation('सदकारणवन्नित्यम्')}
-                  title="Hear Sanskrit recitation"
-                >
-                  🔊 Listen
-                </button>
-              </div>
-              <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#f8fafc', fontFamily: 'Noto Sans Devanagari, serif', margin: '0.2rem 0' }} lang="sa">
-                सदकारणवन्नित्यम् ॥
-              </div>
-              <div style={{ fontSize: '0.9rem', color: '#7dd3fc', fontFamily: 'JetBrains Mono, monospace', fontWeight: 600, marginBottom: '0.5rem' }}>
-                sad-akāraṇavan-nityam
-              </div>
-              <div style={{ background: 'rgba(30, 41, 59, 0.7)', borderLeft: '3px solid #38bdf8', padding: '0.45rem 0.65rem', borderRadius: '0 6px 6px 0', marginBottom: '0.7rem' }}>
-                <strong style={{ fontSize: '0.86rem', color: '#f8fafc' }}>“That which is existent and yet uncaused is eternal.”</strong>
-              </div>
-
-              <div style={{ fontSize: '0.78rem', color: '#fde047', fontWeight: 800, textTransform: 'uppercase', marginBottom: '0.35rem' }}>
-                Word-by-Word Meaning (पदच्छेद-पदार्थौ):
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 0.7rem', display: 'flex', flexDirection: 'column', gap: '0.35rem', fontSize: '0.8rem' }}>
-                <li style={{ background: 'rgba(24, 34, 60, 0.8)', padding: '0.35rem 0.55rem', borderRadius: '6px', border: '1px solid rgba(148, 163, 184, 0.15)' }}>
-                  <strong style={{ color: '#f8fafc' }}>सत् (sat):</strong> <span style={{ color: '#cbd5e1' }}>Existent / that which is real / being</span>
-                </li>
-                <li style={{ background: 'rgba(24, 34, 60, 0.8)', padding: '0.35rem 0.55rem', borderRadius: '6px', border: '1px solid rgba(148, 163, 184, 0.15)' }}>
-                  <strong style={{ color: '#f8fafc' }}>अकारणवत् (akāraṇavat):</strong> <span style={{ color: '#cbd5e1' }}>Without a cause / uncaused (<em>a-</em> 'not' + <em>kāraṇa</em> 'cause' + <em>-vat</em> 'having')</span>
-                </li>
-                <li style={{ background: 'rgba(24, 34, 60, 0.8)', padding: '0.35rem 0.55rem', borderRadius: '6px', border: '1px solid rgba(148, 163, 184, 0.15)' }}>
-                  <strong style={{ color: '#f8fafc' }}>नित्यम् (nityam):</strong> <span style={{ color: '#cbd5e1' }}>Eternal / everlasting / indestructible</span>
-                </li>
-              </ul>
-            </div>
-            <div style={{ fontSize: '0.8rem', color: '#cbd5e1', lineHeight: 1.45, borderTop: '1px solid rgba(148, 163, 184, 0.2)', paddingTop: '0.55rem' }}>
-              <strong>The Clay Pot Analogy:</strong> In Indian philosophy, gross physical objects (like an earthen pot) are temporary because they are caused by something else (clay). The pot shatters into pieces when destroyed. But the fundamental atomic seeds—atoms (<em>Paramāṇus</em>)—pre-exist all creation. Because they exist (<em>sat</em>) without being composed of any prior components (<em>akāraṇavat</em>), they can never be destroyed, making them eternal (<em>nityam</em>).
-            </div>
-          </div>
-
-          {/* Card 2: Sutra 4.1.2 */}
-          <div style={{ background: 'rgba(15, 23, 42, 0.85)', border: '1.5px solid rgba(245, 158, 11, 0.35)', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#f59e0b', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                  Axiom 2 · Inferential Proof of the Invisible Atom (परमाणु-सद्भाव-प्रमाणम्)
-                </span>
-                <button
-                  type="button"
-                  className="vl-btn vl-btn--compact"
-                  style={{ fontSize: '0.75rem', padding: '0.2rem 0.55rem', background: 'rgba(245, 158, 11, 0.15)', border: '1px solid rgba(245, 158, 11, 0.4)', color: '#fcd34d', borderRadius: '6px' }}
-                  onClick={() => playPronunciation('तस्य कार्यं लिङ्गम्')}
-                  title="Hear Sanskrit recitation"
-                >
-                  🔊 Listen
-                </button>
-              </div>
-              <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#f8fafc', fontFamily: 'Noto Sans Devanagari, serif', margin: '0.2rem 0' }} lang="sa">
-                तस्य कार्यं लिङ्गम् ॥
-              </div>
-              <div style={{ fontSize: '0.9rem', color: '#fcd34d', fontFamily: 'JetBrains Mono, monospace', fontWeight: 600, marginBottom: '0.5rem' }}>
-                tasya kāryaṃ liṅgam
-              </div>
-              <div style={{ background: 'rgba(30, 41, 59, 0.7)', borderLeft: '3px solid #f59e0b', padding: '0.45rem 0.65rem', borderRadius: '0 6px 6px 0', marginBottom: '0.7rem' }}>
-                <strong style={{ fontSize: '0.86rem', color: '#f8fafc' }}>“Its effect (the visible world/creation) is the evidence of its existence.”</strong>
-              </div>
-
-              <div style={{ fontSize: '0.78rem', color: '#fde047', fontWeight: 800, textTransform: 'uppercase', marginBottom: '0.35rem' }}>
-                Word-by-Word Meaning (पदच्छेद-पदार्थौ):
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 0.7rem', display: 'flex', flexDirection: 'column', gap: '0.35rem', fontSize: '0.8rem' }}>
-                <li style={{ background: 'rgba(24, 34, 60, 0.8)', padding: '0.35rem 0.55rem', borderRadius: '6px', border: '1px solid rgba(148, 163, 184, 0.15)' }}>
-                  <strong style={{ color: '#f8fafc' }}>तस्य (tasya):</strong> <span style={{ color: '#cbd5e1' }}>Of that (referring back to the eternal uncaused atom)</span>
-                </li>
-                <li style={{ background: 'rgba(24, 34, 60, 0.8)', padding: '0.35rem 0.55rem', borderRadius: '6px', border: '1px solid rgba(148, 163, 184, 0.15)' }}>
-                  <strong style={{ color: '#f8fafc' }}>कार्यम् (kāryam):</strong> <span style={{ color: '#cbd5e1' }}>Effect / product / action / the created object</span>
-                </li>
-                <li style={{ background: 'rgba(24, 34, 60, 0.8)', padding: '0.35rem 0.55rem', borderRadius: '6px', border: '1px solid rgba(148, 163, 184, 0.15)' }}>
-                  <strong style={{ color: '#f8fafc' }}>लिङ्गम् (liṅgam):</strong> <span style={{ color: '#cbd5e1' }}>Mark / sign / token / evidence / indicator</span>
-                </li>
-              </ul>
-            </div>
-            <div style={{ fontSize: '0.8rem', color: '#cbd5e1', lineHeight: 1.45, borderTop: '1px solid rgba(148, 163, 184, 0.2)', paddingTop: '0.55rem' }}>
-              <strong>Epistemic Logic:</strong> Single atoms are sub-microscopic and entirely invisible to the naked human eye. How then do we know they exist? The effect (<em>kāryam</em>)—the macroscopic world around us (such as a pot, a piece of cloth, or a mountain)—serves as the logical proof (<em>liṅgam</em>) that fundamental atomic building blocks must exist. An effect cannot exist without a fundamental material cause.
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 🧱 Pedagogical Card: The Cosmic Lego Baseplate (Ākāśa) */}
       <section className="vl-lego-card" aria-label="Understanding Akasha through Lego Metaphor">

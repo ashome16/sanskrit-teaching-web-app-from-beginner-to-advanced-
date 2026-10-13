@@ -373,6 +373,47 @@ const CSS = `
 @media (prefers-reduced-motion: reduce){.mw-level{animation:none}.mw-bar{transition:none!important}}
 `;
 
+/* ───────────── Kaṇāda's Sūtras (Vaiśeṣika Sūtra 4.1.1–4.1.2) ───────────── */
+const KANADA_SUTRAS: { num: string; deva: string; iast: string; words: [string, string][]; meaning: string; tie: string }[] = [
+  {
+    num: '4.1.1', deva: 'सदकारणवन्नित्यम्', iast: 'sad-akāraṇavan-nityam',
+    words: [['sat', 'existent / real'], ['akāraṇavat', 'uncaused (a- “not” + kāraṇa “cause” + -vat “having”)'], ['nityam', 'eternal']],
+    meaning: 'That which is existent and yet uncaused is eternal.',
+    tie: 'SAT: a clay pot is caused (by clay), so it is temporary. The paramāṇu exists but is made from no prior part, so in Vaiśeṣika it is eternal: the real, uncaused layer under the render.',
+  },
+  {
+    num: '4.1.2', deva: 'तस्य कार्यं लिङ्गम्', iast: 'tasya kāryaṃ liṅgam',
+    words: [['tasya', 'of that (the paramāṇu)'], ['kāryam', 'effect / product'], ['liṅgam', 'mark / sign / evidence']],
+    meaning: 'Its effect is the evidence (of its existence).',
+    tie: 'INFERENCE: single paramāṇus are invisible; the visible effects (pot, cloth, mountain) prove they exist. Like the Viveka scanner revealing molecules, we infer the invisible from the visible effect.',
+  },
+];
+
+const KanadaSutrasCard: React.FC = () => (
+  <div data-testid="asato-kanada-sutras" style={{ border: `1px solid ${GREEN}88`, borderRadius: 8, padding: '0.6rem 0.7rem', margin: '0.3rem 0 0.6rem', background: '#021a10' }}>
+    <div style={{ ...mono, fontSize: 12, color: '#4ade80', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 6, marginBottom: 6 }}>
+      <span>▣ KAṆĀDA’S SŪTRAS</span><span>Vaiśeṣika Sūtra · Sage Kaṇāda</span>
+    </div>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 8 }}>
+      {KANADA_SUTRAS.map((s) => (
+        <div key={s.num} style={{ border: `1px solid ${GREEN}44`, borderRadius: 6, padding: '0.5rem 0.6rem' }}>
+          <div style={{ ...mono, fontSize: 11, color: '#86efac' }}>SŪTRA {s.num}</div>
+          <div lang="sa" style={{ fontSize: 20, color: '#f0fdf4', margin: '2px 0' }}>{s.deva}</div>
+          <div style={{ fontStyle: 'italic', color: '#bbf7d0', marginBottom: 6 }}>{s.iast}</div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginBottom: 6 }}>
+            {s.words.map(([w, g]) => (
+              <span key={w} style={{ ...mono, fontSize: 11, border: `1px solid ${GREEN}66`, borderRadius: 999, padding: '2px 8px', color: '#dcfce7' }}><strong>{w}</strong> = {g}</span>
+            ))}
+          </div>
+          <div style={{ color: '#f0fdf4', marginBottom: 4 }}>“{s.meaning}”</div>
+          <div style={{ fontSize: 13, lineHeight: 1.5, color: '#a7f3d0' }}>{s.tie}</div>
+        </div>
+      ))}
+    </div>
+    <div style={{ ...mono, fontSize: 11, color: '#6ee7b7', marginTop: 6 }}>Vaiśeṣika view, not modern physics: modern atoms are divisible (electrons, nuclei, quarks).</div>
+  </div>
+);
+
 export const MatrixWalkthrough: React.FC = () => {
   const [step, setStep] = useState(0);
   const [viveka, setViveka] = useState(false);
@@ -396,6 +437,7 @@ export const MatrixWalkthrough: React.FC = () => {
         <span>Teaching analogy only · not a claim from the texts</span>
       </div>
       <Codex />
+      <KanadaSutrasCard />
       <div role="tablist" style={{ display: 'flex', gap: 6, margin: '0.2rem 0 0.4rem', flexWrap: 'wrap' }}>
         {STEPS.map((s, i) => (
           <HudButton key={s.tag} role="tab" aria-selected={step === i} on={step === i} onClick={() => setStep(i)} style={{ padding: '4px 10px' }}>{s.tag}</HudButton>

@@ -1814,6 +1814,18 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     relatedLabAnchor: 'paramanu',
   },
   {
+    id: 'qa-vaisesika-sutra-4-1-1',
+    category: 'philosophy',
+    question: 'What do Vaiśeṣika Sūtra 4.1.1 (sadakāraṇavan nityam) and 4.1.2 (tasya kāryaṃ liṅgam) mean?',
+    sanskritQuestion: 'सदकारणवन्नित्यम्, तस्य कार्यं लिङ्गम् इत्यनयोः कः अर्थः?',
+    shortAnswer: 'Two sūtras of Sage Kaṇāda. 4.1.1, सदकारणवन्नित्यम् (sad-akāraṇavan-nityam): “That which is existent and yet uncaused is eternal.” 4.1.2, तस्य कार्यं लिङ्गम् (tasya kāryaṃ liṅgam): “Its effect is the evidence (of its existence).”',
+    detailedAnswer: 'Word by word, 4.1.1: sat = existent/real; akāraṇavat = uncaused (a- “not” + kāraṇa “cause” + -vat “having”); nityam = eternal. A clay pot is caused (by clay), so it is temporary; the paramāṇu exists but is not made from any prior part, so in Vaiśeṣika it is eternal. 4.1.2: tasya = of that (the paramāṇu); kāryam = effect/product; liṅgam = mark/sign/evidence. Single paramāṇus are invisible; visible effects such as a pot, cloth or mountain are the inferential proof that they exist. This is the Vaiśeṣika view, not modern physics: modern atoms are divisible. The Paramāṇu Builder’s ākāśa-sūtra board cites 4.1.1 at the opening and clay-pot steps and 4.1.2 at the inference steps; the Veil of Māyā Matrix walkthrough has a Kaṇāda’s Sūtras card tying 4.1.1 to Sat and 4.1.2 to the Viveka scanner.',
+    audioDevanagari: 'सदकारणवन्नित्यम् । तस्य कार्यं लिङ्गम् ।',
+    tip: 'Open the Paramāṇu Builder and play the ākāśa-sūtra board; the sūtra card appears at steps 1, 2, 4, 6 and 14.',
+    relatedView: 'science-lab',
+    relatedLabAnchor: 'paramanu',
+  },
+  {
     id: 'qa-lab-prakriti',
     category: 'philosophy',
     question: 'What are vāta, pitta and kapha, and how does the Prakṛti Biosphere use them?',

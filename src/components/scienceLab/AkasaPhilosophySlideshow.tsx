@@ -494,7 +494,7 @@ export const JOURNEY_STOPS: JourneyStop[] = [
     titleDev: 'अर्वाचीन-विज्ञान-सेतुः · Bridges to Modern Quantum Physics',
     titleEn: 'Dalton’s Atoms, Conservation of Mass & Quantum Vacuum',
     sanskritSutra: 'सदकारणवन्नित्यम्',
-    sanskritSutraRef: 'Vaiśeṣika Sūtra 4.1.1 · "The eternal building block exists uncaused"',
+    sanskritSutraRef: 'Vaiśeṣika Sūtra 4.1.1 (Sage Kaṇāda) · sad-akāraṇavan-nityam: "That which is existent and yet uncaused is eternal"',
     coreInsight:
       'Ancient Vaiśeṣika deduction anticipates modern particle physics and thermodynamics with startling conceptual clarity: discrete atoms, binary molecules, invariant mass, and the active quantum vacuum.',
     dialogue: [

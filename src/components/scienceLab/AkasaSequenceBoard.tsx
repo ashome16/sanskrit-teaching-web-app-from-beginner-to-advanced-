@@ -86,6 +86,20 @@ const QUESTIONS: Record<number, Question[]> = {
 };
 const QUESTION_ART: Record<string, string> = { book: '📕', red: '🟥', notyet: '⬚', smashed: '💥', cloth: '🏺≠🧣', skyflower: '🌼☁️' };
 
+
+const SUTRAS = {
+  '4.1.1': { deva: 'सदकारणवन्नित्यम्', iast: 'sad-akāraṇavan-nityam', words: 'sat = existent/real · akāraṇavat = uncaused (a- “not” + kāraṇa “cause” + -vat “having”) · nityam = eternal', meaning: 'That which is existent and yet uncaused is eternal.' },
+  '4.1.2': { deva: 'तस्य कार्यं लिङ्गम्', iast: 'tasya kāryaṃ liṅgam', words: 'tasya = of that (the paramāṇu) · kāryam = effect/product · liṅgam = mark/sign/evidence', meaning: 'Its effect is the evidence (of its existence).' },
+} as const;
+/** Which sūtra each step cites, and how it applies there. */
+const STEP_SUTRA: Record<number, { id: keyof typeof SUTRAS; note: string }> = {
+  1: { id: '4.1.1', note: 'Everything you are about to build is caused, so it is temporary. Only the aṇu it is built from is uncaused, so in Vaiśeṣika it is eternal.' },
+  2: { id: '4.1.1', note: 'The paramāṇu exists but is not made from any prior part: existent and uncaused, so eternal.' },
+  4: { id: '4.1.2', note: 'A single aṇu is invisible. The tryaṇuka is the first piece large enough to perceive (like a dust mote in sunlight); from that visible effect we infer the invisible aṇu.' },
+  6: { id: '4.1.1', note: 'The clay pot is caused (by clay, and its helpers), so it is temporary. The aṇu inside it are uncaused, so eternal.' },
+  14: { id: '4.1.2', note: 'The pot is gone, yet the count of aṇu is unchanged. We never saw one aṇu alone; we know them by what they make.' },
+};
+
 const STARS = Array.from({ length: 46 }, (_, i) => ({ x: (i * 97.3) % 360, y: (i * 53.7 + 11) % 240, r: i % 5 === 0 ? 0.9 : 0.5 }));
 const wait = (ms: number) => new Promise<void>((res) => setTimeout(res, ms));
 const lineMs = (t: string) => Math.min(5200, 1100 + t.split(/\s+/).length * 260);
@@ -485,7 +499,8 @@ export const AkasaSequenceBoard: React.FC = () => {
       <style>{CSS}</style>
       <header className="aseq-head">
         <h3>ākāśa-sūtra · one path, sixteen steps</h3>
-        <p>Everything you build here is made of <strong>aṇu (indivisible matter)</strong>, the paramāṇu. Two aṇu make a dvyaṇuka; a tryaṇuka is three dvyaṇukas (six aṇu).</p>
+        <p>Everything you build here is made of <strong>aṇu (indivisible matter)</strong>, the paramāṇu. Two aṇu make a dvyaṇuka; a tryaṇuka is three dvyaṇukas (six aṇu). Sage Kaṇāda’s Vaiśeṣika Sūtra 4.1.1–4.1.2: the aṇu is existent and uncaused, so eternal; its effects are the evidence that it exists.</p>
+        <p className="aseq-note">This is the Vaiśeṣika view, not modern physics: modern atoms are divisible (electrons, protons, neutrons, quarks).</p>
       </header>
 
       <ol className="aseq-steps" aria-label="Steps">
@@ -500,6 +515,17 @@ export const AkasaSequenceBoard: React.FC = () => {
         <strong>Step {step} of 16 · {STEPS[step - 1].title}</strong>
         <span>{STEPS[step - 1].action}</span>
       </div>
+
+      {STEP_SUTRA[step] && (
+        <aside className="aseq-sutra" aria-label={`Vaiśeṣika Sūtra ${STEP_SUTRA[step].id}`}>
+          <div className="aseq-sutra-top"><b>Vaiśeṣika Sūtra {STEP_SUTRA[step].id}</b><span>Sage Kaṇāda</span></div>
+          <div lang="sa" className="aseq-sutra-deva">{SUTRAS[STEP_SUTRA[step].id].deva}</div>
+          <div className="aseq-sutra-iast">{SUTRAS[STEP_SUTRA[step].id].iast}</div>
+          <div className="aseq-sutra-words">{SUTRAS[STEP_SUTRA[step].id].words}</div>
+          <div>“{SUTRAS[STEP_SUTRA[step].id].meaning}”</div>
+          <div className="aseq-sutra-note">{STEP_SUTRA[step].note}</div>
+        </aside>
+      )}
 
       <div className={`aseq-board${glow ? ' is-glow' : ''}`}>
         <div className="aseq-counter" key={`f${flash}`}>aṇu on the board: <b>{anuCount}</b></div>
@@ -584,6 +610,13 @@ const CSS = `
 .aseq{max-width:760px;margin:0 auto;padding:.75rem;color:#e2e8f0;font-family:inherit;display:flex;flex-direction:column;gap:.65rem}
 .aseq-head h3{margin:0;font-size:1.15rem;color:#fde68a}
 .aseq-head p{margin:.25rem 0 0;font-size:.88rem;color:#cbd5e1;line-height:1.45}
+.aseq-note{font-size:.8rem!important;color:#94a3b8!important}
+.aseq-sutra{border:1px solid #a16207;border-radius:10px;background:#1c1405;padding:.5rem .7rem;font-size:.86rem;line-height:1.45}
+.aseq-sutra-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;color:#fde68a;font-size:.8rem}
+.aseq-sutra-deva{font-size:1.2rem;color:#fef3c7}
+.aseq-sutra-iast{font-style:italic;color:#fcd34d}
+.aseq-sutra-words{font-size:.78rem;color:#d6d3d1}
+.aseq-sutra-note{color:#e7e5e4;margin-top:.2rem}
 .aseq-steps{list-style:none;display:flex;flex-wrap:wrap;gap:.3rem;margin:0;padding:0}
 .aseq-pill{min-width:1.9rem;height:1.9rem;display:flex;align-items:center;justify-content:center;border-radius:999px;font-size:.78rem;border:1px solid #334155;background:#0f172a}
 .aseq-pill.is-done{background:#14532d;border-color:#22c55e}
