@@ -425,7 +425,34 @@ const AsatoMa: React.FC = () => {
       showAsat();
     }
   };
+  const [armed, setArmed] = useState<LevelNo | 0>(0);
+  const [nextIn, setNextIn] = useState(0);
+  const prevDone = useRef<Levels | null>(null);
+  useEffect(() => {
+    const cur = { l1: lv.l1, l2: lv.l2, l3: lv.l3 };
+    const prev = prevDone.current;
+    prevDone.current = cur;
+    if (!prev) return;
+    const key = (`l${lvl}`) as keyof Levels;
+    if (cur[key] && !prev[key] && lvl < 3) setNextIn(5);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lv.l1, lv.l2, lv.l3]);
+  useEffect(() => {
+    if (nextIn <= 0) return;
+    const t = window.setTimeout(() => {
+      if (nextIn === 1) {
+        const n = (lvl + 1) as LevelNo;
+        setNextIn(0);
+        setArmed(n);
+        setupLevel(n);
+      } else setNextIn(nextIn - 1);
+    }, 1000);
+    return () => window.clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nextIn]);
   const resetProgress = () => {
+    setNextIn(0);
+    setArmed(0);
     setLevels({ l1: false, l2: false, l3: false });
     setDone({ s1: false, s2: false, s3: false });
     setLvl(1);
@@ -1151,6 +1178,14 @@ const AsatoMa: React.FC = () => {
           <div className="vl-level-bar" role="progressbar" aria-label="Level progress" aria-valuemin={0} aria-valuemax={3} aria-valuenow={levelCount} data-testid="asato-levels-progress">
             <span style={{ width: `${(levelCount / 3) * 100}%` }} />
           </div>
+          <div className="vl-lvl-steps" aria-hidden="true" data-testid="asato-stepbar">
+            {LEVELS.map((l, i) => (
+              <React.Fragment key={l.n}>
+                {i > 0 && <span className={`vl-lvl-line${LEVELS[i - 1].done ? ' is-done' : ''}`} />}
+                <span className={`vl-lvl-dot${l.done ? ' is-done' : ''}${lvl === l.n ? ' is-cur' : ''}`}>{l.done ? '✓' : l.n}</span>
+              </React.Fragment>
+            ))}
+          </div>
           <div className="vl-badges" role="tablist" aria-label="Choose a level">
             {LEVELS.map((l) => (
               <button
@@ -1159,7 +1194,7 @@ const AsatoMa: React.FC = () => {
                 role="tab"
                 aria-selected={lvl === l.n}
                 className={`vl-badge${lvl === l.n ? ' is-sel' : ''}${l.done ? ' is-done' : ''}`}
-                onClick={() => setLvl(l.n)}
+                onClick={() => { setNextIn(0); setLvl(l.n); }}
                 data-testid={`asato-level-${l.n}`}
                 data-done={l.done ? 'true' : 'false'}
                 title={l.n === 2 ? 'A game name, not a black hole' : undefined}
@@ -1176,38 +1211,43 @@ const AsatoMa: React.FC = () => {
             {lvl === 1 && (
               <>
                 <h4>🔨 Level 1 · The Forge of Kaṇāda · <span lang="sa">काणाद</span> {lv.l1 && '✓'}</h4>
-                <p data-testid="asato-l1-mission">
+                <p data-testid="asato-l1-mission">Cool gold until the atoms almost stop and lock into a neat grid.</p>
+                <p className="vl-key-num">Goal: below <b>{COLD_K} K</b></p>
+                <details className="vl-small">
+                  <summary>More</summary>
                   <b className="vl-mission-tag">MISSION CRITERIA:</b> Extract thermal energy from the gold matrix until system
                   temperature drops below {COLD_K} K. Force the chaotic atomic vibrations to collapse into a near-perfect crystalline
                   grid. As absolute zero approaches, track lattice jitter (it shrinks roughly as{' '}
                   <span className="vl-sqrt" role="math" aria-label="the square root of T">√<span className="vl-sqrt-arg">T</span></span>) and
                   observe the quantum ground-state limit: the jitter never reaches exactly zero, and absolute zero itself can’t be reached.
-                </p>
-                <p className="vl-small">
-                  Kaṇāda, to whom the Vaiśeṣika Sūtra is attributed, pictured matter as tiny paramāṇus; the level name is just for
+                  {' '}Kaṇāda, to whom the Vaiśeṣika Sūtra is attributed, pictured matter as tiny paramāṇus; the level name is just for
                   the game.
-                </p>
+                </details>
               </>
             )}
             {lvl === 2 && (
               <>
                 <h4>
                   🌀 Level 2 · The Āruṇi <span className="vl-tip" title="A game name, not a black hole">Singularity</span> {lv.l2 && '✓'}{' '}
-                  <span className="vl-sealed">🔒 sealed chamber</span>
+                  <span className="vl-sealed">⚗️ sealed chamber</span>
                 </h4>
-                <p>In the sealed chamber, heat water until the bonds holding the molecules together break (steam), then keep going until v<sub>rms</sub> tops {FAST_MS} m/s. Watch the atom meter: the count never changes, so the mass inside stays the same.</p>
-                <p className="vl-small">
+                <p data-testid="asato-l2-mission">Heat water into steam until the molecules fly fast. The atom count never changes.</p>
+                <p className="vl-key-num">Goal: faster than <b>{FAST_MS} m/s</b> (about {Math.round(waterT1000)} K)</p>
+                <details className="vl-small">
+                  <summary>More</summary>
                   “Singularity” is a game name, not a black hole. Why water? From v<sub>rms</sub> = √(3kT/m), light H₂O molecules
                   (18.015 u) reach {FAST_MS} m/s at about {Math.round(waterT1000)} K. Heavy gold atoms (196.97 u) would need about{' '}
                   {(Math.round(goldT1000 / 100) * 100).toLocaleString('en-IN')} K, far hotter than this chamber goes. (Melting and boiling points here are
                   at normal air pressure; a real sealed chamber would build up pressure.) Named for Uddālaka Āruṇi, who taught that
                   being does not come from non-being.
-                </p>
+                </details>
               </>
             )}
             {lvl === 3 && (
               <>
                 <h4>🕯️ Level 3 · Asato mā · the three lines {lv.l3 && '✓'}</h4>
+                <p data-testid="asato-l3-mission">Do the three prayer lines in order: scan, glow, burn.</p>
+                <p className="vl-key-num">Goal: <b>3 / 3</b> lines · atom count stays the same</p>
                 <ol className="vl-steps vl-steps--3" data-testid="asato-steps">
                   {steps.map((s, i) => (
                     <li key={s.key} className={s.ok ? 'is-done' : ''}>
@@ -1218,10 +1258,17 @@ const AsatoMa: React.FC = () => {
                 </ol>
               </>
             )}
-            <div className="vl-btn-row" style={{ marginTop: '0.5rem' }}>
-              <LedButton kind="action" color="#facc15" onClick={() => setupLevel(lvl)} testId="asato-setup">
+            <div className="vl-btn-row" style={{ marginTop: '0.5rem', position: 'relative', alignItems: 'center' }}>
+              <LedButton kind="action" color="#facc15" onClick={() => { setArmed(lvl); setupLevel(lvl); }} testId="asato-setup">
                 ▶ Set up Level {lvl}
               </LedButton>
+              {armed !== lvl && !LEVELS[lvl - 1].done && <span className="vl-lvl-hand" aria-hidden="true">👆</span>}
+              {nextIn > 0 && lvl < 3 && (
+                <button type="button" className="vl-chip is-on" onClick={() => setNextIn(1)} data-testid="asato-next" title="Go now">
+                  ✓ Done · Next: Level {lvl + 1} · {LEVELS[lvl].title} in {nextIn}s ▸
+                </button>
+              )}
+              {lv.l1 && lv.l2 && lv.l3 && <span className="vl-small">🏁 All 3 levels done</span>}
             </div>
           </div>
         </section>

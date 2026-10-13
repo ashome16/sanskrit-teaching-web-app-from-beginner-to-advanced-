@@ -95,7 +95,7 @@ const HudButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & { on?:
 );
 
 /* ───────────── LEVEL 01 · Many forms (nāma-rūpa) → one Sat ───────────── */
-const FORM_GLYPHS = ['अ', 'आ', 'इ', 'उ', 'ऋ', 'क', 'ख', 'ग', 'घ', 'च', 'ज', 'त', 'द', 'न', 'प', 'ब', 'म', 'य', 'र', 'ल', 'व', 'श', 'ह', 'ॐ', 'घट', 'पट', 'वृक्ष'];
+const FORM_GLYPHS = ['अ', 'आ', 'इ', 'उ', 'ऋ', 'क', 'ख', 'ग', 'घ', 'च', 'ज', 'त', 'द', 'न', 'प', 'ब', 'म', 'य', 'र', 'ल', 'व', 'श', 'ह', 'घट', 'पट', 'वृक्ष'];
 const FORM_COLORS = ['#f472b6', '#facc15', '#38bdf8', '#a78bfa', '#fb923c', '#4ade80', '#f87171', '#2dd4bf'];
 type FormKind = 'glyph' | 'pot' | 'cloth' | 'tree' | 'plate' | 'lamp';
 type Form = { kind: FormKind; ch: string; x: number; y: number; size: number; speed: number; rot: number; spin: number; color: string; tx: number; ty: number };

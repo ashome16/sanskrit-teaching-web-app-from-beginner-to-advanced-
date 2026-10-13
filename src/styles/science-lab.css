@@ -16861,3 +16861,16 @@
     margin: 0.25rem 0;
   }
 }
+
+/* Asato mā level stepper (aruni-levels) */
+.vl-key-num{margin:.25rem 0;color:#fde68a;font-size:.95rem}
+.vl-key-num b{color:#facc15}
+.vl-lvl-steps{display:flex;align-items:center;gap:.35rem;margin:.45rem 0}
+.vl-lvl-dot{width:1.6rem;height:1.6rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;border:2px solid #475569;color:#cbd5e1}
+.vl-lvl-dot.is-cur{border-color:#facc15;color:#facc15;box-shadow:0 0 8px #facc1588}
+.vl-lvl-dot.is-done{background:#16a34a;border-color:#16a34a;color:#fff}
+.vl-lvl-line{flex:1;height:2px;background:#475569;max-width:4rem}
+.vl-lvl-line.is-done{background:#16a34a}
+.vl-lvl-hand{font-size:1.4rem;display:inline-block;animation:vlHandTap 1.1s ease-in-out infinite}
+@keyframes vlHandTap{0%,100%{transform:translate(0,0)}50%{transform:translate(-6px,-4px) scale(.88)}}
+@media (prefers-reduced-motion: reduce){.vl-lvl-hand{animation:none}}
