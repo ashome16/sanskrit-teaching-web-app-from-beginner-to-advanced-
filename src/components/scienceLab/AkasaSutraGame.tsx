@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { soundEffects } from '../../utils/soundEffects';
 import { AkasaPhilosophySlideshow } from './AkasaPhilosophySlideshow';
 import { AkasaAutoPlayMovie } from './AkasaAutoPlayMovie';
+import { AkasaSequenceBoard } from './AkasaSequenceBoard';
+
+const SHOW_LEGACY_WORKSHOP = false as boolean;
 
 // =========================================================================
 // TYPES & DEFINITIONS
@@ -188,7 +191,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
       'D) Ākāśa (Ether space)',
     ],
     correctIndex: 0,
-    explanation: 'Clay is the Samavāyi-Kāraṇa because the pot is made directly of earth atoms; without earth atoms, the physical pot cannot exist.',
+    explanation: 'Clay is the Samavāyi-Kāraṇa because the pot is made directly of earth aṇu (indivisible matter); without earth aṇu, the physical pot cannot exist.',
     kanadaQuote: 'The substance of which the effect is physically made is its material cause. The pot is made of earth.',
   },
   {
@@ -214,8 +217,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
       'D) Baking destroys half of the Aṇu particles [अणवः] forever',
     ],
     correctIndex: 1,
-    explanation: 'Pīlukapāka (pīlu = atom, pāka = baking) asserts that fire acts on individual Aṇu particles [अणवः], transforming their microscopic qualities before immediate recombination.',
-    kanadaQuote: 'Pīlu means atom. Heat transforms the qualities within each atom before they unite in ceramic hardness.',
+    explanation: 'Pīlukapāka (pīlu = aṇu, pāka = baking) asserts that fire acts on individual Aṇu particles [अणवः], transforming their microscopic qualities before immediate recombination.',
+    kanadaQuote: 'Pīlu means aṇu. Heat transforms the qualities within each aṇu before they unite in ceramic hardness.',
   },
   {
     id: 4,
@@ -248,7 +251,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'How did Sage Kaṇāda define the Trasareṇu (Tryaṇuka) as the epistemic bridge between mathematics and physical perception?',
     options: [
       'A) It is the largest planet visible in the night sky',
-      'B) It is the smallest macroscopic cluster (3 dyads / 6 atoms) capable of scattering sunlight, observed as a dancing mote in a window sunbeam',
+      'B) It is the smallest macroscopic cluster (3 dyads / 6 aṇu) capable of scattering sunlight, observed as a dancing mote in a window sunbeam',
       'C) It is an imaginary mathematical point with no connection to observation',
       'D) It is an indivisible particle with zero dimension',
     ],
@@ -258,7 +261,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 7,
-    question: 'What is the Rigorous 3-Step Construction sequence from fundamental atoms to macroscopic physical reality?',
+    question: 'What is the Rigorous 3-Step Construction sequence from fundamental aṇu to macroscopic physical reality?',
     options: [
       'A) 1. Dimerization (Dvyaṇuka) ➔ 2. Dimensional Emergence (Tryaṇuka) ➔ 3. Lattice Crystallization (Bhūta-Pracaya)',
       'B) 1. Boiling ➔ 2. Freezing ➔ 3. Dissolving',
@@ -266,7 +269,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
       'D) 1. Spinning wheel ➔ 2. Adding water ➔ 3. Painting color',
     ],
     correctIndex: 0,
-    explanation: 'Two 0D atoms dimerize into a Dvyaṇuka (Step 1), three dyads cluster into a 3D unit cell with volume (Step 2: Tryaṇuka), and billions of Tryaṇukas undergo long-range periodic lattice ordering (Step 3: Pracaya-Viśeṣa) to manifest macroscopic density and sensory signatures.',
+    explanation: 'Two 0D aṇu dimerize into a Dvyaṇuka (Step 1), three dyads cluster into a 3D unit cell with volume (Step 2: Tryaṇuka), and billions of Tryaṇukas undergo long-range periodic lattice ordering (Step 3: Pracaya-Viśeṣa) to manifest macroscopic density and sensory signatures.',
     kanadaQuote: 'From the imperceptible pair to the three-fold cluster, and thence to the macroscopic crystal lattice—such is the order of manifestation.',
   },
   {
@@ -279,7 +282,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
       'D) Abhāva (Absence)',
     ],
     correctIndex: 1,
-    explanation: 'Viśeṣa is the category of ultimate distinctness inhering in eternal, indivisible atoms, preventing primordial particles from collapsing into identical indistinguishability.',
+    explanation: 'Viśeṣa is the category of ultimate distinctness inhering in eternal, indivisible aṇu, preventing primordial particles from collapsing into identical indistinguishability.',
     kanadaQuote: 'Each eternal seed carries its own ultimate uniqueness (Viśeṣa); without it, the universe would collapse into indistinguishable uniformity.',
   },
 ];
@@ -2807,7 +2810,11 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
       {/* =========================================================================
           TAB 1: POTTER'S WHEEL GAMEPLAY ARENA (AUTO-PLAY & INTERACTIVE MODES)
           ========================================================================= */}
-      {activeTab === 'game' && (
+      {/* Single-path board following the ākāśa-sūtra 16-step sheet. */}
+      {activeTab === 'game' && <AkasaSequenceBoard />}
+
+      {/* Legacy two-mode workshop kept for reference only; never rendered (no side paths). */}
+      {SHOW_LEGACY_WORKSHOP && activeTab === 'game' && (
         <>
           {/* 🎮 SECTION HERO: GAMING ARENA & RAPID-FIRE ATOMIC COLLISION INTRO */}
           <div className="akasa-game-hero-header">
