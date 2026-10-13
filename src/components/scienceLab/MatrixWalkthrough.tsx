@@ -402,9 +402,17 @@ const Codex: React.FC = () => (
 
 /* ───────────── Walkthrough shell ───────────── */
 const STEPS = [
-  { tag: 'LEVEL 01', title: 'Many forms, one reality · Nāma-rūpa (नाम-रूप) → Sat (सत्)' },
-  { tag: 'LEVEL 02', title: 'Sealed Crucible · Andha-Mūṣā (अन्ध-मूषा)' },
-  { tag: 'LEVEL 03', title: 'Phonon Lattice · 281 K → 2,252 K' },
+  { tag: 'LEVEL 01', short: 'Many forms → Sat', title: 'Many forms, one reality · Nāma-rūpa (नाम-रूप) → Sat (सत्)' },
+  { tag: 'LEVEL 02', short: 'Calm → motion', title: 'Sealed Crucible · Andha-Mūṣā (अन्ध-मूषा)' },
+  { tag: 'LEVEL 03', short: 'Solid → melt', title: 'Phonon Lattice · 281 K → 2,252 K' },
+];
+
+// Guided autoplay timeline (seconds): `act` = when the demo action fires, `end` = when the level advances.
+const COUNTDOWN = 3;
+const AUTO = [
+  { act: 3, end: 10.5, next: 'Next: Level 02 · the Sealed Crucible: calm water → hidden motion' },
+  { act: 3, end: 11, next: 'Next: Level 03 · the Phonon Lattice: heat a solid until it melts' },
+  { act: 7.5, end: 14, next: 'Next: the summary' },
 ];
 
 const CSS = `
@@ -414,7 +422,13 @@ const CSS = `
 100%{opacity:1;transform:none;filter:none;clip-path:inset(0 0 0 0)}}
 .mw-level{animation:mwGlitch .45s steps(6,end) both}
 .mw-range{width:100%;accent-color:#22c55e}
-@media (prefers-reduced-motion: reduce){.mw-level{animation:none}.mw-bar{transition:none!important}}
+.mw-hand{position:absolute;z-index:5;pointer-events:none;width:0;height:0}
+.mw-finger{position:absolute;left:-9px;top:-2px;font-size:28px;line-height:1;filter:drop-shadow(0 2px 3px #000a);transform-origin:30% 0;display:block}
+.mw-tap{animation:mwTap .35s ease-out}
+@keyframes mwTap{0%{transform:scale(1)}45%{transform:scale(.82) translateY(3px)}100%{transform:scale(1)}}
+.mw-ripple{position:absolute;left:-18px;top:-18px;width:36px;height:36px;border-radius:50%;border:2px solid #4ade80;animation:mwRipple .6s ease-out forwards}
+@keyframes mwRipple{0%{transform:scale(.2);opacity:1}100%{transform:scale(1.6);opacity:0}}
+@media (prefers-reduced-motion: reduce){.mw-level{animation:none}.mw-hand{display:none}.mw-bar{transition:none!important}}
 `;
 
 /* ───────────── Kaṇāda's Sūtras (Vaiśeṣika Sūtra 4.1.1–4.1.2) ───────────── */
@@ -432,6 +446,13 @@ const KANADA_SUTRAS: { num: string; deva: string; iast: string; words: [string, 
     tie: 'INFERENCE: single paramāṇus are invisible; the visible effects (pot, cloth, mountain) prove they exist. Like the Viveka scanner revealing molecules, we infer the invisible from the visible effect.',
   },
 ];
+
+const More: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <details style={{ marginTop: 6 }}>
+    <summary style={{ fontFamily: 'ui-monospace, Menlo, monospace', fontSize: 11, color: '#6ee7b7', cursor: 'pointer' }}>More</summary>
+    <p style={{ margin: '0.3rem 0 0', lineHeight: 1.55, fontSize: 13 }}>{children}</p>
+  </details>
+);
 
 const KanadaSutrasCard: React.FC = () => (
   <div data-testid="asato-kanada-sutras" style={{ border: `1px solid ${GREEN}88`, borderRadius: 8, padding: '0.6rem 0.7rem', margin: '0.3rem 0 0.6rem', background: '#021a10' }}>
@@ -462,7 +483,7 @@ export const MatrixWalkthrough: React.FC = () => {
   const [step, setStep] = useState(0);
   const [viveka, setViveka] = useState(false);
   const [scan, setScan] = useState(false);
-  const [stats, setStats] = useState({ vrms: VRMS, cps: 0 });
+  const [, setStats] = useState({ vrms: VRMS, cps: 0 });
   const [temp, setTemp] = useState(T_MIN);
   const [broken, setBroken] = useState(0);
   const [bend, setBend] = useState(false);
@@ -470,100 +491,207 @@ export const MatrixWalkthrough: React.FC = () => {
   const stability = Math.round(100 * (1 - broken / BREAKABLE));
   const pastLimit = delta(temp) >= LINDEMANN;
   useEffect(() => { if (!pastLimit) setBend(false); }, [pastLimit]);
-  const grid = (min: number): React.CSSProperties => ({ ...mono, fontSize: 12, display: 'grid', gridTemplateColumns: `repeat(auto-fit,minmax(${min}px,1fr))`, gap: 4, marginBottom: 8 });
+  // ── Guided autoplay ──
+  const [auto, setAuto] = useState(() => !prefersReduced());
+  const [el, setEl] = useState(0); // seconds elapsed in the current step's demo
+  const [done, setDone] = useState(false);
+  const [inView, setInView] = useState(false);
+  const secRef = useRef<HTMLElement>(null);
+  const reduced = prefersReduced();
+  useEffect(() => {
+    const node = secRef.current; if (!node) return;
+    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting), { threshold: 0.25 });
+    io.observe(node); return () => io.disconnect();
+  }, []);
+  const resetStep = useCallback((s: number) => {
+    if (s === 0) setViveka(false);
+    if (s === 1) setScan(false);
+    if (s === 2) { setTemp(T_MIN); setBend(false); }
+  }, []);
+  const running = auto && !done && inView && !reduced;
+  useEffect(() => {
+    if (!running) return;
+    const id = window.setInterval(() => { if (!document.hidden) setEl((x) => x + 0.1); }, 100);
+    return () => window.clearInterval(id);
+  }, [running]);
+  // drive each level's demo from the timeline
+  useEffect(() => {
+    if (!auto || done) return;
+    if (step === 0) setViveka(el >= AUTO[0].act);
+    if (step === 1) setScan(el >= AUTO[1].act);
+    if (step === 2) {
+      const f = Math.max(0, Math.min(1, (el - 1.5) / (AUTO[2].act - 1.5)));
+      setTemp(T_MIN + (T_MAX - T_MIN) * f);
+      setBend(el >= AUTO[2].act + 0.6);
+    }
+    if (el >= AUTO[step].end) {
+      if (step < STEPS.length - 1) { resetStep(step + 1); setStep(step + 1); setEl(0); }
+      else setDone(true);
+    }
+  }, [el, auto, done, step, resetStep]);
+  const pause = () => setAuto(false);
+  const resume = () => { resetStep(step); setEl(0); setDone(false); setAuto(true); };
+  const replay = () => { [0, 1, 2].forEach(resetStep); setStep(0); setEl(0); setDone(false); setAuto(!reduced); };
+  const countdownLeft = AUTO[step].end - el;
+  const showNext = auto && !done && !reduced && countdownLeft <= COUNTDOWN && countdownLeft > 0;
+  // ── Silent hand pointer: glides to each control and "taps" it during autoplay ──
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const vivRef = useRef<HTMLSpanElement>(null);
+  const scanRef = useRef<HTMLSpanElement>(null);
+  const sliderRef = useRef<HTMLSpanElement>(null);
+  const bendRef = useRef<HTMLSpanElement>(null);
+  const nextRef = useRef<HTMLSpanElement>(null);
+  const [hand, setHand] = useState<{ x: number; y: number; tap: boolean; drag: boolean; key: string } | null>(null);
+  useEffect(() => {
+    if (!auto || done || reduced) { setHand(null); return; }
+    const A = AUTO[step];
+    let target: HTMLElement | null = null, fx = 0.5, tap = false, drag = false, key = `${step}`;
+    if (el >= A.end - COUNTDOWN) { target = nextRef.current; tap = el >= A.end - 0.4; key += 'n'; }
+    else if (step === 0) { target = vivRef.current; tap = el >= A.act && el < A.act + 0.4; key += 'v'; }
+    else if (step === 1) { target = scanRef.current; tap = el >= A.act && el < A.act + 0.4; key += 's'; }
+    else if (el < A.act + 0.2) {
+      target = sliderRef.current; drag = el >= 1.5; tap = el >= 1.5 && el < 1.9; key += 'd';
+      const r = target?.getBoundingClientRect();
+      fx = r && r.width ? (8 + (r.width - 16) * ((temp - T_MIN) / (T_MAX - T_MIN))) / r.width : 0;
+    } else { target = bendRef.current; tap = el >= A.act + 0.6 && el < A.act + 1; key += 'b'; }
+    const w = wrapRef.current?.getBoundingClientRect(), r = target?.getBoundingClientRect();
+    if (!w || !r) { setHand(null); return; }
+    setHand({ x: r.left - w.left + r.width * fx, y: r.top - w.top + r.height * 0.6, tap, drag, key });
+  }, [el, step, auto, done, reduced, temp]);
 
   return (
-    <section id="asato-matrix-walkthrough" className="vl-panel" aria-label="Matrix walkthrough (for fun)" data-testid="asato-matrix-walkthrough"
+    <section ref={secRef} id="asato-matrix-walkthrough" className="vl-panel" aria-label="Matrix walkthrough (for fun)" data-testid="asato-matrix-walkthrough"
       style={{ background: '#03140b', color: '#bbf7d0', border: '1px solid #16a34a', borderRadius: 12, padding: '0.9rem 1rem', margin: '0.75rem 0', overflow: 'hidden' }}>
       <style>{CSS}</style>
       <div style={{ ...mono, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 6, fontSize: 12, color: '#4ade80', marginBottom: 8 }}>
         <span>▣ MATRIX WALKTHROUGH (FOR FUN)</span>
         <span>Teaching analogy only · not a claim from the texts</span>
       </div>
-      <Codex />
-      <KanadaSutrasCard />
-      <div role="tablist" style={{ display: 'flex', gap: 6, margin: '0.2rem 0 0.4rem', flexWrap: 'wrap' }}>
-        {STEPS.map((s, i) => (
-          <HudButton key={s.tag} role="tab" aria-selected={step === i} on={step === i} onClick={() => setStep(i)} style={{ padding: '4px 10px' }}>{s.tag}</HudButton>
-        ))}
+      <details style={{ margin: '0 0 0.4rem' }}>
+        <summary style={{ ...mono, fontSize: 12, color: '#86efac', cursor: 'pointer' }}>📜 Codex · Māyā: reality vs illusion</summary>
+        <Codex />
+      </details>
+      <details style={{ margin: '0 0 0.6rem' }}>
+        <summary style={{ ...mono, fontSize: 12, color: '#86efac', cursor: 'pointer' }}>▣ Kaṇāda’s Sūtras (Vaiśeṣika Sūtra 4.1.1–4.1.2)</summary>
+        <KanadaSutrasCard />
+      </details>
+
+      {/* minimal step bar + single Pause / Play control */}
+      <div style={{ ...mono, display: 'flex', alignItems: 'center', gap: 8, margin: '0.2rem 0 0.5rem', fontSize: 13 }}>
+        <ol aria-label="Walkthrough steps" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', alignItems: 'center', gap: 4 }}>
+          {STEPS.map((s, i) => {
+            const cur = step === i && !done;
+            return (
+              <li key={s.tag} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                {i > 0 && <span aria-hidden style={{ color: '#166534' }}>·</span>}
+                <button type="button" aria-current={cur ? 'step' : undefined} aria-label={`Step ${i + 1}: ${s.short}`} onClick={() => { pause(); setDone(false); setStep(i); }}
+                  style={{ ...mono, border: 'none', cursor: 'pointer', borderRadius: 999, minWidth: 26, height: 26, padding: cur ? '0 10px' : 0, fontSize: 12,
+                    background: cur ? '#22c55e' : (done || i < step ? '#166534' : 'transparent'), color: cur ? '#02120a' : '#86efac', outline: cur ? 'none' : '1px solid #166534', transition: 'all .3s' }}>
+                  {i + 1}{cur ? ` · ${s.short}` : ''}
+                </button>
+              </li>
+            );
+          })}
+        </ol>
+        <span style={{ marginLeft: 'auto' }}>
+          {reduced ? <span style={{ fontSize: 11, color: '#86efac' }}>manual (reduced motion)</span>
+            : done ? null
+            : auto ? <HudButton onClick={pause} aria-label="Pause guided tour" style={{ padding: '3px 10px' }}>❚❚ PAUSE</HudButton>
+            : <HudButton on onClick={resume} data-testid="asato-matrix-resume" style={{ padding: '3px 10px' }}>▶ PLAY</HudButton>}
+        </span>
       </div>
-      <div aria-hidden style={{ height: 4, background: '#064e2b', borderRadius: 2, marginBottom: 8 }}>
-        <div className="mw-bar" style={{ height: '100%', width: `${((step + 1) / STEPS.length) * 100}%`, background: 'linear-gradient(90deg,#16a34a,#4ade80)', borderRadius: 2, boxShadow: '0 0 8px #22c55e', transition: 'width .5s ease' }} />
-      </div>
 
-      <div key={step} className="mw-level">
-        <h4 style={{ margin: '0.2rem 0 0.5rem', color: '#f0fdf4' }}>{STEPS[step].title}</h4>
-
-        {step === 0 && (
-          <div>
-            <CodeRainView viveka={viveka} onToggle={() => setViveka((v) => !v)} />
-            <div style={{ margin: '0.5rem 0' }}>
-              <HudButton on={viveka} aria-pressed={viveka} onClick={() => setViveka((v) => !v)}>👁️ VIVEKA: {viveka ? 'ON' : 'OFF'}</HudButton>
-            </div>
-            <p style={{ margin: 0, lineHeight: 1.55 }}>
-              <strong>Many forms appear (nāma-rūpa, नाम-रूप); underneath, one uniform, unchanging reality (sat, सत्).</strong>
-            </p>
-            <p style={{ margin: '0.4rem 0 0', lineHeight: 1.55 }}>
-              What we see looks different only because of different names and forms: letters, a pot, a cloth, a tree.
-              Like the “code” on the Matrix screen, these forms are the changing surface (Asat). Apply <strong>Viveka</strong> (विवेक, discernment)
-              and they dissolve into what they always were: one even, steady field of <strong>Sat</strong> (सत्), the same everywhere and not moving.
-            </p>
-            <p style={{ margin: '0.4rem 0 0', lineHeight: 1.55, color: '#a7f3d0' }}>
-              Clay example: a pot (ghaṭa), a plate and a lamp (dīpa) are different forms with different names, yet all of them are just clay.
-            </p>
+      <div ref={wrapRef} style={{ position: 'relative' }}>
+      {done ? (
+        <div className="mw-level" data-testid="asato-matrix-closing" style={{ textAlign: 'center', border: `1px solid ${GREEN}88`, borderRadius: 8, padding: '1.2rem 0.8rem', background: '#021a10' }}>
+          <div style={{ fontSize: 'clamp(16px,3.6vw,22px)', color: '#fef9c3', lineHeight: 1.6 }}>
+            Many forms → one Sat (सत्); calm → motion; solid → melt
           </div>
-        )}
+          <div style={{ marginTop: 10 }}><HudButton on onClick={replay} data-testid="asato-matrix-replay">↻ REPLAY</HudButton></div>
+        </div>
+      ) : (
+        <div key={step} className="mw-level">
+          {step === 0 && (
+            <div>
+              <CodeRainView viveka={viveka} onToggle={() => { pause(); setViveka((v) => !v); }} />
+              <p style={{ margin: '0.5rem 0', lineHeight: 1.5, color: '#f0fdf4' }}>
+                Many forms appear (nāma-rūpa, नाम-रूप); underneath, one uniform, unchanging reality (sat, सत्).
+              </p>
+              <span ref={vivRef} style={{ display: 'inline-block' }}>
+                <HudButton on={viveka} aria-pressed={viveka} onClick={() => { pause(); setViveka((v) => !v); }}>👁️ VIVEKA: {viveka ? 'ON' : 'OFF'}</HudButton>
+              </span>
+              <More>
+                What we see looks different only because of different names and forms: letters, a pot, a cloth, a tree.
+                Like the “code” on the Matrix screen, these forms are the changing surface (Asat). Viveka (विवेक, discernment) dissolves them into
+                one even, steady field of Sat (सत्). Clay example: a pot (ghaṭa), a plate and a lamp (dīpa) are different forms, yet all are just clay.
+              </More>
+            </div>
+          )}
 
-        {step === 1 && (
-          <div>
-            <div style={grid(130)}>
-              <span>TARGET: H₂O · {N_MOL} shown</span>
-              <span>TEMP: {T_WATER} K (7 °C)</span>
-              <span>v<sub>rms</sub>: {scan ? `${Math.round(stats.vrms)}` : `~${Math.round(VRMS)}`} m/s</span>
-              <span>COLLISIONS: {scan ? `${stats.cps}/s (sim)` : '—'}</span>
+          {step === 1 && (
+            <div>
+              <CrucibleView scan={scan} onStats={onStats} />
+              <p style={{ margin: '0.5rem 0', lineHeight: 1.5, color: '#f0fdf4' }}>
+                Still water looks calm, yet its molecules race at about <strong>{Math.round(VRMS)} m/s</strong>.
+              </p>
+              <span ref={scanRef} style={{ display: 'inline-block' }}>
+                <HudButton on={scan} onClick={() => { pause(); setScan((s) => !s); }} aria-pressed={scan} data-testid="asato-matrix-scan">👁️ VIVEKA SCANNER: {scan ? 'ON' : 'OFF'}</HudButton>
+              </span>
+              <More>
+                Sealed Crucible (Andha-Mūṣā, अन्ध-मूषा), water at {T_WATER} K (7 °C). With the scanner on, {N_MOL} molecules (paramāṇus in the lab’s language) bounce
+                off each other with a Maxwell–Boltzmann spread of speeds; {Math.round(VRMS)} m/s is their root-mean-square speed, a steady average. Motion is slowed
+                enormously so you can see it. Like the people asleep in the pods, the water <em>looks</em> still; tāpa (ताप, heat) keeps everything moving underneath.
+              </More>
             </div>
-            <CrucibleView scan={scan} onStats={onStats} />
-            <div style={{ margin: '0.5rem 0' }}>
-              <HudButton on={scan} onClick={() => setScan((s) => !s)} aria-pressed={scan} data-testid="asato-matrix-scan">👁️ VIVEKA SCANNER: {scan ? 'ON' : 'OFF'}</HudButton>
-            </div>
-            <p style={{ margin: 0, lineHeight: 1.55 }}>
-              Scanner off: calm, smooth water (Asat). Scanner on: molecules (paramāṇus in the lab’s language) zip about with a
-              Maxwell–Boltzmann spread of speeds and bounce off each other elastically. At 281 K their root-mean-square speed is about {Math.round(VRMS)} m/s,
-              a steady average, not an acceleration. Motion is slowed enormously so you can see it; collisions per second are for this toy box, not real water.
-              Like the people asleep in the battery pods, the water <em>looks</em> still; <strong>tāpa</strong> (ताप, heat) keeps everything moving underneath.
-            </p>
-          </div>
-        )}
+          )}
 
-        {step === 2 && (
-          <div>
-            <div style={grid(150)}>
-              <span>THERMAL LOAD: {Math.round(temp).toLocaleString()} K</span>
-              <span style={{ color: broken ? '#fca5a5' : undefined }}>{broken ? '⚠ ' : ''}BONDS BROKEN: {broken} / {BREAKABLE}</span>
-              <span style={{ color: stability === 0 ? '#fca5a5' : undefined }}>STABILITY: {stability}%{pastLimit ? ' · past Lindemann limit' : ''}</span>
+          {step === 2 && (
+            <div>
+              <LatticeView temp={temp} bend={bend} onBroken={setBroken} />
+              <p style={{ margin: '0.5rem 0', lineHeight: 1.5, color: '#f0fdf4' }}>
+                Heat the solid: at {Math.round(temp).toLocaleString()} K, <strong style={{ color: broken ? '#fca5a5' : undefined }}>{broken} / {BREAKABLE} bonds</strong> broken · {stability}% stable.
+              </p>
+              <span ref={sliderRef} style={{ display: 'block' }}>
+                <input id="mw-temp" aria-label="Temperature in kelvin" className="mw-range" type="range" min={T_MIN} max={T_MAX} step={1} value={temp} onChange={(e) => { pause(); setTemp(Number(e.target.value)); }} />
+              </span>
+              <span ref={bendRef} style={{ display: 'inline-block', marginTop: 6 }}>
+                <HudButton on={bend} disabled={!pastLimit} aria-pressed={bend} onClick={() => { pause(); setBend((b) => !b); }} title={pastLimit ? '' : 'Heat past the Lindemann limit first'}>🥄 BEND THE SPOON</HudButton>
+              </span>
+              <More>
+                Phonon Lattice, {T_MIN} K → {T_MAX.toLocaleString()} K. Heat makes the lattice shake in waves called phonons; the swing grows roughly with √T. Past about a tenth
+                of the spacing (the Lindemann melt limit) bonds snap and the solid melts: at 2,252 K this model shows 29 broken bonds and 0% stability.
+                Teaching analogy: like Neo bending the spoon, once you see the rules underneath, the “solid” is not as fixed as it looked.
+              </More>
             </div>
-            <LatticeView temp={temp} bend={bend} onBroken={setBroken} />
-            <label style={{ ...mono, fontSize: 12, display: 'block', margin: '0.6rem 0 0.2rem' }} htmlFor="mw-temp">
-              TEMPERATURE: {Math.round(temp).toLocaleString()} K
-            </label>
-            <input id="mw-temp" className="mw-range" type="range" min={T_MIN} max={T_MAX} step={1} value={temp} onChange={(e) => setTemp(Number(e.target.value))} />
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', margin: '0.4rem 0' }}>
-              <HudButton onClick={() => setTemp(T_MIN)}>281 K</HudButton>
-              <HudButton onClick={() => setTemp(T_MAX)}>2,252 K</HudButton>
-              <HudButton on={bend} disabled={!pastLimit} aria-pressed={bend} onClick={() => setBend((b) => !b)} title={pastLimit ? '' : 'Heat past the Lindemann limit first'}>🥄 BEND THE SPOON</HudButton>
-            </div>
-            <p style={{ margin: 0, lineHeight: 1.55 }}>
-              Heat makes the lattice shake in waves called <strong>phonons</strong>; the swing grows roughly with √T. When atoms swing more than roughly a tenth
-              of their spacing (the Lindemann melt limit), bonds snap and the solid melts. At 2,252 K this model shows 29 broken bonds and 0% stability.
-              Teaching analogy: like Neo bending the spoon, once you see the rules underneath, the “solid” is not as fixed as it looked. Open the Matrix Overwatch panel below to try more.
-            </p>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
+
+      {showNext && (
+        <div role="status" aria-live="polite" data-testid="asato-matrix-next" style={{ ...mono, display: 'flex', alignItems: 'center', gap: 10, marginTop: 8, padding: '6px 10px', border: `1px solid ${GREEN}88`, borderRadius: 8, background: '#052e16', color: '#dcfce7', fontSize: 13 }}>
+          <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden>
+            <circle cx="15" cy="15" r="12" fill="none" stroke="#064e2b" strokeWidth="3" />
+            <circle cx="15" cy="15" r="12" fill="none" stroke="#4ade80" strokeWidth="3" strokeLinecap="round" transform="rotate(-90 15 15)"
+              strokeDasharray={2 * Math.PI * 12} strokeDashoffset={2 * Math.PI * 12 * (countdownLeft / COUNTDOWN)} />
+            <text x="15" y="19" textAnchor="middle" fontSize="11" fill="#dcfce7">{Math.ceil(countdownLeft)}</text>
+          </svg>
+          <span>{AUTO[step].next}</span>
+        </div>
+      )}
 
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 10, gap: 8 }}>
-        <HudButton disabled={step === 0} onClick={() => setStep((s) => s - 1)} style={{ padding: '3px 10px' }}>◀ PREV</HudButton>
-        <HudButton disabled={step === STEPS.length - 1} onClick={() => setStep((s) => s + 1)} style={{ padding: '3px 10px' }}>NEXT ▶</HudButton>
+        <HudButton disabled={step === 0 && !done} onClick={() => { pause(); if (done) setDone(false); else setStep((s) => s - 1); }} style={{ padding: '2px 8px', fontSize: 11 }}>◀ PREV</HudButton>
+        <span ref={nextRef} style={{ display: 'inline-block' }}>
+          <HudButton disabled={done} onClick={() => { pause(); if (step === STEPS.length - 1) setDone(true); else setStep((s) => s + 1); }} style={{ padding: '2px 8px', fontSize: 11 }}>NEXT ▶</HudButton>
+        </span>
+      </div>
+
+      {hand && (
+        <div aria-hidden className="mw-hand" style={{ left: hand.x, top: hand.y, transition: hand.drag ? 'left .1s linear, top .1s linear' : 'left .7s cubic-bezier(.4,0,.2,1), top .7s cubic-bezier(.4,0,.2,1)' }}>
+          {hand.tap && <span key={hand.key} className="mw-ripple" />}
+          <span className={hand.tap ? 'mw-finger mw-tap' : 'mw-finger'}>👆</span>
+        </div>
+      )}
       </div>
     </section>
   );
