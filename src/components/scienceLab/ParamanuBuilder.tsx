@@ -2346,7 +2346,8 @@ export const ParamanuBuilder: React.FC<LabSegmentProps> = ({ onNextLab }) => {
         anecdote={
           <>
             <p>
-              Long before John Dalton, the sage <strong>Kaṇāda</strong> (Ulūka) walked the harvested fields of
+              Kaṇāda’s exact dates are unknown. Indian tradition places him very early, and many scholars date him to the 6th–2nd century BCE, around or before Democritus (c. 460–370 BCE). Unlike the surviving Greek fragments, the Vaiśeṣika Sūtra sets out a complete, systematic account of aṇu and how they combine.
+              The sage <strong>Kaṇāda</strong> (Ulūka) walked the harvested fields of
               Prabhasa. While others rushed by, Kaṇāda knelt in the dust, carefully gathering single, discarded grains of rice.
               When astonished villagers asked why a great philosopher spent his days picking up stray grains, Kaṇāda replied:
             </p>
