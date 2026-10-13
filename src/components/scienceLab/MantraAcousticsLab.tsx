@@ -850,7 +850,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
 
             <div style={{ display: 'flex', gap: '1.2rem', alignItems: 'center', marginTop: '1rem', flexWrap: 'wrap' }}>
               <div style={{ flex: 1, minWidth: 260 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#94a3b8', marginBottom: 4 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#cbd5e1', marginBottom: 4 }}>
                   <span>Adjust Bridge Position (L):</span>
                   <span style={{ color: '#38bdf8', fontWeight: 'bold' }}>{bridgeLengthCm.toFixed(1)} cm</span>
                 </div>
@@ -866,7 +866,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
               </div>
 
               <div style={{ width: 180 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#94a3b8', marginBottom: 4 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#cbd5e1', marginBottom: 4 }}>
                   <span>Wire Tension:</span>
                   <span style={{ color: '#f59e0b', fontWeight: 'bold' }}>{bridgeTensionKg.toFixed(1)} kg</span>
                 </div>
@@ -908,8 +908,8 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
                     padding: '0.5rem 0.6rem',
                     textAlign: 'left',
                     borderRadius: 8,
-                    background: selectedPresetIdx === idx ? undefined : 'rgba(15, 23, 42, 0.7)',
-                    border: `1px solid ${selectedPresetIdx === idx ? note.color : 'rgba(148, 163, 184, 0.2)'}`,
+                    background: selectedPresetIdx === idx ? undefined : 'rgba(24, 34, 60, 0.85)',
+                    border: `1.5px solid ${selectedPresetIdx === idx ? note.color : 'rgba(148, 163, 184, 0.28)'}`,
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 2,
@@ -917,7 +917,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
                 >
                   <span style={{ fontWeight: 800, color: note.color, fontSize: '0.85rem' }}>{note.note.split(' ')[0]}</span>
                   <span style={{ fontSize: '0.75rem', color: '#cbd5e1' }}>{note.dev}</span>
-                  <span style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{note.fractionStr} ({note.targetLengthCm} cm)</span>
+                  <span style={{ fontSize: '0.7rem', color: '#cbd5e1' }}>{note.fractionStr} ({note.targetLengthCm} cm)</span>
                   <span style={{ fontSize: '0.75rem', color: '#fde047', fontWeight: 700 }}>{note.freqHz} Hz</span>
                 </button>
               ))}
@@ -934,9 +934,9 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
             <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#fde047', marginBottom: '0.5rem' }}>
               LABORATORY OBSERVATION DATA TABLE (Baseline L₀ = 100.0 cm, f₀ = 240 Hz):
             </div>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.82rem', textAlign: 'left', background: 'rgba(15, 23, 42, 0.7)' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.82rem', textAlign: 'left', background: 'rgba(24, 34, 60, 0.85)', border: '1.5px solid rgba(148, 163, 184, 0.28)', borderRadius: '10px' }}>
               <thead>
-                <tr style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', borderBottom: '1px solid rgba(56, 189, 248, 0.3)' }}>
+                <tr style={{ background: 'rgba(56, 189, 248, 0.18)', color: '#38bdf8', borderBottom: '1.5px solid rgba(56, 189, 248, 0.35)' }}>
                   <th style={{ padding: '0.6rem' }}>Note (Svara)</th>
                   <th style={{ padding: '0.6rem' }}>String Fraction</th>
                   <th style={{ padding: '0.6rem' }}>Target Length (L)</th>
@@ -952,22 +952,22 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
                     <tr
                       key={row.note}
                       style={{
-                        borderBottom: '1px solid rgba(148, 163, 184, 0.12)',
-                        background: isCurrent ? 'rgba(56, 189, 248, 0.15)' : undefined,
+                        borderBottom: '1px solid rgba(148, 163, 184, 0.15)',
+                        background: isCurrent ? 'rgba(56, 189, 248, 0.2)' : undefined,
                       }}
                     >
                       <td style={{ padding: '0.55rem', fontWeight: 700, color: row.color }}>
-                        {row.note} <span style={{ color: '#94a3b8', fontSize: '0.75rem' }}>({row.dev})</span>
+                        {row.note} <span style={{ color: '#cbd5e1', fontSize: '0.75rem' }}>({row.dev})</span>
                       </td>
                       <td style={{ padding: '0.55rem', color: '#fde047', fontWeight: 700 }}>{row.fractionStr}</td>
-                      <td style={{ padding: '0.55rem' }}>{row.targetLengthCm.toFixed(1)} cm</td>
-                      <td style={{ padding: '0.55rem', fontWeight: 700 }}>{row.freqHz} Hz</td>
+                      <td style={{ padding: '0.55rem', color: '#f1f5f9' }}>{row.targetLengthCm.toFixed(1)} cm</td>
+                      <td style={{ padding: '0.55rem', fontWeight: 700, color: '#f8fafc' }}>{row.freqHz} Hz</td>
                       <td style={{ padding: '0.55rem', color: '#cbd5e1' }}>{row.animal} ({row.animalDev})</td>
                       <td style={{ padding: '0.55rem' }}>
                         {isCurrent ? (
                           <span style={{ color: '#4ade80', fontWeight: 800 }}>✅ ACTIVE MATCH (±{closestPreset.percentDev}%)</span>
                         ) : (
-                          <span style={{ color: '#64748b' }}>Verified</span>
+                          <span style={{ color: '#94a3b8' }}>Verified</span>
                         )}
                       </td>
                     </tr>
@@ -996,8 +996,8 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
 
           {/* Interactive Recitation Controller */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1.2rem' }}>
-            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 10, border: '1px solid rgba(56, 189, 248, 0.2)' }}>
-              <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: 6 }}>1. SELECT SYLLABLE QUANTUM:</div>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '0.85rem', borderRadius: 10, border: '1.5px solid rgba(56, 189, 248, 0.28)' }}>
+              <div style={{ fontSize: '0.8rem', color: '#cbd5e1', marginBottom: 6, fontWeight: 700 }}>1. SELECT SYLLABLE QUANTUM:</div>
               <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
                 <button
                   type="button"
@@ -1028,9 +1028,9 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
                       borderRadius: 6,
                       fontSize: '0.8rem',
                       fontWeight: 700,
-                      background: selectedSyllable === syl ? '#38bdf8' : 'rgba(30, 41, 59, 0.8)',
+                      background: selectedSyllable === syl ? '#38bdf8' : 'rgba(30, 41, 59, 0.85)',
                       color: selectedSyllable === syl ? '#090e17' : '#cbd5e1',
-                      border: 'none',
+                      border: '1px solid rgba(148, 163, 184, 0.25)',
                       cursor: 'pointer',
                     }}
                   >
@@ -1040,8 +1040,8 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
               </div>
             </div>
 
-            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 10, border: '1px solid rgba(56, 189, 248, 0.2)' }}>
-              <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: 6 }}>2. PITCH ACCENT REGISTER (SVARA):</div>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '0.85rem', borderRadius: 10, border: '1.5px solid rgba(56, 189, 248, 0.28)' }}>
+              <div style={{ fontSize: '0.8rem', color: '#cbd5e1', marginBottom: 6, fontWeight: 700 }}>2. PITCH ACCENT REGISTER (SVARA):</div>
               <div style={{ display: 'flex', gap: '0.4rem' }}>
                 <button
                   type="button"
@@ -1070,7 +1070,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
               </div>
             </div>
 
-            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 10, border: '1px solid rgba(56, 189, 248, 0.2)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '0.85rem', borderRadius: 10, border: '1.5px solid rgba(56, 189, 248, 0.28)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <button
                 type="button"
                 className="vl-btn vl-btn--cyber"
@@ -1084,30 +1084,30 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
           </div>
 
           {/* Oscilloscope & Spectrogram Canvas */}
-          <div style={{ background: '#090d16', border: '1px solid rgba(45, 212, 191, 0.3)', borderRadius: 12, padding: '1rem', marginBottom: '1.2rem' }}>
+          <div style={{ background: '#090d16', border: '1.5px solid rgba(45, 212, 191, 0.35)', borderRadius: 12, padding: '1rem', marginBottom: '1.2rem' }}>
             <canvas ref={voiceCanvasRef} width={800} height={220} style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
 
           {/* Quantitative Diagnostic Metrics */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.8rem', marginBottom: '1rem' }}>
-            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.8rem', borderRadius: 8, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
-              <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>MEASURED DURATION</div>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '0.8rem', borderRadius: 8, border: '1.5px solid rgba(56, 189, 248, 0.35)' }}>
+              <div style={{ fontSize: '0.75rem', color: '#cbd5e1', fontWeight: 700 }}>MEASURED DURATION</div>
               <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#38bdf8' }}>{measuredDurationMs} ms</div>
               <div style={{ fontSize: '0.75rem', color: '#4ade80' }}>
                 {syllableCategory === 'laghu' ? '150–250 ms target (Lagu verified)' : '300–500 ms target (Guru verified)'}
               </div>
             </div>
 
-            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.8rem', borderRadius: 8, border: '1px solid rgba(244, 63, 94, 0.3)' }}>
-              <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>CHEST RESONANCE BAND</div>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '0.8rem', borderRadius: 8, border: '1.5px solid rgba(244, 63, 94, 0.35)' }}>
+              <div style={{ fontSize: '0.75rem', color: '#cbd5e1', fontWeight: 700 }}>CHEST RESONANCE BAND</div>
               <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#f43f5e' }}>{measuredChestResonanceHz} Hz</div>
               <div style={{ fontSize: '0.75rem', color: '#cbd5e1' }}>
                 Elevated low-mid amplitude in heavy conjuncts (\(kṣa, tra, jña\))
               </div>
             </div>
 
-            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.8rem', borderRadius: 8, border: '1px solid rgba(253, 224, 71, 0.3)' }}>
-              <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>TIME QUANTISATION RATIO</div>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '0.8rem', borderRadius: 8, border: '1.5px solid rgba(253, 224, 71, 0.35)' }}>
+              <div style={{ fontSize: '0.75rem', color: '#cbd5e1', fontWeight: 700 }}>TIME QUANTISATION RATIO</div>
               <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fde047' }}>1 : 2.05</div>
               <div style={{ fontSize: '0.75rem', color: '#4ade80' }}>Strict 1:2 Chandas metrical quantization confirmed</div>
             </div>
@@ -1219,40 +1219,40 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
 
           {/* Step-by-Step Mathematical Verification Matrix */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.8rem', marginBottom: '1.2rem' }}>
-            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 8, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '0.85rem', borderRadius: 8, border: '1.5px solid rgba(56, 189, 248, 0.35)' }}>
               <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.85rem' }}>STEP 1: n = 1</div>
               <div style={{ color: '#fde047', fontSize: '1.1rem', fontWeight: 800 }}>1 = 1²</div>
-              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Unit seed square area = 1</div>
+              <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>Unit seed square area = 1</div>
             </div>
 
-            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 8, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '0.85rem', borderRadius: 8, border: '1.5px solid rgba(56, 189, 248, 0.35)' }}>
               <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.85rem' }}>STEP 2: n = 2</div>
               <div style={{ color: '#fde047', fontSize: '1.1rem', fontWeight: 800 }}>1 + 3 = 4 = 2²</div>
-              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>L-gnomon of 3 bricks expands area to 4</div>
+              <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>L-gnomon of 3 bricks expands area to 4</div>
             </div>
 
-            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 8, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '0.85rem', borderRadius: 8, border: '1.5px solid rgba(56, 189, 248, 0.35)' }}>
               <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.85rem' }}>STEP 3: n = 3</div>
               <div style={{ color: '#fde047', fontSize: '1.1rem', fontWeight: 800 }}>1 + 3 + 5 = 9 = 3²</div>
-              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>L-gnomon of 5 bricks expands area to 9</div>
+              <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>L-gnomon of 5 bricks expands area to 9</div>
             </div>
 
-            <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.85rem', borderRadius: 8, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '0.85rem', borderRadius: 8, border: '1.5px solid rgba(56, 189, 248, 0.35)' }}>
               <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.85rem' }}>STEP 4: n = 4</div>
               <div style={{ color: '#fde047', fontSize: '1.1rem', fontWeight: 800 }}>1 + 3 + 5 + 7 = 16 = 4²</div>
-              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>L-gnomon of 7 bricks expands area to 16</div>
+              <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>L-gnomon of 7 bricks expands area to 16</div>
             </div>
           </div>
 
           {/* Even Progression (Multiples of 4) */}
-          <div style={{ background: 'rgba(15, 23, 42, 0.6)', padding: '1rem', borderRadius: 10, border: '1px solid rgba(148, 163, 184, 0.2)', marginBottom: '1rem' }}>
+          <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '1rem', borderRadius: 10, border: '1.5px solid rgba(168, 85, 247, 0.35)', marginBottom: '1rem' }}>
             <div style={{ color: '#c084fc', fontWeight: 800, fontSize: '0.9rem', marginBottom: 4 }}>
               THE PAIRED EVEN PROGRESSION (CHAMAKAM 18):
             </div>
             <div style={{ color: '#f8fafc', fontSize: '0.88rem', fontFamily: 'JetBrains Mono, monospace' }}>
               4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48 (चतस्रश्च मेऽष्टौ च मे...)
             </div>
-            <p style={{ margin: '0.4rem 0 0', fontSize: '0.8rem', color: '#94a3b8' }}>
+            <p style={{ margin: '0.4rem 0 0', fontSize: '0.8rem', color: '#cbd5e1' }}>
               Maps modular quad geometry, interlocking perimeter perimeter bricks in 4-fold cardinal symmetries.
             </p>
           </div>
@@ -1276,7 +1276,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginBottom: '1.2rem' }}>
             {/* Box 1: Exp 1 Sonometer Key */}
-            <div style={{ background: 'rgba(15, 23, 42, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1.5px solid rgba(56, 189, 248, 0.35)' }}>
               <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.95rem', marginBottom: 8 }}>
                 EXPERIMENT 1: SONOMETER PROTOCOL
               </div>
@@ -1290,7 +1290,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
             </div>
 
             {/* Box 2: Exp 2 Chandas Key */}
-            <div style={{ background: 'rgba(15, 23, 42, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(244, 63, 94, 0.3)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1.5px solid rgba(244, 63, 94, 0.35)' }}>
               <div style={{ color: '#f43f5e', fontWeight: 800, fontSize: '0.95rem', marginBottom: 8 }}>
                 EXPERIMENT 2: VOICE MECHANICS (CHANDAS)
               </div>
@@ -1303,7 +1303,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
             </div>
 
             {/* Box 3: Exp 3 Sandhi Key */}
-            <div style={{ background: 'rgba(15, 23, 42, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(251, 146, 60, 0.3)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1.5px solid rgba(251, 146, 60, 0.35)' }}>
               <div style={{ color: '#fb923c', fontWeight: 800, fontSize: '0.95rem', marginBottom: 8 }}>
                 EXPERIMENT 3: SANDHI WAVE SUMMATION
               </div>
@@ -1316,7 +1316,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
             </div>
 
             {/* Box 4: Chamakam Challenge Key */}
-            <div style={{ background: 'rgba(15, 23, 42, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(245, 158, 11, 0.3)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1.5px solid rgba(245, 158, 11, 0.35)' }}>
               <div style={{ color: '#f59e0b', fontWeight: 800, fontSize: '0.95rem', marginBottom: 8 }}>
                 CORE DATA CHALLENGE: CHAMAKAM CODE
               </div>
@@ -1340,7 +1340,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
           <h4 className="vl-panel-title">The Accidental Symphony &amp; The Language of Matter</h4>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', fontSize: '0.88rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            <div style={{ background: 'rgba(15, 23, 42, 0.7)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(168, 85, 247, 0.25)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1.5px solid rgba(168, 85, 247, 0.35)' }}>
               <h5 style={{ color: '#c084fc', margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 800 }}>
                 PART 1: THE ACCIDENTAL SYMPHONY · The Language of Matter
               </h5>
@@ -1352,7 +1352,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15, 23, 42, 0.7)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(56, 189, 248, 0.25)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1.5px solid rgba(56, 189, 248, 0.35)' }}>
               <h5 style={{ color: '#38bdf8', margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 800 }}>
                 PART 2: THE PHYSICS OF PROSE · Acoustic Data vs. Rote Memorization
               </h5>
@@ -1364,7 +1364,7 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15, 23, 42, 0.7)', padding: '1.1rem', borderRadius: 12, border: '1px solid rgba(245, 158, 11, 0.25)' }}>
+            <div style={{ background: 'rgba(24, 34, 60, 0.85)', padding: '1.1rem', borderRadius: 12, border: '1.5px solid rgba(245, 158, 11, 0.35)' }}>
               <h5 style={{ color: '#fde047', margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 800 }}>
                 PART 3: THE UNIVERSAL CORE · The Chamakam Code &amp; Nāda Brahma
               </h5>

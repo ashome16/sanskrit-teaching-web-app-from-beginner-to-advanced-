@@ -709,7 +709,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
       />
 
       {/* 2. Conscious Cosmos Curated Documentary Video Player Console */}
-      <div className="vl-panel" style={{ background: 'linear-gradient(135deg, rgba(15,23,42,0.98), rgba(30,41,59,0.9))', border: '1.5px solid rgba(245,158,11,0.4)', borderRadius: '16px', padding: '1.25rem', marginBottom: '1.5rem' }}>
+      <div className="vl-panel" style={{ background: 'linear-gradient(135deg, rgba(24,34,60,0.95), rgba(15,23,42,0.95))', border: '1.5px solid rgba(245,158,11,0.4)', borderRadius: '16px', padding: '1.25rem', marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.72rem', fontFamily: 'JetBrains Mono, monospace', color: '#f59e0b', fontWeight: 800 }}>
@@ -760,7 +760,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
 
         {/* Chapter Quick-Jump Buttons */}
         <div style={{ marginTop: '1rem' }}>
-          <div style={{ fontSize: '0.75rem', fontFamily: 'JetBrains Mono, monospace', color: '#94a3b8', marginBottom: '0.4rem', fontWeight: 700 }}>
+          <div style={{ fontSize: '0.75rem', fontFamily: 'JetBrains Mono, monospace', color: '#cbd5e1', marginBottom: '0.4rem', fontWeight: 700 }}>
             ⚡ JUMP TO DOCUMENTARY CHAPTERS:
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
@@ -772,7 +772,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                 style={{
                   fontSize: '0.72rem',
                   padding: '0.35rem 0.7rem',
-                  background: videoTimestamp === ch.ts ? '#f59e0b' : 'rgba(15,23,42,0.8)',
+                  background: videoTimestamp === ch.ts ? '#f59e0b' : 'rgba(30,41,59,0.85)',
                   color: videoTimestamp === ch.ts ? '#090e17' : '#fde047',
                   borderColor: 'rgba(245,158,11,0.4)',
                 }}
@@ -807,7 +807,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
       </div>
 
       {/* 3. Interactive Living Geometry Simulation Bench */}
-      <div className="vl-panel" style={{ background: 'rgba(15,23,42,0.92)', border: '1px solid rgba(56,189,248,0.3)', borderRadius: '16px', padding: '1.25rem', marginBottom: '1.5rem' }}>
+      <div className="vl-panel" style={{ background: 'linear-gradient(135deg, rgba(24,34,60,0.95), rgba(15,23,42,0.95))', border: '1.5px solid rgba(56,189,248,0.35)', borderRadius: '16px', padding: '1.25rem', marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.72rem', fontFamily: 'JetBrains Mono, monospace', color: '#38bdf8', fontWeight: 800 }}>
@@ -819,7 +819,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
           </div>
 
           {/* Universal Cosmic Action Toggles */}
-          <div style={{ display: 'flex', gap: '0.4rem', background: 'rgba(2,6,23,0.8)', padding: '0.3rem', borderRadius: '10px', border: '1px solid rgba(148,163,184,0.2)' }}>
+          <div style={{ display: 'flex', gap: '0.4rem', background: 'rgba(15,23,42,0.85)', padding: '0.3rem', borderRadius: '10px', border: '1px solid rgba(148,163,184,0.3)' }}>
             <button
               type="button"
               className={`vl-btn vl-btn--cyber${cosmicAction === 'rotation' ? ' is-active' : ''}`}
@@ -866,16 +866,16 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.4rem',
-                  background: isSelected ? 'linear-gradient(135deg, #0284c7, #38bdf8)' : 'rgba(15,23,42,0.7)',
+                  background: isSelected ? 'linear-gradient(135deg, #0284c7, #38bdf8)' : 'rgba(30,41,59,0.85)',
                   color: isSelected ? '#030712' : '#f1f5f9',
-                  borderColor: isSelected ? '#38bdf8' : 'rgba(148,163,184,0.25)',
+                  borderColor: isSelected ? '#38bdf8' : 'rgba(148,163,184,0.3)',
                   fontWeight: isSelected ? 800 : 600,
                 }}
                 onClick={() => handleSelectShape(k)}
               >
                 <span>{sh.icon}</span>
                 <span>{sh.name}</span>
-                <span lang="sa" style={{ fontSize: '0.72rem', opacity: 0.8 }}>({sh.dev})</span>
+                <span lang="sa" style={{ fontSize: '0.72rem', opacity: 0.85 }}>({sh.dev})</span>
               </button>
             );
           })}
@@ -884,16 +884,16 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
         {/* Sandbox Canvas & Meta Readout Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1rem', alignItems: 'stretch' }}>
           {/* Canvas Box */}
-          <div style={{ background: '#030712', borderRadius: '12px', border: '1px solid rgba(56,189,248,0.3)', padding: '0.75rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ background: '#090f1d', borderRadius: '12px', border: '1.5px solid rgba(56,189,248,0.32)', padding: '0.75rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <canvas
               ref={canvasRef}
               width={380}
               height={260}
-              style={{ width: '100%', maxWidth: '380px', height: '260px', background: 'radial-gradient(circle at center, #0b1329 0%, #030712 100%)', borderRadius: '8px' }}
+              style={{ width: '100%', maxWidth: '380px', height: '260px', background: 'radial-gradient(circle at center, #18223c 0%, #090f1d 100%)', borderRadius: '8px' }}
             />
             {/* Live Sliders */}
             <div style={{ width: '100%', marginTop: '0.75rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8', fontFamily: 'JetBrains Mono, monospace' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#cbd5e1', fontFamily: 'JetBrains Mono, monospace' }}>
                 <span>Scale / Magnitude:</span>
                 <span style={{ color: '#38bdf8', fontWeight: 800 }}>{paramA}%</span>
               </div>
@@ -906,7 +906,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                 style={{ width: '100%', accentColor: '#38bdf8' }}
               />
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8', fontFamily: 'JetBrains Mono, monospace' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#cbd5e1', fontFamily: 'JetBrains Mono, monospace' }}>
                 <span>Curvature / Dynamics:</span>
                 <span style={{ color: '#f59e0b', fontWeight: 800 }}>{paramB}%</span>
               </div>
@@ -922,7 +922,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
           </div>
 
           {/* Archetype Meta Card */}
-          <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '12px', border: '1px solid rgba(148,163,184,0.25)', padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div style={{ background: 'rgba(30,41,59,0.85)', borderRadius: '12px', border: '1.5px solid rgba(148,163,184,0.3)', padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
                 <span style={{ fontSize: '1.4rem' }}>{currentMeta.icon}</span>
@@ -930,14 +930,14 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                   <h4 style={{ margin: 0, fontSize: '1.15rem', color: '#f8fafc', fontWeight: 800 }}>
                     {currentMeta.name} · <span lang="sa" style={{ color: '#fde047' }}>{currentMeta.dev}</span>
                   </h4>
-                  <div style={{ fontSize: '0.78rem', color: '#94a3b8', fontStyle: 'italic' }}>
+                  <div style={{ fontSize: '0.78rem', color: '#cbd5e1', fontStyle: 'italic' }}>
                     IAST: {currentMeta.iast}
                   </div>
                 </div>
               </div>
 
               <div style={{ marginTop: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                <div style={{ background: 'rgba(15,23,42,0.8)', padding: '0.6rem', borderRadius: '8px', borderLeft: '3px solid #38bdf8' }}>
+                <div style={{ background: 'rgba(24,34,60,0.85)', padding: '0.6rem', borderRadius: '8px', borderLeft: '3px solid #38bdf8' }}>
                   <div style={{ fontSize: '0.7rem', color: '#38bdf8', fontFamily: 'JetBrains Mono, monospace', fontWeight: 800 }}>
                     SANSKRIT ROOT ACTION (धातुः)
                   </div>
@@ -946,7 +946,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                   </div>
                 </div>
 
-                <div style={{ background: 'rgba(15,23,42,0.8)', padding: '0.6rem', borderRadius: '8px', borderLeft: '3px solid #f59e0b' }}>
+                <div style={{ background: 'rgba(24,34,60,0.85)', padding: '0.6rem', borderRadius: '8px', borderLeft: '3px solid #f59e0b' }}>
                   <div style={{ fontSize: '0.7rem', color: '#f59e0b', fontFamily: 'JetBrains Mono, monospace', fontWeight: 800 }}>
                     PHYSICAL COSMIC EVENT
                   </div>
@@ -961,7 +961,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
               </div>
             </div>
 
-            <div style={{ marginTop: '1rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(148,163,184,0.2)', fontSize: '0.75rem', color: '#94a3b8', fontFamily: 'JetBrains Mono, monospace' }}>
+            <div style={{ marginTop: '1rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(148,163,184,0.2)', fontSize: '0.75rem', color: '#cbd5e1', fontFamily: 'JetBrains Mono, monospace' }}>
               STATUS: Active in Reality Sandbox // Consciousness in Motion
             </div>
           </div>
@@ -969,7 +969,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
       </div>
 
       {/* 4. Complete Curated Monograph: "The Living Geometry of the Gurukul" */}
-      <div className="vl-panel" style={{ background: 'rgba(15,23,42,0.95)', border: '1px solid rgba(148,163,184,0.25)', borderRadius: '16px', padding: '1.75rem', marginBottom: '1.5rem' }}>
+      <div className="vl-panel" style={{ background: 'linear-gradient(135deg, rgba(24,34,60,0.95), rgba(15,23,42,0.95))', border: '1.5px solid rgba(148,163,184,0.3)', borderRadius: '16px', padding: '1.75rem', marginBottom: '1.5rem' }}>
         <div style={{ borderBottom: '1px solid rgba(148,163,184,0.2)', paddingBottom: '1rem', marginBottom: '1.25rem' }}>
           <span style={{ fontSize: '0.75rem', fontFamily: 'JetBrains Mono, monospace', color: '#f59e0b', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
             CURATED TREATISE // EDNETLEARN.IN &amp; CONSCIOUS COSMOS
@@ -996,7 +996,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
         </div>
 
         {/* Section: Language as a Scientific Tool */}
-        <div style={{ marginBottom: '2rem', background: 'rgba(30,41,59,0.5)', padding: '1.25rem', borderRadius: '12px', border: '1px solid rgba(56,189,248,0.2)' }}>
+        <div style={{ marginBottom: '2rem', background: 'rgba(30,41,59,0.7)', padding: '1.25rem', borderRadius: '12px', border: '1.5px solid rgba(56,189,248,0.25)' }}>
           <h3 style={{ fontSize: '1.2rem', color: '#38bdf8', fontWeight: 800, margin: '0 0 0.75rem' }}>
             Language as a Scientific Tool
           </h3>
@@ -1005,7 +1005,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
-            <div style={{ background: 'rgba(15,23,42,0.8)', padding: '1rem', borderRadius: '10px', border: '1px solid rgba(6,182,212,0.3)' }}>
+            <div style={{ background: 'rgba(24,34,60,0.85)', padding: '1rem', borderRadius: '10px', border: '1px solid rgba(6,182,212,0.3)' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#06b6d4', fontSize: '1rem', fontWeight: 800 }}>
                 1. Vṛtta (वृत्त) – The Circle
               </h4>
@@ -1014,7 +1014,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15,23,42,0.8)', padding: '1rem', borderRadius: '10px', border: '1px solid rgba(245,158,11,0.3)' }}>
+            <div style={{ background: 'rgba(24,34,60,0.85)', padding: '1rem', borderRadius: '10px', border: '1px solid rgba(245,158,11,0.3)' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#f59e0b', fontSize: '1rem', fontWeight: 800 }}>
                 2. Trikoṇa (त्रिकोण) – The Triangle
               </h4>
@@ -1023,7 +1023,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15,23,42,0.8)', padding: '1rem', borderRadius: '10px', border: '1px solid rgba(234,179,8,0.3)' }}>
+            <div style={{ background: 'rgba(24,34,60,0.85)', padding: '1rem', borderRadius: '10px', border: '1px solid rgba(234,179,8,0.3)' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#fde047', fontSize: '1rem', fontWeight: 800 }}>
                 3. Ghana (घन) – The Cube or Solid
               </h4>
@@ -1034,8 +1034,8 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
           </div>
 
           {/* ASCII / Visual Flow Representation */}
-          <div style={{ background: '#020617', padding: '0.85rem 1.25rem', borderRadius: '8px', border: '1px solid rgba(148,163,184,0.2)', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem', color: '#fde047', overflowX: 'auto' }}>
-            <div style={{ color: '#94a3b8', marginBottom: '0.35rem' }}>// THE ROOT GENERATION PROCESS:</div>
+          <div style={{ background: '#090f1d', padding: '0.85rem 1.25rem', borderRadius: '8px', border: '1px solid rgba(148,163,184,0.28)', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem', color: '#fde047', overflowX: 'auto' }}>
+            <div style={{ color: '#cbd5e1', marginBottom: '0.35rem' }}>// THE ROOT GENERATION PROCESS:</div>
             <div>[ PHYSICAL ACTION ]                     [ GEOMETRIC FORM ]</div>
             <div style={{ color: '#38bdf8' }}>Vṛt (Continuous Rolling)        ───&gt;   Vṛtta (Circle)</div>
             <div style={{ color: '#f59e0b' }}>Koṇa (Three-Way Bending)         ───&gt;   Trikoṇa (Triangle)</div>
@@ -1055,20 +1055,20 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             Because it focuses on the underlying forces that shape reality, Rekhā Gaṇita serves as the ultimate bridge between three seemingly distinct realms:
           </p>
 
-          <div style={{ marginTop: '1rem', background: 'rgba(2,6,23,0.85)', borderRadius: '10px', border: '1px solid rgba(148,163,184,0.2)', overflowX: 'auto' }}>
+          <div style={{ marginTop: '1rem', background: 'rgba(15,23,42,0.85)', borderRadius: '10px', border: '1.5px solid rgba(148,163,184,0.28)', overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.86rem', textAlign: 'left' }}>
               <thead>
-                <tr style={{ background: 'rgba(30,41,59,0.9)', borderBottom: '1px solid rgba(148,163,184,0.2)' }}>
+                <tr style={{ background: 'rgba(30,41,59,0.95)', borderBottom: '1.5px solid rgba(148,163,184,0.28)' }}>
                   <th style={{ padding: '0.75rem 1rem', color: '#38bdf8', fontFamily: 'JetBrains Mono, monospace', width: '30%' }}>DIMENSION</th>
                   <th style={{ padding: '0.75rem 1rem', color: '#f59e0b', fontFamily: 'JetBrains Mono, monospace' }}>REALIZATION OF REKHĀ GAṆITA</th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ borderBottom: '1px solid rgba(148,163,184,0.1)' }}>
+                <tr style={{ borderBottom: '1px solid rgba(148,163,184,0.15)' }}>
                   <td style={{ padding: '0.75rem 1rem', color: '#60a5fa', fontWeight: 700 }}>Modern Design Engineering</td>
                   <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>It provides the predictive mathematics, structural optimization, and dynamic load-bearing calculations required to build stable technology.</td>
                 </tr>
-                <tr style={{ borderBottom: '1px solid rgba(148,163,184,0.1)' }}>
+                <tr style={{ borderBottom: '1px solid rgba(148,163,184,0.15)' }}>
                   <td style={{ padding: '0.75rem 1rem', color: '#34d399', fontWeight: 700 }}>Physical Sciences</td>
                   <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>It maps the phase changes of matter (Ghana), the trajectories of orbits (Vṛtta), and the vectors of physical forces.</td>
                 </tr>
@@ -1092,7 +1092,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
             {/* Rekha */}
-            <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '10px', padding: '1rem', border: '1px solid rgba(56,189,248,0.2)' }}>
+            <div style={{ background: 'rgba(30,41,59,0.85)', borderRadius: '10px', padding: '1rem', border: '1.5px solid rgba(56,189,248,0.28)' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#38bdf8', fontSize: '1.02rem', fontWeight: 800 }}>
                 📏 Rekhā Gaṇita (रेखागणित) – The Calculation of Lines
               </h4>
@@ -1102,7 +1102,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             </div>
 
             {/* Trikona */}
-            <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '10px', padding: '1rem', border: '1px solid rgba(245,158,11,0.2)' }}>
+            <div style={{ background: 'rgba(30,41,59,0.85)', borderRadius: '10px', padding: '1rem', border: '1.5px solid rgba(245,158,11,0.28)' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#f59e0b', fontSize: '1.02rem', fontWeight: 800 }}>
                 📐 Trikoṇa &amp; Trikoṇamiti – The Angle &amp; Measure
               </h4>
@@ -1115,7 +1115,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             </div>
 
             {/* Vritta */}
-            <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '10px', padding: '1rem', border: '1px solid rgba(6,182,212,0.2)' }}>
+            <div style={{ background: 'rgba(30,41,59,0.85)', borderRadius: '10px', padding: '1rem', border: '1.5px solid rgba(6,182,212,0.28)' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#06b6d4', fontSize: '1.02rem', fontWeight: 800 }}>
                 ⭕ Vṛtta (वृत्त) &amp; Vartula (वर्तुल) – The Circle
               </h4>
@@ -1125,7 +1125,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             </div>
 
             {/* Gola */}
-            <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '10px', padding: '1rem', border: '1px solid rgba(59,130,246,0.2)' }}>
+            <div style={{ background: 'rgba(30,41,59,0.85)', borderRadius: '10px', padding: '1rem', border: '1.5px solid rgba(59,130,246,0.28)' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#60a5fa', fontSize: '1.02rem', fontWeight: 800 }}>
                 🌐 Gola (गोल) &amp; Bhūgola (भूगोल) – The Sphere &amp; Planet
               </h4>
@@ -1135,7 +1135,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             </div>
 
             {/* Brahmanda */}
-            <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '10px', padding: '1rem', border: '1px solid rgba(168,85,247,0.2)' }}>
+            <div style={{ background: 'rgba(30,41,59,0.85)', borderRadius: '10px', padding: '1rem', border: '1.5px solid rgba(168,85,247,0.28)' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#c084fc', fontSize: '1.02rem', fontWeight: 800 }}>
                 🥚 Brahmāṇḍa (ब्रह्माण्ड) – The Cosmic Oval
               </h4>
@@ -1145,7 +1145,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             </div>
 
             {/* Shanku */}
-            <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '10px', padding: '1rem', border: '1px solid rgba(20,184,166,0.2)' }}>
+            <div style={{ background: 'rgba(30,41,59,0.85)', borderRadius: '10px', padding: '1rem', border: '1.5px solid rgba(20,184,166,0.28)' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#2dd4bf', fontSize: '1.02rem', fontWeight: 800 }}>
                 🐚 Śaṅku (शङ्कु) – The Cone Borrowed from Nature
               </h4>
@@ -1155,7 +1155,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             </div>
 
             {/* Ghana */}
-            <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '10px', padding: '1rem', border: '1px solid rgba(234,179,8,0.2)' }}>
+            <div style={{ background: 'rgba(30,41,59,0.85)', borderRadius: '10px', padding: '1rem', border: '1.5px solid rgba(234,179,8,0.28)' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#fde047', fontSize: '1.02rem', fontWeight: 800 }}>
                 🧊 Ghana (घन) – The Cube of Solidification
               </h4>
@@ -1166,10 +1166,10 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
           </div>
 
           {/* Root Action Matrix Table */}
-          <div style={{ marginTop: '1.5rem', background: 'rgba(2,6,23,0.8)', borderRadius: '10px', border: '1px solid rgba(148,163,184,0.2)', overflowX: 'auto' }}>
+          <div style={{ marginTop: '1.5rem', background: 'rgba(15,23,42,0.85)', borderRadius: '10px', border: '1.5px solid rgba(148,163,184,0.28)', overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.86rem', textAlign: 'left' }}>
               <thead>
-                <tr style={{ background: 'rgba(30,41,59,0.9)', borderBottom: '1px solid rgba(148,163,184,0.2)' }}>
+                <tr style={{ background: 'rgba(30,41,59,0.95)', borderBottom: '1.5px solid rgba(148,163,184,0.28)' }}>
                   <th style={{ padding: '0.75rem 1rem', color: '#38bdf8', fontFamily: 'JetBrains Mono, monospace' }}>VERBAL ROOT / NATURAL FORM</th>
                   <th style={{ padding: '0.75rem 1rem', color: '#f59e0b', fontFamily: 'JetBrains Mono, monospace' }}>GEOMETRIC &amp; SCIENTIFIC REALITY</th>
                 </tr>
@@ -1213,7 +1213,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
-            <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '10px', padding: '1rem', border: '1px solid rgba(56,189,248,0.3)' }}>
+            <div style={{ background: 'rgba(30,41,59,0.88)', borderRadius: '10px', padding: '1rem', border: '1.5px solid rgba(56,189,248,0.32)' }}>
               <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#38bdf8', marginBottom: '0.35rem' }}>
                 🔄 1. The Activity of Rotation
               </div>
@@ -1222,7 +1222,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
               </p>
             </div>
 
-            <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '10px', padding: '1rem', border: '1px solid rgba(249,115,22,0.3)' }}>
+            <div style={{ background: 'rgba(30,41,59,0.88)', borderRadius: '10px', padding: '1rem', border: '1.5px solid rgba(249,115,22,0.35)' }}>
               <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#fb923c', marginBottom: '0.35rem' }}>
                 ↔️ 2. The Activity of Extension
               </div>
@@ -1242,7 +1242,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             In the Gurukul model, the ultimate goal is to understand the universal principle first, leaving the practical application of that knowledge as a secondary step. Once the universal geometry is understood, it is allowed to breathe through everyday life, science, and culture.
           </p>
 
-          <div style={{ background: 'rgba(30,41,59,0.7)', borderRadius: '10px', padding: '1.25rem', border: '1px solid rgba(168,85,247,0.3)', margin: '1rem 0' }}>
+          <div style={{ background: 'rgba(30,41,59,0.88)', borderRadius: '10px', padding: '1.25rem', border: '1.5px solid rgba(168,85,247,0.35)', margin: '1rem 0' }}>
             <h4 style={{ margin: '0 0 0.4rem', color: '#c084fc', fontSize: '1.05rem', fontWeight: 800 }}>
               Geometry in Sacred Art and Performance
             </h4>
@@ -1251,7 +1251,7 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             </p>
           </div>
 
-          <div style={{ background: 'linear-gradient(135deg, rgba(245,158,11,0.1), rgba(56,189,248,0.1))', borderRadius: '10px', padding: '1.25rem', border: '1px solid rgba(245,158,11,0.3)' }}>
+          <div style={{ background: 'linear-gradient(135deg, rgba(245,158,11,0.15), rgba(56,189,248,0.15))', borderRadius: '10px', padding: '1.25rem', border: '1.5px solid rgba(245,158,11,0.35)' }}>
             <h4 style={{ margin: '0 0 0.4rem', color: '#fde047', fontSize: '1.05rem', fontWeight: 800 }}>
               The Ultimate Synthesis
             </h4>
