@@ -1,3 +1,4 @@
+import { MatrixWalkthrough } from './MatrixWalkthrough';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm } from './common';
 import { DialKnob, HudFrame, LedButton } from './controls';
@@ -1130,6 +1131,8 @@ const AsatoMa: React.FC = () => {
           ))}
         </div>
       </div>
+
+      <MatrixWalkthrough />
 
       <div className="vl-sandbox" data-testid="asato-sandbox">
         <section className="vl-levels" aria-label="Levels">
