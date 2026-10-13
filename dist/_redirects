@@ -1,0 +1,10 @@
+/home / 301
+/index / 301
+/vignana /vignana-lab 301
+/vijnana /vignana-lab 301
+/vijnana-lab /vignana-lab 301
+
+/sanskrit-teaching-web-app-from-beginner-to-advanced-/* /:splat 301
+
+# SPA fallback rule for any client-side route
+/* /index.html 200
