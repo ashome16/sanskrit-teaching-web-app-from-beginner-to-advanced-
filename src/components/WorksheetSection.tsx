@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { Suspense, lazy, useEffect, useMemo, useState } from 'react';
+const WorkbookPreviews = lazy(() => import('./WorkbookPreviews'));
 import { WORKSHEETS, type Worksheet } from '../data/worksheetData';
 import { useAuthStore } from '../store/authStore';
 import {
@@ -256,6 +257,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
           )}
         </div>
       </header>
+      <Suspense fallback={null}><WorkbookPreviews /></Suspense>
 
       {/* Gallery View */}
       {!activeWorksheet ? (

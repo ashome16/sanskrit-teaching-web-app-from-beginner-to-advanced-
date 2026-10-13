@@ -7,6 +7,7 @@ import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
 import { NCERT_TEXTBOOKS, getTextbookMetaForLesson } from '../utils/textbookCovers';
 import BodhiAvatar from './BodhiAvatar';
 import HomeLabBanner from './HomeLabBanner';
+const WorkbookPreviews = lazy(() => import('./WorkbookPreviews'));
 import { getSearchShortcut } from '../utils/platformShortcut';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
@@ -786,6 +787,7 @@ const HomePage: React.FC<HomePageProps> = ({
             </button>
           )}
         </div>
+        <Suspense fallback={null}><WorkbookPreviews /></Suspense>
 
         {/* Featured Complete Course Banner: संस्कृत-चिन्तनम् */}
         {onOpenCourse && (
