@@ -771,7 +771,7 @@ const HomePage: React.FC<HomePageProps> = ({
             download
             style={{ background: 'rgba(234, 88, 12, 0.08)', borderColor: 'rgba(234, 88, 12, 0.4)', color: '#c2410c', textDecoration: 'none' }}
             data-testid="home-festival-workbook-download"
-            title="Free 22-page printable PDF: Dīpāvalī, Gaṇeśa Caturthī, Navarātri & Vijayadaśamī, Oṇam, Makara Saṅkrānti, Holi, Rakṣābandhana, the six seasons, quiz, greetings and answer key"
+            title="Free 23-page printable PDF: Dīpāvalī, Gaṇeśa Caturthī, Navarātri & Vijayadaśamī, Oṇam, Makara Saṅkrānti, Holi, Rakṣābandhana, the six seasons, the twelve months, quiz, greetings and answer key"
           >
             🪔 Free Festival Workbook (PDF)
           </a>
