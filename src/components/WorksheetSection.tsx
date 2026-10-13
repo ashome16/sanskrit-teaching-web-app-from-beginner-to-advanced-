@@ -236,6 +236,9 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
             <a className="worksheet-toolbar-btn" href="/downloads/sanskrit-basic-workbook.pdf" download data-testid="worksheet-workbook-download" style={{ textDecoration: 'none' }}>
               📥 Free Beginner Workbook (PDF)
             </a>
+            <a className="worksheet-toolbar-btn" href="/downloads/sanskrit-festival-workbook.pdf" download data-testid="worksheet-festival-workbook-download" style={{ textDecoration: 'none' }}>
+              🪔 Free Festival Workbook (PDF)
+            </a>
           {onOpenReader && (
             <button type="button" className="worksheet-toolbar-btn" onClick={onOpenReader}>
               📖 Deepakam Reader

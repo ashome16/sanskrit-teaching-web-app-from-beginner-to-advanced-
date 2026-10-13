@@ -1909,6 +1909,17 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     relatedView: 'worksheets',
   },
   {
+    id: 'qa-festival-workbook',
+    category: 'pronunciation',
+    question: 'Is there a Sanskrit workbook about Indian festivals and seasons?',
+    sanskritQuestion: 'किम् उत्सवानां ऋतूनां च संस्कृत-अभ्यास-पुस्तिका अस्ति?',
+    shortAnswer: 'Yes. Tap “🪔 Free Festival Workbook (PDF)” on the homepage or the Worksheets page to download a free 22-page A4 workbook.',
+    detailedAnswer: 'The free festival workbook (/downloads/sanskrit-festival-workbook.pdf) has two pages for each festival: a short intro with 8–10 Sanskrit words, then a śloka with its meaning and small exercises. Dīpāvalī: दीपः, प्रकाशः, रङ्गवल्ली, लक्ष्मीपूजा and शुभं करोति कल्याणम्…; Gaṇeśa Caturthī: मोदकः, मूषकः, एकदन्तः and वक्रतुण्ड महाकाय…; Navarātri and Vijayadaśamī: शमीवृक्षः, आयुधपूजा, विद्यारम्भः and या देवी सर्वभूतेषु…; Oṇam: महाबलिः, वामनः, पुष्परङ्गवल्ली (pookkalam) and सर्वे भवन्तु सुखिनः…; Makara Saṅkrānti: उत्तरायणम्, तिलगुडम्, पतङ्गः and the Sūrya-namaskāra names; Holi: होलिका, प्रह्लादः and असतो मा सद्गमय…; Rakṣābandhana: रक्षा, सूत्रम् and येन बद्धो बली राजा…. A seasons section covers the six ṛtus with their lunar months: वसन्तः (Caitra–Vaiśākha), ग्रीष्मः (Jyeṣṭha–Āṣāḍha), वर्षाः (Śrāvaṇa–Bhādrapada), शरत् (Āśvina–Kārttika), हेमन्तः (Mārgaśīrṣa–Pauṣa) and शिशिरः (Māgha–Phālguna), with festivals and nature words. It ends with a mixed quiz, festival greetings such as दीपावलीशुभाशयाः and an answer key.',
+    audioDevanagari: 'दीपावलीशुभाशयाः',
+    tip: 'Print one festival at a time and learn its śloka line by line.',
+    relatedView: 'worksheets',
+  },
+  {
     id: 'qa-lab-asato-ma',
     category: 'philosophy',
     question: 'What does “asato mā sad gamaya” mean, and what is The Veil of Māyā lab?',

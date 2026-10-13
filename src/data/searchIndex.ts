@@ -4817,6 +4817,21 @@ export const SEARCH_INDEX: SearchItem[] = [
     },
   },
   {
+    id: 'tool-festival-workbook',
+    title: 'Free Sanskrit Festival Workbook (PDF) · संस्कृत-उत्सव-अभ्यास-पुस्तिका',
+    subtitle: '22 printable A4 pages · festivals, ślokas, seasons (ऋतवः), quiz & greetings',
+    category: 'tools',
+    categoryLabel: 'Study Material · PDF',
+    badgeEmoji: '🪔',
+    badgeColor: '#c2410c',
+    description:
+      'A free printable festival workbook: Dīpāvalī (दीपः, रङ्गवल्ली, शुभं करोति कल्याणम्…), Gaṇeśa Caturthī (मोदकः, वक्रतुण्ड महाकाय…), Navarātri and Vijayadaśamī (शमीवृक्षः, या देवी सर्वभूतेषु…), Oṇam (महाबलिः, पुष्परङ्गवल्ली / pookkalam, सर्वे भवन्तु सुखिनः…), Makara Saṅkrānti (उत्तरायणम्, तिलगुडम्), Holi and Rakṣābandhana (येन बद्धो बली राजा…), plus the six seasons (वसन्तः, ग्रीष्मः, वर्षाः, शरत्, हेमन्तः, शिशिरः) with their lunar months, a mixed quiz, festival greetings (दीपावलीशुभाशयाः …) and an answer key. Download from the homepage or the Worksheets page (/downloads/sanskrit-festival-workbook.pdf).',
+    keywords: ['festival workbook', 'festivals', 'diwali sanskrit', 'deepavali', 'ganesh chaturthi', 'dasara', 'navaratri', 'onam', 'sankranti', 'holi', 'raksha bandhan', 'seasons', 'ritu', 'ऋतवः', 'shloka', 'greetings', 'free pdf', 'उत्सवाः'],
+    target: {
+      view: 'worksheets',
+    },
+  },
+  {
     id: 'tool-bodhi-guide',
     title: 'Bodhi (बोधि) · Your Interactive Gurukul Guide & Mascot',
     subtitle: 'Tips, Grammatical Explanations & Friendly Encouragement',

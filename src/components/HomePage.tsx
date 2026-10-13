@@ -765,6 +765,16 @@ const HomePage: React.FC<HomePageProps> = ({
           >
             📥 Free Beginner Workbook (PDF)
           </a>
+          <a
+            className="home-btn-secondary"
+            href="/downloads/sanskrit-festival-workbook.pdf"
+            download
+            style={{ background: 'rgba(234, 88, 12, 0.08)', borderColor: 'rgba(234, 88, 12, 0.4)', color: '#c2410c', textDecoration: 'none' }}
+            data-testid="home-festival-workbook-download"
+            title="Free 22-page printable PDF: Dīpāvalī, Gaṇeśa Caturthī, Navarātri & Vijayadaśamī, Oṇam, Makara Saṅkrānti, Holi, Rakṣābandhana, the six seasons, quiz, greetings and answer key"
+          >
+            🪔 Free Festival Workbook (PDF)
+          </a>
           {onOpenResources && (
             <button
               type="button"
