@@ -4832,6 +4832,21 @@ export const SEARCH_INDEX: SearchItem[] = [
     },
   },
   {
+    id: 'tool-grammar-workbooks',
+    title: 'Free Sanskrit Grammar Workbooks (PDF) · Levels 1–3 · व्याकरण-अभ्यास-पुस्तिकाः',
+    subtitle: '3 graded printable workbooks · basics, intermediate, advanced',
+    category: 'tools',
+    categoryLabel: 'Study Material · PDF',
+    badgeEmoji: '📚',
+    badgeColor: '#7c3aed',
+    description:
+      'Three free graded grammar workbooks with exercises and answer keys. Level 1 Basics (22 pages): liṅga and vacana, the seven vibhaktis, full tables of राम, लता and फल, pronouns अस्मद् / युष्मद् / तद्, laṭ of पठ् and गम्, avyayas and sentence building. Level 2 Intermediate (21 pages): laṅ, lṛṭ, loṭ and vidhiliṅ of पठ् and गम्, svara sandhi (dīrgha, guṇa, vṛddhi, yaṇ), visarga sandhi, ktvā / lyap, tumun, kta, upasargas and number words. Level 3 Advanced (22 pages): samāsa types, vyañjana sandhi, kartṛ and karma vācya, parasmaipada and ātmanepada, śatṛ and śānac, and subhāṣita analysis. Download from the homepage or the Worksheets page.',
+    keywords: ['grammar workbook', 'vyakarana', 'व्याकरणम्', 'sabdarupa', 'rama shabda', 'lata', 'phala', 'vibhakti table', 'dhaturupa', 'lakara', 'sandhi worksheet', 'samasa', 'passive voice sanskrit', 'karmavachya', 'atmanepada', 'shatru shanach', 'ktva lyap tumun', 'free pdf'],
+    target: {
+      view: 'worksheets',
+    },
+  },
+  {
     id: 'tool-bodhi-guide',
     title: 'Bodhi (बोधि) · Your Interactive Gurukul Guide & Mascot',
     subtitle: 'Tips, Grammatical Explanations & Friendly Encouragement',

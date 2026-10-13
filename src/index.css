@@ -131,3 +131,5 @@ code {
 .wbp-dl{color:#fff;text-decoration:none;padding:.45rem .8rem;border-radius:8px;font-weight:600;font-size:.85rem}
 @media (max-width:520px){.wbp-lb-stage img{max-width:calc(100% - 4.4rem)}.wbp-nav{width:2rem;height:2rem}}
 @media (prefers-reduced-motion:reduce){.wbp-thumb{transition:none}}
+.wbp-group{grid-column:1/-1;margin:.4rem 0 -.2rem;font-size:1rem;color:#4c1d95}
+.wbp-mini-dl{color:#fff;text-decoration:none;font-size:.72rem;font-weight:600;padding:.2rem .55rem;border-radius:999px}

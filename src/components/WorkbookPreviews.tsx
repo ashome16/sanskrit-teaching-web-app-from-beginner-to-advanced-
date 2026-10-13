@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
-type Book = { id: string; title: string; pdf: string; pages: number; color: string; shots: { n: number; label: string }[] };
+type Book = { group?: string; id: string; title: string; pdf: string; pages: number; color: string; shots: { n: number; label: string }[] };
 
 const BOOKS: Book[] = [
   {
@@ -29,6 +29,48 @@ const BOOKS: Book[] = [
       { n: 19, label: 'Months' },
     ],
   },
+  {
+    group: 'grammar',
+    id: 'grammar1',
+    title: '📘 Grammar · Level 1 Basics',
+    pdf: '/downloads/sanskrit-grammar-workbook-level-1.pdf',
+    pages: 22,
+    color: '#7c3aed',
+    shots: [
+      { n: 1, label: 'Cover' },
+      { n: 4, label: 'Cases' },
+      { n: 5, label: 'राम' },
+      { n: 15, label: 'Present' },
+    ],
+  },
+  {
+    group: 'grammar',
+    id: 'grammar2',
+    title: '📗 Grammar · Level 2 Intermediate',
+    pdf: '/downloads/sanskrit-grammar-workbook-level-2.pdf',
+    pages: 21,
+    color: '#0d9488',
+    shots: [
+      { n: 1, label: 'Cover' },
+      { n: 4, label: 'Past tense' },
+      { n: 10, label: 'Sandhi' },
+      { n: 14, label: 'Kṛdanta' },
+    ],
+  },
+  {
+    group: 'grammar',
+    id: 'grammar3',
+    title: '📕 Grammar · Level 3 Advanced',
+    pdf: '/downloads/sanskrit-grammar-workbook-level-3.pdf',
+    pages: 22,
+    color: '#be185d',
+    shots: [
+      { n: 1, label: 'Cover' },
+      { n: 3, label: 'Samāsa' },
+      { n: 10, label: 'Passive' },
+      { n: 18, label: 'Subhāṣita' },
+    ],
+  },
 ];
 
 const src = (b: Book, n: number, s: 'sm' | 'lg') => `/downloads/previews/${b.id}-p${n}-${s}.webp`;
@@ -51,11 +93,16 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
 
   return (
     <div className="wbp-wrap" data-testid="workbook-previews">
-      {BOOKS.map((b) => (
-        <div key={b.id} className="wbp-card" style={{ borderColor: `${b.color}55` }}>
+      {BOOKS.map((b, bi) => (
+        <React.Fragment key={b.id}>
+        {b.group === 'grammar' && BOOKS[bi - 1]?.group !== 'grammar' && (
+          <h4 className="wbp-group" data-testid="grammar-workbooks-heading">📚 Grammar Workbooks · व्याकरण-अभ्यास-पुस्तिकाः</h4>
+        )}
+        <div className="wbp-card" style={{ borderColor: `${b.color}55` }} data-testid={`wbp-${b.id}`}>
           <div className="wbp-head">
             <a href={b.pdf} download className="wbp-title" style={{ color: b.color }}>{b.title}</a>
             <span className="wbp-meta">{b.pages} pages · Free · PDF</span>
+            {b.group === 'grammar' && <a href={b.pdf} download className="wbp-mini-dl" style={{ background: b.color }}>⬇ Download</a>}
           </div>
           <div className="wbp-row">
             {b.shots.map((s, i) => (
@@ -66,6 +113,7 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
             ))}
           </div>
         </div>
+        </React.Fragment>
       ))}
       {open && (
         <div className="wbp-lb" role="dialog" aria-modal="true" aria-label="Workbook preview" onClick={close}>

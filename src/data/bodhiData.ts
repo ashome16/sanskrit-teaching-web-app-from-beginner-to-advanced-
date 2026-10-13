@@ -1920,6 +1920,17 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     relatedView: 'worksheets',
   },
   {
+    id: 'qa-grammar-workbooks',
+    category: 'grammar',
+    question: 'Are there free Sanskrit grammar workbooks I can print?',
+    sanskritQuestion: 'किं निःशुल्काः व्याकरण-अभ्यास-पुस्तिकाः सन्ति?',
+    shortAnswer: 'Yes: three graded Grammar Workbooks (Levels 1–3), free PDFs with exercises and answer keys, on the homepage and the Worksheets page.',
+    detailedAnswer: 'Level 1 Basics (22 pages) covers gender and number, the seven cases with simple uses, the full tables of राम (रामः रामौ रामाः … रामेषु), लता and फल, the pronouns अस्मद्, युष्मद् and तद्, the present tense (laṭ) of पठ् and गम्, avyayas such as च, अपि, कुत्र, अत्र, तत्र, कदा, and sentence building. Level 2 Intermediate (21 pages) covers laṅ (अपठत्), lṛṭ (पठिष्यति), loṭ (पठतु) and vidhiliṅ (पठेत्), svara sandhi (dīrgha, guṇa, vṛddhi, yaṇ) and visarga sandhi, ktvā and lyap (पठित्वा, आगत्य), tumun (पठितुम्), kta (पठितः), the upasargas and number words. Level 3 Advanced (22 pages) covers samāsa types with vigraha, vyañjana sandhi, active and passive voice (रामेण ग्रन्थः पठ्यते), parasmaipada and ātmanepada (सेवते), śatṛ and śānac participles (पठन्, वर्धमानः), and the analysis of two subhāṣitas.',
+    audioDevanagari: 'रामः रामौ रामाः',
+    tip: 'Start with Level 1 and recite each table aloud before filling in the practice pages.',
+    relatedView: 'worksheets',
+  },
+  {
     id: 'qa-lab-asato-ma',
     category: 'philosophy',
     question: 'What does “asato mā sad gamaya” mean, and what is The Veil of Māyā lab?',
