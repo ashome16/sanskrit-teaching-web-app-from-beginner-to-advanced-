@@ -163,7 +163,7 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
             </div>
             <div className="wbp-lb-bot">
               <span>Free online preview · {open.n} / {open.b.pages}</span>
-              <button type="button" className="wbp-dl" style={{ background: open.b.color }} onClick={() => downloadWorkbook(open.b.pdf)} data-testid="wbp-lb-download">⬇ Download / print PDF (members)</button>
+              <button type="button" className="wbp-dl" style={{ background: open.b.color }} onClick={() => { if (!downloadWorkbook(open.b.pdf)) close(); }} data-testid="wbp-lb-download">⬇ Download / print PDF (members)</button>
             </div>
           </div>
         </div>
