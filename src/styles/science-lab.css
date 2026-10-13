@@ -16874,3 +16874,29 @@
 .vl-lvl-hand{font-size:1.4rem;display:inline-block;animation:vlHandTap 1.1s ease-in-out infinite}
 @keyframes vlHandTap{0%,100%{transform:translate(0,0)}50%{transform:translate(-6px,-4px) scale(.88)}}
 @media (prefers-reduced-motion: reduce){.vl-lvl-hand{animation:none}}
+
+/* Quest cards (level-cards) */
+.vl-qcards{display:flex;align-items:stretch;gap:0;margin:.6rem 0}
+.vl-qline{align-self:center;flex:0 0 1.6rem;height:3px;background:#334155;border-radius:2px}
+.vl-qline.is-done{background:linear-gradient(90deg,#22c55e,#4ade80);box-shadow:0 0 6px #22c55e}
+.vl-qcard{flex:1 1 0;min-width:0;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.2rem;padding:1.6rem .7rem .8rem;border-radius:14px;cursor:pointer;color:#e2e8f0;background:linear-gradient(160deg,rgba(15,23,42,.95),rgba(30,41,59,.85));border:1.5px solid #334155;transition:transform .2s,border-color .2s,opacity .2s}
+.vl-qcard:hover,.vl-qcard:focus-visible{transform:translateY(-2px);border-color:#64748b;outline:none}
+.vl-qcard.is-next{opacity:.62}
+.vl-qcard.is-next:hover{opacity:.9}
+.vl-qcard.is-done{border-color:#16a34a}
+.vl-qcard.is-now{border-color:#facc15;animation:vlQPulse 1.8s ease-in-out infinite}
+.vl-qcard.is-sel.is-done{box-shadow:0 0 14px #22c55e66}
+@keyframes vlQPulse{0%,100%{box-shadow:0 0 6px #facc1555}50%{box-shadow:0 0 18px #facc15aa}}
+.vl-qring{width:3.4rem;height:3.4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;border:2px solid #22d3ee;box-shadow:0 0 12px #22d3ee88,inset 0 0 10px #22d3ee44;background:rgba(8,47,73,.6)}
+.vl-qcard.is-done .vl-qring{border-color:#22c55e;box-shadow:0 0 12px #22c55e88,inset 0 0 10px #22c55e44}
+.vl-qcard.is-now .vl-qring{border-color:#facc15;box-shadow:0 0 14px #facc15aa,inset 0 0 10px #facc1555}
+.vl-qlvl{font-variant:small-caps;letter-spacing:.18em;font-size:.68rem;color:#94a3b8;font-family:ui-monospace,monospace;margin-top:.25rem}
+.vl-qtitle{font-weight:700;font-size:.95rem;color:#f8fafc}
+.vl-qdev{font-size:.9rem;color:#fde68a}
+.vl-qgoal{font-size:.75rem;color:#67e8f9;font-family:ui-monospace,monospace}
+.vl-qbadge{position:absolute;top:.45rem;right:.5rem;font-size:.65rem;font-weight:700;padding:.1rem .45rem;border-radius:999px;letter-spacing:.04em}
+.vl-qbadge.is-done{background:#16a34a;color:#fff}
+.vl-qbadge.is-now{background:#facc15;color:#1e293b}
+.vl-qbadge.is-next{background:#334155;color:#cbd5e1}
+@media (max-width:640px){.vl-qcards{flex-direction:column}.vl-qline{flex:0 0 1rem;width:3px;height:1rem;align-self:center}.vl-qcard{flex-direction:row;flex-wrap:wrap;text-align:left;padding:.7rem .7rem .7rem;column-gap:.6rem}.vl-qring{width:2.8rem;height:2.8rem;font-size:1.4rem}.vl-qcard>.vl-qlvl,.vl-qcard>.vl-qtitle,.vl-qcard>.vl-qdev,.vl-qcard>.vl-qgoal{flex-basis:calc(100% - 3.6rem);margin-left:3.4rem}.vl-qring{position:absolute;left:.7rem;top:50%;transform:translateY(-50%)}.vl-qcard>.vl-qlvl{margin-top:0}}
+@media (prefers-reduced-motion: reduce){.vl-qcard{transition:none;animation:none!important}.vl-qcard.is-now{box-shadow:0 0 12px #facc15aa}}

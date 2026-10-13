@@ -1178,34 +1178,33 @@ const AsatoMa: React.FC = () => {
           <div className="vl-level-bar" role="progressbar" aria-label="Level progress" aria-valuemin={0} aria-valuemax={3} aria-valuenow={levelCount} data-testid="asato-levels-progress">
             <span style={{ width: `${(levelCount / 3) * 100}%` }} />
           </div>
-          <div className="vl-lvl-steps" aria-hidden="true" data-testid="asato-stepbar">
-            {LEVELS.map((l, i) => (
-              <React.Fragment key={l.n}>
-                {i > 0 && <span className={`vl-lvl-line${LEVELS[i - 1].done ? ' is-done' : ''}`} />}
-                <span className={`vl-lvl-dot${l.done ? ' is-done' : ''}${lvl === l.n ? ' is-cur' : ''}`}>{l.done ? '✓' : l.n}</span>
-              </React.Fragment>
-            ))}
-          </div>
-          <div className="vl-badges" role="tablist" aria-label="Choose a level">
-            {LEVELS.map((l) => (
-              <button
-                key={l.n}
-                type="button"
-                role="tab"
-                aria-selected={lvl === l.n}
-                className={`vl-badge${lvl === l.n ? ' is-sel' : ''}${l.done ? ' is-done' : ''}`}
-                onClick={() => { setNextIn(0); setLvl(l.n); }}
-                data-testid={`asato-level-${l.n}`}
-                data-done={l.done ? 'true' : 'false'}
-                title={l.n === 2 ? 'A game name, not a black hole' : undefined}
-              >
-                <span className="vl-badge-icon" aria-hidden="true">{l.icon}</span>
-                <span>
-                  <b>Level {l.n}{l.done ? ' ✓' : ''}</b>
-                  {l.title} · <span lang="sa">{l.dev}</span>
-                </span>
-              </button>
-            ))}
+          <div className="vl-qcards" role="tablist" aria-label="Choose a level" data-testid="asato-stepbar">
+            {LEVELS.map((l, i) => {
+              const state = l.done ? 'done' : lvl === l.n ? 'now' : 'next';
+              const goal = l.n === 1 ? <>Goal: below {COLD_K} K</> : l.n === 2 ? <>Goal: faster than {FAST_MS} m/s</> : <>Goal: 3/3 lines</>;
+              return (
+                <React.Fragment key={l.n}>
+                  {i > 0 && <span className={`vl-qline${LEVELS[i - 1].done ? ' is-done' : ''}`} aria-hidden="true" />}
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={lvl === l.n}
+                    className={`vl-qcard is-${state}${lvl === l.n ? ' is-sel' : ''}`}
+                    onClick={() => { setNextIn(0); setLvl(l.n); }}
+                    data-testid={`asato-level-${l.n}`}
+                    data-done={l.done ? 'true' : 'false'}
+                    title={l.n === 2 ? 'A game name, not a black hole' : undefined}
+                  >
+                    <span className={`vl-qbadge is-${state}`}>{state === 'done' ? 'Done ✓' : state === 'now' ? '● Now playing' : 'Next'}</span>
+                    <span className="vl-qring" aria-hidden="true">{l.icon}</span>
+                    <span className="vl-qlvl">LEVEL {String(l.n).padStart(2, '0')}</span>
+                    <span className="vl-qtitle">{l.title}</span>
+                    <span className="vl-qdev" lang="sa">{l.dev}</span>
+                    <span className="vl-qgoal">{goal}</span>
+                  </button>
+                </React.Fragment>
+              );
+            })}
           </div>
           <div className="vl-level-card" role="tabpanel" data-testid="asato-level-card">
             {lvl === 1 && (
