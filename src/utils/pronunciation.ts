@@ -888,6 +888,40 @@ export const splitBodhiChunks = (text: string): string[] => chunksFromSegments(t
 /** English tips: chunk on sentence boundaries (. ! ?). */
 export const splitBodhiEnglishChunks = (text: string): string[] => chunksFromSegments(text, 'en');
 
+/** Max characters per utterance; keeps each well under Chrome's ~15 s cutoff. */
+const BODHI_MAX_UTTERANCE_CHARS = 160;
+
+/** Split an over-long chunk at commas/semicolons/dashes, then at word boundaries. */
+export const splitLongSpeechChunk = (chunk: string, max = BODHI_MAX_UTTERANCE_CHARS): string[] => {
+  const text = (chunk || '').trim();
+  if (text.length <= max) return text ? [text] : [];
+  const out: string[] = [];
+  let current = '';
+  const push = () => {
+    if (current.trim()) out.push(current.trim());
+    current = '';
+  };
+  // No regex lookbehind: older Safari cannot parse it.
+  const clauses = text.replace(/([,;:—–])\s+/g, '$1\u0000').split('\u0000');
+  for (const clause of clauses) {
+    if ((current + ' ' + clause).trim().length <= max) {
+      current = (current + ' ' + clause).trim();
+      continue;
+    }
+    push();
+    if (clause.length <= max) {
+      current = clause;
+      continue;
+    }
+    for (const word of clause.split(/\s+/)) {
+      if ((current + ' ' + word).trim().length > max) push();
+      current = (current + ' ' + word).trim();
+    }
+  }
+  push();
+  return out;
+};
+
 /** Per-word visarga echo (same rule as the letter/word path). */
 const toBodhiSpeech = (chunk: string): string => {
   const spaced = isWindowsPlatform();
@@ -914,7 +948,15 @@ const configureBodhiUtterance = (
   chunk: string,
 ): void => {
   const allVoices = window.speechSynthesis.getVoices();
-  const configuredBodhiVoice = resolveVoiceForRole('bodhi', allVoices);
+  // The Bodhi role voice can be English (Rishi, Ravi) or Hindi (Swara, Lekha).
+  // Only use it when its language matches the text: an English voice given
+  // Devanagari reads nothing or a single word, and a Hindi voice garbles English.
+  const roleVoice = resolveVoiceForRole('bodhi', allVoices);
+  const roleLang = (roleVoice?.lang || '').toLowerCase().replace('_', '-');
+  const roleIsEnglish = roleLang.startsWith('en');
+  const roleIsIndic = /^(hi|sa|mr|ne)/.test(roleLang);
+  const configuredBodhiVoice =
+    roleVoice && (lang === 'en' ? roleIsEnglish : roleIsIndic) ? roleVoice : undefined;
   if (lang === 'en') {
     const voice = configuredBodhiVoice || pickBodhiEnglishVoice(allVoices);
     utterance.voice = voice || null;
@@ -1026,21 +1068,36 @@ export const speakAsBodhi = (text: string, options?: SpeakAsBodhiOptions): (() =
       timer = setTimeout(speakNext, chunkIndex + 1 < chunks.length ? pauseMs : 0);
     };
 
-    const utterance = new SpeechSynthesisUtterance(lang === 'en' ? chunk : toBodhiSpeech(chunk));
-    configureBodhiUtterance(utterance, lang, settings.rate, chunk);
-    utterance.onend = after;
-    utterance.onerror = after;
+    // Chrome/Edge cut an utterance off after ~15 s, so long sentences are
+    // spoken as a few shorter pieces, queued once, in order.
+    const pieces = splitLongSpeechChunk(chunk);
     try {
       options?.onChunk?.(chunkIndex, chunk);
     } catch {
       /* UI callback errors must not break recitation */
     }
+    const perChar = lang === 'en' ? 120 : 220;
+    let fallbackMs = 0;
+    pieces.forEach((piece, pieceIndex) => {
+      const utterance = new SpeechSynthesisUtterance(lang === 'en' ? piece : toBodhiSpeech(piece));
+      configureBodhiUtterance(utterance, lang, settings.rate, piece);
+      if (pieceIndex === pieces.length - 1) {
+        utterance.onend = after;
+      }
+      // An error on any piece ends this chunk (cancel() during stop also lands here).
+      utterance.onerror = after;
+      fallbackMs += Math.max(2500, Math.round((piece.length * perChar) / utterance.rate));
+      window.speechSynthesis.speak(utterance);
+    });
     // Some Chrome/Edge builds skip onend; advance after a generous upper
     // bound proportional to the chunk length at Bodhi's slow rate.
-    const perChar = lang === 'en' ? 120 : 220;
-    const fallbackMs = Math.max(2500, Math.round((chunk.length * perChar) / utterance.rate));
     fallbackTimer = setTimeout(after, fallbackMs);
-    window.speechSynthesis.speak(utterance);
+    // Chrome sometimes leaves the queue paused after cancel(); nudge it.
+    try {
+      if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+    } catch {
+      /* ignore */
+    }
   };
 
   void whenVoicesReady().then(() => {

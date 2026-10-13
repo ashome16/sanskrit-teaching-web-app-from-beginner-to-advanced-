@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import BodhiAvatar from '../BodhiAvatar';
-import { speakAsBodhi } from '../../utils/pronunciation';
+import { useBodhiSpeech } from './useBodhiSpeech';
 import type { LabSegmentId } from './common';
 
 export interface LabBodhiConsoleProps {
@@ -721,7 +721,12 @@ export const LabBodhiConsole: React.FC<LabBodhiConsoleProps> = ({ activeSegment 
   const [activeTab, setActiveTab] = useState<'bodhi' | 'quiz' | 'lore'>('bodhi');
   const [userQuery, setUserQuery] = useState('');
   const [chatResponse, setChatResponse] = useState<string | null>(null);
-  const [isSpeaking, setIsSpeaking] = useState(false);
+  const { speakingKey, toggle: toggleBodhi, stop: stopBodhi } = useBodhiSpeech();
+  const isSpeaking = speakingKey === 'console';
+  // Switching lab or getting a new answer stops the old narration.
+  useEffect(() => {
+    stopBodhi();
+  }, [activeSegment, chatResponse, stopBodhi]);
   const [pointsToast, setPointsToast] = useState<{ amount: number; reason: string } | null>(null);
 
   // Quiz state for this segment
@@ -803,16 +808,10 @@ export const LabBodhiConsole: React.FC<LabBodhiConsoleProps> = ({ activeSegment 
     addPoints(10, 'Asked Bodhi a Vijñāna inquiry');
   };
 
-  const handleSpeak = (text: string) => {
-    setIsSpeaking(true);
-    const stop = speakAsBodhi(text, {
-      onEnd: () => setIsSpeaking(false),
-    });
-    setTimeout(() => {
-      setIsSpeaking(false);
-      stop();
-    }, 12000);
-  };
+  // Bodhi's lab intros and answers are English (with a few Sanskrit terms),
+  // so they must use the English voice path; the Sanskrit path drops every
+  // chunk without Devanagari, which made most labs silent.
+  const handleSpeak = (text: string) => toggleBodhi(text, 'en', 'console');
 
   const handleAnswerSelect = (qId: string, optIdx: number) => {
     if (quizSubmitted[qId]) return;
@@ -916,9 +915,10 @@ export const LabBodhiConsole: React.FC<LabBodhiConsoleProps> = ({ activeSegment 
                 type="button"
                 className="vl-voice-btn"
                 onClick={() => handleSpeak(chatResponse ? chatResponse : lore.bodhiIntro)}
-                title="Hear Bodhi speak"
+                title={isSpeaking ? 'Stop Bodhi' : 'Hear Bodhi speak'}
+                aria-pressed={isSpeaking}
               >
-                🔊 {isSpeaking ? 'Speaking…' : 'Listen with Bodhi'}
+                {isSpeaking ? '⏹ Stop Bodhi' : '🔊 Listen with Bodhi'}
               </button>
               {chatResponse && (
                 <button

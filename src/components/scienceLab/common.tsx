@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BodhiAvatar, { type BodhiMood } from '../BodhiAvatar';
-import { playPronunciation, speakAsBodhi, type BodhiSpeechLang } from '../../utils/pronunciation';
+import { playPronunciation, type BodhiSpeechLang } from '../../utils/pronunciation';
+import { useBodhiSpeech } from './useBodhiSpeech';
 
 export type LabSegmentId = 'paramanu' | 'prakriti' | 'jyotisha' | 'srishti-sthiti-laya' | 'nada-brahman' | 'asato-ma' | 'chaturyoni' | 'chandrayaan' | 'rituparna' | 'agnibana' | 'vedic-geometry' | 'mantra-acoustics';
 
@@ -180,45 +181,12 @@ export const BodhiLabAnecdote: React.FC<BodhiLabAnecdoteProps> = ({
   audioSanskrit,
   audioEnglish,
 }) => {
-  const [speaking, setSpeaking] = useState<BodhiSpeechLang | null>(null);
-  const stopRef = React.useRef<(() => void) | null>(null);
+  const { speakingKey, toggle: toggleBodhi } = useBodhiSpeech();
+  const speaking = speakingKey as BodhiSpeechLang | null;
   const [activeTab, setActiveTab] = useState<'anecdote' | 'bridge' | 'lokasamgraha'>('anecdote');
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
 
-  const stop = () => {
-    const fn = stopRef.current;
-    stopRef.current = null;
-    fn?.();
-    setSpeaking(null);
-  };
-
-  React.useEffect(() => () => stop(), []);
-
-  const speak = (text: string, lang: BodhiSpeechLang) => {
-    if (stopRef.current && speaking === lang) {
-      stop();
-      return;
-    }
-    stop();
-    try {
-      let fn: (() => void) | null = null;
-      let finished = false;
-      setSpeaking(lang);
-      fn = speakAsBodhi(text, {
-        lang,
-        onEnd: () => {
-          finished = true;
-          if (fn !== null && stopRef.current !== fn) return;
-          stopRef.current = null;
-          setSpeaking(null);
-        },
-      });
-      if (!finished) stopRef.current = fn;
-    } catch {
-      stopRef.current = null;
-      setSpeaking(null);
-    }
-  };
+  const speak = (text: string, lang: BodhiSpeechLang) => toggleBodhi(text, lang, lang);
 
   const sanskritToSpeak = audioSanskrit || sutra?.dev;
   const englishToSpeak = audioEnglish || (typeof anecdote === 'string' ? anecdote : undefined);
