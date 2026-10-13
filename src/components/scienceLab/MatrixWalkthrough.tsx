@@ -329,6 +329,25 @@ const LatticeView: React.FC<{ temp: number; bend: boolean; onBroken: (n: number)
   return <canvas ref={ref} style={canvasStyle} role="img" aria-label={`Vibrating lattice at ${Math.round(temp)} K`} />;
 };
 
+/* ───────────── Codex: Māyā as reality vs illusion ───────────── */
+const PAIRS: [string, string][] = [['🐍 snake', '🪢 rope'], ['still water', 'colliding molecules'], ['solid spoon', 'vibrating lattice']];
+
+const Codex: React.FC = () => (
+  <div data-testid="asato-matrix-codex" style={{ border: `1px solid ${GREEN}88`, borderRadius: 8, padding: '0.55rem 0.75rem', margin: '0 0 0.6rem', background: '#021a10' }}>
+    <div style={{ ...mono, fontSize: 12, color: '#4ade80', marginBottom: 6 }}>📜 CODEX · MĀYĀ (माया): REALITY vs ILLUSION</div>
+    <div style={{ lineHeight: 1.55, color: '#e7fbe9', fontSize: 14 }}>
+      <div><strong>Sat</strong> (सत्) is what is truly real and unchanging; <strong>Asat</strong> (असत्) is the changing appearance.</div>
+      <div><strong>Māyā</strong> (माया) is the power that makes appearance look like the whole of reality.</div>
+      <div>In Ādi Śaṅkarācārya’s Advaita, the rope-and-snake (rajju-sarpa, रज्जु-सर्प): in dim light a rope looks like a snake; when the light of <strong>viveka</strong> comes, the snake vanishes and the rope was there all along.</div>
+      <div>In this lab, still water is the snake and colliding molecules are the rope. <em>asato mā sad gamaya</em>: lead me from the unreal to the real.</div>
+    </div>
+    <div role="table" aria-label="Illusion and reality" style={{ ...mono, fontSize: 12, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px 10px', marginTop: 8, maxWidth: 420 }}>
+      <span role="columnheader" style={{ color: '#fca5a5' }}>ILLUSION</span><span role="columnheader" style={{ color: '#86efac' }}>REALITY</span>
+      {PAIRS.map(([i, r]) => (<React.Fragment key={i}><span role="cell">{i}</span><span role="cell">→ {r}</span></React.Fragment>))}
+    </div>
+  </div>
+);
+
 /* ───────────── Walkthrough shell ───────────── */
 const STEPS = [
   { tag: 'LEVEL 01', title: 'The surface = Asat (“Matrix code”)' },
@@ -364,11 +383,12 @@ export const MatrixWalkthrough: React.FC = () => {
     <section id="asato-matrix-walkthrough" className="vl-panel" aria-label="Matrix walkthrough (for fun)" data-testid="asato-matrix-walkthrough"
       style={{ background: '#03140b', color: '#bbf7d0', border: '1px solid #16a34a', borderRadius: 12, padding: '0.9rem 1rem', margin: '0.75rem 0', overflow: 'hidden' }}>
       <style>{CSS}</style>
-      <div style={{ ...mono, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 6, fontSize: 12, color: '#4ade80' }}>
+      <div style={{ ...mono, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 6, fontSize: 12, color: '#4ade80', marginBottom: 8 }}>
         <span>▣ MATRIX WALKTHROUGH (FOR FUN)</span>
         <span>Teaching analogy only · not a claim from the texts</span>
       </div>
-      <div role="tablist" style={{ display: 'flex', gap: 6, margin: '0.6rem 0 0.4rem', flexWrap: 'wrap' }}>
+      <Codex />
+      <div role="tablist" style={{ display: 'flex', gap: 6, margin: '0.2rem 0 0.4rem', flexWrap: 'wrap' }}>
         {STEPS.map((s, i) => (
           <HudButton key={s.tag} role="tab" aria-selected={step === i} on={step === i} onClick={() => setStep(i)} style={{ padding: '4px 10px' }}>{s.tag}</HudButton>
         ))}
