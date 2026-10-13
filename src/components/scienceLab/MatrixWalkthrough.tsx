@@ -94,70 +94,114 @@ const HudButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & { on?:
     style={{ ...mono, fontSize: 12, padding: '5px 12px', borderRadius: 6, cursor: p.disabled ? 'default' : 'pointer', border: `1px solid ${GREEN}`, background: on ? '#16a34a' : 'transparent', color: on ? '#02120a' : '#86efac', opacity: p.disabled ? 0.4 : 1, transition: 'background .25s,color .25s', ...style }} />
 );
 
-/* ───────────── LEVEL 01 · Asat code rain ───────────── */
-const GLYPHS = ['असत्', 'सत्', 'अ', 'आ', 'इ', 'उ', 'ऋ', 'क', 'ख', 'ग', 'घ', 'च', 'ज', 'त', 'द', 'न', 'प', 'ब', 'म', 'य', 'र', 'ल', 'व', 'श', 'स', 'ह', 'माया', 'ॐ'];
+/* ───────────── LEVEL 01 · Many forms (nāma-rūpa) → one Sat ───────────── */
+const FORM_GLYPHS = ['अ', 'आ', 'इ', 'उ', 'ऋ', 'क', 'ख', 'ग', 'घ', 'च', 'ज', 'त', 'द', 'न', 'प', 'ब', 'म', 'य', 'र', 'ल', 'व', 'श', 'ह', 'ॐ', 'घट', 'पट', 'वृक्ष'];
+const FORM_COLORS = ['#f472b6', '#facc15', '#38bdf8', '#a78bfa', '#fb923c', '#4ade80', '#f87171', '#2dd4bf'];
+type FormKind = 'glyph' | 'pot' | 'cloth' | 'tree' | 'plate' | 'lamp';
+type Form = { kind: FormKind; ch: string; x: number; y: number; size: number; speed: number; rot: number; spin: number; color: string; tx: number; ty: number };
+const SAT_GOLD = '#fde68a';
+
+const drawShape = (ctx: CanvasRenderingContext2D, f: Form, size: number) => {
+  const s = size / 2;
+  ctx.beginPath();
+  switch (f.kind) {
+    case 'pot': // ghaṭa
+      ctx.ellipse(0, s * 0.2, s * 0.8, s * 0.7, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.fillRect(-s * 0.35, -s * 0.85, s * 0.7, s * 0.5); break;
+    case 'plate':
+      ctx.ellipse(0, 0, s, s * 0.3, 0, 0, Math.PI * 2); ctx.fill(); break;
+    case 'lamp': // dīpa
+      ctx.ellipse(0, s * 0.3, s * 0.8, s * 0.35, 0, 0, Math.PI); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(s * 0.1, -s * 0.3, s * 0.18, s * 0.4, 0, 0, Math.PI * 2); ctx.fillStyle = '#fbbf24'; ctx.fill(); break;
+    case 'cloth': // paṭa
+      ctx.moveTo(-s, -s * 0.7);
+      for (let i = 0; i <= 8; i++) ctx.lineTo(-s + (i * s) / 4, -s * 0.7 + Math.sin(i) * s * 0.12);
+      ctx.lineTo(s, s * 0.7);
+      for (let i = 8; i >= 0; i--) ctx.lineTo(-s + (i * s) / 4, s * 0.7 + Math.sin(i) * s * 0.12);
+      ctx.closePath(); ctx.fill(); break;
+    case 'tree':
+      ctx.fillRect(-s * 0.12, 0, s * 0.24, s); ctx.beginPath();
+      ctx.moveTo(0, -s); ctx.lineTo(s * 0.75, s * 0.2); ctx.lineTo(-s * 0.75, s * 0.2); ctx.closePath(); ctx.fill(); break;
+    default: break;
+  }
+};
+
+const KINDS: FormKind[] = ['glyph', 'glyph', 'glyph', 'glyph', 'pot', 'cloth', 'tree', 'plate', 'lamp'];
+const makeForm = (w: number, h: number, initial: boolean): Form => {
+  const kind = KINDS[(Math.random() * KINDS.length) | 0];
+  return {
+    kind, ch: FORM_GLYPHS[(Math.random() * FORM_GLYPHS.length) | 0],
+    x: Math.random() * w, y: initial ? Math.random() * h : -30 - Math.random() * 40,
+    size: 12 + Math.random() * 26, speed: 25 + Math.random() * 70,
+    rot: (Math.random() - 0.5) * 0.8, spin: (Math.random() - 0.5) * 0.8,
+    color: FORM_COLORS[(Math.random() * FORM_COLORS.length) | 0], tx: 0, ty: 0,
+  };
+};
 
 const CodeRainView: React.FC<{ viveka: boolean; onToggle: () => void }> = ({ viveka, onToggle }) => {
-  const st = useRef<{ cols: { y: number; speed: number; chars: string[]; off: number }[]; part: number; t: number; w: number }>({ cols: [], part: 0, t: 0, w: 0 });
+  const st = useRef<{ forms: Form[]; part: number; t: number; w: number; h: number }>({ forms: [], part: 0, t: 0, w: 0, h: 0 });
   const draw = useCallback<DrawFn>((ctx, w, h, dt, reduced) => {
     const s = st.current;
-    const fs = w < 420 ? 13 : 15;
-    const colW = fs * 1.5;
-    if (s.w !== w) {
-      const n = Math.ceil(w / colW);
-      s.cols = Array.from({ length: n }, () => ({ y: Math.random() * h, speed: 40 + Math.random() * 90, off: 0, chars: Array.from({ length: 14 }, () => GLYPHS[(Math.random() * GLYPHS.length) | 0]) }));
-      s.w = w;
+    const cell = w < 420 ? 30 : 38;
+    const cols = Math.max(4, Math.floor(w / cell));
+    const rows = Math.max(3, Math.floor(h / cell));
+    if (s.w !== w || s.h !== h) {
+      s.forms = Array.from({ length: cols * rows }, () => makeForm(w, h, true));
+      s.w = w; s.h = h;
     }
+    // uniform grid targets (one per form)
+    const gx = w / cols, gy = h / rows;
+    s.forms.forEach((f, i) => { f.tx = (i % cols) * gx + gx / 2; f.ty = Math.floor(i / cols) * gy + gy / 2; });
     s.t += dt;
-    s.part = reduced ? (viveka ? 1 : 0) : approach(s.part, viveka ? 1 : 0, dt, 2.5);
-    // calm everyday scene: sky, sun, table, glass of water
+    s.part = reduced ? (viveka ? 1 : 0) : approach(s.part, viveka ? 1 : 0, dt, 1.6);
+    const p = s.part, e = p * p * (3 - 2 * p); // smoothstep
+    // background: busy dusk → calm deep field
     const g = ctx.createLinearGradient(0, 0, 0, h);
-    g.addColorStop(0, '#0b2f22'); g.addColorStop(1, '#03140b');
+    g.addColorStop(0, e > 0.5 ? '#14110a' : '#1a0f2e'); g.addColorStop(1, '#03140b');
     ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
-    ctx.fillStyle = 'rgba(250,204,21,0.25)'; ctx.beginPath(); ctx.arc(w * 0.82, h * 0.22, h * 0.1, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = 'rgba(120,80,40,0.45)'; ctx.fillRect(0, h * 0.78, w, h * 0.22);
-    const gx = w * 0.2, gw = Math.min(60, w * 0.12), gt = h * 0.42, gb = h * 0.78;
-    ctx.fillStyle = 'rgba(56,189,248,0.35)'; ctx.fillRect(gx + 3, gt + (gb - gt) * 0.35, gw - 6, (gb - gt) * 0.65 - 2);
-    ctx.strokeStyle = 'rgba(220,240,255,0.6)'; ctx.lineWidth = 2; ctx.strokeRect(gx, gt, gw, gb - gt);
-    // code rain (parts away from the centre when Viveka is on)
-    ctx.font = `${fs}px "Noto Sans Devanagari", "Mangal", sans-serif`;
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    const cx = w / 2;
-    s.cols.forEach((c, i) => {
-      if (!reduced) { c.y += c.speed * dt; if (c.y - c.chars.length * fs > h) { c.y = 0; c.chars[(Math.random() * c.chars.length) | 0] = GLYPHS[(Math.random() * GLYPHS.length) | 0]; } }
-      const x0 = i * colW + colW / 2;
-      const d = x0 - cx;
-      const push = s.part * Math.max(0, w * 0.28 - Math.abs(d)) * Math.sign(d || 1);
-      const x = x0 + push;
-      c.chars.forEach((ch, k) => {
-        const y = c.y - k * fs * 1.15;
-        if (y < -fs || y > h + fs) return;
-        const a = k === 0 ? 1 : Math.max(0, 0.8 - k * 0.06);
-        ctx.fillStyle = k === 0 ? `rgba(220,255,230,${a})` : `rgba(74,222,128,${a * (1 - s.part * 0.35)})`;
-        ctx.fillText(ch.length > 2 ? ch.slice(0, 2) : ch, x, y);
-      });
+    const satSize = Math.min(gx, gy) * 0.5;
+    s.forms.forEach((f) => {
+      // the forms keep falling only while Viveka is off (fade their motion out as it dissolves)
+      if (!reduced && p < 0.999) {
+        f.y += f.speed * dt * (1 - e); f.rot += f.spin * dt * (1 - e);
+        if (f.y > h + 40) { Object.assign(f, makeForm(w, h, false)); }
+      }
+      const x = f.x + (f.tx - f.x) * e, y = f.y + (f.ty - f.y) * e;
+      ctx.save(); ctx.translate(x, y); ctx.rotate(f.rot * (1 - e));
+      // the form (fades out)
+      if (e < 0.999) {
+        ctx.globalAlpha = 1 - e; ctx.fillStyle = f.color;
+        if (f.kind === 'glyph') { ctx.font = `bold ${f.size}px "Noto Sans Devanagari", "Mangal", sans-serif`; ctx.fillText(f.ch, 0, 0); }
+        else drawShape(ctx, f, f.size * 1.1);
+      }
+      // the one identical सत् (fades in, steady, gentle glow — no motion)
+      if (e > 0.001) {
+        ctx.globalAlpha = e * 0.55; ctx.fillStyle = SAT_GOLD;
+        ctx.shadowColor = '#facc15'; ctx.shadowBlur = 6;
+        ctx.font = `${satSize}px "Noto Sans Devanagari", "Mangal", sans-serif`;
+        ctx.fillText('सत्', 0, 0);
+      }
+      ctx.restore();
     });
-    // revealed सत्
-    if (s.part > 0.02) {
-      const pulse = reduced ? 1 : 0.85 + 0.15 * Math.sin(s.t * 3);
-      ctx.save();
-      ctx.globalAlpha = s.part;
-      ctx.shadowColor = '#facc15'; ctx.shadowBlur = 22 * pulse;
-      ctx.fillStyle = '#fef9c3';
+    if (e > 0.02) {
+      const glow = reduced ? 1 : 0.9 + 0.1 * Math.sin(s.t * 1.2); // glow breathes slightly; glyph stays still
+      ctx.save(); ctx.globalAlpha = e;
+      ctx.fillStyle = 'rgba(3,20,11,0.75)';
+      ctx.beginPath(); ctx.ellipse(w / 2, h * 0.45, Math.min(w * 0.3, 160), Math.min(h * 0.28, 80), 0, 0, Math.PI * 2); ctx.fill();
+      ctx.shadowColor = '#facc15'; ctx.shadowBlur = 26 * glow; ctx.fillStyle = '#fef9c3';
       ctx.font = `bold ${Math.min(72, w * 0.16)}px "Noto Sans Devanagari", "Mangal", sans-serif`;
-      ctx.fillText('सत्', cx, h * 0.45);
-      ctx.shadowBlur = 0;
-      ctx.font = `${fs - 1}px ui-monospace, Menlo, monospace`;
-      ctx.fillStyle = '#bbf7d0';
-      ctx.fillText('SAT · the real beneath the render', cx, h * 0.45 + Math.min(52, w * 0.11));
+      ctx.fillText('सत्', w / 2, h * 0.42);
+      ctx.shadowBlur = 0; ctx.font = `${w < 420 ? 11 : 13}px ui-monospace, Menlo, monospace`; ctx.fillStyle = '#fef3c7';
+      ctx.fillText('SAT · one, uniform, unchanging', w / 2, h * 0.42 + Math.min(48, w * 0.1));
       ctx.restore();
     } else {
-      ctx.font = '12px ui-monospace, Menlo, monospace'; ctx.fillStyle = 'rgba(187,247,208,0.8)';
-      ctx.fillText('tap to apply Viveka', cx, h - 12);
+      ctx.font = '12px ui-monospace, Menlo, monospace'; ctx.fillStyle = 'rgba(243,232,255,0.85)';
+      ctx.fillText('nāma-rūpa · many forms · tap to apply Viveka', w / 2, h - 12);
     }
   }, [viveka]);
   const ref = useCanvasLoop(draw, 0.5, viveka);
-  return <canvas ref={ref} style={{ ...canvasStyle, cursor: 'pointer' }} onClick={onToggle} role="img" aria-label={viveka ? 'Code rain parts to reveal the word सत् (Sat)' : 'Green Devanagari code rain over a calm everyday scene'} />;
+  return <canvas ref={ref} style={{ ...canvasStyle, cursor: 'pointer' }} onClick={onToggle} role="img" aria-label={viveka ? 'All the many forms have settled into one calm, even field of the same word सत् (Sat), with a large सत् in the centre' : 'Many colourful forms falling: varied Devanagari letters, pots, cloths, trees, plates and lamps'} />;
 };
 
 /* ───────────── LEVEL 02 · Sealed Crucible ───────────── */
@@ -358,7 +402,7 @@ const Codex: React.FC = () => (
 
 /* ───────────── Walkthrough shell ───────────── */
 const STEPS = [
-  { tag: 'LEVEL 01', title: 'The surface = Asat (“Matrix code”)' },
+  { tag: 'LEVEL 01', title: 'Many forms, one reality · Nāma-rūpa (नाम-रूप) → Sat (सत्)' },
   { tag: 'LEVEL 02', title: 'Sealed Crucible · Andha-Mūṣā (अन्ध-मूषा)' },
   { tag: 'LEVEL 03', title: 'Phonon Lattice · 281 K → 2,252 K' },
 ];
@@ -457,9 +501,15 @@ export const MatrixWalkthrough: React.FC = () => {
               <HudButton on={viveka} aria-pressed={viveka} onClick={() => setViveka((v) => !v)}>👁️ VIVEKA: {viveka ? 'ON' : 'OFF'}</HudButton>
             </div>
             <p style={{ margin: 0, lineHeight: 1.55 }}>
-              The everyday world you see (solid gold, a still glass of water) is <strong>Asat</strong>: the rendered surface.
-              Think of it as the green “Matrix code” on screen. Under it run the real rules: particles, motion and energy.
-              Your tool for seeing past the render is <strong>Viveka</strong> (विवेक, discernment), which parts the code to show <strong>Sat</strong> (सत्).
+              <strong>Many forms appear (nāma-rūpa, नाम-रूप); underneath, one uniform, unchanging reality (sat, सत्).</strong>
+            </p>
+            <p style={{ margin: '0.4rem 0 0', lineHeight: 1.55 }}>
+              What we see looks different only because of different names and forms: letters, a pot, a cloth, a tree.
+              Like the “code” on the Matrix screen, these forms are the changing surface (Asat). Apply <strong>Viveka</strong> (विवेक, discernment)
+              and they dissolve into what they always were: one even, steady field of <strong>Sat</strong> (सत्), the same everywhere and not moving.
+            </p>
+            <p style={{ margin: '0.4rem 0 0', lineHeight: 1.55, color: '#a7f3d0' }}>
+              Clay example: a pot (ghaṭa), a plate and a lamp (dīpa) are different forms with different names, yet all of them are just clay.
             </p>
           </div>
         )}
