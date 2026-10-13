@@ -330,19 +330,27 @@ const LatticeView: React.FC<{ temp: number; bend: boolean; onBroken: (n: number)
 };
 
 /* ───────────── Codex: Māyā as reality vs illusion ───────────── */
-const PAIRS: [string, string][] = [['🐍 snake', '🪢 rope'], ['still water', 'colliding molecules'], ['solid spoon', 'vibrating lattice']];
+const PAIRS: [string, string][] = [
+  ['🐍 coiled snake (covered-up info)', '🪢 unraveled rope (uniform repetitive units)'],
+  ['still water (macroscopic surface)', 'colliding molecules (discrete unit dynamics)'],
+  ['solid spoon (coiled macro shape)', 'vibrating lattice (repeating atomic units)'],
+];
 
 const Codex: React.FC = () => (
   <div data-testid="asato-matrix-codex" style={{ border: `1px solid ${GREEN}88`, borderRadius: 8, padding: '0.55rem 0.75rem', margin: '0 0 0.6rem', background: '#021a10' }}>
-    <div style={{ ...mono, fontSize: 12, color: '#4ade80', marginBottom: 6 }}>📜 CODEX · MĀYĀ (माया): REALITY vs ILLUSION</div>
-    <div style={{ lineHeight: 1.55, color: '#e7fbe9', fontSize: 14 }}>
+    <div style={{ ...mono, fontSize: 12, color: '#4ade80', marginBottom: 6 }}>📜 CODEX · MĀYĀ (माया): REALITY vs ILLUSION &amp; THE ROPE-SNAKE MECHANISM</div>
+    <div style={{ lineHeight: 1.55, color: '#e7fbe9', fontSize: 13 }}>
       <div><strong>Sat</strong> (सत्) is what is truly real and unchanging; <strong>Asat</strong> (असत्) is the changing appearance.</div>
-      <div><strong>Māyā</strong> (माया) is the power that makes appearance look like the whole of reality.</div>
-      <div>In Ādi Śaṅkarācārya’s Advaita, the rope-and-snake (rajju-sarpa, रज्जु-सर्प): in dim light a rope looks like a snake; when the light of <strong>viveka</strong> comes, the snake vanishes and the rope was there all along.</div>
-      <div>In this lab, still water is the snake and colliding molecules are the rope. <em>asato mā sad gamaya</em>: lead me from the unreal to the real.</div>
+      <div><strong>Māyā</strong> (माया) is the cognitive &amp; ontological power that makes appearance look like the whole of reality.</div>
+      <div style={{ marginTop: 4 }}>
+        <strong>The Deep Insight of Ādi Śaṅkarācārya (Rajju-Sarpa / रज्जु-सर्प):</strong> It is not merely one arbitrary object appearing as another. Rather, an object with <em>coiled (covered-up, occluded) information</em> in dim light appears as a menacing living <em>snake</em>; when the light of <strong>Viveka</strong> arrives, the coiled projection unravels to reveal an <strong>unraveled, uniform, repetitive unit-based object</strong>—a rope braided from modular, repeating fibers.
+      </div>
+      <div style={{ marginTop: 4 }}>
+        In this lab, macroscopic surface appearance is the coiled snake (covered-up info); activating the Viveka Scanner reveals the unraveled rope: the uniform, repetitive, unit-based atomic lattice! <em>asato mā sad gamaya</em>: lead me from the unreal to the real.
+      </div>
     </div>
-    <div role="table" aria-label="Illusion and reality" style={{ ...mono, fontSize: 12, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px 10px', marginTop: 8, maxWidth: 420 }}>
-      <span role="columnheader" style={{ color: '#fca5a5' }}>ILLUSION</span><span role="columnheader" style={{ color: '#86efac' }}>REALITY</span>
+    <div role="table" aria-label="Illusion and reality" style={{ ...mono, fontSize: 11, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 10px', marginTop: 8, maxWidth: 520 }}>
+      <span role="columnheader" style={{ color: '#fca5a5' }}>COILED ILLUSION (COVERED-UP)</span><span role="columnheader" style={{ color: '#86efac' }}>UNRAVELED REALITY (UNIT-BASED)</span>
       {PAIRS.map(([i, r]) => (<React.Fragment key={i}><span role="cell">{i}</span><span role="cell">→ {r}</span></React.Fragment>))}
     </div>
   </div>

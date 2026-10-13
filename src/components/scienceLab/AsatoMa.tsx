@@ -211,6 +211,8 @@ const TERMS: LabTerm[] = [
   { dev: 'कार्य', iast: 'kārya', tag: 'VAIŚEṢIKA SŪTRA 4.1.2 // Manifest Effect', game: 'Macroscopic creation: pots, ice, steam, smoke, gold bars.', en: 'effect, product, action' },
   { dev: 'लिङ्ग', iast: 'liṅga', tag: 'PRAMĀṆA // Inferential Token', game: 'The visible mark by which the invisible cause is rigorously inferred.', en: 'mark, sign, token, evidence' },
   { dev: 'विवेक', iast: 'viveka', tag: 'SCANNER ENGINE // Discernment', game: 'Piercing past surface appearance to reveal conserved invariant Sat.', en: 'discernment, discriminating intellect' },
+  { dev: 'रज्जु-सर्प', iast: 'rajju-sarpa', tag: 'ADVAITA EPISTEMOLOGY // Coiled vs Unraveled', game: 'An object with coiled (covered-up) info appearing as a snake, uncoiling in Viveka to reveal uniform repetitive unit fibers (rope).', en: 'rope-and-snake analogy' },
+  { dev: 'अध्यास', iast: 'adhyāsa', tag: 'SUPERIMPOSITION // Projected Form', game: 'The cognitive act of superimposing coiled appearances over an underlying unit-based substrate.', en: 'superimposition' },
 ];
 
 
@@ -1434,7 +1436,7 @@ const AsatoMa: React.FC = () => {
           </figure>
         </section>
         <section className="vl-panel vl-tradition vl-tradition--spanda vl-lore" aria-label="Lore Terminal Beta: the philosophy of Māyā in later Vedānta" data-testid="asato-lore-beta">
-          <h3 className="vl-panel-title">🎭 <span className="vl-lore-title">Lore Terminal Beta <i>//</i> The Philosophy of Māyā</span></h3>
+          <h3 className="vl-panel-title">🎭 <span className="vl-lore-title">Lore Terminal Beta <i>//</i> Māyā, Adhyāsa &amp; The Coiled Snake Analogy</span></h3>
           <p>
             <b className="vl-mission-tag">ENGINE RULES:</b> In later Vedānta, the changing world is described through{' '}
             <strong lang="sa">नामरूप Nāma-Rūpa</strong> (name and form) and <strong lang="sa">माया Māyā</strong>. Matter melts,
@@ -1442,11 +1444,69 @@ const AsatoMa: React.FC = () => {
             <strong lang="sa">अविद्या Avidyā</strong> (perceptual blindspots) and track the atoms that persist under every change
             in the chamber.
           </p>
+
+          <div style={{ background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(244, 63, 94, 0.35)', borderRadius: '10px', padding: '0.85rem 1rem', margin: '0.75rem 0' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '0.4rem' }}>
+              <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#fb7185', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                The Rope &amp; Snake Analogy (रज्जु-सर्प-न्यायः) · Cognitive Mechanics
+              </span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--compact"
+                  style={{ fontSize: '0.72rem', padding: '0.15rem 0.5rem', background: 'rgba(244, 63, 94, 0.15)', border: '1px solid rgba(244, 63, 94, 0.4)', color: '#fca5a5', borderRadius: '4px' }}
+                  onClick={() => playPronunciation('रज्ज्वज्ञानात् क्षणेनैव यद्वद्रज्जुर्हि सर्पिणी')}
+                  title="Hear Sanskrit recitation"
+                >
+                  🔊 Listen
+                </button>
+                <span style={{ fontSize: '0.72rem', background: 'rgba(244, 63, 94, 0.15)', color: '#fca5a5', padding: '0.15rem 0.5rem', borderRadius: '4px', border: '1px solid rgba(244, 63, 94, 0.3)' }}>
+                  ADHYĀSA-PRAMĀṆA
+                </span>
+              </div>
+            </div>
+
+            <figure className="vl-quote" style={{ borderLeftColor: '#f43f5e', background: 'rgba(24, 34, 60, 0.9)' }}>
+              <blockquote lang="sa" style={{ fontSize: '1.02rem', color: '#f8fafc' }}>
+                रज्ज्वज्ञानात् क्षणेनैव यद्वद्रज्जुर्हि सर्पिणी । भाति स्वभानतो भाति तथा ज्ञानं विना जगत् ॥
+              </blockquote>
+              <div className="vl-term-iast" style={{ fontSize: '0.82rem', color: '#fca5a5', fontWeight: 600 }}>
+                rajjv-ajñānāt kṣaṇenaiva yadvad-rajjur hi sarpiṇī | bhāti svabhānato bhāti tathā jñānaṃ vinā jagat ||
+              </div>
+              <figcaption style={{ fontSize: '0.82rem', color: '#cbd5e1', marginTop: '0.25rem' }}>
+                “Through lack of knowledge of the rope, it appears in an instant as a serpent; in the very same way, without discerning knowledge (Viveka), does the phenomenal world appear.” — Ādi Śaṅkarācārya (Aparokṣānubhūti 44)
+              </figcaption>
+            </figure>
+
+            <div style={{ margin: '0.65rem 0 0.35rem', fontSize: '0.82rem', color: '#e2e8f0', lineHeight: 1.55 }}>
+              <strong style={{ color: '#fde047' }}>Not Mere Random Illusion, But Coiled Information vs. Unraveled Unit Structure:</strong>
+              <p style={{ margin: '0.35rem 0 0.5rem', color: '#cbd5e1' }}>
+                In Ādi Śaṅkarācārya's philosophy, the rope-and-snake is often misunderstood as a simple case of one arbitrary object being mistaken for another.
+                On a deeper informational level, it illustrates how an object with <strong>coiled (covered-up, occluded) information</strong> in dim perception appears as a menacing, complex, organic <em>snake</em>.
+                When the illuminating light of <strong>Viveka</strong> is brought forth, the coiled projection unravels: the reality is an <strong>unraveled, uniform, repetitive unit-based object</strong>—a rope meticulously braided out of identical repeating strands and fibers.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.5rem', marginTop: '0.45rem' }}>
+                <div style={{ background: 'rgba(30, 41, 59, 0.85)', padding: '0.5rem 0.65rem', borderRadius: '6px', border: '1px solid rgba(244, 63, 94, 0.25)' }}>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#f87171', textTransform: 'uppercase' }}>🐍 The Coiled Snake (सर्पः)</div>
+                  <div style={{ fontSize: '0.78rem', color: '#cbd5e1', marginTop: '0.15rem' }}>
+                    <strong>Covered-Up / Compressed Info:</strong> Macroscopic sensory appearance, continuous surfaces, deceptive phase changes, and projected threats.
+                  </div>
+                </div>
+                <div style={{ background: 'rgba(30, 41, 59, 0.85)', padding: '0.5rem 0.65rem', borderRadius: '6px', border: '1px solid rgba(34, 197, 94, 0.25)' }}>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4ade80', textTransform: 'uppercase' }}>🪢 The Unraveled Rope (रज्जुः)</div>
+                  <div style={{ fontSize: '0.78rem', color: '#cbd5e1', marginTop: '0.15rem' }}>
+                    <strong>Uniform Repetitive Units:</strong> Identical braided fibers, repeating atomic crystal lattices, and conserved discrete units (<em>Paramāṇus</em>).
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <p className="vl-small">
-            <b>A separate layer.</b> Māyā as a doctrine, and avidyā (literally “not-knowing”), are developed in later Vedānta,
-            especially the Advaita tradition associated with Ādi Śaṅkarācārya (c. 8th century CE). The pair nāma-rūpa is older: the
-            Upaniṣads already use it (e.g. BU 1.4.7). The prayer in BU 1.3.28 uses none of these words; this segment’s title
-            borrows the later image and keeps it apart from what the prayer says.
+            <b>Historical Context:</b> Māyā as a formal epistemic doctrine, and <em>Adhyāsa</em> (superimposition of memory/projection onto a substratum),
+            were developed with analytical rigor in Advaita Vedānta by Ādi Śaṅkarācārya (c. 8th century CE). In this physics lab,
+            our <strong>Viveka Scanner</strong> operationalizes this exact awakening: revealing that what appears to our eyes as a continuous,
+            coiled mystery of burning or boiling is fundamentally an unraveled, uniform, repetitive lattice of indestructible atomic units.
           </p>
         </section>
       </div>
