@@ -3107,6 +3107,78 @@
   margin: 0;
 }
 
+/* Sutra & Word-by-Word Enhancements for Kaṇāda 4.1.1 & 4.1.2 */
+.vl-sutra-verse {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0.35rem 0 0.15rem;
+  letter-spacing: 0.02em;
+}
+
+.vl-sutra-iast-line {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 0.4rem;
+}
+
+.vl-karya-box .vl-sutra-iast-line {
+  color: #fcd34d;
+}
+
+.vl-word-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.45rem 0;
+}
+
+.vl-word-pill {
+  display: inline-flex;
+  flex-direction: column;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.vl-word-pill-term {
+  color: #fde047;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.vl-word-pill-mean {
+  color: #cbd5e1;
+  font-size: 0.72rem;
+}
+
+.vl-kanada-sutra-card {
+  background: linear-gradient(180deg, #18223c 0%, #0f172a 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.3);
+  border-radius: 16px;
+  padding: 1.1rem 1.25rem;
+  margin: 1.2rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.vl-kanada-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .vl-kanada-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* 10. [ NEW: BHOOTA RECONSTRUCTOR ] */
 .vl-reconstructor-panel {
   background: linear-gradient(180deg, #0f172a 0%, #090e17 100%);

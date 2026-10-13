@@ -4,6 +4,7 @@ import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm } from './common';
 import { DialKnob, HudFrame, LedButton } from './controls';
 import { isSmallScreen, prefersReducedMotion } from './motion';
 import MatrixOverwatch from './MatrixOverwatch';
+import { playPronunciation } from '../../utils/pronunciation';
 
 type LangMode = 'both' | 'sanskrit' | 'modern';
 type SubstanceId = 'gold' | 'wood' | 'water' | 'ice';
@@ -205,6 +206,11 @@ const TERMS: LabTerm[] = [
   { dev: 'द्रव', iast: 'drava', en: 'liquid, flowing' },
   { dev: 'वाष्प', iast: 'vāṣpa', en: 'vapour, steam' },
   { dev: 'अग्नि', iast: 'agni', en: 'fire' },
+  { dev: 'अकारणवत्', iast: 'akāraṇavat', tag: 'VAIŚEṢIKA SŪTRA 4.1.1 // Uncaused Seed', game: 'Having no prior material cause; the fundamental eternal atom.', en: 'uncaused, without a cause', note: 'a- + kāraṇa + -vat' },
+  { dev: 'नित्य', iast: 'nitya', tag: 'INVARIANT // Eternal', game: 'Indestructible, uncaused building blocks of creation.', en: 'eternal, everlasting' },
+  { dev: 'कार्य', iast: 'kārya', tag: 'VAIŚEṢIKA SŪTRA 4.1.2 // Manifest Effect', game: 'Macroscopic creation: pots, ice, steam, smoke, gold bars.', en: 'effect, product, action' },
+  { dev: 'लिङ्ग', iast: 'liṅga', tag: 'PRAMĀṆA // Inferential Token', game: 'The visible mark by which the invisible cause is rigorously inferred.', en: 'mark, sign, token, evidence' },
+  { dev: 'विवेक', iast: 'viveka', tag: 'SCANNER ENGINE // Discernment', game: 'Piercing past surface appearance to reveal conserved invariant Sat.', en: 'discernment, discriminating intellect' },
 ];
 
 
@@ -1065,10 +1071,10 @@ const AsatoMa: React.FC = () => {
         sanskritTitle="नागार्जुन-कणादयोः मूषा-विज्ञानं & सत्-नियमः"
         mood="meditate"
         sutra={{
-          dev: 'असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥\nसदकारणवन्नित्यम् । तस्य कार्यं लिङ्गम् ॥',
-          iast: 'asato mā sad gamaya | tamaso mā jyotir gamaya | mṛtyor mā’mṛtaṃ gamaya ||\nsad akāraṇavan nityam | tasya kāryaṃ liṅgam ||',
-          source: 'Bṛhadāraṇyaka Upaniṣad 1.3.28 & Vaiśeṣika Sūtra 4.1.1 (कणादः)',
-          meaning: '“Lead me from the unreal (macroscopic appearance) to the real (underlying invariant Sat); from perceptual darkness to illumination; from dissolution to immortality.” In Vaiśeṣika: That Sat which is eternal and uncaused is the atom (paramāṇu); the phenomenal effect is the empirical proof of its reality.',
+          dev: 'असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥',
+          iast: 'asato mā sad gamaya | tamaso mā jyotir gamaya | mṛtyor mā’mṛtaṃ gamaya ||',
+          source: 'Bṛhadāraṇyaka Upaniṣad 1.3.28 (बृहदारण्यकोपनिषत्)',
+          meaning: '“Lead me from the unreal (phenomenal appearance) to the real (underlying invariant Sat); from perceptual darkness to illumination; from dissolution to immortality.” In the laboratory crucible: sensory impressions (Asat) perceive destruction, while reason and the Viveka Scanner reveal that underlying atomic Sat is invariant and conserved across all transformations.',
         }}
         anecdote={
           <>
@@ -1444,6 +1450,122 @@ const AsatoMa: React.FC = () => {
           </p>
         </section>
       </div>
+
+      <section className="vl-panel vl-tradition vl-lore vl-lore-gamma" aria-label="Lore Terminal Gamma: Sage Kaṇāda's Vaiśeṣika Sūtras 4.1.1 & 4.1.2" data-testid="asato-lore-gamma" style={{ marginTop: '1rem' }}>
+        <h3 className="vl-panel-title">
+          ⚛️ <span className="vl-lore-title">Lore Terminal Gamma <i>//</i> Kaṇāda’s Sūtras 4.1.1 &amp; 4.1.2: The Epistemic Invariance of Sat</span>
+        </h3>
+        <p>
+          <b className="vl-mission-tag">LEVEL 1 FORGE LINK:</b> In <em>Level 1: The Forge of Kaṇāda</em>, you subject substances to severe thermal stress.
+          When gold melts or wood burns to ash and smoke, ordinary vision perceives annihilation. But Sage Kaṇāda’s <em>Vaiśeṣika Sūtra</em> (वैशेषिक-सूत्रम्) provides
+          the exact rational axiom for our <strong>Viveka Scanner</strong>: the fundamental entity (<em>Sat</em> / the atom) is uncaused and eternal,
+          and its invisible existence is proved through its macroscopic effect (<em>kārya</em>).
+        </p>
+
+        {/* Sutra 1 */}
+        <div style={{ background: 'rgba(15, 23, 42, 0.85)', border: '1px solid rgba(56, 189, 248, 0.35)', borderRadius: '10px', padding: '0.9rem 1.1rem', marginBottom: '0.9rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.4rem' }}>
+            <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#38bdf8', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              Vaiśeṣika Sūtra 4.1.1 · The Nature of the Eternal Cause (नित्य-कारण-लक्षणम्)
+            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <button
+                type="button"
+                className="vl-btn vl-btn--compact"
+                style={{ fontSize: '0.75rem', padding: '0.2rem 0.6rem', background: 'rgba(56, 189, 248, 0.15)', border: '1px solid rgba(56, 189, 248, 0.4)', color: '#7dd3fc', borderRadius: '6px' }}
+                onClick={() => playPronunciation('सदकारणवन्नित्यम्')}
+                title="Hear Sanskrit pronunciation"
+              >
+                🔊 Listen
+              </button>
+              <span style={{ fontSize: '0.72rem', background: 'rgba(56, 189, 248, 0.15)', color: '#7dd3fc', padding: '0.15rem 0.5rem', borderRadius: '4px', border: '1px solid rgba(56, 189, 248, 0.3)' }}>
+                NITYA-SŪTRA
+              </span>
+            </div>
+          </div>
+          <figure className="vl-quote" style={{ borderLeftColor: '#38bdf8', background: 'rgba(24, 34, 60, 0.9)' }}>
+            <blockquote lang="sa" style={{ fontSize: '1.25rem', color: '#f8fafc' }}>सदकारणवन्नित्यम् ॥</blockquote>
+            <div className="vl-term-iast" style={{ fontSize: '0.95rem', color: '#7dd3fc', fontWeight: 600 }}>sad-akāraṇavan-nityam</div>
+            <figcaption style={{ fontSize: '0.92rem', color: '#e2e8f0', marginTop: '0.3rem', fontWeight: 500 }}>
+              “That which is existent and yet uncaused is eternal.”
+            </figcaption>
+          </figure>
+
+          <div style={{ margin: '0.65rem 0 0.45rem' }}>
+            <b style={{ fontSize: '0.78rem', color: '#fde047', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Word-by-Word Meaning (पदच्छेद-पदार्थौ):</b>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '0.5rem', marginTop: '0.4rem' }}>
+              <div style={{ background: 'rgba(30, 41, 59, 0.85)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid rgba(148, 163, 184, 0.25)' }}>
+                <strong style={{ color: '#f8fafc', fontSize: '0.92rem' }}>सत् (sat)</strong>
+                <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>Existent / that which is real / being</div>
+              </div>
+              <div style={{ background: 'rgba(30, 41, 59, 0.85)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid rgba(148, 163, 184, 0.25)' }}>
+                <strong style={{ color: '#f8fafc', fontSize: '0.92rem' }}>अकारणवत् (akāraṇavat)</strong>
+                <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>Without a cause / uncaused (composed of <em>a-</em> meaning 'not' + <em>kāraṇa</em> meaning 'cause' + <em>-vat</em> meaning 'having')</div>
+              </div>
+              <div style={{ background: 'rgba(30, 41, 59, 0.85)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid rgba(148, 163, 184, 0.25)' }}>
+                <strong style={{ color: '#f8fafc', fontSize: '0.92rem' }}>नित्यम् (nityam)</strong>
+                <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>Eternal / everlasting</div>
+              </div>
+            </div>
+          </div>
+
+          <p className="vl-small" style={{ color: '#cbd5e1', marginTop: '0.55rem', lineHeight: 1.55 }}>
+            <strong>Context:</strong> In Indian philosophy, gross physical objects (like a clay pot) are temporary because they are caused by something else (clay). However, the ultimate, fundamental, indivisible components—atoms (<em>Paramaṇus</em>)—pre-exist all creation. Because they exist (<em>sat</em>) but were not manufactured out of any prior component (<em>akāraṇavat</em>), they can never be destroyed, making them eternal (<em>nityam</em>).
+          </p>
+        </div>
+
+        {/* Sutra 2 */}
+        <div style={{ background: 'rgba(15, 23, 42, 0.85)', border: '1px solid rgba(245, 158, 11, 0.35)', borderRadius: '10px', padding: '0.9rem 1.1rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.4rem' }}>
+            <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#f59e0b', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              Vaiśeṣika Sūtra 4.1.2 · The Inferential Proof of Invisible Atoms (परमाणु-सद्भाव-प्रमाणम्)
+            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <button
+                type="button"
+                className="vl-btn vl-btn--compact"
+                style={{ fontSize: '0.75rem', padding: '0.2rem 0.6rem', background: 'rgba(245, 158, 11, 0.15)', border: '1px solid rgba(245, 158, 11, 0.4)', color: '#fcd34d', borderRadius: '6px' }}
+                onClick={() => playPronunciation('तस्य कार्यं लिङ्गम्')}
+                title="Hear Sanskrit pronunciation"
+              >
+                🔊 Listen
+              </button>
+              <span style={{ fontSize: '0.72rem', background: 'rgba(245, 158, 11, 0.15)', color: '#fcd34d', padding: '0.15rem 0.5rem', borderRadius: '4px', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
+                PRAMĀṆA-SŪTRA
+              </span>
+            </div>
+          </div>
+          <figure className="vl-quote" style={{ borderLeftColor: '#f59e0b', background: 'rgba(24, 34, 60, 0.9)' }}>
+            <blockquote lang="sa" style={{ fontSize: '1.25rem', color: '#f8fafc' }}>तस्य कार्यं लिङ्गम् ॥</blockquote>
+            <div className="vl-term-iast" style={{ fontSize: '0.95rem', color: '#fcd34d', fontWeight: 600 }}>tasya kāryaṃ liṅgam</div>
+            <figcaption style={{ fontSize: '0.92rem', color: '#e2e8f0', marginTop: '0.3rem', fontWeight: 500 }}>
+              “Its effect (the visible world/creation) is the evidence of its existence.”
+            </figcaption>
+          </figure>
+
+          <div style={{ margin: '0.65rem 0 0.45rem' }}>
+            <b style={{ fontSize: '0.78rem', color: '#fde047', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Word-by-Word Meaning (पदच्छेद-पदार्थौ):</b>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '0.5rem', marginTop: '0.4rem' }}>
+              <div style={{ background: 'rgba(30, 41, 59, 0.85)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid rgba(148, 163, 184, 0.25)' }}>
+                <strong style={{ color: '#f8fafc', fontSize: '0.92rem' }}>तस्य (tasya)</strong>
+                <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>Of that (referring back to the eternal uncaused atom)</div>
+              </div>
+              <div style={{ background: 'rgba(30, 41, 59, 0.85)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid rgba(148, 163, 184, 0.25)' }}>
+                <strong style={{ color: '#f8fafc', fontSize: '0.92rem' }}>कार्यम् (kāryam)</strong>
+                <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>Effect / product / action / the created object</div>
+              </div>
+              <div style={{ background: 'rgba(30, 41, 59, 0.85)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid rgba(148, 163, 184, 0.25)' }}>
+                <strong style={{ color: '#f8fafc', fontSize: '0.92rem' }}>लिङ्गम् (liṅgam)</strong>
+                <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>Mark / sign / token / evidence / indicator</div>
+              </div>
+            </div>
+          </div>
+
+          <p className="vl-small" style={{ color: '#cbd5e1', marginTop: '0.55rem', lineHeight: 1.55 }}>
+            <strong>Context & Epistemological Role in Viveka Scanner:</strong> Single atoms are microscopic and entirely invisible to the naked human eye. So how do we know they exist? The effect (<em>kāryam</em>)—the macroscopic world around us (such as a pot, a piece of cloth, or a mountain)—serves as the logical proof (<em>liṅgam</em>) that fundamental atomic building blocks must exist. An effect cannot exist without a fundamental material cause. When you trigger the <strong>Viveka Scanner</strong> in this crucible simulation, you are utilizing the macroscopic effect (vapor, smoke, glowing lattice) as the inferential token (<em>liṅgam</em>) to peer through <em>Māyā</em> and verify the underlying eternal <em>Sat</em>!
+          </p>
+        </div>
+      </section>
 
       <section className="vl-panel vl-modern" aria-label="Modern comparison for fun">
         <h3 className="vl-panel-title">🔬 Modern comparison (for fun) <span className="vl-panel-hint">not what the texts say</span></h3>
