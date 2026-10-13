@@ -6,5 +6,14 @@
 
 /sanskrit-teaching-web-app-from-beginner-to-advanced-/* /:splat 301
 
+# Workbook PDFs are for members only (served via the in-app download gate)
+/downloads/sanskrit-basic-workbook.pdf /worksheets 302
+/downloads/sanskrit-festival-workbook.pdf /worksheets 302
+/downloads/sanskrit-grammar-workbook-level-1.pdf /worksheets 302
+/downloads/sanskrit-grammar-workbook-level-2.pdf /worksheets 302
+/downloads/sanskrit-grammar-workbook-level-3.pdf /worksheets 302
+/downloads/sanskrit-animals-workbook.pdf /worksheets 302
+/downloads/sanskrit-plants-workbook.pdf /worksheets 302
+
 # SPA fallback rule for any client-side route
 /* /index.html 200

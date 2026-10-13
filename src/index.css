@@ -114,7 +114,7 @@ code {
 .wbp-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem;margin:.9rem auto 0;max-width:900px;text-align:left}
 .wbp-card{background:#fffdf7;border:1.5px solid;border-radius:14px;padding:.6rem .7rem}
 .wbp-head{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;flex-wrap:wrap;margin-bottom:.45rem}
-.wbp-title{font-weight:700;text-decoration:none;font-size:.95rem}.wbp-title:hover{text-decoration:underline}
+.wbp-title{background:none;border:0;padding:0;cursor:pointer;text-align:left;font-family:inherit;font-weight:700;text-decoration:none;font-size:.95rem}.wbp-title:hover{text-decoration:underline}
 .wbp-meta{font-size:.75rem;color:#6b7280}
 .wbp-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem}
 .wbp-thumb{padding:0;border:1px solid #e5e7eb;border-radius:6px;background:#fff;cursor:zoom-in;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
@@ -128,8 +128,8 @@ code {
 .wbp-lb-stage{display:flex;align-items:center;gap:.3rem;padding:0 .4rem;min-height:0;flex:1}
 .wbp-lb-stage img{max-height:calc(100vh - 9rem);max-width:calc(100% - 5rem);height:auto;width:auto;border:1px solid #e5e7eb;border-radius:4px;margin:0 auto}
 .wbp-nav{border:0;background:#f1f5f9;border-radius:999px;width:2.3rem;height:2.3rem;font-size:1.5rem;line-height:1;cursor:pointer;flex:0 0 auto}
-.wbp-dl{color:#fff;text-decoration:none;padding:.45rem .8rem;border-radius:8px;font-weight:600;font-size:.85rem}
+.wbp-dl{border:0;cursor:pointer;font-family:inherit;color:#fff;text-decoration:none;padding:.45rem .8rem;border-radius:8px;font-weight:600;font-size:.85rem}
 @media (max-width:520px){.wbp-lb-stage img{max-width:calc(100% - 4.4rem)}.wbp-nav{width:2rem;height:2rem}}
 @media (prefers-reduced-motion:reduce){.wbp-thumb{transition:none}}
 .wbp-group{grid-column:1/-1;margin:.4rem 0 -.2rem;font-size:1rem;color:#4c1d95}
-.wbp-mini-dl{color:#fff;text-decoration:none;font-size:.72rem;font-weight:600;padding:.2rem .55rem;border-radius:999px}
+.wbp-mini-dl{border:0;cursor:pointer;font-family:inherit;color:#fff;text-decoration:none;font-size:.72rem;font-weight:600;padding:.2rem .55rem;border-radius:999px}

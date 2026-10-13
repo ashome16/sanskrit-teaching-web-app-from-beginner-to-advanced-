@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { downloadWorkbook, type WorkbookFile } from '../utils/workbookDownload';
 
-type Book = { group?: string; id: string; title: string; pdf: string; pages: number; color: string; shots: { n: number; label: string }[] };
+type Book = { group?: string; id: string; title: string; pdf: WorkbookFile; pages: number; color: string; shots: { n: number; label: string }[] };
 
 const BOOKS: Book[] = [
   {
     id: 'basic',
     title: '📥 Beginner Workbook',
-    pdf: '/downloads/sanskrit-basic-workbook.pdf',
+    pdf: 'sanskrit-basic-workbook.pdf',
     pages: 28,
     color: '#15803d',
     shots: [
@@ -19,7 +20,7 @@ const BOOKS: Book[] = [
   {
     id: 'festival',
     title: '🪔 Festival Workbook',
-    pdf: '/downloads/sanskrit-festival-workbook.pdf',
+    pdf: 'sanskrit-festival-workbook.pdf',
     pages: 34,
     color: '#c2410c',
     shots: [
@@ -33,7 +34,7 @@ const BOOKS: Book[] = [
     group: 'grammar',
     id: 'grammar1',
     title: '📘 Grammar · Level 1 Basics',
-    pdf: '/downloads/sanskrit-grammar-workbook-level-1.pdf',
+    pdf: 'sanskrit-grammar-workbook-level-1.pdf',
     pages: 22,
     color: '#7c3aed',
     shots: [
@@ -47,7 +48,7 @@ const BOOKS: Book[] = [
     group: 'grammar',
     id: 'grammar2',
     title: '📗 Grammar · Level 2 Intermediate',
-    pdf: '/downloads/sanskrit-grammar-workbook-level-2.pdf',
+    pdf: 'sanskrit-grammar-workbook-level-2.pdf',
     pages: 21,
     color: '#0d9488',
     shots: [
@@ -61,7 +62,7 @@ const BOOKS: Book[] = [
     group: 'grammar',
     id: 'grammar3',
     title: '📕 Grammar · Level 3 Advanced',
-    pdf: '/downloads/sanskrit-grammar-workbook-level-3.pdf',
+    pdf: 'sanskrit-grammar-workbook-level-3.pdf',
     pages: 22,
     color: '#be185d',
     shots: [
@@ -75,7 +76,7 @@ const BOOKS: Book[] = [
     group: 'nature',
     id: 'animals',
     title: '🦚 Animals · पशवः पक्षिणश्च',
-    pdf: '/downloads/sanskrit-animals-workbook.pdf',
+    pdf: 'sanskrit-animals-workbook.pdf',
     pages: 25,
     color: '#15803d',
     shots: [
@@ -89,7 +90,7 @@ const BOOKS: Book[] = [
     group: 'nature',
     id: 'plants',
     title: '🌿 Indian Plants · वृक्षाः ओषधयश्च',
-    pdf: '/downloads/sanskrit-plants-workbook.pdf',
+    pdf: 'sanskrit-plants-workbook.pdf',
     pages: 22,
     color: '#4d7c0f',
     shots: [
@@ -101,12 +102,14 @@ const BOOKS: Book[] = [
   },
 ];
 
-const src = (b: Book, n: number, s: 'sm' | 'lg') => `/downloads/previews/${b.id}-p${n}-${s}.webp`;
+const thumb = (b: Book, n: number) => `/downloads/previews/${b.id}-p${n}-sm.webp`;
+/** Watermarked, screen-resolution page images (free online preview of every page). */
+const pageImg = (b: Book, n: number) => `/workbook-preview/${b.id}/p${n}.webp`;
 
 const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
-  const [open, setOpen] = useState<{ b: Book; i: number } | null>(null);
+  const [open, setOpen] = useState<{ b: Book; n: number } | null>(null);
   const close = useCallback(() => setOpen(null), []);
-  const step = useCallback((d: number) => setOpen((o) => (o ? { ...o, i: (o.i + d + o.b.shots.length) % o.b.shots.length } : o)), []);
+  const step = useCallback((d: number) => setOpen((o) => (o ? { ...o, n: ((o.n - 1 + d + o.b.pages) % o.b.pages) + 1 } : o)), []);
 
   useEffect(() => {
     if (!open) return;
@@ -131,14 +134,14 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         )}
         <div className="wbp-card" style={{ borderColor: `${b.color}55` }} data-testid={`wbp-${b.id}`}>
           <div className="wbp-head">
-            <a href={b.pdf} download className="wbp-title" style={{ color: b.color }}>{b.title}</a>
-            <span className="wbp-meta">{b.pages} pages · Free · PDF</span>
-            {b.group && <a href={b.pdf} download className="wbp-mini-dl" style={{ background: b.color }}>⬇ Download</a>}
+            <button type="button" className="wbp-title" style={{ color: b.color }} onClick={() => setOpen({ b, n: 1 })}>{b.title}</button>
+            <span className="wbp-meta">{b.pages} pages · Free preview · PDF for members</span>
+            <button type="button" className="wbp-mini-dl" style={{ background: b.color }} onClick={() => downloadWorkbook(b.pdf)} data-testid={`wbp-dl-${b.id}`}>⬇ PDF</button>
           </div>
           <div className="wbp-row">
-            {b.shots.map((s, i) => (
-              <button key={s.n} type="button" className="wbp-thumb" onClick={() => setOpen({ b, i })} aria-label={`Preview ${b.title} page ${s.n}: ${s.label}`}>
-                <img src={src(b, s.n, 'sm')} alt={`${s.label} page`} loading="lazy" decoding="async" width={300} height={424} />
+            {b.shots.map((s) => (
+              <button key={s.n} type="button" className="wbp-thumb" onClick={() => setOpen({ b, n: s.n })} aria-label={`Preview ${b.title} page ${s.n}: ${s.label}`}>
+                <img src={thumb(b, s.n)} alt={`${s.label} page`} loading="lazy" decoding="async" width={300} height={424} />
                 <span>{s.label}</span>
               </button>
             ))}
@@ -150,17 +153,17 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         <div className="wbp-lb" role="dialog" aria-modal="true" aria-label="Workbook preview" onClick={close}>
           <div className="wbp-lb-inner" onClick={(e) => e.stopPropagation()}>
             <div className="wbp-lb-top">
-              <b>{open.b.title} · page {open.b.shots[open.i].n} of {open.b.pages} · {open.b.shots[open.i].label}</b>
+              <b>{open.b.title} · page {open.n} of {open.b.pages}{open.b.shots.find((x) => x.n === open.n) ? ` · ${open.b.shots.find((x) => x.n === open.n)!.label}` : ''}</b>
               <button type="button" className="wbp-x" onClick={close} aria-label="Close">✕</button>
             </div>
             <div className="wbp-lb-stage">
-              <button type="button" className="wbp-nav" onClick={() => step(-1)} aria-label="Previous">‹</button>
-              <img src={src(open.b, open.b.shots[open.i].n, 'lg')} alt={`${open.b.shots[open.i].label} page`} />
-              <button type="button" className="wbp-nav" onClick={() => step(1)} aria-label="Next">›</button>
+              <button type="button" className="wbp-nav" onClick={() => step(-1)} aria-label="Previous page">‹</button>
+              <img src={pageImg(open.b, open.n)} alt={`${open.b.title} page ${open.n} (preview)`} onContextMenu={(e) => e.preventDefault()} draggable={false} />
+              <button type="button" className="wbp-nav" onClick={() => step(1)} aria-label="Next page">›</button>
             </div>
             <div className="wbp-lb-bot">
-              <span>{open.i + 1} / {open.b.shots.length}</span>
-              <a href={open.b.pdf} download className="wbp-dl" style={{ background: open.b.color }}>⬇ Download free PDF ({open.b.pages} pages)</a>
+              <span>Free online preview · {open.n} / {open.b.pages}</span>
+              <button type="button" className="wbp-dl" style={{ background: open.b.color }} onClick={() => downloadWorkbook(open.b.pdf)} data-testid="wbp-lb-download">⬇ Download / print PDF (members)</button>
             </div>
           </div>
         </div>

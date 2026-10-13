@@ -1,6 +1,7 @@
 import React, { useState, lazy, Suspense } from 'react';
 import { playPronunciation } from '../utils/pronunciation';
 import { useAuthStore } from '../store/authStore';
+import { downloadWorkbook } from '../utils/workbookDownload';
 import { canAccessAllChapters, isFreeTrialOpenLesson } from '../utils/premiumAccess';
 import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
 import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
@@ -756,26 +757,24 @@ const HomePage: React.FC<HomePageProps> = ({
               📑 कार्यपत्रिकाः · Worksheets
             </button>
           )}
-          <a
-            className="home-btn-secondary"
-            href="/downloads/sanskrit-basic-workbook.pdf"
-            download
-            style={{ background: 'rgba(22, 163, 74, 0.08)', borderColor: 'rgba(22, 163, 74, 0.4)', color: '#15803d', textDecoration: 'none' }}
+          <button
+            type="button"
+            className="home-btn-secondary" onClick={() => downloadWorkbook('sanskrit-basic-workbook.pdf')}
+            style={{ background: 'rgba(22, 163, 74, 0.08)', borderColor: 'rgba(22, 163, 74, 0.4)', color: '#15803d', textDecoration: 'none', cursor: 'pointer' }}
             data-testid="home-workbook-download"
-            title="Free 28-page printable PDF: vowels, consonants, mātrās, words, numbers, greetings, exercises and answer key"
+            title="28-page printable PDF (free online preview; download for members): vowels, consonants, mātrās, words, numbers, greetings, exercises and answer key"
           >
-            📥 Free Beginner Workbook (PDF)
-          </a>
-          <a
-            className="home-btn-secondary"
-            href="/downloads/sanskrit-festival-workbook.pdf"
-            download
-            style={{ background: 'rgba(234, 88, 12, 0.08)', borderColor: 'rgba(234, 88, 12, 0.4)', color: '#c2410c', textDecoration: 'none' }}
+            📥 Beginner Workbook (PDF)
+          </button>
+          <button
+            type="button"
+            className="home-btn-secondary" onClick={() => downloadWorkbook('sanskrit-festival-workbook.pdf')}
+            style={{ background: 'rgba(234, 88, 12, 0.08)', borderColor: 'rgba(234, 88, 12, 0.4)', color: '#c2410c', textDecoration: 'none', cursor: 'pointer' }}
             data-testid="home-festival-workbook-download"
-            title="Free 34-page printable PDF: Dīpāvalī, Gaṇeśa Caturthī, Navarātri, Dasarā / Vijayadaśamī, Oṇam, Makara Saṅkrānti, Holi, Mahāśivarātri, Rakṣābandhana, Rāma Navamī, Kṛṣṇa Janmāṣṭamī, festive adornment, the six seasons, the twelve months, quiz, greetings and answer key"
+            title="34-page printable PDF (free online preview; download for members): Dīpāvalī, Gaṇeśa Caturthī, Navarātri, Dasarā / Vijayadaśamī, Oṇam, Makara Saṅkrānti, Holi, Mahāśivarātri, Rakṣābandhana, Rāma Navamī, Kṛṣṇa Janmāṣṭamī, festive adornment, the six seasons, the twelve months, quiz, greetings and answer key"
           >
-            🪔 Free Festival Workbook (PDF)
-          </a>
+            🪔 Festival Workbook (PDF)
+          </button>
           {onOpenResources && (
             <button
               type="button"

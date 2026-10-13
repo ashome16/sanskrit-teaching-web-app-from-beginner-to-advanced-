@@ -24,3 +24,11 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Member workbook PDFs: keep out of search engines
+/m/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: private, no-store
+
+/workbook-preview/*
+  X-Robots-Tag: noindex

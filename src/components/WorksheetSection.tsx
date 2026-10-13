@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useEffect, useMemo, useState } from 'react';
 const WorkbookPreviews = lazy(() => import('./WorkbookPreviews'));
 import { WORKSHEETS, type Worksheet } from '../data/worksheetData';
 import { useAuthStore } from '../store/authStore';
+import { downloadWorkbook } from '../utils/workbookDownload';
 import {
   canAccessAllChapters,
   canDownloadContent,
@@ -234,12 +235,12 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
         </div>
 
         <div style={{ display: 'flex', gap: '0.65rem' }}>
-            <a className="worksheet-toolbar-btn" href="/downloads/sanskrit-basic-workbook.pdf" download data-testid="worksheet-workbook-download" style={{ textDecoration: 'none' }}>
-              📥 Free Beginner Workbook (PDF)
-            </a>
-            <a className="worksheet-toolbar-btn" href="/downloads/sanskrit-festival-workbook.pdf" download data-testid="worksheet-festival-workbook-download" style={{ textDecoration: 'none' }}>
-              🪔 Free Festival Workbook (PDF)
-            </a>
+            <button type="button" className="worksheet-toolbar-btn" onClick={() => downloadWorkbook('sanskrit-basic-workbook.pdf')} data-testid="worksheet-workbook-download" style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              📥 Beginner Workbook (PDF)
+            </button>
+            <button type="button" className="worksheet-toolbar-btn" onClick={() => downloadWorkbook('sanskrit-festival-workbook.pdf')} data-testid="worksheet-festival-workbook-download" style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              🪔 Festival Workbook (PDF)
+            </button>
           {onOpenReader && (
             <button type="button" className="worksheet-toolbar-btn" onClick={onOpenReader}>
               📖 Deepakam Reader
