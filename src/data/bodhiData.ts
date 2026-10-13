@@ -1898,6 +1898,17 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     relatedLabAnchor: 'nada-brahman',
   },
   {
+    id: 'qa-basic-workbook',
+    category: 'pronunciation',
+    question: 'Is there a free beginner Sanskrit workbook I can download and print?',
+    sanskritQuestion: 'किं निःशुल्का प्रारम्भिक-अभ्यास-पुस्तिका अस्ति?',
+    shortAnswer: 'Yes. Tap “📥 Free Beginner Workbook (PDF)” on the homepage or the Worksheets page to download a free 14-page A4 workbook.',
+    detailedAnswer: 'The free beginner workbook (/downloads/sanskrit-basic-workbook.pdf) has a cover and how-to page; the vowels (svara) अ to अः with transliteration and tracing boxes; the consonants (vyañjana) grouped by varga, plus य र ल व, श ष स ह and क्ष त्र ज्ञ; the vowel signs (mātrā) on क (का कि की … कः); 15 first words such as गजः (elephant), फलम् (fruit) and जलम् (water); numbers एकम् to दश with Sanskrit digits १–१०; greetings such as नमस्ते, सुप्रभातम्, मम नाम … and धन्यवादः; small exercises (match, fill in the blank, write in Devanagari); and an answer key. Do one page a day.',
+    audioDevanagari: 'नमस्ते',
+    tip: 'Print it, trace the grey letters, then check the answer key on the last page.',
+    relatedView: 'worksheets',
+  },
+  {
     id: 'qa-lab-asato-ma',
     category: 'philosophy',
     question: 'What does “asato mā sad gamaya” mean, and what is The Veil of Māyā lab?',
