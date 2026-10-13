@@ -1175,9 +1175,6 @@ const AsatoMa: React.FC = () => {
             <b style={{ color: '#f1f5f9' }}>🏆 Levels · {levelCount} / 3</b>
             <button type="button" className="vl-btn vl-btn--ghost" onClick={resetProgress} data-testid="asato-reset-levels">Reset progress</button>
           </div>
-          <div className="vl-level-bar" role="progressbar" aria-label="Level progress" aria-valuemin={0} aria-valuemax={3} aria-valuenow={levelCount} data-testid="asato-levels-progress">
-            <span style={{ width: `${(levelCount / 3) * 100}%` }} />
-          </div>
           <div className="vl-qcards" role="tablist" aria-label="Choose a level" data-testid="asato-stepbar">
             {LEVELS.map((l, i) => {
               const state = l.done ? 'done' : lvl === l.n ? 'now' : 'next';
