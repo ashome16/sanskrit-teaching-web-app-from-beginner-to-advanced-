@@ -71,6 +71,34 @@ const BOOKS: Book[] = [
       { n: 18, label: 'Subhāṣita' },
     ],
   },
+  {
+    group: 'nature',
+    id: 'animals',
+    title: '🦚 Animals · पशवः पक्षिणश्च',
+    pdf: '/downloads/sanskrit-animals-workbook.pdf',
+    pages: 25,
+    color: '#15803d',
+    shots: [
+      { n: 1, label: 'Cover' },
+      { n: 16, label: 'Vāhanas' },
+      { n: 18, label: 'Pañcatantra' },
+      { n: 22, label: 'Colouring' },
+    ],
+  },
+  {
+    group: 'nature',
+    id: 'plants',
+    title: '🌿 Indian Plants · वृक्षाः ओषधयश्च',
+    pdf: '/downloads/sanskrit-plants-workbook.pdf',
+    pages: 22,
+    color: '#4d7c0f',
+    shots: [
+      { n: 1, label: 'Cover' },
+      { n: 3, label: 'Plant parts' },
+      { n: 5, label: 'Sacred trees' },
+      { n: 16, label: 'Tulasī log' },
+    ],
+  },
 ];
 
 const src = (b: Book, n: number, s: 'sm' | 'lg') => `/downloads/previews/${b.id}-p${n}-${s}.webp`;
@@ -98,11 +126,14 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         {b.group === 'grammar' && BOOKS[bi - 1]?.group !== 'grammar' && (
           <h4 className="wbp-group" data-testid="grammar-workbooks-heading">📚 Grammar Workbooks · व्याकरण-अभ्यास-पुस्तिकाः</h4>
         )}
+        {b.group === 'nature' && BOOKS[bi - 1]?.group !== 'nature' && (
+          <h4 className="wbp-group" data-testid="nature-workbooks-heading">🌳 Nature Workbooks · प्रकृति-अभ्यास-पुस्तिकाः</h4>
+        )}
         <div className="wbp-card" style={{ borderColor: `${b.color}55` }} data-testid={`wbp-${b.id}`}>
           <div className="wbp-head">
             <a href={b.pdf} download className="wbp-title" style={{ color: b.color }}>{b.title}</a>
             <span className="wbp-meta">{b.pages} pages · Free · PDF</span>
-            {b.group === 'grammar' && <a href={b.pdf} download className="wbp-mini-dl" style={{ background: b.color }}>⬇ Download</a>}
+            {b.group && <a href={b.pdf} download className="wbp-mini-dl" style={{ background: b.color }}>⬇ Download</a>}
           </div>
           <div className="wbp-row">
             {b.shots.map((s, i) => (

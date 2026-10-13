@@ -4832,6 +4832,36 @@ export const SEARCH_INDEX: SearchItem[] = [
     },
   },
   {
+    id: 'tool-animals-workbook',
+    title: 'Free Sanskrit Animals Workbook (PDF) · पशवः पक्षिणश्च',
+    subtitle: '25 printable A4 pages · animals, birds, water creatures, insects, sounds, vāhanas, a Pañcatantra story',
+    category: 'tools',
+    categoryLabel: 'Study Material · PDF',
+    badgeEmoji: '🦚',
+    badgeColor: '#15803d',
+    description:
+      'A free printable animals workbook: domestic animals (गौः, अश्वः, अजा, श्वा, मार्जारः, कुक्कुटः), wild animals (सिंहः, व्याघ्रः, गजः, वानरः, हरिणः, शशकः), birds (काकः, शुकः, मयूरः, कोकिलः, हंसः, उलूकः), water creatures (मत्स्यः, कूर्मः, मण्डूकः, कर्कटः, नक्रः) and insects (पिपीलिका, मधुमक्षिका, चित्रपतङ्गः); young ones (वत्सः, कलभः, शावकः) and female forms; animal sounds (सिंहः गर्जति, गजः बृंहति, अश्वः हेषते); simple sentences; vāhanas of the deities (मूषकः, मयूरः, नन्दी, गरुडः, हंसः, सिंहः, उलूकः); the Pañcatantra story of the lion and the hare in simple Sanskrit; the subhāṣitas उद्यमेन हि सिध्यन्ति… and काकः कृष्णः पिकः कृष्णः…; a word search, a colouring page, a quiz and an answer key. Download from the homepage or the Worksheets page (/downloads/sanskrit-animals-workbook.pdf).',
+    keywords: ['animals workbook', 'animals in sanskrit', 'birds sanskrit', 'pashu', 'pakshi', 'पशवः', 'पक्षिणः', 'vahana', 'vahanas', 'panchatantra', 'lion and hare', 'animal sounds', 'insects', 'word search', 'colouring', 'nature workbooks', 'free pdf'],
+    target: {
+      view: 'worksheets',
+    },
+  },
+  {
+    id: 'tool-plants-workbook',
+    title: 'Free Sanskrit Indian Plants Workbook (PDF) · वृक्षाः ओषधयश्च',
+    subtitle: '22 printable A4 pages · plant parts, sacred trees, flowers, spices, grains, ślokas, tulasī log',
+    category: 'tools',
+    categoryLabel: 'Study Material · PDF',
+    badgeEmoji: '🌿',
+    badgeColor: '#4d7c0f',
+    description:
+      'A free printable Indian plants workbook: parts of a plant (मूलम्, काण्डः, शाखा, पर्णम्, पुष्पम्, फलम्, बीजम्); sacred and Indian trees and plants with Devanagari, transliteration, English and botanical names and their cultural use: तुलसी, वटः (Vaṭa Pūrṇimā), अश्वत्थः, निम्बः (Ugādi), आम्रः, बिल्वः, कमलम्/पद्मम्, नारिकेलः, कदली, चन्दनम्, अशोकः, शमी, दूर्वा, हरिद्रा, आमलकी; flowers (जातिः, मल्लिका, चम्पकः, जपा, पारिजातः); spices (मरिचम्, एला, लवङ्गम्, जीरकः, हिङ्गु); grains (व्रीहिः, यवः, गोधूमः, मुद्गः, तिलः); the ślokas मूलतो ब्रह्मरूपाय… and यन्मूले सर्वतीर्थानि…; the subhāṣita छायामन्यस्य कुर्वन्ति…; a grow-a-tulasī activity log, a leaf-match exercise, a word search, a colouring page and an answer key. Download from the homepage or the Worksheets page (/downloads/sanskrit-plants-workbook.pdf).',
+    keywords: ['plants workbook', 'trees in sanskrit', 'tulsi', 'tulasi', 'banyan', 'peepal', 'neem', 'flowers sanskrit', 'spices sanskrit', 'grains sanskrit', 'वृक्षाः', 'ओषधयः', 'botanical names', 'leaf match', 'nature workbooks', 'free pdf'],
+    target: {
+      view: 'worksheets',
+    },
+  },
+  {
     id: 'tool-grammar-workbooks',
     title: 'Free Sanskrit Grammar Workbooks (PDF) · Levels 1–3 · व्याकरण-अभ्यास-पुस्तिकाः',
     subtitle: '3 graded printable workbooks · basics, intermediate, advanced',

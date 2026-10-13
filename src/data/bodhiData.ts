@@ -1909,6 +1909,17 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     relatedView: 'worksheets',
   },
   {
+    id: 'qa-nature-workbooks',
+    category: 'pronunciation',
+    question: 'Is there a Sanskrit workbook about animals or plants?',
+    sanskritQuestion: 'किं पशूनां वृक्षाणां च संस्कृत-अभ्यास-पुस्तिका अस्ति?',
+    shortAnswer: 'Yes. Two free Nature Workbooks are in the workbook previews on the homepage and the Worksheets page: Animals · पशवः पक्षिणश्च (25 pages) and Indian Plants · वृक्षाः ओषधयश्च (22 pages).',
+    detailedAnswer: 'The Animals workbook (/downloads/sanskrit-animals-workbook.pdf) covers domestic and wild animals, birds, water creatures and insects with cute pictures, young ones and female forms, animal sounds (सिंहः गर्जति, गजः बृंहति), simple sentences, the vāhanas of the deities (मूषकः, मयूरः, नन्दी, गरुडः, हंसः, सिंहः, उलूकः), the Pañcatantra story of the lion and the hare in simple Sanskrit, the subhāṣitas उद्यमेन हि सिध्यन्ति… and काकः कृष्णः पिकः कृष्णः…, a word search and a colouring page. The Indian Plants workbook (/downloads/sanskrit-plants-workbook.pdf) covers plant parts (मूलम्, काण्डः, पर्णम्, पुष्पम्, फलम्, बीजम्), sacred and Indian trees such as तुलसी, वटः, अश्वत्थः, निम्बः, आम्रः, बिल्वः, कमलम्, शमी and दूर्वा with English and botanical names and their traditional and cultural uses, flowers, spices and grains, the ślokas मूलतो ब्रह्मरूपाय… and यन्मूले सर्वतीर्थानि…, a grow-a-tulasī log, a leaf match and a colouring page. Both have answer keys.',
+    audioDevanagari: 'पशवः पक्षिणश्च',
+    tip: 'Keep the tulasī log for four weeks and write one new Sanskrit word each day.',
+    relatedView: 'worksheets',
+  },
+  {
     id: 'qa-festival-workbook',
     category: 'pronunciation',
     question: 'Is there a Sanskrit workbook about Indian festivals and seasons?',
