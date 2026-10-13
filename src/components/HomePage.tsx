@@ -761,7 +761,7 @@ const HomePage: React.FC<HomePageProps> = ({
             download
             style={{ background: 'rgba(22, 163, 74, 0.08)', borderColor: 'rgba(22, 163, 74, 0.4)', color: '#15803d', textDecoration: 'none' }}
             data-testid="home-workbook-download"
-            title="Free 14-page printable PDF: vowels, consonants, mātrās, words, numbers, greetings, exercises and answer key"
+            title="Free 28-page printable PDF: vowels, consonants, mātrās, words, numbers, greetings, exercises and answer key"
           >
             📥 Free Beginner Workbook (PDF)
           </a>

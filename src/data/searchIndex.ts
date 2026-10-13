@@ -4804,13 +4804,13 @@ export const SEARCH_INDEX: SearchItem[] = [
   {
     id: 'tool-basic-workbook',
     title: 'Free Beginner Sanskrit Workbook (PDF) · मम प्रथमा संस्कृत-अभ्यास-पुस्तिका',
-    subtitle: '14 printable A4 pages · letters, mātrās, words, numbers, greetings',
+    subtitle: '28 printable A4 pages · letters, mātrās, words, numbers, greetings, verbs, puzzle, test & certificate',
     category: 'tools',
     categoryLabel: 'Study Material · PDF',
     badgeEmoji: '📥',
     badgeColor: '#15803d',
     description:
-      'A free, very basic printable workbook: vowels (svara) and consonants (vyañjana) by varga with tracing boxes, mātrās on क, 15 first words (गजः, फलम्, जलम् …), numbers एकम् to दश, greetings like नमस्ते and मम नाम …, small exercises and an answer key. Download from the homepage or the Worksheets page (/downloads/sanskrit-basic-workbook.pdf).',
+      'A free, very basic printable workbook: vowels (svara) and consonants (vyañjana) by varga with tracing boxes, mātrās on क, 15 first words (गजः, फलम्, जलम् …), numbers एकम् to दश, greetings like नमस्ते and मम नाम …, colours, body parts, animals and birds, family words, days of the week (रविवासरः …), सः/सा/तत्, अहं पठामि / त्वं पठसि / सः पठति, 12 action words, the subhāṣita उद्यमेन हि सिध्यन्ति…, a word search, a review test, a certificate and an answer key. Download from the homepage or the Worksheets page (/downloads/sanskrit-basic-workbook.pdf).',
     keywords: ['workbook', 'beginner workbook', 'free pdf', 'download', 'printable', 'tracing', 'alphabet practice', 'varnamala worksheet', 'matra', 'kids sanskrit', 'अभ्यास-पुस्तिका', 'कार्यपुस्तिका'],
     target: {
       view: 'worksheets',
