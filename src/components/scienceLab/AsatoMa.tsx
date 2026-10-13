@@ -1229,6 +1229,9 @@ const AsatoMa: React.FC = () => {
                 </h4>
                 <p data-testid="asato-l2-mission">Heat water into steam until the molecules fly fast. The atom count never changes.</p>
                 <p className="vl-key-num">Goal: faster than <b>{FAST_MS} m/s</b> (about {Math.round(waterT1000)} K)</p>
+                <p className="vl-small" data-testid="asato-l2-about" style={{ borderLeft: '3px solid #22d3ee', paddingLeft: '0.6rem', color: '#cbd5e1' }}>
+                  <b style={{ color: '#67e8f9' }}>About Āruṇi:</b> {'Aruni is historically credited as one of the first thinkers in human history to propose an atomic theory of matter and the concept of conservation of matter. He famously taught the core premise that complex matter is built from microscopic constituent parts (atoms/particles) that cannot be created or destroyed, perfectly aligning with the game\'s objective: "atom count stays the same."'}
+                </p>
                 <details className="vl-small">
                   <summary>More</summary>
                   “Singularity” is a game name, not a black hole. Why water? From v<sub>rms</sub> = √(3kT/m), light H₂O molecules
