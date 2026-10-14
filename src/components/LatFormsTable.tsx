@@ -11,13 +11,18 @@ import { playBilingualSequence } from '../utils/pronunciation';
 
 type LatFormsTableProps = {
   entry: DhatuEntry;
+  /**
+   * Called before this table starts speaking, so a parent queue (the root
+   * library's Play all) can stop and reset its own Stop/Pause state first.
+   */
+  onBeforeSpeak?: () => void;
 };
 
 type LatCell = { sanskrit: string };
 
 const PLAY_ALL_LABEL = 'Reads the nine forms in Sanskrit';
 
-const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
+const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry, onBeforeSpeak }) => {
   const result = useMemo(() => getLatForms(entry), [entry]);
   const hasP = Boolean(result.parasmaipada);
   const hasA = Boolean(result.atmanepada);
@@ -76,6 +81,7 @@ const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
   };
 
   const startPlayAll = (start: number) => {
+    onBeforeSpeak?.();
     cancelOwned();
     const list = cellsRef.current;
     if (!list.length) return;
@@ -119,6 +125,7 @@ const LatFormsTable: React.FC<LatFormsTableProps> = ({ entry }) => {
   const speakCell = (cellIndex: number) => {
     // A single tap cancels Play all so the two never talk over each other.
     // Next Play all starts at the first cell; only Pause resumes mid-table.
+    onBeforeSpeak?.();
     cancelOwned();
     setPlayingAll(false);
     resumeIndexRef.current = 0;
