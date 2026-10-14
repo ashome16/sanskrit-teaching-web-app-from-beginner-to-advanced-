@@ -699,6 +699,91 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
       },
     ],
   },
+  'temple-engineering': {
+    title: 'The Masters of Stone: Ancient Temple Engineering',
+    dev: 'शिल्प-स्थापत्य-विज्ञानम्',
+    bodhiIntro:
+      'Welcome to Sector 13: The Masters of Stone! Ancient Indian temple builders engineered millennia-defying architectural wonders without rigid chemical mortar. Using Sandhi Bandhana (precision dry masonry interlocking joints), they enabled structures to dissipate seismic energy via frictional micro-slips and self-heal under gravity. At riverbank temples like Kudavelli Sangameswara, deep compacted sand buffers dissipated pore-water pressure to prevent earthquake liquefaction. And through the Vastupurusha Mandala (8×8 Mandūka & 9×9 Paramaśāyika), fractal self-similar spires (Urushringas) channeled massive vertical loads down parabolic envelopes. Explore with Bodhi below!',
+    keyConcepts: [
+      { label: 'Sandhi Bandhana (सन्धि-बन्धनम्)', text: 'Precision mortise-and-tenon, dovetail, and tongue-and-groove dry masonry joints that dissipate seismic shear waves through frictional damping without brittle fracture.' },
+      { label: 'Gravitational Self-Healing', text: 'Without rigid mortar to crack, dry interlocking granite blocks yield slightly during ground acceleration and settle back into baseline alignment under their own gravitational deadweight.' },
+      { label: 'Hydro-Engineered Sand Buffers', text: 'Permeable compacted sand foundation beds beneath temples (like Kudavelli Sangameswara) that dissipate excess pore-water pressure, preventing soil liquefaction during floods and earthquakes.' },
+      { label: 'Vāstupuruṣa Maṇḍala Matrices', text: 'Sacred geometric grids (8×8 Maṇḍūka and 9×9 Paramaśāyika) mapping cosmological energy points, structural columns, and the central Brahmasthāna.' },
+      { label: 'Uruśṛṅga Fractal Load Paths', text: 'Miniature self-similar replica spires scaling down the central Vimāna/Śikhara, acting as cantilever buttresses that funnel horizontal thrust inward.' },
+      { label: 'Astronomical Solar Alignment', text: 'Solar ray tracing engineered to illuminate the innermost Garbhagṛha (sanctum) precisely at sunrise on the equinoxes.' },
+    ],
+    faqs: [
+      {
+        q: 'Why did ancient temple architects avoid using chemical mortar between granite blocks?',
+        a: 'Rigid chemical mortars fail under tension and seismic shear waves, creating stress concentrations that cause catastrophic fracture. Dry masonry with Sandhi Bandhana interlocking joints yields elastoplastically, converting kinetic shock into frictional heat while retaining structural stability.',
+        devAudio: 'सुसन्धित्वं सुसंहत्यं',
+      },
+      {
+        q: 'How does a sand buffer foundation prevent building collapse during river floods and tremors?',
+        a: 'At the confluence of rivers (like Krishna and Tungabhadra at Kudavelli), waterlogged silty clay loses shear strength under seismic vibration (liquefaction). A deep compacted sand buffer provides high drainage permeability, weeping water away to prevent pore-water pressure buildup while acting as a kinetic shock absorber.',
+        devAudio: 'वास्तुपुरुषमण्डलम्',
+      },
+      {
+        q: 'What is the structural role of miniature spires (Urushringas) along a temple tower?',
+        a: 'Far from mere decoration, Urushringas are mathematically scaled-down fractal replicas of the central tower. They act as stepping buttresses, creating a parabolic compression envelope that channels outward thrust safely downward onto the broad Adhiṣṭhāna plinth.',
+        devAudio: 'उरुशृङ्ग-रचना',
+      },
+    ],
+    quizzes: [
+      {
+        id: 'temple-q1',
+        q: 'Why did ancient Indian temple builders avoid rigid lime or chemical mortar in massive stone superstructures (Śikharas)?',
+        options: [
+          'Mortar was unknown in ancient India',
+          'Rigid mortar concentrates seismic shear stresses causing brittle fracture, whereas dry interlocking stone dissipates kinetic energy through micro-slip friction and self-heals under gravity',
+          'Rulers mandated that mortar was spiritually impure',
+          'Granite chemically dissolves any mortar placed against it',
+        ],
+        correct: 1,
+        explanation: 'King Bhoja’s Samarāṅgaṇa Sūtradhāra explains that dry interlocking joints (Sandhi Bandhana) absorb seismic shocks through kinetic friction and re-center under gravity without brittle cracking.',
+        sanskritContext: 'सुसन्धित्वं सुसंहत्यं... समराङ्गणसूत्रधारः ४४.१२',
+      },
+      {
+        id: 'temple-q2',
+        q: 'How did the geotechnical sand buffer at Kudavelli Sangameswara Temple prevent collapse at the Krishna-Tungabhadra confluence?',
+        options: [
+          'The sand turned into solid basalt when wet',
+          'High permeability allowed water to weep through, dissipating pore-water pressure and preventing soil liquefaction during seismic shaking and seasonal floods',
+          'Sand attracted sacred magnetic fields that repelled river currents',
+          'The sand acted as a buoyant cushion causing the temple to float',
+        ],
+        correct: 1,
+        explanation: 'Compact sand layers dissipate excess pore-water pressure rapidly, preventing the loss of effective stress (liquefaction) during seismic shaking and river flooding.',
+        sanskritContext: 'शिला-सिकता-संस्कारः आधार-दृढता-हेतुः।',
+      },
+      {
+        id: 'temple-q3',
+        q: 'In sacred Hindu temple architecture, what is the structural function of the self-similar fractal spires (Uruśṛṅgas)?',
+        options: [
+          'They serve solely as decorative aesthetic ornaments',
+          'They function as compressive buttresses that step horizontal thrust inward along a parabolic envelope down to the broad Adhiṣṭhāna plinth',
+          'They store rainwater for temple rituals',
+          'They house bronze bells to signal earthquake warnings',
+        ],
+        correct: 1,
+        explanation: 'Uruśṛṅgas are fractal cantilever buttresses that balance outward hoop stresses and guide compressive loads safely into the massive foundation plinth.',
+        sanskritContext: 'शिखरे शिखरोपेतम् उरुशृङ्ग-प्रकल्पनम्।',
+      },
+      {
+        id: 'temple-q4',
+        q: 'What distinguishes the 8×8 (Maṇḍūka) and 9×9 (Paramaśāyika) Vāstupuruṣa Maṇḍalas?',
+        options: [
+          'Maṇḍūka has 64 padas with an even central 2×2 Brahmasthāna (contemplative/hermitic temples), while Paramaśāyika has 81 padas with an odd central 3×3 Brahmasthāna (civic/royal temples)',
+          'Maṇḍūka is hexagonal while Paramaśāyika is octagonal',
+          'Maṇḍūka is only used for astronomical water clocks',
+          'Paramaśāyika has no central sacred space at all',
+        ],
+        correct: 0,
+        explanation: 'The 8×8 Maṇḍūka grid (64 squares) has a 2×2 central core (even), preferred for yogic and hermetic temples; the 9×9 Paramaśāyika grid (81 squares) has a 3×3 central core (odd), preferred for civic and royal temples.',
+        sanskritContext: 'चतुष्षष्ठि-पदं मण्डूकम् एकाशीति-पदं तथा।',
+      },
+    ],
+  },
 };
 
 const RANKS = [
@@ -800,6 +885,9 @@ export const LabBodhiConsole: React.FC<LabBodhiConsoleProps> = ({ activeSegment 
     } else if (qLower.includes('mantra') || qLower.includes('acoustic') || qLower.includes('saptak') || qLower.includes('chamakam') || qLower.includes('solfege')) {
       reply =
         'In Vedic acoustics, sound is an invariant physical law: the harmonic series (1/2, 1/3, 1/4... 1/7) naturally splits vibrating strings into the Saptak notes, while Chandas measures duration (Laghu/Guru) decoupled from pitch accents, and Chamakam encodes mathematical square progressions!';
+    } else if (qLower.includes('temple') || qLower.includes('stone') || qLower.includes('sandhi') || qLower.includes('vastu') || qLower.includes('mandala') || qLower.includes('dry masonry')) {
+      reply =
+        'In ancient temple engineering, dry masonry interlocking joints (Sandhi Bandhana) dissipate seismic shear waves through micro-slip friction and gravitational self-healing, while compacted sand buffers drain excess pore-water pressure to prevent liquefaction, and Vastupurusha Mandala fractal spires (Urushringas) channel vertical compressive loads safely to the foundation!';
     } else {
       reply = `${lore.bodhiIntro} You can also test your knowledge in the Lab Quiz tab below to earn Vidyā-Aṅka points!`;
     }

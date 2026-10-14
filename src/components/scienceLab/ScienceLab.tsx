@@ -14,6 +14,7 @@ const RituparnaSampling = lazy(() => import('./RituparnaSampling'));
 const AgnibanaRocketLab = lazy(() => import('./AgnibanaRocketLab'));
 const VedicGeometryLab = lazy(() => import('./VedicGeometryLab'));
 const MantraAcousticsLab = lazy(() => import('./MantraAcousticsLab'));
+const TempleEngineeringLab = lazy(() => import('./TempleEngineeringLab'));
 const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 
 export type LabCategory = 'all' | 'matter' | 'cosmos' | 'life' | 'waves';
@@ -209,6 +210,20 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     ink: '#c084fc',
     glow: '#a855f7',
   },
+  {
+    id: 'temple-engineering',
+    code: 'SEC-13',
+    icon: '🏛️',
+    dev: 'शिल्प-स्थापत्य-विज्ञानम्',
+    title: 'The Masters of Stone: Ancient Temple Engineering',
+    subject: 'Dry Masonry & Sacred Fractals',
+    school: 'Samarāṅgaṇa Sūtradhāra & Vāstu',
+    category: 'matter',
+    blurb: 'Explore King Bhoja’s dry masonry seismic dissipative joints (Sandhi Bandhana), Kudavelli hydro-engineered sand-buffer foundations, and 8×8/9×9 Vāstupuruṣa Mandala fractal load architectures.',
+    tint: 'rgba(217, 119, 6, 0.12)',
+    ink: '#fbbf24',
+    glow: '#d97706',
+  },
 ];
 
 
@@ -237,6 +252,14 @@ const HASH_ALIASES: Record<string, LabSegmentId> = {
   saptak: 'mantra-acoustics',
   chandas: 'mantra-acoustics',
   chamakam: 'mantra-acoustics',
+  temple: 'temple-engineering',
+  'temple-engineering': 'temple-engineering',
+  'masters-of-stone': 'temple-engineering',
+  'sandhi-bandhana': 'temple-engineering',
+  'dry-masonry': 'temple-engineering',
+  vastu: 'temple-engineering',
+  vastupurusha: 'temple-engineering',
+  architecture: 'temple-engineering',
 };
 const readHash = (): LabSegmentId | null => {
   try {
@@ -464,6 +487,12 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 <span className="vl-track-subtitle" style={{ color: '#e9d5ff' }}>नाद-पदार्थ-विज्ञानम् · SEC-12 (ACCIDENTAL SYMPHONY &amp; CHAMAKAM)</span>
               </div>
             )}
+            {filterCat === 'all' && s.id === 'temple-engineering' && (
+              <div className="vl-track-header" style={{ borderColor: 'rgba(217, 119, 6, 0.45)' }}>
+                <span className="vl-track-title" style={{ color: '#fbbf24' }}><span>🏛️</span> TRACK VIII: STRUCTURAL ARCHITECTURE &amp; GEOTECHNICAL DYNAMICS</span>
+                <span className="vl-track-subtitle" style={{ color: '#fef3c7' }}>शिल्प-स्थापत्य-विज्ञानम् · SEC-13 (SANDHI BANDHANA &amp; VĀSTU FRACTALS)</span>
+              </div>
+            )}
             <a
               href={`/vignana-lab#${s.id}`}
               className={`vl-card${s.id === active ? ' is-active' : ''}`}
@@ -618,6 +647,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {active === 'agnibana' && <AgnibanaRocketLab />}
           {active === 'vedic-geometry' && <VedicGeometryLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
           {active === 'mantra-acoustics' && <MantraAcousticsLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+          {active === 'temple-engineering' && <TempleEngineeringLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
         </Suspense>
 
 

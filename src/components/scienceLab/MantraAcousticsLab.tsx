@@ -1431,13 +1431,13 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
         >
           <div>
             <span style={{ fontSize: '0.75rem', color: '#c084fc', fontWeight: 800, letterSpacing: '0.08em' }}>
-              SECTOR 12 EXPEDITION COMPLETE // RESTART VIJÑĀNA LAB CYCLE
+              SECTOR 12 EXPEDITION COMPLETE // NEXT SECTOR UNLOCKED
             </span>
             <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.1rem', color: '#f8fafc', fontWeight: 800 }}>
-              Cycle Forward to Sector 01: Paramāṇu Builder
+              Advance to Sector 13: The Masters of Stone (Ancient Temple Engineering)
             </h4>
             <p style={{ margin: '0.2rem 0 0', fontSize: '0.82rem', color: '#cbd5e1' }}>
-              Loop back into the atomic crucible of Kaṇāda and the foundational building blocks of reality!
+              Discover how ancient temple architects engineered earthquake-immune stone skyscrapers, sand hydraulic buffers, and fractal spires!
             </p>
           </div>
 
@@ -1449,14 +1449,14 @@ export const MantraAcousticsLab: React.FC<LabSegmentProps> = ({ onNextLab }) => 
               padding: '0.7rem 1.3rem',
               fontSize: '0.9rem',
               fontWeight: 800,
-              background: 'linear-gradient(135deg, #ec4899, #38bdf8)',
+              background: 'linear-gradient(135deg, #f59e0b, #38bdf8)',
               color: '#090e17',
               border: 'none',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
             }}
           >
-            <span>ENTER PARAMĀṆU LAB ➔</span>
+            <span>ENTER TEMPLE ENGINEERING LAB ➔</span>
           </button>
         </div>
       )}

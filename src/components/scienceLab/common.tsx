@@ -3,7 +3,7 @@ import BodhiAvatar, { type BodhiMood } from '../BodhiAvatar';
 import { playPronunciation, type BodhiSpeechLang } from '../../utils/pronunciation';
 import { useBodhiSpeech } from './useBodhiSpeech';
 
-export type LabSegmentId = 'paramanu' | 'prakriti' | 'jyotisha' | 'srishti-sthiti-laya' | 'nada-brahman' | 'asato-ma' | 'chaturyoni' | 'chandrayaan' | 'rituparna' | 'agnibana' | 'vedic-geometry' | 'mantra-acoustics';
+export type LabSegmentId = 'paramanu' | 'prakriti' | 'jyotisha' | 'srishti-sthiti-laya' | 'nada-brahman' | 'asato-ma' | 'chaturyoni' | 'chandrayaan' | 'rituparna' | 'agnibana' | 'vedic-geometry' | 'mantra-acoustics' | 'temple-engineering';
 
 export interface LabSegmentProps {
   onNextLab?: () => void;
