@@ -91,13 +91,13 @@ const BOOKS: Book[] = [
     id: 'plants',
     title: '🌿 Indian Plants · वृक्षाः ओषधयश्च',
     pdf: 'sanskrit-plants-workbook.pdf',
-    pages: 22,
+    pages: 24,
     color: '#4d7c0f',
     shots: [
       { n: 1, label: 'Cover' },
-      { n: 3, label: 'Plant parts' },
       { n: 5, label: 'Sacred trees' },
-      { n: 16, label: 'Tulasī log' },
+      { n: 10, label: 'Flowers' },
+      { n: 18, label: 'Tulasī log' },
     ],
   },
 ];
