@@ -12,9 +12,9 @@ const BOOKS: Book[] = [
     color: '#15803d',
     shots: [
       { n: 1, label: 'Cover' },
-      { n: 3, label: 'Vowels' },
-      { n: 9, label: 'First words' },
-      { n: 26, label: 'Certificate' },
+      { n: 2, label: 'How to use' },
+      { n: 3, label: 'Vowels (1)' },
+      { n: 4, label: 'Vowels (2)' },
     ],
   },
   {
@@ -25,9 +25,9 @@ const BOOKS: Book[] = [
     color: '#c2410c',
     shots: [
       { n: 1, label: 'Cover' },
+      { n: 2, label: 'How to use' },
       { n: 3, label: 'Dīpāvalī' },
-      { n: 25, label: 'Adornment' },
-      { n: 28, label: 'Seasons' },
+      { n: 4, label: 'Dīpāvalī śloka' },
     ],
   },
   {
@@ -39,9 +39,9 @@ const BOOKS: Book[] = [
     color: '#7c3aed',
     shots: [
       { n: 1, label: 'Cover' },
+      { n: 2, label: 'Contents' },
+      { n: 3, label: 'Gender & number' },
       { n: 4, label: 'Cases' },
-      { n: 5, label: 'राम' },
-      { n: 15, label: 'Present' },
     ],
   },
   {
@@ -53,9 +53,9 @@ const BOOKS: Book[] = [
     color: '#0d9488',
     shots: [
       { n: 1, label: 'Cover' },
+      { n: 2, label: 'Contents' },
+      { n: 3, label: 'Lakāras' },
       { n: 4, label: 'Past tense' },
-      { n: 10, label: 'Sandhi' },
-      { n: 14, label: 'Kṛdanta' },
     ],
   },
   {
@@ -67,9 +67,9 @@ const BOOKS: Book[] = [
     color: '#be185d',
     shots: [
       { n: 1, label: 'Cover' },
+      { n: 2, label: 'Contents' },
       { n: 3, label: 'Samāsa' },
-      { n: 10, label: 'Passive' },
-      { n: 18, label: 'Subhāṣita' },
+      { n: 4, label: 'Tatpuruṣa' },
     ],
   },
   {
@@ -81,9 +81,9 @@ const BOOKS: Book[] = [
     color: '#15803d',
     shots: [
       { n: 1, label: 'Cover' },
-      { n: 16, label: 'Vāhanas' },
-      { n: 18, label: 'Pañcatantra' },
-      { n: 22, label: 'Colouring' },
+      { n: 2, label: 'Contents' },
+      { n: 3, label: 'Domestic animals' },
+      { n: 4, label: 'Practice' },
     ],
   },
   {
@@ -95,15 +95,18 @@ const BOOKS: Book[] = [
     color: '#4d7c0f',
     shots: [
       { n: 1, label: 'Cover' },
-      { n: 5, label: 'Sacred trees' },
-      { n: 10, label: 'Flowers' },
-      { n: 18, label: 'Tulasī log' },
+      { n: 2, label: 'Contents' },
+      { n: 3, label: 'Plant parts' },
+      { n: 4, label: 'Practice' },
     ],
   },
 ];
 
 const thumb = (b: Book, n: number) => `/downloads/previews/${b.id}-p${n}-sm.webp`;
-/** Watermarked, screen-resolution page images (free online preview of every page). */
+/** Free online preview: only the first PREVIEW_PAGES pages exist as watermarked images; the rest are for members. */
+const PREVIEW_PAGES = 4;
+/** Blurred, low-resolution teaser of a members-only page (layout and title only, text unreadable). */
+const shadowImg = (b: Book, n: number) => `/workbook-preview/${b.id}/s${n}.webp`;
 const pageImg = (b: Book, n: number) => `/workbook-preview/${b.id}/p${n}.webp`;
 
 const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
@@ -135,7 +138,7 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         <div className="wbp-card" style={{ borderColor: `${b.color}55` }} data-testid={`wbp-${b.id}`}>
           <div className="wbp-head">
             <button type="button" className="wbp-title" style={{ color: b.color }} onClick={() => setOpen({ b, n: 1 })}>{b.title}</button>
-            <span className="wbp-meta">{b.pages} pages · Free preview · PDF for members</span>
+            <span className="wbp-meta">{b.pages} pages · Free preview of pages 1–{PREVIEW_PAGES} · Full PDF for members</span>
             <button type="button" className="wbp-mini-dl" style={{ background: b.color }} onClick={() => downloadWorkbook(b.pdf)} data-testid={`wbp-dl-${b.id}`}>⬇ PDF</button>
           </div>
           <div className="wbp-row">
@@ -145,6 +148,12 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
                 <span>{s.label}</span>
               </button>
             ))}
+            {b.pages > PREVIEW_PAGES && (
+              <button type="button" className="wbp-thumb wbp-thumb-lock" onClick={() => setOpen({ b, n: PREVIEW_PAGES + 1 })} aria-label={`${b.title}: ${b.pages - PREVIEW_PAGES} more pages for members`} data-testid={`wbp-more-${b.id}`}>
+                <img src={shadowImg(b, PREVIEW_PAGES + 1)} alt="Members-only pages (blurred preview)" loading="lazy" decoding="async" width={300} height={424} />
+                <span>🔒 +{b.pages - PREVIEW_PAGES} pages</span>
+              </button>
+            )}
           </div>
         </div>
         </React.Fragment>
@@ -153,16 +162,28 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         <div className="wbp-lb" role="dialog" aria-modal="true" aria-label="Workbook preview" onClick={close}>
           <div className="wbp-lb-inner" onClick={(e) => e.stopPropagation()}>
             <div className="wbp-lb-top">
-              <b>{open.b.title} · page {open.n} of {open.b.pages}{open.b.shots.find((x) => x.n === open.n) ? ` · ${open.b.shots.find((x) => x.n === open.n)!.label}` : ''}</b>
+              <b>{open.b.title} · {open.n > PREVIEW_PAGES ? `page ${open.n} of ${open.b.pages} · members only` : `page ${open.n} of ${open.b.pages}`}{open.n <= PREVIEW_PAGES && open.b.shots.find((x) => x.n === open.n) ? ` · ${open.b.shots.find((x) => x.n === open.n)!.label}` : ''}</b>
               <button type="button" className="wbp-x" onClick={close} aria-label="Close">✕</button>
             </div>
             <div className="wbp-lb-stage">
               <button type="button" className="wbp-nav" onClick={() => step(-1)} aria-label="Previous page">‹</button>
-              <img src={pageImg(open.b, open.n)} alt={`${open.b.title} page ${open.n} (preview)`} onContextMenu={(e) => e.preventDefault()} draggable={false} />
+              {open.n > PREVIEW_PAGES ? (
+                <div className="wbp-shadow" data-testid="wbp-shadow">
+                  <img src={shadowImg(open.b, open.n)} alt={`${open.b.title} page ${open.n} (members only, blurred)`} onContextMenu={(e) => e.preventDefault()} draggable={false} />
+                  <div className="wbp-lock" data-testid="wbp-lock" style={{ borderColor: open.b.color }}>
+                    <div className="wbp-lock-icon" aria-hidden="true">🔒</div>
+                    <b>Members can see and print all {open.b.pages} pages</b>
+                    <p>The free preview shows pages 1–{PREVIEW_PAGES}. Log in or become a member to open the full workbook.</p>
+                    <button type="button" className="wbp-dl" style={{ background: open.b.color }} onClick={() => { if (!downloadWorkbook(open.b.pdf)) close(); }} data-testid="wbp-lock-cta">🔓 Log in / become a member</button>
+                  </div>
+                </div>
+              ) : (
+                <img src={pageImg(open.b, open.n)} alt={`${open.b.title} page ${open.n} (preview)`} onContextMenu={(e) => e.preventDefault()} draggable={false} />
+              )}
               <button type="button" className="wbp-nav" onClick={() => step(1)} aria-label="Next page">›</button>
             </div>
             <div className="wbp-lb-bot">
-              <span>Free online preview · {open.n} / {open.b.pages}</span>
+              <span>{open.n > PREVIEW_PAGES ? `🔒 Members only · ${open.n} / ${open.b.pages}` : `Free preview · ${open.n} / ${open.b.pages} (pages 1–${PREVIEW_PAGES} free)`}</span>
               <button type="button" className="wbp-dl" style={{ background: open.b.color }} onClick={() => { if (!downloadWorkbook(open.b.pdf)) close(); }} data-testid="wbp-lb-download">⬇ Download / print PDF (members)</button>
             </div>
           </div>

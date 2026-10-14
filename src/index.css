@@ -116,7 +116,7 @@ code {
 .wbp-head{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;flex-wrap:wrap;margin-bottom:.45rem}
 .wbp-title{background:none;border:0;padding:0;cursor:pointer;text-align:left;font-family:inherit;font-weight:700;text-decoration:none;font-size:.95rem}.wbp-title:hover{text-decoration:underline}
 .wbp-meta{font-size:.75rem;color:#6b7280}
-.wbp-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem}
+.wbp-row{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem}
 .wbp-thumb{padding:0;border:1px solid #e5e7eb;border-radius:6px;background:#fff;cursor:zoom-in;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
 .wbp-thumb:hover,.wbp-thumb:focus-visible{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.12);outline:none}
 .wbp-thumb img{width:100%;height:auto;aspect-ratio:210/297;object-fit:cover;display:block;background:#f8fafc}
@@ -133,3 +133,6 @@ code {
 @media (prefers-reduced-motion:reduce){.wbp-thumb{transition:none}}
 .wbp-group{grid-column:1/-1;margin:.4rem 0 -.2rem;font-size:1rem;color:#4c1d95}
 .wbp-mini-dl{border:0;cursor:pointer;font-family:inherit;color:#fff;text-decoration:none;font-size:.72rem;font-weight:600;padding:.2rem .55rem;border-radius:999px}
+.wbp-shadow{position:relative;margin:0 auto;display:flex;justify-content:center;align-items:center;max-width:calc(100% - 5rem)}.wbp-shadow img{max-height:calc(100vh - 9rem);max-width:100%;filter:none}.wbp-shadow .wbp-lock{position:absolute;left:.6rem;right:.6rem;bottom:.6rem;margin:0 auto;padding:.7rem .8rem;gap:.35rem;box-shadow:0 8px 24px rgba(0,0,0,.18)}.wbp-shadow .wbp-lock-icon{display:none}.wbp-shadow .wbp-lock p{font-size:.8rem}.wbp-thumb-lock img{opacity:.9}
+.wbp-lock{margin:0 auto;max-width:26rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;text-align:center;padding:1.6rem 1.2rem;border:2px dashed;border-radius:12px;background:#fffbeb;color:#374151}
+.wbp-lock b{font-size:1.05rem;color:#1f2937}.wbp-lock p{margin:0;font-size:.9rem;line-height:1.45}.wbp-lock-icon{font-size:2.2rem}
