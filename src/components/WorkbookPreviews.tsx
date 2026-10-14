@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { downloadWorkbook, type WorkbookFile } from '../utils/workbookDownload';
+import { useAuthStore } from '../store/authStore';
+import { hasPaidAccess } from '../utils/premiumAccess';
 
 type Book = { group?: string; id: string; title: string; pdf: WorkbookFile; pages: number; color: string; shots: { n: number; label: string }[] };
 
@@ -103,13 +105,26 @@ const BOOKS: Book[] = [
 ];
 
 const thumb = (b: Book, n: number) => `/downloads/previews/${b.id}-p${n}-sm.webp`;
-/** Watermarked, screen-resolution page images (free online preview of every page). */
+/** Screen-resolution page images. */
 const pageImg = (b: Book, n: number) => `/workbook-preview/${b.id}/p${n}.webp`;
+
+const isSamplePage = (b: Book, n: number): boolean => {
+  return b.shots.some((s) => s.n === n) || n <= 2;
+};
 
 const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
   const [open, setOpen] = useState<{ b: Book; n: number } | null>(null);
+  const { currentUser, isAdminLoggedIn, openAuthModal, openPaymentModal } = useAuthStore();
+  const isPaidMember = hasPaidAccess(currentUser, isAdminLoggedIn);
+
   const close = useCallback(() => setOpen(null), []);
   const step = useCallback((d: number) => setOpen((o) => (o ? { ...o, n: ((o.n - 1 + d + o.b.pages) % o.b.pages) + 1 } : o)), []);
+
+  const handleMemberUpgrade = useCallback(() => {
+    close();
+    if (!currentUser) openAuthModal('register');
+    else openPaymentModal('unlock_paid_features');
+  }, [close, currentUser, openAuthModal, openPaymentModal]);
 
   useEffect(() => {
     if (!open) return;
@@ -121,6 +136,10 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [open, close, step]);
+
+  const activeShotLabel = open ? open.b.shots.find((x) => x.n === open.n)?.label : null;
+  const isCurrentSample = open ? isSamplePage(open.b, open.n) : false;
+  const isLockedPage = Boolean(open && !isPaidMember && !isCurrentSample);
 
   return (
     <div className="wbp-wrap" data-testid="workbook-previews">
@@ -134,14 +153,49 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         )}
         <div className="wbp-card" style={{ borderColor: `${b.color}55` }} data-testid={`wbp-${b.id}`}>
           <div className="wbp-head">
-            <button type="button" className="wbp-title" style={{ color: b.color }} onClick={() => setOpen({ b, n: 1 })}>{b.title}</button>
-            <span className="wbp-meta">{b.pages} pages · Free preview · PDF for members</span>
-            <button type="button" className="wbp-mini-dl" style={{ background: b.color }} onClick={() => downloadWorkbook(b.pdf)} data-testid={`wbp-dl-${b.id}`}>⬇ PDF</button>
+            <div className="wbp-head-left">
+              <button type="button" className="wbp-title" style={{ color: b.color }} onClick={() => setOpen({ b, n: 1 })}>
+                {b.title}
+              </button>
+              <span className="wbp-meta">
+                {b.pages} pages · {isPaidMember ? '✓ Unlocked for Members' : 'Free sample preview · 🔒 Full PDF locked'}
+              </span>
+            </div>
+            <div className="wbp-head-right">
+              {!isPaidMember ? (
+                <span className="wbp-lock-pill" title="Paid membership required to download high-resolution PDF">
+                  🔒 Member Exclusive
+                </span>
+              ) : (
+                <span className="wbp-unlocked-pill" title="Active member benefit">
+                  ✓ Unlocked
+                </span>
+              )}
+              <button
+                type="button"
+                className={`wbp-mini-dl${!isPaidMember ? ' is-locked' : ''}`}
+                style={{ background: isPaidMember ? b.color : '#475569' }}
+                onClick={() => downloadWorkbook(b.pdf)}
+                data-testid={`wbp-dl-${b.id}`}
+                title={isPaidMember ? `Download full ${b.title} PDF` : 'Paid membership required to download printable PDF'}
+              >
+                {isPaidMember ? '⬇ PDF' : '🔒 Member PDF'}
+              </button>
+            </div>
           </div>
           <div className="wbp-row">
             {b.shots.map((s) => (
-              <button key={s.n} type="button" className="wbp-thumb" onClick={() => setOpen({ b, n: s.n })} aria-label={`Preview ${b.title} page ${s.n}: ${s.label}`}>
-                <img src={thumb(b, s.n)} alt={`${s.label} page`} loading="lazy" decoding="async" width={300} height={424} />
+              <button
+                key={s.n}
+                type="button"
+                className="wbp-thumb"
+                onClick={() => setOpen({ b, n: s.n })}
+                aria-label={`Preview ${b.title} page ${s.n}: ${s.label}`}
+              >
+                <div className="wbp-thumb-img-wrap">
+                  <img src={thumb(b, s.n)} alt={`${s.label} page`} loading="lazy" decoding="async" width={300} height={424} />
+                  {!isPaidMember && <span className="wbp-thumb-watermark-ribbon">PREVIEW</span>}
+                </div>
                 <span>{s.label}</span>
               </button>
             ))}
@@ -153,17 +207,114 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         <div className="wbp-lb" role="dialog" aria-modal="true" aria-label="Workbook preview" onClick={close}>
           <div className="wbp-lb-inner" onClick={(e) => e.stopPropagation()}>
             <div className="wbp-lb-top">
-              <b>{open.b.title} · page {open.n} of {open.b.pages}{open.b.shots.find((x) => x.n === open.n) ? ` · ${open.b.shots.find((x) => x.n === open.n)!.label}` : ''}</b>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <b>
+                  {open.b.title} · page {open.n} of {open.b.pages}
+                  {activeShotLabel ? ` · ${activeShotLabel}` : ''}
+                </b>
+                {!isPaidMember && (
+                  <span className="wbp-mode-tag">
+                    {isCurrentSample ? '🔒 Watermarked Preview' : '🔒 Member Locked'}
+                  </span>
+                )}
+              </div>
               <button type="button" className="wbp-x" onClick={close} aria-label="Close">✕</button>
             </div>
+
             <div className="wbp-lb-stage">
               <button type="button" className="wbp-nav" onClick={() => step(-1)} aria-label="Previous page">‹</button>
-              <img src={pageImg(open.b, open.n)} alt={`${open.b.title} page ${open.n} (preview)`} onContextMenu={(e) => e.preventDefault()} draggable={false} />
+              <div className="wbp-stage-container">
+                <img
+                  src={pageImg(open.b, open.n)}
+                  alt={`${open.b.title} page ${open.n} (preview)`}
+                  className={isLockedPage ? 'is-blurred' : ''}
+                  onContextMenu={(e) => e.preventDefault()}
+                  draggable={false}
+                />
+
+                {/* Watermark overlay on open sample pages for non-members */}
+                {!isPaidMember && isCurrentSample && (
+                  <div className="wbp-watermark-overlay" aria-hidden="true">
+                    <div className="wbp-watermark-pattern">
+                      {Array.from({ length: 9 }).map((_, i) => (
+                        <div key={i} className="wbp-watermark-line">
+                          EDNETLEARN · PREVIEW ONLY · MEMBER LOCK · DO NOT COPY
+                        </div>
+                      ))}
+                    </div>
+                    <div className="wbp-watermark-center">
+                      🔒 EDNET LEARN · WATERMARKED PREVIEW · SUBSCRIBE TO PRINT &amp; DOWNLOAD
+                    </div>
+                  </div>
+                )}
+
+                {/* Inactive / Locked Stage for non-sample pages for non-members */}
+                {isLockedPage && (
+                  <div className="wbp-locked-overlay">
+                    <div className="wbp-locked-card">
+                      <div className="wbp-locked-icon">🔒</div>
+                      <h4 className="wbp-locked-title">Page {open.n} is Locked</h4>
+                      <p className="wbp-locked-desc">
+                        You are viewing a free preview of <b>{open.b.title}</b>.
+                        To read all <b>{open.b.pages} pages</b> and download the complete high-resolution printable PDF with exercises and answer keys, upgrade to <b>EdNet Learn Membership</b>.
+                      </p>
+                      <div className="wbp-locked-perks">
+                        <span>✓ All 7 Comprehensive Workbooks (176+ pages)</span>
+                        <span>✓ Full Teacher Answer Keys &amp; Solutions</span>
+                        <span>✓ High-Resolution Vector Printable PDFs</span>
+                      </div>
+                      <button
+                        type="button"
+                        className="wbp-locked-cta-btn"
+                        onClick={handleMemberUpgrade}
+                      >
+                        👑 Unlock Full Workbook with Membership
+                      </button>
+                      <button
+                        type="button"
+                        className="wbp-locked-back-btn"
+                        onClick={() => setOpen({ b: open.b, n: 1 })}
+                      >
+                        ‹ Back to Cover &amp; Free Sample Pages
+                      </button>
+                      <div className="wbp-sample-jumps">
+                        {open.b.shots.map((s) => (
+                          <button
+                            key={s.n}
+                            type="button"
+                            className="wbp-shot-pill"
+                            onClick={() => setOpen({ b: open.b, n: s.n })}
+                          >
+                            Sample: {s.label} (p.{s.n})
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
               <button type="button" className="wbp-nav" onClick={() => step(1)} aria-label="Next page">›</button>
             </div>
+
             <div className="wbp-lb-bot">
-              <span>Free online preview · {open.n} / {open.b.pages}</span>
-              <button type="button" className="wbp-dl" style={{ background: open.b.color }} onClick={() => { if (!downloadWorkbook(open.b.pdf)) close(); }} data-testid="wbp-lb-download">⬇ Download / print PDF (members)</button>
+              <span style={{ fontSize: '0.8rem', color: '#475569' }}>
+                {isPaidMember
+                  ? `Full member access · ${open.n} / ${open.b.pages}`
+                  : isCurrentSample
+                  ? `Free sample preview · ${open.n} / ${open.b.pages} (Watermarked)`
+                  : `🔒 Inactive preview · Page ${open.n} of ${open.b.pages} requires membership`}
+              </span>
+              <button
+                type="button"
+                className={`wbp-dl${!isPaidMember ? ' wbp-dl--unlock' : ''}`}
+                style={isPaidMember ? { background: open.b.color } : undefined}
+                onClick={() => {
+                  if (!downloadWorkbook(open.b.pdf)) close();
+                }}
+                data-testid="wbp-lb-download"
+              >
+                {isPaidMember ? '⬇ Download / print PDF' : '👑 Unlock Full Printable PDF (Members)'}
+              </button>
             </div>
           </div>
         </div>

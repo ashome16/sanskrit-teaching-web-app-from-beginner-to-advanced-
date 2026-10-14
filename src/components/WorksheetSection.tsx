@@ -235,11 +235,25 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
         </div>
 
         <div style={{ display: 'flex', gap: '0.65rem' }}>
-            <button type="button" className="worksheet-toolbar-btn" onClick={() => downloadWorkbook('sanskrit-basic-workbook.pdf')} data-testid="worksheet-workbook-download" style={{ textDecoration: 'none', cursor: 'pointer' }}>
-              📥 Beginner Workbook (PDF)
+            <button
+              type="button"
+              className="worksheet-toolbar-btn"
+              onClick={() => downloadWorkbook('sanskrit-basic-workbook.pdf')}
+              data-testid="worksheet-workbook-download"
+              style={{ textDecoration: 'none', cursor: 'pointer' }}
+              title={canDownload ? 'Download 28-page printable Beginner Workbook' : 'Paid membership required to download printable PDF'}
+            >
+              {canDownload ? '📥 Beginner Workbook (PDF)' : '🔒 Beginner Workbook (Members)'}
             </button>
-            <button type="button" className="worksheet-toolbar-btn" onClick={() => downloadWorkbook('sanskrit-festival-workbook.pdf')} data-testid="worksheet-festival-workbook-download" style={{ textDecoration: 'none', cursor: 'pointer' }}>
-              🪔 Festival Workbook (PDF)
+            <button
+              type="button"
+              className="worksheet-toolbar-btn"
+              onClick={() => downloadWorkbook('sanskrit-festival-workbook.pdf')}
+              data-testid="worksheet-festival-workbook-download"
+              style={{ textDecoration: 'none', cursor: 'pointer' }}
+              title={canDownload ? 'Download 34-page printable Festival Workbook' : 'Paid membership required to download printable PDF'}
+            >
+              {canDownload ? '🪔 Festival Workbook (PDF)' : '🔒 Festival Workbook (Members)'}
             </button>
           {onOpenReader && (
             <button type="button" className="worksheet-toolbar-btn" onClick={onOpenReader}>
