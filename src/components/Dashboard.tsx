@@ -23,6 +23,7 @@ const QuizSection = lazy(() => import('./QuizSection'));
 const WorksheetSection = lazy(() => import('./WorksheetSection'));
 const PaninianStudio = lazy(() => import('./PaninianStudio'));
 const SanskritThinkingCourse = lazy(() => import('./SanskritThinkingCourse'));
+const CertificatePage = lazy(() => import('./CertificatePage'));
 const ScienceLab = lazy(() => import('./scienceLab/ScienceLab'));
 
 // Lazy-loaded dialogs & modals
@@ -73,6 +74,7 @@ type DashboardView =
   | 'resources'
   | 'dhatupatha'
   | 'course'
+  | 'certificate'
   | 'science-lab';
 
 const PHILOSOPHY_PATHS = new Set([
@@ -157,6 +159,10 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     title: 'Vijñāna Lab · विज्ञान-प्रयोगशाला: Science Sandboxes with Sanskrit | EdNet Learn',
     desc: 'Boot up the ultimate reality simulator: free science sandboxes with Sanskrit names. Forge Vaiśeṣika paramāṇus, balance vāta-pitta-kapha, master real gravity through the 27 nakṣatras, weave the Loom of Āruṇi, tune the Cosmic Sitār, scan past the Veil of Māyā to the atoms and sort life into the Chaturyoni four births and soft-land Somayāna Mission-03 (Chandrayaan).',
   },
+  certificate: {
+    title: 'स्वर् · SWAR Workbook Certificate of Completion | EdNet Learn',
+    desc: 'Finished the Swar Sanskrit Workbook (The Darśana Series)? Sign in, enter your book code, pass a quick 5-question quiz and download your colourful certificate.',
+  },
   dhatupatha: {
     title: 'Dhātupāṭha & Pāṇinian Verb Engine: 5 Lakāras & Kṛt Pratyayas | EdNet Learn',
     desc: 'Explore the classical Pāṇinian Dhātupāṭha library with 5 CBSE Lakāra conjugations (लट्, लृट्, लङ्, लोट्, विधिलिङ्), Kṛt participles, reverse word deconstructor, and pratyaya quiz.',
@@ -184,6 +190,7 @@ const pathToView = (pathname: string): DashboardView | null => {
   if (clean === '/board' || clean === '/jodo' || clean === '/puzzles') return 'board';
   if (clean === '/reader' || clean === '/varnamala' || clean === '/lessons' || clean === '/barakhadi') return 'reader';
   if (clean === '/faq' || clean === '/help') return 'faq';
+  if (clean === '/certificate' || clean === '/swar-certificate') return 'certificate';
   if (
     clean === '/vignana-lab' ||
     clean === '/vignana' ||
@@ -207,6 +214,7 @@ const viewToPath = (view: DashboardView): string => {
   if (view === 'board') return '/board';
   if (view === 'reader') return '/reader';
   if (view === 'faq') return '/faq';
+  if (view === 'certificate') return '/certificate';
   if (view === 'science-lab') {
     if (typeof window !== 'undefined' && window.location.pathname.replace(/\/+$/, '') === '/science-lab') {
       return '/science-lab';
@@ -230,6 +238,7 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'cbse-guide' ||
   saved === 'resources' ||
   saved === 'dhatupatha' ||
+  saved === 'certificate' ||
   saved === 'science-lab';
 
 
@@ -1198,6 +1207,9 @@ const Dashboard: React.FC = () => {
             onOpenWorksheets={() => handleOpenWorksheets('all')}
             onOpenScienceLab={() => openScienceLab()}
           />
+        )}
+        {activeView === 'certificate' && (
+          <CertificatePage onGoHome={() => navigateToView('home')} />
         )}
         {activeView === 'science-lab' && (
           <ScienceLab

@@ -30,6 +30,7 @@ const PATH_BY_VIEW = {
   resources: '/resources',
   philosophy: '/philosophy',
   faq: '/faq',
+  certificate: '/certificate',
   'science-lab': '/vignana-lab',
 };
 
@@ -48,6 +49,7 @@ const REQUIRED_PATHS = [
   '/resources',
   '/philosophy',
   '/faq',
+  '/certificate',
   '/vignana-lab',
 ];
 

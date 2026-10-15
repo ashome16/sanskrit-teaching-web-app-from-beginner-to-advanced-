@@ -530,6 +530,18 @@ export const BODHI_CONTEXT_TIPS: Record<string, BodhiContextTip> = {
 
 export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
   {
+    id: 'qa-swar-certificate',
+    category: 'cbse',
+    question: 'How do I get my certificate for the SWAR workbook?',
+    sanskritQuestion: 'प्रमाणपत्रं कथं प्राप्नोमि?',
+    shortAnswer: 'Go to ednetlearn.in/certificate, sign in, enter the book code from the last page and pass the 5-question quiz.',
+    detailedAnswer:
+      'Finished the स्वर् · SWAR Sanskrit Workbook (The Darśana Series)? Open the Certificate page and sign in. Type your name and the book code printed on the last page of the book. Then answer 5 quick questions from the book; get 4 right to pass (you can try again). Your colourful certificate appears with your own certificate ID, ready to download as PNG or PDF, or to print.',
+    tip: 'The same account always gets the same certificate ID, so you can come back and download it again any time.',
+    relatedView: 'certificate',
+    relatedLabel: '🏅 Get my certificate ➔',
+  },
+  {
     id: 'qa-retroflex',
     category: 'pronunciation',
     question: 'How do I pronounce retroflex (मूर्धन्य) sounds like ट, ठ, ड, ढ, ण, and ष?',

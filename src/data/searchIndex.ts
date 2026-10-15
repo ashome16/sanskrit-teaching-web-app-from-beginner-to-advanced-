@@ -21,6 +21,7 @@ export interface SearchTarget {
     | 'resources'
     | 'course'
     | 'science-lab'
+    | 'certificate'
     | 'home';
   grammarTopic?:
     | 'home'
@@ -67,6 +68,19 @@ export interface SearchItem {
 }
 
 export const SEARCH_INDEX: SearchItem[] = [
+  {
+    id: 'guide-swar-certificate',
+    title: 'स्वर् · SWAR Workbook Certificate of Completion',
+    subtitle: 'For readers of the Swar Sanskrit Workbook · The Darśana Series',
+    category: 'guides',
+    categoryLabel: 'Book · Certificate',
+    badgeEmoji: '🏅',
+    badgeColor: '#c2255c',
+    description:
+      'Finished the SWAR workbook? Sign in, enter the book code from the last page, pass a quick 5-question quiz and download or print your certificate.',
+    keywords: ['certificate', 'swar', 'workbook', 'book code', 'completion', 'darsana series', 'darshana', 'get my certificate', 'award', 'badge'],
+    target: { view: 'certificate' },
+  },
   // =========================================================================
   // 1. GRAMMAR ARTICLES (13 In-Depth Masterclasses)
   // =========================================================================
