@@ -227,9 +227,9 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
             className="worksheet-header-logo"
           />
           <div>
-            <h2 className="worksheet-title">कार्यपत्रिकाः · Printable Sanskrit Worksheets</h2>
+            <h2 className="worksheet-title">कार्यपत्रिकाः अभ्यासपुस्तिकाश्च · Sanskrit Worksheets &amp; Workbooks</h2>
             <p className="worksheet-subtitle">
-              Alphabet &amp; Syllables (वर्णमाला) · Deepakam 7–8 · शारदा · Grammar Drills · Vedic Maths
+              7 Comprehensive Workbooks (176+ Pages) · Alphabet &amp; Syllables (वर्णमाला) · Deepakam 7–8 · शारदा · Grammar Drills · Vedic Maths
             </p>
           </div>
         </div>

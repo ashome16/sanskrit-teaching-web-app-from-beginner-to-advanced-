@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { downloadWorkbook, type WorkbookFile } from '../utils/workbookDownload';
 import { useAuthStore } from '../store/authStore';
-import { hasPaidAccess } from '../utils/premiumAccess';
+import { hasPaidAccess, hasPremiumAccess } from '../utils/premiumAccess';
 
 type Book = { group?: string; id: string; title: string; pdf: WorkbookFile; pages: number; color: string; shots: { n: number; label: string }[] };
 
@@ -104,23 +104,27 @@ const BOOKS: Book[] = [
   },
 ];
 
+const FREE_PREVIEW_PAGE_LIMIT = 4;
+
 const thumb = (b: Book, n: number) => `/downloads/previews/${b.id}-p${n}-sm.webp`;
 /** Screen-resolution page images. */
 const pageImg = (b: Book, n: number) => `/workbook-preview/${b.id}/p${n}.webp`;
-
-const isSamplePage = (b: Book, n: number): boolean => {
-  return b.shots.some((s) => s.n === n) || n <= 2;
-};
 
 const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
   const [open, setOpen] = useState<{ b: Book; n: number } | null>(null);
   const { currentUser, isAdminLoggedIn, openAuthModal, openPaymentModal } = useAuthStore();
   const isPaidMember = hasPaidAccess(currentUser, isAdminLoggedIn);
+  const hasTwoWeekSub = hasPremiumAccess(currentUser, isAdminLoggedIn);
 
   const close = useCallback(() => setOpen(null), []);
   const step = useCallback((d: number) => setOpen((o) => (o ? { ...o, n: ((o.n - 1 + d + o.b.pages) % o.b.pages) + 1 } : o)), []);
 
-  const handleMemberUpgrade = useCallback(() => {
+  const handleRegisterTrial = useCallback(() => {
+    close();
+    openAuthModal('register');
+  }, [close, openAuthModal]);
+
+  const handlePaidUpgrade = useCallback(() => {
     close();
     if (!currentUser) openAuthModal('register');
     else openPaymentModal('unlock_paid_features');
@@ -138,8 +142,9 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
   }, [open, close, step]);
 
   const activeShotLabel = open ? open.b.shots.find((x) => x.n === open.n)?.label : null;
-  const isCurrentSample = open ? isSamplePage(open.b, open.n) : false;
-  const isLockedPage = Boolean(open && !isPaidMember && !isCurrentSample);
+  const isCurrentPageFree = open ? open.n <= FREE_PREVIEW_PAGE_LIMIT : false;
+  const isOnlineViewAllowed = isCurrentPageFree || hasTwoWeekSub;
+  const isWatermarkShown = Boolean(open && !isPaidMember && isOnlineViewAllowed);
 
   return (
     <div className="wbp-wrap" data-testid="workbook-previews">
@@ -158,17 +163,27 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
                 {b.title}
               </button>
               <span className="wbp-meta">
-                {b.pages} pages · {isPaidMember ? '✓ Unlocked for Members' : 'Free sample preview · 🔒 Full PDF locked'}
+                {b.pages} pages · {
+                  isPaidMember
+                    ? '✓ Full Online View & Printouts Unlocked'
+                    : hasTwoWeekSub
+                    ? '✓ Full Online View Active (2-Week Sub) · 🔒 Printouts Require Paid Plan'
+                    : 'Pages 1–4 Free Preview · 🔒 2-Wk Sub for Pages 5+ · 🔒 Paid for Printouts'
+                }
               </span>
             </div>
             <div className="wbp-head-right">
-              {!isPaidMember ? (
-                <span className="wbp-lock-pill" title="Paid membership required to download high-resolution PDF">
-                  🔒 Member Exclusive
+              {isPaidMember ? (
+                <span className="wbp-unlocked-pill" title="Paid membership: full online view and vector printouts unlocked">
+                  ✓ Paid Unlocked
+                </span>
+              ) : hasTwoWeekSub ? (
+                <span className="wbp-trial-pill" title="2-Week Subscription: full online view active; paid membership required for printouts">
+                  ✨ 2-Week Sub
                 </span>
               ) : (
-                <span className="wbp-unlocked-pill" title="Active member benefit">
-                  ✓ Unlocked
+                <span className="wbp-lock-pill" title="Pages 1–4 free preview; 2-week subscription for full view; paid membership for printouts">
+                  🔒 Pages 1–4 Free
                 </span>
               )}
               <button
@@ -177,9 +192,9 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
                 style={{ background: isPaidMember ? b.color : '#475569' }}
                 onClick={() => downloadWorkbook(b.pdf)}
                 data-testid={`wbp-dl-${b.id}`}
-                title={isPaidMember ? `Download full ${b.title} PDF` : 'Paid membership required to download printable PDF'}
+                title={isPaidMember ? `Download full printable ${b.title} PDF` : 'Paid membership required to download printable vector PDF'}
               >
-                {isPaidMember ? '⬇ PDF' : '🔒 Member PDF'}
+                {isPaidMember ? '⬇ PDF' : '🔒 Printout PDF'}
               </button>
             </div>
           </div>
@@ -194,7 +209,15 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
               >
                 <div className="wbp-thumb-img-wrap">
                   <img src={thumb(b, s.n)} alt={`${s.label} page`} loading="lazy" decoding="async" width={300} height={424} />
-                  {!isPaidMember && <span className="wbp-thumb-watermark-ribbon">PREVIEW</span>}
+                  {!isPaidMember && (
+                    <span className="wbp-thumb-watermark-ribbon">
+                      {s.n <= FREE_PREVIEW_PAGE_LIMIT
+                        ? `FREE (p.${s.n})`
+                        : hasTwoWeekSub
+                        ? `2-WK SUB (p.${s.n})`
+                        : `🔒 2-WK SUB (p.${s.n})`}
+                    </span>
+                  )}
                 </div>
                 <span>{s.label}</span>
               </button>
@@ -209,12 +232,24 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
             <div className="wbp-lb-top">
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <b>
-                  {open.b.title} · page {open.n} of {open.b.pages}
+                  {open.b.title} · Page {open.n} of {open.b.pages}
                   {activeShotLabel ? ` · ${activeShotLabel}` : ''}
                 </b>
-                {!isPaidMember && (
-                  <span className="wbp-mode-tag">
-                    {isCurrentSample ? '🔒 Watermarked Preview' : '🔒 Member Locked'}
+                {isPaidMember ? (
+                  <span className="wbp-mode-tag" style={{ background: '#dcfce7', color: '#15803d', borderColor: '#bbf7d0' }}>
+                    ✓ Paid Member Access (Printouts &amp; Full View)
+                  </span>
+                ) : hasTwoWeekSub ? (
+                  <span className="wbp-mode-tag" style={{ background: '#e0f2fe', color: '#0369a1', borderColor: '#bae6fd' }}>
+                    ✨ 2-Week Subscription Active · 🔒 Printouts Require Paid Plan
+                  </span>
+                ) : isCurrentPageFree ? (
+                  <span className="wbp-mode-tag" style={{ background: '#fef3c7', color: '#b45309', borderColor: '#fde68a' }}>
+                    📖 Free Sample Preview (Page {open.n} of 4) · 🔒 Pages 5+ Require 2-Week Sub
+                  </span>
+                ) : (
+                  <span className="wbp-mode-tag" style={{ background: '#fee2e2', color: '#b91c1c', borderColor: '#fca5a5' }}>
+                    🔒 2-Week Subscription Required
                   </span>
                 )}
               </div>
@@ -227,65 +262,92 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
                 <img
                   src={pageImg(open.b, open.n)}
                   alt={`${open.b.title} page ${open.n} (preview)`}
-                  className={isLockedPage ? 'is-blurred' : ''}
+                  className={!isOnlineViewAllowed ? 'is-blurred' : ''}
                   onContextMenu={(e) => e.preventDefault()}
                   draggable={false}
                 />
 
-                {/* Watermark overlay on open sample pages for non-members */}
-                {!isPaidMember && isCurrentSample && (
+                {/* Watermark overlay on open pages for non-paid users */}
+                {isWatermarkShown && (
                   <div className="wbp-watermark-overlay" aria-hidden="true">
                     <div className="wbp-watermark-pattern">
                       {Array.from({ length: 9 }).map((_, i) => (
                         <div key={i} className="wbp-watermark-line">
-                          EDNETLEARN · PREVIEW ONLY · MEMBER LOCK · DO NOT COPY
+                          {hasTwoWeekSub
+                            ? 'EDNETLEARN · 2-WEEK SUBSCRIPTION PREVIEW · PRINTING REQUIRES PAID MEMBERSHIP'
+                            : 'EDNETLEARN · FREE PREVIEW (PAGES 1–4) · PRINTING REQUIRES PAID SUBSCRIPTION'}
                         </div>
                       ))}
                     </div>
                     <div className="wbp-watermark-center">
-                      🔒 EDNET LEARN · WATERMARKED PREVIEW · SUBSCRIBE TO PRINT &amp; DOWNLOAD
+                      {hasTwoWeekSub
+                        ? '✨ 2-WEEK SUBSCRIPTION ONLINE VIEW · PRINTING REQUIRES PAID MEMBERSHIP'
+                        : '🔒 FREE PREVIEW (PAGES 1–4) · 2-WEEK SUB FOR FULL VIEW · PAID FOR PRINTOUTS'}
                     </div>
                   </div>
                 )}
 
-                {/* Inactive / Locked Stage for non-sample pages for non-members */}
-                {isLockedPage && (
+                {/* Inactive / Locked Stage for pages 5+ when user does not have 2-week subscription */}
+                {!isOnlineViewAllowed && (
                   <div className="wbp-locked-overlay">
                     <div className="wbp-locked-card">
                       <div className="wbp-locked-icon">🔒</div>
                       <h4 className="wbp-locked-title">Page {open.n} is Locked</h4>
+                      <div className="wbp-locked-badge">2-Week Free Subscription Required</div>
                       <p className="wbp-locked-desc">
-                        You are viewing a free preview of <b>{open.b.title}</b>.
-                        To read all <b>{open.b.pages} pages</b> and download the complete high-resolution printable PDF with exercises and answer keys, upgrade to <b>EdNet Learn Membership</b>.
+                        Pages 1 to 4 are open for free preview. To view all <b>{open.b.pages} pages</b> of <b>{open.b.title}</b> online, activate your <b>2-Week Free Subscription (Free Sign-Up)</b>.
+                        High-resolution printable vector PDFs require a <b>Paid Membership</b>.
                       </p>
                       <div className="wbp-locked-perks">
-                        <span>✓ All 7 Comprehensive Workbooks (176+ pages)</span>
-                        <span>✓ Full Teacher Answer Keys &amp; Solutions</span>
-                        <span>✓ High-Resolution Vector Printable PDFs</span>
+                        <span>✓ Full Online Reading Access for All 7 Workbooks ({open.b.pages} pages)</span>
+                        <span>✓ 14-Day Free Access to All Lessons, Readers &amp; Interactive Quizzes</span>
+                        <span>✓ High-Resolution Vector Printable PDFs with Paid Membership</span>
                       </div>
-                      <button
-                        type="button"
-                        className="wbp-locked-cta-btn"
-                        onClick={handleMemberUpgrade}
-                      >
-                        👑 Unlock Full Workbook with Membership
-                      </button>
-                      <button
-                        type="button"
-                        className="wbp-locked-back-btn"
-                        onClick={() => setOpen({ b: open.b, n: 1 })}
-                      >
-                        ‹ Back to Cover &amp; Free Sample Pages
-                      </button>
-                      <div className="wbp-sample-jumps">
-                        {open.b.shots.map((s) => (
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%' }}>
+                        {!currentUser ? (
+                          <>
+                            <button
+                              type="button"
+                              className="wbp-locked-cta-btn"
+                              onClick={handleRegisterTrial}
+                            >
+                              ✨ Start 2-Week Free Subscription (Free Sign-Up)
+                            </button>
+                            <button
+                              type="button"
+                              className="wbp-locked-cta-secondary"
+                              onClick={handlePaidUpgrade}
+                            >
+                              👑 Unlock Printouts with Paid Membership
+                            </button>
+                          </>
+                        ) : (
                           <button
-                            key={s.n}
                             type="button"
-                            className="wbp-shot-pill"
-                            onClick={() => setOpen({ b: open.b, n: s.n })}
+                            className="wbp-locked-cta-btn"
+                            onClick={handlePaidUpgrade}
                           >
-                            Sample: {s.label} (p.{s.n})
+                            👑 Upgrade to Paid Subscription (Printouts &amp; Full Access)
+                          </button>
+                        )}
+                        <button
+                          type="button"
+                          className="wbp-locked-back-btn"
+                          onClick={() => setOpen({ b: open.b, n: 1 })}
+                        >
+                          ‹ Back to Free Preview (Pages 1–4)
+                        </button>
+                      </div>
+                      <div className="wbp-sample-jumps">
+                        <span style={{ fontSize: '0.72rem', color: '#64748b', width: '100%', marginBottom: '0.2rem' }}>Free Sample Pages:</span>
+                        {[1, 2, 3, 4].filter((p) => p <= open.b.pages).map((p) => (
+                          <button
+                            key={p}
+                            type="button"
+                            className={`wbp-shot-pill${open.n === p ? ' is-active' : ''}`}
+                            onClick={() => setOpen({ b: open.b, n: p })}
+                          >
+                            Page {p}{p === 1 ? ' (Cover)' : ''}
                           </button>
                         ))}
                       </div>
@@ -299,10 +361,12 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
             <div className="wbp-lb-bot">
               <span style={{ fontSize: '0.8rem', color: '#475569' }}>
                 {isPaidMember
-                  ? `Full member access · ${open.n} / ${open.b.pages}`
-                  : isCurrentSample
-                  ? `Free sample preview · ${open.n} / ${open.b.pages} (Watermarked)`
-                  : `🔒 Inactive preview · Page ${open.n} of ${open.b.pages} requires membership`}
+                  ? `Full member access · Page ${open.n} of ${open.b.pages} · Printing & downloads unlocked`
+                  : hasTwoWeekSub
+                  ? `2-Week Subscription active · Page ${open.n} of ${open.b.pages} · Printable PDFs require Paid Plan`
+                  : isCurrentPageFree
+                  ? `Free sample preview · Page ${open.n} of 4 (Pages 5+ require 2-Week Free Subscription)`
+                  : `🔒 Page ${open.n} of ${open.b.pages} · 2-Week Free Subscription required`}
               </span>
               <button
                 type="button"
@@ -313,7 +377,7 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
                 }}
                 data-testid="wbp-lb-download"
               >
-                {isPaidMember ? '⬇ Download / print PDF' : '👑 Unlock Full Printable PDF (Members)'}
+                {isPaidMember ? '⬇ Download / Print Vector PDF' : '👑 Unlock Printouts (Paid Membership)'}
               </button>
             </div>
           </div>

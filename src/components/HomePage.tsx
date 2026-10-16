@@ -1,14 +1,12 @@
 import React, { useState, lazy, Suspense } from 'react';
 import { playPronunciation } from '../utils/pronunciation';
 import { useAuthStore } from '../store/authStore';
-import { downloadWorkbook } from '../utils/workbookDownload';
-import { canAccessAllChapters, isFreeTrialOpenLesson, canDownloadContent } from '../utils/premiumAccess';
+import { canAccessAllChapters, isFreeTrialOpenLesson } from '../utils/premiumAccess';
 import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
 import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
 import { NCERT_TEXTBOOKS, getTextbookMetaForLesson } from '../utils/textbookCovers';
 import BodhiAvatar from './BodhiAvatar';
 import HomeLabBanner from './HomeLabBanner';
-const WorkbookPreviews = lazy(() => import('./WorkbookPreviews'));
 import { getSearchShortcut } from '../utils/platformShortcut';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
@@ -530,7 +528,6 @@ const HomePage: React.FC<HomePageProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const { isAdminLoggedIn, currentUser } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
-  const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
   const [isGrade7ModalOpen, setIsGrade7ModalOpen] = useState<boolean>(false);
   const [isGrade8ModalOpen, setIsGrade8ModalOpen] = useState<boolean>(false);
   const [isGrade9ModalOpen, setIsGrade9ModalOpen] = useState<boolean>(false);
@@ -755,27 +752,9 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-btn-secondary"
               onClick={onOpenWorksheets}
             >
-              📑 कार्यपत्रिकाः · Worksheets
+              📚 कार्यपत्रिकाः अभ्यासपुस्तिकाश्च · Worksheets &amp; Workbooks
             </button>
           )}
-          <button
-            type="button"
-            className="home-btn-secondary" onClick={() => downloadWorkbook('sanskrit-basic-workbook.pdf')}
-            style={{ background: 'rgba(22, 163, 74, 0.08)', borderColor: 'rgba(22, 163, 74, 0.4)', color: '#15803d', textDecoration: 'none', cursor: 'pointer' }}
-            data-testid="home-workbook-download"
-            title={canDownload ? "28-page printable PDF: vowels, consonants, mātrās, words, numbers, greetings, exercises and answer key" : "28-page printable PDF (free online preview; download for paid members)"}
-          >
-            {canDownload ? '📥 Beginner Workbook (PDF)' : '🔒 Beginner Workbook (Members)'}
-          </button>
-          <button
-            type="button"
-            className="home-btn-secondary" onClick={() => downloadWorkbook('sanskrit-festival-workbook.pdf')}
-            style={{ background: 'rgba(234, 88, 12, 0.08)', borderColor: 'rgba(234, 88, 12, 0.4)', color: '#c2410c', textDecoration: 'none', cursor: 'pointer' }}
-            data-testid="home-festival-workbook-download"
-            title={canDownload ? "34-page printable PDF: Dīpāvalī, Gaṇeśa Caturthī, Navarātri, Dasarā, Oṇam, Makara Saṅkrānti, Holi, Mahāśivarātri, Rakṣābandhana, Rāma Navamī, Kṛṣṇa Janmāṣṭamī, seasons, quiz and answer key" : "34-page printable PDF (free online preview; download for paid members)"}
-          >
-            {canDownload ? '🪔 Festival Workbook (PDF)' : '🔒 Festival Workbook (Members)'}
-          </button>
           {onOpenResources && (
             <button
               type="button"
@@ -787,7 +766,6 @@ const HomePage: React.FC<HomePageProps> = ({
             </button>
           )}
         </div>
-        <Suspense fallback={null}><WorkbookPreviews /></Suspense>
 
         {/* Featured Complete Course Banner: संस्कृत-चिन्तनम् */}
         {onOpenCourse && (
