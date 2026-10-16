@@ -3,18 +3,18 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 1.5rem 1.25rem 4rem;
-  color: #e2e8f0;
+  color: #f1f5f9;
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Devanagari', sans-serif;
   position: relative;
-  background: #0b1120;
+  background: #0f172a;
   border-radius: 24px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.4), inset 0 0 80px rgba(30, 41, 59, 0.5);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.45), inset 0 0 80px rgba(30, 41, 59, 0.4);
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.22), transparent 70%),
-    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(168, 85, 247, 0.18), transparent 70%),
-    radial-gradient(ellipse 50% 50% at 20% 60%, rgba(16, 185, 129, 0.1), transparent 70%),
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.28), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(168, 85, 247, 0.22), transparent 70%),
+    radial-gradient(ellipse 50% 50% at 20% 60%, rgba(16, 185, 129, 0.14), transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 32px 32px;
 }
 .vl-page [lang='sa'] { font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', serif; }
@@ -25,11 +25,11 @@
   gap: 1.5rem;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
-  border: 1.5px solid rgba(56, 189, 248, 0.38);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.98) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.45);
   border-radius: 20px;
   padding: 1.5rem 1.75rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 25px rgba(56, 189, 248, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 25px rgba(56, 189, 248, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   overflow: hidden;
 }
 .vl-hero-glow {
@@ -241,13 +241,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(180deg, #18223c 0%, #0e172a 100%);
-  border: 1.5px solid rgba(148, 163, 184, 0.28);
+  background: linear-gradient(180deg, #1e293b 0%, #111d32 100%);
+  border: 1.5px solid rgba(148, 163, 184, 0.38);
   border-radius: 18px;
   padding: 1.2rem;
   text-decoration: none;
-  color: #e2e8f0;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: #f1f5f9;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 }
@@ -289,7 +289,7 @@
 }
 .vl-card.is-active {
   border-color: var(--card-ink, #38bdf8);
-  background: linear-gradient(180deg, rgba(13, 21, 39, 0.95) 0%, rgba(7, 12, 24, 0.98) 100%);
+  background: linear-gradient(180deg, #27354f 0%, #17243c 100%);
   box-shadow: 0 0 0 2px var(--card-ink, #38bdf8), 0 0 32px var(--card-glow, rgba(56, 189, 248, 0.45));
   transform: translateY(-3px);
 }
@@ -518,30 +518,30 @@
 .vl-core-note {
   margin-top: 0.6rem;
   font-size: 0.88rem;
-  color: #cbd5e1;
-  background: #18223c;
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #e2e8f0;
+  background: #1e293b;
+  border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 10px;
   padding: 0.55rem 0.75rem;
 }
 .vl-banner {
-  background: rgba(120, 53, 15, 0.25);
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  color: #fde68a;
+  background: rgba(120, 53, 15, 0.35);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  color: #fef08a;
   border-radius: 12px;
   padding: 0.65rem 0.95rem;
   font-size: 0.92rem;
-  box-shadow: 0 0 15px rgba(245, 158, 11, 0.1);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
 }
 .vl-note, .vl-msg {
-  background: #18223c;
-  border: 1.5px solid rgba(56, 189, 248, 0.3);
+  background: #1e293b;
+  border: 1.5px solid rgba(56, 189, 248, 0.38);
   border-radius: 12px;
   padding: 0.65rem 0.95rem;
   font-size: 0.9rem;
   line-height: 1.55;
   margin: 0;
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
 .vl-msg {
   border-left: 4px solid #38bdf8;
@@ -549,13 +549,13 @@
 }
 .vl-msg.is-alert {
   border-left-color: #f97316;
-  background: rgba(124, 45, 18, 0.35);
+  background: rgba(124, 45, 18, 0.45);
   color: #fed7aa;
 }
 .vl-msg.is-ok {
   border-left-color: #22c55e;
-  background: #064e3b;
-  color: #bbf7d0;
+  background: #065f46;
+  color: #d1fae5;
 }
 
 .vl-stage-wrap { width: 100%; }
@@ -564,30 +564,30 @@
   height: auto;
   display: block;
   border-radius: 16px;
-  border: 1.5px solid rgba(56, 189, 248, 0.32);
-  background: #090f1d;
+  border: 1.5px solid rgba(56, 189, 248, 0.42);
+  background: #0d1527;
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(30, 41, 59, 0.6);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(30, 41, 59, 0.5);
 }
 .vl-stage--orbit { aspect-ratio: 1 / 1; max-width: 640px; margin: 0 auto; }
 .vl-stage--paramanu { max-width: 860px; margin: 0 auto; }
 .vl-stage--loom { aspect-ratio: 2 / 1; }
 .vl-svg-label { font-size: 12px; font-weight: 700; fill: #f8fafc; font-family: 'JetBrains Mono', system-ui, sans-serif; }
-.vl-svg-small { font-size: 10px; font-weight: 600; fill: #cbd5e1; font-family: 'JetBrains Mono', system-ui, sans-serif; }
-.vl-svg-dev { font-size: 14px; font-weight: 700; fill: #f8fafc; font-family: 'Noto Sans Devanagari', serif; }
+.vl-svg-small { font-size: 10px; font-weight: 600; fill: #e2e8f0; font-family: 'JetBrains Mono', system-ui, sans-serif; }
+.vl-svg-dev { font-size: 14px; font-weight: 700; fill: #ffffff; font-family: 'Noto Sans Devanagari', serif; }
 .vl-item, .vl-tray-well { touch-action: none; }
 
 .vl-readouts { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
 .vl-readout {
-  background: #18223c;
-  border: 1.5px solid rgba(56, 189, 248, 0.32);
+  background: #1e293b;
+  border: 1.5px solid rgba(56, 189, 248, 0.45);
   border-radius: 999px;
   padding: 0.35rem 0.85rem;
   font-size: 0.86rem;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  color: #f1f5f9;
+  color: #ffffff;
 }
 .vl-readout b { color: #38bdf8; }
 
@@ -680,13 +680,13 @@
 
 .vl-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items: start; }
 .vl-panel {
-  background: linear-gradient(180deg, #18223c 0%, #0f172a 100%);
-  border: 1.5px solid rgba(148, 163, 184, 0.28);
+  background: linear-gradient(180deg, #1e293b 0%, #131e33 100%);
+  border: 1.5px solid rgba(148, 163, 184, 0.38);
   border-radius: 16px;
   padding: 0.95rem 1.05rem;
   margin-bottom: 0.9rem;
-  color: #e2e8f0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: #f1f5f9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 .vl-grid-2 > .vl-panel { margin-bottom: 0; }
 .vl-panel-title {
@@ -695,13 +695,13 @@
   align-items: center;
   gap: 0.4rem;
   margin: 0 0 0.65rem;
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 800;
-  color: #f8fafc;
+  color: #ffffff;
 }
 .vl-panel-kicker {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 800;
   color: #38bdf8;
   letter-spacing: 0.08em;
@@ -709,23 +709,23 @@
   margin-bottom: 0.35rem;
 }
 .vl-panel-desc {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: #e2e8f0;
   margin: 0 0 1rem;
 }
 .vl-panel-callout {
-  background: rgba(30, 41, 59, 0.75);
+  background: rgba(30, 41, 59, 0.95);
   border-left: 4px solid #38bdf8;
   border-radius: 8px;
   padding: 0.75rem 1rem;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   line-height: 1.55;
-  color: #e2e8f0;
+  color: #f1f5f9;
   margin-top: 1rem;
 }
 .vl-panel-callout b {
-  color: #fde047;
+  color: #fef08a;
 }
 .vl-panel-tabs {
   display: flex;
@@ -734,26 +734,26 @@
   margin-bottom: 1rem;
 }
 .vl-panel-tab {
-  background: rgba(30, 41, 59, 0.85);
-  border: 1.5px solid rgba(148, 163, 184, 0.28);
+  background: rgba(30, 41, 59, 0.95);
+  border: 1.5px solid rgba(148, 163, 184, 0.38);
   border-radius: 10px;
   padding: 0.5rem 0.85rem;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 700;
-  color: #cbd5e1;
+  color: #e2e8f0;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 .vl-panel-tab:hover {
-  background: #233152;
+  background: #283756;
   border-color: #38bdf8;
-  color: #f8fafc;
+  color: #ffffff;
 }
 .vl-panel-tab.is-active {
   background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
   border-color: #38bdf8;
   color: #ffffff;
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
 }
 .vl-panel-hint { margin-left: auto; font-size: 0.72rem; font-weight: 700; color: #cbd5e1; }
 .vl-score { margin-left: auto; font-size: 0.78rem; font-weight: 800; color: #86efac; background: #064e3b; border-radius: 999px; padding: 0.1rem 0.6rem; border: 1px solid rgba(34, 197, 94, 0.4); }
@@ -765,65 +765,65 @@
   display: flex;
   flex-direction: column;
   gap: 0.05rem;
-  background: #18223c;
-  border: 1.5px solid rgba(148, 163, 184, 0.28);
+  background: #1e293b;
+  border: 1.5px solid rgba(148, 163, 184, 0.38);
   border-radius: 10px;
   padding: 0.5rem 0.65rem;
   cursor: pointer;
-  color: #e2e8f0;
+  color: #f1f5f9;
   transition: all 0.2s ease;
 }
-.vl-term:hover { border-color: #38bdf8; background: #233152; box-shadow: 0 0 12px rgba(56, 189, 248, 0.25); }
-.vl-term-dev { font-size: 1.08rem; font-weight: 700; color: #f8fafc; font-family: 'Noto Sans Devanagari', serif; }
-.vl-term-iast { font-size: 0.84rem; font-style: italic; color: #38bdf8; font-family: 'JetBrains Mono', ui-monospace, monospace; }
-.vl-term-en { font-size: 0.82rem; color: #cbd5e1; }
-.vl-term-note { font-size: 0.74rem; color: #94a3b8; }
+.vl-term:hover { border-color: #38bdf8; background: #283756; box-shadow: 0 0 12px rgba(56, 189, 248, 0.3); }
+.vl-term-dev { font-size: 1.1rem; font-weight: 700; color: #ffffff; font-family: 'Noto Sans Devanagari', serif; }
+.vl-term-iast { font-size: 0.85rem; font-style: italic; color: #38bdf8; font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.vl-term-en { font-size: 0.84rem; color: #e2e8f0; }
+.vl-term-note { font-size: 0.76rem; color: #cbd5e1; }
 
 .vl-ch-list { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; }
-.vl-ch-q { margin: 0 0 0.35rem; font-weight: 700; font-size: 0.9rem; color: #f8fafc; }
+.vl-ch-q { margin: 0 0 0.35rem; font-weight: 700; font-size: 0.92rem; color: #ffffff; }
 .vl-ch-opts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 .vl-ch-opt {
-  background: #18223c;
-  border: 1.5px solid rgba(148, 163, 184, 0.3);
+  background: #1e293b;
+  border: 1.5px solid rgba(148, 163, 184, 0.38);
   border-radius: 10px;
   padding: 0.35rem 0.65rem;
-  font-size: 0.84rem;
+  font-size: 0.85rem;
   cursor: pointer;
-  color: #e2e8f0;
+  color: #f1f5f9;
   min-height: 34px;
   transition: all 0.15s ease;
 }
-.vl-ch-opt:hover { border-color: #38bdf8; color: #f8fafc; background: #233152; }
-.vl-ch-opt.is-right { background: #064e3b; border-color: #22c55e; color: #86efac; font-weight: 700; box-shadow: 0 0 12px rgba(34, 197, 94, 0.3); }
-.vl-ch-opt.is-wrong { background: #451a03; border-color: #f87171; color: #fca5a5; }
-.vl-ch-feedback { margin: 0.35rem 0 0; font-size: 0.82rem; }
+.vl-ch-opt:hover { border-color: #38bdf8; color: #ffffff; background: #283756; }
+.vl-ch-opt.is-right { background: #065f46; border-color: #34d399; color: #a7f3d0; font-weight: 700; box-shadow: 0 0 12px rgba(52, 211, 153, 0.35); }
+.vl-ch-opt.is-wrong { background: #5c1d06; border-color: #f87171; color: #fecaca; }
+.vl-ch-feedback { margin: 0.35rem 0 0; font-size: 0.84rem; }
 .vl-ch-feedback.is-right { color: #86efac; font-weight: 700; }
 .vl-ch-feedback.is-wrong { color: #fca5a5; }
 
 .vl-sort-cards, .vl-sort-bins { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem; }
 .vl-sort-card {
-  background: #18223c;
-  border: 1.5px dashed rgba(148, 163, 184, 0.4);
+  background: #1e293b;
+  border: 1.5px dashed rgba(148, 163, 184, 0.45);
   border-radius: 10px;
   padding: 0.4rem 0.65rem;
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   cursor: pointer;
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
-.vl-sort-card.is-selected { border-style: solid; border-color: #38bdf8; background: #0c2838; color: #7dd3fc; box-shadow: 0 0 12px rgba(56, 189, 248, 0.3); }
-.vl-sort-card.is-done { border-style: solid; border-color: #22c55e; background: #064e3b; color: #86efac; cursor: default; }
+.vl-sort-card.is-selected { border-style: solid; border-color: #38bdf8; background: #0c354d; color: #bae6fd; box-shadow: 0 0 12px rgba(56, 189, 248, 0.35); }
+.vl-sort-card.is-done { border-style: solid; border-color: #22c55e; background: #065f46; color: #a7f3d0; cursor: default; }
 .vl-sort-bin {
-  background: #18223c;
-  border: 1.5px solid rgba(56, 189, 248, 0.32);
+  background: #1e293b;
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
   border-radius: 12px;
   padding: 0.45rem 0.8rem;
   font-weight: 800;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   cursor: pointer;
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
-.vl-sort-bin:hover { background: #233152; border-color: #38bdf8; }
-.vl-sort-msg { margin: 0; font-size: 0.84rem; color: #cbd5e1; }
+.vl-sort-bin:hover { background: #283756; border-color: #38bdf8; }
+.vl-sort-msg { margin: 0; font-size: 0.86rem; color: #e2e8f0; }
 
 .vl-scenarios { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .vl-prakriti-grid { display: grid; grid-template-columns: minmax(240px, 320px) minmax(0, 1fr); gap: 0.9rem; align-items: start; }
@@ -905,24 +905,24 @@
   font-size: 0.75rem;
   margin-right: 0.2rem;
 }
-.vl-loom-controls { display: flex; flex-direction: column; gap: 0.6rem; background: #18223c; border: 1.5px solid rgba(148, 163, 184, 0.28); border-radius: 14px; padding: 0.8rem; }
+.vl-loom-controls { display: flex; flex-direction: column; gap: 0.6rem; background: #1e293b; border: 1.5px solid rgba(148, 163, 184, 0.38); border-radius: 14px; padding: 0.8rem; }
 .vl-loom-sliders { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; }
-.vl-tradition p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.5rem; }
-.vl-tradition--spanda { background: rgba(88, 28, 135, 0.25); border-color: rgba(168, 85, 247, 0.4); }
-.vl-quote { margin: 0 0 0.7rem; padding: 0.5rem 0.7rem; background: #18223c; border-left: 3px solid #f59e0b; border-radius: 8px; }
-.vl-quote blockquote { margin: 0; font-size: 1.05rem; font-weight: 700; color: #f8fafc; font-family: 'Noto Sans Devanagari', serif; }
-.vl-quote figcaption { font-size: 0.84rem; color: #cbd5e1; margin-top: 0.15rem; }
-.vl-list { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.88rem; line-height: 1.5; }
-.vl-modern { background: rgba(30, 58, 138, 0.25); border-color: rgba(56, 189, 248, 0.4); }
+.vl-tradition p { font-size: 0.92rem; line-height: 1.6; margin: 0 0 0.5rem; color: #e2e8f0; }
+.vl-tradition--spanda { background: rgba(88, 28, 135, 0.32); border-color: rgba(168, 85, 247, 0.5); }
+.vl-quote { margin: 0 0 0.7rem; padding: 0.6rem 0.85rem; background: #1e293b; border-left: 3px solid #f59e0b; border-radius: 8px; }
+.vl-quote blockquote { margin: 0; font-size: 1.08rem; font-weight: 700; color: #ffffff; font-family: 'Noto Sans Devanagari', serif; }
+.vl-quote figcaption { font-size: 0.86rem; color: #e2e8f0; margin-top: 0.2rem; }
+.vl-list { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; line-height: 1.55; color: #e2e8f0; }
+.vl-modern { background: rgba(30, 58, 138, 0.32); border-color: rgba(56, 189, 248, 0.45); }
 .vl-steps--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .vl-stage--asato { aspect-ratio: 8 / 5; }
 .vl-toggle .vl-chip { flex: 1 1 0; font-size: 0.95rem; }
 .vl-score--off { color: #fdba74; background: rgba(154, 52, 18, 0.4); }
 .vl-eq { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; color: #f8fafc; }
-.vl-stepper { display: inline-flex; align-items: center; gap: 0.3rem; background: #18223c; border: 1.5px solid rgba(148, 163, 184, 0.3); border-radius: 10px; padding: 0.15rem 0.3rem; color: #f8fafc; }
-.vl-stepper button { width: 32px; height: 32px; border-radius: 8px; border: none; background: #233152; font-size: 1.1rem; font-weight: 800; cursor: pointer; color: #38bdf8; }
+.vl-stepper { display: inline-flex; align-items: center; gap: 0.3rem; background: #1e293b; border: 1.5px solid rgba(148, 163, 184, 0.38); border-radius: 10px; padding: 0.15rem 0.3rem; color: #ffffff; }
+.vl-stepper button { width: 32px; height: 32px; border-radius: 8px; border: none; background: #283756; font-size: 1.1rem; font-weight: 800; cursor: pointer; color: #38bdf8; }
 .vl-stepper button:disabled { opacity: 0.4; cursor: default; }
-.vl-stepper b { min-width: 1.2rem; text-align: center; color: #f8fafc; }
+.vl-stepper b { min-width: 1.2rem; text-align: center; color: #ffffff; }
 .vl-count { max-width: 420px; }
 .vl-btn:disabled { opacity: 0.45; cursor: not-allowed; }
 .vl-stage--nada { aspect-ratio: 12 / 5; }
@@ -2147,13 +2147,13 @@
    Bodhi Lab Anecdote Component (विज्ञान-विमर्शः) - Cyber Briefing Terminal
    ========================================================================= */
 .vl-bodhi-anecdote {
-  background: linear-gradient(180deg, #18223c 0%, #0f172a 100%);
-  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  background: linear-gradient(180deg, #1e293b 0%, #111d32 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
   border-radius: 20px;
   padding: 1.35rem 1.5rem;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   margin: 1.25rem 0;
-  color: #e2e8f0;
+  color: #f1f5f9;
   transition: all 0.25s ease;
 }
 
@@ -2419,30 +2419,35 @@
 }
 
 .vl-bodhi-prose {
-  font-size: 0.93rem;
+  font-size: 0.95rem;
   line-height: 1.65;
-  color: #cbd5e1;
+  color: #e2e8f0;
 }
 
 .vl-bodhi-prose p {
   margin: 0 0 0.65rem;
 }
 
+.vl-bodhi-prose strong {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
 .vl-bodhi-prose blockquote {
-  background: rgba(120, 53, 15, 0.25);
+  background: rgba(120, 53, 15, 0.35);
   border-left: 4px solid #f59e0b;
   color: #fef3c7;
   padding: 0.75rem 1rem;
   border-radius: 8px;
   margin: 0.75rem 0;
   font-style: italic;
-  font-size: 0.94rem;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
 .vl-bodhi-epistemology {
-  background: rgba(15, 23, 42, 0.8);
-  border: 1.5px solid rgba(56, 189, 248, 0.35);
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(56, 189, 248, 0.45);
   border-left: 4px solid #38bdf8;
   border-radius: 10px;
   padding: 0.75rem 0.95rem;
