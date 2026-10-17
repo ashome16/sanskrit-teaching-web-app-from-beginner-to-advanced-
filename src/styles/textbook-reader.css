@@ -333,10 +333,12 @@
 }
 
 .interactive-word {
+  position: relative;
   cursor: pointer;
   border-radius: 6px;
   padding: 0.05em 0.15em;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  display: inline-block;
 }
 
 .interactive-word:hover,
@@ -351,6 +353,62 @@
   border-radius: 4px;
   box-shadow: 0 0 0 2px #d97706;
   font-weight: 700;
+}
+
+.interactive-word--speaking {
+  background: linear-gradient(135deg, #fef08a 0%, #fde047 100%) !important;
+  color: #78350f !important;
+  font-weight: 700;
+  border-radius: 6px;
+  box-shadow: 0 0 0 2.5px #d97706, 0 3px 12px rgba(217, 119, 6, 0.35) !important;
+  transform: translateY(-1.5px);
+  z-index: 25;
+}
+
+/* Floating real-time English gloss tooltip on top of the speaking Sanskrit word */
+.speaking-word-gloss-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.25;
+  padding: 0.28rem 0.65rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 100;
+  animation: tooltipFadePop 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.speaking-word-gloss-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0f172a transparent transparent transparent;
+}
+
+@keyframes tooltipFadePop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 5px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
 }
 
 .interactive-word:not(:last-child)::after {
@@ -499,6 +557,15 @@
   animation: fadeInMeaning 0.2s ease-out;
 }
 
+.textbook-meaning-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
 .textbook-meaning-tag {
   display: inline-flex;
   align-items: center;
@@ -512,7 +579,52 @@
   border: 1px solid #fde68a;
   padding: 0.15rem 0.55rem;
   border-radius: 6px;
-  margin-bottom: 0.45rem;
+  margin: 0;
+}
+
+.textbook-meaning-live-sync {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fef08a;
+  border: 1px solid #facc15;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #713f12;
+  box-shadow: 0 1px 4px rgba(202, 138, 4, 0.15);
+  animation: fadeInMeaning 0.2s ease-out;
+}
+
+.live-sync-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #d97706;
+  display: inline-block;
+  animation: pulseDot 1s infinite alternate;
+}
+
+@keyframes pulseDot {
+  from { opacity: 0.4; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1.15); }
+}
+
+.live-sync-dev {
+  font-family: "Noto Sans Devanagari", serif;
+  font-weight: 700;
+  color: #854d0e;
+}
+
+.live-sync-arrow {
+  color: #a16207;
+  font-size: 0.72rem;
+}
+
+.live-sync-en {
+  font-weight: 700;
+  color: #1e293b;
 }
 
 .textbook-sentence-meaning {
@@ -522,6 +634,28 @@
   margin: 0;
   white-space: pre-line;
   font-weight: 500;
+}
+
+.textbook-meaning-highlight {
+  background: #fde047;
+  color: #1c1917;
+  font-weight: 700;
+  padding: 0.12em 0.35em;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px #eab308, 0 2px 8px rgba(234, 179, 8, 0.3);
+  transition: all 0.15s ease-in-out;
+  animation: pulseMeaningGlow 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes pulseMeaningGlow {
+  from {
+    background-color: #fde047;
+    box-shadow: 0 0 0 2px #eab308, 0 2px 8px rgba(234, 179, 8, 0.25);
+  }
+  to {
+    background-color: #fef08a;
+    box-shadow: 0 0 0 3px #ca8a04, 0 3px 12px rgba(202, 138, 4, 0.4);
+  }
 }
 
 .textbook-paragraph-translation {

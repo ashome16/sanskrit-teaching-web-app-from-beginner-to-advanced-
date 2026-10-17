@@ -406,6 +406,91 @@ const getVarnamalaGroupMeta = (groupIdx: number): VarnamalaGroupMetadata => {
   }
 };
 
+/**
+ * Synchronized bilingual highlight: highlights the matching English word/phrase
+ * in the sentence translation corresponding to the Sanskrit word currently being spoken.
+ */
+const renderHighlightedMeaning = (
+  meaningText: string,
+  spokenWord: string,
+  glossMeaning: string
+): React.ReactNode => {
+  if (!meaningText) return null;
+  if (!spokenWord && !glossMeaning) return meaningText;
+
+  const candidates: RegExp[] = [];
+
+  // 1. Ordinals / numbers (e.g. ६. -> 6., 6)
+  const numMatch = spokenWord.match(/^[०-९0-9]+/);
+  if (numMatch) {
+    const devDigits = '०१२३४५६७८९';
+    let ascii = '';
+    for (const ch of numMatch[0]) {
+      const idx = devDigits.indexOf(ch);
+      ascii += idx >= 0 ? idx : ch;
+    }
+    candidates.push(new RegExp(`\\b${ascii}\\.`, 'i'));
+    candidates.push(new RegExp(`\\b${ascii}\\b`, 'i'));
+  }
+
+  // 2. Gloss phrases and significant keywords
+  if (glossMeaning) {
+    const primaryGloss = glossMeaning.replace(/\([^)]*\)/g, ' ').trim();
+    const parts = primaryGloss.split(/[/,;]\s*/).map((p) => p.trim()).filter((p) => p.length >= 3);
+    const individualWords = primaryGloss
+      .split(/\s+/)
+      .map((w) => w.replace(/[^A-Za-z]/g, '').trim())
+      .filter((w) => w.length >= 4);
+
+    // Sort by descending length so longest specific match wins first (e.g. "Kartikeya" before "Lord")
+    const allPhrases = [...parts, ...individualWords].sort((a, b) => b.length - a.length);
+
+    for (const phrase of allPhrases) {
+      const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      candidates.push(new RegExp(`\\b${escaped}\\b`, 'i'));
+    }
+  }
+
+  // 3. Spoken word stem in English transliteration if present
+  if (spokenWord && /[A-Za-z]/.test(spokenWord)) {
+    const cleanEn = spokenWord.replace(/[^A-Za-z]/g, '');
+    if (cleanEn.length >= 3) {
+      candidates.push(new RegExp(`\\b${cleanEn}\\b`, 'i'));
+    }
+  }
+
+  let matchResult: { start: number; end: number; text: string } | null = null;
+  for (const regex of candidates) {
+    const m = meaningText.match(regex);
+    if (m && m.index !== undefined) {
+      matchResult = {
+        start: m.index,
+        end: m.index + m[0].length,
+        text: m[0],
+      };
+      break;
+    }
+  }
+
+  if (!matchResult) {
+    return meaningText;
+  }
+
+  const before = meaningText.slice(0, matchResult.start);
+  const matched = meaningText.slice(matchResult.start, matchResult.end);
+  const after = meaningText.slice(matchResult.end);
+
+  return (
+    <>
+      {before}
+      <mark className="textbook-meaning-highlight" title={`Aligned to: ${spokenWord}`}>
+        {matched}
+      </mark>
+      {after}
+    </>
+  );
+};
+
 const TextbookReader: React.FC<TextbookReaderProps> = ({
   lessons,
   activeLessonId,
@@ -447,6 +532,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [isPlayingAll, setIsPlayingAll] = useState(false);
   /** Lesson paragraphs only. Grouped charts (Varṇamālā / Numbers / बारहखड़ी) stay on isPlayingAll. */
   const [playAllPhase, setPlayAllPhase] = useState<'idle' | 'playing' | 'paused'>('idle');
+  /** Set true only when all words of the final paragraph in a lesson have fully finished playing. */
+  const [lessonCompleted, setLessonCompleted] = useState(false);
   const [playingLetter, setPlayingLetter] = useState<string | null>(null);
   /** Lesson Play all: display index of the word being spoken (highlight follows the voice). */
   const [playingTokenIdx, setPlayingTokenIdx] = useState<number | null>(null);
@@ -566,6 +653,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     // Play all finished a paragraph and asked to open the next one. Do not cancel.
     if (continueAfterAdvanceRef.current) {
       continueAfterAdvanceRef.current = false;
+      setLessonCompleted(false);
       beginLessonParagraphRef.current(0);
       return;
     }
@@ -578,6 +666,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       return;
     }
     // Lesson change, or the student moved paragraphs: stop. Do not resume or skip.
+    setLessonCompleted(false);
     stopPlayAllRef.current?.();
     stopPlayAllRef.current = null;
     stopPronunciation();
@@ -595,10 +684,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   }, [activeLessonId, sentenceNumber]);
 
   const atLessonEnd = !isGroupedLesson && totalSentences > 0 && sentenceNumber === totalSentences;
-  const showEndGuide = atLessonEnd && playAllPhase !== 'playing';
+  const showEndGuide = atLessonEnd && (lessonCompleted || playAllPhase === 'idle');
 
   useEffect(() => {
-    if (replayFromStartRef.current || !showEndGuide || playAllPhase === 'paused') {
+    // Bodhi only speaks celebration when the lesson is ACTUALLY completed (all words of final paragraph finished)!
+    if (replayFromStartRef.current || !lessonCompleted || playAllPhase !== 'idle') {
       endBodhiStopRef.current?.();
       endBodhiStopRef.current = null;
       return;
@@ -609,7 +699,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       stop();
       if (endBodhiStopRef.current === stop) endBodhiStopRef.current = null;
     };
-  }, [showEndGuide, playAllPhase, activeLessonId]);
+  }, [lessonCompleted, playAllPhase, activeLessonId]);
 
   useEffect(() => {
     if (!replayFromStartRef.current) return;
@@ -658,6 +748,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
    */
   const beginLessonParagraph = (fromIndex: number) => {
     if (isGroupedLesson) return;
+    setLessonCompleted(false);
     const items = speechItemsFromSentence(sentence);
     const start = Math.max(0, fromIndex);
     setPlayAllPhase('playing');
@@ -676,6 +767,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       setPlayAllPhase('idle');
       setIsPlayingAll(false);
       setPlayingLetter(null);
+      setPlayingTokenIdx(null);
+      setLessonCompleted(true);
       return;
     }
     const slice = items.slice(start);
@@ -702,7 +795,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         setPlayAllPhase('idle');
         setIsPlayingAll(false);
         setPlayingLetter(null);
+        setPlayingTokenIdx(null);
         setPlayingGroupIdx(null);
+        setLessonCompleted(true);
       },
     });
   };
@@ -773,6 +868,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   };
 
   const replayLessonFromStart = () => {
+    setLessonCompleted(false);
     endBodhiStopRef.current?.();
     if (sentenceNumber <= 1) {
       replayFromStartRef.current = true;
@@ -815,6 +911,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       beginLessonParagraph(paragraphIndexRef.current);
       return;
     }
+    setLessonCompleted(false);
     paragraphIndexRef.current = 0;
     beginLessonParagraph(0);
   };
@@ -864,6 +961,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   /** Paragraph words in reading order. Shown and spoken from the same list. */
   const lessonTokens = !isGroupedLesson && sentence ? readerTokens(sentence) : [];
   const speakingTokenIdx = !isGroupedLesson && playAllPhase === 'playing' ? playingTokenIdx : null;
+  const currentSpeakingToken =
+    speakingTokenIdx !== null && lessonTokens[speakingTokenIdx] ? lessonTokens[speakingTokenIdx] : '';
+  const currentSpeakingClean = currentSpeakingToken ? cleanWord(currentSpeakingToken) : '';
+  const currentSpeakingGloss = currentSpeakingClean
+    ? lookupAnalyseGloss(glosses, currentSpeakingClean) || lookupAnalyseGloss(glosses, currentSpeakingToken)
+    : undefined;
+  const currentSpeakingMeaning = currentSpeakingGloss ? englishMeaningFromGloss(currentSpeakingGloss) : '';
   const studyJumps = isGroupedLesson ? {} : findStudyJumps(activeLesson);
   const nextLessonInTrack = (() => {
     const track = lessonTrack(activeLessonId);
@@ -2240,14 +2344,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                             );
                           }
                           const cleaned = cleanWord(word);
+                          const isSpeaking = idx === speakingTokenIdx;
                           const isSelected = speakingTokenIdx !== null
-                            ? idx === speakingTokenIdx
+                            ? isSpeaking
                             : Boolean(cleanActiveWord && cleaned === cleanActiveWord);
                           return (
                             <span
                               key={`${activeLessonId}-${sentenceNumber}-en-${idx}`}
                               data-token-index={idx}
-                              className={`interactive-word${isSelected ? ' interactive-word--active' : ''}${idx === speakingTokenIdx ? ' interactive-word--speaking' : ''}`}
+                              className={`interactive-word${isSelected ? ' interactive-word--active' : ''}${isSpeaking ? ' interactive-word--speaking' : ''}`}
                               onClick={() => handleSpokenWord(word)}
                               role="button"
                               tabIndex={0}
@@ -2258,6 +2363,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                               }}
                             >
                               {word}
+                              {isSpeaking && currentSpeakingMeaning ? (
+                                <span className="speaking-word-gloss-tooltip" aria-hidden="true">
+                                  {currentSpeakingMeaning}
+                                </span>
+                              ) : null}
                             </span>
                           );
                         })
@@ -2370,14 +2480,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                     );
                   }
                   const cleaned = cleanWord(word);
+                  const isSpeaking = idx === speakingTokenIdx;
                   const isSelected = speakingTokenIdx !== null
-                    ? idx === speakingTokenIdx
+                    ? isSpeaking
                     : Boolean(cleanActiveWord && cleaned === cleanActiveWord);
                   return (
                     <span
                       key={`${activeLessonId}-${sentenceNumber}-${idx}`}
                       data-token-index={idx}
-                      className={`interactive-word${isSelected ? ' interactive-word--active' : ''}${idx === speakingTokenIdx ? ' interactive-word--speaking' : ''}`}
+                      className={`interactive-word${isSelected ? ' interactive-word--active' : ''}${isSpeaking ? ' interactive-word--speaking' : ''}`}
                       onClick={() => handleSpokenWord(word)}
                       role="button"
                       tabIndex={0}
@@ -2388,6 +2499,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       }}
                     >
                       {word}
+                      {isSpeaking && currentSpeakingMeaning ? (
+                        <span className="speaking-word-gloss-tooltip" aria-hidden="true">
+                          {currentSpeakingMeaning}
+                        </span>
+                      ) : null}
                     </span>
                   );
                 })}
@@ -2398,8 +2514,20 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 <div className="textbook-sentence-meaning-box" role="region" aria-label="English Translation">
                   <div className="textbook-meaning-header">
                     <span className="textbook-meaning-tag">📖 अनुवादः · English Translation</span>
+                    {speakingTokenIdx !== null && currentSpeakingMeaning ? (
+                      <span className="textbook-meaning-live-sync" title="Synchronized voice alignment">
+                        <span className="live-sync-dot" aria-hidden="true"></span>
+                        <span className="live-sync-dev">{currentSpeakingClean || currentSpeakingToken}</span>
+                        <span className="live-sync-arrow">➔</span>
+                        <span className="live-sync-en">{currentSpeakingMeaning}</span>
+                      </span>
+                    ) : null}
                   </div>
-                  <p className="textbook-sentence-meaning">{sentence.meaning}</p>
+                  <p className="textbook-sentence-meaning">
+                    {speakingTokenIdx !== null
+                      ? renderHighlightedMeaning(sentence.meaning, currentSpeakingClean, currentSpeakingMeaning)
+                      : sentence.meaning}
+                  </p>
                 </div>
               )}
 
