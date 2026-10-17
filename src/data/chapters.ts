@@ -9,24 +9,11 @@ export const getLessonById = (id: string): Lesson | undefined =>
 
 let cachedChapters: Lesson[] | null = null;
 
-// Cache-busted runtime fetch of chapters.json from public/ (or dynamic chunk import fallback)
+// Loads complete chapters data: prefers Vite content-hashed chunk (gzipped ~449KB & browser-cached),
+// with fallback to public/chapters.json and LESSON_STUBS.
 export const fetchLatestChapters = async (): Promise<Lesson[]> => {
   if (cachedChapters && cachedChapters.length > 0) {
     return cachedChapters;
-  }
-  try {
-    const baseUrl = import.meta.env.BASE_URL || '/';
-    const chaptersUrl = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}chapters.json?t=${Date.now()}`;
-    const response = await fetch(chaptersUrl);
-    if (response.ok) {
-      const data = (await response.json()) as LessonsRegistry;
-      if (data?.lessons?.length) {
-        cachedChapters = data.lessons;
-        return data.lessons;
-      }
-    }
-  } catch {
-    /* fallback to dynamic import chunk */
   }
   try {
     const mod = await import('./chapters.json');
@@ -34,6 +21,20 @@ export const fetchLatestChapters = async (): Promise<Lesson[]> => {
     if (data?.lessons?.length) {
       cachedChapters = data.lessons;
       return data.lessons;
+    }
+  } catch {
+    /* fallback to fetch from public/ */
+  }
+  try {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const chaptersUrl = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}chapters.json`;
+    const response = await fetch(chaptersUrl);
+    if (response.ok) {
+      const data = (await response.json()) as LessonsRegistry;
+      if (data?.lessons?.length) {
+        cachedChapters = data.lessons;
+        return data.lessons;
+      }
     }
   } catch {
     /* fallback to stubs */

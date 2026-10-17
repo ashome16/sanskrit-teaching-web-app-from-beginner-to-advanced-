@@ -721,17 +721,32 @@ const Dashboard: React.FC = () => {
     }
   }, [canReadAllChapters, lessonIndex, lessons, activeView]);
 
+  const [chaptersLoading, setChaptersLoading] = useState(true);
+
   useEffect(() => {
     let cancelled = false;
     fetchLatestChapters()
       .then((fresh) => {
-        if (!cancelled && fresh.length > 0) setLessons(fresh);
+        if (!cancelled) {
+          if (fresh.length > 0) setLessons(fresh);
+          setChaptersLoading(false);
+        }
       })
-      .catch(() => {});
+      .catch(() => {
+        if (!cancelled) setChaptersLoading(false);
+      });
     return () => {
       cancelled = true;
     };
   }, []);
+
+  // Ensure sentenceIndex stays within bounds when chapters load
+  useEffect(() => {
+    const cur = lessons[lessonIndex];
+    if (cur?.sentences?.length && sentenceIndex >= cur.sentences.length) {
+      setSentenceIndex(Math.max(0, cur.sentences.length - 1));
+    }
+  }, [lessonIndex, sentenceIndex, lessons]);
 
   const findNextVisibleLesson = (from: number, direction: 1 | -1): number => {
     let i = from + direction;
@@ -743,16 +758,16 @@ const Dashboard: React.FC = () => {
   };
 
   const lesson = lessons[lessonIndex];
-  const sentence = lesson?.sentences[sentenceIndex];
+  const sentence = lesson?.sentences?.[sentenceIndex];
   const isFirstSentence = lessonIndex === 0 && sentenceIndex === 0;
   const lastVisible = (() => {
     for (let i = lessons.length - 1; i >= 0; i -= 1) {
       if (!HIDDEN_DEEPAKAM_IDS.has(lessons[i]?.id)) return i;
     }
-    return lessons.length - 1;
+    return Math.max(0, lessons.length - 1);
   })();
   const isLastSentence =
-    lessonIndex === lastVisible && sentenceIndex === (lesson?.sentences.length ?? 1) - 1;
+    lessonIndex === lastVisible && sentenceIndex === Math.max(0, (lesson?.sentences?.length ?? 1) - 1);
 
   const handleWordClick = (word: string) => {
     // । ॥ / verse numbers are punctuation: no speech, no analysis entry.
@@ -809,7 +824,8 @@ const Dashboard: React.FC = () => {
   };
 
   const goNext = () => {
-    if (sentenceIndex < lesson.sentences.length - 1) {
+    if (!lesson) return;
+    if (sentenceIndex < (lesson.sentences?.length ?? 0) - 1) {
       setSentenceIndex(sentenceIndex + 1);
     } else {
       const next = findNextVisibleLesson(lessonIndex, 1);
@@ -824,6 +840,7 @@ const Dashboard: React.FC = () => {
   };
 
   const goPrevious = () => {
+    if (!lesson) return;
     if (sentenceIndex > 0) {
       setSentenceIndex(sentenceIndex - 1);
     } else {
@@ -832,7 +849,7 @@ const Dashboard: React.FC = () => {
         const prevId = lessons[prev]?.id;
         if (!checkAccess('reader', prevId)) return;
         setLessonIndex(prev);
-        setSentenceIndex(lessons[prev].sentences.length - 1);
+        setSentenceIndex(Math.max(0, (lessons[prev]?.sentences?.length ?? 1) - 1));
       }
     }
     // wordSelection: auto-select effect fills from the new sentence
@@ -886,10 +903,6 @@ const Dashboard: React.FC = () => {
     setActiveView('reader');
   };
 
-  if (!lesson || !sentence) {
-    return <div className="dashboard-empty">No chapter content available.</div>;
-  }
-
   return (
     <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}`}>
       <header className="dashboard-header">
@@ -920,7 +933,7 @@ const Dashboard: React.FC = () => {
               <span className="dashboard-nav-primary">Home</span>
             </button>
             <div
-              className={`dashboard-nav-group${(activeView === 'reader' && lesson.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
+              className={`dashboard-nav-group${(activeView === 'reader' && lesson?.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
             >
               <button
                 type="button"
@@ -934,7 +947,7 @@ const Dashboard: React.FC = () => {
               <div className="dashboard-nav-sub" role="group" aria-label="Deepakam 7th, Deepakam 8th, and 9th Grade शारदा lessons">
                 <button
                   type="button"
-                  className={activeView === 'reader' && lesson.id !== 'varnamala' && !lesson.id.startsWith('grade8_') && !lesson.id.startsWith('grade9_') ? 'active' : ''}
+                  className={activeView === 'reader' && lesson?.id !== 'varnamala' && !lesson?.id?.startsWith('grade8_') && !lesson?.id?.startsWith('grade9_') ? 'active' : ''}
                   onClick={() => openDeepakam()}
                   title="Deepakam 7th · दीपकम · Class 7 Sanskrit"
                 >
@@ -943,7 +956,7 @@ const Dashboard: React.FC = () => {
                 </button>
                 <button
                   type="button"
-                  className={activeView === 'reader' && lesson.id.startsWith('grade8_') ? 'active' : ''}
+                  className={activeView === 'reader' && lesson?.id?.startsWith('grade8_') ? 'active' : ''}
                   onClick={() => {
                     if (!canReadAllChapters) {
                       openAuthModal('login');
@@ -958,7 +971,7 @@ const Dashboard: React.FC = () => {
                 </button>
                 <button
                   type="button"
-                  className={activeView === 'reader' && lesson.id.startsWith('grade9_') ? 'active' : ''}
+                  className={activeView === 'reader' && lesson?.id?.startsWith('grade9_') ? 'active' : ''}
                   onClick={() => {
                     if (!canReadAllChapters) {
                       openAuthModal('login');
@@ -977,7 +990,7 @@ const Dashboard: React.FC = () => {
           <div className="dashboard-nav-row dashboard-nav-row--secondary">
             <button
               type="button"
-              className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'reader' && (lesson.id === 'varnamala' || lesson.id === 'barakhadi') ? ' active' : ''}`}
+              className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'reader' && (lesson?.id === 'varnamala' || lesson?.id === 'barakhadi') ? ' active' : ''}`}
               onClick={openVarnamala}
               title="Open Alphabet & Syllables (वर्णमाला)"
             >
@@ -1239,27 +1252,57 @@ const Dashboard: React.FC = () => {
             onOpenReader={() => openDeepakam()}
           />
         )}
-        {activeView === 'reader' && <TextbookReader
-          lessons={lessons}
-          activeLessonId={lesson.id}
-          onSelectLesson={handleSelectLesson}
-          sentence={sentence}
-          sentenceNumber={sentenceIndex + 1}
-          totalSentences={lesson.sentences.length}
-          activeWord={wordSelection?.text || ''}
-          onWordClick={handleWordClick}
-          onNext={goNext}
-          onPrevious={goPrevious}
-          onJumpToSentence={jumpToSentence}
-          isFirstSentence={isFirstSentence}
-          isLastSentence={isLastSentence}
-          onOpenQuiz={() => navigateToView('quiz')}
-          onOpenWorksheets={(category) => handleOpenWorksheets(category || 'all')}
-          onOpenPuzzle={() => navigateToView('board')}
-          onOpenVoiceSettings={() => setIsVoiceModalOpen(true)}
-          onOpenCbseGuide={() => navigateToView('cbse-guide')}
-          onOpenBarakhadi={() => openDeepakam('barakhadi')}
-        />}
+        {activeView === 'reader' && (
+          !lesson || !sentence ? (
+            chaptersLoading ? (
+              <ViewLoader />
+            ) : (
+              <div className="dashboard-empty" style={{ padding: '4rem 1rem', textAlign: 'center' }}>
+                <p style={{ fontSize: '1.1rem', color: '#64748b', marginBottom: '1.25rem' }}>
+                  No chapter content available for this section.
+                </p>
+                <button
+                  type="button"
+                  className="dashboard-primary-btn"
+                  onClick={() => openDeepakam()}
+                  style={{
+                    padding: '0.65rem 1.4rem',
+                    borderRadius: '8px',
+                    background: '#273b35',
+                    color: '#fff',
+                    border: 'none',
+                    fontWeight: 600,
+                    cursor: 'pointer'
+                  }}
+                >
+                  Go to Chapter 1
+                </button>
+              </div>
+            )
+          ) : (
+            <TextbookReader
+              lessons={lessons}
+              activeLessonId={lesson.id}
+              onSelectLesson={handleSelectLesson}
+              sentence={sentence}
+              sentenceNumber={sentenceIndex + 1}
+              totalSentences={lesson.sentences.length}
+              activeWord={wordSelection?.text || ''}
+              onWordClick={handleWordClick}
+              onNext={goNext}
+              onPrevious={goPrevious}
+              onJumpToSentence={jumpToSentence}
+              isFirstSentence={isFirstSentence}
+              isLastSentence={isLastSentence}
+              onOpenQuiz={() => navigateToView('quiz')}
+              onOpenWorksheets={(category) => handleOpenWorksheets(category || 'all')}
+              onOpenPuzzle={() => navigateToView('board')}
+              onOpenVoiceSettings={() => setIsVoiceModalOpen(true)}
+              onOpenCbseGuide={() => navigateToView('cbse-guide')}
+              onOpenBarakhadi={() => openDeepakam('barakhadi')}
+            />
+          )
+        )}
         {activeView === 'course' && (
           <SanskritThinkingCourse
             key={courseAddendumTarget ? `addendum-${courseAddendumTarget.key}` : 'course'}
