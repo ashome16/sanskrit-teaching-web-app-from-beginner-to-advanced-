@@ -26,6 +26,7 @@ import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
 import { CymaticsHarmonicsStudio } from './CymaticsHarmonicsStudio';
 import SanskritFlashcardStudio from './SanskritFlashcardStudio';
 import SanskritGrandExam from './SanskritGrandExam';
+import CourseChallengeArena from './CourseChallengeArena';
 import GrammarLightFigure, { isGrammarLightFigure } from './GrammarLightFigures';
 
 /** Sidebar / nav label for an addendum unit. */
@@ -40,11 +41,13 @@ const addendumPartLabel = (art: DarshanaAddendumArticle): string =>
  *   #lesson-<id>             → a curriculum lesson (e.g. #lesson-c-6-1)
  *   #flashcards              → Cognitive Flashcards Studio
  *   #exam                    → Grand Assessment Exam
+ *   #challenge               → Course Challenge Arena
  */
-const parseCourseHash = (): { addendumId?: string; lessonId?: string; anchor?: string; mode?: 'curriculum' | 'addendum' | 'flashcards' | 'exam' } => {
+const parseCourseHash = (): { addendumId?: string; lessonId?: string; anchor?: string; mode?: 'curriculum' | 'addendum' | 'flashcards' | 'exam' | 'challenge' } => {
   if (typeof window === 'undefined') return {};
-  const h = decodeURIComponent((window.location.hash || '').replace(/^#/, '')).trim();
+  const h = decodeURIComponent((window.location.hash || '').replace(/^#/, '')).trim().toLowerCase();
   if (!h) return {};
+  if (h === 'challenge' || h === 'course-challenge' || h === 'arena' || h === 'speed-challenge') return { mode: 'challenge' };
   if (h === 'flashcards' || h === 'cards' || h === 'flashcard-studio') return { mode: 'flashcards' };
   if (h === 'exam' || h === 'assessment' || h === 'grand-exam') return { mode: 'exam' };
   if (h === MANTRAS_COURSE_HASH) return { addendumId: MANTRAS_ADDENDUM_ID };
@@ -52,7 +55,7 @@ const parseCourseHash = (): { addendumId?: string; lessonId?: string; anchor?: s
   if (h.startsWith('lesson-')) return { lessonId: h.slice('lesson-'.length) };
   if (h.startsWith('addendum-')) {
     const key = h.slice('addendum-'.length);
-    const art = DARSHANAS_COURSE_ADDENDUM.find((a) => a.id === h || a.id === key || a.slug === key);
+    const art = DARSHANAS_COURSE_ADDENDUM.find((a) => a.id.toLowerCase() === h || a.id.toLowerCase() === key || a.slug.toLowerCase() === key);
     if (art) return { addendumId: art.id };
   }
   return {};
@@ -122,8 +125,8 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
   const [isAdminDeckOpen, setIsAdminDeckOpen] = useState<boolean>(true);
 
 
-  // View mode: 'curriculum' (28 Lessons), 'addendum' (Prologue, Mantras, Masterclasses), 'flashcards' (Cognitive Flashcards), 'exam' (Grand Assessment)
-  const [viewMode, setViewMode] = useState<'curriculum' | 'addendum' | 'flashcards' | 'exam'>(
+  // View mode: 'curriculum' (28 Lessons), 'addendum' (Prologue, Mantras, Masterclasses), 'flashcards' (Cognitive Flashcards), 'exam' (Grand Assessment), 'challenge' (Speed & Logic Arena)
+  const [viewMode, setViewMode] = useState<'curriculum' | 'addendum' | 'flashcards' | 'exam' | 'challenge'>(
     hashTarget.mode || (hashTarget.addendumId || initialAddendumId ? 'addendum' : hashTarget.lessonId ? 'curriculum' : initialMode)
   );
   const [activeAddendumId, setActiveAddendumId] = useState<string>(
@@ -598,14 +601,35 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
               <span className="stc-progress-label">
                 Course Progress: {completedLessonIds.size} / {allLessons.length} Lessons ({progressPercent}%) · {completedAddendumIds.size} / {DARSHANAS_COURSE_ADDENDUM.length} Masterclasses ({addendaProgressPercent}%)
               </span>
-              <button
-                type="button"
-                className="stc-crumb-btn"
-                style={{ fontSize: '0.78rem', padding: '0.2rem 0.65rem', background: 'rgba(255, 255, 255, 0.2)', color: '#ffffff', borderColor: 'rgba(255, 255, 255, 0.4)' }}
-                onClick={() => setIsCertificateModalOpen(true)}
-              >
-                📜 Certificate
-              </button>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', flexWrap: 'wrap' }}>
+                <button
+                  type="button"
+                  className="stc-crumb-btn"
+                  style={{
+                    fontSize: '0.78rem',
+                    padding: '0.2rem 0.65rem',
+                    background: '#d97706',
+                    color: '#ffffff',
+                    borderColor: '#f59e0b',
+                    fontWeight: 800,
+                  }}
+                  onClick={() => {
+                    setViewMode('challenge');
+                    window.location.hash = 'challenge';
+                  }}
+                  title="Test speed and computational Sanskrit in the Challenge Arena"
+                >
+                  ⚡ Course Challenge Arena
+                </button>
+                <button
+                  type="button"
+                  className="stc-crumb-btn"
+                  style={{ fontSize: '0.78rem', padding: '0.2rem 0.65rem', background: 'rgba(255, 255, 255, 0.2)', color: '#ffffff', borderColor: 'rgba(255, 255, 255, 0.4)' }}
+                  onClick={() => setIsCertificateModalOpen(true)}
+                >
+                  📜 Certificate
+                </button>
+              </div>
             </div>
             <div className="stc-progress-bar-wrap" aria-label={`Overall progress ${overallProgressPercent}%`}>
               <div className="stc-progress-bar-fill" style={{ width: `${overallProgressPercent}%` }} />
@@ -707,7 +731,10 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                     value={viewMode === 'curriculum' ? `lesson-${activeLessonId}` : viewMode === 'addendum' ? `addendum-${activeAddendumId}` : viewMode}
                     onChange={(e) => {
                       const val = e.target.value;
-                      if (val === 'flashcards') {
+                      if (val === 'challenge') {
+                        setViewMode('challenge');
+                        window.location.hash = 'challenge';
+                      } else if (val === 'flashcards') {
                         setViewMode('flashcards');
                       } else if (val === 'exam') {
                         setViewMode('exam');
@@ -731,6 +758,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                   >
                     <option value="" disabled>Select any unit to jump immediately...</option>
                     <optgroup label="Interactive Studios & Evaluation">
+                      <option value="challenge">⚡ Course Challenge Arena (चिन्तन-प्रतिस्पर्धा)</option>
                       <option value="flashcards">🗂️ Cognitive Flashcard Studio (चिन्तन-मञ्जूषा)</option>
                       <option value="exam">🏆 Grand Assessment Exam (महा-मूल्याङ्कनम् - 28 Questions)</option>
                     </optgroup>
@@ -855,7 +883,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           </div>
         )}
 
-        {/* Course View Mode Switcher (Curriculum vs Addendum vs Flashcards vs Exam) */}
+        {/* Course View Mode Switcher (Curriculum vs Addendum vs Flashcards vs Exam vs Challenge) */}
         <div className="stc-view-selector" role="tablist" aria-label="Course section selector">
 
           <button
@@ -891,6 +919,19 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           <button
             type="button"
             role="tab"
+            aria-selected={viewMode === 'challenge'}
+            className={`stc-view-tab-btn ${viewMode === 'challenge' ? 'active' : ''}`}
+            onClick={() => {
+              setViewMode('challenge');
+              window.location.hash = 'challenge';
+            }}
+          >
+            <span>⚡</span>
+            <span>Course Challenge (चिन्तन-प्रतिस्पर्धा)</span>
+          </button>
+          <button
+            type="button"
+            role="tab"
             aria-selected={viewMode === 'exam'}
             className={`stc-view-tab-btn ${viewMode === 'exam' ? 'active' : ''}`}
             onClick={() => setViewMode('exam')}
@@ -900,7 +941,13 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           </button>
         </div>
 
-        {viewMode === 'flashcards' ? (
+        {viewMode === 'challenge' ? (
+          <CourseChallengeArena
+            isAdmin={isEffectiveAdmin}
+            onGoToCurriculum={() => setViewMode('curriculum')}
+            onGoToExam={() => setViewMode('exam')}
+          />
+        ) : viewMode === 'flashcards' ? (
           <SanskritFlashcardStudio
             isAdmin={isEffectiveAdmin}
             onPlayAudio={handleAudioPlay}
