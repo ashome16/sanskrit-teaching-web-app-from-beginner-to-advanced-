@@ -119,6 +119,243 @@
 }
 
 /* =========================================================================
+   VARNAMALA RESOURCE HUB & CATEGORY FILTERS
+   ========================================================================= */
+
+.varnamala-hub-section {
+  margin-bottom: 1.25rem;
+}
+
+.varnamala-hub-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 960px) {
+  .varnamala-hub-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .varnamala-hub-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.varnamala-hub-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.95rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  position: relative;
+  user-select: none;
+}
+
+.varnamala-hub-card:hover {
+  transform: translateY(-2px);
+  border-color: #0f766e;
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.12);
+  background: #f0fdfa;
+}
+
+.varnamala-hub-card:active {
+  transform: scale(0.98);
+}
+
+.varnamala-hub-card--active {
+  border-color: #0f766e;
+  background: #f0fdfa;
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.22);
+}
+
+.varnamala-hub-card--barakhadi {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-color: #f59e0b;
+}
+
+.varnamala-hub-card--barakhadi:hover {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: #d97706;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.2);
+}
+
+.varnamala-hub-card-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.varnamala-hub-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.varnamala-hub-card-title {
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.varnamala-hub-card-desc {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.varnamala-hub-card-pill {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.varnamala-hub-card--active .varnamala-hub-card-pill {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.varnamala-hub-card-pill--green {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.varnamala-hub-card:hover .varnamala-hub-card-pill--green {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.varnamala-hub-card-pill--purple {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.varnamala-hub-card--active .varnamala-hub-card-pill--purple {
+  background: #6d28d9;
+  color: #ffffff;
+}
+
+.varnamala-hub-card-pill--amber {
+  background: #d97706;
+  color: #ffffff;
+}
+
+/* Category Quick-Filter Bar */
+.varnamala-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  margin: 1rem 0 0.5rem;
+  overflow: hidden;
+}
+
+.varnamala-filter-title {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #475569;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.varnamala-filter-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding: 2px 2px 2px 0;
+  flex: 1;
+}
+
+.varnamala-filter-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.varnamala-filter-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.varnamala-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.varnamala-filter-chip:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+  transform: translateY(-1px);
+}
+
+.varnamala-filter-chip--active {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%) !important;
+  color: #ffffff !important;
+  border-color: #0f766e !important;
+  box-shadow: 0 3px 8px rgba(15, 118, 110, 0.28);
+}
+
+.varnamala-filter-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.varnamala-filter-text {
+  font-weight: 700;
+}
+
+.varnamala-filter-count {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.varnamala-filter-chip--active .varnamala-filter-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* =========================================================================
    BOUNCY LETTER TILES & MNEMONIC BADGES
    ========================================================================= */
 
@@ -127,9 +364,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-width: 76px;
-  min-height: 88px;
-  padding: 0.55rem 0.5rem 0.4rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 72px;
+  min-height: 94px;
+  padding: 0.55rem 0.5rem 0.45rem;
   border-radius: 14px;
   border: 2px solid #e2e8f0;
   background: #ffffff;
@@ -241,27 +480,32 @@
 
 .v-card-trace-btn {
   position: absolute;
-  top: -6px;
-  right: -6px;
+  top: 5px;
+  right: 5px;
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #f59e0b;
-  color: #ffffff;
-  border: 1.5px solid #ffffff;
-  font-size: 0.65rem;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  font-size: 0.68rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transform: scale(0.7);
+  opacity: 0.85;
   transition: all 0.18s ease;
-  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.4);
+  cursor: pointer;
+  z-index: 1;
 }
 
-.varnamala-bouncy-card:hover .v-card-trace-btn {
+.varnamala-bouncy-card:hover .v-card-trace-btn,
+.v-card-trace-btn:hover {
   opacity: 1;
-  transform: scale(1);
+  background: #f59e0b;
+  color: #ffffff;
+  border-color: #f59e0b;
+  transform: scale(1.15);
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.4);
 }
 
 /* =========================================================================
@@ -1035,9 +1279,95 @@
 [data-theme='dark'] .v-stroke-card,
 [data-theme='dark'] .v-canvas-container,
 [data-theme='dark'] .v-canvas-top-bar,
-[data-theme='dark'] .v-palette-bar {
+[data-theme='dark'] .v-palette-bar,
+[data-theme='dark'] .varnamala-hub-card,
+[data-theme='dark'] .varnamala-filter-bar {
   background: #0f172a;
   border-color: #334155;
+}
+
+[data-theme='dark'] .varnamala-hub-card:hover,
+[data-theme='dark'] .varnamala-hub-card--active {
+  background: #132e2b;
+  border-color: #0f766e;
+}
+
+[data-theme='dark'] .varnamala-hub-card-title {
+  color: #f8fafc;
+}
+
+[data-theme='dark'] .varnamala-hub-card-desc {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .varnamala-hub-card-pill {
+  background: #334155;
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .varnamala-hub-card--barakhadi {
+  background: #231b0e;
+  border-color: #92400e;
+}
+
+[data-theme='dark'] .varnamala-filter-title {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .varnamala-filter-chip {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .varnamala-filter-chip:hover {
+  background: #334155;
+  color: #f8fafc;
+}
+
+[data-theme='dark'] .varnamala-filter-count {
+  background: #334155;
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .varnamala-varga-columns-guide {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: #334155;
+}
+
+[data-theme='dark'] .varga-guide-col strong {
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .varga-guide-col small {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .varnamala-row-badge {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .varnamala-row-count-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .varnamala-row-subtext {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .textbook-playrow-btn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .v-card-trace-btn {
+  background: #2d2616;
+  border-color: #78350f;
+  color: #fde68a;
 }
 
 [data-theme='dark'] .v-writing-title,

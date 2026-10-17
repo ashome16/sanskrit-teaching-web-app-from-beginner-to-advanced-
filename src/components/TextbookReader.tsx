@@ -297,6 +297,115 @@ const DEPENDENT_MODIFIERS: DependentModifierRow[] = [
   { symbol: '◌्', name: 'Halanta / Virāma', function: "Mutes the inherent 'a' sound", example: 'क्', transliteration: 'k (pure consonant)' },
 ];
 
+type VarnamalaCategoryFilter = 'all' | 'vowels' | 'vargas' | 'semivowels' | 'sibilants' | 'ayogavaha' | 'conjuncts';
+
+interface VarnamalaGroupMetadata {
+  title: string;
+  articulation: string;
+  description: string;
+  count: string;
+  layoutClass: string;
+  isVarga?: boolean;
+}
+
+const getVarnamalaGroupMeta = (groupIdx: number): VarnamalaGroupMetadata => {
+  switch (groupIdx) {
+    case 0:
+      return {
+        title: 'स्वराः · Vowels (Vocalic Resonance)',
+        articulation: 'स्वतन्त्र-ध्वनयः · Independent Vocals',
+        description: 'ह्रस्व-दीर्घ-प्लुत-भेदाः · 13 pure vocal sounds uttered freely without oral contact or obstruction.',
+        count: '१३ वर्णाः',
+        layoutClass: 'varnamala-row-letters--svara',
+      };
+    case 1:
+      return {
+        title: 'क-वर्गः · Velars (कण्ठ्य)',
+        articulation: 'स्थानम्: कण्ठः · Throat / Guttural',
+        description: 'उच्चारण-स्थानम् कण्ठः · Articulated at the soft palate (velum) in the back of the throat.',
+        count: '५ वर्णाः',
+        layoutClass: 'varnamala-row-letters--varga',
+        isVarga: true,
+      };
+    case 2:
+      return {
+        title: 'च-वर्गः · Palatals (तालव्य)',
+        articulation: 'स्थानम्: तालु · Hard Palate',
+        description: 'उच्चारण-स्थानम् तालु · Flat surface of the tongue contacts the hard palate roof.',
+        count: '५ वर्णाः',
+        layoutClass: 'varnamala-row-letters--varga',
+        isVarga: true,
+      };
+    case 3:
+      return {
+        title: 'ट-वर्गः · Retroflexes (मूर्धन्य)',
+        articulation: 'स्थानम्: मूर्धा · Alveolar Ridge / Cerebral',
+        description: 'उच्चारण-स्थानम् मूर्धा · Tongue tip curls back and taps the hard upper alveolar ridge.',
+        count: '५ वर्णाः',
+        layoutClass: 'varnamala-row-letters--varga',
+        isVarga: true,
+      };
+    case 4:
+      return {
+        title: 'त-वर्गः · Dentals (दन्त्य)',
+        articulation: 'स्थानम्: दन्ताः · Upper Teeth',
+        description: 'उच्चारण-स्थानम् दन्ताः · Tip of the tongue touches the back of the upper front teeth.',
+        count: '५ वर्णाः',
+        layoutClass: 'varnamala-row-letters--varga',
+        isVarga: true,
+      };
+    case 5:
+      return {
+        title: 'प-वर्गः · Labials (ओष्ठ्य)',
+        articulation: 'स्थानम्: ओष्ठौ · Lips',
+        description: 'उच्चारण-स्थानम् ओष्ठौ · Bilabial sounds formed by closing and releasing both lips.',
+        count: '५ वर्णाः',
+        layoutClass: 'varnamala-row-letters--varga',
+        isVarga: true,
+      };
+    case 6:
+      return {
+        title: 'अन्तःस्थाः · Semivowels (Liquid Transitions)',
+        articulation: 'मध्यस्थाः · Semi-Vocalic (In-Between)',
+        description: 'ध्वनि-संक्रमणम् · Smooth acoustic bridge between pure vowels and obstructive consonants (य, र, ल, व).',
+        count: '४ वर्णाः',
+        layoutClass: 'varnamala-row-letters--quad',
+      };
+    case 7:
+      return {
+        title: 'ऊष्माणः · Sibilants & Aspirate (Warm Breath)',
+        articulation: 'वायु-घर्षणम् · Fricatives & Breath',
+        description: 'घर्षण-ध्वनयः · Airflow forced through narrow vocal channels producing warm hissing and aspiration (श, ष, स, ह).',
+        count: '४ वर्णाः',
+        layoutClass: 'varnamala-row-letters--quad',
+      };
+    case 8:
+      return {
+        title: 'अयोगवाहाः · Dependent Modifiers',
+        articulation: 'पराश्रिताः · Attached Resonances',
+        description: 'अयोगवाहाः ध्वनयः · Pure nasal humming (ं Anusvāra), gentle vowel echo (ः Visarga), and nasalized vowel (ँ Candrabindu).',
+        count: '३ वर्णाः',
+        layoutClass: 'varnamala-row-letters--tri',
+      };
+    case 9:
+      return {
+        title: 'संयुक्ताक्षराणि · Primary Conjuncts',
+        articulation: 'विशिष्ट-संयोगाः · Classic Ligatures',
+        description: 'अक्षर-संयोगः · Fundamental dual-consonant ligatures essential for authentic Sanskrit reading (क्ष, ज्ञ, त्र, श्र).',
+        count: '४ वर्णाः',
+        layoutClass: 'varnamala-row-letters--quad',
+      };
+    default:
+      return {
+        title: '',
+        articulation: '',
+        description: '',
+        count: '',
+        layoutClass: '',
+      };
+  }
+};
+
 const TextbookReader: React.FC<TextbookReaderProps> = ({
   lessons,
   activeLessonId,
@@ -331,7 +440,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
   const [isChartOpen, setIsChartOpen] = useState(false);
   const [isFlashcardDownloadOpen, setIsFlashcardDownloadOpen] = useState(false);
-  const [isSoundVideoOpen, setIsSoundVideoOpen] = useState(true);
+  const [isSoundVideoOpen, setIsSoundVideoOpen] = useState(false);
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
   const [isGunitaOpen, setIsGunitaOpen] = useState(false);
   const [isGrade8SyllabusOpen, setIsGrade8SyllabusOpen] = useState(false);
@@ -343,6 +452,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [playingTokenIdx, setPlayingTokenIdx] = useState<number | null>(null);
   const [playingGroupIdx, setPlayingGroupIdx] = useState<number | null>(null);
   const [varnamalaSubMode, setVarnamalaSubMode] = useState<'sound' | 'writing' | 'worksheets'>('sound');
+  const [varnamalaCategoryFilter, setVarnamalaCategoryFilter] = useState<VarnamalaCategoryFilter>('all');
   const [numbersSubMode, setNumbersSubMode] = useState<'interactive' | 'tiles'>('interactive');
   const [padSelectedLetter, setPadSelectedLetter] = useState<string>('अ');
   const [glosses, setGlosses] = useState<AnalyseRegistry>({});
@@ -1349,49 +1459,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </nav>
           )}
 
-          {isVarnamala && onOpenBarakhadi && (
-            <div
-              className="varnamala-barakhadi-banner"
-              onClick={onOpenBarakhadi}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  onOpenBarakhadi();
-                }
-              }}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '1rem 1.25rem',
-                margin: '0.85rem 0 1.25rem',
-                background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
-                border: '2px solid #f59e0b',
-                borderRadius: '12px',
-                cursor: 'pointer',
-                boxShadow: '0 3px 10px rgba(245, 158, 11, 0.15)',
-                transition: 'all 0.2s ease',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <span style={{ fontSize: '2rem' }}>🔡</span>
-                <div>
-                  <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#92400e', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    <span>Looking for बारहखड़ी · Guṇintālu?</span>
-                    <span style={{ fontSize: '0.72rem', background: '#d97706', color: '#fff', padding: '2px 8px', borderRadius: '999px', textTransform: 'uppercase', fontWeight: 800 }}>400+ Syllables Audio</span>
-                  </div>
-                  <div style={{ fontSize: '0.86rem', color: '#78350f', marginTop: '3px' }}>
-                    Practice all 400+ consonant-vowel combinations (क का कि की कु कू …) with authentic Indian studio pronunciation!
-                  </div>
-                </div>
-              </div>
-              <span style={{ fontWeight: 800, color: '#b45309', fontSize: '0.95rem', whiteSpace: 'nowrap', padding: '8px 16px', background: '#ffffff', borderRadius: '8px', border: '1.5px solid #f59e0b', boxShadow: '0 2px 4px rgba(0,0,0,0.06)' }}>
-                Open बारहखड़ी Studio →
-              </span>
-            </div>
-          )}
+
 
           {isNumbers && (
             <nav className="varnamala-studio-nav" aria-label="Sanskrit Numbers Study Modes">
@@ -1598,285 +1666,502 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
           {(!isVarnamala || varnamalaSubMode === 'sound') && (!isNumbers || numbersSubMode === 'tiles') && (
             <>
-              {(isVarnamala || activeLessonId === 'barakhadi') && (
-                <div className="varnamala-chart-toggle-wrap">
-                  <button
-                    type="button"
-                    className="varnamala-chart-toggle"
-                    onClick={() => setIsChartOpen((open) => !open)}
-                    aria-expanded={isChartOpen}
-                    aria-controls={`${activeLessonId}-chart-panel`}
-                  >
-                    {activeLessonId === 'barakhadi'
-                      ? '🗺️ View बारहखड़ी Complete Chart'
-                      : '🗺️ View Alphabet Pronunciation Reference Chart'}
-                    <span className="varnamala-chart-toggle-arrow">{isChartOpen ? '▲' : '▼'}</span>
-                  </button>
-                  <div
-                    id={`${activeLessonId}-chart-panel`}
-                    className={`varnamala-chart-panel${isChartOpen ? ' varnamala-chart-panel--open' : ''}`}
-                  >
-                    <img
-                      src={activeLessonId === 'barakhadi' ? './barakhadi-chart.png' : './image1.jpg'}
-                      alt={activeLessonId === 'barakhadi' ? 'Complete बारहखड़ी Sanskrit matra chart for beginners' : 'Sanskrit pronunciation chart with Devanagari letters for learners'}
-                      className="varnamala-chart-image"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              )}
+              {isVarnamala && (
+                <div className="varnamala-hub-section" role="region" aria-label="Alphabet Learning Hub &amp; Tools">
+                  <div className="varnamala-hub-card-grid">
+                    <button
+                      type="button"
+                      className={`varnamala-hub-card${isChartOpen ? ' varnamala-hub-card--active' : ''}`}
+                      onClick={() => {
+                        setIsChartOpen((open) => !open);
+                        if (!isChartOpen) setIsSoundVideoOpen(false);
+                      }}
+                      aria-expanded={isChartOpen}
+                      aria-controls="varnamala-chart-panel"
+                    >
+                      <div className="varnamala-hub-card-icon" aria-hidden="true">🗺️</div>
+                      <div className="varnamala-hub-card-body">
+                        <div className="varnamala-hub-card-title">उच्चारण-तालिका</div>
+                        <div className="varnamala-hub-card-desc">Phonetic Articulation Chart</div>
+                      </div>
+                      <span className="varnamala-hub-card-pill">{isChartOpen ? 'Hide ▲' : 'View ▼'}</span>
+                    </button>
 
-              {(isVarnamala || activeLessonId === 'barakhadi') && (
-                <div className="varnamala-chart-toggle-wrap" style={{ marginTop: '0.65rem' }}>
-                  <button
-                    type="button"
-                    className="varnamala-chart-toggle"
-                    onClick={() => setIsFlashcardDownloadOpen(true)}
-                    style={{
-                      background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
-                      borderColor: '#10b981',
-                      color: '#065f46',
-                      fontWeight: 700,
-                    }}
-                  >
-                    <span>🖨️ Download / Print Flashcards &amp; PDF (वर्णमाला एवं बारहखड़ी)</span>
-                    <span className="varnamala-chart-toggle-arrow">📥</span>
-                  </button>
+                    <button
+                      type="button"
+                      className="varnamala-hub-card"
+                      onClick={() => setIsFlashcardDownloadOpen(true)}
+                    >
+                      <div className="varnamala-hub-card-icon" aria-hidden="true">📥</div>
+                      <div className="varnamala-hub-card-body">
+                        <div className="varnamala-hub-card-title">मुद्रण-पत्राणि</div>
+                        <div className="varnamala-hub-card-desc">Print Flashcards &amp; PDF</div>
+                      </div>
+                      <span className="varnamala-hub-card-pill varnamala-hub-card-pill--green">Download 🖨️</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      className={`varnamala-hub-card${isSoundVideoOpen ? ' varnamala-hub-card--active' : ''}`}
+                      onClick={() => {
+                        setIsSoundVideoOpen((open) => !open);
+                        if (!isSoundVideoOpen) setIsChartOpen(false);
+                      }}
+                      aria-expanded={isSoundVideoOpen}
+                    >
+                      <div className="varnamala-hub-card-icon" aria-hidden="true">🎥</div>
+                      <div className="varnamala-hub-card-body">
+                        <div className="varnamala-hub-card-title">ध्वनि-विज्ञानम्</div>
+                        <div className="varnamala-hub-card-desc">Science of Sound Video</div>
+                      </div>
+                      <span className="varnamala-hub-card-pill varnamala-hub-card-pill--purple">{isSoundVideoOpen ? 'Hide ▲' : 'Watch ▶'}</span>
+                    </button>
+
+                    {onOpenBarakhadi && (
+                      <button
+                        type="button"
+                        className="varnamala-hub-card varnamala-hub-card--barakhadi"
+                        onClick={onOpenBarakhadi}
+                        title="Open बारहखड़ी Studio (400+ Syllables with Indian Voice Audio)"
+                      >
+                        <div className="varnamala-hub-card-icon" aria-hidden="true">🔡</div>
+                        <div className="varnamala-hub-card-body">
+                          <div className="varnamala-hub-card-title">बारहखड़ी Studio</div>
+                          <div className="varnamala-hub-card-desc">400+ Syllables Audio Grid</div>
+                        </div>
+                        <span className="varnamala-hub-card-pill varnamala-hub-card-pill--amber">Open →</span>
+                      </button>
+                    )}
+                  </div>
+
+                  {isChartOpen && (
+                    <div id="varnamala-chart-panel" className="varnamala-chart-panel varnamala-chart-panel--open" style={{ marginTop: '0.85rem' }}>
+                      <img
+                        src="./image1.jpg"
+                        alt="Sanskrit pronunciation chart with Devanagari letters for learners"
+                        className="varnamala-chart-image"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+
+                  {isSoundVideoOpen && (
+                    <div
+                      style={{
+                        marginTop: '0.85rem',
+                        background: '#ffffff',
+                        borderRadius: '14px',
+                        border: '1px solid #ddd6fe',
+                        overflow: 'hidden',
+                        boxShadow: '0 4px 14px rgba(91, 33, 182, 0.08)',
+                      }}
+                    >
+                      <div
+                        style={{
+                          position: 'relative',
+                          width: '100%',
+                          paddingBottom: '56.25%',
+                          height: 0,
+                          background: '#090d16',
+                        }}
+                      >
+                        <iframe
+                          src="https://www.youtube-nocookie.com/embed/tkvYjNZSsZA?start=32&rel=0"
+                          title="Sanskrit: The Science of Sound"
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            border: 0,
+                          }}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+                      <div
+                        style={{
+                          padding: '0.85rem 1.25rem',
+                          background: '#faf5ff',
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          flexWrap: 'wrap',
+                          gap: '0.5rem',
+                          borderTop: '1px solid #ede9fe',
+                        }}
+                      >
+                        <div style={{ fontSize: '0.85rem', color: '#5b21b6', lineHeight: 1.45 }}>
+                          <strong>Sanskrit: The Science of Sound</strong> · Video by <em>Conscious Cosmos</em>
+                          <br />
+                          <span style={{ color: '#6b7280', fontSize: '0.78rem' }}>
+                            Explore the neurological, vocal tract, and acoustic science behind Sanskrit phonetics.
+                          </span>
+                        </div>
+                        <a
+                          href="https://www.youtube.com/watch?v=tkvYjNZSsZA&t=32s"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            fontSize: '0.8rem',
+                            color: '#6d28d9',
+                            fontWeight: 700,
+                            textDecoration: 'underline',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          Open on YouTube ↗
+                        </a>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Phonetic Category Quick-Filter Strip */}
+                  <div className="varnamala-filter-bar" role="tablist" aria-label="Filter Alphabet by Category">
+                    <span className="varnamala-filter-title">वर्ग-चयनम् · Category:</span>
+                    <div className="varnamala-filter-scroll">
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={varnamalaCategoryFilter === 'all'}
+                        className={`varnamala-filter-chip${varnamalaCategoryFilter === 'all' ? ' varnamala-filter-chip--active' : ''}`}
+                        onClick={() => setVarnamalaCategoryFilter('all')}
+                      >
+                        <span className="varnamala-filter-icon" aria-hidden="true">🌟</span>
+                        <span className="varnamala-filter-text">सर्वे वर्णाः (All)</span>
+                        <span className="varnamala-filter-count">46</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={varnamalaCategoryFilter === 'vowels'}
+                        className={`varnamala-filter-chip${varnamalaCategoryFilter === 'vowels' ? ' varnamala-filter-chip--active' : ''}`}
+                        onClick={() => setVarnamalaCategoryFilter('vowels')}
+                      >
+                        <span className="varnamala-filter-icon" aria-hidden="true">🔤</span>
+                        <span className="varnamala-filter-text">स्वराः (Vowels)</span>
+                        <span className="varnamala-filter-count">13</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={varnamalaCategoryFilter === 'vargas'}
+                        className={`varnamala-filter-chip${varnamalaCategoryFilter === 'vargas' ? ' varnamala-filter-chip--active' : ''}`}
+                        onClick={() => setVarnamalaCategoryFilter('vargas')}
+                      >
+                        <span className="varnamala-filter-icon" aria-hidden="true">🎯</span>
+                        <span className="varnamala-filter-text">स्पर्शाः (5 Vargas)</span>
+                        <span className="varnamala-filter-count">25</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={varnamalaCategoryFilter === 'semivowels'}
+                        className={`varnamala-filter-chip${varnamalaCategoryFilter === 'semivowels' ? ' varnamala-filter-chip--active' : ''}`}
+                        onClick={() => setVarnamalaCategoryFilter('semivowels')}
+                      >
+                        <span className="varnamala-filter-icon" aria-hidden="true">🌊</span>
+                        <span className="varnamala-filter-text">अन्तःस्थाः (Semivowels)</span>
+                        <span className="varnamala-filter-count">4</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={varnamalaCategoryFilter === 'sibilants'}
+                        className={`varnamala-filter-chip${varnamalaCategoryFilter === 'sibilants' ? ' varnamala-filter-chip--active' : ''}`}
+                        onClick={() => setVarnamalaCategoryFilter('sibilants')}
+                      >
+                        <span className="varnamala-filter-icon" aria-hidden="true">💨</span>
+                        <span className="varnamala-filter-text">ऊष्माणः (Sibilants)</span>
+                        <span className="varnamala-filter-count">4</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={varnamalaCategoryFilter === 'ayogavaha'}
+                        className={`varnamala-filter-chip${varnamalaCategoryFilter === 'ayogavaha' ? ' varnamala-filter-chip--active' : ''}`}
+                        onClick={() => setVarnamalaCategoryFilter('ayogavaha')}
+                      >
+                        <span className="varnamala-filter-icon" aria-hidden="true">💎</span>
+                        <span className="varnamala-filter-text">अयोगवाहाः (Modifiers)</span>
+                        <span className="varnamala-filter-count">3</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={varnamalaCategoryFilter === 'conjuncts'}
+                        className={`varnamala-filter-chip${varnamalaCategoryFilter === 'conjuncts' ? ' varnamala-filter-chip--active' : ''}`}
+                        onClick={() => setVarnamalaCategoryFilter('conjuncts')}
+                      >
+                        <span className="varnamala-filter-icon" aria-hidden="true">🧩</span>
+                        <span className="varnamala-filter-text">संयुक्ताक्षराणि (Conjuncts)</span>
+                        <span className="varnamala-filter-count">4</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               )}
 
               {activeLessonId === 'barakhadi' && (
-                <div className="varnamala-chart-toggle-wrap" style={{ marginTop: '0.65rem' }}>
-                  <button
-                    type="button"
-                    className="varnamala-chart-toggle"
-                    onClick={() => setIsGunitaOpen((open) => !open)}
-                    aria-expanded={isGunitaOpen}
-                    style={{
-                      background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
-                      borderColor: '#f59e0b',
-                      color: '#9a3412',
-                      fontWeight: 700,
-                    }}
-                  >
-                    <span>📜 Guṇitākṣarāṇi (गुणिताक्षराणि) Symbols &amp; Exceptions Guide</span>
-                    <span className="varnamala-chart-toggle-arrow">{isGunitaOpen ? '▲' : '▼'}</span>
-                  </button>
-                  {isGunitaOpen && (
-                    <div style={{ marginTop: '1rem' }}>
-                      <GunitaaksharaGuide />
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {isVarnamala && (
-                <div className="varnamala-chart-toggle-wrap" style={{ marginTop: '0.65rem' }}>
-              <button
-                type="button"
-                className="varnamala-chart-toggle"
-                onClick={() => setIsSoundVideoOpen((open) => !open)}
-                aria-expanded={isSoundVideoOpen}
-                style={{
-                  background: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
-                  borderColor: '#c4b5fd',
-                  color: '#5b21b6',
-                  fontWeight: 700,
-                }}
-              >
-                <span>🎥 Watch Video Masterclass: Sanskrit: The Science of Sound (ध्वनि-विज्ञानम्)</span>
-                <span className="varnamala-chart-toggle-arrow">{isSoundVideoOpen ? '▲' : '▼'}</span>
-              </button>
-              {isSoundVideoOpen && (
-                <div
-                  style={{
-                    marginTop: '0.75rem',
-                    background: '#ffffff',
-                    borderRadius: '14px',
-                    border: '1px solid #ddd6fe',
-                    overflow: 'hidden',
-                    boxShadow: '0 4px 14px rgba(91, 33, 182, 0.08)',
-                  }}
-                >
-                  <div
-                    style={{
-                      position: 'relative',
-                      width: '100%',
-                      paddingBottom: '56.25%',
-                      height: 0,
-                      background: '#090d16',
-                    }}
-                  >
-                    <iframe
-                      src="https://www.youtube-nocookie.com/embed/tkvYjNZSsZA?start=32&rel=0"
-                      title="Sanskrit: The Science of Sound"
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        border: 0,
-                      }}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  </div>
-                  <div
-                    style={{
-                      padding: '0.9rem 1.25rem',
-                      background: '#faf5ff',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      flexWrap: 'wrap',
-                      gap: '0.5rem',
-                      borderTop: '1px solid #ede9fe',
-                    }}
-                  >
-                    <div style={{ fontSize: '0.85rem', color: '#5b21b6', lineHeight: 1.45 }}>
-                      <strong>Sanskrit: The Science of Sound</strong> · Video by <em>Conscious Cosmos</em>
-                      <br />
-                      <span style={{ color: '#6b7280', fontSize: '0.78rem' }}>
-                        Explore the neurological, vocal tract, and acoustic science behind Sanskrit phonetics.
-                      </span>
-                    </div>
-                    <a
-                      href="https://www.youtube.com/watch?v=tkvYjNZSsZA&t=32s"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        fontSize: '0.8rem',
-                        color: '#6d28d9',
-                        fontWeight: 700,
-                        textDecoration: 'underline',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      Open on YouTube ↗
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-          {activeLesson.sentences.map((group, groupIdx) => (
-            <div
-              key={group.category || groupIdx}
-              className={`varnamala-row varnamala-row--${groupIdx % 10}`}
-            >
-              <div className="varnamala-row-header">
-                <span className="varnamala-row-label">{group.meaning || group.category}</span>
-                <button
-                  type="button"
-                  className={`textbook-playrow-btn${isPlayingAll && playingGroupIdx === groupIdx ? ' textbook-playrow-btn--active' : ''}`}
-                  onClick={() => handlePlayGroup(group.words || [], groupIdx)}
-                  aria-label={
-                    isPlayingAll && playingGroupIdx === groupIdx
-                      ? `Stop playing ${group.meaning || group.category || 'this row'}`
-                      : `Play all letters in ${group.meaning || group.category || 'this row'}`
-                  }
-                  aria-pressed={isPlayingAll && playingGroupIdx === groupIdx}
-                  title={isPlayingAll && playingGroupIdx === groupIdx ? 'Stop this row' : 'Play this row'}
-                >
-                  {isPlayingAll && playingGroupIdx === groupIdx ? '⏹' : '▶'}
-                </button>
-              </div>
-              <div className="varnamala-row-letters">
-                {group.words.map((letter, letterIdx) => {
-                  const isExtraAnunasika = letter === 'अँ';
-                  const mnemonic = isVarnamala ? getLetterMnemonic(letter) : undefined;
-
-                  if (isVarnamala && mnemonic) {
-                    const isPlayHighlight = playingLetter === letter;
-                    return (
-                      <div
-                        key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
-                        role="button"
-                        tabIndex={0}
-                        className={`varnamala-bouncy-card${isPlayHighlight ? ' varnamala-bouncy-card--playing' : ''}`}
-                        onClick={() => handleLetterActivate(letter)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            handleLetterActivate(letter);
-                          }
-                        }}
-                        aria-label={`Letter ${letter} (${tileLabel(letter)}). Click to hear syllable; picture chip speaks the word.`}
-                        title={`Hear ${letter} · Picture word: ${mnemonic.wordSan} (${mnemonic.wordEn})`}
-                        aria-current={isPlayHighlight ? 'true' : undefined}
-                      >
-                        <span className="v-card-akshara">{letter}</span>
-                        {showRomanTiles ? (
-                          <small className="v-card-roman">{tileLabel(letter)}</small>
-                        ) : null}
-                        <button
-                          type="button"
-                          className="v-card-mnemonic-badge"
-                          aria-label={`Hear picture word ${mnemonic.wordSan} (${mnemonic.wordEn})`}
-                          title={mnemonic.hoverNote || `Hear ${mnemonic.wordSan} — ${mnemonic.wordEn}`}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            stopPlayAll();
-                            playPronunciation(mnemonic.wordSan);
-                            showTapChip(letter);
-                          }}
-                        >
-                          <span className="v-card-mnemonic-emoji" aria-hidden="true">{mnemonic.emoji}</span>
-                          <span className="v-card-mnemonic-word">{mnemonic.wordSan}</span>
-                          <span className="v-card-mnemonic-speak" aria-hidden="true">🔊</span>
-                        </button>
-                        <span
-                          className="v-card-trace-btn"
-                          role="button"
-                          tabIndex={0}
-                          title={`Trace & write ${letter}`}
-                          aria-label={`Trace and write ${letter}`}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setPadSelectedLetter(letter);
-                            setVarnamalaSubMode('writing');
-                          }}
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              setPadSelectedLetter(letter);
-                              setVarnamalaSubMode('writing');
-                            }
-                          }}
-                        >
-                          ✍️
-                        </span>
-                      </div>
-                    );
-                  }
-
-                  const isPlayHighlight = playingLetter === letter;
-                  return (
+                <>
+                  <div className="varnamala-chart-toggle-wrap">
                     <button
-                      key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
                       type="button"
-                      className={`varnamala-letter-btn${showRomanTiles ? ' barakhadi-letter-btn' : ''}${isExtraAnunasika ? ' varnamala-letter-btn--extra' : ''}${isPlayHighlight ? ' varnamala-letter-btn--playing' : ''}`}
-                      onClick={() => handleLetterActivate(letter)}
-                      aria-label={`Play pronunciation for ${letter}${isExtraAnunasika ? ' (optional, for later)' : ''}${showRomanTiles ? ` (${tileLabel(letter)})` : ''}`}
-                      title={isExtraAnunasika ? 'Candrabindu — optional for beginners, learn later' : undefined}
-                      aria-current={isPlayHighlight ? 'true' : undefined}
+                      className="varnamala-chart-toggle"
+                      onClick={() => setIsChartOpen((open) => !open)}
+                      aria-expanded={isChartOpen}
+                      aria-controls="barakhadi-chart-panel"
                     >
-                      <span className="barakhadi-dev">{letter}</span>
-                      {showRomanTiles ? (
-                        <small className="barakhadi-roman">{tileLabel(letter)}</small>
-                      ) : null}
-                      {isExtraAnunasika ? (
-                        <small className="varnamala-letter-note">extra · later</small>
-                      ) : null}
+                      🗺️ View बारहखड़ी Complete Chart
+                      <span className="varnamala-chart-toggle-arrow">{isChartOpen ? '▲' : '▼'}</span>
                     </button>
-                  );
-                })}
-              </div>
-              <p className="varnamala-row-description">{group.sanskrit}</p>
-            </div>
-          ))}
+                    <div
+                      id="barakhadi-chart-panel"
+                      className={`varnamala-chart-panel${isChartOpen ? ' varnamala-chart-panel--open' : ''}`}
+                    >
+                      <img
+                        src="./barakhadi-chart.png"
+                        alt="Complete बारहखड़ी Sanskrit matra chart for beginners"
+                        className="varnamala-chart-image"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="varnamala-chart-toggle-wrap" style={{ marginTop: '0.65rem' }}>
+                    <button
+                      type="button"
+                      className="varnamala-chart-toggle"
+                      onClick={() => setIsFlashcardDownloadOpen(true)}
+                      style={{
+                        background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
+                        borderColor: '#10b981',
+                        color: '#065f46',
+                        fontWeight: 700,
+                      }}
+                    >
+                      <span>🖨️ Download / Print Flashcards &amp; PDF (वर्णमाला एवं बारहखड़ी)</span>
+                      <span className="varnamala-chart-toggle-arrow">📥</span>
+                    </button>
+                  </div>
+
+                  <div className="varnamala-chart-toggle-wrap" style={{ marginTop: '0.65rem' }}>
+                    <button
+                      type="button"
+                      className="varnamala-chart-toggle"
+                      onClick={() => setIsGunitaOpen((open) => !open)}
+                      aria-expanded={isGunitaOpen}
+                      style={{
+                        background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
+                        borderColor: '#f59e0b',
+                        color: '#9a3412',
+                        fontWeight: 700,
+                      }}
+                    >
+                      <span>📜 Guṇitākṣarāṇi (गुणिताक्षराणि) Symbols &amp; Exceptions Guide</span>
+                      <span className="varnamala-chart-toggle-arrow">{isGunitaOpen ? '▲' : '▼'}</span>
+                    </button>
+                    {isGunitaOpen && (
+                      <div style={{ marginTop: '1rem' }}>
+                        <GunitaaksharaGuide />
+                      </div>
+                    )}
+                  </div>
+                </>
+              )}
+
+              {activeLesson.sentences.map((group, groupIdx) => {
+                if (isVarnamala) {
+                  const isVisible =
+                    varnamalaCategoryFilter === 'all' ||
+                    (varnamalaCategoryFilter === 'vowels' && groupIdx === 0) ||
+                    (varnamalaCategoryFilter === 'vargas' && groupIdx >= 1 && groupIdx <= 5) ||
+                    (varnamalaCategoryFilter === 'semivowels' && groupIdx === 6) ||
+                    (varnamalaCategoryFilter === 'sibilants' && groupIdx === 7) ||
+                    (varnamalaCategoryFilter === 'ayogavaha' && groupIdx === 8) ||
+                    (varnamalaCategoryFilter === 'conjuncts' && groupIdx === 9);
+
+                  if (!isVisible) return null;
+                }
+
+                const groupMeta = isVarnamala ? getVarnamalaGroupMeta(groupIdx) : null;
+                const isFirstVargaShown =
+                  isVarnamala &&
+                  groupMeta?.isVarga &&
+                  (groupIdx === 1 || (varnamalaCategoryFilter === 'vargas' && groupIdx === 1));
+
+                return (
+                  <div
+                    key={group.category || groupIdx}
+                    className={`varnamala-row varnamala-row--${groupIdx % 10}${groupMeta?.isVarga ? ' varnamala-row--varga' : ''}`}
+                  >
+                    <div className="varnamala-row-header">
+                      <div className="varnamala-row-header-title-wrap">
+                        <div className="varnamala-row-header-top">
+                          <span className="varnamala-row-label">
+                            {groupMeta?.title || group.meaning || group.category}
+                          </span>
+                          {groupMeta?.articulation && (
+                            <span className="varnamala-row-badge">{groupMeta.articulation}</span>
+                          )}
+                          {groupMeta?.count && (
+                            <span className="varnamala-row-count-badge">{groupMeta.count}</span>
+                          )}
+                        </div>
+                        {groupMeta?.description && (
+                          <p className="varnamala-row-subtext">{groupMeta.description}</p>
+                        )}
+                      </div>
+                      <button
+                        type="button"
+                        className={`textbook-playrow-btn${isPlayingAll && playingGroupIdx === groupIdx ? ' textbook-playrow-btn--active' : ''}`}
+                        onClick={() => handlePlayGroup(group.words || [], groupIdx)}
+                        aria-label={
+                          isPlayingAll && playingGroupIdx === groupIdx
+                            ? `Stop playing ${groupMeta?.title || group.meaning || 'this row'}`
+                            : `Play all letters in ${groupMeta?.title || group.meaning || 'this row'}`
+                        }
+                        aria-pressed={isPlayingAll && playingGroupIdx === groupIdx}
+                        title={isPlayingAll && playingGroupIdx === groupIdx ? 'Stop this row' : 'Play this row'}
+                      >
+                        <span className="playrow-icon">{isPlayingAll && playingGroupIdx === groupIdx ? '⏹' : '▶'}</span>
+                        <span className="playrow-text">{isPlayingAll && playingGroupIdx === groupIdx ? 'Stop Row' : 'Play Row'}</span>
+                      </button>
+                    </div>
+
+                    {isFirstVargaShown && (
+                      <div className="varnamala-varga-columns-guide" aria-hidden="true">
+                        <div className="varga-guide-col">
+                          <span className="varga-guide-badge">१st · अघोष</span>
+                          <strong>अल्पप्राण</strong>
+                          <small>Unvoiced Soft</small>
+                        </div>
+                        <div className="varga-guide-col">
+                          <span className="varga-guide-badge">२nd · अघोष</span>
+                          <strong>महाप्राण</strong>
+                          <small>Unvoiced Aspirate</small>
+                        </div>
+                        <div className="varga-guide-col">
+                          <span className="varga-guide-badge">३rd · घोष</span>
+                          <strong>अल्पप्राण</strong>
+                          <small>Voiced Soft</small>
+                        </div>
+                        <div className="varga-guide-col">
+                          <span className="varga-guide-badge">४th · घोष</span>
+                          <strong>महाप्राण</strong>
+                          <small>Voiced Aspirate</small>
+                        </div>
+                        <div className="varga-guide-col">
+                          <span className="varga-guide-badge">५th · नासिक्य</span>
+                          <strong>अनुनासिक</strong>
+                          <small>Nasal Voiced</small>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className={`varnamala-row-letters ${groupMeta?.layoutClass || ''}`}>
+                      {group.words.map((letter, letterIdx) => {
+                        const isExtraAnunasika = letter === 'अँ';
+                        const mnemonic = isVarnamala ? getLetterMnemonic(letter) : undefined;
+
+                        if (isVarnamala && mnemonic) {
+                          const isPlayHighlight = playingLetter === letter;
+                          return (
+                            <div
+                              key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
+                              role="button"
+                              tabIndex={0}
+                              className={`varnamala-bouncy-card${isPlayHighlight ? ' varnamala-bouncy-card--playing' : ''}`}
+                              onClick={() => handleLetterActivate(letter)}
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                  e.preventDefault();
+                                  handleLetterActivate(letter);
+                                }
+                              }}
+                              aria-label={`Letter ${letter} (${tileLabel(letter)}). Click to hear syllable; picture chip speaks the word.`}
+                              title={`Hear ${letter} · Picture word: ${mnemonic.wordSan} (${mnemonic.wordEn})`}
+                              aria-current={isPlayHighlight ? 'true' : undefined}
+                            >
+                              <span className="v-card-akshara">{letter}</span>
+                              {showRomanTiles ? (
+                                <small className="v-card-roman">{tileLabel(letter)}</small>
+                              ) : null}
+                              <button
+                                type="button"
+                                className="v-card-mnemonic-badge"
+                                aria-label={`Hear picture word ${mnemonic.wordSan} (${mnemonic.wordEn})`}
+                                title={mnemonic.hoverNote || `Hear ${mnemonic.wordSan} — ${mnemonic.wordEn}`}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  stopPlayAll();
+                                  playPronunciation(mnemonic.wordSan);
+                                  showTapChip(letter);
+                                }}
+                              >
+                                <span className="v-card-mnemonic-emoji" aria-hidden="true">{mnemonic.emoji}</span>
+                                <span className="v-card-mnemonic-word">{mnemonic.wordSan}</span>
+                                <span className="v-card-mnemonic-speak" aria-hidden="true">🔊</span>
+                              </button>
+                              <span
+                                className="v-card-trace-btn"
+                                role="button"
+                                tabIndex={0}
+                                title={`Trace & write ${letter}`}
+                                aria-label={`Trace and write ${letter}`}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setPadSelectedLetter(letter);
+                                  setVarnamalaSubMode('writing');
+                                }}
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    setPadSelectedLetter(letter);
+                                    setVarnamalaSubMode('writing');
+                                  }
+                                }}
+                              >
+                                ✍️
+                              </span>
+                            </div>
+                          );
+                        }
+
+                        const isPlayHighlight = playingLetter === letter;
+                        return (
+                          <button
+                            key={`${activeLessonId}-${groupIdx}-${letterIdx}`}
+                            type="button"
+                            className={`varnamala-letter-btn${showRomanTiles ? ' barakhadi-letter-btn' : ''}${isExtraAnunasika ? ' varnamala-letter-btn--extra' : ''}${isPlayHighlight ? ' varnamala-letter-btn--playing' : ''}`}
+                            onClick={() => handleLetterActivate(letter)}
+                            aria-label={`Play pronunciation for ${letter}${isExtraAnunasika ? ' (optional, for later)' : ''}${showRomanTiles ? ` (${tileLabel(letter)})` : ''}`}
+                            title={isExtraAnunasika ? 'Candrabindu — optional for beginners, learn later' : undefined}
+                            aria-current={isPlayHighlight ? 'true' : undefined}
+                          >
+                            <span className="barakhadi-dev">{letter}</span>
+                            {showRomanTiles ? (
+                              <small className="barakhadi-roman">{tileLabel(letter)}</small>
+                            ) : null}
+                            {isExtraAnunasika ? (
+                              <small className="varnamala-letter-note">extra · later</small>
+                            ) : null}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {!groupMeta && <p className="varnamala-row-description">{group.sanskrit}</p>}
+                  </div>
+                );
+              })}
             </>
           )}
         </div>
