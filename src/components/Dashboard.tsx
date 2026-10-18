@@ -1082,6 +1082,18 @@ const Dashboard: React.FC = () => {
         </nav>
 
         <div className="dashboard-header-user">
+          <a
+            href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="dashboard-search-trigger-btn"
+            style={{ padding: '0.45rem 0.65rem', textDecoration: 'none' }}
+            title="Open Koshashri Sanskrit Dictionary (Deccan College)"
+            aria-label="Open Koshashri Sanskrit Dictionary"
+          >
+            <span aria-hidden="true">📖</span>
+            <span className="dashboard-search-trigger-text">Dictionary</span>
+          </a>
           <button
             type="button"
             className="dashboard-search-trigger-btn"

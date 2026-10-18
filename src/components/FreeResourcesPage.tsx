@@ -118,6 +118,19 @@ const SECTIONS: ResourceSection[] = [
     icon: '📖',
     entries: [
       {
+        name: 'Koshashri: Encyclopaedic Sanskrit Dictionary (Deccan College)',
+        nameSa: 'कोशश्रीः — ऐतिहासिक-सिद्धान्तानुसारी संस्कृत-महाकोशः',
+        description:
+          'The monumental Sanskrit dictionary on historical principles compiled by Deccan College Post-Graduate and Research Institute, Pune. Search word entries, etymological roots, and authentic textual citations across more than 1,500 classical treatises.',
+        links: [
+          {
+            label: 'Open Koshashri Catalog Search',
+            url: 'https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85',
+          },
+        ],
+        tag: 'Encyclopaedic & Historical',
+      },
+      {
         name: 'Monier-Williams Sanskrit-English Dictionary',
         description:
           'The standard Sanskrit-English dictionary used in the West (1899 edition). You can search it for free on Cologne University’s Digital Sanskrit Dictionaries site.',

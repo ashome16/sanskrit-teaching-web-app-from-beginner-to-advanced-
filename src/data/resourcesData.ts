@@ -271,6 +271,29 @@ export const RESOURCE_ITEMS: ResourceItem[] = [
     actionType: 'download',
     downloadFilename: '16_Vedic_Maths_Sutras_Wall_Reference_Poster.pdf',
   },
+  {
+    id: 'koshashri-sanskrit-dictionary',
+    title: 'Koshashri: Encyclopaedic Dictionary of Sanskrit on Historical Principles',
+    titleSa: 'कोशश्रीः — ऐतिहासिक-सिद्धान्तानुसारी संस्कृत-महाकोशः (डेक्कन कॉलेज)',
+    category: 'study_materials',
+    date: 'Premier Lexicon',
+    timestamp: '2026-10-18T12:00:00+05:30',
+    status: 'featured',
+    statusLabel: '📖 Sanskrit Dictionary',
+    mode: 'Online Search Portal',
+    organizer: 'Deccan College Post-Graduate & Research Institute, Pune',
+    summary:
+      'Access the digital catalog of the monumental Encyclopaedic Dictionary of Sanskrit on Historical Principles. Search word entries, etymological roots, and authentic textual citations across ancient, classical, and scientific Sanskrit literature.',
+    highlights: [
+      'Monumental historical lexicographical project indexing over 1,500 Sanskrit treatises.',
+      'Explore words starting with any Akṣara with chronological and semantic development.',
+      'Direct online catalog search maintained by Deccan College lexicographers.',
+      'Indispensable reference for Sanskrit students, scholars, and language enthusiasts.',
+    ],
+    actionLabel: 'Open Koshashri Dictionary',
+    actionType: 'external',
+    actionLink: 'https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85',
+  },
 ];
 
 export const QUICK_DOWNLOAD_RESOURCES: QuickDownloadResource[] = [

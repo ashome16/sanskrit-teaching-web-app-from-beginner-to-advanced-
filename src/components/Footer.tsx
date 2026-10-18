@@ -172,6 +172,18 @@ export const Footer: React.FC<FooterProps> = ({
                   </button>
                 </li>
               )}
+              <li>
+                <a
+                  href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-nav-btn"
+                  title="Open Koshashri Sanskrit Dictionary (Deccan College)"
+                >
+                  <span className="nav-btn-icon">📖</span>
+                  <span className="nav-btn-text">कोशश्रीः · Sanskrit Dictionary</span>
+                </a>
+              </li>
               {onOpenRoadmap && (
                 <li>
                   <button

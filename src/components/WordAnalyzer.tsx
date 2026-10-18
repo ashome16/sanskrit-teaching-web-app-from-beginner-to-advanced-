@@ -200,6 +200,30 @@ const WordAnalyzer: React.FC<WordAnalyzerProps> = ({
                 </div>
               </div>
               <div className="word-meaning">{selectedWord.meaning}</div>
+              <div style={{ marginTop: '0.65rem' }}>
+                <a
+                  href={`https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=${encodeURIComponent(selectedWord.devanagari || 'अ')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                    fontSize: '0.82rem',
+                    color: '#92400e',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    background: '#fef3c7',
+                    border: '1px solid #fde68a',
+                    padding: '0.28rem 0.65rem',
+                    borderRadius: '6px',
+                  }}
+                  title="Search this word in Koshashri Sanskrit Dictionary"
+                >
+                  <span>📖 Look up "{selectedWord.devanagari}" in Koshashri Dictionary</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
 
             {/* Syllable Breakdown Section */}
@@ -492,6 +516,30 @@ const WordAnalyzer: React.FC<WordAnalyzerProps> = ({
               <li> Grammatical inflections and cases (Vibhaktis)</li>
               <li>🏛️ Etymology and related words</li>
             </ul>
+            <div style={{ marginTop: '1.25rem' }}>
+              <a
+                href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  fontSize: '0.86rem',
+                  color: '#92400e',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  background: '#fef3c7',
+                  border: '1px solid #fde68a',
+                  padding: '0.4rem 0.85rem',
+                  borderRadius: '6px',
+                }}
+                title="Open Koshashri Encyclopaedic Sanskrit Dictionary"
+              >
+                <span>📖 Open Koshashri Sanskrit Dictionary (Deccan College)</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         )}
       </div>
