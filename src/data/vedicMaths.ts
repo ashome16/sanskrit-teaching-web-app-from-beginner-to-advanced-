@@ -3622,7 +3622,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         sanskritTitle: 'ऋतुपर्णस्य विभीतक-प्रतिदर्श-गणनम्',
         paragraphs: [
           'Long before the development of modern probability theory and inferential statistics in seventeenth-century Europe, thinkers in ancient India were wrestling with quantitative estimation, empirical record-keeping, and discrete mathematics. Far from being confined to mysticism or speculative philosophy, classical Sanskrit scholarship systematically employed structural and statistical thinking in statecraft, literature, and mathematics.',
-          'The most vivid narrative precursor to statistical estimation appears in the Nalopākhyāna (the story of Nala and Damayantī) in the Vana Parva of the Mahābhārata. While traveling through the forest, King Rituparna encounters Prince Nala beside a sprawling Vibhītaka (Terminalia bellirica) tree. Rituparna makes a bold claim: without counting every individual element, he can deduce the total number of leaves and fruits on the entire tree.',
+          'The most vivid narrative precursor to statistical estimation appears in the Nalopākhyāna (the story of Nala and Damayantī) in the Vana Parva of the Mahābhārata. While traveling through the forest, King Rituparna encounters Prince Nala beside a sprawling Vibhītaka (Terminalia bellirica) tree. Rituparna makes a bold claim: without counting every individual element, he can calculate a remarkably close statistical approximation of the total number of leaves and fruits on the entire tree.',
           'The Methodology: Rituparna isolates a single representative branch, counts its leaves and nuts, and multiplies this sample by the estimated ratio of the branch to the canopy volume: Total Count ≈ (Sample Count in Selected Branch) × (Total Canopy Volume / Sample Branch Volume).',
           'The Empirical Verification: Skeptical of such an impossible calculation, Prince Nala halts the chariot and meticulously counts every fruit on the felled tree, discovering Rituparna’s statistical estimate to be a remarkably close approximation to the true count.',
           'The Conceptual Link: Rituparna explicitly attributes his ability to Saṅkhyāna (the science of numbers and quantitative calculation) and connects it directly to mastery of dice gambling (Akṣa-vidyā)—demonstrating that ancient thinkers understood the practical link between probabilistic estimation, randomness, and empirical sampling.'
@@ -3648,6 +3648,9 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         terms: [
           { sa: 'गोपः', iast: 'Gopa', gloss: 'Village census and statistical survey officer in the Mauryan administration' },
           { sa: 'समुद्र-संयानम्', iast: 'Samudra-saṃyāna', gloss: 'High-risk maritime trade voyage assigned tiered default-risk interest' }
+        ],
+        links: [
+          { anchor: 'kautilya', label: 'Interactive Laboratory: Kauṭilya Quantitative Statecraft Lab (/science-lab#kautilya)' }
         ]
       },
       {
@@ -3664,6 +3667,9 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           { sa: 'मेरुप्रस्तारः', iast: 'Meruprastāra', gloss: 'Binomial coefficient pyramid (Pascal’s triangle) in Pingala’s Chandaḥśāstra' },
           { sa: 'प्रस्तारः', iast: 'Prastāra', gloss: 'Systematic binary combinatorial enumeration of poetic meters' },
           { sa: 'लघु-गुरू', iast: 'Laghu-Gurū', gloss: 'Short (0) and long (1) binary prosodic states' }
+        ],
+        links: [
+          { anchor: 'chandahshastra', label: 'Interactive Laboratory: Piṅgala Chandaḥśāstra Combinatorics Lab (/science-lab#chandahshastra)' }
         ]
       },
       {

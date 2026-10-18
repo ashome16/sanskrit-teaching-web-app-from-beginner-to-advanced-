@@ -18,7 +18,7 @@ export const BODHI_GAME_WISDOM: Record<string, BodhiWisdomData> = {
     anecdoteTitle: 'The King Who Counted the Vibhītaka Tree from a Galloping Chariot',
     historicalPeriod: 'Mahābhārata Era (Vana Parva) · ~1000–800 BCE',
     anecdoteStory:
-      'In the Mahābhārata (Vana Parva), King Nala was traveling in deep distress, disguised as the humble charioteer Bāhuka for King Rituparna of Ayodhyā. As their chariot sped past a massive Vibhītaka tree (Terminalia bellirica), Rituparna glanced at the towering canopy and casually remarked: "On that single branched limb there are 2,095 leaves and 50 nuts; the rest of the tree holds exactly one hundred times that count." Nala, stunned and sceptical, halted the chariot to fell and count the branches. To his sheer astonishment, Rituparna’s estimate was precise to within a fraction of a percent! Rituparna revealed that he possessed the Akṣahṛdaya—the ancient science of dice combinatorics and branch-canopy statistical sampling. In exchange for this mathematical secret, Nala gave Rituparna his supreme mastery of horsemanship (Aśvahṛdaya).',
+      'In the Mahābhārata (Vana Parva), King Nala was traveling in deep distress, disguised as the humble charioteer Bāhuka for King Rituparna of Ayodhyā. As their chariot sped past a massive Vibhītaka tree (Terminalia bellirica), Rituparna glanced at the towering canopy and casually remarked: "On that single branched limb there are 2,095 leaves and 50 nuts; the rest of the tree holds an estimated approximation of one hundred times that count." Nala, stunned and sceptical, halted the chariot to fell and count the branches. To his sheer astonishment, Rituparna’s estimate was a remarkably close statistical approximation to within a fraction of a percent! Rituparna revealed that he possessed the Akṣahṛdaya—the ancient science of dice combinatorics and branch-canopy statistical sampling. In exchange for this mathematical secret, Nala gave Rituparna his supreme mastery of horsemanship (Aśvahṛdaya).',
     sanskritVerse: 'संख्याने च प्रवीणेऽहम् अक्षहृदयवेदिता। विभीतकस्य शाखायामेकस्यां सन्ति विंशतिः शतानि फलानि च पञ्चाशत्॥',
     sanskritVerseMeaning:
       '"I am adept in estimation and know the heart of dice-numbers. On one branch of this Vibhītaka tree reside twenty hundred leaves and fifty fruits; the rest hold one hundred times more."',
@@ -246,6 +246,24 @@ export const BODHI_GAME_WISDOM: Record<string, BodhiWisdomData> = {
       'Cognitive psychological ergonomics: recognizing working-memory limitations of human mental calculation and designing fluid symbolic notations that minimize mental fatigue.',
     societalWelfare:
       'Empowering public commerce: rapid mental arithmetic allowed ordinary marketplace shopkeepers, weavers, and treasurers to calculate ledgers with lightning speed and absolute transparency.',
+  },
+
+  kautilya: {
+    anecdoteTitle: 'Kauṭilya’s Saptāṅga Statecraft and the 240% Actuarial Risk Premium',
+    historicalPeriod: 'Arthaśāstra of Kauṭilya · 4th c. BCE (Mauryan Pāṭaliputra)',
+    anecdoteStory:
+      'In the 4th century BCE, Kauṭilya (Chāṇakya) authored the Arthaśāstra, the world’s earliest comprehensive treatise on quantitative political economy, empirical administration, and actuarial risk management. Kauṭilya conceived the state as an organic living system of seven interdependent limbs (Saptāṅga: Svāmī, Amātya, Janapada, Durga, Kośa, Daṇḍa, and Mitra). Far from abstract moralizing, Kauṭilya established rigorous mathematical governance: village census officers (Gopas) surveyed every household, occupation, community demographic, and crop yield to compile an empirical ledger. Furthermore, Kauṭilya instituted the world’s first tiered risk-priced interest model: standard commercial loans were priced at 15% annually, but hazardous overland caravan journeys paid 120%, and perilous trans-oceanic maritime expeditions (Sāmudra-saṃyāna) paid up to 240%—explicitly quantifying default probability and catastrophic ocean risk 2,000 years before modern actuarial science.',
+    sanskritVerse: 'प्रजासुखे सुखं राज्ञः प्रजानां च हिते हितम्। नात्मप्रियं प्रियं राज्ञः प्रजानां तु प्रियं प्रियम्॥',
+    sanskritVerseMeaning:
+      '"In the happiness of his subjects lies the king’s happiness; in their welfare his welfare. Whatever pleases him personally he shall not consider as good, but whatever pleases his subjects he shall consider as good."',
+    uniquePlayingMethodology:
+      'Saptāṅga Equilibrium Sandbox & Actuarial Maritime Risk Simulator — Balance the 7 state limbs against catastrophic shocks (Monsoon Drought, Border Incursions, Maritime Fleet ventures), conduct Gopa village demographic surveys, and price multi-tiered loan risk premiums from 15% to 240% to protect state solvency.',
+    civilizationalContinuity:
+      'Kauṭilya’s quantitative data ledgers, buffer stock management (Durbhikṣa-pratīkāra), and risk-adjusted pricing are the direct historical antecedents of modern macroeconomic fiscal policy, sovereign reserve funds, and actuarial insurance underwriting.',
+    empiricalObservation:
+      'Empirical administrative surveys: mandating that state revenue and defense policy be grounded in verifiable field data compiled by Gopas rather than hearsay or speculative estimates.',
+    societalWelfare:
+      'Prajasukha (the welfare state): the supreme metric of statecraft is societal flourishing and citizen security, ensuring state granaries maintain 50% buffer reserves so no citizen starves during multi-year famines.',
   },
 };
 

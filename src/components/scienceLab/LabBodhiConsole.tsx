@@ -784,6 +784,138 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
       },
     ],
   },
+  kautilya: {
+    title: 'Kauṭilya Quantitative Statecraft & Actuarial Risk',
+    dev: 'कौटिलीय-अर्थशास्त्रम्',
+    bodhiIntro:
+      'Welcome to Sector 14: Quantitative Statecraft! In the 4th century BCE, Kauṭilya (Chāṇakya) authored the Arthaśāstra, laying down an empirical system of political economy, village censuses, and risk-adjusted pricing. State stability was modeled on the Saptāṅga (seven living limbs). Royal Gopas surveyed every village for households, community vocations, and crop yields. And loans were not flat: standard commerce was 15%, caravan journeys 120%, and trans-oceanic voyages (Sāmudra-saṃyāna) paid up to 240% to account for hazard risk. Test your statecraft acumen with Bodhi below!',
+    keyConcepts: [
+      { label: 'Saptāṅga Rājyam (सप्ताङ्ग-राज्यम्)', text: '7 interdependent limbs: Svāmī (Ruler), Amātya (Ministers), Janapada (Territory & People), Durga (Fortresses), Kośa (Treasury), Daṇḍa (Military), and Mitra (Allies).' },
+      { label: 'Gopa Demographic Census (गोपः)', text: 'Mauryan administrative officers maintaining granular ledgers of households, occupational communities, land yields, and livestock.' },
+      { label: 'Actuarial Interest Rates (वृद्धिः)', text: 'Empirical pricing of default hazard: 15% standard commerce, 120% overland forest caravan, 240% high-seas maritime voyages.' },
+      { label: 'Portfolio Diversification (सार्थवाहः)', text: 'Commanding merchants to split cargo across multiple distinct vessels to prevent catastrophic ruin from sudden shipwrecks.' },
+      { label: 'Durbhikṣa-pratīkāra (दुर्भिक्ष-प्रतीकारः)', text: 'Retaining 50% buffer stocks in sovereign granaries to stabilize food prices and survive multi-year droughts and famines.' },
+    ],
+    faqs: [
+      {
+        q: 'Why did Kauṭilya assign 240% interest to oceanic sea ventures (Sāmudra-saṃyāna)?',
+        a: 'Rather than banning overseas trade, Kauṭilya quantified hazard risk: high probabilities of monsoon shipwreck, reefs, and piracy necessitated a 20% monthly (240% annual) default risk premium.',
+        devAudio: 'सामुद्र-संयानम्',
+      },
+      {
+        q: 'What was the foundational ethical purpose of Kauṭilya’s statecraft?',
+        a: 'Prajasukhe sukham rajnah: The king’s happiness resides irrevocably in the happiness of the people; his personal desires must never supersede societal welfare and civic protection.',
+        devAudio: 'प्रजासुखे सुखं राज्ञः',
+      },
+    ],
+    quizzes: [
+      {
+        id: 'kautilya-q1',
+        q: 'What is the foundational requirement for Saptāṅga state equilibrium in Kauṭilya’s Arthaśāstra?',
+        options: [
+          'Maximizing military conquest at the expense of treasury',
+          'Harmonizing all seven organic limbs (Svāmī, Amātya, Janapada, Durga, Kośa, Daṇḍa, Mitra) so none falls into vulnerability',
+          'Abolishing rural districts in favor of royal palaces',
+          'Enforcing flat interest rates across all ventures',
+        ],
+        correct: 1,
+        explanation: 'Kauṭilya models the state as an organic living system: if any single limb collapses, the entire sovereign structure experiences vulnerability (Vyasana).',
+        sanskritContext: 'सप्ताङ्गम् उच्यते राज्यम्।',
+      },
+      {
+        id: 'kautilya-q2',
+        q: 'In the Mauryan bureaucracy, what was the primary responsibility of a Gopa?',
+        options: [
+          'Leading heavy chariot charges in frontier wars',
+          'Supervising clusters of 5 to 20 villages to record demographic censuses, community vocations, and crop yields',
+          'Decorating royal ceremonial temples',
+          'Minting gold coins at the port of Muziris',
+        ],
+        correct: 1,
+        explanation: 'Gopas compiled granular field ledgers documenting households, community occupations, arable acreage, and livestock to eliminate administrative opacity.',
+        sanskritContext: 'गोपः पञ्चग्रामीं दशग्रामीं वा चिन्तयेत्।',
+      },
+      {
+        id: 'kautilya-q3',
+        q: 'Why did Kauṭilya’s state granaries mandate a 50% buffer stock (Durbhikṣa-pratīkāra)?',
+        options: [
+          'To hoard grain and artificially raise market food prices',
+          'To ensure the state could feed citizens and stabilize grain prices during multi-year monsoonal droughts and famines',
+          'To export grain exclusively to Seleucid kingdoms',
+          'To feed war elephants in the royal stables',
+        ],
+        correct: 1,
+        explanation: 'Book IV of the Arthaśāstra mandates retaining half of all collected grain as emergency famine buffer reserves for public relief.',
+        sanskritContext: 'ततोऽर्धम् आपदर्थं रक्षेत्।',
+      },
+    ],
+  },
+  chandahshastra: {
+    title: 'Piṅgala’s Binary Combinatorics & Chandaḥśāstra',
+    dev: 'पिङ्गलस्य छन्दःशास्त्रम्',
+    bodhiIntro:
+      'Welcome to Sector 15: Chandaḥśāstra Combinatorics! Around 200 BCE, Ācārya Piṅgala analyzed the rhythm of Sanskrit poetic meters and birthed binary mathematics: Laghu (•, 1 beat) and Guru (—, 2 beats). He invented Prastāra (the 2ⁿ binary truth table), Naṣṭa (decimal-to-binary decryption), Uddiṣṭa (binary-to-decimal encryption), and Meruprastāra (Pascal’s triangle). Halāyudha’s commentary unlocks the Mātrāmeru (Fibonacci sequence). Explore with Bodhi below!',
+    keyConcepts: [
+      { label: 'Prastāra (प्रस्तारः)', text: 'Algorithmic enumeration generating all 2ⁿ permutations of short (Laghu) and long (Guru) syllables without missing a single meter.' },
+      { label: 'Naṣṭa & Uddiṣṭa (नष्टोद्दिष्टौ)', text: 'The earliest recorded bidirectional binary-decimal conversion and cryptographic indexing algorithms.' },
+      { label: 'Meruprastāra (मेरुप्रस्तारः)', text: 'The binomial coefficient pyramid (Pascal’s triangle) described by Halāyudha as "Pare pūrṇam iti" 1,800 years before Blaise Pascal.' },
+      { label: 'Mātrāmeru (मात्रामेरू)', text: 'The Fibonacci sequence derived by Hemacandra, Gopāla, and Virahāṅka from poetic duration constraints: M(m) = M(m-1) + M(m-2).' },
+      { label: 'Yamātārājabhānasalagā (यमाता-राज-भान-सलगा)', text: 'A circular shift-register mnemonic generating all 8 canonical 3-syllable Gaṇas.' },
+    ],
+    faqs: [
+      {
+        q: 'How did Piṅgala formulate binary numbers in 200 BCE?',
+        a: 'Piṅgala recognized that meter syllables possess exactly two states: Laghu (light, 1 beat) and Guru (heavy, 2 beats). By mapping them to place-value powers of 2, he constructed complete binary counting tables.',
+        devAudio: 'द्विकौ ग्लौ',
+      },
+      {
+        q: 'Why did ancient Indian civilization place such high value on poetic metrics (Chandas)?',
+        a: 'In an oral knowledge society, metric checksums acted as algorithmic error-detection codes, ensuring medical, astronomical, and philosophical encyclopedias survived across millennia without corruption.',
+        devAudio: 'छन्दः पादौ तु वेदस्य',
+      },
+    ],
+    quizzes: [
+      {
+        id: 'chandas-q1',
+        q: 'In Piṅgala’s Chandaḥśāstra, what mathematical structure does the Meruprastāra represent?',
+        options: [
+          'A trigonometric table of sine chords',
+          'The Binomial Coefficient Triangle (Pascal’s Triangle) listing combinations of Laghu and Guru syllables',
+          'A planetary ephemeris table for lunar eclipses',
+          'A chemical recipe for distillation crucibles',
+        ],
+        correct: 1,
+        explanation: 'Meruprastāra (Mount Meru Staircase) arranges binomial coefficients C(n,k) centuries before Pascal, showing how many meters of length n have k Guru syllables.',
+        sanskritContext: 'परे पूर्णमिति मेरुप्रस्तारः।',
+      },
+      {
+        id: 'chandas-q2',
+        q: 'What is the function of the Uddiṣṭa (उद्दिष्टम्) algorithm?',
+        options: [
+          'Calculating the weight of a gold coin',
+          'Converting a binary sequence of Laghus and Gurus into its exact decimal rank in the Prastāra',
+          'Measuring the height of a temple Vimāna',
+          'Classifying medicinal herbs into Tridoṣas',
+        ],
+        correct: 1,
+        explanation: 'Uddiṣṭa writes powers of 2 (1, 2, 4, 8...) under Gurus, sums them, and adds 1 to determine the row number without expanding the table.',
+        sanskritContext: 'उद्दिष्टं रूपसंयुतम्।',
+      },
+      {
+        id: 'chandas-q3',
+        q: 'Why does counting poetic meters by total duration (Mātrā) produce the Fibonacci numbers (Mātrāmeru)?',
+        options: [
+          'Because poets strictly followed a golden spiral for aesthetics',
+          'Because any meter of duration m must end in either a 1-beat Laghu (from m-1) or a 2-beat Guru (from m-2), creating M(m) = M(m-1) + M(m-2)',
+          'Because only prime numbers were used in Sanskrit meters',
+          'Because of the 28 lunar Nakṣatras in Vedāṅga Jyotiṣa',
+        ],
+        correct: 1,
+        explanation: 'Hemacandra (1150 CE) and Gopāla showed that meters partitioned into 1-beat and 2-beat units obey the recurrence relation M(m) = M(m-1) + M(m-2), generating the Fibonacci sequence.',
+        sanskritContext: 'मिश्रौ च मात्रामेरू।',
+      },
+    ],
+  },
 };
 
 const RANKS = [

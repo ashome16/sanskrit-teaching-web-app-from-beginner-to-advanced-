@@ -2542,9 +2542,6 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
 
   // 1. Forge single Tryaṇuka in a slot (incremental or complete)
   const handleForgeSlot = (slotNumber: number) => {
-    // Sequential Gate: only the active slot can be forged
-    if (slotNumber > activeSlotNumber) return;
-
     const currentSlot = slots.find((s) => s.slotNumber === slotNumber);
     if (!currentSlot || currentSlot.isReady) return;
 
@@ -2984,9 +2981,7 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
                     <span style={{ fontSize: '1.15rem' }}>🎯</span>
                     <strong style={{ color: '#fef08a', fontSize: '0.88rem' }}>
-                      {allFourReady
-                        ? '✓ All 4 Elements Mastered! Proceed to Phase 2: Potter’s Wheel below'
-                        : `Phase 1 · Stage ${activeSlotNumber} of 4: Forge ${slots[activeSlotNumber - 1]?.dev} (${slots[activeSlotNumber - 1]?.en})`}
+                      The Elements (Pañcabhūtas · पञ्चभूतानि): Forge Earth, Water, Fire, and Air
                     </strong>
                   </div>
                   <span style={{ fontSize: '0.74rem', color: '#94a3b8' }}>
@@ -3049,14 +3044,12 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
               {/* 4 FULL-WIDTH CORPOREAL ELEMENT CARDS */}
               <div className="akasa-phase1-elements-grid">
                 {slots.map((s) => {
-                  const isSlotLocked = s.slotNumber > activeSlotNumber;
-                  const isSlotActive = s.slotNumber === activeSlotNumber;
                   return (
                     <div
                       key={s.slotNumber}
                       id={`akasa-element-slot-${s.slotNumber}`}
-                      className={`akasa-phase1-element-card${s.isReady ? ' is-ready' : ''}${isSlotLocked ? ' is-locked' : ''}${isSlotActive ? ' is-active' : ''}`}
-                      style={{ borderColor: s.isReady ? '#10b981' : isSlotActive ? s.border : undefined }}
+                      className={`akasa-phase1-element-card${s.isReady ? ' is-ready' : ' is-active'}`}
+                      style={{ borderColor: s.isReady ? '#10b981' : s.border }}
                     >
                       {/* CARD TOP BAR */}
                       <div className="akasa-p1-card-top">
@@ -3072,8 +3065,6 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
                         <span className="akasa-p1-status-pill" style={{ color: s.isReady ? '#10b981' : s.border }}>
                           {s.isReady
                             ? '🌟 Tryaṇuka Ready'
-                            : isSlotLocked
-                            ? `🔒 Locked (Do #${s.slotNumber - 1} First)`
                             : `${s.count / 2}/3 Dvyaṇukas`}
                         </span>
                       </div>
@@ -3094,37 +3085,25 @@ export const AkasaSutraGame: React.FC<AkasaSutraGameProps> = ({ onNextStation })
                           {!s.isReady ? (
                             <button
                               type="button"
-                              className={`akasa-p1-forge-btn${isSlotActive ? ' is-active-step' : ''}`}
+                              className="akasa-p1-forge-btn is-active-step"
                               onClick={() => handleForgeSlot(s.slotNumber)}
-                              disabled={isSlotLocked}
                               title={
-                                isSlotLocked
-                                  ? `Complete Element #${s.slotNumber - 1} first`
-                                  : s.count === 0
+                                s.count === 0
                                   ? 'Combine 2 Paramāṇu units into Dvyaṇuka #1 [द्व्यणुकम् #१]'
                                   : s.count === 2
                                   ? 'Combine 2 Paramāṇu units into Dvyaṇuka #2 [द्व्यणुकम् #२]'
                                   : 'Bond Dvyaṇuka #3 to complete Tryaṇuka [त्र्यणुकम्]'
                               }
                             >
-                              {isSlotLocked ? (
-                                <>
-                                  <span className="akasa-forge-locked-icon">🔒</span>
-                                  <span>Locked: Complete #{s.slotNumber - 1} First</span>
-                                </>
-                              ) : (
-                                <>
-                                  <span className="akasa-forge-finger-icon" aria-hidden="true">👉</span>
-                                  <span className="akasa-click-here-badge">CLICK {s.count / 2 + 1} OF 3</span>
-                                  <span className="akasa-forge-btn-label">
-                                    {s.count === 0
-                                      ? 'Combine 2 Paramāṇus ➔ Dyad #1 [द्व्यणुकम् #१]'
-                                      : s.count === 2
-                                      ? 'Combine 2 Paramāṇus ➔ Dyad #2 [द्व्यणुकम् #२]'
-                                      : 'Bond Dyad #3 ➔ Form Tryaṇuka [त्र्यणुकम्]'}
-                                  </span>
-                                </>
-                              )}
+                              <span className="akasa-forge-finger-icon" aria-hidden="true">👉</span>
+                              <span className="akasa-click-here-badge">CLICK {s.count / 2 + 1} OF 3</span>
+                              <span className="akasa-forge-btn-label">
+                                {s.count === 0
+                                  ? `Combine 2 Paramāṇus ➔ Dyad #1 for ${s.en}`
+                                  : s.count === 2
+                                  ? `Combine 2 Paramāṇus ➔ Dyad #2 for ${s.en}`
+                                  : `Bond Dyad #3 ➔ Form Tryaṇuka for ${s.en}`}
+                              </span>
                             </button>
                           ) : (
                             <div className="akasa-p1-ready-banner">

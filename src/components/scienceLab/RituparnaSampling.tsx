@@ -26,7 +26,7 @@ const RITUPARNA_TERMS: LabTerm[] = [
     dev: 'साङ्ख्यानम्',
     iast: 'Saṅkhyānam',
     en: 'Quantitative estimation / empirical statistical sampling',
-    note: 'The exact science King Rituparna taught to Prince Nala in Mahābhārata Nalopākhyāna.',
+    note: 'The empirical estimation and sampling science King Rituparna taught to Prince Nala in Mahābhārata Nalopākhyāna.',
   },
   {
     dev: 'अक्षहृदयम्',
@@ -64,7 +64,7 @@ const RITUPARNA_CHALLENGES: LabChallenge[] = [
       'He used a shadow rod (Śaṅku) length',
     ],
     answer: 1,
-    explain: 'Rituparna applied cluster sampling: Sample Count × (Total Canopy Volume / Sample Branch Volume). Skeptical Prince Nala felled the tree and discovered his estimate was exact!',
+    explain: 'Rituparna applied cluster sampling: Sample Count × (Total Canopy Volume / Sample Branch Volume). Skeptical Prince Nala felled the tree and discovered his estimate was a remarkably close approximation within a fraction of a percent!',
   },
   {
     q: 'Why was the Vibhītaka tree culturally and mathematically significant to this Mahābhārata episode?',
@@ -689,12 +689,12 @@ export const RituparnaSampling: React.FC = () => {
           dev: 'अहम् अक्षहृदयज्ञः साङ्ख्याने च परं गतः। एकस्याः शाखायाः पत्राणि गणयित्वा सर्ववृक्षस्य प्रमाणं वेद्मि॥',
           iast: 'aham akṣahṛdayajñaḥ saṅkhyāne ca paraṃ gataḥ | ekasyāḥ śākhāyāḥ patrāṇi gaṇayitvā sarvavṛkṣasya pramāṇaṃ vedmi ||',
           source: 'Mahābhārata, Vana Parva 72.15 (Nalopākhyāna)',
-          meaning: 'I am the master of dice combinatorics (Akṣahṛdaya) and versed in quantitative sampling (Saṅkhyāna). By counting the leaves on a single representative branch, I know the exact measure of the entire tree.',
+          meaning: 'I am the master of dice combinatorics (Akṣahṛdaya) and versed in quantitative sampling (Saṅkhyāna). By counting the leaves on a single representative branch, I know the close approximation and true measure of the entire tree.',
         }}
         anecdote={
           <>
             <p>
-              In the <em>Mahābhārata</em> (Nalopākhyāna), King Ṛtuparṇa was speeding toward Vidarbha in a chariot driven by Prince Nala (disguised as the charioteer Vāhuka). Passing a massive, sprawling Vibhītaka tree (<em>Terminalia bellirica</em>), Ṛtuparṇa casually declared that the tree bore exactly <strong>20,950 leaves</strong> and <strong>101 fruits</strong>.
+              In the <em>Mahābhārata</em> (Nalopākhyāna), King Ṛtuparṇa was speeding toward Vidarbha in a chariot driven by Prince Nala (disguised as the charioteer Vāhuka). Passing a massive, sprawling Vibhītaka tree (<em>Terminalia bellirica</em>), Ṛtuparṇa casually declared that the tree bore an estimated approximation of <strong>20,950 leaves</strong> and <strong>101 fruits</strong>.
             </p>
             <p>
               Stunned and deeply skeptical that any human could perceive what only seemed knowable through divine omniscience, Nala halted the chariot. Refusing to take royal claims on blind faith, Nala spent hours chopping down the tree and counting every single leaf and fruit. When the empirical count matched Ṛtuparṇa’s calculation within a tiny fraction, Nala dropped his axe and begged to learn the secret method.
@@ -823,7 +823,7 @@ export const RituparnaSampling: React.FC = () => {
 
             <p style={{ fontSize: '0.86rem', color: '#94a3b8', lineHeight: 1.55, margin: '0 0 0.85rem' }}>
               The most vivid narrative precursor to statistical estimation appears in the <em>Nalopākhyāna</em> (the story of Nala and Damayanti) in the <em>Mahābhārata</em> (Vana Parva, ch. 72).
-              While traveling through the forest, King Rituparna of Ayodhya encounters Prince Nala beside a sprawling Vibhītaka (<em>Terminalia bellirica</em>) tree and boldly deduces the entire population of leaves and fruits:
+              While traveling through the forest, King Rituparna of Ayodhya encounters Prince Nala beside a sprawling Vibhītaka (<em>Terminalia bellirica</em>) tree and boldly calculates a statistical approximation of the total population of leaves and fruits:
             </p>
 
             {/* Formula Box */}

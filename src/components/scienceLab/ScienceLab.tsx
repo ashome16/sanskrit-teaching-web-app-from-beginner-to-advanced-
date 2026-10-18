@@ -15,6 +15,8 @@ const AgnibanaRocketLab = lazy(() => import('./AgnibanaRocketLab'));
 const VedicGeometryLab = lazy(() => import('./VedicGeometryLab'));
 const MantraAcousticsLab = lazy(() => import('./MantraAcousticsLab'));
 const TempleEngineeringLab = lazy(() => import('./TempleEngineeringLab'));
+const KautilyaStatecraft = lazy(() => import('./KautilyaStatecraft'));
+const ChandahshastraLab = lazy(() => import('./ChandahshastraLab'));
 const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 
 export type LabCategory = 'all' | 'matter' | 'cosmos' | 'life' | 'waves';
@@ -224,6 +226,34 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     ink: '#fbbf24',
     glow: '#d97706',
   },
+  {
+    id: 'kautilya',
+    code: 'SEC-14',
+    icon: '📜',
+    dev: 'कौटिलीय-अर्थशास्त्रम्',
+    title: 'Kauṭilya Quantitative Statecraft',
+    subject: 'Actuarial Risk & Demographics',
+    school: 'Arthaśāstra (नीति-प्रशासनम्)',
+    category: 'waves',
+    blurb: 'Explore Mauryan quantitative administration: balance the 7 organic Saptāṅga state limbs, audit village demographics with Gopas, and price tiered maritime loan risk from 15% to 240%.',
+    tint: 'rgba(245, 158, 11, 0.12)',
+    ink: '#fde047',
+    glow: '#f59e0b',
+  },
+  {
+    id: 'chandahshastra',
+    code: 'SEC-15',
+    icon: '🪘',
+    dev: 'पिङ्गलस्य छन्दःशास्त्रम्',
+    title: 'Chandaḥśāstra Combinatorics',
+    subject: 'Binary Permutations & Pascal Meru',
+    school: 'Chandaḥśāstra (छन्दो-विज्ञानम्)',
+    category: 'waves',
+    blurb: 'Step into Piṅgala’s binary universe: compose acoustic Laghu and Guru beats, decode rows via Naṣṭa & Uddiṣṭa, and climb the Meruprastāra binomial pyramid and Fibonacci Mātrāmeru.',
+    tint: 'rgba(192, 132, 252, 0.12)',
+    ink: '#e879f9',
+    glow: '#c084fc',
+  },
 ];
 
 
@@ -250,7 +280,6 @@ const HASH_ALIASES: Record<string, LabSegmentId> = {
   'mantra-acoustics': 'mantra-acoustics',
   acoustics: 'mantra-acoustics',
   saptak: 'mantra-acoustics',
-  chandas: 'mantra-acoustics',
   chamakam: 'mantra-acoustics',
   temple: 'temple-engineering',
   'temple-engineering': 'temple-engineering',
@@ -260,6 +289,19 @@ const HASH_ALIASES: Record<string, LabSegmentId> = {
   vastu: 'temple-engineering',
   vastupurusha: 'temple-engineering',
   architecture: 'temple-engineering',
+  kautilya: 'kautilya',
+  arthashastra: 'kautilya',
+  statecraft: 'kautilya',
+  saptanga: 'kautilya',
+  gopa: 'kautilya',
+  chandas: 'chandahshastra',
+  chandahshastra: 'chandahshastra',
+  pingala: 'chandahshastra',
+  meru: 'chandahshastra',
+  meruprastara: 'chandahshastra',
+  matrameru: 'chandahshastra',
+  nasta: 'chandahshastra',
+  uddishta: 'chandahshastra',
 };
 const readHash = (): LabSegmentId | null => {
   try {
@@ -648,6 +690,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {active === 'vedic-geometry' && <VedicGeometryLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
           {active === 'mantra-acoustics' && <MantraAcousticsLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
           {active === 'temple-engineering' && <TempleEngineeringLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+          {active === 'kautilya' && <KautilyaStatecraft onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+          {active === 'chandahshastra' && <ChandahshastraLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
         </Suspense>
 
 

@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { TermPanel, ChallengeList, type LabTerm, type LabChallenge } from './common';
+import { BodhiWisdomCard } from '../BodhiWisdomCard';
+import { TermPanel, ChallengeList, LabNextAction, type LabTerm, type LabChallenge } from './common';
 import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
 
@@ -198,9 +199,11 @@ interface VoyageLog {
 }
 
 // ---------------------------------------------------------------------------
-// Component
-// ---------------------------------------------------------------------------
-export const KautilyaStatecraft: React.FC = () => {
+export interface KautilyaStatecraftProps {
+  onNextLab?: () => void;
+}
+
+export const KautilyaStatecraft: React.FC<KautilyaStatecraftProps> = ({ onNextLab }) => {
   // Navigation Tabs
   const [activeTab, setActiveTab] = useState<'saptanga' | 'census' | 'voyage' | 'arena'>('saptanga');
 
@@ -674,6 +677,11 @@ export const KautilyaStatecraft: React.FC = () => {
           </div>
         </div>
       </header>
+
+      {/* Bodhi Wisdom & Civilizational Context Card */}
+      <div style={{ marginBottom: '1.5rem' }}>
+        <BodhiWisdomCard gameId="kautilya" gameTitle="Kauṭilya’s Arthaśāstra: Quantitative Statecraft & Actuarial Governance" />
+      </div>
 
       {/* --------------------------------------------------------------------- */}
       {/* NAVIGATION TABS */}
@@ -1530,10 +1538,19 @@ export const KautilyaStatecraft: React.FC = () => {
       {/* --------------------------------------------------------------------- */}
       {/* SANSKRIT TERMS & CHALLENGES LIST */}
       {/* --------------------------------------------------------------------- */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
         <TermPanel title="Sanskrit Statecraft & Actuarial Vocabulary" terms={STATECRAFT_TERMS} />
         <ChallengeList items={STATECRAFT_CHALLENGES} />
       </div>
+
+      <LabNextAction
+        nextTitle="Chandaḥśāstra Combinatorics & Binary Metrics"
+        nextCode="SEC-15"
+        nextDev="पिङ्गलस्य छन्दःशास्त्रम्"
+        nextIcon="🪘"
+        onNextLab={onNextLab}
+        message="Advance to Sector SEC-15: Piṅgala’s Binary Combinatorics, Meruprastāra & Mātrāmeru"
+      />
     </div>
   );
 };
