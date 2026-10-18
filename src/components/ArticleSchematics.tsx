@@ -718,6 +718,179 @@ function TerracottaMatrixWhorl() {
   );
 }
 
+/** The Spheres of Certainty: Bhirrana vs Mohenjo-daro 3.5 cm (2 Angulas) standardization & gaming grid */
+function SpheresOfCertaintyMatrix() {
+  return (
+    <Panel
+      kicker="The 2-Angula Standard: Bhirrana (~Early Horizon) to Mohenjo-daro (~2500 BCE)"
+      caption="Metrological unity across 5,000 years: Two terracotta spheres separated by centuries and hundreds of miles share an identical diameter of 3.5 cm (2 Indus Angulas), calibrating both urban gaming pavements and binary weight scales."
+      maxWidth={620}
+    >
+      <svg viewBox="0 0 580 430" role="img" aria-labelledby="spheres-certainty-title" style={{ fontFamily: SANS }}>
+        <title id="spheres-certainty-title">
+          Standardization of the 3.5 cm terracotta spheres across Bhirrana and Mohenjo-daro, mapping directly to 2 Indus Angulas.
+        </title>
+        <defs>
+          <radialGradient id="bhirranaGrad" cx="38%" cy="38%" r="62%">
+            <stop offset="0%" stopColor="#eedec8" />
+            <stop offset="50%" stopColor="#cca172" />
+            <stop offset="100%" stopColor="#875328" />
+          </radialGradient>
+          <radialGradient id="mohenjoGrad" cx="38%" cy="38%" r="62%">
+            <stop offset="0%" stopColor="#f7f2ea" />
+            <stop offset="50%" stopColor="#d9caae" />
+            <stop offset="100%" stopColor="#96815f" />
+          </radialGradient>
+          <filter id="sphereShadow" x="-15%" y="-15%" width="135%" height="135%">
+            <feDropShadow dx="3" dy="5" stdDeviation="5" floodColor="#291406" floodOpacity="0.28" />
+          </filter>
+        </defs>
+
+        {/* Outer Background Box */}
+        <rect x="0" y="0" width="580" height="430" rx="14" fill="#faf7f2" stroke="#ebdccb" strokeWidth="1.5" />
+
+        {/* Top Header Section: Two Spheres Side-by-Side */}
+        {/* Left: Bhirrana Sphere */}
+        <g transform="translate(145, 95)">
+          <circle cx="0" cy="0" r="58" fill="url(#bhirranaGrad)" filter="url(#sphereShadow)" />
+          {/* Perforations */}
+          <circle cx="-10" cy="-5" rx="14" ry="14" fill="#4d2c12" />
+          {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => {
+            const rad = (deg * Math.PI) / 180;
+            const px = 28 * Math.cos(rad) - 10;
+            const py = 28 * Math.sin(rad) - 5;
+            return <circle key={`bhr-${deg}`} cx={px} cy={py} r="2.8" fill="#2d1707" />;
+          })}
+          {[20, 60, 100, 140, 180, 220, 260, 300, 340].map((deg) => {
+            const rad = (deg * Math.PI) / 180;
+            const px = 46 * Math.cos(rad) - 10;
+            const py = 46 * Math.sin(rad) - 5;
+            return <circle key={`bhr2-${deg}`} cx={px} cy={py} r="2.5" fill="#2d1707" />;
+          })}
+
+          {/* Dimension Bracket */}
+          <line x1="-58" y1="72" x2="58" y2="72" stroke="#b45309" strokeWidth="1.8" />
+          <line x1="-58" y1="67" x2="-58" y2="77" stroke="#b45309" strokeWidth="1.8" />
+          <line x1="58" y1="67" x2="58" y2="77" stroke="#b45309" strokeWidth="1.8" />
+          <text x="0" y="90" textAnchor="middle" fill="#78350f" fontSize="12" fontWeight="800">
+            Ø 3.5 cm · 2 Angulas
+          </text>
+          <text x="0" y="-70" textAnchor="middle" fill="#92400e" fontSize="11" fontWeight="700">
+            Bhirrana Sphere (Haryana)
+          </text>
+          <text x="0" y="-85" textAnchor="middle" fill="#b45309" fontSize="10" fontWeight="800" letterSpacing="0.06em">
+            EARLY HORIZON (~5000–3500 BCE)
+          </text>
+        </g>
+
+        {/* Right: Mohenjo-daro Sphere */}
+        <g transform="translate(435, 95)">
+          <circle cx="0" cy="0" r="58" fill="url(#mohenjoGrad)" filter="url(#sphereShadow)" />
+          {/* Spiral Lathe Grooves */}
+          {[-45, -30, -15, 0, 15, 30, 45].map((_offset, i) => (
+            <path
+              key={`moj-${i}`}
+              d={`M ${-50 + i * 14} -25 C ${-30 + i * 14} 25, ${10 + i * 14} 35, ${35 + i * 14} 50`}
+              fill="none"
+              stroke="#544933"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              opacity="0.85"
+            />
+          ))}
+
+          {/* Dimension Bracket */}
+          <line x1="-58" y1="72" x2="58" y2="72" stroke="#b45309" strokeWidth="1.8" />
+          <line x1="-58" y1="67" x2="-58" y2="77" stroke="#b45309" strokeWidth="1.8" />
+          <line x1="58" y1="67" x2="58" y2="77" stroke="#b45309" strokeWidth="1.8" />
+          <text x="0" y="90" textAnchor="middle" fill="#78350f" fontSize="12" fontWeight="800">
+            Ø 3.5 cm · 2 Angulas
+          </text>
+          <text x="0" y="-70" textAnchor="middle" fill="#44403c" fontSize="11" fontWeight="700">
+            Mohenjo-daro Ball (Sindh)
+          </text>
+          <text x="0" y="-85" textAnchor="middle" fill="#047857" fontSize="10" fontWeight="800" letterSpacing="0.06em">
+            MATURE HARAPPAN (~2500 BCE)
+          </text>
+        </g>
+
+        {/* Center Connecting Arrow: 5,000-Year Identity */}
+        <g transform="translate(290, 95)">
+          <rect x="-35" y="-14" width="70" height="28" rx="6" fill="#fef3c7" stroke="#f59e0b" strokeWidth="1.2" />
+          <text x="0" y="4" textAnchor="middle" fill="#b45309" fontSize="11" fontWeight="800">
+            EQUALS
+          </text>
+          <text x="0" y="32" textAnchor="middle" fill="#78350f" fontSize="9.5" fontWeight="600">
+            Same 3.5 cm Standard
+          </text>
+        </g>
+
+        {/* Middle Banner: The Indus Angula Metrology Ladder */}
+        <g transform="translate(25, 215)">
+          <rect x="0" y="0" width="530" height="74" rx="8" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1.2" />
+          
+          <text x="18" y="22" fill="#0f172a" fontSize="12" fontWeight="800">
+            📐 The Indus Linear-to-Volumetric Scale (1 Angula ≈ 1.763 cm)
+          </text>
+
+          {/* Step 1 */}
+          <text x="20" y="45" fill="#0284c7" fontSize="11" fontWeight="700">1 Angula ≈ 1.763 cm</text>
+          <text x="20" y="61" fill="#64748b" fontSize="10">Lothal ivory rule base increment</text>
+
+          {/* Step 2 */}
+          <text x="190" y="45" fill="#b45309" fontSize="11" fontWeight="700">2 Angulas = 3.526 cm</text>
+          <text x="190" y="61" fill="#64748b" fontSize="10">Sphere diameter &amp; game tracks</text>
+
+          {/* Step 3 */}
+          <text x="370" y="45" fill="#15803d" fontSize="11" fontWeight="700">16 Angulas = 28.2 cm</text>
+          <text x="370" y="61" fill="#64748b" fontSize="10">Standard Harappan baked brick</text>
+        </g>
+
+        {/* Bottom Dual Panels */}
+        {/* Left: Gaming Board Track Matrix */}
+        <g transform="translate(25, 305)">
+          <rect x="0" y="0" width="255" height="105" rx="8" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1.2" />
+          <text x="14" y="20" fill="#78350f" fontSize="11.5" fontWeight="800">
+            🎲 Calibrated Gaming Pavements
+          </text>
+          <text x="14" y="38" fill="#334155" fontSize="10.5" fontWeight="600">
+            2-Angula Track Width Clearance
+          </text>
+          <text x="14" y="55" fill="#64748b" fontSize="9.5">
+            Pavements at Mohenjo-daro &amp; Lothal
+          </text>
+          <text x="14" y="70" fill="#64748b" fontSize="9.5">
+            contain incised tracks custom-sized for
+          </text>
+          <text x="14" y="85" fill="#64748b" fontSize="9.5">
+            3.5 cm spheres to roll without spilling.
+          </text>
+        </g>
+
+        {/* Right: Binary Weight Nexus */}
+        <g transform="translate(300, 305)">
+          <rect x="0" y="0" width="255" height="105" rx="8" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1.2" />
+          <text x="14" y="20" fill="#15803d" fontSize="11.5" fontWeight="800">
+            ⚖️ Binary Chert Weight Progression
+          </text>
+          <text x="14" y="38" fill="#334155" fontSize="10.5" fontWeight="600">
+            Ratio 1 : 2 : 4 : 8 : 16 : 32 : 64
+          </text>
+          <text x="14" y="55" fill="#64748b" fontSize="9.5">
+            Base Ratio 16 = 13.63 g (16 Annas = ₹1).
+          </text>
+          <text x="14" y="70" fill="#64748b" fontSize="9.5">
+            Fired sphere volume V = ⁴⁄₃πr³ locked
+          </text>
+          <text x="14" y="85" fill="#64748b" fontSize="9.5">
+            linear width to verified market mass.
+          </text>
+        </g>
+      </svg>
+    </Panel>
+  );
+}
+
 const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
   'sulba-148-rectangle': SulbaRectangle,
   'dhanurveda-five-sthanas': DhanurvedaSthanas,
@@ -730,6 +903,7 @@ const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
   'bhuta-sankhya-reversal': BhutaReversal,
   'siksha-five-places': SikshaFivePlaces,
   'terracotta-matrix-whorl': TerracottaMatrixWhorl,
+  'spheres-of-certainty-matrix': SpheresOfCertaintyMatrix,
   'vedic-four-pillars': VedicFourPillars,
 };
 

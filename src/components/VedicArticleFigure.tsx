@@ -2035,6 +2035,7 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
     case 'bhuta-sankhya-reversal':
     case 'siksha-five-places':
     case 'terracotta-matrix-whorl':
+    case 'spheres-of-certainty-matrix':
     case 'vedic-four-pillars':
       return <ArticleSchematic id={id} />;
     default:
