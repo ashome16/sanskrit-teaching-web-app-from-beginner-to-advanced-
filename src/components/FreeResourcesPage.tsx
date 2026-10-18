@@ -8,7 +8,6 @@ import {
   type ResourceItem,
   type LiveStatus,
 } from '../data/resourcesData';
-import { downloadCalendarEvent, downloadResourceDocument } from '../utils/contentDownload';
 import BodhiTipCallout from './BodhiTipCallout';
 import { PosterLightbox } from './PosterLightbox';
 import '../styles/philosophy.css';
@@ -367,8 +366,6 @@ type MainTab = 'feed' | 'vault' | 'library';
 
 const getStatusBadgeStyle = (status: LiveStatus) => {
   switch (status) {
-    case 'live':
-      return { bg: '#fee2e2', color: '#dc2626', border: '#fca5a5' };
     case 'open':
       return { bg: '#fef3c7', color: '#b45309', border: '#fcd34d' };
     case 'new':
@@ -397,20 +394,8 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [tickerIndex, setTickerIndex] = useState(0);
   const [selectedItemModal, setSelectedItemModal] = useState<ResourceItem | null>(null);
-  const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
-
-  const [submitForm, setSubmitForm] = useState({
-    title: '',
-    category: 'events',
-    organizer: '',
-    date: '',
-    mode: 'Online (Zoom / Meet)',
-    description: '',
-    contactEmail: '',
-  });
 
   // Rotate breaking ticker every 5.5 seconds
   useEffect(() => {
@@ -420,17 +405,16 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
     return () => clearInterval(timer);
   }, []);
 
-  // Esc closes the event-details and submit-event dialogs (the poster viewer handles its own Esc).
+  // Esc closes the details dialog (the poster viewer handles its own Esc).
   useEffect(() => {
-    if (!selectedItemModal && !isSubmitModalOpen) return undefined;
+    if (!selectedItemModal) return undefined;
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== 'Escape') return;
       setSelectedItemModal(null);
-      setIsSubmitModalOpen(false);
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [selectedItemModal, isSubmitModalOpen]);
+  }, [selectedItemModal]);
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -448,31 +432,14 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
     }
   };
 
-  const handleAddToCalendar = (item: ResourceItem) => {
-    const desc = `${item.summary}\n\nOrganizer: ${item.organizer}\nKey Highlights:\n- ${item.highlights.join('\n- ')}\n\nOfficial Link: ${item.actionLink || 'https://ednetlearn.in/resources'}`;
-    downloadCalendarEvent(item.title, desc, item.mode || 'Online · EdNet Learn');
-    showToast(`📅 Calendar event (.ics) downloaded for "${item.title}"!`);
-  };
-
   const handleQuickDownload = (res: QuickDownloadResource) => {
-    if (res.id === 'qd-vedic-maths-sutras') {
-      const a = document.createElement('a');
-      a.href = '/vedic-sutras-poster-v3.png';
-      a.download = 'EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      showToast('📥 16 Foundational Sutras Poster downloaded!');
-      return;
-    }
-    downloadResourceDocument(
-      res.title,
-      res.titleSa,
-      res.category,
-      `<p>${res.description}</p><p><strong>Format:</strong> ${res.format} · <strong>Size:</strong> ${res.fileSize} · <strong>Tag:</strong> ${res.tag}</p>`,
-      res.downloadFilename
-    );
-    showToast(`📥 Solved guide downloaded: "${res.title}"`);
+    const a = document.createElement('a');
+    a.href = `/downloads/${res.downloadFilename}`;
+    a.download = res.downloadFilename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    showToast(`📥 Solved guide downloaded: "${res.title}" (${res.fileSize})`);
   };
 
   // Filter feed items based on category and live search query
@@ -492,26 +459,6 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
       return matchTitle || matchSa || matchSummary || matchOrg || matchHighlights;
     });
   }, [selectedCategory, searchQuery]);
-
-  const handleSubmitEvent = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!submitForm.title || !submitForm.organizer) return;
-    setSubmitSuccess(true);
-    setTimeout(() => {
-      setSubmitSuccess(false);
-      setIsSubmitModalOpen(false);
-      setSubmitForm({
-        title: '',
-        category: 'events',
-        organizer: '',
-        date: '',
-        mode: 'Online (Zoom / Meet)',
-        description: '',
-        contactEmail: '',
-      });
-      showToast('🎉 Thank you! Your Sanskrit event was submitted for review.');
-    }, 1800);
-  };
 
   return (
     <article className="philosophy-page free-resources-page resources-page" id="free-resources-page" lang="en">
@@ -548,12 +495,12 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
             )}
           </div>
 
-          <span className="philosophy-kicker">Live News, Events &amp; Library · साधनानि</span>
+          <span className="philosophy-kicker">Academic Updates, Study Vault &amp; Library · साधनानि</span>
           <h1 className="philosophy-title">
-            Sanskrit Resources &amp; Live Events Feed · <span lang="sa">संस्कृत-वार्ताः साधनानि च</span>
+            Sanskrit Resources &amp; Study Vault · <span lang="sa">संस्कृत-वार्ताः साधनानि च</span>
           </h1>
           <p className="philosophy-secondary">
-            CBSE circulars, National Sanskrit Olympiads, weekly shloka webinars, study vaults and hand-curated learning libraries
+            CBSE circulars, National Sanskrit Olympiads, academic announcements, downloadable study guides, and hand-curated learning libraries
           </p>
 
           {/* Start here: beginner's roadmap */}
@@ -575,15 +522,6 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
 
           {/* Quick Action CTA Pill Bar */}
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginTop: '1.25rem' }}>
-            <button
-              type="button"
-              className="resources-submit-cta-btn"
-              onClick={() => setIsSubmitModalOpen(true)}
-              title="Submit your school's Sanskrit event or notice"
-            >
-              <span>📢</span>
-              <span>Submit School Event / Notice</span>
-            </button>
             {onOpenQuiz && (
               <button
                 type="button"
@@ -611,7 +549,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                 type="button"
                 className="resources-hero-aux-btn"
                 onClick={onOpenRegister}
-                title="Register for full Gurukul live access and premium study vault"
+                title="Register for full Gurukul access and premium study vault"
               >
                 <span>⭐</span>
                 <span>Join Gurukul</span>
@@ -621,10 +559,10 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
         </header>
 
         {/* Live Breaking News Ticker */}
-        <div className="resources-ticker-wrap" role="region" aria-label="Live Sanskrit News Ticker">
+        <div className="resources-ticker-wrap" role="region" aria-label="Sanskrit News &amp; Updates Ticker">
           <div className="resources-ticker-pill">
             <span className="resources-ticker-dot" />
-            <span>Live Updates</span>
+            <span>Latest Updates</span>
           </div>
           <div className="resources-ticker-content" title={LIVE_TICKER_ITEMS[tickerIndex]}>
             {LIVE_TICKER_ITEMS[tickerIndex]}
@@ -638,7 +576,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
           mood="scholar"
         >
           <p>
-            Welcome to the <strong>Gurukul Live Feed &amp; Resources Hub</strong>! Whether preparing for CBSE Class 7/8 exams, joining the <em>National Sanskrit Olympiad 2026</em>, or exploring classical dictionaries, sync upcoming dates directly to your calendar or download 1-click printable revision sheets below.
+            Welcome to the <strong>Sanskrit Resources Hub &amp; Study Vault</strong>! Whether preparing for CBSE Class 7/8 exams, joining the <em>National Sanskrit Olympiad 2026</em>, or exploring classical dictionaries, access official circulars and download 1-click printable revision sheets below.
           </p>
         </BodhiTipCallout>
 
@@ -712,8 +650,8 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
               gap: '0.45rem',
             }}
           >
-            <span>🔴</span>
-            <span>Live News &amp; Events Feed</span>
+            <span>📰</span>
+            <span>Academic Updates &amp; News</span>
             <span style={{ fontSize: '0.75rem', background: '#fef3c7', padding: '0.1rem 0.45rem', borderRadius: '999px', color: '#92400e' }}>
               {RESOURCE_ITEMS.length}
             </span>
@@ -780,14 +718,14 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
           </button>
         </div>
 
-        {/* TAB 1: LIVE NEWS & EVENTS FEED */}
+        {/* TAB 1: ACADEMIC UPDATES & NEWS FEED */}
         {activeTab === 'feed' && (
           <section aria-labelledby="live-feed-heading">
-            <h2 id="live-feed-heading" className="free-resources-sr">Live News &amp; Events Feed</h2>
+            <h2 id="live-feed-heading" className="free-resources-sr">Academic Updates &amp; News Feed</h2>
             
             {/* Filter Pills and Live Search Box */}
             <div className="resources-filters-bar">
-              <div className="resources-filter-pills" role="radiogroup" aria-label="Filter events by category">
+              <div className="resources-filter-pills" role="radiogroup" aria-label="Filter updates by category">
                 <button
                   type="button"
                   className={`resources-filter-btn${selectedCategory === 'all' ? ' active' : ''}`}
@@ -801,13 +739,6 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                   onClick={() => setSelectedCategory('news')}
                 >
                   📢 News &amp; Circulars
-                </button>
-                <button
-                  type="button"
-                  className={`resources-filter-btn${selectedCategory === 'events' ? ' active' : ''}`}
-                  onClick={() => setSelectedCategory('events')}
-                >
-                  🗓️ Live Events &amp; Webinars
                 </button>
                 <button
                   type="button"
@@ -830,10 +761,10 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                 <input
                   type="search"
                   className="resources-search-input"
-                  placeholder="Filter news, events, circulars, webinars…"
+                  placeholder="Filter news, circulars, competitions, guides…"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  aria-label="Filter news and events"
+                  aria-label="Filter news and updates"
                 />
                 {searchQuery && (
                   <button
@@ -858,8 +789,6 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
             <div className="resources-feed-grid">
               {filteredFeedItems.map((item) => {
                 const badgeStyle = getStatusBadgeStyle(item.status);
-                const isCalendarSupported = item.category === 'events' || item.category === 'competitions';
-
                 return (
                   <article key={item.id} className="resource-feed-card" id={`item-${item.id}`}>
                     <div className="resource-card-header">
@@ -900,7 +829,17 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                     </div>
 
                     <div className="resource-card-footer">
-                      {item.actionLink ? (
+                      {item.actionType === 'download' && item.downloadFilename ? (
+                        <a
+                          href={`/downloads/${item.downloadFilename}`}
+                          download={item.downloadFilename}
+                          className="resource-action-primary-btn"
+                          onClick={() => showToast(`📥 Downloading "${item.title}"...`)}
+                        >
+                          <span>{item.actionLabel || 'Download PDF'}</span>
+                          <span aria-hidden="true">📥</span>
+                        </a>
+                      ) : item.actionLink ? (
                         <a
                           href={item.actionLink}
                           target="_blank"
@@ -922,17 +861,6 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                       )}
 
                       <div className="resource-card-aux-actions">
-                        {isCalendarSupported && (
-                          <button
-                            type="button"
-                            className="resource-action-icon-btn"
-                            onClick={() => handleAddToCalendar(item)}
-                            title="Add to Calendar (.ics)"
-                          >
-                            <span aria-hidden="true">📅</span>
-                            <span>Calendar</span>
-                          </button>
-                        )}
                         <button
                           type="button"
                           className="resource-action-icon-btn"
@@ -1212,15 +1140,7 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
 
         <footer className="free-resources-footnote" style={{ marginTop: '3rem', borderTop: '1px solid #ebdcc5', paddingTop: '1.5rem' }}>
           <p>
-            Suggestions or corrections? If you maintain a high-quality free Sanskrit resource or notice a broken link,{' '}
-            <button
-              type="button"
-              className="resources-crumb-text-btn"
-              style={{ background: 'none', border: 'none', color: '#9a3423', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline' }}
-              onClick={() => setIsSubmitModalOpen(true)}
-            >
-              let us know via our event notice submission desk
-            </button>.
+            Suggestions or corrections? If you maintain a high-quality free Sanskrit resource or notice a broken link, all study guides and reference charts are updated termly according to CBSE academic guidelines.
           </p>
         </footer>
       </div>
@@ -1287,16 +1207,6 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
             </div>
 
             <div className="resources-modal-actions">
-              {(selectedItemModal.category === 'events' || selectedItemModal.category === 'competitions') && (
-                <button
-                  type="button"
-                  className="resource-action-icon-btn"
-                  onClick={() => handleAddToCalendar(selectedItemModal)}
-                >
-                  <span>📅</span>
-                  <span>Add to Calendar (.ics)</span>
-                </button>
-              )}
               <button
                 type="button"
                 className="resource-action-icon-btn"
@@ -1305,7 +1215,17 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                 <span>🔗</span>
                 <span>Copy Link</span>
               </button>
-              {selectedItemModal.actionLink && (
+              {selectedItemModal.actionType === 'download' && selectedItemModal.downloadFilename ? (
+                <a
+                  href={`/downloads/${selectedItemModal.downloadFilename}`}
+                  download={selectedItemModal.downloadFilename}
+                  className="resource-action-primary-btn"
+                  onClick={() => showToast(`📥 Downloading "${selectedItemModal.title}"...`)}
+                >
+                  <span>{selectedItemModal.actionLabel || 'Download PDF'}</span>
+                  <span>📥</span>
+                </a>
+              ) : selectedItemModal.actionLink ? (
                 <a
                   href={selectedItemModal.actionLink}
                   target="_blank"
@@ -1315,137 +1235,8 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                   <span>{selectedItemModal.actionLabel || 'Visit Official Link'}</span>
                   <span>↗</span>
                 </a>
-              )}
+              ) : null}
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* SUBMISSION MODAL FOR SCHOOLS AND TEACHERS */}
-      {isSubmitModalOpen && (
-        <div
-          className="resources-modal-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-submit-title"
-          onClick={() => setIsSubmitModalOpen(false)}
-        >
-          <div className="resources-modal-card" onClick={(e) => e.stopPropagation()}>
-            <div className="resources-modal-header">
-              <span className="resource-card-badge" style={{ background: '#fef3c7', color: '#92400e' }}>
-                📢 Sanskrit Community Notice Desk
-              </span>
-              <button
-                type="button"
-                className="resources-modal-close-btn"
-                onClick={() => setIsSubmitModalOpen(false)}
-                aria-label="Close form modal"
-              >
-                ✕
-              </button>
-            </div>
-
-            <h3 id="modal-submit-title" className="resources-modal-title">
-              Submit Your School Event or Sanskrit Announcement
-              <span className="resource-card-title-sa">कार्यक्रम-विज्ञापन-प्रस्तावः</span>
-            </h3>
-
-            {submitSuccess ? (
-              <div style={{ textAlign: 'center', padding: '2rem 1rem', color: '#065f46' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🎉</div>
-                <h4 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem' }}>Event Submitted Successfully!</h4>
-                <p style={{ margin: 0, fontSize: '0.92rem', color: '#047857' }}>
-                  Our Gurukul editorial team will review and publish your notice on the live feed.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmitEvent} className="resources-submit-form">
-                <div className="resources-form-grid">
-                  <div className="resources-form-field">
-                    <label htmlFor="ev-title">Event Title *</label>
-                    <input
-                      id="ev-title"
-                      type="text"
-                      required
-                      placeholder="e.g., Inter-School Sanskrit Shloka Recitation 2026"
-                      value={submitForm.title}
-                      onChange={(e) => setSubmitForm({ ...submitForm, title: e.target.value })}
-                    />
-                  </div>
-
-                  <div className="resources-form-field">
-                    <label htmlFor="ev-cat">Category *</label>
-                    <select
-                      id="ev-cat"
-                      value={submitForm.category}
-                      onChange={(e) => setSubmitForm({ ...submitForm, category: e.target.value })}
-                    >
-                      <option value="events">Live Event / Webinar</option>
-                      <option value="competitions">Competition / Olympiad</option>
-                      <option value="news">Academic Notice / Circular</option>
-                    </select>
-                  </div>
-
-                  <div className="resources-form-field">
-                    <label htmlFor="ev-org">Organizing School / Institution *</label>
-                    <input
-                      id="ev-org"
-                      type="text"
-                      required
-                      placeholder="e.g., Kendriya Vidyalaya / Sanskrit Bharati"
-                      value={submitForm.organizer}
-                      onChange={(e) => setSubmitForm({ ...submitForm, organizer: e.target.value })}
-                    />
-                  </div>
-
-                  <div className="resources-form-field">
-                    <label htmlFor="ev-date">Date &amp; Time</label>
-                    <input
-                      id="ev-date"
-                      type="text"
-                      placeholder="e.g., October 12, 2026 · 10:00 AM IST"
-                      value={submitForm.date}
-                      onChange={(e) => setSubmitForm({ ...submitForm, date: e.target.value })}
-                    />
-                  </div>
-                </div>
-
-                <div className="resources-form-field" style={{ marginTop: '0.75rem' }}>
-                  <label htmlFor="ev-desc">Event Summary &amp; Eligibility</label>
-                  <textarea
-                    id="ev-desc"
-                    rows={3}
-                    placeholder="Brief description of the event, eligibility grades (e.g. Classes 6–10), and instructions..."
-                    value={submitForm.description}
-                    onChange={(e) => setSubmitForm({ ...submitForm, description: e.target.value })}
-                  />
-                </div>
-
-                <div className="resources-form-field" style={{ marginTop: '0.75rem' }}>
-                  <label htmlFor="ev-email">Contact Email (for verification)</label>
-                  <input
-                    id="ev-email"
-                    type="email"
-                    placeholder="teacher@school.edu.in"
-                    value={submitForm.contactEmail}
-                    onChange={(e) => setSubmitForm({ ...submitForm, contactEmail: e.target.value })}
-                  />
-                </div>
-
-                <div className="resources-form-actions">
-                  <button
-                    type="button"
-                    className="resources-form-cancel-btn"
-                    onClick={() => setIsSubmitModalOpen(false)}
-                  >
-                    Cancel
-                  </button>
-                  <button type="submit" className="resources-form-submit-btn">
-                    Submit Event Notice
-                  </button>
-                </div>
-              </form>
-            )}
           </div>
         </div>
       )}

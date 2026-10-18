@@ -762,7 +762,7 @@ const HomePage: React.FC<HomePageProps> = ({
               style={{ background: 'rgba(2, 132, 199, 0.08)', borderColor: 'rgba(2, 132, 199, 0.35)', color: '#0369a1' }}
               onClick={onOpenResources}
             >
-              🌐 साधनानि · News &amp; Events
+              🌐 साधनानि · Free Resources &amp; Vault
             </button>
           )}
         </div>

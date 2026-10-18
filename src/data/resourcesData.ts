@@ -1,12 +1,12 @@
-export type ResourceCategory = 'all' | 'news' | 'events' | 'competitions' | 'study_materials';
+export type ResourceCategory = 'all' | 'news' | 'competitions' | 'study_materials';
 
-export type LiveStatus = 'live' | 'upcoming' | 'open' | 'new' | 'featured';
+export type LiveStatus = 'upcoming' | 'open' | 'new' | 'featured';
 
 export interface ResourceItem {
   id: string;
   title: string;
   titleSa: string;
-  category: 'news' | 'events' | 'competitions' | 'study_materials';
+  category: 'news' | 'competitions' | 'study_materials';
   date: string;
   timestamp: string;
   status: LiveStatus;
@@ -16,7 +16,7 @@ export interface ResourceItem {
   summary: string;
   highlights: string[];
   actionLabel: string;
-  actionType: 'external' | 'download' | 'modal' | 'calendar';
+  actionType: 'external' | 'download' | 'modal';
   actionLink?: string;
   downloadFilename?: string;
   isBreaking?: boolean;
@@ -38,7 +38,7 @@ export interface QuickDownloadResource {
 export const LIVE_TICKER_ITEMS: string[] = [
   '🏆 National Sanskrit Olympiad 2026: Free registrations now open for Classes 6–10 school students!',
   '📢 CBSE Circular: Class 7 & 8 Sanskrit Deepakam formative assessment guidelines released.',
-  '🗓️ Live Webinar: Master 16 Vedic Mathematics Sutras with Acharya on Sunday at 10:00 AM IST.',
+  '📘 CBSE Mock Exam Kit: Complete 80-Mark Model Question Paper with solutions available for download.',
   '📥 New Download: Complete 100 Essential Shabdroop & Dhaturoop Cheat Sheet (PDF) now available.',
   '⚡ Pan-India Shloka Recitation Competition 2026 announced with cash prizes & CSU certification.',
 ];
@@ -68,26 +68,28 @@ export const RESOURCE_ITEMS: ResourceItem[] = [
     isBreaking: true,
   },
   {
-    id: 'live-shloka-masterclass-sunday',
-    title: 'Weekly Live Shloka Chanting & Mouth Gym Masterclass',
-    titleSa: 'साप्ताहिक-श्लोकोच्चारणं मुख-व्यायाम-शाला च',
-    category: 'events',
-    date: 'Every Sunday · 10:00 AM IST',
-    timestamp: '2026-09-27T10:00:00+05:30',
-    status: 'live',
-    statusLabel: '🔴 Weekly Live Series',
-    mode: 'Interactive Live Zoom Session',
-    organizer: 'EdNet Learn Gurukul Acharyas',
+    id: 'cbse-mock-papers-practice-kit',
+    title: 'Pre-Term CBSE Sanskrit Simulated Mock Exam & Solutions Kit',
+    titleSa: 'सीबीएसई-सत्रपूर्व-परीक्षार्थम् अभ्यास-परीक्षा-प्रपत्रम् उत्तराणि च',
+    category: 'study_materials',
+    date: 'Updated Oct 2026',
+    timestamp: '2026-10-15T10:00:00+05:30',
+    status: 'featured',
+    statusLabel: '📥 Solved Mock Paper',
+    mode: 'Printable Academic PDF',
+    organizer: 'EdNet Learn Academic Council',
     summary:
-      'Join our master instructors and mascot Bodhi for a live, interactive vocal recitation session. Learn pure Devanagari pronunciation, Vedic accents (Udātta, Anudātta, Svarita), and Shiva Sutra vocal gymnastics.',
+      'A complete 80-mark CBSE blueprint mock paper followed by an item-by-item marking scheme and model solutions prepared by senior Sanskrit educators.',
     highlights: [
-      'Live interactive video practice with real-time teacher feedback.',
-      'Step-by-step recitation of Bhagavad Gita Chapter 2 & 12 verses.',
-      'Kids learn anatomical mouth placement (कण्ठ, तालु, मूर्धा, दन्त, ओष्ठ).',
-      'Open to all registered EdNet Learn students and parents.',
+      'Master tricky "Kim-Family" question words (कस्य, कस्मै, कस्मात्).',
+      'Avoid common student errors in Sandhi splitting and Vibhakti declension tables.',
+      'Practice sentence translation tricks from English/Hindi to Sanskrit without losing marks.',
+      'Comprehensive downloadable PDF marking scheme with step-by-step solutions.',
     ],
-    actionLabel: 'Join Live Zoom Session',
-    actionType: 'modal',
+    actionLabel: 'Download Mock Exam Kit (PDF)',
+    actionType: 'download',
+    downloadFilename: 'CBSE_Sanskrit_Blueprint_Mock_Exam_Kit.pdf',
+    isBreaking: true,
   },
   {
     id: 'cbse-deepakam-exam-pattern-circular',
@@ -110,7 +112,6 @@ export const RESOURCE_ITEMS: ResourceItem[] = [
     ],
     actionLabel: 'Read Full CBSE Guidelines',
     actionType: 'modal',
-    isBreaking: true,
   },
   {
     id: 'vedic-maths-speed-championship',
@@ -121,14 +122,14 @@ export const RESOURCE_ITEMS: ResourceItem[] = [
     timestamp: '2026-11-08T11:00:00+05:30',
     status: 'upcoming',
     statusLabel: '🗓️ Upcoming Championship',
-    mode: 'Live Digital Speed Arena',
+    mode: 'Digital Speed Arena',
     organizer: 'National Vedic Mathematics Forum & EdNet',
     summary:
       'Test your mental agility in rapid arithmetic, squaring, cross-multiplication, and division using ancient Vedic mathematics sutras (एकाधिकेन पूर्वेण, निखिलं नवतश्चरमं दशतः).',
     highlights: [
       'Age categories: Junior (Classes 5–7) and Senior (Classes 8–10).',
       '30 mental arithmetic challenges to be solved in under 15 minutes.',
-      'Instant AI-powered speed scoring and leaderboard generation.',
+      'Instant speed scoring and leaderboard generation.',
       'National trophies, certificates, and exciting STEM rewards for winners.',
     ],
     actionLabel: 'Enter Competition Arena',
@@ -138,45 +139,46 @@ export const RESOURCE_ITEMS: ResourceItem[] = [
     id: 'bharatiya-bhasha-utsav-2026',
     title: 'Bharatiya Bhasha Utsav: Inter-School Sanskrit Drama & Antakshari',
     titleSa: 'भारतीय-भाषा-उत्सवः — संस्कृत-नाट्यं श्लोकान्त्याक्षरी च',
-    category: 'events',
+    category: 'competitions',
     date: 'Dec 11, 2026',
     timestamp: '2026-12-11T10:00:00+05:30',
     status: 'upcoming',
-    statusLabel: '🗓️ National Festival',
-    mode: 'Hybrid (Online Video + Regional Centers)',
+    statusLabel: '🏆 National Festival',
+    mode: 'National Student Submissions',
     organizer: 'Ministry of Education & Shiksha Sanskriti',
     summary:
-      'Celebrating the annual national festival honoring classical Indian tongues. School teams present Sanskrit mini-skits, humorous dialogues, Subhashita recitation, and traditional Shloka Antakshari.',
+      'Celebrating the annual national festival honoring classical Indian tongues. School teams submit Sanskrit mini-skits, humorous dialogues, Subhashita recitation, and traditional Shloka Antakshari entries.',
     highlights: [
-      'Schools may submit 5-minute video recordings of student Sanskrit plays.',
-      'Live Antakshari knockout rounds broadcasted online.',
+      'Schools submit recorded 5-minute video presentations of student Sanskrit plays.',
       'Encourages conversational Sanskrit (सरल-संस्कृत-सम्भाषणम्) among school youth.',
-      'Special commendation awards for creative costumes and pronunciation purity.',
+      'Pan-India evaluation by scholars from Central Sanskrit University.',
+      'National commendation awards and certificates for creative presentation.',
     ],
-    actionLabel: 'Submit School Entry',
+    actionLabel: 'View Competition Guidelines',
     actionType: 'modal',
   },
   {
-    id: 'cbse-mock-drills-and-doubt-clinic',
-    title: 'Pre-Term CBSE Sanskrit Simulated Mock Exam & Live Doubt Clinic',
-    titleSa: 'सीबीएसई-सत्रपूर्व-परीक्षार्थम् अभ्यास-परीक्षा संशय-निवारणं च',
-    category: 'events',
-    date: 'Nov 22, 2026 · 04:00 PM IST',
-    timestamp: '2026-11-22T16:00:00+05:30',
-    status: 'upcoming',
-    statusLabel: '🗓️ Live Exam Prep',
-    mode: 'Online Interactive Session',
-    organizer: 'EdNet Learn Academic Council',
+    id: 'paninian-shiva-sutras-phonetic-kit',
+    title: 'Pāṇinian Shiva Sutras & Anatomical Mouth Articulation Map',
+    titleSa: 'माहेश्वर-सूत्राणि मुख-स्थान-चित्रं च',
+    category: 'study_materials',
+    date: 'Updated Sep 2026',
+    timestamp: '2026-09-21T09:00:00+05:30',
+    status: 'featured',
+    statusLabel: '📥 Phonetics Chart',
+    mode: 'Printable Color Reference Chart',
+    organizer: 'EdNet Learn Gurukul Faculty',
     summary:
-      'An intensive 2-hour pre-exam preparatory session. Students take a timed 80-mark CBSE blueprint mock paper followed by an item-by-item walkthrough by senior Sanskrit examiners.',
+      'Master the 14 Shiva Sutras and pure vocal articulation places (कण्ठ, तालु, मूर्धा, दन्त, ओष्ठ) with Pāṇinian pratyāhāra reference matrix and vocal gymnastics guide.',
     highlights: [
-      'Learn how to crack the tricky "Kim-Family" question words (कस्य, कस्मै, कस्मात्).',
-      'Avoid common student errors in Sandhi splitting and Vibhakti declension tables.',
-      'Master sentence translation tricks from English/Hindi to Sanskrit without losing marks.',
-      'Comprehensive downloadable PDF marking scheme provided to all attendees.',
+      'Anatomical mouth diagram showing vocal placement from throat to lips.',
+      'Step-by-step breakdown of all 14 Maheshwara Sutras and pratyāhāra formation.',
+      'Clear guide to Svaras, Udātta, Anudātta, and Svarita accents.',
+      'Print-ready high-resolution reference sheet for students and teachers.',
     ],
-    actionLabel: 'Book Free Seat',
-    actionType: 'modal',
+    actionLabel: 'Download Phonetics Map (PDF)',
+    actionType: 'download',
+    downloadFilename: 'Paninian_Shiva_Sutras_Phonetic_Mouth_Map.pdf',
   },
   {
     id: 'nep-2020-experiential-sanskrit-launch',
@@ -278,7 +280,7 @@ export const QUICK_DOWNLOAD_RESOURCES: QuickDownloadResource[] = [
     titleSa: 'दीपकम-प्रश्नकोशः (कक्षा ७)',
     category: 'CBSE Syllabus',
     format: 'PDF',
-    fileSize: '3.4 MB',
+    fileSize: '567 KB',
     description: 'Comprehensive 15-chapter master question bank with verse anvaya, word meanings, and answers.',
     downloadFilename: 'CBSE_Class7_Sanskrit_Deepakam_Master_Question_Bank.pdf',
     icon: '📘',
@@ -290,7 +292,7 @@ export const QUICK_DOWNLOAD_RESOURCES: QuickDownloadResource[] = [
     titleSa: 'शब्दरूप-धातुरूप-सारणी',
     category: 'Grammar Essentials',
     format: 'PDF',
-    fileSize: '1.8 MB',
+    fileSize: '388 KB',
     description: 'Color-coded declension paradigms (बालक, लता, फल, मुनि, नदी, अस्मद्) & 5 CBSE Lakāras.',
     downloadFilename: 'Sanskrit_Shabdroop_Dhaturoop_Master_Cheat_Sheet.pdf',
     icon: '📊',
@@ -302,7 +304,7 @@ export const QUICK_DOWNLOAD_RESOURCES: QuickDownloadResource[] = [
     titleSa: 'षोडश-वैदिक-गणित-सूत्राणि',
     category: 'Mental Math',
     format: 'PDF',
-    fileSize: '2.6 MB',
+    fileSize: '1.4 MB',
     description: 'Visual step-by-step calculation formulas for rapid squaring, multiplication, and mental arithmetic.',
     downloadFilename: '16_Vedic_Maths_Sutras_Wall_Reference_Poster.pdf',
     icon: '⚡',
@@ -314,7 +316,7 @@ export const QUICK_DOWNLOAD_RESOURCES: QuickDownloadResource[] = [
     titleSa: 'माहेश्वर-सूत्राणि मुख-स्थान-चित्रम्',
     category: 'Phonetics & IPA',
     format: 'PDF',
-    fileSize: '2.1 MB',
+    fileSize: '522 KB',
     description: 'Anatomical throat-to-lips vocal diagram and Pāṇinian pratyāhāra reference matrix.',
     downloadFilename: 'Paninian_Shiva_Sutras_Phonetic_Mouth_Map.pdf',
     icon: '🧩',

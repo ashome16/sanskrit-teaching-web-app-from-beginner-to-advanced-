@@ -1062,11 +1062,11 @@ const Dashboard: React.FC = () => {
               type="button"
               className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'resources' ? ' active' : ''}`}
               onClick={() => navigateToView('resources')}
-              title="Open Sanskrit Resources, Live News & Events Feed (साधनानि)"
+              title="Open Sanskrit Resources &amp; Study Vault (साधनानि)"
             >
               <img src="/nav/nav-resources.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-primary">साधनानि</span>
-              <span className="dashboard-nav-secondary">Live &amp; Events</span>
+              <span className="dashboard-nav-secondary">Resources</span>
             </button>
             <button
               type="button"
