@@ -647,8 +647,8 @@ ${bodyHtml}
       setActiveTab('solvers');
       setActiveSolver(key);
       scrollId = 'vedic-solver-layout';
-    } else if (clean.startsWith('article-')) {
-      const key = clean.slice(8);
+    } else if (clean.startsWith('article-') || VEDIC_ARTICLES.some((a) => a.slug === clean || a.id === clean)) {
+      const key = clean.startsWith('article-') ? clean.slice(8) : clean;
       const article = VEDIC_ARTICLES.find((a) => a.slug === key || a.id === key);
       if (!article) return false;
       setActiveTab('articles');
