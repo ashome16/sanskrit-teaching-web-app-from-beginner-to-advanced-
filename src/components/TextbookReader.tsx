@@ -41,7 +41,7 @@ interface TextbookReaderProps {
   onJumpToSentence: (index: number) => void;
   isFirstSentence: boolean;
   isLastSentence: boolean;
-  onOpenQuiz?: () => void;
+  onOpenQuiz?: (categoryOrAnchor?: string) => void;
   onOpenWorksheets?: (category?: string) => void;
   onOpenPuzzle?: () => void;
   onOpenVoiceSettings?: () => void;
@@ -491,6 +491,126 @@ const renderHighlightedMeaning = (
   );
 };
 
+interface PhysicalPageBreakdown {
+  bookName: string;
+  totalRange: string;
+  textPages: string;
+  glossaryPages: string;
+  exercisePages: string;
+}
+
+const DEEPAKAM_CLASS7_PAGES: Record<string, PhysicalPageBreakdown> = {
+  gsde101: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '1–7', textPages: '1–3', glossaryPages: '4', exercisePages: '5–7' },
+  gsde102: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '15–27', textPages: '15–20', glossaryPages: '21', exercisePages: '22–27' },
+  gsde103: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '29–38', textPages: '29–31', glossaryPages: '32', exercisePages: '33–38' },
+  gsde104: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '39–45', textPages: '39–41', glossaryPages: '42', exercisePages: '43–45' },
+  gsde105: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '47–56', textPages: '47–50', glossaryPages: '51', exercisePages: '52–56' },
+  gsde106: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '57–70', textPages: '57–63', glossaryPages: '64', exercisePages: '65–70' },
+  gsde107: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '71–84', textPages: '71–75', glossaryPages: '76', exercisePages: '77–84' },
+  gsde108: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '85–95', textPages: '85–90', glossaryPages: '91', exercisePages: '92–95' },
+  gsde109: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '96–103', textPages: '96–98', glossaryPages: '99', exercisePages: '100–103' },
+  gsde110: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '104–114', textPages: '104–107', glossaryPages: '108', exercisePages: '109–114' },
+  gsde111: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '115–126', textPages: '115–119', glossaryPages: '120', exercisePages: '121–126' },
+  gsde112: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '127–136', textPages: '127–130', glossaryPages: '131', exercisePages: '132–136' },
+  gsde113: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '137–148', textPages: '137–148', glossaryPages: '144', exercisePages: '145–148' },
+  gsde114: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '149–158', textPages: '149–158', glossaryPages: '150', exercisePages: '151–158' },
+  gsde115: { bookName: 'NCERT Deepakam (Class 7)', totalRange: '159–170', textPages: '159–170', glossaryPages: '160', exercisePages: '161–170' },
+};
+
+const getPhysicalPageBreakdown = (lesson: Lesson | undefined): PhysicalPageBreakdown | null => {
+  if (!lesson) return null;
+  if (DEEPAKAM_CLASS7_PAGES[lesson.id]) {
+    return DEEPAKAM_CLASS7_PAGES[lesson.id];
+  }
+  if (lesson.page_numbers) {
+    const isGrade8 = lesson.id.startsWith('grade8');
+    const isGrade9 = lesson.id.startsWith('grade9');
+    const bookName = isGrade8
+      ? 'NCERT Ruchira / Sanskrit (Class 8)'
+      : isGrade9
+        ? 'NCERT Shemushi / Sanskrit (Class 9)'
+        : 'NCERT Sanskrit Textbook';
+    return {
+      bookName,
+      totalRange: lesson.page_numbers,
+      textPages: lesson.page_numbers,
+      glossaryPages: lesson.page_numbers,
+      exercisePages: lesson.page_numbers,
+    };
+  }
+  return null;
+};
+
+const getBlockPhysicalPage = (breakdown: PhysicalPageBreakdown | null, kind: string | undefined): string => {
+  if (!breakdown) return '';
+  if (kind?.startsWith('glossary')) {
+    return `Page ${breakdown.glossaryPages} · शब्दार्थाः (Word Meanings)`;
+  }
+  if (kind?.startsWith('exercise')) {
+    return `Page ${breakdown.exercisePages} · अभ्यास-समाधानम् (Exercise Solutions)`;
+  }
+  return `Page ${breakdown.textPages} · मूल-पाठः (Text Extract)`;
+};
+
+const CHAPTER_QUIZ_MAPPING: Record<string, string> = {
+  gsde101: 'cbse_deepakam',
+  gsde102: 'deep_ch2',
+  gsde103: 'deep_ch3',
+  gsde104: 'deep_ch4',
+  gsde105: 'deep_ch5',
+  gsde106: 'deep_ch6',
+  gsde107: 'deep_ch7',
+  gsde108: 'deep_ch8',
+  gsde109: 'deep_ch9',
+  gsde110: 'deep_ch10',
+  gsde111: 'deep_ch11',
+  gsde112: 'deep_ch12',
+  gsde113: 'deep_ch13',
+  gsde114: 'deep_ch14',
+  gsde115: 'deep_ch14',
+  grade8_ch1: 'grade8_ch1',
+  grade8_ch2: 'grade8_ch2',
+  grade8_ch3: 'grade8_ch3',
+  grade8_ch4: 'grade8_ch4',
+  grade9_ch1: 'grade9_ch1',
+  grade9_ch2: 'grade9_ch2',
+  grade9_ch3: 'grade9_ch3',
+  grade9_ch4: 'grade9_ch4',
+  grade9_ch5: 'grade9_ch5',
+  grade9_ch6: 'grade9_ch6',
+  grade9_ch7: 'grade9_ch7',
+  grade9_ch8: 'grade9_ch8',
+  grade9_ch9: 'grade9_ch9',
+  grade9_ch10: 'grade9_ch10',
+  grade9_ch11: 'grade9_ch11',
+  grade9_ch12: 'grade9_ch12',
+};
+
+const CHAPTER_WORKSHEET_MAPPING: Record<string, string> = {
+  gsde101: 'cbse_ch',
+  gsde102: 'deep_ch2',
+  gsde103: 'deep_ch3',
+  gsde104: 'cbse_ch',
+  gsde105: 'cbse_ch',
+  gsde106: 'cbse_ch',
+  gsde107: 'cbse_ch',
+  gsde108: 'deep_ch8',
+  gsde109: 'deep_ch9',
+  gsde110: 'deep_ch10',
+  gsde111: 'deep_ch11',
+  gsde112: 'deep_ch12',
+  gsde113: 'deep_ch13',
+  gsde114: 'deep_ch14',
+  gsde115: 'deep_ch14',
+};
+
+const getChapterPdfUrl = (lessonId: string): string => {
+  if (lessonId.startsWith('gsde')) {
+    return '/downloads/CBSE_Class7_Sanskrit_Deepakam_Master_Question_Bank.pdf';
+  }
+  return '/downloads/CBSE_Sanskrit_Blueprint_Mock_Exam_Kit.pdf';
+};
+
 const TextbookReader: React.FC<TextbookReaderProps> = ({
   lessons,
   activeLessonId,
@@ -517,6 +637,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const isGrade8Lesson = activeLessonId.startsWith('grade8_');
   const isGrade9Lesson = activeLessonId.startsWith('grade9_');
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
+  const pageBreakdown = getPhysicalPageBreakdown(activeLesson);
+  const currentChapterQuizCat = CHAPTER_QUIZ_MAPPING[activeLessonId] || 'cbse_deepakam';
+  const currentChapterWsCat = CHAPTER_WORKSHEET_MAPPING[activeLessonId] || 'cbse_ch';
+  const chapterPdfUrl = activeLesson?.pdf_guide_url || getChapterPdfUrl(activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
   const isNumbers = activeLessonId === 'numbers';
   const isGroupedLesson = isVarnamala || isNumbers || activeLessonId === 'barakhadi';
@@ -1332,7 +1456,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <button
                 type="button"
                 className="textbook-action-chip textbook-action-chip--quiz"
-                onClick={onOpenQuiz}
+                onClick={() => onOpenQuiz(currentChapterQuizCat)}
                 title="Go to Chapter Quizzes & MCQs"
               >
                 🎯 Quizzes
@@ -1350,6 +1474,63 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             )}
           </div>
         </div>
+
+        {/* Unified Resource Bundling & Physical Page Mapping Bar */}
+        {!isGroupedLesson && pageBreakdown && (
+          <div className="textbook-unified-resource-bar" role="region" aria-label="Physical textbook reference and learning resources">
+            <div className="textbook-page-mapping-pill" title={`${pageBreakdown.bookName} physical print pages`}>
+              <span className="page-pill-icon">📖</span>
+              <span><strong>{pageBreakdown.bookName}</strong>: Pages <strong>{pageBreakdown.totalRange}</strong></span>
+            </div>
+            <div className="textbook-chapter-tools">
+              {onOpenQuiz && (
+                <button
+                  type="button"
+                  className="chapter-tool-btn chapter-tool-btn--quiz"
+                  onClick={() => onOpenQuiz(currentChapterQuizCat)}
+                  title={`Launch 10-Question Interactive Quiz for ${activeLesson?.title || 'Chapter'}`}
+                >
+                  <span>🎯</span>
+                  <span>10-Q Quiz</span>
+                </button>
+              )}
+              {onOpenWorksheets && (
+                <button
+                  type="button"
+                  className="chapter-tool-btn chapter-tool-btn--ws"
+                  onClick={() => onOpenWorksheets(currentChapterWsCat)}
+                  title={`Printable Worksheets for ${activeLesson?.title || 'Chapter'}`}
+                >
+                  <span>📑</span>
+                  <span>Worksheets</span>
+                </button>
+              )}
+              {chapterPdfUrl && (
+                <a
+                  href={chapterPdfUrl}
+                  download
+                  className="chapter-tool-btn chapter-tool-btn--dl"
+                  title="Download Solved NCERT Deepakam Chapter PDF Guide"
+                >
+                  <span>📥</span>
+                  <span>Solved PDF</span>
+                </a>
+              )}
+              <a
+                href={`https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=${encodeURIComponent(
+                  activeLesson?.title?.split(' ')[0] || 'अ'
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="chapter-tool-btn chapter-tool-btn--dict"
+                title="Search word meanings in Koshashri Sanskrit-English Dictionary"
+              >
+                <span>🔍</span>
+                <span>Dictionary ↗</span>
+              </a>
+            </div>
+          </div>
+        )}
 
         {/* Quick Section Jump Chips */}
         {!isGroupedLesson && chipJumps.length > 1 && (
@@ -2271,6 +2452,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         </div>
       ) : (
         <div className="textbook-sentence-block">
+          {pageBreakdown && (
+            <div className="textbook-block-page-tag" title={`Refer to physical book: ${pageBreakdown.bookName}`}>
+              <span className="block-page-icon">📖</span>
+              <span className="block-page-book">{pageBreakdown.bookName}:</span>
+              <span className="block-page-number">{getBlockPhysicalPage(pageBreakdown, sentence.kind)}</span>
+            </div>
+          )}
           {(sentence.kind === 'exercise-header' || sentence.kind === 'exercise-qa' || sentence.kind === 'exercise-note') ? (
             <div className={`textbook-glossary-card textbook-exercise-card${sentence.kind === 'exercise-header' ? ' textbook-glossary-card--header' : ''}`}>
               {sentence.kind === 'exercise-header' ? (
@@ -2609,6 +2797,89 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           <button type="button" className="grade-guide-action-btn" onClick={onOpenCbseGuide}>
             📋 Open CBSE Sanskrit Exam Guide (Classes 7–10) ➔
           </button>
+        </div>
+      )}
+
+      {/* Chapter Practice & Resource Hub Card */}
+      {!isGroupedLesson && (
+        <div className="textbook-chapter-bundle-card" role="region" aria-label="Chapter Resources and Practice Hub">
+          <div className="chapter-bundle-header">
+            <span className="chapter-bundle-badge">Chapter Resource Hub</span>
+            <h3 className="chapter-bundle-title">📚 {activeLesson?.title || 'Chapter Practice & Resources'}</h3>
+            <p className="chapter-bundle-subtitle">
+              Master this chapter with interactive 10-question quizzes, printable worksheets, complete NCERT solutions, and authentic dictionary lookups.
+            </p>
+          </div>
+          <div className="chapter-bundle-grid">
+            <div className="chapter-bundle-item">
+              <span className="bundle-item-icon">🎯</span>
+              <div className="bundle-item-content">
+                <h4>10-Question Chapter Quiz</h4>
+                <p>Test comprehension with instant scoring, timer, and detailed answer explanations.</p>
+                {onOpenQuiz && (
+                  <button
+                    type="button"
+                    className="bundle-action-btn bundle-action-btn--quiz"
+                    onClick={() => onOpenQuiz(currentChapterQuizCat)}
+                  >
+                    Start 10-Q Quiz ➔
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div className="chapter-bundle-item">
+              <span className="bundle-item-icon">📑</span>
+              <div className="bundle-item-content">
+                <h4>Printable Worksheets</h4>
+                <p>Word meanings, Sandhi breakdowns, shabdroop fill-ins, and classroom tests.</p>
+                {onOpenWorksheets && (
+                  <button
+                    type="button"
+                    className="bundle-action-btn bundle-action-btn--ws"
+                    onClick={() => onOpenWorksheets(currentChapterWsCat)}
+                  >
+                    Open Worksheets ➔
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {chapterPdfUrl && (
+              <div className="chapter-bundle-item">
+                <span className="bundle-item-icon">📥</span>
+                <div className="bundle-item-content">
+                  <h4>NCERT Solved Study Guide</h4>
+                  <p>Curated 45-page question bank with verse translations and grammatical notes.</p>
+                  <a
+                    href={chapterPdfUrl}
+                    download
+                    className="bundle-action-btn bundle-action-btn--dl"
+                  >
+                    Download PDF Guide ⬇
+                  </a>
+                </div>
+              </div>
+            )}
+
+            <div className="chapter-bundle-item">
+              <span className="bundle-item-icon">🔍</span>
+              <div className="bundle-item-content">
+                <h4>Koshashri Sanskrit Dictionary</h4>
+                <p>Look up roots, dhātus, and lexical meanings in the authoritative lexicon.</p>
+                <a
+                  href={`https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=${encodeURIComponent(
+                    activeLesson?.title?.split(' ')[0] || 'अ'
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bundle-action-btn bundle-action-btn--dict"
+                >
+                  Explore Dictionary ↗
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       )}
 

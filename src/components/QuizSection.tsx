@@ -170,16 +170,24 @@ const QuizSection: React.FC<QuizSectionProps> = ({
 
   useEffect(() => {
     if (!initialAnchor) return;
-    const categoryId = categoryForLiteratureAnchor(initialAnchor);
+    const litCat = categoryForLiteratureAnchor(initialAnchor);
+    const categoryId = litCat || (QUIZ_CATEGORIES.some((c) => c.id === initialAnchor) ? initialAnchor : null);
     if (!categoryId) return;
-    setActiveTrack('grammar');
+    const matchedTrack = (Object.entries(TRACK_CATEGORY_IDS) as [QuizTrackId, string[]][]).find(
+      ([, catIds]) => catIds.includes(categoryId)
+    )?.[0];
+    if (matchedTrack) {
+      setActiveTrack(matchedTrack);
+    } else if (litCat) {
+      setActiveTrack('grammar');
+    }
     setSelectedCategory(categoryId);
     setChapterSearch('');
   }, [initialAnchor]);
 
   useEffect(() => {
     if (!initialAnchor) return;
-    if (categoryForLiteratureAnchor(initialAnchor) !== selectedCategory) return;
+    if (categoryForLiteratureAnchor(initialAnchor) !== selectedCategory && initialAnchor !== selectedCategory) return;
     document.getElementById(initialAnchor)?.scrollIntoView({ block: 'start' });
   }, [initialAnchor, selectedCategory, activeTrack]);
 

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- 1. Sanskrit Phonetics & Science of Sound (Textbook Reader & Alphabet) -->
+  <url>
+    <loc>https://ednetlearn.in/reader</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/tkvYjNZSsZA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Sanskrit: The Science of Sound &amp; Pāṇinian Acoustic Articulation</video:title>
+      <video:description>Explore the neurological, vocal tract, and acoustic science behind Sanskrit phonetics, mouth articulation places (कण्ठ, तालु, मूर्धा, दन्त, ओष्ठ), and the 14 Shiva Sutras.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=tkvYjNZSsZA</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/tkvYjNZSsZA</video:player_loc>
+      <video:duration>754</video:duration>
+      <video:publication_date>2026-01-15T09:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>Sanskrit Phonetics</video:tag>
+      <video:tag>Maheshwara Sutras</video:tag>
+      <video:tag>NCERT Deepakam</video:tag>
+      <video:tag>Vocal Articulation</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+
+  <!-- 2. Sanskrit Alphabet Mastery of Sound (Barakhadi & Aksharas) -->
+  <url>
+    <loc>https://ednetlearn.in/barakhadi</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/a4rz9NbMq0M/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Mastery of Sanskrit Sound &amp; Varṇamālā Akṣaras (Devanagari)</video:title>
+      <video:description>Complete visual and phonetic introduction to the Sanskrit Alphabet, vowel markers (Mātrās), consonant classification (5 Vargas), and accurate Devanāgarī pronunciation.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=a4rz9NbMq0M</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/a4rz9NbMq0M</video:player_loc>
+      <video:duration>1320</video:duration>
+      <video:publication_date>2026-02-10T10:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>Varṇamālā</video:tag>
+      <video:tag>Barakhadi</video:tag>
+      <video:tag>Sanskrit Alphabet</video:tag>
+      <video:tag>Devanagari</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+
+  <!-- 3. Līlāvatī Poetic Mathematics (Vedic Maths) -->
+  <url>
+    <loc>https://ednetlearn.in/vedic-maths</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/SuEoIxU8itY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Līlāvatī Gaṇitam: Poetic Mental Mathematics of Bhāskarācārya</video:title>
+      <video:description>Research video exposition of Bhāskara II's classical mathematical verses by Dr. Remella Avadhanulu (Shri Veda Bharathi). Covers rapid mental arithmetic, poetic problem framing, and algebra.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=SuEoIxU8itY</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/SuEoIxU8itY</video:player_loc>
+      <video:duration>2460</video:duration>
+      <video:publication_date>2026-03-01T11:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>Vedic Maths</video:tag>
+      <video:tag>Lilavati</video:tag>
+      <video:tag>Bhaskaracharya</video:tag>
+      <video:tag>Mental Arithmetic</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+
+  <!-- 4. Sulba Sutras Geometry & Baudhayana Proofs (Vijñāna Lab) -->
+  <url>
+    <loc>https://ednetlearn.in/vignana-lab</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/bp9m53Tp6xg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Sulba Sūtras Geometric Proofs: Baudhayana Theorem &amp; Vedic Altar Astronomy</video:title>
+      <video:description>Demonstration of ancient Indian geometric rope measurements, the Pythagorean-Baudhayana relationship, circle squaring, and Vedic fire altar engineering.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=bp9m53Tp6xg</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/bp9m53Tp6xg</video:player_loc>
+      <video:duration>1840</video:duration>
+      <video:publication_date>2026-03-15T12:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>Sulba Sutras</video:tag>
+      <video:tag>Vedic Geometry</video:tag>
+      <video:tag>Baudhayana</video:tag>
+      <video:tag>Vignana Lab</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+
+  <!-- 5. Sūrya Siddhānta Ahargaṇa & Astronomical Calculations (Philosophy & Science) -->
+  <url>
+    <loc>https://ednetlearn.in/philosophy</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/7u7Nl0pBh2Y/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Sūrya Siddhānta Ahargaṇa Formulations &amp; Planetary Motion in Sanskrit</video:title>
+      <video:description>Detailed mathematical analysis of astronomical day-counts (Ahargaṇa), planetary orbital coordinates, and mathematical darśana in classical Indian scientific treatises.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=7u7Nl0pBh2Y</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/7u7Nl0pBh2Y</video:player_loc>
+      <video:duration>3180</video:duration>
+      <video:publication_date>2026-04-05T14:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>Surya Siddhanta</video:tag>
+      <video:tag>Ahargana</video:tag>
+      <video:tag>Indian Astronomy</video:tag>
+      <video:tag>Darshana</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+
+</urlset>

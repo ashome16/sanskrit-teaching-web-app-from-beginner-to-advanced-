@@ -19,9 +19,9 @@ const DEFAULT_DESC =
   'Unlock your child\'s potential with interactive Sanskrit and Vedic Math for kids. Start learning with a 14-day free trial.';
 
 const PAGE_TITLE =
-  'CBSE NCERT Sanskrit Exam Guide (Classes 7–10) | EdNet Learn Gurukul';
+  'CBSE Class 7, 8, 9 & 10 Sanskrit Exam Guide: Blueprint, Question Formation (किम्-पद) & Solved Papers | EdNet Learn';
 const PAGE_DESC =
-  'Master CBSE NCERT Sanskrit exams for Classes 7–10: section blueprint, standardized instructions (निर्देशाः), core question words (क-कार शब्दाः), and grammatical directives. EdNet Learn Gurukul.';
+  'Master CBSE NCERT Sanskrit exams for Classes 7–10: 80-mark blueprint, standardized instructions (निर्देशाः), core interrogative roots (क-कार शब्दाः), question formation (प्रश्ननिर्माणम्), and exam directives.';
 const PAGE_URL = 'https://ednetlearn.in/cbse-sanskrit-guide';
 
 const BLUEPRINT_ROWS: {
@@ -585,11 +585,10 @@ const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
 
           <span className="philosophy-kicker">CBSE · NCERT · Classes 7–10</span>
           <h1 className="philosophy-title">
-            The Definitive Guide to CBSE NCERT Sanskrit Exams: Pattern, Strategy, and Terminology
-            (Classes 7–10)
+            CBSE NCERT Sanskrit Exam Guide (Classes 7–10): Blueprint, Question Formation (क-कार शब्दाः), Directives &amp; Marking Scheme
           </h1>
           <p className="philosophy-secondary">
-            Exam blueprint, question terminology, Kim-family keywords, and exam-day strategy
+            Official 80-mark blueprint, question formation (प्रश्ननिर्माणम्: कः, का, किम्, केन), standardized instructions (निर्देशाः), and board examination strategies
           </p>
         </header>
 

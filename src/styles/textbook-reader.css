@@ -1730,3 +1730,271 @@
 .textbook-end-guide-btn:hover span {
   color: #ffedd5;
 }
+
+/* -------------------------------------------------------------
+   Unified Chapter Resource Bundling & Physical Page Mapping
+   ------------------------------------------------------------- */
+.textbook-unified-resource-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  background: #fdfaf3;
+  border: 1px solid #eadbc8;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  margin: 0.5rem 0 0.75rem;
+  flex-wrap: wrap;
+}
+
+.textbook-page-mapping-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #78350f;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  font-weight: 500;
+}
+
+.page-pill-icon {
+  font-size: 0.95rem;
+}
+
+.textbook-chapter-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.chapter-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+  line-height: 1.2;
+}
+
+.chapter-tool-btn--quiz {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+.chapter-tool-btn--quiz:hover {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.chapter-tool-btn--ws {
+  background: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+.chapter-tool-btn--ws:hover {
+  background: #15803d;
+  color: #ffffff;
+}
+
+.chapter-tool-btn--dl {
+  background: #fdf2f8;
+  color: #be185d;
+  border-color: #fbcfe8;
+}
+.chapter-tool-btn--dl:hover {
+  background: #be185d;
+  color: #ffffff;
+}
+
+.chapter-tool-btn--dict {
+  background: #fefce8;
+  color: #854d0e;
+  border-color: #fef08a;
+}
+.chapter-tool-btn--dict:hover {
+  background: #854d0e;
+  color: #ffffff;
+}
+
+/* Explicit Block-Level Physical Page Tag */
+.textbook-block-page-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.76rem;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 4px;
+  padding: 0.18rem 0.5rem;
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.01em;
+}
+
+.block-page-icon {
+  font-size: 0.85rem;
+}
+
+.block-page-book {
+  font-weight: 600;
+  color: #78350f;
+}
+
+.block-page-number {
+  font-weight: 700;
+  color: #b45309;
+}
+
+/* Chapter Practice & Resource Hub Card at Chapter End */
+.textbook-chapter-bundle-card {
+  margin-top: 1.5rem;
+  background: linear-gradient(145deg, #fffcf5 0%, #fef3c7 100%);
+  border: 1.5px solid #f59e0b;
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.08);
+}
+
+.chapter-bundle-header {
+  border-bottom: 1px dashed #d97706;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.chapter-bundle-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #b45309;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-bottom: 0.35rem;
+}
+
+.chapter-bundle-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #78350f;
+  margin: 0 0 0.35rem;
+}
+
+.chapter-bundle-subtitle {
+  font-size: 0.88rem;
+  color: #92400e;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.chapter-bundle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+.chapter-bundle-item {
+  background: #ffffff;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.85rem;
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.chapter-bundle-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.bundle-item-icon {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.bundle-item-content {
+  flex: 1;
+}
+
+.bundle-item-content h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1c1917;
+  margin: 0 0 0.25rem;
+}
+
+.bundle-item-content p {
+  font-size: 0.78rem;
+  color: #57534e;
+  margin: 0 0 0.55rem;
+  line-height: 1.35;
+}
+
+.bundle-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.bundle-action-btn--quiz {
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: #93c5fd;
+}
+.bundle-action-btn--quiz:hover {
+  background: #1e40af;
+  color: #ffffff;
+}
+
+.bundle-action-btn--ws {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+.bundle-action-btn--ws:hover {
+  background: #166534;
+  color: #ffffff;
+}
+
+.bundle-action-btn--dl {
+  background: #fce7f3;
+  color: #9d174d;
+  border-color: #f472b6;
+}
+.bundle-action-btn--dl:hover {
+  background: #9d174d;
+  color: #ffffff;
+}
+
+.bundle-action-btn--dict {
+  background: #fef9c3;
+  color: #713f12;
+  border-color: #fde047;
+}
+.bundle-action-btn--dict:hover {
+  background: #713f12;
+  color: #ffffff;
+}

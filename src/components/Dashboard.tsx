@@ -114,27 +114,27 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Complete 6-module curriculum: Sanskrit as an integrated system for taking sound in, processing rules, and producing output. 28 lessons for science and contemplation.',
   },
   'cbse-guide': {
-    title: 'CBSE NCERT Sanskrit Exam Guide (Classes 7–10) | EdNet Learn Gurukul',
-    desc: 'Master CBSE NCERT Sanskrit exams for Classes 7–10: section blueprint, question terminology, Kim-family keywords, and exam-day strategy.',
+    title: 'CBSE Class 7, 8, 9 & 10 Sanskrit Exam Guide: Blueprint, Question Formation (किम्-पद) & Solved Papers | EdNet Learn',
+    desc: 'Master CBSE NCERT Sanskrit exams: official 80-mark blueprint, standardized instructions (निर्देशाः), core question words (क-कार शब्दाः), question formation (प्रश्ननिर्माणम्), and model solutions.',
   },
   resources: {
-    title: 'Free Sanskrit Resources · संस्कृत-साधनानि | EdNet Learn Gurukul',
-    desc: 'Hand-checked free Sanskrit learning resources: beginner courses, spoken Sanskrit classes, Monier-Williams & Apte dictionaries, Sanscript, Amarahasa stories, GRETIL texts and classic grammars.',
+    title: 'Free Sanskrit Study Vault: NCERT Class 7 Question Bank & CBSE Blueprint Mock Exam | EdNet Learn',
+    desc: 'Download complete 15-chapter Class 7 Sanskrit Deepakam question bank, Class 7 & 8 CBSE blueprint mock exam papers, Pāṇinian mouth map, and Koshashri dictionary.',
   },
   worksheets: {
-    title: 'CBSE Sanskrit Worksheets & Practice Exercises (Class 6, 7, 8) | EdNet Learn',
-    desc: 'Printable & interactive CBSE Sanskrit worksheets, translation drills, sandhi practice, and NCERT Deepakam exercise solutions for students.',
+    title: 'CBSE Class 7 & 8 Sanskrit Worksheets, Chapter-wise Practice Exercises & NCERT Solutions | EdNet Learn',
+    desc: 'Free printable & interactive CBSE Sanskrit worksheets, translation drills, sandhi practice, and NCERT Deepakam exercise solutions for students.',
   },
   'vedic-maths': {
     title: 'Vaidic Gaṇitam Mastery (वैदिक-गणितम्): 16 Sutras, Fast Mental Math & Astronomy | EdNet Gurukul',
     desc: 'Master fast mental calculation, Vedic geometry, 16 Vedic mathematics sutras, 366-day Vedic astronomical calendar, and ancient metrology with interactive tools.',
   },
   grammar: {
-    title: 'Vaidic Vyākaraṇam Mastery (वैदिक-व्याकरणम्): Shabdroop, Dhaturoop & Sandhi | EdNet Learn',
+    title: 'CBSE Sanskrit Grammar: Top 100 Shabdroop, 5 Dhaturoop Lakaras, Sandhi & Vibhakti Rules | EdNet Learn',
     desc: 'Interactive Vaidic Vyākaraṇam guide: declensions (shabdroop), verb conjugations (dhaturoop), sandhi rules, vibhakti charts, and phonetic audio.',
   },
   quiz: {
-    title: 'Interactive Sanskrit Quizzes & NCERT Chapter Tests | EdNet Learn',
+    title: 'NCERT Class 7 Sanskrit Quizzes & Online Chapter Tests with Instant Solutions | EdNet Learn',
     desc: 'Test your Sanskrit knowledge with 39+ interactive quiz sets, 200+ CBSE curriculum questions, instant scoring, and explanation cards.',
   },
   board: {
@@ -142,8 +142,8 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Interactive Sanskrit word-building game with 6,000+ puzzles across vocabulary, verbs, anatomy, math, and daily conversation.',
   },
   reader: {
-    title: 'NCERT Sanskrit Deepakam Reader & Alphabet Audio Guide | EdNet Learn',
-    desc: 'Read NCERT Deepakam Chapters 1–15 with verse-by-verse English meanings, root analysis, and Sanskrit Alphabet & Syllables (वर्णमाला) pronunciation guide.',
+    title: 'NCERT Class 7 Sanskrit Deepakam Solutions & Interactive Reader | EdNet Learn',
+    desc: 'Complete NCERT Class 7 Sanskrit Deepakam solutions, chapter-wise verse translations, word-by-word shabdarth, physical textbook page mapping, audio pronunciation, worksheets and quizzes.',
   },
   philosophy: {
     title: 'Why Learn Sanskrit in the Age of AI & Darśana | EdNet Learn Gurukul',
@@ -1306,7 +1306,10 @@ const Dashboard: React.FC = () => {
               onJumpToSentence={jumpToSentence}
               isFirstSentence={isFirstSentence}
               isLastSentence={isLastSentence}
-              onOpenQuiz={() => navigateToView('quiz')}
+              onOpenQuiz={(category) => {
+                navigateToView('quiz');
+                if (category) setQuizAnchor(category);
+              }}
               onOpenWorksheets={(category) => handleOpenWorksheets(category || 'all')}
               onOpenPuzzle={() => navigateToView('board')}
               onOpenVoiceSettings={() => setIsVoiceModalOpen(true)}

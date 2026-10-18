@@ -103,6 +103,122 @@ function replaceTag(html, pattern, replacement, label) {
   return html.replace(pattern, replacement);
 }
 
+function getRouteJsonLd(pathname, meta) {
+  const canonical = pathname === '/' ? `${HOST}/` : `${HOST}${pathname}`;
+  const baseBreadcrumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: `${HOST}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: meta.title.split('|')[0].trim(),
+        item: canonical,
+      },
+    ],
+  };
+
+  const schemas = [baseBreadcrumbs];
+
+  if (pathname === '/reader') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'NCERT Class 7 Sanskrit Deepakam Solutions & Interactive Reader',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Class 7 CBSE / NCERT Middle School',
+      inLanguage: ['sa', 'en', 'hi'],
+      learningResourceType: ['Textbook', 'Interactive Exercise', 'Word-by-Word Translation', 'Audio Guide'],
+      teaches: 'Sanskrit Language, NCERT Deepakam Textbook, Sandhi, Shabdroop, Anvaya',
+    });
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: 'Sanskrit: The Science of Sound & Vocal Articulation',
+      description: 'Acoustic and phonetic demonstration of Sanskrit mouth articulation places and Maheshwara Sutras.',
+      thumbnailUrl: 'https://img.youtube.com/vi/tkvYjNZSsZA/hqdefault.jpg',
+      uploadDate: '2026-01-15T09:00:00+05:30',
+      duration: 'PT12M34S',
+      contentUrl: 'https://www.youtube.com/watch?v=tkvYjNZSsZA',
+      embedUrl: 'https://www.youtube.com/embed/tkvYjNZSsZA',
+    });
+  } else if (pathname === '/vedic-maths') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: 'Līlāvatī Gaṇitam: Poetic Mental Mathematics of Bhāskarācārya',
+      description: 'Exposition of Vedic mathematical sutras, rapid multiplication, and poetic arithmetic by Dr. Remella Avadhanulu.',
+      thumbnailUrl: 'https://img.youtube.com/vi/SuEoIxU8itY/hqdefault.jpg',
+      uploadDate: '2026-03-01T11:00:00+05:30',
+      duration: 'PT41M00S',
+      contentUrl: 'https://www.youtube.com/watch?v=SuEoIxU8itY',
+      embedUrl: 'https://www.youtube.com/embed/SuEoIxU8itY',
+    });
+  } else if (pathname === '/vignana-lab' || pathname === '/science-lab') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: 'Sulba Sūtras Geometric Proofs: Baudhayana Theorem & Vedic Astronomy',
+      description: 'Demonstration of ancient Indian geometric rope measurements, Baudhayana theorem, and Vedic geometry.',
+      thumbnailUrl: 'https://img.youtube.com/vi/bp9m53Tp6xg/hqdefault.jpg',
+      uploadDate: '2026-03-15T12:00:00+05:30',
+      duration: 'PT30M40S',
+      contentUrl: 'https://www.youtube.com/watch?v=bp9m53Tp6xg',
+      embedUrl: 'https://www.youtube.com/embed/bp9m53Tp6xg',
+    });
+  } else if (pathname === '/philosophy') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: 'Sūrya Siddhānta Ahargaṇa Formulations & Planetary Motion in Sanskrit',
+      description: 'Mathematical analysis of astronomical day-counts and planetary coordinates in classical Indian treatises.',
+      thumbnailUrl: 'https://img.youtube.com/vi/7u7Nl0pBh2Y/hqdefault.jpg',
+      uploadDate: '2026-04-05T14:00:00+05:30',
+      duration: 'PT53M00S',
+      contentUrl: 'https://www.youtube.com/watch?v=7u7Nl0pBh2Y',
+      embedUrl: 'https://www.youtube.com/embed/7u7Nl0pBh2Y',
+    });
+  } else if (pathname === '/cbse-sanskrit-guide') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: 'How to Master CBSE NCERT Sanskrit Exams (Classes 7–10)',
+      description: 'Step-by-step strategy for solving CBSE Sanskrit papers: Question formation (प्रश्ननिर्माणम्), unseen passage decoding, and applied grammar.',
+      step: [
+        {
+          '@type': 'HowToStep',
+          name: 'Section A (अपठित-अवबोधनम्)',
+          text: 'Read the unseen passage twice; locate direct nominative (प्रथमा) and accusative (द्वितीया) answers; identify passage title using the core subject noun.',
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Section B (रचनात्मक-कार्यम्)',
+          text: 'Fill letter blanks using the help box (मञ्जूषा); construct five simple sentences for picture description (चित्रवर्णनम्) using asti/santi.',
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Section C (अनुप्रयुक्त-व्याकरणम्)',
+          text: 'Apply Sandhi rules (दीर्घ, गुण, वृद्धि, यण्, अयादि); match vibhakti endings for shabdroop; select correct lakāra for dhaturoop.',
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Section D (पठित-अवबोधनम्)',
+          text: 'Fill verse anvaya by rearranging shloka meter into prose order; master Kim-family question words (कः, का, किम्, केन, कस्मै, कस्मात्, कस्य, कस्मिन्, कुत्र, कदा, कति, कथम्, किमर्थम्).',
+        },
+      ],
+    });
+  }
+
+  return `\n    <script type="application/ld+json">\n${JSON.stringify(schemas, null, 2)}\n    </script>\n`;
+}
+
 function applyMeta(html, meta, pathname) {
   const canonical = pathname === '/' ? `${HOST}/` : `${HOST}${pathname}`;
   const title = escapeAttr(meta.title);
@@ -159,6 +275,11 @@ function applyMeta(html, meta, pathname) {
     out = out.replaceAll('href="/apple-touch-icon.png"', `href="${ghBase}/apple-touch-icon.png"`);
     out = out.replaceAll('content="/logo.jpg"', `content="${ghBase}/logo.jpg"`);
   }
+
+  // Inject structural schema (VideoObject, LearningResource, HowTo, BreadcrumbList) before </head>
+  const structuredDataScript = getRouteJsonLd(pathname, meta);
+  out = out.replace('</head>', `${structuredDataScript}</head>`);
+
   return out;
 }
 

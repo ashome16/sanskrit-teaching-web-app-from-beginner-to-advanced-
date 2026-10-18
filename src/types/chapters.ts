@@ -18,6 +18,7 @@ export interface Lesson {
   fileName: string;
   title: string;
   page_numbers?: string;
+  pdf_guide_url?: string;
   sentences: LessonSentence[];
 }
 

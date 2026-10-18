@@ -1,9 +1,46 @@
+# Canonical home & index redirects
 /home / 301
 /index / 301
+/index.html / 301
+
+# Science lab aliases
 /vignana /vignana-lab 301
 /vijnana /vignana-lab 301
 /vijnana-lab /vignana-lab 301
+/science-lab /vignana-lab 301
 
+# Textbook reader and grade aliases
+/deepakam /reader 301
+/deepakam/ /reader 301
+/ncert-deepakam /reader 301
+/textbook /reader 301
+/textbooks /reader 301
+/class7 /reader 301
+/class-7 /reader 301
+/class8 /reader 301
+/class-8 /reader 301
+/class9 /reader 301
+/class-9 /reader 301
+/varnamala /barakhadi 301
+/aksharas /barakhadi 301
+
+# Exam guide, CBSE, and mock exam aliases
+/cbse /cbse-sanskrit-guide 301
+/cbse-guide /cbse-sanskrit-guide 301
+/exam-guide /cbse-sanskrit-guide 301
+/exam /cbse-sanskrit-guide 301
+/mock-exam /resources 301
+/study-vault /resources 301
+/free-resources /resources 301
+
+# Practice tools aliases
+/worksheet /worksheets 301
+/quizzes /quiz 301
+/vedicmaths /vedic-maths 301
+/vedic-math /vedic-maths 301
+/dhatu /dhatupatha 301
+
+# Old repository and staging path redirects
 /sanskrit-teaching-web-app-from-beginner-to-advanced-/* /:splat 301
 
 # Workbook PDFs are for members only (served via the in-app download gate)
