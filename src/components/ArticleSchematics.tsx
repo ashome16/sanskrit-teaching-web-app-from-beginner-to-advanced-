@@ -619,6 +619,105 @@ function VedicFourPillars() {
   );
 }
 
+/** Terracotta Matrix: Bīr-koṭ-ghwaṇḍai (BKG) spherical whorl geometry, rotational axis, concentric punches & metrological scale */
+function TerracottaMatrixWhorl() {
+  return (
+    <Panel
+      kicker="Bīr-koṭ-ghwaṇḍai (BKG) Terracotta Matrix · Swat Valley"
+      caption="Geometric and mechanical analysis: Equidistant concentric punched indentations, rotational symmetry, and center of gravity balance for high-speed yarn spinning."
+    >
+      <svg viewBox="0 0 520 380" role="img" aria-labelledby="terracotta-title" style={{ fontFamily: SANS }}>
+        <title id="terracotta-title">
+          Geometric analysis of the BKG spherical terracotta matrix showing concentric punched intervals, central rotational axis, and dynamic balance.
+        </title>
+        <defs>
+          <radialGradient id="clayGradient" cx="42%" cy="40%" r="58%">
+            <stop offset="0%" stopColor="#eed7be" />
+            <stop offset="45%" stopColor="#d49b6a" />
+            <stop offset="85%" stopColor="#a35d33" />
+            <stop offset="100%" stopColor="#783e1c" />
+          </radialGradient>
+          <filter id="clayShadow" x="-10%" y="-10%" width="130%" height="130%">
+            <feDropShadow dx="3" dy="6" stdDeviation="6" floodColor="#3c1e08" floodOpacity="0.25" />
+          </filter>
+        </defs>
+
+        {/* Background panel */}
+        <rect x="0" y="0" width="520" height="380" rx="12" fill="#faf6f0" stroke="#ebdccb" strokeWidth="1.5" />
+
+        {/* 3D Terracotta Sphere Illustration */}
+        <g transform="translate(155, 185)">
+          {/* Sphere body */}
+          <circle cx="0" cy="0" r="115" fill="url(#clayGradient)" filter="url(#clayShadow)" />
+
+          {/* Central hole / Spindle shaft axis */}
+          <ellipse cx="-15" cy="-5" rx="26" ry="34" fill="#542910" stroke="#331706" strokeWidth="2" />
+          <ellipse cx="-15" cy="-5" rx="14" ry="18" fill="#1f0e04" />
+          <circle cx="-15" cy="-5" r="4" fill="#fbbf24" />
+
+          {/* Concentric punch band 1 (inner ring) */}
+          {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((deg) => {
+            const rad = (deg * Math.PI) / 180;
+            const rx = 52 * Math.cos(rad) - 15;
+            const ry = 62 * Math.sin(rad) - 5;
+            return (
+              <g key={`inner-${deg}`}>
+                <circle cx={rx} cy={ry} r="4.2" fill="#301505" stroke="#753e1a" strokeWidth="1" />
+                <circle cx={rx - 1} cy={ry - 1} r="1.5" fill="#150802" />
+              </g>
+            );
+          })}
+
+          {/* Concentric punch band 2 (outer band) */}
+          {[10, 30, 50, 70, 90, 110, 130, 150, 170, 190, 210, 230, 250, 270, 290, 310, 330, 350].map((deg) => {
+            const rad = (deg * Math.PI) / 180;
+            const rx = 86 * Math.cos(rad) - 15;
+            const ry = 96 * Math.sin(rad) - 5;
+            return (
+              <g key={`outer-${deg}`}>
+                <circle cx={rx} cy={ry} r="3.6" fill="#301505" stroke="#753e1a" strokeWidth="1" />
+                <circle cx={rx - 1} cy={ry - 1} r="1.2" fill="#150802" />
+              </g>
+            );
+          })}
+
+          {/* Rotational dynamics axis */}
+          <line x1="-15" y1="-140" x2="-15" y2="135" stroke="#0284c7" strokeWidth="2.5" strokeDasharray="5,4" />
+
+          {/* Center of Gravity Label */}
+          <text x="-10" y="-12" fill="#fbbf24" fontSize="12" fontWeight="800">G</text>
+        </g>
+
+        {/* Right-Hand Mathematical Annotation Column */}
+        <g transform="translate(300, 30)">
+          {/* Card 1: Equal Angular Division */}
+          <rect x="0" y="0" width="205" height="95" rx="8" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1.2" />
+          <text x="12" y="22" fill="#b45309" fontSize="12" fontWeight="800">📐 Equal Angular Division</text>
+          <text x="12" y="42" fill="#334155" fontSize="11" fontWeight="600">Δθ = 360° / n (Equidistant)</text>
+          <text x="12" y="60" fill="#64748b" fontSize="10">Punched in wet clay using</text>
+          <text x="12" y="76" fill="#64748b" fontSize="10">dividers or indexed wheel stops.</text>
+
+          {/* Card 2: Rotational Dynamics */}
+          <rect x="0" y="108" width="205" height="105" rx="8" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1.2" />
+          <text x="12" y="130" fill="#0284c7" fontSize="12" fontWeight="800">⚙️ Dynamic Spindle Balance</text>
+          <text x="12" y="150" fill="#334155" fontSize="11" fontWeight="600">I = ²⁄₅ M R² (No Wobble)</text>
+          <text x="12" y="168" fill="#64748b" fontSize="10">Piercing aligns with true CG (G);</text>
+          <text x="12" y="184" fill="#64748b" fontSize="10">radial symmetry preserves yarn</text>
+          <text x="12" y="200" fill="#64748b" fontSize="10">fibers during high-RPM spin.</text>
+
+          {/* Card 3: Subcontinental Metrology Grid */}
+          <rect x="0" y="225" width="205" height="110" rx="8" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1.2" />
+          <text x="12" y="247" fill="#15803d" fontSize="12" fontWeight="800">🏛️ Binary-Decimal Metrology</text>
+          <text x="12" y="267" fill="#334155" fontSize="11" fontWeight="600">Ratio: 1 : 2 : 4 : 8 : 16 : 32</text>
+          <text x="12" y="285" fill="#64748b" fontSize="10">Standardized across Gandhara,</text>
+          <text x="12" y="301" fill="#64748b" fontSize="10">Indus Valley, &amp; Gulf of Kutch</text>
+          <text x="12" y="317" fill="#64748b" fontSize="10">conch shell trade routes.</text>
+        </g>
+      </svg>
+    </Panel>
+  );
+}
+
 const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
   'sulba-148-rectangle': SulbaRectangle,
   'dhanurveda-five-sthanas': DhanurvedaSthanas,
@@ -630,6 +729,7 @@ const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
   'tirtha-lineage-path': TirthaLineagePath,
   'bhuta-sankhya-reversal': BhutaReversal,
   'siksha-five-places': SikshaFivePlaces,
+  'terracotta-matrix-whorl': TerracottaMatrixWhorl,
   'vedic-four-pillars': VedicFourPillars,
 };
 

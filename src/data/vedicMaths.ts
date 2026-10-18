@@ -160,6 +160,7 @@ export type VedicArticleFigureId =
   | 'bhuta-sankhya-reversal'
   | 'siksha-five-places'
   | 'animal-yoga-saptaswara-wheel'
+  | 'terracotta-matrix-whorl'
   | 'vedic-four-pillars';
 
 export interface VedicArticleSection {
@@ -3822,6 +3823,101 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Purāṇic Sanskrit texts recorded defensive Śataghnī mechanisms, while 12th-century Hoysaleśvara temple reliefs carved early missile launch pads.',
       'The Kingdom of Mysore engineered the world’s first hammered iron-casing war rockets, achieving unprecedented chamber pressure and defeating British forces at Pollilur (1780).',
       'Mysorean rocket metallurgy directly inspired Congreve rockets and forms the evolutionary heritage behind modern solid propellant space boosters (PSLV/GSLV).'
+    ]
+  },
+  {
+    id: 'terracotta-matrix',
+    slug: 'the-terracotta-matrix-metrology-clay',
+    title: 'The Terracotta Matrix: Unlocking Ancient Indian Metrology and Mathematics Through Clay',
+    sanskritTitle: '॥ मृत्पात्रे रेखागणितम् मानशास्त्रं च ॥',
+    subtitle: 'How an excavated spherical terracotta artifact from Bīr-koṭ-ghwaṇḍai (BKG) in the Swat Valley proves that rotational symmetry, dynamic balance, and metrological grids were practiced in the hands of regional artisans long before written treatises.',
+    readingTime: '9 min read',
+    badge: 'Archaeometrology & Geometry',
+    prequel: { id: 'before-the-carat', label: 'Before the Carat — Seeds, Slate, and Ancient Metrology' },
+    next: { id: 'agnichurna-pyrotechnics-rocketry', label: 'Agnicūrṇa: Gunpowder Alchemy & Iron-Cased Rocketry' },
+    sections: [
+      {
+        title: 'Beyond the Palm-Leaf: The Living Mathematics of the Earth',
+        sanskritTitle: 'तालपत्रात् पृथिवीपर्यन्तम् · कुम्भकार-हस्तेषु विज्ञानम्',
+        paragraphs: [
+          'History books often teach us that ancient mathematics lives exclusively on parched palm-leaf manuscripts or in the abstract deductions of classical texts. We point to the revolutionary genius of the Śulba Sūtras, the cosmic expansions of the Yajurveda, or the decimal encodings of the Kaṭapayādi system.',
+          'Yet, long before these systems were pinned down in ink, a profound mathematical consciousness was already hard at work in the hands of regional potters, weavers, and merchants. The proof lies not in library vaults, but under the earth—etched directly onto humble, everyday artifacts.',
+          'Consider this spherical terracotta artifact, excavated from the ancient historic site of Bīr-koṭ-ghwaṇḍai (BKG) in the Swat Valley. At first glance, a casual observer might write it off as a simple decorative bead, a children’s rattle, or a standard spindle whorl used for spinning yarn. But to a mathematician or an archaeologist, this object is a physical three-dimensional matrix—a testament to the foundational grid systems of ancient Indian metrology, geometry, and industrial standardization.'
+        ],
+        pictures: [
+          {
+            src: '/images/terracotta-matrix-swat.jpg',
+            alt: 'Excavated spherical terracotta matrix from Bīr-koṭ-ghwaṇḍai (BKG) in the Swat Valley with incised geometric concentric rings',
+            caption: 'The Bīr-koṭ-ghwaṇḍai (BKG) spherical terracotta matrix (Swat Valley, Pakistan / Gandharan cultural crossroads), featuring concentric punched indentations with precise radial and angular subdivisions.'
+          }
+        ],
+        highlight: 'Ancient Indian science did not begin with theorems on birch bark; it began with the calculated rhythm of the potter’s wheel and the precision of the stylus against wet clay.'
+      },
+      {
+        title: 'The Geometry of the Punch: Spatial Equal Division',
+        sanskritTitle: 'बिन्दु-समविभाजनम् चक्रीय-सममितिः च',
+        paragraphs: [
+          'Look closely at the surface patterns. The circles of punched indentations are not random, chaotic marks thrown together in haste. They form clean, rhythmic, concentric bands running across the curvature of the sphere.',
+          'To execute this on a malleable piece of wet clay before firing, an artisan had to possess a firm grasp of practical spatial geometry:',
+          '1. Equidistant Circular Subdivisions: Splitting a dynamic curved surface into perfectly uniform, repeating intervals requires an intuitive or mechanical understanding of angular intervals (Δθ = 360° / n).',
+          '2. Rotational Symmetry: The alignment proves that potters either utilized a rotating wheel with calculated mechanical stops or standard physical templates (like notched reeds or bone combs) acting as geometric dividers to stamp regular intervals across spherical geometry.'
+        ],
+        figure: 'terracotta-matrix-whorl',
+        terms: [
+          { sa: 'समविभाजनम्', iast: 'Samavibhājanam', gloss: 'Equal spatial division of angular and linear intervals' },
+          { sa: 'चक्रीय-सममितिः', iast: 'Cakrīya-Samamitiḥ', gloss: 'Rotational symmetry around a designated central axis' },
+          { sa: 'शिल्प-शास्त्रम्', iast: 'Śilpa-Śāstram', gloss: 'Applied engineering, metallurgy, and artisanal science' }
+        ]
+      },
+      {
+        title: 'The Architecture of Spinning: Calculating the Center of Gravity',
+        sanskritTitle: 'तर्कु-सन्तुलनम् · गुरुत्वकेन्द्रस्य शुद्धता',
+        paragraphs: [
+          'If this artifact functioned as a spindle whorl (तर्कु / Tarku), its geometry became a matter of pure, applied physics.',
+          'For a spindle to spin smoothly at hundreds of revolutions per minute without wobbling and breaking delicate wool or cotton fibers, the object had to achieve absolute rotational balance. Any eccentricity (off-center mass distribution) creates centrifugal precession that snaps fragile hand-spun thread.',
+          'The central piercing had to match the true geometric center of gravity (G) within millimetric tolerance. Furthermore, the outer decorative punch-holes had to be evenly distributed around the perimeter so their negative mass (indentations) wouldn’t alter the radial moment of inertia (I = ²⁄₅ M R²). Here, art and mathematics merged seamlessly: aesthetic balance was identical to mechanical balance.'
+        ],
+        terms: [
+          { sa: 'तर्कुः', iast: 'Tarku', gloss: 'Spindle whorl used for spinning yarn; requiring rotational balance' },
+          { sa: 'गुरुत्वकेन्द्रम्', iast: 'Gurutvakendram', gloss: 'Center of gravity; true center of mass' },
+          { sa: 'घूर्णन-सन्तुलनम्', iast: 'Ghūrṇana-Santulanam', gloss: 'Dynamic rotational equilibrium without angular wobble' }
+        ]
+      },
+      {
+        title: 'Metrology and The Grand Subcontinental Trade Network',
+        sanskritTitle: 'अन्तर्राष्ट्रीय-वाणिज्य-मानशास्त्रम् · सिन्धु-गान्धार-सेतुः',
+        paragraphs: [
+          'What makes the discovery at Bīr-koṭ-ghwaṇḍai (BKG) so gripping is its broader economic context. The site sat directly at a crucial trading crossroads, linking the cultural currents of India, Central Asia, and the Hellenistic world.',
+          'Excavations at BKG consistently uncover complex material networks—including marine conch-shell bangles brought across thousands of kilometers from the coastal Gulf of Kutch in western India to the high valleys of the Hindu Kush.',
+          'For an inter-regional trade network of this scale to function, communities required more than just shared barter; they needed standardized metrology:',
+          '1. The Binary-Decimal Grid: Indian metrology famously relied on highly sophisticated weight systems, shifting cleanly between binary ratios (1 : 2 : 4 : 8 : 16 : 32) for small market goods and decimal configurations (10, 100, 1000) for massive state revenue and granary inventories.',
+          '2. Standardized Industrial Production: Artifacts like this terracotta sphere highlight a culture of mass production where weights, dimensions, and craft outputs were manufactured to strict, uniform specifications across thousands of miles of mountainous and riverine trade arteries.'
+        ],
+        terms: [
+          { sa: 'शङ्ख-वलयम्', iast: 'Śaṅkha-Valayam', gloss: 'Marine conch-shell bangles traded from Gulf of Kutch to Swat' },
+          { sa: 'द्विगुण-दशगुण-मानम्', iast: 'Dviguṇa-Daśaguṇa-Mānam', gloss: 'The integrated binary-decimal metrology system of ancient India' }
+        ],
+        links: [
+          { anchor: 'before-the-carat', label: 'Read: Before the Carat — Seeds, Slate, and the Metrology of Ancient India' },
+          { anchor: 'vedic-geometry', label: 'Explore Interactive Geometry: Śulba Sūtras & Sacred Altars' }
+        ]
+      },
+      {
+        title: 'The Living Math of the Artisan',
+        sanskritTitle: 'शिल्पिनः सजीव-गणितम् · हस्त-कौशलम्',
+        paragraphs: [
+          'When we look at this artifact, we are looking at the foundational stepping stones of Indian mathematical thought.',
+          'Long before the formalization of theorems, the ancient world calculated its reality through the rhythm of the potter’s wheel, the balance of the spindle, and the precise geometric spacing of a bone stylus against wet clay.',
+          'It is a striking reminder that the roots of ancient science were deeply practical, profoundly elegant, and beautifully preserved in the palm of a hand.'
+        ]
+      }
+    ],
+    quote: 'Art and mathematics merged seamlessly in the ancient workshop: aesthetic radial balance was identical to rotational mechanical equilibrium.',
+    keyTakeaways: [
+      'The Bīr-koṭ-ghwaṇḍai (BKG) terracotta sphere demonstrates precise equidistant angular division (Δθ = 360°/n) on a 3D curved surface.',
+      'As a spindle whorl (Tarku), absolute concentricity and radial weight distribution were essential to achieve dynamic equilibrium without snapping yarn.',
+      'Cross-subcontinental trade linked Swat Valley to coastal Kutch (marine conch shells), requiring unified binary (1:2:4:8:16) and decimal metrological standards.',
+      'Practical engineering and physical geometry in clay preceded written formalizations on palm-leaf manuscripts.'
     ]
   }
 ];
