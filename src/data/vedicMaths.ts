@@ -162,6 +162,7 @@ export type VedicArticleFigureId =
   | 'animal-yoga-saptaswara-wheel'
   | 'terracotta-matrix-whorl'
   | 'spheres-of-certainty-matrix'
+  | 'terracotta-shrinkage-pyrotechnics'
   | 'vedic-four-pillars';
 
 export interface VedicArticleSection {
@@ -3863,14 +3864,28 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         title: 'The Geometry of the Artifacts: Intentionality in Clay',
         sanskritTitle: 'मृत्पात्रे रेखागणितीय-सङ्कल्पः · प्रमाण-शुद्धता',
         paragraphs: [
-          'When evaluating prehistoric objects, archaeologists use strict markers to distinguish random tribal craftsmanship from advanced state metrology. Random variation yields arbitrary sizes. A potter shaping a toy or an improvised bead by hand will naturally produce erratic widths—3.2 cm, 3.8 cm, 4.1 cm.',
+          'When evaluating prehistoric objects, archaeologists use strict markers to distinguish random tribal craftsmanship from advanced state metrology. Random variation yields arbitrary sizes. A potter shaping an improvised bead or toy by hand will naturally produce erratic widths—3.2 cm, 3.8 cm, 4.1 cm.',
           'However, the spheres of Bhirrana and Mohenjo-daro display three undeniable signatures of engineering intent:',
-          '1. Controlled Shaping: The sphericity of the objects requires calculated, multi-axis compression. They are not merely rolled between casual palms; they are finished using uniform molds or rotational templates.',
-          '2. Surface Layout Arrays: The Mohenjo-daro ball features flawless, rhythmic spiral incisions tracking across its curvature. The older Bhirrana ball features carefully plotted, equidistant perforations. Both decorative styles require the artisan to map the sphere’s surface into mathematically equal spatial segments before punching or cutting the damp clay.',
-          '3. Dimensional Invariance: Despite the massive chronological gulf separating early-stage farming settlements from high-density mature urban blocks, the raw spatial target remains fixed at exactly 3.5 cm.'
+          '1. Controlled Multi-Axis Shaping: The sphericity of the objects requires calculated, multi-axis radial compression. They were not merely rolled between casual human palms; they were finished using uniform two-piece hemispherical molds (कन्दुक-साञ्चा) or turning templates that prevented ovalization and ensured strict three-dimensional balance.',
+          '2. Surface Layout Arrays (Spherical Coordinate Grids & Degassing Physics):',
+          '• The Mohenjo-daro Sphere (~2500 BCE): Features flawless, rhythmic spiral incisions tracking across its curvature with unbroken pitch (d ≈ 2 mm). Carving an Archimedean spherical helix across a curved 3D surface cannot be done freehand; it demands an indexed rotational axis (भ्रमणाक्ष) where the stylus translates along a meridian guide while the sphere revolves at constant angular velocity (ω).',
+          '• The Bhirrana Sphere (~Early Horizon): Features carefully plotted, equidistant circular blind perforations radiating outward from polar coordinates. Mapping discrete, equidistant nodes across a non-Euclidean spherical surface (where Gaussian curvature K > 0 prevents planar flat projection) requires an intuitive mastery of spherical angular intervals (Δθ, Δϕ). Furthermore, these punctures had to be executed precisely at the “leather-hard” (चर्मकठिन) hydration stage: punch when too wet, and the sphere dimples inward; punch when bone-dry, and brittle micro-fractures shatter the shell.',
+          '• The Pyrotechnic Degassing Function: Crucially, these decorative surface arrays served a vital structural purpose. A solid clay sphere of 35 mm mass is exceptionally prone to catastrophic steam explosion in kilns. The perforations of Bhirrana and the continuous spiral channels of Mohenjo-daro acted as engineered degassing vents and thermal expansion joints, allowing vaporized core moisture to vent harmlessly during the 450°–600°C lattice dehydroxylation phase.',
+          '3. Dimensional Invariance: The Ceramic Proportion Paradox (From Wet Clay to Burnt Solid):',
+          'Despite the massive chronological gulf separating early-stage farming settlements from high-density mature urban blocks, the raw spatial target remains fixed at exactly 3.5 cm. To appreciate the magnitude of this feat, one must understand the violent physical transformations that occur when wet earth is converted into vitrified stone.',
+          '• The Physics of Firing Shrinkage: Clay is an active, shrinking composite material. Levigated alluvial silt requires 20% to 25% mechanical water by weight to achieve plasticity. During ambient drying, capillary water loss pulls microscopic phyllosilicate clay platelets into tight contact, causing a linear drying shrinkage of 5% to 8%.',
+          '• Kiln Metamorphism: When fired between 750°C and 900°C, the chemical lattice is permanently altered. At 450°C–600°C, chemically bound lattice water (hydroxyl OH⁻ ions) is expelled (dehydroxylation). At 573°C, quartz grains undergo an instantaneous displacive α ↔ β phase inversion (+0.8% volume shock). Above 800°C, fluxing agents (iron and potassium oxides) partially fuse into vitreous glass, sintering pores closed and producing an additional linear firing shrinkage of 4% to 7%.',
+          '• The Cumulative 33% Volume Contraction: Across both phases, total linear shrinkage (S_total) ranges between 10% and 14% (averaging ~12.5%). Because volume scales cubically (V = ⁴⁄₃ π r³), a 12.5% linear contraction causes an astonishing 33% loss of total volumetric displacement: V_fired = (1 - 0.125)³ × V_wet = (0.875)³ × V_wet ≈ 0.67 × V_wet.',
+          '• The Reverse Engineering Pre-Calculation: If an ancient potter shaped a wet clay sphere to an initial diameter of 3.5 cm, the vitrified artifact emerging from the kiln ashes would have shrunk to an unusable 3.06 cm to 3.15 cm! Therefore, to produce a finished, vitrified sphere measuring identically 3.50 cm (2 Indus Angulas), the artisan had to calculate a deliberate, enlarged pre-firing prototype: D_wet = D_fired ÷ (1 - S_total) = 3.50 cm ÷ (1 - 0.125) ≈ 4.00 cm (40 mm).',
+          '• Anti-Slump Gravitational Stabilization: Unlike flat-bottomed pots or square architectural bricks that sit stably on kiln floors, a sphere rests on an infinitesimal tangent point. Under its own wet mass (~45 g), an unassisted sphere experiences gravitational plastic creep during drying, collapsing into an oblate ellipsoid. Ancient artisans overcame this by rotating the drying spheres on beds of fine, dry mineral ash and employing standardized clay-to-temper ratios to ensure isotropic (uniform three-dimensional) contraction.',
+          'That artisans at early-horizon Bhirrana and mature Mohenjo-daro—working with different regional river clays separated by 800 kilometers and millennia of time—both achieved an identical post-firing diameter of 3.5 cm proves that they possessed a codified, institutionalized science of volumetric shrinkage compensation.'
         ],
+        figure: 'terracotta-shrinkage-pyrotechnics',
         terms: [
           { sa: 'प्रमाण-गोलकः', iast: 'Pramāṇa-Golakaḥ', gloss: 'Standardized reference sphere of invariant metric dimension' },
+          { sa: 'चर्मकठिनम्', iast: 'Carmakaṭhinam', gloss: 'Leather-hard intermediate hydration state for precision tool cutting' },
+          { sa: 'दग्ध-संकोचः', iast: 'Dagdha-Saṅkocaḥ', gloss: 'Pyrotechnic volumetric and linear firing shrinkage in ceramic kilns' },
+          { sa: 'बाष्प-निसरणम्', iast: 'Bāṣpa-Nisaraṇam', gloss: 'Degassing vapor relief channels preventing explosive kiln spalling' },
           { sa: 'समविभाजनम्', iast: 'Samavibhājanam', gloss: 'Mathematically equal spatial division across curved surfaces' },
           { sa: 'शिल्प-शास्त्रम्', iast: 'Śilpa-Śāstram', gloss: 'Applied engineering, metallurgy, and artisanal science' }
         ]

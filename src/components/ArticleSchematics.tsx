@@ -891,6 +891,225 @@ function SpheresOfCertaintyMatrix() {
   );
 }
 
+/** Terracotta Shrinkage & Pyrotechnics: Wet greenware (4.0 cm) to vitrified burnt solid (3.5 cm = 2 Angulas) */
+function TerracottaShrinkagePyrotechnics() {
+  return (
+    <Panel
+      kicker="Pyrotechnic Volumetric Shrinkage: From Wet Greenware to 2-Angula Vitrified Solid"
+      caption="The Ceramic Proportion Paradox: To produce an invariant 3.5 cm (2 Angulas) solid sphere after 12.5% linear firing shrinkage (~33% volume loss), ancient Harappan potters calculated a 4.0 cm wet greenware prototype, preventing gravitational slumping and utilizing surface perforations as steam-release vents."
+      maxWidth={620}
+    >
+      <svg viewBox="0 0 580 440" role="img" aria-labelledby="terracotta-shrinkage-title" style={{ fontFamily: SANS }}>
+        <title id="terracotta-shrinkage-title">
+          Three-stage ceramic transformation from wet plastic clay (4.0 cm) through leather-hard greenware (3.75 cm) to vitrified 3.5 cm solid terracotta.
+        </title>
+        <defs>
+          <radialGradient id="wetClayGrad" cx="35%" cy="35%" r="65%">
+            <stop offset="0%" stopColor="#d1d5db" />
+            <stop offset="50%" stopColor="#9ca3af" />
+            <stop offset="100%" stopColor="#4b5563" />
+          </radialGradient>
+          <radialGradient id="leatherClayGrad" cx="35%" cy="35%" r="65%">
+            <stop offset="0%" stopColor="#fde68a" />
+            <stop offset="50%" stopColor="#d97706" />
+            <stop offset="100%" stopColor="#78350f" />
+          </radialGradient>
+          <radialGradient id="vitrifiedGrad" cx="35%" cy="35%" r="65%">
+            <stop offset="0%" stopColor="#fca5a5" />
+            <stop offset="50%" stopColor="#dc2626" />
+            <stop offset="100%" stopColor="#7f1d1d" />
+          </radialGradient>
+          <filter id="shrinkShadow" x="-15%" y="-15%" width="135%" height="135%">
+            <feDropShadow dx="2" dy="4" stdDeviation="4" floodColor="#1e293b" floodOpacity="0.22" />
+          </filter>
+        </defs>
+
+        {/* Outer Background Box */}
+        <rect x="0" y="0" width="580" height="440" rx="14" fill="#faf7f2" stroke="#ebdccb" strokeWidth="1.5" />
+
+        {/* Stage 1: Wet Plastic Clay */}
+        <g transform="translate(95, 105)">
+          <circle cx="0" cy="0" r="50" fill="url(#wetClayGrad)" filter="url(#shrinkShadow)" />
+          {/* Gravitational Sag Guide */}
+          <ellipse cx="0" cy="52" rx="42" ry="4" fill="#64748b" opacity="0.3" />
+          <line x1="-50" y1="62" x2="50" y2="62" stroke="#475569" strokeWidth="1.5" />
+          <line x1="-50" y1="58" x2="-50" y2="66" stroke="#475569" strokeWidth="1.5" />
+          <line x1="50" y1="58" x2="50" y2="66" stroke="#475569" strokeWidth="1.5" />
+          <text x="0" y="78" textAnchor="middle" fill="#1e293b" fontSize="11" fontWeight="800">
+            Ø ~4.0 cm (40 mm)
+          </text>
+          <text x="0" y="-62" textAnchor="middle" fill="#334155" fontSize="11.5" fontWeight="800">
+            1. Wet Plastic Clay
+          </text>
+          <text x="0" y="-76" textAnchor="middle" fill="#64748b" fontSize="9.5" fontWeight="700">
+            ~22% MECHANICAL WATER
+          </text>
+        </g>
+
+        {/* Transition 1: Ambient Drying Arrow */}
+        <g transform="translate(185, 105)">
+          <path d="M 0,-5 L 20,0 L 0,5 Z" fill="#d97706" />
+          <line x1="-22" y1="0" x2="16" y2="0" stroke="#d97706" strokeWidth="2.5" />
+          <text x="-2" y="-14" textAnchor="middle" fill="#b45309" fontSize="9" fontWeight="800">
+            -6% DRYING
+          </text>
+          <text x="-2" y="22" textAnchor="middle" fill="#78350f" fontSize="8" fontWeight="600">
+            Capillary Loss
+          </text>
+        </g>
+
+        {/* Stage 2: Leather-Hard Greenware (चर्मकठिन) */}
+        <g transform="translate(285, 105)">
+          <circle cx="0" cy="0" r="44" fill="url(#leatherClayGrad)" filter="url(#shrinkShadow)" />
+          {/* Perforations & Spiral incision preview */}
+          {[0, 60, 120, 180, 240, 300].map((deg) => {
+            const rad = (deg * Math.PI) / 180;
+            const px = 24 * Math.cos(rad);
+            const py = 24 * Math.sin(rad);
+            return <circle key={`lh-${deg}`} cx={px} cy={py} r="2.2" fill="#451a03" />;
+          })}
+          <circle cx="0" cy="0" r="2.8" fill="#451a03" />
+          
+          <line x1="-44" y1="62" x2="44" y2="62" stroke="#b45309" strokeWidth="1.5" />
+          <line x1="-44" y1="58" x2="-44" y2="66" stroke="#b45309" strokeWidth="1.5" />
+          <line x1="44" y1="58" x2="44" y2="66" stroke="#b45309" strokeWidth="1.5" />
+          <text x="0" y="78" textAnchor="middle" fill="#78350f" fontSize="11" fontWeight="800">
+            Ø ~3.75 cm (37.5 mm)
+          </text>
+          <text x="0" y="-62" textAnchor="middle" fill="#92400e" fontSize="11.5" fontWeight="800">
+            2. Leather-Hard Greenware
+          </text>
+          <text x="0" y="-76" textAnchor="middle" fill="#b45309" fontSize="9.5" fontWeight="700">
+            INCISIONS &amp; VENTS CUT HERE
+          </text>
+        </g>
+
+        {/* Transition 2: Kiln Firing Arrow */}
+        <g transform="translate(375, 105)">
+          <path d="M 0,-5 L 20,0 L 0,5 Z" fill="#dc2626" />
+          <line x1="-22" y1="0" x2="16" y2="0" stroke="#dc2626" strokeWidth="2.5" />
+          <text x="-2" y="-14" textAnchor="middle" fill="#b91c1c" fontSize="9" fontWeight="800">
+            750°–900°C
+          </text>
+          <text x="-2" y="22" textAnchor="middle" fill="#991b1b" fontSize="8" fontWeight="600">
+            -6.5% Sintering
+          </text>
+        </g>
+
+        {/* Stage 3: Vitrified Fired Terracotta */}
+        <g transform="translate(475, 105)">
+          <circle cx="0" cy="0" r="38" fill="url(#vitrifiedGrad)" filter="url(#shrinkShadow)" />
+          {/* Surface Spiral Pattern */}
+          {[-25, -10, 5, 20].map((y, i) => (
+            <path
+              key={`vf-${i}`}
+              d={`M -28 ${y} C -10 ${y + 12}, 10 ${y + 8}, 28 ${y - 4}`}
+              fill="none"
+              stroke="#450a0a"
+              strokeWidth="1.8"
+              opacity="0.8"
+            />
+          ))}
+          <line x1="-38" y1="62" x2="38" y2="62" stroke="#b91c1c" strokeWidth="1.8" />
+          <line x1="-38" y1="58" x2="-38" y2="66" stroke="#b91c1c" strokeWidth="1.8" />
+          <line x1="38" y1="58" x2="38" y2="66" stroke="#b91c1c" strokeWidth="1.8" />
+          <text x="0" y="78" textAnchor="middle" fill="#991b1b" fontSize="11" fontWeight="800">
+            Ø 3.50 cm (2 Angulas)
+          </text>
+          <text x="0" y="-62" textAnchor="middle" fill="#991b1b" fontSize="11.5" fontWeight="800">
+            3. Vitrified Solid
+          </text>
+          <text x="0" y="-76" textAnchor="middle" fill="#dc2626" fontSize="9.5" fontWeight="700">
+            PERFECT TARGET METRIC
+          </text>
+        </g>
+
+        {/* Middle Banner: The Mathematical Shrinkage Formula */}
+        <g transform="translate(25, 205)">
+          <rect x="0" y="0" width="530" height="90" rx="10" fill="#ffffff" stroke="#fecaca" strokeWidth="1.4" />
+          <rect x="0" y="0" width="530" height="26" rx="10" fill="#fef2f2" />
+          <text x="18" y="18" fill="#991b1b" fontSize="11.5" fontWeight="800">
+            🔥 The Reverse Shrinkage Equation &amp; Cubic Volume Loss
+          </text>
+
+          {/* Equation 1: Linear Oversizing */}
+          <g transform="translate(20, 42)">
+            <text x="0" y="15" fill="#1e293b" fontSize="11" fontWeight="700">
+              Target Linear Diameter: <tspan fill="#b91c1c" fontWeight="800">D_fired = 3.50 cm (2 Angulas)</tspan>
+            </text>
+            <text x="0" y="34" fill="#334155" fontSize="10.5">
+              Cumulative Linear Shrinkage: S_total = ~12.5% (Drying + Dehydroxylation)
+            </text>
+            <text x="0" y="52" fill="#0369a1" fontSize="10.5" fontWeight="800">
+              Required Wet Prototype: D_wet = 3.50 ÷ (1 - 0.125) ≈ 4.00 cm (40 mm)
+            </text>
+          </g>
+
+          {/* Equation 2: Cubic Loss */}
+          <g transform="translate(350, 42)">
+            <text x="0" y="15" fill="#78350f" fontSize="11" fontWeight="800">
+              Cubic Volume Loss:
+            </text>
+            <text x="0" y="34" fill="#b45309" fontSize="11" fontWeight="700">
+              V_fired = (0.875)³ × V_wet
+            </text>
+            <text x="0" y="52" fill="#b91c1c" fontSize="11" fontWeight="800">
+              ≈ 67% Remaining (33% Loss!)
+            </text>
+          </g>
+        </g>
+
+        {/* Bottom Dual Explanatory Panels */}
+        {/* Left: Degassing Vents */}
+        <g transform="translate(25, 310)">
+          <rect x="0" y="0" width="255" height="110" rx="8" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1.2" />
+          <text x="14" y="20" fill="#b45309" fontSize="11" fontWeight="800">
+            💨 Degassing Vents &amp; Steam Relief
+          </text>
+          <text x="14" y="38" fill="#334155" fontSize="9.5" fontWeight="600">
+            Perforations &amp; Grooves Prevent Explosion:
+          </text>
+          <text x="14" y="55" fill="#64748b" fontSize="9">
+            Solid clay spheres trap core steam during
+          </text>
+          <text x="14" y="70" fill="#64748b" fontSize="9">
+            450°–600°C lattice water loss. Bhirrana’s holes
+          </text>
+          <text x="14" y="85" fill="#64748b" fontSize="9">
+            and Mohenjo-daro’s grooves vent vapor evenly,
+          </text>
+          <text x="14" y="100" fill="#64748b" fontSize="9">
+            preventing explosive spalling in kiln fires.
+          </text>
+        </g>
+
+        {/* Right: Anti-Slump Sphericity Stabilization */}
+        <g transform="translate(300, 310)">
+          <rect x="0" y="0" width="255" height="110" rx="8" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1.2" />
+          <text x="14" y="20" fill="#047857" fontSize="11" fontWeight="800">
+            🧭 Anti-Slump Sphericity Control
+          </text>
+          <text x="14" y="38" fill="#334155" fontSize="9.5" fontWeight="600">
+            Preserving True 3D Sphericity (Δr &lt; 0.3mm):
+          </text>
+          <text x="14" y="55" fill="#64748b" fontSize="9">
+            Without flat resting bases, damp spheres sag
+          </text>
+          <text x="14" y="70" fill="#64748b" fontSize="9">
+            under gravity into oblate ellipsoids. Potters
+          </text>
+          <text x="14" y="85" fill="#64748b" fontSize="9">
+            used 2-piece hemispherical molds &amp; rotating
+          </text>
+          <text x="14" y="100" fill="#64748b" fontSize="9">
+            ash drying beds to achieve isotropic shrinkage.
+          </text>
+        </g>
+      </svg>
+    </Panel>
+  );
+}
+
 const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
   'sulba-148-rectangle': SulbaRectangle,
   'dhanurveda-five-sthanas': DhanurvedaSthanas,
@@ -904,6 +1123,7 @@ const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
   'siksha-five-places': SikshaFivePlaces,
   'terracotta-matrix-whorl': TerracottaMatrixWhorl,
   'spheres-of-certainty-matrix': SpheresOfCertaintyMatrix,
+  'terracotta-shrinkage-pyrotechnics': TerracottaShrinkagePyrotechnics,
   'vedic-four-pillars': VedicFourPillars,
 };
 
