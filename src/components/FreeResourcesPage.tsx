@@ -432,14 +432,40 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
     }
   };
 
+  const triggerFileDownload = async (filename: string, title?: string, fileSize?: string) => {
+    const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+    const url = `${base}/downloads/${filename}`;
+    showToast(`⏳ Preparing download: "${title || filename}"...`);
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 15000);
+      showToast(`📥 Solved guide downloaded: "${title || filename}"${fileSize ? ` (${fileSize})` : ''}`);
+    } catch {
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showToast(`📥 Downloading "${title || filename}"...`);
+    }
+  };
+
   const handleQuickDownload = (res: QuickDownloadResource) => {
-    const a = document.createElement('a');
-    a.href = `/downloads/${res.downloadFilename}`;
-    a.download = res.downloadFilename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    showToast(`📥 Solved guide downloaded: "${res.title}" (${res.fileSize})`);
+    triggerFileDownload(res.downloadFilename, res.title, res.fileSize);
   };
 
   // Filter feed items based on category and live search query
@@ -830,15 +856,14 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
 
                     <div className="resource-card-footer">
                       {item.actionType === 'download' && item.downloadFilename ? (
-                        <a
-                          href={`/downloads/${item.downloadFilename}`}
-                          download={item.downloadFilename}
+                        <button
+                          type="button"
                           className="resource-action-primary-btn"
-                          onClick={() => showToast(`📥 Downloading "${item.title}"...`)}
+                          onClick={() => triggerFileDownload(item.downloadFilename!, item.title)}
                         >
                           <span>{item.actionLabel || 'Download PDF'}</span>
                           <span aria-hidden="true">📥</span>
-                        </a>
+                        </button>
                       ) : item.actionLink ? (
                         <a
                           href={item.actionLink}
@@ -1216,15 +1241,14 @@ export const FreeResourcesPage: React.FC<FreeResourcesPageProps> = ({
                 <span>Copy Link</span>
               </button>
               {selectedItemModal.actionType === 'download' && selectedItemModal.downloadFilename ? (
-                <a
-                  href={`/downloads/${selectedItemModal.downloadFilename}`}
-                  download={selectedItemModal.downloadFilename}
+                <button
+                  type="button"
                   className="resource-action-primary-btn"
-                  onClick={() => showToast(`📥 Downloading "${selectedItemModal.title}"...`)}
+                  onClick={() => triggerFileDownload(selectedItemModal.downloadFilename!, selectedItemModal.title)}
                 >
                   <span>{selectedItemModal.actionLabel || 'Download PDF'}</span>
                   <span>📥</span>
-                </a>
+                </button>
               ) : selectedItemModal.actionLink ? (
                 <a
                   href={selectedItemModal.actionLink}
