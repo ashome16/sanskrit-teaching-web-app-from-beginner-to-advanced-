@@ -32,3 +32,11 @@
 
 /workbook-preview/*
   X-Robots-Tag: noindex
+
+# Public study vault downloads: serve with attachment disposition
+/downloads/*
+  Access-Control-Allow-Origin: *
+  Content-Type: application/pdf
+  Content-Disposition: attachment
+  Cache-Control: public, max-age=86400
+
