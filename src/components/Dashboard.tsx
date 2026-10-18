@@ -479,7 +479,7 @@ const Dashboard: React.FC = () => {
       else if (anchor === 'kerala' || anchor === 'yuktibhasa' || anchor === 'melakarta' || target.mathsTab === 'kerala') tab = 'kerala';
       else if (anchor?.startsWith('sutra-') || anchor === 'vedic-path' || target.mathsTab === 'sutras') tab = 'sutras';
       else if (anchor?.startsWith('solver-') || target.mathsTab === 'multiplication' || target.mathsTab === 'divisibility') tab = 'solvers';
-      else if (anchor?.startsWith('article-')) tab = 'articles';
+      else if (anchor?.startsWith('article-') || anchor === 'articles' || anchor === 'spheres-of-certainty' || anchor === 'terracotta-matrix') tab = 'articles';
       else if (target.mathsTab === 'altars') tab = 'geometry';
       setVedicTarget((prev) => ({ tab, anchor, key: prev.key + 1 }));
       navigateToView('vedic-maths');

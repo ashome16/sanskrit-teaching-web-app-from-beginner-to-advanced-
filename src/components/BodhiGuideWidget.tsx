@@ -417,6 +417,30 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
           grammarArticleId: item.relatedGrammarArticleId,
         },
       });
+    } else if (item.relatedView === 'reader' && onSearchResultNavigate) {
+      onSearchResultNavigate({
+        id: item.id,
+        title: item.question,
+        category: 'lessons',
+        categoryLabel: 'Reader · Deepakam',
+        badgeEmoji: '📚',
+        badgeColor: '#b45309',
+        description: item.shortAnswer,
+        keywords: [],
+        target: { view: 'reader' },
+      });
+    } else if (item.relatedView === 'dhatupatha' && onSearchResultNavigate) {
+      onSearchResultNavigate({
+        id: item.id,
+        title: item.question,
+        category: 'tools',
+        categoryLabel: 'Dhātupāṭha Browser',
+        badgeEmoji: '📖',
+        badgeColor: '#0284c7',
+        description: item.shortAnswer,
+        keywords: [],
+        target: { view: 'dhatupatha' },
+      });
     } else if (item.relatedView === 'philosophy' && item.id.includes('ujjain')) {
       if (onSearchResultNavigate) {
         onSearchResultNavigate({
@@ -749,10 +773,44 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     <input
                       type="text"
                       className="bodhi-search-input"
-                      placeholder="Ask Bodhi: Ujjain, GPS temple, prime meridian, sandhi, AI, zero..."
+                      placeholder="Ask Bodhi: 3.5cm Indus spheres, terracotta matrix, dictionary, sandhi, AI, zero..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                     />
+                    {searchQuery.trim().length > 0 && (
+                      <button
+                        type="button"
+                        className="bodhi-search-clear-btn"
+                        onClick={() => setSearchQuery('')}
+                        title="Clear search"
+                        aria-label="Clear search"
+                      >
+                        ×
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Curated Quick Search Term Discovery Pills */}
+                  <div className="bodhi-quick-terms-flow" aria-label="Bodhi suggested search terms">
+                    <span className="bodhi-quick-terms-label">⚡ Explore:</span>
+                    {[
+                      { label: '📏 Indus Spheres (3.5 cm)', term: 'spheres of certainty' },
+                      { label: '🏺 Terracotta Matrix', term: 'terracotta matrix' },
+                      { label: '📖 Sanskrit Dictionary', term: 'koshashri' },
+                      { label: '🎯 Deepakam (Classes 7 & 8)', term: 'deepakam' },
+                      { label: '🧭 Ujjain Prime Meridian', term: 'ujjain' },
+                      { label: '⚡ 16 Vedic Sutras', term: 'nikhilam' },
+                      { label: '🤖 AI (कृत्रिमन्त्रम्)', term: 'krtrimantram' },
+                    ].map((item) => (
+                      <button
+                        key={item.term}
+                        type="button"
+                        className={`bodhi-quick-term-pill ${searchQuery.toLowerCase().includes(item.term.toLowerCase()) ? 'active' : ''}`}
+                        onClick={() => setSearchQuery(item.term)}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
                   </div>
 
                   {/* Live Word Autocomplete Radar */}
@@ -974,7 +1032,18 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                 </div>
 
                                 {item.relatedView && (
-                                  <div style={{ marginTop: '0.65rem', display: 'flex', justifyContent: 'flex-end' }}>
+                                  <div style={{ marginTop: '0.65rem', display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+                                    {item.id === 'qa-sanskrit-dictionary-koshashri' && (
+                                      <a
+                                        href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bodhi-guide-btn"
+                                        style={{ background: '#0284c7', borderColor: '#0369a1', color: '#ffffff', textDecoration: 'none' }}
+                                      >
+                                        🌐 Search Kōshaśrī Catalog ↗
+                                      </a>
+                                    )}
                                     <button
                                       type="button"
                                       className="bodhi-guide-btn"
@@ -999,6 +1068,10 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                             Sanskrit spelling or script variations happen. Let Bodhi take you straight to our most popular study rooms:
                           </p>
                           <div className="bodhi-empty-shortcut-row">
+                            <button type="button" onClick={() => setSearchQuery('spheres of certainty')}>Indus Spheres (3.5 cm)</button>
+                            <button type="button" onClick={() => setSearchQuery('terracotta matrix')}>Terracotta Matrix (BKG)</button>
+                            <button type="button" onClick={() => setSearchQuery('koshashri')}>Sanskrit Dictionary (कोशश्री)</button>
+                            <button type="button" onClick={() => setSearchQuery('deepakam')}>Class 7 & 8 Deepakam</button>
                             <button type="button" onClick={() => setSearchQuery('lakara')}>Verb Lakāras (लट्, लृट्)</button>
                             <button type="button" onClick={() => setSearchQuery('sandhi')}>Sandhi Rules (संधि)</button>
                             <button type="button" onClick={() => setSearchQuery('vibhakti')}>7 Vibhaktis (विभक्ति)</button>
@@ -1041,6 +1114,29 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                               </span>
                             )}
                           </div>
+
+                          {item.relatedView && (
+                            <div style={{ marginTop: '0.65rem', display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+                              {item.id === 'qa-sanskrit-dictionary-koshashri' && (
+                                <a
+                                  href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="bodhi-guide-btn"
+                                  style={{ background: '#0284c7', borderColor: '#0369a1', color: '#ffffff', textDecoration: 'none' }}
+                                >
+                                  🌐 Search Kōshaśrī Catalog ↗
+                                </a>
+                              )}
+                              <button
+                                type="button"
+                                className="bodhi-guide-btn"
+                                onClick={() => openRelated(item)}
+                              >
+                                {relatedLabelFor(item)}
+                              </button>
+                            </div>
+                          )}
                         </article>
                       ))}
                     </div>

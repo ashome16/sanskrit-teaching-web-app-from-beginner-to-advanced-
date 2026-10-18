@@ -97,6 +97,30 @@ export function matchesSearchQuery(target: string, query: string): boolean {
     return true;
   }
 
+  // Indus Metrology & Spheres of Certainty synonym matching
+  const isIndusMetrologyQuery = /^(spheres|sphere|certainty|bhirrana|mohenjodaro|mohenjo|angula|angulas|lothal|pramana\s*golaka|प्रमाण-गोलकौ|प्रमाण\s*गोलक|मानशास्त्रम्)$/i.test(rawQueryLower);
+  if (isIndusMetrologyQuery && /sphere|certainty|bhirrana|mohenjo|angula|lothal|chert|metrology|प्रमाण-गोलकौ|मानशास्त्रम्/i.test(rawTargetLower)) {
+    return true;
+  }
+
+  // Terracotta Matrix / Swat Valley (BKG) synonym matching
+  const isTerracottaMatrixQuery = /^(terracotta|matrix|swat|bkg|bir-kot|whorl|mrtpatra|मृत्पात्रे|मृत्पात्रम्)$/i.test(rawQueryLower);
+  if (isTerracottaMatrixQuery && /terracotta|matrix|swat|bkg|whorl|rotational|मृत्पात्रे|मृत्पात्रम्/i.test(rawTargetLower)) {
+    return true;
+  }
+
+  // Sanskrit Dictionary & Kōshaśrī synonym matching
+  const isDictionaryQuery = /^(dictionary|koshashri|koshasri|kosa|kosha|shabdakosh|shabdakosha|sabdakosa|amarakosha|amarkosh|lexicon|thesaurus|शब्दकोश|कोशश्री|अमरकोश)$/i.test(rawQueryLower);
+  if (isDictionaryQuery && /dictionary|koshashri|koshasri|kosa|kosha|shabdakosha|sabdakosa|amarakosha|lexicon|thesaurus|शब्दकोश|कोशश्री|अमरकोश/i.test(rawTargetLower)) {
+    return true;
+  }
+
+  // Deepakam Sanskrit Textbook synonym matching
+  const isDeepakamQuery = /^(deepakam|dipakam|deepak|दीपकम्)$/i.test(rawQueryLower);
+  if (isDeepakamQuery && /deepakam|dipakam|deepak|दीपकम्|ncert\s*class\s*[78]/i.test(rawTargetLower)) {
+    return true;
+  }
+
   // Check token by token
   const queryTokens = normQuery.split(/\s+/).filter(Boolean);
   if (queryTokens.length === 0) return true;

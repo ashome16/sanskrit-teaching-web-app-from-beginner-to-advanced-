@@ -11,15 +11,17 @@ interface GlobalSearchModalProps {
 
 const POPULAR_SUGGESTIONS = [
   'Vidyā (विद्या)',
-  'Symbol on top of a (ā)',
-  'Ask Bodhi',
+  '3.5cm Indus Spheres (प्रमाण-गोलकौ)',
+  'Terracotta Matrix (BKG)',
+  'Sanskrit Dictionary (कोशश्री)',
   '16 Vedic Sutras',
   '13 Sub-Sutras',
+  'Class 7 & 8 Deepakam',
   'Vibhaktis (8 Cases)',
   'Sandhi',
   'Kaṭapayādi (ϕ & π)',
   'Dhātupāṭha',
-  'Class 7 & 8 Deepakam',
+  'Ask Bodhi',
 ];
 
 const RECENT_SEARCHES_KEY = 'gurukul_recent_searches_v1';
