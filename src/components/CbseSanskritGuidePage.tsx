@@ -22,7 +22,7 @@ const PAGE_TITLE =
   'CBSE Class 7, 8, 9 & 10 Sanskrit Exam Guide: Blueprint, Question Formation (किम्-पद) & Solved Papers | EdNet Learn';
 const PAGE_DESC =
   'Master CBSE NCERT Sanskrit exams for Classes 7–10: 80-mark blueprint, standardized instructions (निर्देशाः), core interrogative roots (क-कार शब्दाः), question formation (प्रश्ननिर्माणम्), and exam directives.';
-const PAGE_URL = 'https://ednetlearn.in/cbse-sanskrit-guide';
+const PAGE_URL = 'https://ednetlearn.in/cbse-sanskrit-guide/';
 
 const BLUEPRINT_ROWS: {
   section: string;

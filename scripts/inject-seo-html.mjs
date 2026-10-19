@@ -48,7 +48,6 @@ const REQUIRED_PATHS = [
   '/resources',
   '/philosophy',
   '/faq',
-  '/science-lab',
   '/vignana-lab',
 ];
 
@@ -220,7 +219,8 @@ function getRouteJsonLd(pathname, meta) {
 }
 
 function applyMeta(html, meta, pathname) {
-  const canonical = pathname === '/' ? `${HOST}/` : `${HOST}${pathname}`;
+  const normalizedPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+  const canonical = `${HOST}${normalizedPath}`;
   const title = escapeAttr(meta.title);
   const desc = escapeAttr(meta.desc);
   const url = escapeAttr(canonical);
@@ -320,7 +320,7 @@ for (const route of routes) {
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, 'index.html'), html);
   }
-  const canonical = route.pathname === '/' ? `${HOST}/` : `${HOST}${route.pathname}`;
+  const canonical = route.pathname.endsWith('/') ? `${HOST}${route.pathname}` : `${HOST}${route.pathname}/`;
   if (!html.includes(`<title>${escapeAttr(route.title)}</title>`)) {
     throw new Error(`Title check failed for ${route.pathname}`);
   }

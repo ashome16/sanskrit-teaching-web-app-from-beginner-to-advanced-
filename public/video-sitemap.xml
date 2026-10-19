@@ -4,7 +4,7 @@
 
   <!-- 1. Sanskrit Phonetics & Science of Sound (Textbook Reader & Alphabet) -->
   <url>
-    <loc>https://ednetlearn.in/reader</loc>
+    <loc>https://ednetlearn.in/reader/</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/tkvYjNZSsZA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Sanskrit: The Science of Sound &amp; Pāṇinian Acoustic Articulation</video:title>
@@ -24,7 +24,7 @@
 
   <!-- 2. Sanskrit Alphabet Mastery of Sound (Barakhadi & Aksharas) -->
   <url>
-    <loc>https://ednetlearn.in/barakhadi</loc>
+    <loc>https://ednetlearn.in/barakhadi/</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/a4rz9NbMq0M/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Mastery of Sanskrit Sound &amp; Varṇamālā Akṣaras (Devanagari)</video:title>
@@ -44,7 +44,7 @@
 
   <!-- 3. Līlāvatī Poetic Mathematics (Vedic Maths) -->
   <url>
-    <loc>https://ednetlearn.in/vedic-maths</loc>
+    <loc>https://ednetlearn.in/vedic-maths/</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/SuEoIxU8itY/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Līlāvatī Gaṇitam: Poetic Mental Mathematics of Bhāskarācārya</video:title>
@@ -64,7 +64,7 @@
 
   <!-- 4. Sulba Sutras Geometry & Baudhayana Proofs (Vijñāna Lab) -->
   <url>
-    <loc>https://ednetlearn.in/vignana-lab</loc>
+    <loc>https://ednetlearn.in/vignana-lab/</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/bp9m53Tp6xg/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Sulba Sūtras Geometric Proofs: Baudhayana Theorem &amp; Vedic Altar Astronomy</video:title>
@@ -84,7 +84,7 @@
 
   <!-- 5. Sūrya Siddhānta Ahargaṇa & Astronomical Calculations (Philosophy & Science) -->
   <url>
-    <loc>https://ednetlearn.in/philosophy</loc>
+    <loc>https://ednetlearn.in/philosophy/</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/7u7Nl0pBh2Y/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Sūrya Siddhānta Ahargaṇa Formulations &amp; Planetary Motion in Sanskrit</video:title>

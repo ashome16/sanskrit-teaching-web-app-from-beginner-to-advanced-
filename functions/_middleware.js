@@ -45,10 +45,11 @@ export async function onRequest(context) {
   const userAgent = (context.request.headers.get('user-agent') || '').toLowerCase();
   const isSearchBot = BOT_USER_AGENTS.some((bot) => userAgent.includes(bot));
 
-  // Determine canonical URL for the current path (normalize trailing slash)
-  const cleanPath = url.pathname.length > 1 && url.pathname.endsWith('/')
-    ? url.pathname.slice(0, -1)
-    : url.pathname;
+  // Determine canonical URL for the current path (ensure trailing slash for directory routes)
+  let cleanPath = url.pathname;
+  if (!cleanPath.includes('.') && !cleanPath.endsWith('/')) {
+    cleanPath = `${cleanPath}/`;
+  }
   const canonicalUrl = `${CANONICAL_ORIGIN}${cleanPath}`;
 
   // Always supply the canonical Link header on HTML responses

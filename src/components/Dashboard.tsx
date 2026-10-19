@@ -667,7 +667,7 @@ const Dashboard: React.FC = () => {
       if (ogTitleEl) ogTitleEl.setAttribute('content', meta.title);
       const ogDescEl = document.querySelector('meta[property="og:description"]');
       if (ogDescEl) ogDescEl.setAttribute('content', meta.desc);
-      const canonicalHref = `https://ednetlearn.in${desired === '/' ? '/' : desired}`;
+      const canonicalHref = `https://ednetlearn.in${desired.endsWith('/') ? desired : `${desired}/`}`;
       const ogUrlEl = document.querySelector('meta[property="og:url"]');
       if (ogUrlEl) ogUrlEl.setAttribute('content', canonicalHref);
       const canonicalEl = document.querySelector('link[rel="canonical"]');

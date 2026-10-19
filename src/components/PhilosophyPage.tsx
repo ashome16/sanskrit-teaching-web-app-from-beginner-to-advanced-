@@ -262,7 +262,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
 
     const canonical = document.querySelector('link[rel="canonical"]');
     const prevCanonical = canonical?.getAttribute('href') || '';
-    canonical?.setAttribute('href', 'https://ednetlearn.in/philosophy');
+    canonical?.setAttribute('href', 'https://ednetlearn.in/philosophy/');
 
     const ogTitle = document.querySelector('meta[property="og:title"]');
     const ogDesc = document.querySelector('meta[property="og:description"]');
@@ -288,7 +288,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
         : 'https://ednetlearn.in/philosophy/sunyat-anantam-mandala.webp';
     ogTitle?.setAttribute('content', currentTitle);
     ogDesc?.setAttribute('content', currentDesc);
-    ogUrl?.setAttribute('content', 'https://ednetlearn.in/philosophy');
+    ogUrl?.setAttribute('content', 'https://ednetlearn.in/philosophy/');
     ogImage?.setAttribute('content', MANDALA_OG);
     twitterImage?.setAttribute('content', MANDALA_OG);
 
