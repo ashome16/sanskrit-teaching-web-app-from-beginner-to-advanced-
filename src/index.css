@@ -186,6 +186,8 @@ code {
 .wbp-audio-opt-btn.is-active{background:#fff;color:#0f172a;box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .wbp-audio-text-summary{display:flex;flex-direction:column;gap:.15rem;min-width:0;flex:1}
 .wbp-audio-recite-sa{font-size:.88rem;font-weight:700;color:#1e293b;line-height:1.35}
+.wbp-chunk{border-radius:4px;padding:1px 3px;transition:background-color .15s ease,color .15s ease}
+.wbp-chunk-active{background:#fef08a;color:#854d0e;box-shadow:0 0 0 2px #fde047;font-weight:800}
 .wbp-audio-translit{font-size:.72rem;color:#64748b;font-style:italic;font-family:inherit}
 .wbp-audio-english{font-size:.72rem;color:#334155;line-height:1.25}
 .wbp-audio-vocab-row{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;padding-top:.25rem;border-top:1px dashed #cbd5e1}

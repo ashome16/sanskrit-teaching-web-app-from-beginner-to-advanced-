@@ -935,12 +935,21 @@ export const splitLongSpeechChunk = (chunk: string, max = BODHI_MAX_UTTERANCE_CH
   return out;
 };
 
-/** Per-word visarga echo (same rule as the letter/word path). */
+/** Per-word visarga echo (same rule as the letter/word path) + vocalic vowel Mac/Win cues. */
 const toBodhiSpeech = (chunk: string): string => {
   const spaced = isWindowsPlatform();
   return chunk
     .split(' ')
-    .map((word) => applyVisargaEcho(word, spaced))
+    .map((word) => {
+      const clean = word.trim();
+      if (isMacDesktopPlatform() && MAC_VOCALIC_CUES[clean]) {
+        return MAC_VOCALIC_CUES[clean].cue;
+      }
+      if (clean === 'ऌ') {
+        return 'लृ';
+      }
+      return applyVisargaEcho(word, spaced);
+    })
     .join(' ');
 };
 
@@ -995,6 +1004,8 @@ export interface SpeakAsBodhiOptions {
   pauseMs?: number;
   /** Force a speed; otherwise the stored preference is read per chunk. */
   speed?: BodhiVoiceSpeed;
+  /** Force a specific speech rate (e.g. 0.70 for deliberate letter articulation). */
+  rate?: number;
   /** 'sa' (default, hi-IN voice) or 'en' (en-IN / en-* voice). */
   lang?: BodhiSpeechLang;
 }
@@ -1067,6 +1078,7 @@ export const speakAsBodhi = (text: string, options?: SpeakAsBodhiOptions): (() =
     const chunkIndex = index;
     index += 1;
     const settings = currentSettings();
+    const effectiveRate = options?.rate ?? settings.rate;
 
     const after = () => {
       if (cancelled || settledForIndex === chunkIndex) return;
@@ -1093,7 +1105,7 @@ export const speakAsBodhi = (text: string, options?: SpeakAsBodhiOptions): (() =
     let fallbackMs = 0;
     pieces.forEach((piece, pieceIndex) => {
       const utterance = new SpeechSynthesisUtterance(lang === 'en' ? piece : toBodhiSpeech(piece));
-      configureBodhiUtterance(utterance, lang, settings.rate, piece);
+      configureBodhiUtterance(utterance, lang, effectiveRate, piece);
       if (pieceIndex === pieces.length - 1) {
         utterance.onend = after;
       }

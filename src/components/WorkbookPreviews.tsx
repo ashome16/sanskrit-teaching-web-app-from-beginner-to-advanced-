@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { downloadWorkbook, type WorkbookFile } from '../utils/workbookDownload';
 import { useAuthStore } from '../store/authStore';
 import { hasPaidAccess, hasPremiumAccess } from '../utils/premiumAccess';
-import { playPronunciation, stopPronunciation, speakAsBodhi } from '../utils/pronunciation';
+import { playPronunciation, stopPronunciation, speakAsBodhi, splitBodhiSegments } from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
 
 type Book = { group?: string; id: string; title: string; pdf: WorkbookFile; pages: number; color: string; shots: { n: number; label: string }[] };
@@ -16,7 +16,8 @@ const BOOKS: Book[] = [
     color: '#15803d',
     shots: [
       { n: 1, label: 'Cover' },
-      { n: 3, label: 'Vowels' },
+      { n: 3, label: 'Vowels 1' },
+      { n: 4, label: 'Vowels 2' },
       { n: 9, label: 'First words' },
       { n: 26, label: 'Certificate' },
     ],
@@ -136,31 +137,31 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
     pages: {
       1: {
         title: 'Cover & Invocation · मङ्गलाचरणम्',
-        recitation: 'ॐ श्री सरस्वत्यै नमः । विद्यां ददातु मे वाणी ।',
-        transliteration: 'om śrī sarasvatyai namaḥ | vidyāṃ dadātu me vāṇī |',
-        english: 'Salutations to Goddess Sarasvatī. May the divine mother grant auspicious wisdom and speech.',
+        recitation: 'ॐ श्री सरस्वत्यै नमः । मम प्रथमा संस्कृत-अभ्यास-पुस्तिका ।',
+        transliteration: 'om śrī sarasvatyai namaḥ | mama prathamā saṃskṛta-abhyāsa-pustikā |',
+        english: 'Salutations to Goddess Sarasvatī. My First Sanskrit Workbook for beginners.',
         vocab: [
-          { sa: 'सरस्वती', iast: 'sarasvatī', en: 'Goddess Sarasvatī' },
-          { sa: 'विद्या', iast: 'vidyā', en: 'Knowledge' },
-          { sa: 'वाणी', iast: 'vāṇī', en: 'Speech' },
+          { sa: 'संस्कृतम्', iast: 'saṃskṛtam', en: 'Sanskrit' },
+          { sa: 'सरस्वती', iast: 'sarasvatī', en: 'Goddess of Learning' },
+          { sa: 'पुस्तिका', iast: 'pustikā', en: 'Workbook' },
         ],
       },
       2: {
-        title: 'Consonants · व्यञ्जनानि',
-        recitation: 'कवर्गः चवर्गः टवर्गः तवर्गः पवर्गश्च । पञ्च व्यञ्जन-वर्गाः ।',
-        transliteration: 'kavargaḥ cavargaḥ ṭavargaḥ tavargaḥ pavargaśca | pañca vyañjana-vargāḥ |',
-        english: 'The five consonant classes of Sanskrit: Velar, Palatal, Retroflex, Dental, and Labial stops.',
+        title: 'How to Use This Book · कथं प्रयोक्तव्यम्',
+        recitation: 'वर्णम् उच्चारयत । शिरोरेखया सह लिखत । अभ्यासेन विद्या सिध्यति ।',
+        transliteration: 'varṇam uccārayata | śirorekhayā saha likhata | abhyāsena vidyā sidhyati |',
+        english: 'Say each letter aloud, trace carefully along the top line (śiro-rekhā), and write with daily joyful practice.',
         vocab: [
-          { sa: 'व्यञ्जनम्', iast: 'vyañjanam', en: 'Consonant' },
-          { sa: 'वर्गः', iast: 'vargaḥ', en: 'Consonant class' },
-          { sa: 'स्पर्शः', iast: 'sparśaḥ', en: 'Stop consonant' },
+          { sa: 'शिरोरेखा', iast: 'śirorekhā', en: 'Top line' },
+          { sa: 'उच्चारणम्', iast: 'uccāraṇam', en: 'Pronunciation' },
+          { sa: 'अभ्यासः', iast: 'abhyāsaḥ', en: 'Practice' },
         ],
       },
       3: {
-        title: 'Vowels · स्वराः',
-        recitation: 'अ आ इ ई उ ऊ ऋ ॠ ऌ ए ऐ ओ औ अं अः । वर्णानां मूलम् स्वराः ।',
-        transliteration: 'a ā i ī u ū ṛ ṝ ḷ e ai o au aṃ aḥ | varṇānāṃ mūlam svarāḥ |',
-        english: 'The primary vowels of the Sanskrit alphabet (Varṇamālā), carrying primal resonance.',
+        title: 'Vowels (1) · स्वराः (१)',
+        recitation: 'अ, आ, इ, ई, उ, ऊ, ऋ, ॠ ।',
+        transliteration: 'a, ā, i, ī, u, ū, ṛ, ṝ |',
+        english: 'The first eight vowels of the Sanskrit Varṇamālā: short and long pairs a, ā; i, ī; u, ū; and vocalic ṛ, ṝ.',
         vocab: [
           { sa: 'अ', iast: 'a', en: 'short a' },
           { sa: 'आ', iast: 'ā', en: 'long ā' },
@@ -169,42 +170,93 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
           { sa: 'उ', iast: 'u', en: 'short u' },
           { sa: 'ऊ', iast: 'ū', en: 'long ū' },
           { sa: 'ऋ', iast: 'ṛ', en: 'vocalic ṛ' },
+          { sa: 'ॠ', iast: 'ṝ', en: 'long vocalic ṝ' },
+        ],
+      },
+      4: {
+        title: 'Vowels (2) · स्वराः (२)',
+        recitation: 'ऌ, ए, ऐ, ओ, औ, अं, अः ।',
+        transliteration: 'ḷ, e, ai, o, au, aṃ, aḥ |',
+        english: 'The second set of vowels and sound markers: vocalic ḷ, diphthongs e, ai, o, au, anusvāra aṃ, and visarga aḥ.',
+        vocab: [
+          { sa: 'ऌ', iast: 'ḷ', en: 'vocalic ḷ' },
           { sa: 'ए', iast: 'e', en: 'vowel e' },
           { sa: 'ऐ', iast: 'ai', en: 'vowel ai' },
           { sa: 'ओ', iast: 'o', en: 'vowel o' },
           { sa: 'औ', iast: 'au', en: 'vowel au' },
+          { sa: 'अं', iast: 'aṃ', en: 'anusvāra aṃ' },
+          { sa: 'अः', iast: 'aḥ', en: 'visarga aḥ' },
         ],
       },
-      4: {
-        title: 'Mātrās & Syllables · मात्रा-परिचयः',
-        recitation: 'स्वरैः सह व्यञ्जनानां योगः । क का कि की कु कू कृ ।',
-        transliteration: 'svaraiḥ saha vyañjanānāṃ yogaḥ | ka kā ki kī ku kū kṛ |',
-        english: 'Vowel diacritics (Mātrās) joined with consonants to form complete vocalic syllables.',
+      5: {
+        title: 'Consonants (1) · व्यञ्जनानि (१)',
+        recitation: 'क, ख, ग, घ, ङ । च, छ, ज, झ, ञ । ट, ठ, ड, ढ, ण ।',
+        transliteration: 'ka, kha, ga, gha, ṅa | ca, cha, ja, jha, ña | ṭa, ṭha, ḍa, ḍha, ṇa |',
+        english: 'The first three consonant stops: Velar (throat / ka-varga), Palatal (palate / ca-varga), and Retroflex (roof / ṭa-varga).',
         vocab: [
-          { sa: 'मात्रा', iast: 'mātrā', en: 'Vowel diacritic' },
-          { sa: 'अक्षरम्', iast: 'akṣaram', en: 'Syllable / Akṣara' },
-          { sa: 'योगः', iast: 'yogaḥ', en: 'Combination' },
+          { sa: 'क', iast: 'ka', en: 'throat stop k' },
+          { sa: 'च', iast: 'ca', en: 'palate stop ch' },
+          { sa: 'ट', iast: 'ṭa', en: 'retroflex stop ṭ' },
+        ],
+      },
+      6: {
+        title: 'Consonants (2) · व्यञ्जनानि (२)',
+        recitation: 'त, थ, द, ध, न । प, फ, ब, भ, म । य, र, ल, व ।',
+        transliteration: 'ta, tha, da, dha, na | pa, pha, ba, bha, ma | ya, ra, la, va |',
+        english: 'Dental consonants (ta-varga), Labial consonants (pa-varga), and the four semivowels ya, ra, la, va.',
+        vocab: [
+          { sa: 'त', iast: 'ta', en: 'dental t' },
+          { sa: 'प', iast: 'pa', en: 'labial p' },
+          { sa: 'य', iast: 'ya', en: 'semivowel y' },
+        ],
+      },
+      7: {
+        title: 'Consonants (3) · व्यञ्जनानि (३)',
+        recitation: 'श, ष, स, ह । क्ष, त्र, ज्ञ ।',
+        transliteration: 'śa, ṣa, sa, ha | kṣa, tra, jña |',
+        english: 'Sibilants (palatal, retroflex, dental sh and breath h) and conjuncts kṣa, tra, jña.',
+        vocab: [
+          { sa: 'श', iast: 'śa', en: 'palatal ś' },
+          { sa: 'ष', iast: 'ṣa', en: 'retroflex ṣ' },
+          { sa: 'स', iast: 'sa', en: 'dental s' },
+          { sa: 'ह', iast: 'ha', en: 'breathy h' },
+        ],
+      },
+      8: {
+        title: 'Vowel signs on क · मात्राः',
+        recitation: 'क, का, कि, की, कु, कू, कृ, के, कै, को, कौ, कं, कः ।',
+        transliteration: 'ka, kā, ki, kī, ku, kū, kṛ, ke, kai, ko, kau, kaṃ, kaḥ |',
+        english: 'Vowel diacritics (Mātrās) joined with consonant ka to form the complete vocalic series.',
+        vocab: [
+          { sa: 'क', iast: 'ka', en: 'inherent a' },
+          { sa: 'का', iast: 'kā', en: 'long ā sign' },
+          { sa: 'कि', iast: 'ki', en: 'short i sign' },
+          { sa: 'की', iast: 'kī', en: 'long ī sign' },
+          { sa: 'कु', iast: 'ku', en: 'short u sign' },
+          { sa: 'कू', iast: 'kū', en: 'long ū sign' },
+          { sa: 'कृ', iast: 'kṛ', en: 'ṛ sign' },
+          { sa: 'के', iast: 'ke', en: 'e sign' },
         ],
       },
       9: {
-        title: 'First Words · प्रथम-शब्दाः',
-        recitation: 'कमलम्, गजः, अश्वः, फलम्, वृक्षः, पुस्तकम् । एते दैनन्दिन-शब्दाः ।',
-        transliteration: 'kamalam, gajaḥ, aśvaḥ, phalam, vṛkṣaḥ, pustakam | ete dainandina-śabdāḥ |',
-        english: 'Foundational Sanskrit vocabulary for everyday objects, nature, and living beings.',
+        title: 'First Words · मम प्रथमाः शब्दाः',
+        recitation: 'गजः, अश्वः, फलम्, जलम्, पुष्पम्, वृक्षः, सूर्यः, चन्द्रः, नदी, गृहम्, पुस्तकम्, बालकः, बालिका, माता, पिता ।',
+        transliteration: 'gajaḥ, aśvaḥ, phalam, jalam, puṣpam, vṛkṣaḥ, sūryaḥ, candraḥ, nadī, gṛham, pustakam, bālakaḥ, bālikā, mātā, pitā |',
+        english: 'Foundational Sanskrit vocabulary for everyday objects, nature, family, and living beings.',
         vocab: [
-          { sa: 'कमलम्', iast: 'kamalam', en: 'Lotus' },
           { sa: 'गजः', iast: 'gajaḥ', en: 'Elephant' },
           { sa: 'अश्वः', iast: 'aśvaḥ', en: 'Horse' },
           { sa: 'फलम्', iast: 'phalam', en: 'Fruit' },
+          { sa: 'जलम्', iast: 'jalam', en: 'Water' },
+          { sa: 'पुष्पम्', iast: 'puṣpam', en: 'Flower' },
           { sa: 'वृक्षः', iast: 'vṛkṣaḥ', en: 'Tree' },
-          { sa: 'पुस्तकम्', iast: 'pustakam', en: 'Book' },
         ],
       },
-      26: {
-        title: 'Numbers & Completion · सङ्ख्याः अभिनन्दनं च',
-        recitation: 'एकम् द्वे त्रीणि चत्वारि पञ्च षट् सप्त अष्ट नव दश । साधु साधु अभिनन्दनम् !',
-        transliteration: 'ekam dve trīṇi catvāri pañca ṣaṭ sapta aṣṭa nava daśa | sādhu sādhu abhinandanam!',
-        english: 'Cardinal numerals 1 to 10. Well done! Hearty congratulations on finishing beginner drills.',
+      10: {
+        title: 'Numbers 1–10 · सङ्ख्याः',
+        recitation: 'एकम्, द्वे, त्रीणि, चत्वारि, पञ्च, षट्, सप्त, अष्ट, नव, दश ।',
+        transliteration: 'ekam, dve, trīṇi, catvāri, pañca, ṣaṭ, sapta, aṣṭa, nava, daśa |',
+        english: 'Cardinal numerals 1 to 10 in neuter counting form.',
         vocab: [
           { sa: 'एकम्', iast: 'ekam', en: '1' },
           { sa: 'द्वे', iast: 'dve', en: '2' },
@@ -212,6 +264,17 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
           { sa: 'चत्वारि', iast: 'catvāri', en: '4' },
           { sa: 'पञ्च', iast: 'pañca', en: '5' },
           { sa: 'दश', iast: 'daśa', en: '10' },
+        ],
+      },
+      26: {
+        title: 'Certificate & Completion · प्रमाणपत्रम्',
+        recitation: 'शोभनम्! अग्रे गच्छ । मम प्रथमा संस्कृत-अभ्यास-पुस्तिका सम्पूर्णा ।',
+        transliteration: 'śobhanam! agre gaccha | mama prathamā saṃskṛta-abhyāsa-pustikā sampūrṇā |',
+        english: 'Well done! Keep going. Congratulations on completing My First Sanskrit Workbook!',
+        vocab: [
+          { sa: 'शोभनम्', iast: 'śobhanam', en: 'Well done!' },
+          { sa: 'प्रमाणपत्रम्', iast: 'pramāṇapatram', en: 'Certificate' },
+          { sa: 'सम्पूर्णा', iast: 'sampūrṇā', en: 'Completed' },
         ],
       },
     },
@@ -777,6 +840,7 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
   const [isPlayingAudio, setIsPlayingAudio] = useState<boolean>(false);
   const [audioMode, setAudioMode] = useState<'sa' | 'bilingual'>('sa');
   const [activeWord, setActiveWord] = useState<string | null>(null);
+  const [activeChunkIndex, setActiveChunkIndex] = useState<number | null>(null);
   const audioStopRef = useRef<(() => void) | null>(null);
 
   const { currentUser, isAdminLoggedIn, openAuthModal, openPaymentModal } = useAuthStore();
@@ -791,6 +855,7 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
     stopPronunciation();
     setIsPlayingAudio(false);
     setActiveWord(null);
+    setActiveChunkIndex(null);
   }, []);
 
   const close = useCallback(() => {
@@ -858,15 +923,23 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         }
         stopPronunciation();
         setIsPlayingAudio(false);
+        setActiveChunkIndex(null);
         audioStopRef.current = null;
       };
 
       if (mode === 'sa') {
         activeStopFn = speakAsBodhi(audio.recitation, {
           lang: 'sa',
+          speed: 'slow',
+          rate: 0.72,
+          pauseMs: 750,
+          onChunk: (idx) => {
+            if (!isCancelled) setActiveChunkIndex(idx);
+          },
           onEnd: () => {
             if (!isCancelled) {
               setIsPlayingAudio(false);
+              setActiveChunkIndex(null);
               audioStopRef.current = null;
             }
           },
@@ -875,12 +948,21 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         // Bilingual mode: First recite Sanskrit with 'sa', then after a natural pedagogical pause recite English with 'en'
         activeStopFn = speakAsBodhi(audio.recitation, {
           lang: 'sa',
+          speed: 'slow',
+          rate: 0.72,
+          pauseMs: 750,
+          onChunk: (idx) => {
+            if (!isCancelled) setActiveChunkIndex(idx);
+          },
           onEnd: () => {
             if (isCancelled) return;
+            setActiveChunkIndex(null);
             pauseTimer = setTimeout(() => {
               if (isCancelled) return;
               activeStopFn = speakAsBodhi(audio.english, {
                 lang: 'en',
+                speed: 'slow',
+                pauseMs: 500,
                 onEnd: () => {
                   if (!isCancelled) {
                     setIsPlayingAudio(false);
@@ -888,7 +970,7 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
                   }
                 },
               });
-            }, 450);
+            }, 650);
           },
         });
       }
@@ -1116,7 +1198,16 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
                   </div>
 
                   <div className="wbp-audio-text-summary">
-                    <span className="wbp-audio-recite-sa">{currentPageAudio.recitation}</span>
+                    <span className="wbp-audio-recite-sa">
+                      {splitBodhiSegments(currentPageAudio.recitation, 'sa').map((seg, idx) => (
+                        <span
+                          key={idx}
+                          className={`wbp-chunk ${seg.chunkIndex !== null && activeChunkIndex === seg.chunkIndex ? 'wbp-chunk-active' : ''}`}
+                        >
+                          {seg.text}
+                        </span>
+                      ))}
+                    </span>
                     <span className="wbp-audio-translit">{currentPageAudio.transliteration}</span>
                     <span className="wbp-audio-english">{currentPageAudio.english}</span>
                   </div>
