@@ -1,40 +1,25 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useAuthStore } from '../store/authStore';
+import { SECTION_QUESTIONS, SWAR_SECTIONS, type SectionQ } from '../data/swarBook';
 
 /**
  * /certificate — Certificate of Completion for readers of the book
- * स्वर् · SWAR Sanskrit Workbook (The Darśana Series, by Sesha K Penumallu).
+ * Swar · स्वर — Sanskrit Workbook (The Darśana Series, by Sesha K Penumallu).
  *
- * Flow: sign in → name + book code → 5-question quiz (pass 4/5) → certificate.
- * The certificate ID is deterministic: SHA-256(login id/email + book code),
- * so the same learner always gets the same ID. Accounts live in the browser
- * (no server user storage), so verification is not server-side.
+ * Flow: book code → quiz with ONE question from each section of the book's
+ * Contents (7 Parts + Vedic maths) → score → at 70% or more, name entry and
+ * certificate; below 70%, the sections to revisit (with page numbers) and a retry.
+ * The certificate ID is deterministic: SHA-256(login id/email, or the name if
+ * not signed in + book code). Accounts live in the browser (no server storage).
  */
 
 export const BOOK_CODE = 'SWAR-2026';
-const PASS_MARK = 4;
-const QUIZ_LENGTH = 5;
+const QUIZ_LENGTH = SWAR_SECTIONS.length;
+const PASS_PERCENT = 70;
+const PASS_MARK = Math.ceil((QUIZ_LENGTH * PASS_PERCENT) / 100);
+export const BOOK_TITLE = 'Swar · स्वर — Sanskrit Workbook';
 
-interface Q { q: string; options: string[]; answer: number }
-
-/** Facts taken from the book interior (Letters & Words, Numbers, Verbs, Festivals). */
-const QUESTION_POOL: Q[] = [
-  { q: 'How many vowels (स्वराः) are taught in the book?', options: ['10', '14', '33', '50'], answer: 1 },
-  { q: 'How many consonants (व्यञ्जनानि) are taught in the book?', options: ['14', '25', '33', '36'], answer: 2 },
-  { q: 'What does पुष्पम् (puṣpam) mean?', options: ['fruit', 'flower', 'tree', 'river'], answer: 1 },
-  { q: 'What does फलम् (phalam) mean?', options: ['fruit', 'leaf', 'flower', 'seed'], answer: 0 },
-  { q: 'What does पर्वतः (parvataḥ) mean?', options: ['ocean', 'city', 'mountain', 'star'], answer: 2 },
-  { q: 'What does नदी (nadī) mean?', options: ['river', 'forest', 'sky', 'road'], answer: 0 },
-  { q: 'Which verb means “he / she runs”?', options: ['क्रीडति', 'धावति', 'खादति', 'उपविशति'], answer: 1 },
-  { q: 'Which verb means “he / she plays”?', options: ['पठति', 'धावति', 'क्रीडति', 'वदति'], answer: 2 },
-  { q: 'What is पञ्च (pañca) as a number?', options: ['3', '5', '7', '10'], answer: 1 },
-  { q: 'Which Sanskrit number word means 10?', options: ['सप्त', 'पञ्च', 'दश', 'त्रीणि'], answer: 2 },
-  { q: 'सप्त (sapta) means which number?', options: ['6', '7', '8', '9'], answer: 1 },
-  { q: 'Dīpāvalī (दीपावली) means…', options: ['festival of colours', 'a row of lamps', 'harvest moon', 'new year'], answer: 1 },
-  { q: 'What is दीपः (dīpaḥ)?', options: ['lamp', 'sweet', 'oil', 'flower'], answer: 0 },
-  { q: 'रङ्गवल्ली (raṅgavallī) is…', options: ['a musical instrument', 'rangoli, a coloured floor design', 'a kind of sweet', 'a lamp wick'], answer: 1 },
-  { q: 'In the Dīpāvalī words, what does तैलम् (tailam) mean?', options: ['wick', 'oil', 'light', 'new clothes'], answer: 1 },
-];
+type Q = SectionQ;
 
 function shuffle<T>(arr: T[]): T[] {
   const a = arr.slice();
@@ -45,10 +30,13 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
+/** One random question from each section, in book order, options shuffled. */
 function pickQuiz(): Q[] {
-  return shuffle(QUESTION_POOL).slice(0, QUIZ_LENGTH).map((item) => {
+  return SWAR_SECTIONS.map((s) => {
+    const pool = SECTION_QUESTIONS.filter((q) => q.section === s.id);
+    const item = pool[Math.floor(Math.random() * pool.length)];
     const order = shuffle(item.options.map((_, i) => i));
-    return { q: item.q, options: order.map((i) => item.options[i]), answer: order.indexOf(item.answer) };
+    return { ...item, options: order.map((i) => item.options[i]), answer: order.indexOf(item.answer) };
   });
 }
 
@@ -141,7 +129,7 @@ function drawRangoli(ctx: CanvasRenderingContext2D, W: number, H: number) {
   ctx.restore();
 }
 
-async function drawCertificate(canvas: HTMLCanvasElement, name: string, date: string, id: string) {
+async function drawCertificate(canvas: HTMLCanvasElement, name: string, date: string, id: string, score: number) {
   const W = 1600;
   const H = 1131;
   canvas.width = W;
@@ -163,8 +151,10 @@ async function drawCertificate(canvas: HTMLCanvasElement, name: string, date: st
   }
   ctx.textAlign = 'center';
   ctx.fillStyle = '#c2255c';
-  ctx.font = `700 64px ${DEV}`;
-  ctx.fillText('स्वर् · SWAR', W / 2, 284);
+  let ts = 60;
+  ctx.font = `700 ${ts}px ${DEV}`;
+  while (ctx.measureText(BOOK_TITLE).width > W - 360 && ts > 36) { ts -= 2; ctx.font = `700 ${ts}px ${DEV}`; }
+  ctx.fillText(BOOK_TITLE, W / 2, 284);
   ctx.fillStyle = '#273b35';
   ctx.font = `700 58px ${SERIF}`;
   ctx.fillText('Certificate of Completion', W / 2, 372);
@@ -186,7 +176,7 @@ async function drawCertificate(canvas: HTMLCanvasElement, name: string, date: st
 
   ctx.fillStyle = '#273b35';
   ctx.font = `400 34px ${SERIF}`;
-  ctx.fillText('has completed the Swar Sanskrit Workbook', W / 2, 628);
+  ctx.fillText(`has completed the workbook and passed the quiz (${score} / ${QUIZ_LENGTH})`, W / 2, 628);
   ctx.font = `italic 28px ${SERIF}`;
   ctx.fillStyle = '#0c8599';
   ctx.fillText('The Darśana Series · by Sesha K Penumallu', W / 2, 678);
@@ -265,15 +255,24 @@ const input: React.CSSProperties = {
   border: '1.5px solid #cbd5e1', fontSize: '1rem', marginTop: 6,
 };
 
+const linkBtn: React.CSSProperties = { ...btnAlt, padding: '0.5rem 1rem', fontSize: '0.92rem' };
+
 type Step = 'form' | 'quiz' | 'result' | 'certificate';
 
-interface Props { onGoHome?: () => void }
+interface Props {
+  onGoHome?: () => void;
+  onOpenBodhi?: () => void;
+  onOpenWorksheets?: () => void;
+  onOpenPuzzles?: () => void;
+  onOpenGames?: () => void;
+  onOpenReviewPractice?: () => void;
+}
 
 const STORE_KEY = 'ednet-swar-certificates';
 
-const CertificatePage: React.FC<Props> = ({ onGoHome }) => {
+const CertificatePage: React.FC<Props> = ({ onGoHome, onOpenBodhi, onOpenWorksheets, onOpenPuzzles, onOpenGames, onOpenReviewPractice }) => {
   const { currentUser, isAdminLoggedIn, openAuthModal } = useAuthStore();
-  const loginKey = currentUser ? (currentUser.email || currentUser.id) : isAdminLoggedIn ? 'admin' : '';
+  const accountKey = currentUser ? (currentUser.email || currentUser.id) : isAdminLoggedIn ? 'admin' : '';
   const [step, setStep] = useState<Step>('form');
   const [name, setName] = useState(currentUser?.fullName || '');
   const [code, setCode] = useState('');
@@ -289,31 +288,43 @@ const CertificatePage: React.FC<Props> = ({ onGoHome }) => {
   useEffect(() => { if (currentUser?.fullName && !name) setName(currentUser.fullName); }, [currentUser, name]);
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [step]);
 
-  const startQuiz = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim()) { setError('Please type your name as you want it on the certificate.'); return; }
-    if (code.trim().toUpperCase() !== BOOK_CODE) { setError('That book code does not match. Look on the last page of your SWAR workbook.'); return; }
-    setError('');
+  const newQuiz = () => {
     const q = pickQuiz();
     setQuiz(q);
     setAnswers(q.map(() => null));
+    setError('');
     setStep('quiz');
   };
 
+  const startQuiz = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (code.trim().toUpperCase() !== BOOK_CODE) { setError('That book code does not match. Look on page 149 of your Swar workbook.'); return; }
+    newQuiz();
+  };
+
   const submitQuiz = () => {
-    if (answers.some((a) => a === null)) { setError('Please answer all 5 questions.'); return; }
+    const left = answers.filter((a) => a === null).length;
+    if (left) { setError(`Please answer all ${QUIZ_LENGTH} questions (${left} left).`); return; }
     setError('');
     setScore(quiz.reduce((s, item, i) => s + (answers[i] === item.answer ? 1 : 0), 0));
     setStep('result');
   };
 
-  const makeCertificate = async () => {
-    const id = await certificateIdFor(loginKey);
+  const percent = QUIZ_LENGTH ? Math.round((score / QUIZ_LENGTH) * 100) : 0;
+  const passed = score >= PASS_MARK;
+  const missed = quiz.filter((item, i) => answers[i] !== item.answer);
+
+  const makeCertificate = async (e?: React.FormEvent) => {
+    e?.preventDefault();
+    if (!name.trim()) { setError('Please type your name as you want it on the certificate.'); return; }
+    setError('');
+    const id = await certificateIdFor(accountKey || `name:${name.trim()}`);
     setCertId(id);
+    setPng('');
     setStep('certificate');
     try {
       const saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
-      saved[id] = { id, name: name.trim(), date };
+      saved[id] = { id, name: name.trim(), date, score };
       localStorage.setItem(STORE_KEY, JSON.stringify(saved));
     } catch { /* ignore */ }
   };
@@ -321,65 +332,75 @@ const CertificatePage: React.FC<Props> = ({ onGoHome }) => {
   useEffect(() => {
     if (step !== 'certificate' || !canvasRef.current || !certId) return;
     const c = canvasRef.current;
-    drawCertificate(c, name.trim(), date, certId).then(() => setPng(c.toDataURL('image/png')));
-  }, [step, certId, name, date]);
+    drawCertificate(c, name.trim(), date, certId, score).then(() => setPng(c.toDataURL('image/png')));
+  }, [step, certId, name, date, score]);
 
   const printCert = () => {
     if (!png) return;
     const w = window.open('', '_blank');
     if (!w) return;
-    w.document.write(`<html><head><title>SWAR Certificate</title><style>@page{size:A4 landscape;margin:0}body{margin:0}img{width:100%;display:block}</style></head><body><img src="${png}" onload="setTimeout(function(){window.print()},200)"></body></html>`);
+    w.document.write(`<html><head><title>Swar Certificate</title><style>@page{size:A4 landscape;margin:0}body{margin:0}img{width:100%;display:block}</style></head><body><img src="${png}" onload="setTimeout(function(){window.print()},200)"></body></html>`);
     w.document.close();
   };
 
-  const fileBase = `SWAR-certificate-${certId}`;
+  const fileBase = `Swar-certificate-${certId}`;
+  const sectionLabel = (id: string) => SWAR_SECTIONS.find((s) => s.id === id);
+
+  const moreLinks = (onOpenBodhi || onOpenWorksheets || onOpenPuzzles || onOpenGames || onOpenReviewPractice) && (
+    <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px dashed #e5e4e7' }} data-testid="cert-more">
+      <p style={{ margin: '0 0 0.6rem', color: '#6b6375' }}>Keep learning with interactive puzzles, games and worksheets on EdNet Learn, or Ask Bodhi if you are stuck.</p>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
+        {onOpenReviewPractice && <button style={linkBtn} onClick={onOpenReviewPractice}>📝 Swar Review Practice</button>}
+        {onOpenPuzzles && <button style={linkBtn} onClick={onOpenPuzzles}>🧩 Puzzles</button>}
+        {onOpenGames && <button style={linkBtn} onClick={onOpenGames}>🎮 Games</button>}
+        {onOpenWorksheets && <button style={linkBtn} onClick={onOpenWorksheets}>📄 Worksheets</button>}
+        {onOpenBodhi && <button style={linkBtn} onClick={onOpenBodhi}>🙋 Ask Bodhi</button>}
+      </div>
+    </div>
+  );
 
   return (
     <div className="certificate-page" style={{ maxWidth: 920, margin: '0 auto', padding: 'clamp(1rem, 3vw, 2.5rem) clamp(0.75rem, 3vw, 1.5rem) 4rem', color: '#273b35' }}>
       <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-        <div style={{ fontSize: 'clamp(2rem, 6vw, 2.8rem)', fontWeight: 800, color: '#c2255c', fontFamily: DEV }}>स्वर् · SWAR</div>
+        <div style={{ fontSize: 'clamp(1.6rem, 5vw, 2.4rem)', fontWeight: 800, color: '#c2255c', fontFamily: DEV }}>{BOOK_TITLE}</div>
         <h1 style={{ margin: '0.25rem 0', fontSize: 'clamp(1.4rem, 4vw, 2rem)', color: '#273b35' }}>Get your Certificate of Completion</h1>
-        <p style={{ margin: 0, color: '#6b6375' }}>For readers of the <em>Swar Sanskrit Workbook</em> · The Darśana Series, by Sesha K Penumallu</p>
+        <p style={{ margin: 0, color: '#6b6375' }}>The Darśana Series · by Sesha K Penumallu</p>
       </div>
 
-      {!loginKey && (
-        <div style={{ ...card, textAlign: 'center' }} data-testid="cert-login">
-          <div style={{ fontSize: '2.4rem' }}>🔐</div>
-          <h2 style={{ marginTop: 8 }}>Please sign in first</h2>
-          <p style={{ color: '#6b6375' }}>Your certificate ID is made from your account, so the same learner always gets the same certificate.</p>
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button style={btn} onClick={() => openAuthModal('login')}>Sign in</button>
-            <button style={btnAlt} onClick={() => openAuthModal('register')}>Create a free account</button>
-          </div>
-        </div>
-      )}
-
-      {loginKey && step === 'form' && (
+      {step === 'form' && (
         <form style={card} onSubmit={startQuiz} data-testid="cert-form">
-          <h2 style={{ marginTop: 0 }}>1 · Your details</h2>
-          <label style={{ display: 'block', fontWeight: 700, marginBottom: 14 }}>Your name (as it should appear)
-            <input style={input} value={name} onChange={(e) => setName(e.target.value)} maxLength={60} placeholder="e.g. Aditi Sharma" />
-          </label>
+          <h2 style={{ marginTop: 0 }}>1 · Your book code</h2>
           <label style={{ display: 'block', fontWeight: 700 }}>Book code
-            <input style={{ ...input, textTransform: 'uppercase', letterSpacing: '0.08em' }} value={code} onChange={(e) => setCode(e.target.value)} placeholder="Printed on the last page" autoCapitalize="characters" />
+            <input style={{ ...input, textTransform: 'uppercase', letterSpacing: '0.08em' }} value={code} onChange={(e) => setCode(e.target.value)} placeholder="Printed on page 149" autoCapitalize="characters" />
           </label>
-          <p style={{ color: '#6b6375', fontSize: '0.92rem' }}>Next you will answer 5 quick questions from the book. Get 4 right to unlock your certificate. You can try again as many times as you like.</p>
+          <p style={{ color: '#6b6375', fontSize: '0.95rem' }}>
+            Next comes a quiz with <strong>{QUIZ_LENGTH} questions, one from each part of the book</strong>. Get {PASS_MARK} or more right ({PASS_PERCENT}%) to unlock your certificate. You can try again as many times as you like.
+          </p>
+          {!accountKey && (
+            <p style={{ color: '#6b6375', fontSize: '0.88rem' }}>
+              Tip: <button type="button" onClick={() => openAuthModal('login')} style={{ background: 'none', border: 'none', padding: 0, color: '#0c8599', textDecoration: 'underline', cursor: 'pointer', font: 'inherit' }}>sign in</button> first if you want the same certificate ID on every device. Signing in is not needed.
+            </p>
+          )}
           {error && <p role="alert" style={{ color: '#c92a2a', fontWeight: 600 }}>{error}</p>}
           <button type="submit" style={btn}>Start the quiz →</button>
         </form>
       )}
 
-      {loginKey && step === 'quiz' && (
+      {step === 'quiz' && (
         <div style={card} data-testid="cert-quiz">
-          <h2 style={{ marginTop: 0 }}>2 · Quick quiz <span style={{ fontSize: '0.9rem', color: '#6b6375', fontWeight: 500 }}>(4 of 5 to pass)</span></h2>
+          <h2 style={{ marginTop: 0 }}>2 · Book quiz <span style={{ fontSize: '0.9rem', color: '#6b6375', fontWeight: 500 }}>({PASS_MARK} of {QUIZ_LENGTH} to pass)</span></h2>
           {quiz.map((item, qi) => (
             <fieldset key={qi} style={{ border: '1px solid #e5e4e7', borderRadius: 14, padding: '0.9rem 1rem', margin: '0 0 1rem' }}>
-              <legend style={{ fontWeight: 700, padding: '0 0.4rem', fontFamily: `${SERIF}` }}>{qi + 1}. <span style={{ fontFamily: DEV }}>{item.q}</span></legend>
+              <legend style={{ fontWeight: 700, padding: '0 0.4rem', fontFamily: DEV }}>
+                <span style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#0c8599', fontFamily: SERIF }}>{sectionLabel(item.section)?.label}</span>
+                {qi + 1}. {item.q}
+              </legend>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 8 }}>
                 {item.options.map((opt, oi) => {
                   const on = answers[qi] === oi;
                   return (
                     <button type="button" key={oi}
+                      aria-pressed={on}
                       onClick={() => setAnswers((a) => a.map((v, i) => (i === qi ? oi : v)))}
                       style={{ textAlign: 'left', padding: '0.65rem 0.85rem', borderRadius: 12, cursor: 'pointer', fontSize: '1rem', fontFamily: DEV,
                         border: on ? '2px solid #e8590c' : '1.5px solid #cbd5e1', background: on ? '#fff4e6' : '#fff', color: '#273b35' }}>
@@ -398,25 +419,37 @@ const CertificatePage: React.FC<Props> = ({ onGoHome }) => {
         </div>
       )}
 
-      {loginKey && step === 'result' && (
-        <div style={{ ...card, textAlign: 'center' }} data-testid="cert-result">
-          <div style={{ fontSize: '2.6rem' }}>{score >= PASS_MARK ? '🎉' : '🌱'}</div>
-          <h2>You scored {score} / {QUIZ_LENGTH}</h2>
-          {score >= PASS_MARK ? (
-            <>
-              <p>उत्तमम्! Well done. Your certificate is ready.</p>
-              <button style={btn} onClick={makeCertificate}>Show my certificate</button>
-            </>
+      {step === 'result' && (
+        <div style={card} data-testid="cert-result">
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '2.6rem' }}>{passed ? '🎉' : '🌱'}</div>
+            <h2 style={{ marginBottom: 4 }}>You scored {score} / {QUIZ_LENGTH} ({percent}%)</h2>
+          </div>
+          {passed ? (
+            <form onSubmit={makeCertificate} data-testid="cert-name">
+              <p style={{ textAlign: 'center' }}>शोभनम्! (śobhanam) Well done! You passed. Type your name for the certificate.</p>
+              <label style={{ display: 'block', fontWeight: 700, marginBottom: 14 }}>Your name (as it should appear)
+                <input style={input} value={name} onChange={(e) => setName(e.target.value)} maxLength={60} placeholder="e.g. Aditi Sharma" autoFocus />
+              </label>
+              {error && <p role="alert" style={{ color: '#c92a2a', fontWeight: 600 }}>{error}</p>}
+              <div style={{ textAlign: 'center' }}><button type="submit" style={btn}>Show my certificate</button></div>
+            </form>
           ) : (
-            <>
-              <p style={{ color: '#6b6375' }}>You need {PASS_MARK} to pass. Look back at your workbook and try a new set of questions.</p>
-              <button style={btn} onClick={() => { const q = pickQuiz(); setQuiz(q); setAnswers(q.map(() => null)); setStep('quiz'); }}>Try again</button>
-            </>
+            <div data-testid="cert-revisit">
+              <p style={{ textAlign: 'center' }}>Good try! Remember your saying: उद्यमेन हि सिध्यन्ति कार्याणि (udyamena hi sidhyanti kāryāṇi), work gets done by effort. You need {PASS_MARK} of {QUIZ_LENGTH} ({PASS_PERCENT}%). Read these pages again, then have another go:</p>
+              <ul style={{ lineHeight: 1.7 }}>
+                {missed.map((m, i) => (
+                  <li key={i}><strong>{sectionLabel(m.section)?.label}</strong>: <span style={{ fontFamily: DEV }}>{m.topic}</span>, page {m.page}</li>
+                ))}
+              </ul>
+              <div style={{ textAlign: 'center' }}><button style={btn} onClick={newQuiz}>Try again with new questions</button></div>
+            </div>
           )}
+          {moreLinks}
         </div>
       )}
 
-      {loginKey && step === 'certificate' && (
+      {step === 'certificate' && (
         <div style={card} data-testid="cert-final">
           <canvas ref={canvasRef} style={{ display: 'none' }} />
           {png ? <img src={png} alt={`Certificate of Completion for ${name}`} style={{ width: '100%', borderRadius: 10, display: 'block' }} /> : <p>Preparing your certificate…</p>}
@@ -425,7 +458,9 @@ const CertificatePage: React.FC<Props> = ({ onGoHome }) => {
             <button style={btn} disabled={!png} onClick={() => download(png, `${fileBase}.png`)}>⬇ Download PNG</button>
             <button style={btn} disabled={!png} onClick={() => { if (canvasRef.current) { const u = URL.createObjectURL(canvasToPdf(canvasRef.current)); download(u, `${fileBase}.pdf`); setTimeout(() => URL.revokeObjectURL(u), 4000); } }}>⬇ Download PDF</button>
             <button style={btnAlt} disabled={!png} onClick={printCert}>🖨 Print</button>
+            <button style={btnAlt} onClick={() => setStep('result')}>✏️ Change name</button>
           </div>
+          {moreLinks}
         </div>
       )}
 

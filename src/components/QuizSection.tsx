@@ -7,6 +7,7 @@ import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters, canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
 import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadQuizSheet } from '../utils/contentDownload';
+import SwarReviewPractice from './SwarReviewPractice';
 import '../styles/quiz-section.css';
 
 export type QuizTrackId = 'all' | 'class7' | 'class8' | 'class9' | 'grammar' | 'vedic_maths';
@@ -146,6 +147,13 @@ interface QuizSectionProps {
   onOpenReader?: () => void;
   /** Opens one literature-grammar quiz, e.g. lit-grammar-basic. */
   initialAnchor?: string | null;
+  onOpenCertificate?: () => void;
+  onOpenBodhi?: () => void;
+  onOpenPuzzles?: () => void;
+  onOpenGames?: () => void;
+  /** Guest visitor (freemium gate): show only Swar Review Practice plus a sign-up card. */
+  swarOnly?: boolean;
+  onOpenRegister?: () => void;
 }
 
 const QuizSection: React.FC<QuizSectionProps> = ({
@@ -153,6 +161,12 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   onOpenWorksheets,
   onOpenReader,
   initialAnchor,
+  onOpenCertificate,
+  onOpenBodhi,
+  onOpenPuzzles,
+  onOpenGames,
+  swarOnly,
+  onOpenRegister,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeTrack, setActiveTrack] = useState<QuizTrackId>('all');
@@ -555,8 +569,39 @@ const QuizSection: React.FC<QuizSectionProps> = ({
 
   const currentQ = activeQuestions ? activeQuestions[currentIndex] : null;
 
+  if (swarOnly) {
+    return (
+      <section className="quiz-section">
+        <SwarReviewPractice
+          onOpenCertificate={onOpenCertificate}
+          onOpenBodhi={onOpenBodhi}
+          onOpenWorksheets={onOpenWorksheets}
+          onOpenPuzzles={onOpenPuzzles}
+          onOpenGames={onOpenGames}
+        />
+        <div style={{ maxWidth: 1100, margin: '0 auto', textAlign: 'center', background: '#fff', border: '1px solid #e5e4e7', borderRadius: 18, padding: '1.2rem' }}>
+          <h3 style={{ marginTop: 0 }}>प्रश्नोत्तरी · Sanskrit &amp; Vedic Maths Quiz</h3>
+          <p style={{ color: '#6b6375' }}>Create a free account to open the full quiz arena: 39+ quiz sets for CBSE chapters, grammar and Vedic maths.</p>
+          {onOpenRegister && (
+            <button type="button" className="quiz-home-btn" onClick={onOpenRegister}>Sign in / Register</button>
+          )}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="quiz-section">
+      {/* Swar workbook Review test practice (the p. 24 QR code opens /quiz/) */}
+      {!activeQuestions && (
+          <SwarReviewPractice
+            onOpenCertificate={onOpenCertificate}
+            onOpenBodhi={onOpenBodhi}
+            onOpenWorksheets={onOpenWorksheets}
+            onOpenPuzzles={onOpenPuzzles}
+            onOpenGames={onOpenGames}
+          />
+      )}
       {/* Top Header */}
       <header className="quiz-header">
         <div className="quiz-header-left">

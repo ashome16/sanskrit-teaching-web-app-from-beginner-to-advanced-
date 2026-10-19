@@ -455,6 +455,7 @@ export const BODHI_CONTEXT_TIPS: Record<string, BodhiContextTip> = {
     sanskritTitle: 'प्रश्नोत्तरी-मञ्चः',
     summary: 'Test your understanding across 39+ interactive quizzes mapped to CBSE curriculum standards.',
     bulletPoints: [
+      'Have the Swar · स्वर — Sanskrit Workbook? Swar Review Practice at the top of this page has 9 sets for the Review test on pages 23–24, with instant answers and book page numbers.',
       'Read both the Sanskrit prompt and the answer options carefully before clicking.',
       'Review explanation cards on every question to understand WHY an answer is grammatically correct.',
       'Replay quizzes to achieve 100% mastery and earn Gurukul merit badges!',
@@ -463,6 +464,22 @@ export const BODHI_CONTEXT_TIPS: Record<string, BodhiContextTip> = {
     suggestedAction: {
       label: 'Practice Worksheets',
       targetView: 'worksheets',
+    },
+  },
+  certificate: {
+    viewId: 'certificate',
+    title: 'Swar Workbook Certificate',
+    sanskritTitle: 'प्रमाणपत्रम्',
+    summary: 'Finished Swar · स्वर — Sanskrit Workbook? Answer one question from each part of the book and get your certificate.',
+    bulletPoints: [
+      'Type the book code printed on page 149 of your workbook.',
+      'There are 8 questions, one from each part of the book. Get 6 right (70%) to pass.',
+      'Not yet? The page lists the book pages to read again. Try again with new questions as many times as you like.',
+    ],
+    bodhiAdvice: 'उद्यमेन हि सिध्यन्ति कार्याणि: work gets done by effort (page 21). You can do it!',
+    suggestedAction: {
+      label: 'Swar Review Practice',
+      targetView: 'quiz',
     },
   },
   worksheets: {
@@ -532,14 +549,26 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
   {
     id: 'qa-swar-certificate',
     category: 'cbse',
-    question: 'How do I get my certificate for the SWAR workbook?',
+    question: 'How do I get my certificate for the Swar workbook?',
     sanskritQuestion: 'प्रमाणपत्रं कथं प्राप्नोमि?',
-    shortAnswer: 'Go to ednetlearn.in/certificate, sign in, enter the book code from the last page and pass the 5-question quiz.',
+    shortAnswer: 'Go to ednetlearn.in/certificate, enter the book code from page 149 and score 70% in the 8-question book quiz.',
     detailedAnswer:
-      'Finished the स्वर् · SWAR Sanskrit Workbook (The Darśana Series)? Open the Certificate page and sign in. Type your name and the book code printed on the last page of the book. Then answer 5 quick questions from the book; get 4 right to pass (you can try again). Your colourful certificate appears with your own certificate ID, ready to download as PNG or PDF, or to print.',
-    tip: 'The same account always gets the same certificate ID, so you can come back and download it again any time.',
+      'Finished Swar · स्वर — Sanskrit Workbook (The Darśana Series, by Sesha K Penumallu)? Open the Certificate page (or scan the QR code on page 149) and type the book code printed on page 149. You get 8 questions, one from each part of the book: Letters & Words, Festivals & Seasons, Animals, Indian Plants, the three grammar levels and Vedic maths. Get 6 right (70%) to pass. Then type your name and your colourful certificate appears with the date and your own certificate ID, ready to download as PNG or PDF, or to print. If you score less, the page shows which pages to read again, and you can try again with new questions.',
+    tip: 'Signing in is not needed. Sign in if you want the same certificate ID on every device.',
     relatedView: 'certificate',
     relatedLabel: '🏅 Get my certificate ➔',
+  },
+  {
+    id: 'qa-swar-review-practice',
+    category: 'cbse',
+    question: 'Where can I practise for the Swar review test?',
+    sanskritQuestion: 'पुनरावृत्तिः कुत्र अभ्यसामि?',
+    shortAnswer: 'Scan the QR code on page 24 or open ednetlearn.in/quiz: Swar Review Practice is at the top.',
+    detailedAnswer:
+      'The Review test on pages 23–24 of Swar · स्वर — Sanskrit Workbook has 20 marks. On ednetlearn.in/quiz, Swar Review Practice gives you 9 sets with many more questions: choose the meaning, say it in Sanskrit, match the pairs, fill in the verb (अहं पठामि, त्वं पठसि, सः पठति), सः / सा / तत्, number words १–१०, one-two-many (एकवचनम्, द्विवचनम्, बहुवचनम्), listen and pick, and complete the saying उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः. Every answer shows the book page to look at.',
+    tip: 'Play a set again for new questions. For more, try the interactive puzzles, games and worksheets.',
+    relatedView: 'quiz',
+    relatedLabel: '📝 Open Swar Review Practice ➔',
   },
   {
     id: 'qa-retroflex',

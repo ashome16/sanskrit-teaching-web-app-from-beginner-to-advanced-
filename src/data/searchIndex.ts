@@ -70,16 +70,29 @@ export interface SearchItem {
 export const SEARCH_INDEX: SearchItem[] = [
   {
     id: 'guide-swar-certificate',
-    title: 'स्वर् · SWAR Workbook Certificate of Completion',
-    subtitle: 'For readers of the Swar Sanskrit Workbook · The Darśana Series',
+    title: 'Swar · स्वर — Sanskrit Workbook: Certificate of Completion',
+    subtitle: 'The Darśana Series · by Sesha K Penumallu · book page 149',
     category: 'guides',
     categoryLabel: 'Book · Certificate',
     badgeEmoji: '🏅',
     badgeColor: '#c2255c',
     description:
-      'Finished the SWAR workbook? Sign in, enter the book code from the last page, pass a quick 5-question quiz and download or print your certificate.',
-    keywords: ['certificate', 'swar', 'workbook', 'book code', 'completion', 'darsana series', 'darshana', 'get my certificate', 'award', 'badge'],
+      'Finished the Swar workbook? Enter the book code from page 149, answer one question from each part of the book (8 questions), score 70% and download or print your certificate with your name and the date.',
+    keywords: ['certificate', 'swar', 'svara', 'स्वर', 'workbook', 'book code', 'completion', 'darsana series', 'darshana', 'get my certificate', 'award', 'badge', 'book quiz', 'sesha'],
     target: { view: 'certificate' },
+  },
+  {
+    id: 'guide-swar-review-practice',
+    title: 'Swar Review Practice · पुनरावृत्तिः',
+    subtitle: 'Swar · स्वर — Sanskrit Workbook · Review test, pages 23–24',
+    category: 'guides',
+    categoryLabel: 'Book · Practice',
+    badgeEmoji: '📝',
+    badgeColor: '#0c8599',
+    description:
+      'More practice for the Review test in the Swar workbook: choose the meaning, say it in Sanskrit, match the pairs, fill in the verb, सः/सा/तत्, number words, one-two-many, listen and pick, and complete the saying. Instant answers with book page numbers.',
+    keywords: ['swar', 'svara', 'स्वर', 'review test', 'review practice', 'punaravritti', 'पुनरावृत्तिः', 'workbook quiz', 'book quiz', 'page 24', 'scan for the quiz', 'match', 'fill in', 'listen'],
+    target: { view: 'quiz', quizAnchor: 'swar-review' },
   },
   // =========================================================================
   // 1. GRAMMAR ARTICLES (13 In-Depth Masterclasses)

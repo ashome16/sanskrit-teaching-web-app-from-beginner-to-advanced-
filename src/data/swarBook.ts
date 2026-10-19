@@ -1,0 +1,202 @@
+/**
+ * Swar · स्वर — Sanskrit Workbook (The Darśana Series, by Sesha K Penumallu).
+ * Every Sanskrit item here is copied from the printed book; page numbers are
+ * the printed footer page numbers. Used by /certificate and /quiz (Swar Review Practice).
+ */
+
+export interface SwarWord { dev: string; iast: string; en: string; page: number }
+
+/** Book sections, from the Contents page (p. 3–4). */
+export interface SwarSection { id: string; label: string; pages: string }
+
+export const SWAR_SECTIONS: SwarSection[] = [
+  { id: 'p1', label: 'Part 1 · Letters & Words', pages: 'pp. 5–24' },
+  { id: 'p2', label: 'Part 2 · Festivals & Seasons', pages: 'pp. 25–54' },
+  { id: 'p3', label: 'Part 3 · Nature: Animals', pages: 'pp. 55–74' },
+  { id: 'p4', label: 'Part 4 · Nature: Indian Plants', pages: 'pp. 75–94' },
+  { id: 'p5', label: 'Part 5 · Grammar Level 1 · Basics', pages: 'pp. 95–109' },
+  { id: 'p6', label: 'Part 6 · Grammar Level 2 · Intermediate', pages: 'pp. 110–125' },
+  { id: 'p7', label: 'Part 7 · Grammar Level 3 · Advanced', pages: 'pp. 126–140' },
+  { id: 'vm', label: 'Vedic maths · वैदिकगणितम्', pages: 'p. 150' },
+];
+
+export interface SectionQ {
+  section: string;
+  /** Topic name as printed in the Contents, plus its page. */
+  topic: string;
+  page: number;
+  q: string;
+  options: string[];
+  answer: number;
+}
+
+/** A small pool per section; the certificate quiz draws ONE from each section. */
+export const SECTION_QUESTIONS: SectionQ[] = [
+  // Part 1 · Letters & Words
+  { section: 'p1', topic: 'My first words · मम प्रथमाः शब्दाः', page: 12, q: 'What does जलम् (jalam) mean?', options: ['water', 'fruit', 'flower', 'house'], answer: 0 },
+  { section: 'p1', topic: 'Numbers 1–10 · सङ्ख्याः', page: 13, q: 'Which Sanskrit digit is सप्त (sapta)?', options: ['५', '७', '९', '३'], answer: 1 },
+  { section: 'p1', topic: 'Greetings & simple sentences · सम्भाषणम्', page: 14, q: 'How do you say “Thank you” in Sanskrit?', options: ['नमस्ते (namaste)', 'सुप्रभातम् (suprabhātam)', 'धन्यवादः (dhanyavādaḥ)', 'पुनः मिलामः (punaḥ milāmaḥ)'], answer: 2 },
+  { section: 'p1', topic: 'Colours · वर्णाः', page: 15, q: 'Which colour is हरितः (haritaḥ)?', options: ['red', 'yellow', 'green', 'blue'], answer: 2 },
+  { section: 'p1', topic: 'My family · मम कुटुम्बम्', page: 17, q: 'What does भगिनी (bhaginī) mean?', options: ['mother', 'sister', 'daughter', 'friend'], answer: 1 },
+  // Part 2 · Festivals & Seasons
+  { section: 'p2', topic: 'Dīpāvalī · दीपावली', page: 25, q: 'Dīpāvalī (दीपावली) means…', options: ['a row of lamps', 'festival of colours', 'nine nights', 'new year'], answer: 0 },
+  { section: 'p2', topic: 'Navarātri · नवरात्रिः', page: 29, q: 'In Navarātri, what is a कलशः (kalaśaḥ)?', options: ['a lamp', 'a sacred pot', 'a dance', 'a sweet'], answer: 1 },
+  { section: 'p2', topic: 'The six seasons · षड् ऋतवः', page: 50, q: 'Which season is वसन्तः (vasantaḥ)?', options: ['summer', 'rainy season', 'spring', 'late winter'], answer: 2 },
+  { section: 'p2', topic: 'Greetings · अभिवादनानि', page: 54, q: 'A friend is leaving on a trip. Which greeting fits?', options: ['शुभयात्रा (śubhayātrā)', 'क्षम्यताम् (kṣamyatām)', 'स्वागतम् (svāgatam)', 'शुभरात्रिः (śubharātriḥ)'], answer: 0 },
+  // Part 3 · Animals
+  { section: 'p3', topic: 'Domestic animals · ग्राम्यपशवः', page: 55, q: 'Which animal is मार्जारः (mārjāraḥ)?', options: ['dog', 'cat', 'mouse', 'horse'], answer: 1 },
+  { section: 'p3', topic: 'Wild animals · वन्यपशवः', page: 57, q: 'Which animal is व्याघ्रः (vyāghraḥ)?', options: ['lion', 'bear', 'tiger', 'monkey'], answer: 2 },
+  { section: 'p3', topic: 'Birds · पक्षिणः', page: 59, q: 'Which bird is मयूरः (mayūraḥ)?', options: ['crow', 'parrot', 'owl', 'peacock'], answer: 3 },
+  { section: 'p3', topic: 'Insects · कीटाः', page: 61, q: 'What is पिपीलिका (pipīlikā)?', options: ['ant', 'butterfly', 'mosquito', 'firefly'], answer: 0 },
+  { section: 'p3', topic: 'Animal sounds · ध्वनयः', page: 64, q: 'सिंहः गर्जति (siṃhaḥ garjati) means…', options: ['The lion sleeps.', 'The lion roars.', 'The lion runs.', 'The lion eats.'], answer: 1 },
+  // Part 4 · Indian Plants
+  { section: 'p4', topic: 'Parts of a plant · वृक्षस्य अङ्गानि', page: 75, q: 'Which part of a plant is मूलम् (mūlam)?', options: ['leaf', 'seed', 'root', 'branch'], answer: 2 },
+  { section: 'p4', topic: 'Sacred & Indian trees (1)', page: 77, q: 'Which tree is निम्बः (nimbaḥ)?', options: ['neem', 'banyan', 'mango', 'peepal'], answer: 0 },
+  { section: 'p4', topic: 'Flowers · पुष्पाणि (1)', page: 82, q: 'Which flower is कमलम् (kamalam)?', options: ['jasmine', 'hibiscus', 'lotus', 'champak'], answer: 2 },
+  { section: 'p4', topic: 'Spices · सुगन्धद्रव्याणि', page: 86, q: 'Which spice is हरिद्रा (haridrā)?', options: ['clove', 'turmeric', 'cumin', 'cardamom'], answer: 1 },
+  { section: 'p4', topic: 'Grains · धान्यानि', page: 87, q: 'Which grain is गोधूमः (godhūmaḥ)?', options: ['wheat', 'barley', 'rice', 'chickpea'], answer: 0 },
+  // Part 5 · Grammar Level 1
+  { section: 'p5', topic: 'Gender & number · लिङ्गम् वचनम् च', page: 95, q: 'What is the gender of फलम् (phalam)?', options: ['masculine (पुंलिङ्गम्)', 'feminine (स्त्रीलिङ्गम्)', 'neuter (नपुंसकलिङ्गम्)'], answer: 2 },
+  { section: 'p5', topic: 'Gender & number · लिङ्गम् वचनम् च', page: 95, q: 'बालकौ (bālakau) means…', options: ['a boy', 'two boys', 'boys (three or more)'], answer: 1 },
+  { section: 'p5', topic: 'The seven cases · सप्त विभक्तयः', page: 96, q: 'रामस्य पुस्तकम् (Rāma’s book) uses which case?', options: ['प्रथमा (1st)', 'चतुर्थी (4th)', 'षष्ठी (6th)', 'सप्तमी (7th)'], answer: 2 },
+  { section: 'p5', topic: 'Present tense · लट् लकारः', page: 105, q: 'वयं ________ । (We read.)', options: ['पठामि', 'पठावः', 'पठामः', 'पठन्ति'], answer: 2 },
+  { section: 'p5', topic: 'Little words · अव्ययानि', page: 107, q: 'What does कुत्र (kutra) mean?', options: ['here', 'there', 'when?', 'where?'], answer: 3 },
+  // Part 6 · Grammar Level 2
+  { section: 'p6', topic: 'The lakāras · लकाराः', page: 110, q: 'सः पठिष्यति (saḥ paṭhiṣyati) means…', options: ['he reads', 'he read', 'he will read', 'he should read'], answer: 2 },
+  { section: 'p6', topic: 'Past tense · लङ्', page: 111, q: 'Which word means “he read” (past)?', options: ['पठति', 'अपठत्', 'पठतु', 'पठेत्'], answer: 1 },
+  { section: 'p6', topic: 'Guṇa and vṛddhi sandhi', page: 117, q: 'देव + इन्द्रः = ?', options: ['देवेन्द्रः', 'देवैन्द्रः', 'देविन्द्रः', 'देवन्द्रः'], answer: 0 },
+  { section: 'p6', topic: 'Upasargas · उपसर्गाः', page: 123, q: 'हरति means “takes, carries”. What does आहरति (āharati) mean?', options: ['strikes', 'brings', 'avoids', 'roams'], answer: 1 },
+  // Part 7 · Grammar Level 3
+  { section: 'p7', topic: 'Dvandva, bahuvrīhi, avyayībhāva', page: 128, q: 'रामलक्ष्मणौ (Rāma and Lakṣmaṇa) is which samāsa?', options: ['द्वन्द्वः (dvandva)', 'द्विगुः (dvigu)', 'बहुव्रीहिः (bahuvrīhi)', 'तत्पुरुषः (tatpuruṣa)'], answer: 0 },
+  { section: 'p7', topic: 'Dvandva, bahuvrīhi, avyayībhāva', page: 128, q: 'लम्बोदरः, “one whose belly is big”, is a name of…', options: ['Kṛṣṇa', 'Rāvaṇa', 'Gaṇeśa', 'Rāma'], answer: 2 },
+  { section: 'p7', topic: 'Tatpuruṣa, karmadhāraya, dvigu', page: 127, q: 'त्रिभुवनम् (the three worlds) is which samāsa?', options: ['द्वन्द्वः (dvandva)', 'द्विगुः (dvigu)', 'अव्ययीभावः (avyayībhāva)', 'कर्मधारयः (karmadhāraya)'], answer: 1 },
+  { section: 'p7', topic: 'Ātmanepada · आत्मनेपदम्', page: 134, q: 'सेवते (sevate, “he serves”) uses which set of endings?', options: ['parasmaipada', 'ātmanepada'], answer: 1 },
+  // Vedic maths
+  { section: 'vm', topic: 'Vedic maths · एकाधिकेन पूर्वेण', page: 150, q: 'Square a number ending in 5: 35 × 35 = ? (3 × 4 = 12, then write 25)', options: ['1225', '925', '1025', '1235'], answer: 0 },
+  { section: 'vm', topic: 'Vedic maths · एकाधिकेन पूर्वेण', page: 150, q: 'Using “one more than the one before”: 25 × 25 = ?', options: ['525', '625', '425', '650'], answer: 1 },
+  { section: 'vm', topic: 'Vedic maths · ऊर्ध्वतिर्यग्भ्याम्', page: 150, q: '“Vertically and crosswise”: 23 × 12 = ?', options: ['266', '276', '286', '236'], answer: 1 },
+];
+
+/* ───────────── Review test (pp. 23–24) practice data ───────────── */
+
+/** Words reviewed by the test, all from Part 1 (pp. 12–20) plus सिंहः (p. 57). */
+export const REVIEW_WORDS: SwarWord[] = [
+  { dev: 'गजः', iast: 'gajaḥ', en: 'elephant', page: 12 },
+  { dev: 'अश्वः', iast: 'aśvaḥ', en: 'horse', page: 12 },
+  { dev: 'फलम्', iast: 'phalam', en: 'fruit', page: 12 },
+  { dev: 'जलम्', iast: 'jalam', en: 'water', page: 12 },
+  { dev: 'पुष्पम्', iast: 'puṣpam', en: 'flower', page: 12 },
+  { dev: 'वृक्षः', iast: 'vṛkṣaḥ', en: 'tree', page: 12 },
+  { dev: 'सूर्यः', iast: 'sūryaḥ', en: 'sun', page: 12 },
+  { dev: 'चन्द्रः', iast: 'candraḥ', en: 'moon', page: 12 },
+  { dev: 'नदी', iast: 'nadī', en: 'river', page: 12 },
+  { dev: 'गृहम्', iast: 'gṛham', en: 'house', page: 12 },
+  { dev: 'पुस्तकम्', iast: 'pustakam', en: 'book', page: 12 },
+  { dev: 'बालकः', iast: 'bālakaḥ', en: 'boy', page: 12 },
+  { dev: 'बालिका', iast: 'bālikā', en: 'girl', page: 12 },
+  { dev: 'माता', iast: 'mātā', en: 'mother', page: 17 },
+  { dev: 'पिता', iast: 'pitā', en: 'father', page: 17 },
+  { dev: 'भ्राता', iast: 'bhrātā', en: 'brother', page: 17 },
+  { dev: 'भगिनी', iast: 'bhaginī', en: 'sister', page: 17 },
+  { dev: 'पुत्रः', iast: 'putraḥ', en: 'son', page: 17 },
+  { dev: 'पुत्री', iast: 'putrī', en: 'daughter', page: 17 },
+  { dev: 'मित्रम्', iast: 'mitram', en: 'friend', page: 17 },
+  { dev: 'रक्तः', iast: 'raktaḥ', en: 'red', page: 15 },
+  { dev: 'नीलः', iast: 'nīlaḥ', en: 'blue', page: 15 },
+  { dev: 'हरितः', iast: 'haritaḥ', en: 'green', page: 15 },
+  { dev: 'पीतः', iast: 'pītaḥ', en: 'yellow', page: 15 },
+  { dev: 'श्वेतः', iast: 'śvetaḥ', en: 'white', page: 15 },
+  { dev: 'कृष्णः', iast: 'kṛṣṇaḥ', en: 'black', page: 15 },
+  { dev: 'शिरः', iast: 'śiraḥ', en: 'head', page: 16 },
+  { dev: 'नेत्रम्', iast: 'netram', en: 'eye', page: 16 },
+  { dev: 'कर्णः', iast: 'karṇaḥ', en: 'ear', page: 16 },
+  { dev: 'नासिका', iast: 'nāsikā', en: 'nose', page: 16 },
+  { dev: 'दन्तः', iast: 'dantaḥ', en: 'tooth', page: 16 },
+  { dev: 'हस्तः', iast: 'hastaḥ', en: 'hand', page: 16 },
+  { dev: 'पादः', iast: 'pādaḥ', en: 'foot', page: 16 },
+  { dev: 'रविवासरः', iast: 'ravivāsaraḥ', en: 'Sunday', page: 17 },
+  { dev: 'सोमवासरः', iast: 'somavāsaraḥ', en: 'Monday', page: 17 },
+  { dev: 'मङ्गलवासरः', iast: 'maṅgalavāsaraḥ', en: 'Tuesday', page: 17 },
+  { dev: 'बुधवासरः', iast: 'budhavāsaraḥ', en: 'Wednesday', page: 17 },
+  { dev: 'गुरुवासरः', iast: 'guruvāsaraḥ', en: 'Thursday', page: 17 },
+  { dev: 'शुक्रवासरः', iast: 'śukravāsaraḥ', en: 'Friday', page: 17 },
+  { dev: 'शनिवासरः', iast: 'śanivāsaraḥ', en: 'Saturday', page: 17 },
+  { dev: 'सिंहः', iast: 'siṃhaḥ', en: 'lion', page: 57 },
+];
+
+export interface FillVerb { before: string; after: string; hint: string; answer: string; options: string[]; iast: string; en: string; page: number }
+
+/** Set C · Fill in the verb (pp. 19–20, 24). Options are forms of the same root. */
+export const FILL_VERBS: FillVerb[] = [
+  { before: 'अहं पुस्तकं', after: '।', hint: 'पठ्: read', answer: 'पठामि', options: ['पठामि', 'पठसि', 'पठति'], iast: 'ahaṃ pustakaṃ paṭhāmi', en: 'I read a book.', page: 24 },
+  { before: 'त्वं जलं', after: '।', hint: 'पिब्: drink', answer: 'पिबसि', options: ['पिबामि', 'पिबसि', 'पिबति'], iast: 'tvaṃ jalaṃ pibasi', en: 'You drink water.', page: 24 },
+  { before: 'सः फलं', after: '।', hint: 'खाद्: eat', answer: 'खादति', options: ['खादामि', 'खादसि', 'खादति'], iast: 'saḥ phalaṃ khādati', en: 'He eats a fruit.', page: 24 },
+  { before: 'अहं', after: '।', hint: 'खाद्: eat', answer: 'खादामि', options: ['खादामि', 'खादसि', 'खादति'], iast: 'ahaṃ khādāmi', en: 'I eat.', page: 19 },
+  { before: 'त्वं', after: '।', hint: 'पिब्: drink', answer: 'पिबसि', options: ['पिबामि', 'पिबसि', 'पिबति'], iast: 'tvaṃ pibasi', en: 'You drink.', page: 19 },
+  { before: 'सा', after: '।', hint: 'गच्छ्: go', answer: 'गच्छति', options: ['गच्छामि', 'गच्छसि', 'गच्छति'], iast: 'sā gacchati', en: 'She goes.', page: 19 },
+  { before: 'अहं', after: '।', hint: 'लिख्: write', answer: 'लिखामि', options: ['लिखामि', 'लिखसि', 'लिखति'], iast: 'ahaṃ likhāmi', en: 'I write.', page: 19 },
+  { before: 'त्वं', after: '।', hint: 'लिख्: write', answer: 'लिखसि', options: ['लिखामि', 'लिखसि', 'लिखति'], iast: 'tvaṃ likhasi', en: 'You write.', page: 19 },
+  { before: 'त्वं', after: '।', hint: 'पठ्: read', answer: 'पठसि', options: ['पठामि', 'पठसि', 'पठति'], iast: 'tvaṃ paṭhasi', en: 'You read.', page: 19 },
+  { before: 'अहं', after: '।', hint: 'गच्छ्: go', answer: 'गच्छामि', options: ['गच्छामि', 'गच्छसि', 'गच्छति'], iast: 'ahaṃ gacchāmi', en: 'I go.', page: 19 },
+  { before: 'बालकः जलं', after: '।', hint: 'पिब्: drink', answer: 'पिबति', options: ['पिबामि', 'पिबसि', 'पिबति'], iast: 'bālakaḥ jalaṃ pibati', en: 'The boy drinks water.', page: 20 },
+  { before: 'बालकः उद्याने', after: '।', hint: 'धाव्: run', answer: 'धावति', options: ['धावामि', 'धावसि', 'धावति'], iast: 'bālakaḥ udyāne dhāvati', en: 'The boy runs in the garden.', page: 24 },
+  { before: 'बालिका कन्दुकेन', after: '।', hint: 'क्रीड्: play', answer: 'क्रीडति', options: ['क्रीडामि', 'क्रीडसि', 'क्रीडति'], iast: 'bālikā kandukena krīḍati', en: 'The girl plays with a ball.', page: 24 },
+];
+
+export interface PronounItem { noun: string; iast: string; en: string; answer: 'सः' | 'सा' | 'तत्'; page: number }
+
+/** Set D · सः, सा or तत् (pp. 18, 23–24). */
+export const PRONOUN_ITEMS: PronounItem[] = [
+  { noun: 'बालिका', iast: 'bālikā', en: 'girl', answer: 'सा', page: 24 },
+  { noun: 'पुष्पम्', iast: 'puṣpam', en: 'flower', answer: 'तत्', page: 24 },
+  { noun: 'बालकः', iast: 'bālakaḥ', en: 'boy', answer: 'सः', page: 24 },
+  { noun: 'माता', iast: 'mātā', en: 'mother', answer: 'सा', page: 18 },
+  { noun: 'पिता', iast: 'pitā', en: 'father', answer: 'सः', page: 18 },
+  { noun: 'जलम्', iast: 'jalam', en: 'water', answer: 'तत्', page: 18 },
+  { noun: 'फलम्', iast: 'phalam', en: 'fruit', answer: 'तत्', page: 18 },
+  { noun: 'गजः', iast: 'gajaḥ', en: 'elephant', answer: 'सः', page: 18 },
+  { noun: 'नदी', iast: 'nadī', en: 'river', answer: 'सा', page: 18 },
+  { noun: 'घटः', iast: 'ghaṭaḥ', en: 'pot', answer: 'सः', page: 23 },
+  { noun: 'माला', iast: 'mālā', en: 'garland', answer: 'सा', page: 23 },
+  { noun: 'लेखनी', iast: 'lekhanī', en: 'pen', answer: 'सा', page: 23 },
+  { noun: 'आसनम्', iast: 'āsanam', en: 'seat', answer: 'तत्', page: 23 },
+  { noun: 'भगिनी', iast: 'bhaginī', en: 'sister', answer: 'सा', page: 23 },
+];
+
+/** Set E · Number words (p. 13). */
+export const NUMBERS: { digit: string; n: number; dev: string; iast: string }[] = [
+  { digit: '१', n: 1, dev: 'एकम्', iast: 'ekam' },
+  { digit: '२', n: 2, dev: 'द्वे', iast: 'dve' },
+  { digit: '३', n: 3, dev: 'त्रीणि', iast: 'trīṇi' },
+  { digit: '४', n: 4, dev: 'चत्वारि', iast: 'catvāri' },
+  { digit: '५', n: 5, dev: 'पञ्च', iast: 'pañca' },
+  { digit: '६', n: 6, dev: 'षट्', iast: 'ṣaṭ' },
+  { digit: '७', n: 7, dev: 'सप्त', iast: 'sapta' },
+  { digit: '८', n: 8, dev: 'अष्ट', iast: 'aṣṭa' },
+  { digit: '९', n: 9, dev: 'नव', iast: 'nava' },
+  { digit: '१०', n: 10, dev: 'दश', iast: 'daśa' },
+];
+
+/** One, two, many tables (pp. 23–24): [one, two, many, meaning]. */
+export const VACANA_ROWS: { iast: [string, string, string]; one: string; two: string; many: string; en: string; page: number }[] = [
+  { iast: ['etat pustakam', 'ete pustake', 'etāni pustakāni'], one: 'एतत् पुस्तकम्', two: 'एते पुस्तके', many: 'एतानि पुस्तकानि', en: 'book', page: 23 },
+  { iast: ['saḥ ghaṭaḥ', 'tau ghaṭau', 'te ghaṭāḥ'], one: 'सः घटः', two: 'तौ घटौ', many: 'ते घटाः', en: 'pot', page: 23 },
+  { iast: ['sā mālā', 'te māle', 'tāḥ mālāḥ'], one: 'सा माला', two: 'ते माले', many: 'ताः मालाः', en: 'garland', page: 23 },
+  { iast: ['sā lekhanī', 'te lekhanyau', 'tāḥ lekhanyaḥ'], one: 'सा लेखनी', two: 'ते लेखन्यौ', many: 'ताः लेखन्यः', en: 'pen', page: 23 },
+  { iast: ['eṣaḥ dīpaḥ', 'etau dīpau', 'ete dīpāḥ'], one: 'एषः दीपः', two: 'एतौ दीपौ', many: 'एते दीपाः', en: 'lamp', page: 23 },
+  { iast: ['tat āsanam', 'te āsane', 'tāni āsanāni'], one: 'तत् आसनम्', two: 'ते आसने', many: 'तानि आसनानि', en: 'seat', page: 23 },
+  { iast: ['eṣaḥ kaṅkataḥ', 'etau kaṅkatau', 'ete kaṅkatāḥ'], one: 'एषः कङ्कतः', two: 'एतौ कङ्कतौ', many: 'एते कङ्कताः', en: 'comb', page: 24 },
+  { iast: ['eṣā peṭikā', 'ete peṭike', 'etāḥ peṭikāḥ'], one: 'एषा पेटिका', two: 'एते पेटिके', many: 'एताः पेटिकाः', en: 'box', page: 24 },
+  { iast: ['bālakaḥ paṭhati', 'bālakau paṭhataḥ', 'bālakāḥ paṭhanti'], one: 'बालकः पठति', two: 'बालकौ पठतः', many: 'बालकाः पठन्ति', en: 'the boy reads', page: 24 },
+];
+
+/** Set F · the subhāṣita (p. 21, review p. 24). */
+export const SAYING_QS: { q: string; options: string[]; answer: number; note: string }[] = [
+  { q: 'उद्यमेन हि सिध्यन्ति कार्याणि न ________ ।', options: ['मनोरथैः', 'मृगाः', 'सिंहस्य', 'मुखे'], answer: 0, note: 'udyamena hi sidhyanti kāryāṇi na manorathaiḥ: work gets done by effort, not by just wishing.' },
+  { q: 'न हि सुप्तस्य ________ प्रविशन्ति मुखे मृगाः ॥', options: ['सिंहस्य', 'गजस्य', 'मनोरथैः', 'कार्याणि'], answer: 0, note: 'na hi suptasya siṃhasya praviśanti mukhe mṛgāḥ: deer do not walk into the mouth of a sleeping lion.' },
+  { q: 'What does उद्यमेन (udyamena) mean?', options: ['by wishes', 'by effort', 'tasks, works', 'are completed'], answer: 1, note: 'उद्यमेन = by effort (p. 21).' },
+  { q: 'What does मनोरथैः (manorathaiḥ) mean?', options: ['by wishes', 'by effort', 'deer', 'of a sleeping lion'], answer: 0, note: 'मनोरथैः = by wishes (p. 21).' },
+  { q: 'What does कार्याणि (kāryāṇi) mean?', options: ['deer', 'tasks, works', 'by wishes', 'mouth'], answer: 1, note: 'कार्याणि = tasks, works (p. 21).' },
+  { q: 'What does सिध्यन्ति (sidhyanti) mean?', options: ['are completed', 'enter', 'sleep', 'wish'], answer: 0, note: 'सिध्यन्ति = are completed (p. 21).' },
+  { q: 'This good saying comes from which book?', options: ['Pañcatantra', 'Hitopadeśa', 'Rāmāyaṇa', 'Atharvaveda'], answer: 1, note: 'The saying is from the Hitopadeśa (p. 21).' },
+];

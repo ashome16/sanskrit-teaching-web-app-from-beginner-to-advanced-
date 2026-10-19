@@ -137,7 +137,7 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
   },
   quiz: {
     title: 'NCERT Class 7 Sanskrit Quizzes & Online Chapter Tests with Instant Solutions | EdNet Learn',
-    desc: 'Test your Sanskrit knowledge with 39+ interactive quiz sets, 200+ CBSE curriculum questions, instant scoring, and explanation cards.',
+    desc: 'Swar Review Practice for the Swar · स्वर — Sanskrit Workbook review test (pages 23–24), plus 39+ interactive quiz sets, 200+ CBSE curriculum questions, instant scoring, and explanation cards.',
   },
   board: {
     title: 'Jodo Tile Studio (जोडो): 6,000+ Sanskrit Word Puzzles | EdNet Learn',
@@ -160,8 +160,8 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Boot up the ultimate reality simulator: free science sandboxes with Sanskrit names. Forge Vaiśeṣika paramāṇus, balance vāta-pitta-kapha, master real gravity through the 27 nakṣatras, weave the Loom of Āruṇi, tune the Cosmic Sitār, scan past the Veil of Māyā to the atoms and sort life into the Chaturyoni four births and soft-land Somayāna Mission-03 (Chandrayaan).',
   },
   certificate: {
-    title: 'स्वर् · SWAR Workbook Certificate of Completion | EdNet Learn',
-    desc: 'Finished the Swar Sanskrit Workbook (The Darśana Series)? Sign in, enter your book code, pass a quick 5-question quiz and download your colourful certificate.',
+    title: 'Swar · स्वर — Sanskrit Workbook Certificate of Completion | EdNet Learn',
+    desc: 'Finished Swar · स्वर — Sanskrit Workbook (The Darśana Series, by Sesha K Penumallu)? Enter your book code, answer one question from each part of the book, score 70% and download or print your colourful certificate.',
   },
   dhatupatha: {
     title: 'Dhātupāṭha & Pāṇinian Verb Engine: 5 Lakāras & Kṛt Pratyayas | EdNet Learn',
@@ -341,7 +341,7 @@ const Dashboard: React.FC = () => {
       return targetView !== 'home';
     }
     // smart_freemium mode (default & recommended):
-    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide' || targetView === 'resources' || targetView === 'dhatupatha' || targetView === 'science-lab') return false;
+    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide' || targetView === 'resources' || targetView === 'dhatupatha' || targetView === 'science-lab' || targetView === 'certificate') return false;
     if (targetView === 'reader') {
       const lessonToCheck = targetLessonId || lessons[lessonIndex]?.id;
       // Content from the beginning (Alphabet, Barakhadi, Samyukta, Numbers)
@@ -495,6 +495,12 @@ const Dashboard: React.FC = () => {
       return;
     }
 
+    if (target.view === 'quiz' && target.quizAnchor === 'swar-review') {
+      // Swar workbook readers (p. 24 QR) reach the review practice without signing in.
+      setQuizAnchor(null);
+      setActiveView('quiz');
+      return;
+    }
     if (target.view === 'quiz') {
       navigateToView('quiz');
       if (target.quizAnchor && categoryForLiteratureAnchor(target.quizAnchor)) {
@@ -633,7 +639,9 @@ const Dashboard: React.FC = () => {
       if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources' && activeView !== 'science-lab') {
         setActiveView('home');
       } else if (accessMode === 'smart_freemium') {
-        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources' && activeView !== 'science-lab') {
+        // /certificate and /quiz stay open: printed QR codes in the Swar workbook (pp. 24, 149) point here.
+        // Guests on /quiz see only Swar Review Practice; the full quiz arena keeps its sign-up gate.
+        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources' && activeView !== 'science-lab' && activeView !== 'certificate' && activeView !== 'quiz') {
           setActiveView('home');
         } else if (activeView === 'reader') {
           const currId = lessons[lessonIndex]?.id;
@@ -1209,7 +1217,14 @@ const Dashboard: React.FC = () => {
           />
         )}
         {activeView === 'certificate' && (
-          <CertificatePage onGoHome={() => navigateToView('home')} />
+          <CertificatePage
+            onGoHome={() => navigateToView('home')}
+            onOpenBodhi={() => setIsBodhiGuideOpen(true)}
+            onOpenWorksheets={() => handleOpenWorksheets('all')}
+            onOpenPuzzles={() => navigateToView('board')}
+            onOpenGames={() => navigateToView('science-lab')}
+            onOpenReviewPractice={() => { setQuizAnchor(null); setActiveView('quiz'); }}
+          />
         )}
         {activeView === 'science-lab' && (
           <ScienceLab
@@ -1266,6 +1281,12 @@ const Dashboard: React.FC = () => {
             onGoHome={() => setActiveView('home')}
             onOpenWorksheets={() => handleOpenWorksheets('all')}
             onOpenReader={() => openDeepakam()}
+            onOpenCertificate={() => { setQuizAnchor(null); setActiveView('certificate'); }}
+            onOpenBodhi={() => setIsBodhiGuideOpen(true)}
+            onOpenPuzzles={() => navigateToView('board')}
+            onOpenGames={() => navigateToView('science-lab')}
+            swarOnly={isContentGated('quiz')}
+            onOpenRegister={() => { setPendingRedirect('quiz'); openAuthModal('register'); }}
           />
         )}
         {activeView === 'worksheets' && (
