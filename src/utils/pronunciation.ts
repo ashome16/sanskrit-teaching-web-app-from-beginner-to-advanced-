@@ -55,6 +55,24 @@ const applyWordOverrides = (word: string): string => {
   // 'सप्त' (sapta, 7) gets clipped to "sat" without the plosive 'p'; a
   // hyphenated romanized hint forces the engine to articulate it in full.
   if (word === 'सप्त') return 'sap-ta';
+
+  // Māheśvara Sūtra phoneme expansions: articulates individual atomic sounds with spaces
+  // rather than letting the TTS engine blend root vowels/letters into an artificial word.
+  if (word === 'अइउण्') return 'अ इ उ ण्';
+  if (word === 'ऋऌक्') return isMacDesktopPlatform() ? 'रि ल्रि क्' : 'ऋ लृ क्';
+  if (word === 'एओङ्') return 'ए ओ ङ्';
+  if (word === 'ऐऔच्') return 'ऐ औ च्';
+  if (word === 'हयवरट्') return 'ह य व र ट्';
+  if (word === 'लण्') return 'ल ण्';
+  if (word === 'ञमङणनम्') return 'ञ म ङ ण न म्';
+  if (word === 'झभञ्') return 'झ भ ञ्';
+  if (word === 'घढधष्') return 'घ ढ ध ष्';
+  if (word === 'जबगडदश्') return 'ज ब ग ड द श्';
+  if (word === 'खफछठथचटतव्') return 'ख फ छ ठ थ च ट त व्';
+  if (word === 'कपय्') return 'क प य्';
+  if (word === 'शषसर्') return 'श ष स र्';
+  if (word === 'हल्') return 'ह ल्';
+
   return word;
 };
 
@@ -781,7 +799,7 @@ export const playLessonText = (value: string): void => {
 export const SHLOKA_RECITATION_RATE = 0.64;
 export const SHLOKA_PADA_PAUSE_MS = 900;
 export const SHLOKA_END_PAUSE_MS = 1450;
-export const SHLOKA_COMMA_PAUSE_MS = 600;
+export const SHLOKA_COMMA_PAUSE_MS = 480;
 
 /**
  * Detects whether text is a Sanskrit śloka, mantra, subhāṣita, or sacred verse.
@@ -979,12 +997,29 @@ const toBodhiSpeech = (chunk: string): string => {
   return chunk
     .split(' ')
     .map((word) => {
-      const clean = word.trim();
-      if (isMacDesktopPlatform() && MAC_VOCALIC_CUES[clean]) {
-        return MAC_VOCALIC_CUES[clean].cue;
+      const bare = word.replace(/[।॥,;:!?()[\]{}<>'"“”‘’\-–—|!]+/g, '').trim();
+
+      // Māheśvara Sūtra sound clusters: expand to spaced sounds so they never blend into words
+      if (bare === 'अइउण्') return 'अ इ उ ण्';
+      if (bare === 'ऋऌक्') return isMacDesktopPlatform() ? 'रि ल्रि क्' : 'ऋ लृ क्';
+      if (bare === 'एओङ्') return 'ए ओ ङ्';
+      if (bare === 'ऐऔच्') return 'ऐ औ च्';
+      if (bare === 'हयवरट्') return 'ह य व र ट्';
+      if (bare === 'लण्') return 'ल ण्';
+      if (bare === 'ञमङणनम्') return 'ञ म ङ ण न म्';
+      if (bare === 'झभञ्') return 'झ भ ञ्';
+      if (bare === 'घढधष्') return 'घ ढ ध ष्';
+      if (bare === 'जबगडदश्') return 'ज ब ग ड द श्';
+      if (bare === 'खफछठथचटतव्') return 'ख फ छ ठ थ च ट त व्';
+      if (bare === 'कपय्') return 'क प य्';
+      if (bare === 'शषसर्') return 'श ष स र्';
+      if (bare === 'हल्') return 'ह ल्';
+
+      if (isMacDesktopPlatform() && MAC_VOCALIC_CUES[bare]) {
+        return word.replace(bare, MAC_VOCALIC_CUES[bare].cue);
       }
-      if (clean === 'ऌ') {
-        return 'लृ';
+      if (bare === 'ऌ') {
+        return word.replace('ऌ', isMacDesktopPlatform() ? 'ल्रि' : 'लृ');
       }
       return applyVisargaEcho(word, spaced);
     })

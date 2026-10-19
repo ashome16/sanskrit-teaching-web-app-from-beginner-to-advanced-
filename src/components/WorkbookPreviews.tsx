@@ -393,13 +393,17 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
       },
       2: {
         title: 'Phonetic Science · माहेश्वर-सूत्राणि',
-        recitation: 'अइउण् । ऋऌक् । एओङ् । ऐऔच् । चतुर्दश-माहेश्वर-सूत्राणि व्याकरणस्य आधारः ।',
-        transliteration: 'aiuṇ | ṛḷk | eoṅ | aiauc | caturdaśa-māheśvara-sūtrāṇi vyākaraṇasya ādhāraḥ |',
-        english: 'The sacred sound catalog of the fourteen Shiva Sutras, encoding the foundational phonemes of Paninian linguistics.',
+        recitation: 'अ, इ, उ, ण् । ऋ, ऌ, क् । ए, ओ, ङ् । ऐ, औ, च् । चतुर्दश-माहेश्वर-सूत्राणि व्याकरणस्य आधारः ।',
+        transliteration: 'a, i, u, ṇ | ṛ, ḷ, k | e, o, ṅ | ai, au, c | caturdaśa-māheśvara-sūtrāṇi vyākaraṇasya ādhāraḥ |',
+        english: 'The sacred sound catalog of the fourteen Shiva Sutras: reciting each atomic sound (a, i, u, ṇ; ṛ, ḷ, k; e, o, ṅ; ai, au, c) as foundational phonemes of Paninian linguistics.',
         vocab: [
-          { sa: 'सूत्रम्', iast: 'sūtram', en: 'Aphorism' },
-          { sa: 'प्रत्याहारः', iast: 'pratyāhāraḥ', en: 'Phonetic set' },
-          { sa: 'वर्णः', iast: 'varṇaḥ', en: 'Phoneme / Sound' },
+          { sa: 'अ, इ, उ, ण्', iast: 'a, i, u, ṇ', en: '1st Sūtra: Simple Vowels' },
+          { sa: 'ऋ, ऌ, क्', iast: 'ṛ, ḷ, k', en: '2nd Sūtra: Vocalic Liquids' },
+          { sa: 'ए, ओ, ङ्', iast: 'e, o, ṅ', en: '3rd Sūtra: Guṇa Vowels' },
+          { sa: 'ऐ, औ, च्', iast: 'ai, au, c', en: '4th Sūtra: Vṛddhi Diphthongs' },
+          { sa: 'माहेश्वर-सूत्राणि', iast: 'māheśvara-sūtrāṇi', en: '14 Shiva Sound Aphorisms' },
+          { sa: 'प्रत्याहारः', iast: 'pratyāhāraḥ', en: 'Phonetic Matrix' },
+          { sa: 'वर्णः', iast: 'varṇaḥ', en: 'Sound / Phoneme' },
         ],
       },
       3: {
