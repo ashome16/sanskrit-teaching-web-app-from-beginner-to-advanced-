@@ -145,6 +145,17 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
           { sa: 'वाणी', iast: 'vāṇī', en: 'Speech' },
         ],
       },
+      2: {
+        title: 'Consonants · व्यञ्जनानि',
+        recitation: 'कवर्गः चवर्गः टवर्गः तवर्गः पवर्गश्च । पञ्च व्यञ्जन-वर्गाः ।',
+        transliteration: 'kavargaḥ cavargaḥ ṭavargaḥ tavargaḥ pavargaśca | pañca vyañjana-vargāḥ |',
+        english: 'The five consonant classes of Sanskrit: Velar, Palatal, Retroflex, Dental, and Labial stops.',
+        vocab: [
+          { sa: 'व्यञ्जनम्', iast: 'vyañjanam', en: 'Consonant' },
+          { sa: 'वर्गः', iast: 'vargaḥ', en: 'Consonant class' },
+          { sa: 'स्पर्शः', iast: 'sparśaḥ', en: 'Stop consonant' },
+        ],
+      },
       3: {
         title: 'Vowels · स्वराः',
         recitation: 'अ आ इ ई उ ऊ ऋ ॠ ऌ ए ऐ ओ औ अं अः । वर्णानां मूलम् स्वराः ।',
@@ -162,6 +173,17 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
           { sa: 'ऐ', iast: 'ai', en: 'vowel ai' },
           { sa: 'ओ', iast: 'o', en: 'vowel o' },
           { sa: 'औ', iast: 'au', en: 'vowel au' },
+        ],
+      },
+      4: {
+        title: 'Mātrās & Syllables · मात्रा-परिचयः',
+        recitation: 'स्वरैः सह व्यञ्जनानां योगः । क का कि की कु कू कृ ।',
+        transliteration: 'svaraiḥ saha vyañjanānāṃ yogaḥ | ka kā ki kī ku kū kṛ |',
+        english: 'Vowel diacritics (Mātrās) joined with consonants to form complete vocalic syllables.',
+        vocab: [
+          { sa: 'मात्रा', iast: 'mātrā', en: 'Vowel diacritic' },
+          { sa: 'अक्षरम्', iast: 'akṣaram', en: 'Syllable / Akṣara' },
+          { sa: 'योगः', iast: 'yogaḥ', en: 'Combination' },
         ],
       },
       9: {
@@ -216,6 +238,18 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
           { sa: 'सुखम्', iast: 'sukham', en: 'Happiness' },
         ],
       },
+      2: {
+        title: 'Sacred Celebrations · भारतीय-उत्सवाः',
+        recitation: 'होली, रक्षाबन्धनम्, गणेशोत्सवः, नवरात्रं च । उत्सवैः जीवनं मङ्गलमयं भवति ।',
+        transliteration: 'holī, rakṣābandhanam, gaṇeśotsavaḥ, navarātraṃ ca | utsavaiḥ jīvanaṃ maṅgalamayaṃ bhavati |',
+        english: 'Holi, Rakshabandhan, Ganeshotsav, and Navaratri. Celebrations infuse human life with auspicious bliss.',
+        vocab: [
+          { sa: 'रक्षाबन्धनम्', iast: 'rakṣābandhanam', en: 'Festival of sacred bond' },
+          { sa: 'गणेशोत्सवः', iast: 'gaṇeśotsavaḥ', en: 'Ganesha festival' },
+          { sa: 'नवरात्रम्', iast: 'navarātram', en: 'Nine sacred nights' },
+          { sa: 'मङ्गलम्', iast: 'maṅgalam', en: 'Auspiciousness' },
+        ],
+      },
       3: {
         title: 'Dīpāvalī · दीपावली',
         recitation: 'दीपावली प्रकाशोत्सवः । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥',
@@ -226,6 +260,18 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
           { sa: 'दीपः', iast: 'dīpaḥ', en: 'Oil lamp' },
           { sa: 'प्रकाशः', iast: 'prakāśaḥ', en: 'Radiance' },
           { sa: 'ज्योतिः', iast: 'jyotiḥ', en: 'Flame' },
+        ],
+      },
+      4: {
+        title: 'Lights & Prosperity · दीपावली-लक्ष्मीपूजा',
+        recitation: 'शुभं करोति कल्याणमारोग्यं धनसम्पदाम् । दीपज्योतिर्नमोऽस्तु ते ॥',
+        transliteration: 'śubhaṃ karoti kalyāṇamārogyaṃ dhanasampadām | dīpajyotirnamo\'stu te ||',
+        english: 'Salutations to the divine flame of the lamp, which bestows auspiciousness, radiant health, and spiritual abundance.',
+        vocab: [
+          { sa: 'शुभम्', iast: 'śubham', en: 'Auspicious' },
+          { sa: 'कल्याणम्', iast: 'kalyāṇam', en: 'Well-being' },
+          { sa: 'आरोग्यम्', iast: 'ārogyam', en: 'Health' },
+          { sa: 'सम्पद्', iast: 'sampad', en: 'Prosperity' },
         ],
       },
       25: {
@@ -273,6 +319,29 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
         vocab: [
           { sa: 'मुखम्', iast: 'mukham', en: 'Mouth / Face' },
           { sa: 'शास्त्रम्', iast: 'śāstram', en: 'System of knowledge' },
+        ],
+      },
+      2: {
+        title: 'Phonetic Science · माहेश्वर-सूत्राणि',
+        recitation: 'अइउण् । ऋऌक् । एओङ् । ऐऔच् । चतुर्दश-माहेश्वर-सूत्राणि व्याकरणस्य आधारः ।',
+        transliteration: 'aiuṇ | ṛḷk | eoṅ | aiauc | caturdaśa-māheśvara-sūtrāṇi vyākaraṇasya ādhāraḥ |',
+        english: 'The sacred sound catalog of the fourteen Shiva Sutras, encoding the foundational phonemes of Paninian linguistics.',
+        vocab: [
+          { sa: 'सूत्रम्', iast: 'sūtram', en: 'Aphorism' },
+          { sa: 'प्रत्याहारः', iast: 'pratyāhāraḥ', en: 'Phonetic set' },
+          { sa: 'वर्णः', iast: 'varṇaḥ', en: 'Phoneme / Sound' },
+        ],
+      },
+      3: {
+        title: 'Nouns & Genders · लिङ्ग-परिचयः',
+        recitation: 'पुंलिङ्गः, स्त्रीलिङ्गः, नपुंसकलिङ्गश्च । संस्कृते त्रीणि लिङ्गानि, त्रीणि वचनानि च ।',
+        transliteration: 'puṃliṅgaḥ, strīliṅgaḥ, napuṃsakaliṅgaśca | saṃskṛte trīṇi liṅgāni, trīṇi vacanāni ca |',
+        english: 'The three grammatical genders (masculine, feminine, neuter) and three numbers (singular, dual, plural) in Sanskrit.',
+        vocab: [
+          { sa: 'पुंलिङ्गः', iast: 'puṃliṅgaḥ', en: 'Masculine' },
+          { sa: 'स्त्रीलिङ्गः', iast: 'strīliṅgaḥ', en: 'Feminine' },
+          { sa: 'नपुंसकलिङ्गः', iast: 'napuṃsakaliṅgaḥ', en: 'Neuter' },
+          { sa: 'वचनम्', iast: 'vacanam', en: 'Grammatical number' },
         ],
       },
       4: {
@@ -336,6 +405,28 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
           { sa: 'सौन्दर्यम्', iast: 'saundaryam', en: 'Beauty' },
         ],
       },
+      2: {
+        title: 'Verbal Roots & Classes · दश-गणाः',
+        recitation: 'भूवादीनि धातवः । भ्वादि-गणः, अदादि-गणः, जुहोत्यादि-गणश्च ।',
+        transliteration: 'bhūvādīni dhātavaḥ | bhvādi-gaṇaḥ, adādi-gaṇaḥ, juhotyādi-gaṇaśca |',
+        english: 'Roots of action (Dhātus) and the ten thematic verbal conjugational classes.',
+        vocab: [
+          { sa: 'धातुः', iast: 'dhātuḥ', en: 'Verbal root' },
+          { sa: 'गणः', iast: 'gaṇaḥ', en: 'Conjugational class' },
+          { sa: 'क्रिया', iast: 'kriyā', en: 'Action' },
+        ],
+      },
+      3: {
+        title: 'Future Tense · लृट्-लकारः',
+        recitation: 'पठिष्यति पठिष्यतः पठिष्यन्ति । गमिष्यति गमिष्यतः गमिष्यन्ति ।',
+        transliteration: 'paṭhiṣyati paṭhiṣyataḥ paṭhiṣyanti | gamiṣyati gamiṣyataḥ gamiṣyanti |',
+        english: 'Future tense active paradigms formed with the characteristic -sya / -iṣya suffix.',
+        vocab: [
+          { sa: 'पठिष्यति', iast: 'paṭhiṣyati', en: 'He will read' },
+          { sa: 'गमिष्यति', iast: 'gamiṣyati', en: 'He will go' },
+          { sa: 'लृट्', iast: 'lṛṭ', en: 'Simple future tense' },
+        ],
+      },
       4: {
         title: 'Past Tense · लङ्-लकारः',
         recitation: 'अपठत् अपठताम् अपठन् । अपठः अपठतम् अपठत । अपठम् अपठाव अपठाम ।',
@@ -360,13 +451,14 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
       },
       14: {
         title: 'Kṛdanta Participles · कृदन्ताः',
-        recitation: 'गत्वा (having gone), आगत्य (having arrived), गन्तुम् (in order to go) ।',
-        transliteration: 'gatvā (having gone), āgatya (having arrived), gantum (in order to go) |',
+        recitation: 'गत्वा, आगत्य, गन्तुम् । क्त्वा, ल्यप्, तुमुन् प्रत्ययाः ।',
+        transliteration: 'gatvā, āgatya, gantum | ktvā, lyap, tumun pratyayāḥ |',
         english: 'Participial suffixes: Ktvā for sequential action, Lyap with prefixes, and Tumun for purpose.',
         vocab: [
           { sa: 'गत्वा', iast: 'gatvā', en: 'Having gone' },
           { sa: 'आगत्य', iast: 'āgatya', en: 'Having arrived' },
           { sa: 'गन्तुम्', iast: 'gantum', en: 'In order to go' },
+          { sa: 'प्रत्ययः', iast: 'pratyayaḥ', en: 'Suffix' },
         ],
       },
     },
@@ -393,6 +485,17 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
           { sa: 'वैभवम्', iast: 'vaibhavam', en: 'Grandeur' },
         ],
       },
+      2: {
+        title: 'Compound Syntax · समास-प्रकारः',
+        recitation: 'पदविधिः समर्थः पदविधिः । संक्षेपः समासः ।',
+        transliteration: 'padavidhiḥ samarthaḥ padavidhiḥ | saṃkṣepaḥ samāsaḥ |',
+        english: 'Pāṇinian compound formation requires syntactic compatibility and semantic cohesion.',
+        vocab: [
+          { sa: 'समर्थः', iast: 'samarthaḥ', en: 'Syntactically compatible' },
+          { sa: 'पदम्', iast: 'padam', en: 'Inflected word' },
+          { sa: 'विग्रहः', iast: 'vigrahaḥ', en: 'Compound resolution' },
+        ],
+      },
       3: {
         title: 'Samāsa Compounds · समासाः',
         recitation: 'समासः सङ्क्षेपः । तत्पुरुषः, द्वन्द्वः, बहुव्रीहिः, कर्मधारयः, द्विगुः, अव्ययीभावश्च ।',
@@ -403,6 +506,17 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
           { sa: 'द्वन्द्वः', iast: 'dvandvaḥ', en: 'Coordinative' },
           { sa: 'बहुव्रीहिः', iast: 'bahuvrīhiḥ', en: 'Exocentric' },
           { sa: 'अव्ययीभावः', iast: 'avyayībhāvaḥ', en: 'Indeclinable' },
+        ],
+      },
+      4: {
+        title: 'Determinative & Exocentric · तत्पुरुष-बहुव्रीहि',
+        recitation: 'उत्तरपद-प्रधानः तत्पुरुषः । अन्यपद-प्रधानः बहुव्रीहिः ।',
+        transliteration: 'uttarapada-pradhānaḥ tatpuruṣaḥ | anyapada-pradhānaḥ bahuvrīhiḥ |',
+        english: 'In Tatpuruṣa compounds the final member dominates; in Bahuvrīhi an external referent is qualified.',
+        vocab: [
+          { sa: 'उत्तरपदम्', iast: 'uttarapadam', en: 'Final member' },
+          { sa: 'अन्यपदम्', iast: 'anyapadam', en: 'External referent' },
+          { sa: 'प्रधानम्', iast: 'pradhānam', en: 'Principal / Dominant' },
         ],
       },
       10: {
@@ -450,6 +564,41 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
         vocab: [
           { sa: 'जीवः', iast: 'jīvaḥ', en: 'Living being' },
           { sa: 'हितम्', iast: 'hitam', en: 'Welfare' },
+        ],
+      },
+      2: {
+        title: 'Domestic Friends · ग्राम्यपशवः',
+        recitation: 'धेनुः दुग्धं ददाति । अश्वः वेगेन धावति । श्वानः स्वामीभक्तः ।',
+        transliteration: 'dhenuḥ dugdhaṃ dadāti | aśvaḥ vegena dhāvati | śvānaḥ svāmībhaktaḥ |',
+        english: 'The cow gives nourishing milk; the horse gallops with speed; the faithful dog guards the home.',
+        vocab: [
+          { sa: 'धेनुः', iast: 'dhenuḥ', en: 'Cow' },
+          { sa: 'दुग्धम्', iast: 'dugdham', en: 'Milk' },
+          { sa: 'श्वानः', iast: 'śvānaḥ', en: 'Dog' },
+          { sa: 'अश्वः', iast: 'aśvaḥ', en: 'Horse' },
+        ],
+      },
+      3: {
+        title: 'Birds of the Sky · विहङ्गाः',
+        recitation: 'शुकः मधुरं वदति । कोकिलः वसन्ते गायति । मयूरः वृष्टौ नृत्यति ।',
+        transliteration: 'śukaḥ madhuraṃ vadati | kokilaḥ vasante gāyati | mayūraḥ vṛṣṭau nṛtyati |',
+        english: 'The parrot speaks sweet words; the cuckoo sings in springtime; the peacock dances when rains fall.',
+        vocab: [
+          { sa: 'शुकः', iast: 'śukaḥ', en: 'Parrot' },
+          { sa: 'कोकिलः', iast: 'kokilaḥ', en: 'Cuckoo' },
+          { sa: 'मयूरः', iast: 'mayūraḥ', en: 'Peacock' },
+          { sa: 'विहङ्गः', iast: 'vihaṅgaḥ', en: 'Bird' },
+        ],
+      },
+      4: {
+        title: 'Forest Kings · वनचर-जीवाः',
+        recitation: 'सिंहः वनराजः । गजः शुण्डेन जलं पिबति । वानरः वृक्षात् कूर्दति ।',
+        transliteration: 'siṃhaḥ vanarājaḥ | gajaḥ śuṇḍena jalaṃ pibati | vānaraḥ vṛkṣāt kūrdati |',
+        english: 'The lion is king of the jungle; the elephant drinks water with its trunk; monkeys leap between trees.',
+        vocab: [
+          { sa: 'सिंहः', iast: 'siṃhaḥ', en: 'Lion' },
+          { sa: 'शुण्डः', iast: 'śuṇḍaḥ', en: 'Trunk' },
+          { sa: 'वानरः', iast: 'vānaraḥ', en: 'Monkey' },
         ],
       },
       16: {
@@ -511,6 +660,41 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
           { sa: 'शान्तिः', iast: 'śāntiḥ', en: 'Peace' },
         ],
       },
+      2: {
+        title: 'Anatomy of a Tree · वृक्षस्य अङ्गानि',
+        recitation: 'मूलम्, स्कन्धः, शाखा, पत्रम्, पुष्पम्, फलम् च । वृक्षः छायां ददाति ।',
+        transliteration: 'mūlam, skandhaḥ, śākhā, patram, puṣpam, phalam ca | vṛkṣaḥ chāyāṃ dadāti |',
+        english: 'Root, trunk, branches, leaves, blossoms, and fruits. The generous tree offers sheltering shade to all.',
+        vocab: [
+          { sa: 'मूलम्', iast: 'mūlam', en: 'Root' },
+          { sa: 'स्कन्धः', iast: 'skandhaḥ', en: 'Trunk' },
+          { sa: 'शाखा', iast: 'śākhā', en: 'Branch' },
+          { sa: 'पत्रम्', iast: 'patram', en: 'Leaf' },
+          { sa: 'छाया', iast: 'chāyā', en: 'Shade' },
+        ],
+      },
+      3: {
+        title: 'Sacred Groves · तपोवनानि',
+        recitation: 'शान्तानि तपोवनानि । अरण्यं पृथिव्याः फुफ्फुसम् ।',
+        transliteration: 'śāntāni tapovanāni | araṇyaṃ pṛthivyāḥ phupphusam |',
+        english: 'Peaceful hermit groves of meditation: the living forest is the sacred lung of mother earth.',
+        vocab: [
+          { sa: 'तपोवनम्', iast: 'tapovanam', en: 'Hermitage grove' },
+          { sa: 'अरण्यम्', iast: 'araṇyam', en: 'Forest' },
+          { sa: 'शान्तिः', iast: 'śāntiḥ', en: 'Peace' },
+        ],
+      },
+      4: {
+        title: 'Healing Herbs · ओषधि-महिमा',
+        recitation: 'ओषधयः अमृत-रूपाः । घृतकुमारी, ब्राह्मी, तुलसी च स्वास्थ्यप्रदाः ।',
+        transliteration: 'oṣadhayaḥ amṛta-rūpāḥ | ghṛtakumārī, brāhmī, tulasī ca svāsthyapradāḥ |',
+        english: 'Medicinal herbs embody nectar: Aloe vera, Brahmi, and Holy Basil bestow vital health and mental clarity.',
+        vocab: [
+          { sa: 'घृतकुमारी', iast: 'ghṛtakumārī', en: 'Aloe vera' },
+          { sa: 'ब्राह्मी', iast: 'brāhmī', en: 'Brahmi' },
+          { sa: 'स्वास्थ्यम्', iast: 'svāsthyam', en: 'Holistic health' },
+        ],
+      },
       5: {
         title: 'Sacred Trees · पवित्र-वृक्षाः',
         recitation: 'अश्वत्थः देवतरुः — पिप्पलो वृक्षः । वटवृक्षः विशाल-न्यग्रोधः । बिल्ववृक्षः शिवपूजने प्रियः ।',
@@ -550,15 +734,35 @@ const WORKBOOK_AUDIO_DATA: Record<string, { intro: WorkbookPageAudio; pages: Rec
   },
 };
 
+const BOOK_SANSKRIT_NAMES: Record<string, string> = {
+  basic: 'संस्कृत-प्रवेश-अभ्यास-पुस्तिका',
+  festival: 'भारतीय-महोत्सव-अभ्यास-पुस्तिका',
+  grammar1: 'संस्कृत-व्याकरण-प्रथमाभ्यासः',
+  grammar2: 'संस्कृत-व्याकरण-द्वितीयाभ्यासः',
+  grammar3: 'संस्कृत-व्याकरण-तृतीयाभ्यासः',
+  animals: 'पशवः पक्षिणश्च',
+  plants: 'वृक्षाः ओषधयश्च',
+};
+
+const toSanskritNumber = (num: number): string => {
+  const digits = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+  return String(num)
+    .split('')
+    .map((d) => digits[parseInt(d, 10)] ?? d)
+    .join('');
+};
+
 const getWorkbookPageAudio = (b: Book, pageNum: number): WorkbookPageAudio => {
   const bookAudio = WORKBOOK_AUDIO_DATA[b.id];
   if (bookAudio?.pages[pageNum]) {
     return bookAudio.pages[pageNum];
   }
+  const saTitle = BOOK_SANSKRIT_NAMES[b.id] || 'संस्कृत-अभ्यास-पुस्तिका';
+  const saPage = toSanskritNumber(pageNum);
   return {
     title: `${b.title} · Page ${pageNum}`,
-    recitation: `${b.title} । पृष्ठम् ${pageNum} । अभ्यासेन विद्या सिध्यति ।`,
-    transliteration: `${b.title} | pṛṣṭham ${pageNum} | abhyāsena vidyā sidhyati |`,
+    recitation: `${saTitle} । पृष्ठम् ${saPage} । अभ्यासेन विद्या सिध्यति ।`,
+    transliteration: `${saTitle} | pṛṣṭham ${pageNum} | abhyāsena vidyā sidhyati |`,
     english: `${b.title}, page ${pageNum}. Diligent practice leads to complete mastery.`,
     vocab: [
       { sa: 'पृष्ठम्', iast: 'pṛṣṭham', en: `Page ${pageNum}` },
@@ -632,57 +836,100 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
 
   const currentPageAudio = open ? getWorkbookPageAudio(open.b, open.n) : null;
 
+  const playWorkbookAudio = useCallback(
+    (audio: WorkbookPageAudio, mode: 'sa' | 'bilingual') => {
+      stopAudio();
+      setIsPlayingAudio(true);
+      soundEffects.playStrokeChime();
+
+      let isCancelled = false;
+      let pauseTimer: ReturnType<typeof setTimeout> | null = null;
+      let activeStopFn: (() => void) | null = null;
+
+      const cleanup = () => {
+        isCancelled = true;
+        if (pauseTimer) {
+          clearTimeout(pauseTimer);
+          pauseTimer = null;
+        }
+        if (activeStopFn) {
+          activeStopFn();
+          activeStopFn = null;
+        }
+        stopPronunciation();
+        setIsPlayingAudio(false);
+        audioStopRef.current = null;
+      };
+
+      if (mode === 'sa') {
+        activeStopFn = speakAsBodhi(audio.recitation, {
+          lang: 'sa',
+          onEnd: () => {
+            if (!isCancelled) {
+              setIsPlayingAudio(false);
+              audioStopRef.current = null;
+            }
+          },
+        });
+      } else {
+        // Bilingual mode: First recite Sanskrit with 'sa', then after a natural pedagogical pause recite English with 'en'
+        activeStopFn = speakAsBodhi(audio.recitation, {
+          lang: 'sa',
+          onEnd: () => {
+            if (isCancelled) return;
+            pauseTimer = setTimeout(() => {
+              if (isCancelled) return;
+              activeStopFn = speakAsBodhi(audio.english, {
+                lang: 'en',
+                onEnd: () => {
+                  if (!isCancelled) {
+                    setIsPlayingAudio(false);
+                    audioStopRef.current = null;
+                  }
+                },
+              });
+            }, 450);
+          },
+        });
+      }
+
+      audioStopRef.current = cleanup;
+    },
+    [stopAudio]
+  );
+
   const togglePageAudio = useCallback(() => {
     if (!open || !currentPageAudio) return;
     if (isPlayingAudio) {
       stopAudio();
       return;
     }
-    stopAudio();
-    setIsPlayingAudio(true);
-    soundEffects.playStrokeChime();
+    playWorkbookAudio(currentPageAudio, audioMode);
+  }, [open, currentPageAudio, isPlayingAudio, stopAudio, playWorkbookAudio, audioMode]);
 
-    const textToRecite =
-      audioMode === 'bilingual'
-        ? `${currentPageAudio.recitation} — English Meaning: ${currentPageAudio.english}`
-        : currentPageAudio.recitation;
-
-    const stopFn = speakAsBodhi(textToRecite, {
-      lang: 'sa',
-      onEnd: () => {
-        setIsPlayingAudio(false);
-        audioStopRef.current = null;
-      },
-    });
-    audioStopRef.current = stopFn;
-  }, [open, currentPageAudio, isPlayingAudio, stopAudio, audioMode]);
-
-  const handlePlayWord = useCallback((sa: string) => {
-    soundEffects.playStrokeChime();
-    setActiveWord(sa);
-    playPronunciation(sa);
-    setTimeout(() => {
-      setActiveWord((cur) => (cur === sa ? null : cur));
-    }, 1200);
-  }, []);
-
-  const handleOpenAudioGuide = useCallback((b: Book, n: number) => {
-    soundEffects.playStrokeChime();
-    setOpen({ b, n });
-    setTimeout(() => {
+  const handlePlayWord = useCallback(
+    (sa: string) => {
       stopAudio();
-      const audio = getWorkbookPageAudio(b, n);
-      setIsPlayingAudio(true);
-      const stopFn = speakAsBodhi(audio.recitation, {
-        lang: 'sa',
-        onEnd: () => {
-          setIsPlayingAudio(false);
-          audioStopRef.current = null;
-        },
-      });
-      audioStopRef.current = stopFn;
-    }, 320);
-  }, [stopAudio]);
+      soundEffects.playStrokeChime();
+      setActiveWord(sa);
+      playPronunciation(sa);
+      setTimeout(() => {
+        setActiveWord((cur) => (cur === sa ? null : cur));
+      }, 1400);
+    },
+    [stopAudio]
+  );
+
+  const handleOpenAudioGuide = useCallback(
+    (b: Book, n: number) => {
+      setOpen({ b, n });
+      setTimeout(() => {
+        const audio = getWorkbookPageAudio(b, n);
+        playWorkbookAudio(audio, audioMode);
+      }, 280);
+    },
+    [audioMode, playWorkbookAudio]
+  );
 
   const activeShotLabel = open ? open.b.shots.find((x) => x.n === open.n)?.label : null;
   const isCurrentPageFree = open ? open.n <= FREE_PREVIEW_PAGE_LIMIT : false;
@@ -720,7 +967,7 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
                 type="button"
                 className="wbp-mini-audio"
                 style={{ color: b.color, borderColor: b.color }}
-                onClick={() => handleOpenAudioGuide(b, b.shots[1]?.n || 1)}
+                onClick={() => handleOpenAudioGuide(b, b.shots[0]?.n || 1)}
                 title={`Listen to spoken Sanskrit audio guide for ${b.title}`}
               >
                 🎧 Audio Guide

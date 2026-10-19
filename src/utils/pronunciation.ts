@@ -15,10 +15,13 @@ import { isDandaOrVerseNumberToken, stripDandaForSpeech } from './dandaSpeech';
 import { expandDigitsInLessonText } from './lessonNumberSpeech';
 
 // Native Web Speech API pronunciation helper for Sanskrit text only.
-// Strips whitespace/punctuation plus Devanagari digits and hyphens (e.g. the
-// numbers guide's "० - शून्यम्" button labels) so only the word itself is spoken.
+// Strips punctuation plus Devanagari digits and hyphens (e.g. the
+// numbers guide's "० - शून्यम्" button labels) while preserving word-separating spaces.
 const cleanWord = (value: string): string =>
-  value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, '').trim();
+  value
+    .replace(/[।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 
 const isSanskritText = (value: string): boolean => /[\u0900-\u097F]/.test(value);
 
@@ -365,6 +368,11 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?:
       utterance.onerror = onEnd;
     }
     window.speechSynthesis.speak(utterance);
+    try {
+      if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+    } catch {
+      /* ignore */
+    }
     return;
   }
 
@@ -414,6 +422,11 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?:
     utterance.onerror = onEnd;
   }
   window.speechSynthesis.speak(utterance);
+  try {
+    if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+  } catch {
+    /* ignore */
+  }
 };
 export const playPronunciation = (
   value: string,
