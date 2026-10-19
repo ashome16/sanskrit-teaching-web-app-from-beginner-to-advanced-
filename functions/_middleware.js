@@ -12,6 +12,8 @@ const CANONICAL_ORIGIN = `https://${CANONICAL_HOST}`;
 
 const BOT_USER_AGENTS = [
   'googlebot',
+  'google-inspectiontool',
+  'chrome-lighthouse',
   'bingbot',
   'yandexbot',
   'duckduckbot',
@@ -36,7 +38,22 @@ export async function onRequest(context) {
   }
 
   // Fetch the static pre-rendered response from Cloudflare Pages CDN
-  const response = await context.next();
+  let response = await context.next();
+
+  // If Cloudflare Pages issues a 308 redirect to append trailing slash (e.g. /barakhadi -> /barakhadi/),
+  // transparently fetch and serve the destination asset so both /route and /route/ return 200 OK directly.
+  if (response.status === 308 && response.headers.get('location')) {
+    const loc = response.headers.get('location');
+    const targetUrl = new URL(loc, url);
+    if (context.env && context.env.ASSETS) {
+      try {
+        const assetResponse = await context.env.ASSETS.fetch(new Request(targetUrl, context.request));
+        if (assetResponse && assetResponse.status === 200) {
+          response = assetResponse;
+        }
+      } catch {}
+    }
+  }
 
   // Create a mutable copy of response headers
   const newHeaders = new Headers(response.headers);

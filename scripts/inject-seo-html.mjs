@@ -318,9 +318,11 @@ for (const route of routes) {
   if (route.pathname === '/') {
     fs.writeFileSync(distIndex, html);
   } else {
-    const dir = path.join(root, 'dist', route.pathname.slice(1));
+    const slug = route.pathname.replace(/^\/+|\/+$/g, '');
+    const dir = path.join(root, 'dist', slug);
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, 'index.html'), html);
+    fs.writeFileSync(path.join(root, 'dist', `${slug}.html`), html);
   }
   const canonical = route.pathname.endsWith('/') ? `${HOST}${route.pathname}` : `${HOST}${route.pathname}/`;
   if (!html.includes(`<title>${escapeAttr(route.title)}</title>`)) {
