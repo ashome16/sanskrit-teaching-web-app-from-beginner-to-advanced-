@@ -1237,8 +1237,92 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
               </div>
             )}
 
+            {/* Direct Page Navigation Toolbar */}
+            <div className="wbp-direct-toolbar" role="navigation" aria-label="Direct page navigation">
+              <div className="wbp-direct-nav-group">
+                <button
+                  type="button"
+                  className="wbp-bar-nav-btn"
+                  onClick={() => step(-1)}
+                  title="Previous page (Left arrow key)"
+                  aria-label="Previous page"
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                  <span>Prev</span>
+                </button>
+
+                <label className="wbp-direct-select-wrap">
+                  <span className="wbp-direct-select-label">Go to:</span>
+                  <select
+                    className="wbp-page-select"
+                    value={open.n}
+                    onChange={(e) => {
+                      stopAudio();
+                      setOpen({ b: open.b, n: Number(e.target.value) });
+                    }}
+                    aria-label="Jump directly to page"
+                  >
+                    {Array.from({ length: open.b.pages }, (_, i) => i + 1).map((p) => {
+                      const customAudio = WORKBOOK_AUDIO_DATA[open.b.id]?.pages[p];
+                      const shot = open.b.shots.find((s) => s.n === p);
+                      const label = shot ? ` · ${shot.label}` : customAudio ? ` · ${customAudio.title}` : '';
+                      const isLocked = !hasTwoWeekSub && !isPaidMember && p > FREE_PREVIEW_PAGE_LIMIT;
+                      return (
+                        <option key={p} value={p}>
+                          Page {p} of {open.b.pages}{label}{isLocked ? ' 🔒' : ''}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </label>
+
+                <button
+                  type="button"
+                  className="wbp-bar-nav-btn"
+                  onClick={() => step(1)}
+                  title="Next page (Right arrow key)"
+                  aria-label="Next page"
+                >
+                  <span>Next</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </button>
+              </div>
+
+              <div className="wbp-quick-shots">
+                <span style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 600 }}>Quick Jump:</span>
+                {open.b.shots.map((s) => (
+                  <button
+                    key={s.n}
+                    type="button"
+                    className={`wbp-quick-shot-pill${open.n === s.n ? ' is-active' : ''}`}
+                    onClick={() => {
+                      stopAudio();
+                      setOpen({ b: open.b, n: s.n });
+                    }}
+                    title={`Jump directly to Page ${s.n}: ${s.label}`}
+                  >
+                    p.{s.n} {s.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className="wbp-lb-stage">
-              <button type="button" className="wbp-nav" onClick={() => step(-1)} aria-label="Previous page">‹</button>
+              <button
+                type="button"
+                className="wbp-nav wbp-nav-prev"
+                onClick={() => step(-1)}
+                aria-label="Previous page (Left arrow key)"
+                title="Previous page (Left arrow key)"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
               <div className="wbp-stage-container">
                 <img
                   src={pageImg(open.b, open.n)}
@@ -1336,19 +1420,52 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
                   </div>
                 )}
               </div>
-              <button type="button" className="wbp-nav" onClick={() => step(1)} aria-label="Next page">›</button>
+              <button
+                type="button"
+                className="wbp-nav wbp-nav-next"
+                onClick={() => step(1)}
+                aria-label="Next page (Right arrow key)"
+                title="Next page (Right arrow key)"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
             </div>
 
             <div className="wbp-lb-bot">
-              <span style={{ fontSize: '0.8rem', color: '#475569' }}>
-                {isPaidMember
-                  ? `Full member access · Page ${open.n} of ${open.b.pages} · Printing & downloads unlocked`
-                  : hasTwoWeekSub
-                  ? `2-Week Subscription active · Page ${open.n} of ${open.b.pages} · Printable PDFs require Paid Plan`
-                  : isCurrentPageFree
-                  ? `Free sample preview · Page ${open.n} of 4 (Pages 5+ require 2-Week Free Subscription)`
-                  : `🔒 Page ${open.n} of ${open.b.pages} · 2-Week Free Subscription required`}
-              </span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', flexWrap: 'wrap' }}>
+                <button
+                  type="button"
+                  className="wbp-bot-nav-btn"
+                  onClick={() => step(-1)}
+                  title="Previous page (Left arrow)"
+                  aria-label="Previous page"
+                >
+                  ‹ Prev
+                </button>
+                <span className="wbp-bot-page-badge">
+                  Page {open.n} of {open.b.pages}
+                </span>
+                <button
+                  type="button"
+                  className="wbp-bot-nav-btn"
+                  onClick={() => step(1)}
+                  title="Next page (Right arrow)"
+                  aria-label="Next page"
+                >
+                  Next ›
+                </button>
+                <span style={{ fontSize: '0.8rem', color: '#475569', marginLeft: '0.25rem' }}>
+                  {isPaidMember
+                    ? `Full member access · Printing & downloads unlocked`
+                    : hasTwoWeekSub
+                    ? `2-Week Subscription active · Printable PDFs require Paid Plan`
+                    : isCurrentPageFree
+                    ? `Free sample preview (Pages 5+ require 2-Week Free Subscription)`
+                    : `🔒 2-Week Free Subscription required`}
+                </span>
+              </div>
               <button
                 type="button"
                 className={`wbp-dl${!isPaidMember ? ' wbp-dl--unlock' : ''}`}
