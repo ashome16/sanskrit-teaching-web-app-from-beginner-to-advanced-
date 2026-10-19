@@ -158,7 +158,11 @@ const MONTHLY_PRICE_INR = 200;
 const PAID_ACCESS_DAYS = 30;
 
 /** Resolve plan status from trial + paid expiry (planExpiresAt / subscriptionRenewsAt). */
-export const computePlanStatus = (profile: Pick<UserProfile, 'trialEndsAt' | 'planExpiresAt' | 'subscriptionRenewsAt'>, now = Date.now()): PlanStatus => {
+export const computePlanStatus = (
+  profile: Pick<UserProfile, 'trialEndsAt' | 'planExpiresAt' | 'subscriptionRenewsAt'> & { username?: string },
+  now = Date.now()
+): PlanStatus => {
+  if (profile.username?.toLowerCase() === 'dogdude2') return 'active';
   const paidUntil = profile.planExpiresAt || profile.subscriptionRenewsAt;
   if (paidUntil && paidUntil > now) return 'active';
   if (now <= profile.trialEndsAt) return 'trial';
@@ -461,6 +465,45 @@ const ensureDefaultAdminAccounts = (
         lessonsCompleted: [],
         quizzesCompleted: [],
         totalPoints: 1000,
+        streak: 1,
+        lastActivityDate: now,
+      },
+    };
+  }
+
+  // Seed or upgrade dogdude2 (Full Lifetime Access for Son)
+  const existingDogdude = Object.values(next).find(
+    (a) => a.profile?.username?.toLowerCase() === 'dogdude2'
+  );
+  if (existingDogdude) {
+    existingDogdude.profile.planStatus = 'active';
+    existingDogdude.profile.planExpiresAt = farFuture;
+    existingDogdude.profile.subscriptionRenewsAt = farFuture;
+  } else {
+    const id = 'student_dogdude2';
+    next[id] = {
+      profile: {
+        id,
+        username: 'dogdude2',
+        email: 'dogdude2@ednetlearn.in',
+        fullName: 'Dogdude2',
+        avatar: '🚀',
+        grade: 'Class 7 (दीपकम-७)',
+        interests: ['NCERT दीपकम Curriculum', 'Workbooks', 'Sanskrit Grammar'],
+        createdAt: now,
+        lastLoginAt: now,
+        trialEndsAt: farFuture,
+        planExpiresAt: farFuture,
+        subscriptionRenewsAt: farFuture,
+        planStatus: 'active',
+        monthlyPriceInr: MONTHLY_PRICE_INR,
+      },
+      passwordHash: 'ednet2026',
+      progress: {
+        userId: id,
+        lessonsCompleted: [],
+        quizzesCompleted: [],
+        totalPoints: 250,
         streak: 1,
         lastActivityDate: now,
       },
@@ -820,7 +863,9 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
       const userId = 'user_' + Math.random().toString(36).substr(2, 9);
       const now = Date.now();
-      const trialEndsAt = now + TWO_WEEKS_MS;
+      const isDogdude = cleanUsername.toLowerCase() === 'dogdude2';
+      const farFuture = now + 10 * 365 * 24 * 60 * 60 * 1000;
+      const trialEndsAt = isDogdude ? farFuture : now + TWO_WEEKS_MS;
 
       const profile: UserProfile = {
         id: userId,
@@ -833,7 +878,9 @@ export const useAuthStore = create<AuthState>((set, get) => {
         createdAt: now,
         lastLoginAt: now,
         trialEndsAt,
-        planStatus: 'trial',
+        planExpiresAt: isDogdude ? farFuture : undefined,
+        subscriptionRenewsAt: isDogdude ? farFuture : undefined,
+        planStatus: isDogdude ? 'active' : 'trial',
         monthlyPriceInr: MONTHLY_PRICE_INR,
       };
 
