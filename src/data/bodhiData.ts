@@ -119,6 +119,24 @@ export const BODHI_ANECDOTES: BodhiQAItem[] = [
     audioDevanagari: 'प्रमाण-गोलकौ मानशास्त्रम्',
   },
   {
+    id: 'qa-anecdote-nana-moutou-1768',
+    category: 'anecdote',
+    emoji: '🐚✨',
+    question: 'The Cowrie Shell Computer: How a Tamil scholar predicted an eclipse in 45 minutes',
+    sanskritQuestion: 'वाक्यकरणम् · वराटिका-गणनम् (Pondicherry 1768)',
+    shortAnswer: '✨ Did you know a Tamil calculator in 1768 matched Europe’s Royal Academy on a dirt floor with shells?',
+    detailedAnswer:
+      'In December 1768, French Royal astronomer Guillaume Le Gentil challenged Tamil calculator Nana Moutou in Pondicherry to predict an upcoming lunar eclipse. Sitting on the dirt floor with a bag of cowrie shells and small palm-leaf booklets, Nana Moutou chanted rhythmic Sanskrit and Tamil astronomical verses, sliding shells across place-value columns and wiping the floor clean after every step. In less than 45 minutes, he completed the full prediction—matching the Paris Observatory’s ephemeris to the exact minute! 🐚 Level unlocked: Cognitive Computer!',
+    science:
+      'Nana Moutou used the Vākyakaraṇa system (c. 1282–1306 CE) containing 247 Cāndravākyas of Vararuci and Mādhava, encoding orbital parameters via the Kaṭapayādi cipher. The cowrie shells acted as ephemeral RAM registers, freeing up working memory for the human brain.',
+    source: 'Guillaume Le Gentil, Voyage dans les mers de l\'Inde (1779); Vākyakaraṇa; Cāndravākyas of Vararuci & Mādhava.',
+    tip: 'Cowrie shells were the physical variables, the dirt floor was the monitor, and wiping the floor clean was flushing the RAM!',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-the-astronomer-and-the-astrologer-tamil-scholar-1768',
+    relatedLabel: '🐚 Read The Astronomer & The Astrologer (1768) ➔',
+    audioDevanagari: 'वाक्यकरणम् वराटिका-गणितम् कटपयादि ली जेन्तिल नाना मुतु',
+  },
+  {
     id: 'qa-anecdote-sarpakavu',
     category: 'anecdote',
     emoji: '🐍🌳',
@@ -2091,6 +2109,20 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     relatedView: 'vedic-maths',
     relatedVedicAnchor: 'article-the-terracotta-matrix-metrology-clay',
     relatedLabel: '🏺 Read The Terracotta Matrix Masterclass ➔',
+  },
+  {
+    id: 'qa-nana-moutou-le-gentil-1768',
+    category: 'vedic_math',
+    question: 'How did Tamil calculator Nana Moutou outpace French Royal Astronomer Guillaume Le Gentil in 1768?',
+    sanskritQuestion: '॥ वाक्यकरणम् · वराटिका-यन्त्रेण ग्रहण-साधनम् (१७६८) ॥',
+    shortAnswer: 'Using the Vākyakaraṇa algorithmic verses, Kaṭapayādi cipher, and cowrie-shell RAM on a dirt floor in under 45 minutes, matching the Royal Paris Ephemerides.',
+    detailedAnswer:
+      'In December 1768 at Pondicherry, Guillaume Le Gentil of the French Royal Academy of Sciences challenged Tamil astronomer Nana Moutou to calculate an upcoming lunar eclipse. Nana Moutou sat on the dirt floor with cowrie shells and palm-leaf booklets. Reciting mnemonic Vākyas from the Vākyakaraṇa tradition (247 Cāndravākyas formulated by Vararuci and Mādhava) encoded via the Kaṭapayādi alphanumeric cipher, he used the cowrie shells as dynamic registers (ephemeral RAM), wiping the dirt after each calculation. In under 45 minutes, he delivered the eclipse phases with minute-level precision, matching the Connaissance des Temps.',
+    audioDevanagari: 'वाक्यकरणम् कटपयादि वराटिका-गणनम् ली जेन्तिल नाना मुतु',
+    tip: 'Read the full masterclass comparing Western external hardware scaling with Indian internal cognitive software scaling.',
+    relatedView: 'vedic-maths',
+    relatedVedicAnchor: 'article-the-astronomer-and-the-astrologer-tamil-scholar-1768',
+    relatedLabel: '🌌 Read The Astronomer & The Astrologer (1768) ➔',
   },
   {
     id: 'qa-sanskrit-dictionary-koshashri',

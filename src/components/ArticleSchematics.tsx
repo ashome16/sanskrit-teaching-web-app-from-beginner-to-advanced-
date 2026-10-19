@@ -1110,6 +1110,256 @@ function TerracottaShrinkagePyrotechnics() {
   );
 }
 
+/** Pondicherry 1768: Vākyakaraṇa, Kaṭapayādi cipher, and cowrie-shell dynamic RAM vs Western external hardware. */
+function VakyaKatapayadiCowrieEngine() {
+  return (
+    <Panel
+      kicker="Pondicherry 1768 · Cognitive vs Hardware Paradigm"
+      caption="In December 1768, Tamil calculator Nana Moutou calculated a lunar eclipse in 45 minutes on a dirt floor using Vākyakaraṇa poetic algorithms, the Kaṭapayādi alphanumeric cipher, and cowrie-shell ephemeral RAM—matching the Royal Paris Academy’s printed ephemeris."
+      maxWidth={580}
+    >
+      <svg viewBox="0 0 580 540" role="img" aria-labelledby="vakya-cowrie-title" style={{ fontFamily: SANS }}>
+        <title id="vakya-cowrie-title">
+          Vākyakaraṇa, Kaṭapayādi Alphanumeric Cipher, and Cowrie Shell RAM Architecture vs European External Hardware (1768)
+        </title>
+        <defs>
+          <linearGradient id="westGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f8fafc" />
+            <stop offset="100%" stopColor="#f1f5f9" />
+          </linearGradient>
+          <linearGradient id="eastGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f0fdf4" />
+            <stop offset="100%" stopColor="#dcfce7" />
+          </linearGradient>
+          <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.08" />
+          </filter>
+        </defs>
+
+        {/* Title Bar */}
+        <g transform="translate(20, 20)">
+          <text x="270" y="0" textAnchor="middle" fill="#0f172a" fontSize="13" fontWeight="800" letterSpacing="0.3">
+            PONDICHERRY 1768 · DUAL PARADIGM COMPARISON
+          </text>
+        </g>
+
+        {/* Top Dual Cards: Hardware Scaling vs Cognitive Scaling */}
+        {/* Left: Western Hardware Paradigm */}
+        <g transform="translate(18, 30)">
+          <rect x="0" y="0" width="264" height="135" rx="8" fill="url(#westGrad)" stroke="#cbd5e1" strokeWidth="1.2" filter="url(#softShadow)" />
+          <rect x="0" y="0" width="264" height="26" rx="8" fill="#e2e8f0" />
+          <text x="12" y="17" fill="#334155" fontSize="10.5" fontWeight="800">
+            🏛️ Western External Hardware Scaling
+          </text>
+          
+          <g transform="translate(12, 40)">
+            <text x="0" y="0" fill="#0f172a" fontSize="9.5" fontWeight="700">Infrastructure &amp; Capital Accumulation:</text>
+            <text x="6" y="16" fill="#475569" fontSize="8.5">• Royal Paris Observatory &amp; Académie Royale</text>
+            <text x="6" y="30" fill="#475569" fontSize="8.5">• John Harrison H4 chronometer &amp; brass clocks</text>
+            <text x="6" y="44" fill="#475569" fontSize="8.5">• Multi-volume printed logarithm tables (ephemerides)</text>
+            <text x="6" y="58" fill="#475569" fontSize="8.5">• Bureau of human computers (Service des calculs)</text>
+            <text x="0" y="76" fill="#b91c1c" fontSize="8.5" fontWeight="700">⚠️ Vulnerable to sea loss, rot, glass breakage &amp; fire</text>
+          </g>
+        </g>
+
+        {/* Right: Indian Cognitive Software Paradigm */}
+        <g transform="translate(298, 30)">
+          <rect x="0" y="0" width="264" height="135" rx="8" fill="url(#eastGrad)" stroke="#86efac" strokeWidth="1.2" filter="url(#softShadow)" />
+          <rect x="0" y="0" width="264" height="26" rx="8" fill="#bbf7d0" />
+          <text x="12" y="17" fill="#14532d" fontSize="10.5" fontWeight="800">
+            🧠 Indian Internal Cognitive Scaling
+          </text>
+          
+          <g transform="translate(12, 40)">
+            <text x="0" y="0" fill="#14532d" fontSize="9.5" fontWeight="700">Vākyakaraṇa &amp; Mental Software Cache:</text>
+            <text x="6" y="16" fill="#166534" fontSize="8.5">• 247 Cāndravākyas (Vararuci &amp; Mādhava lunar cycles)</text>
+            <text x="6" y="30" fill="#166534" fontSize="8.5">• Kaṭapayādi alphanumeric cipher (numbers → poetry)</text>
+            <text x="6" y="44" fill="#166534" fontSize="8.5">• Cowrie shells (वराटिका) as place-value RAM registers</text>
+            <text x="6" y="58" fill="#166534" fontSize="8.5">• Oral Thinnai Pallikoodam (Enchuvadi) drill</text>
+            <text x="0" y="76" fill="#15803d" fontSize="8.5" fontWeight="700">✨ Weightless, portable, impervious to rot &amp; fire</text>
+          </g>
+        </g>
+
+        {/* Middle Section: Kaṭapayādi Alphanumeric Matrix & 3-Step Execution Pipeline */}
+        <g transform="translate(18, 178)">
+          <rect x="0" y="0" width="544" height="212" rx="10" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1.2" filter="url(#softShadow)" />
+          
+          {/* Header */}
+          <rect x="0" y="0" width="544" height="28" rx="10" fill="#f8fafc" />
+          <text x="16" y="18" fill="#1e293b" fontSize="11" fontWeight="800">
+            🔤 Kaṭapayādi Alphanumeric Cipher (कटपयादि) &amp; Execution Pipeline
+          </text>
+          <text x="528" y="18" textAnchor="end" fill="#64748b" fontSize="9.5" fontWeight="700">
+            अङ्कानां वामतो गतिः (Right-to-Left Digits)
+          </text>
+
+          {/* Cipher Table Grid */}
+          <g transform="translate(14, 38)">
+            <rect x="0" y="0" width="516" height="56" rx="6" fill="#faf5ff" stroke="#e9d5ff" strokeWidth="1" />
+            <text x="12" y="16" fill="#6b21a8" fontSize="9.5" fontWeight="800">
+              The 10-Digit Phonetic Mapping Matrix:
+            </text>
+
+            {/* Digit Cells: 1 to 0 */}
+            {[
+              { d: '1', letters: 'क ट प य' },
+              { d: '2', letters: 'ख ठ फ र' },
+              { d: '3', letters: 'ग ड ब ल' },
+              { d: '4', letters: 'घ ढ भ व' },
+              { d: '5', letters: 'ङ ण म श' },
+              { d: '6', letters: 'च त ष' },
+              { d: '7', letters: 'छ थ स' },
+              { d: '8', letters: 'ज द ह' },
+              { d: '9', letters: 'झ ध' },
+              { d: '0', letters: 'ञ न (पूर्ण)' },
+            ].map((col, idx) => {
+              const xPos = 12 + idx * 49.5;
+              return (
+                <g key={`col-${col.d}`} transform={`translate(${xPos}, 24)`}>
+                  <rect x="0" y="0" width="46" height="24" rx="4" fill="#ffffff" stroke="#d8b4fe" strokeWidth="0.8" />
+                  <text x="23" y="10" textAnchor="middle" fill="#581c87" fontSize="8" fontWeight="800">
+                    Digit {col.d}
+                  </text>
+                  <text x="23" y="20" textAnchor="middle" fill="#7e22ce" fontSize="8.5" fontWeight="700">
+                    {col.letters}
+                  </text>
+                </g>
+              );
+            })}
+          </g>
+
+          {/* 3-Step Algorithmic Pipeline */}
+          <g transform="translate(14, 104)">
+            {/* Step 1: Encode */}
+            <g transform="translate(0, 0)">
+              <rect x="0" y="0" width="162" height="96" rx="6" fill="#eff6ff" stroke="#bfdbfe" strokeWidth="1" />
+              <text x="10" y="16" fill="#1e40af" fontSize="10" fontWeight="800">
+                1. Poetic Compression
+              </text>
+              <text x="10" y="32" fill="#1e293b" fontSize="8.5" fontWeight="700">
+                Data → Chantable Verses
+              </text>
+              <text x="10" y="48" fill="#475569" fontSize="8">
+                Orbital coordinates (e.g. daily
+              </text>
+              <text x="10" y="60" fill="#475569" fontSize="8">
+                lunar anomalies) compressed into
+              </text>
+              <text x="10" y="72" fill="#475569" fontSize="8">
+                metrical Sanskrit/Tamil hymns.
+              </text>
+              <text x="10" y="86" fill="#2563eb" fontSize="8" fontWeight="700">
+                Vowels add melody, no numeric value.
+              </text>
+            </g>
+
+            {/* Arrow 1 */}
+            <g transform="translate(164, 42)">
+              <line x1="0" y1="0" x2="12" y2="0" stroke="#94a3b8" strokeWidth="1.8" />
+              <polygon points="12,-3 17,0 12,3" fill="#94a3b8" />
+            </g>
+
+            {/* Step 2: Query */}
+            <g transform="translate(182, 0)">
+              <rect x="0" y="0" width="162" height="96" rx="6" fill="#ecfdf5" stroke="#a7f3d0" strokeWidth="1" />
+              <text x="10" y="16" fill="#065f46" fontSize="10" fontWeight="800">
+                2. Mental RAM Query
+              </text>
+              <text x="10" y="32" fill="#1e293b" fontSize="8.5" fontWeight="700">
+                Recite → Hyperlink Lookup
+              </text>
+              <text x="10" y="48" fill="#475569" fontSize="8">
+                Chanting the 247 Cāndravākyas
+              </text>
+              <text x="10" y="60" fill="#475569" fontSize="8">
+                instantly retrieves target values
+              </text>
+              <text x="10" y="72" fill="#475569" fontSize="8">
+                without lookup books or tables.
+              </text>
+              <text x="10" y="86" fill="#059669" fontSize="8" fontWeight="700">
+                Subconscious audio recall.
+              </text>
+            </g>
+
+            {/* Arrow 2 */}
+            <g transform="translate(346, 42)">
+              <line x1="0" y1="0" x2="12" y2="0" stroke="#94a3b8" strokeWidth="1.8" />
+              <polygon points="12,-3 17,0 12,3" fill="#94a3b8" />
+            </g>
+
+            {/* Step 3: Execute & Flush */}
+            <g transform="translate(364, 0)">
+              <rect x="0" y="0" width="152" height="96" rx="6" fill="#fffbeb" stroke="#fde68a" strokeWidth="1" />
+              <text x="10" y="16" fill="#92400e" fontSize="10" fontWeight="800">
+                3. Cowrie Shell ALU &amp; RAM
+              </text>
+              <text x="10" y="32" fill="#1e293b" fontSize="8.5" fontWeight="700">
+                Dirt Columns → Wipe Floor
+              </text>
+              <text x="10" y="48" fill="#475569" fontSize="8">
+                Shells slide across dirt columns
+              </text>
+              <text x="10" y="60" fill="#475569" fontSize="8">
+                (units, tens, hundreds). When step
+              </text>
+              <text x="10" y="72" fill="#475569" fontSize="8">
+                ends, the ground is swept clean!
+              </text>
+              <text x="10" y="86" fill="#d97706" fontSize="8" fontWeight="800">
+                🧹 Ephemeral RAM cache flushed!
+              </text>
+            </g>
+          </g>
+        </g>
+
+        {/* Bottom Historical Ground Truth: The Pondicherry 1768 Challenge */}
+        <g transform="translate(18, 402)">
+          <rect x="0" y="0" width="544" height="122" rx="10" fill="#fffbeb" stroke="#fcd34d" strokeWidth="1.4" filter="url(#softShadow)" />
+          <rect x="0" y="0" width="544" height="26" rx="10" fill="#fef3c7" />
+          
+          <text x="16" y="17" fill="#78350f" fontSize="11" fontWeight="800">
+            🌕 The Pondicherry Ground Truth (December 1768 Total Lunar Eclipse)
+          </text>
+          <text x="528" y="17" textAnchor="end" fill="#92400e" fontSize="9" fontWeight="700">
+            Guillaume Le Gentil, Voyage dans les mers de l'Inde (1779)
+          </text>
+
+          {/* Left: The French Challenger */}
+          <g transform="translate(16, 36)">
+            <rect x="0" y="0" width="165" height="74" rx="6" fill="#ffffff" stroke="#fde68a" strokeWidth="0.8" />
+            <text x="10" y="16" fill="#1e293b" fontSize="9.5" fontWeight="800">Guillaume Le Gentil</text>
+            <text x="10" y="30" fill="#64748b" fontSize="8">Royal Academy of Sciences (Paris)</text>
+            <text x="10" y="44" fill="#64748b" fontSize="8">• 10,000 leagues sea journey</text>
+            <text x="10" y="56" fill="#64748b" fontSize="8">• 8 years waiting for Venus transit</text>
+            <text x="10" y="68" fill="#b91c1c" fontSize="8" fontWeight="700">Brought Connaissance des Temps</text>
+          </g>
+
+          {/* Center: The Match & Verification */}
+          <g transform="translate(190, 36)">
+            <rect x="0" y="0" width="164" height="74" rx="6" fill="#fefce8" stroke="#facc15" strokeWidth="1.2" />
+            <text x="82" y="16" textAnchor="middle" fill="#854d0e" fontSize="9.5" fontWeight="800">THE 45-MINUTE FEAT</text>
+            <text x="82" y="32" textAnchor="middle" fill="#0f172a" fontSize="11" fontWeight="800">Predicted to the Minute!</text>
+            <text x="82" y="48" textAnchor="middle" fill="#15803d" fontSize="8.5" fontWeight="700">Matched Paris Ephemerides</text>
+            <text x="82" y="62" textAnchor="middle" fill="#475569" fontSize="8">No pen, no paper, no clocks.</text>
+            <text x="82" y="71" textAnchor="middle" fill="#78350f" fontSize="7.5" fontWeight="700">Strictly dirt floor + cowrie shells</text>
+          </g>
+
+          {/* Right: The Tamil Scholar */}
+          <g transform="translate(363, 36)">
+            <rect x="0" y="0" width="165" height="74" rx="6" fill="#ffffff" stroke="#fde68a" strokeWidth="0.8" />
+            <text x="10" y="16" fill="#1e293b" fontSize="9.5" fontWeight="800">Nana Moutou (नाना मुतु)</text>
+            <text x="10" y="30" fill="#64748b" fontSize="8">Tamil Verandah Schoolmaster</text>
+            <text x="10" y="44" fill="#64748b" fontSize="8">• Thinnai Pallikoodam pedagogue</text>
+            <text x="10" y="56" fill="#64748b" fontSize="8">• Bag of cowrie shells (RAM)</text>
+            <text x="10" y="68" fill="#15803d" fontSize="8" fontWeight="700">Chanted Vākyas from memory</text>
+          </g>
+        </g>
+      </svg>
+    </Panel>
+  );
+}
+
 const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
   'sulba-148-rectangle': SulbaRectangle,
   'dhanurveda-five-sthanas': DhanurvedaSthanas,
@@ -1124,6 +1374,7 @@ const SCHEMATICS: Partial<Record<VedicArticleFigureId, () => ReactNode>> = {
   'terracotta-matrix-whorl': TerracottaMatrixWhorl,
   'spheres-of-certainty-matrix': SpheresOfCertaintyMatrix,
   'terracotta-shrinkage-pyrotechnics': TerracottaShrinkagePyrotechnics,
+  'vakya-katapayadi-cowrie-engine': VakyaKatapayadiCowrieEngine,
   'vedic-four-pillars': VedicFourPillars,
 };
 

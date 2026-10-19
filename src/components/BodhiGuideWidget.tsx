@@ -794,6 +794,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                   <div className="bodhi-quick-terms-flow" aria-label="Bodhi suggested search terms">
                     <span className="bodhi-quick-terms-label">⚡ Explore:</span>
                     {[
+                      { label: '🐚 Nana Moutou (1768)', term: 'nana moutou' },
                       { label: '📏 Indus Spheres (3.5 cm)', term: 'spheres of certainty' },
                       { label: '🏺 Terracotta Matrix', term: 'terracotta matrix' },
                       { label: '📖 Sanskrit Dictionary', term: 'koshashri' },
@@ -1068,6 +1069,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                             Sanskrit spelling or script variations happen. Let Bodhi take you straight to our most popular study rooms:
                           </p>
                           <div className="bodhi-empty-shortcut-row">
+                            <button type="button" onClick={() => setSearchQuery('nana moutou')}>Nana Moutou (1768)</button>
                             <button type="button" onClick={() => setSearchQuery('spheres of certainty')}>Indus Spheres (3.5 cm)</button>
                             <button type="button" onClick={() => setSearchQuery('terracotta matrix')}>Terracotta Matrix (BKG)</button>
                             <button type="button" onClick={() => setSearchQuery('koshashri')}>Sanskrit Dictionary (कोशश्री)</button>

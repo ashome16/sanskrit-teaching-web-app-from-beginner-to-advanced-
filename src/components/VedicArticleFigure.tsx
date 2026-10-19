@@ -2037,6 +2037,7 @@ export default function VedicArticleFigure({ id }: { id: VedicArticleFigureId })
     case 'terracotta-matrix-whorl':
     case 'spheres-of-certainty-matrix':
     case 'terracotta-shrinkage-pyrotechnics':
+    case 'vakya-katapayadi-cowrie-engine':
     case 'vedic-four-pillars':
       return <ArticleSchematic id={id} />;
     default:

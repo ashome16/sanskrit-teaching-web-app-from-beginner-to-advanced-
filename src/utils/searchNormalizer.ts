@@ -109,6 +109,12 @@ export function matchesSearchQuery(target: string, query: string): boolean {
     return true;
   }
 
+  // Nana Moutou, Le Gentil, Vakya Karana, Katapayadi & Cowrie Shells (1768) synonym matching
+  const isNanaMoutouQuery = /^(nana\s*moutou|nanamoutou|le\s*gentil|legentil|vakya|vakyakarana|candravakya|candravakyas|chandravakya|katapayadi|katapayadhi|cowrie|cowry|pondicherry|thinnai|enchuvadi|नाना\s*मुतु|वाक्यकरणम्|कटपयादि|वराटिका)$/i.test(rawQueryLower);
+  if (isNanaMoutouQuery && /nana\s*moutou|le\s*gentil|vakya|candravakya|katapayadi|cowrie|pondicherry|thinnai|enchuvadi|नाना\s*मुतु|वाक्यकरणम्|कटपयादि|वराटिका/i.test(rawTargetLower)) {
+    return true;
+  }
+
   // Sanskrit Dictionary & Kōshaśrī synonym matching
   const isDictionaryQuery = /^(dictionary|koshashri|koshasri|kosa|kosha|shabdakosh|shabdakosha|sabdakosa|amarakosha|amarkosh|lexicon|thesaurus|शब्दकोश|कोशश्री|अमरकोश)$/i.test(rawQueryLower);
   if (isDictionaryQuery && /dictionary|koshashri|koshasri|kosa|kosha|shabdakosha|sabdakosa|amarakosha|lexicon|thesaurus|शब्दकोश|कोशश्री|अमरकोश/i.test(rawTargetLower)) {
