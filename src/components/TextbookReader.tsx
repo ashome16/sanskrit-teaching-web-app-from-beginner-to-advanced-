@@ -31,6 +31,7 @@ import GunitaaksharaGuide from './GunitaaksharaGuide';
 import { NumbersGuide } from './NumbersGuide';
 import { getTextbookMetaForLesson } from '../utils/textbookCovers';
 import VarnamalaFlashcardDownloadModal from './VarnamalaFlashcardDownloadModal';
+import ParagraphWordMatchTest from './ParagraphWordMatchTest';
 import '../styles/textbook-reader.css';
 import '../styles/varnamala-studio.css';
 
@@ -413,90 +414,7 @@ const getVarnamalaGroupMeta = (groupIdx: number): VarnamalaGroupMetadata => {
   }
 };
 
-/**
- * Synchronized bilingual highlight: highlights the matching English word/phrase
- * in the sentence translation corresponding to the Sanskrit word currently being spoken.
- */
-const renderHighlightedMeaning = (
-  meaningText: string,
-  spokenWord: string,
-  glossMeaning: string
-): React.ReactNode => {
-  if (!meaningText) return null;
-  if (!spokenWord && !glossMeaning) return meaningText;
 
-  const candidates: RegExp[] = [];
-
-  // 1. Ordinals / numbers (e.g. ६. -> 6., 6)
-  const numMatch = spokenWord.match(/^[०-९0-9]+/);
-  if (numMatch) {
-    const devDigits = '०१२३४५६७८९';
-    let ascii = '';
-    for (const ch of numMatch[0]) {
-      const idx = devDigits.indexOf(ch);
-      ascii += idx >= 0 ? idx : ch;
-    }
-    candidates.push(new RegExp(`\\b${ascii}\\.`, 'i'));
-    candidates.push(new RegExp(`\\b${ascii}\\b`, 'i'));
-  }
-
-  // 2. Gloss phrases and significant keywords
-  if (glossMeaning) {
-    const primaryGloss = glossMeaning.replace(/\([^)]*\)/g, ' ').trim();
-    const parts = primaryGloss.split(/[/,;]\s*/).map((p) => p.trim()).filter((p) => p.length >= 3);
-    const individualWords = primaryGloss
-      .split(/\s+/)
-      .map((w) => w.replace(/[^A-Za-z]/g, '').trim())
-      .filter((w) => w.length >= 4);
-
-    // Sort by descending length so longest specific match wins first (e.g. "Kartikeya" before "Lord")
-    const allPhrases = [...parts, ...individualWords].sort((a, b) => b.length - a.length);
-
-    for (const phrase of allPhrases) {
-      const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      candidates.push(new RegExp(`\\b${escaped}\\b`, 'i'));
-    }
-  }
-
-  // 3. Spoken word stem in English transliteration if present
-  if (spokenWord && /[A-Za-z]/.test(spokenWord)) {
-    const cleanEn = spokenWord.replace(/[^A-Za-z]/g, '');
-    if (cleanEn.length >= 3) {
-      candidates.push(new RegExp(`\\b${cleanEn}\\b`, 'i'));
-    }
-  }
-
-  let matchResult: { start: number; end: number; text: string } | null = null;
-  for (const regex of candidates) {
-    const m = meaningText.match(regex);
-    if (m && m.index !== undefined) {
-      matchResult = {
-        start: m.index,
-        end: m.index + m[0].length,
-        text: m[0],
-      };
-      break;
-    }
-  }
-
-  if (!matchResult) {
-    return meaningText;
-  }
-
-  const before = meaningText.slice(0, matchResult.start);
-  const matched = meaningText.slice(matchResult.start, matchResult.end);
-  const after = meaningText.slice(matchResult.end);
-
-  return (
-    <>
-      {before}
-      <mark className="textbook-meaning-highlight" title={`Aligned to: ${spokenWord}`}>
-        {matched}
-      </mark>
-      {after}
-    </>
-  );
-};
 
 interface PhysicalPageBreakdown {
   bookName: string;
@@ -2710,25 +2628,13 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 })}
               </p>
 
-              {/* English Meaning Box — Prominently right below the Sanskrit text for immediate visibility */}
+              {/* English Meaning Box — Clean translation without distracting English word highlights */}
               {sentence.meaning && (
                 <div className="textbook-sentence-meaning-box" role="region" aria-label="English Translation">
                   <div className="textbook-meaning-header">
                     <span className="textbook-meaning-tag">📖 अनुवादः · English Translation</span>
-                    {speakingTokenIdx !== null && currentSpeakingMeaning ? (
-                      <span className="textbook-meaning-live-sync" title="Synchronized voice alignment">
-                        <span className="live-sync-dot" aria-hidden="true"></span>
-                        <span className="live-sync-dev">{currentSpeakingClean || currentSpeakingToken}</span>
-                        <span className="live-sync-arrow">➔</span>
-                        <span className="live-sync-en">{currentSpeakingMeaning}</span>
-                      </span>
-                    ) : null}
                   </div>
-                  <p className="textbook-sentence-meaning">
-                    {speakingTokenIdx !== null
-                      ? renderHighlightedMeaning(sentence.meaning, currentSpeakingClean, currentSpeakingMeaning)
-                      : sentence.meaning}
-                  </p>
+                  <p className="textbook-sentence-meaning">{sentence.meaning}</p>
                 </div>
               )}
 
@@ -2780,6 +2686,18 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                   </div>
                 </div>
               )}
+
+              {/* Word-to-Word Match Test: Kids relate Sanskrit words to English meanings before moving on */}
+              <ParagraphWordMatchTest
+                sentence={sentence}
+                sentenceNumber={sentenceNumber}
+                totalSentences={totalSentences}
+                activeLessonId={activeLessonId}
+                glosses={glosses}
+                onNext={onNext}
+                isLastSentence={isLastSentence}
+                onOpenQuiz={onOpenQuiz ? () => onOpenQuiz() : undefined}
+              />
             </>
           )}
         </div>
