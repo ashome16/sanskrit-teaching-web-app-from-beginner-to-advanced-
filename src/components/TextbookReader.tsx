@@ -1,7 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
 import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
-import { playLessonText, playPronunciation, playSequence, speakAsBodhi, stopPronunciation } from '../utils/pronunciation';
+import {
+  isShlokaOrVerseText,
+  playLessonText,
+  playPronunciation,
+  playSequence,
+  speakAsBodhi,
+  stopPronunciation,
+} from '../utils/pronunciation';
 import { setBarakhadiSpeechContext } from '../utils/macBarakhadiSpeech';
 import { hasDevanagariLetter, isDandaOrVerseNumberToken } from '../utils/dandaSpeech';
 import { readerSpeechItems, readerTokens } from '../utils/readerTokens';
@@ -898,8 +905,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     const slice = items.slice(start);
     stopPlayAllRef.current?.();
     stopPlayAllRef.current = null;
+    const isShloka = isShlokaOrVerseText(sentence?.sanskrit || '');
     stopPlayAllRef.current = playSequence(slice.map((item) => item.text), {
-      gapMs: 240,
+      gapMs: isShloka ? 420 : 240,
+      rate: isShloka ? 0.68 : undefined,
       sanskritCardinals: true,
       onItem: (word, _index, sourceIndex) => {
         // Pause / resume replays this exact word.
@@ -1014,8 +1023,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       if (!items.length) return;
       setIsPlayingAll(true);
       setPlayingGroupIdx(null);
+      const isShloka = isShlokaOrVerseText(sentence?.sanskrit || '');
       stopPlayAllRef.current = playSequence(items, {
-        gapMs: 240,
+        gapMs: isShloka ? 420 : 240,
+        rate: isShloka ? 0.68 : undefined,
         sanskritCardinals: false,
         onItem: (word) => setPlayingLetter(word),
         onDone: () => {
@@ -1050,8 +1061,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     if (!words.length) return;
     setIsPlayingAll(true);
     setPlayingGroupIdx(groupIdx);
+    const isShloka = isShlokaOrVerseText(words.join(' '));
     stopPlayAllRef.current = playSequence(words, {
-      gapMs: 240,
+      gapMs: isShloka ? 420 : 240,
+      rate: isShloka ? 0.68 : undefined,
       onItem: (word) => setPlayingLetter(word),
       onDone: () => {
         stopPlayAllRef.current = null;

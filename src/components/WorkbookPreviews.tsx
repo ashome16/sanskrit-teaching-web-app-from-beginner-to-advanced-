@@ -2,7 +2,14 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { downloadWorkbook, type WorkbookFile } from '../utils/workbookDownload';
 import { useAuthStore } from '../store/authStore';
 import { hasPaidAccess, hasPremiumAccess } from '../utils/premiumAccess';
-import { playPronunciation, stopPronunciation, speakAsBodhi, splitBodhiSegments } from '../utils/pronunciation';
+import {
+  playPronunciation,
+  stopPronunciation,
+  speakAsBodhi,
+  splitBodhiSegments,
+  isShlokaOrVerseText,
+  SHLOKA_RECITATION_RATE,
+} from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
 
 type Book = { group?: string; id: string; title: string; pdf: WorkbookFile; pages: number; color: string; shots: { n: number; label: string }[] };
@@ -927,12 +934,17 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         audioStopRef.current = null;
       };
 
+      const isShloka = isShlokaOrVerseText(audio.recitation);
+      const recRate = isShloka ? SHLOKA_RECITATION_RATE : 0.72;
+      const recPause = isShloka ? undefined : 750;
+      const interLangPause = isShloka ? 850 : 650;
+
       if (mode === 'sa') {
         activeStopFn = speakAsBodhi(audio.recitation, {
           lang: 'sa',
           speed: 'slow',
-          rate: 0.72,
-          pauseMs: 750,
+          rate: recRate,
+          pauseMs: recPause,
           onChunk: (idx) => {
             if (!isCancelled) setActiveChunkIndex(idx);
           },
@@ -949,8 +961,8 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
         activeStopFn = speakAsBodhi(audio.recitation, {
           lang: 'sa',
           speed: 'slow',
-          rate: 0.72,
-          pauseMs: 750,
+          rate: recRate,
+          pauseMs: recPause,
           onChunk: (idx) => {
             if (!isCancelled) setActiveChunkIndex(idx);
           },
@@ -970,7 +982,7 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
                   }
                 },
               });
-            }, 650);
+            }, interLangPause);
           },
         });
       }

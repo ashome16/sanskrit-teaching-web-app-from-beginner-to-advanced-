@@ -36,9 +36,9 @@ export interface ShantiLine {
 }
 
 /** ओं: its own slow, elongated syllable before the words. */
-export const OM: ShantiStep = { say: 'ओम्', rateFactor: 0.86, pauseAfterMs: 320 };
+export const OM: ShantiStep = { say: 'ओम्', rateFactor: 0.80, pauseAfterMs: 400 };
 /** शान्तिः → soft visarga echo "शान्तिह" (audible h, not "shaantee-ha"). */
-export const SHANTI: ShantiStep = { say: 'शान्तिह', pauseAfterMs: 560 };
+export const SHANTI: ShantiStep = { say: 'शान्तिह', pauseAfterMs: 650 };
 
 export const SHANTI_MANTRA_SOURCE = 'Taittirīya Upaniṣad 2.2 · Kaṭha Upaniṣad Śānti-pāṭha';
 
@@ -48,14 +48,14 @@ export const SHANTI_MANTRA_LINES: ShantiLine[] = [
     iast: 'oṃ saha nāvavatu |',
     meaning: 'Oṃ. May That (Brahman) protect us both together.',
     steps: [OM, { say: 'सह नाववतु' }],
-    pauseAfterMs: 700,
+    pauseAfterMs: 900,
   },
   {
     devanagari: 'सह नौ भुनक्तु ।',
     iast: 'saha nau bhunaktu |',
     meaning: 'May That nourish us both together.',
     steps: [{ say: 'सह नौ भुनक्तु' }],
-    pauseAfterMs: 700,
+    pauseAfterMs: 900,
   },
   {
     devanagari: 'सह वीर्यं करवावहै ।',
@@ -63,20 +63,20 @@ export const SHANTI_MANTRA_LINES: ShantiLine[] = [
     meaning: 'May we both work together with vigour.',
     // वीर्यम् so hi-IN voices sound the anusvāra clearly.
     steps: [{ say: 'सह वीर्यम् करवावहै' }],
-    pauseAfterMs: 700,
+    pauseAfterMs: 900,
   },
   {
     devanagari: 'तेजस्वि नावधीतमस्तु मा विद्विषावहै ॥',
     iast: 'tejasvi nāvadhītamastu mā vidviṣāvahai ||',
     meaning: 'May what we study be radiant; may we never hate one another.',
-    steps: [{ say: 'तेजस्वि नावधीतमस्तु', pauseAfterMs: 380 }, { say: 'मा विद्विषावहै' }],
-    pauseAfterMs: 1200,
+    steps: [{ say: 'तेजस्वि नावधीतमस्तु', pauseAfterMs: 450 }, { say: 'मा विद्विषावहै' }],
+    pauseAfterMs: 1500,
   },
   {
     devanagari: 'ओं शान्तिः शान्तिः शान्तिः ॥',
     iast: 'oṃ śāntiḥ śāntiḥ śāntiḥ ||',
     meaning: 'Oṃ. Peace, peace, peace.',
-    steps: [OM, SHANTI, SHANTI, { ...SHANTI, rateFactor: 0.9, pauseAfterMs: 0 }],
+    steps: [OM, SHANTI, SHANTI, { ...SHANTI, rateFactor: 0.85, pauseAfterMs: 0 }],
     pauseAfterMs: 0,
   },
 ];
@@ -200,8 +200,8 @@ export const pickShantiVoice = (
  * Recitation
  * ------------------------------------------------------------------------- */
 
-/** Base rate: 0.7 (Mac/other). Windows SAPI floor is 0.75 (clampRate). */
-export const SHANTI_BASE_RATE = 0.7;
+/** Base rate: 0.64 (Mac/other). Windows SAPI floor is 0.68 (clampRate). */
+export const SHANTI_BASE_RATE = 0.64;
 const SHANTI_PITCH = 1;
 
 // Chrome can garbage-collect an utterance mid-speech and never fire onend —

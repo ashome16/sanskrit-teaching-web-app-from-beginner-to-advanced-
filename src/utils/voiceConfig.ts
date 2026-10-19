@@ -30,7 +30,7 @@ export const VOICE_ROLES: Record<VoiceRole, VoiceRoleMeta> = {
     title: 'Course Mantras & Ślokas',
     devanagariTitle: 'मन्त्राः श्लोकाश्च',
     description: 'Slow, melodious, resonant chanting voice for Upanishadic peace mantras, Gita verses, and Vedic hymns.',
-    defaultRate: 0.72,
+    defaultRate: 0.64,
     sampleText: 'ओं सह नाववतु । सह नौ भुनक्तु । सह वीर्यं करवावहै । ओं शान्तिः शान्तिः शान्तिः ॥',
     sampleLang: 'sa',
   },

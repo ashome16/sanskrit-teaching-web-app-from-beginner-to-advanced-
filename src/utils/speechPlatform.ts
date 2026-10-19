@@ -15,10 +15,10 @@ export const isApplePlatform = (): boolean => {
   return /Mac|iPhone|iPad|iPod/i.test(navigator.userAgent);
 };
 
-/** Windows-safe rate: never below ~0.7; soft upper bound ~1.05. */
+/** Windows-safe rate: never below ~0.68; soft upper bound ~1.05. */
 export const clampRate = (rate: number): number => {
   if (!isWindowsPlatform()) return rate;
-  return Math.min(1.05, Math.max(0.75, rate));
+  return Math.min(1.05, Math.max(0.68, rate));
 };
 
 /** Windows: always natural pitch 1.0 (pitch shifts chipmunk/garble on SAPI). */

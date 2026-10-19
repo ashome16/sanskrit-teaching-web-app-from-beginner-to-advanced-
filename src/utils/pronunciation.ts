@@ -417,6 +417,7 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?:
   const speech = toSpeechText(word);
   const utterance = new SpeechSynthesisUtterance(speech);
   configureUtterance(utterance, word, speech);
+  applyCallerRate(utterance, rate);
   if (onEnd) {
     utterance.onend = onEnd;
     utterance.onerror = onEnd;
@@ -561,7 +562,7 @@ export const playSequence = (
     };
 
     const callerRate = (() => {
-      if (!item.plain || options?.rate == null) return undefined;
+      if (options?.rate == null) return undefined;
       const raw = typeof options.rate === 'function' ? options.rate() : options.rate;
       return typeof raw === 'number' && Number.isFinite(raw) && raw > 0 ? raw : undefined;
     })();
@@ -775,6 +776,43 @@ export const playLessonText = (value: string): void => {
  * slower rate, and verse text split into short chunks with a gentle pause.
  * He can also read his English tips aloud with an en-IN (fallback en-*) voice.
  */
+
+/** Dedicated calm, meditative pacing for sacred ślokas, mantras, and subhāṣitas */
+export const SHLOKA_RECITATION_RATE = 0.64;
+export const SHLOKA_PADA_PAUSE_MS = 900;
+export const SHLOKA_END_PAUSE_MS = 1450;
+export const SHLOKA_COMMA_PAUSE_MS = 600;
+
+/**
+ * Detects whether text is a Sanskrit śloka, mantra, subhāṣita, or sacred verse.
+ * Identified by double daṇḍa (॥), metered couplets, multi-pāda daṇḍa patterns,
+ * or sacred invocations (ओं / ॐ, नमोऽस्तु, शान्तिः, etc.).
+ */
+export const isShlokaOrVerseText = (text: string): boolean => {
+  if (!text) return false;
+  // Double danda ॥, ||, or ।। indicates end of verse
+  if (/[॥]|\|\||।।/.test(text)) return true;
+  // Multiple dandas with multi-clause verse length
+  if ((text.match(/[।|]/g) || []).length >= 2 && text.length > 20) return true;
+  // Single danda with sacred chant / invocation / meter keywords
+  if (
+    /[।|]/.test(text) &&
+    /[ॐओं]|नमोऽस्तु|नमस्तुभ्य|शान्तिः|कल्याण|धीमहि|प्रचोदयात्|सिध्यन्ति|सुभाषित|मङ्गला|ज्योतिर्गमय/u.test(text)
+  ) {
+    return true;
+  }
+  // Sacred invocations, stotras, or traditional shloka openings with reasonable length
+  if (
+    text.length >= 15 &&
+    (/[ॐओं]/.test(text) ||
+      /नमोऽस्तु|नमस्तुभ्य|वक्रतुण्ड|गुरुर्ब्रह्मा|सरस्वत्यै\s+नमः|शान्तिः\s+शान्तिः|धीमहि|प्रचोदयात्|ज्योतिर्गमय|सुभाषित|विद्या\s+ददाति|वसुधैव\s+कुटुम्बकम्|सन्तु\s+निरामयाः/u.test(
+        text,
+      ))
+  ) {
+    return true;
+  }
+  return false;
+};
 
 /** Mac / other: calm teacher pace (kept ≥ 0.72 — lower rates sound gravelly). */
 export const BODHI_RATE = 0.75;
@@ -1017,6 +1055,8 @@ export interface SpeakAsBodhiOptions {
  */
 export const speakAsBodhi = (text: string, options?: SpeakAsBodhiOptions): (() => void) => {
   const lang: BodhiSpeechLang = options?.lang ?? 'sa';
+  const isShloka = lang === 'sa' && isShlokaOrVerseText(text || '');
+  const segments = splitBodhiSegments(text || '', lang);
   const chunks = chunksFromSegments(text || '', lang);
   let ended = false;
   const finish = () => {
@@ -1078,7 +1118,20 @@ export const speakAsBodhi = (text: string, options?: SpeakAsBodhiOptions): (() =
     const chunkIndex = index;
     index += 1;
     const settings = currentSettings();
-    const effectiveRate = options?.rate ?? settings.rate;
+    const effectiveRate = options?.rate ?? (isShloka ? SHLOKA_RECITATION_RATE : settings.rate);
+
+    // Find the trailing punctuation immediately following this chunk in segments
+    let trailingPunct = '';
+    const segIdx = segments.findIndex((s) => s.chunkIndex === chunkIndex);
+    if (segIdx >= 0) {
+      for (let j = segIdx + 1; j < segments.length; j++) {
+        if (segments[j].chunkIndex === null) {
+          trailingPunct += segments[j].text;
+        } else {
+          break;
+        }
+      }
+    }
 
     const after = () => {
       if (cancelled || settledForIndex === chunkIndex) return;
@@ -1089,7 +1142,22 @@ export const speakAsBodhi = (text: string, options?: SpeakAsBodhiOptions): (() =
         finish();
         return;
       }
-      const pauseMs = options?.pauseMs ?? currentSettings().pauseMs;
+      let pauseMs: number;
+      if (options?.pauseMs != null) {
+        pauseMs = options.pauseMs;
+      } else if (isShloka) {
+        if (/[॥]|\|\||।।/.test(trailingPunct)) {
+          pauseMs = SHLOKA_END_PAUSE_MS;
+        } else if (/[।|]/.test(trailingPunct) || /\n/.test(trailingPunct)) {
+          pauseMs = SHLOKA_PADA_PAUSE_MS;
+        } else if (/[,;]/.test(trailingPunct)) {
+          pauseMs = SHLOKA_COMMA_PAUSE_MS;
+        } else {
+          pauseMs = SHLOKA_PADA_PAUSE_MS;
+        }
+      } else {
+        pauseMs = currentSettings().pauseMs;
+      }
       timer = setTimeout(speakNext, chunkIndex + 1 < chunks.length ? pauseMs : 0);
     };
 
