@@ -693,9 +693,9 @@ const HomePage: React.FC<HomePageProps> = ({
             type="button"
             className="home-btn-accent"
             onClick={onOpenGrammar}
-            title="Vaidic Vyākaraṇam shelf - 7 Vibhaktis, Declensions, Conjugations & 17 Masterclasses"
+            title="Vyakaran shelf - 7 Vibhaktis, Declensions, Conjugations & 17 Masterclasses"
           >
-            📚 Vaidic Vyākaraṇam (वैदिक-व्याकरणम्)
+            📚 Vyakaran (व्याकरणम्)
           </button>
           {onOpenVedicMaths && (
             <button
@@ -957,7 +957,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <span className="home-pathway-badge home-pathway-badge--grammar">
                 Pāṇinian Grammar
               </span>
-              <h3 className="home-pathway-title">🌿 Dhātupāṭha &amp; Vaidic Vyākaraṇam</h3>
+              <h3 className="home-pathway-title">🌿 Dhātupāṭha &amp; Vyakaran</h3>
               <p className="home-pathway-desc">
                 Explore the generative root science of Sanskrit. Deconstruct inflected words, generate 5-lakāra verb tables, master 7 vibhaktis (noun cases), and read 17 research masterclasses.
               </p>
@@ -967,7 +967,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-pathway-btn"
               onClick={onOpenDhatupatha || onOpenGrammar}
             >
-              Launch Dhātupāṭha &amp; Vaidic Vyākaraṇam ▶
+              Launch Dhātupāṭha &amp; Vyakaran ▶
             </button>
           </div>
 
@@ -1580,9 +1580,9 @@ const HomePage: React.FC<HomePageProps> = ({
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">📚</span>
-                <span className="home-feature-badge">Vaidic Vyākaraṇam</span>
+                <span className="home-feature-badge">Vyakaran</span>
               </div>
-              <h3 className="home-feature-title">Vaidic Vyākaraṇam &amp; Vibhakti Guide</h3>
+              <h3 className="home-feature-title">Vyakaran &amp; Vibhakti Guide</h3>
               <p className="home-feature-desc">
                 Demystify Sanskrit grammar! Access comprehensive declension tables (Shabdarupani) across all genders and numbers,
                 and verb conjugations (Dhaturupams) across all 5 school lakāras.
@@ -1598,7 +1598,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-feature-btn"
               onClick={onOpenGrammar}
             >
-              Browse Vaidic Vyākaraṇam Shelf ▶
+              Browse Vyakaran Shelf ▶
             </button>
           </div>
 

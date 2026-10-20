@@ -50,8 +50,8 @@ const LEVEL_MENU_OPTIONS: LevelMenuOption[] = [
   },
   {
     id: 'grammar',
-    title: 'Vaidic Vyākaraṇam Practice',
-    sanskrit: 'वैदिक-व्याकरणम् (Vaidic Vyākaraṇam)',
+    title: 'Vyakaran Practice',
+    sanskrit: 'व्याकरणम् (Vyakaran)',
     icon: '📐',
     desc: 'Sandhi, Karaka, Dhatu, Vibhakti & Suffixes',
     badge: '10 Worksheets',

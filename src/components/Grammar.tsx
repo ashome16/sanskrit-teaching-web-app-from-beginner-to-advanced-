@@ -638,7 +638,7 @@ const LessonInlineQuiz: React.FC<{
             className="grammar-lesson-quiz-hub-btn"
             onClick={() => onOpenFullQuiz(quizInfo.anchor)}
           >
-            <span>🎯 Open Full Vaidic Vyākaraṇam Quiz Hub for this Topic →</span>
+            <span>🎯 Open Full Vyakaran Quiz Hub for this Topic →</span>
           </button>
         </div>
       )}
@@ -786,9 +786,9 @@ const Grammar: React.FC<GrammarProps> = ({
           type="button"
           className="grammar-breadcrumb-link"
           onClick={goBackToShelf}
-          title="Return to Vyākaraṇa Overview"
+          title="Return to Vyākaraṇam Overview"
         >
-          📚 वैदिक-व्याकरणम् (Vaidic Vyākaraṇam)
+          📚 व्याकरणम् (Vyākaraṇam)
         </button>
         {topic === 'course-lesson' && (
           <>
@@ -1496,10 +1496,35 @@ const Grammar: React.FC<GrammarProps> = ({
   return (
     <section className="grammar-page" aria-label="Grammar">
       <header className="grammar-page-header">
-        <h2 className="grammar-title">वैदिक-व्याकरणम् · Vaidic Vyākaraṇam</h2>
+        <h2 className="grammar-title">व्याकरणम् · Vyakaran</h2>
         <p className="grammar-lead">
-          A structured 10-lesson Vaidic Vyākaraṇam curriculum from phonetics to syntax, paired with interactive studios and scholarly masterclasses.
+          A structured 10-lesson Sanskrit Vyakaran curriculum from phonetics to syntax, paired with interactive studios and scholarly masterclasses.
         </p>
+        <aside className="grammar-meaning-note" aria-label="Meaning of Vyakarana" style={{
+          marginTop: '1.25rem',
+          padding: '1rem 1.4rem',
+          borderRadius: '14px',
+          background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.04) 100%)',
+          border: '1px solid rgba(217, 119, 6, 0.22)',
+          maxWidth: '820px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          textAlign: 'left',
+          fontSize: '0.94rem',
+          lineHeight: '1.6',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, color: '#b45309', marginBottom: '0.4rem', fontSize: '1rem' }}>
+            <span aria-hidden="true">💡</span>
+            <span>What does "Vyākaraṇa" (व्याकरणम्) mean?</span>
+          </div>
+          <p style={{ margin: '0 0 0.5rem 0', color: 'inherit' }}>
+            <strong>व्याक्रियन्ते व्युत्पाद्यन्ते शब्दाः अनेन इति व्याकरणम्</strong> — <em>Vyākaraṇa</em> literally means the <strong>scientific analysis, deconstruction, and grammatical derivation of words</strong> (from prefix <em>vi-</em> [distinction/separation] + <em>ā-</em> [completely] + root <em>kṛ</em> [to do/make] + suffix <em>lyuṭ</em>).
+          </p>
+          <p style={{ margin: 0, color: 'inherit', fontSize: '0.9rem', opacity: 0.95 }}>
+            Unlike languages where words are memorized as isolated static items, Sanskrit is generative: words are built like mathematical functions from indestructible seed roots (<em>dhātu</em>) using systematic affixes (<em>pratyaya</em>). As the ancient tradition proclaims: <strong>मुखं व्याकरणं स्मृतम्</strong> — <em>"Vyākaraṇa is the mouth of the Vedas,"</em> governing acoustic clarity and accurate meaning.
+          </p>
+        </aside>
       </header>
 
       {/* Grammar Search Bar */}

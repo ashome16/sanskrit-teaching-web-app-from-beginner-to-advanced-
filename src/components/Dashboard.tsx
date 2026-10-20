@@ -133,7 +133,7 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
   },
   grammar: {
     title: 'CBSE Sanskrit Grammar: Top 100 Shabdroop, 5 Dhaturoop Lakaras, Sandhi & Vibhakti Rules | EdNet Learn',
-    desc: 'Interactive Vaidic Vyākaraṇam guide: declensions (shabdroop), verb conjugations (dhaturoop), sandhi rules, vibhakti charts, and phonetic audio.',
+    desc: 'Interactive Sanskrit Vyakaran guide: declensions (shabdroop), verb conjugations (dhaturoop), sandhi rules, vibhakti charts, and phonetic audio.',
   },
   quiz: {
     title: 'NCERT Class 7 Sanskrit Quizzes & Online Chapter Tests with Instant Solutions | EdNet Learn',
@@ -1029,11 +1029,11 @@ const Dashboard: React.FC = () => {
               type="button"
               className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'grammar' ? ' active' : ''}`}
               onClick={handleOpenGrammar}
-              title="Open Vaidic Vyākaraṇam shelf with all articles"
+              title="Open Vyakaran shelf with all articles"
             >
               <img src="/nav/nav-grammar.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-primary">वैदिक-व्याकरणम्</span>
-              <span className="dashboard-nav-secondary">Vaidic Vyākaraṇam</span>
+              <span className="dashboard-nav-primary">व्याकरणम्</span>
+              <span className="dashboard-nav-secondary">Vyakaran</span>
             </button>
             <button
               type="button"

@@ -127,7 +127,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenGrammar}
                 >
                   <span className="nav-btn-icon">📚</span>
-                  <span className="nav-btn-text">वैदिक-व्याकरणम् · Vaidic Vyākaraṇam</span>
+                  <span className="nav-btn-text">व्याकरणम् · Vyakaran</span>
                 </button>
               </li>
               <li>

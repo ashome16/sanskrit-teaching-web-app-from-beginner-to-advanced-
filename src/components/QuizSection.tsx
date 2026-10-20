@@ -61,8 +61,8 @@ export const QUIZ_TRACKS: QuizTrack[] = [
   },
   {
     id: 'grammar',
-    label: 'Vaidic Vyākaraṇam & Foundations',
-    sublabel: 'वैदिक-व्याकरणम्, Varṇamālā & literature lines',
+    label: 'Vyakaran & Foundations',
+    sublabel: 'व्याकरणम्, Varṇamālā & literature lines',
     icon: '📐',
     countBadge: formatQuizCount(GRAMMAR_QUIZ_COUNT),
   },
