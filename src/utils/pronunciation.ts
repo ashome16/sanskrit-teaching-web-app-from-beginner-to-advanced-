@@ -73,6 +73,13 @@ const applyWordOverrides = (word: string): string => {
   if (word === 'शषसर्') return 'श ष स र्';
   if (word === 'हल्') return 'ह ल्';
 
+  // Avagraha in Asato Ma mantra: prevents voice from swallowing the initial 'a' in amṛtam
+  if (word.includes('मृत्योर्माऽमृत') || word.includes('मृत्योर्मा अमृत')) {
+    return word
+      .replace(/मृत्योर्माऽमृत[ंम्]/g, 'मृत्योर्मा अमृतम्')
+      .replace(/मृत्योर्मा अमृतं/g, 'मृत्योर्मा अमृतम्');
+  }
+
   return word;
 };
 
@@ -370,8 +377,14 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?:
   // Lesson cardinals are already Devanagari number-words. Skip letter MP3s,
   // roman cues, and the नव/सप्त overrides so "द्वि" stays द्वि.
   if (plain) {
-    const utterance = new SpeechSynthesisUtterance(word);
-    configureUtterance(utterance, word, word);
+    const spokenText = word
+      .replace(/मृत्योर्माऽमृत[ंम्]/g, 'मृत्योर्मा अमृतम्')
+      .replace(/ऽ/g, ' अ')
+      .replace(/अमृतं/g, 'अमृतम्')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const utterance = new SpeechSynthesisUtterance(spokenText);
+    configureUtterance(utterance, word, spokenText);
     applyCallerRate(utterance, rate);
     // Cardinals must use the Hindi voice. A saved English reader voice says "two".
     const hindi = pickHindiVoice();

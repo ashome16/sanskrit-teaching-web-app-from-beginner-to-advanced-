@@ -791,12 +791,12 @@ const HomePage: React.FC<HomePageProps> = ({
     setIsChantingSubhashita(false);
 
     setIsChantingMangalam(true);
-    // Meditative, quarter-by-quarter slow chanting with respectful pauses
+    // Meditative, quarter-by-quarter slow chanting with respectful pauses and clear articulation
     const verses = [
       'ओम्',
       'असतो मा सद्गमय',
       'तमसो मा ज्योतिर्गमय',
-      'मृत्योर्माऽमृतं गमय',
+      'मृत्योर्मा अमृतम् गमय',
       'ओम् शान्तिः शान्तिः शान्तिः',
     ];
 
