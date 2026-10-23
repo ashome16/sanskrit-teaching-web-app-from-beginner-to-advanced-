@@ -127,7 +127,50 @@ function getRouteJsonLd(pathname, meta) {
 
   const schemas = [baseBreadcrumbs];
 
-  if (pathname === '/reader') {
+  if (pathname === '/') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: 'Sanskrit Online Classes with Bodhi: Beginner to Advanced Gurukul',
+      description: 'Interactive Sanskrit online classes guided by Bodhi: Spoken Sanskrit, CBSE NCERT Classes 6–10, Pāṇinian Vyakaran, and Vedic Mathematics with live audio pronunciation.',
+      provider: {
+        '@type': 'EducationalOrganization',
+        name: 'EdNet Learn Gurukul',
+        url: canonical,
+        logo: `${HOST}/logo.jpg`,
+      },
+      hasCourseInstance: [
+        {
+          '@type': 'CourseInstance',
+          courseMode: 'online',
+          courseWorkload: 'PT15M/day',
+          name: 'Spoken Sanskrit & Varṇamālā Foundation',
+          description: '15-minute daily micro-classes on 400+ Sanskrit sounds, conversational greetings, and spoken vocabulary.',
+        },
+        {
+          '@type': 'CourseInstance',
+          courseMode: 'online',
+          courseWorkload: 'PT30M/day',
+          name: 'CBSE & NCERT Sanskrit School Coaching (Classes 6–10)',
+          description: 'NCERT Deepakam line-by-line solutions, question formation (प्रश्ननिर्माणम्), and board exam blueprint preparation.',
+        },
+        {
+          '@type': 'CourseInstance',
+          courseMode: 'online',
+          courseWorkload: 'PT30M/day',
+          name: 'Pāṇinian Vyakaran & Shloka Recitation',
+          description: 'Scientific derivation of Sanskrit words, 7 Vibhaktis, 5 Lakāras, and sacred shloka chanting cadence.',
+        },
+        {
+          '@type': 'CourseInstance',
+          courseMode: 'online',
+          courseWorkload: 'PT20M/day',
+          name: 'Vedic Mathematics & Astronomical Science',
+          description: '16 Vedic Sutras for lightning mental arithmetic, Baudhayana geometry, and astronomical calculations.',
+        },
+      ],
+    });
+  } else if (pathname === '/reader') {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'LearningResource',

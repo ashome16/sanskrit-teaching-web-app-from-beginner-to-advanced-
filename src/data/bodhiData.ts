@@ -547,6 +547,18 @@ export const BODHI_CONTEXT_TIPS: Record<string, BodhiContextTip> = {
 
 export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
   {
+    id: 'qa-online-classes-bodhi',
+    category: 'cbse',
+    question: 'Does Bodhi offer Sanskrit online classes?',
+    sanskritQuestion: 'बोधिः ऑनलाइन-संस्कृत-कक्षासु शिक्षयति वा?',
+    shortAnswer: 'Yes! Bodhi offers 24/7 interactive Sanskrit online classes across Spoken Sanskrit, CBSE NCERT school prep, Pāṇinian Vyakaran, and Vedic Mathematics.',
+    detailedAnswer:
+      'Bodhi’s Virtual Gurukul Online Classes provide self-paced, audio-guided micro-learning tailored for complete beginners, children, CBSE students (Classes 6–10), and adult enthusiasts. Each class features 15-minute interactive daily sessions, authentic phonetic pronunciation across all 5 vocal zones, line-by-line CBSE Deepakam chapter breakdowns, and instant 1-on-1 doubt solving with Bodhi. You can join for free by clicking "Online Classes" in the navigation or on the homepage.',
+    tip: 'Take a sample micro-class right now: click "Online Classes" on the home screen to test Bodhi’s live repeat-after-me speaking practice.',
+    relatedView: 'home',
+    relatedLabel: '🎓 Open Bodhi Online Classes ➔',
+  },
+  {
     id: 'qa-swar-certificate',
     category: 'cbse',
     question: 'How do I get my certificate for the Swar workbook?',

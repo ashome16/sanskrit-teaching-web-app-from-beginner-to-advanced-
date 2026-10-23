@@ -69,6 +69,34 @@ export interface SearchItem {
 
 export const SEARCH_INDEX: SearchItem[] = [
   {
+    id: 'guide-bodhi-online-classes',
+    title: 'Sanskrit Online Classes with Bodhi (बोधेः ऑनलाइन-संस्कृत-वर्गाः)',
+    subtitle: 'Interactive 24/7 Virtual Gurukul · Spoken, CBSE, Vyakaran & Vedic Math',
+    category: 'guides',
+    categoryLabel: 'Online Classes · Bodhi',
+    badgeEmoji: '🎓',
+    badgeColor: '#d97706',
+    description:
+      'Join interactive Sanskrit online classes with Bodhi: 15-minute daily micro-lessons, live audio pronunciation, CBSE NCERT Classes 6–10 coaching, Pāṇinian grammar, and Vedic math drills with 1-on-1 doubt clearing.',
+    keywords: [
+      'online classes',
+      'sanskrit online classes',
+      'online sanskrit classes',
+      'bodhi classes',
+      'spoken sanskrit classes',
+      'learn sanskrit online',
+      'sanskrit tuition',
+      'sanskrit coaching',
+      'cbse sanskrit classes',
+      'sanskrit classes for kids',
+      'sanskrit classes for beginners',
+      'live classes',
+      'online class',
+      'virtual classroom',
+    ],
+    target: { view: 'home' },
+  },
+  {
     id: 'guide-swar-certificate',
     title: 'Swar · स्वर — Sanskrit Workbook: Certificate of Completion',
     subtitle: 'The Darśana Series · by Sesha K Penumallu · book page 149',

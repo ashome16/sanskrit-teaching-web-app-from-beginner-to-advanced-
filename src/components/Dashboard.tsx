@@ -33,6 +33,7 @@ const PaymentModal = lazy(() => import('./PaymentModal'));
 const AdminModal = lazy(() => import('./AdminModal'));
 const GlobalSearchModal = lazy(() => import('./GlobalSearchModal'));
 const VoiceSettingsModal = lazy(() => import('./VoiceSettingsModal'));
+const BodhiOnlineClassesModal = lazy(() => import('./BodhiOnlineClassesModal'));
 
 const ViewLoader = () => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '5rem 1rem', minHeight: '60vh', color: '#273b35' }}>
@@ -108,8 +109,8 @@ const COURSE_PATHS = new Set([
 
 export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
   home: {
-    title: 'Learn Sanskrit Online: From Beginner to Advanced & Vedic Studies | EdNet Gurukul',
-    desc: 'Learn Sanskrit online for all levels: complete audio Varṇamālā & 400+ syllables, 6,000+ word puzzles, 28-lesson Sanskrit thinking course, Pāṇinian grammar & Dhātupāṭha, 16 Vedic math sutras, plus CBSE/NCERT curriculum.',
+    title: 'Sanskrit Online Classes & Gurukul Learning: Beginner to Advanced | EdNet Learn',
+    desc: 'Interactive Sanskrit online classes with Bodhi: spoken Sanskrit for beginners & kids, 28-lesson curriculum, CBSE NCERT Classes 6–10 coaching, Pāṇinian grammar, and Vedic math with live AI audio feedback.',
   },
   course: {
     title: 'संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking | EdNet Learn Gurukul',
@@ -292,6 +293,7 @@ const Dashboard: React.FC = () => {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
+  const [isOnlineClassesOpen, setIsOnlineClassesOpen] = useState(false);
   const searchShortcut = getSearchShortcut();
   const [bodhiGuideInitialTab, setBodhiGuideInitialTab] = useState<'context' | 'qa' | 'subhashita' | 'phrases'>('context');
   const [bodhiGuideQuestionId, setBodhiGuideQuestionId] = useState<string | null>(null);
@@ -312,6 +314,12 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     refreshPlanStatus();
+    try {
+      const h = (window.location.hash || '').toLowerCase();
+      if (h === '#classes' || h === '#online-classes' || h === '#bodhi-classes') {
+        setIsOnlineClassesOpen(true);
+      }
+    } catch {}
   }, [currentUser?.id, refreshPlanStatus]);
 
   // Global search shortcut: Cmd+K / Ctrl+K or '/'
@@ -1095,6 +1103,17 @@ const Dashboard: React.FC = () => {
               <span className="dashboard-nav-primary">संस्कृत-चिन्तनम्</span>
               <span className="dashboard-nav-secondary">Course (6 Mod)</span>
             </button>
+            <button
+              type="button"
+              className={`dashboard-nav-stacked dashboard-nav-item${isOnlineClassesOpen ? ' active' : ''}`}
+              onClick={() => setIsOnlineClassesOpen(true)}
+              title="Sanskrit Online Classes with Bodhi (कक्षासु)"
+              style={{ background: 'rgba(245, 158, 11, 0.08)' }}
+            >
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🎓</span>
+              <span className="dashboard-nav-primary" style={{ color: '#b45309', fontWeight: 800 }}>ऑनलाइन-वर्गाः</span>
+              <span className="dashboard-nav-secondary">Online Classes</span>
+            </button>
           </div>
         </nav>
 
@@ -1171,6 +1190,7 @@ const Dashboard: React.FC = () => {
           onOpenWorksheets={() => handleOpenWorksheets('all')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
+          onOpenOnlineClasses={() => setIsOnlineClassesOpen(true)}
           onOpenBodhi={() => setIsBodhiGuideOpen(true)}
           onOpenSearch={() => setIsSearchModalOpen(true)}
           onOpenResources={() => navigateToView('resources')}
@@ -1427,6 +1447,19 @@ const Dashboard: React.FC = () => {
           <VoiceSettingsModal
             isOpen={isVoiceModalOpen}
             onClose={() => setIsVoiceModalOpen(false)}
+          />
+        )}
+        {isOnlineClassesOpen && (
+          <BodhiOnlineClassesModal
+            isOpen={isOnlineClassesOpen}
+            onClose={() => setIsOnlineClassesOpen(false)}
+            onNavigateView={navigateToView}
+            onOpenVarnamala={openVarnamala}
+            onOpenReader={(lessonId) => openDeepakam(lessonId)}
+            onOpenGrammar={handleOpenGrammar}
+            onOpenVedicMaths={() => navigateToView('vedic-maths')}
+            onOpenCourse={() => navigateToView('course')}
+            onOpenBodhi={() => setIsBodhiGuideOpen(true)}
           />
         )}
         <AuthModal />

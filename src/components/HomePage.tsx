@@ -22,6 +22,7 @@ export interface HomePageProps {
   onOpenVedicMaths?: () => void;
   onOpenPhilosophy?: () => void;
   onOpenCbseGuide?: () => void;
+  onOpenOnlineClasses?: () => void;
   onOpenQuiz?: () => void;
   onOpenWorksheets?: () => void;
   onOpenDhatupatha?: () => void;
@@ -514,6 +515,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenVedicMaths,
   onOpenPhilosophy,
   onOpenCbseGuide,
+  onOpenOnlineClasses,
   onOpenQuiz,
   onOpenWorksheets,
   onOpenDhatupatha,
@@ -645,6 +647,21 @@ const HomePage: React.FC<HomePageProps> = ({
         )}
 
         <div className="home-hero-actions">
+          {onOpenOnlineClasses && (
+            <button
+              type="button"
+              className="home-btn-primary"
+              style={{
+                background: 'linear-gradient(135deg, #d97706 0%, #b45309 100%)',
+                boxShadow: '0 4px 14px rgba(217, 119, 6, 0.35)',
+                fontWeight: 800,
+              }}
+              onClick={onOpenOnlineClasses}
+              title="Sanskrit Online Classes with Bodhi — Spoken, CBSE & Vyakaran"
+            >
+              🎓 Sanskrit Online Classes
+            </button>
+          )}
           {onOpenVarnamala && (
             <button
               type="button"
@@ -1131,6 +1148,141 @@ const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* ------------------------------------------------------------------
+          Sanskrit Online Classes with Bodhi Showcase
+          ------------------------------------------------------------------ */}
+      <section className="home-online-classes-section" id="online-classes" aria-label="Sanskrit Online Classes with Bodhi">
+        <div className="hoc-header">
+          <div className="hoc-badge">
+            <span>🎓</span>
+            <span>Interactive Sanskrit Online Classes</span>
+          </div>
+          <h2 className="hoc-title">
+            Sanskrit Online Classes with Bodhi
+            <span className="hoc-title-sa">बोधेः ऑनलाइन-संस्कृत-वर्गाः · 24/7 Virtual Gurukul</span>
+          </h2>
+          <p className="hoc-subtitle">
+            Experience 1-on-1 guided Sanskrit learning with Bodhi, your personal AI Gurukul mentor. Learn spoken Sanskrit, master CBSE/NCERT school syllabus, deconstruct Pāṇinian grammar, or calculate at lightning speed with Vedic mathematics.
+          </p>
+        </div>
+
+        <div className="hoc-grid">
+          {/* Track 1 */}
+          <div className="hoc-card">
+            <div>
+              <div className="hoc-card-icon">🗣️</div>
+              <div className="hoc-card-badge">Level 1 · Beginners &amp; Kids</div>
+              <h3 className="hoc-card-title">Spoken Sanskrit &amp; Sounds</h3>
+              <p className="hoc-card-desc">
+                Learn 400+ aksharas, authentic 5-vocal-zone pronunciation, conversational greetings, and daily spoken dialogue.
+              </p>
+              <ul className="hoc-card-points">
+                <li>15-min daily micro-lessons with audio</li>
+                <li>Greetings: Namaste, Hariḥ Om, Suprabhātam</li>
+                <li>Self-introduction &amp; family vocabulary</li>
+              </ul>
+            </div>
+            <button
+              type="button"
+              className="hoc-card-btn"
+              onClick={onOpenOnlineClasses || onOpenVarnamala}
+            >
+              Start Spoken Class ▶
+            </button>
+          </div>
+
+          {/* Track 2 */}
+          <div className="hoc-card">
+            <div>
+              <div className="hoc-card-icon">🏫</div>
+              <div className="hoc-card-badge">Classes 6–10 · CBSE &amp; NCERT</div>
+              <h3 className="hoc-card-title">CBSE School Exam Prep</h3>
+              <p className="hoc-card-desc">
+                Line-by-line Deepakam chapter solutions, word-by-word sandhi breakdown, anvaya reconstruction, and mock board papers.
+              </p>
+              <ul className="hoc-card-points">
+                <li>NCERT Class 7, 8 &amp; 9 textbooks with audio</li>
+                <li>Question formation (किम्-पद प्रश्ननिर्माणम्)</li>
+                <li>80-mark blueprint revision &amp; practice</li>
+              </ul>
+            </div>
+            <button
+              type="button"
+              className="hoc-card-btn"
+              onClick={onOpenOnlineClasses || (() => onOpenReader('gsde101'))}
+            >
+              Start CBSE Class ▶
+            </button>
+          </div>
+
+          {/* Track 3 */}
+          <div className="hoc-card">
+            <div>
+              <div className="hoc-card-icon">🏛️</div>
+              <div className="hoc-card-badge">Intermediate · Classical</div>
+              <h3 className="hoc-card-title">Pāṇinian Vyakaran &amp; Shlokas</h3>
+              <p className="hoc-card-desc">
+                Algorithmically derive words from roots (Dhātu). Master 7 Vibhaktis, 5 Lakāras, Sandhi rules, and shloka chanting cadence.
+              </p>
+              <ul className="hoc-card-points">
+                <li>Nominal declensions: Bālaka, Latā, Phalam</li>
+                <li>Verb tables: 5 Lakāras in active &amp; middle voice</li>
+                <li>Bhagavad Gita &amp; Stotra chanting meter</li>
+              </ul>
+            </div>
+            <button
+              type="button"
+              className="hoc-card-btn"
+              onClick={onOpenOnlineClasses || onOpenGrammar}
+            >
+              Start Vyakaran Class ▶
+            </button>
+          </div>
+
+          {/* Track 4 */}
+          <div className="hoc-card">
+            <div>
+              <div className="hoc-card-icon">⚡</div>
+              <div className="hoc-card-badge">Mental Agility · All Ages</div>
+              <h3 className="hoc-card-title">Vedic Maths &amp; Astronomy</h3>
+              <p className="hoc-card-desc">
+                Supercharge mental math with 16 Vedic Sutras. Compute squares, roots, and calendar positions in seconds.
+              </p>
+              <ul className="hoc-card-points">
+                <li>Ekadhikena Purvena &amp; Nikhilam sutras</li>
+                <li>Vinculum negative-digit mental arithmetic</li>
+                <li>Baudhayana geometry &amp; astronomical day-counts</li>
+              </ul>
+            </div>
+            <button
+              type="button"
+              className="hoc-card-btn"
+              onClick={onOpenOnlineClasses || onOpenVedicMaths}
+            >
+              Start Vedic Math Class ▶
+            </button>
+          </div>
+        </div>
+
+        {/* Bottom Callout Banner */}
+        <div className="hoc-bottom-banner">
+          <div className="hoc-banner-text">
+            <span style={{ fontSize: '2rem' }}>✨</span>
+            <div>
+              <h4>Try Bodhi's Virtual Classroom for Free Today</h4>
+              <p>Experience an interactive 3-step micro-lesson with authentic audio, repeat-after-me practice, and instant feedback.</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="hoc-banner-btn"
+            onClick={onOpenOnlineClasses}
+          >
+            🚀 Launch Online Classroom with Bodhi
+          </button>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------
           Meet Bodhi (बोधिः) — Mascot & Gurukul Guide Spotlight
           ------------------------------------------------------------------ */}
       <section className="bodhi-home-spotlight" aria-label="Meet Bodhi - Your Gurukul Mascot & Guide">
@@ -1162,6 +1314,16 @@ const HomePage: React.FC<HomePageProps> = ({
           </p>
 
           <div className="bodhi-spotlight-actions">
+            {onOpenOnlineClasses && (
+              <button
+                type="button"
+                className="bodhi-spotlight-primary-btn"
+                style={{ background: '#d97706', borderColor: '#b45309' }}
+                onClick={onOpenOnlineClasses}
+              >
+                🎓 Join Bodhi's Online Classes
+              </button>
+            )}
             {onOpenBodhi && (
               <button
                 type="button"
