@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useRef, useEffect, useCallback, lazy, Suspense } from 'react';
 import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters, isFreeTrialOpenLesson } from '../utils/premiumAccess';
@@ -8,6 +8,7 @@ import { NCERT_TEXTBOOKS, getTextbookMetaForLesson } from '../utils/textbookCove
 import BodhiAvatar from './BodhiAvatar';
 import HomeLabBanner from './HomeLabBanner';
 import { getSearchShortcut } from '../utils/platformShortcut';
+import { GurukulEntranceIntro } from './GurukulEntranceIntro';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 
@@ -658,6 +659,22 @@ const HomePage: React.FC<HomePageProps> = ({
   const [isGrade9ModalOpen, setIsGrade9ModalOpen] = useState<boolean>(false);
   const [isFlashcardModalOpen, setIsFlashcardModalOpen] = useState<boolean>(false);
   const [selectedGradeFilter, setSelectedGradeFilter] = useState<'all' | '7' | '8' | '9'>('all');
+  const [showEntranceIntro, setShowEntranceIntro] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false;
+    try {
+      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen');
+      return !alreadySeen;
+    } catch {
+      return false;
+    }
+  });
+
+  const handleIntroComplete = useCallback(() => {
+    setShowEntranceIntro(false);
+    try {
+      sessionStorage.setItem('ednet_gurukul_intro_seen', 'true');
+    } catch {}
+  }, []);
 
   const visibleChapters = CHAPTERS_INFO.filter(
     (ch) => canReadAllChapters || isFreeTrialOpenLesson(ch.id) || (!ch.id.startsWith('grade8_') && !ch.id.startsWith('grade9_'))
@@ -812,21 +829,43 @@ const HomePage: React.FC<HomePageProps> = ({
   };
 
   return (
-    <main className="homepage-container">
-      {/* ------------------------------------------------------------------
-          Hero Section
-          ------------------------------------------------------------------ */}
-      <section className="home-hero">
-        {/* Gurukul Official Brand Crest */}
-        <div className="home-hero-crest">
-          <img
-            src="/logo.jpg"
-            alt="EdNet Gurukul - Learn Sanskrit Online &amp; Vedic Mathematics"
-            className="home-hero-logo"
-            width={68}
-            height={68}
-          />
-        </div>
+    <>
+      {showEntranceIntro && (
+        <GurukulEntranceIntro
+          onComplete={handleIntroComplete}
+          targetLogoId="home-hero-crest-logo"
+          autoAdvanceMs={3600}
+        />
+      )}
+      <main className="homepage-container">
+        {/* ------------------------------------------------------------------
+            Hero Section
+            ------------------------------------------------------------------ */}
+        <section className="home-hero">
+          {/* Gurukul Official Brand Crest */}
+          <div className="home-hero-crest">
+            <img
+              id="home-hero-crest-logo"
+              src="/logo.jpg"
+              alt="EdNet Gurukul - Learn Sanskrit Online &amp; Vedic Mathematics"
+              className="home-hero-logo"
+              width={76}
+              height={76}
+              onClick={() => setShowEntranceIntro(true)}
+              title="Click to replay Gurukul Dawn Intro & Morning Birdsong"
+              style={{ cursor: 'pointer' }}
+            />
+            <button
+              type="button"
+              className="home-hero-replay-btn"
+              onClick={() => setShowEntranceIntro(true)}
+              title="Replay Gurukul Dawn Intro & Morning Birdsong"
+              aria-label="Replay Gurukul Dawn Intro & Morning Birdsong"
+            >
+              <span>🌅</span>
+              <span>Gurukul Dawn Intro</span>
+            </button>
+          </div>
 
         <div className="home-hero-badge">
           <span>🕉️</span>
@@ -2618,6 +2657,7 @@ const HomePage: React.FC<HomePageProps> = ({
         )}
       </Suspense>
     </main>
+  </>
   );
 };
 
