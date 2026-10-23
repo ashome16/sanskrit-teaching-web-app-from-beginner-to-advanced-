@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { BodhiWisdomCard } from '../BodhiWisdomCard';
 import { TermPanel, ChallengeList, LabNextAction, type LabTerm, type LabChallenge } from './common';
 import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
@@ -677,11 +676,6 @@ export const KautilyaStatecraft: React.FC<KautilyaStatecraftProps> = ({ onNextLa
           </div>
         </div>
       </header>
-
-      {/* Bodhi Wisdom & Civilizational Context Card */}
-      <div style={{ marginBottom: '1.5rem' }}>
-        <BodhiWisdomCard gameId="kautilya" gameTitle="Kauṭilya’s Arthaśāstra: Quantitative Statecraft & Actuarial Governance" />
-      </div>
 
       {/* --------------------------------------------------------------------- */}
       {/* NAVIGATION TABS */}

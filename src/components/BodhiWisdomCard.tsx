@@ -265,7 +265,245 @@ export const BODHI_GAME_WISDOM: Record<string, BodhiWisdomData> = {
     societalWelfare:
       'Prajasukha (the welfare state): the supreme metric of statecraft is societal flourishing and citizen security, ensuring state granaries maintain 50% buffer reserves so no citizen starves during multi-year famines.',
   },
+
+  paramanu: {
+    anecdoteTitle: 'Sage Kaṇāda’s Paramāṇu: The Indivisible Horizon of Matter',
+    historicalPeriod: 'Vaiśeṣika Sūtra of Kaṇāda · ~6th–4th c. BCE',
+    anecdoteStory:
+      'Sage Kaṇāda (literally "the atom-eater" or "gatherer of grain-particles") was once observing a devotee drop rice grains in a temple courtyard. Picking up a grain, he broke it into smaller fragments, and fragmented those further, until he reached a threshold where the grain could no longer be divided without losing its essential physical identity. In the Vaiśeṣika Sūtras, Kaṇāda formulated that all physical matter (Dravya) is composed of eternal, indivisible spherical particles called Paramāṇu. He explained that isolated Paramāṇus are imperceptible to human senses, but combine in pairs to form a Dvyaṇuka (binary dyad), and three Dvyaṇukas combine to form a Tryaṇuka (triad)—which constitutes the smallest visible particle in nature, comparable to a tiny dust mote floating visible in an early morning sunbeam through a lattice window (Jālasūryamarīcistham). John Dalton proposed modern atomic theory in 1803 CE, over 2,200 years after Kaṇāda formalized discrete matter.',
+    sanskritVerse: 'जालसूर्यसरीचिस्थं यत् सूक्ष्मं दृश्यते रजः। तस्य षष्ठो भवेद् भागः परमाणुः स उच्यते॥',
+    sanskritVerseMeaning:
+      '"The subtle speck of dust that is seen floating in the sunbeam passing through a lattice screen—the sixth part of that is called a Paramāṇu, the ultimate indivisible particle."',
+    uniquePlayingMethodology:
+      'Discrete Atomic Fusion & Valence Bonding Sandbox — Drag and combine elemental Paramāṇus into Dvyaṇuka dyads and Tryaṇuka triads, balance molecular mass counters, and observe atomic phase transitions from subtle invisible states to macroscopic physical matter.',
+    civilizationalContinuity:
+      'Kaṇāda’s classification of substances (Dravya), qualities (Guṇa), and atomic combinations directly prefigures Dalton’s atomic theory, molecular chemistry, and modern particle physics.',
+    empiricalObservation:
+      'Pratyakṣa through optical beam scattering: using Tyndall-like natural light scattering through lattice apertures to measure the physical threshold of visible resolution.',
+    societalWelfare:
+      'Material metallurgy and pharmacological medicine: understanding chemical properties allowed ancient rasashalas (laboratories) to formulate bhasmas and alloy non-corrosive metals for society.',
+  },
+
+  'asato-ma': {
+    anecdoteTitle: 'Andha-Mūṣā: The Blind Sealed Crucible & Mass Balance',
+    historicalPeriod: 'Rasārṇava & Rasa-ratna-samuccaya · ~8th–12th c. CE',
+    anecdoteStory:
+      'In ancient Indian alchemy and metallurgy (Rasaśāstra), master metallurgists conducted reactions inside an Andha-Mūṣā ("blind crucible")—a sealed, airtight clay vessel coated with rice husks, cow dung, and iron slag that prevented the escape of volatile vapors. By weighing the sealed crucible before and after intense high-temperature firing in a Kosthī furnace, alchemists proved that no matter how drastically substances changed color, state, or form, the total mass inside the sealed system remained invariant. This empirical demonstration of conservation of mass preceded Antoine Lavoisier’s famous 1789 CE sealed-vessel experiments by half a millennium, translating the Upanishadic philosophical realization "Asato mā sad gamaya / Nāsato vidyate bhāvo" (Out of non-existence, nothing can come into being) into rigorous laboratory chemistry.',
+    sanskritVerse: 'नासतो विद्यते भावो नाभावो विद्यते सतः। उभयोरपि दृष्टोऽन्तस्त्वनयोस्तत्त्वदर्शिभिः॥',
+    sanskritVerseMeaning:
+      '"The non-existent never comes into being; the existent never ceases to be. The profound truth of both has been perceived by the seers of reality."',
+    uniquePlayingMethodology:
+      'Closed-Crucible Mass Conservation Balance — Seal mineral reactants into the Andha-Mūṣā crucible, subject it to variable furnace heat, track vaporization and precipitation, and observe the high-precision two-pan balance needle remaining at absolute zero mass drift.',
+    civilizationalContinuity:
+      'Modern stoichiometry and thermodynamics depend entirely on the principle of conservation of mass in closed systems, bridging ancient Rasaśāstra closed-vessel technology to Lavoisier and modern industrial chemical reactors.',
+    empiricalObservation:
+      'Gravimetric measurement of closed reaction vessels: demonstrating that smoke and invisible gases possess physical weight and must be accounted for in material balance.',
+    societalWelfare:
+      'Pure medicine and rust-proof metallurgy: airtight distillation enabled the extraction of pure metallic zinc (Zawar, Rajasthan) and therapeutic mercury formulations free from toxic volatile impurities.',
+  },
+
+  prakriti: {
+    anecdoteTitle: 'The Living Homeostasis: Charaka, Suśruta & the Tridoṣa Equilibrium',
+    historicalPeriod: 'Caraka-saṃhitā & Suśruta-saṃhitā · ~600 BCE – 200 CE',
+    anecdoteStory:
+      'In the ancient medical schools of Takṣaśilā and Vārāṇasī, Maharṣi Caraka and Suśruta approached human physiology not as a collection of static parts, but as a dynamic open metabolic system governed by three regulatory bio-forces (Tridoṣa): Vāta (kinetic movement, neural conduction), Pitta (transformation, thermal metabolic enzyme action), and Kapha (structural cohesion, cellular hydration). Health (Svāsthya) was defined as dynamic equilibrium (Doṣa-dhātu-mala-kriyaḥ samaḥ). Physicians developed Nāḍī-parīkṣā (arterial pulse diagnostics)—feeling the radial pulse with three fingers to detect fluid mechanical waveform variations, comparing pulse rhythms to the hopping swan (Haṃsa-gati), jumping frog (Maṇḍūka-gati), or slithering serpent (Sarpa-gati) to detect systemic dysregulation before clinical disease manifested.',
+    sanskritVerse: 'समदोषः समाग्निश्च समधातुमलक्रियः। प्रसन्नात्मेन्द्रियमनाः स्वस्थ इत्यभिधीयते॥',
+    sanskritVerseMeaning:
+      '"One whose bio-energies (Doṣas) are balanced, whose metabolic fire (Agni) is even, whose tissues (Dhātus) and eliminations are harmonious, and whose mind, senses, and spirit are serene, is termed truly healthy (Svastha)."',
+    uniquePlayingMethodology:
+      'Tridoṣa Homeostasis Balancing & Arterial Pulse Waveform Tracer — Adjust environmental, dietary, and seasonal sliders to maintain Vāta-Pitta-Kapha equilibrium within the safe homeostasis zone, and analyze real-time arterial pulse waveform curves under variable stress.',
+    civilizationalContinuity:
+      'Prefigured modern systems biology, allostatic load theory, and cardiovascular arterial pulse wave velocity (PWV) diagnostics by treating physiological health as homeostatic balance across coupled nonlinear networks.',
+    empiricalObservation:
+      'Multi-finger radial tonometry and longitudinal lifestyle tracking: recording physiological responses to circadian cycles (Dinacaryā) and seasonal shifts (Ṛtucaryā).',
+    societalWelfare:
+      'Preventive healthcare and universal well-being: prioritizing disease prevention, mental tranquility, and wholesome nutrition accessible to all communities without costly invasive interventions.',
+  },
+
+  chaturyoni: {
+    anecdoteTitle: 'From Surapāla’s Vṛkṣāyurveda to J.C. Bose’s Plant Microvolt Galvanometry',
+    historicalPeriod: 'Vṛkṣāyurveda (~10th c. CE) to Sir J.C. Bose (1858–1937 CE)',
+    anecdoteStory:
+      'Ancient Indian biology classified all living organisms into four distinct origins (Catur-Yoni): Jarāyuja (viviparous/womb-born mammals), Aṇḍaja (oviparous/egg-born birds and reptiles), Svedaja (heat/moisture-born microorganisms and insects), and Udbhijja (sprouting vegetation and trees). In the Vṛkṣāyurveda, Sage Surapāla documented sophisticated plant pathology, soil classification, grafting techniques, and plant neuro-responsiveness. In the early 20th century, Indian polymath Sir Jagadish Chandra Bose vindicated this ancient worldview with his invention of the Crescograph—demonstrating that plants generate electrical action potentials, experience fatigue, and respond to environmental stimuli with microvolt electrical waveforms remarkably similar to animal nervous systems.',
+    sanskritVerse: 'अन्तस्संज्ञा भवन्त्येते सुखदुःखसमन्विताः। उच्छेदात् पातितानां तु संरोहणमवेक्ष्य च॥',
+    sanskritVerseMeaning:
+      '"These plants possess internal consciousness and experience sensations of pleasure and pain; observe how they sprout again even after being cut down and pruned."',
+    uniquePlayingMethodology:
+      'Four-Fold Biological Taxonomic Sorting & Plant Microvolt Galvanometer — Classify organism specimens across the four reproductive realms (Jarāyuja, Aṇḍaja, Svedaja, Udbhijja), connect virtual electrodes to sensitive plant stems (Mimosa pudica), and record electrical action potentials under tactile stimuli.',
+    civilizationalContinuity:
+      'Surapāla’s botanical care and J.C. Bose’s biophysical galvanometry are recognized worldwide as the direct pioneers of modern plant neurobiology, electrophysiology, and eco-sustainable agriculture.',
+    empiricalObservation:
+      'High-magnification mechanical and optical recording: developing instruments capable of recording living cellular motion amplified ten million times to test hypotheses empirically.',
+    societalWelfare:
+      'Ahimsā and ecological stewardship: recognizing the shared sentience of all botanical and animal life fostered an ethic of conservation and deep ecological harmony across Indian agriculture.',
+  },
+
+  jyotisha: {
+    anecdoteTitle: 'Āryabhaṭa’s Rotating Earth: Calā Pṛthvī Sthirā Bhāni',
+    historicalPeriod: '499 CE · Āryabhaṭīya (Kusumapura / Pāṭaliputra)',
+    anecdoteStory:
+      'More than a millennium before Nicolaus Copernicus and Galileo Galilei published their celestial treatises, the 23-year-old astronomer Āryabhaṭa established that the apparent daily rising and setting of the stars is an optical illusion caused by the Earth rotating on its own axis from west to east. To explain this to skeptics, Āryabhaṭa formulated a famous kinematic analogy: "Just as a person in a boat floating swiftly down a river sees stationary trees on the bank moving in the opposite direction, exactly so do stationary stars appear to move westward to observers on the rotating Earth" (Anulomagatir nausthaḥ). Āryabhaṭa also accurately calculated the Earth’s circumference (within 1% of modern geodesic satellite data) and correctly identified that lunar and solar eclipses are caused by planetary shadows, not mythological demons.',
+    sanskritVerse: 'अनुलोमगतिर्नौस्थः पश्यत्यचलं विलोमगं यद्वत्। अचलानि भानि तद्वत् समपश्चिमगानि लङ्कायाम्॥',
+    sanskritVerseMeaning:
+      '"Just as a person in a moving boat sees motionless objects on the riverbank moving backward, so the stationary stars appear to travel directly westward to an observer on Earth."',
+    uniquePlayingMethodology:
+      'Heliocentric Orbital Velocity Sandbox & 27 Nakṣatra Stargazer — Adjust orbital velocity, gravity well mass, and eccentric trajectory to achieve stable planetary orbit around Sūrya, and track the diurnal rotation of the Earth against the 27 lunar mansions (Nakṣatras).',
+    civilizationalContinuity:
+      'Āryabhaṭa’s axial diurnal rotation and shadow geometry for eclipses laid the analytical groundwork for modern celestial mechanics, spherical trigonometry, and orbital dynamics.',
+    empiricalObservation:
+      'Systematic observational gnomon geometry: calculating planetary orbital periods by cross-referencing decades of meridian shadow transits from the Taregana observatory.',
+    societalWelfare:
+      'Maritime navigation and seasonal agricultural planning: accurate planetary ephemerides permitted safe oceanic navigation and reliable monsoon forecasting for farmers across South Asia.',
+  },
+
+  chandrayaan: {
+    anecdoteTitle: 'From Somayāna to Shiv Shakti Point: Chandrayaan-3 and Lunar Spectroscopy',
+    historicalPeriod: 'Vedic Somavidyā to ISRO Chandrayaan-3 (August 23, 2023 CE)',
+    anecdoteStory:
+      'Ancient Vedic astronomy revered the Moon as Soma—the cooler of the cosmos and the sovereign of botanical sap (Oṣadhi-pati). The Candra-kriyās meticulously mapped its changing phases and orbital apsides. On August 23, 2023, India’s Indian Space Research Organisation (ISRO) made history by becoming the first space agency to successfully execute a soft landing on the challenging lunar South Pole at the Shiv Shakti Point. The Pragyan rover deployed its indigenous Laser-Induced Breakdown Spectroscopy (LIBS) instrument—firing high-energy laser pulses onto the regolith to generate micro-plasma and analyze spectral emission lines, confirming unambiguous signatures of Sulphur (S), Aluminium, Calcium, and Iron, and searching for deep polar water ice.',
+    sanskritVerse: 'सोमो वै रेतोधाः। नवो नवो भवति जायमानोऽह्नां केतुरुषसामेत्यग्रम्॥',
+    sanskritVerseMeaning:
+      '"Soma is the continuous renewer; born anew day by day, he moves at the forefront of the dawns as the luminous guide of cosmic time."',
+    uniquePlayingMethodology:
+      'Lunar Descent Retro-Thruster Landing & LIBS Spectral Analyzer — Pilot the lander through hazard detection and avoidance to soft-land at the lunar South Pole, deploy the Pragyan rover, fire laser pulses at surface rock, and identify chemical element emission peaks.',
+    civilizationalContinuity:
+      'Represents the living continuum of Indian astronomical inquiry—from ancient mathematical lunar ephemerides to modern deep-space planetary exploration and spectroscopic material analysis.',
+    empiricalObservation:
+      'Direct in-situ plasma spectroscopy: analyzing photon emission wavelengths emitted by ionized lunar soil atoms under pulse-laser excitation.',
+    societalWelfare:
+      'Affordable and democratic space science: achieving interplanetary technological milestones at a fraction of global mission budgets, inspiring millions of youth toward STEM education.',
+  },
+
+  'nada-brahman': {
+    anecdoteTitle: 'Cosmic Vibration: Standing Waves, 22 Śrutis & Chladni Sand Mandalas',
+    historicalPeriod: 'Sāma Veda & Nāṭyaśāstra · ~1500 BCE – 200 CE',
+    anecdoteStory:
+      'In the Indian musical and philosophical tradition, the entire cosmos is conceived as vibrational energy—Nāda Brahman. The Sāma Veda laid down the earliest seven-tone musical scale. To systematize musical intervals, ancient theorists like Bharata Muni conducted the famous Sāraṇā-catuṣṭayī experiment using two identical harps (Vīṇās): by tuning and flattening strings step by step, they proved that the human ear can distinguish 22 discrete microtonal acoustic intervals (Śrutis) within a single octave. When sound vibrations pass through a physical medium, they self-organize into symmetric geometric standing waves—a physical phenomenon demonstrated modernly by Ernst Chladni with sand plates, revealing that sacred visual Yantras and acoustic Mandalas are visible manifestations of standing wave cymatics.',
+    sanskritVerse: 'नादेन व्यज्यते वर्णः पदं वर्णात् पदाद् वचः। वचसो व्यवहारोऽयं नादाधीनमतो जगत्॥',
+    sanskritVerseMeaning:
+      '"From primordial sound (Nāda) letters are manifested; from letters, words; from words, speech. All worldly discourse and indeed the entire universe is founded upon vibration."',
+    uniquePlayingMethodology:
+      'String Resonance Harmonizer & 2D Cymatic Sand Mandala Solver — Pluck resonant strings across harmonics 1–5, adjust string tension and linear density, calibrate the 22 microtonal Śrutis, and reveal beautiful geometric nodal sand patterns (Chladni Mandalas).',
+    civilizationalContinuity:
+      'The mathematical ratios of 22 Śrutis and wave resonance form the bedrock of acoustic physics, Fourier analysis of standing waves, and quantum field theory\'s view of matter as vibrational wave packets.',
+    empiricalObservation:
+      'Auditory discrimination and dual-vīṇā cross-calibration: using identical resonant instruments to detect fractional pitch shifts imperceptible to untrained ears.',
+    societalWelfare:
+      'Psychoacoustic wellness and social cohesion: classical rāgas were structured to induce specific restorative psychological states (Śānta, Karuṇa, Vīra) that foster communal peace and mental health.',
+  },
+
+  'srishti-sthiti-laya': {
+    anecdoteTitle: 'The Loom of Āruṇi: Sāṅkhya Satkāryavāda and Quantum Conservation',
+    historicalPeriod: 'Chāndogya Upaniṣad & Sāṅkhya-kārikā · ~800–400 BCE',
+    anecdoteStory:
+      'In the Chāndogya Upaniṣad, the sage Uddālaka Āruṇi instructs his son Śvetaketu on the fundamental nature of existence. He brings clay, gold, and iron, pointing out that whether clay is shaped into a pot, a pitcher, or a plate, the clay itself never alters—the forms are merely nominal modifications of speech (Vācārambhaṇaṁ vikāro nāmadheyaṁ mṛttikety eva satyam). The Sāṅkhya philosophy formulated this into Satkāryavāda: the effect pre-exists in the cause; nothing completely new can ever be created from absolute nothingness, nor can that which exists ever be annihilated into void. In modern physics, this directly parallels the First Law of Thermodynamics and quantum conservation laws: matter and energy can transform between phases (Sṛṣṭi - emergence, Sthiti - equilibrium, Laya - dissolution), but the fundamental quantum fabric remains invariant.',
+    sanskritVerse: 'वाचारम्भणं विकारो नामधेयं मृत्तिकेत्येव सत्यम्। नासतो विद्यते भावो नाभावो विद्यते सतः॥',
+    sanskritVerseMeaning:
+      '"A modification is merely a verbal distinction, a name; the clay alone is real. From nothingness, no existence can arise; and that which is real can never cease to exist."',
+    uniquePlayingMethodology:
+      'Triple-Phase Energy-Matter Loom Challenge — Guide particle clouds through three cosmic phases: Sṛṣṭi (emergence/aggregation), Sthiti (homeostatic equilibrium), and Laya (dissolution into subtle vacuum), proving that the total quantum energy invariant never deviates from 100%.',
+    civilizationalContinuity:
+      'Sāṅkhya\'s Satkāryavāda directly prefigured the fundamental conservation laws of physics—conservation of mass, energy, and quantum information unitarity—by establishing that transformation does not equal creation ex nihilo.',
+    empiricalObservation:
+      'Analysis of material causality: observing pottery, weaving, and metallurgy to show that form transformations preserve material invariants.',
+    societalWelfare:
+      'Environmental conservation and cyclic sustainability: viewing material goods as transient forms of shared Earth resources promoted zero-waste circular living and reverence for natural cycles.',
+  },
+
+  agnibana: {
+    anecdoteTitle: 'From Śukranīti’s Fire-Powder to Tipu Sultan’s Iron Aerospace Rockets',
+    historicalPeriod: 'Śukranīti-sāra (~10th–14th c. CE) to Mysorean Rocketry (1780–1799 CE)',
+    anecdoteStory:
+      'Centuries before modern propellants were formalized, the Śukranīti-sāra documented Agnicūrṇa (fire-powder): 5 parts purified Suvarcilāvaṇa (potassium nitrate / saltpetre), 1 part Gandhaka (sulphur), and 1 part Aṅgāra (charcoal derived from the Arka / Calotropis or Snuhi plant, carbonized in an airtight oxygen-deprived pot). In the 18th century, Hyder Ali and Tipu Sultan of Mysore advanced this indigenous chemistry by encasing the propellant in forged soft-iron cylinders rather than Chinese bamboo or paper tubes. At the battles of Pollilur (1780) and Seringapatam (1799), Mysorean rocket brigades (Bāṇadārs) pulverized British infantry columns from over a kilometer away. British inventor William Congreve took captured Mysorean rockets to the Royal Arsenal in Woolwich to reverse-engineer them, creating modern British military artillery rocketry.',
+    sanskritVerse: 'सुवर्चिलवणात् पञ्च भागाः गन्धकतो हरेत्। अन्तर्धूमविपक्वेन स्नुह्यर्ककाष्ठजेन च॥',
+    sanskritVerseMeaning:
+      '"Take five parts of saltpetre, one part of sulphur, and one part of charcoal cooked in an airtight vessel from Snuhi or Arka wood; grind together with juice to make the master propellant Agnicūrṇa."',
+    uniquePlayingMethodology:
+      'Stoichiometric Fuel Formulation & Parabolic Mortar Ballistics — Adjust the chemical slider ratios (Saltpetre : Sulphur : Charcoal) to achieve stoichiometric ignition pressure, then calibrate mortar elevation angle and powder charge to arc payloads over siege bastions into target zones.',
+    civilizationalContinuity:
+      'The stoichiometric oxidation of solid fuel and metal-cased combustion chambers are the direct mechanical ancestors of modern solid rocket boosters, including ISRO’s PSLV strap-ons and modern aerospace propulsion.',
+    empiricalObservation:
+      'Rigorous material experimentation: identifying why light, porous Arka charcoal burns exponentially faster than heavy hardwoods, and establishing chemical purification (Śodhana) protocols for crystalline saltpetre.',
+    societalWelfare:
+      'Fortification engineering (Durga-rakṣā) and defensive technology: providing sovereign societies with the technological means to defend agrarian communities and cultural centers against predatory invasion.',
+  },
+
+  'vedic-geometry': {
+    anecdoteTitle: 'The Śulba Sūtras: Cord Geometry, Irrational Roots & Altar Engineering',
+    historicalPeriod: 'Baudhāyana, Āpastamba & Kātyāyana Śulba Sūtras · ~800–500 BCE',
+    anecdoteStory:
+      'Ancient Vedic ritual construction required building layered fire altars (Citis) such as the Śyena-citi (in the shape of a soaring falcon) out of exactly 200 consecrated kiln-fired bricks across 5 layers. The ritual codes demanded that each consecutive altar construction must increase in area by exactly one square Puruṣa while maintaining exact geometric proportions. Using only two simple tools—a measuring cord (Śulba / Rajju) and a bamboo peg (Śaṅku)—master builders solved complex geometric challenges: squaring the circle, circling the square, and discovering that the chord of a rectangle produces the sum of the squares of the sides (Dīrghacaturaśrasyākṣṇayārajjuḥ). To calculate the diagonal of a unit square, Baudhāyana formulated the world’s first fractional algorithm for √2 accurate to 5 decimal places.',
+    sanskritVerse: 'दीर्घचतुरश्रस्याक्ष्णयारज्जुः पार्श्वमानी तिर्यङ्मानी च यत्पृथग्भूते कुरुतस्तदुभयं करोति॥',
+    sanskritVerseMeaning:
+      '"The diagonal cord of a rectangle produces both areas that the length and width cords produce separately—this is the eternal geometric truth of space."',
+    uniquePlayingMethodology:
+      'Cord-and-Peg Śulba Construction Bench — Drive virtual pegs, stretch measurement cords along cardinal axes, perform circle-to-square area-conserving transformations, and assemble the 200 interlocking bricks of the sacred Falcon Altar (Śyena-citi).',
+    civilizationalContinuity:
+      'The constructive rope geometry of the Śulba Sūtras represents the earliest operational geometry in human history, directly inspiring Euclidean geometry, Greek chord trigonometry, and modern CAD algorithmic drafting.',
+    empiricalObservation:
+      'Physical kinematic cord construction: deducing geometric truths through the physical mechanics of stretched strings, shadow intersections, and brick tiling patterns.',
+    societalWelfare:
+      'Resilient civic architecture: precision brick firing and seismic interlocking techniques developed for altars were applied directly to town drainage systems, civic granaries, and monumental water reservoirs.',
+  },
+
+  'mantra-acoustics': {
+    anecdoteTitle: 'Vedic Phonetics: Taittirīya Śikṣā & Acoustic Formant Mechanics',
+    historicalPeriod: 'Taittirīya Prātiśākhya & Pāṇinian Śikṣā · ~1000–500 BCE',
+    anecdoteStory:
+      'Long before modern speech spectrograms and acoustic phonetic laboratories, the scholars of the Vedic Prātiśākhyas formulated an astonishingly exhaustive acoustic science of speech production. The Taittirīya Upaniṣad Śikṣāvallī identified the six pillars of phonetics: Varṇa (individual sound unit), Svara (pitch accent: Udātta, Anudātta, Svarita), Mātrā (syllable duration: Hrasva, Dīrgha, Pluta), Bala (articulatory muscular effort and lung pressure), Sāma (melodic resonance), and Santana (sandhi phonetic continuity). Pāṇini mapped exact vocal tract resonance chambers—Kantha (velar), Tālu (palatal), Mūrdhan (retroflex), Danta (dental), and Oṣṭha (labial). They discovered that pitch and duration are orthogonal variables that can be independently modulated, creating an acoustic memory storage system that preserved vast oral canons across millennia without a single syllable drifting.',
+    sanskritVerse: 'वर्णः स्वरः। मात्रा बलम्। साम सन्तानः। इत्युक्तः शीक्षाध्यायः॥',
+    sanskritVerseMeaning:
+      '"Sound unit, pitch accent, duration, articulatory effort, melodious flow, and phonetic continuity—thus is declared the sacred science of acoustic phonetics."',
+    uniquePlayingMethodology:
+      'Vocal Tract Articulation Chamber & Formant Frequency Synthesizer — Modulate vocal tract tongue placements across the 5 articulation points (Kaṇṭha to Oṣṭha), adjust Udātta-Anudātta-Svarita pitch envelopes, and match harmonic formant peaks (F1, F2) in real time.',
+    civilizationalContinuity:
+      'Pāṇini’s phonetic taxonomy directly inspired 19th-century European linguistics (Franz Bopp, Ferdinand de Saussure), modern International Phonetic Alphabet (IPA) standards, and contemporary digital speech synthesis and natural language processing.',
+    empiricalObservation:
+      'Physiological kinesthetic observation: cataloguing exact contact points of the tongue against the palate, dental ridge, and velum under differing respiratory pressures.',
+    societalWelfare:
+      'Uncorrupted civilizational preservation: strict phonetic rules prevented linguistic decay, allowing complex scientific, medicinal, and philosophical treatises to survive across continents and millennia purely through human memory.',
+  },
+
+  'temple-engineering': {
+    anecdoteTitle: 'Samarāṅgaṇa Sūtradhāra: King Bhoja’s Dry Masonry & Seismic Dampening',
+    historicalPeriod: '11th c. CE · King Bhoja of Dhārā (Malwa)',
+    anecdoteStory:
+      'In the 11th century CE, the polymath King Bhoja of Dhārā authored the Samarāṅgaṇa Sūtradhāra—a masterwork of 83 chapters detailing sacred architecture (Vāstu-śāstra), mechanical devices (Yantras), town planning, and structural geology. When designing towering temple spires (Śikharas) weighing tens of thousands of tons, ancient Indian architects faced frequent earthquakes. Instead of rigid mortar that fractures under lateral shear, they invented dry-stone interlocking joints (Sandhi-bandhana)—iron dowels, lead buffering sheets, and stepped fractal geometries that dissipate seismic vibrations through controlled microscopic friction. When severe earthquakes flattened modern concrete structures across Gujarat, the 1,000-year-old Sun Temple of Modhera and temples with sand-bed foundations (like Kudavelli) survived virtually undamaged because the subterranean sand layer absorbed the seismic shockwaves.',
+    sanskritVerse: 'शिला सन्धानयोगेन योजिता दृढबन्धना। भूकम्पेऽपि न कम्पन्ते यन्त्रैः सुघटितास्तथा॥',
+    sanskritVerseMeaning:
+      '"Stone blocks united through interlocking joint engineering and firm anchors do not falter even during earthquakes when assembled with mechanical perfection."',
+    uniquePlayingMethodology:
+      'Dry-Masonry Fractal Śikhara & Seismic Shake Table Simulator — Stack interlocking stone tiers of a North/South Indian Śikhara, install subterranean sand-damping layers and Sandhi joints, and subject the structure to Richter-scale earthquake waves to measure vibrational dissipation.',
+    civilizationalContinuity:
+      'Modern base isolation, seismic damper bearings, and friction-pendulum bearings used in skyscrapers today employ the exact same mechanical physics of vibrational friction and dissipative decoupling pioneered in classical Indian stone temple engineering.',
+    empiricalObservation:
+      'Geological soil testing and quarry stone analysis: testing compressive rock strength and observing wave propagation through differing soil strata before laying temple foundations.',
+    societalWelfare:
+      'Disaster-resilient community shelters: temples served as flood refuges, civic food distribution centers, and community gathering spaces designed to outlast centuries of natural calamities.',
+  },
+
+  chandahshastra: {
+    anecdoteTitle: 'Piṅgala’s Chandaḥśāstra: Binary Prastāra, Zero & The Meru Pyramid',
+    historicalPeriod: 'Chandaḥśāstra of Piṅgala · ~300–200 BCE',
+    anecdoteStory:
+      'While analyzing the rhythmic structure of Vedic and classical Sanskrit poetry, the scholar Ācārya Piṅgala sought a systematic method to catalogue every possible permutation of short syllables (Laghu, 1 beat) and long syllables (Guru, 2 beats) for any meter of n syllables. In his Chandaḥśāstra, he formulated: (1) Prastāra—the systematic binary expansion of permutations; (2) Naṣṭa & Uddiṣṭa—algorithms for direct binary-to-decimal and decimal-to-binary conversion; (3) Śūnya—the explicit symbol for zero used as a place marker; and (4) Meruprastāra—the triangular staircase of binomial coefficients, which European texts attributed to Blaise Pascal 1,800 years later! Halāyudha’s 10th-century commentary on Piṅgala also unlocks the Mātrāmeru (the Fibonacci numbers) centuries before Leonardo of Pisa.',
+    sanskritVerse: 'परे पूर्णमिति। परे पूर्णं पूर्वं शून्यम्... एकाधिके द्विरुक्ते तद्गुणम्॥',
+    sanskritVerseMeaning:
+      '"Place a one for the Guru and zero for the Laghu; when one is added, double the prior value... Thus unfolds the Meruprastāra pyramid of all meters."',
+    uniquePlayingMethodology:
+      'Binary Metrical Syllable Builder & Pascal Pyramid Assembly — Compose Sanskrit poetic rhythms using Laghu (•) and Guru (—), convert them directly into binary digits (0 and 1), and build the triangular Meruprastāra step-by-step by summing adjacent cells to reveal binomial coefficients.',
+    civilizationalContinuity:
+      'Piṅgala’s binary encoding, base-2 arithmetic, and combinatorial recursions are the conceptual foundation of modern computer science, Boolean logic, information theory, and digital semiconductors.',
+    empiricalObservation:
+      'Acoustic and phonetic analysis: empirical mapping of the physiological duration of human vocal breath and structural combinatorics of language.',
+    societalWelfare:
+      'Error-free oral preservation of civilizational knowledge: strict metrical checksums ensured that vast libraries of medicine, astronomy, and philosophy survived for thousands of years without corruption or transcription drift.',
+  },
 };
+
+// Aliases for alternate game IDs
+BODHI_GAME_WISDOM['akasa-sutra'] = BODHI_GAME_WISDOM['asato-ma'];
+BODHI_GAME_WISDOM['rasayana'] = BODHI_GAME_WISDOM['asato-ma'];
 
 export const CivilizationalManifestoBanner: React.FC = () => {
   const [expanded, setExpanded] = useState(false);

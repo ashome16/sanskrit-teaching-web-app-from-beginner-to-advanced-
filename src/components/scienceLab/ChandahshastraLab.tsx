@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
-import { BodhiWisdomCard } from '../BodhiWisdomCard';
 import { TermPanel, ChallengeList, LabNextAction, type LabTerm, type LabChallenge } from './common';
 import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
@@ -663,11 +662,6 @@ export const ChandahshastraLab: React.FC<ChandahshastraLabProps> = ({ onNextLab 
           </div>
         </div>
       </header>
-
-      {/* Bodhi Wisdom & Civilizational Context Card */}
-      <div style={{ marginBottom: '1.5rem' }}>
-        <BodhiWisdomCard gameId="pingala" gameTitle="Piṅgala’s Chandaḥśāstra: Binary Combinatorics & Meruprastāra" />
-      </div>
 
       {/* --------------------------------------------------------------------- */}
       {/* NAVIGATION TABS */}

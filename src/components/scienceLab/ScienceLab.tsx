@@ -18,6 +18,7 @@ const TempleEngineeringLab = lazy(() => import('./TempleEngineeringLab'));
 const KautilyaStatecraft = lazy(() => import('./KautilyaStatecraft'));
 const ChandahshastraLab = lazy(() => import('./ChandahshastraLab'));
 const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
+import { BodhiWisdomCard } from '../BodhiWisdomCard';
 
 export type LabCategory = 'all' | 'matter' | 'cosmos' | 'life' | 'waves';
 
@@ -676,6 +677,12 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         <h2 id={`vl-h-${active}`} className="vl-seg-title" style={{ color: seg.ink }}>
           <span aria-hidden="true">{seg.icon}</span> {seg.title} <span className="vl-seg-dev" lang="sa">{seg.dev}</span>
         </h2>
+
+        {/* Bodhi Wisdom & Civilizational Context Card */}
+        <div style={{ marginBottom: '1.75rem' }}>
+          <BodhiWisdomCard gameId={active} gameTitle={seg.title} />
+        </div>
+
         <Suspense fallback={<SimLoader />}>
           {active === 'paramanu' && <ParamanuBuilder onNextLab={() => handleNavigateLab(nextSeg.id)} />}
           {active === 'asato-ma' && <AsatoMa />}
