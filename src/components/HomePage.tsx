@@ -616,9 +616,20 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         <h1 className="home-hero-title">
-          Learn Sanskrit Online · From Beginner to Advanced
-          <span className="home-hero-title-dev">
-            सरल-संस्कृतम् · व्याकरणम् · वैदिक-गणितम् · सर्वजन-शिक्षणम्
+          <span className="home-hero-title-primary">
+            Learn Sanskrit Online
+          </span>
+          <span className="home-hero-title-tag">
+            From Beginner to Advanced
+          </span>
+          <span className="home-hero-title-dev" aria-label="सरल-संस्कृतम् · व्याकरणम् · वैदिक-गणितम् · सर्वजन-शिक्षणम्">
+            <span className="home-dev-pill">सरल-संस्कृतम्</span>
+            <span className="home-dev-bullet" aria-hidden="true">✦</span>
+            <span className="home-dev-pill">व्याकरणम्</span>
+            <span className="home-dev-bullet" aria-hidden="true">✦</span>
+            <span className="home-dev-pill">वैदिक-गणितम्</span>
+            <span className="home-dev-bullet" aria-hidden="true">✦</span>
+            <span className="home-dev-pill">सर्वजन-शिक्षणम्</span>
           </span>
         </h1>
 
