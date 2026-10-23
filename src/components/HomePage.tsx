@@ -118,6 +118,129 @@ const DEMO_WORDS: DemoWord[] = [
   },
 ];
 
+interface SubhashitaWord {
+  sa: string;
+  en: string;
+}
+
+interface SubhashitaItem {
+  id: string;
+  categorySa: string;
+  categoryEn: string;
+  line1: string;
+  line2: string;
+  transliteration: string;
+  words: SubhashitaWord[];
+  meaningEn: string;
+  meaningHi: string;
+  source: string;
+}
+
+const SUBHASHITAS: SubhashitaItem[] = [
+  {
+    id: 'vidya-vinaya',
+    categorySa: 'विद्या-महिमा',
+    categoryEn: 'Glory of True Learning',
+    line1: 'विद्या ददाति विनयं विनयाद्याति पात्रताम् ।',
+    line2: 'पात्रत्वाद्धनमाप्नोति धनाद्धर्मं ततः सुखम् ॥',
+    transliteration: 'vidyā dadāti vinayaṁ vinayād yāti pātratām | pātratvād dhanam āpnoti dhanād dharmaṁ tataḥ sukham ||',
+    words: [
+      { sa: 'विद्या', en: 'Knowledge' },
+      { sa: 'ददाति', en: 'bestows' },
+      { sa: 'विनयम्', en: 'humility & grace' },
+      { sa: 'विनयात्', en: 'from humility' },
+      { sa: 'याति', en: 'comes / reaches' },
+      { sa: 'पात्रताम्', en: 'worthiness' },
+      { sa: 'पात्रत्वात्', en: 'from worthiness' },
+      { sa: 'धनम्', en: 'prosperity' },
+      { sa: 'धनात्', en: 'from wealth' },
+      { sa: 'धर्मम्', en: 'righteous action' },
+      { sa: 'ततः सुखम्', en: 'thence true joy' },
+    ],
+    meaningEn: 'True knowledge bestows humility; from humility arises worthiness and capability; through worthiness one earns wealth; with wealth one performs noble duties (Dharma); and from righteousness flows lasting joy.',
+    meaningHi: 'विद्या विनम्रता प्रदान करती है; विनम्रता से योग्यता आती है; योग्यता से धन की प्राप्ति होती है; धन से धर्म का आचरण होता है और धर्म से ही शाश्वत सुख प्राप्त होता है।',
+    source: 'हितोपदेशः (Hitopadeśa, Prastāvikā 6)',
+  },
+  {
+    id: 'udyama-siddhi',
+    categorySa: 'उद्योग-प्रशंसा',
+    categoryEn: 'Power of Diligent Effort',
+    line1: 'उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः ।',
+    line2: 'न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मृगाः ॥',
+    transliteration: 'udyamena hi sidhyanti kāryāṇi na manorathaiḥ | na hi suptasya siṁhasya praviśanti mukhe mṛgāḥ ||',
+    words: [
+      { sa: 'उद्यमेन', en: 'through diligent effort' },
+      { sa: 'हि', en: 'indeed / truly' },
+      { sa: 'सिध्यन्ति', en: 'are accomplished' },
+      { sa: 'कार्याणि', en: 'all deeds & goals' },
+      { sa: 'न मनोरथैः', en: 'not by mere daydreams' },
+      { sa: 'सुप्तस्य', en: 'of a sleeping' },
+      { sa: 'सिंहस्य', en: 'lion' },
+      { sa: 'मुखे', en: 'into the mouth' },
+      { sa: 'मृगाः', en: 'deer / prey' },
+    ],
+    meaningEn: 'All undertakings are accomplished only through persistent effort and action, never by mere daydreaming. Even for the king of beasts, the lion, deer do not walk into his mouth while he sleeps.',
+    meaningHi: 'सभी कार्य परिश्रम करने से ही सिद्ध होते हैं, केवल मन की इच्छाओं से नहीं। सोते हुए सिंह के मुख में हिरण स्वयं चलकर कभी प्रवेश नहीं करते।',
+    source: 'पञ्चतन्त्रम् (Pañcatantra, Mitrabheda)',
+  },
+  {
+    id: 'bhashasu-mukhya',
+    categorySa: 'गीर्वाणभारती-गौरवम्',
+    categoryEn: 'Divine Melodies of Sanskrit',
+    line1: 'भाषासु मुख्या मधुरा दिव्या गीर्वाणभारती ।',
+    line2: 'तस्यां हि काव्यं मधुरं तस्मादपि सुभाषितम् ॥',
+    transliteration: 'bhāṣāsu mukhyā madhurā divyā gīrvāṇabhāratī | tasyāṁ hi kāvyaṁ madhuraṁ tasmād api subhāṣitam ||',
+    words: [
+      { sa: 'भाषासु', en: 'among all languages' },
+      { sa: 'मुख्या', en: 'the foremost' },
+      { sa: 'मधुरा', en: 'melodious & sweet' },
+      { sa: 'दिव्या', en: 'divine' },
+      { sa: 'गीर्वाणभारती', en: 'Sanskrit (speech of the sages)' },
+      { sa: 'तस्याम्', en: 'in it' },
+      { sa: 'काव्यम्', en: 'poetry' },
+      { sa: 'मधुरम्', en: 'is sweet' },
+      { sa: 'सुभाषितम्', en: 'wise ethical maxims' },
+    ],
+    meaningEn: 'Foremost, sweet, and divine among all languages is the Sanskrit tongue (Gīrvāṇabhāratī). Within it, classical poetry is even sweeter, and sweetest of all are its wise philosophical maxims (Subhāṣitas).',
+    meaningHi: 'संसार की सभी भाषाओं में संस्कृत भाषा मुख्य, मधुर और दिव्य है। उसमें भी उसका काव्य मधुर है, और काव्य से भी अधिक मधुर उसके सुभाषित हैं।',
+    source: 'सुभाषितरत्नभाण्डागारम् (Subhāṣitaratnabhaṇḍāgāram)',
+  },
+];
+
+interface SpokenPhraseItem {
+  sa: string;
+  en: string;
+  hi: string;
+  audioText: string;
+}
+
+const SPOKEN_PHRASES: SpokenPhraseItem[] = [
+  {
+    sa: 'नमो नमः! भवन्तः कथम् सन्ति? — अहम् कुशली अस्मि।',
+    en: 'Greetings! How are you? — I am well.',
+    hi: 'नमस्कार! आप कैसे हैं? — मैं कुशलपूर्वक हूँ।',
+    audioText: 'नमो नमः। भवन्तः कथम् सन्ति? अहम् कुशली अस्मि।',
+  },
+  {
+    sa: 'स्वागतम्! अद्य वयं सरल-संस्कृतम् आनन्देन पठामः।',
+    en: 'Welcome! Today we study simple Sanskrit with joy.',
+    hi: 'स्वागत है! आज हम सरलता और आनंद से संस्कृत पढ़ेंगे।',
+    audioText: 'स्वागतम्। अद्य वयं सरल संस्कृतम् आनन्देन पठामः।',
+  },
+  {
+    sa: 'शुभप्रभातम्! भवताम् दिनम् मङ्गलमयम् भवतु।',
+    en: 'Good morning! May your day be blessed and auspicious.',
+    hi: 'शुभ प्रभात! आपका दिन मंगलमय और कल्याणकारी हो।',
+    audioText: 'शुभप्रभातम्। भवताम् दिनम् मङ्गलमयम् भवतु।',
+  },
+  {
+    sa: 'भवतः नाम किम्? — मम नाम ... अस्ति।',
+    en: 'What is your name? — My name is...',
+    hi: 'आपका नाम क्या है? — मेरा नाम ... है।',
+    audioText: 'भवतः नाम किम्? मम नाम अस्ति।',
+  },
+];
+
 interface ChapterInfo {
   id: string;
   num: string;
@@ -587,6 +710,45 @@ const HomePage: React.FC<HomePageProps> = ({
     playPronunciation(demo.devanagari);
   };
 
+  const [activeSubhashitaIdx, setActiveSubhashitaIdx] = useState<number>(0);
+  const [activeSpokenIdx, setActiveSpokenIdx] = useState<number>(0);
+  const [activeWordIdx, setActiveWordIdx] = useState<number | null>(null);
+  const [isChantingSubhashita, setIsChantingSubhashita] = useState<boolean>(false);
+  const [isChantingMangalam, setIsChantingMangalam] = useState<boolean>(false);
+
+  const currentSubhashita = SUBHASHITAS[activeSubhashitaIdx];
+  const currentSpoken = SPOKEN_PHRASES[activeSpokenIdx];
+
+  const handleNextSubhashita = () => {
+    setActiveSubhashitaIdx((prev) => (prev + 1) % SUBHASHITAS.length);
+    setActiveWordIdx(null);
+  };
+
+  const handleReciteSubhashita = () => {
+    setIsChantingSubhashita(true);
+    playPronunciation(`${currentSubhashita.line1} ${currentSubhashita.line2}`);
+    setTimeout(() => setIsChantingSubhashita(false), 3800);
+  };
+
+  const handleNextSpoken = () => {
+    setActiveSpokenIdx((prev) => (prev + 1) % SPOKEN_PHRASES.length);
+  };
+
+  const handlePlaySpoken = () => {
+    playPronunciation(currentSpoken.audioText);
+  };
+
+  const handlePlaySubhashitaWord = (wordObj: SubhashitaWord, idx: number) => {
+    setActiveWordIdx(idx);
+    playPronunciation(wordObj.sa);
+  };
+
+  const handleReciteMangalam = () => {
+    setIsChantingMangalam(true);
+    playPronunciation('ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय । ॐ शान्तिः शान्तिः शान्तिः');
+    setTimeout(() => setIsChantingMangalam(false), 4500);
+  };
+
   return (
     <main className="homepage-container">
       {/* ------------------------------------------------------------------
@@ -633,9 +795,74 @@ const HomePage: React.FC<HomePageProps> = ({
           </span>
         </h1>
 
+        {/* Sacred Mangalācaraṇam (मङ्गलाचरणम्) Invocation */}
+        <div className="home-mangalacaranam-strip" role="region" aria-label="मङ्गलाचरणम् · Sacred Invocation">
+          <div className="home-mangalacaranam-crest">
+            <span className="home-mangalacaranam-om" aria-hidden="true">ॐ</span>
+          </div>
+          <div className="home-mangalacaranam-body">
+            <div className="home-mangalacaranam-badge">
+              <span>🪷 मङ्गलाचरणम्</span>
+              <span className="home-mangalacaranam-sep">✦</span>
+              <span>बृहदारण्यकोपनिषत् (Bṛhadāraṇyaka Upaniṣad 1.3.28)</span>
+            </div>
+            <div className="home-mangalacaranam-verse">
+              ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥ ॐ शान्तिः शान्तिः शान्तिः ॥
+            </div>
+            <div className="home-mangalacaranam-translation">
+              <em>Lead me from falsehood to truth, from darkness to divine light, from mortality to immortality.</em>
+            </div>
+          </div>
+          <button
+            type="button"
+            className={`home-mangalacaranam-audio-btn${isChantingMangalam ? ' playing' : ''}`}
+            onClick={handleReciteMangalam}
+            title="Recite Sacred Mangalācaraṇam (मङ्गलाचरण-श्रवणम्)"
+            aria-label="Listen to Mangalācaraṇam chant"
+          >
+            <span className="home-mangalacaranam-icon">{isChantingMangalam ? '🔊' : '🔔'}</span>
+            <span className="home-mangalacaranam-btn-text">
+              <strong>{isChantingMangalam ? 'पाठ्यते...' : 'मङ्गलाचरणम्'}</strong>
+              <small>Listen Chant</small>
+            </span>
+          </button>
+        </div>
+
         <p className="home-hero-subtitle">
           An intuitive, interactive Gurukul learning platform engineered for <strong>complete beginners, adult self-learners, university scholars, and school students</strong>. Master Sanskrit from the alphabet to Pāṇinian grammar (Dhātupāṭha &amp; Vibhaktis), explore computational linguistics &amp; AI connections, sharpen mental agility with speed Vedic Mathematics, or study the complete CBSE/NCERT curriculum with instant word-by-word audio and translations.
         </p>
+
+        {/* Daily Spoken Sanskrit Bar (दैनिक-सम्भाषणम्) */}
+        <div className="home-spoken-phrase-pill" role="region" aria-label="दैनिक-सम्भाषणम् · Daily Spoken Sanskrit">
+          <div className="hsp-tag">
+            <span>💬</span>
+            <span>दैनिक-सम्भाषणम्</span>
+          </div>
+          <div className="hsp-content">
+            <span className="hsp-sanskrit">{currentSpoken.sa}</span>
+            <span className="hsp-translation">({currentSpoken.en})</span>
+          </div>
+          <div className="hsp-actions">
+            <button
+              type="button"
+              className="hsp-audio-btn"
+              onClick={handlePlaySpoken}
+              title="Hear Pronunciation (उच्चारण-श्रवणम्)"
+              aria-label={`Listen to ${currentSpoken.sa}`}
+            >
+              🔊
+            </button>
+            <button
+              type="button"
+              className="hsp-next-btn"
+              onClick={handleNextSpoken}
+              title="Next Spoken Phrase (अग्रिम-सम्भाषणम्)"
+              aria-label="Next Spoken Phrase"
+            >
+              ↻ अन्यत्
+            </button>
+          </div>
+        </div>
 
         {onOpenSearch && (
           <div
@@ -670,7 +897,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenOnlineClasses}
               title="Sanskrit Online Classes with Bodhi — Spoken, CBSE & Vyakaran"
             >
-              🎓 Sanskrit Online Classes
+              🎓 बोधेः ऑनलाइन-वर्गाः · Online Classes
             </button>
           )}
           {onOpenVarnamala && (
@@ -680,7 +907,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenVarnamala}
               title="Start with the Sanskrit Alphabet (वर्णमाला) & 400+ Syllables"
             >
-              🌱 Start as Beginner (Alphabet)
+              🌱 वर्णमाला-प्रवेशः · Alphabet &amp; Sounds
             </button>
           )}
           {onOpenCourse && (
@@ -695,7 +922,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenCourse}
               title="संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking 28-Lesson Course"
             >
-              🧠 Sanskrit Thinking Course
+              🧠 संस्कृत-चिन्तनम् · 28-Lesson Course
             </button>
           )}
           <button
@@ -704,7 +931,7 @@ const HomePage: React.FC<HomePageProps> = ({
             onClick={onOpenBoard}
             title="Interactive Tile Puzzle across 7 curated shelves"
           >
-            🧩 6,000+ Word Puzzles
+            🧩 जोडो शब्द-क्रीडा · 6,000+ Puzzles
           </button>
           {onOpenDhatupatha && (
             <button
@@ -714,7 +941,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenDhatupatha}
               title="Pāṇinian Dhātupāṭha Studio - 5 Lakāra conjugations, Kṛt pratyayas & word deconstructor"
             >
-              🌿 धातुपाठः (Dhātupāṭha)
+              🌿 धातुपाठः · Pāṇinian Verbs
             </button>
           )}
           <button
@@ -723,7 +950,7 @@ const HomePage: React.FC<HomePageProps> = ({
             onClick={onOpenGrammar}
             title="Vyakaran shelf - 7 Vibhaktis, Declensions, Conjugations & 17 Masterclasses"
           >
-            📚 Vyakaran (व्याकरणम्)
+            📚 व्याकरणम् · 7 Vibhaktis &amp; Rules
           </button>
           {onOpenVedicMaths && (
             <button
@@ -733,7 +960,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenVedicMaths}
               title="16 Sutras, Sub-sutras, and Lightning Mental Arithmetic"
             >
-              📐 Vaidic Gaṇitam (वैदिक-गणितम्)
+              📐 वैदिक-गणितम् · Vaidic Gaṇitam
             </button>
           )}
           <button
@@ -742,7 +969,7 @@ const HomePage: React.FC<HomePageProps> = ({
             onClick={() => onOpenReader('gsde101')}
             title="NCERT Deepakam (NEP, CBSE exam) Textbook with Audio & Word Meanings"
           >
-            📖 NCERT Deepakam (NEP, CBSE exam)
+            📖 दीपकम् (कक्षा ७–८) · School Reader
           </button>
           {onOpenCbseGuide && (
             <button
@@ -751,7 +978,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenCbseGuide}
               title="CBSE NCERT Sanskrit Exam Guide (Classes 7–10)"
             >
-              📘 CBSE Exam Guide
+              📘 परीक्षा-मार्गदर्शिका · CBSE Exam Guide
             </button>
           )}
           {onOpenPhilosophy && (
@@ -761,7 +988,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenPhilosophy}
               title="Our Philosophy · Darśana & In the Age of AI"
             >
-              🪔 Darśana · Philosophy
+              🪔 दर्शनम् · Philosophy &amp; AI
             </button>
           )}
           {onOpenQuiz && (
@@ -771,7 +998,7 @@ const HomePage: React.FC<HomePageProps> = ({
               style={{ background: '#059669', borderColor: '#059669', color: '#fff' }}
               onClick={onOpenQuiz}
             >
-              🎯 प्रश्नोत्तरी · Quiz
+              🎯 प्रश्नोत्तरी · Sanskrit Quiz
             </button>
           )}
           {onOpenWorksheets && (
@@ -780,7 +1007,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-btn-secondary"
               onClick={onOpenWorksheets}
             >
-              📚 कार्यपत्रिकाः अभ्यासपुस्तिकाश्च · Worksheets &amp; Workbooks
+              📝 कार्यपत्रिकाः · Worksheets &amp; PDFs
             </button>
           )}
           {onOpenResources && (
@@ -790,7 +1017,7 @@ const HomePage: React.FC<HomePageProps> = ({
               style={{ background: 'rgba(2, 132, 199, 0.08)', borderColor: 'rgba(2, 132, 199, 0.35)', color: '#0369a1' }}
               onClick={onOpenResources}
             >
-              🌐 साधनानि · Free Resources &amp; Vault
+              🌐 साधनानि · Free Vault &amp; Tools
             </button>
           )}
         </div>
@@ -863,28 +1090,28 @@ const HomePage: React.FC<HomePageProps> = ({
         {/* Live Platform Highlights */}
         <div className="home-stats-grid">
           <div className="home-stat-item">
-            <span className="home-stat-val">6,000+</span>
-            <span className="home-stat-label">Word Puzzles &amp; Drills</span>
+            <span className="home-stat-val">६,०००+</span>
+            <span className="home-stat-label">Word Puzzles (क्रीडाः)</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">400+</span>
-            <span className="home-stat-label">Audio Syllables &amp; Words</span>
+            <span className="home-stat-val">४००+</span>
+            <span className="home-stat-label">Audio Syllables (ध्वनयः)</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">28</span>
-            <span className="home-stat-label">Lessons in Sanskrit Course</span>
+            <span className="home-stat-val">२८</span>
+            <span className="home-stat-label">Course Lessons (पाठाः)</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">17</span>
-            <span className="home-stat-label">Pāṇinian Masterclasses</span>
+            <span className="home-stat-val">१७</span>
+            <span className="home-stat-label">Vyakaran Classes (वर्गाः)</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">16</span>
-            <span className="home-stat-label">Vedic Math Sutras</span>
+            <span className="home-stat-val">१६</span>
+            <span className="home-stat-label">Vedic Math Sutras (सूत्राणि)</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">15+</span>
-            <span className="home-stat-label">NCERT Chapters (6–8)</span>
+            <span className="home-stat-val">४०+</span>
+            <span className="home-stat-label">NCERT Chapters (अध्यायाः)</span>
           </div>
         </div>
       </section>
@@ -896,29 +1123,122 @@ const HomePage: React.FC<HomePageProps> = ({
         <div className="home-trust-item">
           <span className="home-trust-icon">🌟</span>
           <div className="home-trust-text">
-            <strong>For All Ages &amp; Levels</strong>
+            <strong>सर्वजन-हितम् · For All Ages &amp; Levels</strong>
             <span>Beginners, adult self-learners, university scholars &amp; school students</span>
           </div>
         </div>
         <div className="home-trust-item">
           <span className="home-trust-icon">🎧</span>
           <div className="home-trust-text">
-            <strong>Native Phonetic Speech</strong>
+            <strong>शुद्धोच्चारणम् · Native Phonetic Speech</strong>
             <span>Alphabet, syllable &amp; shloka audio with authentic visarga echoes</span>
           </div>
         </div>
         <div className="home-trust-item">
           <span className="home-trust-icon">🏛️</span>
           <div className="home-trust-text">
-            <strong>Classical Pāṇinian Depth</strong>
+            <strong>पाणिनीय-गम्भीरता · Classical Pāṇinian Depth</strong>
             <span>Dhātupāṭha verb engine, 7 Vibhaktis &amp; Śābdabodha semantic architecture</span>
           </div>
         </div>
         <div className="home-trust-item">
           <span className="home-trust-icon">🎒</span>
           <div className="home-trust-text">
-            <strong>CBSE &amp; NEP 2020 Aligned</strong>
-            <span>Full NCERT Deepakam curriculum (Classes 6–8) with exam preparation</span>
+            <strong>सीबीएसई-एनसीईआरटी · CBSE &amp; NEP Aligned</strong>
+            <span>Full NCERT Deepakam &amp; Sharada curriculum (Classes 7–9) with exam preparation</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------
+          दैनिक-सुभाषित-मञ्जरी (Daily Subhāṣita & Shloka Jewel)
+          ------------------------------------------------------------------ */}
+      <section className="home-subhashita-section" aria-label="दैनिक-सुभाषित-मञ्जरी · Daily Shloka Jewel">
+        <div className="home-subhashita-card">
+          <div className="hsub-header">
+            <div className="hsub-badge-group">
+              <span className="hsub-lotus" aria-hidden="true">🪷</span>
+              <div>
+                <span className="hsub-kicker">दैनिक-सुभाषित-मञ्जरी · Daily Shloka Jewel</span>
+                <h2 className="hsub-title">{currentSubhashita.categorySa} · {currentSubhashita.categoryEn}</h2>
+              </div>
+            </div>
+            <div className="hsub-header-actions">
+              <span className="hsub-counter">
+                सुभाषितम् {activeSubhashitaIdx + 1} / {SUBHASHITAS.length}
+              </span>
+              <button
+                type="button"
+                className="hsub-cycle-btn"
+                onClick={handleNextSubhashita}
+                title="Next Subhāṣita (अग्रिम-सुभाषितम्)"
+              >
+                <span>अग्रे सुभाषितम् ➔</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="hsub-shloka-box">
+            <div className="hsub-shloka-lines">
+              <div className="hsub-line">{currentSubhashita.line1}</div>
+              <div className="hsub-line">{currentSubhashita.line2}</div>
+            </div>
+            <div className="hsub-transliteration">
+              {currentSubhashita.transliteration}
+            </div>
+
+            <div className="hsub-recite-row">
+              <button
+                type="button"
+                className={`hsub-recite-btn${isChantingSubhashita ? ' chanting' : ''}`}
+                onClick={handleReciteSubhashita}
+                title="Hear Shloka Recitation with authentic phonetics"
+                aria-label={`Listen to ${currentSubhashita.line1}`}
+              >
+                <span aria-hidden="true">{isChantingSubhashita ? '🔊' : '🎶'}</span>
+                <span>{isChantingSubhashita ? 'श्लोक-पाठ्यते...' : 'श्लोक-श्रवणम् · Listen to Chanting'}</span>
+              </button>
+              <span className="hsub-source-pill">
+                📜 {currentSubhashita.source}
+              </span>
+            </div>
+          </div>
+
+          <div className="hsub-breakdown-section">
+            <div className="hsub-breakdown-heading">
+              <span>🌿 पदच्छेदः एवं प्रतिपदार्थः (Tap word to listen):</span>
+            </div>
+            <div className="hsub-word-chips">
+              {currentSubhashita.words.map((w, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className={`hsub-word-chip${activeWordIdx === idx ? ' active' : ''}`}
+                  onClick={() => handlePlaySubhashitaWord(w, idx)}
+                  title={`Pronounce "${w.sa}" · Meaning: ${w.en}`}
+                >
+                  <span className="hsub-word-sa">{w.sa}</span>
+                  <span className="hsub-word-en">{w.en}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="hsub-meanings-grid">
+            <div className="hsub-meaning-item">
+              <strong className="hsub-meaning-label">🇬🇧 English Translation:</strong>
+              <p className="hsub-meaning-text">{currentSubhashita.meaningEn}</p>
+            </div>
+            <div className="hsub-meaning-item">
+              <strong className="hsub-meaning-label">🇮🇳 हिन्दी भावार्थः:</strong>
+              <p className="hsub-meaning-text">{currentSubhashita.meaningHi}</p>
+            </div>
+          </div>
+
+          <div className="hsub-fleuron" aria-hidden="true">
+            <span>✦</span>
+            <span>॥ ॐ तत्सत् ॥</span>
+            <span>✦</span>
           </div>
         </div>
       </section>
@@ -928,8 +1248,8 @@ const HomePage: React.FC<HomePageProps> = ({
           ------------------------------------------------------------------ */}
       <section className="home-pathways-section" aria-label="Learning Pathways">
         <div className="home-section-header">
-          <span className="home-section-tag">Guided Learning Tracks</span>
-          <h2 className="home-section-title">Choose Your Learning Path</h2>
+          <span className="home-section-tag">मार्गदर्शिका · Structured Tracks</span>
+          <h2 className="home-section-title">अध्ययन-मार्गाः · Guided Learning Pathways</h2>
           <p className="home-section-subtitle">
             Whether you are learning your first Sanskrit syllable, researching Pāṇinian linguistics, computing mental math, or preparing for exams:
           </p>
@@ -940,9 +1260,9 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-pathway-card">
             <div>
               <span className="home-pathway-badge home-pathway-badge--beginner">
-                Beginner Track
+                प्रारम्भिक-मार्गः · Beginner Track
               </span>
-              <h3 className="home-pathway-title">🌱 New to Sanskrit?</h3>
+              <h3 className="home-pathway-title">🌱 वर्णमाला-प्रवेशः · New to Sanskrit?</h3>
               <p className="home-pathway-desc">
                 Hear and practice 13 vowels and 33 consonants in the Sanskrit Alphabet (वर्णमाला). Master matra combinations, 400+ interactive audio syllables, and essential starter vocabulary.
               </p>
@@ -952,7 +1272,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-pathway-btn"
               onClick={onOpenVarnamala}
             >
-              Start with Alphabet &amp; Syllables ▶
+              वर्णमाला-अभ्यासः · Start with Alphabet ▶
             </button>
           </div>
 
@@ -961,9 +1281,9 @@ const HomePage: React.FC<HomePageProps> = ({
             <div className="home-pathway-card" style={{ borderColor: '#c7d2fe' }}>
               <div>
                 <span className="home-pathway-badge home-pathway-badge--course">
-                  Structured Course
+                  क्रमबद्ध-पाठ्यक्रमः · Structured Course
                 </span>
-                <h3 className="home-pathway-title">🧠 Sanskrit as a Way of Thinking</h3>
+                <h3 className="home-pathway-title">🧠 संस्कृत-चिन्तनम् · Sanskrit Thinking Course</h3>
                 <p className="home-pathway-desc">
                   Our flagship 6-module, 28-lesson program. Learn Sanskrit through computational logic: Sound as Input → Rules as Processing → Meaning as Output, with recitation and philosophy.
                 </p>
@@ -974,7 +1294,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 style={{ background: '#4338ca', color: '#ffffff', borderColor: '#4338ca' }}
                 onClick={onOpenCourse}
               >
-                Explore 28-Lesson Course ▶
+                पाठ्यक्रम-प्रवेशः · Explore 28-Lesson Course ▶
               </button>
             </div>
           )}
@@ -983,9 +1303,9 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-pathway-card">
             <div>
               <span className="home-pathway-badge home-pathway-badge--grammar">
-                Pāṇinian Grammar
+                पाणिनीय-व्याकरणम् · Pāṇinian Grammar
               </span>
-              <h3 className="home-pathway-title">🌿 Dhātupāṭha &amp; Vyakaran</h3>
+              <h3 className="home-pathway-title">🌿 धातुपाठः एवं व्याकरणम् · Verbs &amp; Cases</h3>
               <p className="home-pathway-desc">
                 Explore the generative root science of Sanskrit. Deconstruct inflected words, generate 5-lakāra verb tables, master 7 vibhaktis (noun cases), and read 17 research masterclasses.
               </p>
@@ -995,7 +1315,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-pathway-btn"
               onClick={onOpenDhatupatha || onOpenGrammar}
             >
-              Launch Dhātupāṭha &amp; Vyakaran ▶
+              व्याकरण-मण्डलम् · Launch Dhātupāṭha &amp; Vyakaran ▶
             </button>
           </div>
 
@@ -1004,9 +1324,9 @@ const HomePage: React.FC<HomePageProps> = ({
             <div className="home-pathway-card">
               <div>
                 <span className="home-pathway-badge home-pathway-badge--maths">
-                  Speed Math &amp; Heritage
+                  वेदाङ्ग-गणितम् · Speed Math &amp; Heritage
                 </span>
-                <h3 className="home-pathway-title">⚡ Vaidic Gaṇitam (वैदिक-गणितम्)</h3>
+                <h3 className="home-pathway-title">⚡ वैदिक-गणितम् · Vaidic Gaṇitam</h3>
                 <p className="home-pathway-desc">
                   Compute 10–15× faster! Master all 16 Sutras &amp; 13 Sub-sutras, Bhāskarācārya's Līlāvatī poetic math, Piṅgala's binary Chandas, and Katapayadi mnemonics.
                 </p>
@@ -1017,7 +1337,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', color: '#ffffff', borderColor: '#b45309' }}
                 onClick={onOpenVedicMaths}
               >
-                Start Vaidic Gaṇitam ▶
+                गणित-सूत्र-शिक्षणम् · Start Vaidic Gaṇitam ▶
               </button>
             </div>
           )}
@@ -1026,9 +1346,9 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-pathway-card">
             <div>
               <span className="home-pathway-badge home-pathway-badge--school">
-                NCERT Curriculum (Classes 7–9)
+                पाठ्यपुस्तक-क्रमः · NCERT Curriculum (Classes 7–9)
               </span>
-              <h3 className="home-pathway-title">🎒 NCERT Sanskrit Textbooks</h3>
+              <h3 className="home-pathway-title">🎒 पाठ्यपुस्तकानि · NCERT Sanskrit Reader</h3>
               <p className="home-pathway-desc">
                 Follow all 15 Deepakam (Class 7), 13 Deepakam (Class 8), and 12 Sharada (Class 9) chapters sequentially. Master shloka recitation, anvaya, sandhi, and exam question drills with word-by-word grammatical breakdowns.
               </p>
@@ -1067,7 +1387,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-pathway-btn"
               onClick={() => onOpenReader('gsde101')}
             >
-              Start NCERT Reader ▶
+              एनसीईआरटी-वाचनम् · Start NCERT Reader ▶
             </button>
           </div>
         </div>
@@ -1078,8 +1398,11 @@ const HomePage: React.FC<HomePageProps> = ({
           ------------------------------------------------------------------ */}
       <section className="home-demo-section" aria-label="Interactive Word Demo">
         <div className="home-demo-header">
+          <span className="home-section-tag" style={{ margin: '0 auto 0.45rem', display: 'inline-block' }}>
+            पद-विश्लेषणम् · Lexicon Breakdown
+          </span>
           <h2 className="home-demo-title">
-            <span>✨</span> Try the Instant Word Analyzer
+            <span>✨</span> शब्द-विश्लेषणम् · Interactive Word Analyzer
           </h2>
           <p className="home-demo-desc">
             Tap any word below to experience instant pronunciation, syllable breakdown, and trilingual meanings:
@@ -1611,10 +1934,10 @@ const HomePage: React.FC<HomePageProps> = ({
           ------------------------------------------------------------------ */}
       <section className="home-features-section">
         <div className="home-section-header">
-          <span className="home-section-tag">Platform Highlights</span>
-          <h2 className="home-section-title">Built for Modern, Joyful Learning</h2>
+          <span className="home-section-tag">वैशिष्ट्यानि · Platform Highlights</span>
+          <h2 className="home-section-title">आनन्दमय-शिक्षणम् · Joyful Modern Sanskrit Learning</h2>
           <p className="home-section-subtitle">
-            Every tool in the platform is engineered to make ancient Sanskrit intuitive, engaging, and directly applicable.
+            Ancient shastric precision engineered with modern cognitive science, interactive drills, and native speech audio.
           </p>
         </div>
 
@@ -1878,8 +2201,8 @@ const HomePage: React.FC<HomePageProps> = ({
           ------------------------------------------------------------------ */}
       <section className="home-curriculum-section">
         <div className="home-section-header">
-          <span className="home-section-tag">Graded Literature &amp; School Curriculum</span>
-          <h2 className="home-section-title">Classical Literature &amp; NCERT Reader Directory (दीपकम् ७–८ &amp; शारदा ९)</h2>
+          <span className="home-section-tag">साहित्य-मञ्जूषा एवं पाठ्यपुस्तकानि · Literature &amp; Curriculum</span>
+          <h2 className="home-section-title">साहित्य-पाठ्यपुस्तक-निर्देशिका · Classical Literature &amp; NCERT Reader Directory</h2>
           <p className="home-section-subtitle">
             Explore graded classical stories, shlokas, dialogues, and official NCERT Sanskrit textbooks—दीपकम् (Classes 7 &amp; 8) and शारदा (Class 9)—with line-by-line Sanskrit text, word analysis, and parallel translations.
           </p>
