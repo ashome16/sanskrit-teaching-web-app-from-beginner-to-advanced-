@@ -1,5 +1,5 @@
-import React, { useState, lazy, Suspense } from 'react';
-import { playPronunciation } from '../utils/pronunciation';
+import React, { useState, useRef, useEffect, lazy, Suspense } from 'react';
+import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
 import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters, isFreeTrialOpenLesson } from '../utils/premiumAccess';
 import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
@@ -716,18 +716,54 @@ const HomePage: React.FC<HomePageProps> = ({
   const [isChantingSubhashita, setIsChantingSubhashita] = useState<boolean>(false);
   const [isChantingMangalam, setIsChantingMangalam] = useState<boolean>(false);
 
+  const stopMangalamRef = useRef<(() => void) | null>(null);
+  const stopSubhashitaRef = useRef<(() => void) | null>(null);
+
   const currentSubhashita = SUBHASHITAS[activeSubhashitaIdx];
   const currentSpoken = SPOKEN_PHRASES[activeSpokenIdx];
 
+  // Clean up any active recitation timers or synthesis on unmount
+  useEffect(() => {
+    return () => {
+      if (stopMangalamRef.current) stopMangalamRef.current();
+      if (stopSubhashitaRef.current) stopSubhashitaRef.current();
+      stopPronunciation();
+    };
+  }, []);
+
   const handleNextSubhashita = () => {
+    if (stopSubhashitaRef.current) stopSubhashitaRef.current();
+    stopPronunciation();
+    setIsChantingSubhashita(false);
     setActiveSubhashitaIdx((prev) => (prev + 1) % SUBHASHITAS.length);
     setActiveWordIdx(null);
   };
 
   const handleReciteSubhashita = () => {
+    if (isChantingSubhashita) {
+      if (stopSubhashitaRef.current) stopSubhashitaRef.current();
+      stopPronunciation();
+      setIsChantingSubhashita(false);
+      return;
+    }
+
+    if (stopMangalamRef.current) stopMangalamRef.current();
+    setIsChantingMangalam(false);
+
     setIsChantingSubhashita(true);
-    playPronunciation(`${currentSubhashita.line1} ${currentSubhashita.line2}`);
-    setTimeout(() => setIsChantingSubhashita(false), 3800);
+    // Break into rhythmic half-verses for proper Vedic meter and breath
+    const cleanL1 = currentSubhashita.line1.replace(/[।॥]/g, '').trim();
+    const cleanL2 = currentSubhashita.line2.replace(/[।॥]/g, '').trim();
+
+    stopSubhashitaRef.current = playSequence([cleanL1, cleanL2], {
+      gapMs: 1000, // natural poetic pause between lines
+      plainDevanagari: true,
+      rate: 0.70, // Calm, slow shloka meter
+      onDone: () => {
+        setIsChantingSubhashita(false);
+        stopSubhashitaRef.current = null;
+      },
+    });
   };
 
   const handleNextSpoken = () => {
@@ -735,18 +771,44 @@ const HomePage: React.FC<HomePageProps> = ({
   };
 
   const handlePlaySpoken = () => {
-    playPronunciation(currentSpoken.audioText);
+    playPronunciation(currentSpoken.audioText, { plainDevanagari: true, rate: 0.75 });
   };
 
   const handlePlaySubhashitaWord = (wordObj: SubhashitaWord, idx: number) => {
     setActiveWordIdx(idx);
-    playPronunciation(wordObj.sa);
+    playPronunciation(wordObj.sa, { plainDevanagari: true, rate: 0.72 });
   };
 
   const handleReciteMangalam = () => {
+    if (isChantingMangalam) {
+      if (stopMangalamRef.current) stopMangalamRef.current();
+      stopPronunciation();
+      setIsChantingMangalam(false);
+      return;
+    }
+
+    if (stopSubhashitaRef.current) stopSubhashitaRef.current();
+    setIsChantingSubhashita(false);
+
     setIsChantingMangalam(true);
-    playPronunciation('ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय । ॐ शान्तिः शान्तिः शान्तिः');
-    setTimeout(() => setIsChantingMangalam(false), 4500);
+    // Meditative, quarter-by-quarter slow chanting with respectful pauses
+    const verses = [
+      'ओम्',
+      'असतो मा सद्गमय',
+      'तमसो मा ज्योतिर्गमय',
+      'मृत्योर्माऽमृतं गमय',
+      'ओम् शान्तिः शान्तिः शान्तिः',
+    ];
+
+    stopMangalamRef.current = playSequence(verses, {
+      gapMs: 850, // peaceful breath pause between pādas
+      plainDevanagari: true,
+      rate: 0.68, // Slow, meditative, sacred chant pace
+      onDone: () => {
+        setIsChantingMangalam(false);
+        stopMangalamRef.current = null;
+      },
+    });
   };
 
   return (
@@ -817,13 +879,13 @@ const HomePage: React.FC<HomePageProps> = ({
             type="button"
             className={`home-mangalacaranam-audio-btn${isChantingMangalam ? ' playing' : ''}`}
             onClick={handleReciteMangalam}
-            title="Recite Sacred Mangalācaraṇam (मङ्गलाचरण-श्रवणम्)"
-            aria-label="Listen to Mangalācaraṇam chant"
+            title={isChantingMangalam ? 'Stop Chanting (विरामय)' : 'Recite Sacred Mangalācaraṇam at slow, peaceful pace (मङ्गलाचरण-श्रवणम्)'}
+            aria-label={isChantingMangalam ? 'Stop chant' : 'Listen to Mangalācaraṇam chant'}
           >
-            <span className="home-mangalacaranam-icon">{isChantingMangalam ? '🔊' : '🔔'}</span>
+            <span className="home-mangalacaranam-icon">{isChantingMangalam ? '⏹' : '🔔'}</span>
             <span className="home-mangalacaranam-btn-text">
-              <strong>{isChantingMangalam ? 'पाठ्यते...' : 'मङ्गलाचरणम्'}</strong>
-              <small>Listen Chant</small>
+              <strong>{isChantingMangalam ? 'विरामय (Stop)' : 'मङ्गलाचरणम्'}</strong>
+              <small>{isChantingMangalam ? 'Chanting…' : 'Slow Chant · मन्द-पठनम्'}</small>
             </span>
           </button>
         </div>
@@ -1192,11 +1254,11 @@ const HomePage: React.FC<HomePageProps> = ({
                 type="button"
                 className={`hsub-recite-btn${isChantingSubhashita ? ' chanting' : ''}`}
                 onClick={handleReciteSubhashita}
-                title="Hear Shloka Recitation with authentic phonetics"
-                aria-label={`Listen to ${currentSubhashita.line1}`}
+                title={isChantingSubhashita ? 'Stop Recitation (विरामय)' : 'Hear Shloka Recitation at a slow, clear pace'}
+                aria-label={isChantingSubhashita ? 'Stop recitation' : `Listen to ${currentSubhashita.line1}`}
               >
-                <span aria-hidden="true">{isChantingSubhashita ? '🔊' : '🎶'}</span>
-                <span>{isChantingSubhashita ? 'श्लोक-पाठ्यते...' : 'श्लोक-श्रवणम् · Listen to Chanting'}</span>
+                <span aria-hidden="true">{isChantingSubhashita ? '⏹' : '🎶'}</span>
+                <span>{isChantingSubhashita ? 'विरामय · Stop' : 'श्लोक-श्रवणम् · Slow Chant'}</span>
               </button>
               <span className="hsub-source-pill">
                 📜 {currentSubhashita.source}
