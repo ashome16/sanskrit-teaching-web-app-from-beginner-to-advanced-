@@ -1,6 +1,15 @@
 /* ==========================================================================
-   HOMEPAGE STYLES
+   HOMEPAGE STYLES · ACCESSIBLE WCAG AAA SANSKRIT SCHOLARLY PALETTE
    ========================================================================== */
+
+:root {
+  --color-scholarly-brown: #3D1B04; /* Deep Scholarly Brown (Body, headings, shlokas, labels - 11.2:1 AAA) */
+  --color-vermilion: #BA3C00;       /* Traditional Vermilion Red (CTAs, active links, borders) */
+  --color-saffron: #D97706;         /* Sacred Saffron Accent (Badges, accents, alerts, icons) */
+  --color-cream-canvas: #FDFBF7;    /* Soft Cream Canvas (Warm parchment background) */
+  --color-linen-card: #F5EFE6;      /* Structured Muted Tint (Cards, header strips, shloka boxes) */
+  --color-warm-border: #E5D7C5;     /* Warm Sand Border */
+}
 
 .homepage-container {
   grid-column: 1 / -1;
@@ -10,7 +19,8 @@
   overflow-y: auto;
   padding: 0 1rem 3.5rem;
   box-sizing: border-box;
-  color: #1f2937;
+  color: #3D1B04;
+  background-color: #FDFBF7;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -18,12 +28,13 @@
    Hero Section
    -------------------------------------------------------------------------- */
 .home-hero {
-  background: linear-gradient(135deg, #fffdf8 0%, #fdf8ee 50%, #f7efe1 100%);
-  border: 1px solid #ebdcc5;
+  background: linear-gradient(135deg, #FDFBF7 0%, #F5EFE6 100%);
+  border: 1.5px solid #E5D7C5;
+  border-top: 4px solid #BA3C00;
   border-radius: 16px;
   padding: 2.75rem 2rem 2.25rem;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(179, 71, 47, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(61, 27, 4, 0.05), 0 1px 3px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
   margin-bottom: 2.25rem;
@@ -36,7 +47,7 @@
   right: -50px;
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle, rgba(241, 199, 91, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.18) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -56,15 +67,15 @@
   height: 96px;
   object-fit: cover;
   border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(154, 52, 35, 0.16);
-  border: 2px solid #ecd8be;
+  box-shadow: 0 6px 18px rgba(61, 27, 4, 0.12);
+  border: 2px solid #E5D7C5;
   background: #ffffff;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .home-hero-logo:hover {
   transform: scale(1.04);
-  box-shadow: 0 8px 24px rgba(154, 52, 35, 0.24);
+  box-shadow: 0 8px 24px rgba(186, 60, 0, 0.2);
 }
 
 .home-hero-brand-details {
@@ -75,7 +86,7 @@
   font-family: 'Noto Sans Devanagari', Georgia, serif;
   font-size: 1.75rem;
   font-weight: 800;
-  color: #7f231c;
+  color: #3D1B04;
   letter-spacing: -0.01em;
   margin: 0;
   line-height: 1.2;
@@ -84,7 +95,7 @@
 .home-hero-org-subtitle {
   font-size: 0.88rem;
   font-weight: 700;
-  color: #b45309;
+  color: #BA3C00;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-top: 0.2rem;
@@ -94,16 +105,16 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #fff4e5;
-  border: 1px solid #eed0ae;
-  color: #9a3423;
+  background: #F5EFE6;
+  border: 1px solid #E5D7C5;
+  color: #3D1B04;
   padding: 0.35rem 1rem;
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   margin-bottom: 1.25rem;
-  box-shadow: 0 1px 2px rgba(154, 52, 35, 0.08);
+  box-shadow: 0 1px 2px rgba(61, 27, 4, 0.06);
 }
 
 .home-hero-badge-sanskrit {
@@ -122,7 +133,7 @@
   font-size: 2.85rem;
   font-weight: 900;
   line-height: 1.15;
-  color: #1e3a34;
+  color: #3D1B04;
   letter-spacing: -0.02em;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
@@ -132,11 +143,11 @@
   align-items: center;
   font-size: 1.02rem;
   font-weight: 700;
-  color: #b45309;
+  color: #BA3C00;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.06) 100%);
-  border: 1px solid rgba(217, 119, 6, 0.22);
+  background: rgba(217, 119, 6, 0.1);
+  border: 1px solid rgba(217, 119, 6, 0.28);
   padding: 0.25rem 0.95rem;
   border-radius: 999px;
   margin-top: 0.1rem;
@@ -155,48 +166,49 @@
 .home-dev-pill {
   font-size: 1.22rem;
   font-weight: 700;
-  color: #8c2d19;
-  background: #ffffff;
-  border: 1px solid #fed7aa;
+  color: #3D1B04;
+  background: #FDFBF7;
+  border: 1.5px solid #E5D7C5;
   padding: 0.22rem 0.85rem;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(180, 83, 9, 0.06);
+  box-shadow: 0 2px 6px rgba(61, 27, 4, 0.04);
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .home-dev-pill:hover {
   transform: translateY(-1px);
-  border-color: #f59e0b;
-  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.12);
+  border-color: #BA3C00;
+  color: #BA3C00;
+  box-shadow: 0 4px 12px rgba(186, 60, 0, 0.12);
 }
 
 .home-dev-bullet {
-  color: #f59e0b;
+  color: #D97706;
   font-size: 0.72rem;
-  opacity: 0.85;
+  opacity: 0.95;
 }
 
 .home-hero-subtitle {
   max-width: 760px;
   margin: 0 auto 1.85rem;
   font-size: 1.15rem;
-  line-height: 1.6;
-  color: #5c5348;
+  line-height: 1.65;
+  color: #3D1B04;
 }
 
 .home-hero-search-box {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: #ffffff;
-  border: 1.5px solid #d8ceba;
+  background: #FDFBF7;
+  border: 1.5px solid #E5D7C5;
   border-radius: 999px;
   padding: 0.65rem 1.25rem;
   margin: 0 auto 1.85rem;
   max-width: 580px;
   width: 90%;
-  box-shadow: 0 4px 16px rgba(39, 59, 53, 0.07);
+  box-shadow: 0 4px 16px rgba(61, 27, 4, 0.06);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: left;
@@ -204,36 +216,36 @@
 
 .home-hero-search-box:hover,
 .home-hero-search-box:focus-visible {
-  border-color: #b3472f;
+  border-color: #BA3C00;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(179, 71, 47, 0.14);
+  box-shadow: 0 8px 24px rgba(186, 60, 0, 0.14);
   outline: none;
 }
 
 .home-hero-search-icon {
   font-size: 1.15rem;
-  color: #78716c;
+  color: #BA3C00;
   flex-shrink: 0;
 }
 
 .home-hero-search-text {
   flex: 1;
   font-size: 0.95rem;
-  color: #78716c;
+  color: #3D1B04;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .home-hero-search-badge {
-  background: #f7f3eb;
-  border: 1px solid #d8ceba;
-  border-bottom: 2px solid #b3a794;
+  background: #F5EFE6;
+  border: 1px solid #E5D7C5;
+  border-bottom: 2px solid #BA3C00;
   border-radius: 6px;
   padding: 0.15rem 0.55rem;
   font-size: 0.76rem;
   font-weight: 700;
-  color: #5c5349;
+  color: #3D1B04;
   flex-shrink: 0;
 }
 
@@ -247,7 +259,7 @@
 }
 
 .home-btn-primary {
-  background: #b3472f;
+  background: #BA3C00;
   color: #ffffff;
   border: none;
   border-radius: 999px;
@@ -255,7 +267,7 @@
   font-size: 1.05rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(179, 71, 47, 0.28);
+  box-shadow: 0 4px 14px rgba(186, 60, 0, 0.28);
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
@@ -263,15 +275,15 @@
 }
 
 .home-btn-primary:hover {
-  background: #9a3423;
+  background: #963000;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(179, 71, 47, 0.35);
+  box-shadow: 0 6px 18px rgba(186, 60, 0, 0.38);
 }
 
 .home-btn-secondary {
-  background: #ffffff;
-  color: #273b35;
-  border: 1.5px solid #d4ccbd;
+  background: #F5EFE6;
+  color: #3D1B04;
+  border: 1.5px solid #E5D7C5;
   border-radius: 999px;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -281,20 +293,20 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 3px rgba(61, 27, 4, 0.04);
 }
 
 .home-btn-secondary:hover {
-  background: #fdfaf3;
-  border-color: #b3472f;
-  color: #b3472f;
+  background: #FDFBF7;
+  border-color: #BA3C00;
+  color: #BA3C00;
   transform: translateY(-2px);
 }
 
 .home-btn-accent {
-  background: #273b35;
-  color: #f1c75b;
-  border: none;
+  background: #3D1B04;
+  color: #ffffff;
+  border: 1.5px solid #3D1B04;
   border-radius: 999px;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -307,9 +319,10 @@
 }
 
 .home-btn-accent:hover {
-  background: #17251f;
+  background: #241002;
+  border-color: #BA3C00;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(39, 59, 53, 0.3);
+  box-shadow: 0 4px 14px rgba(61, 27, 4, 0.3);
 }
 
 /* --------------------------------------------------------------------------
@@ -321,7 +334,7 @@
   gap: 1.25rem 1rem;
   max-width: 1050px;
   margin: 0 auto;
-  border-top: 1px solid #ebdcc5;
+  border-top: 1px solid #E5D7C5;
   padding-top: 1.5rem;
 }
 
@@ -335,14 +348,14 @@
 .home-stat-val {
   font-size: 1.65rem;
   font-weight: 800;
-  color: #b3472f;
+  color: #BA3C00;
   line-height: 1;
 }
 
 .home-stat-label {
   font-size: 0.82rem;
-  color: #6b6258;
-  font-weight: 600;
+  color: #3D1B04;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
@@ -354,12 +367,12 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
-  background: #ffffff;
-  border: 1px solid #e7dfd3;
+  background: #F5EFE6;
+  border: 1.5px solid #E5D7C5;
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
   margin-bottom: 2.25rem;
-  box-shadow: 0 3px 12px rgba(39, 59, 53, 0.04);
+  box-shadow: 0 3px 12px rgba(61, 27, 4, 0.04);
 }
 
 .home-trust-item {
@@ -376,8 +389,8 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: #fdf8ee;
-  border: 1px solid #fae6c0;
+  background: #FDFBF7;
+  border: 1px solid #E5D7C5;
   border-radius: 10px;
 }
 
@@ -389,14 +402,14 @@
 
 .home-trust-text strong {
   font-size: 0.92rem;
-  font-weight: 700;
-  color: #273b35;
+  font-weight: 800;
+  color: #3D1B04;
   line-height: 1.25;
 }
 
 .home-trust-text span {
   font-size: 0.8rem;
-  color: #64748b;
+  color: #3D1B04;
   line-height: 1.35;
 }
 
@@ -404,12 +417,12 @@
    Live Interactive Word Demo Section
    -------------------------------------------------------------------------- */
 .home-demo-section {
-  background: #ffffff;
-  border: 1px solid #e5dfd5;
+  background: #FDFBF7;
+  border: 1.5px solid #E5D7C5;
   border-radius: 14px;
   padding: 1.75rem 2rem;
   margin-bottom: 2.25rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 16px rgba(61, 27, 4, 0.04);
 }
 
 .home-demo-header {
@@ -420,7 +433,7 @@
 .home-demo-title {
   font-size: 1.35rem;
   font-weight: 800;
-  color: #273b35;
+  color: #3D1B04;
   margin: 0 0 0.4rem;
   display: flex;
   align-items: center;
@@ -430,7 +443,7 @@
 
 .home-demo-desc {
   font-size: 0.95rem;
-  color: #6b6258;
+  color: #3D1B04;
   margin: 0;
 }
 
@@ -443,14 +456,14 @@
 }
 
 .home-demo-chip {
-  background: #faf7f0;
-  border: 1.5px solid #ded6c8;
+  background: #F5EFE6;
+  border: 1.5px solid #E5D7C5;
   border-radius: 999px;
   padding: 0.45rem 0.95rem;
   font-family: 'Noto Sans Devanagari', Georgia, serif;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #273b35;
+  color: #3D1B04;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -459,18 +472,18 @@
 }
 
 .home-demo-chip:hover {
-  background: #fffdf8;
-  border-color: #b3472f;
-  color: #b3472f;
+  background: #FDFBF7;
+  border-color: #BA3C00;
+  color: #BA3C00;
   transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(179, 71, 47, 0.15);
+  box-shadow: 0 2px 8px rgba(186, 60, 0, 0.15);
 }
 
 .home-demo-chip.active {
-  background: #b3472f;
-  border-color: #9a3423;
+  background: #BA3C00;
+  border-color: #963000;
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(179, 71, 47, 0.3);
+  box-shadow: 0 2px 8px rgba(186, 60, 0, 0.3);
 }
 
 .home-demo-chip-icon {
@@ -478,9 +491,9 @@
 }
 
 .home-demo-result-card {
-  background: #fdfbf7;
-  border: 1.5px solid #e8decb;
-  border-left: 5px solid #b3472f;
+  background: #F5EFE6;
+  border: 1.5px solid #E5D7C5;
+  border-left: 5px solid #BA3C00;
   border-radius: 10px;
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -502,20 +515,20 @@
   font-family: 'Noto Sans Devanagari', Georgia, serif;
   font-size: 2.2rem;
   font-weight: 800;
-  color: #1f1a14;
+  color: #3D1B04;
   line-height: 1;
 }
 
 .home-demo-translit {
   font-size: 1.15rem;
   font-style: italic;
-  color: #8a7550;
+  color: #3D1B04;
   font-family: Georgia, serif;
 }
 
 .home-demo-speaker-btn {
-  background: #f6efdf;
-  border: 1px solid #e3d5b3;
+  background: #FDFBF7;
+  border: 1px solid #E5D7C5;
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
@@ -525,10 +538,12 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.15s ease, background 0.15s ease;
+  color: #BA3C00;
 }
 
 .home-demo-speaker-btn:hover {
-  background: #efe1bc;
+  background: #BA3C00;
+  color: #ffffff;
   transform: scale(1.08);
 }
 
@@ -539,14 +554,14 @@
 
 .home-demo-meaning-en {
   font-size: 1.2rem;
-  font-weight: 700;
-  color: #273b35;
+  font-weight: 800;
+  color: #3D1B04;
   margin: 0 0 0.25rem;
 }
 
 .home-demo-meaning-sub {
   font-size: 0.9rem;
-  color: #5c5348;
+  color: #3D1B04;
   margin: 0;
   display: flex;
   gap: 0.75rem;
@@ -554,8 +569,8 @@
 }
 
 .home-demo-action-btn {
-  background: #273b35;
-  color: #f1c75b;
+  background: #3D1B04;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   padding: 0.65rem 1.15rem;
@@ -566,7 +581,7 @@
 }
 
 .home-demo-action-btn:hover {
-  background: #17251f;
+  background: #BA3C00;
   transform: translateY(-1px);
 }
 
@@ -583,7 +598,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #b3472f;
+  color: #BA3C00;
   margin-bottom: 0.35rem;
   display: block;
 }
@@ -591,14 +606,14 @@
 .home-section-title {
   font-size: 2rem;
   font-weight: 800;
-  color: #273b35;
+  color: #3D1B04;
   margin: 0 0 0.5rem;
   letter-spacing: -0.01em;
 }
 
 .home-section-subtitle {
   font-size: 1.05rem;
-  color: #6b6258;
+  color: #3D1B04;
   max-width: 680px;
   margin: 0 auto;
 }
@@ -611,11 +626,11 @@
 }
 
 .home-feature-card {
-  background: #ffffff;
-  border: 1px solid #e8e2d7;
+  background: #FDFBF7;
+  border: 1.5px solid #E5D7C5;
   border-radius: 14px;
   padding: 1.75rem;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 3px 12px rgba(61, 27, 4, 0.03);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -626,8 +641,8 @@
 
 .home-feature-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  border-color: #d4a89a;
+  box-shadow: 0 8px 24px rgba(186, 60, 0, 0.12);
+  border-color: #BA3C00;
 }
 
 .home-feature-card-top {
@@ -647,11 +662,11 @@
 }
 
 .home-feature-badge {
-  background: #fbf5ed;
-  border: 1px solid #edd5c1;
-  color: #9a3423;
+  background: #F5EFE6;
+  border: 1px solid #E5D7C5;
+  color: #BA3C00;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   padding: 0.25rem 0.65rem;
@@ -661,14 +676,14 @@
 .home-feature-title {
   font-size: 1.35rem;
   font-weight: 800;
-  color: #273b35;
+  color: #3D1B04;
   margin: 0 0 0.5rem;
 }
 
 .home-feature-desc {
   font-size: 0.95rem;
   line-height: 1.55;
-  color: #5c5348;
+  color: #3D1B04;
   margin: 0;
 }
 
@@ -683,7 +698,7 @@
 
 .home-feature-points li {
   font-size: 0.88rem;
-  color: #4a433a;
+  color: #3D1B04;
   display: flex;
   align-items: center;
   gap: 0.45rem;
@@ -691,15 +706,15 @@
 
 .home-feature-points li::before {
   content: '✓';
-  color: #b3472f;
+  color: #BA3C00;
   font-weight: 800;
 }
 
 .home-feature-btn {
-  background: #fcf9f2;
-  border: 1px solid #dcd4c6;
+  background: #F5EFE6;
+  border: 1.5px solid #E5D7C5;
   border-radius: 8px;
-  color: #273b35;
+  color: #3D1B04;
   font-size: 0.92rem;
   font-weight: 700;
   padding: 0.65rem 1.15rem;
@@ -711,21 +726,21 @@
 }
 
 .home-feature-btn:hover {
-  background: #273b35;
-  color: #f1c75b;
-  border-color: #273b35;
+  background: #BA3C00;
+  color: #ffffff;
+  border-color: #BA3C00;
 }
 
 /* --------------------------------------------------------------------------
    Curriculum Directory (Class 7 Deepakam All 15 Lessons)
    -------------------------------------------------------------------------- */
 .home-curriculum-section {
-  background: #ffffff;
-  border: 1px solid #e5dfd5;
+  background: #FDFBF7;
+  border: 1.5px solid #E5D7C5;
   border-radius: 16px;
   padding: 2.25rem 2rem;
   margin-bottom: 2.75rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 16px rgba(61, 27, 4, 0.04);
 }
 
 /* Curriculum Controls */
@@ -752,33 +767,34 @@
   font-size: 1.1rem;
   pointer-events: none;
   opacity: 0.7;
+  color: #BA3C00;
 }
 
 .home-curriculum-search-input {
   width: 100%;
   padding: 0.75rem 2.5rem 0.75rem 2.85rem;
   border-radius: 999px;
-  border: 1.5px solid #d4cbbd;
-  background: #fdfbf7;
+  border: 1.5px solid #E5D7C5;
+  background: #F5EFE6;
   font-size: 0.95rem;
-  color: #273b35;
+  color: #3D1B04;
   transition: all 0.2s ease;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 1px 3px rgba(61, 27, 4, 0.04);
 }
 
 .home-curriculum-search-input:focus {
   outline: none;
-  border-color: #b3472f;
-  background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(179, 71, 47, 0.15);
+  border-color: #BA3C00;
+  background: #FDFBF7;
+  box-shadow: 0 0 0 3px rgba(186, 60, 0, 0.15);
 }
 
 .home-curriculum-search-clear {
   position: absolute;
   right: 0.85rem;
-  background: #e8decb;
+  background: #E5D7C5;
   border: none;
-  color: #6b6258;
+  color: #3D1B04;
   font-size: 0.8rem;
   width: 22px;
   height: 22px;
@@ -791,8 +807,8 @@
 }
 
 .home-curriculum-search-clear:hover {
-  background: #cbb89e;
-  color: #1f1a14;
+  background: #BA3C00;
+  color: #ffffff;
 }
 
 .home-curriculum-filters {
@@ -809,9 +825,9 @@
   gap: 0.4rem;
   padding: 0.45rem 0.95rem;
   border-radius: 999px;
-  border: 1px solid #dfd8cc;
-  background: #fbf9f4;
-  color: #5c5247;
+  border: 1px solid #E5D7C5;
+  background: #F5EFE6;
+  color: #3D1B04;
   font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
@@ -819,28 +835,28 @@
 }
 
 .home-filter-btn:hover {
-  border-color: #b3472f;
-  color: #b3472f;
-  background: #ffffff;
+  border-color: #BA3C00;
+  color: #BA3C00;
+  background: #FDFBF7;
 }
 
 .home-filter-btn.active {
-  background: #273b35;
-  color: #f6ecd6;
-  border-color: #273b35;
-  box-shadow: 0 2px 8px rgba(39, 59, 53, 0.2);
+  background: #BA3C00;
+  color: #ffffff;
+  border-color: #BA3C00;
+  box-shadow: 0 2px 8px rgba(186, 60, 0, 0.25);
 }
 
 .home-filter-count {
   font-size: 0.75rem;
-  opacity: 0.8;
-  background: rgba(0, 0, 0, 0.08);
+  opacity: 0.85;
+  background: rgba(61, 27, 4, 0.08);
   padding: 0.1rem 0.45rem;
   border-radius: 999px;
 }
 
 .home-filter-btn.active .home-filter-count {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   color: #fff;
 }
 
@@ -848,8 +864,8 @@
 .home-curriculum-empty {
   text-align: center;
   padding: 3rem 1.5rem;
-  background: #fdfaf4;
-  border: 1px dashed #d5cbb8;
+  background: #F5EFE6;
+  border: 1px dashed #E5D7C5;
   border-radius: 12px;
   margin-top: 1rem;
 }
@@ -857,13 +873,13 @@
 .home-empty-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #273b35;
+  color: #3D1B04;
   margin: 0 0 0.5rem;
 }
 
 .home-empty-desc {
   font-size: 0.95rem;
-  color: #6b6258;
+  color: #3D1B04;
   margin: 0 0 1.25rem;
 }
 
@@ -875,8 +891,8 @@
 }
 
 .home-chapter-card {
-  background: #faf7f0;
-  border: 1px solid #e8decb;
+  background: #F5EFE6;
+  border: 1.5px solid #E5D7C5;
   border-radius: 12px;
   padding: 1.25rem;
   display: flex;
@@ -888,10 +904,10 @@
 }
 
 .home-chapter-card:hover {
-  background: #fffdf8;
-  border-color: #b3472f;
+  background: #FDFBF7;
+  border-color: #BA3C00;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(179, 71, 47, 0.12);
+  box-shadow: 0 6px 18px rgba(186, 60, 0, 0.14);
 }
 
 .home-chapter-card-top {
@@ -904,7 +920,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  border-top: 1px dashed #e5dbcb;
+  border-top: 1px dashed #E5D7C5;
   padding-top: 0.75rem;
 }
 
@@ -925,9 +941,9 @@
 .home-genre-badge {
   font-size: 0.68rem;
   font-weight: 600;
-  background: #e9f3ef;
-  color: #1b533f;
-  border: 1px solid #cde4db;
+  background: #FDFBF7;
+  color: #BA3C00;
+  border: 1px solid #E5D7C5;
   padding: 0.12rem 0.5rem;
   border-radius: 999px;
   white-space: nowrap;
@@ -937,7 +953,7 @@
   font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: #b3472f;
+  color: #BA3C00;
   letter-spacing: 0.04em;
 }
 
@@ -949,21 +965,21 @@
   font-family: 'Noto Sans Devanagari', Georgia, serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #1f1a14;
+  color: #3D1B04;
   margin: 0.25rem 0 0.25rem;
   line-height: 1.3;
 }
 
 .home-chapter-meaning-en {
   font-size: 0.84rem;
-  color: #6b6258;
+  color: #3D1B04;
   margin: 0;
   line-height: 1.35;
 }
 
 .home-chapter-theme-desc {
   font-size: 0.82rem;
-  color: #554b42;
+  color: #3D1B04;
   line-height: 1.4;
   margin: 0.5rem 0 0;
   display: -webkit-box;
@@ -974,9 +990,9 @@
 
 .home-grammar-tag {
   font-size: 0.78rem;
-  color: #8c4228;
-  background: #fbf2ea;
-  border: 1px solid #f2dbcb;
+  color: #3D1B04;
+  background: #FDFBF7;
+  border: 1px solid #E5D7C5;
   padding: 0.3rem 0.55rem;
   border-radius: 6px;
   line-height: 1.35;
@@ -984,7 +1000,7 @@
 
 .home-grammar-tag-label {
   font-weight: 700;
-  color: #9a3423;
+  color: #BA3C00;
 }
 
 .home-chapter-footer-row {
@@ -996,7 +1012,7 @@
 .home-chapter-read-cta {
   font-size: 0.78rem;
   font-weight: 700;
-  color: #8c4228;
+  color: #BA3C00;
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -1017,14 +1033,14 @@
 }
 
 .home-pathway-card {
-  background: #ffffff;
-  border: 1.5px solid #e5ded3;
+  background: #FDFBF7;
+  border: 1.5px solid #E5D7C5;
   border-radius: 12px;
   padding: 1.5rem 1.35rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 8px rgba(61, 27, 4, 0.03);
 }
 
 .home-pathway-badge {
@@ -1052,9 +1068,9 @@
 }
 
 .home-pathway-badge--school {
-  background: #fdf3e2;
-  color: #a35d07;
-  border: 1px solid #f6d8a3;
+  background: #F5EFE6;
+  color: #BA3C00;
+  border: 1px solid #E5D7C5;
 }
 
 .home-pathway-badge--grammar {
@@ -1072,22 +1088,22 @@
 .home-pathway-title {
   font-size: 1.2rem;
   font-weight: 800;
-  color: #273b35;
+  color: #3D1B04;
   margin: 0 0 0.5rem;
 }
 
 .home-pathway-desc {
   font-size: 0.9rem;
   line-height: 1.5;
-  color: #5c5348;
+  color: #3D1B04;
   margin: 0 0 1.25rem;
 }
 
 .home-pathway-btn {
-  background: #faf7f0;
-  border: 1px solid #d4ccbd;
+  background: #F5EFE6;
+  border: 1px solid #E5D7C5;
   border-radius: 6px;
-  color: #273b35;
+  color: #3D1B04;
   font-size: 0.88rem;
   font-weight: 700;
   padding: 0.55rem 1rem;
@@ -1097,35 +1113,36 @@
 }
 
 .home-pathway-btn:hover {
-  background: #b3472f;
+  background: #BA3C00;
   color: #ffffff;
-  border-color: #b3472f;
+  border-color: #BA3C00;
 }
 
 /* --------------------------------------------------------------------------
    Footer Quote / Call to Action
    -------------------------------------------------------------------------- */
 .home-footer-cta {
-  background: #273b35;
+  background: #3D1B04;
   color: #ffffff;
   border-radius: 14px;
+  border-top: 4px solid #BA3C00;
   padding: 2.25rem 2rem;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(39, 59, 53, 0.2);
+  box-shadow: 0 8px 24px rgba(61, 27, 4, 0.2);
 }
 
 .home-footer-shloka {
   font-family: 'Noto Sans Devanagari', Georgia, serif;
   font-size: 1.65rem;
   font-weight: 700;
-  color: #f1c75b;
+  color: #F5EFE6;
   margin: 0 0 0.5rem;
   line-height: 1.35;
 }
 
 .home-footer-meaning {
   font-size: 1rem;
-  color: #d6e2dc;
+  color: #E5D7C5;
   font-style: italic;
   margin: 0 0 1.5rem;
 }
@@ -1151,19 +1168,19 @@
   font-family: 'Noto Sans Devanagari', Georgia, serif;
   font-size: 1.25rem;
   font-weight: 800;
-  color: #f8fafc;
+  color: #FDFBF7;
 }
 
 .home-footer-brand-sub {
   font-size: 0.8rem;
-  color: #f1c75b;
+  color: #D97706;
   display: block;
 }
 
 .home-footer-support {
   margin: 1.25rem auto 1.5rem;
   padding: 1rem 1.5rem;
-  background: rgba(0, 0, 0, 0.22);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   max-width: 640px;
@@ -1172,7 +1189,7 @@
 .home-footer-support-title {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #fcd34d;
+  color: #D97706;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 0.45rem;
@@ -1198,13 +1215,13 @@
 }
 
 .home-footer-support-link:hover {
-  color: #fcd34d;
+  color: #D97706;
   text-decoration: underline;
 }
 
 .home-footer-cbse-note {
   font-size: 0.82rem;
-  color: #cbd5e1;
+  color: #E5D7C5;
   margin-top: 0.6rem;
   line-height: 1.4;
 }
@@ -1230,9 +1247,9 @@
 }
 
 .home-footer-link:hover {
-  background: #f1c75b;
-  color: #273b35;
-  border-color: #f1c75b;
+  background: #BA3C00;
+  color: #ffffff;
+  border-color: #BA3C00;
 }
 
 /* --------------------------------------------------------------------------
@@ -1373,14 +1390,14 @@
 }
 
 .home-ncert-book-card {
-  background: #ffffff;
-  border: 1.5px solid #e7decb;
+  background: #FDFBF7;
+  border: 1.5px solid #E5D7C5;
   border-radius: 14px;
   padding: 1.15rem;
   display: flex;
   gap: 1.1rem;
   align-items: flex-start;
-  box-shadow: 0 4px 14px rgba(180, 160, 140, 0.08);
+  box-shadow: 0 4px 14px rgba(61, 27, 4, 0.05);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: left;
   position: relative;
@@ -1389,8 +1406,8 @@
 
 .home-ncert-book-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(179, 71, 47, 0.15);
-  border-color: #d17a61;
+  box-shadow: 0 10px 24px rgba(186, 60, 0, 0.15);
+  border-color: #BA3C00;
 }
 
 .home-ncert-book-cover-wrap {
@@ -1442,21 +1459,21 @@
   font-family: 'Noto Sans Devanagari', Georgia, serif;
   font-size: 1.25rem;
   font-weight: 800;
-  color: #1f1a14;
+  color: #3D1B04;
   margin: 0 0 0.15rem;
   line-height: 1.25;
 }
 
 .home-ncert-book-subtitle {
   font-size: 0.79rem;
-  color: #6b6258;
+  color: #3D1B04;
   margin: 0 0 0.55rem;
   line-height: 1.35;
 }
 
 .home-ncert-book-stats {
   font-size: 0.74rem;
-  color: #8c7e6d;
+  color: #3D1B04;
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
@@ -1469,7 +1486,7 @@
 }
 
 .home-ncert-book-btn-primary {
-  background: #b3472f;
+  background: #BA3C00;
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -1484,14 +1501,14 @@
 }
 
 .home-ncert-book-btn-primary:hover {
-  background: #8e3522;
-  box-shadow: 0 2px 8px rgba(179, 71, 47, 0.25);
+  background: #963000;
+  box-shadow: 0 2px 8px rgba(186, 60, 0, 0.25);
 }
 
 .home-ncert-book-btn-secondary {
-  background: #f5ede0;
-  color: #78350f;
-  border: 1px solid #e8decb;
+  background: #F5EFE6;
+  color: #3D1B04;
+  border: 1px solid #E5D7C5;
   border-radius: 6px;
   padding: 0.35rem 0.65rem;
   font-size: 0.78rem;
@@ -1501,8 +1518,9 @@
 }
 
 .home-ncert-book-btn-secondary:hover {
-  background: #ebe0cf;
-  border-color: #d4c5b2;
+  background: #FDFBF7;
+  border-color: #BA3C00;
+  color: #BA3C00;
 }
 
 /* Chapter Card Profile Picture Thumbnails */
@@ -1520,8 +1538,8 @@
 
 .home-chapter-card:hover .home-chapter-profile-thumb {
   transform: scale(1.06);
-  box-shadow: 0 4px 12px rgba(179, 71, 47, 0.2);
-  border-color: #b3472f;
+  box-shadow: 0 4px 12px rgba(186, 60, 0, 0.2);
+  border-color: #BA3C00;
 }
 
 .home-chapter-profile-img {
@@ -1539,15 +1557,15 @@
   align-items: center;
   margin-bottom: 0.85rem;
   padding: 0.45rem 0.75rem;
-  background: #f8f4eb;
-  border: 1px solid #e6dcce;
+  background: #F5EFE6;
+  border: 1px solid #E5D7C5;
   border-radius: 10px;
 }
 
 .home-grade-filter-label {
   font-size: 0.75rem;
   font-weight: 800;
-  color: #786c5e;
+  color: #3D1B04;
   text-transform: uppercase;
   margin-right: 0.25rem;
 }
@@ -1558,9 +1576,9 @@
   gap: 0.4rem;
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
-  border: 1px solid #dacfc2;
-  background: #ffffff;
-  color: #4a4036;
+  border: 1px solid #E5D7C5;
+  background: #FDFBF7;
+  color: #3D1B04;
   font-size: 0.76rem;
   font-weight: 700;
   cursor: pointer;
@@ -1568,16 +1586,16 @@
 }
 
 .home-grade-filter-btn:hover {
-  background: #fcf9f2;
-  border-color: #b3472f;
-  color: #b3472f;
+  background: #F5EFE6;
+  border-color: #BA3C00;
+  color: #BA3C00;
 }
 
 .home-grade-filter-btn.active {
-  background: #b3472f;
-  border-color: #b3472f;
+  background: #BA3C00;
+  border-color: #BA3C00;
   color: #ffffff;
-  box-shadow: 0 2px 6px rgba(179, 71, 47, 0.25);
+  box-shadow: 0 2px 6px rgba(186, 60, 0, 0.25);
 }
 
 .home-grade-filter-thumb {
@@ -1601,12 +1619,12 @@
   gap: 1.25rem;
   max-width: 860px;
   margin: 1.25rem auto 1.5rem;
-  background: linear-gradient(135deg, #fffcf4 0%, #fef8eb 50%, #fdf2dc 100%);
-  border: 1.5px solid #fed7aa;
-  border-left: 5px solid #d97706;
+  background: #F5EFE6;
+  border: 1.5px solid #E5D7C5;
+  border-left: 5px solid #D97706;
   border-radius: 14px;
   padding: 0.95rem 1.35rem;
-  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.08);
+  box-shadow: 0 4px 16px rgba(61, 27, 4, 0.06);
   text-align: left;
   position: relative;
   overflow: hidden;
@@ -1623,7 +1641,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  background: linear-gradient(135deg, #D97706 0%, #BA3C00 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -1631,7 +1649,7 @@
   font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
   font-size: 1.75rem;
   font-weight: 900;
-  box-shadow: 0 3px 10px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 3px 10px rgba(186, 60, 0, 0.25);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -1645,15 +1663,15 @@
   align-items: center;
   gap: 0.4rem;
   font-size: 0.76rem;
-  font-weight: 700;
-  color: #92400e;
+  font-weight: 800;
+  color: #BA3C00;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 0.25rem;
 }
 
 .home-mangalacaranam-sep {
-  color: #f59e0b;
+  color: #D97706;
   font-size: 0.65rem;
 }
 
@@ -1661,13 +1679,13 @@
   font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #78350f;
+  color: #3D1B04;
   line-height: 1.45;
 }
 
 .home-mangalacaranam-translation {
   font-size: 0.85rem;
-  color: #854d0e;
+  color: #3D1B04;
   margin-top: 0.2rem;
   line-height: 1.35;
 }
@@ -1677,7 +1695,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  background: #BA3C00;
   color: #ffffff;
   border: none;
   border-radius: 999px;
@@ -1685,15 +1703,15 @@
   font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(180, 83, 9, 0.25);
+  box-shadow: 0 3px 10px rgba(186, 60, 0, 0.25);
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .home-mangalacaranam-audio-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(180, 83, 9, 0.35);
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 6px 16px rgba(186, 60, 0, 0.35);
+  background: #963000;
 }
 
 .home-mangalacaranam-audio-btn.playing {
@@ -1735,20 +1753,20 @@
   max-width: 780px;
   width: 90%;
   margin: 0 auto 1.5rem;
-  background: #ffffff;
-  border: 1.5px solid #fed7aa;
+  background: #F5EFE6;
+  border: 1.5px solid #E5D7C5;
   border-radius: 999px;
   padding: 0.45rem 0.85rem 0.45rem 1.1rem;
-  box-shadow: 0 3px 12px rgba(180, 83, 9, 0.08);
+  box-shadow: 0 3px 12px rgba(61, 27, 4, 0.05);
 }
 
 .hsp-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: #fef3c7;
-  color: #92400e;
-  border: 1px solid #fde68a;
+  background: #FDFBF7;
+  color: #BA3C00;
+  border: 1px solid #D97706;
   border-radius: 999px;
   padding: 0.2rem 0.65rem;
   font-size: 0.74rem;
@@ -1773,12 +1791,12 @@
   font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
   font-size: 0.98rem;
   font-weight: 700;
-  color: #78350f;
+  color: #3D1B04;
 }
 
 .hsp-translation {
   font-size: 0.82rem;
-  color: #78716c;
+  color: #3D1B04;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1792,9 +1810,9 @@
 }
 
 .hsp-audio-btn {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
-  color: #b45309;
+  background: #FDFBF7;
+  border: 1px solid #E5D7C5;
+  color: #BA3C00;
   border-radius: 50%;
   width: 32px;
   height: 32px;
@@ -1807,15 +1825,16 @@
 }
 
 .hsp-audio-btn:hover {
-  background: #fef3c7;
+  background: #BA3C00;
+  color: #ffffff;
   transform: scale(1.08);
-  border-color: #f59e0b;
+  border-color: #BA3C00;
 }
 
 .hsp-next-btn {
-  background: #ffffff;
-  border: 1px solid #e7dfd3;
-  color: #78716c;
+  background: #FDFBF7;
+  border: 1px solid #E5D7C5;
+  color: #3D1B04;
   border-radius: 999px;
   padding: 0.25rem 0.65rem;
   font-size: 0.75rem;
@@ -1826,9 +1845,9 @@
 }
 
 .hsp-next-btn:hover {
-  background: #fdfbf7;
-  color: #b45309;
-  border-color: #fed7aa;
+  background: #BA3C00;
+  color: #ffffff;
+  border-color: #BA3C00;
 }
 
 /* 3. Daily Subhāṣita & Shloka Jewel (दैनिक-सुभाषित-मञ्जरी) */
@@ -1838,11 +1857,11 @@
 }
 
 .home-subhashita-card {
-  background: linear-gradient(135deg, #fffdf8 0%, #fefcf5 40%, #fbf4e4 100%);
-  border: 2px solid #e8d7be;
+  background: #FDFBF7;
+  border: 2px solid #E5D7C5;
   border-radius: 18px;
   padding: 1.85rem 2.25rem;
-  box-shadow: 0 8px 30px rgba(180, 83, 9, 0.08), inset 0 0 50px rgba(245, 158, 11, 0.03);
+  box-shadow: 0 8px 30px rgba(61, 27, 4, 0.06);
   position: relative;
   overflow: hidden;
 }
@@ -1854,7 +1873,7 @@
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #f59e0b 0%, #b45309 50%, #d97706 100%);
+  background: linear-gradient(90deg, #D97706 0%, #BA3C00 50%, #3D1B04 100%);
 }
 
 .hsub-header {
@@ -1864,7 +1883,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1.35rem;
-  border-bottom: 1px solid #ebdcc5;
+  border-bottom: 1px solid #E5D7C5;
   padding-bottom: 1rem;
 }
 
@@ -1883,7 +1902,7 @@
   display: block;
   font-size: 0.78rem;
   font-weight: 800;
-  color: #b45309;
+  color: #D97706;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -1892,7 +1911,7 @@
   font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
   font-size: 1.3rem;
   font-weight: 800;
-  color: #7f231c;
+  color: #BA3C00;
   margin: 0.15rem 0 0;
   line-height: 1.25;
 }
@@ -1904,9 +1923,9 @@
 }
 
 .hsub-counter {
-  background: #fdf8ee;
-  border: 1px solid #fae6c0;
-  color: #92400e;
+  background: #F5EFE6;
+  border: 1px solid #E5D7C5;
+  color: #3D1B04;
   border-radius: 999px;
   padding: 0.25rem 0.75rem;
   font-size: 0.78rem;
@@ -1915,31 +1934,31 @@
 }
 
 .hsub-cycle-btn {
-  background: #ffffff;
-  border: 1.5px solid #ebdcc5;
-  color: #9a3423;
+  background: #F5EFE6;
+  border: 1.5px solid #E5D7C5;
+  color: #3D1B04;
   border-radius: 999px;
   padding: 0.4rem 1rem;
   font-size: 0.84rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 6px rgba(61, 27, 4, 0.04);
 }
 
 .hsub-cycle-btn:hover {
-  background: #fff7ed;
-  border-color: #d97706;
-  color: #b45309;
+  background: #BA3C00;
+  border-color: #BA3C00;
+  color: #ffffff;
   transform: translateX(2px);
 }
 
 .hsub-shloka-box {
-  background: #ffffff;
-  border: 1.5px solid #ecd8be;
+  background: #F5EFE6;
+  border: 1.5px solid #E5D7C5;
   border-radius: 14px;
   padding: 1.5rem 1.75rem;
-  box-shadow: 0 4px 16px rgba(180, 83, 9, 0.05);
+  box-shadow: 0 4px 16px rgba(61, 27, 4, 0.04);
   margin-bottom: 1.35rem;
   text-align: center;
 }
@@ -1955,7 +1974,7 @@
   font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
   font-size: 1.55rem;
   font-weight: 800;
-  color: #7f231c;
+  color: #3D1B04;
   line-height: 1.5;
   letter-spacing: 0.01em;
 }
@@ -1963,7 +1982,7 @@
 .hsub-transliteration {
   font-style: italic;
   font-size: 1rem;
-  color: #78716c;
+  color: #3D1B04;
   line-height: 1.5;
   max-width: 680px;
   margin: 0 auto 1.25rem;
@@ -1976,14 +1995,14 @@
   flex-wrap: wrap;
   gap: 0.85rem;
   padding-top: 0.75rem;
-  border-top: 1px dashed #ebdcc5;
+  border-top: 1px dashed #E5D7C5;
 }
 
 .hsub-recite-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #b3472f 0%, #9a3423 100%);
+  background: #BA3C00;
   color: #ffffff;
   border: none;
   border-radius: 999px;
@@ -1991,14 +2010,14 @@
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(179, 71, 47, 0.28);
+  box-shadow: 0 4px 14px rgba(186, 60, 0, 0.28);
   transition: all 0.2s ease;
 }
 
 .hsub-recite-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(179, 71, 47, 0.38);
-  background: linear-gradient(135deg, #c45238 0%, #a83826 100%);
+  box-shadow: 0 6px 18px rgba(186, 60, 0, 0.38);
+  background: #963000;
 }
 
 .hsub-recite-btn.chanting {
@@ -2015,9 +2034,9 @@
 .hsub-source-pill {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #78350f;
-  background: #fffbeb;
-  border: 1px solid #fde68a;
+  color: #3D1B04;
+  background: #FDFBF7;
+  border: 1px solid #E5D7C5;
   border-radius: 999px;
   padding: 0.3rem 0.85rem;
 }
@@ -2030,7 +2049,7 @@
 .hsub-breakdown-heading {
   font-size: 0.85rem;
   font-weight: 800;
-  color: #78350f;
+  color: #BA3C00;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 0.65rem;
@@ -2046,8 +2065,8 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  background: #ffffff;
-  border: 1.5px solid #ded6c8;
+  background: #F5EFE6;
+  border: 1.5px solid #E5D7C5;
   border-radius: 10px;
   padding: 0.4rem 0.75rem;
   cursor: pointer;
@@ -2056,18 +2075,18 @@
 }
 
 .hsub-word-chip:hover {
-  background: #fdf8ee;
-  border-color: #d97706;
+  background: #FDFBF7;
+  border-color: #BA3C00;
   transform: translateY(-2px);
-  box-shadow: 0 3px 8px rgba(217, 119, 6, 0.15);
+  box-shadow: 0 3px 8px rgba(186, 60, 0, 0.15);
 }
 
 .hsub-word-chip.active {
-  background: #b3472f;
-  border-color: #9a3423;
+  background: #BA3C00;
+  border-color: #963000;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(179, 71, 47, 0.3);
+  box-shadow: 0 4px 12px rgba(186, 60, 0, 0.3);
 }
 
 .hsub-word-chip.active .hsub-word-sa,
@@ -2079,12 +2098,12 @@
   font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #7f231c;
+  color: #3D1B04;
 }
 
 .hsub-word-en {
   font-size: 0.74rem;
-  color: #64748b;
+  color: #3D1B04;
   font-weight: 600;
 }
 
@@ -2093,8 +2112,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
-  background: #ffffff;
-  border: 1px solid #ebdcc5;
+  background: #F5EFE6;
+  border: 1px solid #E5D7C5;
   border-radius: 12px;
   padding: 1.15rem 1.45rem;
   margin-bottom: 1rem;
@@ -2104,14 +2123,14 @@
   display: block;
   font-size: 0.85rem;
   font-weight: 800;
-  color: #273b35;
+  color: #BA3C00;
   margin-bottom: 0.35rem;
 }
 
 .hsub-meaning-text {
   margin: 0;
   font-size: 0.92rem;
-  color: #4b5563;
+  color: #3D1B04;
   line-height: 1.5;
 }
 
@@ -2120,12 +2139,12 @@
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
-  color: #d97706;
+  color: #D97706;
   font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  opacity: 0.85;
+  opacity: 0.9;
   margin-top: 0.85rem;
 }
 

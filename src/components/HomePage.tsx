@@ -826,10 +826,6 @@ const HomePage: React.FC<HomePageProps> = ({
             width={68}
             height={68}
           />
-          <div className="home-hero-brand-details">
-            <h2 className="home-hero-org-title">EdNet Learn Gurukul</h2>
-            <div className="home-hero-org-subtitle">गुरुकुलम् · Sanskrit &amp; Vedic Studies for All Learners</div>
-          </div>
         </div>
 
         <div className="home-hero-badge">
@@ -1758,8 +1754,9 @@ const HomePage: React.FC<HomePageProps> = ({
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <span style={{
             display: 'inline-block',
-            background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
-            color: '#92400e',
+            background: '#F5EFE6',
+            color: '#BA3C00',
+            border: '1px solid #D97706',
             fontWeight: 800,
             fontSize: '0.8rem',
             padding: '0.35rem 0.85rem',
@@ -1770,10 +1767,10 @@ const HomePage: React.FC<HomePageProps> = ({
           }}>
             🎥 Curated Video Masterclasses
           </span>
-          <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.6rem 0' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#3D1B04', margin: '0 0 0.6rem 0' }}>
             The Science of Sound &amp; Shapes
           </h2>
-          <p style={{ fontSize: '1rem', color: '#64748b', maxWidth: '650px', margin: '0 auto', lineHeight: 1.55 }}>
+          <p style={{ fontSize: '1rem', color: '#3D1B04', maxWidth: '650px', margin: '0 auto', lineHeight: 1.55 }}>
             Watch these curated documentary masterclasses exploring the neurological precision of Sanskrit phonetics and the ancient geometry of Vedic mathematics.
           </p>
         </div>
@@ -1785,10 +1782,10 @@ const HomePage: React.FC<HomePageProps> = ({
         }}>
           {/* Video 1: Science of Sound */}
           <div style={{
-            background: '#ffffff',
+            background: '#FDFBF7',
             borderRadius: '16px',
-            border: '1px solid #e2e8f0',
-            boxShadow: '0 6px 24px rgba(0, 0, 0, 0.06)',
+            border: '1.5px solid #E5D7C5',
+            boxShadow: '0 6px 24px rgba(61, 27, 4, 0.06)',
             overflow: 'hidden',
             display: 'flex',
             flexDirection: 'column',
@@ -1806,8 +1803,9 @@ const HomePage: React.FC<HomePageProps> = ({
               <div>
                 <span style={{
                   display: 'inline-block',
-                  background: '#f3e8ff',
-                  color: '#7e22ce',
+                  background: '#F5EFE6',
+                  color: '#BA3C00',
+                  border: '1px solid #E5D7C5',
                   fontSize: '0.72rem',
                   fontWeight: 800,
                   padding: '0.2rem 0.55rem',
@@ -1816,22 +1814,22 @@ const HomePage: React.FC<HomePageProps> = ({
                 }}>
                   SANSKRIT PHONETICS &amp; NEURO-ACOUSTICS
                 </span>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#3D1B04', margin: '0 0 0.5rem 0' }}>
                   Sanskrit: The Science of Sound
                 </h3>
-                <p style={{ fontSize: '0.86rem', color: '#64748b', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ fontSize: '0.86rem', color: '#3D1B04', lineHeight: 1.5, margin: 0 }}>
                   Discover how the 5 vocal articulation points (Kaṇṭhya to Oṣṭhya), acoustic vibrations, and resonance stimulate cranial reflexes in the human nervous system.
                 </p>
               </div>
-              <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Curated by Conscious Cosmos</span>
+              <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #E5D7C5', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span style={{ fontSize: '0.78rem', color: '#3D1B04', opacity: 0.85 }}>Curated by Conscious Cosmos</span>
                 <button
                   type="button"
                   onClick={onOpenVarnamala}
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: '#b45309',
+                    color: '#BA3C00',
                     fontWeight: 700,
                     fontSize: '0.82rem',
                     cursor: 'pointer',
@@ -1846,10 +1844,10 @@ const HomePage: React.FC<HomePageProps> = ({
 
           {/* Video 2: Vedic Geometry */}
           <div style={{
-            background: '#ffffff',
+            background: '#FDFBF7',
             borderRadius: '16px',
-            border: '1px solid #e2e8f0',
-            boxShadow: '0 6px 24px rgba(0, 0, 0, 0.06)',
+            border: '1.5px solid #E5D7C5',
+            boxShadow: '0 6px 24px rgba(61, 27, 4, 0.06)',
             overflow: 'hidden',
             display: 'flex',
             flexDirection: 'column',
@@ -1867,8 +1865,9 @@ const HomePage: React.FC<HomePageProps> = ({
               <div>
                 <span style={{
                   display: 'inline-block',
-                  background: '#ecfdf5',
-                  color: '#065f46',
+                  background: '#F5EFE6',
+                  color: '#BA3C00',
+                  border: '1px solid #E5D7C5',
                   fontSize: '0.72rem',
                   fontWeight: 800,
                   padding: '0.2rem 0.55rem',
@@ -1877,22 +1876,22 @@ const HomePage: React.FC<HomePageProps> = ({
                 }}>
                   ŚULBA SŪTRAS &amp; SACRED GEOMETRY
                 </span>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#3D1B04', margin: '0 0 0.5rem 0' }}>
                   Vedic Geometry: The Science of Shapes
                 </h3>
-                <p style={{ fontSize: '0.86rem', color: '#64748b', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ fontSize: '0.86rem', color: '#3D1B04', lineHeight: 1.5, margin: 0 }}>
                   Explore how ancient Indian mathematicians used cords, geometric transformations, and Baudhāyana's Theorem centuries before Pythagoras to design sacred altars.
                 </p>
               </div>
-              <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span style={{ fontSize: '0.78rem', color: '#94a3b8' }}>Curated by Conscious Cosmos</span>
+              <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #E5D7C5', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span style={{ fontSize: '0.78rem', color: '#3D1B04', opacity: 0.85 }}>Curated by Conscious Cosmos</span>
                 <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', flexWrap: 'wrap' }}>
                   {onOpenScienceLab && (
                     <button
                       type="button"
                       onClick={() => onOpenScienceLab('vedic-geometry')}
                       style={{
-                        background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+                        background: '#BA3C00',
                         border: 'none',
                         color: '#ffffff',
                         fontWeight: 800,
@@ -1900,7 +1899,7 @@ const HomePage: React.FC<HomePageProps> = ({
                         padding: '0.35rem 0.75rem',
                         borderRadius: '6px',
                         cursor: 'pointer',
-                        boxShadow: '0 2px 8px rgba(245, 158, 11, 0.25)',
+                        boxShadow: '0 2px 8px rgba(186, 60, 0, 0.25)',
                       }}
                     >
                       Open Vedic Geometry Lab ➔
@@ -1913,7 +1912,7 @@ const HomePage: React.FC<HomePageProps> = ({
                       style={{
                         background: 'none',
                         border: 'none',
-                        color: '#b45309',
+                        color: '#BA3C00',
                         fontWeight: 700,
                         fontSize: '0.8rem',
                         cursor: 'pointer',
