@@ -233,7 +233,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
           <span>
             {isSuspended
               ? 'Sound ON · Tap anywhere to awaken morning birdsong'
-              : 'Sound ON · Tulsi-Seva, Mayūra & Birds'}
+              : 'Sound ON · Vedic Tapovana Gurukul at Dawn'}
           </span>
           {!isSuspended && (
             <div className="gurukul-sound-waves" aria-hidden="true">
