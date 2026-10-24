@@ -839,7 +839,7 @@ const HomePage: React.FC<HomePageProps> = ({
         <GurukulEntranceIntro
           onComplete={handleIntroComplete}
           targetLogoId="home-hero-crest-logo"
-          autoAdvanceMs={4000}
+          autoAdvanceMs={8500}
         />
       )}
       <main className="homepage-container">

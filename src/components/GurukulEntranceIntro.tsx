@@ -11,16 +11,18 @@ interface GurukulEntranceIntroProps {
 export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
   onComplete,
   targetLogoId = 'home-hero-crest-logo',
-  autoAdvanceMs = 4000,
+  autoAdvanceMs = 8500,
 }) => {
   const [isExiting, setIsExiting] = useState(false);
   const [isFlying, setIsFlying] = useState(false);
   const [flyStyle, setFlyStyle] = useState<React.CSSProperties>({});
   const [isMuted, setIsMuted] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [secondsLeft, setSecondsLeft] = useState(() => Math.ceil(autoAdvanceMs / 1000));
 
   const logoRef = useRef<HTMLImageElement | null>(null);
   const timerRef = useRef<number | null>(null);
+  const countdownIntervalRef = useRef<number | null>(null);
 
   // Start soundscape on mount
   useEffect(() => {
@@ -29,13 +31,19 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
     }
     gurukulAmbiance.startDawnAmbiance();
 
-    // Auto-advance after specified time if user hasn't clicked
+    // Visual countdown
+    countdownIntervalRef.current = window.setInterval(() => {
+      setSecondsLeft((prev) => (prev > 1 ? prev - 1 : 1));
+    }, 1000);
+
+    // Auto-advance after lingering duration if user hasn't clicked
     timerRef.current = window.setTimeout(() => {
       triggerExit();
     }, autoAdvanceMs);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
+      if (countdownIntervalRef.current) clearInterval(countdownIntervalRef.current);
       gurukulAmbiance.stopDawnAmbiance(0.6);
     };
   }, [autoAdvanceMs]);
@@ -48,6 +56,10 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
     if (timerRef.current) {
       clearTimeout(timerRef.current);
       timerRef.current = null;
+    }
+    if (countdownIntervalRef.current) {
+      clearInterval(countdownIntervalRef.current);
+      countdownIntervalRef.current = null;
     }
 
     // Fade out audio gracefully
@@ -181,9 +193,9 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
         </p>
 
         {/* Bioacoustic Sound Indicator */}
-        <div className="gurukul-intro-sound-pill" aria-label="Bioacoustic birdsong and peacock playing">
+        <div className="gurukul-intro-sound-pill" aria-label="Bioacoustic birdsong, peacock, and sacred river ambiance playing">
           <span>🌿</span>
-          <span>Forest Dawn · Songbirds &amp; Mayūra · Temple Chimes</span>
+          <span>तुलसी-सेवा · Forest Birds &amp; Mayūra · Sacred Stream</span>
           <div className="gurukul-sound-waves" aria-hidden="true">
             <div className="gurukul-sound-bar" />
             <div className="gurukul-sound-bar" />
@@ -213,6 +225,22 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             <span>{isMuted ? '🔇' : '🔊'}</span>
             <span>{isMuted ? 'Sound Muted' : 'Sound On'}</span>
           </button>
+        </div>
+
+        {/* Lingering Indicator & Progress Bar */}
+        <div className="gurukul-intro-linger-wrap" aria-live="polite">
+          <div className="gurukul-intro-linger-hint">
+            <span className="gurukul-intro-linger-pulse">⏳</span>
+            <span>
+              Press button to enter, or entering in <strong>{secondsLeft}s</strong>
+            </span>
+          </div>
+          <div className="gurukul-intro-linger-track">
+            <div
+              className="gurukul-intro-linger-bar"
+              style={{ animationDuration: `${autoAdvanceMs}ms` }}
+            />
+          </div>
         </div>
       </div>
     </div>

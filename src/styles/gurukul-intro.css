@@ -404,6 +404,65 @@
   transform: translateY(-1px);
 }
 
+/* Lingering Countdown & Progress Bar */
+.gurukul-intro-linger-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.15rem;
+  max-width: 340px;
+  width: 100%;
+}
+
+.gurukul-intro-linger-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  color: #fef3c7;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.gurukul-intro-linger-hint strong {
+  color: #fbbf24;
+  font-weight: 800;
+}
+
+.gurukul-intro-linger-pulse {
+  animation: hourglassFlip 2.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes hourglassFlip {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+}
+
+.gurukul-intro-linger-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.gurukul-intro-linger-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #BA3C00, #D97706, #fbbf24);
+  border-radius: 999px;
+  animation: lingerFill linear forwards;
+}
+
+@keyframes lingerFill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
 /* Replay Button on Homepage */
 .home-hero-replay-btn {
   display: inline-flex;
