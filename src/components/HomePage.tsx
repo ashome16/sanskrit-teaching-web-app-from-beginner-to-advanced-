@@ -857,19 +857,9 @@ const HomePage: React.FC<HomePageProps> = ({
               width={76}
               height={76}
               onClick={() => setShowEntranceIntro(true)}
-              title="Click to replay Gurukul Dawn Intro & Morning Birdsong"
+              title="EdNet Gurukul"
               style={{ cursor: 'pointer' }}
             />
-            <button
-              type="button"
-              className="home-hero-replay-btn"
-              onClick={() => setShowEntranceIntro(true)}
-              title="Replay Gurukul Dawn Intro & Morning Birdsong"
-              aria-label="Replay Gurukul Dawn Intro & Morning Birdsong"
-            >
-              <span>🌅</span>
-              <span>Gurukul Dawn Intro</span>
-            </button>
           </div>
 
         <div className="home-hero-badge">
