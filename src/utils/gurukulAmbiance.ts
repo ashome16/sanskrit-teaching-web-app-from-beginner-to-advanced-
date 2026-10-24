@@ -7,6 +7,7 @@
  * - Resonant bronze sacred temple bell chime (432 Hz)
  * - Gentle sacred river / forest brook water ripple (Nadi-jaladhvani)
  * Zero external audio dependencies, instant playback, mobile & Safari compatible.
+ * SOUND IS ON BY DEFAULT on initial load.
  */
 
 class GurukulAmbianceEngine {
@@ -37,8 +38,21 @@ class GurukulAmbianceEngine {
     return this.ctx;
   }
 
+  public isSuspended(): boolean {
+    return !!this.ctx && this.ctx.state === 'suspended';
+  }
+
+  public async resume(): Promise<void> {
+    const ctx = this.getContext();
+    if (ctx && ctx.state === 'suspended') {
+      try {
+        await ctx.resume();
+      } catch {}
+    }
+  }
+
   /**
-   * Ensure mobile browsers (iOS Safari, Android Chrome) unpause audio on first user touch/click
+   * Ensure mobile and desktop browsers (iOS Safari, Chrome, Edge) unpause audio on first user touch/click/movement
    */
   public registerUnlockListeners(): void {
     if (this.hasRegisteredUnlock || typeof window === 'undefined') return;
@@ -50,8 +64,18 @@ class GurukulAmbianceEngine {
       }
     };
 
-    ['pointerdown', 'touchstart', 'click', 'keydown'].forEach((eventName) => {
+    [
+      'pointerdown',
+      'touchstart',
+      'click',
+      'keydown',
+      'pointermove',
+      'mousemove',
+      'wheel',
+      'scroll',
+    ].forEach((eventName) => {
       window.addEventListener(eventName, unlockHandler, { once: true, passive: true });
+      document.addEventListener(eventName, unlockHandler, { once: true, passive: true });
     });
   }
 
@@ -60,7 +84,7 @@ class GurukulAmbianceEngine {
     if (this.masterGain && this.ctx) {
       const now = this.ctx.currentTime;
       this.masterGain.gain.cancelScheduledValues(now);
-      this.masterGain.gain.linearRampToValueAtTime(muted ? 0 : 0.85, now + 0.1);
+      this.masterGain.gain.linearRampToValueAtTime(muted ? 0 : 0.95, now + 0.08);
     }
   }
 
@@ -105,7 +129,7 @@ class GurukulAmbianceEngine {
         osc.frequency.exponentialRampToValueAtTime(baseFreq * 0.85, chirpStart + chirpDur);
 
         gain.gain.setValueAtTime(0.001, chirpStart);
-        gain.gain.linearRampToValueAtTime(0.18 + Math.random() * 0.1, chirpStart + 0.01);
+        gain.gain.linearRampToValueAtTime(0.24 + Math.random() * 0.1, chirpStart + 0.01);
         gain.gain.exponentialRampToValueAtTime(0.001, chirpStart + chirpDur);
 
         if (pan) {
@@ -155,7 +179,7 @@ class GurukulAmbianceEngine {
       osc1.frequency.exponentialRampToValueAtTime(740, now + 0.12);
 
       gain1.gain.setValueAtTime(0.001, now);
-      gain1.gain.linearRampToValueAtTime(0.18, now + 0.02);
+      gain1.gain.linearRampToValueAtTime(0.24, now + 0.02);
       gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
 
       osc1.connect(gain1);
@@ -173,7 +197,7 @@ class GurukulAmbianceEngine {
       osc2.frequency.linearRampToValueAtTime(980, note2Start + 0.38);
 
       gain2.gain.setValueAtTime(0.001, note2Start);
-      gain2.gain.linearRampToValueAtTime(0.24, note2Start + 0.04);
+      gain2.gain.linearRampToValueAtTime(0.32, note2Start + 0.04);
       gain2.gain.exponentialRampToValueAtTime(0.001, note2Start + 0.42);
 
       osc2.connect(gain2);
@@ -216,7 +240,7 @@ class GurukulAmbianceEngine {
       osc1.frequency.exponentialRampToValueAtTime(690, now + 0.16);
 
       gain1.gain.setValueAtTime(0.001, now);
-      gain1.gain.linearRampToValueAtTime(0.14, now + 0.03);
+      gain1.gain.linearRampToValueAtTime(0.18, now + 0.03);
       gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
 
       osc1.connect(filter1);
@@ -249,8 +273,8 @@ class GurukulAmbianceEngine {
       oscHarmonic.frequency.exponentialRampToValueAtTime(700 * 1.5, start2 + 0.58);
 
       gain2.gain.setValueAtTime(0.001, start2);
-      gain2.gain.linearRampToValueAtTime(0.2, start2 + 0.05);
-      gain2.gain.setValueAtTime(0.18, start2 + 0.26);
+      gain2.gain.linearRampToValueAtTime(0.28, start2 + 0.05);
+      gain2.gain.setValueAtTime(0.24, start2 + 0.26);
       gain2.gain.exponentialRampToValueAtTime(0.001, start2 + 0.62);
 
       osc2.connect(filter2);
@@ -279,11 +303,11 @@ class GurukulAmbianceEngine {
 
       // Inharmonic bell partials: fundamental, minor third, octave, fifth
       const partials = [
-        { mult: 1.0, gain: 0.35, decay: 3.2 },
-        { mult: 1.5, gain: 0.18, decay: 2.8 },
-        { mult: 2.76, gain: 0.14, decay: 2.0 },
-        { mult: 4.07, gain: 0.08, decay: 1.4 },
-        { mult: 5.4, gain: 0.04, decay: 0.9 },
+        { mult: 1.0, gain: 0.48, decay: 3.5 },
+        { mult: 1.5, gain: 0.25, decay: 3.0 },
+        { mult: 2.76, gain: 0.18, decay: 2.2 },
+        { mult: 4.07, gain: 0.10, decay: 1.5 },
+        { mult: 5.4, gain: 0.05, decay: 0.9 },
       ];
 
       partials.forEach((p) => {
@@ -351,7 +375,7 @@ class GurukulAmbianceEngine {
 
       this.streamGain = ctx.createGain();
       this.streamGain.gain.setValueAtTime(0.001, ctx.currentTime);
-      this.streamGain.gain.linearRampToValueAtTime(0.045, ctx.currentTime + 1.2);
+      this.streamGain.gain.linearRampToValueAtTime(0.055, ctx.currentTime + 1.0);
 
       this.streamSource.connect(filter);
       filter.connect(this.streamGain);
@@ -367,20 +391,21 @@ class GurukulAmbianceEngine {
    * Start the full Gurukul dawn soundscape:
    * Ambient morning birdsong, Mayūra (peacock), Kokila (cuckoo),
    * resonant bell, and serene forest brook ripple.
+   * Sound is explicitly ON.
    */
   public startDawnAmbiance(): void {
     if (this.isPlaying) return;
     try {
+      this.isMuted = false;
       const ctx = this.getContext();
       if (!ctx) return;
 
       this.isPlaying = true;
       const now = ctx.currentTime;
 
-      // Initialize master gain
+      // Initialize master gain immediately at 0.95 so initial bell strike is crisp and loud
       this.masterGain = ctx.createGain();
-      this.masterGain.gain.setValueAtTime(this.isMuted ? 0 : 0.001, now);
-      this.masterGain.gain.linearRampToValueAtTime(this.isMuted ? 0 : 0.85, now + 0.8);
+      this.masterGain.gain.setValueAtTime(0.95, now);
       this.masterGain.connect(ctx.destination);
 
       // 1. Initial greeting temple bell chime
@@ -392,28 +417,39 @@ class GurukulAmbianceEngine {
       // 3. Welcoming morning songbird chirp
       const t1 = window.setTimeout(() => {
         if (this.isPlaying) this.playSongbirdChirp(-0.4);
-      }, 350);
+      }, 300);
       this.timeoutIds.push(t1);
 
       // 4. Iconic Indian Kokila / Cuckoo call (ku-OO)
       const t2 = window.setTimeout(() => {
         if (this.isPlaying) this.playKokilaCall(0.4);
-      }, 980);
+      }, 950);
       this.timeoutIds.push(t2);
 
       // 5. Authentic Tapovana Peacock (Mayūra) call (Pee-au!)
       const t3 = window.setTimeout(() => {
         if (this.isPlaying) this.playPeacockCall(-0.35);
-      }, 1750);
+      }, 1700);
       this.timeoutIds.push(t3);
 
       // 6. Responsive songbird answering from other side of Tapovana
       const t4 = window.setTimeout(() => {
         if (this.isPlaying) this.playSongbirdChirp(0.5);
-      }, 2600);
+      }, 2500);
       this.timeoutIds.push(t4);
 
-      // 7. Recurring organic birdsong & animal calls loop
+      // 7. Second Kokila & Peacock dawn exchange
+      const t5 = window.setTimeout(() => {
+        if (this.isPlaying) {
+          this.playKokilaCall(-0.35);
+          setTimeout(() => {
+            if (this.isPlaying) this.playPeacockCall(0.35);
+          }, 350);
+        }
+      }, 4200);
+      this.timeoutIds.push(t5);
+
+      // 8. Recurring organic birdsong & animal calls loop
       const soundscapeInterval = window.setInterval(() => {
         if (!this.isPlaying) return;
         const roll = Math.random();

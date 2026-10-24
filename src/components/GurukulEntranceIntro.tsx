@@ -17,24 +17,35 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
   const [isFlying, setIsFlying] = useState(false);
   const [flyStyle, setFlyStyle] = useState<React.CSSProperties>({});
   const [isMuted, setIsMuted] = useState(false);
+  const [isSuspended, setIsSuspended] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(() => Math.ceil(autoAdvanceMs / 1000));
 
   const logoRef = useRef<HTMLImageElement | null>(null);
   const timerRef = useRef<number | null>(null);
   const countdownIntervalRef = useRef<number | null>(null);
+  const suspendedCheckRef = useRef<number | null>(null);
 
-  // Start soundscape on mount
+  // Start soundscape on mount with Sound ON
   useEffect(() => {
     if (typeof window !== 'undefined' && window.scrollY > 0) {
       window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
     }
+    gurukulAmbiance.setMuted(false);
+    void gurukulAmbiance.resume();
     gurukulAmbiance.startDawnAmbiance();
 
     // Visual countdown
     countdownIntervalRef.current = window.setInterval(() => {
       setSecondsLeft((prev) => (prev > 1 ? prev - 1 : 1));
     }, 1000);
+
+    // Check if browser policy suspended audio
+    const checkSuspended = () => {
+      setIsSuspended(gurukulAmbiance.isSuspended());
+    };
+    checkSuspended();
+    suspendedCheckRef.current = window.setInterval(checkSuspended, 350);
 
     // Auto-advance after lingering duration if user hasn't clicked
     timerRef.current = window.setTimeout(() => {
@@ -44,6 +55,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
       if (countdownIntervalRef.current) clearInterval(countdownIntervalRef.current);
+      if (suspendedCheckRef.current) clearInterval(suspendedCheckRef.current);
       gurukulAmbiance.stopDawnAmbiance(0.6);
     };
   }, [autoAdvanceMs]);
@@ -127,6 +139,20 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
     <div
       className={`gurukul-intro-overlay ${isExiting ? 'is-exiting' : ''}`}
       onClick={handleContainerClick}
+      onPointerDown={() => {
+        void gurukulAmbiance.resume();
+        setIsSuspended(false);
+      }}
+      onTouchStart={() => {
+        void gurukulAmbiance.resume();
+        setIsSuspended(false);
+      }}
+      onMouseMove={() => {
+        if (gurukulAmbiance.isSuspended()) {
+          void gurukulAmbiance.resume();
+          setIsSuspended(false);
+        }
+      }}
       role="dialog"
       aria-label="Gurukul Welcome Entrance"
     >
@@ -193,15 +219,30 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
         </p>
 
         {/* Bioacoustic Sound Indicator */}
-        <div className="gurukul-intro-sound-pill" aria-label="Bioacoustic birdsong, peacock, and sacred river ambiance playing">
-          <span>🌿</span>
-          <span>तुलसी-सेवा · Forest Birds &amp; Mayūra · Sacred Stream</span>
-          <div className="gurukul-sound-waves" aria-hidden="true">
-            <div className="gurukul-sound-bar" />
-            <div className="gurukul-sound-bar" />
-            <div className="gurukul-sound-bar" />
-            <div className="gurukul-sound-bar" />
-          </div>
+        <div
+          className={`gurukul-intro-sound-pill${isSuspended ? ' is-suspended-prompt' : ''}`}
+          aria-label="Bioacoustic birdsong, peacock, and sacred river ambiance playing"
+          onClick={(e) => {
+            e.stopPropagation();
+            void gurukulAmbiance.resume();
+            setIsSuspended(false);
+          }}
+          title={isSuspended ? 'Tap to awaken morning soundscape' : 'Morning soundscape is ON'}
+        >
+          <span>{isSuspended ? '🔊' : '🌿'}</span>
+          <span>
+            {isSuspended
+              ? 'Sound ON · Tap anywhere to awaken morning birdsong'
+              : 'Sound ON · Tulsi-Seva, Mayūra & Birds'}
+          </span>
+          {!isSuspended && (
+            <div className="gurukul-sound-waves" aria-hidden="true">
+              <div className="gurukul-sound-bar" />
+              <div className="gurukul-sound-bar" />
+              <div className="gurukul-sound-bar" />
+              <div className="gurukul-sound-bar" />
+            </div>
+          )}
         </div>
 
         {/* Controls */}
