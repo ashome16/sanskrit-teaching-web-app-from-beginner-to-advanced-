@@ -659,6 +659,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [isGrade9ModalOpen, setIsGrade9ModalOpen] = useState<boolean>(false);
   const [isFlashcardModalOpen, setIsFlashcardModalOpen] = useState<boolean>(false);
   const [selectedGradeFilter, setSelectedGradeFilter] = useState<'all' | '7' | '8' | '9'>('all');
+  const [isLogoArrived, setIsLogoArrived] = useState<boolean>(false);
   const [showEntranceIntro, setShowEntranceIntro] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
     try {
@@ -671,6 +672,10 @@ const HomePage: React.FC<HomePageProps> = ({
 
   const handleIntroComplete = useCallback(() => {
     setShowEntranceIntro(false);
+    setIsLogoArrived(true);
+    setTimeout(() => {
+      setIsLogoArrived(false);
+    }, 1200);
     try {
       sessionStorage.setItem('ednet_gurukul_intro_seen', 'true');
     } catch {}
@@ -813,7 +818,7 @@ const HomePage: React.FC<HomePageProps> = ({
       'ओम्',
       'असतो मा सद्गमय',
       'तमसो मा ज्योतिर्गमय',
-      'मृत्योर्मा अमृतम् गमय',
+      'मृत्योर्मा, अमृतम् गमय',
       'ओम् शान्तिः शान्तिः शान्तिः',
     ];
 
@@ -834,7 +839,7 @@ const HomePage: React.FC<HomePageProps> = ({
         <GurukulEntranceIntro
           onComplete={handleIntroComplete}
           targetLogoId="home-hero-crest-logo"
-          autoAdvanceMs={3600}
+          autoAdvanceMs={4000}
         />
       )}
       <main className="homepage-container">
@@ -848,7 +853,7 @@ const HomePage: React.FC<HomePageProps> = ({
               id="home-hero-crest-logo"
               src="/logo.jpg"
               alt="EdNet Gurukul - Learn Sanskrit Online &amp; Vedic Mathematics"
-              className="home-hero-logo"
+              className={`home-hero-logo${isLogoArrived ? ' is-arrived' : ''}`}
               width={76}
               height={76}
               onClick={() => setShowEntranceIntro(true)}

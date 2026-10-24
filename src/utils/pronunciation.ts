@@ -73,11 +73,11 @@ const applyWordOverrides = (word: string): string => {
   if (word === 'शषसर्') return 'श ष स र्';
   if (word === 'हल्') return 'ह ल्';
 
-  // Avagraha in Asato Ma mantra: prevents voice from swallowing the initial 'a' in amṛtam
-  if (word.includes('मृत्योर्माऽमृत') || word.includes('मृत्योर्मा अमृत')) {
+  // Avagraha in Asato Ma mantra: comma forces a brief breath pause so the TTS engine
+  // distinctly articulates the initial 'a' in amṛtam instead of swallowing it into -mā.
+  if (word.includes('मृत्योर्मा')) {
     return word
-      .replace(/मृत्योर्माऽमृत[ंम्]/g, 'मृत्योर्मा अमृतम्')
-      .replace(/मृत्योर्मा अमृतं/g, 'मृत्योर्मा अमृतम्');
+      .replace(/मृत्योर्मा\s*ऽ?\s*अ?मृत[ंम्]/g, 'मृत्योर्मा, अमृतम्');
   }
 
   return word;
@@ -378,7 +378,7 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?:
   // roman cues, and the नव/सप्त overrides so "द्वि" stays द्वि.
   if (plain) {
     const spokenText = word
-      .replace(/मृत्योर्माऽमृत[ंम्]/g, 'मृत्योर्मा अमृतम्')
+      .replace(/मृत्योर्मा\s*ऽ?\s*अ?मृत[ंम्]/g, 'मृत्योर्मा, अमृतम्')
       .replace(/ऽ/g, ' अ')
       .replace(/अमृतं/g, 'अमृतम्')
       .replace(/\s+/g, ' ')

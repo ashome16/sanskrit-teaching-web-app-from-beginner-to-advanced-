@@ -11,7 +11,7 @@ interface GurukulEntranceIntroProps {
 export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
   onComplete,
   targetLogoId = 'home-hero-crest-logo',
-  autoAdvanceMs = 3400,
+  autoAdvanceMs = 4000,
 }) => {
   const [isExiting, setIsExiting] = useState(false);
   const [isFlying, setIsFlying] = useState(false);
@@ -175,9 +175,9 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
         </p>
 
         {/* Bioacoustic Sound Indicator */}
-        <div className="gurukul-intro-sound-pill" aria-label="Bioacoustic birdsong playing">
+        <div className="gurukul-intro-sound-pill" aria-label="Bioacoustic birdsong and peacock playing">
           <span>🌿</span>
-          <span>Forest Dawn Birdsong &amp; Temple Chimes</span>
+          <span>Forest Dawn · Songbirds &amp; Mayūra · Temple Chimes</span>
           <div className="gurukul-sound-waves" aria-hidden="true">
             <div className="gurukul-sound-bar" />
             <div className="gurukul-sound-bar" />
