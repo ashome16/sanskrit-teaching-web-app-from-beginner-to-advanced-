@@ -170,6 +170,35 @@ function getRouteJsonLd(pathname, meta) {
         },
       ],
     });
+    // Embedded educational video showcases on homepage
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: 'Sanskrit: The Science of Sound · ध्वनि-विज्ञानम्',
+      description: 'Explore the neuro-acoustic precision, 5 articulation points (Kaṇṭha, Tālu, Mūrdhā, Danta, Oṣṭha), and resonant frequencies of Sanskrit phonetics.',
+      thumbnailUrl: [
+        'https://img.youtube.com/vi/tkvYjNZSsZA/maxresdefault.jpg',
+        'https://img.youtube.com/vi/tkvYjNZSsZA/hqdefault.jpg',
+      ],
+      uploadDate: '2024-01-01T08:00:00+05:30',
+      duration: 'PT12M34S',
+      contentUrl: 'https://www.youtube.com/watch?v=tkvYjNZSsZA',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/tkvYjNZSsZA?start=32&rel=0',
+    });
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: 'Vedic Mathematics: The Ancient Secret of Mental Calculation',
+      description: 'Masterclass on the 16 Vedic Mathematics Sūtras, lightning cross-multiplication, and ancient Indian computational algorithms.',
+      thumbnailUrl: [
+        'https://img.youtube.com/vi/bp9m53Tp6xg/maxresdefault.jpg',
+        'https://img.youtube.com/vi/bp9m53Tp6xg/hqdefault.jpg',
+      ],
+      uploadDate: '2024-01-01T08:00:00+05:30',
+      duration: 'PT30M40S',
+      contentUrl: 'https://www.youtube.com/watch?v=bp9m53Tp6xg',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/bp9m53Tp6xg?start=11&rel=0',
+    });
   } else if (pathname === '/reader') {
     schemas.push({
       '@context': 'https://schema.org',
@@ -182,28 +211,31 @@ function getRouteJsonLd(pathname, meta) {
       learningResourceType: ['Textbook', 'Interactive Exercise', 'Word-by-Word Translation', 'Audio Guide'],
       teaches: 'Sanskrit Language, NCERT Deepakam Textbook, Sandhi, Shabdroop, Anvaya',
     });
-    schemas.push({
-      '@context': 'https://schema.org',
-      '@type': 'VideoObject',
-      name: 'Sanskrit: The Science of Sound & Vocal Articulation',
-      description: 'Acoustic and phonetic demonstration of Sanskrit mouth articulation places and Maheshwara Sutras.',
-      thumbnailUrl: 'https://img.youtube.com/vi/tkvYjNZSsZA/hqdefault.jpg',
-      uploadDate: '2026-01-15T09:00:00+05:30',
-      duration: 'PT12M34S',
-      contentUrl: 'https://www.youtube.com/watch?v=tkvYjNZSsZA',
-      embedUrl: 'https://www.youtube.com/embed/tkvYjNZSsZA',
-    });
   } else if (pathname === '/vedic-maths') {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'VideoObject',
-      name: 'Līlāvatī Gaṇitam: Poetic Mental Mathematics of Bhāskarācārya',
-      description: 'Exposition of Vedic mathematical sutras, rapid multiplication, and poetic arithmetic by Dr. Remella Avadhanulu.',
-      thumbnailUrl: 'https://img.youtube.com/vi/SuEoIxU8itY/hqdefault.jpg',
-      uploadDate: '2026-03-01T11:00:00+05:30',
-      duration: 'PT41M00S',
-      contentUrl: 'https://www.youtube.com/watch?v=SuEoIxU8itY',
-      embedUrl: 'https://www.youtube.com/embed/SuEoIxU8itY',
+      name: 'Vedic Mathematics: The Ancient Secret of Mental Calculation',
+      description: 'Masterclass on the 16 Vedic Mathematics Sūtras, lightning cross-multiplication, and ancient Indian computational algorithms.',
+      thumbnailUrl: [
+        'https://img.youtube.com/vi/bp9m53Tp6xg/maxresdefault.jpg',
+        'https://img.youtube.com/vi/bp9m53Tp6xg/hqdefault.jpg',
+      ],
+      uploadDate: '2024-01-01T08:00:00+05:30',
+      duration: 'PT30M40S',
+      contentUrl: 'https://www.youtube.com/watch?v=bp9m53Tp6xg',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/bp9m53Tp6xg?start=11&rel=0',
+    });
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Vedic Mathematics Mental Arithmetic Lab',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Beginner to Advanced',
+      inLanguage: ['sa', 'en', 'hi'],
+      learningResourceType: ['Course', 'Interactive Exercise'],
+      teaches: '16 Vedic Mathematics Sutras, Mental Calculation, Baudhayana Geometry',
     });
   } else if (pathname === '/vignana-lab' || pathname === '/science-lab') {
     schemas.push({
@@ -211,23 +243,126 @@ function getRouteJsonLd(pathname, meta) {
       '@type': 'VideoObject',
       name: 'Sulba Sūtras Geometric Proofs: Baudhayana Theorem & Vedic Astronomy',
       description: 'Demonstration of ancient Indian geometric rope measurements, Baudhayana theorem, and Vedic geometry.',
-      thumbnailUrl: 'https://img.youtube.com/vi/bp9m53Tp6xg/hqdefault.jpg',
+      thumbnailUrl: [
+        'https://img.youtube.com/vi/bp9m53Tp6xg/maxresdefault.jpg',
+        'https://img.youtube.com/vi/bp9m53Tp6xg/hqdefault.jpg',
+      ],
       uploadDate: '2026-03-15T12:00:00+05:30',
       duration: 'PT30M40S',
       contentUrl: 'https://www.youtube.com/watch?v=bp9m53Tp6xg',
-      embedUrl: 'https://www.youtube.com/embed/bp9m53Tp6xg',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/bp9m53Tp6xg',
+    });
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Vedic Vignana Science Lab: Acoustic & Physical Sciences in Sanskrit',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'High School to Scholar',
+      inLanguage: ['sa', 'en'],
+      learningResourceType: ['Interactive Simulation', 'Lab Manual'],
+      teaches: 'Vedic Acoustics, Cymatics, Baudhayana Theorem, Paramanu Atomic Theory',
     });
   } else if (pathname === '/philosophy') {
     schemas.push({
       '@context': 'https://schema.org',
-      '@type': 'VideoObject',
-      name: 'Sūrya Siddhānta Ahargaṇa Formulations & Planetary Motion in Sanskrit',
-      description: 'Mathematical analysis of astronomical day-counts and planetary coordinates in classical Indian treatises.',
-      thumbnailUrl: 'https://img.youtube.com/vi/7u7Nl0pBh2Y/hqdefault.jpg',
-      uploadDate: '2026-04-05T14:00:00+05:30',
-      duration: 'PT53M00S',
-      contentUrl: 'https://www.youtube.com/watch?v=7u7Nl0pBh2Y',
-      embedUrl: 'https://www.youtube.com/embed/7u7Nl0pBh2Y',
+      '@type': 'LearningResource',
+      name: 'Classical Sanskrit Philosophy & Darśana Systems',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Intermediate to Scholar',
+      inLanguage: ['sa', 'en', 'hi'],
+      learningResourceType: 'Course',
+      teaches: 'Nyāya, Vaiśeṣika, Sāṅkhya, Yoga, Mīmāṁsā, Vedānta',
+    });
+  } else if (pathname === '/quiz') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Quiz',
+      name: 'Interactive Sanskrit & Vedic Mathematics Quizzes',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Beginner to Advanced',
+      inLanguage: ['sa', 'en', 'hi'],
+      learningResourceType: 'Assessment',
+      teaches: 'Sanskrit Alphabet, Paninian Grammar, Sandhi, Vedic Maths Sutras',
+    });
+  } else if (pathname === '/barakhadi') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Sanskrit Varṇamālā & Barakhadi 400+ Audio Chart',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Beginner to Intermediate',
+      inLanguage: ['sa', 'en', 'hi'],
+      learningResourceType: 'Pronunciation Guide',
+      teaches: 'Sanskrit Phonetics, Devanagari Aksharas, Barakhadi Matras',
+    });
+  } else if (pathname === '/worksheets') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Printable & Interactive Sanskrit Practice Worksheets',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Class 6–10 CBSE / NCERT',
+      inLanguage: ['sa', 'en', 'hi'],
+      learningResourceType: 'Worksheet',
+      teaches: 'NCERT Sanskrit Solutions, Devanagari Handwriting, Grammar Exercises',
+    });
+  } else if (pathname === '/dhatupatha') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'DefinedTermSet',
+      name: 'Pāṇinian Dhātupāṭha Root Verb Engine (2000+ Roots)',
+      description: meta.desc,
+      url: canonical,
+      inLanguage: ['sa', 'en'],
+      teaches: 'Sanskrit Verb Roots (Dhātus), 10 Gaṇas, Paninian Morpho-syntax',
+    });
+  } else if (pathname === '/grammar') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Pāṇinian Sanskrit Grammar Studio & Sandhi Engine',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Intermediate to Advanced',
+      inLanguage: ['sa', 'en', 'hi'],
+      learningResourceType: 'Interactive Simulation',
+      teaches: 'Paninian Grammar, Sandhi Rules, Subanta Declensions, Tinganta Conjugations',
+    });
+  } else if (pathname === '/faq') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Can a complete beginner learn Sanskrit online at EdNet Learn Gurukul?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. EdNet Learn Gurukul starts with interactive Varṇamālā phonetics, mouth articulation diagrams, and gentle daily 15-minute lessons suitable for all ages.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does EdNet Learn cover CBSE and NCERT Sanskrit syllabus?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, we provide chapter-by-chapter coverage for NCERT Deepakam (Class 6, 7, 8) with word-by-word translations, anvaya, worksheets, and mock exams.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does Vedic Mathematics help students?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Vedic Mathematics uses 16 core Sanskrit sutras to perform rapid mental arithmetic, cross-multiplication, and algebra up to 10x faster than conventional methods.',
+          },
+        },
+      ],
     });
   } else if (pathname === '/cbse-sanskrit-guide') {
     schemas.push({
