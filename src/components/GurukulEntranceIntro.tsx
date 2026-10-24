@@ -24,6 +24,9 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
 
   // Start soundscape on mount
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.scrollY > 0) {
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    }
     gurukulAmbiance.startDawnAmbiance();
 
     // Auto-advance after specified time if user hasn't clicked
@@ -54,6 +57,9 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
     const targetLogo = document.getElementById(targetLogoId);
 
     if (sourceLogo && targetLogo) {
+      if (typeof window !== 'undefined' && window.scrollY > 0) {
+        window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+      }
       const sourceRect = sourceLogo.getBoundingClientRect();
       const targetRect = targetLogo.getBoundingClientRect();
 
