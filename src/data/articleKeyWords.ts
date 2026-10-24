@@ -182,4 +182,18 @@ export const ARTICLE_KEY_WORDS: Record<string, SanskritKeyWord[]> = {
     { word: 'मध्यमा', translit: 'Madhyamā', meaning: 'Internal mental syntactic sequencing' },
     { word: 'वैखरी', translit: 'Vaikharī', meaning: 'Physical acoustic utterance / Token embeddings' },
   ],
+
+  'theft-of-biometrics-indian-fingerprint-science': [
+    { word: 'अङ्गुलीमुद्रा', translit: 'Aṅgulīmudrā', meaning: 'Friction ridge impression / Fingerprint' },
+    { word: 'सामुद्रिकशास्त्रम्', translit: 'Sāmudrikaśāstram', meaning: 'Vedic science of human bodily features and ridge analysis' },
+    { word: 'चक्रम्', translit: 'Cakram', meaning: 'Concentric / spiral whorl pattern (Discus of Lord Viṣṇu)' },
+    { word: 'शङ्खः', translit: 'Śaṅkhaḥ', meaning: 'Loop pattern curving like a sacred conch shell' },
+    { word: 'शुक्तिः', translit: 'Śuktiḥ', meaning: 'Arch pattern undulating like a river oyster shell' },
+    { word: 'टिप्परा', translit: 'Ṭipparā', meaning: 'Royal sovereign hand/fingerprint seal on official decrees' },
+    { word: 'लेख्यम्', translit: 'Lekhyam', meaning: 'Documented physical proof in classical Arthaśāstra jurisprudence' },
+    { word: 'प्रकृतिः', translit: 'Prakṛtiḥ', meaning: 'Individual constitutional psychophysiological blueprint' },
+    { word: 'अङ्गुलीरेखामानम्', translit: 'Aṅgulīrekhāmānam', meaning: 'Dactylography / Friction ridge metrics & minutiae' },
+    { word: 'काजी अज़ीज़ुल हक़', translit: 'Qazi Azizul Haque', meaning: 'Presidency College mathematician; invented 1,024-matrix system' },
+    { word: 'हेमचन्द्र बोस', translit: 'Hem Chandra Bose', meaning: 'Sanskrit College scientist; invented Telegraphic Code & Single-Digit index' },
+  ],
 };

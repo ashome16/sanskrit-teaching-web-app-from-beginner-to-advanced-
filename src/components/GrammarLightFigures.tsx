@@ -1519,6 +1519,191 @@ function SamasaHeadDominance() {
   );
 }
 
+/** Article 19: Samudra Shastra tri-pattern classification of friction ridges. */
+function SamudraShastraFingerprintPatterns() {
+  const archetypes = [
+    {
+      sa: 'चक्रम् · Cakram',
+      en: 'Whorl (Concentric/Spiral)',
+      icon: '🌀',
+      symbol: 'Lord Viṣṇu’s Discus',
+      dosha: 'Pitta (Sharp/Fiery Focus)',
+      color: '#BA3C00',
+      bg: '#fff7ed',
+      border: '#ea580c',
+      desc: 'Closed concentric circles or spiral vortex around core',
+    },
+    {
+      sa: 'शङ्खः · Śaṅkhaḥ',
+      en: 'Loop (Conch Aperture)',
+      icon: '🐚',
+      symbol: 'Sacred Acoustic Conch',
+      dosha: 'Kapha (Resilient/Enduring)',
+      color: '#0284c7',
+      bg: '#f0f9ff',
+      border: '#0ea5e9',
+      desc: 'Flows from one side, curves backward, exits same side',
+    },
+    {
+      sa: 'शुक्तिः · Śuktiḥ',
+      en: 'Arch (Wave/River Shell)',
+      icon: '🌊',
+      symbol: 'River Oyster Shell',
+      dosha: 'Vāta (Light/Dynamic Flow)',
+      color: '#15803d',
+      bg: '#f0fdf4',
+      border: '#22c55e',
+      desc: 'Gentle undulating wave crest without backward loop',
+    },
+  ];
+  return (
+    <Panel
+      kicker="सामुद्रिकशास्त्रम् · Samudra Shastra (c. 3102 BCE)"
+      caption="Ancient Indian sages mapped human friction ridges into three sacred geometric archetypes: Cakram (Whorl), Śaṅkhaḥ (Loop), and Śuktiḥ (Arch)—the exact tri-fold foundation of modern forensic dactyloscopy."
+      maxWidth={640}
+    >
+      <svg viewBox="0 0 620 250" role="img" aria-label="Samudra Shastra Fingerprint Tri-Pattern Blueprint" style={{ fontFamily: SANS }}>
+        {archetypes.map((a, i) => {
+          const x = 16 + i * 200;
+          return (
+            <g key={a.sa} transform={`translate(${x}, 15)`}>
+              <rect width="188" height="220" rx="14" fill={a.bg} stroke={a.border} strokeWidth="2" />
+              <rect x="14" y="14" width="160" height="30" rx="8" fill={a.color} fillOpacity="0.12" stroke={a.color} strokeWidth="1.2" />
+              <text x="94" y="34" fill={a.color} fontSize="14" fontWeight="800" textAnchor="middle" fontFamily={DEV}>{a.sa}</text>
+              <text x="94" y="74" fontSize="26" textAnchor="middle">{a.icon}</text>
+              <text x="94" y="98" fill="#1e293b" fontSize="12" fontWeight="700" textAnchor="middle">{a.en}</text>
+              <rect x="16" y="112" width="156" height="24" rx="6" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1" />
+              <text x="94" y="128" fill="#475569" fontSize="10.5" fontWeight="600" textAnchor="middle">Symbol: {a.symbol}</text>
+              <rect x="16" y="142" width="156" height="24" rx="6" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1" />
+              <text x="94" y="158" fill={a.color} fontSize="10.5" fontWeight="700" textAnchor="middle">Doṣa: {a.dosha}</text>
+              <text x="94" y="185" fill="#64748b" fontSize="9.5" textAnchor="middle">
+                {a.desc}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Article 19: Qazi Azizul Haque's 1,024-pigeonhole classification matrix and fractional formula. */
+function Haque1024MatrixGrid() {
+  return (
+    <Panel
+      kicker="The Haque 1,024 Mathematical Classification Engine (Calcutta, 1897)"
+      caption="Qazi Azizul Haque formulated the primary fractional equation pairing the 10 fingers into binary weights (16, 8, 4, 2, 1) + 1 constant, creating a 32×32 grid of 1,024 pigeonholes that slashed criminal search times from an hour to under 5 minutes."
+      maxWidth={640}
+    >
+      <svg viewBox="0 0 620 280" role="img" aria-label="Haque 1024 Matrix Diagram" style={{ fontFamily: SANS }}>
+        <rect x="20" y="12" width="580" height="74" rx="12" fill="#fffdfa" stroke="#d97706" strokeWidth="1.8" />
+        <text x="310" y="34" fill="#92400e" fontSize="11" fontWeight="800" textAnchor="middle" letterSpacing="0.06em">
+          HAQUE'S PRIMARY CLASSIFICATION EQUATION
+        </text>
+        <text x="310" y="60" fill="#1e293b" fontSize="13.5" fontWeight="700" textAnchor="middle">
+          Fraction = ( 1 + Sum of Even Whorl Values ) / ( 1 + Sum of Odd Whorl Values )
+        </text>
+
+        {[
+          { pair: 'Pair 1', fingers: 'R.Thumb / R.Index', val: '16' },
+          { pair: 'Pair 2', fingers: 'R.Mid / R.Ring', val: '8' },
+          { pair: 'Pair 3', fingers: 'R.Little / L.Thumb', val: '4' },
+          { pair: 'Pair 4', fingers: 'L.Index / L.Mid', val: '2' },
+          { pair: 'Pair 5', fingers: 'L.Ring / L.Little', val: '1' },
+        ].map((p, i) => {
+          const x = 20 + i * 118;
+          return (
+            <g key={p.pair} transform={`translate(${x}, 100)`}>
+              <rect width="110" height="66" rx="8" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="1.2" />
+              <text x="55" y="20" fill="#0f766e" fontSize="11" fontWeight="800" textAnchor="middle">{p.pair}</text>
+              <text x="55" y="38" fill="#64748b" fontSize="9" textAnchor="middle">{p.fingers}</text>
+              <rect x="30" y="44" width="50" height="18" rx="4" fill="#0284c7" fillOpacity="0.12" />
+              <text x="55" y="57" fill="#0369a1" fontSize="11" fontWeight="800" textAnchor="middle">Val: {p.val}</text>
+            </g>
+          );
+        })}
+
+        <g transform="translate(20, 180)">
+          <rect width="580" height="84" rx="10" fill="#fafaf9" stroke="#78716c" strokeWidth="1.2" />
+          <text x="35" y="28" fill="#1c1917" fontSize="13" fontWeight="800">
+            32 × 32 = 1,024 Pigeonholes Matrix
+          </text>
+          <text x="35" y="48" fill="#57534e" fontSize="11">
+            Numerators 1 to 32 (Rows) × Denominators 1 to 32 (Columns) = Instant Cabinet Lookup.
+          </text>
+          <rect x="35" y="56" width="510" height="18" rx="4" fill="#fef3c7" stroke="#f59e0b" strokeWidth="1" />
+          <text x="290" y="69" fill="#b45309" fontSize="10.5" fontWeight="700" textAnchor="middle">
+            Range: 1/1 (Zero Whorls) to 32/32 (All 10 Whorls) · Replaced Anthropometry Globally
+          </text>
+        </g>
+      </svg>
+    </Panel>
+  );
+}
+
+/** Article 19: Hem Chandra Bose's Telegraphic Code to modern NAFIS computer vision. */
+function BoseTelegraphicToNafis() {
+  const steps = [
+    {
+      era: '1916 · Hem Chandra Bose',
+      title: 'Telegraphic Morse Code',
+      detail: 'Visual print encoded into text strings (Core, Delta, Ridge Count, Bifurcation)',
+      color: '#b45309',
+      bg: '#fffbeb',
+      badge: 'Calcutta Bureau',
+    },
+    {
+      era: '1927 · Hem Chandra Bose',
+      title: 'Single-Digit Latent Index',
+      detail: 'First system to match single smudged prints left at crime scenes',
+      color: '#4338ca',
+      bg: '#eef2ff',
+      badge: 'Latent Prints',
+    },
+    {
+      era: 'Computer Vision',
+      title: 'Binarization & 1-px Thinning',
+      detail: 'Grayscale image skeletonized to 1-pixel ridges; auto-locates Terminations & Bifurcations',
+      color: '#0f766e',
+      bg: '#f0fdfa',
+      badge: 'Feature Extraction',
+    },
+    {
+      era: 'Modern Digital (2026)',
+      title: 'NAFIS Cloud Core (NCRB)',
+      detail: '10-digit permanent NFN ID; 1+ crore criminal profiles searched in < 60 seconds',
+      color: '#15803d',
+      bg: '#f0fdf4',
+      badge: 'National Scale',
+    },
+  ];
+
+  return (
+    <Panel
+      kicker="Evolutionary Pipeline: From Bose’s Telegraph to NAFIS & Aadhaar"
+      caption="Hem Chandra Bose’s 1916 breakthrough of translating visual friction ridge minutiae into indexable text strings laid the algorithmic foundation for modern computer-vision ridge thinning, automated minutiae detection, and India's NAFIS database."
+      maxWidth={640}
+    >
+      <svg viewBox="0 0 620 290" role="img" aria-label="Bose Telegraphic to NAFIS Pipeline" style={{ fontFamily: SANS }}>
+        {steps.map((s, i) => {
+          const y = 14 + i * 68;
+          return (
+            <g key={s.title} transform={`translate(20, ${y})`}>
+              <rect width="580" height="58" rx="10" fill={s.bg} stroke={s.color} strokeWidth="1.5" />
+              <rect x="14" y="12" width="130" height="20" rx="4" fill={s.color} fillOpacity="0.15" />
+              <text x="79" y="26" fill={s.color} fontSize="9.5" fontWeight="800" textAnchor="middle">{s.era}</text>
+              <text x="156" y="25" fill="#1e293b" fontSize="13" fontWeight="800">{s.title}</text>
+              <text x="156" y="43" fill="#64748b" fontSize="10.5">{s.detail}</text>
+              <rect x="475" y="14" width="92" height="20" rx="999" fill={s.color} />
+              <text x="521" y="28" fill="#ffffff" fontSize="9" fontWeight="800" textAnchor="middle">{s.badge}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
 const FIGURES: Record<string, () => ReactNode> = {
   'vibhakti-eight-cases': () => <VibhaktiEightCases />,
   'dasagana-ten-classes': () => <DasaganaTenClasses />,
@@ -1555,6 +1740,9 @@ const FIGURES: Record<string, () => ReactNode> = {
   'pancha-kosa-sheaths': () => <PanchaKosaSheaths />,
   'karaka-action-hub': () => <KarakaActionHub />,
   'samasa-head-dominance': () => <SamasaHeadDominance />,
+  'samudra-shastra-fingerprint-patterns': () => <SamudraShastraFingerprintPatterns />,
+  'haque-1024-matrix-grid': () => <Haque1024MatrixGrid />,
+  'bose-telegraphic-to-nafis': () => <BoseTelegraphicToNafis />,
 };
 
 export function isGrammarLightFigure(id: string): boolean {

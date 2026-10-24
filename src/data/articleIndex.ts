@@ -135,4 +135,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'प्राणिनामानि योगासनानि सप्तस्वराश्च · Animal Names: Yoga Shapes & Singing Notes',
     cardBlurb: 'How ancient India unified Sanskrit bio-linguistics, animal-inspired yoga asanas, and the 7 musical swaras (Sa Re Ga Ma Pa Dha Ni) derived from nature’s acoustic calls.',
   },
+  {
+    id: 'theft-of-biometrics-indian-fingerprint-science',
+    file: 'grammar/article-19.txt',
+    emoji: '🖐️',
+    cardTitle: 'अङ्गुलीमुद्रा-विज्ञानम् · The Theft of Biometrics: India’s Foundational Fingerprint Science',
+    cardBlurb: 'From the Samudra Shastra (Chakra, Sankha, Seep), Naadi leaves, and medieval Tipra to Qazi Azizul Haque’s 1,024-matrix, Hem Chandra Bose’s telegraphic code, and modern NAFIS biometrics.',
+  },
 ];

@@ -393,4 +393,35 @@ export const SANSKRIT_EXPLANATIONS: Record<string, SanskritExplanation> = {
       },
     ],
   },
+
+  'theft-of-biometrics-indian-fingerprint-science': {
+    titleSa: 'अङ्गुलीमुद्रा-विज्ञानम् — बोधि-व्याख्या',
+    titleEn: "Bodhi's Overview: The Sacred & Mathematical Foundations of Indian Fingerprint Science",
+    takeawayQuote: {
+      sa: 'चक्र-शङ्ख-शुक्तिभिः अङ्गुलीमुद्राणां स्वरूपं निश्चितं भवति।',
+      en: 'Friction ridge individuality is codified through the cosmic geometries of Chakra (Whorl), Sankha (Loop), and Shukti (Arch).',
+    },
+    sanskritText:
+      'अङ्गुलीमुद्रा-विज्ञानस्य (Dactyloscopy) मूलं भारते एव अस्ति। सामुद्रिकशास्त्रे त्रीणि मूल-रूपाणि वर्णितानि — चक्रम्, शङ्खः, शुक्तिः च। मध्यकाले राजानः टिप्परा-मुद्रया स्वशासनपत्राणि प्रमाणीकुर्वन्ति स्म। औपनिवेशिक-काले कलिकाता-नगरे काजी अज़ीज़ुल हक़-महोदयेन १०२४-कोष्ठक-युक्तं बीजगणितीयं समीकरणं निर्मितम्, हेमचन्द्र बोस-महोदयेन च ताराङ्क-सङ्केतः आविष्कृतः। अद्यतन-नाफिस-तन्त्रस्य (NAFIS) आधारः अयं भारतीय-प्रज्ञा-परम्परा एव।',
+    englishTranslation:
+      'The foundational blueprint of biometric fingerprint science originated in India. The ancient Samudra Shastra mapped friction ridges into three archetypes: Chakra (Whorl), Sankha (Loop), and Shukti (Arch). Medieval Indian sovereigns authenticated royal decrees with indelible Tipra handprints. In 1897 Calcutta, Qazi Azizul Haque developed the 1,024-pigeonhole fractional classification matrix, and Hem Chandra Bose invented the first telegraphic fingerprint code and single-digit latent index. Modern digital systems like NAFIS and Aadhaar directly execute these Indian mathematical breakthroughs.',
+    bulletPoints: [
+      {
+        sa: 'सामुद्रिकशास्त्रम् — चक्र-शङ्ख-शुक्तिभिः त्रि-प्रकार-विभाजनम्।',
+        en: 'Samudra Shastra: The original tri-fold dactylographic taxonomy (Whorls, Loops, Arches).',
+      },
+      {
+        sa: '१०२४ कोष्ठक-व्यूहः — काजी अज़ीज़ुल हक़-महोदयस्य बीजगणितम्।',
+        en: 'Haque’s Matrix: The 1,024-fraction classification formula that replaced body measurements globally.',
+      },
+      {
+        sa: 'ताराङ्क-सङ्केतः एकान्तिका च — हेमचन्द्र बोस-महाभागस्य आविष्कारः।',
+        en: 'Bose’s Innovations: The 1916 Telegraphic Code and 1927 Single-Digit latent print matching systems.',
+      },
+      {
+        sa: 'आधुनिक-नाफिस-तन्त्रम् (NAFIS) — १०-अङ्कीयः राष्ट्रियाङ्गुली-सङ्ख्याङ्कः (NFN)।',
+        en: 'Modern NAFIS: India’s 10-digit National Fingerprint Number powering nationwide real-time cloud identification.',
+      },
+    ],
+  },
 };

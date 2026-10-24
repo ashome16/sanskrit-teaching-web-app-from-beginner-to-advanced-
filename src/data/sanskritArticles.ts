@@ -57,6 +57,10 @@ export const SANSKRIT_ARTICLE_META: Record<string, { titleSa: string; blurbSa: s
     titleSa: 'प्राणिनामानि योगासनानि सप्तस्वराश्च · Animal Names: Yoga Shapes & Singing Notes',
     blurbSa: 'प्रकृतेः जीवन्त-प्रयोगशाला — जीवविज्ञानम्, पशूनां स्पन्दनं, योगासनानि, नारदीयशिक्षायाः सप्तस्वराश्च।',
   },
+  'theft-of-biometrics-indian-fingerprint-science': {
+    titleSa: 'अङ्गुलीमुद्रा-विज्ञानम् · Indian Fingerprint Science & Biometrics',
+    blurbSa: 'सामुद्रिकशास्त्रात् (चक्र-शङ्ख-शुक्तिः) टिप्परामुद्रां प्रति, काजी अज़ीज़ुल हक़-महाभागस्य १०२४-कोष्ठक-बीजगणितं, हेमचन्द्र बोस-महोदयस्य ताराङ्क-सङ्केतः, आधुनिक-नाफिस-तन्त्रं (NAFIS) च।',
+  },
 };
 
 export const SANSKRIT_ARTICLES: Record<string, ParsedArticle> = {
