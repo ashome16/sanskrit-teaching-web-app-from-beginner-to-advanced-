@@ -182,8 +182,16 @@
   padding: 1.5rem;
   max-width: 680px;
   width: 90%;
+  max-height: 96dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   box-sizing: border-box;
   animation: gurukulContentFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.gurukul-intro-content::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes gurukulContentFadeIn {
@@ -509,32 +517,151 @@
 
 /* Mobile responsive */
 @media (max-width: 640px) {
+  .gurukul-intro-content {
+    padding: 1.15rem 0.85rem;
+    width: 95%;
+  }
   .gurukul-intro-crest-wrap {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 1.1rem;
+    width: 108px;
+    height: 108px;
+    margin-bottom: 0.75rem;
   }
   .gurukul-intro-mandala {
-    width: 175px;
-    height: 175px;
+    width: 142px;
+    height: 142px;
   }
   .gurukul-intro-logo {
-    width: 105px;
-    height: 105px;
-    border-radius: 20px;
+    width: 84px;
+    height: 84px;
+    border-radius: 18px;
+  }
+  .gurukul-intro-badge {
+    font-size: 0.76rem;
+    padding: 0.28rem 0.75rem;
+    margin-bottom: 0.5rem;
   }
   .gurukul-intro-title {
-    font-size: 1.75rem;
+    font-size: clamp(1.22rem, 5.2vw, 1.62rem);
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
   }
   .gurukul-intro-verse {
-    font-size: 0.98rem;
+    font-size: clamp(0.84rem, 3.8vw, 1.02rem);
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
   }
   .gurukul-intro-subtitle {
-    font-size: 0.82rem;
-    margin-bottom: 1.25rem;
+    font-size: clamp(0.72rem, 3.2vw, 0.84rem);
+    line-height: 1.3;
+    margin-bottom: 0.95rem;
+  }
+  .gurukul-intro-sound-pill {
+    font-size: 0.74rem;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 0.95rem;
+  }
+  .gurukul-intro-actions {
+    gap: 0.65rem;
   }
   .gurukul-intro-enter-btn {
     padding: 0.65rem 1.4rem;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
+    min-height: 44px;
+  }
+  .gurukul-intro-mute-btn {
+    padding: 0.6rem 1.1rem;
+    font-size: 0.84rem;
+    min-height: 44px;
+  }
+  .gurukul-intro-linger-wrap {
+    margin-top: 0.85rem;
+    max-width: 290px;
+  }
+  .gurukul-intro-linger-hint {
+    font-size: 0.78rem;
+  }
+}
+
+/* Extra-compact phones (<= 380px, e.g. iPhone SE, 360px Android) */
+@media (max-width: 380px) {
+  .gurukul-intro-content {
+    padding: 0.85rem 0.65rem;
+  }
+  .gurukul-intro-crest-wrap {
+    width: 92px;
+    height: 92px;
+    margin-bottom: 0.55rem;
+  }
+  .gurukul-intro-mandala {
+    width: 122px;
+    height: 122px;
+  }
+  .gurukul-intro-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 15px;
+  }
+  .gurukul-intro-title {
+    font-size: 1.18rem;
+  }
+  .gurukul-intro-verse {
+    font-size: 0.82rem;
+  }
+  .gurukul-intro-subtitle {
+    font-size: 0.72rem;
+    margin-bottom: 0.75rem;
+  }
+  .gurukul-intro-enter-btn {
+    padding: 0.6rem 1.15rem;
+    font-size: 0.9rem;
+  }
+  .gurukul-intro-mute-btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile Landscape & Short Viewports (height <= 520px) */
+@media (max-height: 520px) {
+  .gurukul-intro-content {
+    padding: 0.6rem 0.75rem;
+  }
+  .gurukul-intro-crest-wrap {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 0.35rem;
+  }
+  .gurukul-intro-mandala {
+    display: none;
+  }
+  .gurukul-intro-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+  .gurukul-intro-subtitle {
+    display: none;
+  }
+  .gurukul-intro-badge {
+    margin-bottom: 0.3rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.72rem;
+  }
+  .gurukul-intro-title {
+    font-size: 1.12rem;
+    margin-bottom: 0.2rem;
+  }
+  .gurukul-intro-verse {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+  .gurukul-intro-sound-pill {
+    margin-bottom: 0.45rem;
+    padding: 0.22rem 0.65rem;
+    font-size: 0.7rem;
+  }
+  .gurukul-intro-linger-wrap {
+    margin-top: 0.5rem;
+    max-width: 260px;
   }
 }

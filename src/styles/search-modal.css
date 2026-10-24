@@ -609,13 +609,30 @@
 
 @media (max-width: 900px) {
   .dashboard-search-trigger-btn.dashboard-search-trigger-btn--site {
-    min-width: 42px;
-    width: 42px;
-    height: 42px;
+    min-width: 38px;
+    width: 38px;
+    height: 38px;
     padding: 0;
     border-radius: 50%;
     border-width: 2px;
     justify-content: center;
     gap: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-search-trigger-btn.dashboard-search-trigger-btn--site {
+    min-width: 34px;
+    width: 34px;
+    height: 34px;
+    border-width: 1.5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .dashboard-search-trigger-btn.dashboard-search-trigger-btn--site {
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
   }
 }

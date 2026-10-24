@@ -409,6 +409,18 @@ const Dashboard: React.FC = () => {
     };
   }, [activeView, faqScrollKey]);
 
+  // On mobile/tablet, keep the active navigation pill horizontally visible in the scroller
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const timer = window.setTimeout(() => {
+      const activeBtn = document.querySelector('.dashboard-nav button.active') as HTMLElement | null;
+      if (activeBtn) {
+        activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      }
+    }, 120);
+    return () => window.clearTimeout(timer);
+  }, [activeView]);
+
   // Deep link into a Vijñāna Lab segment (#paramanu, #prakriti, #jyotisha, #srishti-sthiti-laya) + remount key.
   const [labTarget, setLabTarget] = useState<{ segment: string | null; key: number }>({ segment: null, key: 0 });
   const openScienceLab = (segment?: string) => {
