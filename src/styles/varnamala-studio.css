@@ -1360,8 +1360,21 @@
 
 [data-theme='dark'] .textbook-playrow-btn {
   background: #1e293b;
-  border-color: #334155;
-  color: #cbd5e1;
+  border-color: #475569;
+  color: #f1f5f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .textbook-playrow-btn:hover {
+  background: #334155;
+  border-color: #64748b;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .textbook-playrow-btn--active {
+  background: #dc2626 !important;
+  border-color: #b91c1c !important;
+  color: #ffffff !important;
 }
 
 [data-theme='dark'] .v-card-trace-btn {

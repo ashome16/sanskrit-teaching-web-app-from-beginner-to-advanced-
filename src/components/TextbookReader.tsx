@@ -2245,10 +2245,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                             : `Play all letters in ${groupMeta?.title || group.meaning || 'this row'}`
                         }
                         aria-pressed={isPlayingAll && playingGroupIdx === groupIdx}
-                        title={isPlayingAll && playingGroupIdx === groupIdx ? 'Stop this row' : 'Play this row'}
+                        title={isPlayingAll && playingGroupIdx === groupIdx ? 'Stop this row' : 'Play all letters in this row'}
                       >
                         <span className="playrow-icon">{isPlayingAll && playingGroupIdx === groupIdx ? '⏹' : '▶'}</span>
-                        <span className="playrow-text">{isPlayingAll && playingGroupIdx === groupIdx ? 'Stop Row' : 'Play Row'}</span>
+                        <span className="playrow-text">{isPlayingAll && playingGroupIdx === groupIdx ? 'Stop' : 'Play all'}</span>
                       </button>
                     </div>
 
