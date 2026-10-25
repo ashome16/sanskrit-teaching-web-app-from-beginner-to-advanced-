@@ -6705,12 +6705,69 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Section 7: Axial Precession & Dongla */}
+            {/* Section 7: Axial Precession, Obliquity & Jantar Mantar */}
             <section className="philosophy-section" id="dongla-zero-shadow">
-              <h2>7. Axial Precession &amp; Southward Migration: From Ujjain to Doṅglā Village</h2>
+              <h2>7. The Cosmic Wobble: Axial Precession, Obliquity Drift &amp; The Genius of Jantar Mantar (1725 CE)</h2>
               <p>
-                Earth&apos;s rotational axis is not fixed in space. It undergoes a 25,772-year equinoctial precession cycle (<em>Ayanāṃśa</em>) and an obliquity oscillation (22.1° to 24.5°). Because of this, the physical latitude where the Sun hits an absolute 90° zenith on the summer solstice—the Tropic of Cancer—<strong>drifts southward at approximately 14.5 meters per year</strong>.
+                While ancient astronomers brilliantly calculated Ujjain as the intersection point of the <strong>Prime Meridian (0° Longitude)</strong> and the <strong>Tropic of Cancer</strong>, if you pull up a modern GPS device at the <strong>Mahākāleśvara Temple</strong> today, you will notice a slight discrepancy: the Tropic of Cancer is currently located roughly <strong>30 kilometres away</strong>.
               </p>
+              <p>
+                This movement is not an error of ancient computation, but the direct result of celestial mechanics: <strong>axial precession</strong> and <strong>axial tilt (obliquity) oscillations</strong>, which act as a massive cosmic wobble shifting our geographic boundaries over centuries.
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', margin: '1.25rem 0' }}>
+                {/* 1. Precession Wobble */}
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.35rem' }}>
+                    <span style={{ fontSize: '1.25rem' }}>🌀</span>
+                    <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+                      1. The Precession Wobble (A Cosmic Top)
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                    Earth does not spin perfectly upright; it behaves exactly like a spinning toy top that has started to slow down. As it spins, its axis traces a slow, continuous circle in space over roughly <strong>25,772 years</strong>. While precession primarily changes which star is our &quot;North Star&quot; (shifting from Polaris to Vega and back over millennia), it also subtly alters the alignment of the Earth&apos;s grid relative to the stars (<em>Ayanāṃśa</em>).
+                  </p>
+                </div>
+
+                {/* 2. Milankovitch Obliquity */}
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.35rem' }}>
+                    <span style={{ fontSize: '1.25rem' }}>📐</span>
+                    <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+                      2. The Real Culprit: Milankovitch Cycle (Obliquity)
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                    While precession changes the direction of the axis, a secondary phenomenon called <strong>axial obliquity (change in axial tilt)</strong> is what actually moves the Tropic of Cancer. The angle of the Earth’s tilt is not fixed at 23.5°; it fluctuates continuously between <strong>22.1° and 24.5° over a 41,000-year cycle</strong>. Currently, the Earth&apos;s tilt is in a phase where it is decreasing (becoming slightly more upright).
+                  </p>
+                </div>
+
+                {/* 3. Southward Drift */}
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.35rem' }}>
+                    <span style={{ fontSize: '1.25rem' }}>⬇️</span>
+                    <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+                      3. How This Moves the Tropic of Cancer (~15 m/Year)
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                    Because the Tropic of Cancer is defined purely by the maximum northern angle of the Earth&apos;s tilt, as the Earth stands more upright, the Tropic of Cancer drifts closer to the Equator (southward in the Northern Hemisphere). The line is currently drifting southward at a rate of roughly <strong>15 metres (49 feet) per year</strong>. Over the 1,600+ years since the <em>Sūrya Siddhānta</em> was compiled, this constant southward drift has caused the line to slide down from Ujjain.
+                  </p>
+                </div>
+
+                {/* 4. Genius of Jantar Mantar */}
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.35rem' }}>
+                    <span style={{ fontSize: '1.25rem' }}>🔭</span>
+                    <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+                      4. The Genius of Jantar Mantar (Vedha Shala, 1725 CE)
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                    When Maharaja Sawai Jai Singh II built the <strong>Jantar Mantar Observatory in Ujjain in 1725</strong>, he was fully aware of these cosmic shifts. He constructed massive, non-moving stone instruments—like the <strong>Samrat Yantra</strong> (giant sundial) and the <strong>Transit Wall Instrument (Dakṣiṇottara Bhitti Yantra)</strong>—specifically because they could calculate the exact local declination of the Sun regardless of how much the planet had wobbled since ancient times. The stone instruments allowed 18th-century scientists to recalibrate the mathematical tables (<em>Zīj-i Muhammad Shāhī</em>) and correct planetary calculations to account for this drift, bridging the gap between ancient texts and evolving cosmic reality.
+                  </p>
+                </div>
+              </div>
 
               <div
                 style={{
@@ -6728,7 +6785,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
 {`       [ FIXED MERIDIAN OF UJJAIN (75° 46' E) ]
                          |
                          |   ~30 km Northward Geodetic Offset
-                         |   due to 2,300 Years of Precession
+                         |   due to 2,300 Years of Precession & Obliquity
                          |
                          v
     +-----------------------------------------+ <--- TROPIC OF CANCER TODAY (23° 26' 14" N)
@@ -6736,17 +6793,17 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     |  (Modern Zero-Shadow Coordinate Node)   |      [Zero Shadow Day: June 21]
     +-----------------------------------------+
                          |
-                         | (Annual southward migration: ~14.5 meters per year)
+                         | (Annual southward migration: ~15 meters / 49 feet per year)
                          |
                          v
     +-----------------------------------------+ <--- TROPIC OF CANCER IN ANTIQUITY (c. 300 BCE)
-    |  UJJAIN (Avantī)                        |      Mahākāleśvara Temple
-    |  (Historical Madhya-Rekhā Center)       |      Latitude: 23° 10' 58" N
+    |  UJJAIN (Avantī)                        |      Mahākāleśvara Temple (23° 10' 58" N)
+    |  (Historical Madhya-Rekhā Center)       |      Jantar Mantar Stone Recalibration (1725 CE)
     +-----------------------------------------+`}
               </div>
 
               <p>
-                Over the past 2,300 years, the Tropic of Cancer has migrated approximately <strong>30 kilometers north</strong> of the Mahākāleśvara temple to the rural village of <strong>Doṅglā</strong>. To honor this living astronomical lineage, India established the <strong>Varāhamihira Astronomical Observatory</strong> at Doṅglā. Every June 21 at local solar noon, researchers and students gather to observe <strong>Zero Shadow Day (निर्छाया-दिवसः)</strong>, watching gnomons and towers cast no shadow beneath the midday sun.
+                To honor this living astronomical lineage, India established the <strong>Varāhamihira Astronomical Observatory</strong> at Doṅglā Village (30 km north of Ujjain along the ancient 0° meridian). Every June 21 at local solar noon, researchers and students gather to observe <strong>Zero Shadow Day (निर्छाया-दिवसः)</strong>, watching vertical gnomons and stone dials cast no shadow beneath the midday sun.
               </p>
             </section>
 

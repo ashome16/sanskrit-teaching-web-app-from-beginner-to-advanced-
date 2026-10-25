@@ -25,6 +25,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
   // 3. Dongla Precession State
   // Year slider: -300 BCE to 2026 CE
   const [selectedYear, setSelectedYear] = useState<number>(2026);
+  const [driftVisualMode, setDriftVisualMode] = useState<'dongla' | 'jantar_mantar'>('dongla');
 
   // 4. Trigonometry State
   const [angleDeg, setAngleDeg] = useState<number>(30);
@@ -108,11 +109,11 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
     },
     vedhashala: {
       name: 'Vedha Shala / Jantar Mantar (वेधशाला)',
-      deity: 'Astronomical Observatory (सवाई जयसिंह वेधशाला)',
+      deity: '1725 CE Observatory of Sawai Jai Singh II (सवाई जयसिंह वेधशाला)',
       lat: "23° 10' 20\" N (23.1722° N)",
       lon: "75° 46' 03\" E (75.7675° E)",
-      role: 'Equinoctial Gnomon & Celestial Coordinate Calculation',
-      description: 'Built by Maharaja Sawai Jai Singh II of Jaipur in 1719 to revitalize Ujjain’s historic prime meridian. Features the massive Samrat Yantra (equinoctial sundial), Nadi Valaya Yantra, and Digamsha Yantra measuring altitude, azimuth, and local solar time.',
+      role: 'Massive Stone Gnomons to Recalibrate Planetary & Solar Drift',
+      description: 'When Maharaja Sawai Jai Singh II built this observatory in 1725, he was fully aware of planetary drift and obliquity oscillations. He constructed massive non-moving stone instruments—such as the Samrat Yantra (equinoctial sundial) and Dakshinottara Bhitti Yantra (Transit Wall Instrument)—specifically to calculate the exact real-time local declination of the Sun and stars regardless of how much the planet had wobbled since antiquity, allowing 18th-century scientists to recalibrate mathematical ephemerides.',
       icon: '🔭',
       color: '#0284c7',
     },
@@ -190,7 +191,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
             { id: 'temple', label: '🏛️ मन्दिर-रेखागणितम् (Temples & 0° Meridian)', sub: '0° Longitude & Temples' },
             { id: 'shanku', label: '📐 शङ्कु (Śaṅku Gnomon)', sub: 'Latitude (अक्षांश)' },
             { id: 'deshantara', label: '🌖 देशान्तर (Deśāntara)', sub: 'Longitude (रेखांश)' },
-            { id: 'dongla', label: '☀️ दोङ्गला (Doṅglā)', sub: 'Zero Shadow & Drift' },
+            { id: 'dongla', label: '☀️ दोङ्गला व वेधशाला (Drift & Jantar Mantar)', sub: 'Cosmic Wobble & Recalibration' },
             { id: 'trig', label: '⭕ ज्या (Jyā vs Chord)', sub: 'Sine Trigonometry' },
           ].map((tab) => (
             <button
@@ -1161,162 +1162,347 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
       )}
 
       {/* =========================================================================
-          TAB 3: DONGLA ZERO SHADOW & AXIAL PRECESSION
+          TAB 3: DONGLA ZERO SHADOW, AXIAL PRECESSION & JANTAR MANTAR (1725 CE)
          ========================================================================= */}
       {activeTab === 'dongla' && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div
-              style={{
-                background: '#fdf2f8',
-                border: '1px solid #fbcfe8',
-                borderRadius: '12px',
-                padding: '1rem',
-              }}
-            >
-              <h4 style={{ margin: '0 0 0.5rem', color: '#9d174d', fontSize: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span>कर्क-संक्रान्ति-प्रयाणम् (Precession &amp; Southward Migration)</span>
-                <button
-                  type="button"
-                  onClick={() => handlePlay('दोङ्गला')}
-                  style={{ background: '#ffffff', border: '1px solid #fbcfe8', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', padding: '0.15rem 0.4rem', color: '#9d174d' }}
-                  title="Pronounce Doṅglā"
-                >
-                  🔊 दोङ्गला
-                </button>
-              </h4>
-              <p style={{ margin: 0, fontSize: '0.86rem', color: '#831843', lineHeight: 1.5 }}>
-                Due to Earth&apos;s axial obliquity cycle (41,000 years) and equinoctial precession (<em>Ayanāṃśa</em>), the Tropic of Cancer drifts southward at roughly <strong>14.5 meters per year</strong>. In antiquity, it cut directly across the Mahākāleśvara Temple in Ujjain; today, it passes cleanly through <strong>Doṅglā Village</strong>, 30 km to the north.
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          {/* Header Card */}
+          <div
+            style={{
+              background: '#fdf2f8',
+              border: '1.5px solid #fbcfe8',
+              borderRadius: '14px',
+              padding: '1.25rem 1.5rem',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#9d174d', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                COSMIC WOBBLES, SOUTHWARD DRIFT &amp; JANTAR MANTAR
+              </span>
+              <button
+                type="button"
+                onClick={() => handlePlay('वेधशाला')}
+                style={{
+                  background: '#ffffff',
+                  border: '1px solid #fbcfe8',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  fontSize: '0.75rem',
+                  padding: '0.2rem 0.6rem',
+                  color: '#9d174d',
+                  fontWeight: 700,
+                }}
+                title="Pronounce Vedha-śālā"
+              >
+                🔊 वेधशाला
+              </button>
+            </div>
+            <h4 style={{ margin: '0.35rem 0 0.4rem', color: '#831843', fontSize: '1.2rem', fontWeight: 800 }}>
+              The Curious Case of the Tropic of Cancer: Why Modern GPS Shows a 30 km Discrepancy
+            </h4>
+            <p style={{ margin: 0, fontSize: '0.86rem', color: '#831843', lineHeight: 1.55 }}>
+              While ancient astronomers brilliantly calculated Ujjain as the intersection of the <strong>Prime Meridian (0° Longitude)</strong> and the <strong>Tropic of Cancer</strong>, pulling up a modern GPS device at the Mahākāleśvara Temple today reveals a discrepancy: the Tropic of Cancer is currently located roughly <strong>30 kilometres away</strong>. This is not an ancient miscalculation, but the physical consequence of celestial mechanics: <strong>axial precession</strong> and <strong>axial tilt (obliquity) oscillations</strong> acting as a cosmic wobble shifting our geographic boundaries over centuries.
+            </p>
+          </div>
+
+          {/* 4 Core Pillars Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+            {/* 1. Precession Wobble */}
+            <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span style={{ fontSize: '1.25rem' }}>🌀</span>
+                <h5 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 800, color: '#0f172a' }}>
+                  1. The Precession Wobble (A Cosmic Top)
+                </h5>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
+                Earth does not spin perfectly upright; it behaves exactly like a spinning toy top that has started to slow down, tracing a slow circle in space over roughly <strong>25,772 years</strong>. While precession primarily changes which star serves as our &quot;North Star&quot; (shifting from Polaris to Vega and back), it also subtly alters the alignment of Earth&apos;s coordinate grid relative to the celestial sphere (<em>Ayanāṃśa</em>).
               </p>
             </div>
 
-            {/* Timeline Slider */}
-            <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-                <label style={{ fontSize: '0.86rem', fontWeight: 700, color: '#1e293b' }}>
-                  Epoch / Year in History:
-                </label>
-                <span style={{ fontSize: '0.92rem', fontWeight: 800, color: '#db2777' }}>
-                  {selectedYear < 0 ? `${Math.abs(selectedYear)} BCE` : `${selectedYear} CE`}
-                </span>
+            {/* 2. Milankovitch Obliquity */}
+            <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span style={{ fontSize: '1.25rem' }}>📐</span>
+                <h5 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 800, color: '#0f172a' }}>
+                  2. The Real Culprit: Milankovitch Obliquity
+                </h5>
               </div>
-              <input
-                type="range"
-                min="-300"
-                max="2026"
-                step="50"
-                value={selectedYear}
-                onChange={(e) => setSelectedYear(parseInt(e.target.value, 10))}
-                style={{ width: '100%', accentColor: '#db2777' }}
-              />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#64748b' }}>
-                <span>300 BCE (Ujjain Center)</span>
-                <span>628 CE (Brahmagupta)</span>
-                <span>2026 CE (Doṅglā Node)</span>
-              </div>
+              <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
+                While precession changes the axis direction, <strong>axial obliquity (tilt angle)</strong> is what physically moves the Tropic of Cancer. Earth&apos;s tilt is not fixed at 23.5°; it fluctuates continuously between <strong>22.1° and 24.5° over a 41,000-year cycle</strong>. Currently, Earth&apos;s tilt is in a decreasing phase, becoming slightly more upright with each passing century.
+              </p>
             </div>
 
-            {/* Quick Era Buttons */}
-            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-              {[
-                { label: '300 BCE (Surya Siddhanta)', yr: -300 },
-                { label: '505 CE (Varāhamihira)', yr: 505 },
-                { label: '628 CE (Brahmagupta)', yr: 628 },
-                { label: '1150 CE (Bhāskara II)', yr: 1150 },
-                { label: '1719 CE (Jai Singh II)', yr: 1719 },
-                { label: 'Today (Modern Doṅglā)', yr: 2026 },
-              ].map((item) => (
-                <button
-                  key={item.label}
-                  type="button"
-                  onClick={() => setSelectedYear(item.yr)}
-                  style={{
-                    padding: '0.3rem 0.6rem',
-                    background: selectedYear === item.yr ? '#db2777' : '#f8fafc',
-                    color: selectedYear === item.yr ? '#ffffff' : '#334155',
-                    border: '1px solid #cbd5e1',
-                    borderRadius: '6px',
-                    fontSize: '0.75rem',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                  }}
-                >
-                  {item.label}
-                </button>
-              ))}
+            {/* 3. Southward Drift */}
+            <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span style={{ fontSize: '1.25rem' }}>⬇️</span>
+                <h5 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 800, color: '#0f172a' }}>
+                  3. The 15 m/Year Southward Drift
+                </h5>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
+                Because the Tropic of Cancer is defined purely by the maximum northern angle of Earth&apos;s tilt, as the Earth stands more upright, the Tropic drifts closer to the Equator (southward) at roughly <strong>15 metres (49 feet) per year</strong>. Over the 1,600+ years since the <em>Sūrya Siddhānta</em> was compiled, this constant southward drift has caused the line to slide down from Ujjain.
+              </p>
             </div>
 
-            {/* Metric Shift Cards */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '0.75rem',
-                background: '#f8fafc',
-                border: '1px solid #e2e8f0',
-                borderRadius: '10px',
-                padding: '0.75rem 1rem',
-              }}
-            >
-              <div>
-                <span style={{ fontSize: '0.75rem', color: '#64748b' }}>Cumulative Drift:</span>
-                <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#9d174d' }}>
-                  {driftKm} km
-                </div>
+            {/* 4. Genius of Jantar Mantar */}
+            <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span style={{ fontSize: '1.25rem' }}>🔭</span>
+                <h5 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 800, color: '#0f172a' }}>
+                  4. The Genius of Jantar Mantar (1725 CE)
+                </h5>
               </div>
-              <div>
-                <span style={{ fontSize: '0.75rem', color: '#64748b' }}>Tropic Latitude:</span>
-                <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a' }}>
-                  {currentTropicLat}° N
-                </div>
-              </div>
+              <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
+                When Maharaja Sawai Jai Singh II built the Ujjain Observatory in 1725, he was fully aware of these cosmic shifts. He constructed massive non-moving stone instruments—the <strong>Samrat Yantra</strong> and <strong>Transit Wall Instrument (Bhitti Yantra)</strong>—to calculate the exact real-time local declination of the Sun regardless of planetary wobble, recalibrating the tables and bridging ancient texts with empirical reality.
+              </p>
             </div>
           </div>
 
-          {/* Dongla Zero Shadow Infographic Visual */}
-          <div
-            style={{
-              background: '#18181b',
-              borderRadius: '14px',
-              padding: '1.25rem',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#ffffff',
-            }}
-          >
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#f472b6', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
-              ZERO SHADOW DAY (निर्छाया-दिवस · JUNE 21)
-            </span>
-            <svg viewBox="0 0 300 200" style={{ width: '100%', maxWidth: '280px', height: 'auto' }}>
-              {/* Sun directly overhead at 90 degrees */}
-              <circle cx="150" cy="30" r="18" fill="#facc15" />
-              <line x1="150" y1="52" x2="150" y2="140" stroke="#fef08a" strokeWidth="3" strokeDasharray="3,3" />
+          {/* Interactive Simulation & Visualizer Controls */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+            {/* Left: Historical Timeline & Metric Cards */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {/* Timeline Slider */}
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                  <label htmlFor="drift-year-slider" style={{ fontSize: '0.86rem', fontWeight: 700, color: '#1e293b' }}>
+                    Historical Epoch &amp; Drift Tracker:
+                  </label>
+                  <span style={{ fontSize: '0.92rem', fontWeight: 800, color: '#db2777' }}>
+                    {selectedYear < 0 ? `${Math.abs(selectedYear)} BCE` : `${selectedYear} CE`}
+                  </span>
+                </div>
+                <input
+                  id="drift-year-slider"
+                  type="range"
+                  min="-300"
+                  max="2026"
+                  step="50"
+                  value={selectedYear}
+                  onChange={(e) => setSelectedYear(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: '#db2777' }}
+                />
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#64748b' }}>
+                  <span>300 BCE (Ancient Sūrya Siddhānta)</span>
+                  <span>1725 CE (Jai Singh II)</span>
+                  <span>2026 CE (Doṅglā Node)</span>
+                </div>
+              </div>
 
-              {/* Ground level */}
-              <line x1="30" y1="160" x2="270" y2="160" stroke="#52525b" strokeWidth="3" />
+              {/* Quick Era Buttons */}
+              <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                {[
+                  { label: '300 BCE (Surya Siddhanta)', yr: -300 },
+                  { label: '505 CE (Varāhamihira)', yr: 505 },
+                  { label: '628 CE (Brahmagupta)', yr: 628 },
+                  { label: '1150 CE (Bhāskara II)', yr: 1150 },
+                  { label: '1725 CE (Jai Singh Jantar Mantar)', yr: 1725 },
+                  { label: 'Today (Modern Doṅglā)', yr: 2026 },
+                ].map((item) => (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => {
+                      soundEffects.playStrokeChime();
+                      setSelectedYear(item.yr);
+                    }}
+                    style={{
+                      padding: '0.3rem 0.6rem',
+                      background: selectedYear === item.yr ? '#db2777' : '#f8fafc',
+                      color: selectedYear === item.yr ? '#ffffff' : '#334155',
+                      border: '1px solid #cbd5e1',
+                      borderRadius: '6px',
+                      fontSize: '0.75rem',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
 
-              {/* Vertical Gnomon Pillar */}
-              <rect x="146" y="100" width="8" height="60" fill="#f43f5e" rx="2" />
+              {/* Metric Shift Cards */}
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2, 1fr)',
+                  gap: '0.75rem',
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '10px',
+                  padding: '0.75rem 1rem',
+                }}
+              >
+                <div>
+                  <span style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>Cumulative Drift:</span>
+                  <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#9d174d' }}>
+                    {driftKm} km
+                  </div>
+                  <span style={{ fontSize: '0.68rem', color: '#64748b' }}>Rate: ~15 m / year</span>
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>Tropic Latitude:</span>
+                  <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a' }}>
+                    {currentTropicLat}° N
+                  </div>
+                  <span style={{ fontSize: '0.68rem', color: '#64748b' }}>Tilt: 22.1° ↔ 24.5°</span>
+                </div>
+              </div>
 
-              {/* Zero shadow indicator at base (collapsed circle) */}
-              <ellipse cx="150" cy="160" rx="4" ry="2" fill="#71717a" />
+              {/* Informative Callout */}
+              <div
+                style={{
+                  background: '#fdf4ff',
+                  border: '1px solid #f0abfc',
+                  padding: '0.75rem 0.85rem',
+                  borderRadius: '8px',
+                  fontSize: '0.78rem',
+                  color: '#701a75',
+                  lineHeight: 1.45,
+                }}
+              >
+                💡 <strong>Scientific Convergence:</strong> In 1725, Maharaja Sawai Jai Singh recognized that brass astrolabes were unreliable over centuries due to mechanical warping. By using immovable stone masonry, the Jantar Mantar enabled direct measurement of actual solar meridian transits, keeping Indian astronomy dynamically aligned with cosmic shifts.
+              </div>
+            </div>
 
-              {/* Labels */}
-              <text x="150" y="16" fill="#facc15" fontSize="10" fontWeight="800" textAnchor="middle">
-                Solar Zenith = 90° (Absolute Noon)
-              </text>
-              <text x="150" y="180" fill="#f472b6" fontSize="11" fontWeight="700" textAnchor="middle">
-                Shadow Length = 0.00 Aṅgulas
-              </text>
-              <text x="150" y="194" fill="#a1a1aa" fontSize="9" textAnchor="middle">
-                Doṅglā Observatory (23° 26&apos; N)
-              </text>
-            </svg>
-            <p style={{ margin: '0.75rem 0 0', fontSize: '0.78rem', color: '#d4d4d8', textAlign: 'center' }}>
-              Every summer solstice at 12:28 PM local time at Doṅglā, vertical rods, sundials, and visitors cast <strong>no shadow whatsoever</strong>.
-            </p>
+            {/* Right: Dual Visualizer (Zero Shadow Day vs Jantar Mantar Transit Wall) */}
+            <div
+              style={{
+                background: '#18181b',
+                borderRadius: '14px',
+                padding: '1.25rem',
+                display: 'flex',
+                flexDirection: 'column',
+                color: '#ffffff',
+                gap: '0.75rem',
+              }}
+            >
+              {/* Visualizer Toggle Tabs */}
+              <div style={{ display: 'flex', gap: '0.5rem', background: '#27272a', padding: '0.25rem', borderRadius: '8px' }}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    soundEffects.playStrokeChime();
+                    setDriftVisualMode('dongla');
+                  }}
+                  style={{
+                    flex: 1,
+                    padding: '0.35rem 0.5rem',
+                    borderRadius: '6px',
+                    border: 'none',
+                    background: driftVisualMode === 'dongla' ? '#db2777' : 'transparent',
+                    color: '#ffffff',
+                    fontWeight: 700,
+                    fontSize: '0.76rem',
+                    cursor: 'pointer',
+                  }}
+                >
+                  ☀️ Doṅglā Zero Shadow Day
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    soundEffects.playStrokeChime();
+                    setDriftVisualMode('jantar_mantar');
+                  }}
+                  style={{
+                    flex: 1,
+                    padding: '0.35rem 0.5rem',
+                    borderRadius: '6px',
+                    border: 'none',
+                    background: driftVisualMode === 'jantar_mantar' ? '#0284c7' : 'transparent',
+                    color: '#ffffff',
+                    fontWeight: 700,
+                    fontSize: '0.76rem',
+                    cursor: 'pointer',
+                  }}
+                >
+                  🔭 Jantar Mantar Transit Wall (1725)
+                </button>
+              </div>
+
+              {driftVisualMode === 'dongla' ? (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#f472b6', letterSpacing: '0.05em', marginBottom: '0.4rem' }}>
+                    DOṄGLĀ OBSERVATORY (23° 26&apos; 34&quot; N) · JUNE 21 ZENITH
+                  </span>
+                  <svg viewBox="0 0 300 180" style={{ width: '100%', maxWidth: '280px', height: 'auto' }}>
+                    {/* Sun directly overhead at 90 degrees */}
+                    <circle cx="150" cy="25" r="16" fill="#facc15" />
+                    <line x1="150" y1="45" x2="150" y2="120" stroke="#fef08a" strokeWidth="2.5" strokeDasharray="3,3" />
+
+                    {/* Ground level */}
+                    <line x1="30" y1="140" x2="270" y2="140" stroke="#52525b" strokeWidth="3" />
+
+                    {/* Vertical Gnomon Pillar */}
+                    <rect x="146" y="85" width="8" height="55" fill="#f43f5e" rx="2" />
+
+                    {/* Zero shadow indicator at base (collapsed circle) */}
+                    <ellipse cx="150" cy="140" rx="4" ry="2" fill="#71717a" />
+
+                    {/* Labels */}
+                    <text x="150" y="14" fill="#facc15" fontSize="10" fontWeight="800" textAnchor="middle">
+                      Solar Zenith = 90° (Absolute Noon)
+                    </text>
+                    <text x="150" y="160" fill="#f472b6" fontSize="11" fontWeight="700" textAnchor="middle">
+                      Shadow Length = 0.00 Aṅgulas
+                    </text>
+                    <text x="150" y="174" fill="#a1a1aa" fontSize="9" textAnchor="middle">
+                      Modern Tropic of Cancer Node (30 km North)
+                    </text>
+                  </svg>
+                  <p style={{ margin: '0.5rem 0 0', fontSize: '0.76rem', color: '#d4d4d8', textAlign: 'center' }}>
+                    Every summer solstice at 12:28 PM local time at Doṅglā, vertical rods, sundials, and visitors cast <strong>no shadow whatsoever</strong>.
+                  </p>
+                </div>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#38bdf8', letterSpacing: '0.05em', marginBottom: '0.4rem' }}>
+                    DAKṢIṆOTTARA BHITTI YANTRA (TRANSIT WALL INSTRUMENT)
+                  </span>
+                  <svg viewBox="0 0 300 180" style={{ width: '100%', maxWidth: '280px', height: 'auto' }}>
+                    {/* Meridian Wall representation */}
+                    <rect x="50" y="30" width="200" height="110" fill="#27272a" stroke="#38bdf8" strokeWidth="1.5" rx="4" />
+
+                    {/* Graduated Quadrant Arc */}
+                    <path d="M 80 135 A 85 85 0 0 0 165 50" fill="none" stroke="#f59e0b" strokeWidth="2.5" />
+                    <line x1="80" y1="135" x2="80" y2="50" stroke="#64748b" strokeWidth="1" strokeDasharray="2,2" />
+                    <line x1="80" y1="50" x2="165" y2="50" stroke="#64748b" strokeWidth="1" strokeDasharray="2,2" />
+
+                    {/* Sun pin at center */}
+                    <circle cx="80" cy="50" r="4" fill="#ef4444" />
+                    <text x="80" y="42" fill="#ef4444" fontSize="8" fontWeight="700" textAnchor="middle">
+                      Aperture Pin
+                    </text>
+
+                    {/* Incident Solar Ray */}
+                    <line x1="30" y1="15" x2="80" y2="50" stroke="#fde047" strokeWidth="2" strokeDasharray="3,3" />
+                    <line x1="80" y1="50" x2="140" y2="105" stroke="#fde047" strokeWidth="2" />
+                    <circle cx="140" cy="105" r="3" fill="#fde047" />
+
+                    {/* Graduations */}
+                    <line x1="135" y1="102" x2="145" y2="108" stroke="#38bdf8" strokeWidth="2" />
+                    <text x="152" y="108" fill="#38bdf8" fontSize="8" fontWeight="700">
+                      Z = 23.2°
+                    </text>
+
+                    {/* Formula at bottom */}
+                    <text x="150" y="160" fill="#38bdf8" fontSize="10" fontWeight="800" textAnchor="middle">
+                      Solar Declination: δ = φ - Z
+                    </text>
+                    <text x="150" y="174" fill="#94a3b8" fontSize="8" textAnchor="middle">
+                      Immune to Table Drift · Real-Time Celestial Recalibration
+                    </text>
+                  </svg>
+                  <p style={{ margin: '0.5rem 0 0', fontSize: '0.76rem', color: '#d4d4d8', textAlign: 'center' }}>
+                    Jai Singh’s massive North-South meridian wall casts the Sun’s noon shadow across graduated marble arcs, directly measuring true solar declination <strong>δ</strong> and bypassing outdated tables.
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}

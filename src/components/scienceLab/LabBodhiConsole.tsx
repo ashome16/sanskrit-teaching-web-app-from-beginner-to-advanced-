@@ -939,6 +939,11 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
         a: 'In classical Siddhāntic astronomy, all planetary tables (Ahargaṇa) and ephemerides are calibrated to sunrise on the Ujjain meridian. Astrologers first find Ujjain solar mean time and then apply local Deśāntara-saṃskāra (longitudinal time delta) for any birth location.',
         devAudio: 'देशान्तर-संस्कारः',
       },
+      {
+        q: 'Why has the Tropic of Cancer shifted roughly 30 km from Mahakaleshwar Temple?',
+        a: 'The shift is driven by the Milankovitch obliquity cycle (41,000 years), where Earth’s axial tilt fluctuates between 22.1° and 24.5°. Currently, Earth is becoming more upright, causing the Tropic of Cancer to drift southward toward the equator at ~15 meters (49 feet) per year. Over 1,600+ years, this accumulates to roughly 25–30 km.',
+        devAudio: 'अयनांश-भ्रमणम्',
+      },
     ],
     quizzes: [
       {
@@ -979,6 +984,19 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
         correct: 1,
         explanation: 'Maṅgalanātha is revered in Purāṇic astronomy as the birthplace of Mars (Bhauma-Janmasthāna) and served as a high-precision node for tracking Martian epicycles and retrogrades.',
         sanskritContext: 'भौमस्य जन्मस्थानं मङ्गलनाथः।',
+      },
+      {
+        id: 'ujjain-q4',
+        q: 'Why did Maharaja Sawai Jai Singh II construct massive stone instruments (like the Samrat Yantra and Transit Wall) at Jantar Mantar in 1725?',
+        options: [
+          'Because brass was too scarce in Rajasthan',
+          'Because massive stone masonry does not warp or move, allowing astronomers to calculate the exact real-time local declination of the Sun and recalibrate mathematical tables to account for centuries of axial tilt drift',
+          'Solely to serve as decorative temple architecture',
+          'To measure rainfall during the monsoon',
+        ],
+        correct: 1,
+        explanation: 'Jai Singh realized that portable brass instruments warped and that centuries of planetary wobble had caused tables to drift. His massive masonry instruments directly measured solar declination and meridian transits without reliance on outdated tables.',
+        sanskritContext: 'शिलायन्त्राणि निश्चलानि सूक्ष्मवेधक्षमानि।',
       },
     ],
   },
