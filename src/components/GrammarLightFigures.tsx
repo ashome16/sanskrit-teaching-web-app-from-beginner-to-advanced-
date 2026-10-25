@@ -1704,6 +1704,150 @@ function BoseTelegraphicToNafis() {
   );
 }
 
+/** Article 20: The Ancient Prime Meridian (Madhya-Rekha) Corridor from Mount Meru to Lanka. */
+function UjjainMeridianCorridor() {
+  const nodes = [
+    { name: 'Sumeru / Mount Meru', lat: '+90° 00\' N', role: 'North Pole Axis of Cosmic Rotation', color: '#0369a1', bg: '#f0f9ff' },
+    { name: 'Kurukṣetra (Sannihita Saraḥ)', lat: '29° 58\' N', role: 'Vedic Sacred Lake & Astronomical Center', color: '#0f766e', bg: '#f0fdfa' },
+    { name: 'Rohītaka (Modern Rohtak)', lat: '28° 54\' N', role: 'Northern Astronomical Reference Station', color: '#b45309', bg: '#fffbeb' },
+    { name: 'Avantī / Ujjain (0° Longitude)', lat: '23° 10\' N', role: 'The Prime Meridian & Ancient Tropic of Cancer', color: '#b91c1c', bg: '#fef2f2', highlight: true },
+    { name: 'Māhiṣmatī (Maheshwar)', lat: '22° 11\' N', role: 'Sacred Narmada River Geodetic Cross-point', color: '#6d28d9', bg: '#f5f3ff' },
+    { name: 'Laṅkā (Equatorial Node)', lat: '0° 00\' (Eq)', role: 'Zero Latitude & Zero Longitude Intersection', color: '#059669', bg: '#f0fdf4' },
+    { name: 'Baḍavāmukha (South Pole)', lat: '-90° 00\' S', role: 'Southern Polar Axis Baseline', color: '#475569', bg: '#f8fafc' },
+  ];
+
+  return (
+    <Panel
+      kicker="Madhya-Rekhā (मध्यरेखा) · The Ancient Indian Prime Meridian Corridor"
+      caption="Codified in the Sūryasiddhānta (Chapter 1, Verses 62–67), the Great Circle connected Lanka on the equator through Ujjain (Avantī) to Mount Meru at the North Pole, functioning as the ancient world's zero longitude baseline."
+      maxWidth={640}
+    >
+      <svg viewBox="0 0 620 400" role="img" aria-label="Ujjain Prime Meridian Corridor" style={{ fontFamily: SANS }}>
+        {/* Central Meridian Line */}
+        <line x1="160" y1="20" x2="160" y2="380" stroke="#cbd5e1" strokeWidth="3" strokeDasharray="6,4" />
+        <line x1="160" y1="170" x2="160" y2="230" stroke="#ef4444" strokeWidth="4" />
+
+        {nodes.map((node, i) => {
+          const y = 20 + i * 52;
+          return (
+            <g key={node.name} transform={`translate(20, ${y})`}>
+              {/* Latitude pill */}
+              <rect x="0" y="4" width="110" height="26" rx="6" fill={node.bg} stroke={node.color} strokeWidth="1.2" />
+              <text x="55" y="21" fill={node.color} fontSize="10.5" fontWeight="800" textAnchor="middle">{node.lat}</text>
+
+              {/* Meridian node circle */}
+              <circle cx="140" cy="17" r={node.highlight ? "8" : "5"} fill={node.color} stroke="#ffffff" strokeWidth="2" />
+              {node.highlight && <circle cx="140" cy="17" r="12" fill="none" stroke="#ef4444" strokeWidth="1.5" strokeOpacity="0.5" />}
+
+              {/* Node Card */}
+              <rect x="165" y="0" width="415" height="36" rx="8" fill={node.highlight ? "#fff1f2" : "#ffffff"} stroke={node.highlight ? "#f43f5e" : "#e2e8f0"} strokeWidth={node.highlight ? "1.8" : "1"} />
+              <text x="180" y="16" fill={node.highlight ? "#9f1239" : "#0f172a"} fontSize="12" fontWeight="800">{node.name}</text>
+              <text x="180" y="29" fill={node.highlight ? "#be123c" : "#64748b"} fontSize="10">{node.role}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
+/** Article 20: 30 km southward drift from Mahakaleshwar to Dongla via Milankovitch Obliquity. */
+function TropicOfCancerObliquityDrift() {
+  return (
+    <Panel
+      kicker="Milankovitch Obliquity · The 30 km Tropic of Cancer Migration"
+      caption="Earth's axial tilt oscillates between 22.1° and 24.5° over a 41,000-year cycle. Currently decreasing at ~47 arcsec/century, the Tropic of Cancer migrates southward at ~15 meters per year, shifting 30 km from Mahākāleśvara Temple to Doṅglā over 1,700 years."
+      maxWidth={640}
+    >
+      <svg viewBox="0 0 620 320" role="img" aria-label="Tropic of Cancer Obliquity Drift" style={{ fontFamily: SANS }}>
+        {/* Sky / background styling */}
+        <rect x="20" y="15" width="580" height="290" rx="12" fill="#fafafa" stroke="#e2e8f0" strokeWidth="1" />
+
+        {/* Modern Tropic of Cancer (Dongla) */}
+        <g transform="translate(40, 35)">
+          <rect width="540" height="74" rx="8" fill="#f0fdf4" stroke="#86efac" strokeWidth="1.5" />
+          <circle cx="35" cy="37" r="14" fill="#22c55e" />
+          <text x="35" y="42" fill="#ffffff" fontSize="12" fontWeight="900" textAnchor="middle">N</text>
+          <text x="65" y="28" fill="#166534" fontSize="13" fontWeight="800">Doṅglā Village (23° 26' 14" N) · Modern Tropic of Cancer</text>
+          <text x="65" y="46" fill="#15803d" fontSize="10.5">Varāhamihira Astronomical Observatory · Annual Zero Shadow Day (June 21 Solar Noon)</text>
+          <rect x="420" y="24" width="105" height="22" rx="999" fill="#22c55e" />
+          <text x="472" y="38" fill="#ffffff" fontSize="9.5" fontWeight="800" textAnchor="middle">Current 2026 CE</text>
+        </g>
+
+        {/* The 15 m/year southward drift corridor */}
+        <g transform="translate(300, 115)">
+          <line x1="0" y1="0" x2="0" y2="70" stroke="#0284c7" strokeWidth="2.5" strokeDasharray="5,4" />
+          <polygon points="-6,65 6,65 0,75" fill="#0284c7" />
+          <rect x="-140" y="18" width="280" height="34" rx="6" fill="#f0f9ff" stroke="#bae6fd" strokeWidth="1" />
+          <text x="0" y="32" fill="#0369a1" fontSize="10.5" fontWeight="800" textAnchor="middle">Annual Southward Migration: ~15 m / year</text>
+          <text x="0" y="45" fill="#0284c7" fontSize="9.5" textAnchor="middle">Cumulative 30 km shift over 1,700 years</text>
+        </g>
+
+        {/* Ancient Tropic of Cancer (Mahakaleshwar) */}
+        <g transform="translate(40, 205)">
+          <rect width="540" height="74" rx="8" fill="#fff1f2" stroke="#fecdd3" strokeWidth="1.5" />
+          <circle cx="35" cy="37" r="14" fill="#e11d48" />
+          <text x="35" y="42" fill="#ffffff" fontSize="12" fontWeight="900" textAnchor="middle">🔱</text>
+          <text x="65" y="28" fill="#9f1239" fontSize="13" fontWeight="800">Mahākāleśvara Temple &amp; Ujjain (23° 10' 58" N)</text>
+          <text x="65" y="46" fill="#be123c" fontSize="10.5">Ancient Tropic of Cancer &amp; Prime Meridian (0° Longitude) Intersection · Nābhideśa</text>
+          <rect x="420" y="24" width="105" height="22" rx="999" fill="#e11d48" />
+          <text x="472" y="38" fill="#ffffff" fontSize="9.5" fontWeight="800" textAnchor="middle">Antiquity c. 300 CE</text>
+        </g>
+      </svg>
+    </Panel>
+  );
+}
+
+/** Article 20: 72-year/1-day precession shift and Sayana vs Nirayana calendar debate. */
+function MakarSankrantiPrecessionTimeline() {
+  const epochs = [
+    { year: '~272 BCE', date: '21 Dec', diff: 'Solstice', label: 'Mauryan Era: coincided with Winter Solstice', color: '#0284c7', bg: '#f0f9ff' },
+    { year: '~285 CE', date: '22 Dec', diff: '0 Days', label: 'Chitrapaksha Epoch: Ayanāṃśa = 0° (Sayana = Nirayana)', color: '#0369a1', bg: '#f0f9ff' },
+    { year: '~1000 CE', date: '31 Dec', diff: '+9 Days', label: 'Medieval Era: shifted into late December', color: '#0f766e', bg: '#f0fdfa' },
+    { year: '~1500 CE', date: '07 Jan', diff: '+16 Days', label: 'Bhakti Period: shifted to first week of January', color: '#d97706', bg: '#fffbeb' },
+    { year: '2026 CE', date: '14–15 Jan', diff: '+24 Days', label: 'Current Era: 24.2-day gap from Winter Solstice (Dec 21)', color: '#e11d48', bg: '#fff1f2', highlight: true },
+    { year: '~2090 CE', date: '16 Jan', diff: '+25 Days', label: 'Upcoming Threshold: permanently advances to Jan 16', color: '#7c3aed', bg: '#f5f3ff' },
+    { year: '~2700 CE', date: '01 Feb', diff: '+41 Days', label: 'Future Epoch: Makar Sankranti celebrated in February', color: '#475569', bg: '#f8fafc' },
+  ];
+
+  return (
+    <Panel
+      kicker="Axial Precession · The 72-Year / 1-Day Makar Sankranti Shift"
+      caption="Due to the 50.29''/year precession of equinoxes, Nirāyana Makar Sankranti advances 1 day every 72 years relative to the tropical seasons. Sister festivals Baisakhi, Puthandu, and Vishu experience the identical 24-day drift from March 21 to April 14–15."
+      maxWidth={640}
+    >
+      <svg viewBox="0 0 620 340" role="img" aria-label="Makar Sankranti Precession Timeline" style={{ fontFamily: SANS }}>
+        {/* Connecting timeline track */}
+        <line x1="90" y1="20" x2="90" y2="310" stroke="#cbd5e1" strokeWidth="2.5" />
+
+        {epochs.map((ep, i) => {
+          const y = 16 + i * 44;
+          return (
+            <g key={ep.year} transform={`translate(20, ${y})`}>
+              {/* Year label */}
+              <text x="60" y="22" fill={ep.highlight ? "#be123c" : "#64748b"} fontSize="10.5" fontWeight={ep.highlight ? "900" : "700"} textAnchor="end">{ep.year}</text>
+
+              {/* Dot */}
+              <circle cx="70" cy="18" r={ep.highlight ? "6" : "4"} fill={ep.color} stroke="#ffffff" strokeWidth="1.5" />
+
+              {/* Date badge */}
+              <rect x="88" y="5" width="70" height="25" rx="5" fill={ep.bg} stroke={ep.color} strokeWidth={ep.highlight ? "1.8" : "1"} />
+              <text x="123" y="21" fill={ep.color} fontSize="11" fontWeight="800" textAnchor="middle">{ep.date}</text>
+
+              {/* Offset pill */}
+              <rect x="166" y="7" width="55" height="21" rx="4" fill="#f1f5f9" />
+              <text x="193" y="21" fill="#475569" fontSize="9.5" fontWeight="700" textAnchor="middle">{ep.diff}</text>
+
+              {/* Description */}
+              <text x="230" y="21" fill={ep.highlight ? "#9f1239" : "#334155"} fontSize="10" fontWeight={ep.highlight ? "700" : "500"}>{ep.label}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </Panel>
+  );
+}
+
 const FIGURES: Record<string, () => ReactNode> = {
   'vibhakti-eight-cases': () => <VibhaktiEightCases />,
   'dasagana-ten-classes': () => <DasaganaTenClasses />,
@@ -1743,6 +1887,9 @@ const FIGURES: Record<string, () => ReactNode> = {
   'samudra-shastra-fingerprint-patterns': () => <SamudraShastraFingerprintPatterns />,
   'haque-1024-matrix-grid': () => <Haque1024MatrixGrid />,
   'bose-telegraphic-to-nafis': () => <BoseTelegraphicToNafis />,
+  'ujjain-meridian-corridor': () => <UjjainMeridianCorridor />,
+  'tropic-of-cancer-obliquity-drift': () => <TropicOfCancerObliquityDrift />,
+  'makar-sankranti-precession-timeline': () => <MakarSankrantiPrecessionTimeline />,
 };
 
 export function isGrammarLightFigure(id: string): boolean {

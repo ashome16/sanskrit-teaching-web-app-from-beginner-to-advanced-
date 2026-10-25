@@ -61,6 +61,10 @@ export const SANSKRIT_ARTICLE_META: Record<string, { titleSa: string; blurbSa: s
     titleSa: 'अङ्गुलीमुद्रा-विज्ञानम् · Indian Fingerprint Science & Biometrics',
     blurbSa: 'सामुद्रिकशास्त्रात् (चक्र-शङ्ख-शुक्तिः) टिप्परामुद्रां प्रति, काजी अज़ीज़ुल हक़-महाभागस्य १०२४-कोष्ठक-बीजगणितं, हेमचन्द्र बोस-महोदयस्य ताराङ्क-सङ्केतः, आधुनिक-नाफिस-तन्त्रं (NAFIS) च।',
   },
+  'ujjain-prime-meridian-ancient-geodesy': {
+    titleSa: 'मध्यरेखा-भूगोलम् · Ujjain: The Sacred Meridian & Ancient Geodesy',
+    blurbSa: 'उज्जयिनी (अवन्ती) शून्य-देशान्तरम् (0°), महाकालेश्वर-नाभिदेशः, कर्करेखा-दोलनं, यन्त्रमन्दिरस्य सम्राट्-यन्त्रं, मकरसंक्रान्ति-सायन-निरयण-वादश्च।',
+  },
 };
 
 export const SANSKRIT_ARTICLES: Record<string, ParsedArticle> = {

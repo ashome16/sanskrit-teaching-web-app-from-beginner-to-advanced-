@@ -41,6 +41,7 @@ export type GrammarTopic =
 const MASTERCLASS_IDS = [
   'beginners-roadmap',
   'katapayadi-number-words',
+  'ujjain-prime-meridian-ancient-geodesy',
   'theft-of-biometrics-indian-fingerprint-science',
   'animal-names-yoga-shapes-singing-notes',
   'vakyapadiya-and-ai',

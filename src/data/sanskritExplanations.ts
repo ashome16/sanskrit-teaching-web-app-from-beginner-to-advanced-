@@ -424,4 +424,35 @@ export const SANSKRIT_EXPLANATIONS: Record<string, SanskritExplanation> = {
       },
     ],
   },
+
+  'ujjain-prime-meridian-ancient-geodesy': {
+    titleSa: 'मध्यरेखा-विज्ञानम् — बोधि-व्याख्या',
+    titleEn: "Bodhi's Overview: The Sacred Meridian of Ujjain, Cosmic Geodesy & Axial Wobbles",
+    takeawayQuote: {
+      sa: 'रोहितकमवन्ती च मध्यरेखा विधीयते ।',
+      en: 'From Lanka through Ujjain and Rohitaka to Meru runs the Prime Meridian of cosmic time.',
+    },
+    sanskritText:
+      'उज्जयिनी (अवन्ती) प्राचीने काले सम्पूर्ण-जगतः मध्यरेखा (Prime Meridian / 0° देशान्तरम्) आसीत्। सूर्यसिद्धान्ते लङ्कातः मेरुं प्रति योजनप्रमाणेन देशान्तरं गणितम्। महाकालेश्वर-मङ्गलिनाथ-मन्दिरे अक्षांश-रेखांशयोः मुख्य-केन्द्रत्वेन प्रतिष्ठापिते। अद्य कर्करेखा त्रिंशत्-किलोमीटर-दूरे गता, यतः भूमेः अक्ष-दोलनेन (Milankovitch Obliquity) प्रतिवर्षं १५ मीटर-प्रमाणेन दक्षिणदिशि सरति। सवाई-जयसिंहस्य यन्त्रमन्दिरे सम्राट्-यन्त्रेण द्विसैकण्ड-परिशुद्ध्या कालः गणितः, मकरसंक्रान्तेश्च ७२ वर्षेषु एकदिन-चलनं सायन-निरयण-वादे मुख्यम् अस्ति।',
+    englishTranslation:
+      'Ujjain (ancient Avantī) served as the Prime Meridian (0° Longitude) of the ancient world. Classical texts like the Sūrya Siddhānta measured longitude from Laṅkā to Mount Meru through Ujjain. The Mahākāleśvara and Maṅgalanātha temples were engineered as geodetic benchmarks. Today, the Tropic of Cancer has shifted ~30 km north to Doṅglā because Earth’s axial tilt (obliquity) oscillation causes the line to migrate southward by ~15 meters annually. In 1725, Maharaja Sawai Jai Singh II built Ujjain’s Jantar Mantar to recalibrate celestial motions down to 2 seconds, while axial precession causes Makar Sankranti to drift forward by 1 day every 72 years—the heart of the Sāyana vs Nirāyana calendar debate.',
+    bulletPoints: [
+      {
+        sa: 'मध्यरेखा (०° देशान्तरम्) — लङ्का-अवन्ती-रोहीतक-सुमेरु-मध्यगा रेखा।',
+        en: 'The Ancient Prime Meridian: 0° longitude connecting Lanka, Ujjain, Rohtak, Kurukshetra, and the North Pole.',
+      },
+      {
+        sa: 'कर्करेखा-चलनम् — प्रतिवर्षं १५ मीटर-प्रमाणेन दक्षिणदिशि दोलनम्।',
+        en: 'Tropic of Cancer Migration: 30 km shift from Mahakaleshwar to Dongla via 41,000-year Milankovitch obliquity cycle.',
+      },
+      {
+        sa: 'सम्राट्-यन्त्रम् — ९.१ मीटर-त्रिज्यया २-सैकण्ड-परिशुद्ध-छायाकालः।',
+        en: 'Samrat Yantra Precision: 9.1 m quadrant radius yielding 0.66 mm/sec shadow speed and 2-second time resolution.',
+      },
+      {
+        sa: 'मकरसंक्रान्ति-वादः — ७२ वर्षेषु १ दिन-चलनम्, सायन-निरयण-विचारश्च।',
+        en: 'The 72-Year Sankranti Shift: 24-day drift from Winter Solstice (Dec 21) to Jan 14/15, and the ongoing Sayana vs Nirayana reform debate.',
+      },
+    ],
+  },
 };

@@ -196,4 +196,18 @@ export const ARTICLE_KEY_WORDS: Record<string, SanskritKeyWord[]> = {
     { word: 'काजी अज़ीज़ुल हक़', translit: 'Qazi Azizul Haque', meaning: 'Presidency College mathematician; invented 1,024-matrix system' },
     { word: 'हेमचन्द्र बोस', translit: 'Hem Chandra Bose', meaning: 'Sanskrit College scientist; invented Telegraphic Code & Single-Digit index' },
   ],
+
+  'ujjain-prime-meridian-ancient-geodesy': [
+    { word: 'मध्यरेखा', translit: 'Madhya-Rekhā', meaning: 'Prime Meridian (0° Longitude baseline)' },
+    { word: 'याम्योत्तररेखा', translit: 'Yāmyottara-Rekhā', meaning: 'North-South Great Circle passing through poles' },
+    { word: 'उज्जयिनी', translit: 'Ujjayinī / Avantī', meaning: 'Historical geodetic capital and reference city (23° 10\' N, 75° 46\' E)' },
+    { word: 'महाकालः', translit: 'Mahākāla', meaning: 'Lord of Absolute Time at Ujjain Jyotirlinga' },
+    { word: 'नाभिदेशः', translit: 'Nābhideśa', meaning: 'Navel of the Earth (Prime Meridian & Tropic of Cancer intersection)' },
+    { word: 'कर्कसंक्रान्तिः', translit: 'Karka-Sankrānti', meaning: 'Summer Solstice (Sun reaching northern zenith)' },
+    { word: 'मकरसंक्रान्तिः', translit: 'Makara-Sankrānti', meaning: 'Solar ingress into Capricorn; precesses 1 day per 72 years' },
+    { word: 'उत्तरायणम्', translit: 'Uttarāyana', meaning: 'Sun\'s northward journey starting at Winter Solstice (Dec 21–22)' },
+    { word: 'अयनांशः', translit: 'Ayanāṃśa', meaning: 'Precession angle between tropical and sidereal zodiacs' },
+    { word: 'सम्राट्-यन्त्रम्', translit: 'Samrāt Yantra', meaning: 'Giant equinoctial stone sundial measuring time to 2 seconds' },
+    { word: 'निर्छाया', translit: 'Nirchāyā', meaning: 'Zero Shadow phenomena when Sun reaches 90° zenith' },
+  ],
 };

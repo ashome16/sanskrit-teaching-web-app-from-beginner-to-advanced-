@@ -142,4 +142,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'अङ्गुलीमुद्रा-विज्ञानम् · The Theft of Biometrics: India’s Foundational Fingerprint Science',
     cardBlurb: 'From the Samudra Shastra (Chakra, Sankha, Seep), Naadi leaves, and medieval Tipra to Qazi Azizul Haque’s 1,024-matrix, Hem Chandra Bose’s telegraphic code, and modern NAFIS biometrics.',
   },
+  {
+    id: 'ujjain-prime-meridian-ancient-geodesy',
+    file: 'grammar/article-20.txt',
+    emoji: '🧭',
+    cardTitle: 'मध्यरेखा · Ujjain: The Sacred Meridian, Cosmic Geodesy & The Precession Paradox',
+    cardBlurb: 'From the world’s ancient Prime Meridian (0°) and Mahākāleśvara’s cosmic benchmarks to the 30 km Tropic of Cancer obliquity drift, Jantar Mantar’s 2-second timekeeper, and the ongoing Makar Sankranti debate.',
+  },
 ];
