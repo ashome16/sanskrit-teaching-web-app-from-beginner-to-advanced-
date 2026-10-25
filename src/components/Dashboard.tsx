@@ -1049,11 +1049,11 @@ const Dashboard: React.FC = () => {
               type="button"
               className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'grammar' ? ' active' : ''}`}
               onClick={handleOpenGrammar}
-              title="Open Vyakaran shelf with all articles"
+              title="Open Vyakaran (Grammar) shelf with all articles"
             >
               <img src="/nav/nav-grammar.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-primary">व्याकरणम्</span>
-              <span className="dashboard-nav-secondary">Vyakaran</span>
+              <span className="dashboard-nav-secondary">Vyakaran · Grammar</span>
             </button>
             <button
               type="button"

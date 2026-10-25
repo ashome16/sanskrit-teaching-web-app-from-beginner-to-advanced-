@@ -787,9 +787,9 @@ const Grammar: React.FC<GrammarProps> = ({
           type="button"
           className="grammar-breadcrumb-link"
           onClick={goBackToShelf}
-          title="Return to Vyākaraṇam Overview"
+          title="Return to Vyākaraṇam (Grammar) Overview"
         >
-          📚 व्याकरणम् (Vyākaraṇam)
+          📚 व्याकरणम् · Grammar (Vyākaraṇam)
         </button>
         {topic === 'course-lesson' && (
           <>
@@ -1495,11 +1495,11 @@ const Grammar: React.FC<GrammarProps> = ({
   const totalMatches = filteredLessons.length + filteredMasterclasses.length + filteredInteractive.length;
 
   return (
-    <section className="grammar-page" aria-label="Grammar">
+    <section className="grammar-page" aria-label="Sanskrit Vyakaran Grammar">
       <header className="grammar-page-header">
-        <h2 className="grammar-title">व्याकरणम् · Vyakaran</h2>
+        <h2 className="grammar-title">व्याकरणम् · Vyakaran (Grammar)</h2>
         <p className="grammar-lead">
-          A structured 10-lesson Sanskrit Vyakaran curriculum from phonetics to syntax, paired with interactive studios and scholarly masterclasses.
+          A structured 10-lesson Sanskrit Vyakaran (Grammar) curriculum from phonetics to syntax, paired with interactive studios and scholarly masterclasses.
         </p>
         <aside className="grammar-meaning-note" aria-label="Meaning of Vyakarana" style={{
           marginTop: '1.25rem',
@@ -1517,7 +1517,7 @@ const Grammar: React.FC<GrammarProps> = ({
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, color: '#b45309', marginBottom: '0.4rem', fontSize: '1rem' }}>
             <span aria-hidden="true">💡</span>
-            <span>What does "Vyākaraṇa" (व्याकरणम्) mean?</span>
+            <span>What does "Vyākaraṇa" (व्याकरणम् · Sanskrit Grammar) mean?</span>
           </div>
           <p style={{ margin: '0 0 0.5rem 0', color: 'inherit' }}>
             <strong>व्याक्रियन्ते व्युत्पाद्यन्ते शब्दाः अनेन इति व्याकरणम्</strong> — <em>Vyākaraṇa</em> literally means the <strong>scientific analysis, deconstruction, and grammatical derivation of words</strong> (from prefix <em>vi-</em> [distinction/separation] + <em>ā-</em> [completely] + root <em>kṛ</em> [to do/make] + suffix <em>lyuṭ</em>).
@@ -1561,7 +1561,7 @@ const Grammar: React.FC<GrammarProps> = ({
 
       {/* 3 Main Sections of Vyakarana: 10-Lesson Course, Masterclasses, Studios */}
       {!qClean && (
-        <div className="grammar-view-tabs" role="tablist" aria-label="Vyakarana sections">
+        <div className="grammar-view-tabs" role="tablist" aria-label="Vyakarana and Grammar sections">
           <button
             type="button"
             className={`grammar-view-tab${courseViewTab === 'course' ? ' active' : ''}`}
@@ -1569,7 +1569,7 @@ const Grammar: React.FC<GrammarProps> = ({
             role="tab"
             aria-selected={courseViewTab === 'course'}
           >
-            <span>🎓 10-Part Beginner Course</span>
+            <span>🎓 10-Part Beginner Grammar Course</span>
             <span className="grammar-view-tab-count">10</span>
           </button>
           <button
