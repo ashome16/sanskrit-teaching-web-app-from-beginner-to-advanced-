@@ -183,6 +183,11 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             <path d="M 0 12 Q 10 2 20 12 Q 30 2 40 12 Q 30 14 20 12 Q 10 14 0 12 Z" />
           </svg>
         </div>
+        <div className="gurukul-bird gurukul-bird-4">
+          <svg className="gurukul-bird-svg" viewBox="0 0 40 24" style={{ width: '26px', height: '16px' }}>
+            <path d="M 0 12 Q 10 2 20 12 Q 30 2 40 12 Q 30 14 20 12 Q 10 14 0 12 Z" />
+          </svg>
+        </div>
       </div>
 
       {/* Main Centerpiece Content */}

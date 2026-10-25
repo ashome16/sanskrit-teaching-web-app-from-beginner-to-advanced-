@@ -100,56 +100,78 @@
 /* Flying Morning Birds Silhouettes */
 .gurukul-intro-sky-birds {
   position: absolute;
-  top: 12%;
+  top: 8%;
   left: 0;
   width: 100%;
-  height: 25%;
+  height: 28%;
   pointer-events: none;
   overflow: hidden;
+  z-index: 5;
 }
 
 .gurukul-bird {
   position: absolute;
-  color: #3D1B04;
-  opacity: 0.82;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+  left: -100px; /* Always starts completely off-screen to prevent any corner glitch */
+  color: #2e1403;
+  opacity: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.28));
+  animation-fill-mode: both;
+  will-change: transform, left;
 }
 
+/* Bird 1: Starts immediately, already soaring across the dawn sky at load */
 .gurukul-bird-1 {
-  top: 15%;
-  animation: birdFlyRight 14s linear infinite;
-  animation-delay: 0s;
+  top: 14%;
+  animation: birdFlyRight 7.8s linear infinite;
+  animation-delay: -2.4s;
 }
 
+/* Bird 2: Glides across following bird 1, starts smoothly from offscreen left */
 .gurukul-bird-2 {
-  top: 35%;
-  animation: birdFlyRight 17s linear infinite;
-  animation-delay: 2.5s;
+  top: 26%;
+  animation: birdFlyRight 8.4s linear infinite;
+  animation-delay: 0.6s;
 }
 
+/* Bird 3: Distant bird soaring in mid sky */
 .gurukul-bird-3 {
-  top: 60%;
-  animation: birdFlyRight 20s linear infinite;
-  animation-delay: 6s;
+  top: 42%;
+  animation: birdFlyRight 9.2s linear infinite;
+  animation-delay: 2.4s;
+}
+
+/* Bird 4: Smaller companion bird in the flock */
+.gurukul-bird-4 {
+  top: 19%;
+  animation: birdFlyRight 8.2s linear infinite;
+  animation-delay: 3.8s;
 }
 
 @keyframes birdFlyRight {
   0% {
-    left: -10%;
-    transform: translateY(0) scale(0.7);
+    left: -80px;
+    transform: translateY(0) scale(0.66);
+    opacity: 0;
+  }
+  6% {
+    opacity: 0.85;
   }
   25% {
-    transform: translateY(-12px) scale(0.75);
+    transform: translateY(-16px) scale(0.72);
   }
   50% {
-    transform: translateY(4px) scale(0.8);
+    transform: translateY(4px) scale(0.76);
   }
   75% {
-    transform: translateY(-8px) scale(0.75);
+    transform: translateY(-10px) scale(0.72);
+  }
+  94% {
+    opacity: 0.85;
   }
   100% {
-    left: 110%;
-    transform: translateY(0) scale(0.7);
+    left: 108%;
+    transform: translateY(-4px) scale(0.66);
+    opacity: 0;
   }
 }
 
