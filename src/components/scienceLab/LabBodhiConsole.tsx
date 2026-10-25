@@ -998,6 +998,19 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
         explanation: 'Jai Singh realized that portable brass instruments warped and that centuries of planetary wobble had caused tables to drift. His massive masonry instruments directly measured solar declination and meridian transits without reliance on outdated tables.',
         sanskritContext: 'शिलायन्त्राणि निश्चलानि सूक्ष्मवेधक्षमानि।',
       },
+      {
+        id: 'ujjain-q5',
+        q: 'Why does the festival of Makar Sankranti shift forward by approximately 1 day every 72 years in the Gregorian calendar?',
+        options: [
+          'Because of changes in lunar orbital distance',
+          'Because the Earth’s axis precesses at 50.29 arcseconds per year, meaning 1 degree of backward wobble takes roughly 71.6 ≈ 72 years, delaying the Sun’s sidereal entry into Makara Rāśi by ~1 day',
+          'Because of leap year adjustments introduced by Pope Gregory XIII',
+          'Because the Sun moves slower during winter',
+        ],
+        correct: 1,
+        explanation: 'Due to equinoctial precession (Ayanāṃśa) of 50.29"/year, the sidereal zodiac shifts relative to the tropical solstices by 1° every 71.6 years, pushing Nirāyana Makar Sankranti forward by ~1 day every 72 years (from Dec 22 in 285 CE to Jan 14/15 today).',
+        sanskritContext: 'अयनांश-चलनेन संक्रान्ति-दिनभेदः।',
+      },
     ],
   },
 };

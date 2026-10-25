@@ -6807,9 +6807,109 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </p>
             </section>
 
-            {/* Section 8: Epistemological Transmission */}
+            {/* Section 8: Samrat Yantra High-Precision Mechanics */}
+            <section className="philosophy-section" id="samrat-yantra-precision">
+              <h2>8. High-Precision Shadow Mechanics: How the Samrat Yantra Measures Time to 2 Seconds</h2>
+              <p>
+                The crown jewel of Maharaja Sawai Jai Singh II’s observatories is the <strong>Bṛhat Samrāt Yantra</strong> (&quot;Supreme Instrument&quot;), an equinoctial sundial designed not merely as a clock, but as a precision astronomical computer. While modern wristwatches tick electronically, the Samrat Yantra transforms the planetary rotation of the Earth into a physical, visible sweep of light and shadow across marble scales.
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0284c7' }}>1. POLAR AXIS ALIGNMENT</span>
+                  <h4 style={{ margin: '0.3rem 0 0.4rem', fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>The Latitudinal Triangle</h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#475569', lineHeight: 1.55 }}>
+                    The central triangular gnomon rises at an angle equal to the local latitude (<strong>φ = 23° 10&apos;</strong> in Ujjain). Its hypotenuse points directly toward the celestial pole, making it perfectly parallel to the Earth&apos;s axis of rotation.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#059669' }}>2. EQUATORIAL QUADRANTS</span>
+                  <h4 style={{ margin: '0.3rem 0 0.4rem', fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>Equinoctial Circle Plane</h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#475569', lineHeight: 1.55 }}>
+                    Flanking the gnomon are two curved marble quadrant arcs. Unlike horizontal sundials that require non-linear trigonometric scales, these arcs lie strictly in the plane of the celestial equator (perpendicular to the gnomon), ensuring that Earth’s <strong>15°/hour</strong> rotation produces a perfectly uniform, linear shadow velocity.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#b45309' }}>3. LINEAR SHADOW VELOCITY</span>
+                  <h4 style={{ margin: '0.3rem 0 0.4rem', fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>1 mm = 1.5 to 2 Seconds</h4>
+                  <p style={{ margin: 0, fontSize: '0.84rem', color: '#475569', lineHeight: 1.55 }}>
+                    With a quadrant radius of R ≈ 9.1 metres, the shadow sweeps the marble scale at roughly <strong>0.66 mm per second (1.32 mm every two seconds)</strong>. Because a millimeter is distinctly visible to the unaided human eye, observers can read local solar time directly to within <strong>2 seconds</strong>.
+                  </p>
+                </div>
+              </div>
+
+              <div className="philosophy-card" style={{ background: '#f0f9ff', border: '1.5px solid #bae6fd', margin: '1.25rem 0' }}>
+                <h4 style={{ margin: '0 0 0.5rem', color: '#0369a1', fontSize: '1rem', fontWeight: 800 }}>
+                  Overcoming the Penumbra (Fuzzy Shadow Edge)
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.86rem', color: '#0c4a6e', lineHeight: 1.6 }}>
+                  Because the Sun is not a single infinitesimal point but a glowing disk with an angular diameter of roughly <strong>0.5° (32 arcminutes)</strong>, every shadow edge produces a fuzzy penumbra gradient. Jai Singh’s royal observers solved this through an ingenious optical technique: by suspending a fine taut silk or metal thread along the edge of the gnomon, a sharp, dark core filament was cast through the penumbra, enabling astronomers to calibrate Vernier subdivisions and read the time without blur.
+                </p>
+              </div>
+            </section>
+
+            {/* Section 9: Makar Sankranti Precession Mystery */}
+            <section className="philosophy-section" id="makar-sankranti-precession">
+              <h2>9. The Makar Sankranti Precession Mystery: Why the Festival Shifts by 1 Day Every 72 Years</h2>
+              <p>
+                One of the most practical and culturally revered manifestations of Earth&apos;s axial precession is the celebration of <strong>Makar Sankranti (मकरसंक्रान्तिः)</strong>. Millions celebrate this day as the transition of the Sun into Capricorn and the beginning of its northward journey (<em>Uttarāyaṇa</em>). Yet, modern science reveals an intriguing paradox: <strong>the astronomical winter solstice occurs on December 21/22, whereas Makar Sankranti is celebrated on January 14/15.</strong>
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#fffbeb', padding: '1.2rem', borderRadius: '12px', border: '1.5px solid #fde68a' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#92400e' }}>
+                    Sāyana (सयान / Tropical) Zodiac
+                  </h3>
+                  <p style={{ fontSize: '0.86rem', color: '#78350f', lineHeight: 1.55, margin: 0 }}>
+                    Anchored directly to the seasonal solstices and equinoxes. Tropical Capricorn begins at the exact moment of the <strong>Winter Solstice (December 21/22)</strong>, when the Sun reaches its southernmost latitude (-23.5°) and turns northward.
+                  </p>
+                </div>
+
+                <div style={{ background: '#fff7ed', padding: '1.2rem', borderRadius: '12px', border: '1.5px solid #fed7aa' }}>
+                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#9a3412' }}>
+                    Nirāyana (निरयण / Sidereal) Zodiac
+                  </h3>
+                  <p style={{ fontSize: '0.86rem', color: '#431407', lineHeight: 1.55, margin: 0 }}>
+                    Anchored to the physical backdrop of the fixed stars (*Nakṣatras*), using reference stars like <strong>Chitrā (Spica, α Virginis at 180°)</strong>. It measures when the Sun enters the literal physical constellation of Capricorn (<em>Makara Rāśi</em>).
+                  </p>
+                </div>
+              </div>
+
+              <div className="philosophy-card" style={{ background: '#fdf4ff', border: '1.5px solid #f0abfc', margin: '1.25rem 0' }}>
+                <h4 style={{ margin: '0 0 0.5rem', color: '#86198f', fontSize: '1rem', fontWeight: 800 }}>
+                  The 285 CE Chitrapaksha Coincidence &amp; The 72-Year Rule
+                </h4>
+                <p style={{ margin: '0 0 0.6rem', fontSize: '0.88rem', color: '#701a75', lineHeight: 1.6 }}>
+                  Around <strong>285 CE</strong> (the classical Gupta era and the compilation period of canonical astronomical Siddhāntas), the Sāyana and Nirāyana zodiacs coincided perfectly: <strong>Ayanāṃśa was 0.00°</strong>. On December 22, 285 CE, the Winter Solstice and the Sun’s physical ingress into sidereal Makara occurred on the exact same day!
+                </p>
+                <div style={{ background: '#ffffff', padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid #f5d0fe', fontFamily: 'monospace', fontSize: '0.9rem', color: '#701a75' }}>
+                  Precession Rate = 50.29 arcseconds/year &nbsp;⟹&nbsp; 3600&quot; / 50.29&quot; ≈ 71.6 years per 1°<br />
+                  <strong>1° of Precession ≈ 1 Solar Day Shift every ~72 Years!</strong>
+                </div>
+                <p style={{ margin: '0.6rem 0 0', fontSize: '0.85rem', color: '#701a75', lineHeight: 1.55 }}>
+                  Because Earth wobbles backward by 1° every ~72 years, the sidereal entrance drifts forward by approximately 1 calendar day every lifetime:
+                </p>
+                <ul style={{ margin: '0.4rem 0 0', paddingLeft: '1.25rem', fontSize: '0.84rem', color: '#86198f', lineHeight: 1.6 }}>
+                  <li><strong>c. 285 CE:</strong> December 21/22 (Exact Winter Solstice coincidence)</li>
+                  <li><strong>c. 1000 CE:</strong> December 31</li>
+                  <li><strong>c. 1500 CE:</strong> January 7</li>
+                  <li><strong>c. 1900 CE:</strong> January 13</li>
+                  <li><strong>Today (2026 CE):</strong> January 14/15 (Ayanāṃśa ≈ 24.2°, a 24.5-day drift!)</li>
+                  <li><strong>c. 2700 CE:</strong> February 1</li>
+                  <li><strong>c. 9000 CE:</strong> June (Mid-Summer Makar Sankranti!)</li>
+                </ul>
+              </div>
+
+              <p>
+                This explains why classical Sanskrit masters like Kālidāsa in the <em>Ṛtusaṃhāra</em> celebrated Uttarāyaṇa as the darkest, coldest day of the winter solstice, while contemporary India celebrates Makar Sankranti in mid-January. Both are scientifically valid: one tracks the seasons of the Earth (Sāyana), and the other honors the eternal stellar clockwork of the cosmos (Nirāyana).
+              </p>
+            </section>
+
+            {/* Section 10: Epistemological Transmission */}
             <section className="philosophy-section" id="transmission-ujjain">
-              <h2>8. Epistemological Transmission: From the Ujjain Academy to Baghdad &amp; Europe</h2>
+              <h2>10. Epistemological Transmission: From the Ujjain Academy to Baghdad &amp; Europe</h2>
               <p>
                 The mathematical discoveries of Ujjain did not remain isolated. Between the 8th and 13th centuries, they traveled across cultural spheres, providing the computational foundation for global science:
               </p>

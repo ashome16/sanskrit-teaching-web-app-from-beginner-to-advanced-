@@ -26,6 +26,9 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
   // Year slider: -300 BCE to 2026 CE
   const [selectedYear, setSelectedYear] = useState<number>(2026);
   const [driftVisualMode, setDriftVisualMode] = useState<'dongla' | 'jantar_mantar'>('dongla');
+  const [sankrantiYear, setSankrantiYear] = useState<number>(2026);
+  const [samratHour, setSamratHour] = useState<number>(10);
+  const [samratMinute, setSamratMinute] = useState<number>(30);
 
   // 4. Trigonometry State
   const [angleDeg, setAngleDeg] = useState<number>(30);
@@ -70,6 +73,20 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
   const indianJya = Math.sin(angleRad); // normalized to 1
   const indianKotijya = Math.cos(angleRad);
   const greekChord = 2 * Math.sin(angleRad); // crd(2θ) for comparison
+
+  // --- Calculations for Makar Sankranti & Precession Drift ---
+  // In 285 CE (Chitrapaksha Lahiri epoch), Ayanamsha was 0° and Makar Sankranti fell on Dec 22 (Winter Solstice).
+  // Precession rate = 50.29 arcseconds per year = 1° every 71.6 ≈ 72 years.
+  const ayanamshaDeg = Math.max(0, ((sankrantiYear - 285) * 50.29) / 3600);
+  const driftDays = Math.round((ayanamshaDeg / 360) * 365.256);
+  const shiftedDate = new Date(sankrantiYear, 11, 22 + driftDays);
+  const sankrantiDateStr = shiftedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+  // --- Calculations for Samrat Yantra Shadow Speed ---
+  // On Ujjain's Samrat Yantra (radius R ≈ 9.1 meters on quadrant arc):
+  // v_shadow = (2 * PI * 9100 mm) / (24 * 3600 sec) ≈ 0.66 mm / sec = 1.32 mm / 2 sec
+  const totalSamratSeconds = samratHour * 3600 + samratMinute * 60;
+  const hourAngleDeg = ((totalSamratSeconds - 12 * 3600) / 3600) * 15;
 
   // --- Calculations for Temple Astronomy & 29-minute Panchang Delta ---
   // Ujjain Longitude = 75° 46' E (75.768° E). IST Meridian = 82° 30' E (82.5° E).
@@ -1502,6 +1519,289 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                   </p>
                 </div>
               )}
+            </div>
+          </div>
+
+          {/* Deep Dive Sub-Module: Makar Sankranti Drift & Samrat Yantra 2-Second Precision */}
+          <div
+            style={{
+              background: '#f8fafc',
+              border: '1.5px solid #cbd5e1',
+              borderRadius: '14px',
+              padding: '1.25rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0369a1', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  ASTRONOMICAL APPLICATIONS IN PRACTICE
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>
+                  The Makar Sankranti Calendar Drift &amp; Samrat Yantra 2-Second Precision
+                </h4>
+              </div>
+              <span
+                style={{
+                  background: '#e0f2fe',
+                  color: '#0369a1',
+                  border: '1px solid #bae6fd',
+                  padding: '0.25rem 0.65rem',
+                  borderRadius: '6px',
+                  fontWeight: 800,
+                  fontSize: '0.8rem',
+                }}
+              >
+                Rate: 1 Day Shift Every 72 Years
+              </span>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
+              {/* Card 1: Makar Sankranti Precession */}
+              <div
+                style={{
+                  background: '#ffffff',
+                  border: '1.5px solid #fed7aa',
+                  borderRadius: '12px',
+                  padding: '1.15rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.75rem',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <span style={{ fontSize: '1.3rem' }}>🪁</span>
+                    <h5 style={{ margin: 0, fontSize: '0.98rem', fontWeight: 800, color: '#9a3412' }}>
+                      Why Makar Sankranti Shifts 1 Day Every 72 Years
+                    </h5>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => handlePlay('मकरसंक्रान्तिः')}
+                    style={{
+                      background: '#fff7ed',
+                      border: '1px solid #fed7aa',
+                      borderRadius: '6px',
+                      padding: '0.15rem 0.45rem',
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      color: '#c2410c',
+                    }}
+                  >
+                    🔊 मकरसंक्रान्तिः
+                  </button>
+                </div>
+
+                <p style={{ margin: 0, fontSize: '0.82rem', color: '#431407', lineHeight: 1.5 }}>
+                  <strong>Sāyana (Tropical) vs Nirāyana (Sidereal):</strong> Sāyana calendars anchor to the solstices, where the Sun enters Capricorn (Winter Solstice) on <strong>Dec 21/22</strong>. Nirāyana calendars anchor to the physical stars (*Nakṣatras*). In <strong>285 CE</strong> (Chitrā-pakṣa epoch), both zodiacs aligned perfectly. Since Earth precesses at <strong>50.29&quot; / year</strong> (~1° every 71.6 years), the sidereal entrance has drifted forward:
+                </p>
+
+                {/* Sankranti Year Slider */}
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
+                    <label htmlFor="sankranti-year-slider" style={{ fontSize: '0.82rem', fontWeight: 700, color: '#334155' }}>
+                      Historical Year / Epoch:
+                    </label>
+                    <span style={{ fontSize: '0.88rem', fontWeight: 800, color: '#ea580c', fontFamily: 'monospace' }}>
+                      {sankrantiYear} CE
+                    </span>
+                  </div>
+                  <input
+                    id="sankranti-year-slider"
+                    type="range"
+                    min="285"
+                    max="3000"
+                    step="25"
+                    value={sankrantiYear}
+                    onChange={(e) => setSankrantiYear(parseInt(e.target.value, 10))}
+                    style={{ width: '100%', accentColor: '#ea580c' }}
+                  />
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: '#9a3412' }}>
+                    <span>285 CE (Dec 22 Solstice)</span>
+                    <span>2026 CE (Jan 14)</span>
+                    <span>2700 CE (Feb 1)</span>
+                  </div>
+                </div>
+
+                {/* Quick Epoch Buttons */}
+                <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
+                  {[
+                    { label: '285 CE (Exact Solstice)', yr: 285 },
+                    { label: '1000 CE (Dec 31)', yr: 1000 },
+                    { label: '1900 CE (Jan 13)', yr: 1900 },
+                    { label: '2026 CE (Jan 14/15)', yr: 2026 },
+                    { label: '2700 CE (Feb 1)', yr: 2700 },
+                  ].map((p) => (
+                    <button
+                      key={p.yr}
+                      type="button"
+                      onClick={() => {
+                        soundEffects.playStrokeChime();
+                        setSankrantiYear(p.yr);
+                      }}
+                      style={{
+                        padding: '0.25rem 0.5rem',
+                        fontSize: '0.72rem',
+                        fontWeight: 600,
+                        borderRadius: '6px',
+                        border: '1px solid #fed7aa',
+                        background: sankrantiYear === p.yr ? '#ea580c' : '#fff7ed',
+                        color: sankrantiYear === p.yr ? '#ffffff' : '#9a3412',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {p.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Calculation Output Cards */}
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '0.5rem',
+                    background: '#fff7ed',
+                    padding: '0.65rem',
+                    borderRadius: '8px',
+                    border: '1px solid #ffedd5',
+                  }}
+                >
+                  <div>
+                    <span style={{ fontSize: '0.7rem', color: '#9a3412', fontWeight: 700, textTransform: 'uppercase' }}>
+                      Nirāyana Makar Sankranti:
+                    </span>
+                    <div style={{ fontSize: '1.15rem', fontWeight: 900, color: '#c2410c', fontFamily: 'monospace' }}>
+                      {sankrantiDateStr}
+                    </div>
+                  </div>
+                  <div>
+                    <span style={{ fontSize: '0.7rem', color: '#9a3412', fontWeight: 700, textTransform: 'uppercase' }}>
+                      Ayanāṃśa / Offset:
+                    </span>
+                    <div style={{ fontSize: '1.15rem', fontWeight: 900, color: '#7c2d12', fontFamily: 'monospace' }}>
+                      {ayanamshaDeg.toFixed(2)}° (+{driftDays}d)
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2: Samrat Yantra 2-Second Timekeeping */}
+              <div
+                style={{
+                  background: '#ffffff',
+                  border: '1.5px solid #bae6fd',
+                  borderRadius: '12px',
+                  padding: '1.15rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.75rem',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <span style={{ fontSize: '1.3rem' }}>⏱️</span>
+                    <h5 style={{ margin: 0, fontSize: '0.98rem', fontWeight: 800, color: '#0369a1' }}>
+                      Samrat Yantra: Calculating Time to 2 Seconds
+                    </h5>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => handlePlay('सम्राट-यन्त्रम्')}
+                    style={{
+                      background: '#f0f9ff',
+                      border: '1px solid #bae6fd',
+                      borderRadius: '6px',
+                      padding: '0.15rem 0.45rem',
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      color: '#0369a1',
+                    }}
+                  >
+                    🔊 सम्राट्-यन्त्रम्
+                  </button>
+                </div>
+
+                <p style={{ margin: 0, fontSize: '0.82rem', color: '#0c4a6e', lineHeight: 1.5 }}>
+                  The <strong>Samrat Yantra</strong> is a supreme equinoctial sundial. Its gnomon rises at local latitude (23.18°), parallel to Earth&apos;s axis, while its marble quadrant arcs lie in the plane of the celestial equator. Because Earth rotates <strong>15° every hour (1° per 4 min)</strong>, a giant scale causes shadows to sweep with visible speed:
+                </p>
+
+                {/* Interactive Time of Day */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.2rem' }}>
+                      <label htmlFor="samrat-hour-slider" style={{ fontSize: '0.8rem', fontWeight: 700, color: '#334155' }}>
+                        Local Solar Hour:
+                      </label>
+                      <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0284c7', fontFamily: 'monospace' }}>
+                        {samratHour}:{samratMinute.toString().padStart(2, '0')} Local
+                      </span>
+                    </div>
+                    <input
+                      id="samrat-hour-slider"
+                      type="range"
+                      min="6"
+                      max="18"
+                      value={samratHour}
+                      onChange={(e) => setSamratHour(parseInt(e.target.value, 10))}
+                      style={{ width: '100%', accentColor: '#0284c7' }}
+                    />
+                  </div>
+
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.2rem' }}>
+                      <label htmlFor="samrat-min-slider" style={{ fontSize: '0.8rem', fontWeight: 700, color: '#334155' }}>
+                        Fine Minute Calibration (0 - 59m):
+                      </label>
+                      <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0284c7', fontFamily: 'monospace' }}>
+                        :{samratMinute.toString().padStart(2, '0')} m
+                      </span>
+                    </div>
+                    <input
+                      id="samrat-min-slider"
+                      type="range"
+                      min="0"
+                      max="59"
+                      value={samratMinute}
+                      onChange={(e) => setSamratMinute(parseInt(e.target.value, 10))}
+                      style={{ width: '100%', accentColor: '#0284c7' }}
+                    />
+                  </div>
+                </div>
+
+                {/* Shadow Velocity Mechanics */}
+                <div
+                  style={{
+                    background: '#f0f9ff',
+                    border: '1px solid #bae6fd',
+                    padding: '0.65rem',
+                    borderRadius: '8px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.25rem',
+                    fontSize: '0.78rem',
+                    color: '#0369a1',
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span><strong>Quadrant Radius:</strong> R ≈ 9.1 metres</span>
+                    <span><strong>Hour Angle:</strong> {hourAngleDeg > 0 ? `+${hourAngleDeg.toFixed(1)}° (PM)` : `${hourAngleDeg.toFixed(1)}° (AM)`}</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span><strong>Shadow Speed:</strong> 0.66 mm / second</span>
+                    <span style={{ color: '#0284c7', fontWeight: 800 }}><strong>1 mm Shift = ~1.5 to 2 Seconds</strong></span>
+                  </div>
+                </div>
+
+                <p style={{ margin: 0, fontSize: '0.78rem', color: '#475569', lineHeight: 1.45 }}>
+                  <strong>The Penumbra Problem Solved:</strong> Because the Sun has a 0.5° angular width, shadows cast a fuzzy penumbra edge. Jai Singh&apos;s observers used fine optical threads suspended along the edge of the gnomon to pinpoint the central umbral transition, achieving unambiguous <strong>2-second precision</strong>.
+                </p>
+              </div>
             </div>
           </div>
         </div>
