@@ -159,10 +159,13 @@ const PAID_ACCESS_DAYS = 30;
 
 /** Resolve plan status from trial + paid expiry (planExpiresAt / subscriptionRenewsAt). */
 export const computePlanStatus = (
-  profile: Pick<UserProfile, 'trialEndsAt' | 'planExpiresAt' | 'subscriptionRenewsAt'> & { username?: string },
+  profile: Pick<UserProfile, 'trialEndsAt' | 'planExpiresAt' | 'subscriptionRenewsAt'> & { username?: string; email?: string },
   now = Date.now()
 ): PlanStatus => {
-  if (profile.username?.toLowerCase() === 'dogdude2') return 'active';
+  if (
+    profile.username?.toLowerCase() === 'dogdude2' ||
+    profile.email?.toLowerCase().startsWith('dogdude2@')
+  ) return 'active';
   const paidUntil = profile.planExpiresAt || profile.subscriptionRenewsAt;
   if (paidUntil && paidUntil > now) return 'active';
   if (now <= profile.trialEndsAt) return 'trial';
@@ -863,7 +866,8 @@ export const useAuthStore = create<AuthState>((set, get) => {
 
       const userId = 'user_' + Math.random().toString(36).substr(2, 9);
       const now = Date.now();
-      const isDogdude = cleanUsername.toLowerCase() === 'dogdude2';
+      const isDogdude =
+        cleanUsername.toLowerCase() === 'dogdude2' || cleanEmail.startsWith('dogdude2@');
       const farFuture = now + 10 * 365 * 24 * 60 * 60 * 1000;
       const trialEndsAt = isDogdude ? farFuture : now + TWO_WEEKS_MS;
 
