@@ -209,7 +209,7 @@ export const AgnibanaRocketLab: React.FC = () => {
   const handleLaunchRocket = () => {
     setLaunching(true);
     setLaunchResult(null);
-    soundEffects.playStrokeChime();
+    soundEffects.playRocketLaunchSound(3.5);
 
     // Internal combustion pressure based on chemistry
     const peakPressure = Math.round((combustionQuality.eff / 100) * 75 + 15); // atm
@@ -560,7 +560,7 @@ export const AgnibanaRocketLab: React.FC = () => {
                   className="vl-btn"
                   onClick={() => {
                     setCrucibleFired(true);
-                    soundEffects.playSuccessDing();
+                    soundEffects.playCrucibleIgnition();
                     setTimeout(() => setCrucibleFired(false), 2000);
                   }}
                   style={{
@@ -859,6 +859,7 @@ export const AgnibanaRocketLab: React.FC = () => {
               type="button"
               className="vl-btn"
               onClick={() => {
+                soundEffects.playRocketLaunchSound(2.5);
                 const canvas = nightCanvasRef.current;
                 if (canvas) {
                   triggerFirework(canvas.width * 0.25, 120, 'candrajyoti');

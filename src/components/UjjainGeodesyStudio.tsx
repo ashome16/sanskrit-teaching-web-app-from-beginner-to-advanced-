@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import { soundEffects } from '../utils/soundEffects';
 
 interface UjjainStudioProps {
   onPlayAudio?: (term: string) => void;
+  onNextLab?: () => void;
 }
 
-export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio }) => {
-  const [activeTab, setActiveTab] = useState<'shanku' | 'deshantara' | 'dongla' | 'trig'>('shanku');
+export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, onNextLab }) => {
+  const [activeTab, setActiveTab] = useState<'temple' | 'shanku' | 'deshantara' | 'dongla' | 'trig'>('temple');
+  const [selectedTemple, setSelectedTemple] = useState<'mahakal' | 'mangalnath' | 'vedhashala' | 'dongla'>('mahakal');
+  const [istTimeHours, setIstTimeHours] = useState<number>(12);
+  const [istTimeMinutes, setIstTimeMinutes] = useState<number>(0);
 
   // 1. Shanku Latitude State
   // Default: Ujjain equinoctial noon shadow ~ 5.14 Angulas for ~ 23.18° N
@@ -65,7 +70,66 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio }
   const indianKotijya = Math.cos(angleRad);
   const greekChord = 2 * Math.sin(angleRad); // crd(2θ) for comparison
 
+  // --- Calculations for Temple Astronomy & 29-minute Panchang Delta ---
+  // Ujjain Longitude = 75° 46' E (75.768° E). IST Meridian = 82° 30' E (82.5° E).
+  // Difference = 82.5° - 75.768° = 6.732°
+  // Time Delta = 6.732° × 4 minutes/degree = 26.93 minutes ≈ 29 minutes behind IST
+  const totalIstMinutes = istTimeHours * 60 + istTimeMinutes;
+  const ujjainTotalMinutes = (totalIstMinutes - 29 + 1440) % 1440;
+  const ujjainHours = Math.floor(ujjainTotalMinutes / 60);
+  const ujjainMinutes = Math.floor(ujjainTotalMinutes % 60);
+  const formatTime = (h: number, m: number) => {
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    const displayH = h % 12 === 0 ? 12 : h % 12;
+    const displayM = m.toString().padStart(2, '0');
+    return `${displayH}:${displayM} ${ampm}`;
+  };
+
+  const TEMPLE_DETAILS = {
+    mahakal: {
+      name: 'Mahakaleshwar Jyotirlinga (श्री महाकालेश्वर)',
+      deity: 'Lord of Time (महाकालः)',
+      lat: "23° 10' 58\" N (23.1827° N)",
+      lon: "75° 46' 06\" E (75.7682° E)",
+      role: 'Tropic of Cancer Solar Solstice Alignment & Lord of Time',
+      description: 'The name Mahakal translates to the "Lord of Time" or "Great Time". The temple spire was mathematically aligned so that the Tropic of Cancer crossed directly through it during antiquity. It functioned as both the sacred spiritual epicenter and a physical astronomical marker to track the Sun’s summer solstice zenith.',
+      icon: '🔱',
+      color: '#b45309',
+    },
+    mangalnath: {
+      name: 'Mangalnath Temple (श्री मङ्गलनाथ मन्दिरम्)',
+      deity: 'Birthplace of Mars (भौम / मङ्गलः)',
+      lat: "23° 12' 50\" N (23.2140° N)",
+      lon: "75° 46' 00\" E (75.7667° E)",
+      role: 'Planetary Mars Tracking & Perihelic Observation Node',
+      description: 'According to Hindu cosmogony, this temple is revered as the birthplace of the planet Mars (Mangala). Ancient Indian astronomers calculated this specific latitudinal coordinate as the location on Earth where Mars and Earth were closest in their celestial orbits, establishing it as an indispensable observatory node for tracking planetary retrogrades (Vakra-gati).',
+      icon: '🔴',
+      color: '#dc2626',
+    },
+    vedhashala: {
+      name: 'Vedha Shala / Jantar Mantar (वेधशाला)',
+      deity: 'Astronomical Observatory (सवाई जयसिंह वेधशाला)',
+      lat: "23° 10' 20\" N (23.1722° N)",
+      lon: "75° 46' 03\" E (75.7675° E)",
+      role: 'Equinoctial Gnomon & Celestial Coordinate Calculation',
+      description: 'Built by Maharaja Sawai Jai Singh II of Jaipur in 1719 to revitalize Ujjain’s historic prime meridian. Features the massive Samrat Yantra (equinoctial sundial), Nadi Valaya Yantra, and Digamsha Yantra measuring altitude, azimuth, and local solar time.',
+      icon: '🔭',
+      color: '#0284c7',
+    },
+    dongla: {
+      name: 'Dongla Varahamihira Observatory (दोङ्गला वेधशाला)',
+      deity: 'Modern Tropic of Cancer Station (वराहमिहिर वेधशाला)',
+      lat: "23° 26' 34\" N (23.4428° N)",
+      lon: "75° 46' 00\" E (75.7667° E)",
+      role: 'Modern Tropic of Cancer Precession Node & Zero Shadow Day',
+      description: 'Located 30 km north of Ujjain along the exact same ancient 0° meridian. Due to the 41,000-year obliquity cycle of the Earth (14.5 m/year southward drift), the modern Tropic of Cancer now cuts through Dongla Village, where scientists observe Zero Shadow Day on June 21.',
+      icon: '☀️',
+      color: '#059669',
+    },
+  };
+
   const handlePlay = (term: string) => {
+    soundEffects.playStrokeChime();
     if (onPlayAudio) onPlayAudio(term);
   };
 
@@ -123,6 +187,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio }
           }}
         >
           {[
+            { id: 'temple', label: '🏛️ मन्दिर-रेखागणितम् (Temples & 0° Meridian)', sub: '0° Longitude & Temples' },
             { id: 'shanku', label: '📐 शङ्कु (Śaṅku Gnomon)', sub: 'Latitude (अक्षांश)' },
             { id: 'deshantara', label: '🌖 देशान्तर (Deśāntara)', sub: 'Longitude (रेखांश)' },
             { id: 'dongla', label: '☀️ दोङ्गला (Doṅglā)', sub: 'Zero Shadow & Drift' },
@@ -131,7 +196,10 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio }
             <button
               key={tab.id}
               type="button"
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() => {
+                soundEffects.playStrokeChime();
+                setActiveTab(tab.id as any);
+              }}
               style={{
                 padding: '0.45rem 0.85rem',
                 borderRadius: '8px',
@@ -149,6 +217,469 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio }
           ))}
         </div>
       </div>
+
+      {/* =========================================================================
+          TAB 0: TEMPLE GEOMETRY & ANCIENT PRIME MERIDIAN (0° LONGITUDE)
+         ========================================================================= */}
+      {activeTab === 'temple' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          {/* Header Banner */}
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+              color: '#f8fafc',
+              padding: '1.25rem 1.5rem',
+              borderRadius: '14px',
+              border: '1px solid #334155',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.6rem',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <span
+                style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 800,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: '#38bdf8',
+                  background: 'rgba(56, 189, 248, 0.12)',
+                  padding: '0.2rem 0.6rem',
+                  borderRadius: '6px',
+                }}
+              >
+                0° Longitude Prime Meridian · Nābhideśa (नाभिदेशः)
+              </span>
+              <button
+                type="button"
+                onClick={() => handlePlay('राक्षसालयदेवौकःशैलमध्यगता हि या । रोहितकमवन्ती च तथा सन्निहितं सरः ॥')}
+                style={{
+                  background: '#0284c7',
+                  color: '#ffffff',
+                  border: 'none',
+                  padding: '0.35rem 0.85rem',
+                  borderRadius: '6px',
+                  fontWeight: 700,
+                  fontSize: '0.78rem',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                }}
+              >
+                🔊 Chant Sūrya Siddhānta Meridian Verse
+              </button>
+            </div>
+            <h4 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 800, color: '#f8fafc' }}>
+              The Axis of Time &amp; Space: Ujjain&apos;s Ancient Prime Meridian &amp; Temple Geodesy
+            </h4>
+            <p style={{ margin: 0, fontSize: '0.86rem', color: '#94a3b8', lineHeight: 1.5 }}>
+              Millennia before Greenwich was adopted in 1884, classical Indian astronomers established Ujjain (Avantī) as the <strong>Madhya-Rekhā (0° Longitude)</strong>. Because it sat precisely where the 0° meridian crossed the <strong>Tropic of Cancer (~23.5° N)</strong>, it was revered as the <em>Nābhideśa</em> (&quot;Navel of the Earth&quot;), where solar noon on the summer solstice produced an absolute zero shadow.
+            </p>
+          </div>
+
+          {/* 2-Column: Temple Coordinates & Prime Meridian Vertical Axis */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+            {/* Left: Temple Selection & Detailed Dossier */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Select an Ancient Geodetic &amp; Astronomical Sanctuary:
+              </div>
+
+              {/* Temple Selector Pills */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+                {(Object.keys(TEMPLE_DETAILS) as Array<keyof typeof TEMPLE_DETAILS>).map((key) => {
+                  const t = TEMPLE_DETAILS[key];
+                  const isSel = selectedTemple === key;
+                  return (
+                    <button
+                      key={key}
+                      type="button"
+                      onClick={() => {
+                        soundEffects.playStrokeChime();
+                        setSelectedTemple(key);
+                      }}
+                      style={{
+                        padding: '0.65rem 0.75rem',
+                        borderRadius: '10px',
+                        border: isSel ? `2px solid ${t.color}` : '1.5px solid #e2e8f0',
+                        background: isSel ? '#f8fafc' : '#ffffff',
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.2rem',
+                        boxShadow: isSel ? '0 4px 12px rgba(0,0,0,0.06)' : 'none',
+                        transition: 'all 0.15s ease',
+                      }}
+                    >
+                      <span style={{ fontSize: '1.1rem' }}>{t.icon}</span>
+                      <span style={{ fontSize: '0.84rem', fontWeight: 800, color: isSel ? t.color : '#1e293b' }}>
+                        {t.name.split('(')[0].trim()}
+                      </span>
+                      <span style={{ fontSize: '0.72rem', color: '#64748b' }}>{t.deity.split('(')[0].trim()}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Active Temple Details Card */}
+              {(() => {
+                const current = TEMPLE_DETAILS[selectedTemple];
+                return (
+                  <div
+                    style={{
+                      background: '#ffffff',
+                      border: `2px solid ${current.color}`,
+                      borderRadius: '12px',
+                      padding: '1.25rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.75rem',
+                      boxShadow: '0 6px 20px rgba(0,0,0,0.04)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span style={{ fontSize: '1.5rem' }}>{current.icon}</span>
+                        <div>
+                          <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: current.color }}>
+                            {current.name}
+                          </h4>
+                          <span style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: 600 }}>{current.deity}</span>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handlePlay(current.name)}
+                        style={{
+                          background: '#f1f5f9',
+                          border: '1px solid #cbd5e1',
+                          borderRadius: '6px',
+                          padding: '0.2rem 0.5rem',
+                          fontSize: '0.75rem',
+                          fontWeight: 700,
+                          cursor: 'pointer',
+                          color: '#334155',
+                        }}
+                      >
+                        🔊 Pronounce
+                      </button>
+                    </div>
+
+                    {/* Coordinates Grid */}
+                    <div
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr',
+                        gap: '0.6rem',
+                        background: '#f8fafc',
+                        padding: '0.75rem',
+                        borderRadius: '8px',
+                        border: '1px solid #e2e8f0',
+                      }}
+                    >
+                      <div>
+                        <div style={{ fontSize: '0.7rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>
+                          Latitude (अक्षांश)
+                        </div>
+                        <div style={{ fontSize: '0.86rem', fontWeight: 800, color: '#0f172a', fontFamily: 'monospace' }}>
+                          {current.lat}
+                        </div>
+                      </div>
+                      <div>
+                        <div style={{ fontSize: '0.7rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>
+                          Longitude (रेखांश)
+                        </div>
+                        <div style={{ fontSize: '0.86rem', fontWeight: 800, color: '#0f172a', fontFamily: 'monospace' }}>
+                          {current.lon}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.2rem' }}>
+                        Geodetic &amp; Astronomical Function
+                      </div>
+                      <div style={{ fontSize: '0.86rem', fontWeight: 700, color: '#0284c7' }}>
+                        {current.role}
+                      </div>
+                    </div>
+
+                    <p style={{ margin: 0, fontSize: '0.84rem', color: '#334155', lineHeight: 1.55 }}>
+                      {current.description}
+                    </p>
+                  </div>
+                );
+              })()}
+            </div>
+
+            {/* Right: Prime Meridian Axis Diagram */}
+            <div
+              style={{
+                background: '#090d16',
+                color: '#e2e8f0',
+                padding: '1.25rem',
+                borderRadius: '14px',
+                border: '1px solid #1e293b',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.85rem',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#38bdf8', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                  THE SŪRYA SIDDHĀNTA MERIDIAN AXIS
+                </span>
+                <span style={{ fontSize: '0.72rem', color: '#94a3b8', fontFamily: 'monospace' }}>
+                  0° Madhya-Rekhā (75° 46&apos; E)
+                </span>
+              </div>
+
+              {/* Meridian Nodes Flow */}
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.45rem',
+                  position: 'relative',
+                  paddingLeft: '1.5rem',
+                }}
+              >
+                {/* Connecting Vertical Line */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    left: '0.55rem',
+                    top: '8px',
+                    bottom: '8px',
+                    width: '3px',
+                    background: 'linear-gradient(180deg, #38bdf8 0%, #f59e0b 50%, #38bdf8 100%)',
+                    borderRadius: '2px',
+                  }}
+                />
+
+                {[
+                  { name: 'SUMERU / NORTH POLE (सुमेरुः)', lat: '+90° 00\' 00"', note: 'Cosmic celestial north anchor', highlight: false },
+                  { name: 'KURUKṢETRA (कुरुक्षेत्रम्)', lat: "29° 58' 00\" N", note: 'Sacred lake astronomical calibration node', highlight: false },
+                  { name: 'ROHĪTAKA / ROHTAK (रोहितकम्)', lat: "28° 53' 00\" N", note: 'Ancient Sūrya Siddhānta meridian marker city', highlight: false },
+                  { name: 'DOṄGLĀ OBSERVATORY (दोङ्गला)', lat: "23° 26' 34\" N", note: 'Modern Tropic of Cancer node (Precession drift)', highlight: false },
+                  {
+                    name: 'UJJAIN / AVANTĪ (उज्जयिनी)',
+                    lat: "23° 10' 58\" N",
+                    note: 'THE PRIME MERIDIAN INTERSECTION (0° Long × Tropic of Cancer in antiquity)',
+                    highlight: true,
+                  },
+                  { name: 'MĀHIṢMATĪ (माहिष्मती)', lat: "22° 11' 00\" N", note: 'Narmada river valley crossing', highlight: false },
+                  { name: 'LAṄKĀ / EQUATOR (लाङ्का)', lat: "00° 00' 00\" N", note: 'Equatorial node (0° Latitude × 0° Longitude)', highlight: true },
+                  { name: 'BAḌAVĀMUKHA / SOUTH POLE (वडवामुखम्)', lat: "-90° 00' 00\"", note: 'Terrestrial south pole anchor', highlight: false },
+                ].map((node, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      background: node.highlight ? 'rgba(245, 158, 11, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                      border: node.highlight ? '1.5px solid #f59e0b' : '1px solid rgba(255, 255, 255, 0.08)',
+                      padding: '0.45rem 0.65rem',
+                      borderRadius: '8px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.1rem',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ fontSize: '0.8rem', fontWeight: 800, color: node.highlight ? '#fef08a' : '#f1f5f9' }}>
+                        {node.name}
+                      </span>
+                      <span style={{ fontSize: '0.72rem', fontFamily: 'monospace', color: node.highlight ? '#fbbf24' : '#94a3b8' }}>
+                        {node.lat}
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '0.7rem', color: node.highlight ? '#fde68a' : '#94a3b8' }}>
+                      {node.note}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div
+                style={{
+                  background: 'rgba(56, 189, 248, 0.08)',
+                  border: '1px solid rgba(56, 189, 248, 0.25)',
+                  padding: '0.65rem 0.85rem',
+                  borderRadius: '8px',
+                  fontSize: '0.76rem',
+                  color: '#bae6fd',
+                  lineHeight: 1.45,
+                }}
+              >
+                💡 <em>Sūrya Siddhānta (1.62):</em> The line between Laṅkā on the equator and Meru at the pole constitutes the zero reference for calculating <strong>Ahargaṇa</strong> (elapsed civil days) and planetary positions across Bharatavarsha.
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Section: The 29-Minute Panchang Time Converter */}
+          <div
+            style={{
+              background: '#f8fafc',
+              border: '1.5px solid #cbd5e1',
+              borderRadius: '14px',
+              padding: '1.25rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  PANCHANG GAṆITA &amp; ASTROLOGY ANCHOR
+                </span>
+                <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.1rem', fontWeight: 800, color: '#0f172a' }}>
+                  The 29-Minute Offset: Why Every Indian Panchang Uses Ujjain Mean Solar Time
+                </h4>
+              </div>
+              <div
+                style={{
+                  background: '#fef3c7',
+                  border: '1px solid #fde68a',
+                  color: '#92400e',
+                  padding: '0.3rem 0.75rem',
+                  borderRadius: '8px',
+                  fontWeight: 800,
+                  fontSize: '0.85rem',
+                }}
+              >
+                Time Delta: Δt ≈ -29 Minutes
+              </div>
+            </div>
+
+            <p style={{ margin: 0, fontSize: '0.85rem', color: '#475569', lineHeight: 1.5 }}>
+              Modern Indian Standard Time (IST) is anchored at the <strong>82° 30&apos; E</strong> meridian (near Mirzapur). However, Ujjain is situated at <strong>75° 46&apos; E</strong>.
+              The longitudinal difference is <strong>82.5° − 75.768° = 6.732°</strong>. Since Earth rotates 1° every 4 minutes, Ujjain local solar time is:
+              <br />
+              <strong style={{ color: '#0f172a' }}>6.732° × 4 min/deg = 26.93 minutes ≈ 29 minutes behind IST.</strong>
+              <br />
+              Every traditional Hindu calendar (<em>Pañcāṅga</em>) calculates planetary longitudes (<em>Graha Sphuṭa</em>), Tithis, and the ascendant (<em>Lagna</em>) for sunrise at Ujjain, then translates it to the local birth city.
+            </p>
+
+            {/* Interactive Time Slider */}
+            <div
+              style={{
+                background: '#ffffff',
+                border: '1px solid #e2e8f0',
+                borderRadius: '10px',
+                padding: '1rem',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '1.25rem',
+                alignItems: 'center',
+              }}
+            >
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <label htmlFor="ist-hour-slider" style={{ fontSize: '0.82rem', fontWeight: 700, color: '#334155' }}>
+                    Adjust IST Civil Time (Hours):
+                  </label>
+                  <span style={{ fontSize: '0.9rem', fontWeight: 800, color: '#0284c7', fontFamily: 'monospace' }}>
+                    {istTimeHours.toString().padStart(2, '0')}:00
+                  </span>
+                </div>
+                <input
+                  id="ist-hour-slider"
+                  type="range"
+                  min="0"
+                  max="23"
+                  value={istTimeHours}
+                  onChange={(e) => setIstTimeHours(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: '#0284c7' }}
+                />
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <label htmlFor="ist-min-slider" style={{ fontSize: '0.82rem', fontWeight: 700, color: '#334155' }}>
+                    Adjust IST Civil Time (Minutes):
+                  </label>
+                  <span style={{ fontSize: '0.9rem', fontWeight: 800, color: '#0284c7', fontFamily: 'monospace' }}>
+                    :{istTimeMinutes.toString().padStart(2, '0')}
+                  </span>
+                </div>
+                <input
+                  id="ist-min-slider"
+                  type="range"
+                  min="0"
+                  max="59"
+                  value={istTimeMinutes}
+                  onChange={(e) => setIstTimeMinutes(parseInt(e.target.value, 10))}
+                  style={{ width: '100%', accentColor: '#0284c7' }}
+                />
+              </div>
+
+              {/* Live Clocks Comparison */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                <div
+                  style={{
+                    background: '#f0f9ff',
+                    border: '1.5px solid #bae6fd',
+                    padding: '0.85rem',
+                    borderRadius: '10px',
+                    textAlign: 'center',
+                  }}
+                >
+                  <div style={{ fontSize: '0.72rem', color: '#0369a1', fontWeight: 800, textTransform: 'uppercase' }}>
+                    Civil Clock (IST)
+                  </div>
+                  <div style={{ fontSize: '1.35rem', fontWeight: 900, color: '#0c4a6e', margin: '0.25rem 0', fontFamily: 'monospace' }}>
+                    {formatTime(istTimeHours, istTimeMinutes)}
+                  </div>
+                  <div style={{ fontSize: '0.7rem', color: '#0284c7' }}>Meridian: 82° 30&apos; E</div>
+                </div>
+
+                <div
+                  style={{
+                    background: '#fef3c7',
+                    border: '1.5px solid #fde68a',
+                    padding: '0.85rem',
+                    borderRadius: '10px',
+                    textAlign: 'center',
+                  }}
+                >
+                  <div style={{ fontSize: '0.72rem', color: '#92400e', fontWeight: 800, textTransform: 'uppercase' }}>
+                    Ujjain Solar Time (Panchang)
+                  </div>
+                  <div style={{ fontSize: '1.35rem', fontWeight: 900, color: '#78350f', margin: '0.25rem 0', fontFamily: 'monospace' }}>
+                    {formatTime(ujjainHours, ujjainMinutes)}
+                  </div>
+                  <div style={{ fontSize: '0.7rem', color: '#b45309' }}>Meridian: 75° 46&apos; E (-29m)</div>
+                </div>
+              </div>
+            </div>
+
+            {onNextLab && (
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '0.5rem' }}>
+                <button
+                  type="button"
+                  onClick={onNextLab}
+                  style={{
+                    padding: '0.6rem 1.25rem',
+                    background: '#0f172a',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '8px',
+                    fontWeight: 700,
+                    fontSize: '0.88rem',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                  }}
+                >
+                  Proceed to Next Science Sector ➔
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* =========================================================================
           TAB 1: ŚAṄKU LATITUDE CALCULATOR (अक्षांश / पलभा)

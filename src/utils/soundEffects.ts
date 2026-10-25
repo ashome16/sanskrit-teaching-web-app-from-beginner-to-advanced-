@@ -392,6 +392,216 @@ class SoundEffectsEngine {
       osc.stop(now + duration + 0.05);
     } catch {}
   }
+
+  /**
+   * Realistic laboratory liquid boiling sound with bubbling pops and convection simmer
+   */
+  playBoilingSound(durationSeconds: number = 2.5): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const dur = Math.max(1, durationSeconds);
+
+      // 1. Water convection rumble / simmer (filtered low noise)
+      const bufferSize = Math.floor(ctx.sampleRate * dur);
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      let last = 0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        // Brownian noise filter for liquid rumble
+        last = (last + 0.02 * white) / 1.02;
+        data[i] = last * 3.5;
+      }
+      const noise = ctx.createBufferSource();
+      noise.buffer = buffer;
+
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(420, now);
+      filter.frequency.linearRampToValueAtTime(750, now + dur * 0.5);
+      filter.frequency.linearRampToValueAtTime(380, now + dur);
+
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.01, now);
+      gain.gain.linearRampToValueAtTime(0.24, now + 0.3);
+      gain.gain.setValueAtTime(0.24, now + dur - 0.4);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+      noise.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+      noise.start(now);
+      noise.stop(now + dur);
+
+      // 2. Micro bubble pops (rising pitch sine droplets bursting at surface)
+      const bubbleCount = Math.floor(dur * 14);
+      for (let b = 0; b < bubbleCount; b++) {
+        const bubbleTime = now + (b / 14) + (Math.random() * 0.07 - 0.035);
+        if (bubbleTime >= now + dur) break;
+        const popOsc = ctx.createOscillator();
+        const popGain = ctx.createGain();
+        const startFreq = 240 + Math.random() * 260;
+        const endFreq = startFreq + 190 + Math.random() * 210;
+
+        popOsc.type = 'sine';
+        popOsc.frequency.setValueAtTime(startFreq, bubbleTime);
+        popOsc.frequency.exponentialRampToValueAtTime(endFreq, bubbleTime + 0.035);
+
+        popGain.gain.setValueAtTime(0.001, bubbleTime);
+        popGain.gain.linearRampToValueAtTime(0.12 + Math.random() * 0.08, bubbleTime + 0.008);
+        popGain.gain.exponentialRampToValueAtTime(0.001, bubbleTime + 0.04);
+
+        popOsc.connect(popGain);
+        popGain.connect(ctx.destination);
+        popOsc.start(bubbleTime);
+        popOsc.stop(bubbleTime + 0.045);
+      }
+    } catch {}
+  }
+
+  /**
+   * Powerful, cinematic rocket launch blastoff sound with ignition crackle and deep acoustic thrust roar
+   */
+  playRocketLaunchSound(durationSeconds: number = 3.5): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const dur = Math.max(1.5, durationSeconds);
+
+      // 1. Ignition spark / propellant crackle (high-pass noise burst)
+      const sparkBuffer = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.6), ctx.sampleRate);
+      const sparkData = sparkBuffer.getChannelData(0);
+      for (let i = 0; i < sparkData.length; i++) {
+        sparkData[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.15));
+      }
+      const sparkSource = ctx.createBufferSource();
+      sparkSource.buffer = sparkBuffer;
+      const sparkFilter = ctx.createBiquadFilter();
+      sparkFilter.type = 'bandpass';
+      sparkFilter.frequency.setValueAtTime(3200, now);
+      sparkFilter.Q.setValueAtTime(3.0, now);
+      const sparkGain = ctx.createGain();
+      sparkGain.gain.setValueAtTime(0.35, now);
+      sparkGain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+      sparkSource.connect(sparkFilter);
+      sparkFilter.connect(sparkGain);
+      sparkGain.connect(ctx.destination);
+      sparkSource.start(now);
+      sparkSource.stop(now + 0.55);
+
+      // 2. Heavy rocket engine roar & rumble (deep noise + low frequency sub-bass osc)
+      const roarBufferSize = Math.floor(ctx.sampleRate * dur);
+      const roarBuffer = ctx.createBuffer(1, roarBufferSize, ctx.sampleRate);
+      const roarData = roarBuffer.getChannelData(0);
+      let rLast = 0;
+      for (let i = 0; i < roarBufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        rLast = (rLast + 0.05 * white) / 1.05;
+        roarData[i] = rLast * 4.0;
+      }
+      const roarSource = ctx.createBufferSource();
+      roarSource.buffer = roarBuffer;
+
+      const roarFilter = ctx.createBiquadFilter();
+      roarFilter.type = 'lowpass';
+      roarFilter.frequency.setValueAtTime(80, now);
+      roarFilter.frequency.exponentialRampToValueAtTime(450, now + 0.8); // engine spooling up
+      roarFilter.frequency.linearRampToValueAtTime(380, now + dur - 0.5);
+      roarFilter.frequency.exponentialRampToValueAtTime(90, now + dur);
+
+      const roarGain = ctx.createGain();
+      roarGain.gain.setValueAtTime(0.02, now);
+      roarGain.gain.exponentialRampToValueAtTime(0.42, now + 0.4);
+      roarGain.gain.setValueAtTime(0.42, now + dur - 0.8);
+      roarGain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+      roarSource.connect(roarFilter);
+      roarFilter.connect(roarGain);
+      roarGain.connect(ctx.destination);
+      roarSource.start(now);
+      roarSource.stop(now + dur);
+
+      // 3. Sub-bass booster vibration oscillator (45Hz -> 85Hz)
+      const subOsc = ctx.createOscillator();
+      const subGain = ctx.createGain();
+      subOsc.type = 'sawtooth';
+      subOsc.frequency.setValueAtTime(48, now);
+      subOsc.frequency.exponentialRampToValueAtTime(82, now + 0.7);
+      subOsc.frequency.linearRampToValueAtTime(65, now + dur);
+
+      subGain.gain.setValueAtTime(0.01, now);
+      subGain.gain.linearRampToValueAtTime(0.3, now + 0.5);
+      subGain.gain.setValueAtTime(0.3, now + dur - 0.8);
+      subGain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+      subOsc.connect(subGain);
+      subGain.connect(ctx.destination);
+      subOsc.start(now);
+      subOsc.stop(now + dur);
+    } catch {}
+  }
+
+  /**
+   * Instant propellant deflagration whoosh for alchemy crucibles and flares
+   */
+  playCrucibleIgnition(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const dur = 0.85;
+      const bufferSize = Math.floor(ctx.sampleRate * dur);
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.28));
+      }
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(800, now);
+      filter.frequency.exponentialRampToValueAtTime(180, now + dur);
+      filter.Q.setValueAtTime(1.8, now);
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.38, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+      source.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+      source.start(now);
+      source.stop(now + dur);
+    } catch {}
+  }
+
+  /**
+   * Crisp LIBS laser spectroscopy pulse
+   */
+  playLaserPulse(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(1400, now);
+      osc.frequency.exponentialRampToValueAtTime(320, now + 0.12);
+      gain.gain.setValueAtTime(0.25, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + 0.14);
+    } catch {}
+  }
 }
 
 export const soundEffects = new SoundEffectsEngine();

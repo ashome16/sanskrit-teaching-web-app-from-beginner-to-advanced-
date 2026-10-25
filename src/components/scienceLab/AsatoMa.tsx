@@ -5,6 +5,7 @@ import { DialKnob, HudFrame, LedButton } from './controls';
 import { isSmallScreen, prefersReducedMotion } from './motion';
 import MatrixOverwatch from './MatrixOverwatch';
 import { playPronunciation } from '../../utils/pronunciation';
+import { soundEffects } from '../../utils/soundEffects';
 
 type LangMode = 'both' | 'sanskrit' | 'modern';
 type SubstanceId = 'gold' | 'wood' | 'water' | 'ice';
@@ -320,6 +321,11 @@ const AsatoMa: React.FC = () => {
   };
 
   const changeT = (next: number) => {
+    // Sound effect on crossing boiling threshold
+    const s = SUBSTANCES[sid];
+    if ((sid === 'water' || sid === 'ice') && s.boil && next >= s.boil && T < s.boil) {
+      soundEffects.playBoilingSound(2.5);
+    }
     setT(next);
     const glowsNow = sid !== 'wood' && phaseOf(SUBSTANCES[sid], next) !== 'gas' && next >= GLOW_K;
     if (glowsNow) setDone((d) => (d.s2 ? d : { ...d, s2: true }));
@@ -408,6 +414,7 @@ const AsatoMa: React.FC = () => {
     });
     burnT.current = 0;
     setBurned(true);
+    soundEffects.playCrucibleIgnition();
     if (T < 900) setT(900);
     setDone((d) => ({ ...d, s3: true }));
   };

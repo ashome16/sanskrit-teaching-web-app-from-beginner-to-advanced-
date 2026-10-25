@@ -17,6 +17,7 @@ const MantraAcousticsLab = lazy(() => import('./MantraAcousticsLab'));
 const TempleEngineeringLab = lazy(() => import('./TempleEngineeringLab'));
 const KautilyaStatecraft = lazy(() => import('./KautilyaStatecraft'));
 const ChandahshastraLab = lazy(() => import('./ChandahshastraLab'));
+const UjjainGeodesyStudio = lazy(() => import('../UjjainGeodesyStudio'));
 const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 import { BodhiWisdomCard } from '../BodhiWisdomCard';
 
@@ -255,6 +256,20 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     ink: '#e879f9',
     glow: '#c084fc',
   },
+  {
+    id: 'ujjain-geodesy',
+    code: 'SEC-16',
+    icon: '🏛️',
+    dev: 'उज्जयिनी-मध्यरेखा-विज्ञानम्',
+    title: 'The Ancient Prime Meridian & Temple Geodesy',
+    subject: 'Geodesy, 0° Longitude & Temple Geometry',
+    school: 'Sūrya Siddhānta & Varāhamihira (भूगोल-खगोलम्)',
+    category: 'cosmos',
+    blurb: 'Explore Ujjain (Avanti) as the world’s ancient Prime Meridian (0° Longitude) and its intersection with the Tropic of Cancer. Calculate the 29-minute Panchang offset, align with Mahakaleshwar & Mangalnath temples, and track the Tropic of Cancer southward drift to Dongla.',
+    tint: 'rgba(14, 165, 233, 0.12)',
+    ink: '#38bdf8',
+    glow: '#0ea5e9',
+  },
 ];
 
 
@@ -303,6 +318,15 @@ const HASH_ALIASES: Record<string, LabSegmentId> = {
   matrameru: 'chandahshastra',
   nasta: 'chandahshastra',
   uddishta: 'chandahshastra',
+  ujjain: 'ujjain-geodesy',
+  'ujjain-geodesy': 'ujjain-geodesy',
+  'prime-meridian': 'ujjain-geodesy',
+  meridian: 'ujjain-geodesy',
+  madhyarekha: 'ujjain-geodesy',
+  geodesy: 'ujjain-geodesy',
+  mahakal: 'ujjain-geodesy',
+  mangalnath: 'ujjain-geodesy',
+  dongla: 'ujjain-geodesy',
 };
 const readHash = (): LabSegmentId | null => {
   try {
@@ -699,6 +723,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {active === 'temple-engineering' && <TempleEngineeringLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
           {active === 'kautilya' && <KautilyaStatecraft onNextLab={() => handleNavigateLab(nextSeg.id)} />}
           {active === 'chandahshastra' && <ChandahshastraLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+          {active === 'ujjain-geodesy' && <UjjainGeodesyStudio onNextLab={() => handleNavigateLab(nextSeg.id)} />}
         </Suspense>
 
 

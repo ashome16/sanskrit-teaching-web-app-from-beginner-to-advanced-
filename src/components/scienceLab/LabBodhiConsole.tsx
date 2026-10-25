@@ -916,6 +916,72 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
       },
     ],
   },
+  'ujjain-geodesy': {
+    title: 'The Ancient Prime Meridian & Temple Geodesy',
+    dev: 'उज्जयिनी-मध्यरेखा-विज्ञानम्',
+    bodhiIntro:
+      'Welcome to Sector 16: The Ancient Prime Meridian (Madhya-Rekhā) & Geodetic Temples! Long before Greenwich was established in 1884, classical Indian astronomers selected Ujjain (Avantī) as the 0° longitude baseline of the ancient world. Situated precisely where the Prime Meridian intersected the Tropic of Cancer (~23.5° N), Ujjain was revered as the Nābhideśa ("Navel of the Earth"). From Mahākāleśvara (the Lord of Time) to Maṅgalanātha (birthplace of Mars), ancient temple sanctuaries served as cosmic observatories and geodetic anchors.',
+    keyConcepts: [
+      { label: 'Madhya-Rekhā (मध्यरेखा / 0° Meridian)', text: 'The ancient zero meridian running from Laṅkā (Equator) through Avantī (Ujjain) and Rohitaka to Sumeru (North Pole).' },
+      { label: 'Nābhideśa (नाभिदेशः / Navel of Earth)', text: 'The intersection of zero longitude with the Tropic of Cancer where the Sun sits directly overhead at summer solstice with zero shadow.' },
+      { label: 'Mahākāleśvara (महाकालेश्वरः)', text: 'The Jyotirlinga of the "Lord of Time", mathematically aligned with the solstice sun to calibrate the solar calendar.' },
+      { label: 'Maṅgalanātha (मङ्गलनाथ-मन्दिरम्)', text: 'Revered as the birthplace of Mars; the geodetic observation node for chartings of Martian retrograde loops (Vakra-gati).' },
+      { label: 'The 29-Minute Pañcāṅga Offset', text: 'Ujjain (75° 46\' E) is 6.732° west of IST (82° 30\' E), producing a 26.93-minute (~29 min) solar offset used by every traditional calendar.' },
+    ],
+    faqs: [
+      {
+        q: 'Why was Ujjain chosen as the ancient world’s Prime Meridian instead of other cities?',
+        a: 'Ujjain sat at the unique intersection of the North-South celestial meridian (from the equator to the North Pole) and the Tropic of Cancer. On the summer solstice, the sun reached an absolute 90° zenith casting zero shadow, allowing astronomers to calibrate the tropical year and obliquity without shadow distortion.',
+        devAudio: 'राक्षसालयदेवौकःशैलमध्यगता हि या',
+      },
+      {
+        q: 'Why do all traditional Indian Panchangs calculate from Ujjain rather than local cities?',
+        a: 'In classical Siddhāntic astronomy, all planetary tables (Ahargaṇa) and ephemerides are calibrated to sunrise on the Ujjain meridian. Astrologers first find Ujjain solar mean time and then apply local Deśāntara-saṃskāra (longitudinal time delta) for any birth location.',
+        devAudio: 'देशान्तर-संस्कारः',
+      },
+    ],
+    quizzes: [
+      {
+        id: 'ujjain-q1',
+        q: 'According to the Sūrya Siddhānta, which geodetic axis defines the Earth’s Prime Meridian (Madhya-Rekhā)?',
+        options: [
+          'Rome to Alexandria',
+          'Laṅkā on the equator, through Avantī (Ujjain) and Rohitaka, to Mount Meru at the North Pole',
+          'Greenwich to Paris',
+          'Pāṭaliputra to Vārāṇasī',
+        ],
+        correct: 1,
+        explanation: 'Sūrya Siddhānta (1.62) establishes the great circle connecting Laṅkā on the equator straight through Avantī (Ujjain), Rohitaka, and Kurukṣetra to Mount Meru (North Pole).',
+        sanskritContext: 'राक्षसालयदेवौकःशैलमध्यगता हि या । रोहितकमवन्ती च तथा सन्निहितं सरः ॥',
+      },
+      {
+        id: 'ujjain-q2',
+        q: 'Why is Ujjain local solar time approximately 29 minutes behind Indian Standard Time (IST)?',
+        options: [
+          'Because of atmospheric refraction at high altitude',
+          'Because IST is anchored to 82° 30\' E while Ujjain is at 75° 46\' E, creating a 6.732° longitudinal difference (6.732° × 4 min/deg ≈ 26.93 min)',
+          'Because Ujjain is east of the IST meridian',
+          'Because of the 41,000-year obliquity cycle of the Earth',
+        ],
+        correct: 1,
+        explanation: 'Earth rotates 1 degree every 4 minutes. The difference between 82.5° E and 75.768° E is 6.732°, which multiplied by 4 minutes equals ~26.93 minutes (commonly rounded to 29 minutes).',
+        sanskritContext: 'देशान्तरं रेखांशभेदेन कालभेदः।',
+      },
+      {
+        id: 'ujjain-q3',
+        q: 'What is the geodetic and astronomical significance of the Maṅgalanātha temple in Ujjain?',
+        options: [
+          'It is an ancient dry-masonry stepwell',
+          'It is celebrated as the birthplace of Mars and was calculated by ancient astronomers as the optimal node for observing Martian retrograde motion (Vakra-gati)',
+          'It marked the southern boundary of the Mauryan empire',
+          'It was the mint where silver punch-marked coins were weighed',
+        ],
+        correct: 1,
+        explanation: 'Maṅgalanātha is revered in Purāṇic astronomy as the birthplace of Mars (Bhauma-Janmasthāna) and served as a high-precision node for tracking Martian epicycles and retrogrades.',
+        sanskritContext: 'भौमस्य जन्मस्थानं मङ्गलनाथः।',
+      },
+    ],
+  },
 };
 
 const RANKS = [

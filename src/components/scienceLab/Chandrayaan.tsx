@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from
 import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm } from './common';
 import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 import { isSmallScreen, prefersReducedMotion } from './motion';
+import { soundEffects } from '../../utils/soundEffects';
 
 type Phase = 'orbit' | 'descent' | 'rover';
 type Outcome = 'flying' | 'soft' | 'crash';
@@ -332,8 +333,10 @@ const Chandrayaan: React.FC = () => {
         outRef.current = soft ? 'soft' : 'crash';
         if (soft) {
           setSoftDone(true);
+          soundEffects.playCelebrationChime();
           setHud((h) => ({ ...h, h: 0, vy: s.vy, attitude: s.att, tamas: false, status: `Soft landing at Shiv Shakti Point — ${vyShown.toFixed(2)} m/s.`, statusSa: 'शिव-शक्ति-बिन्दौ मृदु-स्पर्शः!' }));
         } else {
+          soundEffects.playPuzzleSnap();
           const why = inCrater
             ? 'Touched down inside a crater hazard — drifted off the flat zone.'
             : vyShown >= SOFT_VY
@@ -773,6 +776,7 @@ const Chandrayaan: React.FC = () => {
       return;
     }
     const hit = MINERALS.find((m) => Math.hypot(s.rx - m.x, s.ry - m.y) < 0.75);
+    soundEffects.playLaserPulse();
     if (!hit) {
       setScanMsg('No sample under Pragyan. Drive onto a glowing spot.');
       return;

@@ -6469,29 +6469,73 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
 
             {/* Section 2: The GPS Temples */}
             <section className="philosophy-section" id="gps-temples">
-              <h2>2. The &quot;GPS Temples&quot;: Sanctuaries as Geodetic and Planetary Anchors</h2>
+              <h2>2. Temple Geometry &amp; Cosmic Timekeeping: Sanctuaries as Geodetic Anchors</h2>
               <p>
-                In classical India, major temple shrines were built not solely as devotional spaces, but as permanent, rock-solid geodetic benchmarks calibrated to the celestial grid.
+                In classical India, major temple shrines were built not solely as devotional spaces, but as permanent, rock-solid geodetic benchmarks calibrated to the celestial grid:
               </p>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', margin: '1.25rem 0' }}>
-                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
-                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
-                    🕉️ Mahākāleśvara Jyotirlinga: The Anchor of Time
-                  </h3>
-                  <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
-                    Lord Shiva is worshipped here as <strong>Mahākāla</strong>—the Lord of Absolute Time. Purāṇic literature styles the Garbhagṛha of Mahākāleśvara as the <strong>Nābhideśa</strong> (&quot;Navel of the Earth&quot;). The temple pinnacle and lingam formed the physical point-zero benchmark to which planetary ephemerides (<em>Pañcāṅgas</em>) reduced planetary longitudes and tithi timings.
+                <div style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                    <span style={{ fontSize: '1.3rem' }}>🔱</span>
+                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                      Mahākāleśvara Jyotirlinga: Lord of Time &amp; Solstice Marker
+                    </h3>
+                  </div>
+                  <div style={{ fontSize: '0.76rem', color: '#b45309', fontWeight: 800, fontFamily: 'monospace', marginBottom: '0.4rem' }}>
+                    Coordinates: 23° 10&apos; 58&quot; N, 75° 46&apos; 06&quot; E
+                  </div>
+                  <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                    Lord Shiva is worshipped here as <strong>Mahākāla</strong>—the &quot;Lord of Absolute Time&quot;. In Purāṇic sacred geography, the Garbhagṛha of Mahākāleśvara is designated the <strong>Nābhideśa</strong> (&quot;Navel of the Earth&quot;). The temple&apos;s physical spire was mathematically aligned with the ancient Tropic of Cancer, enabling astronomers to observe the Sun reaching exact 90° solar zenith on the summer solstice, serving as the terrestrial point-zero anchor for cosmic timekeeping.
                   </p>
                 </div>
 
-                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
-                  <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
-                    🔴 Maṅgalanātha Temple: The Planetary Observatory of Mars
-                  </h3>
-                  <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
-                    Revered in Purāṇic Sanskrit texts as the traditional birthplace of Mars (<em>Bhauma-Janmasthāna</em>). Located north of Ujjain along the Shipra, its latitude provided an unobstructed southern horizon and optimal orbital trajectory for observing the retrograde loops (<em>Vakra-gati</em>) and 687-day synodic orbits of the red planet.
+                <div style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                    <span style={{ fontSize: '1.3rem' }}>🔴</span>
+                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
+                      Maṅgalanātha Temple: Birthplace &amp; Orbital Node of Mars
+                    </h3>
+                  </div>
+                  <div style={{ fontSize: '0.76rem', color: '#dc2626', fontWeight: 800, fontFamily: 'monospace', marginBottom: '0.4rem' }}>
+                    Coordinates: 23° 12&apos; 50&quot; N, 75° 46&apos; 00&quot; E
+                  </div>
+                  <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                    Celebrated in Sanskrit texts as the traditional birthplace of Mars (<em>Bhauma / Maṅgala-Janmasthāna</em>). Situated north of Ujjain along the holy Shipra River, ancient Indian astronomers calculated this exact terrestrial coordinate as the location where Earth and Mars reach their closest celestial distance, establishing it as the premier observatory node for charting retrograde loops (<em>Vakra-gati</em>) and 687-day synodic orbits.
                   </p>
                 </div>
+              </div>
+
+              {/* Subsection: Legacy in Modern Astrology & The 29-Minute IST Offset */}
+              <div
+                style={{
+                  background: '#fefce8',
+                  border: '1.5px solid #fef08a',
+                  borderRadius: '12px',
+                  padding: '1.25rem',
+                  marginTop: '1.25rem',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#854d0e', textTransform: 'uppercase' }}>
+                    3. Legacy in Modern Astrology · Pañcāṅga Gaṇita &amp; The 29-Minute IST Offset
+                  </span>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#a16207', background: '#fef08a', padding: '0.15rem 0.5rem', borderRadius: '4px' }}>
+                    Δt = -26.93 min ≈ -29 Minutes Behind IST
+                  </span>
+                </div>
+                <p style={{ fontSize: '0.88rem', color: '#713f12', lineHeight: 1.6, margin: '0 0 0.5rem' }}>
+                  Even in modern times, every traditional Hindu calendar (<em>Pañcāṅga</em>) and Vedic astrologer calculates planetary positions (<em>Graha Sphuṭa</em>), Tithis, and the ascendant (<em>Lagna</em>) based on local sunrise at Ujjain, rather than the modern civil standard:
+                </p>
+                <ul style={{ margin: '0 0 0.5rem', paddingLeft: '1.25rem', fontSize: '0.86rem', color: '#854d0e', lineHeight: 1.55 }}>
+                  <li><strong>Indian Standard Time (IST) Meridian:</strong> 82° 30&apos; E (passing through Mirzapur, Uttar Pradesh).</li>
+                  <li><strong>Ujjain Meridian:</strong> 75° 46&apos; E (0° Madhya-Rekhā).</li>
+                  <li><strong>Longitudinal Difference:</strong> 82° 30&apos; − 75° 46&apos; = 6° 44&apos; = 6.732°.</li>
+                  <li><strong>Time Delta:</strong> 6.732° × 4 minutes/degree = <strong>26.93 minutes ≈ 29 minutes</strong>.</li>
+                </ul>
+                <p style={{ fontSize: '0.84rem', color: '#713f12', lineHeight: 1.5, margin: 0 }}>
+                  Therefore, true solar time in Ujjain is always <strong>~29 minutes behind IST</strong>. Astrologers first compute celestial events according to Ujjain time, and then apply secondary longitudinal adjustments (<em>Deśāntara-saṃskāra</em>) for the native&apos;s specific place of birth.
+                </p>
               </div>
             </section>
 
