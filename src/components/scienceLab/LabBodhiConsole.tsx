@@ -944,6 +944,11 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
         a: 'The shift is driven by the Milankovitch obliquity cycle (41,000 years), where Earth’s axial tilt fluctuates between 22.1° and 24.5°. Currently, Earth is becoming more upright, causing the Tropic of Cancer to drift southward toward the equator at ~15 meters (49 feet) per year. Over 1,600+ years, this accumulates to roughly 25–30 km.',
         devAudio: 'अयनांश-भ्रमणम्',
       },
+      {
+        q: 'What is the ongoing debate between Sāyana and Nirāyana systems regarding Indian festivals?',
+        a: 'Due to the 72-year/day precession drift, festivals like Makar Sankranti (Winter Solstice) and Baisakhi/Vishu (Vernal Equinox) have drifted 24 days away from their original astronomical seasons. Sāyana advocates (like Prof. Meghnad Saha in 1952) urged realigning festivals with the physical seasons, while Nirāyana traditionalists insist on maintaining the unbroken stellar continuum anchored to the fixed stars.',
+        devAudio: 'सयान-निरयण-वादः',
+      },
     ],
     quizzes: [
       {

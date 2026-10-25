@@ -6850,61 +6850,156 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </div>
             </section>
 
-            {/* Section 9: Makar Sankranti Precession Mystery */}
+            {/* Section 9: Makar Sankranti Precession Mystery & The Ongoing Debate */}
             <section className="philosophy-section" id="makar-sankranti-precession">
-              <h2>9. The Makar Sankranti Precession Mystery: Why the Festival Shifts by 1 Day Every 72 Years</h2>
+              <h2>9. The Makar Sankranti Precession Mystery &amp; The Ongoing Calendar Debate</h2>
               <p>
-                One of the most practical and culturally revered manifestations of Earth&apos;s axial precession is the celebration of <strong>Makar Sankranti (मकरसंक्रान्तिः)</strong>. Millions celebrate this day as the transition of the Sun into Capricorn and the beginning of its northward journey (<em>Uttarāyaṇa</em>). Yet, modern science reveals an intriguing paradox: <strong>the astronomical winter solstice occurs on December 21/22, whereas Makar Sankranti is celebrated on January 14/15.</strong>
+                One of the most practical and culturally revered manifestations of Earth&apos;s axial precession is the celebration of <strong>Makar Sankranti (मकरसंक्रान्तिः)</strong>. Because of the exact cosmic wobble we just explored—specifically the precession of the equinoxes—the date of Makar Sankranti <strong>moves forward by one full day roughly every 72 years</strong>.
+              </p>
+              <p>
+                This creates a fascinating astronomical paradox: Makar Sankranti was originally meant to be celebrated on the <strong>Winter Solstice (around 21–22 December)</strong>, but today it is observed in <strong>mid-January</strong>.
               </p>
 
+              {/* 1. Two Zodiacs */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', margin: '1.25rem 0' }}>
                 <div style={{ background: '#fffbeb', padding: '1.2rem', borderRadius: '12px', border: '1.5px solid #fde68a' }}>
                   <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#92400e' }}>
-                    Sāyana (सयान / Tropical) Zodiac
+                    1. Sāyana (सयान / Tropical) System
                   </h3>
                   <p style={{ fontSize: '0.86rem', color: '#78350f', lineHeight: 1.55, margin: 0 }}>
-                    Anchored directly to the seasonal solstices and equinoxes. Tropical Capricorn begins at the exact moment of the <strong>Winter Solstice (December 21/22)</strong>, when the Sun reaches its southernmost latitude (-23.5°) and turns northward.
+                    Used primarily by modern Western astronomy. It anchors the calendar strictly to the Earth&apos;s seasons and solstices. In this system, the Winter Solstice stays permanently locked around <strong>December 21–22</strong> every year.
                   </p>
                 </div>
 
                 <div style={{ background: '#fff7ed', padding: '1.2rem', borderRadius: '12px', border: '1.5px solid #fed7aa' }}>
                   <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem', fontWeight: 800, color: '#9a3412' }}>
-                    Nirāyana (निरयण / Sidereal) Zodiac
+                    2. Nirāyana (निरयण / Sidereal) System
                   </h3>
                   <p style={{ fontSize: '0.86rem', color: '#431407', lineHeight: 1.55, margin: 0 }}>
-                    Anchored to the physical backdrop of the fixed stars (*Nakṣatras*), using reference stars like <strong>Chitrā (Spica, α Virginis at 180°)</strong>. It measures when the Sun enters the literal physical constellation of Capricorn (<em>Makara Rāśi</em>).
+                    Used by traditional Indian Vedic astronomy (<em>Pañcāṅga</em>). It anchors the calendar to the actual physical positions of fixed stars and constellations in the sky (anchored to <strong>Chitrā / Spica</strong> at 180°), completely factoring in the Earth&apos;s precession wobble via the <strong>Ayanāṃśa</strong> correction factor.
                   </p>
                 </div>
               </div>
 
-              <div className="philosophy-card" style={{ background: '#fdf4ff', border: '1.5px solid #f0abfc', margin: '1.25rem 0' }}>
-                <h4 style={{ margin: '0 0 0.5rem', color: '#86198f', fontSize: '1rem', fontWeight: 800 }}>
-                  The 285 CE Chitrapaksha Coincidence &amp; The 72-Year Rule
+              {/* Timeline Table */}
+              <div className="philosophy-card" style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', margin: '1.25rem 0' }}>
+                <h4 style={{ margin: '0 0 0.5rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
+                  Chronological Timeline: The 72-Year Date Shift
                 </h4>
-                <p style={{ margin: '0 0 0.6rem', fontSize: '0.88rem', color: '#701a75', lineHeight: 1.6 }}>
-                  Around <strong>285 CE</strong> (the classical Gupta era and the compilation period of canonical astronomical Siddhāntas), the Sāyana and Nirāyana zodiacs coincided perfectly: <strong>Ayanāṃśa was 0.00°</strong>. On December 22, 285 CE, the Winter Solstice and the Sun’s physical ingress into sidereal Makara occurred on the exact same day!
+                <p style={{ margin: '0 0 0.75rem', fontSize: '0.86rem', color: '#475569', lineHeight: 1.5 }}>
+                  Because the Earth wobbles, the background stars appear to shift from our terrestrial viewpoint at a rate of roughly <strong>20 minutes of arc per year (50.29&quot;/year)</strong>. Over centuries, this adds up to 1 full degree every 71.6 ≈ 72 years:
                 </p>
-                <div style={{ background: '#ffffff', padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid #f5d0fe', fontFamily: 'monospace', fontSize: '0.9rem', color: '#701a75' }}>
-                  Precession Rate = 50.29 arcseconds/year &nbsp;⟹&nbsp; 3600&quot; / 50.29&quot; ≈ 71.6 years per 1°<br />
-                  <strong>1° of Precession ≈ 1 Solar Day Shift every ~72 Years!</strong>
+
+                <div style={{ overflowX: 'auto' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.84rem' }}>
+                    <thead>
+                      <tr style={{ background: '#f8fafc', borderBottom: '2px solid #cbd5e1' }}>
+                        <th style={{ padding: '0.65rem 0.85rem', textAlign: 'left', fontWeight: 800 }}>Historical Era</th>
+                        <th style={{ padding: '0.65rem 0.85rem', textAlign: 'left', fontWeight: 800 }}>Estimated Date</th>
+                        <th style={{ padding: '0.65rem 0.85rem', textAlign: 'left', fontWeight: 800 }}>Alignment with Cosmic Events</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9' }}>
+                        <td style={{ padding: '0.65rem 0.85rem', fontWeight: 700 }}>~272 BCE (Mauryan Era)</td>
+                        <td style={{ padding: '0.65rem 0.85rem', color: '#0284c7', fontWeight: 700 }}>21 December</td>
+                        <td style={{ padding: '0.65rem 0.85rem' }}>Aligned perfectly with the astronomical Winter Solstice.</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9' }}>
+                        <td style={{ padding: '0.65rem 0.85rem', fontWeight: 700 }}>~285 CE (Surya Siddhanta)</td>
+                        <td style={{ padding: '0.65rem 0.85rem', color: '#0284c7', fontWeight: 700 }}>22 December</td>
+                        <td style={{ padding: '0.65rem 0.85rem' }}>The Chitrapaksha zero epoch; Sāyana and Nirāyana systems perfectly overlapped (Ayanāṃśa = 0°).</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9' }}>
+                        <td style={{ padding: '0.65rem 0.85rem', fontWeight: 700 }}>~1000 CE (Medieval Era)</td>
+                        <td style={{ padding: '0.65rem 0.85rem', color: '#059669', fontWeight: 700 }}>31 December</td>
+                        <td style={{ padding: '0.65rem 0.85rem' }}>The festival drifted into the very end of the civil calendar year.</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9' }}>
+                        <td style={{ padding: '0.65rem 0.85rem', fontWeight: 700 }}>~1500 CE (Bhakti Renaissance)</td>
+                        <td style={{ padding: '0.65rem 0.85rem', color: '#059669', fontWeight: 700 }}>7 January</td>
+                        <td style={{ padding: '0.65rem 0.85rem' }}>Observed in the first week of January across northern and southern kingdoms.</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9', background: '#f0f9ff' }}>
+                        <td style={{ padding: '0.65rem 0.85rem', fontWeight: 800 }}>Current Modern Era (2026 CE)</td>
+                        <td style={{ padding: '0.65rem 0.85rem', color: '#b45309', fontWeight: 800 }}>14–15 January</td>
+                        <td style={{ padding: '0.65rem 0.85rem', fontWeight: 600 }}>Our current modern alignment (Ayanāṃśa ≈ 24.2°, a 24-day drift from the solstice).</td>
+                      </tr>
+                      <tr style={{ borderBottom: '1px solid #f1f5f9' }}>
+                        <td style={{ padding: '0.65rem 0.85rem', fontWeight: 700 }}>~2090 CE (Upcoming Shift)</td>
+                        <td style={{ padding: '0.65rem 0.85rem', color: '#dc2626', fontWeight: 700 }}>16 January</td>
+                        <td style={{ padding: '0.65rem 0.85rem' }}>The next major permanent date shift as precession advances past the leap-year threshold.</td>
+                      </tr>
+                      <tr>
+                        <td style={{ padding: '0.65rem 0.85rem', fontWeight: 700 }}>~2700 CE (Future Epoch)</td>
+                        <td style={{ padding: '0.65rem 0.85rem', color: '#dc2626', fontWeight: 700 }}>1 February</td>
+                        <td style={{ padding: '0.65rem 0.85rem' }}>Makar Sankranti will migrate completely into the month of February!</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <p style={{ margin: '0.6rem 0 0', fontSize: '0.85rem', color: '#701a75', lineHeight: 1.55 }}>
-                  Because Earth wobbles backward by 1° every ~72 years, the sidereal entrance drifts forward by approximately 1 calendar day every lifetime:
-                </p>
-                <ul style={{ margin: '0.4rem 0 0', paddingLeft: '1.25rem', fontSize: '0.84rem', color: '#86198f', lineHeight: 1.6 }}>
-                  <li><strong>c. 285 CE:</strong> December 21/22 (Exact Winter Solstice coincidence)</li>
-                  <li><strong>c. 1000 CE:</strong> December 31</li>
-                  <li><strong>c. 1500 CE:</strong> January 7</li>
-                  <li><strong>c. 1900 CE:</strong> January 13</li>
-                  <li><strong>Today (2026 CE):</strong> January 14/15 (Ayanāṃśa ≈ 24.2°, a 24.5-day drift!)</li>
-                  <li><strong>c. 2700 CE:</strong> February 1</li>
-                  <li><strong>c. 9000 CE:</strong> June (Mid-Summer Makar Sankranti!)</li>
-                </ul>
               </div>
 
-              <p>
-                This explains why classical Sanskrit masters like Kālidāsa in the <em>Ṛtusaṃhāra</em> celebrated Uttarāyaṇa as the darkest, coldest day of the winter solstice, while contemporary India celebrates Makar Sankranti in mid-January. Both are scientifically valid: one tracks the seasons of the Earth (Sāyana), and the other honors the eternal stellar clockwork of the cosmos (Nirāyana).
-              </p>
+              {/* 3. The Myth of the Fixed Solar Date & 4. Separation of Sankranti and Uttarayan */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', margin: '1.25rem 0' }}>
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <h4 style={{ margin: '0 0 0.35rem', fontSize: '0.98rem', fontWeight: 800, color: '#0f172a' }}>
+                    3. The Myth of the &quot;Fixed Solar Date&quot;
+                  </h4>
+                  <p style={{ fontSize: '0.84rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                    Many believe Makar Sankranti is the only Hindu festival on a &quot;fixed&quot; date because it follows the solar cycle rather than the moon. However, it is only fixed in the short term relative to human lifetimes. The Sun enters the physical constellation of Capricorn roughly <strong>6 hours later each year</strong>. Our calendar&apos;s leap years pull this back every 4 years, forcing it to hover between January 14 and 15 for our generation. But leap years cannot halt the 72-year precession drift, causing it to march forward into February over millennia.
+                  </p>
+                </div>
+
+                <div style={{ background: '#f8fafc', padding: '1.15rem', borderRadius: '12px', border: '1.5px solid #e2e8f0' }}>
+                  <h4 style={{ margin: '0 0 0.35rem', fontSize: '0.98rem', fontWeight: 800, color: '#0f172a' }}>
+                    4. The Separation of Sankranti and Uttarāyana
+                  </h4>
+                  <p style={{ fontSize: '0.84rem', color: '#475569', lineHeight: 1.55, margin: 0 }}>
+                    In ancient Sanskrit texts, <strong>Makar Sankranti</strong> (entering Capricorn) and <strong>Uttarāyana</strong> (the moment the Sun begins its northward journey) were the exact same day. Because of axial precession, they have <strong>split apart by 24 days</strong>. The actual astronomical Uttarāyana (when days physically start getting longer) still happens on <strong>December 21–22</strong>, while Makar Sankranti, tracking the sidereal stars, happens on <strong>January 14/15</strong>.
+                  </p>
+                </div>
+              </div>
+
+              {/* 5. The Ongoing Debate & Sister Festivals */}
+              <div className="philosophy-card" style={{ background: '#fdf4ff', border: '1.5px solid #f0abfc', margin: '1.25rem 0' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#86198f', textTransform: 'uppercase' }}>
+                    5. The Ongoing National Debate: Sāyana vs. Nirāyana
+                  </span>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#a21caf', background: '#fae8ff', padding: '0.15rem 0.5rem', borderRadius: '4px' }}>
+                    Calendar Reform Committee (1952)
+                  </span>
+                </div>
+                <p style={{ fontSize: '0.88rem', color: '#701a75', lineHeight: 1.6, margin: '0 0 0.6rem' }}>
+                  This cosmic separation has triggered a profound, ongoing debate among Indian astronomers, astrophysicists, and Vedic scholars:
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.85rem', marginBottom: '0.75rem' }}>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #f5d0fe' }}>
+                    <h5 style={{ margin: '0 0 0.25rem', color: '#86198f', fontSize: '0.9rem', fontWeight: 800 }}>
+                      The Sāyana (Seasonal Reform) School
+                    </h5>
+                    <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
+                      Advocated by celebrated astrophysicist <strong>Prof. Meghnad Saha</strong> during the 1952 Calendar Reform Committee. They argued that because festivals celebrate seasonal phenomena (like harvest, winter solstice, and spring warmth), the calendar should be updated to match the seasons (Sāyana). Under this reform, Makar Sankranti would return to December 21/22.
+                    </p>
+                  </div>
+                  <div style={{ background: '#ffffff', padding: '0.85rem', borderRadius: '8px', border: '1px solid #f5d0fe' }}>
+                    <h5 style={{ margin: '0 0 0.25rem', color: '#86198f', fontSize: '0.9rem', fontWeight: 800 }}>
+                      The Nirāyana (Stellar Continuum) School
+                    </h5>
+                    <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
+                      Defended by traditional astrologers and pañcāṅga-kāras. They emphasize that Vedic rituals and planetary dashas are intimately bound to the actual physical backdrop of the fixed stars (<em>Graha Sphuṭa</em>). Resetting the zodiac would sever the thousand-year astrological continuum with the Nakṣatras.
+                    </p>
+                  </div>
+                </div>
+
+                <div style={{ background: 'rgba(255, 255, 255, 0.7)', padding: '0.75rem', borderRadius: '8px', border: '1px dashed #e879f9' }}>
+                  <strong style={{ color: '#86198f', fontSize: '0.84rem' }}>🌸 The Sister Festivals Experiencing the Exact Same Drift:</strong>
+                  <p style={{ margin: '0.25rem 0 0', fontSize: '0.82rem', color: '#701a75', lineHeight: 1.5 }}>
+                    Makar Sankranti is not alone! All major Indian solar new year festivals—including <strong>Baisakhi (Punjab), Puthandu (Tamil Nadu), Vishu (Kerala), Pohela Boishakh (Bengal), and Pana Sankranti (Odisha)</strong>—mark <em>Meṣa Sankrānti</em> (Sun entering Aries). In antiquity (~285 CE), they occurred on the <strong>Vernal Equinox (March 21)</strong> when day and night were equal. Today, due to the identical 24-day precession offset, they are all observed on <strong>April 14–15</strong>!
+                  </p>
+                </div>
+              </div>
             </section>
 
             {/* Section 10: Epistemological Transmission */}

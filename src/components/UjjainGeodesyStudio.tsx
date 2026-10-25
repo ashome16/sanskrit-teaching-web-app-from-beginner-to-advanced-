@@ -1613,7 +1613,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                   <input
                     id="sankranti-year-slider"
                     type="range"
-                    min="285"
+                    min="-300"
                     max="3000"
                     step="25"
                     value={sankrantiYear}
@@ -1621,8 +1621,10 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                     style={{ width: '100%', accentColor: '#ea580c' }}
                   />
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: '#9a3412' }}>
-                    <span>285 CE (Dec 22 Solstice)</span>
+                    <span>272 BCE (Dec 21)</span>
+                    <span>285 CE (Dec 22)</span>
                     <span>2026 CE (Jan 14)</span>
+                    <span>2090 CE (Jan 16)</span>
                     <span>2700 CE (Feb 1)</span>
                   </div>
                 </div>
@@ -1630,10 +1632,13 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                 {/* Quick Epoch Buttons */}
                 <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
                   {[
-                    { label: '285 CE (Exact Solstice)', yr: 285 },
+                    { label: '272 BCE (Dec 21)', yr: -272 },
+                    { label: '285 CE (Dec 22 Solstice)', yr: 285 },
                     { label: '1000 CE (Dec 31)', yr: 1000 },
+                    { label: '1500 CE (Jan 7)', yr: 1500 },
                     { label: '1900 CE (Jan 13)', yr: 1900 },
                     { label: '2026 CE (Jan 14/15)', yr: 2026 },
+                    { label: '2090 CE (Jan 16 Next Shift)', yr: 2090 },
                     { label: '2700 CE (Feb 1)', yr: 2700 },
                   ].map((p) => (
                     <button
@@ -1687,6 +1692,21 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                       {ayanamshaDeg.toFixed(2)}° (+{driftDays}d)
                     </div>
                   </div>
+                </div>
+
+                {/* The Ongoing Debate & Sister Festivals Callout */}
+                <div
+                  style={{
+                    background: '#fffaf5',
+                    border: '1px solid #fed7aa',
+                    padding: '0.65rem 0.75rem',
+                    borderRadius: '8px',
+                    fontSize: '0.76rem',
+                    color: '#7c2d12',
+                    lineHeight: 1.45,
+                  }}
+                >
+                  <strong>⚖️ The Ongoing Sāyana vs Nirāyana Debate:</strong> Should India reform the Pañcāṅga to match the seasonal Winter Solstice on Dec 21 (as urged by Dr. Meghnad Saha&apos;s 1952 Calendar Reform Committee), or preserve the sidereal star continuum? Meanwhile, sister festivals like <strong>Baisakhi, Puthandu, and Vishu</strong> have experienced the exact same 24-day drift from the Vernal Equinox (March 21) to <strong>April 14/15</strong>!
                 </div>
               </div>
 
