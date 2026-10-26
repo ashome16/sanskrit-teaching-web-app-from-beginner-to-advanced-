@@ -180,17 +180,17 @@ export const BARAKHADI_METADATA: { title: string; desc: string } = {
 
 const pathToView = (pathname: string): DashboardView | null => {
   const clean = pathname.replace(/\/+$/, '') || '/';
-  if (clean === '/' || clean === '/home' || clean === '/index') return 'home';
-  if (COURSE_PATHS.has(clean)) return 'course';
+  if (clean === '/' || clean === '/home' || clean === '/index' || clean === '/learn-sanskrit-online-free') return 'home';
+  if (COURSE_PATHS.has(clean) || clean === '/spoken-sanskrit-course') return 'course';
   if (PHILOSOPHY_PATHS.has(clean)) return 'philosophy';
-  if (CBSE_GUIDE_PATHS.has(clean)) return 'cbse-guide';
+  if (CBSE_GUIDE_PATHS.has(clean) || clean === '/cbse-sanskrit-classes') return 'cbse-guide';
   if (RESOURCES_PATHS.has(clean)) return 'resources';
   if (clean === '/worksheets') return 'worksheets';
   if (clean === '/vedic-maths' || clean === '/vedic-math') return 'vedic-maths';
-  if (clean === '/grammar') return 'grammar';
+  if (clean === '/grammar' || clean === '/sanskrit-grammar-lessons') return 'grammar';
   if (clean === '/dhatupatha' || clean === '/dhatu' || clean === '/dhaturoop') return 'dhatupatha';
   if (clean === '/quiz' || clean === '/quizzes') return 'quiz';
-  if (clean === '/board' || clean === '/jodo' || clean === '/puzzles') return 'board';
+  if (clean === '/board' || clean === '/jodo' || clean === '/puzzles' || clean === '/sanskrit-for-kids') return 'board';
   if (
     clean === '/reader' ||
     clean === '/varnamala' ||
@@ -199,7 +199,8 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/swar-quizzes' ||
     clean === '/workbooks' ||
     clean === '/lessons' ||
-    clean === '/barakhadi'
+    clean === '/barakhadi' ||
+    clean === '/sanskrit-pronunciation-guide'
   ) return 'reader';
   if (clean === '/faq' || clean === '/help') return 'faq';
   if (clean === '/certificate' || clean === '/swar-certificate') return 'certificate';
@@ -1254,6 +1255,7 @@ const Dashboard: React.FC = () => {
           onOpenCourse={() => navigateToView('course')}
           onOpenScienceLab={(segment) => openScienceLab(segment)}
           onOpenRegister={() => openAuthModal('register')}
+          onOpenCertificate={() => navigateToView('certificate')}
         />
       )}
       {/* FAQ lives at the bottom of the home page (no longer in the top menu). /faq scrolls here. */}

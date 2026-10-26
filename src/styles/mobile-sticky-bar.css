@@ -1,0 +1,100 @@
+/* ==========================================================================
+   MOBILE STICKY ACTION BAR
+   Sticky Bottom Conversion Bar for Indian Mobile Users
+   ========================================================================== */
+
+.msb-container {
+  display: none; /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .msb-container {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9990;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1.5px solid rgba(229, 215, 197, 0.9);
+    padding: 0.65rem 0.85rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -8px 24px rgba(61, 27, 4, 0.12);
+    animation: msbSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes msbSlideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .msb-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .msb-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    height: 48px; /* Touch-friendly >= 48px */
+    padding: 0 0.85rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+
+  .msb-btn:active {
+    transform: scale(0.97);
+  }
+
+  /* Primary Start Lesson (Vibrant Saffron / Amber) */
+  .msb-btn--primary {
+    flex: 2 1 auto;
+    background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(180, 83, 9, 0.3);
+  }
+
+  /* Placement Test (Sapphire Indigo) */
+  .msb-btn--test {
+    flex: 1.2 1 auto;
+    background: linear-gradient(135deg, #3730a3 0%, #4338ca 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(67, 56, 202, 0.25);
+  }
+
+  /* WhatsApp Quick Chat */
+  .msb-btn--wa {
+    flex: 0 0 auto;
+    background: #25d366;
+    color: #ffffff;
+    padding: 0 0.75rem;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  }
+
+  .msb-icon {
+    font-size: 1.05rem;
+  }
+
+  .msb-label {
+    letter-spacing: -0.01em;
+  }
+}

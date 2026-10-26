@@ -11,6 +11,11 @@ import { GurukulEntranceIntro } from './GurukulEntranceIntro';
 import { useAccessibilityStore } from '../utils/accessibilityStore';
 import ProofOfQuality from './ProofOfQuality';
 import BodhiMentorPositioning from './BodhiMentorPositioning';
+import { SegmentedLearningPaths } from './SegmentedLearningPaths';
+import { ToolInteractiveDemos } from './ToolInteractiveDemos';
+import { GamificationShowcase } from './GamificationShowcase';
+import { TrustAndMethodology } from './TrustAndMethodology';
+import { MobileStickyBar } from './MobileStickyBar';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 
@@ -35,6 +40,7 @@ export interface HomePageProps {
   onOpenCourse?: () => void;
   onOpenScienceLab?: (segment?: string) => void;
   onOpenRegister?: () => void;
+  onOpenCertificate?: () => void;
 }
 
 interface DemoWord {
@@ -729,6 +735,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenCourse,
   onOpenScienceLab,
   onOpenRegister,
+  onOpenCertificate,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -1324,6 +1331,23 @@ const HomePage: React.FC<HomePageProps> = ({
           planStatus={currentUser?.planStatus}
         />
 
+        {/* ------------------------------------------------------------------
+            Targeted Learning Pathways (Beginners, School Students, Scholars)
+            ------------------------------------------------------------------ */}
+        <SegmentedLearningPaths
+          onOpenVarnamala={onOpenVarnamala}
+          onOpenBoard={onOpenBoard}
+          onOpenReader={onOpenReader}
+          onOpenGrammar={onOpenGrammar}
+          onOpenCbseGuide={onOpenCbseGuide}
+          onOpenWorksheets={onOpenWorksheets}
+          onOpenQuiz={onOpenQuiz}
+          onOpenDhatupatha={onOpenDhatupatha}
+          onOpenCourse={onOpenCourse}
+          onOpenVedicMaths={onOpenVedicMaths}
+          onOpenScienceLab={onOpenScienceLab ? () => onOpenScienceLab() : undefined}
+        />
+
         {/* Sacred Mangalācaraṇam (मङ्गलाचरणम्) Invocation */}
         <div className="home-mangalacaranam-strip" role="region" aria-label="मङ्गलाचरणम् · Sacred Invocation">
           <div className="home-mangalacaranam-crest">
@@ -1619,6 +1643,15 @@ const HomePage: React.FC<HomePageProps> = ({
         onOpenVarnamala={onOpenVarnamala}
         onOpenGrammar={onOpenGrammar}
         onOpenRegister={handleStartTrial}
+      />
+
+      {/* ------------------------------------------------------------------
+          INTERACTIVE TOOL DEMOS: Dhātupāṭha Deconstructor & Jodo Tile Mini-Puzzle
+          ------------------------------------------------------------------ */}
+      <ToolInteractiveDemos
+        onOpenDhatupatha={onOpenDhatupatha}
+        onOpenBoard={onOpenBoard}
+        onOpenGrammar={onOpenGrammar}
       />
 
       {/* ------------------------------------------------------------------
@@ -2046,6 +2079,15 @@ const HomePage: React.FC<HomePageProps> = ({
         onAction={handleStartTrial}
         accent="indigo"
         planStatus={currentUser?.planStatus}
+      />
+
+      {/* ------------------------------------------------------------------
+          GAMIFICATION & RETENTION: Streaks, Badges, 5 Ranks & Certificate
+          ------------------------------------------------------------------ */}
+      <GamificationShowcase
+        onOpenQuiz={onOpenQuiz}
+        onOpenCertificate={onOpenCertificate}
+        onOpenRegister={handleStartTrial}
       />
 
       {/* ------------------------------------------------------------------
@@ -2996,6 +3038,11 @@ const HomePage: React.FC<HomePageProps> = ({
         planStatus={currentUser?.planStatus}
       />
 
+      {/* ------------------------------------------------------------------
+          TRUST & METHODOLOGY: Founders, Pedagogy, NEP 2020 & Direct Contact
+          ------------------------------------------------------------------ */}
+      <TrustAndMethodology />
+
 
 
       <Suspense fallback={null}>
@@ -3056,6 +3103,19 @@ const HomePage: React.FC<HomePageProps> = ({
           />
         )}
       </Suspense>
+
+      {/* Mobile-First Sticky Action Bar (visible on mobile after scroll > 320px) */}
+      <MobileStickyBar
+        onStartLesson={() => onOpenReader()}
+        onPlacementTest={() => {
+          if (onOpenQuiz) onOpenQuiz();
+          else {
+            const el = document.getElementById('learning-paths');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        onStartTrial={handleStartTrial}
+      />
     </div>
   </>
   );

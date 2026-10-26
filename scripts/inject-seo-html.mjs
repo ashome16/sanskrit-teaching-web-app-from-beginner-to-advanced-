@@ -52,6 +52,12 @@ const REQUIRED_PATHS = [
   '/certificate',
   '/vignana-lab',
   '/swar',
+  '/learn-sanskrit-online-free',
+  '/spoken-sanskrit-course',
+  '/sanskrit-for-kids',
+  '/cbse-sanskrit-classes',
+  '/sanskrit-grammar-lessons',
+  '/sanskrit-pronunciation-guide',
 ];
 
 function extractObjectLiteral(source, exportName) {
@@ -394,6 +400,81 @@ function getRouteJsonLd(pathname, meta) {
         },
       ],
     });
+  } else if (pathname === '/learn-sanskrit-online-free') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: 'Learn Sanskrit Online Free: Step-by-Step Audio & Interactive Practice',
+      description: meta.desc,
+      url: canonical,
+      isAccessibleForFree: true,
+      educationalLevel: 'Beginner to Intermediate',
+      inLanguage: ['sa', 'en', 'hi'],
+      provider: {
+        '@type': 'EducationalOrganization',
+        name: 'EdNet Learn Gurukul',
+        url: `${HOST}/`,
+      },
+    });
+  } else if (pathname === '/spoken-sanskrit-course') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: 'Spoken Sanskrit Course: Conversational Sanskrit & Daily Dialogues',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Beginner to Fluent',
+      inLanguage: ['sa', 'en', 'hi'],
+      teaches: 'Sanskrit Conversation, Daily Greetings, Sentence Structure, Listening Comprehension',
+    });
+  } else if (pathname === '/sanskrit-for-kids') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Sanskrit for Kids: Interactive Games, Jodo Tiles & Syllable Audio',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Early Childhood & Primary School',
+      inLanguage: ['sa', 'en', 'hi'],
+      audience: {
+        '@type': 'EducationalAudience',
+        educationalRole: 'student',
+        audienceType: 'Children and Young Beginners',
+      },
+    });
+  } else if (pathname === '/cbse-sanskrit-classes') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: 'CBSE Sanskrit Classes 6–10: NCERT Solutions & Exam Blueprint',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Class 6–10 CBSE Middle & High School',
+      inLanguage: ['sa', 'en', 'hi'],
+      teaches: 'NCERT Sanskrit Textbooks, Question Formation, Grammar Directives, Board Exam Blueprints',
+    });
+  } else if (pathname === '/sanskrit-grammar-lessons') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: 'Pāṇinian Sanskrit Grammar Lessons: Sandhi, Vibhakti & Dhātupāṭha',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Intermediate to Scholar',
+      inLanguage: ['sa', 'en'],
+      teaches: 'Paninian Vyakaran, Sandhi Rules, Subanta Declensions, Tinganta Verb Conjugations',
+    });
+  } else if (pathname === '/sanskrit-pronunciation-guide') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Sanskrit Pronunciation Guide: 400+ Audio Syllables & Articulation Science',
+      description: meta.desc,
+      url: canonical,
+      learningResourceType: 'Pronunciation Guide',
+      inLanguage: ['sa', 'en'],
+      teaches: 'Sanskrit Phonetics, Sthāna and Karaṇa, Aspirated Sounds, Vedic Recitation Cadence',
+    });
   }
 
   return `\n    <script type="application/ld+json">\n${JSON.stringify(schemas, null, 2)}\n    </script>\n`;
@@ -481,6 +562,36 @@ routes.push({
   pathname: '/swar',
   title: 'Swar · स्वर — Sanskrit Workbook, Quizzes & Foundation Hub | EdNet Learn',
   desc: 'Learn Sanskrit vowels (स्वराः), first words, counting 1–10, interactive Swar review quizzes (pp. 23–24), handwriting tracing slate, and printable workbooks.',
+});
+routes.push({
+  pathname: '/learn-sanskrit-online-free',
+  title: 'Learn Sanskrit Online Free · Step-by-Step Audio & Interactive Practice | EdNet Learn',
+  desc: 'Start learning Sanskrit online for free. Explore Devanagari Varṇamālā, 400+ audio syllables, basic words, interactive grammar tools, and NCERT Class 6–10 lessons.',
+});
+routes.push({
+  pathname: '/spoken-sanskrit-course',
+  title: 'Spoken Sanskrit Course · Conversational Sanskrit & Daily Dialogues | EdNet Learn',
+  desc: 'Master conversational spoken Sanskrit (सम्भाषण-संस्कृतम्). Learn everyday greetings, sentence construction, verb conjugations, and audio pronunciation.',
+});
+routes.push({
+  pathname: '/sanskrit-for-kids',
+  title: 'Sanskrit for Kids · Fun Interactive Games, Jodo Tiles & Stories | EdNet Learn',
+  desc: 'Engaging Sanskrit learning for children and young beginners. Interactive Jodo word-building tiles, animal names, picture puzzles, counting, and playful audio.',
+});
+routes.push({
+  pathname: '/cbse-sanskrit-classes',
+  title: 'CBSE Sanskrit Classes 6–10 · NCERT Deepakam Solutions & Exam Blueprint | EdNet Learn',
+  desc: 'CBSE Sanskrit classes for grades 6 to 10. NCERT chapter explanations, word-by-word sandhi deconstruction, question formation (प्रश्ननिर्माणम्), and 80-mark blueprints.',
+});
+routes.push({
+  pathname: '/sanskrit-grammar-lessons',
+  title: 'Sanskrit Grammar Lessons · Pāṇinian Vyakaran, Sandhi & Dhātupāṭha | EdNet Learn',
+  desc: 'Comprehensive Sanskrit grammar lessons: 17 masterclasses covering Sandhi rules, Subanta noun cases, Tinganta verb conjugations, Samāsa, and Dhātupāṭha.',
+});
+routes.push({
+  pathname: '/sanskrit-pronunciation-guide',
+  title: 'Sanskrit Pronunciation Guide · 400+ Audio Syllables & Articulation Science | EdNet Learn',
+  desc: 'Authentic Sanskrit pronunciation guide. Master the 5 articulation points (स्थान-करण), aspirated consonants, Visarga, Anusvāra, and Vedic recitation cadence with audio.',
 });
 if (views['science-lab']) {
   routes.push({ pathname: '/science-lab', ...views['science-lab'] });
