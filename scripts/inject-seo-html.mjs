@@ -51,6 +51,7 @@ const REQUIRED_PATHS = [
   '/faq',
   '/certificate',
   '/vignana-lab',
+  '/swar',
 ];
 
 function extractObjectLiteral(source, exportName) {
@@ -476,6 +477,11 @@ for (const [view, pathname] of Object.entries(PATH_BY_VIEW)) {
   routes.push({ pathname, ...meta });
 }
 routes.push({ pathname: '/barakhadi', ...barakhadi });
+routes.push({
+  pathname: '/swar',
+  title: 'Swar · स्वर — Sanskrit Workbook, Quizzes & Foundation Hub | EdNet Learn',
+  desc: 'Learn Sanskrit vowels (स्वराः), first words, counting 1–10, interactive Swar review quizzes (pp. 23–24), handwriting tracing slate, and printable workbooks.',
+});
 if (views['science-lab']) {
   routes.push({ pathname: '/science-lab', ...views['science-lab'] });
 }
