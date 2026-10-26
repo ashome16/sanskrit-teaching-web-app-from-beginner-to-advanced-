@@ -159,8 +159,8 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Find answers about subscriptions, UPI payments, NCERT curriculum coverage, interactive puzzles, and learning Sanskrit online.',
   },
   'science-lab': {
-    title: 'Vijñāna Lab · विज्ञान-प्रयोगशाला: Science Sandboxes with Sanskrit | EdNet Learn',
-    desc: 'Boot up the ultimate reality simulator: free science sandboxes with Sanskrit names. Forge Vaiśeṣika paramāṇus, balance vāta-pitta-kapha, master real gravity through the 27 nakṣatras, weave the Loom of Āruṇi, tune the Cosmic Sitār, scan past the Veil of Māyā to the atoms and sort life into the Chaturyoni four births and soft-land Somayāna Mission-03 (Chandrayaan).',
+    title: 'Science Lab Games · Vijñāna Lab: Preschool to Advanced STEM Physics Sandboxes | EdNet Learn',
+    desc: 'Play 16 interactive science lab games and STEM physics sandboxes with Sanskrit terminology from preschool to advanced scholar levels. Build atoms, launch rockets, test gravity, explore cymatics, and soft-land on the Moon.',
   },
   certificate: {
     title: 'Swar · स्वर — Sanskrit Workbook Certificate of Completion | EdNet Learn',
@@ -209,7 +209,8 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/vignana' ||
     clean === '/vijnana-lab' ||
     clean === '/vijnana' ||
-    clean === '/science-lab'
+    clean === '/science-lab' ||
+    clean === '/science-lab-games'
   ) return 'science-lab';
   return null;
 };

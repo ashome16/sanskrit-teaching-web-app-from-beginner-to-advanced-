@@ -58,6 +58,7 @@ const REQUIRED_PATHS = [
   '/cbse-sanskrit-classes',
   '/sanskrit-grammar-lessons',
   '/sanskrit-pronunciation-guide',
+  '/science-lab-games',
 ];
 
 function extractObjectLiteral(source, exportName) {
@@ -244,7 +245,32 @@ function getRouteJsonLd(pathname, meta) {
       learningResourceType: ['Course', 'Interactive Exercise'],
       teaches: '16 Vedic Mathematics Sutras, Mental Calculation, Baudhayana Geometry',
     });
-  } else if (pathname === '/vignana-lab' || pathname === '/science-lab') {
+  } else if (pathname === '/vignana-lab' || pathname === '/science-lab' || pathname === '/science-lab-games') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: 'Science Lab Games · Vijñāna Lab STEM Simulations',
+      applicationCategory: 'EducationalGame',
+      operatingSystem: 'Any (Web browser)',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'INR',
+      },
+      description: meta.desc,
+      url: canonical,
+    });
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Vijñāna Science Lab: STEM Games & Physics Sandboxes with Sanskrit',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Preschool, Primary CBSE 3–5, Middle CBSE 6–8, High School CBSE 9–12, Scholar',
+      inLanguage: ['sa', 'en', 'hi'],
+      learningResourceType: ['EducationalGame', 'Interactive Simulation', 'Lab Manual'],
+      teaches: 'Atomic Physics, Celestial Gravity, Lunar Rocketry, Cymatic Acoustics, Vedic Geometry, Cellular Homeostasis',
+    });
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'VideoObject',
@@ -258,17 +284,6 @@ function getRouteJsonLd(pathname, meta) {
       duration: 'PT30M40S',
       contentUrl: 'https://www.youtube.com/watch?v=bp9m53Tp6xg',
       embedUrl: 'https://www.youtube-nocookie.com/embed/bp9m53Tp6xg',
-    });
-    schemas.push({
-      '@context': 'https://schema.org',
-      '@type': 'LearningResource',
-      name: 'Vedic Vignana Science Lab: Acoustic & Physical Sciences in Sanskrit',
-      description: meta.desc,
-      url: canonical,
-      educationalLevel: 'High School to Scholar',
-      inLanguage: ['sa', 'en'],
-      learningResourceType: ['Interactive Simulation', 'Lab Manual'],
-      teaches: 'Vedic Acoustics, Cymatics, Baudhayana Theorem, Paramanu Atomic Theory',
     });
   } else if (pathname === '/philosophy') {
     schemas.push({
@@ -595,6 +610,7 @@ routes.push({
 });
 if (views['science-lab']) {
   routes.push({ pathname: '/science-lab', ...views['science-lab'] });
+  routes.push({ pathname: '/science-lab-games', ...views['science-lab'] });
 }
 
 const got = new Set(routes.map((route) => route.pathname));
