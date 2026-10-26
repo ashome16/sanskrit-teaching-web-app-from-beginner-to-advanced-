@@ -1024,17 +1024,71 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </h1>
 
-        {/* 3. The 3 Primary Actions: Start Free Trial, Explore Courses, Try a Sample Lesson */}
+        {/* 3. The 3 Primary High-Conversion Calls to Action */}
         <div className="home-hero-three-actions" role="region" aria-label="Primary Actions">
-          {/* Action 1: Start Free Trial */}
+          {/* Action 1: Start Free Lesson */}
+          <button
+            type="button"
+            className="home-hero-action-card home-hero-action-card--lesson"
+            onClick={() => {
+              const el = document.getElementById('proof-of-quality');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+              else onOpenReader('gsde101');
+            }}
+            title="Start your first free interactive lesson with audio and word analyzer (No sign-up required)"
+          >
+            <div className="hhac-icon-col" aria-hidden="true">
+              <span className="hhac-icon">🚀</span>
+            </div>
+            <div className="hhac-text-col">
+              <div className="hhac-badge-row">
+                <span className="hhac-tag hhac-tag--lesson">Instant · No Signup</span>
+              </div>
+              <strong className="hhac-title">Start Free Lesson</strong>
+              <span className="hhac-desc">
+                Begin learning in 5 minutes with audio &amp; word tools
+              </span>
+            </div>
+            <span className="hhac-arrow" aria-hidden="true">➔</span>
+          </button>
+
+          {/* Action 2: Take Sanskrit Placement Test */}
+          <button
+            type="button"
+            className="home-hero-action-card home-hero-action-card--placement"
+            onClick={() => {
+              if (onOpenQuiz) onOpenQuiz();
+              else {
+                const el = document.getElementById('courses');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            title="Assess your Sanskrit knowledge in 3 minutes to find your starting level"
+          >
+            <div className="hhac-icon-col" aria-hidden="true">
+              <span className="hhac-icon">🎯</span>
+            </div>
+            <div className="hhac-text-col">
+              <div className="hhac-badge-row">
+                <span className="hhac-tag hhac-tag--placement">3-Min Diagnostic</span>
+              </div>
+              <strong className="hhac-title">Take Sanskrit Placement Test</strong>
+              <span className="hhac-desc">
+                Find your level: Alphabet, Words, or CBSE
+              </span>
+            </div>
+            <span className="hhac-arrow" aria-hidden="true">➔</span>
+          </button>
+
+          {/* Action 3: Begin in 5 Minutes (14-Day Free Access) */}
           <button
             type="button"
             className="home-hero-action-card home-hero-action-card--trial"
             onClick={handleStartTrial}
-            title={currentUser?.planStatus ? 'Continue to your Gurukul lessons' : 'Start your unrestricted 14-day free access trial now'}
+            title={currentUser?.planStatus ? 'Continue to your Gurukul lessons' : 'Begin learning in 5 minutes with full 14-day unrestricted access'}
           >
             <div className="hhac-icon-col" aria-hidden="true">
-              <span className="hhac-icon">🎁</span>
+              <span className="hhac-icon">⚡</span>
             </div>
             <div className="hhac-text-col">
               <div className="hhac-badge-row">
@@ -1047,64 +1101,12 @@ const HomePage: React.FC<HomePageProps> = ({
                 </span>
               </div>
               <strong className="hhac-title">
-                {currentUser?.planStatus ? 'Continue Learning' : 'Start Free Trial'}
+                {currentUser?.planStatus ? 'Continue Learning' : 'Begin Learning in 5 Minutes'}
               </strong>
               <span className="hhac-desc">
                 {currentUser?.planStatus
                   ? 'Jump back into your curriculum'
-                  : 'Zero risk · No credit card required'}
-              </span>
-            </div>
-            <span className="hhac-arrow" aria-hidden="true">➔</span>
-          </button>
-
-          {/* Action 2: Explore Courses */}
-          <button
-            type="button"
-            className="home-hero-action-card home-hero-action-card--courses"
-            onClick={() => {
-              const el = document.getElementById('courses') || document.querySelector('.home-pathways-section');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-              else if (onOpenCourse) onOpenCourse();
-            }}
-            title="Explore structured courses: Beginner Alphabet, 28-Lesson Sanskrit Course & Paninian Grammar"
-          >
-            <div className="hhac-icon-col" aria-hidden="true">
-              <span className="hhac-icon">📚</span>
-            </div>
-            <div className="hhac-text-col">
-              <div className="hhac-badge-row">
-                <span className="hhac-tag hhac-tag--courses">Guided Tracks</span>
-              </div>
-              <strong className="hhac-title">Explore Courses</strong>
-              <span className="hhac-desc">
-                Alphabet, 28-Lesson Course &amp; Grammar
-              </span>
-            </div>
-            <span className="hhac-arrow" aria-hidden="true">➔</span>
-          </button>
-
-          {/* Action 3: Try a Sample Lesson */}
-          <button
-            type="button"
-            className="home-hero-action-card home-hero-action-card--sample"
-            onClick={() => {
-              const el = document.getElementById('proof-of-quality');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-              else onOpenReader('gsde101');
-            }}
-            title="Try short demo lessons, sample audio, word analyzer, and free Chapter 1 without signing up"
-          >
-            <div className="hhac-icon-col" aria-hidden="true">
-              <span className="hhac-icon">✨</span>
-            </div>
-            <div className="hhac-text-col">
-              <div className="hhac-badge-row">
-                <span className="hhac-tag hhac-tag--sample">Instant · No Signup</span>
-              </div>
-              <strong className="hhac-title">Try a Sample Lesson</strong>
-              <span className="hhac-desc">
-                Sound science, spoken audio &amp; free Ch 1
+                  : 'Unlock all 6 stages · No credit card required'}
               </span>
             </div>
             <span className="hhac-arrow" aria-hidden="true">➔</span>
@@ -1158,10 +1160,10 @@ const HomePage: React.FC<HomePageProps> = ({
               <span>The Gurukul Learning Pathway · सोपान-मार्गः</span>
             </div>
             <h2 className="home-journey-title">
-              Your Step-by-Step Sanskrit Journey
+              Your Step-by-Step Sanskrit Journey · Measurable Outcomes
             </h2>
             <p className="home-journey-subtitle">
-              A visible 6-stage roadmap designed for school students, parents, and beginners to progress from sound phonetics to CBSE exam confidence:
+              A visible 6-stage roadmap designed for school students, parents, and beginners to achieve tangible outcomes at every milestone:
             </p>
           </div>
 
@@ -1175,14 +1177,14 @@ const HomePage: React.FC<HomePageProps> = ({
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') onOpenVarnamala?.();
               }}
-              title="Step 1: Start with Alphabet & Sounds (वर्णमाला)"
+              title="Step 1: Read letters and 400+ syllables with guided audio practice in 7 days"
             >
               <span className="home-journey-step-num">Step 1</span>
               <span className="home-journey-step-icon" aria-hidden="true">🌱</span>
               <h3 className="home-journey-step-title">Alphabet</h3>
               <span className="home-journey-step-sanskrit">वर्णमाला</span>
               <p className="home-journey-step-desc">
-                400+ syllables, vowels, consonants, mouth positions, and authentic native audio.
+                Read letters and 400+ syllables with authentic native audio in 7 days.
               </p>
               <span className="home-journey-step-cta">Start Sounds →</span>
             </div>
@@ -1198,14 +1200,14 @@ const HomePage: React.FC<HomePageProps> = ({
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') onOpenBoard?.();
               }}
-              title="Step 2: Build Basic Words with 6,000+ Tile Puzzles (जोडो)"
+              title="Step 2: Build 6,000+ words playfully with interactive tile puzzles"
             >
               <span className="home-journey-step-num">Step 2</span>
               <span className="home-journey-step-icon" aria-hidden="true">🧩</span>
               <h3 className="home-journey-step-title">Basic Words</h3>
               <span className="home-journey-step-sanskrit">शब्दाः · जोडो</span>
               <p className="home-journey-step-desc">
-                6,000+ interactive tile puzzles across animals, daily objects, verbs, and numbers.
+                Build 6,000+ practical words through interactive tile puzzles.
               </p>
               <span className="home-journey-step-cta">Build Words →</span>
             </div>
@@ -1221,14 +1223,14 @@ const HomePage: React.FC<HomePageProps> = ({
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') onOpenReader('gsde101');
               }}
-              title="Step 3: Simple Sentences and Conversational Practice"
+              title="Step 3: Speak everyday conversational sentences with correct word order"
             >
               <span className="home-journey-step-num">Step 3</span>
               <span className="home-journey-step-icon" aria-hidden="true">💬</span>
               <h3 className="home-journey-step-title">Simple Sentences</h3>
               <span className="home-journey-step-sanskrit">सरल-वाक्यानि</span>
               <p className="home-journey-step-desc">
-                Everyday spoken phrases, greetings, subject-verb order, and pronunciation feedback.
+                Speak everyday conversational sentences with correct word order.
               </p>
               <span className="home-journey-step-cta">Speak Phrases →</span>
             </div>
@@ -1244,16 +1246,16 @@ const HomePage: React.FC<HomePageProps> = ({
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') onOpenGrammar?.();
               }}
-              title="Step 4: Grammar, 7 Vibhaktis, and Verb Conjugations"
+              title="Step 4: Master all 7 case endings (Vibhaktis) & verb forms without rote fear"
             >
               <span className="home-journey-step-num">Step 4</span>
               <span className="home-journey-step-icon" aria-hidden="true">🌿</span>
               <h3 className="home-journey-step-title">Grammar</h3>
               <span className="home-journey-step-sanskrit">व्याकरणम् · धातुपाठः</span>
               <p className="home-journey-step-desc">
-                7 Vibhaktis (noun case endings), Dhātupāṭha verb engine, 5 Lakāras &amp; Sandhi rules.
+                Master all 7 case endings (Vibhaktis) &amp; verb roots without rote fear.
               </p>
-              <span className="home-journey-step-cta">Learn Rules →</span>
+              <span className="home-journey-step-cta">Master Rules →</span>
             </div>
 
             <div className="home-journey-arrow" aria-hidden="true">→</div>
@@ -1267,14 +1269,14 @@ const HomePage: React.FC<HomePageProps> = ({
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') onOpenReader();
               }}
-              title="Step 5: NCERT Deepakam & Sharada Textbook Reader"
+              title="Step 5: Understand original NCERT chapters with 1-tap word meanings"
             >
               <span className="home-journey-step-num">Step 5</span>
               <span className="home-journey-step-icon" aria-hidden="true">📖</span>
               <h3 className="home-journey-step-title">NCERT Texts</h3>
               <span className="home-journey-step-sanskrit">दीपकम् · शारदा</span>
               <p className="home-journey-step-desc">
-                Complete NCERT Class 7 &amp; 8 Deepakam and Class 9 Sharada with word-by-word meaning.
+                Read authentic stories and shlokas with instant word-by-word meanings.
               </p>
               <span className="home-journey-step-cta">Read Texts →</span>
             </div>
@@ -1290,14 +1292,14 @@ const HomePage: React.FC<HomePageProps> = ({
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') onOpenCbseGuide?.();
               }}
-              title="Step 6: CBSE Exam Blueprint, Directives & Solved Papers"
+              title="Step 6: Score 95%+ in school & CBSE exams with solved blueprints and mock tests"
             >
               <span className="home-journey-step-num">Step 6</span>
               <span className="home-journey-step-icon" aria-hidden="true">🎯</span>
               <h3 className="home-journey-step-title">Exam Readiness</h3>
               <span className="home-journey-step-sanskrit">परीक्षा-सिद्धिः</span>
               <p className="home-journey-step-desc">
-                Official 80-mark blueprint, question formation (किम्-पद), chapter worksheets &amp; mock tests.
+                Score 95%+ in school &amp; CBSE exams with solved blueprints and mock tests.
               </p>
               <span className="home-journey-step-cta">Ace Exams →</span>
             </div>
@@ -1638,9 +1640,9 @@ const HomePage: React.FC<HomePageProps> = ({
               <span className="home-pathway-badge home-pathway-badge--beginner">
                 प्रारम्भिक-मार्गः · Beginner Track
               </span>
-              <h3 className="home-pathway-title">🌱 वर्णमाला-प्रवेशः · New to Sanskrit?</h3>
+              <h3 className="home-pathway-title">🌱 Read Sanskrit Confidently in 7 Days</h3>
               <p className="home-pathway-desc">
-                Hear and practice 13 vowels and 33 consonants in the Sanskrit Alphabet (वर्णमाला). Master matra combinations, 400+ interactive audio syllables, and essential starter vocabulary.
+                Learn to read Sanskrit letters, 400+ syllables, and essential starter vocabulary with guided native audio practice and mouth positions.
               </p>
             </div>
             <button
@@ -1659,9 +1661,9 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span className="home-pathway-badge home-pathway-badge--course">
                   क्रमबद्ध-पाठ्यक्रमः · Structured Course
                 </span>
-                <h3 className="home-pathway-title">🧠 संस्कृत-चिन्तनम् · Sanskrit Thinking Course</h3>
+                <h3 className="home-pathway-title">🧠 Think in Sanskrit &amp; Computational Logic</h3>
                 <p className="home-pathway-desc">
-                  Our flagship 6-module, 28-lesson program. Learn Sanskrit through computational logic: Sound as Input → Rules as Processing → Meaning as Output, with recitation and philosophy.
+                  Our flagship 6-module, 28-lesson program. Master Sanskrit through generative logic (Input ➔ Rules ➔ Meaning), bridging linguistics, computer science, and philosophical contemplation.
                 </p>
               </div>
               <button
@@ -1681,9 +1683,9 @@ const HomePage: React.FC<HomePageProps> = ({
               <span className="home-pathway-badge home-pathway-badge--grammar">
                 पाणिनीय-व्याकरणम् · Pāṇinian Grammar
               </span>
-              <h3 className="home-pathway-title">🌿 धातुपाठः एवं व्याकरणम् · Verbs &amp; Cases</h3>
+              <h3 className="home-pathway-title">🌿 Master Cases &amp; Verb Roots Without Rote Fear</h3>
               <p className="home-pathway-desc">
-                Explore the generative root science of Sanskrit. Deconstruct inflected words, generate 5-lakāra verb tables, master 7 vibhaktis (noun cases), and read 17 research masterclasses.
+                Deconstruct complex words to their roots in seconds, generate 5-lakāra verb tables with 1-tap audio, master all 7 Vibhaktis, and ace grammar questions.
               </p>
             </div>
             <button
@@ -1702,9 +1704,9 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span className="home-pathway-badge home-pathway-badge--maths">
                   वेदाङ्ग-गणितम् · Speed Math &amp; Heritage
                 </span>
-                <h3 className="home-pathway-title">⚡ वैदिक-गणितम् · Vaidic Gaṇitam</h3>
+                <h3 className="home-pathway-title">⚡ Solve Multi-Step Math in a Single Line</h3>
                 <p className="home-pathway-desc">
-                  Master mental calculation shortcuts! Explore all 16 Sutras &amp; 13 Sub-sutras (Tirtha, 1965), Bhāskarācārya's Līlāvatī poetic math, Piṅgala's binary Chandas, and Katapayadi mnemonics.
+                  Replace slow scratchpad calculations with 16 pattern-based Vedic sutras (Tirtha, 1965), cross-multiplication shortcuts, and instant digital-root verification.
                 </p>
               </div>
               <button
@@ -1724,9 +1726,9 @@ const HomePage: React.FC<HomePageProps> = ({
               <span className="home-pathway-badge home-pathway-badge--school">
                 पाठ्यपुस्तक-क्रमः · NCERT Curriculum (Classes 7–9)
               </span>
-              <h3 className="home-pathway-title">🎒 पाठ्यपुस्तकानि · NCERT Sanskrit Reader</h3>
+              <h3 className="home-pathway-title">🎒 Understand Chapters Word-by-Word &amp; Score 95%+</h3>
               <p className="home-pathway-desc">
-                Follow all 15 Deepakam (Class 7), 13 Deepakam (Class 8), and 12 Sharada (Class 9) chapters sequentially. Master shloka recitation, anvaya, sandhi, and exam question drills with word-by-word grammatical breakdowns.
+                Follow all Deepakam (Classes 7–8) and Sharada (Class 9) chapters with 1-tap word meanings, shloka anvaya, audio recitation, and solved 80-mark CBSE exam blueprints.
               </p>
               <div style={{ display: 'flex', gap: '0.5rem', margin: '0.65rem 0' }}>
                 {NCERT_TEXTBOOKS.map((tb) => (
@@ -2303,14 +2305,14 @@ const HomePage: React.FC<HomePageProps> = ({
       )}
 
       {/* ------------------------------------------------------------------
-          Core Features Grid
+          Core Features Grid - Real Learner Outcomes
           ------------------------------------------------------------------ */}
       <section className="home-features-section">
         <div className="home-section-header">
-          <span className="home-section-tag">वैशिष्ट्यानि · Platform Highlights</span>
-          <h2 className="home-section-title">आनन्दमय-शिक्षणम् · Joyful Modern Sanskrit Learning</h2>
+          <span className="home-section-tag">फलश्रुतिः · Real Learner Outcomes</span>
+          <h2 className="home-section-title">What You Will Achieve · Results-Driven Sanskrit Mastery</h2>
           <p className="home-section-subtitle">
-            Ancient shastric precision engineered with modern cognitive science, interactive drills, and native speech audio.
+            No more dry memorization. Every module delivers tangible, measurable outcomes—from reading your first word in 7 days to achieving top CBSE exam marks.
           </p>
         </div>
 
@@ -2322,18 +2324,18 @@ const HomePage: React.FC<HomePageProps> = ({
                 <div className="home-feature-icon-row">
                   <span className="home-feature-icon">🧠</span>
                   <span className="home-feature-badge" style={{ background: '#ede9fe', color: '#4f46e5' }}>
-                    Flagship 6-Module Course
+                    Cognitive Linguistics &amp; Computational Track
                   </span>
                 </div>
-                <h3 className="home-feature-title">संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking</h3>
+                <h3 className="home-feature-title">Think in Sanskrit &amp; Discover the Computational Logic of Pāṇini</h3>
                 <p className="home-feature-desc">
-                  A revolutionary course mapping Sanskrit grammar to modern computational linguistics and cognitive science. 28 structured lessons taking you from basic phonetics to algorithmic sentence structure and philosophical contemplation.
+                  Transform Sanskrit from a memorization chore into an algorithmic mental superpower bridging ancient grammar, context-free languages, and philosophical clarity across 28 structured lessons.
                 </p>
                 <ul className="home-feature-points">
-                  <li>Sound as Input → Rules as Processing → Meaning as Output</li>
-                  <li>Bridges to Computer Science: BNF grammars, context-free parsing &amp; AI</li>
-                  <li>Recitation audio, interactive comprehension quizzes &amp; study notes</li>
-                  <li>Certificate of completion &amp; continuous progress tracking</li>
+                  <li>Understand the generative rule model: Sound (Input) ➔ Rules (Processing) ➔ Meaning (Output)</li>
+                  <li>Connect Sanskrit grammar to modern computer science: BNF syntax &amp; algorithmic parsing</li>
+                  <li>Interactive comprehension quizzes, recitation audio &amp; study notes</li>
+                  <li>Accredited Certificate of Completion with milestone progress tracking</li>
                 </ul>
               </div>
               <button
@@ -2352,17 +2354,17 @@ const HomePage: React.FC<HomePageProps> = ({
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">📖</span>
-                <span className="home-feature-badge">Interactive Reader &amp; CBSE Track</span>
+                <span className="home-feature-badge">NCERT &amp; CBSE Textbooks (Classes 6–9)</span>
               </div>
-              <h3 className="home-feature-title">Interactive Sanskrit Reader (दीपकम् 6–8)</h3>
+              <h3 className="home-feature-title">Understand Original Sanskrit Texts Without Word-by-Word Fear</h3>
               <p className="home-feature-desc">
-                Study classical stories, shlokas, dialogues, and the complete NCERT 'दीपकम्' curriculum. Tap any word for crystal-clear native pronunciation, syllable breakdowns, trilingual meanings, and exam question blueprints.
+                Read classical stories, shlokas, and NCERT chapters with instant 1-tap word translations, syllable audio, and grammatical breakdowns.
               </p>
               <ul className="home-feature-points">
-                <li>Word-by-word instant dictionary lookup &amp; native audio</li>
-                <li>Shloka Anvaya (श्लोकान्वयः) &amp; grammatical analysis</li>
-                <li>Parallel English &amp; Hindi translations for every paragraph</li>
-                <li>Full alignment with CBSE Sanskrit Board Exam question formats</li>
+                <li>1-tap dictionary lookup &amp; authentic native audio on every word</li>
+                <li>Untangle poetic Sanskrit word orders into simple conversational meaning (Anvaya)</li>
+                <li>Parallel English &amp; Hindi translations for effortless paragraph comprehension</li>
+                <li>100% aligned with CBSE Sanskrit Board exam patterns and question formats</li>
               </ul>
             </div>
             <button
@@ -2374,22 +2376,22 @@ const HomePage: React.FC<HomePageProps> = ({
             </button>
           </div>
 
-          {/* Feature 2: Jodo Tile Puzzle */}
+          {/* Feature 3: Jodo Tile Puzzle */}
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">🧩</span>
-                <span className="home-feature-badge">Interactive Game</span>
+                <span className="home-feature-badge">Gamified Vocabulary Builder</span>
               </div>
-              <h3 className="home-feature-title">जोडो (Jodo Tile Puzzle)</h3>
+              <h3 className="home-feature-title">Build a 6,000+ Sanskrit Vocabulary Through Addictive 3-Minute Games</h3>
               <p className="home-feature-desc">
-                Learn word construction through gamification! Tap consonant and vowel tiles to form matras (e.g. क + आ → का),
-                match meanings, and unlock vibrant illustrations with Sanskrit sentences.
+                Retain words effortlessly by snapping syllable tiles together, matching trilingual meanings, and unlocking visual story rewards without tedious rote drills.
               </p>
               <ul className="home-feature-points">
-                <li>7 curated shelves: Beginners, Body, Maths, Map, Culture, Grammar &amp; Nature</li>
-                <li>Clear 3-step instructions &amp; encouraging feedback</li>
-                <li>Seamless website navigation back to lessons</li>
+                <li>Accelerate vocabulary recall 3× faster than traditional memorization</li>
+                <li>Master matra joining (e.g. क + आ → का) and letter ligatures hands-on</li>
+                <li>7 themed shelves covering animals, daily objects, verbs, and nature</li>
+                <li>Instant encouraging feedback with direct links back to textbook lessons</li>
               </ul>
             </div>
             <button
@@ -2401,22 +2403,22 @@ const HomePage: React.FC<HomePageProps> = ({
             </button>
           </div>
 
-          {/* Feature 3: Varṇamālā Studio */}
+          {/* Feature 4: Varṇamālā Studio */}
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">🔤</span>
-                <span className="home-feature-badge">Phonetics Studio</span>
+                <span className="home-feature-badge">Phonetics &amp; Reading Studio</span>
               </div>
-              <h3 className="home-feature-title">Alphabet &amp; Syllables (वर्णमाला)</h3>
+              <h3 className="home-feature-title">Learn to Read Sanskrit Confidently in 7 Days with Guided Audio Practice</h3>
               <p className="home-feature-desc">
-                The foundation of Sanskrit starts with sound. Master all Swaras (vowels), Vyanjanas (consonants), and Svaras (accents)
-                with exact articulation points and native pronunciation audio for every letter.
+                Go from zero knowledge to sounding out any Sanskrit word with authentic native pronunciation, anatomical mouth positions, and full Barakhadi audio charts.
               </p>
               <ul className="home-feature-points">
-                <li>Velars, Palatals, Retroflexes, Dentals &amp; Labials</li>
-                <li>Full Barakhadi table (क, का, कि, की, कु, कू...) with audio</li>
-                <li>Conjunct consonants (संयुक्ताक्षर) and ligature breakdown</li>
+                <li>Read any Sanskrit syllable or matra combination within your first week</li>
+                <li>Master accurate mouth articulation zones (Kaṇṭha to Oṣṭha) for crisp pronunciation</li>
+                <li>Decode conjunct consonants (Saṃyuktākṣara) effortlessly without guessing</li>
+                <li>Downloadable Varṇamālā &amp; Bārahkhaḍī flashcards and printable workbook PDFs</li>
               </ul>
             </div>
             <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto', flexWrap: 'wrap' }}>
@@ -2444,22 +2446,22 @@ const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
 
-          {/* Feature 4: Vyakarana Shelf */}
+          {/* Feature 5: Vyakarana Shelf */}
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">📚</span>
-                <span className="home-feature-badge">Vyakaran</span>
+                <span className="home-feature-badge">Grammar &amp; Case Mastery</span>
               </div>
-              <h3 className="home-feature-title">Vyakaran &amp; Vibhakti Guide</h3>
+              <h3 className="home-feature-title">Master All 7 Cases (Vibhaktis) &amp; Verb Forms Without Rote Confusion</h3>
               <p className="home-feature-desc">
-                Demystify Sanskrit grammar! Access comprehensive declension tables (Shabdarupani) across all genders and numbers,
-                and verb conjugations (Dhaturupams) across all 5 school lakāras.
+                Demystify Sanskrit grammar! Know exactly which case ending to use in every sentence with visual role maps, 5 school lakāra conjugations, and real-world examples.
               </p>
               <ul className="home-feature-points">
-                <li>All 7 Vibhaktis (Cases) + Sambodhana with roles &amp; examples</li>
-                <li>Noun declensions: Dev, Hari, Guru, Lata, Mati, Phalam, etc.</li>
-                <li>Verbs in Lat, Lit, Lot, Lang, and Vidhilin lakāras</li>
+                <li>Never confuse Ramena, Ramaya, or Ramasya again with clear case-role maps</li>
+                <li>Conjugate past, present, future, imperative, and potential verbs (5 Lakāras)</li>
+                <li>Full declension tables for Dev, Hari, Guru, Lata, Mati, Phalam, etc.</li>
+                <li>Direct exam application for school sentence construction and translation</li>
               </ul>
             </div>
             <button
@@ -2471,24 +2473,23 @@ const HomePage: React.FC<HomePageProps> = ({
             </button>
           </div>
 
-          {/* Feature: Pāṇinian Dhātupāṭha & Verb Studio */}
+          {/* Feature 6: Pāṇinian Dhātupāṭha & Verb Studio */}
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">🌿</span>
                 <span className="home-feature-badge" style={{ background: '#dcfce7', color: '#15803d' }}>
-                  Pāṇinian Grammar
+                  Pāṇinian Generative Root Science
                 </span>
               </div>
-              <h3 className="home-feature-title">धातुपाठः (Dhātupāṭha Studio)</h3>
+              <h3 className="home-feature-title">Deconstruct Any Complex Sanskrit Word to Its Root in Seconds</h3>
               <p className="home-feature-desc">
-                Classical Pāṇinian verb root science made visual! Deconstruct any inflected word into its root and suffix,
-                generate instant 3×3 conjugation tables for 5 school Lakāras, derive Kṛt participles, and test your pratyaya skills.
+                Reverse-engineer verbs and participles to their generative roots (dhātu) and suffixes (pratyaya), unlocking the generative DNA of the entire Sanskrit vocabulary.
               </p>
               <ul className="home-feature-points">
                 <li>Reverse Word Deconstructor (गत्वा ➔ गम् + क्त्वा, पठितुम् ➔ पठ् + तुमुन्)</li>
-                <li>5-Lakāra Conjugation Generator (लट्, लृट्, लङ्, लोट्, विधिलिङ्) with 1-tap audio</li>
-                <li>Kṛt Participles (क्त्वा, तुमुन्, ल्यप्, क्त, शतृ) &amp; CBSE Lakāra rules</li>
+                <li>Instant 3×3 conjugation tables for 5 school Lakāras with 1-tap audio</li>
+                <li>Master Kṛt Participles (क्त्वा, तुमुन्, ल्यप्, क्त, शतृ) &amp; CBSE Lakāra rules</li>
                 <li>Interactive Pratyaya Challenge Quiz with detailed grammatical explanations</li>
               </ul>
             </div>
@@ -2504,23 +2505,24 @@ const HomePage: React.FC<HomePageProps> = ({
             )}
           </div>
 
-          {/* Feature 5: Vedic Mathematics */}
+          {/* Feature 7: Vedic Mathematics */}
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">📐</span>
                 <span className="home-feature-badge" style={{ background: '#fef3c7', color: '#92400e' }}>
-                  Speed Math
+                  Mental Arithmetic &amp; Speed Math
                 </span>
               </div>
-              <h3 className="home-feature-title">वैदिक-गणितम् (Vaidic Gaṇitam)</h3>
+              <h3 className="home-feature-title">Solve Multi-Step Math Problems Mentally in a Single Line</h3>
               <p className="home-feature-desc">
-                The Elegance of Numbers: A pattern-based mental calculation system that streamlines multi-step arithmetic through algebraic short-cuts and base complements. Explore the 16 Sutras, interactive step-by-step visual solvers, and speed challenges!
+                Replace slow scratchpad arithmetic with pattern-based mental short-cuts, algebraic identities, base complements, and cross-multiplication (Tirtha, 1965).
               </p>
               <ul className="home-feature-points">
-                <li>16 Primary Sutras &amp; 13 Sub-Sutras with Sanskrit audio</li>
+                <li>16 Primary Sutras &amp; 13 Sub-Sutras with Sanskrit recitation audio</li>
                 <li>Interactive step-by-step mental math solvers (Ekādhikena, Nikhilaṁ, Ūrdhva)</li>
-                <li>Speed Math Practice Challenge &amp; Beejank digital root verification</li>
+                <li>Instant calculation verification via Beejank digital root checks</li>
+                <li>Connects Vedic mathematics to modern computing and algebraic logic</li>
               </ul>
             </div>
             {onOpenVedicMaths && (
@@ -2535,25 +2537,24 @@ const HomePage: React.FC<HomePageProps> = ({
             )}
           </div>
 
-          {/* Feature: Sanskrit Numbers Masterclass */}
+          {/* Feature 8: Sanskrit Numbers Masterclass */}
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
                 <span className="home-feature-icon">🔢</span>
                 <span className="home-feature-badge" style={{ background: '#dbeafe', color: '#1d4ed8' }}>
-                  Numbers &amp; Scales
+                  Numbers &amp; Counting Masterclass
                 </span>
               </div>
-              <h3 className="home-feature-title">संस्कृत-संख्या-परिचयः (Numbers Masterclass)</h3>
+              <h3 className="home-feature-title">Count, Tell Time, and Master Sanskrit Numbers from 1 to 100</h3>
               <p className="home-feature-desc">
-                From foundational digits to ancient cosmological scales! Master Sanskrit counting from 1 to 100,
-                explore the essential gender agreement rules for 1–4, learn ordinal ranks, and discover Vedic powers of 10 up to 10¹⁷ (परार्धम्).
+                From foundational digits to ancient cosmological scales! Master Sanskrit counting from 1 to 100, ace gender agreement rules for 1–4, and explore powers of 10 up to 10¹⁷.
               </p>
               <ul className="home-feature-points">
-                <li>Complete 1 to 100 interactive grid with 1-tap authentic audio</li>
+                <li>Complete 1 to 100 interactive grid with 1-tap authentic pronunciation audio</li>
                 <li>Gender Declension Rules for 1–4 across Masculine, Feminine, and Neuter</li>
-                <li>Ordinal Numbers (प्रथमः, द्वितीयः...) &amp; Paninian Sandhi Secrets (षण्णवतिः 96)</li>
-                <li>Astronomical Vedic scale (शतम्, सहस्रम्, लक्षम्, कोटिः to परार्धम्) &amp; Bodhi Quiz</li>
+                <li>Ordinal Numbers (प्रथमः, द्वितीयः...) &amp; Sandhi secrets (षण्णवतिः 96)</li>
+                <li>Astronomical Vedic scale (शतम्, सहस्रम्, लक्षम्, कोटिः to परार्धम् 10¹⁷)</li>
               </ul>
             </div>
             <button
@@ -2566,25 +2567,25 @@ const HomePage: React.FC<HomePageProps> = ({
             </button>
           </div>
 
-          {/* Feature: Practice Quizzes & Worksheets */}
+          {/* Feature 9: Practice Quizzes & Worksheets */}
           {(onOpenQuiz || onOpenWorksheets) && (
             <div className="home-feature-card">
               <div className="home-feature-card-top">
                 <div className="home-feature-icon-row">
                   <span className="home-feature-icon">🎯</span>
                   <span className="home-feature-badge" style={{ background: '#dcfce7', color: '#166534' }}>
-                    Exam Practice &amp; Tests
+                    Exam Readiness &amp; Assessment
                   </span>
                 </div>
-                <h3 className="home-feature-title">प्रश्नोत्तरी एवं कार्यपत्रिकाः · Quizzes &amp; Worksheets</h3>
+                <h3 className="home-feature-title">Achieve 95%+ in CBSE Sanskrit Exams with Target Worksheets &amp; Mocks</h3>
                 <p className="home-feature-desc">
-                  Reinforce every Sanskrit concept with timed diagnostic quizzes and printable chapter worksheets for CBSE Classes 6–10.
+                  Turn exam anxiety into effortless top scores with timed quizzes, chapter-wise worksheets, and full 80-mark blueprint practice for CBSE Classes 6–10.
                 </p>
                 <ul className="home-feature-points">
-                  <li>Vibhaktis, Lakāras, Sandhi &amp; Samāsa topic-wise quizzes</li>
+                  <li>Vibhaktis, Lakāras, Sandhi &amp; Samāsa topic-wise quizzes with instant scoring</li>
+                  <li>Practice with real CBSE-style question formats (किम्-पद question creation, gap fills)</li>
+                  <li>Printable classroom &amp; homework practice sheets with complete answer keys</li>
                   <li>Instant answer evaluation with Pāṇinian sutra explanations</li>
-                  <li>Printable classroom &amp; homework practice sheets with answer keys</li>
-                  <li>CBSE Class 7–10 board exam mock question sets</li>
                 </ul>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto', flexWrap: 'wrap' }}>
@@ -2612,25 +2613,25 @@ const HomePage: React.FC<HomePageProps> = ({
             </div>
           )}
 
-          {/* Feature: Free Study Vault & Resources */}
+          {/* Feature 10: Free Study Vault & Resources */}
           {onOpenResources && (
             <div className="home-feature-card">
               <div className="home-feature-card-top">
                 <div className="home-feature-icon-row">
                   <span className="home-feature-icon">🌐</span>
                   <span className="home-feature-badge" style={{ background: '#e0f2fe', color: '#0369a1' }}>
-                    Free Open Access
+                    Free Open-Access Study Vault
                   </span>
                 </div>
-                <h3 className="home-feature-title">निःशुल्क-साधनानि · Free Study Vault</h3>
+                <h3 className="home-feature-title">Access 50+ Free Downloadable Sanskrit Cheat Sheets, Audio &amp; Charts</h3>
                 <p className="home-feature-desc">
-                  Explore open-access tools, grammar charts, flashcards, dictionaries, and Vedic reference cheat-sheets for self-study and homeschooling.
+                  Everything parents, teachers, and self-learners need for quick reference—available 100% free with zero registration.
                 </p>
                 <ul className="home-feature-points">
-                  <li>Sanskrit-English-Hindi trilingual root lexicon</li>
-                  <li>Pronunciation audio charts and Visarga guide</li>
-                  <li>16 Vedic Mathematics formula cheat-sheet PDF</li>
-                  <li>Pāṇinian Sandhi rule visual lookup table</li>
+                  <li>Trilingual root lexicon (Sanskrit–Hindi–English)</li>
+                  <li>Printable PDF cheat sheets for 16 Vedic math formulas &amp; Sandhi rules</li>
+                  <li>Pronunciation audio charts and Visarga guide for homeschoolers</li>
+                  <li>Free Varṇamālā flashcards and printable workbook excerpts</li>
                 </ul>
               </div>
               <button
