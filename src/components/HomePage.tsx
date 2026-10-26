@@ -971,6 +971,19 @@ const HomePage: React.FC<HomePageProps> = ({
             />
           </div>
 
+        {/* 1. Who It Is For (Audience Callout) */}
+        <div className="home-hero-audience-banner" role="note" aria-label="Target Audience">
+          <span className="home-hero-audience-tag">
+            <span aria-hidden="true">🎯</span>
+            <strong>{englishFirst ? 'WHO IT IS FOR' : 'लक्ष्य-वर्गः · WHO IT IS FOR'}</strong>
+          </span>
+          <span className="home-hero-audience-text">
+            {englishFirst
+              ? 'CBSE & NCERT Students (Classes 6–10) · Complete Beginners · Parents & Adult Learners'
+              : 'CBSE एवं NCERT छात्राः (कक्षा ६–१०) · प्रारम्भिकाः · अभिभावकाः स्वाध्यायिनश्च'}
+          </span>
+        </div>
+
         <div className="home-hero-badge">
           <span>🕉️</span>
           <span className="home-hero-badge-sanskrit">
@@ -978,135 +991,140 @@ const HomePage: React.FC<HomePageProps> = ({
           </span>
         </div>
 
+        {/* 2. Main Outcome & Core Promise */}
         <h1 className="home-hero-title">
           <span className="home-hero-title-primary">
-            Learn Sanskrit Step by Step
+            {englishFirst ? 'Master Sanskrit Step by Step' : 'सरल-संस्कृत-प्रवेशः · Master Sanskrit'}
           </span>
-          <p className="home-hero-lead-promise">
-            Learn Sanskrit step by step—with audio, grammar tools, CBSE support, and interactive practice.
+          <p className="home-hero-main-outcome">
+            {englishFirst
+              ? 'Go from alphabet basics to confident speaking, Pāṇinian grammar mastery, and top CBSE exam scores—with line-by-line audio and 6,000+ interactive practice puzzles.'
+              : 'वर्णमालातः आरभ्य संभाषणम्, पाणिनीय-व्याकरणम्, NCERT-दीपकं तथा CBSE-परीक्षा-सिद्धिम् अधिगच्छन्तु—ध्वनि-सहितम् अभ्यास-साधनैश्च।'}
           </p>
-          <div className="home-hero-title-dev" aria-label="सरल-संस्कृतम् · व्याकरणम् · NCERT · CBSE">
-            <span className="home-dev-pill">सरल-संस्कृतम्</span>
-            <span className="home-dev-bullet" aria-hidden="true">✦</span>
-            <span className="home-dev-pill">व्याकरणम्</span>
-            <span className="home-dev-bullet" aria-hidden="true">✦</span>
-            <span className="home-dev-pill">NCERT दीपकम्</span>
-            <span className="home-dev-bullet" aria-hidden="true">✦</span>
-            <span className="home-dev-pill">CBSE परीक्षा-सिद्धिः</span>
+          <div className="home-hero-outcomes-strip" aria-label="Key Outcomes">
+            <span className="home-hero-outcome-item">
+              <span className="hhoi-icon" aria-hidden="true">🔊</span>
+              <span>{englishFirst ? 'Native Pronunciation Audio' : 'शुद्धोच्चारण-ध्वनिः'}</span>
+            </span>
+            <span className="home-hero-outcome-sep" aria-hidden="true">•</span>
+            <span className="home-hero-outcome-item">
+              <span className="hhoi-icon" aria-hidden="true">📖</span>
+              <span>{englishFirst ? 'NCERT Deepakam & CBSE Support' : 'NCERT दीपकम् & CBSE'}</span>
+            </span>
+            <span className="home-hero-outcome-sep" aria-hidden="true">•</span>
+            <span className="home-hero-outcome-item">
+              <span className="hhoi-icon" aria-hidden="true">🌿</span>
+              <span>{englishFirst ? 'Pāṇinian Dhātupāṭha Engine' : 'पाणिनीय-धातुपाठः'}</span>
+            </span>
+            <span className="home-hero-outcome-sep" aria-hidden="true">•</span>
+            <span className="home-hero-outcome-item">
+              <span className="hhoi-icon" aria-hidden="true">📐</span>
+              <span>{englishFirst ? '16 Vedic Math Sutras' : '१६ वैदिक-सूत्राणि'}</span>
+            </span>
           </div>
         </h1>
 
-        {/* Prominent 14-Day Free Access Banner in Hero */}
-        <div className="home-hero-trial-banner" role="region" aria-label="14-Day Free Access Offer">
-          <div className="home-hero-trial-pill-row">
-            <span className="hhtp-badge">
-              {currentUser?.planStatus === 'active'
-                ? '⭐ FULL ACCESS ACTIVE'
-                : currentUser?.planStatus === 'trial'
-                  ? '🎁 14-DAY TRIAL ACTIVE'
-                  : '🎁 14-DAY FULL ACCESS TRIAL'}
-            </span>
-            <span className="hhtp-sub">
-              {currentUser?.planStatus === 'active'
-                ? 'Unrestricted Gurukul access enabled'
-                : currentUser?.planStatus === 'trial'
-                  ? 'Your 14-day free trial is currently active'
-                  : 'Zero risk · No credit card required · Instant online activation'}
-            </span>
-          </div>
-          <div className="home-hero-trial-content">
-            <div className="home-hero-trial-text-col">
-              <strong className="home-hero-trial-headline">
-                {currentUser?.planStatus === 'active'
-                  ? 'Welcome back! Your complete Gurukul curriculum is unlocked.'
-                  : currentUser?.planStatus === 'trial'
-                    ? 'Enjoy full access to all 15 Deepakam chapters, puzzles, audio & Vedic Math.'
-                    : 'Experience the Entire Gurukul Sanskrit Platform Free for 14 Days'}
-              </strong>
-              <p className="home-hero-trial-body">
-                {currentUser?.planStatus === 'active' || currentUser?.planStatus === 'trial'
-                  ? 'Continue your lessons, explore CBSE board exam directives, practice with 6,000+ interactive Jodo tiles, or consult Bodhi anytime.'
-                  : 'Get unrestricted access to all 15 NCERT Deepakam chapters, 6,000+ interactive Jodo tile puzzles, native audio pronunciations, Pāṇinian Dhātupāṭha verb engine, and 16 Vedic Mathematics sutras.'}
-              </p>
-            </div>
-            <button
-              type="button"
-              className="home-hero-trial-cta-btn"
-              onClick={handleStartTrial}
-              title={currentUser?.planStatus ? 'Continue learning' : 'Start your 14-day free access trial now'}
-            >
-              <span>{currentUser?.planStatus ? 'Continue Learning' : 'Start 14-Day Free Trial'}</span>
-              <span className="hhtc-arrow" aria-hidden="true">➔</span>
-            </button>
-          </div>
-          <div className="home-hero-trial-trust-row">
-            <span className="hhtt-item"><span>✓</span> 100% Free for 14 Days</span>
-            <span className="hhtt-item"><span>✓</span> No Credit Card / Auto-Debit</span>
-            <span className="hhtt-item"><span>✓</span> Instant Online Activation</span>
-            <button
-              type="button"
-              className="hhtt-item"
-              style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', color: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}
-              onClick={() => {
-                const el = document.getElementById('proof-of-quality');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
-              title="Jump to Proof of Quality & Free Preview"
-            >
-              <span>✓</span> Preview Full Chapter 1 &amp; Audio Free
-            </button>
-          </div>
-        </div>
-
-        {/* First Screen Quick CTAs */}
-        <div className="home-hero-quick-ctas">
+        {/* 3. The 3 Primary Actions: Start Free Trial, Explore Courses, Try a Sample Lesson */}
+        <div className="home-hero-three-actions" role="region" aria-label="Primary Actions">
+          {/* Action 1: Start Free Trial */}
           <button
             type="button"
-            className="home-hero-cta-btn home-hero-cta-btn--trial"
+            className="home-hero-action-card home-hero-action-card--trial"
             onClick={handleStartTrial}
-            title={currentUser?.planStatus ? 'Continue to reader' : 'Claim your unrestricted 14-day free trial'}
+            title={currentUser?.planStatus ? 'Continue to your Gurukul lessons' : 'Start your unrestricted 14-day free access trial now'}
           >
-            {currentUser?.planStatus ? '📖 Explore Lessons' : '🎁 Start 14-Day Free Trial'}
+            <div className="hhac-icon-col" aria-hidden="true">
+              <span className="hhac-icon">🎁</span>
+            </div>
+            <div className="hhac-text-col">
+              <div className="hhac-badge-row">
+                <span className="hhac-tag hhac-tag--trial">
+                  {currentUser?.planStatus === 'active'
+                    ? 'Active'
+                    : currentUser?.planStatus === 'trial'
+                      ? 'Trial Active'
+                      : '14-Day Free Access'}
+                </span>
+              </div>
+              <strong className="hhac-title">
+                {currentUser?.planStatus ? 'Continue Learning' : 'Start Free Trial'}
+              </strong>
+              <span className="hhac-desc">
+                {currentUser?.planStatus
+                  ? 'Jump back into your curriculum'
+                  : 'Zero risk · No credit card required'}
+              </span>
+            </div>
+            <span className="hhac-arrow" aria-hidden="true">➔</span>
           </button>
+
+          {/* Action 2: Explore Courses */}
           <button
             type="button"
-            className="home-hero-cta-btn home-hero-cta-btn--secondary"
+            className="home-hero-action-card home-hero-action-card--courses"
+            onClick={() => {
+              const el = document.getElementById('courses') || document.querySelector('.home-pathways-section');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+              else if (onOpenCourse) onOpenCourse();
+            }}
+            title="Explore structured courses: Beginner Alphabet, 28-Lesson Sanskrit Course & Paninian Grammar"
+          >
+            <div className="hhac-icon-col" aria-hidden="true">
+              <span className="hhac-icon">📚</span>
+            </div>
+            <div className="hhac-text-col">
+              <div className="hhac-badge-row">
+                <span className="hhac-tag hhac-tag--courses">Guided Tracks</span>
+              </div>
+              <strong className="hhac-title">Explore Courses</strong>
+              <span className="hhac-desc">
+                Alphabet, 28-Lesson Course &amp; Grammar
+              </span>
+            </div>
+            <span className="hhac-arrow" aria-hidden="true">➔</span>
+          </button>
+
+          {/* Action 3: Try a Sample Lesson */}
+          <button
+            type="button"
+            className="home-hero-action-card home-hero-action-card--sample"
             onClick={() => {
               const el = document.getElementById('proof-of-quality');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
+              else onOpenReader('gsde101');
             }}
-            title="Experience short demo lessons, sample audio, word analyzer, and free chapter before signing up"
+            title="Try short demo lessons, sample audio, word analyzer, and free Chapter 1 without signing up"
           >
-            🛡️ Proof of Quality · Free Preview
+            <div className="hhac-icon-col" aria-hidden="true">
+              <span className="hhac-icon">✨</span>
+            </div>
+            <div className="hhac-text-col">
+              <div className="hhac-badge-row">
+                <span className="hhac-tag hhac-tag--sample">Instant · No Signup</span>
+              </div>
+              <strong className="hhac-title">Try a Sample Lesson</strong>
+              <span className="hhac-desc">
+                Sound science, spoken audio &amp; free Ch 1
+              </span>
+            </div>
+            <span className="hhac-arrow" aria-hidden="true">➔</span>
           </button>
-          {onOpenVarnamala && (
-            <button
-              type="button"
-              className="home-hero-cta-btn home-hero-cta-btn--primary"
-              onClick={onOpenVarnamala}
-              title="Step 1: Start with the Sanskrit Alphabet (वर्णमाला) & 400+ Syllables"
-            >
-              🌱 Start from Alphabet · वर्णमाला
-            </button>
-          )}
-          <button
-            type="button"
-            className="home-hero-cta-btn home-hero-cta-btn--secondary"
-            onClick={() => onOpenReader('gsde101')}
-            title="NCERT Deepakam (CBSE Classes 7–8) Textbook Reader"
+        </div>
+
+        {/* Trust Badges & WhatsApp Support */}
+        <div className="home-hero-trust-bar">
+          <span className="hhtb-item"><span>✓</span> 100% Free for 14 Days</span>
+          <span className="hhtb-item"><span>✓</span> No Credit Card / Auto-Debit</span>
+          <span className="hhtb-item"><span>✓</span> Instant Online Activation</span>
+          <a
+            href="https://wa.me/919000335468?text=Hello%20EdNet%20Gurukul%2C%20I%20have%20a%20question%20about%20Sanskrit%20learning"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hhtb-item hhtb-whatsapp"
+            title="Chat directly on WhatsApp for curriculum guidance or queries"
           >
-            📖 NCERT Textbooks · दीपकम्
-          </button>
-          {onOpenOnlineClasses && (
-            <button
-              type="button"
-              className="home-hero-cta-btn home-hero-cta-btn--online"
-              onClick={onOpenOnlineClasses}
-              title="Sanskrit Online Classes with Bodhi"
-            >
-              🎓 Live Online Classes
-            </button>
-          )}
+            <span aria-hidden="true">💬</span> WhatsApp: +91 9000335468 <span className="hhtb-wa-only">(Only WhatsApp)</span>
+          </a>
         </div>
 
         {onOpenSearch && (
@@ -1369,150 +1387,6 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
 
-        <div style={{ margin: '1.85rem 0 0.85rem', textAlign: 'center' }}>
-          <span style={{ fontSize: '0.82rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8a7f72' }}>
-            {englishFirst ? 'All Gurukul Learning Shelves & Practice Tools' : 'सर्व-साधनानि · All Learning Shelves & Tools'}
-          </span>
-        </div>
-
-        <div className="home-hero-actions">
-          {onOpenOnlineClasses && (
-            <button
-              type="button"
-              className="home-btn-primary"
-              style={{
-                background: 'linear-gradient(135deg, #d97706 0%, #b45309 100%)',
-                boxShadow: '0 4px 14px rgba(217, 119, 6, 0.35)',
-                fontWeight: 800,
-              }}
-              onClick={onOpenOnlineClasses}
-              title="Sanskrit Online Classes with Bodhi — Spoken, CBSE & Vyakaran"
-            >
-              {englishFirst ? '🎓 Live Online Classes · ऑनलाइन-वर्गाः' : '🎓 बोधेः ऑनलाइन-वर्गाः · Online Classes'}
-            </button>
-          )}
-          {onOpenVarnamala && (
-            <button
-              type="button"
-              className="home-btn-primary"
-              onClick={onOpenVarnamala}
-              title="Start with the Sanskrit Alphabet (वर्णमाला) & 400+ Syllables"
-            >
-              {englishFirst ? '🌱 Sanskrit Alphabet & Sounds · वर्णमाला' : '🌱 वर्णमाला-प्रवेशः · Alphabet & Sounds'}
-            </button>
-          )}
-          {onOpenCourse && (
-            <button
-              type="button"
-              className="home-btn-primary"
-              style={{
-                background: 'linear-gradient(135deg, #4338ca 0%, #6366f1 100%)',
-                boxShadow: '0 4px 14px rgba(67, 56, 202, 0.35)',
-                fontWeight: 800,
-              }}
-              onClick={onOpenCourse}
-              title="संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking 28-Lesson Course"
-            >
-              {englishFirst ? '🧠 Sanskrit Thinking Course (28 Lessons) · चिन्तनम्' : '🧠 संस्कृत-चिन्तनम् · 28-Lesson Course'}
-            </button>
-          )}
-          <button
-            type="button"
-            className="home-btn-secondary"
-            onClick={onOpenBoard}
-            title="Interactive Tile Puzzle across 7 curated shelves"
-          >
-            {englishFirst ? '🧩 Word Builder Puzzles (6,000+ Words) · जोडो' : '🧩 जोडो शब्द-क्रीडा · 6,000+ Puzzles'}
-          </button>
-          {onOpenDhatupatha && (
-            <button
-              type="button"
-              className="home-btn-primary"
-              style={{ background: 'linear-gradient(135deg, #15803d 0%, #16a34a 100%)', boxShadow: '0 4px 12px rgba(21, 128, 61, 0.25)' }}
-              onClick={onOpenDhatupatha}
-              title="Pāṇinian Dhātupāṭha Studio - 5 Lakāra conjugations, Kṛt pratyayas & word deconstructor"
-            >
-              {englishFirst ? '🌿 Verb Roots & 5 Tenses · धातुपाठः' : '🌿 धातुपाठः · Pāṇinian Verbs'}
-            </button>
-          )}
-          <button
-            type="button"
-            className="home-btn-accent"
-            onClick={onOpenGrammar}
-            title="Vyakaran shelf - 7 Vibhaktis, Declensions, Conjugations & 17 Masterclasses"
-          >
-            {englishFirst ? '📚 Grammar Rules & 7 Cases · व्याकरणम्' : '📚 व्याकरणम् · 7 Vibhaktis & Rules'}
-          </button>
-          {onOpenVedicMaths && (
-            <button
-              type="button"
-              className="home-btn-primary"
-              style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', boxShadow: '0 4px 12px rgba(180, 83, 9, 0.25)' }}
-              onClick={onOpenVedicMaths}
-              title="16 Sutras, Sub-sutras, and Lightning Mental Arithmetic"
-            >
-              {englishFirst ? '📐 Vedic Speed Maths (16 Sutras) · गणितम्' : '📐 वैदिक-गणितम् · Vaidic Gaṇitam'}
-            </button>
-          )}
-          <button
-            type="button"
-            className="home-btn-secondary"
-            onClick={() => onOpenReader('gsde101')}
-            title="NCERT Deepakam (NEP, CBSE exam) Textbook with Audio & Word Meanings"
-          >
-            {englishFirst ? '📖 School Textbooks (Classes 7–9) · दीपकम्' : '📖 दीपकम् (कक्षा ७–८) · School Reader'}
-          </button>
-          {onOpenCbseGuide && (
-            <button
-              type="button"
-              className="home-btn-secondary"
-              onClick={onOpenCbseGuide}
-              title="CBSE NCERT Sanskrit Exam Guide (Classes 7–10)"
-            >
-              {englishFirst ? '📘 CBSE Exam Blueprint · परीक्षा-मार्गदर्शिका' : '📘 परीक्षा-मार्गदर्शिका · CBSE Exam Guide'}
-            </button>
-          )}
-          {onOpenPhilosophy && (
-            <button
-              type="button"
-              className="home-btn-secondary"
-              onClick={onOpenPhilosophy}
-              title="Our Philosophy · Darśana & In the Age of AI"
-            >
-              {englishFirst ? '🪔 Philosophy & Sanskrit in AI · दर्शनम्' : '🪔 दर्शनम् · Philosophy & AI'}
-            </button>
-          )}
-          {onOpenQuiz && (
-            <button
-              type="button"
-              className="home-btn-accent"
-              style={{ background: '#059669', borderColor: '#059669', color: '#fff' }}
-              onClick={onOpenQuiz}
-            >
-              {englishFirst ? '🎯 Practice Quizzes & Tests · प्रश्नोत्तरी' : '🎯 प्रश्नोत्तरी · Sanskrit Quiz'}
-            </button>
-          )}
-          {onOpenWorksheets && (
-            <button
-              type="button"
-              className="home-btn-secondary"
-              onClick={onOpenWorksheets}
-            >
-              {englishFirst ? '📝 Printable Worksheets & PDFs · कार्यपत्रिकाः' : '📝 कार्यपत्रिकाः · Worksheets & PDFs'}
-            </button>
-          )}
-          {onOpenResources && (
-            <button
-              type="button"
-              className="home-btn-secondary"
-              style={{ background: 'rgba(2, 132, 199, 0.08)', borderColor: 'rgba(2, 132, 199, 0.35)', color: '#0369a1' }}
-              onClick={onOpenResources}
-            >
-              {englishFirst ? '🌐 Free Study Vault & PDFs · साधनानि' : '🌐 साधनानि · Free Vault & Tools'}
-            </button>
-          )}
-        </div>
-
         {/* Featured Complete Course Banner: संस्कृत-चिन्तनम् */}
         {onOpenCourse && (
           <div
@@ -1748,7 +1622,7 @@ const HomePage: React.FC<HomePageProps> = ({
       {/* ------------------------------------------------------------------
           Learning Pathways Section (5 Clear Learner Tracks)
           ------------------------------------------------------------------ */}
-      <section className="home-pathways-section" aria-label="Learning Pathways">
+      <section id="courses" className="home-pathways-section" aria-label="Learning Pathways">
         <div className="home-section-header">
           <span className="home-section-tag">मार्गदर्शिका · Structured Tracks</span>
           <h2 className="home-section-title">अध्ययन-मार्गाः · Guided Learning Pathways</h2>
@@ -2752,6 +2626,84 @@ const HomePage: React.FC<HomePageProps> = ({
               Explore Numbers Masterclass ▶
             </button>
           </div>
+
+          {/* Feature: Practice Quizzes & Worksheets */}
+          {(onOpenQuiz || onOpenWorksheets) && (
+            <div className="home-feature-card">
+              <div className="home-feature-card-top">
+                <div className="home-feature-icon-row">
+                  <span className="home-feature-icon">🎯</span>
+                  <span className="home-feature-badge" style={{ background: '#dcfce7', color: '#166534' }}>
+                    Exam Practice &amp; Tests
+                  </span>
+                </div>
+                <h3 className="home-feature-title">प्रश्नोत्तरी एवं कार्यपत्रिकाः · Quizzes &amp; Worksheets</h3>
+                <p className="home-feature-desc">
+                  Reinforce every Sanskrit concept with timed diagnostic quizzes and printable chapter worksheets for CBSE Classes 6–10.
+                </p>
+                <ul className="home-feature-points">
+                  <li>Vibhaktis, Lakāras, Sandhi &amp; Samāsa topic-wise quizzes</li>
+                  <li>Instant answer evaluation with Pāṇinian sutra explanations</li>
+                  <li>Printable classroom &amp; homework practice sheets with answer keys</li>
+                  <li>CBSE Class 7–10 board exam mock question sets</li>
+                </ul>
+              </div>
+              <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto', flexWrap: 'wrap' }}>
+                {onOpenQuiz && (
+                  <button
+                    type="button"
+                    className="home-feature-btn"
+                    style={{ flex: 1, minWidth: '140px', background: '#059669', color: '#ffffff' }}
+                    onClick={onOpenQuiz}
+                  >
+                    Start Quiz ▶
+                  </button>
+                )}
+                {onOpenWorksheets && (
+                  <button
+                    type="button"
+                    className="home-feature-btn"
+                    style={{ flex: 1, minWidth: '140px', background: '#d97706', color: '#ffffff' }}
+                    onClick={onOpenWorksheets}
+                  >
+                    Worksheets ▶
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Feature: Free Study Vault & Resources */}
+          {onOpenResources && (
+            <div className="home-feature-card">
+              <div className="home-feature-card-top">
+                <div className="home-feature-icon-row">
+                  <span className="home-feature-icon">🌐</span>
+                  <span className="home-feature-badge" style={{ background: '#e0f2fe', color: '#0369a1' }}>
+                    Free Open Access
+                  </span>
+                </div>
+                <h3 className="home-feature-title">निःशुल्क-साधनानि · Free Study Vault</h3>
+                <p className="home-feature-desc">
+                  Explore open-access tools, grammar charts, flashcards, dictionaries, and Vedic reference cheat-sheets for self-study and homeschooling.
+                </p>
+                <ul className="home-feature-points">
+                  <li>Sanskrit-English-Hindi trilingual root lexicon</li>
+                  <li>Pronunciation audio charts and Visarga guide</li>
+                  <li>16 Vedic Mathematics formula cheat-sheet PDF</li>
+                  <li>Pāṇinian Sandhi rule visual lookup table</li>
+                </ul>
+              </div>
+              <button
+                type="button"
+                className="home-feature-btn"
+                style={{ background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)', color: '#ffffff' }}
+                onClick={onOpenResources}
+              >
+                Access Free Vault ▶
+              </button>
+            </div>
+          )}
         </div>
       </section>
 

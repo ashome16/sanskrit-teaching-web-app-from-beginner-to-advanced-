@@ -297,6 +297,78 @@ html.a11y-high-contrast .quiz-option-btn:hover {
 }
 
 /* Free Trial Banners & Buttons in High Contrast */
+html.a11y-high-contrast .home-hero-audience-banner {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .home-hero-audience-tag {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.a11y-high-contrast .home-hero-audience-text {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.a11y-high-contrast .home-hero-main-outcome {
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .home-hero-outcomes-strip {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .home-hero-outcome-item {
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .home-hero-action-card {
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+  box-shadow: 0 4px 0 #000000 !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .home-hero-action-card:hover {
+  background: #fef08a !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .hhac-icon-col {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.a11y-high-contrast .hhac-tag {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.a11y-high-contrast .hhac-title,
+html.a11y-high-contrast .hhac-desc,
+html.a11y-high-contrast .hhac-arrow {
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .home-hero-trust-bar {
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .hhtb-whatsapp {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .hhtb-whatsapp:hover {
+  background: #fef08a !important;
+}
+
 html.a11y-high-contrast .home-hero-trial-banner,
 html.a11y-high-contrast .home-feature-trial-callout {
   background: #ffffff !important;
