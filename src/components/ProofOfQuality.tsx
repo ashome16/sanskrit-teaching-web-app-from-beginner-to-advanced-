@@ -301,7 +301,16 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
             <span className="poq-guarantee-item"><span>✓</span> No Sign-Up Needed to Preview</span>
             <span className="poq-guarantee-item"><span>✓</span> Authentic Audio Recitations</span>
             <span className="poq-guarantee-item"><span>✓</span> Complete NCERT Deepakam Chapter 1 Free</span>
-            <span className="poq-guarantee-item"><span>✓</span> 100% Free · No Card Required</span>
+            <a
+              href="https://wa.me/919000335468"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="poq-guarantee-item"
+              style={{ color: '#15803d', textDecoration: 'underline' }}
+              title="Chat with teacher on WhatsApp: 9000335468 (Only WhatsApp)"
+            >
+              <span>💬</span> WhatsApp: 9000335468 (Only WhatsApp)
+            </a>
           </div>
         </div>
 

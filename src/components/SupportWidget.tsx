@@ -88,6 +88,32 @@ export const SupportWidget: React.FC<SupportWidgetProps> = ({
                   {copiedText === 'admin@ednetlearn.in' ? '✓' : 'Copy'}
                 </button>
               </div>
+
+              <div className="support-channel-item support-channel-item--whatsapp">
+                <span className="channel-icon">💬</span>
+                <div className="channel-details">
+                  <strong>WhatsApp (Only WhatsApp)</strong>
+                  <a
+                    href="https://wa.me/919000335468"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: '#15803d', fontWeight: 800 }}
+                  >
+                    +91 9000335468
+                  </a>
+                  <small style={{ fontSize: '0.72rem', color: '#64748b', display: 'block' }}>Only WhatsApp · Quick onboarding &amp; doubts</small>
+                </div>
+                <a
+                  href="https://wa.me/919000335468"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="channel-action-btn"
+                  style={{ background: '#25d366', color: '#ffffff', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                  title="Message on WhatsApp"
+                >
+                  Chat ➔
+                </a>
+              </div>
             </div>
 
             <div className="support-quick-links">

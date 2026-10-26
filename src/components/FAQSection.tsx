@@ -210,9 +210,18 @@ const FAQSection: React.FC<FAQSectionProps> = () => {
             <div className="faq-contact-item">
               <span className="faq-contact-item-icon">💬</span>
               <div className="faq-contact-item-content">
-                <span className="faq-contact-item-label">WhatsApp / Phone</span>
-                <span className="faq-contact-item-val">+91 98765 43210</span>
-                <small className="faq-contact-item-hint">Quick payment &amp; onboarding assistance</small>
+                <span className="faq-contact-item-label">WhatsApp (Only WhatsApp)</span>
+                <a
+                  href="https://wa.me/919000335468"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="faq-contact-item-link"
+                  style={{ color: '#15803d', fontWeight: 800 }}
+                  title="Message Gurukul Support on WhatsApp (+91 9000335468)"
+                >
+                  +91 9000335468
+                </a>
+                <small className="faq-contact-item-hint">Only WhatsApp · Quick onboarding, payment &amp; academic help</small>
               </div>
             </div>
 

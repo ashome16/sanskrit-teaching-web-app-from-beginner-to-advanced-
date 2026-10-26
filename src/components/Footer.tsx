@@ -415,6 +415,35 @@ export const Footer: React.FC<FooterProps> = ({
                   {copiedEmail === 'admin@ednetlearn.in' ? '✓ Copied' : 'Copy'}
                 </button>
               </div>
+
+              <div className="footer-contact-card footer-contact-card--whatsapp">
+                <div className="contact-icon-wrapper" style={{ background: '#dcfce7', borderColor: '#22c55e' }}>
+                  <span className="contact-icon">💬</span>
+                </div>
+                <div className="contact-info">
+                  <span className="contact-label">WhatsApp (Only WhatsApp)</span>
+                  <a
+                    href="https://wa.me/919000335468"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-link"
+                    style={{ color: '#15803d', fontWeight: 800 }}
+                  >
+                    +91 9000335468
+                  </a>
+                  <small style={{ fontSize: '0.72rem', color: '#64748b', display: 'block' }}>Only WhatsApp · Quick onboarding &amp; doubts</small>
+                </div>
+                <a
+                  href="https://wa.me/919000335468"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-copy-btn"
+                  style={{ background: '#25d366', color: '#ffffff', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                  title="Message on WhatsApp"
+                >
+                  Chat ➔
+                </a>
+              </div>
             </div>
 
             <div className="footer-helpdesk-status">
@@ -426,14 +455,14 @@ export const Footer: React.FC<FooterProps> = ({
               <span className="footer-social-label">🌟 Gurukul Social &amp; Community:</span>
               <div className="footer-social-pills">
                 <a
-                  href="https://whatsapp.com"
+                  href="https://wa.me/919000335468"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer-social-pill footer-social-pill--whatsapp"
-                  title="Join WhatsApp Parents &amp; Students Community"
+                  title="Contact Support on WhatsApp: +91 9000335468 (Only WhatsApp)"
                 >
                   <span className="social-pill-icon">💬</span>
-                  <span>WhatsApp Community</span>
+                  <span>WhatsApp: 9000335468 (Only WhatsApp)</span>
                 </a>
                 <a
                   href="https://youtube.com"
