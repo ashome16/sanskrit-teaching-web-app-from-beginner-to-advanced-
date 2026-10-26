@@ -1038,8 +1038,9 @@ const HomePage: React.FC<HomePageProps> = ({
             type="button"
             className="home-hero-action-card home-hero-action-card--lesson"
             onClick={() => {
-              const el = document.getElementById('proof-of-quality');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
+              window.dispatchEvent(new CustomEvent('start-free-audio-lesson'));
+              const el = document.getElementById('audio-lesson') || document.getElementById('poq-audio-lesson') || document.getElementById('proof-of-quality');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
               else onOpenReader('gsde101');
             }}
             title="Start your first free interactive lesson with audio and word analyzer (No sign-up required)"
@@ -3117,7 +3118,12 @@ const HomePage: React.FC<HomePageProps> = ({
 
       {/* Mobile-First Sticky Action Bar (visible on mobile after scroll > 320px) */}
       <MobileStickyBar
-        onStartLesson={() => onOpenReader()}
+        onStartLesson={() => {
+          window.dispatchEvent(new CustomEvent('start-free-audio-lesson'));
+          const el = document.getElementById('audio-lesson') || document.getElementById('poq-audio-lesson');
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          else onOpenReader('gsde101');
+        }}
         onPlacementTest={() => {
           if (onOpenQuiz) onOpenQuiz();
           else {

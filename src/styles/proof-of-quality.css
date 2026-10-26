@@ -87,6 +87,11 @@
   color: #15803d;
 }
 
+#audio-lesson,
+#poq-audio-lesson {
+  scroll-margin-top: 85px;
+}
+
 /* Navigation Tabs */
 .poq-nav-tabs {
   display: flex;

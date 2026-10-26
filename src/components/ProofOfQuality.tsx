@@ -205,6 +205,23 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
     };
   }, []);
 
+  // Listen for direct requests to jump all the way down to the audio lesson
+  useEffect(() => {
+    const handleStartAudioLesson = () => {
+      setActiveTab('lessons');
+      setActiveSubLesson('sounds');
+      setTimeout(() => {
+        const target = document.getElementById('audio-lesson') || document.getElementById('poq-audio-lesson');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 50);
+    };
+
+    window.addEventListener('start-free-audio-lesson', handleStartAudioLesson);
+    return () => window.removeEventListener('start-free-audio-lesson', handleStartAudioLesson);
+  }, []);
+
   const handleTabChange = (tab: PoqTab) => {
     if (stopAudioRef.current) stopAudioRef.current();
     stopPronunciation();
@@ -298,32 +315,15 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
             Zero commitment. Test interactive micro-lessons, hear authentic native audio, explore our Pāṇinian word analyzer, and read an entire NCERT chapter with full audio right now.
           </p>
           <div className="poq-guarantee-strip">
-            <span className="poq-guarantee-item"><span>✓</span> No Sign-Up Needed to Preview</span>
+            <span className="poq-guarantee-item"><span>✓</span> Instant Interactive Audio Practice</span>
+            <span className="poq-guarantee-item"><span>✓</span> 100% Free · No Sign-Up Needed</span>
             <span className="poq-guarantee-item"><span>✓</span> Authentic Audio Recitations</span>
             <span className="poq-guarantee-item"><span>✓</span> Complete NCERT Deepakam Chapter 1 Free</span>
-            <a
-              href="https://wa.me/919000335468"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="poq-guarantee-item"
-              style={{ color: '#15803d', textDecoration: 'underline' }}
-              title="Chat with teacher on WhatsApp: 9000335468 (Only WhatsApp)"
-            >
-              <span>💬</span> Contact : Message at (9000335468) (Only WhatsApp)
-            </a>
-            <a
-              href="mailto:admin@ednetlearn.in"
-              className="poq-guarantee-item"
-              style={{ color: '#0369a1', textDecoration: 'underline' }}
-              title="Email: admin@ednetlearn.in"
-            >
-              <span>✉️</span> or Email : admin@ednetlearn.in
-            </a>
           </div>
         </div>
 
         {/* Navigation Tabs */}
-        <div className="poq-nav-tabs" role="tablist">
+        <div className="poq-nav-tabs" role="tablist" id="audio-lesson">
           <button
             type="button"
             role="tab"
@@ -408,7 +408,7 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
 
             {/* Sub-Lesson 1: Sounds of Sanskrit */}
             {activeSubLesson === 'sounds' && (
-              <div className="poq-lesson-card">
+              <div className="poq-lesson-card" id="poq-audio-lesson">
                 <div className="poq-lesson-card-header">
                   <span className="poq-lesson-badge">ध्वनिविज्ञानम् · Anatomical Sound Zones</span>
                   <h3 className="poq-lesson-title">How Sanskrit Generates Sounds: From Throat to Lips</h3>
