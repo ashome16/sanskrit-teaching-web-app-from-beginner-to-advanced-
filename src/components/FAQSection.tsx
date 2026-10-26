@@ -50,7 +50,7 @@ const FAQ_DATA: FAQItem[] = [
   {
     id: 'faq-bodhi-mentor',
     category: 'features',
-    question: 'What is Bodhi? Is it AI-generated guidance, a human-supported service, or a guided lesson flow?',
+    question: 'Who is Bodhi? Is it AI-generated guidance, a human-supported service, or a guided lesson flow?',
     answer:
       'Bodhi (बोधिः) is a transparent 3-tier Gurukul mentor combining: (1) Guided Lesson Flow: An in-curriculum interactive guide providing slow, authentic native pronunciation, syllable chunk highlighting, and NCERT textbook assistance on every page; (2) Grounded AI Retrieval: Natural language question-answering across 150+ verified Pāṇinian grammar rules, Dhātupāṭha verb conjugations, and 16 Vedic Mathematics sutras with a strict Zero-Hallucination Policy (never invents non-shastric sutras); and (3) Human Acharya Mentorship: Direct human teacher support via WhatsApp at +91 9000335468 (Only WhatsApp) and email (care@ednetlearn.in) for line-by-line handwritten essay grading, CBSE board directives, and subjective doubt resolution.',
   },

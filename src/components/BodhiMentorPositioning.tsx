@@ -69,7 +69,7 @@ export const BodhiMentorPositioning: React.FC<BodhiMentorPositioningProps> = ({
               </span>
             </div>
             <h2 className="bodhi-pos-title">
-              What is Bodhi?
+              Who is Bodhi?
               <span className="bodhi-pos-title-sanskrit">
                 बोधिः — कृत्रिमबुद्धि-सखा, पाठ्यमार्गदर्शकः, आचार्य-संवादश्च
               </span>
