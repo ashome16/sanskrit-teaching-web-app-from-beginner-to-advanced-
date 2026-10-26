@@ -248,11 +248,12 @@
 }
 
 .dashboard-nav button.dashboard-nav-home .dashboard-nav-icon {
-  grid-row: 1;
+  grid-row: 1 / span 2;
 }
 
 .dashboard-nav button.dashboard-nav-item .dashboard-nav-primary,
-.dashboard-nav button.dashboard-nav-item .dashboard-nav-secondary {
+.dashboard-nav button.dashboard-nav-item .dashboard-nav-secondary,
+.dashboard-nav button.dashboard-nav-item .dashboard-nav-sanskrit {
   grid-column: 2;
 }
 
@@ -272,6 +273,50 @@
   transform: scale(1.04);
 }
 
+/* Sanskrit Highlight Badge in Top Navigation */
+.dashboard-nav-sanskrit {
+  font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Sanskrit', 'Sanskrit Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #9a3412;
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(217, 119, 6, 0.38);
+  border-radius: 5px;
+  padding: 0.05rem 0.36rem;
+  display: inline-block;
+  letter-spacing: 0.015em;
+  box-shadow: 0 1px 2px rgba(180, 83, 9, 0.06);
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.dashboard-nav button:hover:not(:disabled) .dashboard-nav-sanskrit {
+  background: rgba(234, 88, 12, 0.24);
+  color: #7c2d12;
+  border-color: rgba(234, 88, 12, 0.55);
+  box-shadow: 0 2px 4px rgba(180, 83, 9, 0.12);
+}
+
+.dashboard-nav button.active .dashboard-nav-sanskrit {
+  background: #ea580c;
+  color: #ffffff;
+  border-color: #c2410c;
+  box-shadow: 0 1px 3px rgba(194, 65, 12, 0.3);
+}
+
+.dashboard-nav-sub button .dashboard-nav-sanskrit {
+  font-size: 0.72rem;
+  padding: 0.04rem 0.26rem;
+}
+
+.dashboard-nav-sub-en {
+  font-size: 0.65rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
 .dashboard-nav-primary {
   font-size: 0.84rem;
   font-weight: 700;
@@ -280,9 +325,14 @@
 .dashboard-nav-secondary {
   font-size: 0.56rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.025em;
   text-transform: uppercase;
-  color: #8a7f72;
+  color: #78716c;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 1px;
+  white-space: nowrap;
 }
 
 .dashboard-nav button.dashboard-nav-stacked.active .dashboard-nav-secondary,
