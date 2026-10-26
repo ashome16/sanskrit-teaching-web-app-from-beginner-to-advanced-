@@ -2987,9 +2987,9 @@ export const COURSE_LESSON_WORKSHEETS: Record<string, CourseLessonWorksheet> = {
       },
       {
         sectionCode: 'C',
-        sectionTitleDevanagari: 'विभागः ग · वाक्-तन्त्रम् एवं वेगस-नाडी-उत्तेजनम् (Neuro-Acoustics)',
-        sectionTitleEnglish: 'Section C · Neuro-Acoustic Resonance & Vagus Nerve Stimulation',
-        instructions: 'Explain the physiological and neurological mechanisms induced by prolonged vocalic recitation.',
+        sectionTitleDevanagari: 'विभागः ग · वाक्-तन्त्रम् एवं प्राण-संयमः (Acoustics & Physiology)',
+        sectionTitleEnglish: 'Section C · Vocal Acoustics & Autonomic Regulation',
+        instructions: 'Explain the physiological and autonomic mechanisms associated with prolonged vocalic recitation.',
         totalMarks: 7,
         questions: [
           {
@@ -2998,8 +2998,8 @@ export const COURSE_LESSON_WORKSHEETS: Record<string, CourseLessonWorksheet> = {
             promptDevanagari: 'कथं वैदिक-स्वर-पाठः वेगस्-नाडीं (Vagus Nerve) उत्तेज्य अनुकम्पी-तन्त्रं (Sympathetic Stress) शान्तं करोति?',
             promptEnglish: 'How does prolonged vocalic recitation stimulate the vagus nerve and shift the autonomic nervous system into parasympathetic relaxation?',
             marks: 7,
-            answer: 'Neurophysiological Mechanisms:\n१. Auricular and Pharyngeal Branch Activation: The motor and sensory branches of the 10th cranial nerve (Vagus) innervate the larynx, pharynx, and soft palate. Sustained resonant vocalization physically vibrates these branches.\n२. Prolonged Exhalation Ratio: Vedic chanting extends the exhalatory phase of respiration to 3-4 times the duration of inhalation. Prolonged exhalation triggers the baroreflex mechanism, slowing heart rate.\n३. Amygdala Calming & Alpha Waves: Functional MRI (fMRI) studies show that Sanskrit mantra chanting deactivates the amygdala (fear and stress center) and generates high-amplitude synchronized Alpha brain waves (8-12 Hz), shifting the body from sympathetic "fight-or-flight" into deep restorative parasympathetic vagal tone.',
-            explanation: 'Vedic recitation is a clinical-grade acoustic somatic therapy developed millennia ago.'
+            answer: 'Physiological and Autonomic Correlates:\n१. Vagal & Laryngeal Innervation: Motor and sensory branches of the vagus nerve (cranial nerve X) innervate the larynx and pharyngeal musculature. Controlled vocalization and rhythmic resonance mechanically engage these laryngeal pathways (Bernardi et al., BMJ 2001).\n२. Prolonged Exhalation & Baroreflex Sensitivity: Structured chanting naturally elongates expiration relative to inspiration (~1:2 or 1:3 ratio). Slower breathing (~6 breaths/min) enhances baroreflex sensitivity and heart rate variability (HRV), shifting autonomic balance toward parasympathetic predominance.\n३. Neuro-hemodynamic Observations: Pilot neuroimaging and EEG investigations (e.g., Kalyani et al., Int J Yoga 2011; Zaccaro et al., Front. Hum. Neurosci. 2018) observe reductions in limbic arousal and increased posterior alpha wave synchrony (8–12 Hz) during sustained meditative chanting, promoting calm alertness and reduced subjective stress.',
+            explanation: 'Structured recitation combines diaphragmatic breath regulation, rhythmic acoustic pacing, and focused attention, supporting autonomic balance.'
           }
         ]
       },

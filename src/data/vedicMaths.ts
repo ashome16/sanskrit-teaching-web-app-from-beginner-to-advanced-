@@ -1293,7 +1293,7 @@ export const COSMIC_BRIDGE_DATA: CosmicBridgeData = {
       role: 'The Subjective Observer & Microcosm (Piṇḍa)',
       dimension: 'Neural Cognition, Vocal Apparatus & Antaḥkaraṇa',
       description: 'The human being is the conscious observer (Draṣṭā) and the microcosm (Piṇḍa). Endowed with an internal cognitive instrument (Antaḥkaraṇa: Manas, Buddhi, Ahaṅkāra, Citta) and an articulatory vocal tract with five distinct acoustic resonance cavities, the human is the universe contemplating its own nature.',
-      epistemicAxiom: 'Yathā Piṇḍe Tathā Brahmāṇḍe — The laws that govern human neurological perception and acoustic speech are a direct holographic reflection of cosmic laws.',
+      epistemicAxiom: 'Yathā Piṇḍe Tathā Brahmāṇḍe — The classical macrocosm-microcosm paradigm connecting human cognitive observation to systemic natural patterns.',
       facets: [
         { title: 'The Observer (Draṣṭā)', desc: 'Consciousness actively witnessing, measuring, and collapsing potentiality into definite knowledge.' },
         { title: 'Vocal Microcosm', desc: 'An intricate biological synthesizer capable of generating precise acoustic frequencies across five articulatory positions.' },
@@ -1345,8 +1345,8 @@ export const COSMIC_BRIDGE_DATA: CosmicBridgeData = {
       title: 'Periodic Metrics & Binary Combinatorics',
       sanskritTitle: 'छन्दःशास्त्रम् · द्वि-आधारीय-कलनम्',
       domain: 'Combinatorics & Periodic Wavefunctions (Chandas)',
-      mechanism: 'In Piṅgala’s Chandaḥśāstra (3rd c. BCE), Sanskrit poetic meter is analyzed through binary states: Laghu (Light/Short = 0) and Guru (Heavy/Long = 1). Through metric combinations, Piṅgala discovered binary numbers (2000 years before Leibniz), permutations (Prastāra), binomial coefficients and Pascal’s Triangle (Meru-Prastāra), and Fibonacci sequences (Mātrā-meru). Chanting metered verses aligns neural brainwaves with periodic wave functions.',
-      scientificParallel: 'Binary digital logic, Fourier harmonic series, and EEG neural phase-locking with rhythmic auditory stimulation.',
+      mechanism: 'In Piṅgala’s Chandaḥśāstra (3rd c. BCE), Sanskrit poetic meter is analyzed through binary states: Laghu (Light/Short = 0) and Guru (Heavy/Long = 1). Through metric combinations, Piṅgala formulated binary sequences, permutations (Prastāra), binomial coefficients and Pascal’s Triangle (Meru-Prastāra), and Fibonacci sequences (Mātrā-meru) centuries before their European formalization.',
+      scientificParallel: 'Binary combinatorics, rhythmic auditory pacing, and mathematical meter modeling.',
       ancientTreatise: 'Piṅgala’s Chandaḥśāstra & Kedārabhaṭṭa’s Vṛttaratnākara',
       keyFormulaOrShloka: 'परे पूर्णम् (Piṅgala 8.34 — Rule for generating binomial coefficients / Meru-Prastāra)'
     },
@@ -1413,14 +1413,14 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     slug: 'magic-of-numbers',
     title: 'The Magic of Numbers: An Introduction to Vedic Mathematics',
     sanskritTitle: '॥ सङ्ख्यानां विस्मयः वैदिक-गणित-परिचयश्च ॥',
-    subtitle: 'An ultra-efficient system of mental calculation enabling solutions 10 to 15 times faster than conventional methods.',
+    subtitle: 'A streamlined system of mental arithmetic and algebraic short-cuts formulated by Swami Bharati Krishna Tirtha (1965).',
     readingTime: '5 min read',
     badge: 'Foundations & Overview',
     sections: [
       {
         title: 'Beyond Scrap Work: Math as an Engaging Mental Game',
         paragraphs: [
-          'Vedic Mathematics is a unique, ultra-efficient system of mental calculation that allows people to solve complex arithmetic and algebraic problems 10 to 15 times faster than conventional methods.',
+          'Vedic Mathematics is a structured system of mental arithmetic based on 16 aphoristic word-formulas that significantly reduce intermediate calculation steps compared to standard column-by-column school methods.',
           'Grounded in a cohesive framework of natural mental processes, this system bypasses tedious scrap work, endless scratchpad margins, and finger counting to turn math into an engaging, visual game.',
           'Whether you are a student preparing for competitive exams (CBSE, JEE, CAT, Olympiads), a professional looking to sharpen your analytical skills, or someone trying to conquer a lifelong fear of numbers, Vedic Mathematics offers a refreshing approach to numerical fluency.'
         ],
@@ -1447,7 +1447,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
     ],
     quote: 'Unlike standard classroom math, this system relies on 16 core Sutras that describe the way the human mind naturally processes numbers, honoring a traditional Indian insight: that absolute truth, whether spiritual or mathematical, is inherently simple and harmonious.',
     keyTakeaways: [
-      'Calculations run 10–15× faster than standard school methods.',
+      'Significantly reduces written scratchpad steps for specific multi-digit operations.',
       'Only requires basic multiplication tables up to 9 × 9.',
       'Built-in instant proof checking using Digital Roots (Beejank).'
     ]
@@ -1509,7 +1509,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         title: 'Rigid School Columns vs. Continuous Fluid Space',
         paragraphs: [
           'While conventional school mathematics treats place value as a rigid set of isolated columns (Units, Tens, Hundreds), Vedic Mathematics treats it as a continuous, fluid continuum.',
-          'Grounded in a framework that allows people to solve complex arithmetic 10 to 15 times faster than conventional methods, this system bypasses tedious scrap work to turn math into an engaging, visual game.',
+          'Grounded in an algebraic framework that streamlines multi-step calculations by eliminating intermediate scratchpad rows, this system enables direct mental computation through symmetrical pattern recognition.',
           'The system\'s Sutras allow a mathematician to consciously manipulate positional boundaries to solve problems effortlessly.'
         ],
         highlight: 'School math forces you into isolated vertical silos. Vedic math treats place value as an open geometric playground.'
@@ -3387,7 +3387,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
         paragraphs: [
           'The third span of the bridge connects human rhythmic speech to periodic wavefunctions: the science of metric prosody (Chandaḥśāstra). In the 3rd century BCE, the master mathematician Piṅgala analyzed poetic meter through two fundamental duration states: Laghu (short/light, denoted 0) and Guru (long/heavy, denoted 1).',
           'Through this binary analysis, Piṅgala discovered the binary numerical system millennia before Gottfried Wilhelm Leibniz (1703). To systematically enumerate all possible meters of n syllables (2ⁿ), Piṅgala formulated the Prastāra algorithm, discovered the binomial expansion and Pascal\'s Triangle (which he named Meru-Prastāra, "The Staircase of Mount Meru"), and uncovered the Fibonacci sequence (Mātrā-meru) in rhythmic mora distributions.',
-          'Modern cognitive neuroscience confirms that reciting metered verses (such as the 8-syllable Anuṣṭubh or 11-syllable Triṣṭubh) induces neural phase-locking, synchronizing EEG alpha and theta oscillations across both cerebral hemispheres.',
+          'Cognitive studies on rhythmic recitation and auditory-motor coupling suggest that structured poetic metrics foster focused attentional states, respiratory regulation, and memory retention through predictable metrical cadences.',
           'The fourth span of the bridge dissolves the artificial Western barrier between letters and numbers. Through ciphers like Bhūta-Saṅkhyā and Kaṭapayādi, Sanskrit achieves lossless semantic-numerical unification. In Bhūta-Saṅkhyā, words denoting immutable cosmic concepts become digits (Rasa = 6, Guṇa = 3, Pūrṇa = 0, Mahī = 1 → 1036 Shaka = 1114 CE birth of Bhāskara II). In Kaṭapayādi, letters encode high-precision floating point constants into devotional hymns.',
           'A spectacular historical example is Mādhava of Sangamagrama’s 14th-century trigonometric verse encoding the value of π to 31 decimal places (3.141592653589793238462643383279...). The verse functions simultaneously as a devotional prayer and an astronomical constant with zero corruption over centuries of oral and manuscript transmission.'
         ],
@@ -4087,8 +4087,8 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
 
 export const VEDIC_INTRO = {
   title: 'The Magic of Numbers: An Introduction to Vedic Mathematics',
-  subtitle: 'An ultra-efficient system of mental calculation enabling solutions 10 to 15 times faster than conventional methods.',
-  p1: 'Vedic Mathematics is a unique, ultra-efficient system of mental calculation that allows people to solve complex arithmetic and algebraic problems 10 to 15 times faster than conventional methods. Grounded in a cohesive framework of natural mental processes, this system bypasses tedious scrap work and finger counting to turn math into an engaging, visual game.',
+  subtitle: 'A streamlined system of mental arithmetic and algebraic short-cuts formulated by Swami Bharati Krishna Tirtha (1965).',
+  p1: 'Vedic Mathematics is a structured system of mental arithmetic based on 16 aphoristic word-formulas that significantly reduce intermediate calculation steps compared to standard column-by-column school algorithms. Grounded in algebraic identities (such as base complements and cross-multiplication), this system allows practitioners to solve specific multi-digit operations directly in a single line.',
   p2: 'Whether you are a student preparing for competitive exams, a professional looking to sharpen your analytical skills, or someone trying to conquer a lifelong fear of numbers, Vedic Mathematics offers a refreshing approach to numerical fluency.',
   originTitle: 'What is Vedic Mathematics?',
   originText: 'The modern system of Vedic Mathematics was compiled between 1911 and 1918 by Swami Bharati Krishna Tirtha (1884–1960), a brilliant scholar of Sanskrit, mathematics, and philosophy. After spending years deeply analyzing ancient Indian texts, specifically commentaries linked to the Atharva Veda, he reconstructed a unified mathematical architecture. He published his ground-breaking findings in his landmark book, Vedic Mathematics, in 1965.',
@@ -4138,7 +4138,7 @@ export const VEDIC_ZERO_ESSAY = {
   fluidSpace: {
     title: 'The Vedic Approach: Treating Place Value as Fluid Space',
     paragraphs: [
-      'While conventional school mathematics treats place value as a rigid set of isolated columns (Units, Tens, Hundreds), Vedic Mathematics treats it as a continuous, fluid continuum. Grounded in a framework that allows people to solve complex arithmetic 10 to 15 times faster than conventional methods, this system bypasses tedious scrap work to turn math into an engaging, visual game.',
+      'While conventional school mathematics treats place value as a rigid set of isolated columns (Units, Tens, Hundreds), Vedic Mathematics treats it as a continuous, fluid continuum. Grounded in an algebraic framework that streamlines multi-step calculations by eliminating intermediate scratchpad rows, this system enables direct mental computation through symmetrical pattern recognition.',
       'The system\'s Sutras allow a mathematician to consciously manipulate positional boundaries to solve problems. Consider the concept of Simultaneous Processing found in the Vertically and Crosswise (Ūrdhva-Tiryagbhyām) sutra. In conventional long math, we multiply step-by-step, generate fragmented partial products, shift them awkwardly to the left with placeholder zeros, and then add them vertically.',
       'Vedic math skips the scrap work entirely by calculating the units, tens, and hundreds columns simultaneously in parallel.'
     ]

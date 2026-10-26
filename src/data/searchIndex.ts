@@ -1348,17 +1348,18 @@ export const SEARCH_INDEX: SearchItem[] = [
   {
     id: 'tool-science-of-sound',
     title: '🎥 Sanskrit: The Science of Sound · ध्वनि-विज्ञानम्',
-    subtitle: 'Neuro-Acoustic Precision & 5 Articulation Points',
+    subtitle: 'Phonological Precision & 5 Articulation Points (Śikṣā)',
     category: 'grammar',
     categoryLabel: 'Video Masterclass',
     badgeEmoji: '🎥',
     badgeColor: '#7c3aed',
     description:
-      'Masterclass video exploring the neuro-acoustic precision, 5 vocal articulation points (Kaṇṭha, Tālu, Mūrdhā, Danta, Oṣṭha), and resonant brain frequencies of Sanskrit.',
+      'Masterclass video exploring articulatory phonetics, 5 vocal articulation points (Kaṇṭha, Tālu, Mūrdhā, Danta, Oṣṭha), and acoustic resonance properties of Sanskrit.',
     keywords: [
       'science of sound',
       'video masterclass',
-      'neuro-acoustics',
+      'phonetics',
+      'acoustic resonance',
       'kantha',
       'talu',
       'murdha',

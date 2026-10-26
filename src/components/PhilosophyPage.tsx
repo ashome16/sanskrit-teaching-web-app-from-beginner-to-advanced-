@@ -136,7 +136,7 @@ const TAGORE_ESSAY_DESC =
 const MUSIC_OF_MATTER_TITLE =
   'The Music of Matter: Cymatics, Sacred Geometry & Holographic Universe · Darśana | EdNet Learn Gurukul';
 const MUSIC_OF_MATTER_DESC =
-  'From Nāda Brahma to Hans Jenny’s tonoscope: discover how sound waves crystallize into sacred geometry, Fibonacci floral mandalas, and quantum holographic reality.';
+  'From Nāda Brahma to acoustic wave dynamics: explore how sound resonance relates to sacred geometry, botanical symmetry, and classical Indian aesthetics.';
 
 const PINGALA_ESSAY_TITLE =
   'The Binary Blueprint: How Piṅgala’s Chhandas Śāstra Anticipated Computer Science · Darśana | EdNet Learn Gurukul';
@@ -2046,12 +2046,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
      Frequency                            Wave Pattern`}
                 </div>
                 <p style={{ marginTop: '0.85rem', marginBottom: 0, fontSize: '0.92rem', color: '#475569' }}>
-                  In esoteric Vedic traditions, every sound (Mantra) has an exact corresponding geometric blueprint (Yantra).
-                  When Hans Jenny chanted the primordial syllable <strong>"AUM" (ॐ)</strong> into the tonoscope, the scattered
-                  particles on the plate shifted into concentric circles, squares, and interlocking triangles, structurally
-                  mirroring the geometry of the ancient <strong>Śrī Chakra Yantra</strong>. Because Sanskrit grammar is
-                  mathematically rigorous—regulating the exact placement of the tongue and release of breath—it functions
-                  as a precision vibrational technology that shapes physical mediums through pure acoustic resonance.
+                  In classical Indian aesthetics and contemplative traditions, sound (<em>Mantra</em>) and geometric representation (<em>Yantra</em>) are explored as complementary modalities of pattern and vibration. Modern acoustic experiments inspired by Ernst Chladni and Hans Jenny (cymatics) demonstrate that resonant frequencies organize particles into distinct nodal geometries on vibrating plates—providing a vivid physical analogy for how harmonic ratios generate symmetrical form. Because Sanskrit phonetics (<em>Pāṇinīya Śikṣā</em>) systematically standardizes vocal articulation zones (<em>Sthāna</em>) and internal efforts (<em>Prayatna</em>), it provides a mathematically structured framework for vocal acoustics and overtone resonance.
                 </p>
               </div>
 
@@ -2109,7 +2104,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   <strong>The 4-Lobe Pattern (Mūlādhāra &amp; Gaṇapati):</strong> A harmonic quadrupole vibration naturally generates a distinct 4-lobed rotational symmetry. In subtle anatomy, Mūlādhāra is classically mapped as a 4-petaled lotus (vaṃ, śaṃ, ṣaṃ, saṃ), the seat of Gaṇeśa identified with Oṃkāra and the grossest density of earth/matter (pṛthvī-tattva).
                 </li>
                 <li>
-                  <strong>Somatic Cymatics: The Practitioner as the Plate:</strong> The human body is over 70% fluid. When chanting a sacred varṇa with unwavering <em>bhāvanā</em>, the articulator acts as the mechanical actuator, intention provides stable voltage without phase jitter, and consciousness settles neural tissue along the nodal lines of sacred geometry.
+                  <strong>Somatic Acoustics &amp; Autonomic Balance:</strong> As a contemplative analogy, just as standing waves organize particles along tranquil nodal lines, disciplined vocalization and focused breath control (<em>Prāṇāyāma</em>) regulate respiratory rhythms and heart rate variability (HRV) during prolonged recitation, fostering parasympathetic stabilization and sustained mental clarity (Bernardi et al., <em>BMJ</em> 2001).
                 </li>
               </ul>
 

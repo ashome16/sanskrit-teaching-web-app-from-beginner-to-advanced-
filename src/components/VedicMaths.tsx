@@ -917,7 +917,7 @@ ${bodyHtml}
           <span className="vedic-hero-title-sa">वैदिक-गणितम्</span> · Vaidic Gaṇitam
         </h1>
         <p className="vedic-hero-subtitle">
-          The Magic of Numbers &amp; The Architecture of Absolute Zero: An ultra-efficient system of mental calculation that allows people to solve arithmetic and algebraic problems 10 to 15 times faster than conventional methods.
+          The Elegance of Numbers &amp; The Architecture of Absolute Zero: A streamlined system of mental arithmetic and algebraic short-cuts (Bharati Krishna Tirtha, 1965) that reduces intermediate calculation steps through direct base complements and cross-multiplication.
         </p>
 
         {onOpenNumbers && (
@@ -4888,12 +4888,12 @@ ${bodyHtml}
                         <div className="fluid-metric-item-label">Scrap Rows Needed</div>
                       </div>
                       <div>
-                        <div className="fluid-metric-item-num">10–15×</div>
-                        <div className="fluid-metric-item-label">Faster Mental Processing</div>
+                        <div className="fluid-metric-item-num">1-Line</div>
+                        <div className="fluid-metric-item-label">Direct Calculation Output</div>
                       </div>
                       <div>
                         <div className="fluid-metric-item-num">100%</div>
-                        <div className="fluid-metric-item-label">Parallel Geometric Sync</div>
+                        <div className="fluid-metric-item-label">Algebraic Identity Proof</div>
                       </div>
                     </div>
                   </div>

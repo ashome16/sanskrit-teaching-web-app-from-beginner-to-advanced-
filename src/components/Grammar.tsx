@@ -1101,7 +1101,7 @@ const Grammar: React.FC<GrammarProps> = ({
           {renderBreadcrumb('ध्वनि-विज्ञानम् · Science of Sound')}
           <h2 className="grammar-title">संस्कृतम् · ध्वनि-विज्ञानम्</h2>
           <p className="grammar-lead">
-            The Science of Sound: Neuro-acoustic precision, resonant vibrations, and anatomical vocal science of the Sanskrit language.
+            The Science of Sound: Articulatory phonetics, acoustic resonance, and anatomical vocal science of the Sanskrit language (Śikṣā).
           </p>
         </header>
 
@@ -1189,10 +1189,10 @@ const Grammar: React.FC<GrammarProps> = ({
               <strong>The 5 Anatomical Vocal Points (उच्चारण-स्थानानि):</strong> Sanskrit organizes letters geometrically along the human vocal tract from back to front: Kaṇṭhya (कण्ठ्य - Throat), Tālavya (तालव्य - Palate), Mūrdhanya (मूर्धन्य - Roof of mouth), Dantya (दन्त्य - Teeth), and Oṣṭhya (ओष्ठ्य - Lips).
             </li>
             <li>
-              <strong>Effort and Breath Dynamics (आभ्यन्तर-प्रयत्न):</strong> How internal aspiration (alpaprāṇa vs. mahāprāṇa) and voicing (ghoṣa vs. aghoṣa) stimulate distinct neurological pathways.
+              <strong>Effort and Breath Dynamics (आभ्यन्तर-प्रयत्न):</strong> How internal aspiration (alpaprāṇa vs. mahāprāṇa) and voicing (ghoṣa vs. aghoṣa) modulate glottal airflow and motor control in speech production.
             </li>
             <li>
-              <strong>Acoustic Resonance &amp; Cymatics:</strong> The physical geometric vibrations created by Sanskrit frequencies and why ancient mantras follow exact mathematical harmonics.
+              <strong>Acoustic Resonance &amp; Cymatics:</strong> How sound vibrations produce standing wave patterns in physical media (cymatics) and how Vedic meter utilizes mathematical ratios.
             </li>
           </ul>
 
@@ -1634,7 +1634,7 @@ const Grammar: React.FC<GrammarProps> = ({
     {
       id: 'science-of-sound' as GrammarTopic,
       title: '🎥 Sanskrit: The Science of Sound · ध्वनि-विज्ञानम्',
-      blurb: 'Masterclass Video: Explore the neuro-acoustic precision, 5 vocal articulation points, and resonant frequencies of Sanskrit.',
+      blurb: 'Masterclass Video: Explore the articulatory phonetics, 5 vocal articulation zones (Sthāna), and acoustic properties of Sanskrit (Pāṇinīya Śikṣā).',
       color: '#7c3aed',
       borderColor: '#8b5cf6',
       bgGradient: 'linear-gradient(180deg, #ffffff 0%, #faf5ff 100%)',

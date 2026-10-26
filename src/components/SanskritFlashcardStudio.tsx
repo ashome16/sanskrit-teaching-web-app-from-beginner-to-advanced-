@@ -75,7 +75,7 @@ export const SANSKRIT_FLASHCARDS: SanskritFlashcard[] = [
     category: 'phonetics',
     definition: 'Retroflex phonemes where the tongue tip curls upward to tap the roof dome of the palate.',
     formulaOrDetail: 'ऋटुरषाणां मूर्धा (ऋ, ॠ, ट, ठ, ड, ढ, ण, र, ष)',
-    insight: 'Unique retroflex resonance that engages upper cranium cranial cavities.',
+    insight: 'Unique retroflex articulation curling tongue tip against the hard palate dome (mūrdhan).',
     exampleSanskrit: 'ट, ठ, ड, ढ, ण, र, ष',
     exampleEnglish: 'Retroflex sounds curling to the roof of the mouth.'
   },

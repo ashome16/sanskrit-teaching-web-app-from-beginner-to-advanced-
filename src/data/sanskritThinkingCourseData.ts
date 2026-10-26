@@ -183,7 +183,7 @@ export const COURSE_MODULES: CourseModule[] = [
           type: 'integrated',
           badgeLabel: '🧠 Cognitive Science & Contemplation',
           heading: 'Neuro-Linguistic Feedback Loops',
-          bridgeExplanation: 'Modern neuroimaging demonstrates that reciting metered, phonetically strict languages activates bilateral motor cortices and vagal tone, synchronizing respiration with cardiac rhythms.',
+          bridgeExplanation: 'Clinical studies on rhythmic vocalization (e.g. Bernardi et al., BMJ 2001) observe that metered recitation at approximately 6 breaths per minute synchronizes cardiorespiratory rhythms and enhances heart-rate variability (baroreflex sensitivity).',
           modernInsight: 'Just as a software engineer requires type safety to avoid runtime errors, Sanskrit uses phonetic safety to avoid cognitive drift.'
         },
         linkedResources: [
@@ -327,7 +327,7 @@ export const COURSE_MODULES: CourseModule[] = [
           badgeLabel: '🪔 Breath & Prāṇāyāma in Speech',
           heading: 'Mātrā as Metronomic Breath Regulation',
           bridgeExplanation: 'Just as prāṇāyāma measures breath in counts of 1:2:4, Sanskrit verse reciting trains the autonomic nervous system to measure vocal output in strict mathematical beats. Mind and breath stabilize simultaneously.',
-          modernInsight: 'Modern cognitive psychology recognizes rhythmic metered recitation as a proven method to induce high-alpha and theta brainwaves, reducing cortisol and anxiety.'
+          modernInsight: 'Psychophysiological research on rhythmic verbalization and slow-paced breathing notes measurable increases in parasympathetic activity and EEG alpha band power, fostering focused attention (e.g. Telles et al., 2013; Zaccaro et al., Front. Hum. Neurosci. 2018).'
         },
         linkedResources: [
           { label: 'Deepakam Chapter 1 Living Reader', targetView: 'reader', param: 'gsde101', badge: 'Textbook' },

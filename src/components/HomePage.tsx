@@ -1704,7 +1704,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 </span>
                 <h3 className="home-pathway-title">⚡ वैदिक-गणितम् · Vaidic Gaṇitam</h3>
                 <p className="home-pathway-desc">
-                  Compute 10–15× faster! Master all 16 Sutras &amp; 13 Sub-sutras, Bhāskarācārya's Līlāvatī poetic math, Piṅgala's binary Chandas, and Katapayadi mnemonics.
+                  Master mental calculation shortcuts! Explore all 16 Sutras &amp; 13 Sub-sutras (Tirtha, 1965), Bhāskarācārya's Līlāvatī poetic math, Piṅgala's binary Chandas, and Katapayadi mnemonics.
                 </p>
               </div>
               <button
@@ -2083,7 +2083,7 @@ const HomePage: React.FC<HomePageProps> = ({
             The Science of Sound &amp; Shapes
           </h2>
           <p style={{ fontSize: '1rem', color: '#3D1B04', maxWidth: '650px', margin: '0 auto', lineHeight: 1.55 }}>
-            Watch these curated documentary masterclasses exploring the neurological precision of Sanskrit phonetics and the ancient geometry of Vedic mathematics.
+            Watch these curated documentary masterclasses exploring the articulatory phonetics of Sanskrit (Śikṣā) and the mathematical structures of Vedic sutras.
           </p>
         </div>
 
@@ -2124,13 +2124,13 @@ const HomePage: React.FC<HomePageProps> = ({
                   borderRadius: '6px',
                   marginBottom: '0.5rem',
                 }}>
-                  SANSKRIT PHONETICS &amp; NEURO-ACOUSTICS
+                  SANSKRIT PHONETICS &amp; ARTICULATORY ACOUSTICS
                 </span>
                 <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#3D1B04', margin: '0 0 0.5rem 0' }}>
                   Sanskrit: The Science of Sound
                 </h3>
                 <p style={{ fontSize: '0.86rem', color: '#3D1B04', lineHeight: 1.5, margin: 0 }}>
-                  Discover how the 5 vocal articulation points (Kaṇṭhya to Oṣṭhya), acoustic vibrations, and resonance stimulate cranial reflexes in the human nervous system.
+                  Discover how the 5 classical vocal articulation points (Kaṇṭhya to Oṣṭhya) optimize speech clarity, breath regulation (Prāṇāyāma), and acoustic resonance in linguistic phonetics.
                 </p>
               </div>
               <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid #E5D7C5', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -2515,8 +2515,7 @@ const HomePage: React.FC<HomePageProps> = ({
               </div>
               <h3 className="home-feature-title">वैदिक-गणितम् (Vaidic Gaṇitam)</h3>
               <p className="home-feature-desc">
-                The Magic of Numbers: An ultra-efficient mental calculation system enabling arithmetic solutions 10 to 15 times
-                faster than conventional methods. Explore the 16 Sutras, interactive step-by-step visual solvers, and speed challenges!
+                The Elegance of Numbers: A pattern-based mental calculation system that streamlines multi-step arithmetic through algebraic short-cuts and base complements. Explore the 16 Sutras, interactive step-by-step visual solvers, and speed challenges!
               </p>
               <ul className="home-feature-points">
                 <li>16 Primary Sutras &amp; 13 Sub-Sutras with Sanskrit audio</li>

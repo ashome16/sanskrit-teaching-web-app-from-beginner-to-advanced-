@@ -2139,7 +2139,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                           <strong>Sanskrit: The Science of Sound</strong> · Video by <em>Conscious Cosmos</em>
                           <br />
                           <span style={{ color: '#6b7280', fontSize: '0.78rem' }}>
-                            Explore the neurological, vocal tract, and acoustic science behind Sanskrit phonetics.
+                            Explore the vocal tract biomechanics, acoustic resonance, and phonological precision of Sanskrit (Śikṣā).
                           </span>
                         </div>
                         <a
