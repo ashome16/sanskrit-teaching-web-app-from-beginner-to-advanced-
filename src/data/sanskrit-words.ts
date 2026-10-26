@@ -55,6 +55,30 @@ export const COMMON_DHATUS: Record<string, Dhatu> = {
     description: 'Root verb meaning "to be" or "to exist"',
     examples: ['भवामि (I am)', 'भवसि (You are)', 'भवति (He/She is)'],
   },
+  'अद्': {
+    devanagari: 'अद्',
+    transliteration: 'ad',
+    meaning: 'to eat, to consume, to nourish',
+    class: 2,
+    description: 'Adādi-gaṇa root verb meaning "to eat" or "to nourish"',
+    examples: ['अत्ति (He/She eats)', 'अत्तः (They two eat)', 'अदन्ति (They eat)'],
+  },
+  'क्षि': {
+    devanagari: 'क्षि',
+    transliteration: 'kṣi',
+    meaning: 'to rule, to protect, to abide',
+    class: 1,
+    description: 'Root verb meaning "to protect", origin of क्षत्रिय (warrior)',
+    examples: ['क्षयति (He rules / protects)'],
+  },
+  'शम्': {
+    devanagari: 'शम्',
+    transliteration: 'śam',
+    meaning: 'to be calm, pacified, peaceful',
+    class: 4,
+    description: 'Root verb meaning "to be at peace", origin of शान्ति',
+    examples: ['शाम्यति (He becomes peaceful)'],
+  },
   'अस्': {
     devanagari: 'अस्',
     transliteration: 'as',
@@ -528,6 +552,212 @@ export const SANSKRIT_WORDS_DICTIONARY: SanskritWordBreakdown[] = [
       case: 1,
       meaning: 'nominative case (subject)',
     },
+  },
+  {
+    id: 'word-annam',
+    devanagari: 'अन्नम्',
+    transliteration: 'annam',
+    meaning: 'Food, grain, nourishment, physical sustenance',
+    partOfSpeech: 'noun',
+    syllables: [
+      { devanagari: 'अ', transliteration: 'a', iotype: 'vowel' },
+      { devanagari: 'न्नम्', transliteration: 'nnam', iotype: 'consonant' },
+    ],
+    conjunctConsonants: [
+      {
+        devanagari: 'न्न',
+        transliteration: 'nna',
+        components: ['न्', 'न'],
+        description: 'Double dental nasal conjunct: n + na',
+      },
+    ],
+    dhatu: COMMON_DHATUS['अद्'],
+    pratyayas: [
+      {
+        devanagari: 'क्त',
+        transliteration: 'kta',
+        type: 'nominal',
+        meaning: 'past passive participle (कर्मणि क्त)',
+      },
+    ],
+    nounInflection: {
+      gender: 'neuter',
+      number: 'singular',
+      case: 1,
+      meaning: 'nominative / accusative neuter singular',
+    },
+    etymology: 'धातुः अद् (ad - भक्षणे) + प्रत्ययः क्त (कर्मणि) ➔ अन्नम् (अद्यते इति अन्नम् - that which sustains life)',
+    examples: [
+      'अन्नाद् भवन्ति भूतानि पर्जन्यादन्नसम्भवः। (From food all living beings arise - Gita 3.14)',
+      'उष्णम् अन्नम् अस्ति। (The food is warm and nourishing.)',
+      'अन्नं बहु कुर्वीत तद् व्रतम्। (Grow food in abundance; that is the sacred vow - Taittiriya Upanishad)',
+    ],
+  },
+  {
+    id: 'word-jnanam',
+    devanagari: 'ज्ञानम्',
+    transliteration: 'jñānam',
+    meaning: 'Knowledge, wisdom, discernment, consciousness',
+    partOfSpeech: 'noun',
+    syllables: [
+      { devanagari: 'ज्ञा', transliteration: 'jñā', iotype: 'consonant' },
+      { devanagari: 'नम्', transliteration: 'nam', iotype: 'consonant' },
+    ],
+    conjunctConsonants: [
+      {
+        devanagari: 'ज्ञ',
+        transliteration: 'jña',
+        components: ['ज्', 'ञ'],
+        description: 'Palatal conjunct: j + ña',
+      },
+    ],
+    dhatu: COMMON_DHATUS['ज्ञा'],
+    pratyayas: [
+      {
+        devanagari: 'ल्युट्',
+        transliteration: 'lyuṭ (ana)',
+        type: 'nominal',
+        meaning: 'action/state noun suffix (भावे ल्युट्)',
+      },
+    ],
+    nounInflection: {
+      gender: 'neuter',
+      number: 'singular',
+      case: 1,
+      meaning: 'nominative / accusative neuter singular',
+    },
+    etymology: 'ज्ञा (to know) + ल्युट् (ana) ➔ ज्ञानम् (the act of knowing / divine realization)',
+    examples: [
+      'न हि ज्ञानेन सदृशं पवित्रमिह विद्यते। (There is nothing in this world as purifying as knowledge - Gita 4.38)',
+      'ज्ञानं परमं बलम्। (Knowledge is supreme strength.)',
+    ],
+  },
+  {
+    id: 'word-kshatriyah',
+    devanagari: 'क्षत्रियः',
+    transliteration: 'kṣatriyaḥ',
+    meaning: 'Protector, ruler, warrior of righteousness',
+    partOfSpeech: 'noun',
+    syllables: [
+      { devanagari: 'क्ष', transliteration: 'kṣa', iotype: 'consonant' },
+      { devanagari: 'त्रि', transliteration: 'tri', iotype: 'consonant' },
+      { devanagari: 'यः', transliteration: 'yaḥ', iotype: 'consonant' },
+    ],
+    conjunctConsonants: [
+      {
+        devanagari: 'क्ष',
+        transliteration: 'kṣa',
+        components: ['क्', 'ष'],
+        description: 'Velar + retroflex conjunct: k + ṣa',
+      },
+      {
+        devanagari: 'त्र',
+        transliteration: 'tra',
+        components: ['त्', 'र'],
+        description: 'Dental + liquid conjunct: t + ra',
+      },
+    ],
+    dhatu: COMMON_DHATUS['क्षि'],
+    nounInflection: {
+      gender: 'masculine',
+      number: 'singular',
+      case: 1,
+      meaning: 'nominative masculine singular',
+    },
+    etymology: 'क्षातात् त्रायते इति क्षत्रियः (One who shields others from injury and protects the weak)',
+    examples: [
+      'क्षत्रियस्य धर्मः प्रजापालनम्। (The duty of a righteous ruler is protection of the people.)',
+    ],
+  },
+  {
+    id: 'word-trishulam',
+    devanagari: 'त्रिशूलम्',
+    transliteration: 'triśūlam',
+    meaning: 'Trident (symbolizing mastery over the 3 Gunas: Sattva, Rajas, Tamas)',
+    partOfSpeech: 'noun',
+    syllables: [
+      { devanagari: 'त्रि', transliteration: 'tri', iotype: 'consonant' },
+      { devanagari: 'शू', transliteration: 'śū', iotype: 'consonant' },
+      { devanagari: 'लम्', transliteration: 'lam', iotype: 'consonant' },
+    ],
+    conjunctConsonants: [
+      {
+        devanagari: 'त्र',
+        transliteration: 'tra',
+        components: ['त्', 'र'],
+        description: 'Conjunct: t + ra',
+      },
+    ],
+    nounInflection: {
+      gender: 'neuter',
+      number: 'singular',
+      case: 1,
+      meaning: 'nominative neuter singular',
+    },
+    etymology: 'त्रि (three) + शूलम् (sharp points) ➔ त्रिशूलम्',
+    examples: [
+      'शिवस्य हस्ते त्रिशूलम् अस्ति। (In Shiva\'s hand is the trident.)',
+    ],
+  },
+  {
+    id: 'word-shriphalam',
+    devanagari: 'श्रीफलम्',
+    transliteration: 'śrīphalam',
+    meaning: 'Sacred coconut (auspicious offering symbolizing purity)',
+    partOfSpeech: 'noun',
+    syllables: [
+      { devanagari: 'श्री', transliteration: 'śrī', iotype: 'consonant' },
+      { devanagari: 'फ', transliteration: 'pha', iotype: 'consonant' },
+      { devanagari: 'लम्', transliteration: 'lam', iotype: 'consonant' },
+    ],
+    conjunctConsonants: [
+      {
+        devanagari: 'श्र',
+        transliteration: 'śra',
+        components: ['श्', 'र'],
+        description: 'Palatal sibilant + liquid: ś + ra',
+      },
+    ],
+    nounInflection: {
+      gender: 'neuter',
+      number: 'singular',
+      case: 1,
+      meaning: 'nominative neuter singular',
+    },
+    etymology: 'श्री (sacred prosperity / Lakshmi) + फलम् (fruit) ➔ श्रीफलम् (coconut / bilva fruit)',
+    examples: [
+      'पूजायां श्रीफलं समर्पयति। (In worship, he offers the sacred coconut.)',
+    ],
+  },
+  {
+    id: 'word-shanti',
+    devanagari: 'शान्तिः',
+    transliteration: 'śāntiḥ',
+    meaning: 'Peace, tranquility, cessation of disturbance',
+    partOfSpeech: 'noun',
+    syllables: [
+      { devanagari: 'शान्', transliteration: 'śān', iotype: 'consonant' },
+      { devanagari: 'तिः', transliteration: 'tiḥ', iotype: 'consonant' },
+    ],
+    conjunctConsonants: [
+      {
+        devanagari: 'न्त',
+        transliteration: 'nta',
+        components: ['न्', 'त'],
+        description: 'Dental nasal + dental stop: n + ta',
+      },
+    ],
+    dhatu: COMMON_DHATUS['शम्'],
+    nounInflection: {
+      gender: 'feminine',
+      number: 'singular',
+      case: 1,
+      meaning: 'nominative feminine singular',
+    },
+    etymology: 'शम् (to be calm) + क्तिन् (ti) ➔ शान्तिः (profound inner tranquility)',
+    examples: [
+      'ॐ शान्तिः शान्तिः शान्तिः। (May peace reign in body, mind, and cosmos.)',
+    ],
   },
 ];
 

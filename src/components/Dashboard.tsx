@@ -281,6 +281,7 @@ const Dashboard: React.FC = () => {
   });
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
+  const [isAnalyzerCollapsed, setIsAnalyzerCollapsed] = useState(false);
   const [activeView, setActiveView] = useState<DashboardView>(() => {
     try {
       const fromPath = pathToView(window.location.pathname);
@@ -840,12 +841,14 @@ const Dashboard: React.FC = () => {
       const spoken = expandDigitsInLessonText(word);
       const cleaned = cleanWord(spoken) || spoken.trim();
       localStorage.setItem('last-stem', cleaned);
+      setIsAnalyzerCollapsed(false);
       setWordSelection({ text: cleaned, nonce: Date.now() });
       return;
     }
     const cleaned = cleanWord(word) || word.trim();
     playPronunciation(cleaned);
     localStorage.setItem('last-stem', cleaned);
+    setIsAnalyzerCollapsed(false);
     setWordSelection({ text: cleaned, nonce: Date.now() });
   };
 
@@ -967,7 +970,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}`}>
+    <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}${isAnalyzerCollapsed ? ' dashboard--analyzer-collapsed' : ''}`}>
       <a href="#main-content" className="a11y-skip-link">
         Skip to main content
       </a>
@@ -1457,8 +1460,31 @@ const Dashboard: React.FC = () => {
           />
         )}
       </Suspense>
+      </main>
 
-      {activeView === 'reader' && <WordAnalyzerCard selection={wordSelection} />}
+      {activeView === 'reader' && (
+        isAnalyzerCollapsed ? (
+          <aside className="wac-collapsed-rail" aria-label="Word Analyzer Collapsed">
+            <button
+              type="button"
+              className="wac-collapsed-tab-btn"
+              onClick={() => setIsAnalyzerCollapsed(false)}
+              title="Expand Sanskrit Word Analyzer (शब्द-विश्लेषणम्)"
+              aria-label="Expand Sanskrit Word Analyzer"
+            >
+              <span className="wac-collapsed-tab-icon" aria-hidden="true">🪷</span>
+              <span className="wac-collapsed-tab-label">शब्द-विश्लेषणम् · Word Analyzer</span>
+              <span className="wac-collapsed-tab-arrow" aria-hidden="true">◀</span>
+            </button>
+          </aside>
+        ) : (
+          <WordAnalyzerCard
+            selection={wordSelection}
+            onClose={() => setIsAnalyzerCollapsed(true)}
+            onSelectWord={handleWordClick}
+          />
+        )
+      )}
 
       {activeView !== 'reader' && (
         <Footer
@@ -1480,7 +1506,6 @@ const Dashboard: React.FC = () => {
           onOpenScienceLab={() => openScienceLab()}
         />
       )}
-      </main>
 
       <Suspense fallback={null}>
         <SupportWidget

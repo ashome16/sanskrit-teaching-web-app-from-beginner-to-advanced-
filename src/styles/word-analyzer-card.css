@@ -504,3 +504,378 @@
     font-size: 0.85rem;
   }
 }
+
+
+/* ==========================================================================
+   Word Analyzer Card — Enhancements & Modern Inspector UX
+   ========================================================================== */
+
+/* Top Branding Bar */
+.wac-top-branding-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  padding: 0.55rem 0.75rem 0.65rem;
+  margin: -0.35rem -0.45rem 0.75rem;
+  background: linear-gradient(135deg, #fdfbf7 0%, #f4ede2 100%);
+  border-bottom: 1.5px solid #e7dac7;
+  border-radius: 10px 10px 0 0;
+}
+
+.wac-branding-title-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.wac-branding-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #273b35;
+  letter-spacing: -0.01em;
+}
+
+.wac-branding-gem {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.wac-branding-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #79664e;
+  letter-spacing: 0.02em;
+}
+
+.wac-branding-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.wac-speed-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  border-radius: 16px;
+  border: 1px solid #d4c5b0;
+  background: #ffffff;
+  color: #5c4c37;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.wac-speed-toggle-btn:hover {
+  background: #fbf7f0;
+  border-color: #b59b7b;
+}
+
+.wac-speed-toggle-btn.active {
+  background: #c9791f;
+  color: #ffffff;
+  border-color: #b06514;
+  box-shadow: 0 1px 4px rgba(201, 121, 31, 0.3);
+}
+
+.wac-close-card-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid #dcd1c0;
+  background: #ffffff;
+  color: #705e4a;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.wac-close-card-btn:hover {
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: #fca5a5;
+}
+
+/* Classical Verse (Quote) Card */
+.wac-quote-card {
+  background: linear-gradient(145deg, #fffcf7 0%, #faf3e8 100%);
+  border: 1px solid #ebd9c0;
+  border-left: 4px solid #c9791f;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.wac-quote-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.wac-quote-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8c5315;
+}
+
+.wac-quote-source {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #52635d;
+  background: #eedfcb;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+}
+
+.wac-quote-shloka {
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #1a322c;
+  margin: 0 0 0.45rem;
+  white-space: pre-line;
+}
+
+.wac-quote-translation {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #4b5954;
+  margin: 0 0 0.6rem;
+  font-style: italic;
+}
+
+.wac-quote-speak-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  background: #273b35;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.wac-quote-speak-btn:hover {
+  background: #172420;
+}
+
+/* Dhatu & Pratyaya badges */
+.wac-dhatu-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.45rem;
+}
+
+.wac-dhatu-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.55rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: #166534;
+}
+
+.wac-pratyaya-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.55rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: #1e40af;
+}
+
+/* Interactive Syllable & Conjunct buttons */
+button.wac-syllable-box,
+button.wac-conjunct-box {
+  background: #faf8f5;
+  border: 1px solid #e2d7c5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  text-align: center;
+}
+
+button.wac-syllable-box:hover,
+button.wac-conjunct-box:hover {
+  background: #fff6eb;
+  border-color: #c9791f;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(201, 121, 31, 0.15);
+}
+
+/* Sound Anchor Header */
+.wac-sound-anchor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.wac-anchor-letter {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  background: #fde68a;
+  color: #78350f;
+  border-radius: 6px;
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  font-weight: 800;
+}
+
+.wac-clear-anchor-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.85rem;
+  color: #8c7657;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.wac-clear-anchor-btn:hover {
+  background: #eedfcb;
+  color: #273b35;
+}
+
+/* Empty State Samples */
+.wac-empty-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.wac-empty-samples-section {
+  margin: 0.85rem 0;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #ebd9c0;
+  border-radius: 10px;
+}
+
+.wac-empty-samples-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8c5315;
+  margin-bottom: 0.45rem;
+}
+
+.wac-empty-samples-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.45rem;
+}
+
+.wac-sample-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.55rem;
+  background: #ffffff;
+  border: 1px solid #d9ccb8;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.wac-sample-chip:hover {
+  background: #fdf3e7;
+  border-color: #c9791f;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(201, 121, 31, 0.12);
+}
+
+.wac-sample-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.wac-sample-dev {
+  font-family: "Noto Sans Devanagari", Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #14352f;
+}
+
+.wac-sample-gloss {
+  font-size: 0.72rem;
+  color: #6c7873;
+  margin-left: auto;
+}
+
+/* Collapsed Rail & Tab */
+.wac-collapsed-rail {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 50;
+}
+
+.wac-collapsed-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.15rem;
+  background: #273b35;
+  color: #f7f5f0;
+  border: 1px solid #1c2b26;
+  border-radius: 28px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(39, 59, 53, 0.28);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.wac-collapsed-tab-btn:hover {
+  background: #172420;
+  transform: translateX(-2px);
+  box-shadow: 0 6px 20px rgba(39, 59, 53, 0.38);
+}
+
+.wac-collapsed-tab-icon {
+  font-size: 1.05rem;
+}
+
+.wac-collapsed-tab-arrow {
+  font-size: 0.8rem;
+  color: #e5b958;
+}

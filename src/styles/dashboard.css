@@ -25,6 +25,22 @@
   overflow-y: visible;
 }
 
+.dashboard.dashboard--reader.dashboard--analyzer-collapsed {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.dashboard.dashboard--reader .dashboard-main-content {
+  grid-column: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+.dashboard.dashboard--reader .word-analyzer-card,
+.dashboard.dashboard--reader .wac-collapsed-rail {
+  grid-column: 2;
+  min-width: 0;
+}
+
 /* The reader header (two nav rows on desktop) is always scrolled away
    with the page here; keep it that way now that sticky actually engages. */
 .dashboard.dashboard--reader .dashboard-header {
@@ -553,6 +569,20 @@ button.dashboard-nav-group-label:focus-visible,
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto auto;
     height: auto;
+  }
+
+  .dashboard.dashboard--reader,
+  .dashboard.dashboard--reader.dashboard--analyzer-collapsed {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dashboard.dashboard--reader .dashboard-main-content {
+    grid-column: 1;
+  }
+
+  .dashboard.dashboard--reader .word-analyzer-card,
+  .dashboard.dashboard--reader .wac-collapsed-rail {
+    grid-column: 1;
   }
 
   .dashboard.dashboard--scrollable,
