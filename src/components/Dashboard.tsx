@@ -34,7 +34,6 @@ const AdminModal = lazy(() => import('./AdminModal'));
 const GlobalSearchModal = lazy(() => import('./GlobalSearchModal'));
 const VoiceSettingsModal = lazy(() => import('./VoiceSettingsModal'));
 const BodhiOnlineClassesModal = lazy(() => import('./BodhiOnlineClassesModal'));
-import AccessibilityToolbar from './AccessibilityToolbar';
 import { useAccessibilityStore } from '../utils/accessibilityStore';
 
 const ViewLoader = () => (
@@ -859,6 +858,12 @@ const Dashboard: React.FC = () => {
       setWordSelection(null);
       return;
     }
+    const currentLesson = lessons[lessonIndex];
+    if (currentLesson?.id === 'varnamala' || currentLesson?.id === 'barakhadi') {
+      // In Varnamala and Barakhadi studio, do not auto-select a word. Let the user explore the alphabet chart!
+      setWordSelection(null);
+      return;
+    }
     const s = lessons[lessonIndex]?.sentences[sentenceIndex];
     if (!s) {
       setWordSelection(null);
@@ -933,8 +938,9 @@ const Dashboard: React.FC = () => {
     if (idx >= 0) {
       setLessonIndex(idx);
       setSentenceIndex(0);
-      if (subMode) setVarnamalaInitialSubMode(subMode);
-      // wordSelection: auto-select effect fills from the new sentence
+      setVarnamalaInitialSubMode(subMode || 'sound');
+      setIsAnalyzerCollapsed(true);
+      setWordSelection(null);
     }
     setActiveView('reader');
   };
@@ -942,6 +948,10 @@ const Dashboard: React.FC = () => {
   const openDeepakam = (lessonId?: string) => {
     const targetId =
       lessonId || (firstDeepakamIndex(lessons) >= 0 ? lessons[firstDeepakamIndex(lessons)].id : 'gsde101');
+    if (targetId === 'varnamala' || targetId === 'barakhadi') {
+      setIsAnalyzerCollapsed(true);
+      setWordSelection(null);
+    }
     // Guests without an account: prompt login/registration for Class 8 and Class 9.
     if (typeof targetId === 'string' && (targetId.startsWith('grade8_') || targetId.startsWith('grade9_')) && !canReadAllChapters) {
       openAuthModal('login');
@@ -971,9 +981,6 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}${isAnalyzerCollapsed ? ' dashboard--analyzer-collapsed' : ''}`}>
-      <a href="#main-content" className="a11y-skip-link">
-        Skip to main content
-      </a>
       <header className="dashboard-header">
         <button
           type="button"
@@ -1162,7 +1169,6 @@ const Dashboard: React.FC = () => {
         </nav>
 
         <div className="dashboard-header-user">
-          <AccessibilityToolbar />
           <a
             href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
             target="_blank"

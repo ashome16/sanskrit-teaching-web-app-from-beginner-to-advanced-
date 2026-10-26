@@ -1643,11 +1643,6 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className={`varnamala-mode-btn${varnamalaSubMode === 'quizzes' ? ' varnamala-mode-btn--active' : ''}`}
                 onClick={() => setVarnamalaSubMode('quizzes')}
-                style={{
-                  background: varnamalaSubMode === 'quizzes' ? undefined : '#fef9c3',
-                  color: varnamalaSubMode === 'quizzes' ? undefined : '#854d0e',
-                  borderColor: varnamalaSubMode === 'quizzes' ? undefined : '#fde047',
-                }}
               >
                 <span className="varnamala-mode-icon">🎯</span>
                 <span>स्वर-प्रश्नोत्तरी (Swar Quizzes &amp; Review)</span>
@@ -1656,11 +1651,6 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 type="button"
                 className={`varnamala-mode-btn${varnamalaSubMode === 'workbooks' ? ' varnamala-mode-btn--active' : ''}`}
                 onClick={() => setVarnamalaSubMode('workbooks')}
-                style={{
-                  background: varnamalaSubMode === 'workbooks' ? undefined : '#dcfce7',
-                  color: varnamalaSubMode === 'workbooks' ? undefined : '#166534',
-                  borderColor: varnamalaSubMode === 'workbooks' ? undefined : '#86efac',
-                }}
               >
                 <span className="varnamala-mode-icon">📚</span>
                 <span>अभ्यास-पुस्तिकाः व सामग्री (Workbooks &amp; Materials)</span>
