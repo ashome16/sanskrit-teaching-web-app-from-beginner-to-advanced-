@@ -352,6 +352,87 @@ html.a11y-high-contrast .nav-free-trial-badge {
   border: 1px solid #000000 !important;
 }
 
+/* Proof of Quality Section in High Contrast */
+html.a11y-high-contrast .poq-container,
+html.a11y-high-contrast .poq-header,
+html.a11y-high-contrast .poq-lesson-card,
+html.a11y-high-contrast .poq-dialogue-card,
+html.a11y-high-contrast .poq-sentence-builder,
+html.a11y-high-contrast .poq-token-detail-card,
+html.a11y-high-contrast .poq-math-playground,
+html.a11y-high-contrast .poq-math-breakdown-card,
+html.a11y-high-contrast .poq-audio-track-item,
+html.a11y-high-contrast .poq-audio-player-card,
+html.a11y-high-contrast .poq-analyzer-live-card,
+html.a11y-high-contrast .poq-mockup-card,
+html.a11y-high-contrast .poq-free-chapter-banner,
+html.a11y-high-contrast .poq-reader-window,
+html.a11y-high-contrast .poq-rw-verse-block {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  box-shadow: none !important;
+}
+
+html.a11y-high-contrast .poq-title,
+html.a11y-high-contrast .poq-title-sa,
+html.a11y-high-contrast .poq-lesson-title,
+html.a11y-high-contrast .poq-ati-title,
+html.a11y-high-contrast .poq-ap-title,
+html.a11y-high-contrast .poq-alc-word,
+html.a11y-high-contrast .poq-fcb-title,
+html.a11y-high-contrast .poq-rw-title {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.a11y-high-contrast .poq-tab-btn {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #000000 !important;
+  font-weight: 800 !important;
+}
+
+html.a11y-high-contrast .poq-tab-btn.active {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.a11y-high-contrast .poq-sound-btn,
+html.a11y-high-contrast .poq-sublesson-chip,
+html.a11y-high-contrast .poq-math-chip,
+html.a11y-high-contrast .poq-aw-chip,
+html.a11y-high-contrast .poq-rw-word-chip {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+html.a11y-high-contrast .poq-sublesson-chip.active,
+html.a11y-high-contrast .poq-math-chip.active,
+html.a11y-high-contrast .poq-aw-chip.active,
+html.a11y-high-contrast .poq-rw-word-chip.active {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.a11y-high-contrast .poq-fcb-cta-btn,
+html.a11y-high-contrast .poq-ap-main-btn,
+html.a11y-high-contrast .poq-play-shiva-btn,
+html.a11y-high-contrast .poq-alc-audio-btn,
+html.a11y-high-contrast .poq-rw-listen-btn {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.a11y-high-contrast .poq-fcb-cta-btn:hover,
+html.a11y-high-contrast .poq-ap-main-btn:hover {
+  background: #fef08a !important;
+  color: #000000 !important;
+}
+
 /* --------------------------------------------------------------------------
    5. English-First (Parents & Beginners Mode) Layout
    -------------------------------------------------------------------------- */

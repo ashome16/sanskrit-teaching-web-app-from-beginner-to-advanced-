@@ -10,6 +10,7 @@ import HomeLabBanner from './HomeLabBanner';
 import { getSearchShortcut } from '../utils/platformShortcut';
 import { GurukulEntranceIntro } from './GurukulEntranceIntro';
 import { useAccessibilityStore } from '../utils/accessibilityStore';
+import ProofOfQuality from './ProofOfQuality';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 
@@ -1042,7 +1043,18 @@ const HomePage: React.FC<HomePageProps> = ({
             <span className="hhtt-item"><span>✓</span> 100% Free for 14 Days</span>
             <span className="hhtt-item"><span>✓</span> No Credit Card / Auto-Debit</span>
             <span className="hhtt-item"><span>✓</span> Instant Online Activation</span>
-            <span className="hhtt-item"><span>✓</span> Class 7, 8 &amp; 9 Syllabi Included</span>
+            <button
+              type="button"
+              className="hhtt-item"
+              style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', color: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}
+              onClick={() => {
+                const el = document.getElementById('proof-of-quality');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              title="Jump to Proof of Quality & Free Preview"
+            >
+              <span>✓</span> Preview Full Chapter 1 &amp; Audio Free
+            </button>
           </div>
         </div>
 
@@ -1055,6 +1067,17 @@ const HomePage: React.FC<HomePageProps> = ({
             title={currentUser?.planStatus ? 'Continue to reader' : 'Claim your unrestricted 14-day free trial'}
           >
             {currentUser?.planStatus ? '📖 Explore Lessons' : '🎁 Start 14-Day Free Trial'}
+          </button>
+          <button
+            type="button"
+            className="home-hero-cta-btn home-hero-cta-btn--secondary"
+            onClick={() => {
+              const el = document.getElementById('proof-of-quality');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            title="Experience short demo lessons, sample audio, word analyzer, and free chapter before signing up"
+          >
+            🛡️ Proof of Quality · Free Preview
           </button>
           {onOpenVarnamala && (
             <button
@@ -1710,6 +1733,17 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
       </section>
+
+      {/* ================================================================
+          PROOF OF QUALITY: EXPERIENCE BEFORE YOU SIGN UP
+          Demo Lessons, Sample Audio, Word Analyzer UI, Complete Free Chapter 1
+          ================================================================ */}
+      <ProofOfQuality
+        onOpenReader={onOpenReader}
+        onOpenVarnamala={onOpenVarnamala}
+        onOpenGrammar={onOpenGrammar}
+        onOpenRegister={handleStartTrial}
+      />
 
       {/* ------------------------------------------------------------------
           Learning Pathways Section (5 Clear Learner Tracks)

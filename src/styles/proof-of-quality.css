@@ -1,0 +1,1327 @@
+/* ==========================================================================
+   Proof of Quality (गुणवत्ता-प्रमाणम्) Styles
+   Short Demo Lessons, Sample Audio, Word Analyzer Screenshots, Free Chapter
+   ========================================================================== */
+
+.poq-section {
+  max-width: 1200px;
+  margin: 2.5rem auto 3.5rem;
+  padding: 0 1rem;
+}
+
+.poq-container {
+  background: #ffffff;
+  border: 1.5px solid #fed7aa;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(61, 27, 4, 0.08);
+  overflow: hidden;
+}
+
+/* Header Area */
+.poq-header {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fff7ed 100%);
+  border-bottom: 1.5px solid #fed7aa;
+  padding: 2.25rem 2rem 1.75rem;
+  text-align: center;
+}
+
+.poq-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #15803d;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.poq-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #3d1b04;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.poq-title-sa {
+  display: block;
+  font-size: 1.15rem;
+  color: #ba3c00;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.poq-subtitle {
+  font-size: 1rem;
+  color: #4b5563;
+  max-width: 780px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+.poq-guarantee-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.poq-guarantee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.poq-guarantee-item span {
+  color: #15803d;
+}
+
+/* Navigation Tabs */
+.poq-nav-tabs {
+  display: flex;
+  background: #fdf8f0;
+  border-bottom: 1.5px solid #fed7aa;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.poq-nav-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.poq-tab-btn {
+  flex: 1 1 auto;
+  min-width: 200px;
+  padding: 1.1rem 1.25rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #4b5563;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.poq-tab-btn:hover {
+  background: #fff3df;
+  color: #ba3c00;
+}
+
+.poq-tab-btn.active {
+  background: #ffffff;
+  color: #ba3c00;
+  border-bottom-color: #ba3c00;
+  font-weight: 800;
+  box-shadow: 0 -2px 8px rgba(186, 60, 0, 0.06);
+}
+
+.poq-tab-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Tab Content Panels */
+.poq-panel-body {
+  padding: 2.25rem 2.25rem;
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   Tab 1: Short Demo Lessons
+   ========================================================================== */
+.poq-sublesson-chips {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.poq-sublesson-chip {
+  padding: 0.6rem 1.15rem;
+  background: #fdf8f0;
+  border: 1.5px solid #fed7aa;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #3d1b04;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.18s ease;
+}
+
+.poq-sublesson-chip:hover {
+  background: #fff3df;
+  border-color: #ba3c00;
+}
+
+.poq-sublesson-chip.active {
+  background: #ba3c00;
+  color: #ffffff;
+  border-color: #ba3c00;
+  box-shadow: 0 4px 12px rgba(186, 60, 0, 0.28);
+}
+
+.poq-lesson-card {
+  background: linear-gradient(135deg, #fffdfa 0%, #fffbf5 100%);
+  border: 1.5px solid #fed7aa;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 4px 16px rgba(61, 27, 4, 0.04);
+}
+
+.poq-lesson-card-header {
+  margin-bottom: 1.25rem;
+}
+
+.poq-lesson-badge {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #b45309;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.poq-lesson-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 0.45rem;
+}
+
+.poq-lesson-desc {
+  font-size: 0.94rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Sound Matrix in Lesson 1 */
+.poq-sound-zones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.35rem 0 1.5rem;
+}
+
+.poq-zone-box {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.18s ease;
+}
+
+.poq-zone-box:hover {
+  border-color: #ba3c00;
+  box-shadow: 0 4px 12px rgba(186, 60, 0, 0.08);
+}
+
+.poq-zone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.poq-zone-name {
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: #3d1b04;
+}
+
+.poq-zone-organ {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 600;
+  background: #f1f5f9;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.poq-zone-sounds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.poq-sound-btn {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #9a3412;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.15s ease;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.poq-sound-btn:hover {
+  background: #ba3c00;
+  color: #ffffff;
+  border-color: #ba3c00;
+  transform: translateY(-1px);
+}
+
+.poq-sound-btn-speaker {
+  font-size: 0.75rem;
+}
+
+/* Shiva Sutras strip */
+.poq-shiva-strip {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 0.85rem 1.15rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.poq-shiva-text {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 0.98rem;
+}
+
+.poq-play-shiva-btn {
+  background: #1e293b;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background 0.15s ease;
+}
+
+.poq-play-shiva-btn:hover {
+  background: #ba3c00;
+}
+
+/* Spoken Sanskrit Cards in Lesson 2 */
+.poq-dialogue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.poq-dialogue-card {
+  background: #ffffff;
+  border: 1.5px solid #fed7aa;
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.85rem;
+}
+
+.poq-dialogue-q {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #9a3412;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.poq-dialogue-a {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #15803d;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.poq-dialogue-meaning {
+  font-size: 0.84rem;
+  color: #4b5563;
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.poq-dialogue-speaker-btn {
+  align-self: flex-start;
+  background: #fdf8f0;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #3d1b04;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.15s ease;
+}
+
+.poq-dialogue-speaker-btn:hover {
+  background: #ba3c00;
+  color: #ffffff;
+  border-color: #ba3c00;
+}
+
+/* Lesson 3: Sentence Tokenizer */
+.poq-sentence-builder {
+  background: #ffffff;
+  border: 1.5px solid #fed7aa;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin: 1.25rem 0;
+}
+
+.poq-sentence-tokens-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+
+.poq-word-token {
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.18s ease;
+}
+
+.poq-word-token:hover {
+  border-color: #ba3c00;
+  transform: translateY(-2px);
+}
+
+.poq-word-token.selected {
+  background: #fff7ed;
+  border-color: #ba3c00;
+  box-shadow: 0 4px 12px rgba(186, 60, 0, 0.2);
+}
+
+.poq-token-devanagari {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #3d1b04;
+  display: block;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.poq-token-case {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.poq-token-detail-card {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  color: #14532d;
+}
+
+.poq-td-role {
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.poq-td-desc {
+  font-size: 0.9rem;
+  color: #166534;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.poq-free-order-demo {
+  margin-top: 1.15rem;
+  padding: 0.85rem 1.15rem;
+  background: #fdf8f0;
+  border-radius: 10px;
+  border: 1px dashed #fed7aa;
+  font-size: 0.88rem;
+  color: #78350f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.poq-shuffle-btn {
+  background: #ba3c00;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.poq-shuffle-btn:hover {
+  background: #963000;
+}
+
+/* Lesson 4: Vedic Math Speed Playground */
+.poq-math-playground {
+  background: #ffffff;
+  border: 1.5px solid #fed7aa;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin: 1.25rem 0;
+}
+
+.poq-math-chip-row {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.35rem;
+}
+
+.poq-math-chip {
+  padding: 0.45rem 0.95rem;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.poq-math-chip:hover {
+  border-color: #d97706;
+}
+
+.poq-math-chip.active {
+  background: #d97706;
+  color: #ffffff;
+  border-color: #d97706;
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.28);
+}
+
+.poq-math-breakdown-card {
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.poq-mb-target {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #92400e;
+  margin-bottom: 0.75rem;
+}
+
+.poq-mb-steps {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.poq-mb-step-item {
+  background: #ffffff;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  flex: 1 1 200px;
+}
+
+.poq-mb-step-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #b45309;
+  margin-bottom: 0.25rem;
+}
+
+.poq-mb-step-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e293b;
+  font-family: monospace;
+}
+
+.poq-mb-final {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #15803d;
+  padding-top: 0.65rem;
+  border-top: 1px dashed #fde68a;
+}
+
+/* ==========================================================================
+   Tab 2: Sample Audio Showcase
+   ========================================================================== */
+.poq-audio-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2rem;
+}
+
+.poq-audio-playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.poq-audio-track-item {
+  background: #fdf8f0;
+  border: 1.5px solid #fed7aa;
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: left;
+}
+
+.poq-audio-track-item:hover {
+  background: #fff3df;
+  border-color: #ba3c00;
+  transform: translateX(3px);
+}
+
+.poq-audio-track-item.active {
+  background: #ffffff;
+  border-color: #ba3c00;
+  box-shadow: 0 4px 14px rgba(186, 60, 0, 0.15);
+}
+
+.poq-ati-meta {
+  flex: 1;
+}
+
+.poq-ati-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #b45309;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+}
+
+.poq-ati-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #3d1b04;
+  margin: 0.15rem 0 0.1rem;
+}
+
+.poq-ati-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.poq-ati-play-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ba3c00;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.poq-audio-player-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+}
+
+.poq-ap-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.poq-ap-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #f59e0b;
+  letter-spacing: 0.05em;
+}
+
+.poq-ap-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0.25rem 0 0.25rem;
+}
+
+.poq-ap-source {
+  font-size: 0.84rem;
+  color: #94a3b8;
+}
+
+.poq-ap-verse-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem 1.45rem;
+  margin-bottom: 1.25rem;
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: #fef08a;
+  min-height: 110px;
+}
+
+.poq-ap-translation {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.poq-ap-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.poq-ap-main-btn {
+  background: #f59e0b;
+  color: #0f172a;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.65rem;
+  font-size: 0.98rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  transition: all 0.18s ease;
+}
+
+.poq-ap-main-btn:hover {
+  background: #fbbf24;
+  transform: translateY(-2px);
+}
+
+.poq-ap-speed-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.poq-ap-speed-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.poq-ap-speed-btn.active {
+  background: #f59e0b;
+  color: #0f172a;
+  border-color: #f59e0b;
+}
+
+/* ==========================================================================
+   Tab 3: Word Analyzer & Jodo Studio Screenshots
+   ========================================================================== */
+.poq-analyzer-interactive-header {
+  margin-bottom: 1.5rem;
+}
+
+.poq-analyzer-word-chips {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.35rem;
+}
+
+.poq-aw-chip {
+  padding: 0.55rem 1.15rem;
+  background: #fdf8f0;
+  border: 1.5px solid #fed7aa;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #3d1b04;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.18s ease;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.poq-aw-chip:hover {
+  border-color: #ba3c00;
+  background: #fff3df;
+}
+
+.poq-aw-chip.active {
+  background: #ba3c00;
+  color: #ffffff;
+  border-color: #ba3c00;
+  box-shadow: 0 4px 12px rgba(186, 60, 0, 0.25);
+}
+
+/* Interactive Morphological Breakdown Card */
+.poq-analyzer-live-card {
+  background: #ffffff;
+  border: 2px solid #fed7aa;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 4px 16px rgba(61, 27, 4, 0.06);
+  margin-bottom: 2.25rem;
+}
+
+.poq-alc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.poq-alc-word {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #3d1b04;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.poq-alc-translit {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-left: 0.5rem;
+}
+
+.poq-alc-audio-btn {
+  background: #15803d;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 2px 8px rgba(21, 128, 61, 0.25);
+  transition: all 0.15s ease;
+}
+
+.poq-alc-audio-btn:hover {
+  background: #166534;
+  transform: translateY(-1px);
+}
+
+/* Morphological Flowchart Nodes */
+.poq-flow-nodes {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.poq-flow-node {
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+  text-align: center;
+  flex: 1 1 140px;
+}
+
+.poq-flow-node--prefix {
+  border-color: #38bdf8;
+  background: #f0f9ff;
+}
+
+.poq-flow-node--root {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.poq-flow-node--suffix {
+  border-color: #a855f7;
+  background: #faf5ff;
+}
+
+.poq-flow-node--result {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+.poq-fn-type {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+.poq-fn-sanskrit {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.poq-fn-gloss {
+  font-size: 0.78rem;
+  color: #475569;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.poq-flow-arrow {
+  font-size: 1.35rem;
+  color: #94a3b8;
+  font-weight: 900;
+}
+
+.poq-alc-meanings {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background: #fdf8f0;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  font-size: 0.92rem;
+  color: #3d1b04;
+}
+
+/* UI Showcase Mockups / Screenshots Gallery */
+.poq-mockup-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.poq-mockup-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.poq-mockup-top-bar {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.poq-mockup-dots {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.poq-mockup-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #64748b;
+}
+
+.poq-mockup-dot:nth-child(1) { background: #ef4444; }
+.poq-mockup-dot:nth-child(2) { background: #f59e0b; }
+.poq-mockup-dot:nth-child(3) { background: #10b981; }
+
+.poq-mockup-view {
+  padding: 1.25rem;
+  background: #fafbfc;
+  flex: 1;
+}
+
+.poq-mv-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 0.35rem;
+}
+
+.poq-mv-desc {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0 0 0.85rem;
+  line-height: 1.4;
+}
+
+/* Mockup UI Elements */
+.poq-mock-tiles-tray {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.85rem;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 0.65rem;
+}
+
+.poq-mock-tile {
+  background: #fef3c7;
+  border: 1.5px solid #f59e0b;
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #92400e;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.poq-mock-matrix-table {
+  width: 100%;
+  font-size: 0.75rem;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.poq-mock-matrix-table th {
+  background: #f1f5f9;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.poq-mock-matrix-table td {
+  padding: 0.35rem 0.45rem;
+  border: 1px solid #e2e8f0;
+  font-family: 'Noto Sans Devanagari', serif;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Tab 4: Complete Free Chapter 1
+   ========================================================================== */
+.poq-free-chapter-banner {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #fefce8 100%);
+  border: 2px solid #86efac;
+  border-radius: 16px;
+  padding: 1.5rem 1.85rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.poq-fcb-left {
+  flex: 1 1 500px;
+}
+
+.poq-fcb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #15803d;
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.poq-fcb-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #14532d;
+  margin: 0 0 0.35rem;
+}
+
+.poq-fcb-desc {
+  font-size: 0.92rem;
+  color: #374151;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.poq-fcb-perks {
+  display: flex;
+  gap: 1.15rem;
+  flex-wrap: wrap;
+  margin-top: 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.poq-fcb-cta-btn {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(22, 101, 52, 0.3);
+  transition: all 0.18s ease;
+}
+
+.poq-fcb-cta-btn:hover {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 101, 52, 0.4);
+}
+
+/* In-Page Reader Preview Window */
+.poq-reader-window {
+  background: #fffdfa;
+  border: 1.5px solid #fed7aa;
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 16px rgba(61, 27, 4, 0.05);
+}
+
+.poq-rw-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1e6d2;
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.poq-rw-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #3d1b04;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.poq-rw-listen-btn {
+  background: #ba3c00;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background 0.15s ease;
+}
+
+.poq-rw-listen-btn:hover {
+  background: #963000;
+}
+
+.poq-rw-verse-block {
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.poq-rw-verse-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #b45309;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.poq-rw-verse-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  line-height: 2;
+  margin-bottom: 0.85rem;
+}
+
+.poq-rw-word-chip {
+  background: #fdf8f0;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 0.15rem 0.55rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3d1b04;
+  cursor: pointer;
+  font-family: 'Noto Sans Devanagari', serif;
+  transition: all 0.15s ease;
+}
+
+.poq-rw-word-chip:hover {
+  background: #ba3c00;
+  color: #ffffff;
+  border-color: #ba3c00;
+}
+
+.poq-rw-word-chip.active {
+  background: #ba3c00;
+  color: #ffffff;
+  border-color: #ba3c00;
+}
+
+.poq-rw-word-gloss {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  color: #92400e;
+  margin-top: 0.5rem;
+}
+
+.poq-rw-translation {
+  font-size: 0.88rem;
+  color: #4b5563;
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0;
+}
+
+.poq-rw-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.poq-rw-secondary-cta {
+  background: #fdf8f0;
+  color: #3d1b04;
+  border: 1.5px solid #fed7aa;
+  border-radius: 999px;
+  padding: 0.7rem 1.45rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.poq-rw-secondary-cta:hover {
+  background: #ffffff;
+  border-color: #ba3c00;
+  color: #ba3c00;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .poq-audio-layout {
+    grid-template-columns: 1fr;
+  }
+  .poq-panel-body {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .poq-header {
+    padding: 1.75rem 1.25rem 1.5rem;
+  }
+  .poq-title {
+    font-size: 1.45rem;
+  }
+  .poq-title-sa {
+    font-size: 1rem;
+  }
+  .poq-tab-btn {
+    min-width: 160px;
+    padding: 0.85rem 0.95rem;
+    font-size: 0.84rem;
+  }
+  .poq-free-chapter-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .poq-fcb-cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .poq-flow-nodes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .poq-flow-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+}
