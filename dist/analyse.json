@@ -42686,17 +42686,34 @@
   },
   "अन्न": {
     "word": "अन्न",
-    "base_english": "Food grain / Food (Hindi)",
+    "base_english": "Food / Grain / Nourishment",
     "languages": {
       "en": {
         "label": "English",
-        "meaning": "Food grain / Food (Hindi)"
+        "meaning": "Food / Grain / Physical Nourishment",
+        "sentence_sanskrit": "अन्नाद् भवन्ति भूतानि।",
+        "sentence_translation": "From food all living beings subsist."
       },
       "hi": {
         "label": "हिन्दी",
         "meaning": "अन्न / अनाज / भोजन"
+      },
+      "te": {
+        "label": "తెలుగు",
+        "meaning": "ఆహారము / ధాన్యము / అన్నము"
+      },
+      "kn": {
+        "label": "ಕನ್ನಡ",
+        "meaning": "ಆಹಾರ / ಧಾನ್ಯ / ಅನ್ನ"
+      },
+      "ta": {
+        "label": "தமிழ்",
+        "meaning": "உணவு / தானியம் / அன்னம்"
       }
-    }
+    },
+    "sanskrit_gloss": "अद्यते यद् भूतानि अत्ति च (आहारः / भोजनम्)",
+    "grammar": "नपुंसकलिङ्ग प्रातिपदिकम् (अद् + क्त)",
+    "etymology": "धातुः 'अद्' (भक्षणे / to eat) + प्रत्ययः 'क्त' (कर्मणि) ➔ अन्नम्"
   },
   "चतुरा": {
     "word": "चतुरा",
@@ -63324,5 +63341,36 @@
         "meaning": "संस्कृत शब्द '‘वयं' का हिंदी भावार्थ"
       }
     }
+  },
+  "अन्नम्": {
+    "word": "अन्नम्",
+    "base_english": "Food / Grain / Sustenance",
+    "languages": {
+      "en": {
+        "label": "English",
+        "meaning": "Food / Grain / Nourishment",
+        "sentence_sanskrit": "अन्नाद् भवन्ति भूतानि पर्जन्यादन्नसम्भवः।",
+        "sentence_translation": "From food all living beings arise; food is born of rain."
+      },
+      "hi": {
+        "label": "हिन्दी",
+        "meaning": "अन्न / अनाज / भोजन (प्रथमा एकवचन)"
+      },
+      "te": {
+        "label": "తెలుగు",
+        "meaning": "అన్నము / ఆహారము"
+      },
+      "kn": {
+        "label": "ಕನ್ನಡ",
+        "meaning": "ಅನ್ನ / ಆಹಾರ"
+      },
+      "ta": {
+        "label": "தமிழ்",
+        "meaning": "அன்னம் / உணவு"
+      }
+    },
+    "sanskrit_gloss": "अद्यते इति अन्नम् (आहारः)",
+    "grammar": "नपुंसकलिङ्गम्, प्रथमा/द्वितीया विभक्तिः, एकवचनम्",
+    "etymology": "अद् (भक्षणे / to eat) + क्त (कर्मणि) ➔ अन्नम् (यत् खाद्यते तत्)"
   }
 }

@@ -544,6 +544,19 @@ tr th {
   font-weight: 800;
 }
 
+.hhtb-contact-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hhtb-contact-label {
+  font-weight: 700;
+  color: #334155;
+}
+
 .hhtb-whatsapp {
   color: #15803d !important;
   font-weight: 700;
@@ -560,6 +573,30 @@ tr th {
   border-color: #15803d;
   color: #166534 !important;
   transform: translateY(-1px);
+}
+
+.hhtb-email {
+  color: #0369a1 !important;
+  font-weight: 700;
+  text-decoration: none;
+  background: rgba(2, 132, 199, 0.08);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(2, 132, 199, 0.3);
+  transition: all 0.18s ease;
+}
+
+.hhtb-email:hover {
+  background: rgba(2, 132, 199, 0.16);
+  border-color: #0284c7;
+  color: #075985 !important;
+  transform: translateY(-1px);
+}
+
+.hhtb-contact-or {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.82rem;
 }
 
 .hhtb-wa-only {

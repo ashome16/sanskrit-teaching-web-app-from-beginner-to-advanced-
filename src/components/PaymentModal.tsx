@@ -465,17 +465,19 @@ const PaymentModal: React.FC = () => {
               </div>
 
               <div style={{ padding: '0.85rem 0 0', marginTop: '1rem', borderTop: '1px solid #e2e8f0', fontSize: '0.78rem', color: '#64748b', textAlign: 'center', lineHeight: 1.6 }}>
-                Questions or payment help?{' '}
+                Questions or payment help? Contact :{' '}
                 <a
                   href="https://wa.me/919000335468"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: '#15803d', fontWeight: 800, textDecoration: 'none' }}
                 >
-                  💬 WhatsApp: 9000335468 (Only WhatsApp)
+                  💬 Message at (9000335468) (Only WhatsApp)
                 </a>
+                {' or Email : '}
+                <a href="mailto:admin@ednetlearn.in" style={{ color: '#0369a1', fontWeight: 700, textDecoration: 'none' }}>admin@ednetlearn.in</a>
                 {' · '}
-                <a href="mailto:care@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>care@ednetlearn.in</a>
+                <a href="mailto:care@ednetlearn.in" style={{ color: '#64748b', fontWeight: 600, textDecoration: 'none' }}>care@ednetlearn.in</a>
               </div>
             </div>
           </>

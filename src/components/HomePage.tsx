@@ -1120,20 +1120,31 @@ const HomePage: React.FC<HomePageProps> = ({
           </button>
         </div>
 
-        {/* Trust Badges & WhatsApp Support */}
+        {/* Trust Badges & Contact (WhatsApp + Email) */}
         <div className="home-hero-trust-bar">
           <span className="hhtb-item"><span>✓</span> 100% Free for 14 Days</span>
           <span className="hhtb-item"><span>✓</span> No Credit Card / Auto-Debit</span>
           <span className="hhtb-item"><span>✓</span> Instant Online Activation</span>
-          <a
-            href="https://wa.me/919000335468?text=Hello%20EdNet%20Gurukul%2C%20I%20have%20a%20question%20about%20Sanskrit%20learning"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hhtb-item hhtb-whatsapp"
-            title="Chat directly on WhatsApp for curriculum guidance or queries"
-          >
-            <span aria-hidden="true">💬</span> WhatsApp: +91 9000335468 <span className="hhtb-wa-only">(Only WhatsApp)</span>
-          </a>
+          <div className="hhtb-contact-group">
+            <span className="hhtb-contact-label">Contact :</span>
+            <a
+              href="https://wa.me/919000335468?text=Hello%20EdNet%20Gurukul%2C%20I%20have%20a%20question%20about%20Sanskrit%20learning"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hhtb-item hhtb-whatsapp"
+              title="Message on WhatsApp: 9000335468 (Only WhatsApp)"
+            >
+              <span aria-hidden="true">💬</span> Message at (9000335468) <span className="hhtb-wa-only">(Only WhatsApp)</span>
+            </a>
+            <span className="hhtb-contact-or">or</span>
+            <a
+              href="mailto:admin@ednetlearn.in"
+              className="hhtb-item hhtb-email"
+              title="Email: admin@ednetlearn.in"
+            >
+              <span aria-hidden="true">✉️</span> Email : admin@ednetlearn.in
+            </a>
+          </div>
         </div>
 
         {onOpenSearch && (

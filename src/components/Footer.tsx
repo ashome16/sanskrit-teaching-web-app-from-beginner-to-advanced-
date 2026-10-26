@@ -462,7 +462,16 @@ export const Footer: React.FC<FooterProps> = ({
                   title="Contact Support on WhatsApp: +91 9000335468 (Only WhatsApp)"
                 >
                   <span className="social-pill-icon">💬</span>
-                  <span>WhatsApp: 9000335468 (Only WhatsApp)</span>
+                  <span>Contact: Message at (9000335468) (Only WhatsApp)</span>
+                </a>
+                <a
+                  href="mailto:admin@ednetlearn.in"
+                  className="footer-social-pill footer-social-pill--email"
+                  style={{ borderColor: 'rgba(2, 132, 199, 0.4)', background: 'rgba(2, 132, 199, 0.08)', color: '#0369a1' }}
+                  title="Email: admin@ednetlearn.in"
+                >
+                  <span className="social-pill-icon">✉️</span>
+                  <span>or Email: admin@ednetlearn.in</span>
                 </a>
                 <a
                   href="https://youtube.com"

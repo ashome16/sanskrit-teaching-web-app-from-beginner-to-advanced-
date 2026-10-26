@@ -309,7 +309,15 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
               style={{ color: '#15803d', textDecoration: 'underline' }}
               title="Chat with teacher on WhatsApp: 9000335468 (Only WhatsApp)"
             >
-              <span>💬</span> WhatsApp: 9000335468 (Only WhatsApp)
+              <span>💬</span> Contact : Message at (9000335468) (Only WhatsApp)
+            </a>
+            <a
+              href="mailto:admin@ednetlearn.in"
+              className="poq-guarantee-item"
+              style={{ color: '#0369a1', textDecoration: 'underline' }}
+              title="Email: admin@ednetlearn.in"
+            >
+              <span>✉️</span> or Email : admin@ednetlearn.in
             </a>
           </div>
         </div>

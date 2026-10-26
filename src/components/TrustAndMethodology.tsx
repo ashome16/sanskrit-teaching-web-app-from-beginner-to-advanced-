@@ -138,7 +138,7 @@ export const TrustAndMethodology: React.FC = () => {
               <span className="tst-icon">💬</span>
               <div>
                 <strong>Verified Support Contact</strong>
-                <span>Dedicated Acharya desk on WhatsApp: <strong>+91 9000335468 (Only WhatsApp)</strong> &amp; <code>care@ednetlearn.in</code>.</span>
+                <span>Dedicated Acharya desk — Contact: Message at <strong>+91 9000335468 (Only WhatsApp)</strong> or Email: <code>admin@ednetlearn.in</code> / <code>care@ednetlearn.in</code>.</span>
               </div>
             </div>
           </div>
