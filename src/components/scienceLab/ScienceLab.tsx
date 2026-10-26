@@ -20,6 +20,8 @@ const ChandahshastraLab = lazy(() => import('./ChandahshastraLab'));
 const UjjainGeodesyStudio = lazy(() => import('../UjjainGeodesyStudio'));
 const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 import { BodhiWisdomCard } from '../BodhiWisdomCard';
+import { GuidedQuestHUD } from './GuidedQuestHUD';
+import { QuestDirectoryModal } from './QuestDirectoryModal';
 
 export type LabCategory = 'all' | 'matter' | 'cosmos' | 'life' | 'waves';
 
@@ -354,6 +356,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
     return readHash() || 'paramanu';
   });
   const [filterCat, setFilterCat] = useState<LabCategory>('all');
+  const [isQuestMode, setIsQuestMode] = useState(true);
+  const [isQuestDirectoryOpen, setIsQuestDirectoryOpen] = useState(false);
   const simRef = useRef<HTMLDivElement>(null);
   const firstRun = useRef(true);
 
@@ -435,6 +439,22 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             <span className="vl-hud-pill"><span>🧠</span> BODHI AI GUIDE</span>
           </div>
           <div className="vl-btn-row">
+            <button
+              type="button"
+              className={`vl-btn ${isQuestMode ? 'vl-btn--gold' : 'vl-btn--cyber'}`}
+              onClick={() => setIsQuestMode((prev) => !prev)}
+              title="Toggle between 3-Minute Guided Quests and Open Sandbox Mode"
+            >
+              {isQuestMode ? '🎯 GUIDED QUEST MODE: ON' : '🕹️ FREE SANDBOX MODE'}
+            </button>
+            <button
+              type="button"
+              className="vl-btn vl-btn--cyber-ghost"
+              onClick={() => setIsQuestDirectoryOpen(true)}
+              title="Browse all 3-minute gamified quests across reality sandboxes"
+            >
+              🧭 QUEST DIRECTORY
+            </button>
             {onGoHome && <button type="button" className="vl-btn vl-btn--cyber" onClick={onGoHome}>◀ MAIN HUB</button>}
             {onOpenResources && <button type="button" className="vl-btn vl-btn--cyber-ghost" onClick={onOpenResources}>साधनानि · TOOLKIT ⚙️</button>}
           </div>
@@ -707,6 +727,15 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           <BodhiWisdomCard gameId={active} gameTitle={seg.title} />
         </div>
 
+        {/* Guided Quest Mode HUD (3-Minute Gamified Missions) */}
+        {isQuestMode && (
+          <GuidedQuestHUD
+            labId={active}
+            labTitle={seg.title}
+            onOpenAllQuestsModal={() => setIsQuestDirectoryOpen(true)}
+          />
+        )}
+
         <Suspense fallback={<SimLoader />}>
           {active === 'paramanu' && <ParamanuBuilder onNextLab={() => handleNavigateLab(nextSeg.id)} />}
           {active === 'asato-ma' && <AsatoMa />}
@@ -853,6 +882,17 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         Content note: the lab uses “traditionally”, “attributed to” and “preserved in” on purpose. Old texts and modern science
         ask different questions; where we compare them, the comparison is labelled.
       </p>
+
+      {/* 3-Minute Reality Sandbox Quests Archive Modal */}
+      <QuestDirectoryModal
+        isOpen={isQuestDirectoryOpen}
+        onClose={() => setIsQuestDirectoryOpen(false)}
+        onSelectQuest={(targetLabId) => {
+          handleNavigateLab(targetLabId as LabSegmentId);
+          setIsQuestMode(true);
+        }}
+        activeLabId={active}
+      />
     </div>
   );
 };

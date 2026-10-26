@@ -16905,3 +16905,836 @@
 .vl-qbadge.is-next{background:#334155;color:#cbd5e1}
 @media (max-width:640px){.vl-qcards{flex-direction:column}.vl-qline{flex:0 0 1rem;width:3px;height:1rem;align-self:center}.vl-qcard{flex-direction:row;flex-wrap:wrap;text-align:left;padding:.7rem .7rem .7rem;column-gap:.6rem}.vl-qring{width:2.8rem;height:2.8rem;font-size:1.4rem}.vl-qcard>.vl-qlvl,.vl-qcard>.vl-qtitle,.vl-qcard>.vl-qdev,.vl-qcard>.vl-qgoal{flex-basis:calc(100% - 3.6rem);margin-left:3.4rem}.vl-qring{position:absolute;left:.7rem;top:50%;transform:translateY(-50%)}.vl-qcard>.vl-qlvl{margin-top:0}}
 @media (prefers-reduced-motion: reduce){.vl-qcard{transition:none;animation:none!important}.vl-qcard.is-now{box-shadow:0 0 12px #facc15aa}}
+
+/* =========================================================================
+   Guided Quest Mode HUD & 3-Minute Challenge Protocol
+   ========================================================================= */
+
+.vl-quest-hud {
+  margin-bottom: 2rem;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-radius: 18px;
+  padding: 1.35rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 0 20px rgba(245, 158, 11, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.vl-quest-hud::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, #eab308, #38bdf8, #818cf8);
+}
+
+.vl-quest-hud--empty {
+  padding: 1rem 1.5rem;
+  border-color: rgba(100, 116, 139, 0.3);
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* Header */
+.vl-quest-hud-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+
+.vl-quest-hud-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.vl-quest-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.vl-quest-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1e293b;
+  background: #facc15;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.vl-quest-difficulty {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+}
+
+.vl-quest-duration {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-family: ui-monospace, monospace;
+}
+
+.vl-quest-completed-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: #16a34a;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+}
+
+.vl-quest-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.vl-quest-title-sa {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.15rem;
+  color: #fde047;
+  margin-left: 0.4rem;
+}
+
+/* Timer and Selector */
+.vl-quest-hud-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.vl-quest-timer-box {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid #475569;
+  padding: 0.4rem 0.85rem;
+  border-radius: 10px;
+}
+
+.vl-quest-timer-box.is-urgent {
+  border-color: #ef4444;
+  animation: vlTimerPulse 1s infinite alternate;
+}
+
+@keyframes vlTimerPulse {
+  0% { box-shadow: 0 0 4px rgba(239, 68, 68, 0.4); }
+  100% { box-shadow: 0 0 16px rgba(239, 68, 68, 0.8); }
+}
+
+.vl-quest-timer-digits {
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: 0.05em;
+}
+
+.vl-quest-timer-toggle {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.1rem;
+}
+
+.vl-quest-timer-toggle:hover {
+  color: #f8fafc;
+}
+
+.vl-quest-selector-pills {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.vl-quest-selector-pill {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid #475569;
+  color: #cbd5e1;
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vl-quest-selector-pill:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+.vl-quest-selector-pill.is-active {
+  background: #f59e0b;
+  color: #0f172a;
+  border-color: #d97706;
+  font-weight: 800;
+}
+
+.vl-quest-selector-pill.is-conquered {
+  border-color: #22c55e;
+}
+
+/* Prompt Banner */
+.vl-quest-prompt-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-left: 4px solid #f59e0b;
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 1.15rem;
+}
+
+.vl-quest-prompt-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.vl-quest-prompt-content {
+  flex: 1;
+}
+
+.vl-quest-prompt-kicker {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fde047;
+  margin-bottom: 0.25rem;
+}
+
+.vl-quest-prompt-text {
+  margin: 0;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  line-height: 1.5;
+}
+
+/* Steps Box */
+.vl-quest-steps-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(71, 85, 105, 0.4);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.15rem;
+}
+
+.vl-quest-steps-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.vl-quest-steps-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.vl-quest-steps-progress-bar {
+  flex: 0 0 140px;
+  height: 7px;
+  background: #334155;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.vl-quest-steps-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #22c55e);
+  transition: width 0.3s ease;
+}
+
+.vl-quest-steps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.vl-quest-step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(71, 85, 105, 0.35);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.vl-quest-step-item:hover {
+  background: rgba(51, 65, 85, 0.8);
+  border-color: #64748b;
+}
+
+.vl-quest-step-item.is-done {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.vl-quest-step-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  background: #1e293b;
+  border: 1px solid #64748b;
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.vl-quest-step-item.is-done .vl-quest-step-checkbox {
+  background: #22c55e;
+  border-color: #16a34a;
+  color: #ffffff;
+}
+
+.vl-quest-step-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.vl-quest-step-sa {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  color: #fde047;
+  font-size: 0.84rem;
+}
+
+/* Action Toolbar */
+.vl-quest-action-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.vl-quest-action-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.vl-quest-tool-btn {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid #475569;
+  color: #e2e8f0;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vl-quest-tool-btn:hover {
+  background: #334155;
+  border-color: #94a3b8;
+}
+
+.vl-quest-tool-btn--lore {
+  color: #fde047;
+}
+
+.vl-quest-tool-btn--preset {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+
+.vl-quest-tool-btn--preset:hover {
+  background: rgba(56, 189, 248, 0.25);
+}
+
+.vl-quest-verify-btn {
+  padding: 0.55rem 1.25rem;
+  background: #334155;
+  color: #94a3b8;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: not-allowed;
+  transition: all 0.18s ease;
+}
+
+.vl-quest-verify-btn.is-ready {
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+  color: #ffffff;
+  border-color: #15803d;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.4);
+}
+
+.vl-quest-verify-btn.is-ready:hover {
+  background: #15803d;
+  transform: translateY(-1px);
+}
+
+/* Hint Bubble */
+.vl-quest-hint-bubble {
+  margin-top: 0.85rem;
+  background: rgba(8, 47, 73, 0.85);
+  border: 1px solid #0284c7;
+  border-radius: 10px;
+  padding: 0.65rem 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e0f2fe;
+  font-size: 0.86rem;
+}
+
+.vl-quest-hint-avatar {
+  font-weight: 800;
+  color: #38bdf8;
+  white-space: nowrap;
+}
+
+.vl-quest-hint-text {
+  flex: 1;
+}
+
+.vl-quest-hint-close {
+  background: none;
+  border: none;
+  color: #7dd3fc;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0 0.2rem;
+}
+
+/* Lore Drawer */
+.vl-quest-lore-drawer {
+  margin-top: 0.85rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 10px;
+  padding: 0.95rem 1.15rem;
+}
+
+.vl-quest-sutra-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px dashed rgba(245, 158, 11, 0.25);
+}
+
+.vl-quest-sutra-quote {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.05rem;
+  color: #fde047;
+  font-weight: 700;
+}
+
+.vl-quest-sutra-meaning {
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+.vl-quest-sutra-source {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.vl-quest-lore-text {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #94a3b8;
+  line-height: 1.55;
+}
+
+/* Quest Victory Modal */
+.vl-quest-modal-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 10005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.vl-quest-modal-card {
+  background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(245, 158, 11, 0.25);
+  animation: vlModalPop 0.3s ease-out;
+}
+
+@keyframes vlModalPop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.vl-quest-modal-badge-icon {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.vl-quest-modal-congrats {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #fde047;
+  margin-bottom: 0.4rem;
+}
+
+.vl-quest-modal-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.vl-quest-modal-badge-name {
+  font-size: 0.95rem;
+  color: #38bdf8;
+  margin: 0 0 1rem 0;
+}
+
+.vl-quest-modal-reward {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.vl-quest-reward-pill {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fde047;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.vl-quest-modal-desc {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0 0 1.5rem 0;
+}
+
+.vl-quest-modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =========================================================================
+   Quest Directory Modal (All Sectors)
+   ========================================================================= */
+
+.vl-quest-directory-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 10006;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.vl-quest-directory-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.vl-quest-directory-panel {
+  position: relative;
+  background: #0f172a;
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
+  border-radius: 20px;
+  width: 95%;
+  max-width: 780px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 1.75rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  color: #e2e8f0;
+}
+
+.vl-quest-directory-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.vl-quest-directory-badge {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.vl-quest-directory-title {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.vl-quest-directory-sub {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+.vl-quest-directory-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.vl-quest-directory-close:hover {
+  color: #f8fafc;
+}
+
+.vl-quest-directory-progress-bar-wrap {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(71, 85, 105, 0.4);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.vl-quest-directory-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  margin-bottom: 0.45rem;
+  color: #cbd5e1;
+}
+
+.vl-quest-directory-progress-meta strong {
+  color: #fde047;
+}
+
+.vl-quest-directory-progress-track {
+  height: 8px;
+  background: #1e293b;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.vl-quest-directory-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  transition: width 0.3s ease;
+}
+
+.vl-quest-directory-sectors {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vl-quest-sector-card {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  border-radius: 12px;
+  padding: 0.95rem 1.15rem;
+}
+
+.vl-quest-sector-card.is-current {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.vl-quest-sector-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.vl-quest-sector-name {
+  color: #fde047;
+}
+
+.vl-quest-sector-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vl-quest-directory-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.vl-quest-directory-item:hover {
+  background: rgba(51, 65, 85, 0.8);
+  border-color: #38bdf8;
+  transform: translateX(4px);
+}
+
+.vl-quest-directory-item.is-conquered {
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.vl-quest-directory-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.vl-quest-item-badge-icon {
+  font-size: 1.6rem;
+}
+
+.vl-quest-item-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.vl-quest-item-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.vl-quest-item-diff {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+}
+
+.vl-quest-item-prompt {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.vl-quest-directory-item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
+.vl-quest-item-time {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-family: ui-monospace, monospace;
+}
+
+.vl-quest-item-status {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.vl-quest-item-status.done {
+  color: #22c55e;
+}
+
+@media (max-width: 640px) {
+  .vl-quest-hud-top {
+    flex-direction: column;
+  }
+  .vl-quest-hud-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .vl-quest-directory-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .vl-quest-directory-item-right {
+    align-items: flex-start;
+    margin-left: 0;
+  }
+}
+
