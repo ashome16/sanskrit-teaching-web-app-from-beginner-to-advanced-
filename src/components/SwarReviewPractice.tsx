@@ -297,6 +297,9 @@ interface Props {
   onOpenWorksheets?: () => void;
   onOpenPuzzles?: () => void;
   onOpenGames?: () => void;
+  onOpenWorkbooks?: () => void;
+  onOpenWritingPad?: () => void;
+  onOpenSoundBoard?: () => void;
 }
 
 export const SWAR_SET_COUNTS: Record<SetId, number> = {
@@ -304,7 +307,16 @@ export const SWAR_SET_COUNTS: Record<SetId, number> = {
   numbers: NUMBERS.length, vacana: VACANA_ROWS.length, listen: 10, saying: SAYING_QS.length,
 };
 
-const SwarReviewPractice: React.FC<Props> = ({ onOpenCertificate, onOpenBodhi, onOpenWorksheets, onOpenPuzzles, onOpenGames }) => {
+const SwarReviewPractice: React.FC<Props> = ({
+  onOpenCertificate,
+  onOpenBodhi,
+  onOpenWorksheets,
+  onOpenPuzzles,
+  onOpenGames,
+  onOpenWorkbooks,
+  onOpenWritingPad,
+  onOpenSoundBoard,
+}) => {
   const [active, setActive] = useState<SetId | null>(null);
   const [open, setOpen] = useState(true);
   const set = SETS.find((s) => s.id === active) || null;
@@ -352,10 +364,13 @@ const SwarReviewPractice: React.FC<Props> = ({ onOpenCertificate, onOpenBodhi, o
 
         {open && (
           <div style={{ marginTop: 14, display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
-            <span style={{ color: '#6b6375', fontSize: '0.92rem' }}>More: interactive puzzles, games and worksheets, or Ask Bodhi.</span>
+            <span style={{ color: '#6b6375', fontSize: '0.92rem' }}>Related Practice &amp; Material:</span>
+            {onOpenWorkbooks && <button style={small} onClick={onOpenWorkbooks}>📚 Swar Workbook &amp; Materials</button>}
+            {onOpenWritingPad && <button style={small} onClick={onOpenWritingPad}>✍️ Writing Tracing Slate</button>}
+            {onOpenSoundBoard && <button style={small} onClick={onOpenSoundBoard}>🔊 Alphabet Sound Board</button>}
+            {onOpenWorksheets && <button style={small} onClick={onOpenWorksheets}>📄 Worksheets</button>}
             {onOpenPuzzles && <button style={small} onClick={onOpenPuzzles}>🧩 Puzzles</button>}
             {onOpenGames && <button style={small} onClick={onOpenGames}>🎮 Games</button>}
-            {onOpenWorksheets && <button style={small} onClick={onOpenWorksheets}>📄 Worksheets</button>}
             {onOpenBodhi && <button style={small} onClick={onOpenBodhi}>🙋 Ask Bodhi</button>}
             {onOpenCertificate && <button style={small} onClick={onOpenCertificate}>🏅 Finished the book? Get your certificate</button>}
           </div>

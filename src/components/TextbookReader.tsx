@@ -32,6 +32,8 @@ import { NumbersGuide } from './NumbersGuide';
 import { getTextbookMetaForLesson } from '../utils/textbookCovers';
 import VarnamalaFlashcardDownloadModal from './VarnamalaFlashcardDownloadModal';
 import ParagraphWordMatchTest from './ParagraphWordMatchTest';
+import SwarReviewPractice from './SwarReviewPractice';
+import SwarWorkbooksHub from './SwarWorkbooksHub';
 import '../styles/textbook-reader.css';
 import '../styles/varnamala-studio.css';
 
@@ -56,6 +58,10 @@ interface TextbookReaderProps {
   onOpenCbseGuide?: () => void;
   /** Opens the बारहखड़ी lesson (deep link /barakhadi); access rules applied by the parent. */
   onOpenBarakhadi?: () => void;
+  initialVarnamalaSubMode?: 'sound' | 'writing' | 'quizzes' | 'workbooks' | 'worksheets';
+  onOpenCertificate?: () => void;
+  onOpenBodhi?: () => void;
+  onOpenGames?: () => void;
 }
 
 const cleanWord = (value: string): string =>
@@ -556,6 +562,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onOpenVoiceSettings,
   onOpenCbseGuide,
   onOpenBarakhadi,
+  initialVarnamalaSubMode,
+  onOpenCertificate,
+  onOpenBodhi,
+  onOpenGames,
 }) => {
   const { isAdminLoggedIn, currentUser, openAuthModal } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
@@ -587,7 +597,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   /** Lesson Play all: display index of the word being spoken (highlight follows the voice). */
   const [playingTokenIdx, setPlayingTokenIdx] = useState<number | null>(null);
   const [playingGroupIdx, setPlayingGroupIdx] = useState<number | null>(null);
-  const [varnamalaSubMode, setVarnamalaSubMode] = useState<'sound' | 'writing' | 'worksheets'>('sound');
+  const [varnamalaSubMode, setVarnamalaSubMode] = useState<
+    'sound' | 'writing' | 'quizzes' | 'workbooks' | 'worksheets'
+  >(initialVarnamalaSubMode || 'sound');
+
+  useEffect(() => {
+    if (initialVarnamalaSubMode) {
+      setVarnamalaSubMode(initialVarnamalaSubMode);
+    }
+  }, [initialVarnamalaSubMode]);
   const [varnamalaCategoryFilter, setVarnamalaCategoryFilter] = useState<VarnamalaCategoryFilter>('all');
   const [numbersSubMode, setNumbersSubMode] = useState<'interactive' | 'tiles'>('interactive');
   const [padSelectedLetter, setPadSelectedLetter] = useState<string>('अ');
@@ -1611,7 +1629,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 onClick={() => setVarnamalaSubMode('sound')}
               >
                 <span className="varnamala-mode-icon">🔊</span>
-                <span>ध्वनि-फलकम् (Sound &amp; Pictures)</span>
+                <span>ध्वनि-फलकम् (Sound &amp; Audio)</span>
               </button>
               <button
                 type="button"
@@ -1619,7 +1637,33 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 onClick={() => setVarnamalaSubMode('writing')}
               >
                 <span className="varnamala-mode-icon">✍️</span>
-                <span>अक्षर-लेखनम् (Writing &amp; Tracing Studio)</span>
+                <span>अक्षर-लेखनम् (Writing Studio)</span>
+              </button>
+              <button
+                type="button"
+                className={`varnamala-mode-btn${varnamalaSubMode === 'quizzes' ? ' varnamala-mode-btn--active' : ''}`}
+                onClick={() => setVarnamalaSubMode('quizzes')}
+                style={{
+                  background: varnamalaSubMode === 'quizzes' ? undefined : '#fef9c3',
+                  color: varnamalaSubMode === 'quizzes' ? undefined : '#854d0e',
+                  borderColor: varnamalaSubMode === 'quizzes' ? undefined : '#fde047',
+                }}
+              >
+                <span className="varnamala-mode-icon">🎯</span>
+                <span>स्वर-प्रश्नोत्तरी (Swar Quizzes &amp; Review)</span>
+              </button>
+              <button
+                type="button"
+                className={`varnamala-mode-btn${varnamalaSubMode === 'workbooks' ? ' varnamala-mode-btn--active' : ''}`}
+                onClick={() => setVarnamalaSubMode('workbooks')}
+                style={{
+                  background: varnamalaSubMode === 'workbooks' ? undefined : '#dcfce7',
+                  color: varnamalaSubMode === 'workbooks' ? undefined : '#166534',
+                  borderColor: varnamalaSubMode === 'workbooks' ? undefined : '#86efac',
+                }}
+              >
+                <span className="varnamala-mode-icon">📚</span>
+                <span>अभ्यास-पुस्तिकाः व सामग्री (Workbooks &amp; Materials)</span>
               </button>
               <button
                 type="button"
@@ -1627,7 +1671,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 onClick={() => setVarnamalaSubMode('worksheets')}
               >
                 <span className="varnamala-mode-icon">📑</span>
-                <span>अभ्यास-पत्रिकाः (Printable Worksheets)</span>
+                <span>अभ्यास-पत्रिकाः (Worksheets)</span>
               </button>
               {onOpenBarakhadi && (
                 <button
@@ -1878,6 +1922,89 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 </button>
               )}
             </div>
+          )}
+
+          {isVarnamala && varnamalaSubMode === 'quizzes' && (
+            <div className="swar-quizzes-studio-wrap">
+              <div className="swar-quizzes-header-banner">
+                <div className="swar-quizzes-header-info">
+                  <span className="swar-quizzes-badge">🎯 स्वर-प्रश्नोत्तरी · Swar Quizzes &amp; Review</span>
+                  <h3 className="swar-quizzes-title">
+                    Basic Swar &amp; Alphabet Quizzes (From Swar Workbook pp. 23–24)
+                  </h3>
+                  <p className="swar-quizzes-desc">
+                    Reinforce letter recognition, word meanings, verb endings, pronouns, and numbers with instant answers, audio pronunciation, and book page references.
+                  </p>
+                </div>
+                <div className="swar-quizzes-header-actions">
+                  <button
+                    type="button"
+                    className="swar-header-pill-btn"
+                    onClick={() => setVarnamalaSubMode('workbooks')}
+                  >
+                    📚 Workbooks &amp; Materials Hub
+                  </button>
+                  <button
+                    type="button"
+                    className="swar-header-pill-btn"
+                    onClick={() => setVarnamalaSubMode('writing')}
+                  >
+                    ✍️ Tracing Slate
+                  </button>
+                  <button
+                    type="button"
+                    className="swar-header-pill-btn"
+                    onClick={() => setVarnamalaSubMode('sound')}
+                  >
+                    🔊 Sound Board
+                  </button>
+                  {onOpenCertificate && (
+                    <button
+                      type="button"
+                      className="swar-header-cert-btn"
+                      onClick={onOpenCertificate}
+                    >
+                      🏅 Claim Certificate
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <ErrorBoundary
+                fallbackTitle="🎯 Swar Quizzes Ready"
+                fallbackSubtitle="An unexpected issue occurred while rendering Swar Review Practice. Tap below to reload."
+              >
+                <SwarReviewPractice
+                  onOpenCertificate={onOpenCertificate}
+                  onOpenBodhi={onOpenBodhi}
+                  onOpenWorksheets={() => setVarnamalaSubMode('worksheets')}
+                  onOpenPuzzles={onOpenPuzzle}
+                  onOpenGames={onOpenGames}
+                  onOpenWorkbooks={() => setVarnamalaSubMode('workbooks')}
+                  onOpenWritingPad={() => setVarnamalaSubMode('writing')}
+                  onOpenSoundBoard={() => setVarnamalaSubMode('sound')}
+                />
+              </ErrorBoundary>
+            </div>
+          )}
+
+          {isVarnamala && varnamalaSubMode === 'workbooks' && (
+            <ErrorBoundary
+              fallbackTitle="📚 Swar &amp; Workbooks Hub Ready"
+              fallbackSubtitle="An unexpected issue occurred while rendering the workbooks hub. Tap below to reload."
+            >
+              <SwarWorkbooksHub
+                onSwitchToQuizzes={() => setVarnamalaSubMode('quizzes')}
+                onSwitchToWriting={() => setVarnamalaSubMode('writing')}
+                onSwitchToSound={() => setVarnamalaSubMode('sound')}
+                onOpenWorksheets={(cat) => (onOpenWorksheets ? onOpenWorksheets(cat || 'varnamala') : setVarnamalaSubMode('worksheets'))}
+                onOpenFlashcards={() => setIsFlashcardDownloadOpen(true)}
+                onOpenChart={() => setIsChartOpen(true)}
+                onOpenVideo={() => setIsSoundVideoOpen(true)}
+                onOpenCertificate={onOpenCertificate}
+                onOpenBarakhadi={onOpenBarakhadi}
+              />
+            </ErrorBoundary>
           )}
 
           {(!isVarnamala || varnamalaSubMode === 'sound') && (!isNumbers || numbersSubMode === 'tiles') && (

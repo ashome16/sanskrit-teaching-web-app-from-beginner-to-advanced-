@@ -7,7 +7,6 @@ import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters, canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
 import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadQuizSheet } from '../utils/contentDownload';
-import SwarReviewPractice from './SwarReviewPractice';
 import '../styles/quiz-section.css';
 
 export type QuizTrackId = 'all' | 'class7' | 'class8' | 'class9' | 'grammar' | 'vedic_maths';
@@ -151,9 +150,8 @@ interface QuizSectionProps {
   onOpenBodhi?: () => void;
   onOpenPuzzles?: () => void;
   onOpenGames?: () => void;
-  /** Guest visitor (freemium gate): show only Swar Review Practice plus a sign-up card. */
-  swarOnly?: boolean;
   onOpenRegister?: () => void;
+  onOpenSwarSection?: () => void;
 }
 
 const QuizSection: React.FC<QuizSectionProps> = ({
@@ -165,8 +163,8 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   onOpenBodhi,
   onOpenPuzzles,
   onOpenGames,
-  swarOnly,
   onOpenRegister,
+  onOpenSwarSection,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeTrack, setActiveTrack] = useState<QuizTrackId>('all');
@@ -569,39 +567,8 @@ const QuizSection: React.FC<QuizSectionProps> = ({
 
   const currentQ = activeQuestions ? activeQuestions[currentIndex] : null;
 
-  if (swarOnly) {
-    return (
-      <section className="quiz-section">
-        <SwarReviewPractice
-          onOpenCertificate={onOpenCertificate}
-          onOpenBodhi={onOpenBodhi}
-          onOpenWorksheets={onOpenWorksheets}
-          onOpenPuzzles={onOpenPuzzles}
-          onOpenGames={onOpenGames}
-        />
-        <div style={{ maxWidth: 1100, margin: '0 auto', textAlign: 'center', background: '#fff', border: '1px solid #e5e4e7', borderRadius: 18, padding: '1.2rem' }}>
-          <h3 style={{ marginTop: 0 }}>प्रश्नोत्तरी · Sanskrit &amp; Vedic Maths Quiz</h3>
-          <p style={{ color: '#6b6375' }}>Create a free account to open the full quiz arena: 39+ quiz sets for CBSE chapters, grammar and Vedic maths.</p>
-          {onOpenRegister && (
-            <button type="button" className="quiz-home-btn" onClick={onOpenRegister}>Sign in / Register</button>
-          )}
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section className="quiz-section">
-      {/* Swar workbook Review test practice (the p. 24 QR code opens /quiz/) */}
-      {!activeQuestions && (
-          <SwarReviewPractice
-            onOpenCertificate={onOpenCertificate}
-            onOpenBodhi={onOpenBodhi}
-            onOpenWorksheets={onOpenWorksheets}
-            onOpenPuzzles={onOpenPuzzles}
-            onOpenGames={onOpenGames}
-          />
-      )}
       {/* Top Header */}
       <header className="quiz-header">
         <div className="quiz-header-left">
@@ -655,6 +622,21 @@ const QuizSection: React.FC<QuizSectionProps> = ({
               📑 Printable Worksheets
             </button>
           )}
+          {onOpenBodhi && (
+            <button type="button" className="quiz-home-btn" onClick={onOpenBodhi} title="Ask Bodhi AI questions about the quiz">
+              🙋 Ask Bodhi
+            </button>
+          )}
+          {onOpenPuzzles && (
+            <button type="button" className="quiz-home-btn" onClick={onOpenPuzzles} title="Play Sanskrit Word Puzzles">
+              🧩 Tile Puzzle
+            </button>
+          )}
+          {onOpenGames && (
+            <button type="button" className="quiz-home-btn" onClick={onOpenGames} title="Science & Math Labs">
+              🎮 Science Lab
+            </button>
+          )}
           {onGoHome && (
             <button type="button" className="quiz-home-btn" onClick={onGoHome}>
               🏠 Back to Home
@@ -662,6 +644,45 @@ const QuizSection: React.FC<QuizSectionProps> = ({
           )}
         </div>
       </header>
+
+      {/* Beginner Swar Quizzes Relocation Notice */}
+      {!activeQuestions && (
+        <div className="quiz-swar-relocation-banner" role="region" aria-label="Beginner Swar Quizzes Notice">
+          <div className="quiz-swar-banner-left">
+            <span className="quiz-swar-banner-icon">🔤</span>
+            <div>
+              <div className="quiz-swar-banner-tag">Primary &amp; Beginner Sanskrit</div>
+              <h3 className="quiz-swar-banner-title">
+                Swar &amp; Alphabet Quizzes have moved to the Swar Section
+              </h3>
+              <p className="quiz-swar-banner-desc">
+                Looking for basic vowel drills, word meanings, matching pairs, and the <em>Swar · स्वर Workbook</em> (pp. 23–24) review test? They are now clubbed together with the workbooks, spoken audio recitation, tracing slate, and worksheets.
+              </p>
+            </div>
+          </div>
+          <div className="quiz-swar-banner-actions">
+            {onOpenSwarSection && (
+              <button
+                type="button"
+                className="quiz-swar-banner-btn"
+                onClick={onOpenSwarSection}
+              >
+                Open Swar &amp; Workbooks Hub →
+              </button>
+            )}
+            {onOpenCertificate && (
+              <button
+                type="button"
+                className="quiz-swar-cert-btn"
+                onClick={onOpenCertificate}
+                title="Finished the Swar workbook? Claim your colourful completion certificate"
+              >
+                🏅 Swar Certificate
+              </button>
+            )}
+          </div>
+        </div>
+      )}
 
       {showUpgradePrompt && !canDownload && (
         <div className="quiz-upgrade-banner" role="status">
@@ -683,7 +704,11 @@ const QuizSection: React.FC<QuizSectionProps> = ({
           </div>
           <div className="quiz-upgrade-actions">
             {gateReason === 'guest' ? (
-              <button type="button" className="quiz-retry-btn" onClick={() => openAuthModal('register')}>
+              <button
+                type="button"
+                className="quiz-retry-btn"
+                onClick={() => (onOpenRegister ? onOpenRegister() : openAuthModal('register'))}
+              >
                 {PAID_FEATURE_GATE.ctaGuest}
               </button>
             ) : gateReason === 'expired' ? (

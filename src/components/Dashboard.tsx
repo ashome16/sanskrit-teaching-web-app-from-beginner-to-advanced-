@@ -138,7 +138,7 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
   },
   quiz: {
     title: 'NCERT Class 7 Sanskrit Quizzes & Online Chapter Tests with Instant Solutions | EdNet Learn',
-    desc: 'Swar Review Practice for the Swar · स्वर — Sanskrit Workbook review test (pages 23–24), plus 39+ interactive quiz sets, 200+ CBSE curriculum questions, instant scoring, and explanation cards.',
+    desc: 'Interactive Sanskrit & Vedic Maths quiz arena: 39+ quiz sets covering CBSE Class 7, 8, 9 Deepakam & Sharada chapters, Vyākaraṇa grammar, and mental speed sutras with instant solutions.',
   },
   board: {
     title: 'Jodo Tile Studio (जोडो): 6,000+ Sanskrit Word Puzzles | EdNet Learn',
@@ -189,7 +189,16 @@ const pathToView = (pathname: string): DashboardView | null => {
   if (clean === '/dhatupatha' || clean === '/dhatu' || clean === '/dhaturoop') return 'dhatupatha';
   if (clean === '/quiz' || clean === '/quizzes') return 'quiz';
   if (clean === '/board' || clean === '/jodo' || clean === '/puzzles') return 'board';
-  if (clean === '/reader' || clean === '/varnamala' || clean === '/lessons' || clean === '/barakhadi') return 'reader';
+  if (
+    clean === '/reader' ||
+    clean === '/varnamala' ||
+    clean === '/swar' ||
+    clean === '/swar-review' ||
+    clean === '/swar-quizzes' ||
+    clean === '/workbooks' ||
+    clean === '/lessons' ||
+    clean === '/barakhadi'
+  ) return 'reader';
   if (clean === '/faq' || clean === '/help') return 'faq';
   if (clean === '/certificate' || clean === '/swar-certificate') return 'certificate';
   if (
@@ -288,6 +297,16 @@ const Dashboard: React.FC = () => {
     } catch {
       return null;
     }
+  });
+  const [varnamalaInitialSubMode, setVarnamalaInitialSubMode] = useState<
+    'sound' | 'writing' | 'quizzes' | 'workbooks' | 'worksheets'
+  >(() => {
+    try {
+      const clean = window.location.pathname.replace(/\/+$/, '');
+      if (clean === '/swar-review' || clean === '/swar-quizzes' || window.location.hash === '#swar-review') return 'quizzes';
+      if (clean === '/workbooks' || window.location.hash === '#workbooks') return 'workbooks';
+    } catch {}
+    return 'sound';
   });
   const [philosophyEssay, setPhilosophyEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy'>('ai_sanskrit');
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
@@ -516,9 +535,8 @@ const Dashboard: React.FC = () => {
     }
 
     if (target.view === 'quiz' && target.quizAnchor === 'swar-review') {
-      // Swar workbook readers (p. 24 QR) reach the review practice without signing in.
-      setQuizAnchor(null);
-      setActiveView('quiz');
+      // Swar workbook readers (p. 24 QR) reach the review practice in the Swar & Workbooks section
+      openVarnamala('quizzes');
       return;
     }
     if (target.view === 'quiz') {
@@ -899,12 +917,15 @@ const Dashboard: React.FC = () => {
     // wordSelection: auto-select effect fills from the new sentence
   };
 
-  const openVarnamala = () => {
+  const openVarnamala = (
+    subMode?: 'sound' | 'writing' | 'quizzes' | 'workbooks' | 'worksheets'
+  ) => {
     if (!checkAccess('reader', 'varnamala')) return;
     const idx = lessons.findIndex((item) => item.id === 'varnamala');
     if (idx >= 0) {
       setLessonIndex(idx);
       setSentenceIndex(0);
+      if (subMode) setVarnamalaInitialSubMode(subMode);
       // wordSelection: auto-select effect fills from the new sentence
     }
     setActiveView('reader');
@@ -1028,7 +1049,7 @@ const Dashboard: React.FC = () => {
             <button
               type="button"
               className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'reader' && (lesson?.id === 'varnamala' || lesson?.id === 'barakhadi') ? ' active' : ''}`}
-              onClick={openVarnamala}
+              onClick={() => openVarnamala()}
               title="Open Alphabet & Syllables (वर्णमाला)"
             >
               <img src="/nav/nav-varnamala.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
@@ -1317,7 +1338,7 @@ const Dashboard: React.FC = () => {
             onOpenBodhi={() => setIsBodhiGuideOpen(true)}
             onOpenPuzzles={() => navigateToView('board')}
             onOpenGames={() => navigateToView('science-lab')}
-            swarOnly={isContentGated('quiz')}
+            onOpenSwarSection={() => openVarnamala('quizzes')}
             onOpenRegister={() => { setPendingRedirect('quiz'); openAuthModal('register'); }}
           />
         )}
@@ -1360,6 +1381,7 @@ const Dashboard: React.FC = () => {
             <TextbookReader
               lessons={lessons}
               activeLessonId={lesson.id}
+              initialVarnamalaSubMode={varnamalaInitialSubMode}
               onSelectLesson={handleSelectLesson}
               sentence={sentence}
               sentenceNumber={sentenceIndex + 1}
@@ -1371,6 +1393,9 @@ const Dashboard: React.FC = () => {
               onJumpToSentence={jumpToSentence}
               isFirstSentence={isFirstSentence}
               isLastSentence={isLastSentence}
+              onOpenCertificate={() => { setQuizAnchor(null); setActiveView('certificate'); }}
+              onOpenBodhi={() => setIsBodhiGuideOpen(true)}
+              onOpenGames={() => navigateToView('science-lab')}
               onOpenQuiz={(category) => {
                 navigateToView('quiz');
                 if (category) setQuizAnchor(category);
