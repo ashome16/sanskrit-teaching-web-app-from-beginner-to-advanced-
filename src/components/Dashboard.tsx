@@ -113,64 +113,64 @@ const COURSE_PATHS = new Set([
 
 export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
   home: {
-    title: 'Sanskrit Online Classes & Gurukul Learning: Beginner to Advanced | EdNet Learn',
-    desc: 'Interactive Sanskrit online classes with Bodhi: spoken Sanskrit for beginners & kids, 28-lesson curriculum, CBSE NCERT Classes 6–10 coaching, Pāṇinian grammar, and Vedic math with live AI audio feedback.',
+    title: 'Sanskrit & Samskrit Online Classes: Gurukul Learning Beginner to Advanced | EdNet Learn',
+    desc: 'Interactive Sanskrit & Samskrit online classes with Bodhi: spoken Samskrit for beginners & kids, 28-lesson curriculum, CBSE NCERT Classes 6–10 coaching, Pāṇinian grammar, and Vedic math with live AI audio feedback.',
   },
   course: {
-    title: 'संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking | EdNet Learn Gurukul',
-    desc: 'Complete 6-module curriculum: Sanskrit as an integrated system for taking sound in, processing rules, and producing output. 28 lessons for science and contemplation.',
+    title: 'संस्कृत-चिन्तनम् · Sanskrit & Samskrit as a Way of Thinking | EdNet Learn Gurukul',
+    desc: 'Complete 6-module curriculum: Sanskrit (Samskrit) as an integrated system for taking sound in, processing rules, and producing output. 28 lessons for science and contemplation.',
   },
   'cbse-guide': {
-    title: 'CBSE Class 7, 8, 9 & 10 Sanskrit Exam Guide: Blueprint, Question Formation (किम्-पद) & Solved Papers | EdNet Learn',
-    desc: 'Master CBSE NCERT Sanskrit exams: official 80-mark blueprint, standardized instructions (निर्देशाः), core question words (क-कार शब्दाः), question formation (प्रश्ननिर्माणम्), and model solutions.',
+    title: 'CBSE Class 7, 8, 9 & 10 Sanskrit & Samskrit Exam Guide: Blueprint, Question Formation & Solved Papers | EdNet Learn',
+    desc: 'Master CBSE NCERT Sanskrit & Samskrit exams: official 80-mark blueprint, standardized instructions (निर्देशाः), core question words (क-कार शब्दाः), question formation (प्रश्ननिर्माणम्), and model solutions.',
   },
   resources: {
-    title: 'Free Sanskrit Study Vault: NCERT Class 7 Question Bank & CBSE Blueprint Mock Exam | EdNet Learn',
-    desc: 'Download complete 15-chapter Class 7 Sanskrit Deepakam question bank, Class 7 & 8 CBSE blueprint mock exam papers, Pāṇinian mouth map, and Koshashri dictionary.',
+    title: 'Free Sanskrit & Samskrit Study Vault: NCERT Class 7 Question Bank & CBSE Blueprint Mock Exam | EdNet Learn',
+    desc: 'Download complete 15-chapter Class 7 Sanskrit & Samskrit Deepakam question bank, Class 7 & 8 CBSE blueprint mock exam papers, Pāṇinian mouth map, and Koshashri dictionary.',
   },
   worksheets: {
-    title: 'CBSE Class 7 & 8 Sanskrit Worksheets, Chapter-wise Practice Exercises & NCERT Solutions | EdNet Learn',
-    desc: 'Free printable & interactive CBSE Sanskrit worksheets, translation drills, sandhi practice, and NCERT Deepakam exercise solutions for students.',
+    title: 'CBSE Class 7 & 8 Sanskrit & Samskrit Worksheets, Practice Exercises & NCERT Solutions | EdNet Learn',
+    desc: 'Free printable & interactive CBSE Sanskrit & Samskrit worksheets, translation drills, sandhi practice, and NCERT Deepakam exercise solutions for students.',
   },
   'vedic-maths': {
     title: 'Vaidic Gaṇitam Mastery (वैदिक-गणितम्): 16 Sutras, Fast Mental Math & Astronomy | EdNet Gurukul',
     desc: 'Master fast mental calculation, Vedic geometry, 16 Vedic mathematics sutras, 366-day Vedic astronomical calendar, and ancient metrology with interactive tools.',
   },
   grammar: {
-    title: 'CBSE Sanskrit Grammar: Top 100 Shabdroop, 5 Dhaturoop Lakaras, Sandhi & Vibhakti Rules | EdNet Learn',
-    desc: 'Interactive Sanskrit Vyakaran guide: declensions (shabdroop), verb conjugations (dhaturoop), sandhi rules, vibhakti charts, and phonetic audio.',
+    title: 'CBSE Sanskrit & Samskrit Grammar: Top 100 Shabdroop, 5 Dhaturoop Lakaras, Sandhi & Vibhakti | EdNet Learn',
+    desc: 'Interactive Sanskrit & Samskrit Vyakaran guide: declensions (shabdroop), verb conjugations (dhaturoop), sandhi rules, vibhakti charts, and phonetic audio.',
   },
   quiz: {
-    title: 'NCERT Class 7 Sanskrit Quizzes & Online Chapter Tests with Instant Solutions | EdNet Learn',
-    desc: 'Interactive Sanskrit & Vedic Maths quiz arena: 39+ quiz sets covering CBSE Class 7, 8, 9 Deepakam & Sharada chapters, Vyākaraṇa grammar, and mental speed sutras with instant solutions.',
+    title: 'NCERT Class 7 Sanskrit & Samskrit Quizzes & Online Chapter Tests with Instant Solutions | EdNet Learn',
+    desc: 'Interactive Sanskrit, Samskrit & Vedic Maths quiz arena: 39+ quiz sets covering CBSE Class 7, 8, 9 Deepakam & Sharada chapters, Vyākaraṇa grammar, and mental speed sutras with instant solutions.',
   },
   board: {
-    title: 'Jodo Tile Studio (जोडो): 6,000+ Sanskrit Word Puzzles | EdNet Learn',
-    desc: 'Interactive Sanskrit word-building game with 6,000+ puzzles across vocabulary, verbs, anatomy, math, and daily conversation.',
+    title: 'Jodo Tile Studio (जोडो): 6,000+ Sanskrit & Samskrit Word Puzzles & Games | EdNet Learn',
+    desc: 'Interactive Sanskrit & Samskrit word-building game with 6,000+ puzzles, 14 match-pair categories, and word mazes across vocabulary, verbs, anatomy, math, and daily conversation.',
   },
   reader: {
-    title: 'NCERT Class 7 Sanskrit Deepakam Solutions & Interactive Reader | EdNet Learn',
-    desc: 'Complete NCERT Class 7 Sanskrit Deepakam solutions, chapter-wise verse translations, word-by-word shabdarth, physical textbook page mapping, audio pronunciation, worksheets and quizzes.',
+    title: 'NCERT Class 7 Sanskrit & Samskrit Deepakam Solutions & Interactive Reader | EdNet Learn',
+    desc: 'Complete NCERT Class 7 Sanskrit & Samskrit Deepakam solutions, chapter-wise verse translations, word-by-word shabdarth, physical textbook page mapping, audio pronunciation, worksheets and quizzes.',
   },
   philosophy: {
-    title: 'Why Learn Sanskrit in the Age of AI & Darśana | EdNet Learn Gurukul',
-    desc: 'Why learn Sanskrit in the age of AI? Machines will make communication efficient; they will not make it living. Explore transfer vs bind, Pāṇinian phonetics, and mathematical darśana.',
+    title: 'Why Learn Sanskrit (Samskrit) in the Age of AI & Darśana | EdNet Learn Gurukul',
+    desc: 'Why learn Sanskrit & Samskrit in the age of AI? Machines will make communication efficient; they will not make it living. Explore transfer vs bind, Pāṇinian phonetics, and mathematical darśana.',
   },
   faq: {
     title: 'Frequently Asked Questions & Help | EdNet Learn Gurukul',
-    desc: 'Find answers about subscriptions, UPI payments, NCERT curriculum coverage, interactive puzzles, and learning Sanskrit online.',
+    desc: 'Find answers about subscriptions, UPI payments, NCERT curriculum coverage, interactive puzzles, and learning Sanskrit & Samskrit online.',
   },
   'science-lab': {
     title: 'Science Lab Games · Vijñāna Lab: Preschool to Advanced STEM Physics Sandboxes | EdNet Learn',
-    desc: 'Play 16 interactive science lab games and STEM physics sandboxes with Sanskrit terminology from preschool to advanced scholar levels. Build atoms, launch rockets, test gravity, explore cymatics, and soft-land on the Moon.',
+    desc: 'Play 16 interactive science lab games and STEM physics sandboxes with Sanskrit and Samskrit terminology from preschool to advanced scholar levels. Build atoms, launch rockets, test gravity, explore cymatics, and soft-land on the Moon.',
   },
   certificate: {
-    title: 'Swar · स्वर — Sanskrit Workbook Certificate of Completion | EdNet Learn',
+    title: 'Swar · स्वर — Sanskrit & Samskrit Workbook Certificate of Completion | EdNet Learn',
     desc: 'Finished Swar · स्वर — Sanskrit Workbook (The Darśana Series, by Sesha K Penumallu)? Enter your book code, answer one question from each part of the book, score 70% and download or print your colourful certificate.',
   },
   dhatupatha: {
     title: 'Dhātupāṭha & Pāṇinian Verb Engine: 5 Lakāras & Kṛt Pratyayas | EdNet Learn',
-    desc: 'Explore the classical Pāṇinian Dhātupāṭha library with 5 CBSE Lakāra conjugations (लट्, लृट्, लङ्, लोट्, विधिलिङ्), Kṛt participles, reverse word deconstructor, and pratyaya quiz.',
+    desc: 'Explore the classical Pāṇinian Dhātupāṭha library with 5 CBSE Lakāra conjugations (लट्, लृट्, लङ्, लोट्, विधिलिङ्), Kṛt participles, reverse word deconstructor, and pratyaya quiz for Samskrit verb mastery.',
   },
 };
 
@@ -182,16 +182,36 @@ export const BARAKHADI_METADATA: { title: string; desc: string } = {
 
 const pathToView = (pathname: string): DashboardView | null => {
   const clean = pathname.replace(/\/+$/, '') || '/';
-  if (clean === '/' || clean === '/home' || clean === '/index' || clean === '/learn-sanskrit-online-free') return 'home';
-  if (COURSE_PATHS.has(clean) || clean === '/spoken-sanskrit-course') return 'course';
+  if (
+    clean === '/' ||
+    clean === '/home' ||
+    clean === '/index' ||
+    clean === '/learn-sanskrit-online-free' ||
+    clean === '/learn-samskrit-online-free' ||
+    clean === '/learn-samskrit'
+  ) return 'home';
+  if (
+    COURSE_PATHS.has(clean) ||
+    clean === '/spoken-sanskrit-course' ||
+    clean === '/spoken-samskrit-course' ||
+    clean === '/samskrit-course'
+  ) return 'course';
   if (PHILOSOPHY_PATHS.has(clean)) return 'philosophy';
-  if (CBSE_GUIDE_PATHS.has(clean) || clean === '/cbse-sanskrit-classes') return 'cbse-guide';
+  if (
+    CBSE_GUIDE_PATHS.has(clean) ||
+    clean === '/cbse-sanskrit-classes' ||
+    clean === '/cbse-samskrit-classes'
+  ) return 'cbse-guide';
   if (RESOURCES_PATHS.has(clean)) return 'resources';
-  if (clean === '/worksheets') return 'worksheets';
+  if (clean === '/worksheets' || clean === '/samskrit-worksheets') return 'worksheets';
   if (clean === '/vedic-maths' || clean === '/vedic-math') return 'vedic-maths';
-  if (clean === '/grammar' || clean === '/sanskrit-grammar-lessons') return 'grammar';
+  if (
+    clean === '/grammar' ||
+    clean === '/sanskrit-grammar-lessons' ||
+    clean === '/samskrit-grammar-lessons'
+  ) return 'grammar';
   if (clean === '/dhatupatha' || clean === '/dhatu' || clean === '/dhaturoop') return 'dhatupatha';
-  if (clean === '/quiz' || clean === '/quizzes') return 'quiz';
+  if (clean === '/quiz' || clean === '/quizzes' || clean === '/samskrit-quiz') return 'quiz';
   if (
     clean === '/board' ||
     clean === '/jodo' ||

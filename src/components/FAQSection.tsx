@@ -61,6 +61,13 @@ const FAQ_DATA: FAQItem[] = [
     answer:
       'Scope: Bodhi accurately explains 7 Vibhaktis, 5 Lakāras, word-by-word NCERT anvaya, and step-by-step Vedic mental arithmetic. Limitations: Bodhi does not automatically grade subjective handwritten essays (these are escalated to human Acharyas on WhatsApp at +91 9000335468), does not replace school teachers, and does not engage in unconstrained open-ended conversation. Safeguards: 100% ad-free, COPPA/GDPR-K child-privacy compliant (zero personal data logging or behavioral ad profiling), strict Pāṇinian cross-verification, and one-tap escalation to certified human educators.',
   },
+  {
+    id: 'faq-samskrit-sanskrit',
+    category: 'curriculum',
+    question: 'Is Samskrit the same as Sanskrit? What does Samskritam mean?',
+    answer:
+      'Yes! "Samskrit" (संस्कृत / Saṃskṛtam) is the authentic phonetic transliteration of the language’s original name, meaning "refined, perfected, well-formed, and consecrated". While English historically anglicized the word as "Sanskrit", both spellings refer to the exact same classical Indian language. Our platform teaches classical and contemporary Samskrit (Sanskrit), covering Devanagari script, Pāṇinian vyākaraṇa grammar, spoken Samskritam (संभाषणम्), and NCERT school curricula.',
+  },
 ];
 
 interface FAQSectionProps {

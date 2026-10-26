@@ -1015,11 +1015,11 @@ const HomePage: React.FC<HomePageProps> = ({
         {/* 2. Main Outcome & Core Promise */}
         <h1 className="home-hero-title">
           <span className="home-hero-title-primary">
-            {englishFirst ? 'Master Sanskrit Step by Step' : 'सरल-संस्कृत-प्रवेशः · Master Sanskrit'}
+            {englishFirst ? 'Master Sanskrit & Samskrit Step by Step' : 'सरल-संस्कृत-प्रवेशः · Master Sanskrit / Samskrit'}
           </span>
           <p className="home-hero-main-outcome">
             {englishFirst
-              ? 'Go from alphabet basics to confident speaking, Pāṇinian grammar mastery, and top CBSE exam scores—with line-by-line audio and 6,000+ interactive practice puzzles.'
+              ? 'Go from alphabet basics to confident Samskrit speaking, Pāṇinian grammar mastery, and top CBSE exam scores—with line-by-line audio and 6,000+ interactive practice puzzles.'
               : 'वर्णमालातः आरभ्य संभाषणम्, पाणिनीय-व्याकरणम्, NCERT-दीपकं तथा CBSE-परीक्षा-सिद्धिम् अधिगच्छन्तु—ध्वनि-सहितम् अभ्यास-साधनैश्च।'}
           </p>
           <div className="home-hero-outcomes-strip" aria-label="Key Outcomes">
@@ -1193,7 +1193,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <span>The Gurukul Learning Pathway · सोपान-मार्गः</span>
             </div>
             <h2 className="home-journey-title">
-              Your Step-by-Step Sanskrit Journey · Measurable Outcomes
+              Your Step-by-Step Sanskrit &amp; Samskrit Journey · Measurable Outcomes
             </h2>
             <p className="home-journey-subtitle">
               A visible 6-stage roadmap designed for school students, parents, and beginners to achieve tangible outcomes at every milestone:
@@ -2348,7 +2348,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
             <div style={{ maxWidth: '850px' }}>
               <h2 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 1.95rem)', fontWeight: 800, color: '#2b2118', margin: '0 0 0.5rem', lineHeight: 1.3 }}>
-                Why Learn a Language — Especially Sanskrit — in the Age of AI
+                Why Learn a Language — Especially Sanskrit &amp; Samskrit — in the Age of AI
               </h2>
               <p style={{ fontSize: '1.08rem', fontWeight: 700, color: '#9a3423', margin: '0 0 0.75rem' }}>
                 Machines will make communication efficient. They will not make it living.

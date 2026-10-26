@@ -139,8 +139,8 @@ function getRouteJsonLd(pathname, meta) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'Course',
-      name: 'Sanskrit Online Classes with Bodhi: Beginner to Advanced Gurukul',
-      description: 'Interactive Sanskrit online classes guided by Bodhi: Spoken Sanskrit, CBSE NCERT Classes 6–10, Pāṇinian Vyakaran, and Vedic Mathematics with live audio pronunciation.',
+      name: 'Sanskrit & Samskrit Online Classes with Bodhi: Beginner to Advanced Gurukul',
+      description: 'Interactive Sanskrit & Samskrit online classes guided by Bodhi: Spoken Samskritam, CBSE NCERT Classes 6–10, Pāṇinian Vyakaran, and Vedic Mathematics with live audio pronunciation.',
       provider: {
         '@type': 'EducationalOrganization',
         name: 'EdNet Learn Gurukul',
@@ -152,22 +152,22 @@ function getRouteJsonLd(pathname, meta) {
           '@type': 'CourseInstance',
           courseMode: 'online',
           courseWorkload: 'PT15M/day',
-          name: 'Spoken Sanskrit & Varṇamālā Foundation',
-          description: '15-minute daily micro-classes on 400+ Sanskrit sounds, conversational greetings, and spoken vocabulary.',
+          name: 'Spoken Sanskrit & Samskrit (संभाषणम्) Varṇamālā Foundation',
+          description: '15-minute daily micro-classes on 400+ Sanskrit & Samskrit sounds, conversational greetings, and spoken vocabulary.',
         },
         {
           '@type': 'CourseInstance',
           courseMode: 'online',
           courseWorkload: 'PT30M/day',
-          name: 'CBSE & NCERT Sanskrit School Coaching (Classes 6–10)',
+          name: 'CBSE & NCERT Sanskrit & Samskrit School Coaching (Classes 6–10)',
           description: 'NCERT Deepakam line-by-line solutions, question formation (प्रश्ननिर्माणम्), and board exam blueprint preparation.',
         },
         {
           '@type': 'CourseInstance',
           courseMode: 'online',
           courseWorkload: 'PT30M/day',
-          name: 'Pāṇinian Vyakaran & Shloka Recitation',
-          description: 'Scientific derivation of Sanskrit words, 7 Vibhaktis, 5 Lakāras, and sacred shloka chanting cadence.',
+          name: 'Pāṇinian Samskrit Vyakaran & Shloka Recitation',
+          description: 'Scientific derivation of Sanskrit & Samskrit words, 7 Vibhaktis, 5 Lakāras, and sacred shloka chanting cadence.',
         },
         {
           '@type': 'CourseInstance',
@@ -362,10 +362,18 @@ function getRouteJsonLd(pathname, meta) {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'Can a complete beginner learn Sanskrit online at EdNet Learn Gurukul?',
+          name: 'Can a complete beginner learn Sanskrit & Samskrit online at EdNet Learn Gurukul?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. EdNet Learn Gurukul starts with interactive Varṇamālā phonetics, mouth articulation diagrams, and gentle daily 15-minute lessons suitable for all ages.',
+            text: 'Yes. EdNet Learn Gurukul starts with interactive Varṇamālā phonetics, mouth articulation diagrams, and gentle daily 15-minute lessons suitable for all ages learning Sanskrit and Samskrit.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is Samskrit the same as Sanskrit? What does Samskritam mean?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Samskrit (संस्कृतम् / Saṃskṛtam) is the authentic phonetic transliteration of the language name meaning refined and perfected. Both spellings refer to the exact same classical Indian language.',
           },
         },
         {
