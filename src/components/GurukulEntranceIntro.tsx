@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { gurukulAmbiance } from '../utils/gurukulAmbiance';
+import gurukulDawnUrl from '../assets/gurukul-dawn.jpg';
 import '../styles/gurukul-intro.css';
 
 interface GurukulEntranceIntroProps {
@@ -159,7 +160,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
       {/* Background Painting Scene */}
       <div
         className="gurukul-intro-bg"
-        style={{ backgroundImage: `url('/gurukul-dawn.jpg')` }}
+        style={{ backgroundImage: `url(${gurukulDawnUrl})` }}
       />
 
       {/* Atmospheric Mist & Golden Sunrise Beams */}

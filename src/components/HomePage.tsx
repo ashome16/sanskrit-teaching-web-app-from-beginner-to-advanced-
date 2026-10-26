@@ -764,7 +764,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [showEntranceIntro, setShowEntranceIntro] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
     try {
-      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen');
+      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen_v2');
       return !alreadySeen;
     } catch {
       return false;
@@ -778,7 +778,7 @@ const HomePage: React.FC<HomePageProps> = ({
       setIsLogoArrived(false);
     }, 1200);
     try {
-      sessionStorage.setItem('ednet_gurukul_intro_seen', 'true');
+      sessionStorage.setItem('ednet_gurukul_intro_seen_v2', 'true');
     } catch {}
   }, []);
 
@@ -978,9 +978,17 @@ const HomePage: React.FC<HomePageProps> = ({
               width={76}
               height={76}
               onClick={() => setShowEntranceIntro(true)}
-              title="EdNet Gurukul · संस्कृत-पाठशाला"
+              title="EdNet Gurukul · संस्कृत-पाठशाला · Click to view Gurukul painting"
               style={{ cursor: 'pointer' }}
             />
+            <button
+              type="button"
+              className="home-hero-crest-scene-btn"
+              onClick={() => setShowEntranceIntro(true)}
+              title="View the holistic Gurukul dawn painting"
+            >
+              🎨 गुरुकुल-दर्शनम् · View Gurukul Painting
+            </button>
           </div>
 
         {/* 1. Who It Is For (Audience Callout) */}
