@@ -399,44 +399,44 @@ export const WORD_MAZE_QUESTS: WordMazeQuest[] = [
     missionObjective: 'Connect adjacent Sanskrit words from Start to Goal to form the famous Panchatantra story!',
     gridRows: 5,
     gridCols: 5,
-    fullSentenceOrStoryDev: 'एकः काकः पिपासितः आसीत् । सः वने जलम् अन्वेषयति । घटे स्वल्पं जलम् अस्ति । काकः पाषाणखण्डान् घटे क्षिपति । जलम् उपरि आगच्छति । काकः जलं पीत्वा तृप्तः भवति ॥',
-    fullSentenceOrStoryEn: 'Once a crow was thirsty. He searched for water in the forest. In a pitcher, there was very little water. The crow dropped pebble stones into the pitcher. Water rose to the top. The crow drank water and was happily satisfied.',
+    fullSentenceOrStoryDev: 'एकदा एकः काकः पिपासितः आसीत् । सः वने जलम् अन्वेषयति । घटे स्वल्पं जलम् अस्ति । काकः पाषाणखण्डान् घटे क्षिपति । जलम् उपरि आगच्छति । काकः जलं पीत्वा तृप्तः भवति ॥',
+    fullSentenceOrStoryEn: 'Once upon a time, a crow was thirsty. He searched for water in the forest. In a pitcher, there was very little water. The crow dropped pebble stones into the pitcher. Water rose to the top. The crow drank water and was happily satisfied.',
     moral: 'उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः (Diligence and wits conquer every obstacle).',
     cells: [
-      // Row 0
-      { row: 0, col: 0, word: 'एकः', translation: 'One', isPath: true, stepOrder: 1 },
-      { row: 0, col: 1, word: 'काकः', translation: 'Crow', isPath: true, stepOrder: 2 },
-      { row: 0, col: 2, word: 'पिपासितः', translation: 'Thirsty', isPath: true, stepOrder: 3 },
-      { row: 0, col: 3, word: 'आसीत्', translation: 'Was', isPath: true, stepOrder: 4 },
-      { row: 0, col: 4, word: 'सूर्यः', translation: 'Sun (Trap)', isPath: false },
+      // Row 0: Once upon a time, a crow was thirsty
+      { row: 0, col: 0, word: 'एकदा', translation: 'Once upon a time', isPath: true, stepOrder: 1 },
+      { row: 0, col: 1, word: 'एकः', translation: 'One / A', isPath: true, stepOrder: 2 },
+      { row: 0, col: 2, word: 'काकः', translation: 'Crow', isPath: true, stepOrder: 3 },
+      { row: 0, col: 3, word: 'पिपासितः', translation: 'Thirsty', isPath: true, stepOrder: 4 },
+      { row: 0, col: 4, word: 'आसीत्', translation: 'Was', isPath: true, stepOrder: 5 },
 
-      // Row 1
+      // Row 1: In the forest he searched for water
       { row: 1, col: 0, word: 'वृक्षः', translation: 'Tree (Trap)', isPath: false },
       { row: 1, col: 1, word: 'पर्वतः', translation: 'Mountain (Trap)', isPath: false },
-      { row: 1, col: 2, word: 'अन्वेषयति', translation: 'Searches', isPath: true, stepOrder: 7 },
-      { row: 1, col: 3, word: 'जलम्', translation: 'Water', isPath: true, stepOrder: 6 },
-      { row: 1, col: 4, word: 'वने', translation: 'In the forest', isPath: true, stepOrder: 5 },
+      { row: 1, col: 2, word: 'अन्वेषयति', translation: 'Searches', isPath: true, stepOrder: 8 },
+      { row: 1, col: 3, word: 'जलम्', translation: 'Water', isPath: true, stepOrder: 7 },
+      { row: 1, col: 4, word: 'वने', translation: 'In the forest', isPath: true, stepOrder: 6 },
 
-      // Row 2
-      { row: 2, col: 0, word: 'अस्ति', translation: 'Is', isPath: true, stepOrder: 10 },
-      { row: 2, col: 1, word: 'स्वल्पम्', translation: 'Very little', isPath: true, stepOrder: 9 },
-      { row: 2, col: 2, word: 'घटे', translation: 'In the pot', isPath: true, stepOrder: 8 },
+      // Row 2: In the pot was very little water
+      { row: 2, col: 0, word: 'अस्ति', translation: 'Is', isPath: true, stepOrder: 11 },
+      { row: 2, col: 1, word: 'स्वल्पम्', translation: 'Very little', isPath: true, stepOrder: 10 },
+      { row: 2, col: 2, word: 'घटे', translation: 'In the pot', isPath: true, stepOrder: 9 },
       { row: 2, col: 3, word: 'नदी', translation: 'River (Trap)', isPath: false },
       { row: 2, col: 4, word: 'कमलम्', translation: 'Lotus (Trap)', isPath: false },
 
-      // Row 3
-      { row: 3, col: 0, word: 'काकः', translation: 'The Crow', isPath: true, stepOrder: 11 },
-      { row: 3, col: 1, word: 'पाषाणान्', translation: 'Pebbles', isPath: true, stepOrder: 12 },
-      { row: 3, col: 2, word: 'क्षिपति', translation: 'Throws in', isPath: true, stepOrder: 13 },
-      { row: 3, col: 3, word: 'उपरि', translation: 'Upwards', isPath: true, stepOrder: 14 },
-      { row: 3, col: 4, word: 'आगच्छति', translation: 'Rises up', isPath: true, stepOrder: 15 },
+      // Row 3: The crow throws pebbles upward
+      { row: 3, col: 0, word: 'काकः', translation: 'The Crow', isPath: true, stepOrder: 12 },
+      { row: 3, col: 1, word: 'पाषाणान्', translation: 'Pebbles', isPath: true, stepOrder: 13 },
+      { row: 3, col: 2, word: 'क्षिपति', translation: 'Throws in', isPath: true, stepOrder: 14 },
+      { row: 3, col: 3, word: 'उपरि', translation: 'Upwards', isPath: true, stepOrder: 15 },
+      { row: 3, col: 4, word: 'आगच्छति', translation: 'Rises up', isPath: true, stepOrder: 16 },
 
-      // Row 4
+      // Row 4: Water rises, drinking it he becomes satisfied
       { row: 4, col: 0, word: 'फलम्', translation: 'Fruit (Trap)', isPath: false },
-      { row: 4, col: 1, word: 'आकाशः', translation: 'Sky (Trap)', isPath: false },
-      { row: 4, col: 2, word: 'तृप्तः', translation: 'Satisfied', isPath: true, stepOrder: 18 },
-      { row: 4, col: 3, word: 'पीत्वा', translation: 'Having drunk', isPath: true, stepOrder: 17 },
-      { row: 4, col: 4, word: 'जलम्', translation: 'Water', isPath: true, stepOrder: 16 },
+      { row: 4, col: 1, word: 'भवति', translation: 'Becomes 🏆', isPath: true, stepOrder: 20 },
+      { row: 4, col: 2, word: 'तृप्तः', translation: 'Satisfied', isPath: true, stepOrder: 19 },
+      { row: 4, col: 3, word: 'पीत्वा', translation: 'Having drunk', isPath: true, stepOrder: 18 },
+      { row: 4, col: 4, word: 'जलम्', translation: 'Water', isPath: true, stepOrder: 17 },
     ],
   },
 
