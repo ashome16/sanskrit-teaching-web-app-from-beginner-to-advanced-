@@ -393,7 +393,14 @@ const MATRA_SECTION_DEFS: { label: string; exemplar: string; mark: string }[] = 
   { label: 'अः', exemplar: 'कः', mark: 'ः' },
 ];
 
-type BoardSectionChip = { id: string; label: string; start: number };
+type BoardSectionChip = {
+  id: string;
+  label: string;
+  start: number;
+  count?: number;
+  category?: string;
+  description?: string;
+};
 
 function isPrashnaPuzzle(puzzle: BoardPuzzle): boolean {
   if ((puzzle.phase || '').trim() === 'prashna') return true;
@@ -798,36 +805,135 @@ function buildMatraSectionChips(puzzles: BoardPuzzle[]): BoardSectionChip[] {
   const chips: BoardSectionChip[] = [];
   for (const def of MATRA_SECTION_DEFS) {
     const start = findMatraSectionStart(puzzles, def.exemplar, def.mark);
-    if (start >= 0) chips.push({ id: def.label, label: def.label, start });
+    if (start >= 0) {
+      chips.push({
+        id: def.label,
+        label: `${def.label}`,
+        start,
+        category: 'स्वर-मात्राः · Basic Vowels',
+        description: `Matra sound & vowel marker: ${def.label} (${def.exemplar})`,
+      });
+    }
   }
   // Sequential: each row starts at/after the previous consonant row's end (so ल≠early ला, स≠early सा).
   let minIndex = 0;
   for (const row of CONSONANT_ROW_CHIP_DEFS) {
     const start = findConsonantRowStart(puzzles, row.consonant, minIndex);
     if (start >= 0) {
-      chips.push({ id: row.id, label: row.id, start });
+      const isConjunct = row.consonant.length > 1;
+      chips.push({
+        id: row.id,
+        label: row.id,
+        start,
+        category: isConjunct ? 'संयुक्त-वर्णाः · Conjuncts' : 'व्यञ्जनानि · Consonants',
+        description: `${row.id} consonant row syllables`,
+      });
       minIndex = consonantRowEnd(puzzles, row.consonant, start);
     }
   }
   const prashnaStart = findPrashnaSectionStart(puzzles);
-  if (prashnaStart >= 0) chips.push({ id: 'प्रश्न', label: 'प्रश्न', start: prashnaStart });
+  if (prashnaStart >= 0) {
+    chips.push({
+      id: 'प्रश्न',
+      label: '❓ प्रश्न',
+      start: prashnaStart,
+      category: 'प्रश्न · Questions',
+      description: 'Sentence questions and vocabulary quizzes',
+    });
+  }
   return chips.sort((a, b) => a.start - b.start);
 }
 
 function buildNatureSectionChips(puzzles: BoardPuzzle[]): BoardSectionChip[] {
-  const defs: { id: string; label: string; match: (p: BoardPuzzle) => boolean }[] = [
-    { id: 'रिक्तम्', label: 'रिक्तम्', match: (p) => {
-      const ph = (p.phase || '').trim();
-      return ph !== 'learn' && ph !== 'match-meaning';
-    } },
-    { id: 'शिक्षा', label: 'शिक्षा', match: (p) => (p.phase || '').trim() === 'learn' },
-    { id: 'अर्थ', label: 'अर्थ', match: (p) => (p.phase || '').trim() === 'match-meaning' },
-  ];
   const chips: BoardSectionChip[] = [];
-  for (const def of defs) {
-    const start = puzzles.findIndex(def.match);
-    if (start >= 0) chips.push({ id: def.id, label: def.label, start });
+  const learnStart = puzzles.findIndex((p) => (p.phase || '').trim() === 'learn');
+  const matchStart = puzzles.findIndex((p) => (p.phase || '').trim() === 'match-meaning');
+  const standardLimit = learnStart >= 0 ? learnStart : puzzles.length;
+
+  const milestones = [
+    { label: '🐾 पशु-पक्षिणः · Fauna', pct: 0 },
+    { label: '🌿 वृक्ष-पुष्पाणि · Flora', pct: 0.2 },
+    { label: '🌊 नदी-पर्वताः · Waters & Hills', pct: 0.4 },
+    { label: '⛅ ऋतु-प्रकृतिः · Elements', pct: 0.65 },
+    { label: '🌍 जीव-जगत · Living World', pct: 0.85 },
+  ];
+
+  milestones.forEach((m, idx) => {
+    const start = Math.floor(standardLimit * m.pct);
+    if (start < standardLimit) {
+      chips.push({
+        id: `प्रकृति-${idx + 1}`,
+        label: m.label,
+        start,
+        category: 'प्रकृतिः · Standard',
+        description: `Nature vocabulary: ${m.label}`,
+      });
+    }
+  });
+
+  if (learnStart >= 0) {
+    chips.push({
+      id: 'शिक्षा',
+      label: '📖 शिक्षा · Learn Cards',
+      start: learnStart,
+      category: 'शिक्षा · Learn',
+      description: 'Learn phase cards with step-by-step guidance',
+    });
   }
+  if (matchStart >= 0) {
+    chips.push({
+      id: 'अर्थ',
+      label: '🎯 अर्थ · Meaning Match',
+      start: matchStart,
+      category: 'अर्थ · Match',
+      description: 'Vocabulary meaning matching puzzles',
+    });
+  }
+
+  return chips.sort((a, b) => a.start - b.start);
+}
+
+function buildShelfSections(shelfId: ShelfId, puzzles: BoardPuzzle[]): BoardSectionChip[] {
+  if (!puzzles || puzzles.length === 0) return [];
+  let chips: BoardSectionChip[] = [];
+
+  if (shelfId === 'prarambhah') {
+    chips = buildMatraSectionChips(puzzles);
+  } else if (shelfId === 'prakrtih') {
+    chips = buildNatureSectionChips(puzzles);
+  } else if (shelfId === 'sariram') {
+    chips = [
+      { id: 'ज्ञानेन्द्रियाणि', label: '👁️ ज्ञानेन्द्रियाणि · Senses', start: 0, category: 'शरीरम् · Anatomy', description: 'Eyes, ears, nose, tongue, and sensory vocabulary' },
+      { id: 'नाद-पथः', label: '🗣️ नाद-पथः · Articulation', start: Math.min(6, Math.max(0, puzzles.length - 1)), category: 'शरीरम् · Anatomy', description: 'Throat, palate, and speech articulation points' },
+    ];
+  } else if (shelfId === 'ganitam') {
+    chips = [
+      { id: 'संख्या-गणना', label: '🔢 संख्याः · Numbers', start: 0, category: 'गणितम् · Math', description: 'Numerals and counting expressions' },
+      { id: 'क्रिया-स्थानम्', label: '⚙️ क्रियापदम् · Daily Verbs', start: Math.min(6, Math.max(0, puzzles.length - 1)), category: 'गणितम् · Math', description: 'Verbs for reading, drinking, living, wearing' },
+    ];
+  } else if (shelfId === 'bhugolah') {
+    chips = [
+      { id: 'दिशा-स्थानम्', label: '🧭 दिशा-स्थानम् · Space', start: 0, category: 'भूगोलः · Geography', description: 'Sky, rivers, earth, and spatial directions' },
+      { id: 'मार्ग-नगराणि', label: '🏛️ नगराणि · Paths & Places', start: Math.min(5, Math.max(0, puzzles.length - 1)), category: 'भूगोलः · Geography', description: 'Paths, houses, cities, and landmarks' },
+    ];
+  } else if (shelfId === 'sanskritih') {
+    chips = [
+      { id: 'मङ्गल-द्रव्याणि', label: '🪔 मङ्गल-द्रव्याणि · Sacred Emblems', start: 0, category: 'संस्कृतिः · Heritage', description: 'Star-dust, seed of wisdom, lamp, worship, conch' },
+      { id: 'संस्कार-ज्ञानम्', label: '📜 संस्काराः · Rituals & Wisdom', start: Math.min(8, Math.max(0, puzzles.length - 1)), category: 'संस्कृतिः · Heritage', description: 'Sacred ceremonies, learning, and Vedic traditions' },
+    ];
+  } else if (shelfId === 'krida') {
+    chips = [
+      { id: 'तिङन्त-क्रिया', label: '⚡ तिङन्त · Verb Roots (लट्)', start: 0, category: 'व्याकरणम् · Grammar', description: 'Present tense actions: पठति, चलति, वहति, फलति, हसति' },
+      { id: 'सुबन्त-शब्दाः', label: '📚 सुबन्त · Noun Declensions', start: Math.min(10, Math.max(0, puzzles.length - 1)), category: 'व्याकरणम् · Grammar', description: 'Grammatical cases and noun inflections' },
+    ];
+  }
+
+  // Calculate puzzle count for each chip
+  for (let i = 0; i < chips.length; i++) {
+    const nextStart = i + 1 < chips.length ? chips[i + 1].start : puzzles.length;
+    chips[i].count = Math.max(1, nextStart - chips[i].start);
+  }
+
   return chips;
 }
 
@@ -865,17 +971,28 @@ const Board: React.FC<BoardProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [isChipsExpanded, setIsChipsExpanded] = useState(false);
+  const [isSectionModalOpen, setIsSectionModalOpen] = useState(false);
+  const [sectionSearchQuery, setSectionSearchQuery] = useState('');
+  const [selectedSectionCategory, setSelectedSectionCategory] = useState<string>('all');
   const activeChipRef = useRef<HTMLButtonElement | null>(null);
   const puzzleBoardRef = useRef<HTMLElement | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchScope, setSearchScope] = useState<'all' | 'current'>('all');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
+  const skipSectionRef = useRef<{ prev: () => void; next: () => void }>({ prev: () => {}, next: () => {} });
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isSearchOpen) {
-        setIsSearchOpen(false);
+      if (e.key === 'Escape') {
+        if (isSectionModalOpen) {
+          setIsSectionModalOpen(false);
+          return;
+        }
+        if (isSearchOpen) {
+          setIsSearchOpen(false);
+          return;
+        }
       }
       if (
         (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) &&
@@ -886,10 +1003,22 @@ const Board: React.FC<BoardProps> = ({
         searchInputRef.current?.focus();
         setIsSearchOpen(true);
       }
+      if (
+        document.activeElement?.tagName !== 'INPUT' &&
+        document.activeElement?.tagName !== 'TEXTAREA'
+      ) {
+        if (e.key === 'PageDown' || (e.shiftKey && e.key === 'ArrowRight')) {
+          e.preventDefault();
+          skipSectionRef.current.next();
+        } else if (e.key === 'PageUp' || (e.shiftKey && e.key === 'ArrowLeft')) {
+          e.preventDefault();
+          skipSectionRef.current.prev();
+        }
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isSearchOpen]);
+  }, [isSearchOpen, isSectionModalOpen]);
   const [playingAll, setPlayingAll] = useState(false);
   const [playingAllTiles, setPlayingAllTiles] = useState(false);
   const [activeSpokenTileIndex, setActiveSpokenTileIndex] = useState<number | null>(null);
@@ -1775,21 +1904,22 @@ const Board: React.FC<BoardProps> = ({
   // the following puzzle can list the same word in slot 1 and would look like the
   // tile jumped there and was tagged next again. Auto play is what walks forward.
 
-  const sectionChips: BoardSectionChip[] =
-    activeShelf === 'prarambhah' ? buildMatraSectionChips(activePuzzles)
-      : activeShelf === 'prakrtih' ? buildNatureSectionChips(activePuzzles)
-        : [];
+  const sectionChips: BoardSectionChip[] = useMemo(() => {
+    return buildShelfSections(activeShelf, activePuzzles);
+  }, [activeShelf, activePuzzles]);
   const activeChipId = activeSectionChipId(sectionChips, puzzleIndex);
 
-  useEffect(() => {
-    if (!isChipsExpanded && activeChipRef.current) {
-      activeChipRef.current.scrollIntoView({
-        behavior: 'smooth',
-        inline: 'center',
-        block: 'nearest',
-      });
+  const currentSectionIndex = useMemo(() => {
+    if (!sectionChips.length) return -1;
+    for (let i = sectionChips.length - 1; i >= 0; i--) {
+      if (puzzleIndex >= sectionChips[i].start) return i;
     }
-  }, [activeChipId, isChipsExpanded]);
+    return 0;
+  }, [sectionChips, puzzleIndex]);
+
+  const currentSection = currentSectionIndex >= 0 ? sectionChips[currentSectionIndex] : null;
+  const prevSection = currentSectionIndex > 0 ? sectionChips[currentSectionIndex - 1] : null;
+  const nextSection = currentSectionIndex >= 0 && currentSectionIndex < sectionChips.length - 1 ? sectionChips[currentSectionIndex + 1] : null;
 
   const jumpToSection = (start: number) => {
     if (playingRef.current) stopBoardPlayAll();
@@ -1804,6 +1934,45 @@ const Board: React.FC<BoardProps> = ({
       puzzleBoardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 60);
   };
+
+  const skipToPrevSection = () => {
+    if (!prevSection) return;
+    soundEffects.playPuzzleSnap();
+    jumpToSection(prevSection.start);
+  };
+
+  const skipToNextSection = () => {
+    if (!nextSection) return;
+    soundEffects.playPuzzleSnap();
+    jumpToSection(nextSection.start);
+  };
+
+  skipSectionRef.current = { prev: skipToPrevSection, next: skipToNextSection };
+
+  const sectionCategories = useMemo(() => {
+    const cats = new Set<string>();
+    sectionChips.forEach((c) => {
+      if (c.category) cats.add(c.category);
+    });
+    return Array.from(cats);
+  }, [sectionChips]);
+
+  const filteredSectionChips = useMemo(() => {
+    let result = sectionChips;
+    if (selectedSectionCategory !== 'all') {
+      result = result.filter((c) => c.category === selectedSectionCategory);
+    }
+    if (sectionSearchQuery.trim()) {
+      const q = sectionSearchQuery.trim().toLowerCase();
+      result = result.filter(
+        (c) =>
+          c.label.toLowerCase().includes(q) ||
+          c.id.toLowerCase().includes(q) ||
+          (c.category && c.category.toLowerCase().includes(q))
+      );
+    }
+    return result;
+  }, [sectionChips, selectedSectionCategory, sectionSearchQuery]);
 
   const activeStep = (checked && isCorrect) ? 2 : 1;
   const graphicWord = ((activePuzzle?.answer ?? activePuzzle?.target ?? activePuzzle?.highlight) || '').normalize('NFC');
@@ -1941,6 +2110,76 @@ const Board: React.FC<BoardProps> = ({
     {error && <p className="board-status error">{error}</p>}
 
     {!loading && !error && activePuzzle && <>
+      {/* Top Shelf Summary Banner */}
+      {activeShelfInfo && (
+        <div className="board-shelf-summary-banner">
+          <div className="shelf-summary-left">
+            <span className="shelf-summary-icon">{activeShelfInfo.icon}</span>
+            <div className="shelf-summary-text">
+              <h3 className="shelf-summary-title">{activeShelfInfo.title}</h3>
+              <p className="shelf-summary-desc">{activeShelfInfo.desc}</p>
+            </div>
+          </div>
+          <div className="shelf-summary-right">
+            <span className="shelf-summary-count-badge">
+              🧩 {activePuzzles.length.toLocaleString()} Puzzles
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* Top Section Navigator & Skip Toolbar */}
+      {sectionChips.length > 0 && (
+        <div className="board-section-nav-bar" role="region" aria-label="Section Quick Navigation">
+          <div className="section-nav-main">
+            <button
+              type="button"
+              className="section-nav-btn section-nav-btn--prev"
+              disabled={!prevSection}
+              onClick={skipToPrevSection}
+              title={prevSection ? `Jump backward to section: ${prevSection.label}` : 'At first section'}
+              aria-label="Previous Section"
+            >
+              <span className="section-nav-arrow" aria-hidden="true">⏮</span>
+              <span className="section-nav-btn-text">
+                {prevSection ? `Prev: ${prevSection.label}` : 'First Section'}
+              </span>
+            </button>
+
+            <button
+              type="button"
+              className="section-nav-center-pill"
+              onClick={() => setIsSectionModalOpen(true)}
+              title="Browse all sections and jump directly"
+              aria-label="Browse all sections"
+            >
+              <span className="section-center-icon">📑</span>
+              <span className="section-center-title">
+                Section: <strong>{currentSection?.label || activeChipId || 'Overview'}</strong>
+              </span>
+              <span className="section-center-count">
+                ({currentSectionIndex >= 0 ? currentSectionIndex + 1 : 1}/{sectionChips.length})
+              </span>
+              <span className="section-center-badge">Browse All ▾</span>
+            </button>
+
+            <button
+              type="button"
+              className="section-nav-btn section-nav-btn--next"
+              disabled={!nextSection}
+              onClick={skipToNextSection}
+              title={nextSection ? `Skip forward to next section: ${nextSection.label}` : 'At last section'}
+              aria-label="Next Section"
+            >
+              <span className="section-nav-btn-text">
+                {nextSection ? `Next: ${nextSection.label}` : 'Last Section'}
+              </span>
+              <span className="section-nav-arrow" aria-hidden="true">⏭</span>
+            </button>
+          </div>
+        </div>
+      )}
+
       <section ref={puzzleBoardRef} className="puzzle-board">
         <div className="puzzle-meta">
           <div className="meta-left">
@@ -2569,6 +2808,136 @@ const Board: React.FC<BoardProps> = ({
         aria-hidden="true"
       >
         {joinGhost.word}
+      </div>,
+      document.body,
+    )}
+
+    {/* Section Explorer Modal */}
+    {isSectionModalOpen && typeof document !== 'undefined' && createPortal(
+      <div className="section-modal-backdrop" onClick={() => setIsSectionModalOpen(false)} role="presentation">
+        <div
+          className="section-modal-window"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Browse Shelf Sections"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="section-modal-header">
+            <div className="section-modal-title-group">
+              <div className="section-modal-eyebrow">अक्षर-विभाग-दर्शिका · CURRICULUM SECTIONS</div>
+              <h3 className="section-modal-title">
+                {activeShelfInfo?.icon} {activeShelfInfo?.title}
+              </h3>
+              <p className="section-modal-subtitle">
+                {activePuzzles.length.toLocaleString()} total puzzles across {sectionChips.length} structured sections. Click any section to jump directly.
+              </p>
+            </div>
+            <button
+              type="button"
+              className="section-modal-close"
+              onClick={() => setIsSectionModalOpen(false)}
+              aria-label="Close section browser"
+            >
+              ×
+            </button>
+          </div>
+
+          <div className="section-modal-controls">
+            <div className="section-modal-search-box">
+              <span className="section-search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="text"
+                className="section-search-input"
+                placeholder="Search letters or sections (e.g. क, ऋ, शिक्षा, प्रश्न)..."
+                value={sectionSearchQuery}
+                onChange={(e) => setSectionSearchQuery(e.target.value)}
+                autoFocus
+              />
+              {sectionSearchQuery && (
+                <button
+                  type="button"
+                  className="section-search-clear"
+                  onClick={() => setSectionSearchQuery('')}
+                  aria-label="Clear search"
+                >
+                  ×
+                </button>
+              )}
+            </div>
+
+            {sectionCategories.length > 1 && (
+              <div className="section-cat-filter-pills" role="tablist">
+                <button
+                  type="button"
+                  className={`section-cat-pill ${selectedSectionCategory === 'all' ? 'active' : ''}`}
+                  onClick={() => setSelectedSectionCategory('all')}
+                >
+                  All ({sectionChips.length})
+                </button>
+                {sectionCategories.map((cat) => (
+                  <button
+                    key={cat}
+                    type="button"
+                    className={`section-cat-pill ${selectedSectionCategory === cat ? 'active' : ''}`}
+                    onClick={() => setSelectedSectionCategory(cat)}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="section-modal-body">
+            {filteredSectionChips.length === 0 ? (
+              <div className="section-empty-search">
+                <p>No sections matching &quot;{sectionSearchQuery}&quot;</p>
+                <button
+                  type="button"
+                  className="section-reset-btn"
+                  onClick={() => {
+                    setSectionSearchQuery('');
+                    setSelectedSectionCategory('all');
+                  }}
+                >
+                  Reset filters
+                </button>
+              </div>
+            ) : (
+              <div className="section-cards-grid">
+                {filteredSectionChips.map((chip, idx) => {
+                  const isActive = activeChipId === chip.id;
+                  return (
+                    <button
+                      key={chip.id}
+                      type="button"
+                      className={`section-jump-card ${isActive ? 'active' : ''}`}
+                      onClick={() => {
+                        jumpToSection(chip.start);
+                        setIsSectionModalOpen(false);
+                      }}
+                    >
+                      <div className="section-card-top">
+                        <span className="section-card-badge">Section #{idx + 1}</span>
+                        {isActive && <span className="section-card-active-tag">Current</span>}
+                      </div>
+                      <div className="section-card-letter">{chip.label}</div>
+                      <div className="section-card-meta">
+                        <span className="section-card-start">Card #{chip.start + 1}</span>
+                        {chip.count != null && (
+                          <span className="section-card-count">({chip.count} cards)</span>
+                        )}
+                      </div>
+                      {chip.description && (
+                        <div className="section-card-desc">{chip.description}</div>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
       </div>,
       document.body,
     )}

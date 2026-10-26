@@ -2555,3 +2555,564 @@
     flex: 1 1 auto;
   }
 }
+
+/* ==========================================================================
+   9. Modern Section Quick-Nav Toolbar & Shelf Summary
+   ========================================================================== */
+
+.board-shelf-summary-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.15rem;
+  margin-bottom: 0.65rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffffff 0%, #fbf8f2 100%);
+  border: 1.5px solid #ebd8be;
+  box-shadow: 0 4px 14px rgba(120, 53, 15, 0.04);
+  flex-wrap: wrap;
+}
+
+.shelf-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.shelf-summary-icon {
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fffdf8;
+  border: 1px solid #e8dbca;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.shelf-summary-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #78350f;
+  letter-spacing: 0.01em;
+}
+
+.shelf-summary-desc {
+  margin: 0.15rem 0 0;
+  font-size: 0.82rem;
+  color: #6b5a45;
+}
+
+.shelf-summary-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+/* Section Quick Navigation Bar */
+.board-section-nav-bar {
+  margin-bottom: 0.75rem;
+}
+
+.section-nav-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1.5px solid #ded4c3;
+  border-radius: 14px;
+  padding: 0.35rem 0.45rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.section-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid #ded5c5;
+  background: #faf6ef;
+  color: #78350f;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.section-nav-btn:hover:not(:disabled) {
+  background: #fff;
+  border-color: #f59e0b;
+  color: #b45309;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.2);
+}
+
+.section-nav-btn:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+  filter: grayscale(0.6);
+  border-color: #e5decfa8;
+}
+
+.section-nav-btn-text {
+  font-family: 'Noto Sans Devanagari', -apple-system, sans-serif;
+}
+
+.section-nav-center-pill {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: 10px;
+  border: 1.5px solid #f59e0b;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  color: #92400e;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.18);
+  transition: all 0.18s ease;
+}
+
+.section-nav-center-pill:hover {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.28);
+}
+
+.section-center-icon {
+  font-size: 1.05rem;
+}
+
+.section-center-title strong {
+  color: #b45309;
+  font-weight: 800;
+}
+
+.section-center-count {
+  font-size: 0.76rem;
+  opacity: 0.85;
+}
+
+.section-center-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: #b45309;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   10. Interactive Section Browser Modal & Grid
+   ========================================================================== */
+
+.section-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 350;
+  background: rgba(20, 16, 12, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: section-fade-in 0.2s ease-out;
+}
+
+.section-modal-window {
+  background: #fdfaf5;
+  border: 2px solid #ecdac3;
+  border-radius: 22px;
+  width: 100%;
+  max-width: 780px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  animation: section-slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes section-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes section-slide-up {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.section-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.35rem 0.85rem;
+  border-bottom: 1px solid #ebd9c4;
+  background: linear-gradient(180deg, #ffffff 0%, #faf6ee 100%);
+}
+
+.section-modal-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #8c4228;
+  margin-bottom: 0.2rem;
+}
+
+.section-modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1e332b;
+}
+
+.section-modal-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.82rem;
+  color: #6a5e4f;
+  line-height: 1.35;
+}
+
+.section-modal-close {
+  background: #f5eee2;
+  border: 1px solid #dcd1be;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: #5c4f3e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.section-modal-close:hover {
+  background: #8c4228;
+  color: #ffffff;
+  border-color: #8c4228;
+  transform: rotate(90deg);
+}
+
+.section-modal-controls {
+  padding: 0.75rem 1.35rem;
+  background: #fffdfa;
+  border-bottom: 1px solid #ebd9c4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.section-modal-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1.5px solid #d8cbba;
+  border-radius: 12px;
+  padding: 0.45rem 0.85rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.section-modal-search-box:focus-within {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.section-search-icon {
+  font-size: 0.95rem;
+  opacity: 0.6;
+}
+
+.section-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.9rem;
+  color: #1f2937;
+  font-family: inherit;
+}
+
+.section-search-clear {
+  background: #eee6d8;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #6b5d4a;
+  cursor: pointer;
+}
+
+.section-cat-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding-bottom: 0.15rem;
+  scrollbar-width: thin;
+}
+
+.section-cat-pill {
+  border: 1px solid #ded4c3;
+  border-radius: 999px;
+  background: #faf6ee;
+  color: #5c4f3e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.22rem 0.65rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.section-cat-pill:hover {
+  background: #ffffff;
+  border-color: #f59e0b;
+  color: #b45309;
+}
+
+.section-cat-pill.active {
+  background: #78350f;
+  color: #ffffff;
+  border-color: #78350f;
+  box-shadow: 0 2px 6px rgba(120, 53, 15, 0.28);
+}
+
+.section-modal-body {
+  padding: 1.15rem 1.35rem;
+  overflow-y: auto;
+  max-height: 58vh;
+  scrollbar-width: thin;
+}
+
+.section-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+.section-jump-card {
+  background: #ffffff;
+  border: 1.5px solid #e5dac9;
+  border-radius: 14px;
+  padding: 0.75rem 0.65rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.section-jump-card:hover {
+  border-color: #f59e0b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.22);
+}
+
+.section-jump-card.active {
+  border-color: #b45309;
+  background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+  box-shadow: 0 0 0 2px #f59e0b, 0 8px 20px rgba(180, 83, 9, 0.22);
+  transform: translateY(-2px);
+}
+
+.section-card-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.section-card-badge {
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: #8c7860;
+  text-transform: uppercase;
+}
+
+.section-card-active-tag {
+  background: #b45309;
+  color: #ffffff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 0.1rem 0.35rem;
+  border-radius: 999px;
+}
+
+.section-card-letter {
+  font-family: 'Noto Sans Devanagari', 'Yatra One', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #78350f;
+  line-height: 1.15;
+  margin: 0.2rem 0 0.35rem;
+}
+
+.section-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  color: #5c4f3e;
+}
+
+.section-card-start {
+  font-weight: 700;
+}
+
+.section-card-count {
+  opacity: 0.75;
+}
+
+.section-card-desc {
+  font-size: 0.68rem;
+  color: #8c7860;
+  margin-top: 0.35rem;
+  line-height: 1.25;
+  border-top: 1px dashed #ebd8be;
+  padding-top: 0.3rem;
+  width: 100%;
+}
+
+.section-empty-search {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: #786b59;
+}
+
+.section-empty-search p {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-reset-btn {
+  background: #78350f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 0.95rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   11. Visual Improvisations & Tactile Polish for Tile Puzzle
+   ========================================================================== */
+
+/* Enhanced Puzzle Card Container */
+.puzzle-board {
+  position: relative;
+  border: 1.5px solid #e8dbca !important;
+  border-radius: 20px !important;
+  box-shadow: 0 16px 42px rgba(120, 53, 15, 0.08) !important;
+  overflow: hidden;
+}
+
+.puzzle-board::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #d97706 0%, #f59e0b 50%, #d97706 100%);
+}
+
+/* Tactile 3D Ivory / Wood Puzzle Tiles */
+.puzzle-tile {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 4px 0 #cbbaa4,
+    0 8px 18px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 14px !important;
+  border: 1.5px solid #ded3c1 !important;
+  transition: all 0.16s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.puzzle-tile:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 6px 0 #cbbaa4,
+    0 12px 22px rgba(120, 53, 15, 0.16) !important;
+  border-color: #f59e0b !important;
+}
+
+.puzzle-tile:active {
+  transform: translateY(2px) scale(0.98) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 2px 0 #cbbaa4,
+    0 4px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.puzzle-tile.chosen {
+  background: #fef3c7 !important;
+  border-color: #f59e0b !important;
+  box-shadow:
+    inset 0 2px 4px rgba(180, 83, 9, 0.18),
+    0 2px 0 #d97706 !important;
+  transform: translateY(1px) !important;
+}
+
+.puzzle-tile .tile-num {
+  background: #8c4228 !important;
+  color: #fffdf8 !important;
+  border-radius: 6px !important;
+  font-weight: 800 !important;
+}
+
+/* Progress track gradient */
+.puzzle-progress-bar {
+  background: linear-gradient(90deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%) !important;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+@media (max-width: 640px) {
+  .section-nav-main {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .section-nav-btn {
+    justify-content: center;
+  }
+  .section-cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+}
