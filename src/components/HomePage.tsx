@@ -5,12 +5,12 @@ import { canAccessAllChapters, isFreeTrialOpenLesson } from '../utils/premiumAcc
 import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
 import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
 import { NCERT_TEXTBOOKS, getTextbookMetaForLesson } from '../utils/textbookCovers';
-import BodhiAvatar from './BodhiAvatar';
 import HomeLabBanner from './HomeLabBanner';
 import { getSearchShortcut } from '../utils/platformShortcut';
 import { GurukulEntranceIntro } from './GurukulEntranceIntro';
 import { useAccessibilityStore } from '../utils/accessibilityStore';
 import ProofOfQuality from './ProofOfQuality';
+import BodhiMentorPositioning from './BodhiMentorPositioning';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 
@@ -2047,73 +2047,13 @@ const HomePage: React.FC<HomePageProps> = ({
       />
 
       {/* ------------------------------------------------------------------
-          Meet Bodhi (बोधिः) — Mascot & Gurukul Guide Spotlight
+          Meet Bodhi (बोधिः) — AI Mentor Positioning, Scope, Safeguards & Interactions
           ------------------------------------------------------------------ */}
-      <section className="bodhi-home-spotlight" aria-label="Meet Bodhi - Your Gurukul Mascot & Guide">
-        <div className="bodhi-spotlight-avatar-col">
-          <BodhiAvatar mood="namaste" size="xl" showHalo={true} />
-          <button
-            type="button"
-            className="bodhi-spotlight-voice-btn"
-            onClick={() => playPronunciation('नमस्ते! अहं बोधिः। भवतः स्वागतम्!')}
-            title="Hear Bodhi's voice"
-          >
-            🔊 Hear Bodhi Speak
-          </button>
-        </div>
-
-        <div className="bodhi-spotlight-content-col">
-          <div className="bodhi-spotlight-badge">
-            <span>✨</span> Your Gurukul Companion &amp; Guide
-          </div>
-
-          <h2 className="bodhi-spotlight-title">
-            Meet Bodhi <span className="bodhi-spotlight-title-dev">बोधिः — भवतः संस्कृत-सखा</span>
-          </h2>
-
-          <p className="bodhi-spotlight-desc">
-            Namaste! I am <strong>Bodhi</strong> (बोधिः), your personal guide throughout your Sanskrit, grammar, and Vedic Mathematics journey.
-            Whether you are decoding your first NCERT Deepakam chapter, learning retroflex sounds,
-            or multiplying large numbers with ancient sutras, I am here with tips, authentic audio, and encouragement!
-          </p>
-
-          <div className="bodhi-spotlight-actions">
-            {onOpenOnlineClasses && (
-              <button
-                type="button"
-                className="bodhi-spotlight-primary-btn"
-                style={{ background: '#d97706', borderColor: '#b45309' }}
-                onClick={onOpenOnlineClasses}
-              >
-                🎓 Join Bodhi's Online Classes
-              </button>
-            )}
-            {onOpenBodhi && (
-              <button
-                type="button"
-                className="bodhi-spotlight-primary-btn"
-                onClick={onOpenBodhi}
-              >
-                💬 Ask Bodhi a Question
-              </button>
-            )}
-            <button
-              type="button"
-              className="bodhi-spotlight-secondary-btn"
-              onClick={onOpenVarnamala}
-            >
-              🔤 Learn Sounds with Bodhi
-            </button>
-            <button
-              type="button"
-              className="bodhi-spotlight-secondary-btn"
-              onClick={() => onOpenReader('gsde101')}
-            >
-              📖 Read Deepakam Chapter 1
-            </button>
-          </div>
-        </div>
-      </section>
+      <BodhiMentorPositioning
+        onOpenBodhi={onOpenBodhi}
+        onOpenOnlineClasses={onOpenOnlineClasses}
+        onOpenVarnamala={onOpenVarnamala}
+      />
 
       {/* ------------------------------------------------------------------
           Featured Video Masterclasses Section

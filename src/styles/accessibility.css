@@ -369,6 +369,71 @@ html.a11y-high-contrast .hhtb-whatsapp:hover {
   background: #fef08a !important;
 }
 
+/* Bodhi Mentor Positioning & Safeguards in High Contrast */
+html.a11y-high-contrast .bodhi-pos-section {
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 0 #000000 !important;
+}
+
+html.a11y-high-contrast .bodhi-pos-title,
+html.a11y-high-contrast .bodhi-pos-lead,
+html.a11y-high-contrast .bodhi-pos-lead strong {
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .bodhi-pos-tab-btn {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .bodhi-pos-tab-btn.active {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.a11y-high-contrast .bodhi-pillar-card,
+html.a11y-high-contrast .bodhi-scope-col,
+html.a11y-high-contrast .bodhi-safeguard-card,
+html.a11y-high-contrast .bodhi-sample-card {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .bodhi-sample-bubble-student,
+html.a11y-high-contrast .bodhi-sample-bubble-bodhi {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .bodhi-sample-tab-btn {
+  background: #ffffff !important;
+  border: 1.5px solid #000000 !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .bodhi-sample-tab-btn.active {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.a11y-high-contrast .bodhi-pos-cta-btn--primary,
+html.a11y-high-contrast .bodhi-pos-cta-btn--whatsapp {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+html.a11y-high-contrast .bodhi-pos-cta-btn--primary:hover,
+html.a11y-high-contrast .bodhi-pos-cta-btn--whatsapp:hover {
+  background: #fef08a !important;
+  color: #000000 !important;
+}
+
 html.a11y-high-contrast .home-hero-trial-banner,
 html.a11y-high-contrast .home-feature-trial-callout {
   background: #ffffff !important;

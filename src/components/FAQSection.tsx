@@ -47,6 +47,20 @@ const FAQ_DATA: FAQItem[] = [
     answer:
       'Tapping any Sanskrit word in a lesson immediately plays its authentic Sanskrit pronunciation and displays a trilingual definition (English, Hindi, and Sanskrit) along with grammatical roots (vibhakti, lakāra, dhātu). You can also play entire sentences or shlokas in sequence.',
   },
+  {
+    id: 'faq-bodhi-mentor',
+    category: 'features',
+    question: 'What is Bodhi? Is it AI-generated guidance, a human-supported service, or a guided lesson flow?',
+    answer:
+      'Bodhi (बोधिः) is a transparent 3-tier Gurukul mentor combining: (1) Guided Lesson Flow: An in-curriculum interactive guide providing slow, authentic native pronunciation, syllable chunk highlighting, and NCERT textbook assistance on every page; (2) Grounded AI Retrieval: Natural language question-answering across 150+ verified Pāṇinian grammar rules, Dhātupāṭha verb conjugations, and 16 Vedic Mathematics sutras with a strict Zero-Hallucination Policy (never invents non-shastric sutras); and (3) Human Acharya Mentorship: Direct human teacher support via WhatsApp at +91 9000335468 (Only WhatsApp) and email (care@ednetlearn.in) for line-by-line handwritten essay grading, CBSE board directives, and subjective doubt resolution.',
+  },
+  {
+    id: 'faq-bodhi-scope-safeguards',
+    category: 'features',
+    question: 'What are Bodhi’s scope, limitations, and safety safeguards for young learners?',
+    answer:
+      'Scope: Bodhi accurately explains 7 Vibhaktis, 5 Lakāras, word-by-word NCERT anvaya, and step-by-step Vedic mental arithmetic. Limitations: Bodhi does not automatically grade subjective handwritten essays (these are escalated to human Acharyas on WhatsApp at +91 9000335468), does not replace school teachers, and does not engage in unconstrained open-ended conversation. Safeguards: 100% ad-free, COPPA/GDPR-K child-privacy compliant (zero personal data logging or behavioral ad profiling), strict Pāṇinian cross-verification, and one-tap escalation to certified human educators.',
+  },
 ];
 
 interface FAQSectionProps {

@@ -20,6 +20,7 @@ import {
   type BodhiSpeechLang,
   type BodhiVoiceSpeed,
 } from '../utils/pronunciation';
+import BodhiMentorPositioning from './BodhiMentorPositioning';
 import '../styles/bodhi.css';
 
 interface BodhiGuideWidgetProps {
@@ -37,7 +38,7 @@ interface BodhiGuideWidgetProps {
 /** Ask Bodhi library plus the ✨ Did you know? Micro-Anecdotes. */
 const BODHI_QA_WITH_ANECDOTES: BodhiQAItem[] = [...BODHI_QA_LIBRARY, ...BODHI_ANECDOTES];
 
-type GuideTab = 'context' | 'qa' | 'subhashita' | 'phrases';
+type GuideTab = 'context' | 'qa' | 'safeguards' | 'subhashita' | 'phrases';
 
 /**
  * Renders text split into the same chunks speakAsBodhi() speaks, so the chunk
@@ -228,7 +229,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
   // Adjust mood depending on tab
   useEffect(() => {
     if (activeTab === 'subhashita') setMood('meditate');
-    else if (activeTab === 'qa') setMood('scholar');
+    else if (activeTab === 'qa' || activeTab === 'safeguards') setMood('scholar');
     else if (activeTab === 'phrases') setMood('happy');
     else setMood('namaste');
   }, [activeTab]);
@@ -695,6 +696,13 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                 onClick={() => setActiveTab('qa')}
               >
                 ❓ Ask Bodhi
+              </button>
+              <button
+                type="button"
+                className={`bodhi-tab-btn ${activeTab === 'safeguards' ? 'active' : ''}`}
+                onClick={() => setActiveTab('safeguards')}
+              >
+                🛡️ Scope &amp; AI Safeguards
               </button>
               <button
                 type="button"
@@ -1217,6 +1225,14 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     </button>
                   </div>
                 </div>
+              )}
+
+              {/* TAB: Scope, AI Safeguards & Sample Interactions */}
+              {activeTab === 'safeguards' && (
+                <BodhiMentorPositioning
+                  compact={true}
+                  onOpenVarnamala={onOpenVarnamala}
+                />
               )}
 
               {/* TAB 4: Spoken Sanskrit Soundboard */}

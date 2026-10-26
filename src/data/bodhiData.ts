@@ -2257,3 +2257,207 @@ export const BODHI_WORD_SUGGESTIONS: BodhiWordSuggestion[] = [
   { id: 'w-beejank', devanagari: 'बीजाङ्कः', iast: 'Bījāṅkaḥ', english: 'Digital Root / Instant Verification Checksum (Mod 9)', category: 'vocab', modernConcept: 'Digital Root / Checksum (Beejank)', breakdown: 'बीज (core/seed) + अङ्कः (digit) — Sum of digits reduced to single digit for instant verification' },
   { id: 'w-shunyam', devanagari: 'शून्यम्', iast: 'Śūnyam', english: 'Zero, Void & Decimal Place-Value Coordinate Grid', category: 'vocab', modernConcept: 'Zero / Decimal Place Value', breakdown: 'शून्यता (void/empty space) + बिन्दु (dot coordinate) — The greatest revolution in numerical thought' },
 ];
+
+/* ==========================================================================
+   BODHI AI MENTOR POSITIONING, SCOPE, LIMITATIONS & SAFEGUARDS
+   ========================================================================== */
+
+export interface BodhiSampleInteraction {
+  id: string;
+  category: string;
+  categoryBadge: string;
+  tier: 'Guided Lesson Flow' | 'AI / Shastric Retrieval' | 'Interactive Solver' | 'Human Acharya Escalation';
+  studentQuestion: string;
+  studentContext: string;
+  bodhiAnswer: string;
+  sanskritAudio?: string;
+  keyTakeaway: string;
+  escalationNote?: string;
+}
+
+export interface BodhiPillar {
+  id: string;
+  title: string;
+  sanskritTitle: string;
+  badge: string;
+  icon: string;
+  description: string;
+  capabilities: string[];
+  humanTouch?: string;
+}
+
+export interface BodhiScopeItem {
+  feature: string;
+  scopeStatus: 'supported' | 'unsupported';
+  description: string;
+  alternative?: string;
+}
+
+export const BODHI_PILLARS: BodhiPillar[] = [
+  {
+    id: 'guided-flow',
+    title: '1. Guided Lesson Flow',
+    sanskritTitle: 'सोपान-पाठ्यक्रम-मार्गदर्शकः',
+    badge: 'On-Page Companion',
+    icon: '🧭',
+    description:
+      'An interactive curriculum companion integrated into every page, lesson, and exercise. Bodhi guides your pace, provides slow and natural phonetic pronunciation, and highlights syllables chunk by chunk.',
+    capabilities: [
+      'Authentic acoustic audio for 13 vowels, 33 consonants, and 400+ barakhadi syllables',
+      'Follow-along highlighted chunking for Vedic shlokas and daily spoken phrases',
+      'Contextual learning tips across all 15 NCERT Deepakam chapters and 7 Jodo puzzle shelves',
+      'Micro-anecdotes explaining ancient Indian astronomy, metrology, and metallurgy',
+    ],
+  },
+  {
+    id: 'ai-grounded',
+    title: '2. Grounded AI Retrieval',
+    sanskritTitle: 'पाणिनीय-सत्यापित-बुद्धिः',
+    badge: 'Zero Hallucination',
+    icon: '🤖',
+    description:
+      'AI-assisted semantic search and conversational guidance locked strictly to authentic Pāṇinian grammar (धातुपाठः), NCERT CBSE textbooks, and 16 Vedic Mathematics sutras.',
+    capabilities: [
+      'Instant answers to 150+ verified student questions on grammar, sandhi, vibhaktis & numbers',
+      'Reverse word deconstructor (e.g. गत्वा ➔ गम् + क्त्वा, पठितुम् ➔ पठ् + तुमुन्)',
+      'Step-by-step mental math solvers (Nikhilaṁ, Ekādhikena, Ūrdhva-Tiryagbhyām)',
+      'Strict zero-hallucination guardrail: never invents non-existent sutras or fabricated shlokas',
+    ],
+  },
+  {
+    id: 'human-acharya',
+    title: '3. Human Acharya Support',
+    sanskritTitle: 'आचार्य-संवादः एवं साहाय्यम्',
+    badge: 'Human-in-the-Loop',
+    icon: '👨‍🏫',
+    description:
+      'Direct human mentorship by certified Sanskrit Acharyas and curriculum educators when automated logic reaches its boundary.',
+    capabilities: [
+      'WhatsApp mentor hotline at +91 9000335468 (Only WhatsApp) for line-by-line essay review',
+      'Teacher review of handwritten Sanskrit compositions (मम विद्यालयः, मम दिनचर्या)',
+      'CBSE Class 7–10 board exam directive clarification and marks-weightage strategy',
+      'Dedicated learner care desk via email (care@ednetlearn.in) with prompt resolution',
+    ],
+    humanTouch: 'WhatsApp: +91 9000335468 (Only WhatsApp) · Mon–Sat 9:00 AM – 6:00 PM IST',
+  },
+];
+
+export const BODHI_SCOPE_LIMITATIONS: {
+  supported: BodhiScopeItem[];
+  limitations: BodhiScopeItem[];
+} = {
+  supported: [
+    {
+      feature: 'Pāṇinian Grammar & Morphology',
+      scopeStatus: 'supported',
+      description:
+        'Accurate breakdown of 7 Vibhaktis (cases), 5 Lakāra tenses (Lat, Lang, Lit, Lot, Vidhilin), Sandhi junctions, and Kṛt pratyayas with authentic sutra citations.',
+    },
+    {
+      feature: 'NCERT Deepakam & CBSE Support',
+      scopeStatus: 'supported',
+      description:
+        'Line-by-line shloka anvaya (श्लोकान्वयः), word-by-word glosses in Sanskrit/Hindi/English, and CBSE chapter exercise blueprints for Classes 6–10.',
+    },
+    {
+      feature: 'Phonetic Articulation & Audio',
+      scopeStatus: 'supported',
+      description:
+        'Native audio with slow/normal pace options, vocal tract articulation points (कण्ठ, तालु, मूर्धा, दन्त, ओष्ठ), and authentic visarga echo reflections.',
+    },
+    {
+      feature: '16 Vedic Mathematics Sutras',
+      scopeStatus: 'supported',
+      description:
+        'Step-by-step interactive visual solvers for mental multiplication, squaring, division, and Beejank (digital root) verification.',
+    },
+    {
+      feature: 'Student Q&A & Anecdotes',
+      scopeStatus: 'supported',
+      description:
+        'Searchable library of 150+ frequently asked questions and fascinating historical science anecdotes (Indus metrology, Ujjain geodesy, Tamil calculators).',
+    },
+  ],
+  limitations: [
+    {
+      feature: 'Subjective Essay & Handwriting Grading',
+      scopeStatus: 'unsupported',
+      description:
+        'Bodhi cannot automatically grade handwritten Sanskrit essays or free-form creative poetry without human oversight.',
+      alternative: 'Escalated to human Acharyas via WhatsApp (+91 9000335468) for handwritten paper reviews.',
+    },
+    {
+      feature: 'Accredited Board Certification',
+      scopeStatus: 'unsupported',
+      description:
+        'Bodhi is an interactive mentor and study companion; it does not issue state board or CBSE-certified diplomas.',
+      alternative: 'Prepares students for school exams with CBSE blueprint worksheets and mock tests.',
+    },
+    {
+      feature: 'Unconstrained Open-Ended Chat',
+      scopeStatus: 'unsupported',
+      description:
+        'Unlike generic ChatGPT, Bodhi will not hallucinate or chat about off-topic domains (e.g. pop culture, politics, unrelated subjects).',
+      alternative: 'Keeps young learners safe, focused, and locked to shastric Sanskrit and Vedic Math.',
+    },
+    {
+      feature: 'Child Data Profiling',
+      scopeStatus: 'unsupported',
+      description:
+        'Bodhi never tracks, sells, or monetizes student conversation history for behavioral advertising.',
+      alternative: '100% ad-free, COPPA/GDPR-K privacy-first architecture.',
+    },
+  ],
+};
+
+export const BODHI_SAMPLE_INTERACTIONS: BodhiSampleInteraction[] = [
+  {
+    id: 'sample-grammar-purusha',
+    category: 'CBSE Class 7 Grammar',
+    categoryBadge: 'Lakāra & Puruṣa',
+    tier: 'AI / Shastric Retrieval',
+    studentQuestion: 'Why do we say "बालकः गच्छति" (bālakaḥ gacchati) but "वयं गच्छामः" (vayaṁ gacchāmaḥ)?',
+    studentContext: 'Student confused between 3rd person singular and 1st person plural verb endings.',
+    bodhiAnswer:
+      'In Sanskrit, the verb ending must agree with the Subject in both Puruṣa (Person) and Vacana (Number)!\n\n1. "बालकः" (a boy) is Prathama-Puruṣa (Third Person) and Eka-Vacana (Singular). The present tense (लट् लकार) ending is "-ति" ➔ गम् ➔ गच्छति।\n\n2. "वयम्" (we all) is Uttama-Puruṣa (First Person) and Bahu-Vacana (Plural). The ending is "-मः" ➔ गम् ➔ गच्छामः।\n\nRemember Bodhi’s golden rule: "ति तः अन्ति... सि थः थ... मि वः मः!" Match the subject row to the verb row!',
+    sanskritAudio: 'बालकः गच्छति । वयं गच्छामः । ति तः अन्ति । मि वः मः ।',
+    keyTakeaway: 'Verb endings follow a rigorous 3×3 matrix based on Puruṣa and Vacana.',
+  },
+  {
+    id: 'sample-ncert-word-breakdown',
+    category: 'NCERT Deepakam Chapter 1',
+    categoryBadge: 'Morphology & Anvaya',
+    tier: 'Guided Lesson Flow',
+    studentQuestion: 'What does "सुभाषितानि" mean in the chapter title, and how is it constructed?',
+    studentContext: 'Class 7 student starting Chapter 1: सुभाषितानि (Noble Sayings).',
+    bodhiAnswer:
+      'What a wonderful word to begin your journey! "सुभाषितानि" (Subhāṣitāni) breaks down into three sacred building blocks:\n\n1. सु (su) — Auspicious prefix meaning "good, noble, virtuous, graceful".\n2. √भाष् (bhāṣ) — Dhātupāṭha root meaning "to speak, utter, articulate".\n3. क्त (kta) — Past passive participle suffix forming "भाषितम्" (that which is well-spoken).\n\nWhen made Neuter Plural (नपुंसकलिङ्ग बहुवचन) like "फलानि", it becomes "सुभाषितानि" — Wise, uplifting verses crafted by ancient sages to guide daily conduct!',
+    sanskritAudio: 'सुभाषितम् । सु उपसर्गः भाष् धातुः क्त प्रत्ययः । सुभाषितानि ।',
+    keyTakeaway: 'Prefix (सु) + Root (भाष्) + Suffix (क्त) combine like Lego blocks to create meaning.',
+  },
+  {
+    id: 'sample-vedic-math-speed',
+    category: 'Vedic Mathematics',
+    categoryBadge: '16 Sutras Solvers',
+    tier: 'Interactive Solver',
+    studentQuestion: 'Can I multiply 96 × 94 in my head in 3 seconds without pen and paper?',
+    studentContext: 'Student looking for mental arithmetic shortcuts for school speed tests.',
+    bodhiAnswer:
+      'Yes, absolutely! We use Sutra 2: "Nikhilaṁ Navataścaramaṁ Daśataḥ" (All from 9 and last from 10) with Base 100:\n\nStep 1: Find the deficiencies from 100:\n• 96 is (100 - 4) ➔ -04\n• 94 is (100 - 6) ➔ -06\n\nStep 2: Cross-subtract either way for Left Part:\n• 96 - 6 = 90 (or 94 - 4 = 90)\n\nStep 3: Multiply the deficiencies for Right Part:\n• (-4) × (-6) = +24\n\nCombine both parts: 90 | 24 ➔ 9024! Faster than a calculator!',
+    sanskritAudio: 'निखिलं नवतश्चरमं दशतः । षण्णवतिः गुणितं चतुर्णवतिः । चतुर्विंशत्यधिक-नवसहस्रम् । ९०२४।',
+    keyTakeaway: 'Base complement arithmetic turns multi-digit multiplication into simple subtraction.',
+  },
+  {
+    id: 'sample-escalation-essay',
+    category: 'Scope Boundary & Escalation',
+    categoryBadge: 'Human Mentor Service',
+    tier: 'Human Acharya Escalation',
+    studentQuestion: 'Can Bodhi grade my 5-sentence handwritten essay on "मम विद्यालयः" for CBSE exams?',
+    studentContext: 'Student submitting a full handwritten composition with spelling and handwriting questions.',
+    bodhiAnswer:
+      'Here is where Bodhi’s scope and our living Gurukul Acharyas work together!\n\n• What I can do instantly on-screen: I can check your Sandhi rules, verify dictionary spellings, and confirm case endings (e.g. "मम विद्यालये एका विशाला ग्रन्थालयः अस्ति" ➔ correction to "एकम् विशालं ग्रन्थागारम् अस्ति").\n\n• For your handwritten essay grading: Automated tools cannot accurately evaluate handwritten scripts or CBSE subjective marking schemes. Please snap a photo of your notebook and send it to our Sanskrit Acharya desk on WhatsApp at +91 9000335468 (Only WhatsApp). Our teachers provide handwritten margin notes and marks breakdown!',
+    sanskritAudio: 'गुरुकुल-आचार्य-साहाय्यम् । मम विद्यालयः ।',
+    keyTakeaway: 'Automated tools verify grammar rules; human Acharyas grade handwritten compositions.',
+    escalationNote: 'WhatsApp Acharya Hotline: +91 9000335468 (Only WhatsApp)',
+  },
+];
