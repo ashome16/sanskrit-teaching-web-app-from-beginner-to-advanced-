@@ -192,7 +192,18 @@ const pathToView = (pathname: string): DashboardView | null => {
   if (clean === '/grammar' || clean === '/sanskrit-grammar-lessons') return 'grammar';
   if (clean === '/dhatupatha' || clean === '/dhatu' || clean === '/dhaturoop') return 'dhatupatha';
   if (clean === '/quiz' || clean === '/quizzes') return 'quiz';
-  if (clean === '/board' || clean === '/jodo' || clean === '/puzzles' || clean === '/sanskrit-for-kids') return 'board';
+  if (
+    clean === '/board' ||
+    clean === '/jodo' ||
+    clean === '/puzzles' ||
+    clean === '/sanskrit-for-kids' ||
+    clean === '/match' ||
+    clean === '/match-games' ||
+    clean === '/maze' ||
+    clean === '/word-maze' ||
+    clean === '/games' ||
+    clean === '/sanskrit-games'
+  ) return 'board';
   if (
     clean === '/reader' ||
     clean === '/varnamala' ||
@@ -1100,11 +1111,11 @@ const Dashboard: React.FC = () => {
               type="button"
               className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'board' ? ' active' : ''}`}
               onClick={() => navigateToView('board')}
-              title="Open जोडो tile puzzle"
+              title="Open जोडो tile puzzles, Match-the-Following & Word Mazes"
             >
               <img src="/nav/nav-jodo.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-sanskrit">जोडो</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Word Puzzles' : 'Tile Puzzle'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Word Games & Puzzles' : 'Tile Puzzle & Games'}</span>
             </button>
             <button
               type="button"

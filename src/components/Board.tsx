@@ -9,6 +9,7 @@ import {
   LEITNER_BOX_LABELS,
   type LeitnerStats,
 } from '../utils/leitnerTracker';
+import { SanskritGamesHub } from './SanskritGamesHub';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
 
@@ -30,6 +31,7 @@ export interface BoardProps {
   onNavigateToReader?: () => void;
   onNavigateToVarnamala?: () => void;
   onNavigateToGrammar?: () => void;
+  initialStudioMode?: 'jodo' | 'match' | 'maze';
 }
 
 const SHELF_DESCRIPTIONS: Record<ShelfId, { title: string; desc: string; icon: string }> = {
@@ -961,7 +963,32 @@ const Board: React.FC<BoardProps> = ({
   onNavigateToReader,
   onNavigateToVarnamala,
   onNavigateToGrammar,
+  initialStudioMode,
 }) => {
+  const [boardStudioMode, setBoardStudioMode] = useState<'jodo' | 'match' | 'maze'>(() => {
+    if (initialStudioMode) return initialStudioMode;
+    const h = (typeof window !== 'undefined' ? window.location.hash : '').toLowerCase();
+    const p = (typeof window !== 'undefined' ? window.location.pathname : '').toLowerCase();
+    if (h === '#maze' || h === '#word-maze' || h === '#maze-games' || p.includes('maze')) return 'maze';
+    if (h === '#match' || h === '#match-games' || h === '#match-the-following' || p.includes('match')) return 'match';
+    return 'jodo';
+  });
+
+  useEffect(() => {
+    const handleHash = () => {
+      const h = (window.location.hash || '').toLowerCase();
+      if (h === '#maze' || h === '#word-maze' || h === '#maze-games') {
+        setBoardStudioMode('maze');
+      } else if (h === '#match' || h === '#match-games' || h === '#match-the-following') {
+        setBoardStudioMode('match');
+      } else if (h === '#jodo' || h === '#puzzles') {
+        setBoardStudioMode('jodo');
+      }
+    };
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   const [shelfButtons, setShelfButtons] = useState<ShelfButton[]>(DEFAULT_SHELVES);
   const [boardShelves, setBoardShelves] = useState<BoardShelfLine[]>([]);
   const [fallbackPuzzles, setFallbackPuzzles] = useState<BoardPuzzle[]>([]);
@@ -2120,7 +2147,13 @@ const Board: React.FC<BoardProps> = ({
             <span className="board-nav-sep" aria-hidden="true">/</span>
           </>
         )}
-        <span className="board-nav-current">🧩 जोडो Tile Puzzle</span>
+        <span className="board-nav-current">
+          {boardStudioMode === 'match'
+            ? '🎯 युग्म-मेलनम् · Match Pairs'
+            : boardStudioMode === 'maze'
+            ? '🌀 शब्द-व्यूहः · Word Mazes'
+            : '🧩 जोडो Tile Puzzle'}
+        </span>
       </nav>
       <div className="board-site-shortcuts">
         {onNavigateToReader && (
@@ -2141,6 +2174,70 @@ const Board: React.FC<BoardProps> = ({
       </div>
     </div>
 
+    {/* Studio Mode Switcher: Jodo / Match Pairs / Word Maze */}
+    <div className="board-mode-switcher-bar" role="tablist" aria-label="Game Studio Modes">
+      <button
+        type="button"
+        role="tab"
+        aria-selected={boardStudioMode === 'jodo'}
+        className={`board-mode-tab ${boardStudioMode === 'jodo' ? 'active' : ''}`}
+        onClick={() => {
+          setBoardStudioMode('jodo');
+          window.location.hash = '#jodo';
+        }}
+      >
+        <span className="mode-tab-icon">🧩</span>
+        <div className="mode-tab-text">
+          <span className="mode-tab-title">जोडो · Tile Puzzle</span>
+          <span className="mode-tab-sub">Sound Blending &amp; Vocabulary</span>
+        </div>
+      </button>
+
+      <button
+        type="button"
+        role="tab"
+        aria-selected={boardStudioMode === 'match'}
+        className={`board-mode-tab ${boardStudioMode === 'match' ? 'active' : ''}`}
+        onClick={() => {
+          setBoardStudioMode('match');
+          window.location.hash = '#match';
+        }}
+      >
+        <span className="mode-tab-icon">🎯</span>
+        <div className="mode-tab-text">
+          <span className="mode-tab-title">युग्म-मेलनम् · Match Pairs</span>
+          <span className="mode-tab-sub">14 Categories · Actions, Relations &amp; More</span>
+        </div>
+      </button>
+
+      <button
+        type="button"
+        role="tab"
+        aria-selected={boardStudioMode === 'maze'}
+        className={`board-mode-tab ${boardStudioMode === 'maze' ? 'active' : ''}`}
+        onClick={() => {
+          setBoardStudioMode('maze');
+          window.location.hash = '#maze';
+        }}
+      >
+        <span className="mode-tab-icon">🌀</span>
+        <div className="mode-tab-text">
+          <span className="mode-tab-title">शब्द-व्यूहः · Word Mazes</span>
+          <span className="mode-tab-sub">Story Quests, Sequencing &amp; Trap Evasion</span>
+        </div>
+      </button>
+    </div>
+
+    {boardStudioMode !== 'jodo' ? (
+      <SanskritGamesHub
+        initialMode={boardStudioMode}
+        onGoBack={() => {
+          setBoardStudioMode('jodo');
+          window.location.hash = '#jodo';
+        }}
+      />
+    ) : (
+      <>
     <div className="board-heading">
       <div>
         <p className="eyebrow">शब्द-निर्माण-क्रीडा · BUILD SANSKRIT WORDS</p>
@@ -3133,6 +3230,8 @@ const Board: React.FC<BoardProps> = ({
         </div>
       </div>,
       document.body,
+    )}
+      </>
     )}
 
     {welcomeOpen && <>

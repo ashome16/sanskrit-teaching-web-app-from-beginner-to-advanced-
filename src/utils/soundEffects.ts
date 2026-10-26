@@ -184,6 +184,72 @@ class SoundEffectsEngine {
   }
 
   /**
+   * Grand victory fanfare chord progression for game, quest or quiz mastery
+   */
+  playVictoryFanfare(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+
+      const now = ctx.currentTime;
+      // High triumphant fanfare: G4 -> C5 -> E5 -> G5 -> C6
+      const notes = [392.0, 523.25, 659.25, 783.99, 1046.5];
+
+      notes.forEach((freq, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        const noteStart = now + idx * 0.09;
+        const dur = idx === notes.length - 1 ? 0.7 : 0.35;
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, noteStart);
+
+        gain.gain.setValueAtTime(0.22, noteStart);
+        gain.gain.exponentialRampToValueAtTime(0.001, noteStart + dur);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(noteStart);
+        osc.stop(noteStart + dur + 0.05);
+      });
+    } catch {}
+  }
+
+  /**
+   * Gentle, non-punitive two-tone buzz for a mismatch or trap cell
+   */
+  playErrorBuzzer(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+
+      const now = ctx.currentTime;
+      const notes = [220, 185]; // Low gentle dissonant descending blips
+
+      notes.forEach((freq, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        const noteStart = now + idx * 0.12;
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(freq, noteStart);
+
+        gain.gain.setValueAtTime(0.12, noteStart);
+        gain.gain.exponentialRampToValueAtTime(0.001, noteStart + 0.18);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(noteStart);
+        osc.stop(noteStart + 0.2);
+      });
+    } catch {}
+  }
+
+  /**
    * Subtle, encouraging chime for encouraging practice
    */
   playEncouragementDing(): void {

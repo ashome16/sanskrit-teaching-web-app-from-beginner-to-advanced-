@@ -1237,12 +1237,12 @@ const HomePage: React.FC<HomePageProps> = ({
             >
               <span className="home-journey-step-num">Step 2</span>
               <span className="home-journey-step-icon" aria-hidden="true">🧩</span>
-              <h3 className="home-journey-step-title">Basic Words</h3>
-              <span className="home-journey-step-sanskrit">शब्दाः · जोडो</span>
+              <h3 className="home-journey-step-title">Words &amp; Games</h3>
+              <span className="home-journey-step-sanskrit">शब्दाः · जोडो एवं क्रीडाः</span>
               <p className="home-journey-step-desc">
-                Build 6,000+ practical words through interactive tile puzzles.
+                Build 6,000+ practical words with tile puzzles, 14 match-pair categories &amp; story word mazes.
               </p>
-              <span className="home-journey-step-cta">Build Words →</span>
+              <span className="home-journey-step-cta">Play &amp; Build →</span>
             </div>
 
             <div className="home-journey-arrow" aria-hidden="true">→</div>
@@ -2458,6 +2458,8 @@ const HomePage: React.FC<HomePageProps> = ({
               <ul className="home-feature-points">
                 <li>Accelerate vocabulary recall 3× faster than traditional memorization</li>
                 <li>Master matra joining (e.g. क + आ → का) and letter ligatures hands-on</li>
+                <li>14 Match-the-Following categories: actions, relationships, time, vastu, ayurveda, occupations &amp; genders</li>
+                <li>Word Maze story quests: navigate Panchatantra story paths, avoid traps &amp; assemble full sentences</li>
                 <li>7 themed shelves covering animals, daily objects, verbs, and nature</li>
                 <li>Instant encouraging feedback with direct links back to textbook lessons</li>
               </ul>
@@ -2467,7 +2469,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-feature-btn"
               onClick={onOpenBoard}
             >
-              Play जोडो Puzzle ▶
+              Play जोडो &amp; Sanskrit Games ▶
             </button>
           </div>
 
