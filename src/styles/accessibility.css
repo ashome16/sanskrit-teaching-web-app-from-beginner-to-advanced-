@@ -296,6 +296,62 @@ html.a11y-high-contrast .quiz-option-btn:hover {
   color: #000000 !important;
 }
 
+/* Free Trial Banners & Buttons in High Contrast */
+html.a11y-high-contrast .home-hero-trial-banner,
+html.a11y-high-contrast .home-feature-trial-callout {
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+  box-shadow: 0 4px 0 #000000 !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .home-hero-trial-headline,
+html.a11y-high-contrast .home-ftc-title {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.a11y-high-contrast .home-hero-trial-body,
+html.a11y-high-contrast .home-ftc-desc,
+html.a11y-high-contrast .home-ftc-zero-risk,
+html.a11y-high-contrast .hhtp-sub,
+html.a11y-high-contrast .home-ftc-reassurance {
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast .hhtp-badge,
+html.a11y-high-contrast .home-ftc-badge {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.a11y-high-contrast .home-hero-trial-cta-btn,
+html.a11y-high-contrast .home-ftc-btn,
+html.a11y-high-contrast .home-hero-cta-btn--trial,
+html.a11y-high-contrast .nav-free-trial-btn {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.a11y-high-contrast .home-hero-trial-cta-btn:hover,
+html.a11y-high-contrast .home-ftc-btn:hover,
+html.a11y-high-contrast .home-hero-cta-btn--trial:hover,
+html.a11y-high-contrast .nav-free-trial-btn:hover {
+  background: #fef08a !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+html.a11y-high-contrast .nav-free-trial-badge {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #000000 !important;
+}
+
 /* --------------------------------------------------------------------------
    5. English-First (Parents & Beginners Mode) Layout
    -------------------------------------------------------------------------- */

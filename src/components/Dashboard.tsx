@@ -1201,19 +1201,35 @@ const Dashboard: React.FC = () => {
             >
               <span className="nav-profile-avatar">{currentUser.avatar}</span>
               <span className="nav-profile-name">{currentUser.fullName.split(' ')[0]}</span>
-              {currentUser.planStatus === 'active' && (
+              {currentUser.planStatus === 'active' ? (
                 <span className="nav-trial-pill nav-active-pill" title="Subscription Active">⭐ Active</span>
-              )}
+              ) : currentUser.planStatus === 'trial' ? (
+                <span className="nav-trial-pill" title="14-Day Free Access Active">🎁 14d Trial</span>
+              ) : null}
             </button>
           ) : (
-            <button
-              type="button"
-              className="nav-auth-btn"
-              onClick={() => openAuthModal('login')}
-            >
-              <span>👤</span>
-              <span>Sign In / Register</span>
-            </button>
+            <div className="nav-auth-group" style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+              <button
+                type="button"
+                className="nav-free-trial-btn"
+                onClick={() => openAuthModal('register')}
+                title="Claim your unrestricted 14-day free access · No credit card required"
+                aria-label="Start 14-day free trial"
+              >
+                <span className="nav-free-trial-gift" aria-hidden="true">🎁</span>
+                <span className="nav-free-trial-text">14-Day Free Access</span>
+                <span className="nav-free-trial-badge">Free</span>
+              </button>
+              <button
+                type="button"
+                className="nav-auth-btn"
+                onClick={() => openAuthModal('login')}
+                title="Sign in to your Gurukul account"
+              >
+                <span>👤</span>
+                <span>Sign In</span>
+              </button>
+            </div>
           )}
         </div>
       </header>
@@ -1237,6 +1253,7 @@ const Dashboard: React.FC = () => {
           onOpenResources={() => navigateToView('resources')}
           onOpenCourse={() => navigateToView('course')}
           onOpenScienceLab={(segment) => openScienceLab(segment)}
+          onOpenRegister={() => openAuthModal('register')}
         />
       )}
       {/* FAQ lives at the bottom of the home page (no longer in the top menu). /faq scrolls here. */}

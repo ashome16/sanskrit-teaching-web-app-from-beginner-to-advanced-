@@ -618,6 +618,12 @@ button.dashboard-nav-group-label:focus-visible,
     gap: 0.3rem;
   }
 
+  .nav-free-trial-btn {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.78rem;
+    gap: 0.28rem;
+  }
+
   .dashboard-nav {
     margin-left: 0;
     order: 3;
@@ -725,6 +731,15 @@ button.dashboard-nav-group-label:focus-visible,
     font-size: 0.74rem;
   }
 
+  .nav-free-trial-btn {
+    padding: 0.3rem 0.55rem;
+    font-size: 0.74rem;
+  }
+
+  .nav-free-trial-badge {
+    display: none;
+  }
+
   .nav-profile-name {
     display: none;
   }
@@ -752,6 +767,11 @@ button.dashboard-nav-group-label:focus-visible,
   .nav-auth-btn {
     padding: 0.28rem 0.45rem;
     font-size: 0.7rem;
+  }
+
+  .nav-free-trial-btn {
+    padding: 0.25rem 0.42rem;
+    font-size: 0.68rem;
   }
 }
 

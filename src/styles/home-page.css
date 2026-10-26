@@ -287,6 +287,375 @@
   box-shadow: 0 8px 20px rgba(217, 119, 6, 0.42);
 }
 
+.home-hero-cta-btn--trial {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  color: #ffffff;
+  border: 1.5px solid #22c55e;
+  box-shadow: 0 4px 14px rgba(21, 128, 61, 0.32);
+}
+
+.home-hero-cta-btn--trial:hover {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(21, 128, 61, 0.42);
+}
+
+/* Hero 14-Day Free Access Banner */
+.home-hero-trial-banner {
+  max-width: 920px;
+  margin: 1.15rem auto 1.45rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #fefce8 100%);
+  border: 2px solid #86efac;
+  border-radius: 16px;
+  padding: 1.25rem 1.65rem;
+  box-shadow: 0 6px 20px rgba(22, 101, 52, 0.08);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero-trial-pill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.hhtp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #15803d;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.hhtp-sub {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #166534;
+}
+
+.home-hero-trial-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.home-hero-trial-text-col {
+  flex: 1 1 auto;
+}
+
+.home-hero-trial-headline {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #14532d;
+  line-height: 1.35;
+  margin-bottom: 0.35rem;
+}
+
+.home-hero-trial-body {
+  font-size: 0.92rem;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.home-hero-trial-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.45rem;
+  font-size: 0.98rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(22, 101, 52, 0.28);
+  transition: all 0.18s ease;
+}
+
+.home-hero-trial-cta-btn:hover {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(22, 101, 52, 0.38);
+}
+
+.hhtc-arrow {
+  transition: transform 0.18s ease;
+}
+
+.home-hero-trial-cta-btn:hover .hhtc-arrow {
+  transform: translateX(3px);
+}
+
+.home-hero-trial-trust-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #bbf7d0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #166534;
+}
+
+.hhtt-item span {
+  color: #15803d;
+  font-weight: 900;
+  margin-right: 0.2rem;
+}
+
+/* Post-Feature 14-Day Free Access Callout Banners */
+.home-feature-trial-callout {
+  max-width: 1120px;
+  margin: 2.25rem auto 3rem;
+  border-radius: 18px;
+  padding: 1.65rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 6px 24px rgba(61, 27, 4, 0.07);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.home-ftc--emerald {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 60%, #e6fcf5 100%);
+  border: 1.5px solid #86efac;
+}
+
+.home-ftc--amber {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 60%, #fff7ed 100%);
+  border: 1.5px solid #fde68a;
+}
+
+.home-ftc--terracotta {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 60%, #fed7aa 100%);
+  border: 1.5px solid #fdba74;
+}
+
+.home-ftc--indigo {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 60%, #f5f3ff 100%);
+  border: 1.5px solid #c7d2fe;
+}
+
+.home-ftc--slate {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 60%, #e2e8f0 100%);
+  border: 1.5px solid #cbd5e1;
+}
+
+.home-ftc-left {
+  flex: 1 1 65%;
+  min-width: 0;
+}
+
+.home-ftc-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.home-ftc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.home-ftc--emerald .home-ftc-badge {
+  background: #15803d;
+  color: #ffffff;
+}
+
+.home-ftc--amber .home-ftc-badge {
+  background: #b45309;
+  color: #ffffff;
+}
+
+.home-ftc--terracotta .home-ftc-badge {
+  background: #c2410c;
+  color: #ffffff;
+}
+
+.home-ftc--indigo .home-ftc-badge {
+  background: #4338ca;
+  color: #ffffff;
+}
+
+.home-ftc-zero-risk {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.home-ftc-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 0.45rem;
+  line-height: 1.3;
+}
+
+.home-ftc-desc {
+  font-size: 0.94rem;
+  color: #475569;
+  margin: 0 0 0.95rem;
+  line-height: 1.5;
+}
+
+.home-ftc-perks {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.home-ftc-perk-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.home-ftc-check {
+  color: #16a34a;
+  font-weight: 900;
+}
+
+.home-ftc-right {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  text-align: center;
+}
+
+.home-ftc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.85rem 1.65rem;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  border: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.home-ftc--emerald .home-ftc-btn {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  color: #ffffff;
+}
+.home-ftc--emerald .home-ftc-btn:hover {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(22, 101, 52, 0.32);
+}
+
+.home-ftc--amber .home-ftc-btn {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff;
+}
+.home-ftc--amber .home-ftc-btn:hover {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.32);
+}
+
+.home-ftc--terracotta .home-ftc-btn {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+}
+.home-ftc--terracotta .home-ftc-btn:hover {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.32);
+}
+
+.home-ftc--indigo .home-ftc-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  color: #ffffff;
+}
+.home-ftc--indigo .home-ftc-btn:hover {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.32);
+}
+
+.home-ftc-reassurance {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #64748b;
+  max-width: 220px;
+  line-height: 1.35;
+}
+
+@media (max-width: 860px) {
+  .home-hero-trial-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.95rem;
+  }
+  .home-hero-trial-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .home-hero-trial-trust-row {
+    gap: 0.65rem;
+    font-size: 0.78rem;
+  }
+  .home-feature-trial-callout {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.4rem 1.25rem;
+    gap: 1.25rem;
+    margin: 1.75rem auto 2.25rem;
+  }
+  .home-ftc-right {
+    width: 100%;
+    align-items: stretch;
+  }
+  .home-ftc-btn {
+    width: 100%;
+  }
+  .home-ftc-reassurance {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Learner Journey Roadmap (Alphabet → Words → Sentences → Grammar → NCERT → Exam)
    -------------------------------------------------------------------------- */

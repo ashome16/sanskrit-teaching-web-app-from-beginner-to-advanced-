@@ -589,6 +589,50 @@
   transform: translateY(-1px);
 }
 
+.nav-free-trial-btn {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  color: #ffffff;
+  border: 1px solid #16a34a;
+  border-radius: 999px;
+  padding: 0.38rem 0.85rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 2px 6px rgba(21, 128, 61, 0.25);
+  white-space: nowrap;
+}
+
+.nav-free-trial-btn:hover {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  box-shadow: 0 4px 10px rgba(21, 128, 61, 0.35);
+  transform: translateY(-1px);
+}
+
+.nav-free-trial-gift {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.nav-free-trial-text {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.nav-free-trial-badge {
+  background: #fef08a;
+  color: #713f12;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.08rem 0.38rem;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+
 .nav-trial-pill {
   background: #fef3c7;
   border: 1px solid #f59e0b;
