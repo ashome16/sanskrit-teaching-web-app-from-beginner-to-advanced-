@@ -6,6 +6,7 @@ import {
   calculatePronunciationAccuracy,
 } from '../utils/speech';
 import type { SpeechRecognitionResult } from '../utils/speech';
+import { SanskritInputBox } from './SanskritInputBox';
 import '../styles/quiz-question.css';
 
 interface QuizQuestionProps {
@@ -29,12 +30,6 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({
 
   const handleMultipleChoiceChange = (option: string) => {
     onAnswerChange(option);
-  };
-
-  const handleShortAnswerChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    onAnswerChange(event.target.value);
   };
 
   const handleStartPronunciationRecording = () => {
@@ -106,11 +101,15 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({
 
         {question.type === 'short-answer' && (
           <div className="short-answer">
-            <textarea
+            <SanskritInputBox
               value={answer}
-              onChange={handleShortAnswerChange}
-              placeholder="Type your answer here..."
-              rows={4}
+              onChange={onAnswerChange}
+              placeholder="Type your answer in Sanskrit (e.g. namaste -> नमस्ते)..."
+              multiline={true}
+              rows={3}
+              expectedAnswer={typeof question.correctAnswer === 'string' ? question.correctAnswer : undefined}
+              showCheckButton={Boolean(question.correctAnswer)}
+              label="संस्कृते उत्तरं लिखतु · Type Sanskrit Answer"
             />
           </div>
         )}

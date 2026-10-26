@@ -7,6 +7,7 @@ import { useAuthStore } from '../store/authStore';
 import { canAccessAllChapters, canDownloadContent, getDownloadGateReason } from '../utils/premiumAccess';
 import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadQuizSheet } from '../utils/contentDownload';
+import { SanskritInputBox } from './SanskritInputBox';
 import '../styles/quiz-section.css';
 
 export type QuizTrackId = 'all' | 'class7' | 'class8' | 'class9' | 'grammar' | 'vedic_maths';
@@ -172,6 +173,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
   const [activeQuestions, setActiveQuestions] = useState<QuizQuestionItem[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [typedQuizScratchpad, setTypedQuizScratchpad] = useState<string>('');
   const [isAnswerChecked, setIsAnswerChecked] = useState<boolean>(false);
   const [userAnswers, setUserAnswers] = useState<Record<string, number>>({});
   const [score, setScore] = useState<number>(0);
@@ -1206,6 +1208,40 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                 </button>
               </p>
             )}
+
+            {/* Optional Sanskrit Typing Scratchpad & Keyboard */}
+            <details
+              className="quiz-typing-scratchpad-details"
+              style={{
+                margin: '0.65rem 0 1rem',
+                padding: '0.55rem 0.85rem',
+                background: '#fffdf5',
+                border: '1px dashed #f59e0b',
+                borderRadius: '10px',
+              }}
+            >
+              <summary
+                style={{
+                  cursor: 'pointer',
+                  fontSize: '0.82rem',
+                  fontWeight: 800,
+                  color: '#92400e',
+                  userSelect: 'none',
+                }}
+              >
+                ⌨️ संस्कृत-टङ्कण-अभ्यासः · Practice Typing Sanskrit Answer (Click to Open)
+              </summary>
+              <div style={{ marginTop: '0.5rem' }}>
+                <SanskritInputBox
+                  value={typedQuizScratchpad}
+                  onChange={setTypedQuizScratchpad}
+                  placeholder="Type Sanskrit answer (e.g. namaste -> नमस्ते)..."
+                  expectedAnswer={currentQ.options[currentQ.correctIndex]}
+                  showCheckButton={true}
+                  label="Type Sanskrit & Verify Spelling"
+                />
+              </div>
+            </details>
 
             {/* Options List */}
             <div className="quiz-options-list">

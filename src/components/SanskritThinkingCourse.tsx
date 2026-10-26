@@ -28,6 +28,7 @@ import SanskritFlashcardStudio from './SanskritFlashcardStudio';
 import SanskritGrandExam from './SanskritGrandExam';
 import CourseChallengeArena from './CourseChallengeArena';
 import GrammarLightFigure, { isGrammarLightFigure } from './GrammarLightFigures';
+import { SanskritInputBox } from './SanskritInputBox';
 
 /** Sidebar / nav label for an addendum unit. */
 const addendumPartLabel = (art: DarshanaAddendumArticle): string =>
@@ -242,6 +243,26 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
   const currentLesson: CourseLesson = useMemo(() => {
     return allLessons.find((l) => l.id === activeLessonId) || allLessons[0];
   }, [allLessons, activeLessonId]);
+
+  // Sanskrit typing answers in course drills and worksheets
+  const [courseTypedAnswers, setCourseTypedAnswers] = useState<Record<string, string>>(() => {
+    try {
+      const saved = localStorage.getItem('stc_typed_answers');
+      return saved ? JSON.parse(saved) : {};
+    } catch {
+      return {};
+    }
+  });
+
+  const handleCourseAnswerChange = (key: string, val: string) => {
+    setCourseTypedAnswers((prev) => {
+      const updated = { ...prev, [key]: val };
+      try {
+        localStorage.setItem('stc_typed_answers', JSON.stringify(updated));
+      } catch {}
+      return updated;
+    });
+  };
 
   // Current active module object
   const currentModule: CourseModule = useMemo(() => {
@@ -1307,6 +1328,14 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                                     ))}
                                   </div>
                                 )}
+                                <SanskritInputBox
+                                  value={courseTypedAnswers[`drill_${currentLesson.id}_${secIdx}_${qIdx}`] || ''}
+                                  onChange={(val) => handleCourseAnswerChange(`drill_${currentLesson.id}_${secIdx}_${qIdx}`, val)}
+                                  placeholder="Type Sanskrit answer (e.g. namaste -> नमस्ते)..."
+                                  expectedAnswer={q.answer}
+                                  showCheckButton={true}
+                                  label="संस्कृते उत्तरं लिखतु · Type Sanskrit Answer"
+                                />
                               </div>
                             ))}
                           </div>
@@ -1908,8 +1937,14 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                         )}
 
                         <div className="stc-ws-writein-area">
-                          <div className="stc-ws-writein-line" />
-                          <div className="stc-ws-writein-line" />
+                          <SanskritInputBox
+                            value={courseTypedAnswers[`ws_${ws.lessonId}_${sIdx}_${qIdx}`] || ''}
+                            onChange={(val) => handleCourseAnswerChange(`ws_${ws.lessonId}_${sIdx}_${qIdx}`, val)}
+                            placeholder="Type Sanskrit answer (e.g. namaste -> नमस्ते)..."
+                            expectedAnswer={q.answer}
+                            showCheckButton={true}
+                            label="संस्कृते उत्तरं लिखतु · Type Sanskrit Answer"
+                          />
                         </div>
                       </div>
                     ))}
@@ -1940,10 +1975,16 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
                         ))}
                       </ul>
                       <div className="stc-ws-writein-area">
-                        <div className="stc-ws-writein-line" />
-                        <div className="stc-ws-writein-line" />
-                        <div className="stc-ws-writein-line" />
-                        <div className="stc-ws-writein-line" />
+                        <SanskritInputBox
+                          value={courseTypedAnswers[`ws_contemplative_${ws.lessonId}`] || ''}
+                          onChange={(val) => handleCourseAnswerChange(`ws_contemplative_${ws.lessonId}`, val)}
+                          placeholder="Type your contemplative reflection in Sanskrit or English..."
+                          multiline={true}
+                          rows={3}
+                          expectedAnswer={ws.contemplativePrompt.modelReflection}
+                          showCheckButton={false}
+                          label="चिन्तन-लेखनम् · Contemplative Reflection"
+                        />
                       </div>
                     </div>
                   </div>

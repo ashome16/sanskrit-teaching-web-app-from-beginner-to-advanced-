@@ -19,6 +19,8 @@ import {
   evaluateHandwriting,
   type AssessmentResult,
 } from '../utils/handwritingEvaluator';
+import { SanskritInputBox } from './SanskritInputBox';
+import '../styles/sanskrit-keyboard.css';
 
 interface Point {
   x: number;
@@ -53,7 +55,9 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
   onSelectLetter,
 }) => {
   const [selectedLetter, setSelectedLetter] = useState<string>(initialLetter || 'अ');
-  const [interactiveMode, setInteractiveMode] = useState<'trace' | 'puzzle'>('trace');
+  const [interactiveMode, setInteractiveMode] = useState<'trace' | 'puzzle' | 'type'>('trace');
+  const [typedSlateText, setTypedSlateText] = useState<string>('');
+  const [targetChallengeWord, setTargetChallengeWord] = useState<string>('');
   const [isSoundMuted, setIsSoundMuted] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       try {
@@ -817,6 +821,18 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
             <span>🧩</span>
             <span>Stroke Puzzle (खंड-संयोजनम्)</span>
           </button>
+          <button
+            type="button"
+            className={`v-mode-tab-btn${interactiveMode === 'type' ? ' v-mode-tab-btn--active' : ''}`}
+            onClick={() => {
+              setInteractiveMode('type');
+              if (!typedSlateText) setTypedSlateText(mnemonic.letter);
+            }}
+            aria-selected={interactiveMode === 'type'}
+          >
+            <span>⌨️</span>
+            <span>Type &amp; Practice (संस्कृत-टङ्कणम्)</span>
+          </button>
         </div>
 
         <button
@@ -1054,8 +1070,192 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
             </div>
           )}
 
-          {/* Top Bar of Canvas */}
-          <div className="v-canvas-top-bar">
+          {interactiveMode === 'type' ? (
+            <div className="varnamala-typing-studio">
+              {/* Header Box with Big Letter Hero */}
+              <div className="vts-header-box">
+                <div className="vts-letter-hero">
+                  <span className="vts-big-letter">{mnemonic.letter}</span>
+                  <div className="vts-letter-info">
+                    <h3>{mnemonic.letter} · {mnemonic.iast}</h3>
+                    <p>{mnemonic.emoji} {mnemonic.wordSan} ({mnemonic.wordEn} · {mnemonic.wordHi})</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
+                  <button
+                    type="button"
+                    className="v-audio-speak-btn"
+                    onClick={() => {
+                      soundEffects.playStrokeChime();
+                      playPronunciation(mnemonic.letter);
+                    }}
+                    title={`Hear letter sound: ${mnemonic.letter}`}
+                  >
+                    🔊 {mnemonic.letter}
+                  </button>
+                  <button
+                    type="button"
+                    className="v-audio-speak-btn v-audio-speak-btn--word"
+                    onClick={() => {
+                      soundEffects.playSuccessDing();
+                      playPronunciation(mnemonic.wordSan);
+                    }}
+                    title={`Hear word pronunciation: ${mnemonic.wordSan}`}
+                  >
+                    🔊 {mnemonic.wordSan}
+                  </button>
+                </div>
+              </div>
+
+              {/* Matra Conjugation Grid (Barakhadi forms for consonants) */}
+              {!['अ', 'आ', 'इ', 'ई', 'उ', 'ऊ', 'ऋ', 'ॠ', 'ऌ', 'ए', 'ऐ', 'ओ', 'औ', 'अं', 'अः'].includes(mnemonic.letter) && (
+                <div>
+                  <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#78350f', marginBottom: '0.4rem' }}>
+                    📐 Barakhadi Matra Forms (मात्रा-रूपाणि):
+                  </div>
+                  <div className="vts-matra-grid">
+                    {[
+                      { m: '', ph: 'a' },
+                      { m: 'ा', ph: 'ā' },
+                      { m: 'ि', ph: 'i' },
+                      { m: 'ी', ph: 'ī' },
+                      { m: 'ु', ph: 'u' },
+                      { m: 'ू', ph: 'ū' },
+                      { m: 'ृ', ph: 'ṛ' },
+                      { m: 'े', ph: 'e' },
+                      { m: 'ै', ph: 'ai' },
+                      { m: 'ो', ph: 'o' },
+                      { m: 'ौ', ph: 'au' },
+                      { m: 'ं', ph: 'aṁ' },
+                      { m: 'ः', ph: 'aḥ' },
+                    ].map(({ m, ph }) => {
+                      const conj = mnemonic.letter + m;
+                      return (
+                        <button
+                          key={conj}
+                          type="button"
+                          className="vts-matra-card"
+                          onClick={() => {
+                            setTypedSlateText((prev) => prev + conj);
+                            playPronunciation(conj);
+                          }}
+                          title={`Click to insert "${conj}" into typing slate`}
+                        >
+                          <span className="vts-matra-dev">{conj}</span>
+                          <span className="vts-matra-phonetic">
+                            {(mnemonic.iast.replace(/a$/, '') || mnemonic.iast) + ph}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Interactive Sanskrit Typing Input Box */}
+              <div>
+                <div style={{ fontSize: '0.86rem', fontWeight: 800, color: '#78350f', marginBottom: '0.35rem' }}>
+                  ⌨️ Sanskrit Typing Slate (टङ्कण-फलकम्):
+                </div>
+                <SanskritInputBox
+                  value={typedSlateText}
+                  onChange={setTypedSlateText}
+                  placeholder={`Type here in Sanskrit (e.g. namaste -> नमस्ते, ${mnemonic.wordSan})...`}
+                  expectedAnswer={targetChallengeWord || mnemonic.wordSan}
+                  showCheckButton={true}
+                  initialKeyboardOpen={true}
+                  label="Type Sanskrit & Verify Spelling"
+                />
+              </div>
+
+              {/* Vocabulary Typing Challenges */}
+              <div className="vts-words-strip">
+                <div style={{ fontSize: '0.86rem', fontWeight: 800, color: '#78350f' }}>
+                  🎯 Practice Typing Words with "{mnemonic.letter}":
+                </div>
+                {[
+                  { dev: mnemonic.wordSan, en: mnemonic.wordEn, ph: mnemonic.iast + '...' },
+                  ...(mnemonic.letter === 'क'
+                    ? [
+                        { dev: 'कमलम्', en: 'Lotus', ph: 'kamalam' },
+                        { dev: 'कपोतः', en: 'Pigeon / Dove', ph: 'kapotaH' },
+                        { dev: 'कलशः', en: 'Sacred Pitcher', ph: 'kalashaH' },
+                      ]
+                    : mnemonic.letter === 'ख'
+                    ? [
+                        { dev: 'खगः', en: 'Bird', ph: 'khagaH' },
+                        { dev: 'खड्गः', en: 'Sword', ph: 'khaDgaH' },
+                      ]
+                    : mnemonic.letter === 'ग'
+                    ? [
+                        { dev: 'गजः', en: 'Elephant', ph: 'gajaH' },
+                        { dev: 'गच्छति', en: 'Goes', ph: 'gacchati' },
+                      ]
+                    : mnemonic.letter === 'घ'
+                    ? [
+                        { dev: 'घटः', en: 'Clay Pot', ph: 'ghaTaH' },
+                        { dev: 'घण्टा', en: 'Bell', ph: 'ghaNTA' },
+                      ]
+                    : mnemonic.letter === 'च'
+                    ? [
+                        { dev: 'चन्द्रः', en: 'Moon', ph: 'candraH' },
+                        { dev: 'चक्रम्', en: 'Wheel', ph: 'cakram' },
+                      ]
+                    : mnemonic.letter === 'अ'
+                    ? [
+                        { dev: 'अश्वः', en: 'Horse', ph: 'ashvaH' },
+                        { dev: 'अग्निः', en: 'Fire', ph: 'agniH' },
+                        { dev: 'अमृतम्', en: 'Nectar of Immortality', ph: 'amRtam' },
+                      ]
+                    : mnemonic.letter === 'आ'
+                    ? [
+                        { dev: 'आम्रम्', en: 'Mango', ph: 'aamram' },
+                        { dev: 'आचार्यः', en: 'Teacher', ph: 'aacaaryaH' },
+                      ]
+                    : [
+                        { dev: mnemonic.wordSan, en: mnemonic.wordEn, ph: mnemonic.wordSan },
+                        { dev: 'नमस्ते', en: 'Greetings / Respects', ph: 'namaste' },
+                      ]),
+                ].map((cw, cIdx) => (
+                  <div key={cIdx} className="vts-word-card">
+                    <div className="vts-word-text">
+                      <span className="vts-word-dev">{cw.dev}</span>
+                      <span className="vts-word-en">({cw.en})</span>
+                      <span className="vts-word-phonetic">
+                        Type: <code>{cw.ph}</code>
+                      </span>
+                    </div>
+                    <div className="vts-word-actions">
+                      <button
+                        type="button"
+                        className="sanskrit-tool-btn"
+                        onClick={() => playPronunciation(cw.dev)}
+                        title={`Listen to ${cw.dev}`}
+                      >
+                        🔊 Listen
+                      </button>
+                      <button
+                        type="button"
+                        className="sanskrit-tool-btn"
+                        style={{ background: '#fef3c7', borderColor: '#f59e0b', color: '#92400e' }}
+                        onClick={() => {
+                          setTargetChallengeWord(cw.dev);
+                          setTypedSlateText(cw.dev);
+                          playPronunciation(cw.dev);
+                        }}
+                        title={`Set target challenge to ${cw.dev}`}
+                      >
+                        ✍️ Try Typing
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <>
+              {/* Top Bar of Canvas */}
+              <div className="v-canvas-top-bar">
             <div className="v-canvas-badge-info">
               <span className="v-badge-char">{mnemonic.letter}</span>
               <span className="v-badge-mnemonic">
@@ -1462,7 +1662,9 @@ export const VarnamalaWritingPad: React.FC<VarnamalaWritingPadProps> = ({
               </button>
             </div>
           </div>
-        </div>
+        </>
+      )}
+    </div>
 
         {/* Right Sidebar: Stroke Instructions & Check Button */}
         <div className="v-guide-sidebar">

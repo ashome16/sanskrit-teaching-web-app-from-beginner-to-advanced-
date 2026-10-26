@@ -12,6 +12,7 @@ import {
 import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadWorksheet } from '../utils/contentDownload';
 import { playPronunciation } from '../utils/pronunciation';
+import { SanskritInputBox } from './SanskritInputBox';
 import '../styles/worksheet-section.css';
 
 export interface WorksheetSectionProps {
@@ -119,6 +120,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
   const [activeWorksheet, setActiveWorksheet] = useState<Worksheet | null>(null);
   const [showAnswerKey, setShowAnswerKey] = useState<boolean>(false);
   const [showUpgradePrompt, setShowUpgradePrompt] = useState<boolean>(false);
+  const [typedWorksheetAnswers, setTypedWorksheetAnswers] = useState<Record<string, string>>({});
   const { isAdminLoggedIn, currentUser, openAuthModal, openPaymentModal } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
   const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
@@ -599,9 +601,23 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
                         </div>
                       )}
 
-                      {/* Blank writing area for student answer */}
+                      {/* Interactive Sanskrit Typing area for student answer */}
                       {!showAnswerKey && (
-                        <div style={{ minHeight: q.type === 'short_ans' ? '42px' : '22px', borderBottom: '1px dotted #9ca3af', marginTop: '0.35rem', marginBottom: '0.2rem' }} />
+                        <div className="ws-paper-typing-area" style={{ marginTop: '0.4rem', marginBottom: '0.4rem' }}>
+                          <SanskritInputBox
+                            value={typedWorksheetAnswers[`${activeWorksheet?.id || 'ws'}_${q.num}`] || ''}
+                            onChange={(val) =>
+                              setTypedWorksheetAnswers((prev) => ({
+                                ...prev,
+                                [`${activeWorksheet?.id || 'ws'}_${q.num}`]: val,
+                              }))
+                            }
+                            placeholder="Type Sanskrit answer (e.g. namaste -> नमस्ते)..."
+                            expectedAnswer={q.answer}
+                            showCheckButton={true}
+                            label="संस्कृते उत्तरं लिखतु · Type Sanskrit Answer"
+                          />
+                        </div>
                       )}
 
                       {/* Teacher Answer Key display */}
