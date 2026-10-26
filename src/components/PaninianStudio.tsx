@@ -19,6 +19,7 @@ import {
 import DhatupathaBrowser from './DhatupathaBrowser';
 import DhatupathaArticles from './DhatupathaArticles';
 import DhatupathaPyramidIntro from './DhatupathaPyramidIntro';
+import { DhatuDeconstructionFlowchart } from './DhatuDeconstructionFlowchart';
 import '../styles/dhatupatha.css';
 
 export type StudioMode = 'deconstructor' | 'generator' | 'comparator' | 'quiz' | 'library' | 'articles';
@@ -2177,9 +2178,20 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
                 </div>
               </div>
 
+              {/* Step-by-Step Pāṇinian Deconstruction Flowchart */}
+              <DhatuDeconstructionFlowchart
+                deconResult={deconResult}
+                onExploreDhatu={(rootName) => {
+                  const found = dhatuLibrary.find((d) => d.devanagari === rootName);
+                  if (found?.id) setSelectedDhatuId(found.id);
+                  setMode('generator');
+                  window.scrollTo({ top: 120, behavior: 'smooth' });
+                }}
+              />
+
               {/* Visual Formula Pill */}
               <div className="dp-formula-banner">
-                <span className="dp-formula-tag">Pāṇinian Derivation Formula:</span>
+                <span className="dp-formula-tag">Pāṇinian Derivation Formula Summary:</span>
                 <div className="dp-formula-chips">
                   {deconResult.formula.prefix && (
                     <>

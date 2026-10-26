@@ -4,6 +4,11 @@ import '../styles/board.css';
 import { iconForExampleWord } from '../data/exampleIcons';
 import { getSpeechGeneration, playPronunciation, stopPronunciation, playSequence } from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
+import {
+  leitnerTracker,
+  LEITNER_BOX_LABELS,
+  type LeitnerStats,
+} from '../utils/leitnerTracker';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
 
@@ -981,6 +986,19 @@ const Board: React.FC<BoardProps> = ({
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
   const skipSectionRef = useRef<{ prev: () => void; next: () => void }>({ prev: () => {}, next: () => {} });
+  const [leitnerMode, setLeitnerMode] = useState(false);
+  const [showLeitnerModal, setShowLeitnerModal] = useState(false);
+  const [leitnerStats, setLeitnerStats] = useState<LeitnerStats>(() => leitnerTracker.getStats());
+
+  const handleToggleLeitnerMode = () => {
+    setLeitnerMode((prev) => {
+      const next = !prev;
+      if (next) {
+        setPuzzleIndexByShelf((p) => ({ ...p, [activeShelf]: 0 }));
+      }
+      return next;
+    });
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -1120,9 +1138,29 @@ const Board: React.FC<BoardProps> = ({
   }, []);
 
   const activeBoardShelf = boardShelves.find((entry) => SHELF_ALIASES[entry.shelf.toLowerCase()] === activeShelf || entry.shelf.toLowerCase() === activeShelf) ?? null;
-  const activePuzzles = activeBoardShelf?.puzzles.length
+  const rawShelfPuzzles = activeBoardShelf?.puzzles.length
     ? activeBoardShelf.puzzles
     : fallbackPuzzles.filter((item) => item.target === 'का' || item.target === 'मा' || item.target === 'सा' || item.target === 'बालः');
+
+  const activePuzzles = useMemo(() => {
+    if (!leitnerMode) return rawShelfPuzzles;
+    const now = Date.now();
+    return [...rawShelfPuzzles].sort((a, b) => {
+      const cardA = leitnerTracker.getCard(a.target);
+      const cardB = leitnerTracker.getCard(b.target);
+      const isDueA = cardA ? cardA.nextReviewTime <= now : false;
+      const isDueB = cardB ? cardB.nextReviewTime <= now : false;
+
+      if (isDueA && !isDueB) return -1;
+      if (!isDueA && isDueB) return 1;
+
+      const boxA = cardA?.box ?? 1;
+      const boxB = cardB?.box ?? 1;
+      if (boxA !== boxB) return boxA - boxB;
+
+      return 0;
+    });
+  }, [rawShelfPuzzles, leitnerMode]);
   const rawPuzzleIndex = puzzleIndexByShelf[activeShelf] ?? 0;
   const puzzleIndex = activePuzzles.length
     ? Math.max(0, Math.min(rawPuzzleIndex, activePuzzles.length - 1))
@@ -1679,11 +1717,23 @@ const Board: React.FC<BoardProps> = ({
         soundEffects.playSuccessDing();
         if (activePuzzle?.target) {
           playPronunciation(activePuzzle.target);
+          leitnerTracker.recordAttempt(activePuzzle.target, true, {
+            shelfId: activeShelf,
+            english: activePuzzle.english,
+          });
+          setLeitnerStats(leitnerTracker.getStats());
         }
       } else {
         setChecked(false);
         setWrongAttempt(true);
         soundEffects.playEncouragementDing();
+        if (activePuzzle?.target) {
+          leitnerTracker.recordAttempt(activePuzzle.target, false, {
+            shelfId: activeShelf,
+            english: activePuzzle.english,
+          });
+          setLeitnerStats(leitnerTracker.getStats());
+        }
       }
       return;
     }
@@ -1699,11 +1749,23 @@ const Board: React.FC<BoardProps> = ({
       soundEffects.playSuccessDing();
       if (activePuzzle?.target) {
         playPronunciation(activePuzzle.target);
+        leitnerTracker.recordAttempt(activePuzzle.target, true, {
+          shelfId: activeShelf,
+          english: activePuzzle.english,
+        });
+        setLeitnerStats(leitnerTracker.getStats());
       }
     } else {
       setChecked(false);
       setWrongAttempt(true);
       soundEffects.playEncouragementDing();
+      if (activePuzzle?.target) {
+        leitnerTracker.recordAttempt(activePuzzle.target, false, {
+          shelfId: activeShelf,
+          english: activePuzzle.english,
+        });
+        setLeitnerStats(leitnerTracker.getStats());
+      }
     }
   };
 
@@ -1983,6 +2045,9 @@ const Board: React.FC<BoardProps> = ({
     : (activePuzzle?.english ?? '');
   const leadMark = leadHighlight ? ' puzzle-lead-highlight' : '';
   const activeShelfInfo = SHELF_DESCRIPTIONS[activeShelf];
+  const currentCard = activePuzzle?.target ? leitnerTracker.getCard(activePuzzle.target) : null;
+  const currentBox = currentCard?.box || 1;
+  const boxMeta = LEITNER_BOX_LABELS[currentBox];
   const nextCue = describeNextTap(puzzleView, chosen, {
     learn: isLearnPhase,
     solved: checked && isCorrect,
@@ -2124,6 +2189,25 @@ const Board: React.FC<BoardProps> = ({
             <span className="shelf-summary-count-badge">
               🧩 {activePuzzles.length.toLocaleString()} Puzzles
             </span>
+            <button
+              type="button"
+              className={`board-leitner-toggle-btn${leitnerMode ? ' is-active' : ''}`}
+              onClick={handleToggleLeitnerMode}
+              title="Toggle Leitner Spaced Repetition Flashcard Loop (auto-resurfaces words based on 5-box intervals)"
+            >
+              🔁 {leitnerMode ? 'Leitner Loop: ON' : 'Leitner Spaced Repetition'}
+              {leitnerStats.dueCount > 0 && (
+                <span className="board-leitner-due-pill">{leitnerStats.dueCount} Due</span>
+              )}
+            </button>
+            <button
+              type="button"
+              className="board-leitner-stats-btn"
+              onClick={() => setShowLeitnerModal(true)}
+              title="View Leitner 5-Box Memory Progress & Stats"
+            >
+              📊 Flashcard Stats
+            </button>
           </div>
         </div>
       )}
@@ -2388,6 +2472,15 @@ const Board: React.FC<BoardProps> = ({
                   >
                     🔊
                   </button>
+                  <button
+                    type="button"
+                    className="board-card-leitner-pill"
+                    style={{ borderColor: boxMeta.color, color: boxMeta.color }}
+                    onClick={() => setShowLeitnerModal(true)}
+                    title={`Leitner Box ${currentBox}: ${boxMeta.title} (${boxMeta.interval}). Reviews: ${currentCard?.totalReviews || 0}, Lapses: ${currentCard?.lapses || 0}. Click to view memory stats.`}
+                  >
+                    {boxMeta.icon} Box {currentBox}
+                  </button>
                 </div>
                 <div className="jodo-sentence-line">
                   {renderJodoSentenceWithSlot(activePuzzle.sentence, activePuzzle.target, chosen)}
@@ -2395,11 +2488,22 @@ const Board: React.FC<BoardProps> = ({
               </div>
             ) : (
               <div className="standard-prompt-block">
-                <p className="puzzle-prompt">
-                  {isMatchMeaningPhase
-                    ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
-                    : renderPromptWithHole(activePuzzle.prompt ?? activePuzzle.target)}
-                </p>
+                <div className="standard-prompt-head">
+                  <p className="puzzle-prompt">
+                    {isMatchMeaningPhase
+                      ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
+                      : renderPromptWithHole(activePuzzle.prompt ?? activePuzzle.target)}
+                  </p>
+                  <button
+                    type="button"
+                    className="board-card-leitner-pill"
+                    style={{ borderColor: boxMeta.color, color: boxMeta.color }}
+                    onClick={() => setShowLeitnerModal(true)}
+                    title={`Leitner Box ${currentBox}: ${boxMeta.title} (${boxMeta.interval}). Click to view memory stats.`}
+                  >
+                    {boxMeta.icon} Box {currentBox}
+                  </button>
+                </div>
               </div>
             )}
 
@@ -2936,6 +3040,95 @@ const Board: React.FC<BoardProps> = ({
                 })}
               </div>
             )}
+          </div>
+        </div>
+      </div>,
+      document.body,
+    )}
+
+    {/* Leitner Spaced Repetition 5-Box Modal */}
+    {showLeitnerModal && typeof document !== 'undefined' && createPortal(
+      <div className="section-browser-modal-overlay" role="dialog" aria-modal="true" aria-label="Leitner Spaced Repetition">
+        <div className="section-browser-modal-backdrop" onClick={() => setShowLeitnerModal(false)} />
+        <div className="board-leitner-modal-panel">
+          <div className="board-leitner-modal-head">
+            <div>
+              <span className="board-leitner-modal-badge">🧠 स्मृत्यावर्तनम् · Spaced Repetition</span>
+              <h3 className="board-leitner-modal-title">Leitner Memory System (6,000+ Words)</h3>
+              <p className="board-leitner-modal-sub">
+                Challenging words resurface in 4 hours; words you master advance through 5 intervals up to 14 days.
+              </p>
+            </div>
+            <button
+              type="button"
+              className="section-modal-close"
+              onClick={() => setShowLeitnerModal(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+          </div>
+
+          {/* 5 Leitner Boxes Grid */}
+          <div className="board-leitner-boxes-grid">
+            {[1, 2, 3, 4, 5].map((boxNum) => {
+              const meta = LEITNER_BOX_LABELS[boxNum];
+              const count = leitnerStats.boxCounts[boxNum] || 0;
+              return (
+                <div key={boxNum} className="board-leitner-box-card" style={{ borderTopColor: meta.color }}>
+                  <div className="board-leitner-box-top">
+                    <span className="board-leitner-box-icon">{meta.icon}</span>
+                    <span className="board-leitner-box-name">{meta.title}</span>
+                  </div>
+                  <div className="board-leitner-box-count" style={{ color: meta.color }}>
+                    {count.toLocaleString()}
+                  </div>
+                  <div className="board-leitner-box-interval">{meta.interval}</div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Aggregate Stats Bar */}
+          <div className="board-leitner-stats-bar">
+            <div className="board-leitner-stat-item">
+              <span className="board-leitner-stat-val">{leitnerStats.totalTracked.toLocaleString()}</span>
+              <span className="board-leitner-stat-lbl">Words Practiced</span>
+            </div>
+            <div className="board-leitner-stat-item">
+              <span className="board-leitner-stat-val board-leitner-stat-val--due">{leitnerStats.dueCount.toLocaleString()}</span>
+              <span className="board-leitner-stat-lbl">Due for Review Now</span>
+            </div>
+            <div className="board-leitner-stat-item">
+              <span className="board-leitner-stat-val board-leitner-stat-val--mastered">{leitnerStats.masteredCount.toLocaleString()}</span>
+              <span className="board-leitner-stat-lbl">Mastered (Box 5)</span>
+            </div>
+            <div className="board-leitner-stat-item">
+              <span className="board-leitner-stat-val">{leitnerStats.accuracyRate}%</span>
+              <span className="board-leitner-stat-lbl">Recall Accuracy</span>
+            </div>
+          </div>
+
+          {/* Modal Actions */}
+          <div className="board-leitner-modal-actions">
+            <button
+              type="button"
+              className="board-leitner-start-btn"
+              onClick={() => {
+                setLeitnerMode(true);
+                setPuzzleIndexByShelf((p) => ({ ...p, [activeShelf]: 0 }));
+                setShowLeitnerModal(false);
+              }}
+            >
+              🔁 Start Leitner Flashcard Loop Now
+            </button>
+            <button
+              type="button"
+              className="board-leitner-close-btn"
+              onClick={() => setShowLeitnerModal(false)}
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>,

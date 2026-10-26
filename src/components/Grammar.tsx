@@ -4,7 +4,14 @@ import { SANSKRIT_ARTICLE_META } from '../data/sanskritArticles';
 import { ARTICLE_KEY_WORDS } from '../data/articleKeyWords';
 import { SANSKRIT_EXPLANATIONS } from '../data/sanskritExplanations';
 import { parseArticle, type ParsedArticle } from '../utils/articleParser';
-import { playPronunciation, speakAsBodhi, stopBodhiSpeech } from '../utils/pronunciation';
+import {
+  playPronunciation,
+  speakAsBodhi,
+  stopBodhiSpeech,
+  getBodhiVoiceSpeed,
+  setBodhiVoiceSpeed,
+  type BodhiVoiceSpeed,
+} from '../utils/pronunciation';
 import { BodhiAvatar } from './BodhiAvatar';
 import ConjunctGames from './ConjunctGames';
 import SoundTeamsArticle from './SoundTeamsArticle';
@@ -189,6 +196,97 @@ const renderRichArticleText = (text: string, baseKeyPrefix = 'rich'): React.Reac
   });
 };
 
+const containsDevanagari = (val: string): boolean => /[\u0900-\u097F]/.test(val);
+
+const extractSpeechTextFromBlocks = (blocks: ArticleBlock[]): string => {
+  return blocks
+    .filter((b) => b.type === 'paragraph' || b.type === 'quote' || b.type === 'subheading')
+    .map((b) => b.text)
+    .join(' । ');
+};
+
+interface LessonAudioPlayerBarProps {
+  title: string;
+  subtitle?: string;
+  speechText: string;
+}
+
+const LessonAudioPlayerBar: React.FC<LessonAudioPlayerBarProps> = ({ title, subtitle, speechText }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [speed, setSpeed] = useState<BodhiVoiceSpeed>(() => getBodhiVoiceSpeed());
+  const stopFnRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (stopFnRef.current) {
+        stopFnRef.current();
+        stopFnRef.current = null;
+      }
+      stopBodhiSpeech();
+    };
+  }, [title]);
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      if (stopFnRef.current) {
+        stopFnRef.current();
+        stopFnRef.current = null;
+      }
+      stopBodhiSpeech();
+      setIsPlaying(false);
+      return;
+    }
+
+    if (!speechText.trim()) return;
+
+    stopBodhiSpeech();
+    setIsPlaying(true);
+    const stopFn = speakAsBodhi(speechText, {
+      lang: 'sa',
+      onEnd: () => {
+        setIsPlaying(false);
+        stopFnRef.current = null;
+      },
+    });
+    stopFnRef.current = stopFn;
+  };
+
+  const handleToggleSpeed = () => {
+    const nextSpeed: BodhiVoiceSpeed = speed === 'normal' ? 'slow' : 'normal';
+    setBodhiVoiceSpeed(nextSpeed);
+    setSpeed(nextSpeed);
+  };
+
+  return (
+    <div className={`grammar-lesson-audio-bar${isPlaying ? ' is-playing' : ''}`} role="region" aria-label="Lesson Audio Player">
+      <div className="grammar-audio-info">
+        <span className="grammar-audio-tag">🎧 {subtitle || 'पाठ-श्रवणम् · Auditory Lesson Player'}</span>
+        <span className="grammar-audio-title">{title}</span>
+      </div>
+
+      <div className="grammar-audio-controls">
+        <button
+          type="button"
+          className="grammar-audio-speed-btn"
+          onClick={handleToggleSpeed}
+          title={`Speech speed: ${speed === 'normal' ? 'Normal (0.75x)' : 'Slow (0.55x)'}. Click to toggle.`}
+        >
+          ⏱️ {speed === 'normal' ? 'Normal 0.75x' : 'Slow 0.55x'}
+        </button>
+
+        <button
+          type="button"
+          className={`grammar-audio-play-btn${isPlaying ? ' playing' : ''}`}
+          onClick={togglePlay}
+          title={isPlaying ? 'विरामोऽस्तु · Stop lesson recitation' : 'शृणोतु · Listen to lesson recitation'}
+        >
+          {isPlaying ? '⏹️ Stop Recitation' : '▶️ Listen to Lesson'}
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const renderArticleBlocks = (blocks: ArticleBlock[]) => {
   return blocks.map((block, index) => {
     if (block.type === 'subheading') {
@@ -199,9 +297,24 @@ const renderArticleBlocks = (blocks: ArticleBlock[]) => {
       );
     }
     if (block.type === 'quote') {
+      const hasSa = containsDevanagari(block.text);
       return (
         <blockquote key={index} className="grammar-article-quote">
-          {renderRichArticleText(block.text, `quote-${index}`)}
+          <div className="grammar-quote-text">
+            {renderRichArticleText(block.text, `quote-${index}`)}
+          </div>
+          {hasSa && (
+            <div className="grammar-block-audio-action">
+              <button
+                type="button"
+                className="grammar-recite-btn"
+                onClick={() => playPronunciation(block.text)}
+                title="Listen to full Sanskrit recitation of this verse / quotation"
+              >
+                🔊 Recite Verse
+              </button>
+            </div>
+          )}
         </blockquote>
       );
     }
@@ -209,17 +322,51 @@ const renderArticleBlocks = (blocks: ArticleBlock[]) => {
       if (block.ordered) {
         return (
           <ol key={index} className="grammar-article-list grammar-article-list-ordered" start={block.start || 1}>
-            {block.items.map((item, itemIndex) => (
-              <li key={itemIndex}>{renderRichArticleText(item, `li-${index}-${itemIndex}`)}</li>
-            ))}
+            {block.items.map((item, itemIndex) => {
+              const hasSa = containsDevanagari(item);
+              return (
+                <li key={itemIndex}>
+                  <div className="grammar-list-item-content">
+                    <span>{renderRichArticleText(item, `li-${index}-${itemIndex}`)}</span>
+                    {hasSa && (
+                      <button
+                        type="button"
+                        className="grammar-inline-audio-btn"
+                        onClick={() => playPronunciation(item)}
+                        title="Pronounce this sentence"
+                      >
+                        🔊
+                      </button>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
           </ol>
         );
       }
       return (
         <ul key={index} className="grammar-article-list">
-          {block.items.map((item, itemIndex) => (
-            <li key={itemIndex}>{renderRichArticleText(item, `li-${index}-${itemIndex}`)}</li>
-          ))}
+          {block.items.map((item, itemIndex) => {
+            const hasSa = containsDevanagari(item);
+            return (
+              <li key={itemIndex}>
+                <div className="grammar-list-item-content">
+                  <span>{renderRichArticleText(item, `li-${index}-${itemIndex}`)}</span>
+                  {hasSa && (
+                    <button
+                      type="button"
+                      className="grammar-inline-audio-btn"
+                      onClick={() => playPronunciation(item)}
+                      title="Pronounce this sentence"
+                    >
+                      🔊
+                    </button>
+                  )}
+                </div>
+              </li>
+            );
+          })}
         </ul>
       );
     }
@@ -232,16 +379,52 @@ const renderArticleBlocks = (blocks: ArticleBlock[]) => {
                 {block.headers.map((header, headerIndex) => (
                   <th key={headerIndex}>{renderRichArticleText(header, `th-${index}-${headerIndex}`)}</th>
                 ))}
+                <th className="grammar-th-audio">🔊 Listen</th>
               </tr>
             </thead>
             <tbody>
-              {block.rows.map((row, rowIndex) => (
-                <tr key={rowIndex}>
-                  {row.map((cell, cellIndex) => (
-                    <td key={cellIndex}>{renderRichArticleText(cell, `td-${index}-${rowIndex}-${cellIndex}`)}</td>
-                  ))}
-                </tr>
-              ))}
+              {block.rows.map((row, rowIndex) => {
+                const rowSanskrit = row.filter((c) => containsDevanagari(c)).join(' । ');
+                return (
+                  <tr key={rowIndex}>
+                    {row.map((cell, cellIndex) => {
+                      const hasSa = containsDevanagari(cell);
+                      return (
+                        <td key={cellIndex}>
+                          <div className="grammar-table-cell-content">
+                            <span>{renderRichArticleText(cell, `td-${index}-${rowIndex}-${cellIndex}`)}</span>
+                            {hasSa && (
+                              <button
+                                type="button"
+                                className="grammar-inline-audio-btn"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  playPronunciation(cell);
+                                }}
+                                title={`Pronounce cell: ${cell}`}
+                              >
+                                🔊
+                              </button>
+                            )}
+                          </div>
+                        </td>
+                      );
+                    })}
+                    <td className="grammar-td-audio">
+                      {rowSanskrit ? (
+                        <button
+                          type="button"
+                          className="grammar-row-audio-btn"
+                          onClick={() => playPronunciation(rowSanskrit)}
+                          title="Recite entire row in order"
+                        >
+                          🔊 Row
+                        </button>
+                      ) : null}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
@@ -285,9 +468,20 @@ const renderArticleBlocks = (blocks: ArticleBlock[]) => {
         </pre>
       );
     }
+    const hasSa = containsDevanagari(block.text);
     return (
       <p key={index} className="grammar-article-paragraph">
         {renderRichArticleText(block.text, `p-${index}`)}
+        {hasSa && (
+          <button
+            type="button"
+            className="grammar-inline-audio-btn"
+            onClick={() => playPronunciation(block.text)}
+            title="Recite full sentence"
+          >
+            🔊
+          </button>
+        )}
       </p>
     );
   });
@@ -1059,6 +1253,15 @@ const Grammar: React.FC<GrammarProps> = ({
           <p className="grammar-lead">{activeLesson.summary}</p>
         </header>
 
+        {/* Auditory Learner Lesson Recitation Player */}
+        {lessonArticle && (
+          <LessonAudioPlayerBar
+            title={activeLesson.title}
+            subtitle="पाठ-श्रवणम् · Auditory Lesson Player"
+            speechText={extractSpeechTextFromBlocks(lessonArticle.blocks)}
+          />
+        )}
+
         {/* Bodhi Mascot Companion */}
         <div className="grammar-bodhi-companion-card">
           <div className="grammar-bodhi-companion-avatar">
@@ -1200,6 +1403,15 @@ const Grammar: React.FC<GrammarProps> = ({
           <h2 className="grammar-title">{displayTitle}</h2>
           {displaySubtitle && <p className="grammar-lead">{displaySubtitle}</p>}
         </header>
+
+        {/* Auditory Learner Masterclass Recitation Player */}
+        {displayArticle && (
+          <LessonAudioPlayerBar
+            title={displayTitle}
+            subtitle="व्याकरण-श्रवणम् · Masterclass Recitation"
+            speechText={extractSpeechTextFromBlocks(displayArticle.blocks)}
+          />
+        )}
 
         {/* Bodhi Mascot Article Companion: Key Words & Sanskrit Recitation */}
         <div className="grammar-bodhi-companion-card">

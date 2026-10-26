@@ -2062,6 +2062,66 @@
   border-bottom-color: #a7f3d0;
 }
 
+/* Sentence Recitation Player for Auditory Learners */
+.paragraph-match-sentence-recitation-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1.15rem;
+  padding: 0.65rem 0.95rem;
+  background: #fdfaf6;
+  border: 1px solid #fed7aa;
+  border-radius: 10px;
+}
+
+.paragraph-match-sentence-sa-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.paragraph-match-sentence-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #c2410c;
+  background: #ffedd5;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.paragraph-match-sentence-sa-text {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #431407;
+}
+
+.paragraph-match-sentence-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: #ea580c;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.2);
+  transition: all 0.15s ease;
+}
+
+.paragraph-match-sentence-audio-btn:hover {
+  background: #c2410c;
+  transform: translateY(-1px);
+}
+
+
 .paragraph-match-title-group {
   display: flex;
   flex-direction: column;

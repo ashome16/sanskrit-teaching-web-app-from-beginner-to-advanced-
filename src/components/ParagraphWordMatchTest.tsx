@@ -335,6 +335,27 @@ export const ParagraphWordMatchTest: React.FC<ParagraphWordMatchTestProps> = ({
         </div>
       </div>
 
+      {/* Auditory Learner Full Sentence Recitation Player */}
+      {sentence?.sanskrit && (
+        <div className="paragraph-match-sentence-recitation-bar">
+          <div className="paragraph-match-sentence-sa-wrap">
+            <span className="paragraph-match-sentence-tag">
+              📖 वाक्यम् ({sentenceNumber}/{totalSentences}):
+            </span>
+            <span className="paragraph-match-sentence-sa-text">{sentence.sanskrit}</span>
+          </div>
+          <button
+            type="button"
+            className="paragraph-match-sentence-audio-btn"
+            onClick={() => playPronunciation(sentence.sanskrit)}
+            title="Listen to full Sanskrit sentence pronunciation"
+            aria-label="Listen to full sentence"
+          >
+            🔊 Recite Sentence
+          </button>
+        </div>
+      )}
+
       <div className="paragraph-match-columns">
         {/* Sanskrit Words Column */}
         <div className="paragraph-match-col">

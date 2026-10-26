@@ -11,6 +11,7 @@ import {
 } from '../utils/premiumAccess';
 import { PAID_FEATURE_GATE } from '../utils/paidFeatureGateCopy';
 import { downloadWorksheet } from '../utils/contentDownload';
+import { playPronunciation } from '../utils/pronunciation';
 import '../styles/worksheet-section.css';
 
 export interface WorksheetSectionProps {
@@ -565,14 +566,34 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
                         <span className="ws-paper-q-text">
                           {q.num}. {q.question}
                         </span>
-                        <span className="ws-paper-q-marks">[{q.marks}M]</span>
+                        <div className="ws-paper-q-meta">
+                          <button
+                            type="button"
+                            className="ws-audio-btn"
+                            onClick={() => playPronunciation(q.question)}
+                            title={`Listen to question: ${q.question}`}
+                            aria-label={`Listen to question ${q.num}`}
+                          >
+                            🔊
+                          </button>
+                          <span className="ws-paper-q-marks">[{q.marks}M]</span>
+                        </div>
                       </div>
 
                       {q.options && q.options.length > 0 && (
                         <div className="ws-paper-q-options">
                           {q.options.map((opt, oIdx) => (
-                            <div key={oIdx}>
-                              ({String.fromCharCode(97 + oIdx)}) {opt}
+                            <div key={oIdx} className="ws-paper-opt-row">
+                              <span>({String.fromCharCode(97 + oIdx)}) {opt}</span>
+                              <button
+                                type="button"
+                                className="ws-audio-mini-btn"
+                                onClick={() => playPronunciation(opt)}
+                                title={`Listen to option: ${opt}`}
+                                aria-label={`Listen to option ${String.fromCharCode(97 + oIdx)}`}
+                              >
+                                🔊
+                              </button>
                             </div>
                           ))}
                         </div>
@@ -588,6 +609,15 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
                         <div className="ws-paper-answer-box">
                           <span className="ws-paper-answer-label">✓ उत्तरम् (Answer):</span>
                           <span>{q.answer}</span>
+                          <button
+                            type="button"
+                            className="ws-audio-mini-btn"
+                            onClick={() => playPronunciation(q.answer)}
+                            title={`Listen to answer: ${q.answer}`}
+                            aria-label="Listen to answer"
+                          >
+                            🔊
+                          </button>
                           {q.explanation && (
                             <span style={{ display: 'block', fontSize: '0.78rem', color: '#047857', marginTop: '0.2rem' }}>
                               💡 {q.explanation}

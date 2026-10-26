@@ -5418,3 +5418,442 @@
   }
 }
 
+/* =========================================================================
+   Pāṇinian Morphological Deconstruction Structural Flowchart
+   ========================================================================= */
+
+.dp-flowchart-container {
+  margin: 1.5rem 0 1rem;
+  background: linear-gradient(145deg, #ffffff 0%, #fffbf4 100%);
+  border: 1.5px solid #f2e2ce;
+  border-radius: 16px;
+  padding: 1.35rem;
+  box-shadow: 0 4px 18px rgba(180, 83, 9, 0.06);
+}
+
+.dp-flowchart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px dashed #e8d5be;
+}
+
+.dp-flowchart-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dp-flowchart-badge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #b45309;
+  background: #fef3c7;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.dp-flowchart-heading {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #292524;
+  font-weight: 700;
+}
+
+.dp-flowchart-target {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  color: #b45309;
+  font-size: 1.35rem;
+  margin-left: 0.35rem;
+}
+
+.dp-flowchart-help-tip {
+  font-size: 0.8rem;
+  color: #78716c;
+  background: #f5efe6;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+}
+
+/* Pipeline Container */
+.dp-flowchart-pipeline {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+/* Flowchart Node */
+.dp-flow-node {
+  flex: 1;
+  min-width: 150px;
+  background: #ffffff;
+  border: 2px solid #e7dfd5;
+  border-radius: 12px;
+  padding: 0.85rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s ease-in-out;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.dp-flow-node:hover {
+  transform: translateY(-3px);
+  border-color: #d97706;
+  box-shadow: 0 6px 14px rgba(217, 119, 6, 0.12);
+}
+
+.dp-flow-node--active {
+  border-color: #b45309;
+  background: #fffdf8;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.2), 0 4px 12px rgba(180, 83, 9, 0.12);
+}
+
+.dp-flow-node-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.dp-flow-node-step {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #b45309;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.dp-flow-node-role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #57534e;
+}
+
+.dp-flow-node-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0.4rem 0;
+  flex-wrap: wrap;
+}
+
+.dp-flow-node-prefix {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.dp-flow-symbol {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #92400e;
+}
+
+.dp-flow-chip {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.dp-flow-chip--prefix {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.dp-flow-chip--root {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  font-size: 1.15rem;
+}
+
+.dp-flow-chip--vikarana {
+  background: #ede9fe;
+  color: #6d28d9;
+  border: 1px solid #ddd6fe;
+  font-size: 0.95rem;
+}
+
+.dp-flow-chip--suffix {
+  background: #fce7f3;
+  color: #be185d;
+  border: 1px solid #fbcfe8;
+  font-size: 1.05rem;
+}
+
+.dp-flow-chip--result {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1.5px solid #86efac;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 5px rgba(21, 128, 61, 0.15);
+}
+
+.dp-flow-node-label {
+  font-size: 0.74rem;
+  color: #78716c;
+  margin-top: 0.3rem;
+  line-height: 1.25;
+}
+
+/* Connecting Arrows */
+.dp-flow-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  color: #b45309;
+}
+
+.dp-flow-arrow-icon {
+  width: 24px;
+  height: 24px;
+  animation: dpFlowPulse 2s infinite ease-in-out;
+}
+
+@keyframes dpFlowPulse {
+  0%, 100% { transform: translateX(0); opacity: 0.75; }
+  50% { transform: translateX(4px); opacity: 1; }
+}
+
+.dp-flow-arrow-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #8c7860;
+  margin-top: 0.15rem;
+  white-space: nowrap;
+}
+
+.dp-flow-arrow--final {
+  color: #15803d;
+}
+
+.dp-flow-arrow--final .dp-flow-arrow-label {
+  color: #15803d;
+}
+
+/* Inspector Details Card */
+.dp-flow-inspector {
+  background: #ffffff;
+  border: 1.5px solid #ebd9c3;
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.dp-flow-inspector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.95rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid #f3e8dc;
+}
+
+.dp-flow-inspector-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dp-flow-step-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: #b45309;
+  color: #ffffff;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.dp-flow-step-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #292524;
+}
+
+.dp-flow-step-sub {
+  font-size: 0.82rem;
+  color: #78716c;
+}
+
+.dp-flow-inspector-nav {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dp-flow-nav-btn {
+  background: #f5efe6;
+  border: 1px solid #e0d3c1;
+  color: #57534e;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dp-flow-nav-btn:hover:not(:disabled) {
+  background: #e8dccb;
+  color: #1c1917;
+}
+
+.dp-flow-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.dp-flow-inspector-body {
+  font-size: 0.9rem;
+  color: #3f3f46;
+  line-height: 1.55;
+}
+
+.dp-flow-inspector-row {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.dp-flow-hi-text {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #92400e;
+}
+
+.dp-flow-hi-word {
+  font-family: 'Noto Sans Devanagari', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #15803d;
+}
+
+.dp-flow-tag {
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.dp-flow-sutra {
+  font-style: italic;
+  color: #b45309;
+  font-weight: 600;
+}
+
+.dp-flow-desc {
+  font-size: 0.85rem;
+  color: #71717a;
+  margin-top: 0.35rem;
+}
+
+.dp-flow-inspector-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.dp-flow-audio-btn {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.15s ease;
+}
+
+.dp-flow-audio-btn:hover {
+  background: #fde68a;
+  transform: translateY(-1px);
+}
+
+.dp-flow-audio-btn--primary {
+  background: #15803d;
+  color: #ffffff;
+  border-color: #166534;
+}
+
+.dp-flow-audio-btn--primary:hover {
+  background: #166534;
+  color: #ffffff;
+}
+
+.dp-flow-copy-btn,
+.dp-flow-explore-btn {
+  background: #f5efe6;
+  border: 1px solid #e0d3c1;
+  color: #4a3e2f;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dp-flow-copy-btn:hover,
+.dp-flow-explore-btn:hover {
+  background: #e9decc;
+}
+
+@media (max-width: 768px) {
+  .dp-flowchart-pipeline {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .dp-flow-arrow {
+    transform: rotate(90deg);
+    padding: 0.2rem 0;
+  }
+  .dp-flow-arrow-label {
+    display: none;
+  }
+  .dp-flow-node {
+    width: 100%;
+  }
+}
+
+

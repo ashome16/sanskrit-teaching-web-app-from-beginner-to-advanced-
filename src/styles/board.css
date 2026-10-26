@@ -3116,3 +3116,304 @@
     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   }
 }
+
+/* =========================================================================
+   Leitner Spaced Repetition Flashcard Loop (Jodo Studio 6,000+ Words)
+   ========================================================================= */
+
+.board-leitner-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  background: #fdfaf6;
+  border: 1.5px solid #fed7aa;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #9a3412;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.board-leitner-toggle-btn:hover {
+  background: #ffedd5;
+  border-color: #f97316;
+  transform: translateY(-1px);
+}
+
+.board-leitner-toggle-btn.is-active {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  border-color: #9a3412;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+}
+
+.board-leitner-due-pill {
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  margin-left: 0.2rem;
+}
+
+.board-leitner-stats-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: #f5f5f4;
+  border: 1.5px solid #d6d3d1;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #44403c;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.board-leitner-stats-btn:hover {
+  background: #e7e5e4;
+  border-color: #a8a29e;
+  transform: translateY(-1px);
+}
+
+/* Card Leitner Pill */
+.board-card-leitner-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.55rem;
+  background: #ffffff;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-left: 0.45rem;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.board-card-leitner-pill:hover {
+  transform: scale(1.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.standard-prompt-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* Leitner Modal Panel */
+.board-leitner-modal-panel {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 92%;
+  max-width: 680px;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 10001;
+  padding: 1.75rem;
+}
+
+.board-leitner-modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f5ebe0;
+}
+
+.board-leitner-modal-badge {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ea580c;
+  background: #ffedd5;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.board-leitner-modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #292524;
+  margin: 0 0 0.35rem 0;
+}
+
+.board-leitner-modal-sub {
+  font-size: 0.88rem;
+  color: #78716c;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* 5 Boxes Grid */
+.board-leitner-boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.board-leitner-box-card {
+  background: #fafaf9;
+  border: 1px solid #e7e5e4;
+  border-top: 4px solid #f97316;
+  border-radius: 12px;
+  padding: 0.85rem 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.board-leitner-box-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.board-leitner-box-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.board-leitner-box-icon {
+  font-size: 1.25rem;
+}
+
+.board-leitner-box-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #57534e;
+  line-height: 1.2;
+}
+
+.board-leitner-box-count {
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin: 0.25rem 0;
+}
+
+.board-leitner-box-interval {
+  font-size: 0.68rem;
+  color: #78716c;
+  background: #ffffff;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #e7e5e4;
+}
+
+/* Aggregate Stats Bar */
+.board-leitner-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  background: #fffbf4;
+  border: 1.5px solid #fed7aa;
+  border-radius: 14px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.board-leitner-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.board-leitner-stat-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #292524;
+}
+
+.board-leitner-stat-val--due {
+  color: #dc2626;
+}
+
+.board-leitner-stat-val--mastered {
+  color: #059669;
+}
+
+.board-leitner-stat-lbl {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #78716c;
+}
+
+/* Modal Actions */
+.board-leitner-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.board-leitner-start-btn {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+  transition: all 0.15s ease;
+}
+
+.board-leitner-start-btn:hover {
+  background: #c2410c;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
+}
+
+.board-leitner-close-btn {
+  background: #f5f5f4;
+  border: 1px solid #d6d3d1;
+  color: #57534e;
+  border-radius: 10px;
+  padding: 0.65rem 1.15rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.board-leitner-close-btn:hover {
+  background: #e7e5e4;
+  color: #1c1917;
+}
+
+@media (max-width: 640px) {
+  .board-leitner-boxes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .board-leitner-boxes-grid > div:last-child {
+    grid-column: span 2;
+  }
+  .board-leitner-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

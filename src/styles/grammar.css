@@ -2280,3 +2280,193 @@ ol.grammar-article-list-ordered li::marker {
   color: #ffffff;
   border-color: #0f766e;
 }
+
+/* =========================================================================
+   Auditory Learner & Contextual Audio Recitation Styles
+   ========================================================================= */
+
+.grammar-lesson-audio-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  padding: 0.85rem 1.15rem;
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+  border: 1.5px solid #99f6e4;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(15, 118, 110, 0.06);
+  transition: all 0.2s ease;
+}
+
+.grammar-lesson-audio-bar.is-playing {
+  border-color: #0d9488;
+  background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2), 0 4px 14px rgba(13, 148, 136, 0.15);
+}
+
+.grammar-audio-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.grammar-audio-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0f766e;
+}
+
+.grammar-audio-title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #134e4a;
+}
+
+.grammar-audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.grammar-audio-speed-btn {
+  background: #ffffff;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.grammar-audio-speed-btn:hover {
+  background: #ecfdf5;
+  border-color: #059669;
+}
+
+.grammar-audio-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  background: #0f766e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.25);
+  transition: all 0.15s ease;
+}
+
+.grammar-audio-play-btn:hover {
+  background: #115e59;
+  transform: translateY(-1px);
+}
+
+.grammar-audio-play-btn.playing {
+  background: #b91c1c;
+  box-shadow: 0 2px 6px rgba(185, 28, 28, 0.3);
+}
+
+.grammar-audio-play-btn.playing:hover {
+  background: #991b1b;
+}
+
+/* Sentence-Level & Inline Audio Buttons */
+.grammar-inline-audio-btn {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.76rem;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+  transition: all 0.15s ease;
+}
+
+.grammar-inline-audio-btn:hover {
+  background: #fde68a;
+  transform: scale(1.12);
+}
+
+.grammar-quote-text {
+  margin-bottom: 0.5rem;
+}
+
+.grammar-block-audio-action {
+  margin-top: 0.4rem;
+}
+
+.grammar-recite-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  background: #b45309;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.grammar-recite-btn:hover {
+  background: #92400e;
+  transform: translateY(-1px);
+}
+
+.grammar-list-item-content {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* Paradigm Table Audio */
+.grammar-table-cell-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+}
+
+.grammar-th-audio,
+.grammar-td-audio {
+  text-align: center;
+  width: 75px;
+}
+
+.grammar-row-audio-btn {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.grammar-row-audio-btn:hover {
+  background: #dcfce7;
+  border-color: #86efac;
+  transform: scale(1.05);
+}
+
