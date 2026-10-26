@@ -78,21 +78,21 @@ tr th {
 }
 
 .home-hero-crest-label {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Devanagari', serif;
-  font-size: 0.95rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: #BA3C00;
   background: rgba(186, 60, 0, 0.07);
   border: 1.5px solid rgba(186, 60, 0, 0.22);
-  padding: 0.3rem 0.95rem;
+  padding: 0.3rem 1.05rem;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
   box-shadow: 0 2px 6px rgba(186, 60, 0, 0.06);
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
+  line-height: 1.45;
 }
 
 .home-hero-logo {

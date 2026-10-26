@@ -967,18 +967,18 @@ const HomePage: React.FC<HomePageProps> = ({
         <section className="home-hero">
           {/* Gurukul Official Brand Crest */}
           <div className="home-hero-crest">
-            <span className="home-hero-crest-label">
-              Samskrutha Pathashala
+            <span className="home-hero-crest-label" lang="sa">
+              संस्कृत-पाठशाला
             </span>
             <img
               id="home-hero-crest-logo"
               src="/logo.jpg"
-              alt="EdNet Gurukul - Samskrutha Pathashala - Learn Sanskrit Online &amp; Vedic Mathematics"
+              alt="EdNet Gurukul - संस्कृत-पाठशाला - Learn Sanskrit Online &amp; Vedic Mathematics"
               className={`home-hero-logo${isLogoArrived ? ' is-arrived' : ''}`}
               width={76}
               height={76}
               onClick={() => setShowEntranceIntro(true)}
-              title="EdNet Gurukul · Samskrutha Pathashala"
+              title="EdNet Gurukul · संस्कृत-पाठशाला"
               style={{ cursor: 'pointer' }}
             />
           </div>
