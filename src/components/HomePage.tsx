@@ -9,6 +9,7 @@ import BodhiAvatar from './BodhiAvatar';
 import HomeLabBanner from './HomeLabBanner';
 import { getSearchShortcut } from '../utils/platformShortcut';
 import { GurukulEntranceIntro } from './GurukulEntranceIntro';
+import { useAccessibilityStore } from '../utils/accessibilityStore';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 
@@ -654,6 +655,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const { isAdminLoggedIn, currentUser } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
+  const { englishFirst, toggleEnglishFirst } = useAccessibilityStore();
   const [isGrade7ModalOpen, setIsGrade7ModalOpen] = useState<boolean>(false);
   const [isGrade8ModalOpen, setIsGrade8ModalOpen] = useState<boolean>(false);
   const [isGrade9ModalOpen, setIsGrade9ModalOpen] = useState<boolean>(false);
@@ -842,7 +844,24 @@ const HomePage: React.FC<HomePageProps> = ({
           autoAdvanceMs={8500}
         />
       )}
-      <main className="homepage-container">
+      <div className="homepage-container">
+        {englishFirst && (
+          <div className="a11y-parent-guide-banner" role="region" aria-label="Parent and Beginner Mode Active">
+            <div className="a11y-parent-guide-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+            <div className="a11y-parent-guide-content">
+              <strong>English-First (Beginner &amp; Parent) Mode Active:</strong>
+              <span> Core learning areas, verb conjugations, and syllabus chapters prioritize intuitive English names and layman glosses first, with classical Devanagari script displayed as secondary subtitles.</span>
+            </div>
+            <button
+              type="button"
+              className="a11y-parent-guide-toggle-btn"
+              onClick={toggleEnglishFirst}
+              title="Switch back to Sanskrit-First"
+            >
+              Switch to Sanskrit-First
+            </button>
+          </div>
+        )}
         {/* ------------------------------------------------------------------
             Hero Section
             ------------------------------------------------------------------ */}
@@ -989,7 +1008,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenOnlineClasses}
               title="Sanskrit Online Classes with Bodhi — Spoken, CBSE & Vyakaran"
             >
-              🎓 बोधेः ऑनलाइन-वर्गाः · Online Classes
+              {englishFirst ? '🎓 Live Online Classes · ऑनलाइन-वर्गाः' : '🎓 बोधेः ऑनलाइन-वर्गाः · Online Classes'}
             </button>
           )}
           {onOpenVarnamala && (
@@ -999,7 +1018,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenVarnamala}
               title="Start with the Sanskrit Alphabet (वर्णमाला) & 400+ Syllables"
             >
-              🌱 वर्णमाला-प्रवेशः · Alphabet &amp; Sounds
+              {englishFirst ? '🌱 Sanskrit Alphabet & Sounds · वर्णमाला' : '🌱 वर्णमाला-प्रवेशः · Alphabet & Sounds'}
             </button>
           )}
           {onOpenCourse && (
@@ -1014,7 +1033,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenCourse}
               title="संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking 28-Lesson Course"
             >
-              🧠 संस्कृत-चिन्तनम् · 28-Lesson Course
+              {englishFirst ? '🧠 Sanskrit Thinking Course (28 Lessons) · चिन्तनम्' : '🧠 संस्कृत-चिन्तनम् · 28-Lesson Course'}
             </button>
           )}
           <button
@@ -1023,7 +1042,7 @@ const HomePage: React.FC<HomePageProps> = ({
             onClick={onOpenBoard}
             title="Interactive Tile Puzzle across 7 curated shelves"
           >
-            🧩 जोडो शब्द-क्रीडा · 6,000+ Puzzles
+            {englishFirst ? '🧩 Word Builder Puzzles (6,000+ Words) · जोडो' : '🧩 जोडो शब्द-क्रीडा · 6,000+ Puzzles'}
           </button>
           {onOpenDhatupatha && (
             <button
@@ -1033,7 +1052,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenDhatupatha}
               title="Pāṇinian Dhātupāṭha Studio - 5 Lakāra conjugations, Kṛt pratyayas & word deconstructor"
             >
-              🌿 धातुपाठः · Pāṇinian Verbs
+              {englishFirst ? '🌿 Verb Roots & 5 Tenses · धातुपाठः' : '🌿 धातुपाठः · Pāṇinian Verbs'}
             </button>
           )}
           <button
@@ -1042,7 +1061,7 @@ const HomePage: React.FC<HomePageProps> = ({
             onClick={onOpenGrammar}
             title="Vyakaran shelf - 7 Vibhaktis, Declensions, Conjugations & 17 Masterclasses"
           >
-            📚 व्याकरणम् · 7 Vibhaktis &amp; Rules
+            {englishFirst ? '📚 Grammar Rules & 7 Cases · व्याकरणम्' : '📚 व्याकरणम् · 7 Vibhaktis & Rules'}
           </button>
           {onOpenVedicMaths && (
             <button
@@ -1052,7 +1071,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenVedicMaths}
               title="16 Sutras, Sub-sutras, and Lightning Mental Arithmetic"
             >
-              📐 वैदिक-गणितम् · Vaidic Gaṇitam
+              {englishFirst ? '📐 Vedic Speed Maths (16 Sutras) · गणितम्' : '📐 वैदिक-गणितम् · Vaidic Gaṇitam'}
             </button>
           )}
           <button
@@ -1061,7 +1080,7 @@ const HomePage: React.FC<HomePageProps> = ({
             onClick={() => onOpenReader('gsde101')}
             title="NCERT Deepakam (NEP, CBSE exam) Textbook with Audio & Word Meanings"
           >
-            📖 दीपकम् (कक्षा ७–८) · School Reader
+            {englishFirst ? '📖 School Textbooks (Classes 7–9) · दीपकम्' : '📖 दीपकम् (कक्षा ७–८) · School Reader'}
           </button>
           {onOpenCbseGuide && (
             <button
@@ -1070,7 +1089,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenCbseGuide}
               title="CBSE NCERT Sanskrit Exam Guide (Classes 7–10)"
             >
-              📘 परीक्षा-मार्गदर्शिका · CBSE Exam Guide
+              {englishFirst ? '📘 CBSE Exam Blueprint · परीक्षा-मार्गदर्शिका' : '📘 परीक्षा-मार्गदर्शिका · CBSE Exam Guide'}
             </button>
           )}
           {onOpenPhilosophy && (
@@ -1080,7 +1099,7 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={onOpenPhilosophy}
               title="Our Philosophy · Darśana & In the Age of AI"
             >
-              🪔 दर्शनम् · Philosophy &amp; AI
+              {englishFirst ? '🪔 Philosophy & Sanskrit in AI · दर्शनम्' : '🪔 दर्शनम् · Philosophy & AI'}
             </button>
           )}
           {onOpenQuiz && (
@@ -1090,7 +1109,7 @@ const HomePage: React.FC<HomePageProps> = ({
               style={{ background: '#059669', borderColor: '#059669', color: '#fff' }}
               onClick={onOpenQuiz}
             >
-              🎯 प्रश्नोत्तरी · Sanskrit Quiz
+              {englishFirst ? '🎯 Practice Quizzes & Tests · प्रश्नोत्तरी' : '🎯 प्रश्नोत्तरी · Sanskrit Quiz'}
             </button>
           )}
           {onOpenWorksheets && (
@@ -1099,7 +1118,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="home-btn-secondary"
               onClick={onOpenWorksheets}
             >
-              📝 कार्यपत्रिकाः · Worksheets &amp; PDFs
+              {englishFirst ? '📝 Printable Worksheets & PDFs · कार्यपत्रिकाः' : '📝 कार्यपत्रिकाः · Worksheets & PDFs'}
             </button>
           )}
           {onOpenResources && (
@@ -1109,7 +1128,7 @@ const HomePage: React.FC<HomePageProps> = ({
               style={{ background: 'rgba(2, 132, 199, 0.08)', borderColor: 'rgba(2, 132, 199, 0.35)', color: '#0369a1' }}
               onClick={onOpenResources}
             >
-              🌐 साधनानि · Free Vault &amp; Tools
+              {englishFirst ? '🌐 Free Study Vault & PDFs · साधनानि' : '🌐 साधनानि · Free Vault & Tools'}
             </button>
           )}
         </div>
@@ -1182,28 +1201,28 @@ const HomePage: React.FC<HomePageProps> = ({
         {/* Live Platform Highlights */}
         <div className="home-stats-grid">
           <div className="home-stat-item">
-            <span className="home-stat-val">६,०००+</span>
-            <span className="home-stat-label">Word Puzzles (क्रीडाः)</span>
+            <span className="home-stat-val">{englishFirst ? '6,000+' : '६,०००+'}</span>
+            <span className="home-stat-label">{englishFirst ? 'Word Puzzles (६,०००+)' : 'Word Puzzles (क्रीडाः)'}</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">४००+</span>
-            <span className="home-stat-label">Audio Syllables (ध्वनयः)</span>
+            <span className="home-stat-val">{englishFirst ? '400+' : '४००+'}</span>
+            <span className="home-stat-label">{englishFirst ? 'Audio Syllables (४००+)' : 'Audio Syllables (ध्वनयः)'}</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">२८</span>
-            <span className="home-stat-label">Course Lessons (पाठाः)</span>
+            <span className="home-stat-val">{englishFirst ? '28' : '२८'}</span>
+            <span className="home-stat-label">{englishFirst ? 'Course Lessons (२८)' : 'Course Lessons (पाठाः)'}</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">१७</span>
-            <span className="home-stat-label">Vyakaran Classes (वर्गाः)</span>
+            <span className="home-stat-val">{englishFirst ? '17' : '१७'}</span>
+            <span className="home-stat-label">{englishFirst ? 'Grammar Masterclasses (१७)' : 'Vyakaran Classes (वर्गाः)'}</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">१६</span>
-            <span className="home-stat-label">Vedic Math Sutras (सूत्राणि)</span>
+            <span className="home-stat-val">{englishFirst ? '16' : '१६'}</span>
+            <span className="home-stat-label">{englishFirst ? 'Vedic Math Sutras (१६)' : 'Vedic Math Sutras (सूत्राणि)'}</span>
           </div>
           <div className="home-stat-item">
-            <span className="home-stat-val">४०+</span>
-            <span className="home-stat-label">NCERT Chapters (अध्यायाः)</span>
+            <span className="home-stat-val">{englishFirst ? '40+' : '४०+'}</span>
+            <span className="home-stat-label">{englishFirst ? 'NCERT Chapters (४०+)' : 'NCERT Chapters (अध्यायाः)'}</span>
           </div>
         </div>
       </section>
@@ -2490,8 +2509,21 @@ const HomePage: React.FC<HomePageProps> = ({
                   </div>
                 </div>
 
-                  <h4 className="home-chapter-title-sanskrit">{ch.title}</h4>
-                  <p className="home-chapter-meaning-en">{ch.english}</p>
+                  {englishFirst ? (
+                    <>
+                      <h4 className="home-chapter-meaning-en" style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', margin: '0.35rem 0 0.2rem' }}>
+                        {ch.english}
+                      </h4>
+                      <div className="home-chapter-title-sanskrit" style={{ fontSize: '0.92rem', fontWeight: 600, color: '#9a3412', marginBottom: '0.4rem' }}>
+                        {ch.title}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <h4 className="home-chapter-title-sanskrit">{ch.title}</h4>
+                      <p className="home-chapter-meaning-en">{ch.english}</p>
+                    </>
+                  )}
                   
                   {ch.theme && (
                     <p className="home-chapter-theme-desc">{ch.theme}</p>
@@ -2501,7 +2533,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 <div className="home-chapter-card-bottom">
                   {ch.grammarFocus && (
                     <div className="home-grammar-tag">
-                      <span className="home-grammar-tag-label">🔖 व्याकरणम्:</span> {ch.grammarFocus}
+                      <span className="home-grammar-tag-label">{englishFirst ? '🔖 Grammar Rules:' : '🔖 व्याकरणम्:'}</span> {ch.grammarFocus}
                     </div>
                   )}
 
@@ -2651,7 +2683,7 @@ const HomePage: React.FC<HomePageProps> = ({
           />
         )}
       </Suspense>
-    </main>
+    </div>
   </>
   );
 };

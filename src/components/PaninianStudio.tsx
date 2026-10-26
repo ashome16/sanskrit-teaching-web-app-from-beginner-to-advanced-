@@ -20,6 +20,7 @@ import DhatupathaBrowser from './DhatupathaBrowser';
 import DhatupathaArticles from './DhatupathaArticles';
 import DhatupathaPyramidIntro from './DhatupathaPyramidIntro';
 import { DhatuDeconstructionFlowchart } from './DhatuDeconstructionFlowchart';
+import { useAccessibilityStore } from '../utils/accessibilityStore';
 import '../styles/dhatupatha.css';
 
 export type StudioMode = 'deconstructor' | 'generator' | 'comparator' | 'quiz' | 'library' | 'articles';
@@ -233,6 +234,7 @@ function rootSenseLine(meaning: string | undefined): string {
 type LakaraPhase = 'root' | number;
 
 const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) => {
+  const { englishFirst } = useAccessibilityStore();
   const [mode, setMode] = useState<StudioMode>('generator');
   const [dhatuLibrary, setDhatuLibrary] = useState<DhatuEntry[]>([]);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -801,10 +803,12 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
         <div className="dp-studio-title-row">
           <div>
             <h2 className="dp-studio-main-title">
-              🕉️ पाणिनीय-धातुपाठ-प्रयोगशाला
+              {englishFirst ? '🌿 Sanskrit Verb Roots & Conjugation Engine' : '🕉️ पाणिनीय-धातुपाठ-प्रयोगशाला'}
             </h2>
             <p className="dp-studio-subtitle">
-              Pāṇinian Derivation Engine, Voice &amp; Causative Studio, Paradigm Comparator &amp; Deconstructor
+              {englishFirst
+                ? 'Master Sanskrit verb roots, 5 tenses & moods, voice comparison, and step-by-step word breakdown'
+                : 'Pāṇinian Derivation Engine, Voice & Causative Studio, Paradigm Comparator & Deconstructor'}
             </p>
           </div>
           <div className="dp-studio-header-actions">
@@ -865,7 +869,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
             onClick={() => setMode('generator')}
           >
             <span className="dp-tab-icon">⚙️</span>
-            <span className="dp-tab-text">रूप-साधकम् (5-Lakāra Generator)</span>
+            <span className="dp-tab-text">{englishFirst ? '5-Tense Conjugations (रूप-साधकम्)' : 'रूप-साधकम् (5-Lakāra Generator)'}</span>
           </button>
           <button
             type="button"
@@ -873,7 +877,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
             onClick={() => setMode('comparator')}
           >
             <span className="dp-tab-icon">⚖️</span>
-            <span className="dp-tab-text">तुलना-दर्शनम् (Comparator)</span>
+            <span className="dp-tab-text">{englishFirst ? 'Verb Comparison (तुलना-दर्शनम्)' : 'तुलना-दर्शनम् (Comparator)'}</span>
           </button>
           <button
             type="button"
@@ -881,7 +885,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
             onClick={() => setMode('deconstructor')}
           >
             <span className="dp-tab-icon">🔍</span>
-            <span className="dp-tab-text">पद-विश्लेषणम् (Deconstructor)</span>
+            <span className="dp-tab-text">{englishFirst ? 'Word Breakdown (पद-विश्लेषणम्)' : 'पद-विश्लेषणम् (Deconstructor)'}</span>
           </button>
           <button
             type="button"
@@ -889,7 +893,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
             onClick={() => setMode('quiz')}
           >
             <span className="dp-tab-icon">🎮</span>
-            <span className="dp-tab-text">प्रत्यय-अभ्यासः (Pratyaya Challenge)</span>
+            <span className="dp-tab-text">{englishFirst ? 'Suffix & Ending Quiz (प्रत्यय-अभ्यासः)' : 'प्रत्यय-अभ्यासः (Pratyaya Challenge)'}</span>
           </button>
           <button
             type="button"
@@ -897,7 +901,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
             onClick={() => setMode('library')}
           >
             <span className="dp-tab-icon">📖</span>
-            <span className="dp-tab-text">धातुपाठ-सूची (Root Library)</span>
+            <span className="dp-tab-text">{englishFirst ? 'Verb Root Directory (धातुपाठ-सूची)' : 'धातुपाठ-सूची (Root Library)'}</span>
           </button>
           <button
             type="button"
@@ -905,7 +909,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
             onClick={() => setMode('articles')}
           >
             <span className="dp-tab-icon">📜</span>
-            <span className="dp-tab-text">सिद्धान्त-मञ्जरी (Articles)</span>
+            <span className="dp-tab-text">{englishFirst ? 'Grammar Articles (सिद्धान्त-मञ्जरी)' : 'सिद्धान्त-मञ्जरी (Articles)'}</span>
           </button>
         </nav>
       </header>

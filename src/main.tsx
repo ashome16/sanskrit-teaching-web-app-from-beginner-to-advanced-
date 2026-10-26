@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
+import './styles/accessibility.css';
 import Dashboard from './components/Dashboard';
 import { ErrorBoundary } from './components/ErrorBoundary';
 

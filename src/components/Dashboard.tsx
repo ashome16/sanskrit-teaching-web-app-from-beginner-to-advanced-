@@ -34,6 +34,8 @@ const AdminModal = lazy(() => import('./AdminModal'));
 const GlobalSearchModal = lazy(() => import('./GlobalSearchModal'));
 const VoiceSettingsModal = lazy(() => import('./VoiceSettingsModal'));
 const BodhiOnlineClassesModal = lazy(() => import('./BodhiOnlineClassesModal'));
+import AccessibilityToolbar from './AccessibilityToolbar';
+import { useAccessibilityStore } from '../utils/accessibilityStore';
 
 const ViewLoader = () => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '5rem 1rem', minHeight: '60vh', color: '#273b35' }}>
@@ -316,6 +318,7 @@ const Dashboard: React.FC = () => {
   const searchShortcut = getSearchShortcut();
   const [bodhiGuideInitialTab, setBodhiGuideInitialTab] = useState<'context' | 'qa' | 'subhashita' | 'phrases'>('context');
   const [bodhiGuideQuestionId, setBodhiGuideQuestionId] = useState<string | null>(null);
+  const { englishFirst } = useAccessibilityStore();
   const {
     currentUser,
     openAuthModal,
@@ -963,6 +966,9 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}`}>
+      <a href="#main-content" className="a11y-skip-link">
+        Skip to main content
+      </a>
       <header className="dashboard-header">
         <button
           type="button"
@@ -1000,7 +1006,7 @@ const Dashboard: React.FC = () => {
                 title="CBSE NCERT Sanskrit Exam Blueprint, Syllabus & Question Paper Guide"
               >
                 <img src="/nav/nav-deepakam.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={18} height={18} />
-                CBSE Exam Guide
+                {englishFirst ? 'CBSE Guide & Texts' : 'CBSE Exam Guide'}
               </button>
               <div className="dashboard-nav-sub" role="group" aria-label="Deepakam 7th, Deepakam 8th, and 9th Grade शारदा lessons">
                 <button
@@ -1009,7 +1015,7 @@ const Dashboard: React.FC = () => {
                   onClick={() => openDeepakam()}
                   title="Deepakam 7th · दीपकम · Class 7 Sanskrit"
                 >
-                  <img src="/textbooks/ncert-deepakam-class7.webp" alt="Deepakam 7" className="dashboard-nav-sub-img" />
+                  <img src="/textbooks/ncert-deepakam-class7.webp" alt="Deepakam 7th Grade Textbook Cover" className="dashboard-nav-sub-img" />
                   Deepakam 7th · दीपकम
                 </button>
                 <button
@@ -1024,7 +1030,7 @@ const Dashboard: React.FC = () => {
                   }}
                   title={canReadAllChapters ? 'Deepakam 8th · दीपकम · Class 8 Sanskrit' : 'Sign in to access Deepakam 8th'}
                 >
-                  <img src="/textbooks/ncert-deepakam-class8.jpg" alt="Deepakam 8" className="dashboard-nav-sub-img" />
+                  <img src="/textbooks/ncert-deepakam-class8.jpg" alt="Deepakam 8th Grade Textbook Cover" className="dashboard-nav-sub-img" />
                   Deepakam 8th · दीपकम
                 </button>
                 <button
@@ -1039,7 +1045,7 @@ const Dashboard: React.FC = () => {
                   }}
                   title={canReadAllChapters ? '9th Grade · शारदा · Class 9 Sanskrit' : 'Sign in to access शारदा Class 9'}
                 >
-                  <img src="/textbooks/ncert-sharada-class9.jpg" alt="Sharada 9" className="dashboard-nav-sub-img" />
+                  <img src="/textbooks/ncert-sharada-class9.jpg" alt="Sharada 9th Grade Textbook Cover" className="dashboard-nav-sub-img" />
                   9th Grade · शारदा
                 </button>
               </div>
@@ -1053,8 +1059,8 @@ const Dashboard: React.FC = () => {
               title="Open Alphabet & Syllables (वर्णमाला)"
             >
               <img src="/nav/nav-varnamala.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-primary">वर्णमाला</span>
-              <span className="dashboard-nav-secondary">Alphabet &amp; Syllables</span>
+              <span className="dashboard-nav-primary">{englishFirst ? 'Alphabet & Sounds' : 'वर्णमाला'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'वर्णमाला · Varṇamālā' : 'Alphabet & Syllables'}</span>
             </button>
             <button
               type="button"
@@ -1063,8 +1069,8 @@ const Dashboard: React.FC = () => {
               title="Open जोडो tile puzzle"
             >
               <img src="/nav/nav-jodo.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-primary">जोडो</span>
-              <span className="dashboard-nav-secondary">Tile Puzzle</span>
+              <span className="dashboard-nav-primary">{englishFirst ? 'Word Puzzles' : 'जोडो'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'जोडो · Jodo Studio' : 'Tile Puzzle'}</span>
             </button>
             <button
               type="button"
@@ -1073,8 +1079,8 @@ const Dashboard: React.FC = () => {
               title="Open Vyakaran (Grammar) shelf with all articles"
             >
               <img src="/nav/nav-grammar.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-primary">व्याकरणम्</span>
-              <span className="dashboard-nav-secondary">Vyakaran · Grammar</span>
+              <span className="dashboard-nav-primary">{englishFirst ? 'Grammar & Rules' : 'व्याकरणम्'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'व्याकरणम् · Vyākaraṇa' : 'Vyakaran · Grammar'}</span>
             </button>
             <button
               type="button"
@@ -1083,8 +1089,8 @@ const Dashboard: React.FC = () => {
               title="Pāṇinian Dhātupāṭha Studio - 5 Lakāras, Kṛt pratyayas & word deconstructor"
             >
               <img src="/nav/nav-dhatu.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-primary">धातुपाठः</span>
-              <span className="dashboard-nav-secondary">Dhātupāṭha</span>
+              <span className="dashboard-nav-primary">{englishFirst ? 'Verb Roots & Tenses' : 'धातुपाठः'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'धातुपाठः · Dhātupāṭha' : 'Dhātupāṭha'}</span>
             </button>
             <button
               type="button"
@@ -1093,8 +1099,8 @@ const Dashboard: React.FC = () => {
               title="Open Vaidic Gaṇitam (वैदिक-गणितम्)"
             >
               <img src="/nav/nav-vedic.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-primary">वैदिक-गणितम्</span>
-              <span className="dashboard-nav-secondary">Vaidic Gaṇitam</span>
+              <span className="dashboard-nav-primary">{englishFirst ? 'Vedic Speed Math' : 'वैदिक-गणितम्'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'वैदिक-गणितम् · Mental Math' : 'Vaidic Gaṇitam'}</span>
             </button>
             <button
               type="button"
@@ -1103,8 +1109,8 @@ const Dashboard: React.FC = () => {
               title="Open Sanskrit & Vedic Maths Quiz (प्रश्नोत्तरी)"
             >
               <img src="/nav/nav-quiz.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-primary">प्रश्नोत्तरी</span>
-              <span className="dashboard-nav-secondary">Quiz</span>
+              <span className="dashboard-nav-primary">{englishFirst ? 'Practice Quizzes' : 'प्रश्नोत्तरी'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'प्रश्नोत्तरी · Tests' : 'Quiz'}</span>
             </button>
             <button
               type="button"
@@ -1113,8 +1119,8 @@ const Dashboard: React.FC = () => {
               title="Open Printable Worksheets (कार्यपत्रिकाः)"
             >
               <img src="/nav/nav-worksheets.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-primary">कार्यपत्रिकाः</span>
-              <span className="dashboard-nav-secondary">Worksheets</span>
+              <span className="dashboard-nav-primary">{englishFirst ? 'CBSE Worksheets' : 'कार्यपत्रिकाः'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'कार्यपत्रिकाः · Printable PDFs' : 'Worksheets'}</span>
             </button>
             <button
               type="button"
@@ -1123,8 +1129,8 @@ const Dashboard: React.FC = () => {
               title="Open Sanskrit Resources &amp; Study Vault (साधनानि)"
             >
               <img src="/nav/nav-resources.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-primary">साधनानि</span>
-              <span className="dashboard-nav-secondary">Resources</span>
+              <span className="dashboard-nav-primary">{englishFirst ? 'Study Vault' : 'साधनानि'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'साधनानि · Free Resources' : 'Resources'}</span>
             </button>
             <button
               type="button"
@@ -1133,8 +1139,8 @@ const Dashboard: React.FC = () => {
               title="संस्कृत-चिन्तनम् · Complete Sanskrit as a Way of Thinking Course"
             >
               <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🧠</span>
-              <span className="dashboard-nav-primary">संस्कृत-चिन्तनम्</span>
-              <span className="dashboard-nav-secondary">Course (6 Mod)</span>
+              <span className="dashboard-nav-primary">{englishFirst ? 'Sanskrit Course' : 'संस्कृत-चिन्तनम्'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'संस्कृत-चिन्तनम् · 28 Lessons' : 'Course (6 Mod)'}</span>
             </button>
             <button
               type="button"
@@ -1144,13 +1150,14 @@ const Dashboard: React.FC = () => {
               style={{ background: 'rgba(245, 158, 11, 0.08)' }}
             >
               <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🎓</span>
-              <span className="dashboard-nav-primary" style={{ color: '#b45309', fontWeight: 800 }}>ऑनलाइन-वर्गाः</span>
-              <span className="dashboard-nav-secondary">Online Classes</span>
+              <span className="dashboard-nav-primary" style={{ color: '#b45309', fontWeight: 800 }}>{englishFirst ? 'Live Online Classes' : 'ऑनलाइन-वर्गाः'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'ऑनलाइन-वर्गाः (Bodhi)' : 'Online Classes'}</span>
             </button>
           </div>
         </nav>
 
         <div className="dashboard-header-user">
+          <AccessibilityToolbar />
           <a
             href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
             target="_blank"
@@ -1211,7 +1218,8 @@ const Dashboard: React.FC = () => {
         </div>
       </header>
 
-      {(activeView === 'home' || activeView === 'faq') && (
+      <main id="main-content" className="dashboard-main-content" tabIndex={-1}>
+        {(activeView === 'home' || activeView === 'faq') && (
         <HomePage
           onOpenReader={(lessonId) => openDeepakam(lessonId)}
           onOpenBoard={() => navigateToView('board')}
@@ -1452,6 +1460,7 @@ const Dashboard: React.FC = () => {
           onOpenScienceLab={() => openScienceLab()}
         />
       )}
+      </main>
 
       <Suspense fallback={null}>
         <SupportWidget
