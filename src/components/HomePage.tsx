@@ -890,21 +890,230 @@ const HomePage: React.FC<HomePageProps> = ({
 
         <h1 className="home-hero-title">
           <span className="home-hero-title-primary">
-            Learn Sanskrit Online
+            Learn Sanskrit Step by Step
           </span>
-          <span className="home-hero-title-tag">
-            From Beginner to Advanced
-          </span>
-          <span className="home-hero-title-dev" aria-label="सरल-संस्कृतम् · व्याकरणम् · वैदिक-गणितम् · सर्वजन-शिक्षणम्">
+          <p className="home-hero-lead-promise">
+            Learn Sanskrit step by step—with audio, grammar tools, CBSE support, and interactive practice.
+          </p>
+          <div className="home-hero-title-dev" aria-label="सरल-संस्कृतम् · व्याकरणम् · NCERT · CBSE">
             <span className="home-dev-pill">सरल-संस्कृतम्</span>
             <span className="home-dev-bullet" aria-hidden="true">✦</span>
             <span className="home-dev-pill">व्याकरणम्</span>
             <span className="home-dev-bullet" aria-hidden="true">✦</span>
-            <span className="home-dev-pill">वैदिक-गणितम्</span>
+            <span className="home-dev-pill">NCERT दीपकम्</span>
             <span className="home-dev-bullet" aria-hidden="true">✦</span>
-            <span className="home-dev-pill">सर्वजन-शिक्षणम्</span>
-          </span>
+            <span className="home-dev-pill">CBSE परीक्षा-सिद्धिः</span>
+          </div>
         </h1>
+
+        {/* First Screen Quick CTAs */}
+        <div className="home-hero-quick-ctas">
+          {onOpenVarnamala && (
+            <button
+              type="button"
+              className="home-hero-cta-btn home-hero-cta-btn--primary"
+              onClick={onOpenVarnamala}
+              title="Step 1: Start with the Sanskrit Alphabet (वर्णमाला) & 400+ Syllables"
+            >
+              🌱 Start from Alphabet · वर्णमाला
+            </button>
+          )}
+          <button
+            type="button"
+            className="home-hero-cta-btn home-hero-cta-btn--secondary"
+            onClick={() => onOpenReader('gsde101')}
+            title="NCERT Deepakam (CBSE Classes 7–8) Textbook Reader"
+          >
+            📖 NCERT Textbooks · दीपकम्
+          </button>
+          {onOpenOnlineClasses && (
+            <button
+              type="button"
+              className="home-hero-cta-btn home-hero-cta-btn--online"
+              onClick={onOpenOnlineClasses}
+              title="Sanskrit Online Classes with Bodhi"
+            >
+              🎓 Live Online Classes
+            </button>
+          )}
+        </div>
+
+        {onOpenSearch && (
+          <div
+            className="home-hero-search-box"
+            onClick={onOpenSearch}
+            role="button"
+            tabIndex={0}
+            title={getSearchShortcut().searchTitle}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onOpenSearch();
+              }
+            }}
+          >
+            <span className="home-hero-search-icon" aria-hidden="true">🔍</span>
+            <span className="home-hero-search-text">Search articles, lessons, 16 Vedic Sutras, Kaṭapayādi, Vibhakti...</span>
+            <kbd className="home-hero-search-badge">{getSearchShortcut().searchBadge}</kbd>
+          </div>
+        )}
+
+        {/* ================================================================
+            VISIBLE LEARNER JOURNEY: 6-STEP PROGRESSION
+            Alphabet → Basic words → Simple sentences → Grammar → NCERT texts → Exam readiness
+            ================================================================ */}
+        <div className="home-learner-journey" role="region" aria-label="Sanskrit Learning Progression Journey">
+          <div className="home-journey-header">
+            <div className="home-journey-eyebrow">
+              <span>🛣️</span>
+              <span>The Gurukul Learning Pathway · सोपान-मार्गः</span>
+            </div>
+            <h2 className="home-journey-title">
+              Your Step-by-Step Sanskrit Journey
+            </h2>
+            <p className="home-journey-subtitle">
+              A visible 6-stage roadmap designed for school students, parents, and beginners to progress from sound phonetics to CBSE exam confidence:
+            </p>
+          </div>
+
+          <div className="home-journey-steps">
+            {/* Step 1: Alphabet */}
+            <div
+              className="home-journey-step-card"
+              onClick={onOpenVarnamala}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') onOpenVarnamala?.();
+              }}
+              title="Step 1: Start with Alphabet & Sounds (वर्णमाला)"
+            >
+              <span className="home-journey-step-num">Step 1</span>
+              <span className="home-journey-step-icon" aria-hidden="true">🌱</span>
+              <h3 className="home-journey-step-title">Alphabet</h3>
+              <span className="home-journey-step-sanskrit">वर्णमाला</span>
+              <p className="home-journey-step-desc">
+                400+ syllables, vowels, consonants, mouth positions, and authentic native audio.
+              </p>
+              <span className="home-journey-step-cta">Start Sounds →</span>
+            </div>
+
+            <div className="home-journey-arrow" aria-hidden="true">→</div>
+
+            {/* Step 2: Basic words */}
+            <div
+              className="home-journey-step-card"
+              onClick={onOpenBoard}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') onOpenBoard?.();
+              }}
+              title="Step 2: Build Basic Words with 6,000+ Tile Puzzles (जोडो)"
+            >
+              <span className="home-journey-step-num">Step 2</span>
+              <span className="home-journey-step-icon" aria-hidden="true">🧩</span>
+              <h3 className="home-journey-step-title">Basic Words</h3>
+              <span className="home-journey-step-sanskrit">शब्दाः · जोडो</span>
+              <p className="home-journey-step-desc">
+                6,000+ interactive tile puzzles across animals, daily objects, verbs, and numbers.
+              </p>
+              <span className="home-journey-step-cta">Build Words →</span>
+            </div>
+
+            <div className="home-journey-arrow" aria-hidden="true">→</div>
+
+            {/* Step 3: Simple sentences */}
+            <div
+              className="home-journey-step-card"
+              onClick={() => onOpenReader('gsde101')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') onOpenReader('gsde101');
+              }}
+              title="Step 3: Simple Sentences and Conversational Practice"
+            >
+              <span className="home-journey-step-num">Step 3</span>
+              <span className="home-journey-step-icon" aria-hidden="true">💬</span>
+              <h3 className="home-journey-step-title">Simple Sentences</h3>
+              <span className="home-journey-step-sanskrit">सरल-वाक्यानि</span>
+              <p className="home-journey-step-desc">
+                Everyday spoken phrases, greetings, subject-verb order, and pronunciation feedback.
+              </p>
+              <span className="home-journey-step-cta">Speak Phrases →</span>
+            </div>
+
+            <div className="home-journey-arrow" aria-hidden="true">→</div>
+
+            {/* Step 4: Grammar */}
+            <div
+              className="home-journey-step-card"
+              onClick={onOpenGrammar}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') onOpenGrammar?.();
+              }}
+              title="Step 4: Grammar, 7 Vibhaktis, and Verb Conjugations"
+            >
+              <span className="home-journey-step-num">Step 4</span>
+              <span className="home-journey-step-icon" aria-hidden="true">🌿</span>
+              <h3 className="home-journey-step-title">Grammar</h3>
+              <span className="home-journey-step-sanskrit">व्याकरणम् · धातुपाठः</span>
+              <p className="home-journey-step-desc">
+                7 Vibhaktis (noun case endings), Dhātupāṭha verb engine, 5 Lakāras &amp; Sandhi rules.
+              </p>
+              <span className="home-journey-step-cta">Learn Rules →</span>
+            </div>
+
+            <div className="home-journey-arrow" aria-hidden="true">→</div>
+
+            {/* Step 5: NCERT texts */}
+            <div
+              className="home-journey-step-card"
+              onClick={() => onOpenReader()}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') onOpenReader();
+              }}
+              title="Step 5: NCERT Deepakam & Sharada Textbook Reader"
+            >
+              <span className="home-journey-step-num">Step 5</span>
+              <span className="home-journey-step-icon" aria-hidden="true">📖</span>
+              <h3 className="home-journey-step-title">NCERT Texts</h3>
+              <span className="home-journey-step-sanskrit">दीपकम् · शारदा</span>
+              <p className="home-journey-step-desc">
+                Complete NCERT Class 7 &amp; 8 Deepakam and Class 9 Sharada with word-by-word meaning.
+              </p>
+              <span className="home-journey-step-cta">Read Texts →</span>
+            </div>
+
+            <div className="home-journey-arrow" aria-hidden="true">→</div>
+
+            {/* Step 6: Exam readiness */}
+            <div
+              className="home-journey-step-card"
+              onClick={onOpenCbseGuide}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') onOpenCbseGuide?.();
+              }}
+              title="Step 6: CBSE Exam Blueprint, Directives & Solved Papers"
+            >
+              <span className="home-journey-step-num">Step 6</span>
+              <span className="home-journey-step-icon" aria-hidden="true">🎯</span>
+              <h3 className="home-journey-step-title">Exam Readiness</h3>
+              <span className="home-journey-step-sanskrit">परीक्षा-सिद्धिः</span>
+              <p className="home-journey-step-desc">
+                Official 80-mark blueprint, question formation (किम्-पद), chapter worksheets &amp; mock tests.
+              </p>
+              <span className="home-journey-step-cta">Ace Exams →</span>
+            </div>
+          </div>
+        </div>
 
         {/* Sacred Mangalācaraṇam (मङ्गलाचरणम्) Invocation */}
         <div className="home-mangalacaranam-strip" role="region" aria-label="मङ्गलाचरणम् · Sacred Invocation">
@@ -939,10 +1148,6 @@ const HomePage: React.FC<HomePageProps> = ({
           </button>
         </div>
 
-        <p className="home-hero-subtitle">
-          An intuitive, interactive Gurukul learning platform engineered for <strong>complete beginners, adult self-learners, university scholars, and school students</strong>. Master Sanskrit from the alphabet to Pāṇinian grammar (Dhātupāṭha &amp; Vibhaktis), explore computational linguistics &amp; AI connections, sharpen mental agility with speed Vedic Mathematics, or study the complete CBSE/NCERT curriculum with instant word-by-word audio and translations.
-        </p>
-
         {/* Daily Spoken Sanskrit Bar (दैनिक-सम्भाषणम्) */}
         <div className="home-spoken-phrase-pill" role="region" aria-label="दैनिक-सम्भाषणम् · Daily Spoken Sanskrit">
           <div className="hsp-tag">
@@ -975,25 +1180,11 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
 
-        {onOpenSearch && (
-          <div
-            className="home-hero-search-box"
-            onClick={onOpenSearch}
-            role="button"
-            tabIndex={0}
-            title={getSearchShortcut().searchTitle}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onOpenSearch();
-              }
-            }}
-          >
-            <span className="home-hero-search-icon" aria-hidden="true">🔍</span>
-            <span className="home-hero-search-text">Search articles, lessons, 16 Vedic Sutras, Kaṭapayādi, Vibhakti...</span>
-            <kbd className="home-hero-search-badge">{getSearchShortcut().searchBadge}</kbd>
-          </div>
-        )}
+        <div style={{ margin: '1.85rem 0 0.85rem', textAlign: 'center' }}>
+          <span style={{ fontSize: '0.82rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8a7f72' }}>
+            {englishFirst ? 'All Gurukul Learning Shelves & Practice Tools' : 'सर्व-साधनानि · All Learning Shelves & Tools'}
+          </span>
+        </div>
 
         <div className="home-hero-actions">
           {onOpenOnlineClasses && (

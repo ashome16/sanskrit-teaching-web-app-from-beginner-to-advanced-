@@ -201,10 +201,34 @@ html.a11y-high-contrast .home-ncert-book-subtitle {
 html.a11y-high-contrast .home-chapter-card,
 html.a11y-high-contrast .home-ncert-book-card,
 html.a11y-high-contrast .home-spoken-phrase-pill,
-html.a11y-high-contrast .home-mangalacaranam-strip {
+html.a11y-high-contrast .home-mangalacaranam-strip,
+html.a11y-high-contrast .home-learner-journey,
+html.a11y-high-contrast .home-journey-step-card {
   background: #ffffff !important;
   border: 2px solid #000000 !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+html.a11y-high-contrast .home-journey-step-num {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000;
+}
+
+html.a11y-high-contrast .home-journey-step-cta {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.a11y-high-contrast .home-hero-cta-btn {
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+  background: #ffffff !important;
+}
+
+html.a11y-high-contrast .home-hero-cta-btn:hover {
+  background: #000000 !important;
+  color: #ffffff !important;
 }
 
 html.a11y-high-contrast .home-btn-primary,
