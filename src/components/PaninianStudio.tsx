@@ -18,6 +18,7 @@ import {
 } from '../utils/paninianEngine';
 import DhatupathaBrowser from './DhatupathaBrowser';
 import DhatupathaArticles from './DhatupathaArticles';
+import DhatupathaPyramidIntro from './DhatupathaPyramidIntro';
 import '../styles/dhatupatha.css';
 
 export type StudioMode = 'deconstructor' | 'generator' | 'comparator' | 'quiz' | 'library' | 'articles';
@@ -810,6 +811,17 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
               type="button"
               className="dp-header-guide-btn"
               onClick={() => {
+                const el = document.getElementById('generative-pyramid-intro');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              title="Jump to the Generative Pyramid Infographic: How Sanskrit builds words from sounds and roots"
+            >
+              🔺 How Sanskrit Is Built (Pyramid)
+            </button>
+            <button
+              type="button"
+              className="dp-header-guide-btn"
+              onClick={() => {
                 setMode('generator');
                 setShowVoiceLakaraGuide(true);
                 setTimeout(() => {
@@ -896,6 +908,11 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
           </button>
         </nav>
       </header>
+
+      {/* Introductory Section: The Generative Pyramid of Sanskrit */}
+      <div id="generative-pyramid-intro">
+        <DhatupathaPyramidIntro />
+      </div>
 
       {/* ================================================================= */}
       {/* MODE 1: 5-LAKĀRA CONJUGATION GENERATOR (रूप-साधकम्) */}
