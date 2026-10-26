@@ -380,6 +380,26 @@ export const MATCH_CATEGORIES: MatchCategoryMetadata[] = [
       { id: 'dir_14', sanskrit: 'चिकित्सालयः', english: 'Hospital', transliteration: 'cikitsālayaḥ', emoji: '🏥' },
     ],
   },
+  // CATEGORY 16: संख्या-स्मृतिः (Numbers & Natural Symbols)
+  {
+    id: 'cat_numbers_mnemonics',
+    titleDev: 'संख्या-स्मृतिः (प्राकृतिकाः संख्याः)',
+    titleEn: 'Numbers & Natural Symbols (1 to 10)',
+    icon: '🔢',
+    description: 'Match numbers १ to १० with traditional cosmic and bodily symbols: One Earth, Two Eyes, Five Senses, Ten Digits...',
+    pairs: [
+      { id: 'num_1', sanskrit: 'एकम् (१) · एका पृथिवी', english: '1 = One Earth', transliteration: 'ekam · ekā pṛthivī', emoji: '🌍' },
+      { id: 'num_2', sanskrit: 'द्वे (२) · द्वे नेत्रे', english: '2 = Two Eyes', transliteration: 'dve · dve netre', emoji: '👀' },
+      { id: 'num_3', sanskrit: 'त्रीणि (३) · त्रयः लोकाः', english: '3 = Three Worlds', transliteration: 'trīṇi · trayaḥ lokāḥ', emoji: '🌌' },
+      { id: 'num_4', sanskrit: 'चत्वारि (४) · चत्वारः वेदाः', english: '4 = Four Vedas', transliteration: 'catvāri · catvāraḥ vedāḥ', emoji: '📜' },
+      { id: 'num_5', sanskrit: 'पञ्च (५) · पञ्च ज्ञानेन्द्रियाणि', english: '5 = Five Sense Organs', transliteration: 'pañca · pañca jñānendriyāṇi', emoji: '👁️' },
+      { id: 'num_6', sanskrit: 'षट् (६) · षट् ऋतवः', english: '6 = Six Seasons', transliteration: 'ṣaṭ · ṣaṭ ṛtavaḥ', emoji: '🌺' },
+      { id: 'num_7', sanskrit: 'सप्त (७) · सप्त स्वराः', english: '7 = Seven Musical Notes', transliteration: 'sapta · sapta svarāḥ', emoji: '🎵' },
+      { id: 'num_8', sanskrit: 'अष्ट (८) · अष्टौ दिशः', english: '8 = Eight Directions', transliteration: 'aṣṭa · aṣṭau diśaḥ', emoji: '🧭' },
+      { id: 'num_9', sanskrit: 'नव (९) · नव ग्रहाः', english: '9 = Nine Celestial Planets', transliteration: 'nava · nava grahāḥ', emoji: '🪐' },
+      { id: 'num_10', sanskrit: 'दश (१०) · दश अङ्गुल्यः', english: '10 = Ten Digits / Fingers', transliteration: 'daśa · daśa aṅgulyaḥ', emoji: '👐' },
+    ],
+  },
 ];
 
 // ============================================================================

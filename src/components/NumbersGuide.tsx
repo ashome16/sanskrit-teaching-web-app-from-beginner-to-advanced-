@@ -6,7 +6,9 @@ import {
   ORDINAL_NUMBERS_LIST,
   VEDIC_LARGE_NUMBERS,
   DECADE_GROUPS,
+  NUMBER_MNEMONICS_1_TO_10,
   type SanskritNumberItem,
+  type NumberMnemonicItem,
 } from '../data/sanskritNumbers';
 import { playPronunciation, stopPronunciation, playSequence } from '../utils/pronunciation';
 import { BodhiAvatar } from './BodhiAvatar';
@@ -17,7 +19,7 @@ interface NumbersGuideProps {
   onSelectWord?: (word: string) => void;
 }
 
-type GuideTab = 'grid' | 'gender' | 'ordinals' | 'vedic' | 'rules' | 'quiz';
+type GuideTab = 'grid' | 'mnemonics' | 'gender' | 'ordinals' | 'vedic' | 'rules' | 'quiz';
 
 /**
  * Existing articles on the site about the history of Indian numerals.
@@ -137,6 +139,35 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
   const [currentQIndex, setCurrentQIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
+
+  // Mnemonic poster state
+  const [selectedMnemonic, setSelectedMnemonic] = useState<NumberMnemonicItem | null>(NUMBER_MNEMONICS_1_TO_10[0]);
+  const [mnemonicTheme, setMnemonicTheme] = useState<'primary' | 'alternate'>('primary');
+  const [isPosterZoomed, setIsPosterZoomed] = useState<boolean>(false);
+
+  const handleSpeakMnemonic = (item: NumberMnemonicItem) => {
+    stopPlaySequenceRef.current?.();
+    stopPlaySequenceRef.current = null;
+    resumeRef.current = null;
+    setPlayingGroup(null);
+    stopPronunciation();
+
+    const phrase = `${item.word} । ${mnemonicTheme === 'primary' ? item.symbolDev : item.alternateDev}`;
+    setPlayingWord(item.word);
+    playPronunciation(phrase);
+    onSelectWord?.(item.word);
+
+    setTimeout(() => {
+      setPlayingWord((prev) => (prev === item.word ? null : prev));
+    }, 1800);
+  };
+
+  const handleTogglePlayMnemonics = () => {
+    const phrases = NUMBER_MNEMONICS_1_TO_10.map(
+      (item) => `${item.word} । ${mnemonicTheme === 'primary' ? item.symbolDev : item.alternateDev}`
+    );
+    handleTogglePlayGroup('mnemonics', phrases);
+  };
 
   // Cleanup audio on unmount. Mark the dashboard so its overflow box does not
   // swallow a fixed Pause bar on phones (same scrollport bug as Dhātupāṭha).
@@ -504,6 +535,17 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
         <button
           type="button"
           role="tab"
+          aria-selected={activeTab === 'mnemonics'}
+          className={`num-nav-tab${activeTab === 'mnemonics' ? ' num-nav-tab--active' : ''}`}
+          onClick={() => setActiveTab('mnemonics')}
+        >
+          <span>🖼️</span>
+          <span>संख्या-चित्रावलिः (Cosmic &amp; Bodily Mnemonics)</span>
+        </button>
+
+        <button
+          type="button"
+          role="tab"
           aria-selected={activeTab === 'gender'}
           className={`num-nav-tab${activeTab === 'gender' ? ' num-nav-tab--active' : ''}`}
           onClick={() => setActiveTab('gender')}
@@ -700,6 +742,264 @@ export const NumbersGuide: React.FC<NumbersGuideProps> = ({ onSelectWord }) => {
             <div style={{ textAlign: 'center', padding: '3rem 1rem', color: '#64748b' }}>
               <p style={{ fontSize: '1.2rem', fontWeight: 700 }}>No matching numbers found</p>
               <p style={{ fontSize: '0.9rem' }}>Try clearing your search term or selecting another decade.</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Tab: Cosmic & Bodily Number Mnemonics (संख्या-चित्रावलिः) */}
+      {activeTab === 'mnemonics' && (
+        <div className="num-mnemonics-tab">
+          <div className="num-mnemonics-header">
+            <span className="num-mnemonics-badge">
+              <span>🕉️</span>
+              <span>पारम्परिक-भूतसंख्या · Ancient Vedic &amp; Bodily Counting System</span>
+            </span>
+            <h3 className="num-mnemonics-title">
+              संख्या-चित्रावलिः · Sanskrit Numbers (१ तः १०) through Nature, Senses &amp; Cosmos
+            </h3>
+            <p className="num-mnemonics-shloka">
+              एकं वदतु सर्वम् — एका पृथिवी । द्वे वदतु सर्वम् — द्वे नेत्रे । त्रीणि वदतु सर्वम् — त्रयः लोकाः...
+            </p>
+            <p className="num-mnemonics-desc">
+              Ancient Sanskrit mathematicians, poets, and astronomers counted numbers by mapping them to living symbols of nature and our body.
+              Connect numbers 1 to 10 with One Earth, Two Eyes, Three Worlds, Four Vedas, Five Sense Organs, Six Seasons, Seven Musical Notes, Eight Directions, Nine Planets, and Ten Digits!
+            </p>
+          </div>
+
+          {/* Master Infographic Wall Poster Showcase */}
+          <div className="num-poster-card">
+            <div
+              className="num-poster-frame"
+              onClick={() => setIsPosterZoomed(true)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') setIsPosterZoomed(true);
+              }}
+              title="Click to zoom and view full resolution Sanskrit Numbers Mnemonic Poster"
+            >
+              <img
+                src="/sanskrit-numbers-mnemonic-poster.jpg"
+                alt="प्राकृतिकाः संख्याः · Sanskrit Numbers (१ तः १०) through Nature and Body Infographic Poster"
+                className="num-poster-img"
+                loading="lazy"
+              />
+              <div className="num-poster-overlay-hint">
+                <span>🔍 Click to View Fullscreen / Zoom</span>
+              </div>
+            </div>
+
+            <div className="num-poster-toolbar">
+              <div className="num-poster-btn-group">
+                <button
+                  type="button"
+                  className={`num-poster-btn num-poster-btn--primary${playingGroup === 'mnemonics' ? ' num-poster-btn--playing' : ''}`}
+                  onClick={handleTogglePlayMnemonics}
+                  title="Listen to all 10 numbers and phrases in sequential order"
+                >
+                  <span>{playingGroup === 'mnemonics' ? '⏸ Pause Sequential Audio' : '▶ Play All 10 Numbers & Phrases'}</span>
+                </button>
+
+                <button
+                  type="button"
+                  className="num-poster-btn num-poster-btn--outline"
+                  onClick={() => setIsPosterZoomed(true)}
+                  title="Expand poster in high-definition lightbox"
+                >
+                  <span>🔍 Expand Full Poster</span>
+                </button>
+
+                <a
+                  href="/sanskrit-numbers-mnemonic-poster.jpg"
+                  download="sanskrit-numbers-mnemonic-poster.jpg"
+                  className="num-poster-btn num-poster-btn--outline"
+                  title="Download the full-resolution infographic poster for offline printing and study"
+                >
+                  <span>📥 Download HD Poster</span>
+                </a>
+              </div>
+
+              <button
+                type="button"
+                className={`num-poster-btn num-poster-btn--toggle${mnemonicTheme === 'alternate' ? ' active' : ''}`}
+                onClick={() => setMnemonicTheme((prev) => (prev === 'primary' ? 'alternate' : 'primary'))}
+                title="Switch between Primary (Earth, Eyes, Senses) and Alternate (Sun, Hands, Elements) traditional pairs"
+              >
+                <span>🔄 Alternate Set: {mnemonicTheme === 'primary' ? 'Cosmic & Senses' : 'Sacred & Elements'}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Detailed Drawer for Active Selected Number */}
+          {selectedMnemonic && (
+            <div className="num-detail-drawer" role="region" aria-label="Selected Number Details">
+              <div>
+                <h4 className="num-drawer-main-title">
+                  <span>{selectedMnemonic.emoji}</span>
+                  <span>
+                    {selectedMnemonic.devanagariNumeral} · {selectedMnemonic.word} ({selectedMnemonic.iast}) —{' '}
+                    {mnemonicTheme === 'primary' ? selectedMnemonic.symbolDev : selectedMnemonic.alternateDev}
+                  </span>
+                </h4>
+                <div className="num-drawer-shloka">
+                  📜 {selectedMnemonic.shlokaLine}
+                </div>
+                <p className="num-drawer-details">
+                  {selectedMnemonic.details}
+                </p>
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <button
+                    type="button"
+                    className="num-poster-btn num-poster-btn--primary"
+                    onClick={() => handleSpeakMnemonic(selectedMnemonic)}
+                  >
+                    <span>🔊 Speak Phrase</span>
+                  </button>
+                  <button
+                    type="button"
+                    className="num-poster-btn num-poster-btn--outline"
+                    onClick={() => handleSpeak(selectedMnemonic.word)}
+                  >
+                    <span>🗣️ Speak Number Only</span>
+                  </button>
+                </div>
+              </div>
+
+              <div className="num-drawer-rule-box">
+                <div className="num-drawer-rule-title">Grammatical Agreement (लिङ्ग-नियमः)</div>
+                <p className="num-drawer-rule-desc">
+                  {selectedMnemonic.genderNote}
+                </p>
+                <div style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: '#64748b' }}>
+                  <strong>Alternative representation: </strong>
+                  {selectedMnemonic.alternateDev} ({selectedMnemonic.alternateEnglish})
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* 10-Card Interactive Mandala Grid */}
+          <div className="num-mnemonic-grid-heading">
+            <h4 className="num-mnemonic-grid-title">
+              <span>🔢</span>
+              <span>Interactive Number Explorer (Click any tile to listen &amp; inspect)</span>
+            </h4>
+          </div>
+
+          <div className="num-mnemonic-grid">
+            {NUMBER_MNEMONICS_1_TO_10.map((item) => {
+              const isSelected = selectedMnemonic?.value === item.value;
+              const isPlaying = playingWord === item.word;
+              const symbolDev = mnemonicTheme === 'primary' ? item.symbolDev : item.alternateDev;
+              const symbolEn = mnemonicTheme === 'primary' ? item.symbolEnglish : item.alternateEnglish;
+
+              return (
+                <div
+                  key={item.value}
+                  className={`num-mnemonic-tile${isSelected ? ' num-mnemonic-tile--selected' : ''}${isPlaying ? ' num-mnemonic-tile--playing' : ''}`}
+                  onClick={() => {
+                    setSelectedMnemonic(item);
+                    handleSpeakMnemonic(item);
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      setSelectedMnemonic(item);
+                      handleSpeakMnemonic(item);
+                    }
+                  }}
+                  title={`Click to listen: ${item.word} · ${symbolDev} (${symbolEn})`}
+                >
+                  <div className="num-tile-top">
+                    <div className="num-tile-numeral-badge">
+                      <span className="num-tile-dev-num">{item.devanagariNumeral}</span>
+                      <span className="num-tile-latin-num">({item.value})</span>
+                    </div>
+                    <button
+                      type="button"
+                      className="num-tile-speak-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleSpeakMnemonic(item);
+                      }}
+                      title={`Listen to ${item.word}`}
+                      aria-label={`Pronounce ${item.word}`}
+                    >
+                      <span>🔊</span>
+                    </button>
+                  </div>
+
+                  <h5 className="num-tile-word">
+                    <span>{item.word}</span>
+                    <span className="num-tile-iast">({item.iast})</span>
+                  </h5>
+
+                  <div className="num-tile-symbol-box">
+                    <span className="num-tile-symbol-emoji" aria-hidden="true">{item.emoji}</span>
+                    <div className="num-tile-symbol-info">
+                      <strong className="num-tile-symbol-dev">{symbolDev}</strong>
+                      <span className="num-tile-symbol-en">{symbolEn}</span>
+                    </div>
+                  </div>
+
+                  <div className="num-tile-alternate">
+                    <span>Alt:</span>
+                    <strong>{mnemonicTheme === 'primary' ? item.alternateDev : item.symbolDev}</strong>
+                  </div>
+
+                  <span className="num-tile-gender-tag">
+                    {item.value <= 4 ? 'विशेषणम् · Gender declension applies' : 'त्रिषु लिङ्गेषु समानम् · Uniform across genders'}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Fullscreen Lightbox Modal */}
+          {isPosterZoomed && (
+            <div
+              className="num-lightbox-backdrop"
+              onClick={() => setIsPosterZoomed(false)}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Sanskrit Numbers Mnemonic Poster Fullscreen View"
+            >
+              <div
+                className="num-lightbox-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  type="button"
+                  className="num-lightbox-close"
+                  onClick={() => setIsPosterZoomed(false)}
+                  aria-label="Close fullscreen view"
+                >
+                  ✕
+                </button>
+                <img
+                  src="/sanskrit-numbers-mnemonic-poster.jpg"
+                  alt="प्राकृतिकाः संख्याः · Sanskrit Numbers (१ तः १०) Mnemonic Wall Poster Fullscreen"
+                  className="num-lightbox-img"
+                />
+                <div style={{ marginTop: '0.85rem', display: 'flex', gap: '0.75rem', justifyContent: 'center' }}>
+                  <a
+                    href="/sanskrit-numbers-mnemonic-poster.jpg"
+                    download="sanskrit-numbers-mnemonic-poster.jpg"
+                    className="num-poster-btn num-poster-btn--primary"
+                  >
+                    <span>📥 Download HD Poster Image</span>
+                  </a>
+                  <button
+                    type="button"
+                    className="num-poster-btn num-poster-btn--outline"
+                    onClick={() => setIsPosterZoomed(false)}
+                  >
+                    <span>Close</span>
+                  </button>
+                </div>
+              </div>
             </div>
           )}
         </div>

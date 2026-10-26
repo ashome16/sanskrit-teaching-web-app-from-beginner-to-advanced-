@@ -1240,7 +1240,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <h3 className="home-journey-step-title">Words &amp; Games</h3>
               <span className="home-journey-step-sanskrit">शब्दाः · जोडो एवं क्रीडाः</span>
               <p className="home-journey-step-desc">
-                Build 6,000+ practical words with tile puzzles, 14 match-pair categories &amp; story word mazes.
+                Build 6,000+ practical words with tile puzzles, 16 match-pair categories &amp; story word mazes.
               </p>
               <span className="home-journey-step-cta">Play &amp; Build →</span>
             </div>

@@ -1772,3 +1772,586 @@
 }
 [data-theme='dark'] .num-bodhi-quote { color: #d1d5db; }
 [data-theme='dark'] .num-readmore-text strong { color: #93c5fd; }
+
+/* ==========================================================================
+   Numbers Mnemonic Poster & Bhūta-saṅkhyā Styles (संख्या-चित्रावलिः)
+   ========================================================================== */
+
+.num-mnemonics-tab {
+  animation: numFadeIn 0.3s ease;
+}
+
+.num-mnemonics-header {
+  margin-bottom: 1.75rem;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fff7ed 100%);
+  border: 1.5px solid #fde68a;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+}
+
+.num-mnemonics-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #d97706;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25);
+}
+
+.num-mnemonics-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #78350f;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+.num-mnemonics-shloka {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #b45309;
+  font-style: italic;
+  margin: 0 0 0.6rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid #d97706;
+}
+
+.num-mnemonics-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #92400e;
+  margin: 0;
+  max-width: 900px;
+}
+
+/* Master Poster Showcase Card */
+.num-poster-card {
+  background: #ffffff;
+  border: 2px solid #fed7aa;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px -10px rgba(180, 83, 9, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.num-poster-frame {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 3px solid #b45309;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(0, 0, 0, 0.12);
+  background: #291807;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.num-poster-frame:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.15), 0 14px 32px rgba(180, 83, 9, 0.25);
+}
+
+.num-poster-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.num-poster-overlay-hint {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Poster Toolbar */
+.num-poster-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.num-poster-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.num-poster-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.15rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.num-poster-btn--primary {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(217, 119, 6, 0.3);
+}
+
+.num-poster-btn--primary:hover {
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+  transform: translateY(-1px);
+}
+
+.num-poster-btn--primary.num-poster-btn--playing {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  box-shadow: 0 3px 10px rgba(220, 38, 38, 0.4);
+  animation: numPulse 1.8s infinite;
+}
+
+.num-poster-btn--outline {
+  background: #ffffff;
+  color: #78350f;
+  border: 1.5px solid #fed7aa;
+}
+
+.num-poster-btn--outline:hover {
+  background: #fef3c7;
+  border-color: #f59e0b;
+}
+
+.num-poster-btn--toggle {
+  background: #f8fafc;
+  color: #334155;
+  border: 1.5px solid #e2e8f0;
+}
+
+.num-poster-btn--toggle.active {
+  background: #f0fdf4;
+  color: #166534;
+  border-color: #86efac;
+}
+
+/* 10-Card Interactive Mandala Grid */
+.num-mnemonic-grid-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0 1rem;
+}
+
+.num-mnemonic-grid-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.num-mnemonic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .num-mnemonic-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.num-mnemonic-tile {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+}
+
+.num-mnemonic-tile:hover {
+  transform: translateY(-3px);
+  border-color: #f59e0b;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
+}
+
+.num-mnemonic-tile--selected {
+  border-color: #d97706;
+  background: #fffbeb;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.25), 0 8px 24px rgba(217, 119, 6, 0.15);
+}
+
+.num-mnemonic-tile--playing {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3), 0 8px 24px rgba(37, 99, 235, 0.2);
+  animation: numPulse 1.5s infinite;
+}
+
+.num-tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.num-tile-numeral-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.num-tile-dev-num {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #d97706;
+  line-height: 1;
+  font-family: 'Noto Sans Devanagari', serif;
+}
+
+.num-tile-latin-num {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #94a3b8;
+}
+
+.num-tile-speak-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.num-tile-speak-btn:hover {
+  background: #d97706;
+  border-color: #b45309;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.num-tile-word {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.num-tile-iast {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+  font-style: italic;
+}
+
+.num-tile-symbol-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.num-tile-symbol-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.num-tile-symbol-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.num-tile-symbol-dev {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+}
+
+.num-tile-symbol-en {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.num-tile-alternate {
+  font-size: 0.78rem;
+  color: #64748b;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.num-tile-alternate strong {
+  color: #334155;
+  font-weight: 700;
+}
+
+.num-tile-gender-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0369a1;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  line-height: 1.3;
+}
+
+/* Detail Drawer / Modal for Active Number */
+.num-detail-drawer {
+  background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+  border: 2px solid #fde68a;
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.12);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .num-detail-drawer {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.num-drawer-main-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #78350f;
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.num-drawer-shloka {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #b45309;
+  background: #fef3c7;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  margin-bottom: 0.85rem;
+  border-left: 4px solid #d97706;
+}
+
+.num-drawer-details {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #451a03;
+  margin: 0 0 0.85rem;
+}
+
+.num-drawer-rule-box {
+  background: #ffffff;
+  border: 1.5px solid #fed7aa;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+}
+
+.num-drawer-rule-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #9a3412;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.num-drawer-rule-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #7c2d12;
+  margin: 0;
+}
+
+/* Lightbox Modal for Poster Zoom */
+.num-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: numFadeIn 0.25s ease;
+}
+
+.num-lightbox-content {
+  position: relative;
+  max-width: 1200px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.num-lightbox-img {
+  max-width: 100%;
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.num-lightbox-close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: #dc2626;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode overrides for mnemonics tab */
+[data-theme='dark'] .num-mnemonics-header {
+  background: #1f1b13;
+  border-color: #78350f;
+}
+[data-theme='dark'] .num-mnemonics-title { color: #fde68a; }
+[data-theme='dark'] .num-mnemonics-shloka { color: #fef08a; border-left-color: #f59e0b; }
+[data-theme='dark'] .num-mnemonics-desc { color: #fed7aa; }
+
+[data-theme='dark'] .num-poster-card {
+  background: #16171d;
+  border-color: #451a03;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+[data-theme='dark'] .num-poster-toolbar { border-top-color: #2e303a; }
+[data-theme='dark'] .num-poster-btn--outline {
+  background: #232530;
+  color: #fde68a;
+  border-color: #78350f;
+}
+[data-theme='dark'] .num-poster-btn--outline:hover { background: #2f2a1b; }
+[data-theme='dark'] .num-poster-btn--toggle {
+  background: #232530;
+  color: #e2e8f0;
+  border-color: #3b4252;
+}
+
+[data-theme='dark'] .num-mnemonic-grid-title { color: #f8fafc; }
+[data-theme='dark'] .num-mnemonic-tile {
+  background: #1e2029;
+  border-color: #2e303a;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+[data-theme='dark'] .num-mnemonic-tile:hover {
+  border-color: #d97706;
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.25);
+}
+[data-theme='dark'] .num-mnemonic-tile--selected {
+  background: #2a2315;
+  border-color: #f59e0b;
+}
+[data-theme='dark'] .num-mnemonic-tile--playing {
+  background: #172554;
+  border-color: #60a5fa;
+}
+[data-theme='dark'] .num-tile-word { color: #f1f5f9; }
+[data-theme='dark'] .num-tile-symbol-box {
+  background: #16171d;
+  border-color: #2e303a;
+}
+[data-theme='dark'] .num-tile-symbol-dev { color: #f8fafc; }
+[data-theme='dark'] .num-tile-symbol-en { color: #cbd5e1; }
+[data-theme='dark'] .num-tile-alternate {
+  background: #242733;
+  color: #94a3b8;
+}
+[data-theme='dark'] .num-tile-alternate strong { color: #cbd5e1; }
+[data-theme='dark'] .num-tile-speak-btn {
+  background: #2e303a;
+  border-color: #3f4250;
+  color: #e2e8f0;
+}
+[data-theme='dark'] .num-tile-gender-tag {
+  background: #082f49;
+  border-color: #0369a1;
+  color: #7dd3fc;
+}
+
+[data-theme='dark'] .num-detail-drawer {
+  background: #1f1b13;
+  border-color: #78350f;
+}
+[data-theme='dark'] .num-drawer-main-title { color: #fef08a; }
+[data-theme='dark'] .num-drawer-shloka {
+  background: #2f2512;
+  color: #fde68a;
+  border-left-color: #f59e0b;
+}
+[data-theme='dark'] .num-drawer-details { color: #fed7aa; }
+[data-theme='dark'] .num-drawer-rule-box {
+  background: #16171d;
+  border-color: #78350f;
+}
+[data-theme='dark'] .num-drawer-rule-title { color: #f97316; }
+[data-theme='dark'] .num-drawer-rule-desc { color: #fed7aa; }
+
