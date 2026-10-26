@@ -34,6 +34,9 @@ const AdminModal = lazy(() => import('./AdminModal'));
 const GlobalSearchModal = lazy(() => import('./GlobalSearchModal'));
 const VoiceSettingsModal = lazy(() => import('./VoiceSettingsModal'));
 const BodhiOnlineClassesModal = lazy(() => import('./BodhiOnlineClassesModal'));
+const HinduCalendarModal = lazy(() => import('./HinduCalendarModal'));
+import { getHinduDate } from '../utils/hinduCalendar';
+import '../styles/hindu-calendar.css';
 import { useAccessibilityStore } from '../utils/accessibilityStore';
 
 const ViewLoader = () => (
@@ -317,6 +320,23 @@ const Dashboard: React.FC = () => {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
   const [isOnlineClassesOpen, setIsOnlineClassesOpen] = useState(false);
+  const [isCalendarModalOpen, setIsCalendarModalOpen] = useState(false);
+  const [panchang, setPanchang] = useState(() => getHinduDate());
+
+  // Keep Hindu Panchang date and time updated every 30 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPanchang(getHinduDate());
+    }, 30000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Allow any section or widget to open the Hindu Calendar modal via event
+  useEffect(() => {
+    const handleOpenCalendar = () => setIsCalendarModalOpen(true);
+    window.addEventListener('open-hindu-calendar', handleOpenCalendar);
+    return () => window.removeEventListener('open-hindu-calendar', handleOpenCalendar);
+  }, []);
   const searchShortcut = getSearchShortcut();
   const [bodhiGuideInitialTab, setBodhiGuideInitialTab] = useState<'context' | 'qa' | 'subhashita' | 'phrases'>('context');
   const [bodhiGuideQuestionId, setBodhiGuideQuestionId] = useState<string | null>(null);
@@ -1171,6 +1191,23 @@ const Dashboard: React.FC = () => {
         </nav>
 
         <div className="dashboard-header-user">
+          {/* Hindu Calendar & Panchang Corner Widget */}
+          <button
+            type="button"
+            className="dashboard-panchang-btn"
+            onClick={() => setIsCalendarModalOpen(true)}
+            title="आज का पञ्चाङ्ग एवं हिन्दू कैलेण्डर · Vedic Hindu Calendar (Click for full calendar)"
+            aria-label="Open Hindu Calendar and Panchang"
+          >
+            <span className="dpb-icon" aria-hidden="true">🕉️</span>
+            <div className="dpb-text">
+              <span className="dpb-tithi">{panchang.formattedTithiPill}</span>
+              <span className="dpb-sub">
+                <span>{panchang.vara} · {panchang.timeIST}</span>
+                <span className="dpb-link-tag">📅 कैलेण्डर</span>
+              </span>
+            </div>
+          </button>
           <a
             href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
             target="_blank"
@@ -1261,6 +1298,7 @@ const Dashboard: React.FC = () => {
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
           onOpenOnlineClasses={() => setIsOnlineClassesOpen(true)}
+          onOpenCalendar={() => setIsCalendarModalOpen(true)}
           onOpenBodhi={() => setIsBodhiGuideOpen(true)}
           onOpenSearch={() => setIsSearchModalOpen(true)}
           onOpenResources={() => navigateToView('resources')}
@@ -1559,6 +1597,12 @@ const Dashboard: React.FC = () => {
             onOpenVedicMaths={() => navigateToView('vedic-maths')}
             onOpenCourse={() => navigateToView('course')}
             onOpenBodhi={() => setIsBodhiGuideOpen(true)}
+          />
+        )}
+        {isCalendarModalOpen && (
+          <HinduCalendarModal
+            isOpen={isCalendarModalOpen}
+            onClose={() => setIsCalendarModalOpen(false)}
           />
         )}
         <AuthModal />

@@ -41,6 +41,7 @@ export interface HomePageProps {
   onOpenScienceLab?: (segment?: string) => void;
   onOpenRegister?: () => void;
   onOpenCertificate?: () => void;
+  onOpenCalendar?: () => void;
 }
 
 interface DemoWord {
@@ -736,6 +737,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenScienceLab,
   onOpenRegister,
   onOpenCertificate,
+  onOpenCalendar,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -997,6 +999,18 @@ const HomePage: React.FC<HomePageProps> = ({
             सरस्वति नमस्तुभ्यं वरदे कामरूपिणि
           </span>
         </div>
+
+        <button
+          type="button"
+          className="home-hero-panchang-pill"
+          onClick={() => (onOpenCalendar ? onOpenCalendar() : window.dispatchEvent(new CustomEvent('open-hindu-calendar')))}
+          title="आज का पञ्चाङ्ग एवं हिन्दू कैलेण्डर · View Live Hindu Calendar & Panchang"
+          aria-label="Open Hindu Calendar & Panchang"
+        >
+          <span aria-hidden="true">🕉️</span>
+          <span>आज का पञ्चाङ्गम् · Hindu Calendar</span>
+          <span className="home-hero-panchang-arrow" aria-hidden="true">➔</span>
+        </button>
 
         {/* 2. Main Outcome & Core Promise */}
         <h1 className="home-hero-title">

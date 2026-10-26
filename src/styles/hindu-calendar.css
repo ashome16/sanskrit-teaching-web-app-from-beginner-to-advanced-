@@ -1,0 +1,466 @@
+/* ==========================================================================
+   Hindu Calendar (भारतीय पञ्चाङ्गम्) & Corner Widget Styles
+   ========================================================================== */
+
+/* 1. Header Corner Widget Button */
+.dashboard-panchang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1.5px solid #f59e0b;
+  border-radius: 999px;
+  padding: 0.28rem 0.65rem 0.28rem 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(217, 119, 6, 0.15), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+  line-height: 1.15;
+  color: #78350f;
+  flex-shrink: 0;
+}
+
+.dashboard-panchang-btn:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: #d97706;
+  box-shadow: 0 3px 8px rgba(217, 119, 6, 0.22);
+}
+
+.dpb-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  display: inline-block;
+  animation: dpb-pulse 3s infinite ease-in-out;
+}
+
+@keyframes dpb-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.dpb-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.dpb-tithi {
+  font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Sanskrit', 'Sanskrit Text', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #b45309;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.dpb-sub {
+  font-size: 0.56rem;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dpb-link-tag {
+  color: #b45309;
+  text-decoration: underline;
+}
+
+/* 1b. Hero Panchang Pill on Home Page */
+.home-hero-panchang-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(254, 243, 199, 0.85);
+  border: 1px solid #f59e0b;
+  color: #92400e;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.35rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  margin: 0.5rem auto 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 1px 3px rgba(217, 119, 6, 0.12);
+}
+
+.home-hero-panchang-pill:hover {
+  background: #fef3c7;
+  border-color: #d97706;
+  color: #78350f;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(217, 119, 6, 0.2);
+}
+
+.home-hero-panchang-arrow {
+  color: #d97706;
+  font-weight: 800;
+  font-size: 0.85rem;
+  transition: transform 0.15s ease;
+}
+
+.home-hero-panchang-pill:hover .home-hero-panchang-arrow {
+  transform: translateX(3px);
+}
+
+/* 2. Hindu Calendar Modal Overlay */
+.hcm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: hcmFadeIn 0.2s ease-out;
+}
+
+@keyframes hcmFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hcm-container {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(245, 158, 11, 0.2);
+  border: 2px solid #fde68a;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Modal Header */
+.hcm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem 1rem;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 60%, #fed7aa 100%);
+  border-bottom: 1.5px solid #fde68a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.hcm-header-title-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hcm-header-om {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.hcm-header-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #78350f;
+  line-height: 1.2;
+}
+
+.hcm-header-sub {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #92400e;
+  font-weight: 600;
+}
+
+.hcm-close-btn {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #d97706;
+  color: #78350f;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.hcm-close-btn:hover {
+  background: #b45309;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Modal Body */
+.hcm-body {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Today's Panchanga Card */
+.hcm-panchang-card {
+  background: linear-gradient(180deg, #fffdfa 0%, #fffbf2 100%);
+  border: 1.5px solid #fed7aa;
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.08);
+}
+
+.hcm-pc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed #fed7aa;
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hcm-pc-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.hcm-pc-ist {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #b45309;
+}
+
+.hcm-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.hcm-cell {
+  background: #ffffff;
+  border: 1px solid #ffedd5;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+
+.hcm-cell-label {
+  font-size: 0.68rem;
+  color: #8a7f72;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.hcm-cell-val-sa {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #7c2d12;
+  display: block;
+}
+
+.hcm-cell-val-en {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 500;
+  display: block;
+}
+
+/* Traditional Vedic Time Strip */
+.hcm-vedic-time-strip {
+  background: #faf5ff;
+  border: 1px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hcm-vt-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hcm-vt-label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #7e22ce;
+  text-transform: uppercase;
+}
+
+.hcm-vt-val {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #581c87;
+}
+
+/* Monthly Calendar Section */
+.hcm-calendar-section {
+  background: #ffffff;
+  border: 1.5px solid #fed7aa;
+  border-radius: 14px;
+  padding: 1.1rem;
+}
+
+.hcm-cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hcm-cal-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #9a3412;
+}
+
+.hcm-cal-sub {
+  font-size: 0.74rem;
+  color: #8a7f72;
+  font-weight: 600;
+}
+
+.hcm-cal-table-wrap {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #fed7aa;
+}
+
+.hcm-cal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.hcm-cal-table th {
+  background: #fff7ed;
+  color: #9a3412;
+  font-weight: 800;
+  padding: 0.55rem 0.65rem;
+  border-bottom: 1.5px solid #fed7aa;
+  white-space: nowrap;
+}
+
+.hcm-cal-table td {
+  padding: 0.55rem 0.65rem;
+  border-bottom: 1px solid #ffedd5;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.hcm-cal-row.is-today {
+  background: #fef3c7 !important;
+  font-weight: 800;
+}
+
+.hcm-cal-row.has-festival {
+  background: #fffdf7;
+}
+
+.hcm-tithi-badge {
+  font-weight: 800;
+  color: #7c2d12;
+}
+
+.hcm-festival-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.hcm-today-indicator {
+  display: inline-block;
+  background: #b45309;
+  color: #ffffff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  margin-left: 0.35rem;
+}
+
+/* External Link & Footer Strip */
+.hcm-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #fed7aa;
+}
+
+.hcm-drik-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fff7ed;
+  color: #b45309;
+  border: 1.5px solid #fdba74;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  transition: all 0.15s ease;
+}
+
+.hcm-drik-link:hover {
+  background: #ea580c;
+  color: #ffffff;
+  border-color: #c2410c;
+}
+
+.hcm-explain-note {
+  font-size: 0.72rem;
+  color: #64748b;
+  max-width: 480px;
+  line-height: 1.4;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .dashboard-panchang-btn .dpb-sub {
+    display: none;
+  }
+  .dashboard-panchang-btn .dpb-tithi {
+    font-size: 0.7rem;
+  }
+  .hcm-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
