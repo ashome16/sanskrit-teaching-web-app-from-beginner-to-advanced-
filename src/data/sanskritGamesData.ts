@@ -355,6 +355,31 @@ export const MATCH_CATEGORIES: MatchCategoryMetadata[] = [
       { id: 'gen_9', sanskrit: 'शिक्षकः (M) ➔ शिक्षिका (F) ➔ विद्यालयः (School)', english: 'Male Teacher ➔ Female Teacher ➔ School', transliteration: 'śikṣakaḥ ➔ śikṣikā ➔ vidyālayaḥ', emoji: '🏫' },
     ],
   },
+
+  // 15. Directions & Traffic Rescue (दिशः एवं यातायातम्)
+  {
+    id: 'cat_directions_traffic',
+    titleDev: 'दिशः एवं यातायातम्',
+    titleEn: 'Directions & Traffic Rescue',
+    icon: '🚦',
+    description: 'Master spatial directions (वामतः, दक्षिणतः, पुरतः), crossroads, signals, and ambulance rescue terms.',
+    pairs: [
+      { id: 'dir_1', sanskrit: 'वामतः', english: 'To the Left', transliteration: 'vāmatas', emoji: '⬅️' },
+      { id: 'dir_2', sanskrit: 'दक्षिणतः', english: 'To the Right', transliteration: 'dakṣiṇatas', emoji: '➡️' },
+      { id: 'dir_3', sanskrit: 'पुरतः / अग्रे', english: 'In Front / Forward Ahead', transliteration: 'puratas / agre', emoji: '⬆️' },
+      { id: 'dir_4', sanskrit: 'पृष्ठतः', english: 'Behind / In the Back', transliteration: 'pṛṣṭhatas', emoji: '⬇️' },
+      { id: 'dir_5', sanskrit: 'ऋजु-मार्गेण / सीधा', english: 'Straight Ahead', transliteration: 'ṛju-mārgeṇa', emoji: '🧭' },
+      { id: 'dir_6', sanskrit: 'उपरि / अधः', english: 'Above / Below', transliteration: 'upari / adhaḥ', emoji: '↕️' },
+      { id: 'dir_7', sanskrit: 'समीपे / दूरे', english: 'Near / Far away', transliteration: 'samīpe / dūre', emoji: '📍' },
+      { id: 'dir_8', sanskrit: 'चतुष्पथः', english: 'Crossroads / Intersection', transliteration: 'catuṣpathaḥ', emoji: '🚦' },
+      { id: 'dir_9', sanskrit: 'रुग्णवाहनम् / आपद्वाहनम्', english: 'Ambulance', transliteration: 'rugṇavāhanam / āpadvāhanam', emoji: '🚑' },
+      { id: 'dir_10', sanskrit: 'रक्तदीपः (तिष्ठतु)', english: 'Red Signal (Stop!)', transliteration: 'raktadīpaḥ (tiṣṭhatu)', emoji: '🛑' },
+      { id: 'dir_11', sanskrit: 'हरितदीपः (चलतु)', english: 'Green Signal (Go!)', transliteration: 'haritadīpaḥ (calatu)', emoji: '🟢' },
+      { id: 'dir_12', sanskrit: 'पदयात्रिक-मार्गः', english: 'Zebra / Pedestrian Crossing', transliteration: 'padayātrika-mārgaḥ', emoji: '🦓' },
+      { id: 'dir_13', sanskrit: 'साहाय्यं करोति', english: 'Helps / Assists someone', transliteration: 'sāhāyyaṁ karoti', emoji: '🤝' },
+      { id: 'dir_14', sanskrit: 'चिकित्सालयः', english: 'Hospital', transliteration: 'cikitsālayaḥ', emoji: '🏥' },
+    ],
+  },
 ];
 
 // ============================================================================
@@ -609,6 +634,57 @@ export const WORD_MAZE_QUESTS: WordMazeQuest[] = [
       { row: 3, col: 2, word: 'वृन्ताकम्', translation: 'Eggplant (Vegetable)', isPath: true, stepOrder: 8 },
       { row: 3, col: 3, word: 'पिपीलिका', translation: 'Ant (Insect Trap)', isPath: false },
       { row: 3, col: 4, word: 'शय्या', translation: 'Bed (Trap)', isPath: false },
+    ],
+  },
+
+  // STORY MAZE 4: चतुष्पथे साहाय्यम् · Traffic & Ambulance Rescue (Directions Quest)
+  {
+    id: 'maze_traffic_rescue',
+    type: 'story',
+    titleDev: 'चतुष्पथे साहाय्यम् (Traffic & Directions Rescue)',
+    titleEn: 'Story Maze: Ambulance & Directions at the Crossroads',
+    icon: '🚑',
+    missionObjective: 'Guide the child helping the elder and direct the ambulance to the hospital using directional words (वामतः, दक्षिणतः, अग्रे)!',
+    gridRows: 5,
+    gridCols: 5,
+    fullSentenceOrStoryDev: 'चतुष्पथे रक्तदीपः अस्ति । बालकः वृद्धस्य साहाय्यं करोति । सः वामतः दक्षिणतः च पश्यति । पदयात्रिक-मार्गेण मार्गं तरति । दूरात् रुग्णवाहनम् आगच्छति । वाहनानि वामतः गच्छन्ति । रुग्णवाहनम् ऋजु-मार्गेण अग्रे धावति । शीघ्रं चिकित्सालयं प्राप्नोति ॥',
+    fullSentenceOrStoryEn: 'At the crossroads, there is a red signal. A child helps an elderly person. He looks to the left and to the right. He crosses the road safely on the zebra crossing. From afar, an ambulance rushes. Vehicles move to the left. The ambulance speeds straight forward. Quickly, it reaches the hospital.',
+    moral: 'परोपकाराय सतां विभूतयः (The noble always step forward to help others in need).',
+    cells: [
+      // Row 0: At the crossroads with red light, child helps elder
+      { row: 0, col: 0, word: 'चतुष्पथे', translation: 'At crossroads 🚦', isPath: true, stepOrder: 1 },
+      { row: 0, col: 1, word: 'रक्तदीपः', translation: 'Red signal 🛑', isPath: true, stepOrder: 2 },
+      { row: 0, col: 2, word: 'बालकः', translation: 'The Child 👦', isPath: true, stepOrder: 3 },
+      { row: 0, col: 3, word: 'वृद्धस्य', translation: 'Of elder 👴', isPath: true, stepOrder: 4 },
+      { row: 0, col: 4, word: 'साहाय्यम्', translation: 'Help 🤝', isPath: true, stepOrder: 5 },
+
+      // Row 1: Offers help, looks left and right
+      { row: 1, col: 0, word: 'समुद्रः', translation: 'Ocean (Trap)', isPath: false },
+      { row: 1, col: 1, word: 'पश्यति', translation: 'Looks both ways 👀', isPath: true, stepOrder: 9 },
+      { row: 1, col: 2, word: 'दक्षिणतः', translation: 'To the Right ➡️', isPath: true, stepOrder: 8 },
+      { row: 1, col: 3, word: 'वामतः', translation: 'To the Left ⬅️', isPath: true, stepOrder: 7 },
+      { row: 1, col: 4, word: 'करोति', translation: 'Offers / Does', isPath: true, stepOrder: 6 },
+
+      // Row 2: Crosses on zebra crossing as ambulance approaches
+      { row: 2, col: 0, word: 'जङ्गलम्', translation: 'Jungle (Trap)', isPath: false },
+      { row: 2, col: 1, word: 'पदयात्रिक-मार्गेण', translation: 'On zebra crossing 🦓', isPath: true, stepOrder: 10 },
+      { row: 2, col: 2, word: 'तरति', translation: 'Crosses safely 🚶', isPath: true, stepOrder: 11 },
+      { row: 2, col: 3, word: 'रुग्णवाहनम्', translation: 'Ambulance 🚑', isPath: true, stepOrder: 12 },
+      { row: 2, col: 4, word: 'आगच्छति', translation: 'Rushes in 🚨', isPath: true, stepOrder: 13 },
+
+      // Row 3: Vehicles move left, ambulance drives straight ahead
+      { row: 3, col: 0, word: 'कन्दुकम्', translation: 'Ball (Trap)', isPath: false },
+      { row: 3, col: 1, word: 'अग्रे', translation: 'Forward ⬆️', isPath: true, stepOrder: 17 },
+      { row: 3, col: 2, word: 'ऋजु-मार्गेण', translation: 'Straight ahead 🧭', isPath: true, stepOrder: 16 },
+      { row: 3, col: 3, word: 'वामतः', translation: 'To the Left ⬅️', isPath: true, stepOrder: 15 },
+      { row: 3, col: 4, word: 'वाहनानि', translation: 'Vehicles 🚗', isPath: true, stepOrder: 14 },
+
+      // Row 4: Speeds quickly to reach the hospital
+      { row: 4, col: 0, word: 'चन्द्रः', translation: 'Moon (Trap)', isPath: false },
+      { row: 4, col: 1, word: 'धावति', translation: 'Speeds on ⚡', isPath: true, stepOrder: 18 },
+      { row: 4, col: 2, word: 'शीघ्रम्', translation: 'Quickly ⏱️', isPath: true, stepOrder: 19 },
+      { row: 4, col: 3, word: 'चिकित्सालयम्', translation: 'To Hospital 🏥', isPath: true, stepOrder: 20 },
+      { row: 4, col: 4, word: 'प्राप्नोति', translation: 'Reaches safely 🏆', isPath: true, stepOrder: 21 },
     ],
   },
 ];

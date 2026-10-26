@@ -167,6 +167,26 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   const [trapCell, setTrapCell] = useState<{ row: number; col: number } | null>(null);
   const [trapMessage, setTrapMessage] = useState<string | null>(null);
 
+  // Traffic visual scene interactive hotspot state
+  const [trafficHotspot, setTrafficHotspot] = useState<{
+    word: string;
+    trans: string;
+    icon?: string;
+    note?: string;
+  } | null>({
+    word: 'चतुष्पथः',
+    trans: 'Crossroads / Intersection',
+    icon: '🚦',
+    note: 'Tap the child, ambulance, traffic lights, or directions to hear native Sanskrit pronunciation!',
+  });
+  const [trafficSceneTab, setTrafficSceneTab] = useState<'scene' | 'maze'>('scene');
+
+  const handleTrafficClick = (word: string, trans: string, icon?: string, note?: string) => {
+    playPronunciation(word);
+    soundEffects.playStrokeChime();
+    setTrafficHotspot({ word, trans, icon, note });
+  };
+
   // Reset maze on quest change
   useEffect(() => {
     setCurrentMazeStep(1);
@@ -499,6 +519,244 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                 </button>
               </div>
             </div>
+
+            {/* Traffic Scene & Directions Exploration Block */}
+            {activeQuest.id === 'maze_traffic_rescue' && (
+              <div className="sgh-traffic-scene">
+                <div className="sgh-traffic-scene-header">
+                  <div className="sgh-traffic-scene-title">
+                    <span style={{ fontSize: '1.8rem' }}>🚑</span>
+                    <div>
+                      <h3>मार्ग-यातायात-दृश्यम् · Interactive Traffic &amp; Directions Scene</h3>
+                      <p>Tap the child, ambulance, signals, or direction arrows to hear native Sanskrit pronunciation!</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.4rem' }}>
+                    <button
+                      type="button"
+                      className={`sgh-quest-btn ${trafficSceneTab === 'scene' ? 'sgh-quest-btn--active' : ''}`}
+                      onClick={() => setTrafficSceneTab('scene')}
+                    >
+                      🏙️ Scene View
+                    </button>
+                    <button
+                      type="button"
+                      className={`sgh-quest-btn ${trafficSceneTab === 'maze' ? 'sgh-quest-btn--active' : ''}`}
+                      onClick={() => setTrafficSceneTab('maze')}
+                    >
+                      🌀 Maze View
+                    </button>
+                  </div>
+                </div>
+
+                {trafficSceneTab === 'scene' && (
+                  <>
+                    {/* The Visual Crossroads Canvas */}
+                    <div className="sgh-traffic-canvas" role="region" aria-label="Crossroads Traffic Scene">
+                      {/* Asphalt crossroad markings */}
+                      <div className="sgh-road-cross" aria-hidden="true" />
+                      <div className="sgh-road-hcross" aria-hidden="true" />
+                      <div className="sgh-zebra-crossing" aria-hidden="true" />
+
+                      {/* TOP ROW: Hospital & Ahead / North */}
+                      <div className="sgh-canvas-row">
+                        <button
+                          type="button"
+                          className={`sgh-hotspot ${trafficHotspot?.word === 'चिकित्सालयः' ? 'sgh-hotspot--active' : ''}`}
+                          onClick={() => handleTrafficClick('चिकित्सालयः', 'Hospital', '🏥', 'The ambulance is rushing ahead to reach the hospital safely!')}
+                        >
+                          <span>🏥</span>
+                          <span>चिकित्सालयः (Hospital)</span>
+                          <span className="sgh-hotspot-badge">पुरतः / अग्रे ⬆️</span>
+                        </button>
+
+                        <button
+                          type="button"
+                          className={`sgh-hotspot ${trafficHotspot?.word === 'हरितदीपः' ? 'sgh-hotspot--active' : ''}`}
+                          onClick={() => handleTrafficClick('हरितदीपः', 'Green Light (Go!)', '🟢', 'हरितदीपः = चलतु (Green light signals vehicles to move)')}
+                        >
+                          <span>🟢</span>
+                          <span>हरितदीपः (चलतु / Go)</span>
+                        </button>
+                      </div>
+
+                      {/* CENTER ROW: Crossroads, Traffic Light, Child Helping Elder */}
+                      <div className="sgh-canvas-center-row">
+                        <button
+                          type="button"
+                          className={`sgh-hotspot ${trafficHotspot?.word === 'वामतः' ? 'sgh-hotspot--active' : ''}`}
+                          onClick={() => handleTrafficClick('वामतः', 'To the Left', '⬅️', 'वाहनानि वामतः गच्छन्ति (Vehicles move to the left to give way)')}
+                        >
+                          <span>⬅️</span>
+                          <span>वामतः (Left)</span>
+                          <span className="sgh-hotspot-badge">🚗 वाहनानि</span>
+                        </button>
+
+                        {/* Crossroads center: Child helping elder on zebra crossing */}
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', zIndex: 6 }}>
+                          <button
+                            type="button"
+                            className={`sgh-hotspot ${trafficHotspot?.word === 'बालकः वृद्धस्य साहाय्यं करोति' ? 'sgh-hotspot--active' : ''}`}
+                            onClick={() => handleTrafficClick('बालकः वृद्धस्य साहाय्यं करोति', 'The child helps the elder cross safely', '🤝', 'The kind child takes the elderly person across the zebra crossing safely!')}
+                            style={{ background: '#fef3c7', borderColor: '#d97706' }}
+                          >
+                            <span>👦👴🤝</span>
+                            <span>बालकः वृद्धस्य साहाय्यं करोति</span>
+                          </button>
+
+                          <button
+                            type="button"
+                            className={`sgh-hotspot ${trafficHotspot?.word === 'चतुष्पथः' ? 'sgh-hotspot--active' : ''}`}
+                            onClick={() => handleTrafficClick('चतुष्पथः', 'Crossroads / Intersection', '🚦', 'Where four roads meet (चत्वारः पन्थानः यत्र मिलन्ति)')}
+                          >
+                            <span>🚦</span>
+                            <span>चतुष्पथः (Crossroads)</span>
+                            <span className="sgh-hotspot-badge">🛑 रक्तदीपः</span>
+                          </button>
+                        </div>
+
+                        <button
+                          type="button"
+                          className={`sgh-hotspot ${trafficHotspot?.word === 'दक्षिणतः' ? 'sgh-hotspot--active' : ''}`}
+                          onClick={() => handleTrafficClick('दक्षिणतः', 'To the Right', '➡️', 'सः वामतः दक्षिणतः च पश्यति (He looks left and right before crossing)')}
+                        >
+                          <span>➡️</span>
+                          <span>दक्षिणतः (Right)</span>
+                        </button>
+                      </div>
+
+                      {/* BOTTOM ROW: Ambulance Approaching from Behind & Straight Ahead */}
+                      <div className="sgh-canvas-row">
+                        <button
+                          type="button"
+                          className={`sgh-hotspot ${trafficHotspot?.word === 'ऋजु-मार्गेण' ? 'sgh-hotspot--active' : ''}`}
+                          onClick={() => handleTrafficClick('ऋजु-मार्गेण अग्रे धावति', 'Speeds straight forward ahead', '🧭', 'Straight ahead without stopping (सीधा अग्रे)')}
+                        >
+                          <span>🧭</span>
+                          <span>ऋजु-मार्गेण अग्रे (Straight)</span>
+                        </button>
+
+                        <button
+                          type="button"
+                          className={`sgh-hotspot ${trafficHotspot?.word === 'रुग्णवाहनम्' ? 'sgh-hotspot--active' : ''}`}
+                          onClick={() => handleTrafficClick('रुग्णवाहनम्', 'Ambulance', '🚑', '🚨 रुग्णवाहनम् / आपद्वाहनम् — The emergency ambulance!')}
+                          style={{ background: '#fee2e2', borderColor: '#ef4444' }}
+                        >
+                          <span>🚨🚑</span>
+                          <span>रुग्णवाहनम् (Ambulance)</span>
+                          <span className="sgh-hotspot-badge">पृष्ठतः आगच्छति ⬇️</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Active Insight Speech Bubble */}
+                    {trafficHotspot && (
+                      <div className="sgh-traffic-bubble">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                          <span style={{ fontSize: '1.5rem' }}>{trafficHotspot.icon || '🗣️'}</span>
+                          <div>
+                            <span style={{ fontSize: '1.05rem', color: '#78350f', fontWeight: 800 }}>{trafficHotspot.word}</span>
+                            <span style={{ margin: '0 0.4rem', color: '#b45309' }}>•</span>
+                            <span style={{ color: '#92400e', fontWeight: 600 }}>{trafficHotspot.trans}</span>
+                            {trafficHotspot.note && (
+                              <div style={{ fontSize: '0.8rem', color: '#b45309', fontWeight: 500, marginTop: '0.15rem' }}>
+                                {trafficHotspot.note}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+
+                        <button
+                          type="button"
+                          className="sanskrit-tool-btn"
+                          onClick={() => playPronunciation(trafficHotspot.word)}
+                          title="Listen to Sanskrit pronunciation"
+                          style={{ background: '#ffffff', border: '1.5px solid #fed7aa', padding: '0.4rem 0.65rem' }}
+                        >
+                          🔊 Hear Audio
+                        </button>
+                      </div>
+                    )}
+
+                    {/* Direction Compass Quick Reference Bar */}
+                    <div className="sgh-direction-tray">
+                      <button
+                        type="button"
+                        className="sgh-dir-chip"
+                        onClick={() => handleTrafficClick('वामतः', 'To the Left', '⬅️', 'वाम-हस्तस्य दिशि (On the side of the left hand)')}
+                      >
+                        <span>⬅️ वामतः</span>
+                        <small style={{ color: '#64748b' }}>Left</small>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-dir-chip"
+                        onClick={() => handleTrafficClick('दक्षिणतः', 'To the Right', '➡️', 'दक्षिण-हस्तस्य दिशि (On the side of the right hand)')}
+                      >
+                        <span>➡️ दक्षिणतः</span>
+                        <small style={{ color: '#64748b' }}>Right</small>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-dir-chip"
+                        onClick={() => handleTrafficClick('पुरतः / अग्रे', 'In Front / Ahead', '⬆️', 'अग्रे गच्छतु (Move forward ahead)')}
+                      >
+                        <span>⬆️ पुरतः / अग्रे</span>
+                        <small style={{ color: '#64748b' }}>Ahead</small>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-dir-chip"
+                        onClick={() => handleTrafficClick('पृष्ठतः', 'Behind / Backward', '⬇️', 'पृष्ठतः पश्यतु (Look behind)')}
+                      >
+                        <span>⬇️ पृष्ठतः</span>
+                        <small style={{ color: '#64748b' }}>Behind</small>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-dir-chip"
+                        onClick={() => handleTrafficClick('ऋजु-मार्गेण', 'Straight Ahead', '🧭', 'ऋजु = सीधा / सरल (Straight without turns)')}
+                      >
+                        <span>🧭 ऋजु-मार्गेण</span>
+                        <small style={{ color: '#64748b' }}>Straight</small>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-dir-chip"
+                        onClick={() => handleTrafficClick('उपरि', 'Above / Overhead', '🌤️', 'उपरि आकाशः अस्ति (Above is the sky)')}
+                      >
+                        <span>🌤️ उपरि</span>
+                        <small style={{ color: '#64748b' }}>Above</small>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-dir-chip"
+                        onClick={() => handleTrafficClick('अधः', 'Below / Underneath', '⬇️', 'अधः भूमिः अस्ति (Below is the earth)')}
+                      >
+                        <span>⬇️ अधः</span>
+                        <small style={{ color: '#64748b' }}>Below</small>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-dir-chip"
+                        onClick={() => handleTrafficClick('समीपे', 'Near / Nearby', '📍', 'चिकित्सालयः समीपे अस्ति (The hospital is nearby)')}
+                      >
+                        <span>📍 समीपे</span>
+                        <small style={{ color: '#64748b' }}>Near</small>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-dir-chip"
+                        onClick={() => handleTrafficClick('दूरे', 'Far away', '🔭', 'ग्रामः दूरे अस्ति (The village is far away)')}
+                      >
+                        <span>🔭 दूरे</span>
+                        <small style={{ color: '#64748b' }}>Far</small>
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
 
             {/* Live Story / Sentence Formation Banner */}
             <div className="sgh-maze-parchment">
