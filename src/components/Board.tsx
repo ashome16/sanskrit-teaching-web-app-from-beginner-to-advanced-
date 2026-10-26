@@ -2,7 +2,8 @@ import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 're
 import { createPortal } from 'react-dom';
 import '../styles/board.css';
 import { iconForExampleWord } from '../data/exampleIcons';
-import { getSpeechGeneration, playPronunciation, stopPronunciation } from '../utils/pronunciation';
+import { getSpeechGeneration, playPronunciation, stopPronunciation, playSequence } from '../utils/pronunciation';
+import { soundEffects } from '../utils/soundEffects';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
 
@@ -844,14 +845,6 @@ function activeSectionChipId(chips: BoardSectionChip[], puzzleIndex: number): st
  *  Must be a real delay — never speak in the same turn that shows the puzzle. */
 const PUZZLE_REVEAL_MS = 4000;
 
-/** Sanskrit only. Learn cards speak the target; other puzzles speak the sentence, else the word. */
-function spokenSanskrit(puzzle: BoardPuzzle, learn: boolean): string {
-  if (learn) return puzzle.target || '';
-  const sentence = (puzzle.sentence || '').trim();
-  if (sentence) return sentence;
-  return (puzzle.answer ?? puzzle.target) || '';
-}
-
 const Board: React.FC<BoardProps> = ({
   onNavigateToHome,
   onNavigateToReader,
@@ -898,6 +891,9 @@ const Board: React.FC<BoardProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isSearchOpen]);
   const [playingAll, setPlayingAll] = useState(false);
+  const [playingAllTiles, setPlayingAllTiles] = useState(false);
+  const [activeSpokenTileIndex, setActiveSpokenTileIndex] = useState<number | null>(null);
+  const stopTilesSequenceRef = useRef<(() => void) | null>(null);
   /** Index into the real join order while Hand is showing. Null means the hand is off. */
   const [handStep, setHandStep] = useState<number | null>(null);
   const handRef = useRef<HTMLDivElement | null>(null);
@@ -1138,6 +1134,7 @@ const Board: React.FC<BoardProps> = ({
     playTokenRef.current += 1;
     playingRef.current = false;
     setPlayingAll(false);
+    stopPlayAllTiles();
     playTimersRef.current.forEach((id) => window.clearTimeout(id));
     playTimersRef.current = [];
     const wake = playWakeRef.current.splice(0);
@@ -1155,6 +1152,7 @@ const Board: React.FC<BoardProps> = ({
     if (token !== playTokenRef.current) return;
     playingRef.current = false;
     setPlayingAll(false);
+    stopPlayAllTiles();
     clearBoardMotion();
   };
 
@@ -1245,6 +1243,7 @@ const Board: React.FC<BoardProps> = ({
       || root.querySelector<HTMLElement>('.puzzle-prompt');
     const landed = slotNow ? centerOf(slotNow.getBoundingClientRect()) : meet;
     setJoinGhost({ word, left: landed.x, top: landed.y });
+    soundEffects.playPuzzleSnap();
     await playSleep(reduce ? 420 : 520);
     return alive();
   };
@@ -1279,10 +1278,12 @@ const Board: React.FC<BoardProps> = ({
       if (!learn) {
         const move = findSolvingSelection(fresh);
         if (move) {
+          soundEffects.playPuzzleSnap();
           const joined = await animateBoardJoin(token, fresh, move);
           if (!alive()) return;
           if (joined) {
             playCtxRef.current.applySelection(move.selection);
+            soundEffects.playSuccessDing();
             await nextPaint();
             if (!alive()) return;
             clearBoardMotion();
@@ -1292,21 +1293,40 @@ const Board: React.FC<BoardProps> = ({
         setLearnPulse(true);
       }
       if (!alive()) return;
-      // Picture and Sanskrit word stay up; English stays hidden through the guess gap.
-      // The mount effect must not also speak — its timer was cleared in startBoardPlayAll.
-      setMeaningShown(false);
-      clearRevealTimer();
-      await playSleep(PUZZLE_REVEAL_MS);
-      if (!alive()) return;
+
+      // 1. Immediately pronounce the assembled target word/letter with gold highlight
+      const targetWord = (fresh.answer ?? fresh.target) || '';
+      if (targetWord) {
+        speakLead(targetWord);
+        await playSleep(1200);
+        if (!alive()) return;
+      }
+
+      // 2. Reveal English meaning
       setMeaningShown(true);
-      await playSleep(0);
-      if (!alive()) return;
-      speakLead(spokenSanskrit(fresh, learn));
-      await playSleep(1800);
-      if (!alive()) return;
+      clearRevealTimer();
+
+      // 3. Pronounce the complete Sanskrit sentence with highlight if available
+      const sentenceText = (fresh.sentence || '').trim();
+      if (sentenceText && sentenceText !== targetWord) {
+        await playSleep(250);
+        if (!alive()) return;
+        speakLead(sentenceText);
+        await playSleep(2000);
+        if (!alive()) return;
+      } else {
+        await playSleep(800);
+        if (!alive()) return;
+      }
+
       if (learn) setLearnPulse(false);
 
+      // 4. Smooth pacing before next puzzle
+      await playSleep(600);
+      if (!alive()) return;
+
       if (index + 1 >= playCtxRef.current.activePuzzles.length) {
+        soundEffects.playCelebrationChime();
         finishBoardPlayAll(token);
         return;
       }
@@ -1320,6 +1340,8 @@ const Board: React.FC<BoardProps> = ({
       return;
     }
     if (!activePuzzles.length || !activePuzzle) return;
+    stopPlayAllTiles();
+    soundEffects.playPuzzleSnap();
     setHandStep(null);
     clearRevealTimer();
     clearLeadHighlight();
@@ -1330,6 +1352,15 @@ const Board: React.FC<BoardProps> = ({
     playingRef.current = true;
     setPlayingAll(true);
     void runBoardPlayAll(token, activeShelf, puzzleIndex);
+  };
+
+  const skipToNextInPlayAll = () => {
+    if (!playingRef.current) return;
+    stopPronunciation();
+    clearRevealTimer();
+    clearLeadHighlight();
+    const wake = playWakeRef.current.splice(0);
+    wake.forEach((fn) => fn());
   };
 
   useLayoutEffect(() => {
@@ -1516,9 +1547,14 @@ const Board: React.FC<BoardProps> = ({
       if (evaluateChosen(activePuzzle, nextChosen)) {
         setChecked(true);
         setWrongAttempt(false);
+        soundEffects.playSuccessDing();
+        if (activePuzzle?.target) {
+          playPronunciation(activePuzzle.target);
+        }
       } else {
         setChecked(false);
         setWrongAttempt(true);
+        soundEffects.playEncouragementDing();
       }
       return;
     }
@@ -1531,9 +1567,14 @@ const Board: React.FC<BoardProps> = ({
     if (evaluateChosen(activePuzzle, nextChosen)) {
       setChecked(true);
       setWrongAttempt(false);
+      soundEffects.playSuccessDing();
+      if (activePuzzle?.target) {
+        playPronunciation(activePuzzle.target);
+      }
     } else {
       setChecked(false);
       setWrongAttempt(true);
+      soundEffects.playEncouragementDing();
     }
   };
 
@@ -1544,14 +1585,56 @@ const Board: React.FC<BoardProps> = ({
     applySelection,
   };
 
+  const stopPlayAllTiles = () => {
+    if (stopTilesSequenceRef.current) {
+      stopTilesSequenceRef.current();
+      stopTilesSequenceRef.current = null;
+    }
+    setPlayingAllTiles(false);
+    setActiveSpokenTileIndex(null);
+  };
+
+  const handleTogglePlayAllTiles = () => {
+    if (playingAllTiles) {
+      stopPlayAllTiles();
+      return;
+    }
+    if (!shownTiles.length) return;
+    if (playingRef.current) stopBoardPlayAll();
+    stopPronunciation();
+    soundEffects.playPuzzleSnap();
+    setPlayingAllTiles(true);
+    setActiveSpokenTileIndex(0);
+
+    const tilesClean = shownTiles.map((t) => cleanTile(t));
+    stopTilesSequenceRef.current = playSequence(tilesClean, {
+      gapMs: 380,
+      onItem: (_word, _itemIdx, sourceIdx) => {
+        setActiveSpokenTileIndex(sourceIdx);
+        soundEffects.playPuzzleSnap();
+      },
+      onDone: () => {
+        setPlayingAllTiles(false);
+        setActiveSpokenTileIndex(null);
+        stopTilesSequenceRef.current = null;
+      },
+    });
+  };
+
   const toggleTile = (tile: string) => {
     const clean = cleanTile(tile);
     if (!clean) return;
+    stopPlayAllTiles();
     // Drop any play-all fly transform so the clicked tile cannot stay visually moved.
     clearBoardMotion();
     setHandStep(null);
     // A tap during Auto play stops the show and becomes a normal manual tap.
     if (playingRef.current) stopBoardPlayAll();
+
+    // Pronounce the tapped tile and tactile snap feedback
+    playPronunciation(clean);
+    soundEffects.playPuzzleSnap();
+
     // Selecting a tile must always work — never freeze. Wrong/other click replaces and re-evaluates.
     if (!isJodoSkin) {
       applySelection([clean]);
@@ -1606,6 +1689,7 @@ const Board: React.FC<BoardProps> = ({
   // A cream-tile click does not change puzzleIndex, so it must not wipe `chosen`
   // and send the next mark back to tile 0 (नदी at slot 6, then the next card).
   useEffect(() => {
+    stopPlayAllTiles();
     setChosen([]);
     setChecked(false);
     setWrongAttempt(false);
@@ -1650,6 +1734,7 @@ const Board: React.FC<BoardProps> = ({
   /** Navigate to previous puzzle on this shelf. */
   const goPrev = () => {
     if (playingRef.current) stopBoardPlayAll();
+    stopPlayAllTiles();
     if (!activePuzzles.length) return;
     setPuzzleIndexByShelf((current) => {
       const idx = current[activeShelf] ?? 0;
@@ -1662,6 +1747,7 @@ const Board: React.FC<BoardProps> = ({
   /** Advance without wrapping — used by Next and auto-advance. */
   const goNext = () => {
     if (playingRef.current) stopBoardPlayAll();
+    stopPlayAllTiles();
     if (!activePuzzles.length) return;
     setPuzzleIndexByShelf((current) => {
       const idx = current[activeShelf] ?? 0;
@@ -1674,6 +1760,7 @@ const Board: React.FC<BoardProps> = ({
   /** Again on the last puzzle — restart shelf at 0. */
   const restartShelf = () => {
     if (playingRef.current) stopBoardPlayAll();
+    stopPlayAllTiles();
     if (!activePuzzles.length) return;
     setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: 0 }));
     resetPuzzleUi();
@@ -1706,6 +1793,7 @@ const Board: React.FC<BoardProps> = ({
 
   const jumpToSection = (start: number) => {
     if (playingRef.current) stopBoardPlayAll();
+    stopPlayAllTiles();
     if (start < 0 || !activePuzzles.length) return;
     const clamped = Math.max(0, Math.min(start, activePuzzles.length - 1));
     setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: clamped }));
@@ -1738,6 +1826,7 @@ const Board: React.FC<BoardProps> = ({
   /** Silent hand. First press points at the real next tile; another press shows the following join tap. */
   const onHand = () => {
     if (playingRef.current) stopBoardPlayAll();
+    stopPlayAllTiles();
     stopPronunciation();
     const move = puzzleView ? findSolvingSelection(puzzleView) : null;
     const indices = move?.indices ?? [];
@@ -1873,10 +1962,10 @@ const Board: React.FC<BoardProps> = ({
                 className="board-playall"
                 onClick={startBoardPlayAll}
                 aria-pressed={false}
-                title="Auto play: picture and Sanskrit word, then English and audio, then the next puzzle"
-                aria-label="Auto play puzzles on this shelf"
+                title="Play all: pronounced words, tactile snaps, and Sanskrit audio in sequence"
+                aria-label="Play all puzzles on this shelf"
               >
-                ▶ Auto play
+                🔊 Play all
               </button>
             )}
             <button
@@ -1902,16 +1991,25 @@ const Board: React.FC<BoardProps> = ({
             )}
           </div>
           {playingAll && typeof document !== 'undefined' && createPortal(
-            <div ref={playDockRef} className="board-playall-dock" role="region" aria-label="Auto play">
+            <div ref={playDockRef} className="board-playall-dock" role="region" aria-label="Play all">
               <button
                 type="button"
                 className="board-playall board-playall--pause"
                 onClick={stopBoardPlayAll}
                 aria-pressed
-                title="Pause auto play"
-                aria-label="Pause auto play"
+                title="Pause Play all"
+                aria-label="Pause Play all"
               >
-                ⏸ Pause
+                ⏸ Pause Play all
+              </button>
+              <button
+                type="button"
+                className="board-playall board-playall--step"
+                onClick={skipToNextInPlayAll}
+                title="Skip to next puzzle"
+                aria-label="Next puzzle in Play all"
+              >
+                ⏭ Next
               </button>
             </div>,
             document.body,
@@ -1978,29 +2076,49 @@ const Board: React.FC<BoardProps> = ({
 
         {isLearnPhase ? (
           <div className={`learn-card${learnPulse ? ' learn-card--settling' : ''}`}>
-            <button
-              className="hear-button"
-              type="button"
-              onClick={() => playPronunciation(activePuzzle.target)}
-            >
-              🔊 Hear
-            </button>
-            <div className="tile-row learn-tile-row">
-              {shownTiles.map((tile, index) => (
+            <div className="tile-board-header">
+              <span className="tile-board-title">अक्षराणि · Tile Rack</span>
+              <div style={{ display: 'inline-flex', gap: '0.4rem', alignItems: 'center' }}>
                 <button
-                  key={`${tile}-${index}`}
-                  className="puzzle-tile"
+                  className="hear-button"
                   type="button"
-                  data-board-tile={index}
-                  onClick={() => {
-                    if (playingRef.current) stopBoardPlayAll();
-                    playPronunciation(cleanTile(tile));
-                  }}
+                  onClick={() => playPronunciation(activePuzzle.target)}
+                  title="Hear target word"
                 >
-                  <span className="tile-num" aria-hidden="true">{index + 1}</span>
-                  <span>{tile}</span>
+                  🔊 Hear Word
                 </button>
-              ))}
+                <button
+                  className={`hear-tiles-btn${playingAllTiles ? ' active' : ''}`}
+                  type="button"
+                  onClick={handleTogglePlayAllTiles}
+                  title="Hear all tiles on this rack in sequence"
+                >
+                  {playingAllTiles ? '⏸ Pause tiles' : '🔊 Play all tiles'}
+                </button>
+              </div>
+            </div>
+            <div className="tile-row learn-tile-row">
+              {shownTiles.map((tile, index) => {
+                const classes = ['puzzle-tile'];
+                if (activeSpokenTileIndex === index) classes.push('puzzle-tile--speaking');
+                return (
+                  <button
+                    key={`${tile}-${index}`}
+                    className={classes.join(' ')}
+                    type="button"
+                    data-board-tile={index}
+                    onClick={() => {
+                      if (playingRef.current) stopBoardPlayAll();
+                      stopPlayAllTiles();
+                      playPronunciation(cleanTile(tile));
+                      soundEffects.playPuzzleSnap();
+                    }}
+                  >
+                    <span className="tile-num" aria-hidden="true">{index + 1}</span>
+                    <span>{tile}</span>
+                  </button>
+                );
+              })}
             </div>
             <p className="board-next-hint" aria-live="polite">{nextCue.text}</p>
             <div className="puzzle-actions">
@@ -2049,6 +2167,17 @@ const Board: React.FC<BoardProps> = ({
             {!(checked && isCorrect) && (
               <p className="board-next-hint" aria-live="polite">{nextCue.text}</p>
             )}
+            <div className="tile-board-header">
+              <span className="tile-board-title">अक्षराणि · Tile Rack</span>
+              <button
+                className={`hear-tiles-btn${playingAllTiles ? ' active' : ''}`}
+                type="button"
+                onClick={handleTogglePlayAllTiles}
+                title="Hear all tiles on this rack in sequence"
+              >
+                {playingAllTiles ? '⏸ Pause tiles' : '🔊 Play all tiles'}
+              </button>
+            </div>
             <div className="tile-row">
               {shownTiles.map((tile, index) => {
                 const classes = ['puzzle-tile'];
@@ -2057,6 +2186,7 @@ const Board: React.FC<BoardProps> = ({
                 if (playingAll && solverIndices.includes(index)) classes.push('puzzle-tile--magnet');
                 if (lockIndex === index) classes.push('puzzle-tile--lock');
                 if (markedTile === index) classes.push('puzzle-tile--next');
+                if (activeSpokenTileIndex === index) classes.push('puzzle-tile--speaking');
                 return (
                   <button
                     key={`${tile}-${index}`}
