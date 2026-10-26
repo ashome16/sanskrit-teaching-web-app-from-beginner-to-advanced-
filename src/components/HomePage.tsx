@@ -967,15 +967,18 @@ const HomePage: React.FC<HomePageProps> = ({
         <section className="home-hero">
           {/* Gurukul Official Brand Crest */}
           <div className="home-hero-crest">
+            <span className="home-hero-crest-label">
+              Samskrutha Pathashala
+            </span>
             <img
               id="home-hero-crest-logo"
               src="/logo.jpg"
-              alt="EdNet Gurukul - Learn Sanskrit Online &amp; Vedic Mathematics"
+              alt="EdNet Gurukul - Samskrutha Pathashala - Learn Sanskrit Online &amp; Vedic Mathematics"
               className={`home-hero-logo${isLogoArrived ? ' is-arrived' : ''}`}
               width={76}
               height={76}
               onClick={() => setShowEntranceIntro(true)}
-              title="EdNet Gurukul"
+              title="EdNet Gurukul · Samskrutha Pathashala"
               style={{ cursor: 'pointer' }}
             />
           </div>
@@ -1015,7 +1018,7 @@ const HomePage: React.FC<HomePageProps> = ({
         {/* 2. Main Outcome & Core Promise */}
         <h1 className="home-hero-title">
           <span className="home-hero-title-primary">
-            {englishFirst ? 'Master Sanskrit & Samskrit Step by Step' : 'सरल-संस्कृत-प्रवेशः · Master Sanskrit / Samskrit'}
+            Learn Sanskrit - Beginner to Advanced Program
           </span>
           <p className="home-hero-main-outcome">
             {englishFirst
