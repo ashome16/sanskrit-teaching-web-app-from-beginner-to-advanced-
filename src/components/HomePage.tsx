@@ -152,7 +152,7 @@ const SUBHASHITAS: SubhashitaItem[] = [
   {
     id: 'vidya-vinaya',
     categorySa: 'विद्या-महिमा',
-    categoryEn: 'Wisdom is to acquire apply knowledge with rightful purpose = Dharm',
+    categoryEn: 'Wisdom is to Acquire, Apply Knowledge with rightful Purpose = Dharm',
     line1: 'विद्या ददाति विनयं विनयाद्याति पात्रताम् ।',
     line2: 'पात्रत्वाद्धनमाप्नोति धनाद्धर्मं ततः सुखम् ॥',
     transliteration: 'vidyā dadāti vinayaṁ vinayād yāti pātratām | pātratvād dhanam āpnoti dhanād dharmaṁ tataḥ sukham ||',
@@ -1625,7 +1625,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span className="hsub-kicker">दैनिक-सुभाषित-मञ्जरी · Daily Shloka Jewel</span>
                 <h2 className="hsub-title">
                   {currentSubhashita.id === 'vidya-vinaya'
-                    ? 'Wisdom is to acquire apply knowledge with rightful purpose = Dharm'
+                    ? 'Wisdom is to Acquire, Apply Knowledge with rightful Purpose = Dharm'
                     : `${currentSubhashita.categorySa} · ${currentSubhashita.categoryEn}`}
                 </h2>
               </div>
