@@ -192,12 +192,16 @@ class LeitnerTracker {
     let totalReviews = 0;
 
     for (const card of this.cards.values()) {
-      boxCounts[card.box] = (boxCounts[card.box] || 0) + 1;
-      if (card.nextReviewTime <= now) {
+      const box = Math.max(1, Math.min(5, Number(card.box) || 1));
+      boxCounts[box] = (boxCounts[box] || 0) + 1;
+      const nextTime = Number(card.nextReviewTime) || 0;
+      if (nextTime <= now) {
         dueCount++;
       }
-      totalReviews += card.totalReviews;
-      totalCorrectReviews += Math.max(0, card.totalReviews - card.lapses);
+      const reviews = Number(card.totalReviews) || 0;
+      const lapses = Number(card.lapses) || 0;
+      totalReviews += reviews;
+      totalCorrectReviews += Math.max(0, reviews - lapses);
     }
 
     const totalTracked = this.cards.size;

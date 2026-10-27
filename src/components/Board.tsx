@@ -116,7 +116,7 @@ const fetchText = (name: string) => {
   const url = `${base.endsWith('/') ? base : base + '/'}${name}?t=${Date.now()}`;
   return fetch(url).then((response) => response.text());
 };
-const cleanTile = (tile: string) => tile.replace(/\u200B/g, '').normalize('NFC').trim();
+const cleanTile = (tile: string | undefined | null) => String(tile || '').replace(/\u200B/g, '').normalize('NFC').trim();
 
 // Independent vowel tiles must map to combining matras so glueTiles(क+ई)→की, क+ऊ→कू, etc.
 const MARK: Record<string, string> = {
@@ -125,14 +125,15 @@ const MARK: Record<string, string> = {
   'अः': 'ः',  // future-proof visarga row
 };
 function glueTiles(tiles: string[]) {
+  if (!Array.isArray(tiles)) return '';
   return tiles.map((tile) => cleanTile(tile)).map((tile) => MARK[tile] ?? tile).join('').normalize('NFC');
 }
 
 /** जोडो: any tap order of the same tiles still counts (आ then म = मा). */
 function glueMatchesTarget(tiles: string[], target: string) {
-  const cleaned = tiles.map((tile) => cleanTile(tile)).filter(Boolean);
+  const cleaned = (Array.isArray(tiles) ? tiles : []).map((tile) => cleanTile(tile)).filter(Boolean);
   if (!cleaned.length) return false;
-  const goal = target.normalize('NFC');
+  const goal = String(target || '').normalize('NFC');
   if (glueTiles(cleaned) === goal) return true;
   if (cleaned.length === 2) return glueTiles([cleaned[1], cleaned[0]]) === goal;
   if (cleaned.length > 3) return false;
@@ -147,34 +148,38 @@ function glueMatchesTarget(tiles: string[], target: string) {
 /** Evaluate whether `tiles` is a correct answer for this puzzle (same rules as isCorrect). */
 function evaluateChosen(puzzle: BoardPuzzle | null, tiles: string[]): boolean {
   if (!puzzle) return false;
-  const target = (puzzle.answer ?? puzzle.target).normalize('NFC');
-  const wholeWordRow = puzzle.tiles.some((tile) => cleanTile(tile).normalize('NFC') === target);
+  const target = String(puzzle.answer ?? puzzle.target ?? '').normalize('NFC');
+  if (!target) return false;
+  const puzzleTiles = Array.isArray(puzzle.tiles) ? puzzle.tiles : [];
+  const safeTiles = Array.isArray(tiles) ? tiles : [];
+  const wholeWordRow = puzzleTiles.some((tile) => cleanTile(tile).normalize('NFC') === target);
   if (wholeWordRow) {
-    return tiles.length === 1 && cleanTile(tiles[0]).normalize('NFC') === target;
+    return safeTiles.length === 1 && cleanTile(safeTiles[0]).normalize('NFC') === target;
   }
   if (puzzle.target === 'का') {
-    const chosenSet = new Set(tiles.map((tile) => cleanTile(tile).normalize('NFC')));
-    const isKaAaPair = chosenSet.size === 2 && tiles.length === 2
+    const chosenSet = new Set(safeTiles.map((tile) => cleanTile(tile).normalize('NFC')));
+    const isKaAaPair = chosenSet.size === 2 && safeTiles.length === 2
       && (chosenSet.has('क') && (chosenSet.has('आ') || chosenSet.has('ा')));
-    return glueMatchesTarget(tiles, 'का') || isKaAaPair;
+    return glueMatchesTarget(safeTiles, 'का') || isKaAaPair;
   }
-  return glueMatchesTarget(tiles, target);
+  return glueMatchesTarget(safeTiles, target);
 }
 
 
 type SolvingMove = { indices: number[]; selection: string[] };
 
 function isKaAaPair(picked: string[]) {
-  if (picked.length !== 2) return false;
-  const set = new Set(picked.map((tile) => tile.normalize('NFC')));
+  if (!Array.isArray(picked) || picked.length !== 2) return false;
+  const set = new Set(picked.map((tile) => String(tile || '').normalize('NFC')));
   return set.size === 2 && set.has('क') && (set.has('आ') || set.has('ा'));
 }
 
 /** Tiles that solve this puzzle, in the order glueTiles matches the target. */
 function findSolvingSelection(puzzle: BoardPuzzle): SolvingMove | null {
-  const target = ((puzzle.answer ?? puzzle.target) || '').normalize('NFC');
+  if (!puzzle) return null;
+  const target = String(puzzle.answer ?? puzzle.target ?? '').normalize('NFC');
   if (!target) return null;
-  const tiles = (puzzle.tiles || []).map((tile) => cleanTile(tile));
+  const tiles = (Array.isArray(puzzle.tiles) ? puzzle.tiles : []).map((tile) => cleanTile(tile));
   const wholeAt = tiles.findIndex((tile) => tile.normalize('NFC') === target);
   if (wholeAt >= 0) {
     const selection = [tiles[wholeAt]];
@@ -225,8 +230,8 @@ function findSolvingSelection(puzzle: BoardPuzzle): SolvingMove | null {
         }
       }
       if (target === 'का' && isKaAaPair(visual)) {
-        const kaAt = combo.find((index) => tiles[index].normalize('NFC') === 'क');
-        const vowelAt = combo.find((index) => tiles[index].normalize('NFC') !== 'क');
+        const kaAt = combo.find((index) => tiles[index]?.normalize('NFC') === 'क');
+        const vowelAt = combo.find((index) => tiles[index] && tiles[index].normalize('NFC') !== 'क');
         if (kaAt === undefined || vowelAt === undefined) continue;
         const selection = [tiles[kaAt], tiles[vowelAt]];
         if (evaluateChosen(puzzle, selection)) return { indices: [kaAt, vowelAt], selection };
@@ -251,13 +256,15 @@ function describeNextTap(
   flags: { learn: boolean; solved: boolean; last: boolean },
 ): { text: string; markIndex: number | null } {
   if (!puzzle) return { text: '', markIndex: null };
-  if (flags.learn || flags.solved || evaluateChosen(puzzle, chosen)) {
+  const safeChosen = Array.isArray(chosen) ? chosen : [];
+  if (flags.learn || flags.solved || evaluateChosen(puzzle, safeChosen)) {
     return { text: flags.last ? 'Click Play Again.' : 'Click Next.', markIndex: null };
   }
   const move = findSolvingSelection(puzzle);
   if (!move) return { text: 'Tap a cream tile.', markIndex: null };
-  const faces = move.indices.map((index) => cleanTile(puzzle.tiles[index] || ''));
-  const left = chosen.map((tile) => cleanTile(tile).normalize('NFC'));
+  const puzzleTiles = Array.isArray(puzzle.tiles) ? puzzle.tiles : [];
+  const faces = move.indices.map((index) => cleanTile(puzzleTiles[index] || ''));
+  const left = safeChosen.map((tile) => cleanTile(tile).normalize('NFC'));
   const remain: number[] = [];
   for (let i = 0; i < faces.length; i += 1) {
     const at = left.indexOf(faces[i].normalize('NFC'));
@@ -287,34 +294,35 @@ function highlightedSentence(sentence: string | undefined, highlight: string | u
 /** Render a Jodo puzzle sentence with an interactive blank / live-assembled tile slot. */
 function renderJodoSentenceWithSlot(
   sentence: string | undefined,
-  target: string,
+  target: string | undefined,
   chosen: string[]
 ): React.ReactNode {
-  const normSent = (sentence || '').normalize('NFC');
-  const normTarget = (target || '').normalize('NFC');
-  const matchIdx = normSent.indexOf(normTarget);
+  const normSent = String(sentence || '').normalize('NFC');
+  const normTarget = String(target || '').normalize('NFC');
+  const safeChosen = Array.isArray(chosen) ? chosen : [];
+  const matchIdx = normTarget ? normSent.indexOf(normTarget) : -1;
 
   const slotNode = (
     <span
       className={`jodo-blank-slot ${
-        chosen.length === 0
+        safeChosen.length === 0
           ? 'jodo-blank-slot--empty'
-          : chosen.length === 1
+          : safeChosen.length === 1
           ? 'jodo-blank-slot--partial'
           : 'jodo-blank-slot--filled'
       }`}
-      aria-label={chosen.length ? `Forming: ${glueTiles(chosen)}` : 'Blank to fill'}
+      aria-label={safeChosen.length ? `Forming: ${glueTiles(safeChosen)}` : 'Blank to fill'}
     >
-      {chosen.length === 0 ? (
+      {safeChosen.length === 0 ? (
         <span className="jodo-blank-underscores">____</span>
-      ) : chosen.length === 1 ? (
+      ) : safeChosen.length === 1 ? (
         <span className="jodo-blank-partial">
-          <span className="jodo-slot-first">{cleanTile(chosen[0])}</span>
+          <span className="jodo-slot-first">{cleanTile(safeChosen[0])}</span>
           <span className="jodo-slot-plus">+</span>
           <span className="jodo-slot-q">?</span>
         </span>
       ) : (
-        <span className="jodo-blank-text">{glueTiles(chosen)}</span>
+        <span className="jodo-blank-text">{glueTiles(safeChosen)}</span>
       )}
     </span>
   );
@@ -323,7 +331,7 @@ function renderJodoSentenceWithSlot(
     return slotNode;
   }
 
-  if (matchIdx < 0) {
+  if (matchIdx < 0 || !normTarget) {
     return (
       <>
         {slotNode} <span>{normSent}</span>
@@ -344,9 +352,10 @@ function renderJodoSentenceWithSlot(
 }
 
 /** Underscores in a prompt are the answer slot a whole-word tile can lock into. */
-function renderPromptWithHole(text: string): React.ReactNode {
-  const parts = text.split('____');
-  if (parts.length === 1) return text;
+function renderPromptWithHole(text: string | undefined): React.ReactNode {
+  if (!text) return '';
+  const parts = String(text).split('____');
+  if (parts.length === 1) return parts[0];
   const nodes: React.ReactNode[] = [];
   parts.forEach((part, index) => {
     if (part) nodes.push(part);
@@ -434,7 +443,7 @@ function findPrashnaSectionStart(puzzles: BoardPuzzle[]): number {
   return puzzles.findIndex((p) => {
     const target = ((p.answer ?? p.target) || '').normalize('NFC');
     if (!target) return false;
-    return p.tiles.some((tile) => cleanTile(tile).normalize('NFC') === target);
+    return Array.isArray(p.tiles) && p.tiles.some((tile) => cleanTile(tile).normalize('NFC') === target);
   });
 }
 
@@ -1144,12 +1153,12 @@ const Board: React.FC<BoardProps> = ({
         if (puzzleText.trim()) {
           const parsedPuzzles = parse(puzzleText)
             .map(([, target, answer, tiles, sentence, english, seed]) => ({
-              target,
-              answer,
-              tiles: tiles.split(',').map((tile) => cleanTile(tile)).filter(Boolean),
-              sentence,
-              english,
-              seed,
+              target: target || '',
+              answer: answer || '',
+              tiles: (tiles || '').split(',').map((tile) => cleanTile(tile)).filter(Boolean),
+              sentence: sentence || '',
+              english: english || '',
+              seed: seed || '',
             }))
             .filter((item) => item.target);
           setFallbackPuzzles(parsedPuzzles);
@@ -2071,10 +2080,14 @@ const Board: React.FC<BoardProps> = ({
     ? (activePuzzle?.gloss ?? activePuzzle?.english ?? '')
     : (activePuzzle?.english ?? '');
   const leadMark = leadHighlight ? ' puzzle-lead-highlight' : '';
-  const activeShelfInfo = SHELF_DESCRIPTIONS[activeShelf];
+  const activeShelfInfo = SHELF_DESCRIPTIONS[activeShelf] || SHELF_DESCRIPTIONS['prarambhah'] || {
+    title: 'Beginners · प्रारम्भः',
+    desc: 'Foundational Sanskrit letters, matras, and essential words.',
+    icon: '🌱',
+  };
   const currentCard = activePuzzle?.target ? leitnerTracker.getCard(activePuzzle.target) : null;
-  const currentBox = currentCard?.box || 1;
-  const boxMeta = LEITNER_BOX_LABELS[currentBox];
+  const currentBox = Math.max(1, Math.min(5, Number(currentCard?.box) || 1));
+  const boxMeta = LEITNER_BOX_LABELS[currentBox] || LEITNER_BOX_LABELS[1];
   const nextCue = describeNextTap(puzzleView, chosen, {
     learn: isLearnPhase,
     solved: checked && isCorrect,
@@ -2588,8 +2601,8 @@ const Board: React.FC<BoardProps> = ({
                 <div className="standard-prompt-head">
                   <p className="puzzle-prompt">
                     {isMatchMeaningPhase
-                      ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english}?`)
-                      : renderPromptWithHole(activePuzzle.prompt ?? activePuzzle.target)}
+                      ? (activePuzzle.prompt ?? `Which word means · ${activePuzzle.gloss ?? activePuzzle.english ?? ''}?`)
+                      : renderPromptWithHole(activePuzzle.prompt ?? activePuzzle.target ?? '')}
                   </p>
                   <button
                     type="button"
@@ -3169,7 +3182,7 @@ const Board: React.FC<BoardProps> = ({
           {/* 5 Leitner Boxes Grid */}
           <div className="board-leitner-boxes-grid">
             {[1, 2, 3, 4, 5].map((boxNum) => {
-              const meta = LEITNER_BOX_LABELS[boxNum];
+              const meta = LEITNER_BOX_LABELS[boxNum] || LEITNER_BOX_LABELS[1];
               const count = leitnerStats.boxCounts[boxNum] || 0;
               return (
                 <div key={boxNum} className="board-leitner-box-card" style={{ borderTopColor: meta.color }}>

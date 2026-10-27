@@ -64,8 +64,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
           style={{
             minHeight: '320px',
             padding: '2.5rem 1.5rem',
-            margin: '1.5rem auto',
+            margin: '2rem auto',
             maxWidth: '680px',
+            boxSizing: 'border-box',
             background: '#ffffff',
             borderRadius: '18px',
             border: '2px solid #fed7aa',

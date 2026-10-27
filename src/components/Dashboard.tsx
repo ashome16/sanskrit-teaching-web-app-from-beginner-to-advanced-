@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
+import { ErrorBoundary } from './ErrorBoundary';
 import HomePage from './HomePage';
 import FAQSection from './FAQSection';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
@@ -1354,7 +1355,16 @@ const Dashboard: React.FC = () => {
       )}
       {/* FAQ lives at the bottom of the home page (no longer in the top menu). /faq scrolls here. */}
       {(activeView === 'home' || activeView === 'faq') && <FAQSection />}
-      <Suspense fallback={<ViewLoader />}>
+      <ErrorBoundary
+        fallbackTitle="पुनः प्रयत्नः क्रियताम् · Please Try Again"
+        fallbackSubtitle="A temporary display error occurred in this interactive section. Your progress and study records are completely safe."
+        onReset={() => {
+          const current = activeView;
+          setActiveView('home');
+          setTimeout(() => setActiveView(current), 20);
+        }}
+      >
+        <Suspense fallback={<ViewLoader />}>
         {activeView === 'philosophy' && (
           <PhilosophyPage
             initialEssay={philosophyEssay}
@@ -1409,12 +1419,21 @@ const Dashboard: React.FC = () => {
           />
         )}
         {activeView === 'board' && (
-          <Board
-            onNavigateToHome={() => setActiveView('home')}
-            onNavigateToReader={() => openDeepakam()}
-            onNavigateToVarnamala={() => openVarnamala('sound')}
-            onNavigateToGrammar={handleOpenGrammar}
-          />
+          <ErrorBoundary
+            fallbackTitle="🧩 जोडो · Jodo Tile Studio"
+            fallbackSubtitle="The puzzle studio encountered a temporary display issue. Click Refresh Section to reload."
+            onReset={() => {
+              setActiveView('home');
+              setTimeout(() => setActiveView('board'), 20);
+            }}
+          >
+            <Board
+              onNavigateToHome={() => setActiveView('home')}
+              onNavigateToReader={() => openDeepakam()}
+              onNavigateToVarnamala={() => openVarnamala('sound')}
+              onNavigateToGrammar={handleOpenGrammar}
+            />
+          </ErrorBoundary>
         )}
         {activeView === 'grammar' && (
           <Grammar
@@ -1550,6 +1569,7 @@ const Dashboard: React.FC = () => {
           />
         )}
       </Suspense>
+      </ErrorBoundary>
       </main>
 
       {activeView === 'reader' && (
