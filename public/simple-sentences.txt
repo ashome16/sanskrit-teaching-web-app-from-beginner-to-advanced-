@@ -1,0 +1,98 @@
+सरल-वाक्यानि एवं धातवः : SIMPLE SANSKRIT SENTENCES & ROOT WORDS
+
+=== प्रथमो भागः : धातवः (Root Words & Verb Formation) ===
+पठ् (to read) — बालकः पुस्तकं पठति। (The boy reads the book.)
+लिख् (to write) — बालिका पत्रं लिखति। (The girl writes a letter.)
+गम् (to go) — छात्रः विद्यालयं गच्छति। (The student goes to school.)
+खाद् (to eat) — सः फलं खादति। (He eats fruit.)
+पा (to drink) — सा जलं पिबति। (She drinks water.)
+धाव् (to run) — अश्वः वेगेन धावति। (The horse runs swiftly.)
+क्रीड् (to play) — बालकाः क्रीडाङ्गणे क्रीडन्ति। (The boys play in the ground.)
+हस् (to laugh) — शिशुः हसति। (The baby laughs.)
+वद् (to speak) — अहं सत्यं वदामि। (I speak truth.)
+दृश् (to see) — वयं मयूरं पश्यामः। (We see the peacock.)
+नम् (to bow) — शिष्यः गुरुं नमति। (The student bows to the teacher.)
+स्था (to stand) — वृक्षः भूमौ तिष्ठति। (The tree stands on the earth.)
+
+=== द्वितीयो भागः : द्विपद-वाक्यानि (Two-Word Foundation) ===
+बालकः पठति।
+The boy reads.
+
+बालिका लिखति।
+The girl writes.
+
+अश्वः धावति।
+The horse runs.
+
+गजः चलति।
+The elephant walks.
+
+मयूरः नृत्यति।
+The peacock dances.
+
+बालकाः क्रीडन्ति।
+The boys play.
+
+=== तृतीयो भागः : सर्वनाम-वाक्यानि (Pronouns in Action) ===
+सः गच्छति।
+He goes.
+
+सा हसति।
+She laughs.
+
+त्वं पठसि।
+You read.
+
+अहं लिखामि।
+I write.
+
+वयं क्रीडामः।
+We play.
+
+=== चतुर्थो भागः : त्रिपद-वाक्यानि (Subject + Object + Verb) ===
+बालकः पुस्तकं पठति।
+The boy reads the book.
+
+बालिका पत्रं लिखति।
+The girl writes a letter.
+
+सः फलं खादति।
+He eats a fruit.
+
+सा जलं पिबति।
+She drinks water.
+
+माता भोजनं पचति।
+Mother cooks food.
+
+=== पञ्चमो भागः : दैनिक-सम्भाषणम् (Daily Conversations) ===
+भवतः नाम किम्?
+What is your name?
+
+मम नाम आनन्दः अस्ति।
+My name is Ananda.
+
+त्वं कुत्र गच्छसि?
+Where are you going?
+
+अहं विद्यालयं गच्छामि।
+I am going to school.
+
+त्वं किं करोषि?
+What are you doing?
+
+अहं पाठं पठामि।
+I am reading the lesson.
+
+=== षष्ठो भागः : प्रकृतिः एवं जगत् (Nature & Living World) ===
+सूर्यः आकाशे उदयति।
+The sun rises in the sky.
+
+नदी वेगेन वहति।
+The river flows swiftly.
+
+वृक्षः भूमौ तिष्ठति।
+The tree stands on the earth.
+
+पुष्पाणि उद्याने विकसन्ति।
+Flowers bloom in the garden.

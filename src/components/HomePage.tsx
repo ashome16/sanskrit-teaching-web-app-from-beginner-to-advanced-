@@ -1033,8 +1033,8 @@ const HomePage: React.FC<HomePageProps> = ({
               <button
                 type="button"
                 className="home-hero-level-chip home-hero-level-chip--l3"
-                onClick={() => scrollToJourneyStep('step-3')}
-                title="Level 3: Intermediate — Simple Sentences & Everyday Conversation (वाक्यानि)"
+                onClick={() => onOpenReader('simple-sentences')}
+                title="Level 3: Intermediate — Simple Sentences & Root Words (सरल-वाक्यानि एवं धातवः)"
               >
                 <span className="hhl-badge">Level 3</span>
                 <strong className="hhl-name">Intermediate</strong>
@@ -1294,26 +1294,26 @@ const HomePage: React.FC<HomePageProps> = ({
 
             <div className="home-journey-arrow" aria-hidden="true">→</div>
 
-            {/* Step 3: Simple sentences */}
+            {/* Step 3: Simple sentences & Root Words */}
             <div
               id="step-3"
               className="home-journey-step-card"
-              onClick={() => onOpenReader('gsde101')}
+              onClick={() => onOpenReader('simple-sentences')}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') onOpenReader('gsde101');
+                if (e.key === 'Enter' || e.key === ' ') onOpenReader('simple-sentences');
               }}
-              title="Step 3: Speak everyday conversational sentences with correct word order"
+              title="Step 3: Root words, verb formation, and everyday conversational sentences"
             >
               <span className="home-journey-step-num">Step 3</span>
               <span className="home-journey-step-icon" aria-hidden="true">💬</span>
-              <h3 className="home-journey-step-title">Simple Sentences</h3>
-              <span className="home-journey-step-sanskrit">सरल-वाक्यानि</span>
+              <h3 className="home-journey-step-title">Simple Sentences &amp; Roots</h3>
+              <span className="home-journey-step-sanskrit">सरल-वाक्यानि एवं धातवः</span>
               <p className="home-journey-step-desc">
-                Speak everyday conversational sentences with correct word order.
+                Learn core root words (धातवः), verb formation, and everyday sentences.
               </p>
-              <span className="home-journey-step-cta">Speak Phrases →</span>
+              <span className="home-journey-step-cta">Learn Sentences →</span>
             </div>
 
             <div className="home-journey-arrow" aria-hidden="true">→</div>

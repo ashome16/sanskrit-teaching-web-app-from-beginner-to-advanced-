@@ -29,6 +29,7 @@ import { VarnamalaWritingPad } from './VarnamalaWritingPad';
 import { ErrorBoundary } from './ErrorBoundary';
 import GunitaaksharaGuide from './GunitaaksharaGuide';
 import { NumbersGuide } from './NumbersGuide';
+import { SimpleSentencesStudio } from './SimpleSentencesStudio';
 import { getTextbookMetaForLesson } from '../utils/textbookCovers';
 import VarnamalaFlashcardDownloadModal from './VarnamalaFlashcardDownloadModal';
 import ParagraphWordMatchTest from './ParagraphWordMatchTest';
@@ -584,7 +585,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const chapterPdfUrl = activeLesson?.pdf_guide_url || getChapterPdfUrl(activeLessonId);
   const isVarnamala = activeLessonId === 'varnamala';
   const isNumbers = activeLessonId === 'numbers';
-  const isGroupedLesson = isVarnamala || isNumbers || activeLessonId === 'barakhadi';
+  const isSimpleSentences = activeLessonId === 'simple-sentences';
+  const isGroupedLesson = isVarnamala || isNumbers || isSimpleSentences || activeLessonId === 'barakhadi';
   const showRomanTiles = activeLessonId === 'barakhadi' || activeLessonId === 'varnamala';
   const tileLabel = (letter: string) =>
     activeLessonId === 'varnamala' ? varnamalaLabel(letter) : aksharaLabel(letter);
@@ -1751,6 +1753,18 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </ErrorBoundary>
           )}
 
+          {isSimpleSentences && (
+            <ErrorBoundary
+              fallbackTitle="💬 Simple Sentences & Root Words Studio Ready"
+              fallbackSubtitle="An unexpected issue occurred while rendering the Simple Sentences Studio. Tap below to reload."
+            >
+              <SimpleSentencesStudio
+                onSelectWord={handleLetterActivate}
+                onOpenNextLesson={() => onSelectLesson('gsde101')}
+              />
+            </ErrorBoundary>
+          )}
+
           {isVarnamala && effectiveVarnamalaSubMode === 'writing' && (
             <ErrorBoundary
               fallbackTitle="✍️ Writing Studio Ready"
@@ -2007,7 +2021,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </ErrorBoundary>
           )}
 
-          {(!isVarnamala || effectiveVarnamalaSubMode === 'sound' || !['writing', 'worksheets', 'quizzes', 'workbooks'].includes(effectiveVarnamalaSubMode)) && (!isNumbers || numbersSubMode === 'tiles') && (
+          {(!isVarnamala || effectiveVarnamalaSubMode === 'sound' || !['writing', 'worksheets', 'quizzes', 'workbooks'].includes(effectiveVarnamalaSubMode)) && (!isNumbers || numbersSubMode === 'tiles') && !isSimpleSentences && (
             <>
               {isVarnamala && (
                 <div className="varnamala-hub-section" role="region" aria-label="Alphabet Learning Hub &amp; Tools">

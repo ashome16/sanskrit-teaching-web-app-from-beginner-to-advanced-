@@ -1011,7 +1011,7 @@ const Dashboard: React.FC = () => {
   const openDeepakam = (lessonId?: string) => {
     const targetId =
       lessonId || (firstDeepakamIndex(lessons) >= 0 ? lessons[firstDeepakamIndex(lessons)].id : 'gsde101');
-    if (targetId === 'varnamala' || targetId === 'barakhadi') {
+    if (targetId === 'varnamala' || targetId === 'barakhadi' || targetId === 'numbers' || targetId === 'simple-sentences') {
       setIsAnalyzerCollapsed(true);
       setWordSelection(null);
     }
@@ -1031,7 +1031,7 @@ const Dashboard: React.FC = () => {
       return;
     }
     const current = lessons[lessonIndex];
-    const guideIds = new Set(['varnamala', 'barakhadi', 'samyukta', 'numbers']);
+    const guideIds = new Set(['varnamala', 'barakhadi', 'samyukta', 'numbers', 'simple-sentences']);
     if (!current || guideIds.has(current.id) || HIDDEN_DEEPAKAM_IDS.has(current.id)) {
       const fallbackIdx = firstDeepakamIndex(lessons);
       if (fallbackIdx >= 0) {

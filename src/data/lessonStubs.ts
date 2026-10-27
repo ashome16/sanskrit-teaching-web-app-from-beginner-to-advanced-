@@ -866,6 +866,44 @@ export const LESSON_STUBS: Lesson[] = [
     ]
   },
   {
+    "id": "simple-sentences",
+    "fileName": "simple-sentences.txt",
+    "title": "सरल-वाक्यानि एवं धातवः · Simple Sentences & Root Words",
+    "page_numbers": "1",
+    "sentences": [
+      {
+        "sanskrit": "बालकः पुस्तकं पठति।",
+        "meaning": "The boy reads the book.",
+        "words": ["बालकः", "पुस्तकम्", "पठति"],
+        "category": "त्रिपद-वाक्यानि"
+      },
+      {
+        "sanskrit": "बालिका पत्रं लिखति।",
+        "meaning": "The girl writes a letter.",
+        "words": ["बालिका", "पत्रम्", "लिखति"],
+        "category": "त्रिपद-वाक्यानि"
+      },
+      {
+        "sanskrit": "अहं विद्यालयं गच्छामि।",
+        "meaning": "I go to school.",
+        "words": ["अहम्", "विद्यालयम्", "गच्छामि"],
+        "category": "दैनिक-सम्भाषणम्"
+      },
+      {
+        "sanskrit": "सूर्यः आकाशे उदयति।",
+        "meaning": "The sun rises in the sky.",
+        "words": ["सूर्यः", "आकाशे", "उदयति"],
+        "category": "प्रकृतिः"
+      },
+      {
+        "sanskrit": "पठ् ➔ पठति (reads)",
+        "meaning": "Root word paṭh (to read) transforms to paṭhati (reads).",
+        "words": ["पठ्", "पठति", "पठामि"],
+        "category": "धातवः"
+      }
+    ]
+  },
+  {
     "id": "gsde101",
     "fileName": "gsde101.txt",
     "title": "Chapter 1: वन्दे भारतमातरम् (पाठः पृष्ठानि १-७)",
