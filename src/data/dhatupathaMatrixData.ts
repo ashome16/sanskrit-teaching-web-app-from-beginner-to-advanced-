@@ -2,7 +2,7 @@
  * Dhatupatha Matrix Connector Data
  * Interactive modular puzzle data connecting verbal roots (धातवः)
  * with Singular (-ति / -ते), Dual (-तः / -एते), and Plural (-न्ति / -न्ते) terminal blocks dynamically.
- * Excludes common beginner roots (पठ्, धाव्, गम्, क्रीड्, लिख्, पच्, हस्) for advanced pedagogical variety.
+ * Features comprehensive Tamil (தமிழ்) and Malayalam (മലയാളം) multilingual explanations.
  */
 
 export interface VerbConjugationBlock {
@@ -19,7 +19,11 @@ export interface MatrixRootItem {
   root: string;
   baseTranslit: string;
   subjectNoun: string;
+  subjectNounTamil: string;
+  subjectNounMalayalam: string;
   meaning: string;
+  meaningTamil: string;
+  meaningMalayalam: string;
   englishAction: string;
   gana: string;
   ganaNumber: number;
@@ -47,6 +51,8 @@ export interface MatrixRootItem {
     sanskrit: string;
     translit: string;
     english: string;
+    tamil: string;
+    malayalam: string;
   };
   mnemonic: string;
 }
@@ -63,10 +69,18 @@ export interface MatrixPuzzleChallenge {
   targetForm: string;
   targetSentence: string;
   prompt: string;
+  promptTamil: string;
+  promptMalayalam: string;
   subjectContext: string;
   meaning: string;
+  meaningTamil: string;
+  meaningMalayalam: string;
   hint: string;
+  hintTamil: string;
+  hintMalayalam: string;
   explanation: string;
+  explanationTamil: string;
+  explanationMalayalam: string;
   options: {
     number: 'singular' | 'dual' | 'plural';
     affix: string;
@@ -81,7 +95,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'गर्ज्',
     baseTranslit: 'garj',
     subjectNoun: 'सिंह (Lion)',
+    subjectNounTamil: 'சிங்கம் (Lion)',
+    subjectNounMalayalam: 'സിംഹം (Lion)',
     meaning: 'गर्जनम् (To Roar)',
+    meaningTamil: 'கர்ஜித்தல் (Roar)',
+    meaningMalayalam: 'ഗർജ്ജനം (Roar)',
     englishAction: 'Roar',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -109,8 +127,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'सिंहः गर्जति',
       translit: 'Siṁhaḥ garjati',
       english: 'The lion roars.',
+      tamil: 'சிங்கம் கர்ஜிக்கிறது.',
+      malayalam: 'സിംഹം ഗർജ്ജിക്കുന്നു.',
     },
-    mnemonic: 'सिंहः गर्जति (one lion roars); सिंहौ गर्जतः (two lions roar); सिंहाः गर्जन्ति (a pride of lions roar).',
+    mnemonic: 'सिंहः गर्जति (ஒரு சிங்கம் / ഒരു സിംഹം); सिंहौ गर्जतः (இரு சிங்கங்கள் / രണ്ട് സിംഹങ്ങൾ); सिंहाः गर्जन्ति (பல சிங்கங்கள் / സിംഹങ്ങൾ).',
   },
 
   // 2. सूर्य + तप् (1P)
@@ -119,7 +139,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'तप्',
     baseTranslit: 'tap',
     subjectNoun: 'सूर्य (Sun)',
+    subjectNounTamil: 'சூரியன் (Sun)',
+    subjectNounMalayalam: 'സൂര്യൻ (Sun)',
     meaning: 'तापनम् (To Shine / Burn / Heat)',
+    meaningTamil: 'தபித்தல் / ஒளிர்ந்தல் (Shine / Heat)',
+    meaningMalayalam: 'പ്രകാശിക്കുക / തപിക്കുക (Shine / Heat)',
     englishAction: 'Shine / Burn',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -147,8 +171,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'सूर्यौ तपतः',
       translit: 'Sūryau tapataḥ',
       english: 'Two suns shine/burn.',
+      tamil: 'இரு சூரியர்கள் தபிக்கிறார்கள் / ஒளிர்கிறார்கள்.',
+      malayalam: 'രണ്ട് സൂര്യന്മാർ പ്രകാശിക്കുന്നു / തപിക്കുന്നു.',
     },
-    mnemonic: 'तप् (solar radiation): सूर्यः तपति, सूर्यौ तपतः, सूर्याः तपन्ति.',
+    mnemonic: 'தப் (சூரிய வெப்பம்): சூரியர்கள் இருவர் = सूर्यौ तपतः.',
   },
 
   // 3. मेघ + वर्ष् (1P)
@@ -157,7 +183,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'वर्ष्',
     baseTranslit: 'varṣ',
     subjectNoun: 'मेघ (Cloud)',
+    subjectNounTamil: 'மேகம் (Cloud)',
+    subjectNounMalayalam: 'മേഘം (Cloud)',
     meaning: 'वर्षणम् (To Rain)',
+    meaningTamil: 'மழை பொழிதல் (Rain)',
+    meaningMalayalam: 'വർഷിക്കുക / പെയ്യുക (Rain)',
     englishAction: 'Rain',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -185,8 +215,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'वर्षन्ति मेघाः',
       translit: 'Varṣanti meghāḥ',
       english: 'The clouds rain.',
+      tamil: 'மேகங்கள் மழை பொழிகின்றன.',
+      malayalam: 'മേഘങ്ങൾ വർഷിക്കുന്നു / പെയ്യുന്നു.',
     },
-    mnemonic: 'वर्ष्: वर्षति मेघः, वर्षतः मेघौ, वर्षन्ति मेघाः.',
+    mnemonic: 'வர்ஷ் (மழை): மேகங்கள் பல = वर्षन्ति मेघाः.',
   },
 
   // 4. चोर + मुष् (9P)
@@ -195,7 +227,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'मुष्',
     baseTranslit: 'muṣ',
     subjectNoun: 'चोर (Thief)',
+    subjectNounTamil: 'திருடன் (Thief)',
+    subjectNounMalayalam: 'കള്ളൻ (Thief)',
     meaning: 'स्तेयनम् (To Steal / Rob)',
+    meaningTamil: 'திருடுதல் (Steal)',
+    meaningMalayalam: 'മോഷണം (Steal)',
     englishAction: 'Steal / Rob',
     gana: 'क्र्यादिगणः',
     ganaNumber: 9,
@@ -223,8 +259,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'चोराः मुष्णन्ति',
       translit: 'Chorāḥ muṣṇanti',
       english: 'The thieves steal.',
+      tamil: 'திருடர்கள் திருடுகிறார்கள்.',
+      malayalam: 'കള്ളന്മാർ മോഷ്ടിക്കുന്നു.',
     },
-    mnemonic: 'Class 9 (क्र्यादि): चोरः मुष्णाति, चोरौ मुष्णीतः, चोराः मुष्णन्ति.',
+    mnemonic: 'मुष् (9th class): திருடர்கள் பல = चोराः मुष्णन्ति.',
   },
 
   // 5. सुत + जृ (1P / 4P)
@@ -233,7 +271,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'जृ',
     baseTranslit: 'jṝ',
     subjectNoun: 'सुत (Son)',
+    subjectNounTamil: 'மகன் (Son)',
+    subjectNounMalayalam: 'മകൻ (Son)',
     meaning: 'वयोहानिः (To Grow Old / Age)',
+    meaningTamil: 'முதிர்ச்சி அடைதல் (Grow old)',
+    meaningMalayalam: 'വാർദ്ധക്യം പ്രാപിക്കുക (Grow old)',
     englishAction: 'Grow Old / Age',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -261,8 +303,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'सुतः जरति',
       translit: 'Sutaḥ jarati',
       english: 'The son grows old.',
+      tamil: 'மகன் முதிர்ச்சி அடைகிறான்.',
+      malayalam: 'മകൻ പ്രായമാകുന്നു / വാർദ്ധക്യം പ്രാപിക്കുന്നു.',
     },
-    mnemonic: 'जृ: सुतः जरति, सुतौ जरतः, सुताः जरन्ति.',
+    mnemonic: 'ஜரா (முதுமை): மகன் ஒருவன் = सुतः जरति.',
   },
 
   // 6. सैनिक + रक्ष् (1P)
@@ -271,7 +315,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'रक्ष्',
     baseTranslit: 'rakṣ',
     subjectNoun: 'सैनिक (Soldier)',
+    subjectNounTamil: 'வீரன் (Soldier)',
+    subjectNounMalayalam: 'സൈനികൻ (Soldier)',
     meaning: 'पालनम् / रक्षणम् (To Protect / Guard)',
+    meaningTamil: 'காத்தல் / ரக்ஷித்தல் (Protect)',
+    meaningMalayalam: 'രക്ഷിക്കുക (Protect)',
     englishAction: 'Protect / Guard',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -299,8 +347,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'सैनिकौ रक्षतः',
       translit: 'Sainikau rakṣataḥ',
       english: 'Two soldiers protect.',
+      tamil: 'இரு வீரர்கள் காக்கிறார்கள்.',
+      malayalam: 'രണ്ട് സൈനികർ രക്ഷിക്കുന്നു / കാക്കുന്നു.',
     },
-    mnemonic: 'रक्ष्: सैनिकः रक्षति, सैनिकौ रक्षतः, सैनिकाः रक्षन्ति.',
+    mnemonic: 'ரக்ஷ் (ரக்ஷிப்பது): வீரர்கள் இருவர் = सैनिकौ रक्षतः.',
   },
 
   // 7. वृक्ष + रुह् (1P)
@@ -309,12 +359,16 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'रुह्',
     baseTranslit: 'ruh',
     subjectNoun: 'वृक्ष (Tree)',
+    subjectNounTamil: 'மரம் (Tree)',
+    subjectNounMalayalam: 'വൃക്ഷം (Tree)',
     meaning: 'प्रादुर्भावः / प्ररोहणम् (To Grow / Sprout)',
+    meaningTamil: 'வளர்தல் / துளிர்த்தல் (Grow)',
+    meaningMalayalam: 'വളരുക (Grow)',
     englishAction: 'Grow / Sprout',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
     stem: 'रोह',
-    vikaran: 'अ (शप्, गुणे ओ)',
+    vikaran: 'अ (शप्)',
     padam: 'परस्मैपदम्',
     prathama: {
       singular: { affix: '-ति', form: 'रोहति', translit: 'rohati', meaning: 'grows', pronoun: 'वृक्षः', sentence: 'वृक्षः रोहति' },
@@ -337,8 +391,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'वृक्षाः रोहन्ति',
       translit: 'Vṛkṣāḥ rohanti',
       english: 'The trees grow.',
+      tamil: 'மரங்கள் வளர்கின்றன.',
+      malayalam: 'മരങ്ങൾ വളരുന്നു.',
     },
-    mnemonic: 'रुह् (उ $\\rightarrow$ ओ): वृक्षः रोहति, वृक्षौ रोहतः, वृक्षाः रोहन्ति.',
+    mnemonic: 'ரோஹணம் (வளர்ச்சி): மரங்கள் பல = वृक्षाः रोहन्ति.',
   },
 
   // 8. जन + वद् (1P)
@@ -347,7 +403,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'वद्',
     baseTranslit: 'vad',
     subjectNoun: 'जन (Person)',
+    subjectNounTamil: 'மனிதன் (Person)',
+    subjectNounMalayalam: 'വ്യക്തി (Person)',
     meaning: 'भाषणम् (To Speak / Say)',
+    meaningTamil: 'பேசுதல் (Speak)',
+    meaningMalayalam: 'സംസാരിക്കുക (Speak)',
     englishAction: 'Speak / Say',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -375,8 +435,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'जनः वदति',
       translit: 'Janaḥ vadati',
       english: 'The person speaks.',
+      tamil: 'மனிதன் பேசுகிறான்.',
+      malayalam: 'വ്യക്തി സംസാരിക്കുന്നു.',
     },
-    mnemonic: 'वद्: जनः वदति, जनौ वदतः, जनाः वदन्ति.',
+    mnemonic: 'வதனம் (பேசுதல்): மனிதன் ஒருவன் = जनः वदति.',
   },
 
   // 9. मीन + तॄ (1P)
@@ -385,12 +447,16 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'तॄ',
     baseTranslit: 'tṝ',
     subjectNoun: 'मीन (Fish)',
+    subjectNounTamil: 'மீன் (Fish)',
+    subjectNounMalayalam: 'മത്സ്യം (Fish)',
     meaning: 'तरणम् / प्लावः (To Swim / Cross)',
+    meaningTamil: 'நீந்துதல் (Swim)',
+    meaningMalayalam: 'നീന്തുക (Swim)',
     englishAction: 'Swim / Cross',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
     stem: 'तर',
-    vikaran: 'अ (शप्, गुणे अर्)',
+    vikaran: 'अ (शप्)',
     padam: 'परस्मैपदम्',
     prathama: {
       singular: { affix: '-ति', form: 'तरति', translit: 'tarati', meaning: 'swims', pronoun: 'मीनः', sentence: 'मीनः तरति' },
@@ -413,8 +479,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'मीनाः तरन्ति',
       translit: 'Mīnāḥ taranti',
       english: 'The fish swim.',
+      tamil: 'மீன்கள் நீந்துகின்றன.',
+      malayalam: 'മത്സ്യങ്ങൾ നീന്തുന്നു.',
     },
-    mnemonic: 'तॄ $\\rightarrow$ तर् + अ: मीनः तरति, मीनौ तरतः, मीनाः तरन्ति.',
+    mnemonic: 'தரண (நீந்துதல்): மீன்கள் பல = मीनाः तरन्ति.',
   },
 
   // 10. सा + कुप् (4P)
@@ -423,7 +491,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'कुप्',
     baseTranslit: 'kup',
     subjectNoun: 'सा (She)',
+    subjectNounTamil: 'அவள் (She)',
+    subjectNounMalayalam: 'അവൾ (She)',
     meaning: 'क्रोधः (To Get Angry)',
+    meaningTamil: 'கோபப்படுதல் (Get angry)',
+    meaningMalayalam: 'കോപിക്കുക (Get angry)',
     englishAction: 'Get Angry',
     gana: 'दिवादिगणः',
     ganaNumber: 4,
@@ -451,8 +523,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'सा कुप्यति',
       translit: 'Sā kupyati',
       english: 'She gets angry.',
+      tamil: 'அவள் கோபமடைகிறாள்.',
+      malayalam: 'അവൾ കോപിക്കുന്നു.',
     },
-    mnemonic: 'Class 4 (श्यन् = य): सा कुप्यति, ते कुप्यतः, ताः कुप्यन्ति.',
+    mnemonic: 'கோபம் (குப்): அவள் ஒருத்தி = सा कुप्यति.',
   },
 
   // 11. कुक्कुर + भष् (1P)
@@ -461,7 +535,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'भष्',
     baseTranslit: 'bhaṣ',
     subjectNoun: 'कुक्कुर (Dog)',
+    subjectNounTamil: 'நாய் (Dog)',
+    subjectNounMalayalam: 'നായ (Dog)',
     meaning: 'भषणम् (To Bark)',
+    meaningTamil: 'குரைத்தல் (Bark)',
+    meaningMalayalam: 'കുരയ്ക്കുക (Bark)',
     englishAction: 'Bark',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -489,8 +567,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'भषन्ति कुक्कुराः',
       translit: 'Bhaṣanti kukkurāḥ',
       english: 'The dogs bark.',
+      tamil: 'நாய்கள் குரைக்கின்றன.',
+      malayalam: 'നായ്ക്കൾ കുരയ്ക്കുന്നു.',
     },
-    mnemonic: 'भष्: भषति कुक्कुरः, भषतः कुक्कुरौ, भषन्ति कुक्कुराः.',
+    mnemonic: 'குரைப்பது (பஷ்): நாய்கள் பல = भषन्ति कुक्कुराः.',
   },
 
   // 12. मृग + त्रस् (4P / 1P)
@@ -499,7 +579,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'त्रस्',
     baseTranslit: 'tras',
     subjectNoun: 'मृग (Deer)',
+    subjectNounTamil: 'மான் (Deer)',
+    subjectNounMalayalam: 'മാൻ (Deer)',
     meaning: 'भीतिः / कम्पनम् (To Tremble / Flee in Fear)',
+    meaningTamil: 'அஞ்சி நடுங்குதல் (Tremble in fear)',
+    meaningMalayalam: 'ഭയന്ന് വിറയ്ക്കുക (Tremble in fear)',
     englishAction: 'Tremble / Fear',
     gana: 'दिवादिगणः',
     ganaNumber: 4,
@@ -527,8 +611,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'त्रस्यतः मृगौ',
       translit: 'Trasyataḥ mṛgau',
       english: 'Two deer tremble in fear.',
+      tamil: 'இரு மான்கள் அஞ்சி நடுங்குகின்றன.',
+      malayalam: 'രണ്ട് മാനുകൾ ഭയന്ന് വിറയ്ക്കുന്നു.',
     },
-    mnemonic: 'त्रस् (डरना): त्रस्यति मृगः, त्रस्यतः मृगौ, त्रस्यन्ति मृगाः.',
+    mnemonic: 'த்ராஸம் (பயப்படுதல்): மான்கள் இருவர் = त्रस्यतः मृगौ.',
   },
 
   // 13. हस्त + क्षल् (10U)
@@ -537,7 +623,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'क्षल्',
     baseTranslit: 'kṣal',
     subjectNoun: 'हस्त (Hand)',
+    subjectNounTamil: 'கை (Hand)',
+    subjectNounMalayalam: 'കൈ (Hand)',
     meaning: 'प्रक्षालनम् (To Wash / Cleanse)',
+    meaningTamil: 'கழுவுதல் / தூய்மைப்படுத்துதல் (Wash)',
+    meaningMalayalam: 'കഴുകുക (Wash)',
     englishAction: 'Wash / Cleanse',
     gana: 'चुरादिगणः',
     ganaNumber: 10,
@@ -565,8 +655,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'क्षालयतः हस्तौ',
       translit: 'Kṣālayataḥ hastau',
       english: 'Two hands wash.',
+      tamil: 'இரு கைகள் கழுவுகின்றன.',
+      malayalam: 'രണ്ട് കൈകൾ കഴുകുന്നു.',
     },
-    mnemonic: 'Class 10 (अय): क्षालयति, क्षालयतः हस्तौ, क्षालयन्ति.',
+    mnemonic: 'க்ஷாளனம் (கழுவுதல்): கைகள் இருவர் = क्षालयतः हस्तौ.',
   },
 
   // 14. वानर + खाद् (1P)
@@ -575,7 +667,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'खाद्',
     baseTranslit: 'khād',
     subjectNoun: 'वानर (Monkey)',
+    subjectNounTamil: 'குரங்கு (Monkey)',
+    subjectNounMalayalam: 'കുരങ്ങ് (Monkey)',
     meaning: 'भक्षणम् (To Eat)',
+    meaningTamil: 'உண்ணுதல் (Eat)',
+    meaningMalayalam: 'ഭക്ഷിക്കുക / തിന്നുക (Eat)',
     englishAction: 'Eat',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -603,8 +699,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'वानराः खादन्ति',
       translit: 'Vānarāḥ khādanti',
       english: 'The monkeys eat.',
+      tamil: 'குரங்குகள் உண்கின்றன.',
+      malayalam: 'കുരങ്ങുകൾ തിന്നുന്നു.',
     },
-    mnemonic: 'खाद्: वानरः खादति, वानरौ खादतः, वानराः खादन्ति.',
+    mnemonic: 'காதுதல் / உண்ணுதல்: குரங்குகள் பல = वानराः खादन्ति.',
   },
 
   // 15. दीप + ज्वल् (1P)
@@ -613,7 +711,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'ज्वल्',
     baseTranslit: 'jval',
     subjectNoun: 'दीप (Lamp)',
+    subjectNounTamil: 'விளக்கு (Lamp)',
+    subjectNounMalayalam: 'വിളക്ക് (Lamp)',
     meaning: 'प्रदीपनम् (To Shine / Burn / Blaze)',
+    meaningTamil: 'பிரகாசித்தல் / எரிதல் (Shine / Blaze)',
+    meaningMalayalam: 'ജ്വലിക്കുക (Shine / Blaze)',
     englishAction: 'Shine / Blaze',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -641,8 +743,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'दीपः ज्वलति',
       translit: 'Dīpaḥ jvalati',
       english: 'The lamp shines.',
+      tamil: 'விளக்கு பிரகாசிக்கிறது.',
+      malayalam: 'വിളക്ക് ജ്വലിക്കുന്നു.',
     },
-    mnemonic: 'ज्वल्: दीपः ज्वलति, दीपौ ज्वलतः, दीपाः ज्वलन्ति.',
+    mnemonic: 'ஜ்வாலை (ஒளி): விளக்கு ஒன்று = दीपः ज्वलति.',
   },
 
   // 16. भार्या + यज् (1U)
@@ -651,7 +755,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'यज्',
     baseTranslit: 'yaj',
     subjectNoun: 'भार्या (Wife)',
+    subjectNounTamil: 'மனைவி (Wife)',
+    subjectNounMalayalam: 'ഭാര്യ (Wife)',
     meaning: 'देवपूजा / यज्ञः (To Worship / Sacrifice)',
+    meaningTamil: 'யாகம் / பூஜை செய்தல் (Perform ritual)',
+    meaningMalayalam: 'യജ്ഞം / പൂജ ചെയ്യുക (Perform ritual)',
     englishAction: 'Perform Ritual / Sacrifice',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -679,8 +787,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'भार्या यजति',
       translit: 'Bhāryā yajati',
       english: 'The wife performs a ritual.',
+      tamil: 'மனைவி யாகம் / பூஜை செய்கிறாள்.',
+      malayalam: 'ഭാര്യ യജ്ഞം / പൂജ ചെയ്യുന്നു.',
     },
-    mnemonic: 'यज्: भार्या यजति, भार्ये यजतः, भार्याः यजन्ति.',
+    mnemonic: 'யஜ் (யாகம்): மனைவி ஒருத்தி = भार्या यजति.',
   },
 
   // 17. भिक्षुक + याच् (1A - आत्मनेपदम्)
@@ -689,7 +799,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'याच्',
     baseTranslit: 'yāc',
     subjectNoun: 'भिक्षुक (Beggar)',
+    subjectNounTamil: 'யாசகன் (Beggar)',
+    subjectNounMalayalam: 'യാചകൻ (Beggar)',
     meaning: 'याचना (To Beg / Request)',
+    meaningTamil: 'யாசித்தல் / வேண்டுதல் (Beg)',
+    meaningMalayalam: 'യാചിക്കുക (Beg)',
     englishAction: 'Beg / Request',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -717,8 +831,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'भिक्षुकाः याचन्ते',
       translit: 'Bhikṣukāḥ yācante',
       english: 'The beggars beg.',
+      tamil: 'யாசகர்கள் வேண்டுகிறார்கள் / யாசிக்கிறார்கள்.',
+      malayalam: 'യാചകർ യാചിക്കുന്നു.',
     },
-    mnemonic: 'आत्मनेपद terminations: -ते, -एते, -न्ते! भिक्षुकः याचते, भिक्षुकौ याचेते, भिक्षुकाः याचन्ते.',
+    mnemonic: 'ஆத்மனேபதம்: -தே, -ஏதே, -ந்தே! யாசகர்கள் பலர் = भिक्षुकाः याचन्ते.',
   },
 
   // 18. युवाम् + त्यज् (1P - मध्यमपुरुषः द्विवचनम्)
@@ -727,7 +843,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'त्यज्',
     baseTranslit: 'tyaj',
     subjectNoun: 'युवाम् (You two)',
+    subjectNounTamil: 'நீங்கள் இருவரும் (You two)',
+    subjectNounMalayalam: 'നിങ്ങൾ രണ്ടുപേരും (You two)',
     meaning: 'त्यागः (To Abandon / Leave)',
+    meaningTamil: 'துறத்தல் / கைவிடுதல் (Abandon)',
+    meaningMalayalam: 'ഉപേക്ഷിക്കുക / ത്യജിക്കുക (Abandon)',
     englishAction: 'Abandon / Leave',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -755,8 +875,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'युवाम् त्यजथः',
       translit: 'Yuvām tyajathaḥ',
       english: 'You two abandon/leave.',
+      tamil: 'நீங்கள் இருவரும் விடுகிறீர்கள் / துறக்கிறீர்கள்.',
+      malayalam: 'നിങ്ങൾ രണ്ടുപേരും ഉപേക്ഷിക്കുന്നു.',
     },
-    mnemonic: 'मध्यमपुरुषः: त्वम् त्यजसि, युवाम् त्यजथः, यूयम् त्यजथ.',
+    mnemonic: 'மத்யமபுருஷன் இருவர்: நீங்கள் இருவரும் = युवाम् त्यजथः.',
   },
 
   // 19. वयम् + अर्च् (1P - उत्तमपुरुषः बहुवचनम्)
@@ -765,7 +887,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'अर्च्',
     baseTranslit: 'arc',
     subjectNoun: 'वयम् (We all)',
+    subjectNounTamil: 'நாம் அனைவரும் (We all)',
+    subjectNounMalayalam: 'ഞങ്ങൾ എല്ലാവരും (We all)',
     meaning: 'अर्चनम् / पूजा (To Worship)',
+    meaningTamil: 'அர்ச்சித்தல் / வழிபடுதல் (Worship)',
+    meaningMalayalam: 'അർച്ചിക്കുക / പൂജിക്കുക (Worship)',
     englishAction: 'Worship / Adore',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -793,8 +919,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'वयम् अर्चामः',
       translit: 'Vayam arcāmaḥ',
       english: 'We all worship.',
+      tamil: 'நாம் அனைவரும் அர்ச்சிக்கிறோம் / வழிபடுகிறோம்.',
+      malayalam: 'ഞങ്ങൾ എല്ലാവരും ആരാധിക്കുന്നു / അർച്ചിക്കുന്നു.',
     },
-    mnemonic: 'उत्तमपुरुषः: अहम् अर्चामि, आवाम् अर्चावः, वयम् अर्चामः.',
+    mnemonic: 'உத்தமபுருஷன் பன்மை: நாம் அனைவரும் = वयम् अर्चामः.',
   },
 
   // 20. आवाम् + लभ् (1A - आत्मनेपदम् उत्तमपुरुषः द्विवचनम्)
@@ -803,7 +931,11 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     root: 'लभ्',
     baseTranslit: 'labh',
     subjectNoun: 'आवाम् (We two)',
+    subjectNounTamil: 'நாங்கள் இருவரும் (We two)',
+    subjectNounMalayalam: 'ഞങ്ങൾ രണ്ടുപേരും (We two)',
     meaning: 'प्राप्तिः (To Obtain / Gain)',
+    meaningTamil: 'பெறுதல் / அடைதல் (Obtain)',
+    meaningMalayalam: 'നേടുക / ലഭിക്കുക (Obtain)',
     englishAction: 'Obtain / Gain',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -831,8 +963,10 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
       sanskrit: 'आवाम् लभावहे',
       translit: 'Āvām labhāvahe',
       english: 'We two obtain.',
+      tamil: 'நாங்கள் இருவரும் பெறுகிறோம்.',
+      malayalam: 'ഞങ്ങൾ രണ്ടുപേരും നേടുന്നു / ലഭിക്കുന്നു.',
     },
-    mnemonic: 'आत्मनेपद उत्तमपुरुषः: अहम् लभे, आवाम् लभावहे, वयम् लभामहे.',
+    mnemonic: 'ஆத்மனேபதம் உத்தமபுருஷன் இருவர்: நாங்கள் இருவர் = आवाम् लभावहे.',
   },
 ];
 
@@ -853,10 +987,18 @@ export const MATRIX_PUZZLE_CHALLENGES: MatrixPuzzleChallenge[] = MATRIX_ROOTS.ma
     targetForm: targetConj.form,
     targetSentence: target.sanskrit,
     prompt: `Connect the base root ${rootItem.root} with the correct terminal block to forge the target expression "${target.english}".`,
+    promptTamil: `அடிப்படை வேர்ச்சொல் "${rootItem.root}" உடன் சரியான முடிவுத் துண்டை இணைத்து "${target.tamil}" என்ற வாக்கியத்தை உருவாக்குங்கள்.`,
+    promptMalayalam: `അടിസ്ഥാന ധാതുവായ "${rootItem.root}" എന്നതിനോട് ശരിയായ പ്രത്യയ-ഖണ്ഡം ചേർത്ത് "${target.malayalam}" എന്ന രൂപം ഉണ്ടാക്കുക.`,
     subjectContext: `${targetConj.pronoun} ______।`,
     meaning: target.english,
+    meaningTamil: target.tamil,
+    meaningMalayalam: target.malayalam,
     hint: `Subject is "${targetConj.pronoun}" (${target.number.toUpperCase()} ${target.person.toUpperCase()}). Termination is ${targetConj.affix}.`,
+    hintTamil: `எழுவாய்: "${targetConj.pronoun}" (${target.number === 'singular' ? 'ஒருமை' : target.number === 'dual' ? 'இருமை' : 'பன்மை'}). விகுதி: ${targetConj.affix}.`,
+    hintMalayalam: `കർത്താവ്: "${targetConj.pronoun}" (${target.number === 'singular' ? 'ഏകവചനം' : target.number === 'dual' ? 'ദ്വിവചനം' : 'ബഹുവചനം'}). പ്രത്യയം: ${targetConj.affix}.`,
     explanation: `${rootItem.root} (${rootItem.meaning}) + ${targetConj.affix} = ${target.sanskrit} ("${target.english}")`,
+    explanationTamil: `${rootItem.root} (${rootItem.meaningTamil}) + ${targetConj.affix} = ${target.sanskrit} ("${target.tamil}")`,
+    explanationMalayalam: `${rootItem.root} (${rootItem.meaningMalayalam}) + ${targetConj.affix} = ${target.sanskrit} ("${target.malayalam}")`,
     options: [
       {
         number: 'singular',

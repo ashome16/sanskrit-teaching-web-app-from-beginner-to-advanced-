@@ -5,12 +5,15 @@ import {
 } from '../data/relativeClauseRiddlesData';
 import { playPronunciation, stopPronunciation } from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
+import { transliterateSanskrit, type IndicScript } from '../utils/indicTransliteration';
 import '../styles/pencil-sketch-matcher.css';
 
 interface PencilSketchRelativeClauseMatcherProps {
   onSelectWord?: (word: string) => void;
   onGoHome?: () => void;
 }
+
+type LearnLanguage = 'en' | 'ta' | 'ml';
 
 export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeClauseMatcherProps> = ({
   onSelectWord,
@@ -20,6 +23,55 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isMatched, setIsMatched] = useState(false);
   const [unlockedIds, setUnlockedIds] = useState<Set<string>>(new Set());
+
+  // Multilingual medium & script state
+  const [learnLang, setLearnLang] = useState<LearnLanguage>(() => {
+    try {
+      const saved = localStorage.getItem('sanskrit_learn_lang');
+      if (saved === 'ta' || saved === 'ml' || saved === 'en') return saved;
+    } catch {
+      // ignore
+    }
+    return 'en';
+  });
+
+  const [displayScript, setDisplayScript] = useState<IndicScript>(() => {
+    try {
+      const saved = localStorage.getItem('sanskrit_display_script');
+      if (saved === 'devanagari' || saved === 'tamil' || saved === 'malayalam') return saved;
+    } catch {
+      // ignore
+    }
+    return 'devanagari';
+  });
+
+  const handleSetLearnLang = (lang: LearnLanguage) => {
+    setLearnLang(lang);
+    try {
+      localStorage.setItem('sanskrit_learn_lang', lang);
+    } catch {
+      // ignore
+    }
+    // Auto-adjust script for natural reading
+    if (lang === 'ta' && displayScript === 'devanagari') {
+      setDisplayScript('tamil');
+      try { localStorage.setItem('sanskrit_display_script', 'tamil'); } catch {}
+    } else if (lang === 'ml' && displayScript === 'devanagari') {
+      setDisplayScript('malayalam');
+      try { localStorage.setItem('sanskrit_display_script', 'malayalam'); } catch {}
+    }
+  };
+
+  const handleSetDisplayScript = (script: IndicScript) => {
+    setDisplayScript(script);
+    try {
+      localStorage.setItem('sanskrit_display_script', script);
+    } catch {
+      // ignore
+    }
+  };
+
+  const tr = (text: string) => transliterateSanskrit(text, displayScript);
 
   const currentRiddle: RelativeClauseRiddle = RELATIVE_CLAUSE_RIDDLES[currentIndex % RELATIVE_CLAUSE_RIDDLES.length];
 
@@ -741,7 +793,13 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
             }}
           >
             <span>✏️</span>
-            <span>Riddle Scene #{currentIndex + 1}</span>
+            <span>
+              {learnLang === 'ta'
+                ? `புதிர் காட்சி #${currentIndex + 1}`
+                : learnLang === 'ml'
+                ? `സമസ്യ രംഗം #${currentIndex + 1}`
+                : `Riddle Scene #${currentIndex + 1}`}
+            </span>
           </button>
           <button
             type="button"
@@ -752,8 +810,75 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
             }}
           >
             <span>🖼️</span>
-            <span>Sketchbook Gallery ({unlockedIds.size} / {RELATIVE_CLAUSE_RIDDLES.length})</span>
+            <span>
+              {learnLang === 'ta'
+                ? `ஓவியக் கூடம் (${unlockedIds.size} / ${RELATIVE_CLAUSE_RIDDLES.length})`
+                : learnLang === 'ml'
+                ? `ചിത്രശാല (${unlockedIds.size} / ${RELATIVE_CLAUSE_RIDDLES.length})`
+                : `Sketchbook Gallery (${unlockedIds.size} / ${RELATIVE_CLAUSE_RIDDLES.length})`}
+            </span>
           </button>
+        </div>
+
+        {/* Multilingual Medium & Sanskrit Script Switcher */}
+        <div className="psm-lang-selector-strip" aria-label="Language and Script Options">
+          <div className="psm-lang-group">
+            <span className="psm-lang-label">
+              🌐 {learnLang === 'ta' ? 'கற்கும் மொழி' : learnLang === 'ml' ? 'പഠന മാധ്യമം' : 'Learning Medium'}:
+            </span>
+            <div className="psm-lang-buttons">
+              <button
+                type="button"
+                className={`psm-lang-btn ${learnLang === 'en' ? 'active' : ''}`}
+                onClick={() => handleSetLearnLang('en')}
+              >
+                🇬🇧 English
+              </button>
+              <button
+                type="button"
+                className={`psm-lang-btn ${learnLang === 'ta' ? 'active' : ''}`}
+                onClick={() => handleSetLearnLang('ta')}
+              >
+                தமிழ் (Tamil)
+              </button>
+              <button
+                type="button"
+                className={`psm-lang-btn ${learnLang === 'ml' ? 'active' : ''}`}
+                onClick={() => handleSetLearnLang('ml')}
+              >
+                മലയാളം (Malayalam)
+              </button>
+            </div>
+          </div>
+
+          <div className="psm-lang-group">
+            <span className="psm-lang-label">
+              📜 {learnLang === 'ta' ? 'சமஸ்கிருத எழுத்துரு' : learnLang === 'ml' ? 'സംസ്കൃത ലിപി' : 'Sanskrit Script'}:
+            </span>
+            <div className="psm-lang-buttons">
+              <button
+                type="button"
+                className={`psm-lang-btn ${displayScript === 'devanagari' ? 'active' : ''}`}
+                onClick={() => handleSetDisplayScript('devanagari')}
+              >
+                देवनागरी (Devanagari)
+              </button>
+              <button
+                type="button"
+                className={`psm-lang-btn ${displayScript === 'tamil' ? 'active' : ''}`}
+                onClick={() => handleSetDisplayScript('tamil')}
+              >
+                தமிழ் (கிரந்தம்)
+              </button>
+              <button
+                type="button"
+                className={`psm-lang-btn ${displayScript === 'malayalam' ? 'active' : ''}`}
+                onClick={() => handleSetDisplayScript('malayalam')}
+              >
+                മലയാളം (Malayalam)
+              </button>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -764,8 +889,20 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
         <section aria-label="Pencil Sketch Riddle Arena">
           <div className="psm-canvas-pod">
             <div className="psm-scene-header">
-              <span className="psm-scene-title">{currentRiddle.title}</span>
-              <span className="psm-scene-theme-pill">{currentRiddle.theme}</span>
+              <span className="psm-scene-title">
+                {learnLang === 'ta'
+                  ? currentRiddle.titleTamil
+                  : learnLang === 'ml'
+                  ? currentRiddle.titleMalayalam
+                  : currentRiddle.title}
+              </span>
+              <span className="psm-scene-theme-pill">
+                {learnLang === 'ta'
+                  ? currentRiddle.themeTamil
+                  : learnLang === 'ml'
+                  ? currentRiddle.themeMalayalam
+                  : currentRiddle.theme}
+              </span>
             </div>
 
             {/* Hand-Drawn SVG Sketch Artwork */}
@@ -775,18 +912,50 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
 
             {/* Visual Riddle Clue Box */}
             <div className="psm-riddle-clue-box">
-              <div className="psm-rc-label">🔍 Visual Riddle Clue:</div>
-              <div className="psm-rc-text">"{currentRiddle.riddleClue}"</div>
+              <div className="psm-rc-label">
+                🔍{' '}
+                {learnLang === 'ta'
+                  ? 'காட்சி புதிர் குறிப்பு'
+                  : learnLang === 'ml'
+                  ? 'ദൃശ്യ സമസ്യ സൂചന'
+                  : 'Visual Riddle Clue'}
+                :
+              </div>
+              <div className="psm-rc-text">
+                "
+                {learnLang === 'ta'
+                  ? currentRiddle.riddleClueTamil
+                  : learnLang === 'ml'
+                  ? currentRiddle.riddleClueMalayalam
+                  : currentRiddle.riddleClue}
+                "
+              </div>
             </div>
 
             {/* Block Matching Arena */}
             <div className="psm-matching-arena">
               {/* Left Column: Lead Relative Clause Block */}
               <div className="psm-lead-card">
-                <div className="psm-lead-tag">Clause A (सम्बन्धवाक्यम्)</div>
-                <div className="psm-lead-devanagari">{currentRiddle.relativeBlock}</div>
+                <div className="psm-lead-tag">
+                  Clause A (
+                  {learnLang === 'ta'
+                    ? 'தொடர்பு வாக்கியம்'
+                    : learnLang === 'ml'
+                    ? 'സംബന്ധ വാക്യം'
+                    : 'सम्बन्धवाक्यम्'}
+                  )
+                </div>
+                <div className="psm-lead-devanagari">{tr(currentRiddle.relativeBlock)}</div>
                 <div className="psm-lead-translit">({currentRiddle.relativeTranslit})</div>
-                <div className="psm-lead-meaning">"{currentRiddle.relativeMeaning}"</div>
+                <div className="psm-lead-meaning">
+                  "
+                  {learnLang === 'ta'
+                    ? currentRiddle.relativeTamil
+                    : learnLang === 'ml'
+                    ? currentRiddle.relativeMalayalam
+                    : currentRiddle.relativeMeaning}
+                  "
+                </div>
               </div>
 
               {/* Middle: Dashed Pencil Connector */}
@@ -810,7 +979,7 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
                       className={`psm-option-block ${isCorrect ? 'correct' : ''} ${isWrong ? 'wrong' : ''}`}
                       onClick={() => handleSelectOption(opt)}
                     >
-                      <span className="psm-opt-text">{opt}</span>
+                      <span className="psm-opt-text">{tr(opt)}</span>
                       <span className="psm-opt-pin" />
                     </button>
                   );
@@ -824,7 +993,13 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
                 <div className="psm-rp-header">
                   <span className="psm-rp-badge">
                     <span>✨</span>
-                    <span>Riddle Solved &amp; Hand-Drawn Scene Completed!</span>
+                    <span>
+                      {learnLang === 'ta'
+                        ? 'புதிர் தீர்க்கப்பட்டது! ஓவியம் பூர்த்தியடைந்தது!'
+                        : learnLang === 'ml'
+                        ? 'സമസ്യ പരിഹരിച്ചു! ചിത്രം പൂർണ്ണമായി!'
+                        : 'Riddle Solved & Hand-Drawn Scene Completed!'}
+                    </span>
                   </span>
                   <button
                     type="button"
@@ -832,29 +1007,63 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
                     onClick={() => handleSpeak(currentRiddle.fullSanskrit)}
                   >
                     <span>🔊</span>
-                    <span>Speak Proverb</span>
+                    <span>
+                      {learnLang === 'ta'
+                        ? 'சுலோகம் கேளுங்கள்'
+                        : learnLang === 'ml'
+                        ? 'സുഭാഷിതം കേൾക്കുക'
+                        : 'Speak Proverb'}
+                    </span>
                   </button>
                 </div>
 
-                <div className="psm-full-sanskrit">{currentRiddle.fullSanskrit}</div>
+                <div className="psm-full-sanskrit">{tr(currentRiddle.fullSanskrit)}</div>
                 <div className="psm-full-translit">{currentRiddle.fullTranslit}</div>
-                <div className="psm-full-english">"{currentRiddle.englishTranslation}"</div>
+                <div className="psm-full-english">
+                  "
+                  {learnLang === 'ta'
+                    ? currentRiddle.tamilTranslation
+                    : learnLang === 'ml'
+                    ? currentRiddle.malayalamTranslation
+                    : currentRiddle.englishTranslation}
+                  "
+                </div>
 
                 <div className="psm-philosophical-insight">
-                  <strong>🌿 Philosophical Background: </strong>
-                  {currentRiddle.philosophicalInsight}
+                  <strong>
+                    🌿{' '}
+                    {learnLang === 'ta'
+                      ? 'தத்துவ விளக்கம்: '
+                      : learnLang === 'ml'
+                      ? 'തത്ത്വചിന്താ പശ്ചാത്തലം: '
+                      : 'Philosophical Background: '}
+                  </strong>
+                  {learnLang === 'ta'
+                    ? currentRiddle.philosophicalInsightTamil
+                    : learnLang === 'ml'
+                    ? currentRiddle.philosophicalInsightMalayalam
+                    : currentRiddle.philosophicalInsight}
                 </div>
 
                 <div className="psm-rp-footer">
                   <span style={{ fontSize: '0.85rem', color: '#78716c' }}>
-                    Riddle #{currentRiddle.riddleNumber} of {RELATIVE_CLAUSE_RIDDLES.length}
+                    {learnLang === 'ta'
+                      ? `புதிர் #${currentRiddle.riddleNumber} / ${RELATIVE_CLAUSE_RIDDLES.length}`
+                      : learnLang === 'ml'
+                      ? `സമസ്യ #${currentRiddle.riddleNumber} / ${RELATIVE_CLAUSE_RIDDLES.length}`
+                      : `Riddle #${currentRiddle.riddleNumber} of ${RELATIVE_CLAUSE_RIDDLES.length}`}
                   </span>
                   <button
                     type="button"
                     className="psm-btn-next"
                     onClick={handleNextRiddle}
                   >
-                    Next Riddle #{((currentIndex + 1) % RELATIVE_CLAUSE_RIDDLES.length) + 1} ➜
+                    {learnLang === 'ta'
+                      ? 'அடுத்த புதிர்'
+                      : learnLang === 'ml'
+                      ? 'അടുത്ത സമസ്യ'
+                      : 'Next Riddle'}{' '}
+                    #{((currentIndex + 1) % RELATIVE_CLAUSE_RIDDLES.length) + 1} ➜
                   </button>
                 </div>
               </div>
@@ -875,11 +1084,38 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
               return (
                 <div key={riddle.id} className="psm-gallery-card">
                   <div className="psm-gc-header">
-                    <span>#{riddle.riddleNumber} · {riddle.theme}</span>
-                    <span style={{ float: 'right' }}>{isUnlocked ? '✓ Solved' : '🔒 Riddle'}</span>
+                    <span>
+                      #{riddle.riddleNumber} ·{' '}
+                      {learnLang === 'ta'
+                        ? riddle.themeTamil
+                        : learnLang === 'ml'
+                        ? riddle.themeMalayalam
+                        : riddle.theme}
+                    </span>
+                    <span style={{ float: 'right' }}>
+                      {isUnlocked
+                        ? learnLang === 'ta'
+                          ? '✓ தீர்க்கப்பட்டது'
+                          : learnLang === 'ml'
+                          ? '✓ പരിഹരിച്ചത്'
+                          : '✓ Solved'
+                        : learnLang === 'ta'
+                        ? '🔒 புதிர்'
+                        : learnLang === 'ml'
+                        ? '🔒 സമസ്യ'
+                        : '🔒 Riddle'}
+                    </span>
                   </div>
-                  <div className="psm-gc-sanskrit">{riddle.fullSanskrit}</div>
-                  <div className="psm-gc-english">"{riddle.englishTranslation}"</div>
+                  <div className="psm-gc-sanskrit">{tr(riddle.fullSanskrit)}</div>
+                  <div className="psm-gc-english">
+                    "
+                    {learnLang === 'ta'
+                      ? riddle.tamilTranslation
+                      : learnLang === 'ml'
+                      ? riddle.malayalamTranslation
+                      : riddle.englishTranslation}
+                    "
+                  </div>
                   <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
                     <button
                       type="button"
@@ -888,7 +1124,7 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
                       onClick={() => handleSpeak(riddle.fullSanskrit)}
                     >
                       <span>🔊</span>
-                      <span>Listen</span>
+                      <span>{learnLang === 'ta' ? 'கேளுங்கள்' : learnLang === 'ml' ? 'കേൾക്കുക' : 'Listen'}</span>
                     </button>
                     <button
                       type="button"
@@ -897,7 +1133,13 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
                       onClick={() => handleJumpToRiddle(idx)}
                     >
                       <span>✏️</span>
-                      <span>Play Scene</span>
+                      <span>
+                        {learnLang === 'ta'
+                          ? 'காட்சியை விளையாடு'
+                          : learnLang === 'ml'
+                          ? 'കളിക്കുക'
+                          : 'Play Scene'}
+                      </span>
                     </button>
                   </div>
                 </div>
