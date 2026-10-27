@@ -209,7 +209,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
         {/* Sacred Sanskrit Invocation */}
         <div className="gurukul-intro-badge">
           <span>🕉️</span>
-          <span>गुरुकुल-प्रवेशः · Sacred Entrance</span>
+          <span>गुरुकुल-प्रवेशः</span>
         </div>
 
         <h1 className="gurukul-intro-title">

@@ -737,7 +737,6 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenScienceLab,
   onOpenRegister,
   onOpenCertificate,
-  onOpenCalendar,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
@@ -780,6 +779,17 @@ const HomePage: React.FC<HomePageProps> = ({
     try {
       sessionStorage.setItem('ednet_gurukul_intro_seen_v2', 'true');
     } catch {}
+  }, []);
+
+  const scrollToJourneyStep = useCallback((stepId: string) => {
+    const el = document.getElementById(stepId) || document.getElementById('journey');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.add('is-journey-highlight');
+      setTimeout(() => {
+        el.classList.remove('is-journey-highlight');
+      }, 1600);
+    }
   }, []);
 
   const visibleChapters = CHAPTERS_INFO.filter(
@@ -978,83 +988,107 @@ const HomePage: React.FC<HomePageProps> = ({
               width={76}
               height={76}
               onClick={() => setShowEntranceIntro(true)}
-              title="EdNet Gurukul · संस्कृत-पाठशाला · Click to view Gurukul painting"
+              title="EdNet Gurukul · संस्कृत-पाठशाला"
               style={{ cursor: 'pointer' }}
             />
-            <button
-              type="button"
-              className="home-hero-crest-scene-btn"
-              onClick={() => setShowEntranceIntro(true)}
-              title="View the holistic Gurukul dawn painting"
+          </div>
+
+          {/* 1. Main Headline & Direct Level Selection */}
+          <h1 className="home-hero-title">
+            <span className="home-hero-title-primary">
+              Choose Beginner to Advanced Levels
+            </span>
+            <p className="home-hero-main-outcome">
+              {englishFirst
+                ? 'Select your starting level below or explore our guided step-by-step roadmap from alphabet basics to complete fluency.'
+                : 'प्रारम्भिक-स्तरात् आरभ्य प्रौढ-स्तरान्तं स्वप्रवेशं चिनुत, अथवा सोपान-क्रमेण यात्रां पश्यन्तु।'}
+            </p>
+          </h1>
+
+          {/* 2. Interactive Levels Bar — Linked to Your Step-by-Step Journey */}
+          <div className="home-hero-levels-container" role="region" aria-label="Choose Learning Level">
+            <div className="home-hero-levels-grid">
+              <button
+                type="button"
+                className="home-hero-level-chip home-hero-level-chip--l1"
+                onClick={() => scrollToJourneyStep('step-1')}
+                title="Level 1: Beginner — Alphabet, Sounds & Syllables (वर्णमाला)"
+              >
+                <span className="hhl-badge">Level 1</span>
+                <strong className="hhl-name">Beginner</strong>
+                <span className="hhl-sub">वर्णमाला · Alphabet</span>
+              </button>
+
+              <button
+                type="button"
+                className="home-hero-level-chip home-hero-level-chip--l2"
+                onClick={() => scrollToJourneyStep('step-2')}
+                title="Level 2: Elementary — Words, Vocabulary & Interactive Puzzles (शब्दाः)"
+              >
+                <span className="hhl-badge">Level 2</span>
+                <strong className="hhl-name">Elementary</strong>
+                <span className="hhl-sub">शब्दाः · Words</span>
+              </button>
+
+              <button
+                type="button"
+                className="home-hero-level-chip home-hero-level-chip--l3"
+                onClick={() => scrollToJourneyStep('step-3')}
+                title="Level 3: Intermediate — Simple Sentences & Everyday Conversation (वाक्यानि)"
+              >
+                <span className="hhl-badge">Level 3</span>
+                <strong className="hhl-name">Intermediate</strong>
+                <span className="hhl-sub">वाक्यानि · Sentences</span>
+              </button>
+
+              <button
+                type="button"
+                className="home-hero-level-chip home-hero-level-chip--l4"
+                onClick={() => scrollToJourneyStep('step-4')}
+                title="Level 4: Upper Intermediate — Pāṇinian Grammar & Dhātupāṭha (व्याकरणम्)"
+              >
+                <span className="hhl-badge">Level 4</span>
+                <strong className="hhl-name">Grammar</strong>
+                <span className="hhl-sub">व्याकरणम् · Dhātu</span>
+              </button>
+
+              <button
+                type="button"
+                className="home-hero-level-chip home-hero-level-chip--l5"
+                onClick={() => scrollToJourneyStep('step-5')}
+                title="Level 5: Advanced — NCERT Deepakam & Classical Texts (एनसीईआरटी)"
+              >
+                <span className="hhl-badge">Level 5</span>
+                <strong className="hhl-name">Advanced</strong>
+                <span className="hhl-sub">एनसीईआरटी · NCERT</span>
+              </button>
+
+              <button
+                type="button"
+                className="home-hero-level-chip home-hero-level-chip--l6"
+                onClick={() => scrollToJourneyStep('step-6')}
+                title="Level 6: Mastery — CBSE 80-Mark Board Exam Preparation (परीक्षा-सिद्धिः)"
+              >
+                <span className="hhl-badge">Level 6</span>
+                <strong className="hhl-name">Exam Prep</strong>
+                <span className="hhl-sub">परीक्षा-सिद्धिः · CBSE</span>
+              </button>
+            </div>
+
+            <a
+              href="#journey"
+              className="home-hero-journey-jump-link"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('journey');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              title="Explore full 6-step roadmap"
             >
-              🎨 गुरुकुल-दर्शनम् · View Gurukul Painting
-            </button>
+              <span>Explore Your Step-by-Step Journey</span>
+              <span className="hhjl-arrow" aria-hidden="true">➔</span>
+            </a>
           </div>
-
-        {/* 1. Who It Is For (Audience Callout) */}
-        <div className="home-hero-audience-banner" role="note" aria-label="Target Audience">
-          <span className="home-hero-audience-tag">
-            <span aria-hidden="true">🎯</span>
-            <strong>{englishFirst ? 'WHO IT IS FOR' : 'लक्ष्य-वर्गः · WHO IT IS FOR'}</strong>
-          </span>
-          <span className="home-hero-audience-text">
-            {englishFirst
-              ? 'CBSE & NCERT Students (Classes 6–10) · Complete Beginners · Parents & Adult Learners'
-              : 'CBSE एवं NCERT छात्राः (कक्षा ६–१०) · प्रारम्भिकाः · अभिभावकाः स्वाध्यायिनश्च'}
-          </span>
-        </div>
-
-        <div className="home-hero-badge">
-          <span>🕉️</span>
-          <span className="home-hero-badge-sanskrit">
-            सरस्वति नमस्तुभ्यं वरदे कामरूपिणि
-          </span>
-        </div>
-
-        <button
-          type="button"
-          className="home-hero-panchang-pill"
-          onClick={() => (onOpenCalendar ? onOpenCalendar() : window.dispatchEvent(new CustomEvent('open-hindu-calendar')))}
-          title="आज का पञ्चाङ्ग एवं हिन्दू कैलेण्डर · View Live Hindu Calendar & Panchang"
-          aria-label="Open Hindu Calendar & Panchang"
-        >
-          <span aria-hidden="true">🕉️</span>
-          <span>आज का पञ्चाङ्गम् · Hindu Calendar</span>
-          <span className="home-hero-panchang-arrow" aria-hidden="true">➔</span>
-        </button>
-
-        {/* 2. Main Outcome & Core Promise */}
-        <h1 className="home-hero-title">
-          <span className="home-hero-title-primary">
-            Learn Sanskrit - Beginner to Advanced Program
-          </span>
-          <p className="home-hero-main-outcome">
-            {englishFirst
-              ? 'Go from alphabet basics to confident Samskrit speaking, Pāṇinian grammar mastery, and top CBSE exam scores—with line-by-line audio and 6,000+ interactive practice puzzles.'
-              : 'वर्णमालातः आरभ्य संभाषणम्, पाणिनीय-व्याकरणम्, NCERT-दीपकं तथा CBSE-परीक्षा-सिद्धिम् अधिगच्छन्तु—ध्वनि-सहितम् अभ्यास-साधनैश्च।'}
-          </p>
-          <div className="home-hero-outcomes-strip" aria-label="Key Outcomes">
-            <span className="home-hero-outcome-item">
-              <span className="hhoi-icon" aria-hidden="true">🔊</span>
-              <span>{englishFirst ? 'Native Pronunciation Audio' : 'शुद्धोच्चारण-ध्वनिः'}</span>
-            </span>
-            <span className="home-hero-outcome-sep" aria-hidden="true">•</span>
-            <span className="home-hero-outcome-item">
-              <span className="hhoi-icon" aria-hidden="true">📖</span>
-              <span>{englishFirst ? 'NCERT Deepakam & CBSE Support' : 'NCERT दीपकम् & CBSE'}</span>
-            </span>
-            <span className="home-hero-outcome-sep" aria-hidden="true">•</span>
-            <span className="home-hero-outcome-item">
-              <span className="hhoi-icon" aria-hidden="true">🌿</span>
-              <span>{englishFirst ? 'Pāṇinian Dhātupāṭha Engine' : 'पाणिनीय-धातुपाठः'}</span>
-            </span>
-            <span className="home-hero-outcome-sep" aria-hidden="true">•</span>
-            <span className="home-hero-outcome-item">
-              <span className="hhoi-icon" aria-hidden="true">📐</span>
-              <span>{englishFirst ? '16 Vedic Math Sutras' : '१६ वैदिक-सूत्राणि'}</span>
-            </span>
-          </div>
-        </h1>
 
         {/* 3. The 3 Primary High-Conversion Calls to Action */}
         <div className="home-hero-three-actions" role="region" aria-label="Primary Actions">
@@ -1197,7 +1231,7 @@ const HomePage: React.FC<HomePageProps> = ({
             VISIBLE LEARNER JOURNEY: 6-STEP PROGRESSION
             Alphabet → Basic words → Simple sentences → Grammar → NCERT texts → Exam readiness
             ================================================================ */}
-        <div className="home-learner-journey" role="region" aria-label="Sanskrit Learning Progression Journey">
+        <div id="journey" className="home-learner-journey" role="region" aria-label="Sanskrit Learning Progression Journey">
           <div className="home-journey-header">
             <div className="home-journey-eyebrow">
               <span>🛣️</span>
@@ -1214,6 +1248,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-journey-steps">
             {/* Step 1: Alphabet */}
             <div
+              id="step-1"
               className="home-journey-step-card"
               onClick={onOpenVarnamala}
               role="button"
@@ -1237,6 +1272,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
             {/* Step 2: Basic words */}
             <div
+              id="step-2"
               className="home-journey-step-card"
               onClick={onOpenBoard}
               role="button"
@@ -1260,6 +1296,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
             {/* Step 3: Simple sentences */}
             <div
+              id="step-3"
               className="home-journey-step-card"
               onClick={() => onOpenReader('gsde101')}
               role="button"
@@ -1283,6 +1320,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
             {/* Step 4: Grammar */}
             <div
+              id="step-4"
               className="home-journey-step-card"
               onClick={onOpenGrammar}
               role="button"
@@ -1306,6 +1344,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
             {/* Step 5: NCERT texts */}
             <div
+              id="step-5"
               className="home-journey-step-card"
               onClick={() => onOpenReader()}
               role="button"
@@ -1329,6 +1368,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
             {/* Step 6: Exam readiness */}
             <div
+              id="step-6"
               className="home-journey-step-card"
               onClick={onOpenCbseGuide}
               role="button"
