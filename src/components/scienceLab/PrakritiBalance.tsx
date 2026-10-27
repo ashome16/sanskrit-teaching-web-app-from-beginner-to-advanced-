@@ -451,6 +451,16 @@ export const PrakritiBalance: React.FC<LabSegmentProps> = ({ onNextLab }) => {
 
   return (
     <div className="vl-sim" data-testid="prakriti-balance-root">
+      {/* Preschool Seasons Playground Banner */}
+      <div className="prakriti-preschool-banner" role="region" aria-label="Preschool Seasons Playground">
+        <span className="ppb-icon" aria-hidden="true">☀️</span>
+        <div>
+          <strong>ऋतु-वाटिका · Little Explorers Seasons Playground (Ages 3–7)</strong>
+          <span>
+            Change the weather! Tap ☀️ Summer Sun, 🌧️ Rainy Monsoon, ❄️ Winter Snowflakes, or 🌸 Spring Blossoms to see how nature balances heat, water, and movement.
+          </span>
+        </div>
+      </div>
       {/* Biological Continuum Track Stage 1 Callout */}
       <div className="vl-bio-continuum-banner" role="region" aria-label="Life Sciences Continuum Stage 1">
         <div className="vl-bio-continuum-title">

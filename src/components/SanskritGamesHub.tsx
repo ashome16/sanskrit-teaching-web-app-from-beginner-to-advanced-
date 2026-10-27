@@ -27,6 +27,15 @@ function shuffleArray<T>(array: T[]): T[] {
   return arr;
 }
 
+const PRESCHOOL_MATCH_CAT_IDS = new Set([
+  'fruits_veg',
+  'relationships',
+  'vehicles',
+  'cat_numbers_mnemonics',
+  'actions',
+  'household',
+]);
+
 export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   initialMode = 'match',
   initialCategory,
@@ -48,11 +57,18 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     return MATCH_CATEGORIES[0].id;
   });
 
+  const [showPreschoolOnly, setShowPreschoolOnly] = useState<boolean>(false);
+
+  const displayedCategories = useMemo(() => {
+    if (!showPreschoolOnly) return MATCH_CATEGORIES;
+    return MATCH_CATEGORIES.filter((c) => PRESCHOOL_MATCH_CAT_IDS.has(c.id));
+  }, [showPreschoolOnly]);
+
   const activeCategory: MatchCategoryMetadata = useMemo(() => {
     return (
-      MATCH_CATEGORIES.find((c) => c.id === selectedCatId) || MATCH_CATEGORIES[0]
+      MATCH_CATEGORIES.find((c) => c.id === selectedCatId) || displayedCategories[0] || MATCH_CATEGORIES[0]
     );
-  }, [selectedCatId]);
+  }, [selectedCatId, displayedCategories]);
 
   // Selected Sanskrit word (left column)
   const [selectedLeftId, setSelectedLeftId] = useState<string | null>(null);
@@ -297,9 +313,42 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
           ==================================================================== */}
       {activeGameMode === 'match' && (
         <>
-          {/* Category Selector Strip (All 14 categories requested) */}
+          {/* Category Filter Bar (All Categories vs Preschool / Toddler Favorites) */}
+          <div className="sgh-filter-bar">
+            <button
+              type="button"
+              className={`sgh-filter-chip${!showPreschoolOnly ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => setShowPreschoolOnly(false)}
+            >
+              <span>🌟 All Categories ({MATCH_CATEGORIES.length})</span>
+            </button>
+            <button
+              type="button"
+              className={`sgh-filter-chip sgh-filter-chip--preschool${showPreschoolOnly ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => {
+                setShowPreschoolOnly(true);
+                if (!PRESCHOOL_MATCH_CAT_IDS.has(selectedCatId)) {
+                  setSelectedCatId('fruits_veg');
+                }
+              }}
+            >
+              <span>🧸 Preschool &amp; Kids (Ages 3–7)</span>
+            </button>
+          </div>
+
+          {showPreschoolOnly && (
+            <div className="sgh-preschool-banner">
+              <span className="spb-icon" aria-hidden="true">🧸</span>
+              <div>
+                <strong>शिशु-युग्म-क्रीडा · Preschool Picture Match (Ages 3–7)</strong>
+                <span>Tap matching cards with emojis and hear the native Sanskrit pronunciation! 100% fun, gentle, and tactile.</span>
+              </div>
+            </div>
+          )}
+
+          {/* Category Selector Strip */}
           <div className="sgh-category-strip" role="tablist" aria-label="Vocabulary Categories">
-            {MATCH_CATEGORIES.map((cat) => (
+            {displayedCategories.map((cat) => (
               <button
                 key={cat.id}
                 type="button"

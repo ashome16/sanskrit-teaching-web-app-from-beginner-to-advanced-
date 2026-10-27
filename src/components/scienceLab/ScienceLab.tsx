@@ -748,8 +748,62 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         </div>
       </div>
 
+      {/* Preschool Playground Hero Banner */}
+      {filterLevel === 'preschool' && (
+        <div className="vl-preschool-hero-banner" role="region" aria-label="Preschool Games Playground">
+          <div className="vl-preschool-hero-header">
+            <span className="vl-preschool-bouncy-icon" aria-hidden="true">🧸</span>
+            <div className="vl-preschool-hero-text">
+              <span className="vl-preschool-kicker">शिशु-क्रीडा-वाटिका · Little Explorers Preschool Playground (Ages 3–7)</span>
+              <h2 className="vl-preschool-hero-title">
+                🌈 Touch, Listen &amp; Discover Nature Playfully!
+              </h2>
+              <p className="vl-preschool-hero-desc">
+                Designed with joyful love for tiny hands: meet cute animals and birds, play with warm sunshine &amp; falling rain, and make magical musical sand dance! Zero reading pressure, 100% gentle exploration.
+              </p>
+            </div>
+          </div>
+          <div className="vl-preschool-hero-perks">
+            <span className="vl-php-pill vl-php-pill--animals">🐾 Cute Animal Friends</span>
+            <span className="vl-php-pill vl-php-pill--nature">☀️ Sun &amp; Rain Weather</span>
+            <span className="vl-php-pill vl-php-pill--music">🪕 Singing Strings &amp; Sand</span>
+            <span className="vl-php-pill vl-php-pill--audio">🔊 Instant Sanskrit Sounds</span>
+            <span className="vl-php-pill vl-php-pill--safe">⭐ 100% Friendly, No Tests</span>
+          </div>
+        </div>
+      )}
+
       <nav className="vl-cards" aria-label="Vijñāna Lab simulations">
-        {visibleSegments.map((s) => (
+        {visibleSegments.map((s) => {
+          const isPreschool = s.level === 'preschool';
+          const preschoolTitle =
+            s.id === 'chaturyoni'
+              ? '🐾 Cute Animals & Plants Safari'
+              : s.id === 'prakriti'
+              ? '☀️ Sun, Rain & Seasons Wonderland'
+              : s.id === 'nada-brahman'
+              ? '🌈 Magic Sitar & Dancing Sand'
+              : s.title;
+
+          const preschoolDev =
+            s.id === 'chaturyoni'
+              ? 'चतुर्योनि · Animal & Plant Friends'
+              : s.id === 'prakriti'
+              ? 'प्रकृति-सन्तुलनम् · Nature & Seasons'
+              : s.id === 'nada-brahman'
+              ? 'नाद-ब्रह्म · Magic Music Sitar'
+              : s.dev;
+
+          const preschoolBlurb =
+            s.id === 'chaturyoni'
+              ? 'Meet adorable baby animals, chirping birds, swimming fish, and green sprouting seeds! Tap and guide each friend to their happy home with cheerful Sanskrit sounds.'
+              : s.id === 'prakriti'
+              ? 'Play with warm sunshine, cooling rain clouds, winter snowflakes, and spring blossoms! Help plants drink water and keep Mother Nature green and smiling.'
+              : s.id === 'nada-brahman'
+              ? 'Pluck musical strings and watch colorful sand dance into magical shapes and mandala stars! Gentle, soothing audio for curious little ears.'
+              : s.blurb;
+
+          return (
           <React.Fragment key={s.id}>
             {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'paramanu' && (
               <div className="vl-track-header">
@@ -801,7 +855,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             )}
             <a
               href={`/vignana-lab#${s.id}`}
-              className={`vl-card${s.id === active ? ' is-active' : ''}`}
+              className={`vl-card${s.id === active ? ' is-active' : ''}${isPreschool ? ' vl-card--preschool' : ''}`}
               style={{
                 '--card-tint': s.tint,
                 '--card-ink': s.ink,
@@ -817,15 +871,18 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             >
               <div className="vl-card-corner-accent" aria-hidden="true" />
               <div className="vl-card-header">
-                <span className="vl-card-icon-pill">
+                <span className={`vl-card-icon-pill${isPreschool ? ' vl-card-icon-pill--preschool' : ''}`}>
                   {s.icon}
                 </span>
                 <div className="vl-card-header-tags">
                   <div className="vl-card-tag-row">
                     <span className="vl-card-sector-tag">{s.code}</span>
                     <span className={`vl-card-level-tag vl-level--${s.level}`}>
-                      {s.levelDev} · {s.ageRange}
+                      {isPreschool ? '🧸 PRESCHOOL (Ages 3–7)' : `${s.levelDev} · ${s.ageRange}`}
                     </span>
+                    {isPreschool && (
+                      <span className="vl-preschool-tiny-pill">🍼 Toddler Friendly</span>
+                    )}
                   </div>
                   <span className="vl-card-badge-cat" style={{ color: s.ink, borderColor: `${s.glow}55` }}>
                     {s.subject}
@@ -834,32 +891,41 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               </div>
 
               <div className="vl-card-body">
-                <div className="vl-card-dev-title" lang="sa">{s.dev}</div>
-                <div className="vl-card-main-title">{s.title}</div>
-                <div className="vl-card-game-type">
-                  <span className="vl-cgt-icon">🎮</span>
-                  <span>{s.gameType}</span>
+                <div className={`vl-card-dev-title${isPreschool ? ' vl-preschool-dev-title' : ''}`} lang="sa">
+                  {isPreschool ? preschoolDev : s.dev}
+                </div>
+                <div className={`vl-card-main-title${isPreschool ? ' vl-card-main-title--preschool' : ''}`}>
+                  {isPreschool ? preschoolTitle : s.title}
+                </div>
+                <div className={`vl-card-game-type${isPreschool ? ' vl-preschool-game-type' : ''}`}>
+                  <span className="vl-cgt-icon">{isPreschool ? '🎈' : '🎮'}</span>
+                  <span>{isPreschool ? 'Joyful Discovery Toy Game' : s.gameType}</span>
                 </div>
                 <div className="vl-card-school" style={{ color: s.ink }}>
-                  <span className="vl-card-school-badge">ARCHIVE // {s.school}</span>
+                  <span className="vl-card-school-badge">
+                    {isPreschool ? `🌈 LITTLE EXPLORER LAB // ${s.school}` : `ARCHIVE // ${s.school}`}
+                  </span>
                 </div>
-                <p className="vl-card-blurb">{s.blurb}</p>
+                <p className={`vl-card-blurb${isPreschool ? ' vl-card-blurb--preschool' : ''}`}>
+                  {isPreschool ? preschoolBlurb : s.blurb}
+                </p>
               </div>
 
               <div className="vl-card-footer">
                 {s.id === active ? (
-                  <span className="vl-card-status is-active" style={{ background: s.glow, color: '#090e17' }}>
-                    <span className="vl-card-pulse-dot" /> ENGAGED ON BENCH ↓
+                  <span className={`vl-card-status is-active${isPreschool ? ' vl-preschool-status-active' : ''}`} style={!isPreschool ? { background: s.glow, color: '#090e17' } : undefined}>
+                    <span className="vl-card-pulse-dot" /> {isPreschool ? '🧸 PLAYING PRESCHOOL GAME ↓' : 'ENGAGED ON BENCH ↓'}
                   </span>
                 ) : (
-                  <span className="vl-card-status" style={{ color: s.ink, borderColor: `${s.glow}66` }}>
-                    PLAY SCIENCE GAME ▶
+                  <span className={`vl-card-status${isPreschool ? ' vl-preschool-status-btn' : ''}`} style={!isPreschool ? { color: s.ink, borderColor: `${s.glow}66` } : undefined}>
+                    {isPreschool ? '🧸 TAP TO PLAY ▶' : 'PLAY SCIENCE GAME ▶'}
                   </span>
                 )}
               </div>
             </a>
           </React.Fragment>
-        ))}
+          );
+        })}
       </nav>
 
       {visibleSegments.length === 0 && (

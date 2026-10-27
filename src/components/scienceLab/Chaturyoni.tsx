@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm, type LabSegmentProps } from './common';
 import { isSmallScreen, prefersReducedMotion } from './motion';
+import { playPronunciation } from '../../utils/pronunciation';
 
 type Mode = 'yoni' | 'sthiti' | 'plants';
 
@@ -312,6 +313,26 @@ const Chaturyoni: React.FC<LabSegmentProps> = ({ onNextLab }) => {
         each specimen to the text’s group, then check what modern biology says.
       </CoreIdea>
 
+      {/* Preschool Animal Safari Banner */}
+      <div className="cy-preschool-banner" role="region" aria-label="Preschool Animal Safari">
+        <div className="cy-pb-main">
+          <span className="cy-pb-icon" aria-hidden="true">🧸</span>
+          <div>
+            <div className="cy-pb-title">
+              <span>शिशु-पशु-वाटिका · Little Explorers Animal Safari</span>
+              <span className="cy-pb-tag">Ages 3–7 · Touch &amp; Learn</span>
+            </div>
+            <p className="cy-pb-sub">
+              Tap each friendly animal or plant card below to hear its Sanskrit name! Find its happy home on the board:
+              <strong> 🐾 Animals</strong>, <strong>🥚 Birds &amp; Fish</strong>, <strong>💧 Little Bugs</strong>, or <strong>🌱 Growing Plants</strong>.
+            </p>
+          </div>
+        </div>
+        <div className="cy-pb-animal-parade" aria-hidden="true">
+          <span>🐘</span><span>🦁</span><span>🐄</span><span>🦌</span><span>🦢</span><span>🦚</span><span>🐟</span><span>🐍</span><span>🦋</span><span>🐝</span><span>🌸</span><span>🌳</span>
+        </div>
+      </div>
+
       <div className={`cy-lab${paused ? ' is-paused' : ''}`} data-testid="cy-lab" data-mode={mode} style={{ '--cy-zoom': zoom / 100 } as React.CSSProperties}>
         <div className="cy-main">
           <div className="cy-window">
@@ -559,7 +580,10 @@ const Chaturyoni: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                   onDragEnd={() => setDragOver(null)}
                   className={`cy-chip${selected === s.id ? ' is-sel' : ''}`}
                   aria-pressed={selected === s.id}
-                  onClick={() => setSelected(s.id)}
+                  onClick={() => {
+                    setSelected(s.id);
+                    playPronunciation(s.dev);
+                  }}
                   data-testid={`cy-spec-${s.id}`}
                 >
                   <span className="cy-chip-icon" aria-hidden="true">{s.icon}</span>

@@ -105,6 +105,86 @@
    GAME 1: MATCH-THE-FOLLOWING (युग्म-मेलनम्)
    ========================================================================== */
 
+/* Filter Bar for Categories */
+.sgh-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sgh-filter-chip {
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid #fed7aa;
+  background: #ffffff;
+  color: #78350f;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.sgh-filter-chip:hover {
+  background: #fff7ed;
+  border-color: #f59e0b;
+  transform: translateY(-1px);
+}
+
+.sgh-filter-chip--active {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+  color: #ffffff !important;
+  border-color: #ea580c !important;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+}
+
+.sgh-filter-chip--preschool.sgh-filter-chip--active {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-color: #059669 !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.sgh-preschool-banner {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 40%, #ecfdf5 100%);
+  border: 2px dashed #10b981;
+  border-radius: 18px;
+  padding: 0.9rem 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.12);
+}
+
+.sgh-preschool-banner .spb-icon {
+  font-size: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border: 2px solid #34d399;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.sgh-preschool-banner strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #065f46;
+  margin-bottom: 0.15rem;
+}
+
+.sgh-preschool-banner span {
+  font-size: 0.85rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
 /* Category Selector Strip */
 .sgh-category-strip {
   display: flex;
