@@ -577,6 +577,26 @@ button.dashboard-nav-group-label:focus-visible,
     font-size: 0.69rem;
   }
 
+  .dashboard-nav-row--secondary {
+    gap: 0.22rem;
+  }
+
+  .dashboard-nav-row--secondary button.dashboard-nav-item,
+  .dashboard-nav-row--secondary button.dashboard-nav-stacked {
+    padding: 0.22rem 0.44rem;
+    font-size: 0.74rem;
+  }
+
+  .dashboard-nav-row--secondary .dashboard-nav-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dashboard-nav-row--secondary .dashboard-nav-secondary {
+    font-size: 0.52rem;
+    letter-spacing: 0.01em;
+  }
+
   .dashboard-header .dashboard-search-trigger-btn {
     margin-left: 0;
   }
@@ -597,6 +617,27 @@ button.dashboard-nav-group-label:focus-visible,
     font-size: 0.8rem;
     line-height: 1.1;
     text-align: left;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1150px) {
+  .dashboard-nav-row--secondary {
+    gap: 0.16rem;
+  }
+
+  .dashboard-nav-row--secondary button.dashboard-nav-item,
+  .dashboard-nav-row--secondary button.dashboard-nav-stacked {
+    padding: 0.18rem 0.34rem;
+    font-size: 0.69rem;
+  }
+
+  .dashboard-nav-row--secondary .dashboard-nav-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dashboard-nav-row--secondary .dashboard-nav-secondary {
+    font-size: 0.48rem;
   }
 }
 

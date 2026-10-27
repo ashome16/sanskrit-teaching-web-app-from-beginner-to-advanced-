@@ -37,6 +37,12 @@ import SwarWorkbooksHub from './SwarWorkbooksHub';
 import '../styles/textbook-reader.css';
 import '../styles/varnamala-studio.css';
 
+export const VALID_VARNAMALA_SUBMODES = ['sound', 'writing', 'quizzes', 'workbooks', 'worksheets'] as const;
+export type VarnamalaSubMode = (typeof VALID_VARNAMALA_SUBMODES)[number];
+
+export const isValidVarnamalaSubMode = (mode: unknown): mode is VarnamalaSubMode =>
+  typeof mode === 'string' && (VALID_VARNAMALA_SUBMODES as readonly string[]).includes(mode);
+
 interface TextbookReaderProps {
   lessons: Lesson[];
   activeLessonId: string;
@@ -58,7 +64,7 @@ interface TextbookReaderProps {
   onOpenCbseGuide?: () => void;
   /** Opens the बारहखड़ी lesson (deep link /barakhadi); access rules applied by the parent. */
   onOpenBarakhadi?: () => void;
-  initialVarnamalaSubMode?: 'sound' | 'writing' | 'quizzes' | 'workbooks' | 'worksheets';
+  initialVarnamalaSubMode?: VarnamalaSubMode;
   onOpenCertificate?: () => void;
   onOpenBodhi?: () => void;
   onOpenGames?: () => void;
@@ -597,15 +603,19 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   /** Lesson Play all: display index of the word being spoken (highlight follows the voice). */
   const [playingTokenIdx, setPlayingTokenIdx] = useState<number | null>(null);
   const [playingGroupIdx, setPlayingGroupIdx] = useState<number | null>(null);
-  const [varnamalaSubMode, setVarnamalaSubMode] = useState<
-    'sound' | 'writing' | 'quizzes' | 'workbooks' | 'worksheets'
-  >(initialVarnamalaSubMode || 'sound');
+  const [varnamalaSubMode, setVarnamalaSubMode] = useState<VarnamalaSubMode>(() =>
+    isValidVarnamalaSubMode(initialVarnamalaSubMode) ? initialVarnamalaSubMode : 'sound'
+  );
 
   useEffect(() => {
-    if (initialVarnamalaSubMode) {
+    if (initialVarnamalaSubMode && isValidVarnamalaSubMode(initialVarnamalaSubMode)) {
       setVarnamalaSubMode(initialVarnamalaSubMode);
     }
   }, [initialVarnamalaSubMode]);
+
+  const effectiveVarnamalaSubMode: VarnamalaSubMode = isValidVarnamalaSubMode(varnamalaSubMode)
+    ? varnamalaSubMode
+    : 'sound';
   const [varnamalaCategoryFilter, setVarnamalaCategoryFilter] = useState<VarnamalaCategoryFilter>('all');
   const [numbersSubMode, setNumbersSubMode] = useState<'interactive' | 'tiles'>('interactive');
   const [padSelectedLetter, setPadSelectedLetter] = useState<string>('अ');
@@ -781,7 +791,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   // Leaving Sound & Pictures (writing / worksheets) cancels playback.
   useEffect(() => {
     if (!isVarnamala) return;
-    if (varnamalaSubMode === 'sound') return;
+    if (effectiveVarnamalaSubMode === 'sound') return;
     stopPlayAllRef.current?.();
     stopPlayAllRef.current = null;
     stopPronunciation();
@@ -791,7 +801,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     setPlayingLetter(null);
     setPlayingGroupIdx(null);
     clearTapChip();
-  }, [isVarnamala, varnamalaSubMode]);
+  }, [isVarnamala, effectiveVarnamalaSubMode]);
 
   /**
    * Every word of the paragraph in reading order (इति, च, न … included), each
@@ -1027,7 +1037,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   };
 
   // Mobile / narrow "now playing" chip: Play-all letter wins over a single tap.
-  const nowPlayingLetter = isVarnamala && varnamalaSubMode === 'sound'
+  const nowPlayingLetter = isVarnamala && effectiveVarnamalaSubMode === 'sound'
     ? (isPlayingAll && playingLetter ? playingLetter : tapPlayingLetter)
     : null;
   const nowPlayingMnemonic = nowPlayingLetter ? getLetterMnemonic(nowPlayingLetter) : undefined;
@@ -1625,7 +1635,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             <nav className="varnamala-studio-nav" aria-label="Alphabet &amp; Syllables Study Modes">
               <button
                 type="button"
-                className={`varnamala-mode-btn${varnamalaSubMode === 'sound' ? ' varnamala-mode-btn--active' : ''}`}
+                className={`varnamala-mode-btn${effectiveVarnamalaSubMode === 'sound' ? ' varnamala-mode-btn--active' : ''}`}
                 onClick={() => setVarnamalaSubMode('sound')}
               >
                 <span className="varnamala-mode-icon">🔊</span>
@@ -1633,7 +1643,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               </button>
               <button
                 type="button"
-                className={`varnamala-mode-btn${varnamalaSubMode === 'writing' ? ' varnamala-mode-btn--active' : ''}`}
+                className={`varnamala-mode-btn${effectiveVarnamalaSubMode === 'writing' ? ' varnamala-mode-btn--active' : ''}`}
                 onClick={() => setVarnamalaSubMode('writing')}
               >
                 <span className="varnamala-mode-icon">✍️</span>
@@ -1641,7 +1651,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               </button>
               <button
                 type="button"
-                className={`varnamala-mode-btn${varnamalaSubMode === 'quizzes' ? ' varnamala-mode-btn--active' : ''}`}
+                className={`varnamala-mode-btn${effectiveVarnamalaSubMode === 'quizzes' ? ' varnamala-mode-btn--active' : ''}`}
                 onClick={() => setVarnamalaSubMode('quizzes')}
               >
                 <span className="varnamala-mode-icon">🎯</span>
@@ -1649,7 +1659,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               </button>
               <button
                 type="button"
-                className={`varnamala-mode-btn${varnamalaSubMode === 'workbooks' ? ' varnamala-mode-btn--active' : ''}`}
+                className={`varnamala-mode-btn${effectiveVarnamalaSubMode === 'workbooks' ? ' varnamala-mode-btn--active' : ''}`}
                 onClick={() => setVarnamalaSubMode('workbooks')}
               >
                 <span className="varnamala-mode-icon">📚</span>
@@ -1657,7 +1667,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               </button>
               <button
                 type="button"
-                className={`varnamala-mode-btn${varnamalaSubMode === 'worksheets' ? ' varnamala-mode-btn--active' : ''}`}
+                className={`varnamala-mode-btn${effectiveVarnamalaSubMode === 'worksheets' ? ' varnamala-mode-btn--active' : ''}`}
                 onClick={() => setVarnamalaSubMode('worksheets')}
               >
                 <span className="varnamala-mode-icon">📑</span>
@@ -1741,7 +1751,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </ErrorBoundary>
           )}
 
-          {isVarnamala && varnamalaSubMode === 'writing' && (
+          {isVarnamala && effectiveVarnamalaSubMode === 'writing' && (
             <ErrorBoundary
               fallbackTitle="✍️ Writing Studio Ready"
               fallbackSubtitle="An unexpected issue occurred while rendering the handwriting slate. Tap below to reload the studio."
@@ -1758,7 +1768,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </ErrorBoundary>
           )}
 
-          {isVarnamala && varnamalaSubMode === 'worksheets' && (
+          {isVarnamala && effectiveVarnamalaSubMode === 'worksheets' && (
             <div
               className="v-writing-studio"
               style={{ padding: '1.75rem', textAlign: 'center' }}
@@ -1914,7 +1924,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </div>
           )}
 
-          {isVarnamala && varnamalaSubMode === 'quizzes' && (
+          {isVarnamala && effectiveVarnamalaSubMode === 'quizzes' && (
             <div className="swar-quizzes-studio-wrap">
               <div className="swar-quizzes-header-banner">
                 <div className="swar-quizzes-header-info">
@@ -1978,7 +1988,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </div>
           )}
 
-          {isVarnamala && varnamalaSubMode === 'workbooks' && (
+          {isVarnamala && effectiveVarnamalaSubMode === 'workbooks' && (
             <ErrorBoundary
               fallbackTitle="📚 Swar &amp; Workbooks Hub Ready"
               fallbackSubtitle="An unexpected issue occurred while rendering the workbooks hub. Tap below to reload."
@@ -1997,7 +2007,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </ErrorBoundary>
           )}
 
-          {(!isVarnamala || varnamalaSubMode === 'sound') && (!isNumbers || numbersSubMode === 'tiles') && (
+          {(!isVarnamala || effectiveVarnamalaSubMode === 'sound' || !['writing', 'worksheets', 'quizzes', 'workbooks'].includes(effectiveVarnamalaSubMode)) && (!isNumbers || numbersSubMode === 'tiles') && (
             <>
               {isVarnamala && (
                 <div className="varnamala-hub-section" role="region" aria-label="Alphabet Learning Hub &amp; Tools">

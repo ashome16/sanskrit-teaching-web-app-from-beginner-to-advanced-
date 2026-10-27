@@ -16,6 +16,7 @@ const PhilosophyPage = lazy(() => import('./PhilosophyPage'));
 const CbseSanskritGuidePage = lazy(() => import('./CbseSanskritGuidePage'));
 const FreeResourcesPage = lazy(() => import('./FreeResourcesPage'));
 const TextbookReader = lazy(() => import('./TextbookReader'));
+import { isValidVarnamalaSubMode, type VarnamalaSubMode } from './TextbookReader';
 const Board = lazy(() => import('./Board'));
 const Grammar = lazy(() => import('./Grammar'));
 const VedicMaths = lazy(() => import('./VedicMaths'));
@@ -336,9 +337,7 @@ const Dashboard: React.FC = () => {
       return null;
     }
   });
-  const [varnamalaInitialSubMode, setVarnamalaInitialSubMode] = useState<
-    'sound' | 'writing' | 'quizzes' | 'workbooks' | 'worksheets'
-  >(() => {
+  const [varnamalaInitialSubMode, setVarnamalaInitialSubMode] = useState<VarnamalaSubMode>(() => {
     try {
       const clean = window.location.pathname.replace(/\/+$/, '');
       if (clean === '/swar-review' || clean === '/swar-quizzes' || window.location.hash === '#swar-review') return 'quizzes';
@@ -487,10 +486,19 @@ const Dashboard: React.FC = () => {
   // On mobile/tablet, keep the active navigation pill horizontally visible in the scroller
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    if (window.innerWidth > 900) return;
     const timer = window.setTimeout(() => {
+      const scroller = document.querySelector('.dashboard-nav') as HTMLElement | null;
       const activeBtn = document.querySelector('.dashboard-nav button.active') as HTMLElement | null;
-      if (activeBtn) {
-        activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      if (scroller && activeBtn) {
+        const scrollerRect = scroller.getBoundingClientRect();
+        const btnRect = activeBtn.getBoundingClientRect();
+        if (btnRect.left < scrollerRect.left || btnRect.right > scrollerRect.right) {
+          scroller.scrollTo({
+            left: activeBtn.offsetLeft - scroller.offsetWidth / 2 + activeBtn.offsetWidth / 2,
+            behavior: 'smooth',
+          });
+        }
       }
     }, 120);
     return () => window.clearTimeout(timer);
@@ -510,6 +518,7 @@ const Dashboard: React.FC = () => {
     view: DashboardView,
     lessonId?: string
   ) => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setQuizAnchor(null);
     if (view !== 'course') setCourseAddendumTarget(null);
     if (view === 'faq') {
@@ -982,18 +991,20 @@ const Dashboard: React.FC = () => {
   };
 
   const openVarnamala = (
-    subMode?: 'sound' | 'writing' | 'quizzes' | 'workbooks' | 'worksheets'
+    subModeOrEvent?: unknown
   ) => {
     if (!checkAccess('reader', 'varnamala')) return;
+    const subMode: VarnamalaSubMode = isValidVarnamalaSubMode(subModeOrEvent) ? subModeOrEvent : 'sound';
     const idx = lessons.findIndex((item) => item.id === 'varnamala');
     if (idx >= 0) {
       setLessonIndex(idx);
       setSentenceIndex(0);
-      setVarnamalaInitialSubMode(subMode || 'sound');
+      setVarnamalaInitialSubMode(subMode);
       setIsAnalyzerCollapsed(true);
       setWordSelection(null);
     }
     setActiveView('reader');
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
   const openDeepakam = (lessonId?: string) => {
@@ -1015,6 +1026,7 @@ const Dashboard: React.FC = () => {
       setSentenceIndex(0);
       // wordSelection: auto-select effect fills from the new sentence
       setActiveView('reader');
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
       return;
     }
     const current = lessons[lessonIndex];
@@ -1028,6 +1040,7 @@ const Dashboard: React.FC = () => {
       }
     }
     setActiveView('reader');
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
   return (
@@ -1120,7 +1133,7 @@ const Dashboard: React.FC = () => {
             <button
               type="button"
               className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'reader' && (lesson?.id === 'varnamala' || lesson?.id === 'barakhadi') ? ' active' : ''}`}
-              onClick={() => openVarnamala()}
+              onClick={() => openVarnamala('sound')}
               title="Open Alphabet & Syllables (वर्णमाला)"
             >
               <img src="/nav/nav-varnamala.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
@@ -1320,7 +1333,7 @@ const Dashboard: React.FC = () => {
         <HomePage
           onOpenReader={(lessonId) => openDeepakam(lessonId)}
           onOpenBoard={() => navigateToView('board')}
-          onOpenVarnamala={openVarnamala}
+          onOpenVarnamala={() => openVarnamala('sound')}
           onOpenGrammar={handleOpenGrammar}
           onOpenDhatupatha={() => navigateToView('dhatupatha')}
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
@@ -1347,7 +1360,7 @@ const Dashboard: React.FC = () => {
             initialEssay={philosophyEssay}
             onOpenRegister={() => openAuthModal('register')}
             onOpenVedicMaths={() => navigateToView('vedic-maths')}
-            onOpenVarnamala={openVarnamala}
+            onOpenVarnamala={() => openVarnamala('sound')}
             onOpenReader={() => navigateToView('reader')}
             onGoHome={() => navigateToView('home')}
             onOpenGrammarArticle={(articleId) => handleOpenGrammar('article', articleId)}
@@ -1399,7 +1412,7 @@ const Dashboard: React.FC = () => {
           <Board
             onNavigateToHome={() => setActiveView('home')}
             onNavigateToReader={() => openDeepakam()}
-            onNavigateToVarnamala={openVarnamala}
+            onNavigateToVarnamala={() => openVarnamala('sound')}
             onNavigateToGrammar={handleOpenGrammar}
           />
         )}
@@ -1522,7 +1535,7 @@ const Dashboard: React.FC = () => {
             initialAddendumId={courseAddendumTarget?.id}
             onGoHome={() => navigateToView('home')}
             onOpenReader={(chapterId) => openDeepakam(chapterId)}
-            onOpenVarnamala={openVarnamala}
+            onOpenVarnamala={() => openVarnamala('sound')}
             onOpenGrammar={handleOpenGrammar}
             onOpenDhatupatha={() => navigateToView('dhatupatha')}
             onOpenVedicMaths={() => navigateToView('vedic-maths')}
@@ -1567,7 +1580,7 @@ const Dashboard: React.FC = () => {
         <Footer
           onOpenReader={(lessonId) => openDeepakam(lessonId)}
           onOpenBoard={() => navigateToView('board')}
-          onOpenVarnamala={openVarnamala}
+          onOpenVarnamala={() => openVarnamala('sound')}
           onOpenGrammar={handleOpenGrammar}
           onOpenDhatupatha={() => navigateToView('dhatupatha')}
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
@@ -1622,7 +1635,7 @@ const Dashboard: React.FC = () => {
             isOpen={isOnlineClassesOpen}
             onClose={() => setIsOnlineClassesOpen(false)}
             onNavigateView={navigateToView}
-            onOpenVarnamala={openVarnamala}
+            onOpenVarnamala={() => openVarnamala('sound')}
             onOpenReader={(lessonId) => openDeepakam(lessonId)}
             onOpenGrammar={handleOpenGrammar}
             onOpenVedicMaths={() => navigateToView('vedic-maths')}

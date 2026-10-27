@@ -2162,7 +2162,7 @@ const Board: React.FC<BoardProps> = ({
           </button>
         )}
         {onNavigateToVarnamala && (
-          <button type="button" className="board-shortcut-btn" onClick={onNavigateToVarnamala}>
+          <button type="button" className="board-shortcut-btn" onClick={() => onNavigateToVarnamala?.()}>
             🔤 Alphabet &amp; Syllables
           </button>
         )}

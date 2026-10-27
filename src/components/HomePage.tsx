@@ -1250,7 +1250,7 @@ const HomePage: React.FC<HomePageProps> = ({
             <div
               id="step-1"
               className="home-journey-step-card"
-              onClick={onOpenVarnamala}
+              onClick={() => onOpenVarnamala?.()}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -1758,7 +1758,7 @@ const HomePage: React.FC<HomePageProps> = ({
             <button
               type="button"
               className="home-pathway-btn"
-              onClick={onOpenVarnamala}
+              onClick={() => onOpenVarnamala?.()}
             >
               वर्णमाला-अभ्यासः · Start with Alphabet ▶
             </button>
@@ -2042,7 +2042,7 @@ const HomePage: React.FC<HomePageProps> = ({
             <button
               type="button"
               className="hoc-card-btn"
-              onClick={onOpenOnlineClasses || onOpenVarnamala}
+              onClick={() => (onOpenOnlineClasses ? onOpenOnlineClasses() : onOpenVarnamala?.())}
             >
               Start Spoken Class ▶
             </button>
@@ -2258,7 +2258,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span style={{ fontSize: '0.78rem', color: '#3D1B04', opacity: 0.85 }}>Curated by Conscious Cosmos</span>
                 <button
                   type="button"
-                  onClick={onOpenVarnamala}
+                  onClick={() => onOpenVarnamala?.()}
                   style={{
                     background: 'none',
                     border: 'none',
@@ -2547,7 +2547,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 type="button"
                 className="home-feature-btn"
                 style={{ flex: 1, minWidth: '150px' }}
-                onClick={onOpenVarnamala}
+                onClick={() => onOpenVarnamala?.()}
               >
                 Explore Letters ▶
               </button>
