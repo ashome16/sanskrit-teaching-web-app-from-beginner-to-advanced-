@@ -1,4 +1,4 @@
-सरल-वाक्यानि एवं धातवः : 200 PRACTICAL SANSKRIT SENTENCES & ROOT WORDS STUDIO
+सरल-वाक्यानि एवं धातवः : 300 PRACTICAL SANSKRIT SENTENCES & ROOT WORDS STUDIO
 
 === प्रथमो भागः : धातवः (14 Core Roots & Verb Formation) ===
 पठ् (to read) — बालकः पुस्तकं पठति। (The boy reads the book.)
@@ -16,7 +16,7 @@
 कृ (to do) — सा कार्यं करोति। (She does the work.)
 भू (to be/become) — ज्ञानं श्रेष्ठं भवति। (Knowledge becomes highest.)
 
-=== द्वितीयो भागः : 200 व्यावहारिक-वाक्यानि (200 Everyday Sanskrit Sentences) ===
+=== द्वितीयो भागः : 300 व्यावहारिक-वाक्यानि (300 Everyday Sanskrit Sentences) ===
 
 --- १. शिष्टाचारः (Greetings & Etiquette) ---
 1. हरिः ॐ। (Hariḥ om.) — Hello. / Greetings.
@@ -246,11 +246,11 @@
 189. बालकः रोदनं कृतवान्। (Bālakaḥ rodanaṁ kṛtavān.) — The boy cried.
 190. यूयं कथं विस्मृतवन्तः? (Yūyaṁ kathaṁ vismṛtavantaḥ?) — How did you all forget?
 
---- २०. लघु सम्भाषणम् (Spoken Sanskrit Idioms) ---
+--- २०. लघु सम्भाषणम् (Daily Conversation Idioms) ---
 191. चिन्ता मा कुरु। (Cintā mā kuru.) — Do not worry.
 192. सर्वं कुशलं वा? (Sarvaṁ kuśalaṁ vā?) — Is everything fine?
 193. अहं शीघ्रं आगच्छामि। (Ahaṁ śīghraṁ āgacchāmi.) — I am coming quickly.
-194. एषः मम अपराधः नास्ति। (Eṣaḥ mama aparādhaḥ nāsti.) — This is not my fault.
+194. एषः मम अपराधः नास्ति। (Eṣaḥ mama aparādhaḥ नास्ति.) — This is not my fault.
 195. भवतः साहाय्यं आवश्यकम्। (Bhavataḥ sāhāyyaṁ āvaśyakam.) — Your help is needed.
 196. भवतु, नाम। (Bhavatu, nāma.) — Let it be so / Alright.
 197. अहं तं न जानामि। (Ahaṁ taṁ na jānāmi.) — I do not know him.
@@ -258,5 +258,125 @@
 199. वयम् एकत्रीभवामः। (Vayaṁ ekatrībhavāmaḥ.) — Let us gather together.
 200. पुनर्मिलामः। (Punarmilāmaḥ.) — See you again / Goodbye.
 
+--- २१. इन्द्रियानुभूतिः (Sensory Perceptions) ---
+201. अहं सुगन्धं जिघ्रामि। (Ahaṁ sugandhaṁ jighrāmi.) — I smell the fragrance.
+202. त्वं किं पश्यसि? (Tvaṁ kiṁ paśyasi?) — What do you see?
+203. सः उच्चैः शृणोति। (Saḥ uccaiḥ śṛṇoti.) — He hears a loud sound.
+204. बालकः कोमलं स्पृशति। (Bālakaḥ komalaṁ spṛśati.) — The boy touches something soft.
+205. भोजनं स्वादिष्टं भासते। (Bhojanaṁ svādiṣṭaṁ bhāsate.) — The food tastes delicious.
+206. सा दूरदर्शनं पश्यन्ती अस्ति। (Sā dūradarśanaṁ paśyantī asti.) — She is watching television.
+207. किं त्वं कोलाहलं श्रुतवान्? (Kiṁ tvaṁ kolāhalaṁ śrutavān?) — Did you hear the noise?
+208. अहं तस्य कण्ठस्वरं चिनोमि। (Ahaṁ tasya kaṇṭhasvaraṁ cinomi.) — I recognize his voice.
+209. अत्र अन्धकारः वर्तते। (Atra andhakāraḥ vartate.) — It is dark here.
+210. दीपं प्रज्वालयतु कृपया। (Dīpaṁ prajvālayatu kṛpayā.) — Please turn on the light.
+
+--- २२. मानसिकभावाः (Thoughts & Feelings) ---
+211. मम मनसि एकः विचारः अस्ति। (Mama manasi ekaḥ vicāraḥ asti.) — I have an idea in my mind.
+212. सा अतीव प्रसन्ना दृश्यते। (Sā atīva prasannā dṛśyate.) — She looks very happy.
+213. किमर्थं त्वं भीतः असि? (Kimarthaṁ tvaṁ bhītaḥ asi?) — Why are you afraid?
+214. सः क्रोधेन वदति। (Saḥ krodhena vadati.) — He speaks with anger.
+215. अहं भ्रान्तः अस्मि। (Ahaṁ bhrāntaḥ asmi.) — I am confused (male).
+216. धैर्यं धरतु। (Dhairyaṁ dharatu.) — Have courage / Be patient.
+217. मम उपरि विश्वासं कुरु। (Mama upari viśvāsaṁ kuru.) — Trust me.
+218. सा दुःखं अनुभवति। (Sā duḥkhaṁ anubhavati.) — She is feeling sad.
+219. अहं तव भावनां जानामि। (Ahaṁ tava bhāvanāṁ jānāmi.) — I know your feelings.
+220. निराशः मा भव। (Nirāśaḥ mā bhava.) — Do not be disappointed.
+
+--- २३. यात्रा सञ्चारः च (Travel & Commuting) ---
+221. यानं शीघ्रं चलति। (Yānaṁ śīghraṁ calati.) — The vehicle moves fast.
+222. अहं लोकयानेन गच्छामि। (Ahaṁ lokayānena gacchāmi.) — I am going by bus.
+223. धूमशकटं विरामस्थाने अस्ति। (Dhūmaśakaṭaṁ virāmasthāne asti.) — The train is at the station.
+224. त्वं कदा प्रस्थास्यसि? (Tvaṁ kadā prasthāsyasi?) — When will you depart?
+225. वयं द्विचक्रिकया भ्रमामः। (Vayaṁ dvicakrikayā bhramāmaḥ.) — We ride on a bicycle/scooter.
+226. मार्गः अवरुद्धः अस्ति। (Mārgaḥ avaruddhaḥ asti.) — The road is blocked.
+227. अहं विमानतलं गच्छन् अस्मि। (Ahaṁ vimānatalaṁ gacchan asmi.) — I am going to the airport.
+228. भवान् पत्रं प्राप्तवान् किम्? (Bhavān patraṁ prāptavān kim?) — Did you get the ticket?
+229. मम स्यूतः गुरुः अस्ति। (Mama syūtaḥ guruḥ asti.) — My bag is heavy.
+230. यात्रा सुखमयी भवतु। (Yātrā sukhamayī bhavatu.) — Have a safe/happy journey.
+
+--- २४. धनं वाणिज्यं कार्यम् (Money, Shopping & Work) ---
+231. अस्य वस्तुनः मूल्यं कति? (Asya vastunaḥ mūlyaṁ kati?) — How much does this item cost?
+232. मम हस्ते धनं नास्ति। (Mama haste dhanaṁ nāsti.) — I don't have money in my hand.
+233. सा आपणतः शाकं क्रीणाति। (Sā āpaṇataḥ śākaṁ krīṇāti.) — She buys vegetables from the shop.
+234. अहं कार्यालये कार्यं करोमि। (Ahaṁ kāryālaye kāryaṁ karomi.) — I work in an office.
+235. सः नूतनं धनस्यूतं क्रीतवान्। (Saḥ nūtanaṁ dhanasyūtaṁ krītavān.) — He bought a new wallet.
+236. अद्य मम अवकाशः अस्ति। (Adya mama avakāśaḥ asti.) — Today is my day off / holiday.
+237. सः कुशलः तक्षकः अस्ति। (Saḥ kuśalaḥ takṣakaḥ asti.) — He is a skilled carpenter.
+238. किं तव कार्यं समाप्तम्? (Kiṁ tava kāryaṁ samāptam?) — Is your work finished?
+239. सा धनं सञ्चिनोति। (Sā dhanaṁ sañcinoti.) — She saves money.
+240. उद्यमेन हि सिध्यन्ति कार्याणि। (Udyamena hi sidhyanti kāryāṇi.) — Works are accomplished only through hard work.
+
+--- २५. दिशानिर्देशः (Giving Directions) ---
+241. वामतः चलतु। (Vāmataḥ calatu.) — Move / turn to the left.
+242. दक्षिणतः पश्यतु। (Dakṣiṇataḥ paśyatu.) — Look to the right.
+243. सरलमार्गेण गच्छ। (Saraḷamārgeṇa gaccha.) — Go straight ahead.
+244. मम गृहं मन्दिरस्य पार्श्वे अस्ति। (Mama gṛhaṁ mandirasya pārśve asti.) — My house is next to the temple.
+245. ततः अग्रे गच्छतु। (Tataḥ agre gacchatu.) — Go further ahead from there.
+246. एषः संकीर्णः मार्गः अस्ति। (Eṣaḥ saṅkīrṇaḥ mārgaḥ asti.) — This is a narrow lane.
+247. उत्पीठिकायाः अधः मार्जारः अस्ति। (Utpīṭhikāyāḥ adhaḥ mārjāraḥ asti.) — There is a cat under the table.
+248. गृहस्य अन्तः आगच्छ। (Gṛhasya antaḥ āgaccha.) — Come inside the house.
+249. बहिः मा गच्छ, आतपः अस्ति। (Bahiḥ mā gaccha, ātapaḥ asti.) — Do not go outside, it is sunny.
+250. नद्याः परतः पर्वतः वर्तते। (Nadyāḥ parataḥ parvataḥ vartate.) — There is a mountain across the river.
+
+--- २६. यत्-तत् प्रयोगाः (Relative Clauses (यत्-तत्)) ---
+251. यः पठति, सः जानाति। (Yaḥ paṭhati, saḥ jānati.) — He who studies, knows.
+252. या गायति, सा मम भगिनी। (Yā gāyati, sā mama bhaginī.) — The girl who sings is my sister.
+253. यत् सत्यं, तत् कटु भवति। (Yat satyaṁ, tat kaṭu bhavati.) — What is true is often bitter.
+254. यदा सूर्यः उदेति, तदा कमलं विकसति। (Yadā sūryaḥ udeti, tadā kamalam vikasati.) — When the sun rises, then the lotus blooms.
+255. यत्र धूमः, तत्र अग्निः। (Yatra dhūmaḥ, tatra agniḥ.) — Where there is smoke, there is fire.
+256. यावत् शक्नोति, तावत् करोति। (Yāvat śaknoti, tāvat karoti.) — He does as much as he can.
+257. यथा वदसि, तथा कुरु। (Yathā vadasi, tathā kuru.) — Do as you say.
+258. यत् आवश्यकं, तत् स्वीकुरु। (Yat āvaśyakaṁ, tat svīkuru.) — Take whatever is necessary.
+259. यदा त्वं इच्छसि, तदा आगच्छ। (Yadā tvaṁ icchasi, tadā āgaccha.) — Come whenever you want.
+260. यत्र विद्या, तत्र आदरः। (Yatra vidyā, tatra ādaraḥ.) — Where there is knowledge, there is respect.
+
+--- २७. प्रौढ शिष्टाचारः (Advanced Etiquette) ---
+261. मम अपराधं क्षमस्व। (Mama aparādhaṁ kṣamasva.) — Forgive my mistake.
+262. भवतः आज्ञा शिरोधार्या। (Bhavataḥ ājñā śirodhāryā.) — Your command is accepted respectfully.
+263. किञ्चित् जलेन सिञ्चतु। (Kiñcit jalena siñcatu.) — Sprinkle a little water.
+264. अहं भवता सह सहमतः अस्मि। (Ahaṁ bhavatā saha sahmataḥ asmi.) — I agree with you.
+265. कृपया मार्गं ददातु। (Kṛpayā mārgaṁ dadātu.) — Please give way.
+266. भवान् अत्र उपविशतु, अहं आगच्छामि। (Bhavān atra upaviśatu, ahaṁ āgacchāmi.) — You sit here, I will be right back.
+267. कष्टाय क्षम्यताम्। (Kaṣṭāya kṣamyatām.) — Sorry for the trouble.
+268. अत्र भवतः स्वागतम् अस्ति। (Atra bhavataḥ svāgataṁ asti.) — You are welcome here.
+269. भवतः स्वास्थ्यं कथम् अस्ति? (Bhavataḥ svāsthyaṁ katham asti?) — How is your health?
+270. ईश्वरः त्वां रक्षतु। (Īśvaraḥ tvāṁ rakṣatu.) — May God protect you.
+
+--- २८. विधि-लिङ्-प्रयोगाः (Permissions & Obligations) ---
+271. अहं गृहं गच्छेयं किम्? (Ahaṁ gṛhaṁ gaccheyam kim?) — May I go home?
+272. त्वं प्रतिदिनं पठेः। (Tvaṁ pratidinaṁ paṭheḥ.) — You should study every day.
+273. सर्वः सत्यं वदेत्। (Sarvaḥ satyaṁ vadet.) — Everyone should speak the truth.
+274. वयं देशं रक्षेम। (Vayaṁ deśaṁ rakṣema.) — We ought to protect the country.
+275. सः भोजनं कुर्यात्। (Saḥ bhojanaṁ kuryāt.) — He should eat his food.
+276. छात्राः कोलाहलं न कुर्युः। (Chātrāḥ kolāhalaṁ na kuryuḥ.) — Students should not make noise.
+277. किमपि वदतु भवान्। (Kimapi vadatu bhavān.) — You may say something.
+278. अहं साहाय्यं कुर्यां किम्? (Ahaṁ sāhāyyaṁ kuryām kim?) — Should I help?
+279. त्वं गुरुं नमस्कृतवान् भवेः। (Tvaṁ guruṁ namaskṛtavān bhaveḥ.) — You should have bowed to the teacher.
+280. वयम् एकत्र मिलेम। (Vayaṁ ekatra milema.) — We should meet together.
+
+--- २९. कालमानम् (Durations & Scheduling) ---
+281. अहं घटिकाद्वयं पठामि। (Ahaṁ ghaṭikādvayaṁ paṭhāmi.) — I study for two hours.
+282. परीक्षा आगामिनि सप्ताहे अस्ति। (Parīkṣā āgāmini saptāhe asti.) — The exam is next week.
+283. मासद्वयात् पूर्वं सः अत्र आसीत्। (Māsadvayāt pūrvaṁ saḥ atra āsīt.) — He was here two months ago.
+284. अहं दशवादनतः कार्यं करोमि। (Ahaṁ daśavādanataḥ kāryaṁ karomi.) — I work from 10 o'clock onwards.
+285. विलम्बः मा भवतु। (Vilambaḥ ma bhavatu.) — Let there be no delay / Don't be late.
+286. अद्य सायङ्काले वयं मिलिष्यामः। (Adya sāyaṅkāle vayaṁ miliṣyāmaḥ.) — We will meet this evening.
+287. सः क्षणमात्रं तत्र अतिष्ठत्। (Saḥ kṣaṇamātraṁ tatra atiṣṭhat.) — He stood there for just a moment.
+288. मम जन्मदिवसः आगामिनि मासे अस्ति। (Mama janmadivasaḥ āgāmini māse asti.) — My birthday is next month.
+289. चिरकालानन्तरं त्वां पश्यामि। (Cirakālānantaraṁ tvāṁ paśyami.) — I am seeing you after a long time.
+290. समयः मूल्यवान् वर्तते। (Samayaḥ mūlyavān vartate.) — Time is valuable.
+
+--- ३०. सुन्दरप्रयोगाः (Idiomatic & Concluding Expressions) ---
+291. अति सर्वत्र वर्जयेत्। (Ati sarvatra varjayet.) — Excess of anything should be avoided.
+292. यद् भवति, भद्राय एव भवति। (Yad bhavati, bhadrāya eva bhavati.) — Whatever happens, happens for the best.
+293. मम मनसि संशयः अस्ति। (Mama manasi saṁśayaḥ asti.) — I have a doubt in my mind.
+294. चिन्तनं सम्यक् अस्ति। (Cintanaṁ samyak asti.) — The thinking/mindset is correct.
+295. सा स्वस्य कार्ये मग्ना अस्ति। (Sā svasya kārye magnā asti.) — She is absorbed in her own work.
+296. अत्र किमपि विशेषः नास्ति। (Atra kimapi viśeṣaḥ नास्ति.) — There is nothing special here.
+297. स्वभावः परिवर्तनाय कठिनः। (Svabhāvaḥ parivartanāya kaṭhinaḥ.) — Nature/habit is difficult to change.
+298. अहं सर्वदा सत्यस्य पक्षे अस्मि। (Ahaṁ sarvadā satyasya pakṣe asmi.) — I am always on the side of truth.
+299. एषा भाषा अतीव मधुरा। (Eṣā bhāṣā atīva madhurā.) — This language is exceptionally sweet.
+300. संस्कृतेन जीवनं सुन्दरं भवति। (Saṁskṛtena jīvanaṁ sundaraṁ bhavati.) — Life becomes beautiful through Sanskrit.
+
 === तृतीयो भागः : वाक्याभ्यासः (Tiles Puzzle Assembly Arena) ===
-Featuring 25 moved foundational sentences and 200 full everyday sentences across 20 categories.
+Featuring 25 moved foundational sentences and 300 full everyday sentences across 30 categories.

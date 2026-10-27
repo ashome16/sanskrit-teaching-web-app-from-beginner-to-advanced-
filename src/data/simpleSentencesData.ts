@@ -1,4 +1,4 @@
-// Interactive Root Words, 200 Everyday Sanskrit Sentences & Tiles Puzzle Library
+// Interactive Root Words, 300 Everyday Sanskrit Sentences & Tiles Puzzle Library
 
 export interface RootWordItem {
   id: string;
@@ -51,7 +51,17 @@ export type SentenceCategoryKey =
   | 'wellness'
   | 'nature_animals'
   | 'intentions'
-  | 'conversation';
+  | 'conversation'
+  | 'sensory'
+  | 'mindset'
+  | 'travel'
+  | 'work_money'
+  | 'directions'
+  | 'relative'
+  | 'etiquette_adv'
+  | 'potential'
+  | 'time_scheduling'
+  | 'idioms';
 
 export interface SimpleSentenceItem {
   id: string;
@@ -215,8 +225,78 @@ export const SENTENCE_CATEGORIES = [
   {
     "key": "conversation",
     "labelDev": "२०. लघु सम्भाषणम्",
-    "labelEn": "Spoken Sanskrit Idioms",
+    "labelEn": "Daily Conversation Idioms",
     "icon": "💬",
+    "count": 10
+  },
+  {
+    "key": "sensory",
+    "labelDev": "२१. इन्द्रियानुभूतिः",
+    "labelEn": "Sensory Perceptions",
+    "icon": "👁️",
+    "count": 10
+  },
+  {
+    "key": "mindset",
+    "labelDev": "२२. मानसिकभावाः",
+    "labelEn": "Thoughts & Feelings",
+    "icon": "💭",
+    "count": 10
+  },
+  {
+    "key": "travel",
+    "labelDev": "२३. यात्रा सञ्चारः च",
+    "labelEn": "Travel & Commuting",
+    "icon": "🚆",
+    "count": 10
+  },
+  {
+    "key": "work_money",
+    "labelDev": "२४. धनं वाणिज्यं कार्यम्",
+    "labelEn": "Money, Shopping & Work",
+    "icon": "💼",
+    "count": 10
+  },
+  {
+    "key": "directions",
+    "labelDev": "२५. दिशानिर्देशः",
+    "labelEn": "Giving Directions",
+    "icon": "🧭",
+    "count": 10
+  },
+  {
+    "key": "relative",
+    "labelDev": "२६. यत्-तत् प्रयोगाः",
+    "labelEn": "Relative Clauses (यत्-तत्)",
+    "icon": "⚖️",
+    "count": 10
+  },
+  {
+    "key": "etiquette_adv",
+    "labelDev": "२७. प्रौढ शिष्टाचारः",
+    "labelEn": "Advanced Etiquette",
+    "icon": "🤝",
+    "count": 10
+  },
+  {
+    "key": "potential",
+    "labelDev": "२८. विधि-लिङ्-प्रयोगाः",
+    "labelEn": "Permissions & Obligations",
+    "icon": "🌱",
+    "count": 10
+  },
+  {
+    "key": "time_scheduling",
+    "labelDev": "२९. कालमानम्",
+    "labelEn": "Durations & Scheduling",
+    "icon": "⏱️",
+    "count": 10
+  },
+  {
+    "key": "idioms",
+    "labelDev": "३०. सुन्दरप्रयोगाः",
+    "labelEn": "Idiomatic & Concluding Expressions",
+    "icon": "✨",
     "count": 10
   }
 ] as const;
@@ -532,7 +612,7 @@ export const ROOT_WORDS_LIST: RootWordItem[] = [
   },
 ];
 
-// 200 Progressive Everyday Sanskrit Sentences (Categorized into 20 thematic groups)
+// 300 Progressive Everyday Sanskrit Sentences (Categorized into 30 thematic groups)
 export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
   {
     "id": "s-1",
@@ -633,9 +713,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "स्वागतम्",
-        "meaning": "स्वागतम्",
-        "role": "particle",
-        "roleLabel": "पदम्"
+        "meaning": "Welcome",
+        "role": "subject",
+        "roleLabel": "नपुंसक प्रथमा"
       }
     ],
     "grammarNote": "Traditional Vedic and classical greeting / polite inquiry."
@@ -693,9 +773,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अस्तु",
-        "meaning": "Let it be",
-        "role": "verb",
-        "roleLabel": "अस् लोट् प्रथम०"
+        "meaning": "अस्तु",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Traditional Vedic and classical greeting / polite inquiry."
@@ -759,9 +839,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "नाम",
-        "meaning": "So / Indeed",
+        "meaning": "नाम",
         "role": "particle",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "किम्",
@@ -791,9 +871,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "नाम",
-        "meaning": "So / Indeed",
+        "meaning": "नाम",
         "role": "particle",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "किम्",
@@ -817,15 +897,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "मम",
-        "meaning": "My",
+        "meaning": "मम",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "नाम",
-        "meaning": "So / Indeed",
+        "meaning": "नाम",
         "role": "particle",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "देवः",
@@ -875,9 +955,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "छात्रः",
@@ -887,9 +967,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "अस्मि",
-        "meaning": "am",
-        "role": "verb",
-        "roleLabel": "अस् लट् उत्तम०"
+        "meaning": "अस्मि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Personal introductions, pronouns, and polite addresses."
@@ -907,9 +987,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "छात्रा",
@@ -919,9 +999,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "अस्मि",
-        "meaning": "am",
-        "role": "verb",
-        "roleLabel": "अस् लट् उत्तम०"
+        "meaning": "अस्मि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Personal introductions, pronouns, and polite addresses."
@@ -939,15 +1019,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "एषः",
-        "meaning": "This",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "एषः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मम",
-        "meaning": "My",
+        "meaning": "मम",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मित्रम्",
@@ -1035,9 +1115,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "असि",
-        "meaning": "are",
-        "role": "verb",
-        "roleLabel": "अस् लट् मध्यम०"
+        "meaning": "असि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Personal introductions, pronouns, and polite addresses."
@@ -1055,15 +1135,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पठामि",
-        "meaning": "read / study (I)",
-        "role": "verb",
-        "roleLabel": "पठ् लट् उत्तम०"
+        "meaning": "पठामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Present tense (लट् लकारः) matching singular and plural subjects."
@@ -1159,15 +1239,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "बालकः",
-        "meaning": "Boy",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "बालकः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "धावति",
-        "meaning": "runs",
-        "role": "verb",
-        "roleLabel": "धाव् लट् प्रथम०"
+        "meaning": "धावति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Present tense (लट् लकारः) matching singular and plural subjects."
@@ -1185,9 +1265,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "बालिका",
-        "meaning": "Girl",
-        "role": "subject",
-        "roleLabel": "स्त्री० प्रथमा"
+        "meaning": "बालिका",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "हसति",
@@ -1211,15 +1291,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गच्छामि",
-        "meaning": "go (I)",
-        "role": "verb",
-        "roleLabel": "गम् लट् उत्तम०"
+        "meaning": "गच्छामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Present tense (लट् लकारः) matching singular and plural subjects."
@@ -1243,9 +1323,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "आगच्छसि",
-        "meaning": "come (you)",
-        "role": "verb",
-        "roleLabel": "आ+गम् लट् मध्यम०"
+        "meaning": "आगच्छसि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Present tense (लट् लकारः) matching singular and plural subjects."
@@ -1263,15 +1343,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "एषः",
-        "meaning": "This",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "एषः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "उपविशति",
-        "meaning": "sits down",
-        "role": "verb",
-        "roleLabel": "उप+विश् लट्"
+        "meaning": "उपविशति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Present tense (लट् लकारः) matching singular and plural subjects."
@@ -1315,9 +1395,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अत्र",
-        "meaning": "Here",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "अत्र",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "आगच्छ",
@@ -1341,15 +1421,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "तत्र",
-        "meaning": "There",
+        "meaning": "There (correlative)",
         "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "स्थानवाचक-अव्ययम्"
       },
       {
         "devanagari": "गच्छ",
-        "meaning": "Go! (order)",
-        "role": "verb",
-        "roleLabel": "गम् लोट् मध्यम०"
+        "meaning": "गच्छ",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Imperative commands and gentle instructions (लोट् लकारः)."
@@ -1425,9 +1505,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "मह्यम्",
-        "meaning": "To me",
+        "meaning": "मह्यम्",
         "role": "particle",
-        "roleLabel": "चतुर्थी (सम्प्रदानम्)"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "उत्तरं",
@@ -1457,15 +1537,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "उच्चैः",
-        "meaning": "उच्चैः",
-        "role": "particle",
-        "roleLabel": "पदम्"
+        "meaning": "Loudly / High sound",
+        "role": "adverb",
+        "roleLabel": "क्रियाविशेषणम्"
       },
       {
         "devanagari": "वद",
-        "meaning": "Speak! (order)",
-        "role": "verb",
-        "roleLabel": "वद् लोट् मध्यम०"
+        "meaning": "वद",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Imperative commands and gentle instructions (लोट् लकारः)."
@@ -1489,9 +1569,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "मा",
-        "meaning": "Do not",
+        "meaning": "मा",
         "role": "particle",
-        "roleLabel": "निषेधार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "विस्मर",
@@ -1541,9 +1621,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "चित्रं",
-        "meaning": "Picture / Art",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "चित्रं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पश्य",
@@ -1599,9 +1679,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "मम",
-        "meaning": "My",
+        "meaning": "मम",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गृहम्",
@@ -1625,15 +1705,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "मम",
-        "meaning": "My",
+        "meaning": "मम",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "माता",
-        "meaning": "Mother",
-        "role": "subject",
-        "roleLabel": "मातृ प्रथमा"
+        "meaning": "माता",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -1657,9 +1737,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "तव",
-        "meaning": "तव",
+        "meaning": "Your",
         "role": "particle",
-        "roleLabel": "पदम्"
+        "roleLabel": "षष्ठी-एकवचनम्"
       },
       {
         "devanagari": "भ्राता",
@@ -1689,15 +1769,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "एषा",
-        "meaning": "This (female)",
-        "role": "subject",
-        "roleLabel": "स्त्री० प्रथमा"
+        "meaning": "एषा",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मम",
-        "meaning": "My",
+        "meaning": "मम",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भगिनी",
@@ -1721,9 +1801,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "तस्य",
-        "meaning": "His",
+        "meaning": "तस्य",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पिता",
@@ -1759,9 +1839,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "गृहं",
-        "meaning": "Home / House",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "गृहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "विशालम्",
@@ -1791,9 +1871,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "तव",
-        "meaning": "तव",
+        "meaning": "Your",
         "role": "particle",
-        "roleLabel": "पदम्"
+        "roleLabel": "षष्ठी-एकवचनम्"
       },
       {
         "devanagari": "पुस्तकम्",
@@ -1829,9 +1909,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "सन्ति",
-        "meaning": "are (plural)",
-        "role": "verb",
-        "roleLabel": "अस् लट् बहु०"
+        "meaning": "सन्ति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Genitive case (षष्ठी विभक्तिः) showing possession, family, and origin."
@@ -1849,15 +1929,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "नद्याः",
-        "meaning": "Of the river",
+        "meaning": "नद्याः",
         "role": "particle",
-        "roleLabel": "षष्ठी (नदी)"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "जलं",
-        "meaning": "Water",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "जलं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "शीतलम्",
@@ -1881,9 +1961,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भवता",
@@ -1899,9 +1979,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "अस्मि",
-        "meaning": "am",
-        "role": "verb",
-        "roleLabel": "अस् लट् उत्तम०"
+        "meaning": "अस्मि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Genitive case (षष्ठी विभक्तिः) showing possession, family, and origin."
@@ -1983,9 +2063,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "श्वः",
-        "meaning": "Tomorrow",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "श्वः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "सोमवासरः",
@@ -2021,9 +2101,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "आसीत्",
-        "meaning": "had / was",
-        "role": "verb",
-        "roleLabel": "अस् लङ् लकारः"
+        "meaning": "आसीत्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Time, days of the week, and nature/weather descriptions."
@@ -2111,9 +2191,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "वायुः",
-        "meaning": "Air / Wind",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "वायुः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वहति",
@@ -2195,9 +2275,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "कदा",
-        "meaning": "कदा",
-        "role": "particle",
-        "roleLabel": "पदम्"
+        "meaning": "When?",
+        "role": "adverb",
+        "roleLabel": "कालवाचकम्"
       },
       {
         "devanagari": "गमिष्यसि",
@@ -2221,9 +2301,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "भोजनं",
-        "meaning": "Meal",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "भोजनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "सिद्धं",
@@ -2253,9 +2333,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "बुभुक्षितः",
@@ -2265,9 +2345,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "अस्मि",
-        "meaning": "am",
-        "role": "verb",
-        "roleLabel": "अस् लट् उत्तम०"
+        "meaning": "अस्मि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Dining expressions and dative construction with रोचते (appeals to me)."
@@ -2285,9 +2365,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "भोजनं",
-        "meaning": "Meal",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "भोजनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कृतवती",
@@ -2317,9 +2397,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "मह्यम्",
-        "meaning": "To me",
+        "meaning": "मह्यम्",
         "role": "particle",
-        "roleLabel": "चतुर्थी (सम्प्रदानम्)"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "ओदनं",
@@ -2329,9 +2409,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "रोचते",
-        "meaning": "appeals / pleases",
-        "role": "verb",
-        "roleLabel": "रुच् लट् आत्मनेपदम्"
+        "meaning": "रोचते",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Dining expressions and dative construction with रोचते (appeals to me)."
@@ -2349,9 +2429,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "जलं",
-        "meaning": "Water",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "जलं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "ददातु",
@@ -2375,21 +2455,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "दुग्धं",
-        "meaning": "Milk",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "दुग्धं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मधुरं",
-        "meaning": "Sweetly",
-        "role": "adverb",
-        "roleLabel": "क्रियाविशेषणम्"
+        "meaning": "मधुरं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भवति",
-        "meaning": "occurs / happens",
-        "role": "verb",
-        "roleLabel": "भू लट् प्रथम०"
+        "meaning": "भवति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Dining expressions and dative construction with रोचते (appeals to me)."
@@ -2465,9 +2545,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "चायं",
@@ -2477,9 +2557,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "न",
-        "meaning": "Not",
+        "meaning": "न",
         "role": "particle",
-        "roleLabel": "निषेधार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पिबामि",
@@ -2515,9 +2595,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "असि",
-        "meaning": "are",
-        "role": "verb",
-        "roleLabel": "अस् लट् मध्यम०"
+        "meaning": "असि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Dining expressions and dative construction with रोचते (appeals to me)."
@@ -2535,15 +2615,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "रामः",
-        "meaning": "Rama",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "रामः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "श्वः",
-        "meaning": "Tomorrow",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "श्वः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "आगमिष्यति",
@@ -2567,9 +2647,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पाठं",
@@ -2605,9 +2685,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "कार्यं",
-        "meaning": "Work / Task",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "कार्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कृतवती",
@@ -2631,9 +2711,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "ते",
-        "meaning": "They",
-        "role": "subject",
-        "roleLabel": "तद् पुं० बहु०"
+        "meaning": "ते",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "क्रीडाङ्गणं",
@@ -2663,9 +2743,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "वयं",
-        "meaning": "We",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा बहु०"
+        "meaning": "वयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "चित्रपटं",
@@ -2727,9 +2807,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "गुरुः",
-        "meaning": "गुरुः",
-        "role": "particle",
-        "roleLabel": "पदम्"
+        "meaning": "Heavy / Weighty",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
       },
       {
         "devanagari": "ज्ञानं",
@@ -2759,15 +2839,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "धनं",
-        "meaning": "Money / Wealth",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "धनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "दास्यामि",
@@ -2829,9 +2909,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "पत्रं",
-        "meaning": "पत्रं",
-        "role": "particle",
-        "roleLabel": "पदम्"
+        "meaning": "Ticket / Boarding pass",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
       },
       {
         "devanagari": "अपतत्",
@@ -2907,9 +2987,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "द्वे",
@@ -2925,9 +3005,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "पठामि",
-        "meaning": "read / study (I)",
-        "role": "verb",
-        "roleLabel": "पठ् लट् उत्तम०"
+        "meaning": "पठामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Dual forms (द्विवचनम्) and plural agreements in actions."
@@ -2977,9 +3057,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "वयं",
-        "meaning": "We",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा बहु०"
+        "meaning": "वयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भारते",
@@ -3035,9 +3115,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "यूयं",
-        "meaning": "You all",
-        "role": "subject",
-        "roleLabel": "युष्मद् बहुवचनम्"
+        "meaning": "यूयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कुत्र",
@@ -3067,15 +3147,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "खगाः",
-        "meaning": "Birds (plural)",
-        "role": "subject",
-        "roleLabel": "पुं० बहुवचनम्"
+        "meaning": "खगाः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "आकाशे",
-        "meaning": "In the sky",
-        "role": "adverb",
-        "roleLabel": "सप्तमी (आकाश)"
+        "meaning": "आकाशे",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "उड्डयन्ते",
@@ -3105,9 +3185,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "वेगेन",
-        "meaning": "Fast / With speed",
-        "role": "adverb",
-        "roleLabel": "तृतीया (क्रियाविशेषणम्)"
+        "meaning": "वेगेन",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "धावन्ति",
@@ -3131,15 +3211,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "ते",
-        "meaning": "They",
-        "role": "subject",
-        "roleLabel": "तद् पुं० बहु०"
+        "meaning": "ते",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मन्दं",
-        "meaning": "Slowly",
-        "role": "adverb",
-        "roleLabel": "क्रियाविशेषणम्"
+        "meaning": "मन्दं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "चलन्ति",
@@ -3163,15 +3243,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "सत्यं",
-        "meaning": "Truth",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "सत्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वद",
-        "meaning": "Speak! (order)",
-        "role": "verb",
-        "roleLabel": "वद् लोट् मध्यम०"
+        "meaning": "वद",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "धर्मं",
@@ -3207,9 +3287,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "सर्वत्र",
-        "meaning": "सर्वत्र",
-        "role": "particle",
-        "roleLabel": "पदम्"
+        "meaning": "Everywhere",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
       },
       {
         "devanagari": "पूज्यते",
@@ -3271,9 +3351,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "मम",
-        "meaning": "My",
+        "meaning": "मम",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "आनन्दः",
@@ -3283,9 +3363,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "असि",
-        "meaning": "are",
-        "role": "verb",
-        "roleLabel": "अस् लट् मध्यम०"
+        "meaning": "असि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Timeless Subhashita wisdom, ethics, and cultural maxims."
@@ -3309,9 +3389,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "सर्वं",
-        "meaning": "All / Everything",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "सर्वं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "विरोपयति",
@@ -3425,9 +3505,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "परमं",
-        "meaning": "Supreme / Ultimate",
-        "role": "adjective",
-        "roleLabel": "विशेषणम्"
+        "meaning": "परमं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भूषणम्",
@@ -3451,15 +3531,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "संस्कृतं",
-        "meaning": "Sanskrit",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "संस्कृतं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वदामि",
@@ -3803,19 +3883,19 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "उत्पीठिकायां",
-        "meaning": "On the table",
-        "role": "adverb",
-        "roleLabel": "सप्तमी (उत्पीठिका)"
+        "meaning": "उत्पीठिकायां",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पुस्तकं",
-        "meaning": "Book",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "पुस्तकं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वर्तते",
-        "meaning": "is / exists / lies",
+        "meaning": "is / exists",
         "role": "verb",
         "roleLabel": "वृत् लट् आत्मनेपदम्"
       }
@@ -3835,21 +3915,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "स्यूते",
-        "meaning": "In the bag",
-        "role": "adverb",
-        "roleLabel": "सप्तमी (स्यूत)"
+        "meaning": "स्यूते",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "धनं",
-        "meaning": "Money / Wealth",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "धनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "नास्ति",
-        "meaning": "is not (न + अस्ति)",
-        "role": "verb",
-        "roleLabel": "क्रियापदम्"
+        "meaning": "नास्ति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Locative case (सप्तमी) and spatial adverbs: पुरतः (front), पृष्ठतः (behind), अधः (under), उपरि (above)."
@@ -3867,21 +3947,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "गृहस्य",
-        "meaning": "Of the house",
+        "meaning": "गृहस्य",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पुरतः",
-        "meaning": "In front of",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "पुरतः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वृक्षः",
-        "meaning": "Tree",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा-एक०"
+        "meaning": "वृक्षः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -3905,21 +3985,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "विद्यालयस्य",
-        "meaning": "Of the school",
+        "meaning": "विद्यालयस्य",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पृष्ठतः",
-        "meaning": "Behind",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "पृष्ठतः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "क्रीडाङ्गणम्",
-        "meaning": "Playground",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "क्रीडाङ्गणम्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Locative case (सप्तमी) and spatial adverbs: पुरतः (front), पृष्ठतः (behind), अधः (under), उपरि (above)."
@@ -3937,21 +4017,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "नद्याः",
-        "meaning": "Of the river",
+        "meaning": "नद्याः",
         "role": "particle",
-        "roleLabel": "षष्ठी (नदी)"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "समीपे",
-        "meaning": "Near / Close to",
-        "role": "adverb",
-        "roleLabel": "सप्तमी / अव्ययम्"
+        "meaning": "समीपे",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "आपणः",
-        "meaning": "Shop / Market",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा-एक०"
+        "meaning": "आपणः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -3975,21 +4055,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "नगरात्",
-        "meaning": "From the city",
+        "meaning": "नगरात्",
         "role": "particle",
-        "roleLabel": "पञ्चमी (अपादानम्)"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "दूरं",
-        "meaning": "Far away",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "दूरं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गच्छ",
-        "meaning": "Go! (order)",
-        "role": "verb",
-        "roleLabel": "गम् लोट् मध्यम०"
+        "meaning": "गच्छ",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Locative case (सप्तमी) and spatial adverbs: पुरतः (front), पृष्ठतः (behind), अधः (under), उपरि (above)."
@@ -4013,21 +4093,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "अधः",
-        "meaning": "Under / Below",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "अधः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पथिकः",
-        "meaning": "Traveler / Wayfarer",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "पथिकः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "उपविशति",
-        "meaning": "sits down",
-        "role": "verb",
-        "roleLabel": "उप+विश् लट्"
+        "meaning": "उपविशति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Locative case (सप्तमी) and spatial adverbs: पुरतः (front), पृष्ठतः (behind), अधः (under), उपरि (above)."
@@ -4045,27 +4125,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "आकाशस्य",
-        "meaning": "Of the sky",
+        "meaning": "आकाशस्य",
         "role": "particle",
-        "roleLabel": "षष्ठी (आकाश)"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "उपरि",
-        "meaning": "Above / High up",
-        "role": "adverb",
+        "meaning": "Upon / Over",
+        "role": "particle",
         "roleLabel": "अव्ययम्"
       },
       {
         "devanagari": "खगाः",
-        "meaning": "Birds (plural)",
-        "role": "subject",
-        "roleLabel": "पुं० बहुवचनम्"
+        "meaning": "खगाः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "सन्ति",
-        "meaning": "are (plural)",
-        "role": "verb",
-        "roleLabel": "अस् लट् बहु०"
+        "meaning": "सन्ति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Locative case (सप्तमी) and spatial adverbs: पुरतः (front), पृष्ठतः (behind), अधः (under), उपरि (above)."
@@ -4083,21 +4163,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कोष्ठे",
-        "meaning": "In the room",
-        "role": "adverb",
-        "roleLabel": "सप्तमी (कोष्ठ)"
+        "meaning": "कोष्ठे",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्मि",
-        "meaning": "am",
-        "role": "verb",
-        "roleLabel": "अस् लट् उत्तम०"
+        "meaning": "अस्मि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Locative case (सप्तमी) and spatial adverbs: पुरतः (front), पृष्ठतः (behind), अधः (under), उपरि (above)."
@@ -4121,15 +4201,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "देहल्यां",
-        "meaning": "In Delhi",
-        "role": "adverb",
-        "roleLabel": "सप्तमी (देहलि)"
+        "meaning": "देहल्यां",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वसति",
-        "meaning": "lives / resides",
-        "role": "verb",
-        "roleLabel": "वस् लट् प्रथम०"
+        "meaning": "वसति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Locative case (सप्तमी) and spatial adverbs: पुरतः (front), पृष्ठतः (behind), अधः (under), उपरि (above)."
@@ -4147,9 +4227,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "एषः",
-        "meaning": "This",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "एषः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मार्गः",
@@ -4159,9 +4239,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "सरलः",
-        "meaning": "Straight / Simple",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (पुं०)"
+        "meaning": "सरलः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -4185,25 +4265,25 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "तद्",
-        "meaning": "That",
-        "role": "subject",
-        "roleLabel": "तद् नपुंसक प्रथमा"
+        "meaning": "तद्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वस्त्रं",
-        "meaning": "Cloth / Garment",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "वस्त्रं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "रक्तवर्णं",
-        "meaning": "Red colored",
-        "role": "adjective",
-        "roleLabel": "विशेषणम्"
+        "meaning": "रक्तवर्णं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वर्तते",
-        "meaning": "is / exists / lies",
+        "meaning": "is / exists",
         "role": "verb",
         "roleLabel": "वृत् लट् आत्मनेपदम्"
       }
@@ -4223,21 +4303,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अयं",
-        "meaning": "This (male)",
-        "role": "subject",
-        "roleLabel": "इदम् पुं० प्रथमा"
+        "meaning": "अयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "बालकः",
-        "meaning": "Boy",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "बालकः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "चतुरः",
-        "meaning": "Clever / Smart",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (पुं०)"
+        "meaning": "चतुरः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -4261,21 +4341,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "इयं",
-        "meaning": "This (female)",
-        "role": "subject",
-        "roleLabel": "इदम् स्त्री० प्रथमा"
+        "meaning": "इयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "बालिका",
-        "meaning": "Girl",
-        "role": "subject",
-        "roleLabel": "स्त्री० प्रथमा"
+        "meaning": "बालिका",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "शान्ता",
-        "meaning": "Calm / Peaceful",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (स्त्री०)"
+        "meaning": "शान्ता",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -4305,9 +4385,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "फलम्",
-        "meaning": "Fruit",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "फलम्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अतीव",
@@ -4317,9 +4397,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "मधुरम्",
-        "meaning": "Sweet",
-        "role": "adjective",
-        "roleLabel": "विशेषणम्"
+        "meaning": "मधुरम्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Qualitative adjectives (विशेषणानि) agreeing in gender, number, and case with the noun."
@@ -4343,15 +4423,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "वृद्धः",
-        "meaning": "Old / Aged",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (पुं०)"
+        "meaning": "वृद्धः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पुरुषः",
-        "meaning": "Man",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "पुरुषः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -4375,21 +4455,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अत्र",
-        "meaning": "Here",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "अत्र",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "महान्",
-        "meaning": "Great / Grand",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (महत्)"
+        "meaning": "महान्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "उत्सवः",
-        "meaning": "Festival / Celebration",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "उत्सवः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -4413,27 +4493,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "जलं",
-        "meaning": "Water",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "जलं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "उष्णं",
-        "meaning": "Hot / Warm",
-        "role": "adjective",
-        "roleLabel": "विशेषणम्"
+        "meaning": "उष्णं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मा",
-        "meaning": "Do not",
+        "meaning": "मा",
         "role": "particle",
-        "roleLabel": "निषेधार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्तु",
-        "meaning": "Let it be",
-        "role": "verb",
-        "roleLabel": "अस् लोट् प्रथम०"
+        "meaning": "अस्तु",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Qualitative adjectives (विशेषणानि) agreeing in gender, number, and case with the noun."
@@ -4451,21 +4531,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "एषा",
-        "meaning": "This (female)",
-        "role": "subject",
-        "roleLabel": "स्त्री० प्रथमा"
+        "meaning": "एषा",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कथा",
-        "meaning": "Story / Tale",
-        "role": "subject",
-        "roleLabel": "स्त्री० प्रथमा"
+        "meaning": "कथा",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "लघ्वी",
-        "meaning": "Short / Light",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (लघु स्त्री०)"
+        "meaning": "लघ्वी",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -4489,9 +4569,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "पर्वतः",
-        "meaning": "Mountain",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "पर्वतः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अतीव",
@@ -4501,9 +4581,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "उन्नतः",
-        "meaning": "High / Lofty / Tall",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (पुं०)"
+        "meaning": "उन्नतः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -4527,9 +4607,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "मह्यम्",
-        "meaning": "To me",
+        "meaning": "मह्यम्",
         "role": "particle",
-        "roleLabel": "चतुर्थी (सम्प्रदानम्)"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "एतत्",
@@ -4539,15 +4619,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "चित्रं",
-        "meaning": "Picture / Art",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "चित्रं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "रोचते",
-        "meaning": "appeals / pleases",
-        "role": "verb",
-        "roleLabel": "रुच् लट् आत्मनेपदम्"
+        "meaning": "रोचते",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Expressing interests with रुच्यर्थे चतुर्थी (मह्यम्/भवते रोचते) and infinitives (-तुमुन्: तरितुम्, वक्तुम्)."
@@ -4571,21 +4651,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "भवते",
-        "meaning": "To you (male)",
+        "meaning": "भवते",
         "role": "particle",
-        "roleLabel": "चतुर्थी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "क्रीडा",
-        "meaning": "Sports / Play / Game",
-        "role": "subject",
-        "roleLabel": "स्त्री० प्रथमा"
+        "meaning": "क्रीडा",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "रोचते",
-        "meaning": "appeals / pleases",
-        "role": "verb",
-        "roleLabel": "रुच् लट् आत्मनेपदम्"
+        "meaning": "रोचते",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Expressing interests with रुच्यर्थे चतुर्थी (मह्यम्/भवते रोचते) and infinitives (-तुमुन्: तरितुम्, वक्तुम्)."
@@ -4609,15 +4689,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "मधुरं",
-        "meaning": "Sweetly",
-        "role": "adverb",
-        "roleLabel": "क्रियाविशेषणम्"
+        "meaning": "मधुरं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गायति",
-        "meaning": "sings",
-        "role": "verb",
-        "roleLabel": "गै लट् प्रथम०"
+        "meaning": "गायति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Expressing interests with रुच्यर्थे चतुर्थी (मह्यम्/भवते रोचते) and infinitives (-तुमुन्: तरितुम्, वक्तुम्)."
@@ -4635,21 +4715,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "तरितुं",
-        "meaning": "To swim",
-        "role": "verb",
-        "roleLabel": "तुमुन्-प्रत्ययः (तॄ)"
+        "meaning": "तरितुं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "शक्नोमि",
-        "meaning": "can / am able (I)",
-        "role": "verb",
-        "roleLabel": "शक् लट् उत्तम०"
+        "meaning": "शक्नोमि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Expressing interests with रुच्यर्थे चतुर्थी (मह्यम्/भवते रोचते) and infinitives (-तुमुन्: तरितुम्, वक्तुम्)."
@@ -4673,21 +4753,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "संस्कृतं",
-        "meaning": "Sanskrit",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "संस्कृतं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वक्तुं",
-        "meaning": "To speak",
-        "role": "verb",
-        "roleLabel": "तुमुन्-प्रत्ययः (वच्)"
+        "meaning": "वक्तुं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "शक्नोषि",
-        "meaning": "can / are able (you)",
-        "role": "verb",
-        "roleLabel": "शक् लट् मध्यम०"
+        "meaning": "शक्नोषि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Expressing interests with रुच्यर्थे चतुर्थी (मह्यम्/भवते रोचते) and infinitives (-तुमुन्: तरितुम्, वक्तुम्)."
@@ -4711,15 +4791,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "सुन्दरं",
-        "meaning": "Beautifully",
-        "role": "adverb",
-        "roleLabel": "क्रियाविशेषणम्"
+        "meaning": "Beautiful",
+        "role": "adjective",
+        "roleLabel": "विशेषणम्"
       },
       {
         "devanagari": "लिखति",
-        "meaning": "writes",
-        "role": "verb",
-        "roleLabel": "लिख् लट् प्रथम०"
+        "meaning": "लिखति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Expressing interests with रुच्यर्थे चतुर्थी (मह्यम्/भवते रोचते) and infinitives (-तुमुन्: तरितुम्, वक्तुम्)."
@@ -4737,27 +4817,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "प्रतिदिनं",
-        "meaning": "Every day / Daily",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "प्रतिदिनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "व्यायामं",
-        "meaning": "Exercise",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "व्यायामं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "करोमि",
-        "meaning": "do / make (I)",
-        "role": "verb",
-        "roleLabel": "कृ लट् उत्तम०"
+        "meaning": "करोमि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Expressing interests with रुच्यर्थे चतुर्थी (मह्यम्/भवते रोचते) and infinitives (-तुमुन्: तरितुम्, वक्तुम्)."
@@ -4775,21 +4855,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "तस्य",
-        "meaning": "His",
+        "meaning": "तस्य",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पठनं",
-        "meaning": "Study / Reading",
-        "role": "subject",
-        "roleLabel": "ल्युट्"
+        "meaning": "पठनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "सम्यक्",
-        "meaning": "Good / Well / Properly",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "सम्यक्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -4813,27 +4893,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "वयं",
-        "meaning": "We",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा बहु०"
+        "meaning": "वयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भ्रमणं",
-        "meaning": "Traveling / Wandering",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "भ्रमणं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कर्तुम्",
-        "meaning": "To do",
-        "role": "verb",
-        "roleLabel": "तुमुन्-प्रत्ययः (कृ)"
+        "meaning": "कर्तुम्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "इच्छामः",
-        "meaning": "wish / desire (we)",
-        "role": "verb",
-        "roleLabel": "इष् लट् उत्तम बहु०"
+        "meaning": "इच्छामः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Expressing interests with रुच्यर्थे चतुर्थी (मह्यम्/भवते रोचते) and infinitives (-तुमुन्: तरितुम्, वक्तुम्)."
@@ -4851,21 +4931,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "बालकाः",
-        "meaning": "Boys (plural)",
-        "role": "subject",
-        "roleLabel": "पुं० बहुवचनम्"
+        "meaning": "बालकाः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कन्दुकक्रीडां",
-        "meaning": "Ball game / Football",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "कन्दुकक्रीडां",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "क्रीडन्ति",
-        "meaning": "play (plural)",
-        "role": "verb",
-        "roleLabel": "क्रीड् लट् बहु०"
+        "meaning": "क्रीडन्ति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Expressing interests with रुच्यर्थे चतुर्थी (मह्यम्/भवते रोचते) and infinitives (-तुमुन्: तरितुम्, वक्तुम्)."
@@ -4883,21 +4963,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "शीघ्रं",
-        "meaning": "Quickly / Fast",
-        "role": "adverb",
-        "roleLabel": "क्रियाविशेषणम्"
+        "meaning": "शीघ्रं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कार्यं",
-        "meaning": "Work / Task",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "कार्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "समापय",
-        "meaning": "Finish! (order)",
-        "role": "verb",
-        "roleLabel": "सं+आप् णिच् लोट्"
+        "meaning": "समापय",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Classroom etiquette, negative imperatives with मा (मा कुरु, मा वद), and polite requests."
@@ -4915,21 +4995,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "असत्यं",
-        "meaning": "Untruth / Lie",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "असत्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मा",
-        "meaning": "Do not",
+        "meaning": "मा",
         "role": "particle",
-        "roleLabel": "निषेधार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वद",
-        "meaning": "Speak! (order)",
-        "role": "verb",
-        "roleLabel": "वद् लोट् मध्यम०"
+        "meaning": "वद",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Classroom etiquette, negative imperatives with मा (मा कुरु, मा वद), and polite requests."
@@ -4947,15 +5027,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अत्र",
-        "meaning": "Here",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "अत्र",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "उपविशतु",
-        "meaning": "Please sit",
-        "role": "verb",
-        "roleLabel": "उप+विश् लोट् प्रथम०"
+        "meaning": "उपविशतु",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कृपया",
@@ -4979,15 +5059,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "द्वारं",
-        "meaning": "Door",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "द्वारं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पिधत्स्व",
-        "meaning": "Close! (order)",
-        "role": "verb",
-        "roleLabel": "अपि+धा लोट् आत्मने०"
+        "meaning": "पिधत्स्व",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Classroom etiquette, negative imperatives with मा (मा कुरु, मा वद), and polite requests."
@@ -5005,21 +5085,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "मन्दं",
-        "meaning": "Slowly",
-        "role": "adverb",
-        "roleLabel": "क्रियाविशेषणम्"
+        "meaning": "मन्दं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मन्दं",
-        "meaning": "Slowly",
-        "role": "adverb",
-        "roleLabel": "क्रियाविशेषणम्"
+        "meaning": "मन्दं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "चल",
-        "meaning": "Walk! / Move!",
-        "role": "verb",
-        "roleLabel": "चल् लोट् मध्यम०"
+        "meaning": "चल",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Classroom etiquette, negative imperatives with मा (मा कुरु, मा वद), and polite requests."
@@ -5037,19 +5117,19 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "कोलाहलं",
-        "meaning": "Noise / Clamour",
+        "meaning": "Noise / Commotion",
         "role": "object",
         "roleLabel": "कर्म (द्वितीया)"
       },
       {
         "devanagari": "मा",
-        "meaning": "Do not",
+        "meaning": "मा",
         "role": "particle",
-        "roleLabel": "निषेधार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कुरु",
-        "meaning": "Do! (order)",
+        "meaning": "Do! / Place!",
         "role": "verb",
         "roleLabel": "कृ लोट् मध्यम०"
       }
@@ -5069,13 +5149,13 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "परिश्रमं",
-        "meaning": "Hard work / Diligence",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "परिश्रमं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कुरु",
-        "meaning": "Do! (order)",
+        "meaning": "Do! / Place!",
         "role": "verb",
         "roleLabel": "कृ लोट् मध्यम०"
       }
@@ -5095,21 +5175,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "स्वच्छं",
-        "meaning": "Clean / Pure",
-        "role": "adjective",
-        "roleLabel": "विशेषणम्"
+        "meaning": "स्वच्छं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "जलं",
-        "meaning": "Water",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "जलं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पिब",
-        "meaning": "Drink! (order)",
-        "role": "verb",
-        "roleLabel": "पा लोट् मध्यम०"
+        "meaning": "पिब",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Classroom etiquette, negative imperatives with मा (मा कुरु, मा वद), and polite requests."
@@ -5127,21 +5207,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अत्र",
-        "meaning": "Here",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "अत्र",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "धूमपानं",
-        "meaning": "Smoking",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "धूमपानं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "निषिद्धम्",
-        "meaning": "Prohibited / Forbidden",
-        "role": "adjective",
-        "roleLabel": "विशेषणम्"
+        "meaning": "निषिद्धम्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Classroom etiquette, negative imperatives with मा (मा कुरु, मा वद), and polite requests."
@@ -5159,15 +5239,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "समयपालनं",
-        "meaning": "Punctuality",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "समयपालनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कुरुत",
-        "meaning": "Do! (plural order)",
-        "role": "verb",
-        "roleLabel": "कृ लोट् मध्यम बहु०"
+        "meaning": "कुरुत",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Classroom etiquette, negative imperatives with मा (मा कुरु, मा वद), and polite requests."
@@ -5185,27 +5265,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पठामि",
-        "meaning": "read / study (I)",
-        "role": "verb",
-        "roleLabel": "पठ् लट् उत्तम०"
+        "meaning": "पठामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "यतः",
-        "meaning": "Because / Since",
+        "meaning": "यतः",
         "role": "particle",
-        "roleLabel": "हेत्वर्थे अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "परीक्षा",
-        "meaning": "Examination",
-        "role": "subject",
-        "roleLabel": "स्त्री० प्रथमा"
+        "meaning": "परीक्षा",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -5229,39 +5309,39 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "वृष्टिः",
-        "meaning": "Rain",
-        "role": "subject",
-        "roleLabel": "स्त्री० प्रथमा"
+        "meaning": "वृष्टिः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भवति",
-        "meaning": "occurs / happens",
-        "role": "verb",
-        "roleLabel": "भू लट् प्रथम०"
+        "meaning": "भवति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अतः",
-        "meaning": "Therefore / Hence",
+        "meaning": "अतः",
         "role": "particle",
-        "roleLabel": "परिणामवाचक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "न",
-        "meaning": "Not",
+        "meaning": "न",
         "role": "particle",
-        "roleLabel": "निषेधार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गच्छामि",
-        "meaning": "go (I)",
-        "role": "verb",
-        "roleLabel": "गम् लट् उत्तम०"
+        "meaning": "गच्छामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Compound clauses using causal अव्यय markers: यतः... अतः, यदि... तर्हि, and gerunds (-क्त्वा: गत्वा)."
@@ -5279,9 +5359,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "यदि",
-        "meaning": "If",
+        "meaning": "यदि",
         "role": "particle",
-        "roleLabel": "शर्तवाचक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "त्वं",
@@ -5291,27 +5371,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "आगच्छसि",
-        "meaning": "come (you)",
-        "role": "verb",
-        "roleLabel": "आ+गम् लट् मध्यम०"
+        "meaning": "आगच्छसि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "तर्हि",
-        "meaning": "Then",
+        "meaning": "तर्हि",
         "role": "particle",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "आगमिष्यामि",
-        "meaning": "will come (I)",
-        "role": "verb",
-        "roleLabel": "आ+गम् लृट् उत्तम०"
+        "meaning": "आगमिष्यामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Compound clauses using causal अव्यय markers: यतः... अतः, यदि... तर्हि, and gerunds (-क्त्वा: गत्वा)."
@@ -5329,27 +5409,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "रामः",
-        "meaning": "Rama",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "रामः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "लक्ष्मणः",
-        "meaning": "Lakshmana",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "लक्ष्मणः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "च",
-        "meaning": "And",
+        "meaning": "च",
         "role": "particle",
-        "roleLabel": "समुच्चयार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भ्रातरौ",
-        "meaning": "Two brothers (dual)",
-        "role": "subject",
-        "roleLabel": "भ्रातृ द्विवचनम्"
+        "meaning": "भ्रातरौ",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Compound clauses using causal अव्यय markers: यतः... अतः, यदि... तर्हि, and gerunds (-क्त्वा: गत्वा)."
@@ -5373,27 +5453,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "पठति",
-        "meaning": "reads",
-        "role": "verb",
-        "roleLabel": "पठ् लट् प्रथम०"
+        "meaning": "पठति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अपि",
-        "meaning": "Also / As well",
+        "meaning": "अपि",
         "role": "particle",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "क्रीडति",
-        "meaning": "plays",
-        "role": "verb",
-        "roleLabel": "क्रीड् लट् प्रथम०"
+        "meaning": "क्रीडति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अपि",
-        "meaning": "Also / As well",
+        "meaning": "अपि",
         "role": "particle",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Compound clauses using causal अव्यय markers: यतः... अतः, यदि... तर्हि, and gerunds (-क्त्वा: गत्वा)."
@@ -5411,33 +5491,33 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गृहं",
-        "meaning": "Home / House",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "गृहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गत्वा",
-        "meaning": "Having gone",
-        "role": "verb",
-        "roleLabel": "क्त्वा-प्रत्ययः (गम्)"
+        "meaning": "गत्वा",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भोजनं",
-        "meaning": "Meal",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "भोजनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "करोमि",
-        "meaning": "do / make (I)",
-        "role": "verb",
-        "roleLabel": "कृ लट् उत्तम०"
+        "meaning": "करोमि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Compound clauses using causal अव्यय markers: यतः... अतः, यदि... तर्हि, and gerunds (-क्त्वा: गत्वा)."
@@ -5455,33 +5535,33 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "पुस्तकं",
-        "meaning": "Book",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "पुस्तकं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "विना",
-        "meaning": "Without",
+        "meaning": "विना",
         "role": "particle",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पठनं",
-        "meaning": "Study / Reading",
-        "role": "subject",
-        "roleLabel": "ल्युट्"
+        "meaning": "पठनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "न",
-        "meaning": "Not",
+        "meaning": "न",
         "role": "particle",
-        "roleLabel": "निषेधार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भवति",
-        "meaning": "occurs / happens",
-        "role": "verb",
-        "roleLabel": "भू लट् प्रथम०"
+        "meaning": "भवति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Compound clauses using causal अव्यय markers: यतः... अतः, यदि... तर्हि, and gerunds (-क्त्वा: गत्वा)."
@@ -5499,27 +5579,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "यथा",
-        "meaning": "Just as",
+        "meaning": "यथा",
         "role": "particle",
-        "roleLabel": "सादृश्य-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "राजा",
-        "meaning": "King",
-        "role": "subject",
-        "roleLabel": "राजन् प्रथमा"
+        "meaning": "राजा",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "तथा",
-        "meaning": "So / Similarly",
+        "meaning": "तथा",
         "role": "particle",
-        "roleLabel": "सादृश्य-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "प्रजा",
-        "meaning": "Subjects / People",
-        "role": "subject",
-        "roleLabel": "स्त्री० प्रथमा"
+        "meaning": "प्रजा",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Compound clauses using causal अव्यय markers: यतः... अतः, यदि... तर्हि, and gerunds (-क्त्वा: गत्वा)."
@@ -5543,21 +5623,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "पठितुं",
-        "meaning": "To study",
-        "role": "verb",
-        "roleLabel": "तुमुन् (पठ्)"
+        "meaning": "पठितुं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "विद्यालयं",
-        "meaning": "To school",
-        "role": "object",
-        "roleLabel": "कर्म (स्थानम्)"
+        "meaning": "विद्यालयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गच्छति",
-        "meaning": "goes",
-        "role": "verb",
-        "roleLabel": "गम् लट् प्रथम०"
+        "meaning": "गच्छति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Compound clauses using causal अव्यय markers: यतः... अतः, यदि... तर्हि, and gerunds (-क्त्वा: गत्वा)."
@@ -5575,21 +5655,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "जानामि",
-        "meaning": "know (I)",
-        "role": "verb",
-        "roleLabel": "ज्ञा लट् उत्तम०"
+        "meaning": "जानामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "यत्",
-        "meaning": "That",
+        "meaning": "यत्",
         "role": "particle",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "त्वं",
@@ -5599,15 +5679,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "चतुरः",
-        "meaning": "Clever / Smart",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (पुं०)"
+        "meaning": "चतुरः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "असि",
-        "meaning": "are",
-        "role": "verb",
-        "roleLabel": "अस् लट् मध्यम०"
+        "meaning": "असि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Compound clauses using causal अव्यय markers: यतः... अतः, यदि... तर्हि, and gerunds (-क्त्वा: गत्वा)."
@@ -5625,15 +5705,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "मम",
-        "meaning": "My",
+        "meaning": "मम",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "शिरोवेदना",
-        "meaning": "Headache",
-        "role": "subject",
-        "roleLabel": "स्त्री० प्रथमा"
+        "meaning": "शिरोवेदना",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -5663,15 +5743,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "औषधं",
-        "meaning": "Medicine",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "औषधं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "स्वीकृतवान्",
-        "meaning": "Accepted / Taken (past)",
-        "role": "verb",
-        "roleLabel": "क्तवतु-प्रत्ययः"
+        "meaning": "स्वीकृतवान्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "किम्",
@@ -5695,21 +5775,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "तस्य",
-        "meaning": "His",
+        "meaning": "तस्य",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "नेत्रे",
-        "meaning": "Two eyes (dual)",
-        "role": "subject",
-        "roleLabel": "नपुंसक द्विवचनम्"
+        "meaning": "नेत्रे",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "रक्तायते",
-        "meaning": "become red / turn red",
-        "role": "verb",
-        "roleLabel": "नामधातु लट्"
+        "meaning": "रक्तायते",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Ayurvedic health, wellness conditions, bodily duals (नेत्रे), and gentle recovery wishes."
@@ -5727,15 +5807,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "स्वास्थ्यं",
-        "meaning": "Health / Well-being",
+        "meaning": "Health",
         "role": "subject",
         "roleLabel": "नपुंसक प्रथमा"
       },
       {
         "devanagari": "परमं",
-        "meaning": "Supreme / Ultimate",
-        "role": "adjective",
-        "roleLabel": "विशेषणम्"
+        "meaning": "परमं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "धनम्",
@@ -5765,21 +5845,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "क्लान्तः",
-        "meaning": "Tired / Fatigued",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (पुं०)"
+        "meaning": "क्लान्तः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्मि",
-        "meaning": "am",
-        "role": "verb",
-        "roleLabel": "अस् लट् उत्तम०"
+        "meaning": "अस्मि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Ayurvedic health, wellness conditions, bodily duals (नेत्रे), and gentle recovery wishes."
@@ -5803,9 +5883,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "अस्वस्था",
-        "meaning": "Unwell / Sick",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (स्त्री०)"
+        "meaning": "अस्वस्था",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्ति",
@@ -5829,21 +5909,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "शीघ्रं",
-        "meaning": "Quickly / Fast",
-        "role": "adverb",
-        "roleLabel": "क्रियाविशेषणम्"
+        "meaning": "शीघ्रं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "स्वस्थः",
-        "meaning": "Healthy / Well",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (पुं०)"
+        "meaning": "स्वस्थः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भवतु",
-        "meaning": "Let it be",
-        "role": "verb",
-        "roleLabel": "भू लोट् प्रथम०"
+        "meaning": "भवतु",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Ayurvedic health, wellness conditions, bodily duals (नेत्रे), and gentle recovery wishes."
@@ -5861,21 +5941,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "तस्य",
-        "meaning": "His",
+        "meaning": "तस्य",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "दन्तः",
-        "meaning": "Tooth",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "दन्तः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "चलति",
-        "meaning": "moves / is loose",
-        "role": "verb",
-        "roleLabel": "चल् लट् प्रथम०"
+        "meaning": "चलति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Ayurvedic health, wellness conditions, bodily duals (नेत्रे), and gentle recovery wishes."
@@ -5893,27 +5973,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "सम्यक्",
-        "meaning": "Good / Well / Properly",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "सम्यक्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "निद्रां",
-        "meaning": "Sleep",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "निद्रां",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कृतवान्",
-        "meaning": "Did (male past)",
-        "role": "verb",
-        "roleLabel": "क्तवतु (कृ)"
+        "meaning": "कृतवान्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Ayurvedic health, wellness conditions, bodily duals (नेत्रे), and gentle recovery wishes."
@@ -5931,27 +6011,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "शुद्धः",
-        "meaning": "Pure / Clean",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (पुं०)"
+        "meaning": "शुद्धः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वायुः",
-        "meaning": "Air / Wind",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "वायुः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "आरोग्याय",
-        "meaning": "For good health",
+        "meaning": "आरोग्याय",
         "role": "particle",
-        "roleLabel": "चतुर्थी (आरोग्य)"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "आवश्यकः",
-        "meaning": "Essential / Necessary",
-        "role": "adjective",
-        "roleLabel": "विशेषणम् (पुं०)"
+        "meaning": "आवश्यकः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Ayurvedic health, wellness conditions, bodily duals (नेत्रे), and gentle recovery wishes."
@@ -5969,21 +6049,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "सिंहः",
-        "meaning": "Lion",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "सिंहः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वने",
-        "meaning": "In the forest",
-        "role": "adverb",
-        "roleLabel": "सप्तमी (वन)"
+        "meaning": "वने",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गर्जति",
-        "meaning": "roars",
-        "role": "verb",
-        "roleLabel": "गर्ज लट् प्रथम०"
+        "meaning": "गर्जति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Vedic animal kingdom and environmental verbs: गर्जति, ददाति, विकसति, गुञ्जन्ति, शोभन्ते."
@@ -6001,21 +6081,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "धेनुः",
-        "meaning": "Cow",
-        "role": "subject",
-        "roleLabel": "उकारान्त स्त्री०"
+        "meaning": "धेनुः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "दुग्धं",
-        "meaning": "Milk",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "दुग्धं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "ददाति",
-        "meaning": "gives",
-        "role": "verb",
-        "roleLabel": "दा लट् प्रथम०"
+        "meaning": "ददाति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Vedic animal kingdom and environmental verbs: गर्जति, ददाति, विकसति, गुञ्जन्ति, शोभन्ते."
@@ -6033,21 +6113,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "गजः",
-        "meaning": "Elephant",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "गजः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मन्दं",
-        "meaning": "Slowly",
-        "role": "adverb",
-        "roleLabel": "क्रियाविशेषणम्"
+        "meaning": "मन्दं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "चलति",
-        "meaning": "moves / is loose",
-        "role": "verb",
-        "roleLabel": "चल् लट् प्रथम०"
+        "meaning": "चलति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Vedic animal kingdom and environmental verbs: गर्जति, ददाति, विकसति, गुञ्जन्ति, शोभन्ते."
@@ -6065,21 +6145,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "मयूरः",
-        "meaning": "Peacock",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "मयूरः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वर्षाकाले",
-        "meaning": "In rainy season",
-        "role": "adverb",
-        "roleLabel": "सप्तमी-एकवचनम्"
+        "meaning": "वर्षाकाले",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "नृत्यति",
-        "meaning": "dances",
-        "role": "verb",
-        "roleLabel": "नृत् लट् प्रथम०"
+        "meaning": "नृत्यति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Vedic animal kingdom and environmental verbs: गर्जति, ददाति, विकसति, गुञ्जन्ति, शोभन्ते."
@@ -6097,27 +6177,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "वृक्षाः",
-        "meaning": "Trees (plural)",
-        "role": "subject",
-        "roleLabel": "पुं० बहुवचनम्"
+        "meaning": "वृक्षाः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अस्मभ्यं",
-        "meaning": "To us",
+        "meaning": "अस्मभ्यं",
         "role": "particle",
-        "roleLabel": "चतुर्थी बहुवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "छायां",
-        "meaning": "Shade / Shadow",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "छायां",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "यच्छन्ति",
-        "meaning": "give (plural)",
-        "role": "verb",
-        "roleLabel": "दा लट् बहुवचनम्"
+        "meaning": "यच्छन्ति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Vedic animal kingdom and environmental verbs: गर्जति, ददाति, विकसति, गुञ्जन्ति, शोभन्ते."
@@ -6135,21 +6215,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "तडागे",
-        "meaning": "In the pond / lake",
-        "role": "adverb",
-        "roleLabel": "सप्तमी (तडाग)"
+        "meaning": "तडागे",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कमलं",
-        "meaning": "Lotus",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "कमलं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "विकसति",
-        "meaning": "blooms",
-        "role": "verb",
-        "roleLabel": "वि+कस् लट् प्रथम०"
+        "meaning": "विकसति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Vedic animal kingdom and environmental verbs: गर्जति, ददाति, विकसति, गुञ्जन्ति, शोभन्ते."
@@ -6167,21 +6247,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "शशकः",
-        "meaning": "Rabbit / Hare",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "शशकः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वेगेन",
-        "meaning": "Fast / With speed",
-        "role": "adverb",
-        "roleLabel": "तृतीया (क्रियाविशेषणम्)"
+        "meaning": "वेगेन",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "धावति",
-        "meaning": "runs",
-        "role": "verb",
-        "roleLabel": "धाव् लट् प्रथम०"
+        "meaning": "धावति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Vedic animal kingdom and environmental verbs: गर्जति, ददाति, विकसति, गुञ्जन्ति, शोभन्ते."
@@ -6199,21 +6279,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "कूर्दति",
-        "meaning": "jumps / leaps",
-        "role": "verb",
-        "roleLabel": "कूर्द् लट् प्रथम०"
+        "meaning": "कूर्दति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वानरः",
-        "meaning": "Monkey",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "वानरः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वृक्षे",
-        "meaning": "On the tree",
-        "role": "adverb",
-        "roleLabel": "सप्तमी (वृक्ष)"
+        "meaning": "वृक्षे",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Vedic animal kingdom and environmental verbs: गर्जति, ददाति, विकसति, गुञ्जन्ति, शोभन्ते."
@@ -6231,21 +6311,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "भ्रमराः",
-        "meaning": "Bees (plural)",
-        "role": "subject",
-        "roleLabel": "पुं० बहुवचनम्"
+        "meaning": "भ्रमराः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पुष्पे",
-        "meaning": "On the flower",
-        "role": "adverb",
-        "roleLabel": "सप्तमी (पुष्प)"
+        "meaning": "पुष्पे",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गुञ्जन्ति",
-        "meaning": "buzz / hum (plural)",
-        "role": "verb",
-        "roleLabel": "गुञ्ज् लट् बहु०"
+        "meaning": "गुञ्जन्ति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Vedic animal kingdom and environmental verbs: गर्जति, ददाति, विकसति, गुञ्जन्ति, शोभन्ते."
@@ -6263,21 +6343,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "आकाशे",
-        "meaning": "In the sky",
-        "role": "adverb",
-        "roleLabel": "सप्तमी (आकाश)"
+        "meaning": "आकाशे",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "तारकाः",
-        "meaning": "Stars (plural)",
-        "role": "subject",
-        "roleLabel": "स्त्री० बहुवचनम्"
+        "meaning": "तारकाः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "शोभन्ते",
-        "meaning": "shine / look beautiful",
-        "role": "verb",
-        "roleLabel": "शुभ् लट् आत्मने बहु०"
+        "meaning": "शोभन्ते",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Vedic animal kingdom and environmental verbs: गर्जति, ददाति, विकसति, गुञ्जन्ति, शोभन्ते."
@@ -6295,27 +6375,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "शिक्षकः",
-        "meaning": "Teacher (male)",
-        "role": "subject",
-        "roleLabel": "विधेयम् (पुं०)"
+        "meaning": "शिक्षकः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भवितुम्",
-        "meaning": "To become",
-        "role": "verb",
-        "roleLabel": "तुमुन् (भू)"
+        "meaning": "भवितुम्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "इच्छामि",
-        "meaning": "desire / want (I)",
-        "role": "verb",
-        "roleLabel": "इष् लट् उत्तम०"
+        "meaning": "इच्छामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Intentional verbs with इच्छामि, past perfect compounds (गतवान् आसीत्), and past habitual स्म."
@@ -6339,21 +6419,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "आपणं",
-        "meaning": "To the shop",
-        "role": "object",
-        "roleLabel": "कर्म (स्थानम्)"
+        "meaning": "आपणं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गतवान्",
-        "meaning": "Went (male past)",
-        "role": "verb",
-        "roleLabel": "क्तवतु (गम्)"
+        "meaning": "गतवान्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "आसीत्",
-        "meaning": "had / was",
-        "role": "verb",
-        "roleLabel": "अस् लङ् लकारः"
+        "meaning": "आसीत्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Intentional verbs with इच्छामि, past perfect compounds (गतवान् आसीत्), and past habitual स्म."
@@ -6371,15 +6451,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "वयं",
-        "meaning": "We",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा बहु०"
+        "meaning": "वयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "श्वः",
-        "meaning": "Tomorrow",
-        "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "meaning": "श्वः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "परीक्षां",
@@ -6389,9 +6469,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "लेखिष्यामः",
-        "meaning": "will write (we)",
-        "role": "verb",
-        "roleLabel": "लिख् लृट् उत्तम बहु०"
+        "meaning": "लेखिष्यामः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Intentional verbs with इच्छामि, past perfect compounds (गतवान् आसीत्), and past habitual स्म."
@@ -6415,21 +6495,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "मम",
-        "meaning": "My",
+        "meaning": "मम",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "सन्देशं",
-        "meaning": "Message",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "सन्देशं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "प्राप्तवान्",
-        "meaning": "Received / Got (past)",
-        "role": "verb",
-        "roleLabel": "प्र+आप् क्तवतु"
+        "meaning": "प्राप्तवान्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "किम्",
@@ -6459,15 +6539,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "गृहकार्यं",
-        "meaning": "Homework",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "गृहकार्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "समापितवती",
-        "meaning": "Completed (female past)",
-        "role": "verb",
-        "roleLabel": "सं+आप् णिच् क्तवतु स्त्री०"
+        "meaning": "समापितवती",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Intentional verbs with इच्छामि, past perfect compounds (गतवान् आसीत्), and past habitual स्म."
@@ -6485,21 +6565,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "ते",
-        "meaning": "They",
-        "role": "subject",
-        "roleLabel": "तद् पुं० बहु०"
+        "meaning": "ते",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "सत्यं",
-        "meaning": "Truth",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "सत्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "ज्ञातवन्तः",
-        "meaning": "Came to know (plural past)",
-        "role": "verb",
-        "roleLabel": "ज्ञा क्तवतु बहु०"
+        "meaning": "ज्ञातवन्तः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Intentional verbs with इच्छामि, past perfect compounds (गतवान् आसीत्), and past habitual स्म."
@@ -6517,27 +6597,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "तत्र",
-        "meaning": "There",
+        "meaning": "There (correlative)",
         "role": "adverb",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "स्थानवाचक-अव्ययम्"
       },
       {
         "devanagari": "न",
-        "meaning": "Not",
+        "meaning": "न",
         "role": "particle",
-        "roleLabel": "निषेधार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "गमिष्यामि",
-        "meaning": "will go (I)",
-        "role": "verb",
-        "roleLabel": "गम् लृट् उत्तम०"
+        "meaning": "गमिष्यामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Intentional verbs with इच्छामि, past perfect compounds (गतवान् आसीत्), and past habitual स्म."
@@ -6555,27 +6635,27 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "माता",
-        "meaning": "Mother",
-        "role": "subject",
-        "roleLabel": "मातृ प्रथमा"
+        "meaning": "माता",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भोजनं",
-        "meaning": "Meal",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "भोजनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "पचति",
-        "meaning": "cooks",
-        "role": "verb",
-        "roleLabel": "पच् लट् प्रथम०"
+        "meaning": "पचति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "स्म",
-        "meaning": "used to (past indicator)",
+        "meaning": "स्म",
         "role": "particle",
-        "roleLabel": "भूतकाल-अव्ययम्"
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Intentional verbs with इच्छामि, past perfect compounds (गतवान् आसीत्), and past habitual स्म."
@@ -6593,21 +6673,21 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "बालकः",
-        "meaning": "Boy",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "बालकः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "रोदनं",
-        "meaning": "Crying / Weeping",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "रोदनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कृतवान्",
-        "meaning": "Did (male past)",
-        "role": "verb",
-        "roleLabel": "क्तवतु (कृ)"
+        "meaning": "कृतवान्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Intentional verbs with इच्छामि, past perfect compounds (गतवान् आसीत्), and past habitual स्म."
@@ -6625,9 +6705,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "words": [
       {
         "devanagari": "यूयं",
-        "meaning": "You all",
-        "role": "subject",
-        "roleLabel": "युष्मद् बहुवचनम्"
+        "meaning": "यूयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कथं",
@@ -6637,9 +6717,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "विस्मृतवन्तः",
-        "meaning": "Forgot (plural past)",
-        "role": "verb",
-        "roleLabel": "वि+स्मृ क्तवतु बहु०"
+        "meaning": "विस्मृतवन्तः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Intentional verbs with इच्छामि, past perfect compounds (गतवान् आसीत्), and past habitual स्म."
@@ -6652,24 +6732,24 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "english": "Do not worry.",
     "category": "conversation",
     "categoryLabel": "२०. लघु सम्भाषणम्",
-    "categoryEn": "Spoken Sanskrit Idioms",
+    "categoryEn": "Daily Conversation Idioms",
     "levelBadge": "Fluid Dialogue",
     "words": [
       {
         "devanagari": "चिन्ता",
-        "meaning": "Worry / Anxiety",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "चिन्ता",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मा",
-        "meaning": "Do not",
+        "meaning": "मा",
         "role": "particle",
-        "roleLabel": "निषेधार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कुरु",
-        "meaning": "Do! (order)",
+        "meaning": "Do! / Place!",
         "role": "verb",
         "roleLabel": "कृ लोट् मध्यम०"
       }
@@ -6684,26 +6764,26 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "english": "Is everything fine?",
     "category": "conversation",
     "categoryLabel": "२०. लघु सम्भाषणम्",
-    "categoryEn": "Spoken Sanskrit Idioms",
+    "categoryEn": "Daily Conversation Idioms",
     "levelBadge": "Fluid Dialogue",
     "words": [
       {
         "devanagari": "सर्वं",
-        "meaning": "All / Everything",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "meaning": "सर्वं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "कुशलं",
-        "meaning": "Well / Fine / Auspicious",
-        "role": "adjective",
-        "roleLabel": "विशेषणम्"
+        "meaning": "कुशलं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "वा",
-        "meaning": "or? / is it?",
+        "meaning": "वा",
         "role": "particle",
-        "roleLabel": "प्रश्नवाचक-अव्ययम्"
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Natural spoken Sanskrit conversation idioms for everyday warmth and fluency."
@@ -6716,26 +6796,26 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "english": "I am coming quickly.",
     "category": "conversation",
     "categoryLabel": "२०. लघु सम्भाषणम्",
-    "categoryEn": "Spoken Sanskrit Idioms",
+    "categoryEn": "Daily Conversation Idioms",
     "levelBadge": "Fluid Dialogue",
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "शीघ्रं",
-        "meaning": "Quickly / Fast",
-        "role": "adverb",
-        "roleLabel": "क्रियाविशेषणम्"
+        "meaning": "शीघ्रं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "आगच्छामि",
-        "meaning": "am coming",
-        "role": "verb",
-        "roleLabel": "आ+गम् लट् उत्तम०"
+        "meaning": "आगच्छामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Natural spoken Sanskrit conversation idioms for everyday warmth and fluency."
@@ -6744,36 +6824,36 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "id": "s-194",
     "num": 194,
     "sanskrit": "एषः मम अपराधः नास्ति।",
-    "transliteration": "Eṣaḥ mama aparādhaḥ nāsti.",
+    "transliteration": "Eṣaḥ mama aparādhaḥ नास्ति.",
     "english": "This is not my fault.",
     "category": "conversation",
     "categoryLabel": "२०. लघु सम्भाषणम्",
-    "categoryEn": "Spoken Sanskrit Idioms",
+    "categoryEn": "Daily Conversation Idioms",
     "levelBadge": "Fluid Dialogue",
     "words": [
       {
         "devanagari": "एषः",
-        "meaning": "This",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "एषः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "मम",
-        "meaning": "My",
+        "meaning": "मम",
         "role": "particle",
-        "roleLabel": "षष्ठी-एकवचनम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "अपराधः",
-        "meaning": "Fault / Mistake / Crime",
-        "role": "subject",
-        "roleLabel": "पुं० प्रथमा"
+        "meaning": "अपराधः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "नास्ति",
-        "meaning": "is not (न + अस्ति)",
-        "role": "verb",
-        "roleLabel": "क्रियापदम्"
+        "meaning": "नास्ति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Natural spoken Sanskrit conversation idioms for everyday warmth and fluency."
@@ -6786,7 +6866,7 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "english": "Your help is needed.",
     "category": "conversation",
     "categoryLabel": "२०. लघु सम्भाषणम्",
-    "categoryEn": "Spoken Sanskrit Idioms",
+    "categoryEn": "Daily Conversation Idioms",
     "levelBadge": "Fluid Dialogue",
     "words": [
       {
@@ -6798,14 +6878,14 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       {
         "devanagari": "साहाय्यं",
         "meaning": "Help / Assistance",
-        "role": "subject",
-        "roleLabel": "नपुंसक प्रथमा"
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
       },
       {
         "devanagari": "आवश्यकम्",
-        "meaning": "Required / Needed",
-        "role": "adjective",
-        "roleLabel": "विशेषणम्"
+        "meaning": "आवश्यकम्",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Natural spoken Sanskrit conversation idioms for everyday warmth and fluency."
@@ -6818,20 +6898,20 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "english": "Let it be so / Alright.",
     "category": "conversation",
     "categoryLabel": "२०. लघु सम्भाषणम्",
-    "categoryEn": "Spoken Sanskrit Idioms",
+    "categoryEn": "Daily Conversation Idioms",
     "levelBadge": "Fluid Dialogue",
     "words": [
       {
         "devanagari": "भवतु",
-        "meaning": "Let it be",
-        "role": "verb",
-        "roleLabel": "भू लोट् प्रथम०"
+        "meaning": "भवतु",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "नाम",
-        "meaning": "So / Indeed",
+        "meaning": "नाम",
         "role": "particle",
-        "roleLabel": "अव्ययम्"
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Natural spoken Sanskrit conversation idioms for everyday warmth and fluency."
@@ -6844,32 +6924,32 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "english": "I do not know him.",
     "category": "conversation",
     "categoryLabel": "२०. लघु सम्भाषणम्",
-    "categoryEn": "Spoken Sanskrit Idioms",
+    "categoryEn": "Daily Conversation Idioms",
     "levelBadge": "Fluid Dialogue",
     "words": [
       {
         "devanagari": "अहं",
-        "meaning": "I",
-        "role": "subject",
-        "roleLabel": "अस्मद् प्रथमा"
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "तं",
-        "meaning": "Him",
-        "role": "object",
-        "roleLabel": "तद् द्वितीया-एक०"
+        "meaning": "तं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "न",
-        "meaning": "Not",
+        "meaning": "न",
         "role": "particle",
-        "roleLabel": "निषेधार्थक-अव्ययम्"
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "जानामि",
-        "meaning": "know (I)",
-        "role": "verb",
-        "roleLabel": "ज्ञा लट् उत्तम०"
+        "meaning": "जानामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Natural spoken Sanskrit conversation idioms for everyday warmth and fluency."
@@ -6882,7 +6962,7 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "english": "This seems true.",
     "category": "conversation",
     "categoryLabel": "२०. लघु सम्भाषणम्",
-    "categoryEn": "Spoken Sanskrit Idioms",
+    "categoryEn": "Daily Conversation Idioms",
     "levelBadge": "Fluid Dialogue",
     "words": [
       {
@@ -6893,15 +6973,15 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "सत्यं",
-        "meaning": "Truth",
-        "role": "object",
-        "roleLabel": "कर्म (द्वितीया)"
+        "meaning": "सत्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
       },
       {
         "devanagari": "भाति",
-        "meaning": "seems / appears / shines",
-        "role": "verb",
-        "roleLabel": "भा लट् प्रथम०"
+        "meaning": "भाति",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Natural spoken Sanskrit conversation idioms for everyday warmth and fluency."
@@ -6914,7 +6994,7 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "english": "Let us gather together.",
     "category": "conversation",
     "categoryLabel": "२०. लघु सम्भाषणम्",
-    "categoryEn": "Spoken Sanskrit Idioms",
+    "categoryEn": "Daily Conversation Idioms",
     "levelBadge": "Fluid Dialogue",
     "words": [
       {
@@ -6925,9 +7005,9 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
       },
       {
         "devanagari": "एकत्रीभवामः",
-        "meaning": "gather together (we)",
-        "role": "verb",
-        "roleLabel": "एकत्री+भू लट् उत्तम बहु०"
+        "meaning": "एकत्रीभवामः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Natural spoken Sanskrit conversation idioms for everyday warmth and fluency."
@@ -6940,17 +7020,3613 @@ export const SIMPLE_SENTENCES_CATALOG: SimpleSentenceItem[] = [
     "english": "See you again / Goodbye.",
     "category": "conversation",
     "categoryLabel": "२०. लघु सम्भाषणम्",
-    "categoryEn": "Spoken Sanskrit Idioms",
+    "categoryEn": "Daily Conversation Idioms",
     "levelBadge": "Fluid Dialogue",
     "words": [
       {
         "devanagari": "पुनर्मिलामः",
-        "meaning": "See you again / Let us meet again",
-        "role": "verb",
-        "roleLabel": "पुनर् + मिल् लट् उत्तम बहु०"
+        "meaning": "पुनर्मिलामः",
+        "role": "particle",
+        "roleLabel": "पदम्"
       }
     ],
     "grammarNote": "Natural spoken Sanskrit conversation idioms for everyday warmth and fluency."
+  },
+  {
+    "id": "s-201",
+    "num": 201,
+    "sanskrit": "अहं सुगन्धं जिघ्रामि।",
+    "transliteration": "Ahaṁ sugandhaṁ jighrāmi.",
+    "english": "I smell the fragrance.",
+    "category": "sensory",
+    "categoryLabel": "२१. इन्द्रियानुभूतिः",
+    "categoryEn": "Sensory Perceptions",
+    "levelBadge": "Sense & Awareness",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "सुगन्धं",
+        "meaning": "Fragrance / Aroma",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "जिघ्रामि",
+        "meaning": "smell (I)",
+        "role": "verb",
+        "roleLabel": "घ्रा लट् उत्तम०"
+      }
+    ],
+    "grammarNote": "Sensory perceptions: जिघ्रामि (smell), शृणोति (hears), स्पृशति (touches), भासते (tastes/appears)."
+  },
+  {
+    "id": "s-202",
+    "num": 202,
+    "sanskrit": "त्वं किं पश्यसि?",
+    "transliteration": "Tvaṁ kiṁ paśyasi?",
+    "english": "What do you see?",
+    "category": "sensory",
+    "categoryLabel": "२१. इन्द्रियानुभूतिः",
+    "categoryEn": "Sensory Perceptions",
+    "levelBadge": "Sense & Awareness",
+    "words": [
+      {
+        "devanagari": "त्वं",
+        "meaning": "You",
+        "role": "subject",
+        "roleLabel": "युष्मद् प्रथमा"
+      },
+      {
+        "devanagari": "किं",
+        "meaning": "किं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "पश्यसि",
+        "meaning": "see (you)",
+        "role": "verb",
+        "roleLabel": "दृश्/पश्य् लट् मध्यम०"
+      }
+    ],
+    "grammarNote": "Sensory perceptions: जिघ्रामि (smell), शृणोति (hears), स्पृशति (touches), भासते (tastes/appears)."
+  },
+  {
+    "id": "s-203",
+    "num": 203,
+    "sanskrit": "सः उच्चैः शृणोति।",
+    "transliteration": "Saḥ uccaiḥ śṛṇoti.",
+    "english": "He hears a loud sound.",
+    "category": "sensory",
+    "categoryLabel": "२१. इन्द्रियानुभूतिः",
+    "categoryEn": "Sensory Perceptions",
+    "levelBadge": "Sense & Awareness",
+    "words": [
+      {
+        "devanagari": "सः",
+        "meaning": "He",
+        "role": "subject",
+        "roleLabel": "तद् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "उच्चैः",
+        "meaning": "Loudly / High sound",
+        "role": "adverb",
+        "roleLabel": "क्रियाविशेषणम्"
+      },
+      {
+        "devanagari": "शृणोति",
+        "meaning": "hears / listens",
+        "role": "verb",
+        "roleLabel": "श्रु लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Sensory perceptions: जिघ्रामि (smell), शृणोति (hears), स्पृशति (touches), भासते (tastes/appears)."
+  },
+  {
+    "id": "s-204",
+    "num": 204,
+    "sanskrit": "बालकः कोमलं स्पृशति।",
+    "transliteration": "Bālakaḥ komalaṁ spṛśati.",
+    "english": "The boy touches something soft.",
+    "category": "sensory",
+    "categoryLabel": "२१. इन्द्रियानुभूतिः",
+    "categoryEn": "Sensory Perceptions",
+    "levelBadge": "Sense & Awareness",
+    "words": [
+      {
+        "devanagari": "बालकः",
+        "meaning": "बालकः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "कोमलं",
+        "meaning": "Soft / Gentle",
+        "role": "object",
+        "roleLabel": "कर्म (विशेषणम्)"
+      },
+      {
+        "devanagari": "स्पृशति",
+        "meaning": "touches",
+        "role": "verb",
+        "roleLabel": "स्पृश् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Sensory perceptions: जिघ्रामि (smell), शृणोति (hears), स्पृशति (touches), भासते (tastes/appears)."
+  },
+  {
+    "id": "s-205",
+    "num": 205,
+    "sanskrit": "भोजनं स्वादिष्टं भासते।",
+    "transliteration": "Bhojanaṁ svādiṣṭaṁ bhāsate.",
+    "english": "The food tastes delicious.",
+    "category": "sensory",
+    "categoryLabel": "२१. इन्द्रियानुभूतिः",
+    "categoryEn": "Sensory Perceptions",
+    "levelBadge": "Sense & Awareness",
+    "words": [
+      {
+        "devanagari": "भोजनं",
+        "meaning": "भोजनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "स्वादिष्टं",
+        "meaning": "Delicious / Savory",
+        "role": "adjective",
+        "roleLabel": "विशेषणम्"
+      },
+      {
+        "devanagari": "भासते",
+        "meaning": "appears / seems / tastes",
+        "role": "verb",
+        "roleLabel": "भास् लट् आत्मने०"
+      }
+    ],
+    "grammarNote": "Sensory perceptions: जिघ्रामि (smell), शृणोति (hears), स्पृशति (touches), भासते (tastes/appears)."
+  },
+  {
+    "id": "s-206",
+    "num": 206,
+    "sanskrit": "सा दूरदर्शनं पश्यन्ती अस्ति।",
+    "transliteration": "Sā dūradarśanaṁ paśyantī asti.",
+    "english": "She is watching television.",
+    "category": "sensory",
+    "categoryLabel": "२१. इन्द्रियानुभूतिः",
+    "categoryEn": "Sensory Perceptions",
+    "levelBadge": "Sense & Awareness",
+    "words": [
+      {
+        "devanagari": "सा",
+        "meaning": "She",
+        "role": "subject",
+        "roleLabel": "तद् स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "दूरदर्शनं",
+        "meaning": "Television",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "पश्यन्ती",
+        "meaning": "Watching (female participle)",
+        "role": "adjective",
+        "roleLabel": "शतृ स्त्रीलिङ्ग"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Sensory perceptions: जिघ्रामि (smell), शृणोति (hears), स्पृशति (touches), भासते (tastes/appears)."
+  },
+  {
+    "id": "s-207",
+    "num": 207,
+    "sanskrit": "किं त्वं कोलाहलं श्रुतवान्?",
+    "transliteration": "Kiṁ tvaṁ kolāhalaṁ śrutavān?",
+    "english": "Did you hear the noise?",
+    "category": "sensory",
+    "categoryLabel": "२१. इन्द्रियानुभूतिः",
+    "categoryEn": "Sensory Perceptions",
+    "levelBadge": "Sense & Awareness",
+    "words": [
+      {
+        "devanagari": "किं",
+        "meaning": "किं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "त्वं",
+        "meaning": "You",
+        "role": "subject",
+        "roleLabel": "युष्मद् प्रथमा"
+      },
+      {
+        "devanagari": "कोलाहलं",
+        "meaning": "Noise / Commotion",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "श्रुतवान्",
+        "meaning": "Heard (male past)",
+        "role": "verb",
+        "roleLabel": "श्रु + क्तवतु पुं०"
+      }
+    ],
+    "grammarNote": "Sensory perceptions: जिघ्रामि (smell), शृणोति (hears), स्पृशति (touches), भासते (tastes/appears)."
+  },
+  {
+    "id": "s-208",
+    "num": 208,
+    "sanskrit": "अहं तस्य कण्ठस्वरं चिनोमि।",
+    "transliteration": "Ahaṁ tasya kaṇṭhasvaraṁ cinomi.",
+    "english": "I recognize his voice.",
+    "category": "sensory",
+    "categoryLabel": "२१. इन्द्रियानुभूतिः",
+    "categoryEn": "Sensory Perceptions",
+    "levelBadge": "Sense & Awareness",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "तस्य",
+        "meaning": "तस्य",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "कण्ठस्वरं",
+        "meaning": "Voice / Throat tone",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "चिनोमि",
+        "meaning": "recognize / discern (I)",
+        "role": "verb",
+        "roleLabel": "चि लट् उत्तम०"
+      }
+    ],
+    "grammarNote": "Sensory perceptions: जिघ्रामि (smell), शृणोति (hears), स्पृशति (touches), भासते (tastes/appears)."
+  },
+  {
+    "id": "s-209",
+    "num": 209,
+    "sanskrit": "अत्र अन्धकारः वर्तते।",
+    "transliteration": "Atra andhakāraḥ vartate.",
+    "english": "It is dark here.",
+    "category": "sensory",
+    "categoryLabel": "२१. इन्द्रियानुभूतिः",
+    "categoryEn": "Sensory Perceptions",
+    "levelBadge": "Sense & Awareness",
+    "words": [
+      {
+        "devanagari": "अत्र",
+        "meaning": "अत्र",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "अन्धकारः",
+        "meaning": "Darkness",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "वर्तते",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "वृत् लट् आत्मनेपदम्"
+      }
+    ],
+    "grammarNote": "Sensory perceptions: जिघ्रामि (smell), शृणोति (hears), स्पृशति (touches), भासते (tastes/appears)."
+  },
+  {
+    "id": "s-210",
+    "num": 210,
+    "sanskrit": "दीपं प्रज्वालयतु कृपया।",
+    "transliteration": "Dīpaṁ prajvālayatu kṛpayā.",
+    "english": "Please turn on the light.",
+    "category": "sensory",
+    "categoryLabel": "२१. इन्द्रियानुभूतिः",
+    "categoryEn": "Sensory Perceptions",
+    "levelBadge": "Sense & Awareness",
+    "words": [
+      {
+        "devanagari": "दीपं",
+        "meaning": "Lamp / Light",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "प्रज्वालयतु",
+        "meaning": "Please ignite / switch on",
+        "role": "verb",
+        "roleLabel": "प्र+ज्वल् णिच् लोट्"
+      },
+      {
+        "devanagari": "कृपया",
+        "meaning": "Please / Kindly",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      }
+    ],
+    "grammarNote": "Sensory perceptions: जिघ्रामि (smell), शृणोति (hears), स्पृशति (touches), भासते (tastes/appears)."
+  },
+  {
+    "id": "s-211",
+    "num": 211,
+    "sanskrit": "मम मनसि एकः विचारः अस्ति।",
+    "transliteration": "Mama manasi ekaḥ vicāraḥ asti.",
+    "english": "I have an idea in my mind.",
+    "category": "mindset",
+    "categoryLabel": "२२. मानसिकभावाः",
+    "categoryEn": "Thoughts & Feelings",
+    "levelBadge": "Emotions & Mind",
+    "words": [
+      {
+        "devanagari": "मम",
+        "meaning": "मम",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "मनसि",
+        "meaning": "In the mind",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (मनस्)"
+      },
+      {
+        "devanagari": "एकः",
+        "meaning": "One",
+        "role": "adjective",
+        "roleLabel": "संख्या (पुं०)"
+      },
+      {
+        "devanagari": "विचारः",
+        "meaning": "Idea / Thought",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Mental emotions, patience (धैर्यं धरतु), and psychological reflection in Sanskrit."
+  },
+  {
+    "id": "s-212",
+    "num": 212,
+    "sanskrit": "सा अतीव प्रसन्ना दृश्यते।",
+    "transliteration": "Sā atīva prasannā dṛśyate.",
+    "english": "She looks very happy.",
+    "category": "mindset",
+    "categoryLabel": "२२. मानसिकभावाः",
+    "categoryEn": "Thoughts & Feelings",
+    "levelBadge": "Emotions & Mind",
+    "words": [
+      {
+        "devanagari": "सा",
+        "meaning": "She",
+        "role": "subject",
+        "roleLabel": "तद् स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "अतीव",
+        "meaning": "Very / Extremely",
+        "role": "adverb",
+        "roleLabel": "क्रियाविशेषणम्"
+      },
+      {
+        "devanagari": "प्रसन्ना",
+        "meaning": "Joyful / Happy (female)",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (स्त्री०)"
+      },
+      {
+        "devanagari": "दृश्यते",
+        "meaning": "appears / looks / is seen",
+        "role": "verb",
+        "roleLabel": "दृश् कर्मणि लट्"
+      }
+    ],
+    "grammarNote": "Mental emotions, patience (धैर्यं धरतु), and psychological reflection in Sanskrit."
+  },
+  {
+    "id": "s-213",
+    "num": 213,
+    "sanskrit": "किमर्थं त्वं भीतः असि?",
+    "transliteration": "Kimarthaṁ tvaṁ bhītaḥ asi?",
+    "english": "Why are you afraid?",
+    "category": "mindset",
+    "categoryLabel": "२२. मानसिकभावाः",
+    "categoryEn": "Thoughts & Feelings",
+    "levelBadge": "Emotions & Mind",
+    "words": [
+      {
+        "devanagari": "किमर्थं",
+        "meaning": "Why? / What for?",
+        "role": "adverb",
+        "roleLabel": "कारणवाचकम्"
+      },
+      {
+        "devanagari": "त्वं",
+        "meaning": "You",
+        "role": "subject",
+        "roleLabel": "युष्मद् प्रथमा"
+      },
+      {
+        "devanagari": "भीतः",
+        "meaning": "Afraid / Frightened (male)",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
+      },
+      {
+        "devanagari": "असि",
+        "meaning": "असि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Mental emotions, patience (धैर्यं धरतु), and psychological reflection in Sanskrit."
+  },
+  {
+    "id": "s-214",
+    "num": 214,
+    "sanskrit": "सः क्रोधेन वदति।",
+    "transliteration": "Saḥ krodhena vadati.",
+    "english": "He speaks with anger.",
+    "category": "mindset",
+    "categoryLabel": "२२. मानसिकभावाः",
+    "categoryEn": "Thoughts & Feelings",
+    "levelBadge": "Emotions & Mind",
+    "words": [
+      {
+        "devanagari": "सः",
+        "meaning": "He",
+        "role": "subject",
+        "roleLabel": "तद् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "क्रोधेन",
+        "meaning": "With anger",
+        "role": "adverb",
+        "roleLabel": "तृतीया (क्रोध)"
+      },
+      {
+        "devanagari": "वदति",
+        "meaning": "वदति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Mental emotions, patience (धैर्यं धरतु), and psychological reflection in Sanskrit."
+  },
+  {
+    "id": "s-215",
+    "num": 215,
+    "sanskrit": "अहं भ्रान्तः अस्मि।",
+    "transliteration": "Ahaṁ bhrāntaḥ asmi.",
+    "english": "I am confused (male).",
+    "category": "mindset",
+    "categoryLabel": "२२. मानसिकभावाः",
+    "categoryEn": "Thoughts & Feelings",
+    "levelBadge": "Emotions & Mind",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "भ्रान्तः",
+        "meaning": "Confused / Perplexed (male)",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
+      },
+      {
+        "devanagari": "अस्मि",
+        "meaning": "अस्मि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Mental emotions, patience (धैर्यं धरतु), and psychological reflection in Sanskrit."
+  },
+  {
+    "id": "s-216",
+    "num": 216,
+    "sanskrit": "धैर्यं धरतु।",
+    "transliteration": "Dhairyaṁ dharatu.",
+    "english": "Have courage / Be patient.",
+    "category": "mindset",
+    "categoryLabel": "२२. मानसिकभावाः",
+    "categoryEn": "Thoughts & Feelings",
+    "levelBadge": "Emotions & Mind",
+    "words": [
+      {
+        "devanagari": "धैर्यं",
+        "meaning": "Patience / Courage",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "धरतु",
+        "meaning": "Hold / Maintain! (polite)",
+        "role": "verb",
+        "roleLabel": "धृ लोट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Mental emotions, patience (धैर्यं धरतु), and psychological reflection in Sanskrit."
+  },
+  {
+    "id": "s-217",
+    "num": 217,
+    "sanskrit": "मम उपरि विश्वासं कुरु।",
+    "transliteration": "Mama upari viśvāsaṁ kuru.",
+    "english": "Trust me.",
+    "category": "mindset",
+    "categoryLabel": "२२. मानसिकभावाः",
+    "categoryEn": "Thoughts & Feelings",
+    "levelBadge": "Emotions & Mind",
+    "words": [
+      {
+        "devanagari": "मम",
+        "meaning": "मम",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "उपरि",
+        "meaning": "Upon / Over",
+        "role": "particle",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "विश्वासं",
+        "meaning": "Trust / Faith",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "कुरु",
+        "meaning": "Do! / Place!",
+        "role": "verb",
+        "roleLabel": "कृ लोट् मध्यम०"
+      }
+    ],
+    "grammarNote": "Mental emotions, patience (धैर्यं धरतु), and psychological reflection in Sanskrit."
+  },
+  {
+    "id": "s-218",
+    "num": 218,
+    "sanskrit": "सा दुःखं अनुभवति।",
+    "transliteration": "Sā duḥkhaṁ anubhavati.",
+    "english": "She is feeling sad.",
+    "category": "mindset",
+    "categoryLabel": "२२. मानसिकभावाः",
+    "categoryEn": "Thoughts & Feelings",
+    "levelBadge": "Emotions & Mind",
+    "words": [
+      {
+        "devanagari": "सा",
+        "meaning": "She",
+        "role": "subject",
+        "roleLabel": "तद् स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "दुःखं",
+        "meaning": "Sorrow / Sadness",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "अनुभवति",
+        "meaning": "experiences / feels",
+        "role": "verb",
+        "roleLabel": "अनु+भू लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Mental emotions, patience (धैर्यं धरतु), and psychological reflection in Sanskrit."
+  },
+  {
+    "id": "s-219",
+    "num": 219,
+    "sanskrit": "अहं तव भावनां जानामि।",
+    "transliteration": "Ahaṁ tava bhāvanāṁ jānāmi.",
+    "english": "I know your feelings.",
+    "category": "mindset",
+    "categoryLabel": "२२. मानसिकभावाः",
+    "categoryEn": "Thoughts & Feelings",
+    "levelBadge": "Emotions & Mind",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "तव",
+        "meaning": "Your",
+        "role": "particle",
+        "roleLabel": "षष्ठी-एकवचनम्"
+      },
+      {
+        "devanagari": "भावनां",
+        "meaning": "Feelings / Emotions",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "जानामि",
+        "meaning": "जानामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Mental emotions, patience (धैर्यं धरतु), and psychological reflection in Sanskrit."
+  },
+  {
+    "id": "s-220",
+    "num": 220,
+    "sanskrit": "निराशः मा भव।",
+    "transliteration": "Nirāśaḥ mā bhava.",
+    "english": "Do not be disappointed.",
+    "category": "mindset",
+    "categoryLabel": "२२. मानसिकभावाः",
+    "categoryEn": "Thoughts & Feelings",
+    "levelBadge": "Emotions & Mind",
+    "words": [
+      {
+        "devanagari": "निराशः",
+        "meaning": "Disappointed / Hopeless",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
+      },
+      {
+        "devanagari": "मा",
+        "meaning": "मा",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "भव",
+        "meaning": "Be!",
+        "role": "verb",
+        "roleLabel": "भू लोट् मध्यम०"
+      }
+    ],
+    "grammarNote": "Mental emotions, patience (धैर्यं धरतु), and psychological reflection in Sanskrit."
+  },
+  {
+    "id": "s-221",
+    "num": 221,
+    "sanskrit": "यानं शीघ्रं चलति।",
+    "transliteration": "Yānaṁ śīghraṁ calati.",
+    "english": "The vehicle moves fast.",
+    "category": "travel",
+    "categoryLabel": "२३. यात्रा सञ्चारः च",
+    "categoryEn": "Travel & Commuting",
+    "levelBadge": "Transit & Journeys",
+    "words": [
+      {
+        "devanagari": "यानं",
+        "meaning": "Vehicle",
+        "role": "subject",
+        "roleLabel": "नपुंसक प्रथमा"
+      },
+      {
+        "devanagari": "शीघ्रं",
+        "meaning": "शीघ्रं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "चलति",
+        "meaning": "चलति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Modern transit vocabulary: लोकयानम् (bus), धूमशकटम् (train), विमानतलम् (airport), द्विचक्रिका (bicycle)."
+  },
+  {
+    "id": "s-222",
+    "num": 222,
+    "sanskrit": "अहं लोकयानेन गच्छामि।",
+    "transliteration": "Ahaṁ lokayānena gacchāmi.",
+    "english": "I am going by bus.",
+    "category": "travel",
+    "categoryLabel": "२३. यात्रा सञ्चारः च",
+    "categoryEn": "Travel & Commuting",
+    "levelBadge": "Transit & Journeys",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "लोकयानेन",
+        "meaning": "By public bus",
+        "role": "particle",
+        "roleLabel": "तृतीया (करणम्)"
+      },
+      {
+        "devanagari": "गच्छामि",
+        "meaning": "गच्छामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Modern transit vocabulary: लोकयानम् (bus), धूमशकटम् (train), विमानतलम् (airport), द्विचक्रिका (bicycle)."
+  },
+  {
+    "id": "s-223",
+    "num": 223,
+    "sanskrit": "धूमशकटं विरामस्थाने अस्ति।",
+    "transliteration": "Dhūmaśakaṭaṁ virāmasthāne asti.",
+    "english": "The train is at the station.",
+    "category": "travel",
+    "categoryLabel": "२३. यात्रा सञ्चारः च",
+    "categoryEn": "Travel & Commuting",
+    "levelBadge": "Transit & Journeys",
+    "words": [
+      {
+        "devanagari": "धूमशकटं",
+        "meaning": "Train (steam-carriage)",
+        "role": "subject",
+        "roleLabel": "नपुंसक प्रथमा"
+      },
+      {
+        "devanagari": "विरामस्थाने",
+        "meaning": "At the station / stop",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (विरामस्थान)"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Modern transit vocabulary: लोकयानम् (bus), धूमशकटम् (train), विमानतलम् (airport), द्विचक्रिका (bicycle)."
+  },
+  {
+    "id": "s-224",
+    "num": 224,
+    "sanskrit": "त्वं कदा प्रस्थास्यसि?",
+    "transliteration": "Tvaṁ kadā prasthāsyasi?",
+    "english": "When will you depart?",
+    "category": "travel",
+    "categoryLabel": "२३. यात्रा सञ्चारः च",
+    "categoryEn": "Travel & Commuting",
+    "levelBadge": "Transit & Journeys",
+    "words": [
+      {
+        "devanagari": "त्वं",
+        "meaning": "You",
+        "role": "subject",
+        "roleLabel": "युष्मद् प्रथमा"
+      },
+      {
+        "devanagari": "कदा",
+        "meaning": "When?",
+        "role": "adverb",
+        "roleLabel": "कालवाचकम्"
+      },
+      {
+        "devanagari": "प्रस्थास्यसि",
+        "meaning": "will depart / leave (you)",
+        "role": "verb",
+        "roleLabel": "प्र+स्था लृट् मध्यम०"
+      }
+    ],
+    "grammarNote": "Modern transit vocabulary: लोकयानम् (bus), धूमशकटम् (train), विमानतलम् (airport), द्विचक्रिका (bicycle)."
+  },
+  {
+    "id": "s-225",
+    "num": 225,
+    "sanskrit": "वयं द्विचक्रिकया भ्रमामः।",
+    "transliteration": "Vayaṁ dvicakrikayā bhramāmaḥ.",
+    "english": "We ride on a bicycle/scooter.",
+    "category": "travel",
+    "categoryLabel": "२३. यात्रा सञ्चारः च",
+    "categoryEn": "Travel & Commuting",
+    "levelBadge": "Transit & Journeys",
+    "words": [
+      {
+        "devanagari": "वयं",
+        "meaning": "वयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "द्विचक्रिकया",
+        "meaning": "By bicycle / two-wheeler",
+        "role": "particle",
+        "roleLabel": "तृतीया (द्विचक्रिका)"
+      },
+      {
+        "devanagari": "भ्रमामः",
+        "meaning": "ride / roam / travel (we)",
+        "role": "verb",
+        "roleLabel": "भ्रम् लट् उत्तम बहु०"
+      }
+    ],
+    "grammarNote": "Modern transit vocabulary: लोकयानम् (bus), धूमशकटम् (train), विमानतलम् (airport), द्विचक्रिका (bicycle)."
+  },
+  {
+    "id": "s-226",
+    "num": 226,
+    "sanskrit": "मार्गः अवरुद्धः अस्ति।",
+    "transliteration": "Mārgaḥ avaruddhaḥ asti.",
+    "english": "The road is blocked.",
+    "category": "travel",
+    "categoryLabel": "२३. यात्रा सञ्चारः च",
+    "categoryEn": "Travel & Commuting",
+    "levelBadge": "Transit & Journeys",
+    "words": [
+      {
+        "devanagari": "मार्गः",
+        "meaning": "Way / Path / Road",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा-एक०"
+      },
+      {
+        "devanagari": "अवरुद्धः",
+        "meaning": "Blocked / Obstructed",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Modern transit vocabulary: लोकयानम् (bus), धूमशकटम् (train), विमानतलम् (airport), द्विचक्रिका (bicycle)."
+  },
+  {
+    "id": "s-227",
+    "num": 227,
+    "sanskrit": "अहं विमानतलं गच्छन् अस्मि।",
+    "transliteration": "Ahaṁ vimānatalaṁ gacchan asmi.",
+    "english": "I am going to the airport.",
+    "category": "travel",
+    "categoryLabel": "२३. यात्रा सञ्चारः च",
+    "categoryEn": "Travel & Commuting",
+    "levelBadge": "Transit & Journeys",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "विमानतलं",
+        "meaning": "Airport",
+        "role": "object",
+        "roleLabel": "कर्म (स्थानम्)"
+      },
+      {
+        "devanagari": "गच्छन्",
+        "meaning": "Going (male participle)",
+        "role": "adjective",
+        "roleLabel": "शतृ पुं० प्रथमा"
+      },
+      {
+        "devanagari": "अस्मि",
+        "meaning": "अस्मि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Modern transit vocabulary: लोकयानम् (bus), धूमशकटम् (train), विमानतलम् (airport), द्विचक्रिका (bicycle)."
+  },
+  {
+    "id": "s-228",
+    "num": 228,
+    "sanskrit": "भवान् पत्रं प्राप्तवान् किम्?",
+    "transliteration": "Bhavān patraṁ prāptavān kim?",
+    "english": "Did you get the ticket?",
+    "category": "travel",
+    "categoryLabel": "२३. यात्रा सञ्चारः च",
+    "categoryEn": "Travel & Commuting",
+    "levelBadge": "Transit & Journeys",
+    "words": [
+      {
+        "devanagari": "भवान्",
+        "meaning": "You (male respectful)",
+        "role": "subject",
+        "roleLabel": "भवत् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "पत्रं",
+        "meaning": "Ticket / Boarding pass",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "प्राप्तवान्",
+        "meaning": "प्राप्तवान्",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "किम्",
+        "meaning": "What?",
+        "role": "adverb",
+        "roleLabel": "प्रश्नवाचकम्"
+      }
+    ],
+    "grammarNote": "Modern transit vocabulary: लोकयानम् (bus), धूमशकटम् (train), विमानतलम् (airport), द्विचक्रिका (bicycle)."
+  },
+  {
+    "id": "s-229",
+    "num": 229,
+    "sanskrit": "मम स्यूतः गुरुः अस्ति।",
+    "transliteration": "Mama syūtaḥ guruḥ asti.",
+    "english": "My bag is heavy.",
+    "category": "travel",
+    "categoryLabel": "२३. यात्रा सञ्चारः च",
+    "categoryEn": "Travel & Commuting",
+    "levelBadge": "Transit & Journeys",
+    "words": [
+      {
+        "devanagari": "मम",
+        "meaning": "मम",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "स्यूतः",
+        "meaning": "Bag / Backpack",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "गुरुः",
+        "meaning": "Heavy / Weighty",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Modern transit vocabulary: लोकयानम् (bus), धूमशकटम् (train), विमानतलम् (airport), द्विचक्रिका (bicycle)."
+  },
+  {
+    "id": "s-230",
+    "num": 230,
+    "sanskrit": "यात्रा सुखमयी भवतु।",
+    "transliteration": "Yātrā sukhamayī bhavatu.",
+    "english": "Have a safe/happy journey.",
+    "category": "travel",
+    "categoryLabel": "२३. यात्रा सञ्चारः च",
+    "categoryEn": "Travel & Commuting",
+    "levelBadge": "Transit & Journeys",
+    "words": [
+      {
+        "devanagari": "यात्रा",
+        "meaning": "Journey / Travel",
+        "role": "subject",
+        "roleLabel": "स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "सुखमयी",
+        "meaning": "Full of happiness / Safe",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (स्त्री०)"
+      },
+      {
+        "devanagari": "भवतु",
+        "meaning": "भवतु",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Modern transit vocabulary: लोकयानम् (bus), धूमशकटम् (train), विमानतलम् (airport), द्विचक्रिका (bicycle)."
+  },
+  {
+    "id": "s-231",
+    "num": 231,
+    "sanskrit": "अस्य वस्तुनः मूल्यं कति?",
+    "transliteration": "Asya vastunaḥ mūlyaṁ kati?",
+    "english": "How much does this item cost?",
+    "category": "work_money",
+    "categoryLabel": "२४. धनं वाणिज्यं कार्यम्",
+    "categoryEn": "Money, Shopping & Work",
+    "levelBadge": "Economics & Profession",
+    "words": [
+      {
+        "devanagari": "अस्य",
+        "meaning": "Of this / Its",
+        "role": "particle",
+        "roleLabel": "इदम् षष्ठी-एक०"
+      },
+      {
+        "devanagari": "वस्तुनः",
+        "meaning": "Of the item / object",
+        "role": "particle",
+        "roleLabel": "षष्ठी (वस्तु)"
+      },
+      {
+        "devanagari": "मूल्यं",
+        "meaning": "Price / Cost / Value",
+        "role": "subject",
+        "roleLabel": "नपुंसक प्रथमा"
+      },
+      {
+        "devanagari": "कति",
+        "meaning": "How many / How much?",
+        "role": "adverb",
+        "roleLabel": "संख्यावाचकम्"
+      }
+    ],
+    "grammarNote": "Workplace and marketplace expressions: मूल्यम् (cost), शाकम् (vegetables), कार्यालयः (office)."
+  },
+  {
+    "id": "s-232",
+    "num": 232,
+    "sanskrit": "मम हस्ते धनं नास्ति।",
+    "transliteration": "Mama haste dhanaṁ nāsti.",
+    "english": "I don't have money in my hand.",
+    "category": "work_money",
+    "categoryLabel": "२४. धनं वाणिज्यं कार्यम्",
+    "categoryEn": "Money, Shopping & Work",
+    "levelBadge": "Economics & Profession",
+    "words": [
+      {
+        "devanagari": "मम",
+        "meaning": "मम",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "हस्ते",
+        "meaning": "In the hand",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (हस्त)"
+      },
+      {
+        "devanagari": "धनं",
+        "meaning": "धनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "नास्ति",
+        "meaning": "नास्ति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Workplace and marketplace expressions: मूल्यम् (cost), शाकम् (vegetables), कार्यालयः (office)."
+  },
+  {
+    "id": "s-233",
+    "num": 233,
+    "sanskrit": "सा आपणतः शाकं क्रीणाति।",
+    "transliteration": "Sā āpaṇataḥ śākaṁ krīṇāti.",
+    "english": "She buys vegetables from the shop.",
+    "category": "work_money",
+    "categoryLabel": "२४. धनं वाणिज्यं कार्यम्",
+    "categoryEn": "Money, Shopping & Work",
+    "levelBadge": "Economics & Profession",
+    "words": [
+      {
+        "devanagari": "सा",
+        "meaning": "She",
+        "role": "subject",
+        "roleLabel": "तद् स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "आपणतः",
+        "meaning": "From the shop",
+        "role": "particle",
+        "roleLabel": "पञ्चम्यर्थे तसिल्"
+      },
+      {
+        "devanagari": "शाकं",
+        "meaning": "Vegetables",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "क्रीणाति",
+        "meaning": "buys / purchases",
+        "role": "verb",
+        "roleLabel": "क्री लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Workplace and marketplace expressions: मूल्यम् (cost), शाकम् (vegetables), कार्यालयः (office)."
+  },
+  {
+    "id": "s-234",
+    "num": 234,
+    "sanskrit": "अहं कार्यालये कार्यं करोमि।",
+    "transliteration": "Ahaṁ kāryālaye kāryaṁ karomi.",
+    "english": "I work in an office.",
+    "category": "work_money",
+    "categoryLabel": "२४. धनं वाणिज्यं कार्यम्",
+    "categoryEn": "Money, Shopping & Work",
+    "levelBadge": "Economics & Profession",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "कार्यालये",
+        "meaning": "In the office",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (कार्यालय)"
+      },
+      {
+        "devanagari": "कार्यं",
+        "meaning": "कार्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "करोमि",
+        "meaning": "करोमि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Workplace and marketplace expressions: मूल्यम् (cost), शाकम् (vegetables), कार्यालयः (office)."
+  },
+  {
+    "id": "s-235",
+    "num": 235,
+    "sanskrit": "सः नूतनं धनस्यूतं क्रीतवान्।",
+    "transliteration": "Saḥ nūtanaṁ dhanasyūtaṁ krītavān.",
+    "english": "He bought a new wallet.",
+    "category": "work_money",
+    "categoryLabel": "२४. धनं वाणिज्यं कार्यम्",
+    "categoryEn": "Money, Shopping & Work",
+    "levelBadge": "Economics & Profession",
+    "words": [
+      {
+        "devanagari": "सः",
+        "meaning": "He",
+        "role": "subject",
+        "roleLabel": "तद् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "नूतनं",
+        "meaning": "New",
+        "role": "adjective",
+        "roleLabel": "विशेषणम्"
+      },
+      {
+        "devanagari": "धनस्यूतं",
+        "meaning": "Wallet / Purse",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "क्रीतवान्",
+        "meaning": "Bought (male past)",
+        "role": "verb",
+        "roleLabel": "क्री + क्तवतु पुं०"
+      }
+    ],
+    "grammarNote": "Workplace and marketplace expressions: मूल्यम् (cost), शाकम् (vegetables), कार्यालयः (office)."
+  },
+  {
+    "id": "s-236",
+    "num": 236,
+    "sanskrit": "अद्य मम अवकाशः अस्ति।",
+    "transliteration": "Adya mama avakāśaḥ asti.",
+    "english": "Today is my day off / holiday.",
+    "category": "work_money",
+    "categoryLabel": "२४. धनं वाणिज्यं कार्यम्",
+    "categoryEn": "Money, Shopping & Work",
+    "levelBadge": "Economics & Profession",
+    "words": [
+      {
+        "devanagari": "अद्य",
+        "meaning": "अद्य",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "मम",
+        "meaning": "मम",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "अवकाशः",
+        "meaning": "Holiday / Day off",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Workplace and marketplace expressions: मूल्यम् (cost), शाकम् (vegetables), कार्यालयः (office)."
+  },
+  {
+    "id": "s-237",
+    "num": 237,
+    "sanskrit": "सः कुशलः तक्षकः अस्ति।",
+    "transliteration": "Saḥ kuśalaḥ takṣakaḥ asti.",
+    "english": "He is a skilled carpenter.",
+    "category": "work_money",
+    "categoryLabel": "२४. धनं वाणिज्यं कार्यम्",
+    "categoryEn": "Money, Shopping & Work",
+    "levelBadge": "Economics & Profession",
+    "words": [
+      {
+        "devanagari": "सः",
+        "meaning": "He",
+        "role": "subject",
+        "roleLabel": "तद् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "कुशलः",
+        "meaning": "Skilled / Expert",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
+      },
+      {
+        "devanagari": "तक्षकः",
+        "meaning": "Carpenter",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Workplace and marketplace expressions: मूल्यम् (cost), शाकम् (vegetables), कार्यालयः (office)."
+  },
+  {
+    "id": "s-238",
+    "num": 238,
+    "sanskrit": "किं तव कार्यं समाप्तम्?",
+    "transliteration": "Kiṁ tava kāryaṁ samāptam?",
+    "english": "Is your work finished?",
+    "category": "work_money",
+    "categoryLabel": "२४. धनं वाणिज्यं कार्यम्",
+    "categoryEn": "Money, Shopping & Work",
+    "levelBadge": "Economics & Profession",
+    "words": [
+      {
+        "devanagari": "किं",
+        "meaning": "किं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "तव",
+        "meaning": "Your",
+        "role": "particle",
+        "roleLabel": "षष्ठी-एकवचनम्"
+      },
+      {
+        "devanagari": "कार्यं",
+        "meaning": "कार्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "समाप्तम्",
+        "meaning": "Completed / Finished",
+        "role": "adjective",
+        "roleLabel": "विशेषणम्"
+      }
+    ],
+    "grammarNote": "Workplace and marketplace expressions: मूल्यम् (cost), शाकम् (vegetables), कार्यालयः (office)."
+  },
+  {
+    "id": "s-239",
+    "num": 239,
+    "sanskrit": "सा धनं सञ्चिनोति।",
+    "transliteration": "Sā dhanaṁ sañcinoti.",
+    "english": "She saves money.",
+    "category": "work_money",
+    "categoryLabel": "२४. धनं वाणिज्यं कार्यम्",
+    "categoryEn": "Money, Shopping & Work",
+    "levelBadge": "Economics & Profession",
+    "words": [
+      {
+        "devanagari": "सा",
+        "meaning": "She",
+        "role": "subject",
+        "roleLabel": "तद् स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "धनं",
+        "meaning": "धनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "सञ्चिनोति",
+        "meaning": "saves / accumulates",
+        "role": "verb",
+        "roleLabel": "सं+चि लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Workplace and marketplace expressions: मूल्यम् (cost), शाकम् (vegetables), कार्यालयः (office)."
+  },
+  {
+    "id": "s-240",
+    "num": 240,
+    "sanskrit": "उद्यमेन हि सिध्यन्ति कार्याणि।",
+    "transliteration": "Udyamena hi sidhyanti kāryāṇi.",
+    "english": "Works are accomplished only through hard work.",
+    "category": "work_money",
+    "categoryLabel": "२४. धनं वाणिज्यं कार्यम्",
+    "categoryEn": "Money, Shopping & Work",
+    "levelBadge": "Economics & Profession",
+    "words": [
+      {
+        "devanagari": "उद्यमेन",
+        "meaning": "Through diligence / effort",
+        "role": "particle",
+        "roleLabel": "तृतीया (उद्यम)"
+      },
+      {
+        "devanagari": "हि",
+        "meaning": "Indeed / Surely",
+        "role": "particle",
+        "roleLabel": "अवधारणे अव्ययम्"
+      },
+      {
+        "devanagari": "सिध्यन्ति",
+        "meaning": "get accomplished / succeed",
+        "role": "verb",
+        "roleLabel": "सिध् लट् बहु०"
+      },
+      {
+        "devanagari": "कार्याणि",
+        "meaning": "Works / Tasks (plural)",
+        "role": "subject",
+        "roleLabel": "नपुंसक बहुवचनम्"
+      }
+    ],
+    "grammarNote": "Workplace and marketplace expressions: मूल्यम् (cost), शाकम् (vegetables), कार्यालयः (office)."
+  },
+  {
+    "id": "s-241",
+    "num": 241,
+    "sanskrit": "वामतः चलतु।",
+    "transliteration": "Vāmataḥ calatu.",
+    "english": "Move / turn to the left.",
+    "category": "directions",
+    "categoryLabel": "२५. दिशानिर्देशः",
+    "categoryEn": "Giving Directions",
+    "levelBadge": "Navigation & Orientations",
+    "words": [
+      {
+        "devanagari": "वामतः",
+        "meaning": "To the left",
+        "role": "adverb",
+        "roleLabel": "दिशानिर्देश-अव्ययम्"
+      },
+      {
+        "devanagari": "चलतु",
+        "meaning": "चलतु",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Spatial navigation and directions: वामतः (left), दक्षिणतः (right), सरलमार्गेण (straight)."
+  },
+  {
+    "id": "s-242",
+    "num": 242,
+    "sanskrit": "दक्षिणतः पश्यतु।",
+    "transliteration": "Dakṣiṇataḥ paśyatu.",
+    "english": "Look to the right.",
+    "category": "directions",
+    "categoryLabel": "२५. दिशानिर्देशः",
+    "categoryEn": "Giving Directions",
+    "levelBadge": "Navigation & Orientations",
+    "words": [
+      {
+        "devanagari": "दक्षिणतः",
+        "meaning": "To the right",
+        "role": "adverb",
+        "roleLabel": "दिशानिर्देश-अव्ययम्"
+      },
+      {
+        "devanagari": "पश्यतु",
+        "meaning": "पश्यतु",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Spatial navigation and directions: वामतः (left), दक्षिणतः (right), सरलमार्गेण (straight)."
+  },
+  {
+    "id": "s-243",
+    "num": 243,
+    "sanskrit": "सरलमार्गेण गच्छ।",
+    "transliteration": "Saraḷamārgeṇa gaccha.",
+    "english": "Go straight ahead.",
+    "category": "directions",
+    "categoryLabel": "२५. दिशानिर्देशः",
+    "categoryEn": "Giving Directions",
+    "levelBadge": "Navigation & Orientations",
+    "words": [
+      {
+        "devanagari": "सरलमार्गेण",
+        "meaning": "Along straight path",
+        "role": "particle",
+        "roleLabel": "तृतीया (सरलमार्ग)"
+      },
+      {
+        "devanagari": "गच्छ",
+        "meaning": "गच्छ",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Spatial navigation and directions: वामतः (left), दक्षिणतः (right), सरलमार्गेण (straight)."
+  },
+  {
+    "id": "s-244",
+    "num": 244,
+    "sanskrit": "मम गृहं मन्दिरस्य पार्श्वे अस्ति।",
+    "transliteration": "Mama gṛhaṁ mandirasya pārśve asti.",
+    "english": "My house is next to the temple.",
+    "category": "directions",
+    "categoryLabel": "२५. दिशानिर्देशः",
+    "categoryEn": "Giving Directions",
+    "levelBadge": "Navigation & Orientations",
+    "words": [
+      {
+        "devanagari": "मम",
+        "meaning": "मम",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "गृहं",
+        "meaning": "गृहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "मन्दिरस्य",
+        "meaning": "Of the temple",
+        "role": "particle",
+        "roleLabel": "षष्ठी (मन्दिर)"
+      },
+      {
+        "devanagari": "पार्श्वे",
+        "meaning": "Beside / Next to",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (पार्श्व)"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Spatial navigation and directions: वामतः (left), दक्षिणतः (right), सरलमार्गेण (straight)."
+  },
+  {
+    "id": "s-245",
+    "num": 245,
+    "sanskrit": "ततः अग्रे गच्छतु।",
+    "transliteration": "Tataḥ agre gacchatu.",
+    "english": "Go further ahead from there.",
+    "category": "directions",
+    "categoryLabel": "२५. दिशानिर्देशः",
+    "categoryEn": "Giving Directions",
+    "levelBadge": "Navigation & Orientations",
+    "words": [
+      {
+        "devanagari": "ततः",
+        "meaning": "From there / Then",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "अग्रे",
+        "meaning": "Ahead / Forward",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "गच्छतु",
+        "meaning": "गच्छतु",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Spatial navigation and directions: वामतः (left), दक्षिणतः (right), सरलमार्गेण (straight)."
+  },
+  {
+    "id": "s-246",
+    "num": 246,
+    "sanskrit": "एषः संकीर्णः मार्गः अस्ति।",
+    "transliteration": "Eṣaḥ saṅkīrṇaḥ mārgaḥ asti.",
+    "english": "This is a narrow lane.",
+    "category": "directions",
+    "categoryLabel": "२५. दिशानिर्देशः",
+    "categoryEn": "Giving Directions",
+    "levelBadge": "Navigation & Orientations",
+    "words": [
+      {
+        "devanagari": "एषः",
+        "meaning": "एषः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "संकीर्णः",
+        "meaning": "Narrow / Constricted",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
+      },
+      {
+        "devanagari": "मार्गः",
+        "meaning": "Way / Path / Road",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा-एक०"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Spatial navigation and directions: वामतः (left), दक्षिणतः (right), सरलमार्गेण (straight)."
+  },
+  {
+    "id": "s-247",
+    "num": 247,
+    "sanskrit": "उत्पीठिकायाः अधः मार्जारः अस्ति।",
+    "transliteration": "Utpīṭhikāyāḥ adhaḥ mārjāraḥ asti.",
+    "english": "There is a cat under the table.",
+    "category": "directions",
+    "categoryLabel": "२५. दिशानिर्देशः",
+    "categoryEn": "Giving Directions",
+    "levelBadge": "Navigation & Orientations",
+    "words": [
+      {
+        "devanagari": "उत्पीठिकायाः",
+        "meaning": "Of the table",
+        "role": "particle",
+        "roleLabel": "षष्ठी (उत्पीठिका)"
+      },
+      {
+        "devanagari": "अधः",
+        "meaning": "अधः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "मार्जारः",
+        "meaning": "Cat",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Spatial navigation and directions: वामतः (left), दक्षिणतः (right), सरलमार्गेण (straight)."
+  },
+  {
+    "id": "s-248",
+    "num": 248,
+    "sanskrit": "गृहस्य अन्तः आगच्छ।",
+    "transliteration": "Gṛhasya antaḥ āgaccha.",
+    "english": "Come inside the house.",
+    "category": "directions",
+    "categoryLabel": "२५. दिशानिर्देशः",
+    "categoryEn": "Giving Directions",
+    "levelBadge": "Navigation & Orientations",
+    "words": [
+      {
+        "devanagari": "गृहस्य",
+        "meaning": "गृहस्य",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "अन्तः",
+        "meaning": "Inside",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "आगच्छ",
+        "meaning": "आगच्छ",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Spatial navigation and directions: वामतः (left), दक्षिणतः (right), सरलमार्गेण (straight)."
+  },
+  {
+    "id": "s-249",
+    "num": 249,
+    "sanskrit": "बहिः मा गच्छ, आतपः अस्ति।",
+    "transliteration": "Bahiḥ mā gaccha, ātapaḥ asti.",
+    "english": "Do not go outside, it is sunny.",
+    "category": "directions",
+    "categoryLabel": "२५. दिशानिर्देशः",
+    "categoryEn": "Giving Directions",
+    "levelBadge": "Navigation & Orientations",
+    "words": [
+      {
+        "devanagari": "बहिः",
+        "meaning": "Outside",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "मा",
+        "meaning": "मा",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "गच्छ",
+        "meaning": "गच्छ",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "आतपः",
+        "meaning": "Sunlight / Heat",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Spatial navigation and directions: वामतः (left), दक्षिणतः (right), सरलमार्गेण (straight)."
+  },
+  {
+    "id": "s-250",
+    "num": 250,
+    "sanskrit": "नद्याः परतः पर्वतः वर्तते।",
+    "transliteration": "Nadyāḥ parataḥ parvataḥ vartate.",
+    "english": "There is a mountain across the river.",
+    "category": "directions",
+    "categoryLabel": "२५. दिशानिर्देशः",
+    "categoryEn": "Giving Directions",
+    "levelBadge": "Navigation & Orientations",
+    "words": [
+      {
+        "devanagari": "नद्याः",
+        "meaning": "नद्याः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "परतः",
+        "meaning": "Across / Beyond",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "पर्वतः",
+        "meaning": "पर्वतः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "वर्तते",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "वृत् लट् आत्मनेपदम्"
+      }
+    ],
+    "grammarNote": "Spatial navigation and directions: वामतः (left), दक्षिणतः (right), सरलमार्गेण (straight)."
+  },
+  {
+    "id": "s-251",
+    "num": 251,
+    "sanskrit": "यः पठति, सः जानाति।",
+    "transliteration": "Yaḥ paṭhati, saḥ jānati.",
+    "english": "He who studies, knows.",
+    "category": "relative",
+    "categoryLabel": "२६. यत्-तत् प्रयोगाः",
+    "categoryEn": "Relative Clauses (यत्-तत्)",
+    "levelBadge": "Relative Syntax",
+    "words": [
+      {
+        "devanagari": "यः",
+        "meaning": "He who (relative)",
+        "role": "subject",
+        "roleLabel": "यद् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "पठति",
+        "meaning": "पठति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "सः",
+        "meaning": "He",
+        "role": "subject",
+        "roleLabel": "तद् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "जानाति",
+        "meaning": "knows",
+        "role": "verb",
+        "roleLabel": "ज्ञा लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Relative correlative clauses (यत्... तत्, यः... सः, यदा... तदा, यत्र... तत्र)."
+  },
+  {
+    "id": "s-252",
+    "num": 252,
+    "sanskrit": "या गायति, सा मम भगिनी।",
+    "transliteration": "Yā gāyati, sā mama bhaginī.",
+    "english": "The girl who sings is my sister.",
+    "category": "relative",
+    "categoryLabel": "२६. यत्-तत् प्रयोगाः",
+    "categoryEn": "Relative Clauses (यत्-तत्)",
+    "levelBadge": "Relative Syntax",
+    "words": [
+      {
+        "devanagari": "या",
+        "meaning": "She who (relative)",
+        "role": "subject",
+        "roleLabel": "यद् स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "गायति",
+        "meaning": "गायति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "सा",
+        "meaning": "She",
+        "role": "subject",
+        "roleLabel": "तद् स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "मम",
+        "meaning": "मम",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "भगिनी",
+        "meaning": "Sister",
+        "role": "subject",
+        "roleLabel": "स्त्री० प्रथमा"
+      }
+    ],
+    "grammarNote": "Relative correlative clauses (यत्... तत्, यः... सः, यदा... तदा, यत्र... तत्र)."
+  },
+  {
+    "id": "s-253",
+    "num": 253,
+    "sanskrit": "यत् सत्यं, तत् कटु भवति।",
+    "transliteration": "Yat satyaṁ, tat kaṭu bhavati.",
+    "english": "What is true is often bitter.",
+    "category": "relative",
+    "categoryLabel": "२६. यत्-तत् प्रयोगाः",
+    "categoryEn": "Relative Clauses (यत्-तत्)",
+    "levelBadge": "Relative Syntax",
+    "words": [
+      {
+        "devanagari": "यत्",
+        "meaning": "यत्",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "सत्यं",
+        "meaning": "सत्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "तत्",
+        "meaning": "तत्",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "कटु",
+        "meaning": "Bitter / Harsh",
+        "role": "adjective",
+        "roleLabel": "विशेषणम्"
+      },
+      {
+        "devanagari": "भवति",
+        "meaning": "भवति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Relative correlative clauses (यत्... तत्, यः... सः, यदा... तदा, यत्र... तत्र)."
+  },
+  {
+    "id": "s-254",
+    "num": 254,
+    "sanskrit": "यदा सूर्यः उदेति, तदा कमलं विकसति।",
+    "transliteration": "Yadā sūryaḥ udeti, tadā kamalam vikasati.",
+    "english": "When the sun rises, then the lotus blooms.",
+    "category": "relative",
+    "categoryLabel": "२६. यत्-तत् प्रयोगाः",
+    "categoryEn": "Relative Clauses (यत्-तत्)",
+    "levelBadge": "Relative Syntax",
+    "words": [
+      {
+        "devanagari": "यदा",
+        "meaning": "When (relative time)",
+        "role": "adverb",
+        "roleLabel": "कालवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "सूर्यः",
+        "meaning": "सूर्यः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "उदेति",
+        "meaning": "rises (sun)",
+        "role": "verb",
+        "roleLabel": "उद्+इ लट् प्रथम०"
+      },
+      {
+        "devanagari": "तदा",
+        "meaning": "Then (correlative)",
+        "role": "adverb",
+        "roleLabel": "कालवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "कमलं",
+        "meaning": "कमलं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "विकसति",
+        "meaning": "विकसति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Relative correlative clauses (यत्... तत्, यः... सः, यदा... तदा, यत्र... तत्र)."
+  },
+  {
+    "id": "s-255",
+    "num": 255,
+    "sanskrit": "यत्र धूमः, तत्र अग्निः।",
+    "transliteration": "Yatra dhūmaḥ, tatra agniḥ.",
+    "english": "Where there is smoke, there is fire.",
+    "category": "relative",
+    "categoryLabel": "२६. यत्-तत् प्रयोगाः",
+    "categoryEn": "Relative Clauses (यत्-तत्)",
+    "levelBadge": "Relative Syntax",
+    "words": [
+      {
+        "devanagari": "यत्र",
+        "meaning": "Where (relative place)",
+        "role": "adverb",
+        "roleLabel": "स्थानवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "धूमः",
+        "meaning": "Smoke",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "तत्र",
+        "meaning": "There (correlative)",
+        "role": "adverb",
+        "roleLabel": "स्थानवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "अग्निः",
+        "meaning": "Fire",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      }
+    ],
+    "grammarNote": "Relative correlative clauses (यत्... तत्, यः... सः, यदा... तदा, यत्र... तत्र)."
+  },
+  {
+    "id": "s-256",
+    "num": 256,
+    "sanskrit": "यावत् शक्नोति, तावत् करोति।",
+    "transliteration": "Yāvat śaknoti, tāvat karoti.",
+    "english": "He does as much as he can.",
+    "category": "relative",
+    "categoryLabel": "२६. यत्-तत् प्रयोगाः",
+    "categoryEn": "Relative Clauses (यत्-तत्)",
+    "levelBadge": "Relative Syntax",
+    "words": [
+      {
+        "devanagari": "यावत्",
+        "meaning": "As much as / So long as",
+        "role": "adverb",
+        "roleLabel": "परिमाणवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "शक्नोति",
+        "meaning": "शक्नोति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "तावत्",
+        "meaning": "That much",
+        "role": "adverb",
+        "roleLabel": "परिमाणवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "करोति",
+        "meaning": "करोति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Relative correlative clauses (यत्... तत्, यः... सः, यदा... तदा, यत्र... तत्र)."
+  },
+  {
+    "id": "s-257",
+    "num": 257,
+    "sanskrit": "यथा वदसि, तथा कुरु।",
+    "transliteration": "Yathā vadasi, tathā kuru.",
+    "english": "Do as you say.",
+    "category": "relative",
+    "categoryLabel": "२६. यत्-तत् प्रयोगाः",
+    "categoryEn": "Relative Clauses (यत्-तत्)",
+    "levelBadge": "Relative Syntax",
+    "words": [
+      {
+        "devanagari": "यथा",
+        "meaning": "यथा",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "वदसि",
+        "meaning": "वदसि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "तथा",
+        "meaning": "तथा",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "कुरु",
+        "meaning": "Do! / Place!",
+        "role": "verb",
+        "roleLabel": "कृ लोट् मध्यम०"
+      }
+    ],
+    "grammarNote": "Relative correlative clauses (यत्... तत्, यः... सः, यदा... तदा, यत्र... तत्र)."
+  },
+  {
+    "id": "s-258",
+    "num": 258,
+    "sanskrit": "यत् आवश्यकं, तत् स्वीकुरु।",
+    "transliteration": "Yat āvaśyakaṁ, tat svīkuru.",
+    "english": "Take whatever is necessary.",
+    "category": "relative",
+    "categoryLabel": "२६. यत्-तत् प्रयोगाः",
+    "categoryEn": "Relative Clauses (यत्-तत्)",
+    "levelBadge": "Relative Syntax",
+    "words": [
+      {
+        "devanagari": "यत्",
+        "meaning": "यत्",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "आवश्यकं",
+        "meaning": "आवश्यकं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "तत्",
+        "meaning": "तत्",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "स्वीकुरु",
+        "meaning": "Accept! / Take!",
+        "role": "verb",
+        "roleLabel": "स्वी+कृ लोट् मध्यम०"
+      }
+    ],
+    "grammarNote": "Relative correlative clauses (यत्... तत्, यः... सः, यदा... तदा, यत्र... तत्र)."
+  },
+  {
+    "id": "s-259",
+    "num": 259,
+    "sanskrit": "यदा त्वं इच्छसि, तदा आगच्छ।",
+    "transliteration": "Yadā tvaṁ icchasi, tadā āgaccha.",
+    "english": "Come whenever you want.",
+    "category": "relative",
+    "categoryLabel": "२६. यत्-तत् प्रयोगाः",
+    "categoryEn": "Relative Clauses (यत्-तत्)",
+    "levelBadge": "Relative Syntax",
+    "words": [
+      {
+        "devanagari": "यदा",
+        "meaning": "When (relative time)",
+        "role": "adverb",
+        "roleLabel": "कालवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "त्वं",
+        "meaning": "You",
+        "role": "subject",
+        "roleLabel": "युष्मद् प्रथमा"
+      },
+      {
+        "devanagari": "इच्छसि",
+        "meaning": "desire / wish (you)",
+        "role": "verb",
+        "roleLabel": "इष् लट् मध्यम०"
+      },
+      {
+        "devanagari": "तदा",
+        "meaning": "Then (correlative)",
+        "role": "adverb",
+        "roleLabel": "कालवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "आगच्छ",
+        "meaning": "आगच्छ",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Relative correlative clauses (यत्... तत्, यः... सः, यदा... तदा, यत्र... तत्र)."
+  },
+  {
+    "id": "s-260",
+    "num": 260,
+    "sanskrit": "यत्र विद्या, तत्र आदरः।",
+    "transliteration": "Yatra vidyā, tatra ādaraḥ.",
+    "english": "Where there is knowledge, there is respect.",
+    "category": "relative",
+    "categoryLabel": "२६. यत्-तत् प्रयोगाः",
+    "categoryEn": "Relative Clauses (यत्-तत्)",
+    "levelBadge": "Relative Syntax",
+    "words": [
+      {
+        "devanagari": "यत्र",
+        "meaning": "Where (relative place)",
+        "role": "adverb",
+        "roleLabel": "स्थानवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "विद्या",
+        "meaning": "Knowledge / Learning",
+        "role": "subject",
+        "roleLabel": "स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "तत्र",
+        "meaning": "There (correlative)",
+        "role": "adverb",
+        "roleLabel": "स्थानवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "आदरः",
+        "meaning": "Respect / Honor",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      }
+    ],
+    "grammarNote": "Relative correlative clauses (यत्... तत्, यः... सः, यदा... तदा, यत्र... तत्र)."
+  },
+  {
+    "id": "s-261",
+    "num": 261,
+    "sanskrit": "मम अपराधं क्षमस्व।",
+    "transliteration": "Mama aparādhaṁ kṣamasva.",
+    "english": "Forgive my mistake.",
+    "category": "etiquette_adv",
+    "categoryLabel": "२७. प्रौढ शिष्टाचारः",
+    "categoryEn": "Advanced Etiquette",
+    "levelBadge": "Courtly Respect",
+    "words": [
+      {
+        "devanagari": "मम",
+        "meaning": "मम",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "अपराधं",
+        "meaning": "Fault / Offense",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "क्षमस्व",
+        "meaning": "Forgive! (imperative)",
+        "role": "verb",
+        "roleLabel": "क्षम् लोट् आत्मने०"
+      }
+    ],
+    "grammarNote": "Cultured etiquette: आज्ञा शिरोधार्या, कष्टाय क्षम्यताम्, and benevolent blessings."
+  },
+  {
+    "id": "s-262",
+    "num": 262,
+    "sanskrit": "भवतः आज्ञा शिरोधार्या।",
+    "transliteration": "Bhavataḥ ājñā śirodhāryā.",
+    "english": "Your command is accepted respectfully.",
+    "category": "etiquette_adv",
+    "categoryLabel": "२७. प्रौढ शिष्टाचारः",
+    "categoryEn": "Advanced Etiquette",
+    "levelBadge": "Courtly Respect",
+    "words": [
+      {
+        "devanagari": "भवतः",
+        "meaning": "भवतः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "आज्ञा",
+        "meaning": "Command / Order",
+        "role": "subject",
+        "roleLabel": "स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "शिरोधार्या",
+        "meaning": "Accepted on head / Honored",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (स्त्री०)"
+      }
+    ],
+    "grammarNote": "Cultured etiquette: आज्ञा शिरोधार्या, कष्टाय क्षम्यताम्, and benevolent blessings."
+  },
+  {
+    "id": "s-263",
+    "num": 263,
+    "sanskrit": "किञ्चित् जलेन सिञ्चतु।",
+    "transliteration": "Kiñcit jalena siñcatu.",
+    "english": "Sprinkle a little water.",
+    "category": "etiquette_adv",
+    "categoryLabel": "२७. प्रौढ शिष्टाचारः",
+    "categoryEn": "Advanced Etiquette",
+    "levelBadge": "Courtly Respect",
+    "words": [
+      {
+        "devanagari": "किञ्चित्",
+        "meaning": "A little",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "जलेन",
+        "meaning": "With water",
+        "role": "particle",
+        "roleLabel": "तृतीया (जल)"
+      },
+      {
+        "devanagari": "सिञ्चतु",
+        "meaning": "Please sprinkle",
+        "role": "verb",
+        "roleLabel": "सिच् लोट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Cultured etiquette: आज्ञा शिरोधार्या, कष्टाय क्षम्यताम्, and benevolent blessings."
+  },
+  {
+    "id": "s-264",
+    "num": 264,
+    "sanskrit": "अहं भवता सह सहमतः अस्मि।",
+    "transliteration": "Ahaṁ bhavatā saha sahmataḥ asmi.",
+    "english": "I agree with you.",
+    "category": "etiquette_adv",
+    "categoryLabel": "२७. प्रौढ शिष्टाचारः",
+    "categoryEn": "Advanced Etiquette",
+    "levelBadge": "Courtly Respect",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "भवता",
+        "meaning": "भवता",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "सह",
+        "meaning": "सह",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "सहमतः",
+        "meaning": "In agreement",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
+      },
+      {
+        "devanagari": "अस्मि",
+        "meaning": "अस्मि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Cultured etiquette: आज्ञा शिरोधार्या, कष्टाय क्षम्यताम्, and benevolent blessings."
+  },
+  {
+    "id": "s-265",
+    "num": 265,
+    "sanskrit": "कृपया मार्गं ददातु।",
+    "transliteration": "Kṛpayā mārgaṁ dadātu.",
+    "english": "Please give way.",
+    "category": "etiquette_adv",
+    "categoryLabel": "२७. प्रौढ शिष्टाचारः",
+    "categoryEn": "Advanced Etiquette",
+    "levelBadge": "Courtly Respect",
+    "words": [
+      {
+        "devanagari": "कृपया",
+        "meaning": "Please / Kindly",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "मार्गं",
+        "meaning": "मार्गं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "ददातु",
+        "meaning": "ददातु",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Cultured etiquette: आज्ञा शिरोधार्या, कष्टाय क्षम्यताम्, and benevolent blessings."
+  },
+  {
+    "id": "s-266",
+    "num": 266,
+    "sanskrit": "भवान् अत्र उपविशतु, अहं आगच्छामि।",
+    "transliteration": "Bhavān atra upaviśatu, ahaṁ āgacchāmi.",
+    "english": "You sit here, I will be right back.",
+    "category": "etiquette_adv",
+    "categoryLabel": "२७. प्रौढ शिष्टाचारः",
+    "categoryEn": "Advanced Etiquette",
+    "levelBadge": "Courtly Respect",
+    "words": [
+      {
+        "devanagari": "भवान्",
+        "meaning": "You (male respectful)",
+        "role": "subject",
+        "roleLabel": "भवत् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "अत्र",
+        "meaning": "अत्र",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "उपविशतु",
+        "meaning": "उपविशतु",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "आगच्छामि",
+        "meaning": "आगच्छामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Cultured etiquette: आज्ञा शिरोधार्या, कष्टाय क्षम्यताम्, and benevolent blessings."
+  },
+  {
+    "id": "s-267",
+    "num": 267,
+    "sanskrit": "कष्टाय क्षम्यताम्।",
+    "transliteration": "Kaṣṭāya kṣamyatām.",
+    "english": "Sorry for the trouble.",
+    "category": "etiquette_adv",
+    "categoryLabel": "२७. प्रौढ शिष्टाचारः",
+    "categoryEn": "Advanced Etiquette",
+    "levelBadge": "Courtly Respect",
+    "words": [
+      {
+        "devanagari": "कष्टाय",
+        "meaning": "For the inconvenience",
+        "role": "particle",
+        "roleLabel": "चतुर्थी (कष्ट)"
+      },
+      {
+        "devanagari": "क्षम्यताम्",
+        "meaning": "क्षम्यताम्",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Cultured etiquette: आज्ञा शिरोधार्या, कष्टाय क्षम्यताम्, and benevolent blessings."
+  },
+  {
+    "id": "s-268",
+    "num": 268,
+    "sanskrit": "अत्र भवतः स्वागतम् अस्ति।",
+    "transliteration": "Atra bhavataḥ svāgataṁ asti.",
+    "english": "You are welcome here.",
+    "category": "etiquette_adv",
+    "categoryLabel": "२७. प्रौढ शिष्टाचारः",
+    "categoryEn": "Advanced Etiquette",
+    "levelBadge": "Courtly Respect",
+    "words": [
+      {
+        "devanagari": "अत्र",
+        "meaning": "अत्र",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "भवतः",
+        "meaning": "भवतः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "स्वागतम्",
+        "meaning": "Welcome",
+        "role": "subject",
+        "roleLabel": "नपुंसक प्रथमा"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Cultured etiquette: आज्ञा शिरोधार्या, कष्टाय क्षम्यताम्, and benevolent blessings."
+  },
+  {
+    "id": "s-269",
+    "num": 269,
+    "sanskrit": "भवतः स्वास्थ्यं कथम् अस्ति?",
+    "transliteration": "Bhavataḥ svāsthyaṁ katham asti?",
+    "english": "How is your health?",
+    "category": "etiquette_adv",
+    "categoryLabel": "२७. प्रौढ शिष्टाचारः",
+    "categoryEn": "Advanced Etiquette",
+    "levelBadge": "Courtly Respect",
+    "words": [
+      {
+        "devanagari": "भवतः",
+        "meaning": "भवतः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "स्वास्थ्यं",
+        "meaning": "Health",
+        "role": "subject",
+        "roleLabel": "नपुंसक प्रथमा"
+      },
+      {
+        "devanagari": "कथम्",
+        "meaning": "How?",
+        "role": "adverb",
+        "roleLabel": "प्रश्नवाचकम्"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Cultured etiquette: आज्ञा शिरोधार्या, कष्टाय क्षम्यताम्, and benevolent blessings."
+  },
+  {
+    "id": "s-270",
+    "num": 270,
+    "sanskrit": "ईश्वरः त्वां रक्षतु।",
+    "transliteration": "Īśvaraḥ tvāṁ rakṣatu.",
+    "english": "May God protect you.",
+    "category": "etiquette_adv",
+    "categoryLabel": "२७. प्रौढ शिष्टाचारः",
+    "categoryEn": "Advanced Etiquette",
+    "levelBadge": "Courtly Respect",
+    "words": [
+      {
+        "devanagari": "ईश्वरः",
+        "meaning": "God / Divine",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "त्वां",
+        "meaning": "You",
+        "role": "object",
+        "roleLabel": "युष्मद् द्वितीया"
+      },
+      {
+        "devanagari": "रक्षतु",
+        "meaning": "May protect!",
+        "role": "verb",
+        "roleLabel": "रक्ष् लोट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Cultured etiquette: आज्ञा शिरोधार्या, कष्टाय क्षम्यताम्, and benevolent blessings."
+  },
+  {
+    "id": "s-271",
+    "num": 271,
+    "sanskrit": "अहं गृहं गच्छेयं किम्?",
+    "transliteration": "Ahaṁ gṛhaṁ gaccheyam kim?",
+    "english": "May I go home?",
+    "category": "potential",
+    "categoryLabel": "२८. विधि-लिङ्-प्रयोगाः",
+    "categoryEn": "Permissions & Obligations",
+    "levelBadge": "Optative / Vidhi-Liṅ",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "गृहं",
+        "meaning": "गृहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "गच्छेयं",
+        "meaning": "गच्छेयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "किम्",
+        "meaning": "What?",
+        "role": "adverb",
+        "roleLabel": "प्रश्नवाचकम्"
+      }
+    ],
+    "grammarNote": "Optative mood (विधिलिङ् लकारः) expressing duties, permissions, and polite suggestions: वदेत्, रक्षेम, कुर्यात्."
+  },
+  {
+    "id": "s-272",
+    "num": 272,
+    "sanskrit": "त्वं प्रतिदिनं पठेः।",
+    "transliteration": "Tvaṁ pratidinaṁ paṭheḥ.",
+    "english": "You should study every day.",
+    "category": "potential",
+    "categoryLabel": "२८. विधि-लिङ्-प्रयोगाः",
+    "categoryEn": "Permissions & Obligations",
+    "levelBadge": "Optative / Vidhi-Liṅ",
+    "words": [
+      {
+        "devanagari": "त्वं",
+        "meaning": "You",
+        "role": "subject",
+        "roleLabel": "युष्मद् प्रथमा"
+      },
+      {
+        "devanagari": "प्रतिदिनं",
+        "meaning": "प्रतिदिनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "पठेः",
+        "meaning": "You should study",
+        "role": "verb",
+        "roleLabel": "पठ् विधिलिङ् मध्यम०"
+      }
+    ],
+    "grammarNote": "Optative mood (विधिलिङ् लकारः) expressing duties, permissions, and polite suggestions: वदेत्, रक्षेम, कुर्यात्."
+  },
+  {
+    "id": "s-273",
+    "num": 273,
+    "sanskrit": "सर्वः सत्यं वदेत्।",
+    "transliteration": "Sarvaḥ satyaṁ vadet.",
+    "english": "Everyone should speak the truth.",
+    "category": "potential",
+    "categoryLabel": "२८. विधि-लिङ्-प्रयोगाः",
+    "categoryEn": "Permissions & Obligations",
+    "levelBadge": "Optative / Vidhi-Liṅ",
+    "words": [
+      {
+        "devanagari": "सर्वः",
+        "meaning": "Everyone",
+        "role": "subject",
+        "roleLabel": "सर्व पुं० प्रथमा"
+      },
+      {
+        "devanagari": "सत्यं",
+        "meaning": "सत्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "वदेत्",
+        "meaning": "should speak",
+        "role": "verb",
+        "roleLabel": "वद् विधिलिङ् प्रथम०"
+      }
+    ],
+    "grammarNote": "Optative mood (विधिलिङ् लकारः) expressing duties, permissions, and polite suggestions: वदेत्, रक्षेम, कुर्यात्."
+  },
+  {
+    "id": "s-274",
+    "num": 274,
+    "sanskrit": "वयं देशं रक्षेम।",
+    "transliteration": "Vayaṁ deśaṁ rakṣema.",
+    "english": "We ought to protect the country.",
+    "category": "potential",
+    "categoryLabel": "२८. विधि-लिङ्-प्रयोगाः",
+    "categoryEn": "Permissions & Obligations",
+    "levelBadge": "Optative / Vidhi-Liṅ",
+    "words": [
+      {
+        "devanagari": "वयं",
+        "meaning": "वयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "देशं",
+        "meaning": "Country / Nation",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "रक्षेम",
+        "meaning": "we ought to protect",
+        "role": "verb",
+        "roleLabel": "रक्ष् विधिलिङ् उत्तम बहु०"
+      }
+    ],
+    "grammarNote": "Optative mood (विधिलिङ् लकारः) expressing duties, permissions, and polite suggestions: वदेत्, रक्षेम, कुर्यात्."
+  },
+  {
+    "id": "s-275",
+    "num": 275,
+    "sanskrit": "सः भोजनं कुर्यात्।",
+    "transliteration": "Saḥ bhojanaṁ kuryāt.",
+    "english": "He should eat his food.",
+    "category": "potential",
+    "categoryLabel": "२८. विधि-लिङ्-प्रयोगाः",
+    "categoryEn": "Permissions & Obligations",
+    "levelBadge": "Optative / Vidhi-Liṅ",
+    "words": [
+      {
+        "devanagari": "सः",
+        "meaning": "He",
+        "role": "subject",
+        "roleLabel": "तद् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "भोजनं",
+        "meaning": "भोजनं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "कुर्यात्",
+        "meaning": "should do / eat",
+        "role": "verb",
+        "roleLabel": "कृ विधिलिङ् प्रथम०"
+      }
+    ],
+    "grammarNote": "Optative mood (विधिलिङ् लकारः) expressing duties, permissions, and polite suggestions: वदेत्, रक्षेम, कुर्यात्."
+  },
+  {
+    "id": "s-276",
+    "num": 276,
+    "sanskrit": "छात्राः कोलाहलं न कुर्युः।",
+    "transliteration": "Chātrāḥ kolāhalaṁ na kuryuḥ.",
+    "english": "Students should not make noise.",
+    "category": "potential",
+    "categoryLabel": "२८. विधि-लिङ्-प्रयोगाः",
+    "categoryEn": "Permissions & Obligations",
+    "levelBadge": "Optative / Vidhi-Liṅ",
+    "words": [
+      {
+        "devanagari": "छात्राः",
+        "meaning": "छात्राः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "कोलाहलं",
+        "meaning": "Noise / Commotion",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "न",
+        "meaning": "न",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "कुर्युः",
+        "meaning": "should do (plural)",
+        "role": "verb",
+        "roleLabel": "कृ विधिलिङ् प्रथम बहु०"
+      }
+    ],
+    "grammarNote": "Optative mood (विधिलिङ् लकारः) expressing duties, permissions, and polite suggestions: वदेत्, रक्षेम, कुर्यात्."
+  },
+  {
+    "id": "s-277",
+    "num": 277,
+    "sanskrit": "किमपि वदतु भवान्।",
+    "transliteration": "Kimapi vadatu bhavān.",
+    "english": "You may say something.",
+    "category": "potential",
+    "categoryLabel": "२८. विधि-लिङ्-प्रयोगाः",
+    "categoryEn": "Permissions & Obligations",
+    "levelBadge": "Optative / Vidhi-Liṅ",
+    "words": [
+      {
+        "devanagari": "किमपि",
+        "meaning": "Something / Anything",
+        "role": "object",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "वदतु",
+        "meaning": "Please say / speak",
+        "role": "verb",
+        "roleLabel": "वद् लोट् प्रथम०"
+      },
+      {
+        "devanagari": "भवान्",
+        "meaning": "You (male respectful)",
+        "role": "subject",
+        "roleLabel": "भवत् पुं० प्रथमा"
+      }
+    ],
+    "grammarNote": "Optative mood (विधिलिङ् लकारः) expressing duties, permissions, and polite suggestions: वदेत्, रक्षेम, कुर्यात्."
+  },
+  {
+    "id": "s-278",
+    "num": 278,
+    "sanskrit": "अहं साहाय्यं कुर्यां किम्?",
+    "transliteration": "Ahaṁ sāhāyyaṁ kuryām kim?",
+    "english": "Should I help?",
+    "category": "potential",
+    "categoryLabel": "२८. विधि-लिङ्-प्रयोगाः",
+    "categoryEn": "Permissions & Obligations",
+    "levelBadge": "Optative / Vidhi-Liṅ",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "साहाय्यं",
+        "meaning": "Help / Assistance",
+        "role": "object",
+        "roleLabel": "कर्म (द्वितीया)"
+      },
+      {
+        "devanagari": "कुर्यां",
+        "meaning": "कुर्यां",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "किम्",
+        "meaning": "What?",
+        "role": "adverb",
+        "roleLabel": "प्रश्नवाचकम्"
+      }
+    ],
+    "grammarNote": "Optative mood (विधिलिङ् लकारः) expressing duties, permissions, and polite suggestions: वदेत्, रक्षेम, कुर्यात्."
+  },
+  {
+    "id": "s-279",
+    "num": 279,
+    "sanskrit": "त्वं गुरुं नमस्कृतवान् भवेः।",
+    "transliteration": "Tvaṁ guruṁ namaskṛtavān bhaveḥ.",
+    "english": "You should have bowed to the teacher.",
+    "category": "potential",
+    "categoryLabel": "२८. विधि-लिङ्-प्रयोगाः",
+    "categoryEn": "Permissions & Obligations",
+    "levelBadge": "Optative / Vidhi-Liṅ",
+    "words": [
+      {
+        "devanagari": "त्वं",
+        "meaning": "You",
+        "role": "subject",
+        "roleLabel": "युष्मद् प्रथमा"
+      },
+      {
+        "devanagari": "गुरुं",
+        "meaning": "गुरुं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "नमस्कृतवान्",
+        "meaning": "Bowed / Saluted",
+        "role": "verb",
+        "roleLabel": "नमस्+कृ क्तवतु"
+      },
+      {
+        "devanagari": "भवेः",
+        "meaning": "should have been (you)",
+        "role": "verb",
+        "roleLabel": "भू विधिलिङ् मध्यम०"
+      }
+    ],
+    "grammarNote": "Optative mood (विधिलिङ् लकारः) expressing duties, permissions, and polite suggestions: वदेत्, रक्षेम, कुर्यात्."
+  },
+  {
+    "id": "s-280",
+    "num": 280,
+    "sanskrit": "वयम् एकत्र मिलेम।",
+    "transliteration": "Vayaṁ ekatra milema.",
+    "english": "We should meet together.",
+    "category": "potential",
+    "categoryLabel": "२८. विधि-लिङ्-प्रयोगाः",
+    "categoryEn": "Permissions & Obligations",
+    "levelBadge": "Optative / Vidhi-Liṅ",
+    "words": [
+      {
+        "devanagari": "वयम्",
+        "meaning": "वयम्",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "एकत्र",
+        "meaning": "Together / At one place",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "मिलेम",
+        "meaning": "we should meet",
+        "role": "verb",
+        "roleLabel": "मिल् विधिलिङ् उत्तम बहु०"
+      }
+    ],
+    "grammarNote": "Optative mood (विधिलिङ् लकारः) expressing duties, permissions, and polite suggestions: वदेत्, रक्षेम, कुर्यात्."
+  },
+  {
+    "id": "s-281",
+    "num": 281,
+    "sanskrit": "अहं घटिकाद्वयं पठामि।",
+    "transliteration": "Ahaṁ ghaṭikādvayaṁ paṭhāmi.",
+    "english": "I study for two hours.",
+    "category": "time_scheduling",
+    "categoryLabel": "२९. कालमानम्",
+    "categoryEn": "Durations & Scheduling",
+    "levelBadge": "Chronometry & Dates",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "घटिकाद्वयं",
+        "meaning": "For two hours (duration)",
+        "role": "adverb",
+        "roleLabel": "कालाध्वनोः द्वितीया"
+      },
+      {
+        "devanagari": "पठामि",
+        "meaning": "पठामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Temporal expressions: duration accusative (घटिकाद्वयम्), ordinal dates, and scheduling."
+  },
+  {
+    "id": "s-282",
+    "num": 282,
+    "sanskrit": "परीक्षा आगामिनि सप्ताहे अस्ति।",
+    "transliteration": "Parīkṣā āgāmini saptāhe asti.",
+    "english": "The exam is next week.",
+    "category": "time_scheduling",
+    "categoryLabel": "२९. कालमानम्",
+    "categoryEn": "Durations & Scheduling",
+    "levelBadge": "Chronometry & Dates",
+    "words": [
+      {
+        "devanagari": "परीक्षा",
+        "meaning": "परीक्षा",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "आगामिनि",
+        "meaning": "In the coming / next",
+        "role": "adjective",
+        "roleLabel": "सप्तमी (आगामिन्)"
+      },
+      {
+        "devanagari": "सप्ताहे",
+        "meaning": "In the week",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (सप्ताह)"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Temporal expressions: duration accusative (घटिकाद्वयम्), ordinal dates, and scheduling."
+  },
+  {
+    "id": "s-283",
+    "num": 283,
+    "sanskrit": "मासद्वयात् पूर्वं सः अत्र आसीत्।",
+    "transliteration": "Māsadvayāt pūrvaṁ saḥ atra āsīt.",
+    "english": "He was here two months ago.",
+    "category": "time_scheduling",
+    "categoryLabel": "२९. कालमानम्",
+    "categoryEn": "Durations & Scheduling",
+    "levelBadge": "Chronometry & Dates",
+    "words": [
+      {
+        "devanagari": "मासद्वयात्",
+        "meaning": "From two months",
+        "role": "particle",
+        "roleLabel": "पञ्चमी (मासद्वय)"
+      },
+      {
+        "devanagari": "पूर्वं",
+        "meaning": "Before / Ago",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "सः",
+        "meaning": "He",
+        "role": "subject",
+        "roleLabel": "तद् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "अत्र",
+        "meaning": "अत्र",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "आसीत्",
+        "meaning": "आसीत्",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Temporal expressions: duration accusative (घटिकाद्वयम्), ordinal dates, and scheduling."
+  },
+  {
+    "id": "s-284",
+    "num": 284,
+    "sanskrit": "अहं दशवादनतः कार्यं करोमि।",
+    "transliteration": "Ahaṁ daśavādanataḥ kāryaṁ karomi.",
+    "english": "I work from 10 o'clock onwards.",
+    "category": "time_scheduling",
+    "categoryLabel": "२९. कालमानम्",
+    "categoryEn": "Durations & Scheduling",
+    "levelBadge": "Chronometry & Dates",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "दशवादनतः",
+        "meaning": "From 10 o'clock",
+        "role": "particle",
+        "roleLabel": "तसिल् (समय)"
+      },
+      {
+        "devanagari": "कार्यं",
+        "meaning": "कार्यं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "करोमि",
+        "meaning": "करोमि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Temporal expressions: duration accusative (घटिकाद्वयम्), ordinal dates, and scheduling."
+  },
+  {
+    "id": "s-285",
+    "num": 285,
+    "sanskrit": "विलम्बः मा भवतु।",
+    "transliteration": "Vilambaḥ ma bhavatu.",
+    "english": "Let there be no delay / Don't be late.",
+    "category": "time_scheduling",
+    "categoryLabel": "२९. कालमानम्",
+    "categoryEn": "Durations & Scheduling",
+    "levelBadge": "Chronometry & Dates",
+    "words": [
+      {
+        "devanagari": "विलम्बः",
+        "meaning": "Delay / Lateness",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "मा",
+        "meaning": "मा",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "भवतु",
+        "meaning": "भवतु",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Temporal expressions: duration accusative (घटिकाद्वयम्), ordinal dates, and scheduling."
+  },
+  {
+    "id": "s-286",
+    "num": 286,
+    "sanskrit": "अद्य सायङ्काले वयं मिलिष्यामः।",
+    "transliteration": "Adya sāyaṅkāle vayaṁ miliṣyāmaḥ.",
+    "english": "We will meet this evening.",
+    "category": "time_scheduling",
+    "categoryLabel": "२९. कालमानम्",
+    "categoryEn": "Durations & Scheduling",
+    "levelBadge": "Chronometry & Dates",
+    "words": [
+      {
+        "devanagari": "अद्य",
+        "meaning": "अद्य",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "सायङ्काले",
+        "meaning": "In the evening",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (सायङ्काल)"
+      },
+      {
+        "devanagari": "वयं",
+        "meaning": "वयं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "मिलिष्यामः",
+        "meaning": "will meet (we)",
+        "role": "verb",
+        "roleLabel": "मिल् लृट् उत्तम बहु०"
+      }
+    ],
+    "grammarNote": "Temporal expressions: duration accusative (घटिकाद्वयम्), ordinal dates, and scheduling."
+  },
+  {
+    "id": "s-287",
+    "num": 287,
+    "sanskrit": "सः क्षणमात्रं तत्र अतिष्ठत्।",
+    "transliteration": "Saḥ kṣaṇamātraṁ tatra atiṣṭhat.",
+    "english": "He stood there for just a moment.",
+    "category": "time_scheduling",
+    "categoryLabel": "२९. कालमानम्",
+    "categoryEn": "Durations & Scheduling",
+    "levelBadge": "Chronometry & Dates",
+    "words": [
+      {
+        "devanagari": "सः",
+        "meaning": "He",
+        "role": "subject",
+        "roleLabel": "तद् पुं० प्रथमा"
+      },
+      {
+        "devanagari": "क्षणमात्रं",
+        "meaning": "For just a moment",
+        "role": "adverb",
+        "roleLabel": "क्रियाविशेषणम्"
+      },
+      {
+        "devanagari": "तत्र",
+        "meaning": "There (correlative)",
+        "role": "adverb",
+        "roleLabel": "स्थानवाचक-अव्ययम्"
+      },
+      {
+        "devanagari": "अतिष्ठत्",
+        "meaning": "stood / stayed",
+        "role": "verb",
+        "roleLabel": "स्था लङ् प्रथम०"
+      }
+    ],
+    "grammarNote": "Temporal expressions: duration accusative (घटिकाद्वयम्), ordinal dates, and scheduling."
+  },
+  {
+    "id": "s-288",
+    "num": 288,
+    "sanskrit": "मम जन्मदिवसः आगामिनि मासे अस्ति।",
+    "transliteration": "Mama janmadivasaḥ āgāmini māse asti.",
+    "english": "My birthday is next month.",
+    "category": "time_scheduling",
+    "categoryLabel": "२९. कालमानम्",
+    "categoryEn": "Durations & Scheduling",
+    "levelBadge": "Chronometry & Dates",
+    "words": [
+      {
+        "devanagari": "मम",
+        "meaning": "मम",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "जन्मदिवसः",
+        "meaning": "Birthday",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "आगामिनि",
+        "meaning": "In the coming / next",
+        "role": "adjective",
+        "roleLabel": "सप्तमी (आगामिन्)"
+      },
+      {
+        "devanagari": "मासे",
+        "meaning": "In the month",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (मास)"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Temporal expressions: duration accusative (घटिकाद्वयम्), ordinal dates, and scheduling."
+  },
+  {
+    "id": "s-289",
+    "num": 289,
+    "sanskrit": "चिरकालानन्तरं त्वां पश्यामि।",
+    "transliteration": "Cirakālānantaraṁ tvāṁ paśyami.",
+    "english": "I am seeing you after a long time.",
+    "category": "time_scheduling",
+    "categoryLabel": "२९. कालमानम्",
+    "categoryEn": "Durations & Scheduling",
+    "levelBadge": "Chronometry & Dates",
+    "words": [
+      {
+        "devanagari": "चिरकालानन्तरं",
+        "meaning": "After a long time",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "त्वां",
+        "meaning": "You",
+        "role": "object",
+        "roleLabel": "युष्मद् द्वितीया"
+      },
+      {
+        "devanagari": "पश्यामि",
+        "meaning": "पश्यामि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Temporal expressions: duration accusative (घटिकाद्वयम्), ordinal dates, and scheduling."
+  },
+  {
+    "id": "s-290",
+    "num": 290,
+    "sanskrit": "समयः मूल्यवान् वर्तते।",
+    "transliteration": "Samayaḥ mūlyavān vartate.",
+    "english": "Time is valuable.",
+    "category": "time_scheduling",
+    "categoryLabel": "२९. कालमानम्",
+    "categoryEn": "Durations & Scheduling",
+    "levelBadge": "Chronometry & Dates",
+    "words": [
+      {
+        "devanagari": "समयः",
+        "meaning": "समयः",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "मूल्यवान्",
+        "meaning": "Valuable / Precious",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
+      },
+      {
+        "devanagari": "वर्तते",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "वृत् लट् आत्मनेपदम्"
+      }
+    ],
+    "grammarNote": "Temporal expressions: duration accusative (घटिकाद्वयम्), ordinal dates, and scheduling."
+  },
+  {
+    "id": "s-291",
+    "num": 291,
+    "sanskrit": "अति सर्वत्र वर्जयेत्।",
+    "transliteration": "Ati sarvatra varjayet.",
+    "english": "Excess of anything should be avoided.",
+    "category": "idioms",
+    "categoryLabel": "३०. सुन्दरप्रयोगाः",
+    "categoryEn": "Idiomatic & Concluding Expressions",
+    "levelBadge": "Literary Mastery",
+    "words": [
+      {
+        "devanagari": "अति",
+        "meaning": "Excess / Extreme",
+        "role": "subject",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "सर्वत्र",
+        "meaning": "Everywhere",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "वर्जयेत्",
+        "meaning": "should be avoided",
+        "role": "verb",
+        "roleLabel": "वृज् णिच् विधिलिङ्"
+      }
+    ],
+    "grammarNote": "Sublime concluding maxims on life, character, and the beauty of Sanskrit speech."
+  },
+  {
+    "id": "s-292",
+    "num": 292,
+    "sanskrit": "यद् भवति, भद्राय एव भवति।",
+    "transliteration": "Yad bhavati, bhadrāya eva bhavati.",
+    "english": "Whatever happens, happens for the best.",
+    "category": "idioms",
+    "categoryLabel": "३०. सुन्दरप्रयोगाः",
+    "categoryEn": "Idiomatic & Concluding Expressions",
+    "levelBadge": "Literary Mastery",
+    "words": [
+      {
+        "devanagari": "यद्",
+        "meaning": "Whatever",
+        "role": "subject",
+        "roleLabel": "यद् नपुंसक प्रथमा"
+      },
+      {
+        "devanagari": "भवति",
+        "meaning": "भवति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "भद्राय",
+        "meaning": "For good / auspiciousness",
+        "role": "particle",
+        "roleLabel": "चतुर्थी (भद्र)"
+      },
+      {
+        "devanagari": "एव",
+        "meaning": "एव",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "भवति",
+        "meaning": "भवति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Sublime concluding maxims on life, character, and the beauty of Sanskrit speech."
+  },
+  {
+    "id": "s-293",
+    "num": 293,
+    "sanskrit": "मम मनसि संशयः अस्ति।",
+    "transliteration": "Mama manasi saṁśayaḥ asti.",
+    "english": "I have a doubt in my mind.",
+    "category": "idioms",
+    "categoryLabel": "३०. सुन्दरप्रयोगाः",
+    "categoryEn": "Idiomatic & Concluding Expressions",
+    "levelBadge": "Literary Mastery",
+    "words": [
+      {
+        "devanagari": "मम",
+        "meaning": "मम",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "मनसि",
+        "meaning": "In the mind",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (मनस्)"
+      },
+      {
+        "devanagari": "संशयः",
+        "meaning": "Doubt / Hesitation",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Sublime concluding maxims on life, character, and the beauty of Sanskrit speech."
+  },
+  {
+    "id": "s-294",
+    "num": 294,
+    "sanskrit": "चिन्तनं सम्यक् अस्ति।",
+    "transliteration": "Cintanaṁ samyak asti.",
+    "english": "The thinking/mindset is correct.",
+    "category": "idioms",
+    "categoryLabel": "३०. सुन्दरप्रयोगाः",
+    "categoryEn": "Idiomatic & Concluding Expressions",
+    "levelBadge": "Literary Mastery",
+    "words": [
+      {
+        "devanagari": "चिन्तनं",
+        "meaning": "Thinking / Contemplation",
+        "role": "subject",
+        "roleLabel": "नपुंसक प्रथमा"
+      },
+      {
+        "devanagari": "सम्यक्",
+        "meaning": "सम्यक्",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Sublime concluding maxims on life, character, and the beauty of Sanskrit speech."
+  },
+  {
+    "id": "s-295",
+    "num": 295,
+    "sanskrit": "सा स्वस्य कार्ये मग्ना अस्ति।",
+    "transliteration": "Sā svasya kārye magnā asti.",
+    "english": "She is absorbed in her own work.",
+    "category": "idioms",
+    "categoryLabel": "३०. सुन्दरप्रयोगाः",
+    "categoryEn": "Idiomatic & Concluding Expressions",
+    "levelBadge": "Literary Mastery",
+    "words": [
+      {
+        "devanagari": "सा",
+        "meaning": "She",
+        "role": "subject",
+        "roleLabel": "तद् स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "स्वस्य",
+        "meaning": "One's own",
+        "role": "particle",
+        "roleLabel": "षष्ठी (स्व)"
+      },
+      {
+        "devanagari": "कार्ये",
+        "meaning": "In the work",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (कार्य)"
+      },
+      {
+        "devanagari": "मग्ना",
+        "meaning": "Absorbed / Engaged (female)",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (स्त्री०)"
+      },
+      {
+        "devanagari": "अस्ति",
+        "meaning": "is / exists",
+        "role": "verb",
+        "roleLabel": "अस् लट् प्रथम०"
+      }
+    ],
+    "grammarNote": "Sublime concluding maxims on life, character, and the beauty of Sanskrit speech."
+  },
+  {
+    "id": "s-296",
+    "num": 296,
+    "sanskrit": "अत्र किमपि विशेषः नास्ति।",
+    "transliteration": "Atra kimapi viśeṣaḥ नास्ति.",
+    "english": "There is nothing special here.",
+    "category": "idioms",
+    "categoryLabel": "३०. सुन्दरप्रयोगाः",
+    "categoryEn": "Idiomatic & Concluding Expressions",
+    "levelBadge": "Literary Mastery",
+    "words": [
+      {
+        "devanagari": "अत्र",
+        "meaning": "अत्र",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "किमपि",
+        "meaning": "Something / Anything",
+        "role": "object",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "विशेषः",
+        "meaning": "Special feature / Specialty",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "नास्ति",
+        "meaning": "नास्ति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Sublime concluding maxims on life, character, and the beauty of Sanskrit speech."
+  },
+  {
+    "id": "s-297",
+    "num": 297,
+    "sanskrit": "स्वभावः परिवर्तनाय कठिनः।",
+    "transliteration": "Svabhāvaḥ parivartanāya kaṭhinaḥ.",
+    "english": "Nature/habit is difficult to change.",
+    "category": "idioms",
+    "categoryLabel": "३०. सुन्दरप्रयोगाः",
+    "categoryEn": "Idiomatic & Concluding Expressions",
+    "levelBadge": "Literary Mastery",
+    "words": [
+      {
+        "devanagari": "स्वभावः",
+        "meaning": "Inherent nature / Habit",
+        "role": "subject",
+        "roleLabel": "पुं० प्रथमा"
+      },
+      {
+        "devanagari": "परिवर्तनाय",
+        "meaning": "To change",
+        "role": "particle",
+        "roleLabel": "चतुर्थी (परिवर्तन)"
+      },
+      {
+        "devanagari": "कठिनः",
+        "meaning": "Difficult / Hard",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (पुं०)"
+      }
+    ],
+    "grammarNote": "Sublime concluding maxims on life, character, and the beauty of Sanskrit speech."
+  },
+  {
+    "id": "s-298",
+    "num": 298,
+    "sanskrit": "अहं सर्वदा सत्यस्य पक्षे अस्मि।",
+    "transliteration": "Ahaṁ sarvadā satyasya pakṣe asmi.",
+    "english": "I am always on the side of truth.",
+    "category": "idioms",
+    "categoryLabel": "३०. सुन्दरप्रयोगाः",
+    "categoryEn": "Idiomatic & Concluding Expressions",
+    "levelBadge": "Literary Mastery",
+    "words": [
+      {
+        "devanagari": "अहं",
+        "meaning": "अहं",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "सर्वदा",
+        "meaning": "Always / At all times",
+        "role": "adverb",
+        "roleLabel": "अव्ययम्"
+      },
+      {
+        "devanagari": "सत्यस्य",
+        "meaning": "Of the truth",
+        "role": "particle",
+        "roleLabel": "षष्ठी (सत्य)"
+      },
+      {
+        "devanagari": "पक्षे",
+        "meaning": "On the side / In favor",
+        "role": "adverb",
+        "roleLabel": "सप्तमी (पक्ष)"
+      },
+      {
+        "devanagari": "अस्मि",
+        "meaning": "अस्मि",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Sublime concluding maxims on life, character, and the beauty of Sanskrit speech."
+  },
+  {
+    "id": "s-299",
+    "num": 299,
+    "sanskrit": "एषा भाषा अतीव मधुरा।",
+    "transliteration": "Eṣā bhāṣā atīva madhurā.",
+    "english": "This language is exceptionally sweet.",
+    "category": "idioms",
+    "categoryLabel": "३०. सुन्दरप्रयोगाः",
+    "categoryEn": "Idiomatic & Concluding Expressions",
+    "levelBadge": "Literary Mastery",
+    "words": [
+      {
+        "devanagari": "एषा",
+        "meaning": "एषा",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      },
+      {
+        "devanagari": "भाषा",
+        "meaning": "Language",
+        "role": "subject",
+        "roleLabel": "स्त्री० प्रथमा"
+      },
+      {
+        "devanagari": "अतीव",
+        "meaning": "Very / Extremely",
+        "role": "adverb",
+        "roleLabel": "क्रियाविशेषणम्"
+      },
+      {
+        "devanagari": "मधुरा",
+        "meaning": "Sweet / Melodious (female)",
+        "role": "adjective",
+        "roleLabel": "विशेषणम् (स्त्री०)"
+      }
+    ],
+    "grammarNote": "Sublime concluding maxims on life, character, and the beauty of Sanskrit speech."
+  },
+  {
+    "id": "s-300",
+    "num": 300,
+    "sanskrit": "संस्कृतेन जीवनं सुन्दरं भवति।",
+    "transliteration": "Saṁskṛtena jīvanaṁ sundaraṁ bhavati.",
+    "english": "Life becomes beautiful through Sanskrit.",
+    "category": "idioms",
+    "categoryLabel": "३०. सुन्दरप्रयोगाः",
+    "categoryEn": "Idiomatic & Concluding Expressions",
+    "levelBadge": "Literary Mastery",
+    "words": [
+      {
+        "devanagari": "संस्कृतेन",
+        "meaning": "Through Sanskrit",
+        "role": "particle",
+        "roleLabel": "तृतीया (संस्कृत)"
+      },
+      {
+        "devanagari": "जीवनं",
+        "meaning": "Life",
+        "role": "subject",
+        "roleLabel": "नपुंसक प्रथमा"
+      },
+      {
+        "devanagari": "सुन्दरं",
+        "meaning": "Beautiful",
+        "role": "adjective",
+        "roleLabel": "विशेषणम्"
+      },
+      {
+        "devanagari": "भवति",
+        "meaning": "भवति",
+        "role": "particle",
+        "roleLabel": "पदम्"
+      }
+    ],
+    "grammarNote": "Sublime concluding maxims on life, character, and the beauty of Sanskrit speech."
   }
 ];
 
@@ -7359,10 +11035,10 @@ export const FOUNDATIONAL_TILE_PUZZLES: SentencePuzzleItem[] = [
   }
 ];
 
-// Puzzles generated from all 200 Sentences for practice mode
-export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
+// Puzzles generated from all 300 Sentences for practice mode
+export const SENTENCES_300_PUZZLES: SentencePuzzleItem[] = [
   {
-    "id": "puz-200-1",
+    "id": "puz-300-1",
     "english": "Hello. / Greetings.",
     "correctOrder": [
       "हरिः",
@@ -7377,7 +11053,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "etiquette"
   },
   {
-    "id": "puz-200-2",
+    "id": "puz-300-2",
     "english": "Good morning.",
     "correctOrder": [
       "सुप्रभातम्।"
@@ -7390,7 +11066,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "etiquette"
   },
   {
-    "id": "puz-200-3",
+    "id": "puz-300-3",
     "english": "Good night.",
     "correctOrder": [
       "शुभरात्रिः।"
@@ -7403,7 +11079,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "etiquette"
   },
   {
-    "id": "puz-200-4",
+    "id": "puz-300-4",
     "english": "Thank you.",
     "correctOrder": [
       "धन्यवादः।"
@@ -7416,7 +11092,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "etiquette"
   },
   {
-    "id": "puz-200-5",
+    "id": "puz-300-5",
     "english": "Welcome.",
     "correctOrder": [
       "स्वागतम्।"
@@ -7429,7 +11105,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "etiquette"
   },
   {
-    "id": "puz-200-6",
+    "id": "puz-300-6",
     "english": "Excuse me / Forgive me.",
     "correctOrder": [
       "क्षम्यताम्।"
@@ -7442,7 +11118,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "etiquette"
   },
   {
-    "id": "puz-200-7",
+    "id": "puz-300-7",
     "english": "Please.",
     "correctOrder": [
       "कृपया।"
@@ -7455,7 +11131,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "etiquette"
   },
   {
-    "id": "puz-200-8",
+    "id": "puz-300-8",
     "english": "Okay / Let it be.",
     "correctOrder": [
       "अस्तु।"
@@ -7468,7 +11144,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "etiquette"
   },
   {
-    "id": "puz-200-9",
+    "id": "puz-300-9",
     "english": "Sir!",
     "correctOrder": [
       "श्रीमन्!"
@@ -7481,7 +11157,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "etiquette"
   },
   {
-    "id": "puz-200-10",
+    "id": "puz-300-10",
     "english": "Madam!",
     "correctOrder": [
       "मान्ये!"
@@ -7494,7 +11170,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "etiquette"
   },
   {
-    "id": "puz-200-11",
+    "id": "puz-300-11",
     "english": "What is your name? (to a male)",
     "correctOrder": [
       "भवतः",
@@ -7511,7 +11187,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "identity"
   },
   {
-    "id": "puz-200-12",
+    "id": "puz-300-12",
     "english": "What is your name? (to a female)",
     "correctOrder": [
       "भवत्याः",
@@ -7528,7 +11204,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "identity"
   },
   {
-    "id": "puz-200-13",
+    "id": "puz-300-13",
     "english": "My name is Deva.",
     "correctOrder": [
       "मम",
@@ -7545,7 +11221,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "identity"
   },
   {
-    "id": "puz-200-14",
+    "id": "puz-300-14",
     "english": "Who are you? (plural/respectful)",
     "correctOrder": [
       "भवन्तः",
@@ -7560,7 +11236,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "identity"
   },
   {
-    "id": "puz-200-15",
+    "id": "puz-300-15",
     "english": "I am a student (male).",
     "correctOrder": [
       "अहं",
@@ -7577,7 +11253,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "identity"
   },
   {
-    "id": "puz-200-16",
+    "id": "puz-300-16",
     "english": "I am a student (female).",
     "correctOrder": [
       "अहं",
@@ -7594,7 +11270,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "identity"
   },
   {
-    "id": "puz-200-17",
+    "id": "puz-300-17",
     "english": "This is my friend.",
     "correctOrder": [
       "एषः",
@@ -7611,7 +11287,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "identity"
   },
   {
-    "id": "puz-200-18",
+    "id": "puz-300-18",
     "english": "Who is he?",
     "correctOrder": [
       "सः",
@@ -7626,7 +11302,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "identity"
   },
   {
-    "id": "puz-200-19",
+    "id": "puz-300-19",
     "english": "Who is she?",
     "correctOrder": [
       "सा",
@@ -7641,7 +11317,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "identity"
   },
   {
-    "id": "puz-200-20",
+    "id": "puz-300-20",
     "english": "Where are you?",
     "correctOrder": [
       "त्वं",
@@ -7658,7 +11334,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "identity"
   },
   {
-    "id": "puz-200-21",
+    "id": "puz-300-21",
     "english": "I read / study.",
     "correctOrder": [
       "अहं",
@@ -7673,7 +11349,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "daily_actions"
   },
   {
-    "id": "puz-200-22",
+    "id": "puz-300-22",
     "english": "You write.",
     "correctOrder": [
       "त्वं",
@@ -7688,7 +11364,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "daily_actions"
   },
   {
-    "id": "puz-200-23",
+    "id": "puz-300-23",
     "english": "He eats.",
     "correctOrder": [
       "सः",
@@ -7703,7 +11379,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "daily_actions"
   },
   {
-    "id": "puz-200-24",
+    "id": "puz-300-24",
     "english": "She drinks.",
     "correctOrder": [
       "सा",
@@ -7718,7 +11394,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "daily_actions"
   },
   {
-    "id": "puz-200-25",
+    "id": "puz-300-25",
     "english": "The boy runs.",
     "correctOrder": [
       "बालकः",
@@ -7733,7 +11409,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "daily_actions"
   },
   {
-    "id": "puz-200-26",
+    "id": "puz-300-26",
     "english": "The girl laughs.",
     "correctOrder": [
       "बालिका",
@@ -7748,7 +11424,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "daily_actions"
   },
   {
-    "id": "puz-200-27",
+    "id": "puz-300-27",
     "english": "I am going.",
     "correctOrder": [
       "अहं",
@@ -7763,7 +11439,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "daily_actions"
   },
   {
-    "id": "puz-200-28",
+    "id": "puz-300-28",
     "english": "You are coming.",
     "correctOrder": [
       "त्वं",
@@ -7778,7 +11454,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "daily_actions"
   },
   {
-    "id": "puz-200-29",
+    "id": "puz-300-29",
     "english": "This person sits.",
     "correctOrder": [
       "एषः",
@@ -7793,7 +11469,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "daily_actions"
   },
   {
-    "id": "puz-200-30",
+    "id": "puz-300-30",
     "english": "He stands up.",
     "correctOrder": [
       "सः",
@@ -7808,7 +11484,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "daily_actions"
   },
   {
-    "id": "puz-200-31",
+    "id": "puz-300-31",
     "english": "Come here.",
     "correctOrder": [
       "अत्र",
@@ -7823,7 +11499,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "commands"
   },
   {
-    "id": "puz-200-32",
+    "id": "puz-300-32",
     "english": "Go there.",
     "correctOrder": [
       "तत्र",
@@ -7838,7 +11514,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "commands"
   },
   {
-    "id": "puz-200-33",
+    "id": "puz-300-33",
     "english": "Open the book.",
     "correctOrder": [
       "पुस्तकम्",
@@ -7853,7 +11529,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "commands"
   },
   {
-    "id": "puz-200-34",
+    "id": "puz-300-34",
     "english": "Talk to me.",
     "correctOrder": [
       "मया",
@@ -7870,7 +11546,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "commands"
   },
   {
-    "id": "puz-200-35",
+    "id": "puz-300-35",
     "english": "Give me an answer.",
     "correctOrder": [
       "मह्यम्",
@@ -7887,7 +11563,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "commands"
   },
   {
-    "id": "puz-200-36",
+    "id": "puz-300-36",
     "english": "Speak loudly.",
     "correctOrder": [
       "उच्चैः",
@@ -7902,7 +11578,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "commands"
   },
   {
-    "id": "puz-200-37",
+    "id": "puz-300-37",
     "english": "Don't forget me.",
     "correctOrder": [
       "मां",
@@ -7919,7 +11595,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "commands"
   },
   {
-    "id": "puz-200-38",
+    "id": "puz-300-38",
     "english": "Please pay attention.",
     "correctOrder": [
       "ध्यानं",
@@ -7934,7 +11610,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "commands"
   },
   {
-    "id": "puz-200-39",
+    "id": "puz-300-39",
     "english": "Look at the picture.",
     "correctOrder": [
       "चित्रं",
@@ -7949,7 +11625,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "commands"
   },
   {
-    "id": "puz-200-40",
+    "id": "puz-300-40",
     "english": "Write now.",
     "correctOrder": [
       "इदानीं",
@@ -7964,7 +11640,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "commands"
   },
   {
-    "id": "puz-200-41",
+    "id": "puz-300-41",
     "english": "This is my house.",
     "correctOrder": [
       "एतत्",
@@ -7981,7 +11657,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "possession"
   },
   {
-    "id": "puz-200-42",
+    "id": "puz-300-42",
     "english": "I have a mother.",
     "correctOrder": [
       "मम",
@@ -7998,7 +11674,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "possession"
   },
   {
-    "id": "puz-200-43",
+    "id": "puz-300-43",
     "english": "Where is your brother?",
     "correctOrder": [
       "तव",
@@ -8015,7 +11691,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "possession"
   },
   {
-    "id": "puz-200-44",
+    "id": "puz-300-44",
     "english": "This is my sister.",
     "correctOrder": [
       "एषा",
@@ -8032,7 +11708,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "possession"
   },
   {
-    "id": "puz-200-45",
+    "id": "puz-300-45",
     "english": "His father is a doctor.",
     "correctOrder": [
       "तस्य",
@@ -8049,7 +11725,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "possession"
   },
   {
-    "id": "puz-200-46",
+    "id": "puz-300-46",
     "english": "Her house is large.",
     "correctOrder": [
       "तस्याः",
@@ -8066,7 +11742,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "possession"
   },
   {
-    "id": "puz-200-47",
+    "id": "puz-300-47",
     "english": "Is this your book?",
     "correctOrder": [
       "किं",
@@ -8083,7 +11759,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "possession"
   },
   {
-    "id": "puz-200-48",
+    "id": "puz-300-48",
     "english": "The tree has fruits.",
     "correctOrder": [
       "वृक्षस्य",
@@ -8100,7 +11776,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "possession"
   },
   {
-    "id": "puz-200-49",
+    "id": "puz-300-49",
     "english": "The river's water is cold.",
     "correctOrder": [
       "नद्याः",
@@ -8117,7 +11793,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "possession"
   },
   {
-    "id": "puz-200-50",
+    "id": "puz-300-50",
     "english": "I am with you.",
     "correctOrder": [
       "अहं",
@@ -8136,7 +11812,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "possession"
   },
   {
-    "id": "puz-200-51",
+    "id": "puz-300-51",
     "english": "What time is it now?",
     "correctOrder": [
       "इदानीं",
@@ -8153,7 +11829,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "time_weather"
   },
   {
-    "id": "puz-200-52",
+    "id": "puz-300-52",
     "english": "Today is Sunday.",
     "correctOrder": [
       "अद्य",
@@ -8170,7 +11846,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "time_weather"
   },
   {
-    "id": "puz-200-53",
+    "id": "puz-300-53",
     "english": "Tomorrow is Monday.",
     "correctOrder": [
       "श्वः",
@@ -8185,7 +11861,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "time_weather"
   },
   {
-    "id": "puz-200-54",
+    "id": "puz-300-54",
     "english": "Yesterday was Saturday.",
     "correctOrder": [
       "ह्यः",
@@ -8202,7 +11878,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "time_weather"
   },
   {
-    "id": "puz-200-55",
+    "id": "puz-300-55",
     "english": "Today the sun is bright.",
     "correctOrder": [
       "अद्य",
@@ -8221,7 +11897,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "time_weather"
   },
   {
-    "id": "puz-200-56",
+    "id": "puz-300-56",
     "english": "The cloud is raining.",
     "correctOrder": [
       "मेघः",
@@ -8236,7 +11912,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "time_weather"
   },
   {
-    "id": "puz-200-57",
+    "id": "puz-300-57",
     "english": "Cold wind is blowing.",
     "correctOrder": [
       "शीतलः",
@@ -8253,7 +11929,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "time_weather"
   },
   {
-    "id": "puz-200-58",
+    "id": "puz-300-58",
     "english": "It is cold today.",
     "correctOrder": [
       "अद्य",
@@ -8270,7 +11946,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "time_weather"
   },
   {
-    "id": "puz-200-59",
+    "id": "puz-300-59",
     "english": "It has become evening.",
     "correctOrder": [
       "सायङ्कालः",
@@ -8285,7 +11961,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "time_weather"
   },
   {
-    "id": "puz-200-60",
+    "id": "puz-300-60",
     "english": "When will you go?",
     "correctOrder": [
       "कदा",
@@ -8300,7 +11976,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "time_weather"
   },
   {
-    "id": "puz-200-61",
+    "id": "puz-300-61",
     "english": "Is the food ready?",
     "correctOrder": [
       "भोजनं",
@@ -8317,7 +11993,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "food"
   },
   {
-    "id": "puz-200-62",
+    "id": "puz-300-62",
     "english": "I am hungry (male).",
     "correctOrder": [
       "अहं",
@@ -8334,7 +12010,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "food"
   },
   {
-    "id": "puz-200-63",
+    "id": "puz-300-63",
     "english": "Have you eaten? (to a female)",
     "correctOrder": [
       "भोजनं",
@@ -8351,7 +12027,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "food"
   },
   {
-    "id": "puz-200-64",
+    "id": "puz-300-64",
     "english": "I like rice.",
     "correctOrder": [
       "मह्यम्",
@@ -8368,7 +12044,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "food"
   },
   {
-    "id": "puz-200-65",
+    "id": "puz-300-65",
     "english": "Please give water.",
     "correctOrder": [
       "जलं",
@@ -8383,7 +12059,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "food"
   },
   {
-    "id": "puz-200-66",
+    "id": "puz-300-66",
     "english": "Milk is sweet.",
     "correctOrder": [
       "दुग्धं",
@@ -8400,7 +12076,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "food"
   },
   {
-    "id": "puz-200-67",
+    "id": "puz-300-67",
     "english": "Fruits are healthy.",
     "correctOrder": [
       "फलानि",
@@ -8415,7 +12091,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "food"
   },
   {
-    "id": "puz-200-68",
+    "id": "puz-300-68",
     "english": "The breakfast is salty.",
     "correctOrder": [
       "अल्पाहारः",
@@ -8432,7 +12108,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "food"
   },
   {
-    "id": "puz-200-69",
+    "id": "puz-300-69",
     "english": "I do not drink tea.",
     "correctOrder": [
       "अहं",
@@ -8451,7 +12127,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "food"
   },
   {
-    "id": "puz-200-70",
+    "id": "puz-300-70",
     "english": "What are you doing? (to a female)",
     "correctOrder": [
       "किं",
@@ -8468,7 +12144,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "food"
   },
   {
-    "id": "puz-200-71",
+    "id": "puz-300-71",
     "english": "Rama will come tomorrow.",
     "correctOrder": [
       "रामः",
@@ -8485,7 +12161,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "tenses"
   },
   {
-    "id": "puz-200-72",
+    "id": "puz-300-72",
     "english": "I read the lesson (male, past).",
     "correctOrder": [
       "अहं",
@@ -8502,7 +12178,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "tenses"
   },
   {
-    "id": "puz-200-73",
+    "id": "puz-300-73",
     "english": "She did the work.",
     "correctOrder": [
       "सा",
@@ -8519,7 +12195,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "tenses"
   },
   {
-    "id": "puz-200-74",
+    "id": "puz-300-74",
     "english": "They went to the playground.",
     "correctOrder": [
       "ते",
@@ -8536,7 +12212,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "tenses"
   },
   {
-    "id": "puz-200-75",
+    "id": "puz-300-75",
     "english": "We will watch a movie.",
     "correctOrder": [
       "वयं",
@@ -8553,7 +12229,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "tenses"
   },
   {
-    "id": "puz-200-76",
+    "id": "puz-300-76",
     "english": "Where were you?",
     "correctOrder": [
       "त्वं",
@@ -8570,7 +12246,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "tenses"
   },
   {
-    "id": "puz-200-77",
+    "id": "puz-300-77",
     "english": "The teacher gave knowledge.",
     "correctOrder": [
       "गुरुः",
@@ -8587,7 +12263,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "tenses"
   },
   {
-    "id": "puz-200-78",
+    "id": "puz-300-78",
     "english": "I will give money.",
     "correctOrder": [
       "अहं",
@@ -8604,7 +12280,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "tenses"
   },
   {
-    "id": "puz-200-79",
+    "id": "puz-300-79",
     "english": "Did you laugh?",
     "correctOrder": [
       "किं",
@@ -8621,7 +12297,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "tenses"
   },
   {
-    "id": "puz-200-80",
+    "id": "puz-300-80",
     "english": "A leaf fell from the tree.",
     "correctOrder": [
       "वृक्षात्",
@@ -8638,7 +12314,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "tenses"
   },
   {
-    "id": "puz-200-81",
+    "id": "puz-300-81",
     "english": "Two boys are playing.",
     "correctOrder": [
       "बालकौ",
@@ -8653,7 +12329,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "plurals"
   },
   {
-    "id": "puz-200-82",
+    "id": "puz-300-82",
     "english": "Two girls are dancing.",
     "correctOrder": [
       "कन्ये",
@@ -8668,7 +12344,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "plurals"
   },
   {
-    "id": "puz-200-83",
+    "id": "puz-300-83",
     "english": "I am reading two books.",
     "correctOrder": [
       "अहं",
@@ -8687,7 +12363,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "plurals"
   },
   {
-    "id": "puz-200-84",
+    "id": "puz-300-84",
     "english": "The students are asking questions.",
     "correctOrder": [
       "छात्राः",
@@ -8704,7 +12380,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "plurals"
   },
   {
-    "id": "puz-200-85",
+    "id": "puz-300-85",
     "english": "We live in India.",
     "correctOrder": [
       "वयं",
@@ -8721,7 +12397,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "plurals"
   },
   {
-    "id": "puz-200-86",
+    "id": "puz-300-86",
     "english": "The flowers are blooming.",
     "correctOrder": [
       "पुष्पाणि",
@@ -8736,7 +12412,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "plurals"
   },
   {
-    "id": "puz-200-87",
+    "id": "puz-300-87",
     "english": "Where are you all going?",
     "correctOrder": [
       "यूयं",
@@ -8753,7 +12429,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "plurals"
   },
   {
-    "id": "puz-200-88",
+    "id": "puz-300-88",
     "english": "Birds fly in the sky.",
     "correctOrder": [
       "खगाः",
@@ -8770,7 +12446,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "plurals"
   },
   {
-    "id": "puz-200-89",
+    "id": "puz-300-89",
     "english": "The horses run fast.",
     "correctOrder": [
       "अश्वाः",
@@ -8787,7 +12463,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "plurals"
   },
   {
-    "id": "puz-200-90",
+    "id": "puz-300-90",
     "english": "They walk slowly.",
     "correctOrder": [
       "ते",
@@ -8804,7 +12480,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "plurals"
   },
   {
-    "id": "puz-200-91",
+    "id": "puz-300-91",
     "english": "Speak the truth. Live with integrity.",
     "correctOrder": [
       "सत्यं",
@@ -8823,7 +12499,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wisdom"
   },
   {
-    "id": "puz-200-92",
+    "id": "puz-300-92",
     "english": "A scholar is worshipped everywhere.",
     "correctOrder": [
       "विद्वान्",
@@ -8840,7 +12516,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wisdom"
   },
   {
-    "id": "puz-200-93",
+    "id": "puz-300-93",
     "english": "Greed gives rise to sin.",
     "correctOrder": [
       "लोभात्",
@@ -8857,7 +12533,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wisdom"
   },
   {
-    "id": "puz-200-94",
+    "id": "puz-300-94",
     "english": "You are my happiness.",
     "correctOrder": [
       "त्वं",
@@ -8876,7 +12552,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wisdom"
   },
   {
-    "id": "puz-200-95",
+    "id": "puz-300-95",
     "english": "Time heals all wounds.",
     "correctOrder": [
       "कालः",
@@ -8893,7 +12569,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wisdom"
   },
   {
-    "id": "puz-200-96",
+    "id": "puz-300-96",
     "english": "This, too, shall pass.",
     "correctOrder": [
       "एतदपि",
@@ -8908,7 +12584,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wisdom"
   },
   {
-    "id": "puz-200-97",
+    "id": "puz-300-97",
     "english": "Rama is strong.",
     "correctOrder": [
       "रामो",
@@ -8925,7 +12601,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wisdom"
   },
   {
-    "id": "puz-200-98",
+    "id": "puz-300-98",
     "english": "Truth alone triumphs.",
     "correctOrder": [
       "सत्यमेव",
@@ -8940,7 +12616,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wisdom"
   },
   {
-    "id": "puz-200-99",
+    "id": "puz-300-99",
     "english": "Knowledge is the highest ornament.",
     "correctOrder": [
       "ज्ञानं",
@@ -8957,7 +12633,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wisdom"
   },
   {
-    "id": "puz-200-100",
+    "id": "puz-300-100",
     "english": "I speak Sanskrit.",
     "correctOrder": [
       "अहं",
@@ -8974,7 +12650,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wisdom"
   },
   {
-    "id": "puz-200-101",
+    "id": "puz-300-101",
     "english": "What is this?",
     "correctOrder": [
       "एतत्",
@@ -8991,7 +12667,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "questions"
   },
   {
-    "id": "puz-200-102",
+    "id": "puz-300-102",
     "english": "How are you? (to a male)",
     "correctOrder": [
       "भवान्",
@@ -9008,7 +12684,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "questions"
   },
   {
-    "id": "puz-200-103",
+    "id": "puz-300-103",
     "english": "How are you? (to a female)",
     "correctOrder": [
       "भवती",
@@ -9025,7 +12701,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "questions"
   },
   {
-    "id": "puz-200-104",
+    "id": "puz-300-104",
     "english": "Is it difficult?",
     "correctOrder": [
       "किं",
@@ -9042,7 +12718,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "questions"
   },
   {
-    "id": "puz-200-105",
+    "id": "puz-300-105",
     "english": "Where is the way/road?",
     "correctOrder": [
       "मार्गः",
@@ -9059,7 +12735,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "questions"
   },
   {
-    "id": "puz-200-106",
+    "id": "puz-300-106",
     "english": "Why are you laughing?",
     "correctOrder": [
       "त्वं",
@@ -9076,7 +12752,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "questions"
   },
   {
-    "id": "puz-200-107",
+    "id": "puz-300-107",
     "english": "Whose brother is he?",
     "correctOrder": [
       "सः",
@@ -9093,7 +12769,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "questions"
   },
   {
-    "id": "puz-200-108",
+    "id": "puz-300-108",
     "english": "Whose sister is she?",
     "correctOrder": [
       "सा",
@@ -9110,7 +12786,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "questions"
   },
   {
-    "id": "puz-200-109",
+    "id": "puz-300-109",
     "english": "What is its price?",
     "correctOrder": [
       "अस्य",
@@ -9127,7 +12803,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "questions"
   },
   {
-    "id": "puz-200-110",
+    "id": "puz-300-110",
     "english": "Please say it again.",
     "correctOrder": [
       "पुनः",
@@ -9144,7 +12820,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "questions"
   },
   {
-    "id": "puz-200-111",
+    "id": "puz-300-111",
     "english": "The book is on the table.",
     "correctOrder": [
       "उत्पीठिकायां",
@@ -9161,7 +12837,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "locations"
   },
   {
-    "id": "puz-200-112",
+    "id": "puz-300-112",
     "english": "There is no money in the bag.",
     "correctOrder": [
       "स्यूते",
@@ -9178,7 +12854,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "locations"
   },
   {
-    "id": "puz-200-113",
+    "id": "puz-300-113",
     "english": "There is a tree in front of the house.",
     "correctOrder": [
       "गृहस्य",
@@ -9197,7 +12873,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "locations"
   },
   {
-    "id": "puz-200-114",
+    "id": "puz-300-114",
     "english": "The playground is behind the school.",
     "correctOrder": [
       "विद्यालयस्य",
@@ -9214,7 +12890,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "locations"
   },
   {
-    "id": "puz-200-115",
+    "id": "puz-300-115",
     "english": "There is a shop near the river.",
     "correctOrder": [
       "नद्याः",
@@ -9233,7 +12909,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "locations"
   },
   {
-    "id": "puz-200-116",
+    "id": "puz-300-116",
     "english": "Go far from the city.",
     "correctOrder": [
       "नगरात्",
@@ -9250,7 +12926,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "locations"
   },
   {
-    "id": "puz-200-117",
+    "id": "puz-300-117",
     "english": "The traveler sits under the tree.",
     "correctOrder": [
       "वृक्षस्य",
@@ -9269,7 +12945,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "locations"
   },
   {
-    "id": "puz-200-118",
+    "id": "puz-300-118",
     "english": "Birds are high up in the sky.",
     "correctOrder": [
       "आकाशस्य",
@@ -9288,7 +12964,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "locations"
   },
   {
-    "id": "puz-200-119",
+    "id": "puz-300-119",
     "english": "I am in the room.",
     "correctOrder": [
       "अहं",
@@ -9305,7 +12981,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "locations"
   },
   {
-    "id": "puz-200-120",
+    "id": "puz-300-120",
     "english": "He lives in Delhi.",
     "correctOrder": [
       "सः",
@@ -9322,7 +12998,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "locations"
   },
   {
-    "id": "puz-200-121",
+    "id": "puz-300-121",
     "english": "This path is straight/easy.",
     "correctOrder": [
       "एषः",
@@ -9341,7 +13017,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "adjectives"
   },
   {
-    "id": "puz-200-122",
+    "id": "puz-300-122",
     "english": "That cloth is red.",
     "correctOrder": [
       "तद्",
@@ -9360,7 +13036,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "adjectives"
   },
   {
-    "id": "puz-200-123",
+    "id": "puz-300-123",
     "english": "This boy is clever.",
     "correctOrder": [
       "अयं",
@@ -9379,7 +13055,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "adjectives"
   },
   {
-    "id": "puz-200-124",
+    "id": "puz-300-124",
     "english": "This girl is calm.",
     "correctOrder": [
       "इयं",
@@ -9398,7 +13074,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "adjectives"
   },
   {
-    "id": "puz-200-125",
+    "id": "puz-300-125",
     "english": "This fruit is very sweet.",
     "correctOrder": [
       "एतत्",
@@ -9417,7 +13093,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "adjectives"
   },
   {
-    "id": "puz-200-126",
+    "id": "puz-300-126",
     "english": "He is an old man.",
     "correctOrder": [
       "सः",
@@ -9436,7 +13112,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "adjectives"
   },
   {
-    "id": "puz-200-127",
+    "id": "puz-300-127",
     "english": "There is a grand festival here.",
     "correctOrder": [
       "अत्र",
@@ -9455,7 +13131,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "adjectives"
   },
   {
-    "id": "puz-200-128",
+    "id": "puz-300-128",
     "english": "Let the water not be hot.",
     "correctOrder": [
       "जलं",
@@ -9474,7 +13150,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "adjectives"
   },
   {
-    "id": "puz-200-129",
+    "id": "puz-300-129",
     "english": "This story is short.",
     "correctOrder": [
       "एषा",
@@ -9493,7 +13169,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "adjectives"
   },
   {
-    "id": "puz-200-130",
+    "id": "puz-300-130",
     "english": "The mountain is very high.",
     "correctOrder": [
       "पर्वतः",
@@ -9512,7 +13188,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "adjectives"
   },
   {
-    "id": "puz-200-131",
+    "id": "puz-300-131",
     "english": "I like this picture.",
     "correctOrder": [
       "मह्यम्",
@@ -9531,7 +13207,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "hobbies"
   },
   {
-    "id": "puz-200-132",
+    "id": "puz-300-132",
     "english": "Do you like sports? (to a male)",
     "correctOrder": [
       "किं",
@@ -9550,7 +13226,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "hobbies"
   },
   {
-    "id": "puz-200-133",
+    "id": "puz-300-133",
     "english": "She sings sweetly.",
     "correctOrder": [
       "सा",
@@ -9567,7 +13243,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "hobbies"
   },
   {
-    "id": "puz-200-134",
+    "id": "puz-300-134",
     "english": "I can swim.",
     "correctOrder": [
       "अहं",
@@ -9584,7 +13260,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "hobbies"
   },
   {
-    "id": "puz-200-135",
+    "id": "puz-300-135",
     "english": "You can speak Sanskrit.",
     "correctOrder": [
       "त्वं",
@@ -9603,7 +13279,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "hobbies"
   },
   {
-    "id": "puz-200-136",
+    "id": "puz-300-136",
     "english": "He writes beautifully.",
     "correctOrder": [
       "सः",
@@ -9620,7 +13296,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "hobbies"
   },
   {
-    "id": "puz-200-137",
+    "id": "puz-300-137",
     "english": "I exercise every day.",
     "correctOrder": [
       "अहं",
@@ -9639,7 +13315,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "hobbies"
   },
   {
-    "id": "puz-200-138",
+    "id": "puz-300-138",
     "english": "His reading is good.",
     "correctOrder": [
       "तस्य",
@@ -9658,7 +13334,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "hobbies"
   },
   {
-    "id": "puz-200-139",
+    "id": "puz-300-139",
     "english": "We want to travel.",
     "correctOrder": [
       "वयं",
@@ -9677,7 +13353,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "hobbies"
   },
   {
-    "id": "puz-200-140",
+    "id": "puz-300-140",
     "english": "The boys are playing football/ball games.",
     "correctOrder": [
       "बालकाः",
@@ -9694,7 +13370,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "hobbies"
   },
   {
-    "id": "puz-200-141",
+    "id": "puz-300-141",
     "english": "Finish the work quickly.",
     "correctOrder": [
       "शीघ्रं",
@@ -9711,7 +13387,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "rules"
   },
   {
-    "id": "puz-200-142",
+    "id": "puz-300-142",
     "english": "Do not speak lies.",
     "correctOrder": [
       "असत्यं",
@@ -9728,7 +13404,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "rules"
   },
   {
-    "id": "puz-200-143",
+    "id": "puz-300-143",
     "english": "Please sit here.",
     "correctOrder": [
       "अत्र",
@@ -9745,7 +13421,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "rules"
   },
   {
-    "id": "puz-200-144",
+    "id": "puz-300-144",
     "english": "Close the door.",
     "correctOrder": [
       "द्वारं",
@@ -9760,7 +13436,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "rules"
   },
   {
-    "id": "puz-200-145",
+    "id": "puz-300-145",
     "english": "Walk very slowly.",
     "correctOrder": [
       "मन्दं",
@@ -9777,7 +13453,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "rules"
   },
   {
-    "id": "puz-200-146",
+    "id": "puz-300-146",
     "english": "Do not make noise.",
     "correctOrder": [
       "कोलाहलं",
@@ -9794,7 +13470,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "rules"
   },
   {
-    "id": "puz-200-147",
+    "id": "puz-300-147",
     "english": "Do hard work.",
     "correctOrder": [
       "परिश्रमं",
@@ -9809,7 +13485,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "rules"
   },
   {
-    "id": "puz-200-148",
+    "id": "puz-300-148",
     "english": "Drink clean water.",
     "correctOrder": [
       "स्वच्छं",
@@ -9826,7 +13502,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "rules"
   },
   {
-    "id": "puz-200-149",
+    "id": "puz-300-149",
     "english": "Smoking is prohibited here.",
     "correctOrder": [
       "अत्र",
@@ -9843,7 +13519,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "rules"
   },
   {
-    "id": "puz-200-150",
+    "id": "puz-300-150",
     "english": "Follow punctuality.",
     "correctOrder": [
       "समयपालनं",
@@ -9858,7 +13534,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "rules"
   },
   {
-    "id": "puz-200-151",
+    "id": "puz-300-151",
     "english": "I am studying because there is an exam.",
     "correctOrder": [
       "अहं",
@@ -9879,7 +13555,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "connectors"
   },
   {
-    "id": "puz-200-152",
+    "id": "puz-300-152",
     "english": "It is raining, therefore I am not going.",
     "correctOrder": [
       "वृष्टिः",
@@ -9902,7 +13578,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "connectors"
   },
   {
-    "id": "puz-200-153",
+    "id": "puz-300-153",
     "english": "If you come, then I will come.",
     "correctOrder": [
       "यदि",
@@ -9925,7 +13601,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "connectors"
   },
   {
-    "id": "puz-200-154",
+    "id": "puz-300-154",
     "english": "Rama and Lakshmana are brothers.",
     "correctOrder": [
       "रामः",
@@ -9944,7 +13620,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "connectors"
   },
   {
-    "id": "puz-200-155",
+    "id": "puz-300-155",
     "english": "He studies as well as plays.",
     "correctOrder": [
       "सः",
@@ -9965,7 +13641,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "connectors"
   },
   {
-    "id": "puz-200-156",
+    "id": "puz-300-156",
     "english": "Having gone home, I will eat.",
     "correctOrder": [
       "अहं",
@@ -9986,7 +13662,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "connectors"
   },
   {
-    "id": "puz-200-157",
+    "id": "puz-300-157",
     "english": "Studying cannot happen without a book.",
     "correctOrder": [
       "पुस्तकं",
@@ -10007,7 +13683,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "connectors"
   },
   {
-    "id": "puz-200-158",
+    "id": "puz-300-158",
     "english": "As the king, so the subjects.",
     "correctOrder": [
       "यथा",
@@ -10026,7 +13702,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "connectors"
   },
   {
-    "id": "puz-200-159",
+    "id": "puz-300-159",
     "english": "She goes to school to study.",
     "correctOrder": [
       "सा",
@@ -10045,7 +13721,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "connectors"
   },
   {
-    "id": "puz-200-160",
+    "id": "puz-300-160",
     "english": "I know that you are clever.",
     "correctOrder": [
       "अहं",
@@ -10068,7 +13744,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "connectors"
   },
   {
-    "id": "puz-200-161",
+    "id": "puz-300-161",
     "english": "I have a headache.",
     "correctOrder": [
       "मम",
@@ -10085,7 +13761,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wellness"
   },
   {
-    "id": "puz-200-162",
+    "id": "puz-300-162",
     "english": "Have you taken the medicine? (to a male)",
     "correctOrder": [
       "भवान्",
@@ -10104,7 +13780,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wellness"
   },
   {
-    "id": "puz-200-163",
+    "id": "puz-300-163",
     "english": "His eyes are red.",
     "correctOrder": [
       "तस्य",
@@ -10121,7 +13797,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wellness"
   },
   {
-    "id": "puz-200-164",
+    "id": "puz-300-164",
     "english": "Health is the ultimate wealth.",
     "correctOrder": [
       "स्वास्थ्यं",
@@ -10140,7 +13816,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wellness"
   },
   {
-    "id": "puz-200-165",
+    "id": "puz-300-165",
     "english": "I am tired (male).",
     "correctOrder": [
       "अहं",
@@ -10157,7 +13833,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wellness"
   },
   {
-    "id": "puz-200-166",
+    "id": "puz-300-166",
     "english": "She is unwell.",
     "correctOrder": [
       "सा",
@@ -10174,7 +13850,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wellness"
   },
   {
-    "id": "puz-200-167",
+    "id": "puz-300-167",
     "english": "Get well soon.",
     "correctOrder": [
       "शीघ्रं",
@@ -10191,7 +13867,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wellness"
   },
   {
-    "id": "puz-200-168",
+    "id": "puz-300-168",
     "english": "His tooth is loose.",
     "correctOrder": [
       "तस्य",
@@ -10208,7 +13884,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wellness"
   },
   {
-    "id": "puz-200-169",
+    "id": "puz-300-169",
     "english": "I slept well.",
     "correctOrder": [
       "अहं",
@@ -10227,7 +13903,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wellness"
   },
   {
-    "id": "puz-200-170",
+    "id": "puz-300-170",
     "english": "Clean air is necessary for health.",
     "correctOrder": [
       "शुद्धः",
@@ -10246,7 +13922,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "wellness"
   },
   {
-    "id": "puz-200-171",
+    "id": "puz-300-171",
     "english": "The lion roars in the forest.",
     "correctOrder": [
       "सिंहः",
@@ -10263,7 +13939,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "nature_animals"
   },
   {
-    "id": "puz-200-172",
+    "id": "puz-300-172",
     "english": "The cow gives milk.",
     "correctOrder": [
       "धेनुः",
@@ -10280,7 +13956,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "nature_animals"
   },
   {
-    "id": "puz-200-173",
+    "id": "puz-300-173",
     "english": "The elephant walks slowly.",
     "correctOrder": [
       "गजः",
@@ -10297,7 +13973,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "nature_animals"
   },
   {
-    "id": "puz-200-174",
+    "id": "puz-300-174",
     "english": "The peacock dances in the rainy season.",
     "correctOrder": [
       "मयूरः",
@@ -10314,7 +13990,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "nature_animals"
   },
   {
-    "id": "puz-200-175",
+    "id": "puz-300-175",
     "english": "Trees give shade to us.",
     "correctOrder": [
       "वृक्षाः",
@@ -10333,7 +14009,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "nature_animals"
   },
   {
-    "id": "puz-200-176",
+    "id": "puz-300-176",
     "english": "The lotus blooms in the pond.",
     "correctOrder": [
       "तडागे",
@@ -10350,7 +14026,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "nature_animals"
   },
   {
-    "id": "puz-200-177",
+    "id": "puz-300-177",
     "english": "The rabbit runs fast.",
     "correctOrder": [
       "शशकः",
@@ -10367,7 +14043,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "nature_animals"
   },
   {
-    "id": "puz-200-178",
+    "id": "puz-300-178",
     "english": "The monkey jumps on the tree.",
     "correctOrder": [
       "कूर्दति",
@@ -10384,7 +14060,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "nature_animals"
   },
   {
-    "id": "puz-200-179",
+    "id": "puz-300-179",
     "english": "Bees buzz on the flower.",
     "correctOrder": [
       "भ्रमराः",
@@ -10401,7 +14077,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "nature_animals"
   },
   {
-    "id": "puz-200-180",
+    "id": "puz-300-180",
     "english": "Stars look beautiful in the sky.",
     "correctOrder": [
       "आकाशे",
@@ -10418,7 +14094,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "nature_animals"
   },
   {
-    "id": "puz-200-181",
+    "id": "puz-300-181",
     "english": "I want to become a teacher.",
     "correctOrder": [
       "अहं",
@@ -10437,7 +14113,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "intentions"
   },
   {
-    "id": "puz-200-182",
+    "id": "puz-300-182",
     "english": "He had gone to the shop.",
     "correctOrder": [
       "सः",
@@ -10456,7 +14132,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "intentions"
   },
   {
-    "id": "puz-200-183",
+    "id": "puz-300-183",
     "english": "We will write the exam tomorrow.",
     "correctOrder": [
       "वयं",
@@ -10475,7 +14151,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "intentions"
   },
   {
-    "id": "puz-200-184",
+    "id": "puz-300-184",
     "english": "Did you receive my message?",
     "correctOrder": [
       "त्वं",
@@ -10496,7 +14172,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "intentions"
   },
   {
-    "id": "puz-200-185",
+    "id": "puz-300-185",
     "english": "She completed her homework.",
     "correctOrder": [
       "सा",
@@ -10513,7 +14189,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "intentions"
   },
   {
-    "id": "puz-200-186",
+    "id": "puz-300-186",
     "english": "They came to know the truth.",
     "correctOrder": [
       "ते",
@@ -10530,7 +14206,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "intentions"
   },
   {
-    "id": "puz-200-187",
+    "id": "puz-300-187",
     "english": "I will not go there.",
     "correctOrder": [
       "अहं",
@@ -10549,7 +14225,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "intentions"
   },
   {
-    "id": "puz-200-188",
+    "id": "puz-300-188",
     "english": "Mother used to cook / was cooking food.",
     "correctOrder": [
       "माता",
@@ -10568,7 +14244,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "intentions"
   },
   {
-    "id": "puz-200-189",
+    "id": "puz-300-189",
     "english": "The boy cried.",
     "correctOrder": [
       "बालकः",
@@ -10585,7 +14261,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "intentions"
   },
   {
-    "id": "puz-200-190",
+    "id": "puz-300-190",
     "english": "How did you all forget?",
     "correctOrder": [
       "यूयं",
@@ -10602,7 +14278,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "intentions"
   },
   {
-    "id": "puz-200-191",
+    "id": "puz-300-191",
     "english": "Do not worry.",
     "correctOrder": [
       "चिन्ता",
@@ -10619,7 +14295,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "conversation"
   },
   {
-    "id": "puz-200-192",
+    "id": "puz-300-192",
     "english": "Is everything fine?",
     "correctOrder": [
       "सर्वं",
@@ -10636,7 +14312,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "conversation"
   },
   {
-    "id": "puz-200-193",
+    "id": "puz-300-193",
     "english": "I am coming quickly.",
     "correctOrder": [
       "अहं",
@@ -10653,7 +14329,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "conversation"
   },
   {
-    "id": "puz-200-194",
+    "id": "puz-300-194",
     "english": "This is not my fault.",
     "correctOrder": [
       "एषः",
@@ -10667,12 +14343,12 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
       "मम",
       "एषः"
     ],
-    "hint": "Eṣaḥ mama aparādhaḥ nāsti.",
+    "hint": "Eṣaḥ mama aparādhaḥ नास्ति.",
     "explanation": "एषः मम अपराधः नास्ति। (This is not my fault.)",
     "category": "conversation"
   },
   {
-    "id": "puz-200-195",
+    "id": "puz-300-195",
     "english": "Your help is needed.",
     "correctOrder": [
       "भवतः",
@@ -10689,7 +14365,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "conversation"
   },
   {
-    "id": "puz-200-196",
+    "id": "puz-300-196",
     "english": "Let it be so / Alright.",
     "correctOrder": [
       "भवतु,",
@@ -10704,7 +14380,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "conversation"
   },
   {
-    "id": "puz-200-197",
+    "id": "puz-300-197",
     "english": "I do not know him.",
     "correctOrder": [
       "अहं",
@@ -10723,7 +14399,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "conversation"
   },
   {
-    "id": "puz-200-198",
+    "id": "puz-300-198",
     "english": "This seems true.",
     "correctOrder": [
       "एतत्",
@@ -10740,7 +14416,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "conversation"
   },
   {
-    "id": "puz-200-199",
+    "id": "puz-300-199",
     "english": "Let us gather together.",
     "correctOrder": [
       "वयम्",
@@ -10755,7 +14431,7 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "category": "conversation"
   },
   {
-    "id": "puz-200-200",
+    "id": "puz-300-200",
     "english": "See you again / Goodbye.",
     "correctOrder": [
       "पुनर्मिलामः।"
@@ -10766,14 +14442,1847 @@ export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = [
     "hint": "Punarmilāmaḥ.",
     "explanation": "पुनर्मिलामः। (See you again / Goodbye.)",
     "category": "conversation"
+  },
+  {
+    "id": "puz-300-201",
+    "english": "I smell the fragrance.",
+    "correctOrder": [
+      "अहं",
+      "सुगन्धं",
+      "जिघ्रामि।"
+    ],
+    "scrambled": [
+      "जिघ्रामि।",
+      "सुगन्धं",
+      "अहं"
+    ],
+    "hint": "Ahaṁ sugandhaṁ jighrāmi.",
+    "explanation": "अहं सुगन्धं जिघ्रामि। (I smell the fragrance.)",
+    "category": "sensory"
+  },
+  {
+    "id": "puz-300-202",
+    "english": "What do you see?",
+    "correctOrder": [
+      "त्वं",
+      "किं",
+      "पश्यसि?"
+    ],
+    "scrambled": [
+      "पश्यसि?",
+      "किं",
+      "त्वं"
+    ],
+    "hint": "Tvaṁ kiṁ paśyasi?",
+    "explanation": "त्वं किं पश्यसि? (What do you see?)",
+    "category": "sensory"
+  },
+  {
+    "id": "puz-300-203",
+    "english": "He hears a loud sound.",
+    "correctOrder": [
+      "सः",
+      "उच्चैः",
+      "शृणोति।"
+    ],
+    "scrambled": [
+      "शृणोति।",
+      "उच्चैः",
+      "सः"
+    ],
+    "hint": "Saḥ uccaiḥ śṛṇoti.",
+    "explanation": "सः उच्चैः शृणोति। (He hears a loud sound.)",
+    "category": "sensory"
+  },
+  {
+    "id": "puz-300-204",
+    "english": "The boy touches something soft.",
+    "correctOrder": [
+      "बालकः",
+      "कोमलं",
+      "स्पृशति।"
+    ],
+    "scrambled": [
+      "स्पृशति।",
+      "कोमलं",
+      "बालकः"
+    ],
+    "hint": "Bālakaḥ komalaṁ spṛśati.",
+    "explanation": "बालकः कोमलं स्पृशति। (The boy touches something soft.)",
+    "category": "sensory"
+  },
+  {
+    "id": "puz-300-205",
+    "english": "The food tastes delicious.",
+    "correctOrder": [
+      "भोजनं",
+      "स्वादिष्टं",
+      "भासते।"
+    ],
+    "scrambled": [
+      "भासते।",
+      "स्वादिष्टं",
+      "भोजनं"
+    ],
+    "hint": "Bhojanaṁ svādiṣṭaṁ bhāsate.",
+    "explanation": "भोजनं स्वादिष्टं भासते। (The food tastes delicious.)",
+    "category": "sensory"
+  },
+  {
+    "id": "puz-300-206",
+    "english": "She is watching television.",
+    "correctOrder": [
+      "सा",
+      "दूरदर्शनं",
+      "पश्यन्ती",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "पश्यन्ती",
+      "दूरदर्शनं",
+      "सा"
+    ],
+    "hint": "Sā dūradarśanaṁ paśyantī asti.",
+    "explanation": "सा दूरदर्शनं पश्यन्ती अस्ति। (She is watching television.)",
+    "category": "sensory"
+  },
+  {
+    "id": "puz-300-207",
+    "english": "Did you hear the noise?",
+    "correctOrder": [
+      "किं",
+      "त्वं",
+      "कोलाहलं",
+      "श्रुतवान्?"
+    ],
+    "scrambled": [
+      "श्रुतवान्?",
+      "कोलाहलं",
+      "त्वं",
+      "किं"
+    ],
+    "hint": "Kiṁ tvaṁ kolāhalaṁ śrutavān?",
+    "explanation": "किं त्वं कोलाहलं श्रुतवान्? (Did you hear the noise?)",
+    "category": "sensory"
+  },
+  {
+    "id": "puz-300-208",
+    "english": "I recognize his voice.",
+    "correctOrder": [
+      "अहं",
+      "तस्य",
+      "कण्ठस्वरं",
+      "चिनोमि।"
+    ],
+    "scrambled": [
+      "चिनोमि।",
+      "कण्ठस्वरं",
+      "तस्य",
+      "अहं"
+    ],
+    "hint": "Ahaṁ tasya kaṇṭhasvaraṁ cinomi.",
+    "explanation": "अहं तस्य कण्ठस्वरं चिनोमि। (I recognize his voice.)",
+    "category": "sensory"
+  },
+  {
+    "id": "puz-300-209",
+    "english": "It is dark here.",
+    "correctOrder": [
+      "अत्र",
+      "अन्धकारः",
+      "वर्तते।"
+    ],
+    "scrambled": [
+      "वर्तते।",
+      "अन्धकारः",
+      "अत्र"
+    ],
+    "hint": "Atra andhakāraḥ vartate.",
+    "explanation": "अत्र अन्धकारः वर्तते। (It is dark here.)",
+    "category": "sensory"
+  },
+  {
+    "id": "puz-300-210",
+    "english": "Please turn on the light.",
+    "correctOrder": [
+      "दीपं",
+      "प्रज्वालयतु",
+      "कृपया।"
+    ],
+    "scrambled": [
+      "कृपया।",
+      "प्रज्वालयतु",
+      "दीपं"
+    ],
+    "hint": "Dīpaṁ prajvālayatu kṛpayā.",
+    "explanation": "दीपं प्रज्वालयतु कृपया। (Please turn on the light.)",
+    "category": "sensory"
+  },
+  {
+    "id": "puz-300-211",
+    "english": "I have an idea in my mind.",
+    "correctOrder": [
+      "मम",
+      "मनसि",
+      "एकः",
+      "विचारः",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "विचारः",
+      "एकः",
+      "मनसि",
+      "मम"
+    ],
+    "hint": "Mama manasi ekaḥ vicāraḥ asti.",
+    "explanation": "मम मनसि एकः विचारः अस्ति। (I have an idea in my mind.)",
+    "category": "mindset"
+  },
+  {
+    "id": "puz-300-212",
+    "english": "She looks very happy.",
+    "correctOrder": [
+      "सा",
+      "अतीव",
+      "प्रसन्ना",
+      "दृश्यते।"
+    ],
+    "scrambled": [
+      "दृश्यते।",
+      "प्रसन्ना",
+      "अतीव",
+      "सा"
+    ],
+    "hint": "Sā atīva prasannā dṛśyate.",
+    "explanation": "सा अतीव प्रसन्ना दृश्यते। (She looks very happy.)",
+    "category": "mindset"
+  },
+  {
+    "id": "puz-300-213",
+    "english": "Why are you afraid?",
+    "correctOrder": [
+      "किमर्थं",
+      "त्वं",
+      "भीतः",
+      "असि?"
+    ],
+    "scrambled": [
+      "असि?",
+      "भीतः",
+      "त्वं",
+      "किमर्थं"
+    ],
+    "hint": "Kimarthaṁ tvaṁ bhītaḥ asi?",
+    "explanation": "किमर्थं त्वं भीतः असि? (Why are you afraid?)",
+    "category": "mindset"
+  },
+  {
+    "id": "puz-300-214",
+    "english": "He speaks with anger.",
+    "correctOrder": [
+      "सः",
+      "क्रोधेन",
+      "वदति।"
+    ],
+    "scrambled": [
+      "वदति।",
+      "क्रोधेन",
+      "सः"
+    ],
+    "hint": "Saḥ krodhena vadati.",
+    "explanation": "सः क्रोधेन वदति। (He speaks with anger.)",
+    "category": "mindset"
+  },
+  {
+    "id": "puz-300-215",
+    "english": "I am confused (male).",
+    "correctOrder": [
+      "अहं",
+      "भ्रान्तः",
+      "अस्मि।"
+    ],
+    "scrambled": [
+      "अस्मि।",
+      "भ्रान्तः",
+      "अहं"
+    ],
+    "hint": "Ahaṁ bhrāntaḥ asmi.",
+    "explanation": "अहं भ्रान्तः अस्मि। (I am confused (male).)",
+    "category": "mindset"
+  },
+  {
+    "id": "puz-300-216",
+    "english": "Have courage / Be patient.",
+    "correctOrder": [
+      "धैर्यं",
+      "धरतु।"
+    ],
+    "scrambled": [
+      "धरतु।",
+      "धैर्यं"
+    ],
+    "hint": "Dhairyaṁ dharatu.",
+    "explanation": "धैर्यं धरतु। (Have courage / Be patient.)",
+    "category": "mindset"
+  },
+  {
+    "id": "puz-300-217",
+    "english": "Trust me.",
+    "correctOrder": [
+      "मम",
+      "उपरि",
+      "विश्वासं",
+      "कुरु।"
+    ],
+    "scrambled": [
+      "कुरु।",
+      "विश्वासं",
+      "उपरि",
+      "मम"
+    ],
+    "hint": "Mama upari viśvāsaṁ kuru.",
+    "explanation": "मम उपरि विश्वासं कुरु। (Trust me.)",
+    "category": "mindset"
+  },
+  {
+    "id": "puz-300-218",
+    "english": "She is feeling sad.",
+    "correctOrder": [
+      "सा",
+      "दुःखं",
+      "अनुभवति।"
+    ],
+    "scrambled": [
+      "अनुभवति।",
+      "दुःखं",
+      "सा"
+    ],
+    "hint": "Sā duḥkhaṁ anubhavati.",
+    "explanation": "सा दुःखं अनुभवति। (She is feeling sad.)",
+    "category": "mindset"
+  },
+  {
+    "id": "puz-300-219",
+    "english": "I know your feelings.",
+    "correctOrder": [
+      "अहं",
+      "तव",
+      "भावनां",
+      "जानामि।"
+    ],
+    "scrambled": [
+      "जानामि।",
+      "भावनां",
+      "तव",
+      "अहं"
+    ],
+    "hint": "Ahaṁ tava bhāvanāṁ jānāmi.",
+    "explanation": "अहं तव भावनां जानामि। (I know your feelings.)",
+    "category": "mindset"
+  },
+  {
+    "id": "puz-300-220",
+    "english": "Do not be disappointed.",
+    "correctOrder": [
+      "निराशः",
+      "मा",
+      "भव।"
+    ],
+    "scrambled": [
+      "भव।",
+      "मा",
+      "निराशः"
+    ],
+    "hint": "Nirāśaḥ mā bhava.",
+    "explanation": "निराशः मा भव। (Do not be disappointed.)",
+    "category": "mindset"
+  },
+  {
+    "id": "puz-300-221",
+    "english": "The vehicle moves fast.",
+    "correctOrder": [
+      "यानं",
+      "शीघ्रं",
+      "चलति।"
+    ],
+    "scrambled": [
+      "चलति।",
+      "शीघ्रं",
+      "यानं"
+    ],
+    "hint": "Yānaṁ śīghraṁ calati.",
+    "explanation": "यानं शीघ्रं चलति। (The vehicle moves fast.)",
+    "category": "travel"
+  },
+  {
+    "id": "puz-300-222",
+    "english": "I am going by bus.",
+    "correctOrder": [
+      "अहं",
+      "लोकयानेन",
+      "गच्छामि।"
+    ],
+    "scrambled": [
+      "गच्छामि।",
+      "लोकयानेन",
+      "अहं"
+    ],
+    "hint": "Ahaṁ lokayānena gacchāmi.",
+    "explanation": "अहं लोकयानेन गच्छामि। (I am going by bus.)",
+    "category": "travel"
+  },
+  {
+    "id": "puz-300-223",
+    "english": "The train is at the station.",
+    "correctOrder": [
+      "धूमशकटं",
+      "विरामस्थाने",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "विरामस्थाने",
+      "धूमशकटं"
+    ],
+    "hint": "Dhūmaśakaṭaṁ virāmasthāne asti.",
+    "explanation": "धूमशकटं विरामस्थाने अस्ति। (The train is at the station.)",
+    "category": "travel"
+  },
+  {
+    "id": "puz-300-224",
+    "english": "When will you depart?",
+    "correctOrder": [
+      "त्वं",
+      "कदा",
+      "प्रस्थास्यसि?"
+    ],
+    "scrambled": [
+      "प्रस्थास्यसि?",
+      "कदा",
+      "त्वं"
+    ],
+    "hint": "Tvaṁ kadā prasthāsyasi?",
+    "explanation": "त्वं कदा प्रस्थास्यसि? (When will you depart?)",
+    "category": "travel"
+  },
+  {
+    "id": "puz-300-225",
+    "english": "We ride on a bicycle/scooter.",
+    "correctOrder": [
+      "वयं",
+      "द्विचक्रिकया",
+      "भ्रमामः।"
+    ],
+    "scrambled": [
+      "भ्रमामः।",
+      "द्विचक्रिकया",
+      "वयं"
+    ],
+    "hint": "Vayaṁ dvicakrikayā bhramāmaḥ.",
+    "explanation": "वयं द्विचक्रिकया भ्रमामः। (We ride on a bicycle/scooter.)",
+    "category": "travel"
+  },
+  {
+    "id": "puz-300-226",
+    "english": "The road is blocked.",
+    "correctOrder": [
+      "मार्गः",
+      "अवरुद्धः",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "अवरुद्धः",
+      "मार्गः"
+    ],
+    "hint": "Mārgaḥ avaruddhaḥ asti.",
+    "explanation": "मार्गः अवरुद्धः अस्ति। (The road is blocked.)",
+    "category": "travel"
+  },
+  {
+    "id": "puz-300-227",
+    "english": "I am going to the airport.",
+    "correctOrder": [
+      "अहं",
+      "विमानतलं",
+      "गच्छन्",
+      "अस्मि।"
+    ],
+    "scrambled": [
+      "अस्मि।",
+      "गच्छन्",
+      "विमानतलं",
+      "अहं"
+    ],
+    "hint": "Ahaṁ vimānatalaṁ gacchan asmi.",
+    "explanation": "अहं विमानतलं गच्छन् अस्मि। (I am going to the airport.)",
+    "category": "travel"
+  },
+  {
+    "id": "puz-300-228",
+    "english": "Did you get the ticket?",
+    "correctOrder": [
+      "भवान्",
+      "पत्रं",
+      "प्राप्तवान्",
+      "किम्?"
+    ],
+    "scrambled": [
+      "किम्?",
+      "प्राप्तवान्",
+      "पत्रं",
+      "भवान्"
+    ],
+    "hint": "Bhavān patraṁ prāptavān kim?",
+    "explanation": "भवान् पत्रं प्राप्तवान् किम्? (Did you get the ticket?)",
+    "category": "travel"
+  },
+  {
+    "id": "puz-300-229",
+    "english": "My bag is heavy.",
+    "correctOrder": [
+      "मम",
+      "स्यूतः",
+      "गुरुः",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "गुरुः",
+      "स्यूतः",
+      "मम"
+    ],
+    "hint": "Mama syūtaḥ guruḥ asti.",
+    "explanation": "मम स्यूतः गुरुः अस्ति। (My bag is heavy.)",
+    "category": "travel"
+  },
+  {
+    "id": "puz-300-230",
+    "english": "Have a safe/happy journey.",
+    "correctOrder": [
+      "यात्रा",
+      "सुखमयी",
+      "भवतु।"
+    ],
+    "scrambled": [
+      "भवतु।",
+      "सुखमयी",
+      "यात्रा"
+    ],
+    "hint": "Yātrā sukhamayī bhavatu.",
+    "explanation": "यात्रा सुखमयी भवतु। (Have a safe/happy journey.)",
+    "category": "travel"
+  },
+  {
+    "id": "puz-300-231",
+    "english": "How much does this item cost?",
+    "correctOrder": [
+      "अस्य",
+      "वस्तुनः",
+      "मूल्यं",
+      "कति?"
+    ],
+    "scrambled": [
+      "कति?",
+      "मूल्यं",
+      "वस्तुनः",
+      "अस्य"
+    ],
+    "hint": "Asya vastunaḥ mūlyaṁ kati?",
+    "explanation": "अस्य वस्तुनः मूल्यं कति? (How much does this item cost?)",
+    "category": "work_money"
+  },
+  {
+    "id": "puz-300-232",
+    "english": "I don't have money in my hand.",
+    "correctOrder": [
+      "मम",
+      "हस्ते",
+      "धनं",
+      "नास्ति।"
+    ],
+    "scrambled": [
+      "नास्ति।",
+      "धनं",
+      "हस्ते",
+      "मम"
+    ],
+    "hint": "Mama haste dhanaṁ nāsti.",
+    "explanation": "मम हस्ते धनं नास्ति। (I don't have money in my hand.)",
+    "category": "work_money"
+  },
+  {
+    "id": "puz-300-233",
+    "english": "She buys vegetables from the shop.",
+    "correctOrder": [
+      "सा",
+      "आपणतः",
+      "शाकं",
+      "क्रीणाति।"
+    ],
+    "scrambled": [
+      "क्रीणाति।",
+      "शाकं",
+      "आपणतः",
+      "सा"
+    ],
+    "hint": "Sā āpaṇataḥ śākaṁ krīṇāti.",
+    "explanation": "सा आपणतः शाकं क्रीणाति। (She buys vegetables from the shop.)",
+    "category": "work_money"
+  },
+  {
+    "id": "puz-300-234",
+    "english": "I work in an office.",
+    "correctOrder": [
+      "अहं",
+      "कार्यालये",
+      "कार्यं",
+      "करोमि।"
+    ],
+    "scrambled": [
+      "करोमि।",
+      "कार्यं",
+      "कार्यालये",
+      "अहं"
+    ],
+    "hint": "Ahaṁ kāryālaye kāryaṁ karomi.",
+    "explanation": "अहं कार्यालये कार्यं करोमि। (I work in an office.)",
+    "category": "work_money"
+  },
+  {
+    "id": "puz-300-235",
+    "english": "He bought a new wallet.",
+    "correctOrder": [
+      "सः",
+      "नूतनं",
+      "धनस्यूतं",
+      "क्रीतवान्।"
+    ],
+    "scrambled": [
+      "क्रीतवान्।",
+      "धनस्यूतं",
+      "नूतनं",
+      "सः"
+    ],
+    "hint": "Saḥ nūtanaṁ dhanasyūtaṁ krītavān.",
+    "explanation": "सः नूतनं धनस्यूतं क्रीतवान्। (He bought a new wallet.)",
+    "category": "work_money"
+  },
+  {
+    "id": "puz-300-236",
+    "english": "Today is my day off / holiday.",
+    "correctOrder": [
+      "अद्य",
+      "मम",
+      "अवकाशः",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "अवकाशः",
+      "मम",
+      "अद्य"
+    ],
+    "hint": "Adya mama avakāśaḥ asti.",
+    "explanation": "अद्य मम अवकाशः अस्ति। (Today is my day off / holiday.)",
+    "category": "work_money"
+  },
+  {
+    "id": "puz-300-237",
+    "english": "He is a skilled carpenter.",
+    "correctOrder": [
+      "सः",
+      "कुशलः",
+      "तक्षकः",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "तक्षकः",
+      "कुशलः",
+      "सः"
+    ],
+    "hint": "Saḥ kuśalaḥ takṣakaḥ asti.",
+    "explanation": "सः कुशलः तक्षकः अस्ति। (He is a skilled carpenter.)",
+    "category": "work_money"
+  },
+  {
+    "id": "puz-300-238",
+    "english": "Is your work finished?",
+    "correctOrder": [
+      "किं",
+      "तव",
+      "कार्यं",
+      "समाप्तम्?"
+    ],
+    "scrambled": [
+      "समाप्तम्?",
+      "कार्यं",
+      "तव",
+      "किं"
+    ],
+    "hint": "Kiṁ tava kāryaṁ samāptam?",
+    "explanation": "किं तव कार्यं समाप्तम्? (Is your work finished?)",
+    "category": "work_money"
+  },
+  {
+    "id": "puz-300-239",
+    "english": "She saves money.",
+    "correctOrder": [
+      "सा",
+      "धनं",
+      "सञ्चिनोति।"
+    ],
+    "scrambled": [
+      "सञ्चिनोति।",
+      "धनं",
+      "सा"
+    ],
+    "hint": "Sā dhanaṁ sañcinoti.",
+    "explanation": "सा धनं सञ्चिनोति। (She saves money.)",
+    "category": "work_money"
+  },
+  {
+    "id": "puz-300-240",
+    "english": "Works are accomplished only through hard work.",
+    "correctOrder": [
+      "उद्यमेन",
+      "हि",
+      "सिध्यन्ति",
+      "कार्याणि।"
+    ],
+    "scrambled": [
+      "कार्याणि।",
+      "सिध्यन्ति",
+      "हि",
+      "उद्यमेन"
+    ],
+    "hint": "Udyamena hi sidhyanti kāryāṇi.",
+    "explanation": "उद्यमेन हि सिध्यन्ति कार्याणि। (Works are accomplished only through hard work.)",
+    "category": "work_money"
+  },
+  {
+    "id": "puz-300-241",
+    "english": "Move / turn to the left.",
+    "correctOrder": [
+      "वामतः",
+      "चलतु।"
+    ],
+    "scrambled": [
+      "चलतु।",
+      "वामतः"
+    ],
+    "hint": "Vāmataḥ calatu.",
+    "explanation": "वामतः चलतु। (Move / turn to the left.)",
+    "category": "directions"
+  },
+  {
+    "id": "puz-300-242",
+    "english": "Look to the right.",
+    "correctOrder": [
+      "दक्षिणतः",
+      "पश्यतु।"
+    ],
+    "scrambled": [
+      "पश्यतु।",
+      "दक्षिणतः"
+    ],
+    "hint": "Dakṣiṇataḥ paśyatu.",
+    "explanation": "दक्षिणतः पश्यतु। (Look to the right.)",
+    "category": "directions"
+  },
+  {
+    "id": "puz-300-243",
+    "english": "Go straight ahead.",
+    "correctOrder": [
+      "सरलमार्गेण",
+      "गच्छ।"
+    ],
+    "scrambled": [
+      "गच्छ।",
+      "सरलमार्गेण"
+    ],
+    "hint": "Saraḷamārgeṇa gaccha.",
+    "explanation": "सरलमार्गेण गच्छ। (Go straight ahead.)",
+    "category": "directions"
+  },
+  {
+    "id": "puz-300-244",
+    "english": "My house is next to the temple.",
+    "correctOrder": [
+      "मम",
+      "गृहं",
+      "मन्दिरस्य",
+      "पार्श्वे",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "पार्श्वे",
+      "मन्दिरस्य",
+      "गृहं",
+      "मम"
+    ],
+    "hint": "Mama gṛhaṁ mandirasya pārśve asti.",
+    "explanation": "मम गृहं मन्दिरस्य पार्श्वे अस्ति। (My house is next to the temple.)",
+    "category": "directions"
+  },
+  {
+    "id": "puz-300-245",
+    "english": "Go further ahead from there.",
+    "correctOrder": [
+      "ततः",
+      "अग्रे",
+      "गच्छतु।"
+    ],
+    "scrambled": [
+      "गच्छतु।",
+      "अग्रे",
+      "ततः"
+    ],
+    "hint": "Tataḥ agre gacchatu.",
+    "explanation": "ततः अग्रे गच्छतु। (Go further ahead from there.)",
+    "category": "directions"
+  },
+  {
+    "id": "puz-300-246",
+    "english": "This is a narrow lane.",
+    "correctOrder": [
+      "एषः",
+      "संकीर्णः",
+      "मार्गः",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "मार्गः",
+      "संकीर्णः",
+      "एषः"
+    ],
+    "hint": "Eṣaḥ saṅkīrṇaḥ mārgaḥ asti.",
+    "explanation": "एषः संकीर्णः मार्गः अस्ति। (This is a narrow lane.)",
+    "category": "directions"
+  },
+  {
+    "id": "puz-300-247",
+    "english": "There is a cat under the table.",
+    "correctOrder": [
+      "उत्पीठिकायाः",
+      "अधः",
+      "मार्जारः",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "मार्जारः",
+      "अधः",
+      "उत्पीठिकायाः"
+    ],
+    "hint": "Utpīṭhikāyāḥ adhaḥ mārjāraḥ asti.",
+    "explanation": "उत्पीठिकायाः अधः मार्जारः अस्ति। (There is a cat under the table.)",
+    "category": "directions"
+  },
+  {
+    "id": "puz-300-248",
+    "english": "Come inside the house.",
+    "correctOrder": [
+      "गृहस्य",
+      "अन्तः",
+      "आगच्छ।"
+    ],
+    "scrambled": [
+      "आगच्छ।",
+      "अन्तः",
+      "गृहस्य"
+    ],
+    "hint": "Gṛhasya antaḥ āgaccha.",
+    "explanation": "गृहस्य अन्तः आगच्छ। (Come inside the house.)",
+    "category": "directions"
+  },
+  {
+    "id": "puz-300-249",
+    "english": "Do not go outside, it is sunny.",
+    "correctOrder": [
+      "बहिः",
+      "मा",
+      "गच्छ,",
+      "आतपः",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "आतपः",
+      "गच्छ,",
+      "मा",
+      "बहिः"
+    ],
+    "hint": "Bahiḥ mā gaccha, ātapaḥ asti.",
+    "explanation": "बहिः मा गच्छ, आतपः अस्ति। (Do not go outside, it is sunny.)",
+    "category": "directions"
+  },
+  {
+    "id": "puz-300-250",
+    "english": "There is a mountain across the river.",
+    "correctOrder": [
+      "नद्याः",
+      "परतः",
+      "पर्वतः",
+      "वर्तते।"
+    ],
+    "scrambled": [
+      "वर्तते।",
+      "पर्वतः",
+      "परतः",
+      "नद्याः"
+    ],
+    "hint": "Nadyāḥ parataḥ parvataḥ vartate.",
+    "explanation": "नद्याः परतः पर्वतः वर्तते। (There is a mountain across the river.)",
+    "category": "directions"
+  },
+  {
+    "id": "puz-300-251",
+    "english": "He who studies, knows.",
+    "correctOrder": [
+      "यः",
+      "पठति,",
+      "सः",
+      "जानाति।"
+    ],
+    "scrambled": [
+      "जानाति।",
+      "सः",
+      "पठति,",
+      "यः"
+    ],
+    "hint": "Yaḥ paṭhati, saḥ jānati.",
+    "explanation": "यः पठति, सः जानाति। (He who studies, knows.)",
+    "category": "relative"
+  },
+  {
+    "id": "puz-300-252",
+    "english": "The girl who sings is my sister.",
+    "correctOrder": [
+      "या",
+      "गायति,",
+      "सा",
+      "मम",
+      "भगिनी।"
+    ],
+    "scrambled": [
+      "भगिनी।",
+      "मम",
+      "सा",
+      "गायति,",
+      "या"
+    ],
+    "hint": "Yā gāyati, sā mama bhaginī.",
+    "explanation": "या गायति, सा मम भगिनी। (The girl who sings is my sister.)",
+    "category": "relative"
+  },
+  {
+    "id": "puz-300-253",
+    "english": "What is true is often bitter.",
+    "correctOrder": [
+      "यत्",
+      "सत्यं,",
+      "तत्",
+      "कटु",
+      "भवति।"
+    ],
+    "scrambled": [
+      "भवति।",
+      "कटु",
+      "तत्",
+      "सत्यं,",
+      "यत्"
+    ],
+    "hint": "Yat satyaṁ, tat kaṭu bhavati.",
+    "explanation": "यत् सत्यं, तत् कटु भवति। (What is true is often bitter.)",
+    "category": "relative"
+  },
+  {
+    "id": "puz-300-254",
+    "english": "When the sun rises, then the lotus blooms.",
+    "correctOrder": [
+      "यदा",
+      "सूर्यः",
+      "उदेति,",
+      "तदा",
+      "कमलं",
+      "विकसति।"
+    ],
+    "scrambled": [
+      "विकसति।",
+      "कमलं",
+      "तदा",
+      "उदेति,",
+      "सूर्यः",
+      "यदा"
+    ],
+    "hint": "Yadā sūryaḥ udeti, tadā kamalam vikasati.",
+    "explanation": "यदा सूर्यः उदेति, तदा कमलं विकसति। (When the sun rises, then the lotus blooms.)",
+    "category": "relative"
+  },
+  {
+    "id": "puz-300-255",
+    "english": "Where there is smoke, there is fire.",
+    "correctOrder": [
+      "यत्र",
+      "धूमः,",
+      "तत्र",
+      "अग्निः।"
+    ],
+    "scrambled": [
+      "अग्निः।",
+      "तत्र",
+      "धूमः,",
+      "यत्र"
+    ],
+    "hint": "Yatra dhūmaḥ, tatra agniḥ.",
+    "explanation": "यत्र धूमः, तत्र अग्निः। (Where there is smoke, there is fire.)",
+    "category": "relative"
+  },
+  {
+    "id": "puz-300-256",
+    "english": "He does as much as he can.",
+    "correctOrder": [
+      "यावत्",
+      "शक्नोति,",
+      "तावत्",
+      "करोति।"
+    ],
+    "scrambled": [
+      "करोति।",
+      "तावत्",
+      "शक्नोति,",
+      "यावत्"
+    ],
+    "hint": "Yāvat śaknoti, tāvat karoti.",
+    "explanation": "यावत् शक्नोति, तावत् करोति। (He does as much as he can.)",
+    "category": "relative"
+  },
+  {
+    "id": "puz-300-257",
+    "english": "Do as you say.",
+    "correctOrder": [
+      "यथा",
+      "वदसि,",
+      "तथा",
+      "कुरु।"
+    ],
+    "scrambled": [
+      "कुरु।",
+      "तथा",
+      "वदसि,",
+      "यथा"
+    ],
+    "hint": "Yathā vadasi, tathā kuru.",
+    "explanation": "यथा वदसि, तथा कुरु। (Do as you say.)",
+    "category": "relative"
+  },
+  {
+    "id": "puz-300-258",
+    "english": "Take whatever is necessary.",
+    "correctOrder": [
+      "यत्",
+      "आवश्यकं,",
+      "तत्",
+      "स्वीकुरु।"
+    ],
+    "scrambled": [
+      "स्वीकुरु।",
+      "तत्",
+      "आवश्यकं,",
+      "यत्"
+    ],
+    "hint": "Yat āvaśyakaṁ, tat svīkuru.",
+    "explanation": "यत् आवश्यकं, तत् स्वीकुरु। (Take whatever is necessary.)",
+    "category": "relative"
+  },
+  {
+    "id": "puz-300-259",
+    "english": "Come whenever you want.",
+    "correctOrder": [
+      "यदा",
+      "त्वं",
+      "इच्छसि,",
+      "तदा",
+      "आगच्छ।"
+    ],
+    "scrambled": [
+      "आगच्छ।",
+      "तदा",
+      "इच्छसि,",
+      "त्वं",
+      "यदा"
+    ],
+    "hint": "Yadā tvaṁ icchasi, tadā āgaccha.",
+    "explanation": "यदा त्वं इच्छसि, तदा आगच्छ। (Come whenever you want.)",
+    "category": "relative"
+  },
+  {
+    "id": "puz-300-260",
+    "english": "Where there is knowledge, there is respect.",
+    "correctOrder": [
+      "यत्र",
+      "विद्या,",
+      "तत्र",
+      "आदरः।"
+    ],
+    "scrambled": [
+      "आदरः।",
+      "तत्र",
+      "विद्या,",
+      "यत्र"
+    ],
+    "hint": "Yatra vidyā, tatra ādaraḥ.",
+    "explanation": "यत्र विद्या, तत्र आदरः। (Where there is knowledge, there is respect.)",
+    "category": "relative"
+  },
+  {
+    "id": "puz-300-261",
+    "english": "Forgive my mistake.",
+    "correctOrder": [
+      "मम",
+      "अपराधं",
+      "क्षमस्व।"
+    ],
+    "scrambled": [
+      "क्षमस्व।",
+      "अपराधं",
+      "मम"
+    ],
+    "hint": "Mama aparādhaṁ kṣamasva.",
+    "explanation": "मम अपराधं क्षमस्व। (Forgive my mistake.)",
+    "category": "etiquette_adv"
+  },
+  {
+    "id": "puz-300-262",
+    "english": "Your command is accepted respectfully.",
+    "correctOrder": [
+      "भवतः",
+      "आज्ञा",
+      "शिरोधार्या।"
+    ],
+    "scrambled": [
+      "शिरोधार्या।",
+      "आज्ञा",
+      "भवतः"
+    ],
+    "hint": "Bhavataḥ ājñā śirodhāryā.",
+    "explanation": "भवतः आज्ञा शिरोधार्या। (Your command is accepted respectfully.)",
+    "category": "etiquette_adv"
+  },
+  {
+    "id": "puz-300-263",
+    "english": "Sprinkle a little water.",
+    "correctOrder": [
+      "किञ्चित्",
+      "जलेन",
+      "सिञ्चतु।"
+    ],
+    "scrambled": [
+      "सिञ्चतु।",
+      "जलेन",
+      "किञ्चित्"
+    ],
+    "hint": "Kiñcit jalena siñcatu.",
+    "explanation": "किञ्चित् जलेन सिञ्चतु। (Sprinkle a little water.)",
+    "category": "etiquette_adv"
+  },
+  {
+    "id": "puz-300-264",
+    "english": "I agree with you.",
+    "correctOrder": [
+      "अहं",
+      "भवता",
+      "सह",
+      "सहमतः",
+      "अस्मि।"
+    ],
+    "scrambled": [
+      "अस्मि।",
+      "सहमतः",
+      "सह",
+      "भवता",
+      "अहं"
+    ],
+    "hint": "Ahaṁ bhavatā saha sahmataḥ asmi.",
+    "explanation": "अहं भवता सह सहमतः अस्मि। (I agree with you.)",
+    "category": "etiquette_adv"
+  },
+  {
+    "id": "puz-300-265",
+    "english": "Please give way.",
+    "correctOrder": [
+      "कृपया",
+      "मार्गं",
+      "ददातु।"
+    ],
+    "scrambled": [
+      "ददातु।",
+      "मार्गं",
+      "कृपया"
+    ],
+    "hint": "Kṛpayā mārgaṁ dadātu.",
+    "explanation": "कृपया मार्गं ददातु। (Please give way.)",
+    "category": "etiquette_adv"
+  },
+  {
+    "id": "puz-300-266",
+    "english": "You sit here, I will be right back.",
+    "correctOrder": [
+      "भवान्",
+      "अत्र",
+      "उपविशतु,",
+      "अहं",
+      "आगच्छामि।"
+    ],
+    "scrambled": [
+      "आगच्छामि।",
+      "अहं",
+      "उपविशतु,",
+      "अत्र",
+      "भवान्"
+    ],
+    "hint": "Bhavān atra upaviśatu, ahaṁ āgacchāmi.",
+    "explanation": "भवान् अत्र उपविशतु, अहं आगच्छामि। (You sit here, I will be right back.)",
+    "category": "etiquette_adv"
+  },
+  {
+    "id": "puz-300-267",
+    "english": "Sorry for the trouble.",
+    "correctOrder": [
+      "कष्टाय",
+      "क्षम्यताम्।"
+    ],
+    "scrambled": [
+      "क्षम्यताम्।",
+      "कष्टाय"
+    ],
+    "hint": "Kaṣṭāya kṣamyatām.",
+    "explanation": "कष्टाय क्षम्यताम्। (Sorry for the trouble.)",
+    "category": "etiquette_adv"
+  },
+  {
+    "id": "puz-300-268",
+    "english": "You are welcome here.",
+    "correctOrder": [
+      "अत्र",
+      "भवतः",
+      "स्वागतम्",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "स्वागतम्",
+      "भवतः",
+      "अत्र"
+    ],
+    "hint": "Atra bhavataḥ svāgataṁ asti.",
+    "explanation": "अत्र भवतः स्वागतम् अस्ति। (You are welcome here.)",
+    "category": "etiquette_adv"
+  },
+  {
+    "id": "puz-300-269",
+    "english": "How is your health?",
+    "correctOrder": [
+      "भवतः",
+      "स्वास्थ्यं",
+      "कथम्",
+      "अस्ति?"
+    ],
+    "scrambled": [
+      "अस्ति?",
+      "कथम्",
+      "स्वास्थ्यं",
+      "भवतः"
+    ],
+    "hint": "Bhavataḥ svāsthyaṁ katham asti?",
+    "explanation": "भवतः स्वास्थ्यं कथम् अस्ति? (How is your health?)",
+    "category": "etiquette_adv"
+  },
+  {
+    "id": "puz-300-270",
+    "english": "May God protect you.",
+    "correctOrder": [
+      "ईश्वरः",
+      "त्वां",
+      "रक्षतु।"
+    ],
+    "scrambled": [
+      "रक्षतु।",
+      "त्वां",
+      "ईश्वरः"
+    ],
+    "hint": "Īśvaraḥ tvāṁ rakṣatu.",
+    "explanation": "ईश्वरः त्वां रक्षतु। (May God protect you.)",
+    "category": "etiquette_adv"
+  },
+  {
+    "id": "puz-300-271",
+    "english": "May I go home?",
+    "correctOrder": [
+      "अहं",
+      "गृहं",
+      "गच्छेयं",
+      "किम्?"
+    ],
+    "scrambled": [
+      "किम्?",
+      "गच्छेयं",
+      "गृहं",
+      "अहं"
+    ],
+    "hint": "Ahaṁ gṛhaṁ gaccheyam kim?",
+    "explanation": "अहं गृहं गच्छेयं किम्? (May I go home?)",
+    "category": "potential"
+  },
+  {
+    "id": "puz-300-272",
+    "english": "You should study every day.",
+    "correctOrder": [
+      "त्वं",
+      "प्रतिदिनं",
+      "पठेः।"
+    ],
+    "scrambled": [
+      "पठेः।",
+      "प्रतिदिनं",
+      "त्वं"
+    ],
+    "hint": "Tvaṁ pratidinaṁ paṭheḥ.",
+    "explanation": "त्वं प्रतिदिनं पठेः। (You should study every day.)",
+    "category": "potential"
+  },
+  {
+    "id": "puz-300-273",
+    "english": "Everyone should speak the truth.",
+    "correctOrder": [
+      "सर्वः",
+      "सत्यं",
+      "वदेत्।"
+    ],
+    "scrambled": [
+      "वदेत्।",
+      "सत्यं",
+      "सर्वः"
+    ],
+    "hint": "Sarvaḥ satyaṁ vadet.",
+    "explanation": "सर्वः सत्यं वदेत्। (Everyone should speak the truth.)",
+    "category": "potential"
+  },
+  {
+    "id": "puz-300-274",
+    "english": "We ought to protect the country.",
+    "correctOrder": [
+      "वयं",
+      "देशं",
+      "रक्षेम।"
+    ],
+    "scrambled": [
+      "रक्षेम।",
+      "देशं",
+      "वयं"
+    ],
+    "hint": "Vayaṁ deśaṁ rakṣema.",
+    "explanation": "वयं देशं रक्षेम। (We ought to protect the country.)",
+    "category": "potential"
+  },
+  {
+    "id": "puz-300-275",
+    "english": "He should eat his food.",
+    "correctOrder": [
+      "सः",
+      "भोजनं",
+      "कुर्यात्।"
+    ],
+    "scrambled": [
+      "कुर्यात्।",
+      "भोजनं",
+      "सः"
+    ],
+    "hint": "Saḥ bhojanaṁ kuryāt.",
+    "explanation": "सः भोजनं कुर्यात्। (He should eat his food.)",
+    "category": "potential"
+  },
+  {
+    "id": "puz-300-276",
+    "english": "Students should not make noise.",
+    "correctOrder": [
+      "छात्राः",
+      "कोलाहलं",
+      "न",
+      "कुर्युः।"
+    ],
+    "scrambled": [
+      "कुर्युः।",
+      "न",
+      "कोलाहलं",
+      "छात्राः"
+    ],
+    "hint": "Chātrāḥ kolāhalaṁ na kuryuḥ.",
+    "explanation": "छात्राः कोलाहलं न कुर्युः। (Students should not make noise.)",
+    "category": "potential"
+  },
+  {
+    "id": "puz-300-277",
+    "english": "You may say something.",
+    "correctOrder": [
+      "किमपि",
+      "वदतु",
+      "भवान्।"
+    ],
+    "scrambled": [
+      "भवान्।",
+      "वदतु",
+      "किमपि"
+    ],
+    "hint": "Kimapi vadatu bhavān.",
+    "explanation": "किमपि वदतु भवान्। (You may say something.)",
+    "category": "potential"
+  },
+  {
+    "id": "puz-300-278",
+    "english": "Should I help?",
+    "correctOrder": [
+      "अहं",
+      "साहाय्यं",
+      "कुर्यां",
+      "किम्?"
+    ],
+    "scrambled": [
+      "किम्?",
+      "कुर्यां",
+      "साहाय्यं",
+      "अहं"
+    ],
+    "hint": "Ahaṁ sāhāyyaṁ kuryām kim?",
+    "explanation": "अहं साहाय्यं कुर्यां किम्? (Should I help?)",
+    "category": "potential"
+  },
+  {
+    "id": "puz-300-279",
+    "english": "You should have bowed to the teacher.",
+    "correctOrder": [
+      "त्वं",
+      "गुरुं",
+      "नमस्कृतवान्",
+      "भवेः।"
+    ],
+    "scrambled": [
+      "भवेः।",
+      "नमस्कृतवान्",
+      "गुरुं",
+      "त्वं"
+    ],
+    "hint": "Tvaṁ guruṁ namaskṛtavān bhaveḥ.",
+    "explanation": "त्वं गुरुं नमस्कृतवान् भवेः। (You should have bowed to the teacher.)",
+    "category": "potential"
+  },
+  {
+    "id": "puz-300-280",
+    "english": "We should meet together.",
+    "correctOrder": [
+      "वयम्",
+      "एकत्र",
+      "मिलेम।"
+    ],
+    "scrambled": [
+      "मिलेम।",
+      "एकत्र",
+      "वयम्"
+    ],
+    "hint": "Vayaṁ ekatra milema.",
+    "explanation": "वयम् एकत्र मिलेम। (We should meet together.)",
+    "category": "potential"
+  },
+  {
+    "id": "puz-300-281",
+    "english": "I study for two hours.",
+    "correctOrder": [
+      "अहं",
+      "घटिकाद्वयं",
+      "पठामि।"
+    ],
+    "scrambled": [
+      "पठामि।",
+      "घटिकाद्वयं",
+      "अहं"
+    ],
+    "hint": "Ahaṁ ghaṭikādvayaṁ paṭhāmi.",
+    "explanation": "अहं घटिकाद्वयं पठामि। (I study for two hours.)",
+    "category": "time_scheduling"
+  },
+  {
+    "id": "puz-300-282",
+    "english": "The exam is next week.",
+    "correctOrder": [
+      "परीक्षा",
+      "आगामिनि",
+      "सप्ताहे",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "सप्ताहे",
+      "आगामिनि",
+      "परीक्षा"
+    ],
+    "hint": "Parīkṣā āgāmini saptāhe asti.",
+    "explanation": "परीक्षा आगामिनि सप्ताहे अस्ति। (The exam is next week.)",
+    "category": "time_scheduling"
+  },
+  {
+    "id": "puz-300-283",
+    "english": "He was here two months ago.",
+    "correctOrder": [
+      "मासद्वयात्",
+      "पूर्वं",
+      "सः",
+      "अत्र",
+      "आसीत्।"
+    ],
+    "scrambled": [
+      "आसीत्।",
+      "अत्र",
+      "सः",
+      "पूर्वं",
+      "मासद्वयात्"
+    ],
+    "hint": "Māsadvayāt pūrvaṁ saḥ atra āsīt.",
+    "explanation": "मासद्वयात् पूर्वं सः अत्र आसीत्। (He was here two months ago.)",
+    "category": "time_scheduling"
+  },
+  {
+    "id": "puz-300-284",
+    "english": "I work from 10 o'clock onwards.",
+    "correctOrder": [
+      "अहं",
+      "दशवादनतः",
+      "कार्यं",
+      "करोमि।"
+    ],
+    "scrambled": [
+      "करोमि।",
+      "कार्यं",
+      "दशवादनतः",
+      "अहं"
+    ],
+    "hint": "Ahaṁ daśavādanataḥ kāryaṁ karomi.",
+    "explanation": "अहं दशवादनतः कार्यं करोमि। (I work from 10 o'clock onwards.)",
+    "category": "time_scheduling"
+  },
+  {
+    "id": "puz-300-285",
+    "english": "Let there be no delay / Don't be late.",
+    "correctOrder": [
+      "विलम्बः",
+      "मा",
+      "भवतु।"
+    ],
+    "scrambled": [
+      "भवतु।",
+      "मा",
+      "विलम्बः"
+    ],
+    "hint": "Vilambaḥ ma bhavatu.",
+    "explanation": "विलम्बः मा भवतु। (Let there be no delay / Don't be late.)",
+    "category": "time_scheduling"
+  },
+  {
+    "id": "puz-300-286",
+    "english": "We will meet this evening.",
+    "correctOrder": [
+      "अद्य",
+      "सायङ्काले",
+      "वयं",
+      "मिलिष्यामः।"
+    ],
+    "scrambled": [
+      "मिलिष्यामः।",
+      "वयं",
+      "सायङ्काले",
+      "अद्य"
+    ],
+    "hint": "Adya sāyaṅkāle vayaṁ miliṣyāmaḥ.",
+    "explanation": "अद्य सायङ्काले वयं मिलिष्यामः। (We will meet this evening.)",
+    "category": "time_scheduling"
+  },
+  {
+    "id": "puz-300-287",
+    "english": "He stood there for just a moment.",
+    "correctOrder": [
+      "सः",
+      "क्षणमात्रं",
+      "तत्र",
+      "अतिष्ठत्।"
+    ],
+    "scrambled": [
+      "अतिष्ठत्।",
+      "तत्र",
+      "क्षणमात्रं",
+      "सः"
+    ],
+    "hint": "Saḥ kṣaṇamātraṁ tatra atiṣṭhat.",
+    "explanation": "सः क्षणमात्रं तत्र अतिष्ठत्। (He stood there for just a moment.)",
+    "category": "time_scheduling"
+  },
+  {
+    "id": "puz-300-288",
+    "english": "My birthday is next month.",
+    "correctOrder": [
+      "मम",
+      "जन्मदिवसः",
+      "आगामिनि",
+      "मासे",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "मासे",
+      "आगामिनि",
+      "जन्मदिवसः",
+      "मम"
+    ],
+    "hint": "Mama janmadivasaḥ āgāmini māse asti.",
+    "explanation": "मम जन्मदिवसः आगामिनि मासे अस्ति। (My birthday is next month.)",
+    "category": "time_scheduling"
+  },
+  {
+    "id": "puz-300-289",
+    "english": "I am seeing you after a long time.",
+    "correctOrder": [
+      "चिरकालानन्तरं",
+      "त्वां",
+      "पश्यामि।"
+    ],
+    "scrambled": [
+      "पश्यामि।",
+      "त्वां",
+      "चिरकालानन्तरं"
+    ],
+    "hint": "Cirakālānantaraṁ tvāṁ paśyami.",
+    "explanation": "चिरकालानन्तरं त्वां पश्यामि। (I am seeing you after a long time.)",
+    "category": "time_scheduling"
+  },
+  {
+    "id": "puz-300-290",
+    "english": "Time is valuable.",
+    "correctOrder": [
+      "समयः",
+      "मूल्यवान्",
+      "वर्तते।"
+    ],
+    "scrambled": [
+      "वर्तते।",
+      "मूल्यवान्",
+      "समयः"
+    ],
+    "hint": "Samayaḥ mūlyavān vartate.",
+    "explanation": "समयः मूल्यवान् वर्तते। (Time is valuable.)",
+    "category": "time_scheduling"
+  },
+  {
+    "id": "puz-300-291",
+    "english": "Excess of anything should be avoided.",
+    "correctOrder": [
+      "अति",
+      "सर्वत्र",
+      "वर्जयेत्।"
+    ],
+    "scrambled": [
+      "वर्जयेत्।",
+      "सर्वत्र",
+      "अति"
+    ],
+    "hint": "Ati sarvatra varjayet.",
+    "explanation": "अति सर्वत्र वर्जयेत्। (Excess of anything should be avoided.)",
+    "category": "idioms"
+  },
+  {
+    "id": "puz-300-292",
+    "english": "Whatever happens, happens for the best.",
+    "correctOrder": [
+      "यद्",
+      "भवति,",
+      "भद्राय",
+      "एव",
+      "भवति।"
+    ],
+    "scrambled": [
+      "भवति।",
+      "एव",
+      "भद्राय",
+      "भवति,",
+      "यद्"
+    ],
+    "hint": "Yad bhavati, bhadrāya eva bhavati.",
+    "explanation": "यद् भवति, भद्राय एव भवति। (Whatever happens, happens for the best.)",
+    "category": "idioms"
+  },
+  {
+    "id": "puz-300-293",
+    "english": "I have a doubt in my mind.",
+    "correctOrder": [
+      "मम",
+      "मनसि",
+      "संशयः",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "संशयः",
+      "मनसि",
+      "मम"
+    ],
+    "hint": "Mama manasi saṁśayaḥ asti.",
+    "explanation": "मम मनसि संशयः अस्ति। (I have a doubt in my mind.)",
+    "category": "idioms"
+  },
+  {
+    "id": "puz-300-294",
+    "english": "The thinking/mindset is correct.",
+    "correctOrder": [
+      "चिन्तनं",
+      "सम्यक्",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "सम्यक्",
+      "चिन्तनं"
+    ],
+    "hint": "Cintanaṁ samyak asti.",
+    "explanation": "चिन्तनं सम्यक् अस्ति। (The thinking/mindset is correct.)",
+    "category": "idioms"
+  },
+  {
+    "id": "puz-300-295",
+    "english": "She is absorbed in her own work.",
+    "correctOrder": [
+      "सा",
+      "स्वस्य",
+      "कार्ये",
+      "मग्ना",
+      "अस्ति।"
+    ],
+    "scrambled": [
+      "अस्ति।",
+      "मग्ना",
+      "कार्ये",
+      "स्वस्य",
+      "सा"
+    ],
+    "hint": "Sā svasya kārye magnā asti.",
+    "explanation": "सा स्वस्य कार्ये मग्ना अस्ति। (She is absorbed in her own work.)",
+    "category": "idioms"
+  },
+  {
+    "id": "puz-300-296",
+    "english": "There is nothing special here.",
+    "correctOrder": [
+      "अत्र",
+      "किमपि",
+      "विशेषः",
+      "नास्ति।"
+    ],
+    "scrambled": [
+      "नास्ति।",
+      "विशेषः",
+      "किमपि",
+      "अत्र"
+    ],
+    "hint": "Atra kimapi viśeṣaḥ नास्ति.",
+    "explanation": "अत्र किमपि विशेषः नास्ति। (There is nothing special here.)",
+    "category": "idioms"
+  },
+  {
+    "id": "puz-300-297",
+    "english": "Nature/habit is difficult to change.",
+    "correctOrder": [
+      "स्वभावः",
+      "परिवर्तनाय",
+      "कठिनः।"
+    ],
+    "scrambled": [
+      "कठिनः।",
+      "परिवर्तनाय",
+      "स्वभावः"
+    ],
+    "hint": "Svabhāvaḥ parivartanāya kaṭhinaḥ.",
+    "explanation": "स्वभावः परिवर्तनाय कठिनः। (Nature/habit is difficult to change.)",
+    "category": "idioms"
+  },
+  {
+    "id": "puz-300-298",
+    "english": "I am always on the side of truth.",
+    "correctOrder": [
+      "अहं",
+      "सर्वदा",
+      "सत्यस्य",
+      "पक्षे",
+      "अस्मि।"
+    ],
+    "scrambled": [
+      "अस्मि।",
+      "पक्षे",
+      "सत्यस्य",
+      "सर्वदा",
+      "अहं"
+    ],
+    "hint": "Ahaṁ sarvadā satyasya pakṣe asmi.",
+    "explanation": "अहं सर्वदा सत्यस्य पक्षे अस्मि। (I am always on the side of truth.)",
+    "category": "idioms"
+  },
+  {
+    "id": "puz-300-299",
+    "english": "This language is exceptionally sweet.",
+    "correctOrder": [
+      "एषा",
+      "भाषा",
+      "अतीव",
+      "मधुरा।"
+    ],
+    "scrambled": [
+      "मधुरा।",
+      "अतीव",
+      "भाषा",
+      "एषा"
+    ],
+    "hint": "Eṣā bhāṣā atīva madhurā.",
+    "explanation": "एषा भाषा अतीव मधुरा। (This language is exceptionally sweet.)",
+    "category": "idioms"
+  },
+  {
+    "id": "puz-300-300",
+    "english": "Life becomes beautiful through Sanskrit.",
+    "correctOrder": [
+      "संस्कृतेन",
+      "जीवनं",
+      "सुन्दरं",
+      "भवति।"
+    ],
+    "scrambled": [
+      "भवति।",
+      "सुन्दरं",
+      "जीवनं",
+      "संस्कृतेन"
+    ],
+    "hint": "Saṁskṛtena jīvanaṁ sundaraṁ bhavati.",
+    "explanation": "संस्कृतेन जीवनं सुन्दरं भवति। (Life becomes beautiful through Sanskrit.)",
+    "category": "idioms"
   }
 ];
 
-// Alias for backwards compatibility
-export const SENTENCES_100_PUZZLES: SentencePuzzleItem[] = SENTENCES_200_PUZZLES;
+// Backwards compatibility aliases
+export const SENTENCES_200_PUZZLES: SentencePuzzleItem[] = SENTENCES_300_PUZZLES;
+export const SENTENCES_100_PUZZLES: SentencePuzzleItem[] = SENTENCES_300_PUZZLES;
 
 // Default builder puzzles collection
 export const SENTENCE_BUILDER_PUZZLES: SentencePuzzleItem[] = [
   ...FOUNDATIONAL_TILE_PUZZLES,
-  ...SENTENCES_200_PUZZLES,
+  ...SENTENCES_300_PUZZLES,
 ];
