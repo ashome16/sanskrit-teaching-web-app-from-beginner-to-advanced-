@@ -4,7 +4,7 @@ import {
   SIMPLE_SENTENCES_CATALOG,
   SENTENCE_CATEGORIES,
   FOUNDATIONAL_TILE_PUZZLES,
-  SENTENCES_100_PUZZLES,
+  SENTENCES_200_PUZZLES,
   type RootWordItem,
   type SimpleSentenceItem,
   type SentencePuzzleItem,
@@ -20,7 +20,7 @@ interface SimpleSentencesStudioProps {
 }
 
 type StudioTab = 'roots' | 'sentences' | 'practice';
-type PuzzlePack = 'foundation' | 'all_100';
+type PuzzlePack = 'foundation' | 'all_200';
 
 export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
   onSelectWord,
@@ -35,7 +35,7 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
   const [number, setNumber] = useState<'singular' | 'dual' | 'plural'>('singular');
   const [showFullTable, setShowFullTable] = useState(false);
 
-  // 100 Sentences state (Tab 2)
+  // 200 Sentences state (Tab 2)
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -124,9 +124,9 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
       return FOUNDATIONAL_TILE_PUZZLES;
     }
     if (puzzleCategoryFilter === 'all') {
-      return SENTENCES_100_PUZZLES;
+      return SENTENCES_200_PUZZLES;
     }
-    return SENTENCES_100_PUZZLES.filter((p) => p.category === puzzleCategoryFilter);
+    return SENTENCES_200_PUZZLES.filter((p) => p.category === puzzleCategoryFilter);
   }, [customPuzzle, puzzlePack, puzzleCategoryFilter]);
 
   const currentPuzzle = useMemo<SentencePuzzleItem>(() => {
@@ -223,9 +223,9 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
           <span className="sss-badge">LEVEL 3 · INTERMEDIATE SANSKRIT</span>
           <span className="sss-tag">सरल-वाक्यानि & धातवः</span>
         </div>
-        <h1 className="sss-title">Root Words, 100 Everyday Sentences &amp; Tiles Puzzle</h1>
+        <h1 className="sss-title">Root Words, 200 Everyday Sentences &amp; Tiles Puzzle</h1>
         <p className="sss-subtitle">
-          Master the building blocks of spoken Sanskrit: forge verbs from core roots (धातवः), explore 100 real-world sentences across 10 vital topics, and master syntax with the interactive tiles puzzle game.
+          Master the building blocks of spoken Sanskrit: forge verbs from core roots (धातवः), explore 200 authentic everyday sentences across 20 vital themes, and master syntax with the interactive tiles puzzle game.
         </p>
 
         {/* 3 Step Navigation Tabs */}
@@ -255,8 +255,8 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
           >
             <span className="snt-num">२</span>
             <div className="snt-text">
-              <strong>सरल-वाक्यानि · 100 Sentences</strong>
-              <span>10 Categorized Themes</span>
+              <strong>सरल-वाक्यानि · 200 Sentences</strong>
+              <span>20 Categorized Themes</span>
             </div>
           </button>
 
@@ -271,7 +271,7 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
             <span className="snt-num">३</span>
             <div className="snt-text">
               <strong>वाक्याभ्यासः · Tiles Puzzle</strong>
-              <span>Foundational &amp; 100 Packs</span>
+              <span>Foundational &amp; 200 Packs</span>
             </div>
           </button>
         </div>
@@ -554,7 +554,7 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
 
                 {/* Step Forward CTA */}
                 <div className="sfc-footer-cta">
-                  <span>Ready to explore 100 practical everyday phrases?</span>
+                  <span>Ready to explore 200 practical everyday phrases?</span>
                   <button
                     type="button"
                     className="sss-primary-btn"
@@ -564,7 +564,7 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
                   >
-                    Step 2: Explore 100 Sentences Studio ➔
+                    Step 2: Explore 200 Sentences Studio ➔
                   </button>
                 </div>
               </div>
@@ -574,10 +574,10 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
       )}
 
       {/* ===================================================================
-          TAB 2: 100 SANSKRIT EVERYDAY SENTENCES (सरल-वाक्यानि)
+          TAB 2: 200 SANSKRIT EVERYDAY SENTENCES (सरल-वाक्यानि)
           =================================================================== */}
       {activeTab === 'sentences' && (
-        <section className="sss-section sss-sentences-section" aria-label="100 Simple Sentences Catalog">
+        <section className="sss-section sss-sentences-section" aria-label="200 Simple Sentences Catalog">
           {/* Controls Bar */}
           <div className="sss-sentences-controls">
             <div className="sss-cat-chips">
@@ -586,7 +586,7 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
                 className={`sss-cat-chip ${selectedCategory === 'all' ? 'active' : ''}`}
                 onClick={() => setSelectedCategory('all')}
               >
-                All 100 Sentences (१००)
+                All 200 Sentences (२००)
               </button>
               {SENTENCE_CATEGORIES.map((cat) => (
                 <button
@@ -625,7 +625,7 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
             <span className="legend-pill pill-verb">🟠 क्रियापदम् (Verb)</span>
             <span className="legend-pill pill-other">🟣 अव्ययम् / विशेषणम् (Adverb / Particle)</span>
             <span className="legend-count-info">
-              Showing <strong>{filteredSentences.length}</strong> of 100 sentences
+              Showing <strong>{filteredSentences.length}</strong> of 200 sentences
             </span>
           </div>
 
@@ -706,7 +706,7 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
           <div className="sss-footer-banner">
             <div>
               <h3>Test your sentence ordering skills in the Tiles Puzzle</h3>
-              <p>Practice with the moved foundational 25 sentences pack or test your skills across all 100 everyday sentences!</p>
+              <p>Practice with the moved foundational 25 sentences pack or test your skills across all 200 everyday sentences!</p>
             </div>
             <button
               type="button"
@@ -759,21 +759,21 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
                 </button>
                 <button
                   type="button"
-                  className={`sppb-tab ${puzzlePack === 'all_100' && !customPuzzle ? 'active' : ''}`}
+                  className={`sppb-tab ${puzzlePack === 'all_200' && !customPuzzle ? 'active' : ''}`}
                   onClick={() => {
                     setCustomPuzzle(null);
-                    setPuzzlePack('all_100');
+                    setPuzzlePack('all_200');
                     setPuzzleIndex(0);
                     setPlacedTiles([]);
                     setIsCorrect(false);
                     soundEffects.playPuzzleSnap();
                   }}
                 >
-                  🌟 100 Sentences Practice Pack
+                  🌟 200 Sentences Practice Pack
                 </button>
               </div>
 
-              {puzzlePack === 'all_100' && !customPuzzle && (
+              {puzzlePack === 'all_200' && !customPuzzle && (
                 <div className="sppb-cat-select">
                   <label htmlFor="puzzle-cat">Topic Filter: </label>
                   <select
@@ -787,7 +787,7 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
                     }}
                     className="sppb-dropdown"
                   >
-                    <option value="all">All 10 Categories</option>
+                    <option value="all">All 20 Categories (२० विषयाः)</option>
                     {SENTENCE_CATEGORIES.map((c) => (
                       <option key={c.key} value={c.key}>
                         {c.labelDev} ({c.labelEn})
