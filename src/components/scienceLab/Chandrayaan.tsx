@@ -3,9 +3,20 @@ import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm } from './common';
 import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 import { isSmallScreen, prefersReducedMotion } from './motion';
 import { soundEffects } from '../../utils/soundEffects';
+import { playPronunciation } from '../../utils/pronunciation';
 
 type Phase = 'orbit' | 'descent' | 'rover';
 type Outcome = 'flying' | 'soft' | 'crash';
+
+const MISSION_SOUNDS = [
+  { dev: 'सोमयानम्', iast: 'Somayānam', en: 'Moon Craft', icon: '🚀' },
+  { dev: 'विक्रमः', iast: 'Vikramaḥ', en: 'Valour (Lander)', icon: '🛬' },
+  { dev: 'प्रज्ञानम्', iast: 'Prajñānam', en: 'Wisdom (Rover)', icon: '🤖' },
+  { dev: 'चन्द्र-भूमिः', iast: 'Candra-bhūmiḥ', en: 'Lunar Surface', icon: '🌕' },
+  { dev: 'शिव-शक्ति-बिन्दुः', iast: 'Śiva-Śakti-Binduḥ', en: 'Touchdown Site', icon: '☀️' },
+  { dev: 'गन्धकः', iast: 'Gandhakaḥ', en: 'Sulphur', icon: '💎' },
+  { dev: 'अप्-तत्त्वम्', iast: 'Ap-tattvam', en: 'Water Principle', icon: '🧊' },
+];
 
 const MOON_G = 1.62; // m/s², lunar surface gravity (public value)
 const MOON_R_KM = 1737.4; // mean lunar radius
@@ -173,6 +184,8 @@ const Chandrayaan: React.FC = () => {
   const [vertThrust, setVertThrust] = useState(0);
   const [attitudeCmd, setAttitudeCmd] = useState(0);
   const [assist, setAssist] = useState(true);
+  const [autoPilot, setAutoPilot] = useState(false);
+  const [freeNav, setFreeNav] = useState(false);
   const [roverDrive, setRoverDrive] = useState(0);
   const [roverSteer, setRoverSteer] = useState(0);
   const [tithi, setTithi] = useState(7);
@@ -208,6 +221,8 @@ const Chandrayaan: React.FC = () => {
   const stepRef = useRef<(dt: number) => void>(() => {});
   const drawRef = useRef<(ctx: CanvasRenderingContext2D, W: number, H: number) => void>(() => {});
 
+  const autoPilotRef = useRef(autoPilot);
+  useEffect(() => { autoPilotRef.current = autoPilot; }, [autoPilot]);
   useEffect(() => { phaseRef.current = phase; }, [phase]);
   useEffect(() => { pauseRef.current = paused; }, [paused]);
   useEffect(() => { outRef.current = outcome; }, [outcome]);
@@ -296,9 +311,17 @@ const Chandrayaan: React.FC = () => {
       }));
       if (circular) setOrbitDone(true);
     } else if (ph === 'descent') {
-      const thr = s.fuel > 0 ? input.current.vert : 0;
-      const aCmd = input.current.att;
-      const assistOn = input.current.assist;
+      let thr = s.fuel > 0 ? input.current.vert : 0;
+      if (autoPilotRef.current && s.fuel > 0 && s.h > 0) {
+        const targetVy = Math.max(0.7, Math.min(2.2, 0.45 + s.h * 0.04));
+        const vyErr = s.vy - targetVy;
+        const hoverThr = MOON_G / MAX_THRUST_A;
+        thr = Math.max(0.2, Math.min(0.95, hoverThr + vyErr * 0.25));
+        input.current.vert = thr;
+        s.att *= 0.82;
+      }
+      const aCmd = autoPilotRef.current ? 0 : input.current.att;
+      const assistOn = input.current.assist || autoPilotRef.current;
       let a = MOON_G - thr * MAX_THRUST_A; // + = speeding up downward
       // Guidance assist: brake-only, bounded, last 30 m, needs pilot throttle and near-level attitude.
       if (assistOn && thr > 0.2 && s.h < ASSIST_BELOW_M && Math.abs(s.att) < SAMATVA_LIMIT) {
@@ -333,6 +356,7 @@ const Chandrayaan: React.FC = () => {
         outRef.current = soft ? 'soft' : 'crash';
         if (soft) {
           setSoftDone(true);
+          setAutoPilot(false);
           soundEffects.playCelebrationChime();
           setHud((h) => ({ ...h, h: 0, vy: s.vy, attitude: s.att, tamas: false, status: `Soft landing at Shiv Shakti Point — ${vyShown.toFixed(2)} m/s.`, statusSa: 'शिव-शक्ति-बिन्दौ मृदु-स्पर्शः!' }));
         } else {
@@ -783,6 +807,7 @@ const Chandrayaan: React.FC = () => {
     }
     s.battery = Math.max(0, s.battery - 4);
     if (!scanned.includes(hit.id)) setScanned((list) => [...list, hit.id]);
+    playPronunciation(hit.sa);
     setScanMsg(`${hit.en} · ${hit.shard} (${hit.shardIast}). ${hit.note}`);
     const canvas = canvasRef.current;
     if (canvas) {
@@ -798,8 +823,8 @@ const Chandrayaan: React.FC = () => {
   };
 
   const enterPhase = (p: Phase) => {
-    if (p === 'descent' && !orbitDone) return;
-    if (p === 'rover' && !softDone) return;
+    if (p === 'descent' && !orbitDone && !freeNav) return;
+    if (p === 'rover' && !softDone && !freeNav) return;
     setPhase(p);
     setOutcome('flying');
     outRef.current = 'flying';
@@ -909,6 +934,49 @@ const Chandrayaan: React.FC = () => {
         Circularise Candra-Kakṣyā, soft-land Vikram (vertical Vega under 2 m/s, Samatva within ±12°), then drive Pragyan and scan with a LIBS-style laser.
       </CoreIdea>
 
+      {/* Kids Lunar Explorer Mission Banner */}
+      <div className="chandrayaan-playground-banner" role="region" aria-label="Kids Lunar Explorer Mission">
+        <span className="cpb-icon" aria-hidden="true">🚀</span>
+        <div>
+          <div className="cpb-title-row">
+            <strong>सोमयान-३ बाल-अन्तरिक्षयात्री · Kids Lunar Explorer Mission (Ages 7–14)</strong>
+            <span className="cpb-tag">ISRO Space Tech &amp; Vedic Sky</span>
+          </div>
+          <p className="cpb-desc">
+            Fly Vikram (<strong>विक्रम</strong>) to the Moon’s South Pole and roll the Pragyan rover (<strong>प्रज्ञान</strong>) at Shiv Shakti Point!
+            Tap each badge below to hear how Indian planetary scientists pronounce these cosmic terms:
+          </p>
+          <div className="cpb-audio-row">
+            {MISSION_SOUNDS.map((s) => (
+              <button
+                key={s.dev}
+                type="button"
+                className="cpb-audio-btn"
+                onClick={() => playPronunciation(s.dev)}
+                title={`Listen to ${s.dev} (${s.en})`}
+              >
+                <span>{s.icon}</span>
+                <span lang="sa" className="cpb-sa">{s.dev}</span>
+                <span className="cpb-en">({s.en})</span>
+                <span className="cpb-speaker" aria-hidden="true">🔊</span>
+              </button>
+            ))}
+            <button
+              type="button"
+              onClick={() => {
+                setFreeNav((f) => !f);
+                soundEffects.playSuccessDing();
+              }}
+              className="cpb-audio-btn"
+              style={{ borderColor: freeNav ? '#4ade80' : '#38bdf8', background: freeNav ? 'rgba(74, 222, 128, 0.2)' : undefined }}
+              title="Toggle unlocking all phases for quick teaching demonstration"
+            >
+              <span>{freeNav ? '🔓 Explorer: All Open' : '🔒 Progressive Mission'}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div className="cy-lab cy-mission-lab" ref={wrapRef} data-testid="cy-mission-panel">
         <div className="cy-main">
           <div className="cy-window cy-mission-window">
@@ -929,7 +997,7 @@ const Chandrayaan: React.FC = () => {
                   role="tab"
                   aria-selected={phase === p.id}
                   className={phase === p.id ? 'is-on' : ''}
-                  disabled={(p.id === 'descent' && !orbitDone) || (p.id === 'rover' && !softDone)}
+                  disabled={(p.id === 'descent' && !orbitDone && !freeNav) || (p.id === 'rover' && !softDone && !freeNav)}
                   onClick={() => enterPhase(p.id)}
                   data-testid={`cy-phase-${p.id}`}
                 >
@@ -1081,12 +1149,25 @@ const Chandrayaan: React.FC = () => {
               <GlowSlider label="Upward thrust" value={vertThrust} min={0} max={1} step={0.01} onChange={setVertThrust} valueText={`${(vertThrust * 100).toFixed(0)}% · hover ≈ 51%`} color="#fb923c" testId="cy-vert" ariaLabel="Vertical thruster" disabled={outcome !== 'flying'} />
               <span className="cy-label">Samatva · attitude</span>
               <GlowSlider label="Tilt left / right" value={attitudeCmd} min={-1} max={1} step={0.01} onChange={setAttitudeCmd} valueText={attitudeCmd.toFixed(2)} color="#a78bfa" testId="cy-att" ariaLabel="Attitude thruster" disabled={outcome !== 'flying'} />
-              <LedButton on={assist} onClick={() => setAssist((a) => !a)} color="#34d399" testId="cy-assist" title="Brake-only helper for the last 30 m">
-                Guidance assist
-              </LedButton>
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center', margin: '0.4rem 0' }}>
+                <LedButton on={assist} onClick={() => setAssist((a) => !a)} color="#34d399" testId="cy-assist" title="Brake-only helper for the last 30 m">
+                  Guidance assist
+                </LedButton>
+                <button
+                  type="button"
+                  className={`cy-autopilot-btn ${autoPilot ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setAutoPilot((p) => !p);
+                    soundEffects.playSuccessDing();
+                  }}
+                  title="Automatic safe touchdown control for younger learners"
+                >
+                  {autoPilot ? '🤖 Autopilot Active' : '🚀 Autopilot Soft-Landing (सरल-अवतरणम्)'}
+                </button>
+              </div>
               <p className="vl-small">
                 Moon g ≈ 1.62 m/s². Touch down with vertical Vega under 2 m/s and Samatva within ±12°.
-                Guidance assist only helps: below 30 m it adds at most {ASSIST_MAX} m/s² of extra braking and some attitude damping — you still fly the throttle.
+                Guidance assist only helps: below 30 m it adds at most {ASSIST_MAX} m/s² of extra braking and some attitude damping. Or switch on <strong>Autopilot Soft-Landing</strong> for an automatic demo!
               </p>
             </div>
           )}
@@ -1106,8 +1187,14 @@ const Chandrayaan: React.FC = () => {
               <p className="vl-small" data-testid="cy-scan-msg">{scanMsg}</p>
               <ul className="cy-scan-list" data-testid="cy-scan-list">
                 {MINERALS.map((m) => (
-                  <li key={m.id} className={scanned.includes(m.id) ? 'is-got' : ''}>
-                    <b>{m.id}</b> <span lang="sa">{m.shard}</span> · {m.kind === 'ap' ? 'ap-tattva' : 'pṛthivī-tattva'}
+                  <li
+                    key={m.id}
+                    className={scanned.includes(m.id) ? 'is-got' : ''}
+                    onClick={() => playPronunciation(m.sa)}
+                    style={{ cursor: 'pointer' }}
+                    title={`Click to pronounce ${m.sa} (${m.en})`}
+                  >
+                    <b>{m.id}</b> <span lang="sa">{m.shard}</span> · {m.kind === 'ap' ? 'ap-tattva' : 'pṛthivī-tattva'} <span style={{ opacity: 0.7, fontSize: '0.75rem' }}>🔊</span>
                   </li>
                 ))}
               </ul>

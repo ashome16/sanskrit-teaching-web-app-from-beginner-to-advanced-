@@ -2,6 +2,7 @@ import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { BodhiLabAnecdote, ChallengeList, TermPanel, type LabChallenge, type LabTerm, type LabSegmentProps } from './common';
 import { GlowSlider } from './controls';
 import { soundEffects } from '../../utils/soundEffects';
+import { playPronunciation } from '../../utils/pronunciation';
 
 
 type Ritu = 'grishma' | 'varsha' | 'sisira' | 'vasanta';
@@ -454,11 +455,34 @@ export const PrakritiBalance: React.FC<LabSegmentProps> = ({ onNextLab }) => {
       {/* Preschool Seasons Playground Banner */}
       <div className="prakriti-preschool-banner" role="region" aria-label="Preschool Seasons Playground">
         <span className="ppb-icon" aria-hidden="true">☀️</span>
-        <div>
-          <strong>ऋतु-वाटिका · Little Explorers Seasons Playground (Ages 3–7)</strong>
-          <span>
-            Change the weather! Tap ☀️ Summer Sun, 🌧️ Rainy Monsoon, ❄️ Winter Snowflakes, or 🌸 Spring Blossoms to see how nature balances heat, water, and movement.
-          </span>
+        <div className="ppb-content">
+          <div className="ppb-title-row">
+            <strong>ऋतु-वाटिका · Little Explorers Seasons Playground (Ages 3–7)</strong>
+            <span className="ppb-tag">Weather &amp; Nature</span>
+          </div>
+          <p className="ppb-sub">
+            Change the weather! Tap any season below to hear its Sanskrit name and watch nature adapt:
+          </p>
+          <div className="ppb-season-btns">
+            {(Object.entries(RITU_PRESETS) as [Ritu, typeof RITU_PRESETS[Ritu]][]).map(([k, p]) => (
+              <button
+                key={k}
+                type="button"
+                className={`ppb-season-pill ${env.ritu === k ? 'is-active' : ''}`}
+                onClick={() => {
+                  selectRitu(k);
+                  playPronunciation(p.dev);
+                }}
+                aria-pressed={env.ritu === k}
+                title={`Select ${p.name} (${p.dev})`}
+              >
+                <span>{p.icon}</span>
+                <span lang="sa" className="ppb-sa">{p.dev}</span>
+                <span className="ppb-en">({p.name.split(' ')[0]})</span>
+                <span className="ppb-speaker" aria-hidden="true">🔊</span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
       {/* Biological Continuum Track Stage 1 Callout */}

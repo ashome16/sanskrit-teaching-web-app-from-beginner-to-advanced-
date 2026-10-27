@@ -143,6 +143,21 @@ const MODE_INTRO: Record<Mode, { sa: string; en: string }> = {
   plants: { sa: 'उद्भिज्ज-भेदाः।', en: 'Plant shelf: four plant groups from Manusmṛti 1.46–48.' },
 };
 
+const PARADE_ANIMALS = [
+  { icon: '🐘', dev: 'गजः', en: 'Elephant' },
+  { icon: '🦁', dev: 'सिंहः', en: 'Lion' },
+  { icon: '🐄', dev: 'धेनुः', en: 'Cow' },
+  { icon: '🦌', dev: 'मृगः', en: 'Deer' },
+  { icon: '🦢', dev: 'हंसः', en: 'Swan' },
+  { icon: '🦚', dev: 'मयूरः', en: 'Peacock' },
+  { icon: '🐟', dev: 'मत्स्यः', en: 'Fish' },
+  { icon: '🐍', dev: 'सर्पः', en: 'Cobra' },
+  { icon: '🦋', dev: 'चित्रपतङ्गः', en: 'Butterfly' },
+  { icon: '🐝', dev: 'भ्रमरः', en: 'Honeybee' },
+  { icon: '🌸', dev: 'पुष्पम्', en: 'Flower' },
+  { icon: '🌳', dev: 'वृक्षः', en: 'Tree' },
+];
+
 let feedSeq = 0;
 const nextFeedId = () => ++feedSeq;
 
@@ -328,8 +343,21 @@ const Chaturyoni: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             </p>
           </div>
         </div>
-        <div className="cy-pb-animal-parade" aria-hidden="true">
-          <span>🐘</span><span>🦁</span><span>🐄</span><span>🦌</span><span>🦢</span><span>🦚</span><span>🐟</span><span>🐍</span><span>🦋</span><span>🐝</span><span>🌸</span><span>🌳</span>
+        <div className="cy-pb-animal-parade" aria-label="Touch to hear animal name">
+          {PARADE_ANIMALS.map((a) => (
+            <button
+              key={a.dev}
+              type="button"
+              className="cy-pb-animal-btn"
+              onClick={() => playPronunciation(a.dev)}
+              title={`Tap to hear ${a.dev} (${a.en})`}
+            >
+              <span>{a.icon}</span>
+              <span lang="sa" className="cy-pba-sa">{a.dev}</span>
+              <span className="cy-pba-en">({a.en})</span>
+              <span className="cy-pba-spk" aria-hidden="true">🔊</span>
+            </button>
+          ))}
         </div>
       </div>
 

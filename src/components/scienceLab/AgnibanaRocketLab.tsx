@@ -1,11 +1,22 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { BodhiLabAnecdote, CoreIdea, TermPanel, ChallengeList, type LabTerm, type LabChallenge } from './common';
 import { soundEffects } from '../../utils/soundEffects';
+import { playPronunciation } from '../../utils/pronunciation';
 import '../../styles/science-lab.css';
 
 // ---------------------------------------------------------------------------
 // DATA: Sanskrit Pyrotechnic & Artillery Terms
 // ---------------------------------------------------------------------------
+const AGNIBANA_SOUNDS = [
+  { dev: 'अग्निबाणः', iast: 'Agnibāṇaḥ', en: 'Fire Arrow / Rocket', icon: '🚀' },
+  { dev: 'अग्निचूर्णम्', iast: 'Agnicūrṇam', en: 'Gunpowder Mixture', icon: '⚗️' },
+  { dev: 'शतघ्नी', iast: 'Śataghnī', en: 'Rampart Engine', icon: '🛡️' },
+  { dev: 'उल्कादानम्', iast: 'Ulkādānam', en: 'Sky Sparkler / Flare', icon: '✨' },
+  { dev: 'सुवर्चिलवणम्', iast: 'Suvarcilavaṇam', en: 'Saltpetre Oxidizer', icon: '🧪' },
+  { dev: 'अङ्गारः', iast: 'Aṅgāraḥ', en: 'Porous Charcoal', icon: '🪵' },
+  { dev: 'तारामण्डलपेटम्', iast: 'Tāramaṇḍalapeṭam', en: 'Rocket Foundry', icon: '🏰' },
+];
+
 const AGNIBANA_TERMS: LabTerm[] = [
   {
     dev: 'अग्निचूर्णम्',
@@ -361,6 +372,37 @@ export const AgnibanaRocketLab: React.FC = () => {
         alchemists formulated <em>Agnicūrṇa</em> with stoichiometric precision, while Hyder Ali and Tipu Sultan replaced
         bursting bamboo with hammered iron casings to sustain 80 atm chamber pressure—expanding battlefield range from 150 m to 2.5 km.
       </CoreIdea>
+
+      {/* Rocket & Sparklers STEM Playground Banner */}
+      <div className="agnibana-playground-banner" role="region" aria-label="Agnibana Rocket Physics Playground">
+        <span className="apb-icon" aria-hidden="true">🚀</span>
+        <div>
+          <div className="apb-title-row">
+            <strong>अग्निबाण-क्रीडा · Rocket &amp; Sparkler Physics Playground (Ages 7–14)</strong>
+            <span className="apb-tag">Pyrotechnics &amp; Aerospace History</span>
+          </div>
+          <p className="apb-desc">
+            Explore ancient Indian pyrotechnics and Mysore’s hammered iron rockets that pioneered world rocketry!
+            Tap each badge below to hear authentic Sanskrit terminology:
+          </p>
+          <div className="apb-audio-row">
+            {AGNIBANA_SOUNDS.map((s) => (
+              <button
+                key={s.dev}
+                type="button"
+                className="apb-audio-btn"
+                onClick={() => playPronunciation(s.dev)}
+                title={`Listen to ${s.dev} (${s.en})`}
+              >
+                <span>{s.icon}</span>
+                <span lang="sa" className="apb-sa">{s.dev}</span>
+                <span className="apb-en">({s.en})</span>
+                <span className="apb-speaker" aria-hidden="true">🔊</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Lab Nav Tabs */}
       <div style={{ display: 'flex', gap: '0.5rem', margin: '1.25rem 0', flexWrap: 'wrap' }}>
