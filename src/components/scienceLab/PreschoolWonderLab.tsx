@@ -199,77 +199,289 @@ const VAHANAS: VahanaPair[] = [
   { id: 'yama', godDev: 'यमराजः', godEn: 'Yamaraja', godIcon: '⚖️', vahanaDev: 'महिषः', vahanaEn: 'Water Buffalo', vahanaIcon: '🦬', quote: 'महिषवाहन धर्मराज · Steadfast, disciplined, and calm justice!' },
 ];
 
+interface CharacterDialogue {
+  speaker: 'kalu' | 'isha' | 'narrator';
+  speakerLabelEn: string;
+  speakerLabelSa: string;
+  speakerIcon: string;
+  textEn: string;
+  textSa: string;
+}
+
 interface StorySlide {
   id: number;
   titleEn: string;
   titleSa: string;
-  textEn: string;
-  textSa: string;
-  icon: string;
   elementHighlight: string;
+  icon: string;
   bgGradient: string;
+  dialogues: CharacterDialogue[];
+  elementsList?: Array<{
+    num: string;
+    saName: string;
+    saDesc: string;
+    enName: string;
+    enDesc: string;
+    icon: string;
+    color: string;
+  }>;
+  whisperFinale?: {
+    en: string;
+    sa: string;
+  };
 }
 
 const STORY_SLIDES: StorySlide[] = [
   {
     id: 1,
-    titleEn: 'Kalu in the Green Forest',
-    titleSa: 'वने कालुः बालकः',
-    textEn: 'Once upon a time lived a little tribal boy named Kalu. Kalu loved tall trees, wet mud, and the big blue sky. Every day he patted the brown soil and whispered: "Thank you, Mother Earth!"',
-    textSa: 'एकदा एकस्मिन् सुन्दरे वने कालुः नाम एकः वनवासी बालकः वसति स्म। सः प्रतिदिनं भूमिस्पर्शं कृत्वा वदति स्म, "माता भूमिः, तुभ्यं नमः!"',
-    icon: '🌳',
-    elementHighlight: '१. पृथिवी · Mother Earth (Soil & Trees)',
+    titleEn: 'Kalu & Isha: Children of Nature',
+    titleSa: 'कालुः ईशा च · प्रकृतेः शिशू',
+    elementHighlight: 'प्रकृति-वन्दना · Forest Love & Fire Songs',
+    icon: '🏕️',
     bgGradient: 'linear-gradient(135deg, #064e3b 0%, #065f46 60%, #047857 100%)',
+    dialogues: [
+      {
+        speaker: 'kalu',
+        speakerLabelEn: 'Kalu (Tribal Boy in Forest)',
+        speakerLabelSa: 'कालुः (वनवासी बालकः)',
+        speakerIcon: '🏹',
+        textEn: 'Once upon a time, in a beautiful green forest, lived a little tribal boy named Kalu. Kalu loved the tall trees, the wet mud, and the big blue sky. Every day, Kalu patted the brown earth and whispered, "Thank you, Mother Earth!"',
+        textSa: 'एकदा एकस्मिन् सुन्दरे वने कालुः नाम एकः वनवासी बालकः वसति स्म। कालुः उन्नतान् वृक्षान्, आर्द्रमृत्तिकां, विशालं नीलआकाशं च स्निह्यति स्म। सः प्रतिदिनं भूमिस्पर्शं कृत्वा वदति स्म, "माता भूमिः, तुभ्यं नमः!"',
+      },
+      {
+        speaker: 'isha',
+        speakerLabelEn: 'Isha (Vedic Girl on Hill)',
+        speakerLabelSa: 'ईशा (वैदिकी बालिका)',
+        speakerIcon: '🪔',
+        textEn: 'High up on a nearby hill lived a little Vedic girl named Isha. Isha sat with her family around a small, bright fire. Every morning, Isha sang a sweet song to the sun and the wind, "Thank you, holy fire! Thank you, beautiful breeze!"',
+        textSa: 'समीपे एकस्मिन् पर्वते ईशा नाम एका वैदिकी बालिका वसति स्म। ईशा प्रतिदिनं प्रातः परिवारेण सह यज्ञकुण्डस्य समीपे उपविशति स्म। सा पवित्रमग्निं वायुं च दृष्ट्वा मधुरं गायति स्म, "पावन पावक, तुभ्यं नमः! मन्द समीर, तुभ्यं नमः!"',
+      },
+    ],
   },
   {
     id: 2,
-    titleEn: 'Isha on the Hilltop',
-    titleSa: 'पर्वते ईशा बालिका',
-    textEn: 'High on a nearby hill lived a little Vedic girl named Isha. Every morning, Isha sat by the bright fire and sang to the sun and breeze: "Thank you, holy fire! Thank you, sweet wind!"',
-    textSa: 'समीपे एकस्मिन् पर्वते ईशा नाम एका वैदिकी बालिका वसति स्म। सा पवित्रमग्निं वायुं च दृष्ट्वा गायति स्म, "पावन पावक, तुभ्यं नमः! मन्द समीर, तुभ्यं नमः!"',
-    icon: '🔥',
-    elementHighlight: '२. अग्निः · Sacred Fire & Warmth',
-    bgGradient: 'linear-gradient(135deg, #7c2d12 0%, #9a3412 60%, #c2410c 100%)',
+    titleEn: 'Meeting at the River · Holy Water',
+    titleSa: 'नदीतीरे मिलनम् · पवित्रं जलम्',
+    elementHighlight: '१. जलम् · Holy Water (Ganga & Saraswathi)',
+    icon: '🌊',
+    bgGradient: 'linear-gradient(135deg, #0c4a6e 0%, #075985 60%, #0284c7 100%)',
+    dialogues: [
+      {
+        speaker: 'narrator',
+        speakerLabelEn: 'Narrator',
+        speakerLabelSa: 'कथाकारः',
+        speakerIcon: '📖',
+        textEn: 'One sunny afternoon, Kalu and Isha walked to the edge of the river.',
+        textSa: 'एकदा सूर्यप्रकाशे कालुः ईशा च नद्याः तीरं प्रति अगच्छताम्।',
+      },
+      {
+        speaker: 'kalu',
+        speakerLabelEn: 'Kalu',
+        speakerLabelSa: 'कालुः',
+        speakerIcon: '🏹',
+        textEn: 'Kalu pointed to the water and said, "Look! The river gives us cool water. Water is a holy giant who keeps the trees alive!"',
+        textSa: 'कालुः जलं दर्शितवान्, "पश्य! नदी अस्मभ्यं शीतलं जलं यच्छति। जलं देवस्वरूपम् अस्ति, यत् वृक्षान् जीवयति!"',
+      },
+      {
+        speaker: 'isha',
+        speakerLabelEn: 'Isha',
+        speakerLabelSa: 'ईशा',
+        speakerIcon: '🪔',
+        textEn: 'Isha clapped her hands. "Yes! In my home, we sing prayers to the holy rivers, Ganga and Saraswathi, who wash away our sorrows!"',
+        textSa: 'ईशा करतलाडनं कृतवती। "आम्! मम गृहे अपि वयं पावननद्योः गङ्गा-सरस्वत्योः प्रार्थनां कुर्मः, या अस्मत्कष्टं हरति!"',
+      },
+    ],
   },
   {
     id: 3,
-    titleEn: 'Meeting by the River',
-    titleSa: 'नदीतीरे मिलनम्',
-    textEn: 'One sunny afternoon, Kalu and Isha walked to the river. Kalu said, "The river gives us cool water! Water is a holy giant keeping the trees alive." Isha clapped: "Yes, we call it Varuna Deva!"',
-    textSa: 'एकदा सूर्यप्रकाशे कालुः ईशा च नद्याः तीरं अगच्छताम्। कालुः अवदत्, "नदी शीतलं जलं यच्छति।" ईशा करतलाडनं कृतवती, "आम्! वयं तम् वरुणदेवः इति वदामः!"',
-    icon: '🌊',
-    elementHighlight: '३. जलम् · Holy Water of Life',
-    bgGradient: 'linear-gradient(135deg, #0c4a6e 0%, #075985 60%, #0284c7 100%)',
+    titleEn: 'The Cool Breeze · Pawanputra Hanuman',
+    titleSa: 'शीतलः वायुः · पवनपुत्रः हनुमान्',
+    elementHighlight: '२. वायुः · Wind & Pawanputra Hanuman',
+    icon: '💨',
+    bgGradient: 'linear-gradient(135deg, #134e4a 0%, #0f766e 60%, #14b8a6 100%)',
+    dialogues: [
+      {
+        speaker: 'narrator',
+        speakerLabelEn: 'Narrator',
+        speakerLabelSa: 'कथाकारः',
+        speakerIcon: '📖',
+        textEn: 'Just then, a cool breeze blew. Whoosh!',
+        textSa: 'तदैव एकः शीतलः वायुः अभवत्। शूँ-शूँ!',
+      },
+      {
+        speaker: 'kalu',
+        speakerLabelEn: 'Kalu',
+        speakerLabelSa: 'कालुः',
+        speakerIcon: '🏹',
+        textEn: 'Kalu looked up and said, "The wind is the invisible breath of the forest."',
+        textSa: 'कालुः अवदत्, "वायुः वनस्य अदृश्यः श्वासः अस्ति।"',
+      },
+      {
+        speaker: 'isha',
+        speakerLabelEn: 'Isha',
+        speakerLabelSa: 'ईशा',
+        speakerIcon: '🪔',
+        textEn: 'Isha smiled. "The wind is our strong friend, Pawanputra Hanuman, who leaps across the sky with supreme energy!"',
+        textSa: 'ईशा सस्मितम् अवदत्, "वायुः अस्माकं महाबली मित्रः पवनपुत्रः हनुमान् अस्ति, यः आकाशे महता वेगेन उत्पतति!"',
+      },
+    ],
   },
   {
     id: 4,
-    titleEn: 'The Wind and the Vast Sky',
-    titleSa: 'वायुः विशालम् आकाशं च',
-    textEn: 'A cool breeze blew! Whoosh! Kalu lifted his arms: "The wind is the breath of the forest." Isha smiled: "Wind is our friend Vayu, and the blue sky is Akasha, holding us all together!"',
-    textSa: 'शीतलः वायुः अभवत्—शूँ! कालुः अवदत्, "वायुः वनस्य श्वासः अस्ति।" ईशा अवदत्, "वायुः अदृश्यः मित्रः अस्ति! विशालम् आकाशं च अस्मान् सर्वान् रक्षति।"',
-    icon: '💨',
-    elementHighlight: '४. वायुः & ५. आकाशः · Breath & Sky',
-    bgGradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%)',
+    titleEn: 'The Campfire · Yagna and Aarthi',
+    titleSa: 'अग्निकुण्डम् · यज्ञः आरतिः च',
+    elementHighlight: '३. अग्निः · Fire & Divine Light (Yagna & Aarthi)',
+    icon: '🔥',
+    bgGradient: 'linear-gradient(135deg, #7c2d12 0%, #9a3412 60%, #ea580c 100%)',
+    dialogues: [
+      {
+        speaker: 'narrator',
+        speakerLabelEn: 'Narrator',
+        speakerLabelSa: 'कथाकारः',
+        speakerIcon: '📖',
+        textEn: 'Next, Kalu lit a small campfire to keep them warm.',
+        textSa: 'ततः कालुः अग्निकुण्डं प्रज्वालितवान्।',
+      },
+      {
+        speaker: 'kalu',
+        speakerLabelEn: 'Kalu',
+        speakerLabelSa: 'कालुः',
+        speakerIcon: '🏹',
+        textEn: '"Fire is the spirit that gives us light," he said.',
+        textSa: 'सः अवदत्, "अग्निः सः जीवः यः अस्मभ्यं प्रकाशं ददाति।"',
+      },
+      {
+        speaker: 'isha',
+        speakerLabelEn: 'Isha',
+        speakerLabelSa: 'ईशा',
+        speakerIcon: '🪔',
+        textEn: 'Isha bowed down. "Fire is the holy Yagna and the beautiful evening Aarthi that carries our love straight to the gods!"',
+        textSa: 'ईशा नतमस्तका अभवत्। "अग्निः पावनः यज्ञः सुन्दरी आरतिः च अस्ति, या अस्माकं प्रेम देवान् प्रति नयति!"',
+      },
+    ],
   },
   {
     id: 5,
-    titleEn: 'The Five Friends Secret',
-    titleSa: 'पञ्चमित्राणां रहस्यम्',
-    textEn: 'They realized a beautiful secret: both loved the exact same five things: Earth (Prithvi), Water (Jala), Fire (Agni), Air (Vayu), and Sky (Akasha)! "These are the Panchabhutas of Sanatan Dharma!"',
-    textSa: 'तौ एकं मधुरं रहस्यं ज्ञातवन्तौ: द्वावपि पञ्च तत्त्वानि एव स्निह्यतः—पृथिवी, जलम्, अग्निः, वायुः, आकाशः च! "एतानि एव पञ्चभूतानि," ईशा मन्दस्वरेण अवदत्।',
-    icon: '⭐',
-    elementHighlight: 'पञ्चभूतानि · The 5 Elements of Nature',
-    bgGradient: 'linear-gradient(135deg, #4c1d95 0%, #5b21b6 60%, #7c3aed 100%)',
+    titleEn: 'The Brown Soil · Sacred Bharat Mata',
+    titleSa: 'आर्द्रमृत्तिका · पावनी भारतमाता',
+    elementHighlight: '४. पृथिवी · Nourishing Earth & Mother Bharat',
+    icon: '🌱',
+    bgGradient: 'linear-gradient(135deg, #78350f 0%, #92400e 60%, #b45309 100%)',
+    dialogues: [
+      {
+        speaker: 'narrator',
+        speakerLabelEn: 'Narrator',
+        speakerLabelSa: 'कथाकारः',
+        speakerIcon: '📖',
+        textEn: 'Kalu then scooped up a handful of brown soil.',
+        textSa: 'कालुः हस्ते मृत्तिकां गृहीतवान्।',
+      },
+      {
+        speaker: 'kalu',
+        speakerLabelEn: 'Kalu',
+        speakerLabelSa: 'कालुः',
+        speakerIcon: '🏹',
+        textEn: '"The mud grows our fruits. It is our home."',
+        textSa: 'सः अवदत्, "मृत्तिका अस्मभ्यं फलानि ददाति। एतत् अस्माकं गृहम् अस्ति।"',
+      },
+      {
+        speaker: 'isha',
+        speakerLabelEn: 'Isha',
+        speakerLabelSa: 'ईशा',
+        speakerIcon: '🪔',
+        textEn: 'Isha touched the soil to her forehead. "This earth is our sacred Bharat Mata, the divine mother who feeds all her children!"',
+        textSa: 'ईशा मृत्तिकां ललाटे धृतवती। "एषा भूमिः अस्माकं पावनी भारतमाता अस्ति, या सर्वान् शिशून् पालयति!"',
+      },
+    ],
   },
   {
     id: 6,
+    titleEn: 'The Endless Sky · Cosmic Avatars',
+    titleSa: 'विशालम् आकाशम् · दिव्यावताराः',
+    elementHighlight: '५. आकाशः · Silent Mystery & Cosmic Avatars',
+    icon: '🌌',
+    bgGradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%)',
+    dialogues: [
+      {
+        speaker: 'narrator',
+        speakerLabelEn: 'Narrator',
+        speakerLabelSa: 'कथाकारः',
+        speakerIcon: '📖',
+        textEn: 'Finally, Kalu looked up at the endless empty space above.',
+        textSa: 'अन्ते कालुः विशालम् आकाशं दृष्टवान्।',
+      },
+      {
+        speaker: 'kalu',
+        speakerLabelEn: 'Kalu',
+        speakerLabelSa: 'कालुः',
+        speakerIcon: '🏹',
+        textEn: '"The sky is a mystery. It holds everything but stays silent."',
+        textSa: 'सः अवदत्, "आकाशः एकं रहस्यम् अस्ति। सः सर्वं धारयति परं मौनं तिष्ठति।"',
+      },
+      {
+        speaker: 'isha',
+        speakerLabelEn: 'Isha',
+        speakerLabelSa: 'ईशा',
+        speakerIcon: '🪔',
+        textEn: 'Isha pointed to the stars. "Space belongs to the cosmic avatars! Like Lord Narasimha who burst out of a pillar in a room, and Lord Vamana whose giant steps expanded to occupy the whole universe!"',
+        textSa: 'ईशा नक्षत्रान् दर्शितवती। "आकाशः दिव्य-अवताराणाम् अस्ति! यथा भगवान् नृसिंहः स्तम्भात् प्राकट्यत्, भगवान् वामनः च विशालपदेन समग्रं ब्रह्माण्डं व्याप्तवान्!"',
+      },
+    ],
+  },
+  {
+    id: 7,
+    titleEn: 'The Secret Revealed: Five Shared Friends',
+    titleSa: 'पञ्चमित्राणां रहस्यम् · पञ्चमहाभूतानि',
+    elementHighlight: 'पञ्चभूतानि · The 5 Shared Sacred Elements',
+    icon: '⭐',
+    bgGradient: 'linear-gradient(135deg, #4c1d95 0%, #5b21b6 60%, #7c3aed 100%)',
+    dialogues: [
+      {
+        speaker: 'narrator',
+        speakerLabelEn: 'Together in Harmony',
+        speakerLabelSa: 'तौ द्वावपि',
+        speakerIcon: '🤝',
+        textEn: 'They smiled. Whether they called it the forest or the gods, they both loved the exact same Panchabhutas:',
+        textSa: 'तौ सस्मितं पश्यतः। वनम् इति वदन्तु वा देवाः इति, तौ द्वावपि एतानि पञ्च तत्त्वानि एव स्निह्यतः:',
+      },
+    ],
+    elementsList: [
+      { num: '१', saName: 'पृथिवी', saDesc: 'भारतमाता', enName: 'Prithvi (Earth)', enDesc: 'Bharat Mata', icon: '🌱', color: '#10b981' },
+      { num: '२', saName: 'जलम्', saDesc: 'गङ्गा च सरस्वती', enName: 'Jala (Water)', enDesc: 'Ganga & Saraswathi', icon: '💧', color: '#06b6d4' },
+      { num: '३', saName: 'अग्निः', saDesc: 'यज्ञः च आरतिः', enName: 'Agni (Fire)', enDesc: 'Yagna & Aarthi', icon: '🔥', color: '#f97316' },
+      { num: '४', saName: 'वायुः', saDesc: 'पवनपुत्रः', enName: 'Vayu (Air)', enDesc: 'Pawanputra', icon: '💨', color: '#14b8a6' },
+      { num: '५', saName: 'आकाशः', saDesc: 'दिव्यावताराः', enName: 'Akasha (Space)', enDesc: 'Cosmic Avatars', icon: '🌌', color: '#8b5cf6' },
+    ],
+  },
+  {
+    id: 8,
     titleEn: 'The River Dance: We Are All One!',
-    titleSa: 'नदीतीरे नृत्यम् · वयं सर्वे एकाः',
-    textEn: 'Kalu and Isha held hands and danced by the river. The tribal boy danced for the trees, and the Vedic girl danced to her chants. Their steps matched, for they both loved the same Mother Nature!',
-    textSa: 'कालुः ईशा च हस्तं गृहीत्वा नर्तितवन्तौ। तयोः चरणाः मिलित्वा एकरूपेण अभवन्, यतः तौ द्वावपि एकस्याः एव सुन्दरप्रकृतेः पूजां कुरुतः स्म। वायुः अवदत्, "शूँ! वयं सर्वे एकाः एव स्मः!"',
+    titleSa: 'नदीतीरे एकतानृत्यम् · वयं सर्वे एकाः',
+    elementHighlight: 'सनातनधर्मः · All Are One In Nature & Spirit',
     icon: '🎉',
-    elementHighlight: 'वयं सर्वे एकाः · We Are All One',
     bgGradient: 'linear-gradient(135deg, #831843 0%, #9d174d 60%, #be185d 100%)',
+    dialogues: [
+      {
+        speaker: 'isha',
+        speakerLabelEn: 'Isha',
+        speakerLabelSa: 'ईशा',
+        speakerIcon: '🪔',
+        textEn: '"These five elements of Sanatan Dharma make up our whole world," Isha said.',
+        textSa: '"सनातनधर्मस्य एतानि पञ्च तत्त्वानि अस्माकं संसारं रचयन्ति," ईशा अवदत्।',
+      },
+      {
+        speaker: 'narrator',
+        speakerLabelEn: 'Narrator',
+        speakerLabelSa: 'कथाकारः',
+        speakerIcon: '📖',
+        textEn: 'They held hands and danced by the river, completely united.',
+        textSa: 'तौ हस्तं गृहीत्वा नद्याः तीरे एकरूपेण अनृत्यतः।',
+      },
+    ],
+    whisperFinale: {
+      en: 'And the wind whispered, Whoosh! We are all one.',
+      sa: 'वायुः च मन्दं अवदत्, शूँ! वयं सर्वे एकाः एव स्मः।',
+    },
   },
 ];
 
@@ -979,11 +1191,77 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
                 <small>{currentStorySlide.titleEn}</small>
               </h3>
 
-              {/* Sanskrit & English Paragraphs */}
-              <div className="psw-story-paragraphs">
-                <p className="psw-story-sa" lang="sa">{currentStorySlide.textSa}</p>
-                <p className="psw-story-en">{currentStorySlide.textEn}</p>
+              {/* Character Dialogues List */}
+              <div className="psw-dialogues-list">
+                {currentStorySlide.dialogues.map((d, dIdx) => (
+                  <div
+                    key={dIdx}
+                    className={`psw-dialogue-card psw-dialogue--${d.speaker}`}
+                  >
+                    <div className="psw-dialogue-header">
+                      <span className="psw-dialogue-speaker-badge">
+                        <span>{d.speakerIcon}</span>
+                        <b>{d.speakerLabelSa}</b>
+                        <small>· {d.speakerLabelEn}</small>
+                      </span>
+                      <button
+                        type="button"
+                        className="psw-dialogue-audio-btn"
+                        onClick={() => playPronunciation(d.textSa)}
+                        title="Listen to Sanskrit"
+                      >
+                        🔊 Listen
+                      </button>
+                    </div>
+                    <p className="psw-dialogue-sa" lang="sa">{d.textSa}</p>
+                    <p className="psw-dialogue-en">{d.textEn}</p>
+                  </div>
+                ))}
               </div>
+
+              {/* Slide 7: Five Panchabhutas Grid Showcase */}
+              {currentStorySlide.elementsList && (
+                <div className="psw-elements-showcase-grid">
+                  {currentStorySlide.elementsList.map((elm, eIdx) => (
+                    <div key={eIdx} className="psw-element-showcase-card">
+                      <span className="pesc-icon">{elm.icon}</span>
+                      <div className="pesc-meta">
+                        <span className="pesc-num">{elm.num}. {elm.enName}</span>
+                        <strong lang="sa">{elm.saName}</strong>
+                        <span>({elm.saDesc})</span>
+                        <small>{elm.enDesc}</small>
+                      </div>
+                      <button
+                        type="button"
+                        className="pesc-speaker"
+                        onClick={() => playPronunciation(`${elm.saName} ${elm.saDesc}`)}
+                        title={`Listen to ${elm.saName}`}
+                      >
+                        🔊
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Slide 8: Whispering Wind Finale Banner */}
+              {currentStorySlide.whisperFinale && (
+                <div className="psw-whisper-banner">
+                  <span className="psw-whisper-icon" aria-hidden="true">🍃 💨</span>
+                  <p className="psw-whisper-sa" lang="sa">{currentStorySlide.whisperFinale.sa}</p>
+                  <p className="psw-whisper-en">{currentStorySlide.whisperFinale.en}</p>
+                  <button
+                    type="button"
+                    className="psw-whisper-btn"
+                    onClick={() => {
+                      playPronunciation(currentStorySlide.whisperFinale!.sa);
+                      soundEffects.playSuccessDing();
+                    }}
+                  >
+                    🌬️ Listen to the Whispering Wind
+                  </button>
+                </div>
+              )}
 
               <div className="psw-story-btn-row">
                 <button
@@ -991,7 +1269,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
                   className="psw-story-listen-btn"
                   onClick={() => playPronunciation(currentStorySlide.titleSa)}
                 >
-                  🔊 Listen to Sanskrit Title
+                  🔊 Listen to Slide Title
                 </button>
               </div>
             </div>
