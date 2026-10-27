@@ -21,14 +21,14 @@ type NumberKey = 'singular' | 'dual' | 'plural';
 export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps> = ({
   onSelectWord,
 }) => {
-  const [mode, setMode] = useState<MatrixMode>('forge');
+  const [mode, setMode] = useState<MatrixMode>('challenge'); // Start with challenge puzzle arena as requested!
 
   // Forge Mode State
-  const [selectedRootId, setSelectedRootId] = useState<string>('path');
+  const [selectedRootId, setSelectedRootId] = useState<string>('garj');
   const [person, setPerson] = useState<PersonKey>('prathama');
   const [selectedNumber, setSelectedNumber] = useState<NumberKey>('singular');
 
-  // Challenge Mode State
+  // Challenge Mode State (20 fresh items)
   const [challengeIndex, setChallengeIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
@@ -36,7 +36,7 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
   const [challengeResult, setChallengeResult] = useState<'correct' | 'wrong' | null>(null);
   const [showHint, setShowHint] = useState(false);
 
-  // Active Root Item
+  // Active Root Item in Forge
   const activeRoot: MatrixRootItem = useMemo(() => {
     return MATRIX_ROOTS.find((r) => r.id === selectedRootId) || MATRIX_ROOTS[0];
   }, [selectedRootId]);
@@ -57,7 +57,7 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
     setSelectedNumber(num);
     soundEffects.playPuzzleSnap();
     const targetBlock = activeRoot[person][num];
-    playPronunciation(targetBlock.form);
+    playPronunciation(targetBlock.sentence);
     if (onSelectWord) {
       onSelectWord(targetBlock.form);
     }
@@ -70,32 +70,26 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
   };
 
   // ===================================================================
-  // CHALLENGE MODE LOGIC
+  // CHALLENGE MODE LOGIC (20 Fresh Diverse Roots)
   // ===================================================================
   const currentChallenge = MATRIX_PUZZLE_CHALLENGES[challengeIndex % MATRIX_PUZZLE_CHALLENGES.length];
   const challengeRoot = useMemo(() => {
     return MATRIX_ROOTS.find((r) => r.id === currentChallenge.rootId) || MATRIX_ROOTS[0];
   }, [currentChallenge.rootId]);
 
-  // 3 Terminal block options for the challenge (-ति, -तः, -न्ति)
-  const challengeAffixOptions = useMemo(() => {
-    return [
-      { num: 'singular' as NumberKey, label: '-ति (एकवचनम्)', affix: '-ति', form: challengeRoot.prathama.singular.form },
-      { num: 'dual' as NumberKey, label: '-तः (द्विवचनम्)', affix: '-तः', form: challengeRoot.prathama.dual.form },
-      { num: 'plural' as NumberKey, label: '-न्ति (बहुवचनम्)', affix: '-न्ति', form: challengeRoot.prathama.plural.form },
-    ];
-  }, [challengeRoot]);
-
-  const handlePickAffix = (affix: string, num: NumberKey) => {
-    setSelectedAffix(affix);
+  const handlePickOption = (opt: { number: NumberKey; affix: string; sentence: string }) => {
+    setSelectedAffix(opt.affix);
     soundEffects.playPuzzleSnap();
 
-    if (num === currentChallenge.targetNumber) {
+    if (opt.number === currentChallenge.targetNumber) {
       soundEffects.playSuccessDing();
       setChallengeResult('correct');
       setScore((s) => s + 100);
       setStreak((st) => st + 1);
-      playPronunciation(currentChallenge.targetForm);
+      playPronunciation(currentChallenge.targetSentence);
+      if (onSelectWord) {
+        onSelectWord(currentChallenge.targetForm);
+      }
     } else {
       soundEffects.playErrorBuzzer();
       setChallengeResult('wrong');
@@ -115,27 +109,16 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
       {/* Module Eyebrow & Title */}
       <header className="dmc-header">
         <div className="dmc-eyebrow">
-          <span className="dmc-badge">MODULAR VERB FORGE</span>
+          <span className="dmc-badge">PEDAGOGICAL DIVERSITY · 20 VERB DRILLS</span>
           <span className="dmc-tag">धातु-प्रत्यय योजकः · Dhatupatha Matrix</span>
         </div>
         <h2 className="dmc-title">The "Dhatupatha Matrix" Connector</h2>
         <p className="dmc-subtitle">
-          Connect base verbal roots (like पठ् or धाव्) with singular (-ति), dual (-तः), and plural (-न्ति) terminal blocks dynamically to forge authentic Sanskrit verbs.
+          Master diverse roots beyond the basics (गर्ज्, तप्, वर्ष्, मुष्, जृ, रक्ष्, रुह्, वद्, तॄ, कुप्, भष्, त्रस्, क्षल्, ज्वल्, यज्, याच्, त्यज्, अर्च्, लभ्) connecting base roots with singular (-ति / -ते), dual (-तः / -एते), and plural (-न्ति / -न्ते) terminal blocks dynamically.
         </p>
 
         {/* Mode Switcher */}
         <div className="dmc-mode-switcher" role="tablist" aria-label="Matrix Connector Modes">
-          <button
-            type="button"
-            className={`dmc-mode-btn ${mode === 'forge' ? 'active' : ''}`}
-            onClick={() => {
-              setMode('forge');
-              soundEffects.playPuzzleSnap();
-            }}
-          >
-            <span>⚡</span>
-            <span>Interactive Connector Forge</span>
-          </button>
           <button
             type="button"
             className={`dmc-mode-btn ${mode === 'challenge' ? 'active' : ''}`}
@@ -145,13 +128,131 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
             }}
           >
             <span>🧩</span>
-            <span>Puzzle Challenge Arena</span>
+            <span>20-Challenge Puzzle Arena</span>
+          </button>
+          <button
+            type="button"
+            className={`dmc-mode-btn ${mode === 'forge' ? 'active' : ''}`}
+            onClick={() => {
+              setMode('forge');
+              soundEffects.playPuzzleSnap();
+            }}
+          >
+            <span>⚡</span>
+            <span>Modular Free-Forge Lab</span>
           </button>
         </div>
       </header>
 
       {/* ===================================================================
-          MODE 1: DYNAMIC CONNECTOR FORGE (स्वतन्त्र-संयोजनम्)
+          MODE 1: 20-CHALLENGE PUZZLE ARENA (संयोजन-स्पर्धा)
+          =================================================================== */}
+      {mode === 'challenge' && (
+        <section className="dmc-challenge-pod" aria-label="Puzzle Challenge Arena">
+          {/* Top Bar with Score & Streak */}
+          <div className="dmc-challenge-topbar">
+            <div>
+              <span className="dmc-badge" style={{ borderColor: '#f59e0b', color: '#f59e0b' }}>
+                PUZZLE {challengeIndex + 1} OF {MATRIX_PUZZLE_CHALLENGES.length}
+              </span>
+            </div>
+            <div className="dmc-challenge-stats">
+              <span className="dmc-stat-pill dmc-stat-score">⭐ Score: {score}</span>
+              <span className="dmc-stat-pill dmc-stat-streak">🔥 Streak: {streak}</span>
+            </div>
+          </div>
+
+          {/* Mission Description */}
+          <div className="dmc-challenge-mission">
+            <h3 className="dmc-mission-title">{currentChallenge.title}</h3>
+            <p className="dmc-mission-prompt">{currentChallenge.prompt}</p>
+            <div className="dmc-mission-subject">
+              {currentChallenge.meaning}
+            </div>
+          </div>
+
+          {/* Snap Arena */}
+          <div className="dmc-snap-arena">
+            {/* Subject & Root */}
+            <div className="dmc-snap-slot filled" title="Subject + Root">
+              <span>{challengeRoot.subjectNoun.split(' ')[0]}</span>
+            </div>
+            <span style={{ fontSize: '1.5rem', color: '#94a3b8' }}>+</span>
+            <div className="dmc-snap-slot filled" style={{ color: '#38bdf8', borderColor: '#38bdf8' }} title="Base Dhātu">
+              <span>{challengeRoot.root}</span>
+            </div>
+            <span style={{ fontSize: '1.5rem', color: '#94a3b8' }}>+</span>
+            {/* Terminal Block Slot */}
+            <div className={`dmc-snap-slot ${selectedAffix ? 'filled' : ''}`} title="Terminal Block">
+              <span>{selectedAffix || '? (प्रत्यय-खण्डः)'}</span>
+            </div>
+            <span style={{ fontSize: '1.5rem', color: '#94a3b8' }}>=</span>
+            {/* Target Output */}
+            <div className="dmc-snap-slot filled" style={{ borderColor: '#2dd4bf', color: '#2dd4bf', minWidth: '180px' }} title="Resulting Sentence">
+              <span>{challengeResult === 'correct' ? currentChallenge.targetSentence : '...'}</span>
+            </div>
+          </div>
+
+          {/* 3 Candidate Terminal Blocks: Singular, Dual, Plural */}
+          <div style={{ textAlign: 'center', marginBottom: '0.75rem', color: '#94a3b8', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            Choose the Matching Number Terminal Block:
+          </div>
+          <div className="dmc-snap-candidate-options">
+            {currentChallenge.options.map((opt) => (
+              <button
+                type="button"
+                key={opt.number}
+                className={`dmc-candidate-btn ${selectedAffix === opt.affix ? 'selected' : ''}`}
+                onClick={() => handlePickOption(opt)}
+              >
+                <div style={{ fontSize: '0.8rem', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
+                  {opt.number === 'singular' ? '१. एकवचनम्' : opt.number === 'dual' ? '२. द्विवचनम्' : '३. बहुवचनम्'} ({opt.affix})
+                </div>
+                <div>{opt.sentence}</div>
+              </button>
+            ))}
+          </div>
+
+          {/* Feedback Display */}
+          {challengeResult === 'correct' && (
+            <div className="dmc-feedback-banner dmc-feedback-success">
+              <div>
+                <strong>🎉 साधु! Perfect Match!</strong>
+                <p style={{ margin: '0.3rem 0 0', fontSize: '0.9rem' }}>{currentChallenge.explanation}</p>
+              </div>
+              <button
+                type="button"
+                className="dmc-action-btn-primary"
+                onClick={handleNextChallenge}
+              >
+                Next Puzzle #{((challengeIndex + 1) % MATRIX_PUZZLE_CHALLENGES.length) + 1} ➜
+              </button>
+            </div>
+          )}
+
+          {challengeResult === 'wrong' && (
+            <div className="dmc-feedback-banner dmc-feedback-error">
+              <div>
+                <strong>❌ Not quite matching the target number/person!</strong>
+                <p style={{ margin: '0.3rem 0 0', fontSize: '0.9rem' }}>
+                  {showHint ? currentChallenge.hint : 'Check the subject concord (Singular, Dual, or Plural) carefully.'}
+                </p>
+              </div>
+              <button
+                type="button"
+                className="dmc-pill-btn"
+                style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff' }}
+                onClick={() => setShowHint(true)}
+              >
+                💡 Reveal Clue
+              </button>
+            </div>
+          )}
+        </section>
+      )}
+
+      {/* ===================================================================
+          MODE 2: DYNAMIC CONNECTOR FORGE (स्वतन्त्र-संयोजनम्)
           =================================================================== */}
       {mode === 'forge' && (
         <section aria-label="Dynamic Verb Forge">
@@ -194,9 +295,9 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
             </div>
 
             <div className="dmc-person-toggle">
-              <span className="dmc-label">लकारः (Tense):</span>
-              <span className="dmc-meta-chip" style={{ color: '#38bdf8' }}>
-                लट् लकारः (Present Tense)
+              <span className="dmc-label">पदम् (Padam):</span>
+              <span className="dmc-meta-chip" style={{ color: '#2dd4bf' }}>
+                {activeRoot.padam}
               </span>
             </div>
           </div>
@@ -222,7 +323,7 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
               <div className="dmc-root-meta-chips">
                 <span className="dmc-meta-chip">Stem: {activeRoot.stem}</span>
                 <span className="dmc-meta-chip">Gana #{activeRoot.ganaNumber}</span>
-                <span className="dmc-meta-chip">{activeRoot.padam}</span>
+                <span className="dmc-meta-chip">{activeRoot.subjectNoun}</span>
               </div>
             </div>
 
@@ -237,7 +338,7 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
 
             {/* Right Station: Terminal Blocks (एक / द्वि / बहु) */}
             <div className="dmc-terminals-station">
-              {/* Singular Terminal Block (-ति) */}
+              {/* Singular Terminal Block */}
               <button
                 type="button"
                 className={`dmc-terminal-block ${selectedNumber === 'singular' ? 'active' : ''}`}
@@ -246,14 +347,14 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
                 <div className="dmc-tb-left">
                   <span className="dmc-tb-name">एकवचनम् (Singular)</span>
                   <span className="dmc-tb-affix">{activeRoot[person].singular.affix}</span>
-                  <span className="dmc-tb-pronoun">{activeRoot[person].singular.pronoun}</span>
+                  <span className="dmc-tb-pronoun">{activeRoot[person].singular.sentence}</span>
                 </div>
                 <div className="dmc-tb-indicator">
                   {selectedNumber === 'singular' && '✓'}
                 </div>
               </button>
 
-              {/* Dual Terminal Block (-तः) */}
+              {/* Dual Terminal Block */}
               <button
                 type="button"
                 className={`dmc-terminal-block ${selectedNumber === 'dual' ? 'active' : ''}`}
@@ -262,14 +363,14 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
                 <div className="dmc-tb-left">
                   <span className="dmc-tb-name">द्विवचनम् (Dual)</span>
                   <span className="dmc-tb-affix">{activeRoot[person].dual.affix}</span>
-                  <span className="dmc-tb-pronoun">{activeRoot[person].dual.pronoun}</span>
+                  <span className="dmc-tb-pronoun">{activeRoot[person].dual.sentence}</span>
                 </div>
                 <div className="dmc-tb-indicator">
                   {selectedNumber === 'dual' && '✓'}
                 </div>
               </button>
 
-              {/* Plural Terminal Block (-न्ति) */}
+              {/* Plural Terminal Block */}
               <button
                 type="button"
                 className={`dmc-terminal-block ${selectedNumber === 'plural' ? 'active' : ''}`}
@@ -278,7 +379,7 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
                 <div className="dmc-tb-left">
                   <span className="dmc-tb-name">बहुवचनम् (Plural)</span>
                   <span className="dmc-tb-affix">{activeRoot[person].plural.affix}</span>
-                  <span className="dmc-tb-pronoun">{activeRoot[person].plural.pronoun}</span>
+                  <span className="dmc-tb-pronoun">{activeRoot[person].plural.sentence}</span>
                 </div>
                 <div className="dmc-tb-indicator">
                   {selectedNumber === 'plural' && '✓'}
@@ -294,11 +395,11 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
               <button
                 type="button"
                 className="dmc-audio-btn"
-                onClick={() => handleSpeakVerb(activeConjugation.form)}
+                onClick={() => handleSpeakVerb(activeConjugation.sentence)}
                 title="Hear Spoken Audio"
               >
                 <span>🔊</span>
-                <span>Listen ({activeConjugation.form})</span>
+                <span>Listen ({activeConjugation.sentence})</span>
               </button>
             </div>
 
@@ -315,21 +416,21 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
 
             <div className="dmc-result-meta">
               <span className="dmc-meta-chip">Transliteration: {activeConjugation.translit}</span>
-              <span className="dmc-meta-chip">Meaning: {activeConjugation.meaning}</span>
-              <span className="dmc-meta-chip">Subject Concord: {activeConjugation.pronoun}</span>
+              <span className="dmc-meta-chip">Action: {activeConjugation.meaning}</span>
+              <span className="dmc-meta-chip">Padam: {activeRoot.padam}</span>
             </div>
 
             {/* Example In Context */}
             <div className="dmc-context-sentence">
               <div>
-                <div className="dmc-cs-sanskrit">{activeRoot.exampleSentences[selectedNumber].sanskrit}</div>
-                <div className="dmc-cs-translit">{activeRoot.exampleSentences[selectedNumber].translit}</div>
-                <div className="dmc-cs-english">{activeRoot.exampleSentences[selectedNumber].english}</div>
+                <div className="dmc-cs-sanskrit">{activeConjugation.sentence}।</div>
+                <div className="dmc-cs-translit">{activeConjugation.translit}</div>
+                <div className="dmc-cs-english">{activeRoot.englishAction}</div>
               </div>
               <button
                 type="button"
                 className="dmc-audio-btn"
-                onClick={() => handleSpeakVerb(activeRoot.exampleSentences[selectedNumber].sanskrit)}
+                onClick={() => handleSpeakVerb(activeConjugation.sentence)}
               >
                 <span>🔊</span>
                 <span>Speak Sentence</span>
@@ -342,27 +443,27 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
                 className={`dmc-ps-col ${selectedNumber === 'singular' ? 'current' : ''}`}
                 onClick={() => handleSelectNumber('singular')}
               >
-                <div className="dmc-ps-title">१. एकवचनम् (Singular)</div>
-                <div className="dmc-ps-form">{activeRoot[person].singular.form}</div>
-                <div className="dmc-ps-meaning">{activeRoot[person].singular.meaning}</div>
+                <div className="dmc-ps-title">१. एकवचनम् ({activeRoot[person].singular.affix})</div>
+                <div className="dmc-ps-form">{activeRoot[person].singular.sentence}</div>
+                <div className="dmc-ps-meaning">{activeRoot[person].singular.form}</div>
               </div>
 
               <div
                 className={`dmc-ps-col ${selectedNumber === 'dual' ? 'current' : ''}`}
                 onClick={() => handleSelectNumber('dual')}
               >
-                <div className="dmc-ps-title">२. द्विवचनम् (Dual)</div>
-                <div className="dmc-ps-form">{activeRoot[person].dual.form}</div>
-                <div className="dmc-ps-meaning">{activeRoot[person].dual.meaning}</div>
+                <div className="dmc-ps-title">२. द्विवचनम् ({activeRoot[person].dual.affix})</div>
+                <div className="dmc-ps-form">{activeRoot[person].dual.sentence}</div>
+                <div className="dmc-ps-meaning">{activeRoot[person].dual.form}</div>
               </div>
 
               <div
                 className={`dmc-ps-col ${selectedNumber === 'plural' ? 'current' : ''}`}
                 onClick={() => handleSelectNumber('plural')}
               >
-                <div className="dmc-ps-title">३. बहुवचनम् (Plural)</div>
-                <div className="dmc-ps-form">{activeRoot[person].plural.form}</div>
-                <div className="dmc-ps-meaning">{activeRoot[person].plural.meaning}</div>
+                <div className="dmc-ps-title">३. बहुवचनम् ({activeRoot[person].plural.affix})</div>
+                <div className="dmc-ps-form">{activeRoot[person].plural.sentence}</div>
+                <div className="dmc-ps-meaning">{activeRoot[person].plural.form}</div>
               </div>
             </div>
           </div>
@@ -370,7 +471,7 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
           {/* Root Bank Grid */}
           <div className="dmc-root-bank">
             <div className="dmc-rb-header">
-              <span>🌿 Select Root from Dhatupatha Bank (१२ धातवः)</span>
+              <span>🌿 Select Root from Diverse Dhatupatha Bank (२० धातवः)</span>
             </div>
             <div className="dmc-roots-grid">
               {MATRIX_ROOTS.map((r) => (
@@ -386,102 +487,6 @@ export const DhatupathaMatrixConnector: React.FC<DhatupathaMatrixConnectorProps>
               ))}
             </div>
           </div>
-        </section>
-      )}
-
-      {/* ===================================================================
-          MODE 2: PUZZLE CHALLENGE ARENA (संयोजन-स्पर्धा)
-          =================================================================== */}
-      {mode === 'challenge' && (
-        <section className="dmc-challenge-pod" aria-label="Puzzle Challenge Arena">
-          {/* Top Bar with Score & Streak */}
-          <div className="dmc-challenge-topbar">
-            <div>
-              <span className="dmc-badge" style={{ borderColor: '#f59e0b', color: '#f59e0b' }}>
-                MISSION {challengeIndex + 1} OF {MATRIX_PUZZLE_CHALLENGES.length}
-              </span>
-            </div>
-            <div className="dmc-challenge-stats">
-              <span className="dmc-stat-pill dmc-stat-score">⭐ Score: {score}</span>
-              <span className="dmc-stat-pill dmc-stat-streak">🔥 Streak: {streak}</span>
-            </div>
-          </div>
-
-          {/* Mission Description */}
-          <div className="dmc-challenge-mission">
-            <h3 className="dmc-mission-title">{currentChallenge.title}</h3>
-            <p className="dmc-mission-prompt">{currentChallenge.prompt}</p>
-            <div className="dmc-mission-subject">{currentChallenge.subjectContext}</div>
-          </div>
-
-          {/* Snap Arena */}
-          <div className="dmc-snap-arena">
-            <div className="dmc-snap-slot filled">
-              <span>{challengeRoot.root}</span>
-            </div>
-            <span style={{ fontSize: '1.5rem', color: '#94a3b8' }}>+</span>
-            <div className="dmc-snap-slot filled" style={{ color: '#f59e0b', borderColor: '#f59e0b' }}>
-              <span>{challengeRoot.vikaran}</span>
-            </div>
-            <span style={{ fontSize: '1.5rem', color: '#94a3b8' }}>+</span>
-            <div className={`dmc-snap-slot ${selectedAffix ? 'filled' : ''}`}>
-              <span>{selectedAffix || '? (प्रत्यय)'}</span>
-            </div>
-            <span style={{ fontSize: '1.5rem', color: '#94a3b8' }}>=</span>
-            <div className="dmc-snap-slot filled" style={{ borderColor: '#38bdf8', color: '#38bdf8' }}>
-              <span>{challengeResult === 'correct' ? currentChallenge.targetForm : '...'}</span>
-            </div>
-          </div>
-
-          {/* Candidate Options */}
-          <div className="dmc-snap-candidate-options">
-            {challengeAffixOptions.map((opt) => (
-              <button
-                type="button"
-                key={opt.num}
-                className={`dmc-candidate-btn ${selectedAffix === opt.affix ? 'selected' : ''}`}
-                onClick={() => handlePickAffix(opt.affix, opt.num)}
-              >
-                <span>{opt.label}</span>
-              </button>
-            ))}
-          </div>
-
-          {/* Feedback Display */}
-          {challengeResult === 'correct' && (
-            <div className="dmc-feedback-banner dmc-feedback-success">
-              <div>
-                <strong>🎉 साधु! Correct!</strong>
-                <p style={{ margin: '0.3rem 0 0', fontSize: '0.9rem' }}>{currentChallenge.explanation}</p>
-              </div>
-              <button
-                type="button"
-                className="dmc-action-btn-primary"
-                onClick={handleNextChallenge}
-              >
-                Next Mission ➜
-              </button>
-            </div>
-          )}
-
-          {challengeResult === 'wrong' && (
-            <div className="dmc-feedback-banner dmc-feedback-error">
-              <div>
-                <strong>❌ Try Again!</strong>
-                <p style={{ margin: '0.3rem 0 0', fontSize: '0.9rem' }}>
-                  {showHint ? currentChallenge.hint : 'Inspect the subject concord carefully.'}
-                </p>
-              </div>
-              <button
-                type="button"
-                className="dmc-pill-btn"
-                style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff' }}
-                onClick={() => setShowHint(true)}
-              >
-                💡 Reveal Hint
-              </button>
-            </div>
-          )}
         </section>
       )}
     </div>

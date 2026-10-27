@@ -48,12 +48,20 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
     setCurrentIndex((prev) => (prev + 1) % RELATIVE_CLAUSE_RIDDLES.length);
   };
 
+  const handleJumpToRiddle = (idx: number) => {
+    setSelectedOption(null);
+    setIsMatched(false);
+    setCurrentIndex(idx);
+    setActiveTab('puzzle');
+    window.scrollTo({ top: 300, behavior: 'smooth' });
+  };
+
   const handleSpeak = (text: string) => {
     stopPronunciation();
     playPronunciation(text);
   };
 
-  // Render authentic graphite pencil sketch SVG for the scene
+  // Render authentic graphite pencil sketch SVG for all 20 scenes
   const renderPencilSketchArt = (sketchId: string, matched: boolean) => {
     return (
       <svg
@@ -64,7 +72,7 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
         aria-label="Pencil Sketch Riddle Scene"
       >
         <defs>
-          {/* Charcoal Crosshatch Pattern */}
+          {/* Charcoal Crosshatch Patterns */}
           <pattern id="hatchPencil" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
             <line x1="0" y1="0" x2="0" y2="8" stroke="#78716c" strokeWidth="1.2" strokeOpacity="0.35" />
           </pattern>
@@ -76,476 +84,632 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
 
         {/* Paper texture backdrop */}
         <rect width="600" height="240" fill="#faf7f0" />
-        <rect width="600" height="240" fill="url(#hatchPencil)" opacity="0.18" />
+        <rect width="600" height="240" fill="url(#hatchPencil)" opacity="0.16" />
 
-        {/* 1. MOUNTAIN & FIRE (यत्र धूमः तत्र अग्निः) */}
-        {sketchId === 'mountain_fire' && (
-          <g id="mountain-fire-scene">
-            {/* Distant mountain ridges */}
-            <path d="M40 210 L140 110 L230 180 L320 80 L440 210 Z" fill="#e7e0cf" stroke="#57534e" strokeWidth="2.5" strokeDasharray="6 2" />
-            <path d="M140 110 L180 150 L200 210" stroke="#78716c" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M320 80 L350 140 L380 210" stroke="#78716c" strokeWidth="1.5" />
-            
-            {/* Heavy shading on mountain slope */}
-            <path d="M320 80 L380 210 L440 210 Z" fill="url(#crossHatchDark)" opacity={matched ? "0.85" : "0.35"} />
-
-            {/* Rising smoke curls */}
-            <path
-              d="M315 75 Q300 45 325 30 T310 10"
-              stroke="#57534e"
-              strokeWidth="3"
-              strokeLinecap="round"
-              fill="none"
-              strokeDasharray={matched ? "none" : "4 3"}
-            />
-            <path
-              d="M325 70 Q345 40 330 25 T345 5"
-              stroke="#78716c"
-              strokeWidth="2"
-              strokeLinecap="round"
-              fill="none"
-            />
-
-            {/* Hidden / Revealed Fire on peak */}
-            {matched ? (
-              <g transform="translate(305, 50)">
-                <path d="M15 25 Q5 15 15 0 Q25 15 15 25 Z" fill="#f59e0b" stroke="#b45309" strokeWidth="2" />
-                <path d="M15 25 Q10 18 15 10 Q20 18 15 25 Z" fill="#ef4444" opacity="0.85" />
-                <circle cx="15" cy="18" r="8" fill="#fbbf24" opacity="0.6" />
-                <text x="35" y="15" fill="#92400e" fontSize="13" fontWeight="bold" fontFamily="Georgia">
-                  तत्र अग्निः (Fire Revealed!)
-                </text>
+        {/* 1. LIGHT & DARKNESS (यत्र प्रकाशः भवति, तत्र अन्धकारः नश्यति) */}
+        {sketchId === 'light_darkness' && (
+          <g id="scene-light-darkness">
+            {/* Cavern walls with dark charcoal shading */}
+            <path d="M0 0 L200 0 L140 240 L0 240 Z" fill="url(#crossHatchDark)" opacity={matched ? "0.3" : "0.75"} />
+            <path d="M600 0 L400 0 L460 240 L600 240 Z" fill="url(#crossHatchDark)" opacity={matched ? "0.3" : "0.75"} />
+            {/* Central Radiating Diya */}
+            <g transform="translate(280, 110)">
+              <ellipse cx="20" cy="35" rx="28" ry="10" fill="#ca8a04" stroke="#854d0e" strokeWidth="2" />
+              <path d="M20 30 Q12 15 20 0 Q28 15 20 30 Z" fill="#f59e0b" stroke="#b45309" strokeWidth="2" />
+              <circle cx="20" cy="20" r="5" fill="#fef08a" />
+              {/* Radiating beams */}
+              <g stroke="#ca8a04" strokeWidth="2" strokeDasharray="5 3">
+                <line x1="20" y1="-15" x2="20" y2="-45" />
+                <line x1="-15" y1="5" x2="-45" y2="-10" />
+                <line x1="55" y1="5" x2="85" y2="-10" />
+                <line x1="-20" y1="35" x2="-60" y2="35" />
+                <line x1="60" y1="35" x2="100" y2="35" />
               </g>
+            </g>
+            {matched ? (
+              <text x="210" y="45" fill="#ca8a04" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तत्र अन्धकारः नश्यति (Darkness Vanishes!)
+              </text>
             ) : (
-              <text x="340" y="70" fill="#a8a29e" fontSize="12" fontStyle="italic">
-                ? (Hidden Cause)
+              <text x="220" y="45" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...dark shadows linger...
               </text>
             )}
-
-            {/* Fore-ground ground line */}
-            <path d="M20 215 Q250 205 580 215" stroke="#44403c" strokeWidth="2.5" />
-            <text x="40" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
-              यत्र धूमः (Where smoke rises from the peak...)
-            </text>
-          </g>
-        )}
-
-        {/* 2. KING & SUBJECTS (यथा राजा तथा प्रजा) */}
-        {sketchId === 'king_subjects' && (
-          <g id="king-subjects-scene">
-            {/* Palace Archways */}
-            <path d="M60 215 L60 90 Q120 40 180 90 L180 215" stroke="#57534e" strokeWidth="2.5" fill="none" />
-            <path d="M180 215 L180 90 Q240 40 300 90 L300 215" stroke="#78716c" strokeWidth="2" fill="none" />
-            <line x1="50" y1="215" x2="550" y2="215" stroke="#44403c" strokeWidth="2.5" />
-
-            {/* King with Crown and Sceptre */}
-            <g transform="translate(100, 80)">
-              {/* Crown */}
-              <path d="M10 20 L15 5 L20 15 L25 5 L30 20 Z" fill={matched ? "#f59e0b" : "#e7e0cf"} stroke="#44403c" strokeWidth="2" />
-              {/* Head & halo */}
-              <circle cx="20" cy="30" r="10" stroke="#44403c" strokeWidth="2" fill="#fdfcf9" />
-              {/* Royal robe */}
-              <path d="M10 40 L5 90 L35 90 L30 40 Z" fill="url(#crossHatchDark)" stroke="#44403c" strokeWidth="2" />
-              {/* Sceptre */}
-              <line x1="36" y1="35" x2="40" y2="90" stroke="#57534e" strokeWidth="2.5" />
-              <circle cx="36" cy="32" r="4" fill="#f59e0b" />
-            </g>
-
-            {/* Right: Citizens in harmony */}
-            <g transform="translate(360, 100)">
-              <circle cx="30" cy="25" r="9" stroke="#44403c" strokeWidth="1.8" />
-              <path d="M22 35 L16 85 L44 85 L38 35 Z" fill="#e7e0cf" stroke="#57534e" strokeWidth="1.8" />
-              <circle cx="70" cy="30" r="9" stroke="#44403c" strokeWidth="1.8" />
-              <path d="M62 40 L56 85 L84 85 L78 40 Z" fill="#e7e0cf" stroke="#57534e" strokeWidth="1.8" />
-              {matched && (
-                <text x="15" y="-10" fill="#15803d" fontSize="13" fontWeight="bold" fontFamily="Georgia">
-                  तथा प्रजा (Virtuous Citizens!)
-                </text>
-              )}
-            </g>
-
-            <text x="80" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
-              यथा राजा (When the monarch rules with virtue...)
-            </text>
-          </g>
-        )}
-
-        {/* 3. RAIN & MEADOW (यदि वर्षति तर्हि तृणं रोहति) */}
-        {sketchId === 'rain_meadow' && (
-          <g id="rain-meadow-scene">
-            {/* Billowing Rainclouds */}
-            <path
-              d="M80 60 Q110 30 160 40 Q210 20 270 40 Q330 30 360 65 Q390 90 350 110 L90 110 Q50 90 80 60 Z"
-              fill={matched ? "#cbd5e1" : "#e7e0cf"}
-              stroke="#44403c"
-              strokeWidth="2.5"
-            />
-            {/* Cloud shading */}
-            <path d="M90 90 Q220 105 350 90 L350 110 L90 110 Z" fill="url(#crossHatchDark)" opacity="0.5" />
-
-            {/* Falling rain strokes */}
-            <g stroke="#64748b" strokeWidth="1.8" strokeLinecap="round">
-              <line x1="120" y1="125" x2="105" y2="165" />
-              <line x1="160" y1="130" x2="145" y2="175" />
-              <line x1="200" y1="120" x2="185" y2="170" />
-              <line x1="240" y1="135" x2="225" y2="180" />
-              <line x1="280" y1="125" x2="265" y2="170" />
-              <line x1="320" y1="130" x2="305" y2="175" />
-            </g>
-
-            {/* Soil Ground */}
-            <path d="M40 210 Q300 200 560 210" stroke="#44403c" strokeWidth="2.5" />
-            {/* Sprouting grass */}
-            {matched ? (
-              <g stroke="#15803d" strokeWidth="2.2" strokeLinecap="round">
-                <path d="M120 210 Q122 185 115 175" />
-                <path d="M120 210 Q128 190 135 180" />
-                <path d="M220 208 Q223 180 215 170" />
-                <path d="M220 208 Q230 185 238 175" />
-                <path d="M340 208 Q343 182 335 170" />
-                <path d="M340 208 Q350 186 358 174" />
-                <path d="M440 210 Q443 185 435 175" />
-                <text x="360" y="150" fill="#15803d" fontSize="13" fontWeight="bold" fontFamily="Georgia">
-                  तर्हि तृणं रोहति (Grass Sprouting!)
-                </text>
-              </g>
-            ) : (
-              <text x="380" y="195" fill="#a8a29e" fontSize="12" fontStyle="italic">
-                ...parched soil waits...
-              </text>
-            )}
-
-            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
-              यदि वर्षति (If the skies pour soothing showers...)
-            </text>
-          </g>
-        )}
-
-        {/* 4. SUNRISE & LOTUS (यदा सूर्यः उदेति तदा कमलं विकसति) */}
-        {sketchId === 'sun_lotus' && (
-          <g id="sun-lotus-scene">
-            {/* Morning horizon hills */}
-            <path d="M30 160 Q150 100 280 150 Q420 110 570 170" stroke="#78716c" strokeWidth="2" fill="#f5efe6" />
-            
-            {/* Rising Sun */}
-            <g transform="translate(180, 80)">
-              <circle cx="30" cy="30" r="28" fill={matched ? "#fef08a" : "#f5efe6"} stroke="#ca8a04" strokeWidth="2.5" />
-              {/* Radiating sunbeams */}
-              <g stroke="#ca8a04" strokeWidth="2" strokeLinecap="round">
-                <line x1="30" y1="-8" x2="30" y2="-2" />
-                <line x1="68" y1="30" x2="74" y2="30" />
-                <line x1="-8" y1="30" x2="-2" y2="30" />
-                <line x1="56" y1="4" x2="62" y2="-2" />
-                <line x1="4" y1="4" x2="-2" y2="-2" />
-              </g>
-            </g>
-
-            {/* Lake Surface Ripples */}
-            <g stroke="#94a3b8" strokeWidth="1.5">
-              <ellipse cx="420" cy="190" rx="90" ry="12" fill="#f1f5f9" />
-              <path d="M350 200 Q420 208 490 200" />
-              <path d="M370 210 Q420 216 470 210" />
-            </g>
-
-            {/* Lotus Flower */}
-            <g transform="translate(400, 150)">
-              {matched ? (
-                <>
-                  {/* Blooming petals */}
-                  <path d="M20 35 C-5 20 -5 5 20 -5 C45 5 45 20 20 35 Z" fill="#fbcfe8" stroke="#db2777" strokeWidth="2" />
-                  <path d="M20 35 C-15 30 -10 15 5 5 C20 18 20 28 20 35 Z" fill="#f472b6" stroke="#db2777" strokeWidth="1.8" />
-                  <path d="M20 35 C55 30 50 15 35 5 C20 18 20 28 20 35 Z" fill="#f472b6" stroke="#db2777" strokeWidth="1.8" />
-                  <circle cx="20" cy="18" r="5" fill="#facc15" />
-                  <text x="-50" y="-12" fill="#db2777" fontSize="13" fontWeight="bold" fontFamily="Georgia">
-                    तदा कमलं विकसति (Lotus Blooms!)
-                  </text>
-                </>
-              ) : (
-                <>
-                  {/* Closed bud */}
-                  <path d="M20 35 C10 25 10 10 20 0 C30 10 30 25 20 35 Z" fill="#e7e0cf" stroke="#78716c" strokeWidth="2" />
-                  <text x="35" y="15" fill="#a8a29e" fontSize="11" fontStyle="italic">
-                    Closed Bud
-                  </text>
-                </>
-              )}
-            </g>
-
-            <text x="50" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
-              यदा सूर्यः उदेति (When the dawn awakens the horizon...)
-            </text>
-          </g>
-        )}
-
-        {/* 5. EFFORT & ACCOMPLISHMENT (यावत् प्रयत्नः तावत् सिद्धिः) */}
-        {sketchId === 'sculptor_siddhi' && (
-          <g id="sculptor-scene">
-            {/* Raw Stone Block */}
-            <path d="M280 60 L440 60 L480 205 L260 205 Z" fill={matched ? "#fdfbf7" : "#e7e0cf"} stroke="#44403c" strokeWidth="2.5" />
-            <path d="M280 60 L260 205 L300 205 L320 60 Z" fill="url(#crossHatchDark)" opacity="0.35" />
-
-            {/* Hand with Mallet & Chisel */}
-            <g transform="translate(140, 70)">
-              {/* Sculptor arm */}
-              <path d="M-40 80 Q20 50 70 60" stroke="#44403c" strokeWidth="12" strokeLinecap="round" />
-              {/* Mallet */}
-              <rect x="60" y="20" width="24" height="40" fill="#78716c" stroke="#44403c" strokeWidth="2" rx="4" />
-              <line x1="72" y1="40" x2="72" y2="90" stroke="#57534e" strokeWidth="5" />
-              {/* Chisel */}
-              <line x1="120" y1="80" x2="155" y2="95" stroke="#44403c" strokeWidth="4" />
-              {/* Sparks / chips */}
-              <circle cx="160" cy="95" r="2.5" fill="#f59e0b" />
-              <circle cx="165" cy="85" r="2" fill="#f59e0b" />
-              <circle cx="155" cy="105" r="1.8" fill="#f59e0b" />
-            </g>
-
-            {/* Revealed Statue on the stone */}
-            {matched ? (
-              <g transform="translate(350, 80)">
-                <circle cx="25" cy="25" r="14" stroke="#ca8a04" strokeWidth="2" fill="#fef08a" />
-                <path d="M10 45 Q25 35 40 45 L45 100 L5 100 Z" fill="#fef9c3" stroke="#ca8a04" strokeWidth="2" />
-                <text x="-60" y="-10" fill="#ca8a04" fontSize="13" fontWeight="bold" fontFamily="Georgia">
-                  तावत् सिद्धिः (Divine Masterpiece!)
-                </text>
-              </g>
-            ) : (
-              <text x="330" y="130" fill="#a8a29e" fontSize="12" fontStyle="italic">
-                ...raw marble awaiting chisel...
-              </text>
-            )}
-
             <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
             <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
-              यावत् प्रयत्नः (In proportion to the artist\'s dedication...)
+              यत्र प्रकाशः भवति (Where the sacred light shines...)
             </text>
           </g>
         )}
 
-        {/* 6. SCHOLAR & SCRIPTURE (यः पठति सः जानाति) */}
-        {sketchId === 'student_manuscript' && (
-          <g id="scholar-scene">
-            {/* Banyan canopy overhanging */}
-            <path d="M20 20 Q120 5 220 25 Q320 0 420 30 Q520 10 580 40 L580 70 Q400 50 20 80 Z" fill="url(#hatchPencil)" stroke="#57534e" strokeWidth="2" />
-            
-            {/* Student in Padmasana */}
-            <g transform="translate(180, 90)">
-              {/* Head */}
-              <circle cx="40" cy="25" r="12" stroke="#44403c" strokeWidth="2" fill="#fdfcf9" />
-              <path d="M40 13 Q48 10 46 22" stroke="#44403c" strokeWidth="3" fill="none" /> {/* Shikha */}
+        {/* 2. CUCKOO & SPRING (यदा कोकिलः कूजति, तदा वसन्तः आयाति) */}
+        {sketchId === 'cuckoo_spring' && (
+          <g id="scene-cuckoo-spring">
+            {/* Tree branch */}
+            <path d="M50 160 Q200 120 400 150 Q500 160 580 140" stroke="#44403c" strokeWidth="7" strokeLinecap="round" />
+            <path d="M220 135 Q260 90 280 60" stroke="#44403c" strokeWidth="4" />
+            {/* Kokila Bird */}
+            <g transform="translate(240, 70)">
               {/* Body */}
-              <path d="M28 40 L15 100 L65 100 L52 40 Z" fill="#e7e0cf" stroke="#57534e" strokeWidth="2" />
-              {/* Crossed legs */}
-              <ellipse cx="40" cy="100" rx="36" ry="12" fill="#d6cebe" stroke="#57534e" strokeWidth="2" />
+              <ellipse cx="40" cy="45" rx="30" ry="18" fill="#292524" stroke="#1c1917" strokeWidth="2" />
+              {/* Head */}
+              <circle cx="68" cy="35" r="12" fill="#292524" stroke="#1c1917" strokeWidth="2" />
+              {/* Beak */}
+              <path d="M78 35 L90 32 L78 40 Z" fill="#f59e0b" stroke="#b45309" strokeWidth="1.5" />
+              {/* Eye */}
+              <circle cx="72" cy="33" r="2" fill="#ef4444" />
+              {/* Long tail */}
+              <path d="M15 50 L-25 75 L-10 60 Z" fill="#292524" stroke="#1c1917" strokeWidth="2" />
+              {/* Music notes */}
+              <text x="85" y="20" fill="#b45309" fontSize="18">♪ ♫</text>
             </g>
-
-            {/* Palm-Leaf Manuscript Grantha */}
-            <g transform="translate(260, 150)">
-              <rect x="0" y="0" width="130" height="26" fill="#fef3c7" stroke="#78716c" strokeWidth="1.8" rx="2" />
-              <line x1="65" y1="0" x2="65" y2="26" stroke="#b45309" strokeWidth="1.5" />
-              <line x1="10" y1="8" x2="55" y2="8" stroke="#78716c" strokeWidth="1.2" strokeDasharray="3 2" />
-              <line x1="10" y1="16" x2="55" y2="16" stroke="#78716c" strokeWidth="1.2" strokeDasharray="3 2" />
-              <line x1="75" y1="8" x2="120" y2="8" stroke="#78716c" strokeWidth="1.2" strokeDasharray="3 2" />
-              <line x1="75" y1="16" x2="120" y2="16" stroke="#78716c" strokeWidth="1.2" strokeDasharray="3 2" />
-            </g>
-
-            {/* Glowing Wisdom Aura */}
-            {matched && (
-              <g transform="translate(200, 80)">
-                <circle cx="20" cy="35" r="45" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" fill="none" />
-                <text x="120" y="30" fill="#b45309" fontSize="14" fontWeight="bold" fontFamily="Georgia">
-                  सः जानाति (True Illumination!)
+            {/* Spring blossoms */}
+            {matched ? (
+              <g fill="#f472b6" stroke="#db2777" strokeWidth="1.5">
+                <circle cx="160" cy="140" r="8" />
+                <circle cx="340" cy="135" r="9" />
+                <circle cx="440" cy="145" r="8" />
+                <circle cx="280" cy="55" r="9" />
+                <text x="350" y="55" fill="#db2777" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                  तदा वसन्तः आयाति (Spring Arrives!)
                 </text>
               </g>
+            ) : (
+              <text x="350" y="55" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...waiting for the song...
+              </text>
             )}
-
-            <line x1="50" y1="215" x2="550" y2="215" stroke="#44403c" strokeWidth="2" />
-            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
-              यः पठति (He who studies the sacred words with devotion...)
-            </text>
-          </g>
-        )}
-
-        {/* 7. HONORING WOMEN & REJOICING DEITIES (यत्र नार्यस्तु पूज्यन्ते रमन्ते तत्र देवताः) */}
-        {sketchId === 'sacred_home' && (
-          <g id="sacred-home-scene">
-            {/* Traditional Carved Doorframe */}
-            <rect x="80" y="50" width="180" height="160" fill="#fdfbf7" stroke="#44403c" strokeWidth="3" />
-            <path d="M70 50 L270 50 L260 35 L80 35 Z" fill="#e7e0cf" stroke="#44403c" strokeWidth="2" />
-            {/* Mango-leaf Toranam */}
-            <g fill="#15803d" stroke="#166534" strokeWidth="1">
-              <path d="M90 50 Q95 65 100 50 Z" />
-              <path d="M120 50 Q125 65 130 50 Z" />
-              <path d="M150 50 Q155 65 160 50 Z" />
-              <path d="M180 50 Q185 65 190 50 Z" />
-              <path d="M210 50 Q215 65 220 50 Z" />
-              <path d="M240 50 Q245 65 250 50 Z" />
-            </g>
-
-            {/* Lit Brass Deepam */}
-            <g transform="translate(150, 160)">
-              <ellipse cx="20" cy="30" rx="18" ry="6" fill="#ca8a04" stroke="#854d0e" strokeWidth="1.8" />
-              <rect x="18" y="30" width="4" height="15" fill="#ca8a04" />
-              <ellipse cx="20" cy="45" rx="14" ry="4" fill="#854d0e" />
-              {/* Flame */}
-              <path d="M20 28 Q15 15 20 5 Q25 15 20 28 Z" fill="#f59e0b" stroke="#b45309" strokeWidth="1.5" />
-              <circle cx="20" cy="20" r="3" fill="#ffffff" />
-            </g>
-
-            {/* Rangoli on floor */}
-            <g transform="translate(340, 160)" stroke="#e11d48" strokeWidth="1.5" fill="none">
-              <circle cx="50" cy="30" r="25" />
-              <path d="M50 5 L50 55" />
-              <path d="M25 30 L75 30" />
-              <circle cx="50" cy="30" r="8" fill="#ffe4e6" />
-            </g>
-
-            {/* Divine Blessings Shower */}
-            {matched && (
-              <g transform="translate(320, 60)">
-                <text x="0" y="20" fill="#ca8a04" fontSize="14" fontWeight="bold" fontFamily="Georgia">
-                  रमन्ते तत्र देवताः (Divine Blessings Abide!)
-                </text>
-                <circle cx="40" cy="50" r="4" fill="#f59e0b" />
-                <circle cx="90" cy="40" r="3" fill="#f59e0b" />
-                <circle cx="140" cy="60" r="3.5" fill="#f59e0b" />
-              </g>
-            )}
-
             <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
             <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
-              यत्र नार्यस्तु पूज्यन्ते (Where noble women are cherished with reverence...)
+              यदा कोकिलः कूजति (When the black cuckoo sings...)
             </text>
           </g>
         )}
 
-        {/* 8. SEED & HARVEST (यद् बीजं वपते तद् फलं लभते) */}
-        {sketchId === 'seed_harvest' && (
-          <g id="seed-harvest-scene">
-            {/* Cupped Sowing Hands */}
-            <g transform="translate(80, 100)">
-              <path d="M10 40 Q40 20 70 30 Q100 45 105 70 L60 80 Z" fill="#f5f0e4" stroke="#44403c" strokeWidth="2" />
-              {/* Dropping seeds */}
-              <circle cx="90" cy="75" r="3" fill="#78716c" />
-              <circle cx="95" cy="90" r="2.8" fill="#78716c" />
-              <circle cx="102" cy="105" r="3" fill="#78716c" />
+        {/* 3. WATER & CROPS (यदि जलं प्रवहति, तर्हि सस्यं रोहति) */}
+        {sketchId === 'water_crops' && (
+          <g id="scene-water-crops">
+            {/* Flowing Irrigation Canal */}
+            <path d="M60 215 L220 80 L300 80 L180 215 Z" fill="#e0f2fe" stroke="#0284c7" strokeWidth="2" />
+            <path d="M90 200 Q150 140 250 80" stroke="#38bdf8" strokeWidth="2" strokeDasharray="6 3" />
+            {/* Furrows with crops */}
+            <path d="M280 80 L560 80 L520 215 L200 215 Z" fill="#fdfbf7" stroke="#57534e" strokeWidth="2" />
+            {matched ? (
+              <g stroke="#15803d" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M260 200 Q265 170 255 160 Q270 175 275 165" />
+                <path d="M340 190 Q345 160 335 150 Q350 165 355 155" />
+                <path d="M420 180 Q425 150 415 140 Q430 155 435 145" />
+                <path d="M300 130 Q305 110 295 100" />
+                <path d="M380 125 Q385 105 375 95" />
+                <text x="320" y="45" fill="#15803d" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                  तर्हि सस्यं रोहति (Crops Sprout Green!)
+                </text>
+              </g>
+            ) : (
+              <text x="320" y="150" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...dry furrows wait for water...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यदि जलं प्रवहति (If pure stream water flows...)
+            </text>
+          </g>
+        )}
+
+        {/* 4. DHARMA & PROTECTION (यः धर्मं रक्षति, सः धर्मेण रक्षितः) */}
+        {sketchId === 'dharmo_rakshati' && (
+          <g id="scene-dharma-protect">
+            {/* Radiant Dharma Wheel in center */}
+            <g transform="translate(260, 60)">
+              <circle cx="40" cy="40" r="38" stroke="#ca8a04" strokeWidth="3" fill="#fef08a" />
+              <circle cx="40" cy="40" r="10" stroke="#854d0e" strokeWidth="2" fill="#fef9c3" />
+              {/* Spokes */}
+              <g stroke="#ca8a04" strokeWidth="2">
+                <line x1="40" y1="2" x2="40" y2="78" />
+                <line x1="2" y1="40" x2="78" y2="40" />
+                <line x1="13" y1="13" x2="67" y2="67" />
+                <line x1="67" y1="13" x2="13" y2="67" />
+              </g>
             </g>
+            {/* Upright Hero figure with shield */}
+            <g transform="translate(140, 80)">
+              <circle cx="30" cy="25" r="12" stroke="#44403c" strokeWidth="2" fill="#fdfbf7" />
+              <path d="M20 40 L10 100 L50 100 L40 40 Z" fill="#e7e0cf" stroke="#44403c" strokeWidth="2" />
+              <path d="M45 45 Q70 65 45 90 Z" fill="#ca8a04" stroke="#854d0e" strokeWidth="2" />
+            </g>
+            {matched ? (
+              <text x="360" y="90" fill="#15803d" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                सः धर्मेण रक्षितः (Dharma Protects Him!)
+              </text>
+            ) : (
+              <text x="360" y="90" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...protecting truth...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यः धर्मं रक्षति (He who protects righteousness...)
+            </text>
+          </g>
+        )}
 
-            {/* Furrowed Soil */}
-            <path d="M40 210 Q280 205 560 210" stroke="#44403c" strokeWidth="2.5" />
-            <path d="M60 215 Q280 210 540 215" stroke="#78716c" strokeWidth="1.5" strokeDasharray="5 3" />
+        {/* 5. HUMILITY & PRAISE (या विनयशीला अस्ति, सा सर्वत्र श्लाघ्यते) */}
+        {sketchId === 'humble_maiden' && (
+          <g id="scene-humble-maiden">
+            {/* Humble Scholar maiden in Anjali Mudra */}
+            <g transform="translate(260, 70)">
+              <circle cx="30" cy="25" r="12" stroke="#44403c" strokeWidth="2" fill="#fdfbf7" />
+              <path d="M18 40 L10 105 L50 105 L42 40 Z" fill="#fbcfe8" stroke="#be185d" strokeWidth="2" />
+              {/* Anjali Mudra folded palms */}
+              <ellipse cx="30" cy="55" rx="6" ry="10" fill="#fdfbf7" stroke="#be185d" strokeWidth="1.8" />
+            </g>
+            {/* Floral garland blessings */}
+            {matched ? (
+              <g transform="translate(180, 50)">
+                <path d="M20 20 Q110 50 200 20" stroke="#f59e0b" strokeWidth="4" strokeDasharray="8 4" fill="none" />
+                <text x="40" y="-10" fill="#be185d" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                  सा सर्वत्र श्लाघ्यते (Praised Everywhere!)
+                </text>
+              </g>
+            ) : (
+              <text x="340" y="80" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...modest grace...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              या विनयशीला अस्ति (The maiden who is humble...)
+            </text>
+          </g>
+        )}
 
-            {/* Mature Mango Bough on Right */}
-            <g transform="translate(340, 50)">
-              {/* Thick tree branch */}
-              <path d="M0 60 Q80 40 180 50" stroke="#44403c" strokeWidth="6" strokeLinecap="round" />
-              {/* Leaves */}
-              <path d="M40 60 Q60 40 80 55" stroke="#15803d" strokeWidth="3" fill="none" />
-              <path d="M100 50 Q120 30 140 45" stroke="#15803d" strokeWidth="3" fill="none" />
-              
+        {/* 6. THOUGHT & SPEECH (यथा चिन्तनं भवति, तथा भाषणं जायते) */}
+        {sketchId === 'thought_speech' && (
+          <g id="scene-thought-speech">
+            {/* Meditating Seeker */}
+            <g transform="translate(180, 80)">
+              <circle cx="30" cy="25" r="14" stroke="#44403c" strokeWidth="2" fill="#fdfbf7" />
+              <path d="M18 42 L8 100 L52 100 L42 42 Z" fill="#e7e0cf" stroke="#44403c" strokeWidth="2" />
+              <ellipse cx="30" cy="100" rx="30" ry="10" fill="#d6cebe" stroke="#44403c" strokeWidth="2" />
+            </g>
+            {/* Flowing golden words banner */}
+            <g transform="translate(280, 90)">
+              <path d="M0 20 Q80 -10 160 20 Q240 50 280 20" stroke="#ca8a04" strokeWidth="3" fill="none" />
               {matched ? (
-                <>
-                  {/* Golden ripe mangoes */}
-                  <g fill="#f59e0b" stroke="#b45309" strokeWidth="1.8">
-                    <path d="M60 70 Q75 65 75 90 Q75 110 58 105 Q45 95 60 70 Z" />
-                    <path d="M120 65 Q135 60 135 85 Q135 105 118 100 Q105 90 120 65 Z" />
-                  </g>
-                  <text x="-40" y="140" fill="#b45309" fontSize="13" fontWeight="bold" fontFamily="Georgia">
-                    तद् फलं लभते (The Golden Harvest!)
-                  </text>
-                </>
+                <text x="20" y="10" fill="#854d0e" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                  तथा भाषणं जायते (Noble Speech Flows!)
+                </text>
               ) : (
-                <text x="20" y="100" fill="#a8a29e" fontSize="12" fontStyle="italic">
-                  ...waiting for seed to mature...
+                <text x="20" y="10" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                  ...mind in contemplation...
                 </text>
               )}
             </g>
-
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
             <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
-              यद् बीजं वपते (Whatever seed is sown in the earth...)
+              यथा चिन्तनं भवति (As the thoughts and mind are...)
             </text>
           </g>
         )}
 
-        {/* 9. CRAVING & ANXIETY (यावती तृष्णा तावती चिन्ता) */}
-        {sketchId === 'treasure_worry' && (
-          <g id="treasure-worry-scene">
-            {/* Open Strongbox */}
-            <g transform="translate(100, 110)">
-              {/* Chest base */}
-              <rect x="0" y="30" width="120" height="70" fill="#78716c" stroke="#44403c" strokeWidth="2.5" rx="3" />
-              <line x1="0" y1="65" x2="120" y2="65" stroke="#292524" strokeWidth="2" />
-              {/* Open lid */}
-              <path d="M0 30 L30 -5 L150 -5 L120 30 Z" fill="#57534e" stroke="#44403c" strokeWidth="2" />
-              {/* Gold coins spilling */}
-              <g fill="#f59e0b" stroke="#b45309" strokeWidth="1">
-                <circle cx="30" cy="25" r="8" />
-                <circle cx="45" cy="22" r="7" />
-                <circle cx="60" cy="24" r="8" />
-                <circle cx="75" cy="20" r="7" />
-                <circle cx="90" cy="26" r="8" />
-                <circle cx="105" cy="35" r="7" />
+        {/* 7. GIVING & CONTENTMENT (यावत् धनं यच्छति, तावत् सन्तोषं लभते) */}
+        {sketchId === 'giving_joy' && (
+          <g id="scene-giving-joy">
+            {/* Open Cupped Hands Pouring Wealth/Grain */}
+            <g transform="translate(160, 90)">
+              <path d="M20 40 Q50 20 80 30 Q110 45 115 70 L70 80 Z" fill="#f5f0e4" stroke="#44403c" strokeWidth="2" />
+              <circle cx="95" cy="75" r="4" fill="#f59e0b" />
+              <circle cx="100" cy="90" r="3.5" fill="#f59e0b" />
+              <circle cx="108" cy="105" r="4" fill="#f59e0b" />
+            </g>
+            {/* Smiling Heart / Joy on Right */}
+            <g transform="translate(360, 90)">
+              <circle cx="40" cy="40" r="35" stroke="#e11d48" strokeWidth="2.5" fill="#ffe4e6" />
+              <path d="M25 45 Q40 60 55 45" stroke="#e11d48" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+              <circle cx="30" cy="32" r="3" fill="#e11d48" />
+              <circle cx="50" cy="32" r="3" fill="#e11d48" />
+            </g>
+            {matched ? (
+              <text x="260" y="50" fill="#e11d48" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तावत् सन्तोषं लभते (Deep Inner Joy!)
+              </text>
+            ) : (
+              <text x="260" y="50" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...hands open in charity...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यावत् धनं यच्छति (As much wealth as one gives...)
+            </text>
+          </g>
+        )}
+
+        {/* 8. CONTENTMENT & HAPPINESS (यत्र सन्तोषः वर्तते, तत्र सुखं शाश्वतम्) */}
+        {sketchId === 'contentment_bliss' && (
+          <g id="scene-contentment-bliss">
+            {/* Peaceful hermitage cottage */}
+            <path d="M120 180 L120 110 L200 60 L280 110 L280 180 Z" fill="#f5efe6" stroke="#44403c" strokeWidth="2.5" />
+            <path d="M100 110 L200 50 L300 110 Z" fill="url(#crossHatchDark)" stroke="#44403c" strokeWidth="2" />
+            <rect x="180" y="130" width="35" height="50" fill="#78716c" />
+            {/* Gentle resting deer */}
+            <g transform="translate(360, 130)">
+              <ellipse cx="40" cy="30" rx="30" ry="18" fill="#d97706" stroke="#92400e" strokeWidth="1.8" />
+              <circle cx="65" cy="18" r="10" fill="#d97706" stroke="#92400e" strokeWidth="1.8" />
+              <path d="M68 10 L75 0" stroke="#92400e" strokeWidth="2" />
+            </g>
+            {matched ? (
+              <text x="280" y="45" fill="#15803d" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तत्र सुखं शाश्वतम् (Eternal Peace & Joy!)
+              </text>
+            ) : (
+              <text x="280" y="45" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...quiet sanctuary...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यत्र सन्तोषः वर्तते (Where true contentment dwells...)
+            </text>
+          </g>
+        )}
+
+        {/* 9. TEMPLE BELL & PRAYER (यदा घण्टा नादति, तदा पूजा आरभते) */}
+        {sketchId === 'temple_bell' && (
+          <g id="scene-temple-bell">
+            {/* Hanging Bronze Bell */}
+            <g transform="translate(180, 50)">
+              <line x1="40" y1="0" x2="40" y2="30" stroke="#44403c" strokeWidth="4" />
+              <path d="M20 70 C20 40 30 30 40 30 C50 30 60 40 60 70 Z" fill="#ca8a04" stroke="#854d0e" strokeWidth="2.5" />
+              <ellipse cx="40" cy="70" rx="20" ry="6" fill="#ca8a04" stroke="#854d0e" strokeWidth="2" />
+              <circle cx="40" cy="78" r="5" fill="#854d0e" />
+              {/* Sound vibration waves */}
+              <g stroke="#ca8a04" strokeWidth="2" fill="none">
+                <path d="M75 45 Q85 55 75 65" />
+                <path d="M85 40 Q98 55 85 70" />
+                <path d="M5 45 Q-5 55 5 65" />
+                <path d="M-5 40 Q-18 55 -5 70" />
               </g>
             </g>
-
-            {/* Long dark graphite shadows */}
-            <path d="M220 180 L420 180 L460 215 L180 215 Z" fill="url(#crossHatchDark)" opacity="0.6" />
-
-            {/* Pensive figure holding head */}
-            <g transform="translate(420, 90)">
-              <circle cx="30" cy="25" r="12" stroke="#44403c" strokeWidth="2" fill="#e7e0cf" />
-              <path d="M20 40 L10 100 L50 100 L40 40 Z" fill="#57534e" stroke="#292524" strokeWidth="2" />
-              {/* Hand to forehead in worry */}
-              <path d="M38 22 Q46 15 42 32" stroke="#44403c" strokeWidth="3" strokeLinecap="round" />
+            {/* Puja Thali with deepa and flowers */}
+            <g transform="translate(360, 110)">
+              <ellipse cx="50" cy="40" rx="45" ry="15" fill="#fef08a" stroke="#ca8a04" strokeWidth="2" />
+              <circle cx="50" cy="35" r="8" fill="#f59e0b" />
+              <circle cx="30" cy="38" r="5" fill="#ef4444" />
+              <circle cx="70" cy="38" r="5" fill="#ef4444" />
             </g>
-
-            {matched && (
-              <text x="320" y="70" fill="#b91c1c" fontSize="13" fontWeight="bold" fontFamily="Georgia">
-                तावती चिन्ता (Endless Anxiety!)
+            {matched ? (
+              <text x="280" y="40" fill="#ca8a04" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तदा पूजा आरभते (Worship Begins!)
+              </text>
+            ) : (
+              <text x="280" y="40" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...bell resonates...
               </text>
             )}
-
-            <line x1="50" y1="215" x2="550" y2="215" stroke="#44403c" strokeWidth="2" />
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
             <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
-              यावती तृष्णा (As vast as endless hoarding grows...)
+              यदा घण्टा नादति (When the temple bell rings...)
             </text>
           </g>
         )}
 
-        {/* 10. BANYAN & SINCERE EFFORT (यथा बीजं विना वृक्षः न भवति तथा पुरुषार्थं विना दैवं न सिद्ध्यति) */}
-        {sketchId === 'banyan_effort' && (
-          <g id="banyan-effort-scene">
-            {/* Grand Banyan Canopy */}
-            <path
-              d="M180 120 Q120 70 200 40 Q280 10 380 30 Q480 20 460 80 Q520 120 440 140 Z"
-              fill="#d6cebe"
-              stroke="#44403c"
-              strokeWidth="2.5"
-            />
-            {/* Trunk & Aerial roots */}
-            <path d="M300 120 L280 210 L340 210 L320 120 Z" fill="#78716c" stroke="#44403c" strokeWidth="2" />
-            <line x1="240" y1="120" x2="235" y2="210" stroke="#57534e" strokeWidth="2.5" />
-            <line x1="400" y1="110" x2="410" y2="210" stroke="#57534e" strokeWidth="2.5" />
-
-            {/* Tiny guarded seedling on Left */}
-            <g transform="translate(100, 160)">
-              {/* Bamboo protective fence */}
-              <line x1="0" y1="20" x2="0" y2="50" stroke="#b45309" strokeWidth="2" />
-              <line x1="15" y1="15" x2="15" y2="50" stroke="#b45309" strokeWidth="2" />
-              <line x1="30" y1="20" x2="30" y2="50" stroke="#b45309" strokeWidth="2" />
-              <line x1="-5" y1="30" x2="35" y2="30" stroke="#b45309" strokeWidth="1.5" />
-              {/* Sprout */}
-              <path d="M15 50 Q16 35 12 28 Q18 32 24 26" stroke="#15803d" strokeWidth="2.2" fill="none" />
+        {/* 10. POISON TO NECTAR (यत् विषं मन्यते, तत् अमृतं भवितुं अर्हति) */}
+        {sketchId === 'neelakantha_nectar' && (
+          <g id="scene-poison-nectar">
+            {/* Ayurvedic Stone Mortar & Pestle */}
+            <g transform="translate(180, 90)">
+              <path d="M10 30 Q50 90 90 30 Z" fill="#78716c" stroke="#44403c" strokeWidth="2.5" />
+              <line x1="30" y1="10" x2="65" y2="50" stroke="#57534e" strokeWidth="6" strokeLinecap="round" />
             </g>
-
-            {matched && (
-              <text x="240" y="25" fill="#15803d" fontSize="13" fontWeight="bold" fontFamily="Georgia">
-                पुरुषार्थेन दैवसिद्धिः (Puruṣārtha Fulfills Destiny!)
+            {/* Glowing Golden Kalasha of Amrita */}
+            <g transform="translate(360, 80)">
+              <path d="M20 20 L40 20 L40 30 L55 55 C55 80 5 80 5 55 L20 30 Z" fill="#fef08a" stroke="#ca8a04" strokeWidth="2.5" />
+              <circle cx="30" cy="15" r="6" fill="#15803d" />
+              <circle cx="30" cy="5" r="4" fill="#f59e0b" />
+            </g>
+            {matched ? (
+              <text x="260" y="45" fill="#ca8a04" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तत् अमृतं भवितुं अर्हति (Transforms to Nectar!)
+              </text>
+            ) : (
+              <text x="260" y="45" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...bitter herb transforms...
               </text>
             )}
-
             <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
-            <text x="60" y="232" fill="#57534e" fontSize="11" fontFamily="Georgia" fontStyle="italic">
-              यथा बीजं विना वृक्षः न भवति (Without a seed no banyan can rise...)
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यत् विषं मन्यते (What is deemed bitter poison...)
+            </text>
+          </g>
+        )}
+
+        {/* 11. ANGER & WISDOM (यत्र क्रोधः प्रविशति, तत्र विवेकः नश्यति) */}
+        {sketchId === 'anger_wisdom' && (
+          <g id="scene-anger-wisdom">
+            {/* Jagged storm clouds & lightning */}
+            <path d="M80 60 Q130 30 180 55 Q240 30 280 65" stroke="#ef4444" strokeWidth="3" fill="none" />
+            <path d="M180 60 L160 90 L190 95 L170 130" stroke="#ef4444" strokeWidth="3" fill="none" />
+            {/* Cracked mirror */}
+            <g transform="translate(340, 70)">
+              <ellipse cx="40" cy="50" rx="35" ry="45" fill="#f1f5f9" stroke="#44403c" strokeWidth="2.5" />
+              <path d="M20 20 L45 55 L35 80 L55 90" stroke="#44403c" strokeWidth="2" fill="none" />
+            </g>
+            {matched ? (
+              <text x="240" y="40" fill="#b91c1c" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तत्र विवेकः नश्यति (Wisdom is Extinguished!)
+              </text>
+            ) : (
+              <text x="240" y="40" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...storm clouding judgment...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यत्र क्रोधः प्रविशति (Where blinding anger enters...)
+            </text>
+          </g>
+        )}
+
+        {/* 12. DAWN & SUN (यदा प्रभातः जायते, तदा सूर्यः दृश्यते) */}
+        {sketchId === 'dawn_sun' && (
+          <g id="scene-dawn-sun">
+            {/* Eastern Hill Skyline */}
+            <path d="M40 180 Q160 110 300 150 Q440 120 560 170" stroke="#57534e" strokeWidth="2" fill="#f5efe6" />
+            {/* Rising Sun */}
+            <g transform="translate(260, 90)">
+              <circle cx="40" cy="40" r="32" fill="#fef08a" stroke="#ca8a04" strokeWidth="2.5" />
+              <g stroke="#ca8a04" strokeWidth="2" strokeLinecap="round">
+                <line x1="40" y1="-2" x2="40" y2="8" />
+                <line x1="75" y1="15" x2="85" y2="5" />
+                <line x1="5" y1="15" x2="-5" y2="5" />
+              </g>
+            </g>
+            {/* Birds in flight */}
+            <path d="M120 80 Q130 70 140 80 Q150 70 160 80" stroke="#44403c" strokeWidth="2" fill="none" />
+            <path d="M420 70 Q430 60 440 70 Q450 60 460 70" stroke="#44403c" strokeWidth="2" fill="none" />
+            {matched ? (
+              <text x="240" y="45" fill="#ca8a04" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तदा सूर्यः दृश्यते (The Sun Beholds Creation!)
+              </text>
+            ) : (
+              <text x="240" y="45" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...dawn breaks...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यदा प्रभातः जायते (When the golden dawn awakens...)
+            </text>
+          </g>
+        )}
+
+        {/* 13. TRUTH & FEARLESSNESS (यदि सत्यं वदसि, तर्हि भयं न भवति) */}
+        {sketchId === 'truth_fearless' && (
+          <g id="scene-truth-fearless">
+            {/* Upright Young Seeker */}
+            <g transform="translate(260, 70)">
+              <circle cx="30" cy="25" r="14" stroke="#44403c" strokeWidth="2" fill="#fdfbf7" />
+              <path d="M18 42 L8 105 L52 105 L42 42 Z" fill="#fef3c7" stroke="#b45309" strokeWidth="2" />
+              {/* Upright gesture */}
+              <line x1="50" y1="55" x2="75" y2="35" stroke="#b45309" strokeWidth="2.5" />
+            </g>
+            {matched ? (
+              <text x="230" y="45" fill="#15803d" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तर्हि भयं न भवति (Fear Is Banished!)
+              </text>
+            ) : (
+              <text x="230" y="45" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...truth grants fearlessness...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यदि सत्यं वदसि (If you speak absolute truth...)
+            </text>
+          </g>
+        )}
+
+        {/* 14. SWEET FRUIT & PARROT (यत्र मधुरं फलम्, तत्र कीरः आगच्छति) */}
+        {sketchId === 'parrot_fruit' && (
+          <g id="scene-parrot-fruit">
+            {/* Branch with Pomegranate */}
+            <path d="M40 160 Q200 120 400 140" stroke="#44403c" strokeWidth="6" strokeLinecap="round" />
+            <g transform="translate(180, 100)">
+              <circle cx="30" cy="30" r="24" fill="#ef4444" stroke="#b91c1c" strokeWidth="2" />
+              <path d="M22 6 L30 0 L38 6 Z" fill="#b91c1c" />
+            </g>
+            {/* Green Parrot landing */}
+            <g transform="translate(320, 80)">
+              <ellipse cx="40" cy="40" rx="26" ry="15" fill="#22c55e" stroke="#15803d" strokeWidth="2" />
+              <circle cx="65" cy="30" r="10" fill="#22c55e" stroke="#15803d" strokeWidth="2" />
+              <path d="M72 30 Q80 32 75 40 Z" fill="#ef4444" />
+              <path d="M15 45 L-15 65" stroke="#15803d" strokeWidth="3" />
+            </g>
+            {matched ? (
+              <text x="280" y="45" fill="#15803d" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तत्र कीरः आगच्छति (The Parrot Alights!)
+              </text>
+            ) : (
+              <text x="280" y="45" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...sweet fruit beckons...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यत्र मधुरं फलम् (Where the sweet fruit ripens...)
+            </text>
+          </g>
+        )}
+
+        {/* 15. RAIN & RIVER (यथा वृष्टिः जायते, तथा नदी पूर्यते) */}
+        {sketchId === 'rain_river' && (
+          <g id="scene-rain-river">
+            {/* Torrential Rain from clouds */}
+            <g stroke="#0284c7" strokeWidth="2" strokeLinecap="round">
+              <line x1="120" y1="40" x2="105" y2="90" />
+              <line x1="180" y1="35" x2="165" y2="95" />
+              <line x1="240" y1="40" x2="225" y2="90" />
+              <line x1="300" y1="35" x2="285" y2="95" />
+            </g>
+            {/* Winding River Rapids */}
+            <path d="M60 215 Q200 140 400 150 Q500 160 560 215" fill="#e0f2fe" stroke="#0284c7" strokeWidth="3" />
+            {matched ? (
+              <text x="260" y="45" fill="#0284c7" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तथा नदी पूर्यते (The River Swells Full!)
+              </text>
+            ) : (
+              <text x="260" y="45" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...rains pour into valley...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यथा वृष्टिः जायते (As the soothing rain falls...)
+            </text>
+          </g>
+        )}
+
+        {/* 16. TRUTH & PEACE (यः सत्यं पश्यति, सः शान्तिं प्राप्नोति) */}
+        {sketchId === 'truth_peace' && (
+          <g id="scene-truth-peace">
+            {/* Seated Sage with Peaceful Halo */}
+            <g transform="translate(250, 70)">
+              <circle cx="40" cy="40" r="42" stroke="#ca8a04" strokeWidth="1.5" strokeDasharray="5 3" fill="none" />
+              <circle cx="40" cy="30" r="14" stroke="#44403c" strokeWidth="2" fill="#fdfbf7" />
+              <path d="M28 46 L18 105 L62 105 L52 46 Z" fill="#f5efe6" stroke="#44403c" strokeWidth="2" />
+              <ellipse cx="40" cy="105" rx="36" ry="12" fill="#d6cebe" stroke="#44403c" strokeWidth="2" />
+            </g>
+            {matched ? (
+              <text x="210" y="40" fill="#15803d" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                सः शान्तिं प्राप्नोति (Attains Absolute Peace!)
+              </text>
+            ) : (
+              <text x="210" y="40" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...gazing upon truth...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यः सत्यं पश्यति (He who beholds the eternal truth...)
+            </text>
+          </g>
+        )}
+
+        {/* 17. LION & ELEPHANT (यदा सिंहः गर्जति, तदा गजः कम्पते) */}
+        {sketchId === 'lion_elephant' && (
+          <g id="scene-lion-elephant">
+            {/* Roaring Lion on Rock */}
+            <g transform="translate(140, 80)">
+              <path d="M-20 80 L80 80 L60 40 L-10 40 Z" fill="#78716c" stroke="#44403c" strokeWidth="2" />
+              {/* Lion head with mane */}
+              <circle cx="50" cy="30" r="22" fill="#f59e0b" stroke="#b45309" strokeWidth="2" />
+              <path d="M65 30 L80 25 L70 38 Z" fill="#b45309" />
+              <text x="75" y="15" fill="#b45309" fontSize="14" fontWeight="bold">ROAR!</text>
+            </g>
+            {/* Trembling Elephant */}
+            <g transform="translate(360, 90)">
+              <ellipse cx="50" cy="45" rx="45" ry="32" fill="#94a3b8" stroke="#475569" strokeWidth="2" />
+              <circle cx="15" cy="35" r="18" fill="#94a3b8" stroke="#475569" strokeWidth="2" />
+              <path d="M5 45 Q-15 70 0 85" stroke="#475569" strokeWidth="6" strokeLinecap="round" fill="none" />
+            </g>
+            {matched ? (
+              <text x="260" y="45" fill="#b45309" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तदा गजः कम्पते (The Elephant Trembles!)
+              </text>
+            ) : (
+              <text x="260" y="45" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...lion roars on the cliff...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यदा सिंहः गर्जति (When the king of beasts roars...)
+            </text>
+          </g>
+        )}
+
+        {/* 18. GANGA & SACRED EARTH (यत्र गङ्गा वहति, तत्र भूमिः पवित्रा) */}
+        {sketchId === 'ganga_sacred' && (
+          <g id="scene-ganga-sacred">
+            {/* Holy river flowing past stone ghats */}
+            <path d="M50 180 Q250 120 400 150 Q520 180 580 160" stroke="#0284c7" strokeWidth="8" strokeLinecap="round" />
+            {/* Stone Ghat Steps */}
+            <g stroke="#57534e" strokeWidth="2" fill="#e7e0cf">
+              <rect x="80" y="180" width="100" height="15" />
+              <rect x="90" y="195" width="80" height="15" />
+            </g>
+            {/* Diya floating on river */}
+            <circle cx="280" cy="145" r="5" fill="#f59e0b" />
+            {matched ? (
+              <text x="240" y="45" fill="#0369a1" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तत्र भूमिः पवित्रा (Sacred Holy Earth!)
+              </text>
+            ) : (
+              <text x="240" y="45" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...holy river flows...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यत्र गङ्गा वहति (Where Mother Ganga flows...)
+            </text>
+          </g>
+        )}
+
+        {/* 19. CLOTH & WASHING (यत् वस्त्रं मलिनम्, तत् क्षालनेन शुध्यति) */}
+        {sketchId === 'washing_cloth' && (
+          <g id="scene-washing-cloth">
+            {/* River Stone with clean white garment */}
+            <ellipse cx="280" cy="150" rx="90" ry="25" fill="#78716c" stroke="#44403c" strokeWidth="2" />
+            <path d="M220 145 Q280 130 340 145 Q310 160 250 155 Z" fill="#ffffff" stroke="#0284c7" strokeWidth="2" />
+            {/* Water droplets */}
+            <g fill="#38bdf8">
+              <circle cx="220" cy="125" r="3.5" />
+              <circle cx="260" cy="115" r="4" />
+              <circle cx="310" cy="120" r="3.5" />
+            </g>
+            {matched ? (
+              <text x="210" y="45" fill="#0284c7" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तत् क्षालनेन शुध्यति (Purified by Washing!)
+              </text>
+            ) : (
+              <text x="210" y="45" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...cleansing the fabric...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यत् वस्त्रं मलिनम् (Whatever garment is stained...)
+            </text>
+          </g>
+        )}
+
+        {/* 20. LAMP & DARKNESS (यत्र दीपः तिष्ठति, तत्र तमः दूरीभवति) */}
+        {sketchId === 'lamp_darkness' && (
+          <g id="scene-lamp-darkness">
+            {/* Standing Deepastambha Brass Lamp */}
+            <g transform="translate(280, 50)">
+              <rect x="18" y="20" width="4" height="120" fill="#ca8a04" stroke="#854d0e" strokeWidth="1.5" />
+              <ellipse cx="20" cy="140" rx="28" ry="10" fill="#ca8a04" stroke="#854d0e" strokeWidth="2" />
+              <ellipse cx="20" cy="30" rx="20" ry="7" fill="#ca8a04" stroke="#854d0e" strokeWidth="2" />
+              {/* Flame */}
+              <path d="M20 25 Q14 12 20 0 Q26 12 20 25 Z" fill="#f59e0b" stroke="#b45309" strokeWidth="1.8" />
+              <circle cx="20" cy="15" r="4" fill="#fef08a" />
+            </g>
+            {matched ? (
+              <text x="210" y="35" fill="#ca8a04" fontSize="14" fontWeight="bold" fontFamily="Georgia">
+                तत्र तमः दूरीभवति (Darkness Driven Away!)
+              </text>
+            ) : (
+              <text x="210" y="35" fill="#a8a29e" fontSize="12" fontStyle="italic">
+                ...solitary flame stands...
+              </text>
+            )}
+            <line x1="40" y1="215" x2="560" y2="215" stroke="#44403c" strokeWidth="2" />
+            <text x="60" y="232" fill="#57534e" fontSize="12" fontFamily="Georgia" fontStyle="italic">
+              यत्र दीपः तिष्ठति (Where the steady lamp stands...)
             </text>
           </g>
         )}
@@ -558,12 +722,12 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
       {/* Header */}
       <header className="psm-header">
         <div className="psm-eyebrow">
-          <span className="psm-badge">PENCIL-SKETCH VISUAL PUZZLE</span>
+          <span className="psm-badge">20 VISUAL RIDDLES · GRAPHITE SKETCHBOOK</span>
           <span className="psm-tag">यत्-तत् चित्रात्मक-संयोजनम् · Relative Clause Matching</span>
         </div>
         <h2 className="psm-title">Pencil-Sketch Block Matching</h2>
         <p className="psm-subtitle">
-          Connect relative clause blocks (like यत्र धूमः) with correlative answer blocks (like तत्र अग्निः) to reveal authentic hand-drawn graphite riddle scenes and Vedic insights.
+          Connect relative clause blocks (like यत्र प्रकाशः भवति) with correlative answer blocks (like तत्र अन्धकारः नश्यति) to complete authentic hand-drawn graphite riddle scenes and reveal classical Sanskrit wisdom.
         </p>
 
         {/* Navigation Tabs */}
@@ -577,7 +741,7 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
             }}
           >
             <span>✏️</span>
-            <span>Riddle Scene Canvas</span>
+            <span>Riddle Scene #{currentIndex + 1}</span>
           </button>
           <button
             type="button"
@@ -619,7 +783,7 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
             <div className="psm-matching-arena">
               {/* Left Column: Lead Relative Clause Block */}
               <div className="psm-lead-card">
-                <div className="psm-lead-tag">Relative Clause (सम्बन्धवाक्यम्)</div>
+                <div className="psm-lead-tag">Clause A (सम्बन्धवाक्यम्)</div>
                 <div className="psm-lead-devanagari">{currentRiddle.relativeBlock}</div>
                 <div className="psm-lead-translit">({currentRiddle.relativeTranslit})</div>
                 <div className="psm-lead-meaning">"{currentRiddle.relativeMeaning}"</div>
@@ -660,7 +824,7 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
                 <div className="psm-rp-header">
                   <span className="psm-rp-badge">
                     <span>✨</span>
-                    <span>Riddle Mastered &amp; Sketch Completed!</span>
+                    <span>Riddle Solved &amp; Hand-Drawn Scene Completed!</span>
                   </span>
                   <button
                     type="button"
@@ -683,14 +847,14 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
 
                 <div className="psm-rp-footer">
                   <span style={{ fontSize: '0.85rem', color: '#78716c' }}>
-                    Scene {currentIndex + 1} of {RELATIVE_CLAUSE_RIDDLES.length}
+                    Riddle #{currentRiddle.riddleNumber} of {RELATIVE_CLAUSE_RIDDLES.length}
                   </span>
                   <button
                     type="button"
                     className="psm-btn-next"
                     onClick={handleNextRiddle}
                   >
-                    Next Riddle Scene ➜
+                    Next Riddle #{((currentIndex + 1) % RELATIVE_CLAUSE_RIDDLES.length) + 1} ➜
                   </button>
                 </div>
               </div>
@@ -700,31 +864,42 @@ export const PencilSketchRelativeClauseMatcher: React.FC<PencilSketchRelativeCla
       )}
 
       {/* ===================================================================
-          TAB 2: SKETCHBOOK GALLERY
+          TAB 2: SKETCHBOOK GALLERY (All 20 Scenes)
           =================================================================== */}
       {activeTab === 'gallery' && (
         <section aria-label="Sketchbook Gallery">
           <div className="psm-gallery-grid">
-            {RELATIVE_CLAUSE_RIDDLES.map((riddle) => {
+            {RELATIVE_CLAUSE_RIDDLES.map((riddle, idx) => {
               const isUnlocked = unlockedIds.has(riddle.id);
 
               return (
                 <div key={riddle.id} className="psm-gallery-card">
                   <div className="psm-gc-header">
-                    <span>{riddle.theme}</span>
-                    <span style={{ float: 'right' }}>{isUnlocked ? '✓ Unlocked' : '🔒 Locked'}</span>
+                    <span>#{riddle.riddleNumber} · {riddle.theme}</span>
+                    <span style={{ float: 'right' }}>{isUnlocked ? '✓ Solved' : '🔒 Riddle'}</span>
                   </div>
                   <div className="psm-gc-sanskrit">{riddle.fullSanskrit}</div>
                   <div className="psm-gc-english">"{riddle.englishTranslation}"</div>
-                  <button
-                    type="button"
-                    className="psm-btn-listen"
-                    style={{ fontSize: '0.8rem', padding: '0.3rem 0.75rem' }}
-                    onClick={() => handleSpeak(riddle.fullSanskrit)}
-                  >
-                    <span>🔊</span>
-                    <span>Hear Audio</span>
-                  </button>
+                  <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+                    <button
+                      type="button"
+                      className="psm-btn-listen"
+                      style={{ fontSize: '0.8rem', padding: '0.3rem 0.75rem' }}
+                      onClick={() => handleSpeak(riddle.fullSanskrit)}
+                    >
+                      <span>🔊</span>
+                      <span>Listen</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="psm-btn-listen"
+                      style={{ fontSize: '0.8rem', padding: '0.3rem 0.75rem', background: '#faf7f0' }}
+                      onClick={() => handleJumpToRiddle(idx)}
+                    >
+                      <span>✏️</span>
+                      <span>Play Scene</span>
+                    </button>
+                  </div>
                 </div>
               );
             })}

@@ -1,7 +1,8 @@
 /**
  * Dhatupatha Matrix Connector Data
  * Interactive modular puzzle data connecting verbal roots (धातवः)
- * with Singular (-ति), Dual (-तः), and Plural (-न्ति) terminal blocks dynamically.
+ * with Singular (-ति / -ते), Dual (-तः / -एते), and Plural (-न्ति / -न्ते) terminal blocks dynamically.
+ * Excludes common beginner roots (पठ्, धाव्, गम्, क्रीड्, लिख्, पच्, हस्) for advanced pedagogical variety.
  */
 
 export interface VerbConjugationBlock {
@@ -10,193 +11,571 @@ export interface VerbConjugationBlock {
   translit: string;
   meaning: string;
   pronoun: string;
+  sentence: string;
 }
 
 export interface MatrixRootItem {
   id: string;
   root: string;
   baseTranslit: string;
+  subjectNoun: string;
   meaning: string;
   englishAction: string;
   gana: string;
   ganaNumber: number;
   stem: string;
-  vikaran: string; // usually 'अ' (शप्) for Class 1 (भ्वादिगणः)
+  vikaran: string;
   padam: 'परस्मैपदम्' | 'आत्मनेपदम्' | 'उभयपदम्';
   prathama: {
-    singular: VerbConjugationBlock; // -ति
-    dual: VerbConjugationBlock;     // -तः
-    plural: VerbConjugationBlock;   // -न्ति
+    singular: VerbConjugationBlock;
+    dual: VerbConjugationBlock;
+    plural: VerbConjugationBlock;
   };
   madhyama: {
-    singular: VerbConjugationBlock; // -सि
-    dual: VerbConjugationBlock;     // -थः
-    plural: VerbConjugationBlock;   // -थ
+    singular: VerbConjugationBlock;
+    dual: VerbConjugationBlock;
+    plural: VerbConjugationBlock;
   };
   uttama: {
-    singular: VerbConjugationBlock; // -मि
-    dual: VerbConjugationBlock;     // -वः
-    plural: VerbConjugationBlock;   // -मः
+    singular: VerbConjugationBlock;
+    dual: VerbConjugationBlock;
+    plural: VerbConjugationBlock;
   };
-  exampleSentences: {
-    singular: { sanskrit: string; translit: string; english: string };
-    dual: { sanskrit: string; translit: string; english: string };
-    plural: { sanskrit: string; translit: string; english: string };
+  targetSentence: {
+    number: 'singular' | 'dual' | 'plural';
+    person: 'prathama' | 'madhyama' | 'uttama';
+    sanskrit: string;
+    translit: string;
+    english: string;
   };
   mnemonic: string;
 }
 
 export interface MatrixPuzzleChallenge {
   id: string;
+  challengeNumber: number;
   title: string;
   rootId: string;
+  subjectNoun: string;
+  rootSymbol: string;
   targetNumber: 'singular' | 'dual' | 'plural';
   targetPerson: 'prathama' | 'madhyama' | 'uttama';
   targetForm: string;
+  targetSentence: string;
   prompt: string;
   subjectContext: string;
+  meaning: string;
   hint: string;
   explanation: string;
+  options: {
+    number: 'singular' | 'dual' | 'plural';
+    affix: string;
+    sentence: string;
+  }[];
 }
 
 export const MATRIX_ROOTS: MatrixRootItem[] = [
+  // 1. सिंह + गर्ज् (1P)
   {
-    id: 'path',
-    root: 'पठ्',
-    baseTranslit: 'paṭh',
-    meaning: 'पठनम् (To Read / Study)',
-    englishAction: 'Read / Study',
+    id: 'garj',
+    root: 'गर्ज्',
+    baseTranslit: 'garj',
+    subjectNoun: 'सिंह (Lion)',
+    meaning: 'गर्जनम् (To Roar)',
+    englishAction: 'Roar',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
-    stem: 'पठ',
+    stem: 'गर्ज',
     vikaran: 'अ (शप्)',
     padam: 'परस्मैपदम्',
     prathama: {
-      singular: { affix: '-ति', form: 'पठति', translit: 'paṭhati', meaning: 'reads / studies', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'पठतः', translit: 'paṭhataḥ', meaning: 'two read / study', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'पठन्ति', translit: 'paṭhanti', meaning: 'they read / study', pronoun: 'ते / ताः / तानि' },
+      singular: { affix: '-ति', form: 'गर्जति', translit: 'garjati', meaning: 'roars', pronoun: 'सिंहः', sentence: 'सिंहः गर्जति' },
+      dual: { affix: '-तः', form: 'गर्जतः', translit: 'garjataḥ', meaning: 'two roar', pronoun: 'सिंहौ', sentence: 'सिंहौ गर्जतः' },
+      plural: { affix: '-न्ति', form: 'गर्जन्ति', translit: 'garjanti', meaning: 'they roar', pronoun: 'सिंहाः', sentence: 'सिंहाः गर्जन्ति' },
     },
     madhyama: {
-      singular: { affix: '-सि', form: 'पठसि', translit: 'paṭhasi', meaning: 'you read', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'पठथः', translit: 'paṭhathaḥ', meaning: 'you two read', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'पठथ', translit: 'paṭhatha', meaning: 'you all read', pronoun: 'यूयम्' },
+      singular: { affix: '-सि', form: 'गर्जसि', translit: 'garjasi', meaning: 'you roar', pronoun: 'त्वम्', sentence: 'त्वं गर्जसि' },
+      dual: { affix: '-थः', form: 'गर्जथः', translit: 'garjathaḥ', meaning: 'you two roar', pronoun: 'युवाम्', sentence: 'युवां गर्जथः' },
+      plural: { affix: '-थ', form: 'गर्जथ', translit: 'garjatha', meaning: 'you all roar', pronoun: 'यूयम्', sentence: 'यूयं गर्जथ' },
     },
     uttama: {
-      singular: { affix: '-मि', form: 'पठामि', translit: 'paṭhāmi', meaning: 'I read', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'पठावः', translit: 'paṭhāvaḥ', meaning: 'we two read', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'पठामः', translit: 'paṭhāmaḥ', meaning: 'we all read', pronoun: 'वयम्' },
+      singular: { affix: '-मि', form: 'गर्जामि', translit: 'garjāmi', meaning: 'I roar', pronoun: 'अहम्', sentence: 'अहं गर्जामि' },
+      dual: { affix: '-वः', form: 'गर्जावः', translit: 'garjāvaḥ', meaning: 'we two roar', pronoun: 'आवाम्', sentence: 'आवां गर्जावः' },
+      plural: { affix: '-मः', form: 'गर्जheadामः', translit: 'garjāmaḥ', meaning: 'we all roar', pronoun: 'वयम्', sentence: 'वयं गर्जामः' },
     },
-    exampleSentences: {
-      singular: { sanskrit: 'बालकः पुस्तकं पठति।', translit: 'Bālakaḥ pustakaṁ paṭhati.', english: 'The boy reads the book.' },
-      dual: { sanskrit: 'बालकौ पुस्तकं पठतः।', translit: 'Bālakau pustakaṁ paṭhataḥ.', english: 'The two boys read the book.' },
-      plural: { sanskrit: 'बालकाः पुस्तकं पठन्ति।', translit: 'Bālakāḥ pustakaṁ paṭhanti.', english: 'The boys read the book.' },
+    targetSentence: {
+      number: 'singular',
+      person: 'prathama',
+      sanskrit: 'सिंहः गर्जति',
+      translit: 'Siṁhaḥ garjati',
+      english: 'The lion roars.',
     },
-    mnemonic: 'पठ् + अ + ति = पठति (one reads); पठ् + अ + तः = पठतः (two read); पठ् + अ + न्ति = पठन्ति (many read).',
+    mnemonic: 'सिंहः गर्जति (one lion roars); सिंहौ गर्जतः (two lions roar); सिंहाः गर्जन्ति (a pride of lions roar).',
   },
+
+  // 2. सूर्य + तप् (1P)
   {
-    id: 'dhav',
-    root: 'धाव्',
-    baseTranslit: 'dhāv',
-    meaning: 'धावनम् (To Run)',
-    englishAction: 'Run',
+    id: 'tap',
+    root: 'तप्',
+    baseTranslit: 'tap',
+    subjectNoun: 'सूर्य (Sun)',
+    meaning: 'तापनम् (To Shine / Burn / Heat)',
+    englishAction: 'Shine / Burn',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
-    stem: 'धाव',
+    stem: 'तप',
     vikaran: 'अ (शप्)',
     padam: 'परस्मैपदम्',
     prathama: {
-      singular: { affix: '-ति', form: 'धावति', translit: 'dhāvati', meaning: 'runs', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'धावतः', translit: 'dhāvataḥ', meaning: 'two run', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'धावन्ति', translit: 'dhāvanti', meaning: 'they run', pronoun: 'ते / ताः / तानि' },
+      singular: { affix: '-ति', form: 'तपति', translit: 'tapati', meaning: 'shines / heats', pronoun: 'सूर्यः', sentence: 'सूर्यः तपति' },
+      dual: { affix: '-तः', form: 'तपतः', translit: 'tapataḥ', meaning: 'two shine / heat', pronoun: 'सूर्यौ', sentence: 'सूर्यौ तपतः' },
+      plural: { affix: '-न्ति', form: 'तपन्ति', translit: 'tapanti', meaning: 'they shine / heat', pronoun: 'सूर्याः', sentence: 'सूर्याः तपन्ति' },
     },
     madhyama: {
-      singular: { affix: '-सि', form: 'धावसि', translit: 'dhāvasi', meaning: 'you run', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'धावथः', translit: 'dhāvathaḥ', meaning: 'you two run', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'धावथ', translit: 'dhāvatha', meaning: 'you all run', pronoun: 'यूयम्' },
+      singular: { affix: '-सि', form: 'तपसि', translit: 'tapasi', meaning: 'you burn', pronoun: 'त्वम्', sentence: 'त्वं तपसि' },
+      dual: { affix: '-थः', form: 'तपथः', translit: 'tapathaḥ', meaning: 'you two burn', pronoun: 'युवाम्', sentence: 'युवां तपथः' },
+      plural: { affix: '-थ', form: 'तपथ', translit: 'tapatha', meaning: 'you all burn', pronoun: 'यूयम्', sentence: 'यूयं तपथ' },
     },
     uttama: {
-      singular: { affix: '-मि', form: 'धावामि', translit: 'dhāvāmi', meaning: 'I run', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'धावावः', translit: 'dhāvāvaḥ', meaning: 'we two run', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'धावामः', translit: 'dhāvāmaḥ', meaning: 'we all run', pronoun: 'वयम्' },
+      singular: { affix: '-मि', form: 'तपामि', translit: 'tapāmi', meaning: 'I burn / shine', pronoun: 'अहम्', sentence: 'अहं तपामि' },
+      dual: { affix: '-वः', form: 'तपावः', translit: 'tapāvaḥ', meaning: 'we two shine', pronoun: 'आवाम्', sentence: 'आवां तपावः' },
+      plural: { affix: '-मः', form: 'तपामः', translit: 'tapāmaḥ', meaning: 'we all shine', pronoun: 'वयम्', sentence: 'वयं तपामः' },
     },
-    exampleSentences: {
-      singular: { sanskrit: 'अश्वः तीव्रेण धावति।', translit: 'Aśvaḥ tīvreṇa dhāvati.', english: 'The horse runs swiftly.' },
-      dual: { sanskrit: 'अश्वौ तीव्रेण धावतः।', translit: 'Aśvau tīvreṇa dhāvataḥ.', english: 'The two horses run swiftly.' },
-      plural: { sanskrit: 'अश्वाः तीव्रेण धावन्ति।', translit: 'Aśvāḥ tīvreṇa dhāvanti.', english: 'The horses run swiftly.' },
+    targetSentence: {
+      number: 'dual',
+      person: 'prathama',
+      sanskrit: 'सूर्यौ तपतः',
+      translit: 'Sūryau tapataḥ',
+      english: 'Two suns shine/burn.',
     },
-    mnemonic: 'धाव् represents dynamic forward momentum: धावति (one runs), धावतः (pair), धावन्ति (herd).',
+    mnemonic: 'तप् (solar radiation): सूर्यः तपति, सूर्यौ तपतः, सूर्याः तपन्ति.',
   },
+
+  // 3. मेघ + वर्ष् (1P)
   {
-    id: 'gam',
-    root: 'गम्',
-    baseTranslit: 'gam (gacch)',
-    meaning: 'गमनम् (To Go)',
-    englishAction: 'Go',
+    id: 'varsh',
+    root: 'वर्ष्',
+    baseTranslit: 'varṣ',
+    subjectNoun: 'मेघ (Cloud)',
+    meaning: 'वर्षणम् (To Rain)',
+    englishAction: 'Rain',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
-    stem: 'गच्छ',
-    vikaran: 'अ (इषिगमिभ्यां च्छः)',
+    stem: 'वर्ष',
+    vikaran: 'अ (शप्)',
     padam: 'परस्मैपदम्',
     prathama: {
-      singular: { affix: '-ति', form: 'गच्छति', translit: 'gacchati', meaning: 'goes', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'गच्छतः', translit: 'gacchataḥ', meaning: 'two go', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'गच्छन्ति', translit: 'gacchanti', meaning: 'they go', pronoun: 'ते / ताः / तानि' },
+      singular: { affix: '-ति', form: 'वर्षति', translit: 'varṣati', meaning: 'rains', pronoun: 'मेघः', sentence: 'वर्षति मेघः' },
+      dual: { affix: '-तः', form: 'वर्षतः', translit: 'varṣataḥ', meaning: 'two rain', pronoun: 'मेघौ', sentence: 'वर्षतः मेघौ' },
+      plural: { affix: '-न्ति', form: 'वर्षन्ति', translit: 'varṣanti', meaning: 'they rain', pronoun: 'मेघाः', sentence: 'वर्षन्ति मेघाः' },
     },
     madhyama: {
-      singular: { affix: '-सि', form: 'गच्छसि', translit: 'gacchasi', meaning: 'you go', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'गच्छथः', translit: 'gacchathaḥ', meaning: 'you two go', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'गच्छथ', translit: 'gacchatha', meaning: 'you all go', pronoun: 'यूयम्' },
+      singular: { affix: '-सि', form: 'वर्षसि', translit: 'varṣasi', meaning: 'you rain', pronoun: 'त्वम्', sentence: 'त्वं वर्षसि' },
+      dual: { affix: '-थः', form: 'वर्षथः', translit: 'varṣathaḥ', meaning: 'you two rain', pronoun: 'युवाम्', sentence: 'युवां वर्षथः' },
+      plural: { affix: '-थ', form: 'वर्षथ', translit: 'varṣatha', meaning: 'you all rain', pronoun: 'यूयम्', sentence: 'यूयं वर्षथ' },
     },
     uttama: {
-      singular: { affix: '-मि', form: 'गच्छामि', translit: 'gacchāmi', meaning: 'I go', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'गच्छावः', translit: 'gacchāvaḥ', meaning: 'we two go', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'गच्छामः', translit: 'gacchāmaḥ', meaning: 'we all go', pronoun: 'वयम्' },
+      singular: { affix: '-मि', form: 'वर्षामि', translit: 'varṣāmi', meaning: 'I rain', pronoun: 'अहम्', sentence: 'अहं वर्षामि' },
+      dual: { affix: '-वः', form: 'वर्षावः', translit: 'varṣāvaḥ', meaning: 'we two rain', pronoun: 'आवाम्', sentence: 'आवां वर्षावः' },
+      plural: { affix: '-मः', form: 'वर्षामः', translit: 'varṣāmaḥ', meaning: 'we all rain', pronoun: 'वयम्', sentence: 'वयं वर्षामः' },
     },
-    exampleSentences: {
-      singular: { sanskrit: 'छात्रा विद्यालयं गच्छति।', translit: 'Chātrā vidyālayaṁ gacchati.', english: 'The student goes to school.' },
-      dual: { sanskrit: 'छात्रे विद्यालयं गच्छतः।', translit: 'Chātre vidyālayaṁ gacchataḥ.', english: 'The two students go to school.' },
-      plural: { sanskrit: 'छात्राः विद्यालयं गच्छन्ति।', translit: 'Chātrāḥ vidyālayaṁ gacchanti.', english: 'The students go to school.' },
+    targetSentence: {
+      number: 'plural',
+      person: 'prathama',
+      sanskrit: 'वर्षन्ति मेघाः',
+      translit: 'Varṣanti meghāḥ',
+      english: 'The clouds rain.',
     },
-    mnemonic: 'Special stem alteration: Root गम् morphs into stem गच्छ before sarvadhatuka affixes: गच्छति, गच्छतः, गच्छन्ति!',
+    mnemonic: 'वर्ष्: वर्षति मेघः, वर्षतः मेघौ, वर्षन्ति मेघाः.',
   },
+
+  // 4. चोर + मुष् (9P)
   {
-    id: 'likh',
-    root: 'लिख्',
-    baseTranslit: 'likh',
-    meaning: 'लेखनम् (To Write)',
-    englishAction: 'Write',
-    gana: 'तुदादिगणः',
-    ganaNumber: 6,
-    stem: 'लिख',
-    vikaran: 'अ (श)',
+    id: 'mush',
+    root: 'मुष्',
+    baseTranslit: 'muṣ',
+    subjectNoun: 'चोर (Thief)',
+    meaning: 'स्तेयनम् (To Steal / Rob)',
+    englishAction: 'Steal / Rob',
+    gana: 'क्र्यादिगणः',
+    ganaNumber: 9,
+    stem: 'मुष्',
+    vikaran: 'ना (श्ना)',
     padam: 'परस्मैपदम्',
     prathama: {
-      singular: { affix: '-ति', form: 'लिखति', translit: 'likhati', meaning: 'writes', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'लिखतः', translit: 'likhataḥ', meaning: 'two write', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'लिखन्ति', translit: 'likhanti', meaning: 'they write', pronoun: 'ते / ताः / तानि' },
+      singular: { affix: '-नाति', form: 'मुष्णाति', translit: 'muṣṇāti', meaning: 'steals', pronoun: 'चोरः', sentence: 'चोरः मुष्णाति' },
+      dual: { affix: '-नीतः', form: 'मुष्णीतः', translit: 'muṣṇītaḥ', meaning: 'two steal', pronoun: 'चोरौ', sentence: 'चोरौ मुष्णीतः' },
+      plural: { affix: '-नन्ति', form: 'मुष्णन्ति', translit: 'muṣṇanti', meaning: 'they steal', pronoun: 'चोराः', sentence: 'चोराः मुष्णन्ति' },
     },
     madhyama: {
-      singular: { affix: '-सि', form: 'लिखसि', translit: 'likhasi', meaning: 'you write', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'लिखथः', translit: 'likhathaḥ', meaning: 'you two write', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'लिखथ', translit: 'likhatha', meaning: 'you all write', pronoun: 'यूयम्' },
+      singular: { affix: '-नासि', form: 'मुष्णासि', translit: 'muṣṇāsi', meaning: 'you steal', pronoun: 'त्वम्', sentence: 'त्वं मुष्णासि' },
+      dual: { affix: '-नीथः', form: 'मुष्णीथः', translit: 'muṣṇīthaḥ', meaning: 'you two steal', pronoun: 'युवाम्', sentence: 'युवां मुष्णीथः' },
+      plural: { affix: '-नीथ', form: 'मुष्णीथ', translit: 'muṣṇītha', meaning: 'you all steal', pronoun: 'यूयम्', sentence: 'यूयं मुष्णीथ' },
     },
     uttama: {
-      singular: { affix: '-मि', form: 'लिखामि', translit: 'likhāmi', meaning: 'I write', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'लिखावः', translit: 'likhāvaḥ', meaning: 'we two write', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'लिखामः', translit: 'likhāmaḥ', meaning: 'we all write', pronoun: 'वयम्' },
+      singular: { affix: '-नामि', form: 'मुष्णामि', translit: 'muṣṇāmi', meaning: 'I steal', pronoun: 'अहम्', sentence: 'अहं मुष्णामि' },
+      dual: { affix: '-नीवः', form: 'मुष्णीवः', translit: 'muṣṇīvaḥ', meaning: 'we two steal', pronoun: 'आवाम्', sentence: 'आवां मुष्णीवः' },
+      plural: { affix: '-नीमः', form: 'मुष्णीमः', translit: 'muṣṇīmaḥ', meaning: 'we all steal', pronoun: 'वयम्', sentence: 'वयं मुष्णीमः' },
     },
-    exampleSentences: {
-      singular: { sanskrit: 'कविः श्लोकं लिखति।', translit: 'Kaviḥ ślokaṁ likhati.', english: 'The poet writes a shloka.' },
-      dual: { sanskrit: 'कवी श्लोकं लिखतः।', translit: 'Kavī ślokaṁ likhataḥ.', english: 'The two poets write a shloka.' },
-      plural: { sanskrit: 'कवयः श्लोकं लिखन्ति।', translit: 'Kavayaḥ ślokaṁ likhanti.', english: 'The poets write a shloka.' },
+    targetSentence: {
+      number: 'plural',
+      person: 'prathama',
+      sanskrit: 'चोराः मुष्णन्ति',
+      translit: 'Chorāḥ muṣṇanti',
+      english: 'The thieves steal.',
     },
-    mnemonic: 'लिख् + ति = लिखति; लिख् + तः = लिखतः; लिख् + न्ति = लिखन्ति.',
+    mnemonic: 'Class 9 (क्र्यादि): चोरः मुष्णाति, चोरौ मुष्णीतः, चोराः मुष्णन्ति.',
   },
+
+  // 5. सुत + जृ (1P / 4P)
   {
-    id: 'khad',
+    id: 'jri',
+    root: 'जृ',
+    baseTranslit: 'jṝ',
+    subjectNoun: 'सुत (Son)',
+    meaning: 'वयोहानिः (To Grow Old / Age)',
+    englishAction: 'Grow Old / Age',
+    gana: 'भ्वादिगणः',
+    ganaNumber: 1,
+    stem: 'जर',
+    vikaran: 'अ (शप्)',
+    padam: 'परस्मैपदम्',
+    prathama: {
+      singular: { affix: '-ति', form: 'जरति', translit: 'jarati', meaning: 'grows old', pronoun: 'सुतः', sentence: 'सुतः जरति' },
+      dual: { affix: '-तः', form: 'जरतः', translit: 'jarataḥ', meaning: 'two grow old', pronoun: 'सुतौ', sentence: 'सुतौ जरतः' },
+      plural: { affix: '-न्ति', form: 'जरन्ति', translit: 'jaranti', meaning: 'they grow old', pronoun: 'सुताः', sentence: 'सुताः जरन्ति' },
+    },
+    madhyama: {
+      singular: { affix: '-सि', form: 'जरसि', translit: 'jarasi', meaning: 'you age', pronoun: 'त्वम्', sentence: 'त्वं जरसि' },
+      dual: { affix: '-थः', form: 'जरथः', translit: 'jarathaḥ', meaning: 'you two age', pronoun: 'युवाम्', sentence: 'युवां जरथः' },
+      plural: { affix: '-थ', form: 'जरथ', translit: 'jaratha', meaning: 'you all age', pronoun: 'यूयम्', sentence: 'यूयं जरथ' },
+    },
+    uttama: {
+      singular: { affix: '-मि', form: 'जरामि', translit: 'jarāmi', meaning: 'I age', pronoun: 'अहम्', sentence: 'अहं जरामि' },
+      dual: { affix: '-वः', form: 'जरावः', translit: 'jarāvaḥ', meaning: 'we two age', pronoun: 'आवाम्', sentence: 'आवां जरावः' },
+      plural: { affix: '-मः', form: 'जरामः', translit: 'jarāmaḥ', meaning: 'we all age', pronoun: 'वयम्', sentence: 'वयं जरामः' },
+    },
+    targetSentence: {
+      number: 'singular',
+      person: 'prathama',
+      sanskrit: 'सुतः जरति',
+      translit: 'Sutaḥ jarati',
+      english: 'The son grows old.',
+    },
+    mnemonic: 'जृ: सुतः जरति, सुतौ जरतः, सुताः जरन्ति.',
+  },
+
+  // 6. सैनिक + रक्ष् (1P)
+  {
+    id: 'raksh',
+    root: 'रक्ष्',
+    baseTranslit: 'rakṣ',
+    subjectNoun: 'सैनिक (Soldier)',
+    meaning: 'पालनम् / रक्षणम् (To Protect / Guard)',
+    englishAction: 'Protect / Guard',
+    gana: 'भ्वादिगणः',
+    ganaNumber: 1,
+    stem: 'रक्ष',
+    vikaran: 'अ (शप्)',
+    padam: 'परस्मैपदम्',
+    prathama: {
+      singular: { affix: '-ति', form: 'रक्षति', translit: 'rakṣati', meaning: 'protects', pronoun: 'सैनिकः', sentence: 'सैनिकः रक्षति' },
+      dual: { affix: '-तः', form: 'रक्षतः', translit: 'rakṣataḥ', meaning: 'two protect', pronoun: 'सैनिकौ', sentence: 'सैनिकौ रक्षतः' },
+      plural: { affix: '-न्ति', form: 'रक्षन्ति', translit: 'rakṣanti', meaning: 'they protect', pronoun: 'सैनिकाः', sentence: 'सैनिकाः रक्षन्ति' },
+    },
+    madhyama: {
+      singular: { affix: '-सि', form: 'रक्षसि', translit: 'rakṣasi', meaning: 'you protect', pronoun: 'त्वम्', sentence: 'त्वं रक्षसि' },
+      dual: { affix: '-थः', form: 'रक्षथः', translit: 'rakṣathaḥ', meaning: 'you two protect', pronoun: 'युवाम्', sentence: 'युवां रक्षथः' },
+      plural: { affix: '-थ', form: 'रक्षथ', translit: 'rakṣatha', meaning: 'you all protect', pronoun: 'यूयम्', sentence: 'यूयं रक्षथ' },
+    },
+    uttama: {
+      singular: { affix: '-मि', form: 'रक्षामि', translit: 'rakṣāmi', meaning: 'I protect', pronoun: 'अहम्', sentence: 'अहं रक्षामि' },
+      dual: { affix: '-वः', form: 'रक्षावः', translit: 'rakṣāvaḥ', meaning: 'we two protect', pronoun: 'आवाम्', sentence: 'आवां रक्षावः' },
+      plural: { affix: '-मः', form: 'रक्षामः', translit: 'rakṣāmaḥ', meaning: 'we all protect', pronoun: 'वयम्', sentence: 'वयं रक्षामः' },
+    },
+    targetSentence: {
+      number: 'dual',
+      person: 'prathama',
+      sanskrit: 'सैनिकौ रक्षतः',
+      translit: 'Sainikau rakṣataḥ',
+      english: 'Two soldiers protect.',
+    },
+    mnemonic: 'रक्ष्: सैनिकः रक्षति, सैनिकौ रक्षतः, सैनिकाः रक्षन्ति.',
+  },
+
+  // 7. वृक्ष + रुह् (1P)
+  {
+    id: 'ruh',
+    root: 'रुह्',
+    baseTranslit: 'ruh',
+    subjectNoun: 'वृक्ष (Tree)',
+    meaning: 'प्रादुर्भावः / प्ररोहणम् (To Grow / Sprout)',
+    englishAction: 'Grow / Sprout',
+    gana: 'भ्वादिगणः',
+    ganaNumber: 1,
+    stem: 'रोह',
+    vikaran: 'अ (शप्, गुणे ओ)',
+    padam: 'परस्मैपदम्',
+    prathama: {
+      singular: { affix: '-ति', form: 'रोहति', translit: 'rohati', meaning: 'grows', pronoun: 'वृक्षः', sentence: 'वृक्षः रोहति' },
+      dual: { affix: '-तः', form: 'रोहतः', translit: 'rohataḥ', meaning: 'two grow', pronoun: 'वृक्षौ', sentence: 'वृक्षौ रोहतः' },
+      plural: { affix: '-न्ति', form: 'रोहन्ति', translit: 'rohanti', meaning: 'they grow', pronoun: 'वृक्षाः', sentence: 'वृक्षाः रोहन्ति' },
+    },
+    madhyama: {
+      singular: { affix: '-सि', form: 'रोहसि', translit: 'rohasi', meaning: 'you grow', pronoun: 'त्वम्', sentence: 'त्वं रोहसि' },
+      dual: { affix: '-थः', form: 'रोहथः', translit: 'rohathaḥ', meaning: 'you two grow', pronoun: 'युवाम्', sentence: 'युवां रोहथः' },
+      plural: { affix: '-थ', form: 'रोहथ', translit: 'rohatha', meaning: 'you all grow', pronoun: 'यूयम्', sentence: 'यूयं रोहथ' },
+    },
+    uttama: {
+      singular: { affix: '-मि', form: 'रोहामि', translit: 'rohāmi', meaning: 'I grow', pronoun: 'अहम्', sentence: 'अहं रोहामि' },
+      dual: { affix: '-वः', form: 'रोहावः', translit: 'rohāvaḥ', meaning: 'we two grow', pronoun: 'आवाम्', sentence: 'आवां रोहावः' },
+      plural: { affix: '-मः', form: 'रोहामः', translit: 'rohāmaḥ', meaning: 'we all grow', pronoun: 'वयम्', sentence: 'वयं रोहामः' },
+    },
+    targetSentence: {
+      number: 'plural',
+      person: 'prathama',
+      sanskrit: 'वृक्षाः रोहन्ति',
+      translit: 'Vṛkṣāḥ rohanti',
+      english: 'The trees grow.',
+    },
+    mnemonic: 'रुह् (उ $\\rightarrow$ ओ): वृक्षः रोहति, वृक्षौ रोहतः, वृक्षाः रोहन्ति.',
+  },
+
+  // 8. जन + वद् (1P)
+  {
+    id: 'vad',
+    root: 'वद्',
+    baseTranslit: 'vad',
+    subjectNoun: 'जन (Person)',
+    meaning: 'भाषणम् (To Speak / Say)',
+    englishAction: 'Speak / Say',
+    gana: 'भ्वादिगणः',
+    ganaNumber: 1,
+    stem: 'वद',
+    vikaran: 'अ (शप्)',
+    padam: 'परस्मैपदम्',
+    prathama: {
+      singular: { affix: '-ति', form: 'वदति', translit: 'vadati', meaning: 'speaks', pronoun: 'जनः', sentence: 'जनः वदति' },
+      dual: { affix: '-तः', form: 'वदतः', translit: 'vadataḥ', meaning: 'two speak', pronoun: 'जनौ', sentence: 'जनौ वदतः' },
+      plural: { affix: '-न्ति', form: 'वदन्ति', translit: 'vadanti', meaning: 'they speak', pronoun: 'जनाः', sentence: 'जनाः वदन्ति' },
+    },
+    madhyama: {
+      singular: { affix: '-सि', form: 'वदसि', translit: 'vadasi', meaning: 'you speak', pronoun: 'त्वम्', sentence: 'त्वं वदसि' },
+      dual: { affix: '-थः', form: 'वदथः', translit: 'vadathaḥ', meaning: 'you two speak', pronoun: 'युवाम्', sentence: 'युवां वदथः' },
+      plural: { affix: '-थ', form: 'वदथ', translit: 'vadatha', meaning: 'you all speak', pronoun: 'यूयम्', sentence: 'यूयं वदथ' },
+    },
+    uttama: {
+      singular: { affix: '-मि', form: 'वदामि', translit: 'vadāmi', meaning: 'I speak', pronoun: 'अहम्', sentence: 'अहं वदामि' },
+      dual: { affix: '-वः', form: 'वदावः', translit: 'vadāvaḥ', meaning: 'we two speak', pronoun: 'आवाम्', sentence: 'आवां वदावः' },
+      plural: { affix: '-मः', form: 'वदामः', translit: 'vadāmaḥ', meaning: 'we all speak', pronoun: 'वयम्', sentence: 'वयं वदामः' },
+    },
+    targetSentence: {
+      number: 'singular',
+      person: 'prathama',
+      sanskrit: 'जनः वदति',
+      translit: 'Janaḥ vadati',
+      english: 'The person speaks.',
+    },
+    mnemonic: 'वद्: जनः वदति, जनौ वदतः, जनाः वदन्ति.',
+  },
+
+  // 9. मीन + तॄ (1P)
+  {
+    id: 'tri',
+    root: 'तॄ',
+    baseTranslit: 'tṝ',
+    subjectNoun: 'मीन (Fish)',
+    meaning: 'तरणम् / प्लावः (To Swim / Cross)',
+    englishAction: 'Swim / Cross',
+    gana: 'भ्वादिगणः',
+    ganaNumber: 1,
+    stem: 'तर',
+    vikaran: 'अ (शप्, गुणे अर्)',
+    padam: 'परस्मैपदम्',
+    prathama: {
+      singular: { affix: '-ति', form: 'तरति', translit: 'tarati', meaning: 'swims', pronoun: 'मीनः', sentence: 'मीनः तरति' },
+      dual: { affix: '-तः', form: 'तरतः', translit: 'tarataḥ', meaning: 'two swim', pronoun: 'मीनौ', sentence: 'मीनौ तरतः' },
+      plural: { affix: '-न्ति', form: 'तरन्ति', translit: 'taranti', meaning: 'they swim', pronoun: 'मीनाः', sentence: 'मीनाः तरन्ति' },
+    },
+    madhyama: {
+      singular: { affix: '-सि', form: 'तरसि', translit: 'tarasi', meaning: 'you swim', pronoun: 'त्वम्', sentence: 'त्वं तरसि' },
+      dual: { affix: '-थः', form: 'तरथः', translit: 'tarathaḥ', meaning: 'you two swim', pronoun: 'युवाम्', sentence: 'युवां तरथः' },
+      plural: { affix: '-थ', form: 'तरथ', translit: 'taratha', meaning: 'you all swim', pronoun: 'यूयम्', sentence: 'यूयं तरथ' },
+    },
+    uttama: {
+      singular: { affix: '-मि', form: 'तरामि', translit: 'tarāmi', meaning: 'I swim', pronoun: 'अहम्', sentence: 'अहं तरामि' },
+      dual: { affix: '-वः', form: 'तरावः', translit: 'tarāvaḥ', meaning: 'we two swim', pronoun: 'आवाम्', sentence: 'आवां तरावः' },
+      plural: { affix: '-मः', form: 'तरामः', translit: 'tarāmaḥ', meaning: 'we all swim', pronoun: 'वयम्', sentence: 'वयं तरामः' },
+    },
+    targetSentence: {
+      number: 'plural',
+      person: 'prathama',
+      sanskrit: 'मीनाः तरन्ति',
+      translit: 'Mīnāḥ taranti',
+      english: 'The fish swim.',
+    },
+    mnemonic: 'तॄ $\\rightarrow$ तर् + अ: मीनः तरति, मीनौ तरतः, मीनाः तरन्ति.',
+  },
+
+  // 10. सा + कुप् (4P)
+  {
+    id: 'kup',
+    root: 'कुप्',
+    baseTranslit: 'kup',
+    subjectNoun: 'सा (She)',
+    meaning: 'क्रोधः (To Get Angry)',
+    englishAction: 'Get Angry',
+    gana: 'दिवादिगणः',
+    ganaNumber: 4,
+    stem: 'कुप्य',
+    vikaran: 'य (श्यन्)',
+    padam: 'परस्मैपदम्',
+    prathama: {
+      singular: { affix: '-ति', form: 'कुप्यति', translit: 'kupyati', meaning: 'gets angry', pronoun: 'सा', sentence: 'सा कुप्यति' },
+      dual: { affix: '-तः', form: 'कुप्यतः', translit: 'kupyataḥ', meaning: 'two get angry', pronoun: 'ते', sentence: 'ते कुप्यतः' },
+      plural: { affix: '-न्ति', form: 'कुप्यन्ति', translit: 'kupyanti', meaning: 'they get angry', pronoun: 'ताः', sentence: 'ताः कुप्यन्ति' },
+    },
+    madhyama: {
+      singular: { affix: '-सि', form: 'कुप्यसि', translit: 'kupyasi', meaning: 'you get angry', pronoun: 'त्वम्', sentence: 'त्वं कुप्यसि' },
+      dual: { affix: '-थः', form: 'कुप्यथः', translit: 'kupyathaḥ', meaning: 'you two get angry', pronoun: 'युवाम्', sentence: 'युवां कुप्यथः' },
+      plural: { affix: '-थ', form: 'कुप्यथ', translit: 'kupyatha', meaning: 'you all get angry', pronoun: 'यूयम्', sentence: 'यूयं कुप्यथ' },
+    },
+    uttama: {
+      singular: { affix: '-मि', form: 'कुप्यामि', translit: 'kupyāmi', meaning: 'I get angry', pronoun: 'अहम्', sentence: 'अहं कुप्यामि' },
+      dual: { affix: '-वः', form: 'कुप्यावः', translit: 'kupyāvaḥ', meaning: 'we two get angry', pronoun: 'आवाम्', sentence: 'आवां कुप्यावः' },
+      plural: { affix: '-मः', form: 'कुप्यामः', translit: 'kupyāmaḥ', meaning: 'we all get angry', pronoun: 'वयम्', sentence: 'वयं कुप्यामः' },
+    },
+    targetSentence: {
+      number: 'singular',
+      person: 'prathama',
+      sanskrit: 'सा कुप्यति',
+      translit: 'Sā kupyati',
+      english: 'She gets angry.',
+    },
+    mnemonic: 'Class 4 (श्यन् = य): सा कुप्यति, ते कुप्यतः, ताः कुप्यन्ति.',
+  },
+
+  // 11. कुक्कुर + भष् (1P)
+  {
+    id: 'bhash_bark',
+    root: 'भष्',
+    baseTranslit: 'bhaṣ',
+    subjectNoun: 'कुक्कुर (Dog)',
+    meaning: 'भषणम् (To Bark)',
+    englishAction: 'Bark',
+    gana: 'भ्वादिगणः',
+    ganaNumber: 1,
+    stem: 'भष',
+    vikaran: 'अ (शप्)',
+    padam: 'परस्मैपदम्',
+    prathama: {
+      singular: { affix: '-ति', form: 'भषति', translit: 'bhaṣati', meaning: 'barks', pronoun: 'कुक्कुरः', sentence: 'भषति कुक्कुरः' },
+      dual: { affix: '-तः', form: 'भषतः', translit: 'bhaṣataḥ', meaning: 'two bark', pronoun: 'कुक्कुरौ', sentence: 'भषतः कुक्कुरौ' },
+      plural: { affix: '-न्ति', form: 'भषन्ति', translit: 'bhaṣanti', meaning: 'they bark', pronoun: 'कुक्कुराः', sentence: 'भषन्ति कुक्कुराः' },
+    },
+    madhyama: {
+      singular: { affix: '-सि', form: 'भषसि', translit: 'bhaṣasi', meaning: 'you bark', pronoun: 'त्वम्', sentence: 'त्वं भषसि' },
+      dual: { affix: '-थः', form: 'भषथः', translit: 'bhaṣathaḥ', meaning: 'you two bark', pronoun: 'युवाम्', sentence: 'युवां भषथः' },
+      plural: { affix: '-थ', form: 'भषथ', translit: 'bhaṣatha', meaning: 'you all bark', pronoun: 'यूयम्', sentence: 'यूयं भषथ' },
+    },
+    uttama: {
+      singular: { affix: '-मि', form: 'भषामि', translit: 'bhaṣāmi', meaning: 'I bark', pronoun: 'अहम्', sentence: 'अहं भषामि' },
+      dual: { affix: '-वः', form: 'भषावः', translit: 'bhaṣāvaḥ', meaning: 'we two bark', pronoun: 'आवाम्', sentence: 'आवां भषावः' },
+      plural: { affix: '-मः', form: 'भषामः', translit: 'bhaṣāmaḥ', meaning: 'we all bark', pronoun: 'वयम्', sentence: 'वयं भषामः' },
+    },
+    targetSentence: {
+      number: 'plural',
+      person: 'prathama',
+      sanskrit: 'भषन्ति कुक्कुराः',
+      translit: 'Bhaṣanti kukkurāḥ',
+      english: 'The dogs bark.',
+    },
+    mnemonic: 'भष्: भषति कुक्कुरः, भषतः कुक्कुरौ, भषन्ति कुक्कुराः.',
+  },
+
+  // 12. मृग + त्रस् (4P / 1P)
+  {
+    id: 'tras',
+    root: 'त्रस्',
+    baseTranslit: 'tras',
+    subjectNoun: 'मृग (Deer)',
+    meaning: 'भीतिः / कम्पनम् (To Tremble / Flee in Fear)',
+    englishAction: 'Tremble / Fear',
+    gana: 'दिवादिगणः',
+    ganaNumber: 4,
+    stem: 'त्रस्य',
+    vikaran: 'य (श्यन्)',
+    padam: 'परस्मैपदम्',
+    prathama: {
+      singular: { affix: '-ति', form: 'त्रस्यति', translit: 'trasyati', meaning: 'trembles', pronoun: 'मृगः', sentence: 'त्रस्यति मृगः' },
+      dual: { affix: '-तः', form: 'त्रस्यतः', translit: 'trasyataḥ', meaning: 'two tremble', pronoun: 'मृगौ', sentence: 'त्रस्यतः मृगौ' },
+      plural: { affix: '-न्ति', form: 'त्रस्यन्ति', translit: 'trasyanti', meaning: 'they tremble', pronoun: 'मृगाः', sentence: 'त्रस्यन्ति मृगाः' },
+    },
+    madhyama: {
+      singular: { affix: '-सि', form: 'त्रस्यसि', translit: 'trasyasi', meaning: 'you tremble', pronoun: 'त्वम्', sentence: 'त्वं त्रस्यसि' },
+      dual: { affix: '-थः', form: 'त्रस्यथः', translit: 'trasyathaḥ', meaning: 'you two tremble', pronoun: 'युवाम्', sentence: 'युवां त्रस्यथः' },
+      plural: { affix: '-थ', form: 'त्रस्यथ', translit: 'trasyatha', meaning: 'you all tremble', pronoun: 'यूयम्', sentence: 'यूयं त्रस्यथ' },
+    },
+    uttama: {
+      singular: { affix: '-मि', form: 'त्रस्यामि', translit: 'trasyāmi', meaning: 'I tremble', pronoun: 'अहम्', sentence: 'अहं त्रस्यामि' },
+      dual: { affix: '-वः', form: 'त्रस्यावः', translit: 'trasyāvaḥ', meaning: 'we two tremble', pronoun: 'आवाम्', sentence: 'आवां त्रस्यावः' },
+      plural: { affix: '-मः', form: 'त्रस्यामः', translit: 'trasyāmaḥ', meaning: 'we all tremble', pronoun: 'वयम्', sentence: 'वयं त्रस्यामः' },
+    },
+    targetSentence: {
+      number: 'dual',
+      person: 'prathama',
+      sanskrit: 'त्रस्यतः मृगौ',
+      translit: 'Trasyataḥ mṛgau',
+      english: 'Two deer tremble in fear.',
+    },
+    mnemonic: 'त्रस् (डरना): त्रस्यति मृगः, त्रस्यतः मृगौ, त्रस्यन्ति मृगाः.',
+  },
+
+  // 13. हस्त + क्षल् (10U)
+  {
+    id: 'kshal',
+    root: 'क्षल्',
+    baseTranslit: 'kṣal',
+    subjectNoun: 'हस्त (Hand)',
+    meaning: 'प्रक्षालनम् (To Wash / Cleanse)',
+    englishAction: 'Wash / Cleanse',
+    gana: 'चुरादिगणः',
+    ganaNumber: 10,
+    stem: 'क्षालय',
+    vikaran: 'अय (णिच् + शप्)',
+    padam: 'उभयपदम्',
+    prathama: {
+      singular: { affix: '-ति', form: 'क्षालयति', translit: 'kṣālayati', meaning: 'washes', pronoun: 'हस्तः', sentence: 'क्षालयति हस्ते' },
+      dual: { affix: '-तः', form: 'क्षालयतः', translit: 'kṣālayataḥ', meaning: 'two wash', pronoun: 'हस्तौ', sentence: 'क्षालयतः हस्तौ' },
+      plural: { affix: '-न्ति', form: 'क्षालयन्ति', translit: 'kṣālayanti', meaning: 'they wash', pronoun: 'हस्ताः', sentence: 'क्षालयन्ति हस्ताः' },
+    },
+    madhyama: {
+      singular: { affix: '-सि', form: 'क्षालयसि', translit: 'kṣālayasi', meaning: 'you wash', pronoun: 'त्वम्', sentence: 'त्वं क्षालयसि' },
+      dual: { affix: '-थः', form: 'क्षालयथः', translit: 'kṣālayathaḥ', meaning: 'you two wash', pronoun: 'युवाम्', sentence: 'युवां क्षालयथः' },
+      plural: { affix: '-थ', form: 'क्षालयथ', translit: 'kṣālayatha', meaning: 'you all wash', pronoun: 'यूयम्', sentence: 'यूयं क्षालयथ' },
+    },
+    uttama: {
+      singular: { affix: '-मि', form: 'क्षालयामि', translit: 'kṣālayāmi', meaning: 'I wash', pronoun: 'अहम्', sentence: 'अहं क्षालयामि' },
+      dual: { affix: '-वः', form: 'क्षालयावः', translit: 'kṣālayāvaḥ', meaning: 'we two wash', pronoun: 'आवाम्', sentence: 'आवां क्षालयावः' },
+      plural: { affix: '-मः', form: 'क्षालयामः', translit: 'kṣālayāmaḥ', meaning: 'we all wash', pronoun: 'वयम्', sentence: 'वयं क्षालयामः' },
+    },
+    targetSentence: {
+      number: 'dual',
+      person: 'prathama',
+      sanskrit: 'क्षालयतः हस्तौ',
+      translit: 'Kṣālayataḥ hastau',
+      english: 'Two hands wash.',
+    },
+    mnemonic: 'Class 10 (अय): क्षालयति, क्षालयतः हस्तौ, क्षालयन्ति.',
+  },
+
+  // 14. वानर + खाद् (1P)
+  {
+    id: 'khad_monkey',
     root: 'खाद्',
     baseTranslit: 'khād',
-    meaning: 'खादनम् (To Eat)',
+    subjectNoun: 'वानर (Monkey)',
+    meaning: 'भक्षणम् (To Eat)',
     englishAction: 'Eat',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
@@ -204,379 +583,296 @@ export const MATRIX_ROOTS: MatrixRootItem[] = [
     vikaran: 'अ (शप्)',
     padam: 'परस्मैपदम्',
     prathama: {
-      singular: { affix: '-ति', form: 'खादति', translit: 'khādati', meaning: 'eats', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'खादतः', translit: 'khādataḥ', meaning: 'two eat', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'खादन्ति', translit: 'khādanti', meaning: 'they eat', pronoun: 'ते / ताः / तानि' },
+      singular: { affix: '-ति', form: 'खादति', translit: 'khādati', meaning: 'eats', pronoun: 'वानरः', sentence: 'वानरः खादति' },
+      dual: { affix: '-तः', form: 'खादतः', translit: 'khādataḥ', meaning: 'two eat', pronoun: 'वानरौ', sentence: 'वानरौ खादतः' },
+      plural: { affix: '-न्ति', form: 'खादन्ति', translit: 'khādanti', meaning: 'they eat', pronoun: 'वानराः', sentence: 'वानराः खादन्ति' },
     },
     madhyama: {
-      singular: { affix: '-सि', form: 'खादसि', translit: 'khādasi', meaning: 'you eat', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'खादथः', translit: 'khādathaḥ', meaning: 'you two eat', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'खादथ', translit: 'khādatha', meaning: 'you all eat', pronoun: 'यूयम्' },
+      singular: { affix: '-सि', form: 'खादसि', translit: 'khādasi', meaning: 'you eat', pronoun: 'त्वम्', sentence: 'त्वं खादसि' },
+      dual: { affix: '-थः', form: 'खादथः', translit: 'khādathaḥ', meaning: 'you two eat', pronoun: 'युवाम्', sentence: 'युवां खादथः' },
+      plural: { affix: '-थ', form: 'खादथ', translit: 'khādatha', meaning: 'you all eat', pronoun: 'यूयम्', sentence: 'यूयं खादथ' },
     },
     uttama: {
-      singular: { affix: '-मि', form: 'खादामि', translit: 'khādāmi', meaning: 'I eat', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'खादावः', translit: 'khādāvaḥ', meaning: 'we two eat', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'खादामः', translit: 'khādāmaḥ', meaning: 'we all eat', pronoun: 'वयम्' },
+      singular: { affix: '-मि', form: 'खादामि', translit: 'khādāmi', meaning: 'I eat', pronoun: 'अहम्', sentence: 'अहं खादामि' },
+      dual: { affix: '-वः', form: 'खादावः', translit: 'khādāvaḥ', meaning: 'we two eat', pronoun: 'आवाम्', sentence: 'आवां खादावः' },
+      plural: { affix: '-मः', form: 'खादामः', translit: 'khādāmaḥ', meaning: 'we all eat', pronoun: 'वयम्', sentence: 'वयं खादामः' },
     },
-    exampleSentences: {
-      singular: { sanskrit: 'वानरः फलं खादति।', translit: 'Vānaraḥ phalaṁ khādati.', english: 'The monkey eats the fruit.' },
-      dual: { sanskrit: 'वानरौ फलं खादतः।', translit: 'Vānarau phalaṁ khādataḥ.', english: 'The two monkeys eat the fruit.' },
-      plural: { sanskrit: 'वानराः फलं खादन्ति।', translit: 'Vānarāḥ phalaṁ khādanti.', english: 'The monkeys eat the fruit.' },
+    targetSentence: {
+      number: 'plural',
+      person: 'prathama',
+      sanskrit: 'वानराः खादन्ति',
+      translit: 'Vānarāḥ khādanti',
+      english: 'The monkeys eat.',
     },
-    mnemonic: 'खाद् (nourishment): खादति (single eater), खादतः (pair enjoying fruit), खादन्ति (group banquet).',
+    mnemonic: 'खाद्: वानरः खादति, वानरौ खादतः, वानराः खादन्ति.',
   },
+
+  // 15. दीप + ज्वल् (1P)
   {
-    id: 'pa',
-    root: 'पा',
-    baseTranslit: 'pā (pib)',
-    meaning: 'पानम् (To Drink)',
-    englishAction: 'Drink',
+    id: 'jval',
+    root: 'ज्वल्',
+    baseTranslit: 'jval',
+    subjectNoun: 'दीप (Lamp)',
+    meaning: 'प्रदीपनम् (To Shine / Burn / Blaze)',
+    englishAction: 'Shine / Blaze',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
-    stem: 'पिब',
-    vikaran: 'अ (पाघ्राध्मास्था... पिबादेशः)',
-    padam: 'परस्मैपदम्',
-    prathama: {
-      singular: { affix: '-ति', form: 'पिबति', translit: 'pibati', meaning: 'drinks', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'पिबतः', translit: 'pibataḥ', meaning: 'two drink', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'पिबन्ति', translit: 'pibanti', meaning: 'they drink', pronoun: 'ते / ताः / तानि' },
-    },
-    madhyama: {
-      singular: { affix: '-सि', form: 'पिबसि', translit: 'pibasi', meaning: 'you drink', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'पिबथः', translit: 'pibathaḥ', meaning: 'you two drink', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'पिबथ', translit: 'pibatha', meaning: 'you all drink', pronoun: 'यूयम्' },
-    },
-    uttama: {
-      singular: { affix: '-मि', form: 'पिबामि', translit: 'pibāmi', meaning: 'I drink', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'पिबावः', translit: 'pibāvaḥ', meaning: 'we two drink', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'पिबामः', translit: 'pibāmaḥ', meaning: 'we all drink', pronoun: 'वयम्' },
-    },
-    exampleSentences: {
-      singular: { sanskrit: 'धेनुः जलं पिबति।', translit: 'Dhenuḥ jalaṁ pibati.', english: 'The cow drinks water.' },
-      dual: { sanskrit: 'धेनू जलं पिबतः।', translit: 'Dhenū jalaṁ pibataḥ.', english: 'The two cows drink water.' },
-      plural: { sanskrit: 'धेनवः जलं पिबन्ति।', translit: 'Dhenavaḥ jalaṁ pibanti.', english: 'The cows drink water.' },
-    },
-    mnemonic: 'Pāṇinian stem rule: Root पा becomes पिब in present tense: पिबति, पिबतः, पिबन्ति!',
-  },
-  {
-    id: 'has',
-    root: 'हस्',
-    baseTranslit: 'has',
-    meaning: 'हसनम् (To Laugh)',
-    englishAction: 'Laugh',
-    gana: 'भ्वादिगणः',
-    ganaNumber: 1,
-    stem: 'हस',
+    stem: 'ज्वल',
     vikaran: 'अ (शप्)',
     padam: 'परस्मैपदम्',
     prathama: {
-      singular: { affix: '-ति', form: 'हसति', translit: 'hasati', meaning: 'laughs', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'हसतः', translit: 'hasataḥ', meaning: 'two laugh', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'हसन्ति', translit: 'hasanti', meaning: 'they laugh', pronoun: 'ते / ताः / तानि' },
+      singular: { affix: '-ति', form: 'ज्वलति', translit: 'jvalati', meaning: 'shines', pronoun: 'दीपः', sentence: 'दीपः ज्वलति' },
+      dual: { affix: '-तः', form: 'ज्वलतः', translit: 'jvalataḥ', meaning: 'two shine', pronoun: 'दीपौ', sentence: 'दीपौ ज्वलतः' },
+      plural: { affix: '-न्ति', form: 'ज्वलन्ति', translit: 'jvalanti', meaning: 'they shine', pronoun: 'दीपाः', sentence: 'दीपाः ज्वलन्ति' },
     },
     madhyama: {
-      singular: { affix: '-सि', form: 'हससि', translit: 'hasasi', meaning: 'you laugh', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'हसथः', translit: 'hasathaḥ', meaning: 'you two laugh', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'हसथ', translit: 'hasatha', meaning: 'you all laugh', pronoun: 'यूयम्' },
+      singular: { affix: '-सि', form: 'ज्वलसि', translit: 'jvalasi', meaning: 'you shine', pronoun: 'त्वम्', sentence: 'त्वं ज्वलसि' },
+      dual: { affix: '-थः', form: 'ज्वलथः', translit: 'jvalathaḥ', meaning: 'you two shine', pronoun: 'युवाम्', sentence: 'युवां ज्वलथः' },
+      plural: { affix: '-थ', form: 'ज्वलथ', translit: 'jvalatha', meaning: 'you all shine', pronoun: 'यूयम्', sentence: 'यूयं ज्वलथ' },
     },
     uttama: {
-      singular: { affix: '-मि', form: 'हसामि', translit: 'hasāmi', meaning: 'I laugh', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'हसावः', translit: 'hasāvaḥ', meaning: 'we two laugh', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'हसामः', translit: 'hasāmaḥ', meaning: 'we all laugh', pronoun: 'वयम्' },
+      singular: { affix: '-मि', form: 'ज्वलामि', translit: 'jvalāmi', meaning: 'I shine', pronoun: 'अहम्', sentence: 'अहं ज्वलामि' },
+      dual: { affix: '-वः', form: 'ज्वलावः', translit: 'jvalāvaḥ', meaning: 'we two shine', pronoun: 'आवाम्', sentence: 'आवां ज्वलावः' },
+      plural: { affix: '-मः', form: 'ज्वलामः', translit: 'jvalāmaḥ', meaning: 'we all shine', pronoun: 'वयम्', sentence: 'वयं ज्वलामः' },
     },
-    exampleSentences: {
-      singular: { sanskrit: 'शिशुः आनन्देन हसति।', translit: 'Śiśuḥ ānandena hasati.', english: 'The infant laughs with joy.' },
-      dual: { sanskrit: 'शिशू आनन्देन हसतः।', translit: 'Śiśū ānandena hasataḥ.', english: 'The two infants laugh with joy.' },
-      plural: { sanskrit: 'शिशवः आनन्देन हसन्ति।', translit: 'Śiśavaḥ ānandena hasanti.', english: 'The infants laugh with joy.' },
+    targetSentence: {
+      number: 'singular',
+      person: 'prathama',
+      sanskrit: 'दीपः ज्वलति',
+      translit: 'Dīpaḥ jvalati',
+      english: 'The lamp shines.',
     },
-    mnemonic: 'हस्: हसति (one laughs), हसतः (two chuckle together), हसन्ति (burst of laughter all around).',
+    mnemonic: 'ज्वल्: दीपः ज्वलति, दीपौ ज्वलतः, दीपाः ज्वलन्ति.',
   },
+
+  // 16. भार्या + यज् (1U)
   {
-    id: 'nam',
-    root: 'नम्',
-    baseTranslit: 'nam',
-    meaning: 'नमनम् (To Bow / Revere)',
-    englishAction: 'Bow / Revere',
+    id: 'yaj',
+    root: 'यज्',
+    baseTranslit: 'yaj',
+    subjectNoun: 'भार्या (Wife)',
+    meaning: 'देवपूजा / यज्ञः (To Worship / Sacrifice)',
+    englishAction: 'Perform Ritual / Sacrifice',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
-    stem: 'नम',
+    stem: 'यज',
+    vikaran: 'अ (शप्)',
+    padam: 'उभयपदम्',
+    prathama: {
+      singular: { affix: '-ति', form: 'यजति', translit: 'yajati', meaning: 'performs ritual', pronoun: 'भार्या', sentence: 'भार्या यजति' },
+      dual: { affix: '-तः', form: 'यजतः', translit: 'yajataḥ', meaning: 'two perform ritual', pronoun: 'भार्ये', sentence: 'भार्ये यजतः' },
+      plural: { affix: '-न्ति', form: 'यजन्ति', translit: 'yajanti', meaning: 'they perform ritual', pronoun: 'भार्याः', sentence: 'भार्याः यजन्ति' },
+    },
+    madhyama: {
+      singular: { affix: '-सि', form: 'यजसि', translit: 'yajasi', meaning: 'you perform ritual', pronoun: 'त्वम्', sentence: 'त्वं यजसि' },
+      dual: { affix: '-थः', form: 'यजथः', translit: 'yajathaḥ', meaning: 'you two perform ritual', pronoun: 'युवाम्', sentence: 'युवां यजथः' },
+      plural: { affix: '-थ', form: 'यजथ', translit: 'yajatha', meaning: 'you all perform ritual', pronoun: 'यूयम्', sentence: 'यूयं यजथ' },
+    },
+    uttama: {
+      singular: { affix: '-मि', form: 'यजामि', translit: 'yajāmi', meaning: 'I perform ritual', pronoun: 'अहम्', sentence: 'अहं यजामि' },
+      dual: { affix: '-वः', form: 'यजावः', translit: 'yajāvaḥ', meaning: 'we two perform ritual', pronoun: 'आवाम्', sentence: 'आवां यजावः' },
+      plural: { affix: '-मः', form: 'यजामः', translit: 'yajāmaḥ', meaning: 'we all perform ritual', pronoun: 'वयम्', sentence: 'वयं यजामः' },
+    },
+    targetSentence: {
+      number: 'singular',
+      person: 'prathama',
+      sanskrit: 'भार्या यजति',
+      translit: 'Bhāryā yajati',
+      english: 'The wife performs a ritual.',
+    },
+    mnemonic: 'यज्: भार्या यजति, भार्ये यजतः, भार्याः यजन्ति.',
+  },
+
+  // 17. भिक्षुक + याच् (1A - आत्मनेपदम्)
+  {
+    id: 'yach',
+    root: 'याच्',
+    baseTranslit: 'yāc',
+    subjectNoun: 'भिक्षुक (Beggar)',
+    meaning: 'याचना (To Beg / Request)',
+    englishAction: 'Beg / Request',
+    gana: 'भ्वादिगणः',
+    ganaNumber: 1,
+    stem: 'याच',
+    vikaran: 'अ (शप्)',
+    padam: 'आत्मनेपदम्',
+    prathama: {
+      singular: { affix: '-ते', form: 'याचते', translit: 'yācate', meaning: 'begs', pronoun: 'भिक्षुकः', sentence: 'भिक्षुकः याचते' },
+      dual: { affix: '-एते', form: 'याचेते', translit: 'yācete', meaning: 'two beg', pronoun: 'भिक्षुकौ', sentence: 'भिक्षुकौ याचेते' },
+      plural: { affix: '-न्ते', form: 'याचन्ते', translit: 'yācante', meaning: 'they beg', pronoun: 'भिक्षुकाः', sentence: 'भिक्षुकाः याचन्ते' },
+    },
+    madhyama: {
+      singular: { affix: '-से', form: 'याचसे', translit: 'yācase', meaning: 'you beg', pronoun: 'त्वम्', sentence: 'त्वं याचसे' },
+      dual: { affix: '-एथे', form: 'याचेथे', translit: 'yācethe', meaning: 'you two beg', pronoun: 'युवाम्', sentence: 'युवां याचेथे' },
+      plural: { affix: '-ध्वे', form: 'याचध्वे', translit: 'yācadhve', meaning: 'you all beg', pronoun: 'यूयम्', sentence: 'यूयं याचध्वे' },
+    },
+    uttama: {
+      singular: { affix: '-ए', form: 'याचे', translit: 'yāce', meaning: 'I beg', pronoun: 'अहम्', sentence: 'अहं याचे' },
+      dual: { affix: '-वहे', form: 'याचावहे', translit: 'yācāvahe', meaning: 'we two beg', pronoun: 'आवाम्', sentence: 'आवां याचावहे' },
+      plural: { affix: '-महे', form: 'याचामहे', translit: 'yācāmahe', meaning: 'we all beg', pronoun: 'वयम्', sentence: 'वयं याचामहे' },
+    },
+    targetSentence: {
+      number: 'plural',
+      person: 'prathama',
+      sanskrit: 'भिक्षुकाः याचन्ते',
+      translit: 'Bhikṣukāḥ yācante',
+      english: 'The beggars beg.',
+    },
+    mnemonic: 'आत्मनेपद terminations: -ते, -एते, -न्ते! भिक्षुकः याचते, भिक्षुकौ याचेते, भिक्षुकाः याचन्ते.',
+  },
+
+  // 18. युवाम् + त्यज् (1P - मध्यमपुरुषः द्विवचनम्)
+  {
+    id: 'tyaj',
+    root: 'त्यज्',
+    baseTranslit: 'tyaj',
+    subjectNoun: 'युवाम् (You two)',
+    meaning: 'त्यागः (To Abandon / Leave)',
+    englishAction: 'Abandon / Leave',
+    gana: 'भ्वादिगणः',
+    ganaNumber: 1,
+    stem: 'त्यज',
     vikaran: 'अ (शप्)',
     padam: 'परस्मैपदम्',
     prathama: {
-      singular: { affix: '-ति', form: 'नमति', translit: 'namati', meaning: 'bows / reveres', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'नमतः', translit: 'namataḥ', meaning: 'two bow / revere', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'नमन्ति', translit: 'namanti', meaning: 'they bow / revere', pronoun: 'ते / ताः / तानि' },
+      singular: { affix: '-ति', form: 'त्यजति', translit: 'tyajati', meaning: 'abandons', pronoun: 'सः', sentence: 'सः त्यजति' },
+      dual: { affix: '-तः', form: 'त्यजतः', translit: 'tyajataḥ', meaning: 'two abandon', pronoun: 'तौ', sentence: 'तौ त्यजतः' },
+      plural: { affix: '-न्ति', form: 'त्यजन्ति', translit: 'tyajanti', meaning: 'they abandon', pronoun: 'ते', sentence: 'ते त्यजन्ति' },
     },
     madhyama: {
-      singular: { affix: '-सि', form: 'नमसि', translit: 'namasi', meaning: 'you bow', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'नमथः', translit: 'namathaḥ', meaning: 'you two bow', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'नमथ', translit: 'namatha', meaning: 'you all bow', pronoun: 'यूयम्' },
+      singular: { affix: '-सि', form: 'त्यजसि', translit: 'tyajasi', meaning: 'you abandon', pronoun: 'त्वम्', sentence: 'त्वम् त्यजसि' },
+      dual: { affix: '-थः', form: 'त्यजथः', translit: 'tyajathaḥ', meaning: 'you two abandon', pronoun: 'युवाम्', sentence: 'युवाम् त्यजथः' },
+      plural: { affix: '-थ', form: 'त्यजथ', translit: 'tyajatha', meaning: 'you all abandon', pronoun: 'यूयम्', sentence: 'यूयम् त्यजथ' },
     },
     uttama: {
-      singular: { affix: '-मि', form: 'नमामि', translit: 'namāmi', meaning: 'I bow', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'नमावः', translit: 'namāvaḥ', meaning: 'we two bow', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'नमामः', translit: 'namāmaḥ', meaning: 'we all bow', pronoun: 'वयम्' },
+      singular: { affix: '-मि', form: 'त्यजामि', translit: 'tyajāmi', meaning: 'I abandon', pronoun: 'अहम्', sentence: 'अहं त्यजामि' },
+      dual: { affix: '-वः', form: 'त्यजावः', translit: 'tyajāvaḥ', meaning: 'we two abandon', pronoun: 'आवाम्', sentence: 'आवां त्यजावः' },
+      plural: { affix: '-मः', form: 'त्यजामः', translit: 'tyajāmaḥ', meaning: 'we all abandon', pronoun: 'वयम्', sentence: 'वयं त्यजामः' },
     },
-    exampleSentences: {
-      singular: { sanskrit: 'भक्तः ईश्वरं नमति।', translit: 'Bhaktaḥ īśvaraṁ namati.', english: 'The devotee bows to the Divine.' },
-      dual: { sanskrit: 'भक्तौ ईश्वरं नमतः।', translit: 'Bhaktau īśvaraṁ namataḥ.', english: 'The two devotees bow to the Divine.' },
-      plural: { sanskrit: 'भक्ताः ईश्वरं नमन्ति।', translit: 'Bhaktāḥ īśvaraṁ namanti.', english: 'The devotees bow to the Divine.' },
+    targetSentence: {
+      number: 'dual',
+      person: 'madhyama',
+      sanskrit: 'युवाम् त्यजथः',
+      translit: 'Yuvām tyajathaḥ',
+      english: 'You two abandon/leave.',
     },
-    mnemonic: 'नम् (Namaste): नमति, नमतः, नमन्ति.',
+    mnemonic: 'मध्यमपुरुषः: त्वम् त्यजसि, युवाम् त्यजथः, यूयम् त्यजथ.',
   },
+
+  // 19. वयम् + अर्च् (1P - उत्तमपुरुषः बहुवचनम्)
   {
-    id: 'stha',
-    root: 'स्था',
-    baseTranslit: 'sthā (tiṣṭh)',
-    meaning: 'स्थानम् / स्थितिः (To Stand / Stay)',
-    englishAction: 'Stand / Stay',
+    id: 'arch',
+    root: 'अर्च्',
+    baseTranslit: 'arc',
+    subjectNoun: 'वयम् (We all)',
+    meaning: 'अर्चनम् / पूजा (To Worship)',
+    englishAction: 'Worship / Adore',
     gana: 'भ्वादिगणः',
     ganaNumber: 1,
-    stem: 'तिष्ठ',
-    vikaran: 'अ (पाघ्राध्मास्था... तिष्ठादेशः)',
-    padam: 'परस्मैपदम्',
-    prathama: {
-      singular: { affix: '-ति', form: 'तिष्ठति', translit: 'tiṣṭhati', meaning: 'stands / stays', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'तिष्ठतः', translit: 'tiṣṭhataḥ', meaning: 'two stand / stay', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'तिष्ठन्ति', translit: 'tiṣṭhanti', meaning: 'they stand / stay', pronoun: 'ते / ताः / तानि' },
-    },
-    madhyama: {
-      singular: { affix: '-सि', form: 'तिष्ठसि', translit: 'tiṣṭhasi', meaning: 'you stand', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'तिष्ठथः', translit: 'tiṣṭhathaḥ', meaning: 'you two stand', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'तिष्ठथ', translit: 'tiṣṭhatha', meaning: 'you all stand', pronoun: 'यूयम्' },
-    },
-    uttama: {
-      singular: { affix: '-मि', form: 'तिष्ठामि', translit: 'tiṣṭhāmi', meaning: 'I stand', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'तिष्ठावः', translit: 'tiṣṭhāvaḥ', meaning: 'we two stand', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'तिष्ठामः', translit: 'tiṣṭhāmaḥ', meaning: 'we all stand', pronoun: 'वयम्' },
-    },
-    exampleSentences: {
-      singular: { sanskrit: 'वृक्षः मार्गे तिष्ठति।', translit: 'Vṛkṣaḥ mārge tiṣṭhati.', english: 'The tree stands by the road.' },
-      dual: { sanskrit: 'वृक्षौ मार्गे तिष्ठतः।', translit: 'Vṛkṣau mārge tiṣṭhataḥ.', english: 'The two trees stand by the road.' },
-      plural: { sanskrit: 'वृक्षाः मार्गे तिष्ठन्ति।', translit: 'Vṛkṣāḥ mārge tiṣṭhanti.', english: 'The trees stand by the road.' },
-    },
-    mnemonic: 'स्था root transforms to तिष्ठ in present tense: तिष्ठति, तिष्ठतः, तिष्ठन्ति.',
-  },
-  {
-    id: 'drsh',
-    root: 'दृश्',
-    baseTranslit: 'dṛś (paśy)',
-    meaning: 'दर्शनम् (To See / Look)',
-    englishAction: 'See / Look',
-    gana: 'भ्वादिगणः',
-    ganaNumber: 1,
-    stem: 'पश्य',
-    vikaran: 'अ (पाघ्राध्मादृश्... पश्यादेशः)',
-    padam: 'परस्मैपदम्',
-    prathama: {
-      singular: { affix: '-ति', form: 'पश्यति', translit: 'paśyati', meaning: 'sees / looks', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'पश्यतः', translit: 'paśyataḥ', meaning: 'two see', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'पश्यन्ति', translit: 'paśyanti', meaning: 'they see', pronoun: 'ते / ताः / तानि' },
-    },
-    madhyama: {
-      singular: { affix: '-सि', form: 'पश्यसि', translit: 'paśyasi', meaning: 'you see', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'पश्यथः', translit: 'paśyathaḥ', meaning: 'you two see', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'पश्यथ', translit: 'paśyatha', meaning: 'you all see', pronoun: 'यूयम्' },
-    },
-    uttama: {
-      singular: { affix: '-मि', form: 'पश्यामि', translit: 'paśyāmi', meaning: 'I see', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'पश्यावः', translit: 'paśyāvaḥ', meaning: 'we two see', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'पश्यामः', translit: 'paśyāmaḥ', meaning: 'we all see', pronoun: 'वयम्' },
-    },
-    exampleSentences: {
-      singular: { sanskrit: 'बालकः चन्द्रं पश्यति।', translit: 'Bālakaḥ candraṁ paśyati.', english: 'The boy sees the moon.' },
-      dual: { sanskrit: 'बालकौ चन्द्रं पश्यतः।', translit: 'Bālakau candraṁ paśyataḥ.', english: 'The two boys see the moon.' },
-      plural: { sanskrit: 'बालकाः चन्द्रं पश्यन्ति।', translit: 'Bālakāḥ candraṁ paśyanti.', english: 'The boys see the moon.' },
-    },
-    mnemonic: 'दृश् morphs to पश्य: पश्यति (one observes), पश्यतः (two gaze), पश्यन्ति (all behold).',
-  },
-  {
-    id: 'bhu',
-    root: 'भू',
-    baseTranslit: 'bhū (bhav)',
-    meaning: 'सत्ता / भवनम् (To Be / Become)',
-    englishAction: 'Be / Become',
-    gana: 'भ्वादिगणः',
-    ganaNumber: 1,
-    stem: 'भव',
-    vikaran: 'अ (शप्, गुणे अवादेशः)',
-    padam: 'परस्मैपदम्',
-    prathama: {
-      singular: { affix: '-ति', form: 'भवति', translit: 'bhavati', meaning: 'becomes / is', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'भवतः', translit: 'bhavataḥ', meaning: 'two become / are', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'भवन्ति', translit: 'bhavanti', meaning: 'they become / are', pronoun: 'ते / ताः / तानि' },
-    },
-    madhyama: {
-      singular: { affix: '-सि', form: 'भवसि', translit: 'bhavasi', meaning: 'you become', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'भवथः', translit: 'bhavathaḥ', meaning: 'you two become', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'भवथ', translit: 'bhavatha', meaning: 'you all become', pronoun: 'यूयम्' },
-    },
-    uttama: {
-      singular: { affix: '-मि', form: 'भवामि', translit: 'bhavāmi', meaning: 'I become', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'भवावः', translit: 'bhavāvaḥ', meaning: 'we two become', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'भवामः', translit: 'bhavāmaḥ', meaning: 'we all become', pronoun: 'वयम्' },
-    },
-    exampleSentences: {
-      singular: { sanskrit: 'सत्येन मनः शुद्धं भवति।', translit: 'Satyena manaḥ śuddhaṁ bhavati.', english: 'Mind becomes purified through truth.' },
-      dual: { sanskrit: 'तौ छात्रौ कुशलौ भवतः।', translit: 'Tau chātrau kuśalau bhavataḥ.', english: 'Those two students become skilled.' },
-      plural: { sanskrit: 'सर्वे मानवाः सुखी भवन्ति।', translit: 'Sarve mānavāḥ sukhī bhavanti.', english: 'May all beings be happy.' },
-    },
-    mnemonic: 'The fountainhead of verbs: भू $\\rightarrow$ भो + अ $\\rightarrow$ भव + ति/तः/न्ति $\\rightarrow$ भवति, भवतः, भवन्ति!',
-  },
-  {
-    id: 'krid',
-    root: 'क्रीड्',
-    baseTranslit: 'krīḍ',
-    meaning: 'क्रीडनम् (To Play)',
-    englishAction: 'Play',
-    gana: 'भ्वादिगणः',
-    ganaNumber: 1,
-    stem: 'क्रीड',
+    stem: 'अर्च',
     vikaran: 'अ (शप्)',
     padam: 'परस्मैपदम्',
     prathama: {
-      singular: { affix: '-ति', form: 'क्रीडति', translit: 'krīḍati', meaning: 'plays', pronoun: 'सः / सा / तत्' },
-      dual: { affix: '-तः', form: 'क्रीडतः', translit: 'krīḍataḥ', meaning: 'two play', pronoun: 'तौ / ते' },
-      plural: { affix: '-न्ति', form: 'क्रीडन्ति', translit: 'krīḍanti', meaning: 'they play', pronoun: 'ते / ताः / तानि' },
+      singular: { affix: '-ति', form: 'अर्चति', translit: 'arcati', meaning: 'worships', pronoun: 'भक्तः', sentence: 'भक्तः अर्चति' },
+      dual: { affix: '-तः', form: 'अर्चतः', translit: 'arcataḥ', meaning: 'two worship', pronoun: 'भक्तौ', sentence: 'भक्तौ अर्चतः' },
+      plural: { affix: '-न्ति', form: 'अर्चन्ति', translit: 'arcanti', meaning: 'they worship', pronoun: 'भक्ताः', sentence: 'भक्ताः अर्चन्ति' },
     },
     madhyama: {
-      singular: { affix: '-सि', form: 'क्रीडसि', translit: 'krīḍasi', meaning: 'you play', pronoun: 'त्वम्' },
-      dual: { affix: '-थः', form: 'क्रीडथः', translit: 'krīḍathaḥ', meaning: 'you two play', pronoun: 'युवाम्' },
-      plural: { affix: '-थ', form: 'क्रीडथ', translit: 'krīḍatha', meaning: 'you all play', pronoun: 'यूयम्' },
+      singular: { affix: '-सि', form: 'अर्चसि', translit: 'arcasi', meaning: 'you worship', pronoun: 'त्वम्', sentence: 'त्वम् अर्चसि' },
+      dual: { affix: '-थः', form: 'अर्चथः', translit: 'arcathaḥ', meaning: 'you two worship', pronoun: 'युवाम्', sentence: 'युवाम् अर्चथः' },
+      plural: { affix: '-थ', form: 'अर्चथ', translit: 'arcatha', meaning: 'you all worship', pronoun: 'यूयम्', sentence: 'यूयम् अर्चथ' },
     },
     uttama: {
-      singular: { affix: '-मि', form: 'क्रीडामि', translit: 'krīḍāmi', meaning: 'I play', pronoun: 'अहम्' },
-      dual: { affix: '-वः', form: 'क्रीडावः', translit: 'krīḍāvaḥ', meaning: 'we two play', pronoun: 'आवाम्' },
-      plural: { affix: '-मः', form: 'क्रीडामः', translit: 'krīḍāmaḥ', meaning: 'we all play', pronoun: 'वयम्' },
+      singular: { affix: '-मि', form: 'अर्चामि', translit: 'arcāmi', meaning: 'I worship', pronoun: 'अहम्', sentence: 'अहम् अर्चामि' },
+      dual: { affix: '-वः', form: 'अर्चावः', translit: 'arcāvaḥ', meaning: 'we two worship', pronoun: 'आवाम्', sentence: 'आवाम् अर्चावः' },
+      plural: { affix: '-मः', form: 'अर्चामः', translit: 'arcāmaḥ', meaning: 'we all worship', pronoun: 'वयम्', sentence: 'वयम् अर्चामः' },
     },
-    exampleSentences: {
-      singular: { sanskrit: 'बालकः कन्दुकेन क्रीडति।', translit: 'Bālakaḥ kandukena krīḍati.', english: 'The boy plays with the ball.' },
-      dual: { sanskrit: 'बालकौ कन्दुकेन क्रीडतः।', translit: 'Bālakau kandukena krīḍataḥ.', english: 'The two boys play with the ball.' },
-      plural: { sanskrit: 'बालकाः कन्दुकेन क्रीडन्ति।', translit: 'Bālakāḥ kandukena krīḍanti.', english: 'The boys play with the ball.' },
+    targetSentence: {
+      number: 'plural',
+      person: 'uttama',
+      sanskrit: 'वयम् अर्चामः',
+      translit: 'Vayam arcāmaḥ',
+      english: 'We all worship.',
     },
-    mnemonic: 'क्रीड् (sports & games): क्रीडति, क्रीडतः, क्रीडन्ति.',
+    mnemonic: 'उत्तमपुरुषः: अहम् अर्चामि, आवाम् अर्चावः, वयम् अर्चामः.',
+  },
+
+  // 20. आवाम् + लभ् (1A - आत्मनेपदम् उत्तमपुरुषः द्विवचनम्)
+  {
+    id: 'labh',
+    root: 'लभ्',
+    baseTranslit: 'labh',
+    subjectNoun: 'आवाम् (We two)',
+    meaning: 'प्राप्तिः (To Obtain / Gain)',
+    englishAction: 'Obtain / Gain',
+    gana: 'भ्वादिगणः',
+    ganaNumber: 1,
+    stem: 'लभ',
+    vikaran: 'अ (शप्)',
+    padam: 'आत्मनेपदम्',
+    prathama: {
+      singular: { affix: '-ते', form: 'लभते', translit: 'labhate', meaning: 'obtains', pronoun: 'सः', sentence: 'सः लभते' },
+      dual: { affix: '-एते', form: 'लभेते', translit: 'labhete', meaning: 'two obtain', pronoun: 'तौ', sentence: 'तौ लभेते' },
+      plural: { affix: '-न्ते', form: 'लभन्ते', translit: 'labhante', meaning: 'they obtain', pronoun: 'ते', sentence: 'ते लभन्ते' },
+    },
+    madhyama: {
+      singular: { affix: '-से', form: 'लभसे', translit: 'labhase', meaning: 'you obtain', pronoun: 'त्वम्', sentence: 'त्वं लभसे' },
+      dual: { affix: '-एथे', form: 'लभेथे', translit: 'labhethe', meaning: 'you two obtain', pronoun: 'युवाम्', sentence: 'युवां लभेथे' },
+      plural: { affix: '-ध्वे', form: 'लभध्वे', translit: 'labhadhve', meaning: 'you all obtain', pronoun: 'यूयम्', sentence: 'यूयं लभध्वे' },
+    },
+    uttama: {
+      singular: { affix: '-ए', form: 'लभे', translit: 'labhe', meaning: 'I obtain', pronoun: 'अहम्', sentence: 'अहम् लभे' },
+      dual: { affix: '-वहे', form: 'लभावहे', translit: 'labhāvahe', meaning: 'we two obtain', pronoun: 'आवाम्', sentence: 'आवाम् लभावहे' },
+      plural: { affix: '-महे', form: 'लभामहे', translit: 'labhāmahe', meaning: 'we all obtain', pronoun: 'वयम्', sentence: 'वयम् लभामहे' },
+    },
+    targetSentence: {
+      number: 'dual',
+      person: 'uttama',
+      sanskrit: 'आवाम् लभावहे',
+      translit: 'Āvām labhāvahe',
+      english: 'We two obtain.',
+    },
+    mnemonic: 'आत्मनेपद उत्तमपुरुषः: अहम् लभे, आवाम् लभावहे, वयम् लभामहे.',
   },
 ];
 
-export const MATRIX_PUZZLE_CHALLENGES: MatrixPuzzleChallenge[] = [
-  {
-    id: 'ch-1',
-    title: 'Dual Runner (द्विवचनम् धावनम्)',
-    rootId: 'dhav',
-    targetNumber: 'dual',
-    targetPerson: 'prathama',
-    targetForm: 'धावतः',
-    prompt: 'Two energetic horses dash across the meadow. Connect the root धाव् with the correct terminal block to forge the Dual (द्विवचनम्) verb form.',
-    subjectContext: 'अश्वौ तीव्रेण ______।',
-    hint: 'Dual termination in Third Person is always -तः (Aśvau dhāvataḥ).',
-    explanation: 'धाव् (root) + अ (stem) + तः (dual termination) = धावतः (Two run).',
-  },
-  {
-    id: 'ch-2',
-    title: 'Plural Scholars (बहुवचनम् पठनम्)',
-    rootId: 'path',
-    targetNumber: 'plural',
-    targetPerson: 'prathama',
-    targetForm: 'पठन्ति',
-    prompt: 'All students are reciting Vedas together in Gurukul. Connect पठ् with the terminal block for Plural (बहुवचनम्).',
-    subjectContext: 'छात्राः वेदान् ______।',
-    hint: 'Plural termination in Third Person is -न्ति (Chātrāḥ paṭhanti).',
-    explanation: 'पठ् + अ + न्ति = पठन्ति (They all read / study).',
-  },
-  {
-    id: 'ch-3',
-    title: 'Singular Scribe (एकवचनम् लेखनम्)',
-    rootId: 'likh',
-    targetNumber: 'singular',
-    targetPerson: 'prathama',
-    targetForm: 'लिखति',
-    prompt: 'The sage sits in contemplation writing a palm-leaf letter. Connect लिख् with the Singular (एकवचनम्) terminal block.',
-    subjectContext: 'ऋषिः पत्रं ______।',
-    hint: 'Singular termination in Third Person is -ति (Ṛṣiḥ likhati).',
-    explanation: 'लिख् + अ + ति = लिखति (He writes).',
-  },
-  {
-    id: 'ch-4',
-    title: 'Dual Travelers (द्विवचनम् गमनम्)',
-    rootId: 'gam',
-    targetNumber: 'dual',
-    targetPerson: 'prathama',
-    targetForm: 'गच्छतः',
-    prompt: 'Two travelers are walking peacefully toward the holy river. Connect the root गम् (गच्छ्) with the Dual (द्विवचनम्) terminal block.',
-    subjectContext: 'पथिकौ नदीं ______।',
-    hint: 'Root गम् becomes गच्छ; dual termination is -तः (Pathikau gacchataḥ).',
-    explanation: 'गम् (गच्छ्) + अ + तः = गच्छतः (Those two go).',
-  },
-  {
-    id: 'ch-5',
-    title: 'Plural Feast (बहुवचनम् खादनम्)',
-    rootId: 'khad',
-    targetNumber: 'plural',
-    targetPerson: 'prathama',
-    targetForm: 'खादन्ति',
-    prompt: 'A cheerful troop of monkeys feast on ripe sweet mangoes. Connect खाद् with the Plural (बहुवचनम्) terminal block.',
-    subjectContext: 'वानराः फलानि ______।',
-    hint: 'Plural termination in Third Person is -न्ति (Vānarāḥ khādanti).',
-    explanation: 'खाद् + अ + न्ति = खादन्ति (They eat).',
-  },
-  {
-    id: 'ch-6',
-    title: 'Singular Quench (एकवचनम् पानम्)',
-    rootId: 'pa',
-    targetNumber: 'singular',
-    targetPerson: 'prathama',
-    targetForm: 'पिबति',
-    prompt: 'The thirsty deer drinks clear crystal water from the mountain spring. Connect पा (पिब्) with the Singular terminal block.',
-    subjectContext: 'मृगः जलं ______।',
-    hint: 'Root पा transforms to पिब in present tense: पिब + ति = पिबति.',
-    explanation: 'पा (पिब्) + अ + ति = पिबति (The deer drinks).',
-  },
-  {
-    id: 'ch-7',
-    title: 'Dual Gazers (द्विवचनम् दर्शनम्)',
-    rootId: 'drsh',
-    targetNumber: 'dual',
-    targetPerson: 'prathama',
-    targetForm: 'पश्यतः',
-    prompt: 'Two curious children look up at the full moon in wonder. Connect दृश् (पश्य्) with the Dual (द्विवचनम्) terminal block.',
-    subjectContext: 'बालकौ चन्द्रं ______।',
-    hint: 'Root दृश् becomes stem पश्य; dual termination is -तः (Paśyataḥ).',
-    explanation: 'दृश् (पश्य्) + अ + तः = पश्यतः (Those two look / see).',
-  },
-  {
-    id: 'ch-8',
-    title: 'Plural Players (बहुवचनम् क्रीडनम्)',
-    rootId: 'krid',
-    targetNumber: 'plural',
-    targetPerson: 'prathama',
-    targetForm: 'क्रीडन्ति',
-    prompt: 'Children run laughing across the courtyard playing with the ball. Connect क्रीड् with the Plural terminal block.',
-    subjectContext: 'बालकाः प्राङ्गणे ______।',
-    hint: 'Plural termination is -न्ति (Bālakāḥ krīḍanti).',
-    explanation: 'क्रीड् + अ + न्ति = क्रीडन्ति (Children play).',
-  },
-  {
-    id: 'ch-9',
-    title: 'Dual Reverence (द्विवचनम् नमनम्)',
-    rootId: 'nam',
-    targetNumber: 'dual',
-    targetPerson: 'prathama',
-    targetForm: 'नमतः',
-    prompt: 'Two sincere disciples bow with folded palms before the Guru. Connect नम् with the Dual (द्विवचनम्) terminal block.',
-    subjectContext: 'शिष्यौ गुरुं ______।',
-    hint: 'Dual termination is -तः (Śiṣyau namataḥ).',
-    explanation: 'नम् + अ + तः = नमतः (Those two bow).',
-  },
-  {
-    id: 'ch-10',
-    title: 'Universal Well-being (बहुवचनम् भवनम्)',
-    rootId: 'bhu',
-    targetNumber: 'plural',
-    targetPerson: 'prathama',
-    targetForm: 'भवन्ति',
-    prompt: 'In the great Vedic benediction "सर्वे भवन्तु सुखिनः", forge the plural indicative form of root भू (भव्).',
-    subjectContext: 'सर्वे मानवाः प्रसन्नाः ______।',
-    hint: 'Root भू becomes भव; plural termination is -न्ति (Bhavanti).',
-    explanation: 'भू (भव्) + अ + न्ति = भवन्ति (They become / are).',
-  },
-];
+export const MATRIX_PUZZLE_CHALLENGES: MatrixPuzzleChallenge[] = MATRIX_ROOTS.map((rootItem, idx) => {
+  const target = rootItem.targetSentence;
+  const personKey = target.person;
+  const targetConj = rootItem[personKey][target.number];
+
+  return {
+    id: `matrix-ch-${idx + 1}`,
+    challengeNumber: idx + 1,
+    title: `${idx + 1}. ${rootItem.subjectNoun} + ${rootItem.root}`,
+    rootId: rootItem.id,
+    subjectNoun: rootItem.subjectNoun,
+    rootSymbol: rootItem.root,
+    targetNumber: target.number,
+    targetPerson: target.person,
+    targetForm: targetConj.form,
+    targetSentence: target.sanskrit,
+    prompt: `Connect the base root ${rootItem.root} with the correct terminal block to forge the target expression "${target.english}".`,
+    subjectContext: `${targetConj.pronoun} ______।`,
+    meaning: target.english,
+    hint: `Subject is "${targetConj.pronoun}" (${target.number.toUpperCase()} ${target.person.toUpperCase()}). Termination is ${targetConj.affix}.`,
+    explanation: `${rootItem.root} (${rootItem.meaning}) + ${targetConj.affix} = ${target.sanskrit} ("${target.english}")`,
+    options: [
+      {
+        number: 'singular',
+        affix: rootItem[personKey].singular.affix,
+        sentence: rootItem[personKey].singular.sentence,
+      },
+      {
+        number: 'dual',
+        affix: rootItem[personKey].dual.affix,
+        sentence: rootItem[personKey].dual.sentence,
+      },
+      {
+        number: 'plural',
+        affix: rootItem[personKey].plural.affix,
+        sentence: rootItem[personKey].plural.sentence,
+      },
+    ],
+  };
+});
