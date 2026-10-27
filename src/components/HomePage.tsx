@@ -16,6 +16,7 @@ import { ToolInteractiveDemos } from './ToolInteractiveDemos';
 import { GamificationShowcase } from './GamificationShowcase';
 import { TrustAndMethodology } from './TrustAndMethodology';
 import { MobileStickyBar } from './MobileStickyBar';
+import { StudentStaircaseBlackboard } from './StudentStaircaseBlackboard';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 
@@ -1391,21 +1392,15 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         {/* ================================================================
-            FREE TRIAL CALLOUT 1: AFTER LEARNER JOURNEY ROADMAP
+            KNOWLEDGE BLACKBOARD & STUDENT STAIRCASE
+            (Replaces commercial trial callout with staircase of learning & blackboard)
             ================================================================ */}
-        <FeatureTrialCallout
-          badge="🎁 6-STEP PROGRESSION UNLOCKED"
-          title="Experience Every Step of the संस्कृतम् (Sanskrit) Journey Free"
-          subtitle="From Alphabet & 400+ Syllables to full NCERT Deepakam, Pāṇinian grammar rules, and 80-mark CBSE exam prep. Test-drive all 6 milestones with 14 days of unrestricted access."
-          perks={[
-            'All 6 Progression Stages Unlocked',
-            'Native Audio on Every Word & Verse',
-            'No Credit Card · Instant Activation',
-          ]}
-          buttonText={currentUser?.planStatus ? 'Explore Progression ➔' : 'Start 14-Day Free Access ➔'}
-          onAction={handleStartTrial}
-          accent="emerald"
-          planStatus={currentUser?.planStatus}
+        <StudentStaircaseBlackboard
+          onOpenVarnamala={onOpenVarnamala}
+          onOpenReader={onOpenReader}
+          onOpenGrammar={onOpenGrammar}
+          onOpenCbseGuide={onOpenCbseGuide}
+          onOpenQuiz={onOpenQuiz}
         />
 
         {/* ------------------------------------------------------------------

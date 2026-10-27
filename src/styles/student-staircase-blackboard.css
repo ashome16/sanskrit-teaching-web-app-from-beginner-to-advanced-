@@ -1,0 +1,421 @@
+/* ===================================================================
+   STUDENT STAIRCASE & KNOWLEDGE BLACKBOARD COMPONENT STYLES
+   Authentic Gurukul Chalkboard & Ascending Steps Aesthetic
+   =================================================================== */
+
+.student-staircase-section {
+  max-width: 1160px;
+  margin: 2rem auto 3.5rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Eyebrow Header */
+.ssb-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 0 0.5rem;
+}
+
+.ssb-badge {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #f59e0b;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.ssb-subtext {
+  font-size: 0.95rem;
+  color: #78350f;
+  font-style: italic;
+  font-family: 'Siddhanta', 'Noto Sans Devanagari', Georgia, serif;
+}
+
+/* Main 2-Column Stage */
+.ssb-main-stage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+@media (max-width: 940px) {
+  .ssb-main-stage {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left Column: Student Climbing Stairs Image Viewport */
+.ssb-image-viewport {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 12px 30px rgba(78, 42, 10, 0.16),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 3px solid #fef3c7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #2b1f13;
+  min-height: 440px;
+}
+
+.ssb-hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  transition: transform 0.4s ease;
+}
+
+.ssb-image-viewport:hover .ssb-hero-img {
+  transform: scale(1.02);
+}
+
+.ssb-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.1) 0%,
+    rgba(30, 20, 10, 0.25) 50%,
+    rgba(20, 10, 5, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating Stairs Progression Rail */
+.ssb-stairs-progression-rail {
+  position: relative;
+  z-index: 2;
+  margin: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: rgba(28, 16, 7, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(254, 240, 138, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.ssb-step-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: #fde68a;
+  font-weight: 600;
+}
+
+.ssb-step-chip.active {
+  color: #ffffff;
+  background: rgba(245, 158, 11, 0.35);
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(245, 158, 11, 0.6);
+}
+
+.ssb-step-num {
+  background: #f59e0b;
+  color: #451a03;
+  font-weight: 800;
+  font-size: 0.7rem;
+  width: 17px;
+  height: 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.ssb-step-arrow {
+  color: rgba(254, 240, 138, 0.5);
+  font-size: 0.75rem;
+}
+
+/* Right Column: The Authentic Classroom Blackboard */
+.ssb-blackboard-card {
+  background: #451a03; /* Teak / rosewood outer frame */
+  padding: 14px;
+  border-radius: 20px;
+  box-shadow: 
+    0 16px 36px rgba(41, 20, 6, 0.22),
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+  border: 2px solid #78350f;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.ssb-blackboard-inner {
+  flex: 1;
+  background: radial-gradient(circle at 50% 25%, #1f3d30 0%, #162e24 60%, #0d1e17 100%);
+  border: 2px solid #2f5947;
+  border-radius: 12px;
+  padding: 1.5rem 1.6rem 1.1rem;
+  box-shadow: 
+    inset 0 0 45px rgba(0, 0, 0, 0.4),
+    inset 0 2px 3px rgba(255, 255, 255, 0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Blackboard Header with Namaste Button */
+.ssb-chalk-header {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.ssb-namaste-btn {
+  background: radial-gradient(circle, #fef08a 0%, #f59e0b 65%, #d97706 100%);
+  border: 2px solid #fef08a;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.ssb-namaste-btn:hover {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 6px 22px rgba(245, 158, 11, 0.7);
+}
+
+.ssb-namaste-btn.speaking {
+  animation: ssbPulseHalo 1.4s infinite alternate;
+}
+
+@keyframes ssbPulseHalo {
+  0% {
+    box-shadow: 0 0 10px rgba(254, 240, 138, 0.5);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 26px rgba(254, 240, 138, 0.95), 0 0 40px rgba(245, 158, 11, 0.6);
+    transform: scale(1.1);
+  }
+}
+
+.ssb-namaste-icon {
+  font-size: 1.9rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.ssb-chalk-title-block {
+  flex: 1;
+}
+
+.ssb-chalk-motto {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fef9c3;
+  font-family: 'Siddhanta', 'Noto Sans Devanagari', Georgia, serif;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 8px rgba(254, 240, 138, 0.25);
+}
+
+.ssb-chalk-submotto {
+  margin: 0.25rem 0 0.4rem;
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+.ssb-chalk-listen-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #fde047;
+  background: rgba(254, 240, 138, 0.12);
+  border: 1px dashed rgba(254, 240, 138, 0.4);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ssb-chalk-listen-pill:hover {
+  background: rgba(254, 240, 138, 0.24);
+  color: #ffffff;
+}
+
+/* Blackboard Divider */
+.ssb-chalk-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0 0.85rem;
+}
+
+.ssb-chalk-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+}
+
+.ssb-chalk-symbol {
+  color: #fef08a;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* Links List */
+.ssb-chalk-links-label {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.ssb-chalk-links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.ssb-chalk-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 35, 28, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0.6rem 0.85rem;
+  color: #f8fafc;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.ssb-chalk-link-row:hover {
+  background: rgba(30, 65, 52, 0.85);
+  border-color: #fef08a;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 0 10px rgba(254, 240, 138, 0.15);
+}
+
+.ssb-clr-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.ssb-clr-step {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: rgba(254, 240, 138, 0.15);
+  color: #fef08a;
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid rgba(254, 240, 138, 0.3);
+}
+
+.ssb-clr-icon {
+  font-size: 1.15rem;
+}
+
+.ssb-clr-sanskrit {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Siddhanta', 'Noto Sans Devanagari', sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.ssb-clr-english {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  margin-top: 0.1rem;
+}
+
+.ssb-clr-arrow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #fde047;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(254, 224, 71, 0.1);
+  border: 1px solid rgba(254, 224, 71, 0.25);
+  white-space: nowrap;
+}
+
+.ssb-chalk-link-row:hover .ssb-clr-arrow {
+  background: #fde047;
+  color: #1e293b;
+  border-color: #fde047;
+}
+
+/* Bottom Chalk Tray & Pieces */
+.ssb-chalk-tray {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.ssb-chalk-piece {
+  width: 24px;
+  height: 7px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.ssb-chalk-white {
+  background: #ffffff;
+}
+
+.ssb-chalk-yellow {
+  background: #fef08a;
+}
+
+.ssb-chalk-blue {
+  background: #93c5fd;
+}
+
+.ssb-duster {
+  width: 44px;
+  height: 14px;
+  background: #78350f;
+  border-top: 3px solid #d97706;
+  border-radius: 3px;
+  margin-left: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
