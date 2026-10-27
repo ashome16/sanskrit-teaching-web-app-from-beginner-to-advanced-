@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BodhiLabAnecdote, ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
 import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
+import { playPronunciation } from '../../utils/pronunciation';
 
 type Script = 'dev' | 'iast' | 'en';
 
@@ -672,6 +673,55 @@ const JyotishaOrbit: React.FC = () => {
         pulls every other, and a small-step <em>Verlet</em> integrator moves them. Watch how speed decides between a steady
         orbit, falling in, or escaping, and see which nakṣatra Candra is in as it goes round.
       </CoreIdea>
+
+      {/* Primary Space & Gravity Playground Banner */}
+      <div className="jyotisha-playground-banner" role="region" aria-label="Space Gravity Playground">
+        <span className="jpb-icon" aria-hidden="true">🪐</span>
+        <div>
+          <div className="jpb-title-row">
+            <strong>अंतरिक्ष-कक्षा · Space &amp; Orbit Gravity Playground (Ages 8–12)</strong>
+            <span className="jpb-tag">Primary &amp; Middle STEM</span>
+          </div>
+          <p className="jpb-desc">
+            Master gravity with Sun (<strong>सूर्यः</strong>), Earth (<strong>पृथिवी</strong>) and Moon (<strong>चन्द्रः</strong>)!
+            Tune the orbital speed slider: too slow and you crash, too fast and you escape into the cosmos. Watch the Moon travel through the 27 Nakṣatras!
+          </p>
+          <div className="jpb-bodies-row">
+            <button
+              type="button"
+              className="jpb-body-btn"
+              onClick={() => playPronunciation('सूर्य')}
+              title="Hear Sun in Sanskrit (सूर्यः)"
+            >
+              ☀️ सूर्यः (Sun) 🔊
+            </button>
+            <button
+              type="button"
+              className="jpb-body-btn"
+              onClick={() => playPronunciation('पृथिवी')}
+              title="Hear Earth in Sanskrit (पृथिवी)"
+            >
+              🌍 पृथिवी (Earth) 🔊
+            </button>
+            <button
+              type="button"
+              className="jpb-body-btn"
+              onClick={() => playPronunciation('चन्द्र')}
+              title="Hear Moon in Sanskrit (चन्द्रः)"
+            >
+              🌕 चन्द्रः (Moon) 🔊
+            </button>
+            <button
+              type="button"
+              className="jpb-body-btn"
+              onClick={() => playPronunciation('नक्षत्र')}
+              title="Hear Constellation in Sanskrit (नक्षत्रम्)"
+            >
+              ✨ नक्षत्रम् (Stars) 🔊
+            </button>
+          </div>
+        </div>
+      </div>
 
       <div className="vl-sandbox" data-testid="orbit-sandbox">
         <div className="vl-orbit-grid">

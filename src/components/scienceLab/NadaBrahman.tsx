@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BodhiLabAnecdote, ChallengeList, CoreIdea, TermPanel, type LabChallenge, type LabTerm } from './common';
 import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
+import { playPronunciation } from '../../utils/pronunciation';
 
 type LangMode = 'both' | 'sanskrit' | 'modern';
 type VisualMode = 'wave' | 'cymatics' | 'sarana';
@@ -606,6 +607,36 @@ const NadaBrahman: React.FC = () => {
         play with a real vibrating string. Pick a harmonic, tune the tension, and the frequency comes straight from the physics
         of strings. The five harmonic buttons carry the five <em>tanmātras</em> of Sāṅkhya as playful labels.
       </CoreIdea>
+
+      {/* Preschool Magic Sitar Banner */}
+      <div className="nada-preschool-banner" role="region" aria-label="Preschool Sound & Cymatics Magic">
+        <span className="npb-icon" aria-hidden="true">🪕</span>
+        <div>
+          <div className="npb-title-row">
+            <strong>नाद-वाटिका · Magic Musical Sitar &amp; Dancing Sand (Ages 3–7)</strong>
+            <span className="npb-tag">Preschool to All Ages</span>
+          </div>
+          <p className="npb-desc">
+            Pluck the magical rainbow sitar string! Hear pure musical notes, and switch to <strong>“💠 Chladni Cymatics Mandala”</strong> to watch colorful sand dance into stars and sacred flowers!
+          </p>
+          <div className="npb-swara-row">
+            {['सा', 'रे', 'ग', 'म', 'प', 'ध', 'नि'].map((swara) => (
+              <button
+                key={swara}
+                type="button"
+                className="npb-swara-btn"
+                onClick={() => {
+                  playPronunciation(swara);
+                  pluck();
+                }}
+                title={`Hear and pluck ${swara}`}
+              >
+                🎵 {swara}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <div className="vl-quest-head">
         <h3 className="vl-quest-title">🎶 {L('Nāda-brahman', 'The Cosmic Sitār', 'नाद-ब्रह्म')}</h3>

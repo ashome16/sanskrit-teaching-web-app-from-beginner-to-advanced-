@@ -534,15 +534,16 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         <div className="vl-hero-glow" aria-hidden="true" />
         <div className="vl-hero-text">
           <h1 className="vl-title">
-            VIJÑĀNA LAB <span className="vl-title-badge">PROYOG</span> · <span lang="sa" className="vl-title-dev">विज्ञान-प्रयोगशाला</span>
+            VIJÑĀNA PLAY LAB <span className="vl-title-badge">PROYOG</span> · <span lang="sa" className="vl-title-dev">विज्ञान-प्रयोगशाला</span>
           </h1>
           <p className="vl-lead">
-            Boot up the ultimate reality sandbox. Hack into ancient atomic physics, orbital gravity, cymatic sand harmonics, and aerospace metallurgy through interactive laboratory simulations. Decode Sanskrit sūtras and conquer each scientific challenge.
+            Boot up the ultimate reality &amp; science play lab. Explore ancient atomic physics, orbital planetary gravity, cymatic sand harmonics, and aerospace metallurgy through 16 interactive sandboxes from preschool wonder to scholar research. Decode Sanskrit sūtras and conquer each scientific challenge.
           </p>
           <div className="vl-hud-telemetry">
-            <span className="vl-hud-pill"><span>🕹️</span> {LAB_SEGMENTS.length} ACTIVE SECTORS</span>
-            <span className="vl-hud-pill"><span>⚡</span> 60 FPS QUANTUM ENGINE</span>
-            <span className="vl-hud-pill"><span>📜</span> SŪTRA ARCHIVES</span>
+            <span className="vl-hud-pill"><span>🧸</span> PRESCHOOL (3–7)</span>
+            <span className="vl-hud-pill"><span>🎒</span> PRIMARY (8–12)</span>
+            <span className="vl-hud-pill"><span>🔬</span> MIDDLE (11–15)</span>
+            <span className="vl-hud-pill"><span>🚀</span> HIGH &amp; ADVANCED</span>
             <span className="vl-hud-pill"><span>🧠</span> BODHI AI GUIDE</span>
           </div>
           <div className="vl-btn-row">
@@ -996,6 +997,43 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             <span className="vl-nav-arrow" aria-hidden="true">▶</span>
           </button>
         </nav>
+
+        {/* Workbench Quick Tier Jump Bar */}
+        <div className="vl-workbench-quick-tiers" role="navigation" aria-label="Quick Educational Tier Jump">
+          <span className="vl-wqt-label">TIER JUMP:</span>
+          <button
+            type="button"
+            className={`vl-wqt-pill vl-wqt-pill--preschool${seg.level === 'preschool' ? ' is-active' : ''}`}
+            onClick={() => handleNavigateLab('chaturyoni')}
+            title="Jump to Preschool Animal Safari & Seasons"
+          >
+            🧸 Preschool (Ages 3–7)
+          </button>
+          <button
+            type="button"
+            className={`vl-wqt-pill vl-wqt-pill--primary${seg.level === 'primary' ? ' is-active' : ''}`}
+            onClick={() => handleNavigateLab('jyotisha')}
+            title="Jump to Primary Planetary Orbit Gravity"
+          >
+            🎒 Primary (Grades 3–5)
+          </button>
+          <button
+            type="button"
+            className={`vl-wqt-pill vl-wqt-pill--middle${seg.level === 'middle' ? ' is-active' : ''}`}
+            onClick={() => handleNavigateLab('chandrayaan')}
+            title="Jump to Middle School Chandrayaan Lander"
+          >
+            🔬 Middle (Grades 6–8)
+          </button>
+          <button
+            type="button"
+            className={`vl-wqt-pill vl-wqt-pill--high${seg.level === 'high' || seg.level === 'advanced' ? ' is-active' : ''}`}
+            onClick={() => handleNavigateLab('paramanu')}
+            title="Jump to High School Atom Synthesizer"
+          >
+            🚀 Advanced (Atoms / Rockets)
+          </button>
+        </div>
 
         {/* Biological Continuum Track Banner for Life Sciences */}
         {seg.category === 'life' && (
