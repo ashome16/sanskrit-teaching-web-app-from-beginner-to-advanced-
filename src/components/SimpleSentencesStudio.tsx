@@ -9,6 +9,8 @@ import {
   type SimpleSentenceItem,
   type SentencePuzzleItem,
 } from '../data/simpleSentencesData';
+import { DhatupathaMatrixConnector } from './DhatupathaMatrixConnector';
+import { PencilSketchRelativeClauseMatcher } from './PencilSketchRelativeClauseMatcher';
 import { playPronunciation, stopPronunciation } from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
 import '../styles/simple-sentences.css';
@@ -17,17 +19,19 @@ interface SimpleSentencesStudioProps {
   onSelectWord?: (word: string) => void;
   onGoHome?: () => void;
   onOpenNextLesson?: () => void;
+  initialTab?: StudioTab;
 }
 
-type StudioTab = 'roots' | 'sentences' | 'practice';
+export type StudioTab = 'roots' | 'matrix' | 'relative-sketch' | 'sentences' | 'practice';
 type PuzzlePack = 'foundation' | 'all_300';
 
 export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
   onSelectWord,
   onGoHome,
   onOpenNextLesson,
+  initialTab = 'roots',
 }) => {
-  const [activeTab, setActiveTab] = useState<StudioTab>('roots');
+  const [activeTab, setActiveTab] = useState<StudioTab>(initialTab);
 
   // Root words state (Tab 1)
   const [selectedRootId, setSelectedRootId] = useState<string>('path');
@@ -228,7 +232,7 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
           Master the building blocks of spoken Sanskrit: forge verbs from core roots (धातवः), explore 300 authentic everyday sentences across 30 vital themes, and master syntax with the interactive tiles puzzle game.
         </p>
 
-        {/* 3 Step Navigation Tabs */}
+        {/* 5 Step Navigation Tabs */}
         <div className="sss-nav-tabs">
           <button
             type="button"
@@ -241,7 +245,37 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
             <span className="snt-num">१</span>
             <div className="snt-text">
               <strong>धातवः · Root Words</strong>
-              <span>Interactive Verb Forge</span>
+              <span>Foundational Verb Forge</span>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            className={`sss-nav-tab ${activeTab === 'matrix' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveTab('matrix');
+              soundEffects.playPuzzleSnap();
+            }}
+          >
+            <span className="snt-num">⚡</span>
+            <div className="snt-text">
+              <strong>Dhatupatha Matrix</strong>
+              <span>Modular Block Connector</span>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            className={`sss-nav-tab ${activeTab === 'relative-sketch' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveTab('relative-sketch');
+              soundEffects.playPuzzleSnap();
+            }}
+          >
+            <span className="snt-num">✏️</span>
+            <div className="snt-text">
+              <strong>Pencil-Sketch Match</strong>
+              <span>Relative Clause Riddles</span>
             </div>
           </button>
 
@@ -570,6 +604,30 @@ export const SimpleSentencesStudio: React.FC<SimpleSentencesStudioProps> = ({
               </div>
             </div>
           </div>
+        </section>
+      )}
+
+      {/* ===================================================================
+          TAB: DHATUPATHA MATRIX CONNECTOR (धातु-प्रत्यय योजकः)
+          =================================================================== */}
+      {activeTab === 'matrix' && (
+        <section className="sss-section sss-matrix-section" aria-label="Dhatupatha Matrix Connector">
+          <DhatupathaMatrixConnector
+            onSelectWord={onSelectWord}
+            onGoHome={onGoHome}
+          />
+        </section>
+      )}
+
+      {/* ===================================================================
+          TAB: PENCIL-SKETCH RELATIVE CLAUSE MATCHER (यत्-तत् चित्रात्मकम्)
+          =================================================================== */}
+      {activeTab === 'relative-sketch' && (
+        <section className="sss-section sss-sketch-section" aria-label="Pencil-Sketch Relative Clause Matcher">
+          <PencilSketchRelativeClauseMatcher
+            onSelectWord={onSelectWord}
+            onGoHome={onGoHome}
+          />
         </section>
       )}
 

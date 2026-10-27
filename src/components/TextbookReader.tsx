@@ -608,6 +608,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [varnamalaSubMode, setVarnamalaSubMode] = useState<VarnamalaSubMode>(() =>
     isValidVarnamalaSubMode(initialVarnamalaSubMode) ? initialVarnamalaSubMode : 'sound'
   );
+  const [simpleSentencesTab, setSimpleSentencesTab] = useState<'roots' | 'matrix' | 'relative-sketch' | 'sentences' | 'practice'>('roots');
 
   useEffect(() => {
     if (initialVarnamalaSubMode && isValidVarnamalaSubMode(initialVarnamalaSubMode)) {
@@ -1265,7 +1266,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       lesson.id !== 'samyukta' &&
                       lesson.id !== 'varnamala' &&
                       lesson.id !== 'numbers' &&
-                      lesson.id !== 'barakhadi'
+                      lesson.id !== 'barakhadi' &&
+                      lesson.id !== 'simple-sentences'
                   )
                   .map((lesson) => {
                     const isTrialOpen = isFreeTrialOpenLesson(lesson.id);
@@ -1327,13 +1329,14 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 </optgroup>
               )}
 
-              {/* Foundations (Alphabet, Barakhadi, Samyukta, Numbers) */}
+              {/* Foundations (Alphabet, Barakhadi, Samyukta, Numbers, Simple Sentences & Verb Matrix) */}
               {lessons.some(
                 (lesson) =>
                   lesson.id === 'varnamala' ||
                   lesson.id === 'numbers' ||
                   lesson.id === 'barakhadi' ||
-                  lesson.id === 'samyukta'
+                  lesson.id === 'samyukta' ||
+                  lesson.id === 'simple-sentences'
               ) && (
                 <optgroup label="Foundations (मूल-संस्कृतम् · 🎁 Free Trial Open)">
                   {lessons
@@ -1342,7 +1345,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                         lesson.id === 'varnamala' ||
                         lesson.id === 'numbers' ||
                         lesson.id === 'barakhadi' ||
-                        lesson.id === 'samyukta'
+                        lesson.id === 'samyukta' ||
+                        lesson.id === 'simple-sentences'
                     )
                     .map((lesson) => (
                       <option key={lesson.id} value={lesson.id}>
@@ -1355,6 +1359,28 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           </div>
 
           <div className="textbook-quick-tools" role="toolbar" aria-label="Quick Study Tools">
+            <button
+              type="button"
+              className="textbook-action-chip"
+              onClick={() => {
+                setSimpleSentencesTab('matrix');
+                onSelectLesson('simple-sentences');
+              }}
+              title="Interactive Dhatupatha Matrix Connector: Match roots with singular, dual, and plural terminal blocks"
+            >
+              ⚡ Dhatupatha Matrix
+            </button>
+            <button
+              type="button"
+              className="textbook-action-chip"
+              onClick={() => {
+                setSimpleSentencesTab('relative-sketch');
+                onSelectLesson('simple-sentences');
+              }}
+              title="Pencil-Sketch Relative Clause Matcher: Visual riddle puzzles connecting यत्र with तत्र"
+            >
+              ✏️ Sketch Matcher
+            </button>
             <button
               type="button"
               className="textbook-action-chip"
@@ -1759,6 +1785,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               fallbackSubtitle="An unexpected issue occurred while rendering the Simple Sentences Studio. Tap below to reload."
             >
               <SimpleSentencesStudio
+                initialTab={simpleSentencesTab}
                 onSelectWord={handleLetterActivate}
                 onOpenNextLesson={() => onSelectLesson('gsde101')}
               />

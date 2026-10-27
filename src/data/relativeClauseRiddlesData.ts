@@ -1,0 +1,278 @@
+/**
+ * Pencil-Sketch Relative Clause Matcher Data
+ * Visual riddles matching Sanskrit relative clauses (यत्-तत्, यत्र-तत्र, यथा-तथा, यदि-तर्हि, etc.)
+ * with authentic hand-drawn graphite pencil sketch aesthetics.
+ */
+
+export interface RelativeClauseRiddle {
+  id: string;
+  sketchId: string;
+  title: string;
+  theme: string;
+  relativeBlock: string;       // e.g. "यत्र धूमः"
+  relativeTranslit: string;   // e.g. "Yatra dhūmaḥ"
+  relativeMeaning: string;    // e.g. "Where there is smoke..."
+  correlativeBlock: string;    // e.g. "तत्र अग्निः"
+  correlativeTranslit: string;// e.g. "Tatra agniḥ"
+  correlativeMeaning: string; // e.g. "...there is fire."
+  fullSanskrit: string;       // "यत्र धूमः तत्र अग्निः।"
+  fullTranslit: string;       // "Yatra dhūmaḥ tatra agniḥ."
+  englishTranslation: string; // "Wherever there is smoke, there is fire."
+  riddleClue: string;         // The visual riddle clue describing the scene
+  philosophicalInsight: string; // Vedic / Nyāya / Subhāṣita background
+  options: string[];          // Shuffled options for the student to connect
+  sceneSketch: {
+    title: string;
+    description: string;
+    focalSubjects: string[];
+    sketchLines: string;      // Summary of pencil art composition
+  };
+}
+
+export const RELATIVE_CLAUSE_RIDDLES: RelativeClauseRiddle[] = [
+  {
+    id: 'riddle-1',
+    sketchId: 'mountain_fire',
+    title: '१. दार्शनिकः पर्वतः · The Smoky Mountain Peak',
+    theme: 'व्याप्तिः (Logical Invariable Concomitance)',
+    relativeBlock: 'यत्र धूमः',
+    relativeTranslit: 'Yatra dhūmaḥ',
+    relativeMeaning: 'Where there is smoke',
+    correlativeBlock: 'तत्र अग्निः',
+    correlativeTranslit: 'Tatra agniḥ',
+    correlativeMeaning: 'there is fire',
+    fullSanskrit: 'यत्र धूमः तत्र अग्निः।',
+    fullTranslit: 'Yatra dhūmaḥ tatra agniḥ.',
+    englishTranslation: 'Wherever there is smoke, there is fire.',
+    riddleClue: 'Gaze upon the misty, wind-swept mountain crest... a dark twisting plume of grey smoke rises toward the heavens. Complete the immortal riddle of Indian epistemology (Nyāya-Anumāna)!',
+    philosophicalInsight: 'The bedrock example of Vyāpti (व्याप्ति) in Nyāya logic. Where there is a visible sign (hetu - smoke), the unseen cause (sādhya - fire) is invariably established.',
+    options: ['तत्र अग्निः', 'तथा प्रजा', 'तर्हि तृणं रोहति', 'तदा कमलं विकसति'],
+    sceneSketch: {
+      title: 'Himalayan Ridge & Sacred Flame',
+      description: 'Rugged graphite contours of jagged peaks with swirling cross-hatch smoke curls meeting a golden flame hidden in the rock crag.',
+      focalSubjects: ['Mountain Peak (पर्वतः)', 'Rising Smoke (धूमः)', 'Hidden Fire (अग्निः)'],
+      sketchLines: 'Heavy graphite strokes, swirling wind spirals, charcoal hatching on rocky crags.',
+    },
+  },
+  {
+    id: 'riddle-2',
+    sketchId: 'king_subjects',
+    title: '२. राजसभा प्रजाहितम् · The Sovereign & the Kingdom',
+    theme: 'राजधर्मः (Moral Leadership)',
+    relativeBlock: 'यथा राजा',
+    relativeTranslit: 'Yathā rājā',
+    relativeMeaning: 'As is the king / ruler',
+    correlativeBlock: 'तथा प्रजा',
+    correlativeTranslit: 'Tathā prajā',
+    correlativeMeaning: 'so are the citizens / people',
+    fullSanskrit: 'यथा राजा तथा प्रजा।',
+    fullTranslit: 'Yathā rājā tathā prajā.',
+    englishTranslation: 'As the ruler is, so are the people / A kingdom mirrors the virtues of its guide.',
+    riddleClue: 'Beneath the vaulted stone arches of the royal sabhā, a noble crowned king dispenses justice with a righteous heart. How will the townspeople in the bazaar outside conduct themselves?',
+    philosophicalInsight: 'Rājadharma in the Chāṇakya Nīti and Mahābhārata. The character of leaders sets the moral compass for the entire civil community.',
+    options: ['तथा प्रजा', 'तत्र अग्निः', 'तावत् सिद्धिः', 'सः जानाति'],
+    sceneSketch: {
+      title: 'The Royal Court & Industrious Townspeople',
+      description: 'Pencil sketch of an ancient crowned monarch with folded palms and sceptre, mirrored by peaceful villagers tending farms and scrolls below.',
+      focalSubjects: ['Noble Sovereign (राजा)', 'Courtyard Pillars (मण्डपः)', 'Prosperous Citizens (प्रजाः)'],
+      sketchLines: 'Architectural pencil perspective, soft graphite shading on drapery, fine line facial expressions.',
+    },
+  },
+  {
+    id: 'riddle-3',
+    sketchId: 'rain_meadow',
+    title: '३. मेघवर्षणम् सस्यश्यामलम् · The Monsoon Meadow',
+    theme: 'कार्य-कारण-भावः (Cause & Effect in Nature)',
+    relativeBlock: 'यदि वर्षति',
+    relativeTranslit: 'Yadi varṣati',
+    relativeMeaning: 'If it rains from heaven',
+    correlativeBlock: 'तर्हि तृणं रोहति',
+    correlativeTranslit: 'Tarhi tṛṇaṁ rohati',
+    correlativeMeaning: 'then the tender grass sprouts',
+    fullSanskrit: 'यदि वर्षति तर्हि तृणं रोहति।',
+    fullTranslit: 'Yadi varṣati tarhi tṛṇaṁ rohati.',
+    englishTranslation: 'If it rains, then the tender grass sprouts forth across the land.',
+    riddleClue: 'Deep storm clouds swell over parched summer earth. If the soothing monsoon showers drench the fields, what living carpet awakens from the soil?',
+    philosophicalInsight: 'Conditional clause (यदि...तर्हि). Illustrates the inexorable interdependence between rainfall (kāraṇa) and vegetation growth (kārya).',
+    options: ['तर्हि तृणं रोहति', 'तत्र अग्निः', 'तदा कमलं विकसति', 'तथा प्रजा'],
+    sceneSketch: {
+      title: 'Monsoon Clouds & Sprouting Earth',
+      description: 'Pencil-rendered cumulus rainclouds sending parallel diagonal rain hatches onto dry furrows where delicate fresh shoots break the ground.',
+      focalSubjects: ['Heavy Rainclouds (मेघः)', 'Falling Raindrops (वृष्टिः)', 'Emerging Shoots (तृणम्)'],
+      sketchLines: 'Diagonal graphite rain strokes, stippled ground texture, curved botanical contours.',
+    },
+  },
+  {
+    id: 'riddle-4',
+    sketchId: 'sun_lotus',
+    title: '४. सूर्योदयः पद्मविकासश्च · Dawn Over the Lotus Lake',
+    theme: 'प्रकृतेः सौन्दर्यम् (The Awakening of Consciousness)',
+    relativeBlock: 'यदा सूर्यः उदेति',
+    relativeTranslit: 'Yadā sūryaḥ udeti',
+    relativeMeaning: 'When the golden sun rises',
+    correlativeBlock: 'तदा कमलं विकसति',
+    correlativeTranslit: 'Tadā kamalaṁ vikasati',
+    correlativeMeaning: 'then the lotus blooms',
+    fullSanskrit: 'यदा सूर्यः उदेति तदा कमलं विकसति।',
+    fullTranslit: 'Yadā sūryaḥ udeti tadā kamalaṁ vikasati.',
+    englishTranslation: 'When the sun rises, then the sacred lotus blossoms.',
+    riddleClue: 'Dawn breaks over a silent Himalayan lake. When the first brilliant rays pierce the morning mist, what water flower gently spreads its radiant petals to welcome the light?',
+    philosophicalInsight: 'Temporal relative clause (यदा...तदा). Symbol of spiritual illumination: as the sun dispels darkness, the blooming lotus mirrors the awakened intellect (Buddhi).',
+    options: ['तदा कमलं विकसति', 'तर्हि तृणं रोहति', 'तावत् सिद्धिः', 'तत्र अग्निः'],
+    sceneSketch: {
+      title: 'Sunrise Cresting Over Lake Lotus',
+      description: 'Fine graphite radiant sunbeams fanning out across shimmering water ripples, illuminating an opening multi-petaled lotus bud.',
+      focalSubjects: ['Rising Sun (सूर्यः)', 'Lake Ripples (सरोवरः)', 'Blossoming Lotus (कमलम्)'],
+      sketchLines: 'Radiating pencil lines, concentric water rings, delicate curved lotus petal outlines.',
+    },
+  },
+  {
+    id: 'riddle-5',
+    sketchId: 'sculptor_siddhi',
+    title: '५. उद्योगिनं पुरुषसिंहम् · The Sculptor\'s Dedication',
+    theme: 'कर्मसिद्धिः (Effort & Attainment)',
+    relativeBlock: 'यावत् प्रयत्नः',
+    relativeTranslit: 'Yāvat prayatnaḥ',
+    relativeMeaning: 'As great as the effort is',
+    correlativeBlock: 'तावत् सिद्धिः',
+    correlativeTranslit: 'Tāvat siddhiḥ',
+    correlativeMeaning: 'so great is the attainment / accomplishment',
+    fullSanskrit: 'यावत् प्रयत्नः तावत् सिद्धिः।',
+    fullTranslit: 'Yāvat prayatnaḥ tāvat siddhiḥ.',
+    englishTranslation: 'In proportion to sincere effort is the attainment of success.',
+    riddleClue: 'A dedicated artisan sits with hammer and chisel, chipping patiently at a massive rough stone block until a celestial figure smiles through the marble. How is the grandeur of the final statue measured?',
+    philosophicalInsight: 'Proportional relative clause (यावत्...तावत्). Success is not serendipitous; its magnitude strictly mirrors the depth of heartfelt tapas and effort.',
+    options: ['तावत् सिद्धिः', 'तथा प्रजा', 'रमन्ते तत्र देवताः', 'तदा कमलं विकसति'],
+    sceneSketch: {
+      title: 'Master Sculptor & the Emerging Deity',
+      description: 'Chiseled stone sculpture with pencil hatching on stone grain, hammer and chisel poised with flying stone sparks.',
+      focalSubjects: ['Sculptor\'s Chisel (टङ्कः)', 'Stone Block (शिला)', 'Finished Masterpiece (सिद्धिः)'],
+      sketchLines: 'Dynamic cross-hatching, stone fragment dust stippling, muscular arm contours.',
+    },
+  },
+  {
+    id: 'riddle-6',
+    sketchId: 'student_manuscript',
+    title: '६. ज्ञानपिपासा · The Sincere Seeker',
+    theme: 'स्वाध्यायः (The Path of Knowledge)',
+    relativeBlock: 'यः पठति',
+    relativeTranslit: 'Yaḥ paṭhati',
+    relativeMeaning: 'He who studies / reads with devotion',
+    correlativeBlock: 'सः जानाति',
+    correlativeTranslit: 'Saḥ jānāti',
+    correlativeMeaning: 'he alone understands / knows',
+    fullSanskrit: 'यः पठति सः जानाति।',
+    fullTranslit: 'Yaḥ paṭhati saḥ jānāti.',
+    englishTranslation: 'He who studies with dedicated concentration, he alone truly understands.',
+    riddleClue: 'Under the banyan tree shade, an ancient birch-bark manuscript lies open before many onlookers. But to whom alone do the silent Sanskrit verses unlock their living essence?',
+    philosophicalInsight: 'Pronominal relative clause (यः...सः). Knowledge cannot be inherited or bought—only the earnest student who studies with devotion attains direct perception.',
+    options: ['सः जानाति', 'तत्र अग्निः', 'तद् फलं लभते', 'तर्हि तृणं रोहति'],
+    sceneSketch: {
+      title: 'Gurukul Disciple with Palm-Leaf Manuscript',
+      description: 'Pencil drawing of a serene Gurukul student in padmāsana under a banyan tree, tracing Devanagari lines on a tied palm-leaf bundle.',
+      focalSubjects: ['Palm-leaf Grantha (तालपत्रम्)', 'Young Student (छात्रः)', 'Ancient Banyan Canopy (वटवृक्षः)'],
+      sketchLines: 'Delicate leaf-vein hatching, manuscript grain lines, soft graphite shading on student profile.',
+    },
+  },
+  {
+    id: 'riddle-7',
+    sketchId: 'sacred_home',
+    title: '७. गृहलक्ष्मी-सम्मानम् · Where Honor Resides',
+    theme: 'मातृशक्तिः (The Sacred Honor of Women)',
+    relativeBlock: 'यत्र नार्यस्तु पूज्यन्ते',
+    relativeTranslit: 'Yatra nāryastu pūjyante',
+    relativeMeaning: 'Where women are honored with reverence',
+    correlativeBlock: 'रमन्ते तत्र देवताः',
+    correlativeTranslit: 'Ramante tatra devatāḥ',
+    correlativeMeaning: 'there the divine deities rejoice',
+    fullSanskrit: 'यत्र नार्यस्तु पूज्यन्ते रमन्ते तत्र देवताः।',
+    fullTranslit: 'Yatra nāryastu pūjyante ramante tatra devatāḥ.',
+    englishTranslation: 'Where women are revered and honored, there the gods rejoice and abide.',
+    riddleClue: 'A traditional Indian courtyard at dusk, decorated with fresh rice flour rangoli and glowing brass oil lamps. In a household where mother, daughter, and sister are cherished, what divine presence blesses the home?',
+    philosophicalInsight: 'Famous verse from Manu Smṛti (3.56). Emphasizes that domestic peace, divine grace, and societal flourishing are directly rooted in honoring women.',
+    options: ['रमन्ते तत्र देवताः', 'तावत् सिद्धिः', 'तथा प्रजा', 'सः जानाति'],
+    sceneSketch: {
+      title: 'Auspicious Threshold with Oil Lamp & Rangoli',
+      description: 'Graphite sketch of a carved wooden doorway with mango-leaf torana, lighted brass deepa, and floral rangoli pattern on the stone floor.',
+      focalSubjects: ['Carved Doorway (तोरणम्)', 'Brass Lamp (दीपः)', 'Lotus Rangoli (रङ्गोली)'],
+      sketchLines: 'Intricate wood-carving textures, soft radiant light glow using negative space, pencil stippling.',
+    },
+  },
+  {
+    id: 'riddle-8',
+    sketchId: 'seed_harvest',
+    title: '८. कर्मबीजम् · The Law of the Sower',
+    theme: 'कर्मसिद्धान्तः (The Cosmic Harvest)',
+    relativeBlock: 'यद् बीजं वपते',
+    relativeTranslit: 'Yad bījaṁ vapate',
+    relativeMeaning: 'Whatever seed one sows',
+    correlativeBlock: 'तद् फलं लभते',
+    correlativeTranslit: 'Tad phalaṁ labhate',
+    correlativeMeaning: 'that very fruit one gathers / reaps',
+    fullSanskrit: 'यद् बीजं वपते तद् फलं लभते।',
+    fullTranslit: 'Yad bījaṁ vapate tad phalaṁ labhate.',
+    englishTranslation: 'Whatever seed a person sows, that very same fruit they shall reap.',
+    riddleClue: 'Careful weathered hands press a small seed into the warm furrowed earth. What timeless law of nature ensures that mango seeds never produce sour tamarind?',
+    philosophicalInsight: 'Neuter relative pronoun (यद्...तद्). The universal law of Karma: Every thought, word, and deed is a seed that inevitably matures into its own exact fruit.',
+    options: ['तद् फलं लभते', 'तत्र अग्निः', 'तदा कमलं विकसति', 'रमन्ते तत्र देवताः'],
+    sceneSketch: {
+      title: 'Farmer Sowing Seeds & Heavy Fruit Bough',
+      description: 'Pencil drawing of cupped hands releasing seeds into rich soil on the left, transitioning to lush branches laden with ripe mangoes on the right.',
+      focalSubjects: ['Sowing Hands (हस्तौ)', 'Falling Seeds (बीजानि)', 'Ripe Fruit Branch (फलभारः)'],
+      sketchLines: 'Earth furrow hatching, hand skin creases, heavy leaf shading with cross-hatched fruits.',
+    },
+  },
+  {
+    id: 'riddle-9',
+    sketchId: 'treasure_worry',
+    title: '९. तृष्णायाः छाया · The Shadow of Desire',
+    theme: 'वैराग्यम् (Contentment & Peace)',
+    relativeBlock: 'यावती तृष्णा',
+    relativeTranslit: 'Yāvatī tṛṣṇā',
+    relativeMeaning: 'As vast as the craving / greed grows',
+    correlativeBlock: 'तावती चिन्ता',
+    correlativeTranslit: 'Tāvatī cintā',
+    correlativeMeaning: 'so vast is the sleepless anxiety',
+    fullSanskrit: 'यावती तृष्णा तावती चिन्ता।',
+    fullTranslit: 'Yāvatī tṛṣṇā tāvatī cintā.',
+    englishTranslation: 'To the degree that uncontrolled craving expands, to that same degree does worry and anxiety grow.',
+    riddleClue: 'Inside a bolted iron treasury, chests overflow with jewels and coins. Yet outside on the balcony, why does the merchant toss and turn through the dark night?',
+    philosophicalInsight: 'Feminine relative clause (यावती...तावती). True peace (Śānti) comes not from accumulating treasures, but from moderating relentless thirst for possessions.',
+    options: ['तावती चिन्ता', 'तर्हि तृणं रोहति', 'तथा प्रजा', 'सः जानाति'],
+    sceneSketch: {
+      title: 'Overflowing Strongbox & Pacing Silhouette',
+      description: 'Pencil sketch of an open treasure chest spilling gems and coins, with long dark graphite shadows reaching toward a restless pensive figure.',
+      focalSubjects: ['Jewel Strongbox (कोशः)', 'Graphite Shadow (छाया)', 'Contemplative Figure (चिन्ताकुलः)'],
+      sketchLines: 'Heavy charcoal shadow gradients, metallic coin luster, delicate silhouette contours.',
+    },
+  },
+  {
+    id: 'riddle-10',
+    sketchId: 'banyan_effort',
+    title: '१०. पुरुषार्थः दैवस्य मूलम् · Destiny & Honest Labor',
+    theme: 'पुरुषार्थः (The Supremacy of Human Endeavor)',
+    relativeBlock: 'यथा बीजं विना वृक्षः न भवति',
+    relativeTranslit: 'Yathā bījaṁ vinā vṛkṣaḥ na bhavati',
+    relativeMeaning: 'Just as without a seed no tree can exist',
+    correlativeBlock: 'तथा पुरुषार्थं विना दैवं न सिद्ध्यति',
+    correlativeTranslit: 'Tathā puruṣārthaṁ vinā daivaṁ na siddhyati',
+    correlativeMeaning: 'so without human effort destiny yields no fruit',
+    fullSanskrit: 'यथा बीजं विना वृक्षः न भवति, तथा पुरुषार्थं विना दैवं न सिद्ध्यति।',
+    fullTranslit: 'Yathā bījaṁ vinā vṛkṣaḥ na bhavati, tathā puruṣārthaṁ vinā daivaṁ na siddhyati.',
+    englishTranslation: 'Just as no tree can ever grow without a seed, so destiny never bears fruit without sincere human effort.',
+    riddleClue: 'A magnificent ancient banyan tree spreads its aerial roots into the deep earth. Can mere fate summon such a shaded sanctuary without the seed of dedicated action?',
+    philosophicalInsight: 'From the Yogavāsiṣṭha: Destiny (Daivam) is not an arbitrary force from afar, but the ripening fruit of our own past actions (Puruṣārtha). Today\'s labor molds tomorrow\'s fate.',
+    options: [
+      'तथा पुरुषार्थं विना दैवं न सिद्ध्यति',
+      'तत्र अग्निः',
+      'तदा कमलं विकसति',
+      'तावती चिन्ता',
+    ],
+    sceneSketch: {
+      title: 'Ancient Banyan Tree & Nurturing Seedling',
+      description: 'Detailed graphite study of a towering banyan tree with hanging prop roots, alongside a tiny seedling tenderly protected by a bamboo fence.',
+      focalSubjects: ['Ancient Banyan (वटवृक्षः)', 'Aerial Roots (जटाः)', 'Protected Sapling (अङ्कुरः)'],
+      sketchLines: 'Intricate bark texture hatching, dense canopy leaves, delicate seedling contours.',
+    },
+  },
+];
