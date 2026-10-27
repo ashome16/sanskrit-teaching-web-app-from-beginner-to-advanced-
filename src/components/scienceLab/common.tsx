@@ -4,6 +4,7 @@ import { playPronunciation, type BodhiSpeechLang } from '../../utils/pronunciati
 import { useBodhiSpeech } from './useBodhiSpeech';
 
 export type LabSegmentId =
+  | 'preschool-wonder'
   | 'paramanu'
   | 'prakriti'
   | 'jyotisha'

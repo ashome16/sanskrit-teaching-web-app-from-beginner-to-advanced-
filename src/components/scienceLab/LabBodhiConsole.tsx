@@ -27,6 +27,39 @@ interface SegmentLore {
 }
 
 const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
+  'preschool-wonder': {
+    title: 'Preschool Wonder Playground',
+    dev: 'शिशु-क्रीडा-वाटिका',
+    bodhiIntro:
+      'Namaste little friend! Welcome to our joyful playground where we discover sacred shapes, smiling moon phases, morning and night skies, colorful seasons, divine animal vāhanas, and the dance of the five friends!',
+    keyConcepts: [
+      { label: 'Shapes (आकाराः)', text: 'Circle (वृत्तम्), Square (चतुरस्रम्), Triangle (त्रिकोणम्), and Star (तारका).' },
+      { label: 'Moon Phases (चन्द्र-कलाः)', text: 'From New Moon (अमावास्या) to Smiling Crescent (बालचन्द्रः) to Full Moon (पूर्णिमा).' },
+      { label: 'Divine Vāhanas (देव-वाहनानि)', text: 'The animal companions of deities: Ganesha’s mouse, Shiva’s bull, Saraswati’s swan.' },
+    ],
+    faqs: [
+      {
+        q: 'What are the Five Friends of Nature (Pañcabhūtāni)?',
+        a: 'Earth (पृथिवी), Water (जलम्), Fire (अग्निः), Air (वायुः), and Sky (आकाशः) — the five sacred friends that make up our entire world!',
+        devAudio: 'पृथिवी आपः तेजः वायुः आकाशः',
+      },
+      {
+        q: 'Why does Ganesha have a little mouse as a friend?',
+        a: 'Ganesha’s mouse (मूषकः) represents quickness and modesty — showing that even the smallest little friend is deeply respected and loved in Indian tradition!',
+        devAudio: 'मूषकवाहन मोदकहस्त',
+      },
+    ],
+    quizzes: [
+      {
+        id: 'psw_1',
+        q: 'What is a round shape called in Sanskrit?',
+        options: ['वृत्तम् (Circle)', 'चतुरस्रम् (Square)', 'त्रिकोणम् (Triangle)'],
+        correct: 0,
+        explanation: 'Vṛttam (वृत्तम्) means a round circle, like the bright shining sun!',
+        sanskritContext: 'वृत्तम् मण्डलाकारम्',
+      },
+    ],
+  },
   paramanu: {
     title: 'Vaiśeṣika Atomic Foundations',
     dev: 'कणादस्य परमाणुवादः',

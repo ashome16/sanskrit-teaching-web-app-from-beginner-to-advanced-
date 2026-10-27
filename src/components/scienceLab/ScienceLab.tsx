@@ -1,7 +1,9 @@
 import React, { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import type { LabSegmentId } from './common';
+import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
 
+const PreschoolWonderLab = lazy(() => import('./PreschoolWonderLab'));
 const ParamanuBuilder = lazy(() => import('./ParamanuBuilder'));
 const PrakritiBalance = lazy(() => import('./PrakritiBalance'));
 const JyotishaOrbit = lazy(() => import('./JyotishaOrbit'));
@@ -47,6 +49,27 @@ export interface LabSegmentConfig {
 }
 
 const LAB_SEGMENTS: LabSegmentConfig[] = [
+  // 0. Preschool Wonder Zone (Ages 3–6)
+  {
+    id: 'preschool-wonder',
+    code: 'PRE-01',
+    icon: '🧸',
+    dev: 'शिशु-क्रीडा-वाटिका',
+    title: 'Preschool Wonder Playground',
+    subject: 'Shapes, Moon, Day, Seasons & Vāhanas',
+    school: 'बाल-संस्कृत-प्रज्ञा (Ages 3–6)',
+    category: 'life',
+    level: 'preschool',
+    levelLabel: 'Preschool & Kindergarten',
+    levelDev: 'शिशु-कक्षा',
+    ageRange: 'Ages 3–6 · Toddlers & Little Explorers',
+    gameType: '5 Tactile Preschool Mini-Games',
+    blurb: 'Delightful hands-on games for little children: Shapes, Smiling Moon Phases, Day & Sky Routine, Nature Seasons, Divine Vāhana Animal Matching, and the Dance of 5 Friends story!',
+    tint: 'rgba(245, 158, 11, 0.16)',
+    ink: '#fbbf24',
+    glow: '#f59e0b',
+  },
+
   // 1. Matter & The Elementary Crucible
   {
     id: 'paramanu',
@@ -97,10 +120,10 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     subject: 'Cellular Homeostasis',
     school: 'Tridoṣa Engine (आयुर्वेद)',
     category: 'life',
-    level: 'preschool',
-    levelLabel: 'Preschool & Early',
-    levelDev: 'शिशु-बोध',
-    ageRange: 'Preschool to Grade 2 · Ages 3–7',
+    level: 'middle',
+    levelLabel: 'Middle School',
+    levelDev: 'माध्यमिक',
+    ageRange: 'Grades 6–8 · Ages 11–14',
     gameType: 'Biosphere Ecosystem Game',
     blurb: 'Elemental survival sandbox. Control the seasons, heat and moisture to bring Vāta, Pitta and Kapha into dynamic balance with real-time Nāḍī waveform feedback.',
     tint: 'rgba(16, 185, 129, 0.12)',
@@ -116,10 +139,10 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     subject: 'Bio-Galvanometry',
     school: 'Vṛkṣāyurveda & J.C. Bose',
     category: 'life',
-    level: 'preschool',
-    levelLabel: 'Preschool & Primary',
-    levelDev: 'शिशु-प्राथमिक',
-    ageRange: 'Ages 4–8 · Early Explorer',
+    level: 'primary',
+    levelLabel: 'Primary School',
+    levelDev: 'प्रारम्भिक',
+    ageRange: 'Grades 3–5 · Ages 8–11',
     gameType: 'Animal & Plant Taxonomy Game',
     blurb: 'Ancient 4-fold taxonomy engine paired with Sir J.C. Bose’s plant galvanometer probe, tracking real-time microvolt action potentials to electrical and tactile stimuli.',
     tint: 'rgba(249, 115, 22, 0.12)',
@@ -177,10 +200,10 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     subject: 'Harmonics & Cymatics',
     school: 'Nāda Brahman (सङ्गीत)',
     category: 'waves',
-    level: 'preschool',
-    levelLabel: 'Preschool to All Ages',
-    levelDev: 'शिशु-सार्वजनिक',
-    ageRange: 'Ages 4+ · All Ages',
+    level: 'primary',
+    levelLabel: 'Primary School',
+    levelDev: 'प्रारम्भिक',
+    ageRange: 'Grades 3–6 · Ages 8–12',
     gameType: 'Harmonics & Cymatic Sand Game',
     blurb: 'String resonance simulator. Pluck standing waves, shift across harmonics 1–5, calibrate the 22 Śrutis, and reveal 2D Chladni sand mandala nodal yantras.',
     tint: 'rgba(168, 85, 247, 0.12)',
@@ -363,6 +386,11 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
 
 const SEGMENT_IDS = new Set<string>(LAB_SEGMENTS.map((s) => s.id));
 const HASH_ALIASES: Record<string, LabSegmentId> = {
+  'preschool-wonder': 'preschool-wonder',
+  preschool: 'preschool-wonder',
+  toddler: 'preschool-wonder',
+  shapes: 'preschool-wonder',
+  vahanas: 'preschool-wonder',
   somayana: 'chandrayaan',
   'soma-yana': 'chandrayaan',
   sampling: 'rituparna',
@@ -621,9 +649,13 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             <button
               type="button"
               className={`vl-level-tab vl-lt--preschool${filterLevel === 'preschool' ? ' is-active' : ''}`}
-              onClick={() => setFilterLevel('preschool')}
+              onClick={() => {
+                setFilterLevel('preschool');
+                setActive('preschool-wonder');
+                soundEffects.playStrokeChime();
+              }}
             >
-              <span className="vl-tab-icon">🧸</span> PRESCHOOL &amp; EARLY (Ages 3–7)
+              <span className="vl-tab-icon">🧸</span> PRESCHOOL (Ages 3–6)
             </button>
             <button
               type="button"
@@ -777,35 +809,26 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
       <nav className="vl-cards" aria-label="Vijñāna Lab simulations">
         {visibleSegments.map((s) => {
           const isPreschool = s.level === 'preschool';
-          const preschoolTitle =
-            s.id === 'chaturyoni'
-              ? '🐾 Cute Animals & Plants Safari'
-              : s.id === 'prakriti'
-              ? '☀️ Sun, Rain & Seasons Wonderland'
-              : s.id === 'nada-brahman'
-              ? '🌈 Magic Sitar & Dancing Sand'
-              : s.title;
+          const preschoolTitle = s.id === 'preschool-wonder'
+            ? '🧸 Preschool Wonder Playground'
+            : s.title;
 
-          const preschoolDev =
-            s.id === 'chaturyoni'
-              ? 'चतुर्योनि · Animal & Plant Friends'
-              : s.id === 'prakriti'
-              ? 'प्रकृति-सन्तुलनम् · Nature & Seasons'
-              : s.id === 'nada-brahman'
-              ? 'नाद-ब्रह्म · Magic Music Sitar'
-              : s.dev;
+          const preschoolDev = s.id === 'preschool-wonder'
+            ? 'शिशु-क्रीडा-वाटिका · Wonder Playground'
+            : s.dev;
 
-          const preschoolBlurb =
-            s.id === 'chaturyoni'
-              ? 'Meet adorable baby animals, chirping birds, swimming fish, and green sprouting seeds! Tap and guide each friend to their happy home with cheerful Sanskrit sounds.'
-              : s.id === 'prakriti'
-              ? 'Play with warm sunshine, cooling rain clouds, winter snowflakes, and spring blossoms! Help plants drink water and keep Mother Nature green and smiling.'
-              : s.id === 'nada-brahman'
-              ? 'Pluck musical strings and watch colorful sand dance into magical shapes and mandala stars! Gentle, soothing audio for curious little ears.'
-              : s.blurb;
+          const preschoolBlurb = s.id === 'preschool-wonder'
+            ? '5 joyful tactile games for toddlers (Ages 3–6): Shapes, Smiling Moon Phases, Day Routine, Nature Seasons, Divine Vāhana Animal Matching, and the Dance of 5 Friends story!'
+            : s.blurb;
 
           return (
           <React.Fragment key={s.id}>
+            {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'preschool-wonder' && (
+              <div className="vl-track-header" style={{ borderColor: 'rgba(245, 158, 11, 0.55)' }}>
+                <span className="vl-track-title" style={{ color: '#fbbf24' }}><span>🧸</span> PRESCHOOL WONDER ZONE: EARLY EXPLORERS (AGES 3–6)</span>
+                <span className="vl-track-subtitle" style={{ color: '#fde68a' }}>शिशु-क्रीडा-वाटिका · PRE-01 (SHAPES, MOON, DAY &amp; VAHANAS)</span>
+              </div>
+            )}
             {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'paramanu' && (
               <div className="vl-track-header">
                 <span className="vl-track-title"><span>⚛️</span> TRACK I: MATTER &amp; MASS CONSERVATION</span>
@@ -1004,10 +1027,10 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           <button
             type="button"
             className={`vl-wqt-pill vl-wqt-pill--preschool${seg.level === 'preschool' ? ' is-active' : ''}`}
-            onClick={() => handleNavigateLab('chaturyoni')}
-            title="Jump to Preschool Animal Safari & Seasons"
+            onClick={() => handleNavigateLab('preschool-wonder')}
+            title="Jump to Preschool Wonder Playground (Shapes, Moon, Seasons, Vāhanas)"
           >
-            🧸 Preschool (Ages 3–7)
+            🧸 Preschool (Ages 3–6)
           </button>
           <button
             type="button"
@@ -1036,7 +1059,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         </div>
 
         {/* Biological Continuum Track Banner for Life Sciences */}
-        {seg.category === 'life' && (
+        {seg.category === 'life' && active !== 'preschool-wonder' && (
           <div className="vl-bio-continuum-banner" role="region" aria-label="Life Sciences Continuum Track">
             <div className="vl-bio-continuum-title">
               <span className="vl-hud-blink">●</span> BIOLOGICAL CONTINUUM TRACK // जीव-विज्ञान-परम्परा (CELLULAR ➔ ORGANISMAL)
@@ -1079,7 +1102,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         </div>
 
         {/* Guided Quest Mode HUD (3-Minute Gamified Missions) */}
-        {isQuestMode && (
+        {isQuestMode && active !== 'preschool-wonder' && (
           <GuidedQuestHUD
             labId={active}
             labTitle={seg.title}
@@ -1088,6 +1111,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         )}
 
         <Suspense fallback={<SimLoader />}>
+          {active === 'preschool-wonder' && <PreschoolWonderLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
           {active === 'paramanu' && <ParamanuBuilder onNextLab={() => handleNavigateLab(nextSeg.id)} />}
           {active === 'asato-ma' && <AsatoMa />}
           {active === 'prakriti' && <PrakritiBalance onNextLab={() => handleNavigateLab(nextSeg.id)} />}

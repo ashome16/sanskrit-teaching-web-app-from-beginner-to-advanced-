@@ -38,6 +38,50 @@ export interface MatchCategoryMetadata {
 }
 
 export const MATCH_CATEGORIES: MatchCategoryMetadata[] = [
+  // 0A. Vāhanas of Hindu Gods (देवतानां वाहनानि · Preschool & Kids)
+  {
+    id: 'cat_vahanas',
+    titleDev: 'देवतानां वाहनानि (पवित्र-पशवः)',
+    titleEn: 'Vāhanas of Hindu Gods (Divine Animal Friends)',
+    icon: '🦚',
+    description: 'Match each sacred deity with their beloved divine animal friend and carrier.',
+    pairs: [
+      { id: 'vah_1', sanskrit: 'गणेशः ➔ मूषकः', english: 'Ganesha ➔ Little Mouse (Mūṣaka)', transliteration: 'gaṇeśaḥ ➔ mūṣakaḥ', emoji: '🐭' },
+      { id: 'vah_2', sanskrit: 'शिवः ➔ नन्दी (वृषभः)', english: 'Lord Shiva ➔ Nandi the Bull (Vṛṣabha)', transliteration: 'śivaḥ ➔ nandī (vṛṣabhaḥ)', emoji: '🐂' },
+      { id: 'vah_3', sanskrit: 'विष्णुः ➔ गरुडः', english: 'Lord Vishnu ➔ Garuda the Golden Eagle', transliteration: 'viṣṇuḥ ➔ garuḍaḥ', emoji: '🦅' },
+      { id: 'vah_4', sanskrit: 'सरस्वती ➔ हंसः', english: 'Goddess Saraswati ➔ Swan of Wisdom (Haṃsa)', transliteration: 'sarasvatī ➔ haṃsaḥ', emoji: '🦢' },
+      { id: 'vah_5', sanskrit: 'दुर्गा ➔ सिंहः', english: 'Maa Durga ➔ The Brave Lion (Siṃha)', transliteration: 'durgā ➔ siṃhaḥ', emoji: '🦁' },
+      { id: 'vah_6', sanskrit: 'कार्तिकेयः ➔ मयूरः', english: 'Lord Kartikeya / Murugan ➔ Peacock (Mayūra)', transliteration: 'kārtikeyaḥ ➔ mayūraḥ', emoji: '🦚' },
+      { id: 'vah_7', sanskrit: 'लक्ष्मीः ➔ गजः', english: 'Goddess Lakshmi ➔ Royal Elephant (Gaja)', transliteration: 'lakṣmīḥ ➔ gajaḥ', emoji: '🐘' },
+      { id: 'vah_8', sanskrit: 'यमः ➔ महिषः', english: 'Yamaraja ➔ Water Buffalo (Mahiṣa)', transliteration: 'yamaḥ ➔ mahiṣaḥ', emoji: '🦬' },
+      { id: 'vah_9', sanskrit: 'सूर्यः ➔ सप्त-अश्वाः', english: 'Surya (Sun God) ➔ Seven Horses (Sapta-Aśvāḥ)', transliteration: 'sūryaḥ ➔ sapta-aśvāḥ', emoji: '🐎' },
+      { id: 'vah_10', sanskrit: 'इन्द्रः ➔ ऐरावतः', english: 'Indra (King of Devas) ➔ White Elephant (Airāvata)', transliteration: 'indraḥ ➔ airāvataḥ', emoji: '🐘' },
+    ],
+  },
+
+  // 0B. Shapes, Moon Phases & Seasons (आकाराः, चन्द्रः च ऋतवः)
+  {
+    id: 'cat_shapes_seasons',
+    titleDev: 'आकाराः, चन्द्रः च ऋतवः',
+    titleEn: 'Shapes, Moon & Seasons (Preschool)',
+    icon: '🌸',
+    description: 'Everyday sacred shapes, phases of the smiling moon, and the 6 seasons of nature.',
+    pairs: [
+      { id: 'sh_1', sanskrit: 'वृत्तम्', english: 'Circle (Round)', transliteration: 'vṛttam', emoji: '⚪' },
+      { id: 'sh_2', sanskrit: 'चतुरस्रम्', english: 'Square (Four Sides)', transliteration: 'caturasram', emoji: '🟩' },
+      { id: 'sh_3', sanskrit: 'त्रिकोणम्', english: 'Triangle (Three Corners)', transliteration: 'trikoṇam', emoji: '🔺' },
+      { id: 'sh_4', sanskrit: 'तारका', english: 'Star (Twinkling)', transliteration: 'tārakā', emoji: '⭐' },
+      { id: 'sh_5', sanskrit: 'पूर्णिमा', english: 'Full Moon (Bright & Round)', transliteration: 'pūrṇimā', emoji: '🌕' },
+      { id: 'sh_6', sanskrit: 'अमावास्या', english: 'New Moon (Quiet Sky)', transliteration: 'amāvāsyā', emoji: '🌑' },
+      { id: 'sh_7', sanskrit: 'वसन्तः', english: 'Spring (Flowers & Butterflies)', transliteration: 'vasantaḥ', emoji: '🌸' },
+      { id: 'sh_8', sanskrit: 'ग्रीष्मः', english: 'Summer (Warm Sunshine)', transliteration: 'grīṣmaḥ', emoji: '☀️' },
+      { id: 'sh_9', sanskrit: 'वर्षा', english: 'Monsoon (Raindrops & Puddles)', transliteration: 'varṣā', emoji: '🌧️' },
+      { id: 'sh_10', sanskrit: 'शिशिरः', english: 'Winter (Cold Snow & Warm Cozy)', transliteration: 'śiśiraḥ', emoji: '❄️' },
+      { id: 'sh_11', sanskrit: 'प्रभातः', english: 'Early Morning (Dawn Sunrise)', transliteration: 'prabhātaḥ', emoji: '🌅' },
+      { id: 'sh_12', sanskrit: 'रात्रिः', english: 'Night Time (Bedtime & Stars)', transliteration: 'rātriḥ', emoji: '🌙' },
+    ],
+  },
+
   // 1. How to Address (सम्बोधनम् एवं शिष्टाचारः)
   {
     id: 'addressing',

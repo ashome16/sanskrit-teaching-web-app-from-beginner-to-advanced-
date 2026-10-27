@@ -19280,6 +19280,1110 @@
   box-shadow: 0 2px 10px rgba(16, 185, 129, 0.4);
 }
 
+/* ==========================================================================
+   PRESCHOOL WONDER PLAYGROUND (शिशु-क्रीडा-वाटिका · AGES 3–6)
+   ========================================================================== */
+
+.preschool-wonder-root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.psw-hero-box {
+  background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 50%, #f0fdf4 100%);
+  border: 3px solid #f59e0b;
+  border-radius: 28px;
+  padding: 1.6rem 2rem;
+  box-shadow: 0 12px 36px rgba(245, 158, 11, 0.2);
+  color: #1e293b;
+}
+
+.psw-hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.psw-hero-icon {
+  font-size: 3.2rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 3px solid #f59e0b;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+  animation: preschool-wiggle 3.2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.psw-hero-kicker {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #b45309;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.psw-hero-title {
+  margin: 0.15rem 0 0;
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #78350f;
+  letter-spacing: -0.02em;
+}
+
+.psw-hero-desc {
+  font-size: 0.98rem;
+  color: #334155;
+  line-height: 1.6;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.psw-tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding-top: 1rem;
+  border-top: 2px dashed rgba(245, 158, 11, 0.35);
+}
+
+.psw-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  color: #334155;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.psw-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: #f59e0b;
+  color: #b45309;
+}
+
+.psw-tab-btn.is-active {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  color: #ffffff;
+  border-color: #d97706;
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.4);
+}
+
+/* Card Bench Layout */
+.psw-card-bench {
+  background: #ffffff;
+  border: 2.5px solid #e2e8f0;
+  border-radius: 26px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.psw-bench-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.psw-section-heading {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.psw-section-sub {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.psw-quiz-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.35rem;
+  font-weight: 900;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+  transition: all 0.2s ease;
+}
+
+.psw-quiz-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
+}
+
+.psw-quiz-banner {
+  background: #ecfdf5;
+  border: 2px solid #10b981;
+  border-radius: 16px;
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1.05rem;
+  color: #065f46;
+  font-weight: 700;
+}
+
+.psw-quiz-speaker {
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-weight: 800;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+/* Shapes Grid */
+.psw-shapes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+.psw-shape-card {
+  background: #f8fafc;
+  border: 2.5px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.psw-shape-card:hover {
+  transform: translateY(-5px) scale(1.04);
+  border-color: var(--shape-color, #f59e0b);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.psw-shape-card.is-selected {
+  border-color: var(--shape-color, #f59e0b);
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 0 0 3px rgba(245, 158, 11, 0.2);
+  transform: translateY(-4px);
+}
+
+.psw-shape-svg-wrap {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.psw-shape-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.psw-shape-card:hover .psw-shape-svg {
+  transform: scale(1.12) rotate(4deg);
+}
+
+.psw-shape-meta {
+  text-align: center;
+}
+
+.psw-shape-dev {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.psw-shape-en {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.psw-shape-iast {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.psw-speaker-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+/* Detail Spotlight */
+.psw-detail-spotlight {
+  background: #f8fafc;
+  border: 2.5px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 1.25rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.psw-spotlight-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  color: #ffffff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.psw-spotlight-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.psw-spotlight-desc {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.psw-action-pill {
+  margin-left: auto;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.psw-action-pill:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   MOON PHASES PLAYGROUND
+   ========================================================================== */
+.psw-moon-sandbox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.psw-moon-sky {
+  background: linear-gradient(180deg, #090d16 0%, #0f172a 60%, #1e1b4b 100%);
+  border-radius: 24px;
+  padding: 2.5rem 1.5rem 1.5rem;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.psw-star {
+  position: absolute;
+  color: #fef08a;
+  animation: preschool-float 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.psw-moon-face-wrap {
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.psw-moon-face-wrap:hover {
+  transform: scale(1.08);
+}
+
+.psw-moon-sphere {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #e2e8f0 60%, #94a3b8 100%);
+  box-shadow: 0 0 50px rgba(254, 240, 138, 0.45), 0 0 20px rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.psw-moon-shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.92);
+  border-radius: 50% 0 0 50%;
+  transition: width 0.3s ease;
+  pointer-events: none;
+}
+
+.psw-moon-eyes {
+  font-size: 1.6rem;
+  z-index: 3;
+  margin-bottom: 2px;
+}
+
+.psw-moon-smile {
+  z-index: 3;
+}
+
+.psw-moon-current-badge {
+  z-index: 2;
+  margin-top: 1.5rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid #818cf8;
+  border-radius: 20px;
+  padding: 0.75rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #f8fafc;
+  max-width: 500px;
+  width: 100%;
+}
+
+.pmb-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.psw-moon-current-badge strong {
+  font-size: 1.15rem;
+  color: #a5b4fc;
+}
+
+.psw-moon-current-badge p {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.psw-mini-speaker {
+  background: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: transform 0.15s ease;
+}
+
+.psw-mini-speaker:hover {
+  transform: scale(1.12);
+}
+
+.psw-slider-box {
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 18px;
+  padding: 1rem 1.4rem;
+}
+
+.psw-slider-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.psw-range {
+  width: 100%;
+  accent-color: #6366f1;
+  cursor: pointer;
+  height: 8px;
+}
+
+.psw-moon-quick-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.psw-moon-pill {
+  flex: 1 1 calc(20% - 0.65rem);
+  min-width: 130px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 0.75rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.psw-moon-pill:hover,
+.psw-moon-pill.is-active {
+  background: #312e81;
+  color: #ffffff;
+  border-color: #818cf8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.25);
+}
+
+.psw-moon-pill span:first-child {
+  font-size: 1.5rem;
+}
+
+.psw-moon-pill .pm-dev {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.psw-moon-pill .pm-en {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   DAY SECTIONS PLAYGROUND
+   ========================================================================== */
+.psw-day-sandbox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.psw-day-sky {
+  border-radius: 24px;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
+  transition: background 0.5s ease;
+}
+
+.psw-sky-orb {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: translate(-50%, -50%);
+}
+
+.psw-landscape-silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.psw-mountains {
+  width: 100%;
+  height: 100px;
+  display: block;
+}
+
+.psw-day-greeting-bubble {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  color: #0f172a;
+}
+
+.pdb-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.psw-day-greeting-bubble h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.psw-day-greeting-bubble p {
+  margin: 0.25rem 0 0;
+  font-size: 0.92rem;
+  color: #475569;
+}
+
+.psw-day-btn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.psw-day-btn {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.psw-day-btn:hover,
+.psw-day-btn.is-active {
+  background: #ffffff;
+  border-color: #f59e0b;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.25);
+  transform: translateY(-3px);
+}
+
+.pdb-btn-icon {
+  font-size: 2rem;
+}
+
+.psw-day-btn strong {
+  font-size: 1.15rem;
+  color: #0f172a;
+}
+
+.psw-day-btn span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.psw-day-btn small {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   SEASONS PLAYGROUND
+   ========================================================================== */
+.psw-seasons-sandbox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.psw-weather-stage {
+  border: 3px solid;
+  border-radius: 26px;
+  padding: 2rem 1.6rem;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.psw-weather-giant-icon {
+  font-size: 5rem;
+  line-height: 1;
+  animation: preschool-wiggle 3s ease-in-out infinite;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+  flex-shrink: 0;
+}
+
+.psw-particles-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.psw-floating-particle {
+  position: absolute;
+  top: -20px;
+  animation: psw-fall 2.8s linear forwards;
+}
+
+@keyframes psw-fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(280px) rotate(360deg); opacity: 0; }
+}
+
+.psw-weather-info {
+  z-index: 2;
+}
+
+.pwi-tag {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.45rem;
+}
+
+.pwi-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.pwi-desc {
+  margin: 0.5rem 0 1.25rem;
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.55;
+  max-width: 600px;
+}
+
+.psw-trigger-weather-btn {
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.5rem;
+  font-weight: 900;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: all 0.18s ease;
+}
+
+.psw-trigger-weather-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.psw-seasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.psw-season-card {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.15rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.psw-season-card:hover,
+.psw-season-card.is-active {
+  background: #ffffff;
+  border-color: var(--season-color, #ec4899);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.psc-icon {
+  font-size: 2.4rem;
+}
+
+.psw-season-card strong {
+  font-size: 1.15rem;
+  color: #0f172a;
+}
+
+.psw-season-card span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.psw-season-card small {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.psc-speaker {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   VAHANAS MATCHING PLAYGROUND
+   ========================================================================== */
+.psw-score-pill {
+  background: #fef3c7;
+  border: 1.5px solid #f59e0b;
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #92400e;
+}
+
+.psw-reset-link {
+  background: none;
+  border: none;
+  color: #b45309;
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.psw-victory-banner {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 2.5px solid #10b981;
+  border-radius: 20px;
+  padding: 1.25rem 1.6rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 1.15rem;
+  color: #065f46;
+}
+
+.psw-vahana-match-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+@media (max-width: 640px) {
+  .psw-vahana-match-board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.psw-vahana-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.psw-col-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.psw-vahana-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.psw-vahana-btn {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 0.75rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.psw-vahana-btn:hover:not(:disabled) {
+  transform: translateX(4px);
+  border-color: #f59e0b;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.psw-vahana-btn.is-selected {
+  border-color: #f59e0b;
+  background: #fffbeb;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+}
+
+.psw-vahana-btn.is-done {
+  background: #f0fdf4;
+  border-color: #86efac;
+  opacity: 0.7;
+  cursor: default;
+}
+
+.pvb-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.pvb-meta strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.pvb-meta span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.pvb-check {
+  margin-left: auto;
+  font-size: 1.25rem;
+  color: #10b981;
+  font-weight: 900;
+}
+
+/* ==========================================================================
+   STORY: FIVE FRIENDS PLAYGROUND
+   ========================================================================== */
+.psw-story-slide-counter {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+}
+
+.psw-story-stage {
+  border-radius: 26px;
+  padding: 2.5rem 2rem;
+  color: #ffffff;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.85rem;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .psw-story-stage {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+.psw-story-icon-bubble {
+  font-size: 4rem;
+  line-height: 1;
+  width: 96px;
+  height: 96px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  animation: preschool-float 3s ease-in-out infinite;
+}
+
+.psw-story-content {
+  flex: 1;
+}
+
+.psw-story-element-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.65rem;
+}
+
+.psw-story-slide-title {
+  margin: 0 0 1rem;
+}
+
+.psw-story-slide-title span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.psw-story-slide-title small {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-top: 0.15rem;
+}
+
+.psw-story-paragraphs {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.psw-story-sa {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.65;
+  color: #fef08a;
+  margin: 0 0 0.85rem;
+}
+
+.psw-story-en {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.psw-story-btn-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.psw-story-listen-btn {
+  background: #ffffff;
+  color: #0f172a;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.psw-story-listen-btn:hover {
+  transform: translateY(-2px);
+  background: #fef08a;
+}
+
+.psw-story-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.psw-nav-arrow-btn {
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.psw-nav-arrow-btn:hover:not(:disabled) {
+  background: #ffffff;
+  border-color: #0f172a;
+  color: #0f172a;
+  transform: translateY(-1px);
+}
+
+.psw-nav-arrow-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.psw-story-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.psw-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.psw-dot.is-active {
+  width: 28px;
+  border-radius: 999px;
+  background: #f59e0b;
+}
+
+
 
 
 

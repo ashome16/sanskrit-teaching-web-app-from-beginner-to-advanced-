@@ -28,6 +28,8 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 const PRESCHOOL_MATCH_CAT_IDS = new Set([
+  'cat_vahanas',
+  'cat_shapes_seasons',
   'fruits_veg',
   'relationships',
   'vehicles',
