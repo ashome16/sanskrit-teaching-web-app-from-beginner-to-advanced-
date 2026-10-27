@@ -1,98 +1,142 @@
-सरल-वाक्यानि एवं धातवः : SIMPLE SANSKRIT SENTENCES & ROOT WORDS
+सरल-वाक्यानि एवं धातवः : 100 PRACTICAL SANSKRIT SENTENCES & ROOT WORDS STUDIO
 
-=== प्रथमो भागः : धातवः (Root Words & Verb Formation) ===
+=== प्रथमो भागः : धातवः (14 Core Roots & Verb Formation) ===
 पठ् (to read) — बालकः पुस्तकं पठति। (The boy reads the book.)
 लिख् (to write) — बालिका पत्रं लिखति। (The girl writes a letter.)
 गम् (to go) — छात्रः विद्यालयं गच्छति। (The student goes to school.)
 खाद् (to eat) — सः फलं खादति। (He eats fruit.)
-पा (to drink) — सा जलं पिबति। (She drinks water.)
+पा/पिब् (to drink) — सा जलं पिबति। (She drinks water.)
 धाव् (to run) — अश्वः वेगेन धावति। (The horse runs swiftly.)
 क्रीड् (to play) — बालकाः क्रीडाङ्गणे क्रीडन्ति। (The boys play in the ground.)
 हस् (to laugh) — शिशुः हसति। (The baby laughs.)
 वद् (to speak) — अहं सत्यं वदामि। (I speak truth.)
-दृश् (to see) — वयं मयूरं पश्यामः। (We see the peacock.)
+दृश्/पश्य् (to see) — वयं मयूरं पश्यामः। (We see the peacock.)
 नम् (to bow) — शिष्यः गुरुं नमति। (The student bows to the teacher.)
-स्था (to stand) — वृक्षः भूमौ तिष्ठति। (The tree stands on the earth.)
+स्था/तिष्ठ् (to stand) — वृक्षः भूमौ तिष्ठति। (The tree stands on the earth.)
+कृ (to do) — सा कार्यं करोति। (She does the work.)
+भू (to be/become) — ज्ञानं श्रेष्ठं भवति। (Knowledge becomes highest.)
 
-=== द्वितीयो भागः : द्विपद-वाक्यानि (Two-Word Foundation) ===
-बालकः पठति।
-The boy reads.
+=== द्वितीयो भागः : 100 व्यावहारिक-वाक्यानि (100 Everyday Sanskrit Sentences) ===
 
-बालिका लिखति।
-The girl writes.
+--- १. शिष्टाचारः (Greetings & Etiquette) ---
+1. हरिः ॐ। (Hariḥ om.) — Hello. / Greetings.
+2. सुप्रभातम्। (Suprabhātam.) — Good morning.
+3. शुभरात्रिः। (Śubharātriḥ.) — Good night.
+4. धन्यवादः। (Dhanyavādaḥ.) — Thank you.
+5. स्वागतम्। (Svāgatam.) — Welcome.
+6. क्षम्यताम्। (Kṣamyatām.) — Excuse me / Forgive me.
+7. कृपया। (Kṛpayā.) — Please.
+8. अस्तु। (Astu.) — Okay / Let it be.
+9. श्रीमन्! (Śrīman!) — Sir!
+10. मान्ये! (Mānye!) — Madam!
 
-अश्वः धावति।
-The horse runs.
+--- २. परिचयः (Introductions & Identity) ---
+11. भवतः नाम किम्? (Bhavataḥ nāma kim?) — What is your name? (to a male)
+12. भवत्याः नाम किम्? (Bhavatyāḥ nāma kim?) — What is your name? (to a female)
+13. मम नाम देवः। (Mama nāma devaḥ.) — My name is Deva.
+14. भवन्तः के? (Bhavantaḥ ke?) — Who are you? (plural/respectful)
+15. अहं छात्रः अस्मि। (Ahaṁ chātraḥ asmi.) — I am a student (male).
+16. अहं छात्रा अस्मि। (Ahaṁ chātrā asmi.) — I am a student (female).
+17. एषः मम मित्रम्। (Eṣaḥ mama mitram.) — This is my friend.
+18. सः कः? (Saḥ kaḥ?) — Who is he?
+19. सा का? (Sā kā?) — Who is she?
+20. त्वं कुत्र असि? (Tvaṁ kutra asi?) — Where are you?
 
-गजः चलति।
-The elephant walks.
+--- ३. दैनिकक्रियाः (Simple Daily Actions) ---
+21. अहं पठामि। (Ahaṁ paṭhāmi.) — I read / study.
+22. त्वं लिखसि। (Tvaṁ likhasi.) — You write.
+23. सः खादति। (Saḥ khādati.) — He eats.
+24. सा पिबति। (Sā pibati.) — She drinks.
+25. बालकः धावति। (Bālakaḥ dhāvati.) — The boy runs.
+26. बालिका हसति। (Bālikā hasati.) — The girl laughs.
+27. अहं गच्छामि। (Ahaṁ gacchāmi.) — I am going.
+28. त्वं आगच्छसि। (Tvaṁ āgacchasi.) — You are coming.
+29. एषः उपविशति। (Eṣaḥ upaviśati.) — This person sits.
+30. सः उत्तिष्ठति। (Saḥ uttiṣṭhati.) — He stands up.
 
-मयूरः नृत्यति।
-The peacock dances.
+--- ४. आज्ञाप्रयोगाः (Classroom & Commands) ---
+31. अत्र आगच्छ। (Atra āgaccha.) — Come here.
+32. तत्र गच्छ। (Tatra gaccha.) — Go there.
+33. पुस्तकम् उद्घाटय। (Pustakam udghāṭaya.) — Open the book.
+34. मया सह सम्भाषस्व। (Mayā saha sambhāṣasva.) — Talk to me.
+35. मह्यम् उत्तरं यच्छ। (Mahyam uttaraṁ yaccha.) — Give me an answer.
+36. उच्चैः वद। (Uccaiḥ vada.) — Speak loudly.
+37. मां मा विस्मर। (Māṁ mā vismara.) — Don't forget me.
+38. ध्यानं ददातु। (Dhyānaṁ dadātu.) — Please pay attention.
+39. चित्रं पश्य। (Citraṁ paśya.) — Look at the picture.
+40. इदानीं लिखतु। (Idānīṁ likhatu.) — Write now.
 
-बालकाः क्रीडन्ति।
-The boys play.
+--- ५. सम्बन्धः (Possession & Family) ---
+41. एतत् मम गृहम्। (Etat mama gṛham.) — This is my house.
+42. मम माता अस्ति। (Mama mātā asti.) — I have a mother.
+43. तव भ्राता कुत्र? (Tava bhrātā kutra?) — Where is your brother?
+44. एषा मम भगिनी। (Eṣā mama bhaginī.) — This is my sister.
+45. तस्य पिता वैद्यः। (Tasya pitā vaidyaḥ.) — His father is a doctor.
+46. तस्याः गृहं विशालम्। (Tasyāḥ gṛhaṁ viśālam.) — Her house is large.
+47. किं तव पुस्तकम्? (Kiṁ tava pustakam?) — Is this your book?
+48. वृक्षस्य फलानि सन्ति। (Vṛkṣasya phalāni santi.) — The tree has fruits.
+49. नद्याः जलं शीतलम्। (Nadyāḥ jalaṁ śītalam.) — The river's water is cold.
+50. अहं भवता सह अस्मि। (Ahaṁ bhavatā saha asmi.) — I am with you.
 
-=== तृतीयो भागः : सर्वनाम-वाक्यानि (Pronouns in Action) ===
-सः गच्छति।
-He goes.
+--- ६. समयः वातावरणं च (Time & Weather) ---
+51. इदानीं कः समयः? (Idānīṁ kaḥ samayaḥ?) — What time is it now?
+52. अद्य रविवासरः अस्ति। (Adya ravivāsaraḥ asti.) — Today is Sunday.
+53. श्वः सोमवासरः। (Śvaḥ somavāsaraḥ.) — Tomorrow is Monday.
+54. ह्यः शनिवासरः आसीत्। (Hyaḥ śanivāsaraḥ āsīt.) — Yesterday was Saturday.
+55. अद्य सूर्यः प्रखरः अस्ति। (Adya sūryaḥ prakharaḥ asti.) — Today the sun is bright.
+56. मेघः वर्षति। (Meghaḥ varṣati.) — The cloud is raining.
+57. शीतलः वायुः वहति। (Śītalaḥ vāyuḥ vahati.) — Cold wind is blowing.
+58. अद्य शैत्यम् अस्ति। (Adya śaityam asti.) — It is cold today.
+59. सायङ्कालः अभवत्। (Sāyaṅkālaḥ abhavat.) — It has become evening.
+60. कदा गमिष्यसि? (Kadā gamiṣyasi?) — When will you go?
 
-सा हसति।
-She laughs.
+--- ७. भोजनम् (Food & Dining) ---
+61. भोजनं सिद्धं किम्? (Bhojanaṁ siddhaṁ kim?) — Is the food ready?
+62. अहं बुभुक्षितः अस्मि। (Ahaṁ bubhukṣitaḥ asmi.) — I am hungry (male).
+63. भोजनं कृतवती किम्? (Bhojanaṁ kṛtavatī kim?) — Have you eaten? (to a female)
+64. मह्यम् ओदनं रोचते। (Mahyam odanaṁ rocate.) — I like rice.
+65. जलं ददातु। (Jalaṁ dadātu.) — Please give water.
+66. दुग्धं मधुरं भवति। (Dugdhaṁ madhuraṁ bhavati.) — Milk is sweet.
+67. फलानि स्वास्थ्यकराणि। (Phalāni svāsthyakarāṇi.) — Fruits are healthy.
+68. अल्पाहारः लवणयुक्तः अस्ति। (Alpāhāraḥ lavaṇayuktaḥ asti.) — The breakfast is salty.
+69. अहं चायं न पिबामि। (Ahaṁ cāyaṁ na pibāmi.) — I do not drink tea.
+70. किं कुर्वती असि? (Kiṁ kurvatī asi?) — What are you doing? (to a female)
 
-त्वं पठसि।
-You read.
+--- ८. भूत-भविष्यत्-कालाः (Past & Future Actions) ---
+71. रामः श्वः आगमिष्यति। (Rāmaḥ śvaḥ āgamiṣyati.) — Rama will come tomorrow.
+72. अहं पाठं पठितवान्। (Ahaṁ pāṭhaṁ paṭhitavān.) — I read the lesson (male, past).
+73. सा कार्यं कृतवती। (Sā kāryaṁ kṛtavatī.) — She did the work.
+74. ते क्रीडाङ्गणं गतवन्तः। (Te krīḍāṅgaṇaṁ gatavantaḥ.) — They went to the playground.
+75. वयं चित्रपटं द्रक्ष्यामः। (Vayaṁ citrapaṭaṁ drakṣyāmaḥ.) — We will watch a movie.
+76. त्वं कुत्र आसीः? (Tvaṁ kutra āsīḥ?) — Where were you?
+77. गुरुः ज्ञानं दत्तवान्। (Guruḥ jñānaṁ dattavān.) — The teacher gave knowledge.
+78. अहं धनं दास्यामि। (Ahaṁ dhanaṁ dāsyāmi.) — I will give money.
+79. किं त्वं हसितवान्? (Kiṁ tvaṁ hasitavān?) — Did you laugh?
+80. वृक्षात् पत्रं अपतत्। (Vṛkṣāt patraṁ apatat.) — A leaf fell from the tree.
 
-अहं लिखामि।
-I write.
+--- ९. द्विवचन-बहुवचन-प्रयोगाः (Duals & Plurals) ---
+81. बालकौ क्रीडतः। (Bālakau krīḍataḥ.) — Two boys are playing.
+82. कन्ये नृत्यताः। (Kanye nṛtyataḥ.) — Two girls are dancing.
+83. अहं द्वे पुस्तके पठामि। (Ahaṁ dve pustake paṭhāmi.) — I am reading two books.
+84. छात्राः प्रश्नं पृच्छन्ति। (Chātrāḥ praśnaṁ pṛcchanti.) — The students are asking questions.
+85. वयं भारते वसामः। (Vayaṁ bhārate vasāmaḥ.) — We live in India.
+86. पुष्पाणि विकसन्ति। (Puṣpāni vikasanti.) — The flowers are blooming.
+87. यूयं कुत्र गच्छथ? (Yūyaṁ kutra gacchatha?) — Where are you all going?
+88. खगाः आकाशे उड्डयन्ते। (Khagāḥ ākāśe uḍḍayante.) — Birds fly in the sky.
+89. अश्वाः वेगेन धावन्ति। (Aśvāḥ vegena dhāvanti.) — The horses run fast.
+90. ते मन्दं चलन्ति। (Te mandaṁ calanti.) — They walk slowly.
 
-वयं क्रीडामः।
-We play.
+--- १०. सुभाषितानि गुणाः च (Proverbs & Wisdom) ---
+91. सत्यं वद, धर्मं चर। (Satyaṁ vada, dharmaṁ cara.) — Speak the truth. Live with integrity.
+92. विद्वान् सर्वत्र पूज्यते। (Vidvān sarvatra pūjyate.) — A scholar is worshipped everywhere.
+93. लोभात् पापं प्रजायते। (Lobhāt pāpaṁ prajāyate.) — Greed gives rise to sin.
+94. त्वं मम आनन्दः असि। (Tvaṁ mama ānandaḥ asi.) — You are my happiness.
+95. कालः सर्वं विरोपयति। (Kālaḥ sarvaṁ viropayati.) — Time heals all wounds.
+96. एतदपि गमिष्यति। (Etadapi gamiṣyati.) — This, too, shall pass.
+97. रामो बलवान् अस्ति। (Rāmo balavān asti.) — Rama is strong.
+98. सत्यमेव जयते। (Satyameva jayate.) — Truth alone triumphs.
+99. ज्ञानं परमं भूषणम्। (Jñānaṁ paramaṁ bhūṣaṇam.) — Knowledge is the highest ornament.
+100. अहं संस्कृतं वदामि। (Ahaṁ saṁskṛtaṁ vadāmi.) — I speak Sanskrit.
 
-=== चतुर्थो भागः : त्रिपद-वाक्यानि (Subject + Object + Verb) ===
-बालकः पुस्तकं पठति।
-The boy reads the book.
-
-बालिका पत्रं लिखति।
-The girl writes a letter.
-
-सः फलं खादति।
-He eats a fruit.
-
-सा जलं पिबति।
-She drinks water.
-
-माता भोजनं पचति।
-Mother cooks food.
-
-=== पञ्चमो भागः : दैनिक-सम्भाषणम् (Daily Conversations) ===
-भवतः नाम किम्?
-What is your name?
-
-मम नाम आनन्दः अस्ति।
-My name is Ananda.
-
-त्वं कुत्र गच्छसि?
-Where are you going?
-
-अहं विद्यालयं गच्छामि।
-I am going to school.
-
-त्वं किं करोषि?
-What are you doing?
-
-अहं पाठं पठामि।
-I am reading the lesson.
-
-=== षष्ठो भागः : प्रकृतिः एवं जगत् (Nature & Living World) ===
-सूर्यः आकाशे उदयति।
-The sun rises in the sky.
-
-नदी वेगेन वहति।
-The river flows swiftly.
-
-वृक्षः भूमौ तिष्ठति।
-The tree stands on the earth.
-
-पुष्पाणि उद्याने विकसन्ति।
-Flowers bloom in the garden.
+=== तृतीयो भागः : वाक्याभ्यासः (Tiles Puzzle Assembly Arena) ===
+Featuring 25 moved foundational sentences and full 100 sentences puzzle challenges.
