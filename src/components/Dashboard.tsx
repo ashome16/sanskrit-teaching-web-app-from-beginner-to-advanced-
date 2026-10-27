@@ -749,7 +749,7 @@ const Dashboard: React.FC = () => {
           setActiveView('home');
         } else if (activeView === 'reader') {
           const currId = lessons[lessonIndex]?.id;
-          if (currId && currId !== 'varnamala' && currId !== 'gsde101') {
+          if (currId && !isFreeTrialOpenLesson(currId)) {
             const defaultFreeIdx = firstDeepakamIndex(lessons);
             setLessonIndex(defaultFreeIdx >= 0 ? defaultFreeIdx : 0);
             setSentenceIndex(0);
@@ -1429,7 +1429,7 @@ const Dashboard: React.FC = () => {
           >
             <Board
               onNavigateToHome={() => setActiveView('home')}
-              onNavigateToReader={() => openDeepakam()}
+              onNavigateToReader={(lessonId) => openDeepakam(lessonId)}
               onNavigateToVarnamala={() => openVarnamala('sound')}
               onNavigateToGrammar={handleOpenGrammar}
             />

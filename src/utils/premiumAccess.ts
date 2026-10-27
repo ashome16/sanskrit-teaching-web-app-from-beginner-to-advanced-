@@ -49,6 +49,7 @@ export const FREE_TRIAL_OPEN_LESSON_IDS = [
   'barakhadi',
   'samyukta',
   'numbers',
+  'simple-sentences',
   'gsde101',
   'grade8_prarthana',
   'grade8_ch1',

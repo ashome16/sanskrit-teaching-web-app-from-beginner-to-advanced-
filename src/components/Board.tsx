@@ -28,7 +28,7 @@ interface BoardSearchMatch {
 
 export interface BoardProps {
   onNavigateToHome?: () => void;
-  onNavigateToReader?: () => void;
+  onNavigateToReader?: (lessonId?: string) => void;
   onNavigateToVarnamala?: () => void;
   onNavigateToGrammar?: () => void;
   initialStudioMode?: 'jodo' | 'match' | 'maze';
@@ -2170,9 +2170,24 @@ const Board: React.FC<BoardProps> = ({
       </nav>
       <div className="board-site-shortcuts">
         {onNavigateToReader && (
-          <button type="button" className="board-shortcut-btn" onClick={onNavigateToReader}>
-            📖 Deepakam Reader
-          </button>
+          <>
+            <button
+              type="button"
+              className="board-shortcut-btn"
+              onClick={() => onNavigateToReader('simple-sentences')}
+              title="Practice Simple Sentences & Root Words"
+            >
+              💬 Simple Sentences
+            </button>
+            <button
+              type="button"
+              className="board-shortcut-btn"
+              onClick={() => onNavigateToReader()}
+              title="Read NCERT Deepakam Textbook"
+            >
+              📖 Deepakam Reader
+            </button>
+          </>
         )}
         {onNavigateToVarnamala && (
           <button type="button" className="board-shortcut-btn" onClick={() => onNavigateToVarnamala?.()}>
