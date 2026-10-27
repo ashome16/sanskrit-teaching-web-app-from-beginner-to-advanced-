@@ -1182,7 +1182,7 @@ const AsatoMa: React.FC = () => {
             <b style={{ color: '#f1f5f9' }}>🏆 Levels · {levelCount} / 3</b>
             <button type="button" className="vl-btn vl-btn--ghost" onClick={resetProgress} data-testid="asato-reset-levels">Reset progress</button>
           </div>
-          <div className="vl-qcards" role="tablist" aria-label="Choose a level" data-testid="asato-stepbar">
+          <div className="vl-qcards" role="tablist" aria-label="Select a level" data-testid="asato-stepbar">
             {LEVELS.map((l, i) => {
               const state = l.done ? 'done' : lvl === l.n ? 'now' : 'next';
               const goal = l.n === 1 ? <>Goal: below {COLD_K} K</> : l.n === 2 ? <>Goal: faster than {FAST_MS} m/s</> : <>Goal: 3/3 lines</>;

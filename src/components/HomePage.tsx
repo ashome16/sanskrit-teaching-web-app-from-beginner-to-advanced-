@@ -152,7 +152,7 @@ const SUBHASHITAS: SubhashitaItem[] = [
   {
     id: 'vidya-vinaya',
     categorySa: 'विद्या-महिमा',
-    categoryEn: 'Glory of True Learning',
+    categoryEn: 'Wisdom is to acquire apply knowledge with rightful purpose = Dharm',
     line1: 'विद्या ददाति विनयं विनयाद्याति पात्रताम् ।',
     line2: 'पात्रत्वाद्धनमाप्नोति धनाद्धर्मं ततः सुखम् ॥',
     transliteration: 'vidyā dadāti vinayaṁ vinayād yāti pātratām | pātratvād dhanam āpnoti dhanād dharmaṁ tataḥ sukham ||',
@@ -997,7 +997,7 @@ const HomePage: React.FC<HomePageProps> = ({
           {/* 1. Main Headline & Direct Level Selection */}
           <h1 className="home-hero-title">
             <span className="home-hero-title-primary">
-              Choose Beginner to Advanced Levels
+              Select Beginner to Advanced Levels
             </span>
             <p className="home-hero-main-outcome">
               {englishFirst
@@ -1007,7 +1007,7 @@ const HomePage: React.FC<HomePageProps> = ({
           </h1>
 
           {/* 2. Interactive Levels Bar — Linked to Your Step-by-Step Journey */}
-          <div className="home-hero-levels-container" role="region" aria-label="Choose Learning Level">
+          <div className="home-hero-levels-container" role="region" aria-label="Select Learning Level">
             <div className="home-hero-levels-grid">
               <button
                 type="button"
@@ -1623,7 +1623,11 @@ const HomePage: React.FC<HomePageProps> = ({
               <span className="hsub-lotus" aria-hidden="true">🪷</span>
               <div>
                 <span className="hsub-kicker">दैनिक-सुभाषित-मञ्जरी · Daily Shloka Jewel</span>
-                <h2 className="hsub-title">{currentSubhashita.categorySa} · {currentSubhashita.categoryEn}</h2>
+                <h2 className="hsub-title">
+                  {currentSubhashita.id === 'vidya-vinaya'
+                    ? 'Wisdom is to acquire apply knowledge with rightful purpose = Dharm'
+                    : `${currentSubhashita.categorySa} · ${currentSubhashita.categoryEn}`}
+                </h2>
               </div>
             </div>
             <div className="hsub-header-actions">
