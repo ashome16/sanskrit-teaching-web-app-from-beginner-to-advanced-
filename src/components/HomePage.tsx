@@ -1000,8 +1000,8 @@ const HomePage: React.FC<HomePageProps> = ({
             </span>
             <p className="home-hero-main-outcome">
               {englishFirst
-                ? 'Select your starting level below or explore our guided step-by-step roadmap from alphabet basics to complete fluency.'
-                : 'प्रारम्भिक-स्तरात् आरभ्य प्रौढ-स्तरान्तं स्वप्रवेशं चिनुत, अथवा सोपान-क्रमेण यात्रां पश्यन्तु।'}
+                ? 'Select your starting level below or explore your step-by-step संस्कृतम् journey from alphabet basics to complete fluency.'
+                : 'प्रारम्भिक-स्तरात् आरभ्य प्रौढ-स्तरान्तं स्वप्रवेशं चिनुत, अथवा सोपान-क्रमेण संस्कृत-यात्रां पश्यन्तु।'}
             </p>
           </h1>
 
@@ -1085,7 +1085,7 @@ const HomePage: React.FC<HomePageProps> = ({
               }}
               title="Explore full 6-step roadmap"
             >
-              <span>Explore Your Step-by-Step Journey</span>
+              <span>Your Step-by-Step संस्कृतम् (Sanskrit) Journey</span>
               <span className="hhjl-arrow" aria-hidden="true">➔</span>
             </a>
           </div>
@@ -1238,7 +1238,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <span>The Gurukul Learning Pathway · सोपान-मार्गः</span>
             </div>
             <h2 className="home-journey-title">
-              Your Step-by-Step Sanskrit &amp; Samskrit Journey · Measurable Outcomes
+              Your Step-by-Step संस्कृतम् (Sanskrit) Journey · Measurable Outcomes
             </h2>
             <p className="home-journey-subtitle">
               A visible 6-stage roadmap designed for school students, parents, and beginners to achieve tangible outcomes at every milestone:
@@ -1395,7 +1395,7 @@ const HomePage: React.FC<HomePageProps> = ({
             ================================================================ */}
         <FeatureTrialCallout
           badge="🎁 6-STEP PROGRESSION UNLOCKED"
-          title="Experience Every Step of the Sanskrit Journey Free"
+          title="Experience Every Step of the संस्कृतम् (Sanskrit) Journey Free"
           subtitle="From Alphabet & 400+ Syllables to full NCERT Deepakam, Pāṇinian grammar rules, and 80-mark CBSE exam prep. Test-drive all 6 milestones with 14 days of unrestricted access."
           perks={[
             'All 6 Progression Stages Unlocked',
