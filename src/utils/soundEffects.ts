@@ -668,6 +668,173 @@ class SoundEffectsEngine {
       osc.stop(now + 0.14);
     } catch {}
   }
+
+  /**
+   * Preschool Delight: Bubbly tactile pop when picking fruits, popping colors or touching stars
+   */
+  playBubblePop(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(350, now);
+      osc.frequency.exponentialRampToValueAtTime(1180, now + 0.07);
+      gain.gain.setValueAtTime(0.26, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + 0.09);
+    } catch {}
+  }
+
+  /**
+   * Preschool Delight: Double bubbly fruit harvest pop
+   */
+  playFruitHarvestPop(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      [420, 840].forEach((freq, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        const start = now + idx * 0.07;
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, start);
+        osc.frequency.exponentialRampToValueAtTime(freq * 1.6, start + 0.06);
+        gain.gain.setValueAtTime(0.22, start);
+        gain.gain.exponentialRampToValueAtTime(0.001, start + 0.08);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(start);
+        osc.stop(start + 0.09);
+      });
+    } catch {}
+  }
+
+  /**
+   * Preschool Instrument: Resonant Sacred Temple Bell (Ghanta / घण्टा)
+   */
+  playTempleBell(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      // Fundamental + Inharmonic Bell Partials (1046Hz, 2093Hz, 3135Hz)
+      const partials = [
+        { freq: 1046.5, gain: 0.35, decay: 1.4 },
+        { freq: 2093.0, gain: 0.22, decay: 0.9 },
+        { freq: 3135.9, gain: 0.14, decay: 0.5 },
+      ];
+      partials.forEach((p) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(p.freq, now);
+        gain.gain.setValueAtTime(p.gain, now);
+        gain.gain.exponentialRampToValueAtTime(0.0005, now + p.decay);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + p.decay + 0.05);
+      });
+    } catch {}
+  }
+
+  /**
+   * Preschool Instrument: Shiva's Sacred Drum (Damaru / डमरू - rapid twin slap)
+   */
+  playDamaruBeat(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      [0, 0.1].forEach((delay, idx) => {
+        const t = now + delay;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        const startFreq = idx === 0 ? 380 : 340;
+        osc.frequency.setValueAtTime(startFreq, t);
+        osc.frequency.exponentialRampToValueAtTime(90, t + 0.06);
+        gain.gain.setValueAtTime(0.35, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.07);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.08);
+      });
+    } catch {}
+  }
+
+  /**
+   * Preschool Instrument: Sacred Ocean Conch (Shankha / शङ्खः - deep resonant horn call)
+   */
+  playShankhaConch(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const dur = 1.2;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sawtooth';
+      // Low horn swell and bend (approx D3 / 146Hz rising to 164Hz)
+      osc.frequency.setValueAtTime(140, now);
+      osc.frequency.linearRampToValueAtTime(165, now + 0.35);
+      osc.frequency.exponentialRampToValueAtTime(146, now + dur);
+
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(450, now);
+      filter.frequency.linearRampToValueAtTime(900, now + 0.4);
+      filter.frequency.exponentialRampToValueAtTime(320, now + dur);
+
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.28, now + 0.25);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + dur + 0.05);
+    } catch {}
+  }
+
+  /**
+   * Preschool Delight: Funny cartoon wobble when an animal is tapped
+   */
+  playAnimalWiggle(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(320, now);
+      osc.frequency.linearRampToValueAtTime(560, now + 0.06);
+      osc.frequency.linearRampToValueAtTime(380, now + 0.12);
+      osc.frequency.linearRampToValueAtTime(620, now + 0.18);
+      gain.gain.setValueAtTime(0.25, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + 0.24);
+    } catch {}
+  }
 }
 
 export const soundEffects = new SoundEffectsEngine();

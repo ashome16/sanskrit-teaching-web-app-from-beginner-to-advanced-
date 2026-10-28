@@ -4,7 +4,18 @@ import { playPronunciation } from '../../utils/pronunciation';
 import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
 
-type PreschoolTab = 'shapes' | 'moon' | 'day' | 'seasons' | 'vahanas' | 'story';
+type PreschoolTab =
+  | 'shapes'
+  | 'colors'
+  | 'animals'
+  | 'fruits'
+  | 'counting'
+  | 'instruments'
+  | 'moon'
+  | 'day'
+  | 'seasons'
+  | 'vahanas'
+  | 'story';
 
 interface ShapeItem {
   id: string;
@@ -23,6 +34,134 @@ const SHAPES: ShapeItem[] = [
   { id: 'star', dev: 'तारका', iast: 'tārakā', en: 'Star', color: '#8b5cf6', svgType: 'star', fact: 'Twinkling bright in the dark night sky with 5 points!' },
   { id: 'oval', dev: 'अण्डाकारः', iast: 'aṇḍākāraḥ', en: 'Oval', color: '#ec4899', svgType: 'oval', fact: 'Smooth and egg-shaped like a river pebble or seed!' },
   { id: 'crescent', dev: 'अर्धचन्द्रः', iast: 'ardhacandraḥ', en: 'Crescent', color: '#06b6d4', svgType: 'crescent', fact: 'A smiling curved moon shining at bedtime!' },
+];
+
+/* ==========================================================================
+   PRESCHOOL COLORS & MAGIC MIX DATA
+   ========================================================================== */
+interface ColorItem {
+  id: string;
+  dev: string;
+  iast: string;
+  en: string;
+  hex: string;
+  itemEn: string;
+  itemDev: string;
+  itemIcon: string;
+  isPrimary?: boolean;
+}
+
+const COLORS: ColorItem[] = [
+  { id: 'red', dev: 'रक्तः', iast: 'raktaḥ', en: 'Red', hex: '#ef4444', itemEn: 'Ripe Apple', itemDev: 'सेवफलम्', itemIcon: '🍎', isPrimary: true },
+  { id: 'yellow', dev: 'पीतः', iast: 'pītaḥ', en: 'Yellow', hex: '#facc15', itemEn: 'Sweet Banana', itemDev: 'कदलीफलम्', itemIcon: '🍌', isPrimary: true },
+  { id: 'blue', dev: 'नीलः', iast: 'nīlaḥ', en: 'Blue', hex: '#3b82f6', itemEn: 'Dancing Peacock', itemDev: 'मयूरः', itemIcon: '🦚', isPrimary: true },
+  { id: 'green', dev: 'हरितः', iast: 'haritaḥ', en: 'Green', hex: '#22c55e', itemEn: 'Fresh Leaf', itemDev: 'पर्णम्', itemIcon: '🍃' },
+  { id: 'white', dev: 'श्वेतः', iast: 'śvetaḥ', en: 'White', hex: '#f8fafc', itemEn: 'Graceful Swan', itemDev: 'हंसः', itemIcon: '🦢' },
+  { id: 'orange', dev: 'काषायः (नारङ्गः)', iast: 'kāṣāyaḥ', en: 'Saffron / Orange', hex: '#f97316', itemEn: 'Sacred Diya', itemDev: 'दीपः', itemIcon: '🪔' },
+  { id: 'purple', dev: 'जाम्बवः', iast: 'jāmbavaḥ', en: 'Purple / Violet', hex: '#a855f7', itemEn: 'Sweet Grapes', itemDev: 'द्राक्षाफलम्', itemIcon: '🍇' },
+  { id: 'pink', dev: 'पाटलः', iast: 'pāṭalaḥ', en: 'Pink', hex: '#ec4899', itemEn: 'Sacred Lotus', itemDev: 'कमलम्', itemIcon: '🪷' },
+];
+
+/* ==========================================================================
+   PRESCHOOL ANIMAL SAFARI DATA
+   ========================================================================== */
+interface AnimalItem {
+  id: string;
+  dev: string;
+  iast: string;
+  en: string;
+  icon: string;
+  soundLabelEn: string;
+  soundLabelSa: string;
+  fact: string;
+}
+
+const ANIMALS: AnimalItem[] = [
+  { id: 'cow', dev: 'धेनुः (गौः)', iast: 'dhenuḥ (gauḥ)', en: 'Sacred Cow', icon: '🐮', soundLabelEn: 'Moo-Moo!', soundLabelSa: 'हम्बा-हम्बा!', fact: 'Gentle mother who gives warm sweet milk to everyone!' },
+  { id: 'lion', dev: 'सिंहः', iast: 'siṁhaḥ', en: 'Majestic Lion', icon: '🦁', soundLabelEn: 'Rooaaar!', soundLabelSa: 'गर्जति!', fact: 'Brave king of the forest and companion of Goddess Durga!' },
+  { id: 'elephant', dev: 'गजः', iast: 'gajaḥ', en: 'Royal Elephant', icon: '🐘', soundLabelEn: 'Pawoo-Trumpet!', soundLabelSa: 'चिङ्घारः!', fact: 'Gentle giant friend of Ganesha with joyful flapping ears!' },
+  { id: 'mouse', dev: 'मूषकः', iast: 'mūṣakaḥ', en: 'Tiny Mouse', icon: '🐭', soundLabelEn: 'Squeak-Squeak!', soundLabelSa: 'चीं-चीं!', fact: 'Quick and clever friend who rides with Lord Ganesha!' },
+  { id: 'peacock', dev: 'मयूरः', iast: 'mayūraḥ', en: 'Dancing Peacock', icon: '🦚', soundLabelEn: 'Mayura Cry!', soundLabelSa: 'केका-केका!', fact: 'Spreads stunning rainbow feathers when rain clouds appear!' },
+  { id: 'frog', dev: 'मण्डूकः', iast: 'maṇḍūkaḥ', en: 'Jumping Frog', icon: '🐸', soundLabelEn: 'Croak-Croak!', soundLabelSa: 'टर्र-टर्र!', fact: 'Splashes happily into lotus ponds during monsoon rains!' },
+  { id: 'crow', dev: 'काकः', iast: 'kākaḥ', en: 'Clever Crow', icon: '🐦‍⬛', soundLabelEn: 'Caw-Caw!', soundLabelSa: 'का-का!', fact: 'Wakes up early at dawn and shares sweet food with friends!' },
+  { id: 'dog', dev: 'श्वा (कुक्कुरः)', iast: 'śvā (kukkuraḥ)', en: 'Playful Puppy', icon: '🐶', soundLabelEn: 'Bow-Wow!', soundLabelSa: 'भौ-भौ!', fact: 'Loyal and joyful guardian who loves gentle cuddles!' },
+  { id: 'monkey', dev: 'वानरः (कपिः)', iast: 'vānaraḥ', en: 'Leaping Monkey', icon: '🐒', soundLabelEn: 'Chatter-Chatter!', soundLabelSa: 'खिक्-खिक्!', fact: 'Playful tree acrobat who loves juicy sweet fruits!' },
+];
+
+/* ==========================================================================
+   PRESCHOOL SWEET FRUITS DATA
+   ========================================================================== */
+interface FruitItem {
+  id: string;
+  dev: string;
+  iast: string;
+  en: string;
+  icon: string;
+  color: string;
+  sweetFact: string;
+}
+
+const FRUITS: FruitItem[] = [
+  { id: 'mango', dev: 'आम्रम्', iast: 'āmram', en: 'Mango', icon: '🥭', color: '#f59e0b', sweetFact: 'The sweet King of Fruits loved by all children!' },
+  { id: 'banana', dev: 'कदलीफलम्', iast: 'kadalīphalam', en: 'Banana', icon: '🍌', color: '#eab308', sweetFact: 'Sweet and golden energy snack for active little ones!' },
+  { id: 'apple', dev: 'सेवफलम्', iast: 'sevaphalam', en: 'Apple', icon: '🍎', color: '#ef4444', sweetFact: 'Crispy red juicy fruit that keeps doctors away!' },
+  { id: 'grapes', dev: 'द्राक्षाफलम्', iast: 'drākṣāphalam', en: 'Grapes', icon: '🍇', color: '#9333ea', sweetFact: 'Juicy purple globes hanging in sweet bunches!' },
+  { id: 'coconut', dev: 'नारिकेलम्', iast: 'nārikelam', en: 'Coconut', icon: '🥥', color: '#78350f', sweetFact: 'Cool sweet sacred water inside a sturdy shell!' },
+  { id: 'berry', dev: 'तृण-बदरी', iast: 'tṛṇa-badarī', en: 'Strawberry', icon: '🍓', color: '#f43f5e', sweetFact: 'Bright red berry dotted with tiny golden seeds!' },
+  { id: 'orange', dev: 'नारङ्गफलम्', iast: 'nāraṅgaphalam', en: 'Orange', icon: '🍊', color: '#ea580c', sweetFact: 'Bursting with sunny sweet vitamin droplets!' },
+  { id: 'watermelon', dev: 'कालिङ्गम्', iast: 'kāliṅgam', en: 'Watermelon', icon: '🍉', color: '#10b981', sweetFact: 'Giant green ball with refreshing sweet red smiles inside!' },
+];
+
+/* ==========================================================================
+   PRESCHOOL COUNTING 1 TO 10 DATA
+   ========================================================================== */
+interface CountItem {
+  num: number;
+  devDigit: string;
+  devName: string;
+  iast: string;
+  en: string;
+  icon: string;
+  phraseSa: string;
+  phraseEn: string;
+  color: string;
+}
+
+const COUNT_ITEMS: CountItem[] = [
+  { num: 1, devDigit: '१', devName: 'एकम्', iast: 'ekam', en: 'One', icon: '☀️', phraseSa: 'एकः सूर्यः', phraseEn: 'One Golden Sun', color: '#f59e0b' },
+  { num: 2, devDigit: '२', devName: 'द्वे', iast: 'dve', en: 'Two', icon: '🦢', phraseSa: 'द्वौ हंसौ', phraseEn: 'Two Graceful Swans', color: '#06b6d4' },
+  { num: 3, devDigit: '३', devName: 'त्रीणि', iast: 'trīṇi', en: 'Three', icon: '🍃', phraseSa: 'त्रीणि बिल्वपत्राणि', phraseEn: 'Three Bilva Leaves', color: '#10b981' },
+  { num: 4, devDigit: '४', devName: 'चत्वारि', iast: 'catvāri', en: 'Four', icon: '🦁', phraseSa: 'चत्वारः वेदाः', phraseEn: 'Four Vedas / Lion Paws', color: '#f97316' },
+  { num: 5, devDigit: '५', devName: 'पञ्च', iast: 'pañca', en: 'Five', icon: '🖐️', phraseSa: 'पञ्चभूतानि', phraseEn: 'Five Elements & Fingers', color: '#8b5cf6' },
+  { num: 6, devDigit: '६', devName: 'षट्', iast: 'ṣaṭ', en: 'Six', icon: '🌸', phraseSa: 'षट् ऋतवः', phraseEn: 'Six Seasons of Nature', color: '#ec4899' },
+  { num: 7, devDigit: '७', devName: 'सप्त', iast: 'sapta', en: 'Seven', icon: '🌈', phraseSa: 'सप्त वर्णाः', phraseEn: 'Seven Rainbow Colors', color: '#0ea5e9' },
+  { num: 8, devDigit: '८', devName: 'अष्ट', iast: 'aṣṭa', en: 'Eight', icon: '🪷', phraseSa: 'अष्टदल-कमलम्', phraseEn: 'Eight Lotus Petals', color: '#14b8a6' },
+  { num: 9, devDigit: '९', devName: 'नव', iast: 'nava', en: 'Nine', icon: '🪐', phraseSa: 'नव ग्रहाः', phraseEn: 'Nine Cosmic Planets', color: '#6366f1' },
+  { num: 10, devDigit: '१०', devName: 'दश', iast: 'daśa', en: 'Ten', icon: '🌟', phraseSa: 'दश अवताराः', phraseEn: 'Ten Sparkling Stars', color: '#eab308' },
+];
+
+/* ==========================================================================
+   PRESCHOOL SACRED INSTRUMENTS & RHYTHM DATA
+   ========================================================================== */
+interface InstrumentItem {
+  id: string;
+  dev: string;
+  iast: string;
+  en: string;
+  icon: string;
+  soundType: 'bell' | 'damaru' | 'conch' | 'strings' | 'drum' | 'cymbals';
+  soundWord: string;
+  deityConnect: string;
+  bgGradient: string;
+}
+
+const INSTRUMENTS: InstrumentItem[] = [
+  { id: 'ghanta', dev: 'घण्टा', iast: 'ghaṇṭā', en: 'Temple Bell', icon: '🔔', soundType: 'bell', soundWord: 'किङ्किणी-झणत्कारः · Ting-Ting!', deityConnect: 'Ring before prayers to welcome positive devic energy!', bgGradient: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)' },
+  { id: 'damaru', dev: 'डमरू', iast: 'ḍamarū', en: "Shiva's Drum", icon: '🪘', soundType: 'damaru', soundWord: 'डम-डम-डम · Dum-Dum-Dum!', deityConnect: "The sacred rhythm beat from which cosmic sounds flow!", bgGradient: 'linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%)' },
+  { id: 'shankha', dev: 'शङ्खः', iast: 'śaṅkhaḥ', en: 'Sacred Conch', icon: '🐚', soundType: 'conch', soundWord: 'ओङ्कार-नादः · Deep Horn Call!', deityConnect: 'Blown at dawn and auspicious moments to clear negativity!', bgGradient: 'linear-gradient(135deg, #0c4a6e 0%, #0284c7 100%)' },
+  { id: 'veena', dev: 'वीणा', iast: 'vīṇā', en: "Saraswati's Lute", icon: '🪕', soundType: 'strings', soundWord: 'झङ्कारः · Sweet Melody!', deityConnect: 'Tuning the vibrations of divine wisdom and learning!', bgGradient: 'linear-gradient(135deg, #701a75 0%, #a21caf 100%)' },
+  { id: 'mridanga', dev: 'मृदङ्गः', iast: 'mṛdaṅgaḥ', en: 'Gurukul Drum', icon: '🥁', soundType: 'drum', soundWord: 'धिम्-ता-किट · Dhim-Tha-Ki-Ta!', deityConnect: 'The heart rhythm drum for cheerful kirtans and dances!', bgGradient: 'linear-gradient(135deg, #78350f 0%, #b45309 100%)' },
+  { id: 'manjira', dev: 'मञ्जीरा', iast: 'mañjīrā', en: 'Golden Cymbals', icon: '🪙', soundType: 'cymbals', soundWord: 'झिलमिल-क्विणनम् · Chink-Chink!', deityConnect: 'Twinkling rhythm cymbals keeping joyful time with music!', bgGradient: 'linear-gradient(135deg, #854d0e 0%, #ca8a04 100%)' },
 ];
 
 interface MoonPhase {
@@ -493,6 +632,29 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
   const [shapeQuizTarget, setShapeQuizTarget] = useState<ShapeItem | null>(null);
   const [quizScore, setQuizScore] = useState<number>(0);
 
+  // Color Game State
+  const [selectedColor, setSelectedColor] = useState<ColorItem>(COLORS[0]);
+  const [colorMixSlotA, setColorMixSlotA] = useState<ColorItem | null>(null);
+  const [colorMixSlotB, setColorMixSlotB] = useState<ColorItem | null>(null);
+  const [mixResult, setMixResult] = useState<{ dev: string; en: string; hex: string; icon: string } | null>(null);
+  const [colorQuizTarget, setColorQuizTarget] = useState<ColorItem | null>(null);
+  const [colorScore, setColorScore] = useState<number>(0);
+
+  // Animal Safari State
+  const [activeAnimal, setActiveAnimal] = useState<AnimalItem>(ANIMALS[0]);
+  const [animalQuizTarget, setAnimalQuizTarget] = useState<AnimalItem | null>(null);
+  const [animalScore, setAnimalScore] = useState<number>(0);
+
+  // Fruits Picker State
+  const [basketFruits, setBasketFruits] = useState<FruitItem[]>([]);
+  const [lastPickedFruit, setLastPickedFruit] = useState<FruitItem | null>(null);
+
+  // Counting State
+  const [selectedCount, setSelectedCount] = useState<CountItem>(COUNT_ITEMS[0]);
+
+  // Instruments State
+  const [playingInstrumentId, setPlayingInstrumentId] = useState<string | null>(null);
+
   // Moon Game State
   const [moonPct, setMoonPct] = useState<number>(50);
 
@@ -551,6 +713,143 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
     }
   };
 
+  // Color Game Logic
+  const handleColorTap = (c: ColorItem) => {
+    setSelectedColor(c);
+    soundEffects.playBubblePop();
+    playPronunciation(c.dev);
+
+    if (colorQuizTarget) {
+      if (c.id === colorQuizTarget.id) {
+        soundEffects.playCelebrationChime();
+        setColorScore((s) => s + 1);
+        setColorQuizTarget(null);
+      } else {
+        soundEffects.playPuzzleSnap();
+      }
+      return;
+    }
+
+    if (!colorMixSlotA) {
+      setColorMixSlotA(c);
+      setMixResult(null);
+    } else if (!colorMixSlotB) {
+      setColorMixSlotB(c);
+      executeColorMix(colorMixSlotA, c);
+    } else {
+      setColorMixSlotA(c);
+      setColorMixSlotB(null);
+      setMixResult(null);
+    }
+  };
+
+  const executeColorMix = (a: ColorItem, b: ColorItem) => {
+    const ids = [a.id, b.id].sort();
+    let res = { dev: `${a.dev} + ${b.dev}`, en: `${a.en} + ${b.en} Blend`, hex: '#8b5cf6', icon: '✨' };
+    if (ids[0] === 'red' && ids[1] === 'yellow') {
+      res = { dev: 'काषायः (नारङ्गः)', en: 'Saffron / Orange!', hex: '#f97316', icon: '🪔' };
+    } else if (ids[0] === 'blue' && ids[1] === 'yellow') {
+      res = { dev: 'हरितः', en: 'Fresh Green!', hex: '#22c55e', icon: '🍃' };
+    } else if (ids[0] === 'blue' && ids[1] === 'red') {
+      res = { dev: 'जाम्बवः', en: 'Royal Purple / Violet!', hex: '#a855f7', icon: '🍇' };
+    } else if (ids[0] === 'red' && ids[1] === 'white') {
+      res = { dev: 'पाटलः', en: 'Lotus Pink!', hex: '#ec4899', icon: '🪷' };
+    } else if (ids[0] === 'blue' && ids[1] === 'white') {
+      res = { dev: 'आकाश-नीलः', en: 'Sky Blue!', hex: '#38bdf8', icon: '☁️' };
+    } else if (ids[0] === 'green' && ids[1] === 'yellow') {
+      res = { dev: 'हरित-पीतः', en: 'Lime Glow!', hex: '#84cc16', icon: '🍋' };
+    }
+    setMixResult(res);
+    soundEffects.playCelebrationChime();
+    playPronunciation(res.dev);
+  };
+
+  const startColorQuiz = () => {
+    const random = COLORS[Math.floor(Math.random() * COLORS.length)];
+    setColorQuizTarget(random);
+    playPronunciation(random.dev);
+    soundEffects.playStrokeChime();
+  };
+
+  const resetColorMixer = () => {
+    setColorMixSlotA(null);
+    setColorMixSlotB(null);
+    setMixResult(null);
+    soundEffects.playStrokeChime();
+  };
+
+  // Animal Safari Logic
+  const handleAnimalTap = (animal: AnimalItem) => {
+    setActiveAnimal(animal);
+    soundEffects.playAnimalWiggle();
+    playPronunciation(`${animal.dev} ${animal.soundLabelSa}`);
+    if (animalQuizTarget) {
+      if (animal.id === animalQuizTarget.id) {
+        soundEffects.playCelebrationChime();
+        setAnimalScore((s) => s + 1);
+        setAnimalQuizTarget(null);
+      } else {
+        soundEffects.playPuzzleSnap();
+      }
+    }
+  };
+
+  const startAnimalQuiz = () => {
+    const random = ANIMALS[Math.floor(Math.random() * ANIMALS.length)];
+    setAnimalQuizTarget(random);
+    soundEffects.playStrokeChime();
+    playPronunciation(`कः वदति? ${random.soundLabelSa}`);
+  };
+
+  // Fruit Picker Logic
+  const handleFruitPick = (fruit: FruitItem) => {
+    soundEffects.playFruitHarvestPop();
+    playPronunciation(fruit.dev);
+    setLastPickedFruit(fruit);
+    setBasketFruits((prev) => {
+      const next = [...prev, fruit];
+      if (next.length % 5 === 0) {
+        soundEffects.playVictoryFanfare();
+      }
+      return next;
+    });
+  };
+
+  const resetFruitBasket = () => {
+    setBasketFruits([]);
+    setLastPickedFruit(null);
+    soundEffects.playSuccessDing();
+  };
+
+  // Counting Logic
+  const selectCountNumber = (item: CountItem) => {
+    setSelectedCount(item);
+    soundEffects.playStrokeChime();
+    playPronunciation(`${item.devName} ${item.phraseSa}`);
+  };
+
+  // Instrument Player Logic
+  const handlePlayInstrument = (inst: InstrumentItem) => {
+    setPlayingInstrumentId(inst.id);
+    if (inst.soundType === 'bell') {
+      soundEffects.playTempleBell();
+    } else if (inst.soundType === 'damaru') {
+      soundEffects.playDamaruBeat();
+    } else if (inst.soundType === 'conch') {
+      soundEffects.playShankhaConch();
+    } else if (inst.soundType === 'strings') {
+      soundEffects.playCelebrationChime();
+    } else if (inst.soundType === 'drum') {
+      soundEffects.playCartoonBoing();
+    } else {
+      soundEffects.playStrokeChime();
+    }
+    playPronunciation(inst.dev);
+    setTimeout(() => {
+      setPlayingInstrumentId(null);
+    }, 1200);
+  };
+
   // Vahana Matching Logic
   const handleGodTap = (pair: VahanaPair) => {
     if (matchedVahanas.has(pair.id)) return;
@@ -600,16 +899,17 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
         <div className="psw-hero-badge">
           <span className="psw-hero-icon" aria-hidden="true">🧸</span>
           <div>
-            <span className="psw-hero-kicker">शिशु-क्रीडा-वाटिका · AGES 3–6 LITTLE EXPLORERS</span>
+            <span className="psw-hero-kicker">शिशु-क्रीडा-वाटिका · AGES 2–6 TACTILE WONDER PLAYGROUND</span>
             <h2 className="psw-hero-title">Preschool Wonder Playground</h2>
           </div>
         </div>
         <p className="psw-hero-desc">
-          Hands-on tactile games for curious toddlers and preschoolers. Learn shapes, smiling moon phases,
-          times of day, seasons of nature, divine vāhanas, and the unity of the 5 elements with cheerful Sanskrit audio!
+          Gentle, tactile, cheerful play lab for toddlers and preschoolers! Touch shapes, mix rainbow colors,
+          hear animal calls, pick orchard fruits, count with sacred friends, tap temple bells, play with moon phases,
+          experience seasons, and enjoy the bilingual story of the 5 elements with sweet Sanskrit audio!
         </p>
 
-        {/* 6 Fun Activity Tabs */}
+        {/* 11 Fun Activity Tabs */}
         <div className="psw-tab-nav" role="tablist" aria-label="Preschool activities">
           <button
             type="button"
@@ -620,6 +920,56 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
           >
             <span>🎨</span>
             <b>आकाराः · Shapes</b>
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={tab === 'colors'}
+            className={`psw-tab-btn ${tab === 'colors' ? 'is-active' : ''}`}
+            onClick={() => { setTab('colors'); soundEffects.playStrokeChime(); }}
+          >
+            <span>🌈</span>
+            <b>वर्णाः · Color Magic</b>
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={tab === 'animals'}
+            className={`psw-tab-btn ${tab === 'animals' ? 'is-active' : ''}`}
+            onClick={() => { setTab('animals'); soundEffects.playStrokeChime(); }}
+          >
+            <span>🐮</span>
+            <b>पशु-ध्वनयः · Animal Safari</b>
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={tab === 'fruits'}
+            className={`psw-tab-btn ${tab === 'fruits' ? 'is-active' : ''}`}
+            onClick={() => { setTab('fruits'); soundEffects.playStrokeChime(); }}
+          >
+            <span>🍎</span>
+            <b>फल-सङ्ग्रहः · Fruit Picker</b>
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={tab === 'counting'}
+            className={`psw-tab-btn ${tab === 'counting' ? 'is-active' : ''}`}
+            onClick={() => { setTab('counting'); soundEffects.playStrokeChime(); }}
+          >
+            <span>🔢</span>
+            <b>संख्याः · Count 1–10</b>
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={tab === 'instruments'}
+            className={`psw-tab-btn ${tab === 'instruments' ? 'is-active' : ''}`}
+            onClick={() => { setTab('instruments'); soundEffects.playStrokeChime(); }}
+          >
+            <span>🔔</span>
+            <b>वाद्यानि · Bells &amp; Beats</b>
           </button>
           <button
             type="button"
@@ -795,6 +1145,405 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             >
               🔊 Pronounce {selectedShape.dev}
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* ===================================================================
+          TAB: COLORS & MAGIC MIX PLAYGROUND (वर्णाः)
+         =================================================================== */}
+      {tab === 'colors' && (
+        <div className="psw-card-bench">
+          <div className="psw-bench-header">
+            <div>
+              <h3 className="psw-section-heading">🌈 वर्णाः · Rainbow Colors &amp; Magic Mixing</h3>
+              <p className="psw-section-sub">
+                Tap vibrant colors to hear their sweet Sanskrit names! Then mix any two colors in the Magic Cauldron!
+              </p>
+            </div>
+            <button
+              type="button"
+              className="psw-quiz-btn"
+              onClick={startColorQuiz}
+            >
+              {colorQuizTarget ? `❓ Find: ${colorQuizTarget.dev} (${colorQuizTarget.en})` : '⭐ Tap For Color Quiz!'}
+            </button>
+          </div>
+
+          {colorQuizTarget && (
+            <div className="psw-quiz-banner" role="status">
+              <span>🎯 Little Quest: Tap the <strong>{colorQuizTarget.dev}</strong> ({colorQuizTarget.en})! {colorScore > 0 && `⭐ Stars: ${colorScore}`}</span>
+              <button
+                type="button"
+                className="psw-quiz-speaker"
+                onClick={() => playPronunciation(colorQuizTarget.dev)}
+                title="Hear again"
+              >
+                🔊 Listen Again
+              </button>
+            </div>
+          )}
+
+          <div className="psw-colors-grid">
+            {COLORS.map((c) => {
+              const isSelected = selectedColor.id === c.id;
+              return (
+                <button
+                  key={c.id}
+                  type="button"
+                  className={`psw-color-card ${isSelected ? 'is-selected' : ''}`}
+                  onClick={() => handleColorTap(c)}
+                  style={{ borderColor: isSelected ? c.hex : undefined }}
+                >
+                  <div className="pcc-blob" style={{ background: c.hex }}>
+                    <span>{c.itemIcon}</span>
+                  </div>
+                  <strong className="pcc-sa" lang="sa">{c.dev}</strong>
+                  <span className="pcc-en">{c.en}</span>
+                  <span className="pcc-example">{c.itemDev} ({c.itemEn})</span>
+                  <span className="psc-speaker" aria-hidden="true">🔊</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Magic Color Mixing Cauldron */}
+          <div className="psw-magic-mixer-box">
+            <h4 className="psw-mixer-title">🧪 वर्ण-मिश्रण-क्रीडा · Magic Color Mixing Cauldron!</h4>
+            <p className="psw-mixer-sub">
+              Tap any two colors above to see what magical new color they create together!
+            </p>
+            <div className="psw-mixer-slots">
+              <div
+                className={`psw-mixer-slot ${colorMixSlotA ? 'has-color' : ''}`}
+                style={{ background: colorMixSlotA ? colorMixSlotA.hex : undefined }}
+              >
+                {colorMixSlotA ? colorMixSlotA.itemIcon : '🎨 1'}
+              </div>
+              <span className="psw-mixer-plus">+</span>
+              <div
+                className={`psw-mixer-slot ${colorMixSlotB ? 'has-color' : ''}`}
+                style={{ background: colorMixSlotB ? colorMixSlotB.hex : undefined }}
+              >
+                {colorMixSlotB ? colorMixSlotB.itemIcon : '🎨 2'}
+              </div>
+              <span className="psw-mixer-equals">=</span>
+              <div
+                className="psw-mixer-slot has-color"
+                style={{ background: mixResult ? mixResult.hex : '#f1f5f9' }}
+              >
+                {mixResult ? mixResult.icon : '✨'}
+              </div>
+            </div>
+
+            {mixResult ? (
+              <div className="psw-mixed-result-banner" role="status">
+                <span style={{ fontSize: '2.2rem' }}>{mixResult.icon}</span>
+                <div>
+                  <strong style={{ fontSize: '1.25rem', color: '#0f172a', display: 'block' }} lang="sa">
+                    {mixResult.dev}
+                  </strong>
+                  <span style={{ fontSize: '0.95rem', color: '#475569', fontWeight: 700 }}>
+                    {mixResult.en}
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  className="psw-action-pill"
+                  onClick={resetColorMixer}
+                >
+                  Mix Again ↺
+                </button>
+              </div>
+            ) : (
+              <p style={{ margin: 0, fontSize: '0.88rem', color: '#92400e', fontWeight: 700 }}>
+                {!colorMixSlotA ? '👉 Tap a color above to place it in Slot 1' : '👉 Now tap a second color above to mix!'}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* ===================================================================
+          TAB: ANIMAL SOUNDS SAFARI (पशु-ध्वनयः)
+         =================================================================== */}
+      {tab === 'animals' && (
+        <div className="psw-card-bench">
+          <div className="psw-bench-header">
+            <div>
+              <h3 className="psw-section-heading">🐮 पशवः पक्षिणः च · Animal Sounds Safari</h3>
+              <p className="psw-section-sub">
+                Tap each friendly animal to see them wiggle, hear their call, and learn their sweet Sanskrit names!
+              </p>
+            </div>
+            <button
+              type="button"
+              className="psw-quiz-btn"
+              onClick={startAnimalQuiz}
+            >
+              {animalQuizTarget ? `❓ Who calls: "${animalQuizTarget.soundLabelSa}"?` : '⭐ Tap For Animal Sound Quiz!'}
+            </button>
+          </div>
+
+          {animalQuizTarget && (
+            <div className="psw-quiz-banner" role="status">
+              <span>🎯 Little Quest: Tap the animal who calls <strong>"{animalQuizTarget.soundLabelSa}"</strong> ({animalQuizTarget.soundLabelEn})! {animalScore > 0 && `⭐ Stars: ${animalScore}`}</span>
+              <button
+                type="button"
+                className="psw-quiz-speaker"
+                onClick={() => playPronunciation(`कः वदति? ${animalQuizTarget.soundLabelSa}`)}
+                title="Hear sound again"
+              >
+                🔊 Listen Again
+              </button>
+            </div>
+          )}
+
+          <div className="psw-animals-grid">
+            {ANIMALS.map((a) => {
+              const isActive = activeAnimal.id === a.id;
+              return (
+                <button
+                  key={a.id}
+                  type="button"
+                  className="psw-animal-card"
+                  onClick={() => handleAnimalTap(a)}
+                  style={{ borderColor: isActive ? '#3b82f6' : undefined }}
+                >
+                  <span className="pac-icon" aria-hidden="true">{a.icon}</span>
+                  <strong className="pac-dev" lang="sa">{a.dev}</strong>
+                  <span className="pac-en">{a.en}</span>
+                  <small style={{ color: '#64748b', fontStyle: 'italic' }}>{a.iast}</small>
+                  <span className="pac-sound-bubble">🔊 {a.soundLabelSa}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Animal Spotlight */}
+          <div className="psw-detail-spotlight" style={{ borderColor: '#3b82f6' }}>
+            <span className="psw-spotlight-icon" style={{ background: '#3b82f6' }}>{activeAnimal.icon}</span>
+            <div>
+              <div className="psw-spotlight-title">
+                <span lang="sa">{activeAnimal.dev}</span> · {activeAnimal.en} ({activeAnimal.soundLabelSa})
+              </div>
+              <p className="psw-spotlight-desc">{activeAnimal.fact}</p>
+            </div>
+            <button
+              type="button"
+              className="psw-action-pill"
+              onClick={() => {
+                soundEffects.playAnimalWiggle();
+                playPronunciation(`${activeAnimal.dev} ${activeAnimal.soundLabelSa}`);
+              }}
+            >
+              🔊 Hear {activeAnimal.en} Call
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ===================================================================
+          TAB: FRUIT PICKER BASKET (मधुराणि फलानि)
+         =================================================================== */}
+      {tab === 'fruits' && (
+        <div className="psw-card-bench">
+          <div className="psw-bench-header">
+            <div>
+              <h3 className="psw-section-heading">🍎 मधुराणि फलानि · Gurukul Orchard Fruit Picker</h3>
+              <p className="psw-section-sub">
+                Tap ripe fruits hanging on the orchard tree! Pick 5 fruits into your woven basket for a celebratory fanfare!
+              </p>
+            </div>
+            <div className="psw-score-pill">
+              <span>🧺 In Basket: <strong>{basketFruits.length}</strong></span>
+              {basketFruits.length > 0 && (
+                <button type="button" className="psw-reset-link" onClick={resetFruitBasket}>
+                  Empty Basket ↺
+                </button>
+              )}
+            </div>
+          </div>
+
+          {basketFruits.length >= 5 && (
+            <div className="psw-victory-banner" role="status">
+              <span>🎉 <strong>आनन्दः! Delicious Basket Full!</strong> You collected {basketFruits.length} sweet fruits for the Gurukul!</span>
+              <button type="button" className="psw-quiz-btn" onClick={resetFruitBasket}>
+                Pick More ↺
+              </button>
+            </div>
+          )}
+
+          {/* The Gurukul Orchard Tree Stage */}
+          <div className="psw-fruit-picker-stage">
+            <div className="psw-tree-box">
+              <div className="psw-tree-crown">
+                {FRUITS.map((f) => (
+                  <button
+                    key={f.id}
+                    type="button"
+                    className="psw-tree-fruit-item"
+                    onClick={() => handleFruitPick(f)}
+                    title={`Pick ${f.en} (${f.dev})`}
+                  >
+                    <span>{f.icon}</span>
+                    <b lang="sa">{f.dev}</b>
+                  </button>
+                ))}
+              </div>
+              <div className="psw-tree-trunk" />
+            </div>
+
+            {/* The Woven Basket Tray */}
+            <div className="psw-basket-tray">
+              <div className="pbt-left">
+                <span className="pbt-basket-icon" aria-hidden="true">🧺</span>
+                <div>
+                  <strong style={{ fontSize: '1.1rem', color: '#78350f', display: 'block' }}>
+                    {basketFruits.length === 0
+                      ? 'Basket is empty — Tap sweet fruits on the green tree above!'
+                      : `Collected: ${basketFruits.length} fruit${basketFruits.length > 1 ? 's' : ''}!`}
+                  </strong>
+                  {lastPickedFruit && (
+                    <span style={{ fontSize: '0.88rem', color: '#92400e' }}>
+                      Just added: <strong>{lastPickedFruit.icon} {lastPickedFruit.dev}</strong> ({lastPickedFruit.en})
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div className="pbt-collected-list">
+                {basketFruits.map((bf, idx) => (
+                  <span key={idx} className="pbt-pill" title={bf.en}>
+                    {bf.icon}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ===================================================================
+          TAB: COUNTING 1 TO 10 (संख्या-गणना)
+         =================================================================== */}
+      {tab === 'counting' && (
+        <div className="psw-card-bench">
+          <div className="psw-bench-header">
+            <div>
+              <h3 className="psw-section-heading">🔢 संख्या-गणना · Count 1 to 10 with Sacred Friends</h3>
+              <p className="psw-section-sub">
+                Tap each number below to see sacred friends appear and count along with cheerful Sanskrit pronunciation!
+              </p>
+            </div>
+            <div className="psw-story-slide-counter">
+              Number <strong>{selectedCount.num}</strong> of 10
+            </div>
+          </div>
+
+          {/* Number 1 to 10 Bar */}
+          <div className="psw-count-number-bar" role="tablist" aria-label="Number selection">
+            {COUNT_ITEMS.map((item) => {
+              const isActive = selectedCount.num === item.num;
+              return (
+                <button
+                  key={item.num}
+                  type="button"
+                  className={`psw-count-chip ${isActive ? 'is-active' : ''}`}
+                  onClick={() => selectCountNumber(item)}
+                >
+                  <strong>{item.devDigit}</strong>
+                  <small>{item.num}</small>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Display Stage */}
+          <div
+            className="psw-count-stage"
+            style={{
+              background: `linear-gradient(135deg, ${selectedCount.color}dd 0%, ${selectedCount.color} 100%)`,
+            }}
+          >
+            <span className="pcs-hero-num">{selectedCount.devDigit}</span>
+            <h3 className="pcs-hero-title" lang="sa">
+              {selectedCount.devName} · {selectedCount.en}
+            </h3>
+            <p className="pcs-hero-sub">
+              <strong lang="sa">{selectedCount.phraseSa}</strong> · {selectedCount.phraseEn}
+            </p>
+
+            {/* Bouncing Grid of Items Matching Count */}
+            <div className="psw-count-emojis-grid">
+              {Array.from({ length: selectedCount.num }).map((_, i) => (
+                <div
+                  key={i}
+                  className="pce-item"
+                  style={{ animationDelay: `${(i * 0.15) % 1.5}s` }}
+                  title={`${i + 1} of ${selectedCount.num}`}
+                >
+                  {selectedCount.icon}
+                </div>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              className="psw-whisper-btn"
+              onClick={() => {
+                soundEffects.playStrokeChime();
+                playPronunciation(`${selectedCount.devName} ${selectedCount.phraseSa}`);
+              }}
+            >
+              🔊 Hear "{selectedCount.devName} ({selectedCount.phraseSa})"
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ===================================================================
+          TAB: SACRED INSTRUMENTS & RHYTHM (मङ्गल-वाद्यानि)
+         =================================================================== */}
+      {tab === 'instruments' && (
+        <div className="psw-card-bench">
+          <div className="psw-bench-header">
+            <div>
+              <h3 className="psw-section-heading">🔔 मङ्गल-वाद्यानि · Sacred Bells &amp; Divine Rhythm</h3>
+              <p className="psw-section-sub">
+                Tap each divine musical instrument to hear its real acoustic chime, drum beat, or conch resonance!
+              </p>
+            </div>
+          </div>
+
+          <div className="psw-instruments-grid">
+            {INSTRUMENTS.map((inst) => {
+              const isPlaying = playingInstrumentId === inst.id;
+              return (
+                <div
+                  key={inst.id}
+                  className={`psw-instrument-card ${isPlaying ? 'is-playing' : ''}`}
+                  style={{ background: inst.bgGradient }}
+                  onClick={() => handlePlayInstrument(inst)}
+                >
+                  <div className="pic-ring">{inst.icon}</div>
+                  <h4 className="pic-dev" lang="sa">{inst.dev}</h4>
+                  <p className="pic-en">{inst.en} ({inst.iast})</p>
+                  <span className="pic-sound-badge">{inst.soundWord}</span>
+                  <p className="pic-deity-note">{inst.deityConnect}</p>
+                  <button
+                    type="button"
+                    className="pic-play-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handlePlayInstrument(inst);
+                    }}
+                  >
+                    🎵 Tap To Play Beat
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

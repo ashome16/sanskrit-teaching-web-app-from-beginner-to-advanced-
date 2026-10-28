@@ -99,6 +99,9 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   // Handle clicking left (Sanskrit) tile
   const handleLeftClick = (item: MatchPairItem) => {
     if (matchedIds.has(item.id)) return;
+    if (showPreschoolOnly) {
+      soundEffects.playBubblePop();
+    }
     playPronunciation(item.sanskrit);
     setSelectedLeftId(item.id);
 
@@ -110,6 +113,9 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   // Handle clicking right (English) tile
   const handleRightClick = (item: MatchPairItem) => {
     if (matchedIds.has(item.id)) return;
+    if (showPreschoolOnly) {
+      soundEffects.playBubblePop();
+    }
     setSelectedRightId(item.id);
 
     if (selectedLeftId) {
@@ -121,7 +127,11 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   const evaluateMatch = (leftId: string, rightId: string) => {
     if (leftId === rightId) {
       // MATCH!
-      soundEffects.playSuccessDing();
+      if (showPreschoolOnly) {
+        soundEffects.playCelebrationChime();
+      } else {
+        soundEffects.playSuccessDing();
+      }
       setMatchedIds((prev) => {
         const next = new Set(prev);
         next.add(leftId);
