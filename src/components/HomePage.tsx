@@ -764,7 +764,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [showEntranceIntro, setShowEntranceIntro] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
     try {
-      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen_v3');
+      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen_v4');
       return !alreadySeen;
     } catch {
       return false;
@@ -778,7 +778,7 @@ const HomePage: React.FC<HomePageProps> = ({
       setIsLogoArrived(false);
     }, 1200);
     try {
-      sessionStorage.setItem('ednet_gurukul_intro_seen_v3', 'true');
+      sessionStorage.setItem('ednet_gurukul_intro_seen_v4', 'true');
     } catch {}
   }, []);
 
@@ -2386,65 +2386,204 @@ const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* ------------------------------------------------------------------
-          Featured Essay: Why Learn Sanskrit in the Age of AI
+          Featured Gurukul Darśana & In the Age of AI Section
           ------------------------------------------------------------------ */}
-      {onOpenPhilosophy && (
-        <section style={{ maxWidth: '1100px', margin: '0 auto 3rem', padding: '0 1rem' }}>
+      <section style={{ maxWidth: '1100px', margin: '0 auto 3rem', padding: '0 1rem' }} aria-label="Featured Gurukul Darśana">
+        <div style={{
+          background: 'linear-gradient(135deg, #fffdf8 0%, #fdf8ee 50%, #faede6 100%)',
+          border: '1.5px solid #ebdcc5',
+          borderRadius: '20px',
+          padding: '2rem',
+          boxShadow: '0 10px 30px rgba(179, 71, 47, 0.07)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1.5rem',
+          position: 'relative',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+            <span style={{
+              fontSize: '0.78rem',
+              fontWeight: 800,
+              color: '#b3472f',
+              background: '#faede6',
+              border: '1px solid #f2cfc5',
+              padding: '0.25rem 0.85rem',
+              borderRadius: '999px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+            }}>
+              Featured Gurukul Darśana · गुरुकुल-दर्शनम्
+            </span>
+            <span style={{ fontSize: '0.82rem', color: '#9a3412', fontWeight: 700 }}>
+              🎨 Classical Pahari Miniature Artwork
+            </span>
+          </div>
+
+          {/* Miniature Painting Artwork Showcase Frame */}
           <div style={{
-            background: 'linear-gradient(135deg, #fffdf8 0%, #fdf8ee 50%, #faede6 100%)',
-            border: '1.5px solid #ebdcc5',
-            borderRadius: '20px',
-            padding: '2.25rem 2rem',
-            boxShadow: '0 10px 30px rgba(179, 71, 47, 0.07)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem',
-            position: 'relative',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '1.5rem',
+            alignItems: 'center',
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
-              <span style={{
-                fontSize: '0.78rem',
-                fontWeight: 800,
-                color: '#b3472f',
-                background: '#faede6',
-                border: '1px solid #f2cfc5',
-                padding: '0.25rem 0.85rem',
-                borderRadius: '999px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
+            <div style={{
+              position: 'relative',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 12px 28px rgba(90, 42, 10, 0.16)',
+              border: '2px solid #d4af37',
+              background: '#2e1403',
+            }}>
+              <img
+                src="/gurukul-dawn.jpg"
+                alt="Ancient Vedic Tapovana Gurukul at Dawn - Classical Indian Kangra Pahari Miniature Painting with 2 deer, perched peacock, archery, and herbal Ayurveda"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  cursor: 'pointer',
+                  transition: 'transform 0.4s ease',
+                }}
+                onClick={() => setShowEntranceIntro(true)}
+                title="Click to experience the full Gurukul Dawn entrance animation and morning chants"
+              />
+              <div style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                padding: '0.75rem 1rem',
+                background: 'linear-gradient(to top, rgba(20, 10, 2, 0.88), transparent)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
               }}>
-                Featured Gurukul Darśana · दर्शनम्
-              </span>
-              <span style={{ fontSize: '0.82rem', color: '#9a3412', fontWeight: 700 }}>
-                🤖 In the Age of AI
-              </span>
+                <span style={{ color: '#fef08a', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.04em' }}>
+                  🌅 वैदिक-तपोवन-गुरुकुलम् (Vedic Tapovana Gurukul)
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setShowEntranceIntro(true)}
+                  style={{
+                    background: '#d97706',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '6px',
+                    padding: '0.25rem 0.65rem',
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                  }}
+                >
+                  Play Dawn 🔊
+                </button>
+              </div>
             </div>
 
-            <div style={{ maxWidth: '850px' }}>
-              <h2 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 1.95rem)', fontWeight: 800, color: '#2b2118', margin: '0 0 0.5rem', lineHeight: 1.3 }}>
-                Why Learn a Language — Especially Sanskrit &amp; Samskrit — in the Age of AI
-              </h2>
-              <p style={{ fontSize: '1.08rem', fontWeight: 700, color: '#9a3423', margin: '0 0 0.75rem' }}>
-                Machines will make communication efficient. They will not make it living.
-              </p>
-              <p style={{ fontSize: '0.94rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                Because language was never only a pipe for information. It is also how a mind binds to breath, sound, culture, and attention. Explore why Pāṇinian phonetics, acoustic resonance, and human presence cannot be replaced by automated prompts.
-              </p>
-            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              <div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#2b2118', margin: '0 0 0.35rem' }}>
+                  Vedic Tapovana Gurukul at Dawn
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#64748b', margin: 0, lineHeight: 1.5 }}>
+                  Authentic Pahari-Kangra miniature style depicting holistic Gurukul life under the ancient sacred banyan tree with pristine Himalayan vistas.
+                </p>
+              </div>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: '0.5rem' }}>
-              <button
-                type="button"
-                className="home-btn-primary"
-                style={{ background: 'linear-gradient(135deg, #b3472f 0%, #ea580c 100%)', boxShadow: '0 4px 14px rgba(179, 71, 47, 0.25)', padding: '0.7rem 1.45rem', fontSize: '0.95rem' }}
-                onClick={onOpenPhilosophy}
-              >
-                Read the Essay ➔
-              </button>
+              {/* Verified Visual Element Badges */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                <span style={{ fontSize: '0.74rem', background: '#ecfdf5', color: '#065f46', border: '1px solid #a7f3d0', borderRadius: '6px', padding: '0.2rem 0.5rem', fontWeight: 600 }}>
+                  🦌 2 Spotted Chital Deer
+                </span>
+                <span style={{ fontSize: '0.74rem', background: '#eff6ff', color: '#1e40af', border: '1px solid #bfdbfe', borderRadius: '6px', padding: '0.2rem 0.5rem', fontWeight: 600 }}>
+                  🦚 1 Perched Peacock on Banyan
+                </span>
+                <span style={{ fontSize: '0.74rem', background: '#fef3c7', color: '#92400e', border: '1px solid #fde68a', borderRadius: '6px', padding: '0.2rem 0.5rem', fontWeight: 600 }}>
+                  🏹 Dhanurveda Archery
+                </span>
+                <span style={{ fontSize: '0.74rem', background: '#fdf2f8', color: '#9d174d', border: '1px solid #fbcfe8', borderRadius: '6px', padding: '0.2rem 0.5rem', fontWeight: 600 }}>
+                  🌿 Ayurveda Stone Rolu Grinding
+                </span>
+                <span style={{ fontSize: '0.74rem', background: '#fafaf9', color: '#44403c', border: '1px solid #e7e5e4', borderRadius: '6px', padding: '0.2rem 0.5rem', fontWeight: 600 }}>
+                  🏺 Sacred Tulsi Vrindavan &amp; Kalash
+                </span>
+                <span style={{ fontSize: '0.74rem', background: '#fff7ed', color: '#c2410c', border: '1px solid #ffedd5', borderRadius: '6px', padding: '0.2rem 0.5rem', fontWeight: 600 }}>
+                  📜 Palm-Leaf Disciples &amp; Rishi
+                </span>
+                <span style={{ fontSize: '0.74rem', background: '#f1f5f9', color: '#334155', border: '1px solid #cbd5e1', borderRadius: '6px', padding: '0.2rem 0.5rem', fontWeight: 600 }}>
+                  🏞️ Clean Meadow &amp; Cottages
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginTop: '0.25rem' }}>
+                <button
+                  type="button"
+                  className="home-btn-primary"
+                  style={{
+                    background: 'linear-gradient(135deg, #b3472f 0%, #ea580c 100%)',
+                    boxShadow: '0 4px 14px rgba(179, 71, 47, 0.25)',
+                    padding: '0.55rem 1.15rem',
+                    fontSize: '0.88rem',
+                  }}
+                  onClick={() => setShowEntranceIntro(true)}
+                >
+                  🌅 Play Dawn Experience &amp; Soundscape
+                </button>
+                <a
+                  href="/gurukul-dawn.jpg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="home-btn-secondary"
+                  style={{
+                    padding: '0.55rem 1.1rem',
+                    fontSize: '0.88rem',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                  }}
+                >
+                  🔍 View Full Resolution
+                </a>
+              </div>
             </div>
           </div>
-        </section>
-      )}
+
+          {/* In the Age of AI Deep-Dive Callout */}
+          {onOpenPhilosophy && (
+            <div style={{
+              borderTop: '1px dashed #e2d3be',
+              paddingTop: '1.25rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.75rem',
+            }}>
+              <div>
+                <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#2b2118', margin: '0 0 0.35rem' }}>
+                  Why Learn a Language — Especially Sanskrit — in the Age of AI
+                </h4>
+                <p style={{ fontSize: '0.98rem', fontWeight: 700, color: '#9a3423', margin: '0 0 0.4rem' }}>
+                  Machines will make communication efficient. They will not make it living.
+                </p>
+                <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                  Language was never only a pipe for information. It is also how a mind binds to breath, sound, culture, and attention. Explore why Pāṇinian phonetics, acoustic resonance, and human presence cannot be replaced by automated prompts.
+                </p>
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  className="home-btn-primary"
+                  style={{ background: '#7c2d12', padding: '0.55rem 1.25rem', fontSize: '0.88rem' }}
+                  onClick={onOpenPhilosophy}
+                >
+                  Read Philosophy Essay ➔
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* ------------------------------------------------------------------
           Core Features Grid - Real Learner Outcomes

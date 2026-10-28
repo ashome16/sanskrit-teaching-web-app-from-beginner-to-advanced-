@@ -190,30 +190,6 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
       <div className="gurukul-intro-mist" />
       <div className="gurukul-intro-sunbeams" />
 
-      {/* Silhouettes of Morning Birds Gliding in Sky */}
-      <div className="gurukul-intro-sky-birds" aria-hidden="true">
-        <div className="gurukul-bird gurukul-bird-1">
-          <svg className="gurukul-bird-svg" viewBox="0 0 40 24">
-            <path d="M 0 12 Q 10 2 20 12 Q 30 2 40 12 Q 30 14 20 12 Q 10 14 0 12 Z" />
-          </svg>
-        </div>
-        <div className="gurukul-bird gurukul-bird-2">
-          <svg className="gurukul-bird-svg" viewBox="0 0 40 24">
-            <path d="M 0 12 Q 10 2 20 12 Q 30 2 40 12 Q 30 14 20 12 Q 10 14 0 12 Z" />
-          </svg>
-        </div>
-        <div className="gurukul-bird gurukul-bird-3">
-          <svg className="gurukul-bird-svg" viewBox="0 0 40 24">
-            <path d="M 0 12 Q 10 2 20 12 Q 30 2 40 12 Q 30 14 20 12 Q 10 14 0 12 Z" />
-          </svg>
-        </div>
-        <div className="gurukul-bird gurukul-bird-4">
-          <svg className="gurukul-bird-svg" viewBox="0 0 40 24" style={{ width: '26px', height: '16px' }}>
-            <path d="M 0 12 Q 10 2 20 12 Q 30 2 40 12 Q 30 14 20 12 Q 10 14 0 12 Z" />
-          </svg>
-        </div>
-      </div>
-
       {/* Main Centerpiece Content */}
       <div className={`gurukul-intro-content ${isHideOverlay ? 'is-overlay-hidden' : ''}`} onClick={(e) => e.stopPropagation()}>
         {/* Sacred Brand Crest with Mandala Aura */}
