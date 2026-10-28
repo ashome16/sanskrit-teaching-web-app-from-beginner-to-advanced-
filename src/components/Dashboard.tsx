@@ -1147,7 +1147,7 @@ const Dashboard: React.FC = () => {
             >
               <img src="/nav/nav-varnamala.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-sanskrit">वर्णमाला</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Alphabet & Sounds' : 'Alphabet & Syllables'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Sounds & Script' : 'Alphabet'}</span>
             </button>
             <button
               type="button"
@@ -1157,7 +1157,7 @@ const Dashboard: React.FC = () => {
             >
               <img src="/nav/nav-jodo.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-sanskrit">जोडो</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Word Games & Puzzles' : 'Tile Puzzle & Games'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Word Puzzles' : 'Tile Games'}</span>
             </button>
             <button
               type="button"
@@ -1167,7 +1167,7 @@ const Dashboard: React.FC = () => {
             >
               <img src="/nav/nav-grammar.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-sanskrit">व्याकरणम्</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Grammar & Rules' : 'Vyakaran · Grammar'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Rules & Grammar' : 'Grammar'}</span>
             </button>
             <button
               type="button"
@@ -1177,7 +1177,7 @@ const Dashboard: React.FC = () => {
             >
               <img src="/nav/nav-dhatu.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-sanskrit">धातुपाठः</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Verb Roots & Tenses' : 'Dhātupāṭha'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Verb Roots' : 'Dhātupāṭha'}</span>
             </button>
             <button
               type="button"
@@ -1187,7 +1187,7 @@ const Dashboard: React.FC = () => {
             >
               <img src="/nav/nav-vedic.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-sanskrit">वैदिक-गणितम्</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Vedic Speed Math' : 'Mental Math'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Speed Math' : 'Mental Math'}</span>
             </button>
             <button
               type="button"
@@ -1207,7 +1207,7 @@ const Dashboard: React.FC = () => {
             >
               <img src="/nav/nav-worksheets.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-sanskrit">कार्यपत्रिकाः</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'CBSE Worksheets' : 'Printable PDFs'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Worksheets' : 'Printable PDFs'}</span>
             </button>
             <button
               type="button"
@@ -1217,7 +1217,7 @@ const Dashboard: React.FC = () => {
             >
               <img src="/nav/nav-resources.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-sanskrit">साधनानि</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Study Vault' : 'Free Resources'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Study Vault' : 'Free Vault'}</span>
             </button>
             <button
               type="button"
@@ -1227,7 +1227,7 @@ const Dashboard: React.FC = () => {
             >
               <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🧠</span>
               <span className="dashboard-nav-sanskrit">संस्कृत-चिन्तनम्</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Sanskrit Course' : '28 Lessons'}</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Philosophy' : '28 Lessons'}</span>
             </button>
             <button
               type="button"
