@@ -366,64 +366,186 @@
 .bodhi-card-controls {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.65rem;
 }
 
+/* Enlarge Close (X) button to 44px × 44px for child motor precision */
 .bodhi-control-btn {
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.22);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
   color: #ffffff;
-  border-radius: 8px;
-  width: 32px;
-  height: 32px;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
+  font-weight: 800;
   cursor: pointer;
-  transition: all 0.18s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .bodhi-control-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.06);
 }
 
-/* Greeting Audio Strip */
-.bodhi-audio-greeting-strip {
-  background: #fffbeb;
-  border-bottom: 1px solid #fde68a;
-  padding: 0.55rem 1.15rem;
+.bodhi-control-btn:active {
+  transform: scale(0.96);
+}
+
+/* 2. Child-Centric Spoken Greeting Hero Card */
+.bodhi-greeting-hero-card {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 60%, #fff7ed 100%);
+  border-bottom: 2px solid #fde68a;
+  padding: 0.95rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.08);
+}
+
+.bodhi-greeting-content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  font-size: 0.82rem;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+/* Greeting Headline on its own dedicated prominent line */
+.bodhi-greeting-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.bodhi-greeting-namaste {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #78350f;
+  letter-spacing: -0.01em;
+  background: #fef08a;
+  padding: 0.15rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #facc15;
+  box-shadow: 0 1px 3px rgba(202, 138, 4, 0.2);
+}
+
+.bodhi-greeting-identity {
+  font-size: 1.05rem;
+  font-weight: 800;
   color: #92400e;
 }
 
-.bodhi-audio-greeting-strip strong {
-  color: #78350f;
-}
-
-.bodhi-speak-btn {
-  background: #f59e0b;
-  border: 1px solid #d97706;
-  color: #ffffff;
-  border-radius: 999px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.76rem;
-  font-weight: 700;
+/* Bio description on its own distinct line below */
+.bodhi-greeting-bio {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: #451a03;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.15s ease;
+  gap: 0.45rem;
 }
 
-.bodhi-speak-btn:hover {
-  background: #d97706;
+.bodhi-bio-icon {
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+/* Action row for Listen button directly below with clean alignment */
+.bodhi-greeting-action-row {
+  margin-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.bodhi-speak-hero-btn {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  border: 1.5px solid #d97706;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+  min-height: 42px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(234, 88, 12, 0.28);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bodhi-speak-hero-btn:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(234, 88, 12, 0.35);
+}
+
+.bodhi-speak-hero-btn.is-speaking {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  border-color: #047857;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+}
+
+.bodhi-greeting-subhint {
+  font-size: 0.8rem;
+  color: #92400e;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Animated Soundwave Graphic */
+.bodhi-soundwave-graphic {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5px;
+  height: 18px;
+  padding: 0 2px;
+}
+
+.bodhi-wave-bar {
+  width: 3.5px;
+  background: #ffffff;
+  border-radius: 3px;
+  display: inline-block;
+  animation: bodhi-soundwave-bounce 0.85s ease-in-out infinite alternate;
+}
+
+.bodhi-wave-bar.bar-1 {
+  height: 8px;
+  animation-delay: 0s;
+}
+
+.bodhi-wave-bar.bar-2 {
+  height: 18px;
+  animation-delay: 0.2s;
+}
+
+.bodhi-wave-bar.bar-3 {
+  height: 12px;
+  animation-delay: 0.4s;
+}
+
+.bodhi-wave-bar.bar-4 {
+  height: 16px;
+  animation-delay: 0.15s;
+}
+
+@keyframes bodhi-soundwave-bounce {
+  0% {
+    transform: scaleY(0.25);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scaleY(1.2);
+    opacity: 1;
+  }
 }
 
 /* Tab Navigation */
@@ -478,63 +600,118 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. Tab 1: Contextual Page Guide
+   3. Tab 1: Contextual Page Guide (High Contrast & Child-Centric Bullet Badges)
    -------------------------------------------------------------------------- */
 .bodhi-context-banner {
-  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
-  border: 1.5px solid #fde047;
-  border-radius: 14px;
-  padding: 1rem 1.1rem;
+  background: linear-gradient(135deg, #fffdf5 0%, #fef3c7 60%, #fff7ed 100%);
+  border: 3px solid #f59e0b;
+  border-radius: 18px;
+  padding: 1.25rem 1.35rem;
+  box-shadow: 0 6px 22px rgba(245, 158, 11, 0.18), 0 2px 6px rgba(0, 0, 0, 0.04);
+  position: relative;
 }
 
 .bodhi-context-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bodhi-context-tag-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
 }
 
 .bodhi-context-tag {
-  font-size: 0.7rem;
-  font-weight: 800;
+  font-size: 0.74rem;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: #f59e0b;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
   color: #ffffff;
-  border-radius: 6px;
-  padding: 0.15rem 0.45rem;
+  border-radius: 8px;
+  padding: 0.25rem 0.65rem;
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .bodhi-context-sanskrit {
-  font-size: 0.86rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 800;
   color: #92400e;
 }
 
 .bodhi-context-title {
-  margin: 0 0 0.4rem;
-  font-size: 1.05rem;
-  font-weight: 800;
+  margin: 0 0 0.45rem;
+  font-size: 1.15rem;
+  font-weight: 900;
   color: #78350f;
+  line-height: 1.35;
 }
 
 .bodhi-context-summary {
-  margin: 0 0 0.75rem;
-  font-size: 0.86rem;
+  margin: 0 0 0.95rem;
+  font-size: 0.9rem;
   color: #451a03;
-  line-height: 1.5;
+  line-height: 1.55;
+  font-weight: 500;
 }
 
 .bodhi-context-bullets {
-  margin: 0 0 0.85rem;
-  padding-left: 1.2rem;
-  font-size: 0.82rem;
-  color: #334155;
-  line-height: 1.55;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
-.bodhi-context-bullets li {
-  margin-bottom: 0.35rem;
+.bodhi-context-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid #fde68a;
+  border-radius: 12px;
+  padding: 0.55rem 0.8rem;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.08);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.bodhi-context-bullet-item:hover {
+  transform: translateX(3px);
+  background: #ffffff;
+  border-color: #f59e0b;
+}
+
+.bodhi-bullet-badge {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fed7aa;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.bodhi-bullet-text {
+  font-size: 0.86rem;
+  color: #1e293b;
+  line-height: 1.45;
+  font-weight: 600;
 }
 
 .bodhi-advice-box {
@@ -1480,55 +1657,50 @@
    English tip speaker, speaking animation
    -------------------------------------------------------------------------- */
 
-/* 🐢 Slow / Normal speed toggle (header) */
+/* 🐢 Slow / Normal speed toggle (header) — Touch-friendly tap targets */
 .bodhi-speed-toggle {
   display: inline-flex;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  align-items: center;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
   border-radius: 999px;
-  padding: 2px;
-  gap: 2px;
+  padding: 3px;
+  gap: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .bodhi-speed-btn {
   border: none;
   background: transparent;
   color: #ffffff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 0.22rem 0.6rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+  min-height: 38px;
+  padding: 0.35rem 0.8rem;
   border-radius: 999px;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.18s ease, color 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bodhi-speed-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
 }
 
 .bodhi-speed-btn.active {
   background: #ffffff;
   color: #9a3412;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .bodhi-speed-btn:focus-visible,
 .bodhi-tip-speak-btn:focus-visible {
   outline: 2px solid #fbbf24;
   outline-offset: 2px;
-}
-
-/* Persona line in the greeting strip */
-.bodhi-greeting-text {
-  min-width: 0;
-}
-
-.bodhi-persona-line {
-  margin: 0.2rem 0 0;
-  font-size: 0.74rem;
-  line-height: 1.4;
-  color: #92400e;
-  font-style: italic;
 }
 
 /* Follow-along highlight */
@@ -1808,5 +1980,105 @@
   }
   .bodhi-anecdote-random:hover {
     transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Persistent Bottom Text-to-Speech & Mute Toolbar
+   -------------------------------------------------------------------------- */
+.bodhi-card-footer {
+  background: #ffffff;
+  border-top: 2px solid #e2e8f0;
+  padding: 0.75rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.04);
+  z-index: 5;
+}
+
+.bodhi-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bodhi-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.bodhi-footer-tts-btn {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  border: 1.5px solid #d97706;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 0.55rem 1.15rem;
+  min-height: 44px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(234, 88, 12, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bodhi-footer-tts-btn:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  transform: translateY(-1px);
+}
+
+.bodhi-footer-tts-btn.is-speaking {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  border-color: #047857;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.bodhi-footer-mute-btn {
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  color: #475569;
+  border-radius: 12px;
+  padding: 0.5rem 0.85rem;
+  min-height: 44px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.bodhi-footer-mute-btn:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+.bodhi-footer-mute-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bodhi-footer-hint {
+  font-size: 0.76rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .bodhi-card-footer {
+    padding: 0.65rem 0.85rem;
+    flex-wrap: wrap;
+  }
+  .bodhi-footer-hint {
+    display: none;
   }
 }

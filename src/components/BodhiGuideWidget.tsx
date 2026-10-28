@@ -247,6 +247,59 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
 
   const chunkFor = (text: string): number | null => (speakingText === text ? activeChunk : null);
 
+  /** Visual soundwave feedback bars while Bodhi is speaking */
+  const renderSoundwave = () => (
+    <span className="bodhi-soundwave-graphic" aria-label="Audio speaking animation">
+      <span className="bodhi-wave-bar bar-1" />
+      <span className="bodhi-wave-bar bar-2" />
+      <span className="bodhi-wave-bar bar-3" />
+      <span className="bodhi-wave-bar bar-4" />
+    </span>
+  );
+
+  /** Child-friendly visual icons for bullet points to guide early readers */
+  const getBulletVisualIcon = (text: string, index: number): string => {
+    const lower = text.toLowerCase();
+    if (lower.includes('alphabet') || lower.includes('varnamala') || lower.includes('letter') || lower.includes('syllable') || lower.includes('varna') || lower.includes('akshara')) {
+      return '🔤';
+    }
+    if (lower.includes('class 7') || lower.includes('class 8') || lower.includes('class 9') || lower.includes('cbse') || lower.includes('deepakam') || lower.includes('textbook') || lower.includes('ruchira') || lower.includes('shemushi') || lower.includes('chapter')) {
+      return '📚';
+    }
+    if (lower.includes('audio') || lower.includes('listen') || lower.includes('pronounc') || lower.includes('voice') || lower.includes('sound') || lower.includes('hear')) {
+      return '🔊';
+    }
+    if (lower.includes('puzzle') || lower.includes('jodo') || lower.includes('tile') || lower.includes('drag') || lower.includes('build')) {
+      return '🧩';
+    }
+    if (lower.includes('quiz') || lower.includes('test') || lower.includes('score') || lower.includes('mcq') || lower.includes('streak')) {
+      return '🎯';
+    }
+    if (lower.includes('worksheet') || lower.includes('print') || lower.includes('pdf') || lower.includes('exercise')) {
+      return '📑';
+    }
+    if (lower.includes('math') || lower.includes('number') || lower.includes('count') || lower.includes('vedic')) {
+      return '🔢';
+    }
+    if (lower.includes('science') || lower.includes('lab') || lower.includes('experiment') || lower.includes('physics') || lower.includes('biology')) {
+      return '🔬';
+    }
+    if (lower.includes('story') || lower.includes('katha') || lower.includes('friends') || lower.includes('read')) {
+      return '📖';
+    }
+    if (lower.includes('speed') || lower.includes('slow') || lower.includes('fast') || lower.includes('pace')) {
+      return '🐢';
+    }
+    if (lower.includes('star') || lower.includes('planet') || lower.includes('space') || lower.includes('moon')) {
+      return '🪐';
+    }
+    if (lower.includes('grammar') || lower.includes('verb') || lower.includes('noun') || lower.includes('dhatu') || lower.includes('sandhi')) {
+      return '🏛️';
+    }
+    const fallbacks = ['🌟', '✨', '💡', '🌱', '🎯'];
+    return fallbacks[index % fallbacks.length];
+  };
+
   /** Small 🔊 for Bodhi's English tips (en-IN voice, sentence chunks). */
   const renderEnglishSpeakBtn = (text: string, label: string) => {
     const active = speakingText === text;
@@ -262,7 +315,8 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
         aria-label={active ? 'Stop Bodhi' : `Hear Bodhi read ${label}`}
         aria-pressed={active}
       >
-        {active ? '⏹' : '🔊'}
+        <span>{active ? '⏹' : '🔊'}</span>
+        {active && renderSoundwave()}
       </button>
     );
   };
@@ -270,6 +324,22 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
   const currentContextTip = useMemo(() => {
     return BODHI_CONTEXT_TIPS[activeView] || BODHI_CONTEXT_TIPS.home;
   }, [activeView]);
+
+  const isGreetingSpeaking = isSpeaking && speakingText === BODHI_PROFILE.audioGreeting;
+
+  const fullPageReadingText = useMemo(() => {
+    return `${currentContextTip.title}. ${currentContextTip.summary}. What you can explore: ${currentContextTip.bulletPoints.join('. ')}. Bodhi's advice: ${currentContextTip.bodhiAdvice}`;
+  }, [currentContextTip]);
+
+  const isReadingFullPage = isSpeaking && speakingText === fullPageReadingText;
+
+  const handleToggleReadPage = () => {
+    if (isReadingFullPage) {
+      stopSpeaking();
+    } else {
+      speakSanskrit(fullPageReadingText, 'en');
+    }
+  };
 
   const currentSubhashita = BODHI_SUBHASHITAS[subhashitaIdx % BODHI_SUBHASHITAS.length];
 
@@ -639,7 +709,8 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     onClick={() => changeVoiceSpeed('slow')}
                     title="Slow, calm voice (best for young learners)"
                   >
-                    🐢 Slow
+                    <span>🐢</span>
+                    <span>Slow</span>
                   </button>
                   <button
                     type="button"
@@ -648,14 +719,15 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     onClick={() => changeVoiceSpeed('normal')}
                     title="Normal speaking pace"
                   >
-                    Normal
+                    <span>⚡</span>
+                    <span>Normal</span>
                   </button>
                 </div>
                 <button
                   type="button"
                   className="bodhi-control-btn"
                   onClick={() => updateIsOpen(false)}
-                  title="Close Guide"
+                  title="Close Guide (✕)"
                   aria-label="Close Guide"
                 >
                   ✕
@@ -663,22 +735,41 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
               </div>
             </header>
 
-            {/* 2. Spoken Greeting Strip */}
-            <div className="bodhi-audio-greeting-strip">
-              <div className="bodhi-greeting-text">
-                <div>
-                  <strong>नमस्ते!</strong> अहं बोधिः — भवतः संस्कृत-सखा।
+            {/* 2. Spoken Greeting Hero Card (Separated Greeting & Bio + Aligned Primary Action Button with Soundwave) */}
+            <div className="bodhi-greeting-hero-card">
+              <div className="bodhi-greeting-content">
+                {/* Greeting on its own dedicated prominent line */}
+                <div className="bodhi-greeting-headline">
+                  <span className="bodhi-greeting-namaste" lang="sa">नमस्ते !</span>
+                  <span className="bodhi-greeting-identity" lang="sa">अहं बोधिः — भवतः संस्कृत-सखा।</span>
                 </div>
-                <p className="bodhi-persona-line">🌿 {BODHI_PROFILE.persona}</p>
+
+                {/* Bio & persona description clearly separated on its own line below */}
+                <p className="bodhi-greeting-bio">
+                  <span className="bodhi-bio-icon" aria-hidden="true">🌿</span>
+                  <span>{BODHI_PROFILE.persona} · Your friendly Gurukul companion!</span>
+                </p>
+
+                {/* Refined primary Listen button container with visual soundwave feedback */}
+                <div className="bodhi-greeting-action-row">
+                  <button
+                    type="button"
+                    className={`bodhi-speak-hero-btn ${isGreetingSpeaking ? 'is-speaking' : ''}`}
+                    onClick={() => speakSanskrit(BODHI_PROFILE.audioGreeting)}
+                    title={isGreetingSpeaking ? 'Stop Bodhi speaking' : 'Hear Bodhi say Namaste'}
+                    aria-pressed={isGreetingSpeaking}
+                  >
+                    <span className="bodhi-speak-icon">{isGreetingSpeaking ? '⏹' : '🔊'}</span>
+                    <span className="bodhi-speak-label">
+                      {isGreetingSpeaking ? 'Speaking Namaste… (Tap to Stop)' : 'Listen to Bodhi (नमस्ते)'}
+                    </span>
+                    {isGreetingSpeaking && renderSoundwave()}
+                  </button>
+                  <span className="bodhi-greeting-subhint">
+                    Tap to hear Bodhi greet you in native Sanskrit!
+                  </span>
+                </div>
               </div>
-              <button
-                type="button"
-                className="bodhi-speak-btn"
-                onClick={() => speakSanskrit(BODHI_PROFILE.audioGreeting)}
-                title={speakingText === BODHI_PROFILE.audioGreeting ? 'Stop Bodhi' : 'Hear Bodhi speak Namaste'}
-              >
-                {speakingText === BODHI_PROFILE.audioGreeting ? '⏹ Speaking… (tap to stop)' : '🔊 Listen'}
-              </button>
             </div>
 
             {/* 3. Navigation Tabs */}
@@ -722,20 +813,34 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
 
             {/* 4. Tab Contents */}
             <div className="bodhi-card-body">
-              {/* TAB 1: Contextual Page Guide */}
+              {/* TAB 1: Contextual Page Guide with Enhanced Contrast & Child-Centric Visual Icons */}
               {activeTab === 'context' && (
                 <div className="bodhi-context-banner">
                   <div className="bodhi-context-header">
-                    <span className="bodhi-context-tag">Active Section</span>
-                    <span className="bodhi-context-sanskrit">{currentContextTip.sanskritTitle}</span>
+                    <div className="bodhi-context-tag-wrap">
+                      <span className="bodhi-context-tag">
+                        <span aria-hidden="true">📍</span> Active Section
+                      </span>
+                      <span className="bodhi-context-sanskrit">{currentContextTip.sanskritTitle}</span>
+                    </div>
+                    {renderEnglishSpeakBtn(
+                      `${currentContextTip.title}. ${currentContextTip.summary}`,
+                      'this section'
+                    )}
                   </div>
 
                   <h4 className="bodhi-context-title">{currentContextTip.title}</h4>
                   <p className="bodhi-context-summary">{currentContextTip.summary}</p>
 
+                  {/* Bullet points with child-friendly visual icons */}
                   <ul className="bodhi-context-bullets">
                     {currentContextTip.bulletPoints.map((pt, i) => (
-                      <li key={i}>{pt}</li>
+                      <li key={i} className="bodhi-context-bullet-item">
+                        <span className="bodhi-bullet-badge" aria-hidden="true">
+                          {getBulletVisualIcon(pt, i)}
+                        </span>
+                        <span className="bodhi-bullet-text">{pt}</span>
+                      </li>
                     ))}
                   </ul>
 
@@ -1264,6 +1369,42 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                 </div>
               )}
             </div>
+
+            {/* 5. Persistent Bottom Text-to-Speech & Mute Toolbar for Child-Centric Audio Access */}
+            <footer className="bodhi-card-footer" role="toolbar" aria-label="Bodhi Audio Toolbar">
+              <div className="bodhi-footer-left">
+                <button
+                  type="button"
+                  className={`bodhi-footer-tts-btn ${isReadingFullPage ? 'is-speaking' : ''}`}
+                  onClick={handleToggleReadPage}
+                  title={isReadingFullPage ? 'Stop reading page' : 'Have Bodhi read this entire section aloud'}
+                  aria-pressed={isReadingFullPage}
+                >
+                  <span className="bodhi-footer-icon">{isReadingFullPage ? '⏹' : '🗣️'}</span>
+                  <span className="bodhi-footer-text">
+                    {isReadingFullPage ? 'Stop Reading' : 'Speak Page Guide'}
+                  </span>
+                  {isReadingFullPage && renderSoundwave()}
+                </button>
+              </div>
+
+              <div className="bodhi-footer-right">
+                <button
+                  type="button"
+                  className="bodhi-footer-mute-btn"
+                  onClick={() => stopSpeaking()}
+                  title="Silence all Bodhi speech"
+                  aria-label="Mute all Bodhi speech"
+                  disabled={!isSpeaking}
+                >
+                  <span>🔇</span>
+                  <span>Mute</span>
+                </button>
+                <span className="bodhi-footer-hint">
+                  {isSpeaking ? 'Bodhi is speaking…' : 'Child-Friendly AI Companion'}
+                </span>
+              </div>
+            </footer>
           </div>
         </div>
       )}
