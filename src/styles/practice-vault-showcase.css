@@ -1,0 +1,629 @@
+/* ==========================================================================
+   PRACTICE VAULT SHOWCASE (WORKBOOKS, QUIZZES & WORKSHEETS)
+   Clean, interactive multi-tab showcase for self-study and CBSE prep
+   ========================================================================== */
+
+.pvs-section {
+  max-width: 1140px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.pvs-card-container {
+  background: linear-gradient(135deg, #fffdf8 0%, #fdf8ee 50%, #f9f0e6 100%);
+  border: 1.5px solid #ebdcc5;
+  border-radius: 22px;
+  padding: 2.2rem 2rem 2rem;
+  box-shadow: 0 12px 32px rgba(179, 71, 47, 0.06);
+  position: relative;
+}
+
+.pvs-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 1.75rem;
+}
+
+.pvs-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #b3472f;
+  background: #faede6;
+  border: 1px solid #f2cfc5;
+  padding: 0.22rem 0.8rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.pvs-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #2b2118;
+  margin: 0 0 0.45rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.pvs-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+/* Nav Tabs */
+.pvs-tabs-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.pvs-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #ffffff;
+  border: 1.5px solid #e2d3be;
+  border-radius: 999px;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #5c4a38;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.pvs-tab-btn:hover {
+  border-color: #d97706;
+  background: #fffdfa;
+  transform: translateY(-1px);
+  color: #2b2118;
+}
+
+.pvs-tab-btn.active {
+  background: linear-gradient(135deg, #b3472f 0%, #ea580c 100%);
+  color: #ffffff;
+  border-color: #9a3423;
+  box-shadow: 0 4px 14px rgba(179, 71, 47, 0.25);
+}
+
+.pvs-tab-icon {
+  font-size: 1.1rem;
+}
+
+.pvs-tab-count {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.pvs-tab-btn.active .pvs-tab-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   TAB 1: WORKBOOKS SHOWCASE
+   ========================================================================== */
+.pvs-workbooks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.15rem;
+  margin-bottom: 1.75rem;
+}
+
+.pvs-wb-card {
+  background: #ffffff;
+  border: 1.5px solid #ebdcc5;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.22s ease;
+  box-shadow: 0 4px 12px rgba(90, 42, 10, 0.04);
+  cursor: pointer;
+}
+
+.pvs-wb-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(180, 83, 9, 0.12);
+  border-color: #d97706;
+}
+
+.pvs-wb-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 300 / 400;
+  background: #f8f6f0;
+  overflow: hidden;
+  border-bottom: 1px solid #ebdcc5;
+}
+
+.pvs-wb-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.pvs-wb-card:hover .pvs-wb-thumb-img {
+  transform: scale(1.03);
+}
+
+.pvs-wb-page-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(30, 20, 10, 0.85);
+  color: #fef08a;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+.pvs-wb-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(180, 83, 9, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  gap: 0.35rem;
+}
+
+.pvs-wb-card:hover .pvs-wb-preview-overlay {
+  opacity: 1;
+}
+
+.pvs-wb-info {
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pvs-wb-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #2b2118;
+  margin: 0 0 0.2rem;
+  line-height: 1.25;
+}
+
+.pvs-wb-sub {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #b3472f;
+  margin-bottom: 0.4rem;
+}
+
+.pvs-wb-desc {
+  font-size: 0.72rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   TAB 2: INTERACTIVE QUIZ SANDBOX
+   ========================================================================== */
+.pvs-quiz-sandbox {
+  max-width: 680px;
+  margin: 0 auto 1.75rem;
+  background: #ffffff;
+  border: 1.5px solid #ebdcc5;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(90, 42, 10, 0.05);
+}
+
+.pvs-quiz-question-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed #ebdcc5;
+  padding-bottom: 0.75rem;
+}
+
+.pvs-quiz-q-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #047857;
+  background: #ecfdf5;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid #a7f3d0;
+}
+
+.pvs-quiz-selector {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.pvs-quiz-num-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #e2d3be;
+  background: #f8fafc;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pvs-quiz-num-btn:hover {
+  background: #fef3c7;
+  border-color: #d97706;
+}
+
+.pvs-quiz-num-btn.active {
+  background: #d97706;
+  color: #ffffff;
+  border-color: #b45309;
+}
+
+.pvs-quiz-prompt {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 0.35rem;
+  font-family: 'Noto Sans Devanagari', 'Siddhanta', serif;
+}
+
+.pvs-quiz-translation {
+  font-size: 0.84rem;
+  color: #64748b;
+  margin: 0 0 1.15rem;
+}
+
+.pvs-quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.pvs-quiz-opt-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #fbf9f5;
+  border: 1.5px solid #ebdcc5;
+  border-radius: 10px;
+  padding: 0.75rem 0.85rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.18s ease;
+  font-family: inherit;
+}
+
+.pvs-quiz-opt-btn:hover:not(:disabled) {
+  background: #fff8ee;
+  border-color: #d97706;
+  transform: translateY(-1px);
+}
+
+.pvs-opt-letter {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pvs-opt-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  font-family: 'Noto Sans Devanagari', 'Siddhanta', serif;
+}
+
+.pvs-quiz-opt-btn.correct {
+  background: #ecfdf5;
+  border-color: #10b981;
+}
+
+.pvs-quiz-opt-btn.correct .pvs-opt-letter {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.pvs-quiz-opt-btn.incorrect {
+  background: #fef2f2;
+  border-color: #ef4444;
+}
+
+.pvs-quiz-opt-btn.incorrect .pvs-opt-letter {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.pvs-quiz-feedback {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  border-left: 3px solid #3b82f6;
+  font-size: 0.8rem;
+  color: #334155;
+  line-height: 1.45;
+  animation: pvs-fade-in 0.25s ease;
+}
+
+.pvs-quiz-feedback.is-correct {
+  border-left-color: #10b981;
+  background: #f0fdf4;
+}
+
+.pvs-quiz-feedback.is-incorrect {
+  border-left-color: #ef4444;
+  background: #fef2f2;
+}
+
+@keyframes pvs-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   TAB 3: WORKSHEETS SHOWCASE
+   ========================================================================== */
+.pvs-worksheets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.pvs-ws-card {
+  background: #ffffff;
+  border: 1.5px solid #ebdcc5;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.22s ease;
+  box-shadow: 0 4px 12px rgba(90, 42, 10, 0.04);
+}
+
+.pvs-ws-card:hover {
+  transform: translateY(-2px);
+  border-color: #d97706;
+  box-shadow: 0 8px 20px rgba(180, 83, 9, 0.1);
+}
+
+.pvs-ws-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.pvs-ws-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #92400e;
+  background: #fef3c7;
+  padding: 0.18rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid #fde68a;
+}
+
+.pvs-ws-marks {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.pvs-ws-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #2b2118;
+  margin: 0 0 0.35rem;
+  line-height: 1.25;
+}
+
+.pvs-ws-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 0 0 0.85rem;
+  line-height: 1.4;
+}
+
+.pvs-ws-questions-box {
+  background: #fdfbf7;
+  border: 1px solid #ebdcc5;
+  border-radius: 8px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+  margin-bottom: 0.85rem;
+}
+
+.pvs-ws-q-item {
+  font-size: 0.76rem;
+  color: #334155;
+  line-height: 1.35;
+  font-family: 'Noto Sans Devanagari', 'Siddhanta', serif;
+}
+
+.pvs-ws-q-item strong {
+  color: #78350f;
+}
+
+/* Bottom CTA Actions */
+.pvs-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid #ebdcc5;
+  padding-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.pvs-bottom-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.pvs-bottom-stat-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.pvs-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, #b3472f 0%, #ea580c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.35rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(179, 71, 47, 0.25);
+  text-decoration: none;
+}
+
+.pvs-cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(179, 71, 47, 0.32);
+}
+
+/* Lightbox Preview Modal for Workbook Pages */
+.pvs-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 10, 5, 0.78);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.pvs-modal-inner {
+  background: #ffffff;
+  border-radius: 18px;
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  border: 1.5px solid #ebdcc5;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pvs-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  transition: all 0.15s ease;
+}
+
+.pvs-modal-close:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.pvs-modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border: 1px solid #ebdcc5;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .pvs-workbooks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pvs-worksheets-grid {
+    grid-template-columns: 1fr;
+  }
+  .pvs-card-container {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pvs-workbooks-grid {
+    grid-template-columns: 1fr;
+  }
+  .pvs-quiz-options {
+    grid-template-columns: 1fr;
+  }
+  .pvs-title {
+    font-size: 1.45rem;
+  }
+  .pvs-tab-btn {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.85rem;
+  }
+}

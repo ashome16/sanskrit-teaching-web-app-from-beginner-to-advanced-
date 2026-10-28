@@ -17,6 +17,7 @@ import { GamificationShowcase } from './GamificationShowcase';
 import { TrustAndMethodology } from './TrustAndMethodology';
 import { MobileStickyBar } from './MobileStickyBar';
 import { StudentStaircaseBlackboard } from './StudentStaircaseBlackboard';
+import { PracticeVaultShowcase } from './PracticeVaultShowcase';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 
@@ -2384,6 +2385,15 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
       </section>
+
+      {/* ------------------------------------------------------------------
+          Practice Vault: Workbooks, Quizzes & CBSE Worksheets Showcase
+          ------------------------------------------------------------------ */}
+      <PracticeVaultShowcase
+        onOpenQuiz={onOpenQuiz}
+        onOpenWorksheets={onOpenWorksheets}
+        onOpenResources={onOpenResources}
+      />
 
       {/* ------------------------------------------------------------------
           In the Age of AI Deep-Dive Callout
