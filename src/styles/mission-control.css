@@ -1533,6 +1533,277 @@ button.vl-mc-telemetry-stat--badges:hover {
 }
 
 /* --------------------------------------------------------------------------
+   13. Kid-Centric Mission Workbench Header (Play First, Learn Second)
+   -------------------------------------------------------------------------- */
+.vl-wb-mission-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.vl-wb-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  border-radius: 16px;
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.vl-wb-return-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border: 1.5px solid #fde047;
+  color: #1e1b4b;
+  font-size: 0.92rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(245, 158, 11, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.vl-wb-return-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.5);
+}
+
+.vl-wb-active-mission-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 240px;
+}
+
+.vl-wb-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.vl-wb-title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.vl-wb-sector-code {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #f59e0b;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.vl-wb-name {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-weight: 900;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.vl-wb-dev {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: 0.95rem;
+  color: #fde047;
+  font-weight: 700;
+}
+
+.vl-wb-actions-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.vl-wb-spark-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 48px;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border: 1.5px solid #86efac;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(34, 197, 94, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.vl-wb-spark-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.5);
+}
+
+.vl-wb-btn-ghost, .vl-wb-sub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding: 0.5rem 0.95rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.vl-wb-btn-ghost:hover, .vl-wb-sub-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Bodhi 1-Sentence Mission Briefing Box */
+.vl-wb-bodhi-briefing-box {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.88));
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
+  border-radius: 14px;
+  padding: 0.9rem 1.35rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.vl-wb-bodhi-avatar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+
+.vl-wb-bodhi-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.vl-wb-bodhi-name, .vl-wb-bodhi-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.vl-wb-bodhi-content-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.vl-wb-bodhi-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #7dd3fc;
+  letter-spacing: 0.05em;
+}
+
+.vl-wb-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(56, 189, 248, 0.18);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #bae6fd;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.vl-wb-audio-btn:hover {
+  background: rgba(56, 189, 248, 0.3);
+  color: #ffffff;
+}
+
+.vl-wb-audio-btn.is-speaking {
+  background: #f43f5e;
+  border-color: #fda4af;
+  color: #ffffff;
+}
+
+.vl-wb-bodhi-goal-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #f8fafc;
+}
+
+.vl-wb-reward-pill {
+  font-size: 0.8rem;
+  color: #fde047;
+  font-weight: 600;
+}
+
+/* Playable Canvas Container */
+.vl-wb-playable-canvas {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Collapsible Ancient Indian Heritage Accordion */
+.vl-wb-heritage-accordion {
+  margin-top: 2rem;
+  border: 1.5px solid rgba(245, 158, 11, 0.3);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.75);
+  overflow: hidden;
+}
+
+.vl-wb-heritage-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #fef08a;
+  cursor: pointer;
+  background: rgba(30, 41, 59, 0.5);
+  transition: background 0.15s ease;
+  user-select: none;
+}
+
+.vl-wb-heritage-summary:hover {
+  background: rgba(30, 41, 59, 0.85);
+  color: #ffffff;
+}
+
+.vl-wb-heritage-content {
+  padding: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
    12. Responsive Breakpoints
    -------------------------------------------------------------------------- */
 @media (max-width: 900px) {

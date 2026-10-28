@@ -992,16 +992,30 @@ const HomePage: React.FC<HomePageProps> = ({
               title="EdNet Gurukul · संस्कृत-पाठशाला · Click to experience Gurukul dawn animation"
               style={{ cursor: 'pointer' }}
             />
-            <button
-              type="button"
-              className="home-hero-replay-intro-btn"
-              onClick={() => setShowEntranceIntro(true)}
-              title="Experience or replay the Vedic Tapovana Gurukul Dawn entrance animation and morning soundscape"
-            >
-              <span className="hhri-icon" aria-hidden="true">🌅</span>
-              <span>गुरुकुल-दर्शनम् · Play Gurukul Dawn Animation</span>
-              <span className="hhri-badge">Sound &amp; Art</span>
-            </button>
+            <div className="home-hero-top-actions-row">
+              <button
+                type="button"
+                className="home-hero-replay-intro-btn"
+                onClick={() => setShowEntranceIntro(true)}
+                title="Experience or replay the Vedic Tapovana Gurukul Dawn entrance animation and morning soundscape"
+              >
+                <span className="hhri-icon" aria-hidden="true">🌅</span>
+                <span>गुरुकुल-दर्शनम् · Play Gurukul Dawn Animation</span>
+                <span className="hhri-badge">Sound &amp; Art</span>
+              </button>
+              {onOpenScienceLab && (
+                <button
+                  type="button"
+                  className="home-hero-kids-lab-btn"
+                  onClick={() => onOpenScienceLab()}
+                  title="Enter Vijñāna Kids' Science Lab: Play 8 science games & earn Vidyā Badges"
+                >
+                  <span className="hhkl-icon" aria-hidden="true">🚀</span>
+                  <span>विज्ञान-प्रयोगशाला · Kids' Science Lab</span>
+                  <span className="hhkl-badge">8 Games</span>
+                </button>
+              )}
+            </div>
           </div>
 
           {/* 1. Main Headline & Direct Level Selection */}

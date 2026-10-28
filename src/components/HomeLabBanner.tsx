@@ -270,12 +270,12 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
   useEffect(() => {
     if (!running) return;
     const t = window.setInterval(() => {
-      if (document.visibilityState === 'visible') setIdx((i) => (i + 1) % MODULES.length);
+      if (document.visibilityState === 'visible') setIdx((i) => (i + 1) % FEATURED_THREE.length);
     }, ROTATE_MS);
     return () => window.clearInterval(t);
   }, [running]);
 
-  const go = (i: number) => setIdx((i + MODULES.length) % MODULES.length);
+  const go = (i: number) => setIdx((i + FEATURED_THREE.length) % FEATURED_THREE.length);
   const open = (e: React.MouseEvent, id?: string) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
     e.preventDefault();
@@ -400,24 +400,24 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
         }}
       >
         <div className="hlb-slides" aria-live={running ? 'off' : 'polite'}>
-          {MODULES.map((m, i) => (
+          {FEATURED_THREE.map((m, i) => (
             <a
               key={m.id}
               href={`/vignana-lab#${m.id}`}
               className={`hlb-slide${i === idx ? ' is-active' : ''}`}
               aria-hidden={i !== idx}
               tabIndex={i === idx ? 0 : -1}
-              aria-label={`Slide ${i + 1} of ${MODULES.length}: open ${m.title}`}
+              aria-label={`Slide ${i + 1} of ${FEATURED_THREE.length}: open ${m.title}`}
               onClick={(e) => open(e, m.id)}
               data-testid={`hlb-slide-${m.id}`}
             >
               <span className="hlb-slide-stage">{i === idx && <Preview id={m.id} />}</span>
               <span className="hlb-slide-meta">
-                <span className="hlb-slide-subject">{m.subject} · {m.age}</span>
+                <span className="hlb-slide-subject">{m.age}</span>
                 <span className="hlb-slide-title">
                   <span aria-hidden="true">{m.icon}</span> {m.title}
                 </span>
-                <span className="hlb-slide-dev" lang="sa">{m.dev}</span>
+                <span className="hlb-slide-dev" lang="sa">{m.subtitle}</span>
                 <span className="hlb-slide-go">▶ Launch Mission →</span>
               </span>
             </a>
@@ -426,7 +426,7 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
         <div className="hlb-controls">
           <button type="button" className="hlb-arrow" onClick={() => go(idx - 1)} aria-label="Previous module" data-testid="hlb-prev">‹</button>
           <div className="hlb-dots">
-            {MODULES.map((m, i) => (
+            {FEATURED_THREE.map((m, i) => (
               <button
                 key={m.id}
                 type="button"

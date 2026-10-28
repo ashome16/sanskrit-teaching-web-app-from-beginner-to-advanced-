@@ -6,11 +6,14 @@ import '../../styles/mission-control.css';
 import { MissionControlDashboard } from './MissionControlDashboard';
 import { ScienceSparkModal } from './ScienceSparkModal';
 import { ParentNotesModal } from './ParentNotesModal';
+import { HowToPlayModal } from './HowToPlayModal';
+import { playPronunciation, stopPronunciation } from '../../utils/pronunciation';
 import {
   getExplorerStats,
   saveExplorerStats,
   getMissionCardById,
   type ExplorerStats,
+  type MissionCardData,
 } from './missionControlData';
 
 const PreschoolWonderLab = lazy(() => import('./PreschoolWonderLab'));
@@ -32,7 +35,6 @@ const ChandahshastraLab = lazy(() => import('./ChandahshastraLab'));
 const UjjainGeodesyStudio = lazy(() => import('../UjjainGeodesyStudio'));
 const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 import { BodhiWisdomCard } from '../BodhiWisdomCard';
-import { GuidedQuestHUD } from './GuidedQuestHUD';
 import { QuestDirectoryModal } from './QuestDirectoryModal';
 
 export type LabCategory = 'all' | 'matter' | 'cosmos' | 'life' | 'waves';
@@ -490,13 +492,14 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
     return readHash() || 'paramanu';
   });
   const [viewMode, setViewMode] = useState<'mission-control' | 'workbench' | 'catalog'>(() => {
-    const h = readHash();
-    if (h || initialSegment) return 'workbench';
+    if (initialSegment) return 'workbench';
     return 'mission-control';
   });
   const [explorerStats, setExplorerStats] = useState<ExplorerStats>(() => getExplorerStats());
   const [isScienceSparkOpen, setIsScienceSparkOpen] = useState(false);
   const [isParentNotesOpen, setIsParentNotesOpen] = useState(false);
+  const [selectedHowToPlay, setSelectedHowToPlay] = useState<MissionCardData | null>(null);
+  const [isSpeakingBodhiBriefing, setIsSpeakingBodhiBriefing] = useState(false);
   const [filterCat, setFilterCat] = useState<LabCategory>('all');
   const [filterLevel, setFilterLevel] = useState<LabLevel>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -605,6 +608,25 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
       return updated;
     });
     setIsScienceSparkOpen(true);
+  };
+
+  const handleSpeakBriefing = async () => {
+    if (isSpeakingBodhiBriefing) {
+      stopPronunciation();
+      setIsSpeakingBodhiBriefing(false);
+      return;
+    }
+    const text = activeMissionCard
+      ? `${activeMissionCard.kidTitle}. ${activeMissionCard.missionGoal}`
+      : `${seg.title}. ${seg.blurb}`;
+    setIsSpeakingBodhiBriefing(true);
+    try {
+      await playPronunciation(text);
+    } catch {
+      // Audio fallback
+    } finally {
+      setIsSpeakingBodhiBriefing(false);
+    }
   };
 
   const visibleSegments = useMemo<LabSegmentConfig[]>(() => {
@@ -1273,222 +1295,146 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
 
       {viewMode === 'workbench' && (
         <>
-        <section id={active} ref={simRef} className="vl-segment" aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
-        {/* In-Workbench Return Navigation Bar */}
-        <div className="vl-workbench-phet-nav">
-          <button
-            type="button"
-            className="vl-wpn-back-btn"
-            style={{ background: '#f59e0b', color: '#1e1b4b' }}
-            onClick={() => {
-              setViewMode('mission-control');
-              soundEffects.playStrokeChime();
-            }}
-          >
-            🚀 Mission Control (8 Games)
-          </button>
-          <button
-            type="button"
-            className="vl-wpn-back-btn"
-            onClick={() => {
-              setViewMode('catalog');
-              soundEffects.playStrokeChime();
-              catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
-          >
-            🎴 All 17 Simulations
-          </button>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 900, color: '#0f172a' }}>
-            <span>{seg.icon}</span>
-            <span>Active Sandbox: <strong>{seg.code} · {seg.title} ({seg.dev})</strong></span>
-          </div>
-          {activeMissionCard && (
+        <section id={active} ref={simRef} className="vl-segment vl-segment--mission-workbench" aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
+        {/* Kid-Centric Mission Workbench Header */}
+        <div className="vl-wb-mission-header">
+          <div className="vl-wb-nav-row">
             <button
               type="button"
-              className="vl-btn vl-btn--gold"
-              style={{ padding: '0.45rem 1rem', fontSize: '0.82rem', fontWeight: 800 }}
-              onClick={handleCompleteActiveMission}
+              className="vl-wb-return-btn"
+              onClick={() => {
+                setViewMode('mission-control');
+                soundEffects.playStrokeChime();
+              }}
+              title="Return to Vijñāna Mission Control Hub"
             >
-              🎉 Spark Science (+3 ⭐)
+              <span aria-hidden="true">◀</span>
+              <span>🚀 Mission Control (8 Games)</span>
             </button>
-          )}
-          {activeMissionCard && (
-            <button
-              type="button"
-              className="vl-btn vl-btn--cyber-ghost"
-              style={{ padding: '0.45rem 0.85rem', fontSize: '0.82rem' }}
-              onClick={() => setIsParentNotesOpen(true)}
-            >
-              📘 Parent Notes
-            </button>
-          )}
-          <button
-            type="button"
-            className="vl-btn vl-btn--cyber-ghost"
-            style={{ padding: '0.45rem 1rem', fontSize: '0.82rem' }}
-            onClick={() => setIsQuestDirectoryOpen(true)}
-          >
-            🧭 Quest Directory
-          </button>
-        </div>
 
-        {/* Top Quick-Navigation HUD Bar */}
-        <nav className="vl-lab-bench-nav" aria-label="Sector navigation bar">
-          <button
-            type="button"
-            className="vl-lab-nav-btn vl-lab-nav-btn--prev"
-            onClick={() => handleNavigateLab(prevSeg.id)}
-            title={`Previous Lab: ${prevSeg.code} ${prevSeg.title}`}
-          >
-            <span className="vl-nav-arrow" aria-hidden="true">◀</span>
-            <span className="vl-nav-meta">
-              <span className="vl-nav-dir">PREV LAB</span>
-              <span className="vl-nav-label">{prevSeg.icon} {prevSeg.code} · {prevSeg.title}</span>
-            </span>
-          </button>
-
-          <div className="vl-lab-nav-status">
-            <div className="vl-nav-badge">
-              <span className="vl-hud-blink">●</span> SECTOR {String(currentIndex + 1).padStart(2, '0')} / {String(LAB_SEGMENTS.length).padStart(2, '0')}
-            </div>
-            <div className="vl-nav-pills-row" role="tablist" aria-label="Direct sector jump">
-              {LAB_SEGMENTS.map((s, idx) => (
-                <button
-                  key={s.id}
-                  type="button"
-                  className={`vl-nav-step-dot${s.id === active ? ' is-active' : ''}`}
-                  onClick={() => handleNavigateLab(s.id)}
-                  title={`${s.code}: ${s.title} (${s.dev})`}
-                  aria-label={`Jump to ${s.code} ${s.title}`}
-                >
-                  <span className="vl-step-num">{idx + 1}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <button
-            type="button"
-            className="vl-lab-nav-btn vl-lab-nav-btn--next"
-            onClick={() => handleNavigateLab(nextSeg.id)}
-            title={`Next Lab: ${nextSeg.code} ${nextSeg.title}`}
-          >
-            <span className="vl-nav-meta vl-nav-meta--right">
-              <span className="vl-nav-dir">NEXT LAB ➔</span>
-              <span className="vl-nav-label">{nextSeg.icon} {nextSeg.code} · {nextSeg.title}</span>
-            </span>
-            <span className="vl-nav-arrow" aria-hidden="true">▶</span>
-          </button>
-        </nav>
-
-        {/* Workbench Quick Tier Jump Bar */}
-        <div className="vl-workbench-quick-tiers" role="navigation" aria-label="Quick Educational Tier Jump">
-          <span className="vl-wqt-label">TIER JUMP:</span>
-          <button
-            type="button"
-            className={`vl-wqt-pill vl-wqt-pill--preschool${seg.level === 'preschool' ? ' is-active' : ''}`}
-            onClick={() => handleNavigateLab('preschool-wonder')}
-            title="Jump to Preschool Wonder Playground (Shapes, Moon, Seasons, Vāhanas)"
-          >
-            🧸 Preschool (Ages 3–6)
-          </button>
-          <button
-            type="button"
-            className={`vl-wqt-pill vl-wqt-pill--primary${seg.level === 'primary' ? ' is-active' : ''}`}
-            onClick={() => handleNavigateLab('jyotisha')}
-            title="Jump to Primary Planetary Orbit Gravity"
-          >
-            🎒 Primary (Grades 3–5)
-          </button>
-          <button
-            type="button"
-            className={`vl-wqt-pill vl-wqt-pill--middle${seg.level === 'middle' ? ' is-active' : ''}`}
-            onClick={() => handleNavigateLab('chandrayaan')}
-            title="Jump to Middle School Chandrayaan Lander"
-          >
-            🔬 Middle (Grades 6–8)
-          </button>
-          <button
-            type="button"
-            className={`vl-wqt-pill vl-wqt-pill--high${seg.level === 'high' || seg.level === 'advanced' ? ' is-active' : ''}`}
-            onClick={() => handleNavigateLab('paramanu')}
-            title="Jump to High School Atom Synthesizer"
-          >
-            🚀 Advanced (Atoms / Rockets)
-          </button>
-        </div>
-
-        {/* Biological Continuum Track Banner for Life Sciences */}
-        {seg.category === 'life' && active !== 'preschool-wonder' && (
-          <div className="vl-bio-continuum-banner" role="region" aria-label="Life Sciences Continuum Track">
-            <div className="vl-bio-continuum-title">
-              <span className="vl-hud-blink">●</span> BIOLOGICAL CONTINUUM TRACK // जीव-विज्ञान-परम्परा (CELLULAR ➔ ORGANISMAL)
-            </div>
-            <div className="vl-bio-continuum-steps">
-              <button
-                type="button"
-                className={`vl-bio-step${active === 'prakriti' ? ' is-current' : ' is-done'}`}
-                onClick={() => handleNavigateLab('prakriti')}
-              >
-                <span className="vl-bio-step-num">STAGE 1 · SEC-03</span>
-                <span className="vl-bio-step-name">🌿 Prakṛti Biosphere</span>
-                <span className="vl-bio-step-sub">Sub-Cellular Homeostasis &amp; Tridoṣa Ion Balance</span>
-              </button>
-
-              <div className="vl-bio-step-connector" aria-hidden="true">
-                ──(Scaling to Organism)──▶
+            <div className="vl-wb-active-mission-title">
+              <span className="vl-wb-icon">{seg.icon}</span>
+              <div className="vl-wb-title-box">
+                <span className="vl-wb-sector-code">SECTOR {seg.code} · {seg.ageRange}</span>
+                <h2 id={`vl-h-${active}`} className="vl-wb-name">
+                  {seg.title} <span className="vl-wb-dev" lang="sa">({seg.dev})</span>
+                </h2>
               </div>
+            </div>
 
+            <div className="vl-wb-actions-right">
+              {activeMissionCard && (
+                <button
+                  type="button"
+                  className="vl-wb-spark-btn"
+                  onClick={handleCompleteActiveMission}
+                  title="Celebrate mission completion & unlock 3 Vidyā Stars!"
+                >
+                  <span>🎉 Spark Science (+3 ⭐)</span>
+                </button>
+              )}
+              {activeMissionCard && (
+                <button
+                  type="button"
+                  className="vl-wb-btn-ghost"
+                  onClick={() => {
+                    soundEffects.playStrokeChime();
+                    setSelectedHowToPlay(activeMissionCard);
+                  }}
+                  title="How to play this science mission"
+                >
+                  <span>❓ How to Play</span>
+                </button>
+              )}
               <button
                 type="button"
-                className={`vl-bio-step${active === 'chaturyoni' ? ' is-current' : ''}`}
-                onClick={() => handleNavigateLab('chaturyoni')}
+                className="vl-wb-btn-ghost"
+                onClick={() => {
+                  soundEffects.playStrokeChime();
+                  setIsParentNotesOpen(true);
+                }}
+                title="Curriculum alignment, civilizational history, and parent notes"
               >
-                <span className="vl-bio-step-num">STAGE 2 · SEC-04</span>
-                <span className="vl-bio-step-name">🦢 Chaturyoni Spawn Map</span>
-                <span className="vl-bio-step-sub">Whole-Organism Taxonomy &amp; Plant Galvanometry</span>
+                <span>📘 Parent Notes</span>
+              </button>
+              <button
+                type="button"
+                className="vl-wb-btn-ghost"
+                onClick={() => {
+                  setViewMode('catalog');
+                  soundEffects.playStrokeChime();
+                  catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                title="Browse full 17-simulation catalog"
+              >
+                <span>🎴 All 17 Sims</span>
               </button>
             </div>
           </div>
-        )}
 
-        <h2 id={`vl-h-${active}`} className="vl-seg-title" style={{ color: seg.ink }}>
-          <span aria-hidden="true">{seg.icon}</span> {seg.title} <span className="vl-seg-dev" lang="sa">{seg.dev}</span>
-        </h2>
-
-        {/* Bodhi Wisdom & Civilizational Context Card */}
-        <div style={{ marginBottom: '1.75rem' }}>
-          <BodhiWisdomCard gameId={active} gameTitle={seg.title} />
+          {/* Bodhi 1-Sentence Mission Briefing Box */}
+          <div className="vl-wb-bodhi-briefing-box">
+            <div className="vl-wb-bodhi-avatar-col">
+              <span className="vl-wb-bodhi-emoji">🧙‍♂️</span>
+              <span className="vl-wb-bodhi-tag">BODHI CONTROLLER</span>
+            </div>
+            <div className="vl-wb-bodhi-content-col">
+              <div className="vl-wb-bodhi-kicker">
+                <span className="vl-hud-blink">●</span> 3-MINUTE ACTIVE MISSION // कार्य-लक्ष्यम्
+                <button
+                  type="button"
+                  className={`vl-wb-audio-btn ${isSpeakingBodhiBriefing ? 'is-speaking' : ''}`}
+                  onClick={handleSpeakBriefing}
+                  aria-label={isSpeakingBodhiBriefing ? 'Stop audio' : 'Listen to Bodhi'}
+                >
+                  <span>{isSpeakingBodhiBriefing ? '⏹️ Stop' : '🔊 Listen'}</span>
+                </button>
+              </div>
+              <p className="vl-wb-bodhi-goal-text">
+                🎯 <strong>Goal:</strong> {activeMissionCard?.missionGoal || seg.blurb}
+              </p>
+              {activeMissionCard && (
+                <div className="vl-wb-reward-pill">
+                  <span>🏆 <strong>Reward:</strong> Unlock the <strong>{activeMissionCard.badgeName}</strong> badge ({activeMissionCard.badgeIcon}) + 3 Vidyā Stars!</span>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
-        {/* Guided Quest Mode HUD (3-Minute Gamified Missions) */}
-        {isQuestMode && active !== 'preschool-wonder' && (
-          <GuidedQuestHUD
-            labId={active}
-            labTitle={seg.title}
-            onOpenAllQuestsModal={() => setIsQuestDirectoryOpen(true)}
-          />
-        )}
+        {/* Immediate Pure Playable Simulation Canvas — Play First! */}
+        <div className="vl-wb-playable-canvas">
+          <Suspense fallback={<SimLoader />}>
+            {active === 'preschool-wonder' && <PreschoolWonderLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'paramanu' && <ParamanuBuilder onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'asato-ma' && <AsatoMa />}
+            {active === 'prakriti' && <PrakritiBalance onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'chaturyoni' && <Chaturyoni onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'jyotisha' && <JyotishaOrbit />}
+            {active === 'chandrayaan' && <Chandrayaan />}
+            {active === 'nada-brahman' && <NadaBrahman />}
+            {active === 'srishti-sthiti-laya' && <SrishtiLoom />}
+            {active === 'rituparna' && <RituparnaSampling />}
+            {active === 'agnibana' && <AgnibanaRocketLab />}
+            {active === 'vedic-geometry' && <VedicGeometryLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'mantra-acoustics' && <MantraAcousticsLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'temple-engineering' && <TempleEngineeringLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'kautilya' && <KautilyaStatecraft onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'chandahshastra' && <ChandahshastraLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'ujjain-geodesy' && <UjjainGeodesyStudio onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+          </Suspense>
+        </div>
 
-        <Suspense fallback={<SimLoader />}>
-          {active === 'preschool-wonder' && <PreschoolWonderLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
-          {active === 'paramanu' && <ParamanuBuilder onNextLab={() => handleNavigateLab(nextSeg.id)} />}
-          {active === 'asato-ma' && <AsatoMa />}
-          {active === 'prakriti' && <PrakritiBalance onNextLab={() => handleNavigateLab(nextSeg.id)} />}
-          {active === 'chaturyoni' && <Chaturyoni onNextLab={() => handleNavigateLab(nextSeg.id)} />}
-          {active === 'jyotisha' && <JyotishaOrbit />}
-          {active === 'chandrayaan' && <Chandrayaan />}
-          {active === 'nada-brahman' && <NadaBrahman />}
-          {active === 'srishti-sthiti-laya' && <SrishtiLoom />}
-          {active === 'rituparna' && <RituparnaSampling />}
-          {active === 'agnibana' && <AgnibanaRocketLab />}
-          {active === 'vedic-geometry' && <VedicGeometryLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
-          {active === 'mantra-acoustics' && <MantraAcousticsLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
-          {active === 'temple-engineering' && <TempleEngineeringLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
-          {active === 'kautilya' && <KautilyaStatecraft onNextLab={() => handleNavigateLab(nextSeg.id)} />}
-          {active === 'chandahshastra' && <ChandahshastraLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
-          {active === 'ujjain-geodesy' && <UjjainGeodesyStudio onNextLab={() => handleNavigateLab(nextSeg.id)} />}
-        </Suspense>
+        {/* Optional Expandable Ancient Civilizational Context for Scholars & Parents */}
+        <details className="vl-wb-heritage-accordion">
+          <summary className="vl-wb-heritage-summary">
+            <span>📜</span>
+            <span>Ancient Indian Scientific Heritage &amp; Darśana Context (Click to expand for scholars &amp; teachers)</span>
+          </summary>
+          <div className="vl-wb-heritage-content">
+            <BodhiWisdomCard gameId={active} gameTitle={seg.title} />
+          </div>
+        </details>
 
 
         {/* Bottom Next Lab Gateway Card */}
@@ -1913,6 +1859,19 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           mission={activeMissionCard}
           isOpen={isParentNotesOpen}
           onClose={() => setIsParentNotesOpen(false)}
+        />
+      )}
+
+      {/* How To Play Modal */}
+      {selectedHowToPlay && (
+        <HowToPlayModal
+          mission={selectedHowToPlay}
+          isOpen={true}
+          onClose={() => setSelectedHowToPlay(null)}
+          onLaunch={() => {
+            handleLaunchSim(selectedHowToPlay.id as LabSegmentId);
+            setSelectedHowToPlay(null);
+          }}
         />
       )}
     </div>
