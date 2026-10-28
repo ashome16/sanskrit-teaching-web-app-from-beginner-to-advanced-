@@ -1,61 +1,30 @@
 /* ===================================================================
    STUDENT STAIRCASE & ANCIENT GURUKUL DOCUMENT STYLES
-   Parchment Manuscript Scroll & Ascending Steps Aesthetic
+   Minimalist Parchment Manuscript & Ascending Steps Aesthetic
    =================================================================== */
 
 .student-staircase-section {
   max-width: 1180px;
-  margin: 2.5rem auto 4rem;
+  margin: 2rem auto 3.5rem;
   padding: 0 1rem;
   box-sizing: border-box;
-}
-
-/* Eyebrow Header */
-.ssb-eyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-  padding: 0 0.5rem;
-}
-
-.ssb-badge {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  border: 1px solid #d97706;
-  color: #78350f;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  padding: 0.35rem 0.95rem;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  box-shadow: 0 2px 6px rgba(180, 83, 9, 0.12);
-}
-
-.ssb-subtext {
-  font-size: 0.95rem;
-  color: #78350f;
-  font-style: italic;
-  font-family: 'Siddhanta', 'Noto Sans Devanagari', Georgia, serif;
 }
 
 /* Antique Parchment Stage Frame */
 .ssb-antique-stage {
   position: relative;
   background: 
-    radial-gradient(circle at 10% 10%, rgba(180, 83, 9, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 90% 90%, rgba(180, 83, 9, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 10% 10%, rgba(180, 83, 9, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(180, 83, 9, 0.05) 0%, transparent 40%),
     linear-gradient(135deg, #fdfbf7 0%, #f9f4ea 50%, #f4ecdc 100%);
-  border: 2px solid #dfcfb8;
+  border: 1.5px solid #dfcfb8;
   border-radius: 24px;
-  padding: 2rem;
+  padding: 1.85rem;
   box-shadow: 
-    0 16px 40px rgba(78, 42, 10, 0.1),
+    0 16px 40px rgba(78, 42, 10, 0.08),
     0 2px 8px rgba(0, 0, 0, 0.04),
     inset 0 0 0 1px rgba(255, 255, 255, 0.8),
-    inset 0 0 60px rgba(180, 120, 50, 0.06);
+    inset 0 0 50px rgba(180, 120, 50, 0.05);
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -63,10 +32,10 @@
 /* Decorative Tea-Stain Vignettes at Corners */
 .ssb-stain-corner {
   position: absolute;
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   pointer-events: none;
-  opacity: 0.35;
+  opacity: 0.28;
   filter: blur(12px);
   z-index: 1;
 }
@@ -101,110 +70,26 @@
   z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1.85rem;
   align-items: stretch;
 }
 
 @media (max-width: 960px) {
   .ssb-parchment-grid {
     grid-template-columns: 1fr;
-    gap: 2.25rem;
+    gap: 1.75rem;
   }
   .ssb-antique-stage {
-    padding: 1.25rem;
-  }
-}
-
-/* Stone Plaque Tablet Headers */
-.ssb-stone-tablet {
-  background: #f7f3e8;
-  border: 1.5px solid #dcd1be;
-  border-radius: 14px;
-  padding: 0.85rem 1.25rem;
-  margin-bottom: 1.25rem;
-  min-height: 54px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  box-shadow: 
-    0 4px 12px rgba(90, 50, 10, 0.06),
-    inset 0 1px 2px rgba(255, 255, 255, 0.9),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.ssb-tablet-header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-}
-
-.ssb-tablet-title {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: #3e2410;
-  letter-spacing: 0.06em;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  text-transform: uppercase;
-}
-
-.ssb-tablet-quote {
-  margin: 0.35rem 0 0;
-  font-size: 0.86rem;
-  color: #5c3818;
-  font-style: italic;
-  line-height: 1.45;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-/* Namaste Audio Chime Button */
-.ssb-namaste-chime-btn {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  border: 1.5px solid #d97706;
-  border-radius: 999px;
-  padding: 0.4rem 0.85rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: #78350f;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(180, 83, 9, 0.15);
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.ssb-namaste-chime-btn:hover {
-  transform: translateY(-2px);
-  background: #f59e0b;
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.3);
-}
-
-.ssb-namaste-chime-btn.speaking {
-  animation: ssbPulseHalo 1.2s infinite alternate;
-}
-
-@keyframes ssbPulseHalo {
-  0% {
-    box-shadow: 0 0 6px rgba(217, 119, 6, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 16px rgba(217, 119, 6, 0.8);
+    padding: 1.15rem;
   }
 }
 
 /* ===================================================================
-   LEFT COLUMN: PERSON IMAGE & FLOATING ACCENTS
+   LEFT COLUMN: PURE PERSON ARTWORK
    =================================================================== */
 .ssb-person-panel {
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 .ssb-person-image-frame {
@@ -212,12 +97,12 @@
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 
-    0 12px 28px rgba(78, 42, 10, 0.18),
-    0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 3px solid #dfcfb8;
+    0 12px 28px rgba(78, 42, 10, 0.16),
+    0 2px 6px rgba(0, 0, 0, 0.05);
+  border: 2px solid #dfcfb8;
   background: #2b1f13;
   min-height: 440px;
-  flex: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -234,7 +119,7 @@
 }
 
 .ssb-person-image-frame:hover .ssb-person-art-img {
-  transform: scale(1.025);
+  transform: scale(1.02);
 }
 
 .ssb-person-sun-overlay {
@@ -242,67 +127,11 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(254, 243, 199, 0.05) 0%,
+    rgba(254, 243, 199, 0.04) 0%,
     transparent 60%,
-    rgba(20, 10, 5, 0.12) 100%
+    rgba(20, 10, 5, 0.08) 100%
   );
   pointer-events: none;
-}
-
-/* Bronze Medallion Badge (Bottom Left) */
-.ssb-bronze-medallion-badge {
-  position: absolute;
-  bottom: -15px;
-  left: -12px;
-  z-index: 5;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-}
-
-.ssb-bronze-medallion-badge:hover {
-  transform: scale(1.08) rotate(-3deg);
-}
-
-.ssb-medallion-circle {
-  width: 86px;
-  height: 86px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #a67c52 0%, #7d532a 55%, #4a2f14 100%);
-  border: 3.5px solid #d4af37;
-  box-shadow: 
-    0 8px 20px rgba(0, 0, 0, 0.35),
-    inset 0 2px 4px rgba(255, 255, 255, 0.4),
-    inset 0 -3px 6px rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  color: #fef3c7;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.ssb-medallion-leaf-icon {
-  font-size: 1.45rem;
-  line-height: 1;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
-  margin-bottom: 2px;
-}
-
-.ssb-medallion-curved-text-top {
-  font-size: 0.58rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #fef08a;
-}
-
-.ssb-medallion-curved-text-bottom {
-  font-size: 0.54rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #e2d3be;
 }
 
 /* ===================================================================
@@ -311,23 +140,24 @@
 .ssb-document-panel {
   display: flex;
   flex-direction: column;
-  position: relative;
+  justify-content: center;
 }
 
 /* Ancient Rolled Parchment Scroll Container */
 .ssb-parchment-scroll-card {
   position: relative;
   background: transparent;
-  flex: 1;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: center;
 }
 
 /* Top & Bottom Rolled Ends */
 .ssb-scroll-roll-top,
 .ssb-scroll-roll-bottom {
   position: relative;
-  height: 22px;
+  height: 20px;
   z-index: 3;
 }
 
@@ -335,11 +165,11 @@
   position: absolute;
   left: 2%;
   right: 2%;
-  height: 12px;
+  height: 11px;
   background: linear-gradient(180deg, #d8ceba 0%, #b8a68b 50%, #8c7355 100%);
   border-radius: 6px;
   box-shadow: 
-    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.12),
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
@@ -347,39 +177,42 @@
   position: absolute;
   left: 3%;
   right: 3%;
-  height: 18px;
+  height: 16px;
   background: linear-gradient(180deg, #fdfbf7 0%, #ece2cb 100%);
   border: 1.5px solid #cfbe9f;
-  box-shadow: 0 3px 8px rgba(78, 42, 10, 0.1);
+  box-shadow: 0 2px 6px rgba(78, 42, 10, 0.08);
 }
 
 .ssb-scroll-roll-top .ssb-scroll-curled-edge {
   top: 3px;
-  border-radius: 12px 12px 4px 4px;
+  border-radius: 10px 10px 3px 3px;
 }
 
 .ssb-scroll-roll-bottom .ssb-scroll-curled-edge {
   bottom: 3px;
-  border-radius: 4px 4px 12px 12px;
+  border-radius: 3px 3px 10px 10px;
 }
 
 /* Scroll Document Body */
 .ssb-scroll-document-body {
   position: relative;
   background: 
-    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.7) 0%, transparent 80%),
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.75) 0%, transparent 80%),
     linear-gradient(180deg, #fbf7ee 0%, #f6edd7 50%, #f2e5c9 100%);
   border-left: 2px solid #cfbe9f;
   border-right: 2px solid #cfbe9f;
   box-shadow: 
-    0 10px 30px rgba(90, 50, 10, 0.12),
-    inset 10px 0 20px rgba(180, 120, 50, 0.05),
-    inset -10px 0 20px rgba(180, 120, 50, 0.05);
-  padding: 1.25rem 1.4rem;
-  margin: -4px 3% -4px 3%;
+    0 10px 28px rgba(90, 50, 10, 0.1),
+    inset 8px 0 16px rgba(180, 120, 50, 0.04),
+    inset -8px 0 16px rgba(180, 120, 50, 0.04);
+  padding: 1.4rem 1.35rem;
+  margin: -3px 3% -3px 3%;
   z-index: 2;
   box-sizing: border-box;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ssb-scroll-rows-list {
@@ -394,14 +227,14 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.85rem;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   border: 1.5px solid #e2d3be;
   border-radius: 12px;
   padding: 0.75rem 1rem;
   cursor: pointer;
   text-align: left;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 6px rgba(90, 50, 10, 0.05);
+  box-shadow: 0 2px 6px rgba(90, 50, 10, 0.04);
 }
 
 .ssb-scroll-doc-row:hover {
@@ -409,8 +242,8 @@
   border-color: #d97706;
   transform: translateX(4px) scale(1.01);
   box-shadow: 
-    0 6px 18px rgba(180, 83, 9, 0.14),
-    0 1px 3px rgba(0, 0, 0, 0.05);
+    0 6px 18px rgba(180, 83, 9, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .ssb-doc-row-left {
@@ -421,8 +254,8 @@
 }
 
 .ssb-doc-icon-wrap {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 9px;
   background: #fef3c7;
   border: 1px solid #fde68a;
@@ -445,7 +278,7 @@
 }
 
 .ssb-doc-sanskrit {
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #2b1f13;
   font-family: 'Siddhanta', 'Noto Sans Devanagari', Georgia, serif;
@@ -468,9 +301,9 @@
   color: #78350f;
   background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
   border: 1px solid #d97706;
-  padding: 0.35rem 0.75rem;
+  padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  box-shadow: 0 2px 4px rgba(180, 83, 9, 0.1);
+  box-shadow: 0 2px 4px rgba(180, 83, 9, 0.08);
   white-space: nowrap;
   transition: all 0.2s ease;
 }
@@ -488,56 +321,4 @@
 
 .ssb-scroll-doc-row:hover .ssb-doc-arrow {
   transform: translateX(2px);
-}
-
-/* Bottom Footer Row Accents */
-.ssb-doc-footer-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.1rem;
-  padding: 0 0.5rem;
-}
-
-.ssb-audio-relisten-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #78350f;
-  background: #fef3c7;
-  border: 1px dashed #d97706;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.ssb-audio-relisten-pill:hover {
-  background: #fde68a;
-  color: #451a03;
-}
-
-.ssb-learner-care-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #ffffff;
-  background: #1e293b;
-  border: 1px solid #0f172a;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease;
-}
-
-.ssb-learner-care-pill:hover {
-  background: #0f172a;
-  transform: translateY(-1px);
 }

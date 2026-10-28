@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { playPronunciation, stopPronunciation } from '../utils/pronunciation';
+import React from 'react';
 import { soundEffects } from '../utils/soundEffects';
 import '../styles/student-staircase-blackboard.css';
 
@@ -18,20 +17,7 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
   onOpenGrammar,
   onOpenCbseGuide,
   onOpenQuiz,
-  onOpenBodhi,
 }) => {
-  const [isGreetingSpeaking, setIsGreetingSpeaking] = useState(false);
-
-  const handleNamasteGreeting = () => {
-    stopPronunciation();
-    soundEffects.playStrokeChime();
-    setIsGreetingSpeaking(true);
-    playPronunciation('हरिः ॐ! नमो नमः। संस्कृत-विद्यालये भवतः स्वागतम्।');
-    setTimeout(() => {
-      setIsGreetingSpeaking(false);
-    }, 4500);
-  };
-
   const LEARNING_LINKS = [
     {
       id: 'varnamala',
@@ -114,13 +100,7 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
   ];
 
   return (
-    <section className="student-staircase-section" aria-label="Staircase of Learning towards Wisdom">
-      {/* Eyebrow Header */}
-      <div className="ssb-eyebrow">
-        <span className="ssb-badge">ज्ञान-सोपानम् · THE STAIRCASE OF WISDOM</span>
-        <span className="ssb-subtext">विद्या ददाति विनयम् · विनयाद्याति पात्रताम्</span>
-      </div>
-
+    <section className="student-staircase-section" aria-label="Sanskrit Study Curriculum Pathways">
       {/* Parchment Antique Stage Frame */}
       <div className="ssb-antique-stage">
         {/* Subtle Decorative Tea-Stain Corners */}
@@ -129,74 +109,29 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
         <div className="ssb-stain-corner ssb-stain-bl" aria-hidden="true" />
         <div className="ssb-stain-corner ssb-stain-br" aria-hidden="true" />
 
-        {/* 2-Column Main Layout: Person Image on Left, Ancient Document Menu on Right */}
+        {/* 2-Column Main Layout: Pure Person Image on Left, Ancient Rolled Document Menu on Right */}
         <div className="ssb-parchment-grid">
           {/* LEFT SIDE: Person Climbing the Ancient Steps */}
           <div className="ssb-person-panel">
-            {/* Top Motto Tablet on Left */}
-            <div className="ssb-stone-tablet ssb-stone-tablet--left">
-              <h2 className="ssb-tablet-title">NAMO NAMAHA - SWAGATAM</h2>
-            </div>
-
-            {/* Person Image Frame */}
             <div className="ssb-person-image-frame">
               <img
                 src="/gurukul-student-staircase.jpg"
-                alt="Young Indian student carrying palm-leaf manuscripts seen from behind ascending ancient stone staircase towards the sacred temple gateway"
+                alt="Student climbing the ancient temple staircase towards wisdom"
                 className="ssb-person-art-img"
                 loading="lazy"
                 onError={(e) => {
-                  // Fallback to existing student blackboard asset if new image loading
                   const target = e.currentTarget;
                   if (!target.src.includes('gurukul-staircase-blackboard.jpg')) {
                     target.src = '/gurukul-staircase-blackboard.jpg';
                   }
                 }}
               />
-              {/* Warm Golden Sunrise Overlay Vignette */}
               <div className="ssb-person-sun-overlay" aria-hidden="true" />
-            </div>
-
-            {/* Bronze Medallion Seal (Bottom Left) */}
-            <div
-              className="ssb-bronze-medallion-badge"
-              onClick={() => {
-                if (onOpenBodhi) onOpenBodhi();
-                else handleNamasteGreeting();
-              }}
-              role="button"
-              tabIndex={0}
-              title="Bodhi: Gurukul Guide · Click to open Bodhi mentor or hear traditional blessing"
-            >
-              <div className="ssb-medallion-circle">
-                <div className="ssb-medallion-leaf-icon" aria-hidden="true">
-                  🍃
-                </div>
-                <div className="ssb-medallion-curved-text-top">Bodhi बोधिः</div>
-                <div className="ssb-medallion-curved-text-bottom">Gurukul Guide</div>
-              </div>
             </div>
           </div>
 
           {/* RIGHT SIDE: The Menu Displayed as the Document */}
           <div className="ssb-document-panel">
-            {/* Top Stone Plaque Banner on Right */}
-            <div className="ssb-stone-tablet ssb-stone-tablet--right">
-              <div className="ssb-tablet-header-row">
-                <h2 className="ssb-tablet-title">NAMO NAMAHA - SWAGATAM</h2>
-                <button
-                  type="button"
-                  className={`ssb-namaste-chime-btn ${isGreetingSpeaking ? 'speaking' : ''}`}
-                  onClick={handleNamasteGreeting}
-                  title="Listen to Sanskrit Swagatam greeting chant"
-                  aria-label="Listen greeting"
-                >
-                  <span aria-hidden="true">🙏</span>
-                  <span className="ssb-chime-text">{isGreetingSpeaking ? 'Speaking...' : 'Chant'}</span>
-                </button>
-              </div>
-            </div>
-
             {/* The Ancient Rolled Parchment Scroll Document */}
             <div className="ssb-parchment-scroll-card" role="region" aria-label="Sanskrit Study Curriculum Document">
               {/* Top Roll Cylinder of Ancient Scroll */}
@@ -244,33 +179,9 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
                 <div className="ssb-scroll-rod" />
               </div>
             </div>
-
-            {/* Bottom Floating Accents & Care Link */}
-            <div className="ssb-doc-footer-row">
-              <button
-                type="button"
-                className="ssb-audio-relisten-pill"
-                onClick={handleNamasteGreeting}
-              >
-                <span>🔊</span>
-                <span>{isGreetingSpeaking ? 'उच्चारणं प्रवर्तते...' : 'Tap to hear: नमो नमः स्वागतम्'}</span>
-              </button>
-
-              <a
-                href="https://wa.me/919000335468?text=Hello%20EdNet%20Gurukul%2C%20I%20have%20a%20question%20about%20the%20Sanskrit%20curriculum"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ssb-learner-care-pill"
-                title="Open Learner Care Desk on WhatsApp"
-              >
-                <span aria-hidden="true">💬</span>
-                <span>Learner Care Desk</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
     </section>
   );
 };
-
