@@ -685,10 +685,10 @@ const FeatureTrialCallout: React.FC<FeatureTrialCalloutProps> = ({
           <span className="home-ftc-badge">{displayBadge}</span>
           <span className="home-ftc-zero-risk">
             {planStatus === 'active'
-              ? 'Unrestricted Gurukul access enabled'
+              ? 'All features unlocked'
               : planStatus === 'trial'
-                ? 'Your free trial is currently active'
-                : 'No credit card required · Instant online access'}
+                ? '14-Day trial active'
+                : 'No credit card required'}
           </span>
         </div>
         <h3 className="home-ftc-title">{title}</h3>
@@ -712,8 +712,8 @@ const FeatureTrialCallout: React.FC<FeatureTrialCalloutProps> = ({
         </button>
         <span className="home-ftc-reassurance">
           {planStatus === 'active' || planStatus === 'trial'
-            ? 'All NCERT texts & tools unlocked'
-            : 'Zero risk · Cancel anytime · No auto-debit'}
+            ? 'NCERT texts & tools unlocked'
+            : 'Zero risk · Cancel anytime'}
         </span>
       </div>
     </div>
@@ -1909,13 +1909,13 @@ const HomePage: React.FC<HomePageProps> = ({
           FREE TRIAL CALLOUT 2: AFTER LEARNING PATHWAYS
           ================================================================ */}
       <FeatureTrialCallout
-        badge="🎁 ALL 4 PATHWAYS INCLUDED"
-        title="Unlock All 4 Learning Pathways with Your Free Trial"
-        subtitle="Beginner phonetics, NCERT Class 7–9 textbooks, Pāṇinian grammar conjugators, and 16 Vedic Mathematics sutras. Everything is 100% open for 14 days."
+        badge="🎁 ALL 4 PATHWAYS"
+        title={currentUser?.planStatus === 'active' ? 'All 4 Learning Pathways Unlocked' : 'Unlock All 4 Learning Pathways'}
+        subtitle="Beginner phonetics, NCERT Class 7–9 readers, Pāṇinian grammar conjugators, and 16 Vedic Mathematics sutras."
         perks={[
           'Deepakam 7 & 8 + Sharada 9',
           '6,000+ Jodo Tile Puzzles',
-          '16 Vedic Sutras & Math Sandboxes',
+          '16 Vedic Sutras & Math Labs',
         ]}
         buttonText={currentUser?.planStatus ? 'Explore All Pathways ➔' : 'Unlock All 4 Pathways Free ➔'}
         onAction={handleStartTrial}
@@ -2015,15 +2015,15 @@ const HomePage: React.FC<HomePageProps> = ({
           FREE TRIAL CALLOUT 3: AFTER WORD ANALYZER & JODO DEMO
           ================================================================ */}
       <FeatureTrialCallout
-        badge="🎁 6,000+ SANSKRIT WORDS & TILES"
+        badge="🎁 6,000+ SANSKRIT WORDS"
         title="Deconstruct Any Sanskrit Word with Native Audio & Sandhi Rules"
-        subtitle="Master vocabulary with trilingual meanings, syllable-by-syllable audio breakdown, and the full Jodo Studio tile puzzle engine across all chapters free for 14 days."
+        subtitle="Trilingual vocabulary meanings, syllable-by-syllable audio breakdown, and the Jodo Studio tile engine."
         perks={[
-          'Instant Native Audio Pronunciation',
+          'Native Audio Pronunciation',
           'Root Verb & Suffix Breakdown',
           'Spaced Memory Review Loop',
         ]}
-        buttonText={currentUser?.planStatus ? 'Open Jodo Studio ➔' : 'Try Jodo Studio Free for 14 Days ➔'}
+        buttonText={currentUser?.planStatus ? 'Open Jodo Studio ➔' : 'Try Jodo Studio Free ➔'}
         onAction={handleStartTrial}
         accent="terracotta"
         planStatus={currentUser?.planStatus}
@@ -2168,16 +2168,24 @@ const HomePage: React.FC<HomePageProps> = ({
           FREE TRIAL CALLOUT 4: AFTER SANSKRIT ONLINE CLASSES
           ================================================================ */}
       <FeatureTrialCallout
-        badge="🎁 SELF-PACED + LIVE TUTORING"
-        title="Start Your 14-Day Free Access · Pair with Live Online Mentorship"
-        subtitle="Explore all digital lessons, NCERT readers, worksheets, and 24/7 AI Guru Bodhi completely free today, and join live online classes whenever you want personalized 1-on-1 coaching."
+        badge={currentUser?.planStatus === 'active' ? '⭐ FULL ACCESS' : '🎁 SELF-PACED + LIVE'}
+        title={
+          currentUser?.planStatus === 'active'
+            ? 'Complete Gurukul Access & Live Mentorship'
+            : '14-Day Free Access + Live Mentorship'
+        }
+        subtitle={
+          currentUser?.planStatus === 'active'
+            ? 'All digital lessons, NCERT readers, worksheets, and Bodhi AI mentor are fully unlocked.'
+            : 'Access all NCERT readers, worksheets, and Bodhi AI mentor free, with optional 1-on-1 live coaching.'
+        }
         perks={[
-          '24/7 AI Companion Bodhi Included',
-          'Class 7, 8 & 9 Curriculum Aligned',
-          'Instant 14-Day Account Activation',
+          'NCERT Readers (Classes 6–9)',
+          '24/7 Bodhi AI Mentor',
+          'Optional 1-on-1 Live Coaching',
         ]}
-        buttonText={currentUser?.planStatus ? 'Explore Online Classes ➔' : 'Activate 14-Day Free Pass ➔'}
-        onAction={handleStartTrial}
+        buttonText={currentUser?.planStatus ? (onOpenOnlineClasses ? 'Explore Online Classes ➔' : 'Explore Curriculum ➔') : 'Start 14-Day Free Access ➔'}
+        onAction={onOpenOnlineClasses || handleStartTrial}
         accent="indigo"
         planStatus={currentUser?.planStatus}
       />
@@ -2800,9 +2808,9 @@ const HomePage: React.FC<HomePageProps> = ({
           FREE TRIAL CALLOUT 5: AFTER FEATURES & TOOLS SHOWCASE
           ================================================================ */}
       <FeatureTrialCallout
-        badge="🎁 12+ GRAMMAR ENGINES & MATH LABS"
+        badge="🎁 12+ ENGINES & LABS"
         title="Full Access to Dhātupāṭha, Sound Lab, Quizzes & 16 Vedic Sutras"
-        subtitle="Dive into interactive verb conjugation paradigms, Pāṇinian phonetics, Pi & Sulba-sūtra geometric sandboxes, and printable worksheets without paying a single rupee today."
+        subtitle="Verb conjugations, Pāṇinian phonetics, Sulba-sūtra geometry, and printable worksheets."
         perks={[
           '2,000+ Dhātu Paradigms',
           '16 Vedic Math Sutras & Quests',
@@ -3131,13 +3139,13 @@ const HomePage: React.FC<HomePageProps> = ({
           FREE TRIAL CALLOUT 6: AFTER CURRICULUM DIRECTORY & CBSE BLUEPRINT
           ================================================================ */}
       <FeatureTrialCallout
-        badge="🎁 ALL 15 NCERT CHAPTERS UNLOCKED"
+        badge="🎁 ALL 15 NCERT CHAPTERS"
         title="Master Every Chapter & Ace Your Sanskrit Exams"
-        subtitle="Line-by-line textbook translations, grammatical glosses, CBSE question blueprint patterns, and model answers across all 15 chapters are included in your 14-day free access."
+        subtitle="Line-by-line textbook translations, grammatical glosses, CBSE question blueprints, and model answers."
         perks={[
           'All 15 Deepakam Chapters',
           'Official 80-Mark Exam Blueprint',
-          'No Auto-Debit · Zero Risk',
+          'Downloadable Worksheets',
         ]}
         buttonText={currentUser?.planStatus ? 'Read All Chapters ➔' : 'Start Your 14-Day Free Trial ➔'}
         onAction={handleStartTrial}
