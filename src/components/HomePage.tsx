@@ -978,61 +978,58 @@ const HomePage: React.FC<HomePageProps> = ({
             Hero Section
             ------------------------------------------------------------------ */}
         <section className="home-hero">
-          {/* Gurukul Official Brand Crest */}
-          <div className="home-hero-crest">
-            <span className="home-hero-crest-label" lang="sa">
-              संस्कृत-पाठशाला
-            </span>
-            <img
-              id="home-hero-crest-logo"
-              src="/logo.jpg"
-              alt="EdNet Gurukul - संस्कृत-पाठशाला - Learn Sanskrit Online &amp; Vedic Mathematics"
-              className={`home-hero-logo${isLogoArrived ? ' is-arrived' : ''}`}
-              width={76}
-              height={76}
-              onClick={() => setShowEntranceIntro(true)}
-              title="EdNet Gurukul · संस्कृत-पाठशाला · Click to experience Gurukul dawn animation"
-              style={{ cursor: 'pointer' }}
-            />
-            <div className="home-hero-top-actions-row">
-              <button
-                type="button"
-                className="home-hero-replay-intro-btn"
-                onClick={() => setShowEntranceIntro(true)}
-                title="Experience or replay the Vedic Tapovana Gurukul Dawn entrance animation and morning soundscape"
-              >
-                <span className="hhri-icon" aria-hidden="true">🌅</span>
-                <span>गुरुकुल-दर्शनम् · Play Gurukul Dawn Animation</span>
-                <span className="hhri-badge">Sound &amp; Art</span>
-              </button>
-              {onOpenScienceLab && (
-                <button
-                  type="button"
-                  className="home-hero-kids-lab-btn"
-                  onClick={() => onOpenScienceLab()}
-                  title="Enter Vijñāna Kids' Science Lab: Play 8 science games & earn Vidyā Badges"
-                >
-                  <span className="hhkl-icon" aria-hidden="true">🚀</span>
-                  <span>विज्ञान-प्रयोगशाला · Kids' Science Lab</span>
-                  <span className="hhkl-badge">8 Games</span>
-                </button>
-              )}
+          {/* 1. SANSKRIT PRIMARY IDENTITY & BIG DEVANAGARI GRAPHIC (Immediate Focal Point) */}
+          <div className="home-hero-sanskrit-centerpiece">
+            <div className="home-hero-emblem-wrap">
+              <img
+                src="/images/sanskrit-devanagari-emblem-opt.jpg"
+                alt="संस्कृतम् (Sanskrit) - Classical Illuminated Devanagari Calligraphy Artwork"
+                className="home-hero-sanskrit-emblem"
+                width={220}
+                height={220}
+                loading="eager"
+                onClick={() => {
+                  const el = document.getElementById('journey');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                title="संस्कृतम् (Sanskrit) · Click to explore your step-by-step journey"
+              />
+            </div>
+            <div className="home-hero-sanskrit-wordmark">
+              <span className="home-hero-sanskrit-calligraphy" lang="sa">
+                संस्कृतम्
+              </span>
+              <span className="home-hero-sanskrit-shloka" lang="sa">
+                ॥ भाषासु मुख्या मधुरा दिव्या गीर्वाणभारती ॥
+              </span>
             </div>
           </div>
 
-          {/* 1. Main Headline & Direct Level Selection */}
-          <h1 className="home-hero-title">
-            <span className="home-hero-title-primary">
-              Select Beginner to Advanced Levels
-            </span>
-            <p className="home-hero-main-outcome">
+          {/* 2. STEP-BY-STEP JOURNEY HEADLINE (Moved to Top & Made Bigger) */}
+          <div className="home-hero-journey-header">
+            <h1 style={{ margin: 0 }}>
+              <a
+                href="#journey"
+                className="home-hero-journey-top-title"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById('journey');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                title="Explore the complete 6-stage step-by-step Sanskrit roadmap"
+              >
+                <span className="hhjt-text">Your Step-by-Step संस्कृतम् (Sanskrit) Journey</span>
+                <span className="hhjt-arrow" aria-hidden="true">➔</span>
+              </a>
+            </h1>
+            <p className="home-hero-journey-subtitle">
               {englishFirst
-                ? 'Select your starting level below or explore your step-by-step संस्कृतम् journey from alphabet basics to complete fluency.'
+                ? 'Select your starting level below or explore the full 6-stage roadmap from alphabet basics to complete fluency.'
                 : 'प्रारम्भिक-स्तरात् आरभ्य प्रौढ-स्तरान्तं स्वप्रवेशं चिनुत, अथवा सोपान-क्रमेण संस्कृत-यात्रां पश्यन्तु।'}
             </p>
-          </h1>
+          </div>
 
-          {/* 2. Interactive Levels Bar — Linked to Your Step-by-Step Journey */}
+          {/* 3. INTERACTIVE LEVELS BAR (6 Milestones from Beginner to Exam Prep) */}
           <div className="home-hero-levels-container" role="region" aria-label="Select Learning Level">
             <div className="home-hero-levels-grid">
               <button
@@ -1101,20 +1098,51 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span className="hhl-sub">परीक्षा-सिद्धिः · CBSE</span>
               </button>
             </div>
+          </div>
 
-            <a
-              href="#journey"
-              className="home-hero-journey-jump-link"
-              onClick={(e) => {
-                e.preventDefault();
-                const el = document.getElementById('journey');
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              title="Explore full 6-step roadmap"
-            >
-              <span>Your Step-by-Step संस्कृतम् (Sanskrit) Journey</span>
-              <span className="hhjl-arrow" aria-hidden="true">➔</span>
-            </a>
+          {/* 4. EDNET LEARN GURUKUL ACCREDITATION STRIP (Positioned Below Sanskrit Journey) */}
+          <div className="home-hero-institution-strip" role="region" aria-label="Gurukul Learning Platform">
+            <div className="home-hero-inst-badge">
+              <img
+                id="home-hero-crest-logo"
+                src="/logo.jpg"
+                alt="EdNet Gurukul - संस्कृत-पाठशाला - Learn Sanskrit Online &amp; Vedic Mathematics"
+                className={`home-hero-inst-logo${isLogoArrived ? ' is-arrived' : ''}`}
+                width={44}
+                height={44}
+                onClick={() => setShowEntranceIntro(true)}
+                title="EdNet Gurukul · संस्कृत-पाठशाला · Tap to experience Gurukul dawn animation"
+              />
+              <div className="home-hero-inst-text">
+                <span className="home-hero-inst-title">EdNet Learn Gurukul</span>
+                <span className="home-hero-inst-sub" lang="sa">संस्कृत-पाठशाला · The Darśana Series</span>
+              </div>
+            </div>
+
+            <div className="home-hero-top-actions-row" style={{ margin: 0 }}>
+              <button
+                type="button"
+                className="home-hero-replay-intro-btn"
+                onClick={() => setShowEntranceIntro(true)}
+                title="Experience or replay the Vedic Tapovana Gurukul Dawn entrance animation and morning soundscape"
+              >
+                <span className="hhri-icon" aria-hidden="true">🌅</span>
+                <span>गुरुकुल-दर्शनम् · Play Gurukul Dawn</span>
+                <span className="hhri-badge">Sound &amp; Art</span>
+              </button>
+              {onOpenScienceLab && (
+                <button
+                  type="button"
+                  className="home-hero-kids-lab-btn"
+                  onClick={() => onOpenScienceLab()}
+                  title="Enter Vijñāna Kids' Science Lab: Play 8 science games & earn Vidyā Badges"
+                >
+                  <span className="hhkl-icon" aria-hidden="true">🚀</span>
+                  <span>विज्ञान-प्रयोगशाला · Kids' Lab</span>
+                  <span className="hhkl-badge">8 Games</span>
+                </button>
+              )}
+            </div>
           </div>
 
         {/* 3. The 3 Primary High-Conversion Calls to Action */}

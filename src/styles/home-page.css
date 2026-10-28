@@ -77,6 +77,206 @@ tr th {
   margin-bottom: 1.25rem;
 }
 
+/* --------------------------------------------------------------------------
+   Sanskrit Primary Identity & Graphic Showcase (Top Focus)
+   -------------------------------------------------------------------------- */
+.home-hero-sanskrit-centerpiece {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+  animation: fadeIn 0.35s ease-out;
+}
+
+.home-hero-emblem-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.home-hero-sanskrit-emblem {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 24px;
+  box-shadow: 0 14px 36px rgba(186, 60, 0, 0.18), 0 2px 10px rgba(61, 27, 4, 0.1);
+  border: 3px solid #d97706;
+  background: #fdfbf7;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.home-hero-sanskrit-emblem:hover {
+  transform: translateY(-4px) scale(1.025);
+  box-shadow: 0 20px 48px rgba(186, 60, 0, 0.24), 0 6px 16px rgba(217, 119, 6, 0.25);
+}
+
+.home-hero-sanskrit-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.home-hero-sanskrit-calligraphy {
+  font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
+  font-size: 3.1rem;
+  font-weight: 900;
+  color: #3d1b04;
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #78350f 0%, #b45309 35%, #c2410c 70%, #991b1b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(180, 83, 9, 0.18);
+}
+
+.home-hero-sanskrit-shloka {
+  font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ba3c00;
+  background: rgba(186, 60, 0, 0.08);
+  border: 1.5px solid rgba(186, 60, 0, 0.22);
+  padding: 0.28rem 1.05rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 6px rgba(186, 60, 0, 0.05);
+}
+
+/* --------------------------------------------------------------------------
+   Step-by-Step Journey Headline (Moved to Top & Made Bigger)
+   -------------------------------------------------------------------------- */
+.home-hero-journey-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0.75rem 0 1.25rem;
+  gap: 0.45rem;
+}
+
+.home-hero-journey-top-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-size: 2.35rem;
+  font-weight: 900;
+  color: #3d1b04;
+  text-decoration: none;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+}
+
+.home-hero-journey-top-title:hover {
+  transform: translateY(-2px);
+}
+
+.home-hero-journey-top-title .hhjt-text {
+  background: linear-gradient(135deg, #3d1b04 0%, #78350f 45%, #ba3c00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.home-hero-journey-top-title:hover .hhjt-text {
+  background: linear-gradient(135deg, #ba3c00 0%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-hero-journey-top-title .hhjt-arrow {
+  color: #ba3c00;
+  font-size: 1.95rem;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+}
+
+.home-hero-journey-top-title:hover .hhjt-arrow {
+  transform: translateX(6px);
+  color: #d97706;
+}
+
+.home-hero-journey-subtitle {
+  font-size: 1.02rem;
+  color: #64748b;
+  max-width: 720px;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   EdNet Gurukul Institutional Strip (Repositioned Below Sanskrit Levels)
+   -------------------------------------------------------------------------- */
+.home-hero-institution-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  background: #ffffff;
+  border: 1.5px solid #fed7aa;
+  border-radius: 16px;
+  padding: 0.75rem 1.4rem;
+  margin: 1.35rem auto 1.5rem;
+  max-width: 920px;
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.06);
+}
+
+.home-hero-inst-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.home-hero-inst-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1.5px solid #fed7aa;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.home-hero-inst-logo:hover {
+  transform: scale(1.06);
+}
+
+.home-hero-inst-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.home-hero-inst-title {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #78350f;
+  line-height: 1.25;
+}
+
+.home-hero-inst-sub {
+  font-size: 0.74rem;
+  color: #92400e;
+  font-weight: 600;
+  font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
+}
+
 .home-hero-crest-label {
   font-family: 'Noto Sans Devanagari', 'Martel', Georgia, serif;
   font-size: 1.05rem;
@@ -2467,6 +2667,35 @@ tr th {
 }
 
 @media (max-width: 640px) {
+  .home-hero-sanskrit-emblem {
+    width: 160px;
+    height: 160px;
+    border-radius: 18px;
+  }
+  .home-hero-sanskrit-calligraphy {
+    font-size: 2.25rem;
+  }
+  .home-hero-sanskrit-shloka {
+    font-size: 0.88rem;
+    padding: 0.22rem 0.85rem;
+  }
+  .home-hero-journey-top-title {
+    font-size: 1.65rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .home-hero-journey-top-title .hhjt-arrow {
+    font-size: 1.45rem;
+  }
+  .home-hero-institution-strip {
+    flex-direction: column;
+    padding: 0.85rem 1rem;
+    gap: 0.85rem;
+    text-align: center;
+  }
+  .home-hero-inst-badge {
+    justify-content: center;
+  }
   .home-trust-banner {
     grid-template-columns: 1fr;
     gap: 0.85rem;
