@@ -18,6 +18,7 @@ import { TrustAndMethodology } from './TrustAndMethodology';
 import { MobileStickyBar } from './MobileStickyBar';
 import { StudentStaircaseBlackboard } from './StudentStaircaseBlackboard';
 import { PracticeVaultShowcase } from './PracticeVaultShowcase';
+import { ChitraKavyaPathwayCard } from './ChitraKavyaPathwayCard';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 
@@ -1902,6 +1903,13 @@ const HomePage: React.FC<HomePageProps> = ({
               एनसीईआरटी-वाचनम् · Start NCERT Reader ▶
             </button>
           </div>
+
+          {/* Pathway 6 / Feature Card: Chitra-Kavya & The Sanskrit Knight's Tour (Fills the remaining 3 columns) */}
+          <ChitraKavyaPathwayCard
+            onOpenScienceLab={onOpenScienceLab}
+            onOpenGrammar={onOpenGrammar}
+            onOpenCourse={onOpenCourse}
+          />
         </div>
       </section>
 
