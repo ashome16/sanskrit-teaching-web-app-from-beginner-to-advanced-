@@ -1106,16 +1106,16 @@ const HomePage: React.FC<HomePageProps> = ({
               <img
                 id="home-hero-crest-logo"
                 src="/logo.jpg"
-                alt="EdNet Gurukul - संस्कृत-पाठशाला - Learn Sanskrit Online &amp; Vedic Mathematics"
+                alt="EdNet Gurukul - Learn Sanskrit Online &amp; Vedic Mathematics"
                 className={`home-hero-inst-logo${isLogoArrived ? ' is-arrived' : ''}`}
                 width={44}
                 height={44}
                 onClick={() => setShowEntranceIntro(true)}
-                title="EdNet Gurukul · संस्कृत-पाठशाला · Tap to experience Gurukul dawn animation"
+                title="EdNet Gurukul · Tap to experience Gurukul dawn animation"
               />
               <div className="home-hero-inst-text">
                 <span className="home-hero-inst-title">EdNet Learn Gurukul</span>
-                <span className="home-hero-inst-sub" lang="sa">संस्कृत-पाठशाला · The Darśana Series</span>
+                <span className="home-hero-inst-sub">The Darśana Series</span>
               </div>
             </div>
 

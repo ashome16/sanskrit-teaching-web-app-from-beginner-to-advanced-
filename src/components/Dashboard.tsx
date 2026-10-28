@@ -1064,7 +1064,6 @@ const Dashboard: React.FC = () => {
           <img src="/logo.jpg" alt="Interactive Sanskrit language learning dashboard for school children" className="dashboard-brand-logo-img" width={48} height={48} />
           <div className="dashboard-brand-text-col">
             <span className="dashboard-title">EdNet Learn Gurukul</span>
-            <span className="dashboard-brand-sub">संस्कृत-शिक्षणम् · NCERT · CBSE</span>
           </div>
         </button>
         <nav className="dashboard-nav" aria-label="Main learning views">
