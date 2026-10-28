@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import '../styles/home-lab-banner.css';
 import { soundEffects } from '../utils/soundEffects';
 
@@ -123,8 +123,6 @@ const FEATURED_THREE = [
   },
 ];
 
-const ROTATE_MS = 4500;
-
 /** Small animated SVG preview for each module (animations live in CSS and stop under reduced motion). */
 const Preview: React.FC<{ id: string }> = ({ id }) => {
   switch (id) {
@@ -247,35 +245,11 @@ const Preview: React.FC<{ id: string }> = ({ id }) => {
   }
 };
 
-const reducedMotion = () => {
-  try {
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  } catch {
-    return false;
-  }
-};
-
 interface HomeLabBannerProps {
   onOpen: (segment?: string) => void;
 }
 
 const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
-  const [idx, setIdx] = useState(0);
-  const [hoverOrFocus, setHoverOrFocus] = useState(false);
-  const [userPaused, setUserPaused] = useState(false);
-  const [reduced] = useState(reducedMotion);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const running = !reduced && !hoverOrFocus && !userPaused;
-
-  useEffect(() => {
-    if (!running) return;
-    const t = window.setInterval(() => {
-      if (document.visibilityState === 'visible') setIdx((i) => (i + 1) % FEATURED_THREE.length);
-    }, ROTATE_MS);
-    return () => window.clearInterval(t);
-  }, [running]);
-
-  const go = (i: number) => setIdx((i + FEATURED_THREE.length) % FEATURED_THREE.length);
   const open = (e: React.MouseEvent, id?: string) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
     e.preventDefault();
@@ -291,167 +265,90 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
         ))}
       </div>
 
-      <div className="hlb-text">
+      <div className="hlb-header">
         <div className="hlb-badge-row">
-          <span className="hlb-badge">🚀 VIJÑĀNA MISSION CONTROL</span>
-          <span className="hlb-badge-free">100% Free · Play First, Learn Second</span>
+          <span className="hlb-badge">🚀 100% FREE SCIENCE LAB</span>
+          <span className="hlb-badge-free">Play First, Learn Second</span>
         </div>
 
         <h3 id="hlb-title" className="hlb-title">
-          <span className="hlb-title-en">Enter Vijñāna Mission Control</span>
+          <span className="hlb-title-en">Vijñāna Mission Control</span>
           <span className="hlb-title-sa" lang="sa">विज्ञान-प्रयोगशाला</span>
         </h3>
 
         <p className="hlb-tagline">
-          <strong>Play 8 science games · Earn badges · Learn Sanskrit science words.</strong> Turn abstract physics, chemistry, biology, and spaceflight into 3-minute tactile puzzles guided by Bodhi!
+          Play 8 interactive science games and discover Sanskrit scientific heritage. Turn physics, biology, and spaceflight into 3-minute tactile puzzles guided by Bodhi!
         </p>
 
-        {/* Badges Preview Banner */}
+        {/* Collectible Badges Strip */}
         <div className="hlb-badges-preview-bar">
-          <span className="hlb-bpb-label">🏆 COLLECTIBLE BADGES:</span>
+          <span className="hlb-bpb-label">🏆 Collectible Badges:</span>
           <div className="hlb-bpb-icons">
-            <span title="Atom Architect (Paramāṇu)">⚛️ Atom Architect</span>
-            <span title="Nature Guardian (Prakṛti)">🌿 Nature Guardian</span>
-            <span title="Orbit Master (Jyotiṣa)">🪐 Orbit Master</span>
-            <span title="Space Captain (Chandrayaan)">🛰️ Space Captain</span>
+            <span className="hlb-badge-chip">⚛️ Atom Architect</span>
+            <span className="hlb-badge-chip">🌿 Nature Guardian</span>
+            <span className="hlb-badge-chip">🪐 Orbit Master</span>
+            <span className="hlb-badge-chip">🛰️ Space Captain</span>
           </div>
-        </div>
-
-        {/* 3 Featured Games One-Tap Preview Row */}
-        <div className="hlb-featured-grid" aria-label="Featured Science Games">
-          {FEATURED_THREE.map((fg) => (
-            <div
-              key={fg.id}
-              className="hlb-featured-card"
-              style={{ background: fg.tint, borderColor: fg.border }}
-              onClick={(e) => open(e, fg.id)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') onOpen(fg.id);
-              }}
-            >
-              <div className="hlb-fc-top">
-                <span className="hlb-fc-icon">{fg.icon}</span>
-                <span className="hlb-fc-age">{fg.age}</span>
-              </div>
-              <h4 className="hlb-fc-title">{fg.title}</h4>
-              <div className="hlb-fc-sa" lang="sa">{fg.subtitle}</div>
-              <p className="hlb-fc-desc">{fg.desc}</p>
-              <button
-                type="button"
-                className="hlb-fc-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  open(e, fg.id);
-                }}
-              >
-                Play ➔
-              </button>
-            </div>
-          ))}
-        </div>
-
-        <div className="hlb-action-row">
-          <a
-            href="/vignana-lab"
-            className="hlb-cta"
-            onClick={(e) => open(e)}
-            data-testid="hlb-cta"
-          >
-            <span>🚀 Enter Vijñāna Mission Control (8 Games)</span>
-            <span className="hlb-cta-arrow" aria-hidden="true">→</span>
-          </a>
-
-          <a
-            href="/vignana-lab#preschool-wonder"
-            className="hlb-cta-secondary"
-            onClick={(e) => open(e, 'preschool-wonder')}
-          >
-            🧸 Toddlers &amp; Preschool (Ages 2–6)
-          </a>
         </div>
       </div>
 
-      {/* Interactive Carousel Preview */}
-      <div
-        ref={rootRef}
-        className="hlb-carousel"
-        role="region"
-        aria-roledescription="carousel"
-        aria-label="Lab module previews"
-        data-testid="hlb-carousel"
-        data-index={idx}
-        data-running={running ? 'true' : 'false'}
-        onMouseEnter={() => setHoverOrFocus(true)}
-        onMouseLeave={() => setHoverOrFocus(false)}
-        onFocus={() => setHoverOrFocus(true)}
-        onBlur={(e) => {
-          if (!rootRef.current?.contains(e.relatedTarget as Node)) setHoverOrFocus(false);
-        }}
-        onKeyDown={(e) => {
-          if (e.key === 'ArrowRight') {
-            e.preventDefault();
-            go(idx + 1);
-          } else if (e.key === 'ArrowLeft') {
-            e.preventDefault();
-            go(idx - 1);
-          }
-        }}
-      >
-        <div className="hlb-slides" aria-live={running ? 'off' : 'polite'}>
-          {FEATURED_THREE.map((m, i) => (
-            <a
-              key={m.id}
-              href={`/vignana-lab#${m.id}`}
-              className={`hlb-slide${i === idx ? ' is-active' : ''}`}
-              aria-hidden={i !== idx}
-              tabIndex={i === idx ? 0 : -1}
-              aria-label={`Slide ${i + 1} of ${FEATURED_THREE.length}: open ${m.title}`}
-              onClick={(e) => open(e, m.id)}
-              data-testid={`hlb-slide-${m.id}`}
-            >
-              <span className="hlb-slide-stage">{i === idx && <Preview id={m.id} />}</span>
-              <span className="hlb-slide-meta">
-                <span className="hlb-slide-subject">{m.age}</span>
-                <span className="hlb-slide-title">
-                  <span aria-hidden="true">{m.icon}</span> {m.title}
-                </span>
-                <span className="hlb-slide-dev" lang="sa">{m.subtitle}</span>
-                <span className="hlb-slide-go">▶ Launch Mission →</span>
-              </span>
-            </a>
-          ))}
-        </div>
-        <div className="hlb-controls">
-          <button type="button" className="hlb-arrow" onClick={() => go(idx - 1)} aria-label="Previous module" data-testid="hlb-prev">‹</button>
-          <div className="hlb-dots">
-            {FEATURED_THREE.map((m, i) => (
-              <button
-                key={m.id}
-                type="button"
-                className={`hlb-dot${i === idx ? ' is-active' : ''}`}
-                aria-label={`Show ${m.title}`}
-                aria-current={i === idx ? 'true' : undefined}
-                onClick={() => go(i)}
-                data-testid={`hlb-dot-${i}`}
-              />
-            ))}
-          </div>
-          <button type="button" className="hlb-arrow" onClick={() => go(idx + 1)} aria-label="Next module" data-testid="hlb-next">›</button>
-          {!reduced && (
+      {/* 3 Featured Games Grid with Embedded Interactive Previews */}
+      <div className="hlb-featured-grid" aria-label="Featured Science Games">
+        {FEATURED_THREE.map((fg) => (
+          <div
+            key={fg.id}
+            className="hlb-featured-card"
+            style={{ background: fg.tint, borderColor: fg.border }}
+            onClick={(e) => open(e, fg.id)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') onOpen(fg.id);
+            }}
+          >
+            <div className="hlb-fc-top">
+              <span className="hlb-fc-icon">{fg.icon}</span>
+              <span className="hlb-fc-age">{fg.age}</span>
+            </div>
+            <h4 className="hlb-fc-title">{fg.title}</h4>
+            <div className="hlb-fc-sa" lang="sa">{fg.subtitle}</div>
+            <div className="hlb-card-stage" aria-hidden="true">
+              <Preview id={fg.id} />
+            </div>
+            <p className="hlb-fc-desc">{fg.desc}</p>
             <button
               type="button"
-              className="hlb-arrow hlb-playpause"
-              onClick={() => setUserPaused((p) => !p)}
-              aria-label={userPaused ? 'Resume auto-rotation' : 'Pause auto-rotation'}
-              aria-pressed={userPaused}
-              data-testid="hlb-pause"
+              className="hlb-fc-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                open(e, fg.id);
+              }}
             >
-              {userPaused ? '▶' : '❚❚'}
+              Play ➔
             </button>
-          )}
-        </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Action Row */}
+      <div className="hlb-action-row">
+        <a
+          href="/vignana-lab"
+          className="hlb-cta"
+          onClick={(e) => open(e)}
+          data-testid="hlb-cta"
+        >
+          <span>🚀 Enter Vijñāna Mission Control (8 Games)</span>
+          <span className="hlb-cta-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a
+          href="/vignana-lab#preschool-wonder"
+          className="hlb-cta-secondary"
+          onClick={(e) => open(e, 'preschool-wonder')}
+        >
+          🧸 Toddlers &amp; Preschool (Ages 2–6)
+        </a>
       </div>
     </section>
   );
