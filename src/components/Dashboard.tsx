@@ -257,7 +257,11 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/assignment-eval' ||
     clean === '/evaluate-assignment' ||
     clean === '/sanskrit-assignment' ||
-    clean === '/assignment-evaluator'
+    clean === '/assignment-evaluator' ||
+    clean === '/guided-writing' ||
+    clean === '/learn-through-writing' ||
+    clean === '/sanskrit-writing-paths' ||
+    clean === '/writing-assignments'
   ) return 'assignment-eval';
   return null;
 };
@@ -1226,11 +1230,11 @@ const Dashboard: React.FC = () => {
               type="button"
               className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'assignment-eval' ? ' active' : ''}`}
               onClick={() => navigateToView('assignment-eval')}
-              title="Upload & Evaluate Written Sanskrit Assignment (लिखित-मूल्याङ्कनम्)"
+              title="Learn Through Writing: Guided Sequential Paths & Evaluator (लेखन-शाला)"
             >
               <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">✍️</span>
-              <span className="dashboard-nav-sanskrit">लिखित-मूल्याङ्कनम्</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Evaluate Work' : 'Assignment AI'}</span>
+              <span className="dashboard-nav-sanskrit">लेखन-शाला</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Writing Paths' : 'Learn Writing'}</span>
             </button>
             <button
               type="button"

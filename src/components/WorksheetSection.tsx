@@ -308,10 +308,10 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
                 <span className="ws-eval-banner-icon">✍️</span>
                 <div>
                   <div className="ws-eval-banner-title">
-                    हस्तलिखित-अभ्यास-मूल्याङ्कनम् · Upload Written Sanskrit Assignment for Instant AI Evaluation
+                    क्रमिक-लेखन-अभ्यासः · Learn Through Writing (Basics, Shloka/Spiritual &amp; Grades 7–9 Paths)
                   </div>
                   <div className="ws-eval-banner-sub">
-                    Have a handwritten Sanskrit worksheet, homework notebook, or test? Snap a photo to get Pāṇinian grammar checks, orthography grading, and an official printable marksheet with audio!
+                    Master Sanskrit step-by-step through guided sequential writing assignments on a digital ruled ink slate, or upload notebook photos for instant Pāṇinian feedback!
                   </div>
                 </div>
               </div>
@@ -323,7 +323,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
                   onOpenAssignmentEvaluator();
                 }}
               >
-                <span>Upload &amp; Evaluate</span>
+                <span>Guided Writing &amp; Evaluator</span>
                 <span>➔</span>
               </button>
             </div>

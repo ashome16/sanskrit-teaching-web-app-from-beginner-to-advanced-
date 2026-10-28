@@ -9,9 +9,12 @@ import {
   type SampleAssignmentPreset,
 } from '../utils/sanskritAssignmentEvaluator';
 import { playPronunciation } from '../utils/pronunciation';
+import { GuidedWritingStudio } from './GuidedWritingStudio';
 import '../styles/sanskrit-assignment-evaluator.css';
 
 export interface SanskritAssignmentEvaluatorProps {
+  initialTab?: 'guided' | 'upload' | 'results' | 'history';
+  initialPathId?: string;
   onNavigateView?: (view: any, lessonId?: string) => void;
   onBackToWorksheets?: () => void;
   onGoHome?: () => void;
@@ -20,11 +23,13 @@ export interface SanskritAssignmentEvaluatorProps {
 const DIACRITIC_CHARS = ['।', '॥', 'ऽ', 'ः', 'ं', '्', 'ॐ', 'ऋ', 'ॠ', 'ज्ञ', 'त्र', 'श्र'];
 
 export const SanskritAssignmentEvaluator: React.FC<SanskritAssignmentEvaluatorProps> = ({
+  initialTab = 'guided',
+  initialPathId = 'basics',
   onNavigateView,
   onBackToWorksheets,
   onGoHome,
 }) => {
-  const [activeTab, setActiveTab] = useState<'upload' | 'results' | 'history'>('upload');
+  const [activeTab, setActiveTab] = useState<'guided' | 'upload' | 'results' | 'history'>(initialTab);
 
   // Input State
   const [studentName, setStudentName] = useState<string>('संस्कृत-जिज्ञासुः');
@@ -202,11 +207,20 @@ export const SanskritAssignmentEvaluator: React.FC<SanskritAssignmentEvaluatorPr
       <nav className="sae-tabs-bar sae-no-print" aria-label="Assignment Evaluator Navigation">
         <button
           type="button"
+          className={`sae-tab-btn ${activeTab === 'guided' ? 'active' : ''}`}
+          onClick={() => setActiveTab('guided')}
+        >
+          <span>✍️</span>
+          <span>Guided Writing Paths (क्रमिक-लेखन-अभ्यासः)</span>
+        </button>
+
+        <button
+          type="button"
           className={`sae-tab-btn ${activeTab === 'upload' ? 'active' : ''}`}
           onClick={() => setActiveTab('upload')}
         >
           <span>📤</span>
-          <span>Upload &amp; Configure (अपलोड् व चयनम्)</span>
+          <span>Free Homework Upload (स्वतन्त्र-अपलोड्)</span>
         </button>
 
         {evaluatedResult && (
@@ -229,6 +243,16 @@ export const SanskritAssignmentEvaluator: React.FC<SanskritAssignmentEvaluatorPr
           <span>Saved Evaluations ({historyList.length})</span>
         </button>
       </nav>
+
+      {/* TAB 0: GUIDED SEQUENTIAL WRITING PATHS */}
+      {activeTab === 'guided' && (
+        <GuidedWritingStudio
+          initialPathId={initialPathId}
+          onNavigateView={onNavigateView}
+          onOpenGeneralEvaluator={() => setActiveTab('upload')}
+          onGoHome={onGoHome}
+        />
+      )}
 
       {/* TAB 1: UPLOAD & SETUP */}
       {activeTab === 'upload' && (
