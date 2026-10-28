@@ -701,6 +701,17 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
               </div>
 
               <div className="bodhi-card-controls">
+                <button
+                  type="button"
+                  className={`bodhi-header-listen-btn ${isGreetingSpeaking ? 'is-speaking' : ''}`}
+                  onClick={() => speakSanskrit(BODHI_PROFILE.audioGreeting)}
+                  title={isGreetingSpeaking ? 'Stop Bodhi speaking' : 'Hear Bodhi say Namaste'}
+                  aria-pressed={isGreetingSpeaking}
+                >
+                  <span className="bodhi-header-listen-icon">{isGreetingSpeaking ? '⏹' : '🔊'}</span>
+                  <span>{isGreetingSpeaking ? 'Speaking…' : 'नमस्ते'}</span>
+                  {isGreetingSpeaking && renderSoundwave()}
+                </button>
                 <div className="bodhi-speed-toggle" role="group" aria-label="Bodhi voice speed">
                   <button
                     type="button"
@@ -735,44 +746,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
               </div>
             </header>
 
-            {/* 2. Spoken Greeting Hero Card (Separated Greeting & Bio + Aligned Primary Action Button with Soundwave) */}
-            <div className="bodhi-greeting-hero-card">
-              <div className="bodhi-greeting-content">
-                {/* Greeting on its own dedicated prominent line */}
-                <div className="bodhi-greeting-headline">
-                  <span className="bodhi-greeting-namaste" lang="sa">नमस्ते !</span>
-                  <span className="bodhi-greeting-identity" lang="sa">अहं बोधिः — भवतः संस्कृत-सखा।</span>
-                </div>
-
-                {/* Bio & persona description clearly separated on its own line below */}
-                <p className="bodhi-greeting-bio">
-                  <span className="bodhi-bio-icon" aria-hidden="true">🌿</span>
-                  <span>{BODHI_PROFILE.persona} · Your friendly Gurukul companion!</span>
-                </p>
-
-                {/* Refined primary Listen button container with visual soundwave feedback */}
-                <div className="bodhi-greeting-action-row">
-                  <button
-                    type="button"
-                    className={`bodhi-speak-hero-btn ${isGreetingSpeaking ? 'is-speaking' : ''}`}
-                    onClick={() => speakSanskrit(BODHI_PROFILE.audioGreeting)}
-                    title={isGreetingSpeaking ? 'Stop Bodhi speaking' : 'Hear Bodhi say Namaste'}
-                    aria-pressed={isGreetingSpeaking}
-                  >
-                    <span className="bodhi-speak-icon">{isGreetingSpeaking ? '⏹' : '🔊'}</span>
-                    <span className="bodhi-speak-label">
-                      {isGreetingSpeaking ? 'Speaking Namaste… (Tap to Stop)' : 'Listen to Bodhi (नमस्ते)'}
-                    </span>
-                    {isGreetingSpeaking && renderSoundwave()}
-                  </button>
-                  <span className="bodhi-greeting-subhint">
-                    Tap to hear Bodhi greet you in native Sanskrit!
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* 3. Navigation Tabs */}
+            {/* 2. Navigation Tabs */}
             <nav className="bodhi-tabs" aria-label="Bodhi Guide Tabs">
               <button
                 type="button"
@@ -811,10 +785,42 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
               </button>
             </nav>
 
-            {/* 4. Tab Contents */}
+            {/* 3. Tab Contents */}
             <div className="bodhi-card-body">
               {/* TAB 1: Contextual Page Guide with Enhanced Contrast & Child-Centric Visual Icons */}
               {activeTab === 'context' && (
+                <div className="bodhi-context-view-wrapper">
+                  {/* Spoken Greeting Hero Card (scrolls with Page Guide, never traps modal height) */}
+                  <div className="bodhi-greeting-hero-card">
+                    <div className="bodhi-greeting-content">
+                      <div className="bodhi-greeting-headline">
+                        <span className="bodhi-greeting-namaste" lang="sa">नमस्ते !</span>
+                        <span className="bodhi-greeting-identity" lang="sa">अहं बोधिः — भवतः संस्कृत-सखा।</span>
+                      </div>
+                      <p className="bodhi-greeting-bio">
+                        <span className="bodhi-bio-icon" aria-hidden="true">🌿</span>
+                        <span>{BODHI_PROFILE.persona} · Your friendly Gurukul companion!</span>
+                      </p>
+                      <div className="bodhi-greeting-action-row">
+                        <button
+                          type="button"
+                          className={`bodhi-speak-hero-btn ${isGreetingSpeaking ? 'is-speaking' : ''}`}
+                          onClick={() => speakSanskrit(BODHI_PROFILE.audioGreeting)}
+                          title={isGreetingSpeaking ? 'Stop Bodhi speaking' : 'Hear Bodhi say Namaste'}
+                          aria-pressed={isGreetingSpeaking}
+                        >
+                          <span className="bodhi-speak-icon">{isGreetingSpeaking ? '⏹' : '🔊'}</span>
+                          <span className="bodhi-speak-label">
+                            {isGreetingSpeaking ? 'Speaking Namaste… (Tap to Stop)' : 'Listen to Bodhi (नमस्ते)'}
+                          </span>
+                          {isGreetingSpeaking && renderSoundwave()}
+                        </button>
+                        <span className="bodhi-greeting-subhint">
+                          Tap to hear Bodhi greet you in native Sanskrit!
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 <div className="bodhi-context-banner">
                   <div className="bodhi-context-header">
                     <div className="bodhi-context-tag-wrap">
@@ -876,17 +882,18 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     </button>
                   )}
                 </div>
+                </div>
               )}
 
-              {/* TAB 2: Ask Bodhi (Q&A Library) */}
+              {/* TAB 2: Ask Bodhi (Q&A Library & Gurukul Direct Search) */}
               {activeTab === 'qa' && (
-                <div>
+                <div className="bodhi-qa-wrapper">
                   <div className="bodhi-search-row">
                     <span className="bodhi-search-icon">🔍</span>
                     <input
                       type="text"
                       className="bodhi-search-input"
-                      placeholder="Ask Bodhi: 3.5cm Indus spheres, terracotta matrix, dictionary, sandhi, AI, zero..."
+                      placeholder="Ask Bodhi: assignment, grammar, dictionary, sandhi, vedic math, zero..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                     />
@@ -903,186 +910,78 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                     )}
                   </div>
 
-                  {/* Curated Quick Search Term Discovery Pills */}
-                  <div className="bodhi-quick-terms-flow" aria-label="Bodhi suggested search terms">
-                    <span className="bodhi-quick-terms-label">⚡ Explore:</span>
-                    {[
-                      { label: '🐚 Nana Moutou (1768)', term: 'nana moutou' },
-                      { label: '📏 Indus Spheres (3.5 cm)', term: 'spheres of certainty' },
-                      { label: '🏺 Terracotta Matrix', term: 'terracotta matrix' },
-                      { label: '📖 Sanskrit Dictionary', term: 'koshashri' },
-                      { label: '🎯 Deepakam (Classes 7 & 8)', term: 'deepakam' },
-                      { label: '🧭 Ujjain Prime Meridian', term: 'ujjain' },
-                      { label: '⚡ 16 Vedic Sutras', term: 'nikhilam' },
-                      { label: '🤖 AI (कृत्रिमन्त्रम्)', term: 'krtrimantram' },
-                    ].map((item) => (
-                      <button
-                        key={item.term}
-                        type="button"
-                        className={`bodhi-quick-term-pill ${searchQuery.toLowerCase().includes(item.term.toLowerCase()) ? 'active' : ''}`}
-                        onClick={() => setSearchQuery(item.term)}
-                      >
-                        {item.label}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Live Word Autocomplete Radar */}
-                  {matchingWords.length > 0 && (
-                    <div className="bodhi-word-suggestions-tray">
-                      <div className="bodhi-word-suggestions-header">
-                        <span>💡 Bodhi’s Word Radar (click to explore & hear):</span>
-                      </div>
-                      <div className="bodhi-word-chips-flow">
-                        {matchingWords.map((w) => (
-                          <button
-                            key={w.id}
-                            type="button"
-                            className={`bodhi-word-chip bodhi-word-chip--${w.category}`}
-                            onClick={() => {
-                              setSearchQuery(w.devanagari);
-                              speakSanskrit(w.devanagari);
-                            }}
-                            title={w.breakdown || w.english}
-                          >
-                            <span className="bodhi-word-chip-dev">{w.devanagari}</span>
-                            <span className="bodhi-word-chip-iast">({w.iast})</span>
-                            <span className="bodhi-word-chip-meaning">— {w.english}</span>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* ✨ Did you know? — Micro-Anecdotes */}
-                  <div className="bodhi-anecdote-strip" data-testid="bodhi-anecdote-strip">
-                    <div className="bodhi-anecdote-strip-head">
-                      <span className="bodhi-anecdote-strip-title">✨ Did you know?</span>
-                      <button type="button" className="bodhi-anecdote-random" onClick={tellRandomStory}>
-                        🎲 Tell me a story
-                      </button>
-                    </div>
-                    <div className="bodhi-anecdote-chips">
-                      {BODHI_ANECDOTES.map((a) => (
-                        <button
-                          key={a.id}
-                          type="button"
-                          className={`bodhi-anecdote-chip ${storyId === a.id ? 'active' : ''}`}
-                          aria-pressed={storyId === a.id}
-                          data-testid={`anecdote-chip-${a.id}`}
-                          onClick={() => (storyId === a.id ? setStoryId(null) : openStory(a.id))}
-                          title={a.shortAnswer}
-                        >
-                          <span aria-hidden="true">{a.emoji}</span> {a.question.split(':')[0]}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {currentStory && (
-                    <article className="bodhi-anecdote-pop" data-testid="bodhi-anecdote-pop" aria-live="polite">
-                      <button
-                        type="button"
-                        className="bodhi-anecdote-close"
-                        onClick={() => setStoryId(null)}
-                        aria-label="Close story"
-                        title="Close story"
-                      >
-                        ×
-                      </button>
-                      <div className="bodhi-anecdote-graphic" aria-hidden="true">{currentStory.emoji}</div>
-                      <div className="bodhi-anecdote-hook">{currentStory.shortAnswer}</div>
-                      <h5 className="bodhi-anecdote-title">{currentStory.question}</h5>
-                      {currentStory.sanskritQuestion && (
-                        <div className="bodhi-qa-sanskrit-q">{currentStory.sanskritQuestion}</div>
-                      )}
-                      <p className="bodhi-anecdote-story">
-                        <FollowAlongText
-                          text={currentStory.detailedAnswer}
-                          lang="en"
-                          activeChunk={chunkFor(currentStory.detailedAnswer)}
-                        />
-                        {renderEnglishSpeakBtn(currentStory.detailedAnswer, 'this story')}
-                      </p>
-                      {currentStory.science && (
-                        <div className="bodhi-anecdote-science">
-                          <strong>🔬 The science bit</strong>
-                          <p>{currentStory.science}</p>
-                        </div>
-                      )}
-                      {currentStory.tip && <p className="bodhi-anecdote-tip">💡 {currentStory.tip}</p>}
-                      {currentStory.source && <p className="bodhi-anecdote-source">📜 {currentStory.source}</p>}
-                      <div className="bodhi-anecdote-actions">
-                        {currentStory.relatedView && (
-                          <button type="button" className="bodhi-guide-btn" onClick={() => openRelated(currentStory)}>
-                            {relatedLabelFor(currentStory)}
-                          </button>
-                        )}
-                        <button type="button" className="bodhi-anecdote-random" onClick={tellRandomStory}>
-                          🎲 Another story
-                        </button>
-                      </div>
-                    </article>
-                  )}
-
-                  <div className="bodhi-category-chips">
-                    {[
-                      { id: 'all', label: 'All Topics' },
-                      { id: 'engineering', label: '🧩 Word Riddles' },
-                      { id: 'pronunciation', label: '🗣️ Pronunciation' },
-                      { id: 'grammar', label: '📚 Grammar' },
-                      { id: 'cbse', label: '🎯 CBSE Exams' },
-                      { id: 'vedic_math', label: '⚡ Vedic Math' },
-                      { id: 'philosophy', label: '🌿 Philosophy' },
-                      { id: 'anecdote', label: '✨ Did you know?' },
-                    ].map((cat) => (
-                      <button
-                        key={cat.id}
-                        type="button"
-                        className={`bodhi-chip-btn ${selectedCategory === cat.id ? 'active' : ''}`}
-                        onClick={() => setSelectedCategory(cat.id)}
-                      >
-                        {cat.label}
-                      </button>
-                    ))}
-                  </div>
-
                   {searchQuery.trim().length > 0 ? (
-                    <div style={{ marginTop: '0.85rem' }}>
-                      {/* Personal Bodhi Greeting Banner */}
-                      <div className="bodhi-personal-search-banner">
-                        <div className="bodhi-personal-badge">
-                          <span>🌿 अहं बोधिः</span>
-                        </div>
-                        <p className="bodhi-personal-message">
-                          {gurukulMatches.length + filteredQA.length > 0 ? (
-                            <>
-                              I explored our Gurukul library for <strong>"{searchQuery.trim()}"</strong> and found <strong>{gurukulMatches.length + filteredQA.length}</strong> {gurukulMatches.length + filteredQA.length === 1 ? 'treasure' : 'treasures'} for you:
-                            </>
-                          ) : (
-                            <>
-                              I searched our entire Gurukul library, but didn't find an exact match for <strong>"{searchQuery.trim()}"</strong>. Let me guide you to related topics below!
-                            </>
-                          )}
-                        </p>
+                    /* Active Search View: Results are immediately placed right under the search bar */
+                    <div className="bodhi-search-results-section">
+                      {/* Compact Result Header */}
+                      <div className="bodhi-search-active-header">
+                        <span className="bodhi-search-count-badge">
+                          🔍 Found <strong>{gurukulMatches.length + filteredQA.length}</strong> result{gurukulMatches.length + filteredQA.length === 1 ? '' : 's'} for <em>"{searchQuery.trim()}"</em>
+                        </span>
+                        <button
+                          type="button"
+                          className="bodhi-search-clear-pill"
+                          onClick={() => setSearchQuery('')}
+                          title="Clear search query"
+                        >
+                          ✕ Clear
+                        </button>
                       </div>
 
-                      {/* 1. Gurukul Lessons, Studios & Articles */}
-                      {gurukulMatches.length > 0 && selectedCategory !== 'engineering' && (
+                      {/* Live Word Autocomplete Radar if any */}
+                      {matchingWords.length > 0 && (
+                        <div className="bodhi-word-suggestions-tray" style={{ marginBottom: '0.85rem' }}>
+                          <div className="bodhi-word-suggestions-header">
+                            <span>💡 Word Radar:</span>
+                          </div>
+                          <div className="bodhi-word-chips-flow">
+                            {matchingWords.map((w) => (
+                              <button
+                                key={w.id}
+                                type="button"
+                                className={`bodhi-word-chip bodhi-word-chip--${w.category}`}
+                                onClick={() => {
+                                  setSearchQuery(w.devanagari);
+                                  speakSanskrit(w.devanagari);
+                                }}
+                                title={w.breakdown || w.english}
+                              >
+                                <span className="bodhi-word-chip-dev">{w.devanagari}</span>
+                                <span className="bodhi-word-chip-iast">({w.iast})</span>
+                                <span className="bodhi-word-chip-meaning">— {w.english}</span>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* 1. Gurukul Lessons, Studios, Articles & Tools */}
+                      {gurukulMatches.length > 0 && (
                         <div className="bodhi-search-group">
                           <div className="bodhi-search-group-title">
-                            <span>🧭 Gurukul Lessons & Interactive Studios ({gurukulMatches.length})</span>
+                            <span>🧭 Gurukul Lessons, Studios & Tools ({gurukulMatches.length})</span>
                           </div>
                           <div className="bodhi-gurukul-results-list">
                             {gurukulMatches.map((item) => (
-                              <div key={item.id} className="bodhi-gurukul-card">
+                              <div
+                                key={item.id}
+                                className="bodhi-gurukul-card"
+                                onClick={() => handleNavigateToGurukulItem(item)}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter' || e.key === ' ') {
+                                    handleNavigateToGurukulItem(item);
+                                  }
+                                }}
+                              >
                                 <div className="bodhi-gurukul-card-header">
                                   <span
                                     className="bodhi-gurukul-badge"
                                     style={{
-                                      backgroundColor: `${item.badgeColor}15`,
+                                      backgroundColor: `${item.badgeColor}18`,
                                       color: item.badgeColor,
-                                      borderColor: `${item.badgeColor}40`,
+                                      borderColor: `${item.badgeColor}50`,
                                     }}
                                   >
                                     {item.badgeEmoji} {item.categoryLabel}
@@ -1090,7 +989,10 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                                   <button
                                     type="button"
                                     className="bodhi-guide-btn"
-                                    onClick={() => handleNavigateToGurukulItem(item)}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleNavigateToGurukulItem(item);
+                                    }}
                                     title={`Open ${item.title}`}
                                   >
                                     Guide Me There 🚀
@@ -1108,7 +1010,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                       )}
 
                       {/* 2. Bodhi’s Direct Explanations & Answers */}
-                      {filteredQA.length > 0 && selectedCategory !== 'lessons' && (
+                      {filteredQA.length > 0 && (
                         <div className="bodhi-search-group" style={{ marginTop: gurukulMatches.length > 0 ? '1rem' : '0' }}>
                           <div className="bodhi-search-group-title">
                             <span>❓ Bodhi’s Direct Explanations ({filteredQA.length})</span>
@@ -1173,7 +1075,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                         </div>
                       )}
 
-                      {/* 3. Empty State with Warm Personal Recommendations */}
+                      {/* 3. Empty State with Warm Recommendations */}
                       {gurukulMatches.length === 0 && filteredQA.length === 0 && (
                         <div className="bodhi-search-empty-personal">
                           <div className="bodhi-empty-avatar-icon">🧘🏽‍♂️</div>
@@ -1182,6 +1084,7 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                             Sanskrit spelling or script variations happen. Let Bodhi take you straight to our most popular study rooms:
                           </p>
                           <div className="bodhi-empty-shortcut-row">
+                            <button type="button" onClick={() => setSearchQuery('assignment')}>✍️ Written Assignment</button>
                             <button type="button" onClick={() => setSearchQuery('nana moutou')}>Nana Moutou (1768)</button>
                             <button type="button" onClick={() => setSearchQuery('spheres of certainty')}>Indus Spheres (3.5 cm)</button>
                             <button type="button" onClick={() => setSearchQuery('terracotta matrix')}>Terracotta Matrix (BKG)</button>
@@ -1191,69 +1094,189 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                             <button type="button" onClick={() => setSearchQuery('sandhi')}>Sandhi Rules (संधि)</button>
                             <button type="button" onClick={() => setSearchQuery('vibhakti')}>7 Vibhaktis (विभक्ति)</button>
                             <button type="button" onClick={() => setSearchQuery('nikhilam')}>Vedic Math Tricks</button>
-                            <button type="button" onClick={() => setSearchQuery('vidya')}>Vidyā (विद्या)</button>
                             <button type="button" onClick={() => setSearchQuery('krtrimantram')}>AI Riddle (कृत्रिमन्त्रम्)</button>
                           </div>
                         </div>
                       )}
                     </div>
                   ) : (
-                    <div className="bodhi-qa-list" style={{ marginTop: '0.85rem' }}>
-                      {filteredQA.map((item) => (
-                        <article key={item.id} className="bodhi-qa-card">
-                          <h5 className="bodhi-qa-question">{item.emoji && <span aria-hidden="true">{item.emoji} </span>}{item.question}</h5>
-                          {item.sanskritQuestion && (
-                            <div className="bodhi-qa-sanskrit-q">{item.sanskritQuestion}</div>
+                    /* Default Browsing View (when search box is empty) */
+                    <div className="bodhi-qa-browse-view">
+                      {/* Curated Quick Search Term Discovery Pills */}
+                      <div className="bodhi-quick-terms-flow" aria-label="Bodhi suggested search terms">
+                        <span className="bodhi-quick-terms-label">⚡ Explore:</span>
+                        {[
+                          { label: '✍️ Written Assignment', term: 'assignment' },
+                          { label: '🐚 Nana Moutou (1768)', term: 'nana moutou' },
+                          { label: '📏 Indus Spheres (3.5 cm)', term: 'spheres of certainty' },
+                          { label: '🏺 Terracotta Matrix', term: 'terracotta matrix' },
+                          { label: '📖 Sanskrit Dictionary', term: 'koshashri' },
+                          { label: '🎯 Deepakam (Classes 7 & 8)', term: 'deepakam' },
+                          { label: '🧭 Ujjain Prime Meridian', term: 'ujjain' },
+                          { label: '⚡ 16 Vedic Sutras', term: 'nikhilam' },
+                          { label: '🤖 AI (कृत्रिमन्त्रम्)', term: 'krtrimantram' },
+                        ].map((item) => (
+                          <button
+                            key={item.term}
+                            type="button"
+                            className="bodhi-quick-term-pill"
+                            onClick={() => setSearchQuery(item.term)}
+                          >
+                            {item.label}
+                          </button>
+                        ))}
+                      </div>
+
+                      {/* ✨ Did you know? — Micro-Anecdotes */}
+                      <div className="bodhi-anecdote-strip" data-testid="bodhi-anecdote-strip">
+                        <div className="bodhi-anecdote-strip-head">
+                          <span className="bodhi-anecdote-strip-title">✨ Did you know?</span>
+                          <button type="button" className="bodhi-anecdote-random" onClick={tellRandomStory}>
+                            🎲 Tell me a story
+                          </button>
+                        </div>
+                        <div className="bodhi-anecdote-chips">
+                          {BODHI_ANECDOTES.map((a) => (
+                            <button
+                              key={a.id}
+                              type="button"
+                              className={`bodhi-anecdote-chip ${storyId === a.id ? 'active' : ''}`}
+                              aria-pressed={storyId === a.id}
+                              data-testid={`anecdote-chip-${a.id}`}
+                              onClick={() => (storyId === a.id ? setStoryId(null) : openStory(a.id))}
+                              title={a.shortAnswer}
+                            >
+                              <span aria-hidden="true">{a.emoji}</span> {a.question.split(':')[0]}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {currentStory && (
+                        <article className="bodhi-anecdote-pop" data-testid="bodhi-anecdote-pop" aria-live="polite">
+                          <button
+                            type="button"
+                            className="bodhi-anecdote-close"
+                            onClick={() => setStoryId(null)}
+                            aria-label="Close story"
+                            title="Close story"
+                          >
+                            ×
+                          </button>
+                          <div className="bodhi-anecdote-graphic" aria-hidden="true">{currentStory.emoji}</div>
+                          <div className="bodhi-anecdote-hook">{currentStory.shortAnswer}</div>
+                          <h5 className="bodhi-anecdote-title">{currentStory.question}</h5>
+                          {currentStory.sanskritQuestion && (
+                            <div className="bodhi-qa-sanskrit-q">{currentStory.sanskritQuestion}</div>
                           )}
-                          <div className="bodhi-qa-short">{item.shortAnswer}</div>
-                          <div className="bodhi-qa-details">{item.detailedAnswer}</div>
-                          {item.science && <div className="bodhi-qa-details"><strong>🔬 The science bit:</strong> {item.science}</div>}
-                          {item.source && <div className="bodhi-anecdote-source">📜 {item.source}</div>}
-
-                          <div className="bodhi-qa-bottom-bar">
-                            {item.audioDevanagari ? (
-                              <button
-                                type="button"
-                                className="bodhi-audio-pill"
-                                onClick={() => speakSanskrit(item.audioDevanagari!)}
-                                title="Hear pronunciation"
-                              >
-                                🔊 {item.audioDevanagari}
-                              </button>
-                            ) : <span />}
-
-                            {item.tip && (
-                              <span className="bodhi-tip-tag">
-                                💡 <FollowAlongText text={item.tip} lang="en" activeChunk={chunkFor(item.tip)} />
-                                {renderEnglishSpeakBtn(item.tip, 'this tip')}
-                              </span>
-                            )}
-                          </div>
-
-                          {item.relatedView && (
-                            <div style={{ marginTop: '0.65rem', display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
-                              {item.id === 'qa-sanskrit-dictionary-koshashri' && (
-                                <a
-                                  href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="bodhi-guide-btn"
-                                  style={{ background: '#0284c7', borderColor: '#0369a1', color: '#ffffff', textDecoration: 'none' }}
-                                >
-                                  🌐 Search Kōshaśrī Catalog ↗
-                                </a>
-                              )}
-                              <button
-                                type="button"
-                                className="bodhi-guide-btn"
-                                onClick={() => openRelated(item)}
-                              >
-                                {relatedLabelFor(item)}
-                              </button>
+                          <p className="bodhi-anecdote-story">
+                            <FollowAlongText
+                              text={currentStory.detailedAnswer}
+                              lang="en"
+                              activeChunk={chunkFor(currentStory.detailedAnswer)}
+                            />
+                            {renderEnglishSpeakBtn(currentStory.detailedAnswer, 'this story')}
+                          </p>
+                          {currentStory.science && (
+                            <div className="bodhi-anecdote-science">
+                              <strong>🔬 The science bit</strong>
+                              <p>{currentStory.science}</p>
                             </div>
                           )}
+                          {currentStory.tip && <p className="bodhi-anecdote-tip">💡 {currentStory.tip}</p>}
+                          {currentStory.source && <p className="bodhi-anecdote-source">📜 {currentStory.source}</p>}
+                          <div className="bodhi-anecdote-actions">
+                            {currentStory.relatedView && (
+                              <button type="button" className="bodhi-guide-btn" onClick={() => openRelated(currentStory)}>
+                                {relatedLabelFor(currentStory)}
+                              </button>
+                            )}
+                            <button type="button" className="bodhi-anecdote-random" onClick={tellRandomStory}>
+                              🎲 Another story
+                            </button>
+                          </div>
                         </article>
-                      ))}
+                      )}
+
+                      <div className="bodhi-category-chips">
+                        {[
+                          { id: 'all', label: 'All Topics' },
+                          { id: 'engineering', label: '🧩 Word Riddles' },
+                          { id: 'pronunciation', label: '🗣️ Pronunciation' },
+                          { id: 'grammar', label: '📚 Grammar' },
+                          { id: 'cbse', label: '🎯 CBSE Exams' },
+                          { id: 'vedic_math', label: '⚡ Vedic Math' },
+                          { id: 'philosophy', label: '🌿 Philosophy' },
+                          { id: 'anecdote', label: '✨ Did you know?' },
+                        ].map((cat) => (
+                          <button
+                            key={cat.id}
+                            type="button"
+                            className={`bodhi-chip-btn ${selectedCategory === cat.id ? 'active' : ''}`}
+                            onClick={() => setSelectedCategory(cat.id)}
+                          >
+                            {cat.label}
+                          </button>
+                        ))}
+                      </div>
+
+                      <div className="bodhi-qa-list" style={{ marginTop: '0.85rem' }}>
+                        {filteredQA.map((item) => (
+                          <article key={item.id} className="bodhi-qa-card">
+                            <h5 className="bodhi-qa-question">{item.emoji && <span aria-hidden="true">{item.emoji} </span>}{item.question}</h5>
+                            {item.sanskritQuestion && (
+                              <div className="bodhi-qa-sanskrit-q">{item.sanskritQuestion}</div>
+                            )}
+                            <div className="bodhi-qa-short">{item.shortAnswer}</div>
+                            <div className="bodhi-qa-details">{item.detailedAnswer}</div>
+                            {item.science && <div className="bodhi-qa-details"><strong>🔬 The science bit:</strong> {item.science}</div>}
+                            {item.source && <div className="bodhi-anecdote-source">📜 {item.source}</div>}
+
+                            <div className="bodhi-qa-bottom-bar">
+                              {item.audioDevanagari ? (
+                                <button
+                                  type="button"
+                                  className="bodhi-audio-pill"
+                                  onClick={() => speakSanskrit(item.audioDevanagari!)}
+                                  title="Hear pronunciation"
+                                >
+                                  🔊 {item.audioDevanagari}
+                                </button>
+                              ) : <span />}
+
+                              {item.tip && (
+                                <span className="bodhi-tip-tag">
+                                  💡 <FollowAlongText text={item.tip} lang="en" activeChunk={chunkFor(item.tip)} />
+                                  {renderEnglishSpeakBtn(item.tip, 'this tip')}
+                                </span>
+                              )}
+                            </div>
+
+                            {item.relatedView && (
+                              <div style={{ marginTop: '0.65rem', display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+                                {item.id === 'qa-sanskrit-dictionary-koshashri' && (
+                                  <a
+                                    href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bodhi-guide-btn"
+                                    style={{ background: '#0284c7', borderColor: '#0369a1', color: '#ffffff', textDecoration: 'none' }}
+                                  >
+                                    🌐 Search Kōshaśrī Catalog ↗
+                                  </a>
+                                )}
+                                <button
+                                  type="button"
+                                  className="bodhi-guide-btn"
+                                  onClick={() => openRelated(item)}
+                                >
+                                  {relatedLabelFor(item)}
+                                </button>
+                              </div>
+                            )}
+                          </article>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -1373,19 +1396,36 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
             {/* 5. Persistent Bottom Text-to-Speech & Mute Toolbar for Child-Centric Audio Access */}
             <footer className="bodhi-card-footer" role="toolbar" aria-label="Bodhi Audio Toolbar">
               <div className="bodhi-footer-left">
-                <button
-                  type="button"
-                  className={`bodhi-footer-tts-btn ${isReadingFullPage ? 'is-speaking' : ''}`}
-                  onClick={handleToggleReadPage}
-                  title={isReadingFullPage ? 'Stop reading page' : 'Have Bodhi read this entire section aloud'}
-                  aria-pressed={isReadingFullPage}
-                >
-                  <span className="bodhi-footer-icon">{isReadingFullPage ? '⏹' : '🗣️'}</span>
-                  <span className="bodhi-footer-text">
-                    {isReadingFullPage ? 'Stop Reading' : 'Speak Page Guide'}
+                {activeTab === 'context' ? (
+                  <button
+                    type="button"
+                    className={`bodhi-footer-tts-btn ${isReadingFullPage ? 'is-speaking' : ''}`}
+                    onClick={handleToggleReadPage}
+                    title={isReadingFullPage ? 'Stop reading page' : 'Have Bodhi read this entire section aloud'}
+                    aria-pressed={isReadingFullPage}
+                  >
+                    <span className="bodhi-footer-icon">{isReadingFullPage ? '⏹' : '🗣️'}</span>
+                    <span className="bodhi-footer-text">
+                      {isReadingFullPage ? 'Stop Reading' : 'Speak Page Guide'}
+                    </span>
+                    {isReadingFullPage && renderSoundwave()}
+                  </button>
+                ) : isSpeaking ? (
+                  <button
+                    type="button"
+                    className="bodhi-footer-tts-btn is-speaking"
+                    onClick={() => stopSpeaking()}
+                    title="Stop Bodhi speaking"
+                  >
+                    <span className="bodhi-footer-icon">⏹</span>
+                    <span className="bodhi-footer-text">Stop Bodhi Voice</span>
+                    {renderSoundwave()}
+                  </button>
+                ) : (
+                  <span className="bodhi-footer-search-tip">
+                    {activeTab === 'qa' ? '💡 Tap any result to explore right away!' : '🌿 Bodhi Gurukul Companion'}
                   </span>
-                  {isReadingFullPage && renderSoundwave()}
-                </button>
+                )}
               </div>
 
               <div className="bodhi-footer-right">
