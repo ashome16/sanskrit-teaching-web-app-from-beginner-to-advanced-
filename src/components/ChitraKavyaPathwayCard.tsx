@@ -71,21 +71,21 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
             <div>
               <div className="ck-badge-row">
                 <span className="ck-badge-primary">
-                  ♟️ चित्र-काव्यम् · ALGORITHMIC POETRY &amp; GRAPH THEORY
+                  🎨 चित्र-काव्यम् · SANSKRIT PICTURE POETRY
                 </span>
                 <span className="ck-badge-secondary">
-                  Donald Knuth’s Landmark Citation
+                  Ancient Geometry &amp; Word Puzzles
                 </span>
               </div>
 
               <h3 className="ck-title">
-                The Sanskrit Knight’s Tour: Hamiltonian Graph in Verse
+                Chitra-Kavya: The Art of Visual Sanskrit Puzzles
               </h3>
               <p className="ck-sanskrit-sub">
-                तुराग-पद-बन्धः · Pāduka-Sahasram (14th Century) by Swami Vedānta Deśika
+                चित्र-काव्यम् · Verses Shaped into Sacred Geometry, Lotuses &amp; Puzzle Grids
               </p>
               <p className="ck-desc">
-                Centuries before Euler, Swami Vedanta Desika encoded chess knight jumps (\(L\)-shaped moves) into an \(8 \times 4\) Sanskrit matrix. Read row-by-row, it’s <strong>Verse 929</strong>; follow the knight’s non-repeating trajectory, and it decrypts the hidden <strong>Verse 930</strong>!
+                In classical Sanskrit, poets arranged letters into geometric pictures—sculpting words into blooming lotuses (पद्म), temple wheels (चक्र), and interlocking puzzle grids. Reading along these geometric paths unlocks hidden prayers, like the famous 14th-century &ldquo;Knight&rsquo;s Move&rdquo; puzzle below, where following a chess knight&rsquo;s path through <strong>Verse 929</strong> reveals the secret <strong>Verse 930</strong>!
               </p>
 
               {/* Interactive Move Stepper */}
@@ -149,7 +149,7 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
                 }}
                 title="Open the interactive Chitra-Kavya & Chandas Lab in Vijñāna Lab"
               >
-                🎮 Play Knight’s Tour in Vijñāna Lab ▶
+                🎮 Play Chitra-Kavya in Vijñāna Lab ▶
               </button>
 
               <button
@@ -158,7 +158,7 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
                 onClick={() => setIsModalOpen(true)}
                 title="View full verse breakdown, Sanskrit meaning, and historical analysis"
               >
-                📜 Read Full Verse Breakdown
+                📜 Learn How Chitra-Kavya Works
               </button>
             </div>
           </div>
@@ -167,10 +167,10 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
           <div className="ck-card-right">
             <div className="ck-right-header">
               <span className="ck-right-caption">
-                32-Syllable Chessboard Matrix (Verse 929)
+                Verse 929 Syllable Grid
               </span>
               <span className="ck-right-badge">
-                32 Squares · 0 Re-visits
+                32 Syllables · Visual Matrix
               </span>
             </div>
 
@@ -207,8 +207,8 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
             </div>
 
             <div className="ck-board-footer">
-              <span>Tap highlighted squares to trace the knight path</span>
-              <span>L-Shaped \(\Delta x^2 + \Delta y^2 = 5\)</span>
+              <span>Tap squares to follow the path</span>
+              <span>Verse 929 ➔ Reveals Verse 930</span>
             </div>
 
             {/* Reference Thumbnail Row */}
@@ -253,13 +253,13 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
 
             <div>
               <span className="pvs-eyebrow" style={{ marginBottom: '0.35rem' }}>
-                चित्र-काव्यम् · HISTORICAL COMBINATORICS
+                चित्र-काव्यम् · SANSKRIT PICTURE POETRY
               </span>
               <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#2b2118', margin: '0 0 0.35rem' }}>
-                Swami Vedānta Deśika’s Turanga-Bandha (Verses 929 &amp; 930)
+                Chitra-Kavya: Sacred Geometry in Sanskrit Poetry
               </h3>
               <p style={{ fontSize: '0.84rem', color: '#64748b', margin: 0 }}>
-                From the <em>Pāduka-Sahasram</em> (Chapter 30: Chitra-Paddhati, c. 1350 CE).
+                Solving visual, spatial, and combinatorial puzzles with Sanskrit verses (c. 9th–14th Century).
               </p>
             </div>
 
@@ -269,9 +269,45 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
               className="pvs-modal-img"
             />
 
+            {/* Introductory Explanation of Chitra-Kavya */}
+            <div style={{ background: '#fdfbf7', border: '1px solid #ebdcc5', borderRadius: '12px', padding: '1.15rem' }}>
+              <h4 style={{ margin: '0 0 0.5rem', color: '#78350f', fontSize: '1rem', fontWeight: 800 }}>
+                🎨 What is Chitra-Kavya? (चित्र-काव्यम्)
+              </h4>
+              <p style={{ fontSize: '0.84rem', color: '#475569', lineHeight: 1.55, margin: '0 0 0.85rem' }}>
+                In classical Sanskrit literature, <strong>Chitra-Kavya</strong> (literally &ldquo;picture poetry&rdquo;) is an art form where verses are deliberately constrained to form intricate visual shapes called <em>Bandhas</em>. Instead of merely writing lines, the syllables overlap at precise coordinates to form dual meanings, geometrical emblems, and mathematical puzzles:
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }}>
+                <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '0.65rem' }}>
+                  <strong style={{ fontSize: '0.8rem', color: '#b45309' }}>🪷 Padma-bandha (Lotus):</strong>
+                  <p style={{ fontSize: '0.74rem', color: '#64748b', margin: '0.2rem 0 0', lineHeight: 1.35 }}>
+                    Verses bloom across petals, connecting to an anchor syllable at the flower&rsquo;s central hub.
+                  </p>
+                </div>
+                <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '0.65rem' }}>
+                  <strong style={{ fontSize: '0.8rem', color: '#b45309' }}>🎡 Chakra-bandha (Wheel):</strong>
+                  <p style={{ fontSize: '0.74rem', color: '#64748b', margin: '0.2rem 0 0', lineHeight: 1.35 }}>
+                    Syllables radiate outward as chariot spokes, encoding the author&rsquo;s hidden signature along the rim.
+                  </p>
+                </div>
+                <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '0.65rem' }}>
+                  <strong style={{ fontSize: '0.8rem', color: '#b45309' }}>🥁 Muraja-bandha (Drum):</strong>
+                  <p style={{ fontSize: '0.74rem', color: '#64748b', margin: '0.2rem 0 0', lineHeight: 1.35 }}>
+                    Verses criss-cross diagonally like the tightening leather cords of a traditional mridangam drum.
+                  </p>
+                </div>
+                <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '0.65rem' }}>
+                  <strong style={{ fontSize: '0.8rem', color: '#b45309' }}>♟️ Turanga-bandha (Knight):</strong>
+                  <p style={{ fontSize: '0.74rem', color: '#64748b', margin: '0.2rem 0 0', lineHeight: 1.35 }}>
+                    The pinnacle of matrix poetry: letters visited by chess knight jumps spell a completely new verse!
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div style={{ background: '#fdf8ee', border: '1px solid #ebdcc5', borderRadius: '10px', padding: '1rem' }}>
               <h4 style={{ margin: '0 0 0.4rem', color: '#78350f', fontSize: '0.92rem' }}>
-                1. Verse 929 (Sequential Left-to-Right Reading):
+                Featured Example: Verse 929 (Read Straight Across):
               </h4>
               <p style={{ fontFamily: "'Noto Sans Devanagari', serif", fontWeight: 700, margin: '0 0 0.35rem', color: '#1e293b' }}>
                 स्थिरागसां सदाराध्या विहताकततामता ।<br />
@@ -284,7 +320,7 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
 
             <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '10px', padding: '1rem' }}>
               <h4 style={{ margin: '0 0 0.4rem', color: '#166534', fontSize: '0.92rem' }}>
-                2. Verse 930 (Decoded via Knight’s L-Shaped Jumps):
+                Hidden Verse 930 (Unlocked by Knight&rsquo;s L-Shaped Jumps):
               </h4>
               <p style={{ fontFamily: "'Noto Sans Devanagari', serif", fontWeight: 700, margin: '0 0 0.35rem', color: '#14532d' }}>
                 स्थिता समयराजत्पा गतरामादके गवि ।<br />
