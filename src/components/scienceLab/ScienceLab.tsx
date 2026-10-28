@@ -2,6 +2,16 @@ import React, { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'rea
 import type { LabSegmentId } from './common';
 import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
+import '../../styles/mission-control.css';
+import { MissionControlDashboard } from './MissionControlDashboard';
+import { ScienceSparkModal } from './ScienceSparkModal';
+import { ParentNotesModal } from './ParentNotesModal';
+import {
+  getExplorerStats,
+  saveExplorerStats,
+  getMissionCardById,
+  type ExplorerStats,
+} from './missionControlData';
 
 const PreschoolWonderLab = lazy(() => import('./PreschoolWonderLab'));
 const ParamanuBuilder = lazy(() => import('./ParamanuBuilder'));
@@ -75,8 +85,8 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     id: 'paramanu',
     code: 'SEC-01',
     icon: '⚛️',
-    dev: 'परमाणु-निर्माणम्',
-    title: 'Paramāṇu Builder',
+    dev: 'परमाणु-निर्माणम् · Vaiśeṣika',
+    title: 'Atom Builder: Make Matter!',
     subject: 'Atomic Crucible',
     school: 'Vaiśeṣika (वैशेषिक)',
     category: 'matter',
@@ -94,8 +104,8 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     id: 'asato-ma',
     code: 'SEC-02',
     icon: '🕯️',
-    dev: 'असतो मा सद्गमय',
-    title: 'The Veil of Māyā',
+    dev: 'पदार्थ-अवस्थाः · Rasaśāstra',
+    title: 'Heat & Matter Mystery',
     subject: 'Mass Invariance',
     school: 'Andha-Mūṣā Crucible (रसशास्त्र)',
     category: 'matter',
@@ -115,8 +125,8 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     id: 'prakriti',
     code: 'SEC-03',
     icon: '🌿',
-    dev: 'प्रकृति-सन्तुलनम्',
-    title: 'Prakṛti Biosphere',
+    dev: 'प्रकृति-जैवमण्डलम् · Tridoṣa',
+    title: 'Nature Balance Game',
     subject: 'Cellular Homeostasis',
     school: 'Tridoṣa Engine (आयुर्वेद)',
     category: 'life',
@@ -134,8 +144,8 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     id: 'chaturyoni',
     code: 'SEC-04',
     icon: '🦢',
-    dev: 'चतुर्योनि-मानचित्रम्',
-    title: 'Chaturyoni Spawn Map',
+    dev: 'चतुर्योनि-प्राणिनः · Taxonomy',
+    title: 'Life Explorer Map',
     subject: 'Bio-Galvanometry',
     school: 'Vṛkṣāyurveda & J.C. Bose',
     category: 'life',
@@ -155,8 +165,8 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     id: 'jyotisha',
     code: 'SEC-05',
     icon: '🪐',
-    dev: 'ज्योतिष-कक्षा',
-    title: 'Jyotiṣa Gravity Sandbox',
+    dev: 'गुरुत्व-कक्षा-क्रीडा · Jyotiṣa',
+    title: 'Planet Pull: Gravity Playground',
     subject: 'Orbital Mechanics',
     school: 'Āryabhaṭīya (खगोल-शास्त्र)',
     category: 'cosmos',
@@ -174,8 +184,8 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     id: 'chandrayaan',
     code: 'SEC-06',
     icon: '🛰️',
-    dev: 'सोमयानम्',
-    title: 'Somayāna Mission-03',
+    dev: 'चन्द्रयान-प्रक्षेपः · Somayāna',
+    title: 'Moon Mission Launcher',
     subject: 'Lunar Telemetry',
     school: 'ISRO Chandrayaan-3',
     category: 'cosmos',
@@ -195,8 +205,8 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     id: 'nada-brahman',
     code: 'SEC-07',
     icon: '🪕',
-    dev: 'नाद-ब्रह्म',
-    title: 'Cosmic Sitār Tuning',
+    dev: 'नाद-विहारः · Nāda',
+    title: 'Sound Detective',
     subject: 'Harmonics & Cymatics',
     school: 'Nāda Brahman (सङ्गीत)',
     category: 'waves',
@@ -214,8 +224,8 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     id: 'srishti-sthiti-laya',
     code: 'SEC-08',
     icon: '🧵',
-    dev: 'सृष्टि-स्थिति-लय',
-    title: 'The Loom of Āruṇi',
+    dev: 'आरुणि-सृष्टि-तन्त्रम् · Āruṇi',
+    title: 'Pattern Weaver',
     subject: 'Conservation Field',
     school: 'Satkāryavāda (साङ्ख्य)',
     category: 'waves',
@@ -386,6 +396,16 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
 
 const SEGMENT_IDS = new Set<string>(LAB_SEGMENTS.map((s) => s.id));
 const HASH_ALIASES: Record<string, LabSegmentId> = {
+  'atom-builder': 'paramanu',
+  'atom': 'paramanu',
+  'nature-balance': 'prakriti',
+  'planet-pull': 'jyotisha',
+  'gravity': 'jyotisha',
+  'pattern-weaver': 'srishti-sthiti-laya',
+  'sound-detective': 'nada-brahman',
+  'heat-matter': 'asato-ma',
+  'life-explorer': 'chaturyoni',
+  'moon-mission': 'chandrayaan',
   'preschool-wonder': 'preschool-wonder',
   preschool: 'preschool-wonder',
   toddler: 'preschool-wonder',
@@ -469,13 +489,20 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
     if (initialSegment && HASH_ALIASES[initialSegment]) return HASH_ALIASES[initialSegment];
     return readHash() || 'paramanu';
   });
+  const [viewMode, setViewMode] = useState<'mission-control' | 'workbench' | 'catalog'>(() => {
+    const h = readHash();
+    if (h || initialSegment) return 'workbench';
+    return 'mission-control';
+  });
+  const [explorerStats, setExplorerStats] = useState<ExplorerStats>(() => getExplorerStats());
+  const [isScienceSparkOpen, setIsScienceSparkOpen] = useState(false);
+  const [isParentNotesOpen, setIsParentNotesOpen] = useState(false);
   const [filterCat, setFilterCat] = useState<LabCategory>('all');
   const [filterLevel, setFilterLevel] = useState<LabLevel>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isQuestMode, setIsQuestMode] = useState(true);
   const [isQuestDirectoryOpen, setIsQuestDirectoryOpen] = useState(false);
   const [featuredIdx, setFeaturedIdx] = useState<number>(0);
-  const [catalogViewMode, setCatalogViewMode] = useState<'catalog' | 'workbench'>('catalog');
   const [isGradeAccordionOpen, setIsGradeAccordionOpen] = useState<boolean>(true);
   const [isFeaturesAccordionOpen, setIsFeaturesAccordionOpen] = useState<boolean>(true);
   const catalogSectionRef = useRef<HTMLDivElement>(null);
@@ -485,40 +512,49 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
   const FEATURED_SIMS = useMemo(
     () => [
       {
+        id: 'paramanu',
+        gradeBadge: 'AGES 9–14 · PHYSICS & CHEMISTRY',
+        title: '⚛️ Atom Builder: Make Matter!',
+        bannerArt: '⚛️ 🔬 ⚡ 🔥 🧪',
+        bannerGradient: 'linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%)',
+        desc: 'Forge matter from the smallest building blocks. Pair raw Paramāṇus into Dvyaṇukas, then join three Dvyaṇukas into a visible Tryaṇuka speck of reality.',
+        cta: 'Launch mission',
+      },
+      {
+        id: 'prakriti',
+        gradeBadge: 'AGES 6–10 · BIOLOGY & ECOLOGY',
+        title: '🌿 Nature Balance Game',
+        bannerArt: '🌿 🧬 💧 ☀️ 🌬️',
+        bannerGradient: 'linear-gradient(135deg, #064e3b 0%, #059669 100%)',
+        desc: 'Keep the ecosystem alive! Balance Vāta, Pitta and Kapha under changing seasons with real-time Nāḍī pulse waveform feedback.',
+        cta: 'Launch mission',
+      },
+      {
+        id: 'chandrayaan',
+        gradeBadge: 'AGES 8–14 · SPACE EXPLORATION',
+        title: '🛰️ Moon Mission Launcher',
+        bannerArt: '🛰️ 🌕 🚀 📡 🇮🇳',
+        bannerGradient: 'linear-gradient(135deg, #0f172a 0%, #0284c7 100%)',
+        desc: 'Simulate ISRO Chandrayaan-3 lunar lander trajectory. Calculate retro-rocket thrust, track Moon coordinates, and achieve soft touchdown on the Lunar South Pole.',
+        cta: 'Launch mission',
+      },
+      {
+        id: 'jyotisha',
+        gradeBadge: 'AGES 8–12 · ASTRONOMY & GRAVITY',
+        title: '🪐 Planet Pull: Gravity Playground',
+        bannerArt: '🪐 ☀️ 🌍 🌙 ⭐',
+        bannerGradient: 'linear-gradient(135deg, #31104b 0%, #7c3aed 100%)',
+        desc: 'Real-time orbital gravity simulator based on Āryabhaṭīya. Pilot satellites around Sūrya, Pṛthivī and Candra through the 27 sacred Nakṣatras.',
+        cta: 'Launch mission',
+      },
+      {
         id: 'preschool-wonder',
-        gradeBadge: 'GRADES PRE-K · AGES 2–6',
+        gradeBadge: 'AGES 2–6 · PRESCHOOL WONDER',
         title: '🧸 Preschool Wonder Playground',
         bannerArt: '🧸 🎨 🐮 🌙 🍎',
         bannerGradient: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
         desc: 'Gentle hands-on tactile discovery for little hands: Shapes, Rainbow Colors, Real Animal Sounds, Orchard Fruit Picker, Moon Phases, and the 5 Elements tale!',
-        cta: 'Try the activity',
-      },
-      {
-        id: 'paramanu',
-        gradeBadge: 'GRADES 6–8 · AGES 11–14',
-        title: '⚛️ Paramāṇu Atomic Builder',
-        bannerArt: '⚛️ 🔬 ⚡ 🔥 🧪',
-        bannerGradient: 'linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%)',
-        desc: 'Forge matter from the smallest building blocks. Pair raw Paramāṇus into Dvyaṇukas, then join three Dvyaṇukas into a visible Tryaṇuka speck of reality.',
-        cta: 'Explore simulation',
-      },
-      {
-        id: 'chandrayaan',
-        gradeBadge: 'GRADES 3–6 · AGES 8–12',
-        title: '🛰️ Somayāna Mission-03 (ISRO Moon)',
-        bannerArt: '🛰️ 🌕 🚀 📡 🇮🇳',
-        bannerGradient: 'linear-gradient(135deg, #0f172a 0%, #0284c7 100%)',
-        desc: 'Simulate ISRO Chandrayaan-3 lunar lander trajectory. Calculate retro-rocket thrust, track Moon coordinates, and achieve soft touchdown on the Lunar South Pole.',
-        cta: 'Try the activity',
-      },
-      {
-        id: 'prakriti',
-        gradeBadge: 'GRADES 6–8 · AGES 11–14',
-        title: '🌿 Prakṛti Biosphere & Tridoṣa',
-        bannerArt: '🌿 🧬 💧 ☀️ 🌬️',
-        bannerGradient: 'linear-gradient(135deg, #064e3b 0%, #059669 100%)',
-        desc: 'Elemental survival ecosystem sandbox. Balance Vāta, Pitta and Kapha under changing seasons with real-time Nāḍī pulse waveform feedback.',
-        cta: 'Explore simulation',
+        cta: 'Launch playground',
       },
       {
         id: 'agnibana',
@@ -527,28 +563,48 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         bannerArt: '🚀 🔥 💨 🎯 💥',
         bannerGradient: 'linear-gradient(135deg, #7c2d12 0%, #ea580c 100%)',
         desc: 'Calculate multi-stage propellant mass ratio, Isp specific impulse, and atmospheric drag to launch an ancient Agni rocket into low-earth orbit.',
-        cta: 'Try the activity',
-      },
-      {
-        id: 'jyotisha',
-        gradeBadge: 'GRADES 3–6 · AGES 8–12',
-        title: '🪐 Jyotiṣa Gravity & Planetary Orbit',
-        bannerArt: '🪐 ☀️ 🌍 🌙 ⭐',
-        bannerGradient: 'linear-gradient(135deg, #31104b 0%, #7c3aed 100%)',
-        desc: 'Real-time orbital gravity simulator based on Āryabhaṭīya. Pilot satellites around Sūrya, Pṛthivī and Candra through the 27 sacred Nakṣatras.',
-        cta: 'Explore simulation',
+        cta: 'Launch studio',
       },
     ],
     []
   );
 
+  const activeMissionCard = useMemo(() => getMissionCardById(active), [active]);
+
   const handleLaunchSim = (targetId: LabSegmentId) => {
     setActive(targetId);
-    setCatalogViewMode('workbench');
+    setViewMode('workbench');
     soundEffects.playCelebrationChime();
     window.requestAnimationFrame(() => {
       simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  };
+
+  const handleCompleteActiveMission = () => {
+    if (!activeMissionCard) return;
+    soundEffects.playCelebrationChime();
+    setExplorerStats((prev) => {
+      const nextStarsByGame = { ...prev.starsByGame, [active]: 3 };
+      const currentKeys = Object.keys(nextStarsByGame);
+      const totalStars = currentKeys.reduce((acc, k) => acc + (nextStarsByGame[k] || 0), 0);
+      const unlockedBadges = prev.unlockedBadges.includes(activeMissionCard.badgeId)
+        ? prev.unlockedBadges
+        : [...prev.unlockedBadges, activeMissionCard.badgeId];
+      const completedMissions = prev.completedMissions.includes(active)
+        ? prev.completedMissions
+        : [...prev.completedMissions, active];
+
+      const updated: ExplorerStats = {
+        ...prev,
+        totalStars,
+        starsByGame: nextStarsByGame,
+        unlockedBadges,
+        completedMissions,
+      };
+      saveExplorerStats(updated);
+      return updated;
+    });
+    setIsScienceSparkOpen(true);
   };
 
   const visibleSegments = useMemo<LabSegmentConfig[]>(() => {
@@ -632,72 +688,119 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
 
   return (
     <div className="vl-page">
-      <header className="vl-hero">
-        <div className="vl-hero-glow" aria-hidden="true" />
-        <div className="vl-hero-text">
-          <h1 className="vl-title">
-            VIJÑĀNA PLAY LAB <span className="vl-title-badge">PROYOG</span> · <span lang="sa" className="vl-title-dev">विज्ञान-प्रयोगशाला</span>
-          </h1>
-          <p className="vl-lead">
-            Boot up the ultimate reality &amp; science play lab. Explore ancient atomic physics, orbital planetary gravity, cymatic sand harmonics, and aerospace metallurgy through 16 interactive sandboxes from preschool wonder to scholar research. Decode Sanskrit sūtras and conquer each scientific challenge.
-          </p>
-          <div className="vl-hud-telemetry">
-            <span className="vl-hud-pill"><span>🧸</span> PRESCHOOL (3–7)</span>
-            <span className="vl-hud-pill"><span>🎒</span> PRIMARY (8–12)</span>
-            <span className="vl-hud-pill"><span>🔬</span> MIDDLE (11–15)</span>
-            <span className="vl-hud-pill"><span>🚀</span> HIGH &amp; ADVANCED</span>
-            <span className="vl-hud-pill"><span>🧠</span> BODHI AI GUIDE</span>
-          </div>
-          <div className="vl-btn-row">
-            <button
-              type="button"
-              className={`vl-btn ${isQuestMode ? 'vl-btn--gold' : 'vl-btn--cyber'}`}
-              onClick={() => setIsQuestMode((prev) => !prev)}
-              title="Toggle between 3-Minute Guided Quests and Open Sandbox Mode"
-            >
-              {isQuestMode ? '🎯 GUIDED QUEST MODE: ON' : '🕹️ FREE SANDBOX MODE'}
-            </button>
-            <button
-              type="button"
-              className="vl-btn vl-btn--cyber-ghost"
-              onClick={() => setIsQuestDirectoryOpen(true)}
-              title="Browse all 3-minute gamified quests across reality sandboxes"
-            >
-              🧭 QUEST DIRECTORY
-            </button>
-            {onGoHome && <button type="button" className="vl-btn vl-btn--cyber" onClick={onGoHome}>◀ MAIN HUB</button>}
-            {onOpenResources && <button type="button" className="vl-btn vl-btn--cyber-ghost" onClick={onOpenResources}>साधनानि · TOOLKIT ⚙️</button>}
-          </div>
-        </div>
-        <div className="vl-hero-art" aria-hidden="true">
-          <svg viewBox="0 0 220 160">
-            <defs>
-              <radialGradient id="cyberSun" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#38bdf8" stopOpacity="1" />
-                <stop offset="50%" stopColor="#0284c7" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#082f49" stopOpacity="0" />
-              </radialGradient>
-              <linearGradient id="neonBeam" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#22d3ee" />
-                <stop offset="50%" stopColor="#818cf8" />
-                <stop offset="100%" stopColor="#f43f5e" />
-              </linearGradient>
-            </defs>
-            {/* Holographic Radar Grids */}
-            <circle cx="110" cy="80" r="70" fill="none" stroke="rgba(56, 189, 248, 0.2)" strokeWidth="1" strokeDasharray="4 4" />
-            <circle cx="110" cy="80" r="45" fill="none" stroke="rgba(99, 102, 241, 0.3)" strokeWidth="1" />
-            <circle cx="110" cy="80" r="22" fill="url(#cyberSun)" />
-            {/* Crosshair Lines */}
-            <line x1="110" y1="5" x2="110" y2="155" stroke="rgba(56, 189, 248, 0.25)" strokeWidth="1" strokeDasharray="2 4" />
-            <line x1="15" y1="80" x2="205" y2="80" stroke="rgba(56, 189, 248, 0.25)" strokeWidth="1" strokeDasharray="2 4" />
-            {/* Orbiting Satellite Particle */}
-            <ellipse cx="110" cy="80" rx="80" ry="32" fill="none" stroke="url(#neonBeam)" strokeWidth="1.5" strokeDasharray="8 6" transform="rotate(-18 110 80)" />
-            <circle cx="180" cy="68" r="5" fill="#38bdf8" />
-            {/* Sine wave frequency trace */}
-            <path d="M 20 135 Q 45 110 70 135 T 120 135 T 170 135 T 205 135" fill="none" stroke="#2dd4bf" strokeWidth="2" opacity="0.85" />
-          </svg>
-        </div>
-      </header>
+      {/* Primary Vijñāna Lab View Mode Switcher */}
+      <div className="psw-view-toggle-btns" role="tablist" style={{ justifyContent: 'center', margin: '1rem auto 1.5rem', maxWidth: 840, padding: '0 1rem' }}>
+        <button
+          type="button"
+          className={`psw-view-mode-pill ${viewMode === 'mission-control' ? 'is-active' : ''}`}
+          onClick={() => {
+            setViewMode('mission-control');
+            soundEffects.playStrokeChime();
+          }}
+        >
+          <span>🚀</span> Mission Control (8 Games)
+        </button>
+        <button
+          type="button"
+          className={`psw-view-mode-pill ${viewMode === 'workbench' ? 'is-active' : ''}`}
+          onClick={() => {
+            setViewMode('workbench');
+            soundEffects.playStrokeChime();
+            simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
+        >
+          <span>🕹️</span> Workbench: {seg.code}
+        </button>
+        <button
+          type="button"
+          className={`psw-view-mode-pill ${viewMode === 'catalog' ? 'is-active' : ''}`}
+          onClick={() => {
+            setViewMode('catalog');
+            soundEffects.playStrokeChime();
+            catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
+        >
+          <span>🎴</span> Academic Catalog (17 Sims)
+        </button>
+      </div>
+
+      {viewMode === 'mission-control' && (
+        <MissionControlDashboard
+          explorerStats={explorerStats}
+          onLaunchMission={(id) => handleLaunchSim(id as LabSegmentId)}
+          onOpenPreschool={() => handleLaunchSim('preschool-wonder')}
+          onOpenAdvancedLabs={() => handleLaunchSim('agnibana')}
+          onViewCatalog={() => {
+            setViewMode('catalog');
+            soundEffects.playStrokeChime();
+          }}
+        />
+      )}
+
+      {viewMode === 'catalog' && (
+        <>
+          <header className="vl-hero">
+            <div className="vl-hero-glow" aria-hidden="true" />
+            <div className="vl-hero-text">
+              <h1 className="vl-title">
+                VIJÑĀNA PLAY LAB <span className="vl-title-badge">PROYOG</span> · <span lang="sa" className="vl-title-dev">विज्ञान-प्रयोगशाला</span>
+              </h1>
+              <p className="vl-lead">
+                Boot up the ultimate reality &amp; science play lab. Explore ancient atomic physics, orbital planetary gravity, cymatic sand harmonics, and aerospace metallurgy through 16 interactive sandboxes from preschool wonder to scholar research. Decode Sanskrit sūtras and conquer each scientific challenge.
+              </p>
+              <div className="vl-hud-telemetry">
+                <span className="vl-hud-pill"><span>🧸</span> PRESCHOOL (3–7)</span>
+                <span className="vl-hud-pill"><span>🎒</span> PRIMARY (8–12)</span>
+                <span className="vl-hud-pill"><span>🔬</span> MIDDLE (11–15)</span>
+                <span className="vl-hud-pill"><span>🚀</span> HIGH &amp; ADVANCED</span>
+                <span className="vl-hud-pill"><span>🧠</span> BODHI AI GUIDE</span>
+              </div>
+              <div className="vl-btn-row">
+                <button
+                  type="button"
+                  className={`vl-btn ${isQuestMode ? 'vl-btn--gold' : 'vl-btn--cyber'}`}
+                  onClick={() => setIsQuestMode((prev) => !prev)}
+                  title="Toggle between 3-Minute Guided Quests and Open Sandbox Mode"
+                >
+                  {isQuestMode ? '🎯 GUIDED QUEST MODE: ON' : '🕹️ FREE SANDBOX MODE'}
+                </button>
+                <button
+                  type="button"
+                  className="vl-btn vl-btn--cyber-ghost"
+                  onClick={() => setIsQuestDirectoryOpen(true)}
+                  title="Browse all 3-minute gamified quests across reality sandboxes"
+                >
+                  🧭 QUEST DIRECTORY
+                </button>
+                {onGoHome && <button type="button" className="vl-btn vl-btn--cyber" onClick={onGoHome}>◀ MAIN HUB</button>}
+                {onOpenResources && <button type="button" className="vl-btn vl-btn--cyber-ghost" onClick={onOpenResources}>साधनानि · TOOLKIT ⚙️</button>}
+              </div>
+            </div>
+            <div className="vl-hero-art" aria-hidden="true">
+              <svg viewBox="0 0 220 160">
+                <defs>
+                  <radialGradient id="cyberSun" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#38bdf8" stopOpacity="1" />
+                    <stop offset="50%" stopColor="#0284c7" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#082f49" stopOpacity="0" />
+                  </radialGradient>
+                  <linearGradient id="neonBeam" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#22d3ee" />
+                    <stop offset="50%" stopColor="#818cf8" />
+                    <stop offset="100%" stopColor="#f43f5e" />
+                  </linearGradient>
+                </defs>
+                <circle cx="110" cy="80" r="70" fill="none" stroke="rgba(56, 189, 248, 0.2)" strokeWidth="1" strokeDasharray="4 4" />
+                <circle cx="110" cy="80" r="45" fill="none" stroke="rgba(99, 102, 241, 0.3)" strokeWidth="1" />
+                <circle cx="110" cy="80" r="22" fill="url(#cyberSun)" />
+                <line x1="110" y1="5" x2="110" y2="155" stroke="rgba(56, 189, 248, 0.25)" strokeWidth="1" strokeDasharray="2 4" />
+                <line x1="15" y1="80" x2="205" y2="80" stroke="rgba(56, 189, 248, 0.25)" strokeWidth="1" strokeDasharray="2 4" />
+                <ellipse cx="110" cy="80" rx="80" ry="32" fill="none" stroke="url(#neonBeam)" strokeWidth="1.5" strokeDasharray="8 6" transform="rotate(-18 110 80)" />
+                <circle cx="180" cy="68" r="5" fill="#38bdf8" />
+                <path d="M 20 135 Q 45 110 70 135 T 120 135 T 170 135 T 205 135" fill="none" stroke="#2dd4bf" strokeWidth="2" opacity="0.85" />
+              </svg>
+            </div>
+          </header>
 
       {/* ================================================================
           1. PhET IMPACT METRIC BANNER (REFERENCE IMAGE 2)
@@ -721,7 +824,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           onClick={() => {
             setFilterLevel("preschool");
             setFilterCat("all");
-            setCatalogViewMode("catalog");
+            setViewMode("catalog");
             soundEffects.playStrokeChime();
           }}
         >
@@ -737,7 +840,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           onClick={() => {
             setFilterCat("matter");
             setFilterLevel("all");
-            setCatalogViewMode("catalog");
+            setViewMode("catalog");
             soundEffects.playStrokeChime();
           }}
         >
@@ -753,7 +856,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           onClick={() => {
             setFilterCat("cosmos");
             setFilterLevel("all");
-            setCatalogViewMode("catalog");
+            setViewMode("catalog");
             soundEffects.playStrokeChime();
           }}
         >
@@ -769,7 +872,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           onClick={() => {
             setFilterCat("life");
             setFilterLevel("all");
-            setCatalogViewMode("catalog");
+            setViewMode("catalog");
             soundEffects.playStrokeChime();
           }}
         >
@@ -785,7 +888,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           onClick={() => {
             setFilterCat("waves");
             setFilterLevel("all");
-            setCatalogViewMode("catalog");
+            setViewMode("catalog");
             soundEffects.playStrokeChime();
           }}
         >
@@ -801,7 +904,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           onClick={() => {
             setFilterCat("all");
             setFilterLevel("all");
-            setCatalogViewMode("catalog");
+            setViewMode("catalog");
             soundEffects.playStrokeChime();
           }}
         >
@@ -827,7 +930,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             type="button"
             className="vl-code-browse-btn"
             onClick={() => {
-              setCatalogViewMode("catalog");
+              setViewMode("catalog");
               catalogSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
             }}
           >
@@ -919,9 +1022,19 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           <div className="psw-view-toggle-btns" role="tablist" style={{ margin: '0 0.5rem' }}>
             <button
               type="button"
-              className={`psw-view-mode-pill ${catalogViewMode === 'catalog' ? 'is-active' : ''}`}
+              className="psw-view-mode-pill"
               onClick={() => {
-                setCatalogViewMode('catalog');
+                setViewMode('mission-control');
+                soundEffects.playStrokeChime();
+              }}
+            >
+              <span>🚀</span> Mission Control
+            </button>
+            <button
+              type="button"
+              className="psw-view-mode-pill is-active"
+              onClick={() => {
+                soundEffects.playStrokeChime();
                 catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
             >
@@ -929,9 +1042,10 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             </button>
             <button
               type="button"
-              className={`psw-view-mode-pill ${catalogViewMode === 'workbench' ? 'is-active' : ''}`}
+              className="psw-view-mode-pill"
               onClick={() => {
-                setCatalogViewMode('workbench');
+                setViewMode('workbench');
+                soundEffects.playStrokeChime();
                 simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
             >
@@ -1161,25 +1275,60 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           </div>
         </div>
       </div>
+      </>
+      )}
 
-      <section id={active} ref={simRef} className="vl-segment" aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
+      {viewMode === 'workbench' && (
+        <>
+        <section id={active} ref={simRef} className="vl-segment" aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
         {/* In-Workbench Return Navigation Bar */}
         <div className="vl-workbench-phet-nav">
           <button
             type="button"
             className="vl-wpn-back-btn"
+            style={{ background: '#f59e0b', color: '#1e1b4b' }}
             onClick={() => {
-              setCatalogViewMode('catalog');
+              setViewMode('mission-control');
+              soundEffects.playStrokeChime();
+            }}
+          >
+            🚀 Mission Control (8 Games)
+          </button>
+          <button
+            type="button"
+            className="vl-wpn-back-btn"
+            onClick={() => {
+              setViewMode('catalog');
               soundEffects.playStrokeChime();
               catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }}
           >
-            ⬅️ Back to All 17 Simulations (Catalog Grid)
+            🎴 All 17 Simulations
           </button>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 900, color: '#0f172a' }}>
             <span>{seg.icon}</span>
             <span>Active Sandbox: <strong>{seg.code} · {seg.title} ({seg.dev})</strong></span>
           </div>
+          {activeMissionCard && (
+            <button
+              type="button"
+              className="vl-btn vl-btn--gold"
+              style={{ padding: '0.45rem 1rem', fontSize: '0.82rem', fontWeight: 800 }}
+              onClick={handleCompleteActiveMission}
+            >
+              🎉 Spark Science (+3 ⭐)
+            </button>
+          )}
+          {activeMissionCard && (
+            <button
+              type="button"
+              className="vl-btn vl-btn--cyber-ghost"
+              style={{ padding: '0.45rem 0.85rem', fontSize: '0.82rem' }}
+              onClick={() => setIsParentNotesOpen(true)}
+            >
+              📘 Parent Notes
+            </button>
+          )}
           <button
             type="button"
             className="vl-btn vl-btn--cyber-ghost"
@@ -1438,6 +1587,19 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         <Suspense fallback={<div className="vl-loading">Loading Bodhi Vijñāna Console…</div>}>
           <LabBodhiConsole activeSegment={active} />
         </Suspense>
+
+        {/* Floating Mission Complete Button */}
+        {activeMissionCard && (
+          <button
+            type="button"
+            className="vl-wb-mission-complete-dock"
+            onClick={handleCompleteActiveMission}
+            title="Complete 3-Minute Mission & Unlock Vidyā Stars"
+          >
+            <span>🎉</span>
+            <span>Complete Mission &amp; Spark Science (+3 ⭐)</span>
+          </button>
+        )}
       </section>
 
       {/* ================================================================
@@ -1713,7 +1875,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           <span className="vl-dock-arrow" aria-hidden="true">➔</span>
         </button>
       </aside>
-
+      </>
+      )}
 
       <p className="vl-footnote">
         Content note: the lab uses “traditionally”, “attributed to” and “preserved in” on purpose. Old texts and modern science
@@ -1727,9 +1890,38 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         onSelectQuest={(targetLabId) => {
           handleNavigateLab(targetLabId as LabSegmentId);
           setIsQuestMode(true);
+          setViewMode('workbench');
         }}
         activeLabId={active}
       />
+
+      {/* Post-Mission Celebration & Science Spark Modal */}
+      {activeMissionCard && (
+        <ScienceSparkModal
+          mission={activeMissionCard}
+          isOpen={isScienceSparkOpen}
+          onClose={() => setIsScienceSparkOpen(false)}
+          onNextMission={() => {
+            handleNavigateLab(nextSeg.id);
+            setViewMode('workbench');
+          }}
+          onPlayAgain={() => {
+            setIsScienceSparkOpen(false);
+          }}
+          onReturnToDashboard={() => {
+            setViewMode('mission-control');
+          }}
+        />
+      )}
+
+      {/* Parent & Teacher Notes Modal */}
+      {activeMissionCard && (
+        <ParentNotesModal
+          mission={activeMissionCard}
+          isOpen={isParentNotesOpen}
+          onClose={() => setIsParentNotesOpen(false)}
+        />
+      )}
     </div>
   );
 };

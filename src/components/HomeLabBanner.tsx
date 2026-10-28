@@ -1,27 +1,129 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/home-lab-banner.css';
+import { soundEffects } from '../utils/soundEffects';
 
 interface LabModule {
   id: string;
   icon: string;
   title: string;
+  subtitle: string;
   dev: string;
   subject: string;
+  age: string;
 }
 
-/** Same ids, icons and names as the lab landing cards (src/components/scienceLab/ScienceLab.tsx). */
 const MODULES: LabModule[] = [
-  { id: 'paramanu', icon: '⚛️', title: 'Paramāṇu Builder', dev: 'परमाणु-निर्माणम्', subject: 'Physics & Chemistry' },
-  { id: 'prakriti', icon: '🌿', title: 'Prakṛti Biosphere', dev: 'प्रकृति-सन्तुलनम्', subject: 'Biology & Ecology' },
-  { id: 'jyotisha', icon: '🪐', title: 'Jyotiṣa Gravity Sandbox', dev: 'ज्योतिष-कक्षा', subject: 'Astronomy' },
-  { id: 'srishti-sthiti-laya', icon: '🧵', title: 'The Loom of Āruṇi', dev: 'सृष्टि-स्थिति-लय', subject: 'Waves & Order' },
-  { id: 'nada-brahman', icon: '🪕', title: 'Cosmic Sitār Tuning', dev: 'नाद-ब्रह्म', subject: 'Sound & Music' },
-  { id: 'asato-ma', icon: '🕯️', title: 'The Veil of Māyā', dev: 'असतो मा सद्गमय', subject: 'Matter & Heat' },
-  { id: 'chaturyoni', icon: '🦢', title: 'Chaturyoni Spawn Map', dev: 'चतुर्योनि-मानचित्रम्', subject: 'Life Science' },
-  { id: 'chandrayaan', icon: '🛰️', title: 'Somayāna Mission-03', dev: 'सोमयानम्', subject: 'Spaceflight' },
+  {
+    id: 'paramanu',
+    icon: '⚛️',
+    title: 'Atom Builder: Make Matter!',
+    subtitle: 'Build molecules from single atoms',
+    dev: 'परमाणु-निर्माणम्',
+    subject: 'Physics & Chemistry',
+    age: 'Ages 9–14'
+  },
+  {
+    id: 'prakriti',
+    icon: '🌿',
+    title: 'Nature Balance Game',
+    subtitle: 'Balance Vāta, Pitta & Kapha',
+    dev: 'प्रकृति-जैवमण्डलम्',
+    subject: 'Biology & Ecology',
+    age: 'Ages 6–10'
+  },
+  {
+    id: 'chandrayaan',
+    icon: '🛰️',
+    title: 'Moon Mission Launcher',
+    subtitle: 'ISRO Chandrayaan soft-landing',
+    dev: 'चन्द्रयान-प्रक्षेपः',
+    subject: 'Spaceflight',
+    age: 'Ages 8–14'
+  },
+  {
+    id: 'jyotisha',
+    icon: '🪐',
+    title: 'Planet Pull: Gravity Playground',
+    subtitle: 'Orbital velocity & solar gravity',
+    dev: 'गुरुत्व-कक्षा-क्रीडा',
+    subject: 'Astronomy',
+    age: 'Ages 8–12'
+  },
+  {
+    id: 'nada-brahman',
+    icon: '🪕',
+    title: 'Sound Detective',
+    subtitle: 'Chladni sand wave mandalas',
+    dev: 'नाद-विहारः',
+    subject: 'Sound & Waves',
+    age: 'Ages 6–11'
+  },
+  {
+    id: 'asato-ma',
+    icon: '🕯️',
+    title: 'Heat & Matter Mystery',
+    subtitle: 'Mass invariance in crucible',
+    dev: 'पदार्थ-अवस्थाः',
+    subject: 'Heat & States of Matter',
+    age: 'Ages 7–11'
+  },
+  {
+    id: 'chaturyoni',
+    icon: '🦢',
+    title: 'Life Explorer Map',
+    subtitle: '4 life kingdoms & plant nerves',
+    dev: 'चतुर्योनि-प्राणिनः',
+    subject: 'Life Sciences',
+    age: 'Ages 6–10'
+  },
+  {
+    id: 'srishti-sthiti-laya',
+    icon: '🧵',
+    title: 'Pattern Weaver',
+    subtitle: 'Energy conservation quantum field',
+    dev: 'आरुणि-सृष्टि-तन्त्रम्',
+    subject: 'Conservation of Energy',
+    age: 'Ages 9–14'
+  },
 ];
 
-const ROTATE_MS = 4200;
+const FEATURED_THREE = [
+  {
+    id: 'paramanu',
+    icon: '⚛️',
+    title: 'Atom Builder: Make Matter!',
+    subtitle: 'परमाणु-निर्माणम् · Vaiśeṣika',
+    desc: 'Fuse single Paramāṇu atoms into dyads and visible triads to forge the elements of the cosmos!',
+    badge: 'Atom Architect ⚛️',
+    age: 'Ages 9–14',
+    tint: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
+    border: '#f59e0b',
+  },
+  {
+    id: 'prakriti',
+    icon: '🌿',
+    title: 'Nature Balance Game',
+    subtitle: 'प्रकृति-जैवमण्डलम् · Tridoṣa',
+    desc: 'Keep the ecosystem alive! Balance Vāta, Pitta, and Kapha under changing summer and winter seasons.',
+    badge: 'Nature Guardian 🌿',
+    age: 'Ages 6–10',
+    tint: 'linear-gradient(135deg, #064e3b 0%, #065f46 100%)',
+    border: '#10b981',
+  },
+  {
+    id: 'chandrayaan',
+    icon: '🛰️',
+    title: 'Moon Mission Launcher',
+    subtitle: 'चन्द्रयान-प्रक्षेपः · Somayāna',
+    desc: 'Pilot India’s lunar lander, fire retro-rockets in space, and soft-land on the Lunar South Pole!',
+    badge: 'Space Captain 🛰️',
+    age: 'Ages 8–14',
+    tint: 'linear-gradient(135deg, #0f172a 0%, #0369a1 100%)',
+    border: '#38bdf8',
+  },
+];
+
+const ROTATE_MS = 4500;
 
 /** Small animated SVG preview for each module (animations live in CSS and stop under reduced motion). */
 const Preview: React.FC<{ id: string }> = ({ id }) => {
@@ -175,8 +277,9 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
 
   const go = (i: number) => setIdx((i + MODULES.length) % MODULES.length);
   const open = (e: React.MouseEvent, id?: string) => {
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return; // let the browser open a new tab
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
     e.preventDefault();
+    soundEffects.playCelebrationChime();
     onOpen(id);
   };
 
@@ -189,26 +292,88 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
       </div>
 
       <div className="hlb-text">
-        <span className="hlb-badge">New · Free for everyone</span>
+        <div className="hlb-badge-row">
+          <span className="hlb-badge">🚀 VIJÑĀNA MISSION CONTROL</span>
+          <span className="hlb-badge-free">100% Free · Play First, Learn Second</span>
+        </div>
+
         <h3 id="hlb-title" className="hlb-title">
-          <span className="hlb-title-en">Vijñāna Lab</span>
+          <span className="hlb-title-en">Enter Vijñāna Mission Control</span>
           <span className="hlb-title-sa" lang="sa">विज्ञान-प्रयोगशाला</span>
         </h3>
-        <p className="hlb-tagline">Boot up the ultimate reality simulator: physics, chemistry and biology through ancient lenses.</p>
-        <ul className="hlb-pills" aria-label="Lab modules">
-          {MODULES.map((m) => (
-            <li key={m.id}>
-              <a href={`/vignana-lab#${m.id}`} className="hlb-pill" onClick={(e) => open(e, m.id)} data-testid={`hlb-pill-${m.id}`}>
-                <span aria-hidden="true">{m.icon}</span> {m.title}
-              </a>
-            </li>
+
+        <p className="hlb-tagline">
+          <strong>Play 8 science games · Earn badges · Learn Sanskrit science words.</strong> Turn abstract physics, chemistry, biology, and spaceflight into 3-minute tactile puzzles guided by Bodhi!
+        </p>
+
+        {/* Badges Preview Banner */}
+        <div className="hlb-badges-preview-bar">
+          <span className="hlb-bpb-label">🏆 COLLECTIBLE BADGES:</span>
+          <div className="hlb-bpb-icons">
+            <span title="Atom Architect (Paramāṇu)">⚛️ Atom Architect</span>
+            <span title="Nature Guardian (Prakṛti)">🌿 Nature Guardian</span>
+            <span title="Orbit Master (Jyotiṣa)">🪐 Orbit Master</span>
+            <span title="Space Captain (Chandrayaan)">🛰️ Space Captain</span>
+          </div>
+        </div>
+
+        {/* 3 Featured Games One-Tap Preview Row */}
+        <div className="hlb-featured-grid" aria-label="Featured Science Games">
+          {FEATURED_THREE.map((fg) => (
+            <div
+              key={fg.id}
+              className="hlb-featured-card"
+              style={{ background: fg.tint, borderColor: fg.border }}
+              onClick={(e) => open(e, fg.id)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') onOpen(fg.id);
+              }}
+            >
+              <div className="hlb-fc-top">
+                <span className="hlb-fc-icon">{fg.icon}</span>
+                <span className="hlb-fc-age">{fg.age}</span>
+              </div>
+              <h4 className="hlb-fc-title">{fg.title}</h4>
+              <div className="hlb-fc-sa" lang="sa">{fg.subtitle}</div>
+              <p className="hlb-fc-desc">{fg.desc}</p>
+              <button
+                type="button"
+                className="hlb-fc-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  open(e, fg.id);
+                }}
+              >
+                Play ➔
+              </button>
+            </div>
           ))}
-        </ul>
-        <a href="/vignana-lab" className="hlb-cta" onClick={(e) => open(e)} data-testid="hlb-cta">
-          Open the Lab <span className="hlb-cta-arrow" aria-hidden="true">→</span>
-        </a>
+        </div>
+
+        <div className="hlb-action-row">
+          <a
+            href="/vignana-lab"
+            className="hlb-cta"
+            onClick={(e) => open(e)}
+            data-testid="hlb-cta"
+          >
+            <span>🚀 Enter Vijñāna Mission Control (8 Games)</span>
+            <span className="hlb-cta-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a
+            href="/vignana-lab#preschool-wonder"
+            className="hlb-cta-secondary"
+            onClick={(e) => open(e, 'preschool-wonder')}
+          >
+            🧸 Toddlers &amp; Preschool (Ages 2–6)
+          </a>
+        </div>
       </div>
 
+      {/* Interactive Carousel Preview */}
       <div
         ref={rootRef}
         className="hlb-carousel"
@@ -248,12 +413,12 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
             >
               <span className="hlb-slide-stage">{i === idx && <Preview id={m.id} />}</span>
               <span className="hlb-slide-meta">
-                <span className="hlb-slide-subject">{m.subject}</span>
+                <span className="hlb-slide-subject">{m.subject} · {m.age}</span>
                 <span className="hlb-slide-title">
                   <span aria-hidden="true">{m.icon}</span> {m.title}
                 </span>
                 <span className="hlb-slide-dev" lang="sa">{m.dev}</span>
-                <span className="hlb-slide-go">Tap to open →</span>
+                <span className="hlb-slide-go">▶ Launch Mission →</span>
               </span>
             </a>
           ))}

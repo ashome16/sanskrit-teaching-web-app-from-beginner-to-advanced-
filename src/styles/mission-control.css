@@ -1,0 +1,1580 @@
+/* ==========================================================================
+   VIJÑĀNA MISSION CONTROL DASHBOARD & REWARDS
+   Space-station cockpit design, glowing mission cards, badges, and Science Spark
+   ========================================================================== */
+
+.vl-mission-control-root {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  color: #f8fafc;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   1. Space-Station Cockpit Hero Header
+   -------------------------------------------------------------------------- */
+.vl-mc-hero {
+  position: relative;
+  background: radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.15), transparent 45%),
+              radial-gradient(circle at 85% 80%, rgba(168, 85, 247, 0.18), transparent 50%),
+              linear-gradient(135deg, #0b0f19 0%, #0f172a 45%, #1e1b4b 100%);
+  border: 1.5px solid rgba(125, 211, 252, 0.28);
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.vl-mc-hero-glow {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.vl-mc-hero-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.vl-mc-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  align-self: flex-start;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #7dd3fc;
+}
+
+.vl-mc-system-ok {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.vl-mc-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   2. Bodhi Mission Controller Bubble
+   -------------------------------------------------------------------------- */
+.vl-mc-bodhi-guide {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  border-radius: 16px;
+  padding: 1.1rem 1.4rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.vl-mc-bodhi-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.vl-mc-bodhi-avatar {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: radial-gradient(circle, #fde047 0%, #b45309 100%);
+  border: 2px solid #fef08a;
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.45);
+}
+
+.vl-mc-bodhi-status-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background: #22c55e;
+  border: 2px solid #0f172a;
+  border-radius: 50%;
+  animation: vl-pulse-green 2s infinite;
+}
+
+@keyframes vl-pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+  50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+}
+
+.vl-mc-bodhi-bubble {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.vl-mc-bodhi-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.vl-mc-bodhi-name {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #fde047;
+}
+
+.vl-mc-bodhi-audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vl-mc-bodhi-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.15);
+  color: #fef08a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vl-mc-bodhi-audio-btn:hover {
+  background: rgba(245, 158, 11, 0.3);
+  transform: translateY(-1px);
+}
+
+.vl-mc-bodhi-audio-btn.is-speaking {
+  background: #f59e0b;
+  color: #1e1b4b;
+}
+
+.vl-mc-bodhi-speed-btn {
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.vl-mc-bodhi-speed-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.vl-mc-bodhi-text {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8fafc;
+  line-height: 1.45;
+}
+
+.vl-mc-bodhi-sa {
+  font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', serif;
+  font-size: 0.95rem;
+  color: #fed7aa;
+  font-weight: 500;
+}
+
+/* Soundwave Animation */
+.vl-mc-soundwave {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 14px;
+}
+
+.vl-mc-soundwave span {
+  width: 2.5px;
+  height: 100%;
+  background: currentColor;
+  border-radius: 2px;
+  animation: vl-soundwave-bar 0.8s ease-in-out infinite alternate;
+}
+
+.vl-mc-soundwave span:nth-child(2) { animation-delay: 0.2s; }
+.vl-mc-soundwave span:nth-child(3) { animation-delay: 0.4s; }
+.vl-mc-soundwave span:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes vl-soundwave-bar {
+  0% { transform: scaleY(0.2); }
+  100% { transform: scaleY(1); }
+}
+
+/* --------------------------------------------------------------------------
+   3. Telemetry & Progress Strip
+   -------------------------------------------------------------------------- */
+.vl-mc-telemetry-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.vl-mc-telemetry-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: left;
+}
+
+button.vl-mc-telemetry-stat--badges {
+  cursor: pointer;
+  border-color: rgba(245, 158, 11, 0.35);
+  background: rgba(30, 27, 75, 0.65);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+button.vl-mc-telemetry-stat--badges:hover {
+  transform: translateY(-2px);
+  border-color: #f59e0b;
+}
+
+.vl-mc-stat-icon {
+  font-size: 1.8rem;
+}
+
+.vl-mc-stat-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  margin-bottom: 0.15rem;
+}
+
+.vl-mc-stat-value {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.vl-mc-stat-sa {
+  display: block;
+  font-size: 0.76rem;
+  font-family: 'Noto Sans Devanagari', serif;
+  color: #fde047;
+}
+
+.vl-mc-progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 0.35rem;
+}
+
+.vl-mc-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #eab308, #22c55e);
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+.vl-mc-view-badges-cta {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fde047;
+  margin-top: 0.15rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Badges Showcase Drawer
+   -------------------------------------------------------------------------- */
+.vl-mc-badges-tray {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  animation: vl-fade-in 0.25s ease;
+}
+
+@keyframes vl-fade-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.vl-mc-badges-tray-header {
+  margin-bottom: 1rem;
+}
+
+.vl-mc-badges-tray-header h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #fef08a;
+}
+
+.vl-mc-badges-tray-sub {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+}
+
+.vl-mc-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+}
+
+.vl-mc-badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.85rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(30, 41, 59, 0.6);
+  transition: all 0.2s ease;
+}
+
+.vl-mc-badge-item.is-unlocked {
+  border-color: var(--badge-glow, #f59e0b);
+  background: radial-gradient(circle at center, rgba(245, 158, 11, 0.15), rgba(15, 23, 42, 0.8));
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.vl-mc-badge-item.is-locked {
+  opacity: 0.6;
+}
+
+.vl-mc-badge-icon-box {
+  position: relative;
+  font-size: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+.vl-mc-badge-lock {
+  position: absolute;
+  bottom: -2px;
+  right: -6px;
+  font-size: 0.95rem;
+}
+
+.vl-mc-badge-name-text {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.2;
+}
+
+.vl-mc-badge-sanskrit-text {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: 0.75rem;
+  color: #fde047;
+  margin-top: 0.15rem;
+}
+
+.vl-mc-badge-status-line {
+  margin-top: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.vl-mc-badge-status-unlocked {
+  color: #86efac;
+}
+
+.vl-mc-badge-status-locked {
+  color: #94a3b8;
+}
+
+/* --------------------------------------------------------------------------
+   5. 60-Second Daily Challenge Card
+   -------------------------------------------------------------------------- */
+.vl-mc-daily-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.18) 0%, rgba(249, 115, 22, 0.18) 100%);
+  border: 1.5px solid rgba(253, 224, 71, 0.45);
+  border-radius: 14px;
+  padding: 0.95rem 1.4rem;
+  box-shadow: 0 4px 16px rgba(234, 179, 8, 0.15);
+}
+
+.vl-mc-daily-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.vl-mc-daily-kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #fef08a;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.2rem;
+}
+
+.vl-mc-daily-title {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.vl-mc-daily-task {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #fed7aa;
+  line-height: 1.4;
+}
+
+.vl-mc-daily-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1.35rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
+  color: #1c1917;
+  font-weight: 900;
+  font-size: 0.88rem;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.vl-mc-daily-launch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   6. Navigation & Filter Bar
+   -------------------------------------------------------------------------- */
+.vl-mc-filters-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.vl-mc-filter-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.vl-mc-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(15, 23, 42, 0.6);
+  color: #cbd5e1;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vl-mc-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.vl-mc-filter-btn.is-active {
+  background: #f59e0b;
+  border-color: #fde047;
+  color: #1e1b4b;
+  font-weight: 900;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+}
+
+.vl-mc-catalog-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.1);
+  color: #7dd3fc;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vl-mc-catalog-switch-btn:hover {
+  background: rgba(56, 189, 248, 0.22);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   7. 8 Glowing Mission Cards Grid
+   -------------------------------------------------------------------------- */
+.vl-mc-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.35rem;
+  margin-bottom: 2.5rem;
+}
+
+.vl-mc-card {
+  position: relative;
+  background: radial-gradient(circle at 10% 10%, var(--card-tint, rgba(245, 158, 11, 0.15)), transparent 50%),
+              linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vl-mc-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--card-glow, #f59e0b);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 0 20px var(--card-tint, rgba(245, 158, 11, 0.2));
+}
+
+.vl-mc-card.is-completed {
+  border-color: rgba(34, 197, 94, 0.45);
+}
+
+.vl-mc-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.vl-mc-card-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--card-tint, rgba(255, 255, 255, 0.1));
+  border: 1.5px solid var(--card-glow, #fde047);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.vl-mc-card-meta-right {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.vl-mc-pills-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.vl-mc-pill {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+}
+
+.vl-mc-pill--age {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f1f5f9;
+}
+
+.vl-mc-pill--subject {
+  background: rgba(56, 189, 248, 0.16);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.vl-mc-pill--diff {
+  background: rgba(245, 158, 11, 0.16);
+  color: #fde047;
+  letter-spacing: 0.05em;
+}
+
+.vl-mc-stars-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.vl-mc-stars-won {
+  color: #fde047;
+}
+
+.vl-mc-stars-ready {
+  color: #94a3b8;
+}
+
+.vl-mc-card-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.vl-mc-card-kid-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.vl-mc-card-sa-subtitle {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: 0.82rem;
+  color: var(--card-ink, #fde047);
+  font-weight: 600;
+}
+
+.vl-mc-card-goal {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #e2e8f0;
+  flex: 1;
+}
+
+.vl-mc-card-reward-line {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  font-size: 0.75rem;
+  color: #fde047;
+  font-weight: 700;
+}
+
+.vl-mc-reward-icon {
+  font-size: 1.1rem;
+}
+
+/* Card Action Buttons (48px primary touch target) */
+.vl-mc-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.vl-mc-action-btn {
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.vl-mc-action-btn--launch {
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
+  color: #1c1917;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+}
+
+.vl-mc-action-btn--launch:hover {
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+  transform: translateY(-2px);
+}
+
+.vl-mc-action-sub-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+.vl-mc-action-btn--how,
+.vl-mc-action-btn--notes {
+  min-height: 38px;
+  padding: 0.45rem 0.6rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
+  font-size: 0.78rem;
+}
+
+.vl-mc-action-btn--how:hover,
+.vl-mc-action-btn--notes:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   8. Bottom Gateways Grid
+   -------------------------------------------------------------------------- */
+.vl-mc-gateways-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.vl-mc-gateway-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  border: 1.5px solid;
+}
+
+.vl-mc-gateway--preschool {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(239, 68, 68, 0.12) 100%);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.vl-mc-gateway--advanced {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(168, 85, 247, 0.12) 100%);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.vl-mc-gateway-icon {
+  font-size: 2.6rem;
+  flex-shrink: 0;
+}
+
+.vl-mc-gateway-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.vl-mc-gateway-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #fde047;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.vl-mc-gateway-info h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.vl-mc-gateway-info p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #cbd5e1;
+}
+
+.vl-mc-gateway-btn {
+  padding: 0.65rem 1.1rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.vl-mc-gateway-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   9. Modals (ScienceSparkModal, HowToPlayModal, ParentNotesModal)
+   -------------------------------------------------------------------------- */
+.vl-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+  animation: vl-fade-in 0.2s ease;
+}
+
+/* Science Spark Celebration Card */
+.vl-spark-modal-card {
+  width: 100%;
+  max-width: 580px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.3);
+  overflow: hidden;
+  position: relative;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.vl-smc-header {
+  padding: 1.5rem 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.vl-smc-stars-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.vl-smc-star {
+  animation: vl-star-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.vl-star--1 { animation-delay: 0.1s; }
+.vl-star--2 { animation-delay: 0.25s; }
+.vl-star--3 { animation-delay: 0.4s; }
+
+@keyframes vl-star-pop {
+  from { transform: scale(0) rotate(-45deg); opacity: 0; }
+  to { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+.vl-smc-title {
+  margin: 0 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #fde047;
+}
+
+.vl-smc-subtitle {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #e2e8f0;
+}
+
+/* Unlocked Badge Banner */
+.vl-smc-badge-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vl-smc-badge-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.vl-smc-badge-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.vl-smc-badge-pill {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #fde047;
+  display: block;
+}
+
+.vl-smc-badge-name {
+  margin: 0.1rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.vl-smc-badge-sa {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.vl-smc-vidya-reward {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.vl-smc-vidya-num {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #22c55e;
+}
+
+.vl-smc-vidya-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #86efac;
+}
+
+.vl-smc-body {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vl-smc-section-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #fde047;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.vl-smc-spark-box {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1.5px solid rgba(254, 240, 138, 0.25);
+  border-radius: 12px;
+  padding: 0.95rem 1.15rem;
+}
+
+.vl-smc-takeaway {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #f1f5f9;
+}
+
+/* Sanskrit Science Word Discovery */
+.vl-smc-word-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(99, 102, 241, 0.15));
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+}
+
+.vl-smc-word-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.vl-smc-word-label {
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: #c084fc;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.vl-smc-word-sa {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fef08a;
+  margin: 0.1rem 0;
+}
+
+.vl-smc-word-meaning {
+  font-size: 0.8rem;
+  color: #e2e8f0;
+}
+
+.vl-smc-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid rgba(192, 132, 252, 0.5);
+  background: rgba(192, 132, 252, 0.2);
+  color: #f3e8ff;
+  font-weight: 800;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vl-smc-audio-btn:hover {
+  background: rgba(192, 132, 252, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Quiz Box */
+.vl-smc-quiz-box {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1.5px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  padding: 0.95rem 1.15rem;
+}
+
+.vl-smc-question-text {
+  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.vl-smc-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.vl-smc-opt-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f1f5f9;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vl-smc-opt-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateX(3px);
+}
+
+.vl-smc-opt-btn.is-correct {
+  background: rgba(34, 197, 94, 0.25);
+  border-color: #22c55e;
+  color: #86efac;
+}
+
+.vl-smc-opt-btn.is-wrong {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+.vl-smc-opt-letter {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.vl-smc-opt-text {
+  flex: 1;
+}
+
+.vl-smc-opt-icon {
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.vl-smc-explanation-banner {
+  margin-top: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #bbf7d0;
+  font-size: 0.84rem;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Modal Footer */
+.vl-smc-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.vl-smc-btn {
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.vl-smc-btn--primary {
+  background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
+  color: #1c1917;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.vl-smc-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.5);
+}
+
+.vl-smc-btn--ghost {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vl-smc-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.vl-smc-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.vl-smc-close-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   10. How To Play & Parent Notes Modals
+   -------------------------------------------------------------------------- */
+.vl-htp-modal-card,
+.vl-parent-notes-card {
+  width: 100%;
+  max-width: 620px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  position: relative;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.vl-htp-header,
+.vl-pnm-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vl-htp-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.vl-htp-kicker,
+.vl-pnm-kicker {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #fde047;
+  display: block;
+}
+
+.vl-htp-title,
+.vl-pnm-title {
+  margin: 0.15rem 0 0.2rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.vl-htp-subtitle,
+.vl-pnm-subtitle {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.vl-htp-body,
+.vl-pnm-body {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.vl-htp-goal-banner {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+}
+
+.vl-htp-goal-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #fef08a;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.vl-htp-goal-text {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.45;
+}
+
+.vl-htp-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.vl-htp-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+.vl-htp-step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f59e0b;
+  color: #1e1b4b;
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vl-htp-step-text {
+  font-size: 0.88rem;
+  color: #e2e8f0;
+  line-height: 1.45;
+  flex: 1;
+}
+
+.vl-htp-reward-preview {
+  padding: 0.65rem 0.95rem;
+  border-radius: 10px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  font-size: 0.82rem;
+  color: #86efac;
+}
+
+.vl-htp-footer,
+.vl-pnm-footer {
+  padding: 0.95rem 1.5rem;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.vl-htp-launch-btn,
+.vl-pnm-close-cta {
+  padding: 0.65rem 1.35rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
+  color: #1c1917;
+  font-weight: 900;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+  transition: transform 0.15s ease;
+}
+
+.vl-htp-launch-btn:hover,
+.vl-pnm-close-cta:hover {
+  transform: translateY(-2px);
+}
+
+.vl-htp-cancel-btn {
+  padding: 0.65rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.vl-pnm-section-heading {
+  margin: 0 0 0.4rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #fde047;
+}
+
+.vl-pnm-text {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+.vl-pnm-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.vl-pnm-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+.vl-pnm-check {
+  color: #22c55e;
+  font-weight: 900;
+}
+
+.vl-pnm-cbse-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.vl-pnm-cbse-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #e0f2fe;
+}
+
+.vl-pnm-section--prompt {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+}
+
+.vl-pnm-prompt-text {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #fef08a;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.vl-pnm-x-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   11. In-Workbench Floating Mission Complete Dock Button
+   -------------------------------------------------------------------------- */
+.vl-wb-mission-complete-dock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.35rem;
+  border-radius: 9999px;
+  border: 2px solid #fde047;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #1e1b4b;
+  font-weight: 900;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5), 0 0 16px rgba(254, 240, 138, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vl-wb-mission-complete-dock:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.65);
+}
+
+/* --------------------------------------------------------------------------
+   12. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .vl-mc-telemetry-bar {
+    grid-template-columns: 1fr;
+  }
+  .vl-mc-badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .vl-mc-gateways-grid {
+    grid-template-columns: 1fr;
+  }
+  .vl-mc-daily-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .vl-mc-daily-right {
+    width: 100%;
+  }
+  .vl-mc-daily-launch-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .vl-mc-hero {
+    padding: 1.25rem 1rem;
+  }
+  .vl-mc-bodhi-guide {
+    flex-direction: column;
+  }
+  .vl-mc-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .vl-mc-badges-grid {
+    grid-template-columns: 1fr;
+  }
+  .vl-wb-mission-complete-dock {
+    bottom: 16px;
+    right: 16px;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+}
