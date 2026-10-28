@@ -27,6 +27,7 @@ const PaninianStudio = lazy(() => import('./PaninianStudio'));
 const SanskritThinkingCourse = lazy(() => import('./SanskritThinkingCourse'));
 const CertificatePage = lazy(() => import('./CertificatePage'));
 const ScienceLab = lazy(() => import('./scienceLab/ScienceLab'));
+const SanskritAssignmentEvaluator = lazy(() => import('./SanskritAssignmentEvaluator'));
 
 // Lazy-loaded dialogs & modals
 const AuthModal = lazy(() => import('./AuthModal'));
@@ -82,7 +83,8 @@ type DashboardView =
   | 'dhatupatha'
   | 'course'
   | 'certificate'
-  | 'science-lab';
+  | 'science-lab'
+  | 'assignment-eval';
 
 const PHILOSOPHY_PATHS = new Set([
   '/philosophy',
@@ -174,6 +176,10 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     title: 'Dhātupāṭha & Pāṇinian Verb Engine: 5 Lakāras & Kṛt Pratyayas | EdNet Learn',
     desc: 'Explore the classical Pāṇinian Dhātupāṭha library with 5 CBSE Lakāra conjugations (लट्, लृट्, लङ्, लोट्, विधिलिङ्), Kṛt participles, reverse word deconstructor, and pratyaya quiz for Samskrit verb mastery.',
   },
+  'assignment-eval': {
+    title: 'Upload & Evaluate Written Sanskrit Assignment: AI Gurukul Parikshaka | EdNet Learn',
+    desc: 'Upload a photo of your handwritten Sanskrit notebook, worksheet, or exam paper. Get instant AI Gurukul evaluation of Devanagari orthography, Paninian grammar concord, case endings, and printable marksheet with audio feedback.',
+  },
 };
 
 /** /barakhadi aliases the reader view. Copy is the existing search-index entry, not new marketing. */
@@ -247,6 +253,12 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/science-lab' ||
     clean === '/science-lab-games'
   ) return 'science-lab';
+  if (
+    clean === '/assignment-eval' ||
+    clean === '/evaluate-assignment' ||
+    clean === '/sanskrit-assignment' ||
+    clean === '/assignment-evaluator'
+  ) return 'assignment-eval';
   return null;
 };
 
@@ -264,6 +276,7 @@ const viewToPath = (view: DashboardView): string => {
   if (view === 'reader') return '/reader';
   if (view === 'faq') return '/faq';
   if (view === 'certificate') return '/certificate';
+  if (view === 'assignment-eval') return '/evaluate-assignment';
   if (view === 'science-lab') {
     if (typeof window !== 'undefined' && window.location.pathname.replace(/\/+$/, '') === '/science-lab') {
       return '/science-lab';
@@ -288,7 +301,8 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'resources' ||
   saved === 'dhatupatha' ||
   saved === 'certificate' ||
-  saved === 'science-lab';
+  saved === 'science-lab' ||
+  saved === 'assignment-eval';
 
 
 /** Strip punctuation / digits so only the Devanagari token remains for analysis. */
@@ -1210,6 +1224,16 @@ const Dashboard: React.FC = () => {
             </button>
             <button
               type="button"
+              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'assignment-eval' ? ' active' : ''}`}
+              onClick={() => navigateToView('assignment-eval')}
+              title="Upload & Evaluate Written Sanskrit Assignment (लिखित-मूल्याङ्कनम्)"
+            >
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">✍️</span>
+              <span className="dashboard-nav-sanskrit">लिखित-मूल्याङ्कनम्</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Evaluate Work' : 'Assignment AI'}</span>
+            </button>
+            <button
+              type="button"
               className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'resources' ? ' active' : ''}`}
               onClick={() => navigateToView('resources')}
               title="Open Sanskrit Resources &amp; Study Vault (साधनानि)"
@@ -1347,6 +1371,7 @@ const Dashboard: React.FC = () => {
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
           onOpenQuiz={() => navigateToView('quiz')}
           onOpenWorksheets={() => handleOpenWorksheets('all')}
+          onOpenAssignmentEvaluator={() => navigateToView('assignment-eval')}
           onOpenPhilosophy={() => navigateToView('philosophy')}
           onOpenCbseGuide={() => navigateToView('cbse-guide')}
           onOpenOnlineClasses={() => setIsOnlineClassesOpen(true)}
@@ -1497,6 +1522,14 @@ const Dashboard: React.FC = () => {
             onGoHome={() => setActiveView('home')}
             onOpenQuiz={() => navigateToView('quiz')}
             onOpenReader={() => openDeepakam()}
+            onOpenAssignmentEvaluator={() => navigateToView('assignment-eval')}
+          />
+        )}
+        {activeView === 'assignment-eval' && (
+          <SanskritAssignmentEvaluator
+            onNavigateView={navigateToView}
+            onBackToWorksheets={() => navigateToView('worksheets')}
+            onGoHome={() => setActiveView('home')}
           />
         )}
         {activeView === 'reader' && (

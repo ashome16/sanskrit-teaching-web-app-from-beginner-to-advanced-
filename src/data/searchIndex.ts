@@ -22,6 +22,7 @@ export interface SearchTarget {
     | 'course'
     | 'science-lab'
     | 'certificate'
+    | 'assignment-eval'
     | 'home';
   grammarTopic?:
     | 'home'
@@ -108,6 +109,37 @@ export const SEARCH_INDEX: SearchItem[] = [
       'Finished the Swar workbook? Enter the book code from page 149, answer one question from each part of the book (8 questions), score 70% and download or print your certificate with your name and the date.',
     keywords: ['certificate', 'swar', 'svara', 'स्वर', 'workbook', 'book code', 'completion', 'darsana series', 'darshana', 'get my certificate', 'award', 'badge', 'book quiz', 'sesha'],
     target: { view: 'certificate' },
+  },
+  {
+    id: 'tool-sanskrit-assignment-evaluator',
+    title: 'Written Sanskrit Assignment Evaluator · लिखित-मूल्याङ्कनम्',
+    subtitle: 'Gurukul Parikshaka · Upload Written Homework for AI Grading & Marksheet',
+    category: 'tools',
+    categoryLabel: 'AI Tool · Evaluator',
+    badgeEmoji: '✍️',
+    badgeColor: '#1b352f',
+    description:
+      'Upload a photo or scan of your handwritten Sanskrit notebook, worksheet, or exam. Get instant AI Gurukul evaluation of Devanagari orthography, Paninian grammar concord, case endings, and printable marksheet with audio feedback.',
+    keywords: [
+      'assignment',
+      'evaluate',
+      'written assignment',
+      'evaluate assignment',
+      'homework',
+      'handwriting',
+      'written',
+      'ocr',
+      'parikshaka',
+      'check homework',
+      'grading',
+      'marksheet',
+      'मूल्याङ्कनम्',
+      'हस्तलिखित',
+      'अभ्यास-पत्रम्',
+      'sanskrit assignment',
+      'evaluate sanskrit',
+    ],
+    target: { view: 'assignment-eval' },
   },
   {
     id: 'guide-swar-review-practice',

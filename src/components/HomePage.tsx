@@ -37,6 +37,7 @@ export interface HomePageProps {
   onOpenOnlineClasses?: () => void;
   onOpenQuiz?: () => void;
   onOpenWorksheets?: () => void;
+  onOpenAssignmentEvaluator?: () => void;
   onOpenDhatupatha?: () => void;
   onOpenBodhi?: () => void;
   onOpenSearch?: () => void;
@@ -733,6 +734,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenOnlineClasses,
   onOpenQuiz,
   onOpenWorksheets,
+  onOpenAssignmentEvaluator,
   onOpenDhatupatha,
   onOpenBodhi,
   onOpenSearch,
@@ -2911,6 +2913,16 @@ const HomePage: React.FC<HomePageProps> = ({
                     onClick={onOpenWorksheets}
                   >
                     Worksheets ▶
+                  </button>
+                )}
+                {onOpenAssignmentEvaluator && (
+                  <button
+                    type="button"
+                    className="home-feature-btn"
+                    style={{ flex: 1, minWidth: '150px', background: '#1b352f', color: '#ffffff' }}
+                    onClick={onOpenAssignmentEvaluator}
+                  >
+                    ✍️ Evaluate Written Work ▶
                   </button>
                 )}
               </div>

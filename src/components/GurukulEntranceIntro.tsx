@@ -21,7 +21,6 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
   const [isSuspended, setIsSuspended] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(() => Math.ceil(autoAdvanceMs / 1000));
-  const [isHideOverlay, setIsHideOverlay] = useState(false);
 
   const logoRef = useRef<HTMLImageElement | null>(null);
   const timerRef = useRef<number | null>(null);
@@ -130,29 +129,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
     setHasInteracted(true);
   };
 
-  const toggleHideOverlay = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setIsHideOverlay((prev) => {
-      const next = !prev;
-      if (next) {
-        if (timerRef.current) {
-          clearTimeout(timerRef.current);
-          timerRef.current = null;
-        }
-        if (countdownIntervalRef.current) {
-          clearInterval(countdownIntervalRef.current);
-          countdownIntervalRef.current = null;
-        }
-      }
-      return next;
-    });
-  };
-
   const handleContainerClick = () => {
-    if (isHideOverlay) {
-      setIsHideOverlay(false);
-      return;
-    }
     if (!hasInteracted) {
       setHasInteracted(true);
     }
@@ -191,7 +168,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
       <div className="gurukul-intro-sunbeams" />
 
       {/* Main Centerpiece Content */}
-      <div className={`gurukul-intro-content ${isHideOverlay ? 'is-overlay-hidden' : ''}`} onClick={(e) => e.stopPropagation()}>
+      <div className="gurukul-intro-content" onClick={(e) => e.stopPropagation()}>
         {/* Sacred Brand Crest with Mandala Aura */}
         <div className="gurukul-intro-crest-wrap">
           <div className="gurukul-intro-mandala" aria-hidden="true" />
@@ -264,16 +241,6 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
 
           <button
             type="button"
-            className="gurukul-intro-view-btn"
-            onClick={toggleHideOverlay}
-            title="View full painting without text overlay"
-          >
-            <span>🎨</span>
-            <span>Admire Painting</span>
-          </button>
-
-          <button
-            type="button"
             className="gurukul-intro-mute-btn"
             onClick={toggleSound}
             aria-label={isMuted ? 'Unmute sounds' : 'Mute sounds'}
@@ -299,20 +266,6 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
           </div>
         </div>
       </div>
-
-      {/* Full Painting Zen Mode Floating Hint */}
-      {isHideOverlay && (
-        <div
-          className="gurukul-intro-zen-hint"
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsHideOverlay(false);
-          }}
-          title="Click to restore entrance controls"
-        >
-          <span>🖼️ Full Gurukul Dawn Painting View · Tap anywhere to restore entrance controls</span>
-        </div>
-      )}
     </div>
   );
 };

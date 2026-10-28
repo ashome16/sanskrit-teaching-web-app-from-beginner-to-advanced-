@@ -31,6 +31,7 @@ const PATH_BY_VIEW = {
   philosophy: '/philosophy',
   faq: '/faq',
   certificate: '/certificate',
+  'assignment-eval': '/evaluate-assignment',
   'science-lab': '/vignana-lab',
 };
 
@@ -50,6 +51,7 @@ const REQUIRED_PATHS = [
   '/philosophy',
   '/faq',
   '/certificate',
+  '/evaluate-assignment',
   '/vignana-lab',
   '/swar',
   '/learn-sanskrit-online-free',

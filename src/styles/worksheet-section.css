@@ -54,6 +54,86 @@
   font-weight: 600;
 }
 
+/* Assignment Evaluator Callout Banner */
+.ws-eval-banner {
+  background: linear-gradient(135deg, #1b352f 0%, #27473e 50%, #152d27 100%);
+  border-radius: 14px;
+  padding: 1.15rem 1.4rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 4px 15px rgba(27, 53, 47, 0.15);
+  transition: all 0.2s ease;
+}
+
+.ws-eval-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(27, 53, 47, 0.25);
+  border-color: #f59e0b;
+}
+
+.ws-eval-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ws-eval-banner-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.ws-eval-banner-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #fef3c7;
+  margin-bottom: 0.25rem;
+}
+
+.ws-eval-banner-sub {
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+  max-width: 750px;
+}
+
+.ws-eval-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f59e0b;
+  color: #1e293b;
+  border: none;
+  padding: 0.6rem 1.15rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.ws-eval-banner-btn:hover {
+  background: #fbbf24;
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .ws-eval-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ws-eval-banner-btn {
+    align-self: flex-start;
+  }
+}
+
 /* Level / Track Menu Selector */
 .worksheet-menu-grid {
   display: grid;

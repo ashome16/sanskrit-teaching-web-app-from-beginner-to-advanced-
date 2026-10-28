@@ -20,6 +20,7 @@ export interface WorksheetSectionProps {
   onGoHome?: () => void;
   onOpenQuiz?: () => void;
   onOpenReader?: () => void;
+  onOpenAssignmentEvaluator?: () => void;
 }
 
 type WorksheetMenuLevel = 'varnamala' | 'ncert' | 'grammar' | 'vedic_maths' | 'all';
@@ -111,6 +112,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
   onGoHome,
   onOpenQuiz,
   onOpenReader,
+  onOpenAssignmentEvaluator,
 }) => {
   const initialResolved = useMemo(() => resolveInitialTrack(initialCategory), [initialCategory]);
   const [activeLevel, setActiveLevel] = useState<WorksheetMenuLevel>(initialResolved.level);
@@ -268,6 +270,16 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
               🎯 Sanskrit Quiz
             </button>
           )}
+          {onOpenAssignmentEvaluator && (
+            <button
+              type="button"
+              className="worksheet-toolbar-btn"
+              onClick={onOpenAssignmentEvaluator}
+              style={{ background: '#1b352f', color: '#ffffff', borderColor: '#1b352f' }}
+            >
+              ✍️ Evaluate Assignment
+            </button>
+          )}
           {onGoHome && (
             <button type="button" className="worksheet-toolbar-btn" onClick={onGoHome}>
               🏠 Back to Home
@@ -280,6 +292,43 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
       {/* Gallery View */}
       {!activeWorksheet ? (
         <>
+          {/* Assignment Evaluator Feature Banner */}
+          {onOpenAssignmentEvaluator && (
+            <div
+              className="ws-eval-banner"
+              onClick={onOpenAssignmentEvaluator}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') onOpenAssignmentEvaluator();
+              }}
+              title="Upload handwritten Sanskrit homework photo for AI evaluation"
+            >
+              <div className="ws-eval-banner-left">
+                <span className="ws-eval-banner-icon">✍️</span>
+                <div>
+                  <div className="ws-eval-banner-title">
+                    हस्तलिखित-अभ्यास-मूल्याङ्कनम् · Upload Written Sanskrit Assignment for Instant AI Evaluation
+                  </div>
+                  <div className="ws-eval-banner-sub">
+                    Have a handwritten Sanskrit worksheet, homework notebook, or test? Snap a photo to get Pāṇinian grammar checks, orthography grading, and an official printable marksheet with audio!
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                className="ws-eval-banner-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenAssignmentEvaluator();
+                }}
+              >
+                <span>Upload &amp; Evaluate</span>
+                <span>➔</span>
+              </button>
+            </div>
+          )}
+
           {/* Level / Curriculum Track Menu Selector */}
           <div className="worksheet-menu-grid" role="tablist" aria-label="Curriculum Level Selector">
             {LEVEL_MENU_OPTIONS.map((lvl) => {
