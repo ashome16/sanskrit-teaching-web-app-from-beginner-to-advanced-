@@ -685,11 +685,48 @@
 }
 
 .hoc-card-desc {
-  margin: 0 0 1rem 0;
-  font-size: 0.84rem;
+  margin: 0 0 0.65rem 0;
+  font-size: 0.82rem;
   color: #64748b;
   line-height: 1.45;
-  flex: 1;
+}
+
+.hoc-lesson-box {
+  background: #fefcf9;
+  border: 1px solid #fed7aa;
+  border-radius: 10px;
+  padding: 0.75rem 0.85rem;
+  margin-bottom: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hoc-lesson-name {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #78350f;
+  font-family: 'Noto Sans Devanagari', 'Siddhanta', serif;
+}
+
+.hoc-lesson-phrase {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #c2410c;
+  font-family: 'Noto Sans Devanagari', 'Siddhanta', serif;
+  background: #fff7ed;
+  border: 1px solid #ffedd5;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.hoc-lesson-meta {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 0.15rem;
 }
 
 .hoc-card-points {
