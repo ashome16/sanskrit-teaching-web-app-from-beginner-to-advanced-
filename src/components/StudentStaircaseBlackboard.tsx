@@ -21,7 +21,6 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
   onOpenBodhi,
 }) => {
   const [isGreetingSpeaking, setIsGreetingSpeaking] = useState(false);
-  const [activeHoverStep, setActiveHoverStep] = useState<number | null>(null);
 
   const handleNamasteGreeting = () => {
     stopPronunciation();
@@ -156,34 +155,6 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
               />
               {/* Warm Golden Sunrise Overlay Vignette */}
               <div className="ssb-person-sun-overlay" aria-hidden="true" />
-
-              {/* Floating Stair Steps Progress Pill Rail */}
-              <div className="ssb-stairs-chip-rail" aria-label="Ascending steps of learning">
-                <div className={`ssb-step-pill ${activeHoverStep === 1 ? 'is-highlight' : ''}`}>
-                  <span className="ssb-step-pill-num">१</span>
-                  <span>ध्वनिः (Sound)</span>
-                </div>
-                <span className="ssb-step-rail-arrow">➜</span>
-                <div className={`ssb-step-pill ${activeHoverStep === 2 ? 'is-highlight' : ''}`}>
-                  <span className="ssb-step-pill-num">२</span>
-                  <span>वाक्यम् (Sentences)</span>
-                </div>
-                <span className="ssb-step-rail-arrow">➜</span>
-                <div className={`ssb-step-pill ${activeHoverStep === 3 ? 'is-highlight' : ''}`}>
-                  <span className="ssb-step-pill-num">३</span>
-                  <span>व्याकरणम् (Rules)</span>
-                </div>
-                <span className="ssb-step-rail-arrow">➜</span>
-                <div className={`ssb-step-pill ${activeHoverStep === 4 ? 'is-highlight' : ''}`}>
-                  <span className="ssb-step-pill-num">४</span>
-                  <span>दीपकम् (Reader)</span>
-                </div>
-                <span className="ssb-step-rail-arrow">➜</span>
-                <div className={`ssb-step-pill ${activeHoverStep === 5 ? 'is-highlight' : ''}`}>
-                  <span className="ssb-step-pill-num">५</span>
-                  <span>सिद्धिः (Mastery)</span>
-                </div>
-              </div>
             </div>
 
             {/* Bronze Medallion Seal (Bottom Left) */}
@@ -237,7 +208,7 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
               {/* Scroll Document Body */}
               <div className="ssb-scroll-document-body">
                 <div className="ssb-scroll-rows-list">
-                  {LEARNING_LINKS.map((link, idx) => (
+                  {LEARNING_LINKS.map((link) => (
                     <button
                       type="button"
                       key={link.id}
@@ -246,8 +217,6 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
                         soundEffects.playPuzzleSnap();
                         link.action();
                       }}
-                      onMouseEnter={() => setActiveHoverStep(idx + 1)}
-                      onMouseLeave={() => setActiveHoverStep(null)}
                       title={`Open ${link.sanskrit} · ${link.english}`}
                     >
                       <div className="ssb-doc-row-left">

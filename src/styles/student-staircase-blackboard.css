@@ -242,64 +242,11 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(254, 243, 199, 0.08) 0%,
-    rgba(30, 20, 10, 0.15) 50%,
-    rgba(20, 10, 5, 0.78) 100%
+    rgba(254, 243, 199, 0.05) 0%,
+    transparent 60%,
+    rgba(20, 10, 5, 0.12) 100%
   );
   pointer-events: none;
-}
-
-/* Floating Stair Steps Progress Pill Rail */
-.ssb-stairs-chip-rail {
-  position: relative;
-  z-index: 3;
-  margin: 1rem;
-  padding: 0.65rem 0.85rem;
-  background: rgba(28, 16, 7, 0.84);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(254, 240, 138, 0.35);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.25rem;
-  flex-wrap: wrap;
-}
-
-.ssb-step-pill {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.72rem;
-  color: #fde68a;
-  font-weight: 600;
-  padding: 0.15rem 0.35rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-.ssb-step-pill.is-highlight {
-  color: #ffffff;
-  background: rgba(245, 158, 11, 0.4);
-  border: 1px solid #f59e0b;
-}
-
-.ssb-step-pill-num {
-  background: #f59e0b;
-  color: #451a03;
-  font-weight: 800;
-  font-size: 0.68rem;
-  width: 16px;
-  height: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.ssb-step-rail-arrow {
-  color: rgba(254, 240, 138, 0.45);
-  font-size: 0.7rem;
 }
 
 /* Bronze Medallion Badge (Bottom Left) */
