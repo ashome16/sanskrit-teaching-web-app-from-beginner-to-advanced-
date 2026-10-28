@@ -474,8 +474,82 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isQuestMode, setIsQuestMode] = useState(true);
   const [isQuestDirectoryOpen, setIsQuestDirectoryOpen] = useState(false);
+  const [featuredIdx, setFeaturedIdx] = useState<number>(0);
+  const [catalogViewMode, setCatalogViewMode] = useState<'catalog' | 'workbench'>('catalog');
+  const [isGradeAccordionOpen, setIsGradeAccordionOpen] = useState<boolean>(true);
+  const [isFeaturesAccordionOpen, setIsFeaturesAccordionOpen] = useState<boolean>(true);
+  const catalogSectionRef = useRef<HTMLDivElement>(null);
   const simRef = useRef<HTMLDivElement>(null);
   const firstRun = useRef(true);
+
+  const FEATURED_SIMS = useMemo(
+    () => [
+      {
+        id: 'preschool-wonder',
+        gradeBadge: 'GRADES PRE-K · AGES 2–6',
+        title: '🧸 Preschool Wonder Playground',
+        bannerArt: '🧸 🎨 🐮 🌙 🍎',
+        bannerGradient: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
+        desc: 'Gentle hands-on tactile discovery for little hands: Shapes, Rainbow Colors, Real Animal Sounds, Orchard Fruit Picker, Moon Phases, and the 5 Elements tale!',
+        cta: 'Try the activity',
+      },
+      {
+        id: 'paramanu',
+        gradeBadge: 'GRADES 6–8 · AGES 11–14',
+        title: '⚛️ Paramāṇu Atomic Builder',
+        bannerArt: '⚛️ 🔬 ⚡ 🔥 🧪',
+        bannerGradient: 'linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%)',
+        desc: 'Forge matter from the smallest building blocks. Pair raw Paramāṇus into Dvyaṇukas, then join three Dvyaṇukas into a visible Tryaṇuka speck of reality.',
+        cta: 'Explore simulation',
+      },
+      {
+        id: 'chandrayaan',
+        gradeBadge: 'GRADES 3–6 · AGES 8–12',
+        title: '🛰️ Somayāna Mission-03 (ISRO Moon)',
+        bannerArt: '🛰️ 🌕 🚀 📡 🇮🇳',
+        bannerGradient: 'linear-gradient(135deg, #0f172a 0%, #0284c7 100%)',
+        desc: 'Simulate ISRO Chandrayaan-3 lunar lander trajectory. Calculate retro-rocket thrust, track Moon coordinates, and achieve soft touchdown on the Lunar South Pole.',
+        cta: 'Try the activity',
+      },
+      {
+        id: 'prakriti',
+        gradeBadge: 'GRADES 6–8 · AGES 11–14',
+        title: '🌿 Prakṛti Biosphere & Tridoṣa',
+        bannerArt: '🌿 🧬 💧 ☀️ 🌬️',
+        bannerGradient: 'linear-gradient(135deg, #064e3b 0%, #059669 100%)',
+        desc: 'Elemental survival ecosystem sandbox. Balance Vāta, Pitta and Kapha under changing seasons with real-time Nāḍī pulse waveform feedback.',
+        cta: 'Explore simulation',
+      },
+      {
+        id: 'agnibana',
+        gradeBadge: 'GRADES 9–12 · AEROSPACE',
+        title: '🚀 Agnibāṇa Rocket Propulsion',
+        bannerArt: '🚀 🔥 💨 🎯 💥',
+        bannerGradient: 'linear-gradient(135deg, #7c2d12 0%, #ea580c 100%)',
+        desc: 'Calculate multi-stage propellant mass ratio, Isp specific impulse, and atmospheric drag to launch an ancient Agni rocket into low-earth orbit.',
+        cta: 'Try the activity',
+      },
+      {
+        id: 'jyotisha',
+        gradeBadge: 'GRADES 3–6 · AGES 8–12',
+        title: '🪐 Jyotiṣa Gravity & Planetary Orbit',
+        bannerArt: '🪐 ☀️ 🌍 🌙 ⭐',
+        bannerGradient: 'linear-gradient(135deg, #31104b 0%, #7c3aed 100%)',
+        desc: 'Real-time orbital gravity simulator based on Āryabhaṭīya. Pilot satellites around Sūrya, Pṛthivī and Candra through the 27 sacred Nakṣatras.',
+        cta: 'Explore simulation',
+      },
+    ],
+    []
+  );
+
+  const handleLaunchSim = (targetId: LabSegmentId) => {
+    setActive(targetId);
+    setCatalogViewMode('workbench');
+    soundEffects.playCelebrationChime();
+    window.requestAnimationFrame(() => {
+      simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
 
   const visibleSegments = useMemo<LabSegmentConfig[]>(() => {
     return LAB_SEGMENTS.filter((s) => {
@@ -626,352 +700,496 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
       </header>
 
       {/* ================================================================
-          UNIFIED MENU FOR LEVEL & TOPIC SELECTION + REAL-TIME SEARCH
+          1. PhET IMPACT METRIC BANNER (REFERENCE IMAGE 2)
           ================================================================ */}
-      <div className="vl-filter-control-panel" role="region" aria-label="Science Lab Games Level and Topic Selection Menu">
-        {/* Row 1: Educational Level Selector (Preschool to Advanced) */}
-        <div className="vl-ctrl-row">
-          <div className="vl-ctrl-label-col">
-            <span className="vl-ctrl-label-icon">🎯</span>
-            <div>
-              <span className="vl-ctrl-label-title">LEARNING LEVEL</span>
-              <span className="vl-ctrl-label-sub">शिशु-बोध ➔ विद्वत्</span>
-            </div>
+      <div className="vl-phet-impact-banner">
+        <div className="vl-pib-metric">
+          <span className="vl-pib-dot">●</span> OVER <strong>17+ INTERACTIVE REALITY SIMULATIONS</strong> DELIVERED
+        </div>
+        <div className="vl-pib-tag">
+          <span>🌐</span> 100% Free Open Educational Portal · Sanskrit STEM Gurukul
+        </div>
+      </div>
+
+      {/* ================================================================
+          2. PhET PASTEL SUBJECT SQUIRCLES ROW (REFERENCE IMAGE 2)
+          ================================================================ */}
+      <div className="vl-phet-squircles-row" role="tablist" aria-label="Subject domains">
+        <button
+          type="button"
+          className={`vl-phet-squircle vl-psq--preschool${filterLevel === "preschool" ? " is-active" : ""}`}
+          onClick={() => {
+            setFilterLevel("preschool");
+            setFilterCat("all");
+            setCatalogViewMode("catalog");
+            soundEffects.playStrokeChime();
+          }}
+        >
+          <div className="vl-psq-icon-wrap">🧸</div>
+          <span className="vl-psq-title-en">Preschool</span>
+          <span className="vl-psq-title-sa">शिशु-वाटिका</span>
+          <span className="vl-psq-count-badge">11 Games</span>
+        </button>
+
+        <button
+          type="button"
+          className={`vl-phet-squircle vl-psq--physics${filterCat === "matter" ? " is-active" : ""}`}
+          onClick={() => {
+            setFilterCat("matter");
+            setFilterLevel("all");
+            setCatalogViewMode("catalog");
+            soundEffects.playStrokeChime();
+          }}
+        >
+          <div className="vl-psq-icon-wrap">⚛️</div>
+          <span className="vl-psq-title-en">Physics</span>
+          <span className="vl-psq-title-sa">पदार्थ-विज्ञानम्</span>
+          <span className="vl-psq-count-badge">4 Sandboxes</span>
+        </button>
+
+        <button
+          type="button"
+          className={`vl-phet-squircle vl-psq--cosmos${filterCat === "cosmos" ? " is-active" : ""}`}
+          onClick={() => {
+            setFilterCat("cosmos");
+            setFilterLevel("all");
+            setCatalogViewMode("catalog");
+            soundEffects.playStrokeChime();
+          }}
+        >
+          <div className="vl-psq-icon-wrap">🪐</div>
+          <span className="vl-psq-title-en">Earth & Space</span>
+          <span className="vl-psq-title-sa">खगोल-शास्त्रम्</span>
+          <span className="vl-psq-count-badge">3 Sandboxes</span>
+        </button>
+
+        <button
+          type="button"
+          className={`vl-phet-squircle vl-psq--life${filterCat === "life" ? " is-active" : ""}`}
+          onClick={() => {
+            setFilterCat("life");
+            setFilterLevel("all");
+            setCatalogViewMode("catalog");
+            soundEffects.playStrokeChime();
+          }}
+        >
+          <div className="vl-psq-icon-wrap">🌿</div>
+          <span className="vl-psq-title-en">Biology</span>
+          <span className="vl-psq-title-sa">जीव-प्रकृतिः</span>
+          <span className="vl-psq-count-badge">2 Sandboxes</span>
+        </button>
+
+        <button
+          type="button"
+          className={`vl-phet-squircle vl-psq--math${filterCat === "waves" ? " is-active" : ""}`}
+          onClick={() => {
+            setFilterCat("waves");
+            setFilterLevel("all");
+            setCatalogViewMode("catalog");
+            soundEffects.playStrokeChime();
+          }}
+        >
+          <div className="vl-psq-icon-wrap">📐</div>
+          <span className="vl-psq-title-en">Math & Waves</span>
+          <span className="vl-psq-title-sa">गणित-नादः</span>
+          <span className="vl-psq-count-badge">5 Sandboxes</span>
+        </button>
+
+        <button
+          type="button"
+          className={`vl-phet-squircle vl-psq--statecraft${filterCat === "all" && filterLevel === "all" ? " is-active" : ""}`}
+          onClick={() => {
+            setFilterCat("all");
+            setFilterLevel("all");
+            setCatalogViewMode("catalog");
+            soundEffects.playStrokeChime();
+          }}
+        >
+          <div className="vl-psq-icon-wrap">🏛️</div>
+          <span className="vl-psq-title-en">All Sandboxes</span>
+          <span className="vl-psq-title-sa">सर्व-विज्ञानम्</span>
+          <span className="vl-psq-count-badge">17 Simulations</span>
+        </button>
+      </div>
+
+      {/* ================================================================
+          3. Code.org FEATURED ACTIVITY CAROUSEL (REFERENCE IMAGE 1)
+          ================================================================ */}
+      <section className="vl-code-carousel-section" aria-label="Featured Sanskrit STEM Sandboxes">
+        <div className="vl-code-header-row">
+          <div>
+            <h2 className="vl-code-title">Join the Sanskrit STEM & Reality Movement</h2>
+            <p className="vl-code-sub">
+              Every one-hour interactive simulation below teaches something real. Browse by grade, topic, or whatever your class is ready for.
+            </p>
           </div>
-          <div className="vl-level-tabs" role="tablist" aria-label="Filter science lab games by educational level">
+          <button
+            type="button"
+            className="vl-code-browse-btn"
+            onClick={() => {
+              setCatalogViewMode("catalog");
+              catalogSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+          >
+            Browse all 17 simulations ➔
+          </button>
+        </div>
+
+        <div className="vl-code-carousel-wrapper">
+          <button
+            type="button"
+            className="vl-code-nav-arrow"
+            onClick={() => setFeaturedIdx((i) => (i > 0 ? i - 1 : FEATURED_SIMS.length - 1))}
+            aria-label="Previous featured simulations"
+          >
+            ←
+          </button>
+
+          <div className="vl-code-cards-grid">
+            {[0, 1, 2].map((offset) => {
+              const item = FEATURED_SIMS[(featuredIdx + offset) % FEATURED_SIMS.length];
+              return (
+                <article key={item.id} className="vl-code-activity-card">
+                  <span className="vl-cac-grade">{item.gradeBadge}</span>
+                  <h3 className="vl-cac-title">{item.title}</h3>
+                  <div className="vl-cac-banner" style={{ background: item.bannerGradient }}>
+                    <span>{item.bannerArt}</span>
+                  </div>
+                  <p className="vl-cac-desc">{item.desc}</p>
+                  <button
+                    type="button"
+                    className="vl-cac-cta"
+                    onClick={() => handleLaunchSim(item.id as LabSegmentId)}
+                  >
+                    {item.cta} ➔
+                  </button>
+                </article>
+              );
+            })}
+          </div>
+
+          <button
+            type="button"
+            className="vl-code-nav-arrow"
+            onClick={() => setFeaturedIdx((i) => (i + 1) % FEATURED_SIMS.length)}
+            aria-label="Next featured simulations"
+          >
+            →
+          </button>
+        </div>
+
+        <div className="vl-code-dots-row">
+          {FEATURED_SIMS.map((_, dotIdx) => (
+            <button
+              key={dotIdx}
+              type="button"
+              className={`vl-code-dot${dotIdx === featuredIdx ? " is-active" : ""}`}
+              onClick={() => setFeaturedIdx(dotIdx)}
+              aria-label={`Go to featured slide ${dotIdx + 1}`}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* ================================================================
+          4. PhET SIMULATION CATALOG WITH FACETED SIDEBAR (REFERENCE IMAGE 3)
+          ================================================================ */}
+      <div ref={catalogSectionRef} className="vl-phet-catalog-section" aria-label="Simulations Catalog">
+        {/* Top Breadcrumbs & Search Bar */}
+        <div className="vl-phet-top-nav-bar">
+          <div className="vl-phet-crumbs-row">
+            <span className="vl-phet-crumb-chip">HTML5 / WebAudio ✓</span>
+            {filterLevel !== "all" && (
+              <span className="vl-phet-crumb-chip">
+                Level: {filterLevel} <button type="button" onClick={() => setFilterLevel("all")}>✕</button>
+              </span>
+            )}
+            {filterCat !== "all" && (
+              <span className="vl-phet-crumb-chip">
+                Topic: {filterCat} <button type="button" onClick={() => setFilterCat("all")}>✕</button>
+              </span>
+            )}
+            {searchQuery && (
+              <span className="vl-phet-crumb-chip">
+                &quot;{searchQuery}&quot; <button type="button" onClick={() => setSearchQuery("")}>✕</button>
+              </span>
+            )}
+          </div>
+
+          <div className="psw-view-toggle-btns" role="tablist" style={{ margin: '0 0.5rem' }}>
             <button
               type="button"
-              className={`vl-level-tab${filterLevel === 'all' ? ' is-active' : ''}`}
-              onClick={() => setFilterLevel('all')}
-            >
-              <span className="vl-tab-icon">🌟</span> ALL LEVELS ({LAB_SEGMENTS.length})
-            </button>
-            <button
-              type="button"
-              className={`vl-level-tab vl-lt--preschool${filterLevel === 'preschool' ? ' is-active' : ''}`}
+              className={`psw-view-mode-pill ${catalogViewMode === 'catalog' ? 'is-active' : ''}`}
               onClick={() => {
-                setFilterLevel('preschool');
-                setActive('preschool-wonder');
-                soundEffects.playStrokeChime();
+                setCatalogViewMode('catalog');
+                catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
             >
-              <span className="vl-tab-icon">🧸</span> PRESCHOOL (Ages 3–6)
+              <span>🎴</span> Catalog Grid ({visibleSegments.length})
             </button>
             <button
               type="button"
-              className={`vl-level-tab vl-lt--primary${filterLevel === 'primary' ? ' is-active' : ''}`}
-              onClick={() => setFilterLevel('primary')}
+              className={`psw-view-mode-pill ${catalogViewMode === 'workbench' ? 'is-active' : ''}`}
+              onClick={() => {
+                setCatalogViewMode('workbench');
+                simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
             >
-              <span className="vl-tab-icon">🎒</span> PRIMARY (Grades 3–5)
-            </button>
-            <button
-              type="button"
-              className={`vl-level-tab vl-lt--middle${filterLevel === 'middle' ? ' is-active' : ''}`}
-              onClick={() => setFilterLevel('middle')}
-            >
-              <span className="vl-tab-icon">🔬</span> MIDDLE SCHOOL (Grades 6–8)
-            </button>
-            <button
-              type="button"
-              className={`vl-level-tab vl-lt--high${filterLevel === 'high' ? ' is-active' : ''}`}
-              onClick={() => setFilterLevel('high')}
-            >
-              <span className="vl-tab-icon">🚀</span> HIGH SCHOOL (Grades 9–12)
-            </button>
-            <button
-              type="button"
-              className={`vl-level-tab vl-lt--advanced${filterLevel === 'advanced' ? ' is-active' : ''}`}
-              onClick={() => setFilterLevel('advanced')}
-            >
-              <span className="vl-tab-icon">🏛️</span> ADVANCED SCHOLAR (Grade 11+)
+              <span>🕹️</span> Workbench: {seg.code}
             </button>
           </div>
-        </div>
 
-        {/* Row 2: Science Topic & Discipline Selector */}
-        <div className="vl-ctrl-row">
-          <div className="vl-ctrl-label-col">
-            <span className="vl-ctrl-label-icon">🔬</span>
-            <div>
-              <span className="vl-ctrl-label-title">SCIENCE TOPIC</span>
-              <span className="vl-ctrl-label-sub">पदार्थ-खगोल-जीव</span>
-            </div>
-          </div>
-          <div className="vl-cat-tabs" role="toolbar" aria-label="Filter science lab games by scientific discipline">
-            <button
-              type="button"
-              className={`vl-cat-tab${filterCat === 'all' ? ' is-active' : ''}`}
-              onClick={() => setFilterCat('all')}
-            >
-              <span className="vl-cat-icon">🕹️</span> ALL TOPICS ({LAB_SEGMENTS.length})
-            </button>
-            <button
-              type="button"
-              className={`vl-cat-tab${filterCat === 'matter' ? ' is-active' : ''}`}
-              onClick={() => setFilterCat('matter')}
-            >
-              <span className="vl-cat-icon">⚛️</span> MATTER &amp; ATOMS ({LAB_SEGMENTS.filter((s) => s.category === 'matter').length})
-            </button>
-            <button
-              type="button"
-              className={`vl-cat-tab${filterCat === 'cosmos' ? ' is-active' : ''}`}
-              onClick={() => setFilterCat('cosmos')}
-            >
-              <span className="vl-cat-icon">🪐</span> COSMOS &amp; SPACE ({LAB_SEGMENTS.filter((s) => s.category === 'cosmos').length})
-            </button>
-            <button
-              type="button"
-              className={`vl-cat-tab${filterCat === 'life' ? ' is-active' : ''}`}
-              onClick={() => setFilterCat('life')}
-            >
-              <span className="vl-cat-icon">🌿</span> LIFE &amp; ECOLOGY ({LAB_SEGMENTS.filter((s) => s.category === 'life').length})
-            </button>
-            <button
-              type="button"
-              className={`vl-cat-tab${filterCat === 'waves' ? ' is-active' : ''}`}
-              onClick={() => setFilterCat('waves')}
-            >
-              <span className="vl-cat-icon">📐</span> WAVES &amp; MATH ({LAB_SEGMENTS.filter((s) => s.category === 'waves').length})
-            </button>
-          </div>
-        </div>
-
-        {/* Row 3: Quick Search & Active Filter Counter */}
-        <div className="vl-ctrl-meta-row">
-          <div className="vl-search-box">
+          <div className="vl-search-box" style={{ maxWidth: 320, margin: 0 }}>
             <span className="vl-search-icon" aria-hidden="true">🔍</span>
             <input
               type="text"
               className="vl-search-input"
-              placeholder="Search 16 science lab games (e.g. rocket, gravity, atom, moon, biology, sounds, temple)..."
+              placeholder="Search simulations..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              aria-label="Search science lab games by keyword"
+              aria-label="Search simulations"
             />
             {searchQuery && (
               <button
                 type="button"
                 className="vl-search-clear"
-                onClick={() => setSearchQuery('')}
-                aria-label="Clear search query"
+                onClick={() => setSearchQuery("")}
+                aria-label="Clear search"
               >
                 ✕
               </button>
             )}
           </div>
+        </div>
 
-          <div className="vl-filter-status">
-            <span className="vl-filter-count-badge">
-              Showing <strong>{visibleSegments.length}</strong> of <strong>{LAB_SEGMENTS.length}</strong> Science Lab Games
-            </span>
-            {(filterCat !== 'all' || filterLevel !== 'all' || searchQuery.trim()) && (
+        {/* PhET Two-Column Layout */}
+        <div className="vl-phet-layout-row">
+          {/* Left Faceted Sidebar */}
+          <aside className="vl-phet-sidebar" aria-label="Simulation Filters">
+            <div className="vl-phet-sb-header">
+              <span className="vl-phet-sb-title">Filters</span>
               <button
                 type="button"
-                className="vl-filter-reset-btn"
+                className="vl-phet-clear-btn"
                 onClick={() => {
-                  setFilterCat('all');
-                  setFilterLevel('all');
-                  setSearchQuery('');
+                  setFilterCat("all");
+                  setFilterLevel("all");
+                  setSearchQuery("");
                 }}
               >
-                Reset All Filters ✕
+                Clear Filters
               </button>
-            )}
+            </div>
+
+            <div className="vl-phet-filter-group">
+              <span className="vl-phet-fg-title">Subjects</span>
+              <label className="vl-phet-tree-item">
+                <input
+                  type="checkbox"
+                  checked={filterLevel === "preschool"}
+                  onChange={(e) => setFilterLevel(e.target.checked ? "preschool" : "all")}
+                />
+                <span>🧸 Preschool Wonder (11)</span>
+              </label>
+              <label className="vl-phet-tree-item">
+                <input
+                  type="checkbox"
+                  checked={filterCat === "matter"}
+                  onChange={(e) => setFilterCat(e.target.checked ? "matter" : "all")}
+                />
+                <span>⚛️ Matter & Atoms (Physics)</span>
+              </label>
+              <label className="vl-phet-tree-item">
+                <input
+                  type="checkbox"
+                  checked={filterCat === "cosmos"}
+                  onChange={(e) => setFilterCat(e.target.checked ? "cosmos" : "all")}
+                />
+                <span>🪐 Cosmos & Space (Astronomy)</span>
+              </label>
+              <label className="vl-phet-tree-item">
+                <input
+                  type="checkbox"
+                  checked={filterCat === "life"}
+                  onChange={(e) => setFilterCat(e.target.checked ? "life" : "all")}
+                />
+                <span>🌿 Life & Ecology (Biology)</span>
+              </label>
+              <label className="vl-phet-tree-item">
+                <input
+                  type="checkbox"
+                  checked={filterCat === "waves"}
+                  onChange={(e) => setFilterCat(e.target.checked ? "waves" : "all")}
+                />
+                <span>📐 Waves & Math (Cymatics)</span>
+              </label>
+            </div>
+
+            <div className="vl-phet-filter-group">
+              <button
+                type="button"
+                className="vl-phet-accordion-btn"
+                onClick={() => setIsGradeAccordionOpen((o) => !o)}
+              >
+                <span>Grade Level</span>
+                <span>{isGradeAccordionOpen ? "−" : "+"}</span>
+              </button>
+              {isGradeAccordionOpen && (
+                <div style={{ paddingTop: "0.45rem" }}>
+                  <label className="vl-phet-tree-item">
+                    <input
+                      type="checkbox"
+                      checked={filterLevel === "preschool"}
+                      onChange={(e) => setFilterLevel(e.target.checked ? "preschool" : "all")}
+                    />
+                    <span>Preschool (Ages 2–6)</span>
+                  </label>
+                  <label className="vl-phet-tree-item">
+                    <input
+                      type="checkbox"
+                      checked={filterLevel === "primary"}
+                      onChange={(e) => setFilterLevel(e.target.checked ? "primary" : "all")}
+                    />
+                    <span>Primary (Grades 3–5)</span>
+                  </label>
+                  <label className="vl-phet-tree-item">
+                    <input
+                      type="checkbox"
+                      checked={filterLevel === "middle"}
+                      onChange={(e) => setFilterLevel(e.target.checked ? "middle" : "all")}
+                    />
+                    <span>Middle (Grades 6–8)</span>
+                  </label>
+                  <label className="vl-phet-tree-item">
+                    <input
+                      type="checkbox"
+                      checked={filterLevel === "high"}
+                      onChange={(e) => setFilterLevel(e.target.checked ? "high" : "all")}
+                    />
+                    <span>High School (Grades 9–12)</span>
+                  </label>
+                </div>
+              )}
+            </div>
+
+            <div className="vl-phet-filter-group">
+              <button
+                type="button"
+                className="vl-phet-accordion-btn"
+                onClick={() => setIsFeaturesAccordionOpen((o) => !o)}
+              >
+                <span>Inclusive Features</span>
+                <span>{isFeaturesAccordionOpen ? "−" : "+"}</span>
+              </button>
+              {isFeaturesAccordionOpen && (
+                <div style={{ paddingTop: "0.45rem" }}>
+                  <label className="vl-phet-tree-item">
+                    <input type="checkbox" defaultChecked />
+                    <span>🔊 Sanskrit Audio Speech</span>
+                  </label>
+                  <label className="vl-phet-tree-item">
+                    <input type="checkbox" defaultChecked />
+                    <span>👆 Direct Touch Controls</span>
+                  </label>
+                  <label className="vl-phet-tree-item">
+                    <input type="checkbox" defaultChecked />
+                    <span>🎯 3-Min Guided Quests</span>
+                  </label>
+                  <label className="vl-phet-tree-item">
+                    <input type="checkbox" defaultChecked />
+                    <span>📜 Sūtra Translation</span>
+                  </label>
+                </div>
+              )}
+            </div>
+          </aside>
+
+          {/* Right Simulation Grid */}
+          <div className="vl-phet-catalog-grid">
+            {visibleSegments.map((s) => {
+              const isPreschool = s.level === "preschool";
+              const isCurrent = s.id === active;
+              const isNewSim =
+                s.id === "preschool-wonder" ||
+                s.id === "agnibana" ||
+                s.id === "chandrayaan" ||
+                s.id === "mantra-acoustics";
+
+              return (
+                <div
+                  key={s.id}
+                  className={`vl-phet-sim-card${isCurrent ? " is-active-sim" : ""}`}
+                  onClick={() => handleLaunchSim(s.id)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") handleLaunchSim(s.id);
+                  }}
+                >
+                  <div className="vl-psc-thumb" style={{ background: s.tint, color: s.ink }}>
+                    {isNewSim && <span className="vl-psc-ribbon-new">NEW!</span>}
+                    <span>{s.icon}</span>
+                  </div>
+
+                  <div className="vl-psc-body">
+                    <span className="vl-psc-sector-tag">
+                      {s.code} · {s.ageRange}
+                    </span>
+                    <h3 className="vl-psc-title">{s.title}</h3>
+                    <div className="vl-psc-sa" lang="sa">
+                      {s.dev}
+                    </div>
+
+                    <div className="vl-psc-badges-row">
+                      <span className="vl-psc-badge">HTML5</span>
+                      <span className="vl-psc-badge">⌨️</span>
+                      <span className="vl-psc-badge">🔊</span>
+                      <span className="vl-psc-badge">👆</span>
+                      {isPreschool && (
+                        <span
+                          className="vl-psc-badge"
+                          style={{ background: "#fef3c7", color: "#92400e", fontWeight: 900 }}
+                        >
+                          11 Games
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
 
-      {/* Preschool Playground Hero Banner */}
-      {filterLevel === 'preschool' && (
-        <div className="vl-preschool-hero-banner" role="region" aria-label="Preschool Games Playground">
-          <div className="vl-preschool-hero-header">
-            <span className="vl-preschool-bouncy-icon" aria-hidden="true">🧸</span>
-            <div className="vl-preschool-hero-text">
-              <span className="vl-preschool-kicker">शिशु-क्रीडा-वाटिका · Little Explorers Preschool Playground (Ages 3–7)</span>
-              <h2 className="vl-preschool-hero-title">
-                🌈 Touch, Listen &amp; Discover Nature Playfully!
-              </h2>
-              <p className="vl-preschool-hero-desc">
-                Designed with joyful love for tiny hands: meet cute animals and birds, play with warm sunshine &amp; falling rain, and make magical musical sand dance! Zero reading pressure, 100% gentle exploration.
-              </p>
-            </div>
-          </div>
-          <div className="vl-preschool-hero-perks">
-            <span className="vl-php-pill vl-php-pill--animals">🐾 Cute Animal Friends</span>
-            <span className="vl-php-pill vl-php-pill--nature">☀️ Sun &amp; Rain Weather</span>
-            <span className="vl-php-pill vl-php-pill--music">🪕 Singing Strings &amp; Sand</span>
-            <span className="vl-php-pill vl-php-pill--audio">🔊 Instant Sanskrit Sounds</span>
-            <span className="vl-php-pill vl-php-pill--safe">⭐ 100% Friendly, No Tests</span>
-          </div>
-        </div>
-      )}
-
-      <nav className="vl-cards" aria-label="Vijñāna Lab simulations">
-        {visibleSegments.map((s) => {
-          const isPreschool = s.level === 'preschool';
-          const preschoolTitle = s.id === 'preschool-wonder'
-            ? '🧸 Preschool Wonder Playground'
-            : s.title;
-
-          const preschoolDev = s.id === 'preschool-wonder'
-            ? 'शिशु-क्रीडा-वाटिका · Wonder Playground'
-            : s.dev;
-
-          const preschoolBlurb = s.id === 'preschool-wonder'
-            ? '11 joyful tactile games for toddlers (Ages 2–6): Shapes, Color Magic, Fruit Picker, Animal Safari, Moon Phases, Day Routine, Seasons, Count 1-10, Sacred Bells, Divine Vāhanas, and 5 Friends bilingual story!'
-            : s.blurb;
-
-          return (
-          <React.Fragment key={s.id}>
-            {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'preschool-wonder' && (
-              <div className="vl-track-header" style={{ borderColor: 'rgba(245, 158, 11, 0.55)' }}>
-                <span className="vl-track-title" style={{ color: '#fbbf24' }}><span>🧸</span> PRESCHOOL WONDER ZONE: EARLY EXPLORERS (AGES 2–6)</span>
-                <span className="vl-track-subtitle" style={{ color: '#fde68a' }}>शिशु-क्रीडा-वाटिका · PRE-01 (11 PhET &amp; Code.org Style Tactile Sandboxes)</span>
-              </div>
-            )}
-            {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'paramanu' && (
-              <div className="vl-track-header">
-                <span className="vl-track-title"><span>⚛️</span> TRACK I: MATTER &amp; MASS CONSERVATION</span>
-                <span className="vl-track-subtitle">पदार्थ-विज्ञानम् · SEC-01 &amp; SEC-02</span>
-              </div>
-            )}
-            {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'prakriti' && (
-              <div className="vl-track-header" style={{ borderColor: 'rgba(16, 185, 129, 0.45)' }}>
-                <span className="vl-track-title" style={{ color: '#34d399' }}><span>🌿</span> TRACK II: LIFE SCIENCES &amp; BIOLOGICAL CONTINUUM</span>
-                <span className="vl-track-subtitle" style={{ color: '#6ee7b7' }}>जीव-विज्ञान-परम्परा · SEC-03 &amp; SEC-04</span>
-              </div>
-            )}
-            {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'jyotisha' && (
-              <div className="vl-track-header">
-                <span className="vl-track-title"><span>🪐</span> TRACK III: COSMOS &amp; SPACE EXPLORATION</span>
-                <span className="vl-track-subtitle">खगोल-विज्ञानम् · SEC-05 &amp; SEC-06</span>
-              </div>
-            )}
-            {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'nada-brahman' && (
-              <div className="vl-track-header">
-                <span className="vl-track-title"><span>📐</span> TRACK IV: WAVES, CYMATICS &amp; STATISTICS</span>
-                <span className="vl-track-subtitle">नाद-साङ्ख्य-विज्ञानम् · SEC-07, 08 &amp; 09</span>
-              </div>
-            )}
-            {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'agnibana' && (
-              <div className="vl-track-header">
-                <span className="vl-track-title"><span>🚀</span> TRACK V: AEROSPACE BALLISTICS &amp; METALLURGY</span>
-                <span className="vl-track-subtitle">अग्निबाण-शास्त्रम् · SEC-10</span>
-              </div>
-            )}
-            {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'vedic-geometry' && (
-              <div className="vl-track-header" style={{ borderColor: 'rgba(245, 158, 11, 0.45)' }}>
-                <span className="vl-track-title" style={{ color: '#fde047' }}><span>📐</span> TRACK VI: SACRED GEOMETRY &amp; GURUKUL CONSCIOUSNESS</span>
-                <span className="vl-track-subtitle" style={{ color: '#fcd34d' }}>जीवन्त-रेखागणितम् · SEC-11 (CONSCIOUS COSMOS)</span>
-              </div>
-            )}
-            {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'mantra-acoustics' && (
-              <div className="vl-track-header" style={{ borderColor: 'rgba(168, 85, 247, 0.45)' }}>
-                <span className="vl-track-title" style={{ color: '#c084fc' }}><span>🎶</span> TRACK VII: MANTRA ACOUSTICS &amp; THE HARMONIC CODE</span>
-                <span className="vl-track-subtitle" style={{ color: '#e9d5ff' }}>नाद-पदार्थ-विज्ञानम् · SEC-12 (ACCIDENTAL SYMPHONY &amp; CHAMAKAM)</span>
-              </div>
-            )}
-            {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'temple-engineering' && (
-              <div className="vl-track-header" style={{ borderColor: 'rgba(217, 119, 6, 0.45)' }}>
-                <span className="vl-track-title" style={{ color: '#fbbf24' }}><span>🏛️</span> TRACK VIII: STRUCTURAL ARCHITECTURE &amp; GEOTECHNICAL DYNAMICS</span>
-                <span className="vl-track-subtitle" style={{ color: '#fef3c7' }}>शिल्प-स्थापत्य-विज्ञानम् · SEC-13 (SANDHI BANDHANA &amp; VĀSTU FRACTALS)</span>
-              </div>
-            )}
-            <a
-              href={`/vignana-lab#${s.id}`}
-              className={`vl-card${s.id === active ? ' is-active' : ''}${isPreschool ? ' vl-card--preschool' : ''}`}
-              style={{
-                '--card-tint': s.tint,
-                '--card-ink': s.ink,
-                '--card-glow': s.glow,
-              } as React.CSSProperties}
-              onClick={(e) => {
-                e.preventDefault();
-                setActive(s.id);
-                if (s.id === active) simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              aria-current={s.id === active ? 'true' : undefined}
-              data-testid={`lab-card-${s.id}`}
-            >
-              <div className="vl-card-corner-accent" aria-hidden="true" />
-              <div className="vl-card-header">
-                <span className={`vl-card-icon-pill${isPreschool ? ' vl-card-icon-pill--preschool' : ''}`}>
-                  {s.icon}
-                </span>
-                <div className="vl-card-header-tags">
-                  <div className="vl-card-tag-row">
-                    <span className="vl-card-sector-tag">{s.code}</span>
-                    <span className={`vl-card-level-tag vl-level--${s.level}`}>
-                      {isPreschool ? '🧸 PRESCHOOL (Ages 3–7)' : `${s.levelDev} · ${s.ageRange}`}
-                    </span>
-                    {isPreschool && (
-                      <span className="vl-preschool-tiny-pill">🍼 Toddler Friendly</span>
-                    )}
-                  </div>
-                  <span className="vl-card-badge-cat" style={{ color: s.ink, borderColor: `${s.glow}55` }}>
-                    {s.subject}
-                  </span>
-                </div>
-              </div>
-
-              <div className="vl-card-body">
-                <div className={`vl-card-dev-title${isPreschool ? ' vl-preschool-dev-title' : ''}`} lang="sa">
-                  {isPreschool ? preschoolDev : s.dev}
-                </div>
-                <div className={`vl-card-main-title${isPreschool ? ' vl-card-main-title--preschool' : ''}`}>
-                  {isPreschool ? preschoolTitle : s.title}
-                </div>
-                <div className={`vl-card-game-type${isPreschool ? ' vl-preschool-game-type' : ''}`}>
-                  <span className="vl-cgt-icon">{isPreschool ? '🎈' : '🎮'}</span>
-                  <span>{isPreschool ? 'Joyful Discovery Toy Game' : s.gameType}</span>
-                </div>
-                <div className="vl-card-school" style={{ color: s.ink }}>
-                  <span className="vl-card-school-badge">
-                    {isPreschool ? `🌈 LITTLE EXPLORER LAB // ${s.school}` : `ARCHIVE // ${s.school}`}
-                  </span>
-                </div>
-                <p className={`vl-card-blurb${isPreschool ? ' vl-card-blurb--preschool' : ''}`}>
-                  {isPreschool ? preschoolBlurb : s.blurb}
-                </p>
-              </div>
-
-              <div className="vl-card-footer">
-                {s.id === active ? (
-                  <span className={`vl-card-status is-active${isPreschool ? ' vl-preschool-status-active' : ''}`} style={!isPreschool ? { background: s.glow, color: '#090e17' } : undefined}>
-                    <span className="vl-card-pulse-dot" /> {isPreschool ? '🧸 PLAYING PRESCHOOL GAME ↓' : 'ENGAGED ON BENCH ↓'}
-                  </span>
-                ) : (
-                  <span className={`vl-card-status${isPreschool ? ' vl-preschool-status-btn' : ''}`} style={!isPreschool ? { color: s.ink, borderColor: `${s.glow}66` } : undefined}>
-                    {isPreschool ? '🧸 TAP TO PLAY ▶' : 'PLAY SCIENCE GAME ▶'}
-                  </span>
-                )}
-              </div>
-            </a>
-          </React.Fragment>
-          );
-        })}
-      </nav>
-
-      {visibleSegments.length === 0 && (
-        <div className="vl-empty-state">
-          <span className="vl-empty-icon">🔍</span>
-          <h3>No Science Lab Games match your selected filter</h3>
-          <p>Try switching to &quot;All Levels&quot; or clearing your search keywords.</p>
+      <section id={active} ref={simRef} className="vl-segment" aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
+        {/* In-Workbench Return Navigation Bar */}
+        <div className="vl-workbench-phet-nav">
           <button
             type="button"
-            className="vl-btn vl-btn--cyber"
+            className="vl-wpn-back-btn"
             onClick={() => {
-              setFilterCat('all');
-              setFilterLevel('all');
-              setSearchQuery('');
+              setCatalogViewMode('catalog');
+              soundEffects.playStrokeChime();
+              catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }}
           >
-            Show All 16 Games
+            ⬅️ Back to All 17 Simulations (Catalog Grid)
+          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 900, color: '#0f172a' }}>
+            <span>{seg.icon}</span>
+            <span>Active Sandbox: <strong>{seg.code} · {seg.title} ({seg.dev})</strong></span>
+          </div>
+          <button
+            type="button"
+            className="vl-btn vl-btn--cyber-ghost"
+            style={{ padding: '0.45rem 1rem', fontSize: '0.82rem' }}
+            onClick={() => setIsQuestDirectoryOpen(true)}
+          >
+            🧭 Quest Directory
           </button>
         </div>
-      )}
 
-      <section id={active} ref={simRef} className="vl-segment" aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
         {/* Top Quick-Navigation HUD Bar */}
         <nav className="vl-lab-bench-nav" aria-label="Sector navigation bar">
           <button
