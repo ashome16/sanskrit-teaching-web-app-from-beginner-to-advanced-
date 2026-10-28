@@ -60,7 +60,7 @@ interface TextbookReaderProps {
   isLastSentence: boolean;
   onOpenQuiz?: (categoryOrAnchor?: string) => void;
   onOpenWorksheets?: (category?: string) => void;
-  onOpenPuzzle?: () => void;
+  onOpenPuzzle?: (category?: string) => void;
   onOpenVoiceSettings?: () => void;
   onOpenCbseGuide?: () => void;
   /** Opens the बारहखड़ी lesson (deep link /barakhadi); access rules applied by the parent. */
@@ -1470,6 +1470,24 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               <span><strong>{pageBreakdown.bookName}</strong>: Pages <strong>{pageBreakdown.totalRange}</strong></span>
             </div>
             <div className="textbook-chapter-tools">
+              {activeLessonId === 'gsde109' && onOpenPuzzle && (
+                <button
+                  type="button"
+                  className="chapter-tool-btn chapter-tool-btn--game"
+                  onClick={() => onOpenPuzzle('cat_deepakam_sciences')}
+                  title="Match 22 Ancient Vedic Sciences & Professions from Page 96"
+                  style={{
+                    background: 'linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)',
+                    color: '#ffffff',
+                    border: '1px solid #a78bfa',
+                    boxShadow: '0 2px 8px rgba(124, 58, 237, 0.25)',
+                    fontWeight: 700,
+                  }}
+                >
+                  <span>🔬</span>
+                  <span>Vedic Sciences Game</span>
+                </button>
+              )}
               {onOpenQuiz && (
                 <button
                   type="button"
@@ -2814,6 +2832,74 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 </div>
               )}
 
+              {/* Special Interactive Match Game for Class 7 Deepakam Ch 9 Paragraph 3 */}
+              {sentence.sanskrit?.includes('गणितज्ञाः') && onOpenPuzzle && (
+                <div
+                  className="textbook-special-activity-card"
+                  style={{
+                    marginTop: '1.25rem',
+                    padding: '1.15rem 1.35rem',
+                    borderRadius: '16px',
+                    background: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #e0e7ff 100%)',
+                    border: '2px solid #8b5cf6',
+                    boxShadow: '0 4px 16px rgba(124, 58, 237, 0.12)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '1rem',
+                    flexWrap: 'wrap',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+                    <span style={{ fontSize: '2.4rem', lineHeight: 1 }} aria-hidden="true">🔬</span>
+                    <div>
+                      <span
+                        style={{
+                          display: 'inline-block',
+                          background: '#7c3aed',
+                          color: '#ffffff',
+                          fontSize: '0.72rem',
+                          fontWeight: 800,
+                          padding: '2px 8px',
+                          borderRadius: '999px',
+                          marginBottom: '0.25rem',
+                          letterSpacing: '0.04em',
+                        }}
+                      >
+                        DEEPAKAM CH 9 · PARAGRAPH 3 INTERACTIVE GAME
+                      </span>
+                      <div style={{ fontWeight: 800, fontSize: '1rem', color: '#4c1d95', lineHeight: 1.3 }}>
+                        वैदिक-विज्ञानानि व्यवसायाः च · Match the 22 Ancient Sciences &amp; Professions
+                      </div>
+                      <div style={{ fontSize: '0.84rem', color: '#5b21b6', marginTop: '0.2rem' }}>
+                        Mathematicians, Astronomers, Geologists, Technologists, Physicians, Chemists &amp; more with child-friendly English references!
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => onOpenPuzzle('cat_deepakam_sciences')}
+                    style={{
+                      padding: '0.7rem 1.4rem',
+                      borderRadius: '12px',
+                      background: 'linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)',
+                      color: '#ffffff',
+                      border: 'none',
+                      fontWeight: 800,
+                      fontSize: '0.92rem',
+                      cursor: 'pointer',
+                      boxShadow: '0 4px 12px rgba(124, 58, 237, 0.35)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    <span>🎮 Play Matching Game ➔</span>
+                  </button>
+                </div>
+              )}
+
               {/* Instant Inline Word Meaning Bar — Reads right on the same page with 0 scrolling */}
               {cleanActiveWord && (
                 <div className="textbook-inline-meaning-bar" role="region" aria-label="Selected word meaning">
@@ -2943,6 +3029,44 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 )}
               </div>
             </div>
+
+            {activeLessonId === 'gsde109' && onOpenPuzzle && (
+              <div
+                className="chapter-bundle-item"
+                style={{
+                  border: '2px solid #8b5cf6',
+                  background: 'linear-gradient(135deg, rgba(245, 243, 255, 0.95), rgba(238, 242, 255, 0.95))',
+                }}
+              >
+                <span className="bundle-item-icon">🔬</span>
+                <div className="bundle-item-content">
+                  <span
+                    style={{
+                      background: '#7c3aed',
+                      color: '#fff',
+                      fontSize: '0.72rem',
+                      fontWeight: 800,
+                      padding: '2px 8px',
+                      borderRadius: '999px',
+                      display: 'inline-block',
+                      marginBottom: '6px',
+                    }}
+                  >
+                    Interactive Match · Page 96
+                  </span>
+                  <h4>वैदिक-विज्ञानानि व्यवसायाः च Match</h4>
+                  <p>Match the 22 ancient Sanskrit sciences, astronomers, and scholars from Paragraph 3 with modern English references!</p>
+                  <button
+                    type="button"
+                    className="bundle-action-btn"
+                    style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)', color: '#fff' }}
+                    onClick={() => onOpenPuzzle('cat_deepakam_sciences')}
+                  >
+                    🎮 Play Sciences Match Game ➔
+                  </button>
+                </div>
+              </div>
+            )}
 
             {chapterPdfUrl && (
               <div className="chapter-bundle-item">

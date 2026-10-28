@@ -38,6 +38,14 @@ const PRESCHOOL_MATCH_CAT_IDS = new Set([
   'household',
 ]);
 
+const DEEPAKAM_MATCH_CAT_IDS = new Set([
+  'cat_deepakam_sciences',
+  'cat_numbers_mnemonics',
+  'occupations',
+  'cat_directions_traffic',
+  'tenses',
+]);
+
 export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   initialMode = 'match',
   initialCategory,
@@ -59,12 +67,33 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     return MATCH_CATEGORIES[0].id;
   });
 
-  const [showPreschoolOnly, setShowPreschoolOnly] = useState<boolean>(false);
+  const [filterMode, setFilterMode] = useState<'all' | 'preschool' | 'deepakam'>(() => {
+    if (initialCategory === 'cat_deepakam_sciences' || DEEPAKAM_MATCH_CAT_IDS.has(initialCategory || '')) {
+      return 'deepakam';
+    }
+    return 'all';
+  });
+
+  const showPreschoolOnly = filterMode === 'preschool';
+
+  useEffect(() => {
+    if (initialCategory && MATCH_CATEGORIES.some((c) => c.id === initialCategory)) {
+      setSelectedCatId(initialCategory);
+      if (initialCategory === 'cat_deepakam_sciences' || DEEPAKAM_MATCH_CAT_IDS.has(initialCategory)) {
+        setFilterMode('deepakam');
+      }
+    }
+  }, [initialCategory]);
 
   const displayedCategories = useMemo(() => {
-    if (!showPreschoolOnly) return MATCH_CATEGORIES;
-    return MATCH_CATEGORIES.filter((c) => PRESCHOOL_MATCH_CAT_IDS.has(c.id));
-  }, [showPreschoolOnly]);
+    if (filterMode === 'preschool') {
+      return MATCH_CATEGORIES.filter((c) => PRESCHOOL_MATCH_CAT_IDS.has(c.id));
+    }
+    if (filterMode === 'deepakam') {
+      return MATCH_CATEGORIES.filter((c) => DEEPAKAM_MATCH_CAT_IDS.has(c.id));
+    }
+    return MATCH_CATEGORIES;
+  }, [filterMode]);
 
   const activeCategory: MatchCategoryMetadata = useMemo(() => {
     return (
@@ -325,20 +354,20 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
           ==================================================================== */}
       {activeGameMode === 'match' && (
         <>
-          {/* Category Filter Bar (All Categories vs Preschool / Toddler Favorites) */}
+          {/* Category Filter Bar (All Categories vs Preschool / Toddler Favorites vs Deepakam Curriculum) */}
           <div className="sgh-filter-bar">
             <button
               type="button"
-              className={`sgh-filter-chip${!showPreschoolOnly ? ' sgh-filter-chip--active' : ''}`}
-              onClick={() => setShowPreschoolOnly(false)}
+              className={`sgh-filter-chip${filterMode === 'all' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => setFilterMode('all')}
             >
               <span>🌟 All Categories ({MATCH_CATEGORIES.length})</span>
             </button>
             <button
               type="button"
-              className={`sgh-filter-chip sgh-filter-chip--preschool${showPreschoolOnly ? ' sgh-filter-chip--active' : ''}`}
+              className={`sgh-filter-chip sgh-filter-chip--preschool${filterMode === 'preschool' ? ' sgh-filter-chip--active' : ''}`}
               onClick={() => {
-                setShowPreschoolOnly(true);
+                setFilterMode('preschool');
                 if (!PRESCHOOL_MATCH_CAT_IDS.has(selectedCatId)) {
                   setSelectedCatId('fruits_veg');
                 }
@@ -346,14 +375,36 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
             >
               <span>🧸 Preschool &amp; Kids (Ages 3–7)</span>
             </button>
+            <button
+              type="button"
+              className={`sgh-filter-chip sgh-filter-chip--deepakam${filterMode === 'deepakam' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => {
+                setFilterMode('deepakam');
+                if (!DEEPAKAM_MATCH_CAT_IDS.has(selectedCatId)) {
+                  setSelectedCatId('cat_deepakam_sciences');
+                }
+              }}
+            >
+              <span>🔬 Class 7 Deepakam Curriculum</span>
+            </button>
           </div>
 
-          {showPreschoolOnly && (
+          {filterMode === 'preschool' && (
             <div className="sgh-preschool-banner">
               <span className="spb-icon" aria-hidden="true">🧸</span>
               <div>
                 <strong>शिशु-युग्म-क्रीडा · Preschool Picture Match (Ages 3–7)</strong>
                 <span>Tap matching cards with emojis and hear the native Sanskrit pronunciation! 100% fun, gentle, and tactile.</span>
+              </div>
+            </div>
+          )}
+
+          {filterMode === 'deepakam' && (
+            <div className="sgh-deepakam-banner">
+              <span className="sdb-icon" aria-hidden="true">🔬</span>
+              <div>
+                <strong>दीपकम् (सप्तमी कक्षा) · Class 7 Deepakam Curriculum Games</strong>
+                <span>Directly covers Chapter 9 (अन्नाद् भवन्ति भूतानि) ancient Vedic sciences &amp; professions, natural numbers, and directions!</span>
               </div>
             </div>
           )}

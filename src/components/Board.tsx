@@ -32,6 +32,7 @@ export interface BoardProps {
   onNavigateToVarnamala?: () => void;
   onNavigateToGrammar?: () => void;
   initialStudioMode?: 'jodo' | 'match' | 'maze';
+  initialCategory?: string;
 }
 
 const SHELF_DESCRIPTIONS: Record<ShelfId, { title: string; desc: string; icon: string }> = {
@@ -973,6 +974,7 @@ const Board: React.FC<BoardProps> = ({
   onNavigateToVarnamala,
   onNavigateToGrammar,
   initialStudioMode,
+  initialCategory,
 }) => {
   const [boardStudioMode, setBoardStudioMode] = useState<'jodo' | 'match' | 'maze'>(() => {
     if (initialStudioMode) return initialStudioMode;
@@ -982,6 +984,12 @@ const Board: React.FC<BoardProps> = ({
     if (h === '#match' || h === '#match-games' || h === '#match-the-following' || p.includes('match')) return 'match';
     return 'jodo';
   });
+
+  useEffect(() => {
+    if (initialStudioMode) {
+      setBoardStudioMode(initialStudioMode);
+    }
+  }, [initialStudioMode]);
 
   useEffect(() => {
     const handleHash = () => {
@@ -2234,7 +2242,7 @@ const Board: React.FC<BoardProps> = ({
         <span className="mode-tab-icon">🎯</span>
         <div className="mode-tab-text">
           <span className="mode-tab-title">युग्म-मेलनम् · Match Pairs</span>
-          <span className="mode-tab-sub">14 Categories · Actions, Relations &amp; More</span>
+          <span className="mode-tab-sub">20+ Sciences, Vedic Occupations &amp; More</span>
         </div>
       </button>
 
@@ -2259,6 +2267,7 @@ const Board: React.FC<BoardProps> = ({
     {boardStudioMode !== 'jodo' ? (
       <SanskritGamesHub
         initialMode={boardStudioMode}
+        initialCategory={initialCategory}
         onGoBack={() => {
           setBoardStudioMode('jodo');
           window.location.hash = '#jodo';

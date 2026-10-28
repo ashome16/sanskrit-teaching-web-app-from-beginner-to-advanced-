@@ -146,6 +146,57 @@
   box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
 }
 
+.sgh-filter-chip--deepakam {
+  border-color: #c4b5fd;
+  color: #5b21b6;
+}
+
+.sgh-filter-chip--deepakam.sgh-filter-chip--active {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%) !important;
+  border-color: #6d28d9 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+
+.sgh-deepakam-banner {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 40%, #e0e7ff 100%);
+  border: 2px solid #8b5cf6;
+  border-radius: 18px;
+  padding: 0.9rem 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12);
+}
+
+.sgh-deepakam-banner .sdb-icon {
+  font-size: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border: 2px solid #a78bfa;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.sgh-deepakam-banner strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #4c1d95;
+  margin-bottom: 0.15rem;
+}
+
+.sgh-deepakam-banner span {
+  font-size: 0.85rem;
+  color: #5b21b6;
+  line-height: 1.45;
+}
+
 .sgh-preschool-banner {
   background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 40%, #ecfdf5 100%);
   border: 2px dashed #10b981;

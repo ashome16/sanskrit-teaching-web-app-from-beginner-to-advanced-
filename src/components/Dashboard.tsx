@@ -543,6 +543,14 @@ const Dashboard: React.FC = () => {
   };
 
   const [worksheetsCategory, setWorksheetsCategory] = useState<string>('all');
+  const [boardStudioMode, setBoardStudioMode] = useState<'jodo' | 'match' | 'maze'>('jodo');
+  const [boardCategory, setBoardCategory] = useState<string | undefined>(undefined);
+
+  const handleOpenBoard = (mode: 'jodo' | 'match' | 'maze' = 'jodo', category?: string) => {
+    setBoardStudioMode(mode);
+    setBoardCategory(category);
+    navigateToView('board');
+  };
   const openCourseAddendum = (addendumId: string) => {
     setCourseAddendumTarget((prev) => ({ id: addendumId, key: (prev?.key || 0) + 1 }));
     navigateToView('course');
@@ -1432,6 +1440,8 @@ const Dashboard: React.FC = () => {
               onNavigateToReader={(lessonId) => openDeepakam(lessonId)}
               onNavigateToVarnamala={() => openVarnamala('sound')}
               onNavigateToGrammar={handleOpenGrammar}
+              initialStudioMode={boardStudioMode}
+              initialCategory={boardCategory}
             />
           </ErrorBoundary>
         )}
@@ -1541,7 +1551,13 @@ const Dashboard: React.FC = () => {
                 if (category) setQuizAnchor(category);
               }}
               onOpenWorksheets={(category) => handleOpenWorksheets(category || 'all')}
-              onOpenPuzzle={() => navigateToView('board')}
+              onOpenPuzzle={(category?: string) => {
+                if (category) {
+                  handleOpenBoard('match', category);
+                } else {
+                  handleOpenBoard('jodo');
+                }
+              }}
               onOpenVoiceSettings={() => setIsVoiceModalOpen(true)}
               onOpenCbseGuide={() => navigateToView('cbse-guide')}
               onOpenBarakhadi={() => openDeepakam('barakhadi')}
