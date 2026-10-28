@@ -764,7 +764,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [showEntranceIntro, setShowEntranceIntro] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
     try {
-      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen_v2');
+      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen_v3');
       return !alreadySeen;
     } catch {
       return false;
@@ -778,7 +778,7 @@ const HomePage: React.FC<HomePageProps> = ({
       setIsLogoArrived(false);
     }, 1200);
     try {
-      sessionStorage.setItem('ednet_gurukul_intro_seen_v2', 'true');
+      sessionStorage.setItem('ednet_gurukul_intro_seen_v3', 'true');
     } catch {}
   }, []);
 
@@ -989,9 +989,19 @@ const HomePage: React.FC<HomePageProps> = ({
               width={76}
               height={76}
               onClick={() => setShowEntranceIntro(true)}
-              title="EdNet Gurukul · संस्कृत-पाठशाला"
+              title="EdNet Gurukul · संस्कृत-पाठशाला · Click to experience Gurukul dawn animation"
               style={{ cursor: 'pointer' }}
             />
+            <button
+              type="button"
+              className="home-hero-replay-intro-btn"
+              onClick={() => setShowEntranceIntro(true)}
+              title="Experience or replay the Vedic Tapovana Gurukul Dawn entrance animation and morning soundscape"
+            >
+              <span className="hhri-icon" aria-hidden="true">🌅</span>
+              <span>गुरुकुल-दर्शनम् · Play Gurukul Dawn Animation</span>
+              <span className="hhri-badge">Sound &amp; Art</span>
+            </button>
           </div>
 
           {/* 1. Main Headline & Direct Level Selection */}

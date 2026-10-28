@@ -106,6 +106,51 @@ tr th {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.home-hero-replay-intro-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, rgba(255, 251, 235, 0.95), rgba(254, 243, 199, 0.92));
+  border: 1.5px solid rgba(217, 119, 6, 0.38);
+  color: #78350f;
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 0.45rem 1.15rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(217, 119, 6, 0.12);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 0.35rem;
+}
+
+.home-hero-replay-intro-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-color: #d97706;
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.22);
+  color: #92400e;
+}
+
+.home-hero-replay-intro-btn:active {
+  transform: translateY(0);
+}
+
+.home-hero-replay-intro-btn .hhri-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.home-hero-replay-intro-btn .hhri-badge {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(180, 83, 9, 0.14);
+  color: #92400e;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
 /* --------------------------------------------------------------------------
    Interactive Level Selection Chips (Linked to 6-Step Pathway)
    -------------------------------------------------------------------------- */

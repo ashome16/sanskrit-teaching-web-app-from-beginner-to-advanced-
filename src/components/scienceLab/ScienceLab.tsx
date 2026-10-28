@@ -748,13 +748,6 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               <p className="vl-lead">
                 Boot up the ultimate reality &amp; science play lab. Explore ancient atomic physics, orbital planetary gravity, cymatic sand harmonics, and aerospace metallurgy through 16 interactive sandboxes from preschool wonder to scholar research. Decode Sanskrit sūtras and conquer each scientific challenge.
               </p>
-              <div className="vl-hud-telemetry">
-                <span className="vl-hud-pill"><span>🧸</span> PRESCHOOL (3–7)</span>
-                <span className="vl-hud-pill"><span>🎒</span> PRIMARY (8–12)</span>
-                <span className="vl-hud-pill"><span>🔬</span> MIDDLE (11–15)</span>
-                <span className="vl-hud-pill"><span>🚀</span> HIGH &amp; ADVANCED</span>
-                <span className="vl-hud-pill"><span>🧠</span> BODHI AI GUIDE</span>
-              </div>
               <div className="vl-btn-row">
                 <button
                   type="button"

@@ -210,6 +210,13 @@
   scrollbar-width: none;
   box-sizing: border-box;
   animation: gurukulContentFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gurukul-intro-content.is-overlay-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(20px) scale(0.96) !important;
 }
 
 .gurukul-intro-content::-webkit-scrollbar {
@@ -432,6 +439,30 @@
   background: linear-gradient(135deg, #c44200 0%, #a33400 100%);
 }
 
+.gurukul-intro-view-btn {
+  background: rgba(254, 243, 199, 0.22);
+  border: 1.5px solid rgba(251, 191, 36, 0.6);
+  color: #fef3c7;
+  border-radius: 999px;
+  padding: 0.7rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.gurukul-intro-view-btn:hover {
+  background: rgba(254, 243, 199, 0.38);
+  border-color: #f59e0b;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
 .gurukul-intro-mute-btn {
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -451,6 +482,37 @@
 .gurukul-intro-mute-btn:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-1px);
+}
+
+.gurukul-intro-zen-hint {
+  position: fixed;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1.5px solid rgba(251, 191, 36, 0.7);
+  color: #fef08a;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  animation: zenPulse 2.5s infinite;
+  white-space: nowrap;
+}
+
+@keyframes zenPulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.03);
+    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.35);
+  }
 }
 
 /* Lingering Countdown & Progress Bar */
