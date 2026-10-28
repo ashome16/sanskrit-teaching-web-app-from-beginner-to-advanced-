@@ -978,23 +978,8 @@ const HomePage: React.FC<HomePageProps> = ({
             Hero Section
             ------------------------------------------------------------------ */}
         <section className="home-hero">
-          {/* 1. SANSKRIT PRIMARY IDENTITY & BIG DEVANAGARI GRAPHIC (Immediate Focal Point) */}
+          {/* 1. SANSKRIT PRIMARY IDENTITY & BIG DEVANAGARI TEXT (Immediate Focal Point) */}
           <div className="home-hero-sanskrit-centerpiece">
-            <div className="home-hero-emblem-wrap">
-              <img
-                src="/images/sanskrit-devanagari-emblem-opt.jpg"
-                alt="संस्कृतम् (Sanskrit) - Classical Illuminated Devanagari Calligraphy Artwork"
-                className="home-hero-sanskrit-emblem"
-                width={220}
-                height={220}
-                loading="eager"
-                onClick={() => {
-                  const el = document.getElementById('journey');
-                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-                title="संस्कृतम् (Sanskrit) · Click to explore your step-by-step journey"
-              />
-            </div>
             <div className="home-hero-sanskrit-wordmark">
               <span className="home-hero-sanskrit-calligraphy" lang="sa">
                 संस्कृतम्
@@ -1018,7 +1003,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 }}
                 title="Explore the complete 6-stage step-by-step Sanskrit roadmap"
               >
-                <span className="hhjt-text">Your Step-by-Step संस्कृतम् (Sanskrit) Journey</span>
+                <span className="hhjt-text">Your Step-by-Step Sanskrit Journey</span>
                 <span className="hhjt-arrow" aria-hidden="true">➔</span>
               </a>
             </h1>
@@ -1293,7 +1278,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <span>The Gurukul Learning Pathway · सोपान-मार्गः</span>
             </div>
             <h2 className="home-journey-title">
-              Your Step-by-Step संस्कृतम् (Sanskrit) Journey · Measurable Outcomes
+              Your Step-by-Step Sanskrit Journey · Measurable Outcomes
             </h2>
             <p className="home-journey-subtitle">
               A visible 6-stage roadmap designed for school students, parents, and beginners to achieve tangible outcomes at every milestone:
