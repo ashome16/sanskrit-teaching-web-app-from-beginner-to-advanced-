@@ -21,6 +21,7 @@ import { PracticeVaultShowcase } from './PracticeVaultShowcase';
 import { ChitraKavyaPathwayCard } from './ChitraKavyaPathwayCard';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
+import '../styles/bodhi-online-classes.css';
 
 const Grade8SyllabusModal = lazy(() => import('./Grade8SyllabusModal').then((m) => ({ default: m.Grade8SyllabusModal })));
 const VarnamalaFlashcardDownloadModal = lazy(() => import('./VarnamalaFlashcardDownloadModal'));
@@ -2056,15 +2057,14 @@ const HomePage: React.FC<HomePageProps> = ({
       <section className="home-online-classes-section" id="online-classes" aria-label="Sanskrit Direct Lessons and Classes">
         <div className="hoc-header">
           <div className="hoc-badge">
-            <span>🎓</span>
-            <span>प्रत्यक्ष-पाठाः · DIRECT LESSONS &amp; LIVE CLASSES</span>
+            <span>🎓 DIRECT GUIDED LESSONS</span>
           </div>
           <h2 className="hoc-title">
-            Curated Direct Lessons &amp; Live Tutoring
-            <span className="hoc-title-sa">बोधेः प्रत्यक्ष-संस्कृत-वर्गाः · Instant 1-Tap Access</span>
+            Direct Guided Lessons
+            <span className="hoc-title-sa">प्रत्यक्ष-पाठाः · Instant 1-Tap Access</span>
           </h2>
           <p className="hoc-subtitle">
-            Dive straight into structured micro-lessons across spoken Sanskrit, CBSE syllabus, Pāṇinian grammar, and Vedic speed math—guided 24/7 by Bodhi.
+            Jump straight into interactive micro-lessons across Spoken Sanskrit, CBSE, Grammar, and Vedic Math.
           </p>
         </div>
 
@@ -2072,59 +2072,46 @@ const HomePage: React.FC<HomePageProps> = ({
           {/* Track 1: Spoken Sanskrit */}
           <div className="hoc-card">
             <div>
-              <div className="hoc-card-icon">🗣️</div>
-              <div className="hoc-card-badge">Level 1 · Beginners &amp; Kids</div>
-              <h3 className="hoc-card-title">Spoken Sanskrit &amp; Sounds</h3>
+              <div className="hoc-card-header-row">
+                <span className="hoc-card-icon" aria-hidden="true">🗣️</span>
+                <span className="hoc-card-badge">Level 1</span>
+              </div>
+              <h3 className="hoc-card-title">Spoken Sanskrit</h3>
               <p className="hoc-card-desc">
-                Learn 400+ aksharas, authentic 5-vocal-zone pronunciation, and conversational dialogue.
+                Pronunciation, 400+ aksharas &amp; daily dialogue.
               </p>
               <div className="hoc-lesson-links">
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={() => onOpenVarnamala?.()}
-                  title="Open Lesson 1: Sanskrit Alphabet & 5 Vocal Zones"
+                  title="Open Lesson 1: Varnamala Alphabet & Sounds"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">L1</span>
-                      <span>वर्णमाला व ५ उच्चारण-स्थानानि</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">Alphabet &amp; 5 Vocal Articulation Zones</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">1</span>
+                  <span className="hoc-pill-label">वर्णमाला · Alphabet &amp; Sounds</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
 
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={() => onOpenReader('simple-sentences')}
                   title="Open Lesson 2: Greetings & Daily Dialogue"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">L2</span>
-                      <span>शिष्टाचारः व परिचयः (Greetings)</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">नमस्ते! भवतः नाम किम्? · Daily Spoken Phrases</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">2</span>
+                  <span className="hoc-pill-label">शिष्टाचारः · Daily Greetings</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
 
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={() => onOpenReader('numbers')}
-                  title="Open Lesson 3: Sanskrit Numbers & Daily Routine"
+                  title="Open Lesson 3: Numbers 1–100"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">L3</span>
-                      <span>सङ्ख्याः व दिनचर्या (Numbers 1–100)</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">एकम्, द्वे, त्रीणि... · Counting &amp; Time Expressions</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">3</span>
+                  <span className="hoc-pill-label">सङ्ख्याः · Numbers 1–100</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
               </div>
             </div>
@@ -2133,66 +2120,53 @@ const HomePage: React.FC<HomePageProps> = ({
               className="hoc-card-btn"
               onClick={() => onOpenVarnamala?.()}
             >
-              Start Spoken Lesson ▶
+              Explore Spoken Lessons ➔
             </button>
           </div>
 
           {/* Track 2: CBSE School Track */}
           <div className="hoc-card">
             <div>
-              <div className="hoc-card-icon">🏫</div>
-              <div className="hoc-card-badge">Classes 6–10 · CBSE &amp; NCERT</div>
-              <h3 className="hoc-card-title">CBSE School Exam Prep</h3>
+              <div className="hoc-card-header-row">
+                <span className="hoc-card-icon" aria-hidden="true">🏫</span>
+                <span className="hoc-card-badge">Classes 6–10</span>
+              </div>
+              <h3 className="hoc-card-title">CBSE Exam Prep</h3>
               <p className="hoc-card-desc">
-                Line-by-line chapter solutions, sandhi breakdown, anvaya reconstruction, and mock papers.
+                NCERT solutions, sandhi breakdown &amp; mock papers.
               </p>
               <div className="hoc-lesson-links">
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={() => onOpenReader('gsde101')}
                   title="Open Class 7 Chapter 1: Subhashitani"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">Ch 1</span>
-                      <span>सुभाषितानि (Gems of Wisdom)</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">पृथिव्यां त्रीणि रत्नानि... · Line-by-Line Anvaya</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">Ch 1</span>
+                  <span className="hoc-pill-label">सुभाषितानि · Gems of Wisdom</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
 
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={() => onOpenReader('gsde102')}
                   title="Open Class 7 Chapter 2: Durbuddhir Vinashyati"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">Ch 2</span>
-                      <span>दुर्बुद्धिः विनश्यति (The Foolish Turtle)</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">Panchatantra Fable · Word-by-Word Sandhi Split</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">Ch 2</span>
+                  <span className="hoc-pill-label">दुर्बुद्धिः विनश्यति · Turtle Fable</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
 
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={() => onOpenReader('gsde103')}
                   title="Open Class 7 Chapter 3: Swavalambanam"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">Ch 3</span>
-                      <span>स्वावलम्बनम् (Self-Reliance &amp; Time)</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">Krishnamurti Story · Sanskrit Numbers &amp; Time</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">Ch 3</span>
+                  <span className="hoc-pill-label">स्वावलम्बनम् · Self-Reliance</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
               </div>
             </div>
@@ -2201,66 +2175,53 @@ const HomePage: React.FC<HomePageProps> = ({
               className="hoc-card-btn"
               onClick={() => (onOpenCbseGuide ? onOpenCbseGuide() : onOpenReader('gsde101'))}
             >
-              Start CBSE Lesson 1 ▶
+              Browse CBSE Chapters ➔
             </button>
           </div>
 
           {/* Track 3: Paninian Vyakaran */}
           <div className="hoc-card">
             <div>
-              <div className="hoc-card-icon">🏛️</div>
-              <div className="hoc-card-badge">Intermediate · Classical</div>
-              <h3 className="hoc-card-title">Pāṇinian Vyakaran &amp; Shlokas</h3>
+              <div className="hoc-card-header-row">
+                <span className="hoc-card-icon" aria-hidden="true">🏛️</span>
+                <span className="hoc-card-badge">Classical</span>
+              </div>
+              <h3 className="hoc-card-title">Pāṇinian Grammar</h3>
               <p className="hoc-card-desc">
-                Algorithmically derive words from verb roots (Dhātu). Master 7 Vibhaktis and 5 Lakāras.
+                Deconstruct verb roots (Dhātu), 7 Vibhaktis &amp; Sandhi.
               </p>
               <div className="hoc-lesson-links">
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={onOpenGrammar}
                   title="Open Lesson: 7 Vibhakti Cases"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">T1</span>
-                      <span>७ विभक्तयः (7 Vibhakti Cases)</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">रामः, लता, फलम् · Case Declensions &amp; Karakas</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">1</span>
+                  <span className="hoc-pill-label">७ विभक्तयः · Case Declensions</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
 
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={() => (onOpenDhatupatha ? onOpenDhatupatha() : onOpenGrammar())}
                   title="Open Lesson: 2,000+ Dhatupatha Verb Roots"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">T2</span>
-                      <span>धातुपाठः (2,000+ Verb Roots)</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">१० गणाः व ५ लकाराः · Conjugation Paradigm Engine</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">2</span>
+                  <span className="hoc-pill-label">धातुपाठः · 2,000+ Verb Roots</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
 
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={onOpenGrammar}
-                  title="Open Lesson: Sandhi & Compound Splitting"
+                  title="Open Lesson: Sandhi Rules"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">T3</span>
-                      <span>सन्धि-प्रकरणम् (Sandhi Splitting)</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">स्वर, व्यञ्जन व विसर्ग · Euphonic Rule Master</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">3</span>
+                  <span className="hoc-pill-label">सन्धि-प्रकरणम् · Sandhi Rules</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
               </div>
             </div>
@@ -2269,66 +2230,53 @@ const HomePage: React.FC<HomePageProps> = ({
               className="hoc-card-btn"
               onClick={onOpenGrammar}
             >
-              Start Vyakaran Lesson ▶
+              Open Grammar Studio ➔
             </button>
           </div>
 
           {/* Track 4: Vedic Math */}
           <div className="hoc-card">
             <div>
-              <div className="hoc-card-icon">⚡</div>
-              <div className="hoc-card-badge">Mental Agility · All Ages</div>
-              <h3 className="hoc-card-title">Vedic Maths &amp; Astronomy</h3>
+              <div className="hoc-card-header-row">
+                <span className="hoc-card-icon" aria-hidden="true">⚡</span>
+                <span className="hoc-card-badge">Mental Agility</span>
+              </div>
+              <h3 className="hoc-card-title">Vedic Mathematics</h3>
               <p className="hoc-card-desc">
-                Supercharge mental math with 16 Vedic Sutras. Compute squares and roots in seconds.
+                16 Vedic Sutras for lightning mental arithmetic &amp; roots.
               </p>
               <div className="hoc-lesson-links">
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={() => (onOpenVedicMaths ? onOpenVedicMaths() : onOpenCourse?.())}
                   title="Open Sutra 1: Ekadhikena Purvena"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">S1</span>
-                      <span>एकाधिकेन पूर्वेण (1-Line Math)</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">35² = (3×4)|25 = 1225 · Instant Squaring in 2 Sec</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">S1</span>
+                  <span className="hoc-pill-label">एकाधिकेन · Fast Squaring</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
 
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={() => (onOpenVedicMaths ? onOpenVedicMaths() : onOpenCourse?.())}
-                  title="Open Sutra 2: Nikhilam Navatashcaramam"
+                  title="Open Sutra 2: Nikhilam"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">S2</span>
-                      <span>निखिलं नवतश्चरमं दशतः</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">1000 − 468 = 532 · Fast Base Subtraction</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">S2</span>
+                  <span className="hoc-pill-label">निखिलम् · Base Subtraction</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
 
                 <button
                   type="button"
-                  className="hoc-lesson-link-item"
+                  className="hoc-lesson-pill"
                   onClick={() => (onOpenVedicMaths ? onOpenVedicMaths() : onOpenCourse?.())}
                   title="Open Sutra 3: Urdhva-Tiryagbhyam"
                 >
-                  <div className="hoc-lli-left">
-                    <div className="hoc-lli-title">
-                      <span className="hoc-lli-num">S3</span>
-                      <span>ऊर्ध्वतिर्यग्भ्याम् (Cross-Multiply)</span>
-                    </div>
-                    <div className="hoc-lli-subtitle">Universal Mental Multiplier for Any 2/3 Digits</div>
-                  </div>
-                  <span className="hoc-lli-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-num">S3</span>
+                  <span className="hoc-pill-label">ऊर्ध्वतिर्यक् · Mental Multiply</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
                 </button>
               </div>
             </div>
@@ -2337,7 +2285,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="hoc-card-btn"
               onClick={() => (onOpenVedicMaths ? onOpenVedicMaths() : onOpenCourse?.())}
             >
-              Start Vedic Math Lesson ▶
+              Practice 16 Sutras ➔
             </button>
           </div>
         </div>
@@ -2347,8 +2295,8 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="hoc-banner-text">
             <span style={{ fontSize: '2rem' }}>👨‍🏫</span>
             <div>
-              <h4>Prefer Live 1-on-1 Mentoring with Human Acharyas?</h4>
-              <p>Schedule personalized 1-on-1 online classes with experienced Sanskrit teachers for spoken fluency, CBSE doubt clearing, and shloka chanting.</p>
+              <h4>Need 1-on-1 Live Mentoring with Acharyas?</h4>
+              <p>Personalized online classes for spoken fluency, CBSE doubt-clearing, and shloka chanting.</p>
             </div>
           </div>
           {onOpenOnlineClasses && (
@@ -2357,7 +2305,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="hoc-banner-btn"
               onClick={onOpenOnlineClasses}
             >
-              🚀 Book Live 1-on-1 Class with Bodhi
+              Book Live 1-on-1 Class ➔
             </button>
           )}
         </div>
