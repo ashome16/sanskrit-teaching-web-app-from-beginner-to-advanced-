@@ -1416,8 +1416,7 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         {/* ================================================================
-            KNOWLEDGE BLACKBOARD & STUDENT STAIRCASE
-            (Replaces commercial trial callout with staircase of learning & blackboard)
+            KNOWLEDGE STAIRCASE & ANCIENT GURUKUL DOCUMENT
             ================================================================ */}
         <StudentStaircaseBlackboard
           onOpenVarnamala={onOpenVarnamala}
@@ -1425,6 +1424,7 @@ const HomePage: React.FC<HomePageProps> = ({
           onOpenGrammar={onOpenGrammar}
           onOpenCbseGuide={onOpenCbseGuide}
           onOpenQuiz={onOpenQuiz}
+          onOpenBodhi={onOpenBodhi}
         />
 
         {/* ------------------------------------------------------------------
