@@ -94,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
 
           {/* Academic Curriculum Links */}
-          <div className="footer-col">
+          <div className="footer-col footer-col--curriculum">
             <div className="footer-col-header">
               <span className="footer-col-accent">✦</span>
               <h4 className="footer-col-title">Curriculum &amp; Texts</h4>
@@ -224,7 +224,7 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
 
           {/* Interactive Studios */}
-          <div className="footer-col">
+          <div className="footer-col footer-col--studios">
             <div className="footer-col-header">
               <span className="footer-col-accent">✦</span>
               <h4 className="footer-col-title">Interactive Studios</h4>
@@ -306,7 +306,7 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
 
           {/* Learning Paths */}
-          <div className="footer-col">
+          <div className="footer-col footer-col--paths">
             <div className="footer-col-header">
               <span className="footer-col-accent">✦</span>
               <h4 className="footer-col-title">Learning Paths</h4>
@@ -363,6 +363,35 @@ export const Footer: React.FC<FooterProps> = ({
                 </button>
               </li>
             </ul>
+          </div>
+
+          {/* Bigger EdNet Gurukul Official Seal in Lower Center Empty Space */}
+          <div className="footer-gurukul-seal-block" role="region" aria-label="Official Gurukul Seal">
+            <div className="footer-gurukul-seal-inner">
+              <div className="footer-gurukul-seal-logo-wrap">
+                <img
+                  src="/logo.jpg"
+                  alt="EdNet Learn Gurukul Official Seal"
+                  className="footer-gurukul-seal-logo"
+                  width={96}
+                  height={96}
+                  loading="lazy"
+                />
+              </div>
+              <div className="footer-gurukul-seal-text">
+                <div className="footer-gurukul-seal-badge-tag">
+                  <span>🏛️</span>
+                  <span>OFFICIAL GURUKUL SEAL</span>
+                </div>
+                <h4 className="footer-gurukul-seal-name">EdNet Learn Gurukul</h4>
+                <span className="footer-gurukul-seal-motto" lang="sa">
+                  विद्ययाऽमृतमश्नुते · सा विद्या या विमुक्तये
+                </span>
+                <p className="footer-gurukul-seal-desc">
+                  Official Digital Tapovana for Sanskrit Education, CBSE Curriculum &amp; Vedic Mathematics
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Student Support & Help Desk */}
