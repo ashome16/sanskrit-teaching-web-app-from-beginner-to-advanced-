@@ -27,10 +27,10 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
     stopPronunciation();
     soundEffects.playStrokeChime();
     setIsGreetingSpeaking(true);
-    playPronunciation('हरिः ॐ! नमो नमः। स्वागतम्। Climb each step with reverence. The blackboard of wisdom awaits.');
+    playPronunciation('हरिः ॐ! नमो नमः। संस्कृत-विद्यालये भवतः स्वागतम्।');
     setTimeout(() => {
       setIsGreetingSpeaking(false);
-    }, 5500);
+    }, 4500);
   };
 
   const LEARNING_LINKS = [
@@ -137,9 +137,6 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
             {/* Top Motto Tablet on Left */}
             <div className="ssb-stone-tablet ssb-stone-tablet--left">
               <h2 className="ssb-tablet-title">NAMO NAMAHA - SWAGATAM</h2>
-              <p className="ssb-tablet-quote">
-                “Climb each step with reverence. The blackboard of wisdom awaits.”
-              </p>
             </div>
 
             {/* Person Image Frame */}
@@ -215,12 +212,7 @@ export const StudentStaircaseBlackboard: React.FC<StudentStaircaseBlackboardProp
             {/* Top Stone Plaque Banner on Right */}
             <div className="ssb-stone-tablet ssb-stone-tablet--right">
               <div className="ssb-tablet-header-row">
-                <div>
-                  <h2 className="ssb-tablet-title">NAMO NAMAHA - SWAGATAM</h2>
-                  <p className="ssb-tablet-quote">
-                    “Climb each step with reverence. The blackboard of wisdom awaits.”
-                  </p>
-                </div>
+                <h2 className="ssb-tablet-title">NAMO NAMAHA - SWAGATAM</h2>
                 <button
                   type="button"
                   className={`ssb-namaste-chime-btn ${isGreetingSpeaking ? 'speaking' : ''}`}
