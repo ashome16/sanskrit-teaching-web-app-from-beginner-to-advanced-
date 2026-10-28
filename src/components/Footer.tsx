@@ -55,25 +55,31 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="gurukul-footer-glow" aria-hidden="true" />
 
         <div className="gurukul-footer-top">
-          {/* Brand & Mission Column */}
+          {/* Column 1: Brand & Gurukul Seal */}
           <div className="footer-col footer-col--brand">
             <div className="footer-brand-header">
               <div className="footer-brand-logo-frame">
                 <img
                   src="/logo.jpg"
-                  alt="EdNet Learn Gurukul online Sanskrit learning"
+                  alt="EdNet Learn Gurukul Official Seal"
                   className="footer-brand-logo"
+                  width={56}
+                  height={56}
                   loading="lazy"
                 />
               </div>
               <div className="footer-brand-meta">
+                <div className="footer-seal-badge">
+                  <span>🏛️</span>
+                  <span>OFFICIAL GURUKUL</span>
+                </div>
                 <h3 className="footer-brand-name">EdNet Learn Gurukul</h3>
-                <span className="footer-brand-tagline">संस्कृत-शिक्षणम् · NCERT Deepakam (NEP, CBSE exam)</span>
+                <span className="footer-brand-tagline" lang="sa">विद्ययाऽमृतमश्नुते · सा विद्या या विमुक्तये</span>
               </div>
             </div>
 
             <p className="footer-mission-text">
-              An enlightened digital Gurukul dedicated to revitalizing Sanskrit learning and ancient Indian mathematics through intuitive, interactive pedagogy for school learners and lifelong enthusiasts.
+              An enlightened digital Gurukul dedicated to revitalizing Sanskrit learning, CBSE syllabus &amp; ancient Indian mathematics through intuitive, interactive pedagogy.
             </p>
 
             <div className="footer-shloka-box">
@@ -88,12 +94,11 @@ export const Footer: React.FC<FooterProps> = ({
 
             <div className="footer-trust-chips">
               <span className="footer-trust-chip">🛡️ NCERT Deepakam · NEP / CBSE</span>
-              <span className="footer-trust-chip">🇮🇳 NEP 2020 Compliant</span>
-              <span className="footer-trust-chip">🔒 100% Secure Checkout</span>
+              <span className="footer-trust-chip">🔒 100% Secure &amp; Verified</span>
             </div>
           </div>
 
-          {/* Academic Curriculum Links */}
+          {/* Column 2: Curriculum & Texts */}
           <div className="footer-col footer-col--curriculum">
             <div className="footer-col-header">
               <span className="footer-col-accent">✦</span>
@@ -107,7 +112,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onOpenReader && onOpenReader('gsde101')}
                 >
                   <span className="nav-btn-icon">📖</span>
-                  <span className="nav-btn-text">Deepakam · दीपकम (1–15)</span>
+                  <span className="nav-btn-text">Deepakam · दीपकम् (Classes 7–9)</span>
                 </button>
               </li>
               <li>
@@ -117,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenVarnamala}
                 >
                   <span className="nav-btn-icon">🔤</span>
-                  <span className="nav-btn-text">वर्णमाला · Alphabet &amp; Syllables</span>
+                  <span className="nav-btn-text">वर्णमाला · Alphabet &amp; Sounds</span>
                 </button>
               </li>
               <li>
@@ -127,7 +132,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenGrammar}
                 >
                   <span className="nav-btn-icon">📚</span>
-                  <span className="nav-btn-text">व्याकरणम् · Vyakaran (Grammar)</span>
+                  <span className="nav-btn-text">व्याकरणम् · Pāṇinian Grammar</span>
                 </button>
               </li>
               <li>
@@ -137,17 +142,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenDhatupatha}
                 >
                   <span className="nav-btn-icon">🌿</span>
-                  <span className="nav-btn-text">धातुपाठः · Dhātupāṭha Studio</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-nav-btn"
-                  onClick={onOpenVedicMaths}
-                >
-                  <span className="nav-btn-icon">⚡</span>
-                  <span className="nav-btn-text">वैदिक-गणितम् · Vaidic Gaṇitam</span>
+                  <span className="nav-btn-text">धातुपाठः · 2,000+ Verb Roots</span>
                 </button>
               </li>
               <li>
@@ -159,30 +154,6 @@ export const Footer: React.FC<FooterProps> = ({
                   <span className="nav-btn-icon">📘</span>
                   <span className="nav-btn-text">CBSE Sanskrit Exam Guide</span>
                 </button>
-              </li>
-              {onOpenResources && (
-                <li>
-                  <button
-                    type="button"
-                    className="footer-nav-btn"
-                    onClick={onOpenResources}
-                  >
-                    <span className="nav-btn-icon">🌐</span>
-                    <span className="nav-btn-text">साधनानि · Live News, Events &amp; Vault</span>
-                  </button>
-                </li>
-              )}
-              <li>
-                <a
-                  href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-nav-btn"
-                  title="Open Koshashri Sanskrit Dictionary (Deccan College)"
-                >
-                  <span className="nav-btn-icon">📖</span>
-                  <span className="nav-btn-text">कोशश्रीः · Sanskrit Dictionary</span>
-                </a>
               </li>
               {onOpenRoadmap && (
                 <li>
@@ -204,10 +175,54 @@ export const Footer: React.FC<FooterProps> = ({
                     onClick={onOpenCourse}
                   >
                     <span className="nav-btn-icon">🧠</span>
-                    <span className="nav-btn-text">संस्कृत-चिन्तनम् (Complete Course)</span>
+                    <span className="nav-btn-text">संस्कृत-चिन्तनम् · Master Course</span>
                   </button>
                 </li>
               )}
+              {onOpenResources && (
+                <li>
+                  <button
+                    type="button"
+                    className="footer-nav-btn"
+                    onClick={onOpenResources}
+                  >
+                    <span className="nav-btn-icon">🌐</span>
+                    <span className="nav-btn-text">साधनानि · Learning Vault</span>
+                  </button>
+                </li>
+              )}
+              <li>
+                <a
+                  href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-nav-btn"
+                  title="Open Koshashri Sanskrit Dictionary"
+                >
+                  <span className="nav-btn-icon">📖</span>
+                  <span className="nav-btn-text">कोशश्रीः · Sanskrit Dictionary</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Interactive Studios & Labs */}
+          <div className="footer-col footer-col--studios">
+            <div className="footer-col-header">
+              <span className="footer-col-accent">✦</span>
+              <h4 className="footer-col-title">Studios &amp; Labs</h4>
+            </div>
+            <ul className="footer-nav-list">
+              <li>
+                <button
+                  type="button"
+                  className="footer-nav-btn"
+                  onClick={onOpenVedicMaths}
+                >
+                  <span className="nav-btn-icon">⚡</span>
+                  <span className="nav-btn-text">वैदिक-गणितम् · Vedic Maths</span>
+                </button>
+              </li>
               {onOpenScienceLab && (
                 <li>
                   <button
@@ -216,20 +231,10 @@ export const Footer: React.FC<FooterProps> = ({
                     onClick={onOpenScienceLab}
                   >
                     <span className="nav-btn-icon">🔬</span>
-                    <span className="nav-btn-text">Vijñāna Lab · विज्ञान-प्रयोगशाला</span>
+                    <span className="nav-btn-text">विज्ञान-प्रयोगशाला · Vijñāna Lab</span>
                   </button>
                 </li>
               )}
-            </ul>
-          </div>
-
-          {/* Interactive Studios */}
-          <div className="footer-col footer-col--studios">
-            <div className="footer-col-header">
-              <span className="footer-col-accent">✦</span>
-              <h4 className="footer-col-title">Interactive Studios</h4>
-            </div>
-            <ul className="footer-nav-list">
               <li>
                 <button
                   type="button"
@@ -237,7 +242,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenBoard}
                 >
                   <span className="nav-btn-icon">🧩</span>
-                  <span className="nav-btn-text">जोडो · Tile Puzzle Studio</span>
+                  <span className="nav-btn-text">जोडो · Sanskrit Word Puzzles</span>
                 </button>
               </li>
               <li>
@@ -257,17 +262,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenWorksheets}
                 >
                   <span className="nav-btn-icon">📑</span>
-                  <span className="nav-btn-text">कार्यपत्रिकाः · Printable Worksheets</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-nav-btn"
-                  onClick={onOpenDhatupatha}
-                >
-                  <span className="nav-btn-icon">🔍</span>
-                  <span className="nav-btn-text">पद-विच्छेदकः · Deconstructor</span>
+                  <span className="nav-btn-text">कार्यपत्रिकाः · Worksheets</span>
                 </button>
               </li>
               <li>
@@ -277,17 +272,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenPhilosophy}
                 >
                   <span className="nav-btn-icon">🪔</span>
-                  <span className="nav-btn-text">दर्शनम् · Philosophy (AI &amp; Sanskrit)</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-nav-btn"
-                  onClick={onOpenFAQ}
-                >
-                  <span className="nav-btn-icon">❓</span>
-                  <span className="nav-btn-text">Gurukul FAQ &amp; Pricing</span>
+                  <span className="nav-btn-text">दर्शनम् · Philosophy &amp; AI</span>
                 </button>
               </li>
               {onOpenBodhi && (
@@ -298,113 +283,62 @@ export const Footer: React.FC<FooterProps> = ({
                     onClick={onOpenBodhi}
                   >
                     <span className="nav-btn-icon">✨</span>
-                    <span className="nav-btn-text">बोधिः · Mascot &amp; Gurukul Guide</span>
+                    <span className="nav-btn-text">बोधिः · 24/7 AI Gurukul Guide</span>
                   </button>
                 </li>
               )}
-            </ul>
-          </div>
-
-          {/* Learning Paths */}
-          <div className="footer-col footer-col--paths">
-            <div className="footer-col-header">
-              <span className="footer-col-accent">✦</span>
-              <h4 className="footer-col-title">Learning Paths</h4>
-            </div>
-            <ul className="footer-nav-list">
               <li>
                 <button
                   type="button"
                   className="footer-nav-btn"
-                  onClick={onOpenVarnamala}
+                  onClick={onOpenFAQ}
                 >
-                  <span className="nav-btn-icon">🌱</span>
-                  <span className="nav-btn-text">Beginner: Letters &amp; Sounds</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-nav-btn"
-                  onClick={() => onOpenReader && onOpenReader('gsde101')}
-                >
-                  <span className="nav-btn-icon">🌿</span>
-                  <span className="nav-btn-text">Intermediate: Deepakam Texts</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-nav-btn"
-                  onClick={onOpenGrammar}
-                >
-                  <span className="nav-btn-icon">🌳</span>
-                  <span className="nav-btn-text">Advanced: Grammar &amp; Shlokas</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-nav-btn"
-                  onClick={onOpenDhatupatha}
-                >
-                  <span className="nav-btn-icon">📜</span>
-                  <span className="nav-btn-text">सिद्धान्त-मञ्जरी · Grammar Articles</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-nav-btn"
-                  onClick={onOpenVedicMaths}
-                >
-                  <span className="nav-btn-icon">🔢</span>
-                  <span className="nav-btn-text">Speed Maths &amp; Mental Sutras</span>
+                  <span className="nav-btn-icon">❓</span>
+                  <span className="nav-btn-text">Gurukul FAQ &amp; Pricing</span>
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Bigger EdNet Gurukul Official Seal in Lower Center Empty Space */}
-          <div className="footer-gurukul-seal-block" role="region" aria-label="Official Gurukul Seal">
-            <div className="footer-gurukul-seal-inner">
-              <div className="footer-gurukul-seal-logo-wrap">
-                <img
-                  src="/logo.jpg"
-                  alt="EdNet Learn Gurukul Official Seal"
-                  className="footer-gurukul-seal-logo"
-                  width={96}
-                  height={96}
-                  loading="lazy"
-                />
-              </div>
-              <div className="footer-gurukul-seal-text">
-                <div className="footer-gurukul-seal-badge-tag">
-                  <span>🏛️</span>
-                  <span>OFFICIAL GURUKUL SEAL</span>
-                </div>
-                <h4 className="footer-gurukul-seal-name">EdNet Learn Gurukul</h4>
-                <span className="footer-gurukul-seal-motto" lang="sa">
-                  विद्ययाऽमृतमश्नुते · सा विद्या या विमुक्तये
-                </span>
-                <p className="footer-gurukul-seal-desc">
-                  Official Digital Tapovana for Sanskrit Education, CBSE Curriculum &amp; Vedic Mathematics
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Student Support & Help Desk */}
+          {/* Column 4: Student Support & Community */}
           <div className="footer-col footer-col--support">
             <div className="footer-col-header">
               <span className="footer-col-accent">✦</span>
               <h4 className="footer-col-title">Academic Support</h4>
             </div>
+
             <p className="footer-support-intro">
-              Have questions regarding CBSE syllabus alignment, subscriptions, or worksheets? Contact our desk:
+              Direct assistance for CBSE syllabus, doubts, or membership queries:
             </p>
 
             <div className="footer-contact-cards">
+              <div className="footer-contact-card footer-contact-card--whatsapp">
+                <div className="contact-icon-wrapper contact-icon-wrapper--whatsapp">
+                  <span className="contact-icon">💬</span>
+                </div>
+                <div className="contact-info">
+                  <span className="contact-label">WhatsApp Helpline</span>
+                  <a
+                    href="https://wa.me/919000335468"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-link contact-link--whatsapp"
+                  >
+                    +91 9000335468
+                  </a>
+                  <span className="contact-note">Only WhatsApp · Quick support</span>
+                </div>
+                <a
+                  href="https://wa.me/919000335468"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-chat-btn"
+                  title="Message on WhatsApp"
+                >
+                  Chat ➔
+                </a>
+              </div>
+
               <div className="footer-contact-card">
                 <div className="contact-icon-wrapper">
                   <span className="contact-icon">📧</span>
@@ -430,7 +364,7 @@ export const Footer: React.FC<FooterProps> = ({
                   <span className="contact-icon">🏛️</span>
                 </div>
                 <div className="contact-info">
-                  <span className="contact-label">Administration &amp; Schools</span>
+                  <span className="contact-label">Schools &amp; Administration</span>
                   <a href="mailto:admin@ednetlearn.in" className="contact-link">
                     admin@ednetlearn.in
                   </a>
@@ -444,35 +378,6 @@ export const Footer: React.FC<FooterProps> = ({
                   {copiedEmail === 'admin@ednetlearn.in' ? '✓ Copied' : 'Copy'}
                 </button>
               </div>
-
-              <div className="footer-contact-card footer-contact-card--whatsapp">
-                <div className="contact-icon-wrapper" style={{ background: '#dcfce7', borderColor: '#22c55e' }}>
-                  <span className="contact-icon">💬</span>
-                </div>
-                <div className="contact-info">
-                  <span className="contact-label">WhatsApp (Only WhatsApp)</span>
-                  <a
-                    href="https://wa.me/919000335468"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-link"
-                    style={{ color: '#15803d', fontWeight: 800 }}
-                  >
-                    +91 9000335468
-                  </a>
-                  <small style={{ fontSize: '0.72rem', color: '#64748b', display: 'block' }}>Only WhatsApp · Quick onboarding &amp; doubts</small>
-                </div>
-                <a
-                  href="https://wa.me/919000335468"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-copy-btn"
-                  style={{ background: '#25d366', color: '#ffffff', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
-                  title="Message on WhatsApp"
-                >
-                  Chat ➔
-                </a>
-              </div>
             </div>
 
             <div className="footer-helpdesk-status">
@@ -481,27 +386,8 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div className="footer-social-section">
-              <span className="footer-social-label">🌟 Gurukul Social &amp; Community:</span>
-              <div className="footer-social-pills">
-                <a
-                  href="https://wa.me/919000335468"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-social-pill footer-social-pill--whatsapp"
-                  title="Contact Support on WhatsApp: +91 9000335468 (Only WhatsApp)"
-                >
-                  <span className="social-pill-icon">💬</span>
-                  <span>Contact: Message at (9000335468) (Only WhatsApp)</span>
-                </a>
-                <a
-                  href="mailto:admin@ednetlearn.in"
-                  className="footer-social-pill footer-social-pill--email"
-                  style={{ borderColor: 'rgba(2, 132, 199, 0.4)', background: 'rgba(2, 132, 199, 0.08)', color: '#0369a1' }}
-                  title="Email: admin@ednetlearn.in"
-                >
-                  <span className="social-pill-icon">✉️</span>
-                  <span>or Email: admin@ednetlearn.in</span>
-                </a>
+              <span className="footer-social-label">Gurukul Community</span>
+              <div className="footer-social-row">
                 <a
                   href="https://youtube.com"
                   target="_blank"
