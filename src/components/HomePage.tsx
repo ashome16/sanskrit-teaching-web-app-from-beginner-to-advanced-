@@ -2951,24 +2951,6 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* ================================================================
-          FREE TRIAL CALLOUT 5: AFTER FEATURES & TOOLS SHOWCASE
-          ================================================================ */}
-      <FeatureTrialCallout
-        badge="🎁 12+ ENGINES & LABS"
-        title="Full Access to Dhātupāṭha, Sound Lab, Quizzes & 16 Vedic Sutras"
-        subtitle="Verb conjugations, Pāṇinian phonetics, Sulba-sūtra geometry, and printable worksheets."
-        perks={[
-          '2,000+ Dhātu Paradigms',
-          '16 Vedic Math Sutras & Quests',
-          '100+ Downloadable Worksheets',
-        ]}
-        buttonText={currentUser?.planStatus ? 'Open Grammar & Math Lab ➔' : 'Claim 14-Day Free Pass ➔'}
-        onAction={handleStartTrial}
-        accent="emerald"
-        planStatus={currentUser?.planStatus}
-      />
-
       {/* ------------------------------------------------------------------
           Curriculum Directory (Class 7 Deepakam All 15 Lessons)
           ------------------------------------------------------------------ */}
