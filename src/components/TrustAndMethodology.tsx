@@ -13,7 +13,7 @@ export const TrustAndMethodology: React.FC = () => {
           <span>विश्वासः एवं कार्यपद्धतिः · TRANSPARENCY &amp; TRUST</span>
         </div>
         <h2 className="tam-title">
-          Built with Academic Rigor, Transparent Methodology &amp; Student Safety
+          Built on Authentic Resources &amp; Structured Lessons
         </h2>
         <p className="tam-subtitle">
           EdNet Learn Gurukul is an educational initiative dedicated to revitalizing Sanskrit and ancient Indian mathematics through evidence-based pedagogy. Here is who we are, how we teach, and our commitments to parents and schools:
