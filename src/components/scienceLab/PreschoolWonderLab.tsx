@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { CoreIdea, type LabSegmentProps } from './common';
 import { playPronunciation } from '../../utils/pronunciation';
 import { soundEffects } from '../../utils/soundEffects';
@@ -632,25 +632,234 @@ interface ActivityItem {
   labelEn: string;
   icon: string;
   cluster: 'creative' | 'nature' | 'gurukul';
+  clusterLabel: string;
+  gradeBadge: string;
+  desc: string;
+  features: string[];
+  bannerGradient: string;
+  accentColor: string;
+  bannerVisual: {
+    emojiLead: string;
+    decorEmojis: string[];
+    taglineSa: string;
+  };
 }
 
 const ACTIVITIES: ActivityItem[] = [
-  { id: 'shapes', labelSa: 'आकाराः', labelEn: 'Shapes', icon: '🎨', cluster: 'creative' },
-  { id: 'colors', labelSa: 'वर्णाः', labelEn: 'Color Magic', icon: '🌈', cluster: 'creative' },
-  { id: 'fruits', labelSa: 'फल-सङ्ग्रहः', labelEn: 'Fruit Picker', icon: '🍎', cluster: 'creative' },
-  { id: 'animals', labelSa: 'पशु-ध्वनयः', labelEn: 'Animal Safari', icon: '🐮', cluster: 'nature' },
-  { id: 'moon', labelSa: 'चन्द्र-कलाः', labelEn: 'Moon Phases', icon: '🌙', cluster: 'nature' },
-  { id: 'day', labelSa: 'दिन-भागाः', labelEn: 'Day Times', icon: '🌅', cluster: 'nature' },
-  { id: 'seasons', labelSa: 'ऋतवः', labelEn: 'Seasons', icon: '🌸', cluster: 'nature' },
-  { id: 'counting', labelSa: 'संख्याः', labelEn: 'Count 1–10', icon: '🔢', cluster: 'gurukul' },
-  { id: 'instruments', labelSa: 'वाद्यानि', labelEn: 'Bells & Beats', icon: '🔔', cluster: 'gurukul' },
-  { id: 'vahanas', labelSa: 'देव-वाहनानि', labelEn: 'Match Vāhanas', icon: '🦚', cluster: 'gurukul' },
-  { id: 'story', labelSa: '५ मित्राणि', labelEn: '5 Friends Story', icon: '📖', cluster: 'gurukul' },
+  {
+    id: 'shapes',
+    labelSa: 'आकाराः',
+    labelEn: 'Shapes & Forms',
+    icon: '🎨',
+    cluster: 'creative',
+    clusterLabel: 'रचना · Creative Play',
+    gradeBadge: 'AGES 2–6 · EARLY MATH',
+    desc: 'Touch 6 cheerful geometric shapes—Circle, Square, Triangle, Star, Oval & Crescent—with Sanskrit audio and quiz chime!',
+    features: ['🔊 Sanskrit Audio', '👆 Touch & Pop', '⭐ Shape Quiz'],
+    bannerGradient: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
+    accentColor: '#f59e0b',
+    bannerVisual: {
+      emojiLead: '📐',
+      decorEmojis: ['🔴', '🟩', '🔺', '⭐', '🥚', '🌙'],
+      taglineSa: 'वृत्त-चतुरस्र-त्रिकोण-तारकाः',
+    },
+  },
+  {
+    id: 'colors',
+    labelSa: 'वर्ण-मेलनम्',
+    labelEn: 'Color Magic Cauldron',
+    icon: '🧪',
+    cluster: 'creative',
+    clusterLabel: 'रचना · Creative Play',
+    gradeBadge: 'AGES 2–6 · ART & LIGHT',
+    desc: 'Mix primary colors in the bubbling magical cauldron to blend Orange, Green, Purple and Pink with celebratory spark chimes!',
+    features: ['🔊 Sanskrit Audio', '🧪 Magic Mixer', '🌈 8 Pure Hues'],
+    bannerGradient: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)',
+    accentColor: '#ec4899',
+    bannerVisual: {
+      emojiLead: '🧪',
+      decorEmojis: ['🫧', '🍎', '🍌', '🦚', '🪔', '✨'],
+      taglineSa: 'रक्त-पीत-नील-वर्ण-मेलनम्',
+    },
+  },
+  {
+    id: 'fruits',
+    labelSa: 'फल-सङ्ग्रहः',
+    labelEn: 'Orchard Fruit Picker',
+    icon: '🍎',
+    cluster: 'creative',
+    clusterLabel: 'रचना · Creative Play',
+    gradeBadge: 'AGES 2–6 · NATURE HARVEST',
+    desc: 'Harvest ripe mangoes, sweet bananas, crisp apples, and strawberries from the ancient Gurukul tree into your wooden basket!',
+    features: ['🔊 Sanskrit Audio', '🧺 Fruit Basket', '🍎 8 Sweet Fruits'],
+    bannerGradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+    accentColor: '#10b981',
+    bannerVisual: {
+      emojiLead: '🌳',
+      decorEmojis: ['🥭', '🍎', '🍌', '🍇', '🍓', '🧺'],
+      taglineSa: 'आम्र-कदली-सेव-द्राक्षाफलानि',
+    },
+  },
+  {
+    id: 'animals',
+    labelSa: 'पशु-ध्वनयः',
+    labelEn: 'Animal Safari & Sounds',
+    icon: '🐮',
+    cluster: 'nature',
+    clusterLabel: 'प्रकृति · Living Nature',
+    gradeBadge: 'AGES 2–6 · BIO ZOOLOGY',
+    desc: 'Meet 9 sacred animal companions—Cow, Lion, Elephant, Peacock, Frog, Mouse—and hear their real synthesized animal calls!',
+    features: ['🔊 Real Sounds', '🐾 9 Animals', '🎯 Sound Quiz'],
+    bannerGradient: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+    accentColor: '#f97316',
+    bannerVisual: {
+      emojiLead: '🐮',
+      decorEmojis: ['🦁', '🐘', '🦚', '🐭', '🐸', '🎵'],
+      taglineSa: 'पशु-पक्षिणां मधुरध्वनयः',
+    },
+  },
+  {
+    id: 'moon',
+    labelSa: 'चन्द्र-कलाः',
+    labelEn: 'Moon Phases & Lullaby',
+    icon: '🌙',
+    cluster: 'nature',
+    clusterLabel: 'प्रकृति · Living Nature',
+    gradeBadge: 'AGES 2–6 · ASTRONOMY',
+    desc: 'Slide from Amāvāsyā (New Moon) to Pūrṇimā (Full Moon) while soothing lullaby chimes twinkle across the dark night sky!',
+    features: ['🔊 Lullaby Chime', '🌙 5 Moon Phases', '✨ Twinkling Stars'],
+    bannerGradient: 'linear-gradient(135deg, #3b82f6 0%, #1e1b4b 100%)',
+    accentColor: '#38bdf8',
+    bannerVisual: {
+      emojiLead: '🌙',
+      decorEmojis: ['✨', '🌑', '🌓', '🌕', '☁️', '💤'],
+      taglineSa: 'अमावास्या-पूर्णिमान्त-चन्द्रकलाः',
+    },
+  },
+  {
+    id: 'day',
+    labelSa: 'दिन-भागाः',
+    labelEn: 'Day Routine & Sun',
+    icon: '🌅',
+    cluster: 'nature',
+    clusterLabel: 'प्रकृति · Living Nature',
+    gradeBadge: 'AGES 2–6 · TIME & EARTH',
+    desc: 'Travel through 4 sacred quarters of the day—Prātaḥ (Dawn), Madhyāhna (Noon), Sāyam (Dusk), and Rātri (Night) with the rising sun!',
+    features: ['🔊 Sanskrit Audio', '☀️ Moving Sun', '🌅 4 Day Quarters'],
+    bannerGradient: 'linear-gradient(135deg, #f59e0b 0%, #f97316 100%)',
+    accentColor: '#f59e0b',
+    bannerVisual: {
+      emojiLead: '🌅',
+      decorEmojis: ['☀️', '🌤️', '🌇', '🌌', '🐓', '🪔'],
+      taglineSa: 'प्रातः-मध्याह्न-सायं-दिनचर्या',
+    },
+  },
+  {
+    id: 'seasons',
+    labelSa: 'ऋतवः',
+    labelEn: 'Six Seasons of Nature',
+    icon: '🌸',
+    cluster: 'nature',
+    clusterLabel: 'प्रकृति · Living Nature',
+    gradeBadge: 'AGES 2–6 · EARTH ECOLOGY',
+    desc: 'Experience 6 Vedic seasons with live falling weather: spring blossoms, summer rays, monsoon rain, autumn leaves, and winter frost!',
+    features: ['🔊 Sanskrit Audio', '🌧️ Falling Weather', '🌸 6 Seasons'],
+    bannerGradient: 'linear-gradient(135deg, #06b6d4 0%, #10b981 100%)',
+    accentColor: '#06b6d4',
+    bannerVisual: {
+      emojiLead: '🌸',
+      decorEmojis: ['☀️', '🌧️', '🍂', '❄️', '🌈', '🌾'],
+      taglineSa: 'वसन्त-ग्रीष्म-वर्षा-ऋतवः',
+    },
+  },
+  {
+    id: 'counting',
+    labelSa: 'संख्या-गणनम्',
+    labelEn: 'Count 1–10 with Sacred Friends',
+    icon: '🔢',
+    cluster: 'gurukul',
+    clusterLabel: 'गुरुकुल · Gurukul Wonder',
+    gradeBadge: 'AGES 2–6 · VEDIC MATH',
+    desc: 'Count 1 to 10 in Sanskrit with large tactile touch counters, big stepper buttons, and friendly sacred animals (1 Sun, 2 Eyes, 3 Agni)!',
+    features: ['🔊 Pronunciation', '🔢 Step Navigation', '🐘 Sacred Avatars'],
+    bannerGradient: 'linear-gradient(135deg, #6366f1 0%, #4338ca 100%)',
+    accentColor: '#818cf8',
+    bannerVisual: {
+      emojiLead: '🔢',
+      decorEmojis: ['१', '२', '३', '४', '५', '🐘'],
+      taglineSa: 'एकं द्वे त्रीणि चत्वारि पञ्च',
+    },
+  },
+  {
+    id: 'instruments',
+    labelSa: 'वाद्य-ध्वनिः',
+    labelEn: 'Sacred Bells & Beats',
+    icon: '🔔',
+    cluster: 'gurukul',
+    clusterLabel: 'गुरुकुल · Gurukul Wonder',
+    gradeBadge: 'AGES 2–6 · ACOUSTIC SOUND',
+    desc: 'Tap 6 ancient musical instruments—Temple Bell, Damaru, Conch Shell, Vina, Flute, and Mridangam—with real synthesized acoustic audio!',
+    features: ['🔊 Real Synthesizers', '🪘 6 Instruments', '🎶 Pulse Rings'],
+    bannerGradient: 'linear-gradient(135deg, #d97706 0%, #78350f 100%)',
+    accentColor: '#fbbf24',
+    bannerVisual: {
+      emojiLead: '🔔',
+      decorEmojis: ['🪘', '🐚', '🪕', '🎶', '🥁', '✨'],
+      taglineSa: 'घण्टा-डमरु-शङ्ख-मृदङ्ग-नादः',
+    },
+  },
+  {
+    id: 'vahanas',
+    labelSa: 'देव-वाहनानि',
+    labelEn: 'Match God Vāhanas',
+    icon: '🦚',
+    cluster: 'gurukul',
+    clusterLabel: 'गुरुकुल · Gurukul Wonder',
+    gradeBadge: 'AGES 2–6 · SACRED PUZZLE',
+    desc: 'Help sacred deities find their animal companions: Ganesha and tiny Mouse, Shiva and Nandi Bull, Saraswati and Swan, Murugan and Peacock!',
+    features: ['🔊 Sanskrit Audio', '🧩 6 Match Pairs', '🎉 Victory Chime'],
+    bannerGradient: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
+    accentColor: '#a78bfa',
+    bannerVisual: {
+      emojiLead: '🦚',
+      decorEmojis: ['🐭', '🐂', '🦢', '🦁', '🦉', '🧩'],
+      taglineSa: 'देवतानां प्रिय-पशुवाहनानि',
+    },
+  },
+  {
+    id: 'story',
+    labelSa: '५ मित्राणि',
+    labelEn: 'The 5 Friends Story',
+    icon: '📖',
+    cluster: 'gurukul',
+    clusterLabel: 'गुरुकुल · Gurukul Wonder',
+    gradeBadge: 'AGES 2–6 · BILINGUAL TALE',
+    desc: 'Follow Kalu the forest boy and Isha the Vedic girl across 8 illustrated slides as they celebrate Earth, Water, Fire, Air, and Sky!',
+    features: ['🔊 Audio Playback', '📖 8 Story Slides', '🌱 Panchabhutas'],
+    bannerGradient: 'linear-gradient(135deg, #059669 0%, #065f46 100%)',
+    accentColor: '#34d399',
+    bannerVisual: {
+      emojiLead: '📖',
+      decorEmojis: ['🌿', '🔥', '💧', '💨', '🌍', '🤝'],
+      taglineSa: 'पञ्चमित्राणां नृत्यम् · बाल-कथा',
+    },
+  },
 ];
 
 export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNextLab }) => {
   const [tab, setTab] = useState<PreschoolTab>('shapes');
   const [selectedCluster, setSelectedCluster] = useState<ClusterCategory>('all');
+  const [viewMode, setViewMode] = useState<'cards' | 'play'>('cards');
+  const playArenaRef = useRef<HTMLDivElement>(null);
+
+  const launchActivity = (actId: PreschoolTab) => {
+    setTab(actId);
+    setViewMode('play');
+    soundEffects.playCelebrationChime();
+    setTimeout(() => {
+      playArenaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 60);
+  };
 
   // Shapes Game State
   const [selectedShape, setSelectedShape] = useState<ShapeItem>(SHAPES[0]);
@@ -941,54 +1150,157 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
           experience seasons, and enjoy the bilingual story of the 5 elements with sweet Sanskrit audio!
         </p>
 
-        {/* Activity Clusters & 11 Fun Activity Tabs */}
-        <div className="psw-cluster-nav" role="tablist" aria-label="Activity clusters">
+        {/* PhET Subject Category Squircles */}
+        <div className="psw-squircles-row" role="tablist" aria-label="Educational domain categories">
           <button
             type="button"
-            className={`psw-cluster-btn ${selectedCluster === 'all' ? 'is-active' : ''}`}
+            className={`psw-squircle-card psw-sq--all ${selectedCluster === 'all' ? 'is-active' : ''}`}
             onClick={() => { setSelectedCluster('all'); soundEffects.playStrokeChime(); }}
           >
-            <span>🌟</span> All Games (11)
+            <div className="psw-sq-icon-wrap">🌟</div>
+            <span className="psw-sq-title-sa">सर्व-क्रीडाः</span>
+            <span className="psw-sq-title-en">All 11 Activities</span>
+            <span className="psw-sq-count-badge">11 Wonder Games</span>
           </button>
+
           <button
             type="button"
-            className={`psw-cluster-btn ${selectedCluster === 'creative' ? 'is-active' : ''}`}
+            className={`psw-squircle-card psw-sq--creative ${selectedCluster === 'creative' ? 'is-active' : ''}`}
             onClick={() => { setSelectedCluster('creative'); soundEffects.playStrokeChime(); }}
           >
-            <span>🎨</span> Creative Play (3)
+            <div className="psw-sq-icon-wrap">🎨</div>
+            <span className="psw-sq-title-sa">रचना-वाटिका</span>
+            <span className="psw-sq-title-en">Creative Play</span>
+            <span className="psw-sq-count-badge">3 Activities</span>
           </button>
+
           <button
             type="button"
-            className={`psw-cluster-btn ${selectedCluster === 'nature' ? 'is-active' : ''}`}
+            className={`psw-squircle-card psw-sq--nature ${selectedCluster === 'nature' ? 'is-active' : ''}`}
             onClick={() => { setSelectedCluster('nature'); soundEffects.playStrokeChime(); }}
           >
-            <span>🐾</span> Living Nature (4)
+            <div className="psw-sq-icon-wrap">🐾</div>
+            <span className="psw-sq-title-sa">प्रकृति-वाटिका</span>
+            <span className="psw-sq-title-en">Living Nature</span>
+            <span className="psw-sq-count-badge">4 Activities</span>
           </button>
+
           <button
             type="button"
-            className={`psw-cluster-btn ${selectedCluster === 'gurukul' ? 'is-active' : ''}`}
+            className={`psw-squircle-card psw-sq--gurukul ${selectedCluster === 'gurukul' ? 'is-active' : ''}`}
             onClick={() => { setSelectedCluster('gurukul'); soundEffects.playStrokeChime(); }}
           >
-            <span>🪔</span> Gurukul Wonder (4)
+            <div className="psw-sq-icon-wrap">🪔</div>
+            <span className="psw-sq-title-sa">गुरुकुल-वाटिका</span>
+            <span className="psw-sq-title-en">Gurukul Wonder</span>
+            <span className="psw-sq-count-badge">4 Activities</span>
           </button>
         </div>
 
-        <div className="psw-tab-nav" role="tablist" aria-label="Preschool activities">
-          {displayedActivities.map((act) => (
+        {/* View Mode Toggle Row */}
+        <div className="psw-view-toggle-row">
+          <div className="psw-vtr-kicker">
+            <span>🧸</span>
+            <span>Showing <strong>{displayedActivities.length}</strong> Preschool Sandboxes (Ages 2–6)</span>
+          </div>
+          <div className="psw-view-toggle-btns" role="tablist">
             <button
-              key={act.id}
               type="button"
-              role="tab"
-              aria-selected={tab === act.id}
-              className={`psw-tab-btn ${tab === act.id ? 'is-active' : ''}`}
-              onClick={() => { setTab(act.id); soundEffects.playStrokeChime(); }}
+              className={`psw-view-mode-pill ${viewMode === 'cards' ? 'is-active' : ''}`}
+              onClick={() => { setViewMode('cards'); soundEffects.playStrokeChime(); }}
             >
-              <span>{act.icon}</span>
-              <b>{act.labelSa} · {act.labelEn}</b>
+              <span>🎴</span> Activity Cards Grid
             </button>
-          ))}
+            <button
+              type="button"
+              className={`psw-view-mode-pill ${viewMode === 'play' ? 'is-active' : ''}`}
+              onClick={() => { setViewMode('play'); soundEffects.playCelebrationChime(); }}
+            >
+              <span>{currentActivity.icon}</span> Play Arena: {currentActivity.labelEn}
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Code.org / PhET 11 Activity Cards Catalog Grid */}
+      {viewMode === 'cards' && (
+        <div className="psw-phet-catalog-grid" role="region" aria-label="Preschool Activity Cards">
+          {displayedActivities.map((act) => {
+            const isCurrent = act.id === tab;
+            return (
+              <article
+                key={act.id}
+                className={`psw-code-card${isCurrent ? ' is-playing' : ''}`}
+                style={{
+                  '--card-accent': act.accentColor,
+                  '--banner-bg': act.bannerGradient,
+                } as React.CSSProperties}
+              >
+                <div className="psw-cc-banner">
+                  <span className="psw-cc-lead-emoji" aria-hidden="true">{act.bannerVisual.emojiLead}</span>
+                  <div className="psw-cc-decor-row" aria-hidden="true">
+                    {act.bannerVisual.decorEmojis.map((em, i) => (
+                      <span key={i}>{em}</span>
+                    ))}
+                  </div>
+                  <div className="psw-cc-sa-ribbon" lang="sa">
+                    {act.bannerVisual.taglineSa}
+                  </div>
+                </div>
+
+                <div className="psw-cc-body">
+                  <div className="psw-cc-meta-row">
+                    <span className="psw-cc-grade-badge">{act.gradeBadge}</span>
+                    <span className="psw-cc-cluster-badge">{act.clusterLabel}</span>
+                  </div>
+
+                  <h3 className="psw-cc-title">
+                    <span>{act.icon}</span>
+                    <span>{act.labelSa} · {act.labelEn}</span>
+                  </h3>
+
+                  <p className="psw-cc-desc">{act.desc}</p>
+
+                  <div className="psw-cc-feats-row">
+                    {act.features.map((feat) => (
+                      <span key={feat} className="psw-cc-feat-pill">{feat}</span>
+                    ))}
+                  </div>
+
+                  <button
+                    type="button"
+                    className={`psw-cc-play-btn${isCurrent ? ' is-active-btn' : ''}`}
+                    onClick={() => launchActivity(act.id)}
+                  >
+                    {isCurrent ? '✓ Playing Now (Open Arena)' : '🎮 Play Activity ➔'}
+                  </button>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Active Game Play Arena */}
+      {viewMode === 'play' && (
+        <div ref={playArenaRef}>
+          <div className="psw-play-arena-banner">
+            <button
+              type="button"
+              className="psw-pab-back-btn"
+              onClick={() => {
+                setViewMode('cards');
+                soundEffects.playStrokeChime();
+              }}
+            >
+              ⬅️ Browse All 11 Cards
+            </button>
+            <div className="psw-pab-info">
+              <span>{currentActivity.icon}</span>
+              <span>Playing: <strong>{currentActivity.labelSa} · {currentActivity.labelEn}</strong></span>
+            </div>
+            <span className="psw-pab-cluster-badge">{currentActivity.clusterLabel}</span>
+          </div>
 
       {/* ===================================================================
           TAB 1: SHAPES PLAYGROUND (आकाराः)
@@ -2080,11 +2392,19 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
           ⬅️ Previous Game
         </button>
 
-        <div className="psw-stepper-pill">
+        <button
+          type="button"
+          className="psw-stepper-pill"
+          onClick={() => {
+            setViewMode('cards');
+            soundEffects.playStrokeChime();
+          }}
+          title="Click to browse all 11 preschool activity cards"
+        >
           <span aria-hidden="true">{currentActivity.icon}</span>
           <b>{currentActivity.labelSa} · {currentActivity.labelEn}</b>
-          <small>({currentActivityIdx + 1} of {ACTIVITIES.length})</small>
-        </div>
+          <small>({currentActivityIdx + 1} of {ACTIVITIES.length} · 🎴 Cards)</small>
+        </button>
 
         <button
           type="button"
@@ -2101,6 +2421,54 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
           Next Game ➡️
         </button>
       </div>
+
+      {/* Code.org Style "More Preschool Adventures" Carousel */}
+      <div className="psw-more-carousel-wrap">
+        <div className="psw-mc-header">
+          <h4 className="psw-mc-title">
+            <span>🌟</span> More Preschool Adventures to Explore
+          </h4>
+          <button
+            type="button"
+            className="psw-pab-back-btn"
+            onClick={() => {
+              setViewMode('cards');
+              soundEffects.playStrokeChime();
+            }}
+          >
+            View All 11 Cards 🎴
+          </button>
+        </div>
+        <div className="psw-mc-cards-strip">
+          {ACTIVITIES.filter((a) => a.id !== tab).map((item) => (
+            <div
+              key={item.id}
+              className="psw-mc-card"
+              onClick={() => launchActivity(item.id)}
+            >
+              <div className="psw-mc-banner" style={{ background: item.bannerGradient }}>
+                <span>{item.bannerVisual.emojiLead}</span>
+              </div>
+              <div className="psw-mc-body">
+                <span className="psw-mc-grade">{item.gradeBadge}</span>
+                <span className="psw-mc-name">{item.icon} {item.labelSa} · {item.labelEn}</span>
+                <button
+                  type="button"
+                  className="psw-mc-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    launchActivity(item.id);
+                  }}
+                >
+                  Play Now ➔
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
 
       {/* Bodhi Core Idea */}
       <CoreIdea>

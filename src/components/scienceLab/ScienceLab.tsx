@@ -818,15 +818,15 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             : s.dev;
 
           const preschoolBlurb = s.id === 'preschool-wonder'
-            ? '5 joyful tactile games for toddlers (Ages 3–6): Shapes, Smiling Moon Phases, Day Routine, Nature Seasons, Divine Vāhana Animal Matching, and the Dance of 5 Friends story!'
+            ? '11 joyful tactile games for toddlers (Ages 2–6): Shapes, Color Magic, Fruit Picker, Animal Safari, Moon Phases, Day Routine, Seasons, Count 1-10, Sacred Bells, Divine Vāhanas, and 5 Friends bilingual story!'
             : s.blurb;
 
           return (
           <React.Fragment key={s.id}>
             {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'preschool-wonder' && (
               <div className="vl-track-header" style={{ borderColor: 'rgba(245, 158, 11, 0.55)' }}>
-                <span className="vl-track-title" style={{ color: '#fbbf24' }}><span>🧸</span> PRESCHOOL WONDER ZONE: EARLY EXPLORERS (AGES 3–6)</span>
-                <span className="vl-track-subtitle" style={{ color: '#fde68a' }}>शिशु-क्रीडा-वाटिका · PRE-01 (SHAPES, MOON, DAY &amp; VAHANAS)</span>
+                <span className="vl-track-title" style={{ color: '#fbbf24' }}><span>🧸</span> PRESCHOOL WONDER ZONE: EARLY EXPLORERS (AGES 2–6)</span>
+                <span className="vl-track-subtitle" style={{ color: '#fde68a' }}>शिशु-क्रीडा-वाटिका · PRE-01 (11 PhET &amp; Code.org Style Tactile Sandboxes)</span>
               </div>
             )}
             {filterCat === 'all' && filterLevel === 'all' && !searchQuery && s.id === 'paramanu' && (
