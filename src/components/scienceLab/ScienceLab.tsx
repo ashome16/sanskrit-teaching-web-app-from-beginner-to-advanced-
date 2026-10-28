@@ -49,22 +49,22 @@ export interface LabSegmentConfig {
 }
 
 const LAB_SEGMENTS: LabSegmentConfig[] = [
-  // 0. Preschool Wonder Zone (Ages 3–6)
+  // 0. Preschool Wonder Zone (Ages 2–6)
   {
     id: 'preschool-wonder',
     code: 'PRE-01',
     icon: '🧸',
     dev: 'शिशु-क्रीडा-वाटिका',
     title: 'Preschool Wonder Playground',
-    subject: 'Shapes, Moon, Day, Seasons & Vāhanas',
-    school: 'बाल-संस्कृत-प्रज्ञा (Ages 3–6)',
+    subject: 'Shapes, Colors, Animals, Fruits, Counting, Bells, Moon & Story',
+    school: 'बाल-संस्कृत-प्रज्ञा (Ages 2–6)',
     category: 'life',
     level: 'preschool',
     levelLabel: 'Preschool & Kindergarten',
     levelDev: 'शिशु-कक्षा',
-    ageRange: 'Ages 3–6 · Toddlers & Little Explorers',
-    gameType: '5 Tactile Preschool Mini-Games',
-    blurb: 'Delightful hands-on games for little children: Shapes, Smiling Moon Phases, Day & Sky Routine, Nature Seasons, Divine Vāhana Animal Matching, and the Dance of 5 Friends story!',
+    ageRange: 'Ages 2–6 · Toddlers & Little Explorers',
+    gameType: '11 Tactile Preschool Wonder Games',
+    blurb: 'Gentle hands-on playground for toddlers: Shapes, Rainbow Color Mixing, Animal Safari Sounds, Orchard Fruit Picker, Count 1-10 with Sacred Friends, Sacred Instruments, Moon Phases, Day Routine, Seasons, Divine Vāhanas, and the 5 Friends bilingual story!',
     tint: 'rgba(245, 158, 11, 0.16)',
     ink: '#fbbf24',
     glow: '#f59e0b',

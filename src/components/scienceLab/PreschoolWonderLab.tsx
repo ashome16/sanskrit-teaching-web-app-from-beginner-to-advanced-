@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { CoreIdea, type LabSegmentProps } from './common';
 import { playPronunciation } from '../../utils/pronunciation';
 import { soundEffects } from '../../utils/soundEffects';
@@ -624,8 +624,33 @@ const STORY_SLIDES: StorySlide[] = [
   },
 ];
 
+type ClusterCategory = 'all' | 'creative' | 'nature' | 'gurukul';
+
+interface ActivityItem {
+  id: PreschoolTab;
+  labelSa: string;
+  labelEn: string;
+  icon: string;
+  cluster: 'creative' | 'nature' | 'gurukul';
+}
+
+const ACTIVITIES: ActivityItem[] = [
+  { id: 'shapes', labelSa: 'आकाराः', labelEn: 'Shapes', icon: '🎨', cluster: 'creative' },
+  { id: 'colors', labelSa: 'वर्णाः', labelEn: 'Color Magic', icon: '🌈', cluster: 'creative' },
+  { id: 'fruits', labelSa: 'फल-सङ्ग्रहः', labelEn: 'Fruit Picker', icon: '🍎', cluster: 'creative' },
+  { id: 'animals', labelSa: 'पशु-ध्वनयः', labelEn: 'Animal Safari', icon: '🐮', cluster: 'nature' },
+  { id: 'moon', labelSa: 'चन्द्र-कलाः', labelEn: 'Moon Phases', icon: '🌙', cluster: 'nature' },
+  { id: 'day', labelSa: 'दिन-भागाः', labelEn: 'Day Times', icon: '🌅', cluster: 'nature' },
+  { id: 'seasons', labelSa: 'ऋतवः', labelEn: 'Seasons', icon: '🌸', cluster: 'nature' },
+  { id: 'counting', labelSa: 'संख्याः', labelEn: 'Count 1–10', icon: '🔢', cluster: 'gurukul' },
+  { id: 'instruments', labelSa: 'वाद्यानि', labelEn: 'Bells & Beats', icon: '🔔', cluster: 'gurukul' },
+  { id: 'vahanas', labelSa: 'देव-वाहनानि', labelEn: 'Match Vāhanas', icon: '🦚', cluster: 'gurukul' },
+  { id: 'story', labelSa: '५ मित्राणि', labelEn: '5 Friends Story', icon: '📖', cluster: 'gurukul' },
+];
+
 export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNextLab }) => {
   const [tab, setTab] = useState<PreschoolTab>('shapes');
+  const [selectedCluster, setSelectedCluster] = useState<ClusterCategory>('all');
 
   // Shapes Game State
   const [selectedShape, setSelectedShape] = useState<ShapeItem>(SHAPES[0]);
@@ -892,6 +917,13 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
 
   const currentStorySlide = STORY_SLIDES[storySlideIdx];
 
+  const currentActivityIdx = ACTIVITIES.findIndex((a) => a.id === tab);
+  const currentActivity = ACTIVITIES[currentActivityIdx] || ACTIVITIES[0];
+  const displayedActivities = useMemo(() => {
+    if (selectedCluster === 'all') return ACTIVITIES;
+    return ACTIVITIES.filter((a) => a.cluster === selectedCluster);
+  }, [selectedCluster]);
+
   return (
     <div className="vl-subsim preschool-wonder-root" data-testid="preschool-wonder-lab">
       {/* Preschool Playground Hero Header */}
@@ -909,118 +941,52 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
           experience seasons, and enjoy the bilingual story of the 5 elements with sweet Sanskrit audio!
         </p>
 
-        {/* 11 Fun Activity Tabs */}
+        {/* Activity Clusters & 11 Fun Activity Tabs */}
+        <div className="psw-cluster-nav" role="tablist" aria-label="Activity clusters">
+          <button
+            type="button"
+            className={`psw-cluster-btn ${selectedCluster === 'all' ? 'is-active' : ''}`}
+            onClick={() => { setSelectedCluster('all'); soundEffects.playStrokeChime(); }}
+          >
+            <span>🌟</span> All Games (11)
+          </button>
+          <button
+            type="button"
+            className={`psw-cluster-btn ${selectedCluster === 'creative' ? 'is-active' : ''}`}
+            onClick={() => { setSelectedCluster('creative'); soundEffects.playStrokeChime(); }}
+          >
+            <span>🎨</span> Creative Play (3)
+          </button>
+          <button
+            type="button"
+            className={`psw-cluster-btn ${selectedCluster === 'nature' ? 'is-active' : ''}`}
+            onClick={() => { setSelectedCluster('nature'); soundEffects.playStrokeChime(); }}
+          >
+            <span>🐾</span> Living Nature (4)
+          </button>
+          <button
+            type="button"
+            className={`psw-cluster-btn ${selectedCluster === 'gurukul' ? 'is-active' : ''}`}
+            onClick={() => { setSelectedCluster('gurukul'); soundEffects.playStrokeChime(); }}
+          >
+            <span>🪔</span> Gurukul Wonder (4)
+          </button>
+        </div>
+
         <div className="psw-tab-nav" role="tablist" aria-label="Preschool activities">
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'shapes'}
-            className={`psw-tab-btn ${tab === 'shapes' ? 'is-active' : ''}`}
-            onClick={() => { setTab('shapes'); soundEffects.playStrokeChime(); }}
-          >
-            <span>🎨</span>
-            <b>आकाराः · Shapes</b>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'colors'}
-            className={`psw-tab-btn ${tab === 'colors' ? 'is-active' : ''}`}
-            onClick={() => { setTab('colors'); soundEffects.playStrokeChime(); }}
-          >
-            <span>🌈</span>
-            <b>वर्णाः · Color Magic</b>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'animals'}
-            className={`psw-tab-btn ${tab === 'animals' ? 'is-active' : ''}`}
-            onClick={() => { setTab('animals'); soundEffects.playStrokeChime(); }}
-          >
-            <span>🐮</span>
-            <b>पशु-ध्वनयः · Animal Safari</b>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'fruits'}
-            className={`psw-tab-btn ${tab === 'fruits' ? 'is-active' : ''}`}
-            onClick={() => { setTab('fruits'); soundEffects.playStrokeChime(); }}
-          >
-            <span>🍎</span>
-            <b>फल-सङ्ग्रहः · Fruit Picker</b>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'counting'}
-            className={`psw-tab-btn ${tab === 'counting' ? 'is-active' : ''}`}
-            onClick={() => { setTab('counting'); soundEffects.playStrokeChime(); }}
-          >
-            <span>🔢</span>
-            <b>संख्याः · Count 1–10</b>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'instruments'}
-            className={`psw-tab-btn ${tab === 'instruments' ? 'is-active' : ''}`}
-            onClick={() => { setTab('instruments'); soundEffects.playStrokeChime(); }}
-          >
-            <span>🔔</span>
-            <b>वाद्यानि · Bells &amp; Beats</b>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'moon'}
-            className={`psw-tab-btn ${tab === 'moon' ? 'is-active' : ''}`}
-            onClick={() => { setTab('moon'); soundEffects.playStrokeChime(); }}
-          >
-            <span>🌙</span>
-            <b>चन्द्र-कलाः · Moon</b>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'day'}
-            className={`psw-tab-btn ${tab === 'day' ? 'is-active' : ''}`}
-            onClick={() => { setTab('day'); soundEffects.playStrokeChime(); }}
-          >
-            <span>🌅</span>
-            <b>दिन-भागाः · Day Time</b>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'seasons'}
-            className={`psw-tab-btn ${tab === 'seasons' ? 'is-active' : ''}`}
-            onClick={() => { setTab('seasons'); soundEffects.playStrokeChime(); }}
-          >
-            <span>🌸</span>
-            <b>ऋतवः · Seasons</b>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'vahanas'}
-            className={`psw-tab-btn ${tab === 'vahanas' ? 'is-active' : ''}`}
-            onClick={() => { setTab('vahanas'); soundEffects.playStrokeChime(); }}
-          >
-            <span>🦚</span>
-            <b>देव-वाहनानि · Match Vāhanas</b>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'story'}
-            className={`psw-tab-btn ${tab === 'story' ? 'is-active' : ''}`}
-            onClick={() => { setTab('story'); soundEffects.playStrokeChime(); }}
-          >
-            <span>📖</span>
-            <b>५ मित्राणि · 5 Friends Story</b>
-          </button>
+          {displayedActivities.map((act) => (
+            <button
+              key={act.id}
+              type="button"
+              role="tab"
+              aria-selected={tab === act.id}
+              className={`psw-tab-btn ${tab === act.id ? 'is-active' : ''}`}
+              onClick={() => { setTab(act.id); soundEffects.playStrokeChime(); }}
+            >
+              <span>{act.icon}</span>
+              <b>{act.labelSa} · {act.labelEn}</b>
+            </button>
+          ))}
         </div>
       </div>
 
@@ -1498,6 +1464,35 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             >
               🔊 Hear "{selectedCount.devName} ({selectedCount.phraseSa})"
             </button>
+
+            {/* Stepper buttons for easy toddler tapping */}
+            <div className="psw-count-stepper-row">
+              <button
+                type="button"
+                className="psw-count-step-btn"
+                disabled={selectedCount.num === 1}
+                onClick={() => {
+                  const prev = COUNT_ITEMS[selectedCount.num - 2];
+                  if (prev) selectCountNumber(prev);
+                }}
+              >
+                ⬅️ Previous
+              </button>
+              <span className="psw-count-step-indicator">
+                {selectedCount.devDigit} · {selectedCount.devName} ({selectedCount.num}/10)
+              </span>
+              <button
+                type="button"
+                className="psw-count-step-btn"
+                disabled={selectedCount.num === 10}
+                onClick={() => {
+                  const next = COUNT_ITEMS[selectedCount.num];
+                  if (next) selectCountNumber(next);
+                }}
+              >
+                Next ➡️
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -2067,6 +2062,45 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
           </div>
         </div>
       )}
+
+      {/* Bottom Floating Activity Stepper Bar */}
+      <div className="psw-bottom-stepper-bar">
+        <button
+          type="button"
+          className="psw-stepper-nav-btn"
+          disabled={currentActivityIdx <= 0}
+          onClick={() => {
+            if (currentActivityIdx > 0) {
+              const prevTab = ACTIVITIES[currentActivityIdx - 1].id;
+              setTab(prevTab);
+              soundEffects.playStrokeChime();
+            }
+          }}
+        >
+          ⬅️ Previous Game
+        </button>
+
+        <div className="psw-stepper-pill">
+          <span aria-hidden="true">{currentActivity.icon}</span>
+          <b>{currentActivity.labelSa} · {currentActivity.labelEn}</b>
+          <small>({currentActivityIdx + 1} of {ACTIVITIES.length})</small>
+        </div>
+
+        <button
+          type="button"
+          className="psw-stepper-nav-btn"
+          disabled={currentActivityIdx >= ACTIVITIES.length - 1}
+          onClick={() => {
+            if (currentActivityIdx < ACTIVITIES.length - 1) {
+              const nextTab = ACTIVITIES[currentActivityIdx + 1].id;
+              setTab(nextTab);
+              soundEffects.playStrokeChime();
+            }
+          }}
+        >
+          Next Game ➡️
+        </button>
+      </div>
 
       {/* Bodhi Core Idea */}
       <CoreIdea>
