@@ -120,6 +120,11 @@
   border-radius: 8px;
   transition: opacity 0.15s ease, transform 0.15s ease;
   text-align: left;
+  flex-shrink: 0;
+  min-width: max-content;
+  white-space: nowrap;
+  position: relative;
+  z-index: 5;
 }
 
 .dashboard-brand-btn:hover {
@@ -141,6 +146,8 @@
 .dashboard-brand-text-col {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .dashboard-title {
@@ -150,6 +157,8 @@
   color: #1f2937;
   letter-spacing: -0.01em;
   line-height: 1.2;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .dashboard-brand-sub {
@@ -259,6 +268,7 @@
   padding: 0.22rem 0.65rem 0.22rem 0.48rem;
   border-radius: 999px;
   flex-shrink: 0;
+  margin-left: 0.2rem;
 }
 
 .dashboard-nav button.dashboard-nav-home .dashboard-nav-icon {
@@ -545,23 +555,26 @@ button.dashboard-nav-group-label:focus-visible,
 @media (min-width: 901px) {
   .dashboard-header {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: max-content minmax(0, 1fr) auto;
     grid-template-areas:
       "brand nav1 user"
       "nav2 nav2 nav2";
     align-items: center;
-    column-gap: 0.75rem;
+    column-gap: 1.25rem;
     row-gap: 0.35rem;
   }
 
   .dashboard-brand-btn {
     grid-area: brand;
-    padding-right: 0;
+    padding-right: 0.5rem;
+    flex-shrink: 0;
+    min-width: max-content;
   }
 
   .dashboard-title {
     white-space: nowrap;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    flex-shrink: 0;
   }
 
   .dashboard-nav {
@@ -573,10 +586,19 @@ button.dashboard-nav-group-label:focus-visible,
     display: flex;
     flex-wrap: nowrap !important;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.5rem;
     min-width: 0;
     height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 0.25rem;
+  }
+
+  .dashboard-nav-row--primary::-webkit-scrollbar {
+    display: none;
   }
 
   .dashboard-nav-row--secondary {
@@ -609,10 +631,10 @@ button.dashboard-nav-group-label:focus-visible,
 }
 
 /* Common laptop widths (1280–1440): compact the right-hand tools so row 1
-   (brand · Home · CBSE Exam Guide group · tools) stays on one line. */
+   (brand · Home · CBSE Exam Guide group · tools) stays on one line with generous brand clearance. */
 @media (min-width: 901px) and (max-width: 1480px) {
   .dashboard-header {
-    column-gap: 0.45rem;
+    column-gap: 0.95rem;
   }
 
   .dashboard-header-user {
