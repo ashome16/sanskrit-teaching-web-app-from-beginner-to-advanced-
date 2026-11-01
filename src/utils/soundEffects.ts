@@ -154,6 +154,151 @@ class SoundEffectsEngine {
     } catch { /* ignore */ }
   }
 
+  /** Distinct synthesized acoustic call for all 15 Animal Safari creatures (Ages 2-6). */
+  playSafariAnimalSound(id: string): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext(); if (!ctx) return;
+      const t = ctx.currentTime + 0.02;
+      switch (id) {
+        case 'cow': // Warm low "Moooo"
+          this.bTone(ctx, t, 0.95, 'sawtooth', 148, 124, 0.13, 5);
+          this.bTone(ctx, t + 0.04, 0.85, 'triangle', 296, 248, 0.06);
+          break;
+        case 'lion': // Majestic roar
+          this.bTone(ctx, t, 1.05, 'sawtooth', 165, 72, 0.18, 7);
+          this.bNoise(ctx, t, 1.0, 'lowpass', 720, 210, 1, 0.18);
+          break;
+        case 'elephant': // Joyful brassy trumpet
+          this.bTone(ctx, t, 0.8, 'square', 410, 640, 0.09, 9);
+          this.bTone(ctx, t + 0.05, 0.72, 'sawtooth', 820, 1120, 0.045);
+          break;
+        case 'mouse': // Cute tiny "cheep-cheep-cheep"
+          [0, 0.13, 0.26].forEach((d) => this.bTone(ctx, t + d, 0.08, 'sine', 2350, 3150, 0.08));
+          break;
+        case 'peacock': // Classic "ke-kaa!" sweep
+          [0, 0.36].forEach((d) => {
+            this.bTone(ctx, t + d, 0.13, 'sine', 1560, 1080, 0.09);
+            this.bTone(ctx, t + d + 0.14, 0.15, 'sine', 1080, 1620, 0.09);
+          });
+          break;
+        case 'frog': // Bouncy pond "ribbit-ribbit"
+          [0, 0.28].forEach((d) => {
+            this.bTone(ctx, t + d, 0.14, 'sawtooth', 175, 330, 0.12, 22);
+          });
+          break;
+        case 'crow': // Raspy "caw! caw!"
+          [0, 0.28].forEach((d) => {
+            this.bTone(ctx, t + d, 0.18, 'sawtooth', 540, 380, 0.1, 28);
+            this.bNoise(ctx, t + d, 0.16, 'bandpass', 1100, 800, 4, 0.08);
+          });
+          break;
+        case 'dog': // Friendly "bow-wow!"
+          [0, 0.24].forEach((d, idx) => {
+            this.bTone(ctx, t + d, 0.15, 'triangle', idx === 0 ? 360 : 390, 185, 0.16);
+            this.bNoise(ctx, t + d, 0.1, 'bandpass', 900, 450, 3, 0.12);
+          });
+          break;
+        case 'monkey': // Playful "oo-oo-aa-aa!" chatter
+          [0, 0.14, 0.28, 0.44].forEach((d, i) => {
+            const base = i < 2 ? 480 : 680;
+            this.bTone(ctx, t + d, 0.11, 'triangle', base, base * 1.45, 0.12);
+          });
+          break;
+        case 'tiger': // Deep rumbling growl
+          this.bTone(ctx, t, 0.9, 'sawtooth', 112, 68, 0.15, 18);
+          this.bNoise(ctx, t, 0.85, 'lowpass', 420, 190, 1, 0.15);
+          break;
+        case 'deer': // Gentle soft bleat + light hop
+          this.bTone(ctx, t, 0.35, 'triangle', 640, 520, 0.1, 10);
+          this.bTone(ctx, t + 0.42, 0.08, 'sine', 320, 180, 0.08);
+          break;
+        case 'bear': // Warm low "grrumph"
+          this.bTone(ctx, t, 0.65, 'sawtooth', 98, 74, 0.15, 12);
+          this.bNoise(ctx, t, 0.55, 'lowpass', 320, 160, 1.5, 0.14);
+          break;
+        case 'snake': // Crisp sibilant "ssssss"
+          this.bNoise(ctx, t, 0.8, 'highpass', 4200, 5800, 1.2, 0.14, 16);
+          break;
+        case 'crocodile': // River splash + crisp jaw "snap-snap"
+          this.bBubbles(ctx, t, 5, 420, 360, 0.45);
+          [0.18, 0.36].forEach((d) => this.bNoise(ctx, t + d, 0.07, 'bandpass', 1400, 400, 2, 0.32));
+          break;
+        case 'fox': // Quick playful "yip-yip!"
+          [0, 0.18].forEach((d) => this.bTone(ctx, t + d, 0.11, 'triangle', 760, 1280, 0.11));
+          break;
+        default:
+          this.playStrokeChime();
+      }
+    } catch { /* ignore */ }
+  }
+
+  /** Distinct synthesized sound for Bug Garden, Bird Sky, and Flower Garden items. */
+  playNatureCreatureSound(id: string): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext(); if (!ctx) return;
+      const t = ctx.currentTime + 0.02;
+      switch (id) {
+        // Bugs
+        case 'bee':
+          this.bTone(ctx, t, 0.65, 'sawtooth', 215, 235, 0.08, 28);
+          break;
+        case 'mosquito':
+          this.bTone(ctx, t, 0.55, 'sawtooth', 590, 650, 0.05, 24);
+          break;
+        case 'fly':
+          this.bTone(ctx, t, 0.45, 'sawtooth', 185, 210, 0.07, 30);
+          break;
+        case 'cricket':
+          [0, 0.12, 0.24, 0.48, 0.6].forEach((d) => this.bTone(ctx, t + d, 0.06, 'sine', 3800, 4100, 0.06));
+          break;
+        case 'firefly':
+          [660, 880, 1320].forEach((f, i) => this.bTone(ctx, t + i * 0.1, 0.22, 'sine', f, f * 1.05, 0.07));
+          break;
+        case 'butterfly':
+        case 'ladybug':
+        case 'ant':
+        case 'spider':
+          [523, 659, 784].forEach((f, i) => this.bTone(ctx, t + i * 0.07, 0.16, 'triangle', f, f * 1.1, 0.07));
+          break;
+        // Birds
+        case 'cuckoo': // Sweet spring "kuhu-kuhu!"
+          [0, 0.42].forEach((d) => {
+            this.bTone(ctx, t + d, 0.14, 'sine', 680, 720, 0.1);
+            this.bTone(ctx, t + d + 0.16, 0.2, 'sine', 860, 920, 0.11);
+          });
+          break;
+        case 'owl': // Night "hoo-hoo"
+          [0, 0.34].forEach((d, i) => this.bTone(ctx, t + d, i === 0 ? 0.22 : 0.34, 'sine', 390, 340, 0.12, 6));
+          break;
+        case 'hen': // Rooster "cock-a-doodle-doo!"
+          [520, 660, 580, 840, 620].forEach((f, i) => this.bTone(ctx, t + i * 0.11, i === 4 ? 0.32 : 0.1, 'triangle', f, i === 4 ? 460 : f * 1.08, 0.1));
+          break;
+        case 'parrot':
+          [0, 0.2].forEach((d) => this.bTone(ctx, t + d, 0.13, 'sawtooth', 950, 1450, 0.07, 18));
+          break;
+        case 'pigeon': // Soft "coo-coo"
+          [0, 0.28].forEach((d) => this.bTone(ctx, t + d, 0.22, 'sine', 440, 370, 0.1, 14));
+          break;
+        case 'sparrow':
+          this.bChirp(ctx, t, 2700, 4, 0.1);
+          break;
+        case 'eagle':
+          this.bTone(ctx, t, 0.55, 'sine', 1950, 1320, 0.08, 10);
+          break;
+        case 'swan':
+        case 'crane':
+          this.bBubbles(ctx, t, 6, 520, 400, 0.55);
+          break;
+        // Flowers (gentle blooming harp shimmer)
+        default:
+          [587.3, 739.9, 880, 1174.6].forEach((f, i) => this.bTone(ctx, t + i * 0.07, 0.25, 'sine', f, f, 0.07));
+          break;
+      }
+    } catch { /* ignore */ }
+  }
+
   /**
    * Gentle, pleasant bell ding when drawing or completing a stroke (D5 / 587Hz)
    */

@@ -44,6 +44,13 @@ import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
 import JungleCouncilStory from './JungleCouncilStory';
 import BharatMapExplorer from './BharatMapExplorer';
+import {
+  LivingNatureExplorer,
+  YogaPoseStudio,
+  ActionPlayStudio,
+  ToddlerCardQuestDeck,
+  type WordQuestCard,
+} from './PreschoolPlaydecks';
 
 type PreschoolTab =
   | 'shapes'
@@ -377,6 +384,17 @@ const SEASONS: SeasonItem[] = [
     weatherAction: 'Golden Breeze 🌾',
     particles: ['🌾', '🍁', '🍂', '🌕', '🪷'],
     themeColor: '#d97706',
+  },
+  {
+    id: 'hemanta',
+    dev: 'हेमन्तः',
+    iast: 'hemantaḥ',
+    en: 'Pre-Winter (Misty Dew)',
+    icon: '🍂',
+    desc: 'Golden misty mornings, sparkling dewdrops on grass, cozy shawls, and warm jaggery sweets!',
+    weatherAction: 'Misty Dewdrops 🍂',
+    particles: ['🍂', '💧', '🌾', '🪔', '🧣'],
+    themeColor: '#ea580c',
   },
   {
     id: 'shishira',
@@ -853,8 +871,8 @@ const ACTIVITIES: ActivityItem[] = [
     cluster: 'nature',
     clusterLabel: 'प्रकृति · Living Nature',
     gradeBadge: 'Ages 2–6 · Animals',
-    desc: 'Tap an animal. Hear its sound!',
-    features: ['🔊 Real Sounds', '🐾 9 Animals', '🎯 Sound Quiz'],
+    desc: 'Tap 15 animals to hear real synthesized roars, trumpets, croaks & calls!',
+    features: ['🔊 15 Real Calls', '🐾 Habitat Packs', '👂 Sound Safari'],
     bannerGradient: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
     accentColor: '#f97316',
     bannerVisual: {
@@ -907,8 +925,8 @@ const ACTIVITIES: ActivityItem[] = [
     cluster: 'nature',
     clusterLabel: 'प्रकृति · Living Nature',
     gradeBadge: 'Ages 2–6 · Yoga',
-    desc: 'Match Sanskrit āsana names to fun poses!',
-    features: ['🔊 Sanskrit Audio', '🧘 10 Āsanas', '🔀 Shuffle'],
+    desc: 'Hold poses with the 5-second breathing timer or play 4-Pose Quest!',
+    features: ['🧘 5s Pose Timer', '🎯 4-Pose Quest', '🔊 10 Āsanas'],
     bannerGradient: 'linear-gradient(135deg, #c4b5fd 0%, #86efac 100%)',
     accentColor: '#a78bfa',
     bannerVisual: {
@@ -937,22 +955,22 @@ const ACTIVITIES: ActivityItem[] = [
   },
   {
     id: 'insects', labelSa: 'कीटाः', labelEn: 'Bug Garden', icon: '🦋', cluster: 'nature', clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 2–6 · Insects', desc: 'Tap a little bug. Hear its Sanskrit name!',
-    features: ['🔊 Sanskrit Audio', '🐝 9 Bugs', '🎯 Bug Quiz'],
+    gradeBadge: 'Ages 2–6 · Insects', desc: 'Hear buzzing bees & glowing fireflies, play Picture Quest or Memory Flip!',
+    features: ['🔊 Bug Sounds', '🎯 Picture Quest', '🃏 Memory Flip'],
     bannerGradient: 'linear-gradient(135deg, #86efac 0%, #fde68a 100%)', accentColor: '#4ade80',
     bannerVisual: { emojiLead: '🦋', decorEmojis: ['🐝', '🐜', '🐞', '🦗', '✨', '🌼'], taglineSa: 'लघवः कीटाः' },
   },
   {
     id: 'birds', labelSa: 'पक्षिणः', labelEn: 'Bird Sky', icon: '🦜', cluster: 'nature', clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 2–6 · Birds', desc: 'Tap a bird. Hear its Sanskrit name!',
-    features: ['🔊 Sanskrit Audio', '🦢 9 Birds', '🎯 Bird Quiz'],
+    gradeBadge: 'Ages 2–6 · Birds', desc: 'Hear singing koels, owls & roosters, play Bird Quest or Memory Flip!',
+    features: ['🔊 Bird Songs', '🎯 Picture Quest', '🃏 Memory Flip'],
     bannerGradient: 'linear-gradient(135deg, #93c5fd 0%, #c4b5fd 100%)', accentColor: '#60a5fa',
     bannerVisual: { emojiLead: '🦜', decorEmojis: ['🦢', '🦉', '🦅', '🕊️', '🐓', '☁️'], taglineSa: 'पक्षिणः उड्डयन्ते' },
   },
   {
     id: 'flowers', labelSa: 'पुष्पाणि', labelEn: 'Flower Garden', icon: '🌸', cluster: 'nature', clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 2–6 · Flowers', desc: 'Tap a flower. Hear its Sanskrit name!',
-    features: ['🔊 Sanskrit Audio', '🌸 10 Flowers', '🪷 Fun Facts'],
+    gradeBadge: 'Ages 2–6 · Flowers', desc: 'Touch blooming lotuses & jasmines, play Flower Quest or Memory Flip!',
+    features: ['🔊 Harp Chimes', '🎯 Picture Quest', '🃏 Memory Flip'],
     bannerGradient: 'linear-gradient(135deg, #f9a8d4 0%, #fde68a 100%)', accentColor: '#f472b6',
     bannerVisual: { emojiLead: '🌸', decorEmojis: ['🪷', '🌹', '🌺', '🌻', '🌼', '🦋'], taglineSa: 'पुष्पाणि विकसन्ति' },
   },
@@ -1012,36 +1030,36 @@ const ACTIVITIES: ActivityItem[] = [
   },
   {
     id: 'spices', labelSa: 'मसालानि', labelEn: 'Spices', icon: '🌶️', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 2–6 · Spices', desc: 'Match Sanskrit names of kitchen spices to pictures!',
-    features: ['🔊 Sanskrit Audio', '🌶️ 12 Spices', '🧩 Picture Match'],
+    gradeBadge: 'Ages 2–6 · Spices', desc: 'Open Amma’s spice jars, hear Sanskrit names & play 4-Picture Quest!',
+    features: ['🫙 Spice Jars', '🎯 4-Picture Quest', '🧩 Cozy Packs'],
     bannerGradient: 'linear-gradient(135deg, #fde68a 0%, #fecaca 100%)', accentColor: '#ea580c',
     bannerVisual: { emojiLead: '🌶️', decorEmojis: ['🫚', '🧄', '🌿', '🟡', '⚫', '🟤'], taglineSa: 'पाकशालायाः सुगन्धः' },
   },
   {
     id: 'months', labelSa: 'मासाः', labelEn: '12 Months', icon: '🗓️', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 3–6 · Months', desc: 'Learn the 12 Sanskrit month names, from चैत्र to फाल्गुन!',
-    features: ['🔊 Sanskrit Audio', '🗓️ 12 Months', '🧩 Season Match'],
+    gradeBadge: 'Ages 3–6 · Months', desc: 'Explore 12 Sanskrit months across 6 Ṛtus & play Calendar Picture Quest!',
+    features: ['🌸 6 Ṛtu Badges', '🎯 4-Picture Quest', '🗓️ 12 Months'],
     bannerGradient: 'linear-gradient(135deg, #bae6fd 0%, #fbcfe8 100%)', accentColor: '#0ea5e9',
     bannerVisual: { emojiLead: '🗓️', decorEmojis: ['🌸', '☀️', '🌧️', '🪔', '❄️', '🎨'], taglineSa: 'द्वादश मासाः' },
   },
   {
     id: 'work', labelSa: 'व्यवसायाः', labelEn: 'Types of Work', icon: '🧑‍🌾', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 2–6 · Work', desc: 'Farming, army, teaching, medicine — match Sanskrit work names to pictures!',
-    features: ['🔊 Sanskrit Audio', '🧑‍🌾 12 Kinds of Work', '🧩 Picture Match'],
+    gradeBadge: 'Ages 2–6 · Work', desc: 'Meet farmers, gurus, doctors & artisans — tap to hear & play Quest!',
+    features: ['🧑‍🌾 Village Helpers', '🎯 4-Picture Quest', '🧩 Cozy Packs'],
     bannerGradient: 'linear-gradient(135deg, #d9f99d 0%, #c7d2fe 100%)', accentColor: '#65a30d',
     bannerVisual: { emojiLead: '🧑‍🌾', decorEmojis: ['💂', '👩‍🏫', '🩺', '🎶', '🎣', '🍳'], taglineSa: 'कर्म एव पूजा' },
   },
   {
     id: 'actions', labelSa: 'क्रियाः', labelEn: 'Action Words', icon: '🏃', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 2–6 · Actions', desc: 'Match Sanskrit action words to pictures — then do the action!',
-    features: ['🔊 Sanskrit Audio', '🏃 12 Actions', '🧩 Picture Match'],
+    gradeBadge: 'Ages 2–6 · Actions', desc: 'Play “Ācārya Says!” movement game & 4-Picture Action Quest!',
+    features: ['🎬 Ācārya Says!', '🎯 4-Action Quest', '🏃 12 Verbs'],
     bannerGradient: 'linear-gradient(135deg, #bbf7d0 0%, #fde68a 100%)', accentColor: '#22c55e',
     bannerVisual: { emojiLead: '🏃', decorEmojis: ['🧘', '🤾', '🏊', '🤸', '🚶', '😴'], taglineSa: 'वयं क्रीडामः' },
   },
   {
     id: 'relations', labelSa: 'परिवारः', labelEn: 'Family & Friends', icon: '👪', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 2–6 · Family', desc: 'Match Sanskrit family words to pictures!',
-    features: ['🔊 Sanskrit Audio', '👪 10 Relations', '🧩 Picture Match'],
+    gradeBadge: 'Ages 2–6 · Family', desc: 'Explore sweet family frames with home-language words & Picture Quest!',
+    features: ['👪 Family Frames', '🎯 4-Picture Quest', '🗣️ Home Words'],
     bannerGradient: 'linear-gradient(135deg, #fbcfe8 0%, #bfdbfe 100%)', accentColor: '#f472b6',
     bannerVisual: { emojiLead: '👪', decorEmojis: ['👩', '👨', '👦', '👧', '👴', '🤝'], taglineSa: 'मम परिवारः' },
   },
@@ -1089,8 +1107,8 @@ const ACTIVITIES: ActivityItem[] = [
     cluster: 'gurukul',
     clusterLabel: 'गुरुकुल · Gurukul Wonder',
     gradeBadge: 'Ages 3–6 · Matching',
-    desc: 'Match each deity to their animal friend.',
-    features: ['🔊 Sanskrit Audio', '🧩 6 Match Pairs', '🎉 Victory Chime'],
+    desc: 'Match each deity to their beloved animal companion & hear blessings!',
+    features: ['🔊 Sanskrit Audio', '🧩 Easy 4 & All 8', '✨ Blessing Quotes'],
     bannerGradient: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
     accentColor: '#a78bfa',
     bannerVisual: {
@@ -1182,10 +1200,11 @@ const SEASON_SCENE_CAPTION: Record<string, string> = {
   grishma: '🥭 आम्राणि आगच्छन्ति · Mangoes are here!',
   varsha: '🌊 नद्यः पूर्णाः · Rivers fill and flood!',
   sharad: '🐂 शकटानि धान्यपूर्णानि · Bullock carts full of food!',
+  hemanta: '🍂 नीहार-प्रभातः · Cozy misty dew mornings!',
   shishira: '🏔️ हिमालयः हिमेन शुभ्रः · Snow-capped Himālaya!',
 };
 const SeasonScene: React.FC<{ id: string }> = ({ id }) => {
-  const sky = { vasanta: '#fce7f3', grishma: '#fef3c7', varsha: '#cbd5e1', sharad: '#e0f2fe', shishira: '#e0e7ff' }[id] ?? '#f1f5f9';
+  const sky = { vasanta: '#fce7f3', grishma: '#fef3c7', varsha: '#cbd5e1', sharad: '#e0f2fe', hemanta: '#ffedd5', shishira: '#e0e7ff' }[id] ?? '#f1f5f9';
   return (
     <svg className={`psw-sscene psw-sscene-${id}`} viewBox="0 0 200 160" role="img" aria-label={SEASON_SCENE_CAPTION[id] ?? id}>
       <rect width="200" height="160" rx="24" fill={sky} />
@@ -1225,6 +1244,19 @@ const SeasonScene: React.FC<{ id: string }> = ({ id }) => {
           <g className="psw-ss-wheel" style={{ transformOrigin: '130px 122px' }}><circle cx="130" cy="122" r="12" fill="none" stroke="#78350f" strokeWidth="3" /><line x1="118" y1="122" x2="142" y2="122" stroke="#78350f" strokeWidth="2" /><line x1="130" y1="110" x2="130" y2="134" stroke="#78350f" strokeWidth="2" /></g>
         </g>
       </g>)}
+      {id === 'hemanta' && (<g>
+        <circle cx="155" cy="36" r="18" fill="#fdba74" opacity="0.85" />
+        <rect y="114" width="200" height="46" fill="#fed7aa" />
+        <ellipse cx="55" cy="95" rx="68" ry="12" fill="#ffffff" opacity="0.65" />
+        <ellipse cx="145" cy="82" rx="60" ry="10" fill="#ffffff" opacity="0.58" />
+        {/* Cozy Gurukul Cottage with Warm Diya Glow */}
+        <rect x="68" y="80" width="64" height="42" rx="5" fill="#fef3c7" stroke="#b45309" strokeWidth="2.5" />
+        <polygon points="58,82 100,52 142,82" fill="#ea580c" stroke="#9a3412" strokeWidth="2" />
+        <rect x="92" y="96" width="16" height="26" rx="4" fill="#92400e" />
+        <circle cx="80" cy="98" r="5" fill="#fde047" />
+        <circle cx="120" cy="98" r="5" fill="#fde047" />
+        {[24, 42, 156, 174].map((x, i) => <circle key={i} cx={x} cy={126 + (i % 2) * 8} r="3" fill="#bae6fd" stroke="#38bdf8" strokeWidth="1" />)}
+      </g>)}
       {id === 'shishira' && (<g>
         <polygon points="-10,130 50,40 110,130" fill="#a5b4fc" /><polygon points="30,70 50,40 70,70 60,64 50,72 40,64" fill="#fff" />
         <polygon points="60,130 130,22 200,130" fill="#818cf8" /><polygon points="106,58 130,22 154,58 142,52 130,62 118,52" fill="#fff" />
@@ -1236,56 +1268,6 @@ const SeasonScene: React.FC<{ id: string }> = ({ id }) => {
   );
 };
 
-const NatureCardGame: React.FC<{ items: FestivalItem[]; title: string; sub: string; whereLabel: string; accent: string; onEarnStar?: () => void }> = ({ items, title, sub, whereLabel, accent, onEarnStar }) => {
-  const [sel, setSel] = useState<FestivalItem>(items[0]);
-  const [quiz, setQuiz] = useState<FestivalItem | null>(null);
-  const [stars, setStars] = useState(0);
-  const [msg, setMsg] = useState('');
-  return (
-    <div className="psw-card-bench">
-      <div className="psw-bench-header">
-        <div>
-          <h3 className="psw-section-heading">{title}</h3>
-          <p className="psw-section-sub">{sub}</p>
-        </div>
-        <button type="button" className="psw-quiz-btn" onClick={() => {
-          const r = items[Math.floor(Math.random() * items.length)];
-          setQuiz(r); setMsg(''); playPronunciation(r.dev);
-        }}>
-          {quiz ? `❓ Find: ${quiz.dev}` : '⭐ Quiz'}
-        </button>
-      </div>
-      {quiz && (
-        <div className="psw-quiz-banner" role="status">
-          <span>🎯 Tap <strong lang="sa">{quiz.dev}</strong> ({quiz.iast}) <SayBtn text={quiz.dev} /> {stars > 0 && `⭐ Stars: ${stars}`} {msg}</span>
-        </div>
-      )}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 12 }}>
-        {items.map((f) => (
-          <button key={f.id} type="button" onClick={() => {
-            setSel(f); playPronunciation(f.dev); soundEffects.playStrokeChime();
-            if (quiz) {
-              if (f.id === quiz.id) { soundEffects.playCelebrationChime(); setStars((n) => n + 1); onEarnStar?.(); setMsg('🎉 Yes!'); setQuiz(null); }
-              else setMsg('🙂 Try again!');
-            }
-          }} style={{ background: f.bg, border: sel.id === f.id ? `3px solid ${accent}` : '2px solid #bfdbfe', borderRadius: 18, padding: '14px 8px', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, color: '#1e293b' }}>
-            {f.img ? <img src={f.img} alt={f.en} width={48} height={48} style={{ width: 48, height: 48 }} /> : <span style={{ fontSize: 40 }}>{f.emoji}</span>}
-            <strong lang="sa" style={{ fontSize: 18 }}>{f.dev} <SayBtn text={f.dev} /></strong>
-            <small style={{ fontStyle: 'italic', color: '#475569' }}>{f.iast}</small>
-            <span style={{ fontSize: 13 }}>{f.en}</span>
-          </button>
-        ))}
-      </div>
-      <div style={{ marginTop: 16, background: sel.bg, border: `2px dashed ${accent}`, borderRadius: 18, padding: 16, color: '#1e293b' }}>
-        <div style={{ fontSize: 22 }}>{sel.img ? <img src={sel.img} alt="" width={28} height={28} style={{ verticalAlign: 'middle' }} /> : sel.emoji} <strong lang="sa">{sel.dev}</strong> <em>({sel.iast})</em> <SayBtn text={sel.dev} /></div>
-        <div style={{ fontSize: 13, color: '#64748b', margin: '4px 0' }}>{whereLabel} {sel.when}</div>
-        <p style={{ margin: 0 }}>{sel.fact}</p>
-      </div>
-    </div>
-  );
-};
-
-
 const FEST_CLUES: Record<string, string> = {
   deepavali: 'Rows of little lamps 🪔', holi: 'Splashing colours 🎨', navaratri: 'Nine nights of dāṇḍiyā dance 💃',
   sankranti: 'Kites fly to greet Sūrya 🪁', pongal: 'Sweet rice boils over the pot 🍚', onam: 'Flower rangoli & snake boats 🌼',
@@ -1293,20 +1275,26 @@ const FEST_CLUES: Record<string, string> = {
 };
 const shuffleArr = <T,>(a: T[]): T[] => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
 const FestivalMatchGame: React.FC<{ onEarnStar?: () => void }> = ({ onEarnStar }) => {
+  const [packHalf, setPackHalf] = useState<0 | 1>(0);
+  const slice = useMemo(() => (packHalf === 0 ? FESTIVALS.slice(0, 5) : FESTIVALS.slice(5, 10)), [packHalf]);
   const [round, setRound] = useState(0);
-  const left = useMemo(() => shuffleArr(FESTIVALS), [round]);
-  const right = useMemo(() => shuffleArr(FESTIVALS), [round]);
+  const left = useMemo(() => shuffleArr(slice), [slice, round]);
+  const right = useMemo(() => shuffleArr(slice), [slice, round]);
   const [pick, setPick] = useState<string | null>(null);
   const [done, setDone] = useState<string[]>([]);
   const [wrong, setWrong] = useState<string | null>(null);
   const [msg, setMsg] = useState('Tap a Sanskrit festival name, then tap its matching picture!');
-  const reset = () => { setRound((r) => r + 1); setPick(null); setDone([]); setWrong(null); setMsg('New round! Tap a Sanskrit name, then its picture.'); };
+  const reset = (nextHalf?: 0 | 1) => {
+    if (nextHalf !== undefined) setPackHalf(nextHalf);
+    setRound((r) => r + 1); setPick(null); setDone([]); setWrong(null);
+    setMsg('Tap a Sanskrit festival name, then its picture!');
+  };
   const tapRight = (id: string) => {
     if (done.includes(id)) return;
     if (!pick) { setMsg('👈 First tap a festival name on the left, then tap its picture on the right!'); return; }
     if (pick === id) {
       const nd = [...done, id]; setDone(nd); setPick(null); soundEffects.playCelebrationChime(); onEarnStar?.();
-      setMsg(nd.length === FESTIVALS.length ? '🎉 शोभनम्! (śobhanam!) You matched every festival!' : '✅ Correct match!');
+      setMsg(nd.length === slice.length ? '🎉 शोभनम्! (śobhanam!) Pack matched!' : '✅ Correct match!');
     } else { setWrong(id); soundEffects.playPuzzleSnap(); setMsg('🙂 Not this one — try again!'); setTimeout(() => setWrong(null), 600); }
   };
   const box = (on: boolean, ok: boolean, bad: boolean, bg: string): React.CSSProperties => ({
@@ -1317,23 +1305,21 @@ const FestivalMatchGame: React.FC<{ onEarnStar?: () => void }> = ({ onEarnStar }
     <div style={{ marginTop: 20, background: '#fdf4ff', border: '2px dashed #c084fc', borderRadius: 20, padding: 16 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
         <h3 className="psw-section-heading" style={{ margin: 0 }}>🧩 <span lang="sa">उत्सव-मेलनम्</span> · Match the Festivals</h3>
-        <button type="button" className="psw-quiz-btn" onClick={reset}>🔀 Shuffle / Reset</button>
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          <button type="button" className={`bharat-pack-chip ${packHalf === 0 ? 'is-active' : ''}`} style={{ background: '#fef3c7', borderColor: packHalf === 0 ? '#ec4899' : '#cbd5e1' }} onClick={() => reset(0)}>🪔 Set 1 (5)</button>
+          <button type="button" className={`bharat-pack-chip ${packHalf === 1 ? 'is-active' : ''}`} style={{ background: '#e0f2fe', borderColor: packHalf === 1 ? '#ec4899' : '#cbd5e1' }} onClick={() => reset(1)}>🌼 Set 2 (5)</button>
+          <button type="button" className="psw-quiz-btn" onClick={() => reset()}>🔀 Shuffle</button>
+        </div>
       </div>
-      <div style={{ margin: '10px 0', background: '#fef9c3', border: '2px solid #facc15', borderRadius: 16, padding: '10px 14px' }}>
-        <strong style={{ fontSize: 16 }}>📋 How to play · <span lang="sa">क्रीडा-विधिः</span></strong>
-        <p style={{ margin: '4px 0 0', fontSize: 14, color: '#475569' }}>
-          1️⃣ Tap a <b>Sanskrit festival name</b> on the left to hear it · 2️⃣ Tap its <b>picture &amp; symbol</b> on the right to win ⭐ stars!
-        </p>
-      </div>
-      <p role="status" style={{ margin: '8px 0 12px', fontWeight: 600 }}>{msg} ⭐ {done.length}/{FESTIVALS.length}</p>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+      <p role="status" style={{ margin: '10px 0 12px', fontWeight: 700 }}>{msg} ⭐ {done.length}/{slice.length}</p>
+      <div className="psw-two-col-match-grid" style={{ background: 'transparent', padding: 0 }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {left.map((f) => {
             const ok = done.includes(f.id);
             return (
               <button key={f.id} type="button" disabled={ok} onClick={() => { setPick(f.id); playPronunciation(f.dev); }} style={box(pick === f.id, ok, false, f.bg)}>
                 <span><strong lang="sa" style={{ fontSize: 18 }}>{f.dev}</strong><br /><small style={{ fontStyle: 'italic', color: '#475569' }}>{f.iast}</small></span>
-                <span style={{ marginLeft: 'auto' }}>{ok ? '✅' : '🔊'}</span>
+                <span style={{ marginLeft: 'auto' }}>{ok ? '✅' : pick === f.id ? '👉' : '🔊'}</span>
               </button>
             );
           })}
@@ -1368,75 +1354,19 @@ const YOGA_POSES: YogaPose[] = [
   { id: 'utkata', dev: 'उत्कटासनम्', iast: 'utkaṭāsanam', en: 'Chair Pose', icon: '🪑', clue: 'Bend knees and sit on an invisible chair', bg: '#fae8ff' },
 ];
 
-interface RelationItem { id: string; ta: string; ml: string; te: string; kn: string; dev: string; iast: string; en: string; emoji: string; clue: string; bg: string; }
-const RELATIONS: RelationItem[] = [
-  { id: 'mata', ta: 'தாய்', ml: 'അമ്മ', te: 'తల్లి', kn: 'ತಾಯಿ', dev: 'माता', iast: 'mātā', en: 'Mother', emoji: '👩', clue: 'Mother · Warm hug from Amma', bg: '#fce7f3' },
-  { id: 'pita', ta: 'தந்தை', ml: 'അച്ഛൻ', te: 'తండ్రి', kn: 'ತಂದೆ', dev: 'पिता', iast: 'pitā', en: 'Father', emoji: '👨', clue: 'Father · Nanna carries me high', bg: '#dbeafe' },
-  { id: 'bhrata', ta: 'சகோதரன்', ml: 'സഹോദരൻ', te: 'సోదరుడు', kn: 'ಸಹೋದರ', dev: 'भ्राता', iast: 'bhrātā', en: 'Brother', emoji: '👦', clue: 'Brother · Plays ball with me', bg: '#e0f2fe' },
-  { id: 'bhagini', ta: 'சகோதரி', ml: 'സഹോദരി', te: 'సోదరి', kn: 'ಸಹೋದರಿ', dev: 'भगिनी', iast: 'bhaginī', en: 'Sister', emoji: '👧', clue: 'Sister · Ties my rākhī', bg: '#fef9c3' },
-  { id: 'putra', ta: 'மகன்', ml: 'മകൻ', te: 'కొడుకు', kn: 'ಮಗ', dev: 'पुत्रः', iast: 'putraḥ', en: 'Son', emoji: '👩‍👦', clue: 'Son · Amma’s little boy', bg: '#e0f2fe' },
-  { id: 'duhita', ta: 'மகள்', ml: 'മകൾ', te: 'కూతురు', kn: 'ಮಗಳು', dev: 'दुहिता', iast: 'duhitā', en: 'Daughter', emoji: '👨‍👧', clue: 'Daughter · Nanna’s little girl', bg: '#ffe4e6' },
-  { id: 'mitra', ta: 'நண்பன்', ml: 'സുഹൃത്ത്', te: 'స్నేహితుడు', kn: 'ಸ್ನೇಹಿತ', dev: 'मित्रम्', iast: 'mitram', en: 'Friend', emoji: '🤝', clue: 'Friend · We share and play', bg: '#ede9fe' },
-  { id: 'pautra', ta: 'பேரன்', ml: 'കൊച്ചുമകൻ', te: 'మనవడు', kn: 'ಮೊಮ್ಮಗ', dev: 'पौत्रः', iast: 'pautraḥ', en: 'Grandson', emoji: '👴👦', clue: 'Grandson · Tātā’s little boy', bg: '#ffedd5' },
-  { id: 'pautri', ta: 'பேத்தி', ml: 'കൊച്ചുമകൾ', te: 'మనవరాలు', kn: 'ಮೊಮ್ಮಗಳು', dev: 'पौत्री', iast: 'pautrī', en: 'Granddaughter', emoji: '👵👧', clue: 'Granddaughter · Nānamma’s little girl', bg: '#fae8ff' },
-  { id: 'pitamaha', ta: 'தாத்தா', ml: 'മുത്തച്ഛൻ', te: 'తాత', kn: 'ಅಜ್ಜ', dev: 'पितामहः', iast: 'pitāmahaḥ', en: 'Grandfather', emoji: '👴', clue: 'Grandfather · Tells me stories', bg: '#f1f5f9' },
-  { id: 'pitamahi', ta: 'பாட்டி', ml: 'മുത്തശ്ശി', te: 'నానమ్మ', kn: 'ಅಜ್ಜಿ', dev: 'पितामही', iast: 'pitāmahī', en: 'Grandmother', emoji: '👵', clue: 'Grandmother · Sings me lullabies', bg: '#ecfccb' },
+const RELATIONS_CARDS: WordQuestCard[] = [
+  { id: 'mata', cognates: 'தாய் · അമ്മ · తల్లి · ತಾಯಿ', dev: 'माता', iast: 'mātā', en: 'Mother', emoji: '👩', clue: 'Mother · Warm hug from Amma', bg: '#fce7f3', subBadge: '💖 Amma' },
+  { id: 'pita', cognates: 'தந்தை · അച്ഛൻ · తండ్రి · ತಂದೆ', dev: 'पिता', iast: 'pitā', en: 'Father', emoji: '👨', clue: 'Father · Nanna carries me high', bg: '#dbeafe', subBadge: '💙 Nanna / Papa' },
+  { id: 'bhrata', cognates: 'சகோதரன் · സഹോദരൻ · సోదరుడు · ಸಹೋದರ', dev: 'भ्राता', iast: 'bhrātā', en: 'Brother', emoji: '👦', clue: 'Brother · Plays ball with me', bg: '#e0f2fe', subBadge: '⚽ Brother' },
+  { id: 'bhagini', cognates: 'சகோதரி · സഹോദരി · సోదరి · ಸಹೋದರಿ', dev: 'भगिनी', iast: 'bhaginī', en: 'Sister', emoji: '👧', clue: 'Sister · Ties my rākhī', bg: '#fef9c3', subBadge: '🧵 Sister' },
+  { id: 'putra', cognates: 'மகன் · മകൻ · కొడుకు · ಮಗ', dev: 'पुत्रः', iast: 'putraḥ', en: 'Son', emoji: '👩‍👦', clue: 'Son · Amma’s little boy', bg: '#e0f2fe', subBadge: '🌟 Son' },
+  { id: 'duhita', cognates: 'மகள் · മകൾ · కూతురు · ಮಗಳು', dev: 'दुहिता', iast: 'duhitā', en: 'Daughter', emoji: '👨‍👧', clue: 'Daughter · Nanna’s little girl', bg: '#ffe4e6', subBadge: '🌸 Daughter' },
+  { id: 'mitra', cognates: 'நண்பன் · സുഹൃത്ത് · స్నేహితుడు · ಸ್ನೇಹಿತ', dev: 'मित्रम्', iast: 'mitram', en: 'Friend', emoji: '🤝', clue: 'Friend · We share and play', bg: '#ede9fe', subBadge: '🤝 Best Friend' },
+  { id: 'pautra', cognates: 'பேரன் · കൊച്ചുമകൻ · మనవడు · ಮೊಮ್ಮಗ', dev: 'पौत्रः', iast: 'pautraḥ', en: 'Grandson', emoji: '👴👦', clue: 'Grandson · Tātā’s little boy', bg: '#ffedd5', subBadge: '🧡 Grandson' },
+  { id: 'pautri', cognates: 'பேத்தி · കൊച്ചുമകൾ · మనవరాలు · ಮೊಮ್ಮಗಳು', dev: 'पौत्री', iast: 'pautrī', en: 'Granddaughter', emoji: '👵👧', clue: 'Granddaughter · Nānamma’s little girl', bg: '#fae8ff', subBadge: '💜 Granddaughter' },
+  { id: 'pitamaha', cognates: 'தாத்தா · മുത്തച്ഛൻ · తాత · ಅಜ್ಜ', dev: 'पितामहः', iast: 'pitāmahaḥ', en: 'Grandfather', emoji: '👴', clue: 'Grandfather · Tells me stories', bg: '#f1f5f9', subBadge: '📖 Grandfather' },
+  { id: 'pitamahi', cognates: 'பாட்டி · മുത്തശ്ശി · నానమ్మ · ಅಜ್ಜಿ', dev: 'पितामही', iast: 'pitāmahī', en: 'Grandmother', emoji: '👵', clue: 'Grandmother · Sings me lullabies', bg: '#ecfccb', subBadge: '🎶 Grandmother' },
 ];
-
-const RelationsMatchGame: React.FC<{ onEarnStar?: () => void }> = ({ onEarnStar }) => {
-  const [round, setRound] = useState(0);
-  const left = useMemo(() => shuffleArr(RELATIONS), [round]);
-  const right = useMemo(() => shuffleArr(RELATIONS), [round]);
-  const [pick, setPick] = useState<string | null>(null);
-  const [done, setDone] = useState<string[]>([]);
-  const [wrong, setWrong] = useState<string | null>(null);
-  const [msg, setMsg] = useState('Tap a Sanskrit name, then tap its picture!');
-  const reset = () => { setRound((r) => r + 1); setPick(null); setDone([]); setWrong(null); setMsg('New round! Tap a Sanskrit name, then its picture.'); };
-  const tapRight = (id: string) => {
-    if (!pick || done.includes(id)) return;
-    if (pick === id) {
-      const nd = [...done, id]; setDone(nd); setPick(null); soundEffects.playCelebrationChime(); onEarnStar?.();
-      setMsg(nd.length === RELATIONS.length ? '🎉 शोभनम्! (śobhanam!) You matched the whole family!' : '✅ Correct match!');
-    } else { setWrong(id); soundEffects.playPuzzleSnap(); setMsg('🙂 Not this one — try again!'); setTimeout(() => setWrong(null), 600); }
-  };
-  const box = (on: boolean, ok: boolean, bad: boolean, bg: string): React.CSSProperties => ({
-    background: ok ? '#dcfce7' : bg, border: bad ? '3px solid #f87171' : on ? '3px solid #f472b6' : ok ? '2px solid #4ade80' : '2px solid #fbcfe8',
-    borderRadius: 16, padding: 8, cursor: ok ? 'default' : 'pointer', display: 'flex', alignItems: 'center', gap: 8, color: '#1e293b', textAlign: 'left', opacity: ok ? 0.75 : 1, width: '100%',
-  });
-  return (
-    <div style={{ marginTop: 20, background: '#fff7fb', border: '2px dashed #f9a8d4', borderRadius: 20, padding: 16 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
-        <h3 className="psw-section-heading" style={{ margin: 0 }}>👪 <span lang="sa">परिवारः</span> · Family &amp; Friends Match</h3>
-        <button type="button" className="psw-quiz-btn" onClick={reset}>🔀 Shuffle / Reset</button>
-      </div>
-      <p role="status" style={{ margin: '8px 0 12px', fontWeight: 600 }}>{msg} ⭐ {done.length}/{RELATIONS.length}</p>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {left.map((f) => {
-            const ok = done.includes(f.id);
-            return (
-              <button key={f.id} type="button" disabled={ok} onClick={() => { setPick(f.id); playPronunciation(f.dev); }} style={box(pick === f.id, ok, false, f.bg)}>
-                <span><strong lang="sa" style={{ fontSize: 18 }}>{f.dev}</strong> <span style={{ fontSize: 13, color: '#64748b' }}>({f.ta} · {f.ml} · {f.te} · {f.kn})</span><br /><small style={{ fontStyle: 'italic', color: '#475569' }}>{f.iast}</small></span>
-                <span style={{ marginLeft: 'auto' }}>{ok ? '✅' : '🔊'}</span>
-              </button>
-            );
-          })}
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {right.map((f) => {
-            const ok = done.includes(f.id);
-            return (
-              <button key={f.id} type="button" disabled={ok} onClick={() => tapRight(f.id)} style={box(false, ok, wrong === f.id, f.bg)}>
-                <span aria-hidden="true" style={{ fontSize: 34, flexShrink: 0 }}>{f.emoji}</span>
-                <span style={{ fontSize: 14 }}>{f.clue}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-};
 
 interface ActionItem { id: string; dev: string; iast: string; en: string; emoji: string; clue: string; bg: string; }
 const ACTIONS: ActionItem[] = [
@@ -1454,219 +1384,48 @@ const ACTIONS: ActionItem[] = [
   { id: 'sleep', dev: 'स्वपिति', iast: 'svapiti', en: 'sleeps', emoji: '😴', clue: 'Sleep · Sleep tight at night', bg: '#ede9fe' },
 ];
 
-const ActionsMatchGame: React.FC<{ onEarnStar?: () => void }> = ({ onEarnStar }) => {
-  const [round, setRound] = useState(0);
-  const left = useMemo(() => shuffleArr(ACTIONS), [round]);
-  const right = useMemo(() => shuffleArr(ACTIONS), [round]);
-  const [pick, setPick] = useState<string | null>(null);
-  const [done, setDone] = useState<string[]>([]);
-  const [wrong, setWrong] = useState<string | null>(null);
-  const [msg, setMsg] = useState('How to play: tap a Sanskrit action word to hear it, then tap its picture — and do the action!');
-  const reset = () => { setRound((r) => r + 1); setPick(null); setDone([]); setWrong(null); setMsg('New round! Tap a Sanskrit name, then its picture.'); };
-  const tapRight = (id: string) => {
-    if (!pick || done.includes(id)) return;
-    if (pick === id) {
-      const nd = [...done, id]; setDone(nd); setPick(null); soundEffects.playCelebrationChime(); onEarnStar?.();
-      setMsg(nd.length === ACTIONS.length ? '🎉 शोभनम्! (śobhanam!) You did every action!' : '✅ Correct match!');
-    } else { setWrong(id); soundEffects.playPuzzleSnap(); setMsg('🙂 Not this one — try again!'); setTimeout(() => setWrong(null), 600); }
-  };
-  const box = (on: boolean, ok: boolean, bad: boolean, bg: string): React.CSSProperties => ({
-    background: ok ? '#dcfce7' : bg, border: bad ? '3px solid #f87171' : on ? '3px solid #f472b6' : ok ? '2px solid #4ade80' : '2px solid #fbcfe8',
-    borderRadius: 16, padding: 8, cursor: ok ? 'default' : 'pointer', display: 'flex', alignItems: 'center', gap: 8, color: '#1e293b', textAlign: 'left', opacity: ok ? 0.75 : 1, width: '100%',
-  });
-  return (
-    <div style={{ marginTop: 20, background: '#fff7fb', border: '2px dashed #f9a8d4', borderRadius: 20, padding: 16 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
-        <h3 className="psw-section-heading" style={{ margin: 0 }}>🏃 <span lang="sa">क्रियाः</span> · Action Words Match</h3>
-        <button type="button" className="psw-quiz-btn" onClick={reset}>🔀 Shuffle / Reset</button>
-      </div>
-      <p role="status" style={{ margin: '8px 0 12px', fontWeight: 600 }}>{msg} ⭐ {done.length}/{ACTIONS.length}</p>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {left.map((f) => {
-            const ok = done.includes(f.id);
-            return (
-              <button key={f.id} type="button" disabled={ok} onClick={() => { setPick(f.id); playPronunciation(f.dev); }} style={box(pick === f.id, ok, false, f.bg)}>
-                <span><strong lang="sa" style={{ fontSize: 18 }}>{f.dev}</strong><br /><small style={{ fontStyle: 'italic', color: '#475569' }}>{f.iast}</small></span>
-                <span style={{ marginLeft: 'auto' }}>{ok ? '✅' : '🔊'}</span>
-              </button>
-            );
-          })}
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {right.map((f) => {
-            const ok = done.includes(f.id);
-            return (
-              <button key={f.id} type="button" disabled={ok} onClick={() => tapRight(f.id)} style={box(false, ok, wrong === f.id, f.bg)}>
-                <span aria-hidden="true" style={{ fontSize: 34, flexShrink: 0 }}>{f.emoji}</span>
-                <span style={{ fontSize: 14 }}>{f.clue}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
-interface WordCard { id: string; dev: string; iast: string; emoji: string; clue: string; bg: string; }
-const SPICES: WordCard[] = [
-  { id: 'turmeric', dev: 'हरिद्रा', iast: 'haridrā', emoji: '🟡', clue: 'Turmeric · Yellow haldi', bg: '#fef9c3' },
-  { id: 'cumin', dev: 'जीरकम्', iast: 'jīrakam', emoji: '🌾', clue: 'Cumin · Little jeera seeds', bg: '#f5f5f4' },
-  { id: 'pepper', dev: 'मरिचम्', iast: 'maricam', emoji: '⚫', clue: 'Black pepper · Tiny black balls', bg: '#e2e8f0' },
-  { id: 'cardamom', dev: 'एला', iast: 'elā', emoji: '🟢', clue: 'Cardamom · Green elaichi pods', bg: '#dcfce7' },
-  { id: 'clove', dev: 'लवङ्गम्', iast: 'lavaṅgam', emoji: '📌', clue: 'Clove · Looks like a little nail', bg: '#ffedd5' },
-  { id: 'cinnamon', dev: 'त्वक्', iast: 'tvak', emoji: '🪵', clue: 'Cinnamon · Sweet brown bark', bg: '#fed7aa' },
-  { id: 'coriander', dev: 'धान्यकम्', iast: 'dhānyakam', emoji: '🌿', clue: 'Coriander · Dhaniya seeds & leaves', bg: '#ecfccb' },
-  { id: 'fenugreek', dev: 'मेथिका', iast: 'methikā', emoji: '🍃', clue: 'Fenugreek · Methi', bg: '#d1fae5' },
-  { id: 'mustard', dev: 'सर्षपः', iast: 'sarṣapaḥ', emoji: '🟤', clue: 'Mustard · Rai seeds go pop!', bg: '#fde68a' },
-  { id: 'ginger', dev: 'आर्द्रकम्', iast: 'ārdrakam', emoji: '🫚', clue: 'Ginger · Fresh adrak root', bg: '#fef3c7' },
-  { id: 'hing', dev: 'हिङ्गु', iast: 'hiṅgu', emoji: '🫙', clue: 'Asafoetida · Hing in a jar', bg: '#fae8ff' },
-  { id: 'garlic', dev: 'लशुनम्', iast: 'laśunam', emoji: '🧄', clue: 'Garlic · White lahsun', bg: '#f8fafc' },
+const SPICES: WordQuestCard[] = [
+  { id: 'turmeric', dev: 'हरिद्रा', iast: 'haridrā', emoji: '🟡', clue: 'Turmeric · Golden yellow haldi for warm milk & dal!', bg: '#fef9c3', subBadge: '🫙 Golden Jar' },
+  { id: 'cumin', dev: 'जीरकम्', iast: 'jīrakam', emoji: '🌾', clue: 'Cumin · Tiny jeera seeds that sizzle in ghee!', bg: '#f5f5f4', subBadge: '🫙 Sizzle Seed' },
+  { id: 'pepper', dev: 'मरिचम्', iast: 'maricam', emoji: '⚫', clue: 'Black pepper · Tiny black kali-mirch pearls!', bg: '#e2e8f0', subBadge: '🫙 Warm Spice' },
+  { id: 'cardamom', dev: 'एला', iast: 'elā', emoji: '🟢', clue: 'Cardamom · Sweet-smelling green elaichi for kheer!', bg: '#dcfce7', subBadge: '🍮 Sweet Pod' },
+  { id: 'clove', dev: 'लवङ्गम्', iast: 'lavaṅgam', emoji: '📌', clue: 'Clove · Fragrant flower-bud shaped like a tiny nail!', bg: '#ffedd5', subBadge: '🌸 Flower Bud' },
+  { id: 'cinnamon', dev: 'त्वक्', iast: 'tvak', emoji: '🪵', clue: 'Cinnamon · Sweet rolled brown tree bark (dalchini)!', bg: '#fed7aa', subBadge: '🌳 Sweet Bark' },
+  { id: 'coriander', dev: 'धान्यकम्', iast: 'dhānyakam', emoji: '🌿', clue: 'Coriander · Fresh green dhaniya leaves & round seeds!', bg: '#ecfccb', subBadge: '🌿 Fresh Herb' },
+  { id: 'fenugreek', dev: 'मेथिका', iast: 'methikā', emoji: '🍃', clue: 'Fenugreek · Healthy green methi leaves & golden seeds!', bg: '#d1fae5', subBadge: '🍃 Green Leaf' },
+  { id: 'mustard', dev: 'सर्षपः', iast: 'sarṣapaḥ', emoji: '🟤', clue: 'Mustard · Little round rai seeds that go pop-pop!', bg: '#fde68a', subBadge: '💥 Pop Seed' },
+  { id: 'ginger', dev: 'आर्द्रकम्', iast: 'ārdrakam', emoji: '🫚', clue: 'Ginger · Cozy warm adrak root for rainy days!', bg: '#fef3c7', subBadge: '☕ Cozy Root' },
+  { id: 'hing', dev: 'हिङ्गु', iast: 'hiṅgu', emoji: '🫙', clue: 'Asafoetida · Tiny pinch of hing makes tummy happy!', bg: '#fae8ff', subBadge: '✨ Tiny Pinch' },
+  { id: 'garlic', dev: 'लशुनम्', iast: 'laśunam', emoji: '🧄', clue: 'Garlic · White lahsun cloves wrapped like a bulb!', bg: '#f8fafc', subBadge: '🧄 White Bulb' },
 ];
-const MONTHS: WordCard[] = [
-  { id: 'm1', dev: 'चैत्रः', iast: 'caitraḥ', emoji: '🌸', clue: '1 · Chaitra · Spring, new year (Mar–Apr)', bg: '#fce7f3' },
-  { id: 'm2', dev: 'वैशाखः', iast: 'vaiśākhaḥ', emoji: '🌼', clue: '2 · Vaishakha · Spring harvest (Apr–May)', bg: '#fef9c3' },
-  { id: 'm3', dev: 'ज्येष्ठः', iast: 'jyeṣṭhaḥ', emoji: '☀️', clue: '3 · Jyeshtha · Hot summer (May–Jun)', bg: '#fed7aa' },
-  { id: 'm4', dev: 'आषाढः', iast: 'āṣāḍhaḥ', emoji: '🌦️', clue: '4 · Ashadha · First rains (Jun–Jul)', bg: '#e0f2fe' },
-  { id: 'm5', dev: 'श्रावणः', iast: 'śrāvaṇaḥ', emoji: '🌧️', clue: '5 · Shravana · Monsoon (Jul–Aug)', bg: '#bae6fd' },
-  { id: 'm6', dev: 'भाद्रपदः', iast: 'bhādrapadaḥ', emoji: '🐘', clue: '6 · Bhadrapada · Ganesha festival (Aug–Sep)', bg: '#ddd6fe' },
-  { id: 'm7', dev: 'आश्विनः', iast: 'āśvinaḥ', emoji: '🏹', clue: '7 · Ashvina · Navaratri, Dussehra (Sep–Oct)', bg: '#fee2e2' },
-  { id: 'm8', dev: 'कार्तिकः', iast: 'kārtikaḥ', emoji: '🪔', clue: '8 · Kartika · Diwali lamps (Oct–Nov)', bg: '#fef3c7' },
-  { id: 'm9', dev: 'मार्गशीर्षः', iast: 'mārgaśīrṣaḥ', emoji: '🍂', clue: '9 · Margashirsha · Cool days (Nov–Dec)', bg: '#ffedd5' },
-  { id: 'm10', dev: 'पौषः', iast: 'pauṣaḥ', emoji: '❄️', clue: '10 · Pausha · Winter (Dec–Jan)', bg: '#f1f5f9' },
-  { id: 'm11', dev: 'माघः', iast: 'māghaḥ', emoji: '🪁', clue: '11 · Magha · Kites, Sankranti (Jan–Feb)', bg: '#cffafe' },
-  { id: 'm12', dev: 'फाल्गुनः', iast: 'phālgunaḥ', emoji: '🎨', clue: '12 · Phalguna · Holi colours (Feb–Mar)', bg: '#fae8ff' },
+const MONTHS: WordQuestCard[] = [
+  { id: 'm1', dev: 'चैत्रः', iast: 'caitraḥ', emoji: '🌸', clue: '1 · Chaitra · Spring blossoms & New Year (Mar–Apr)', bg: '#fce7f3', subBadge: '🌸 १ · वसन्तः' },
+  { id: 'm2', dev: 'वैशाखः', iast: 'vaiśākhaḥ', emoji: '🌼', clue: '2 · Vaishakha · Sunny spring harvest (Apr–May)', bg: '#fef9c3', subBadge: '🌸 २ · वसन्तः' },
+  { id: 'm3', dev: 'ज्येष्ठः', iast: 'jyeṣṭhaḥ', emoji: '☀️', clue: '3 · Jyeshtha · Sweet ripe mangoes & hot sun (May–Jun)', bg: '#fed7aa', subBadge: '☀️ ३ · ग्रीष्मः' },
+  { id: 'm4', dev: 'आषाढः', iast: 'āṣāḍhaḥ', emoji: '🌦️', clue: '4 · Ashadha · First dark rain clouds arrive (Jun–Jul)', bg: '#e0f2fe', subBadge: '☀️ ४ · ग्रीष्मः' },
+  { id: 'm5', dev: 'श्रावणः', iast: 'śrāvaṇaḥ', emoji: '🌧️', clue: '5 · Shravana · Monsoon rains & Rakshabandhan (Jul–Aug)', bg: '#bae6fd', subBadge: '🌧️ ५ · वर्षा' },
+  { id: 'm6', dev: 'भाद्रपदः', iast: 'bhādrapadaḥ', emoji: '🐘', clue: '6 · Bhadrapada · Ganesha Chaturthi & Janmashtami (Aug–Sep)', bg: '#ddd6fe', subBadge: '🌧️ ६ · वर्षा' },
+  { id: 'm7', dev: 'आश्विनः', iast: 'āśvinaḥ', emoji: '🏹', clue: '7 · Ashvina · Navaratri garba & Dussehra (Sep–Oct)', bg: '#fee2e2', subBadge: '🌕 ७ · शरद्' },
+  { id: 'm8', dev: 'कार्तिकः', iast: 'kārtikaḥ', emoji: '🪔', clue: '8 · Kartika · Sparkling Diwali lamps (Oct–Nov)', bg: '#fef3c7', subBadge: '🌕 ८ · शरद्' },
+  { id: 'm9', dev: 'मार्गशीर्षः', iast: 'mārgaśīrṣaḥ', emoji: '🍂', clue: '9 · Margashirsha · Gentle misty mornings (Nov–Dec)', bg: '#ffedd5', subBadge: '🍂 ९ · हेमन्तः' },
+  { id: 'm10', dev: 'पौषः', iast: 'pauṣaḥ', emoji: '❄️', clue: '10 · Pausha · Cozy winter blankets (Dec–Jan)', bg: '#f1f5f9', subBadge: '🍂 १० · हेमन्तः' },
+  { id: 'm11', dev: 'माघः', iast: 'māghaḥ', emoji: '🪁', clue: '11 · Magha · Colorful kites & Sankranti (Jan–Feb)', bg: '#cffafe', subBadge: '❄️ ११ · शिशिरः' },
+  { id: 'm12', dev: 'फाल्गुनः', iast: 'phālgunaḥ', emoji: '🎨', clue: '12 · Phalguna · Joyful Holi colours! (Feb–Mar)', bg: '#fae8ff', subBadge: '❄️ १२ · शिशिरः' },
 ];
-const WORK_TYPES: WordCard[] = [
-  { id: 'agri', dev: 'कृषिः', iast: 'kṛṣiḥ', emoji: '🧑‍🌾', clue: 'Farming · Growing rice and wheat', bg: '#ecfccb' },
-  { id: 'army', dev: 'सैन्यम्', iast: 'sainyam', emoji: '💂', clue: 'Army · Soldiers protect the country', bg: '#d1fae5' },
-  { id: 'teach', dev: 'अध्यापनम्', iast: 'adhyāpanam', emoji: '👩‍🏫', clue: 'Teaching · Guru teaches children', bg: '#e0f2fe' },
-  { id: 'trade', dev: 'वाणिज्यम्', iast: 'vāṇijyam', emoji: '🏪', clue: 'Trade · Buying and selling in a shop', bg: '#fef3c7' },
-  { id: 'med', dev: 'वैद्यकम्', iast: 'vaidyakam', emoji: '🩺', clue: 'Medicine · Doctor makes us well', bg: '#fee2e2' },
-  { id: 'craft', dev: 'शिल्पम्', iast: 'śilpam', emoji: '🔨', clue: 'Craft · Making things with hands', bg: '#ffedd5' },
-  { id: 'music', dev: 'सङ्गीतम्', iast: 'saṅgītam', emoji: '🎶', clue: 'Music · Singing and playing', bg: '#fae8ff' },
-  { id: 'fish', dev: 'मत्स्यग्रहणम्', iast: 'matsyagrahaṇam', emoji: '🎣', clue: 'Fishing · Catching fish in the sea', bg: '#cffafe' },
-  { id: 'cattle', dev: 'पशुपालनम्', iast: 'paśupālanam', emoji: '🐄', clue: 'Cattle care · Looking after cows', bg: '#f5f5f4' },
-  { id: 'cook', dev: 'पाककर्म', iast: 'pākakarma', emoji: '🍳', clue: 'Cooking · Making tasty food', bg: '#fef9c3' },
-  { id: 'weave', dev: 'वयनम्', iast: 'vayanam', emoji: '🧶', clue: 'Weaving · Making cloth from thread', bg: '#ede9fe' },
-  { id: 'write', dev: 'लेखनम्', iast: 'lekhanam', emoji: '✍️', clue: 'Writing · Writing books and letters', bg: '#f1f5f9' },
+const WORK_TYPES: WordQuestCard[] = [
+  { id: 'agri', dev: 'कृषिः', iast: 'kṛṣiḥ', emoji: '🧑‍🌾', clue: 'Farming · Growing golden rice, wheat & fruits', bg: '#ecfccb', subBadge: '🌾 Farmer' },
+  { id: 'army', dev: 'सैन्यम्', iast: 'sainyam', emoji: '💂', clue: 'Army · Brave soldiers who protect our land', bg: '#d1fae5', subBadge: '🛡️ Protector' },
+  { id: 'teach', dev: 'अध्यापनम्', iast: 'adhyāpanam', emoji: '👩‍🏫', clue: 'Teaching · Kind Guru teaching stories & songs', bg: '#e0f2fe', subBadge: '📚 Teacher' },
+  { id: 'trade', dev: 'वाणिज्यम्', iast: 'vāṇijyam', emoji: '🏪', clue: 'Trade · Sharing goods in the busy bazaar', bg: '#fef3c7', subBadge: '⚖️ Shopkeeper' },
+  { id: 'med', dev: 'वैद्यकम्', iast: 'vaidyakam', emoji: '🩺', clue: 'Medicine · Caring Vaidya / Doctor helping us heal', bg: '#fee2e2', subBadge: '💚 Healer' },
+  { id: 'craft', dev: 'शिल्पम्', iast: 'śilpam', emoji: '🔨', clue: 'Craft · Shaping clay pots, toys & carvings', bg: '#ffedd5', subBadge: '🏺 Artisan' },
+  { id: 'music', dev: 'सङ्गीतम्', iast: 'saṅgītam', emoji: '🎶', clue: 'Music · Singing sweet ragas and playing beats', bg: '#fae8ff', subBadge: '🎵 Musician' },
+  { id: 'fish', dev: 'मत्स्यग्रहणम्', iast: 'matsyagrahaṇam', emoji: '🎣', clue: 'Fishing · Sailing boats across blue waves', bg: '#cffafe', subBadge: '⛵ Sailor' },
+  { id: 'cattle', dev: 'पशुपालनम्', iast: 'paśupālanam', emoji: '🐄', clue: 'Cattle care · Loving & feeding gentle cows', bg: '#f5f5f4', subBadge: '🐄 Caretaker' },
+  { id: 'cook', dev: 'पाककर्म', iast: 'pākakarma', emoji: '🍳', clue: 'Cooking · Making warm yummy meals with love', bg: '#fef9c3', subBadge: '🍲 Chef' },
+  { id: 'weave', dev: 'वयनम्', iast: 'vayanam', emoji: '🧶', clue: 'Weaving · Spinning colourful threads into cloth', bg: '#ede9fe', subBadge: '🧵 Weaver' },
+  { id: 'write', dev: 'लेखनम्', iast: 'lekhanam', emoji: '✍️', clue: 'Writing · Writing poems, books and letters', bg: '#f1f5f9', subBadge: '✒️ Writer' },
 ];
-
-const WordPictureMatchGame: React.FC<{ items: WordCard[]; icon: string; titleSa: string; titleEn: string; howTo: string; onEarnStar?: () => void }> = ({ items, icon, titleSa, titleEn, howTo, onEarnStar }) => {
-  const [round, setRound] = useState(0);
-  const left = useMemo(() => shuffleArr(items), [round, items]);
-  const right = useMemo(() => shuffleArr(items), [round, items]);
-  const [pick, setPick] = useState<string | null>(null);
-  const [done, setDone] = useState<string[]>([]);
-  const [wrong, setWrong] = useState<string | null>(null);
-  const [msg, setMsg] = useState(howTo);
-  const reset = () => { setRound((r) => r + 1); setPick(null); setDone([]); setWrong(null); setMsg('New round! Tap a Sanskrit name, then its picture.'); };
-  const tapRight = (id: string) => {
-    if (!pick || done.includes(id)) return;
-    if (pick === id) {
-      const nd = [...done, id]; setDone(nd); setPick(null); soundEffects.playCelebrationChime(); onEarnStar?.();
-      setMsg(nd.length === items.length ? '🎉 शोभनम्! (śobhanam!) All matched!' : '✅ Correct match!');
-    } else { setWrong(id); soundEffects.playPuzzleSnap(); setMsg('🙂 Not this one — try again!'); setTimeout(() => setWrong(null), 600); }
-  };
-  const box = (on: boolean, ok: boolean, bad: boolean, bg: string): React.CSSProperties => ({
-    background: ok ? '#dcfce7' : bg, border: bad ? '3px solid #f87171' : on ? '3px solid #f472b6' : ok ? '2px solid #4ade80' : '2px solid #fbcfe8',
-    borderRadius: 16, padding: 8, cursor: ok ? 'default' : 'pointer', display: 'flex', alignItems: 'center', gap: 8, color: '#1e293b', textAlign: 'left', opacity: ok ? 0.75 : 1, width: '100%',
-  });
-  return (
-    <div style={{ marginTop: 20, background: '#fff7fb', border: '2px dashed #f9a8d4', borderRadius: 20, padding: 16 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
-        <h3 className="psw-section-heading" style={{ margin: 0 }}>{icon} <span lang="sa">{titleSa}</span> · {titleEn}</h3>
-        <button type="button" className="psw-quiz-btn" onClick={reset}>🔀 Shuffle / Reset</button>
-      </div>
-      <p role="status" style={{ margin: '8px 0 12px', fontWeight: 600 }}>{msg} ⭐ {done.length}/{items.length}</p>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {left.map((f) => {
-            const ok = done.includes(f.id);
-            return (
-              <button key={f.id} type="button" disabled={ok} onClick={() => { setPick(f.id); playPronunciation(f.dev); }} style={box(pick === f.id, ok, false, f.bg)}>
-                <span><strong lang="sa" style={{ fontSize: 18 }}>{f.dev}</strong><br /><small style={{ fontStyle: 'italic', color: '#475569' }}>{f.iast}</small></span>
-                <span style={{ marginLeft: 'auto' }}>{ok ? '✅' : '🔊'}</span>
-              </button>
-            );
-          })}
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {right.map((f) => {
-            const ok = done.includes(f.id);
-            return (
-              <button key={f.id} type="button" disabled={ok} onClick={() => tapRight(f.id)} style={box(false, ok, wrong === f.id, f.bg)}>
-                <span aria-hidden="true" style={{ fontSize: 34, flexShrink: 0 }}>{f.emoji}</span>
-                <span style={{ fontSize: 14 }}>{f.clue}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const YogaMatchGame: React.FC<{ onEarnStar?: () => void }> = ({ onEarnStar }) => {
-  const [round, setRound] = useState(0);
-  const left = useMemo(() => shuffleArr(YOGA_POSES), [round]);
-  const right = useMemo(() => shuffleArr(YOGA_POSES), [round]);
-  const [pick, setPick] = useState<string | null>(null);
-  const [done, setDone] = useState<string[]>([]);
-  const [wrong, setWrong] = useState<string | null>(null);
-  const [msg, setMsg] = useState('Tap an āsana name, then tap its pose picture!');
-  const reset = () => { setRound((r) => r + 1); setPick(null); setDone([]); setWrong(null); setMsg('New round! Tap an āsana name, then its pose.'); };
-  const tapRight = (id: string) => {
-    if (!pick || done.includes(id)) return;
-    if (pick === id) {
-      const nd = [...done, id]; setDone(nd); setPick(null); soundEffects.playCelebrationChime(); onEarnStar?.();
-      setMsg(nd.length === YOGA_POSES.length ? '🎉 शोभनम्! (śobhanam!) You matched every āsana!' : '✅ Correct! Now try the pose yourself!');
-    } else { setWrong(id); soundEffects.playPuzzleSnap(); setMsg('🙂 Not this one — try again!'); setTimeout(() => setWrong(null), 600); }
-  };
-  const box = (on: boolean, ok: boolean, bad: boolean, bg: string): React.CSSProperties => ({
-    background: ok ? '#dcfce7' : bg, border: bad ? '3px solid #f87171' : on ? '3px solid #a78bfa' : ok ? '2px solid #4ade80' : '2px solid #c7d2fe',
-    borderRadius: 16, padding: 8, cursor: ok ? 'default' : 'pointer', display: 'flex', alignItems: 'center', gap: 8, color: '#1e293b', textAlign: 'left', opacity: ok ? 0.75 : 1, width: '100%',
-  });
-  return (
-    <div className="psw-card-bench">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
-        <div>
-          <h3 className="psw-section-heading" style={{ margin: 0 }}>🧘 <span lang="sa">योगासन-मेलनम्</span> · Yoga Pose Match</h3>
-          <p className="psw-section-sub" style={{ margin: '4px 0 0' }}>Match each Sanskrit āsana to its pose. 🔊 hear the name!</p>
-        </div>
-        <button type="button" className="psw-quiz-btn" onClick={reset}>🔀 Shuffle / Reset</button>
-      </div>
-      <p role="status" style={{ margin: '8px 0 12px', fontWeight: 600 }}>{msg} ⭐ {done.length}/{YOGA_POSES.length}</p>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, background: '#f5f3ff', borderRadius: 20, padding: 12 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {left.map((p) => {
-            const ok = done.includes(p.id);
-            return (
-              <button key={p.id} type="button" disabled={ok} onClick={() => { setPick(p.id); playPronunciation(p.dev); }} style={box(pick === p.id, ok, false, '#fff')}>
-                <span><strong lang="sa" style={{ fontSize: 18 }}>{p.dev}</strong><br /><small style={{ fontStyle: 'italic', color: '#475569' }}>{p.iast}</small></span>
-                <span style={{ marginLeft: 'auto' }}>{ok ? '✅' : '🔊'}</span>
-              </button>
-            );
-          })}
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {right.map((p) => {
-            const ok = done.includes(p.id);
-            return (
-              <button key={p.id} type="button" disabled={ok} onClick={() => tapRight(p.id)} style={box(false, ok, wrong === p.id, p.bg)}>
-                <span aria-hidden="true" style={{ fontSize: 32, flexShrink: 0 }}>{p.icon}</span>
-                <img src={`${import.meta.env.BASE_URL}preschool/yoga/${p.id}.webp`} alt={`${p.en} picture`} loading="lazy" style={{ height: 72, width: 'auto', maxWidth: 108, objectFit: 'contain', borderRadius: 10, flexShrink: 0, background: '#fff' }} />
-                <span style={{ fontSize: 14 }}><b>{p.en}</b><br />{p.clue}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-};
 
 interface VishvaName { id: string; group: 'india-seas' | 'world-oceans' | 'ancient-lands'; dev: string; iast: string; en: string; icon: string; clue: string; note: 'ancient' | 'modern'; bg: string; }
 const VISHVA_NAMES: VishvaName[] = [
@@ -1828,9 +1587,17 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
   };
 
   // Shapes Game State
+  const [shapePack, setShapePack] = useState<'first6' | 'more2d' | '3d' | 'all'>('first6');
   const [selectedShape, setSelectedShape] = useState<ShapeItem>(SHAPES[0]);
   const [shapeQuizTarget, setShapeQuizTarget] = useState<ShapeItem | null>(null);
   const [quizScore, setQuizScore] = useState<number>(0);
+
+  const visibleShapes = useMemo(() => {
+    if (shapePack === 'first6') return SHAPES.slice(0, 6);
+    if (shapePack === 'more2d') return SHAPES.slice(6, 12);
+    if (shapePack === '3d') return SHAPES.slice(12, 16);
+    return SHAPES;
+  }, [shapePack]);
 
   // Color Game State
   const [selectedColor, setSelectedColor] = useState<ColorItem>(COLORS[0]);
@@ -1842,9 +1609,17 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
   const [colorScore, setColorScore] = useState<number>(0);
 
   // Animal Safari State
+  const [animalPack, setAnimalPack] = useState<'all' | 'home' | 'woods' | 'jungle'>('all');
   const [activeAnimal, setActiveAnimal] = useState<AnimalItem>(ANIMALS[0]);
   const [animalQuizTarget, setAnimalQuizTarget] = useState<AnimalItem | null>(null);
   const [animalScore, setAnimalScore] = useState<number>(0);
+
+  const visibleAnimals = useMemo(() => {
+    if (animalPack === 'home') return ANIMALS.filter((a) => ['cow', 'dog', 'mouse', 'crow'].includes(a.id));
+    if (animalPack === 'woods') return ANIMALS.filter((a) => ['peacock', 'frog', 'monkey', 'deer', 'fox', 'snake'].includes(a.id));
+    if (animalPack === 'jungle') return ANIMALS.filter((a) => ['lion', 'tiger', 'elephant', 'bear', 'crocodile'].includes(a.id));
+    return ANIMALS;
+  }, [animalPack]);
 
   // Fruits Picker State + Hungry Monkey Order Quest
   const [basketFruits, setBasketFruits] = useState<FruitItem[]>([]);
@@ -1873,17 +1648,27 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
   const [seasonQuizTarget, setSeasonQuizTarget] = useState<SeasonItem | null>(null);
 
   // Vahanas Matching Game State
+  const [vahanaPack, setVahanaPack] = useState<'easy4' | 'all8'>('easy4');
   const [selectedGod, setSelectedGod] = useState<VahanaPair | null>(null);
   const [matchedVahanas, setMatchedVahanas] = useState<Set<string>>(new Set());
   const [shuffledVahanas, setShuffledVahanas] = useState<VahanaPair[]>([]);
+  const [lastVahanaBlessing, setLastVahanaBlessing] = useState<VahanaPair | null>(null);
+
+  const activeVahanas = useMemo(
+    () => (vahanaPack === 'easy4' ? VAHANAS.slice(0, 4) : VAHANAS),
+    [vahanaPack],
+  );
 
   // Story State
   const [storySlideIdx, setStorySlideIdx] = useState<number>(0);
 
-  // Shuffle Vahanas initially
+  // Shuffle Vahanas whenever pack changes
   useEffect(() => {
-    setShuffledVahanas([...VAHANAS].sort(() => Math.random() - 0.5));
-  }, []);
+    setMatchedVahanas(new Set());
+    setSelectedGod(null);
+    setLastVahanaBlessing(null);
+    setShuffledVahanas([...activeVahanas].sort(() => Math.random() - 0.5));
+  }, [activeVahanas]);
 
   // Trigger floating particles on season switch
   const triggerSeasonWeather = (season: SeasonItem) => {
@@ -1908,7 +1693,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
 
   // Start / check shape quiz
   const startShapeQuiz = () => {
-    const random = SHAPES[Math.floor(Math.random() * SHAPES.length)];
+    const random = visibleShapes[Math.floor(Math.random() * visibleShapes.length)];
     setShapeQuizTarget(random);
     playPronunciation(random.dev);
     soundEffects.playStrokeChime();
@@ -2001,8 +1786,8 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
   // Animal Safari Logic
   const handleAnimalTap = (animal: AnimalItem) => {
     setActiveAnimal(animal);
-    soundEffects.playAnimalWiggle();
-    playPronunciation(`${animal.dev} ${animal.soundLabelSa}`);
+    soundEffects.playSafariAnimalSound(animal.id);
+    setTimeout(() => playPronunciation(`${animal.dev} ${animal.soundLabelSa}`), 260);
     if (animalQuizTarget) {
       if (animal.id === animalQuizTarget.id) {
         soundEffects.playCelebrationChime();
@@ -2016,10 +1801,10 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
   };
 
   const startAnimalQuiz = () => {
-    const random = ANIMALS[Math.floor(Math.random() * ANIMALS.length)];
+    const random = visibleAnimals[Math.floor(Math.random() * visibleAnimals.length)];
     setAnimalQuizTarget(random);
-    soundEffects.playStrokeChime();
-    playPronunciation(`कः वदति? ${random.soundLabelSa}`);
+    soundEffects.playSafariAnimalSound(random.id);
+    setTimeout(() => playPronunciation(`कः वदति? ${random.soundLabelSa}`), 320);
   };
 
   // Fruit Picker Logic
@@ -2114,6 +1899,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
       if (selectedGod.id === vahana.id) {
         soundEffects.playCelebrationChime();
         setMatchedVahanas((prev) => new Set([...prev, vahana.id]));
+        setLastVahanaBlessing(vahana);
         celebrateWin();
         setSelectedGod(null);
       } else {
@@ -2127,7 +1913,8 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
   const resetVahanaGame = () => {
     setMatchedVahanas(new Set());
     setSelectedGod(null);
-    setShuffledVahanas([...VAHANAS].sort(() => Math.random() - 0.5));
+    setLastVahanaBlessing(null);
+    setShuffledVahanas([...activeVahanas].sort(() => Math.random() - 0.5));
     soundEffects.playSuccessDing();
   };
 
@@ -2362,8 +2149,33 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             </div>
           )}
 
+          <div className="ppd-pack-bar" role="tablist" aria-label="Shape packs">
+            {([
+              { id: 'first6', label: '🟢 First 6 Shapes (Ages 2–3)', bg: '#dcfce7' },
+              { id: 'more2d', label: '🔷 More 2D Shapes (6)', bg: '#e0f2fe' },
+              { id: '3d', label: '🎲 3D Solid Shapes (4)', bg: '#ede9fe' },
+              { id: 'all', label: '🌟 All 16 Shapes', bg: '#fef3c7' },
+            ] as const).map((pk) => (
+              <button
+                key={pk.id}
+                type="button"
+                role="tab"
+                aria-selected={shapePack === pk.id}
+                className={`bharat-pack-chip ${shapePack === pk.id ? 'is-active' : ''}`}
+                style={{ background: pk.bg, borderColor: shapePack === pk.id ? '#ec4899' : '#cbd5e1' }}
+                onClick={() => {
+                  setShapePack(pk.id);
+                  setShapeQuizTarget(null);
+                  soundEffects.playStrokeChime();
+                }}
+              >
+                {pk.label}
+              </button>
+            ))}
+          </div>
+
           <div className="psw-shapes-grid">
-            {SHAPES.map((s) => {
+            {visibleShapes.map((s) => {
               const isSelected = selectedShape.id === s.id;
               return (
                 <button
@@ -2720,18 +2532,89 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
         </div>
       )}
 
-      {tab === 'insects' && <NatureCardGame items={INSECTS} title="🦋 कीटाः · Bug Garden" sub="Tap a little bug to hear its Sanskrit name and a fun fact!" whereLabel="📍 Lives:" accent="#4ade80" onEarnStar={celebrateWin} />}
-      {tab === 'birds' && <NatureCardGame items={BIRDS} title="🦜 पक्षिणः · Bird Sky" sub="Tap a bird to hear its Sanskrit name and a fun fact!" whereLabel="📍 Lives:" accent="#60a5fa" onEarnStar={celebrateWin} />}
-      {tab === 'flowers' && <NatureCardGame items={FLOWERS} title="🌸 पुष्पाणि · Flower Garden" sub="Tap a flower to hear its Sanskrit name and a fun fact!" whereLabel="📍 Grows:" accent="#f472b6" onEarnStar={celebrateWin} />}
+      {tab === 'insects' && (
+        <LivingNatureExplorer
+          items={INSECTS}
+          title="🦋 कीटाः · Bug Garden"
+          sub="Tap a little bug to hear its buzz or chime, play Picture Quest, or flip Memory Twins!"
+          whereLabel="📍 Lives:"
+          accent="#22c55e"
+          onEarnStar={celebrateWin}
+        />
+      )}
+      {tab === 'birds' && (
+        <LivingNatureExplorer
+          items={BIRDS}
+          title="🦜 पक्षिणः · Bird Sky"
+          sub="Hear koels, owls & roosters sing, play Bird Picture Quest, or flip Memory Twins!"
+          whereLabel="📍 Lives:"
+          accent="#3b82f6"
+          onEarnStar={celebrateWin}
+        />
+      )}
+      {tab === 'flowers' && (
+        <LivingNatureExplorer
+          items={FLOWERS}
+          title="🌸 पुष्पाणि · Flower Garden"
+          sub="Touch blooming flowers to hear gentle harp chimes, play Flower Quest, or Memory Flip!"
+          whereLabel="📍 Grows:"
+          accent="#ec4899"
+          onEarnStar={celebrateWin}
+        />
+      )}
 
-      {tab === 'yoga' && <YogaMatchGame onEarnStar={awardPreschoolStar} />}
-      {tab === 'relations' && <RelationsMatchGame onEarnStar={awardPreschoolStar} />}
-      {tab === 'actions' && <ActionsMatchGame onEarnStar={awardPreschoolStar} />}
-      {tab === 'spices' && <WordPictureMatchGame items={SPICES} icon="🌶️" titleSa="मसालानि" titleEn="Spices Match" howTo="How to play: tap a Sanskrit spice name to hear it, then tap its picture. Smell it in the kitchen with a grown-up!" onEarnStar={awardPreschoolStar} />}
-      {tab === 'months' && <WordPictureMatchGame items={MONTHS} icon="🗓️" titleSa="मासाः" titleEn="12 Months Match" howTo="How to play: tap a Sanskrit month name to hear it, then tap its season picture. Numbers 1–12 show the order!" onEarnStar={awardPreschoolStar} />}
-      {tab === 'work' && <WordPictureMatchGame items={WORK_TYPES} icon="🧑‍🌾" titleSa="व्यवसायाः" titleEn="Types of Work Match" howTo="How to play: tap a Sanskrit work name to hear it, then tap the picture of that work." onEarnStar={awardPreschoolStar} />}
-      {tab === 'bharat' && <BharatMapExplorer onEarnStar={awardPreschoolStar} />}
-      {tab === 'vishva' && <VishvaMatchGame onEarnStar={awardPreschoolStar} />}
+      {tab === 'yoga' && <YogaPoseStudio poses={YOGA_POSES} onEarnStar={celebrateWin} />}
+      {tab === 'relations' && (
+        <ToddlerCardQuestDeck
+          items={RELATIONS_CARDS}
+          icon="👪"
+          titleSa="परिवारः"
+          titleEn="My Family & Friends"
+          subtitle="Tap family frames to hear Sanskrit & home-language words, or play 4-Picture Quest!"
+          accentColor="#ec4899"
+          packLabels={['💖 Home Family', '👴 Grandparents & Friends']}
+          onEarnStar={celebrateWin}
+        />
+      )}
+      {tab === 'actions' && <ActionPlayStudio actions={ACTIONS} onEarnStar={celebrateWin} />}
+      {tab === 'spices' && (
+        <ToddlerCardQuestDeck
+          items={SPICES}
+          icon="🌶️"
+          titleSa="मसालानि"
+          titleEn="Amma’s Kitchen Spices"
+          subtitle="Open fragrant spice jars, hear their Sanskrit names & play 4-Picture Quest!"
+          accentColor="#ea580c"
+          packLabels={['🫙 Everyday Jars', '🌿 Fragrant Seeds & Roots']}
+          onEarnStar={celebrateWin}
+        />
+      )}
+      {tab === 'months' && (
+        <ToddlerCardQuestDeck
+          items={MONTHS}
+          icon="🗓️"
+          titleSa="द्वादश मासाः"
+          titleEn="12 Sanskrit Months & Seasons"
+          subtitle="Explore all 12 months paired with India’s 6 Ṛtus (Seasons) & play Calendar Quest!"
+          accentColor="#0284c7"
+          packLabels={['🌸 Spring to Monsoon', '🪔 Autumn to Holi']}
+          onEarnStar={celebrateWin}
+        />
+      )}
+      {tab === 'work' && (
+        <ToddlerCardQuestDeck
+          items={WORK_TYPES}
+          icon="🧑‍🌾"
+          titleSa="व्यवसायाः"
+          titleEn="Village Helpers & Work"
+          subtitle="Meet farmers, gurus, doctors & artisans — tap to hear Sanskrit or play 4-Picture Quest!"
+          accentColor="#65a30d"
+          packLabels={['🌾 Village Pillars', '🎶 Arts & Care']}
+          onEarnStar={celebrateWin}
+        />
+      )}
+      {tab === 'bharat' && <BharatMapExplorer onEarnStar={celebrateWin} />}
+      {tab === 'vishva' && <VishvaMatchGame onEarnStar={celebrateWin} />}
 
       {tab === 'festivals' && (
         <div className="psw-card-bench">
@@ -2777,7 +2660,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             {festival.symbols && <p style={{ margin: '8px 0 0', fontWeight: 600 }}><span style={{ fontSize: 18 }}>{festival.symbols}</span> {festival.symbolNote}</p>}
             <div style={{ clear: 'both' }} />
           </div>
-          <FestivalMatchGame onEarnStar={awardPreschoolStar} />
+          <FestivalMatchGame onEarnStar={celebrateWin} />
         </div>
       )}
 
@@ -2790,7 +2673,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             <div>
               <h3 className="psw-section-heading">🐮 पशवः पक्षिणः च · Animal Sounds Safari</h3>
               <p className="psw-section-sub">
-                Tap each friendly animal to see them wiggle, hear their call, and learn their sweet Sanskrit names!
+                Tap any friendly animal to hear its real safari call and sweet Sanskrit name!
               </p>
             </div>
             <button
@@ -2798,26 +2681,54 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
               className="psw-quiz-btn"
               onClick={startAnimalQuiz}
             >
-              {animalQuizTarget ? `❓ Who calls: "${animalQuizTarget.soundLabelSa}"?` : '⭐ Who makes this sound?'}
+              {animalQuizTarget ? `❓ Who calls: "${animalQuizTarget.soundLabelSa}"?` : '⭐ Mystery Animal Call!'}
             </button>
+          </div>
+
+          <div className="ppd-pack-bar" role="tablist" aria-label="Animal habitats">
+            {([
+              { id: 'all', label: '🌟 All 15 Friends', bg: '#fef3c7' },
+              { id: 'home', label: '🏡 Home & Farm (4)', bg: '#dcfce7' },
+              { id: 'woods', label: '🌿 Pond & Woods (6)', bg: '#e0f2fe' },
+              { id: 'jungle', label: '🦁 Big Jungle (5)', bg: '#ffedd5' },
+            ] as const).map((pk) => (
+              <button
+                key={pk.id}
+                type="button"
+                role="tab"
+                aria-selected={animalPack === pk.id}
+                className={`bharat-pack-chip ${animalPack === pk.id ? 'is-active' : ''}`}
+                style={{ background: pk.bg, borderColor: animalPack === pk.id ? '#2563eb' : '#cbd5e1' }}
+                onClick={() => {
+                  setAnimalPack(pk.id);
+                  setAnimalQuizTarget(null);
+                  soundEffects.playStrokeChime();
+                }}
+              >
+                {pk.label}
+              </button>
+            ))}
           </div>
 
           {animalQuizTarget && (
             <div className="psw-quiz-banner" role="status">
-              <span>🎯 Find and tap the animal who calls <strong>"{animalQuizTarget.soundLabelSa}"</strong> ({animalQuizTarget.soundLabelEn})! {animalScore > 0 && `⭐ Stars: ${animalScore}`}</span>
+              <span>🎯 Listen! Find and tap the animal who calls <strong>"{animalQuizTarget.soundLabelSa}"</strong> ({animalQuizTarget.soundLabelEn})! {animalScore > 0 && `⭐ Stars: ${animalScore}`}</span>
               <button
                 type="button"
                 className="psw-quiz-speaker"
-                onClick={() => playPronunciation(`कः वदति? ${animalQuizTarget.soundLabelSa}`)}
+                onClick={() => {
+                  soundEffects.playSafariAnimalSound(animalQuizTarget.id);
+                  setTimeout(() => playPronunciation(`कः वदति? ${animalQuizTarget.soundLabelSa}`), 300);
+                }}
                 title="Hear sound again"
               >
-                🔊 Listen Again
+                🔊 Hear Call Again
               </button>
             </div>
           )}
 
           <div className="psw-animals-grid">
-            {ANIMALS.map((a) => {
+            {visibleAnimals.map((a) => {
               const isActive = activeAnimal.id === a.id;
               return (
                 <button
@@ -2850,8 +2761,8 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
               type="button"
               className="psw-action-pill"
               onClick={() => {
-                soundEffects.playAnimalWiggle();
-                playPronunciation(`${activeAnimal.dev} ${activeAnimal.soundLabelSa}`);
+                soundEffects.playSafariAnimalSound(activeAnimal.id);
+                setTimeout(() => playPronunciation(`${activeAnimal.dev} ${activeAnimal.soundLabelSa}`), 260);
               }}
             >
               🔊 Hear {activeAnimal.en} Call
@@ -3574,7 +3485,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
               </p>
             </div>
             <div className="psw-score-pill">
-              <span>⭐ Matched: <strong>{matchedVahanas.size}</strong> of {VAHANAS.length}</span>
+              <span>⭐ Matched: <strong>{matchedVahanas.size}</strong> of {activeVahanas.length}</span>
               {matchedVahanas.size > 0 && (
                 <button type="button" className="psw-reset-link" onClick={resetVahanaGame}>
                   Reset ↺
@@ -3583,11 +3494,68 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             </div>
           </div>
 
-          {matchedVahanas.size === VAHANAS.length && (
+          <div className="ppd-pack-bar" role="tablist" aria-label="Vahana pack size">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={vahanaPack === 'easy4'}
+              className={`bharat-pack-chip ${vahanaPack === 'easy4' ? 'is-active' : ''}`}
+              style={{ background: '#fef3c7', borderColor: vahanaPack === 'easy4' ? '#d97706' : '#cbd5e1' }}
+              onClick={() => { setVahanaPack('easy4'); soundEffects.playStrokeChime(); }}
+            >
+              🐘 First 4 Friends (Ages 2–4)
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={vahanaPack === 'all8'}
+              className={`bharat-pack-chip ${vahanaPack === 'all8' ? 'is-active' : ''}`}
+              style={{ background: '#fae8ff', borderColor: vahanaPack === 'all8' ? '#a21caf' : '#cbd5e1' }}
+              onClick={() => { setVahanaPack('all8'); soundEffects.playStrokeChime(); }}
+            >
+              🦚 All 8 Divine Vāhanas
+            </button>
+          </div>
+
+          {lastVahanaBlessing && (
+            <div className="ppd-blessing-banner" role="status">
+              <span className="ppd-blessing-icons" aria-hidden="true">
+                {lastVahanaBlessing.godIcon} 💖 {lastVahanaBlessing.vahanaIcon}
+              </span>
+              <div style={{ flex: 1 }}>
+                <strong lang="sa" style={{ color: '#92400e', fontSize: '1.05rem', display: 'block' }}>
+                  {lastVahanaBlessing.godDev} + {lastVahanaBlessing.vahanaDev}
+                </strong>
+                <span style={{ color: '#78350f', fontWeight: 700, fontSize: '0.92rem' }}>
+                  ✨ {lastVahanaBlessing.quote}
+                </span>
+              </div>
+              <button
+                type="button"
+                className="bqc-btn bqc-btn--primary"
+                onClick={() => playPronunciation(lastVahanaBlessing.quote.split('·')[0].trim())}
+              >
+                🔊 Hear Blessing
+              </button>
+            </div>
+          )}
+
+          {matchedVahanas.size === activeVahanas.length && (
             <div className="psw-victory-banner" role="status">
-              <span>🎉 <strong>सर्वं सम्यक्! Excellent Work!</strong> You matched all 8 Divine Animal Friends!</span>
-              <button type="button" className="psw-quiz-btn" onClick={resetVahanaGame}>
-                Play Again ↺
+              <span>🎉 <strong>सर्वं सम्यक्! Excellent Work!</strong> You matched all {activeVahanas.length} Divine Animal Friends!</span>
+              <button
+                type="button"
+                className="psw-quiz-btn"
+                onClick={() => {
+                  if (vahanaPack === 'easy4') {
+                    setVahanaPack('all8');
+                    soundEffects.playSuccessDing();
+                  } else {
+                    resetVahanaGame();
+                  }
+                }}
+              >
+                {vahanaPack === 'easy4' ? 'Try All 8 Vāhanas →' : 'Play Again ↺'}
               </button>
             </div>
           )}
@@ -3597,7 +3565,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             <div className="psw-vahana-col">
               <span className="psw-col-label">1. Tap a God / Goddess</span>
               <div className="psw-vahana-list">
-                {VAHANAS.map((v) => {
+                {activeVahanas.map((v) => {
                   const isDone = matchedVahanas.has(v.id);
                   const isSel = selectedGod?.id === v.id;
                   return (
