@@ -736,12 +736,14 @@ const STORY_SLIDES: StorySlide[] = [
 ];
 
 type ClusterCategory = 'all' | 'creative' | 'nature' | 'gurukul';
+type WonderLevelTier = 'preschool' | 'next' | 'all';
 
 interface ActivityItem {
   id: PreschoolTab;
   labelSa: string;
   labelEn: string;
   icon: string;
+  level?: 'preschool' | 'next';
   cluster: 'creative' | 'nature' | 'gurukul';
   clusterLabel: string;
   gradeBadge: string;
@@ -904,10 +906,11 @@ const ACTIVITIES: ActivityItem[] = [
     labelSa: 'विश्व-नामानि',
     labelEn: 'Oceans & Lands',
     icon: '🌏',
+    level: 'next',
     cluster: 'nature',
     clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 4–6 · World',
-    desc: 'Discover 3 Seas of India, 7 Oceans & ancient lands in fun packs!',
+    gradeBadge: '🚀 Next Level · Ages 6–10',
+    desc: 'Read & match 3 Seas of India, 7 World Oceans & ancient Sanskrit lands!',
     features: ['🔊 Sanskrit Audio', '🌊 4 Chapter Packs', '📜 Ancient & New'],
     bannerGradient: 'linear-gradient(135deg, #7dd3fc 0%, #c4b5fd 100%)',
     accentColor: '#38bdf8',
@@ -977,13 +980,14 @@ const ACTIVITIES: ActivityItem[] = [
   {
     id: 'moon',
     labelSa: 'चन्द्र-कलाः',
-    labelEn: 'Moon Phases & Lullaby',
+    labelEn: 'Moon Phases & Tithis',
     icon: '🌙',
+    level: 'next',
     cluster: 'nature',
     clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 2–6 · Moon',
-    desc: 'Slide the moon from dark to full.',
-    features: ['🔊 Lullaby Chime', '🌙 5 Moon Phases', '✨ Twinkling Stars'],
+    gradeBadge: '🚀 Next Level · Ages 6–10',
+    desc: 'Explore Amāvāsyā to Pūrṇimā lunar tithis as the moon waxes full!',
+    features: ['🔊 Lullaby Chime', '🌙 5 Lunar Tithis', '✨ Twinkling Stars'],
     bannerGradient: 'linear-gradient(135deg, #3b82f6 0%, #1e1b4b 100%)',
     accentColor: '#38bdf8',
     bannerVisual: {
@@ -999,7 +1003,7 @@ const ACTIVITIES: ActivityItem[] = [
     icon: '🌅',
     cluster: 'nature',
     clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 2–6 · My Day',
+    gradeBadge: 'Ages 2–5 · My Day',
     desc: 'Tap morning, noon, evening or night.',
     features: ['🔊 Sanskrit Audio', '☀️ Moving Sun', '🌅 4 Day Quarters'],
     bannerGradient: 'linear-gradient(135deg, #f59e0b 0%, #f97316 100%)',
@@ -1013,13 +1017,14 @@ const ACTIVITIES: ActivityItem[] = [
   {
     id: 'seasons',
     labelSa: 'ऋतवः',
-    labelEn: 'Six Seasons of Nature',
+    labelEn: 'Six Classical Seasons',
     icon: '🌸',
+    level: 'next',
     cluster: 'nature',
     clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 2–6 · Seasons',
-    desc: 'Tap a season. Watch the weather change!',
-    features: ['🔊 Sanskrit Audio', '🌧️ Falling Weather', '🌸 6 Seasons'],
+    gradeBadge: '🚀 Next Level · Ages 6–10',
+    desc: 'Discover all 6 classical Indian Ṛtus (Vasanta to Śiśira) & weather!',
+    features: ['🔊 Sanskrit Audio', '🌧️ Falling Weather', '🌸 6 Classical Ṛtus'],
     bannerGradient: 'linear-gradient(135deg, #06b6d4 0%, #10b981 100%)',
     accentColor: '#06b6d4',
     bannerVisual: {
@@ -1029,23 +1034,23 @@ const ACTIVITIES: ActivityItem[] = [
     },
   },
   {
-    id: 'spices', labelSa: 'मसालानि', labelEn: 'Spices', icon: '🌶️', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 2–6 · Spices', desc: 'Open Amma’s spice jars, hear Sanskrit names & play 4-Picture Quest!',
-    features: ['🫙 Spice Jars', '🎯 4-Picture Quest', '🧩 Cozy Packs'],
+    id: 'spices', labelSa: 'मसालानि', labelEn: '12 Kitchen Spices', icon: '🌶️', level: 'next', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
+    gradeBadge: '🚀 Next Level · Ages 6–10', desc: 'Learn 12 culinary & Āyurvedic spices in Sanskrit and play 4-Picture Quest!',
+    features: ['🫙 12 Spice Jars', '🎯 4-Picture Quest', '🧩 Cozy Packs'],
     bannerGradient: 'linear-gradient(135deg, #fde68a 0%, #fecaca 100%)', accentColor: '#ea580c',
     bannerVisual: { emojiLead: '🌶️', decorEmojis: ['🫚', '🧄', '🌿', '🟡', '⚫', '🟤'], taglineSa: 'पाकशालायाः सुगन्धः' },
   },
   {
-    id: 'months', labelSa: 'मासाः', labelEn: '12 Months', icon: '🗓️', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 3–6 · Months', desc: 'Explore 12 Sanskrit months across 6 Ṛtus & play Calendar Picture Quest!',
+    id: 'months', labelSa: 'मासाः', labelEn: '12 Lunar Months', icon: '🗓️', level: 'next', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
+    gradeBadge: '🚀 Next Level · Ages 6–10', desc: 'Explore all 12 Sanskrit lunar months (Caitra–Phālguna) across 6 Ṛtus!',
     features: ['🌸 6 Ṛtu Badges', '🎯 4-Picture Quest', '🗓️ 12 Months'],
     bannerGradient: 'linear-gradient(135deg, #bae6fd 0%, #fbcfe8 100%)', accentColor: '#0ea5e9',
     bannerVisual: { emojiLead: '🗓️', decorEmojis: ['🌸', '☀️', '🌧️', '🪔', '❄️', '🎨'], taglineSa: 'द्वादश मासाः' },
   },
   {
-    id: 'work', labelSa: 'व्यवसायाः', labelEn: 'Types of Work', icon: '🧑‍🌾', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 2–6 · Work', desc: 'Meet farmers, gurus, doctors & artisans — tap to hear & play Quest!',
-    features: ['🧑‍🌾 Village Helpers', '🎯 4-Picture Quest', '🧩 Cozy Packs'],
+    id: 'work', labelSa: 'व्यवसायाः', labelEn: 'Trades & Professions', icon: '🧑‍🌾', level: 'next', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
+    gradeBadge: '🚀 Next Level · Ages 6–10', desc: 'Discover 12 Sanskrit trades & professions (Kṛṣiḥ, Vāṇijyam, Śilpam & more)!',
+    features: ['🧑‍🌾 12 Vocations', '🎯 4-Picture Quest', '🧩 Cozy Packs'],
     bannerGradient: 'linear-gradient(135deg, #d9f99d 0%, #c7d2fe 100%)', accentColor: '#65a30d',
     bannerVisual: { emojiLead: '🧑‍🌾', decorEmojis: ['💂', '👩‍🏫', '🩺', '🎶', '🎣', '🍳'], taglineSa: 'कर्म एव पूजा' },
   },
@@ -1138,13 +1143,14 @@ const ACTIVITIES: ActivityItem[] = [
   {
     id: 'story',
     labelSa: '५ मित्राणि',
-    labelEn: 'The 5 Friends Story',
+    labelEn: '5 Elements (Pañcabhūtas) Story',
     icon: '📖',
+    level: 'next',
     cluster: 'gurukul',
     clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 3–6 · Story',
-    desc: 'Listen to Kalu and Isha’s story of the 5 elements.',
-    features: ['🔊 Audio Playback', '📖 8 Story Slides', '🌱 Panchabhutas'],
+    gradeBadge: '🚀 Next Level · Ages 6–10',
+    desc: 'Read & listen to Kalu and Isha’s philosophical story of the 5 Cosmic Elements.',
+    features: ['🔊 Audio Playback', '📖 8 Story Slides', '🌱 Pañcabhūtas'],
     bannerGradient: 'linear-gradient(135deg, #059669 0%, #065f46 100%)',
     accentColor: '#34d399',
     bannerVisual: {
@@ -1539,6 +1545,8 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
   const [festQuiz, setFestQuiz] = useState<FestivalItem | null>(null);
   const [festStars, setFestStars] = useState(0);
   const [festMsg, setFestMsg] = useState('');
+  const [showFestivalMatch, setShowFestivalMatch] = useState<boolean>(false);
+  const [levelTier, setLevelTier] = useState<WonderLevelTier>('preschool');
   const [selectedCluster, setSelectedCluster] = useState<ClusterCategory>('all');
   const [viewMode, setViewMode] = useState<'cards' | 'play'>('cards');
   const playArenaRef = useRef<HTMLDivElement>(null);
@@ -1929,12 +1937,42 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
 
   const currentStorySlide = STORY_SLIDES[storySlideIdx];
 
-  const currentActivityIdx = ACTIVITIES.findIndex((a) => a.id === tab);
-  const currentActivity = ACTIVITIES[currentActivityIdx] || ACTIVITIES[0];
+  const preschoolCount = useMemo(
+    () => ACTIVITIES.filter((a) => (a.level ?? 'preschool') === 'preschool').length,
+    [],
+  );
+  const nextLevelCount = useMemo(
+    () => ACTIVITIES.filter((a) => a.level === 'next').length,
+    [],
+  );
+
+  const levelActivities = useMemo(() => {
+    if (levelTier === 'all') return ACTIVITIES;
+    return ACTIVITIES.filter((a) => (a.level ?? 'preschool') === levelTier);
+  }, [levelTier]);
+
   const displayedActivities = useMemo(() => {
-    if (selectedCluster === 'all') return ACTIVITIES;
-    return ACTIVITIES.filter((a) => a.cluster === selectedCluster);
-  }, [selectedCluster]);
+    if (selectedCluster === 'all') return levelActivities;
+    return levelActivities.filter((a) => a.cluster === selectedCluster);
+  }, [levelActivities, selectedCluster]);
+
+  const currentActivity = ACTIVITIES.find((a) => a.id === tab) || ACTIVITIES[0];
+  const stepperActivities = levelActivities.length > 0 ? levelActivities : ACTIVITIES;
+  const stepperIdx = Math.max(0, stepperActivities.findIndex((a) => a.id === tab));
+
+  const switchLevelTier = (nextTier: WonderLevelTier) => {
+    setLevelTier(nextTier);
+    setSelectedCluster('all');
+    setViewMode('cards');
+    const pool =
+      nextTier === 'all'
+        ? ACTIVITIES
+        : ACTIVITIES.filter((a) => (a.level ?? 'preschool') === nextTier);
+    if (pool.length > 0 && !pool.some((a) => a.id === tab)) {
+      setTab(pool[0].id);
+    }
+    soundEffects.playStrokeChime();
+  };
 
   return (
     <div className="vl-subsim preschool-wonder-root" data-testid="preschool-wonder-lab">
@@ -1942,10 +1980,20 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
       <div className="psw-hero-box">
         <div className="psw-hero-badge" style={{ justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span className="psw-hero-icon" aria-hidden="true">🌟</span>
+            <span className="psw-hero-icon" aria-hidden="true">{levelTier === 'next' ? '🚀' : '🌱'}</span>
             <div>
-              <span className="psw-hero-kicker">Play 2 Learn · Ages 2–6 · शिशु-क्रीडा</span>
-              <h2 className="psw-hero-title">Wonder Playground <span lang="sa">· शिशु-क्रीडा-वाटिका</span></h2>
+              <span className="psw-hero-kicker">
+                {levelTier === 'next'
+                  ? 'Next Level Games · Ages 6–10 · बाल-अन्वेषणम्'
+                  : 'Level 1 · Preschool Sprouts · Ages 2–5 · शिशु-क्रीडा'}
+              </span>
+              <h2 className="psw-hero-title">
+                {levelTier === 'next' ? (
+                  <>Next Level Games <span lang="sa">· अग्रिम-स्तर-क्रीडाः</span></>
+                ) : (
+                  <>Wonder Playground <span lang="sa">· शिशु-क्रीडा-वाटिका</span></>
+                )}
+              </h2>
             </div>
           </div>
           <div className="psw-star-jar-pill" aria-label="Your golden star jar">
@@ -1955,19 +2003,105 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
           </div>
         </div>
         <p className="psw-hero-desc">
-          Tap, listen and play — learn shapes, colors, India’s map, animals and numbers in English and Sanskrit.
-          <span lang="sa" className="psw-hero-desc-sa"> स्पृश, शृणु, क्रीड! (Touch, listen, play!)</span>
+          {levelTier === 'next' ? (
+            <>
+              Ready for a bigger challenge? Explore 12 Sanskrit lunar months, 6 classical seasons, kitchen spices, trades, lunar tithis, world oceans &amp; the 5 elements!
+            </>
+          ) : (
+            <>
+              Gentle, picture-first games made just for little ones — tap shapes, colors, India’s living map, animals, yoga poses &amp; numbers!
+              <span lang="sa" className="psw-hero-desc-sa"> स्पृश, शृणु, क्रीड! (Touch, listen, play!)</span>
+            </>
+          )}
         </p>
 
-        {/* Quick-launch: every game is one tap away, right at the top */}
-        <div role="tablist" aria-label="Game groups" style={{ display: 'flex', flexWrap: 'wrap', gap: 8, margin: '12px 0 10px' }}>
+        {/* Progressive Level Ladder Switcher: Preschool (Default) vs Next Level Games */}
+        <div
+          role="tablist"
+          aria-label="Choose Game Level"
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 10,
+            margin: '12px 0 8px',
+            padding: '10px 12px',
+            background: 'linear-gradient(135deg, #fffbeb 0%, #f0fdf4 55%, #eff6ff 100%)',
+            border: '2px solid #cbd5e1',
+            borderRadius: 18,
+            alignItems: 'center',
+          }}
+        >
+          <span style={{ fontWeight: 800, fontSize: 13, color: '#475569', marginRight: 4 }}>
+            🎯 Choose Level:
+          </span>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={levelTier === 'preschool'}
+            onClick={() => switchLevelTier('preschool')}
+            style={{
+              background: levelTier === 'preschool' ? 'linear-gradient(135deg, #10b981, #059669)' : '#ffffff',
+              color: levelTier === 'preschool' ? '#ffffff' : '#065f46',
+              border: levelTier === 'preschool' ? '2.5px solid #047857' : '2px solid #86efac',
+              borderRadius: 999,
+              padding: '7px 16px',
+              fontWeight: 800,
+              fontSize: 13.5,
+              cursor: 'pointer',
+              boxShadow: levelTier === 'preschool' ? '0 4px 12px rgba(16, 185, 129, 0.3)' : 'none',
+            }}
+          >
+            🌱 Level 1 · Preschool (Ages 2–5) ({preschoolCount})
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={levelTier === 'next'}
+            onClick={() => switchLevelTier('next')}
+            style={{
+              background: levelTier === 'next' ? 'linear-gradient(135deg, #6366f1, #4f46e5)' : '#ffffff',
+              color: levelTier === 'next' ? '#ffffff' : '#3730a3',
+              border: levelTier === 'next' ? '2.5px solid #4338ca' : '2px solid #a5b4fc',
+              borderRadius: 999,
+              padding: '7px 16px',
+              fontWeight: 800,
+              fontSize: 13.5,
+              cursor: 'pointer',
+              boxShadow: levelTier === 'next' ? '0 4px 12px rgba(99, 102, 241, 0.3)' : 'none',
+            }}
+          >
+            🚀 Next Level Games · Ages 6–10 ({nextLevelCount})
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={levelTier === 'all'}
+            onClick={() => switchLevelTier('all')}
+            style={{
+              background: levelTier === 'all' ? '#0f172a' : '#ffffff',
+              color: levelTier === 'all' ? '#ffffff' : '#334155',
+              border: '2px solid #cbd5e1',
+              borderRadius: 999,
+              padding: '7px 14px',
+              fontWeight: 700,
+              fontSize: 13,
+              cursor: 'pointer',
+            }}
+          >
+            🌟 All ({ACTIVITIES.length})
+          </button>
+        </div>
+
+        {/* Quick-launch: every game in the chosen level is one tap away */}
+        <div role="tablist" aria-label="Game groups" style={{ display: 'flex', flexWrap: 'wrap', gap: 8, margin: '10px 0 10px' }}>
           {([
-            { id: 'all', icon: '🌟', sa: 'सर्वाः', en: 'All games', bg: '#fef3c7' },
+            { id: 'all', icon: '🌟', sa: 'सर्वाः', en: 'All in Level', bg: '#fef3c7' },
             { id: 'creative', icon: '🎨', sa: 'रचना', en: 'Creative', bg: '#fce7f3' },
             { id: 'nature', icon: '🐾', sa: 'प्रकृतिः', en: 'Nature & World', bg: '#dcfce7' },
             { id: 'gurukul', icon: '🪔', sa: 'गुरुकुलम्', en: 'Gurukul', bg: '#ede9fe' },
           ] as const).map((g) => {
-            const n = g.id === 'all' ? ACTIVITIES.length : ACTIVITIES.filter((x) => x.cluster === g.id).length;
+            const n = g.id === 'all' ? levelActivities.length : levelActivities.filter((x) => x.cluster === g.id).length;
+            if (n === 0 && g.id !== 'all') return null;
             const on = selectedCluster === g.id;
             return (
               <button key={g.id} type="button" role="tab" aria-selected={on}
@@ -2082,6 +2216,47 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
               </article>
             );
           })}
+
+          {/* Cheerful Next-Level Upgrade Card at the end of Level 1 Preschool Catalog */}
+          {levelTier === 'preschool' && (
+            <article
+              className="psw-code-card"
+              style={{
+                '--card-accent': '#6366f1',
+                '--banner-bg': 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 55%, #ec4899 100%)',
+              } as React.CSSProperties}
+            >
+              <div className="psw-cc-banner" style={{ position: 'relative' }}>
+                <span className="psw-cc-lead-emoji" aria-hidden="true">🚀</span>
+                <div className="psw-cc-decor-row" aria-hidden="true">
+                  <span>🌏</span><span>🗓️</span><span>🌶️</span><span>🌙</span><span>🌸</span><span>📖</span>
+                </div>
+                <div className="psw-cc-sa-ribbon" lang="sa">
+                  अग्रिम-स्तर-क्रीडाः · Next Level!
+                </div>
+              </div>
+              <div className="psw-cc-body">
+                <div className="psw-cc-meta-row">
+                  <span className="psw-cc-grade-badge">🚀 Ages 6–10</span>
+                  <span className="psw-cc-cluster-badge">{nextLevelCount} Games</span>
+                </div>
+                <h3 className="psw-cc-title">
+                  <span>🚀</span>
+                  <span>Ready for Next Level Games?</span>
+                </h3>
+                <p className="psw-cc-desc">
+                  Explore World Oceans &amp; Ancient Lands, 12 Lunar Months, 6 Seasons, Kitchen Spices, Professions, Moon Tithis &amp; 5 Elements!
+                </p>
+                <button
+                  type="button"
+                  className="psw-cc-play-btn"
+                  onClick={() => switchLevelTier('next')}
+                >
+                  🚀 Open Next Level Games ➔
+                </button>
+              </div>
+            </article>
+          )}
         </div>
       )}
 
@@ -2151,9 +2326,9 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
 
           <div className="ppd-pack-bar" role="tablist" aria-label="Shape packs">
             {([
-              { id: 'first6', label: '🟢 First 6 Shapes (Ages 2–3)', bg: '#dcfce7' },
-              { id: 'more2d', label: '🔷 More 2D Shapes (6)', bg: '#e0f2fe' },
-              { id: '3d', label: '🎲 3D Solid Shapes (4)', bg: '#ede9fe' },
+              { id: 'first6', label: '🟢 Level 1: First 6 Shapes (Ages 2–4)', bg: '#dcfce7' },
+              { id: 'more2d', label: '🚀 Next Level: Polygons (6)', bg: '#e0f2fe' },
+              { id: '3d', label: '🎲 Next Level: 3D Solids (4)', bg: '#ede9fe' },
               { id: 'all', label: '🌟 All 16 Shapes', bg: '#fef3c7' },
             ] as const).map((pk) => (
               <button
@@ -2660,7 +2835,35 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             {festival.symbols && <p style={{ margin: '8px 0 0', fontWeight: 600 }}><span style={{ fontSize: 18 }}>{festival.symbols}</span> {festival.symbolNote}</p>}
             <div style={{ clear: 'both' }} />
           </div>
-          <FestivalMatchGame onEarnStar={celebrateWin} />
+          <div style={{ marginTop: 16 }}>
+            <button
+              type="button"
+              onClick={() => {
+                setShowFestivalMatch((v) => !v);
+                soundEffects.playStrokeChime();
+              }}
+              style={{
+                background: showFestivalMatch ? '#ede9fe' : 'linear-gradient(135deg, #fdf4ff, #ede9fe)',
+                border: '2px solid #c084fc',
+                borderRadius: 999,
+                padding: '9px 18px',
+                fontWeight: 800,
+                color: '#6b21a8',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+              }}
+            >
+              <span>🚀</span>
+              <span>
+                {showFestivalMatch
+                  ? 'Hide Next Level Reading Match ▲'
+                  : 'Next Level Challenge: Read & Match Festival Names ▼'}
+              </span>
+            </button>
+            {showFestivalMatch && <FestivalMatchGame onEarnStar={celebrateWin} />}
+          </div>
         </div>
       )}
 
@@ -3815,10 +4018,10 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
         <button
           type="button"
           className="psw-stepper-nav-btn"
-          disabled={currentActivityIdx <= 0}
+          disabled={stepperIdx <= 0}
           onClick={() => {
-            if (currentActivityIdx > 0) {
-              const prevTab = ACTIVITIES[currentActivityIdx - 1].id;
+            if (stepperIdx > 0) {
+              const prevTab = stepperActivities[stepperIdx - 1].id;
               setTab(prevTab);
               soundEffects.playStrokeChime();
             }
@@ -3834,20 +4037,20 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             setViewMode('cards');
             soundEffects.playStrokeChime();
           }}
-          title={`Click to browse all ${ACTIVITIES.length} preschool activity cards`}
+          title={`Click to browse all ${stepperActivities.length} cards in this level`}
         >
           <span aria-hidden="true">{currentActivity.icon}</span>
           <b>{currentActivity.labelSa} · {currentActivity.labelEn}</b>
-          <small>({currentActivityIdx + 1} of {ACTIVITIES.length} · 🎴 Cards)</small>
+          <small>({stepperIdx + 1} of {stepperActivities.length} · 🎴 Cards)</small>
         </button>
 
         <button
           type="button"
           className="psw-stepper-nav-btn"
-          disabled={currentActivityIdx >= ACTIVITIES.length - 1}
+          disabled={stepperIdx >= stepperActivities.length - 1}
           onClick={() => {
-            if (currentActivityIdx < ACTIVITIES.length - 1) {
-              const nextTab = ACTIVITIES[currentActivityIdx + 1].id;
+            if (stepperIdx < stepperActivities.length - 1) {
+              const nextTab = stepperActivities[stepperIdx + 1].id;
               setTab(nextTab);
               soundEffects.playStrokeChime();
             }
@@ -3857,25 +4060,38 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
         </button>
       </div>
 
-      {/* Code.org Style "More Preschool Adventures" Carousel */}
+      {/* Code.org Style "More Adventures" Carousel scoped to Current Level + Next Level Upgrade */}
       <div className="psw-more-carousel-wrap">
         <div className="psw-mc-header">
           <h4 className="psw-mc-title">
-            <span>🌟</span> More Preschool Adventures to Explore
+            <span>{levelTier === 'next' ? '🚀' : '🌱'}</span>{' '}
+            {levelTier === 'next' ? 'More Next Level Games (Ages 6–10)' : 'More Preschool Adventures to Explore'}
           </h4>
-          <button
-            type="button"
-            className="psw-pab-back-btn"
-            onClick={() => {
-              setViewMode('cards');
-              soundEffects.playStrokeChime();
-            }}
-          >
-            View All {ACTIVITIES.length} Cards 🎴
-          </button>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            {levelTier === 'preschool' && (
+              <button
+                type="button"
+                className="psw-pab-back-btn"
+                style={{ background: '#eef2ff', borderColor: '#818cf8', color: '#3730a3' }}
+                onClick={() => switchLevelTier('next')}
+              >
+                🚀 Next Level Games ({nextLevelCount}) ➔
+              </button>
+            )}
+            <button
+              type="button"
+              className="psw-pab-back-btn"
+              onClick={() => {
+                setViewMode('cards');
+                soundEffects.playStrokeChime();
+              }}
+            >
+              View All {stepperActivities.length} Cards 🎴
+            </button>
+          </div>
         </div>
         <div className="psw-mc-cards-strip">
-          {ACTIVITIES.filter((a) => a.id !== tab).map((item) => (
+          {stepperActivities.filter((a) => a.id !== tab).map((item) => (
             <div
               key={item.id}
               className="psw-mc-card"

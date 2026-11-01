@@ -669,8 +669,9 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
             aria-selected={mode === 'match'}
             className={`bharat-mode-btn ${mode === 'match' ? 'is-active' : ''}`}
             onClick={() => switchMode('match')}
+            title="Next Level reading challenge: read a Sanskrit name and pin its place on the map"
           >
-            🧩 Pick &amp; Pin
+            🚀 Next Level: Read &amp; Pin
           </button>
         </div>
       </div>

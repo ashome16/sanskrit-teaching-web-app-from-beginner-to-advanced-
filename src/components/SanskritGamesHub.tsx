@@ -23,7 +23,7 @@ export interface SanskritGamesHubProps {
 
 type MatchPlayStyle = 'classic' | 'blitz' | 'memory';
 type MazeDifficulty = 'guided' | 'scholar';
-type MazeAudienceFilter = 'all' | 'preschool' | 'stories';
+type GameLevelFilter = 'level1' | 'level2' | 'level3' | 'all';
 
 interface MemoryCardItem {
   uid: string;
@@ -67,24 +67,59 @@ function getRomanForItem(item: MatchPairItem): string {
   return item.transliteration || devanagariToIast(item.sanskrit);
 }
 
-const PRESCHOOL_MATCH_CAT_IDS = new Set([
+const LEVEL1_MATCH_CAT_IDS = new Set([
   'cat_vahanas',
   'cat_shapes_seasons',
+  'cat_preschool_numbers',
   'fruits_veg',
   'relationships',
-  'vehicles',
-  'cat_numbers_mnemonics',
-  'actions',
   'household',
+  'vehicles',
+  'insects',
+  'actions',
 ]);
 
-const DEEPAKAM_MATCH_CAT_IDS = new Set([
-  'cat_deepakam_sciences',
-  'cat_numbers_mnemonics',
+const LEVEL2_MATCH_CAT_IDS = new Set([
+  'addressing',
   'occupations',
   'cat_directions_traffic',
-  'tenses',
+  'cat_numbers_mnemonics',
+  'time_date',
+  'genders',
 ]);
+
+const LEVEL3_MATCH_CAT_IDS = new Set([
+  'tenses',
+  'exam_words',
+  'vastu',
+  'ayurveda',
+  'cat_deepakam_sciences',
+]);
+
+const LEVEL1_MAZE_IDS = new Set([
+  'maze_preschool_ganesha_fruits',
+  'maze_preschool_numbers_1_10',
+  'maze_identify_fruits_veg',
+]);
+
+const LEVEL2_MAZE_IDS = new Set([
+  'maze_identify_verbs',
+  'maze_thirsty_crow',
+  'maze_lion_mouse',
+]);
+
+const LEVEL3_MAZE_IDS = new Set([
+  'maze_tenses_seq',
+  'maze_traffic_rescue',
+  'maze_srishti_krama',
+]);
+
+function getMatchLevelForCategory(catId?: string): GameLevelFilter {
+  if (!catId) return 'level1';
+  if (LEVEL3_MATCH_CAT_IDS.has(catId)) return 'level3';
+  if (LEVEL2_MATCH_CAT_IDS.has(catId)) return 'level2';
+  return 'level1';
+}
 
 export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   initialMode = 'match',
@@ -160,37 +195,51 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     return MATCH_CATEGORIES[0].id;
   });
 
-  const [filterMode, setFilterMode] = useState<'all' | 'preschool' | 'deepakam'>(() => {
-    if (initialCategory === 'cat_deepakam_sciences' || DEEPAKAM_MATCH_CAT_IDS.has(initialCategory || '')) {
-      return 'deepakam';
-    }
-    return 'all';
-  });
+  const [filterMode, setFilterMode] = useState<GameLevelFilter>(() =>
+    getMatchLevelForCategory(initialCategory)
+  );
 
   const [matchPlayStyle, setMatchPlayStyle] = useState<MatchPlayStyle>('classic');
   // roundIndex === -1 means "All pairs at once", otherwise 0..totalRounds-1 (6 pairs per round)
   const [roundIndex, setRoundIndex] = useState<number>(0);
 
-  const showPreschoolOnly = filterMode === 'preschool';
+  const showPreschoolOnly = filterMode === 'level1';
 
   useEffect(() => {
     if (initialCategory && MATCH_CATEGORIES.some((c) => c.id === initialCategory)) {
       setSelectedCatId(initialCategory);
-      if (initialCategory === 'cat_deepakam_sciences' || DEEPAKAM_MATCH_CAT_IDS.has(initialCategory)) {
-        setFilterMode('deepakam');
-      }
+      setFilterMode(getMatchLevelForCategory(initialCategory));
     }
   }, [initialCategory]);
 
   const displayedCategories = useMemo(() => {
-    if (filterMode === 'preschool') {
-      return MATCH_CATEGORIES.filter((c) => PRESCHOOL_MATCH_CAT_IDS.has(c.id));
+    if (filterMode === 'level1') {
+      return MATCH_CATEGORIES.filter((c) => LEVEL1_MATCH_CAT_IDS.has(c.id));
     }
-    if (filterMode === 'deepakam') {
-      return MATCH_CATEGORIES.filter((c) => DEEPAKAM_MATCH_CAT_IDS.has(c.id));
+    if (filterMode === 'level2') {
+      return MATCH_CATEGORIES.filter((c) => LEVEL2_MATCH_CAT_IDS.has(c.id));
+    }
+    if (filterMode === 'level3') {
+      return MATCH_CATEGORIES.filter((c) => LEVEL3_MATCH_CAT_IDS.has(c.id));
     }
     return MATCH_CATEGORIES;
   }, [filterMode]);
+
+  const switchMatchLevel = (nextLevel: GameLevelFilter) => {
+    setFilterMode(nextLevel);
+    const pool =
+      nextLevel === 'level1'
+        ? MATCH_CATEGORIES.filter((c) => LEVEL1_MATCH_CAT_IDS.has(c.id))
+        : nextLevel === 'level2'
+          ? MATCH_CATEGORIES.filter((c) => LEVEL2_MATCH_CAT_IDS.has(c.id))
+          : nextLevel === 'level3'
+            ? MATCH_CATEGORIES.filter((c) => LEVEL3_MATCH_CAT_IDS.has(c.id))
+            : MATCH_CATEGORIES;
+    if (pool.length > 0 && !pool.some((c) => c.id === selectedCatId)) {
+      setSelectedCatId(pool[0].id);
+    }
+    soundEffects.playStrokeChime();
+  };
 
   const activeCategory: MatchCategoryMetadata = useMemo(() => {
     return (
@@ -539,19 +588,41 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   // --------------------------------------------------------------------------
   // 2. WORD MAZE QUEST STATE (शब्द-व्यूहः)
   // --------------------------------------------------------------------------
-  const [mazeAudienceFilter, setMazeAudienceFilter] = useState<MazeAudienceFilter>('all');
+  const [mazeAudienceFilter, setMazeAudienceFilter] = useState<GameLevelFilter>('level1');
   const [mazeDifficulty, setMazeDifficulty] = useState<MazeDifficulty>('guided');
   const [selectedQuestId, setSelectedQuestId] = useState<string>(WORD_MAZE_QUESTS[0].id);
 
   const displayedQuests = useMemo(() => {
-    if (mazeAudienceFilter === 'preschool') {
-      return WORD_MAZE_QUESTS.filter((q) => PRESCHOOL_MAZE_IDS.has(q.id) || q.audience === 'preschool');
+    if (mazeAudienceFilter === 'level1') {
+      return WORD_MAZE_QUESTS.filter((q) => LEVEL1_MAZE_IDS.has(q.id));
     }
-    if (mazeAudienceFilter === 'stories') {
-      return WORD_MAZE_QUESTS.filter((q) => q.audience !== 'preschool');
+    if (mazeAudienceFilter === 'level2') {
+      return WORD_MAZE_QUESTS.filter((q) => LEVEL2_MAZE_IDS.has(q.id));
+    }
+    if (mazeAudienceFilter === 'level3') {
+      return WORD_MAZE_QUESTS.filter((q) => LEVEL3_MAZE_IDS.has(q.id));
     }
     return WORD_MAZE_QUESTS;
   }, [mazeAudienceFilter]);
+
+  const switchMazeLevel = (nextLevel: GameLevelFilter) => {
+    setMazeAudienceFilter(nextLevel);
+    if (nextLevel === 'level1' || nextLevel === 'level2') {
+      setMazeDifficulty('guided');
+    }
+    const pool =
+      nextLevel === 'level1'
+        ? WORD_MAZE_QUESTS.filter((q) => LEVEL1_MAZE_IDS.has(q.id))
+        : nextLevel === 'level2'
+          ? WORD_MAZE_QUESTS.filter((q) => LEVEL2_MAZE_IDS.has(q.id))
+          : nextLevel === 'level3'
+            ? WORD_MAZE_QUESTS.filter((q) => LEVEL3_MAZE_IDS.has(q.id))
+            : WORD_MAZE_QUESTS;
+    if (pool.length > 0 && !pool.some((q) => q.id === selectedQuestId)) {
+      setSelectedQuestId(pool[0].id);
+    }
+    soundEffects.playStrokeChime();
+  };
 
   const activeQuest: WordMazeQuest = useMemo(() => {
     return (
@@ -762,57 +833,72 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
           ==================================================================== */}
       {activeGameMode === 'match' && (
         <>
-          {/* Category Filter Bar */}
-          <div className="sgh-filter-bar">
+          {/* Progressive Level Filter Bar */}
+          <div className="sgh-filter-bar" role="tablist" aria-label="Choose Match Game Level">
             <button
               type="button"
+              role="tab"
+              aria-selected={filterMode === 'level1'}
+              className={`sgh-filter-chip sgh-filter-chip--preschool${filterMode === 'level1' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => switchMatchLevel('level1')}
+            >
+              <span>🌱 Level 1 · Starter &amp; Kids ({LEVEL1_MATCH_CAT_IDS.size})</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={filterMode === 'level2'}
+              className={`sgh-filter-chip sgh-filter-chip--nextlevel${filterMode === 'level2' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => switchMatchLevel('level2')}
+            >
+              <span>🚀 Level 2 · Next Level Games ({LEVEL2_MATCH_CAT_IDS.size})</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={filterMode === 'level3'}
+              className={`sgh-filter-chip sgh-filter-chip--deepakam${filterMode === 'level3' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => switchMatchLevel('level3')}
+            >
+              <span>🎓 Level 3 · Advanced &amp; Scholar ({LEVEL3_MATCH_CAT_IDS.size})</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={filterMode === 'all'}
               className={`sgh-filter-chip${filterMode === 'all' ? ' sgh-filter-chip--active' : ''}`}
-              onClick={() => setFilterMode('all')}
+              onClick={() => switchMatchLevel('all')}
             >
-              <span>🌟 All Categories ({MATCH_CATEGORIES.length})</span>
-            </button>
-            <button
-              type="button"
-              className={`sgh-filter-chip sgh-filter-chip--preschool${filterMode === 'preschool' ? ' sgh-filter-chip--active' : ''}`}
-              onClick={() => {
-                setFilterMode('preschool');
-                if (!PRESCHOOL_MATCH_CAT_IDS.has(selectedCatId)) {
-                  setSelectedCatId('cat_vahanas');
-                }
-              }}
-            >
-              <span>🐘 Preschool &amp; Kids (Ages 3–7)</span>
-            </button>
-            <button
-              type="button"
-              className={`sgh-filter-chip sgh-filter-chip--deepakam${filterMode === 'deepakam' ? ' sgh-filter-chip--active' : ''}`}
-              onClick={() => {
-                setFilterMode('deepakam');
-                if (!DEEPAKAM_MATCH_CAT_IDS.has(selectedCatId)) {
-                  setSelectedCatId('cat_deepakam_sciences');
-                }
-              }}
-            >
-              <span>🔬 Class 7 Deepakam Curriculum</span>
+              <span>🌟 All ({MATCH_CATEGORIES.length})</span>
             </button>
           </div>
 
-          {filterMode === 'preschool' && (
+          {filterMode === 'level1' && (
             <div className="sgh-preschool-banner">
-              <span className="spb-icon" aria-hidden="true">🐘</span>
+              <span className="spb-icon" aria-hidden="true">🌱</span>
               <div>
-                <strong>शिशु-युग्म-क्रीडा · Preschool Picture &amp; Sound Play (Ages 3–7)</strong>
-                <span>Bite-sized 6-card rounds, gentle chimes, spoken Sanskrit audio, and fun Memory Flip cards!</span>
+                <strong>स्तरः १ · Starter &amp; Kids Picture Play (Ages 3–7)</strong>
+                <span>Gentle 6-card rounds with pictures &amp; spoken Sanskrit — animals, shapes, 1–10 counting, fruits, home &amp; family!</span>
               </div>
             </div>
           )}
 
-          {filterMode === 'deepakam' && (
-            <div className="sgh-deepakam-banner">
-              <span className="sdb-icon" aria-hidden="true">🔬</span>
+          {filterMode === 'level2' && (
+            <div className="sgh-nextlevel-banner">
+              <span className="snb-icon" aria-hidden="true">🚀</span>
               <div>
-                <strong>दीपकम् (सप्तमी कक्षा) · Class 7 Deepakam Curriculum Games</strong>
-                <span>Directly covers Chapter 9 (अन्नाद् भवन्ति भूतानि) ancient Vedic sciences &amp; professions, natural numbers, and directions!</span>
+                <strong>स्तरः २ · Next Level Games (Ages 8–12)</strong>
+                <span>Step up to polite greetings, village professions, compass &amp; traffic directions, clock time, natural number symbols &amp; 3 genders!</span>
+              </div>
+            </div>
+          )}
+
+          {filterMode === 'level3' && (
+            <div className="sgh-deepakam-banner">
+              <span className="sdb-icon" aria-hidden="true">🎓</span>
+              <div>
+                <strong>स्तरः ३ · Advanced &amp; Scholar Games (Ages 12+ · Deepakam &amp; Śāstra)</strong>
+                <span>Master past-present-future Lakāras, CBSE exam directives, Vāstu zones, Āyurveda herbs &amp; Class 7 Deepakam Vedic sciences!</span>
               </div>
             </div>
           )}
@@ -974,6 +1060,18 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                       >
                         <span>Next Category ➔</span>
                       </button>
+                      {(filterMode === 'level1' || filterMode === 'level2') && (
+                        <button
+                          type="button"
+                          className="sgh-mode-btn"
+                          style={{ background: '#4f46e5', color: '#ffffff' }}
+                          onClick={() => switchMatchLevel(filterMode === 'level1' ? 'level2' : 'level3')}
+                        >
+                          <span>
+                            {filterMode === 'level1' ? '🚀 Next Level Games ➔' : '🎓 Scholar Level ➔'}
+                          </span>
+                        </button>
+                      )}
                       <button
                         type="button"
                         className="sgh-mode-btn"
@@ -1256,6 +1354,18 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                       >
                         <span>🔄 Play Again</span>
                       </button>
+                      {(filterMode === 'level1' || filterMode === 'level2') && (
+                        <button
+                          type="button"
+                          className="sgh-mode-btn"
+                          style={{ background: '#4f46e5', color: '#ffffff' }}
+                          onClick={() => switchMatchLevel(filterMode === 'level1' ? 'level2' : 'level3')}
+                        >
+                          <span>
+                            {filterMode === 'level1' ? '🚀 Next Level Games ➔' : '🎓 Scholar Level ➔'}
+                          </span>
+                        </button>
+                      )}
                     </div>
                   </div>
                 ) : (
@@ -1309,38 +1419,43 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
           ==================================================================== */}
       {activeGameMode === 'maze' && (
         <>
-          {/* Maze Audience Filter Bar */}
-          <div className="sgh-filter-bar">
+          {/* Progressive Maze Level Filter Bar */}
+          <div className="sgh-filter-bar" role="tablist" aria-label="Choose Maze Level">
             <button
               type="button"
+              role="tab"
+              aria-selected={mazeAudienceFilter === 'level1'}
+              className={`sgh-filter-chip sgh-filter-chip--preschool${mazeAudienceFilter === 'level1' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => switchMazeLevel('level1')}
+            >
+              <span>🌱 Level 1 · Starter Trails ({LEVEL1_MAZE_IDS.size})</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={mazeAudienceFilter === 'level2'}
+              className={`sgh-filter-chip sgh-filter-chip--nextlevel${mazeAudienceFilter === 'level2' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => switchMazeLevel('level2')}
+            >
+              <span>🚀 Level 2 · Next Level Stories ({LEVEL2_MAZE_IDS.size})</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={mazeAudienceFilter === 'level3'}
+              className={`sgh-filter-chip sgh-filter-chip--deepakam${mazeAudienceFilter === 'level3' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => switchMazeLevel('level3')}
+            >
+              <span>🎓 Level 3 · Advanced &amp; Scholar ({LEVEL3_MAZE_IDS.size})</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={mazeAudienceFilter === 'all'}
               className={`sgh-filter-chip${mazeAudienceFilter === 'all' ? ' sgh-filter-chip--active' : ''}`}
-              onClick={() => setMazeAudienceFilter('all')}
+              onClick={() => switchMazeLevel('all')}
             >
-              <span>🌟 All Maze Quests ({WORD_MAZE_QUESTS.length})</span>
-            </button>
-            <button
-              type="button"
-              className={`sgh-filter-chip sgh-filter-chip--preschool${mazeAudienceFilter === 'preschool' ? ' sgh-filter-chip--active' : ''}`}
-              onClick={() => {
-                setMazeAudienceFilter('preschool');
-                if (!PRESCHOOL_MAZE_IDS.has(selectedQuestId)) {
-                  setSelectedQuestId('maze_preschool_ganesha_fruits');
-                }
-              }}
-            >
-              <span>🐘 Preschool &amp; Kids Trails (Ages 3–7)</span>
-            </button>
-            <button
-              type="button"
-              className={`sgh-filter-chip sgh-filter-chip--deepakam${mazeAudienceFilter === 'stories' ? ' sgh-filter-chip--active' : ''}`}
-              onClick={() => {
-                setMazeAudienceFilter('stories');
-                if (activeQuest.audience === 'preschool') {
-                  setSelectedQuestId('maze_thirsty_crow');
-                }
-              }}
-            >
-              <span>📜 Stories, Tenses &amp; Deepakam</span>
+              <span>🌟 All ({WORD_MAZE_QUESTS.length})</span>
             </button>
           </div>
 
@@ -1749,6 +1864,18 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                   >
                     <span>Next Quest ➔</span>
                   </button>
+                  {(mazeAudienceFilter === 'level1' || mazeAudienceFilter === 'level2') && (
+                    <button
+                      type="button"
+                      className="sgh-mode-btn"
+                      style={{ background: '#4f46e5', color: '#ffffff' }}
+                      onClick={() => switchMazeLevel(mazeAudienceFilter === 'level1' ? 'level2' : 'level3')}
+                    >
+                      <span>
+                        {mazeAudienceFilter === 'level1' ? '🚀 Next Level Mazes ➔' : '🎓 Scholar Mazes ➔'}
+                      </span>
+                    </button>
+                  )}
                   <button
                     type="button"
                     className="sgh-mode-btn"

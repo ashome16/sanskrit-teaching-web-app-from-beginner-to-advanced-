@@ -1573,6 +1573,48 @@
   margin: 0.35rem 0;
 }
 
+.sgh-filter-chip--nextlevel {
+  border-color: #a5b4fc;
+  background: #eef2ff;
+  color: #3730a3;
+}
+
+.sgh-filter-chip--nextlevel.sgh-filter-chip--active {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  border-color: #4338ca;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.28);
+}
+
+.sgh-nextlevel-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+  border: 1.5px solid #a5b4fc;
+  border-radius: 14px;
+  padding: 0.72rem 1.05rem;
+  margin-bottom: 0.9rem;
+}
+
+.sgh-nextlevel-banner .snb-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.sgh-nextlevel-banner strong {
+  display: block;
+  font-size: 0.96rem;
+  color: #312e81;
+  margin-bottom: 0.12rem;
+}
+
+.sgh-nextlevel-banner span {
+  font-size: 0.83rem;
+  color: #4338ca;
+  font-weight: 600;
+}
+
 .sgh-maze-cell {
   font-family: inherit;
 }

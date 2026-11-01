@@ -13,6 +13,9 @@ import { SanskritGamesHub } from './SanskritGamesHub';
 import { devanagariToIast } from '../utils/devanagariToIast';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
+type JodoShelfTier = 'starter' | 'next' | 'all';
+
+const STARTER_JODO_SHELVES = new Set<ShelfId>(['prarambhah', 'ganitam', 'prakrtih']);
 
 interface ShelfButton { id: ShelfId; label: string; }
 interface BoardPuzzle { target: string; tiles: string[]; answer?: string; english: string; sentence?: string; highlight?: string; tapHighlight?: string; seed?: string; prompt?: string; gloss?: string; phase?: string; explanation?: string; }
@@ -1127,6 +1130,7 @@ const Board: React.FC<BoardProps> = ({
   });
   const [sessionSolvedStreak, setSessionSolvedStreak] = useState<number>(0);
   const [sessionSolvedTotal, setSessionSolvedTotal] = useState<number>(0);
+  const [jodoShelfTier, setJodoShelfTier] = useState<JodoShelfTier>('starter');
 
   const toggleJodoIast = () => {
     setShowJodoIast((prev) => {
@@ -1717,8 +1721,35 @@ const Board: React.FC<BoardProps> = ({
     return results;
   }, [searchQuery, searchScope, activeShelf, allShelvesWithPuzzles]);
 
+  const visibleShelfButtons = useMemo(() => {
+    if (jodoShelfTier === 'starter') {
+      return shelfButtons.filter((s) => STARTER_JODO_SHELVES.has(s.id));
+    }
+    if (jodoShelfTier === 'next') {
+      return shelfButtons.filter((s) => !STARTER_JODO_SHELVES.has(s.id));
+    }
+    return shelfButtons;
+  }, [shelfButtons, jodoShelfTier]);
+
+  const switchJodoShelfTier = (nextTier: JodoShelfTier) => {
+    setJodoShelfTier(nextTier);
+    if (nextTier === 'starter' && !STARTER_JODO_SHELVES.has(activeShelf)) {
+      const firstStarter = shelfButtons.find((s) => STARTER_JODO_SHELVES.has(s.id));
+      if (firstStarter) chooseShelf(firstStarter.id);
+    } else if (nextTier === 'next' && STARTER_JODO_SHELVES.has(activeShelf)) {
+      const firstNext = shelfButtons.find((s) => !STARTER_JODO_SHELVES.has(s.id));
+      if (firstNext) chooseShelf(firstNext.id);
+    }
+    soundEffects.playStrokeChime();
+  };
+
   const handleSelectSearchResult = (match: BoardSearchMatch) => {
     if (playingRef.current) stopBoardPlayAll();
+    if (jodoShelfTier === 'starter' && !STARTER_JODO_SHELVES.has(match.shelfId)) {
+      setJodoShelfTier('next');
+    } else if (jodoShelfTier === 'next' && STARTER_JODO_SHELVES.has(match.shelfId)) {
+      setJodoShelfTier('starter');
+    }
     if (match.shelfId !== activeShelf) {
       setActiveShelf(match.shelfId);
     }
@@ -2332,8 +2363,39 @@ const Board: React.FC<BoardProps> = ({
       <div className="board-mark" aria-hidden="true">ॐ</div>
     </div>
 
+    {/* Progressive Jodo Shelf Level Switcher: Starter Shelves vs Next Level Shelves */}
+    <div className="jodo-level-filter-bar" role="tablist" aria-label="Choose Jodo Shelf Level">
+      <button
+        type="button"
+        role="tab"
+        aria-selected={jodoShelfTier === 'starter'}
+        className={`jodo-level-pill jodo-level-pill--starter${jodoShelfTier === 'starter' ? ' is-active' : ''}`}
+        onClick={() => switchJodoShelfTier('starter')}
+      >
+        🌱 Level 1 · Starter Shelves (Beginners, Things &amp; Nature)
+      </button>
+      <button
+        type="button"
+        role="tab"
+        aria-selected={jodoShelfTier === 'next'}
+        className={`jodo-level-pill jodo-level-pill--next${jodoShelfTier === 'next' ? ' is-active' : ''}`}
+        onClick={() => switchJodoShelfTier('next')}
+      >
+        🚀 Next Level Shelves (Map, Sanskriti, Nāda &amp; Vyākaraṇa)
+      </button>
+      <button
+        type="button"
+        role="tab"
+        aria-selected={jodoShelfTier === 'all'}
+        className={`jodo-level-pill${jodoShelfTier === 'all' ? ' is-active' : ''}`}
+        onClick={() => switchJodoShelfTier('all')}
+      >
+        🌟 All {shelfButtons.length} Shelves
+      </button>
+    </div>
+
     <nav className="wing-nav" aria-label="Shelves">
-      {shelfButtons.map((item) => (
+      {visibleShelfButtons.map((item) => (
         <button
           key={item.id}
           className={activeShelf === item.id ? 'wing-button active' : 'wing-button'}
@@ -2342,6 +2404,16 @@ const Board: React.FC<BoardProps> = ({
           {SHELF_DESCRIPTIONS[item.id]?.icon ? `${SHELF_DESCRIPTIONS[item.id].icon} ` : ''}{item.label}
         </button>
       ))}
+      {jodoShelfTier === 'starter' && (
+        <button
+          type="button"
+          className="wing-button wing-button--nextlevel"
+          onClick={() => switchJodoShelfTier('next')}
+          title="Explore Next Level Shelves: Map, Culture, Nāda-Patha & Vyākaraṇa Grammar"
+        >
+          🚀 Next Level Shelves ➔
+        </button>
+      )}
     </nav>
 
     <div className="board-puzzle-stage">
