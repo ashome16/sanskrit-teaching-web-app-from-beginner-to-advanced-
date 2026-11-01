@@ -19,9 +19,10 @@ export const PAID_FEATURE_GATE = {
   bannerBodyExpired:
     'Your free trial has ended. Pay ₹200 once via Razorpay to download or save worksheets, get answer keys, and submit online quizzes for an assessment report. No auto-debit.',
   bannerBodyGuest:
-    'Create an account or sign in to continue. Worksheet downloads, answer keys, and quiz assessment reports are part of full access.',
+    'Sign in to use this feature. New here? Creating an account is free — your 14-day trial starts right away, no payment needed.',
   ctaSubscribe: 'Pay ₹200 once',
-  ctaGuest: 'Sign In / Register',
+  ctaGuest: 'Sign in',
+  ctaGuestSecondary: 'Register free',
 } as const;
 
 export function paidFeatureGateBodyWithTrialEnd(trialEndsFormatted: string): string {

@@ -2278,7 +2278,7 @@ const Board: React.FC<BoardProps> = ({
     <div className="board-heading">
       <div>
         <p className="eyebrow">शब्द-निर्माण-क्रीडा · BUILD SANSKRIT WORDS</p>
-        <h2>जोडो · Tile Puzzle Studio</h2>
+        <h1>जोडो · Sanskrit Jodo Puzzle Studio</h1>
         <p>Blend sounds into words, solve puzzles, and discover daily Sanskrit vocabulary.</p>
       </div>
       <div className="board-mark" aria-hidden="true">ॐ</div>

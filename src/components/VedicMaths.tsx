@@ -293,7 +293,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
     if (onOpenRegister) {
       onOpenRegister();
     } else {
-      openAuthModal('register');
+      openAuthModal('login');
     }
   };
 
@@ -389,7 +389,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
       } else if (onOpenRegister) {
         onOpenRegister();
       } else {
-        openAuthModal('register');
+        openAuthModal('login');
       }
       return;
     }
@@ -427,7 +427,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
         <div style="border-bottom:2px solid #b45309; padding-bottom:1rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:flex-start;">
           <div>
             <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:#b45309; font-weight:800;">
-              EdNet Learn Gurukul · Vedic Mathematics
+              EdNet Gurukul · Vedic Mathematics
             </div>
             <h1 style="font-size:1.6rem; margin:0.35rem 0; color:#78350f;">
               ${escapeHtml(ws.titleSa)}
@@ -463,7 +463,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
         </div>
 
         <div style="margin-top:2.5rem; padding-top:1rem; border-top:1px solid #e5e7eb; font-size:0.8rem; color:#6b7280; text-align:center;">
-          EdNet Learn Gurukul Vedic Mathematics Practice Worksheets · care@ednetlearn.in · © ${new Date().getFullYear()}
+          EdNet Gurukul Vedic Mathematics Practice Worksheets · care@ednetlearn.in · © ${new Date().getFullYear()}
         </div>
       </div>
     `;
@@ -480,6 +480,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
 </style>
 </head>
 <body>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:0.75rem"><img src="https://ednetlearn.in/logo.jpg" alt="EdNet logo" width="48" height="48" style="border-radius:50%"/><strong style="color:#b3472f">EdNet Gurukul · ednetlearn.in</strong></div>
 ${bodyHtml}
 </body>
 </html>`;
@@ -924,7 +925,7 @@ ${bodyHtml}
           <p className="vedic-numbers-start">
             <span aria-hidden="true">🔢</span> New here?{' '}
             <a
-              href="/grammar"
+              href="/sanskrit-grammar"
               onClick={(e) => {
                 if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
                 e.preventDefault();

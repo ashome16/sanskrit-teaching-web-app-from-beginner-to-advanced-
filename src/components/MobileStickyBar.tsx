@@ -28,6 +28,12 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isVisible) document.body.classList.add('msb-visible');
+    else document.body.classList.remove('msb-visible');
+    return () => document.body.classList.remove('msb-visible');
+  }, [isVisible]);
+
   if (!isVisible) return null;
 
   return (

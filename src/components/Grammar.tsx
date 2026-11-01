@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { EXTRA_LESSON_QUESTIONS, LESSON_WORKSHEETS } from '../data/vyakaranaPractice';
 import { ARTICLES } from '../data/articleIndex';
 import { SANSKRIT_ARTICLE_META } from '../data/sanskritArticles';
 import { ARTICLE_KEY_WORDS } from '../data/articleKeyWords';
@@ -241,8 +242,27 @@ const LessonAudioPlayerBar: React.FC<LessonAudioPlayerBarProps> = ({ title, subt
 
     stopBodhiSpeech();
     setIsPlaying(true);
-    const stopFn = speakAsBodhi(speechText, {
-      lang: 'sa',
+    // Mostly-English articles (e.g. Sapta-varṇa) were being sent with lang 'sa', so the
+    // Sanskrit voice skipped/mangled English. Pick language by script and clean the text.
+    const devCount = (speechText.match(/[\u0900-\u097F]/g) || []).length;
+    const latinCount = (speechText.match(/[A-Za-z]/g) || []).length;
+    const useEnglish = latinCount > devCount * 2;
+    const spoken = useEnglish
+      ? speechText
+          .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+          .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+          .replace(/https?:\/\/\S+/g, ' ')
+          .replace(/[*_`#>]/g, '')
+          .replace(/[\u0900-\u097F\u200C\u200D]+/g, ' ')
+          .replace(/\(\s*[—–-]?\s*\)/g, ' ')
+          .replace(/ṛ/g, 'ri').replace(/Ṛ/g, 'Ri')
+          .replace(/ś|ṣ/g, 'sh').replace(/Ś|Ṣ/g, 'Sh')
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+          .replace(/\s*।\s*/g, '. ')
+          .replace(/\s+/g, ' ')
+      : speechText;
+    const stopFn = speakAsBodhi(spoken, {
+      lang: useEnglish ? 'en' : 'sa',
       onEnd: () => {
         setIsPlaying(false);
         stopFnRef.current = null;
@@ -288,7 +308,28 @@ const LessonAudioPlayerBar: React.FC<LessonAudioPlayerBarProps> = ({ title, subt
 };
 
 const renderArticleBlocks = (blocks: ArticleBlock[]) => {
+  // "portrait:" images pair with the following paragraph into a side-by-side person card.
+  const consumed = new Set<number>();
   return blocks.map((block, index) => {
+    if (consumed.has(index)) return null;
+    if (block.type === 'image' && block.alt.startsWith('portrait:')) {
+      const next = blocks[index + 1];
+      const bio = next && next.type === 'paragraph' ? next : null;
+      if (bio) consumed.add(index + 1);
+      const alt = block.alt.slice('portrait:'.length).trim();
+      const src = block.src.startsWith('http') || block.src.startsWith('/') ? block.src : `./${block.src}`;
+      return (
+        <div className="grammar-person-card" key={index}>
+          <figure className="grammar-person-figure">
+            <img src={src} alt={alt} className="grammar-person-image" loading="lazy" />
+            {block.caption && (
+              <figcaption className="grammar-person-caption">{renderRichArticleText(block.caption, `pcap-${index}`)}</figcaption>
+            )}
+          </figure>
+          {bio && <p className="grammar-person-bio">{renderRichArticleText(bio.text, `pbio-${index}`)}</p>}
+        </div>
+      );
+    }
     if (block.type === 'subheading') {
       return (
         <h3 key={index} className="grammar-article-subheading">
@@ -754,6 +795,36 @@ export const LESSON_QUIZZES: Record<string, LessonQuizInfo> = {
   },
 };
 
+Object.entries(EXTRA_LESSON_QUESTIONS).forEach(([id, qs]) => {
+  const info = LESSON_QUIZZES[id];
+  if (info && !info.questions.some((q) => q.q === qs[0].q)) info.questions.push(...qs);
+});
+
+const LessonWorksheetBox: React.FC<{ lessonId: string; lessonNumber: number }> = ({ lessonId, lessonNumber }) => {
+  const ws = LESSON_WORKSHEETS[lessonId];
+  const [showKey, setShowKey] = useState(false);
+  if (!ws) return null;
+  return (
+    <div className="grammar-lesson-quiz-box grammar-worksheet-box" id={`worksheet-${lessonId}`}>
+      <div className="ednet-print-brand"><img src="/logo.jpg" alt="EdNet logo" width={40} height={40} /><span>EdNet Gurukul · ednetlearn.in</span></div>
+      <h4 className="grammar-lesson-quiz-title">📝 अभ्यास-पत्रम् · Worksheet {lessonNumber}: {ws.titleSa} · {ws.title}</h4>
+      <ol>
+        {ws.tasks.map((t, i) => (
+          <li key={i} style={{ marginBottom: '0.6rem' }}>
+            <strong>{t.instruction}</strong>
+            {t.items.length > 0 && <ul>{t.items.map((it, j) => <li key={j}>{it}</li>)}</ul>}
+          </li>
+        ))}
+      </ol>
+      <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+        <button type="button" className="grammar-lesson-quiz-hub-btn" onClick={() => window.print()}>🖨️ मुद्रणम् · Print</button>
+        <button type="button" className="grammar-lesson-quiz-hub-btn" onClick={() => setShowKey((v) => !v)}>{showKey ? 'Hide' : 'उत्तराणि · Answer key'}</button>
+      </div>
+      {showKey && <ol style={{ marginTop: '0.6rem' }}>{ws.answerKey.map((a, i) => <li key={i}>{a}</li>)}</ol>}
+    </div>
+  );
+};
+
 const LessonInlineQuiz: React.FC<{
   quizInfo: LessonQuizInfo;
   onOpenFullQuiz?: (anchor?: string) => void;
@@ -877,6 +948,15 @@ const Grammar: React.FC<GrammarProps> = ({
   const [searchFilter, setSearchFilter] = useState('');
   const [articles, setArticles] = useState<Record<string, ParsedArticle>>({});
   const [articleError, setArticleError] = useState(false);
+  const [visitedLessons, setVisitedLessons] = useState<string[]>(() => {
+    try {
+      const raw = localStorage.getItem('vyakarana_visited_lessons');
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed.filter((x) => typeof x === 'string') : [];
+    } catch {
+      return [];
+    }
+  });
   const [activeSpokenWord, setActiveSpokenWord] = useState<string | null>(null);
   const [isExplanationSpeaking, setIsExplanationSpeaking] = useState(false);
   const [showEnglishExplanation, setShowEnglishExplanation] = useState(true);
@@ -962,6 +1042,12 @@ const Grammar: React.FC<GrammarProps> = ({
 
   const openLesson = (id: string) => {
     stopAllBodhiSpeech();
+    setVisitedLessons((prev) => {
+      if (prev.includes(id)) return prev;
+      const next = [...prev, id];
+      try { localStorage.setItem('vyakarana_visited_lessons', JSON.stringify(next)); } catch { /* ignore */ }
+      return next;
+    });
     setActiveLessonId(id);
     setActiveArticleId(null);
     setArticleError(false);
@@ -1250,6 +1336,10 @@ const Grammar: React.FC<GrammarProps> = ({
             <span className="grammar-lesson-num-pill">{activeLesson.titleSa}</span>
           </div>
           <h2 className="grammar-title" style={{ marginTop: '0.4rem' }}>{activeLesson.title}</h2>
+          <p className="grammar-lesson-sutra" lang="sa">
+            <span className="grammar-lesson-sutra-sa">“{activeLesson.sutraSa}”</span>
+            <span className="grammar-lesson-sutra-gloss">{activeLesson.sutraGloss}</span>
+          </p>
           <p className="grammar-lead">{activeLesson.summary}</p>
         </header>
 
@@ -1330,10 +1420,12 @@ const Grammar: React.FC<GrammarProps> = ({
         {/* Inline Lesson Quiz */}
         {LESSON_QUIZZES[activeLesson.id] && (
           <LessonInlineQuiz
+            key={activeLesson.id}
             quizInfo={LESSON_QUIZZES[activeLesson.id]}
             onOpenFullQuiz={onOpenQuiz}
           />
         )}
+        <LessonWorksheetBox lessonId={activeLesson.id} lessonNumber={activeLesson.lessonNumber} />
 
         {/* Suggested Practice Drill */}
         <div className="grammar-lesson-practice-box" style={{
@@ -1709,35 +1801,29 @@ const Grammar: React.FC<GrammarProps> = ({
 
   return (
     <section className="grammar-page" aria-label="Sanskrit Vyakaran Grammar">
-      <header className="grammar-page-header">
-        <h2 className="grammar-title">व्याकरणम् · Vyakaran (Grammar)</h2>
+      <header className="grammar-page-header grammar-hub-hero">
+        <span className="grammar-hub-kicker" lang="sa">॥ शब्दानुशासनम् ॥</span>
+        <h2 className="grammar-title"><span lang="sa" className="grammar-hub-title-sa">व्याकरणम्</span><span className="grammar-hub-title-en">Vyākaraṇa · Sanskrit Grammar</span></h2>
         <p className="grammar-lead">
-          A structured 10-lesson Sanskrit Vyakaran (Grammar) curriculum from phonetics to syntax, paired with interactive studios and scholarly masterclasses.
+          दश पाठाः — a structured 10-lesson journey from phonetics (वर्णाः) to syntax (वाक्यम्), with interactive studios and scholarly masterclasses.
         </p>
-        <aside className="grammar-meaning-note" aria-label="Meaning of Vyakarana" style={{
-          marginTop: '1.25rem',
-          padding: '1rem 1.4rem',
-          borderRadius: '14px',
-          background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.04) 100%)',
-          border: '1px solid rgba(217, 119, 6, 0.22)',
-          maxWidth: '820px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          textAlign: 'left',
-          fontSize: '0.94rem',
-          lineHeight: '1.6',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, color: '#b45309', marginBottom: '0.4rem', fontSize: '1rem' }}>
-            <span aria-hidden="true">💡</span>
-            <span>What does "Vyākaraṇa" (व्याकरणम् · Sanskrit Grammar) mean?</span>
+        <aside className="grammar-meaning-note grammar-hub-etym" aria-label="Meaning of Vyakarana">
+          <div className="grammar-hub-etym-head">
+            <span aria-hidden="true">ॐ</span>
+            <span>व्याकरणम् किम्? · What does "Vyākaraṇa" mean?</span>
           </div>
-          <p style={{ margin: '0 0 0.5rem 0', color: 'inherit' }}>
-            <strong>व्याक्रियन्ते व्युत्पाद्यन्ते शब्दाः अनेन इति व्याकरणम्</strong> — <em>Vyākaraṇa</em> literally means the <strong>scientific analysis, deconstruction, and grammatical derivation of words</strong> (from prefix <em>vi-</em> [distinction/separation] + <em>ā-</em> [completely] + root <em>kṛ</em> [to do/make] + suffix <em>lyuṭ</em>).
+          <p className="grammar-hub-etym-sloka" lang="sa">व्याक्रियन्ते व्युत्पाद्यन्ते शब्दाः अनेन इति व्याकरणम्</p>
+          <p className="grammar-hub-etym-body">
+            <em>Vyākaraṇa</em> is the <strong>scientific analysis and derivation of words</strong> — <em>vi-</em> (distinction) + <em>ā-</em> (completely) + root <em>kṛ</em> (to make) + suffix <em>lyuṭ</em>. Sanskrit words are generated from seed roots (<em>dhātu</em>) with systematic affixes (<em>pratyaya</em>).
           </p>
-          <p style={{ margin: 0, color: 'inherit', fontSize: '0.9rem', opacity: 0.95 }}>
-            Unlike languages where words are memorized as isolated static items, Sanskrit is generative: words are built like mathematical functions from indestructible seed roots (<em>dhātu</em>) using systematic affixes (<em>pratyaya</em>). As the ancient tradition proclaims: <strong>मुखं व्याकरणं स्मृतम्</strong> — <em>"Vyākaraṇa is the mouth of the Vedas,"</em> governing acoustic clarity and accurate meaning.
-          </p>
+          <p className="grammar-hub-etym-quote"><strong lang="sa">मुखं व्याकरणं स्मृतम्</strong> — <em>"Grammar is the mouth (initiation) of the Veda."</em></p>
+          <div className="grammar-vedangas"><h3 className="grammar-vedangas-title"><span lang="sa">षडङ्गानि वेदस्य</span> · The Six Limbs (Vedāṅgas)</h3><ul className="grammar-vedanga-list"><li className="grammar-vedanga"><span lang="sa" className="gv-sa">छन्दः</span><span className="gv-iast">Chandas</span><span className="gv-body">पादौ · Feet</span><span className="gv-role">Meter</span></li><li className="grammar-vedanga"><span lang="sa" className="gv-sa">कल्पः</span><span className="gv-iast">Kalpa</span><span className="gv-body">हस्तौ · Hands</span><span className="gv-role">Rituals</span></li><li className="grammar-vedanga"><span lang="sa" className="gv-sa">ज्योतिषम्</span><span className="gv-iast">Jyotiṣa</span><span className="gv-body">चक्षुषी · Eyes</span><span className="gv-role">Astronomy & time</span></li><li className="grammar-vedanga"><span lang="sa" className="gv-sa">निरुक्तम्</span><span className="gv-iast">Nirukta</span><span className="gv-body">श्रोत्रे · Ears</span><span className="gv-role">Etymology</span></li><li className="grammar-vedanga"><span lang="sa" className="gv-sa">शिक्षा</span><span className="gv-iast">Śikṣā</span><span className="gv-body">घ्राणम् · Nose</span><span className="gv-role">Phonetics & pronunciation</span></li><li className="grammar-vedanga is-focus"><span lang="sa" className="gv-sa">व्याकरणम्</span><span className="gv-iast">Vyākaraṇa</span><span className="gv-body">मुखम् · Mouth</span><span className="gv-role">Grammar — to articulate; initiation</span></li></ul></div>
+          <div className="grammar-why-mouth"><h3 className="grammar-vedangas-title"><span lang="sa">किमर्थं मुखम्?</span> · Why is Grammar the Mouth?</h3><ol>
+            <li><strong><span lang="sa">उच्चारणम्</span> · Speech &amp; articulation</strong> — without grammar one cannot properly utter, analyse or communicate the Vedic mantras.</li>
+            <li><strong><span lang="sa">अर्थरक्षा</span> · Preserving exact meaning</strong> — grammar breaks words into <span lang="sa">धातु</span> (<em>dhātu</em>, root) and <span lang="sa">प्रत्यय</span> (<em>pratyaya</em>, suffix), so sound, accent and meaning stay exact across generations.</li>
+            <li><strong><span lang="sa">त्रिमुनि</span> · The Trīmuni</strong> — <span lang="sa">पाणिनिः</span> Pāṇini (<em>Aṣṭādhyāyī</em>), <span lang="sa">कात्यायनः</span> Kātyāyana and <span lang="sa">पतञ्जलिः</span> Patañjali.</li>
+          </ol></div>
+          <p className="grammar-reference"><a href="https://www.indica.today/long-reads/vyakarana-as-the-mukham-of-the-veda/" target="_blank" rel="noopener noreferrer"><span lang="sa">सन्दर्भः</span> · Reference · Indica: Vyākaraṇa as the Mukham of the Veda ↗</a></p>
         </aside>
       </header>
 
@@ -1909,6 +1995,27 @@ const Grammar: React.FC<GrammarProps> = ({
       {/* Course Track: 10 Lessons in 4 Modules */}
       {!qClean && courseViewTab === 'course' && (
         <div className="grammar-course-overview">
+          {(() => {
+            const done = VYAKARANA_LESSONS.filter((l) => visitedLessons.includes(l.id)).length;
+            const nextUp = VYAKARANA_LESSONS.find((l) => !visitedLessons.includes(l.id));
+            return (
+              <div className="grammar-course-progress" aria-label={`${done} of ${VYAKARANA_LESSONS.length} lessons opened`}>
+                <div className="grammar-course-progress-text">
+                  <span className="grammar-course-progress-sa" lang="sa">अध्ययन-प्रगतिः · Your Progress</span>
+                  <span className="grammar-course-progress-count">{done} / {VYAKARANA_LESSONS.length} पाठाः</span>
+                </div>
+                <div className="grammar-course-progress-track">
+                  <div className="grammar-course-progress-fill" style={{ width: `${(done / VYAKARANA_LESSONS.length) * 100}%` }} />
+                </div>
+                {nextUp && (
+                  <button type="button" className="grammar-course-progress-next" onClick={() => openLesson(nextUp.id)}>
+                    {done === 0 ? 'आरभ्यताम् · Begin' : 'अग्रे पठ · Continue'}: पाठः {nextUp.lessonNumber} — {nextUp.titleSa} →
+                  </button>
+                )}
+                {!nextUp && <span className="grammar-course-progress-done" lang="sa">✓ सर्वे पाठाः पठिताः — all lessons opened</span>}
+              </div>
+            );
+          })()}
           {VYAKARANA_MODULES.map((module) => {
             const moduleLessons = VYAKARANA_LESSONS.filter((l) => module.lessonIds.includes(l.id));
             return (
@@ -1939,10 +2046,13 @@ const Grammar: React.FC<GrammarProps> = ({
                     >
                       <div>
                         <div className="grammar-lesson-card-top">
-                          <span className="grammar-lesson-num-pill">Lesson {lesson.lessonNumber}</span>
+                          <span className="grammar-lesson-num-pill">पाठः {lesson.lessonNumber} · Lesson {lesson.lessonNumber}</span>
+                          {visitedLessons.includes(lesson.id) && <span className="grammar-lesson-visited" title="Opened">✓ पठितम्</span>}
                           <span className="grammar-lesson-card-emoji">{lesson.emoji}</span>
                         </div>
+                        <span className="grammar-lesson-card-title-sa" lang="sa">{lesson.titleSa}</span>
                         <h4 className="grammar-lesson-card-title">{lesson.title}</h4>
+                        <p className="grammar-lesson-card-sutra" lang="sa">“{lesson.sutraSa}” <em>— {lesson.sutraGloss}</em></p>
                         <p className="grammar-lesson-card-desc">{lesson.summary}</p>
                         <div className="grammar-lesson-card-tags">
                           {lesson.keyConcepts.slice(0, 3).map((tag, tIdx) => (
@@ -1951,7 +2061,18 @@ const Grammar: React.FC<GrammarProps> = ({
                         </div>
                       </div>
                       <div className="grammar-lesson-card-cta">
-                        <span>Start Lesson →</span>
+                        <span>{visitedLessons.includes(lesson.id) ? 'पुनः पठ · Review →' : 'आरभस्व · Start Lesson →'}</span>
+                        <span
+                          className="grammar-lesson-quiz-link-badge"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openLesson(lesson.id);
+                            setTimeout(() => document.getElementById(`worksheet-${lesson.id}`)?.scrollIntoView({ behavior: 'smooth' }), 600);
+                          }}
+                          title={`Worksheet for ${lesson.title}`}
+                        >
+                          📝 अभ्यास-पत्रम् · Worksheet
+                        </span>
                         {onOpenQuiz && (
                           <span
                             className="grammar-lesson-quiz-link-badge"

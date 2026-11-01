@@ -81,7 +81,7 @@ export const BodhiMentorPositioning: React.FC<BodhiMentorPositioningProps> = ({
       {/* Clear Architectural Definition */}
       <p className="bodhi-pos-lead">
         Bodhi is <strong>not an unconstrained generic chatbot</strong> that fabricates answers, nor is it an automated substitute for school teachers. 
-        Bodhi is a <strong>hybrid Gurukul companion</strong> designed around three transparent tiers: an <strong>interactive guided lesson flow</strong> on every page, <strong>grounded AI retrieval</strong> locked to Pāṇinian grammar rules, and <strong>human Sanskrit Acharya escalation</strong> for subjective evaluations.
+        Bodhi is a <strong>hybrid Gurukul companion</strong> designed around three transparent tiers: an <strong>interactive guided lesson flow</strong> on every page, <strong>grounded AI retrieval</strong> locked to Pāṇinian grammar rules, and a <strong>learner care desk</strong> (care@ednetlearn.in) for account and site help.
       </p>
 
       {/* 2. Interactive Navigation Tabs */}
@@ -310,7 +310,7 @@ export const BodhiMentorPositioning: React.FC<BodhiMentorPositioningProps> = ({
             <span className="bodhi-safeguard-icon" aria-hidden="true">👨‍🏫</span>
             <h3 className="bodhi-safeguard-title">Human-in-the-Loop Escalation</h3>
             <p className="bodhi-safeguard-desc">
-              Automated tools provide instant 24/7 practice, but human Acharyas remain at the heart of the Gurukul. Any doubt, handwritten essay, or CBSE board question can be escalated directly to human educators on WhatsApp at +91 9000335468.
+              Bodhi provides instant 24/7 self-paced practice grounded in verified sources. For account or technical help, write to care@ednetlearn.in.
             </p>
           </div>
         </div>
@@ -348,16 +348,6 @@ export const BodhiMentorPositioning: React.FC<BodhiMentorPositioningProps> = ({
             </button>
           )}
         </div>
-
-        <a
-          href="https://wa.me/919000335468?text=Hello%20Gurukul%2C%20I%20have%20a%20question%20for%20the%20human%20Sanskrit%20Acharyas"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bodhi-pos-cta-btn bodhi-pos-cta-btn--whatsapp"
-          title="Direct WhatsApp Mentor Desk (+91 9000335468)"
-        >
-          <span>💬</span> Chat with Human Acharya (WhatsApp: 9000335468)
-        </a>
       </div>
     </section>
   );

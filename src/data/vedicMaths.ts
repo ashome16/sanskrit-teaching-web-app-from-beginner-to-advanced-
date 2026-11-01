@@ -276,7 +276,7 @@ export const GURU_PARAMPARA: GuruParamparaMember[] = [
   },
   {
     id: 'modern-gurukuls',
-    name: 'Modern Researchers & EdNet Learn Gurukul',
+    name: 'Modern Researchers & EdNet Gurukul',
     sanskritName: 'आधुनिक-संशोधकाः एवं एडनेट लर्न गुरुकुलम्',
     role: 'Digital Educators, Computer Architects & Cryptography Engineers',
     period: '21st Century · Today',
@@ -1829,7 +1829,7 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
           '• Manjula Trivedi: As Swamiji’s devoted disciple, she lovingly transcribed his final dictations, took meticulous care of the sole surviving manuscript, and ensured its publication in 1965 through the Motilal Banarsidass publishers.',
           '• Dr. Narinder Puri: A prominent disciple and former professor of Civil Engineering at the University of Roorkee, Dr. Puri was instrumental in taking Vedic Mathematics from religious hermitages to mainstream academic lecture halls during the 1980s.',
           '• The Global Expansionists: Scholars like Kenneth Williams and James Glover from the UK encountered this knowledge and integrated it into schools globally, showing that the system transcended geographical and cultural boundaries.',
-          '• Modern Indian Researchers & Digital Gurukuls: Visionaries and math educators continue to expand the system, writing textbook series and launching digital platforms (like EdNet Learn Gurukul) to train millions of students and teachers worldwide.'
+          '• Modern Indian Researchers & Digital Gurukuls: Visionaries and math educators continue to expand the system, writing textbook series and launching digital platforms (like EdNet Gurukul) to train millions of students and teachers worldwide.'
         ]
       }
     ],

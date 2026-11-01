@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import { soundEffects } from '../utils/soundEffects';
 import '../styles/chitra-kavya-card.css';
+import { DESIKA_MATRIX, TOUR_POSITIONS, isKnightJump, ChitraVerseDiagram } from './TurangaBandhaChessboard';
 
 export interface ChitraKavyaPathwayCardProps {
   onOpenScienceLab?: (segment?: string) => void;
+  onOpenTurangaBandha?: () => void;
   onOpenGrammar?: () => void;
   onOpenCourse?: () => void;
-}
-
-interface TourStep {
-  r: number;
-  c: number;
-  step: number;
-  char: string;
 }
 
 const VERSE_929_GRID = [
@@ -22,43 +17,45 @@ const VERSE_929_GRID = [
   ['र', 'ङ्ग', 'रा', 'ज', 'प', 'दं', 'न', 'य'],
 ];
 
-// The first 8 moves forming the opening hemistich of Verse 930: "स्थिता समयराजत्पा..."
-const TOUR_STEPS: TourStep[] = [
-  { r: 0, c: 0, step: 1, char: 'स्थि' },
-  { r: 1, c: 2, step: 2, char: 'ता' },
-  { r: 2, c: 4, step: 3, char: 'स' },
-  { r: 1, c: 6, step: 4, char: 'म' },
-  { r: 3, c: 7, step: 5, char: 'य' },
-  { r: 3, c: 1, step: 6, char: 'रा' },
-  { r: 3, c: 3, step: 7, char: 'जत्' },
-  { r: 2, c: 1, step: 8, char: 'पा' },
-];
+// First 8 jumps of Deśika's tour → opening quarter of Verse 930: "स्थिता समयराजत्पा"
+const MINI_GOAL = 8;
+const DECODED_8 = ['स्थि', 'ता', 'स', 'म', 'य', 'रा', 'जत्', 'पा'];
 
 export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
-  onOpenScienceLab,
+  onOpenTurangaBandha,
 }) => {
-  const [currentStepIdx, setCurrentStepIdx] = useState(0);
+  const [collected, setCollected] = useState(1); // horse starts on square 1 (स्थि)
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const activeStep = TOUR_STEPS[currentStepIdx];
-
-  const handleNextStep = () => {
-    soundEffects.playPuzzleSnap();
-    setCurrentStepIdx((prev) => (prev + 1) % TOUR_STEPS.length);
-  };
+  const [msg, setMsg] = useState<{ ok: boolean | null; text: string }>({ ok: null, text: 'Tap where the horse ♞ jumps next (look for the dotted squares).' });
+  const [misses, setMisses] = useState(0);
+  const won = collected >= MINI_GOAL;
+  const here = TOUR_POSITIONS[collected - 1];
+  const target = TOUR_POSITIONS[collected];
 
   const handleReset = () => {
     soundEffects.playPuzzleSnap();
-    setCurrentStepIdx(0);
+    setCollected(1);
+    setMisses(0);
+    setMsg({ ok: null, text: 'Tap where the horse ♞ jumps next (look for the dotted squares).' });
   };
 
   const handleCellClick = (r: number, c: number) => {
-    const matchIdx = TOUR_STEPS.findIndex((s) => s.r === r && s.c === c);
-    if (matchIdx !== -1) {
+    if (won) return;
+    if (r === target.row && c === target.col) {
       soundEffects.playSuccessDing();
-      setCurrentStepIdx(matchIdx);
+      const n = collected + 1;
+      setCollected(n);
+      setMisses(0);
+      setMsg({ ok: true, text: n >= MINI_GOAL ? '🎉 You did it!' : `✅ Yes! You got “${DECODED_8[n - 1]}”. Find the next jump!` });
     } else {
       soundEffects.playPuzzleSnap();
+      setMisses((m) => m + 1);
+      setMsg({
+        ok: false,
+        text: isKnightJump(here, { row: r, col: c })
+          ? '🤏 Good L-jump, but the poet’s horse went to another dotted square. Try again!'
+          : '❌ The horse only jumps in an L: 2 squares, then 1 sideways.',
+      });
     }
   };
 
@@ -79,59 +76,43 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
               </div>
 
               <h3 className="ck-title">
-                Chitra-Kavya: The Art of Visual Sanskrit Puzzles
+                Two Poems in One: The Horse Puzzle (Chitra-Kāvya)
               </h3>
               <p className="ck-sanskrit-sub">
-                चित्र-काव्यम् · Verses Shaped into Sacred Geometry, Lotuses &amp; Puzzle Grids
+                तुरङ्गबन्धः · Read the rows → Verse 929 · Follow the horse ♞ → Verse 930
               </p>
               <p className="ck-desc">
-                In classical Sanskrit, poets arranged letters into geometric pictures—sculpting words into blooming lotuses (पद्म), temple wheels (चक्र), and interlocking puzzle grids. Reading along these geometric paths unlocks hidden prayers, like the famous 14th-century &ldquo;Knight&rsquo;s Move&rdquo; puzzle below, where following a chess knight&rsquo;s path through <strong>Verse 929</strong> reveals the secret <strong>Verse 930</strong>!
+                <strong>For kids:</strong> Long ago, Sanskrit poets hid a <em>second poem</em> inside a first one. Put the letters on a chessboard, let the chess horse jump in L-shapes, and the letters it lands on make a new poem! Can you follow the horse?
+              </p>
+              <p className="ck-desc" style={{ fontSize: '0.8rem', opacity: 0.85 }}>
+                Same letters, new verse: hop the horse&rsquo;s L-jump through <strong>Verse 929</strong> to read <strong>Verse 930</strong> (वही अक्षर · अश्व की L-चाल · <strong>श्लोक ९२९ → ९३०</strong>).
               </p>
 
-              {/* Interactive Move Stepper */}
               <div className="ck-stepper-box">
                 <div className="ck-stepper-header">
                   <span className="ck-stepper-label">
-                    ♞ Move {activeStep.step} of 8: Jump to [{activeStep.char}]
+                    🎯 Goal: help the horse make {MINI_GOAL - 1} jumps · {collected} / {MINI_GOAL} syllables
                   </span>
                   <div className="ck-stepper-controls">
-                    <button
-                      type="button"
-                      className="ck-stepper-btn"
-                      onClick={handleReset}
-                      title="Reset to step 1"
-                    >
-                      ↺ Reset
-                    </button>
-                    <button
-                      type="button"
-                      className="ck-stepper-btn"
-                      onClick={handleNextStep}
-                      title="Advance to next knight jump"
-                    >
-                      Next Jump ➔
-                    </button>
+                    <button type="button" className="ck-stepper-btn" onClick={handleReset} title="Start over">↺ Start over</button>
                   </div>
                 </div>
-
+                <p className={`ck-feedback ${msg.ok === true ? 'ok' : msg.ok === false ? 'bad' : ''}`} aria-live="polite">
+                  {won ? '🎉 विजयः! You decoded “स्थिता समयराजत्पा” — the first line of a hidden poem! Play the full game to find all 32.' : msg.text}
+                  {!won && misses >= 2 && ' 💡 Hint: the yellow square.'}
+                </p>
+                <p style={{ fontSize: '0.82rem', margin: '0.4rem 0', color: '#475569' }}>
+                  📖 <strong>The board (Verse 929) means:</strong> “O holy Sandals, please take me to the feet of Lord Raṅganātha.”
+                  {won ? <><br />🔓 <strong>The secret poem (Verse 930) means:</strong> “The holy Sandals shine with gold and jewels, and they cool away the heat of our troubles.”</> : collected >= 4 ? <><br />🔒 Secret-poem clue: it is also about the holy Sandals — and how they shine!</> : null}
+                </p>
+                {won && <ChitraVerseDiagram steps={MINI_GOAL} />}
                 <div className="ck-trail-text">
-                  <span>Decoded: </span>
-                  {TOUR_STEPS.map((s, idx) => {
-                    const isPassed = idx <= currentStepIdx;
-                    const isCurrent = idx === currentStepIdx;
-                    return (
-                      <span
-                        key={idx}
-                        className={`ck-trail-chip ${isCurrent ? 'current' : ''}`}
-                        style={{ opacity: isPassed ? 1 : 0.35 }}
-                      >
-                        {s.char}
-                      </span>
-                    );
-                  })}
-                  <span style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: 600 }}>
-                    ➔ &ldquo;स्थिता समयराजत्पा...&rdquo;
-                  </span>
+                  <span>Secret line: </span>
+                  {DECODED_8.map((ch, idx) => (
+                    <span key={idx} className={`ck-trail-chip ${idx === collected - 1 ? 'current' : ''}`} style={{ opacity: idx < collected ? 1 : 0.25 }}>
+                      {idx < collected ? ch : '?'}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -143,13 +124,11 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
                 className="ck-btn-primary"
                 onClick={() => {
                   soundEffects.playSuccessDing();
-                  if (onOpenScienceLab) {
-                    onOpenScienceLab('chandahshastra');
-                  }
+                  onOpenTurangaBandha?.();
                 }}
-                title="Open the interactive Chitra-Kavya & Chandas Lab in Vijñāna Lab"
+                title="Play the interactive Chitra-Kāvya knight's-tour board (Turaṅga-Bandha)"
               >
-                🎮 Play Chitra-Kavya in Vijñāna Lab ▶
+                🎮 Play the full game (32 squares) ▶
               </button>
 
               <button
@@ -158,7 +137,7 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
                 onClick={() => setIsModalOpen(true)}
                 title="View full verse breakdown, Sanskrit meaning, and historical analysis"
               >
-                📜 Learn How Chitra-Kavya Works
+                📜 How does it work?
               </button>
             </div>
           </div>
@@ -179,35 +158,37 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
               {VERSE_929_GRID.map((row, r) =>
                 row.map((char, c) => {
                   const isLight = (r + c) % 2 === 0;
-                  const stepMatch = TOUR_STEPS.find((s) => s.r === r && s.c === c);
-                  const isCurrent = activeStep.r === r && activeStep.c === c;
-                  const isVisited = stepMatch && stepMatch.step <= activeStep.step;
+                  const step = DESIKA_MATRIX[r][c];
+                  const isCurrent = !won && here.row === r && here.col === c;
+                  const isVisited = step <= collected;
+                  const canJump = !won && step > collected && isKnightJump(here, { row: r, col: c });
+                  const isHint = !won && misses >= 2 && target.row === r && target.col === c;
 
                   let cellClass = `ck-cell ${isLight ? 'light' : 'dark'}`;
                   if (isCurrent) cellClass += ' active-step';
                   else if (isVisited) cellClass += ' visited-step';
+                  if (canJump) cellClass += ' can-jump';
+                  if (isHint) cellClass += ' hint-step';
 
                   return (
-                    <div
+                    <button
+                      type="button"
                       key={`${r}-${c}`}
                       className={cellClass}
                       onClick={() => handleCellClick(r, c)}
-                      title={`Row ${r + 1}, Col ${c + 1}: ${char}${stepMatch ? ` (Knight Step #${stepMatch.step})` : ''}`}
+                      aria-label={`Row ${r + 1}, column ${c + 1}: ${char}`}
                     >
                       <span className="ck-cell-char">{char}</span>
-                      {stepMatch && (
-                        <span className="ck-cell-step">
-                          {isCurrent ? '♞' : `#${stepMatch.step}`}
-                        </span>
-                      )}
-                    </div>
+                      {isCurrent && <span className="ck-cell-step">♞</span>}
+                      {!isCurrent && isVisited && <span className="ck-cell-step">#{step}</span>}
+                    </button>
                   );
                 })
               )}
             </div>
 
             <div className="ck-board-footer">
-              <span>Tap squares to follow the path</span>
+              <span>• = squares the horse can jump to</span>
               <span>Verse 929 ➔ Reveals Verse 930</span>
             </div>
 
@@ -269,6 +250,17 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
               className="pvs-modal-img"
             />
 
+            <div style={{ background: '#fff7ed', border: '2px solid #f59e0b', borderRadius: '12px', padding: '1rem' }}>
+              <h4 style={{ margin: '0 0 0.4rem', color: '#9a3412', fontSize: '1rem', fontWeight: 800 }}>🧒 How to play · कथं क्रीडामः?</h4>
+              <ul style={{ margin: 0, paddingLeft: '1.1rem', fontSize: '0.88rem', color: '#431407', lineHeight: 1.6 }}>
+                <li><strong>चित्रकाव्यम् (picture poetry):</strong> a poem whose letters are arranged in a picture or grid.</li>
+                <li><strong>तुरङ्गबन्धः (the horse puzzle):</strong> the chess horse jumps in an L (2 squares + 1 sideways). Reading the letters it lands on gives a second poem!</li>
+                <li><strong>Step 1:</strong> Look at the board — it holds Verse 929, row by row.</li>
+                <li><strong>Step 2:</strong> Tap the square where the horse jumps next (dotted squares are possible L-jumps).</li>
+                <li><strong>Step 3:</strong> Keep collecting syllables until the secret Verse 930 appears!</li>
+              </ul>
+            </div>
+
             {/* Introductory Explanation of Chitra-Kavya */}
             <div style={{ background: '#fdfbf7', border: '1px solid #ebdcc5', borderRadius: '12px', padding: '1.15rem' }}>
               <h4 style={{ margin: '0 0 0.5rem', color: '#78350f', fontSize: '1rem', fontWeight: 800 }}>
@@ -323,7 +315,7 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
                 Hidden Verse 930 (Unlocked by Knight&rsquo;s L-Shaped Jumps):
               </h4>
               <p style={{ fontFamily: "'Noto Sans Devanagari', serif", fontWeight: 700, margin: '0 0 0.35rem', color: '#14532d' }}>
-                स्थिता समयराजत्पा गतरामादके गवि ।<br />
+                स्थिता समयराजत्पा गताऽऽमदके गवि ।<br />
                 दुरंहसां सन्नतादा साध्या तापकरासरा ॥ ९३० ॥
               </p>
               <p style={{ fontSize: '0.8rem', color: '#166534', margin: 0, lineHeight: 1.45 }}>
@@ -354,17 +346,17 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
               >
                 Close
               </button>
-              {onOpenScienceLab && (
+              {onOpenTurangaBandha && (
                 <button
                   type="button"
                   onClick={() => {
                     setIsModalOpen(false);
-                    onOpenScienceLab('chandahshastra');
+                    onOpenTurangaBandha();
                   }}
                   className="ck-btn-primary"
                   style={{ padding: '0.5rem 1.15rem', fontSize: '0.85rem' }}
                 >
-                  Open in Vijñāna Lab ➔
+                  Play Knight’s Tour ➔
                 </button>
               )}
             </div>

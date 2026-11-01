@@ -725,7 +725,7 @@ export const SanskritAssignmentEvaluator: React.FC<SanskritAssignmentEvaluatorPr
               <div className="sae-ps-brand">
                 <img src="/logo.jpg" alt="EdNet Gurukul Crest" className="sae-ps-logo" />
                 <div>
-                  <h3 className="sae-ps-school-name">EdNet Learn Gurukul</h3>
+                  <h3 className="sae-ps-school-name">EdNet Gurukul</h3>
                   <div className="sae-ps-school-sub">
                     CBSE Board Exam Curriculum · Sanskrit &amp; Vedic Studies Research Wing
                   </div>
@@ -833,7 +833,7 @@ export const SanskritAssignmentEvaluator: React.FC<SanskritAssignmentEvaluatorPr
               </div>
               <div className="sae-ps-sig-block">
                 <div style={{ fontSize: '0.85rem', color: '#b45309', fontWeight: 800 }}>[ गुरुकुल-परीक्षा-मुद्रा ]</div>
-                <div className="sae-ps-sig-line">EdNet Learn Gurukul Seal</div>
+                <div className="sae-ps-sig-line">EdNet Gurukul Seal</div>
               </div>
               <div className="sae-ps-sig-block">
                 <div className="sae-ps-sig-line">प्रधानाचार्यस्य हस्ताक्षरम्<br />(Principal / Academic Head)</div>

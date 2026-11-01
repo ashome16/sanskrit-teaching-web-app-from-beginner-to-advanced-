@@ -6,7 +6,7 @@ import { playPronunciation, stopPronunciation } from '../utils/pronunciation';
 
 /**
  * Swar Review Practice: extra practice for the Review test on pp. 23–24 of
- * Swar · स्वर — Sanskrit Workbook (the p. 24 QR code opens ednetlearn.in/quiz/).
+ * Swar · स्वर — Sanskrit Workbook (the p. 24 QR code opens ednetlearn.in/sanskrit-quiz/).
  * Every item comes from the book; instant feedback after each answer.
  */
 

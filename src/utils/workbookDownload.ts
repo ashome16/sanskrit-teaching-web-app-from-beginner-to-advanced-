@@ -22,7 +22,7 @@ export type WorkbookFile =
 export function downloadWorkbook(file: WorkbookFile): boolean {
   const { currentUser, isAdminLoggedIn, openAuthModal, openPaymentModal } = useAuthStore.getState();
   if (!canDownloadContent(currentUser, isAdminLoggedIn)) {
-    if (getDownloadGateReason(currentUser, isAdminLoggedIn) === 'guest') openAuthModal('register');
+    if (getDownloadGateReason(currentUser, isAdminLoggedIn) === 'guest') openAuthModal('login');
     else openPaymentModal('unlock_paid_features');
     return false;
   }

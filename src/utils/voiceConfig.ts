@@ -189,6 +189,7 @@ export const scoreVoiceForRole = (v: SpeechSynthesisVoice, role: VoiceRole): num
     if (/swara/i.test(name)) score += 40;
     if (/lekha/i.test(name)) score += 35;
     if (/samantha|daniel/i.test(name)) score += 30;
+    if (/neerja|prabhat/i.test(name)) score += 50;
   }
 
   return score;

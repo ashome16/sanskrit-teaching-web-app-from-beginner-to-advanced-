@@ -3,7 +3,6 @@ import type { LabSegmentId } from './common';
 import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
 import '../../styles/mission-control.css';
-import { MissionControlDashboard } from './MissionControlDashboard';
 import { ScienceSparkModal } from './ScienceSparkModal';
 import { ParentNotesModal } from './ParentNotesModal';
 import { HowToPlayModal } from './HowToPlayModal';
@@ -35,6 +34,7 @@ const ChandahshastraLab = lazy(() => import('./ChandahshastraLab'));
 const UjjainGeodesyStudio = lazy(() => import('../UjjainGeodesyStudio'));
 const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 import { BodhiWisdomCard } from '../BodhiWisdomCard';
+import { RISHI_QUESTS } from './rishiQuests';
 import { QuestDirectoryModal } from './QuestDirectoryModal';
 
 export type LabCategory = 'all' | 'matter' | 'cosmos' | 'life' | 'waves';
@@ -61,45 +61,23 @@ export interface LabSegmentConfig {
 }
 
 const LAB_SEGMENTS: LabSegmentConfig[] = [
-  // 0. Preschool Wonder Zone (Ages 2–6)
   {
     id: 'preschool-wonder',
     code: 'PRE-01',
-    icon: '🧸',
+    icon: '🌟',
     dev: 'शिशु-क्रीडा-वाटिका',
-    title: 'Preschool Wonder Playground',
-    subject: 'Shapes, Colors, Animals, Fruits, Counting, Bells, Moon & Story',
+    title: 'Wonder Playground',
+    subject: 'Living Map of India, Shapes, Colors, Animals, Counting, Bells & Stories',
     school: 'बाल-संस्कृत-प्रज्ञा (Ages 2–6)',
     category: 'life',
     level: 'preschool',
-    levelLabel: 'Preschool & Kindergarten',
-    levelDev: 'शिशु-कक्षा',
-    ageRange: 'Ages 2–6 · Toddlers & Little Explorers',
-    gameType: '11 Tactile Preschool Wonder Games',
-    blurb: 'Gentle hands-on playground for toddlers: Shapes, Rainbow Color Mixing, Animal Safari Sounds, Orchard Fruit Picker, Count 1-10 with Sacred Friends, Sacred Instruments, Moon Phases, Day Routine, Seasons, Divine Vāhanas, and the 5 Friends bilingual story!',
+    levelLabel: 'Wonder Playground',
+    levelDev: 'शिशु-क्रीडा',
+    ageRange: 'Ages 2–6',
+    gameType: 'Play 2 Learn · 24 games',
+    blurb: 'Joyful hands-on playground for toddlers & preschoolers: Living Map of Bhārata (India Quest & Sounds), 7-Seas World Map, Shapes, Rainbow Color Mixing, Animal Safari, Fruit Orchard, Count 1–10, Sacred Instruments, Moon Phases, Yoga Poses, Festivals, Divine Vāhanas, and illustrated stories!',
     tint: 'rgba(245, 158, 11, 0.16)',
     ink: '#fbbf24',
-    glow: '#f59e0b',
-  },
-
-  // 1. Matter & The Elementary Crucible
-  {
-    id: 'paramanu',
-    code: 'SEC-01',
-    icon: '⚛️',
-    dev: 'परमाणु-निर्माणम् · Vaiśeṣika',
-    title: 'Atom Builder: Make Matter!',
-    subject: 'Atomic Crucible',
-    school: 'Vaiśeṣika (वैशेषिक)',
-    category: 'matter',
-    level: 'middle',
-    levelLabel: 'Middle School',
-    levelDev: 'माध्यमिक',
-    ageRange: 'Grades 6–8 · Ages 11–14',
-    gameType: 'Atomic Molecule Builder Game',
-    blurb: 'Forge matter from the smallest building blocks. Pair raw Paramāṇus into a Dvyaṇuka, then join three Dvyaṇukas into a Tryaṇuka, the first visible speck of reality.',
-    tint: 'rgba(245, 158, 11, 0.12)',
-    ink: '#fde047',
     glow: '#f59e0b',
   },
   {
@@ -112,17 +90,15 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     school: 'Andha-Mūṣā Crucible (रसशास्त्र)',
     category: 'matter',
     level: 'primary',
-    levelLabel: 'Primary School',
+    levelLabel: 'Primary Explorers',
     levelDev: 'प्रारम्भिक',
-    ageRange: 'Grades 3–5 · Ages 8–10',
+    ageRange: 'Ages 8–10',
     gameType: 'Mass Conservation Game',
     blurb: 'Fire up the Viveka Scanner to look past everyday illusion (Asat) and see the invariant atoms underneath (Sat). Melt, boil and burn, and mass remains 100.000g constant.',
     tint: 'rgba(234, 179, 8, 0.12)',
     ink: '#fde047',
     glow: '#eab308',
   },
-
-  // 2. Biology & Life Systems (All Biology Labs Sequenced Together!)
   {
     id: 'prakriti',
     code: 'SEC-03',
@@ -132,10 +108,10 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     subject: 'Cellular Homeostasis',
     school: 'Tridoṣa Engine (आयुर्वेद)',
     category: 'life',
-    level: 'middle',
-    levelLabel: 'Middle School',
-    levelDev: 'माध्यमिक',
-    ageRange: 'Grades 6–8 · Ages 11–14',
+    level: 'primary',
+    levelLabel: 'Primary Explorers',
+    levelDev: 'प्रारम्भिक',
+    ageRange: 'Ages 6–10',
     gameType: 'Biosphere Ecosystem Game',
     blurb: 'Elemental survival sandbox. Control the seasons, heat and moisture to bring Vāta, Pitta and Kapha into dynamic balance with real-time Nāḍī waveform feedback.',
     tint: 'rgba(16, 185, 129, 0.12)',
@@ -152,17 +128,15 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     school: 'Vṛkṣāyurveda & J.C. Bose',
     category: 'life',
     level: 'primary',
-    levelLabel: 'Primary School',
+    levelLabel: 'Primary Explorers',
     levelDev: 'प्रारम्भिक',
-    ageRange: 'Grades 3–5 · Ages 8–11',
+    ageRange: 'Ages 8–10',
     gameType: 'Animal & Plant Taxonomy Game',
     blurb: 'Ancient 4-fold taxonomy engine paired with Sir J.C. Bose’s plant galvanometer probe, tracking real-time microvolt action potentials to electrical and tactile stimuli.',
     tint: 'rgba(249, 115, 22, 0.12)',
     ink: '#fb923c',
     glow: '#f97316',
   },
-
-  // 3. Cosmos & Planetary Motion
   {
     id: 'jyotisha',
     code: 'SEC-05',
@@ -173,14 +147,52 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     school: 'Āryabhaṭīya (खगोल-शास्त्र)',
     category: 'cosmos',
     level: 'primary',
-    levelLabel: 'Primary School',
+    levelLabel: 'Primary Explorers',
     levelDev: 'प्रारम्भिक',
-    ageRange: 'Grades 3–6 · Ages 8–12',
+    ageRange: 'Ages 8–10',
     gameType: 'Orbital Gravity Sandbox Game',
     blurb: 'Real-time orbit simulator. Master gravity with Sūrya, Pṛthivī and Candra: too slow and you crash, too fast and you escape. Track Candra through the 27 Nakṣatras.',
     tint: 'rgba(99, 102, 241, 0.12)',
     ink: '#a5b4fc',
     glow: '#6366f1',
+  },
+  {
+    id: 'nada-brahman',
+    code: 'SEC-07',
+    icon: '🪕',
+    dev: 'नाद-विहारः · Nāda',
+    title: 'Sound Detective',
+    subject: 'Harmonics & Cymatics',
+    school: 'Nāda Brahman (सङ्गीत)',
+    category: 'waves',
+    level: 'primary',
+    levelLabel: 'Primary Explorers',
+    levelDev: 'प्रारम्भिक',
+    ageRange: 'Ages 8–10',
+    gameType: 'Harmonics & Cymatic Sand Game',
+    blurb: 'String resonance simulator. Pluck standing waves, shift across harmonics 1–5, calibrate the 22 Śrutis, and reveal 2D Chladni sand mandala nodal yantras.',
+    tint: 'rgba(168, 85, 247, 0.12)',
+    ink: '#c084fc',
+    glow: '#a855f7',
+  },
+  {
+    id: 'paramanu',
+    code: 'SEC-01',
+    icon: '⚛️',
+    dev: 'परमाणु-निर्माणम् · Vaiśeṣika',
+    title: 'Atom Builder: Make Matter!',
+    subject: 'Atomic Crucible',
+    school: 'Vaiśeṣika (वैशेषिक)',
+    category: 'matter',
+    level: 'middle',
+    levelLabel: 'Middle Missions',
+    levelDev: 'माध्यमिक',
+    ageRange: 'Ages 11–14',
+    gameType: 'Atomic Molecule Builder Game',
+    blurb: 'Forge matter from the smallest building blocks. Pair raw Paramāṇus into a Dvyaṇuka, then join three Dvyaṇukas into a Tryaṇuka, the first visible speck of reality.',
+    tint: 'rgba(245, 158, 11, 0.12)',
+    ink: '#fde047',
+    glow: '#f59e0b',
   },
   {
     id: 'chandrayaan',
@@ -192,35 +204,14 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     school: 'ISRO Chandrayaan-3',
     category: 'cosmos',
     level: 'middle',
-    levelLabel: 'Middle School',
+    levelLabel: 'Middle Missions',
     levelDev: 'माध्यमिक',
-    ageRange: 'Grades 6–9 · Ages 11–15',
+    ageRange: 'Ages 11–14',
     gameType: 'Lunar Lander Simulation Game',
     blurb: 'Lunar landing sandbox. Circularise lunar orbit, execute precision soft-landing at Shiv Shakti Point, then tune LIBS laser pulses to detect sulphur and polar water ice.',
     tint: 'rgba(6, 182, 212, 0.12)',
     ink: '#38bdf8',
     glow: '#06b6d4',
-  },
-
-  // 4. Harmonics, Conservation & Aerospace
-  {
-    id: 'nada-brahman',
-    code: 'SEC-07',
-    icon: '🪕',
-    dev: 'नाद-विहारः · Nāda',
-    title: 'Sound Detective',
-    subject: 'Harmonics & Cymatics',
-    school: 'Nāda Brahman (सङ्गीत)',
-    category: 'waves',
-    level: 'primary',
-    levelLabel: 'Primary School',
-    levelDev: 'प्रारम्भिक',
-    ageRange: 'Grades 3–6 · Ages 8–12',
-    gameType: 'Harmonics & Cymatic Sand Game',
-    blurb: 'String resonance simulator. Pluck standing waves, shift across harmonics 1–5, calibrate the 22 Śrutis, and reveal 2D Chladni sand mandala nodal yantras.',
-    tint: 'rgba(168, 85, 247, 0.12)',
-    ink: '#c084fc',
-    glow: '#a855f7',
   },
   {
     id: 'srishti-sthiti-laya',
@@ -232,9 +223,9 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     school: 'Satkāryavāda (साङ्ख्य)',
     category: 'waves',
     level: 'middle',
-    levelLabel: 'Middle School',
+    levelLabel: 'Middle Missions',
     levelDev: 'माध्यमिक',
-    ageRange: 'Grades 6–8 · Ages 11–14',
+    ageRange: 'Ages 11–14',
     gameType: 'Conservation of Energy Game',
     blurb: 'Quantum particle survival challenge. Gather a wild, scattered cloud into shape (Sṛṣṭi), hold it steady (Sthiti), then set off Laya. Not a single quantum of reality is lost.',
     tint: 'rgba(244, 63, 94, 0.12)',
@@ -242,37 +233,18 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     glow: '#f43f5e',
   },
   {
-    id: 'rituparna',
-    code: 'SEC-09',
-    icon: '🌳',
-    dev: 'ऋतुपर्ण-साङ्ख्यानम्',
-    title: 'Ṛtuparṇa Sampling Lab',
-    subject: 'Monte Carlo Statistics',
-    school: 'Saṅkhyāna & Akṣahṛdaya',
-    category: 'waves',
-    level: 'high',
-    levelLabel: 'High School',
-    levelDev: 'उच्च-माध्यमिक',
-    ageRange: 'Grades 9–12 · Ages 14–18',
-    gameType: 'Monte Carlo Sampling Game',
-    blurb: 'Mahābhārata cluster sampling and Akṣa dice Monte Carlo grid. Roll random seeds across a 100-quadrat forest, calculating mean, standard error, and variance collapse.',
-    tint: 'rgba(20, 184, 166, 0.12)',
-    ink: '#2dd4bf',
-    glow: '#14b8a6',
-  },
-  {
     id: 'agnibana',
     code: 'SEC-10',
     icon: '🚀',
     dev: 'अग्निबाण-क्रीडा',
-    title: 'Agnibāṇa Rocketry',
+    title: 'Rocket Builder · Agnibāṇa',
     subject: 'Aerospace Ballistics',
     school: 'Śukranīti & Mysore 1780',
     category: 'matter',
     level: 'middle',
-    levelLabel: 'Middle to High School',
-    levelDev: 'माध्यमिक-उच्च',
-    ageRange: 'Grades 7–10 · Ages 12–16',
+    levelLabel: 'Middle Missions',
+    levelDev: 'माध्यमिक',
+    ageRange: 'Ages 12–14',
     gameType: 'Rocket Ballistics Simulation Game',
     blurb: 'Master the Śukranīti 5:1:1 Agnicūrṇa propellant ratio, configure hammered iron casings sustaining 80 atm, tune artillery elevation angles, and trace ballistic flight arcs.',
     tint: 'rgba(239, 68, 68, 0.12)',
@@ -284,14 +256,14 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     code: 'SEC-11',
     icon: '📐',
     dev: 'जीवन्त-रेखागणितम्',
-    title: 'The Living Geometry of the Gurukul',
+    title: 'Rope & Peg Geometry',
     subject: 'Rekhā-Gaṇita & Śulba',
     school: 'Śulba Sūtras & Conscious Cosmos',
     category: 'waves',
-    level: 'primary',
-    levelLabel: 'Primary & Middle School',
-    levelDev: 'प्रारम्भिक-मध्यम',
-    ageRange: 'Grades 4–8 · Ages 9–14',
+    level: 'middle',
+    levelLabel: 'Middle Missions',
+    levelDev: 'माध्यमिक',
+    ageRange: 'Ages 9–14',
     gameType: 'Living Shape Morpher Game',
     blurb: 'Explore how Sanskrit root actions encode living geometry. Features the Conscious Cosmos documentary masterclass, interactive 8-archetype shape morpher, and the universal actions of rotation and extension.',
     tint: 'rgba(245, 158, 11, 0.12)',
@@ -303,14 +275,14 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     code: 'SEC-12',
     icon: '🎶',
     dev: 'मन्त्राकौस्टिक्स् · पदार्थस्य वाक्',
-    title: 'Mantra Acoustics & The Language of Matter',
+    title: 'Sound Shapes · Mantra Acoustics',
     subject: 'Harmonic Scale & Phonetic Physics',
     school: 'Sāma Veda & Taittirīya Saṃhitā',
     category: 'waves',
-    level: 'primary',
-    levelLabel: 'Primary to Scholar',
-    levelDev: 'प्रारम्भिक-शोध',
-    ageRange: 'Grades 4+ · Ages 9+',
+    level: 'middle',
+    levelLabel: 'Middle Missions',
+    levelDev: 'माध्यमिक',
+    ageRange: 'Ages 9–14',
     gameType: 'Acoustic Resonance Lab Game',
     blurb: 'Sound discovered as a physical law: the natural Harmonic Series (1/2, 1/3, 1/4... 1/7), Saptak vs. Solfège, Sāma Veda animal resonances, Chandas Mātrā decoupling, and the Chamakam square number code.',
     tint: 'rgba(168, 85, 247, 0.12)',
@@ -322,14 +294,14 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     code: 'SEC-13',
     icon: '🏛️',
     dev: 'शिल्प-स्थापत्य-विज्ञानम्',
-    title: 'The Masters of Stone: Ancient Temple Engineering',
+    title: 'Temple Tower Builder',
     subject: 'Dry Masonry & Sacred Fractals',
     school: 'Samarāṅgaṇa Sūtradhāra & Vāstu',
     category: 'matter',
-    level: 'primary',
-    levelLabel: 'Primary to High School',
-    levelDev: 'प्रारम्भिक-उच्च',
-    ageRange: 'Grades 4–10 · Ages 9–16',
+    level: 'middle',
+    levelLabel: 'Middle Missions',
+    levelDev: 'माध्यमिक',
+    ageRange: 'Ages 10–14',
     gameType: 'Seismic Engineering Game',
     blurb: 'Explore King Bhoja’s dry masonry seismic dissipative joints (Sandhi Bandhana), Kudavelli hydro-engineered sand-buffer foundations, and 8×8/9×9 Vāstupuruṣa Mandala fractal load architectures.',
     tint: 'rgba(217, 119, 6, 0.12)',
@@ -337,18 +309,37 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     glow: '#d97706',
   },
   {
+    id: 'rituparna',
+    code: 'SEC-09',
+    icon: '🌳',
+    dev: 'ऋतुपर्ण-साङ्ख्यानम्',
+    title: 'Count the Tree · Ṛtuparṇa',
+    subject: 'Monte Carlo Statistics',
+    school: 'Saṅkhyāna & Akṣahṛdaya',
+    category: 'waves',
+    level: 'high',
+    levelLabel: 'Scholar Studio',
+    levelDev: 'उच्च-शोध',
+    ageRange: 'Ages 14+',
+    gameType: 'Monte Carlo Sampling Game',
+    blurb: 'Mahābhārata cluster sampling and Akṣa dice Monte Carlo grid. Roll random seeds across a 100-quadrat forest, calculating mean, standard error, and variance collapse.',
+    tint: 'rgba(20, 184, 166, 0.12)',
+    ink: '#2dd4bf',
+    glow: '#14b8a6',
+  },
+  {
     id: 'kautilya',
     code: 'SEC-14',
     icon: '📜',
     dev: 'कौटिलीय-अर्थशास्त्रम्',
-    title: 'Kauṭilya Quantitative Statecraft',
+    title: 'Wise Kingdom · Kauṭilya',
     subject: 'Actuarial Risk & Demographics',
     school: 'Arthaśāstra (नीति-प्रशासनम्)',
     category: 'waves',
-    level: 'advanced',
-    levelLabel: 'Advanced Scholar',
-    levelDev: 'विद्वत्-शोध',
-    ageRange: 'Grade 11+ & Research · Ages 16+',
+    level: 'high',
+    levelLabel: 'Scholar Studio',
+    levelDev: 'उच्च-शोध',
+    ageRange: 'Ages 16+',
     gameType: 'Quantitative Economics Sandbox',
     blurb: 'Explore Mauryan quantitative administration: balance the 7 organic Saptāṅga state limbs, audit village demographics with Gopas, and price tiered maritime loan risk from 15% to 240%.',
     tint: 'rgba(245, 158, 11, 0.12)',
@@ -360,14 +351,14 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     code: 'SEC-15',
     icon: '🪘',
     dev: 'पिङ्गलस्य छन्दःशास्त्रम्',
-    title: 'Chandaḥśāstra Combinatorics',
+    title: 'Rhythm Patterns · Piṅgala',
     subject: 'Binary Permutations & Pascal Meru',
     school: 'Chandaḥśāstra (छन्दो-विज्ञानम्)',
     category: 'waves',
     level: 'high',
-    levelLabel: 'High School & Scholar',
+    levelLabel: 'Scholar Studio',
     levelDev: 'उच्च-शोध',
-    ageRange: 'Grades 9–12+ · Ages 14+',
+    ageRange: 'Ages 14+',
     gameType: 'Binary Permutation Game',
     blurb: 'Step into Piṅgala’s binary universe: compose acoustic Laghu and Guru beats, decode rows via Naṣṭa & Uddiṣṭa, and climb the Meruprastāra binomial pyramid and Fibonacci Mātrāmeru.',
     tint: 'rgba(192, 132, 252, 0.12)',
@@ -379,14 +370,14 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     code: 'SEC-16',
     icon: '🏛️',
     dev: 'उज्जयिनी-मध्यरेखा-विज्ञानम्',
-    title: 'The Ancient Prime Meridian & Temple Geodesy',
+    title: 'Sun-Shadow Compass · Ujjain',
     subject: 'Geodesy, 0° Longitude & Temple Geometry',
     school: 'Sūrya Siddhānta & Varāhamihira (भूगोल-खगोलम्)',
     category: 'cosmos',
     level: 'high',
-    levelLabel: 'High School',
-    levelDev: 'उच्च-माध्यमिक',
-    ageRange: 'Grades 9–12 · Ages 14–18',
+    levelLabel: 'Scholar Studio',
+    levelDev: 'उच्च-शोध',
+    ageRange: 'Ages 14+',
     gameType: 'Geodesy & Meridian Sandbox Game',
     blurb: 'Explore Ujjain (Avanti) as the world’s ancient Prime Meridian (0° Longitude) and its intersection with the Tropic of Cancer. Calculate the 29-minute Panchang offset, align with Mahakaleshwar & Mangalnath temples, and track the Tropic of Cancer southward drift to Dongla.',
     tint: 'rgba(14, 165, 233, 0.12)',
@@ -483,6 +474,18 @@ export interface ScienceLabProps {
   onOpenResources?: () => void;
 }
 
+const LEVEL_STEPS: { id: LabLevel; num: string; label: string; ages: string }[] = [
+  { id: 'all', num: '', label: 'All levels', ages: 'Full path' },
+  { id: 'preschool', num: '1', label: 'Wonder Playground', ages: 'Ages 2–6' },
+  { id: 'primary', num: '2', label: 'Primary Explorers', ages: 'Ages 6–10' },
+  { id: 'middle', num: '3', label: 'Middle Missions', ages: 'Ages 9–14' },
+  { id: 'high', num: '4', label: 'Scholar Studio', ages: 'Ages 14+' },
+];
+
+const CATEGORY_CHIP: Record<LabSegmentConfig['category'], string> = {
+  matter: 'Matter', cosmos: 'Sky & Space', life: 'Living world', waves: 'Sound & Number',
+};
+
 const SimLoader = () => <div className="vl-loading">Loading the lab bench…</div>;
 
 const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpenResources }) => {
@@ -492,85 +495,23 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
     return readHash() || 'paramanu';
   });
   const [viewMode, setViewMode] = useState<'mission-control' | 'workbench' | 'catalog'>(() => {
-    if (initialSegment) return 'workbench';
-    return 'mission-control';
+    if (initialSegment || readHash()) return 'workbench';
+    return 'catalog';
   });
   const [explorerStats, setExplorerStats] = useState<ExplorerStats>(() => getExplorerStats());
   const [isScienceSparkOpen, setIsScienceSparkOpen] = useState(false);
   const [isParentNotesOpen, setIsParentNotesOpen] = useState(false);
   const [selectedHowToPlay, setSelectedHowToPlay] = useState<MissionCardData | null>(null);
   const [isSpeakingBodhiBriefing, setIsSpeakingBodhiBriefing] = useState(false);
-  const [filterCat, setFilterCat] = useState<LabCategory>('all');
+  const [filterCat] = useState<LabCategory>('all');
   const [filterLevel, setFilterLevel] = useState<LabLevel>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [isQuestMode, setIsQuestMode] = useState(true);
+  const [, setIsQuestMode] = useState(true);
   const [isQuestDirectoryOpen, setIsQuestDirectoryOpen] = useState(false);
-  const [featuredIdx, setFeaturedIdx] = useState<number>(0);
-  const [isGradeAccordionOpen, setIsGradeAccordionOpen] = useState<boolean>(true);
-  const [isFeaturesAccordionOpen, setIsFeaturesAccordionOpen] = useState<boolean>(true);
   const catalogSectionRef = useRef<HTMLDivElement>(null);
   const simRef = useRef<HTMLDivElement>(null);
   const firstRun = useRef(true);
 
-  const FEATURED_SIMS = useMemo(
-    () => [
-      {
-        id: 'paramanu',
-        gradeBadge: 'AGES 9–14 · PHYSICS & CHEMISTRY',
-        title: '⚛️ Atom Builder: Make Matter!',
-        bannerArt: '⚛️ 🔬 ⚡ 🔥 🧪',
-        bannerGradient: 'linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%)',
-        desc: 'Forge matter from the smallest building blocks. Pair raw Paramāṇus into Dvyaṇukas, then join three Dvyaṇukas into a visible Tryaṇuka speck of reality.',
-        cta: 'Launch mission',
-      },
-      {
-        id: 'prakriti',
-        gradeBadge: 'AGES 6–10 · BIOLOGY & ECOLOGY',
-        title: '🌿 Nature Balance Game',
-        bannerArt: '🌿 🧬 💧 ☀️ 🌬️',
-        bannerGradient: 'linear-gradient(135deg, #064e3b 0%, #059669 100%)',
-        desc: 'Keep the ecosystem alive! Balance Vāta, Pitta and Kapha under changing seasons with real-time Nāḍī pulse waveform feedback.',
-        cta: 'Launch mission',
-      },
-      {
-        id: 'chandrayaan',
-        gradeBadge: 'AGES 8–14 · SPACE EXPLORATION',
-        title: '🛰️ Moon Mission Launcher',
-        bannerArt: '🛰️ 🌕 🚀 📡 🇮🇳',
-        bannerGradient: 'linear-gradient(135deg, #0f172a 0%, #0284c7 100%)',
-        desc: 'Simulate ISRO Chandrayaan-3 lunar lander trajectory. Calculate retro-rocket thrust, track Moon coordinates, and achieve soft touchdown on the Lunar South Pole.',
-        cta: 'Launch mission',
-      },
-      {
-        id: 'jyotisha',
-        gradeBadge: 'AGES 8–12 · ASTRONOMY & GRAVITY',
-        title: '🪐 Planet Pull: Gravity Playground',
-        bannerArt: '🪐 ☀️ 🌍 🌙 ⭐',
-        bannerGradient: 'linear-gradient(135deg, #31104b 0%, #7c3aed 100%)',
-        desc: 'Real-time orbital gravity simulator based on Āryabhaṭīya. Pilot satellites around Sūrya, Pṛthivī and Candra through the 27 sacred Nakṣatras.',
-        cta: 'Launch mission',
-      },
-      {
-        id: 'preschool-wonder',
-        gradeBadge: 'AGES 2–6 · PRESCHOOL WONDER',
-        title: '🧸 Preschool Wonder Playground',
-        bannerArt: '🧸 🎨 🐮 🌙 🍎',
-        bannerGradient: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
-        desc: 'Gentle hands-on tactile discovery for little hands: Shapes, Rainbow Colors, Real Animal Sounds, Orchard Fruit Picker, Moon Phases, and the 5 Elements tale!',
-        cta: 'Launch playground',
-      },
-      {
-        id: 'agnibana',
-        gradeBadge: 'GRADES 9–12 · AEROSPACE',
-        title: '🚀 Agnibāṇa Rocket Propulsion',
-        bannerArt: '🚀 🔥 💨 🎯 💥',
-        bannerGradient: 'linear-gradient(135deg, #7c2d12 0%, #ea580c 100%)',
-        desc: 'Calculate multi-stage propellant mass ratio, Isp specific impulse, and atmospheric drag to launch an ancient Agni rocket into low-earth orbit.',
-        cta: 'Launch studio',
-      },
-    ],
-    []
-  );
 
   const activeMissionCard = useMemo(() => getMissionCardById(active), [active]);
 
@@ -584,13 +525,12 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
   };
 
   const handleCompleteActiveMission = () => {
-    if (!activeMissionCard) return;
     soundEffects.playCelebrationChime();
     setExplorerStats((prev) => {
       const nextStarsByGame = { ...prev.starsByGame, [active]: 3 };
       const currentKeys = Object.keys(nextStarsByGame);
       const totalStars = currentKeys.reduce((acc, k) => acc + (nextStarsByGame[k] || 0), 0);
-      const unlockedBadges = prev.unlockedBadges.includes(activeMissionCard.badgeId)
+      const unlockedBadges = !activeMissionCard || prev.unlockedBadges.includes(activeMissionCard.badgeId)
         ? prev.unlockedBadges
         : [...prev.unlockedBadges, activeMissionCard.badgeId];
       const completedMissions = prev.completedMissions.includes(active)
@@ -678,13 +618,14 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
   useEffect(() => {
     const onHash = () => {
       const h = readHash();
-      if (h) setActive(h);
+      if (h) { setActive(h); setViewMode('workbench'); }
     };
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
   const seg = LAB_SEGMENTS.find((s) => s.id === active)!;
+  const quest = RISHI_QUESTS[active];
 
   const currentIndex = useMemo(() => {
     const idx = LAB_SEGMENTS.findIndex((s) => s.id === active);
@@ -710,587 +651,98 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
 
   return (
     <div className="vl-page">
-      {/* Primary Vijñāna Lab View Mode Switcher */}
-      <div className="psw-view-toggle-btns" role="tablist" style={{ justifyContent: 'center', margin: '1rem auto 1.5rem', maxWidth: 840, padding: '0 1rem' }}>
-        <button
-          type="button"
-          className={`psw-view-mode-pill ${viewMode === 'mission-control' ? 'is-active' : ''}`}
-          onClick={() => {
-            setViewMode('mission-control');
-            soundEffects.playStrokeChime();
-          }}
-        >
-          <span>🚀</span> Mission Control (8 Games)
-        </button>
-        <button
-          type="button"
-          className={`psw-view-mode-pill ${viewMode === 'workbench' ? 'is-active' : ''}`}
-          onClick={() => {
-            setViewMode('workbench');
-            soundEffects.playStrokeChime();
-            simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }}
-        >
-          <span>🕹️</span> Workbench: {seg.code}
-        </button>
-        <button
-          type="button"
-          className={`psw-view-mode-pill ${viewMode === 'catalog' ? 'is-active' : ''}`}
-          onClick={() => {
-            setViewMode('catalog');
-            soundEffects.playStrokeChime();
-            catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }}
-        >
-          <span>🎴</span> Academic Catalog (17 Sims)
-        </button>
-      </div>
-
-      {viewMode === 'mission-control' && (
-        <MissionControlDashboard
-          explorerStats={explorerStats}
-          onLaunchMission={(id) => handleLaunchSim(id as LabSegmentId)}
-          onOpenPreschool={() => handleLaunchSim('preschool-wonder')}
-          onOpenAdvancedLabs={() => handleLaunchSim('agnibana')}
-          onViewCatalog={() => {
-            setViewMode('catalog');
-            soundEffects.playStrokeChime();
-          }}
-        />
-      )}
-
-      {viewMode === 'catalog' && (
-        <>
-          <header className="vl-hero">
-            <div className="vl-hero-glow" aria-hidden="true" />
-            <div className="vl-hero-text">
-              <h1 className="vl-title">
-                VIJÑĀNA PLAY LAB <span className="vl-title-badge">PROYOG</span> · <span lang="sa" className="vl-title-dev">विज्ञान-प्रयोगशाला</span>
-              </h1>
-              <p className="vl-lead">
-                Boot up the ultimate reality &amp; science play lab. Explore ancient atomic physics, orbital planetary gravity, cymatic sand harmonics, and aerospace metallurgy through 16 interactive sandboxes from preschool wonder to scholar research. Decode Sanskrit sūtras and conquer each scientific challenge.
-              </p>
-              <div className="vl-btn-row">
-                <button
-                  type="button"
-                  className={`vl-btn ${isQuestMode ? 'vl-btn--gold' : 'vl-btn--cyber'}`}
-                  onClick={() => setIsQuestMode((prev) => !prev)}
-                  title="Toggle between 3-Minute Guided Quests and Open Sandbox Mode"
-                >
-                  {isQuestMode ? '🎯 GUIDED QUEST MODE: ON' : '🕹️ FREE SANDBOX MODE'}
-                </button>
-                <button
-                  type="button"
-                  className="vl-btn vl-btn--cyber-ghost"
-                  onClick={() => setIsQuestDirectoryOpen(true)}
-                  title="Browse all 3-minute gamified quests across reality sandboxes"
-                >
-                  🧭 QUEST DIRECTORY
-                </button>
-                {onGoHome && <button type="button" className="vl-btn vl-btn--cyber" onClick={onGoHome}>◀ MAIN HUB</button>}
-                {onOpenResources && <button type="button" className="vl-btn vl-btn--cyber-ghost" onClick={onOpenResources}>साधनानि · TOOLKIT ⚙️</button>}
+      {viewMode !== 'workbench' && (
+        <div ref={catalogSectionRef} className="vl-hub">
+          <header className="vl-hub-hero">
+            <div className="vl-hub-topline">
+              {onGoHome && <button type="button" className="vl-hub-link" onClick={onGoHome}>◀ Home</button>}
+              {onOpenResources && <button type="button" className="vl-hub-link" onClick={onOpenResources}>Toolkit</button>}
+            </div>
+            <div className="vl-hub-banner">
+              <div className="vl-hub-banner-copy">
+                <h1 className="vl-hub-title">
+                  Vijñāna Lab <span lang="sa" className="vl-hub-title-dev">विज्ञान-प्रयोगशाला</span>
+                </h1>
+                <p className="vl-hub-tagline">Look. Learn from nature. Know with purpose.</p>
+                <p className="vl-hub-range">Soft play shapes → Kauṭilya’s harvest · Ages 2–16+</p>
+                <p className="vl-hub-sloka" lang="sa">प्रकृतिं पश्य, प्रकृतेः शिक्षस्व, प्रयोजनाय जानीहि।</p>
               </div>
+              <img
+                className="vl-hub-art"
+                src="/images/vignana-lab-hero.webp?v=2"
+                alt="Children exploring Vijñāna Lab — nature, geometry, rockets, and harvest games"
+                width={1280}
+                height={720}
+                loading="eager"
+                decoding="async"
+              />
             </div>
-            <div className="vl-hero-art" aria-hidden="true">
-              <svg viewBox="0 0 220 160">
-                <defs>
-                  <radialGradient id="cyberSun" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#38bdf8" stopOpacity="1" />
-                    <stop offset="50%" stopColor="#0284c7" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#082f49" stopOpacity="0" />
-                  </radialGradient>
-                  <linearGradient id="neonBeam" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#22d3ee" />
-                    <stop offset="50%" stopColor="#818cf8" />
-                    <stop offset="100%" stopColor="#f43f5e" />
-                  </linearGradient>
-                </defs>
-                <circle cx="110" cy="80" r="70" fill="none" stroke="rgba(56, 189, 248, 0.2)" strokeWidth="1" strokeDasharray="4 4" />
-                <circle cx="110" cy="80" r="45" fill="none" stroke="rgba(99, 102, 241, 0.3)" strokeWidth="1" />
-                <circle cx="110" cy="80" r="22" fill="url(#cyberSun)" />
-                <line x1="110" y1="5" x2="110" y2="155" stroke="rgba(56, 189, 248, 0.25)" strokeWidth="1" strokeDasharray="2 4" />
-                <line x1="15" y1="80" x2="205" y2="80" stroke="rgba(56, 189, 248, 0.25)" strokeWidth="1" strokeDasharray="2 4" />
-                <ellipse cx="110" cy="80" rx="80" ry="32" fill="none" stroke="url(#neonBeam)" strokeWidth="1.5" strokeDasharray="8 6" transform="rotate(-18 110 80)" />
-                <circle cx="180" cy="68" r="5" fill="#38bdf8" />
-                <path d="M 20 135 Q 45 110 70 135 T 120 135 T 170 135 T 205 135" fill="none" stroke="#2dd4bf" strokeWidth="2" opacity="0.85" />
-              </svg>
-            </div>
+            <p className="vl-hub-lead">
+              <em>Look at nature, learn from nature, know with purpose.</em> These games share the way Bhāratīya ṛṣis
+              approached knowledge — by watching the world closely, treating nature as the first teacher, and seeking
+              knowledge that serves life.
+            </p>
+            <ul className="vl-hub-pillars">
+              <li><span aria-hidden="true">👁️</span><strong lang="sa">निरीक्षणम्</strong><b>Observation</b><small>Look and listen carefully before answering.</small></li>
+              <li><span aria-hidden="true">🌿</span><strong lang="sa">प्रकृति-शिक्षा</strong><b>Learn from nature</b><small>Seasons, sky, sound and living things are the teachers.</small></li>
+              <li><span aria-hidden="true">🎯</span><strong lang="sa">प्रयोजन-युक्त ज्ञानम्</strong><b>Purpose-driven knowledge</b><small>Every game asks: how does this help us live well?</small></li>
+            </ul>
           </header>
 
-      {/* ================================================================
-          1. PhET IMPACT METRIC BANNER (REFERENCE IMAGE 2)
-          ================================================================ */}
-      <div className="vl-phet-impact-banner">
-        <div className="vl-pib-metric">
-          <span className="vl-pib-dot">●</span> OVER <strong>17+ INTERACTIVE REALITY SIMULATIONS</strong> DELIVERED
-        </div>
-        <div className="vl-pib-tag">
-          <span>🌐</span> 100% Free Open Educational Portal · Sanskrit STEM Gurukul
-        </div>
-      </div>
-
-      {/* ================================================================
-          2. PhET PASTEL SUBJECT SQUIRCLES ROW (REFERENCE IMAGE 2)
-          ================================================================ */}
-      <div className="vl-phet-squircles-row" role="tablist" aria-label="Subject domains">
-        <button
-          type="button"
-          className={`vl-phet-squircle vl-psq--preschool${filterLevel === "preschool" ? " is-active" : ""}`}
-          onClick={() => {
-            setFilterLevel("preschool");
-            setFilterCat("all");
-            setViewMode("catalog");
-            soundEffects.playStrokeChime();
-          }}
-        >
-          <div className="vl-psq-icon-wrap">🧸</div>
-          <span className="vl-psq-title-en">Preschool</span>
-          <span className="vl-psq-title-sa">शिशु-वाटिका</span>
-          <span className="vl-psq-count-badge">11 Games</span>
-        </button>
-
-        <button
-          type="button"
-          className={`vl-phet-squircle vl-psq--physics${filterCat === "matter" ? " is-active" : ""}`}
-          onClick={() => {
-            setFilterCat("matter");
-            setFilterLevel("all");
-            setViewMode("catalog");
-            soundEffects.playStrokeChime();
-          }}
-        >
-          <div className="vl-psq-icon-wrap">⚛️</div>
-          <span className="vl-psq-title-en">Physics</span>
-          <span className="vl-psq-title-sa">पदार्थ-विज्ञानम्</span>
-          <span className="vl-psq-count-badge">4 Sandboxes</span>
-        </button>
-
-        <button
-          type="button"
-          className={`vl-phet-squircle vl-psq--cosmos${filterCat === "cosmos" ? " is-active" : ""}`}
-          onClick={() => {
-            setFilterCat("cosmos");
-            setFilterLevel("all");
-            setViewMode("catalog");
-            soundEffects.playStrokeChime();
-          }}
-        >
-          <div className="vl-psq-icon-wrap">🪐</div>
-          <span className="vl-psq-title-en">Earth & Space</span>
-          <span className="vl-psq-title-sa">खगोल-शास्त्रम्</span>
-          <span className="vl-psq-count-badge">3 Sandboxes</span>
-        </button>
-
-        <button
-          type="button"
-          className={`vl-phet-squircle vl-psq--life${filterCat === "life" ? " is-active" : ""}`}
-          onClick={() => {
-            setFilterCat("life");
-            setFilterLevel("all");
-            setViewMode("catalog");
-            soundEffects.playStrokeChime();
-          }}
-        >
-          <div className="vl-psq-icon-wrap">🌿</div>
-          <span className="vl-psq-title-en">Biology</span>
-          <span className="vl-psq-title-sa">जीव-प्रकृतिः</span>
-          <span className="vl-psq-count-badge">2 Sandboxes</span>
-        </button>
-
-        <button
-          type="button"
-          className={`vl-phet-squircle vl-psq--math${filterCat === "waves" ? " is-active" : ""}`}
-          onClick={() => {
-            setFilterCat("waves");
-            setFilterLevel("all");
-            setViewMode("catalog");
-            soundEffects.playStrokeChime();
-          }}
-        >
-          <div className="vl-psq-icon-wrap">📐</div>
-          <span className="vl-psq-title-en">Math & Waves</span>
-          <span className="vl-psq-title-sa">गणित-नादः</span>
-          <span className="vl-psq-count-badge">5 Sandboxes</span>
-        </button>
-
-        <button
-          type="button"
-          className={`vl-phet-squircle vl-psq--statecraft${filterCat === "all" && filterLevel === "all" ? " is-active" : ""}`}
-          onClick={() => {
-            setFilterCat("all");
-            setFilterLevel("all");
-            setViewMode("catalog");
-            soundEffects.playStrokeChime();
-          }}
-        >
-          <div className="vl-psq-icon-wrap">🏛️</div>
-          <span className="vl-psq-title-en">All Sandboxes</span>
-          <span className="vl-psq-title-sa">सर्व-विज्ञानम्</span>
-          <span className="vl-psq-count-badge">17 Simulations</span>
-        </button>
-      </div>
-
-      {/* ================================================================
-          3. Code.org FEATURED ACTIVITY CAROUSEL (REFERENCE IMAGE 1)
-          ================================================================ */}
-      <section className="vl-code-carousel-section" aria-label="Featured Sanskrit STEM Sandboxes">
-        <div className="vl-code-header-row">
-          <div>
-            <h2 className="vl-code-title">Join the Sanskrit STEM & Reality Movement</h2>
-            <p className="vl-code-sub">
-              Every one-hour interactive simulation below teaches something real. Browse by grade, topic, or whatever your class is ready for.
-            </p>
-          </div>
-          <button
-            type="button"
-            className="vl-code-browse-btn"
-            onClick={() => {
-              setViewMode("catalog");
-              catalogSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-            }}
-          >
-            Browse all 17 simulations ➔
-          </button>
-        </div>
-
-        <div className="vl-code-carousel-wrapper">
-          <button
-            type="button"
-            className="vl-code-nav-arrow"
-            onClick={() => setFeaturedIdx((i) => (i > 0 ? i - 1 : FEATURED_SIMS.length - 1))}
-            aria-label="Previous featured simulations"
-          >
-            ←
-          </button>
-
-          <div className="vl-code-cards-grid">
-            {[0, 1, 2].map((offset) => {
-              const item = FEATURED_SIMS[(featuredIdx + offset) % FEATURED_SIMS.length];
+          <nav className="vl-level-rail" aria-label="Learning levels">
+            {LEVEL_STEPS.map((step) => {
+              const count = step.id === 'all' ? LAB_SEGMENTS.length : LAB_SEGMENTS.filter((x) => x.level === step.id).length;
               return (
-                <article key={item.id} className="vl-code-activity-card">
-                  <span className="vl-cac-grade">{item.gradeBadge}</span>
-                  <h3 className="vl-cac-title">{item.title}</h3>
-                  <div className="vl-cac-banner" style={{ background: item.bannerGradient }}>
-                    <span>{item.bannerArt}</span>
-                  </div>
-                  <p className="vl-cac-desc">{item.desc}</p>
-                  <button
-                    type="button"
-                    className="vl-cac-cta"
-                    onClick={() => handleLaunchSim(item.id as LabSegmentId)}
-                  >
-                    {item.cta} ➔
-                  </button>
-                </article>
-              );
-            })}
-          </div>
-
-          <button
-            type="button"
-            className="vl-code-nav-arrow"
-            onClick={() => setFeaturedIdx((i) => (i + 1) % FEATURED_SIMS.length)}
-            aria-label="Next featured simulations"
-          >
-            →
-          </button>
-        </div>
-
-        <div className="vl-code-dots-row">
-          {FEATURED_SIMS.map((_, dotIdx) => (
-            <button
-              key={dotIdx}
-              type="button"
-              className={`vl-code-dot${dotIdx === featuredIdx ? " is-active" : ""}`}
-              onClick={() => setFeaturedIdx(dotIdx)}
-              aria-label={`Go to featured slide ${dotIdx + 1}`}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* ================================================================
-          4. PhET SIMULATION CATALOG WITH FACETED SIDEBAR (REFERENCE IMAGE 3)
-          ================================================================ */}
-      <div ref={catalogSectionRef} className="vl-phet-catalog-section" aria-label="Simulations Catalog">
-        {/* Top Breadcrumbs & Search Bar */}
-        <div className="vl-phet-top-nav-bar">
-          <div className="vl-phet-crumbs-row">
-            <span className="vl-phet-crumb-chip">HTML5 / WebAudio ✓</span>
-            {filterLevel !== "all" && (
-              <span className="vl-phet-crumb-chip">
-                Level: {filterLevel} <button type="button" onClick={() => setFilterLevel("all")}>✕</button>
-              </span>
-            )}
-            {filterCat !== "all" && (
-              <span className="vl-phet-crumb-chip">
-                Topic: {filterCat} <button type="button" onClick={() => setFilterCat("all")}>✕</button>
-              </span>
-            )}
-            {searchQuery && (
-              <span className="vl-phet-crumb-chip">
-                &quot;{searchQuery}&quot; <button type="button" onClick={() => setSearchQuery("")}>✕</button>
-              </span>
-            )}
-          </div>
-
-          <div className="psw-view-toggle-btns" role="tablist" style={{ margin: '0 0.5rem' }}>
-            <button
-              type="button"
-              className="psw-view-mode-pill"
-              onClick={() => {
-                setViewMode('mission-control');
-                soundEffects.playStrokeChime();
-              }}
-            >
-              <span>🚀</span> Mission Control
-            </button>
-            <button
-              type="button"
-              className="psw-view-mode-pill is-active"
-              onClick={() => {
-                soundEffects.playStrokeChime();
-                catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-            >
-              <span>🎴</span> Catalog Grid ({visibleSegments.length})
-            </button>
-            <button
-              type="button"
-              className="psw-view-mode-pill"
-              onClick={() => {
-                setViewMode('workbench');
-                soundEffects.playStrokeChime();
-                simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-            >
-              <span>🕹️</span> Workbench: {seg.code}
-            </button>
-          </div>
-
-          <div className="vl-search-box" style={{ maxWidth: 320, margin: 0 }}>
-            <span className="vl-search-icon" aria-hidden="true">🔍</span>
-            <input
-              type="text"
-              className="vl-search-input"
-              placeholder="Search simulations..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              aria-label="Search simulations"
-            />
-            {searchQuery && (
-              <button
-                type="button"
-                className="vl-search-clear"
-                onClick={() => setSearchQuery("")}
-                aria-label="Clear search"
-              >
-                ✕
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* PhET Two-Column Layout */}
-        <div className="vl-phet-layout-row">
-          {/* Left Faceted Sidebar */}
-          <aside className="vl-phet-sidebar" aria-label="Simulation Filters">
-            <div className="vl-phet-sb-header">
-              <span className="vl-phet-sb-title">Filters</span>
-              <button
-                type="button"
-                className="vl-phet-clear-btn"
-                onClick={() => {
-                  setFilterCat("all");
-                  setFilterLevel("all");
-                  setSearchQuery("");
-                }}
-              >
-                Clear Filters
-              </button>
-            </div>
-
-            <div className="vl-phet-filter-group">
-              <span className="vl-phet-fg-title">Subjects</span>
-              <label className="vl-phet-tree-item">
-                <input
-                  type="checkbox"
-                  checked={filterLevel === "preschool"}
-                  onChange={(e) => setFilterLevel(e.target.checked ? "preschool" : "all")}
-                />
-                <span>🧸 Preschool Wonder (11)</span>
-              </label>
-              <label className="vl-phet-tree-item">
-                <input
-                  type="checkbox"
-                  checked={filterCat === "matter"}
-                  onChange={(e) => setFilterCat(e.target.checked ? "matter" : "all")}
-                />
-                <span>⚛️ Matter & Atoms (Physics)</span>
-              </label>
-              <label className="vl-phet-tree-item">
-                <input
-                  type="checkbox"
-                  checked={filterCat === "cosmos"}
-                  onChange={(e) => setFilterCat(e.target.checked ? "cosmos" : "all")}
-                />
-                <span>🪐 Cosmos & Space (Astronomy)</span>
-              </label>
-              <label className="vl-phet-tree-item">
-                <input
-                  type="checkbox"
-                  checked={filterCat === "life"}
-                  onChange={(e) => setFilterCat(e.target.checked ? "life" : "all")}
-                />
-                <span>🌿 Life & Ecology (Biology)</span>
-              </label>
-              <label className="vl-phet-tree-item">
-                <input
-                  type="checkbox"
-                  checked={filterCat === "waves"}
-                  onChange={(e) => setFilterCat(e.target.checked ? "waves" : "all")}
-                />
-                <span>📐 Waves & Math (Cymatics)</span>
-              </label>
-            </div>
-
-            <div className="vl-phet-filter-group">
-              <button
-                type="button"
-                className="vl-phet-accordion-btn"
-                onClick={() => setIsGradeAccordionOpen((o) => !o)}
-              >
-                <span>Grade Level</span>
-                <span>{isGradeAccordionOpen ? "−" : "+"}</span>
-              </button>
-              {isGradeAccordionOpen && (
-                <div style={{ paddingTop: "0.45rem" }}>
-                  <label className="vl-phet-tree-item">
-                    <input
-                      type="checkbox"
-                      checked={filterLevel === "preschool"}
-                      onChange={(e) => setFilterLevel(e.target.checked ? "preschool" : "all")}
-                    />
-                    <span>Preschool (Ages 2–6)</span>
-                  </label>
-                  <label className="vl-phet-tree-item">
-                    <input
-                      type="checkbox"
-                      checked={filterLevel === "primary"}
-                      onChange={(e) => setFilterLevel(e.target.checked ? "primary" : "all")}
-                    />
-                    <span>Primary (Grades 3–5)</span>
-                  </label>
-                  <label className="vl-phet-tree-item">
-                    <input
-                      type="checkbox"
-                      checked={filterLevel === "middle"}
-                      onChange={(e) => setFilterLevel(e.target.checked ? "middle" : "all")}
-                    />
-                    <span>Middle (Grades 6–8)</span>
-                  </label>
-                  <label className="vl-phet-tree-item">
-                    <input
-                      type="checkbox"
-                      checked={filterLevel === "high"}
-                      onChange={(e) => setFilterLevel(e.target.checked ? "high" : "all")}
-                    />
-                    <span>High School (Grades 9–12)</span>
-                  </label>
-                </div>
-              )}
-            </div>
-
-            <div className="vl-phet-filter-group">
-              <button
-                type="button"
-                className="vl-phet-accordion-btn"
-                onClick={() => setIsFeaturesAccordionOpen((o) => !o)}
-              >
-                <span>Inclusive Features</span>
-                <span>{isFeaturesAccordionOpen ? "−" : "+"}</span>
-              </button>
-              {isFeaturesAccordionOpen && (
-                <div style={{ paddingTop: "0.45rem" }}>
-                  <label className="vl-phet-tree-item">
-                    <input type="checkbox" defaultChecked />
-                    <span>🔊 Sanskrit Audio Speech</span>
-                  </label>
-                  <label className="vl-phet-tree-item">
-                    <input type="checkbox" defaultChecked />
-                    <span>👆 Direct Touch Controls</span>
-                  </label>
-                  <label className="vl-phet-tree-item">
-                    <input type="checkbox" defaultChecked />
-                    <span>🎯 3-Min Guided Quests</span>
-                  </label>
-                  <label className="vl-phet-tree-item">
-                    <input type="checkbox" defaultChecked />
-                    <span>📜 Sūtra Translation</span>
-                  </label>
-                </div>
-              )}
-            </div>
-          </aside>
-
-          {/* Right Simulation Grid */}
-          <div className="vl-phet-catalog-grid">
-            {visibleSegments.map((s) => {
-              const isPreschool = s.level === "preschool";
-              const isCurrent = s.id === active;
-              const isNewSim =
-                s.id === "preschool-wonder" ||
-                s.id === "agnibana" ||
-                s.id === "chandrayaan" ||
-                s.id === "mantra-acoustics";
-
-              return (
-                <div
-                  key={s.id}
-                  className={`vl-phet-sim-card${isCurrent ? " is-active-sim" : ""}`}
-                  onClick={() => handleLaunchSim(s.id)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") handleLaunchSim(s.id);
-                  }}
+                <button
+                  key={step.id}
+                  type="button"
+                  className={`vl-level-step${filterLevel === step.id ? ' is-active' : ''}`}
+                  aria-pressed={filterLevel === step.id}
+                  onClick={() => { setFilterLevel(step.id); soundEffects.playStrokeChime(); }}
                 >
-                  <div className="vl-psc-thumb" style={{ background: s.tint, color: s.ink }}>
-                    {isNewSim && <span className="vl-psc-ribbon-new">NEW!</span>}
-                    <span>{s.icon}</span>
-                  </div>
-
-                  <div className="vl-psc-body">
-                    <span className="vl-psc-sector-tag">
-                      {s.code} · {s.ageRange}
-                    </span>
-                    <h3 className="vl-psc-title">{s.title}</h3>
-                    <div className="vl-psc-sa" lang="sa">
-                      {s.dev}
-                    </div>
-
-                    <div className="vl-psc-badges-row">
-                      <span className="vl-psc-badge">HTML5</span>
-                      <span className="vl-psc-badge">⌨️</span>
-                      <span className="vl-psc-badge">🔊</span>
-                      <span className="vl-psc-badge">👆</span>
-                      {isPreschool && (
-                        <span
-                          className="vl-psc-badge"
-                          style={{ background: "#fef3c7", color: "#92400e", fontWeight: 900 }}
-                        >
-                          11 Games
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
+                  {step.num && <span className="vl-level-num">{step.num}</span>}
+                  <span className="vl-level-text"><b>{step.label}</b><small>{step.ages} · {count}</small></span>
+                </button>
               );
             })}
+          </nav>
+
+          <div className="vl-hub-search">
+            <span aria-hidden="true">🔍</span>
+            <input type="text" placeholder="Search games" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} aria-label="Search games" />
+            {searchQuery && <button type="button" onClick={() => setSearchQuery('')} aria-label="Clear search">✕</button>}
           </div>
+
+          {LEVEL_STEPS.filter((st) => st.id !== 'all' && (filterLevel === 'all' || filterLevel === st.id)).map((st) => {
+            const games = visibleSegments.filter((x) => x.level === st.id);
+            if (!games.length) return null;
+            return (
+              <section key={st.id} className="vl-level-band" aria-label={st.label}>
+                <h2 className="vl-band-title"><span className="vl-level-num">{st.num}</span> {st.label} <small>{st.ages}</small></h2>
+                <div className="vl-band-grid">
+                  {games.map((g) => (
+                    <button key={g.id} type="button" className="vl-game-card" onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
+                      <span className="vl-game-icon" aria-hidden="true">{g.icon}</span>
+                      <span className="vl-game-body">
+                        <b className="vl-game-title">{g.title}</b>
+                        <span className="vl-game-dev" lang="sa">{g.dev}</span>
+                        {RISHI_QUESTS[g.id] && <span className="vl-game-goal">{RISHI_QUESTS[g.id].goal}</span>}
+                        <span className="vl-game-chips">
+                          <span>{g.ageRange}</span>
+                          <span>{CATEGORY_CHIP[g.category]}</span>
+                          {g.id === 'preschool-wonder' && <span>11 games</span>}
+                          {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>⭐ {explorerStats.starsByGame[g.id]}</span>}
+                        </span>
+                      </span>
+                      <span className="vl-game-play">Play ➔</span>
+                    </button>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+          {visibleSegments.length === 0 && <p className="vl-hub-empty">No games match. <button type="button" onClick={() => { setSearchQuery(''); setFilterLevel('all'); }}>Show all</button></p>}
         </div>
-      </div>
-      </>
       )}
 
       {viewMode === 'workbench' && (
@@ -1303,19 +755,19 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               type="button"
               className="vl-wb-return-btn"
               onClick={() => {
-                setViewMode('mission-control');
+                setViewMode('catalog');
                 soundEffects.playStrokeChime();
               }}
-              title="Return to Vijñāna Mission Control Hub"
+              title="Back to the Vijñāna Lab level path"
             >
               <span aria-hidden="true">◀</span>
-              <span>🚀 Mission Control (8 Games)</span>
+              <span>All levels</span>
             </button>
 
             <div className="vl-wb-active-mission-title">
               <span className="vl-wb-icon">{seg.icon}</span>
               <div className="vl-wb-title-box">
-                <span className="vl-wb-sector-code">SECTOR {seg.code} · {seg.ageRange}</span>
+                <span className="vl-wb-sector-code">{seg.levelLabel} · {seg.ageRange}</span>
                 <h2 id={`vl-h-${active}`} className="vl-wb-name">
                   {seg.title} <span className="vl-wb-dev" lang="sa">({seg.dev})</span>
                 </h2>
@@ -1323,14 +775,14 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             </div>
 
             <div className="vl-wb-actions-right">
-              {activeMissionCard && (
+              {(activeMissionCard || quest) && (
                 <button
                   type="button"
                   className="vl-wb-spark-btn"
                   onClick={handleCompleteActiveMission}
                   title="Celebrate mission completion & unlock 3 Vidyā Stars!"
                 >
-                  <span>🎉 Spark Science (+3 ⭐)</span>
+                  <span>🎉 I did it! (+3 ⭐)</span>
                 </button>
               )}
               {activeMissionCard && (
@@ -1367,20 +819,22 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 }}
                 title="Browse full 17-simulation catalog"
               >
-                <span>🎴 All 17 Sims</span>
+                <span>🧭 Level path</span>
               </button>
             </div>
           </div>
 
           {/* Bodhi 1-Sentence Mission Briefing Box */}
           <div className="vl-wb-bodhi-briefing-box">
+            {active !== 'preschool-wonder' && (
             <div className="vl-wb-bodhi-avatar-col">
               <span className="vl-wb-bodhi-emoji">🧙‍♂️</span>
-              <span className="vl-wb-bodhi-tag">BODHI CONTROLLER</span>
+              <span className="vl-wb-bodhi-tag">Bodhi</span>
             </div>
+            )}
             <div className="vl-wb-bodhi-content-col">
               <div className="vl-wb-bodhi-kicker">
-                <span className="vl-hud-blink">●</span> 3-MINUTE ACTIVE MISSION // कार्य-लक्ष्यम्
+                <span className="vl-hud-blink">●</span> 3-minute quest · कार्य-लक्ष्यम्
                 <button
                   type="button"
                   className={`vl-wb-audio-btn ${isSpeakingBodhiBriefing ? 'is-speaking' : ''}`}
@@ -1391,8 +845,20 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 </button>
               </div>
               <p className="vl-wb-bodhi-goal-text">
-                🎯 <strong>Goal:</strong> {activeMissionCard?.missionGoal || seg.blurb}
+                🎯 <strong>Your mission:</strong> {quest?.goal || activeMissionCard?.missionGoal || seg.blurb}
               </p>
+              {quest && (
+                <>
+                  <ol className="vl-quest-steps" aria-label="What to do">
+                    {quest.steps.map((st, i) => <li key={i}><span>{i + 1}</span>{st}</li>)}
+                  </ol>
+                  <div className="vl-quest-lens" aria-label="Ṛṣi lens">
+                    <span><b lang="sa">निरीक्षणम्</b> {quest.observe}</span>
+                    <span><b lang="sa">प्रकृति-शिक्षा</b> {quest.nature}</span>
+                    <span><b lang="sa">प्रयोजनम्</b> {quest.purpose}</span>
+                  </div>
+                </>
+              )}
               {activeMissionCard && (
                 <div className="vl-wb-reward-pill">
                   <span>🏆 <strong>Reward:</strong> Unlock the <strong>{activeMissionCard.badgeName}</strong> badge ({activeMissionCard.badgeIcon}) + 3 Vidyā Stars!</span>
@@ -1441,14 +907,14 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         <div className="vl-next-lab-gateway" style={{ '--next-glow': nextSeg.glow, '--next-ink': nextSeg.ink, '--next-tint': nextSeg.tint } as React.CSSProperties}>
           <div className="vl-nlg-header">
             <div className="vl-nlg-kicker">
-              <span className="vl-hud-blink">●</span> SECTOR {seg.code} SIMULATION BENCH // NEXT EXPEDITION AVAILABLE
+              Next on your path
             </div>
             <div className="vl-nlg-title-row">
               <h3 className="vl-nlg-heading">
-                Ready for the Next Vijñāna Exploration?
+                Ready for the next game?
               </h3>
               <span className="vl-nlg-counter">
-                {currentIndex + 1} of {LAB_SEGMENTS.length} Sectors Explored
+                Game {currentIndex + 1} of {LAB_SEGMENTS.length}
               </span>
             </div>
           </div>
@@ -1524,7 +990,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         </div>
 
         <Suspense fallback={<div className="vl-loading">Loading Bodhi Vijñāna Console…</div>}>
-          <LabBodhiConsole activeSegment={active} />
+          {active !== 'preschool-wonder' && <LabBodhiConsole activeSegment={active} />}
         </Suspense>
 
         {/* Floating Mission Complete Button */}
@@ -1562,7 +1028,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         <div className="vl-sgs-levels-grid">
           <div className="vl-sgs-level-card vl-slc--preschool">
             <div className="vl-slc-top">
-              <span className="vl-slc-icon">🧸</span>
+              <span className="vl-slc-icon">🌟</span>
               <div>
                 <span className="vl-slc-tag">LEVEL 1 · AGES 3–7</span>
                 <h3 className="vl-slc-title">Preschool &amp; Early Explorer (शिशु-बोध)</h3>
@@ -1834,6 +1300,19 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         activeLabId={active}
       />
 
+      {!activeMissionCard && quest && isScienceSparkOpen && (
+        <div className="vl-win-overlay" role="dialog" aria-label="Quest complete" onClick={() => setIsScienceSparkOpen(false)}>
+          <div className="vl-win-card" onClick={(e) => e.stopPropagation()}>
+            <div className="vl-win-stars">⭐⭐⭐</div>
+            <h3>{quest.win}</h3>
+            <p><b lang="sa">प्रयोजनम्</b> · {quest.purpose}</p>
+            <div className="vl-win-btns">
+              <button type="button" onClick={() => setIsScienceSparkOpen(false)}>Play again</button>
+              <button type="button" className="is-primary" onClick={() => { setIsScienceSparkOpen(false); handleNavigateLab(nextSeg.id); }}>Next game ➔</button>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Post-Mission Celebration & Science Spark Modal */}
       {activeMissionCard && (
         <ScienceSparkModal
@@ -1848,7 +1327,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             setIsScienceSparkOpen(false);
           }}
           onReturnToDashboard={() => {
-            setViewMode('mission-control');
+            setViewMode('catalog');
           }}
         />
       )}

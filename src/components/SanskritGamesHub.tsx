@@ -373,7 +373,7 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                 }
               }}
             >
-              <span>🧸 Preschool &amp; Kids (Ages 3–7)</span>
+              <span>🌟 Preschool &amp; Kids (Ages 3–7)</span>
             </button>
             <button
               type="button"
@@ -391,7 +391,7 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
 
           {filterMode === 'preschool' && (
             <div className="sgh-preschool-banner">
-              <span className="spb-icon" aria-hidden="true">🧸</span>
+              <span className="spb-icon" aria-hidden="true">🌟</span>
               <div>
                 <strong>शिशु-युग्म-क्रीडा · Preschool Picture Match (Ages 3–7)</strong>
                 <span>Tap matching cards with emojis and hear the native Sanskrit pronunciation! 100% fun, gentle, and tactile.</span>

@@ -12,7 +12,7 @@ interface GurukulEntranceIntroProps {
 export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
   onComplete,
   targetLogoId = 'home-hero-crest-logo',
-  autoAdvanceMs = 8500,
+  autoAdvanceMs = 8000,
 }) => {
   const [isExiting, setIsExiting] = useState(false);
   const [isFlying, setIsFlying] = useState(false);
@@ -20,7 +20,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
   const [isMuted, setIsMuted] = useState(false);
   const [isSuspended, setIsSuspended] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
-  const [secondsLeft, setSecondsLeft] = useState(() => Math.ceil(autoAdvanceMs / 1000));
+  const [, setSecondsLeft] = useState(() => Math.ceil(autoAdvanceMs / 1000));
 
   const logoRef = useRef<HTMLImageElement | null>(null);
   const timerRef = useRef<number | null>(null);
@@ -157,7 +157,8 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
       role="dialog"
       aria-label="Gurukul Welcome Entrance"
     >
-      {/* Background Painting Scene */}
+      {/* Painting Scene (one side on desktop, top band on mobile) */}
+      <div className="gurukul-intro-scene" aria-hidden="true">
       <div
         className="gurukul-intro-bg"
         style={{ backgroundImage: `url(${gurukulDawnUrl})` }}
@@ -166,44 +167,40 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
       {/* Atmospheric Mist & Golden Sunrise Beams */}
       <div className="gurukul-intro-mist" />
       <div className="gurukul-intro-sunbeams" />
+      </div>
 
       {/* Main Centerpiece Content */}
       <div className="gurukul-intro-content" onClick={(e) => e.stopPropagation()}>
         {/* Sacred Brand Crest with Mandala Aura */}
         <div className="gurukul-intro-crest-wrap">
-          <div className="gurukul-intro-mandala" aria-hidden="true" />
+          <div className="gurukul-intro-mandala" aria-hidden="true" style={{ pointerEvents: 'none' }} />
           <img
             ref={logoRef}
             src="/logo.jpg"
             alt="EdNet Gurukul Brand Crest"
             className={`gurukul-intro-logo ${isFlying ? 'is-flying' : ''}`}
             style={isFlying ? flyStyle : undefined}
-            onClick={triggerExit}
+            role="button"
+            tabIndex={0}
+            title="Enter Gurukul"
+            aria-label="Enter Gurukul homepage"
+            onClick={(e) => { e.stopPropagation(); setHasInteracted(true); triggerExit(); }}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerExit(); } }}
           />
         </div>
-
-        {/* Sacred Sanskrit Invocation */}
-        <div className="gurukul-intro-badge">
-          <span>🕉️</span>
-          <span>गुरुकुल-प्रवेशः</span>
-        </div>
-
-        <h1 className="gurukul-intro-title">
-          विद्यां ददाति विनयं विनयाद् याति पात्रताम्
-        </h1>
 
         <p className="gurukul-intro-verse">
           सत्यं वद · धर्मं चर · स्वाध्यायान्मा प्रमदः
         </p>
-
-        <p className="gurukul-intro-subtitle">
-          EdNet Learn Gurukul · Ancient Sanskrit &amp; Vedic Studies for All Learners
+        <p className="gurukul-intro-verse-en">
+          अपने ज्ञान, अध्ययन और आत्म-सुधार के कार्य में कभी आलसी या लापरवाह न बनें; यह एक आजीवन साधना है।
         </p>
 
         {/* Bioacoustic Sound Indicator */}
         <div
           className={`gurukul-intro-sound-pill${isSuspended ? ' is-suspended-prompt' : ''}`}
-          aria-label="Bioacoustic birdsong, peacock, and sacred river ambiance playing"
+          role="button"
+          aria-label="Morning birdsong and river ambiance"
           onClick={(e) => {
             e.stopPropagation();
             void gurukulAmbiance.resume();
@@ -212,11 +209,6 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
           title={isSuspended ? 'Tap to awaken morning soundscape' : 'Morning soundscape is ON'}
         >
           <span>{isSuspended ? '🔊' : '🌿'}</span>
-          <span>
-            {isSuspended
-              ? 'Sound ON · Tap anywhere to awaken morning birdsong'
-              : 'Sound ON · Vedic Tapovana Gurukul at Dawn'}
-          </span>
           {!isSuspended && (
             <div className="gurukul-sound-waves" aria-hidden="true">
               <div className="gurukul-sound-bar" />
@@ -235,7 +227,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             onClick={triggerExit}
             autoFocus
           >
-            <span>Enter Gurukul</span>
+            <span lang="sa">गुरुकुलं प्रविश</span> · <span>Enter Gurukul</span>
             <span>➔</span>
           </button>
 
@@ -244,20 +236,14 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             className="gurukul-intro-mute-btn"
             onClick={toggleSound}
             aria-label={isMuted ? 'Unmute sounds' : 'Mute sounds'}
+            title={isMuted ? 'Unmute sounds' : 'Mute sounds'}
           >
             <span>{isMuted ? '🔇' : '🔊'}</span>
-            <span>{isMuted ? 'Sound Muted' : 'Sound On'}</span>
           </button>
         </div>
 
         {/* Lingering Indicator & Progress Bar */}
         <div className="gurukul-intro-linger-wrap" aria-live="polite">
-          <div className="gurukul-intro-linger-hint">
-            <span className="gurukul-intro-linger-pulse">⏳</span>
-            <span>
-              Press button to enter, or entering in <strong>{secondsLeft}s</strong>
-            </span>
-          </div>
           <div className="gurukul-intro-linger-track">
             <div
               className="gurukul-intro-linger-bar"

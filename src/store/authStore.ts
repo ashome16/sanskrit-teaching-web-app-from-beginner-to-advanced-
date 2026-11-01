@@ -54,7 +54,7 @@ export const maskEmail = (email: string | undefined | null): string => {
   return `${local.slice(0, 2)}***${local.slice(-1)}@${domain}`;
 };
 export const DEFAULT_UPI_VPA = '7075296749@upi';
-export const DEFAULT_UPI_PAYEE = 'EdNet Learn Gurukul';
+export const DEFAULT_UPI_PAYEE = 'EdNet Gurukul';
 
 const getStoredAccessMode = (): AccessControlMode => {
   try {

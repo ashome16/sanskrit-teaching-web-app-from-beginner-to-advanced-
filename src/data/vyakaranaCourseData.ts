@@ -21,6 +21,9 @@ export interface VyakaranaLesson {
   summary: string;
   keyConcepts: string[];
   suggestedPractice: string;
+  /** Short Sanskrit one-liner shown on the course hub and lesson header */
+  sutraSa: string;
+  sutraGloss: string;
   interactiveStudioTopic?: 'vibhakti' | 'linga-vachana' | 'numbers' | 'dhatupatha' | 'sound-teams' | 'science-of-sound' | 'samyukta';
   interactiveStudioLabel?: string;
 }
@@ -76,6 +79,8 @@ export const VYAKARANA_LESSONS: VyakaranaLesson[] = [
   {
     id: 'lesson-1',
     lessonNumber: 1,
+    sutraSa: 'अकारः सर्व-वर्णानां मूलम्',
+    sutraGloss: 'The sound अ is the root of all letters.',
     moduleId: 'module-1',
     title: 'Lesson 1: Introduction to Devanāgarī & Vowels (Svara)',
     titleSa: 'देवनागरी-स्वर-परिचयः',
@@ -90,6 +95,8 @@ export const VYAKARANA_LESSONS: VyakaranaLesson[] = [
   {
     id: 'lesson-2',
     lessonNumber: 2,
+    sutraSa: 'कण्ठात् ओष्ठ-पर्यन्तं वर्णाः',
+    sutraGloss: 'Letters flow from the throat to the lips.',
     moduleId: 'module-1',
     title: 'Lesson 2: Consonants (Vyañjana) & Pronunciation Places (Sthāna)',
     titleSa: 'व्यञ्जनानि उच्चारण-स्थानानि च',
@@ -104,6 +111,8 @@ export const VYAKARANA_LESSONS: VyakaranaLesson[] = [
   {
     id: 'lesson-3',
     lessonNumber: 3,
+    sutraSa: 'अपदं न प्रयुञ्जीत',
+    sutraGloss: 'Never use a raw, uninflected word.',
     moduleId: 'module-1',
     title: 'Lesson 3: The Concept of Roots (Dhātu) and Nouns (Prātipadika)',
     titleSa: 'धातु-प्रातिपदिक-अवधारणा',
@@ -118,6 +127,8 @@ export const VYAKARANA_LESSONS: VyakaranaLesson[] = [
   {
     id: 'lesson-4',
     lessonNumber: 4,
+    sutraSa: 'विभक्तिः कारकं दर्शयति',
+    sutraGloss: 'The case ending reveals the role.',
     moduleId: 'module-2',
     title: 'Lesson 4: Introduction to Vibhakti (The 8 Cases)',
     titleSa: 'विभक्ति-परिचयः (कारकाणि च)',
@@ -132,6 +143,8 @@ export const VYAKARANA_LESSONS: VyakaranaLesson[] = [
   {
     id: 'lesson-5',
     lessonNumber: 5,
+    sutraSa: 'बालकः पठति, बालकाः पठन्ति',
+    sutraGloss: 'A boy reads; boys read.',
     moduleId: 'module-2',
     title: "Lesson 5: Masculine Nouns Ending in 'a' (Akārānta Pulliṅga)",
     titleSa: 'अकारान्त-पुंल्लिङ्गः (बालक-शब्दः)',
@@ -146,6 +159,8 @@ export const VYAKARANA_LESSONS: VyakaranaLesson[] = [
   {
     id: 'lesson-6',
     lessonNumber: 6,
+    sutraSa: 'लता वर्धते, नदी वहति',
+    sutraGloss: 'The vine grows; the river flows.',
     moduleId: 'module-2',
     title: "Lesson 6: Feminine Nouns Ending in 'ā' and 'ī' (Ākārānta / Īkārānta Strīliṅga)",
     titleSa: 'आकारान्त-ईकारान्त-स्त्रीलिङ्गौ (लता नदी च)',
@@ -160,6 +175,8 @@ export const VYAKARANA_LESSONS: VyakaranaLesson[] = [
   {
     id: 'lesson-7',
     lessonNumber: 7,
+    sutraSa: 'ति तः अन्ति — सि थः थ — मि वः मः',
+    sutraGloss: 'The nine present-tense endings.',
     moduleId: 'module-3',
     title: 'Lesson 7: Introduction to Present Tense (Laṭ Lakāra)',
     titleSa: 'लट् लकारः (वर्तमान-कालः)',
@@ -174,6 +191,8 @@ export const VYAKARANA_LESSONS: VyakaranaLesson[] = [
   {
     id: 'lesson-8',
     lessonNumber: 8,
+    sutraSa: 'सः पठति, त्वं पठसि, अहं पठामि',
+    sutraGloss: 'He reads, you read, I read.',
     moduleId: 'module-3',
     title: 'Lesson 8: The Three Persons (Puruṣa) and Numbers (Vacana)',
     titleSa: 'त्रयः पुरुषाः त्रीणि वचनानि च',
@@ -188,6 +207,8 @@ export const VYAKARANA_LESSONS: VyakaranaLesson[] = [
   {
     id: 'lesson-9',
     lessonNumber: 9,
+    sutraSa: 'कर्ता प्रथमायां, कर्म द्वितीयायाम्',
+    sutraGloss: 'Doer in Case 1, object in Case 2.',
     moduleId: 'module-4',
     title: 'Lesson 9: Basic Subject-Verb Agreement (Kartari Prayoga)',
     titleSa: 'कर्तरि प्रयोगः (वाक्य-रचना)',
@@ -200,6 +221,8 @@ export const VYAKARANA_LESSONS: VyakaranaLesson[] = [
   {
     id: 'lesson-10',
     lessonNumber: 10,
+    sutraSa: 'अव्ययं न व्येति',
+    sutraGloss: 'An indeclinable never changes.',
     moduleId: 'module-4',
     title: 'Lesson 10: Introduction to Avyayas (Indeclinables) and Simple Dialogues',
     titleSa: 'अव्ययानि सम्भाषणं च (Daily Dialogues)',

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { ErrorBoundary } from './ErrorBoundary';
 import HomePage from './HomePage';
 import FAQSection from './FAQSection';
+import HighIntentLandingPage, { landingForPath, landingById } from './HighIntentLandingPage';
 import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import Footer from './Footer';
 const SupportWidget = lazy(() => import('./SupportWidget'));
@@ -84,7 +85,8 @@ type DashboardView =
   | 'course'
   | 'certificate'
   | 'science-lab'
-  | 'assignment-eval';
+  | 'assignment-eval'
+  | 'intent-landing';
 
 const PHILOSOPHY_PATHS = new Set([
   '/philosophy',
@@ -113,15 +115,20 @@ const COURSE_PATHS = new Set([
   '/sanskrit-thinking',
   '/sanskrit-as-a-way-of-thinking',
   '/samskrta-cintanam',
+  '/vedic-philosophy',
 ]);
 
 export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
+  'intent-landing': {
+    title: 'Study Sanskrit by Goal | EdNet Learn',
+    desc: 'Focused Sanskrit study pages for CBSE classes, NCERT Deepakam and Sharada, alphabet audio, grammar and word deconstruction.',
+  },
   home: {
-    title: 'Sanskrit & Samskrit Online Classes: Gurukul Learning Beginner to Advanced | EdNet Learn',
+    title: 'Sanskrit & संस्कृतम् Online Classes: Gurukul Learning Beginner to Advanced | EdNet Learn',
     desc: 'Interactive Sanskrit & Samskrit online classes with Bodhi: spoken Samskrit for beginners & kids, 28-lesson curriculum, CBSE NCERT Classes 6–10 coaching, Pāṇinian grammar, and Vedic math with live AI audio feedback.',
   },
   course: {
-    title: 'संस्कृत-चिन्तनम् · Sanskrit & Samskrit as a Way of Thinking | EdNet Learn Gurukul',
+    title: 'संस्कृत-चिन्तनम् · Sanskrit & Samskrit as a Way of Thinking | EdNet Gurukul',
     desc: 'Complete 6-module curriculum: Sanskrit (Samskrit) as an integrated system for taking sound in, processing rules, and producing output. 28 lessons for science and contemplation.',
   },
   'cbse-guide': {
@@ -157,11 +164,11 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Complete NCERT Class 7 Sanskrit & Samskrit Deepakam solutions, chapter-wise verse translations, word-by-word shabdarth, physical textbook page mapping, audio pronunciation, worksheets and quizzes.',
   },
   philosophy: {
-    title: 'Why Learn Sanskrit (Samskrit) in the Age of AI & Darśana | EdNet Learn Gurukul',
+    title: 'Why Learn Sanskrit (Samskrit) in the Age of AI & Darśana | EdNet Gurukul',
     desc: 'Why learn Sanskrit & Samskrit in the age of AI? Machines will make communication efficient; they will not make it living. Explore transfer vs bind, Pāṇinian phonetics, and mathematical darśana.',
   },
   faq: {
-    title: 'Frequently Asked Questions & Help | EdNet Learn Gurukul',
+    title: 'Sanskrit Learning FAQ: Frequently Asked Questions & Help | EdNet Gurukul',
     desc: 'Find answers about subscriptions, UPI payments, NCERT curriculum coverage, interactive puzzles, and learning Sanskrit & Samskrit online.',
   },
   'science-lab': {
@@ -198,6 +205,7 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/learn-samskrit-online-free' ||
     clean === '/learn-samskrit'
   ) return 'home';
+  if (landingForPath(clean)) return 'intent-landing';
   if (
     COURSE_PATHS.has(clean) ||
     clean === '/spoken-sanskrit-course' ||
@@ -211,17 +219,32 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/cbse-samskrit-classes'
   ) return 'cbse-guide';
   if (RESOURCES_PATHS.has(clean)) return 'resources';
-  if (clean === '/worksheets' || clean === '/samskrit-worksheets') return 'worksheets';
+  if (clean === '/worksheets' || clean === '/sanskrit-worksheets' || clean === '/samskrit-worksheets') return 'worksheets';
   if (clean === '/vedic-maths' || clean === '/vedic-math') return 'vedic-maths';
   if (
     clean === '/grammar' ||
+    clean === '/sanskrit-grammar' ||
     clean === '/sanskrit-grammar-lessons' ||
-    clean === '/samskrit-grammar-lessons'
+    clean === '/samskrit-grammar-lessons' ||
+    clean === '/sanskrit-vyakaran' ||
+    clean === '/sanskrit-vyakaranamu' ||
+    clean === '/vyakaran' ||
+    clean === '/vyakaranamu' ||
+    clean === '/vyakarana' ||
+    clean === '/sanskrit-vyakarana' ||
+    clean === '/many-names-of-sanskrit' ||
+    clean === '/sanskrit-in-south-indian-languages' ||
+    clean === '/sapta-varna' ||
+    clean === '/jambudvipa' ||
+    clean === '/panchatantra' ||
+    clean === '/sanskrit-grammar-europe'
   ) return 'grammar';
-  if (clean === '/dhatupatha' || clean === '/dhatu' || clean === '/dhaturoop') return 'dhatupatha';
-  if (clean === '/quiz' || clean === '/quizzes' || clean === '/samskrit-quiz') return 'quiz';
+  if (clean === '/sanskrit-dhatupatha' || clean === '/dhatupatha' || clean === '/dhatu' || clean === '/dhaturoop') return 'dhatupatha';
+  if (clean === '/quiz' || clean === '/sanskrit-quiz' || clean === '/quizzes' || clean === '/samskrit-quiz') return 'quiz';
   if (
     clean === '/board' ||
+    clean === '/sanskrit-jodo' ||
+    clean === '/sanskrit-jodo-puzzle' ||
     clean === '/jodo' ||
     clean === '/puzzles' ||
     clean === '/sanskrit-for-kids' ||
@@ -234,16 +257,21 @@ const pathToView = (pathname: string): DashboardView | null => {
   ) return 'board';
   if (
     clean === '/reader' ||
+    clean === '/sanskrit-reader' ||
+    clean === '/sanskrit-ncert-reader' ||
     clean === '/varnamala' ||
     clean === '/swar' ||
+    clean === '/sanskrit-varnamala' ||
+    clean === '/sanskrit-alphabet' ||
     clean === '/swar-review' ||
     clean === '/swar-quizzes' ||
     clean === '/workbooks' ||
     clean === '/lessons' ||
     clean === '/barakhadi' ||
+    clean === '/sanskrit-barakhadi' ||
     clean === '/sanskrit-pronunciation-guide'
   ) return 'reader';
-  if (clean === '/faq' || clean === '/help') return 'faq';
+  if (clean === '/faq' || clean === '/sanskrit-faq' || clean === '/help') return 'faq';
   if (clean === '/certificate' || clean === '/swar-certificate') return 'certificate';
   if (
     clean === '/vignana-lab' ||
@@ -256,6 +284,7 @@ const pathToView = (pathname: string): DashboardView | null => {
   if (
     clean === '/assignment-eval' ||
     clean === '/evaluate-assignment' ||
+    clean === '/sanskrit-evaluate-assignment' ||
     clean === '/sanskrit-assignment' ||
     clean === '/assignment-evaluator' ||
     clean === '/guided-writing' ||
@@ -267,20 +296,24 @@ const pathToView = (pathname: string): DashboardView | null => {
 };
 
 const viewToPath = (view: DashboardView): string => {
-  if (view === 'course') return '/course';
+  if (view === 'course') return '/sanskrit-thinking';
   if (view === 'philosophy') return '/philosophy';
   if (view === 'cbse-guide') return '/cbse-sanskrit-guide';
-  if (view === 'resources') return '/resources';
-  if (view === 'worksheets') return '/worksheets';
+  if (view === 'resources') return '/sanskrit-resources';
+  if (view === 'worksheets') return '/sanskrit-worksheets';
   if (view === 'vedic-maths') return '/vedic-maths';
-  if (view === 'grammar') return '/grammar';
-  if (view === 'dhatupatha') return '/dhatupatha';
-  if (view === 'quiz') return '/quiz';
-  if (view === 'board') return '/board';
-  if (view === 'reader') return '/reader';
-  if (view === 'faq') return '/faq';
+  if (view === 'grammar') return '/sanskrit-grammar';
+  if (view === 'dhatupatha') return '/sanskrit-dhatupatha';
+  if (view === 'quiz') return '/sanskrit-quiz';
+  if (view === 'board') return '/sanskrit-jodo-puzzle';
+  if (view === 'reader') return '/sanskrit-ncert-reader';
+  if (view === 'faq') return '/sanskrit-faq';
   if (view === 'certificate') return '/certificate';
-  if (view === 'assignment-eval') return '/evaluate-assignment';
+  if (view === 'assignment-eval') return '/sanskrit-evaluate-assignment';
+  if (view === 'intent-landing') {
+    const l = typeof window !== 'undefined' ? landingForPath(window.location.pathname) : null;
+    return l ? l.path : '/';
+  }
   if (view === 'science-lab') {
     if (typeof window !== 'undefined' && window.location.pathname.replace(/\/+$/, '') === '/science-lab') {
       return '/science-lab';
@@ -312,6 +345,12 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
 /** Strip punctuation / digits so only the Devanagari token remains for analysis. */
 const cleanWord = (value: string): string =>
   value.replace(/[\s।॥,;:!?()[\]{}<>'"“”‘’\-–—०-९./\\=+#*~_`]+/g, '').trim();
+
+// Views guests may open in smart_freemium (SEO deep links must not bounce to home).
+const GUEST_FREE_VIEWS: ReadonlySet<string> = new Set([
+  'home', 'faq', 'philosophy', 'cbse-guide', 'resources', 'dhatupatha', 'science-lab', 'certificate',
+  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'assignment-eval', 'intent-landing',
+]);
 
 const Dashboard: React.FC = () => {
   const [lessons, setLessons] = useState(STATIC_LESSONS);
@@ -345,8 +384,29 @@ const Dashboard: React.FC = () => {
     return 'home';
   });
   const [grammarResetKey, setGrammarResetKey] = useState(0);
-  const [grammarTargetTopic, setGrammarTargetTopic] = useState<GrammarTopic>('home');
-  const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(null);
+  const [landingId, setLandingId] = useState<string | null>(() => {
+    try { return landingForPath(window.location.pathname)?.id || null; } catch { return null; }
+  });
+  const isManyNamesPath = () => {
+    try { return window.location.pathname.replace(/\/+$/, '') === '/many-names-of-sanskrit'; } catch { return false; }
+  };
+  const isSouthIndianPath = () => {
+    try { return window.location.pathname.replace(/\/+$/, '') === '/sanskrit-in-south-indian-languages'; } catch { return false; }
+  };
+  const isSaptaPath = () => {
+    try { return window.location.pathname.replace(/\/+$/, '') === '/sapta-varna'; } catch { return false; }
+  };
+  const isEuropePath = () => {
+    try { return window.location.pathname.replace(/\/+$/, '') === '/sanskrit-grammar-europe'; } catch { return false; }
+  };
+  const isPanchaPath = () => {
+    try { return window.location.pathname.replace(/\/+$/, '') === '/panchatantra'; } catch { return false; }
+  };
+  const isJambuPath = () => {
+    try { return window.location.pathname.replace(/\/+$/, '') === '/jambudvipa'; } catch { return false; }
+  };
+  const [grammarTargetTopic, setGrammarTargetTopic] = useState<GrammarTopic>(() => (isManyNamesPath() || isSouthIndianPath() || isSaptaPath() || isJambuPath() || isPanchaPath() || isEuropePath() ? ('article' as GrammarTopic) : 'home'));
+  const [grammarTargetArticleId, setGrammarTargetArticleId] = useState<string | null>(() => (isManyNamesPath() ? 'many-names-of-sanskrit' : isSouthIndianPath() ? 'sanskrit-in-south-indian-languages' : isSaptaPath() ? 'sapta-varna-seven-horses' : isJambuPath() ? 'jambudvipa-sapta-dvipa' : isPanchaPath() ? 'panchatantra-niti-world' : isEuropePath() ? 'sanskrit-grammar-europe' : null));
   const [vedicTarget, setVedicTarget] = useState<{ tab: VedicTab; anchor?: string; key: number }>({ tab: 'sutras', key: 0 });
   const [quizAnchor, setQuizAnchor] = useState<string | null>(() => {
     try {
@@ -369,6 +429,7 @@ const Dashboard: React.FC = () => {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
   const [isOnlineClassesOpen, setIsOnlineClassesOpen] = useState(false);
+  const [isMoreNavOpen, setIsMoreNavOpen] = useState(false);
   const [isCalendarModalOpen, setIsCalendarModalOpen] = useState(false);
   const [panchang, setPanchang] = useState(() => getHinduDate());
 
@@ -442,7 +503,7 @@ const Dashboard: React.FC = () => {
       return targetView !== 'home';
     }
     // smart_freemium mode (default & recommended):
-    if (targetView === 'home' || targetView === 'faq' || targetView === 'philosophy' || targetView === 'cbse-guide' || targetView === 'resources' || targetView === 'dhatupatha' || targetView === 'science-lab' || targetView === 'certificate') return false;
+    if (GUEST_FREE_VIEWS.has(targetView)) return false;
     if (targetView === 'reader') {
       const lessonToCheck = targetLessonId || lessons[lessonIndex]?.id;
       // Content from the beginning (Alphabet, Barakhadi, Samyukta, Numbers)
@@ -452,7 +513,8 @@ const Dashboard: React.FC = () => {
       }
       return true;
     }
-    // Gated in smart_freemium: board (Tile Puzzle), grammar, vedic-maths, quiz, worksheets
+    // Everything else stays gated. Quiz is guest-openable via the guard (Swar Review only);
+    // its full arena keeps its own soft gate, as do soft gates inside components.
     return true;
   };
 
@@ -462,7 +524,7 @@ const Dashboard: React.FC = () => {
   ): boolean => {
     if (isContentGated(targetView, targetLessonId)) {
       setPendingRedirect(targetView, targetLessonId);
-      openAuthModal('register');
+      openAuthModal('login');
       return false;
     }
     return true;
@@ -477,7 +539,7 @@ const Dashboard: React.FC = () => {
     }
     if (isContentGated('reader', 'barakhadi')) {
       setPendingRedirect('reader', 'barakhadi');
-      openAuthModal('register');
+      openAuthModal('login');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -602,6 +664,12 @@ const Dashboard: React.FC = () => {
       return;
     }
 
+    if (target.view === 'intent-landing' && target.landingId) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      setLandingId(target.landingId);
+      setActiveView('intent-landing');
+      return;
+    }
     if (target.view === 'grammar') {
       handleOpenGrammar(target.grammarTopic || 'home', target.grammarArticleId || null);
       return;
@@ -766,12 +834,12 @@ const Dashboard: React.FC = () => {
   // Guard against stale localStorage pointing to gated content for guest visitors
   useEffect(() => {
     if (!currentUser) {
-      if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources' && activeView !== 'science-lab') {
+      if (accessMode === 'strict_gate' && activeView !== 'home' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources' && activeView !== 'science-lab' && activeView !== 'intent-landing') {
         setActiveView('home');
       } else if (accessMode === 'smart_freemium') {
         // /certificate and /quiz stay open: printed QR codes in the Swar workbook (pp. 24, 149) point here.
         // Guests on /quiz see only Swar Review Practice; the full quiz arena keeps its sign-up gate.
-        if (activeView !== 'home' && activeView !== 'reader' && activeView !== 'faq' && activeView !== 'philosophy' && activeView !== 'cbse-guide' && activeView !== 'resources' && activeView !== 'science-lab' && activeView !== 'certificate' && activeView !== 'quiz') {
+        if (activeView !== 'reader' && activeView !== 'quiz' && !GUEST_FREE_VIEWS.has(activeView)) {
           setActiveView('home');
         } else if (activeView === 'reader') {
           const currId = lessons[lessonIndex]?.id;
@@ -793,8 +861,21 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     try {
       const onBarakhadi = activeView === 'reader' && lessons[lessonIndex]?.id === 'barakhadi';
-      const desired = onBarakhadi ? '/barakhadi' : viewToPath(activeView);
       const current = window.location.pathname.replace(/\/+$/, '') || '/';
+      const onManyNames =
+        activeView === 'grammar' && grammarTargetArticleId === 'many-names-of-sanskrit' && current === '/many-names-of-sanskrit';
+      const onSouthIndian =
+        activeView === 'grammar' && grammarTargetArticleId === 'sanskrit-in-south-indian-languages' && current === '/sanskrit-in-south-indian-languages';
+      const onSapta =
+        activeView === 'grammar' && grammarTargetArticleId === 'sapta-varna-seven-horses' && current === '/sapta-varna';
+      const onJambu =
+        activeView === 'grammar' && grammarTargetArticleId === 'jambudvipa-sapta-dvipa' && current === '/jambudvipa';
+      const onPancha =
+        activeView === 'grammar' && grammarTargetArticleId === 'panchatantra-niti-world' && current === '/panchatantra';
+      const onEurope =
+        activeView === 'grammar' && grammarTargetArticleId === 'sanskrit-grammar-europe' && current === '/sanskrit-grammar-europe';
+      const activeLanding = activeView === 'intent-landing' ? landingById(landingId) : null;
+      const desired = activeLanding ? activeLanding.path : onBarakhadi ? '/barakhadi' : onManyNames ? '/many-names-of-sanskrit' : onSouthIndian ? '/sanskrit-in-south-indian-languages' : onSapta ? '/sapta-varna' : onJambu ? '/jambudvipa' : onPancha ? '/panchatantra' : onEurope ? '/sanskrit-grammar-europe' : viewToPath(activeView);
       const quizHash =
         activeView === 'quiz' && quizAnchor && categoryForLiteratureAnchor(quizAnchor)
           ? `#${quizAnchor}`
@@ -806,7 +887,7 @@ const Dashboard: React.FC = () => {
       }
 
       // Dynamically update document title & meta tags for SEO & social sharing
-      const meta = onBarakhadi ? BARAKHADI_METADATA : VIEW_METADATA[activeView] || VIEW_METADATA.home;
+      const meta = activeLanding ? { title: activeLanding.title, desc: activeLanding.desc } : onBarakhadi ? BARAKHADI_METADATA : VIEW_METADATA[activeView] || VIEW_METADATA.home;
       document.title = meta.title;
       const descEl = document.querySelector('meta[name="description"]');
       if (descEl) descEl.setAttribute('content', meta.desc);
@@ -821,11 +902,12 @@ const Dashboard: React.FC = () => {
       if (canonicalEl) canonicalEl.setAttribute('href', canonicalHref);
     } catch {}
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeView, lessons[lessonIndex]?.id, quizAnchor]);
+  }, [activeView, lessons[lessonIndex]?.id, quizAnchor, landingId]);
 
   useEffect(() => {
     const onPop = () => {
       const fromPath = pathToView(window.location.pathname);
+      if (fromPath === 'intent-landing') setLandingId(landingForPath(window.location.pathname)?.id || null);
       setActiveView(fromPath || 'home');
     };
     window.addEventListener('popstate', onPop);
@@ -856,6 +938,7 @@ const Dashboard: React.FC = () => {
     if (canReadAllChapters) return;
     const id = lessons[lessonIndex]?.id;
     if (!id || (!id.startsWith('grade8_') && !id.startsWith('grade9_'))) return;
+    if (isFreeTrialOpenLesson(id)) return; // guest preview chapters stay open
     const fallback = firstDeepakamIndex(lessons);
     const varna = lessons.findIndex((item) => item.id === 'varnamala');
     const next = fallback >= 0 ? fallback : varna >= 0 ? varna : 0;
@@ -1042,7 +1125,7 @@ const Dashboard: React.FC = () => {
       setWordSelection(null);
     }
     // Guests without an account: prompt login/registration for Class 8 and Class 9.
-    if (typeof targetId === 'string' && (targetId.startsWith('grade8_') || targetId.startsWith('grade9_')) && !canReadAllChapters) {
+    if (typeof targetId === 'string' && (targetId.startsWith('grade8_') || targetId.startsWith('grade9_')) && !canReadAllChapters && !isFreeTrialOpenLesson(targetId)) {
       openAuthModal('login');
       return;
     }
@@ -1070,6 +1153,8 @@ const Dashboard: React.FC = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
+  useEffect(() => { setIsMoreNavOpen(false); }, [activeView]);
+  const moreViews: string[] = ['vedic-maths', 'resources', 'course'];
   return (
     <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}${isAnalyzerCollapsed ? ' dashboard--analyzer-collapsed' : ''}`}>
       <header className="dashboard-header">
@@ -1077,11 +1162,11 @@ const Dashboard: React.FC = () => {
           type="button"
           className="dashboard-brand-btn"
           onClick={handleBrandClick}
-          title="EdNet Learn Gurukul - Go to Homepage"
+          title="EdNet Gurukul - Go to Homepage"
         >
           <img src="/logo.jpg" alt="Interactive Sanskrit language learning dashboard for school children" className="dashboard-brand-logo-img" width={48} height={48} />
           <div className="dashboard-brand-text-col">
-            <span className="dashboard-title">EdNet Learn Gurukul</span>
+            <span className="dashboard-title">EdNet Gurukul</span>
           </div>
         </button>
         <nav className="dashboard-nav" aria-label="Main learning views">
@@ -1126,13 +1211,9 @@ const Dashboard: React.FC = () => {
                   type="button"
                   className={activeView === 'reader' && lesson?.id?.startsWith('grade8_') ? 'active' : ''}
                   onClick={() => {
-                    if (!canReadAllChapters) {
-                      openAuthModal('login');
-                    } else {
-                      openDeepakam('grade8_prarthana');
-                    }
+                    openDeepakam(canReadAllChapters ? 'grade8_prarthana' : 'grade8_ch1');
                   }}
-                  title={canReadAllChapters ? 'Deepakam 8th · दीपकम · Class 8 Sanskrit' : 'Sign in to access Deepakam 8th'}
+                  title={canReadAllChapters ? 'Deepakam 8th · दीपकम · Class 8 Sanskrit' : 'Free preview: Deepakam 8th Chapter 1 — sign in for all chapters'}
                 >
                   <img src="/textbooks/ncert-deepakam-class8.jpg" alt="Deepakam 8th Grade Textbook Cover" className="dashboard-nav-sub-img" />
                   <span className="dashboard-nav-sanskrit">दीपकम</span> <span className="dashboard-nav-sub-en">8th</span>
@@ -1141,13 +1222,9 @@ const Dashboard: React.FC = () => {
                   type="button"
                   className={activeView === 'reader' && lesson?.id?.startsWith('grade9_') ? 'active' : ''}
                   onClick={() => {
-                    if (!canReadAllChapters) {
-                      openAuthModal('login');
-                    } else {
-                      openDeepakam('grade9_prarthana');
-                    }
+                    openDeepakam(canReadAllChapters ? 'grade9_prarthana' : 'grade9_ch1');
                   }}
-                  title={canReadAllChapters ? '9th Grade · शारदा · Class 9 Sanskrit' : 'Sign in to access शारदा Class 9'}
+                  title={canReadAllChapters ? '9th Grade · शारदा · Class 9 Sanskrit' : 'Free preview: शारदा Class 9 Chapter 1 — sign in for all chapters'}
                 >
                   <img src="/textbooks/ncert-sharada-class9.jpg" alt="Sharada 9th Grade Textbook Cover" className="dashboard-nav-sub-img" />
                   <span className="dashboard-nav-sanskrit">शारदा</span> <span className="dashboard-nav-sub-en">9th</span>
@@ -1198,77 +1275,54 @@ const Dashboard: React.FC = () => {
             </button>
             <button
               type="button"
-              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'vedic-maths' ? ' active' : ''}`}
-              onClick={() => navigateToView('vedic-maths')}
-              title="Open Vaidic Gaṇitam (वैदिक-गणितम्)"
-            >
-              <img src="/nav/nav-vedic.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-sanskrit">वैदिक-गणितम्</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Speed Math' : 'Mental Math'}</span>
-            </button>
-            <button
-              type="button"
-              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'quiz' ? ' active' : ''}`}
-              onClick={() => navigateToView('quiz')}
-              title="Open Sanskrit & Vedic Maths Quiz (प्रश्नोत्तरी)"
-            >
-              <img src="/nav/nav-quiz.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-sanskrit">प्रश्नोत्तरी</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Practice Quizzes' : 'Tests & Quiz'}</span>
-            </button>
-            <button
-              type="button"
-              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'worksheets' ? ' active' : ''}`}
-              onClick={() => navigateToView('worksheets')}
-              title="Open Printable Worksheets (कार्यपत्रिकाः)"
-            >
-              <img src="/nav/nav-worksheets.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-sanskrit">कार्यपत्रिकाः</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Worksheets' : 'Printable PDFs'}</span>
-            </button>
-            <button
-              type="button"
               className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'assignment-eval' ? ' active' : ''}`}
               onClick={() => navigateToView('assignment-eval')}
-              title="Learn Through Writing: Guided Sequential Paths & Evaluator (लेखन-शाला)"
+              title="लेखन-शाला · Writing Studio - guided writing paths & feedback on written Sanskrit"
             >
               <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">✍️</span>
               <span className="dashboard-nav-sanskrit">लेखन-शाला</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Writing Paths' : 'Learn Writing'}</span>
+              <span className="dashboard-nav-secondary">Writing</span>
             </button>
             <button
               type="button"
-              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'resources' ? ' active' : ''}`}
-              onClick={() => navigateToView('resources')}
-              title="Open Sanskrit Resources &amp; Study Vault (साधनानि)"
+              className={`dashboard-nav-stacked dashboard-nav-item dashboard-nav-more-btn${moreViews.includes(activeView) || isMoreNavOpen ? ' active' : ''}`}
+              onClick={() => setIsMoreNavOpen((o) => !o)}
+              aria-expanded={isMoreNavOpen}
+              aria-haspopup="menu"
+              title="More: Vedic Maths, Resources, Course, Online Classes"
             >
-              <img src="/nav/nav-resources.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
-              <span className="dashboard-nav-sanskrit">साधनानि</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Study Vault' : 'Free Vault'}</span>
-            </button>
-            <button
-              type="button"
-              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'course' ? ' active' : ''}`}
-              onClick={() => navigateToView('course')}
-              title="संस्कृत-चिन्तनम् · Complete Sanskrit as a Way of Thinking Course"
-            >
-              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🧠</span>
-              <span className="dashboard-nav-sanskrit">संस्कृत-चिन्तनम्</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Philosophy' : '28 Lessons'}</span>
-            </button>
-            <button
-              type="button"
-              className={`dashboard-nav-stacked dashboard-nav-item${isOnlineClassesOpen ? ' active' : ''}`}
-              onClick={() => setIsOnlineClassesOpen(true)}
-              title="Sanskrit Online Classes with Bodhi (कक्षासु)"
-              style={{ background: 'rgba(245, 158, 11, 0.08)' }}
-            >
-              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🎓</span>
-              <span className="dashboard-nav-sanskrit">ऑनलाइन-वर्गाः</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Live Classes' : 'Online Classes'}</span>
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">☰</span>
+              <span className="dashboard-nav-sanskrit">अधिकम्</span>
+              <span className="dashboard-nav-secondary">More ▾</span>
             </button>
           </div>
         </nav>
+        {isMoreNavOpen && (
+          <div className="dashboard-more-menu" role="menu" aria-label="More learning views">
+            {([
+              ['vedic-maths', '🧮', 'वैदिक-गणितम्', 'Vedic Maths'],
+              ['resources', '📚', 'साधनानि', 'Free Resources'],
+              ['course', '🧠', 'संस्कृत-चिन्तनम्', 'Thinking Course'],
+            ] as const).map(([view, icon, sa, en]) => (
+              <button
+                key={view}
+                type="button"
+                role="menuitem"
+                className={activeView === view ? 'active' : ''}
+                onClick={() => { setIsMoreNavOpen(false); navigateToView(view); }}
+              >
+                <span aria-hidden="true">{icon}</span> <span className="dashboard-nav-sanskrit">{sa}</span> <span>{en}</span>
+              </button>
+            ))}
+            <button
+              type="button"
+              role="menuitem"
+              onClick={() => { setIsMoreNavOpen(false); setIsOnlineClassesOpen(true); }}
+            >
+              <span aria-hidden="true">🎓</span> <span className="dashboard-nav-sanskrit">ऑनलाइन-वर्गाः</span> <span>Online Classes</span>
+            </button>
+          </div>
+        )}
 
         <div className="dashboard-header-user">
           {/* Hindu Calendar & Panchang Corner Widget */}
@@ -1288,18 +1342,7 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </button>
-          <a
-            href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="dashboard-search-trigger-btn"
-            style={{ padding: '0.45rem 0.65rem', textDecoration: 'none' }}
-            title="Open Koshashri Sanskrit Dictionary (Deccan College)"
-            aria-label="Open Koshashri Sanskrit Dictionary"
-          >
-            <span aria-hidden="true">📖</span>
-            <span className="dashboard-search-trigger-text">Dictionary</span>
-          </a>
+          
           <button
             type="button"
             className="dashboard-search-trigger-btn"
@@ -1343,12 +1386,12 @@ const Dashboard: React.FC = () => {
                 type="button"
                 className="nav-free-trial-btn"
                 onClick={() => openAuthModal('register')}
-                title="Claim your unrestricted 14-day free access · No credit card required"
+                title="Start free trial · No payment to create an account"
                 aria-label="Start 14-day free trial"
               >
                 <span className="nav-free-trial-gift" aria-hidden="true">🎁</span>
-                <span className="nav-free-trial-text">14-Day Free Access</span>
-                <span className="nav-free-trial-badge">Free</span>
+                <span className="nav-free-trial-text">Start free trial</span>
+                <span className="nav-free-trial-badge">No payment</span>
               </button>
               <button
                 type="button"
@@ -1385,7 +1428,8 @@ const Dashboard: React.FC = () => {
           onOpenResources={() => navigateToView('resources')}
           onOpenCourse={() => navigateToView('course')}
           onOpenScienceLab={(segment) => openScienceLab(segment)}
-          onOpenRegister={() => openAuthModal('register')}
+          onOpenTurangaBandha={() => { setPhilosophyEssay('turanga_bandha'); navigateToView('philosophy'); }}
+          onOpenRegister={() => openAuthModal('login')}
           onOpenCertificate={() => navigateToView('certificate')}
         />
       )}
@@ -1404,7 +1448,7 @@ const Dashboard: React.FC = () => {
         {activeView === 'philosophy' && (
           <PhilosophyPage
             initialEssay={philosophyEssay}
-            onOpenRegister={() => openAuthModal('register')}
+            onOpenRegister={() => openAuthModal('login')}
             onOpenVedicMaths={() => navigateToView('vedic-maths')}
             onOpenVarnamala={() => openVarnamala('sound')}
             onOpenReader={() => navigateToView('reader')}
@@ -1414,9 +1458,29 @@ const Dashboard: React.FC = () => {
             onOpenScienceLab={(segment) => openScienceLab(segment)}
           />
         )}
+        {activeView === 'intent-landing' && landingById(landingId) && (
+          <HighIntentLandingPage
+            landing={landingById(landingId)!}
+            onAction={(action) => {
+              const [kind, arg] = action.split(':');
+              if (kind === 'landing') {
+                window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                setLandingId(arg);
+                return;
+              }
+              if (kind === 'reader') { navigateToView('reader', arg); return; }
+              if (kind === 'grammar') { handleOpenGrammar((arg || 'home') as GrammarTopic); return; }
+              if (kind === 'varnamala') { openVarnamala('sound'); return; }
+              if (kind === 'register') { openAuthModal('register'); return; }
+              if (kind === 'worksheets') { navigateToView('worksheets'); return; }
+              if (kind === 'path') { window.location.assign(arg); return; }
+              navigateToView(kind as DashboardView);
+            }}
+          />
+        )}
         {activeView === 'cbse-guide' && (
           <CbseSanskritGuidePage
-            onOpenRegister={() => openAuthModal('register')}
+            onOpenRegister={() => openAuthModal('login')}
             onGoHome={() => navigateToView('home')}
             onOpenPhilosophy={() => navigateToView('philosophy')}
             onOpenGrammar={handleOpenGrammar}
@@ -1430,7 +1494,7 @@ const Dashboard: React.FC = () => {
             onOpenRoadmap={() => handleOpenGrammar('article', 'beginners-roadmap')}
             onOpenCbseGuide={() => navigateToView('cbse-guide')}
             onOpenPhilosophy={() => navigateToView('philosophy')}
-            onOpenRegister={() => openAuthModal('register')}
+            onOpenRegister={() => openAuthModal('login')}
             onOpenQuiz={() => navigateToView('quiz')}
             onOpenWorksheets={() => handleOpenWorksheets('all')}
             onOpenScienceLab={() => openScienceLab()}
@@ -1502,7 +1566,7 @@ const Dashboard: React.FC = () => {
             onOpenReader={() => openDeepakam()}
             onOpenPhilosophy={() => navigateToView('philosophy')}
             onOpenGrammar={handleOpenGrammar}
-            onOpenRegister={() => openAuthModal('register')}
+            onOpenRegister={() => openAuthModal('login')}
             onOpenLogin={() => openAuthModal('login')}
           />
         )}
@@ -1517,7 +1581,7 @@ const Dashboard: React.FC = () => {
             onOpenPuzzles={() => navigateToView('board')}
             onOpenGames={() => navigateToView('science-lab')}
             onOpenSwarSection={() => openVarnamala('quizzes')}
-            onOpenRegister={() => { setPendingRedirect('quiz'); openAuthModal('register'); }}
+            onOpenRegister={() => { setPendingRedirect('quiz'); openAuthModal('login'); }}
           />
         )}
         {activeView === 'worksheets' && (
@@ -1615,7 +1679,7 @@ const Dashboard: React.FC = () => {
             onOpenQuiz={() => navigateToView('quiz')}
             onOpenBoard={() => navigateToView('board')}
             onOpenCbseGuide={() => navigateToView('cbse-guide')}
-            onOpenRegister={() => openAuthModal('register')}
+            onOpenRegister={() => openAuthModal('login')}
             onOpenPayment={() => openPaymentModal()}
             onOpenVoiceSettings={() => setIsVoiceModalOpen(true)}
           />

@@ -22,6 +22,7 @@ import {
 } from '../utils/pronunciation';
 import BodhiMentorPositioning from './BodhiMentorPositioning';
 import '../styles/bodhi.css';
+import { dailyPanchangaGreeting } from '../utils/panchanga';
 
 interface BodhiGuideWidgetProps {
   activeView: string;
@@ -80,6 +81,13 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
   initialQuestionId,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [panchangaGreeting, setPanchangaGreeting] = useState<string | null>(null);
+  useEffect(() => {
+    if (isOpen && panchangaGreeting === null) {
+      const g = dailyPanchangaGreeting();
+      if (g) setPanchangaGreeting(g);
+    }
+  }, [isOpen, panchangaGreeting]);
   // ✨ Did you know? — the Micro-Anecdote currently popped up in Ask Bodhi.
   const [storyId, setStoryId] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<GuideTab>(initialTab || 'context');
@@ -212,6 +220,16 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
     }
   }, [isOpen]);
   useEffect(() => () => stopSpeaking(), []);
+
+  // Auto-dismiss mini bubble after 9s or on first scroll (mobile-friendly)
+  useEffect(() => {
+    if (!showMiniBubble) return;
+    const isSmall = typeof window !== 'undefined' && window.innerWidth <= 640;
+    const t = setTimeout(() => setShowMiniBubble(false), isSmall ? 4500 : 7000);
+    const onScroll = () => setShowMiniBubble(false);
+    window.addEventListener('scroll', onScroll, { passive: true, once: true });
+    return () => { clearTimeout(t); window.removeEventListener('scroll', onScroll); };
+  }, [showMiniBubble]);
 
   // Update Bodhi's mini bubble message when active view changes
   useEffect(() => {
@@ -797,6 +815,9 @@ export const BodhiGuideWidget: React.FC<BodhiGuideWidgetProps> = ({
                         <span className="bodhi-greeting-namaste" lang="sa">नमस्ते !</span>
                         <span className="bodhi-greeting-identity" lang="sa">अहं बोधिः — भवतः संस्कृत-सखा।</span>
                       </div>
+                      {panchangaGreeting && (
+                        <p className="bodhi-panchanga-greeting" role="status">🗓️ {panchangaGreeting}</p>
+                      )}
                       <p className="bodhi-greeting-bio">
                         <span className="bodhi-bio-icon" aria-hidden="true">🌿</span>
                         <span>{BODHI_PROFILE.persona} · Your friendly Gurukul companion!</span>

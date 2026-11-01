@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/segmented-learning-paths.css';
 
 export interface SegmentedLearningPathsProps {
@@ -15,8 +15,6 @@ export interface SegmentedLearningPathsProps {
   onOpenScienceLab?: () => void;
 }
 
-type PathCategory = 'all' | 'beginners' | 'school' | 'scholars';
-
 export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
   onOpenVarnamala,
   onOpenBoard,
@@ -30,8 +28,6 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
   onOpenVedicMaths,
   onOpenScienceLab,
 }) => {
-  const [activeFilter, setActiveFilter] = useState<PathCategory>('all');
-
   return (
     <section className="slp-section" id="learning-paths" aria-label="Targeted Sanskrit Learning Pathways">
       <div className="slp-header">
@@ -39,57 +35,13 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
           <span>🧭</span>
           <span>अध्ययन-मार्गाः · CHOOSE YOUR PATHWAY</span>
         </div>
-        <h2 className="slp-title">
-          Three Tailored Learning Paths · Built for Your Exact Goal
-        </h2>
         <p className="slp-subtitle">
           Whether you are taking your very first step, preparing for 80-mark CBSE exams, or researching ancient Pāṇinian linguistics, start with a focused curriculum:
         </p>
-
-        {/* Filter Pills */}
-        <div className="slp-filters" role="tablist" aria-label="Filter Learning Paths">
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeFilter === 'all'}
-            className={`slp-filter-pill${activeFilter === 'all' ? ' active' : ''}`}
-            onClick={() => setActiveFilter('all')}
-          >
-            All 3 Pathways
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeFilter === 'beginners'}
-            className={`slp-filter-pill${activeFilter === 'beginners' ? ' active' : ''}`}
-            onClick={() => setActiveFilter('beginners')}
-          >
-            🌱 1. For Beginners &amp; Kids
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeFilter === 'school'}
-            className={`slp-filter-pill${activeFilter === 'school' ? ' active' : ''}`}
-            onClick={() => setActiveFilter('school')}
-          >
-            🎒 2. For School Students (CBSE 6–10)
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeFilter === 'scholars'}
-            className={`slp-filter-pill${activeFilter === 'scholars' ? ' active' : ''}`}
-            onClick={() => setActiveFilter('scholars')}
-          >
-            🏛️ 3. For Scholars &amp; Advanced
-          </button>
-        </div>
       </div>
 
       <div className="slp-cards-grid">
         {/* PATH 1: For Beginners & Kids */}
-        {(activeFilter === 'all' || activeFilter === 'beginners') && (
           <div className="slp-card slp-card--beginners">
             <div className="slp-card-accent-bar slp-card-accent-bar--emerald" />
             <div className="slp-card-inner">
@@ -169,10 +121,8 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
               </div>
             </div>
           </div>
-        )}
 
         {/* PATH 2: For School Students (CBSE & NCERT 6–10) */}
-        {(activeFilter === 'all' || activeFilter === 'school') && (
           <div className="slp-card slp-card--school">
             <div className="slp-card-accent-bar slp-card-accent-bar--indigo" />
             <div className="slp-card-inner">
@@ -185,12 +135,12 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
                 <div className="slp-card-avatar slp-avatar--indigo" aria-hidden="true">🎒</div>
                 <div>
                   <h3 className="slp-card-title">For School Students</h3>
-                  <p className="slp-card-promise">Master textbooks word-by-word &amp; score 95%+ in exams</p>
+                  <p className="slp-card-promise">NCERT Deepakam (7–8) &amp; Sharada (9), chapter by chapter</p>
                 </div>
               </div>
 
               <p className="slp-card-desc">
-                Everything required to ace CBSE Sanskrit: word-by-word textbook translations, shloka anvaya breakdowns, solved chapter worksheets, and board exam question formation drills.
+                Listen · Translate (English / Hindi / Telugu / Tamil / Malayalam) · Solutions · Quizzes · Worksheets
               </p>
 
               <div className="slp-modules-list">
@@ -198,8 +148,8 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
                 <div className="slp-module-item" onClick={() => onOpenReader('gsde101')} role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onOpenReader('gsde101')}>
                   <span className="slp-mod-icon">📖</span>
                   <div className="slp-mod-info">
-                    <strong>NCERT Classes 6–10 Readers</strong>
-                    <span>Complete Class 7 &amp; 8 Deepakam and Class 9 Sharada with word-by-word audio</span>
+                    <strong>NCERT Reader</strong>
+                    <span>Audio and tap-to-translate on every line; अभ्यास solutions</span>
                   </div>
                   <span className="slp-mod-arrow">➔</span>
                 </div>
@@ -207,8 +157,8 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
                 <div className="slp-module-item" onClick={onOpenWorksheets || (() => onOpenReader('worksheets'))} role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (onOpenWorksheets ? onOpenWorksheets() : onOpenReader('worksheets'))}>
                   <span className="slp-mod-icon">📑</span>
                   <div className="slp-mod-info">
-                    <strong>Printable Chapter Worksheets</strong>
-                    <span>Fill-in-the-blanks, Sandhi splits &amp; comprehension with teacher answer keys</span>
+                    <strong>Worksheets</strong>
+                    <span>Printable, with answer keys</span>
                   </div>
                   <span className="slp-mod-arrow">➔</span>
                 </div>
@@ -216,8 +166,8 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
                 <div className="slp-module-item" onClick={onOpenQuiz} role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onOpenQuiz?.()}>
                   <span className="slp-mod-icon">🎯</span>
                   <div className="slp-mod-info">
-                    <strong>Diagnostic Quizzes &amp; Tests</strong>
-                    <span>Timed practice on 7 Vibhaktis, Lakāra conjugations, Avyayas &amp; Pratyayas</span>
+                    <strong>Practice Quizzes</strong>
+                    <span>Vibhakti, lakāra, avyaya &amp; pratyaya drills</span>
                   </div>
                   <span className="slp-mod-arrow">➔</span>
                 </div>
@@ -254,10 +204,8 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
               </div>
             </div>
           </div>
-        )}
 
         {/* PATH 3: For Scholars & Advanced Learners */}
-        {(activeFilter === 'all' || activeFilter === 'scholars') && (
           <div className="slp-card slp-card--scholars">
             <div className="slp-card-accent-bar slp-card-accent-bar--amber" />
             <div className="slp-card-inner">
@@ -359,7 +307,6 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
               </div>
             </div>
           </div>
-        )}
       </div>
     </section>
   );

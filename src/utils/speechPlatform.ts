@@ -79,10 +79,16 @@ const scoreEnglishVoice = (voice: SpeechSynthesisVoice): number => {
   if (lang === 'en-in') score += 50;
   else if (lang === 'en-gb') score += 35;
   else if (lang.startsWith('en')) score += 15;
-  if (/ravi/i.test(name)) score += 40;
+  if (!lang.startsWith('en')) return 0; // never read English with a Hindi/Indic voice
+  if (/neerja|prabhat/i.test(name)) score += 45; // Microsoft Edge natural en-IN
+  if (/ravi|rishi|veena|heera/i.test(name)) score += 40; // Windows/macOS en-IN
+  if (/google/i.test(name) && lang === 'en-in') score += 35;
   if (/microsoft/i.test(name) && /en-?in|india|ravi/i.test(name + lang)) score += 20;
-  if (voice.localService) score += 10;
-  return score;
+  if (/natural|online|neural|premium|enhanced/i.test(name)) score += 15;
+  if (/google uk english female/i.test(name)) score += 10;
+  if (/compact|espeak|novelty|whisper|bells|zarvox|trinoids|bad news|good news|jester|bubbles|albert|cellos|organ/i.test(name)) score -= 40;
+  if (voice.localService) score += 3;
+  return Math.max(score, lang.startsWith('en') ? 1 : 0);
 };
 
 const bestVoice = (

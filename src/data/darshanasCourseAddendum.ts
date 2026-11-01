@@ -1994,7 +1994,7 @@ Mūrti  (Embodied Form / Physical Density in Space)`,
             source: 'Śrī Vedānta Deśika · Śrī Pādukā Sahasram 929 (Linear Layout)',
           },
           {
-            sanskrit: 'स्थिता समयराजत्पा गताऽऽमदके गवि ।\nदुरंहसामसन्नतादा साध्या तापकरासरा ॥ ९३० ॥',
+            sanskrit: 'स्थिता समयराजत्पा गताऽऽमदके गवि ।\nदुरंहसां सन्नतादा साध्या तापकरासरा ॥ ९३० ॥',
             transliteration: 'sthitā samayarājatpā gatā\'\'madake gavi |\nduraṁhasāmasannatādā sādhyā tāpakarāsarā || 930 ||',
             meaning: 'The sandals protect those who shine with good conduct; they possess the deep brilliance of gold; they dispense boundless spiritual joy; they destroy the despair of the wicked; and the radiant rays of their gems have the power to instantly extinguish the burning heat of worldly suffering.',
             source: 'Śrī Vedānta Deśika · Śrī Pādukā Sahasram 930 (Knight’s Tour Emergence)',

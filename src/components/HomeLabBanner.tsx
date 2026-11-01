@@ -14,6 +14,15 @@ interface LabModule {
 
 const MODULES: LabModule[] = [
   {
+    id: 'preschool-wonder',
+    icon: '🌟',
+    title: 'Wonder Playground',
+    subtitle: 'Tap, sort & sing — tiny science games',
+    dev: 'शिशु-क्रीडा',
+    subject: 'Ages 2–6',
+    age: 'Ages 2–6'
+  },
+  {
     id: 'paramanu',
     icon: '⚛️',
     title: 'Atom Builder: Make Matter!',
@@ -268,7 +277,7 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
       <div className="hlb-header">
         <div className="hlb-badge-row">
           <span className="hlb-badge">🚀 100% FREE SCIENCE LAB</span>
-          <span className="hlb-badge-free">Play First, Learn Second</span>
+          <span className="hlb-badge-free">Play 2 Learn - preschool games</span>
         </div>
 
         <h3 id="hlb-title" className="hlb-title">
@@ -277,18 +286,33 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
         </h3>
 
         <p className="hlb-tagline">
-          Play 8 interactive science games and discover Sanskrit scientific heritage. Turn physics, biology, and spaceflight into 3-minute tactile puzzles guided by Bodhi!
+          9 free hands-on games that pair science with Sanskrit heritage — start with tiny-tot play, then build atoms, balance nature and land on the Moon.
         </p>
+      </div>
 
-        {/* Collectible Badges Strip */}
-        <div className="hlb-badges-preview-bar">
-          <span className="hlb-bpb-label">🏆 Collectible Badges:</span>
-          <div className="hlb-bpb-icons">
-            <span className="hlb-badge-chip">⚛️ Atom Architect</span>
-            <span className="hlb-badge-chip">🌿 Nature Guardian</span>
-            <span className="hlb-badge-chip">🪐 Orbit Master</span>
-            <span className="hlb-badge-chip">🛰️ Space Captain</span>
-          </div>
+      {/* First module: Wonder Playground */}
+      <a
+        href="/vignana-lab#preschool-wonder"
+        className="hlb-first-module"
+        onClick={(e) => open(e, 'preschool-wonder')}
+      >
+        <span className="hlb-fm-icon" aria-hidden="true">🌟</span>
+        <span className="hlb-fm-text">
+          <span className="hlb-fm-kicker">Game 1 · Ages 2–6</span>
+          <span className="hlb-fm-title">Wonder Playground <span lang="sa">· शिशु-क्रीडा</span></span>
+          <span className="hlb-fm-sub">Shapes, colors, animals &amp; counting — tap and hear Sanskrit.</span>
+        </span>
+        <span className="hlb-fm-go">▶ Play</span>
+      </a>
+
+      {/* Collectible Badges Strip */}
+      <div className="hlb-badges-preview-bar">
+        <span className="hlb-bpb-label">🏆 Earn badges:</span>
+        <div className="hlb-bpb-icons">
+          <span className="hlb-badge-chip">⚛️ Atom Architect</span>
+          <span className="hlb-badge-chip">🌿 Nature Guardian</span>
+          <span className="hlb-badge-chip">🪐 Orbit Master</span>
+          <span className="hlb-badge-chip">🛰️ Space Captain</span>
         </div>
       </div>
 
@@ -338,17 +362,10 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
           onClick={(e) => open(e)}
           data-testid="hlb-cta"
         >
-          <span>🚀 Enter Vijñāna Mission Control (8 Games)</span>
+          <span>🚀 Enter Vijñāna Mission Control (9 Games)</span>
           <span className="hlb-cta-arrow" aria-hidden="true">→</span>
         </a>
 
-        <a
-          href="/vignana-lab#preschool-wonder"
-          className="hlb-cta-secondary"
-          onClick={(e) => open(e, 'preschool-wonder')}
-        >
-          🧸 Toddlers &amp; Preschool (Ages 2–6)
-        </a>
       </div>
     </section>
   );

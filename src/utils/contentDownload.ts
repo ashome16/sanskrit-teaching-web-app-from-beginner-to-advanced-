@@ -58,9 +58,9 @@ function wrapHtml(title: string, bodyHtml: string): string {
 <style>${PRINT_CSS}</style>
 </head>
 <body>
-<div class="brand">EdNet Learn Gurukul · Sanskrit &amp; Vedic Maths</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:0.75rem"><img src="https://ednetlearn.in/logo.jpg" alt="EdNet logo" width="48" height="48" style="border-radius:50%"/><strong style="color:#b3472f">EdNet Gurukul · Sanskrit &amp; Vedic Maths</strong></div>
 ${bodyHtml}
-<div class="footer">EdNet Learn Gurukul · care@ednetlearn.in · Offline practice sheet · Open in browser and use Print / Save as PDF if needed.</div>
+<div class="footer">EdNet Gurukul · care@ednetlearn.in · Offline practice sheet · Open in browser and use Print / Save as PDF if needed.</div>
 </body>
 </html>`;
 }
@@ -144,7 +144,7 @@ export function buildQuizHtml(
 
   const body = `
 <h1>${escapeHtml(title)}</h1>
-<div class="meta">${questions.length} questions · EdNet Learn Gurukul practice sheet</div>
+<div class="meta">${questions.length} questions · EdNet Gurukul practice sheet</div>
 ${options?.scoreLabel ? `<p class="meta"><strong>${escapeHtml(options.scoreLabel)}</strong></p>` : ''}
 ${includeAnswers ? '<p class="meta"><strong>Answer key included</strong></p>' : ''}
 ${questionsHtml}`;
@@ -173,7 +173,7 @@ export function downloadCalendarEvent(title: string, description: string, locati
   const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//EdNet Learn Gurukul//Sanskrit Events//EN',
+    'PRODID:-//EdNet Gurukul//Sanskrit Events//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',
@@ -202,7 +202,7 @@ export function downloadResourceDocument(
   const body = `
 <h1>${escapeHtml(title)}</h1>
 <div style="font-size: 1.25rem; font-weight: 700; color: #b3472f; margin-bottom: 0.5rem; font-family: 'Noto Sans Devanagari', serif;">${escapeHtml(titleSa)}</div>
-<div class="meta">${escapeHtml(category)} · Official EdNet Learn Gurukul Academic Study Vault</div>
+<div class="meta">${escapeHtml(category)} · Official EdNet Gurukul Academic Study Vault</div>
 <div style="background: #fffdf8; border: 1.5px solid #eed0ae; border-radius: 8px; padding: 1.25rem; margin-top: 1rem; line-height: 1.6;">
   ${detailsHtml}
 </div>

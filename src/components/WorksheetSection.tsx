@@ -194,7 +194,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
     }
     setShowUpgradePrompt(true);
     if (gateReason === 'guest') {
-      openAuthModal('register');
+      openAuthModal('login');
     } else {
       openPaymentModal('unlock_paid_features');
     }
@@ -228,7 +228,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
         <div className="worksheet-header-left">
           <img
             src="/logo.jpg"
-            alt="Printable Sanskrit worksheets for CBSE school children | EdNet Learn Gurukul"
+            alt="Printable Sanskrit worksheets for CBSE school children | EdNet Gurukul"
             className="worksheet-header-logo"
           />
           <div>
@@ -446,7 +446,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
                       className="worksheet-view-btn"
                       onClick={() => {
                         if (isLocked) {
-                          openAuthModal('register');
+                          openAuthModal('login');
                           return;
                         }
                         setActiveWorksheet(ws);
@@ -540,9 +540,14 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
               </div>
               <div className="worksheet-upgrade-actions">
                 {gateReason === 'guest' ? (
-                  <button type="button" className="worksheet-print-primary-btn" onClick={() => openAuthModal('register')}>
+                  <>
+                  <button type="button" className="worksheet-print-primary-btn" onClick={() => openAuthModal('login')}>
                     {PAID_FEATURE_GATE.ctaGuest}
                   </button>
+                  <button type="button" className="worksheet-print-secondary-btn" onClick={() => openAuthModal('register')}>
+                    {PAID_FEATURE_GATE.ctaGuestSecondary}
+                  </button>
+                  </>
                 ) : gateReason === 'expired' ? (
                   <button type="button" className="worksheet-print-primary-btn" onClick={() => openPaymentModal('unlock_paid_features')}>
                     {PAID_FEATURE_GATE.ctaSubscribe}
@@ -560,9 +565,9 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
             {/* Gurukul Official Header */}
             <div className="ws-paper-header">
               <div className="ws-paper-brand-row">
-                <img src="/logo.jpg" alt="Printable Sanskrit worksheets for CBSE school children | EdNet Learn Gurukul" className="ws-paper-logo" />
+                <img src="/logo.jpg" alt="Printable Sanskrit worksheets for CBSE school children | EdNet Gurukul" className="ws-paper-logo" />
                 <div>
-                  <div className="ws-paper-school-name">EdNet Learn Gurukul</div>
+                  <div className="ws-paper-school-name">EdNet Gurukul</div>
                   <div className="ws-paper-school-sub">
                     CBSE Board Exam Curriculum · Sanskrit &amp; Vedic Mathematics
                   </div>
@@ -698,7 +703,7 @@ const WorksheetSection: React.FC<WorksheetSectionProps> = ({
 
             {/* Paper Footer note */}
             <div style={{ marginTop: '2rem', borderTop: '1px solid #e5e7eb', paddingTop: '0.75rem', display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#6b7280' }}>
-              <span>EdNet Learn Gurukul · Support: care@ednetlearn.in</span>
+              <span>EdNet Gurukul · Support: care@ednetlearn.in</span>
               <span>शुभकामनाः · Best Wishes for CBSE Sanskrit Exams!</span>
             </div>
           </div>

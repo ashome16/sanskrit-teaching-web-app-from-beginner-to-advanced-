@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="footer-brand-logo-frame">
                 <img
                   src="/logo.jpg"
-                  alt="EdNet Learn Gurukul Official Seal"
+                  alt="EdNet Gurukul Official Seal"
                   className="footer-brand-logo"
                   width={56}
                   height={56}
@@ -73,7 +73,7 @@ export const Footer: React.FC<FooterProps> = ({
                   <span>🏛️</span>
                   <span>OFFICIAL GURUKUL</span>
                 </div>
-                <h3 className="footer-brand-name">EdNet Learn Gurukul</h3>
+                <h3 className="footer-brand-name">EdNet Gurukul</h3>
                 <span className="footer-brand-tagline" lang="sa">विद्ययाऽमृतमश्नुते · सा विद्या या विमुक्तये</span>
               </div>
             </div>
@@ -102,7 +102,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="footer-col footer-col--curriculum">
             <div className="footer-col-header">
               <span className="footer-col-accent">✦</span>
-              <h4 className="footer-col-title">Curriculum &amp; Texts</h4>
+              <h4 className="footer-col-title">Learn</h4>
             </div>
             <ul className="footer-nav-list">
               <li>
@@ -179,30 +179,8 @@ export const Footer: React.FC<FooterProps> = ({
                   </button>
                 </li>
               )}
-              {onOpenResources && (
-                <li>
-                  <button
-                    type="button"
-                    className="footer-nav-btn"
-                    onClick={onOpenResources}
-                  >
-                    <span className="nav-btn-icon">🌐</span>
-                    <span className="nav-btn-text">साधनानि · Learning Vault</span>
-                  </button>
-                </li>
-              )}
-              <li>
-                <a
-                  href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-nav-btn"
-                  title="Open Koshashri Sanskrit Dictionary"
-                >
-                  <span className="nav-btn-icon">📖</span>
-                  <span className="nav-btn-text">कोशश्रीः · Sanskrit Dictionary</span>
-                </a>
-              </li>
+              
+              
             </ul>
           </div>
 
@@ -210,7 +188,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="footer-col footer-col--studios">
             <div className="footer-col-header">
               <span className="footer-col-accent">✦</span>
-              <h4 className="footer-col-title">Studios &amp; Labs</h4>
+              <h4 className="footer-col-title">Practice &amp; Explore</h4>
             </div>
             <ul className="footer-nav-list">
               <li>
@@ -287,16 +265,7 @@ export const Footer: React.FC<FooterProps> = ({
                   </button>
                 </li>
               )}
-              <li>
-                <button
-                  type="button"
-                  className="footer-nav-btn"
-                  onClick={onOpenFAQ}
-                >
-                  <span className="nav-btn-icon">❓</span>
-                  <span className="nav-btn-text">Gurukul FAQ &amp; Pricing</span>
-                </button>
-              </li>
+              
             </ul>
           </div>
 
@@ -318,14 +287,7 @@ export const Footer: React.FC<FooterProps> = ({
                 </div>
                 <div className="contact-info">
                   <span className="contact-label">WhatsApp Helpline</span>
-                  <a
-                    href="https://wa.me/919000335468"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-link contact-link--whatsapp"
-                  >
-                    +91 9000335468
-                  </a>
+                  <span className="contact-link contact-link--whatsapp">+91 9000335468</span>
                   <span className="contact-note">Only WhatsApp · Quick support</span>
                 </div>
                 <a
@@ -380,6 +342,47 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
             </div>
 
+            <div className="footer-col-header" style={{ marginTop: 16 }}>
+              <span className="footer-col-accent">✦</span>
+              <h4 className="footer-col-title">Resources &amp; Help</h4>
+            </div>
+            <ul className="footer-nav-list">
+              {onOpenResources && (
+                <li>
+                  <button
+                    type="button"
+                    className="footer-nav-btn"
+                    onClick={onOpenResources}
+                  >
+                    <span className="nav-btn-icon">🌐</span>
+                    <span className="nav-btn-text">साधनानि · Learning Vault</span>
+                  </button>
+                </li>
+              )}
+              <li>
+                <a
+                  href="https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=%E0%A4%85"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-nav-btn"
+                  title="Open Koshashri Sanskrit Dictionary"
+                >
+                  <span className="nav-btn-icon">📖</span>
+                  <span className="nav-btn-text">कोशश्रीः · Sanskrit Dictionary</span>
+                </a>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-nav-btn"
+                  onClick={onOpenFAQ}
+                >
+                  <span className="nav-btn-icon">❓</span>
+                  <span className="nav-btn-text">Gurukul FAQ &amp; Pricing</span>
+                </button>
+              </li>
+            </ul>
+
             <div className="footer-helpdesk-status">
               <span className="helpdesk-indicator-dot" />
               <span className="helpdesk-status-text">Support desk active · Mon–Sat (IST)</span>
@@ -424,7 +427,7 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="gurukul-footer-bottom">
           <div className="footer-copyright">
             <div>
-              © {new Date().getFullYear()} <strong>EdNet Learn Gurukul</strong> (ednetlearn.in). All rights reserved.
+              © {new Date().getFullYear()} <strong>EdNet Gurukul</strong> (ednetlearn.in). All rights reserved.
             </div>
             <div className="footer-tagline-motto">
               विद्या ददाति विनयं विनयाद्याति पात्रताम्

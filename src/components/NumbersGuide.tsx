@@ -73,7 +73,7 @@ const NUMBERS_READ_MORE: ReadMoreLink[] = [
     emoji: '🔢',
     title: 'कटपयादि · Kaṭapayādi',
     blurb: 'Article · the letter-number cipher and अङ्कानां वामतो गतिः (digits read right-to-left).',
-    href: '/grammar',
+    href: '/sanskrit-grammar',
     target: { view: 'grammar', grammarTopic: 'article', grammarArticleId: 'katapayadi-number-words' },
   },
   {

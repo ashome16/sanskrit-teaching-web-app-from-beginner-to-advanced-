@@ -351,9 +351,9 @@ const AuthModal: React.FC = () => {
 
         <header className="auth-modal-header">
           <div className="auth-modal-brand">
-            <img src="/logo.jpg" alt="Online Sanskrit and Vedic Math classes for kids | EdNet Learn Gurukul" className="auth-modal-logo-img" />
+            <img src="/logo.jpg" alt="Online Sanskrit and Vedic Math classes for kids | EdNet Gurukul" className="auth-modal-logo-img" />
             <div className="auth-modal-brand-titles">
-              <span className="auth-modal-brand-name">EdNet Learn Gurukul</span>
+              <span className="auth-modal-brand-name">EdNet Gurukul</span>
               <span className="auth-modal-brand-sub">संस्कृत-गुरुकुलम् · CBSE / NCERT Class 7</span>
             </div>
           </div>
@@ -368,10 +368,22 @@ const AuthModal: React.FC = () => {
             <span className="auth-trial-icon">🎉</span>
             <div className="auth-trial-text">
               <div className="auth-trial-title">
-                {pendingRedirectView ? 'Sign Up for 14 Days Free Unrestricted Access' : '2 Weeks Free Access Included'}
+                {activeTab === 'login'
+                  ? (pendingRedirectView ? 'Sign in to continue' : 'Already learning? Sign in.')
+                  : 'Register free — no payment needed'}
               </div>
               <p className="auth-trial-desc">
-                Create your free student profile to unlock all 15 CBSE chapters, quizzes, worksheets, and puzzles immediately.
+                {activeTab === 'login' ? (
+                  <>
+                    New here?{' '}
+                    <button type="button" onClick={() => handleTabChange('register')} style={{ background: 'none', border: 'none', padding: 0, color: '#b45309', fontWeight: 700, textDecoration: 'underline', cursor: 'pointer', font: 'inherit' }}>
+                      Create a free account
+                    </button>{' '}
+                    — 14-day trial, no payment.
+                  </>
+                ) : (
+                  'Your 14-day free trial starts right away. No card or payment to create an account.'
+                )}
               </p>
             </div>
           </div>
@@ -770,8 +782,9 @@ const AuthModal: React.FC = () => {
               </div>
             </div>
 
+            <p style={{ margin: '0 0 0.4rem', fontSize: '0.82rem', color: '#64748b', textAlign: 'center' }}>No payment required</p>
             <button type="submit" className="auth-submit-btn">
-              Start 2-Week Free Trial ➔
+              Create free account · Start trial ➔
             </button>
 
             {emailExistsHint && (

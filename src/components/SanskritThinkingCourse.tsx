@@ -1841,6 +1841,7 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           return (
             <div className="stc-modal-overlay" onClick={() => setActiveWorksheetModalLesson(null)}>
               <div className="stc-modal-card stc-worksheet-modal" onClick={(e) => e.stopPropagation()}>
+                <div className="ednet-print-brand"><img src="/logo.jpg" alt="EdNet logo" width={40} height={40} /><span>EdNet Gurukul · ednetlearn.in</span></div>
                 <button
                   type="button"
                   className="stc-modal-close stc-print-hide"

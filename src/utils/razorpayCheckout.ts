@@ -218,7 +218,7 @@ export async function openRazorpayOrderCheckout(args: {
     amount: args.amount,
     currency: args.currency || 'INR',
     order_id: args.orderId,
-    name: 'EdNet Learn Gurukul',
+    name: 'EdNet Gurukul',
     description: 'All-Access 30-Day Pass — one-time ₹200',
     prefill: {
       name: args.name || '',
@@ -252,7 +252,7 @@ export async function openRazorpaySubscriptionCheckout(args: {
   const rzp = new window.Razorpay({
     key: RAZORPAY_KEY_ID,
     subscription_id: args.subscriptionId,
-    name: 'EdNet Learn Gurukul',
+    name: 'EdNet Gurukul',
     description: 'All-Access 30-Day Pass — one-time ₹200',
     prefill: {
       name: args.name || '',

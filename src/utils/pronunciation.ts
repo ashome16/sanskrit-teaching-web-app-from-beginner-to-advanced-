@@ -56,6 +56,25 @@ const applyWordOverrides = (word: string): string => {
   // hyphenated romanized hint forces the engine to articulate it in full.
   if (word === 'सप्त') return 'sap-ta';
 
+  // Preschool shape names / examples: split compounds and use anusvāra so
+  // hi-IN voices don't slur conjuncts (ṣaṭkoṇa, śaṅku, hṛdayākāra …).
+  const shapeHints: Record<string, string> = {
+    'षट्कोणम्': 'षट् कोणम्',
+    'पञ्चकोणम्': 'पंच कोणम्',
+    'त्रिकोणम्': 'त्रि कोणम्',
+    'समचतुर्भुजम्': 'सम चतुर् भुजम्',
+    'हृदयाकारः': 'हृदय आकारः',
+    'अण्डाकारः': 'अण्ड आकारः',
+    'अर्धचन्द्रः': 'अर्ध चंद्रः',
+    'अर्धवृत्तम्': 'अर्ध वृत्तम्',
+    'चतुरस्रम्': 'चतुर् अस्रम्',
+    'शङ्कुः': 'शंकुः',
+    'पतङ्गः': 'पतंगः',
+    'मधुकोषः': 'मधु कोषः',
+    'चित्रफलकम्': 'चित्र फलकम्',
+  };
+  if (shapeHints[word]) return shapeHints[word];
+
   // Māheśvara Sūtra phoneme expansions: articulates individual atomic sounds with spaces
   // rather than letting the TTS engine blend root vowels/letters into an artificial word.
   if (word === 'अइउण्') return 'अ इ उ ण्';
@@ -154,6 +173,24 @@ const toSpeechText = (word: string): string => {
 /** Default playback rate (1x). Slow presets were removed. */
 const DEFAULT_RATE = 1;
 
+/** Rough Devanagari akṣara count (spoken-length proxy). */
+export const countSpeechUnits = (text: string): number => {
+  if (!/[\u0900-\u097F]/.test(text)) return Math.max(1, text.trim().length);
+  let units = 0;
+  for (const ch of text) {
+    const c = ch.codePointAt(0)!;
+    // independent vowels, consonants, extra consonants/vowels
+    if ((c >= 0x0904 && c <= 0x0939) || c === 0x093D || (c >= 0x0958 && c <= 0x0961) || (c >= 0x0972 && c <= 0x097F)) units += 1;
+  }
+  return Math.max(1, units);
+};
+
+/** Expected speaking time in ms for text at a given rate. */
+export const estimateSpeakMs = (text: string, rate = 1): number => {
+  const ms = Math.round((220 + countSpeechUnits(text) * 310) / Math.max(0.5, rate));
+  return Math.min(12000, Math.max(400, ms));
+};
+
 const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, speech: string): void => {
   const voices = window.speechSynthesis.getVoices();
   const configuredReaderVoice = resolveVoiceForRole('reader', voices);
@@ -201,8 +238,10 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
   // - Conjuncts (ksha, tra, jnya, shra): 0.88
   // - Guninthalu / Varnamala single akṣaras: 0.92
   // - Full multi-word sentences: DEFAULT_RATE (1.0)
-  const isLongVowel = /[ाीूॄैौ]/.test(word) || word === 'आ' || word === 'ई' || word === 'ऊ' || word === 'ऐ' || word === 'औ';
-  const isVisarga = word.endsWith('ः') || speech.endsWith('ह');
+  const units = countSpeechUnits(word);
+  const isTile = units <= 1;
+  const isLongVowel = isTile && /[ाीूॄैौ]/.test(word) || word === 'आ' || word === 'ई' || word === 'ऊ' || word === 'ऐ' || word === 'औ';
+  const isVisarga = isTile && word.endsWith('ः') || speech.endsWith('ह');
   const isConjunct = CONJUNCT_TILES.has(word) || isKsha || isGya || isTra;
   const isNgaWord = speech === 'gun ga' || speech === 'run ga' || speech === 'an gam';
 
@@ -218,6 +257,11 @@ const configureUtterance = (utterance: SpeechSynthesisUtterance, word: string, s
     utterance.rate = 0.92;
   } else {
     utterance.rate = DEFAULT_RATE;
+    // Pace full words by length: long compounds not rushed, short particles not drawn out.
+    if (!/\s/.test(speech.trim())) {
+      if (units >= 6) utterance.rate = Math.min(utterance.rate, 0.86);
+      else if (units <= 2) utterance.rate = Math.min(1, Math.max(utterance.rate, 0.95));
+    }
   }
 
   utterance.volume = 1;
@@ -467,6 +511,10 @@ export const playPronunciation = (
     plainDevanagari?: boolean;
     /** Playback rate for this call only. Ignored unless plainDevanagari. Pitch unchanged. */
     rate?: number;
+    /** Story narration: slower kid-friendly pace for multi-word lines. */
+    narration?: boolean;
+    /** Override STORY_NARRATION_RATE for this narration call. */
+    narrationRate?: number;
   },
 ): void => {
   if (pronunciationMuted) return;
@@ -489,9 +537,40 @@ export const playPronunciation = (
   void whenVoicesReady().then(() => {
     if (pronunciationMuted || gen !== speakGeneration) return;
     const plain = options?.plainDevanagari === true;
-    speakConfigured(word, undefined, plain, plain ? options?.rate : undefined);
+    const narrationRate = options?.narration && /\s/.test(word.trim()) ? (options?.narrationRate ?? STORY_NARRATION_RATE) : undefined;
+    speakConfigured(word, undefined, plain, plain ? (options?.rate ?? narrationRate) : narrationRate);
   });
 };
+
+/** Kid-friendly story narration pace (was DEFAULT_RATE 1.0). */
+export const STORY_NARRATION_RATE = 0.8;
+
+/** Speak a story line slowly; single-word taps keep their normal rate. */
+/** Breath pause between sentences of a story line (ms). */
+export const STORY_SENTENCE_PAUSE_MS = 700;
+
+/** Split a story line on sentence ends only (। ॥ ! ? newline) — never on commas. */
+const splitStorySentences = (text: string): string[] =>
+  text
+    .split(/[।॥!?\n]+/)
+    .map((s) => s.replace(/[0-9०-९]+\s*$/, '').replace(/\s+/g, ' ').trim())
+    .filter((s) => /[\u0900-\u097F\p{L}]/u.test(s));
+
+export const playStoryLine = (text: string, narrationRate?: number): void => {
+  const sentences = splitStorySentences(text);
+  if (sentences.length <= 1) {
+    playPronunciation(text, { narration: true, narrationRate });
+    return;
+  }
+  playSequence(sentences, {
+    plainDevanagari: true,
+    gapMs: STORY_SENTENCE_PAUSE_MS,
+    rate: narrationRate ?? STORY_NARRATION_RATE,
+  });
+};
+
+/** Slower pace for the Pañcabhūta (Five Friends) Sanskrit story lines. */
+export const PANCHABHUTA_NARRATION_RATE = 0.65;
 
 /** Speak a list of words/letters in order. Returns stop(). */
 export const playSequence = (
@@ -599,9 +678,10 @@ export const playSequence = (
     })();
 
     // Some Chrome/Edge builds skip onend; advance after a safe upper bound.
-    const fallbackMs = Math.max(1800, word.length * 420);
-    const timedFallback = callerRate != null ? Math.round(fallbackMs / callerRate) : fallbackMs;
-    fallbackTimer = setTimeout(after, timedFallback);
+    // Generous safety bound only; onend/onerror is the primary advance.
+    const rateForEstimate = callerRate ?? 1;
+    const fallbackMs = Math.round(estimateSpeakMs(word, rateForEstimate) * 2.4);
+    fallbackTimer = setTimeout(after, fallbackMs);
     speakConfigured(word, after, item.plain, callerRate);
   };
 
@@ -759,7 +839,10 @@ export const playBilingualSequence = (
     // Chrome/Edge sometimes skip onend. English glosses are full sentences, so
     // the bound grows with the text (same idea as playSequence) and cannot stall.
     const perChar = step.kind === 'en' ? 220 : 420;
-    const fallbackMs = Math.max(step.kind === 'en' ? 2500 : 1800, step.text.length * perChar);
+    const fallbackMs =
+      step.kind === 'sa'
+        ? Math.round(estimateSpeakMs(step.text) * 2.4)
+        : Math.max(2500, step.text.length * perChar);
     fallbackTimer = setTimeout(after, fallbackMs);
     if (step.kind === 'sa') {
       // plain=true: Hindi voice, Devanagari as written, pitch 1, no letter MP3s or roman cues.
@@ -1039,6 +1122,11 @@ const toBodhiSpeech = (chunk: string): string => {
     .join(' ');
 };
 
+const BODHI_ENGLISH_RATE = 0.92;
+/** True when a chunk is Latin-script English with no Devanagari. */
+const isEnglishProse = (chunk: string): boolean =>
+  !/[\u0900-\u097F]/.test(chunk) && (chunk.match(/[A-Za-z]/g) || []).length >= 4;
+
 /** English voice only (en-IN preferred, then any en-*). Never a Hindi voice. */
 const pickBodhiEnglishVoice = (voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined =>
   pickEnglishCueVoice(voices.filter((v) => (v.lang || '').toLowerCase().replace('_', '-').startsWith('en')));
@@ -1056,6 +1144,10 @@ const configureBodhiUtterance = (
   chunk: string,
 ): void => {
   const allVoices = window.speechSynthesis.getVoices();
+  // Script decides the voice: Latin-only prose is English even when the caller
+  // passed 'sa' — a Hindi voice reading English sounds badly mangled.
+  if (lang === 'sa' && isEnglishProse(chunk)) lang = 'en';
+  if (lang === 'en' && /[\u0900-\u097F]/.test(chunk) && !/[A-Za-z]{3,}/.test(chunk)) lang = 'sa';
   // The Bodhi role voice can be English (Rishi, Ravi) or Hindi (Swara, Lekha).
   // Only use it when its language matches the text: an English voice given
   // Devanagari reads nothing or a single word, and a Hindi voice garbles English.
@@ -1077,7 +1169,8 @@ const configureBodhiUtterance = (
       configureUtterance(utterance, chunk, utterance.text);
     }
   }
-  utterance.rate = clampRate(rate);
+  // English prose sounds chopped at the slow Sanskrit recitation pace.
+  utterance.rate = clampRate(lang === 'en' ? Math.max(rate, BODHI_ENGLISH_RATE) : rate);
   utterance.pitch = safePitch(BODHI_PITCH);
   utterance.volume = 1;
 };

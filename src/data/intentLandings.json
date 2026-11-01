@@ -1,0 +1,358 @@
+[
+  {
+    "id": "cbse-class-8",
+    "path": "/sanskrit-online-classes-cbse-class-8",
+    "aliases": [
+      "/cbse-class-8-sanskrit",
+      "/class-8-sanskrit",
+      "/sanskrit-class-8",
+      "/cbse-sanskrit-class-8"
+    ],
+    "title": "Sanskrit Online Classes for CBSE Class 8 · NCERT Deepakam | EdNet Learn",
+    "desc": "Sanskrit online classes for CBSE Class 8: every NCERT Deepakam chapter with audio, word meanings, chapter quizzes, the 80-mark exam blueprint and guided practice with Bodhi.",
+    "kicker": "CBSE · Class 8 · दीपकम्",
+    "h1": "Sanskrit Online Classes for CBSE Class 8",
+    "syllabus": "g8",
+    "intro": [
+      "Class 8 is when Sanskrit becomes sentences, subhāṣitas and stories. Every NCERT Deepakam (दीपकम्) chapter opens in our self-paced reader, in textbook order.",
+      "When exams come close, the CBSE guide adds the official blueprint, question words (क-कार शब्दाः) and model answers."
+    ],
+    "gets": [
+      "Listen — audio for every line and word of each Class 8 chapter",
+      "Translate — tap a word for its meaning; pick English, Hindi, Telugu, Tamil or Malayalam",
+      "Solutions — worked answers to the chapter exercises (अभ्यासाः)",
+      "Practice quizzes and printable worksheets for every chapter",
+      "CBSE 80-mark blueprint and question-formation practice"
+    ],
+    "ctas": [
+      {
+        "label": "📖 Open Class 8 Deepakam in the reader",
+        "action": "reader:grade8_ch1",
+        "primary": true
+      },
+      {
+        "label": "📝 CBSE Sanskrit exam guide",
+        "action": "cbse-guide"
+      },
+      {
+        "label": "🎓 Start a free trial",
+        "action": "register"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which textbook do these Class 8 Sanskrit classes follow?",
+        "a": "The current NCERT Class 8 Sanskrit textbook, Deepakam (दीपकम्), prescribed by CBSE. Chapters appear in the same order as the book."
+      },
+      {
+        "q": "Are the classes live or self-paced?",
+        "a": "Self-paced. Your child works through each chapter in the reader and can ask Bodhi questions any time."
+      },
+      {
+        "q": "Does it help with CBSE exams?",
+        "a": "Yes. The CBSE Sanskrit guide covers the official 80-mark blueprint, question formation and model answers."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "You can explore the site and the CBSE guide freely. The invocation and Chapter 1 of Class 8 Deepakam open free without an account; a free account unlocks all Class 8 chapters in the reader."
+      }
+    ],
+    "related": [
+      "deepakam-class-7",
+      "sharada-class-9",
+      "grammar-online"
+    ]
+  },
+  {
+    "id": "deepakam-class-7",
+    "path": "/ncert-sanskrit-class-7-deepakam-solutions",
+    "aliases": [
+      "/deepakam-class-7-solutions",
+      "/ncert-deepakam-solutions",
+      "/class-7-deepakam-solutions",
+      "/sanskrit-class-7"
+    ],
+    "title": "NCERT Sanskrit Class 7 Deepakam Solutions · Chapter-wise Answers & Meanings | EdNet Learn",
+    "desc": "NCERT Sanskrit Class 7 Deepakam solutions: chapter-wise word meanings, explanations, exercise practice, quizzes and worksheets for every दीपकम् lesson, with audio.",
+    "kicker": "NCERT · Class 7 · दीपकम्",
+    "h1": "NCERT Sanskrit Class 7 Deepakam Solutions",
+    "syllabus": "g7",
+    "intro": [
+      "Each Class 7 Deepakam chapter opens in our NCERT reader, so your child sees why an answer is right — not just what it is."
+    ],
+    "gets": [
+      "Listen — audio for every line and word of each Class 7 chapter",
+      "Translate — tap a word for its meaning; pick English, Hindi, Telugu, Tamil or Malayalam",
+      "Solutions — worked answers to the chapter exercises (अभ्यासाः)",
+      "Practice quizzes and printable worksheets for every chapter",
+      "Appendix: वर्णमात्रा-परिचयः, शब्दरूपाणि, धातुरूपाणि"
+    ],
+    "ctas": [
+      {
+        "label": "📖 Open Class 7 Deepakam Chapter 1",
+        "action": "reader:gsde101",
+        "primary": true
+      },
+      {
+        "label": "🗂️ Printable worksheets",
+        "action": "worksheets"
+      },
+      {
+        "label": "📝 CBSE exam guide",
+        "action": "cbse-guide"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Are these the official NCERT Class 7 Sanskrit Deepakam chapters?",
+        "a": "Yes — the reader follows the NCERT Class 7 Deepakam (दीपकम्) table of contents, from वन्दे भारतमातरम् through the appendices."
+      },
+      {
+        "q": "Do you give ready-made answers?",
+        "a": "Yes — each chapter's अभ्यासाः has an answer key, backed by word meanings and grammar notes so students can explain their answers."
+      },
+      {
+        "q": "Is Class 7 free to read?",
+        "a": "Class 7 Deepakam chapters can be opened in the reader; creating a free account saves progress and unlocks Classes 8 and 9."
+      }
+    ],
+    "related": [
+      "cbse-class-8",
+      "alphabet-audio",
+      "grammar-online"
+    ]
+  },
+  {
+    "id": "alphabet-audio",
+    "path": "/sanskrit-alphabet-pronunciation-audio",
+    "aliases": [
+      "/alphabet-audio",
+      "/sanskrit-alphabet-audio",
+      "/varnamala-audio"
+    ],
+    "title": "Sanskrit Alphabet Pronunciation Audio · Varṇamālā स्वर & व्यञ्जन Sounds | EdNet Learn",
+    "desc": "Hear every letter of the Sanskrit alphabet: Varṇamālā pronunciation audio for vowels (स्वराः) and consonants (व्यञ्जनानि), grouped by place of articulation (स्थानम्), plus barakhadi.",
+    "kicker": "वर्णमाला · Audio",
+    "h1": "Sanskrit Alphabet Pronunciation Audio",
+    "syllabus": null,
+    "intro": [
+      "Sanskrit is a language of sound first. Our Varṇamālā (वर्णमाला) lets you tap any letter and hear it spoken clearly — every vowel (स्वर) and consonant (व्यञ्जन) — so you learn the right sound before you learn the shape.",
+      "Letters are grouped by where they are produced in the mouth (स्थानम्): throat, palate, roof, teeth and lips. Once that clicks, pronunciation becomes logical rather than memorised. Continue into the barakhadi (गुणिताक्षराणि) to hear consonant + vowel combinations."
+    ],
+    "gets": [
+      "Tap-to-hear audio for every स्वर and व्यञ्जन",
+      "Sounds grouped by स्थानम् (place of articulation)",
+      "Barakhadi audio for consonant–vowel combinations",
+      "Tracing slate and Swar review quizzes",
+      "Pronunciation practice with feedback"
+    ],
+    "ctas": [
+      {
+        "label": "🔊 Open the Varṇamālā with audio",
+        "action": "varnamala",
+        "primary": true
+      },
+      {
+        "label": "🔤 Barakhadi audio",
+        "action": "path:/barakhadi"
+      },
+      {
+        "label": "🎵 Science of sound (स्थानम्)",
+        "action": "grammar:science-of-sound"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How many letters are in the Sanskrit alphabet?",
+        "a": "Traditional counts vary with how you treat ऌ, ॡ, anusvāra and visarga; our Varṇamālā shows all vowels and consonants with audio so you can hear each one."
+      },
+      {
+        "q": "Why are letters grouped by mouth position?",
+        "a": "Sanskrit orders consonants by स्थानम् (place of articulation): कण्ठ्य, तालव्य, मूर्धन्य, दन्त्य, ओष्ठ्य. Learning the groups makes pronunciation systematic."
+      },
+      {
+        "q": "Is the alphabet audio free?",
+        "a": "Yes, the Varṇamālā and Swar foundation pages are free to explore."
+      }
+    ],
+    "related": [
+      "deepakam-class-7",
+      "grammar-online",
+      "word-deconstructor"
+    ]
+  },
+  {
+    "id": "sharada-class-9",
+    "path": "/cbse-sanskrit-class-9-sharada-notes",
+    "aliases": [
+      "/sharada-class-9-notes",
+      "/class-9-sharada-notes",
+      "/sanskrit-class-9-notes",
+      "/cbse-sanskrit-class-9"
+    ],
+    "title": "CBSE Sanskrit Class 9 Sharada Chapter-wise Notes · शारदा | EdNet Learn",
+    "desc": "CBSE Sanskrit Class 9 Sharada (शारदा) chapter-wise notes: word meanings, grammar focus, quizzes for every chapter and appendices on समास, वाच्य, शब्दरूप and धातुरूप.",
+    "kicker": "CBSE · Class 9 · शारदा",
+    "h1": "CBSE Sanskrit Class 9 Sharada Chapter-wise Notes",
+    "syllabus": "g9",
+    "intro": [
+      "Class 9 Sharada (शारदा) brings longer prose, ślokas and real exam grammar. Revise each chapter actively inside our NCERT reader.",
+      "The appendix covers समास, वाच्य-परिवर्तनम्, शब्दरूपाणि and धातुरूपाणि — the grammar that carries the most marks."
+    ],
+    "gets": [
+      "Listen — audio for every line and word of each Class 9 chapter",
+      "Translate — tap a word for its meaning; pick English, Hindi, Telugu, Tamil or Malayalam",
+      "Solutions — worked answers to the chapter exercises (अभ्यासाः)",
+      "Practice quizzes and printable worksheets for every chapter",
+      "CBSE blueprint and answer-writing guidance"
+    ],
+    "ctas": [
+      {
+        "label": "📖 Open Class 9 Sharada Chapter 1",
+        "action": "reader:grade9_ch1",
+        "primary": true
+      },
+      {
+        "label": "📝 CBSE Sanskrit exam guide",
+        "action": "cbse-guide"
+      },
+      {
+        "label": "🎓 Create a free account",
+        "action": "register"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which book is Class 9 Sharada?",
+        "a": "Sharada (शारदा) is the NCERT Sanskrit textbook for CBSE Class 9. Our reader follows its chapter order, including the prayers and appendices."
+      },
+      {
+        "q": "Are these notes printable?",
+        "a": "The notes are interactive in the reader; worksheets in the Resources area are printable."
+      },
+      {
+        "q": "Do I need to log in for Class 9?",
+        "a": "The invocation and Chapter 1 of Class 9 Sharada open free without an account; a free account unlocks the remaining Class 9 chapters. The CBSE guide is open to everyone."
+      }
+    ],
+    "related": [
+      "cbse-class-8",
+      "grammar-online",
+      "word-deconstructor"
+    ]
+  },
+  {
+    "id": "grammar-online",
+    "path": "/learn-sanskrit-grammar-online",
+    "aliases": [
+      "/learn-sanskrit-grammar",
+      "/sanskrit-grammar-online"
+    ],
+    "title": "Learn Sanskrit Grammar Online · Vibhakti, Dhātu & Sandhi Step by Step | EdNet Learn",
+    "desc": "Learn Sanskrit grammar online with interactive tools: vibhakti (case) tables, liṅga-vacana, numbers, dhātupāṭha verb forms and Pāṇinian explanations, from beginner to advanced.",
+    "kicker": "व्याकरणम् · Online",
+    "h1": "Learn Sanskrit Grammar Online",
+    "syllabus": null,
+    "intro": [
+      "Sanskrit grammar (व्याकरणम्) has a reputation for being hard. It is really a beautifully regular system — once you see the patterns. Our grammar hub teaches it the way a patient teacher would: one pattern at a time, with examples you can hear and play with.",
+      "Start with vibhakti (the eight cases), gender and number, then move to verbs through the Dhātupāṭha, where you can generate forms of any root and see how words are built. Everything is interactive and works in your browser."
+    ],
+    "gets": [
+      "Interactive vibhakti (विभक्ति) tables and quizzes",
+      "लिङ्ग-वचन (gender & number) guide",
+      "Dhātupāṭha: verb roots and their forms",
+      "Sound science, samyukta akṣaras and sandhi foundations",
+      "Masterclass articles for advanced learners"
+    ],
+    "ctas": [
+      {
+        "label": "📐 Open the grammar hub",
+        "action": "grammar:home",
+        "primary": true
+      },
+      {
+        "label": "🧩 Vibhakti tool",
+        "action": "grammar:vibhakti"
+      },
+      {
+        "label": "🌳 Dhātupāṭha verb explorer",
+        "action": "dhatupatha"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can a complete beginner learn Sanskrit grammar online?",
+        "a": "Yes. Start with the Varṇamālā and vibhakti basics; each tool explains the pattern before asking you to use it."
+      },
+      {
+        "q": "Does this follow Pāṇini?",
+        "a": "Explanations are grounded in the Pāṇinian tradition but taught in plain English with Devanagari examples."
+      },
+      {
+        "q": "Is it useful for CBSE?",
+        "a": "Yes — शब्दरूप, धातुरूप, विभक्ति and समास are core CBSE topics, and the tools pair with the CBSE guide."
+      }
+    ],
+    "related": [
+      "word-deconstructor",
+      "alphabet-audio",
+      "sharada-class-9"
+    ]
+  },
+  {
+    "id": "word-deconstructor",
+    "path": "/sanskrit-word-deconstructor",
+    "aliases": [
+      "/word-deconstructor",
+      "/sanskrit-deconstructor",
+      "/word-analyzer",
+      "/sanskrit-word-analyzer"
+    ],
+    "title": "Sanskrit Word Deconstructor Online · Break Words into Root, Syllables & Meaning | EdNet Learn",
+    "desc": "Free Sanskrit word deconstructor online: type or paste a Devanagari word to see its syllables, conjunct consonants, transliteration and meaning, then trace verb forms back to the dhātu.",
+    "kicker": "पद-विश्लेषणम्",
+    "h1": "Sanskrit Word Deconstructor Online",
+    "syllabus": null,
+    "embedAnalyzer": true,
+    "intro": [
+      "Paste any Sanskrit word below and the deconstructor (पद-विश्लेषणम्) breaks it apart: syllables, conjunct consonants (संयुक्ताक्षराणि), transliteration and — when the word is in our dictionary — its meaning and part of speech.",
+      "For verbs, jump to the Dhātupāṭha deconstructor, which works backwards from a conjugated form to its root (धातु), tense and person."
+    ],
+    "gets": [
+      "Instant syllable and conjunct breakdown",
+      "IAST transliteration and audio",
+      "Meaning and part of speech for dictionary words",
+      "Reverse verb deconstruction in the Dhātupāṭha"
+    ],
+    "ctas": [
+      {
+        "label": "🔍 Dhātupāṭha verb deconstructor",
+        "action": "dhatupatha",
+        "primary": true
+      },
+      {
+        "label": "📐 Grammar hub",
+        "action": "grammar:home"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How do I type Sanskrit words?",
+        "a": "Paste Devanagari text, or use the on-screen Sanskrit keyboard available across the site."
+      },
+      {
+        "q": "Can it find the root of a verb?",
+        "a": "Use the Dhātupāṭha deconstructor for verbs — it traces forms like गच्छति back to the root गम्."
+      },
+      {
+        "q": "Is the deconstructor free?",
+        "a": "Yes, the word deconstructor is free to use without an account."
+      }
+    ],
+    "related": [
+      "grammar-online",
+      "alphabet-audio",
+      "deepakam-class-7"
+    ]
+  }
+]

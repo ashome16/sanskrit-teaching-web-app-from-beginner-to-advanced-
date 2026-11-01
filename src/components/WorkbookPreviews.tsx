@@ -890,12 +890,12 @@ const WorkbookPreviews: React.FC<{ compact?: boolean }> = () => {
 
   const handleRegisterTrial = useCallback(() => {
     close();
-    openAuthModal('register');
+    openAuthModal('login');
   }, [close, openAuthModal]);
 
   const handlePaidUpgrade = useCallback(() => {
     close();
-    if (!currentUser) openAuthModal('register');
+    if (!currentUser) openAuthModal('login');
     else openPaymentModal('unlock_paid_features');
   }, [close, currentUser, openAuthModal, openPaymentModal]);
 

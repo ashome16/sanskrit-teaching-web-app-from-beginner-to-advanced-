@@ -140,7 +140,7 @@ const PaymentModal: React.FC = () => {
   const handleRazorpayPay = async () => {
     if (!currentUser) {
       closePaymentModal();
-      openAuthModal('register');
+      openAuthModal('login');
       return;
     }
     if (!RAZORPAY_API_URL) {
@@ -204,7 +204,7 @@ const PaymentModal: React.FC = () => {
 
   const goRegister = () => {
     handleClose();
-    openAuthModal('register');
+    openAuthModal('login');
   };
   const goLogin = () => {
     handleClose();
@@ -225,9 +225,9 @@ const PaymentModal: React.FC = () => {
             ✕
           </button>
           <div className="payment-modal-brand-row">
-            <img src="/logo.jpg" alt="Online Sanskrit and Vedic Math classes for kids | EdNet Learn Gurukul" className="payment-modal-brand-logo" />
+            <img src="/logo.jpg" alt="Online Sanskrit and Vedic Math classes for kids | EdNet Gurukul" className="payment-modal-brand-logo" />
             <div>
-              <div className="payment-modal-brand-title">EdNet Learn Gurukul</div>
+              <div className="payment-modal-brand-title">EdNet Gurukul</div>
               <div className="payment-modal-brand-sub">CBSE Class 7 Sanskrit &amp; Vedic Mathematics</div>
             </div>
           </div>

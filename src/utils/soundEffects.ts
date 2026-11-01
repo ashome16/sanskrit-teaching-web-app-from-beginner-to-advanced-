@@ -85,6 +85,75 @@ class SoundEffectsEngine {
     }
   }
 
+  // ---- Bhārata map: unique synthesized sound per spot ----
+  private bNoise(ctx: AudioContext, t: number, dur: number, type: BiquadFilterType, f0: number, f1: number, q: number, vol: number, wobble = 0): void {
+    const len = Math.floor(ctx.sampleRate * dur);
+    const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+    const d = buf.getChannelData(0);
+    for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    const src = ctx.createBufferSource(); src.buffer = buf;
+    const flt = ctx.createBiquadFilter(); flt.type = type; flt.Q.value = q;
+    flt.frequency.setValueAtTime(f0, t); flt.frequency.exponentialRampToValueAtTime(Math.max(20, f1), t + dur);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + Math.min(0.15, dur / 3));
+    if (wobble) { for (let k = 1; k < dur * wobble; k++) g.gain.setValueAtTime(vol * (0.4 + Math.random() * 0.6), t + k / wobble); }
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    src.connect(flt); flt.connect(g); g.connect(ctx.destination); src.start(t); src.stop(t + dur + 0.05);
+  }
+  private bTone(ctx: AudioContext, t: number, dur: number, type: OscillatorType, f0: number, f1: number, vol: number, vibrato = 0): void {
+    const o = ctx.createOscillator(); o.type = type;
+    o.frequency.setValueAtTime(f0, t); o.frequency.exponentialRampToValueAtTime(Math.max(20, f1), t + dur);
+    if (vibrato) { const l = ctx.createOscillator(); const lg = ctx.createGain(); l.frequency.value = vibrato; lg.gain.value = f0 * 0.06; l.connect(lg); lg.connect(o.frequency); l.start(t); l.stop(t + dur); }
+    const flt = ctx.createBiquadFilter(); flt.type = 'lowpass'; flt.frequency.value = 2400;
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.03); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(flt); flt.connect(g); g.connect(ctx.destination); o.start(t); o.stop(t + dur + 0.05);
+  }
+  private bBubbles(ctx: AudioContext, t: number, n: number, base: number, span: number, dur: number): void {
+    for (let i = 0; i < n; i++) { const tt = t + Math.random() * dur; const f = base + Math.random() * span; this.bTone(ctx, tt, 0.07, 'sine', f, f * 1.8, 0.05); }
+  }
+  private bChirp(ctx: AudioContext, t: number, f: number, count: number, gap: number): void {
+    for (let i = 0; i < count; i++) this.bTone(ctx, t + i * gap, 0.09, 'sine', f, f * 1.5, 0.07);
+  }
+  /** Distinct, kid-friendly ambient/animal sound for each India map spot. */
+  playBharatSpotSound(id: string): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext(); if (!ctx) return;
+      const t = ctx.currentTime + 0.02;
+      switch (id) {
+        // Mountains: wind / echo
+        case 'himalaya': this.bNoise(ctx, t, 1.2, 'bandpass', 500, 1400, 3, 0.25); this.bTone(ctx, t + 0.2, 0.9, 'sine', 880, 880, 0.04); break;
+        case 'sahyadri': this.bNoise(ctx, t, 0.9, 'bandpass', 900, 600, 4, 0.2); this.bChirp(ctx, t + 0.3, 2600, 2, 0.15); break;
+        case 'vindhya': this.bNoise(ctx, t, 0.8, 'bandpass', 300, 800, 2, 0.22); [0, 0.25, 0.5].forEach((d, i) => this.bTone(ctx, t + d, 0.25, 'triangle', 392, 392, 0.08 / (i + 1))); break;
+        case 'pariyatra': this.bNoise(ctx, t, 0.9, 'bandpass', 700, 300, 5, 0.22); this.bTone(ctx, t, 0.8, 'sine', 220, 180, 0.05); break;
+        // Rivers: flowing water / waterfall
+        case 'ganga': this.bNoise(ctx, t, 1.2, 'lowpass', 1800, 900, 1, 0.22); this.bBubbles(ctx, t, 8, 500, 500, 1.0); break;
+        case 'yamuna': this.bNoise(ctx, t, 1.0, 'lowpass', 1200, 700, 1, 0.18); this.bBubbles(ctx, t, 6, 800, 600, 0.9); break;
+        case 'brahmaputra': this.bNoise(ctx, t, 1.2, 'lowpass', 700, 400, 1, 0.32); this.bBubbles(ctx, t, 4, 250, 200, 1.0); break;
+        case 'narmada': this.bNoise(ctx, t, 1.1, 'highpass', 2500, 1500, 1, 0.15); this.bNoise(ctx, t, 1.1, 'lowpass', 600, 600, 1, 0.2); break; // marble-rock waterfall
+        case 'godavari': this.bNoise(ctx, t, 1.0, 'bandpass', 1000, 1000, 1.5, 0.2, 12); this.bBubbles(ctx, t, 5, 600, 400, 0.8); break;
+        case 'kaveri': this.bNoise(ctx, t, 1.2, 'lowpass', 3000, 1200, 0.7, 0.25); this.bBubbles(ctx, t, 10, 900, 900, 1.1); break;
+        // Animals
+        case 'khadgi': this.bNoise(ctx, t, 0.25, 'lowpass', 900, 300, 2, 0.4); this.bNoise(ctx, t + 0.35, 0.3, 'lowpass', 800, 250, 2, 0.4); break; // snort
+        case 'vyaghra': this.bTone(ctx, t, 0.9, 'sawtooth', 110, 70, 0.14, 18); this.bNoise(ctx, t, 0.9, 'lowpass', 400, 200, 1, 0.15); break; // growl
+        case 'simha': this.bTone(ctx, t, 1.1, 'sawtooth', 160, 70, 0.18, 7); this.bNoise(ctx, t, 1.1, 'lowpass', 700, 200, 1, 0.2); break; // roar
+        case 'gaja': this.bTone(ctx, t, 0.8, 'square', 420, 620, 0.09, 9); this.bTone(ctx, t + 0.05, 0.75, 'sawtooth', 840, 1100, 0.04); break; // trumpet
+        case 'himacitraka': this.bTone(ctx, t, 0.5, 'triangle', 300, 220, 0.1, 5); this.bNoise(ctx, t + 0.3, 0.7, 'highpass', 3000, 2000, 1, 0.08); break; // soft chuff + snow wind
+        case 'ushtra': [0, 0.3].forEach((d) => this.bTone(ctx, t + d, 0.25, 'sawtooth', 140, 100, 0.12, 25)); break; // grunt
+        // Deserts: dry wind + sand rattle
+        case 'maru': this.bNoise(ctx, t, 1.2, 'bandpass', 1500, 2500, 6, 0.18); this.bNoise(ctx, t + 0.2, 0.8, 'highpass', 5000, 5000, 1, 0.08, 25); break;
+        case 'kaccha': this.bNoise(ctx, t, 1.0, 'bandpass', 2500, 1200, 8, 0.15); [0, 0.4].forEach((d) => this.bTone(ctx, t + d, 0.3, 'sine', 1200, 1000, 0.04)); break;
+        // Forests: birds + leaves
+        case 'sundaravana': this.bNoise(ctx, t, 1.0, 'highpass', 3000, 4000, 1, 0.07, 15); this.bChirp(ctx, t + 0.1, 2200, 3, 0.12); this.bBubbles(ctx, t, 4, 400, 300, 0.9); break;
+        case 'giravana': this.bNoise(ctx, t, 0.9, 'highpass', 2500, 2500, 1, 0.08, 20); [0, 0.35].forEach((d) => { this.bTone(ctx, t + d, 0.12, 'sine', 1500, 1100, 0.08); this.bTone(ctx, t + d + 0.14, 0.12, 'sine', 1100, 1500, 0.08); }); break; // peacock-ish
+        case 'keralavana': this.bNoise(ctx, t, 1.1, 'highpass', 3500, 3500, 1, 0.08, 18); this.bChirp(ctx, t + 0.1, 3200, 5, 0.08); break;
+        case 'himavana': this.bNoise(ctx, t, 1.0, 'highpass', 2000, 3000, 1, 0.07, 12); [0, 0.45].forEach((d) => { this.bTone(ctx, t + d, 0.15, 'sine', 700, 700, 0.09); this.bTone(ctx, t + d + 0.17, 0.2, 'sine', 560, 560, 0.09); }); break; // cuckoo
+        default: this.playStrokeChime();
+      }
+    } catch { /* ignore */ }
+  }
+
   /**
    * Gentle, pleasant bell ding when drawing or completing a stroke (D5 / 587Hz)
    */
@@ -808,6 +877,158 @@ class SoundEffectsEngine {
       gain.connect(ctx.destination);
       osc.start(now);
       osc.stop(now + dur + 0.05);
+    } catch {}
+  }
+
+
+  /** Vīṇā: plucked string (Karplus-Strong) with sympathetic drone, a short Sa-Pa-Sa phrase */
+  playVeenaPluck(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const pluck = (freq: number, t: number, vol: number, dur = 1.6) => {
+        const sr = ctx.sampleRate;
+        const len = Math.floor(sr * dur);
+        const buf = ctx.createBuffer(1, len, sr);
+        const d = buf.getChannelData(0);
+        const period = Math.max(2, Math.round(sr / freq));
+        const ring = new Float32Array(period);
+        for (let i = 0; i < period; i++) ring[i] = Math.random() * 2 - 1;
+        let idx = 0;
+        for (let i = 0; i < len; i++) {
+          const next = (idx + 1) % period;
+          const v = 0.4985 * (ring[idx] + ring[next]);
+          d[i] = ring[idx];
+          ring[idx] = v;
+          idx = next;
+        }
+        const src = ctx.createBufferSource();
+        src.buffer = buf;
+        // slight meend (pitch bend) typical of vīṇā
+        src.playbackRate.setValueAtTime(1, t);
+        src.playbackRate.linearRampToValueAtTime(1.03, t + 0.25);
+        src.playbackRate.linearRampToValueAtTime(1, t + 0.5);
+        const bodyF = ctx.createBiquadFilter();
+        bodyF.type = 'peaking'; bodyF.frequency.value = 900; bodyF.Q.value = 1.2; bodyF.gain.value = 6;
+        const g = ctx.createGain();
+        g.gain.setValueAtTime(vol, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+        src.connect(bodyF); bodyF.connect(g); g.connect(ctx.destination);
+        src.start(t); src.stop(t + dur);
+      };
+      pluck(146.8, now, 0.5);        // Sa (D3)
+      pluck(220, now + 0.38, 0.45);  // Pa (A3)
+      pluck(293.7, now + 0.76, 0.45, 1.8); // Tār Sa (D4)
+      pluck(73.4, now, 0.18, 2.4);   // drone string
+    } catch {}
+  }
+
+  /** Mṛdaṅga: tuned two-headed drum, "dhim – ta – ki – ṭa" */
+  playMridangaBeat(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const tone = (t: number, f0: number, f1: number, dur: number, vol: number) => {
+        const o = ctx.createOscillator(); const g = ctx.createGain();
+        o.type = 'sine';
+        o.frequency.setValueAtTime(f0, t); o.frequency.exponentialRampToValueAtTime(f1, t + dur);
+        g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol, t + 0.005);
+        g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+        o.connect(g); g.connect(ctx.destination); o.start(t); o.stop(t + dur + 0.02);
+      };
+      const slap = (t: number, freq: number, dur: number, vol: number) => {
+        const len = Math.floor(ctx.sampleRate * dur);
+        const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+        const d = buf.getChannelData(0);
+        for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3);
+        const src = ctx.createBufferSource(); src.buffer = buf;
+        const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = freq; bp.Q.value = 3;
+        const g = ctx.createGain(); g.gain.value = vol;
+        src.connect(bp); bp.connect(g); g.connect(ctx.destination); src.start(t);
+      };
+      // dhim: bass head boom + ringing treble
+      tone(now, 120, 70, 0.6, 0.6); tone(now, 440, 430, 0.5, 0.18); slap(now, 900, 0.05, 0.3);
+      // ta: sharp ringing treble
+      tone(now + 0.28, 520, 505, 0.35, 0.3); slap(now + 0.28, 2500, 0.04, 0.35);
+      // ki: muted tap
+      slap(now + 0.46, 1800, 0.05, 0.4); tone(now + 0.46, 600, 560, 0.08, 0.15);
+      // ṭa: muted tap
+      slap(now + 0.6, 1400, 0.05, 0.4); tone(now + 0.6, 480, 450, 0.1, 0.15);
+      // closing dhim
+      tone(now + 0.82, 120, 65, 0.7, 0.55); tone(now + 0.82, 440, 430, 0.6, 0.18);
+    } catch {}
+  }
+
+  /** Mañjīrā: two small hand cymbals striking — bright inharmonic ring, "chink-chink" */
+  playManjiraChink(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const hit = (t: number, vol: number) => {
+        [2093, 3140, 4410, 5530, 6980].forEach((f, i) => {
+          const o = ctx.createOscillator(); const g = ctx.createGain();
+          o.type = 'sine'; o.frequency.value = f * (1 + (Math.random() - 0.5) * 0.004);
+          g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol / (i + 1.5), t + 0.002);
+          g.gain.exponentialRampToValueAtTime(0.0008, t + 1.1 - i * 0.12);
+          o.connect(g); g.connect(ctx.destination); o.start(t); o.stop(t + 1.2);
+        });
+        const len = Math.floor(ctx.sampleRate * 0.06);
+        const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+        const d = buf.getChannelData(0);
+        for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / len);
+        const src = ctx.createBufferSource(); src.buffer = buf;
+        const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 5000;
+        const g = ctx.createGain(); g.gain.value = vol * 0.8;
+        src.connect(hp); hp.connect(g); g.connect(ctx.destination); src.start(t);
+      };
+      hit(now, 0.35); hit(now + 0.42, 0.3);
+    } catch {}
+  }
+
+  /** Śaṅkha: breathy conch horn with swell and vibrato */
+  playShankhaHorn(): void {
+    try {
+      this.soundEnabled = true;
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const dur = 2.2;
+      const master = ctx.createGain();
+      master.gain.setValueAtTime(0.0001, now);
+      master.gain.linearRampToValueAtTime(0.22, now + 0.35);
+      master.gain.setValueAtTime(0.22, now + dur - 0.6);
+      master.gain.exponentialRampToValueAtTime(0.001, now + dur);
+      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass';
+      lp.frequency.setValueAtTime(400, now); lp.frequency.linearRampToValueAtTime(1400, now + 0.5); lp.frequency.linearRampToValueAtTime(800, now + dur);
+      const vib = ctx.createOscillator(); const vibG = ctx.createGain(); vib.frequency.value = 5; vibG.gain.value = 3;
+      vib.connect(vibG);
+      [[1, 'sawtooth', 0.6], [1.004, 'sawtooth', 0.4], [2, 'triangle', 0.25]].forEach(([m, type, v]) => {
+        const o = ctx.createOscillator(); const g = ctx.createGain();
+        o.type = type as OscillatorType;
+        o.frequency.setValueAtTime(155 * (m as number), now);
+        o.frequency.linearRampToValueAtTime(175 * (m as number), now + 0.4);
+        o.frequency.linearRampToValueAtTime(170 * (m as number), now + dur);
+        vibG.connect(o.frequency);
+        g.gain.value = v as number;
+        o.connect(g); g.connect(lp); o.start(now); o.stop(now + dur + 0.05);
+      });
+      // breath noise
+      const len = Math.floor(ctx.sampleRate * dur);
+      const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+      const n = ctx.createBufferSource(); n.buffer = buf;
+      const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 1200; bp.Q.value = 0.8;
+      const ng = ctx.createGain(); ng.gain.value = 0.05;
+      n.connect(bp); bp.connect(ng); ng.connect(master); n.start(now);
+      lp.connect(master); master.connect(ctx.destination);
+      vib.start(now); vib.stop(now + dur);
     } catch {}
   }
 

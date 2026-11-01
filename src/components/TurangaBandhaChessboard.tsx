@@ -8,10 +8,11 @@ interface TurangaChessboardProps {
 // Rows 0..3 (4 Pādas of Verse 929), Cols 0..7 (8 syllables each)
 // Matrix numbers indicate the chronological step (1..32) of the Knight's Tour
 export const DESIKA_MATRIX: number[][] = [
-  [1, 16, 21, 26, 3, 18, 23, 28],
-  [20, 25, 2, 17, 22, 27, 4, 15],
-  [9, 32, 13, 6, 11, 30, 7, 24],
-  [12, 5, 10, 31, 8, 29, 14, 19],
+  // Deśika's published tour (every consecutive step is a legal 2+1 knight jump).
+  [1, 30, 9, 20, 3, 24, 11, 26],
+  [16, 19, 2, 29, 10, 27, 4, 23],
+  [31, 8, 17, 14, 21, 6, 25, 12],
+  [18, 15, 32, 7, 28, 13, 22, 5],
 ];
 
 export interface BoardCell {
@@ -86,17 +87,16 @@ const V930_SYLLABLES: { dev: string; trans: string }[] = [
   { dev: 'के', trans: 'ke' },
   { dev: 'ग', trans: 'ga' },
   { dev: 'वि', trans: 'vi' },
-  // Pāda 3: दुरंहसामसन्नता (8)
+  // Pāda 3: दुरंहसां सन्नता (8) — syllables read off the grid by steps 17–24
   { dev: 'दु', trans: 'du' },
   { dev: 'रं', trans: 'raṁ' },
   { dev: 'ह', trans: 'ha' },
   { dev: 'सां', trans: 'sāṁ' },
-  { dev: 'म', trans: 'ma' },
   { dev: 'स', trans: 'sa' },
   { dev: 'न्न', trans: 'nna' },
   { dev: 'ता', trans: 'tā' },
-  // Pāda 4: दा साध्या तापकरासरा (8)
   { dev: 'दा', trans: 'dā' },
+  // Pāda 4: साध्या तापकरासरा (8) — steps 25–32
   { dev: 'सा', trans: 'sā' },
   { dev: 'ध्या', trans: 'dhyā' },
   { dev: 'ता', trans: 'tā' },
@@ -104,9 +104,10 @@ const V930_SYLLABLES: { dev: string; trans: string }[] = [
   { dev: 'क', trans: 'ka' },
   { dev: 'रा', trans: 'rā' },
   { dev: 'स', trans: 'sa' },
+  { dev: 'रा', trans: 'rā' },
 ];
 
-export const TurangaBandhaChessboard: React.FC<TurangaChessboardProps> = ({ onPlayAudio }) => {
+const TurangaTourViewer: React.FC<TurangaChessboardProps> = ({ onPlayAudio }) => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [playbackSpeed, setPlaybackSpeed] = useState<number>(1200); // ms per move
@@ -210,10 +211,10 @@ export const TurangaBandhaChessboard: React.FC<TurangaChessboardProps> = ({ onPl
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
         <div>
           <span style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#b45309' }}>
-            Interactive Half-Chessboard Matrix
+            Knight tour animation · for parents
           </span>
           <h3 style={{ margin: '0.25rem 0 0', fontSize: '1.35rem', fontWeight: 800, color: '#0f172a' }}>
-            तुरङ्गबन्धः (Turaṅga-Bandha) · The Knight’s Tour Simulator
+            तुरङ्गबन्धः (Turaṅga-Bandha) · Watch the Knight’s Tour
           </h3>
           <p style={{ margin: '0.25rem 0 0', fontSize: '0.88rem', color: '#64748b' }}>
             Śrī Vedānta Deśika’s <em>Śrī Pādukā Sahasram</em> (14th c.) · Verses 929 &amp; 930 · 8×4 Matrix
@@ -678,7 +679,7 @@ export const TurangaBandhaChessboard: React.FC<TurangaChessboardProps> = ({ onPl
             </span>
             <button
               type="button"
-              onClick={() => onPlayAudio?.('स्थिता समयराजत्पा गतामदके गवि दुरंहसामसन्नतादा साध्या तापकरासरा')}
+              onClick={() => onPlayAudio?.('स्थिता समयराजत्पा गतामदके गवि दुरंहसां सन्नतादा साध्या तापकरासरा')}
               style={{
                 padding: '0.2rem 0.5rem',
                 fontSize: '0.74rem',
@@ -694,7 +695,7 @@ export const TurangaBandhaChessboard: React.FC<TurangaChessboardProps> = ({ onPl
 
           <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#92400e', lineHeight: 1.6, marginBottom: '0.5rem' }}>
             स्थिता समयराजत्पा गताऽऽमदके गवि ।<br />
-            दुरंहसामसन्नतादा साध्या तापकरासरा ॥ ९३० ॥
+            दुरंहसां सन्नतादा साध्या तापकरासरा ॥ ९३० ॥
           </div>
 
           <div style={{ fontSize: '0.82rem', color: '#78350f', lineHeight: 1.5 }}>
@@ -706,6 +707,351 @@ export const TurangaBandhaChessboard: React.FC<TurangaChessboardProps> = ({ onPl
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+// ───────────────────────── Play mode: "Reveal Verse 930" ─────────────────────────
+
+/** (row, col) of every tour step, index 0 = step 1. */
+export const TOUR_POSITIONS: { row: number; col: number }[] = (() => {
+  const out: { row: number; col: number }[] = [];
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 8; c++) out[DESIKA_MATRIX[r][c] - 1] = { row: r, col: c };
+  return out;
+})();
+
+export const isKnightJump = (a: { row: number; col: number }, b: { row: number; col: number }) => {
+  const dr = Math.abs(a.row - b.row);
+  const dc = Math.abs(a.col - b.col);
+  return (dr === 1 && dc === 2) || (dr === 2 && dc === 1);
+};
+
+type Feedback = { kind: 'idle' | 'right' | 'not_l' | 'other_l' | 'visited'; text: string };
+
+const KnightPlayGame: React.FC<{ onWatch: () => void; onPlayAudio?: (t: string) => void }> = ({ onPlayAudio }) => {
+  const [collected, setCollected] = useState(1); // step 1 is given: the horse starts there
+  const [misses, setMisses] = useState(0);
+  const [totalMisses, setTotalMisses] = useState(0);
+  const [hint, setHint] = useState(false);
+  const [feedback, setFeedback] = useState<Feedback>({
+    kind: 'idle',
+    text: 'The horse ♞ is standing on स्थि. Tap the square where it jumps next!',
+  });
+  const [shake, setShake] = useState<string | null>(null);
+
+  const won = collected >= 32;
+  const here = TOUR_POSITIONS[collected - 1];
+  const target = won ? null : TOUR_POSITIONS[collected];
+  const visitedStep = (r: number, c: number) => DESIKA_MATRIX[r][c] <= collected;
+  const showHint = hint || misses >= 3;
+
+  const tap = (r: number, c: number) => {
+    if (won) return;
+    const step = DESIKA_MATRIX[r][c];
+    if (target && r === target.row && c === target.col) {
+      const syl = V930_SYLLABLES[step - 1];
+      setCollected(step);
+      setMisses(0);
+      setHint(false);
+      setFeedback({
+        kind: 'right',
+        text: step >= 32 ? 'You did it!' : `✅ Yes! You collected “${syl.dev}” (${syl.trans}). Now find the next jump.`,
+      });
+      return;
+    }
+    setMisses((m) => m + 1);
+    setTotalMisses((m) => m + 1);
+    setShake(`${r}-${c}`);
+    setTimeout(() => setShake(null), 400);
+    if (r === here.row && c === here.col) {
+      setFeedback({ kind: 'visited', text: 'The horse is already standing here. Tap a square it can jump to.' });
+    } else if (!isKnightJump(here, { row: r, col: c })) {
+      setFeedback({ kind: 'not_l', text: '❌ A horse can’t go there. It always jumps in an L: 2 squares one way, then 1 square sideways. Look for the dotted squares.' });
+    } else if (visitedStep(r, c)) {
+      setFeedback({ kind: 'visited', text: '🔁 Good L-jump, but the horse already visited that square. It never lands on the same square twice!' });
+    } else {
+      setFeedback({ kind: 'other_l', text: '🤏 Good L-jump! But the poet’s horse chose a different dotted square. Try another one.' });
+    }
+  };
+
+  const reset = () => {
+    setCollected(1);
+    setMisses(0);
+    setTotalMisses(0);
+    setHint(false);
+    setFeedback({ kind: 'idle', text: 'The horse ♞ is standing on स्थि. Tap the square where it jumps next!' });
+  };
+
+  const fbColor = feedback.kind === 'right' ? '#166534' : feedback.kind === 'idle' ? '#334155' : '#b91c1c';
+  const fbBg = feedback.kind === 'right' ? '#f0fdf4' : feedback.kind === 'idle' ? '#f8fafc' : '#fef2f2';
+
+  return (
+    <div>
+      {/* Goal banner */}
+      <div style={{ background: 'linear-gradient(135deg,#fff7ed,#fef3c7)', border: '2px solid #f59e0b', borderRadius: 14, padding: '0.9rem 1.1rem', marginBottom: '0.9rem' }}>
+        <div style={{ fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.08em', color: '#b45309', textTransform: 'uppercase' }}>🎯 Your goal · लक्ष्यम्</div>
+        <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', marginTop: 4 }}>
+          Find the horse’s next square — collect all 32 syllables to unlock the secret Verse 930!
+        </div>
+        <div style={{ fontSize: '0.86rem', color: '#57534e', marginTop: 4 }}>
+          The horse (तुरङ्गः) jumps in an <strong>L</strong>: 2 squares one way + 1 square sideways. Dotted squares (•) are the places it <em>can</em> jump. Only one is the poet’s path.
+        </div>
+      </div>
+
+      {/* Progress */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '0.6rem' }}>
+        <strong style={{ color: '#0f172a' }}>Syllables collected: {collected} / 32</strong>
+        <div style={{ flex: 1, minWidth: 120, height: 10, background: '#e2e8f0', borderRadius: 999, overflow: 'hidden' }}>
+          <div style={{ width: `${(collected / 32) * 100}%`, height: '100%', background: '#f59e0b', transition: 'width .3s' }} />
+        </div>
+        <span style={{ fontSize: '0.8rem', color: '#64748b' }}>Misses: {totalMisses}</span>
+      </div>
+
+      {/* Board */}
+      <div role="grid" aria-label="Verse 929 board — tap the knight's next square" style={{ display: 'grid', gridTemplateColumns: 'repeat(8, 1fr)', gap: 3, maxWidth: 560, margin: '0 auto', userSelect: 'none' }}>
+        {Array.from({ length: 4 }).map((_, r) =>
+          Array.from({ length: 8 }).map((__, c) => {
+            const syl = V929_SYLLABLES[r * 8 + c];
+            const step = DESIKA_MATRIX[r][c];
+            const isHere = r === here.row && c === here.col;
+            const visited = step < collected || (won && step <= 32);
+            const canJump = !won && isKnightJump(here, { row: r, col: c }) && step > collected;
+            const isHint = showHint && target && r === target.row && c === target.col;
+            const dark = (r + c) % 2 === 1;
+            let bg = dark ? '#d6c3a5' : '#f5ecdc';
+            if (visited) bg = '#bbf7d0';
+            if (isHere && !won) bg = '#f59e0b';
+            if (isHint) bg = '#fde047';
+            return (
+              <button
+                key={`${r}-${c}`}
+                type="button"
+                onClick={() => tap(r, c)}
+                aria-label={`Row ${r + 1}, column ${c + 1}: ${syl.dev}${visited ? ' (collected)' : ''}`}
+                style={{
+                  position: 'relative',
+                  aspectRatio: '1 / 1',
+                  border: isHint ? '3px solid #ca8a04' : canJump ? '2px dashed #b45309' : '1px solid rgba(0,0,0,0.08)',
+                  borderRadius: 8,
+                  background: bg,
+                  cursor: won ? 'default' : 'pointer',
+                  fontFamily: "'Noto Sans Devanagari', serif",
+                  fontSize: 'clamp(0.85rem, 2.6vw, 1.25rem)',
+                  fontWeight: 800,
+                  color: '#1f2937',
+                  padding: 0,
+                  transform: shake === `${r}-${c}` ? 'translateX(-3px)' : 'none',
+                  boxShadow: shake === `${r}-${c}` ? '0 0 0 3px #ef4444' : 'none',
+                  transition: 'transform .1s, background .2s',
+                }}
+              >
+                {isHere && !won ? '♞' : syl.dev}
+                {isHere && !won && (
+                  <span style={{ position: 'absolute', bottom: 2, left: 0, right: 0, fontSize: '0.6rem', fontWeight: 700 }}>{syl.dev}</span>
+                )}
+                {visited && !isHere && (
+                  <span style={{ position: 'absolute', top: 1, right: 3, fontSize: '0.55rem', color: '#166534' }}>{step}</span>
+                )}
+                {canJump && !isHint && (
+                  <span aria-hidden style={{ position: 'absolute', top: 2, left: 4, fontSize: '0.8rem', color: '#b45309' }}>•</span>
+                )}
+              </button>
+            );
+          })
+        )}
+      </div>
+
+      {/* Feedback */}
+      {!won && (
+        <div aria-live="polite" style={{ marginTop: '0.8rem', padding: '0.7rem 0.9rem', borderRadius: 10, background: fbBg, color: fbColor, fontWeight: 600, fontSize: '0.92rem' }}>
+          {feedback.text}
+          {misses >= 3 && !hint && <span> 💡 Hint: the yellow square is the right one.</span>}
+        </div>
+      )}
+
+      {/* Decoded line */}
+      <div style={{ marginTop: '0.8rem', padding: '0.7rem 0.9rem', borderRadius: 10, border: '1px dashed #f59e0b', background: '#fffbeb' }}>
+        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#92400e', textTransform: 'uppercase' }}>Secret verse 930 so far</div>
+        <div style={{ fontFamily: "'Noto Sans Devanagari', serif", fontSize: '1.15rem', fontWeight: 800, color: '#78350f', marginTop: 4, lineHeight: 1.7 }}>
+          {V930_SYLLABLES.slice(0, collected).map((s, i) => (
+            <span key={i}>
+              {s.dev}
+              {(i + 1) % 8 === 0 && i < 31 ? ' । ' : ''}
+            </span>
+          ))}
+          {!won && <span style={{ color: '#d6d3d1' }}> {'_ '.repeat(Math.min(6, 32 - collected))}…</span>}
+        </div>
+        <div style={{ fontSize: '0.8rem', color: '#a16207', fontStyle: 'italic' }}>
+          {V930_SYLLABLES.slice(0, collected).map((s) => s.trans).join('·')}
+        </div>
+      </div>
+
+      {!won && (
+        <div style={{ marginTop: '0.7rem', display: 'grid', gap: '0.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', fontSize: '0.85rem' }}>
+          <div style={{ background: '#f8fafc', borderRadius: 10, padding: '0.55rem 0.7rem', border: '1px solid #e2e8f0' }}>
+            <strong>📖 The board (Verse 929) means:</strong> “O holy Sandals, please take me to the feet of Lord Raṅganātha.”
+          </div>
+          <div style={{ background: '#fefce8', borderRadius: 10, padding: '0.55rem 0.7rem', border: '1px solid #fde68a' }}>
+            <strong>🔒 Secret poem (Verse 930):</strong>{' '}
+            {collected < 8 ? 'Collect 8 syllables to get a clue…'
+              : collected < 16 ? 'Clue: it is also about the holy Sandals — and how they shine! Keep going…'
+              : '“The holy Sandals shine with gold and jewels, and they cool away the heat of our troubles.” Finish all 32 to unlock the full verse!'}
+          </div>
+        </div>
+      )}
+
+      {/* Controls */}
+      {!won && (
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.8rem' }}>
+          <button type="button" onClick={() => setHint(true)} style={btn('#fde68a', '#78350f')}>💡 Hint</button>
+          <button type="button" onClick={reset} style={btn('#f1f5f9', '#334155')}>↺ Start over</button>
+        </div>
+      )}
+
+      {/* Win */}
+      {won && (
+        <div role="status" style={{ marginTop: '1rem', padding: '1.1rem', borderRadius: 14, background: 'linear-gradient(135deg,#dcfce7,#fef9c3)', border: '2px solid #22c55e' }}>
+          <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#166534' }}>🎉 विजयः! You unlocked Verse 930!</div>
+          <p style={{ margin: '0.4rem 0', color: '#14532d' }}>
+            Your horse visited all 32 squares, each one exactly once{totalMisses === 0 ? ' — with zero misses! 🏆' : ` (with ${totalMisses} miss${totalMisses === 1 ? '' : 'es'}).`}
+          </p>
+          <div style={{ display: 'grid', gap: '0.6rem', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))' }}>
+            <div style={{ background: '#fff', borderRadius: 10, padding: '0.7rem' }}>
+              <strong>Verse 929 — read the rows normally</strong>
+              <div style={{ fontFamily: "'Noto Sans Devanagari', serif", fontWeight: 700 }}>स्थिरागसां सदाराध्या विहताकततामता ।<br />सत्पादुके सरसा मा रङ्गराजपदं नय ॥</div>
+              <p style={{ margin: '0.3rem 0 0', fontSize: '0.85rem' }}>In simple words: “O holy Sandals, please take me to the feet of Lord Raṅganātha.”</p>
+            </div>
+            <div style={{ background: '#fff', borderRadius: 10, padding: '0.7rem' }}>
+              <strong>Verse 930 — read along the horse’s jumps</strong>
+              <div style={{ fontFamily: "'Noto Sans Devanagari', serif", fontWeight: 700 }}>स्थिता समयराजत्पा गताऽऽमदके गवि ।<br />दुरंहसां सन्नतादा साध्या तापकरासरा ॥</div>
+              <p style={{ margin: '0.3rem 0 0', fontSize: '0.85rem' }}>In simple words: “The holy Sandals shine with gold and jewels, and they cool away the heat of our troubles.”</p>
+            </div>
+          </div>
+          <p style={{ fontSize: '0.85rem', color: '#166534', margin: '0.6rem 0' }}>
+            Same 32 letters, two different poems! That is चित्रकाव्यम् — picture poetry.
+          </p>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <button type="button" onClick={reset} style={btn('#16a34a', '#fff')}>🔁 Play again</button>
+            {onPlayAudio && (
+              <button type="button" onClick={() => onPlayAudio('स्थिता समयराजत्पा गताऽऽमदके गवि दुरंहसां सन्नतादा साध्या तापकरासरा')} style={btn('#f59e0b', '#fff')}>
+                🔊 Hear Verse 930
+              </button>
+            )}
+          </div>
+          <ChitraVerseDiagram />
+        </div>
+      )}
+    </div>
+  );
+};
+
+
+/** Clear 3-panel diagram: Verse 929 rows → knight L-path → Verse 930. */
+export const ChitraVerseDiagram: React.FC<{ steps?: number }> = ({ steps = 32 }) => {
+  const n = Math.max(2, Math.min(32, steps));
+  const C = 34; // cell size
+  const W = 8 * C, H = 4 * C;
+  const pos = TOUR_POSITIONS.slice(0, n);
+  const cellStyle = (hl: boolean): React.CSSProperties => ({
+    border: '1px solid #e7d7b8', background: hl ? '#fef3c7' : '#fffdf7', fontFamily: "'Noto Sans Devanagari', serif",
+    fontWeight: 700, fontSize: '0.78rem', textAlign: 'center', padding: '0.25rem 0', minWidth: 0,
+  });
+  const panel: React.CSSProperties = { background: '#fff', border: '1px solid #e2e8f0', borderRadius: 12, padding: '0.6rem', minWidth: 0 };
+  const label: React.CSSProperties = { fontSize: '0.8rem', fontWeight: 800, color: '#78350f', marginBottom: '0.35rem' };
+  const grid: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(8, 1fr)', gap: 0 };
+  return (
+    <figure style={{ margin: '1rem 0 0', padding: '0.8rem', borderRadius: 14, background: '#fdf8ee', border: '1px solid #ebdcc5' }} aria-label="Diagram: Verse 929 becomes Verse 930 along the knight's path">
+      <figcaption style={{ fontWeight: 900, color: '#0f172a', marginBottom: '0.6rem', fontSize: '0.95rem' }}>
+        🗺️ चित्रम् · Diagram — एकाः वर्णाः · अश्वः L-आकारेण कूर्दति · नूतनं काव्यम्
+        <div style={{ fontWeight: 600, color: '#92400e', fontSize: '0.85rem' }}>Same letters · horse jumps in an L · new poem appears.</div>
+      </figcaption>
+      <div style={{ display: 'grid', gap: '0.6rem', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', alignItems: 'stretch' }}>
+        <div style={panel}>
+          <div style={label}>① श्लोकः ९२९ · Verse 929 — read each row →</div>
+          <div style={grid}>
+            {V929_SYLLABLES.map((s, i) => {
+              const r = Math.floor(i / 8), c = i % 8;
+              return <div key={i} style={cellStyle(DESIKA_MATRIX[r][c] <= n)}>{s.dev}</div>;
+            })}
+          </div>
+        </div>
+        <div style={panel}>
+          <div style={label}>② तुरङ्गमार्गः · Knight path — steps 1…{n}</div>
+          <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label={`Knight jumps 1 to ${n}`}>
+            <defs>
+              <marker id="ck-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#b45309" />
+              </marker>
+            </defs>
+            {Array.from({ length: 32 }, (_, i) => {
+              const r = Math.floor(i / 8), c = i % 8;
+              return <rect key={i} x={c * C} y={r * C} width={C} height={C} fill={(r + c) % 2 ? '#f5e6c8' : '#fffdf7'} stroke="#e7d7b8" />;
+            })}
+            {pos.slice(1).map((p, i) => {
+              const a = pos[i];
+              const x1 = a.col * C + C / 2, y1 = a.row * C + C / 2, x2 = p.col * C + C / 2, y2 = p.row * C + C / 2;
+              const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy), k = 11 / len;
+              return <line key={i} x1={x1 + dx * k} y1={y1 + dy * k} x2={x2 - dx * k} y2={y2 - dy * k} stroke="#b45309" strokeWidth={1.6} strokeOpacity={0.75} markerEnd="url(#ck-arrow)" />;
+            })}
+            {pos.map((p, i) => (
+              <g key={i}>
+                <circle cx={p.col * C + C / 2} cy={p.row * C + C / 2} r={9} fill={i === 0 ? '#16a34a' : '#fff'} stroke="#b45309" />
+                <text x={p.col * C + C / 2} y={p.row * C + C / 2 + 3.5} textAnchor="middle" fontSize="9.5" fontWeight="800" fill={i === 0 ? '#fff' : '#78350f'}>{i + 1}</text>
+              </g>
+            ))}
+          </svg>
+          <div style={{ fontSize: '0.72rem', color: '#64748b' }}>♞ 1 = start (स्थि). Each arrow is one L-jump (2 + 1).</div>
+        </div>
+        <div style={panel}>
+          <div style={{ ...label, color: '#166534' }}>③ श्लोकः ९३० · Verse 930 — letters in jump order</div>
+          <div style={grid}>
+            {V930_SYLLABLES.map((s, i) => (
+              <div key={i} style={{ ...cellStyle(false), background: i < n ? '#dcfce7' : '#f8fafc', color: i < n ? '#14532d' : '#cbd5e1' }}>
+                {i < n ? s.dev : '?'}
+              </div>
+            ))}
+          </div>
+          <div style={{ fontSize: '0.72rem', color: '#64748b', marginTop: '0.3rem' }}>Step 1 → square 1, step 2 → square 2 … read left to right.</div>
+        </div>
+      </div>
+    </figure>
+  );
+};
+
+const btn = (bg: string, color: string): React.CSSProperties => ({
+  padding: '0.5rem 0.95rem',
+  borderRadius: 999,
+  border: 'none',
+  background: bg,
+  color,
+  fontWeight: 800,
+  fontSize: '0.88rem',
+  cursor: 'pointer',
+});
+
+export const TurangaBandhaChessboard: React.FC<TurangaChessboardProps> = ({ onPlayAudio }) => {
+  const [mode, setMode] = useState<'play' | 'watch'>('play');
+  return (
+    <div style={{ background: '#fff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '1.25rem', margin: '1.5rem 0', boxShadow: '0 10px 30px rgba(15,23,42,0.08)' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.9rem' }}>
+        <div>
+          <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#b45309', textTransform: 'uppercase', letterSpacing: '0.08em' }}>तुरङ्गबन्धः · The Horse Puzzle</div>
+          <h3 style={{ margin: '0.2rem 0 0', fontSize: '1.3rem', fontWeight: 900, color: '#0f172a' }}>♞ Knight’s Tour Game: Reveal Verse 930</h3>
+        </div>
+      </div>
+      {mode === 'play' ? (
+        <>
+          <KnightPlayGame onWatch={() => setMode('watch')} onPlayAudio={onPlayAudio} />
+          <div style={{ marginTop: '0.9rem', textAlign: 'right' }}>
+            <button type="button" onClick={() => setMode('watch')} style={{ background: 'none', border: 'none', color: '#64748b', fontSize: '0.78rem', textDecoration: 'underline', cursor: 'pointer' }}>For parents: watch the full knight tour animation</button>
+          </div>
+        </>
+      ) : (
+        <>
+          <button type="button" onClick={() => setMode('play')} style={btn('#fef3c7', '#78350f')}>← Back to the game</button>
+          <TurangaTourViewer onPlayAudio={onPlayAudio} />
+        </>
+      )}
     </div>
   );
 };

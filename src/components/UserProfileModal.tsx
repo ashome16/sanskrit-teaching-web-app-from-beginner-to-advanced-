@@ -221,9 +221,9 @@ const UserProfileModal: React.FC = () => {
           <>
             {/* Gurukul Brand Crest */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', marginBottom: '0.85rem' }}>
-              <img src="/logo.jpg" alt="EdNet Learn Gurukul student account" style={{ width: '38px', height: '38px', borderRadius: '8px', border: '1.5px solid #d8ceba', objectFit: 'cover' }} />
+              <img src="/logo.jpg" alt="EdNet Gurukul student account" style={{ width: '38px', height: '38px', borderRadius: '8px', border: '1.5px solid #d8ceba', objectFit: 'cover' }} />
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#7f231c', lineHeight: 1.1 }}>EdNet Learn Gurukul</div>
+                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#7f231c', lineHeight: 1.1 }}>EdNet Gurukul</div>
                 <div style={{ fontSize: '0.72rem', color: '#b45309', fontWeight: 600 }}>CBSE Class 7 Sanskrit &amp; Vedic Studies</div>
               </div>
             </div>
@@ -595,7 +595,7 @@ const UserProfileModal: React.FC = () => {
 
               {/* Customer Support Info */}
               <div style={{ marginTop: '1.25rem', padding: '0.75rem', background: '#fdfaf3', borderRadius: '10px', border: '1px solid #ebdcc5', fontSize: '0.76rem', color: '#6b5e50', textAlign: 'center' }}>
-                <div style={{ fontWeight: 700, color: '#7f231c', marginBottom: '0.2rem' }}>EdNet Learn Gurukul Support</div>
+                <div style={{ fontWeight: 700, color: '#7f231c', marginBottom: '0.2rem' }}>EdNet Gurukul Support</div>
                 <div>Learner Care: <a href="mailto:care@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>care@ednetlearn.in</a></div>
                 <div>Administration: <a href="mailto:admin@ednetlearn.in" style={{ color: '#b3472f', fontWeight: 700, textDecoration: 'none' }}>admin@ednetlearn.in</a></div>
               </div>

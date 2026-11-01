@@ -791,6 +791,7 @@ const PaninianStudio: React.FC<PaninianStudioProps> = ({ onGoBack, onGoHome }) =
 
   return (
     <div className="dp-studio" aria-label="Pāṇinian Dhātupāṭha Studio">
+      <div className="ednet-print-brand ednet-print-only"><img src="/logo.jpg" alt="EdNet logo" width={40} height={40} /><span>EdNet Gurukul · ednetlearn.in</span></div>
       {/* Toast Notification */}
       {toastMessage && (
         <div className="dp-toast" role="status" aria-live="polite">

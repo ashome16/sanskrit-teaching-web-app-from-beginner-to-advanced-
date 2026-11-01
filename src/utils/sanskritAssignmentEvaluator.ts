@@ -511,7 +511,7 @@ export function evaluateSanskritText(
     strengths,
     actionItems,
     teacherRemarks,
-    evaluatorSeal: 'गुरुकुल-परीक्षा-प्रमाणितम् (Verified by EdNet Learn Gurukul Parikshaka)',
+    evaluatorSeal: 'गुरुकुल-परीक्षा-प्रमाणितम् (Verified by EdNet Gurukul Parikshaka)',
   };
 }
 

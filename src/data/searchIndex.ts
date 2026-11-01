@@ -23,6 +23,7 @@ export interface SearchTarget {
     | 'science-lab'
     | 'certificate'
     | 'assignment-eval'
+    | 'intent-landing'
     | 'home';
   grammarTopic?:
     | 'home'
@@ -49,6 +50,8 @@ export interface SearchTarget {
   worksheetsCategory?: string;
   /** /science-lab segment anchor: 'paramanu' | 'prakriti' | 'jyotisha' | 'srishti-sthiti-laya'. */
   labAnchor?: string;
+  /** High-intent landing id (src/data/intentLandings.json). */
+  landingId?: string;
   openBodhi?: boolean;
   bodhiTab?: 'context' | 'qa' | 'subhashita' | 'phrases';
   bodhiQuestionId?: string;
@@ -70,6 +73,78 @@ export interface SearchItem {
 
 export const SEARCH_INDEX: SearchItem[] = [
   {
+    id: 'intent-cbse-class-8',
+    title: "Sanskrit Online Classes for CBSE Class 8",
+    subtitle: "CBSE · Class 8 · दीपकम्",
+    category: 'guides',
+    categoryLabel: 'Study by goal',
+    badgeEmoji: '🎯',
+    badgeColor: '#b45309',
+    description: "Sanskrit online classes for CBSE Class 8: every NCERT Deepakam chapter with audio, word meanings, chapter quizzes, the 80-mark exam blueprint and guided practice with Bodhi.",
+    keywords: ["sanskrit online classes for cbse class 8", "class 8 sanskrit", "cbse class 8 sanskrit", "deepakam class 8", "sanskrit class 8 online"],
+    target: { view: 'intent-landing', landingId: 'cbse-class-8' },
+  },
+  {
+    id: 'intent-deepakam-class-7',
+    title: "NCERT Sanskrit Class 7 Deepakam Solutions",
+    subtitle: "NCERT · Class 7 · दीपकम्",
+    category: 'guides',
+    categoryLabel: 'Study by goal',
+    badgeEmoji: '🎯',
+    badgeColor: '#b45309',
+    description: "NCERT Sanskrit Class 7 Deepakam solutions: chapter-wise word meanings, explanations, exercise practice, quizzes and worksheets for every दीपकम् lesson, with audio.",
+    keywords: ["ncert sanskrit class 7 deepakam solutions", "deepakam solutions", "class 7 sanskrit solutions", "deepakam class 7", "ncert class 7 sanskrit"],
+    target: { view: 'intent-landing', landingId: 'deepakam-class-7' },
+  },
+  {
+    id: 'intent-alphabet-audio',
+    title: "Sanskrit Alphabet Pronunciation Audio",
+    subtitle: "वर्णमाला · Audio",
+    category: 'guides',
+    categoryLabel: 'Study by goal',
+    badgeEmoji: '🎯',
+    badgeColor: '#b45309',
+    description: "Hear every letter of the Sanskrit alphabet: Varṇamālā pronunciation audio for vowels (स्वराः) and consonants (व्यञ्जनानि), grouped by place of articulation (स्थानम्), plus barakhadi.",
+    keywords: ["sanskrit alphabet pronunciation audio", "alphabet audio", "varnamala audio", "sanskrit letters sound", "pronunciation"],
+    target: { view: 'intent-landing', landingId: 'alphabet-audio' },
+  },
+  {
+    id: 'intent-sharada-class-9',
+    title: "CBSE Sanskrit Class 9 Sharada Chapter-wise Notes",
+    subtitle: "CBSE · Class 9 · शारदा",
+    category: 'guides',
+    categoryLabel: 'Study by goal',
+    badgeEmoji: '🎯',
+    badgeColor: '#b45309',
+    description: "CBSE Sanskrit Class 9 Sharada (शारदा) chapter-wise notes: word meanings, grammar focus, quizzes for every chapter and appendices on समास, वाच्य, शब्दरूप and धातुरूप.",
+    keywords: ["cbse sanskrit class 9 sharada chapter-wise notes", "sharada notes", "class 9 sanskrit notes", "sharada class 9", "cbse class 9 sanskrit"],
+    target: { view: 'intent-landing', landingId: 'sharada-class-9' },
+  },
+  {
+    id: 'intent-grammar-online',
+    title: "Learn Sanskrit Grammar Online",
+    subtitle: "व्याकरणम् · Online",
+    category: 'guides',
+    categoryLabel: 'Study by goal',
+    badgeEmoji: '🎯',
+    badgeColor: '#b45309',
+    description: "Learn Sanskrit grammar online with interactive tools: vibhakti (case) tables, liṅga-vacana, numbers, dhātupāṭha verb forms and Pāṇinian explanations, from beginner to advanced.",
+    keywords: ["learn sanskrit grammar online", "sanskrit grammar online", "vyakaran online", "vibhakti", "learn grammar"],
+    target: { view: 'intent-landing', landingId: 'grammar-online' },
+  },
+  {
+    id: 'intent-word-deconstructor',
+    title: "Sanskrit Word Deconstructor Online",
+    subtitle: "पद-विश्लेषणम्",
+    category: 'guides',
+    categoryLabel: 'Study by goal',
+    badgeEmoji: '🎯',
+    badgeColor: '#b45309',
+    description: "Free Sanskrit word deconstructor online: type or paste a Devanagari word to see its syllables, conjunct consonants, transliteration and meaning, then trace verb forms back to the dhātu.",
+    keywords: ["sanskrit word deconstructor online", "word deconstructor", "word analyzer", "pada vishleshanam", "split sanskrit word"],
+    target: { view: 'intent-landing', landingId: 'word-deconstructor' },
+  },
+  {
     id: 'guide-bodhi-online-classes',
     title: 'Sanskrit Online Classes with Bodhi (बोधेः ऑनलाइन-संस्कृत-वर्गाः)',
     subtitle: 'Interactive 24/7 Virtual Gurukul · Spoken, CBSE, Vyakaran & Vedic Math',
@@ -78,7 +153,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     badgeEmoji: '🎓',
     badgeColor: '#d97706',
     description:
-      'Join interactive Sanskrit online classes with Bodhi: 15-minute daily micro-lessons, live audio pronunciation, CBSE NCERT Classes 6–10 coaching, Pāṇinian grammar, and Vedic math drills with 1-on-1 doubt clearing.',
+      'Self-paced Sanskrit online lessons with Bodhi: 15-minute daily micro-lessons, live audio pronunciation, CBSE NCERT Classes 6–10 guidance, Pāṇinian grammar, and Vedic math drills with Ask Bodhi AI doubt help.',
     keywords: [
       'online classes',
       'sanskrit online classes',
@@ -91,7 +166,7 @@ export const SEARCH_INDEX: SearchItem[] = [
       'cbse sanskrit classes',
       'sanskrit classes for kids',
       'sanskrit classes for beginners',
-      'live classes',
+      'self-paced sanskrit lessons',
       'online class',
       'virtual classroom',
     ],
@@ -721,6 +796,135 @@ export const SEARCH_INDEX: SearchItem[] = [
       view: 'grammar',
       grammarTopic: 'article',
       grammarArticleId: 'katapayadi-number-words',
+    },
+  },
+  {
+    id: 'art-jambudvipa-sapta-dvipa',
+    title: 'Jambudvīpa & the Seven Island-Continents',
+    subtitle: 'Sapta-dvīpa · Saṅkalpa · Parent Read-Aloud',
+    category: 'grammar',
+    categoryLabel: 'Article · Purāṇa',
+    badgeEmoji: '🍇',
+    badgeColor: '#7c3aed',
+    description:
+      'India’s ancient name from the jamun tree, Priyavrata’s chariot, the seven dvīpas and oceans, Buddhist and Jain views, Aśoka, and the saṅkalpa jambūdvīpe bhāratavarṣe.',
+    keywords: [
+      'jambudvipa', 'jambudweep', 'jambu dweepa', 'sapta dvipa', 'seven continents', 'priyavrata', 'bhumandala', 'meru',
+      'bharatavarsha', 'sankalpa', 'jamun', 'rose apple', 'pangaea', 'ashoka', 'purana cosmology',
+      'जम्बूद्वीपः', 'सप्तद्वीपाः', 'सङ्कल्पः',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'jambudvipa-sapta-dvipa',
+    },
+  },
+  {
+    id: 'art-sanskrit-grammar-europe',
+    title: 'How Sanskrit Grammar Travelled to Europe',
+    subtitle: 'Missionaries, Judges & Professors · with portraits',
+    category: 'grammar',
+    categoryLabel: 'Article · History',
+    badgeEmoji: '🧭',
+    badgeColor: '#0ea5e9',
+    description:
+      'Heinrich Roth, Hanxleden, Paolino da San Bartolomeo, Sir William Jones, Charles Wilkins, Friedrich Schlegel, Franz Bopp and Max Müller — with portraits — and how Pāṇini’s Aṣṭādhyāyī shaped linguistics and programming languages.',
+    keywords: [
+      'sanskrit europe', 'sanskrit grammar europe', 'william jones', 'charles wilkins', 'schlegel', 'franz bopp', 'max muller',
+      'max müller', 'hanxleden', 'arnos pathiri', 'paolino', 'paulinus', 'heinrich roth', 'comparative linguistics', 'indo-european',
+      'asiatic society', 'panini europe', 'ashtadhyayi', 'backus naur', 'अष्टाध्यायी',
+      'grammar travelled to europe', 'sanskrit grammar travelled to europe', 'how sanskrit grammar travelled', 'sanskrit to europe', 'sanskrit in europe', 'europe sanskrit',
+      'pāṇini europe', 'panini in europe', 'pie sanskrit', 'sanskrit pie', 'proto-indo-european', 'proto indo european', 'pie hypothesis', 'aryan steppe',
+      'jones wilkins bopp', 'sir william jones', 'wilkins', 'bopp', 'jacob grimm', 'macaulay sanskrit', 'macaulay', 'curricular displacement', 'संस्कृतं यूरोपे',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'sanskrit-grammar-europe',
+    },
+  },
+  {
+    id: 'art-panchatantra-niti-world',
+    title: 'Pañcatantra — Wisdom that Travelled the World',
+    subtitle: 'Animal Fables · Kalīla wa Dimna · Parent Read-Aloud',
+    category: 'grammar',
+    categoryLabel: 'Article · Literature',
+    badgeEmoji: '🦊',
+    badgeColor: '#a855f7',
+    description:
+      'Viṣṇuśarman’s five books of nīti told through animals, the frame-story method, why animals mirror human behaviour, and how translations like Kalīla wa Dimna carried the Pañcatantra across Persia, Arabia and Europe.',
+    keywords: [
+      'panchatantra', 'pancatantra', 'panchatantram', 'panchatantra stories', 'vishnu sharma', 'vishnusharma', 'niti', 'fables',
+      'animal stories', 'kalila wa dimna', 'kalila and dimna', 'bidpai', 'pilpay', 'hitopadesha', 'frame story', 'jungle council',
+      'mitra bheda', 'mitra labha', 'aesop', 'la fontaine', 'पञ्चतन्त्रम्', 'नीतिः', 'मित्रभेदः', 'मित्रलाभः',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'panchatantra-niti-world',
+    },
+  },
+  {
+    id: 'art-sapta-varna-seven-horses',
+    title: 'Sapta-varṇa: Seven Horses of the Sun',
+    subtitle: 'Light, Colour & Cave Paints · Parent Read-Aloud',
+    category: 'grammar',
+    categoryLabel: 'Article · Science',
+    badgeEmoji: '🌈',
+    badgeColor: '#f59e0b',
+    description:
+      'Sūrya’s seven horses and the seven colours of sunlight, Ṛgveda, Atharvaveda and Chāndogya read carefully, Ajanta pigments, indigo-madder-turmeric dyes, and a bedtime story with rainbow activity.',
+    keywords: [
+      'sapta varna', 'saptavarna', 'seven horses', 'surya chariot', 'seven colours', 'seven colors', 'rainbow', 'vibgyor',
+      'optics', 'colour science', 'chandogya', 'ajanta', 'ellora', 'indigo', 'madder', 'turmeric', 'natural dyes', 'bedtime story',
+      'सप्तवर्णाः', 'सप्त अश्वाः', 'वर्णः',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'sapta-varna-seven-horses',
+    },
+  },
+  {
+    id: 'art-sanskrit-in-south-indian-languages',
+    title: 'Sanskrit Words Across Telugu, Kannada, Malayalam & Tamil',
+    subtitle: 'संस्कृतं दक्षिणभाषासु',
+    category: 'grammar',
+    categoryLabel: 'Article · Grammar',
+    badgeEmoji: '🌴',
+    badgeColor: '#059669',
+    description:
+      'Eleven Sanskrit words (Vidyā, Akṣara, Sūrya, Candra, Hṛdaya, Bhakti…) compared in Telugu, Kannada, Malayalam and Tamil.',
+    keywords: [
+      'vidya', 'akshara', 'surya', 'chandra', 'akasha', 'prana', 'hridaya', 'kavi', 'bhakti', 'kala', 'sneha',
+      'cognates', 'telugu', 'kannada', 'malayalam', 'tamil', 'south indian languages', 'dravidian', 'sanskrit words',
+      'विद्या', 'अक्षर', 'విద్య', 'ವಿದ್ಯೆ', 'വിദ്യ', 'வித்தை',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'sanskrit-in-south-indian-languages',
+    },
+  },
+  {
+    id: 'art-many-names-of-sanskrit',
+    title: 'The Many Names of the Perfected Language',
+    subtitle: 'Tracking "Sanskrit" Across Regions and Eras',
+    category: 'grammar',
+    categoryLabel: 'Article · Grammar',
+    badgeEmoji: '🗺️',
+    badgeColor: '#7c3aed',
+    description:
+      'Why Sanskrit is also called Samskritam, Samskrutam, Sanskrut, Samskruthamu and Samskruta — the root Saṃskṛta, suffix shifts, the ṛ vowel, and Devavāṇi.',
+    keywords: [
+      'samskritam', 'samskrtam', 'samskrita', 'samskrutam', 'samskruthamu', 'samskruta', 'sanskrut', 'samskrit',
+      'names of sanskrit', 'sanskrit name', 'devavani', 'surabhasha', 'girvanabharati', 'bhasha', 'prakrit',
+      'संस्कृतम्', 'संस्कृत', 'సంస్కృతము', 'ಸಂಸ್ಕೃತ', 'देववाणी',
+    ],
+    target: {
+      view: 'grammar',
+      grammarTopic: 'article',
+      grammarArticleId: 'many-names-of-sanskrit',
     },
   },
   {

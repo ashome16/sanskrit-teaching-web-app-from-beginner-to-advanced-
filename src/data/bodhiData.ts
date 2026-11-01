@@ -575,9 +575,9 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     category: 'cbse',
     question: 'Where can I practise for the Swar review test?',
     sanskritQuestion: 'पुनरावृत्तिः कुत्र अभ्यसामि?',
-    shortAnswer: 'Scan the QR code on page 24 or open ednetlearn.in/quiz: Swar Review Practice is at the top.',
+    shortAnswer: 'Scan the QR code on page 24 or open ednetlearn.in/sanskrit-quiz/: Swar Review Practice is at the top.',
     detailedAnswer:
-      'The Review test on pages 23–24 of Swar · स्वर — Sanskrit Workbook has 20 marks. On ednetlearn.in/quiz, Swar Review Practice gives you 9 sets with many more questions: choose the meaning, say it in Sanskrit, match the pairs, fill in the verb (अहं पठामि, त्वं पठसि, सः पठति), सः / सा / तत्, number words १–१०, one-two-many (एकवचनम्, द्विवचनम्, बहुवचनम्), listen and pick, and complete the saying उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः. Every answer shows the book page to look at.',
+      'The Review test on pages 23–24 of Swar · स्वर — Sanskrit Workbook has 20 marks. On ednetlearn.in/sanskrit-quiz/, Swar Review Practice gives you 9 sets with many more questions: choose the meaning, say it in Sanskrit, match the pairs, fill in the verb (अहं पठामि, त्वं पठसि, सः पठति), सः / सा / तत्, number words १–१०, one-two-many (एकवचनम्, द्विवचनम्, बहुवचनम्), listen and pick, and complete the saying उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः. Every answer shows the book page to look at.',
     tip: 'Play a set again for new questions. For more, try the interactive puzzles, games and worksheets.',
     relatedView: 'quiz',
     relatedLabel: '📝 Open Swar Review Practice ➔',
@@ -999,6 +999,72 @@ export const BODHI_QA_LIBRARY: BodhiQAItem[] = [
     tip: 'Search 366-day, lagadha, or indian calendar.',
     relatedView: 'grammar',
     relatedGrammarArticleId: 'indian-calendar-precision',
+  },
+  {
+    id: 'qa-jambudvipa',
+    category: 'grammar',
+    question: 'Why is India called Jambudvīpa? What are the seven dvīpas?',
+    sanskritQuestion: 'भारतं जम्बूद्वीपम् इति किमर्थम्?',
+    shortAnswer: 'Open “Jambudvīpa & the Seven Island-Continents” on the articles shelf.',
+    detailedAnswer: 'Jambudvīpa — island of the jambū (jamun) tree — is the central ring of the Purāṇic Bhū-maṇḍala; Bhāratavarṣa lies in its south. The article retells Priyavrata’s chariot, lists the seven dvīpas and oceans (Bhāgavata 5), Buddhist and Jain views, Aśoka’s edict, and the saṅkalpa “jambūdvīpe bhāratavarṣe”.',
+    tip: 'Search jambudvipa, sapta dvipa, or sankalpa.',
+    relatedView: 'grammar',
+    relatedGrammarArticleId: 'jambudvipa-sapta-dvipa',
+  },
+  {
+    id: 'qa-sanskrit-europe',
+    category: 'grammar',
+    question: 'How did Sanskrit grammar reach Europe? Who were William Jones, Bopp and Max Müller?',
+    sanskritQuestion: 'संस्कृत-व्याकरणं यूरोपं कथं गतम्?',
+    shortAnswer: 'Open “How Sanskrit Grammar Travelled to Europe” on the articles shelf — with portraits of each scholar.',
+    detailedAnswer: 'Jesuit missionaries Heinrich Roth and Johann Ernst Hanxleden wrote the first European grammars of Sanskrit; Paolino da San Bartolomeo printed the first one in Rome (1790). Sir William Jones’s 1786 Calcutta discourse linked Sanskrit with Greek and Latin, Charles Wilkins published his grammar in 1808, and Schlegel, Bopp and Max Müller made Sanskrit central to European linguistics — inspired by Pāṇini’s Aṣṭādhyāyī. The article also covers Proto-Indo-European (PIE) as a reconstruction rather than another name for Sanskrit, and Macaulay and curricular displacement. (Keywords: Sanskrit Europe, grammar travelled to Europe, Panini Europe, PIE Sanskrit, Jones Wilkins Bopp, Macaulay Sanskrit.)',
+    tip: 'Search sanskrit europe, panini europe, pie sanskrit, jones wilkins bopp, or macaulay sanskrit.',
+    relatedView: 'grammar',
+    relatedGrammarArticleId: 'sanskrit-grammar-europe',
+  },
+  {
+    id: 'qa-panchatantra',
+    category: 'grammar',
+    question: 'What is the Pañcatantra and why is it famous around the world?',
+    sanskritQuestion: 'पञ्चतन्त्रं किम्?',
+    shortAnswer: 'Open “Pañcatantra — Wisdom that Travelled the World” on the articles shelf.',
+    detailedAnswer: 'The Pañcatantra is a Sanskrit collection of five books teaching nīti (worldly wisdom) through animal frame-stories, traditionally told by Viṣṇuśarman to princes. Translated into Middle Persian and then Arabic as Kalīla wa Dimna, it travelled into Hebrew, Greek, Latin and European languages — one of India’s most translated works. Our Jungle Council story follows its tradition.',
+    tip: 'Search panchatantra, kalila wa dimna, or jungle council.',
+    relatedView: 'grammar',
+    relatedGrammarArticleId: 'panchatantra-niti-world',
+  },
+  {
+    id: 'qa-sapta-varna',
+    category: 'grammar',
+    question: 'Why does the Sun have seven horses? Did ancient Indians know about colours of light?',
+    sanskritQuestion: 'सूर्यस्य सप्त अश्वाः किमर्थम्?',
+    shortAnswer: 'Open “Sapta-varṇa: Seven Horses of the Sun” on the articles shelf.',
+    detailedAnswer: 'Ṛgveda 1.164 sings of one horse with seven names pulling the Sun’s chariot — today often read as one white light holding seven rainbow colours. The article adds a careful Chāndogya reading (red, white, dark glows), Ajanta pigments, Indian dyes, and a parent bedtime read-aloud.',
+    tip: 'Search sapta varna, seven horses, or rainbow.',
+    relatedView: 'grammar',
+    relatedGrammarArticleId: 'sapta-varna-seven-horses',
+  },
+  {
+    id: 'qa-sanskrit-in-south-indian-languages',
+    category: 'grammar',
+    question: 'How do Sanskrit words appear in Telugu, Kannada, Malayalam and Tamil?',
+    sanskritQuestion: 'दक्षिणभाषासु संस्कृतशब्दाः कथम्?',
+    shortAnswer: 'Open “Sanskrit Words Across Telugu, Kannada, Malayalam & Tamil” on the grammar shelf.',
+    detailedAnswer: 'A side-by-side table of eleven words — Vidyā, Akṣara, Sūrya, Candra, Ākāśa, Prāṇa, Hṛdaya, Kavi, Bhakti, Kāla and Sneha — showing each form in Telugu, Kannada, Malayalam and Tamil script with Latin transliteration.',
+    tip: 'Search vidya, akshara, or cognates.',
+    relatedView: 'grammar',
+    relatedGrammarArticleId: 'sanskrit-in-south-indian-languages',
+  },
+  {
+    id: 'qa-many-names-of-sanskrit',
+    category: 'grammar',
+    question: 'Why is Sanskrit also called Samskritam, Samskrutam or Samskruthamu?',
+    sanskritQuestion: 'संस्कृतस्य कति नामानि?',
+    shortAnswer: 'Open “The Many Names of the Perfected Language” on the grammar shelf.',
+    detailedAnswer: 'The article traces Saṃskṛta (“well-formed”), the neuter -am suffix of Samskritam, the ṛ vowel spoken as “ri” in the North & East and “ru” in the South & West, Telugu’s -mu in Samskruthamu, and titles like Devavāṇi and Gīrvāṇabhāratī.',
+    tip: 'Search samskritam, samskruthamu, or devavani.',
+    relatedView: 'grammar',
+    relatedGrammarArticleId: 'many-names-of-sanskrit',
   },
   {
     id: 'qa-legacy-metrology',
@@ -2266,7 +2332,7 @@ export interface BodhiSampleInteraction {
   id: string;
   category: string;
   categoryBadge: string;
-  tier: 'Guided Lesson Flow' | 'AI / Shastric Retrieval' | 'Interactive Solver' | 'Human Acharya Escalation';
+  tier: 'Guided Lesson Flow' | 'AI / Shastric Retrieval' | 'Interactive Solver' | 'Scope Boundary';
   studentQuestion: string;
   studentContext: string;
   bodhiAnswer: string;
@@ -2326,19 +2392,18 @@ export const BODHI_PILLARS: BodhiPillar[] = [
   },
   {
     id: 'human-acharya',
-    title: '3. Human Acharya Support',
-    sanskritTitle: 'आचार्य-संवादः एवं साहाय्यम्',
-    badge: 'Human-in-the-Loop',
-    icon: '👨‍🏫',
+    title: '3. Learner Care Desk',
+    sanskritTitle: 'साहाय्य-केन्द्रम्',
+    badge: 'Account & Site Help',
+    icon: '📧',
     description:
-      'Direct human mentorship by certified Sanskrit Acharyas and curriculum educators when automated logic reaches its boundary.',
+      'EdNet Learn is a self-paced online resource. For account, access, or technical issues, our care desk is here to help.',
     capabilities: [
-      'WhatsApp mentor hotline at +91 9000335468 (Only WhatsApp) for line-by-line essay review',
-      'Teacher review of handwritten Sanskrit compositions (मम विद्यालयः, मम दिनचर्या)',
-      'CBSE Class 7–10 board exam directive clarification and marks-weightage strategy',
-      'Dedicated learner care desk via email (care@ednetlearn.in) with prompt resolution',
+      'Login, membership, and access issues',
+      'Reporting content errors or broken audio',
+      'Dedicated learner care desk via email (care@ednetlearn.in)',
     ],
-    humanTouch: 'WhatsApp: +91 9000335468 (Only WhatsApp) · Mon–Sat 9:00 AM – 6:00 PM IST',
+    humanTouch: 'Email: care@ednetlearn.in',
   },
 ];
 
@@ -2384,7 +2449,7 @@ export const BODHI_SCOPE_LIMITATIONS: {
       scopeStatus: 'unsupported',
       description:
         'Bodhi cannot automatically grade handwritten Sanskrit essays or free-form creative poetry without human oversight.',
-      alternative: 'Escalated to human Acharyas via WhatsApp (+91 9000335468) for handwritten paper reviews.',
+      alternative: 'Out of scope: handwritten paper grading is not offered; type sentences into Bodhi for grammar checks.',
     },
     {
       feature: 'Accredited Board Certification',
@@ -2450,14 +2515,13 @@ export const BODHI_SAMPLE_INTERACTIONS: BodhiSampleInteraction[] = [
   {
     id: 'sample-escalation-essay',
     category: 'Scope Boundary & Escalation',
-    categoryBadge: 'Human Mentor Service',
-    tier: 'Human Acharya Escalation',
+    categoryBadge: 'Scope Boundary',
+    tier: 'Scope Boundary',
     studentQuestion: 'Can Bodhi grade my 5-sentence handwritten essay on "मम विद्यालयः" for CBSE exams?',
     studentContext: 'Student submitting a full handwritten composition with spelling and handwriting questions.',
     bodhiAnswer:
-      'Here is where Bodhi’s scope and our living Gurukul Acharyas work together!\n\n• What I can do instantly on-screen: I can check your Sandhi rules, verify dictionary spellings, and confirm case endings (e.g. "मम विद्यालये एका विशाला ग्रन्थालयः अस्ति" ➔ correction to "एकम् विशालं ग्रन्थागारम् अस्ति").\n\n• For your handwritten essay grading: Automated tools cannot accurately evaluate handwritten scripts or CBSE subjective marking schemes. Please snap a photo of your notebook and send it to our Sanskrit Acharya desk on WhatsApp at +91 9000335468 (Only WhatsApp). Our teachers provide handwritten margin notes and marks breakdown!',
-    sanskritAudio: 'गुरुकुल-आचार्य-साहाय्यम् । मम विद्यालयः ।',
-    keyTakeaway: 'Automated tools verify grammar rules; human Acharyas grade handwritten compositions.',
-    escalationNote: 'WhatsApp Acharya Hotline: +91 9000335468 (Only WhatsApp)',
+      'Here is where Bodhi’s scope ends!\n\n• What I can do instantly on-screen: I can check your Sandhi rules, verify dictionary spellings, and confirm case endings (e.g. "मम विद्यालये एका विशाला ग्रन्थालयः अस्ति" ➔ correction to "एकम् विशालं ग्रन्थागारम् अस्ति").\n\n• For your handwritten essay grading: Automated tools cannot accurately evaluate handwritten scripts or CBSE subjective marking schemes. Type your sentences into Bodhi one by one for grammar checks, and use the CBSE guide’s marking blueprint to self-assess.',
+    sanskritAudio: 'मम विद्यालयः ।',
+    keyTakeaway: 'Bodhi verifies grammar rules sentence by sentence; handwritten grading is outside its scope.',
   },
 ];

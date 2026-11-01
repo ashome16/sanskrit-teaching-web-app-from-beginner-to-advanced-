@@ -25,6 +25,7 @@ import { BodhiAvatar } from './BodhiAvatar';
 import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
 import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
 import { getLetterMnemonic } from '../data/varnamalaMnemonics';
+import { getVarnamalaGroupMeta } from '../data/varnamalaGroups';
 import { VarnamalaWritingPad } from './VarnamalaWritingPad';
 import { ErrorBoundary } from './ErrorBoundary';
 import GunitaaksharaGuide from './GunitaaksharaGuide';
@@ -37,6 +38,7 @@ import SwarReviewPractice from './SwarReviewPractice';
 import SwarWorkbooksHub from './SwarWorkbooksHub';
 import '../styles/textbook-reader.css';
 import '../styles/varnamala-studio.css';
+import VarnaColourExplainer from './VarnaColourExplainer';
 
 export const VALID_VARNAMALA_SUBMODES = ['sound', 'writing', 'quizzes', 'workbooks', 'worksheets'] as const;
 export type VarnamalaSubMode = (typeof VALID_VARNAMALA_SUBMODES)[number];
@@ -320,114 +322,6 @@ const DEPENDENT_MODIFIERS: DependentModifierRow[] = [
 
 type VarnamalaCategoryFilter = 'all' | 'vowels' | 'vargas' | 'semivowels' | 'sibilants' | 'ayogavaha' | 'conjuncts';
 
-interface VarnamalaGroupMetadata {
-  title: string;
-  articulation: string;
-  description: string;
-  count: string;
-  layoutClass: string;
-  isVarga?: boolean;
-}
-
-const getVarnamalaGroupMeta = (groupIdx: number): VarnamalaGroupMetadata => {
-  switch (groupIdx) {
-    case 0:
-      return {
-        title: 'स्वराः · Vowels (Vocalic Resonance)',
-        articulation: 'स्वतन्त्र-ध्वनयः · Independent Vocals',
-        description: 'ह्रस्व-दीर्घ-प्लुत-भेदाः · 13 pure vocal sounds uttered freely without oral contact or obstruction.',
-        count: '१३ वर्णाः',
-        layoutClass: 'varnamala-row-letters--svara',
-      };
-    case 1:
-      return {
-        title: 'क-वर्गः · Velars (कण्ठ्य)',
-        articulation: 'स्थानम्: कण्ठः · Throat / Guttural',
-        description: 'उच्चारण-स्थानम् कण्ठः · Articulated at the soft palate (velum) in the back of the throat.',
-        count: '५ वर्णाः',
-        layoutClass: 'varnamala-row-letters--varga',
-        isVarga: true,
-      };
-    case 2:
-      return {
-        title: 'च-वर्गः · Palatals (तालव्य)',
-        articulation: 'स्थानम्: तालु · Hard Palate',
-        description: 'उच्चारण-स्थानम् तालु · Flat surface of the tongue contacts the hard palate roof.',
-        count: '५ वर्णाः',
-        layoutClass: 'varnamala-row-letters--varga',
-        isVarga: true,
-      };
-    case 3:
-      return {
-        title: 'ट-वर्गः · Retroflexes (मूर्धन्य)',
-        articulation: 'स्थानम्: मूर्धा · Alveolar Ridge / Cerebral',
-        description: 'उच्चारण-स्थानम् मूर्धा · Tongue tip curls back and taps the hard upper alveolar ridge.',
-        count: '५ वर्णाः',
-        layoutClass: 'varnamala-row-letters--varga',
-        isVarga: true,
-      };
-    case 4:
-      return {
-        title: 'त-वर्गः · Dentals (दन्त्य)',
-        articulation: 'स्थानम्: दन्ताः · Upper Teeth',
-        description: 'उच्चारण-स्थानम् दन्ताः · Tip of the tongue touches the back of the upper front teeth.',
-        count: '५ वर्णाः',
-        layoutClass: 'varnamala-row-letters--varga',
-        isVarga: true,
-      };
-    case 5:
-      return {
-        title: 'प-वर्गः · Labials (ओष्ठ्य)',
-        articulation: 'स्थानम्: ओष्ठौ · Lips',
-        description: 'उच्चारण-स्थानम् ओष्ठौ · Bilabial sounds formed by closing and releasing both lips.',
-        count: '५ वर्णाः',
-        layoutClass: 'varnamala-row-letters--varga',
-        isVarga: true,
-      };
-    case 6:
-      return {
-        title: 'अन्तःस्थाः · Semivowels (Liquid Transitions)',
-        articulation: 'मध्यस्थाः · Semi-Vocalic (In-Between)',
-        description: 'ध्वनि-संक्रमणम् · Smooth acoustic bridge between pure vowels and obstructive consonants (य, र, ल, व).',
-        count: '४ वर्णाः',
-        layoutClass: 'varnamala-row-letters--quad',
-      };
-    case 7:
-      return {
-        title: 'ऊष्माणः · Sibilants & Aspirate (Warm Breath)',
-        articulation: 'वायु-घर्षणम् · Fricatives & Breath',
-        description: 'घर्षण-ध्वनयः · Airflow forced through narrow vocal channels producing warm hissing and aspiration (श, ष, स, ह).',
-        count: '४ वर्णाः',
-        layoutClass: 'varnamala-row-letters--quad',
-      };
-    case 8:
-      return {
-        title: 'अयोगवाहाः · Dependent Modifiers',
-        articulation: 'पराश्रिताः · Attached Resonances',
-        description: 'अयोगवाहाः ध्वनयः · Pure nasal humming (ं Anusvāra), gentle vowel echo (ः Visarga), and nasalized vowel (ँ Candrabindu).',
-        count: '३ वर्णाः',
-        layoutClass: 'varnamala-row-letters--tri',
-      };
-    case 9:
-      return {
-        title: 'संयुक्ताक्षराणि · Primary Conjuncts',
-        articulation: 'विशिष्ट-संयोगाः · Classic Ligatures',
-        description: 'अक्षर-संयोगः · Fundamental dual-consonant ligatures essential for authentic Sanskrit reading (क्ष, ज्ञ, त्र, श्र).',
-        count: '४ वर्णाः',
-        layoutClass: 'varnamala-row-letters--quad',
-      };
-    default:
-      return {
-        title: '',
-        articulation: '',
-        description: '',
-        count: '',
-        layoutClass: '',
-      };
-  }
-};
-
-
 
 interface PhysicalPageBreakdown {
   bookName: string;
@@ -679,6 +573,22 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     onOpenWorksheets?.();
   };
 
+  const [glossLang, setGlossLangState] = useState<string>(() => {
+    try {
+      return localStorage.getItem('ednet_gloss_lang') || 'en';
+    } catch {
+      return 'en';
+    }
+  });
+  const setGlossLang = (v: string) => {
+    setGlossLangState(v);
+    try {
+      localStorage.setItem('ednet_gloss_lang', v);
+    } catch {
+      /* ignore */
+    }
+  };
+
   useEffect(() => {
     let cancelled = false;
     loadAnalyseGlosses().then((data) => {
@@ -693,6 +603,10 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const activeGloss = cleanActiveWord ? lookupAnalyseGloss(glosses, cleanActiveWord) : undefined;
   const activeEnglishMeaning = activeGloss ? englishMeaningFromGloss(activeGloss) : '';
   const activeHindiMeaning = activeGloss?.languages?.hi?.meaning || '';
+  const activePickedMeaning =
+    glossLang === 'en' || glossLang === 'hi'
+      ? ''
+      : ((activeGloss?.languages as Record<string, { meaning?: string }> | undefined)?.[glossLang]?.meaning || '');
 
   /** Stop speechSynthesis and drop any utterances still queued by the sequence. */
   const cancelSpeechNow = () => {
@@ -1106,6 +1020,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
       : 'Class 7 Deepakam · दीपकम';
     return (
       <section className="textbook-reader">
+        <h1 style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap', border: 0 }}>Sanskrit NCERT Reader · संस्कृत पाठ्यपुस्तक (Ruchira &amp; Deepakam)</h1>
         <div className="textbook-cbse-banner textbook-grade8-upcoming-banner">
           <span className="textbook-cbse-pill" style={{ background: '#1e3a8a', color: '#ffffff' }}>
             ACCOUNT REQUIRED · लेखा आवश्यकः
@@ -1136,7 +1051,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </button>
             <button
               type="button"
-              onClick={() => openAuthModal('register')}
+              onClick={() => openAuthModal('login')}
               style={{
                 background: '#059669',
                 color: '#ffffff',
@@ -1202,6 +1117,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
   return (
     <section className="textbook-reader">
+        <h1 style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap', border: 0 }}>Sanskrit NCERT Reader · संस्कृत पाठ्यपुस्तक (Ruchira &amp; Deepakam)</h1>
       {/* Sleek Unified Top Header */}
       <header className="textbook-top-bar">
         <div className="textbook-top-row">
@@ -1764,6 +1680,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
               </button>
             </nav>
           )}
+
+          {isVarnamala && effectiveVarnamalaSubMode === 'sound' && <VarnaColourExplainer />}
 
 
 
@@ -2922,6 +2840,25 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                     )}
                   </div>
                   <div className="textbook-inline-meaning-body">
+                    <label className="textbook-inline-lang-pick" style={{ display: 'flex', gap: '0.35rem', alignItems: 'center', fontSize: '0.78rem', marginBottom: '0.3rem' }}>
+                      <span>Translation:</span>
+                      <select value={glossLang} onChange={(e) => setGlossLang(e.target.value)} aria-label="Translation language">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी Hindi</option>
+                        <option value="te">తెలుగు Telugu</option>
+                        <option value="ta">தமிழ் Tamil</option>
+                        <option value="ml">മലയാളം Malayalam</option>
+                      </select>
+                    </label>
+                    {activePickedMeaning ? (
+                      <p className="textbook-inline-picked">
+                        <span className="textbook-inline-lang-lbl">{({ te: 'తెలుగు', ta: 'தமிழ்', ml: 'മലയാളം' } as Record<string, string>)[glossLang]}:</span> {activePickedMeaning}
+                      </p>
+                    ) : glossLang !== 'en' && glossLang !== 'hi' ? (
+                      <p className="textbook-inline-fallback" style={{ fontSize: '0.75rem', opacity: 0.7, margin: 0 }}>
+                        {({ te: 'Telugu', ta: 'Tamil', ml: 'Malayalam' } as Record<string, string>)[glossLang]} meaning not added yet — showing English/Hindi.
+                      </p>
+                    ) : null}
                     {activeEnglishMeaning ? (
                       <p className="textbook-inline-en">
                         <span className="textbook-inline-lang-lbl">English:</span> {activeEnglishMeaning}

@@ -167,7 +167,7 @@ export const RESOURCE_ITEMS: ResourceItem[] = [
     status: 'featured',
     statusLabel: '📥 Phonetics Chart',
     mode: 'Printable Color Reference Chart',
-    organizer: 'EdNet Learn Gurukul Faculty',
+    organizer: 'EdNet Gurukul Faculty',
     summary:
       'Master the 14 Shiva Sutras and pure vocal articulation places (कण्ठ, तालु, मूर्धा, दन्त, ओष्ठ) with Pāṇinian pratyāhāra reference matrix and vocal gymnastics guide.',
     highlights: [
@@ -235,7 +235,7 @@ export const RESOURCE_ITEMS: ResourceItem[] = [
     status: 'featured',
     statusLabel: '📥 High-Yield Guide',
     mode: 'Laminated Formula Chart (PDF)',
-    organizer: 'EdNet Learn Gurukul Faculty',
+    organizer: 'EdNet Gurukul Faculty',
     summary:
       'Never get confused between Bālaka, Latā, Phala, Muni, and Asmad/Yushmad again! High-yield color-coded chart consolidating all essential masculine, feminine, neuter, and pronoun declensions plus 5 Lakāras.',
     highlights: [

@@ -65,6 +65,30 @@ export const SANSKRIT_ARTICLE_META: Record<string, { titleSa: string; blurbSa: s
     titleSa: 'मध्यरेखा-भूगोलम् · Ujjain: The Sacred Meridian & Ancient Geodesy',
     blurbSa: 'उज्जयिनी (अवन्ती) शून्य-देशान्तरम् (0°), महाकालेश्वर-नाभिदेशः, कर्करेखा-दोलनं, यन्त्रमन्दिरस्य सम्राट्-यन्त्रं, मकरसंक्रान्ति-सायन-निरयण-वादश्च।',
   },
+  'sanskrit-in-south-indian-languages': {
+    titleSa: 'संस्कृतं दक्षिणभाषासु · Sanskrit Words Across South Indian Languages',
+    blurbSa: 'विद्या, अक्षर, सूर्य, चन्द्र, हृदय, भक्ति — तेलुगु-कन्नड-मलयाळ-तमिळ-भाषासु संस्कृतशब्दानां रूपाणि।',
+  },
+  'many-names-of-sanskrit': {
+    titleSa: 'संस्कृतस्य नामानि · The Many Names of Sanskrit',
+    blurbSa: 'संस्कृतम्, संस्कृत, సంస్కృతము — प्रदेशानुसारं नाम्नः रूपाणि, देववाणी गिर्वाणभारती च।',
+  },
+  'sapta-varna-seven-horses': {
+    titleSa: 'सप्तवर्णाः · Seven Horses of the Sun',
+    blurbSa: 'सूर्यस्य सप्त अश्वाः, एकः प्रकाशः सप्त वर्णाः, छान्दोग्ये त्रिवृत्करणम्, नीली मञ्जिष्ठा हरिद्रा च।',
+  },
+  'sanskrit-grammar-europe': {
+    titleSa: 'संस्कृत-व्याकरणस्य यूरोप-यात्रा · Sanskrit Grammar Travels to Europe',
+    blurbSa: 'रोथ्, हान्क्स्लेडन्, पाओलिनो, विलियम् जोन्स्, विल्किन्स्, श्लेगल्, बोप्, मैक्स्-म्युलर् — पाणिनेः अष्टाध्यायी च।',
+  },
+  'panchatantra-niti-world': {
+    titleSa: 'पञ्चतन्त्रम् · Wisdom that Travelled the World',
+    blurbSa: 'विष्णुशर्मणः पञ्च तन्त्राणि, पशुकथाभिः नीतिः, मित्रभेदः मित्रलाभः च, कलीला-व-दिम्ना इति अनुवादैः विश्वयात्रा।',
+  },
+  'jambudvipa-sapta-dvipa': {
+    titleSa: 'जम्बूद्वीपः · Jambudvīpa & Sapta-dvīpa',
+    blurbSa: 'जम्बूवृक्षात् भारतस्य प्राचीननाम, प्रियव्रतस्य रथः, सप्त द्वीपाः सप्त समुद्राः, जम्बूद्वीपे भारतवर्षे इति सङ्कल्पः।',
+  },
 };
 
 export const SANSKRIT_ARTICLES: Record<string, ParsedArticle> = {

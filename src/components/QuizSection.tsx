@@ -421,7 +421,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
     }
     setShowUpgradePrompt(true);
     if (gateReason === 'guest') {
-      openAuthModal('register');
+      openAuthModal('login');
     } else {
       openPaymentModal('unlock_paid_features');
     }
@@ -509,12 +509,12 @@ const QuizSection: React.FC<QuizSectionProps> = ({
     const catObj = QUIZ_CATEGORIES.find((c) => c.id === selectedCategory);
     const catLabel = catObj?.label || 'Sanskrit & Vedic Maths';
     const percent = Math.round((score / (activeQuestions.length * 10)) * 100);
-    const shareText = `🎯 I scored ${score}/${activeQuestions.length * 10} points (${percent}%) on the "${catLabel}" Quiz at EdNet Learn Gurukul!\n\nCan you beat my score? Test your Sanskrit & Vedic Maths skills here:\n${window.location.origin}`;
+    const shareText = `🎯 I scored ${score}/${activeQuestions.length * 10} points (${percent}%) on the "${catLabel}" Quiz at EdNet Gurukul!\n\nCan you beat my score? Test your Sanskrit & Vedic Maths skills here:\n${window.location.origin}`;
 
     if (typeof navigator !== 'undefined' && navigator.share) {
       navigator
         .share({
-          title: 'EdNet Learn Gurukul Quiz Score',
+          title: 'EdNet Gurukul Quiz Score',
           text: shareText,
           url: window.location.origin,
         })
@@ -576,7 +576,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
         <div className="quiz-header-left">
           <img src="/logo.jpg" alt="Sanskrit and Vedic Maths quiz practice for school children" className="quiz-header-logo" />
           <div>
-            <h2 className="quiz-title">प्रश्नोत्तरी · Sanskrit &amp; Vedic Maths Quiz</h2>
+            <h1 className="quiz-title">प्रश्नोत्तरी · Sanskrit &amp; Vedic Maths Quiz</h1>
             <p className="quiz-subtitle">
               CBSE Class 7 Deepakam Exam Prep · Vyākaraṇa Grammar · Vedic Mental Maths
             </p>
@@ -706,13 +706,18 @@ const QuizSection: React.FC<QuizSectionProps> = ({
           </div>
           <div className="quiz-upgrade-actions">
             {gateReason === 'guest' ? (
+              <>
               <button
                 type="button"
                 className="quiz-retry-btn"
-                onClick={() => (onOpenRegister ? onOpenRegister() : openAuthModal('register'))}
+                onClick={() => (onOpenRegister ? onOpenRegister() : openAuthModal('login'))}
               >
                 {PAID_FEATURE_GATE.ctaGuest}
               </button>
+              <button type="button" className="quiz-retry-btn" style={{ marginLeft: '0.5rem', background: 'transparent', color: 'inherit', border: '1px solid currentColor' }} onClick={() => openAuthModal('register')}>
+                {PAID_FEATURE_GATE.ctaGuestSecondary}
+              </button>
+              </>
             ) : gateReason === 'expired' ? (
               <button type="button" className="quiz-retry-btn" onClick={() => openPaymentModal('unlock_paid_features')}>
                 {PAID_FEATURE_GATE.ctaSubscribe}
@@ -867,7 +872,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({
                         className={`quiz-cat-pill${isSelected ? ' active' : ''}`}
                         onClick={() => {
                           if (isLockedCat) {
-                            openAuthModal('register');
+                            openAuthModal('login');
                           } else {
                             setSelectedCategory(cat.id);
                           }

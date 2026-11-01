@@ -81,7 +81,7 @@ const SECTIONS: ResourceSection[] = [
         name: 'Sanskrit From Home (Vyoma)',
         nameSa: 'व्योम',
         description:
-          'The online learning platform of Vyoma Linguistic Labs (learnsanskrit.org lists it as Vyoma-Saṃskṛta-Pāṭhaśālā). It has recorded and live lecture-style classes from beginner Devanāgarī and spoken Sanskrit up to śāstra texts, with filters for kids, students and adults. Vyoma says about 90% of its courses are free, but some charge a fee or need a paid learning kit.',
+          'The online learning platform of Vyoma Linguistic Labs (learnsanskrit.org lists it as Vyoma-Saṃskṛta-Pāṭhaśālā). It has recorded courses and lecture-style classes from beginner Devanāgarī and spoken Sanskrit up to śāstra texts, with filters for kids, students and adults. Vyoma says about 90% of its courses are free, but some charge a fee or need a paid learning kit.',
         links: [
           { label: 'Browse courses', url: 'https://www.sanskritfromhome.org/course-listing' },
           { label: 'Courses for kids', url: 'https://www.sanskritfromhome.org/course-listing/kids' },

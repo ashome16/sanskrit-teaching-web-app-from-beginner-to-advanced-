@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
 import '../styles/proof-of-quality.css';
+import '../styles/varnamala-studio.css';
+import { VARNAMALA_LETTER_GROUPS, VARGA_COLUMN_GUIDE, getVarnamalaGroupMeta } from '../data/varnamalaGroups';
+import { varnamalaLabel } from '../utils/barakhadiPhonetics';
+import { getLetterMnemonic } from '../data/varnamalaMnemonics';
 
 export interface ProofOfQualityProps {
   onOpenReader: (lessonId?: string) => void;
@@ -229,7 +233,27 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
     setActiveTab(tab);
   };
 
+  const [playingRowIdx, setPlayingRowIdx] = useState<number | null>(null);
+  const stopRowRef = useRef<(() => void) | null>(null);
+  const handlePlayRow = (letters: string[], idx: number) => {
+    if (stopRowRef.current) stopRowRef.current();
+    stopPronunciation();
+    if (playingRowIdx === idx) {
+      setPlayingRowIdx(null);
+      return;
+    }
+    setPlayingRowIdx(idx);
+    stopRowRef.current = playSequence(letters, {
+      gapMs: 240,
+      onDone: () => {
+        stopRowRef.current = null;
+        setPlayingRowIdx(null);
+      },
+    });
+  };
+
   const handlePlaySound = (text: string) => {
+    setPlayingRowIdx(null);
     stopPronunciation();
     playPronunciation(text, { plainDevanagari: true, rate: speechRate });
   };
@@ -303,10 +327,6 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
       <div className="poq-container">
         {/* Header Strip */}
         <div className="poq-header">
-          <div className="poq-eyebrow">
-            <span>🛡️</span>
-            <span>गुणवत्ता-प्रमाणम् · Proof of Quality</span>
-          </div>
           <h2 className="poq-title">
             Experience the Gurukul Platform Before Signing Up
             <span className="poq-title-sa">निःशुल्क-अनुभवः · No Registration Required</span>
@@ -410,94 +430,97 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
             {activeSubLesson === 'sounds' && (
               <div className="poq-lesson-card" id="poq-audio-lesson">
                 <div className="poq-lesson-card-header">
-                  <span className="poq-lesson-badge">ध्वनिविज्ञानम् · Anatomical Sound Zones</span>
-                  <h3 className="poq-lesson-title">How Sanskrit Generates Sounds: From Throat to Lips</h3>
+                  <span className="poq-lesson-badge">वर्णमाला · Alphabet &amp; Sound Places</span>
+                  <h3 className="poq-lesson-title">वर्णमाला · From Throat to Lips, the Original Sanskrit Order</h3>
                   <p className="poq-lesson-desc">
-                    Unlike modern scripts, Sanskrit sounds are grouped with scientific precision by the physical organ that produces them. Tap any sound below to test authentic audio pronunciation:
+                    The same rows as our full Varṇamālā studio: vowels, the five vargas by स्थानम् (place of articulation), semivowels, sibilants, ayogavāha and conjuncts. Tap any letter to hear it, or play a whole row.
                   </p>
+                  <a
+                    href="/swar/"
+                    className="poq-play-shiva-btn poq-full-varnamala-link"
+                    style={{ display: 'inline-block', marginTop: '0.6rem', textDecoration: 'none' }}
+                    onClick={(e) => {
+                      if (onOpenVarnamala) {
+                        e.preventDefault();
+                        onOpenVarnamala();
+                      }
+                    }}
+                  >
+                    पूर्ण-वर्णमाला · Open Full Varṇamālā → (word deconstructor, writing pad, flashcards)
+                  </a>
                 </div>
 
-                <div className="poq-sound-zones">
-                  {/* Zone 1: Guttural */}
-                  <div className="poq-zone-box">
-                    <div className="poq-zone-header">
-                      <span className="poq-zone-name">कण्ठ्याः (Guttural)</span>
-                      <span className="poq-zone-organ">Throat / Glottis</span>
-                    </div>
-                    <div className="poq-zone-sounds">
-                      {['अ', 'आ', 'क', 'ख', 'ग', 'घ', 'ङ', 'ह'].map((s) => (
-                        <button key={s} type="button" className="poq-sound-btn" onClick={() => handlePlaySound(s)}>
-                          <span>{s}</span>
-                          <span className="poq-sound-btn-speaker">🔊</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Zone 2: Palatal */}
-                  <div className="poq-zone-box">
-                    <div className="poq-zone-header">
-                      <span className="poq-zone-name">तालव्याः (Palatal)</span>
-                      <span className="poq-zone-organ">Hard Palate</span>
-                    </div>
-                    <div className="poq-zone-sounds">
-                      {['इ', 'ई', 'च', 'छ', 'ज', 'झ', 'ञ', 'य', 'श'].map((s) => (
-                        <button key={s} type="button" className="poq-sound-btn" onClick={() => handlePlaySound(s)}>
-                          <span>{s}</span>
-                          <span className="poq-sound-btn-speaker">🔊</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Zone 3: Cerebral */}
-                  <div className="poq-zone-box">
-                    <div className="poq-zone-header">
-                      <span className="poq-zone-name">मूर्धन्याः (Retroflex)</span>
-                      <span className="poq-zone-organ">Roof of Mouth</span>
-                    </div>
-                    <div className="poq-zone-sounds">
-                      {['ऋ', 'ॠ', 'ट', 'ठ', 'ड', 'ढ', 'ण', 'र', 'ष'].map((s) => (
-                        <button key={s} type="button" className="poq-sound-btn" onClick={() => handlePlaySound(s)}>
-                          <span>{s}</span>
-                          <span className="poq-sound-btn-speaker">🔊</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Zone 4: Dental */}
-                  <div className="poq-zone-box">
-                    <div className="poq-zone-header">
-                      <span className="poq-zone-name">दन्त्याः (Dental)</span>
-                      <span className="poq-zone-organ">Teeth</span>
-                    </div>
-                    <div className="poq-zone-sounds">
-                      {['ऌ', 'त', 'थ', 'द', 'ध', 'न', 'ल', 'स'].map((s) => (
-                        <button key={s} type="button" className="poq-sound-btn" onClick={() => handlePlaySound(s)}>
-                          <span>{s}</span>
-                          <span className="poq-sound-btn-speaker">🔊</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Zone 5: Labial */}
-                  <div className="poq-zone-box">
-                    <div className="poq-zone-header">
-                      <span className="poq-zone-name">ओष्ठ्याः (Labial)</span>
-                      <span className="poq-zone-organ">Lips</span>
-                    </div>
-                    <div className="poq-zone-sounds">
-                      {['उ', 'ऊ', 'प', 'फ', 'ब', 'भ', 'म', 'व'].map((s) => (
-                        <button key={s} type="button" className="poq-sound-btn" onClick={() => handlePlaySound(s)}>
-                          <span>{s}</span>
-                          <span className="poq-sound-btn-speaker">🔊</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+                <div className="poq-varnamala varnamala-rows">
+                  {VARNAMALA_LETTER_GROUPS.map((letters, groupIdx) => {
+                    const meta = getVarnamalaGroupMeta(groupIdx);
+                    const isRowPlaying = playingRowIdx === groupIdx;
+                    return (
+                      <div
+                        key={groupIdx}
+                        className={`varnamala-row varnamala-row--${groupIdx % 10}${meta.isVarga ? ' varnamala-row--varga' : ''}`}
+                      >
+                        <div className="varnamala-row-header">
+                          <div className="varnamala-row-header-title-wrap">
+                            <div className="varnamala-row-header-top">
+                              <span className="varnamala-row-label">{meta.title}</span>
+                              <span className="varnamala-row-badge">{meta.articulation}</span>
+                              <span className="varnamala-row-count-badge">{meta.count}</span>
+                            </div>
+                            <p className="varnamala-row-subtext">{meta.description}</p>
+                          </div>
+                          <button
+                            type="button"
+                            className={`textbook-playrow-btn${isRowPlaying ? ' textbook-playrow-btn--active' : ''}`}
+                            onClick={() => handlePlayRow(letters, groupIdx)}
+                            aria-pressed={isRowPlaying}
+                          >
+                            <span className="playrow-icon">{isRowPlaying ? '⏹' : '▶'}</span>
+                            <span className="playrow-text">{isRowPlaying ? 'Stop' : 'Play all'}</span>
+                          </button>
+                        </div>
+                        {groupIdx === 1 && (
+                          <div className="varnamala-varga-columns-guide" aria-hidden="true">
+                            {VARGA_COLUMN_GUIDE.map((c) => (
+                              <div className="varga-guide-col" key={c.badge}>
+                                <span className="varga-guide-badge">{c.badge}</span>
+                                <strong>{c.title}</strong>
+                                <small>{c.sub}</small>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        <div className={`varnamala-row-letters ${meta.layoutClass}`}>
+                          {letters.map((letter) => {
+                            const m = getLetterMnemonic(letter);
+                            return (
+                              <button
+                                key={letter}
+                                type="button"
+                                className="varnamala-bouncy-card"
+                                onClick={() => {
+                                  if (stopRowRef.current) stopRowRef.current();
+                                  setPlayingRowIdx(null);
+                                  stopPronunciation();
+                                  playPronunciation(letter);
+                                }}
+                                title={m ? `Hear ${letter} · ${m.wordSan} (${m.wordEn})` : `Hear ${letter}`}
+                              >
+                                <span className="v-card-akshara">{letter}</span>
+                                <small className="v-card-roman">{varnamalaLabel(letter)}</small>
+                                {m && (
+                                  <small className="poq-v-mnemonic">
+                                    {m.emoji} {m.wordSan}
+                                  </small>
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
+
 
                 {/* Shiva Sutras Sample */}
                 <div className="poq-shiva-strip">

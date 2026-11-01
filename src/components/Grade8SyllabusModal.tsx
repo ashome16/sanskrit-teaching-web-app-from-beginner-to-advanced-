@@ -356,7 +356,7 @@ export const Grade8SyllabusModal: React.FC<Grade8SyllabusModalProps> = ({
                         className="g8-action-btn-secondary"
                         onClick={() => {
                           onClose();
-                          openAuthModal('register');
+                          openAuthModal('login');
                         }}
                         style={{ fontSize: '0.84rem', padding: '0.45rem 0.9rem', cursor: 'pointer' }}
                       >

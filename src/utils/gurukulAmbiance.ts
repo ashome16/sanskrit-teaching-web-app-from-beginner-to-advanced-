@@ -84,7 +84,7 @@ class GurukulAmbianceEngine {
     if (this.masterGain && this.ctx) {
       const now = this.ctx.currentTime;
       this.masterGain.gain.cancelScheduledValues(now);
-      this.masterGain.gain.linearRampToValueAtTime(muted ? 0 : 0.95, now + 0.08);
+      this.masterGain.gain.linearRampToValueAtTime(muted ? 0 : 0.4, now + 0.08);
     }
   }
 
@@ -403,9 +403,9 @@ class GurukulAmbianceEngine {
       this.isPlaying = true;
       const now = ctx.currentTime;
 
-      // Initialize master gain immediately at 0.95 so initial bell strike is crisp and loud
+      // Default master volume kept gentle (0.4) so entrance audio is not too loud
       this.masterGain = ctx.createGain();
-      this.masterGain.gain.setValueAtTime(0.95, now);
+      this.masterGain.gain.setValueAtTime(0.4, now);
       this.masterGain.connect(ctx.destination);
 
       // 1. Initial greeting temple bell chime

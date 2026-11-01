@@ -205,7 +205,7 @@ const AdminModal: React.FC = () => {
         <div className="admin-modal-header">
           <div>
             <h2 className="admin-modal-title">
-              <span>🛡️</span> EdNet Learn Gurukul — Admin Portal
+              <span>🛡️</span> EdNet Gurukul — Admin Portal
             </h2>
             <div className="admin-modal-subtitle">
               Platform administration, account management &amp; UTR payment approval
@@ -994,7 +994,7 @@ const AdminModal: React.FC = () => {
                             type="text"
                             value={upiPayeeInput}
                             onChange={(e) => setUpiPayeeInput(e.target.value)}
-                            placeholder="e.g. EdNet Learn Gurukul"
+                            placeholder="e.g. EdNet Gurukul"
                             required
                             style={{
                               width: '100%',

@@ -33,19 +33,19 @@ export const LegalModals: React.FC<LegalModalsProps> = ({ activeModal, onClose }
           <div className="legal-modal-body">
             <span className="legal-modal-badge">Legal Documentation</span>
             <h2 id="legal-modal-title" className="legal-modal-title">Terms of Service</h2>
-            <p className="legal-modal-updated">Last Updated: September 2026 · EdNet Learn Gurukul</p>
+            <p className="legal-modal-updated">Last Updated: September 2026 · EdNet Gurukul</p>
 
             <section className="legal-modal-section">
               <h3>1. Acceptance of Terms</h3>
               <p>
-                By accessing and using <strong>EdNet Learn Gurukul</strong> (ednetlearn.in), you agree to comply with and be bound by these Terms of Service. If you do not agree with any part of these terms, please refrain from using our learning portal.
+                By accessing and using <strong>EdNet Gurukul</strong> (ednetlearn.in), you agree to comply with and be bound by these Terms of Service. If you do not agree with any part of these terms, please refrain from using our learning portal.
               </p>
             </section>
 
             <section className="legal-modal-section">
               <h3>2. Educational Purpose &amp; Curriculum Alignment</h3>
               <p>
-                EdNet Learn Gurukul provides digital educational tools, interactive puzzles, pronunciation models, and study guides aligned with the Central Board of Secondary Education (CBSE) Class 7 Sanskrit curriculum (NCERT 'दीपकम') and ancient Indian Vedic Mathematics. Content is curated strictly for academic enrichment and self-paced learning.
+                EdNet Gurukul provides digital educational tools, interactive puzzles, pronunciation models, and study guides aligned with the Central Board of Secondary Education (CBSE) Class 7 Sanskrit curriculum (NCERT 'दीपकम') and ancient Indian Vedic Mathematics. Content is curated strictly for academic enrichment and self-paced learning.
               </p>
             </section>
 
@@ -77,12 +77,12 @@ export const LegalModals: React.FC<LegalModalsProps> = ({ activeModal, onClose }
           <div className="legal-modal-body">
             <span className="legal-modal-badge">Data Protection</span>
             <h2 id="legal-modal-title" className="legal-modal-title">Privacy Policy</h2>
-            <p className="legal-modal-updated">Last Updated: September 2026 · EdNet Learn Gurukul</p>
+            <p className="legal-modal-updated">Last Updated: September 2026 · EdNet Gurukul</p>
 
             <section className="legal-modal-section">
               <h3>1. Commitment to Student Privacy</h3>
               <p>
-                At <strong>EdNet Learn Gurukul</strong>, safeguarding the privacy of students, parents, and educators is paramount. We do not sell, rent, or trade your personal data with third-party advertisers.
+                At <strong>EdNet Gurukul</strong>, safeguarding the privacy of students, parents, and educators is paramount. We do not sell, rent, or trade your personal data with third-party advertisers.
               </p>
             </section>
 
@@ -116,7 +116,7 @@ export const LegalModals: React.FC<LegalModalsProps> = ({ activeModal, onClose }
           <div className="legal-modal-body">
             <span className="legal-modal-badge">Consumer Protection</span>
             <h2 id="legal-modal-title" className="legal-modal-title">Refund &amp; Cancellation Policy</h2>
-            <p className="legal-modal-updated">Last Updated: September 2026 · EdNet Learn Gurukul</p>
+            <p className="legal-modal-updated">Last Updated: September 2026 · EdNet Gurukul</p>
 
             <section className="legal-modal-section">
               <h3>1. 14-Day Risk-Free Trial</h3>

@@ -14,7 +14,7 @@ export interface CbseSanskritGuidePageProps {
 }
 
 const DEFAULT_TITLE =
-  'Online Sanskrit & Vedic Math Classes for Kids | EdNet Learn Gurukul';
+  'Online Sanskrit & Vedic Math Classes for Kids | EdNet Gurukul';
 const DEFAULT_DESC =
   'Unlock your child\'s potential with interactive Sanskrit and Vedic Math for kids. Start learning with a 14-day free trial.';
 

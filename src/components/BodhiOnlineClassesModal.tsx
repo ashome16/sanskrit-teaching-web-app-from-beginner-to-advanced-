@@ -280,7 +280,7 @@ export const BodhiOnlineClassesModal: React.FC<BodhiOnlineClassesModalProps> = (
                 <span className="boc-title-sanskrit">बोधेः ऑनलाइन-संस्कृत-वर्गाः</span>
               </h2>
               <p className="boc-subtitle">
-                Self-paced daily micro-classes, authentic phonetic audio recitation, CBSE school guidance, and instant 1-on-1 doubt solving.
+                Self-paced daily micro-classes, authentic phonetic audio recitation, CBSE school guidance, and instant Ask Bodhi AI doubt solving.
               </p>
             </div>
           </div>
@@ -309,7 +309,7 @@ export const BodhiOnlineClassesModal: React.FC<BodhiOnlineClassesModalProps> = (
             </div>
             <div className="boc-perk-item">
               <span className="boc-perk-icon">💬</span>
-              <span>1-on-1 Ask Bodhi Doubts</span>
+              <span>Ask Bodhi Anytime (AI)</span>
             </div>
             <div className="boc-perk-item">
               <span className="boc-perk-icon">📜</span>
@@ -321,7 +321,7 @@ export const BodhiOnlineClassesModal: React.FC<BodhiOnlineClassesModalProps> = (
           <div>
             <div className="boc-tracks-header">
               <h3 className="boc-tracks-title">Choose Your Online Class Track:</h3>
-              <span style={{ fontSize: '0.8rem', color: '#64748b' }}>Select any track to try a live sample lesson below</span>
+              <span style={{ fontSize: '0.8rem', color: '#64748b' }}>Select any track to try an interactive sample lesson below</span>
             </div>
 
             <div className="boc-track-tabs" role="tablist">

@@ -224,3 +224,14 @@
     width: calc(100vw - 2rem);
   }
 }
+
+/* Sit above mobile sticky action bar */
+@media (max-width: 768px) {
+  .support-widget {
+    bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
+    right: 0.75rem;
+  }
+}
+@media (max-width: 420px) {
+  .support-trigger-text { display: none; }
+}

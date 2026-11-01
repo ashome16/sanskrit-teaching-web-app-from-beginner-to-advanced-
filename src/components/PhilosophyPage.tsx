@@ -8,7 +8,14 @@ import {
   PingalaNastamUddistamCodec,
   PingalaMeruPyramid,
 } from './PingalaInteractiveTools';
-import { TurangaBandhaChessboard } from './TurangaBandhaChessboard';
+import { TurangaBandhaChessboard, DESIKA_MATRIX, ChitraVerseDiagram } from './TurangaBandhaChessboard';
+
+const TURANGA_GRID_929 = [
+  ['स्थि', 'रा', 'ग', 'सां', 'स', 'दा', 'रा', 'ध्या'],
+  ['वि', 'ह', 'ता', 'क', 'त', 'ता', 'म', 'ता'],
+  ['सत्', 'पा', 'दु', 'के', 'स', 'र', 'सा', 'मा'],
+  ['रं', 'ग', 'रा', 'ज', 'प', 'दं', 'न', 'य'],
+];
 import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
 import { CymaticsHarmonicsStudio } from './CymaticsHarmonicsStudio';
 import { UjjainGeodesyStudio } from './UjjainGeodesyStudio';
@@ -114,57 +121,57 @@ const GLOSSARY: { term: string; meaning: string }[] = [
 ];
 
 const DEFAULT_TITLE =
-  'Online Sanskrit & Vedic Math Classes for Kids | EdNet Learn Gurukul';
+  'Online Sanskrit & Vedic Math Classes for Kids | EdNet Gurukul';
 const DEFAULT_DESC =
   'Unlock your child\'s potential with interactive Sanskrit and Vedic Math for kids. Start learning with a 14-day free trial.';
 
 const AI_ESSAY_TITLE =
-  'Why Learn a Language — Especially Sanskrit — in the Age of AI · Darśana | EdNet Learn Gurukul';
+  'Why Learn a Language — Especially Sanskrit — in the Age of AI · Darśana | EdNet Gurukul';
 const AI_ESSAY_DESC =
   'Machines will make communication efficient. They will not make it living. Explore why Sanskrit phonetics, Pāṇinian grammar, and presence matter in an automated age.';
 
 const MATH_ESSAY_TITLE =
-  'Our Philosophy · Darśana | Śūnyāt Anantam | EdNet Learn Gurukul';
+  'Our Philosophy · Darśana | Śūnyāt Anantam | EdNet Gurukul';
 const MATH_ESSAY_DESC =
-  'EdNet Learn Gurukul darśana: gaṇita as a living bhāṣā — from śūnya to ananta. Explore mathematics as inquiry, pattern, and ṛta. Begin a 14-day free trial.';
+  'EdNet Gurukul darśana: gaṇita as a living bhāṣā — from śūnya to ananta. Explore mathematics as inquiry, pattern, and ṛta. Begin a 14-day free trial.';
 
 const TAGORE_ESSAY_TITLE =
-  'The Eternal Charioteer and the Cage Bird: Rabindranath Tagore & Sanskrit · Darśana | EdNet Learn Gurukul';
+  'The Eternal Charioteer and the Cage Bird: Rabindranath Tagore & Sanskrit · Darśana | EdNet Gurukul';
 const TAGORE_ESSAY_DESC =
   'How Sanskrit and the Upanishads shaped Rabindranath Tagore’s creative genius: Jana Gana Mana’s Tatsama architecture, the Gita’s Chirasarathi, Dui Pakhi & Mundaka Upanishad.';
 
 const MUSIC_OF_MATTER_TITLE =
-  'The Music of Matter: Cymatics, Sacred Geometry & Holographic Universe · Darśana | EdNet Learn Gurukul';
+  'The Music of Matter: Cymatics, Sacred Geometry & Holographic Universe · Darśana | EdNet Gurukul';
 const MUSIC_OF_MATTER_DESC =
   'From Nāda Brahma to acoustic wave dynamics: explore how sound resonance relates to sacred geometry, botanical symmetry, and classical Indian aesthetics.';
 
 const PINGALA_ESSAY_TITLE =
-  'The Binary Blueprint: How Piṅgala’s Chhandas Śāstra Anticipated Computer Science · Darśana | EdNet Learn Gurukul';
+  'The Binary Blueprint: How Piṅgala’s Chhandas Śāstra Anticipated Computer Science · Darśana | EdNet Gurukul';
 const PINGALA_ESSAY_DESC =
   'From Laghu (0) and Guru (1) to Prastāra truth tables, Naṣṭam/Uddiṣṭam codecs, and Meru Prastāra (Pascal’s Triangle): discover ancient India’s foundational computer science.';
 
 const TURANGA_ESSAY_TITLE =
-  'The Architecture of Sound and Strategy: Knight’s Tours in Classical Sanskrit Poetry · Darśana | EdNet Learn Gurukul';
+  'The Architecture of Sound and Strategy: Knight’s Tours in Classical Sanskrit Poetry · Darśana | EdNet Gurukul';
 const TURANGA_ESSAY_DESC =
   'Euler anticipated by 900 years: discover how Rudraṭa (9th c.) and Vedānta Deśika (14th c.) solved the Knight’s Tour on an 8x4 half-chessboard across Pādukā Sahasram 929–930.';
 
 const LILAVATI_ESSAY_TITLE =
-  'The Poetic Equation: How Bhāskarāchārya’s Līlāvatī Turned Mathematics into Art · Darśana | EdNet Learn Gurukul';
+  'The Poetic Equation: How Bhāskarāchārya’s Līlāvatī Turned Mathematics into Art · Darśana | EdNet Gurukul';
 const LILAVATI_ESSAY_DESC =
   'Shattering the science-art divide: explore how Bhāskara II (1114 CE) cloaked multi-step quadratic equations, fractions, and geometry in the romantic imagery of nature.';
 
 const SHAD_ESSAY_TITLE =
-  'Six Lenses on Reality: The Ṣaḍ-darśanas and the Culture of Debate · Darśana | EdNet Learn Gurukul';
+  'Six Lenses on Reality: The Ṣaḍ-darśanas and the Culture of Debate · Darśana | EdNet Gurukul';
 const SHAD_ESSAY_DESC =
   'Nyāya, Vaiśeṣika, Sāṅkhya, Yoga, Mīmāṃsā and Vedānta: each opening sūtra in Devanagari with meaning, how the six schools differ in method, and India’s culture of pūrvapakṣa and debate.';
 
 const MEDHA_ESSAY_TITLE =
-  'Medhā and the Mind: Two Ways of Looking at Consciousness · Darśana | EdNet Learn Gurukul';
+  'Medhā and the Mind: Two Ways of Looking at Consciousness · Darśana | EdNet Gurukul';
 const MEDHA_ESSAY_DESC =
   'Medhā, antaḥkaraṇa and the witness (sākṣī): Descartes, physicalism and the hard problem set beside Vedānta, Sāṅkhya-Yoga (YS 1.2) and Buddhist anattā.';
 
 const UJJAIN_ESSAY_TITLE =
-  'Madhya-Rekhā: Ujjain, the Sacred Meridian & Ancient Indian Geodesy · Darśana | EdNet Learn Gurukul';
+  'Madhya-Rekhā: Ujjain, the Sacred Meridian & Ancient Indian Geodesy · Darśana | EdNet Gurukul';
 const UJJAIN_ESSAY_DESC =
   'Centuries before Greenwich: explore Ujjain (Avanti) as the ancient Prime Meridian (0°), the 12-Angula Shanku latitude, eclipse-based Deshantara longitude, and Jya trigonometry.';
 
@@ -192,6 +199,12 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   useEffect(() => {
     if (initialEssay) {
       setActiveEssay(initialEssay);
+    }
+    if (initialEssay === 'turanga_bandha' && typeof window !== 'undefined') {
+      const t = window.setTimeout(() => {
+        document.getElementById('turanga-simulator')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 350);
+      return () => window.clearTimeout(t);
     }
   }, [initialEssay]);
 
@@ -751,7 +764,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               </p>
               <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
                 <a
-                  href="/course#addendum-prologue-saha-nav-avatu"
+                  href="/sanskrit-thinking#addendum-prologue-saha-nav-avatu"
                   className="philosophy-action-btn"
                   style={{ display: "inline-block", textDecoration: "none" }}
                   onClick={(e) => {
@@ -764,7 +777,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   🤝 Study the Living Covenant in the Course ➔
                 </a>
                 <a
-                  href="/course#mantras"
+                  href="/sanskrit-thinking#mantras"
                   className="philosophy-action-btn"
                   style={{ display: "inline-block", textDecoration: "none", background: "transparent", color: "#9a3412", border: "1px solid #fdba74" }}
                   onClick={(e) => {
@@ -1046,7 +1059,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               <h2 id="ganita-bhasha">Gaṇita as Bhāṣā, Not a Race</h2>
               <p>
                 Mathematics is often introduced as a contest: calculate faster, memorise more formulas,
-                solve more questions. At EdNet Learn Gurukul, we invite children to experience{' '}
+                solve more questions. At EdNet Gurukul, we invite children to experience{' '}
                 <em>gaṇita-vidyā</em> — mathematics as a living knowledge — rather than as a timed
                 transaction.
               </p>
@@ -1174,7 +1187,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 If you are looking only for a list of speed tricks to pass a timed test, those lessons
                 are easy to find. If you want your child to build structural thinking, to look at{' '}
                 <em>saṅkhyā</em> with wonder, and to connect logic with culture and darśana, welcome to
-                EdNet Learn Gurukul.
+                EdNet Gurukul.
               </p>
               <p>
                 Our goal is not to turn children into human calculators. It is to help them become
@@ -1201,7 +1214,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
               <p>
                 <em>We do not merely calculate. We learn to see.</em>
               </p>
-              <p>This is the spirit of the EdNet Learn Gurukul.</p>
+              <p>This is the spirit of the EdNet Gurukul.</p>
             </section>
 
             {onOpenGrammarArticle && (
@@ -1295,6 +1308,13 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <AudioChip term="आनन्दः" label="आनन्दः" />
               </div>
             </header>
+
+            <div style={{ margin: '2.25rem 0 0.5rem', padding: '0.9rem 1.1rem', borderRadius: 12, background: '#f8fafc', borderLeft: '4px solid #94a3b8' }}>
+              <h2 style={{ margin: 0, fontSize: '1.15rem' }}>👪 For parents &amp; curious readers · अधिकं ज्ञानम्</h2>
+              <p style={{ margin: '0.3rem 0 0', fontSize: '0.9rem', color: '#475569' }}>
+                History (Rudraṭa, 9th c.; Vedānta Deśika, 14th c.), the full step-by-step matrix, the four constraints, and the Sanskrit chess treatises.
+              </p>
+            </div>
 
             {/* Visual Masterpiece Artwork Hero */}
             <figure className="philosophy-hero-mandala" style={{ maxWidth: 'min(100%, 780px)', margin: '1.75rem auto 2.25rem' }}>
@@ -2824,8 +2844,11 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             <header className="philosophy-hero">
               <span className="philosophy-kicker">Gurukul Darśana · Masterclass 8 · चित्रकाव्यम्</span>
               <h1 className="philosophy-title">
-                The Architecture of Sound and Strategy: Knight’s Tours in Classical Sanskrit Poetry
+                Two Poems on One Board: The Horse Puzzle of Sanskrit Poetry
               </h1>
+              <p className="philosophy-secondary" style={{ fontWeight: 700 }}>
+                एकस्मिन् फलके द्वे काव्ये · Read the rows → Verse 929. Follow the horse ♞ → Verse 930.
+              </p>
               <p className="philosophy-mantra">
                 तुरङ्गबन्धः · चित्रकाव्यम् · चतुरङ्गम् · पादुकासहस्रम्
               </p>
@@ -2853,6 +2876,45 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <AudioChip term="स्थिता समयराजत्पा" label="श्लोकः ९३०" />
               </div>
             </header>
+
+            {/* Child-first: how this works + the game */}
+            <section className="philosophy-section" id="turanga-simulator" aria-labelledby="heading-turanga-kids">
+              <h2 id="heading-turanga-kids">🧒 How this works · Try the game</h2>
+              <p className="philosophy-lead">
+                <strong>चित्रकाव्यम् (Chitra-Kāvya) = picture poetry.</strong> Long ago, Sanskrit poets arranged the letters of a poem into a picture or a grid — like a puzzle you can read in more than one way.
+              </p>
+              <p>
+                <strong>तुरङ्गबन्धः (Turaṅga-Bandha) = the horse puzzle.</strong> In chess, the horse (knight, तुरङ्गः) jumps in an <strong>L</strong>: 2 squares one way, then 1 square sideways. The poet Vedānta Deśika wrote a poem (Verse 929) on a small chessboard of 32 squares. If you read the rows normally you get Verse 929. But if you follow the horse’s jumps and read only the letters it lands on, a <em>completely different poem</em> appears — Verse 930!
+              </p>
+              <ol className="philosophy-bullet-list">
+                <li><strong>Look</strong> at the board — every square holds one syllable of Verse 929. The horse ♞ starts on स्थि.</li>
+                <li><strong>Tap</strong> the square where the horse jumps next. Dotted squares are the L-jumps it <em>can</em> make; only one is the poet’s path.</li>
+                <li><strong>Collect</strong> syllables. Get all 32 and the secret Verse 930 is unlocked! Stuck? Press 💡 Hint.</li>
+              </ol>
+              <div style={{ display: 'grid', gap: '0.6rem', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', margin: '1rem 0' }}>
+                <div style={{ background: '#f0fdf4', border: '1.5px solid #86efac', borderRadius: 12, padding: '0.75rem' }}>
+                  <strong>📖 Poem 1 · श्लोकः ९२९</strong> — read the board row by row.
+                  <div style={{ fontWeight: 800, color: '#14532d', margin: '0.3rem 0' }}>स्थिरागसां सदाराध्या विहताकततामता ।<br />सत्पादुके सरसा मा रङ्गराजपदं नय ॥</div>
+                  <span style={{ fontSize: '0.9rem' }}>Means: “O holy Sandals, please take me to the feet of Lord Raṅganātha.”</span>
+                </div>
+                <div style={{ background: '#fffbeb', border: '1.5px solid #fde68a', borderRadius: 12, padding: '0.75rem' }}>
+                  <strong>🔓 Poem 2 · श्लोकः ९३०</strong> — read only where the horse lands.
+                  <div style={{ fontWeight: 800, color: '#78350f', margin: '0.3rem 0' }}>स्थिता समयराजत्पा गताऽऽमदके गवि ।<br />दुरंहसां सन्नतादा साध्या तापकरासरा ॥</div>
+                  <span style={{ fontSize: '0.9rem' }}>Means: “The holy Sandals shine with gold and jewels, and they cool away the heat of our troubles.”</span>
+                </div>
+              </div>
+              <p style={{ fontWeight: 700, color: '#92400e' }}>
+                Why does 929 unlock 930? The poet Vedānta Deśika chose every letter so that <em>both</em> readings make sense. The letters never change — only the reading order does.
+              </p>
+              <ChitraVerseDiagram steps={8} />
+              <p style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '0.3rem' }}>
+                The diagram shows the first 8 jumps (the first line of Verse 930). In the game below you make all 32.
+              </p>
+              <TurangaBandhaChessboard onPlayAudio={handlePlayAudio} />
+              <p style={{ fontSize: '0.9rem', color: '#64748b' }}>
+                <strong>For curious readers &amp; parents:</strong> the sections below explain the history (Rudraṭa, 9th c.; Vedānta Deśika, 14th c.), the full verses with meanings, and why this is a mathematical marvel.
+              </p>
+            </section>
 
             {/* Visual Masterpiece Artwork Hero */}
             <figure className="philosophy-hero-mandala" style={{ maxWidth: 'min(100%, 820px)', margin: '1.75rem auto 2.25rem' }}>
@@ -2886,7 +2948,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 <a href="#turanga-chitra-kavya" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>♞ 1. Chitra-Kāvya &amp; Strategy</a>
                 <a href="#turanga-rudrata" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>📜 2. Rudraṭa’s Kāvyālaṅkāra (9th c.)</a>
                 <a href="#turanga-desika" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>✨ 3. Deśika’s Verses 929 &amp; 930</a>
-                <a href="#turanga-simulator" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>♟️ 4. Interactive Chessboard</a>
+                <a href="#turanga-simulator" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>♟️ 🎮 Play the Game</a>
                 <a href="#turanga-constraints" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚖️ 5. Four Simultaneous Constraints</a>
                 <a href="#turanga-manuals" className="philosophy-chip" style={{ textDecoration: 'none', cursor: 'pointer' }}>⚔️ 6. Sanskrit Chess Treatises</a>
               </div>
@@ -2984,14 +3046,14 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                   <button
                     type="button"
                     className="philosophy-audio-btn"
-                    onClick={() => handlePlayAudio('स्थिता समयराजत्पा गतामदके गवि दुरंहसामसन्नतादा साध्या तापकरासरा')}
+                    onClick={() => handlePlayAudio('स्थिता समयराजत्पा गतामदके गवि दुरंहसां सन्नतादा साध्या तापकरासरा')}
                   >
                     🔊 Chant 930
                   </button>
                 </div>
                 <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#78350f', lineHeight: 1.6, marginBottom: '0.5rem' }}>
                   स्थिता समयराजत्पा गताऽऽमदके गवि ।<br />
-                  दुरंहसामसन्नतादा साध्या तापकरासरा ॥ ९३० ॥
+                  दुरंहसां सन्नतादा साध्या तापकरासरा ॥ ९३० ॥
                 </div>
                 <p style={{ margin: '0 0 0.5rem', fontSize: '0.88rem', color: '#b45309', fontStyle: 'italic' }}>
                   sthitā samayarājatpā gatā&apos;&apos;madake gavi | duraṁhasāmasannatādā sādhyā tāpakarāsarā ||
@@ -3021,66 +3083,20 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td><strong>Pāda 1</strong></td>
-                        <td>01 (स्थि)</td>
-                        <td>16 (रा)</td>
-                        <td>21 (ग)</td>
-                        <td>26 (सां)</td>
-                        <td>03 (स)</td>
-                        <td>18 (दा)</td>
-                        <td>23 (रा)</td>
-                        <td>28 (ध्या)</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Pāda 2</strong></td>
-                        <td>20 (वि)</td>
-                        <td>25 (ह)</td>
-                        <td>02 (ता)</td>
-                        <td>17 (क)</td>
-                        <td>22 (त)</td>
-                        <td>27 (ता)</td>
-                        <td>04 (म)</td>
-                        <td>15 (ता)</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Pāda 3</strong></td>
-                        <td>09 (सत्)</td>
-                        <td>32 (पा)</td>
-                        <td>13 (दु)</td>
-                        <td>06 (के)</td>
-                        <td>11 (स)</td>
-                        <td>30 (र)</td>
-                        <td>07 (सा)</td>
-                        <td>24 (मा)</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Pāda 4</strong></td>
-                        <td>12 (रं)</td>
-                        <td>05 (ग)</td>
-                        <td>10 (रा)</td>
-                        <td>31 (ज)</td>
-                        <td>08 (प)</td>
-                        <td>29 (दं)</td>
-                        <td>14 (न)</td>
-                        <td>19 (य)</td>
-                      </tr>
+                      {DESIKA_MATRIX.map((row, r) => (
+                        <tr key={r}>
+                          <td><strong>Pāda {r + 1}</strong></td>
+                          {row.map((step, c) => (
+                            <td key={c}>{String(step).padStart(2, '0')} ({TURANGA_GRID_929[r][c]})</td>
+                          ))}
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
               </div>
             </section>
 
-            {/* Section 4: Interactive Chessboard Simulator */}
-            <section className="philosophy-section" id="turanga-simulator" aria-labelledby="heading-turanga-simulator">
-              <h2 id="heading-turanga-simulator">4. Interactive Chessboard: The Knight’s Tour in Real Time</h2>
-              <p className="philosophy-lead">
-                Step through the tour move by move or hit &quot;Play&quot; to watch the glowing knight leap across the half-chessboard, assembling Verse 930 before your eyes!
-              </p>
-
-              {/* Embedded Interactive Chessboard Component */}
-              <TurangaBandhaChessboard onPlayAudio={handlePlayAudio} />
-            </section>
 
             {/* Section 5: The Four Simultaneous Constraints */}
             <section className="philosophy-section" id="turanga-constraints" aria-labelledby="heading-turanga-constraints">
