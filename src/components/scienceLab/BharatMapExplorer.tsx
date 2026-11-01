@@ -397,10 +397,10 @@ interface PackDef {
 }
 
 const PACKS: PackDef[] = [
-  { id: 'animals', icon: '🐾', sa: 'पशवः', en: 'Animals (6)', bg: '#fef3c7', border: '#f59e0b', filter: (s) => s.kind === 'animal' },
-  { id: 'rivers', icon: '🌊', sa: 'नद्यः', en: 'Rivers (6)', bg: '#e0f2fe', border: '#0284c7', filter: (s) => s.kind === 'river' },
-  { id: 'mountains', icon: '🏔️', sa: 'पर्वताः', en: 'Mountains (4)', bg: '#ede9fe', border: '#7c3aed', filter: (s) => s.kind === 'mountain' },
-  { id: 'nature', icon: '🌳', sa: 'वनानि मरुश्च', en: 'Forests & Deserts (6)', bg: '#dcfce7', border: '#16a34a', filter: (s) => s.kind === 'forest' || s.kind === 'desert' },
+  { id: 'animals', icon: '🐾', sa: 'पशवः', en: 'Level 1: Animals (6)', bg: '#fef3c7', border: '#f59e0b', filter: (s) => s.kind === 'animal' },
+  { id: 'rivers', icon: '🌊', sa: 'नद्यः', en: 'Next Level: Rivers (6)', bg: '#e0f2fe', border: '#0284c7', filter: (s) => s.kind === 'river' },
+  { id: 'mountains', icon: '🏔️', sa: 'पर्वताः', en: 'Next Level: Mountains (4)', bg: '#ede9fe', border: '#7c3aed', filter: (s) => s.kind === 'mountain' },
+  { id: 'nature', icon: '🌳', sa: 'वनानि मरुश्च', en: 'Next Level: Forests & Deserts (6)', bg: '#dcfce7', border: '#16a34a', filter: (s) => s.kind === 'forest' || s.kind === 'desert' },
   { id: 'all', icon: '🌟', sa: 'सम्पूर्ण-भारतम्', en: 'All 22 Wonders', bg: '#fce7f3', border: '#db2777', filter: () => true },
 ];
 

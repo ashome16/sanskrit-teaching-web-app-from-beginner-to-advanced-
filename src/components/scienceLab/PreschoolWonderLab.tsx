@@ -209,16 +209,16 @@ interface CountItem {
 }
 
 const COUNT_ITEMS: CountItem[] = [
-  { num: 1, devDigit: '१', devName: 'एकम्', iast: 'ekam', en: 'One', icon: '☀️', phraseSa: 'एकः सूर्यः', phraseEn: 'One Golden Sun', color: '#f59e0b' },
-  { num: 2, devDigit: '२', devName: 'द्वे', iast: 'dve', en: 'Two', icon: '🦢', phraseSa: 'द्वौ हंसौ', phraseEn: 'Two Graceful Swans', color: '#06b6d4' },
-  { num: 3, devDigit: '३', devName: 'त्रीणि', iast: 'trīṇi', en: 'Three', icon: '🍃', phraseSa: 'त्रीणि बिल्वपत्राणि', phraseEn: 'Three Bilva Leaves', color: '#10b981' },
-  { num: 4, devDigit: '४', devName: 'चत्वारि', iast: 'catvāri', en: 'Four', icon: '🦁', phraseSa: 'चत्वारः वेदाः', phraseEn: 'Four Vedas / Lion Paws', color: '#f97316' },
-  { num: 5, devDigit: '५', devName: 'पञ्च', iast: 'pañca', en: 'Five', icon: '🖐️', phraseSa: 'पञ्चभूतानि', phraseEn: 'Five Elements & Fingers', color: '#8b5cf6' },
-  { num: 6, devDigit: '६', devName: 'षट्', iast: 'ṣaṭ', en: 'Six', icon: '🌸', phraseSa: 'षट् ऋतवः', phraseEn: 'Six Seasons of Nature', color: '#ec4899' },
+  { num: 1, devDigit: '१', devName: 'एकम्', iast: 'ekam', en: 'One', icon: '☀️', phraseSa: 'एकः सूर्यः', phraseEn: 'One Bright Sun', color: '#f59e0b' },
+  { num: 2, devDigit: '२', devName: 'द्वे', iast: 'dve', en: 'Two', icon: '🦢', phraseSa: 'द्वौ हंसौ', phraseEn: 'Two White Swans', color: '#06b6d4' },
+  { num: 3, devDigit: '३', devName: 'त्रीणि', iast: 'trīṇi', en: 'Three', icon: '🥭', phraseSa: 'त्रीणि आम्राणि', phraseEn: 'Three Sweet Mangoes', color: '#10b981' },
+  { num: 4, devDigit: '४', devName: 'चत्वारि', iast: 'catvāri', en: 'Four', icon: '🐶', phraseSa: 'चत्वारः शुनकाः', phraseEn: 'Four Playful Puppies', color: '#f97316' },
+  { num: 5, devDigit: '५', devName: 'पञ्च', iast: 'pañca', en: 'Five', icon: '⭐', phraseSa: 'पञ्च ताराः', phraseEn: 'Five Twinkling Stars', color: '#8b5cf6' },
+  { num: 6, devDigit: '६', devName: 'षट्', iast: 'ṣaṭ', en: 'Six', icon: '🐝', phraseSa: 'षट् भ्रमराः', phraseEn: 'Six Buzzing Bees', color: '#ec4899' },
   { num: 7, devDigit: '७', devName: 'सप्त', iast: 'sapta', en: 'Seven', icon: '🌈', phraseSa: 'सप्त वर्णाः', phraseEn: 'Seven Rainbow Colors', color: '#0ea5e9' },
-  { num: 8, devDigit: '८', devName: 'अष्ट', iast: 'aṣṭa', en: 'Eight', icon: '🪷', phraseSa: 'अष्टदल-कमलम्', phraseEn: 'Eight Lotus Petals', color: '#14b8a6' },
-  { num: 9, devDigit: '९', devName: 'नव', iast: 'nava', en: 'Nine', icon: '🪐', phraseSa: 'नव ग्रहाः', phraseEn: 'Nine Cosmic Planets', color: '#6366f1' },
-  { num: 10, devDigit: '१०', devName: 'दश', iast: 'daśa', en: 'Ten', icon: '🌟', phraseSa: 'दश अवताराः', phraseEn: 'Ten Sparkling Stars', color: '#eab308' },
+  { num: 8, devDigit: '८', devName: 'अष्ट', iast: 'aṣṭa', en: 'Eight', icon: '🪷', phraseSa: 'अष्ट कमलानि', phraseEn: 'Eight Pink Lotuses', color: '#14b8a6' },
+  { num: 9, devDigit: '९', devName: 'नव', iast: 'nava', en: 'Nine', icon: '🪔', phraseSa: 'नव दीपाः', phraseEn: 'Nine Glowing Lamps', color: '#6366f1' },
+  { num: 10, devDigit: '१०', devName: 'दश', iast: 'daśa', en: 'Ten', icon: '🍎', phraseSa: 'दश फलानि', phraseEn: 'Ten Yummy Fruits', color: '#eab308' },
 ];
 
 /* ==========================================================================
@@ -941,13 +941,14 @@ const ACTIVITIES: ActivityItem[] = [
   {
     id: 'festivals',
     labelSa: 'उत्सवाः',
-    labelEn: 'Festival Fair',
+    labelEn: 'Indian Festivals & Match',
     icon: '🪔',
+    level: 'next',
     cluster: 'nature',
     clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 2–6 · Festivals',
-    desc: 'Tap a festival. Hear its Sanskrit name!',
-    features: ['🔊 Sanskrit Audio', '🪔 10 Festivals', '🎯 Festival Quiz'],
+    gradeBadge: '🚀 Next Level · Ages 6–10',
+    desc: 'Explore 10 classical Indian festivals, lunar dates & read-and-match challenges!',
+    features: ['🔊 Sanskrit Audio', '🪔 10 Festivals', '🧩 Reading Match'],
     bannerGradient: 'linear-gradient(135deg, #f472b6 0%, #60a5fa 100%)',
     accentColor: '#f472b6',
     bannerVisual: {
@@ -958,21 +959,21 @@ const ACTIVITIES: ActivityItem[] = [
   },
   {
     id: 'insects', labelSa: 'कीटाः', labelEn: 'Bug Garden', icon: '🦋', cluster: 'nature', clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 2–6 · Insects', desc: 'Hear buzzing bees & glowing fireflies, play Picture Quest or Memory Flip!',
+    gradeBadge: 'Ages 2–5 · Insects', desc: 'Hear buzzing bees & glowing fireflies, play Picture Quest or Memory Flip!',
     features: ['🔊 Bug Sounds', '🎯 Picture Quest', '🃏 Memory Flip'],
     bannerGradient: 'linear-gradient(135deg, #86efac 0%, #fde68a 100%)', accentColor: '#4ade80',
     bannerVisual: { emojiLead: '🦋', decorEmojis: ['🐝', '🐜', '🐞', '🦗', '✨', '🌼'], taglineSa: 'लघवः कीटाः' },
   },
   {
     id: 'birds', labelSa: 'पक्षिणः', labelEn: 'Bird Sky', icon: '🦜', cluster: 'nature', clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 2–6 · Birds', desc: 'Hear singing koels, owls & roosters, play Bird Quest or Memory Flip!',
+    gradeBadge: 'Ages 2–5 · Birds', desc: 'Hear singing koels, owls & roosters, play Bird Quest or Memory Flip!',
     features: ['🔊 Bird Songs', '🎯 Picture Quest', '🃏 Memory Flip'],
     bannerGradient: 'linear-gradient(135deg, #93c5fd 0%, #c4b5fd 100%)', accentColor: '#60a5fa',
     bannerVisual: { emojiLead: '🦜', decorEmojis: ['🦢', '🦉', '🦅', '🕊️', '🐓', '☁️'], taglineSa: 'पक्षिणः उड्डयन्ते' },
   },
   {
-    id: 'flowers', labelSa: 'पुष्पाणि', labelEn: 'Flower Garden', icon: '🌸', cluster: 'nature', clusterLabel: 'प्रकृति · Living Nature',
-    gradeBadge: 'Ages 2–6 · Flowers', desc: 'Touch blooming lotuses & jasmines, play Flower Quest or Memory Flip!',
+    id: 'flowers', labelSa: 'पुष्पाणि', labelEn: '10 Classical Flowers', icon: '🌸', level: 'next', cluster: 'nature', clusterLabel: 'प्रकृति · Living Nature',
+    gradeBadge: '🚀 Next Level · Ages 6–10', desc: 'Discover 10 poetic Sanskrit blossoms (Nīlotpalam, Pārijātaḥ, Kundam & more)!',
     features: ['🔊 Harp Chimes', '🎯 Picture Quest', '🃏 Memory Flip'],
     bannerGradient: 'linear-gradient(135deg, #f9a8d4 0%, #fde68a 100%)', accentColor: '#f472b6',
     bannerVisual: { emojiLead: '🌸', decorEmojis: ['🪷', '🌹', '🌺', '🌻', '🌼', '🦋'], taglineSa: 'पुष्पाणि विकसन्ति' },
@@ -1056,33 +1057,33 @@ const ACTIVITIES: ActivityItem[] = [
   },
   {
     id: 'actions', labelSa: 'क्रियाः', labelEn: 'Action Words', icon: '🏃', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 2–6 · Actions', desc: 'Play “Ācārya Says!” movement game & 4-Picture Action Quest!',
+    gradeBadge: 'Ages 2–5 · Actions', desc: 'Play “Ācārya Says!” movement game & 4-Picture Action Quest!',
     features: ['🎬 Ācārya Says!', '🎯 4-Action Quest', '🏃 12 Verbs'],
     bannerGradient: 'linear-gradient(135deg, #bbf7d0 0%, #fde68a 100%)', accentColor: '#22c55e',
     bannerVisual: { emojiLead: '🏃', decorEmojis: ['🧘', '🤾', '🏊', '🤸', '🚶', '😴'], taglineSa: 'वयं क्रीडामः' },
   },
   {
-    id: 'relations', labelSa: 'परिवारः', labelEn: 'Family & Friends', icon: '👪', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 2–6 · Family', desc: 'Explore sweet family frames with home-language words & Picture Quest!',
-    features: ['👪 Family Frames', '🎯 4-Picture Quest', '🗣️ Home Words'],
+    id: 'relations', labelSa: 'परिवारः', labelEn: 'Kinship & 5-Script Cognates', icon: '👪', level: 'next', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
+    gradeBadge: '🚀 Next Level · Ages 6–10', desc: '3-generation Sanskrit kinship words paired with Tamil, Malayalam, Telugu & Kannada!',
+    features: ['👪 12 Kinship Terms', '🎯 4-Picture Quest', '🗣️ 5 Indian Scripts'],
     bannerGradient: 'linear-gradient(135deg, #fbcfe8 0%, #bfdbfe 100%)', accentColor: '#f472b6',
     bannerVisual: { emojiLead: '👪', decorEmojis: ['👩', '👨', '👦', '👧', '👴', '🤝'], taglineSa: 'मम परिवारः' },
   },
   {
     id: 'counting',
     labelSa: 'संख्या-गणनम्',
-    labelEn: 'Count 1–10 with Sacred Friends',
+    labelEn: 'Count 1 to 10',
     icon: '🔢',
     cluster: 'gurukul',
     clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 3–6 · Counting',
-    desc: 'Count 1 to 10 in Sanskrit with big buttons.',
-    features: ['🔊 Pronunciation', '🔢 Step Navigation', '🐘 Sacred Avatars'],
+    gradeBadge: 'Ages 2–5 · Counting',
+    desc: 'Count 1 to 10 in Sanskrit with puppies, stars, mangoes & bees!',
+    features: ['🔊 Pronunciation', '🔢 Step Navigation', '🐶 Friendly Icons'],
     bannerGradient: 'linear-gradient(135deg, #6366f1 0%, #4338ca 100%)',
     accentColor: '#818cf8',
     bannerVisual: {
       emojiLead: '🔢',
-      decorEmojis: ['१', '२', '३', '४', '५', '🐘'],
+      decorEmojis: ['१', '२', '३', '४', '५', '🐶'],
       taglineSa: 'एकं द्वे त्रीणि चत्वारि पञ्च',
     },
   },
@@ -1093,7 +1094,7 @@ const ACTIVITIES: ActivityItem[] = [
     icon: '🔔',
     cluster: 'gurukul',
     clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 2–6 · Music',
+    gradeBadge: 'Ages 2–5 · Music',
     desc: 'Tap an instrument. Hear it play!',
     features: ['🔊 Real Synthesizers', '🪘 6 Instruments', '🎶 Pulse Rings'],
     bannerGradient: 'linear-gradient(135deg, #d97706 0%, #78350f 100%)',
@@ -1107,12 +1108,13 @@ const ACTIVITIES: ActivityItem[] = [
   {
     id: 'vahanas',
     labelSa: 'देव-वाहनानि',
-    labelEn: 'Match God Vāhanas',
+    labelEn: 'Match Divine Vāhanas',
     icon: '🦚',
+    level: 'next',
     cluster: 'gurukul',
     clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 3–6 · Matching',
-    desc: 'Match each deity to their beloved animal companion & hear blessings!',
+    gradeBadge: '🚀 Next Level · Ages 6–10',
+    desc: 'Read & match 8 deities to their sacred animal carriers & Sanskrit epithets!',
     features: ['🔊 Sanskrit Audio', '🧩 Easy 4 & All 8', '✨ Blessing Quotes'],
     bannerGradient: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
     accentColor: '#a78bfa',
@@ -1125,13 +1127,14 @@ const ACTIVITIES: ActivityItem[] = [
   {
     id: 'jungle',
     labelSa: 'वनसभा',
-    labelEn: 'Jungle Council Story',
+    labelEn: 'Pañcatantra Fable & Quiz',
     icon: '🦁',
+    level: 'next',
     cluster: 'gurukul',
     clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: 'Ages 3–6 · Story',
-    desc: 'A proud lion, a tricky fox, and the animals who save the day together.',
-    features: ['🔊 Animal Names', '📖 7 Story Slides', '🤝 Unity'],
+    gradeBadge: '🚀 Next Level · Ages 6–10',
+    desc: 'Read full Sanskrit sentences in the Jungle Council fable & solve the 9-question quiz!',
+    features: ['📖 Sanskrit Sentences', '🧠 9-Question Quiz', '📜 Pañcatantra Lore'],
     bannerGradient: 'linear-gradient(135deg, #f59e0b 0%, #b45309 100%)',
     accentColor: '#fbbf24',
     bannerVisual: {
@@ -1545,7 +1548,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
   const [festQuiz, setFestQuiz] = useState<FestivalItem | null>(null);
   const [festStars, setFestStars] = useState(0);
   const [festMsg, setFestMsg] = useState('');
-  const [showFestivalMatch, setShowFestivalMatch] = useState<boolean>(false);
+  const [showFestivalMatch, setShowFestivalMatch] = useState<boolean>(true);
   const [levelTier, setLevelTier] = useState<WonderLevelTier>('preschool');
   const [selectedCluster, setSelectedCluster] = useState<ClusterCategory>('all');
   const [viewMode, setViewMode] = useState<'cards' | 'play'>('cards');
@@ -1617,7 +1620,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
   const [colorScore, setColorScore] = useState<number>(0);
 
   // Animal Safari State
-  const [animalPack, setAnimalPack] = useState<'all' | 'home' | 'woods' | 'jungle'>('all');
+  const [animalPack, setAnimalPack] = useState<'all' | 'home' | 'woods' | 'jungle'>('home');
   const [activeAnimal, setActiveAnimal] = useState<AnimalItem>(ANIMALS[0]);
   const [animalQuizTarget, setAnimalQuizTarget] = useState<AnimalItem | null>(null);
   const [animalScore, setAnimalScore] = useState<number>(0);
@@ -2548,33 +2551,6 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             </button>
           </div>
 
-          {/* Sapta-varna tip card */}
-          <div className="psw-sapta-tip" style={{ margin: '12px 0 16px', padding: '16px 18px', borderRadius: 20, background: 'linear-gradient(135deg,#fef3c7 0%,#fce7f3 35%,#e0e7ff 70%,#dcfce7 100%)', border: '3px solid #f59e0b', boxShadow: '0 6px 18px rgba(245,158,11,0.25)', color: '#1e293b' }}>
-            <h4 style={{ margin: '0 0 6px', fontSize: '1.1rem', color: '#7c2d12' }}>
-              ☀️🐎 <span lang="sa">सप्तवर्णाः</span> · Sapta-varṇa: Seven horses of the Sun <SayBtn text="सप्त वर्णाः" />
-            </h4>
-            <p style={{ margin: '0 0 6px', fontSize: '0.92rem', fontWeight: 600 }}>
-              Long ago, wise poets sang that the Sun (Sūrya) rides a chariot pulled by seven horses. Seven horses, seven colours! White sunlight has seven colours inside, and a rainbow shows them all. 🌈
-            </p>
-            <div style={{ display: 'flex', gap: 4, margin: '6px 0 8px', flexWrap: 'wrap' }} aria-label="Seven rainbow colours">
-              {['#8b5cf6', '#4f46e5', '#3b82f6', '#22c55e', '#facc15', '#f97316', '#ef4444'].map((h) => (
-                <span key={h} style={{ width: 26, height: 14, borderRadius: 8, background: h, display: 'inline-block' }} />
-              ))}
-            </div>
-            <details style={{ margin: '0 0 10px' }}>
-              <summary style={{ cursor: 'pointer', fontWeight: 800, color: '#7c2d12' }}>👨‍👩‍👧 More for parents: Upaniṣad &amp; ancient dyes</summary>
-            <p style={{ margin: '0 0 6px', fontSize: '0.88rem', color: '#334155' }}>
-              🧑‍🏫 <strong>Chāndogya Upaniṣad:</strong> a wise father told his son: “Fire has red, white and dark colours.” Mix a few colours and you get many more, just like our Magic Cauldron!
-            </p>
-            <p style={{ margin: '0 0 10px', fontSize: '0.88rem', color: '#334155' }}>
-              🎨 <strong>Master dyers:</strong> Ajanta’s cave paintings still glow after 1,500 years! Indian dyers made blue from <em>nīlī</em> (indigo), red from <em>mañjiṣṭhā</em> (madder) and yellow from <em>haridrā</em> (turmeric) and saffron.
-            </p>
-            </details>
-            <a href="/sapta-varna" className="psw-action-pill" style={{ textDecoration: 'none', display: 'inline-block' }}>
-              📖 Read the full Sapta-varṇa story with parents →
-            </a>
-          </div>
-
           {colorQuizTarget && (
             <div className="psw-quiz-banner" role="status">
               <span>🎯 Find and tap the <strong>{colorQuizTarget.dev}</strong> ({colorQuizTarget.en})! {colorScore > 0 && `⭐ Stars: ${colorScore}`}</span>
@@ -2700,9 +2676,25 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
           </div>
           </div>
 
-          <div className="psw-veda-fact" role="status" style={{ margin: '14px 0 4px', padding: '12px 16px', borderRadius: 16, background: '#fffbeb', border: `2px solid ${selectedColor.hex === '#f8fafc' ? '#e2e8f0' : selectedColor.hex}`, color: '#78350f', fontWeight: 700, fontSize: '0.95rem' }}>
-            📜 Veda fact · <span lang="sa">{selectedColor.dev}</span> <em style={{ color: '#92400e' }}>({selectedColor.iast})</em>: {selectedColor.vedaFact}
-          </div>
+          <details style={{ margin: '14px 0 4px', padding: '12px 16px', borderRadius: 18, background: 'linear-gradient(135deg,#fffbeb 0%,#fef3c7 50%,#fce7f3 100%)', border: '2px solid #f59e0b', color: '#1e293b' }}>
+            <summary style={{ cursor: 'pointer', fontWeight: 800, color: '#7c2d12', fontSize: '0.95rem' }}>
+              🚀 Next Level &amp; Parent Story Corner: Sapta-varṇa, Veda Facts &amp; Ancient Dyes
+            </summary>
+            <div style={{ marginTop: 10 }}>
+              <div className="psw-veda-fact" role="status" style={{ margin: '0 0 10px', padding: '10px 14px', borderRadius: 14, background: '#ffffffd9', border: `2px solid ${selectedColor.hex === '#f8fafc' ? '#e2e8f0' : selectedColor.hex}`, color: '#78350f', fontWeight: 700, fontSize: '0.92rem' }}>
+                📜 Veda fact · <span lang="sa">{selectedColor.dev}</span> <em style={{ color: '#92400e' }}>({selectedColor.iast})</em>: {selectedColor.vedaFact}
+              </div>
+              <p style={{ margin: '0 0 6px', fontSize: '0.9rem', fontWeight: 600 }}>
+                ☀️🐎 <strong lang="sa">सप्तवर्णाः</strong> · Wise poets sang that Sūrya rides a chariot pulled by seven horses — seven rainbow colours hidden inside white sunlight! <SayBtn text="सप्त वर्णाः" />
+              </p>
+              <p style={{ margin: '0 0 8px', fontSize: '0.86rem', color: '#334155' }}>
+                🧑‍🏫 <strong>Chāndogya Upaniṣad &amp; Ajanta dyes:</strong> Indian master dyers blended blue from <em>nīlī</em> (indigo), red from <em>mañjiṣṭhā</em> (madder), and yellow from <em>haridrā</em> (turmeric).
+              </p>
+              <a href="/sapta-varna" className="psw-action-pill" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                📖 Read the full Sapta-varṇa story →
+              </a>
+            </div>
+          </details>
 
         </div>
       )}
@@ -2890,10 +2882,10 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
 
           <div className="ppd-pack-bar" role="tablist" aria-label="Animal habitats">
             {([
-              { id: 'all', label: '🌟 All 15 Friends', bg: '#fef3c7' },
-              { id: 'home', label: '🏡 Home & Farm (4)', bg: '#dcfce7' },
+              { id: 'home', label: '🏡 Level 1: Home & Farm (4)', bg: '#dcfce7' },
               { id: 'woods', label: '🌿 Pond & Woods (6)', bg: '#e0f2fe' },
               { id: 'jungle', label: '🦁 Big Jungle (5)', bg: '#ffedd5' },
+              { id: 'all', label: '🌟 All 15 Friends', bg: '#fef3c7' },
             ] as const).map((pk) => (
               <button
                 key={pk.id}
@@ -3028,35 +3020,6 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             </div>
           )}
 
-          {/* Jambudvipa tip card */}
-          <div className="psw-jambu-tip" style={{ margin: '12px 0 16px', padding: '16px 18px', borderRadius: 20, background: 'linear-gradient(135deg,#f3e8ff 0%,#ede9fe 50%,#dcfce7 100%)', border: '3px solid #7c3aed', boxShadow: '0 6px 18px rgba(124,58,237,0.2)', color: '#1e293b' }}>
-            <h4 style={{ margin: '0 0 6px', fontSize: '1.1rem', color: '#4c1d95' }}>
-              🍇🌏 <span lang="sa">जम्बूद्वीपः</span> · Jambudvīpa: India’s jamun-tree name <SayBtn text="जम्बू द्वीपः" />
-            </h4>
-            <p style={{ margin: '0 0 6px', fontSize: '0.92rem', fontWeight: 600 }}>
-              Do you know the purple <strong>jamun</strong> fruit? In Sanskrit it is <em>jambū</em> (जम्बू). Long ago, India was called <strong>Jambudvīpa</strong> — “the island of the jamun tree”! 🌳
-            </p>
-            <p style={{ margin: '0 0 10px', fontSize: '0.88rem', color: '#334155' }}>
-              🌍 Our ancients told a story of one big earth, carved into seven lands with seven seas. Scientists say the lands were once joined too, in one giant land called <em>Pangaea</em>!
-            </p>
-            <a href="/jambudvipa" className="psw-action-pill" style={{ textDecoration: 'none', display: 'inline-block' }}>
-              📖 Parents: the seven-island story &amp; saṅkalpa →
-            </a>
-          </div>
-
-          {/* Kalinga watermelon tip card */}
-          <div className="psw-kalinga-tip" style={{ margin: '0 0 16px', padding: '14px 18px', borderRadius: 20, background: 'linear-gradient(135deg,#dcfce7 0%,#fee2e2 100%)', border: '3px solid #10b981', color: '#1e293b' }}>
-            <h4 style={{ margin: '0 0 6px', fontSize: '1.05rem', color: '#065f46' }}>
-              🍉 <span lang="sa">कालिङ्गम्</span> · kāliṅgam: the watermelon’s place-name <SayBtn text="कालिङ्गम्" />
-            </h4>
-            <p style={{ margin: '0 0 6px', fontSize: '0.92rem', fontWeight: 600 }}>
-              Kāliṅga means “the fruit from <strong>Kalinga</strong> land” — an old name for the sunny seaside land we now call Odisha! 🌊
-            </p>
-            <p style={{ margin: 0, fontSize: '0.85rem', color: '#334155' }}>
-              👪 Parents: the usual reading is <em>kāliṅga</em> = “belonging to Kalinga” (cf. classical Sanskrit lexicons, e.g. Monier-Williams). Some scholars instead link it to <span lang="sa">कालिन्द</span> <em>kālinda</em>, the Yamunā (Kalindī) region — treat that as an alternative theory.
-            </p>
-          </div>
-
           {/* The Gurukul Orchard Tree Stage */}
           <div className="psw-fruit-picker-stage">
             <div className="psw-tree-box">
@@ -3106,6 +3069,33 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
               </div>
             </div>
           </div>
+
+          <details style={{ marginTop: 16, padding: '12px 16px', borderRadius: 18, background: 'linear-gradient(135deg,#f3e8ff 0%,#dcfce7 100%)', border: '2px solid #8b5cf6', color: '#1e293b' }}>
+            <summary style={{ cursor: 'pointer', fontWeight: 800, color: '#4c1d95', fontSize: '0.95rem' }}>
+              🚀 Next Level &amp; Parent Story Corner: Jambudvīpa &amp; Kāliṅgam Word Origins
+            </summary>
+            <div style={{ marginTop: 10, display: 'grid', gap: 10 }}>
+              <div style={{ padding: '12px 14px', borderRadius: 14, background: '#ffffffd9' }}>
+                <h4 style={{ margin: '0 0 4px', fontSize: '1rem', color: '#4c1d95' }}>
+                  🍇🌏 <span lang="sa">जम्बूद्वीपः</span> · Jambudvīpa: India’s jamun-tree name <SayBtn text="जम्बू द्वीपः" />
+                </h4>
+                <p style={{ margin: '0 0 8px', fontSize: '0.88rem', color: '#334155' }}>
+                  In Sanskrit, purple jamun fruit is <em>jambū</em> (जम्बू). Long ago, India was called <strong>Jambudvīpa</strong> — “the island of the jamun tree”, one of seven lands surrounded by seven seas!
+                </p>
+                <a href="/jambudvipa" className="psw-action-pill" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                  📖 Read the seven-island story &amp; saṅkalpa →
+                </a>
+              </div>
+              <div style={{ padding: '12px 14px', borderRadius: 14, background: '#ffffffd9' }}>
+                <h4 style={{ margin: '0 0 4px', fontSize: '1rem', color: '#065f46' }}>
+                  🍉 <span lang="sa">कालिङ्गम्</span> · kāliṅgam: the watermelon’s place-name <SayBtn text="कालिङ्गम्" />
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#334155' }}>
+                  <em>Kāliṅga</em> means “fruit from Kalinga” (coastal Odisha), with an alternative scholarly link to <span lang="sa">कालिन्द</span> (<em>kālinda</em>, the Yamunā/Kalindī region).
+                </p>
+              </div>
+            </div>
+          </details>
         </div>
       )}
 
@@ -3116,7 +3106,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
         <div className="psw-card-bench">
           <div className="psw-bench-header">
             <div>
-              <h3 className="psw-section-heading">🔢 संख्या-गणना · Count 1 to 10 with Sacred Friends</h3>
+              <h3 className="psw-section-heading">🔢 संख्या-गणना · Count 1 to 10</h3>
               <p className="psw-section-sub">
                 Tap each number below or tap every bouncing friend one-by-one to count aloud in Sanskrit!
               </p>

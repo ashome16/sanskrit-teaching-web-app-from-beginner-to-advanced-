@@ -68,18 +68,19 @@ function getRomanForItem(item: MatchPairItem): string {
 }
 
 const LEVEL1_MATCH_CAT_IDS = new Set([
-  'cat_vahanas',
+  'cat_animals_birds',
   'cat_shapes_seasons',
   'cat_preschool_numbers',
   'fruits_veg',
   'relationships',
-  'household',
   'vehicles',
-  'insects',
   'actions',
 ]);
 
 const LEVEL2_MATCH_CAT_IDS = new Set([
+  'cat_vahanas',
+  'household',
+  'insects',
   'addressing',
   'occupations',
   'cat_directions_traffic',
@@ -98,11 +99,12 @@ const LEVEL3_MATCH_CAT_IDS = new Set([
 
 const LEVEL1_MAZE_IDS = new Set([
   'maze_preschool_ganesha_fruits',
+  'maze_preschool_animal_friends',
   'maze_preschool_numbers_1_10',
-  'maze_identify_fruits_veg',
 ]);
 
 const LEVEL2_MAZE_IDS = new Set([
+  'maze_identify_fruits_veg',
   'maze_identify_verbs',
   'maze_thirsty_crow',
   'maze_lion_mouse',

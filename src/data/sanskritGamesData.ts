@@ -38,11 +38,34 @@ export interface MatchCategoryMetadata {
 }
 
 export const MATCH_CATEGORIES: MatchCategoryMetadata[] = [
-  // 0A. Vāhanas of Hindu Gods (देवतानां वाहनानि · Preschool & Kids)
+  // 00. Friendly Animals & Birds (पशवः पक्षिणः च · Preschool Starter)
+  {
+    id: 'cat_animals_birds',
+    titleDev: 'पशवः पक्षिणः च (सरल-मित्रगणाः)',
+    titleEn: 'Friendly Animals & Birds (Preschool)',
+    icon: '🦁',
+    description: 'Meet friendly animals and birds with big pictures and clear Sanskrit names!',
+    pairs: [
+      { id: 'ani_1', sanskrit: 'सिंहः', english: 'Brave Lion', transliteration: 'siṃhaḥ', emoji: '🦁' },
+      { id: 'ani_2', sanskrit: 'गजः', english: 'Gentle Elephant', transliteration: 'gajaḥ', emoji: '🐘' },
+      { id: 'ani_3', sanskrit: 'धेनुः', english: 'Kind Cow', transliteration: 'dhenuḥ', emoji: '🐮' },
+      { id: 'ani_4', sanskrit: 'वानरः', english: 'Playful Monkey', transliteration: 'vānaraḥ', emoji: '🐒' },
+      { id: 'ani_5', sanskrit: 'मयूरः', english: 'Dancing Peacock', transliteration: 'mayūraḥ', emoji: '🦚' },
+      { id: 'ani_6', sanskrit: 'शुकः', english: 'Green Parrot', transliteration: 'śukaḥ', emoji: '🦜' },
+      { id: 'ani_7', sanskrit: 'मूषकः', english: 'Little Mouse', transliteration: 'mūṣakaḥ', emoji: '🐭' },
+      { id: 'ani_8', sanskrit: 'श्वा', english: 'Friendly Puppy', transliteration: 'śvā', emoji: '🐶' },
+      { id: 'ani_9', sanskrit: 'बिडालः', english: 'Soft Cat', transliteration: 'biḍālaḥ', emoji: '🐱' },
+      { id: 'ani_10', sanskrit: 'मण्डूकः', english: 'Hopping Frog', transliteration: 'maṇḍūkaḥ', emoji: '🐸' },
+      { id: 'ani_11', sanskrit: 'हंसः', english: 'White Swan', transliteration: 'haṃsaḥ', emoji: '🦢' },
+      { id: 'ani_12', sanskrit: 'काकः', english: 'Clever Crow', transliteration: 'kākaḥ', emoji: '🐦‍⬛' },
+    ],
+  },
+
+  // 0A. Vāhanas of Hindu Gods (देवतानां वाहनानि · Next Level)
   {
     id: 'cat_vahanas',
     titleDev: 'देवतानां वाहनानि (पवित्र-पशवः)',
-    titleEn: 'Vāhanas of Hindu Gods (Divine Animal Friends)',
+    titleEn: 'Vāhanas of Hindu Gods (Next Level)',
     icon: '🦚',
     description: 'Match each sacred deity with their beloved divine animal friend and carrier.',
     pairs: [
@@ -688,8 +711,8 @@ export interface WordMazeQuest {
 
 export const PRESCHOOL_MAZE_IDS = new Set([
   'maze_preschool_ganesha_fruits',
+  'maze_preschool_animal_friends',
   'maze_preschool_numbers_1_10',
-  'maze_identify_fruits_veg',
 ]);
 
 export const WORD_MAZE_QUESTS: WordMazeQuest[] = [
@@ -699,7 +722,7 @@ export const WORD_MAZE_QUESTS: WordMazeQuest[] = [
     type: 'identification',
     audience: 'preschool',
     titleDev: 'गजस्य फल-मार्गः (शिशु-व्यूहः)',
-    titleEn: "Baby Elephant's Sweet Fruit Trail (Ages 3–7)",
+    titleEn: "Baby Elephant's Sweet Fruit Trail (Ages 3–6)",
     icon: '🐘',
     missionObjective: 'Help little Ganesha reach his sweet Modak by stepping ONLY on yummy fruits & treats — dodge rocks, shoes, and toys!',
     gridRows: 4,
@@ -727,6 +750,43 @@ export const WORD_MAZE_QUESTS: WordMazeQuest[] = [
       { row: 3, col: 1, word: 'तालः', translation: 'Padlock 🔒', isPath: false },
       { row: 3, col: 2, word: 'श्रीगणेशः', translation: 'Ganesha 🐘🏆', isPath: true, stepOrder: 8 },
       { row: 3, col: 3, word: 'चक्रम्', translation: 'Wheel 🛞', isPath: false },
+    ],
+  },
+
+  // PRESCHOOL MAZE 2: पशु-मित्र-मार्गः (Friendly Animal Trail · 4x4)
+  {
+    id: 'maze_preschool_animal_friends',
+    type: 'identification',
+    audience: 'preschool',
+    titleDev: 'पशु-मित्र-मार्गः (शिशु-व्यूहः)',
+    titleEn: 'Friendly Animal Safari Trail (Ages 3–6)',
+    icon: '🦁',
+    missionObjective: 'Follow ONLY the friendly animals & birds from the kind Cow (धेनुः) all the way to the Lion King (सिंहः) — dodge rocks, pots, and clocks!',
+    gridRows: 4,
+    gridCols: 4,
+    fullSentenceOrStoryDev: 'धेनुः ➔ श्वा ➔ बिडालः ➔ मूषकः ➔ वानरः ➔ मयूरः ➔ गजः ➔ सिंहः ॥',
+    fullSentenceOrStoryEn: 'Kind Cow ➔ Puppy ➔ Soft Cat ➔ Little Mouse ➔ Playful Monkey ➔ Peacock ➔ Gentle Elephant ➔ Lion King!',
+    moral: 'पशवः पक्षिणः च अस्माकं मित्राणि (Animals and birds are our dear friends!).',
+    cells: [
+      { row: 0, col: 0, word: 'धेनुः', translation: 'Cow 🐮', isPath: true, stepOrder: 1 },
+      { row: 0, col: 1, word: 'श्वा', translation: 'Puppy 🐶', isPath: true, stepOrder: 2 },
+      { row: 0, col: 2, word: 'पाषाणः', translation: 'Rock 🪨 (Trap)', isPath: false },
+      { row: 0, col: 3, word: 'घटः', translation: 'Pot 🏺 (Trap)', isPath: false },
+
+      { row: 1, col: 0, word: 'छत्रम्', translation: 'Umbrella ☂️ (Trap)', isPath: false },
+      { row: 1, col: 1, word: 'बिडालः', translation: 'Cat 🐱', isPath: true, stepOrder: 3 },
+      { row: 1, col: 2, word: 'मूषकः', translation: 'Mouse 🐭', isPath: true, stepOrder: 4 },
+      { row: 1, col: 3, word: 'कन्दुकम्', translation: 'Ball ⚽ (Trap)', isPath: false },
+
+      { row: 2, col: 0, word: 'चक्रम्', translation: 'Wheel 🛞 (Trap)', isPath: false },
+      { row: 2, col: 1, word: 'दीपकः', translation: 'Lamp 🪔 (Trap)', isPath: false },
+      { row: 2, col: 2, word: 'वानरः', translation: 'Monkey 🐒', isPath: true, stepOrder: 5 },
+      { row: 2, col: 3, word: 'मयूरः', translation: 'Peacock 🦚', isPath: true, stepOrder: 6 },
+
+      { row: 3, col: 0, word: 'घटी', translation: 'Clock ⏰ (Trap)', isPath: false },
+      { row: 3, col: 1, word: 'तालः', translation: 'Lock 🔒 (Trap)', isPath: false },
+      { row: 3, col: 2, word: 'सिंहः', translation: 'Lion 🦁🏆', isPath: true, stepOrder: 8 },
+      { row: 3, col: 3, word: 'गजः', translation: 'Elephant 🐘', isPath: true, stepOrder: 7 },
     ],
   },
 
