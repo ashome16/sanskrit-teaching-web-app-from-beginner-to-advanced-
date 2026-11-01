@@ -30,6 +30,7 @@ export interface ActionDeckItem {
   iast: string;
   en: string;
   emoji: string;
+  img?: string;
   clue: string;
   bg: string;
 }
@@ -40,6 +41,7 @@ export interface WordQuestCard {
   iast: string;
   en?: string;
   emoji: string;
+  img?: string;
   clue: string;
   bg: string;
   subBadge?: string;
@@ -1053,7 +1055,11 @@ export const ActionPlayStudio: React.FC<{ actions: ActionDeckItem[]; onEarnStar?
                     className={`ppd-choice-card ${wrongId === ch.id ? 'is-wrong' : ''}`}
                     style={{ background: ch.bg }}
                   >
-                    <span className="ppd-choice-emoji">{ch.emoji}</span>
+                    {ch.img ? (
+                      <img src={ch.img} alt={ch.clue.split('·')[0].trim()} width={76} height={76} style={{ width: 76, height: 76, objectFit: 'contain' }} />
+                    ) : (
+                      <span className="ppd-choice-emoji">{ch.emoji}</span>
+                    )}
                     <strong className="ppd-choice-en">{ch.clue}</strong>
                   </button>
                 ))}
@@ -1284,7 +1290,11 @@ export const ToddlerCardQuestDeck: React.FC<ToddlerCardQuestDeckProps> = ({
               role="button"
               tabIndex={0}
             >
-              <span>{sel.emoji}</span>
+              {sel.img ? (
+                <img src={sel.img} alt={sel.clue.split('·')[0].trim()} width={68} height={68} style={{ width: 68, height: 68, objectFit: 'contain' }} />
+              ) : (
+                <span>{sel.emoji}</span>
+              )}
             </div>
             <div className="ppd-spot-info">
               {sel.subBadge && <div className="ppd-spot-where">{sel.subBadge}</div>}
@@ -1335,7 +1345,11 @@ export const ToddlerCardQuestDeck: React.FC<ToddlerCardQuestDeckProps> = ({
                 >
                   {wasTapped && <span className="ppd-seen-star" aria-hidden="true">★</span>}
                   {it.subBadge && <span className="ppd-mini-pill">{it.subBadge}</span>}
-                  <span className="ppd-tile-emoji">{it.emoji}</span>
+                  {it.img ? (
+                    <img src={it.img} alt={it.clue.split('·')[0].trim()} width={54} height={54} style={{ width: 54, height: 54, objectFit: 'contain', margin: '2px 0' }} />
+                  ) : (
+                    <span className="ppd-tile-emoji">{it.emoji}</span>
+                  )}
                   <strong lang="sa" className="ppd-tile-sa">{it.dev}</strong>
                   <small className="ppd-tile-iast">{it.iast}</small>
                   <span className="ppd-tile-en">{it.clue.split('·')[0].trim()}</span>
@@ -1402,7 +1416,11 @@ export const ToddlerCardQuestDeck: React.FC<ToddlerCardQuestDeckProps> = ({
                     className={`ppd-choice-card ${wrongId === ch.id ? 'is-wrong' : ''}`}
                     style={{ background: ch.bg }}
                   >
-                    <span className="ppd-choice-emoji">{ch.emoji}</span>
+                    {ch.img ? (
+                      <img src={ch.img} alt={ch.clue.split('·')[0].trim()} width={76} height={76} style={{ width: 76, height: 76, objectFit: 'contain' }} />
+                    ) : (
+                      <span className="ppd-choice-emoji">{ch.emoji}</span>
+                    )}
                     <strong className="ppd-choice-en">{ch.clue}</strong>
                   </button>
                 ))}
@@ -1529,7 +1547,11 @@ export const ToddlerCardQuestDeck: React.FC<ToddlerCardQuestDeckProps> = ({
                       borderColor: wrongId === f.id ? '#ef4444' : ok ? '#22c55e' : '#cbd5e1',
                     }}
                   >
-                    <span style={{ fontSize: 32, flexShrink: 0 }}>{f.emoji}</span>
+                    {f.img ? (
+                      <img src={f.img} alt={f.clue.split('·')[0].trim()} width={38} height={38} style={{ width: 38, height: 38, objectFit: 'contain', flexShrink: 0 }} />
+                    ) : (
+                      <span style={{ fontSize: 32, flexShrink: 0 }}>{f.emoji}</span>
+                    )}
                     <span style={{ fontSize: 14, fontWeight: 700 }}>{f.clue}</span>
                   </button>
                 );

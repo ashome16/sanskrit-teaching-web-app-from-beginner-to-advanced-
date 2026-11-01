@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cumin seeds (Jeera)">
+  <defs>
+    <radialGradient id="cuminGlow" cx="50%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="70%" stop-color="#fde68a" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#fde68a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bowlWood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <linearGradient id="seedBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="55%" stop-color="#854d0e"/>
+      <stop offset="100%" stop-color="#5c2d16"/>
+    </linearGradient>
+    <g id="jeeraSeed">
+      <path d="M-9,0 Q0,-4.2 9,0 Q0,4.2 -9,0 Z" fill="url(#seedBody)" stroke="#451a03" stroke-width="0.9"/>
+      <path d="M-7,0 Q0,-1.8 7,0" fill="none" stroke="#fde68a" stroke-width="0.9" stroke-linecap="round" opacity="0.85"/>
+      <path d="M-6.5,0.9 Q0,2.2 6.5,0.9" fill="none" stroke="#fcd34d" stroke-width="0.75" stroke-linecap="round" opacity="0.7"/>
+    </g>
+  </defs>
+
+  <circle cx="32" cy="32" r="28" fill="url(#cuminGlow)"/>
+
+  <!-- Warm clay/wood spice bowl -->
+  <ellipse cx="30" cy="31" rx="21" ry="8.5" fill="#fef3c7" stroke="#92400e" stroke-width="1.8"/>
+  <path d="M9,31 Q11,48 30,48 Q49,48 51,31 Q41,37 30,37 Q19,37 9,31 Z" fill="url(#bowlWood)" stroke="#5c2d16" stroke-width="1.6"/>
+
+  <!-- Mound of ridged cumin (jeera) seeds inside bowl -->
+  <use href="#jeeraSeed" transform="translate(22 28) rotate(-18) scale(0.95)"/>
+  <use href="#jeeraSeed" transform="translate(35 27) rotate(16) scale(0.95)"/>
+  <use href="#jeeraSeed" transform="translate(29 23) rotate(-6) scale(0.92)"/>
+  <use href="#jeeraSeed" transform="translate(19 32) rotate(12) scale(0.9)"/>
+  <use href="#jeeraSeed" transform="translate(31 32) rotate(-10) scale(0.98)"/>
+  <use href="#jeeraSeed" transform="translate(41 31) rotate(-22) scale(0.9)"/>
+
+  <!-- Foreground magnified jeera seeds so ridges & pointed tips are unmistakable -->
+  <use href="#jeeraSeed" transform="translate(20 54) rotate(-14) scale(1.25)"/>
+  <use href="#jeeraSeed" transform="translate(39 55) rotate(19) scale(1.22)"/>
+  <use href="#jeeraSeed" transform="translate(49 48) rotate(-28) scale(1.05)"/>
+
+  <!-- Fragrant sizzle sparkles -->
+  <path d="M24,15 Q22,11 25,7" fill="none" stroke="#d97706" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M35,14 Q33,10 36,6" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/>
+</svg>

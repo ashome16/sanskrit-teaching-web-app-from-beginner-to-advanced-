@@ -1395,16 +1395,16 @@ const ACTIONS: ActionItem[] = [
 
 const SPICES: WordQuestCard[] = [
   { id: 'turmeric', dev: 'हरिद्रा', iast: 'haridrā', emoji: '🟡', clue: 'Turmeric · Golden yellow haldi for warm milk & dal!', bg: '#fef9c3', subBadge: '🫙 Golden Jar' },
-  { id: 'cumin', dev: 'जीरकम्', iast: 'jīrakam', emoji: '🌾', clue: 'Cumin · Tiny jeera seeds that sizzle in ghee!', bg: '#f5f5f4', subBadge: '🫙 Sizzle Seed' },
+  { id: 'cumin', dev: 'जीरकम्', iast: 'jīrakam', emoji: '🌰', img: '/preschool/spices/cumin.svg', clue: 'Cumin · Tiny striped jeera seeds that sizzle in ghee!', bg: '#fef3c7', subBadge: '🥄 Jeera Seeds' },
   { id: 'pepper', dev: 'मरिचम्', iast: 'maricam', emoji: '⚫', clue: 'Black pepper · Tiny black kali-mirch pearls!', bg: '#e2e8f0', subBadge: '🫙 Warm Spice' },
   { id: 'cardamom', dev: 'एला', iast: 'elā', emoji: '🟢', clue: 'Cardamom · Sweet-smelling green elaichi for kheer!', bg: '#dcfce7', subBadge: '🍮 Sweet Pod' },
-  { id: 'clove', dev: 'लवङ्गम्', iast: 'lavaṅgam', emoji: '📌', clue: 'Clove · Fragrant flower-bud shaped like a tiny nail!', bg: '#ffedd5', subBadge: '🌸 Flower Bud' },
+  { id: 'clove', dev: 'लवङ्गम्', iast: 'lavaṅgam', emoji: '🌺', img: '/preschool/spices/clove.svg', clue: 'Clove · Fragrant dried flower-bud (lavang) with a 4-petal crown!', bg: '#ffedd5', subBadge: '🌸 Clove Bud' },
   { id: 'cinnamon', dev: 'त्वक्', iast: 'tvak', emoji: '🪵', clue: 'Cinnamon · Sweet rolled brown tree bark (dalchini)!', bg: '#fed7aa', subBadge: '🌳 Sweet Bark' },
   { id: 'coriander', dev: 'धान्यकम्', iast: 'dhānyakam', emoji: '🌿', clue: 'Coriander · Fresh green dhaniya leaves & round seeds!', bg: '#ecfccb', subBadge: '🌿 Fresh Herb' },
   { id: 'fenugreek', dev: 'मेथिका', iast: 'methikā', emoji: '🍃', clue: 'Fenugreek · Healthy green methi leaves & golden seeds!', bg: '#d1fae5', subBadge: '🍃 Green Leaf' },
   { id: 'mustard', dev: 'सर्षपः', iast: 'sarṣapaḥ', emoji: '🟤', clue: 'Mustard · Little round rai seeds that go pop-pop!', bg: '#fde68a', subBadge: '💥 Pop Seed' },
   { id: 'ginger', dev: 'आर्द्रकम्', iast: 'ārdrakam', emoji: '🫚', clue: 'Ginger · Cozy warm adrak root for rainy days!', bg: '#fef3c7', subBadge: '☕ Cozy Root' },
-  { id: 'hing', dev: 'हिङ्गु', iast: 'hiṅgu', emoji: '🫙', clue: 'Asafoetida · Tiny pinch of hing makes tummy happy!', bg: '#fae8ff', subBadge: '✨ Tiny Pinch' },
+  { id: 'hing', dev: 'हिङ्गु', iast: 'hiṅgu', emoji: '✨', img: '/preschool/spices/hing.svg', clue: 'Asafoetida · Golden pinch of fragrant hing makes tummy happy!', bg: '#fef9c3', subBadge: '🥄 Hing Pinch' },
   { id: 'garlic', dev: 'लशुनम्', iast: 'laśunam', emoji: '🧄', clue: 'Garlic · White lahsun cloves wrapped like a bulb!', bg: '#f8fafc', subBadge: '🧄 White Bulb' },
 ];
 const MONTHS: WordQuestCard[] = [
