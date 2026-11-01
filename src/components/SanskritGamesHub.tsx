@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import {
   MATCH_CATEGORIES,
   WORD_MAZE_QUESTS,
+  PRESCHOOL_MAZE_IDS,
   type MatchCategoryMetadata,
   type MatchPairItem,
   type WordMazeQuest,
@@ -9,13 +10,40 @@ import {
 } from '../data/sanskritGamesData';
 import { playPronunciation } from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
+import { devanagariToIast } from '../utils/devanagariToIast';
 import '../styles/sanskrit-games.css';
 
 export interface SanskritGamesHubProps {
   initialMode?: 'match' | 'maze';
   initialCategory?: string;
   onGoBack?: () => void;
+  onModeChange?: (mode: 'match' | 'maze') => void;
+  embeddedInBoard?: boolean;
 }
+
+type MatchPlayStyle = 'classic' | 'blitz' | 'memory';
+type MazeDifficulty = 'guided' | 'scholar';
+type MazeAudienceFilter = 'all' | 'preschool' | 'stories';
+
+interface MemoryCardItem {
+  uid: string;
+  pairId: string;
+  side: 'sanskrit' | 'meaning';
+  sanskrit: string;
+  english: string;
+  transliteration: string;
+  emoji?: string;
+}
+
+interface BlitzRoundQuestion {
+  target: MatchPairItem;
+  options: MatchPairItem[];
+}
+
+const PAIRS_PER_ROUND = 6;
+const STARS_STORAGE_KEY = 'ednet_sgh_stars_v1';
+const ROMAN_STORAGE_KEY = 'ednet_sgh_roman_v1';
+const BLITZ_BEST_STORAGE_KEY = 'ednet_sgh_blitz_best_v1';
 
 // Fisher-Yates shuffle
 function shuffleArray<T>(array: T[]): T[] {
@@ -25,6 +53,18 @@ function shuffleArray<T>(array: T[]): T[] {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
+}
+
+// Strip spoiler tags like "(Trap)", "(Noun Trap)", "(Action)", "(Fruit)" from maze cell glosses
+function cleanMazeGloss(gloss: string): string {
+  return gloss
+    .replace(/\s*\([^)]*(?:trap|action|fruit|vegetable|spice veg|item)\)/gi, '')
+    .replace(/^trap\s+/i, '')
+    .trim();
+}
+
+function getRomanForItem(item: MatchPairItem): string {
+  return item.transliteration || devanagariToIast(item.sanskrit);
 }
 
 const PRESCHOOL_MATCH_CAT_IDS = new Set([
@@ -50,6 +90,8 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   initialMode = 'match',
   initialCategory,
   onGoBack,
+  onModeChange,
+  embeddedInBoard = false,
 }) => {
   const [activeGameMode, setActiveGameMode] = useState<'match' | 'maze'>(initialMode);
 
@@ -57,8 +99,59 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     setActiveGameMode(initialMode);
   }, [initialMode]);
 
+  const switchGameMode = useCallback(
+    (nextMode: 'match' | 'maze') => {
+      setActiveGameMode(nextMode);
+      onModeChange?.(nextMode);
+    },
+    [onModeChange]
+  );
+
+  // Persistent Star Rewards & Roman / IAST Phonetics toggle
+  const [totalStars, setTotalStars] = useState<number>(() => {
+    try {
+      return Math.max(0, Number(localStorage.getItem(STARS_STORAGE_KEY)) || 0);
+    } catch {
+      return 0;
+    }
+  });
+
+  const awardStars = useCallback((amount: number) => {
+    if (amount <= 0) return;
+    setTotalStars((prev) => {
+      const next = prev + amount;
+      try {
+        localStorage.setItem(STARS_STORAGE_KEY, String(next));
+      } catch {
+        // ignore storage errors
+      }
+      return next;
+    });
+  }, []);
+
+  const [showRoman, setShowRoman] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem(ROMAN_STORAGE_KEY);
+      return saved ? saved === 'true' : true;
+    } catch {
+      return true;
+    }
+  });
+
+  const toggleRoman = () => {
+    setShowRoman((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem(ROMAN_STORAGE_KEY, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
   // --------------------------------------------------------------------------
-  // MATCH-THE-FOLLOWING STATE
+  // 1. MATCH-THE-FOLLOWING STATE (Classic, 4-Card Blitz, Memory Flip)
   // --------------------------------------------------------------------------
   const [selectedCatId, setSelectedCatId] = useState<string>(() => {
     if (initialCategory && MATCH_CATEGORIES.some((c) => c.id === initialCategory)) {
@@ -73,6 +166,10 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     }
     return 'all';
   });
+
+  const [matchPlayStyle, setMatchPlayStyle] = useState<MatchPlayStyle>('classic');
+  // roundIndex === -1 means "All pairs at once", otherwise 0..totalRounds-1 (6 pairs per round)
+  const [roundIndex, setRoundIndex] = useState<number>(0);
 
   const showPreschoolOnly = filterMode === 'preschool';
 
@@ -101,61 +198,45 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     );
   }, [selectedCatId, displayedCategories]);
 
-  // Selected Sanskrit word (left column)
+  const totalRounds = useMemo(
+    () => Math.max(1, Math.ceil(activeCategory.pairs.length / PAIRS_PER_ROUND)),
+    [activeCategory.pairs.length]
+  );
+
+  // Reset round to 0 when category changes
+  useEffect(() => {
+    setRoundIndex(0);
+  }, [activeCategory.id]);
+
+  const activeRoundPairs: MatchPairItem[] = useMemo(() => {
+    if (roundIndex === -1 || activeCategory.pairs.length <= PAIRS_PER_ROUND) {
+      return activeCategory.pairs;
+    }
+    const safeRound = Math.min(roundIndex, totalRounds - 1);
+    const start = safeRound * PAIRS_PER_ROUND;
+    return activeCategory.pairs.slice(start, start + PAIRS_PER_ROUND);
+  }, [activeCategory, roundIndex, totalRounds]);
+
+  // --- Classic Match State ---
   const [selectedLeftId, setSelectedLeftId] = useState<string | null>(null);
-  // Selected English translation (right column)
   const [selectedRightId, setSelectedRightId] = useState<string | null>(null);
-  // Matched IDs
   const [matchedIds, setMatchedIds] = useState<Set<string>>(new Set());
-  // Error flash IDs
   const [errorPair, setErrorPair] = useState<{ leftId: string; rightId: string } | null>(null);
-  // Match score & combo streaks
   const [score, setScore] = useState<number>(0);
   const [streak, setStreak] = useState<number>(0);
   const [bestStreak, setBestStreak] = useState<number>(0);
-
-  // Shuffled right-column items (only shuffles when category changes or reset)
   const [shuffledEnglishItems, setShuffledEnglishItems] = useState<MatchPairItem[]>([]);
 
   useEffect(() => {
-    setShuffledEnglishItems(shuffleArray(activeCategory.pairs));
+    setShuffledEnglishItems(shuffleArray(activeRoundPairs));
     setMatchedIds(new Set());
     setSelectedLeftId(null);
     setSelectedRightId(null);
     setErrorPair(null);
-  }, [activeCategory]);
+  }, [activeRoundPairs]);
 
-  // Handle clicking left (Sanskrit) tile
-  const handleLeftClick = (item: MatchPairItem) => {
-    if (matchedIds.has(item.id)) return;
-    if (showPreschoolOnly) {
-      soundEffects.playBubblePop();
-    }
-    playPronunciation(item.sanskrit);
-    setSelectedLeftId(item.id);
-
-    if (selectedRightId) {
-      evaluateMatch(item.id, selectedRightId);
-    }
-  };
-
-  // Handle clicking right (English) tile
-  const handleRightClick = (item: MatchPairItem) => {
-    if (matchedIds.has(item.id)) return;
-    if (showPreschoolOnly) {
-      soundEffects.playBubblePop();
-    }
-    setSelectedRightId(item.id);
-
-    if (selectedLeftId) {
-      evaluateMatch(selectedLeftId, item.id);
-    }
-  };
-
-  // Evaluate pair
   const evaluateMatch = (leftId: string, rightId: string) => {
     if (leftId === rightId) {
-      // MATCH!
       if (showPreschoolOnly) {
         soundEffects.playCelebrationChime();
       } else {
@@ -164,6 +245,10 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
       setMatchedIds((prev) => {
         const next = new Set(prev);
         next.add(leftId);
+        if (next.size === activeRoundPairs.length) {
+          soundEffects.playVictoryFanfare();
+          awardStars(3);
+        }
         return next;
       });
       setScore((prev) => prev + 10 + streak * 2);
@@ -176,15 +261,47 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
       setSelectedRightId(null);
       setErrorPair(null);
     } else {
-      // MISMATCH
-      soundEffects.playErrorBuzzer();
+      if (showPreschoolOnly) {
+        soundEffects.playEncouragementDing();
+      } else {
+        soundEffects.playErrorBuzzer();
+      }
       setErrorPair({ leftId, rightId });
       setStreak(0);
       setTimeout(() => {
         setErrorPair(null);
         setSelectedLeftId(null);
         setSelectedRightId(null);
-      }, 700);
+      }, 650);
+    }
+  };
+
+  const handleLeftClick = (item: MatchPairItem) => {
+    if (matchedIds.has(item.id)) return;
+    if (showPreschoolOnly) {
+      soundEffects.playBubblePop();
+    } else {
+      soundEffects.playPuzzleSnap();
+    }
+    playPronunciation(item.sanskrit);
+    setSelectedLeftId(item.id);
+
+    if (selectedRightId) {
+      evaluateMatch(item.id, selectedRightId);
+    }
+  };
+
+  const handleRightClick = (item: MatchPairItem) => {
+    if (matchedIds.has(item.id)) return;
+    if (showPreschoolOnly) {
+      soundEffects.playBubblePop();
+    } else {
+      soundEffects.playPuzzleSnap();
+    }
+    setSelectedRightId(item.id);
+
+    if (selectedLeftId) {
+      evaluateMatch(selectedLeftId, item.id);
     }
   };
 
@@ -193,36 +310,265 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     setSelectedLeftId(null);
     setSelectedRightId(null);
     setErrorPair(null);
-    setShuffledEnglishItems(shuffleArray(activeCategory.pairs));
+    setShuffledEnglishItems(shuffleArray(activeRoundPairs));
   };
 
   const handleNextCategory = () => {
-    const currentIndex = MATCH_CATEGORIES.findIndex((c) => c.id === selectedCatId);
-    const nextIndex = (currentIndex + 1) % MATCH_CATEGORIES.length;
-    setSelectedCatId(MATCH_CATEGORIES[nextIndex].id);
+    const list = displayedCategories.length > 0 ? displayedCategories : MATCH_CATEGORIES;
+    const currentIndex = list.findIndex((c) => c.id === activeCategory.id);
+    const nextIndex = (currentIndex + 1) % list.length;
+    setSelectedCatId(list[nextIndex].id);
   };
 
   const isMatchRoundComplete =
-    matchedIds.size > 0 && matchedIds.size === activeCategory.pairs.length;
+    activeRoundPairs.length > 0 && matchedIds.size === activeRoundPairs.length;
+
+  // --- 4-Card Audio Blitz State ---
+  const [blitzTimed, setBlitzTimed] = useState<boolean>(false);
+  const [blitzSecondsLeft, setBlitzSecondsLeft] = useState<number>(60);
+  const [blitzFinished, setBlitzFinished] = useState<boolean>(false);
+  const [blitzScore, setBlitzScore] = useState<number>(0);
+  const [blitzStreak, setBlitzStreak] = useState<number>(0);
+  const [blitzAnsweredCount, setBlitzAnsweredCount] = useState<number>(0);
+  const [blitzFeedback, setBlitzFeedback] = useState<{ chosenId: string; correct: boolean } | null>(null);
+  const [bestBlitzScore, setBestBlitzScore] = useState<number>(() => {
+    try {
+      return Math.max(0, Number(localStorage.getItem(BLITZ_BEST_STORAGE_KEY)) || 0);
+    } catch {
+      return 0;
+    }
+  });
+
+  const buildBlitzQuestion = useCallback(
+    (excludeId?: string): BlitzRoundQuestion => {
+      const pool = activeCategory.pairs;
+      const candidates = pool.length > 1 && excludeId ? pool.filter((p) => p.id !== excludeId) : pool;
+      const target = candidates[Math.floor(Math.random() * candidates.length)] || pool[0];
+      const distractors = shuffleArray(pool.filter((p) => p.id !== target.id)).slice(0, 3);
+      return {
+        target,
+        options: shuffleArray([target, ...distractors]),
+      };
+    },
+    [activeCategory.pairs]
+  );
+
+  const [blitzQuestion, setBlitzQuestion] = useState<BlitzRoundQuestion>(() => buildBlitzQuestion());
+
+  const startFreshBlitz = useCallback(
+    (timed: boolean) => {
+      const q = buildBlitzQuestion();
+      setBlitzQuestion(q);
+      setBlitzTimed(timed);
+      setBlitzSecondsLeft(60);
+      setBlitzFinished(false);
+      setBlitzScore(0);
+      setBlitzStreak(0);
+      setBlitzAnsweredCount(0);
+      setBlitzFeedback(null);
+    },
+    [buildBlitzQuestion]
+  );
+
+  useEffect(() => {
+    if (matchPlayStyle === 'blitz') {
+      const q = buildBlitzQuestion();
+      setBlitzQuestion(q);
+      setBlitzSecondsLeft(60);
+      setBlitzFinished(false);
+      setBlitzScore(0);
+      setBlitzStreak(0);
+      setBlitzAnsweredCount(0);
+      setBlitzFeedback(null);
+      playPronunciation(q.target.sanskrit);
+    }
+  }, [activeCategory.id, matchPlayStyle, buildBlitzQuestion]);
+
+  useEffect(() => {
+    if (activeGameMode !== 'match' || matchPlayStyle !== 'blitz' || !blitzTimed || blitzFinished) {
+      return undefined;
+    }
+    const timer = window.setInterval(() => {
+      setBlitzSecondsLeft((prev) => {
+        if (prev <= 1) {
+          window.clearInterval(timer);
+          setBlitzFinished(true);
+          soundEffects.playVictoryFanfare();
+          awardStars(4);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => window.clearInterval(timer);
+  }, [activeGameMode, matchPlayStyle, blitzTimed, blitzFinished, awardStars]);
+
+  const handleBlitzOptionClick = (opt: MatchPairItem) => {
+    if (blitzFeedback || blitzFinished) return;
+    const isRight = opt.id === blitzQuestion.target.id;
+    setBlitzFeedback({ chosenId: opt.id, correct: isRight });
+
+    if (isRight) {
+      soundEffects.playSuccessDing();
+      playPronunciation(blitzQuestion.target.sanskrit);
+      const nextScore = blitzScore + 10 + blitzStreak * 3;
+      setBlitzScore(nextScore);
+      setBlitzStreak((s) => s + 1);
+      setBlitzAnsweredCount((c) => {
+        const nextCount = c + 1;
+        if (!blitzTimed && nextCount % 8 === 0) {
+          awardStars(3);
+        }
+        return nextCount;
+      });
+      if (nextScore > bestBlitzScore) {
+        setBestBlitzScore(nextScore);
+        try {
+          localStorage.setItem(BLITZ_BEST_STORAGE_KEY, String(nextScore));
+        } catch {
+          // ignore
+        }
+      }
+      setTimeout(() => {
+        const nextQ = buildBlitzQuestion(blitzQuestion.target.id);
+        setBlitzQuestion(nextQ);
+        setBlitzFeedback(null);
+        playPronunciation(nextQ.target.sanskrit);
+      }, 550);
+    } else {
+      if (showPreschoolOnly) {
+        soundEffects.playEncouragementDing();
+      } else {
+        soundEffects.playErrorBuzzer();
+      }
+      setBlitzStreak(0);
+      setTimeout(() => {
+        setBlitzFeedback(null);
+      }, 650);
+    }
+  };
+
+  // --- 12-Card Memory Flip State ---
+  const [memoryDeck, setMemoryDeck] = useState<MemoryCardItem[]>([]);
+  const [flippedUids, setFlippedUids] = useState<string[]>([]);
+  const [matchedMemoryPairs, setMatchedMemoryPairs] = useState<Set<string>>(new Set());
+  const [memoryMoves, setMemoryMoves] = useState<number>(0);
+  const [memoryLock, setMemoryLock] = useState<boolean>(false);
+
+  const initMemoryBoard = useCallback(() => {
+    const sourcePairs = activeRoundPairs.slice(0, 6);
+    const cards: MemoryCardItem[] = [];
+    sourcePairs.forEach((p) => {
+      const roman = getRomanForItem(p);
+      cards.push({
+        uid: `${p.id}-sa`,
+        pairId: p.id,
+        side: 'sanskrit',
+        sanskrit: p.sanskrit,
+        english: p.english,
+        transliteration: roman,
+        emoji: p.emoji,
+      });
+      cards.push({
+        uid: `${p.id}-en`,
+        pairId: p.id,
+        side: 'meaning',
+        sanskrit: p.sanskrit,
+        english: p.english,
+        transliteration: roman,
+        emoji: p.emoji,
+      });
+    });
+    setMemoryDeck(shuffleArray(cards));
+    setFlippedUids([]);
+    setMatchedMemoryPairs(new Set());
+    setMemoryMoves(0);
+    setMemoryLock(false);
+  }, [activeRoundPairs]);
+
+  useEffect(() => {
+    if (matchPlayStyle === 'memory') {
+      initMemoryBoard();
+    }
+  }, [matchPlayStyle, initMemoryBoard]);
+
+  const handleMemoryCardClick = (card: MemoryCardItem) => {
+    if (memoryLock) return;
+    if (matchedMemoryPairs.has(card.pairId)) return;
+    if (flippedUids.includes(card.uid)) return;
+
+    soundEffects.playBubblePop();
+    if (card.side === 'sanskrit') {
+      playPronunciation(card.sanskrit);
+    }
+
+    const nextFlipped = [...flippedUids, card.uid];
+    setFlippedUids(nextFlipped);
+
+    if (nextFlipped.length === 2) {
+      setMemoryMoves((m) => m + 1);
+      const firstCard = memoryDeck.find((c) => c.uid === nextFlipped[0]);
+      if (firstCard && firstCard.pairId === card.pairId && firstCard.side !== card.side) {
+        // Pair matched!
+        soundEffects.playCelebrationChime();
+        playPronunciation(card.sanskrit);
+        const totalPairsInDeck = memoryDeck.length / 2;
+        setMatchedMemoryPairs((prev) => {
+          const next = new Set(prev);
+          next.add(card.pairId);
+          if (next.size === totalPairsInDeck) {
+            soundEffects.playVictoryFanfare();
+            awardStars(4);
+          }
+          return next;
+        });
+        setFlippedUids([]);
+      } else {
+        setMemoryLock(true);
+        setTimeout(() => {
+          setFlippedUids([]);
+          setMemoryLock(false);
+        }, 850);
+      }
+    }
+  };
+
+  const isMemoryComplete =
+    memoryDeck.length > 0 && matchedMemoryPairs.size === memoryDeck.length / 2;
 
   // --------------------------------------------------------------------------
-  // WORD MAZE QUEST STATE (शब्द-व्यूहः)
+  // 2. WORD MAZE QUEST STATE (शब्द-व्यूहः)
   // --------------------------------------------------------------------------
+  const [mazeAudienceFilter, setMazeAudienceFilter] = useState<MazeAudienceFilter>('all');
+  const [mazeDifficulty, setMazeDifficulty] = useState<MazeDifficulty>('guided');
   const [selectedQuestId, setSelectedQuestId] = useState<string>(WORD_MAZE_QUESTS[0].id);
+
+  const displayedQuests = useMemo(() => {
+    if (mazeAudienceFilter === 'preschool') {
+      return WORD_MAZE_QUESTS.filter((q) => PRESCHOOL_MAZE_IDS.has(q.id) || q.audience === 'preschool');
+    }
+    if (mazeAudienceFilter === 'stories') {
+      return WORD_MAZE_QUESTS.filter((q) => q.audience !== 'preschool');
+    }
+    return WORD_MAZE_QUESTS;
+  }, [mazeAudienceFilter]);
 
   const activeQuest: WordMazeQuest = useMemo(() => {
     return (
-      WORD_MAZE_QUESTS.find((q) => q.id === selectedQuestId) || WORD_MAZE_QUESTS[0]
+      WORD_MAZE_QUESTS.find((q) => q.id === selectedQuestId) ||
+      displayedQuests[0] ||
+      WORD_MAZE_QUESTS[0]
     );
-  }, [selectedQuestId]);
+  }, [selectedQuestId, displayedQuests]);
 
-  // Current step in the maze sequence (1-based)
+  const isPreschoolMaze =
+    activeQuest.audience === 'preschool' || PRESCHOOL_MAZE_IDS.has(activeQuest.id);
+
   const [currentMazeStep, setCurrentMazeStep] = useState<number>(1);
-  // Cells that have been successfully stepped on
   const [steppedCells, setSteppedCells] = useState<MazeCell[]>([]);
-  // Last tapped trap cell for warning animation
   const [trapCell, setTrapCell] = useState<{ row: number; col: number } | null>(null);
   const [trapMessage, setTrapMessage] = useState<string | null>(null);
+  const [hintedStep, setHintedStep] = useState<number | null>(null);
 
   // Traffic visual scene interactive hotspot state
   const [trafficHotspot, setTrafficHotspot] = useState<{
@@ -244,24 +590,28 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     setTrafficHotspot({ word, trans, icon, note });
   };
 
-  // Reset maze on quest change
   useEffect(() => {
     setCurrentMazeStep(1);
     setSteppedCells([]);
     setTrapCell(null);
     setTrapMessage(null);
+    setHintedStep(null);
   }, [activeQuest]);
 
   const totalPathSteps = useMemo(() => {
     return activeQuest.cells.filter((c) => c.isPath).length;
   }, [activeQuest]);
 
+  const nextPathCell = useMemo(() => {
+    return activeQuest.cells.find((c) => c.isPath && c.stepOrder === currentMazeStep) || null;
+  }, [activeQuest, currentMazeStep]);
+
+  const lastSteppedCell = steppedCells.length > 0 ? steppedCells[steppedCells.length - 1] : null;
   const isMazeCompleted = steppedCells.length >= totalPathSteps;
 
   const handleMazeCellClick = (cell: MazeCell) => {
     if (isMazeCompleted) return;
 
-    // Check if this cell is the NEXT step in the path
     if (cell.isPath && cell.stepOrder === currentMazeStep) {
       soundEffects.playPuzzleSnap();
       playPronunciation(cell.word);
@@ -269,26 +619,42 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
       setCurrentMazeStep((prev) => prev + 1);
       setTrapCell(null);
       setTrapMessage(null);
+      setHintedStep(null);
 
       if (cell.stepOrder === totalPathSteps) {
-        // Quest completed!
         soundEffects.playVictoryFanfare();
+        awardStars(5);
       }
     } else if (cell.isPath && (cell.stepOrder || 0) < currentMazeStep) {
-      // Already visited cell — speak word
       playPronunciation(cell.word);
     } else {
-      // Wrong cell / Trap / Out-of-order!
-      soundEffects.playErrorBuzzer();
-      setTrapCell({ row: cell.row, col: cell.col });
-      if (!cell.isPath) {
-        setTrapMessage(`⚠️ "${cell.word}" (${cell.translation}) is a trap! It is not part of this path.`);
+      if (isPreschoolMaze) {
+        soundEffects.playEncouragementDing();
       } else {
-        setTrapMessage(`⚠️ Step out of order! Look for step #${currentMazeStep} next.`);
+        soundEffects.playErrorBuzzer();
+      }
+      setTrapCell({ row: cell.row, col: cell.col });
+      const cleanTrans = cleanMazeGloss(cell.translation);
+      if (lastSteppedCell) {
+        const dist =
+          Math.abs(cell.row - lastSteppedCell.row) + Math.abs(cell.col - lastSteppedCell.col);
+        if (dist > 2 || Math.abs(cell.row - lastSteppedCell.row) > 1 || Math.abs(cell.col - lastSteppedCell.col) > 1) {
+          setTrapMessage(
+            `🧭 Hop to a neighboring tile right next to ${activeQuest.icon} "${lastSteppedCell.word}"!`
+          );
+        } else if (!cell.isPath) {
+          setTrapMessage(
+            `🙈 Oops! "${cell.word}" (${cleanTrans}) is an obstacle — try another neighboring word!`
+          );
+        } else {
+          setTrapMessage(`⏳ Almost! "${cell.word}" comes later in the path — try another neighbor!`);
+        }
+      } else {
+        setTrapMessage(`🚩 Start at the green "Start" tile (step #1) to begin the quest!`);
       }
       setTimeout(() => {
         setTrapCell(null);
-      }, 1200);
+      }, 1100);
     }
   };
 
@@ -297,6 +663,20 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     setSteppedCells([]);
     setTrapCell(null);
     setTrapMessage(null);
+    setHintedStep(null);
+  };
+
+  const handleHearNextMazeWord = () => {
+    if (!nextPathCell) return;
+    soundEffects.playStrokeChime();
+    playPronunciation(nextPathCell.word);
+  };
+
+  const handleHintNextMazeStep = () => {
+    if (!nextPathCell) return;
+    soundEffects.playPuzzleSnap();
+    setHintedStep(currentMazeStep);
+    playPronunciation(nextPathCell.word);
   };
 
   const assembledStoryWords = steppedCells.map((c) => c.word).join(' ');
@@ -308,53 +688,81 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
         <div className="sgh-header-left">
           <span className="sgh-om-badge" aria-hidden="true">🕉️</span>
           <div className="sgh-title-box">
-            <h1>संस्कृत-क्रीडा-मण्डपम् · Sanskrit Games Pavilion</h1>
-            <p>Interactive Match-the-Following &amp; Word Mazes for Vocabulary Mastery</p>
+            <h1>
+              {activeGameMode === 'maze'
+                ? 'शब्द-व्यूहः · Sanskrit Word Maze Quests'
+                : 'युग्म-मेलनम् · Sanskrit Match & Memory Arcade'}
+            </h1>
+            <p>
+              {activeGameMode === 'maze'
+                ? 'Preschool Fruit & Counting Trails, Panchatantra Story Mazes, and Grammar Quests'
+                : 'Classic Bite-Sized Pairs, 4-Card Audio Blitz, and 12-Card Memory Flip'}
+            </p>
           </div>
         </div>
 
-        {/* Studio Mode Tabs */}
-        <div className="sgh-mode-tabs" role="tablist">
-          {onGoBack && (
-            <button
-              type="button"
-              className="sgh-mode-btn sgh-mode-btn--back"
-              onClick={onGoBack}
-              title="Return to Jodo tile puzzles"
-            >
-              <span>🧩</span>
-              <span>जोडो Puzzles</span>
-            </button>
+        <div className="sgh-header-controls">
+          <span className="sgh-star-wallet" title="Stars earned across Sanskrit games">
+            <span>⭐</span>
+            <strong>{totalStars}</strong>
+            <small>Stars</small>
+          </span>
+
+          <button
+            type="button"
+            className={`sgh-roman-toggle${showRoman ? ' is-on' : ''}`}
+            onClick={toggleRoman}
+            aria-pressed={showRoman}
+            title="Show or hide Roman (IAST) pronunciation guide alongside Devanagari"
+          >
+            <span>🔤</span>
+            <span>Roman: {showRoman ? 'ON' : 'OFF'}</span>
+          </button>
+
+          {!embeddedInBoard && (
+            <div className="sgh-mode-tabs" role="tablist">
+              {onGoBack && (
+                <button
+                  type="button"
+                  className="sgh-mode-btn sgh-mode-btn--back"
+                  onClick={onGoBack}
+                  title="Return to Jodo tile puzzles"
+                >
+                  <span>🧩</span>
+                  <span>जोडो Puzzles</span>
+                </button>
+              )}
+              <button
+                type="button"
+                className={`sgh-mode-btn${activeGameMode === 'match' ? ' sgh-mode-btn--active' : ''}`}
+                onClick={() => switchGameMode('match')}
+                role="tab"
+                aria-selected={activeGameMode === 'match'}
+              >
+                <span>🎯</span>
+                <span>युग्म-मेलनम्</span>
+              </button>
+              <button
+                type="button"
+                className={`sgh-mode-btn${activeGameMode === 'maze' ? ' sgh-mode-btn--active' : ''}`}
+                onClick={() => switchGameMode('maze')}
+                role="tab"
+                aria-selected={activeGameMode === 'maze'}
+              >
+                <span>🌀</span>
+                <span>शब्द-व्यूहः</span>
+              </button>
+            </div>
           )}
-          <button
-            type="button"
-            className={`sgh-mode-btn${activeGameMode === 'match' ? ' sgh-mode-btn--active' : ''}`}
-            onClick={() => setActiveGameMode('match')}
-            role="tab"
-            aria-selected={activeGameMode === 'match'}
-          >
-            <span>🎯</span>
-            <span>युग्म-मेलनम् · Match Pairs</span>
-          </button>
-          <button
-            type="button"
-            className={`sgh-mode-btn${activeGameMode === 'maze' ? ' sgh-mode-btn--active' : ''}`}
-            onClick={() => setActiveGameMode('maze')}
-            role="tab"
-            aria-selected={activeGameMode === 'maze'}
-          >
-            <span>🌀</span>
-            <span>शब्द-व्यूहः · Word Maze</span>
-          </button>
         </div>
       </div>
 
       {/* ====================================================================
-          VIEW 1: MATCH-THE-FOLLOWING (युग्म-मेलनम्)
+          VIEW 1: MATCH-THE-FOLLOWING & ARCADE (युग्म-मेलनम्)
           ==================================================================== */}
       {activeGameMode === 'match' && (
         <>
-          {/* Category Filter Bar (All Categories vs Preschool / Toddler Favorites vs Deepakam Curriculum) */}
+          {/* Category Filter Bar */}
           <div className="sgh-filter-bar">
             <button
               type="button"
@@ -369,11 +777,11 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
               onClick={() => {
                 setFilterMode('preschool');
                 if (!PRESCHOOL_MATCH_CAT_IDS.has(selectedCatId)) {
-                  setSelectedCatId('fruits_veg');
+                  setSelectedCatId('cat_vahanas');
                 }
               }}
             >
-              <span>🌟 Preschool &amp; Kids (Ages 3–7)</span>
+              <span>🐘 Preschool &amp; Kids (Ages 3–7)</span>
             </button>
             <button
               type="button"
@@ -391,10 +799,10 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
 
           {filterMode === 'preschool' && (
             <div className="sgh-preschool-banner">
-              <span className="spb-icon" aria-hidden="true">🌟</span>
+              <span className="spb-icon" aria-hidden="true">🐘</span>
               <div>
-                <strong>शिशु-युग्म-क्रीडा · Preschool Picture Match (Ages 3–7)</strong>
-                <span>Tap matching cards with emojis and hear the native Sanskrit pronunciation! 100% fun, gentle, and tactile.</span>
+                <strong>शिशु-युग्म-क्रीडा · Preschool Picture &amp; Sound Play (Ages 3–7)</strong>
+                <span>Bite-sized 6-card rounds, gentle chimes, spoken Sanskrit audio, and fun Memory Flip cards!</span>
               </div>
             </div>
           )}
@@ -415,10 +823,10 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
               <button
                 key={cat.id}
                 type="button"
-                className={`sgh-cat-pill${selectedCatId === cat.id ? ' sgh-cat-pill--active' : ''}`}
+                className={`sgh-cat-pill${activeCategory.id === cat.id ? ' sgh-cat-pill--active' : ''}`}
                 onClick={() => setSelectedCatId(cat.id)}
                 role="tab"
-                aria-selected={selectedCatId === cat.id}
+                aria-selected={activeCategory.id === cat.id}
                 title={cat.description}
               >
                 <span>{cat.icon}</span>
@@ -427,155 +835,469 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
             ))}
           </div>
 
-          {/* Match Arena */}
+          {/* Match Arena Card */}
           <div className="sgh-arena-card">
             <div className="sgh-arena-header">
               <div className="sgh-arena-title-wrap">
-                <span style={{ fontSize: '1.8rem', lineHeight: 1 }}>{activeCategory.icon}</span>
+                <span style={{ fontSize: '1.9rem', lineHeight: 1 }}>{activeCategory.icon}</span>
                 <div>
                   <h2>{activeCategory.titleDev} · {activeCategory.titleEn}</h2>
                   <p className="sgh-arena-desc">{activeCategory.description}</p>
                 </div>
               </div>
 
-              {/* Stats & Score */}
-              <div className="sgh-stats-row">
-                <span className="sgh-stat-chip">
-                  <span>🏆 Score:</span>
-                  <strong>{score}</strong>
-                </span>
-                <span className="sgh-stat-chip">
-                  <span>🔥 Streak:</span>
-                  <strong>{streak}</strong>
-                </span>
-                <span className="sgh-stat-chip">
-                  <span>Matched:</span>
-                  <strong>{matchedIds.size} / {activeCategory.pairs.length}</strong>
-                </span>
+              {/* 3 Play Style Switcher Pills */}
+              <div className="sgh-playstyle-tabs" role="tablist" aria-label="Play Styles">
                 <button
                   type="button"
-                  className="sanskrit-tool-btn"
-                  onClick={handleResetMatchGame}
-                  title="Reset and shuffle pairs"
+                  role="tab"
+                  aria-selected={matchPlayStyle === 'classic'}
+                  className={`sgh-playstyle-btn${matchPlayStyle === 'classic' ? ' is-active' : ''}`}
+                  onClick={() => setMatchPlayStyle('classic')}
                 >
-                  <span>🔄</span>
-                  <span>Reset</span>
+                  🎯 Classic Match
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={matchPlayStyle === 'blitz'}
+                  className={`sgh-playstyle-btn${matchPlayStyle === 'blitz' ? ' is-active' : ''}`}
+                  onClick={() => setMatchPlayStyle('blitz')}
+                >
+                  ⚡ 4-Card Blitz
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={matchPlayStyle === 'memory'}
+                  className={`sgh-playstyle-btn${matchPlayStyle === 'memory' ? ' is-active' : ''}`}
+                  onClick={() => setMatchPlayStyle('memory')}
+                >
+                  🃏 Memory Flip
                 </button>
               </div>
             </div>
 
-            {/* Completion Banner */}
-            {isMatchRoundComplete ? (
-              <div className="sgh-celebrate-box">
-                <span style={{ fontSize: '3rem' }}>🎉</span>
-                <h3 className="sgh-celebrate-title">अति उत्तमम्! All Pairs Matched!</h3>
-                <p className="sgh-celebrate-desc">
-                  You successfully mastered all {activeCategory.pairs.length} terms in "{activeCategory.titleDev}" with an amazing streak of {bestStreak}!
-                </p>
-                <div style={{ display: 'flex', gap: '0.65rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
-                  <button
-                    type="button"
-                    className="sgh-mode-btn sgh-mode-btn--active"
-                    onClick={handleResetMatchGame}
-                  >
-                    <span>🔄 Replay This Category</span>
-                  </button>
-                  <button
-                    type="button"
-                    className="sgh-mode-btn"
-                    style={{ background: '#f59e0b', color: '#ffffff' }}
-                    onClick={handleNextCategory}
-                  >
-                    <span>Next Category ➔</span>
-                  </button>
-                  <button
-                    type="button"
-                    className="sgh-mode-btn"
-                    style={{ background: '#7c3aed', color: '#ffffff' }}
-                    onClick={() => setActiveGameMode('maze')}
-                  >
-                    <span>Try Word Maze 🌀</span>
-                  </button>
+            {/* Bite-Sized Round Selector Bar (for Classic & Memory when > 6 pairs) */}
+            {matchPlayStyle !== 'blitz' && totalRounds > 1 && (
+              <div className="sgh-round-bar" role="group" aria-label="Round Selector">
+                <span className="sgh-round-label">📦 Bite-Sized Rounds:</span>
+                <div className="sgh-round-pills">
+                  {Array.from({ length: totalRounds }).map((_, idx) => {
+                    const startNum = idx * PAIRS_PER_ROUND + 1;
+                    const endNum = Math.min((idx + 1) * PAIRS_PER_ROUND, activeCategory.pairs.length);
+                    return (
+                      <button
+                        key={`round-${idx}`}
+                        type="button"
+                        className={`sgh-round-pill${roundIndex === idx ? ' is-active' : ''}`}
+                        onClick={() => setRoundIndex(idx)}
+                      >
+                        Round {idx + 1} <small>({startNum}–{endNum})</small>
+                      </button>
+                    );
+                  })}
+                  {matchPlayStyle === 'classic' && (
+                    <button
+                      type="button"
+                      className={`sgh-round-pill${roundIndex === -1 ? ' is-active' : ''}`}
+                      onClick={() => setRoundIndex(-1)}
+                    >
+                      All ({activeCategory.pairs.length})
+                    </button>
+                  )}
                 </div>
               </div>
-            ) : (
-              /* Two-Column Match Arena */
-              <div className="sgh-match-grid">
-                {/* Left Column: Sanskrit Devanagari */}
-                <div>
-                  <div className="sgh-col-heading">
-                    <span>🕉️</span>
-                    <span>Sanskrit Terms (संस्कृत-पदानि)</span>
-                  </div>
-                  <div className="sgh-tiles-list">
-                    {activeCategory.pairs.map((item) => {
-                      const isMatched = matchedIds.has(item.id);
-                      const isSelected = selectedLeftId === item.id;
-                      const isError = errorPair?.leftId === item.id;
+            )}
 
-                      let tileClass = 'sgh-match-tile';
-                      if (isMatched) tileClass += ' sgh-match-tile--matched';
-                      else if (isSelected) tileClass += ' sgh-match-tile--selected';
-                      else if (isError) tileClass += ' sgh-match-tile--error';
+            {/* ==============================================================
+                PLAY STYLE A: CLASSIC MATCH (Bite-Sized Two-Column Matching)
+               ============================================================== */}
+            {matchPlayStyle === 'classic' && (
+              <>
+                <div className="sgh-stats-row">
+                  <span className="sgh-stat-chip">
+                    <span>🏆 Score:</span>
+                    <strong>{score}</strong>
+                  </span>
+                  <span className="sgh-stat-chip">
+                    <span>🔥 Streak:</span>
+                    <strong>{streak}</strong>
+                  </span>
+                  <span className="sgh-stat-chip">
+                    <span>✅ Matched:</span>
+                    <strong>{matchedIds.size} / {activeRoundPairs.length}</strong>
+                  </span>
+                  <button
+                    type="button"
+                    className="sanskrit-tool-btn"
+                    onClick={handleResetMatchGame}
+                    title="Reset and shuffle pairs"
+                  >
+                    <span>🔄</span>
+                    <span>Shuffle</span>
+                  </button>
+                </div>
 
-                      return (
-                        <div
-                          key={`left-${item.id}`}
-                          className={tileClass}
-                          onClick={() => handleLeftClick(item)}
+                {isMatchRoundComplete ? (
+                  <div className="sgh-celebrate-box">
+                    <span style={{ fontSize: '3rem' }}>🎉</span>
+                    <h3 className="sgh-celebrate-title">
+                      अति उत्तमम्! {roundIndex >= 0 && totalRounds > 1 ? `Round ${roundIndex + 1} Complete!` : 'All Pairs Matched!'} (+3 ⭐)
+                    </h3>
+                    <p className="sgh-celebrate-desc">
+                      You matched all {activeRoundPairs.length} Sanskrit pairs in &ldquo;{activeCategory.titleDev}&rdquo; with a best streak of {bestStreak}!
+                    </p>
+                    <div className="sgh-celebrate-actions">
+                      {roundIndex >= 0 && roundIndex + 1 < totalRounds && (
+                        <button
+                          type="button"
+                          className="sgh-mode-btn sgh-mode-btn--active"
+                          onClick={() => setRoundIndex(roundIndex + 1)}
                         >
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                            {item.emoji && <span style={{ fontSize: '1.25rem' }}>{item.emoji}</span>}
-                            <span className="sgh-tile-devanagari">{item.sanskrit}</span>
-                          </div>
+                          <span>▶️ Next Round ({roundIndex + 2} / {totalRounds})</span>
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        className="sgh-mode-btn"
+                        style={{ background: '#059669', color: '#ffffff' }}
+                        onClick={handleResetMatchGame}
+                      >
+                        <span>🔄 Replay Round</span>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-mode-btn"
+                        style={{ background: '#f59e0b', color: '#ffffff' }}
+                        onClick={handleNextCategory}
+                      >
+                        <span>Next Category ➔</span>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-mode-btn"
+                        style={{ background: '#7c3aed', color: '#ffffff' }}
+                        onClick={() => switchGameMode('maze')}
+                      >
+                        <span>Try Word Maze 🌀</span>
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="sgh-match-grid">
+                    {/* Left Column: Sanskrit Devanagari + Audio + Optional Roman */}
+                    <div>
+                      <div className="sgh-col-heading">
+                        <span>🕉️</span>
+                        <span>Sanskrit Terms (संस्कृत-पदानि) — Tap to Hear</span>
+                      </div>
+                      <div className="sgh-tiles-list">
+                        {activeRoundPairs.map((item) => {
+                          const isMatched = matchedIds.has(item.id);
+                          const isSelected = selectedLeftId === item.id;
+                          const isError = errorPair?.leftId === item.id;
+
+                          let tileClass = 'sgh-match-tile';
+                          if (isMatched) tileClass += ' sgh-match-tile--matched';
+                          else if (isSelected) tileClass += ' sgh-match-tile--selected';
+                          else if (isError) tileClass += ' sgh-match-tile--error';
+
+                          return (
+                            <div
+                              key={`left-${item.id}`}
+                              role="button"
+                              tabIndex={isMatched ? -1 : 0}
+                              aria-pressed={isSelected}
+                              className={tileClass}
+                              onClick={() => handleLeftClick(item)}
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                  e.preventDefault();
+                                  handleLeftClick(item);
+                                }
+                              }}
+                            >
+                              <div className="sgh-tile-left-stack">
+                                <span className="sgh-tile-devanagari">{item.sanskrit}</span>
+                                {showRoman && (
+                                  <span className="sgh-tile-roman">{getRomanForItem(item)}</span>
+                                )}
+                              </div>
+                              <button
+                                type="button"
+                                className="sgh-tile-audio-btn"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  playPronunciation(item.sanskrit);
+                                }}
+                                title={`Hear: ${item.sanskrit}`}
+                                aria-label={`Listen to ${item.sanskrit}`}
+                              >
+                                🔊
+                              </button>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Right Column: Emoji Picture + English Meanings (Shuffled) */}
+                    <div>
+                      <div className="sgh-col-heading">
+                        <span>🎨</span>
+                        <span>Pictures &amp; Meanings (चित्राणि अर्थाश्च)</span>
+                      </div>
+                      <div className="sgh-tiles-list">
+                        {shuffledEnglishItems.map((item) => {
+                          const isMatched = matchedIds.has(item.id);
+                          const isSelected = selectedRightId === item.id;
+                          const isError = errorPair?.rightId === item.id;
+
+                          let tileClass = 'sgh-match-tile';
+                          if (isMatched) tileClass += ' sgh-match-tile--matched';
+                          else if (isSelected) tileClass += ' sgh-match-tile--selected';
+                          else if (isError) tileClass += ' sgh-match-tile--error';
+
+                          return (
+                            <button
+                              key={`right-${item.id}`}
+                              type="button"
+                              aria-pressed={isSelected}
+                              disabled={isMatched}
+                              className={tileClass}
+                              onClick={() => handleRightClick(item)}
+                            >
+                              <div className="sgh-tile-right-content">
+                                {item.emoji && (
+                                  <span className="sgh-tile-emoji" aria-hidden="true">{item.emoji}</span>
+                                )}
+                                <div className="sgh-tile-right-text">
+                                  <span className="sgh-tile-english">{item.english}</span>
+                                  {item.hint && (
+                                    <span className="sgh-tile-hint">💡 {item.hint}</span>
+                                  )}
+                                </div>
+                              </div>
+                              {isMatched && <span className="sgh-tile-check">✓</span>}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </>
+            )}
+
+            {/* ==============================================================
+                PLAY STYLE B: 4-CARD AUDIO BLITZ (द्रुत-चयनम्)
+               ============================================================== */}
+            {matchPlayStyle === 'blitz' && (
+              <div className="sgh-blitz-stage">
+                <div className="sgh-blitz-toolbar">
+                  <div className="sgh-stats-row">
+                    <span className="sgh-stat-chip">
+                      <span>⚡ Score:</span>
+                      <strong>{blitzScore}</strong>
+                    </span>
+                    <span className="sgh-stat-chip">
+                      <span>🔥 Combo:</span>
+                      <strong>{blitzStreak}x</strong>
+                    </span>
+                    <span className="sgh-stat-chip">
+                      <span>🏅 Best:</span>
+                      <strong>{bestBlitzScore}</strong>
+                    </span>
+                    {blitzTimed && (
+                      <span className={`sgh-stat-chip sgh-stat-chip--timer${blitzSecondsLeft <= 10 ? ' is-urgent' : ''}`}>
+                        <span>⏱️ Time:</span>
+                        <strong>{blitzSecondsLeft}s</strong>
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="sgh-blitz-mode-btns">
+                    <button
+                      type="button"
+                      className={`sgh-round-pill${!blitzTimed ? ' is-active' : ''}`}
+                      onClick={() => startFreshBlitz(false)}
+                    >
+                      🌿 Relaxed Practice
+                    </button>
+                    <button
+                      type="button"
+                      className={`sgh-round-pill${blitzTimed ? ' is-active' : ''}`}
+                      onClick={() => startFreshBlitz(true)}
+                    >
+                      ⏱️ 60s Blitz Sprint
+                    </button>
+                  </div>
+                </div>
+
+                {blitzFinished ? (
+                  <div className="sgh-celebrate-box">
+                    <span style={{ fontSize: '3rem' }}>⚡</span>
+                    <h3 className="sgh-celebrate-title">समयः समाप्तः! 60s Blitz Complete! (+4 ⭐)</h3>
+                    <p className="sgh-celebrate-desc">
+                      You scored <strong>{blitzScore}</strong> points across <strong>{blitzAnsweredCount}</strong> Sanskrit words in &ldquo;{activeCategory.titleDev}&rdquo;!
+                    </p>
+                    <div className="sgh-celebrate-actions">
+                      <button
+                        type="button"
+                        className="sgh-mode-btn sgh-mode-btn--active"
+                        onClick={() => startFreshBlitz(true)}
+                      >
+                        <span>⚡ Play 60s Sprint Again</span>
+                      </button>
+                      <button
+                        type="button"
+                        className="sgh-mode-btn"
+                        style={{ background: '#059669', color: '#ffffff' }}
+                        onClick={() => startFreshBlitz(false)}
+                      >
+                        <span>🌿 Switch to Relaxed</span>
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div className="sgh-blitz-prompt-card">
+                      <span className="sgh-blitz-eyebrow">LISTEN &amp; TAP THE RIGHT MEANING</span>
+                      <div className="sgh-blitz-word-row">
+                        <span className="sgh-blitz-sanskrit">{blitzQuestion.target.sanskrit}</span>
+                        <button
+                          type="button"
+                          className="sgh-blitz-speak-btn"
+                          onClick={() => playPronunciation(blitzQuestion.target.sanskrit)}
+                          title="Hear Sanskrit pronunciation"
+                        >
+                          🔊 Hear Word
+                        </button>
+                      </div>
+                      {showRoman && (
+                        <span className="sgh-blitz-roman">{getRomanForItem(blitzQuestion.target)}</span>
+                      )}
+                    </div>
+
+                    <div className="sgh-blitz-options-grid">
+                      {blitzQuestion.options.map((opt) => {
+                        const isPicked = blitzFeedback?.chosenId === opt.id;
+                        let cardClass = 'sgh-blitz-option-card';
+                        if (isPicked && blitzFeedback?.correct) cardClass += ' is-correct';
+                        else if (isPicked && !blitzFeedback?.correct) cardClass += ' is-wrong';
+
+                        return (
                           <button
+                            key={opt.id}
                             type="button"
-                            className="sgh-tile-audio-btn"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              playPronunciation(item.sanskrit);
-                            }}
-                            title={`Hear: ${item.sanskrit}`}
-                            aria-label={`Listen to ${item.sanskrit}`}
+                            className={cardClass}
+                            onClick={() => handleBlitzOptionClick(opt)}
                           >
-                            🔊
+                            {opt.emoji && <span className="sgh-blitz-opt-emoji">{opt.emoji}</span>}
+                            <span className="sgh-blitz-opt-eng">{opt.english}</span>
+                            {opt.hint && <small className="sgh-blitz-opt-hint">{opt.hint}</small>}
                           </button>
-                        </div>
-                      );
-                    })}
-                  </div>
+                        );
+                      })}
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+
+            {/* ==============================================================
+                PLAY STYLE C: 12-CARD MEMORY FLIP (स्मृति-पटलम्)
+               ============================================================== */}
+            {matchPlayStyle === 'memory' && (
+              <div className="sgh-memory-stage">
+                <div className="sgh-stats-row">
+                  <span className="sgh-stat-chip">
+                    <span>🃏 Pairs Found:</span>
+                    <strong>{matchedMemoryPairs.size} / {memoryDeck.length / 2}</strong>
+                  </span>
+                  <span className="sgh-stat-chip">
+                    <span>👆 Moves:</span>
+                    <strong>{memoryMoves}</strong>
+                  </span>
+                  <button
+                    type="button"
+                    className="sanskrit-tool-btn"
+                    onClick={initMemoryBoard}
+                    title="Shuffle and deal a fresh Memory Flip board"
+                  >
+                    <span>🔄</span>
+                    <span>New Deal</span>
+                  </button>
                 </div>
 
-                {/* Right Column: English Meanings (Shuffled) */}
-                <div>
-                  <div className="sgh-col-heading">
-                    <span>🌐</span>
-                    <span>English Meanings (आङ्ग्ल-अर्थाः)</span>
+                {isMemoryComplete ? (
+                  <div className="sgh-celebrate-box">
+                    <span style={{ fontSize: '3rem' }}>🃏</span>
+                    <h3 className="sgh-celebrate-title">अद्भुत-स्मृतिः! Memory Board Cleared! (+4 ⭐)</h3>
+                    <p className="sgh-celebrate-desc">
+                      You matched all {memoryDeck.length / 2} Sanskrit &amp; Picture pairs in just <strong>{memoryMoves}</strong> moves!
+                    </p>
+                    <div className="sgh-celebrate-actions">
+                      {roundIndex >= 0 && roundIndex + 1 < totalRounds && (
+                        <button
+                          type="button"
+                          className="sgh-mode-btn sgh-mode-btn--active"
+                          onClick={() => setRoundIndex(roundIndex + 1)}
+                        >
+                          <span>▶️ Next Round ({roundIndex + 2} / {totalRounds})</span>
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        className="sgh-mode-btn"
+                        style={{ background: '#059669', color: '#ffffff' }}
+                        onClick={initMemoryBoard}
+                      >
+                        <span>🔄 Play Again</span>
+                      </button>
+                    </div>
                   </div>
-                  <div className="sgh-tiles-list">
-                    {shuffledEnglishItems.map((item) => {
-                      const isMatched = matchedIds.has(item.id);
-                      const isSelected = selectedRightId === item.id;
-                      const isError = errorPair?.rightId === item.id;
-
-                      let tileClass = 'sgh-match-tile';
-                      if (isMatched) tileClass += ' sgh-match-tile--matched';
-                      else if (isSelected) tileClass += ' sgh-match-tile--selected';
-                      else if (isError) tileClass += ' sgh-match-tile--error';
+                ) : (
+                  <div className="sgh-memory-grid">
+                    {memoryDeck.map((card) => {
+                      const isMatched = matchedMemoryPairs.has(card.pairId);
+                      const isFlipped = isMatched || flippedUids.includes(card.uid);
 
                       return (
-                        <div
-                          key={`right-${item.id}`}
-                          className={tileClass}
-                          onClick={() => handleRightClick(item)}
+                        <button
+                          key={card.uid}
+                          type="button"
+                          className={`sgh-memory-card${isFlipped ? ' is-flipped' : ''}${isMatched ? ' is-matched' : ''}`}
+                          onClick={() => handleMemoryCardClick(card)}
+                          aria-label={isFlipped ? `${card.sanskrit} ${card.english}` : 'Hidden memory card'}
                         >
-                          <span className="sgh-tile-english">{item.english}</span>
-                          {isMatched && <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>}
-                        </div>
+                          {isFlipped ? (
+                            card.side === 'sanskrit' ? (
+                              <div className="sgh-mem-face sgh-mem-face--sa">
+                                <span className="sgh-mem-badge">🕉️ संस्कृतम्</span>
+                                <span className="sgh-mem-sa-word">{card.sanskrit}</span>
+                                {showRoman && (
+                                  <span className="sgh-mem-roman">{card.transliteration}</span>
+                                )}
+                              </div>
+                            ) : (
+                              <div className="sgh-mem-face sgh-mem-face--en">
+                                {card.emoji && <span className="sgh-mem-emoji">{card.emoji}</span>}
+                                <span className="sgh-mem-en-word">{card.english}</span>
+                              </div>
+                            )
+                          ) : (
+                            <div className="sgh-mem-back">
+                              <span className="sgh-mem-lotus" aria-hidden="true">🪷</span>
+                              <span className="sgh-mem-tap">Tap to Flip</span>
+                            </div>
+                          )}
+                        </button>
                       );
                     })}
                   </div>
-                </div>
+                )}
               </div>
             )}
           </div>
@@ -587,16 +1309,51 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
           ==================================================================== */}
       {activeGameMode === 'maze' && (
         <>
+          {/* Maze Audience Filter Bar */}
+          <div className="sgh-filter-bar">
+            <button
+              type="button"
+              className={`sgh-filter-chip${mazeAudienceFilter === 'all' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => setMazeAudienceFilter('all')}
+            >
+              <span>🌟 All Maze Quests ({WORD_MAZE_QUESTS.length})</span>
+            </button>
+            <button
+              type="button"
+              className={`sgh-filter-chip sgh-filter-chip--preschool${mazeAudienceFilter === 'preschool' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => {
+                setMazeAudienceFilter('preschool');
+                if (!PRESCHOOL_MAZE_IDS.has(selectedQuestId)) {
+                  setSelectedQuestId('maze_preschool_ganesha_fruits');
+                }
+              }}
+            >
+              <span>🐘 Preschool &amp; Kids Trails (Ages 3–7)</span>
+            </button>
+            <button
+              type="button"
+              className={`sgh-filter-chip sgh-filter-chip--deepakam${mazeAudienceFilter === 'stories' ? ' sgh-filter-chip--active' : ''}`}
+              onClick={() => {
+                setMazeAudienceFilter('stories');
+                if (activeQuest.audience === 'preschool') {
+                  setSelectedQuestId('maze_thirsty_crow');
+                }
+              }}
+            >
+              <span>📜 Stories, Tenses &amp; Deepakam</span>
+            </button>
+          </div>
+
           {/* Quest Selector Strip */}
           <div className="sgh-quest-strip" role="tablist" aria-label="Word Maze Quests">
-            {WORD_MAZE_QUESTS.map((quest) => (
+            {displayedQuests.map((quest) => (
               <button
                 key={quest.id}
                 type="button"
-                className={`sgh-quest-btn${selectedQuestId === quest.id ? ' sgh-quest-btn--active' : ''}`}
+                className={`sgh-quest-btn${activeQuest.id === quest.id ? ' sgh-quest-btn--active' : ''}`}
                 onClick={() => setSelectedQuestId(quest.id)}
                 role="tab"
-                aria-selected={selectedQuestId === quest.id}
+                aria-selected={activeQuest.id === quest.id}
               >
                 <span>{quest.icon}</span>
                 <span>{quest.titleDev}</span>
@@ -608,16 +1365,16 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
           <div className="sgh-arena-card">
             <div className="sgh-arena-header">
               <div className="sgh-arena-title-wrap">
-                <span style={{ fontSize: '2rem' }}>{activeQuest.icon}</span>
+                <span style={{ fontSize: '2.1rem', lineHeight: 1 }}>{activeQuest.icon}</span>
                 <div>
-                  <h2>{activeQuest.titleDev}</h2>
+                  <h2>{activeQuest.titleDev} · {activeQuest.titleEn}</h2>
                   <p className="sgh-arena-desc">{activeQuest.missionObjective}</p>
                 </div>
               </div>
 
               <div className="sgh-stats-row">
                 <span className="sgh-stat-chip">
-                  <span>👣 Path Steps:</span>
+                  <span>👣 Steps:</span>
                   <strong>{steppedCells.length} / {totalPathSteps}</strong>
                 </span>
                 <button
@@ -627,9 +1384,52 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                   title="Reset maze progress"
                 >
                   <span>🔄</span>
-                  <span>Restart Maze</span>
+                  <span>Restart</span>
                 </button>
               </div>
+            </div>
+
+            {/* Anti-Spoiler Difficulty & Audio Helper Bar */}
+            <div className="sgh-maze-helper-bar">
+              <div className="sgh-maze-diff-pills" role="group" aria-label="Maze Challenge Mode">
+                <button
+                  type="button"
+                  className={`sgh-round-pill${mazeDifficulty === 'guided' ? ' is-active' : ''}`}
+                  onClick={() => setMazeDifficulty('guided')}
+                  title="Shows clean word meanings and highlights reachable adjacent cells"
+                >
+                  🧭 Guided Explorer
+                </button>
+                <button
+                  type="button"
+                  className={`sgh-round-pill${mazeDifficulty === 'scholar' ? ' is-active' : ''}`}
+                  onClick={() => setMazeDifficulty('scholar')}
+                  title="Hides English meanings on unvisited tiles for a pure Devanagari reading quest"
+                >
+                  🔥 Scholar (Devanagari Only)
+                </button>
+              </div>
+
+              {!isMazeCompleted && nextPathCell && (
+                <div className="sgh-maze-assist-btns">
+                  <button
+                    type="button"
+                    className="sgh-assist-btn sgh-assist-btn--audio"
+                    onClick={handleHearNextMazeWord}
+                    title="Listen to the next Sanskrit word on the path and find it on the board!"
+                  >
+                    🔊 Hear Next Word
+                  </button>
+                  <button
+                    type="button"
+                    className="sgh-assist-btn sgh-assist-btn--hint"
+                    onClick={handleHintNextMazeStep}
+                    title="Highlight the next step if you get stuck"
+                  >
+                    💡 Hint Step #{currentMazeStep}
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Traffic Scene & Directions Exploration Block */}
@@ -663,14 +1463,11 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
 
                 {trafficSceneTab === 'scene' && (
                   <>
-                    {/* The Visual Crossroads Canvas */}
                     <div className="sgh-traffic-canvas" role="region" aria-label="Crossroads Traffic Scene">
-                      {/* Asphalt crossroad markings */}
                       <div className="sgh-road-cross" aria-hidden="true" />
                       <div className="sgh-road-hcross" aria-hidden="true" />
                       <div className="sgh-zebra-crossing" aria-hidden="true" />
 
-                      {/* TOP ROW: Hospital & Ahead / North */}
                       <div className="sgh-canvas-row">
                         <button
                           type="button"
@@ -692,7 +1489,6 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                         </button>
                       </div>
 
-                      {/* CENTER ROW: Crossroads, Traffic Light, Child Helping Elder */}
                       <div className="sgh-canvas-center-row">
                         <button
                           type="button"
@@ -704,7 +1500,6 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                           <span className="sgh-hotspot-badge">🚗 वाहनानि</span>
                         </button>
 
-                        {/* Crossroads center: Child helping elder on zebra crossing */}
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', zIndex: 6 }}>
                           <button
                             type="button"
@@ -737,11 +1532,10 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                         </button>
                       </div>
 
-                      {/* BOTTOM ROW: Ambulance Approaching from Behind & Straight Ahead */}
                       <div className="sgh-canvas-row">
                         <button
                           type="button"
-                          className={`sgh-hotspot ${trafficHotspot?.word === 'ऋजु-मार्गेण' ? 'sgh-hotspot--active' : ''}`}
+                          className={`sgh-hotspot ${trafficHotspot?.word === 'ऋजु-मार्गेण अग्रे धावति' ? 'sgh-hotspot--active' : ''}`}
                           onClick={() => handleTrafficClick('ऋजु-मार्गेण अग्रे धावति', 'Speeds straight forward ahead', '🧭', 'Straight ahead without stopping (सीधा अग्रे)')}
                         >
                           <span>🧭</span>
@@ -761,7 +1555,6 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                       </div>
                     </div>
 
-                    {/* Active Insight Speech Bubble */}
                     {trafficHotspot && (
                       <div className="sgh-traffic-bubble">
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
@@ -790,7 +1583,6 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                       </div>
                     )}
 
-                    {/* Direction Compass Quick Reference Bar */}
                     <div className="sgh-direction-tray">
                       <button
                         type="button"
@@ -872,40 +1664,44 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
 
             {/* Live Story / Sentence Formation Banner */}
             <div className="sgh-maze-parchment">
-              <div className="sgh-mp-label">
-                <span>📜</span>
-                <span>Assembled Sanskrit Sentence / Story Progress:</span>
+              <div className="sgh-mp-header-row">
+                <div className="sgh-mp-label">
+                  <span>📜</span>
+                  <span>Assembled Sanskrit Trail ({steppedCells.length} / {totalPathSteps}):</span>
+                </div>
+                {(steppedCells.length > 0 || isMazeCompleted) && (
+                  <button
+                    type="button"
+                    className="sgh-parchment-speak-btn"
+                    onClick={() =>
+                      playPronunciation(
+                        isMazeCompleted ? activeQuest.fullSentenceOrStoryDev : assembledStoryWords
+                      )
+                    }
+                  >
+                    🔊 {isMazeCompleted ? 'Listen to Full Story' : 'Hear Progress'}
+                  </button>
+                )}
               </div>
               <p className="sgh-mp-text">
                 {assembledStoryWords ? (
                   assembledStoryWords
                 ) : (
-                  <span style={{ color: '#b45309', opacity: 0.7, fontStyle: 'italic', fontSize: '1rem' }}>
-                    Click the starting word in the maze to begin your journey...
+                  <span style={{ color: '#b45309', opacity: 0.78, fontStyle: 'italic', fontSize: '0.98rem' }}>
+                    Tap the pulsing 🚩 Start tile (step #1) to begin your quest, then step onto adjacent Sanskrit tiles!
                   </span>
                 )}
               </p>
-              {steppedCells.length > 0 && (
+              {isMazeCompleted && (
                 <p className="sgh-mp-sub">
                   Meaning: {activeQuest.fullSentenceOrStoryEn}
                 </p>
               )}
             </div>
 
-            {/* Trap Warning Alert */}
+            {/* Trap / Direction Warning Alert */}
             {trapMessage && (
-              <div
-                style={{
-                  background: '#fef2f2',
-                  border: '1.5px solid #fecaca',
-                  borderRadius: '10px',
-                  padding: '0.65rem 1rem',
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
-                  color: '#991b1b',
-                  animation: 'sghFadeIn 0.2s ease-out',
-                }}
-              >
+              <div className="sgh-trap-alert" role="status">
                 {trapMessage}
               </div>
             )}
@@ -914,40 +1710,41 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
             {isMazeCompleted && (
               <div className="sgh-celebrate-box">
                 <span style={{ fontSize: '3rem' }}>🏆</span>
-                <h3 className="sgh-celebrate-title">व्यूह-विजयः! Maze Quest Completed!</h3>
+                <h3 className="sgh-celebrate-title">व्यूह-विजयः! Maze Quest Completed! (+5 ⭐)</h3>
                 <p className="sgh-celebrate-desc">
-                  Outstanding! You successfully formed the full classical Sanskrit story/sentence through the maze!
+                  Outstanding! You navigated all {totalPathSteps} Sanskrit steps without getting trapped!
                 </p>
                 {activeQuest.moral && (
-                  <div
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.85)',
-                      padding: '0.65rem 1.15rem',
-                      borderRadius: '12px',
-                      border: '1px solid #86efac',
-                      margin: '0.35rem 0',
-                    }}
-                  >
+                  <div className="sgh-moral-card">
                     <strong style={{ color: '#065f46' }}>💡 नीति-वचनम् (Moral): </strong>
                     <span style={{ color: '#166534', fontWeight: 600 }}>{activeQuest.moral}</span>
                   </div>
                 )}
-                <div style={{ display: 'flex', gap: '0.65rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                <div className="sgh-celebrate-actions">
+                  <button
+                    type="button"
+                    className="sgh-mode-btn"
+                    style={{ background: '#059669', color: '#ffffff' }}
+                    onClick={() => playPronunciation(activeQuest.fullSentenceOrStoryDev)}
+                  >
+                    <span>🔊 Hear Full Sanskrit Story</span>
+                  </button>
                   <button
                     type="button"
                     className="sgh-mode-btn sgh-mode-btn--active"
                     onClick={handleResetMaze}
                   >
-                    <span>🔄 Replay This Quest</span>
+                    <span>🔄 Replay Quest</span>
                   </button>
                   <button
                     type="button"
                     className="sgh-mode-btn"
                     style={{ background: '#f59e0b', color: '#ffffff' }}
                     onClick={() => {
-                      const curIdx = WORD_MAZE_QUESTS.findIndex((q) => q.id === selectedQuestId);
-                      const nxt = (curIdx + 1) % WORD_MAZE_QUESTS.length;
-                      setSelectedQuestId(WORD_MAZE_QUESTS[nxt].id);
+                      const list = displayedQuests.length > 0 ? displayedQuests : WORD_MAZE_QUESTS;
+                      const curIdx = list.findIndex((q) => q.id === activeQuest.id);
+                      const nxt = (curIdx + 1) % list.length;
+                      setSelectedQuestId(list[nxt].id);
                     }}
                   >
                     <span>Next Quest ➔</span>
@@ -956,15 +1753,15 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                     type="button"
                     className="sgh-mode-btn"
                     style={{ background: '#7c3aed', color: '#ffffff' }}
-                    onClick={() => setActiveGameMode('match')}
+                    onClick={() => switchGameMode('match')}
                   >
-                    <span>Play Match Pairs 🎯</span>
+                    <span>Play Match &amp; Flip 🎯</span>
                   </button>
                 </div>
               </div>
             )}
 
-            {/* Interactive Maze Grid */}
+            {/* Interactive Anti-Spoiler Maze Grid */}
             <div className="sgh-maze-grid-container">
               <div
                 className="sgh-maze-grid"
@@ -976,35 +1773,63 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                   const isStepped = steppedCells.some(
                     (sc) => sc.row === cell.row && sc.col === cell.col
                   );
-                  const isNextStep = cell.isPath && cell.stepOrder === currentMazeStep;
+                  const isAvatarHere =
+                    lastSteppedCell?.row === cell.row && lastSteppedCell?.col === cell.col;
+                  const isStartEntrance =
+                    steppedCells.length === 0 && cell.isPath && cell.stepOrder === 1;
+                  const isHinted =
+                    hintedStep !== null && cell.isPath && cell.stepOrder === hintedStep;
+                  const isReachableNeighbor =
+                    mazeDifficulty === 'guided' &&
+                    !isMazeCompleted &&
+                    !isStepped &&
+                    lastSteppedCell !== null &&
+                    Math.abs(cell.row - lastSteppedCell.row) <= 1 &&
+                    Math.abs(cell.col - lastSteppedCell.col) <= 1;
                   const isTrap = trapCell?.row === cell.row && trapCell?.col === cell.col;
 
                   let cellClass = 'sgh-maze-cell';
                   if (isStepped) cellClass += ' sgh-maze-cell--stepped';
-                  else if (isNextStep) cellClass += ' sgh-maze-cell--current';
+                  if (isAvatarHere) cellClass += ' sgh-maze-cell--avatar';
+                  if (isStartEntrance || isHinted) cellClass += ' sgh-maze-cell--current';
                   else if (isTrap) cellClass += ' sgh-maze-cell--trap';
+                  else if (isReachableNeighbor) cellClass += ' sgh-maze-cell--neighbor';
+
+                  const cleanedGloss = cleanMazeGloss(cell.translation);
+                  const showCellGloss = isStepped || mazeDifficulty === 'guided';
 
                   return (
-                    <div
+                    <button
                       key={`cell-${cell.row}-${cell.col}`}
+                      type="button"
                       className={cellClass}
                       onClick={() => handleMazeCellClick(cell)}
-                      title={`Word: ${cell.word} (${cell.translation})`}
+                      title={showCellGloss ? `${cell.word} — ${cleanedGloss}` : cell.word}
                     >
-                      {/* Step Badge */}
                       {isStepped && cell.stepOrder && (
-                        <span className="sgh-step-badge">✓{cell.stepOrder}</span>
+                        <span className="sgh-step-badge sgh-step-badge--done">
+                          {isAvatarHere ? `${activeQuest.icon}${cell.stepOrder}` : `✓${cell.stepOrder}`}
+                        </span>
                       )}
                       {cell.stepOrder === 1 && !isStepped && (
-                        <span className="sgh-step-badge" style={{ background: '#10b981' }}>🚩 Start</span>
+                        <span className="sgh-step-badge sgh-step-badge--pill" style={{ background: '#10b981' }}>
+                          🚩 Start
+                        </span>
                       )}
                       {cell.stepOrder === totalPathSteps && !isStepped && (
-                        <span className="sgh-step-badge" style={{ background: '#d97706' }}>🏆 Goal</span>
+                        <span className="sgh-step-badge sgh-step-badge--pill" style={{ background: '#d97706' }}>
+                          🏆 Goal
+                        </span>
                       )}
 
                       <span className="sgh-mc-word">{cell.word}</span>
-                      <span className="sgh-mc-trans">{cell.translation}</span>
-                    </div>
+                      {showRoman && (
+                        <span className="sgh-mc-roman">{devanagariToIast(cell.word)}</span>
+                      )}
+                      <span className="sgh-mc-trans">
+                        {showCellGloss ? cleanedGloss : '•••'}
+                      </span>
+                    </button>
                   );
                 })}
               </div>

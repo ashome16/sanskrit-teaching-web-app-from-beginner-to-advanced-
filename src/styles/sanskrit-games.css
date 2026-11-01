@@ -58,6 +58,61 @@
   font-weight: 600;
 }
 
+/* Header Right Controls: Star Wallet + Roman Toggle + Mode Tabs */
+.sgh-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.sgh-star-wallet {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+  color: #78350f;
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow: 0 3px 8px rgba(245, 158, 11, 0.22);
+}
+
+.sgh-star-wallet small {
+  font-size: 0.76rem;
+  color: #92400e;
+  font-weight: 700;
+}
+
+.sgh-roman-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.48rem 0.95rem;
+  border-radius: 999px;
+  border: 1.5px solid #fed7aa;
+  background: #ffffff;
+  color: #78350f;
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.sgh-roman-toggle:hover {
+  background: #fffbeb;
+  border-color: #f59e0b;
+}
+
+.sgh-roman-toggle.is-on {
+  background: #0f766e;
+  border-color: #0d9488;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.28);
+}
+
 /* Studio Mode Tabs (Match vs Maze) */
 .sgh-mode-tabs {
   display: flex;
@@ -372,17 +427,21 @@
 }
 
 .sgh-match-tile {
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
   background: #fffdfa;
   border: 2px solid #ffedd5;
-  border-radius: 12px;
-  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  padding: 0.72rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.65rem;
   cursor: pointer;
   transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
-  min-height: 52px;
+  min-height: 58px;
   box-sizing: border-box;
 }
 
@@ -595,12 +654,42 @@
   color: #ffffff;
   font-size: 0.65rem;
   font-weight: 800;
-  width: 18px;
-  height: 18px;
+  min-width: 20px;
+  height: 19px;
+  padding: 0 5px;
   border-radius: 999px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
+}
+
+.sgh-step-badge--done {
+  background: #059669;
+}
+
+.sgh-step-badge--pill {
+  padding: 0 6px;
+  font-size: 0.64rem;
+}
+
+.sgh-maze-cell--neighbor {
+  border-color: #fbbf24;
+  background: #fffdf5;
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.22);
+}
+
+.sgh-maze-cell--avatar {
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.42);
+}
+
+.sgh-mc-roman {
+  font-size: 0.68rem;
+  color: #0f766e;
+  font-weight: 700;
+  display: block;
+  margin-top: 0.08rem;
 }
 
 .sgh-mc-word {
@@ -974,5 +1063,534 @@
   border-color: #9a3412;
   box-shadow: 0 2px 8px rgba(234, 88, 12, 0.25);
 }
+
+/* ==========================================================================
+   3. NEW MULTI-MODE ARCADE STYLES: Play Styles, Bite-Sized Rounds, Blitz & Memory
+   ========================================================================== */
+
+.sgh-playstyle-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  padding: 0.3rem;
+  border-radius: 14px;
+  flex-wrap: wrap;
+}
+
+.sgh-playstyle-btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #92400e;
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  white-space: nowrap;
+}
+
+.sgh-playstyle-btn:hover {
+  background: #fef3c7;
+  color: #78350f;
+}
+
+.sgh-playstyle-btn.is-active {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(234, 88, 12, 0.26);
+}
+
+/* Bite-Sized Round Selector */
+.sgh-round-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  background: #fffbf2;
+  border: 1.5px solid #fde68a;
+  flex-wrap: wrap;
+}
+
+.sgh-round-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #92400e;
+}
+
+.sgh-round-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.sgh-round-pill {
+  padding: 0.36rem 0.78rem;
+  border-radius: 999px;
+  border: 1.5px solid #fed7aa;
+  background: #ffffff;
+  color: #78350f;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.sgh-round-pill small {
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.sgh-round-pill:hover {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.sgh-round-pill.is-active {
+  background: #d97706;
+  border-color: #b45309;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);
+}
+
+/* Classic Match Left / Right Tile Enhancements */
+.sgh-tile-left-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+}
+
+.sgh-tile-roman {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0f766e;
+  letter-spacing: 0.01em;
+}
+
+.sgh-tile-right-content {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.sgh-tile-emoji {
+  font-size: 1.45rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sgh-tile-right-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+}
+
+.sgh-tile-hint {
+  font-size: 0.74rem;
+  color: #b45309;
+  font-weight: 600;
+}
+
+.sgh-tile-check {
+  color: #059669;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.sgh-celebrate-actions {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 4-Card Audio Blitz Stage */
+.sgh-blitz-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.sgh-blitz-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sgh-blitz-mode-btns {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.sgh-stat-chip--timer {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+.sgh-stat-chip--timer.is-urgent {
+  background: #fef2f2;
+  border-color: #f87171;
+  color: #dc2626;
+  animation: sghPulseCell 0.9s infinite ease-in-out;
+}
+
+.sgh-blitz-prompt-card {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 65%, #ffedd5 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 18px;
+  padding: 1.35rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.14);
+}
+
+.sgh-blitz-eyebrow {
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #b45309;
+}
+
+.sgh-blitz-word-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.sgh-blitz-sanskrit {
+  font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Sanskrit', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #7c2d12;
+  line-height: 1.25;
+}
+
+.sgh-blitz-speak-btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1.5px solid #d97706;
+  background: #ffffff;
+  color: #92400e;
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sgh-blitz-speak-btn:hover {
+  background: #ea580c;
+  border-color: #c2410c;
+  color: #ffffff;
+}
+
+.sgh-blitz-roman {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.sgh-blitz-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+
+.sgh-blitz-option-card {
+  background: #ffffff;
+  border: 2.5px solid #fed7aa;
+  border-radius: 16px;
+  padding: 1.15rem 1rem;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 3px 10px rgba(120, 53, 15, 0.05);
+}
+
+.sgh-blitz-option-card:hover {
+  border-color: #f59e0b;
+  background: #fffbeb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.16);
+}
+
+.sgh-blitz-option-card.is-correct {
+  background: #ecfdf5;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+}
+
+.sgh-blitz-option-card.is-wrong {
+  background: #fef2f2;
+  border-color: #ef4444;
+  animation: sghShake 0.35s ease;
+}
+
+.sgh-blitz-opt-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.sgh-blitz-opt-eng {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.sgh-blitz-opt-hint {
+  font-size: 0.74rem;
+  color: #64748b;
+}
+
+/* 12-Card Memory Flip Grid */
+.sgh-memory-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sgh-memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.sgh-memory-card {
+  min-height: 112px;
+  border-radius: 16px;
+  border: 2px solid #fed7aa;
+  background: linear-gradient(145deg, #fff7ed 0%, #ffedd5 100%);
+  padding: 0.65rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.1);
+}
+
+.sgh-memory-card:hover {
+  transform: translateY(-2px);
+  border-color: #f59e0b;
+}
+
+.sgh-memory-card.is-flipped {
+  background: #ffffff;
+  border-color: #ea580c;
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.16);
+}
+
+.sgh-memory-card.is-matched {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-color: #10b981;
+  cursor: default;
+  box-shadow: 0 3px 8px rgba(16, 185, 129, 0.2);
+}
+
+.sgh-mem-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.sgh-mem-lotus {
+  font-size: 1.85rem;
+  line-height: 1;
+}
+
+.sgh-mem-tap {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #9a3412;
+}
+
+.sgh-mem-face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.sgh-mem-badge {
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: #b45309;
+  background: #fef3c7;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+}
+
+.sgh-mem-sa-word {
+  font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Sanskrit', serif;
+  font-size: 1.18rem;
+  font-weight: 900;
+  color: #7c2d12;
+  line-height: 1.25;
+}
+
+.sgh-mem-roman {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.sgh-mem-emoji {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.sgh-mem-en-word {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.25;
+}
+
+/* Word Maze Helper Toolbar & Parchment Speak Button */
+.sgh-maze-helper-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  background: #fffbf2;
+  border: 1.5px solid #fde68a;
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.sgh-maze-diff-pills,
+.sgh-maze-assist-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.sgh-assist-btn {
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.sgh-assist-btn--audio {
+  background: #ecfdf5;
+  border: 1.5px solid #34d399;
+  color: #065f46;
+}
+
+.sgh-assist-btn--audio:hover {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.sgh-assist-btn--hint {
+  background: #fff7ed;
+  border: 1.5px solid #fb923c;
+  color: #9a3412;
+}
+
+.sgh-assist-btn--hint:hover {
+  background: #ea580c;
+  color: #ffffff;
+}
+
+.sgh-mp-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+
+.sgh-mp-header-row .sgh-mp-label {
+  margin-bottom: 0;
+}
+
+.sgh-parchment-speak-btn {
+  padding: 0.32rem 0.75rem;
+  border-radius: 999px;
+  border: 1.5px solid #f59e0b;
+  background: #ffffff;
+  color: #92400e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sgh-parchment-speak-btn:hover {
+  background: #ea580c;
+  border-color: #c2410c;
+  color: #ffffff;
+}
+
+.sgh-trap-alert {
+  background: #fff7ed;
+  border: 1.5px solid #fdba74;
+  border-radius: 12px;
+  padding: 0.68rem 1rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #9a3412;
+  animation: sghFadeIn 0.2s ease-out;
+}
+
+.sgh-moral-card {
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0.65rem 1.15rem;
+  border-radius: 12px;
+  border: 1px solid #86efac;
+  margin: 0.35rem 0;
+}
+
+.sgh-maze-cell {
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .sgh-blitz-options-grid {
+    grid-template-columns: 1fr;
+  }
+  .sgh-memory-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .sgh-memory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 

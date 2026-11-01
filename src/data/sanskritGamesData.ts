@@ -652,6 +652,7 @@ export interface MazeCell {
 export interface WordMazeQuest {
   id: string;
   type: MazeType;
+  audience?: 'preschool' | 'all' | 'deepakam';
   titleDev: string;
   titleEn: string;
   icon: string;
@@ -664,7 +665,87 @@ export interface WordMazeQuest {
   moral?: string;
 }
 
+export const PRESCHOOL_MAZE_IDS = new Set([
+  'maze_preschool_ganesha_fruits',
+  'maze_preschool_numbers_1_10',
+  'maze_identify_fruits_veg',
+]);
+
 export const WORD_MAZE_QUESTS: WordMazeQuest[] = [
+  // PRESCHOOL MAZE 1: गजस्य फल-मार्गः (Baby Elephant's Sweet Fruit Trail)
+  {
+    id: 'maze_preschool_ganesha_fruits',
+    type: 'identification',
+    audience: 'preschool',
+    titleDev: 'गजस्य फल-मार्गः (शिशु-व्यूहः)',
+    titleEn: "Baby Elephant's Sweet Fruit Trail (Ages 3–7)",
+    icon: '🐘',
+    missionObjective: 'Help little Ganesha reach his sweet Modak by stepping ONLY on yummy fruits & treats — dodge rocks, shoes, and toys!',
+    gridRows: 4,
+    gridCols: 4,
+    fullSentenceOrStoryDev: 'आम्रम् ➔ कदलीफलम् ➔ सेवम् ➔ द्राक्षा ➔ नारङ्गम् ➔ दाडिमम् ➔ मोदकः ➔ श्रीगणेशः ॥',
+    fullSentenceOrStoryEn: 'Mango ➔ Banana ➔ Apple ➔ Grapes ➔ Orange ➔ Pomegranate ➔ Sweet Modak ➔ Happy Baby Ganesha!',
+    moral: 'मधुरं फलं स्वास्थ्यकरम् (Wholesome fruits give sweet strength and joy!).',
+    cells: [
+      { row: 0, col: 0, word: 'आम्रम्', translation: 'Mango 🥭', isPath: true, stepOrder: 1 },
+      { row: 0, col: 1, word: 'कदलीफलम्', translation: 'Banana 🍌', isPath: true, stepOrder: 2 },
+      { row: 0, col: 2, word: 'सेवम्', translation: 'Apple 🍎', isPath: true, stepOrder: 3 },
+      { row: 0, col: 3, word: 'पाषाणः', translation: 'Hard Rock 🪨', isPath: false },
+
+      { row: 1, col: 0, word: 'उपानहौ', translation: 'Shoes 👟', isPath: false },
+      { row: 1, col: 1, word: 'नारङ्गम्', translation: 'Orange 🍊', isPath: true, stepOrder: 5 },
+      { row: 1, col: 2, word: 'द्राक्षा', translation: 'Grapes 🍇', isPath: true, stepOrder: 4 },
+      { row: 1, col: 3, word: 'छत्रम्', translation: 'Umbrella ☂️', isPath: false },
+
+      { row: 2, col: 0, word: 'कन्दुकम्', translation: 'Ball ⚽', isPath: false },
+      { row: 2, col: 1, word: 'दाडिमम्', translation: 'Pomegranate ❤️', isPath: true, stepOrder: 6 },
+      { row: 2, col: 2, word: 'मोदकः', translation: 'Sweet Modak 🥟', isPath: true, stepOrder: 7 },
+      { row: 2, col: 3, word: 'सम्मार्जनी', translation: 'Broom 🧹', isPath: false },
+
+      { row: 3, col: 0, word: 'घटी', translation: 'Clock ⏰', isPath: false },
+      { row: 3, col: 1, word: 'तालः', translation: 'Padlock 🔒', isPath: false },
+      { row: 3, col: 2, word: 'श्रीगणेशः', translation: 'Ganesha 🐘🏆', isPath: true, stepOrder: 8 },
+      { row: 3, col: 3, word: 'चक्रम्', translation: 'Wheel 🛞', isPath: false },
+    ],
+  },
+
+  // PRESCHOOL MAZE 2: संख्या-सोपानम् १–१० (Count 1 to 10 Stepping Stones)
+  {
+    id: 'maze_preschool_numbers_1_10',
+    type: 'sequencing',
+    audience: 'preschool',
+    titleDev: 'संख्या-सोपानम् १–१० (Count 1 to 10)',
+    titleEn: 'Count 1 to 10 Stepping Stones (Ages 3–7)',
+    icon: '🔢',
+    missionObjective: 'Hop across the river stones counting strictly from १ एकम् (1) up to १० दश (10) in Sanskrit!',
+    gridRows: 4,
+    gridCols: 4,
+    fullSentenceOrStoryDev: 'एकम् (१) ➔ द्वे (२) ➔ त्रीणि (३) ➔ चत्वारि (४) ➔ पञ्च (५) ➔ षट् (६) ➔ सप्त (७) ➔ अष्ट (८) ➔ नव (९) ➔ दश (१०) ॥',
+    fullSentenceOrStoryEn: 'One (1) ➔ Two (2) ➔ Three (3) ➔ Four (4) ➔ Five (5) ➔ Six (6) ➔ Seven (7) ➔ Eight (8) ➔ Nine (9) ➔ Ten (10)!',
+    moral: 'एकैकं सोपानं विजयं नयति (Step by step leads all the way to victory!).',
+    cells: [
+      { row: 0, col: 0, word: 'एकम् १', translation: 'One · 1️⃣', isPath: true, stepOrder: 1 },
+      { row: 0, col: 1, word: 'द्वे २', translation: 'Two · 2️⃣', isPath: true, stepOrder: 2 },
+      { row: 0, col: 2, word: 'त्रीणि ३', translation: 'Three · 3️⃣', isPath: true, stepOrder: 3 },
+      { row: 0, col: 3, word: 'चत्वारि ४', translation: 'Four · 4️⃣', isPath: true, stepOrder: 4 },
+
+      { row: 1, col: 0, word: 'शून्यम् ०', translation: 'Zero · 0️⃣', isPath: false },
+      { row: 1, col: 1, word: 'विंशतिः २०', translation: 'Twenty · 20', isPath: false },
+      { row: 1, col: 2, word: 'षट् ६', translation: 'Six · 6️⃣', isPath: true, stepOrder: 6 },
+      { row: 1, col: 3, word: 'पञ्च ५', translation: 'Five · 5️⃣', isPath: true, stepOrder: 5 },
+
+      { row: 2, col: 0, word: 'त्रिंशत् ३०', translation: 'Thirty · 30', isPath: false },
+      { row: 2, col: 1, word: 'अष्ट ८', translation: 'Eight · 8️⃣', isPath: true, stepOrder: 8 },
+      { row: 2, col: 2, word: 'सप्त ७', translation: 'Seven · 7️⃣', isPath: true, stepOrder: 7 },
+      { row: 2, col: 3, word: 'पञ्चाशत् ५०', translation: 'Fifty · 50', isPath: false },
+
+      { row: 3, col: 0, word: 'शतम् १००', translation: 'Hundred · 100', isPath: false },
+      { row: 3, col: 1, word: 'नव ९', translation: 'Nine · 9️⃣', isPath: true, stepOrder: 9 },
+      { row: 3, col: 2, word: 'दश १०', translation: 'Ten · 🔟 🏆', isPath: true, stepOrder: 10 },
+      { row: 3, col: 3, word: 'सहस्रम् १०००', translation: 'Thousand · 1000', isPath: false },
+    ],
+  },
+
   // STORY MAZE 1: पिपासितः काकः (The Thirsty Crow)
   {
     id: 'maze_thirsty_crow',
@@ -738,7 +819,7 @@ export const WORD_MAZE_QUESTS: WordMazeQuest[] = [
       { row: 0, col: 4, word: 'व्याघ्रः', translation: 'Tiger (Trap)', isPath: false },
 
       // Row 1
-      { row: 0, col: 0, word: 'गजः', translation: 'Elephant (Trap)', isPath: false },
+      { row: 1, col: 0, word: 'गजः', translation: 'Elephant', isPath: false },
       { row: 1, col: 1, word: 'कूर्दति', translation: 'Leaps', isPath: true, stepOrder: 7 },
       { row: 1, col: 2, word: 'शरीरे', translation: 'On body', isPath: true, stepOrder: 6 },
       { row: 1, col: 3, word: 'मूषकः', translation: 'Mouse', isPath: true, stepOrder: 5 },
@@ -784,12 +865,12 @@ export const WORD_MAZE_QUESTS: WordMazeQuest[] = [
       { row: 0, col: 0, word: 'अपठत्', translation: 'Read (Past)', isPath: true, stepOrder: 1 },
       { row: 0, col: 1, word: 'पठति', translation: 'Reads (Pres)', isPath: true, stepOrder: 2 },
       { row: 0, col: 2, word: 'पठिष्यति', translation: 'Will read (Fut)', isPath: true, stepOrder: 3 },
-      { row: 0, col: 3, word: 'गमिष्यति', translation: 'Trap Fut', isPath: false },
-      { row: 0, col: 4, word: 'खादति', translation: 'Trap Pres', isPath: false },
+      { row: 0, col: 3, word: 'गमिष्यति', translation: 'Will go (Fut)', isPath: false },
+      { row: 0, col: 4, word: 'खादति', translation: 'Eats (Pres)', isPath: false },
 
       // Row 1: Go triplet
-      { row: 1, col: 0, word: 'लिखति', translation: 'Trap Pres', isPath: false },
-      { row: 1, col: 1, word: 'अलिखत्', translation: 'Trap Past', isPath: false },
+      { row: 1, col: 0, word: 'लिखति', translation: 'Writes (Pres)', isPath: false },
+      { row: 1, col: 1, word: 'अलिखत्', translation: 'Wrote (Past)', isPath: false },
       { row: 1, col: 2, word: 'अगच्छत्', translation: 'Went (Past)', isPath: true, stepOrder: 4 },
       { row: 1, col: 3, word: 'गच्छति', translation: 'Goes (Pres)', isPath: true, stepOrder: 5 },
       { row: 1, col: 4, word: 'गमिष्यति', translation: 'Will go (Fut)', isPath: true, stepOrder: 6 },
@@ -798,8 +879,8 @@ export const WORD_MAZE_QUESTS: WordMazeQuest[] = [
       { row: 2, col: 0, word: 'अखादत्', translation: 'Ate (Past)', isPath: true, stepOrder: 9 },
       { row: 2, col: 1, word: 'खादति', translation: 'Eats (Pres)', isPath: true, stepOrder: 8 },
       { row: 2, col: 2, word: 'खादिष्यति', translation: 'Will eat (Fut)', isPath: true, stepOrder: 7 },
-      { row: 2, col: 3, word: 'पिबति', translation: 'Trap Pres', isPath: false },
-      { row: 2, col: 4, word: 'अपिबत्', translation: 'Trap Past', isPath: false },
+      { row: 2, col: 3, word: 'पिबति', translation: 'Drinks (Pres)', isPath: false },
+      { row: 2, col: 4, word: 'अपिबत्', translation: 'Drank (Past)', isPath: false },
 
       // Row 3: Become triplet
       { row: 3, col: 0, word: 'अभवत्', translation: 'Became (Past)', isPath: true, stepOrder: 10 },

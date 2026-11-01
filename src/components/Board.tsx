@@ -10,6 +10,7 @@ import {
   type LeitnerStats,
 } from '../utils/leitnerTracker';
 import { SanskritGamesHub } from './SanskritGamesHub';
+import { devanagariToIast } from '../utils/devanagariToIast';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
 
@@ -1117,6 +1118,27 @@ const Board: React.FC<BoardProps> = ({
       return true;
     }
   });
+  const [showJodoIast, setShowJodoIast] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('jodo-show-iast') === 'true';
+    } catch {
+      return false;
+    }
+  });
+  const [sessionSolvedStreak, setSessionSolvedStreak] = useState<number>(0);
+  const [sessionSolvedTotal, setSessionSolvedTotal] = useState<number>(0);
+
+  const toggleJodoIast = () => {
+    setShowJodoIast((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('jodo-show-iast', next ? 'true' : 'false');
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
 
   const toggleHelp = () => {
     setShowHelp((prev) => {
@@ -1758,6 +1780,8 @@ const Board: React.FC<BoardProps> = ({
       if (evaluateChosen(activePuzzle, nextChosen)) {
         setChecked(true);
         setWrongAttempt(false);
+        setSessionSolvedStreak((s) => s + 1);
+        setSessionSolvedTotal((t) => t + 1);
         soundEffects.playSuccessDing();
         if (activePuzzle?.target) {
           playPronunciation(activePuzzle.target);
@@ -1770,6 +1794,7 @@ const Board: React.FC<BoardProps> = ({
       } else {
         setChecked(false);
         setWrongAttempt(true);
+        setSessionSolvedStreak(0);
         soundEffects.playEncouragementDing();
         if (activePuzzle?.target) {
           leitnerTracker.recordAttempt(activePuzzle.target, false, {
@@ -1790,6 +1815,8 @@ const Board: React.FC<BoardProps> = ({
     if (evaluateChosen(activePuzzle, nextChosen)) {
       setChecked(true);
       setWrongAttempt(false);
+      setSessionSolvedStreak((s) => s + 1);
+      setSessionSolvedTotal((t) => t + 1);
       soundEffects.playSuccessDing();
       if (activePuzzle?.target) {
         playPronunciation(activePuzzle.target);
@@ -1802,6 +1829,7 @@ const Board: React.FC<BoardProps> = ({
     } else {
       setChecked(false);
       setWrongAttempt(true);
+      setSessionSolvedStreak(0);
       soundEffects.playEncouragementDing();
       if (activePuzzle?.target) {
         leitnerTracker.recordAttempt(activePuzzle.target, false, {
@@ -1998,6 +2026,21 @@ const Board: React.FC<BoardProps> = ({
     stopPlayAllTiles();
     if (!activePuzzles.length) return;
     setPuzzleIndexByShelf((current) => ({ ...current, [activeShelf]: 0 }));
+    resetPuzzleUi();
+  };
+
+  /** Jump to a surprise random puzzle on the current shelf. */
+  const goRandomPuzzle = () => {
+    if (playingRef.current) stopBoardPlayAll();
+    stopPlayAllTiles();
+    if (activePuzzles.length <= 1) return;
+    soundEffects.playPuzzleSnap();
+    setPuzzleIndexByShelf((current) => {
+      const cur = current[activeShelf] ?? 0;
+      let pick = Math.floor(Math.random() * activePuzzles.length);
+      if (pick === cur) pick = (cur + 1) % activePuzzles.length;
+      return { ...current, [activeShelf]: pick };
+    });
     resetPuzzleUi();
   };
 
@@ -2241,8 +2284,8 @@ const Board: React.FC<BoardProps> = ({
       >
         <span className="mode-tab-icon">🎯</span>
         <div className="mode-tab-text">
-          <span className="mode-tab-title">युग्म-मेलनम् · Match Pairs</span>
-          <span className="mode-tab-sub">20+ Sciences, Vedic Occupations &amp; More</span>
+          <span className="mode-tab-title">युग्म-मेलनम् · Match &amp; Flip</span>
+          <span className="mode-tab-sub">Classic Pairs, 4-Card Blitz &amp; Memory Flip</span>
         </div>
       </button>
 
@@ -2259,7 +2302,7 @@ const Board: React.FC<BoardProps> = ({
         <span className="mode-tab-icon">🌀</span>
         <div className="mode-tab-text">
           <span className="mode-tab-title">शब्द-व्यूहः · Word Mazes</span>
-          <span className="mode-tab-sub">Story Quests, Sequencing &amp; Trap Evasion</span>
+          <span className="mode-tab-sub">Preschool Trails, Stories &amp; Grammar Quests</span>
         </div>
       </button>
     </div>
@@ -2268,6 +2311,11 @@ const Board: React.FC<BoardProps> = ({
       <SanskritGamesHub
         initialMode={boardStudioMode}
         initialCategory={initialCategory}
+        embeddedInBoard
+        onModeChange={(nextMode) => {
+          setBoardStudioMode(nextMode);
+          window.location.hash = `#${nextMode}`;
+        }}
         onGoBack={() => {
           setBoardStudioMode('jodo');
           window.location.hash = '#jodo';
@@ -2323,6 +2371,23 @@ const Board: React.FC<BoardProps> = ({
             <span className="shelf-summary-count-badge">
               🧩 {activePuzzles.length.toLocaleString()} Puzzles
             </span>
+            {sessionSolvedTotal > 0 && (
+              <span
+                className="board-session-streak-badge"
+                title={`Solved ${sessionSolvedTotal} puzzle(s) this session · Current streak: ${sessionSolvedStreak}`}
+              >
+                🔥 {sessionSolvedStreak > 0 ? `${sessionSolvedStreak} Streak` : `${sessionSolvedTotal} Solved`}
+              </span>
+            )}
+            <button
+              type="button"
+              className={`board-iast-toggle-btn${showJodoIast ? ' is-active' : ''}`}
+              onClick={toggleJodoIast}
+              aria-pressed={showJodoIast}
+              title="Show or hide Roman (IAST) pronunciation guide on Sanskrit words and tiles"
+            >
+              🔤 {showJodoIast ? 'IAST: ON' : 'IAST Phonetics'}
+            </button>
             <button
               type="button"
               className={`board-leitner-toggle-btn${leitnerMode ? ' is-active' : ''}`}
@@ -2495,6 +2560,16 @@ const Board: React.FC<BoardProps> = ({
             >
               ▶
             </button>
+            <button
+              type="button"
+              className="puzzle-nav-random"
+              onClick={goRandomPuzzle}
+              disabled={activePuzzles.length <= 1}
+              title="Surprise Me! Jump to a random puzzle on this shelf"
+              aria-label="Jump to random puzzle"
+            >
+              🎲
+            </button>
           </div>
         </div>
 
@@ -2525,6 +2600,9 @@ const Board: React.FC<BoardProps> = ({
           <div className="puzzle-lead">
             <div className="puzzle-lead-graphic" aria-hidden="true">{puzzleGraphic}</div>
             <p className={`puzzle-lead-word${learnPulse ? ' learn-word--settle' : ''}${leadMark}`}>{leadWord}</p>
+            {showJodoIast && leadWord && (
+              <span className="puzzle-lead-iast">{devanagariToIast(leadWord)}</span>
+            )}
             <p className={`puzzle-lead-english${meaningShown ? leadMark : ''}`} aria-hidden={!meaningShown}>
               {meaningShown ? leadEnglish : ''}
             </p>
@@ -2573,6 +2651,9 @@ const Board: React.FC<BoardProps> = ({
                   >
                     <span className="tile-num" aria-hidden="true">{index + 1}</span>
                     <span>{tile}</span>
+                    {showJodoIast && (
+                      <small className="puzzle-tile-iast">{devanagariToIast(cleanTile(tile))}</small>
+                    )}
                   </button>
                 );
               })}
@@ -2592,6 +2673,9 @@ const Board: React.FC<BoardProps> = ({
                   <span className="puzzle-lead-graphic" aria-hidden="true">{puzzleGraphic}</span>
                   <span className="jodo-goal-tag">🎯 जोडो (Join):</span>
                   <span className={`jodo-goal-target${leadMark}`}>{activePuzzle.target}</span>
+                  {showJodoIast && activePuzzle.target && (
+                    <span className="jodo-goal-iast">{devanagariToIast(activePuzzle.target)}</span>
+                  )}
                   {meaningShown && activePuzzle.english && (
                     <span className={`jodo-goal-meaning${leadMark}`} title="Meaning in English">
                       ({activePuzzle.english})
@@ -2674,6 +2758,9 @@ const Board: React.FC<BoardProps> = ({
                   >
                     <span className="tile-num" aria-hidden="true">{index + 1}</span>
                     <span>{tile}</span>
+                    {showJodoIast && (
+                      <small className="puzzle-tile-iast">{devanagariToIast(cleanTile(tile))}</small>
+                    )}
                     {markedTile === index && <em className="tile-next-tag">next</em>}
                   </button>
                 );
