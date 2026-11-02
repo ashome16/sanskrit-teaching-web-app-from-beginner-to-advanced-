@@ -6387,3 +6387,272 @@
   letter-spacing: 0.02em;
   text-shadow: 0 0 12px rgba(253, 224, 71, 0.25);
 }
+
+/* ==========================================================================
+   Enhanced Cosmic Blue Shade for Krīḍā-Śālā (Gaming Page Theme Contrast)
+   ========================================================================== */
+
+/* Outer Gaming Page Shell */
+.vl-page {
+  background-color: #dceaf9 !important;
+  background-image: 
+    radial-gradient(85% 55% at 50% -15%, rgba(56, 189, 248, 0.4), transparent 75%),
+    radial-gradient(65% 45% at 85% 95%, rgba(168, 85, 247, 0.22), transparent 70%),
+    radial-gradient(55% 55% at 15% 65%, rgba(14, 165, 233, 0.25), transparent 70%),
+    linear-gradient(rgba(56, 189, 248, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.09) 1px, transparent 1px) !important;
+  border: 1.5px solid rgba(147, 197, 253, 0.7) !important;
+  box-shadow: 0 12px 40px rgba(14, 116, 144, 0.14), inset 0 0 80px rgba(219, 234, 254, 0.6) !important;
+}
+
+/* Hub Hero Banner */
+.vl-hub-hero {
+  background: linear-gradient(135deg, #e0effe 0%, #dbeafe 50%, #eff6ff 100%) !important;
+  border: 1.5px solid #93c5fd !important;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.12), inset 0 1px 0 #ffffff !important;
+  color: #0f172a !important;
+}
+
+.vl-hub-hero .vl-hub-title {
+  color: #0f172a !important;
+}
+
+.vl-hub-hero .vl-hub-title-dev {
+  color: #0284c7 !important;
+}
+
+.vl-hub-hero .vl-hub-tagline {
+  color: #1e40af !important;
+  font-weight: 700 !important;
+}
+
+.vl-hub-hero .vl-hub-range {
+  color: #0369a1 !important;
+  font-weight: 600 !important;
+}
+
+.vl-hub-hero .vl-hub-sloka {
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+}
+
+.vl-hub-hero .vl-hub-lead {
+  color: #334155 !important;
+}
+
+.vl-hub-hero .vl-hub-link {
+  color: #0284c7 !important;
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.1) !important;
+}
+
+.vl-hub-hero .vl-hub-link:hover {
+  background: #dbeafe !important;
+  border-color: #60a5fa !important;
+  color: #0369a1 !important;
+}
+
+.vl-hub-stars-badge {
+  background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%) !important;
+  border: 1.5px solid #7dd3fc !important;
+  color: #0369a1 !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.12) !important;
+}
+
+/* 3 Philosophy Pillars (Observation, Learn from nature, Purpose-driven) */
+.vl-hub-pillars li {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1.5px solid #bfdbfe !important;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(2, 132, 199, 0.08) !important;
+  transition: all 0.2s ease;
+}
+
+.vl-hub-pillars li:hover {
+  border-color: #38bdf8 !important;
+  background: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.18) !important;
+}
+
+.vl-hub-pillars strong {
+  color: #0284c7 !important;
+}
+
+.vl-hub-pillars b {
+  color: #0f172a !important;
+}
+
+.vl-hub-pillars small {
+  color: #475569 !important;
+}
+
+/* Featured Quests Strip */
+.vl-hub-featured-strip {
+  background: linear-gradient(135deg, #e0effe 0%, #dbeafe 60%, #e0f2fe 100%) !important;
+  border: 1.5px solid #93c5fd !important;
+  box-shadow: 0 6px 24px rgba(2, 132, 199, 0.12) !important;
+}
+
+.vl-hub-feat-kicker {
+  color: #0284c7 !important;
+  font-weight: 800 !important;
+}
+
+.vl-hub-feat-heading {
+  color: #0f172a !important;
+}
+
+.vl-hub-feat-card {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+  box-shadow: 0 3px 12px rgba(2, 132, 199, 0.08) !important;
+}
+
+.vl-hub-feat-card:hover {
+  border-color: #0284c7 !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f8ff 100%) !important;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.2) !important;
+  transform: translateY(-3px) !important;
+}
+
+.vl-hub-feat-icon {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%) !important;
+  border: 1px solid #7dd3fc !important;
+}
+
+.vl-hub-feat-cta {
+  color: #0284c7 !important;
+  font-weight: 800 !important;
+}
+
+/* Dual Navigation Rails (Learning Level & Scientific Domain) */
+.vl-filter-control-panel {
+  background: rgba(224, 236, 252, 0.94) !important;
+  border: 1.5px solid #93c5fd !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 6px 24px rgba(2, 132, 199, 0.12) !important;
+}
+
+.vl-rail-label {
+  color: #0369a1 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+}
+
+.vl-level-step {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+  color: #1e293b !important;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.06) !important;
+}
+
+.vl-level-step:hover {
+  border-color: #38bdf8 !important;
+  background: #f0f7ff !important;
+  transform: translateY(-1px);
+}
+
+.vl-level-step.is-active {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+}
+
+.vl-level-step.is-active * {
+  color: #ffffff !important;
+}
+
+.vl-domain-chip {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+  color: #1e293b !important;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.06) !important;
+}
+
+.vl-domain-chip:hover {
+  border-color: #38bdf8 !important;
+  background: #f0f7ff !important;
+  transform: translateY(-1px);
+}
+
+.vl-domain-chip.is-active {
+  background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%) !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3) !important;
+}
+
+/* Simulation Level Bands & Cards */
+.vl-band-title {
+  color: #0f172a !important;
+}
+
+.vl-band-title small {
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+}
+
+.vl-level-num {
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35) !important;
+}
+
+.vl-game-card {
+  background: #ffffff !important;
+  border: 1.5px solid #dbeafe !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.vl-game-card:hover {
+  border-color: #0284c7 !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%) !important;
+  box-shadow: 0 10px 28px rgba(2, 132, 199, 0.22) !important;
+  transform: translateY(-3px) !important;
+}
+
+.vl-game-icon {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%) !important;
+  border: 1px solid #bae6fd !important;
+}
+
+.vl-game-title {
+  color: #0f172a !important;
+}
+
+.vl-game-dev {
+  color: #0284c7 !important;
+}
+
+.vl-game-play {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3) !important;
+  font-weight: 800 !important;
+}
+
+/* Stage 1 Preschool Wonder Showcase */
+.vl-preschool-showcase {
+  background: linear-gradient(135deg, #e0effe 0%, #dbeafe 50%, #f0fdf4 100%) !important;
+  border: 2px solid #7dd3fc !important;
+  box-shadow: 0 8px 30px rgba(2, 132, 199, 0.14) !important;
+}
+
+/* Search bar on Gaming Hub */
+.vl-search-input {
+  background: #ffffff !important;
+  border: 1.5px solid #93c5fd !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08) !important;
+  color: #0f172a !important;
+}
+
+.vl-search-input:focus {
+  border-color: #0284c7 !important;
+  outline: 2px solid #38bdf8 !important;
+}
