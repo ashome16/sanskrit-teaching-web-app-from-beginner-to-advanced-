@@ -2197,16 +2197,18 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                   '--banner-bg': act.bannerGradient,
                 } as React.CSSProperties}
               >
-                <div className="psw-cc-banner" style={{ position: 'relative' }}>
+                <div className="psw-cc-banner">
                   {wasPlayed && (
                     <span className="psw-card-sticker-badge" title="Explored!">
                       ⭐ Explored
                     </span>
                   )}
-                  <span className="psw-cc-lead-emoji" aria-hidden="true">{act.bannerVisual.emojiLead}</span>
+                  <div className="psw-cc-hero-pod">
+                    <span className="psw-cc-lead-emoji" aria-hidden="true">{act.bannerVisual.emojiLead}</span>
+                  </div>
                   <div className="psw-cc-decor-row" aria-hidden="true">
-                    {act.bannerVisual.decorEmojis.map((em, i) => (
-                      <span key={i}>{em}</span>
+                    {act.bannerVisual.decorEmojis.slice(0, 4).map((em, i) => (
+                      <span key={i} className="psw-cc-decor-bubble">{em}</span>
                     ))}
                   </div>
                   <div className="psw-cc-sa-ribbon" lang="sa">
@@ -2221,8 +2223,10 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                   </div>
 
                   <h3 className="psw-cc-title">
-                    <span>{act.icon}</span>
-                    <span>{act.labelSa} · {act.labelEn}</span>
+                    <span className="psw-cc-title-icon">{act.icon}</span>
+                    <span className="psw-cc-title-text">
+                      <strong lang="sa">{act.labelSa}</strong> · <span>{act.labelEn}</span>
+                    </span>
                   </h3>
 
                   <p className="psw-cc-desc">{act.desc}</p>
@@ -2238,7 +2242,7 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                     className={`psw-cc-play-btn${isCurrent ? ' is-active-btn' : ''}`}
                     onClick={() => launchActivity(act.id)}
                   >
-                    {isCurrent ? '▶ Keep playing' : '▶ Play'}
+                    {isCurrent ? '▶ Keep Playing' : '▶ Play'}
                   </button>
                 </div>
               </article>

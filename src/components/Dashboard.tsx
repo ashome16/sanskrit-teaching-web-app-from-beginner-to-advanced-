@@ -1184,6 +1184,16 @@ const Dashboard: React.FC = () => {
               <span className="dashboard-nav-sanskrit">गृहम्</span>
               <span className="dashboard-nav-secondary">Home</span>
             </button>
+            <button
+              type="button"
+              className={`dashboard-nav-games dashboard-nav-item${activeView === 'science-lab' ? ' active' : ''}`}
+              onClick={() => openScienceLab()}
+              title="विज्ञान-क्रीडा-शाला · Interactive Sanskrit Science & STEM Games, Simulations & Preschool Wonder Lab"
+            >
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🎮</span>
+              <span className="dashboard-nav-sanskrit">क्रीडा-शाला</span>
+              <span className="dashboard-nav-secondary">{englishFirst ? 'Sanskrit Games' : 'Games'}</span>
+            </button>
             <div
               className={`dashboard-nav-group${(activeView === 'reader' && lesson?.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
             >

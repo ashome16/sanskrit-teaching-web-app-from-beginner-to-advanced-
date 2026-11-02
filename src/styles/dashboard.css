@@ -275,6 +275,50 @@
   grid-row: 1 / span 2;
 }
 
+.dashboard-nav button.dashboard-nav-games {
+  height: 38px;
+  min-height: 38px;
+  max-height: 38px;
+  box-sizing: border-box;
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  column-gap: 0.36rem;
+  padding: 0.22rem 0.72rem 0.22rem 0.52rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  border: 1.5px solid #38bdf8;
+  color: #0369a1;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.12);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dashboard-nav button.dashboard-nav-games .dashboard-nav-icon {
+  grid-row: 1 / span 2;
+}
+
+.dashboard-nav button.dashboard-nav-games:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 100%);
+  border-color: #0284c7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  color: #0284c7;
+}
+
+.dashboard-nav button.dashboard-nav-games.active {
+  background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
+  color: #ffffff !important;
+  border-color: #38bdf8;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+}
+
+.dashboard-nav button.dashboard-nav-games.active .dashboard-nav-sanskrit,
+.dashboard-nav button.dashboard-nav-games.active .dashboard-nav-secondary {
+  color: #ffffff !important;
+}
+
 .dashboard-nav button.dashboard-nav-item .dashboard-nav-primary,
 .dashboard-nav button.dashboard-nav-item .dashboard-nav-secondary,
 .dashboard-nav button.dashboard-nav-item .dashboard-nav-sanskrit {
