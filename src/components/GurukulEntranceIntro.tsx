@@ -75,6 +75,13 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
       countdownIntervalRef.current = null;
     }
 
+    // Play sacred temple bell chime on entrance
+    try {
+      gurukulAmbiance.playTempleBell(432);
+    } catch {
+      // AudioContext fallback
+    }
+
     // Fade out audio gracefully
     gurukulAmbiance.stopDawnAmbiance(1.0);
 
@@ -230,19 +237,25 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
           अपने ज्ञान, अध्ययन और आत्म-सुधार के कार्य में कभी आलसी या लापरवाह न बनें; यह एक आजीवन साधना है।
         </p>
 
-        {/* Bioacoustic Sound Indicator */}
-        <div
-          className={`gurukul-intro-sound-pill${isSuspended ? ' is-suspended-prompt' : ''}`}
-          role="button"
-          aria-label="Morning birdsong and river ambiance"
+        {/* Sacred Temple Bell Entrance Action */}
+        <button
+          type="button"
+          className={`gurukul-intro-bell-btn${isSuspended ? ' is-suspended-prompt' : ''}`}
           onClick={(e) => {
             e.stopPropagation();
             void gurukulAmbiance.resume();
             setIsSuspended(false);
+            gurukulAmbiance.playTempleBell(432);
+            triggerExit();
           }}
-          title={isSuspended ? 'Tap to awaken morning soundscape' : 'Morning soundscape is ON'}
+          aria-label="Ring the sacred temple bell and enter Gurukul"
+          title="Tap the bell to ring and enter the Gurukul"
         >
-          <span>{isSuspended ? '🔊' : '🌿'}</span>
+          <span className="gurukul-intro-bell-icon" aria-hidden="true">🔔</span>
+          <span className="gurukul-intro-bell-text">
+            <strong className="gurukul-bell-txt-en">Tap the bell and enter</strong>
+            <small className="gurukul-bell-txt-sa" lang="sa">घण्टानादं कृत्वा प्रविश</small>
+          </span>
           {!isSuspended && (
             <div className="gurukul-sound-waves" aria-hidden="true">
               <div className="gurukul-sound-bar" />
@@ -251,7 +264,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
               <div className="gurukul-sound-bar" />
             </div>
           )}
-        </div>
+        </button>
 
         {/* Controls */}
         <div className="gurukul-intro-actions">
@@ -261,7 +274,8 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             onClick={triggerExit}
             autoFocus
           >
-            <span lang="sa">गुरुकुलं प्रविश</span> · <span>Enter Gurukul</span>
+            <span className="gurukul-bell-enter-icon" aria-hidden="true">🔔</span>
+            <span lang="sa">गुरुकुलं प्रविश</span> · <span>Tap Bell &amp; Enter</span>
             <span>➔</span>
           </button>
 

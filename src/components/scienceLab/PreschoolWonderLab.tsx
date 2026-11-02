@@ -817,7 +817,7 @@ const ACTIVITIES: ActivityItem[] = [
   {
     id: 'shapes',
     labelSa: 'आकाराः',
-    labelEn: 'Shapes & Forms',
+    labelEn: 'Shapes & Indian Geometry',
     icon: '🎨',
     cluster: 'creative',
     clusterLabel: 'रचना · Creative Play',
@@ -895,7 +895,7 @@ const ACTIVITIES: ActivityItem[] = [
   {
     id: 'bharat',
     labelSa: 'भारत-मानचित्रम्',
-    labelEn: 'Map of India',
+    labelEn: 'Living Map of India',
     icon: '🗺️',
     cluster: 'nature',
     clusterLabel: 'प्रकृति · Living Nature',
@@ -1031,7 +1031,7 @@ const ACTIVITIES: ActivityItem[] = [
   {
     id: 'seasons',
     labelSa: 'ऋतवः',
-    labelEn: 'Six Classical Seasons',
+    labelEn: '6 Seasons & Months',
     icon: '🌸',
     level: 'next',
     cluster: 'nature',
@@ -1048,13 +1048,13 @@ const ACTIVITIES: ActivityItem[] = [
     },
   },
   {
-    id: 'spices', labelSa: 'मसालानि', labelEn: '12 Kitchen Spices', icon: '🌶️', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
+    id: 'spices', labelSa: 'उपस्कराः', labelEn: 'Spice Aroma Adventure', icon: '🌶️', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
     gradeBadge: 'Ages 2–6 · Spices Deck', desc: 'Learn 12 fragrant kitchen spices with interactive flashcards, sizzle pot & 4-picture quest!',
     features: ['🃏 12 Flashcards', '🍲 Amma\'s Kadai', '🎯 4-Picture Quest'],
     bannerGradient: 'linear-gradient(135deg, #fde68a 0%, #fecaca 100%)', accentColor: '#ea580c',
     bannerVisual: {
       image: '/preschool/spices/cover.webp',
-      imageAlt: 'The Spice Adventure · मसालानि',
+      imageAlt: 'The Spice Adventure · उपस्कराः',
       emojiLead: '🌶️',
       decorEmojis: ['🫚', '🧄', '🌿', '🟡', '⚫', '🟤'],
       taglineSa: 'पाकशालायाः सुगन्धः',
@@ -2281,10 +2281,11 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                   </div>
 
                   <h3 className="psw-cc-title">
-                    <span className="psw-cc-title-icon">{act.icon}</span>
-                    <span className="psw-cc-title-text">
-                      <strong lang="sa">{act.labelSa}</strong> · <span>{act.labelEn}</span>
-                    </span>
+                    <span className="psw-cc-title-icon" aria-hidden="true">{act.icon}</span>
+                    <div className="psw-cc-title-text">
+                      <strong className="psw-cc-title-en">{act.labelEn}</strong>
+                      <span className="psw-cc-title-sa" lang="sa">{act.labelSa}</span>
+                    </div>
                   </h3>
 
                   <p className="psw-cc-desc">{act.desc}</p>
@@ -2382,9 +2383,8 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
               <span className="psw-pab-hero-emoji">{currentActivity.icon}</span>
               <div className="psw-pab-titles">
                 <span className="psw-pab-playing-kicker">Playing Game:</span>
-                <strong>
-                  <span lang="sa">{currentActivity.labelSa}</span> · {currentActivity.labelEn}
-                </strong>
+                <strong className="psw-pab-en">{currentActivity.labelEn}</strong>
+                <span className="psw-pab-sa" lang="sa">{currentActivity.labelSa}</span>
               </div>
               <SayBtn text={currentActivity.labelSa} label="Hear" className="psw-pab-say-chip" />
 
@@ -2403,14 +2403,14 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                   <optgroup label="🌱 Level 1 · Preschool (Ages 2–5)">
                     {ACTIVITIES.filter((a) => (a.level ?? 'preschool') !== 'next').map((a) => (
                       <option key={a.id} value={a.id}>
-                        {a.icon} {a.labelSa} · {a.labelEn}
+                        {a.icon} {a.labelEn} · {a.labelSa}
                       </option>
                     ))}
                   </optgroup>
                   <optgroup label="🚀 Next Level Games (Ages 6–10)">
                     {ACTIVITIES.filter((a) => a.level === 'next').map((a) => (
                       <option key={a.id} value={a.id}>
-                        {a.icon} {a.labelSa} · {a.labelEn}
+                        {a.icon} {a.labelEn} · {a.labelSa}
                       </option>
                     ))}
                   </optgroup>
