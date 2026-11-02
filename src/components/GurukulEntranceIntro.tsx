@@ -237,46 +237,38 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
           अपने ज्ञान, अध्ययन और आत्म-सुधार के कार्य में कभी आलसी या लापरवाह न बनें; यह एक आजीवन साधना है।
         </p>
 
-        {/* Sacred Temple Bell Entrance Action */}
-        <button
-          type="button"
-          className={`gurukul-intro-bell-btn${isSuspended ? ' is-suspended-prompt' : ''}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            void gurukulAmbiance.resume();
-            setIsSuspended(false);
-            gurukulAmbiance.playTempleBell(432);
-            triggerExit();
-          }}
-          aria-label="Ring the sacred temple bell and enter Gurukul"
-          title="Tap the bell to ring and enter the Gurukul"
-        >
-          <span className="gurukul-intro-bell-icon" aria-hidden="true">🔔</span>
-          <span className="gurukul-intro-bell-text">
-            <strong className="gurukul-bell-txt-en">Tap the bell and enter</strong>
-            <small className="gurukul-bell-txt-sa" lang="sa">घण्टानादं कृत्वा प्रविश</small>
-          </span>
-          {!isSuspended && (
-            <div className="gurukul-sound-waves" aria-hidden="true">
-              <div className="gurukul-sound-bar" />
-              <div className="gurukul-sound-bar" />
-              <div className="gurukul-sound-bar" />
-              <div className="gurukul-sound-bar" />
-            </div>
-          )}
-        </button>
-
-        {/* Controls */}
+        {/* Unified Sacred Temple Bell Entrance Action & Sound Toggle */}
         <div className="gurukul-intro-actions">
           <button
             type="button"
-            className="gurukul-intro-enter-btn"
-            onClick={triggerExit}
+            className={`gurukul-intro-enter-btn${isSuspended ? ' is-suspended-prompt' : ''}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              void gurukulAmbiance.resume();
+              setIsSuspended(false);
+              gurukulAmbiance.playTempleBell(432);
+              triggerExit();
+            }}
             autoFocus
+            aria-label="Ring the sacred temple bell and enter Gurukul"
+            title="Tap the bell to ring and enter the Gurukul"
           >
-            <span className="gurukul-bell-enter-icon" aria-hidden="true">🔔</span>
-            <span lang="sa">गुरुकुलं प्रविश</span> · <span>Tap Bell &amp; Enter</span>
-            <span>➔</span>
+            <span className="gurukul-intro-bell-icon" aria-hidden="true">🔔</span>
+            <span className="gurukul-intro-bell-text">
+              <span className="gurukul-bell-txt-main">
+                <span lang="sa">गुरुकुलं प्रविश</span> · <span>Tap Bell &amp; Enter</span>
+              </span>
+              <small className="gurukul-bell-txt-sub" lang="sa">घण्टानादं कृत्वा प्रविश</small>
+            </span>
+            {!isSuspended && !isMuted && (
+              <div className="gurukul-sound-waves" aria-hidden="true">
+                <div className="gurukul-sound-bar" />
+                <div className="gurukul-sound-bar" />
+                <div className="gurukul-sound-bar" />
+                <div className="gurukul-sound-bar" />
+              </div>
+            )}
+            <span className="gurukul-enter-arrow" aria-hidden="true">➔</span>
           </button>
 
           <button

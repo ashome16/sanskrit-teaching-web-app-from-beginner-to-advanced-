@@ -381,6 +381,16 @@
   line-height: 1.45;
 }
 
+.gurukul-intro-verse-en {
+  font-size: 0.88rem;
+  color: #fed7aa;
+  margin: 0 0 1.5rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  max-width: 440px;
+}
+
 .gurukul-intro-subtitle {
   font-size: 0.92rem;
   color: #fed7aa;
@@ -524,25 +534,68 @@
 }
 
 .gurukul-intro-enter-btn {
-  background: linear-gradient(135deg, #BA3C00 0%, #963000 100%);
+  background: linear-gradient(135deg, #c2410c 0%, #9a3412 50%, #7c2d12 100%);
   color: #ffffff;
-  border: none;
+  border: 1.5px solid #f59e0b;
   border-radius: 999px;
-  padding: 0.75rem 1.75rem;
+  padding: 0.65rem 1.6rem;
   font-size: 1.02rem;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(186, 60, 0, 0.4), 0 0 15px rgba(217, 119, 6, 0.3);
-  transition: all 0.2s ease;
+  box-shadow: 0 6px 22px rgba(154, 52, 18, 0.45), 0 0 18px rgba(245, 158, 11, 0.35);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .gurukul-intro-enter-btn:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(186, 60, 0, 0.5);
-  background: linear-gradient(135deg, #c44200 0%, #a33400 100%);
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 8px 28px rgba(154, 52, 18, 0.55), 0 0 25px rgba(251, 191, 36, 0.5);
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 50%, #9a3412 100%);
+  border-color: #fbbf24;
+}
+
+.gurukul-intro-enter-btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.gurukul-bell-txt-main {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  line-height: 1.25;
+}
+
+.gurukul-bell-txt-sub {
+  font-family: 'Noto Serif Devanagari', 'Noto Sans Devanagari', serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fde68a;
+  margin-top: 2px;
+  display: block;
+  line-height: 1.2;
+}
+
+.gurukul-enter-arrow {
+  font-size: 1.15rem;
+  color: #fde68a;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.gurukul-intro-enter-btn:hover .gurukul-enter-arrow {
+  transform: translateX(3px);
+  color: #ffffff;
+}
+
+.gurukul-intro-enter-btn.is-suspended-prompt {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  border-color: #fde047;
+  animation: promptPulse 1.8s ease-in-out infinite;
 }
 
 .gurukul-intro-view-btn {
@@ -790,9 +843,19 @@
     gap: 0.5rem;
   }
   .gurukul-intro-enter-btn {
-    padding: 0.6rem 1.25rem;
-    font-size: 0.92rem;
+    padding: 0.55rem 1.15rem;
+    font-size: 0.9rem;
     min-height: 42px;
+    gap: 0.55rem;
+  }
+  .gurukul-bell-txt-main {
+    font-size: 0.88rem;
+  }
+  .gurukul-bell-txt-sub {
+    font-size: 0.68rem;
+  }
+  .gurukul-intro-bell-icon {
+    font-size: 1.25rem;
   }
   .gurukul-intro-mute-btn {
     padding: 0.55rem 0.95rem;
