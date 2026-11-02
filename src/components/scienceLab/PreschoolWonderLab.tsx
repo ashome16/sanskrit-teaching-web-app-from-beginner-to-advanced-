@@ -1562,6 +1562,7 @@ const VishvaMatchGame: React.FC<{ onEarnStar?: () => void }> = ({ onEarnStar }) 
 };
 
 export interface PreschoolWonderLabProps extends LabSegmentProps {
+  initialActivity?: string | null;
   onBrowseMainLabs?: () => void;
   onSelectMainLab?: (targetId: string) => void;
 }
@@ -1570,8 +1571,14 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
   onNextLab,
   onBrowseMainLabs,
   onSelectMainLab,
+  initialActivity,
 }) => {
-  const [tab, setTab] = useState<PreschoolTab>('shapes');
+  const [tab, setTab] = useState<PreschoolTab>(() => {
+    if (initialActivity && ACTIVITIES.some((a) => a.id === initialActivity)) {
+      return initialActivity as PreschoolTab;
+    }
+    return 'shapes';
+  });
   const [festival, setFestival] = useState<FestivalItem>(FESTIVALS[0]);
   const [festQuiz, setFestQuiz] = useState<FestivalItem | null>(null);
   const [festStars, setFestStars] = useState(0);
@@ -1579,8 +1586,20 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
   const [showFestivalMatch, setShowFestivalMatch] = useState<boolean>(true);
   const [levelTier, setLevelTier] = useState<WonderLevelTier>('preschool');
   const [selectedCluster, setSelectedCluster] = useState<ClusterCategory>('all');
-  const [viewMode, setViewMode] = useState<'cards' | 'play'>('cards');
+  const [viewMode, setViewMode] = useState<'cards' | 'play'>(() => {
+    if (initialActivity && ACTIVITIES.some((a) => a.id === initialActivity)) {
+      return 'play';
+    }
+    return 'cards';
+  });
   const playArenaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (initialActivity && ACTIVITIES.some((a) => a.id === initialActivity)) {
+      setTab(initialActivity as PreschoolTab);
+      setViewMode('play');
+    }
+  }, [initialActivity]);
 
   // Persistent Preschool Star Jar & Sticker Progress
   const [totalStars, setTotalStars] = useState<number>(() => {
@@ -2229,6 +2248,12 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                         alt={act.bannerVisual.imageAlt || act.labelEn}
                         className="psw-cc-hero-img"
                         loading="lazy"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (target.src.endsWith('.webp')) {
+                            target.src = target.src.replace(/\.webp$/, '.jpg');
+                          }
+                        }}
                       />
                       <div className="psw-cc-hero-scrim" />
                     </div>
@@ -2337,18 +2362,18 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                   setViewMode('cards');
                   soundEffects.playStrokeChime();
                 }}
-                title="Return to Preschool Games Catalog"
+                title="Return to 24 Preschool Games Grid"
               >
-                🎴 Preschool Games ({ACTIVITIES.length})
+                🎴 All 24 Preschool Games
               </button>
               {onBrowseMainLabs && (
                 <button
                   type="button"
                   className="psw-pab-main-lab-btn"
                   onClick={onBrowseMainLabs}
-                  title="Explore All 17 Vijñāna Lab STEM Simulations"
+                  title="Return to Complete Games Directory"
                 >
-                  🔬 Main Lab (17)
+                  🎮 🧭 All Games Hub
                 </button>
               )}
             </div>

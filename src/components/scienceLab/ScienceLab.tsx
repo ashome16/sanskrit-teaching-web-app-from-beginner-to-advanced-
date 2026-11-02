@@ -507,6 +507,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
     if (initialSegment && HASH_ALIASES[initialSegment]) return HASH_ALIASES[initialSegment];
     return readHash() || 'preschool-wonder';
   });
+  const [preschoolActivity, setPreschoolActivity] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'mission-control' | 'workbench' | 'catalog'>(() => {
     if (initialSegment === 'catalog') return 'catalog';
     // Direct entry to games without scrolling down
@@ -532,6 +533,17 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
 
   const handleLaunchSim = (targetId: LabSegmentId) => {
     setActive(targetId);
+    setPreschoolActivity(null);
+    setViewMode('workbench');
+    soundEffects.playCelebrationChime();
+    window.requestAnimationFrame(() => {
+      simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
+  const handleLaunchPreschoolActivity = (actId: string) => {
+    setActive('preschool-wonder');
+    setPreschoolActivity(actId);
     setViewMode('workbench');
     soundEffects.playCelebrationChime();
     window.requestAnimationFrame(() => {
@@ -689,57 +701,6 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 <p className="vl-hub-tagline">Look. Learn from nature. Know with purpose.</p>
                 <p className="vl-hub-range">Soft play shapes → Kauṭilya’s harvest · Ages 2–16+</p>
                 <p className="vl-hub-sloka" lang="sa">प्रकृतिं पश्य, प्रकृतेः शिक्षस्व, प्रयोजनाय जानीहि।</p>
-
-                {/* Quick Age Jump Chips */}
-                <div className="vl-hub-age-jumper" aria-label="Jump by Child Age">
-                  <span className="vl-hub-age-title">Jump by Age:</span>
-                  <div className="vl-hub-age-chips">
-                    <button
-                      type="button"
-                      className={`vl-hub-age-chip ${filterLevel === 'preschool' ? 'is-active' : ''}`}
-                      onClick={() => {
-                        setFilterLevel('preschool');
-                        setFilterCat('all');
-                        soundEffects.playStrokeChime();
-                      }}
-                    >
-                      👶 Ages 2–6 · Wonder (24 Games)
-                    </button>
-                    <button
-                      type="button"
-                      className={`vl-hub-age-chip ${filterLevel === 'primary' ? 'is-active' : ''}`}
-                      onClick={() => {
-                        setFilterLevel('primary');
-                        setFilterCat('all');
-                        soundEffects.playStrokeChime();
-                      }}
-                    >
-                      🎒 Ages 6–10 · Primary (Matter & Orbits)
-                    </button>
-                    <button
-                      type="button"
-                      className={`vl-hub-age-chip ${filterLevel === 'middle' ? 'is-active' : ''}`}
-                      onClick={() => {
-                        setFilterLevel('middle');
-                        setFilterCat('all');
-                        soundEffects.playStrokeChime();
-                      }}
-                    >
-                      🔭 Ages 10–14 · Middle (Space & Atoms)
-                    </button>
-                    <button
-                      type="button"
-                      className={`vl-hub-age-chip ${filterLevel === 'high' ? 'is-active' : ''}`}
-                      onClick={() => {
-                        setFilterLevel('high');
-                        setFilterCat('all');
-                        soundEffects.playStrokeChime();
-                      }}
-                    >
-                      🏛️ Ages 14+ · Scholar (Geometry & Ujjain)
-                    </button>
-                  </div>
-                </div>
               </div>
               <div className="vl-hub-art-wrap">
                 <img
@@ -772,7 +733,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               <li><span aria-hidden="true">🎯</span><strong lang="sa">प्रयोजन-युक्त ज्ञानम्</strong><b>Purpose-driven knowledge</b><small>Every game asks: how does this help us live well?</small></li>
             </ul>
 
-            {/* Popular Starting Quests */}
+            {/* Popular Starting Quests across all 4 learning stages */}
             <div className="vl-hub-featured-strip">
               <div className="vl-hub-featured-header">
                 <span className="vl-hub-feat-kicker">🌟 Popular Explorations</span>
@@ -788,10 +749,25 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 >
                   <div className="vl-hub-feat-icon">🌟</div>
                   <div className="vl-hub-feat-body">
-                    <span className="vl-hub-feat-badge vl-badge--preschool">Ages 2–6 · 24 Games</span>
-                    <h4 className="vl-hub-feat-title">Wonder Playground & Living India Map</h4>
-                    <p className="vl-hub-feat-desc">The Spice Adventure, storybook India Map, animal safari, color mixing, and temple bells with gentle audio.</p>
+                    <span className="vl-hub-feat-badge vl-badge--preschool">Stage 1 · Ages 2–6 · 24 Games</span>
+                    <h4 className="vl-hub-feat-title">Wonder Playground &amp; Living India Map</h4>
+                    <p className="vl-hub-feat-desc">The Spice Adventure, living India Map, animal safari, color mixing, and temple bells with gentle audio.</p>
                     <span className="vl-hub-feat-cta">Launch Playground ➔</span>
+                  </div>
+                </div>
+                <div
+                  className="vl-hub-feat-card"
+                  onClick={() => handleLaunchSim('asato-ma')}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('asato-ma')}
+                >
+                  <div className="vl-hub-feat-icon">🕯️</div>
+                  <div className="vl-hub-feat-body">
+                    <span className="vl-hub-feat-badge vl-badge--primary">Stage 2 · Ages 6–10 · Physics</span>
+                    <h4 className="vl-hub-feat-title">Heat &amp; Matter Mystery (Mass Invariance)</h4>
+                    <p className="vl-hub-feat-desc">Fire up the Viveka Scanner in the Rasaśāstra crucible. Melt, boil, and burn matter — mass stays constant.</p>
+                    <span className="vl-hub-feat-cta">Launch Crucible ➔</span>
                   </div>
                 </div>
                 <div
@@ -803,7 +779,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 >
                   <div className="vl-hub-feat-icon">🛰️</div>
                   <div className="vl-hub-feat-body">
-                    <span className="vl-hub-feat-badge vl-badge--middle">Ages 10–14 · Space</span>
+                    <span className="vl-hub-feat-badge vl-badge--middle">Stage 3 · Ages 10–14 · Space</span>
                     <h4 className="vl-hub-feat-title">Chandrayaan Moon Mission</h4>
                     <p className="vl-hub-feat-desc">Execute soft touchdown at Shiv Shakti point, deploy Pragyan rover, and fire the LIBS laser spectrometer.</p>
                     <span className="vl-hub-feat-cta">Launch Moon Mission ➔</span>
@@ -811,17 +787,17 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 </div>
                 <div
                   className="vl-hub-feat-card"
-                  onClick={() => handleLaunchSim('paramanu')}
+                  onClick={() => handleLaunchSim('vedic-geometry')}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('paramanu')}
+                  onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('vedic-geometry')}
                 >
-                  <div className="vl-hub-feat-icon">⚛️</div>
+                  <div className="vl-hub-feat-icon">📐</div>
                   <div className="vl-hub-feat-body">
-                    <span className="vl-hub-feat-badge vl-badge--middle">Ages 10–14 · Chemistry</span>
-                    <h4 className="vl-hub-feat-title">Atom Builder: Make Matter</h4>
-                    <p className="vl-hub-feat-desc">Bond primordial Paramāṇus into Dvyaṇuka and Tryaṇuka molecules following Sage Kaṇāda's Vaiśeṣika physics.</p>
-                    <span className="vl-hub-feat-cta">Launch Atom Lab ➔</span>
+                    <span className="vl-hub-feat-badge vl-badge--scholar">Stage 4 · Ages 14+ · Geometry</span>
+                    <h4 className="vl-hub-feat-title">Vedic Altar Mastery &amp; Rope Geometry</h4>
+                    <p className="vl-hub-feat-desc">Build Śulba fire altars (Kūrma, Rathacakra, Śyena), solve transformation theorems, and explore cosmic geometry.</p>
+                    <span className="vl-hub-feat-cta">Launch Altar Studio ➔</span>
                   </div>
                 </div>
               </div>
@@ -892,9 +868,72 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           {LEVEL_STEPS.filter((st) => st.id !== 'all' && (filterLevel === 'all' || filterLevel === st.id)).map((st) => {
             const games = visibleSegments.filter((x) => x.level === st.id);
             if (!games.length) return null;
+
+            if (st.id === 'preschool') {
+              return (
+                <section key={st.id} className="vl-level-band vl-level-band--preschool" aria-label={st.label}>
+                  <h2 className="vl-band-title">
+                    <span className="vl-level-num">{st.num}</span> {st.label} <small>{st.ages} · 24 Interactive Games</small>
+                  </h2>
+                  <div className="vl-preschool-showcase">
+                    <div className="vl-ps-header-row">
+                      <div className="vl-ps-header-left">
+                        <span className="vl-ps-badge">👶 24 Preschool Discovery Games · Ages 2–6</span>
+                        <h3 className="vl-ps-title">
+                          Wonder Playground <span className="vl-ps-title-sa" lang="sa">शिशु-क्रीडा-वाटिका</span>
+                        </h3>
+                        <p className="vl-ps-desc">
+                          Pure picture-and-sound sensory playground for toddlers and young children: Indian geometry (ज्यामिति), vibrant color mixing, friendly animal sounds, sacred temple bells, storybook living India map, yoga poses, and sweet orchard fruits.
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        className="vl-ps-launch-btn"
+                        onClick={() => handleLaunchSim('preschool-wonder')}
+                      >
+                        <span>🚀 Enter Wonder Playground (24 Games) ➔</span>
+                      </button>
+                    </div>
+
+                    <div className="vl-ps-quick-bar">
+                      <div className="vl-ps-quick-bar-heading">
+                        <span>⚡ Quick Play Popular Preschool Games:</span>
+                      </div>
+                      <div className="vl-ps-activities-grid">
+                        {[
+                          { id: 'shapes', icon: '🎨', sa: 'आकाराः', en: 'Shapes & Indian Geometry' },
+                          { id: 'colors', icon: '🧪', sa: 'वर्ण-मेलनम्', en: 'Color Magic Cauldron' },
+                          { id: 'fruits', icon: '🍎', sa: 'फल-सङ्ग्रहः', en: 'Orchard Fruit Picker' },
+                          { id: 'animals', icon: '🐮', sa: 'पशु-ध्वनयः', en: 'Animal Safari & Sounds' },
+                          { id: 'bharat', icon: '🗺️', sa: 'भारत-मानचित्रम्', en: 'Living Map of India' },
+                          { id: 'yoga', icon: '🧘', sa: 'योगासनानि', en: 'Yoga Pose Match' },
+                          { id: 'spices', icon: '🌶️', sa: 'उपस्कराः', en: 'Spice Aroma Adventure' },
+                          { id: 'seasons', icon: '🌸', sa: 'ऋतवः', en: '6 Seasons & Months' },
+                        ].map((item) => (
+                          <button
+                            key={item.id}
+                            type="button"
+                            className="vl-ps-act-btn"
+                            onClick={() => handleLaunchPreschoolActivity(item.id)}
+                            title={`Play ${item.sa} (${item.en})`}
+                          >
+                            <span className="vl-ps-act-icon">{item.icon}</span>
+                            <span className="vl-ps-act-body">
+                              <strong className="vl-ps-act-sa" lang="sa">{item.sa}</strong>
+                              <span className="vl-ps-act-en">{item.en}</span>
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              );
+            }
+
             return (
               <section key={st.id} className="vl-level-band" aria-label={st.label}>
-                <h2 className="vl-band-title"><span className="vl-level-num">{st.num}</span> {st.label} <small>{st.ages}</small></h2>
+                <h2 className="vl-band-title"><span className="vl-level-num">{st.num}</span> {st.label} <small>{st.ages} · {games.length} simulations</small></h2>
                 <div className="vl-band-grid">
                   {games.map((g) => (
                     <button key={g.id} type="button" className="vl-game-card" onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
@@ -924,21 +963,28 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           )}
 
           {/* ================================================================
-              EDUCATIONAL FRAMEWORK: SCIENCE LAB GAMES ACROSS ALL LEARNING LEVELS
+              EDUCATIONAL FRAMEWORK: COLLAPSIBLE CURRICULUM & STANDARDS MATRIX
               ================================================================ */}
-          <section className="vl-seo-games-section" aria-label="About Vijñāna Science Lab Games and STEM Learning Levels">
-            <div className="vl-sgs-header">
-              <div className="vl-sgs-badge">
-                <span>🔬</span>
-                <span>SCIENCE LAB CURRICULUM · विज्ञान-क्रीडा-शाला</span>
-              </div>
-              <h2 className="vl-sgs-title">
-                Science Lab Games: Interactive Sanskrit STEM Sandboxes Across All Learning Levels
-              </h2>
-              <p className="vl-sgs-lead">
-                Welcome to the <strong>Vijñāna Science Lab</strong> — a living virtual laboratory combining classical Indian scientific inquiries (पदार्थ, खगोल, आयुर्वेद, छन्दस्, शुल्ब) with modern empirical physics, biology, aerospace engineering, and computational mathematics. Designed for children, school students, and scholars, every simulation operates as an experiential, gamified sandbox.
-              </p>
-            </div>
+          <details className="vl-curriculum-accordion">
+            <summary className="vl-curriculum-summary">
+              <span className="vl-cs-icon">📚</span>
+              <span className="vl-cs-title">Science Lab Curriculum &amp; STEM Standards Matrix</span>
+              <span className="vl-cs-badge">NCERT · CBSE · NEP 2020 · Ages 2–16+ (Click to Expand)</span>
+            </summary>
+            <div className="vl-curriculum-body">
+              <section className="vl-seo-games-section" aria-label="About Vijñāna Science Lab Games and STEM Learning Levels">
+                <div className="vl-sgs-header">
+                  <div className="vl-sgs-badge">
+                    <span>🔬</span>
+                    <span>SCIENCE LAB CURRICULUM · विज्ञान-क्रीडा-शाला</span>
+                  </div>
+                  <h2 className="vl-sgs-title">
+                    Science Lab Games: Interactive Sanskrit STEM Sandboxes Across All Learning Levels
+                  </h2>
+                  <p className="vl-sgs-lead">
+                    Welcome to the <strong>Vijñāna Science Lab</strong> — a living virtual laboratory combining classical Indian scientific inquiries (पदार्थ, खगोल, आयुर्वेद, छन्दस्, शुल्ब) with modern empirical physics, biology, aerospace engineering, and computational mathematics. Designed for children, school students, and scholars, every simulation operates as an experiential, gamified sandbox.
+                  </p>
+                </div>
 
             {/* 5-Level Educational Progression Grid */}
             <div className="vl-sgs-levels-grid">
@@ -1164,6 +1210,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               </div>
             </div>
           </section>
+          </div>
+          </details>
         </div>
       )}
 
@@ -1179,11 +1227,12 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               onClick={() => {
                 setViewMode('catalog');
                 soundEffects.playStrokeChime();
+                catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
-              title="Back to the Vijñāna Lab level path"
+              title="Return to Games Directory (All 41 Games)"
             >
-              <span aria-hidden="true">◀</span>
-              <span>All levels</span>
+              <span aria-hidden="true">🎮 ◀</span>
+              <span>All Games Hub</span>
             </button>
 
             <div className="vl-wb-active-mission-title">
@@ -1217,11 +1266,30 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 }}
                 aria-label="Switch science simulation"
               >
-                {LAB_SEGMENTS.map((s) => (
-                  <option key={s.id} value={s.id}>
-                    {s.icon} {s.title} ({s.ageRange})
-                  </option>
-                ))}
+                <optgroup label="Stage 1: Wonder Playground (Ages 2–6 · 24 Games)">
+                  <option value="preschool-wonder">🌟 Wonder Playground (Ages 2–6 · 24 Activities)</option>
+                </optgroup>
+                <optgroup label="Stage 2: Primary Explorers (Ages 6–10)">
+                  {LAB_SEGMENTS.filter((s) => s.level === 'primary').map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.icon} {s.title} ({s.ageRange})
+                    </option>
+                  ))}
+                </optgroup>
+                <optgroup label="Stage 3: Middle Missions (Ages 10–14)">
+                  {LAB_SEGMENTS.filter((s) => s.level === 'middle').map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.icon} {s.title} ({s.ageRange})
+                    </option>
+                  ))}
+                </optgroup>
+                <optgroup label="Stage 4: Scholar Studio (Ages 14+)">
+                  {LAB_SEGMENTS.filter((s) => s.level === 'high' || s.level === 'advanced').map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.icon} {s.title} ({s.ageRange})
+                    </option>
+                  ))}
+                </optgroup>
               </select>
               <button
                 type="button"
@@ -1333,7 +1401,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           <Suspense fallback={<SimLoader />}>
             {active === 'preschool-wonder' && (
               <PreschoolWonderLab
-                onNextLab={() => handleNavigateLab(nextSeg.id)}
+                initialActivity={preschoolActivity}
+                onNextLab={() => handleNavigateLab('asato-ma')}
                 onBrowseMainLabs={() => {
                   setViewMode('catalog');
                   soundEffects.playStrokeChime();
@@ -1374,115 +1443,180 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
 
 
         {/* ================================================================
-            NEXT ADVENTURE GATEWAY (Clean, Modern Gurukul Aesthetic)
+            NEXT ADVENTURE GATEWAY (Clean, Level-Aware Progression)
             ================================================================ */}
-        <section className="vl-adventure-gateway" aria-label="Next science simulation">
-          <div className="vl-ag-header">
-            <div className="vl-ag-kicker-row">
-              <span className="vl-ag-kicker">✨ NEXT ADVENTURE ON YOUR PATH</span>
-              <span className="vl-ag-progress-pill">
-                Quest {currentIndex + 1} of {LAB_SEGMENTS.length}
-              </span>
-            </div>
-            <h3 className="vl-ag-heading">
-              Ready for your next science quest?
-            </h3>
-          </div>
-
-          <div className="vl-ag-card">
-            <div className="vl-ag-card-hero">
-              <div className="vl-ag-icon-badge" aria-hidden="true">
-                <span className="vl-ag-big-icon">{nextSeg.icon}</span>
-                <span className="vl-ag-level-chip">{nextSeg.levelLabel}</span>
+        {active === 'preschool-wonder' ? (
+          <section className="vl-preschool-gateway" aria-label="Preschool Next Adventure Gateway">
+            <div className="vl-pgw-card">
+              <div className="vl-pgw-header">
+                <span className="vl-pgw-badge">🌟 MORE WONDER GAMES · शिशु-क्रीडा</span>
+                <h3>Keep playing more games in the Wonder Playground:</h3>
               </div>
-              <div className="vl-ag-card-info">
-                <span className="vl-ag-dev" lang="sa">{nextSeg.dev}</span>
-                <h4 className="vl-ag-title">{nextSeg.title}</h4>
-                <div className="vl-ag-badges">
-                  <span className="vl-ag-badge vl-ag-badge--age">🎯 {nextSeg.ageRange}</span>
-                  <span className="vl-ag-badge vl-ag-badge--subj">🔬 {nextSeg.subject}</span>
-                  <span className="vl-ag-badge vl-ag-badge--cat">🏷️ {CATEGORY_CHIP[nextSeg.category]}</span>
-                  <span className="vl-ag-badge vl-ag-badge--time">⏱️ 3–5 min quest</span>
+              <div className="vl-pgw-grid">
+                {[
+                  { id: 'shapes', icon: '🎨', sa: 'आकाराः', en: 'Shapes & Indian Geometry' },
+                  { id: 'colors', icon: '🧪', sa: 'वर्ण-मेलनम्', en: 'Color Magic Cauldron' },
+                  { id: 'fruits', icon: '🍎', sa: 'फल-सङ्ग्रहः', en: 'Orchard Fruit Picker' },
+                  { id: 'animals', icon: '🐮', sa: 'पशु-ध्वनयः', en: 'Animal Safari & Sounds' },
+                  { id: 'bharat', icon: '🗺️', sa: 'भारत-मानचित्रम्', en: 'Living Map of India' },
+                  { id: 'yoga', icon: '🧘', sa: 'योगासनानि', en: 'Yoga Pose Match' },
+                  { id: 'spices', icon: '🌶️', sa: 'उपस्कराः', en: 'Spice Aroma Adventure' },
+                  { id: 'seasons', icon: '🌸', sa: 'ऋतवः', en: '6 Seasons & Months' },
+                ].map((act) => (
+                  <button
+                    key={act.id}
+                    type="button"
+                    className="vl-pgw-btn"
+                    onClick={() => {
+                      setPreschoolActivity(act.id);
+                      soundEffects.playStrokeChime();
+                      simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vl-pgw-icon">{act.icon}</span>
+                    <span className="vl-pgw-text">
+                      <strong lang="sa">{act.sa}</strong>
+                      <small>{act.en}</small>
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="vl-pgw-bottom-bar">
+                <div className="vl-pgw-graduate-box">
+                  <span className="vl-pgw-grad-badge">🎒 READY FOR BIGGER CHALLENGES?</span>
+                  <p>Explore Primary School STEM (Ages 6–10): Heat &amp; Matter Mystery (Mass Invariance) or Planet Gravity Sandbox.</p>
+                  <button
+                    type="button"
+                    className="vl-pgw-grad-btn"
+                    onClick={() => handleNavigateLab('asato-ma')}
+                  >
+                    <span>🚀 Try Primary Lab: Heat &amp; Matter ➔</span>
+                  </button>
                 </div>
-                <p className="vl-ag-blurb">{nextSeg.blurb}</p>
-              </div>
-            </div>
-
-            <div className="vl-ag-actions">
-              <button
-                type="button"
-                className="vl-ag-launch-btn"
-                onClick={() => handleNavigateLab(nextSeg.id)}
-                aria-label={`Launch Next Simulation: ${nextSeg.title}`}
-              >
-                <span>Launch Next Quest: {nextSeg.title}</span>
-                <span className="vl-ag-arrow" aria-hidden="true">➔</span>
-              </button>
-
-              <div className="vl-ag-sub-nav">
                 <button
                   type="button"
-                  className="vl-ag-ghost-btn"
-                  onClick={() => handleNavigateLab(prevSeg.id)}
-                  title={`Previous simulation: ${prevSeg.title}`}
-                >
-                  ◀ Prev: {prevSeg.title}
-                </button>
-                <button
-                  type="button"
-                  className="vl-ag-ghost-btn"
+                  className="vl-pgw-hub-btn"
                   onClick={() => {
                     setViewMode('catalog');
                     soundEffects.playStrokeChime();
                     catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
-                  title="View full 17-lab curriculum"
                 >
-                  🧭 All 17 Labs
-                </button>
-                <button
-                  type="button"
-                  className="vl-ag-ghost-btn"
-                  onClick={() => simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                  title="Scroll to top of current lab bench"
-                >
-                  ▲ Top of Bench
+                  <span>🎮 🧭 Browse All 41 Games Directory</span>
                 </button>
               </div>
             </div>
-          </div>
+          </section>
+        ) : (
+          <section className="vl-adventure-gateway" aria-label="Next science simulation">
+            <div className="vl-ag-header">
+              <div className="vl-ag-kicker-row">
+                <span className="vl-ag-kicker">✨ NEXT ADVENTURE ON YOUR PATH</span>
+                <span className="vl-ag-progress-pill">
+                  Quest {currentIndex + 1} of {LAB_SEGMENTS.length}
+                </span>
+              </div>
+              <h3 className="vl-ag-heading">
+                Ready for your next science quest?
+              </h3>
+            </div>
 
-          {/* All 17 Simulations Navigation Grid — Clear, Non-Truncated Cards */}
-          <div className="vl-ag-grid-wrap">
-            <div className="vl-ag-grid-header">
-              <span className="vl-ag-grid-kicker">📚 COMPLETE SCIENCE EXPEDITION</span>
-              <h4>Explore All 17 Science Simulations:</h4>
-            </div>
-            <div className="vl-ag-cards-grid">
-              {LAB_SEGMENTS.map((s, idx) => {
-                const isCurrent = s.id === active;
-                return (
+            <div className="vl-ag-card">
+              <div className="vl-ag-card-hero">
+                <div className="vl-ag-icon-badge" aria-hidden="true">
+                  <span className="vl-ag-big-icon">{nextSeg.icon}</span>
+                  <span className="vl-ag-level-chip">{nextSeg.levelLabel}</span>
+                </div>
+                <div className="vl-ag-card-info">
+                  <span className="vl-ag-dev" lang="sa">{nextSeg.dev}</span>
+                  <h4 className="vl-ag-title">{nextSeg.title}</h4>
+                  <div className="vl-ag-badges">
+                    <span className="vl-ag-badge vl-ag-badge--age">🎯 {nextSeg.ageRange}</span>
+                    <span className="vl-ag-badge vl-ag-badge--subj">🔬 {nextSeg.subject}</span>
+                    <span className="vl-ag-badge vl-ag-badge--cat">🏷️ {CATEGORY_CHIP[nextSeg.category]}</span>
+                    <span className="vl-ag-badge vl-ag-badge--time">⏱️ 3–5 min quest</span>
+                  </div>
+                  <p className="vl-ag-blurb">{nextSeg.blurb}</p>
+                </div>
+              </div>
+
+              <div className="vl-ag-actions">
+                <button
+                  type="button"
+                  className="vl-ag-launch-btn"
+                  onClick={() => handleNavigateLab(nextSeg.id)}
+                  aria-label={`Launch Next Simulation: ${nextSeg.title}`}
+                >
+                  <span>Launch Next Quest: {nextSeg.title}</span>
+                  <span className="vl-ag-arrow" aria-hidden="true">➔</span>
+                </button>
+
+                <div className="vl-ag-sub-nav">
                   <button
-                    key={s.id}
                     type="button"
-                    className={`vl-ag-step-card${isCurrent ? ' is-active' : ''}`}
-                    onClick={() => handleNavigateLab(s.id)}
-                    aria-current={isCurrent ? 'page' : undefined}
-                    title={`${idx + 1}. ${s.title} (${s.ageRange})`}
+                    className="vl-ag-ghost-btn"
+                    onClick={() => handleNavigateLab(prevSeg.id)}
+                    title={`Previous simulation: ${prevSeg.title}`}
                   >
-                    <span className="vl-ag-step-num">{idx + 1}</span>
-                    <span className="vl-ag-step-icon" aria-hidden="true">{s.icon}</span>
-                    <div className="vl-ag-step-text">
-                      <b className="vl-ag-step-title">{s.title}</b>
-                      <span className="vl-ag-step-meta">{s.ageRange} · {CATEGORY_CHIP[s.category]}</span>
-                    </div>
-                    {isCurrent && <span className="vl-ag-playing-badge">Now Playing</span>}
+                    ◀ Prev: {prevSeg.title}
                   </button>
-                );
-              })}
+                  <button
+                    type="button"
+                    className="vl-ag-ghost-btn"
+                    onClick={() => {
+                      setViewMode('catalog');
+                      soundEffects.playStrokeChime();
+                      catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                    title="View full 17-lab curriculum"
+                  >
+                    🧭 All 17 Labs
+                  </button>
+                  <button
+                    type="button"
+                    className="vl-ag-ghost-btn"
+                    onClick={() => simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                    title="Scroll to top of current lab bench"
+                  >
+                    ▲ Top of Bench
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+
+            {/* All 17 Simulations Navigation Grid — Clear, Non-Truncated Cards */}
+            <div className="vl-ag-grid-wrap">
+              <div className="vl-ag-grid-header">
+                <span className="vl-ag-grid-kicker">📚 COMPLETE SCIENCE EXPEDITION</span>
+                <h4>Explore All 17 Science Simulations:</h4>
+              </div>
+              <div className="vl-ag-cards-grid">
+                {LAB_SEGMENTS.map((s, idx) => {
+                  const isCurrent = s.id === active;
+                  return (
+                    <button
+                      key={s.id}
+                      type="button"
+                      className={`vl-ag-step-card${isCurrent ? ' is-active' : ''}`}
+                      onClick={() => handleNavigateLab(s.id)}
+                      aria-current={isCurrent ? 'page' : undefined}
+                      title={`${idx + 1}. ${s.title} (${s.ageRange})`}
+                    >
+                      <span className="vl-ag-step-num">{idx + 1}</span>
+                      <span className="vl-ag-step-icon" aria-hidden="true">{s.icon}</span>
+                      <div className="vl-ag-step-text">
+                        <b className="vl-ag-step-title">{s.title}</b>
+                        <span className="vl-ag-step-meta">{s.ageRange} · {CATEGORY_CHIP[s.category]}</span>
+                      </div>
+                      {isCurrent && <span className="vl-ag-playing-badge">Now Playing</span>}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
 
         <Suspense fallback={<div className="vl-loading">Loading Bodhi Vijñāna Console…</div>}>
           {active !== 'preschool-wonder' && <LabBodhiConsole activeSegment={active} />}
