@@ -509,8 +509,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
   });
   const [preschoolActivity, setPreschoolActivity] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'mission-control' | 'workbench' | 'catalog'>(() => {
-    if (initialSegment === 'catalog') return 'catalog';
-    // Direct entry to games without scrolling down
+    if (!initialSegment || initialSegment === 'catalog') return 'catalog';
     return 'workbench';
   });
   const [explorerStats, setExplorerStats] = useState<ExplorerStats>(() => getExplorerStats());
@@ -671,6 +670,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
 
   const handleNavigateLab = (targetId: LabSegmentId) => {
     setActive(targetId);
+    setViewMode('workbench');
+    soundEffects.playStrokeChime();
     window.requestAnimationFrame(() => {
       simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
@@ -1219,6 +1220,38 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         <section id={active} ref={simRef} className="vl-segment vl-segment--mission-workbench" aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
         {/* Kid-Centric Mission Workbench Header */}
         <div className="vl-wb-mission-header">
+          <nav className="vl-wb-breadcrumbs" aria-label="Game navigation breadcrumbs">
+            {onGoHome && (
+              <>
+                <button
+                  type="button"
+                  className="vl-wb-bc-link"
+                  onClick={onGoHome}
+                  title="Return to Gurukul Homepage"
+                >
+                  🏠 Home
+                </button>
+                <span className="vl-wb-bc-sep">/</span>
+              </>
+            )}
+            <button
+              type="button"
+              className="vl-wb-bc-link"
+              onClick={() => {
+                setViewMode('catalog');
+                soundEffects.playStrokeChime();
+                catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              title="Return to Vijñāna Lab Games Hub"
+            >
+              🎮 Games Hub
+            </button>
+            <span className="vl-wb-bc-sep">/</span>
+            <span className="vl-wb-bc-stage">{seg.levelLabel} ({seg.ageRange})</span>
+            <span className="vl-wb-bc-sep">/</span>
+            <span className="vl-wb-bc-current">{seg.title}</span>
+          </nav>
+
           <div className="vl-wb-nav-row">
             <button
               type="button"

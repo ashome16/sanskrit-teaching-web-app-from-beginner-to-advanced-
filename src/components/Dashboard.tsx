@@ -1190,8 +1190,8 @@ const Dashboard: React.FC = () => {
               <button
                 type="button"
                 className={`dashboard-nav-group-label dashboard-nav-games-label${activeView === 'science-lab' ? ' dashboard-nav-group-label--active' : ''}`}
-                onClick={() => openScienceLab('preschool-wonder')}
-                title="Enter Games Section Directly (क्रीडा-शाला)"
+                onClick={() => openScienceLab('catalog')}
+                title="Enter Games Section (क्रीडा-शाला · All 41 Interactive Games)"
               >
                 <span className="dashboard-nav-icon" style={{ fontSize: '1.15rem', lineHeight: 1 }} aria-hidden="true">🎮</span>
                 <span className="dashboard-nav-sanskrit">क्रीडा-शाला</span>
@@ -1200,7 +1200,7 @@ const Dashboard: React.FC = () => {
               <div className="dashboard-nav-sub" role="group" aria-label="Direct games navigation">
                 <button
                   type="button"
-                  className={activeView === 'science-lab' && (!labTarget.segment || labTarget.segment === 'preschool-wonder') ? 'active' : ''}
+                  className={activeView === 'science-lab' && labTarget.segment === 'preschool-wonder' ? 'active' : ''}
                   onClick={() => openScienceLab('preschool-wonder')}
                   title="Direct entry: 24 Preschool Wonder Games (Shapes, Colors, Spices, Animals, Map & Yoga)"
                 >
@@ -1218,7 +1218,7 @@ const Dashboard: React.FC = () => {
                 </button>
                 <button
                   type="button"
-                  className={activeView === 'science-lab' && labTarget.segment === 'catalog' ? 'active' : ''}
+                  className={activeView === 'science-lab' && (!labTarget.segment || labTarget.segment === 'catalog') ? 'active' : ''}
                   onClick={() => openScienceLab('catalog')}
                   title="Browse All 41 Games Directory"
                 >
