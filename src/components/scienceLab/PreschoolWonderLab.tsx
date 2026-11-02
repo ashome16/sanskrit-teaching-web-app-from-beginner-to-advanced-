@@ -819,9 +819,9 @@ const ACTIVITIES: ActivityItem[] = [
     icon: '🎨',
     cluster: 'creative',
     clusterLabel: 'रचना · Creative Play',
-    gradeBadge: 'Ages 2–6 · Shapes',
-    desc: 'Tap a shape. Hear its Sanskrit name!',
-    features: ['🔊 Sanskrit Audio', '👆 Touch & Pop', '⭐ Shape Quiz'],
+    gradeBadge: 'Ages 2–6 · Shapes & ज्यामिति',
+    desc: 'Tap a shape. Hear its Sanskrit name! Discover ज्यामिति (Jyāmiti) Earth-measurement.',
+    features: ['🔊 Sanskrit Audio', '📐 ज्यामिति Jyāmiti Note', '⭐ Shape Quiz'],
     bannerGradient: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
     accentColor: '#f59e0b',
     bannerVisual: {
@@ -2641,6 +2641,210 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
               🔊 Hear Sanskrit: {selectedShape.dev}{exampleSa(selectedShape.example) ? ` → ${exampleSa(selectedShape.example)}` : ''}
             </button>
           </div>
+
+          {/* =========================================================
+              TRADITIONAL INDIAN GEOMETRY NOTE: ज्यामिति (Jyāmiti)
+             ========================================================= */}
+          <section className="psw-jyamiti-card" aria-label="Indian Origins of Geometry">
+            <div className="psw-jc-header">
+              <div className="psw-jc-badge-row">
+                <span className="psw-jc-badge">📐 भारतीय-गणित-परम्परा · Ancient Indian Geometry</span>
+                <button
+                  type="button"
+                  className="psw-jc-audio-chip"
+                  onClick={() => {
+                    soundEffects.playStrokeChime();
+                    playPronunciation('ज्यामिति');
+                  }}
+                  title="Hear pronunciation of ज्यामिति"
+                >
+                  🔊 Hear "ज्यामिति" (Jyāmiti)
+                </button>
+              </div>
+              <h4 className="psw-jc-title">
+                The Traditional Indian Term for Geometry: <span lang="sa" className="psw-jc-sa">ज्यामिति</span> <span className="psw-jc-iast">(Jyāmiti)</span>
+              </h4>
+              <p className="psw-jc-lead">
+                The traditional Indian term for geometry is <strong>ज्यामिति (Jyāmiti)</strong>, made of two core Sanskrit words:
+              </p>
+            </div>
+
+            {/* Etymological breakdown equation */}
+            <div className="psw-jc-breakdown">
+              <div className="psw-jcb-card">
+                <div className="psw-jcb-role">Word 1 · संस्कृत-पदम्</div>
+                <div className="psw-jcb-word" lang="sa">ज्या</div>
+                <div className="psw-jcb-translit">Jyā</div>
+                <div className="psw-jcb-meaning">
+                  Originally meaning an <strong>earth-boundary</strong>, a <strong>chord</strong>, or an <strong>arc</strong>.
+                </div>
+                <button
+                  type="button"
+                  className="psw-jcb-say-btn"
+                  onClick={() => {
+                    soundEffects.playBubblePop();
+                    playPronunciation('ज्या');
+                  }}
+                >
+                  🔊 ज्या (Jyā)
+                </button>
+              </div>
+
+              <div className="psw-jcb-operator" aria-hidden="true">➕</div>
+
+              <div className="psw-jcb-card">
+                <div className="psw-jcb-role">Word 2 · संस्कृत-पदम्</div>
+                <div className="psw-jcb-word" lang="sa">मिति</div>
+                <div className="psw-jcb-translit">Miti</div>
+                <div className="psw-jcb-meaning">
+                  Meaning <strong>measurement</strong> or the <strong>act of measuring</strong>.
+                </div>
+                <button
+                  type="button"
+                  className="psw-jcb-say-btn"
+                  onClick={() => {
+                    soundEffects.playBubblePop();
+                    playPronunciation('मिति');
+                  }}
+                >
+                  🔊 मिति (Miti)
+                </button>
+              </div>
+
+              <div className="psw-jcb-operator" aria-hidden="true">🟰</div>
+
+              <div className="psw-jcb-card psw-jcb-card--result">
+                <div className="psw-jcb-role">Compound Result · सामासिक-पदम्</div>
+                <div className="psw-jcb-word psw-jcb-word--accent" lang="sa">ज्यामिति</div>
+                <div className="psw-jcb-translit">Jyāmiti</div>
+                <div className="psw-jcb-meaning">
+                  Literal Meaning: <strong className="psw-jcb-highlight">"Earth-measurement"</strong>
+                </div>
+                <button
+                  type="button"
+                  className="psw-jcb-say-btn psw-jcb-say-btn--primary"
+                  onClick={() => {
+                    soundEffects.playSuccessDing();
+                    playPronunciation('ज्यामिति');
+                  }}
+                >
+                  🔊 ज्यामिति (Jyāmiti)
+                </button>
+              </div>
+            </div>
+
+            {/* Mirror with Greek Geometry callout */}
+            <div className="psw-jc-mirror-box">
+              <div className="psw-jcm-icon">🌍 ↔️ 📐</div>
+              <div className="psw-jcm-content">
+                <div className="psw-jcm-title">Mirroring the Greek Origin: Earth + Measurement</div>
+                <p className="psw-jcm-text">
+                  Therefore, the literal meaning of the word is <strong>"Earth-measurement"</strong>, which perfectly mirrors the Greek origin of the word <strong>Geometry</strong> (<em>Geo</em> = Earth + <em>Metron</em> = Measurement).
+                </p>
+                <div className="psw-jcm-pills">
+                  <span className="psw-jcm-pill">
+                    🇮🇳 <strong>Sanskrit</strong>: ज्या (Jyā = Earth/Chord) + मिति (Miti = Measurement) = <em>ज्यामिति (Jyāmiti)</em>
+                  </span>
+                  <span className="psw-jcm-pill">
+                    🏛️ <strong>Greek</strong>: Geo (Earth) + Metron (Measurement) = <em>Geometry</em>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Regional Variations Section */}
+            <div className="psw-jc-regional">
+              <h5 className="psw-jcr-title">🌐 Regional Variations</h5>
+              <p className="psw-jcr-desc">
+                Depending on the language and script, you will encounter these closely related variations:
+              </p>
+              <div className="psw-jcr-grid">
+                <div className="psw-jcr-card">
+                  <div className="psw-jcr-head">
+                    <span className="psw-jcr-flag">🕉️</span>
+                    <span className="psw-jcr-lang">Sanskrit / Hindi</span>
+                  </div>
+                  <div className="psw-jcr-script" lang="sa">ज्यामिति</div>
+                  <div className="psw-jcr-roman">Jyāmiti</div>
+                  <button
+                    type="button"
+                    className="psw-jcr-audio"
+                    onClick={() => {
+                      soundEffects.playStrokeChime();
+                      playPronunciation('ज्यामिति');
+                    }}
+                  >
+                    🔊 Hear ज्यामिति
+                  </button>
+                </div>
+
+                <div className="psw-jcr-card">
+                  <div className="psw-jcr-head">
+                    <span className="psw-jcr-flag">🌸</span>
+                    <span className="psw-jcr-lang">Bengali / Odia / Assamese</span>
+                  </div>
+                  <div className="psw-jcr-script" lang="bn">জ্যামিতি</div>
+                  <div className="psw-jcr-roman">Jōmiti or Jyāmiti</div>
+                  <button
+                    type="button"
+                    className="psw-jcr-audio"
+                    onClick={() => {
+                      soundEffects.playStrokeChime();
+                      playPronunciation('জ্যামিতি');
+                    }}
+                  >
+                    🔊 Hear জ্যামিতি
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Sacred Geometry & Everyday Shapes Visual Gallery */}
+            <div className="psw-jc-gallery">
+              <h5 className="psw-jcg-title">🖼️ Visual Exploration: Sacred &amp; Everyday Shapes</h5>
+              <div className="psw-jcg-grid">
+                <figure className="psw-jcg-figure">
+                  <div className="psw-jcg-frame">
+                    <picture>
+                      <source srcSet="/images/jyamiti-shapes.webp" type="image/webp" />
+                      <img
+                        src="/images/jyamiti-shapes.jpg"
+                        alt="आकाराः · Sacred & Everyday Shapes | Shapes & Forms under the Gurukul Tree"
+                        className="psw-jcg-img"
+                        loading="lazy"
+                        width="600"
+                        height="450"
+                      />
+                    </picture>
+                    <span className="psw-jcg-tag">आकाराः · Shapes &amp; Forms</span>
+                  </div>
+                  <figcaption className="psw-jcg-caption">
+                    <strong>Gurukul Shapes Playground:</strong> Children exploring triangles (त्रिकोण), squares (चतुरस्र), circles (वृत्त), stars (तारका), and crescent moons under the sacred banyan tree.
+                  </figcaption>
+                </figure>
+
+                <figure className="psw-jcg-figure">
+                  <div className="psw-jcg-frame">
+                    <picture>
+                      <source srcSet="/images/jyamiti-patterns.webp" type="image/webp" />
+                      <img
+                        src="/images/jyamiti-patterns.jpg"
+                        alt="ज्यामितीय प्रतिरूप · Geometrical Patterns & Mandala Tangram Puzzle"
+                        className="psw-jcg-img"
+                        loading="lazy"
+                        width="600"
+                        height="450"
+                      />
+                    </picture>
+                    <span className="psw-jcg-tag">ज्यामितीय प्रतिरूप · Geometrical Patterns</span>
+                  </div>
+                  <figcaption className="psw-jcg-caption">
+                    <strong>Geometrical Patterns (ज्यामितीय प्रतिरूप):</strong> Traditional mandala &amp; tangram pattern board with polygon wooden tiles exploring symmetry and spatial harmony.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
         </div>
       )}
 
