@@ -1543,7 +1543,16 @@ const VishvaMatchGame: React.FC<{ onEarnStar?: () => void }> = ({ onEarnStar }) 
   );
 };
 
-export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNextLab }) => {
+export interface PreschoolWonderLabProps extends LabSegmentProps {
+  onBrowseMainLabs?: () => void;
+  onSelectMainLab?: (targetId: string) => void;
+}
+
+export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
+  onNextLab,
+  onBrowseMainLabs,
+  onSelectMainLab,
+}) => {
   const [tab, setTab] = useState<PreschoolTab>('shapes');
   const [festival, setFestival] = useState<FestivalItem>(FESTIVALS[0]);
   const [festQuiz, setFestQuiz] = useState<FestivalItem | null>(null);
@@ -1980,6 +1989,43 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
 
   return (
     <div className="vl-subsim preschool-wonder-root" data-testid="preschool-wonder-lab">
+      {/* Direct Portal Bar: Quick access to Main Vijñāna Lab */}
+      <div className="psw-main-lab-portal-bar">
+        <div className="psw-mlp-left">
+          {onBrowseMainLabs && (
+            <button
+              type="button"
+              className="psw-mlp-browse-btn"
+              onClick={onBrowseMainLabs}
+              title="Return to the Main Vijñāna Lab to explore all 17 simulations"
+            >
+              <span aria-hidden="true">🔬 ◀</span>
+              <span>All 17 Vijñāna Lab Simulations</span>
+            </button>
+          )}
+          <span className="psw-mlp-tagline">
+            Older kids &amp; scholar STEM labs:
+          </span>
+        </div>
+        <div className="psw-mlp-chips" role="navigation" aria-label="Elder science simulations">
+          <button type="button" className="psw-mlp-chip" onClick={() => onSelectMainLab ? onSelectMainLab('paramanu') : onNextLab?.()} title="Atom Builder: Make Matter (Ages 11–14)">
+            ⚛️ Atom Builder (11–14)
+          </button>
+          <button type="button" className="psw-mlp-chip" onClick={() => onSelectMainLab ? onSelectMainLab('jyotisha') : onNextLab?.()} title="Planet Pull Gravity (Ages 8–10)">
+            🪐 Planet Pull (8–10)
+          </button>
+          <button type="button" className="psw-mlp-chip" onClick={() => onSelectMainLab ? onSelectMainLab('chandrayaan') : onNextLab?.()} title="Moon Mission (Ages 11–14)">
+            🛰️ Moon Mission (11–14)
+          </button>
+          <button type="button" className="psw-mlp-chip" onClick={() => onSelectMainLab ? onSelectMainLab('prakriti') : onNextLab?.()} title="Nature Balance (Ages 8–10)">
+            🌿 Nature Balance (8–10)
+          </button>
+          <button type="button" className="psw-mlp-chip" onClick={() => onSelectMainLab ? onSelectMainLab('agnibana') : onNextLab?.()} title="Rocket Builder (Ages 12–14)">
+            🚀 Rocket Lab (12–14)
+          </button>
+        </div>
+      </div>
+
       {/* Preschool Playground Hero Header */}
       <div className="psw-hero-box">
         <div className="psw-hero-badge" style={{ justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
@@ -2023,19 +2069,9 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
         <div
           role="tablist"
           aria-label="Choose Game Level"
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 10,
-            margin: '12px 0 8px',
-            padding: '10px 12px',
-            background: 'linear-gradient(135deg, #fffbeb 0%, #f0fdf4 55%, #eff6ff 100%)',
-            border: '2px solid #cbd5e1',
-            borderRadius: 18,
-            alignItems: 'center',
-          }}
+          className="psw-level-ladder-bar"
         >
-          <span style={{ fontWeight: 800, fontSize: 13, color: '#475569', marginRight: 4 }}>
+          <span className="psw-level-ladder-label">
             🎯 Choose Level:
           </span>
           <button
@@ -2043,17 +2079,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             role="tab"
             aria-selected={levelTier === 'preschool'}
             onClick={() => switchLevelTier('preschool')}
-            style={{
-              background: levelTier === 'preschool' ? 'linear-gradient(135deg, #10b981, #059669)' : '#ffffff',
-              color: levelTier === 'preschool' ? '#ffffff' : '#065f46',
-              border: levelTier === 'preschool' ? '2.5px solid #047857' : '2px solid #86efac',
-              borderRadius: 999,
-              padding: '7px 16px',
-              fontWeight: 800,
-              fontSize: 13.5,
-              cursor: 'pointer',
-              boxShadow: levelTier === 'preschool' ? '0 4px 12px rgba(16, 185, 129, 0.3)' : 'none',
-            }}
+            className={`psw-level-tab-btn ${levelTier === 'preschool' ? 'is-active psw-tab--preschool' : ''}`}
           >
             🌱 Level 1 · Preschool (Ages 2–5) ({preschoolCount})
           </button>
@@ -2062,17 +2088,7 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             role="tab"
             aria-selected={levelTier === 'next'}
             onClick={() => switchLevelTier('next')}
-            style={{
-              background: levelTier === 'next' ? 'linear-gradient(135deg, #6366f1, #4f46e5)' : '#ffffff',
-              color: levelTier === 'next' ? '#ffffff' : '#3730a3',
-              border: levelTier === 'next' ? '2.5px solid #4338ca' : '2px solid #a5b4fc',
-              borderRadius: 999,
-              padding: '7px 16px',
-              fontWeight: 800,
-              fontSize: 13.5,
-              cursor: 'pointer',
-              boxShadow: levelTier === 'next' ? '0 4px 12px rgba(99, 102, 241, 0.3)' : 'none',
-            }}
+            className={`psw-level-tab-btn ${levelTier === 'next' ? 'is-active psw-tab--next' : ''}`}
           >
             🚀 Next Level Games · Ages 6–10 ({nextLevelCount})
           </button>
@@ -2081,18 +2097,9 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             role="tab"
             aria-selected={levelTier === 'all'}
             onClick={() => switchLevelTier('all')}
-            style={{
-              background: levelTier === 'all' ? '#0f172a' : '#ffffff',
-              color: levelTier === 'all' ? '#ffffff' : '#334155',
-              border: '2px solid #cbd5e1',
-              borderRadius: 999,
-              padding: '7px 14px',
-              fontWeight: 700,
-              fontSize: 13,
-              cursor: 'pointer',
-            }}
+            className={`psw-level-tab-btn ${levelTier === 'all' ? 'is-active psw-tab--all' : ''}`}
           >
-            🌟 All ({ACTIVITIES.length})
+            🌟 All 24 Games ({ACTIVITIES.length})
           </button>
         </div>
 
@@ -2285,16 +2292,30 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
       {viewMode === 'play' && (
         <div ref={playArenaRef}>
           <div className="psw-play-arena-banner">
-            <button
-              type="button"
-              className="psw-pab-back-btn"
-              onClick={() => {
-                setViewMode('cards');
-                soundEffects.playStrokeChime();
-              }}
-            >
-              ⬅️ All games
-            </button>
+            <div className="psw-pab-left-nav">
+              <button
+                type="button"
+                className="psw-pab-back-btn"
+                onClick={() => {
+                  setViewMode('cards');
+                  soundEffects.playStrokeChime();
+                }}
+                title="Return to Preschool Games Catalog"
+              >
+                🎴 Preschool Games ({ACTIVITIES.length})
+              </button>
+              {onBrowseMainLabs && (
+                <button
+                  type="button"
+                  className="psw-pab-main-lab-btn"
+                  onClick={onBrowseMainLabs}
+                  title="Explore All 17 Vijñāna Lab STEM Simulations"
+                >
+                  🔬 Main Lab (17)
+                </button>
+              )}
+            </div>
+
             <div className="psw-pab-info">
               <span className="psw-pab-hero-emoji">{currentActivity.icon}</span>
               <div className="psw-pab-titles">
@@ -2304,22 +2325,72 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
                 </strong>
               </div>
               <SayBtn text={currentActivity.labelSa} label="Hear" className="psw-pab-say-chip" />
+
+              {/* Quick Jump Selector */}
+              <div className="psw-pab-switcher-wrap">
+                <label htmlFor="psw-inarena-select" className="sr-only">
+                  Switch game
+                </label>
+                <select
+                  id="psw-inarena-select"
+                  className="psw-pab-select"
+                  value={tab}
+                  onChange={(e) => launchActivity(e.target.value as PreschoolTab)}
+                  title="Quick-switch to any of the 24 games"
+                >
+                  <optgroup label="🌱 Level 1 · Preschool (Ages 2–5)">
+                    {ACTIVITIES.filter((a) => (a.level ?? 'preschool') !== 'next').map((a) => (
+                      <option key={a.id} value={a.id}>
+                        {a.icon} {a.labelSa} · {a.labelEn}
+                      </option>
+                    ))}
+                  </optgroup>
+                  <optgroup label="🚀 Next Level Games (Ages 6–10)">
+                    {ACTIVITIES.filter((a) => a.level === 'next').map((a) => (
+                      <option key={a.id} value={a.id}>
+                        {a.icon} {a.labelSa} · {a.labelEn}
+                      </option>
+                    ))}
+                  </optgroup>
+                </select>
+              </div>
             </div>
+
             <div className="psw-pab-right-group">
-              <span className="psw-pab-cluster-badge">{currentActivity.clusterLabel}</span>
-              {stepperIdx < stepperActivities.length - 1 && (
+              <span className="psw-pab-cluster-badge">{currentActivity.clusterLabel.split('·')[0]}</span>
+              <span className="psw-pab-counter">
+                {stepperIdx + 1} / {stepperActivities.length}
+              </span>
+              <div className="psw-pab-stepper-pair">
+                <button
+                  type="button"
+                  className="psw-pab-prev-btn"
+                  disabled={stepperIdx <= 0}
+                  onClick={() => {
+                    if (stepperIdx > 0) {
+                      const prev = stepperActivities[stepperIdx - 1];
+                      launchActivity(prev.id);
+                    }
+                  }}
+                  title={stepperIdx > 0 ? `Prev game: ${stepperActivities[stepperIdx - 1].labelEn}` : 'At first game in this tier'}
+                >
+                  ◀ Prev
+                </button>
                 <button
                   type="button"
                   className="psw-pab-next-btn"
+                  disabled={stepperIdx >= stepperActivities.length - 1}
                   onClick={() => {
-                    const next = stepperActivities[stepperIdx + 1];
-                    launchActivity(next.id);
+                    if (stepperIdx < stepperActivities.length - 1) {
+                      const next = stepperActivities[stepperIdx + 1];
+                      launchActivity(next.id);
+                    }
                   }}
-                  title={`Next game: ${stepperActivities[stepperIdx + 1].labelEn}`}
+                  title={stepperIdx < stepperActivities.length - 1 ? `Next game: ${stepperActivities[stepperIdx + 1].labelEn}` : 'At last game in this tier'}
                 >
-                  Next: {stepperActivities[stepperIdx + 1].icon} ➔
+                  Next ▶
                 </button>
-              )}
+              </div>
             </div>
           </div>
           <div className="psw-what-to-do" role="status" aria-live="polite">
@@ -4138,6 +4209,80 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
       </div>
     </div>
   )}
+
+      {/* Bridge Card: Graduate to the Main Vijñāna Lab (All 17 STEM Labs) */}
+      <div className="psw-bridge-banner" role="region" aria-label="Graduate to Main Vijñāna Lab">
+        <div className="psw-bb-content">
+          <div className="psw-bb-badge">🚀 NEXT STEPS · उच्च-विज्ञानम्</div>
+          <h3 className="psw-bb-title">
+            Ready for More Science Adventures? Explore the Main Vijñāna Lab!
+          </h3>
+          <p className="psw-bb-desc">
+            For inquisitive minds and elder siblings: dive into <strong>17 interactive STEM simulations</strong> rooted in classical Indian science — from atomic particles and celestial mechanics to lunar landings and rocket propulsion.
+          </p>
+          <div className="psw-bb-actions">
+            {onBrowseMainLabs && (
+              <button
+                type="button"
+                className="psw-bb-cta-btn"
+                onClick={onBrowseMainLabs}
+              >
+                🔬 Browse All 17 Vijñāna Lab Simulations ➔
+              </button>
+            )}
+          </div>
+        </div>
+        <div className="psw-bb-cards">
+          <button
+            type="button"
+            className="psw-bb-card"
+            onClick={() => (onSelectMainLab ? onSelectMainLab('paramanu') : onNextLab?.())}
+          >
+            <span className="psw-bbc-icon">⚛️</span>
+            <div className="psw-bbc-info">
+              <strong>परमाणु · Atom Builder</strong>
+              <small>Protons, neutrons &amp; electrons: craft elements (Ages 10–14)</small>
+            </div>
+            <span className="psw-bbc-arrow">➔</span>
+          </button>
+          <button
+            type="button"
+            className="psw-bb-card"
+            onClick={() => (onSelectMainLab ? onSelectMainLab('chandrayaan') : onNextLab?.())}
+          >
+            <span className="psw-bbc-icon">🛰️</span>
+            <div className="psw-bbc-info">
+              <strong>चन्द्रयानम् · Moon Mission</strong>
+              <small>Orbit injection, lunar transfer &amp; soft landing (Ages 11–14)</small>
+            </div>
+            <span className="psw-bbc-arrow">➔</span>
+          </button>
+          <button
+            type="button"
+            className="psw-bb-card"
+            onClick={() => (onSelectMainLab ? onSelectMainLab('jyotisha') : onNextLab?.())}
+          >
+            <span className="psw-bbc-icon">🪐</span>
+            <div className="psw-bbc-info">
+              <strong>ज्योतिष · Celestial Orbits</strong>
+              <small>Planet pull, gravitational orbits &amp; solar systems (Ages 8–12)</small>
+            </div>
+            <span className="psw-bbc-arrow">➔</span>
+          </button>
+          <button
+            type="button"
+            className="psw-bb-card"
+            onClick={() => (onSelectMainLab ? onSelectMainLab('agnibana') : onNextLab?.())}
+          >
+            <span className="psw-bbc-icon">🚀</span>
+            <div className="psw-bbc-info">
+              <strong>अग्निबाणः · Rocket Builder</strong>
+              <small>Stage engines, optimize thrust &amp; launch to orbit (Ages 12–14)</small>
+            </div>
+            <span className="psw-bbc-arrow">➔</span>
+          </button>
+        </div>
+      </div>
 
       {/* Bodhi Core Idea */}
       <CoreIdea>

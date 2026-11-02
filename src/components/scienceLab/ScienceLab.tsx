@@ -1325,7 +1325,17 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         {/* Immediate Pure Playable Simulation Canvas — Play First! */}
         <div className="vl-wb-playable-canvas">
           <Suspense fallback={<SimLoader />}>
-            {active === 'preschool-wonder' && <PreschoolWonderLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'preschool-wonder' && (
+              <PreschoolWonderLab
+                onNextLab={() => handleNavigateLab(nextSeg.id)}
+                onBrowseMainLabs={() => {
+                  setViewMode('catalog');
+                  soundEffects.playStrokeChime();
+                  catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                onSelectMainLab={(targetId) => handleNavigateLab(targetId as LabSegmentId)}
+              />
+            )}
             {active === 'paramanu' && <ParamanuBuilder onNextLab={() => handleNavigateLab(nextSeg.id)} />}
             {active === 'asato-ma' && <AsatoMa />}
             {active === 'prakriti' && <PrakritiBalance onNextLab={() => handleNavigateLab(nextSeg.id)} />}

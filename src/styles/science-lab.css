@@ -3767,3 +3767,581 @@
 .vl-floating-dock {
   display: none !important;
 }
+
+/* ============================================================================
+   PRESCHOOL WONDER LAB NAVIGATION & MAIN LAB PORTAL
+   ============================================================================ */
+
+.psw-main-lab-portal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f8fafc;
+  border: 2px solid #38bdf8;
+  border-radius: 18px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25), 0 0 16px rgba(56, 189, 248, 0.2);
+}
+
+.psw-mlp-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.psw-mlp-browse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  border: 1.5px solid #38bdf8;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.psw-mlp-browse-btn:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.5);
+}
+
+.psw-mlp-tagline {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.psw-mlp-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.psw-mlp-chip {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.psw-mlp-chip:hover {
+  background: rgba(56, 189, 248, 0.25);
+  color: #ffffff;
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+/* Level Ladder Bar */
+.psw-level-ladder-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 10px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #fffbeb 0%, #f0fdf4 50%, #eff6ff 100%);
+  border: 2px solid #cbd5e1;
+  border-radius: 20px;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.psw-level-ladder-label {
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #334155;
+  margin-right: 4px;
+}
+
+.psw-level-tab-btn {
+  background: #ffffff;
+  color: #334155;
+  border: 2px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.psw-level-tab-btn:hover {
+  transform: translateY(-1px);
+  border-color: #94a3b8;
+}
+
+.psw-level-tab-btn.is-active.psw-tab--preschool {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border-color: #047857;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.psw-level-tab-btn.is-active.psw-tab--next {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  border-color: #4338ca;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+}
+
+.psw-level-tab-btn.is-active.psw-tab--all {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #334155;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.35);
+}
+
+/* In-Arena Play Banner Nav & Steppers */
+.psw-pab-left-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.psw-pab-back-btn {
+  background: #f1f5f9;
+  color: #1e293b;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.psw-pab-back-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.psw-pab-main-lab-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  border: 1.5px solid #38bdf8;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+  white-space: nowrap;
+}
+
+.psw-pab-main-lab-btn:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+}
+
+.psw-pab-switcher-wrap {
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+}
+
+.psw-pab-select {
+  background: #ffffff;
+  color: #0f172a;
+  border: 2px solid #0284c7;
+  border-radius: 12px;
+  padding: 5px 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.12);
+  outline: none;
+  max-width: 220px;
+}
+
+.psw-pab-select:focus {
+  border-color: #0369a1;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
+}
+
+.psw-pab-counter {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #64748b;
+  background: #f1f5f9;
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.psw-pab-stepper-pair {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.psw-pab-prev-btn {
+  background: #ffffff;
+  color: #334155;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.psw-pab-prev-btn:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.psw-pab-prev-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.psw-pab-next-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Preschool Graduation Bridge Banner */
+.psw-bridge-banner {
+  margin: 32px 0 16px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 60%, #0f172a 100%);
+  border: 2.5px solid #6366f1;
+  border-radius: 24px;
+  padding: 24px 28px;
+  color: #ffffff;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.35), 0 0 24px rgba(99, 102, 241, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.psw-bb-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.psw-bb-badge {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #a5b4fc;
+  text-transform: uppercase;
+}
+
+.psw-bb-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.psw-bb-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  max-width: 52rem;
+}
+
+.psw-bb-desc strong {
+  color: #fde047;
+}
+
+.psw-bb-actions {
+  margin-top: 6px;
+}
+
+.psw-bb-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  border: 1.5px solid #818cf8;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.psw-bb-cta-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 22px rgba(129, 140, 248, 0.5);
+}
+
+.psw-bb-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 960px) {
+  .psw-bb-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .psw-bb-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.psw-bb-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 14px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.psw-bb-card:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #38bdf8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.psw-bbc-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.psw-bbc-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.psw-bbc-info strong {
+  font-size: 0.88rem;
+  color: #f8fafc;
+  display: block;
+}
+
+.psw-bbc-info small {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+.psw-bbc-arrow {
+  color: #38bdf8;
+  font-size: 1.1rem;
+  font-weight: 900;
+  transition: transform 0.15s ease;
+}
+
+.psw-bb-card:hover .psw-bbc-arrow {
+  transform: translateX(4px);
+}
+
+/* Bharat Living Map Region Pills & Wonder Tray */
+.bharat-region-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  margin-top: 4px;
+}
+
+.bharat-rp-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #475569;
+}
+
+.bharat-rp-btn {
+  background: #ffffff;
+  color: #334155;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.bharat-rp-btn:hover {
+  border-color: #0284c7;
+  color: #0284c7;
+  transform: translateY(-1px);
+}
+
+.bharat-rp-btn.is-active {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  border-color: #0284c7;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.3);
+}
+
+.bharat-wonder-tray {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  border: 2px solid #bae6fd;
+  border-radius: 18px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.bharat-wt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bharat-wt-title {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #0369a1;
+}
+
+.bharat-wt-reset-filter {
+  background: transparent;
+  border: 1px solid #94a3b8;
+  color: #475569;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bharat-wt-reset-filter:hover {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.bharat-wt-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.bharat-wt-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+.bharat-wt-chip:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: #0284c7;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.18);
+}
+
+.bharat-wt-chip.is-selected {
+  border-color: #0284c7;
+  background: #e0f2fe;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.25);
+}
+
+.bharat-wt-chip.is-target {
+  border-color: #f59e0b;
+  background: #fef3c7;
+  animation: bharatTargetPulse 1.8s ease-in-out infinite;
+}
+
+.bharat-wt-chip.is-solved {
+  border-color: #16a34a;
+  background: #dcfce7;
+}
+
+.bwt-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.bwt-names {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.bwt-names strong {
+  font-size: 0.84rem;
+  color: #0f172a;
+}
+
+.bwt-names small {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.bwt-check {
+  color: #16a34a;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.bharat-map-pin.is-dimmed {
+  opacity: 0.3;
+  transform: translate(-50%, -50%) scale(0.85);
+}
+
+.bharat-map-pin.is-dimmed:hover {
+  opacity: 0.9;
+  transform: translate(-50%, -50%) scale(1.05);
+}

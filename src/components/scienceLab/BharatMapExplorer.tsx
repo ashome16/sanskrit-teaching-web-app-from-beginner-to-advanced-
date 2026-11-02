@@ -383,6 +383,7 @@ interface BharatMapExplorerProps {
 export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar }) => {
   const [mode, setMode] = useState<BharatPlayMode>('map');
   const [packId, setPackId] = useState<BharatPackId>('animals');
+  const [regionFilter, setRegionFilter] = useState<BharatRegion | 'all'>('all');
   const [, setRound] = useState<number>(0);
 
   // Solved items in current pack
@@ -394,6 +395,11 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
 
   const activePack = useMemo(() => PACKS.find((p) => p.id === packId) || PACKS[0], [packId]);
   const packSpots = useMemo(() => BHARAT_SPOTS.filter(activePack.filter), [activePack]);
+
+  const filteredSpots = useMemo(() => {
+    if (regionFilter === 'all') return packSpots;
+    return packSpots.filter((s) => s.region === regionFilter);
+  }, [packSpots, regionFilter]);
 
   // Current quest target
   const questTarget: BharatSpot | null = useMemo(() => {
@@ -409,6 +415,7 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
 
   const switchPack = (nextPack: BharatPackId) => {
     setPackId(nextPack);
+    setRegionFilter('all');
     setDone([]);
     setFriendlyDiscovery('');
     setPopupSpot(null);
@@ -553,6 +560,116 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
               🔁 Play Again
             </button>
           )}
+        </div>
+      </div>
+
+      {/* Region Exploration Filter Bar (Toddler-Friendly Step-by-Step) */}
+      <div className="bharat-region-pills" role="tablist" aria-label="Filter by region in India">
+        <span className="bharat-rp-label">🧭 Direction:</span>
+        <button
+          type="button"
+          className={`bharat-rp-btn ${regionFilter === 'all' ? 'is-active' : ''}`}
+          onClick={() => {
+            setRegionFilter('all');
+            soundEffects.playStrokeChime();
+          }}
+        >
+          🌟 All Regions ({packSpots.length})
+        </button>
+        <button
+          type="button"
+          className={`bharat-rp-btn ${regionFilter === 'north' ? 'is-active' : ''}`}
+          onClick={() => {
+            setRegionFilter('north');
+            soundEffects.playStrokeChime();
+            playPronunciation('उत्तरम्');
+          }}
+        >
+          ⬆️ North · उत्तरम्
+        </button>
+        <button
+          type="button"
+          className={`bharat-rp-btn ${regionFilter === 'west' ? 'is-active' : ''}`}
+          onClick={() => {
+            setRegionFilter('west');
+            soundEffects.playStrokeChime();
+            playPronunciation('पश्चिमम्');
+          }}
+        >
+          ⬅️ West · पश्चिमम्
+        </button>
+        <button
+          type="button"
+          className={`bharat-rp-btn ${regionFilter === 'center' ? 'is-active' : ''}`}
+          onClick={() => {
+            setRegionFilter('center');
+            soundEffects.playStrokeChime();
+          }}
+        >
+          🎯 Center · मध्यम्
+        </button>
+        <button
+          type="button"
+          className={`bharat-rp-btn ${regionFilter === 'east' ? 'is-active' : ''}`}
+          onClick={() => {
+            setRegionFilter('east');
+            soundEffects.playStrokeChime();
+            playPronunciation('पूर्वम्');
+          }}
+        >
+          ➡️ East · पूर्वम्
+        </button>
+        <button
+          type="button"
+          className={`bharat-rp-btn ${regionFilter === 'south' ? 'is-active' : ''}`}
+          onClick={() => {
+            setRegionFilter('south');
+            soundEffects.playStrokeChime();
+            playPronunciation('दक्षिणम्');
+          }}
+        >
+          ⬇️ South · दक्षिणम्
+        </button>
+      </div>
+
+      {/* Interactive Wonder Tray for Preschoolers: Tap any animal/wonder to spotlight & hear */}
+      <div className="bharat-wonder-tray" role="navigation" aria-label="Tactile wonder tray">
+        <div className="bharat-wt-header">
+          <span className="bharat-wt-title">🐾 Tap any wonder to spotlight &amp; hear:</span>
+          {regionFilter !== 'all' && (
+            <button
+              type="button"
+              className="bharat-wt-reset-filter"
+              onClick={() => setRegionFilter('all')}
+              title="View all regions"
+            >
+              Show all regions ✕
+            </button>
+          )}
+        </div>
+        <div className="bharat-wt-scroll">
+          {filteredSpots.map((spot) => {
+            const isSolved = done.includes(spot.id);
+            const isSelected = activeSpotlight.id === spot.id;
+            const isTarget = mode === 'quest' && questTarget?.id === spot.id;
+
+            return (
+              <button
+                key={spot.id}
+                type="button"
+                className={`bharat-wt-chip ${isSelected ? 'is-selected' : ''} ${isTarget ? 'is-target' : ''} ${isSolved ? 'is-solved' : ''}`}
+                onClick={() => handleSpotTap(spot)}
+                title={`Spotlight ${spot.dev} (${spot.en})`}
+              >
+                <span className="bwt-icon">{spot.icon}</span>
+                <span className="bwt-names">
+                  <strong lang="sa">{spot.dev}</strong>
+                  <small>{spot.en}</small>
+                </span>
+                {isSolved && <span className="bwt-check">★</span>}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -752,6 +869,7 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
               const isTarget = mode === 'quest' && questTarget?.id === spot.id;
               const isSelected = activeSpotlight.id === spot.id;
               const isWiggling = isWigglingId === spot.id;
+              const isDimmed = regionFilter !== 'all' && spot.region !== regionFilter;
 
               return (
                 <button
@@ -766,6 +884,7 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
                     isSolved ? 'is-solved' : '',
                     isSelected ? 'is-spotlight' : '',
                     isWiggling ? 'is-wiggling' : '',
+                    isDimmed ? 'is-dimmed' : '',
                   ].filter(Boolean).join(' ')}
                   style={{
                     left: `${spot.x}%`,
@@ -780,13 +899,15 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
                     {spot.icon}
                   </span>
 
-                  {/* Sanskrit Name Pill Tag */}
-                  <span
-                    lang="sa"
-                    className={`bmp-tag bmp-tag--${spot.labelPos || 'bottom'}`}
-                  >
-                    {spot.dev}
-                  </span>
+                  {/* Sanskrit Name Pill Tag: pops up when selected, in quest, or tapped */}
+                  {(isSelected || isTarget || isWiggling) && (
+                    <span
+                      lang="sa"
+                      className={`bmp-tag bmp-tag--${spot.labelPos || 'bottom'}`}
+                    >
+                      {spot.dev}
+                    </span>
+                  )}
 
                   {/* Solved Star Checkmark */}
                   {isSolved && (
@@ -836,11 +957,13 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
       {mode === 'cards' && (
         <div className="bharat-cards-deck-wrap">
           <div className="bharat-deck-info-bar">
-            <span>🃏 <strong>{packSpots.length} Wonder Flashcards</strong> · Tap any card to hear its authentic sound and Sanskrit name!</span>
+            <span>
+              🃏 <strong>{filteredSpots.length} Wonder Flashcards</strong> · Tap any card to hear its authentic sound and Sanskrit name!
+            </span>
           </div>
 
           <div className="bharat-flashcards-grid">
-            {packSpots.map((spot) => {
+            {filteredSpots.map((spot) => {
               const isFound = done.includes(spot.id);
               const isTapped = isWigglingId === spot.id;
               const isSelected = activeSpotlight.id === spot.id;
