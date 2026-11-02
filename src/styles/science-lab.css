@@ -3010,3 +3010,396 @@
 .psw-pab-next-btn:hover {
   transform: translateY(-1px) scale(1.04);
 }
+
+/* ==========================================================================
+   Vijñāna Lab Hub & Workbench Navigation & Content Enhancements
+   ========================================================================== */
+
+.vl-hub-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.vl-hub-topline-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vl-hub-stars-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1.5px solid #f59e0b;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #78350f;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+.vl-hub-stars-badge strong {
+  color: #b45309;
+  font-size: 0.94rem;
+}
+
+.vl-hub-stars-sep {
+  opacity: 0.45;
+}
+
+.vl-hub-missions-count {
+  font-weight: 800;
+  color: #92400e;
+}
+
+/* Quick Jump by Age Chips */
+.vl-hub-age-jumper {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vl-hub-age-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.vl-hub-age-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vl-hub-age-chip {
+  background: #ffffffeb;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.vl-hub-age-chip:hover {
+  background: #f8fafc;
+  border-color: #0284c7;
+  color: #0369a1;
+  transform: translateY(-1px);
+}
+
+.vl-hub-age-chip.is-active {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  border-color: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.28);
+}
+
+/* Hero Art Wrap & Badge */
+.vl-hub-art-wrap {
+  position: relative;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(30, 41, 59, 0.16);
+  border: 2px solid rgba(226, 232, 240, 0.85);
+  background: #f8fafc;
+}
+
+.vl-hub-art-wrap .vl-hub-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.vl-hub-art-wrap:hover .vl-hub-art {
+  transform: scale(1.02);
+}
+
+.vl-hub-art-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  background: rgba(15, 23, 42, 0.78);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: #f8fafc;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+/* Popular Starting Quests Strip */
+.vl-hub-featured-strip {
+  margin-top: 1.25rem;
+  background: linear-gradient(135deg, #ffffffd9 0%, #f8fafcd9 100%);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+}
+
+.vl-hub-featured-header {
+  margin-bottom: 0.75rem;
+}
+
+.vl-hub-feat-kicker {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #d97706;
+}
+
+.vl-hub-feat-heading {
+  margin: 2px 0 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.vl-hub-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.vl-hub-feat-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.vl-hub-feat-card:hover {
+  transform: translateY(-2px);
+  border-color: #38bdf8;
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.16);
+}
+
+.vl-hub-feat-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+  padding: 8px;
+  background: #f1f5f9;
+  border-radius: 12px;
+}
+
+.vl-hub-feat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.vl-hub-feat-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.vl-badge--preschool {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.vl-badge--middle {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.vl-hub-feat-title {
+  margin: 2px 0 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.vl-hub-feat-desc {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: #475569;
+}
+
+.vl-hub-feat-cta {
+  margin-top: 4px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0284c7;
+}
+
+/* Dual Filter Control Panel */
+.vl-filter-control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 1.25rem 0 1rem;
+  background: #ffffffcc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.vl-rail-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vl-rail-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.vl-cat-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vl-cat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.vl-cat-chip:hover {
+  background: #ffffff;
+  border-color: #0284c7;
+  color: #0369a1;
+  transform: translateY(-1px);
+}
+
+.vl-cat-chip.is-active {
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+  border-color: #0f766e;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(15, 118, 110, 0.25);
+}
+
+.vl-cat-count {
+  font-size: 0.74rem;
+  opacity: 0.85;
+}
+
+/* Search Row */
+.vl-hub-search-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.vl-search-tally {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.vl-search-tally strong {
+  color: #0f172a;
+}
+
+/* In-Workbench Quick Navigation */
+.vl-wb-quick-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 3px 6px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.vl-wb-arrow-btn {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #334155;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.vl-wb-arrow-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.vl-wb-switcher-select {
+  background: transparent;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f172a;
+  padding: 3px 6px;
+  cursor: pointer;
+  outline: none;
+  max-width: 220px;
+}
+
+@media (max-width: 768px) {
+  .vl-wb-nav-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .vl-wb-quick-nav {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .vl-wb-switcher-select {
+    max-width: none;
+    flex: 1;
+  }
+}

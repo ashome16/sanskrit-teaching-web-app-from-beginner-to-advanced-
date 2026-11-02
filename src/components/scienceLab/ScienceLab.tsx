@@ -482,6 +482,14 @@ const LEVEL_STEPS: { id: LabLevel; num: string; label: string; ages: string }[] 
   { id: 'high', num: '4', label: 'Scholar Studio', ages: 'Ages 14+' },
 ];
 
+const CATEGORY_TABS: { id: LabCategory; label: string; icon: string }[] = [
+  { id: 'all', label: 'All Domains', icon: '🌌' },
+  { id: 'life', label: 'Living Nature', icon: '🌿' },
+  { id: 'matter', label: 'Matter & Physics', icon: '⚛️' },
+  { id: 'cosmos', label: 'Sky & Space', icon: '🪐' },
+  { id: 'waves', label: 'Sound & Math', icon: '🪕' },
+];
+
 const CATEGORY_CHIP: Record<LabSegmentConfig['category'], string> = {
   matter: 'Matter', cosmos: 'Sky & Space', life: 'Living world', waves: 'Sound & Number',
 };
@@ -503,9 +511,10 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
   const [isParentNotesOpen, setIsParentNotesOpen] = useState(false);
   const [selectedHowToPlay, setSelectedHowToPlay] = useState<MissionCardData | null>(null);
   const [isSpeakingBodhiBriefing, setIsSpeakingBodhiBriefing] = useState(false);
-  const [filterCat] = useState<LabCategory>('all');
+  const [filterCat, setFilterCat] = useState<LabCategory>('all');
   const [filterLevel, setFilterLevel] = useState<LabLevel>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [heroSrc, setHeroSrc] = useState<string>('/images/vignana-lab-hero.webp');
   const [, setIsQuestMode] = useState(true);
   const [isQuestDirectoryOpen, setIsQuestDirectoryOpen] = useState(false);
   const catalogSectionRef = useRef<HTMLDivElement>(null);
@@ -655,8 +664,16 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         <div ref={catalogSectionRef} className="vl-hub">
           <header className="vl-hub-hero">
             <div className="vl-hub-topline">
-              {onGoHome && <button type="button" className="vl-hub-link" onClick={onGoHome}>◀ Home</button>}
-              {onOpenResources && <button type="button" className="vl-hub-link" onClick={onOpenResources}>Toolkit</button>}
+              <div className="vl-hub-topline-left">
+                {onGoHome && <button type="button" className="vl-hub-link" onClick={onGoHome}>◀ Home</button>}
+                {onOpenResources && <button type="button" className="vl-hub-link" onClick={onOpenResources}>Toolkit</button>}
+              </div>
+              <div className="vl-hub-stars-badge" title="Total Vidyā Stars unlocked across all Vijñāna Lab quests">
+                <span aria-hidden="true">⭐</span>
+                <strong>{explorerStats.totalStars || 0}</strong> Vidyā Stars
+                <span className="vl-hub-stars-sep">·</span>
+                <span className="vl-hub-missions-count">🏆 {explorerStats.completedMissions?.length || 0}/17 Mastered</span>
+              </div>
             </div>
             <div className="vl-hub-banner">
               <div className="vl-hub-banner-copy">
@@ -666,16 +683,77 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 <p className="vl-hub-tagline">Look. Learn from nature. Know with purpose.</p>
                 <p className="vl-hub-range">Soft play shapes → Kauṭilya’s harvest · Ages 2–16+</p>
                 <p className="vl-hub-sloka" lang="sa">प्रकृतिं पश्य, प्रकृतेः शिक्षस्व, प्रयोजनाय जानीहि।</p>
+
+                {/* Quick Age Jump Chips */}
+                <div className="vl-hub-age-jumper" aria-label="Jump by Child Age">
+                  <span className="vl-hub-age-title">Jump by Age:</span>
+                  <div className="vl-hub-age-chips">
+                    <button
+                      type="button"
+                      className={`vl-hub-age-chip ${filterLevel === 'preschool' ? 'is-active' : ''}`}
+                      onClick={() => {
+                        setFilterLevel('preschool');
+                        setFilterCat('all');
+                        soundEffects.playStrokeChime();
+                      }}
+                    >
+                      👶 Ages 2–6 · Wonder (24 Games)
+                    </button>
+                    <button
+                      type="button"
+                      className={`vl-hub-age-chip ${filterLevel === 'primary' ? 'is-active' : ''}`}
+                      onClick={() => {
+                        setFilterLevel('primary');
+                        setFilterCat('all');
+                        soundEffects.playStrokeChime();
+                      }}
+                    >
+                      🎒 Ages 6–10 · Primary (Matter & Orbits)
+                    </button>
+                    <button
+                      type="button"
+                      className={`vl-hub-age-chip ${filterLevel === 'middle' ? 'is-active' : ''}`}
+                      onClick={() => {
+                        setFilterLevel('middle');
+                        setFilterCat('all');
+                        soundEffects.playStrokeChime();
+                      }}
+                    >
+                      🔭 Ages 10–14 · Middle (Space & Atoms)
+                    </button>
+                    <button
+                      type="button"
+                      className={`vl-hub-age-chip ${filterLevel === 'high' ? 'is-active' : ''}`}
+                      onClick={() => {
+                        setFilterLevel('high');
+                        setFilterCat('all');
+                        soundEffects.playStrokeChime();
+                      }}
+                    >
+                      🏛️ Ages 14+ · Scholar (Geometry & Ujjain)
+                    </button>
+                  </div>
+                </div>
               </div>
-              <img
-                className="vl-hub-art"
-                src="/images/vignana-lab-hero.webp?v=2"
-                alt="Children exploring Vijñāna Lab — nature, geometry, rockets, and harvest games"
-                width={1280}
-                height={720}
-                loading="eager"
-                decoding="async"
-              />
+              <div className="vl-hub-art-wrap">
+                <img
+                  className="vl-hub-art"
+                  src={heroSrc}
+                  onError={() => {
+                    if (heroSrc.includes('.webp')) {
+                      setHeroSrc('/images/vignana-lab-hero.jpg');
+                    } else {
+                      setHeroSrc('/images/gurukul-staircase-blackboard.jpg');
+                    }
+                  }}
+                  alt="Children exploring Vijñāna Lab — nature, geometry, rockets, and harvest games"
+                  width={1280}
+                  height={720}
+                  loading="eager"
+                  decoding="async"
+                />
+                <span className="vl-hub-art-badge">✨ Children Exploring Bhāratīya Science · 2–16+ Yrs</span>
+              </div>
             </div>
             <p className="vl-hub-lead">
               <em>Look at nature, learn from nature, know with purpose.</em> These games share the way Bhāratīya ṛṣis
@@ -687,30 +765,122 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               <li><span aria-hidden="true">🌿</span><strong lang="sa">प्रकृति-शिक्षा</strong><b>Learn from nature</b><small>Seasons, sky, sound and living things are the teachers.</small></li>
               <li><span aria-hidden="true">🎯</span><strong lang="sa">प्रयोजन-युक्त ज्ञानम्</strong><b>Purpose-driven knowledge</b><small>Every game asks: how does this help us live well?</small></li>
             </ul>
+
+            {/* Popular Starting Quests */}
+            <div className="vl-hub-featured-strip">
+              <div className="vl-hub-featured-header">
+                <span className="vl-hub-feat-kicker">🌟 Popular Explorations</span>
+                <h3 className="vl-hub-feat-heading">Recommended Starting Quests</h3>
+              </div>
+              <div className="vl-hub-featured-grid">
+                <div
+                  className="vl-hub-feat-card"
+                  onClick={() => handleLaunchSim('preschool-wonder')}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('preschool-wonder')}
+                >
+                  <div className="vl-hub-feat-icon">🌟</div>
+                  <div className="vl-hub-feat-body">
+                    <span className="vl-hub-feat-badge vl-badge--preschool">Ages 2–6 · 24 Games</span>
+                    <h4 className="vl-hub-feat-title">Wonder Playground & Living India Map</h4>
+                    <p className="vl-hub-feat-desc">The Spice Adventure, storybook India Map, animal safari, color mixing, and temple bells with gentle audio.</p>
+                    <span className="vl-hub-feat-cta">Launch Playground ➔</span>
+                  </div>
+                </div>
+                <div
+                  className="vl-hub-feat-card"
+                  onClick={() => handleLaunchSim('chandrayaan')}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('chandrayaan')}
+                >
+                  <div className="vl-hub-feat-icon">🛰️</div>
+                  <div className="vl-hub-feat-body">
+                    <span className="vl-hub-feat-badge vl-badge--middle">Ages 10–14 · Space</span>
+                    <h4 className="vl-hub-feat-title">Chandrayaan Moon Mission</h4>
+                    <p className="vl-hub-feat-desc">Execute soft touchdown at Shiv Shakti point, deploy Pragyan rover, and fire the LIBS laser spectrometer.</p>
+                    <span className="vl-hub-feat-cta">Launch Moon Mission ➔</span>
+                  </div>
+                </div>
+                <div
+                  className="vl-hub-feat-card"
+                  onClick={() => handleLaunchSim('paramanu')}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('paramanu')}
+                >
+                  <div className="vl-hub-feat-icon">⚛️</div>
+                  <div className="vl-hub-feat-body">
+                    <span className="vl-hub-feat-badge vl-badge--middle">Ages 10–14 · Chemistry</span>
+                    <h4 className="vl-hub-feat-title">Atom Builder: Make Matter</h4>
+                    <p className="vl-hub-feat-desc">Bond primordial Paramāṇus into Dvyaṇuka and Tryaṇuka molecules following Sage Kaṇāda's Vaiśeṣika physics.</p>
+                    <span className="vl-hub-feat-cta">Launch Atom Lab ➔</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </header>
 
-          <nav className="vl-level-rail" aria-label="Learning levels">
-            {LEVEL_STEPS.map((step) => {
-              const count = step.id === 'all' ? LAB_SEGMENTS.length : LAB_SEGMENTS.filter((x) => x.level === step.id).length;
-              return (
-                <button
-                  key={step.id}
-                  type="button"
-                  className={`vl-level-step${filterLevel === step.id ? ' is-active' : ''}`}
-                  aria-pressed={filterLevel === step.id}
-                  onClick={() => { setFilterLevel(step.id); soundEffects.playStrokeChime(); }}
-                >
-                  {step.num && <span className="vl-level-num">{step.num}</span>}
-                  <span className="vl-level-text"><b>{step.label}</b><small>{step.ages} · {count}</small></span>
-                </button>
-              );
-            })}
-          </nav>
+          {/* Dual Navigation Controls: Levels + Domains */}
+          <div className="vl-filter-control-panel">
+            <div className="vl-rail-group">
+              <span className="vl-rail-label">Learning Level:</span>
+              <nav className="vl-level-rail" aria-label="Learning levels">
+                {LEVEL_STEPS.map((step) => {
+                  const count = step.id === 'all'
+                    ? LAB_SEGMENTS.filter((s) => filterCat === 'all' || s.category === filterCat).length
+                    : LAB_SEGMENTS.filter((x) => x.level === step.id && (filterCat === 'all' || x.category === filterCat)).length;
+                  return (
+                    <button
+                      key={step.id}
+                      type="button"
+                      className={`vl-level-step${filterLevel === step.id ? ' is-active' : ''}`}
+                      aria-pressed={filterLevel === step.id}
+                      onClick={() => { setFilterLevel(step.id); soundEffects.playStrokeChime(); }}
+                    >
+                      {step.num && <span className="vl-level-num">{step.num}</span>}
+                      <span className="vl-level-text"><b>{step.label}</b><small>{step.ages} · {count}</small></span>
+                    </button>
+                  );
+                })}
+              </nav>
+            </div>
 
-          <div className="vl-hub-search">
-            <span aria-hidden="true">🔍</span>
-            <input type="text" placeholder="Search games" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} aria-label="Search games" />
-            {searchQuery && <button type="button" onClick={() => setSearchQuery('')} aria-label="Clear search">✕</button>}
+            <div className="vl-rail-group">
+              <span className="vl-rail-label">Scientific Domain:</span>
+              <nav className="vl-cat-rail" aria-label="Scientific domains">
+                {CATEGORY_TABS.map((cat) => {
+                  const count = cat.id === 'all'
+                    ? LAB_SEGMENTS.filter((s) => filterLevel === 'all' || s.level === filterLevel).length
+                    : LAB_SEGMENTS.filter((s) => s.category === cat.id && (filterLevel === 'all' || s.level === filterLevel)).length;
+                  return (
+                    <button
+                      key={cat.id}
+                      type="button"
+                      className={`vl-cat-chip${filterCat === cat.id ? ' is-active' : ''}`}
+                      aria-pressed={filterCat === cat.id}
+                      onClick={() => { setFilterCat(cat.id); soundEffects.playStrokeChime(); }}
+                    >
+                      <span aria-hidden="true">{cat.icon}</span>
+                      <span>{cat.label}</span>
+                      <small className="vl-cat-count">({count})</small>
+                    </button>
+                  );
+                })}
+              </nav>
+            </div>
+          </div>
+
+          <div className="vl-hub-search-row">
+            <div className="vl-hub-search">
+              <span aria-hidden="true">🔍</span>
+              <input type="text" placeholder="Search games, Sanskrit concepts, topics..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} aria-label="Search games" />
+              {searchQuery && <button type="button" onClick={() => setSearchQuery('')} aria-label="Clear search">✕</button>}
+            </div>
+            <span className="vl-search-tally">
+              Showing <strong>{visibleSegments.length}</strong> of {LAB_SEGMENTS.length} simulations
+            </span>
           </div>
 
           {LEVEL_STEPS.filter((st) => st.id !== 'all' && (filterLevel === 'all' || filterLevel === st.id)).map((st) => {
@@ -730,7 +900,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                         <span className="vl-game-chips">
                           <span>{g.ageRange}</span>
                           <span>{CATEGORY_CHIP[g.category]}</span>
-                          {g.id === 'preschool-wonder' && <span>11 games</span>}
+                          {g.id === 'preschool-wonder' ? <span>24 activities (Map &amp; Spices)</span> : <span>⏱️ 3–5 min</span>}
                           {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>⭐ {explorerStats.starsByGame[g.id]}</span>}
                         </span>
                       </span>
@@ -741,7 +911,11 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               </section>
             );
           })}
-          {visibleSegments.length === 0 && <p className="vl-hub-empty">No games match. <button type="button" onClick={() => { setSearchQuery(''); setFilterLevel('all'); }}>Show all</button></p>}
+          {visibleSegments.length === 0 && (
+            <p className="vl-hub-empty">
+              No games match your current filter. <button type="button" onClick={() => { setSearchQuery(''); setFilterLevel('all'); setFilterCat('all'); }}>Show all simulations</button>
+            </p>
+          )}
         </div>
       )}
 
@@ -772,6 +946,44 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                   {seg.title} <span className="vl-wb-dev" lang="sa">({seg.dev})</span>
                 </h2>
               </div>
+            </div>
+
+            {/* In-workbench quick navigation bar */}
+            <div className="vl-wb-quick-nav" aria-label="Quick simulation switcher">
+              <button
+                type="button"
+                className="vl-wb-arrow-btn"
+                onClick={() => handleNavigateLab(prevSeg.id)}
+                title={`Previous: ${prevSeg.title}`}
+                aria-label={`Previous: ${prevSeg.title}`}
+              >
+                ◀ Prev
+              </button>
+              <select
+                id="vl-lab-switch"
+                className="vl-wb-switcher-select"
+                value={active}
+                onChange={(e) => {
+                  handleLaunchSim(e.target.value as LabSegmentId);
+                  soundEffects.playStrokeChime();
+                }}
+                aria-label="Switch science simulation"
+              >
+                {LAB_SEGMENTS.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.icon} {s.title} ({s.ageRange})
+                  </option>
+                ))}
+              </select>
+              <button
+                type="button"
+                className="vl-wb-arrow-btn"
+                onClick={() => handleNavigateLab(nextSeg.id)}
+                title={`Next: ${nextSeg.title}`}
+                aria-label={`Next: ${nextSeg.title}`}
+              >
+                Next ▶
+              </button>
             </div>
 
             <div className="vl-wb-actions-right">
