@@ -753,6 +753,8 @@ interface ActivityItem {
   bannerGradient: string;
   accentColor: string;
   bannerVisual: {
+    image?: string;
+    imageAlt?: string;
     emojiLead: string;
     decorEmojis: string[];
     taglineSa: string;
@@ -825,6 +827,8 @@ const ACTIVITIES: ActivityItem[] = [
     bannerGradient: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
     accentColor: '#f59e0b',
     bannerVisual: {
+      image: '/images/jyamiti-shapes.webp',
+      imageAlt: 'आकाराः · Sacred & Everyday Shapes | Shapes & Forms under the Gurukul Tree',
       emojiLead: '📐',
       decorEmojis: ['🔴', '🟩', '🔺', '⭐', '🥚', '🌙'],
       taglineSa: 'वृत्त-चतुरस्र-त्रिकोण-तारकाः',
@@ -1040,7 +1044,13 @@ const ACTIVITIES: ActivityItem[] = [
     gradeBadge: 'Ages 2–6 · Spices Deck', desc: 'Learn 12 fragrant kitchen spices with interactive flashcards, sizzle pot & 4-picture quest!',
     features: ['🃏 12 Flashcards', '🍲 Amma\'s Kadai', '🎯 4-Picture Quest'],
     bannerGradient: 'linear-gradient(135deg, #fde68a 0%, #fecaca 100%)', accentColor: '#ea580c',
-    bannerVisual: { emojiLead: '🌶️', decorEmojis: ['🫚', '🧄', '🌿', '🟡', '⚫', '🟤'], taglineSa: 'पाकशालायाः सुगन्धः' },
+    bannerVisual: {
+      image: '/preschool/spices/cover.webp',
+      imageAlt: 'The Spice Adventure · मसालानि',
+      emojiLead: '🌶️',
+      decorEmojis: ['🫚', '🧄', '🌿', '🟡', '⚫', '🟤'],
+      taglineSa: 'पाकशालायाः सुगन्धः',
+    },
   },
   {
     id: 'months', labelSa: 'मासाः', labelEn: '12 Lunar Months', icon: '🗓️', level: 'next', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
@@ -1612,6 +1622,7 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
   const [selectedShape, setSelectedShape] = useState<ShapeItem>(SHAPES[0]);
   const [shapeQuizTarget, setShapeQuizTarget] = useState<ShapeItem | null>(null);
   const [quizScore, setQuizScore] = useState<number>(0);
+  const [activeShapePoster, setActiveShapePoster] = useState<'shapes' | 'patterns'>('shapes');
 
   const visibleShapes = useMemo(() => {
     if (shapePack === 'first6') return SHAPES.slice(0, 6);
@@ -2203,14 +2214,28 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                       ⭐ Explored
                     </span>
                   )}
-                  <div className="psw-cc-hero-pod">
-                    <span className="psw-cc-lead-emoji" aria-hidden="true">{act.bannerVisual.emojiLead}</span>
-                  </div>
-                  <div className="psw-cc-decor-row" aria-hidden="true">
-                    {act.bannerVisual.decorEmojis.slice(0, 4).map((em, i) => (
-                      <span key={i} className="psw-cc-decor-bubble">{em}</span>
-                    ))}
-                  </div>
+                  {act.bannerVisual.image ? (
+                    <div className="psw-cc-hero-art-wrap">
+                      <img
+                        src={act.bannerVisual.image}
+                        alt={act.bannerVisual.imageAlt || act.labelEn}
+                        className="psw-cc-hero-img"
+                        loading="lazy"
+                      />
+                      <div className="psw-cc-hero-scrim" />
+                    </div>
+                  ) : (
+                    <>
+                      <div className="psw-cc-hero-pod">
+                        <span className="psw-cc-lead-emoji" aria-hidden="true">{act.bannerVisual.emojiLead}</span>
+                      </div>
+                      <div className="psw-cc-decor-row" aria-hidden="true">
+                        {act.bannerVisual.decorEmojis.slice(0, 4).map((em, i) => (
+                          <span key={i} className="psw-cc-decor-bubble">{em}</span>
+                        ))}
+                      </div>
+                    </>
+                  )}
                   <div className="psw-cc-sa-ribbon" lang="sa">
                     {act.bannerVisual.taglineSa}
                   </div>
@@ -2440,6 +2465,198 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
               </button>
             </div>
           )}
+
+          {/* =========================================================
+              INTERACTIVE TWIN GAME CARDS (आकाराः & ज्यामितीय प्रतिरूप)
+             ========================================================= */}
+          <div className="psw-shape-posters-wrap">
+            <div className="psw-sp-header-row">
+              <div className="psw-sp-title-area">
+                <span className="psw-sp-kicker">🎴 Authentic Game Card Illustrations</span>
+                <h4 className="psw-sp-title">Interactive Gurukul Geometry Cards</h4>
+              </div>
+              <div className="psw-sp-pill-group" role="tablist" aria-label="Game card illustrations">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeShapePoster === 'shapes'}
+                  className={`psw-sp-pill ${activeShapePoster === 'shapes' ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setActiveShapePoster('shapes');
+                    soundEffects.playStrokeChime();
+                  }}
+                >
+                  🎨 Card 1: Shapes &amp; Forms (आकाराः)
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeShapePoster === 'patterns'}
+                  className={`psw-sp-pill ${activeShapePoster === 'patterns' ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setActiveShapePoster('patterns');
+                    soundEffects.playStrokeChime();
+                  }}
+                >
+                  📐 Card 2: Patterns (ज्यामितीय प्रतिरूप)
+                </button>
+              </div>
+            </div>
+
+            {/* Poster Card Display Frame */}
+            <div className="psw-sp-card-frame">
+              {activeShapePoster === 'shapes' ? (
+                <div className="psw-sp-view">
+                  <div className="psw-sp-img-box">
+                    <img
+                      src="/images/jyamiti-shapes.webp"
+                      alt="आकाराः • Sacred & Everyday Shapes | Shapes & Forms • आकाराः"
+                      className="psw-sp-hero-image"
+                      loading="eager"
+                      width="1024"
+                      height="764"
+                    />
+                    <div className="psw-sp-overlay-tag">
+                      🔍 Tap any shape pill below to highlight it &amp; hear Sanskrit pronunciation!
+                    </div>
+                  </div>
+                  {/* Interactive Shape Chips matching the image */}
+                  <div className="psw-sp-chips-bar">
+                    <span className="psw-sp-chips-lead">Find in Picture:</span>
+                    <button
+                      type="button"
+                      className="psw-sp-chip"
+                      onClick={() => {
+                        const s = SHAPES.find(x => x.id === 'circle')!;
+                        setSelectedShape(s);
+                        speakShapeWithExample(s.dev, s.example);
+                      }}
+                    >
+                      ☀️ वृत्तम् (Circle · Sun)
+                    </button>
+                    <button
+                      type="button"
+                      className="psw-sp-chip"
+                      onClick={() => {
+                        const s = SHAPES.find(x => x.id === 'square')!;
+                        setSelectedShape(s);
+                        speakShapeWithExample(s.dev, s.example);
+                      }}
+                    >
+                      🟩 चतुरस्रम् (Square · Frame)
+                    </button>
+                    <button
+                      type="button"
+                      className="psw-sp-chip"
+                      onClick={() => {
+                        const s = SHAPES.find(x => x.id === 'triangle')!;
+                        setSelectedShape(s);
+                        speakShapeWithExample(s.dev, s.example);
+                      }}
+                    >
+                      🔺 त्रिकोणम् (Triangle · Blocks)
+                    </button>
+                    <button
+                      type="button"
+                      className="psw-sp-chip"
+                      onClick={() => {
+                        const s = SHAPES.find(x => x.id === 'star')!;
+                        setSelectedShape(s);
+                        speakShapeWithExample(s.dev, s.example);
+                      }}
+                    >
+                      ⭐ तारका (Star · Shooting Star)
+                    </button>
+                    <button
+                      type="button"
+                      className="psw-sp-chip"
+                      onClick={() => {
+                        const s = SHAPES.find(x => x.id === 'oval')!;
+                        setSelectedShape(s);
+                        speakShapeWithExample(s.dev, s.example);
+                      }}
+                    >
+                      🥚 अण्डाकारः (Oval · Nest Egg)
+                    </button>
+                    <button
+                      type="button"
+                      className="psw-sp-chip"
+                      onClick={() => {
+                        const s = SHAPES.find(x => x.id === 'crescent')!;
+                        setSelectedShape(s);
+                        speakShapeWithExample(s.dev, s.example);
+                      }}
+                    >
+                      🌙 अर्धचन्द्रः (Crescent · Moon)
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="psw-sp-view">
+                  <div className="psw-sp-img-box">
+                    <img
+                      src="/images/jyamiti-patterns.webp"
+                      alt="आकाराः • Sacred & Everyday Shapes | Geometrical Patterns • ज्यामितीय प्रतिरूप"
+                      className="psw-sp-hero-image"
+                      loading="eager"
+                      width="1024"
+                      height="764"
+                    />
+                    <div className="psw-sp-overlay-tag">
+                      💠 Explore symmetry, polygon wooden tiles &amp; sacred mandalas!
+                    </div>
+                  </div>
+                  {/* Interactive Pattern Chips */}
+                  <div className="psw-sp-chips-bar">
+                    <span className="psw-sp-chips-lead">Explore Patterns:</span>
+                    <button
+                      type="button"
+                      className="psw-sp-chip"
+                      onClick={() => {
+                        const s = SHAPES.find(x => x.id === 'triangle')!;
+                        setSelectedShape(s);
+                        playPronunciation('त्रिकोणम्');
+                      }}
+                    >
+                      🔺 त्रिकोणम् (Triangle Tiles)
+                    </button>
+                    <button
+                      type="button"
+                      className="psw-sp-chip"
+                      onClick={() => {
+                        const s = SHAPES.find(x => x.id === 'diamond')!;
+                        setSelectedShape(s);
+                        playPronunciation('समचतुर्भुजम्');
+                      }}
+                    >
+                      🪁 समचतुर्भुजम् (Diamond Rhombus)
+                    </button>
+                    <button
+                      type="button"
+                      className="psw-sp-chip"
+                      onClick={() => {
+                        const s = SHAPES.find(x => x.id === 'hexagon')!;
+                        setSelectedShape(s);
+                        playPronunciation('षट्कोणम्');
+                      }}
+                    >
+                      ⬡ षट्कोणम् (Hexagon Symmetry)
+                    </button>
+                    <button
+                      type="button"
+                      className="psw-sp-chip"
+                      onClick={() => {
+                        soundEffects.playCelebrationChime();
+                        playPronunciation('ज्यामितीय प्रतिरूप');
+                      }}
+                    >
+                      🌸 मण्डल-प्रतिरूपम् (Mandala Tangram)
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
 
           <div className="ppd-pack-bar" role="tablist" aria-label="Shape packs">
             {([
@@ -4395,7 +4612,11 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
               onClick={() => launchActivity(item.id)}
             >
               <div className="psw-mc-banner" style={{ background: item.bannerGradient }}>
-                <span>{item.bannerVisual.emojiLead}</span>
+                {item.bannerVisual.image ? (
+                  <img src={item.bannerVisual.image} alt={item.labelEn} className="psw-mc-banner-img" />
+                ) : (
+                  <span>{item.bannerVisual.emojiLead}</span>
+                )}
               </div>
               <div className="psw-mc-body">
                 <span className="psw-mc-grade">{item.gradeBadge}</span>

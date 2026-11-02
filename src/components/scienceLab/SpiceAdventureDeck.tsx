@@ -32,7 +32,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#e11d48',
     accentColor: '#be123c',
     bgTint: '#fff1f2',
-    img: '/preschool/spices/cumin.svg',
+    img: '/preschool/spices/cumin.webp',
     funFact: 'Tiny striped jeera seeds jump and sizzle happily when dropped in warm ghee!',
     dish: 'Jeera Rice & Dal Tadka',
   },
@@ -47,7 +47,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#0284c7',
     accentColor: '#0369a1',
     bgTint: '#f0f9ff',
-    img: '/preschool/spices/pepper.svg',
+    img: '/preschool/spices/pepper.webp',
     funFact: 'Black pepper pearls give a cozy warmth to winter soups and sweet rasam!',
     dish: 'Warm Rasam & Khichdi',
   },
@@ -62,7 +62,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#eab308',
     accentColor: '#a16207',
     bgTint: '#fefce8',
-    img: '/preschool/spices/cardamom.svg',
+    img: '/preschool/spices/cardamom.webp',
     funFact: 'Fragrant green pods holding sweet black seeds that make festive kheer smell magical!',
     dish: 'Sweet Kheer & Payasam',
   },
@@ -77,7 +77,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#9333ea',
     accentColor: '#7e22ce',
     bgTint: '#faf5ff',
-    img: '/preschool/spices/clove.svg',
+    img: '/preschool/spices/clove.webp',
     funFact: 'A dried flower bud with a tiny four-petal crown on top that smells like festive chai!',
     dish: 'Fragrant Biryani & Herbal Tea',
   },
@@ -94,7 +94,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#b45309',
     accentColor: '#78350f',
     bgTint: '#fffbeb',
-    img: '/preschool/spices/cinnamon.svg',
+    img: '/preschool/spices/cinnamon.webp',
     funFact: 'Tvak means tree bark! It curls into sweet, woody brown rolls while drying under the sun.',
     dish: 'Sweet Rolls & Pulao',
   },
@@ -109,7 +109,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#65a30d',
     accentColor: '#4d7c0f',
     bgTint: '#f7fee7',
-    img: '/preschool/spices/coriander.svg',
+    img: '/preschool/spices/coriander.webp',
     funFact: 'Gives us fresh leafy scalloped sprigs (dhaniya) and crunchy golden seeds for curry!',
     dish: 'Green Chutney & Sambar',
   },
@@ -124,7 +124,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#16a34a',
     accentColor: '#15803d',
     bgTint: '#f0fdf4',
-    img: '/preschool/spices/methi.svg',
+    img: '/preschool/spices/methi.webp',
     funFact: 'Methi has three cheerful green leaflets on each stem and bakes into crispy hot parathas!',
     dish: 'Methi Thepla & Aloo Methi',
   },
@@ -139,7 +139,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#ea580c',
     accentColor: '#c2410c',
     bgTint: '#fff7ed',
-    img: '/preschool/spices/mustard.svg',
+    img: '/preschool/spices/mustard.webp',
     funFact: 'Little round rai seeds dance and crackle pop-pop-pop when the kadai is hot!',
     dish: 'Tadka for Dal & Warm Dhokla',
   },
@@ -156,7 +156,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#d97706',
     accentColor: '#b45309',
     bgTint: '#fffbeb',
-    img: '/preschool/spices/ginger.svg',
+    img: '/preschool/spices/ginger.webp',
     funFact: 'Grows cozy underground! Warm adrak honey tea warms your throat on rainy days.',
     dish: 'Warm Adrak Chai & Fresh Curry',
   },
@@ -171,7 +171,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#7c3aed',
     accentColor: '#6d28d9',
     bgTint: '#f5f3ff',
-    img: '/preschool/spices/hing.svg',
+    img: '/preschool/spices/hing.webp',
     funFact: 'Just one tiny fairy-dust pinch makes the whole kitchen smell delicious and soothes tummies!',
     dish: 'Dal Tadka & Sambar',
   },
@@ -186,7 +186,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#a855f7',
     accentColor: '#7e22ce',
     bgTint: '#faf5ff',
-    img: '/preschool/spices/garlic.svg',
+    img: '/preschool/spices/garlic.webp',
     funFact: 'A bundle of white moon-shaped cloves tucked snugly inside paper-thin white jackets!',
     dish: 'Garlic Naan & Rasam',
   },
@@ -201,7 +201,7 @@ export const SPICE_CARDS: SpiceCard[] = [
     borderColor: '#f97316',
     accentColor: '#ea580c',
     bgTint: '#fff7ed',
-    img: '/preschool/spices/cover.svg',
+    img: '/preschool/spices/cover.webp',
     funFact: 'Meet Chef Bodhi! Explore 11 fragrant spices of India, cook in the pot, and play Spice Quest!',
     dish: 'Gurukul Cooking Adventure',
     isCover: true,
@@ -218,6 +218,7 @@ export const SpiceAdventureDeck: React.FC<SpiceAdventureDeckProps> = ({ onEarnSt
   const [playMode, setPlayMode] = useState<'cards' | 'pot' | 'quest'>('cards');
   const [activeCard, setActiveCard] = useState<SpiceCard>(SPICE_CARDS[0]);
   const [tappedId, setTappedId] = useState<string | null>(null);
+  const [cardStyle, setCardStyle] = useState<'photo' | 'illustrated'>('photo');
 
   // Cooking Pot Mode State
   const [potStep, setPotStep] = useState<number>(0);
@@ -411,12 +412,37 @@ export const SpiceAdventureDeck: React.FC<SpiceAdventureDeckProps> = ({ onEarnSt
                 Tap any flashcard to hear its authentic Sanskrit pronunciation, lively sizzle sound, and chef facts!
               </p>
             </div>
-            {/* Quick Mascot Bodhi Pill */}
-            <div className="psw-spices-chef-badge" onClick={() => handleCardClick(SPICE_CARDS[11])} role="button" tabIndex={0}>
-              <img src="/preschool/spices/cover.svg" alt="Chef Bodhi" className="psw-mini-chef-avatar" />
-              <div>
-                <strong>Chef Bodhi (पाचकः)</strong>
-                <small>Tap cards to sizzle &amp; learn!</small>
+            {/* Quick Mascot Bodhi Pill & Card Style Switcher */}
+            <div className="psw-spices-header-actions">
+              <div className="psw-spices-style-toggle" role="group" aria-label="Card View Style">
+                <button
+                  type="button"
+                  className={`psw-spices-style-btn ${cardStyle === 'photo' ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setCardStyle('photo');
+                    soundEffects.playStrokeChime();
+                  }}
+                >
+                  📷 Authentic Photo Cards
+                </button>
+                <button
+                  type="button"
+                  className={`psw-spices-style-btn ${cardStyle === 'illustrated' ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setCardStyle('illustrated');
+                    soundEffects.playStrokeChime();
+                  }}
+                >
+                  🎨 Interactive Studio
+                </button>
+              </div>
+
+              <div className="psw-spices-chef-badge" onClick={() => handleCardClick(SPICE_CARDS[11])} role="button" tabIndex={0}>
+                <img src="/preschool/spices/cover.webp" alt="Chef Bodhi" className="psw-mini-chef-avatar" />
+                <div>
+                  <strong>Chef Bodhi (पाचकः)</strong>
+                  <small>Tap cards to sizzle &amp; learn!</small>
+                </div>
               </div>
             </div>
           </div>
@@ -430,7 +456,7 @@ export const SpiceAdventureDeck: React.FC<SpiceAdventureDeckProps> = ({ onEarnSt
               return (
                 <div
                   key={card.id}
-                  className={`psw-spice-flashcard ${isTapped ? 'is-popping' : ''} ${isSelected ? 'is-selected' : ''}`}
+                  className={`psw-spice-flashcard ${cardStyle === 'photo' ? 'is-photo-mode' : ''} ${isTapped ? 'is-popping' : ''} ${isSelected ? 'is-selected' : ''}`}
                   style={{
                     '--card-border-color': card.borderColor,
                     '--card-accent-color': card.accentColor,
@@ -444,76 +470,90 @@ export const SpiceAdventureDeck: React.FC<SpiceAdventureDeckProps> = ({ onEarnSt
                   }}
                   title={`Tap to hear ${card.dev} (${card.en})`}
                 >
-                  {/* Outer Patterned Border Frame */}
-                  <div className="psw-sfc-outer-border">
-                    {/* Inner Clean Card Surface */}
-                    <div className="psw-sfc-inner-canvas">
-                      {/* Top Pill Kicker Banner */}
-                      <div className="psw-sfc-top-banner">
-                        <span className="psw-sfc-icon-left">{card.kickerIcon}</span>
-                        <span className="psw-sfc-kicker-text">
-                          {card.isCover ? 'Game Cover Card' : card.kicker}
-                        </span>
-                        <span className="psw-sfc-icon-right">{card.kickerRightIcon}</span>
-                      </div>
-
-                      {/* Cover Card vs Regular Spice Card Content */}
-                      {card.isCover ? (
-                        <div className="psw-sfc-cover-content">
-                          <h4 className="psw-sfc-cover-title">“The Spice Adventure”</h4>
-                          <div className="psw-sfc-cover-art-wrap">
-                            <img
-                              src={card.img}
-                              alt="The Spice Adventure Mascot"
-                              className="psw-sfc-cover-img"
-                            />
-                          </div>
-                          <span className="psw-sfc-cover-sa" lang="sa">मसालानि</span>
-                        </div>
-                      ) : (
-                        <div className="psw-sfc-body-row">
-                          {/* Art on Left for Cumin, Pepper, Cardamom, Clove, Coriander, Fenugreek (matching uploaded flashcard photo) */}
-                          {['cumin', 'pepper', 'cardamom', 'clove', 'coriander', 'fenugreek'].includes(card.id) ? (
-                            <>
-                              <div className="psw-sfc-art-col">
-                                <img
-                                  src={card.img}
-                                  alt={card.en}
-                                  className="psw-sfc-spice-img"
-                                />
-                              </div>
-                              <div className="psw-sfc-text-col">
-                                <h4 className="psw-sfc-dev" lang="sa">{card.dev}</h4>
-                                <div className="psw-sfc-iast">{card.iast}</div>
-                                <div className="psw-sfc-en">{card.en}</div>
-                              </div>
-                            </>
-                          ) : (
-                            /* Art on Right for Cinnamon, Mustard, Ginger, Hing, Garlic */
-                            <>
-                              <div className="psw-sfc-text-col">
-                                <h4 className="psw-sfc-dev" lang="sa">{card.dev}</h4>
-                                <div className="psw-sfc-iast">{card.iast}</div>
-                                <div className="psw-sfc-en">{card.en}</div>
-                              </div>
-                              <div className="psw-sfc-art-col">
-                                <img
-                                  src={card.img}
-                                  alt={card.en}
-                                  className="psw-sfc-spice-img"
-                                />
-                              </div>
-                            </>
-                          )}
-                        </div>
-                      )}
-
-                      {/* Tap Audio Indicator Icon */}
-                      <span className="psw-sfc-audio-pill" aria-hidden="true">
-                        🔊
-                      </span>
+                  {cardStyle === 'photo' ? (
+                    <div className="psw-sfc-photo-card-wrap">
+                      <img
+                        src={card.img}
+                        alt={`${card.dev} (${card.en}) - ${card.kicker}`}
+                        className="psw-sfc-full-photo-img"
+                        loading="lazy"
+                        width="230"
+                        height="160"
+                      />
+                      <span className="psw-sfc-photo-sound-hint">🔊 Tap</span>
                     </div>
-                  </div>
+                  ) : (
+                    /* Outer Patterned Border Frame */
+                    <div className="psw-sfc-outer-border">
+                      {/* Inner Clean Card Surface */}
+                      <div className="psw-sfc-inner-canvas">
+                        {/* Top Pill Kicker Banner */}
+                        <div className="psw-sfc-top-banner">
+                          <span className="psw-sfc-icon-left">{card.kickerIcon}</span>
+                          <span className="psw-sfc-kicker-text">
+                            {card.isCover ? 'Game Cover Card' : card.kicker}
+                          </span>
+                          <span className="psw-sfc-icon-right">{card.kickerRightIcon}</span>
+                        </div>
+
+                        {/* Cover Card vs Regular Spice Card Content */}
+                        {card.isCover ? (
+                          <div className="psw-sfc-cover-content">
+                            <h4 className="psw-sfc-cover-title">“The Spice Adventure”</h4>
+                            <div className="psw-sfc-cover-art-wrap">
+                              <img
+                                src={card.img}
+                                alt="The Spice Adventure Mascot"
+                                className="psw-sfc-cover-img"
+                              />
+                            </div>
+                            <span className="psw-sfc-cover-sa" lang="sa">मसालानि</span>
+                          </div>
+                        ) : (
+                          <div className="psw-sfc-body-row">
+                            {/* Art on Left for Cumin, Pepper, Cardamom, Clove, Coriander, Fenugreek (matching uploaded flashcard photo) */}
+                            {['cumin', 'pepper', 'cardamom', 'clove', 'coriander', 'fenugreek'].includes(card.id) ? (
+                              <>
+                                <div className="psw-sfc-art-col">
+                                  <img
+                                    src={card.img}
+                                    alt={card.en}
+                                    className="psw-sfc-spice-img"
+                                  />
+                                </div>
+                                <div className="psw-sfc-text-col">
+                                  <h4 className="psw-sfc-dev" lang="sa">{card.dev}</h4>
+                                  <div className="psw-sfc-iast">{card.iast}</div>
+                                  <div className="psw-sfc-en">{card.en}</div>
+                                </div>
+                              </>
+                            ) : (
+                              /* Art on Right for Cinnamon, Mustard, Ginger, Hing, Garlic */
+                              <>
+                                <div className="psw-sfc-text-col">
+                                  <h4 className="psw-sfc-dev" lang="sa">{card.dev}</h4>
+                                  <div className="psw-sfc-iast">{card.iast}</div>
+                                  <div className="psw-sfc-en">{card.en}</div>
+                                </div>
+                                <div className="psw-sfc-art-col">
+                                  <img
+                                    src={card.img}
+                                    alt={card.en}
+                                    className="psw-sfc-spice-img"
+                                  />
+                                </div>
+                              </>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Tap Audio Indicator Icon */}
+                        <span className="psw-sfc-audio-pill" aria-hidden="true">
+                          🔊
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })}
