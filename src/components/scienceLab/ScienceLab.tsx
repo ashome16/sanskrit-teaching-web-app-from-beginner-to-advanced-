@@ -919,8 +919,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                           >
                             <span className="vl-ps-act-icon">{item.icon}</span>
                             <span className="vl-ps-act-body">
-                              <strong className="vl-ps-act-sa" lang="sa">{item.sa}</strong>
-                              <span className="vl-ps-act-en">{item.en}</span>
+                              <strong className="vl-ps-act-en">{item.en}</strong>
+                              <span className="vl-ps-act-sa" lang="sa">{item.sa}</span>
                             </span>
                           </button>
                         ))}
@@ -1475,8 +1475,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                   >
                     <span className="vl-pgw-icon">{act.icon}</span>
                     <span className="vl-pgw-text">
-                      <strong lang="sa">{act.sa}</strong>
-                      <small>{act.en}</small>
+                      <strong className="vl-pgw-en">{act.en}</strong>
+                      <small className="vl-pgw-sa" lang="sa">{act.sa}</small>
                     </span>
                   </button>
                 ))}

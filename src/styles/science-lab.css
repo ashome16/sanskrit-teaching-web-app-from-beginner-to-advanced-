@@ -2906,11 +2906,11 @@
   line-height: 1;
 }
 
-.psw-qt-dev {
-  font-size: 0.88rem;
-  font-weight: 900;
+.psw-qt-en {
+  font-size: 0.85rem;
+  font-weight: 800;
   color: #0f172a;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 8px;
   padding: 1px 7px;
   white-space: nowrap;
@@ -2919,11 +2919,12 @@
   text-overflow: ellipsis;
 }
 
-.psw-qt-en {
-  font-size: 0.76rem;
+.psw-qt-dev {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: #334155;
-  background: rgba(255, 255, 255, 0.75);
+  color: #92400e;
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 6px;
   padding: 1px 6px;
   white-space: nowrap;
@@ -6016,21 +6017,23 @@
   min-width: 0;
 }
 
-.vl-ps-act-sa {
-  font-family: 'Noto Serif Devanagari', serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #92400e;
-  line-height: 1.2;
-}
-
 .vl-ps-act-en {
-  font-size: 0.78rem;
-  color: #4b5563;
-  line-height: 1.2;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.vl-ps-act-sa {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #b45309;
+  line-height: 1.2;
+  margin-top: 2px;
 }
 
 .vl-wb-switcher-select optgroup {
@@ -6176,15 +6179,23 @@
   min-width: 0;
 }
 
+.vl-pgw-text .vl-pgw-en,
 .vl-pgw-text strong {
-  font-family: 'Noto Serif Devanagari', serif;
-  font-size: 0.85rem;
-  color: #92400e;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.25;
 }
 
+.vl-pgw-text .vl-pgw-sa,
 .vl-pgw-text small {
-  font-size: 0.76rem;
-  color: #4b5563;
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #b45309;
+  line-height: 1.2;
+  margin-top: 2px;
+  display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

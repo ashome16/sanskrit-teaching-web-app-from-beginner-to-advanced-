@@ -2188,8 +2188,8 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                   </span>
                 )}
                 <span className="psw-qt-icon" aria-hidden="true">{act.icon}</span>
-                <span className="psw-qt-dev" lang="sa">{act.labelSa}</span>
                 <span className="psw-qt-en">{act.labelEn}</span>
+                <span className="psw-qt-dev" lang="sa">{act.labelSa}</span>
               </button>
             );
           })}
