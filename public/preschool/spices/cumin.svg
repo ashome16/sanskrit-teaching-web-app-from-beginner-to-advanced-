@@ -1,46 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cumin seeds (Jeera)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Sizzle Seed · Cumin (जीरकम्)">
   <defs>
-    <radialGradient id="cuminGlow" cx="50%" cy="48%" r="50%">
-      <stop offset="0%" stop-color="#fef3c7"/>
-      <stop offset="70%" stop-color="#fde68a" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#fde68a" stop-opacity="0"/>
+    <radialGradient id="jarGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="70%" stop-color="#fef3c7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#fef3c7" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="bowlWood" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="lidWood" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="50%" stop-color="#b45309"/>
       <stop offset="100%" stop-color="#78350f"/>
     </linearGradient>
-    <linearGradient id="seedBody" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#b45309"/>
-      <stop offset="55%" stop-color="#854d0e"/>
-      <stop offset="100%" stop-color="#5c2d16"/>
+    <linearGradient id="jarGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#fef3c7" stop-opacity="0.2"/>
+      <stop offset="85%" stop-color="#e2e8f0" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0.8"/>
     </linearGradient>
-    <g id="jeeraSeed">
-      <path d="M-9,0 Q0,-4.2 9,0 Q0,4.2 -9,0 Z" fill="url(#seedBody)" stroke="#451a03" stroke-width="0.9"/>
-      <path d="M-7,0 Q0,-1.8 7,0" fill="none" stroke="#fde68a" stroke-width="0.9" stroke-linecap="round" opacity="0.85"/>
-      <path d="M-6.5,0.9 Q0,2.2 6.5,0.9" fill="none" stroke="#fcd34d" stroke-width="0.75" stroke-linecap="round" opacity="0.7"/>
+    <linearGradient id="jeeraFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="50%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <g id="jeeraSeedSmall">
+      <path d="M-6,0 Q0,-2.5 6,0 Q0,2.5 -6,0 Z" fill="#92400e" stroke="#451a03" stroke-width="0.8"/>
+      <path d="M-4,0 Q0,-1.2 4,0" fill="none" stroke="#fde68a" stroke-width="0.7" stroke-linecap="round"/>
     </g>
   </defs>
 
-  <circle cx="32" cy="32" r="28" fill="url(#cuminGlow)"/>
+  <circle cx="60" cy="62" r="50" fill="url(#jarGlow)"/>
 
-  <!-- Warm clay/wood spice bowl -->
-  <ellipse cx="30" cy="31" rx="21" ry="8.5" fill="#fef3c7" stroke="#92400e" stroke-width="1.8"/>
-  <path d="M9,31 Q11,48 30,48 Q49,48 51,31 Q41,37 30,37 Q19,37 9,31 Z" fill="url(#bowlWood)" stroke="#5c2d16" stroke-width="1.6"/>
+  <!-- Glass Spice Jar Body -->
+  <rect x="30" y="38" width="60" height="66" rx="14" fill="url(#jarGlass)" stroke="#94a3b8" stroke-width="2.5"/>
 
-  <!-- Mound of ridged cumin (jeera) seeds inside bowl -->
-  <use href="#jeeraSeed" transform="translate(22 28) rotate(-18) scale(0.95)"/>
-  <use href="#jeeraSeed" transform="translate(35 27) rotate(16) scale(0.95)"/>
-  <use href="#jeeraSeed" transform="translate(29 23) rotate(-6) scale(0.92)"/>
-  <use href="#jeeraSeed" transform="translate(19 32) rotate(12) scale(0.9)"/>
-  <use href="#jeeraSeed" transform="translate(31 32) rotate(-10) scale(0.98)"/>
-  <use href="#jeeraSeed" transform="translate(41 31) rotate(-22) scale(0.9)"/>
+  <!-- Golden Cumin Fill inside Jar -->
+  <path d="M33,52 Q45,49 60,51 Q75,49 87,52 L87,90 Q87,100 76,101 L44,101 Q33,100 33,90 Z" fill="url(#jeeraFill)"/>
 
-  <!-- Foreground magnified jeera seeds so ridges & pointed tips are unmistakable -->
-  <use href="#jeeraSeed" transform="translate(20 54) rotate(-14) scale(1.25)"/>
-  <use href="#jeeraSeed" transform="translate(39 55) rotate(19) scale(1.22)"/>
-  <use href="#jeeraSeed" transform="translate(49 48) rotate(-28) scale(1.05)"/>
+  <!-- Seeds inside Jar -->
+  <use href="#jeeraSeedSmall" transform="translate(45 60) rotate(-18) scale(1.1)"/>
+  <use href="#jeeraSeedSmall" transform="translate(62 58) rotate(14) scale(1.1)"/>
+  <use href="#jeeraSeedSmall" transform="translate(74 64) rotate(-22) scale(1.05)"/>
+  <use href="#jeeraSeedSmall" transform="translate(40 72) rotate(12) scale(1.1)"/>
+  <use href="#jeeraSeedSmall" transform="translate(56 70) rotate(-8) scale(1.15)"/>
+  <use href="#jeeraSeedSmall" transform="translate(72 74) rotate(26) scale(1.1)"/>
+  <use href="#jeeraSeedSmall" transform="translate(48 83) rotate(-15) scale(1.1)"/>
+  <use href="#jeeraSeedSmall" transform="translate(64 82) rotate(8) scale(1.15)"/>
+  <use href="#jeeraSeedSmall" transform="translate(54 93) rotate(-5) scale(1.1)"/>
+  <use href="#jeeraSeedSmall" transform="translate(70 91) rotate(19) scale(1.05)"/>
 
-  <!-- Fragrant sizzle sparkles -->
-  <path d="M24,15 Q22,11 25,7" fill="none" stroke="#d97706" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M35,14 Q33,10 36,6" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- Glass reflection highlight -->
+  <path d="M35,46 L35,88 Q35,94 40,96" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+
+  <!-- Jar Neck & Lid -->
+  <rect x="38" y="30" width="44" height="10" rx="3" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>
+  <rect x="34" y="20" width="52" height="13" rx="5" fill="url(#lidWood)" stroke="#5c2410" stroke-width="2.2"/>
+  <!-- Lid knob/groove -->
+  <rect x="42" y="16" width="36" height="5" rx="2.5" fill="#f59e0b" stroke="#78350f" stroke-width="1.4"/>
+
+  <!-- Sizzle steam sparkles -->
+  <path d="M22,26 Q19,18 24,12" fill="none" stroke="#ea580c" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="25" cy="8" r="2.2" fill="#ea580c"/>
+  <path d="M96,28 Q100,20 95,14" fill="none" stroke="#ea580c" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="94" cy="9" r="2.2" fill="#ea580c"/>
 </svg>

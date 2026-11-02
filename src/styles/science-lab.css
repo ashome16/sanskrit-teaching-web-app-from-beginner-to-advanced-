@@ -628,63 +628,497 @@
   transform: translate(-50%, -50%) scale(1.08);
 }
 
-/* Interactive Landmark Pins */
-@keyframes bharatMysteryBob {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
+/* ============================================================================
+   PRESCHOOL BHARAT MAP EXPLORER (Spacious, Joyful, Toddler-Friendly)
+   ============================================================================ */
+
+.bharat-preschool-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #ffffff;
+  border: 3px solid #fef08a;
+  border-radius: 28px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.bharat-top-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 2px dashed #f1f5f9;
+  padding-bottom: 14px;
+}
+
+.bharat-pack-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bharat-pack-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font-family: inherit;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+.bharat-pack-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+}
+
+.bharat-pack-tab.is-active {
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+  transform: scale(1.03);
+}
+
+.bpt-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.bpt-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.bpt-text strong {
+  font-size: 0.92rem;
+  color: #0f172a;
+}
+
+.bpt-text small {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.bharat-mode-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.bharat-mode-toggle {
+  display: flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 999px;
+  gap: 4px;
+}
+
+.bharat-mt-btn {
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.bharat-mt-btn.is-active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
+}
+
+.bharat-progress-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fef3c7;
+  border: 1.5px solid #fde047;
+  color: #92400e;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.bharat-replay-btn {
+  background: #ffffff;
+  border: 1px solid #f59e0b;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #b45309;
+  cursor: pointer;
+}
+
+/* Toddler Quest Hero Banner */
+.bharat-quest-hero-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border: 3px solid #f59e0b;
+  border-radius: 22px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  animation: bqhSlideDown 0.25s ease-out;
+}
+
+.bharat-quest-hero-banner.is-victory {
+  background: #dcfce7 !important;
+  border-color: #22c55e !important;
+}
+
+@keyframes bqhSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bqh-giant-token {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+  transition: transform 0.18s ease;
+  flex-shrink: 0;
+}
+
+.bqh-giant-token:hover {
+  transform: scale(1.08);
+}
+
+.bqh-giant-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.bqh-audio-chip {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.bqh-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bqh-kicker-pill {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.bqh-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bqh-dev {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.bqh-iast {
+  font-size: 1.1rem;
+  color: #475569;
+}
+
+.bqh-en {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0369a1;
+}
+
+.bqh-clue-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bqh-region-tag {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #334155;
+}
+
+.bqh-clue-text {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.bqh-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bqh-sound-btn {
+  background: #0284c7;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+  transition: transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.bqh-sound-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Centered Storybook Map Stage */
+.bharat-map-stage-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.bharat-map-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  aspect-ratio: 600 / 623;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.1);
+  border: 4px solid #bae6fd;
+  background: #e0f2fe;
+}
+
+.bharat-map-base-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  user-select: none;
+}
+
+.bharat-map-svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@keyframes bharatRiverFlow {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -36; }
+}
+
+.bharat-river-flow-anim {
+  animation: bharatRiverFlow 2.4s linear infinite;
+}
+
+/* Compass Rose */
+.bharat-compass-rose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 68px;
+  height: 68px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid #0284c7;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  place-items: center;
+  z-index: 6;
+}
+
+.bcr-center {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 1.1rem;
+}
+
+.bcr-dir {
+  background: transparent;
+  border: none;
+  font-size: 0.74rem;
+  font-weight: 900;
+  color: #0369a1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.bcr-n { grid-column: 2; grid-row: 1; }
+.bcr-s { grid-column: 2; grid-row: 3; }
+.bcr-w { grid-column: 1; grid-row: 2; }
+.bcr-e { grid-column: 3; grid-row: 2; }
+
+/* Clickable Sea Labels */
+.bharat-sea-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1.5px solid #0284c7;
+  border-radius: 999px;
+  padding: 3px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.12);
+  transition: transform 0.15s ease;
+}
+
+.bharat-sea-label:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.bharat-sea-label span {
+  font-size: 0.74rem;
+  font-weight: 900;
+  color: #0369a1;
+}
+
+.bharat-sea-label small {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+/* ============================================================================
+   LARGE, TACTILE, TODDLER-FRIENDLY MAP TOKENS (No Mystery Question Marks!)
+   ============================================================================ */
+
+@keyframes bharatTargetPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.8), 0 6px 16px rgba(15, 23, 42, 0.2);
+    transform: translate(-50%, -50%) scale(1.05);
   }
   50% {
-    transform: translate(-50%, -54%) scale(1.06);
+    box-shadow: 0 0 0 14px rgba(245, 158, 11, 0), 0 10px 22px rgba(15, 23, 42, 0.25);
+    transform: translate(-50%, -50%) scale(1.18);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0), 0 6px 16px rgba(15, 23, 42, 0.2);
+    transform: translate(-50%, -50%) scale(1.05);
   }
 }
 
-@keyframes bharatPinWrongShake {
-  0%, 100% { transform: translate(-50%, -50%); }
-  25% { transform: translate(-62%, -50%); }
-  75% { transform: translate(-38%, -50%); }
+@keyframes bharatGentleWobble {
+  0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+  25% { transform: translate(-50%, -50%) rotate(-12deg) scale(1.15); }
+  75% { transform: translate(-50%, -50%) rotate(12deg) scale(1.15); }
 }
 
 .bharat-map-pin {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 38px;
-  height: 38px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  border: 3px solid #ec4899;
+  border: 3.5px solid #d97706;
+  background: #ffffff;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 5;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.22);
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  z-index: 6;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.22);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
   touch-action: manipulation;
 }
 
-.bharat-map-pin.is-mystery {
-  animation: bharatMysteryBob 2.2s ease-in-out infinite;
+.bharat-map-pin:hover {
+  z-index: 10;
+  transform: translate(-50%, -50%) scale(1.18);
 }
 
-.bharat-map-pin:hover {
-  z-index: 8;
-  transform: translate(-50%, -50%) scale(1.18);
+.bharat-map-pin.is-target-glow {
+  z-index: 11;
+  border-color: #f59e0b;
+  animation: bharatTargetPulse 1.8s ease-in-out infinite;
+}
+
+.bharat-map-pin.is-wiggling {
+  z-index: 12;
+  animation: bharatGentleWobble 0.45s ease-in-out;
+}
+
+.bharat-map-pin.is-solved {
+  border-color: #16a34a !important;
+  background: #dcfce7 !important;
 }
 
 .bharat-map-pin.is-spotlight {
   z-index: 9;
-  transform: translate(-50%, -50%) scale(1.22);
-  box-shadow: 0 0 0 5px rgba(250, 204, 21, 0.65), 0 6px 16px rgba(15, 23, 42, 0.28);
-}
-
-.bharat-map-pin.is-wrong {
-  z-index: 10;
-  animation: bharatPinWrongShake 0.32s ease-in-out 2;
+  border-width: 4px;
 }
 
 .bmp-emoji {
-  font-size: 19px;
+  font-size: 26px;
   line-height: 1;
+  user-select: none;
+}
+
+.bmp-star-check {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #eab308;
+  color: #78350f;
+  font-size: 12px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .bmp-tag {
@@ -694,76 +1128,1005 @@
   color: #0f172a;
   border: 1.5px solid #0284c7;
   border-radius: 999px;
-  padding: 1px 7px;
+  padding: 2px 8px;
   font-size: 11px;
   font-weight: 800;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.16);
   pointer-events: none;
 }
 
 .bmp-tag--bottom {
-  top: calc(100% + 3px);
+  top: calc(100% + 4px);
   left: 50%;
   transform: translateX(-50%);
 }
 
 .bmp-tag--top {
-  bottom: calc(100% + 3px);
+  bottom: calc(100% + 4px);
   left: 50%;
   transform: translateX(-50%);
 }
 
 .bmp-tag--right {
-  left: calc(100% + 4px);
+  left: calc(100% + 5px);
   top: 50%;
   transform: translateY(-50%);
 }
 
 .bmp-tag--left {
-  right: calc(100% + 4px);
+  right: calc(100% + 5px);
   top: 50%;
   transform: translateY(-50%);
 }
 
-.bharat-hint-toast {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 11;
-  background: #fef08a;
-  color: #713f12;
-  border: 2px solid #eab308;
-  border-radius: 999px;
-  padding: 5px 14px;
-  font-size: 0.82rem;
+/* Discovery Drawer below map */
+.bharat-discovery-drawer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 3px solid #f59e0b;
+  border-radius: 22px;
+  padding: 16px 20px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.bdd-icon-col {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+}
+
+.bdd-giant-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.bdd-text-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bdd-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bdd-dev {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.bdd-iast {
+  font-size: 1.05rem;
+  color: #475569;
+}
+
+.bdd-en {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0369a1;
+}
+
+.bdd-region {
+  font-size: 0.78rem;
   font-weight: 800;
+  background: #ffffff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+}
+
+.bdd-fact {
+  margin: 2px 0 0;
+  font-size: 0.92rem;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.bdd-action-pill {
+  display: inline-block;
+  background: #ffffff;
+  border: 1.5px solid #f59e0b;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #92400e;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+
+.bdd-friendly-toast {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 4px 12px;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+.bdd-sound-col {
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .bharat-preschool-shell {
+    padding: 12px;
+  }
+  .bharat-map-pin {
+    width: 44px;
+    height: 44px;
+    border-width: 3px;
+  }
+  .bmp-emoji {
+    font-size: 22px;
+  }
+  .bharat-discovery-drawer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .bdd-title-row {
+    justify-content: center;
+  }
+  .bdd-action-pill {
+    align-self: center;
+  }
+  .bdd-friendly-toast {
+    align-self: center;
+  }
+}
+
+/* ============================================================================
+   PRESCHOOL SPICE ADVENTURE DECK (Exact 12 Flashcards + Cooking Pot + Quest)
+   ============================================================================ */
+
+.psw-spices-adventure {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.psw-spices-deck-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.psw-spices-deck-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.psw-spices-chef-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff7ed;
+  border: 2px solid #fdba74;
+  border-radius: 999px;
+  padding: 6px 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.12);
+  transition: transform 0.18s ease;
+}
+
+.psw-spices-chef-badge:hover {
+  transform: scale(1.04);
+}
+
+.psw-mini-chef-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 2px;
+  border: 1.5px solid #ea580c;
+}
+
+.psw-spices-chef-badge strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #9a3412;
+}
+
+.psw-spices-chef-badge small {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #c2410c;
+}
+
+/* 12-Card Grid (4 Columns on Desktop, 3 on Tablet, 2 on Phone) */
+.psw-spices-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 960px) {
+  .psw-spices-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .psw-spices-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+/* The Flashcard Frame */
+.psw-spice-flashcard {
+  position: relative;
+  background: transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  user-select: none;
+  outline: none;
+}
+
+.psw-spice-flashcard:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.psw-spice-flashcard.is-popping {
+  transform: scale(0.96);
+}
+
+.psw-spice-flashcard.is-selected .psw-sfc-outer-border {
+  box-shadow: 0 0 0 4px #f59e0b, 0 10px 24px rgba(15, 23, 42, 0.18);
+}
+
+/* Patterned Thick Border Container */
+.psw-sfc-outer-border {
+  border-radius: 20px;
+  background: var(--card-border-color, #e11d48);
+  padding: 10px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+  transition: box-shadow 0.18s ease;
+}
+
+/* Inner Clean White Canvas */
+.psw-sfc-inner-canvas {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  min-height: 160px;
+}
+
+/* Top Pill Kicker Banner */
+.psw-sfc-top-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1.5px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.psw-sfc-kicker-text {
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: #0f172a;
   white-space: nowrap;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+}
+
+.psw-sfc-icon-left,
+.psw-sfc-icon-right {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Card Body Layout */
+.psw-sfc-body-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex: 1;
+}
+
+.psw-sfc-art-col {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.psw-sfc-spice-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.psw-spice-flashcard:hover .psw-sfc-spice-img {
+  transform: scale(1.1);
+}
+
+.psw-sfc-text-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.psw-sfc-dev {
+  margin: 0;
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.psw-sfc-iast {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #475569;
+  line-height: 1.2;
+}
+
+.psw-sfc-en {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+/* Cover Card Specific Styling */
+.psw-sfc-cover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.psw-sfc-cover-title {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.psw-sfc-cover-art-wrap {
+  width: 72px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.psw-sfc-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.psw-sfc-cover-sa {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #ea580c;
+}
+
+.psw-sfc-audio-pill {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  font-size: 11px;
+  opacity: 0.6;
   pointer-events: none;
 }
 
+/* Spotlight Drawer below 12 Cards */
+.psw-spice-spotlight-drawer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 3.5px solid #e11d48;
+  border-radius: 24px;
+  padding: 18px 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  margin-top: 8px;
+}
+
+.psw-ssd-left {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  flex-shrink: 0;
+}
+
+.psw-ssd-giant-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.psw-ssd-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.psw-ssd-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.psw-ssd-kicker-pill {
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.psw-ssd-dish-pill {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: #334155;
+}
+
+.psw-ssd-names {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.psw-ssd-dev {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.psw-ssd-iast {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #475569;
+}
+
+.psw-ssd-en {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.psw-ssd-fact {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.psw-ssd-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* ============================================================================
+   MODE 2: AMMA'S COOKING POT (पाकशाला · Kitchen Game)
+   ============================================================================ */
+
+.psw-spices-pot-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #ffffff;
+  border: 3px solid #fed7aa;
+  border-radius: 26px;
+  padding: 20px;
+  box-shadow: 0 10px 28px rgba(249, 115, 22, 0.08);
+}
+
+.psw-pot-recipe-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff7ed;
+  border: 2px solid #fdba74;
+  border-radius: 16px;
+  padding: 10px 18px;
+}
+
+.psw-prb-recipe-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #9a3412;
+}
+
+.psw-prb-recipe-name strong {
+  font-size: 1.05rem;
+  color: #7c2d12;
+}
+
+.psw-prb-progress {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #ea580c;
+  background: #ffffff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid #fed7aa;
+}
+
+.psw-pot-kadai-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+
+/* The Bubbling Kadai */
+.psw-pot-kadai {
+  position: relative;
+  width: 170px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.psw-pot-kadai.is-sizzling {
+  animation: pswPotSizzleShake 0.4s ease-in-out infinite;
+}
+
+@keyframes pswPotSizzleShake {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px) scale(1.02); }
+}
+
+.psw-pot-steam-particles {
+  position: absolute;
+  top: -20px;
+  display: flex;
+  gap: 12px;
+  font-size: 1.5rem;
+}
+
+@keyframes pswSteamRise {
+  0% { opacity: 0; transform: translateY(8px) scale(0.8); }
+  50% { opacity: 0.8; transform: translateY(-8px) scale(1.1); }
+  100% { opacity: 0; transform: translateY(-24px) scale(1.3); }
+}
+
+.psw-steam-1 { animation: pswSteamRise 1.8s ease-out infinite; }
+.psw-steam-2 { animation: pswSteamRise 2.1s ease-out infinite 0.4s; }
+.psw-steam-3 { animation: pswSteamRise 1.9s ease-out infinite 0.8s; }
+
+.psw-pot-kadai-bowl {
+  width: 150px;
+  height: 90px;
+  background: radial-gradient(circle at 50% 120%, #78350f, #451a03);
+  border: 4px solid #92400e;
+  border-radius: 0 0 100px 100px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+  position: relative;
+}
+
+.psw-pot-golden-ghee {
+  width: 130px;
+  height: 40px;
+  background: radial-gradient(ellipse at 50% 50%, #fef08a, #f59e0b);
+  border-radius: 50%;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.psw-floating-spice {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  animation: pswFloatDrop 0.5s ease-out;
+}
+
+@keyframes pswFloatDrop {
+  from { transform: translateY(-30px) scale(0.5); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.psw-floating-spice img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Chef Speech Bubble */
+.psw-pot-chef-bubble {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fffbeb;
+  border: 2px solid #fde68a;
+  border-radius: 20px;
+  padding: 14px 18px;
+  max-width: 440px;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.12);
+}
+
+.psw-pot-chef-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 2px;
+  border: 2px solid #ea580c;
+  flex-shrink: 0;
+}
+
+.psw-pot-speech-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.psw-pot-speech-target {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: #92400e;
+}
+
+.psw-pot-speech-target strong {
+  font-size: 1.25rem;
+  color: #78350f;
+}
+
+.psw-pot-speech-text {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.psw-mini-sound-btn {
+  align-self: flex-start;
+  margin-top: 4px;
+  background: #ea580c;
+  color: #ffffff;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+}
+
+.psw-pot-status-toast {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #b45309;
+  background: #fef3c7;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #fde68a;
+}
+
+/* Pantry Grid */
+.psw-pot-pantry-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.psw-pot-pantry-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #334155;
+}
+
+.psw-pot-pantry-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (max-width: 860px) {
+  .psw-pot-pantry-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 520px) {
-  .bharat-map-pin {
-    width: 32px;
-    height: 32px;
-    border-width: 2.5px;
+  .psw-pot-pantry-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .bmp-emoji {
-    font-size: 16px;
-  }
-  .bharat-compass-rose {
-    width: 56px;
-    height: 56px;
-    top: 6px;
-    right: 6px;
-  }
-  .bharat-sea-label span {
-    font-size: 9.5px;
-  }
-  .bharat-sea-label small {
-    display: none;
-  }
+}
+
+.psw-pot-spice-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 6px;
+  border-radius: 16px;
+  border: 2.5px solid #fdba74;
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.psw-pot-spice-tile:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+}
+
+.psw-pot-spice-tile.is-target-hint {
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.7), 0 6px 16px rgba(15, 23, 42, 0.12);
+  animation: pswTargetBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes pswTargetBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.psw-pot-spice-tile.is-already-added {
+  opacity: 0.55;
+}
+
+.psw-pst-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin-bottom: 4px;
+}
+
+.psw-pst-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.psw-pst-dev {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.psw-pst-en {
+  font-size: 0.74rem;
+  color: #475569;
+}
+
+/* ============================================================================
+   MODE 3: 4-PICTURE SPICE QUEST
+   ============================================================================ */
+
+.psw-spices-quest-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.psw-sq-header-card {
+  border: 3px solid #f59e0b;
+  border-radius: 22px;
+  padding: 18px 24px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.psw-sq-kicker {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #b45309;
+}
+
+.psw-sq-prompt-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.psw-giant-sound-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+  transition: transform 0.16s ease;
+}
+
+.psw-giant-sound-circle:hover {
+  transform: scale(1.08);
+}
+
+.psw-sq-titles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.psw-sq-sublabel {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.psw-sq-dev {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.psw-sq-iast {
+  font-size: 1.05rem;
+  color: #475569;
+}
+
+.psw-sq-feedback-toast {
+  background: #dcfce7;
+  border: 1.5px solid #86efac;
+  color: #166534;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  animation: bqhSlideDown 0.2s ease-out;
+}
+
+.psw-sq-choices-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.psw-sq-card-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 14px;
+  border-radius: 20px;
+  border: 3px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+.psw-sq-card-choice:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+.psw-sq-card-choice.is-correct {
+  border-color: #22c55e !important;
+  background: #dcfce7 !important;
+  transform: scale(1.04);
+}
+
+.psw-sqc-top-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.psw-sqc-img-wrap {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.psw-sqc-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.psw-sqc-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.psw-sqc-dev {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.psw-sqc-en {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #475569;
 }
 
 /* ============================================================================

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Sweet Bark · Cinnamon (त्वक्)">
+  <defs>
+    <radialGradient id="cinnamonGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="70%" stop-color="#ffedd5" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffedd5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="barkOuter" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c2410c"/>
+      <stop offset="35%" stop-color="#ea580c"/>
+      <stop offset="70%" stop-color="#9a3412"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+    <linearGradient id="barkInner" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <linearGradient id="barkRoll" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdba74"/>
+      <stop offset="50%" stop-color="#c2410c"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="60" cy="60" r="50" fill="url(#cinnamonGlow)"/>
+
+  <!-- First Cinnamon Stick (Diagonal Back) -->
+  <g transform="translate(62, 54) rotate(-28)">
+    <!-- Rolled bark shaft -->
+    <path d="M-40,-11 L35,-11 Q44,-11 44,0 Q44,11 35,11 L-40,11 Z" fill="url(#barkOuter)" stroke="#451a03" stroke-width="2.2"/>
+    <!-- Bark natural striations & ridges -->
+    <path d="M-30,-5 L25,-5" fill="none" stroke="#fdba74" stroke-width="1.8" opacity="0.65" stroke-linecap="round"/>
+    <path d="M-22,3 L32,3" fill="none" stroke="#7c2d12" stroke-width="1.6" opacity="0.8" stroke-linecap="round"/>
+    <path d="M-35,6 L18,6" fill="none" stroke="#fdba74" stroke-width="1.2" opacity="0.5" stroke-linecap="round"/>
+
+    <!-- Left end rolled curl spiral -->
+    <ellipse cx="-40" cy="0" rx="8" ry="11" fill="url(#barkInner)" stroke="#451a03" stroke-width="2"/>
+    <path d="M-39,-8 C-44,-8 -45,0 -40,5 C-36,9 -33,4 -36,0 C-38,-3 -40,-1 -39,0" fill="none" stroke="#fed7aa" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Second Cinnamon Stick (Overlapping Front) -->
+  <g transform="translate(56, 72) rotate(16)">
+    <!-- Rolled bark shaft -->
+    <path d="M-38,-13 L36,-13 Q45,-13 45,0 Q45,13 36,13 L-38,13 Z" fill="url(#barkOuter)" stroke="#3b1508" stroke-width="2.4"/>
+    <!-- Bark ridges -->
+    <path d="M-28,-7 L28,-7" fill="none" stroke="#fed7aa" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+    <path d="M-20,4 L30,4" fill="none" stroke="#451a03" stroke-width="1.8" opacity="0.85" stroke-linecap="round"/>
+    <path d="M-32,7 L15,7" fill="none" stroke="#fed7aa" stroke-width="1.4" opacity="0.55" stroke-linecap="round"/>
+
+    <!-- Left end rolled curl spiral -->
+    <ellipse cx="-38" cy="0" rx="9" ry="13" fill="url(#barkInner)" stroke="#3b1508" stroke-width="2.2"/>
+    <path d="M-37,-10 C-43,-10 -44,0 -38,6 C-34,11 -30,5 -34,0 C-36,-3 -39,-1 -38,1" fill="none" stroke="#fed7aa" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- Right end cut -->
+    <path d="M36,-13 Q45,-13 45,0 Q45,13 36,13" fill="none" stroke="#451a03" stroke-width="1.8"/>
+  </g>
+
+  <!-- Warm sweet tree bark sparkles -->
+  <circle cx="22" cy="38" r="2.8" fill="#ea580c"/>
+  <circle cx="100" cy="46" r="2.2" fill="#c2410c"/>
+  <circle cx="86" cy="22" r="3" fill="#ea580c"/>
+</svg>

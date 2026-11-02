@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Sweet Pod · Cardamom (एला)">
+  <defs>
+    <radialGradient id="cardamomGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="70%" stop-color="#dcfce7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#dcfce7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="podGreen1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="45%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <linearGradient id="podGreen2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a7f3d0"/>
+      <stop offset="45%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="podOpenInside" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <radialGradient id="cardamomSeedGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </radialGradient>
+    <g id="cardamomSeed">
+      <ellipse cx="0" cy="0" rx="3.5" ry="4.5" fill="url(#cardamomSeedGrad)" stroke="#020617" stroke-width="0.8"/>
+      <circle cx="-1" cy="-1.5" r="1.1" fill="#94a3b8" opacity="0.75"/>
+    </g>
+  </defs>
+
+  <circle cx="60" cy="60" r="50" fill="url(#cardamomGlow)"/>
+
+  <!-- Background Cardamom Pod 1 -->
+  <g transform="translate(42, 42) rotate(-38)">
+    <path d="M0,-24 Q13,-12 13,8 Q13,24 0,28 Q-13,24 -13,8 Q-13,-12 0,-24 Z" fill="url(#podGreen1)" stroke="#166534" stroke-width="2"/>
+    <path d="M0,-23 Q5,-5 0,26" fill="none" stroke="#bbf7d0" stroke-width="1.6" opacity="0.75"/>
+    <path d="M-6,-18 Q-1,-3 -6,22" fill="none" stroke="#22c55e" stroke-width="1.2" opacity="0.6"/>
+    <path d="M6,-18 Q1,-3 6,22" fill="none" stroke="#14532d" stroke-width="1.2" opacity="0.6"/>
+    <!-- Stem tip -->
+    <path d="M-2,-24 L2,-24 L1,-28 L-1,-28 Z" fill="#ca8a04" stroke="#713f12" stroke-width="1"/>
+  </g>
+
+  <!-- Background Cardamom Pod 2 -->
+  <g transform="translate(82, 52) rotate(32)">
+    <path d="M0,-24 Q13,-12 13,8 Q13,24 0,28 Q-13,24 -13,8 Q-13,-12 0,-24 Z" fill="url(#podGreen2)" stroke="#065f46" stroke-width="2"/>
+    <path d="M0,-23 Q5,-5 0,26" fill="none" stroke="#bbf7d0" stroke-width="1.6" opacity="0.75"/>
+    <path d="M-6,-18 Q-1,-3 -6,22" fill="none" stroke="#10b981" stroke-width="1.2" opacity="0.6"/>
+    <path d="M6,-18 Q1,-3 6,22" fill="none" stroke="#064e3b" stroke-width="1.2" opacity="0.6"/>
+    <!-- Stem tip -->
+    <path d="M-2,-24 L2,-24 L1,-28 L-1,-28 Z" fill="#ca8a04" stroke="#713f12" stroke-width="1"/>
+  </g>
+
+  <!-- Foreground Open Cardamom Pod showing dark aromatic seeds -->
+  <g transform="translate(58, 76) rotate(-10)">
+    <!-- Husk back -->
+    <path d="M0,-25 Q17,-12 17,9 Q17,25 0,30 Q-17,25 -17,9 Q-17,-12 0,-25 Z" fill="url(#podGreen1)" stroke="#14532d" stroke-width="2.2"/>
+    <!-- Inside cavity -->
+    <ellipse cx="0" cy="5" rx="11" ry="19" fill="url(#podOpenInside)" stroke="#92400e" stroke-width="1.2"/>
+
+    <!-- Clustered black cardamom seeds inside open pod -->
+    <use href="#cardamomSeed" transform="translate(-4, -6) rotate(14)"/>
+    <use href="#cardamomSeed" transform="translate(4, -5) rotate(-22)"/>
+    <use href="#cardamomSeed" transform="translate(-5, 5) rotate(-10)"/>
+    <use href="#cardamomSeed" transform="translate(3, 4) rotate(18)"/>
+    <use href="#cardamomSeed" transform="translate(-1, 14) rotate(5)"/>
+    <use href="#cardamomSeed" transform="translate(5, 12) rotate(-15)"/>
+    <use href="#cardamomSeed" transform="translate(-1, -1) scale(0.9)"/>
+
+    <!-- Shell folds & ridges -->
+    <path d="M-15,6 Q-10,-10 0,-24" fill="none" stroke="#dcfce7" stroke-width="1.6" opacity="0.8"/>
+    <path d="M15,6 Q10,-10 0,-24" fill="none" stroke="#15803d" stroke-width="1.6" opacity="0.8"/>
+  </g>
+
+  <!-- Sweet dessert sparkles -->
+  <circle cx="28" cy="28" r="2.5" fill="#ca8a04"/>
+  <circle cx="94" cy="24" r="2" fill="#ca8a04"/>
+  <circle cx="96" cy="88" r="2.8" fill="#16a34a"/>
+</svg>

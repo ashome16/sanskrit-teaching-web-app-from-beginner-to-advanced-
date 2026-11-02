@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Fenugreek trifoliate methi leaves and golden methi dana seeds">
+  <defs>
+    <radialGradient id="methiBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef9c3"/>
+      <stop offset="70%" stop-color="#d1fae5" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="methiLeafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="65%" stop-color="#15803d"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+    <linearGradient id="methiSeedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <!-- Single smooth obovate/oval methi leaflet -->
+    <g id="methiLeaflet">
+      <path d="M0,0 C-5.5,-3 -6.5,-12 -0.8,-15.5 C0,-14.3 0.8,-15.5 0.8,-15.5 C6.5,-12 5.5,-3 0,0 Z"
+            fill="url(#methiLeafGrad)" stroke="#14532d" stroke-width="1.15" stroke-linejoin="round"/>
+      <path d="M0,-1 L0,-13" fill="none" stroke="#bbf7d0" stroke-width="1" stroke-linecap="round"/>
+    </g>
+    <!-- Trifoliate 3-leaflet methi cluster -->
+    <g id="trifoliateMethi">
+      <use href="#methiLeaflet" transform="rotate(0)"/>
+      <use href="#methiLeaflet" transform="rotate(-58) scale(0.92)"/>
+      <use href="#methiLeaflet" transform="rotate(58) scale(0.92)"/>
+      <circle cx="0" cy="0" r="1.5" fill="#86efac"/>
+    </g>
+    <!-- Characteristic cuboid/rhomboid golden-ochre methi dana seed with diagonal groove -->
+    <g id="methiDana">
+      <rect x="-4.5" y="-3.6" width="9" height="7.2" rx="2.1" transform="skewX(-12)"
+            fill="url(#methiSeedGrad)" stroke="#78350f" stroke-width="1"/>
+      <path d="M-2.2,-2.6 L2.2,2.6" fill="none" stroke="#92400e" stroke-width="1" stroke-linecap="round"/>
+    </g>
+  </defs>
+
+  <circle cx="32" cy="32" r="28" fill="url(#methiBg)"/>
+
+  <!-- Tender pale-green methi stem -->
+  <path d="M16,50 Q21,39 25,27 M25,27 Q20,25 17,22 M25,27 Q31,29 36,27"
+        fill="none" stroke="#4ade80" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M16,50 Q21,39 25,27" fill="none" stroke="#15803d" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Classic 3-leaflet trifoliate methi sprigs -->
+  <use href="#trifoliateMethi" transform="translate(26 23) rotate(-6) scale(1.06)"/>
+  <use href="#trifoliateMethi" transform="translate(15 35) rotate(-38) scale(0.84)"/>
+
+  <!-- Golden angular cuboid methi dana seeds in foreground -->
+  <use href="#methiDana" transform="translate(37 45) rotate(-14) scale(1.12)"/>
+  <use href="#methiDana" transform="translate(49 44) rotate(18) scale(1.08)"/>
+  <use href="#methiDana" transform="translate(43 54) rotate(6) scale(1.15)"/>
+  <use href="#methiDana" transform="translate(30 54) rotate(-22) scale(1.06)"/>
+  <use href="#methiDana" transform="translate(53 53) rotate(-12) scale(1.02)"/>
+</svg>

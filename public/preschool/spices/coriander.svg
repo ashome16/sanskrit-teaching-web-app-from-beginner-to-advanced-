@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Coriander scalloped leaves and round dhaniya seeds">
+  <defs>
+    <radialGradient id="corBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ecfccb"/>
+      <stop offset="72%" stop-color="#dcfce7" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#dcfce7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cilantroLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="60%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <radialGradient id="dhaniyaSeed" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="55%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#a16207"/>
+    </radialGradient>
+    <!-- Scalloped fan-shaped cilantro leaf -->
+    <g id="kotmirBlade">
+      <path d="M0,12 C-3,8 -11,8 -12,2 C-13,-2 -9,-5 -10,-8 C-7,-10 -4,-7 -4,-11 C-2,-14 2,-14 4,-11 C4,-7 7,-10 10,-8 C9,-5 13,-2 12,2 C11,8 3,8 0,12 Z"
+            fill="url(#cilantroLeaf)" stroke="#14532d" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="M0,11 L0,-9 M0,4 L-7,-1 M0,4 L7,-1 M0,-2 L-5,-6 M0,-2 L5,-6"
+            fill="none" stroke="#bbf7d0" stroke-width="1" stroke-linecap="round"/>
+    </g>
+    <!-- Round ribbed whole coriander (sabut dhaniya) seed -->
+    <g id="sabutDhaniya">
+      <circle cx="0" cy="0" r="5.2" fill="url(#dhaniyaSeed)" stroke="#713f12" stroke-width="1"/>
+      <path d="M0,-5.4 L0,-6.4" stroke="#713f12" stroke-width="1.1" stroke-linecap="round"/>
+      <path d="M-2.2,-4.5 Q-3.2,0 -2.2,4.5 M0,-5 L0,5 M2.2,-4.5 Q3.2,0 2.2,4.5"
+            fill="none" stroke="#fef9c3" stroke-width="0.75" opacity="0.85"/>
+    </g>
+  </defs>
+
+  <circle cx="32" cy="32" r="28" fill="url(#corBg)"/>
+
+  <!-- Slender green cilantro stems -->
+  <path d="M26,48 Q22,36 19,24 M26,48 Q29,33 32,19 M26,48 Q35,38 42,28"
+        fill="none" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- 3 ruffled fan-shaped coriander (dhaniya) leaves -->
+  <use href="#kotmirBlade" transform="translate(18 22) rotate(-24) scale(0.95)"/>
+  <use href="#kotmirBlade" transform="translate(32 17) rotate(4) scale(1.08)"/>
+  <use href="#kotmirBlade" transform="translate(43 27) rotate(28) scale(0.92)"/>
+
+  <!-- Foreground cluster of round ribbed whole dhaniya seeds -->
+  <use href="#sabutDhaniya" transform="translate(35 49) scale(1.08)"/>
+  <use href="#sabutDhaniya" transform="translate(46 47) scale(1.02)"/>
+  <use href="#sabutDhaniya" transform="translate(41 56) scale(1.05)"/>
+  <use href="#sabutDhaniya" transform="translate(52 54) scale(0.95)"/>
+  <use href="#sabutDhaniya" transform="translate(26 54) scale(0.95)"/>
+</svg>

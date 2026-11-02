@@ -299,6 +299,73 @@ class SoundEffectsEngine {
     } catch { /* ignore */ }
   }
 
+  /** Distinct synthesized culinary acoustic sound for each of the 12 spices. */
+  playSpiceSound(id: string): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext(); if (!ctx) return;
+      const t = ctx.currentTime + 0.02;
+      switch (id) {
+        case 'cumin': // Sizzle Seed: delicious hot ghee sizzle & crackle
+          this.bNoise(ctx, t, 0.55, 'bandpass', 2800, 3200, 2, 0.18);
+          [0.05, 0.14, 0.22].forEach((d) => this.bTone(ctx, t + d, 0.04, 'triangle', 920, 1400, 0.08));
+          break;
+        case 'mustard': // Pop Seed: rapid crackling pop-pop-pop!
+          [0, 0.05, 0.11, 0.18, 0.25].forEach((d) => this.bTone(ctx, t + d, 0.035, 'sine', 1300, 380, 0.18));
+          break;
+        case 'pepper': // Warm Spice: ratchet pepper mill grind crunch
+          [0, 0.07, 0.14, 0.21].forEach((d) => this.bNoise(ctx, t + d, 0.06, 'bandpass', 1900, 650, 4, 0.22));
+          break;
+        case 'cardamom': // Sweet Pod: sweet dessert bell shimmer
+          [659.25, 783.99, 987.77, 1318.5].forEach((f, i) => this.bTone(ctx, t + i * 0.06, 0.35, 'sine', f, f, 0.08));
+          break;
+        case 'clove': // Flower Bud: deep aromatic woody chime
+          this.bTone(ctx, t, 0.42, 'triangle', 440, 440, 0.14);
+          this.bTone(ctx, t + 0.04, 0.35, 'sine', 880, 880, 0.08);
+          break;
+        case 'cinnamon': // Sweet Bark: warm woody snap
+          this.bTone(ctx, t, 0.15, 'triangle', 320, 160, 0.2);
+          this.bNoise(ctx, t, 0.08, 'bandpass', 1200, 400, 3, 0.15);
+          break;
+        case 'coriander': // Fresh Herb: crisp leafy rustle & sweet seed chime
+          this.bNoise(ctx, t, 0.35, 'highpass', 3500, 3000, 1, 0.09);
+          this.bTone(ctx, t + 0.08, 0.1, 'sine', 1200, 1600, 0.08);
+          break;
+        case 'fenugreek': // Green Leaf: fresh herb garden chime
+          [523.25, 659.25, 783.99].forEach((f, i) => this.bTone(ctx, t + i * 0.07, 0.28, 'sine', f, f, 0.08));
+          break;
+        case 'ginger': // Cozy Root: warm root sizzle & zest snap
+          this.bTone(ctx, t, 0.16, 'triangle', 290, 180, 0.16);
+          this.bNoise(ctx, t + 0.04, 0.35, 'bandpass', 2400, 1800, 2, 0.14);
+          break;
+        case 'hing': // Tiny Pinch: magical fairy spice dust twinkle
+          [1046.5, 1318.5, 1567.98, 2093].forEach((f, i) => this.bTone(ctx, t + i * 0.05, 0.25, 'sine', f, f * 1.05, 0.07));
+          break;
+        case 'garlic': // White Bulb: gentle plop & cooking bubble
+          this.bTone(ctx, t, 0.12, 'sine', 240, 480, 0.12);
+          this.bBubbles(ctx, t + 0.05, 4, 550, 400, 0.35);
+          break;
+        case 'cover': // Game Cover: cheerful festive fanfare
+          [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => this.bTone(ctx, t + i * 0.07, 0.3, 'sine', f, f, 0.1));
+          break;
+        default:
+          this.playStrokeChime();
+      }
+    } catch { /* ignore */ }
+  }
+
+  /** Bubbling cooking kadai sizzle when dropping a spice into the pot */
+  playCookingSizzle(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext(); if (!ctx) return;
+      const t = ctx.currentTime + 0.02;
+      this.bBubbles(ctx, t, 8, 480, 450, 0.6);
+      this.bNoise(ctx, t, 0.65, 'bandpass', 2600, 2100, 2, 0.16);
+      [0.08, 0.18, 0.28].forEach((d) => this.bTone(ctx, t + d, 0.05, 'triangle', 880, 1320, 0.07));
+    } catch { /* ignore */ }
+  }
+
   /**
    * Gentle, pleasant bell ding when drawing or completing a stroke (D5 / 587Hz)
    */
