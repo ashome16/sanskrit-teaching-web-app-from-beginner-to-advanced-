@@ -389,6 +389,11 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
 
 const SEGMENT_IDS = new Set<string>(LAB_SEGMENTS.map((s) => s.id));
 const HASH_ALIASES: Record<string, LabSegmentId> = {
+  games: 'preschool-wonder',
+  'games-section': 'preschool-wonder',
+  play: 'preschool-wonder',
+  'preschool-games': 'preschool-wonder',
+  'stem-games': 'paramanu',
   'atom-builder': 'paramanu',
   'atom': 'paramanu',
   'nature-balance': 'prakriti',
@@ -498,13 +503,14 @@ const SimLoader = () => <div className="vl-loading">Loading the lab bench…</di
 
 const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpenResources }) => {
   const [active, setActive] = useState<LabSegmentId>(() => {
-    if (initialSegment && SEGMENT_IDS.has(initialSegment)) return initialSegment as LabSegmentId;
+    if (initialSegment && initialSegment !== 'catalog' && SEGMENT_IDS.has(initialSegment)) return initialSegment as LabSegmentId;
     if (initialSegment && HASH_ALIASES[initialSegment]) return HASH_ALIASES[initialSegment];
-    return readHash() || 'paramanu';
+    return readHash() || 'preschool-wonder';
   });
   const [viewMode, setViewMode] = useState<'mission-control' | 'workbench' | 'catalog'>(() => {
-    if (initialSegment || readHash()) return 'workbench';
-    return 'catalog';
+    if (initialSegment === 'catalog') return 'catalog';
+    // Direct entry to games without scrolling down
+    return 'workbench';
   });
   const [explorerStats, setExplorerStats] = useState<ExplorerStats>(() => getExplorerStats());
   const [isScienceSparkOpen, setIsScienceSparkOpen] = useState(false);

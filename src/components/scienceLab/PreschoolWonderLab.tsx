@@ -847,6 +847,8 @@ const ACTIVITIES: ActivityItem[] = [
     bannerGradient: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)',
     accentColor: '#ec4899',
     bannerVisual: {
+      image: '/images/varna-colour-mother-child.jpg',
+      imageAlt: 'वर्ण-मेलनम् · Colour Magic Cauldron',
       emojiLead: '🧪',
       decorEmojis: ['🫧', '🍎', '🍌', '🦚', '🪔', '✨'],
       taglineSa: 'रक्त-पीत-नील-वर्ण-मेलनम्',
@@ -883,6 +885,8 @@ const ACTIVITIES: ActivityItem[] = [
     bannerGradient: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
     accentColor: '#f97316',
     bannerVisual: {
+      image: '/images/jungle-council/page-01.jpg',
+      imageAlt: 'पशु-ध्वनयः · Animal Safari & Sounds',
       emojiLead: '🐮',
       decorEmojis: ['🦁', '🐘', '🦚', '🐭', '🐸', '🎵'],
       taglineSa: 'पशु-पक्षिणां मधुरध्वनयः',
@@ -901,6 +905,8 @@ const ACTIVITIES: ActivityItem[] = [
     bannerGradient: 'linear-gradient(135deg, #38bdf8 0%, #4ade80 55%, #facc15 100%)',
     accentColor: '#0284c7',
     bannerVisual: {
+      image: '/preschool/india/india-map.svg',
+      imageAlt: 'भारत-मानचित्रम् · Living Map of India',
       emojiLead: '🗺️',
       decorEmojis: ['🏔️', '🌊', '🦁', '🐅', '🐘', '🐪'],
       taglineSa: 'भारतं मम देशः',
@@ -938,6 +944,8 @@ const ACTIVITIES: ActivityItem[] = [
     bannerGradient: 'linear-gradient(135deg, #c4b5fd 0%, #86efac 100%)',
     accentColor: '#a78bfa',
     bannerVisual: {
+      image: '/preschool/yoga/padma.webp',
+      imageAlt: 'योगासनानि · Yoga Pose Match',
       emojiLead: '🧘',
       decorEmojis: ['🌳', '🐍', '🪷', '⛰️', '🦋', '🐱'],
       taglineSa: 'योगः कर्मसु कौशलम्',

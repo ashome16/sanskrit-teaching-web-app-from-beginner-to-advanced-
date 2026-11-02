@@ -1184,16 +1184,49 @@ const Dashboard: React.FC = () => {
               <span className="dashboard-nav-sanskrit">गृहम्</span>
               <span className="dashboard-nav-secondary">Home</span>
             </button>
-            <button
-              type="button"
-              className={`dashboard-nav-games dashboard-nav-item${activeView === 'science-lab' ? ' active' : ''}`}
-              onClick={() => openScienceLab()}
-              title="विज्ञान-क्रीडा-शाला · Interactive Sanskrit Science & STEM Games, Simulations & Preschool Wonder Lab"
+            <div
+              className={`dashboard-nav-group dashboard-nav-group--games${activeView === 'science-lab' ? ' dashboard-nav-group--active' : ''}`}
             >
-              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">🎮</span>
-              <span className="dashboard-nav-sanskrit">क्रीडा-शाला</span>
-              <span className="dashboard-nav-secondary">{englishFirst ? 'Sanskrit Games' : 'Games'}</span>
-            </button>
+              <button
+                type="button"
+                className={`dashboard-nav-group-label dashboard-nav-games-label${activeView === 'science-lab' ? ' dashboard-nav-group-label--active' : ''}`}
+                onClick={() => openScienceLab('preschool-wonder')}
+                title="Enter Games Section Directly (क्रीडा-शाला)"
+              >
+                <span className="dashboard-nav-icon" style={{ fontSize: '1.15rem', lineHeight: 1 }} aria-hidden="true">🎮</span>
+                <span className="dashboard-nav-sanskrit">क्रीडा-शाला</span>
+                <span className="dashboard-nav-sub-en">{englishFirst ? 'Games' : 'क्रीडाः'}</span>
+              </button>
+              <div className="dashboard-nav-sub" role="group" aria-label="Direct games navigation">
+                <button
+                  type="button"
+                  className={activeView === 'science-lab' && (!labTarget.segment || labTarget.segment === 'preschool-wonder') ? 'active' : ''}
+                  onClick={() => openScienceLab('preschool-wonder')}
+                  title="Direct entry: 24 Preschool Wonder Games (Shapes, Colors, Spices, Animals, Map & Yoga)"
+                >
+                  <span aria-hidden="true">🌟</span>
+                  <span className="dashboard-nav-sanskrit">शिशु-क्रीडा</span> <span className="dashboard-nav-sub-en">Preschool</span>
+                </button>
+                <button
+                  type="button"
+                  className={activeView === 'science-lab' && labTarget.segment === 'paramanu' ? 'active' : ''}
+                  onClick={() => openScienceLab('paramanu')}
+                  title="Direct entry: 17 STEM Science Labs & Physics Simulators"
+                >
+                  <span aria-hidden="true">⚛️</span>
+                  <span className="dashboard-nav-sanskrit">विज्ञान-क्रीडा</span> <span className="dashboard-nav-sub-en">STEM</span>
+                </button>
+                <button
+                  type="button"
+                  className={activeView === 'science-lab' && labTarget.segment === 'catalog' ? 'active' : ''}
+                  onClick={() => openScienceLab('catalog')}
+                  title="Browse All 41 Games Directory"
+                >
+                  <span aria-hidden="true">🗂️</span>
+                  <span className="dashboard-nav-sub-en">Directory</span>
+                </button>
+              </div>
+            </div>
             <div
               className={`dashboard-nav-group${(activeView === 'reader' && lesson?.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
             >
