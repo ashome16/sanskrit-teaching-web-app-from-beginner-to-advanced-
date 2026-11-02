@@ -3403,3 +3403,367 @@
     flex: 1;
   }
 }
+
+/* ==========================================================================
+   Refined Vijñāna Lab Adventure Gateway (Post-Simulation Next Step)
+   ========================================================================== */
+
+.vl-adventure-gateway {
+  margin: 2.25rem 0 1.75rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1.5px solid #cbd5e1;
+  border-radius: 24px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.vl-ag-header {
+  margin-bottom: 1.15rem;
+}
+
+.vl-ag-kicker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.vl-ag-kicker {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #0284c7;
+}
+
+.vl-ag-progress-pill {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #475569;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.vl-ag-heading {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.vl-ag-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.35rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.vl-ag-card-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+  flex: 1;
+  min-width: 280px;
+}
+
+.vl-ag-icon-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  border: 1.5px solid #7dd3fc;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+  flex-shrink: 0;
+}
+
+.vl-ag-big-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.vl-ag-level-chip {
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #0369a1;
+  letter-spacing: 0.04em;
+}
+
+.vl-ag-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vl-ag-dev {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #b45309;
+}
+
+.vl-ag-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.vl-ag-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.vl-ag-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+}
+
+.vl-ag-badge--age {
+  background: #fef3c7;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+.vl-ag-badge--subj {
+  background: #e0f2fe;
+  border-color: #bae6fd;
+  color: #0369a1;
+}
+
+.vl-ag-badge--cat {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.vl-ag-badge--time {
+  background: #faf5ff;
+  border-color: #e9d5ff;
+  color: #7e22ce;
+}
+
+.vl-ag-blurb {
+  margin: 4px 0 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: #475569;
+  max-width: 620px;
+}
+
+.vl-ag-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+  min-width: 260px;
+}
+
+.vl-ag-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-size: 0.94rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.vl-ag-launch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+}
+
+.vl-ag-arrow {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.vl-ag-launch-btn:hover .vl-ag-arrow {
+  transform: translateX(3px);
+}
+
+.vl-ag-sub-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.vl-ag-ghost-btn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.vl-ag-ghost-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+/* All 17 Simulations Navigation Grid */
+.vl-ag-grid-wrap {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1.5px solid #e2e8f0;
+}
+
+.vl-ag-grid-header {
+  margin-bottom: 0.75rem;
+}
+
+.vl-ag-grid-kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.vl-ag-grid-header h4 {
+  margin: 2px 0 0;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.vl-ag-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 8px;
+}
+
+.vl-ag-step-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 8px 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  position: relative;
+}
+
+.vl-ag-step-card:hover {
+  border-color: #0284c7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
+}
+
+.vl-ag-step-card.is-active {
+  background: #f0f9ff;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 1px #0284c7;
+}
+
+.vl-ag-step-num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #64748b;
+  min-width: 16px;
+}
+
+.vl-ag-step-card.is-active .vl-ag-step-num {
+  color: #0284c7;
+}
+
+.vl-ag-step-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.vl-ag-step-text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+}
+
+.vl-ag-step-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vl-ag-step-meta {
+  font-size: 0.68rem;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vl-ag-playing-badge {
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #0284c7;
+  padding: 2px 6px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .vl-ag-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .vl-ag-actions {
+    width: 100%;
+    min-width: auto;
+  }
+  .vl-ag-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hide obsolete floating dock */
+.vl-floating-dock {
+  display: none !important;
+}

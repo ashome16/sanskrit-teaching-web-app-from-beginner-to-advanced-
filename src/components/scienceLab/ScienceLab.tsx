@@ -916,6 +916,248 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               No games match your current filter. <button type="button" onClick={() => { setSearchQuery(''); setFilterLevel('all'); setFilterCat('all'); }}>Show all simulations</button>
             </p>
           )}
+
+          {/* ================================================================
+              EDUCATIONAL FRAMEWORK: SCIENCE LAB GAMES ACROSS ALL LEARNING LEVELS
+              ================================================================ */}
+          <section className="vl-seo-games-section" aria-label="About Vijñāna Science Lab Games and STEM Learning Levels">
+            <div className="vl-sgs-header">
+              <div className="vl-sgs-badge">
+                <span>🔬</span>
+                <span>SCIENCE LAB CURRICULUM · विज्ञान-क्रीडा-शाला</span>
+              </div>
+              <h2 className="vl-sgs-title">
+                Science Lab Games: Interactive Sanskrit STEM Sandboxes Across All Learning Levels
+              </h2>
+              <p className="vl-sgs-lead">
+                Welcome to the <strong>Vijñāna Science Lab</strong> — a living virtual laboratory combining classical Indian scientific inquiries (पदार्थ, खगोल, आयुर्वेद, छन्दस्, शुल्ब) with modern empirical physics, biology, aerospace engineering, and computational mathematics. Designed for children, school students, and scholars, every simulation operates as an experiential, gamified sandbox.
+              </p>
+            </div>
+
+            {/* 5-Level Educational Progression Grid */}
+            <div className="vl-sgs-levels-grid">
+              <div className="vl-sgs-level-card vl-slc--preschool">
+                <div className="vl-slc-top">
+                  <span className="vl-slc-icon">🌟</span>
+                  <div>
+                    <span className="vl-slc-tag">LEVEL 1 · AGES 2–6</span>
+                    <h3 className="vl-slc-title">Preschool Wonder Playground (शिशु-बोध)</h3>
+                  </div>
+                </div>
+                <p className="vl-slc-desc">
+                  Multisensory discovery games designed for young children. Explore the Living Map of India, spice rack aromas, gentle animals, color mixing, sacred temple bells, and nature cycles with joyful voice guidance.
+                </p>
+                <div className="vl-slc-games">
+                  <strong>Featured Games:</strong>
+                  <ul>
+                    <li><strong>Living Map of Bhārata:</strong> Tap snowy peaks, desert camels, and dolphins.</li>
+                    <li><strong>The Spice Adventure:</strong> 12 interactive spice cards with Amma&apos;s kadai sizzle.</li>
+                    <li><strong>Color Mixing &amp; Shapes:</strong> Mix primary pigments and shape sacred altars.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="vl-sgs-level-card vl-slc--primary">
+                <div className="vl-slc-top">
+                  <span className="vl-slc-icon">🎒</span>
+                  <div>
+                    <span className="vl-slc-tag">LEVEL 2 · GRADES 3–5 (AGES 6–10)</span>
+                    <h3 className="vl-slc-title">Primary School &amp; Hands-On Physics (प्रारम्भिक)</h3>
+                  </div>
+                </div>
+                <p className="vl-slc-desc">
+                  Elementary school science games that turn abstract textbook principles into tactile experiments. Learn mass conservation by boiling and freezing matter, steer planets with gravitational pulls, and construct interlocking temple stones.
+                </p>
+                <div className="vl-slc-games">
+                  <strong>Featured Science Games:</strong>
+                  <ul>
+                    <li><strong>Heat &amp; Matter Mystery:</strong> Burn, melt, and evaporate matter while proving mass invariance (100.000g).</li>
+                    <li><strong>Planet Pull Gravity Sandbox:</strong> Orbit Earth and Moon around the Sun without crashing or escaping.</li>
+                    <li><strong>Prakṛti Biosphere:</strong> Slide temperature and moisture dials to balance cellular energy.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="vl-sgs-level-card vl-slc--middle">
+                <div className="vl-slc-top">
+                  <span className="vl-slc-icon">🔬</span>
+                  <div>
+                    <span className="vl-slc-tag">LEVEL 3 · GRADES 6–8 (AGES 11–14)</span>
+                    <h3 className="vl-slc-title">Middle School &amp; CBSE/NCERT Alignment (माध्यमिक)</h3>
+                  </div>
+                </div>
+                <p className="vl-slc-desc">
+                  Directly aligned with middle school CBSE science syllabus: atomic theory, rocketry, motion laws, cellular biology, and lunar space science.
+                </p>
+                <div className="vl-slc-games">
+                  <strong>Featured Science Games:</strong>
+                  <ul>
+                    <li><strong>Atom Builder:</strong> Combine individual atomic particles into dyads (Dvyaṇuka) and visible triads (Tryaṇuka).</li>
+                    <li><strong>Chandrayaan Moon Mission:</strong> Execute thruster burns to soft-land on the Moon and fire LIBS laser spectroscopy.</li>
+                    <li><strong>Agnibāṇa Rocketry:</strong> Tune propellant ratios (5:1:1 Agnicūrṇa) and launch angles to hit target coordinates.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="vl-sgs-level-card vl-slc--high">
+                <div className="vl-slc-top">
+                  <span className="vl-slc-icon">🚀</span>
+                  <div>
+                    <span className="vl-slc-tag">LEVEL 4 · GRADES 9–12 (AGES 14–18)</span>
+                    <h3 className="vl-slc-title">High School STEM &amp; Mathematical Physics (उच्च-माध्यमिक)</h3>
+                  </div>
+                </div>
+                <p className="vl-slc-desc">
+                  Rigorous high school physics, astronomical geodesy, probability theory, and computer science foundations.
+                </p>
+                <div className="vl-slc-games">
+                  <strong>Featured Science Games:</strong>
+                  <ul>
+                    <li><strong>Sun-Shadow Compass &amp; Ujjain Geodesy:</strong> Compute longitude offsets, solar noon deviations, and the Tropic of Cancer drift.</li>
+                    <li><strong>Ṛtuparṇa Sampling Lab:</strong> Roll Mahābhārata Akṣa dice to demonstrate the Law of Large Numbers and Monte Carlo sampling.</li>
+                    <li><strong>Chandaḥśāstra Binary Permutations:</strong> Decode Piṅgala&apos;s binary trees, Pascal&apos;s triangle (Meruprastāra), and Fibonacci rhythms.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="vl-sgs-level-card vl-slc--advanced">
+                <div className="vl-slc-top">
+                  <span className="vl-slc-icon">🏛️</span>
+                  <div>
+                    <span className="vl-slc-tag">LEVEL 5 · COLLEGE &amp; RESEARCH (GRADE 11+)</span>
+                    <h3 className="vl-slc-title">Advanced Scholar &amp; Epistemological Lab (विद्वत्-शोध)</h3>
+                  </div>
+                </div>
+                <p className="vl-slc-desc">
+                  University-level mathematical modeling, structural dynamics, comparative philosophy of science, and computational quantitative statecraft.
+                </p>
+                <div className="vl-slc-games">
+                  <strong>Featured Science Games:</strong>
+                  <ul>
+                    <li><strong>Kauṭilya Quantitative Statecraft:</strong> Balance 7-limb Saptāṅga state dynamics and calculate maritime risk actuarial tables.</li>
+                    <li><strong>Mantra Acoustics &amp; Sāma Veda Harmonics:</strong> Investigate physical harmonic series fractions and phonetics formants.</li>
+                    <li><strong>Vedic Geometry Studio:</strong> Construct Sulba cord altars and explore transformation theorems.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Curriculum Alignment & Science Features Matrix */}
+            <div className="vl-sgs-table-wrap">
+              <h3 className="vl-sgs-table-title">Science Lab Games Curriculum &amp; STEM Standards Matrix</h3>
+              <div className="vl-sgs-table-responsive">
+                <table className="vl-sgs-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Game / Sandbox</th>
+                      <th scope="col">Target Level</th>
+                      <th scope="col">Sanskrit Discipline</th>
+                      <th scope="col">Modern STEM Concept</th>
+                      <th scope="col">Interactive Game Mechanics</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Paramāṇu Builder</strong></td>
+                      <td>Middle School (Grades 6–8)</td>
+                      <td>Vaiśeṣika Darśana (कणाद-परमाणुवादः)</td>
+                      <td>Atomic Theory, Molecule Synthesis</td>
+                      <td>Drag-and-combine particles into Dvyaṇuka &amp; Tryaṇuka</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Heat &amp; Matter Mystery</strong></td>
+                      <td>Primary (Grades 3–5)</td>
+                      <td>Andha-Mūṣā (रसशास्त्र &amp; सत्कार्यवाद)</td>
+                      <td>Law of Conservation of Mass</td>
+                      <td>Burn, boil and melt matter with invariant 100g readout</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Prakṛti Biosphere</strong></td>
+                      <td>Preschool to Grade 2</td>
+                      <td>Āyurveda (त्रिदोष-सिद्धान्तः)</td>
+                      <td>Cellular Homeostasis &amp; Ecology</td>
+                      <td>Real-time temperature, moisture &amp; seasonal sliders</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Chaturyoni Creature Map</strong></td>
+                      <td>Preschool to Primary</td>
+                      <td>Vṛkṣāyurveda &amp; J.C. Bose</td>
+                      <td>Plant Neurobiology &amp; Taxonomy</td>
+                      <td>Action potential microvolt graphs &amp; 4-kingdom sort</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Planet Pull Gravity</strong></td>
+                      <td>Primary &amp; Middle (Grades 3–6)</td>
+                      <td>Āryabhaṭīya (खगोल-शास्त्रम्)</td>
+                      <td>Gravitational Orbits &amp; Astronomy</td>
+                      <td>N-body vector orbit thrust &amp; 27 Nakṣatra tracer</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Chandrayaan Moon Mission</strong></td>
+                      <td>Middle School (Grades 6–9)</td>
+                      <td>ISRO Chandrayaan-3 Mission</td>
+                      <td>Lunar Trajectory &amp; Spectroscopy</td>
+                      <td>Descent thruster braking &amp; LIBS mineral scanning</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sound Detective Nāda</strong></td>
+                      <td>Preschool to All Ages</td>
+                      <td>Nāda Brahman &amp; Gandharva Veda</td>
+                      <td>Acoustics &amp; Chladni Cymatics</td>
+                      <td>Pluck strings, tune 22 Śrutis &amp; form sand mandalas</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Agnibāṇa Rocketry</strong></td>
+                      <td>Middle to High School</td>
+                      <td>Śukranīti (अग्निबाण-शास्त्रम्)</td>
+                      <td>Aerospace Ballistics &amp; Combustion</td>
+                      <td>Chemical propellant ratio tuning &amp; arc projection</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sun-Shadow Ujjain Geodesy</strong></td>
+                      <td>High School (Grades 9–12)</td>
+                      <td>Sūrya Siddhānta &amp; Varāhamihira</td>
+                      <td>Geodesy &amp; 0° Prime Meridian</td>
+                      <td>Panchang offset calculations &amp; Tropic of Cancer drift</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Chandaḥśāstra Combinatorics</strong></td>
+                      <td>High School &amp; Scholar</td>
+                      <td>Piṅgala Chandaḥśāstra</td>
+                      <td>Binary Trees &amp; Pascal Triangle</td>
+                      <td>Mātrā beat generation, Meruprastāra &amp; Fibonacci</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Kauṭilya Statecraft</strong></td>
+                      <td>Advanced Scholar (College+)</td>
+                      <td>Arthaśāstra (नीति-प्रशासनम्)</td>
+                      <td>Quantitative Economics &amp; Risk</td>
+                      <td>Actuarial interest models &amp; Saptāṅga balance matrix</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Benefits for Parents, Teachers & Schools */}
+            <div className="vl-sgs-features-row">
+              <div className="vl-sgs-feature-col">
+                <span className="vl-sfc-icon">🛡️</span>
+                <h4>100% Kid-Safe &amp; Ad-Free</h4>
+                <p>Zero advertisements, zero third-party tracking, and fully compliant with student privacy protections. Pure educational exploration.</p>
+              </div>
+              <div className="vl-sgs-feature-col">
+                <span className="vl-sfc-icon">⚡</span>
+                <h4>60 FPS WebGL Simulations</h4>
+                <p>Runs smoothly on laptops, tablets, and smartphones without downloading any app or plugins. Accessible directly through any web browser.</p>
+              </div>
+              <div className="vl-sgs-feature-col">
+                <span className="vl-sfc-icon">🇮🇳</span>
+                <h4>Aligned with NEP 2020</h4>
+                <p>Embodies the National Education Policy (NEP 2020) vision of integrating Indian Knowledge Systems (IKS) with rigorous modern empirical STEM inquiry.</p>
+              </div>
+            </div>
+          </section>
         </div>
       )}
 
@@ -1115,91 +1357,116 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
         </details>
 
 
-        {/* Bottom Next Lab Gateway Card */}
-        <div className="vl-next-lab-gateway" style={{ '--next-glow': nextSeg.glow, '--next-ink': nextSeg.ink, '--next-tint': nextSeg.tint } as React.CSSProperties}>
-          <div className="vl-nlg-header">
-            <div className="vl-nlg-kicker">
-              Next on your path
-            </div>
-            <div className="vl-nlg-title-row">
-              <h3 className="vl-nlg-heading">
-                Ready for the next game?
-              </h3>
-              <span className="vl-nlg-counter">
-                Game {currentIndex + 1} of {LAB_SEGMENTS.length}
+        {/* ================================================================
+            NEXT ADVENTURE GATEWAY (Clean, Modern Gurukul Aesthetic)
+            ================================================================ */}
+        <section className="vl-adventure-gateway" aria-label="Next science simulation">
+          <div className="vl-ag-header">
+            <div className="vl-ag-kicker-row">
+              <span className="vl-ag-kicker">✨ NEXT ADVENTURE ON YOUR PATH</span>
+              <span className="vl-ag-progress-pill">
+                Quest {currentIndex + 1} of {LAB_SEGMENTS.length}
               </span>
             </div>
+            <h3 className="vl-ag-heading">
+              Ready for your next science quest?
+            </h3>
           </div>
 
-          <div className="vl-nlg-card">
-            <div className="vl-nlg-card-left">
-              <div className="vl-nlg-icon-circle">
-                <span className="vl-nlg-big-icon" aria-hidden="true">{nextSeg.icon}</span>
-                <span className="vl-nlg-code-badge">{nextSeg.code}</span>
+          <div className="vl-ag-card">
+            <div className="vl-ag-card-hero">
+              <div className="vl-ag-icon-badge" aria-hidden="true">
+                <span className="vl-ag-big-icon">{nextSeg.icon}</span>
+                <span className="vl-ag-level-chip">{nextSeg.levelLabel}</span>
               </div>
-              <div className="vl-nlg-card-details">
-                <div className="vl-nlg-dev" lang="sa">{nextSeg.dev}</div>
-                <h4 className="vl-nlg-lab-title">{nextSeg.title}</h4>
-                <div className="vl-nlg-tags">
-                  <span className="vl-nlg-tag vl-nlg-tag--subj">{nextSeg.subject}</span>
-                  <span className="vl-nlg-tag vl-nlg-tag--school">ARCHIVE // {nextSeg.school}</span>
-                  <span className="vl-nlg-tag vl-nlg-tag--cat">{nextSeg.category.toUpperCase()}</span>
+              <div className="vl-ag-card-info">
+                <span className="vl-ag-dev" lang="sa">{nextSeg.dev}</span>
+                <h4 className="vl-ag-title">{nextSeg.title}</h4>
+                <div className="vl-ag-badges">
+                  <span className="vl-ag-badge vl-ag-badge--age">🎯 {nextSeg.ageRange}</span>
+                  <span className="vl-ag-badge vl-ag-badge--subj">🔬 {nextSeg.subject}</span>
+                  <span className="vl-ag-badge vl-ag-badge--cat">🏷️ {CATEGORY_CHIP[nextSeg.category]}</span>
+                  <span className="vl-ag-badge vl-ag-badge--time">⏱️ 3–5 min quest</span>
                 </div>
-                <p className="vl-nlg-blurb">{nextSeg.blurb}</p>
+                <p className="vl-ag-blurb">{nextSeg.blurb}</p>
               </div>
             </div>
 
-            <div className="vl-nlg-card-actions">
+            <div className="vl-ag-actions">
               <button
                 type="button"
-                className="vl-btn vl-btn--cyber vl-btn--nlg-proceed"
+                className="vl-ag-launch-btn"
                 onClick={() => handleNavigateLab(nextSeg.id)}
-                aria-label={`Enter Next Lab: ${nextSeg.title}`}
+                aria-label={`Launch Next Simulation: ${nextSeg.title}`}
               >
-                <span>ENTER NEXT LAB: {nextSeg.title}</span>
-                <span className="vl-nlg-arrow-icon" aria-hidden="true">➔</span>
+                <span>Launch Next Quest: {nextSeg.title}</span>
+                <span className="vl-ag-arrow" aria-hidden="true">➔</span>
               </button>
 
-              <div className="vl-nlg-sub-row">
+              <div className="vl-ag-sub-nav">
                 <button
                   type="button"
-                  className="vl-nlg-sub-btn"
+                  className="vl-ag-ghost-btn"
                   onClick={() => handleNavigateLab(prevSeg.id)}
+                  title={`Previous simulation: ${prevSeg.title}`}
                 >
-                  ◀ Previous Lab: {prevSeg.code}
+                  ◀ Prev: {prevSeg.title}
                 </button>
                 <button
                   type="button"
-                  className="vl-nlg-sub-btn"
-                  onClick={() => simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  className="vl-ag-ghost-btn"
+                  onClick={() => {
+                    setViewMode('catalog');
+                    soundEffects.playStrokeChime();
+                    catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                  title="View full 17-lab curriculum"
                 >
-                  ▲ Back to Top
+                  🧭 All 17 Labs
+                </button>
+                <button
+                  type="button"
+                  className="vl-ag-ghost-btn"
+                  onClick={() => simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  title="Scroll to top of current lab bench"
+                >
+                  ▲ Top of Bench
                 </button>
               </div>
             </div>
           </div>
 
-          {/* All Sectors Grid Strip */}
-          <div className="vl-nlg-strip-wrap">
-            <span className="vl-nlg-strip-title">EXPLORE ALL {LAB_SEGMENTS.length} SCIENCE SECTORS:</span>
-            <div className="vl-nlg-strip">
-              {LAB_SEGMENTS.map((s, idx) => (
-                <button
-                  key={s.id}
-                  type="button"
-                  className={`vl-nlg-strip-btn${s.id === active ? ' is-current' : ''}`}
-                  onClick={() => handleNavigateLab(s.id)}
-                  title={`${s.code}: ${s.title}`}
-                >
-                  <span className="vl-nlg-strip-idx">{idx + 1}</span>
-                  <span className="vl-nlg-strip-icon">{s.icon}</span>
-                  <span className="vl-nlg-strip-code">{s.code}</span>
-                  <span className="vl-nlg-strip-name">{s.title}</span>
-                </button>
-              ))}
+          {/* All 17 Simulations Navigation Grid — Clear, Non-Truncated Cards */}
+          <div className="vl-ag-grid-wrap">
+            <div className="vl-ag-grid-header">
+              <span className="vl-ag-grid-kicker">📚 COMPLETE SCIENCE EXPEDITION</span>
+              <h4>Explore All 17 Science Simulations:</h4>
+            </div>
+            <div className="vl-ag-cards-grid">
+              {LAB_SEGMENTS.map((s, idx) => {
+                const isCurrent = s.id === active;
+                return (
+                  <button
+                    key={s.id}
+                    type="button"
+                    className={`vl-ag-step-card${isCurrent ? ' is-active' : ''}`}
+                    onClick={() => handleNavigateLab(s.id)}
+                    aria-current={isCurrent ? 'page' : undefined}
+                    title={`${idx + 1}. ${s.title} (${s.ageRange})`}
+                  >
+                    <span className="vl-ag-step-num">{idx + 1}</span>
+                    <span className="vl-ag-step-icon" aria-hidden="true">{s.icon}</span>
+                    <div className="vl-ag-step-text">
+                      <b className="vl-ag-step-title">{s.title}</b>
+                      <span className="vl-ag-step-meta">{s.ageRange} · {CATEGORY_CHIP[s.category]}</span>
+                    </div>
+                    {isCurrent && <span className="vl-ag-playing-badge">Now Playing</span>}
+                  </button>
+                );
+              })}
             </div>
           </div>
-        </div>
+        </section>
 
         <Suspense fallback={<div className="vl-loading">Loading Bodhi Vijñāna Console…</div>}>
           {active !== 'preschool-wonder' && <LabBodhiConsole activeSegment={active} />}
@@ -1218,280 +1485,6 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
           </button>
         )}
       </section>
-
-      {/* ================================================================
-          SEO SECTION: SCIENCE LAB GAMES ACROSS ALL LEARNING LEVELS
-          ================================================================ */}
-      <section className="vl-seo-games-section" aria-label="About Vijñāna Science Lab Games and STEM Learning Levels">
-        <div className="vl-sgs-header">
-          <div className="vl-sgs-badge">
-            <span>🔬</span>
-            <span>SCIENCE LAB GAMES · विज्ञान-क्रीडा-शाला</span>
-          </div>
-          <h2 className="vl-sgs-title">
-            Science Lab Games: Interactive Sanskrit STEM Sandboxes Across All Learning Levels
-          </h2>
-          <p className="vl-sgs-lead">
-            Welcome to the <strong>Vijñāna Science Lab</strong> — a living virtual laboratory combining classical Indian scientific inquiries (पदार्थ, खगोल, आयुर्वेद, छन्दस्, शुल्ब) with modern empirical physics, biology, aerospace engineering, and computational mathematics. Designed for children, school students, and scholars, every simulation operates as an experiential, gamified sandbox.
-          </p>
-        </div>
-
-        {/* 5-Level Educational Progression Grid */}
-        <div className="vl-sgs-levels-grid">
-          <div className="vl-sgs-level-card vl-slc--preschool">
-            <div className="vl-slc-top">
-              <span className="vl-slc-icon">🌟</span>
-              <div>
-                <span className="vl-slc-tag">LEVEL 1 · AGES 3–7</span>
-                <h3 className="vl-slc-title">Preschool &amp; Early Explorer (शिशु-बोध)</h3>
-              </div>
-            </div>
-            <p className="vl-slc-desc">
-              Multisensory discovery games designed for young children. Explore the five natural elements (पञ्चमहाभूतानि), discover animals and plants through the Chaturyoni taxonomy, pluck vibrating strings to see sand mandalas, and observe seasonal water and sunlight cycles.
-            </p>
-            <div className="vl-slc-games">
-              <strong>Featured Science Games:</strong>
-              <ul>
-                <li><strong>Cosmic Sitār Tuning:</strong> Pluck strings to watch acoustic waves form geometric Chladni sand mandalas.</li>
-                <li><strong>Prakṛti Biosphere:</strong> Slide temperature and water dials to balance cellular energy.</li>
-                <li><strong>Chaturyoni Creature Map:</strong> Match animals into egg-born, womb-born, and sprout-born life families.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="vl-sgs-level-card vl-slc--primary">
-            <div className="vl-slc-top">
-              <span className="vl-slc-icon">🎒</span>
-              <div>
-                <span className="vl-slc-tag">LEVEL 2 · GRADES 3–5 (AGES 8–10)</span>
-                <h3 className="vl-slc-title">Primary School &amp; Hands-On Physics (प्रारम्भिक)</h3>
-              </div>
-            </div>
-            <p className="vl-slc-desc">
-              Elementary school science games that turn abstract textbook principles into tactile experiments. Learn mass conservation by boiling and freezing matter, steer planets with gravitational pulls, and construct interlocking temple stones.
-            </p>
-            <div className="vl-slc-games">
-              <strong>Featured Science Games:</strong>
-              <ul>
-                <li><strong>The Veil of Māyā:</strong> Burn, melt, and evaporate materials while the digital scale proves mass is invariant (100.000g).</li>
-                <li><strong>Jyotiṣa Gravity Sandbox:</strong> Orbit Earth and Moon around the Sun without crashing or flying off.</li>
-                <li><strong>Living Geometry of the Gurukul:</strong> Morph shapes with rotation and extension using ancient rope geometry.</li>
-                <li><strong>Ancient Temple Engineering:</strong> Test King Bhoja&apos;s dry masonry joints under earthquake vibrations.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="vl-sgs-level-card vl-slc--middle">
-            <div className="vl-slc-top">
-              <span className="vl-slc-icon">🔬</span>
-              <div>
-                <span className="vl-slc-tag">LEVEL 3 · GRADES 6–8 (AGES 11–14)</span>
-                <h3 className="vl-slc-title">Middle School &amp; CBSE/NCERT Alignment (माध्यमिक)</h3>
-              </div>
-            </div>
-            <p className="vl-slc-desc">
-              Directly aligned with middle school CBSE science syllabus: atomic theory, rocketry, motion laws, cellular biology, and lunar space science.
-            </p>
-            <div className="vl-slc-games">
-              <strong>Featured Science Games:</strong>
-              <ul>
-                <li><strong>Paramāṇu Builder:</strong> Combine individual atomic particles into dyads (Dvyaṇuka) and visible triads (Tryaṇuka).</li>
-                <li><strong>Somayāna Mission-03 (Chandrayaan):</strong> Execute thruster burns to land on the Moon&apos;s South Pole and fire LIBS laser spectroscopy.</li>
-                <li><strong>Agnibāṇa Rocketry:</strong> Tune propellant ratios (5:1:1 Agnicūrṇa) and launch angles to hit target coordinates.</li>
-                <li><strong>The Loom of Āruṇi:</strong> Master quantum energy conservation and particle fields in real time.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="vl-sgs-level-card vl-slc--high">
-            <div className="vl-slc-top">
-              <span className="vl-slc-icon">🚀</span>
-              <div>
-                <span className="vl-slc-tag">LEVEL 4 · GRADES 9–12 (AGES 14–18)</span>
-                <h3 className="vl-slc-title">High School STEM &amp; Mathematical Physics (उच्च-माध्यमिक)</h3>
-              </div>
-            </div>
-            <p className="vl-slc-desc">
-              Rigorous high school physics, astronomical geodesy, probability theory, and computer science foundations.
-            </p>
-            <div className="vl-slc-games">
-              <strong>Featured Science Games:</strong>
-              <ul>
-                <li><strong>Ancient Prime Meridian &amp; Geodesy:</strong> Compute longitude offsets, solar noon deviations, and the Tropic of Cancer drift at Ujjain.</li>
-                <li><strong>Ṛtuparṇa Sampling Lab:</strong> Roll Mahābhārata Akṣa dice to demonstrate the Law of Large Numbers and Monte Carlo sampling.</li>
-                <li><strong>Chandaḥśāstra Binary Permutations:</strong> Decode Piṅgala&apos;s binary trees, Pascal&apos;s triangle (Meruprastāra), and Fibonacci sequences.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="vl-sgs-level-card vl-slc--advanced">
-            <div className="vl-slc-top">
-              <span className="vl-slc-icon">🏛️</span>
-              <div>
-                <span className="vl-slc-tag">LEVEL 5 · COLLEGE &amp; RESEARCH (GRADE 11+)</span>
-                <h3 className="vl-slc-title">Advanced Scholar &amp; Epistemological Lab (विद्वत्-शोध)</h3>
-              </div>
-            </div>
-            <p className="vl-slc-desc">
-              University-level mathematical modeling, structural dynamics, comparative philosophy of science, and computational quantitative statecraft.
-            </p>
-            <div className="vl-slc-games">
-              <strong>Featured Science Games:</strong>
-              <ul>
-                <li><strong>Kauṭilya Quantitative Statecraft:</strong> Balance 7-limb Saptāṅga state dynamics and calculate maritime risk actuarial tables.</li>
-                <li><strong>Mantra Acoustics &amp; Sāma Veda Harmonics:</strong> Investigate physical harmonic series fractions and the Chamakam square number matrices.</li>
-                <li><strong>Pāṇinian &amp; Vaiśeṣika Computational Semantics:</strong> Bridge ancient Indian atomism with modern quantum theory.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Curriculum Alignment & Science Features Matrix */}
-        <div className="vl-sgs-table-wrap">
-          <h3 className="vl-sgs-table-title">Science Lab Games Curriculum &amp; STEM Standards Matrix</h3>
-          <div className="vl-sgs-table-responsive">
-            <table className="vl-sgs-table">
-              <thead>
-                <tr>
-                  <th scope="col">Game / Sandbox</th>
-                  <th scope="col">Target Level</th>
-                  <th scope="col">Sanskrit Discipline</th>
-                  <th scope="col">Modern STEM Concept</th>
-                  <th scope="col">Interactive Game Mechanics</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Paramāṇu Builder</strong></td>
-                  <td>Middle School (Grades 6–8)</td>
-                  <td>Vaiśeṣika Darśana (कणाद-परमाणुवादः)</td>
-                  <td>Atomic Theory, Molecule Synthesis</td>
-                  <td>Drag-and-combine particles into Dvyaṇuka &amp; Tryaṇuka</td>
-                </tr>
-                <tr>
-                  <td><strong>The Veil of Māyā</strong></td>
-                  <td>Primary (Grades 3–5)</td>
-                  <td>Andha-Mūṣā (रसशास्त्र &amp; सत्कार्यवाद)</td>
-                  <td>Law of Conservation of Mass</td>
-                  <td>Burn, boil and melt matter with invariant 100g readout</td>
-                </tr>
-                <tr>
-                  <td><strong>Prakṛti Biosphere</strong></td>
-                  <td>Preschool to Grade 2</td>
-                  <td>Āyurveda (त्रिदोष-सिद्धान्तः)</td>
-                  <td>Cellular Homeostasis &amp; Ecology</td>
-                  <td>Real-time temperature, moisture &amp; seasonal sliders</td>
-                </tr>
-                <tr>
-                  <td><strong>Chaturyoni Spawn Map</strong></td>
-                  <td>Preschool to Primary</td>
-                  <td>Vṛkṣāyurveda &amp; J.C. Bose</td>
-                  <td>Plant Neurobiology &amp; Taxonomy</td>
-                  <td>Action potential microvolt graphs &amp; 4-kingdom sort</td>
-                </tr>
-                <tr>
-                  <td><strong>Jyotiṣa Gravity Sandbox</strong></td>
-                  <td>Primary &amp; Middle (Grades 3–6)</td>
-                  <td>Āryabhaṭīya (खगोल-शास्त्रम्)</td>
-                  <td>Gravitational Orbits &amp; Astronomy</td>
-                  <td>N-body vector orbit thrust &amp; 27 Nakṣatra tracer</td>
-                </tr>
-                <tr>
-                  <td><strong>Somayāna Mission-03</strong></td>
-                  <td>Middle School (Grades 6–9)</td>
-                  <td>ISRO Chandrayaan-3 Mission</td>
-                  <td>Lunar Trajectory &amp; Spectroscopy</td>
-                  <td>Descent thruster braking &amp; LIBS mineral scanning</td>
-                </tr>
-                <tr>
-                  <td><strong>Cosmic Sitār Tuning</strong></td>
-                  <td>Preschool to All Ages</td>
-                  <td>Nāda Brahman &amp; Gandharva Veda</td>
-                  <td>Acoustics &amp; Chladni Cymatics</td>
-                  <td>Pluck strings, tune 22 Śrutis &amp; form sand mandalas</td>
-                </tr>
-                <tr>
-                  <td><strong>Agnibāṇa Rocketry</strong></td>
-                  <td>Middle to High School</td>
-                  <td>Śukranīti (अग्निबाण-शास्त्रम्)</td>
-                  <td>Aerospace Ballistics &amp; Combustion</td>
-                  <td>Chemical propellant ratio tuning &amp; arc projection</td>
-                </tr>
-                <tr>
-                  <td><strong>Ancient Prime Meridian</strong></td>
-                  <td>High School (Grades 9–12)</td>
-                  <td>Sūrya Siddhānta &amp; Varāhamihira</td>
-                  <td>Geodesy &amp; 0° Prime Meridian</td>
-                  <td>Panchang offset calculations &amp; Tropic of Cancer drift</td>
-                </tr>
-                <tr>
-                  <td><strong>Chandaḥśāstra Combinatorics</strong></td>
-                  <td>High School &amp; Scholar</td>
-                  <td>Piṅgala Chandaḥśāstra</td>
-                  <td>Binary Trees &amp; Pascal Triangle</td>
-                  <td>Mātrā beat generation, Meruprastāra &amp; Fibonacci</td>
-                </tr>
-                <tr>
-                  <td><strong>Kauṭilya Statecraft</strong></td>
-                  <td>Advanced Scholar (College+)</td>
-                  <td>Arthaśāstra (नीति-प्रशासनम्)</td>
-                  <td>Quantitative Economics &amp; Risk</td>
-                  <td>Actuarial interest models &amp; Saptāṅga balance matrix</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Benefits for Parents, Teachers & Schools */}
-        <div className="vl-sgs-features-row">
-          <div className="vl-sgs-feature-col">
-            <span className="vl-sfc-icon">🛡️</span>
-            <h4>100% Kid-Safe &amp; Ad-Free</h4>
-            <p>Zero advertisements, zero third-party tracking, and fully compliant with student privacy protections. Pure educational exploration.</p>
-          </div>
-          <div className="vl-sgs-feature-col">
-            <span className="vl-sfc-icon">⚡</span>
-            <h4>60 FPS WebGL Simulations</h4>
-            <p>Runs smoothly on laptops, tablets, and smartphones without downloading any app or plugins. Accessible directly through any web browser.</p>
-          </div>
-          <div className="vl-sgs-feature-col">
-            <span className="vl-sfc-icon">🇮🇳</span>
-            <h4>Aligned with NEP 2020</h4>
-            <p>Embodies the National Education Policy (NEP 2020) vision of integrating Indian Knowledge Systems (IKS) with rigorous modern empirical STEM inquiry.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Floating Bottom Quick-Dock Bar */}
-      <aside className="vl-floating-dock" aria-label="Quick lab switcher">
-        <button
-          type="button"
-          className="vl-dock-btn vl-dock-btn--prev"
-          onClick={() => handleNavigateLab(prevSeg.id)}
-          title={`Previous: ${prevSeg.code} ${prevSeg.title}`}
-        >
-          <span className="vl-dock-arrow" aria-hidden="true">◀</span>
-          <span className="vl-dock-text">{prevSeg.icon} {prevSeg.code}</span>
-        </button>
-
-        <div className="vl-dock-current">
-          <span className="vl-dock-pulse" aria-hidden="true" />
-          <span className="vl-dock-curr-code">{seg.code}</span>
-          <span className="vl-dock-curr-title">{seg.icon} {seg.title}</span>
-          <span className="vl-dock-curr-count">({currentIndex + 1}/{LAB_SEGMENTS.length})</span>
-        </div>
-
-        <button
-          type="button"
-          className="vl-dock-btn vl-dock-btn--next"
-          onClick={() => handleNavigateLab(nextSeg.id)}
-          title={`Next: ${nextSeg.code} ${nextSeg.title}`}
-        >
-          <span className="vl-dock-text">Next: {nextSeg.icon} {nextSeg.code}</span>
-          <span className="vl-dock-arrow" aria-hidden="true">➔</span>
-        </button>
-      </aside>
       </>
       )}
 
