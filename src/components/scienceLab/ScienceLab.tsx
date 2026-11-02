@@ -713,13 +713,12 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                       setHeroSrc('/images/gurukul-staircase-blackboard.jpg');
                     }
                   }}
-                  alt="Children exploring Vijñāna Lab — nature, geometry, rockets, and harvest games"
-                  width={1280}
-                  height={720}
+                  alt="Children Exploring Bhāratīya Science · 2–16+ Yrs in open Gurukul garden pavilion"
+                  width={1024}
+                  height={665}
                   loading="eager"
                   decoding="async"
                 />
-                <span className="vl-hub-art-badge">✨ Children Exploring Bhāratīya Science · 2–16+ Yrs</span>
               </div>
             </div>
             <p className="vl-hub-lead">

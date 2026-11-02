@@ -3135,7 +3135,7 @@
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1024 / 665;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
