@@ -5,17 +5,15 @@
 .gurukul-intro-overlay {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   height: 100dvh;
   max-height: 100dvh;
   z-index: 99999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) 2fr; /* 1/3 Side Logo & Portal + 2/3 Image Space */
   overflow: hidden;
-  background-color: #1a0c02;
+  background-color: #120701;
   transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.85s;
   pointer-events: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Devanagari', sans-serif;
@@ -28,17 +26,50 @@
   pointer-events: none;
 }
 
-/* Background Scene with Ken Burns subtle expansion */
+/* 2/3rd Space: Background Scene Container with Ken Burns expansion */
+.gurukul-intro-scene {
+  grid-column: 2;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100dvh;
+  overflow: hidden;
+  background-color: #1a0c02;
+}
+
 .gurukul-intro-bg {
   position: absolute;
-  inset: -20px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
-  background-position: center 38%;
+  background-position: center center;
   background-repeat: no-repeat;
-  filter: brightness(1.02) contrast(1.02);
-  animation: gurukulKenBurns 12s ease-out infinite alternate;
+  filter: brightness(1.03) contrast(1.02);
+  animation: gurukulKenBurns 14s ease-out infinite alternate;
   transform-origin: center center;
   pointer-events: none;
+}
+
+.gurukul-scene-caption {
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.gsc-pill {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1.5px solid rgba(251, 191, 36, 0.65);
+  color: #fef3c7;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.02em;
 }
 
 @keyframes gurukulKenBurns {
@@ -191,25 +222,36 @@
   }
 }
 
-/* Central Stage Container */
+/* 1/3 Side Portal Panel: Logo, Sacred Verse & Entrance Controls */
 .gurukul-intro-content {
+  grid-column: 1;
   position: relative;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1.5rem;
-  max-width: 680px;
-  width: 90%;
-  max-height: 96dvh;
+  padding: 2.5rem 1.8rem;
+  width: 100%;
+  height: 100%;
+  max-height: 100dvh;
+  background: linear-gradient(180deg, #1c0b02 0%, #150801 55%, #0d0400 100%);
+  border-right: 3px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 12px 0 45px rgba(0, 0, 0, 0.75);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   box-sizing: border-box;
-  animation: gurukulContentFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: gurukulContentFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gurukul-intro-brand-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.6rem;
 }
 
 .gurukul-intro-content.is-overlay-hidden {
@@ -598,70 +640,105 @@
   box-shadow: 0 3px 8px rgba(186, 60, 0, 0.15);
 }
 
+/* Responsive split: Desktop is 1/3 Left Portal + 2/3 Right Painting Space.
+   Tablets and phones stack gracefully */
+@media (max-width: 860px) {
+  .gurukul-intro-overlay {
+    display: flex;
+    flex-direction: column;
+  }
+  .gurukul-intro-scene {
+    width: 100%;
+    height: 52%;
+    flex: 1 1 52%;
+  }
+  .gurukul-intro-content {
+    width: 100%;
+    height: 48%;
+    flex: 1 1 48%;
+    border-right: none;
+    border-top: 3px solid rgba(245, 158, 11, 0.45);
+    box-shadow: 0 -12px 35px rgba(0, 0, 0, 0.7);
+    padding: 1.25rem 1rem;
+  }
+  .gurukul-scene-caption {
+    bottom: 12px;
+    right: 14px;
+  }
+  .gsc-pill {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+  }
+}
+
 /* Mobile responsive */
 @media (max-width: 640px) {
   .gurukul-intro-content {
-    padding: 1.15rem 0.85rem;
-    width: 95%;
+    padding: 1rem 0.85rem;
+    width: 100%;
   }
   .gurukul-intro-crest-wrap {
-    width: 108px;
-    height: 108px;
-    margin-bottom: 0.75rem;
-  }
-  .gurukul-intro-mandala {
-    width: 142px;
-    height: 142px;
-  }
-  .gurukul-intro-logo {
-    width: 84px;
-    height: 84px;
-    border-radius: 18px;
-  }
-  .gurukul-intro-badge {
-    font-size: 0.76rem;
-    padding: 0.28rem 0.75rem;
+    width: 90px;
+    height: 90px;
     margin-bottom: 0.5rem;
   }
-  .gurukul-intro-title {
-    font-size: clamp(1.22rem, 5.2vw, 1.62rem);
-    line-height: 1.25;
+  .gurukul-intro-mandala {
+    width: 120px;
+    height: 120px;
+  }
+  .gurukul-intro-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+  }
+  .gurukul-intro-badge {
+    font-size: 0.74rem;
+    padding: 0.25rem 0.65rem;
     margin-bottom: 0.35rem;
+  }
+  .gurukul-intro-title {
+    font-size: clamp(1.15rem, 4.8vw, 1.45rem);
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
   }
   .gurukul-intro-verse {
-    font-size: clamp(0.84rem, 3.8vw, 1.02rem);
-    line-height: 1.35;
-    margin-bottom: 0.35rem;
-  }
-  .gurukul-intro-subtitle {
-    font-size: clamp(0.72rem, 3.2vw, 0.84rem);
+    font-size: clamp(0.82rem, 3.6vw, 0.95rem);
     line-height: 1.3;
-    margin-bottom: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .gurukul-intro-verse-en {
+    font-size: 0.75rem;
+    line-height: 1.25;
+    margin: 0 0 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .gurukul-intro-sound-pill {
-    font-size: 0.74rem;
-    padding: 0.3rem 0.8rem;
-    margin-bottom: 0.95rem;
+    font-size: 0.72rem;
+    padding: 0.25rem 0.7rem;
+    margin-bottom: 0.65rem;
   }
   .gurukul-intro-actions {
-    gap: 0.65rem;
+    gap: 0.5rem;
   }
   .gurukul-intro-enter-btn {
-    padding: 0.65rem 1.4rem;
-    font-size: 0.95rem;
-    min-height: 44px;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.92rem;
+    min-height: 42px;
   }
   .gurukul-intro-mute-btn {
-    padding: 0.6rem 1.1rem;
-    font-size: 0.84rem;
-    min-height: 44px;
+    padding: 0.55rem 0.95rem;
+    font-size: 0.82rem;
+    min-height: 42px;
   }
   .gurukul-intro-linger-wrap {
-    margin-top: 0.85rem;
-    max-width: 290px;
+    margin-top: 0.65rem;
+    max-width: 260px;
   }
   .gurukul-intro-linger-hint {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
   }
 }
 

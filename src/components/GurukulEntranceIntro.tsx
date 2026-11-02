@@ -157,19 +157,48 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
       role="dialog"
       aria-label="Gurukul Welcome Entrance"
     >
-      {/* Painting Scene (one side on desktop, top band on mobile) */}
+      {/* 2/3rd Space: Gurukul Painting Scene (Dawn Courtyard & River) */}
       <div className="gurukul-intro-scene" aria-hidden="true">
-      <div
-        className="gurukul-intro-bg"
-        style={{ backgroundImage: `url(${gurukulDawnUrl})` }}
-      />
+        <div
+          className="gurukul-intro-bg"
+          style={{ backgroundImage: `url(${gurukulDawnUrl})` }}
+        />
 
-      {/* Atmospheric Mist & Golden Sunrise Beams */}
-      <div className="gurukul-intro-mist" />
-      <div className="gurukul-intro-sunbeams" />
+        {/* Atmospheric Mist & Golden Sunrise Beams */}
+        <div className="gurukul-intro-mist" />
+        <div className="gurukul-intro-sunbeams" />
+
+        {/* Flying Morning Birds Flock */}
+        <div className="gurukul-intro-sky-birds">
+          <span className="gurukul-bird gurukul-bird-1">
+            <svg viewBox="0 0 32 20" className="gurukul-bird-svg">
+              <path d="M 0 10 Q 8 0 16 8 Q 24 0 32 10 Q 24 14 16 9 Q 8 14 0 10 Z" />
+            </svg>
+          </span>
+          <span className="gurukul-bird gurukul-bird-2">
+            <svg viewBox="0 0 32 20" className="gurukul-bird-svg">
+              <path d="M 0 10 Q 8 0 16 8 Q 24 0 32 10 Q 24 14 16 9 Q 8 14 0 10 Z" />
+            </svg>
+          </span>
+          <span className="gurukul-bird gurukul-bird-3">
+            <svg viewBox="0 0 32 20" className="gurukul-bird-svg">
+              <path d="M 0 10 Q 8 0 16 8 Q 24 0 32 10 Q 24 14 16 9 Q 8 14 0 10 Z" />
+            </svg>
+          </span>
+          <span className="gurukul-bird gurukul-bird-4">
+            <svg viewBox="0 0 32 20" className="gurukul-bird-svg">
+              <path d="M 0 10 Q 8 0 16 8 Q 24 0 32 10 Q 24 14 16 9 Q 8 14 0 10 Z" />
+            </svg>
+          </span>
+        </div>
+
+        {/* Scene Caption */}
+        <div className="gurukul-scene-caption">
+          <span className="gsc-pill">🌅 प्रातः-स्मरणम् · Gurukul Dawn Awakening</span>
+        </div>
       </div>
 
-      {/* Main Centerpiece Content */}
+      {/* 1/3rd Side: EdNet Learn Logo & Welcome Portal */}
       <div className="gurukul-intro-content" onClick={(e) => e.stopPropagation()}>
         {/* Sacred Brand Crest with Mandala Aura */}
         <div className="gurukul-intro-crest-wrap">
@@ -187,6 +216,11 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             onClick={(e) => { e.stopPropagation(); setHasInteracted(true); triggerExit(); }}
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerExit(); } }}
           />
+        </div>
+
+        <div className="gurukul-intro-brand-title">
+          <span className="gurukul-intro-badge">🏛️ EdNet Gurukul</span>
+          <h2 className="gurukul-intro-title" lang="sa">गुरुकुल-प्रवेशः</h2>
         </div>
 
         <p className="gurukul-intro-verse">

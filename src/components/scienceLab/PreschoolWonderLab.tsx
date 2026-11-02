@@ -2116,18 +2116,35 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
             );
           })}
         </div>
-        <p style={{ margin: '0 0 8px', fontWeight: 700, color: '#334155' }}>👇 Tap a picture to start playing!</p>
-        <nav aria-label="Wonder Playground games" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(104px, 1fr))', gap: 10 }}>
+        <div className="psw-quick-nav-header">
+          <p className="psw-quick-nav-prompt">👇 Tap any picture card to jump straight into the game!</p>
+          <span className="psw-quick-nav-counter">🌟 <strong>{displayedActivities.length}</strong> Games in this Level</span>
+        </div>
+        <nav aria-label="Wonder Playground games" className="psw-quick-nav-grid">
           {displayedActivities.map((act) => {
             const on = viewMode === 'play' && act.id === tab;
             const wasPlayed = playedTabs.includes(act.id);
             return (
-              <button key={act.id} type="button" onClick={() => launchActivity(act.id)} aria-current={on ? 'page' : undefined}
-                style={{ position: 'relative', background: act.bannerGradient, border: on ? '4px solid #1e293b' : '3px solid #ffffff', borderRadius: 20, padding: '10px 6px', cursor: 'pointer', boxShadow: '0 3px 8px #0001', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, color: '#1e293b' }}>
-                {wasPlayed && <span aria-label="Played" style={{ position: 'absolute', top: 4, right: 6, fontSize: 13 }}>⭐</span>}
-                <span aria-hidden="true" style={{ fontSize: 34, lineHeight: 1 }}>{act.icon}</span>
-                <span lang="sa" style={{ fontSize: 13, fontWeight: 800, background: '#ffffffd9', borderRadius: 8, padding: '0 6px' }}>{act.labelSa}</span>
-                <span style={{ fontSize: 12, fontWeight: 600, background: '#ffffffb3', borderRadius: 8, padding: '0 6px' }}>{act.labelEn}</span>
+              <button
+                key={act.id}
+                type="button"
+                onClick={() => launchActivity(act.id)}
+                aria-current={on ? 'page' : undefined}
+                className={`psw-quick-tile ${on ? 'is-active-tile' : ''}`}
+                style={{
+                  background: act.bannerGradient,
+                  borderColor: on ? '#0f172a' : '#ffffff',
+                }}
+                title={`Play ${act.labelSa} (${act.labelEn})`}
+              >
+                {wasPlayed && (
+                  <span className="psw-qt-star-badge" aria-label="Explored">
+                    ⭐
+                  </span>
+                )}
+                <span className="psw-qt-icon" aria-hidden="true">{act.icon}</span>
+                <span className="psw-qt-dev" lang="sa">{act.labelSa}</span>
+                <span className="psw-qt-en">{act.labelEn}</span>
               </button>
             );
           })}
@@ -2279,10 +2296,31 @@ export const PreschoolWonderLab: React.FC<LabSegmentProps> = ({ onNextLab: _onNe
               ⬅️ All games
             </button>
             <div className="psw-pab-info">
-              <span>{currentActivity.icon}</span>
-              <span>Playing: <strong>{currentActivity.labelSa} · {currentActivity.labelEn}</strong></span>
+              <span className="psw-pab-hero-emoji">{currentActivity.icon}</span>
+              <div className="psw-pab-titles">
+                <span className="psw-pab-playing-kicker">Playing Game:</span>
+                <strong>
+                  <span lang="sa">{currentActivity.labelSa}</span> · {currentActivity.labelEn}
+                </strong>
+              </div>
+              <SayBtn text={currentActivity.labelSa} label="Hear" className="psw-pab-say-chip" />
             </div>
-            <span className="psw-pab-cluster-badge">{currentActivity.clusterLabel}</span>
+            <div className="psw-pab-right-group">
+              <span className="psw-pab-cluster-badge">{currentActivity.clusterLabel}</span>
+              {stepperIdx < stepperActivities.length - 1 && (
+                <button
+                  type="button"
+                  className="psw-pab-next-btn"
+                  onClick={() => {
+                    const next = stepperActivities[stepperIdx + 1];
+                    launchActivity(next.id);
+                  }}
+                  title={`Next game: ${stepperActivities[stepperIdx + 1].labelEn}`}
+                >
+                  Next: {stepperActivities[stepperIdx + 1].icon} ➔
+                </button>
+              )}
+            </div>
           </div>
           <div className="psw-what-to-do" role="status" aria-live="polite">
             <span className="psw-wtd-label">👉 What to do:</span>
