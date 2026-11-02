@@ -1036,9 +1036,9 @@ const ACTIVITIES: ActivityItem[] = [
     },
   },
   {
-    id: 'spices', labelSa: 'मसालानि', labelEn: '12 Kitchen Spices', icon: '🌶️', level: 'next', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
-    gradeBadge: '🚀 Next Level · Ages 6–10', desc: 'Learn 12 culinary & Āyurvedic spices in Sanskrit and play 4-Picture Quest!',
-    features: ['🫙 12 Spice Jars', '🎯 4-Picture Quest', '🧩 Cozy Packs'],
+    id: 'spices', labelSa: 'मसालानि', labelEn: '12 Kitchen Spices', icon: '🌶️', cluster: 'gurukul', clusterLabel: 'गुरुकुल · Gurukul Wonder',
+    gradeBadge: 'Ages 2–6 · Spices Deck', desc: 'Learn 12 fragrant kitchen spices with interactive flashcards, sizzle pot & 4-picture quest!',
+    features: ['🃏 12 Flashcards', '🍲 Amma\'s Kadai', '🎯 4-Picture Quest'],
     bannerGradient: 'linear-gradient(135deg, #fde68a 0%, #fecaca 100%)', accentColor: '#ea580c',
     bannerVisual: { emojiLead: '🌶️', decorEmojis: ['🫚', '🧄', '🌿', '🟡', '⚫', '🟤'], taglineSa: 'पाकशालायाः सुगन्धः' },
   },

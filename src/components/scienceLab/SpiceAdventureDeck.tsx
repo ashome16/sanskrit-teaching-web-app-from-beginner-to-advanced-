@@ -472,8 +472,8 @@ export const SpiceAdventureDeck: React.FC<SpiceAdventureDeckProps> = ({ onEarnSt
                         </div>
                       ) : (
                         <div className="psw-sfc-body-row">
-                          {/* Left or Right Content depending on card layout */}
-                          {card.id === 'cumin' || card.id === 'pepper' || card.id === 'cardamom' || card.id === 'ginger' ? (
+                          {/* Art on Left for Cumin, Pepper, Cardamom, Clove, Coriander, Fenugreek (matching uploaded flashcard photo) */}
+                          {['cumin', 'pepper', 'cardamom', 'clove', 'coriander', 'fenugreek'].includes(card.id) ? (
                             <>
                               <div className="psw-sfc-art-col">
                                 <img
@@ -489,6 +489,7 @@ export const SpiceAdventureDeck: React.FC<SpiceAdventureDeckProps> = ({ onEarnSt
                               </div>
                             </>
                           ) : (
+                            /* Art on Right for Cinnamon, Mustard, Ginger, Hing, Garlic */
                             <>
                               <div className="psw-sfc-text-col">
                                 <h4 className="psw-sfc-dev" lang="sa">{card.dev}</h4>

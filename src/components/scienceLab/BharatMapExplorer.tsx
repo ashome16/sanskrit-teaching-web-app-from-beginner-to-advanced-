@@ -4,7 +4,7 @@ import { soundEffects } from '../../utils/soundEffects';
 
 export type BharatKind = 'mountain' | 'river' | 'animal' | 'desert' | 'forest';
 export type BharatPackId = 'animals' | 'mountains_rivers' | 'nature' | 'all';
-export type BharatPlayMode = 'quest' | 'explore';
+export type BharatPlayMode = 'map' | 'cards' | 'quest';
 export type BharatRegion = 'north' | 'west' | 'center' | 'east' | 'south';
 
 export interface BharatSpot {
@@ -38,8 +38,8 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     clue: 'Roars proudly in the sunny Gir forest of Gujarat!',
     kidFact: 'Gir in Gujarat is the ONLY home of the golden-maned Asiatic Siṃha in all of Asia!',
     kidAction: '🦁 Shake your wild mane and give a happy, friendly ROAR!',
-    x: 13,
-    y: 52,
+    x: 18,
+    y: 48,
     labelPos: 'right',
   },
   {
@@ -55,7 +55,7 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     kidFact: 'Unlike most cats, the striped Bengal Vyāghra LOVES swimming in cool river water!',
     kidAction: '🐾 Prowl softly on tiptoes like a striped tiger!',
     x: 68,
-    y: 50,
+    y: 49,
     labelPos: 'bottom',
   },
   {
@@ -70,8 +70,8 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     clue: 'Walks gently through green coconut hills at the southern tip of India!',
     kidFact: 'Gentle Gaja uses its long trunk like a hand, a snorkel, and a joyful water-shower!',
     kidAction: '🐘 Swing one arm in front like a happy elephant trunk!',
-    x: 32,
-    y: 88,
+    x: 33,
+    y: 87,
     labelPos: 'right',
   },
   {
@@ -102,8 +102,8 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     clue: 'Walks across warm golden sand dunes in Rajasthan!',
     kidFact: 'Uṣṭra is called the "Ship of the Desert" — its wide soft feet never sink in warm sand!',
     kidAction: '🐪 Bob your shoulders slowly up and down like a gentle camel ride!',
-    x: 16,
-    y: 35,
+    x: 18,
+    y: 34,
     labelPos: 'right',
   },
   {
@@ -119,7 +119,7 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     kidFact: 'Himacitraka wraps its thick fluffy tail around its nose like a warm muffler in the snow!',
     kidAction: '🧣 Hug your arms cozy and warm like you are in snowy Ladakh!',
     x: 31,
-    y: 12,
+    y: 13,
     labelPos: 'bottom',
   },
 
@@ -152,8 +152,8 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     clue: 'Long green misty hills beside the western sea!',
     kidFact: 'Monsoon clouds hug Sahyādri, filling waterfalls, spice gardens, and rainforests!',
     kidAction: '🌧️ Wiggle your fingers down like gentle mountain rain!',
-    x: 21,
-    y: 70,
+    x: 23,
+    y: 68,
     labelPos: 'right',
   },
   {
@@ -200,7 +200,7 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     clue: 'Flows south-east past Mathura and Vrindavan to join sister Ganga!',
     kidFact: 'Little Kṛṣṇa played his sweet flute beside the cool blue Yamunā river!',
     kidAction: '🪈 Pretend to play a joyful little flute!',
-    x: 35,
+    x: 36,
     y: 29,
     labelPos: 'right',
   },
@@ -232,7 +232,7 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     clue: 'Sparkling middle-India river flowing west into the Arabian Sea!',
     kidFact: 'Narmadā means "Giver of Joy"! It dances through shining white marble rocks.',
     kidAction: '✨ Clap twice like splashing waterfall drops!',
-    x: 31,
+    x: 32,
     y: 48,
     labelPos: 'bottom',
   },
@@ -248,8 +248,8 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     clue: 'Southern river watering green rice fields in Karnataka & Tamil Nadu!',
     kidFact: 'Golden paddy fields, coconut palms, and temple towns bloom along sweet Mother Kāverī!',
     kidAction: '🌴 Sway gently side to side like a coconut tree by the river!',
-    x: 36,
-    y: 81,
+    x: 35,
+    y: 79,
     labelPos: 'right',
   },
 
@@ -266,7 +266,7 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     clue: 'Sunny golden sand dunes in western Rajasthan!',
     kidFact: 'Golden sand dunes ripple in the wind by day and sparkle under bright stars at night!',
     kidAction: '🌬️ Blow softly — "whoooosh" — like warm desert wind!',
-    x: 17,
+    x: 18,
     y: 39,
     labelPos: 'right',
   },
@@ -299,7 +299,7 @@ export const BHARAT_SPOTS: BharatSpot[] = [
     kidFact: 'Cardamom, black pepper, hornbills, and giant butterflies thrive in misty Kerala!',
     kidAction: '🦋 Flap your hands gently like a colourful rainforest butterfly!',
     x: 26,
-    y: 77,
+    y: 76,
     labelPos: 'right',
   },
 ];
@@ -364,7 +364,7 @@ const RIVER_PATHS: Record<string, string> = {
 
 const SEAS_AROUND_INDIA = [
   { id: 'sindhusagara', dev: 'सिन्धुसागरः', iast: 'sindhusāgaraḥ', en: 'Arabian Sea', x: 10, y: 70 },
-  { id: 'mahodadhi', dev: 'महोदधिः', iast: 'mahodadhiḥ', en: 'Bay of Bengal', x: 72, y: 68 },
+  { id: 'mahodadhi', dev: 'महोदधिः', iast: 'mahodadhiḥ', en: 'Bay of Bengal', x: 74, y: 68 },
   { id: 'ratnakara', dev: 'रत्नाकरः', iast: 'ratnākaraḥ', en: 'Indian Ocean', x: 50, y: 96 },
 ];
 
@@ -381,7 +381,7 @@ interface BharatMapExplorerProps {
 }
 
 export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar }) => {
-  const [mode, setMode] = useState<BharatPlayMode>('quest');
+  const [mode, setMode] = useState<BharatPlayMode>('map');
   const [packId, setPackId] = useState<BharatPackId>('animals');
   const [, setRound] = useState<number>(0);
 
@@ -390,6 +390,7 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
   const [activeSpotlight, setActiveSpotlight] = useState<BharatSpot>(BHARAT_SPOTS[0]);
   const [friendlyDiscovery, setFriendlyDiscovery] = useState<string>('');
   const [isWigglingId, setIsWigglingId] = useState<string | null>(null);
+  const [popupSpot, setPopupSpot] = useState<BharatSpot | null>(null);
 
   const activePack = useMemo(() => PACKS.find((p) => p.id === packId) || PACKS[0], [packId]);
   const packSpots = useMemo(() => BHARAT_SPOTS.filter(activePack.filter), [activePack]);
@@ -400,16 +401,17 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
     return packSpots.find((s) => !done.includes(s.id)) || null;
   }, [mode, packSpots, done]);
 
-  // Audio helper
+  // Audio helper: authentic sound first, then Sanskrit pronunciation
   const playSpotAudio = (spot: BharatSpot) => {
     soundEffects.playBharatSpotSound(spot.id);
-    setTimeout(() => playPronunciation(spot.dev), 160);
+    setTimeout(() => playPronunciation(spot.dev), 220);
   };
 
   const switchPack = (nextPack: BharatPackId) => {
     setPackId(nextPack);
     setDone([]);
     setFriendlyDiscovery('');
+    setPopupSpot(null);
     setRound((r) => r + 1);
     soundEffects.playStrokeChime();
     const targetObj = BHARAT_SPOTS.filter(PACKS.find((p) => p.id === nextPack)?.filter || (() => true))[0];
@@ -419,18 +421,20 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
   const resetPack = () => {
     setDone([]);
     setFriendlyDiscovery('');
+    setPopupSpot(null);
     setRound((r) => r + 1);
     soundEffects.playSuccessDing();
   };
 
-  // Toddler-friendly tap on any map token
-  const handlePinTap = (spot: BharatSpot) => {
+  // Toddler-friendly tap on any map token or card
+  const handleSpotTap = (spot: BharatSpot) => {
     setActiveSpotlight(spot);
+    setPopupSpot(spot);
     setIsWigglingId(spot.id);
     setTimeout(() => setIsWigglingId(null), 500);
 
-    // MODE 1: EXPLORE
-    if (mode === 'explore') {
+    // MODE 1: MAP EXPLORE or CARDS DECK
+    if (mode === 'map' || mode === 'cards') {
       playSpotAudio(spot);
       setFriendlyDiscovery(`${spot.icon} ${spot.dev} (${spot.en}) · ${spot.kidFact}`);
       if (!done.includes(spot.id)) {
@@ -464,7 +468,7 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
       // GENTLE DISCOVERY (Never negative shaking or red error states!)
       playSpotAudio(spot);
       setFriendlyDiscovery(
-        `That's ${spot.icon} ${spot.dev} (${spot.en})! Can you find ${questTarget.icon} ${questTarget.dev} (${questTarget.en}) in ${questTarget.regionLabel}?`
+        `That's ${spot.icon} ${spot.dev} (${spot.en})! Look towards ${questTarget.regionLabel} for ${questTarget.icon} ${questTarget.dev}!`
       );
     }
   };
@@ -477,10 +481,10 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
       <div className="bharat-top-banner">
         <div>
           <h3 className="psw-section-heading">
-            🗺️ <span lang="sa">भारत-मानचित्रम्</span> · Living Map of Bhārata
+            🗺️ <span lang="sa">भारत-मानचित्रम्</span> · Living Map &amp; Wonders of Bhārata
           </h3>
           <p className="psw-section-sub">
-            Touch and hear lions, tigers, elephants, sacred rivers &amp; snowy Himālaya peaks!
+            Touch lions, tigers, elephants, sacred rivers &amp; snowy Himālaya peaks to hear their calls &amp; Sanskrit names!
           </p>
         </div>
 
@@ -507,9 +511,29 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
         </div>
       </div>
 
-      {/* Mode Switcher: Guided Quest vs Free Touch Explore */}
+      {/* 3 Play Modes Bar: Storybook Map | Picture Cards Deck | Where in India Quest */}
       <div className="bharat-mode-bar">
         <div className="bharat-mode-toggle">
+          <button
+            type="button"
+            className={`bharat-mt-btn ${mode === 'map' ? 'is-active' : ''}`}
+            onClick={() => {
+              setMode('map');
+              soundEffects.playStrokeChime();
+            }}
+          >
+            🗺️ Living Storybook Map
+          </button>
+          <button
+            type="button"
+            className={`bharat-mt-btn ${mode === 'cards' ? 'is-active' : ''}`}
+            onClick={() => {
+              setMode('cards');
+              soundEffects.playStrokeChime();
+            }}
+          >
+            🃏 Picture Cards Deck
+          </button>
           <button
             type="button"
             className={`bharat-mt-btn ${mode === 'quest' ? 'is-active' : ''}`}
@@ -518,17 +542,7 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
               soundEffects.playStrokeChime();
             }}
           >
-            🎯 Guided Quest
-          </button>
-          <button
-            type="button"
-            className={`bharat-mt-btn ${mode === 'explore' ? 'is-active' : ''}`}
-            onClick={() => {
-              setMode('explore');
-              soundEffects.playStrokeChime();
-            }}
-          >
-            🧭 Free Touch &amp; Hear
+            🎯 “Where in India?” Quest
           </button>
         </div>
 
@@ -576,6 +590,9 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
               <span className="bqh-region-tag">{questTarget.regionLabel}</span>
               <span className="bqh-clue-text">🔎 {questTarget.clue}</span>
             </div>
+            <div className="bqh-hint-pill">
+              👉 <strong>Hint:</strong> Look for the glowing gold ring in <strong>{questTarget.regionLabel}</strong>!
+            </div>
           </div>
 
           {/* Quick Sound Button */}
@@ -609,176 +626,284 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
         </div>
       )}
 
-      {/* Main Centered Spacious Map Stage */}
-      <div className="bharat-map-stage-centered">
-        <div className="bharat-map-canvas" role="region" aria-label="Interactive Map of India">
-          {/* Base Storybook Map Image */}
-          <img
-            src="/preschool/india/india-map.svg"
-            alt="Illustrated Map of Bhārata (India)"
-            className="bharat-map-base-img"
-            draggable={false}
-          />
+      {/* =========================================================================
+          VIEW 1: STORYBOOK MAP VIEW (Map Mode & Quest Mode)
+          ========================================================================= */}
+      {(mode === 'map' || mode === 'quest') && (
+        <div className="bharat-map-stage-centered">
+          <div className="bharat-map-canvas" role="region" aria-label="Interactive Map of India">
+            {/* Base Storybook Map Image */}
+            <img
+              src="/preschool/india/india-map.svg"
+              alt="Illustrated Map of Bhārata (India)"
+              className="bharat-map-base-img"
+              draggable={false}
+            />
 
-          {/* Interactive SVG Flowing Rivers Overlay */}
-          <svg viewBox="0 0 600 623" className="bharat-map-svg-overlay" aria-hidden="true">
-            {Object.entries(RIVER_PATHS).map(([rId, pts]) => {
-              const isFound = done.includes(rId) || activeSpotlight.id === rId;
-              if (packId !== 'mountains_rivers' && packId !== 'all' && !isFound) return null;
+            {/* Interactive SVG Flowing Rivers Overlay */}
+            <svg viewBox="0 0 600 623" className="bharat-map-svg-overlay" aria-hidden="true">
+              {Object.entries(RIVER_PATHS).map(([rId, pts]) => {
+                const isFound = done.includes(rId) || activeSpotlight.id === rId;
+                if (packId !== 'mountains_rivers' && packId !== 'all' && !isFound) return null;
 
-              return (
-                <g key={rId}>
-                  <polyline
-                    points={pts}
-                    fill="none"
-                    stroke={isFound ? '#0284c7' : '#93c5fd'}
-                    strokeWidth={isFound ? 8 : 5}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    opacity="0.85"
-                  />
-                  {isFound && (
+                return (
+                  <g key={rId}>
                     <polyline
                       points={pts}
                       fill="none"
-                      stroke="#f0f9ff"
-                      strokeWidth="3"
+                      stroke={isFound ? '#0284c7' : '#93c5fd'}
+                      strokeWidth={isFound ? 8 : 5}
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeDasharray="8 10"
-                      className="bharat-river-flow-anim"
+                      opacity="0.85"
                     />
+                    {isFound && (
+                      <polyline
+                        points={pts}
+                        fill="none"
+                        stroke="#f0f9ff"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeDasharray="8 10"
+                        className="bharat-river-flow-anim"
+                      />
+                    )}
+                  </g>
+                );
+              })}
+            </svg>
+
+            {/* Cute Toddler Vedic Compass (Top Right Ocean) */}
+            <div className="bharat-compass-rose" aria-label="Sanskrit directions compass">
+              <button
+                type="button"
+                className="bcr-dir bcr-n"
+                title="उत्तरम् · North (Himalaya)"
+                onClick={() => {
+                  soundEffects.playStrokeChime();
+                  playPronunciation('उत्तरम्');
+                  setFriendlyDiscovery('⬆️ उत्तरम् (uttaram) = North — Snowy Himālaya!');
+                }}
+              >
+                उ
+              </button>
+              <button
+                type="button"
+                className="bcr-dir bcr-w"
+                title="पश्चिमम् · West (Desert & Lions)"
+                onClick={() => {
+                  soundEffects.playStrokeChime();
+                  playPronunciation('पश्चिमम्');
+                  setFriendlyDiscovery('⬅️ पश्चिमम् (paścimam) = West — Thar Desert & Gir Lions!');
+                }}
+              >
+                प
+              </button>
+              <span className="bcr-center" aria-hidden="true">🧭</span>
+              <button
+                type="button"
+                className="bcr-dir bcr-e"
+                title="पूर्वम् · East (Tigers & Rhinos)"
+                onClick={() => {
+                  soundEffects.playStrokeChime();
+                  playPronunciation('पूर्वम्');
+                  setFriendlyDiscovery('➡️ पूर्वम् (pūrvam) = East — Sunrise, Bengal Tigers & Rhinos!');
+                }}
+              >
+                पू
+              </button>
+              <button
+                type="button"
+                className="bcr-dir bcr-s"
+                title="दक्षिणम् · South (Elephants & Ocean)"
+                onClick={() => {
+                  soundEffects.playStrokeChime();
+                  playPronunciation('दक्षिणम्');
+                  setFriendlyDiscovery('⬇️ दक्षिणम् (dakṣiṇam) = South — Kerala Elephants & Ocean!');
+                }}
+              >
+                द
+              </button>
+            </div>
+
+            {/* 3 Clickable Sacred Oceans */}
+            {SEAS_AROUND_INDIA.map((sea) => (
+              <button
+                key={sea.id}
+                type="button"
+                className="bharat-sea-label"
+                style={{ left: `${sea.x}%`, top: `${sea.y}%` }}
+                onClick={() => {
+                  soundEffects.playBharatSpotSound('ganga');
+                  setTimeout(() => playPronunciation(sea.dev), 120);
+                  setFriendlyDiscovery(`🌊 ${sea.dev} (${sea.iast}) · ${sea.en}!`);
+                }}
+                title={`Tap to hear ${sea.dev} (${sea.en})`}
+              >
+                <span lang="sa">{sea.dev}</span>
+                <small>{sea.en}</small>
+              </button>
+            ))}
+
+            {/* LARGE, VISIBLE, VIBRANT PICTURE TOKENS */}
+            {packSpots.map((spot) => {
+              const isSolved = done.includes(spot.id);
+              const isTarget = mode === 'quest' && questTarget?.id === spot.id;
+              const isSelected = activeSpotlight.id === spot.id;
+              const isWiggling = isWigglingId === spot.id;
+
+              return (
+                <button
+                  key={spot.id}
+                  type="button"
+                  aria-label={`${spot.dev} (${spot.en}) in ${spot.regionLabel}`}
+                  onClick={() => handleSpotTap(spot)}
+                  className={[
+                    'bharat-map-pin',
+                    'is-revealed',
+                    isTarget ? 'is-target-glow' : '',
+                    isSolved ? 'is-solved' : '',
+                    isSelected ? 'is-spotlight' : '',
+                    isWiggling ? 'is-wiggling' : '',
+                  ].filter(Boolean).join(' ')}
+                  style={{
+                    left: `${spot.x}%`,
+                    top: `${spot.y}%`,
+                    borderColor: isSolved ? '#16a34a' : isTarget ? '#f59e0b' : KIND_STYLE[spot.kind].border,
+                    background: isSolved ? '#dcfce7' : '#ffffff',
+                  }}
+                  title={`${spot.dev} (${spot.en})`}
+                >
+                  {/* The Always Visible Emoji/Icon */}
+                  <span className="bmp-emoji" aria-hidden="true">
+                    {spot.icon}
+                  </span>
+
+                  {/* Sanskrit Name Pill Tag */}
+                  <span
+                    lang="sa"
+                    className={`bmp-tag bmp-tag--${spot.labelPos || 'bottom'}`}
+                  >
+                    {spot.dev}
+                  </span>
+
+                  {/* Solved Star Checkmark */}
+                  {isSolved && (
+                    <span className="bmp-star-check" aria-hidden="true">
+                      ★
+                    </span>
                   )}
-                </g>
+                </button>
               );
             })}
-          </svg>
 
-          {/* Cute Toddler Vedic Compass (Top Right Ocean) */}
-          <div className="bharat-compass-rose" aria-label="Sanskrit directions compass">
-            <button
-              type="button"
-              className="bcr-dir bcr-n"
-              title="उत्तरम् · North (Himalaya)"
-              onClick={() => {
-                soundEffects.playStrokeChime();
-                playPronunciation('उत्तरम्');
-                setFriendlyDiscovery('⬆️ उत्तरम् (uttaram) = North — Snowy Himālaya!');
-              }}
-            >
-              उ
-            </button>
-            <button
-              type="button"
-              className="bcr-dir bcr-w"
-              title="पश्चिमम् · West (Desert & Lions)"
-              onClick={() => {
-                soundEffects.playStrokeChime();
-                playPronunciation('पश्चिमम्');
-                setFriendlyDiscovery('⬅️ पश्चिमम् (paścimam) = West — Thar Desert & Gir Lions!');
-              }}
-            >
-              प
-            </button>
-            <span className="bcr-center" aria-hidden="true">🧭</span>
-            <button
-              type="button"
-              className="bcr-dir bcr-e"
-              title="पूर्वम् · East (Tigers & Rhinos)"
-              onClick={() => {
-                soundEffects.playStrokeChime();
-                playPronunciation('पूर्वम्');
-                setFriendlyDiscovery('➡️ पूर्वम् (pūrvam) = East — Sunrise, Bengal Tigers & Rhinos!');
-              }}
-            >
-              पू
-            </button>
-            <button
-              type="button"
-              className="bcr-dir bcr-s"
-              title="दक्षिणम् · South (Elephants & Ocean)"
-              onClick={() => {
-                soundEffects.playStrokeChime();
-                playPronunciation('दक्षिणम्');
-                setFriendlyDiscovery('⬇️ दक्षिणम् (dakṣiṇam) = South — Kerala Elephants & Ocean!');
-              }}
-            >
-              द
-            </button>
+            {/* Floating Quick-Info Mascot Speech Card over the Map */}
+            {popupSpot && (
+              <div className="bharat-map-floating-speech">
+                <span className="bmfs-icon">{popupSpot.icon}</span>
+                <div className="bmfs-text">
+                  <strong>
+                    <span lang="sa">{popupSpot.dev}</span> ({popupSpot.en})
+                  </strong>
+                  <p>{popupSpot.kidFact}</p>
+                </div>
+                <button
+                  type="button"
+                  className="bmfs-hear-btn"
+                  onClick={() => playSpotAudio(popupSpot)}
+                  title="Hear pronunciation & sound"
+                >
+                  🔊
+                </button>
+                <button
+                  type="button"
+                  className="bmfs-close-btn"
+                  onClick={() => setPopupSpot(null)}
+                  title="Close popup"
+                >
+                  ✕
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* =========================================================================
+          VIEW 2: TACTILE PICTURE CARDS DECK (Cards Mode - Like Spices Deck)
+          ========================================================================= */}
+      {mode === 'cards' && (
+        <div className="bharat-cards-deck-wrap">
+          <div className="bharat-deck-info-bar">
+            <span>🃏 <strong>{packSpots.length} Wonder Flashcards</strong> · Tap any card to hear its authentic sound and Sanskrit name!</span>
           </div>
 
-          {/* 3 Clickable Sacred Oceans */}
-          {SEAS_AROUND_INDIA.map((sea) => (
-            <button
-              key={sea.id}
-              type="button"
-              className="bharat-sea-label"
-              style={{ left: `${sea.x}%`, top: `${sea.y}%` }}
-              onClick={() => {
-                soundEffects.playBharatSpotSound('ganga');
-                setTimeout(() => playPronunciation(sea.dev), 120);
-                setFriendlyDiscovery(`🌊 ${sea.dev} (${sea.iast}) · ${sea.en}!`);
-              }}
-              title={`Tap to hear ${sea.dev} (${sea.en})`}
-            >
-              <span lang="sa">{sea.dev}</span>
-              <small>{sea.en}</small>
-            </button>
-          ))}
+          <div className="bharat-flashcards-grid">
+            {packSpots.map((spot) => {
+              const isFound = done.includes(spot.id);
+              const isTapped = isWigglingId === spot.id;
+              const isSelected = activeSpotlight.id === spot.id;
 
-          {/* LARGE, VISIBLE, VIBRANT PICTURE TOKENS (No Mystery Question Marks!) */}
-          {packSpots.map((spot) => {
-            const isSolved = done.includes(spot.id);
-            const isTarget = mode === 'quest' && questTarget?.id === spot.id;
-            const isSelected = activeSpotlight.id === spot.id;
-            const isWiggling = isWigglingId === spot.id;
-
-            return (
-              <button
-                key={spot.id}
-                type="button"
-                aria-label={`${spot.dev} (${spot.en}) in ${spot.regionLabel}`}
-                onClick={() => handlePinTap(spot)}
-                className={[
-                  'bharat-map-pin',
-                  'is-revealed',
-                  isTarget ? 'is-target-glow' : '',
-                  isSolved ? 'is-solved' : '',
-                  isSelected ? 'is-spotlight' : '',
-                  isWiggling ? 'is-wiggling' : '',
-                ].filter(Boolean).join(' ')}
-                style={{
-                  left: `${spot.x}%`,
-                  top: `${spot.y}%`,
-                  borderColor: isSolved ? '#16a34a' : isTarget ? '#f59e0b' : KIND_STYLE[spot.kind].border,
-                  background: isSolved ? '#dcfce7' : '#ffffff',
-                }}
-                title={`${spot.dev} (${spot.en})`}
-              >
-                {/* The Always Visible Emoji/Icon */}
-                <span className="bmp-emoji" aria-hidden="true">
-                  {spot.icon}
-                </span>
-
-                {/* Sanskrit Name Pill Tag */}
-                <span
-                  lang="sa"
-                  className={`bmp-tag bmp-tag--${spot.labelPos || 'bottom'}`}
+              return (
+                <div
+                  key={spot.id}
+                  className={`bharat-flashcard ${isTapped ? 'is-popping' : ''} ${isSelected ? 'is-selected' : ''}`}
+                  style={{
+                    '--bcard-border': KIND_STYLE[spot.kind].border,
+                    '--bcard-bg': KIND_STYLE[spot.kind].bg,
+                  } as React.CSSProperties}
+                  onClick={() => handleSpotTap(spot)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') handleSpotTap(spot);
+                  }}
+                  title={`Tap to hear ${spot.dev} (${spot.en})`}
                 >
-                  {spot.dev}
-                </span>
+                  <div className="bfc-outer-frame">
+                    <div className="bfc-inner-canvas">
+                      {/* Top Pill Region Badge */}
+                      <div className="bfc-top-banner">
+                        <span className="bfc-kind-tag">{KIND_STYLE[spot.kind].badge}</span>
+                        <span className="bfc-region-tag">{spot.regionLabel.split('·')[0]}</span>
+                      </div>
 
-                {/* Solved Star Checkmark */}
-                {isSolved && (
-                  <span className="bmp-star-check" aria-hidden="true">
-                    ★
-                  </span>
-                )}
-              </button>
-            );
-          })}
+                      {/* Card Content Row */}
+                      <div className="bfc-body-row">
+                        <div className="bfc-art-col">
+                          <span className="bfc-giant-emoji">{spot.icon}</span>
+                        </div>
+                        <div className="bfc-text-col">
+                          <h4 className="bfc-dev" lang="sa">{spot.dev}</h4>
+                          <div className="bfc-iast"><em>{spot.iast}</em></div>
+                          <div className="bfc-en"><strong>{spot.en}</strong></div>
+                        </div>
+                      </div>
+
+                      {/* Kid Action / Clue */}
+                      <div className="bfc-action-bar">
+                        {spot.kidAction}
+                      </div>
+
+                      {/* Solved Star Checkmark */}
+                      {isFound && (
+                        <span className="bfc-star-pill">
+                          ★ Discovered!
+                        </span>
+                      )}
+
+                      <span className="bfc-audio-pill" aria-hidden="true">
+                        🔊
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Discovery & Kid Action Drawer (Always Positive & Engaging) */}
       <div
@@ -816,7 +941,7 @@ export const BharatMapExplorer: React.FC<BharatMapExplorerProps> = ({ onEarnStar
             className="psw-quiz-btn"
             onClick={() => playSpotAudio(activeSpotlight)}
           >
-            🔊 Hear Again
+            🔊 Hear Sound &amp; Sanskrit
           </button>
         </div>
       </div>
