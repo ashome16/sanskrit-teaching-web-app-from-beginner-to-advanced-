@@ -213,6 +213,25 @@
   border-color: #86efac;
 }
 
+.textbook-action-chip--analyzer {
+  background: #fdf2f8;
+  border-color: #fbcfe8;
+  color: #9d174d;
+  font-weight: 700;
+}
+
+.textbook-action-chip--analyzer:hover {
+  background: #fce7f3;
+  border-color: #f472b6;
+  color: #831843;
+}
+
+.textbook-action-chip--analyzer.active {
+  background: #273b35;
+  border-color: #1c2b26;
+  color: #f7f5f0;
+}
+
 /* Quick Section Jump Chips */
 .textbook-jump-row {
   display: flex;
@@ -549,6 +568,29 @@
   border-radius: 999px;
 }
 
+.textbook-inline-analyzer-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.68rem;
+  border-radius: 6px;
+  background: #fdf2f8;
+  border: 1px solid #fbcfe8;
+  color: #9d174d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-left: auto;
+}
+
+.textbook-inline-analyzer-trigger-btn:hover {
+  background: #fce7f3;
+  border-color: #f472b6;
+  color: #831843;
+  transform: translateY(-1px);
+}
+
 .textbook-inline-meaning-body {
   display: flex;
   flex-direction: column;
@@ -769,6 +811,20 @@
   flex-direction: column;
   gap: 0.75rem;
   margin: 0.75rem 0;
+}
+
+@media (min-width: 820px) {
+  .textbook-bilingual-meanings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.95rem;
+  }
+
+  .textbook-bilingual-meanings .textbook-sentence-meaning-box {
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+  }
 }
 
 .textbook-paragraph-translation--secondary {

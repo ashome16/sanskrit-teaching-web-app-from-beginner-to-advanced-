@@ -84,6 +84,8 @@ interface TextbookReaderProps {
   onOpenCertificate?: () => void;
   onOpenBodhi?: () => void;
   onOpenGames?: () => void;
+  isAnalyzerOpen?: boolean;
+  onToggleAnalyzer?: () => void;
 }
 
 const cleanWord = (value: string): string =>
@@ -480,6 +482,8 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onOpenCertificate,
   onOpenBodhi,
   onOpenGames,
+  isAnalyzerOpen = false,
+  onToggleAnalyzer,
 }) => {
   const { isAdminLoggedIn, currentUser, openAuthModal } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
@@ -1413,6 +1417,16 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 title="Go to Printable Worksheets & Teacher Keys"
               >
                 📑 Worksheets
+              </button>
+            )}
+            {onToggleAnalyzer && !isGroupedLesson && (
+              <button
+                type="button"
+                className={`textbook-action-chip textbook-action-chip--analyzer${isAnalyzerOpen ? ' active' : ''}`}
+                onClick={onToggleAnalyzer}
+                title={isAnalyzerOpen ? "Switch to Full Reading Canvas (Close Word Analyzer)" : "Open Sanskrit Word Analyzer (शब्द-विश्लेषणम्)"}
+              >
+                🪷 {isAnalyzerOpen ? '📖 Focused Reading' : 'शब्द-विश्लेषणम् · Word Analyzer'}
               </button>
             )}
           </div>
@@ -2929,6 +2943,16 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                     </div>
                     {activeGloss?.grammar && (
                       <span className="textbook-inline-grammar">{activeGloss.grammar}</span>
+                    )}
+                    {onToggleAnalyzer && !isGroupedLesson && (
+                      <button
+                        type="button"
+                        className="textbook-inline-analyzer-trigger-btn"
+                        onClick={onToggleAnalyzer}
+                        title="Open Deep Sanskrit Word Analyzer (Dhatu roots, Vibhakti declension tables & sound examples)"
+                      >
+                        🪷 {isAnalyzerOpen ? 'Close Side Analyzer' : 'Deep Morphology (धातु / रूप) ➔'}
+                      </button>
                     )}
                   </div>
                   <div className="textbook-inline-meaning-body">

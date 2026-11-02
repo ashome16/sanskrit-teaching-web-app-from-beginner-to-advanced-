@@ -373,7 +373,20 @@ const Dashboard: React.FC = () => {
   });
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [wordSelection, setWordSelection] = useState<WordSelection | null>(null);
-  const [isAnalyzerCollapsed, setIsAnalyzerCollapsed] = useState(false);
+  const [isAnalyzerCollapsed, setIsAnalyzerCollapsed] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('school-analyzer-collapsed');
+      return saved !== null ? saved === 'true' : true;
+    } catch {
+      return true;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('school-analyzer-collapsed', String(isAnalyzerCollapsed));
+    } catch {}
+  }, [isAnalyzerCollapsed]);
   const [activeView, setActiveView] = useState<DashboardView>(() => {
     try {
       const fromPath = pathToView(window.location.pathname);
@@ -1010,14 +1023,12 @@ const Dashboard: React.FC = () => {
       const spoken = expandDigitsInLessonText(word);
       const cleaned = cleanWord(spoken) || spoken.trim();
       localStorage.setItem('last-stem', cleaned);
-      setIsAnalyzerCollapsed(false);
       setWordSelection({ text: cleaned, nonce: Date.now() });
       return;
     }
     const cleaned = cleanWord(word) || word.trim();
     playPronunciation(cleaned);
     localStorage.setItem('last-stem', cleaned);
-    setIsAnalyzerCollapsed(false);
     setWordSelection({ text: cleaned, nonce: Date.now() });
   };
 
@@ -1704,6 +1715,8 @@ const Dashboard: React.FC = () => {
               onOpenVoiceSettings={() => setIsVoiceModalOpen(true)}
               onOpenCbseGuide={() => navigateToView('cbse-guide')}
               onOpenBarakhadi={() => openDeepakam('barakhadi')}
+              isAnalyzerOpen={!isAnalyzerCollapsed}
+              onToggleAnalyzer={() => setIsAnalyzerCollapsed((prev) => !prev)}
             />
           )
         )}
@@ -1747,11 +1760,18 @@ const Dashboard: React.FC = () => {
             </button>
           </aside>
         ) : (
-          <WordAnalyzerCard
-            selection={wordSelection}
-            onClose={() => setIsAnalyzerCollapsed(true)}
-            onSelectWord={handleWordClick}
-          />
+          <>
+            <div
+              className="wac-drawer-backdrop"
+              onClick={() => setIsAnalyzerCollapsed(true)}
+              aria-hidden="true"
+            />
+            <WordAnalyzerCard
+              selection={wordSelection}
+              onClose={() => setIsAnalyzerCollapsed(true)}
+              onSelectWord={handleWordClick}
+            />
+          </>
         )
       )}
 

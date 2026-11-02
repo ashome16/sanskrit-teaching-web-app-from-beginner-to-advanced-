@@ -473,7 +473,8 @@
 }
 
 @media (max-width: 900px) {
-  .word-analyzer-card {
+  /* Standalone analyzer cards outside reader flow statically, reader drawer stays fixed */
+  .dashboard:not(.dashboard--reader) .word-analyzer-card {
     position: static;
     max-height: none;
   }
