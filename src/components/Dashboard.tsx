@@ -1228,49 +1228,49 @@ const Dashboard: React.FC = () => {
               </div>
             </div>
             <div
-              className={`dashboard-nav-group${(activeView === 'reader' && lesson?.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
+              className={`dashboard-nav-group dashboard-nav-group--ncert${(activeView === 'reader' && lesson?.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
             >
               <button
                 type="button"
                 className={`dashboard-nav-group-label${activeView === 'cbse-guide' ? ' dashboard-nav-group-label--active' : ''}`}
                 onClick={() => navigateToView('cbse-guide')}
-                title="CBSE NCERT Sanskrit Exam Blueprint, Syllabus & Question Paper Guide"
+                title="NCERT / CBSE Sanskrit Curriculum, Exam Blueprint & Syllabi"
               >
                 <img src="/nav/nav-deepakam.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={18} height={18} />
-                <span className="dashboard-nav-sanskrit">सीबीएसई</span>
-                <span className="dashboard-nav-sub-en">Exam Guide</span>
+                <span className="dashboard-nav-sanskrit">सीबीएसई / NCERT</span>
+                <span className="dashboard-nav-sub-en">Sanskrit</span>
               </button>
-              <div className="dashboard-nav-sub" role="group" aria-label="Deepakam 7th, Deepakam 8th, and 9th Grade शारदा lessons">
+              <div className="dashboard-nav-sub dashboard-nav-sub--grades" role="group" aria-label="NCERT CBSE Sanskrit Grades 7, 8, and 9">
                 <button
                   type="button"
-                  className={activeView === 'reader' && lesson?.id !== 'varnamala' && !lesson?.id?.startsWith('grade8_') && !lesson?.id?.startsWith('grade9_') ? 'active' : ''}
+                  className={`dashboard-nav-grade-num${activeView === 'reader' && lesson?.id !== 'varnamala' && !lesson?.id?.startsWith('grade8_') && !lesson?.id?.startsWith('grade9_') ? ' active' : ''}`}
                   onClick={() => openDeepakam()}
-                  title="Deepakam 7th · दीपकम · Class 7 Sanskrit"
+                  title="NCERT Deepakam Class 7 Sanskrit (दीपकम् - कक्षा ७)"
+                  aria-label="Class 7 Deepakam Sanskrit"
                 >
-                  <img src="/textbooks/ncert-deepakam-class7.webp" alt="Deepakam 7th Grade Textbook Cover" className="dashboard-nav-sub-img" />
-                  <span className="dashboard-nav-sanskrit">दीपकम</span> <span className="dashboard-nav-sub-en">7th</span>
+                  <span className="dashboard-nav-grade-badge">7</span>
                 </button>
                 <button
                   type="button"
-                  className={activeView === 'reader' && lesson?.id?.startsWith('grade8_') ? 'active' : ''}
+                  className={`dashboard-nav-grade-num${activeView === 'reader' && lesson?.id?.startsWith('grade8_') ? ' active' : ''}`}
                   onClick={() => {
                     openDeepakam(canReadAllChapters ? 'grade8_prarthana' : 'grade8_ch1');
                   }}
-                  title={canReadAllChapters ? 'Deepakam 8th · दीपकम · Class 8 Sanskrit' : 'Free preview: Deepakam 8th Chapter 1 — sign in for all chapters'}
+                  title={canReadAllChapters ? 'NCERT Deepakam Class 8 Sanskrit (दीपकम् - कक्षा ८)' : 'Free preview: Deepakam Class 8 Chapter 1'}
+                  aria-label="Class 8 Deepakam Sanskrit"
                 >
-                  <img src="/textbooks/ncert-deepakam-class8.jpg" alt="Deepakam 8th Grade Textbook Cover" className="dashboard-nav-sub-img" />
-                  <span className="dashboard-nav-sanskrit">दीपकम</span> <span className="dashboard-nav-sub-en">8th</span>
+                  <span className="dashboard-nav-grade-badge">8</span>
                 </button>
                 <button
                   type="button"
-                  className={activeView === 'reader' && lesson?.id?.startsWith('grade9_') ? 'active' : ''}
+                  className={`dashboard-nav-grade-num${activeView === 'reader' && lesson?.id?.startsWith('grade9_') ? ' active' : ''}`}
                   onClick={() => {
                     openDeepakam(canReadAllChapters ? 'grade9_prarthana' : 'grade9_ch1');
                   }}
-                  title={canReadAllChapters ? '9th Grade · शारदा · Class 9 Sanskrit' : 'Free preview: शारदा Class 9 Chapter 1 — sign in for all chapters'}
+                  title={canReadAllChapters ? 'NCERT Sharada Class 9 Sanskrit (शारदा - कक्षा ९)' : 'Free preview: Sharada Class 9 Chapter 1'}
+                  aria-label="Class 9 Sharada Sanskrit"
                 >
-                  <img src="/textbooks/ncert-sharada-class9.jpg" alt="Sharada 9th Grade Textbook Cover" className="dashboard-nav-sub-img" />
-                  <span className="dashboard-nav-sanskrit">शारदा</span> <span className="dashboard-nav-sub-en">9th</span>
+                  <span className="dashboard-nav-grade-badge">9</span>
                 </button>
               </div>
             </div>

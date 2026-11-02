@@ -608,6 +608,56 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
   vertical-align: middle;
 }
 
+/* NCERT / CBSE Sanskrit Grades (7, 8, 9) */
+.dashboard-nav-sub--grades {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+  padding: 0 2px;
+}
+
+.dashboard-nav-sub button.dashboard-nav-grade-num {
+  min-width: 29px;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.88rem;
+  font-family: inherit;
+  color: #7c2d12;
+  background: rgba(254, 243, 199, 0.8);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dashboard-nav-sub button.dashboard-nav-grade-num:hover {
+  background: #fde68a;
+  border-color: #d97706;
+  color: #78350f;
+  transform: translateY(-1px) scale(1.06);
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);
+}
+
+.dashboard-nav-sub button.dashboard-nav-grade-num.active {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  border-color: #9a3412;
+  box-shadow: 0 2px 8px rgba(194, 65, 12, 0.35);
+  transform: translateY(-1px);
+}
+
+.dashboard-nav-grade-badge {
+  display: inline-block;
+  line-height: 1;
+}
+
 .dashboard-nav button.dashboard-nav-soon,
 .dashboard-nav-sub button.dashboard-nav-soon {
   opacity: 0.5;

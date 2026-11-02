@@ -36,6 +36,7 @@ import VarnamalaFlashcardDownloadModal from './VarnamalaFlashcardDownloadModal';
 import ParagraphWordMatchTest from './ParagraphWordMatchTest';
 import SwarReviewPractice from './SwarReviewPractice';
 import SwarWorkbooksHub from './SwarWorkbooksHub';
+import { transliterateSanskrit } from '../utils/indicTransliteration';
 import '../styles/textbook-reader.css';
 import '../styles/varnamala-studio.css';
 import VarnaColourExplainer from './VarnaColourExplainer';
@@ -45,6 +46,18 @@ export type VarnamalaSubMode = (typeof VALID_VARNAMALA_SUBMODES)[number];
 
 export const isValidVarnamalaSubMode = (mode: unknown): mode is VarnamalaSubMode =>
   typeof mode === 'string' && (VALID_VARNAMALA_SUBMODES as readonly string[]).includes(mode);
+
+export const SCRIPT_LABELS: Record<string, { native: string; en: string }> = {
+  en: { native: 'English', en: 'English' },
+  hi: { native: 'हिन्दी', en: 'Hindi' },
+  both: { native: 'द्विभाषी', en: 'Hindi + English' },
+  te: { native: 'తెలుగు', en: 'Telugu' },
+  ta: { native: 'தமிழ்', en: 'Tamil' },
+  kn: { native: 'ಕನ್ನಡ', en: 'Kannada' },
+  ml: { native: 'മലയാളം', en: 'Malayalam' },
+  gu: { native: 'ગુજરાતી', en: 'Gujarati' },
+  bn: { native: 'বাংলা', en: 'Bengali' },
+};
 
 interface TextbookReaderProps {
   lessons: Lesson[];
@@ -604,7 +617,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const activeEnglishMeaning = activeGloss ? englishMeaningFromGloss(activeGloss) : '';
   const activeHindiMeaning = activeGloss?.languages?.hi?.meaning || '';
   const activePickedMeaning =
-    glossLang === 'en' || glossLang === 'hi'
+    glossLang === 'en' || glossLang === 'hi' || glossLang === 'both'
       ? ''
       : ((activeGloss?.languages as Record<string, { meaning?: string }> | undefined)?.[glossLang]?.meaning || '');
 
@@ -967,7 +980,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const currentSpeakingGloss = currentSpeakingClean
     ? lookupAnalyseGloss(glosses, currentSpeakingClean) || lookupAnalyseGloss(glosses, currentSpeakingToken)
     : undefined;
-  const currentSpeakingMeaning = currentSpeakingGloss ? englishMeaningFromGloss(currentSpeakingGloss) : '';
+  const currentSpeakingMeaning = currentSpeakingGloss
+    ? ((glossLang === 'hi' || glossLang === 'both') && currentSpeakingGloss.languages?.hi?.meaning
+        ? currentSpeakingGloss.languages.hi.meaning
+        : englishMeaningFromGloss(currentSpeakingGloss))
+    : '';
   const studyJumps = isGroupedLesson ? {} : findStudyJumps(activeLesson);
   const nextLessonInTrack = (() => {
     const track = lessonTrack(activeLessonId);
@@ -1275,6 +1292,29 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           </div>
 
           <div className="textbook-quick-tools" role="toolbar" aria-label="Quick Study Tools">
+            <div className="textbook-lang-pick-wrap" title="Select translation language & script transliteration">
+              <label htmlFor="textbook-top-lang-select" className="textbook-top-lang-label">
+                <span className="textbook-lang-icon" aria-hidden="true">🌐</span>
+                <span className="textbook-lang-text">भाषा / Lang:</span>
+              </label>
+              <select
+                id="textbook-top-lang-select"
+                className="textbook-top-lang-select"
+                value={glossLang}
+                onChange={(e) => setGlossLang(e.target.value)}
+                aria-label="Select translation and script language"
+              >
+                <option value="en">English (आङ्ग्ल)</option>
+                <option value="hi">हिन्दी (Hindi)</option>
+                <option value="both">द्विभाषी (Hindi + English)</option>
+                <option value="te">తెలుగు (Telugu Script)</option>
+                <option value="ta">தமிழ் (Tamil Script)</option>
+                <option value="kn">ಕನ್ನಡ (Kannada Script)</option>
+                <option value="ml">മലയാളം (Malayalam Script)</option>
+                <option value="gu">ગુજરાતી (Gujarati Script)</option>
+                <option value="bn">বাংলা (Bengali Script)</option>
+              </select>
+            </div>
             <button
               type="button"
               className="textbook-action-chip"
@@ -2732,22 +2772,74 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 })}
               </p>
 
-              {/* English Meaning Box — Clean translation without distracting English word highlights */}
-              {sentence.meaning && (
-                <div className="textbook-sentence-meaning-box" role="region" aria-label="English Translation">
-                  <div className="textbook-meaning-header">
-                    <span className="textbook-meaning-tag">📖 अनुवादः · English Translation</span>
+              {/* Indic Script Transliteration Banner (Telugu, Tamil, Kannada, Malayalam, Gujarati, Bengali) */}
+              {Boolean(sentence.sanskrit && ['te', 'ta', 'kn', 'ml', 'gu', 'bn'].includes(glossLang)) && (
+                <div className="textbook-indic-script-banner" role="region" aria-label="Transliterated Script">
+                  <div className="textbook-indic-script-header">
+                    <span className="textbook-indic-script-tag">
+                      🪷 {SCRIPT_LABELS[glossLang]?.native || glossLang} लिपिः ({SCRIPT_LABELS[glossLang]?.en} Script Transliteration)
+                    </span>
                   </div>
-                  <p className="textbook-sentence-meaning">{sentence.meaning}</p>
+                  <p className="textbook-indic-script-shloka">
+                    {transliterateSanskrit(sentence.sanskrit, glossLang)}
+                  </p>
                 </div>
               )}
 
-              {/* Hindi Translation if available */}
-              {sentence.paragraphTranslation && (
-                <div className="textbook-paragraph-translation">
-                  <span className="textbook-paragraph-translation-label">हिन्दी अनुवादः · Hindi Meaning</span>
-                  <p className="textbook-paragraph-translation-text">{sentence.paragraphTranslation}</p>
+              {/* Translation Display depending on glossLang */}
+              {glossLang === 'hi' ? (
+                <>
+                  {(sentence.paragraphTranslation || sentence.hindi_gloss) ? (
+                    <div className="textbook-sentence-meaning-box textbook-sentence-meaning-box--hindi" role="region" aria-label="Hindi Translation">
+                      <div className="textbook-meaning-header">
+                        <span className="textbook-meaning-tag">📖 हिन्दी अनुवादः · Hindi Meaning</span>
+                      </div>
+                      <p className="textbook-sentence-meaning">{sentence.paragraphTranslation || sentence.hindi_gloss}</p>
+                    </div>
+                  ) : null}
+                  {sentence.meaning && (
+                    <div className="textbook-paragraph-translation textbook-paragraph-translation--secondary">
+                      <span className="textbook-paragraph-translation-label">English Translation</span>
+                      <p className="textbook-paragraph-translation-text">{sentence.meaning}</p>
+                    </div>
+                  )}
+                </>
+              ) : glossLang === 'both' ? (
+                <div className="textbook-bilingual-meanings">
+                  {(sentence.paragraphTranslation || sentence.hindi_gloss) && (
+                    <div className="textbook-sentence-meaning-box textbook-sentence-meaning-box--hindi" role="region" aria-label="Hindi Translation">
+                      <div className="textbook-meaning-header">
+                        <span className="textbook-meaning-tag">📖 हिन्दी अनुवादः · Hindi Meaning</span>
+                      </div>
+                      <p className="textbook-sentence-meaning">{sentence.paragraphTranslation || sentence.hindi_gloss}</p>
+                    </div>
+                  )}
+                  {sentence.meaning && (
+                    <div className="textbook-sentence-meaning-box" role="region" aria-label="English Translation">
+                      <div className="textbook-meaning-header">
+                        <span className="textbook-meaning-tag">📖 English Translation</span>
+                      </div>
+                      <p className="textbook-sentence-meaning">{sentence.meaning}</p>
+                    </div>
+                  )}
                 </div>
+              ) : (
+                <>
+                  {sentence.meaning && (
+                    <div className="textbook-sentence-meaning-box" role="region" aria-label="English Translation">
+                      <div className="textbook-meaning-header">
+                        <span className="textbook-meaning-tag">📖 अनुवादः · English Translation</span>
+                      </div>
+                      <p className="textbook-sentence-meaning">{sentence.meaning}</p>
+                    </div>
+                  )}
+                  {(sentence.paragraphTranslation || sentence.hindi_gloss) && (
+                    <div className="textbook-paragraph-translation">
+                      <span className="textbook-paragraph-translation-label">हिन्दी अनुवादः · Hindi Meaning</span>
+                      <p className="textbook-paragraph-translation-text">{sentence.paragraphTranslation || sentence.hindi_gloss}</p>
+                    </div>
+                  )}
+                </>
               )}
 
               {/* Special Interactive Match Game for Class 7 Deepakam Ch 9 Paragraph 3 */}
@@ -2840,35 +2932,58 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                     )}
                   </div>
                   <div className="textbook-inline-meaning-body">
-                    <label className="textbook-inline-lang-pick" style={{ display: 'flex', gap: '0.35rem', alignItems: 'center', fontSize: '0.78rem', marginBottom: '0.3rem' }}>
-                      <span>Translation:</span>
+                    <label className="textbook-inline-lang-pick" style={{ display: 'flex', gap: '0.45rem', alignItems: 'center', fontSize: '0.82rem', marginBottom: '0.5rem' }}>
+                      <span style={{ fontWeight: 600 }}>🌐 Language / भाषा:</span>
                       <select value={glossLang} onChange={(e) => setGlossLang(e.target.value)} aria-label="Translation language">
-                        <option value="en">English</option>
-                        <option value="hi">हिन्दी Hindi</option>
-                        <option value="te">తెలుగు Telugu</option>
-                        <option value="ta">தமிழ் Tamil</option>
-                        <option value="ml">മലയാളം Malayalam</option>
+                        <option value="en">English (आङ्ग्ल)</option>
+                        <option value="hi">हिन्दी (Hindi)</option>
+                        <option value="both">द्विभाषी (Bilingual)</option>
+                        <option value="te">తెలుగు (Telugu)</option>
+                        <option value="ta">தமிழ் (Tamil)</option>
+                        <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                        <option value="ml">മലയാളം (Malayalam)</option>
+                        <option value="gu">ગુજરાતી (Gujarati)</option>
+                        <option value="bn">বাংলা (Bengali)</option>
                       </select>
                     </label>
+                    {['te', 'ta', 'kn', 'ml', 'gu', 'bn'].includes(glossLang) && cleanActiveWord && (
+                      <p className="textbook-inline-picked" style={{ background: '#f0fdf4', border: '1px solid #86efac', borderRadius: '6px', padding: '0.3rem 0.5rem', margin: '0.35rem 0' }}>
+                        <span className="textbook-inline-lang-lbl">{SCRIPT_LABELS[glossLang]?.native || glossLang} लिपिः:</span>{' '}
+                        <strong style={{ fontSize: '1.05rem', color: '#15803d' }}>{transliterateSanskrit(cleanActiveWord, glossLang)}</strong>
+                      </p>
+                    )}
                     {activePickedMeaning ? (
                       <p className="textbook-inline-picked">
-                        <span className="textbook-inline-lang-lbl">{({ te: 'తెలుగు', ta: 'தமிழ்', ml: 'മലയാളം' } as Record<string, string>)[glossLang]}:</span> {activePickedMeaning}
-                      </p>
-                    ) : glossLang !== 'en' && glossLang !== 'hi' ? (
-                      <p className="textbook-inline-fallback" style={{ fontSize: '0.75rem', opacity: 0.7, margin: 0 }}>
-                        {({ te: 'Telugu', ta: 'Tamil', ml: 'Malayalam' } as Record<string, string>)[glossLang]} meaning not added yet — showing English/Hindi.
+                        <span className="textbook-inline-lang-lbl">{SCRIPT_LABELS[glossLang]?.native || glossLang}:</span> {activePickedMeaning}
                       </p>
                     ) : null}
-                    {activeEnglishMeaning ? (
-                      <p className="textbook-inline-en">
-                        <span className="textbook-inline-lang-lbl">English:</span> {activeEnglishMeaning}
-                      </p>
-                    ) : null}
-                    {activeHindiMeaning ? (
-                      <p className="textbook-inline-hi">
-                        <span className="textbook-inline-lang-lbl">हिन्दी:</span> {activeHindiMeaning}
-                      </p>
-                    ) : null}
+                    {(glossLang === 'hi' || glossLang === 'both') ? (
+                      <>
+                        {activeHindiMeaning ? (
+                          <p className="textbook-inline-hi" style={{ fontWeight: 600 }}>
+                            <span className="textbook-inline-lang-lbl">हिन्दी:</span> {activeHindiMeaning}
+                          </p>
+                        ) : null}
+                        {activeEnglishMeaning ? (
+                          <p className="textbook-inline-en">
+                            <span className="textbook-inline-lang-lbl">English:</span> {activeEnglishMeaning}
+                          </p>
+                        ) : null}
+                      </>
+                    ) : (
+                      <>
+                        {activeEnglishMeaning ? (
+                          <p className="textbook-inline-en" style={{ fontWeight: 600 }}>
+                            <span className="textbook-inline-lang-lbl">English:</span> {activeEnglishMeaning}
+                          </p>
+                        ) : null}
+                        {activeHindiMeaning ? (
+                          <p className="textbook-inline-hi">
+                            <span className="textbook-inline-lang-lbl">हिन्दी:</span> {activeHindiMeaning}
+                          </p>
+                        ) : null}
+                      </>
+                    )}
                     {activeGloss?.sanskrit_gloss ? (
                       <p className="textbook-inline-sa">
                         <span className="textbook-inline-lang-lbl">संस्कृतम्:</span> {activeGloss.sanskrit_gloss}
