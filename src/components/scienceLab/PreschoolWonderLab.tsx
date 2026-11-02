@@ -2608,7 +2608,7 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                       className="psw-sp-hero-image"
                       loading="eager"
                       width="1024"
-                      height="764"
+                      height="600"
                     />
                     <div className="psw-sp-overlay-tag">
                       💠 Explore symmetry, polygon wooden tiles &amp; sacred mandalas!
@@ -3057,8 +3057,8 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                         alt="ज्यामितीय प्रतिरूप · Geometrical Patterns & Mandala Tangram Puzzle"
                         className="psw-jcg-img"
                         loading="lazy"
-                        width="600"
-                        height="450"
+                        width="1024"
+                        height="600"
                       />
                     </picture>
                     <span className="psw-jcg-tag">ज्यामितीय प्रतिरूप · Geometrical Patterns</span>
