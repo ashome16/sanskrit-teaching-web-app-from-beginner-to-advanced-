@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { BodhiLabAnecdote, TermPanel, ChallengeList, type LabTerm, type LabChallenge, type LabSegmentProps } from './common';
 import { soundEffects } from '../../utils/soundEffects';
+import VedicAltarMastery from './VedicAltarMastery';
 import '../../styles/science-lab.css';
 
 // ---------------------------------------------------------------------------
@@ -1262,13 +1263,16 @@ export const VedicGeometryLab: React.FC<LabSegmentProps> = ({ onNextLab }) => {
         </div>
       </div>
 
-      {/* 5. Sanskrit Geometry Terms Panel */}
+      {/* 5. Senior Civil Engineering Workbench: Vedic Altar Mastery */}
+      <VedicAltarMastery />
+
+      {/* 6. Sanskrit Geometry Terms Panel */}
       <TermPanel terms={GEOMETRY_TERMS} title="Vedic Geometry & Etymological Vocabulary" />
 
-      {/* 6. Challenge Questions */}
+      {/* 7. Challenge Questions */}
       <ChallengeList items={GEOMETRY_CHALLENGES} title="Vedic Geometry Knowledge Challenges" />
 
-      {/* 7. Next Lab Navigation Action */}
+      {/* 8. Next Lab Navigation Action */}
       {onNextLab && (
         <div style={{
           marginTop: '2rem',

@@ -4082,6 +4082,88 @@ export const VEDIC_ARTICLES: VedicArticle[] = [
       'Cowrie shells functioned as an ephemeral physical register (RAM); moving and wiping shells across dirt place-value columns freed working memory for the next algorithmic step.',
       'While the European scientific revolution scaled external hardware (observatories, pendulum clocks, logarithmic lookup books, and armies of human computers), the Indian tradition scaled internal cognitive software.'
     ]
+  },
+  {
+    id: 'universe-language-of-geometry',
+    slug: 'universe-language-of-geometry',
+    title: 'The Universe in the Language of Geometry: Ancient Foundations to Cutting-Edge Modern Science',
+    sanskritTitle: '॥ ब्रह्माण्डं रेखागणितं च · ज्यामितीय-विश्वसृष्टिः ॥',
+    subtitle: 'From Vedic Rekhā Gaṇita, Śulba Altar Architecture, and Nīlakaṇṭha’s Orbits to General Relativity, Calabi-Yau Manifolds, and the Golden Ratio (φ).',
+    readingTime: '15 min read',
+    badge: 'Cosmic Geometry & Metrology',
+    prequel: { id: 'geometry-infinite', label: 'The Geometry of the Infinite: Uniting the Secular and the Sacred' },
+    next: { id: 'spheres-of-certainty', label: 'The Spheres of Certainty: Unearthing 5,000 Years of Standardized Indian Metrology' },
+    sections: [
+      {
+        title: 'Ancient Foundations: Form as the Driver of Existence',
+        sanskritTitle: 'प्राचीन-मूलाधारः · सत्तायाः चालकं रूपम्',
+        paragraphs: [
+          'In ancient civilizations, geometry was not just a tool for measurement; it was seen as the literal blueprint and ontological driver of reality.',
+          'In Vedic cosmology, geometry (Rekhā Gaṇita) represents the study of form and its cosmic function. The root Rikh or Likh signifies to scratch or trace a path: a line is never static, but the living trajectory of conscious energy unfolding from dimensionless space (Śūnya). This manifest order was structurally mapped using Mandalas and Yantras—such as the Śrī Yantra—where intersecting triangles, circles, and squares represented the balancing forces of the cosmos.',
+          'In ancient Greece, Pythagoras and his followers argued that "all is number," proposing the Music of the Spheres (Musica Universalis)—suggesting that celestial orbits produced a harmonious mathematical scale. Plato matched the five regular polyhedra (Platonic Solids) to the fundamental elements of matter, assigning the twelve-faced Dodecahedron to the structure of the entire cosmos.'
+        ],
+        highlight: 'Geometry is not merely a tool for measuring land; it is the ontological architecture of physical existence.'
+      },
+      {
+        title: 'The Transitional Era: From Ideal Spheres to Real Orbits',
+        sanskritTitle: 'सङ्क्रमण-कालः · आदर्श-वृत्तात् वास्तव-कक्षां प्रति',
+        paragraphs: [
+          'For centuries, astronomers insisted that because the heavens were perfect, celestial objects must move in uniform, perfect circles. When observation did not match this ideal, Ptolemy introduced epicycles—wheels within wheels.',
+          'In India, astronomers like Āryabhaṭa (499 CE) recognized Earth\'s diurnal rotation. Centuries later, Nīlakaṇṭha Somayājī (1444–1544 CE) of the Kerala School realized the limits of static circles. In his Tantrasaṅgraha (1501 CE), he formulated a partial geo-heliocentric model where planets orbited the Sun while the Sun orbited the Earth, modifying parameters to track accelerated orbital physics long before European telescopes.',
+          'In Europe, Johannes Kepler broke the ancient spell of the perfect circle with Tycho Brahe’s 8-arcminute Mars discrepancy, formulating his First Law: planets move in ellipses with the Sun at one focus.'
+        ],
+        highlight: 'Nīlakaṇṭha Somayājī in Kerala and Johannes Kepler broke free from rigid circular dogma to discover that planetary orbits are true dynamic ellipses.'
+      },
+      {
+        title: 'Modern Studies: Spacetime Curvature and Quantum Symmetry',
+        sanskritTitle: 'आधुनिक-भौतिकी · दिकाल-वक्रता क्वान्टम-सममितिः च',
+        paragraphs: [
+          'Today, geometry is no longer just a grid we use to measure space; geometry IS space. Albert Einstein transformed physics by turning gravity into a geometric property: space and time are woven into a four-dimensional fabric called spacetime that bends and warps around mass and energy.',
+          'Modern cosmologists using Cosmic Microwave Background (CMB) satellite data have confirmed our observable universe is geometrically flat with an error under 0.4%, meaning parallel lines never intersect.',
+          'At the subatomic scale, String Theory suggests fundamental particles are vibrating strings requiring extra hidden dimensions tightly curled up into intricate 6-dimensional Calabi-Yau manifolds.'
+        ],
+        highlight: 'Space and time are not passive backdrops; geometry is the dynamic fabric that produces gravity and quantum forces.'
+      },
+      {
+        title: 'Fundamental Geometric Relationships & Transformations',
+        sanskritTitle: 'मूलभूताः सम्बन्धाः · रूपाणां गमनं च',
+        paragraphs: [
+          'Core structural families form the scaffolding of geometry: Quadrilaterals (Square, Rectangle, Rhombus, Parallelogram) share area-preserving shear transformations.',
+          'The Invariance of Pi (π): The ratio of circumference to diameter is constant across every scale. In the Śulba Sūtras, squaring the circle and circling the square demanded precise approximations of π centuries before Archimedes.',
+          'Spatial Transformations: Rotation (circular motion around an axis—the engine of planets and galaxies), Translation (straight vector sliding without distortion), and Reflection (mirror parity reversal).',
+          'Coordinate Systems: Cartesian perpendicular grid (X, Y, Z) governing planar Pythagorean distance d = √((x₂-x₁)² + (y₂-y₁)²), transitioning into Non-Euclidean Spherical Geometry on curved globes where triangle angles exceed 180°.'
+        ],
+        highlight: 'Spatial transformations (Rotation, Translation, Reflection) and Coordinate projections bridge planar Cartesian physics with curved Spherical astronomy.'
+      },
+      {
+        title: 'The Golden Ratio (φ) in Ancient Indian Mathematics',
+        sanskritTitle: 'स्वर्ण-अनुपातः (φ) · पिङ्गल-विरहाङ्क-हेमचन्द्र-परम्परा',
+        paragraphs: [
+          'The Golden Ratio (φ = (1 + √5)/2 ≈ 1.6180339887...) is intimately connected to cosmic geometry. In India, this sequence arose centuries before Leonardo Fibonacci through Sanskrit prosody (Chandaḥśāstra).',
+          'Ācārya Piṅgala (c. 3rd century BCE) in his Chandaḥ Sūtra laid the groundwork for combinatorial rhythms (Mātrā-Vṛtta). In 600 CE, Virahāṅka explicitly formulated the additive recurrence sequence: F(n) = F(n-1) + F(n-2), later refined by Gopāla and Ācārya Hemacandra (1150 CE).',
+          'The ratio of successive Hemacandra-Fibonacci numbers converges directly to φ. In Vedic sacred architecture (Vāstu and Śulba Sūtras), this divine proportion governs the concentric self-similar expansion of fire altars (Vṛddhi), botanical leaf arrangements (Phyllotaxis), and the logarithmic spiral of the sacred conch shell (Śaṅkha).'
+        ],
+        highlight: 'Centuries before Fibonacci, Sanskrit prosodists Virahāṅka and Hemacandra formulated the additive sequence whose limit ratio φ ≈ 1.618 governs self-similar cosmic spirals.'
+      },
+      {
+        title: 'Vedic Metrology & Scholarly Resources',
+        sanskritTitle: 'शुल्ब-प्रमाणम् · शोध-ग्रन्थाः',
+        paragraphs: [
+          'The Śulba Sūtras established rigorous standards of measurement: 1 Puruṣa = 5 Aratnis = 120 Aṅgulas. The monumental Agnicayana fire altars—Śyena Citi (Falcon), Rathacakra Citi (Chariot Wheel), and Kūrma Citi (Tortoise)—all strictly preserve the sacred invariant area of 7½ Puruṣas² (101¼ sq. padas = 120,000 sq. aṅgulas).',
+          'For an exhaustive analysis of cord measurement, cardinal gnomon shadows, and brick masonry theorems, read the definitive scholarly treatise on Hindu Infopedia: Vedic Principles of Geometry and Measurement (https://hinduinfopedia.org/vedic-principles-of-geometry-and-measurement/).',
+          'Experience the step-by-step calculations first-hand in our interactive Senior Civil Engineering Workbench: Vedic Altar Mastery.'
+        ],
+        highlight: 'Explore the complete scholarly treatise on Vedic Principles of Geometry and Measurement at Hindu Infopedia.'
+      }
+    ],
+    quote: 'From the rope geometry of the Śulba Sūtras and Hemacandra’s Golden Ratio to Einstein’s curved spacetime and Calabi-Yau manifolds, the cosmos speaks the eternal language of Rekhā Gaṇita.',
+    keyTakeaways: [
+      'Geometry in Vedic science (Rekhā Gaṇita) is the study of living dynamic form traced by conscious energy (Rikh).',
+      'Classical Indian astronomy (Āryabhaṭa, Nīlakaṇṭha Somayājī) anticipated elliptical orbital kinematics centuries before Kepler.',
+      'General Relativity and String Theory prove that geometry is physical reality itself: curved spacetime and multi-dimensional manifolds.',
+      'Sanskrit prosodists Virahāṅka and Hemacandra discovered the Fibonacci additive sequence and Golden Ratio (φ ≈ 1.618) long before Europe.',
+      'All major Śulba fire altars (Śyena, Rathacakra, Kūrma Citi) maintain invariant area (7½ Puruṣas²) and zero vertical seam overlap.'
+    ]
   }
 ];
 

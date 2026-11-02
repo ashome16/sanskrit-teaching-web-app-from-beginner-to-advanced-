@@ -5360,3 +5360,506 @@
   padding: 2px 8px;
   border-radius: 999px;
 }
+
+/* ==========================================================================
+   VEDIC ALTAR MASTERY (Śyena, Rathacakra, Kūrma Citi Engineering Workbench)
+   ========================================================================== */
+.psw-altar-mastery-card {
+  margin-top: 2.5rem;
+  background: linear-gradient(180deg, #0f172a 0%, #090e1a 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 24px rgba(245, 158, 11, 0.15);
+  color: #f8fafc;
+  font-family: inherit;
+}
+.psw-am-header {
+  margin-bottom: 1.5rem;
+}
+.psw-am-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.psw-am-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fef3c7;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+.psw-am-desc {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  max-width: 900px;
+}
+.psw-am-ref-box {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+.psw-am-ref-icon {
+  font-size: 1.1rem;
+}
+.psw-am-ref-text {
+  flex: 1;
+}
+.psw-am-link {
+  color: #38bdf8;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+.psw-am-link:hover {
+  color: #7dd3fc;
+}
+.psw-am-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+.psw-am-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(30, 41, 59, 0.9);
+  border: 1.5px solid rgba(148, 163, 184, 0.3);
+  border-radius: 12px;
+  padding: 0.65rem 1.1rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+.psw-am-tab-btn:hover {
+  border-color: #f59e0b;
+  transform: translateY(-1px);
+}
+.psw-am-tab-btn.is-active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(217, 119, 6, 0.15));
+  border-color: #f59e0b;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.2);
+}
+.psw-am-tab-btn.is-completed {
+  border-color: #10b981;
+}
+.psw-am-tab-symbol {
+  font-size: 1.4rem;
+}
+.psw-am-tab-body {
+  display: flex;
+  flex-direction: column;
+}
+.psw-am-tab-sa {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fef3c7;
+}
+.psw-am-tab-en {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+.psw-am-done-star {
+  font-size: 1rem;
+  margin-left: 0.3rem;
+}
+.psw-am-score-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #6ee7b7;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.psw-am-workbench-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1.75rem;
+  align-items: stretch;
+}
+@media (max-width: 980px) {
+  .psw-am-workbench-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.psw-am-blueprint-panel {
+  background: #020617;
+  border: 1.5px solid rgba(56, 189, 248, 0.35);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+.psw-am-bp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+.psw-am-bp-kicker {
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: #38bdf8;
+  font-weight: 700;
+}
+.psw-am-bp-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin: 0.15rem 0 0 0;
+}
+.psw-am-layer-toggle {
+  display: flex;
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.psw-am-layer-toggle button {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.psw-am-layer-toggle button.is-active {
+  background: #0284c7;
+  color: #ffffff;
+}
+.psw-am-svg-container {
+  width: 100%;
+  aspect-ratio: 16/10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #0c1830 0%, #020617 100%);
+  border-radius: 10px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.psw-altar-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.psw-am-telemetry-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+.psw-am-telem-item {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+  text-align: center;
+}
+.psw-am-telem-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+.psw-am-telem-val {
+  font-size: 0.88rem;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  color: #38bdf8;
+}
+.psw-am-challenge-panel {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1.5px solid rgba(245, 158, 11, 0.3);
+  border-radius: 16px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+.psw-am-step-tracker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.psw-am-step-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.psw-am-step-dots {
+  display: flex;
+  gap: 0.35rem;
+}
+.psw-am-step-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(148, 163, 184, 0.3);
+  transition: all 0.2s ease;
+}
+.psw-am-step-dots span.is-active {
+  background: #f59e0b;
+  transform: scale(1.2);
+}
+.psw-am-step-dots span.is-done {
+  background: #10b981;
+}
+.psw-am-step-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.2rem 0;
+}
+.psw-am-step-sa {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 0.95rem;
+  color: #fde68a;
+  margin-bottom: 0.75rem;
+}
+.psw-am-step-instructions {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  background: rgba(30, 41, 59, 0.5);
+  border-left: 3px solid #38bdf8;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1.15rem;
+}
+.psw-am-question-box {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  padding: 1.1rem;
+  margin-bottom: 1rem;
+}
+.psw-am-q-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+.psw-am-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.psw-am-opt-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  color: #e2e8f0;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.psw-am-opt-btn:hover:not(:disabled) {
+  border-color: #38bdf8;
+  background: rgba(30, 41, 59, 0.9);
+}
+.psw-am-opt-btn.is-selected.is-correct {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+  color: #ffffff;
+}
+.psw-am-opt-btn.is-selected.is-wrong {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+.psw-am-opt-btn.is-dimmed {
+  opacity: 0.5;
+  cursor: default;
+}
+.psw-am-opt-marker {
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  color: #38bdf8;
+  font-size: 0.85rem;
+  min-width: 1.3rem;
+}
+.psw-am-opt-text {
+  flex: 1;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.psw-am-feedback-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-top: 0.9rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.psw-am-feedback-box.is-correct {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1.5px solid #10b981;
+  color: #a7f3d0;
+}
+.psw-am-feedback-box.is-wrong {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1.5px solid #ef4444;
+  color: #fecaca;
+}
+.psw-am-feedback-icon {
+  font-size: 1.1rem;
+}
+.psw-am-feedback-text {
+  flex: 1;
+}
+.psw-am-calc-box {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  margin-top: 0.85rem;
+}
+.psw-am-calc-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #f59e0b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+.psw-am-calc-text {
+  font-size: 0.82rem;
+  color: #fde68a;
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.45;
+}
+.psw-am-actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.psw-am-hint-btn {
+  background: transparent;
+  border: 1px dashed rgba(245, 158, 11, 0.5);
+  color: #fde68a;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.psw-am-hint-btn:hover {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: #f59e0b;
+}
+.psw-am-hint-text {
+  font-size: 0.85rem;
+  color: #fde68a;
+  background: rgba(245, 158, 11, 0.15);
+  border-left: 3px solid #f59e0b;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 6px 6px 0;
+  margin-top: 0.65rem;
+  width: 100%;
+}
+.psw-am-advance-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #090e17;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1.4rem;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  transition: all 0.18s ease;
+  margin-left: auto;
+}
+.psw-am-advance-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.5);
+}
+.psw-am-complete-card {
+  margin-top: 1.25rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 95, 70, 0.3));
+  border: 2px solid #10b981;
+  border-radius: 14px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.psw-am-complete-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.35rem;
+}
+.psw-am-complete-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #a7f3d0;
+  margin: 0 0 0.5rem 0;
+}
+.psw-am-complete-text {
+  font-size: 0.88rem;
+  color: #e2e8f0;
+  line-height: 1.55;
+  margin: 0 0 1rem 0;
+}
+.psw-am-restart-btn {
+  background: rgba(16, 185, 129, 0.3);
+  border: 1px solid #10b981;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.psw-am-restart-btn:hover {
+  background: #10b981;
+  color: #064e3b;
+}

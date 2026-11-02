@@ -31,6 +31,7 @@ import { VedicLearningPath } from './VedicLearningPath';
 import VedicArticleFigure from './VedicArticleFigure';
 import { PosterLightbox } from './PosterLightbox';
 import ArticleGamesHub from './ArticleGamesHub';
+import VedicAltarMastery from './scienceLab/VedicAltarMastery';
 import '../styles/vedic-maths.css';
 import '../styles/resources.css';
 
@@ -3630,6 +3631,39 @@ ${bodyHtml}
                   Because Vedic altars had to possess identical surface area regardless of whether their geometry was circular (<em>Gārhapatya</em>) or square (<em>Āhavanīya</em>), Vedic seers devised exact cord-and-peg algorithms to transform squares to circles and circles to squares without area loss.
                 </p>
               </div>
+
+              <div style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%)', padding: '1.5rem', borderRadius: '12px', border: '1.5px solid #86efac', boxShadow: '0 2px 8px rgba(16, 185, 129, 0.08)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>🏛️</div>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#10b981', color: '#ffffff', padding: '0.2rem 0.55rem', borderRadius: '999px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Scholarly Research</span>
+                </div>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#065f46', margin: '0 0 0.5rem 0' }}>
+                  Vedic Principles of Geometry &amp; Measurement
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#166534', lineHeight: 1.55, margin: '0 0 0.9rem 0' }}>
+                  Essential monograph on Hindu Infopedia analyzing the Śulba Sūtras, cosmic cord metrology (aṅgula, puruṣa, vyāyāma), sacrificial altar physics, and area invariance theorems.
+                </p>
+                <a
+                  href="https://hinduinfopedia.org/vedic-principles-of-geometry-and-measurement/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    background: '#059669',
+                    color: '#ffffff',
+                    padding: '0.5rem 0.95rem',
+                    borderRadius: '8px',
+                    fontWeight: 700,
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    boxShadow: '0 2px 6px rgba(5, 150, 105, 0.25)',
+                  }}
+                >
+                  <span>Read Monograph on Hindu Infopedia ↗</span>
+                </a>
+              </div>
             </div>
 
             {/* ================================================================
@@ -4680,6 +4714,11 @@ ${bodyHtml}
               </div>
             </div>
 
+            {/* ================================================================
+                SENIOR CIVIL ENGINEERING WORKBENCH: VEDIC ALTAR MASTERY
+                ================================================================ */}
+            <VedicAltarMastery />
+
             {/* NEXT CHAPTER ROADMAP CARD */}
             <div className="vedic-next-track-card">
               <div className="vedic-next-track-header">
@@ -4700,6 +4739,19 @@ ${bodyHtml}
                   }}
                 >
                   🌊 Enter Fluid Space &amp; Parallel Math →
+                </button>
+                <button
+                  type="button"
+                  className="article-pager-btn"
+                  onClick={() => {
+                    setSelectedArticleId('universe-language-of-geometry');
+                    setActiveTab('articles');
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                  style={{ background: '#fef3c7', borderColor: '#f59e0b', color: '#92400e', fontWeight: 800 }}
+                >
+                  📐 Read: The Universe in the Language of Geometry (ब्रह्माण्डं रेखागणितं च) →
                 </button>
                 <button
                   type="button"

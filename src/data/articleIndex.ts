@@ -191,4 +191,11 @@ export const ARTICLES: ArticleMeta[] = [
     cardTitle: 'संस्कृतं यूरोपे · How Sanskrit Grammar Travelled to Europe',
     cardBlurb: 'Portraits and stories of Roth, Hanxleden, Paolino, William Jones, Wilkins, Schlegel, Bopp and Max Müller — and how Pāṇini’s Aṣṭādhyāyī reshaped linguistics and computing.',
   },
+  {
+    id: 'universe-language-of-geometry',
+    file: 'grammar/article-27.txt',
+    emoji: '📐',
+    cardTitle: 'ब्रह्माण्डं रेखागणितं च · The Universe in the Language of Geometry',
+    cardBlurb: 'From Vedic Rekhā Gaṇita, Śulba altars, and Nilakantha’s orbits to General Relativity, Calabi-Yau manifolds, and the sacred Golden Ratio (φ).',
+  },
 ];
