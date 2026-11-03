@@ -806,6 +806,40 @@
   border-color: #fed7aa;
 }
 
+/* Indic Script & Translation Box */
+.textbook-sentence-meaning-box--indic {
+  background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 50%, #eff6ff 100%);
+  border: 1.5px solid #86efac;
+  border-left: 4.5px solid #16a34a;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(22, 163, 74, 0.08);
+}
+
+.textbook-sentence-meaning-box--indic .textbook-meaning-tag {
+  color: #166534;
+  background: #dcfce7;
+  border-color: #86efac;
+  font-weight: 800;
+}
+
+.textbook-indic-meaning-badge {
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.textbook-inline-indic-card {
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
+  transition: all 0.2s ease;
+}
+
+.textbook-inline-paired-meanings {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+}
+
 .textbook-bilingual-meanings {
   display: flex;
   flex-direction: column;

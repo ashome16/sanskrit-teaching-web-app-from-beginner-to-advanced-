@@ -1,3 +1,5 @@
+import { lookupIndicWordMeaning } from './indicWordDictionary';
+
 /**
  * Sealed Analyse glosses from public/analyse.json (English + regional).
  * Grow this file word-by-word; never invent Telugu/Kannada here in code.
@@ -284,4 +286,27 @@ export const englishMeaningFromGloss = (entry: AnalyseEntry): string =>
   entry.base_english?.trim() ||
   (entry as unknown as { english?: string })?.english?.trim() ||
   '';
+
+export const hindiMeaningFromGloss = (entry: AnalyseEntry): string =>
+  entry.languages?.hi?.meaning?.trim() ||
+  (entry as unknown as { hindi?: string })?.hindi?.trim() ||
+  (entry as unknown as { hindi_gloss?: string })?.hindi_gloss?.trim() ||
+  '';
+
+export const indicMeaningFromGloss = (entry: AnalyseEntry, langCode: string): string => {
+  if (!langCode || langCode === 'en') return englishMeaningFromGloss(entry);
+  if (langCode === 'hi') return hindiMeaningFromGloss(entry);
+
+  // 1. Direct language gloss in entry
+  const fromLangs = (entry.languages as Record<string, { meaning?: string }> | undefined)?.[langCode]?.meaning?.trim();
+  if (fromLangs) return fromLangs;
+
+  // 2. Indic dictionary lookup by word or cleanWord
+  if (entry.word) {
+    const dict = lookupIndicWordMeaning(entry.word, langCode);
+    if (dict?.meaning) return dict.meaning;
+  }
+
+  return '';
+};
 
