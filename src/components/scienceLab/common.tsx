@@ -20,7 +20,8 @@ export type LabSegmentId =
   | 'temple-engineering'
   | 'kautilya'
   | 'chandahshastra'
-  | 'ujjain-geodesy';
+  | 'ujjain-geodesy'
+  | 'citrakavya';
 
 export interface LabSegmentProps {
   onNextLab?: () => void;

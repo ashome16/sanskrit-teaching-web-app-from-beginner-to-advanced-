@@ -32,6 +32,7 @@ const TempleEngineeringLab = lazy(() => import('./TempleEngineeringLab'));
 const KautilyaStatecraft = lazy(() => import('./KautilyaStatecraft'));
 const ChandahshastraLab = lazy(() => import('./ChandahshastraLab'));
 const UjjainGeodesyStudio = lazy(() => import('../UjjainGeodesyStudio'));
+const CitrakavyaStudio = lazy(() => import('./CitrakavyaStudio'));
 const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 import { BodhiWisdomCard } from '../BodhiWisdomCard';
 import { RISHI_QUESTS } from './rishiQuests';
@@ -384,6 +385,25 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     ink: '#38bdf8',
     glow: '#0ea5e9',
   },
+  {
+    id: 'citrakavya',
+    code: 'SEC-17',
+    icon: '🔲',
+    dev: 'चित्रकाव्य-शाला · विदग्धमुखमण्डनम्',
+    title: 'Matrix of Mind · Citrakāvya',
+    subject: '3×3 Syllable Grids, Lotus & Wheel Bandhas',
+    school: 'Dharmadāsa & Bhāravi (चित्रकाव्यम्)',
+    category: 'waves',
+    level: 'middle',
+    levelLabel: 'Middle & Scholar',
+    levelDev: 'माध्यमिक-शोध',
+    ageRange: 'Ages 10–18+',
+    gameType: 'Constrained Poetics & Word Matrix Simulator',
+    blurb: 'Decode ancient Sanskrit word grids: solve Dharmadāsa’s 19-question 3×3 Latin square puzzle with animated SVG vectors and sub-phonemic vowel extraction, and simulate Padma (Lotus), Cakra (Wheel), and Muraja (Drum) geometric bandhas.',
+    tint: 'rgba(56, 189, 248, 0.14)',
+    ink: '#38bdf8',
+    glow: '#0284c7',
+  },
 ];
 
 
@@ -461,6 +481,12 @@ const HASH_ALIASES: Record<string, LabSegmentId> = {
   mahakal: 'ujjain-geodesy',
   mangalnath: 'ujjain-geodesy',
   dongla: 'ujjain-geodesy',
+  citrakavya: 'citrakavya',
+  'citra-kavya': 'citrakavya',
+  'matrix-mind': 'citrakavya',
+  'word-grid': 'citrakavya',
+  vidagdha: 'citrakavya',
+  bandha: 'citrakavya',
 };
 const readHash = (): LabSegmentId | null => {
   try {
@@ -1459,6 +1485,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             {active === 'kautilya' && <KautilyaStatecraft onNextLab={() => handleNavigateLab(nextSeg.id)} />}
             {active === 'chandahshastra' && <ChandahshastraLab onNextLab={() => handleNavigateLab(nextSeg.id)} />}
             {active === 'ujjain-geodesy' && <UjjainGeodesyStudio onNextLab={() => handleNavigateLab(nextSeg.id)} />}
+            {active === 'citrakavya' && <CitrakavyaStudio onNextLab={() => handleNavigateLab(nextSeg.id)} onPrevLab={() => handleNavigateLab(prevSeg.id)} />}
           </Suspense>
         </div>
 

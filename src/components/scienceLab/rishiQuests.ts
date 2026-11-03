@@ -147,4 +147,12 @@ export const RISHI_QUESTS: Record<string, RishiQuest> = {
     purpose: 'Accurate time and place guided calendars and travel.',
     win: 'Meridian found! You mapped the sky from the ground.',
   },
+  citrakavya: {
+    goal: 'Solve Dharmadāsa’s 19-question 3×3 matrix puzzle and trace lotus and wheel poetic bandhas.',
+    steps: ['Pick a riddle from the dashboard', 'Trace vector arrows across the 3×3 grid', 'Extract sub-phonemic vowels and unlock geometric bandhas'],
+    observe: 'Observe how 3 syllables form a Latin square where rows, columns and diagonals hide words.',
+    nature: 'Language mirrors nature’s geometry: symmetry, cycles, and reflections.',
+    purpose: 'Citrakāvya trained scholars in agile mathematical memory, lateral logic, and poetic beauty.',
+    win: 'All 19 riddles unlocked! You have mastered the Matrix of Mind.',
+  },
 };

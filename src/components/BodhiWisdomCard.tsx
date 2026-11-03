@@ -499,6 +499,23 @@ export const BODHI_GAME_WISDOM: Record<string, BodhiWisdomData> = {
     societalWelfare:
       'Error-free oral preservation of civilizational knowledge: strict metrical checksums ensured that vast libraries of medicine, astronomy, and philosophy survived for thousands of years without corruption or transcription drift.',
   },
+  citrakavya: {
+    anecdoteTitle: 'Dharmadāsa & Citrakāvya: The Ancient Matrix of Mind & Bandha Poetics',
+    historicalPeriod: 'Vidagdhamukhamandana of Dharmadāsa · 6th–11th Century CE',
+    anecdoteStory:
+      'Centuries before computer scientists conceived of constrained text arrays, Latin squares, or directed graphs, ancient Sanskrit master poets treated language as a multidimensional algorithmic canvas. In his Vidagdhamukhamandana ("The Ornament of the Wise Man’s Mouth"), Dharmadāsa constructed an astonishing 19-question riddle puzzle out of a single 3×3 syllable matrix ({vī, hā, rī}). Solvers read along rows, columns, diagonals, and perform sub-phonemic vowel extractions (isolating "ī" from "vī" to evoke Goddess Lakṣmī). Beyond square matrices, master poets like Bhāravi and Māgha engineered Padma-bandha (lotus petal blooms), Cakra-bandha (8-spoke rotary wheels), and Muraja-bandha (drum lattices) where stanzas remain invariant under geometric rotations and reflections.',
+    sanskritVerse: 'वर्णानां स्थिति-नियमैः यत् काव्यं बध्यते सदा। चित्रकाव्यं तदाख्यातं विदुषां चित्त-रञ्जकम्॥',
+    sanskritVerseMeaning:
+      '"That poetic architecture which is bound by strict positional rules of syllables—forming pictures of lotuses, wheels, drums, and chessboards—is celebrated as Citrakāvya, captivating the minds of wise scholars."',
+    uniquePlayingMethodology:
+      '3×3 Syllable Grid Traversal, Dynamic Vector Overlays, Sub-Phonemic Vowel Extraction & Sacred Geometric Bandha Simulators.',
+    civilizationalContinuity:
+      'Anticipated graph-theoretic Hamiltonian paths, Latin squares, permutation matrices, and dihedral group symmetries (D4) that underpin modern discrete mathematics, cryptography, and compiler parsing.',
+    empiricalObservation:
+      'Exploitation of Sanskrit’s agglutinative morphology, free word order via vibhakti inflections, and phonetic composition of Akṣaras (Consonant ⊕ Vowel).',
+    societalWelfare:
+      'Advanced intellectual sharpening, mnemonic mastery, and playful cognitive engagement (Vidagdha-goṣṭhī) that elevated linguistic education into sacred mathematical art.',
+  },
 };
 
 // Aliases for alternate game IDs

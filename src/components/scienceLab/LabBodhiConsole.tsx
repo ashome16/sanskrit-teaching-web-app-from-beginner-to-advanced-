@@ -1051,6 +1051,59 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
       },
     ],
   },
+  citrakavya: {
+    title: 'The Matrix of Mind: Citrakāvya & Word Grids',
+    dev: 'चित्रकाव्य-शाला · विदग्धमुखमण्डनम्',
+    bodhiIntro:
+      'Welcome to Sector 17: The Matrix of Mind & Constrained Sanskrit Poetics! Centuries before modern computers modeled string matrices or printed crosswords, ancient Sanskrit scholars treated language as a mathematical canvas. In his Vidagdhamukhamandana, Dharmadāsa formulated a 19-question puzzle from a 3×3 Latin square grid ({vī, hā, rī}). Master poets constructed verses fitting lotuses, wheels, drums, and chessboards that remain invariant under rotations and reflections.',
+    keyConcepts: [
+      { label: 'Citrakāvya (चित्रकाव्यम्)', text: 'Constrained or visual poetry arranging syllables into strict geometric grids, wheels, lotuses, and matrices.' },
+      { label: 'Latin Square Grid (३×३ कोष्ठकम्)', text: 'A grid where each syllable appears exactly once in every row and column, satisfying cyclic group symmetries.' },
+      { label: 'Padma-bandha (पद्मबन्धः)', text: 'Lotus blossom grid where verses read outward from the pericarp core along petals and circle back symmetrically.' },
+      { label: 'Cakra-bandha (चक्रबन्धः)', text: 'An 8-spoke wheel encoding radial invocations and poet signatures along spokes with a 32-syllable circular rim.' },
+      { label: 'Sub-Phonemic Extraction', text: 'Splitting composite Akṣaras into constituent consonants and vowels according to Pāṇinian phonology (vī ➔ v + ī).' },
+    ],
+    faqs: [
+      {
+        q: 'Why could ancient Sanskrit poets build such complex mathematical matrices?',
+        a: 'Sanskrit’s rich grammatical cases (Vibhakti) allow free word order without losing meaning. Coupled with agglutinative Sandhi compounding and Ekākṣara monosemic lexicons, words can be traversed in multiple geometric directions.',
+        devAudio: 'चित्रकाव्यं विदुषां चित्तरञ्जकम्',
+      },
+      {
+        q: 'How does Dharmadāsa’s 3×3 grid solve 19 different questions?',
+        a: 'By reading rows forward and backward, traversing columns and diagonals, and isolating sub-phonemic vowels (such as extracting the long vowel "ī" from "vī" to represent Goddess Lakṣmī).',
+        devAudio: 'विदग्धमुखमण्डनम्',
+      },
+    ],
+    quizzes: [
+      {
+        id: 'citra-q1',
+        q: 'What mathematical property does Dharmadāsa’s 3×3 grid ({vī, hā, rī}) exhibit?',
+        options: [
+          'It is a random arrangement of consonants',
+          'It is a Latin square of order 3 where each syllable appears exactly once per row and column',
+          'It is an English crossword puzzle',
+          'It has no repeating patterns',
+        ],
+        correct: 1,
+        explanation: 'Each of the 3 syllables (vī, hā, rī) occurs exactly once in every row and column, forming a cyclic Latin square group.',
+        sanskritContext: 'त्रिवर्णानां चक्रीय-विन्यासः।',
+      },
+      {
+        id: 'citra-q2',
+        q: 'In sub-phonemic extraction, what sacred deity does the isolated long vowel "ई" (extracted from "वी") represent?',
+        options: [
+          'Goddess Lakṣmī (Consort of Viṣṇu)',
+          'Lord Yama (God of Death)',
+          'King Ravana',
+          'The Ocean',
+        ],
+        correct: 0,
+        explanation: 'According to classical Sanskrit Ekākṣara lexicons, the solitary vowel "ई" is an auspicious designation for Goddess Lakṣmī.',
+        sanskritContext: 'ईकारो लक्ष्मी-वाचकः।',
+      },
+    ],
+  },
 };
 
 const RANKS = [
