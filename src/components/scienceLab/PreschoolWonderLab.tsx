@@ -45,6 +45,7 @@ import '../../styles/science-lab.css';
 import JungleCouncilStory from './JungleCouncilStory';
 import BharatMapExplorer from './BharatMapExplorer';
 import SpiceAdventureDeck from './SpiceAdventureDeck';
+import PreschoolVarnamalaGame from './PreschoolVarnamalaGame';
 import {
   LivingNatureExplorer,
   YogaPoseStudio,
@@ -54,6 +55,7 @@ import {
 } from './PreschoolPlaydecks';
 
 type PreschoolTab =
+  | 'varnamala'
   | 'shapes'
   | 'colors'
   | 'animals'
@@ -814,6 +816,26 @@ const BIRDS: FestivalItem[] = [
 ];
 
 const ACTIVITIES: ActivityItem[] = [
+  {
+    id: 'varnamala',
+    labelSa: 'वर्णमाला',
+    labelEn: 'Varṇamālā: Letter Garden',
+    icon: '🔤',
+    cluster: 'creative',
+    clusterLabel: 'रचना · Creative Play',
+    gradeBadge: 'Ages 3–6 · Letters & Swaras',
+    desc: 'Tap cheerful letters, meet animal friends (अश्वः 🐴, आम्रम् 🥭, कमलम् 🪷), find secret letters & sing the alphabet train!',
+    features: ['🔊 Letter Phonics', '🐴 Mnemonic Picture Friends', '🎯 Find-the-Letter Game', '🚂 Alphabet Sing-Along Train'],
+    bannerGradient: 'linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f59e0b 100%)',
+    accentColor: '#a855f7',
+    bannerVisual: {
+      image: '/images/sanskrit-devanagari-emblem-opt.jpg',
+      imageAlt: 'वर्णमाला · Sanskrit Alphabet Letter Garden',
+      emojiLead: '🔤',
+      decorEmojis: ['🐴', '🥭', '🪷', '🐘', '🚂', '⭐'],
+      taglineSa: 'अ आ इ ई उ ऊ ऋ ... क ख ग घ ङ',
+    },
+  },
   {
     id: 'shapes',
     labelSa: 'आकाराः',
@@ -2470,6 +2492,13 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
               <strong>Great job! शोभनम्!</strong>
             </div>
           )}
+
+      {/* ===================================================================
+          TAB 0: VARNAMALA LETTER GARDEN (वर्णमाला-वाटिका)
+         =================================================================== */}
+      {tab === 'varnamala' && (
+        <PreschoolVarnamalaGame onEarnStar={celebrateWin} />
+      )}
 
       {/* ===================================================================
           TAB 1: SHAPES PLAYGROUND (आकाराः)

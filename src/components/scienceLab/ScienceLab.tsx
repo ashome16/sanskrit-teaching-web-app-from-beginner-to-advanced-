@@ -960,7 +960,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                         className="vl-ps-launch-btn"
                         onClick={() => handleLaunchSim('preschool-wonder')}
                       >
-                        <span>🚀 Enter Play 2 Learn: Free Preschool Games (24 Activities) ➔</span>
+                        <span>🚀 Enter Play 2 Learn: Free Preschool Games (25 Activities) ➔</span>
                       </button>
                     </div>
 
@@ -970,6 +970,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                       </div>
                       <div className="vl-ps-activities-grid">
                         {[
+                          { id: 'varnamala', icon: '🔤', sa: 'वर्णमाला', en: 'Varṇamālā Letter Garden' },
                           { id: 'shapes', icon: '🎨', sa: 'आकाराः', en: 'Shapes & Indian Geometry' },
                           { id: 'colors', icon: '🧪', sa: 'वर्ण-मेलनम्', en: 'Color Magic Cauldron' },
                           { id: 'fruits', icon: '🍎', sa: 'फल-सङ्ग्रहः', en: 'Orchard Fruit Picker' },
@@ -1337,8 +1338,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 }}
                 aria-label="Switch science simulation"
               >
-                <optgroup label="Stage 1: Play 2 Learn: Free Preschool Games (Ages 3–6 · 24 Games)">
-                  <option value="preschool-wonder">🌟 Play 2 Learn: Free Preschool Games (Ages 3–6 · 24 Activities)</option>
+                <optgroup label="Stage 1: Play 2 Learn: Free Preschool Games (Ages 3–6 · 25 Games)">
+                  <option value="preschool-wonder">🌟 Play 2 Learn: Free Preschool Games (Ages 3–6 · 25 Activities)</option>
                 </optgroup>
                 <optgroup label="Stage 2: Primary Explorers (Ages 6–10)">
                   {LAB_SEGMENTS.filter((s) => s.level === 'primary').map((s) => (
