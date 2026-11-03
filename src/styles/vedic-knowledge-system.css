@@ -1,0 +1,421 @@
+/* ==========================================================================
+   Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Showcase Styles
+   ========================================================================== */
+
+.vks-section {
+  position: relative;
+  overflow: hidden;
+  margin: 3.5rem auto;
+  max-width: 1240px;
+  padding: 0 1rem;
+}
+
+.vks-card {
+  position: relative;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.12), transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(99, 102, 241, 0.15), transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.1), transparent 45%),
+    linear-gradient(145deg, #070d18 0%, #0d1527 50%, #08101e 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  border-radius: 24px;
+  padding: 2.75rem 2.25rem;
+  color: #f8fafc;
+  box-shadow:
+    0 24px 60px -15px rgba(0, 0, 0, 0.7),
+    0 0 35px -5px rgba(245, 158, 11, 0.15);
+  overflow: hidden;
+}
+
+/* Subtle background constellation pattern */
+.vks-bg-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.25;
+}
+
+/* Header */
+.vks-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 2rem;
+}
+
+.vks-eyebrow-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.vks-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.8rem, 3.8vw, 2.75rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+.vks-title-sa {
+  display: block;
+  font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+  color: #fcd34d;
+  font-weight: 700;
+  margin-top: 0.35rem;
+  text-shadow: 0 2px 12px rgba(251, 191, 36, 0.3);
+}
+
+.vks-subtitle {
+  margin: 0 auto;
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+  line-height: 1.65;
+  color: #cbd5e1;
+  max-width: 760px;
+}
+
+/* Central Infographic Artwork Showcase */
+.vks-art-showcase {
+  position: relative;
+  z-index: 1;
+  margin: 1.75rem auto 2.5rem;
+  max-width: 1024px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid rgba(245, 158, 11, 0.45);
+  box-shadow:
+    0 16px 48px -8px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(245, 158, 11, 0.2);
+  background: #040812;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vks-art-showcase:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 22px 56px -6px rgba(0, 0, 0, 0.85),
+    0 0 50px rgba(245, 158, 11, 0.3);
+}
+
+.vks-art-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 571;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.vks-art-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(to top, rgba(7, 13, 24, 0.85) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.vks-art-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fef08a;
+}
+
+.vks-art-zoom-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+/* 7 Pillars Grid */
+.vks-pillars-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.vks-pillars-tag {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.vks-pillars-title {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.vks-pillars-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.25rem;
+}
+
+.vks-pillar-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vks-pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--pillar-accent, #f59e0b);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.6), 0 0 20px var(--pillar-glow, rgba(245, 158, 11, 0.2));
+}
+
+.vks-pc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.vks-pc-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: var(--pillar-bg, rgba(245, 158, 11, 0.15));
+  border: 1px solid var(--pillar-accent, rgba(245, 158, 11, 0.35));
+}
+
+.vks-pc-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: var(--pillar-bg, rgba(245, 158, 11, 0.15));
+  color: var(--pillar-accent, #fbbf24);
+  border: 1px solid var(--pillar-accent, rgba(245, 158, 11, 0.3));
+}
+
+.vks-pc-title-row {
+  margin-bottom: 0.5rem;
+}
+
+.vks-pc-title-sa {
+  font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fef08a;
+  display: block;
+  line-height: 1.25;
+}
+
+.vks-pc-title-en {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: block;
+}
+
+.vks-pc-subtitle {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+  line-height: 1.35;
+}
+
+.vks-pc-desc {
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+  margin: 0 0 0.85rem;
+}
+
+.vks-pc-treatises {
+  font-size: 0.76rem;
+  color: #94a3b8;
+  background: rgba(2, 6, 23, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.vks-pc-treatises strong {
+  color: #f1f5f9;
+}
+
+.vks-pc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--pillar-btn-bg, #b45309);
+  border: 1px solid var(--pillar-accent, #f59e0b);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.vks-pc-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px var(--pillar-glow, rgba(245, 158, 11, 0.4));
+}
+
+/* Modal Lightbox for HD Artwork inspection */
+.vks-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(3, 7, 18, 0.92);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: vksFadeIn 0.25s ease-out;
+}
+
+.vks-lightbox-modal {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  background: #080e1b;
+  border: 2px solid rgba(245, 158, 11, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px -10px rgba(0, 0, 0, 0.9);
+}
+
+.vks-lightbox-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.vks-lightbox-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fcd34d;
+}
+
+.vks-lightbox-close {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  font-size: 1.35rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.vks-lightbox-close:hover {
+  background: #ef4444;
+}
+
+.vks-lightbox-content {
+  overflow: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #040711;
+}
+
+.vks-lightbox-img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+@keyframes vksFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .vks-card {
+    padding: 1.75rem 1.2rem;
+    border-radius: 18px;
+  }
+  .vks-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .vks-art-overlay {
+    padding: 0.65rem 0.85rem;
+  }
+  .vks-art-badge {
+    font-size: 0.72rem;
+  }
+}

@@ -19,6 +19,7 @@ import { MobileStickyBar } from './MobileStickyBar';
 import { StudentStaircaseBlackboard } from './StudentStaircaseBlackboard';
 import { PracticeVaultShowcase } from './PracticeVaultShowcase';
 import { ChitraKavyaPathwayCard } from './ChitraKavyaPathwayCard';
+import { VedicKnowledgeSystemShowcase } from './VedicKnowledgeSystemShowcase';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 import '../styles/bodhi-online-classes.css';
@@ -2373,6 +2374,18 @@ const HomePage: React.FC<HomePageProps> = ({
           )}
         </div>
       </section>
+
+      {/* ------------------------------------------------------------------
+          Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Showcase
+          ------------------------------------------------------------------ */}
+      <VedicKnowledgeSystemShowcase
+        onOpenPhilosophy={onOpenPhilosophy}
+        onOpenVedicMaths={onOpenVedicMaths}
+        onOpenScienceLab={onOpenScienceLab}
+        onOpenGrammar={onOpenGrammar}
+        onOpenReader={onOpenReader}
+        onOpenCourse={onOpenCourse}
+      />
 
       {/* ------------------------------------------------------------------
           Sanskrit Online Classes with Bodhi Showcase (Direct Lessons)

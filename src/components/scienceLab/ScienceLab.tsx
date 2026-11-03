@@ -759,6 +759,49 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               <li><span aria-hidden="true">🎯</span><strong lang="sa">प्रयोजन-युक्त ज्ञानम्</strong><b>Purpose-driven knowledge</b><small>Every game asks: how does this help us live well?</small></li>
             </ul>
 
+            {/* Vedic Indian Knowledge System Map */}
+            <div className="vl-iks-showcase-strip" aria-label="Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Map">
+              <details className="vl-iks-details" open={false}>
+                <summary className="vl-iks-summary">
+                  <span className="vl-iks-summary-left">
+                    <span className="vl-iks-summary-icon" aria-hidden="true">🗺️</span>
+                    <span>
+                      <strong className="vl-iks-summary-title">Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Map</strong>
+                      <small className="vl-iks-summary-sub">Explore the 7 branches connecting ancient Indian sciences with our 16 STEM physics simulations</small>
+                    </span>
+                  </span>
+                  <span className="vl-iks-summary-badge">View Infographic ➔</span>
+                </summary>
+                <div className="vl-iks-details-body">
+                  <div className="vl-iks-img-wrap">
+                    <img
+                      src="/images/vedic-indian-knowledge-system.jpg"
+                      alt="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Seven Branches of Ancient Indian Sciences"
+                      className="vl-iks-img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="vl-iks-branches-row">
+                    <button type="button" className="vl-iks-branch-pill" onClick={() => handleLaunchSim('paramanu')}>
+                      ⚛️ Matter &amp; Physics · परमाणु (Kaṇāda)
+                    </button>
+                    <button type="button" className="vl-iks-branch-pill" onClick={() => handleLaunchSim('jyotisha')}>
+                      🪐 Cosmology &amp; Orbits · ज्योतिषम् (Āryabhaṭa)
+                    </button>
+                    <button type="button" className="vl-iks-branch-pill" onClick={() => handleLaunchSim('prakriti')}>
+                      🌿 Life &amp; Āyurveda · प्रकृति (Suśruta)
+                    </button>
+                    <button type="button" className="vl-iks-branch-pill" onClick={() => handleLaunchSim('temple-engineering')}>
+                      🏛️ Architecture · वास्तुशास्त्रम् (Vāstu)
+                    </button>
+                    <button type="button" className="vl-iks-branch-pill" onClick={() => handleLaunchSim('chandahshastra')}>
+                      📐 Mathematics &amp; Rhythms · गणितम् (Piṅgala)
+                    </button>
+                  </div>
+                </div>
+              </details>
+            </div>
+
             {/* Popular Starting Quests across all 4 learning stages */}
             <div className="vl-hub-featured-strip">
               <div className="vl-hub-featured-header">
