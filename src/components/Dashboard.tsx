@@ -116,6 +116,8 @@ const COURSE_PATHS = new Set([
   '/sanskrit-as-a-way-of-thinking',
   '/samskrta-cintanam',
   '/vedic-philosophy',
+  '/iks-curriculum',
+  '/indian-knowledge-systems-curriculum',
 ]);
 
 export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
@@ -124,12 +126,12 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Focused Sanskrit study pages for CBSE classes, NCERT Deepakam and Sharada, alphabet audio, grammar and word deconstruction.',
   },
   home: {
-    title: 'Sanskrit & संस्कृतम् Online Classes: Gurukul Learning Beginner to Advanced | EdNet Learn',
-    desc: 'Interactive Sanskrit & Samskrit online classes with Bodhi: spoken Samskrit for beginners & kids, 28-lesson curriculum, CBSE NCERT Classes 6–10 coaching, Pāṇinian grammar, and Vedic math with live AI audio feedback.',
+    title: 'Sanskrit & Indian Knowledge Systems (IKS): Spoken Samskrit, Vedic Sciences & Gurukul Learning | EdNet Learn',
+    desc: 'Interactive Sanskrit & Indian Knowledge Systems (IKS) online classes: spoken Samskrit, Vedic sciences, Kaṇāda physics lab, 28-lesson curriculum, CBSE NCERT Classes 6–10 coaching, Pāṇinian grammar, and Vedic math with live AI audio feedback.',
   },
   course: {
-    title: 'संस्कृत-चिन्तनम् · Sanskrit & Samskrit as a Way of Thinking | EdNet Gurukul',
-    desc: 'Complete 6-module curriculum: Sanskrit (Samskrit) as an integrated system for taking sound in, processing rules, and producing output. 28 lessons for science and contemplation.',
+    title: 'संस्कृत-चिन्तनम् · Sanskrit & Indian Knowledge Systems (IKS) as a Way of Thinking | EdNet Gurukul',
+    desc: 'Complete 6-module Indian Knowledge Systems (IKS) curriculum: Sanskrit as an integrated system for taking sound in, processing rules, and producing output. 28 lessons for Vedic sciences and contemplation.',
   },
   'cbse-guide': {
     title: 'CBSE Class 7, 8, 9 & 10 Sanskrit & Samskrit Exam Guide: Blueprint, Question Formation & Solved Papers | EdNet Learn',
@@ -144,12 +146,12 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Free printable & interactive CBSE Sanskrit & Samskrit worksheets, translation drills, sandhi practice, and NCERT Deepakam exercise solutions for students.',
   },
   'vedic-maths': {
-    title: 'Vaidic Gaṇitam Mastery (वैदिक-गणितम्): 16 Sutras, Fast Mental Math & Astronomy | EdNet Gurukul',
-    desc: 'Master fast mental calculation, Vedic geometry, 16 Vedic mathematics sutras, 366-day Vedic astronomical calendar, and ancient metrology with interactive tools.',
+    title: 'Vedic Mathematics & Ancient Indian Computational Sciences (वैदिक-गणितम्): 16 Sutras & Sulba Geometry | EdNet Gurukul',
+    desc: 'Master Vedic mathematics, Śulba Sūtras geometry, Kaṭapayādi cipher, 16 Vedic mental calculation sutras, and ancient Indian astronomical calendar science with interactive tools.',
   },
   grammar: {
-    title: 'CBSE Sanskrit & Samskrit Grammar: Top 100 Shabdroop, 5 Dhaturoop Lakaras, Sandhi & Vibhakti | EdNet Learn',
-    desc: 'Interactive Sanskrit & Samskrit Vyakaran guide: declensions (shabdroop), verb conjugations (dhaturoop), sandhi rules, vibhakti charts, and phonetic audio.',
+    title: 'Pāṇinian Sanskrit Grammar & Computational Linguistics: 100 Shabdroop, 5 Lakāras & Sandhi | EdNet Learn',
+    desc: 'Indian Knowledge Systems (IKS) Vyākaraṇa guide: Pāṇini Aṣṭādhyāyī formal rules, declensions (shabdroop), verb conjugations (dhaturoop), Sandhi engine, vibhakti charts, and phonetic audio.',
   },
   quiz: {
     title: 'NCERT Class 7 Sanskrit & Samskrit Quizzes & Online Chapter Tests with Instant Solutions | EdNet Learn',
@@ -160,28 +162,28 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Interactive Sanskrit & Samskrit word-building game with 6,000+ puzzles, 14 match-pair categories, and word mazes across vocabulary, verbs, anatomy, math, and daily conversation.',
   },
   reader: {
-    title: 'NCERT Class 7 Sanskrit & Samskrit Deepakam Solutions & Interactive Reader | EdNet Learn',
-    desc: 'Complete NCERT Class 7 Sanskrit & Samskrit Deepakam solutions, chapter-wise verse translations, word-by-word shabdarth, physical textbook page mapping, audio pronunciation, worksheets and quizzes.',
+    title: 'NCERT Class 7 Sanskrit Deepakam Solutions, IKS Reader & Grammar Studio | EdNet Learn',
+    desc: 'Complete NCERT Class 7 Sanskrit Deepakam solutions, Indian Knowledge Systems (IKS) literary extracts, chapter-wise verse translations, word-by-word shabdarth, physical textbook page mapping, audio pronunciation, worksheets and quizzes.',
   },
   philosophy: {
-    title: 'Why Learn Sanskrit (Samskrit) in the Age of AI & Darśana | EdNet Gurukul',
-    desc: 'Why learn Sanskrit & Samskrit in the age of AI? Machines will make communication efficient; they will not make it living. Explore transfer vs bind, Pāṇinian phonetics, and mathematical darśana.',
+    title: 'Indian Knowledge Systems (IKS) Philosophy, Darśana & Computational Linguistics in AI | EdNet Gurukul',
+    desc: 'Explore Indian Knowledge Systems (IKS) philosophical foundations: Nyāya epistemology (pramāṇa), Vaiśeṣika atomism, Pāṇinian formal linguistics, and why Sanskrit is vital for cognitive science and AI.',
   },
   faq: {
     title: 'Sanskrit Learning FAQ: Frequently Asked Questions & Help | EdNet Gurukul',
     desc: 'Find answers about subscriptions, UPI payments, NCERT curriculum coverage, interactive puzzles, and learning Sanskrit & Samskrit online.',
   },
   'science-lab': {
-    title: 'Science Lab Games · Vijñāna Lab: Preschool to Advanced STEM Physics Sandboxes | EdNet Learn',
-    desc: 'Play 16 interactive science lab games and STEM physics sandboxes with Sanskrit and Samskrit terminology from preschool to advanced scholar levels. Build atoms, launch rockets, test gravity, explore cymatics, and soft-land on the Moon.',
+    title: 'Indian Knowledge Systems (IKS) Science Lab · Vijñāna Lab: Vedic Sciences & Physics Sandboxes | EdNet Learn',
+    desc: 'Explore Indian Knowledge Systems (IKS) and Vedic sciences with 16 interactive STEM sandboxes: Kaṇāda atomism, Baudhāyana geometry, Āryabhaṭa celestial orbital mechanics, cymatics, and rocketry in Sanskrit.',
   },
   certificate: {
     title: 'Swar · स्वर — Sanskrit & Samskrit Workbook Certificate of Completion | EdNet Learn',
     desc: 'Finished Swar · स्वर — Sanskrit Workbook (The Darśana Series, by Sesha K Penumallu)? Enter your book code, answer one question from each part of the book, score 70% and download or print your colourful certificate.',
   },
   dhatupatha: {
-    title: 'Dhātupāṭha & Pāṇinian Verb Engine: 5 Lakāras & Kṛt Pratyayas | EdNet Learn',
-    desc: 'Explore the classical Pāṇinian Dhātupāṭha library with 5 CBSE Lakāra conjugations (लट्, लृट्, लङ्, लोट्, विधिलिङ्), Kṛt participles, reverse word deconstructor, and pratyaya quiz for Samskrit verb mastery.',
+    title: 'Dhātupāṭha & Pāṇinian Morphological Verb Engine: 2000+ Roots in Indian Knowledge Systems | EdNet Learn',
+    desc: 'Explore the classical Pāṇinian Dhātupāṭha library with 5 CBSE Lakāra conjugations (लट्, लृट्, लङ्, लोट्, विधिलिङ्), Kṛt participles, reverse word deconstructor, and morphological generator for Sanskrit and IKS verb mastery.',
   },
   'assignment-eval': {
     title: 'Upload & Evaluate Written Sanskrit Assignment: AI Gurukul Parikshaka | EdNet Learn',
@@ -279,7 +281,12 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/vijnana-lab' ||
     clean === '/vijnana' ||
     clean === '/science-lab' ||
-    clean === '/science-lab-games'
+    clean === '/science-lab-games' ||
+    clean === '/indian-knowledge-systems' ||
+    clean === '/iks' ||
+    clean === '/vedic-sciences' ||
+    clean === '/vedic-science' ||
+    clean === '/ancient-indian-sciences'
   ) return 'science-lab';
   if (
     clean === '/assignment-eval' ||

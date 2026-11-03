@@ -178,6 +178,13 @@ function getRouteJsonLd(pathname, meta) {
           name: 'Vedic Mathematics & Astronomical Science',
           description: '16 Vedic Sutras for lightning mental arithmetic, Baudhayana geometry, and astronomical calculations.',
         },
+        {
+          '@type': 'CourseInstance',
+          courseMode: 'online',
+          courseWorkload: 'PT25M/day',
+          name: 'Indian Knowledge Systems (IKS) & Vedic Sciences (भारतीय ज्ञान प्रणाली)',
+          description: 'Experiential STEM simulations: Kaṇāda atomism, Śulba Sūtras geometry, Āryabhaṭa astronomy, and Pāṇinian computational linguistics.',
+        },
       ],
     });
     // Embedded educational video showcases on homepage
@@ -209,17 +216,29 @@ function getRouteJsonLd(pathname, meta) {
       contentUrl: 'https://www.youtube.com/watch?v=bp9m53Tp6xg',
       embedUrl: 'https://www.youtube-nocookie.com/embed/bp9m53Tp6xg?start=11&rel=0',
     });
+  } else if (pathname === '/course') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: 'संस्कृत-चिन्तनम् · Sanskrit & Indian Knowledge Systems (IKS) Curriculum',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Beginner to Advanced / Scholar',
+      inLanguage: ['sa', 'en', 'hi'],
+      learningResourceType: 'Course',
+      teaches: 'Indian Knowledge Systems, IKS NEP 2020, Vedic Epistemology, Paninian Grammar, Cognitive Linguistics, Sanskrit Computational Framework',
+    });
   } else if (pathname === '/reader') {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'LearningResource',
-      name: 'NCERT Class 7 Sanskrit Deepakam Solutions & Interactive Reader',
+      name: 'NCERT Class 7 Sanskrit Deepakam Solutions, IKS Reader & Grammar Studio',
       description: meta.desc,
       url: canonical,
       educationalLevel: 'Class 7 CBSE / NCERT Middle School',
       inLanguage: ['sa', 'en', 'hi'],
       learningResourceType: ['Textbook', 'Interactive Exercise', 'Word-by-Word Translation', 'Audio Guide'],
-      teaches: 'Sanskrit Language, NCERT Deepakam Textbook, Sandhi, Shabdroop, Anvaya',
+      teaches: 'Sanskrit Language, Indian Knowledge Systems (IKS), NCERT Deepakam Textbook, Sandhi, Shabdroop, Anvaya',
     });
   } else if (pathname === '/vedic-maths') {
     schemas.push({
@@ -239,19 +258,19 @@ function getRouteJsonLd(pathname, meta) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'LearningResource',
-      name: 'Vedic Mathematics Mental Arithmetic Lab',
+      name: 'Vedic Mathematics & Ancient Indian Computational Sciences Lab',
       description: meta.desc,
       url: canonical,
       educationalLevel: 'Beginner to Advanced',
       inLanguage: ['sa', 'en', 'hi'],
       learningResourceType: ['Course', 'Interactive Exercise'],
-      teaches: '16 Vedic Mathematics Sutras, Mental Calculation, Baudhayana Geometry',
+      teaches: '16 Vedic Mathematics Sutras, Indian Knowledge Systems (IKS), Mental Speed Calculation, Baudhayana Geometry, Sulba Sutras',
     });
   } else if (pathname === '/vignana-lab' || pathname === '/science-lab' || pathname === '/science-lab-games') {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
-      name: 'Science Lab Games · Vijñāna Lab STEM Simulations',
+      name: 'Indian Knowledge Systems (IKS) Science Lab · Vijñāna Lab STEM Simulations',
       applicationCategory: 'EducationalGame',
       operatingSystem: 'Any (Web browser)',
       offers: {
@@ -265,13 +284,13 @@ function getRouteJsonLd(pathname, meta) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'LearningResource',
-      name: 'Vijñāna Science Lab: STEM Games & Physics Sandboxes with Sanskrit',
+      name: 'Vijñāna Science Lab: Indian Knowledge Systems (IKS) & Vedic Sciences',
       description: meta.desc,
       url: canonical,
       educationalLevel: 'Preschool, Primary CBSE 3–5, Middle CBSE 6–8, High School CBSE 9–12, Scholar',
       inLanguage: ['sa', 'en', 'hi'],
       learningResourceType: ['EducationalGame', 'Interactive Simulation', 'Lab Manual'],
-      teaches: 'Atomic Physics, Celestial Gravity, Lunar Rocketry, Cymatic Acoustics, Vedic Geometry, Cellular Homeostasis',
+      teaches: 'Indian Knowledge Systems, Vedic Sciences, Kaṇāda Atomic Physics, Celestial Gravity, Lunar Rocketry, Cymatic Acoustics, Vedic Geometry, Cellular Homeostasis',
     });
     schemas.push({
       '@context': 'https://schema.org',
@@ -291,13 +310,13 @@ function getRouteJsonLd(pathname, meta) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'LearningResource',
-      name: 'Classical Sanskrit Philosophy & Darśana Systems',
+      name: 'Indian Knowledge Systems (IKS) Philosophy, Darśana & Computational Linguistics',
       description: meta.desc,
       url: canonical,
       educationalLevel: 'Intermediate to Scholar',
       inLanguage: ['sa', 'en', 'hi'],
       learningResourceType: 'Course',
-      teaches: 'Nyāya, Vaiśeṣika, Sāṅkhya, Yoga, Mīmāṁsā, Vedānta',
+      teaches: 'Indian Knowledge Systems, Six Darśanas, Nyāya Epistemology (Pramāṇa), Vaiśeṣika Atomism, Sāṅkhya, Yoga, Mīmāṁsā, Vedānta, Computational Linguistics',
     });
   } else if (pathname === '/quiz') {
     schemas.push({
@@ -343,7 +362,7 @@ function getRouteJsonLd(pathname, meta) {
       description: meta.desc,
       url: canonical,
       inLanguage: ['sa', 'en'],
-      teaches: 'Sanskrit Verb Roots (Dhātus), 10 Gaṇas, Paninian Morpho-syntax',
+      teaches: 'Sanskrit Verb Roots (Dhātus), Indian Knowledge Systems (IKS), 10 Gaṇas, Paninian Morpho-syntax, Algorithmic Word Generation',
     });
   } else if (pathname === '/grammar') {
     schemas.push({
@@ -355,7 +374,7 @@ function getRouteJsonLd(pathname, meta) {
       educationalLevel: 'Intermediate to Advanced',
       inLanguage: ['sa', 'en', 'hi'],
       learningResourceType: 'Interactive Simulation',
-      teaches: 'Paninian Grammar, Sandhi Rules, Subanta Declensions, Tinganta Conjugations',
+      teaches: 'Paninian Grammar, Indian Knowledge Systems (IKS), Ashtadhyayi Rules, Sandhi Engine, Subanta Declensions, Tinganta Conjugations, Computational Linguistics',
     });
   } else if (pathname === '/faq') {
     schemas.push({
@@ -505,6 +524,19 @@ function getRouteJsonLd(pathname, meta) {
   return `\n    <script type="application/ld+json">\n${JSON.stringify(schemas, null, 2)}\n    </script>\n`;
 }
 
+const ROUTE_KEYWORDS = {
+  '/': 'Indian Knowledge Systems, IKS NEP 2020, Vedic sciences, Vedic science, ancient Indian sciences, Vaidika Vijnana, Indian scientific heritage, Vaisheshika physics, Kanada paramanu atomism, Sulba Sutras geometry, Baudhayana theorem, Aryabhatiya astronomy, Surya Siddhanta, Paninian computational linguistics, Sanskrit for AI, NLP Sanskrit grammar, Ayurveda botanical Sanskrit, Charaka Sushruta medical Sanskrit, Rasashastra metallurgy, Pingala binary combinatorics, Katapayadi cipher, Vedic mathematics 16 sutras, Lilavati arithmetic, Nyaya epistemology pramana, Sanskrit STEM lab, learn Sanskrit online, learn Samskrit online, learn Sanskrit from scratch, Samskrit for beginners, speak Sanskrit, speak Samskrit, Samskritam classes, Sanskrit learning app, Samskrit language course, learn Devanagari, Sanskrit alphabet audio, Samskrit varnamala, barakhadi, Sanskrit grammar, Samskrit vyakarana, paninian grammar, dhatupatha, vedic mathematics, shlokas with meaning, samskrutam, samskrita, cbse sanskrit class 6 7 8, ncert sanskrit deepakam, sanskrit word puzzles',
+  '/vignana-lab': 'Indian Knowledge Systems, IKS NEP 2020, Vedic sciences, Vedic science, ancient Indian sciences, Vaidika Vijnana, Kanada paramanu atomism, Vaisheshika physics, Aryabhata astronomy, Surya Siddhanta, Sulba Sutras geometry, Baudhayana theorem, Charaka Sushruta medical Sanskrit, Rasashastra metallurgy, Sanskrit STEM lab, science lab games, preschool science Sanskrit',
+  '/science-lab': 'Indian Knowledge Systems, IKS NEP 2020, Vedic sciences, Vedic science, ancient Indian sciences, Vaidika Vijnana, Kanada paramanu atomism, Vaisheshika physics, Aryabhata astronomy, Surya Siddhanta, Sulba Sutras geometry, Baudhayana theorem, Charaka Sushruta medical Sanskrit, Rasashastra metallurgy, Sanskrit STEM lab, science lab games, preschool science Sanskrit',
+  '/science-lab-games': 'Indian Knowledge Systems, IKS NEP 2020, Vedic sciences, Vedic science, ancient Indian sciences, Vaidika Vijnana, Kanada paramanu atomism, Vaisheshika physics, Aryabhata astronomy, Surya Siddhanta, Sulba Sutras geometry, Baudhayana theorem, Charaka Sushruta medical Sanskrit, Rasashastra metallurgy, Sanskrit STEM lab, science lab games, preschool science Sanskrit',
+  '/course': 'Indian Knowledge Systems, IKS curriculum, Sanskrit thinking course, Sanskrit as a way of thinking, Samskrta Cintanam, Paninian generative grammar, sound as input, rules as processing, Vedic epistemology, Nyaya pramana, cognitive linguistics Sanskrit, Vedic sciences',
+  '/vedic-maths': 'Vedic mathematics, Vaidika Ganitam, 16 Vedic math sutras, Sulba Sutras geometry, Baudhayana theorem, mental speed calculation, Lilavati Bhaskara, Pingala binary combinatorics, Katapayadi cipher, ancient Indian computational algorithms, Indian Knowledge Systems math',
+  '/philosophy': 'Indian Knowledge Systems philosophy, Sad Darsanas, Nyaya logic epistemology, Vaisheshika physics, Sankhya dualism, Yoga psychology, Mimamsa hermeneutics, Vedanta consciousness, Sanskrit in AI, cognitive science Sanskrit, computational linguistics',
+  '/reader': 'NCERT Class 7 Sanskrit Deepakam, CBSE Sanskrit reader, Deepakam solutions, Indian Knowledge Systems literature, word by word Sanskrit translation, shlokas with meaning, CBSE Sanskrit blueprint, Sanskrit reading studio',
+  '/grammar': 'Paninian Sanskrit grammar, Ashtadhyayi sutras, Indian Knowledge Systems vyakarana, Sanskrit shabdroop, 5 lakaras dhaturoop, sandhi rules, vibhakti charts, computational linguistics Sanskrit',
+  '/dhatupatha': 'Paninian Dhatupatha, Sanskrit verb roots, 2000 dhatus, 10 ganas, Indian Knowledge Systems morphology, Panini root matrix, Sanskrit conjugation generator, Krt pratyayas',
+};
+
 function applyMeta(html, meta, pathname) {
   const normalizedPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
   const canonical = `${HOST}${normalizedPath}`;
@@ -519,6 +551,15 @@ function applyMeta(html, meta, pathname) {
     `<meta name="description" content="${desc}" />`,
     'description',
   );
+  const keywords = ROUTE_KEYWORDS[pathname];
+  if (keywords) {
+    out = replaceTag(
+      out,
+      /<meta name="keywords" content="[^"]*"\s*\/?>/,
+      `<meta name="keywords" content="${escapeAttr(keywords)}" />`,
+      'keywords',
+    );
+  }
   out = replaceTag(
     out,
     /<meta property="og:title" content="[^"]*"\s*\/?>/,

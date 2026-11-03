@@ -5,7 +5,7 @@
 /index/ / 301
 /index.html / 301
 
-# Science lab aliases (Direct 301 to trailing-slash destination, preventing redirect chains)
+# Science lab & Indian Knowledge Systems (IKS) aliases (Direct 301 to trailing-slash destination, preventing redirect chains)
 /vignana /vignana-lab/ 301
 /vignana/ /vignana-lab/ 301
 /vijnana /vignana-lab/ 301
@@ -14,6 +14,18 @@
 /vijnana-lab/ /vignana-lab/ 301
 /science-lab /vignana-lab/ 301
 /science-lab/ /vignana-lab/ 301
+/iks /vignana-lab/ 301
+/iks/ /vignana-lab/ 301
+/indian-knowledge-systems /vignana-lab/ 301
+/indian-knowledge-systems/ /vignana-lab/ 301
+/vedic-sciences /vignana-lab/ 301
+/vedic-sciences/ /vignana-lab/ 301
+/vedic-science /vignana-lab/ 301
+/vedic-science/ /vignana-lab/ 301
+/ancient-indian-sciences /vignana-lab/ 301
+/ancient-indian-sciences/ /vignana-lab/ 301
+/iks-curriculum /course/ 301
+/iks-curriculum/ /course/ 301
 
 # Textbook reader and grade aliases
 /deepakam /reader/ 301

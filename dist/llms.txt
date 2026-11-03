@@ -1,15 +1,15 @@
-# EdNet Learn Gurukul · Interactive Sanskrit & Vedic Studies
+# EdNet Learn Gurukul · Interactive Sanskrit, Indian Knowledge Systems (IKS) & Vedic Studies
 
-> EdNet Learn Gurukul is a comprehensive online Sanskrit learning platform from beginner to advanced scholarly fluency. It features graded NCERT/CBSE textbooks, an Ashtadhyayi Paninian grammar engine with Dhatupatha, 16 Vedic mathematics sutras, interactive science laboratories, and classical philosophical treatises.
+> EdNet Learn Gurukul is a comprehensive online learning platform for Sanskrit, Indian Knowledge Systems (IKS, NEP 2020), and Vedic Sciences from beginner to advanced scholarly fluency. It features interactive STEM physics sandboxes (Kaṇāda atomism, Śulba geometry, Āryabhaṭa astronomy), graded NCERT/CBSE textbooks, an Aṣṭādhyāyī Pāṇinian grammar engine with Dhātupāṭha, 16 Vedic mathematics sutras, and classical philosophical treatises.
 
 ## Core Modules & Learning Portals
 
-- [Sanskrit Thinking Course (संस्कृत-चिन्तनम्)](https://ednetlearn.in/course): 28 structured lessons exploring Sanskrit as an integrated computational and contemplative system: Sound as Input, Rules as Processing, Meaning as Output.
+- [Indian Knowledge Systems & Vijñāna Science Laboratory (विज्ञान-प्रयोगशाला)](https://ednetlearn.in/vignana-lab): 16 interactive physics, astronomy, botany, metallurgy, and rocketry simulations linked directly to ancient Sanskrit scientific treatises (Vaiśeṣika Kaṇāda atomism, Śulba Sūtras geometry, Āryabhaṭīya celestial mechanics, Suśruta physiology, Rasaratnākara metallurgy) (aliased at /science-lab and /iks). Aligned with NEP 2020 IKS curriculum guidelines.
+- [Sanskrit Thinking Course (संस्कृत-चिन्तनम्)](https://ednetlearn.in/course): 28 structured lessons exploring Sanskrit and Indian Knowledge Systems as an integrated computational and contemplative system: Sound as Input, Rules as Processing, Meaning as Output.
 - [Interactive Graded Reader (दीपकम & शारदा)](https://ednetlearn.in/reader): Graded readers for NCERT Class 7 (Deepakam 7), Class 8 (Deepakam 8), and Class 9 (Sharada 9) with word-by-word sandhi breakdown, grammatical parsing, audio recitation, and English translations.
 - [Varṇamālā & Syllable Studio (वर्णमाला)](https://ednetlearn.in/barakhadi): Interactive audio alphabet, 400+ barakhadi consonant-vowel combinations, conjunct consonants (saṃyuktākṣara), and stroke order writing drills.
 - [Pāṇinian Grammar & Dhātupāṭha (पाणिनीय-व्याकरणम्)](https://ednetlearn.in/grammar): Interactive Aṣṭādhyāyī sūtra engine, 2,000+ roots Dhātupāṭha with Gaṇas and Padas, Subanta noun declensions across 7 Vibhaktis, and Tiṅanta verb conjugations across 5 Lakāras.
 - [Vedic Mathematics & Līlāvatī (वैदिक-गणितम्)](https://ednetlearn.in/vedic-maths): 16 Vedic mathematical sutras, rapid mental arithmetic algorithms, Bhāskarācārya's Līlāvatī poetic math studio, and Kaṭapayādi cipher tools.
-- [Vijñāna Science Laboratory (विज्ञान-प्रयोगशाला)](https://ednetlearn.in/vignana-lab): 10 interactive physics, astronomy, botany, metallurgy, and rocketry simulations linked directly to ancient Sanskrit scientific treatises (Vaiśeṣika, Āryabhaṭīya, Suśruta, Rasaratnākara) (aliased at /science-lab).
 - [CBSE Sanskrit Examination Guide (सीबीएसई-मार्गदर्शिका)](https://ednetlearn.in/cbse-sanskrit-guide): Complete syllabus, blueprints, question patterns, sandhi/samasa rules, and sample papers for school students.
 - [Sanskrit Word Puzzles & Jodo (शब्द-पहेलिकाः)](https://ednetlearn.in/board): 6,000+ interactive vocabulary tile puzzles across 7 themed shelves with syllable assembly and English hints.
 - [Six Orthodox Darśanas & Philosophy (षड्दर्शनानि)](https://ednetlearn.in/philosophy): Structured exploration of Nyāya, Vaiśeṣika, Sāṅkhya, Yoga, Mīmāṃsā, and Vedānta with computational linguistics and epistemology essays.
