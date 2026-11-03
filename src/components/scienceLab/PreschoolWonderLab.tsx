@@ -2073,13 +2073,13 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
               <span className="psw-hero-kicker">
                 {levelTier === 'next'
                   ? 'Next Level Games · Ages 6–10 · बाल-अन्वेषणम्'
-                  : 'Level 1 · Preschool Sprouts · Ages 2–5 · शिशु-क्रीडा'}
+                  : 'Level 1 · Play 2 Learn · Ages 3–6 · शिशु-क्रीडा'}
               </span>
               <h2 className="psw-hero-title">
                 {levelTier === 'next' ? (
                   <>Next Level Games <span lang="sa">· अग्रिम-स्तर-क्रीडाः</span></>
                 ) : (
-                  <>Wonder Playground <span lang="sa">· शिशु-क्रीडा-वाटिका</span></>
+                  <>Play 2 Learn: Free Preschool Games <span lang="sa">· शिशु-क्रीडा-वाटिका</span></>
                 )}
               </h2>
             </div>
@@ -2097,7 +2097,7 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
             </>
           ) : (
             <>
-              Gentle, picture-first games made just for little ones — tap shapes, colors, India’s living map, animals, yoga poses &amp; numbers!
+              Fun, safe activities for ages 3–6 that build early literacy, numeracy, and thinking skills.
               <span className="psw-hero-motto-chip" aria-label="Preschool motto: Touch, listen, play">
                 <span className="psw-hero-motto-icon" aria-hidden="true">✨</span>
                 <span lang="sa" className="psw-hero-motto-sa">स्पृश · शृणु · क्रीड</span>
@@ -2124,7 +2124,7 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
             onClick={() => switchLevelTier('preschool')}
             className={`psw-level-tab-btn ${levelTier === 'preschool' ? 'is-active psw-tab--preschool' : ''}`}
           >
-            🌱 Level 1 · Preschool (Ages 2–5) ({preschoolCount})
+            🌱 Level 1 · Play 2 Learn (Ages 3–6) ({preschoolCount})
           </button>
           <button
             type="button"

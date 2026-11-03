@@ -1220,7 +1220,7 @@ const Dashboard: React.FC = () => {
                   type="button"
                   className={activeView === 'science-lab' && labTarget.segment === 'preschool-wonder' ? 'active' : ''}
                   onClick={() => openScienceLab('preschool-wonder')}
-                  title="Direct entry: 24 Preschool Wonder Games (Shapes, Colors, Spices, Animals, Map & Yoga)"
+                  title="Direct entry: Play 2 Learn: Free Preschool Games · Ages 3–6 (Shapes, Colors, Spices, Animals, Map & Yoga)"
                 >
                   <span aria-hidden="true">🌟</span>
                   <span className="dashboard-nav-sanskrit">शिशु</span> <span className="dashboard-nav-sub-en">Preschool</span>

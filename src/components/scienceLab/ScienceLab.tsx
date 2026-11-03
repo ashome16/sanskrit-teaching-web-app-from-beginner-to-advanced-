@@ -67,16 +67,16 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     code: 'PRE-01',
     icon: '🌟',
     dev: 'शिशु-क्रीडा-वाटिका',
-    title: 'Wonder Playground',
+    title: 'Play 2 Learn: Free Preschool Games',
     subject: 'Living Map of India, Shapes, Colors, Animals, Counting, Bells & Stories',
-    school: 'बाल-संस्कृत-प्रज्ञा (Ages 2–6)',
+    school: 'बाल-संस्कृत-प्रज्ञा (Ages 3–6)',
     category: 'life',
     level: 'preschool',
-    levelLabel: 'Wonder Playground',
+    levelLabel: 'Play 2 Learn',
     levelDev: 'शिशु-क्रीडा',
-    ageRange: 'Ages 2–5 · +Next Level 6–10',
+    ageRange: 'Ages 3–6 · +Next Level 6–10',
     gameType: '12 Preschool + 12 Next Level',
-    blurb: 'Pure picture-and-sound Preschool Sprouts playground (Ages 2–5: Shapes, Color Mixing, Fruit Orchard, Animal Safari, India Animal Map, Kids Yoga, Bugs, Birds, My Day, Action Play, Count 1–10 & Sacred Bells) plus 🚀 Next Level Games (Ages 6–10: Festivals, Classical Flowers, Kinship Cognates, Divine Vāhanas, Moon Tithis, 6 Seasons, Spices, 12 Months, Trades, World Oceans & Sanskrit Stories)!',
+    blurb: 'Fun, safe activities for ages 3–6 that build early literacy, numeracy, and thinking skills (Shapes, Color Mixing, Fruit Orchard, Animal Safari, India Animal Map, Kids Yoga, Bugs, Birds, My Day, Action Play, Count 1–10 & Sacred Bells) plus 🚀 Next Level Games (Ages 6–10)!',
     tint: 'rgba(245, 158, 11, 0.16)',
     ink: '#fbbf24',
     glow: '#f59e0b',
@@ -507,7 +507,7 @@ export interface ScienceLabProps {
 
 const LEVEL_STEPS: { id: LabLevel; num: string; label: string; ages: string }[] = [
   { id: 'all', num: '', label: 'All levels', ages: 'Full path' },
-  { id: 'preschool', num: '1', label: 'Wonder Playground', ages: 'Ages 2–6' },
+  { id: 'preschool', num: '1', label: 'Play 2 Learn: Free Preschool Games', ages: 'Ages 3–6' },
   { id: 'primary', num: '2', label: 'Primary Explorers', ages: 'Ages 6–10' },
   { id: 'middle', num: '3', label: 'Middle Missions', ages: 'Ages 9–14' },
   { id: 'high', num: '4', label: 'Scholar Studio', ages: 'Ages 14+' },
@@ -947,12 +947,12 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                   <div className="vl-preschool-showcase">
                     <div className="vl-ps-header-row">
                       <div className="vl-ps-header-left">
-                        <span className="vl-ps-badge">👶 24 Preschool Discovery Games · Ages 2–6</span>
+                        <span className="vl-ps-badge">👶 24 Preschool Discovery Games · Ages 3–6</span>
                         <h3 className="vl-ps-title">
-                          Wonder Playground <span className="vl-ps-title-sa" lang="sa">शिशु-क्रीडा-वाटिका</span>
+                          Play 2 Learn: Free Preschool Games <span className="vl-ps-title-sa" lang="sa">शिशु-क्रीडा-वाटिका</span>
                         </h3>
                         <p className="vl-ps-desc">
-                          Pure picture-and-sound sensory playground for toddlers and young children: Indian geometry (ज्यामिति), vibrant color mixing, friendly animal sounds, sacred temple bells, storybook living India map, yoga poses, and sweet orchard fruits.
+                          Fun, safe activities for ages 3–6 that build early literacy, numeracy, and thinking skills. Pure picture-and-sound sensory playground: Indian geometry (ज्यामिति), vibrant color mixing, friendly animals, storybook living India map, yoga poses, and orchard fruits.
                         </p>
                       </div>
                       <button
@@ -960,7 +960,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                         className="vl-ps-launch-btn"
                         onClick={() => handleLaunchSim('preschool-wonder')}
                       >
-                        <span>🚀 Enter Wonder Playground (24 Games) ➔</span>
+                        <span>🚀 Enter Play 2 Learn: Free Preschool Games (24 Activities) ➔</span>
                       </button>
                     </div>
 
@@ -1337,8 +1337,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 }}
                 aria-label="Switch science simulation"
               >
-                <optgroup label="Stage 1: Wonder Playground (Ages 2–6 · 24 Games)">
-                  <option value="preschool-wonder">🌟 Wonder Playground (Ages 2–6 · 24 Activities)</option>
+                <optgroup label="Stage 1: Play 2 Learn: Free Preschool Games (Ages 3–6 · 24 Games)">
+                  <option value="preschool-wonder">🌟 Play 2 Learn: Free Preschool Games (Ages 3–6 · 24 Activities)</option>
                 </optgroup>
                 <optgroup label="Stage 2: Primary Explorers (Ages 6–10)">
                   {LAB_SEGMENTS.filter((s) => s.level === 'primary').map((s) => (
