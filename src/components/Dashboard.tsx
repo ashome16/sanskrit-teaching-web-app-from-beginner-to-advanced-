@@ -3,7 +3,7 @@ import { ErrorBoundary } from './ErrorBoundary';
 import HomePage from './HomePage';
 import FAQSection from './FAQSection';
 import HighIntentLandingPage, { landingForPath, landingById } from './HighIntentLandingPage';
-import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
+import { type WordSelection } from './WordAnalyzerCard';
 import Footer from './Footer';
 const SupportWidget = lazy(() => import('./SupportWidget'));
 const BodhiGuideWidget = lazy(() => import('./BodhiGuideWidget'));
@@ -1691,6 +1691,7 @@ const Dashboard: React.FC = () => {
               sentenceNumber={sentenceIndex + 1}
               totalSentences={lesson.sentences.length}
               activeWord={wordSelection?.text || ''}
+              wordSelection={wordSelection}
               onWordClick={handleWordClick}
               onNext={goNext}
               onPrevious={goPrevious}
@@ -1743,37 +1744,6 @@ const Dashboard: React.FC = () => {
       </Suspense>
       </ErrorBoundary>
       </main>
-
-      {activeView === 'reader' && (
-        isAnalyzerCollapsed ? (
-          <aside className="wac-collapsed-rail" aria-label="Word Analyzer Collapsed">
-            <button
-              type="button"
-              className="wac-collapsed-tab-btn"
-              onClick={() => setIsAnalyzerCollapsed(false)}
-              title="Expand Sanskrit Word Analyzer (शब्द-विश्लेषणम्)"
-              aria-label="Expand Sanskrit Word Analyzer"
-            >
-              <span className="wac-collapsed-tab-icon" aria-hidden="true">🪷</span>
-              <span className="wac-collapsed-tab-label">शब्द-विश्लेषणम् · Word Analyzer</span>
-              <span className="wac-collapsed-tab-arrow" aria-hidden="true">◀</span>
-            </button>
-          </aside>
-        ) : (
-          <>
-            <div
-              className="wac-drawer-backdrop"
-              onClick={() => setIsAnalyzerCollapsed(true)}
-              aria-hidden="true"
-            />
-            <WordAnalyzerCard
-              selection={wordSelection}
-              onClose={() => setIsAnalyzerCollapsed(true)}
-              onSelectWord={handleWordClick}
-            />
-          </>
-        )
-      )}
 
       {activeView !== 'reader' && (
         <Footer

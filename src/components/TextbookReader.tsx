@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { Lesson, LessonSentence } from '../types/chapters';
+import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import { aksharaLabel, varnamalaLabel } from '../utils/barakhadiPhonetics';
 import {
   isShlokaOrVerseText,
@@ -70,6 +71,7 @@ interface TextbookReaderProps {
   sentenceNumber: number;
   totalSentences: number;
   activeWord?: string;
+  wordSelection?: WordSelection | null;
   onWordClick: (word: string) => void;
   onNext: () => void;
   onPrevious: () => void;
@@ -469,6 +471,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   sentenceNumber,
   totalSentences,
   activeWord = '',
+  wordSelection,
   onWordClick,
   onNext,
   onPrevious,
@@ -485,9 +488,12 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   onOpenCertificate,
   onOpenBodhi,
   onOpenGames,
-  isAnalyzerOpen = false,
+  isAnalyzerOpen = true,
   onToggleAnalyzer,
 }) => {
+  type CompanionTab = 'analyzer' | 'practice' | 'blueprint';
+  const [companionTab, setCompanionTab] = useState<CompanionTab>('analyzer');
+  const isCompanionOpen = isAnalyzerOpen;
   const { isAdminLoggedIn, currentUser, openAuthModal } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
   const isGrade8Lesson = activeLessonId.startsWith('grade8_');
@@ -620,6 +626,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   }, []);
 
   const cleanActiveWord = activeWord ? cleanWord(activeWord) : '';
+  const currentSelection: WordSelection | null = useMemo(() => {
+    if (wordSelection) return wordSelection;
+    if (cleanActiveWord) return { text: cleanActiveWord, nonce: Date.now() };
+    return null;
+  }, [wordSelection, cleanActiveWord]);
   const activeGloss = cleanActiveWord ? lookupAnalyseGloss(glosses, cleanActiveWord) : undefined;
   const activeEnglishMeaning = activeGloss ? englishMeaningFromGloss(activeGloss) : (cleanActiveWord ? lookupIndicWordMeaning(cleanActiveWord, 'en')?.meaning || '' : '');
   const activeHindiMeaning = activeGloss ? hindiMeaningFromGloss(activeGloss) : (cleanActiveWord ? lookupIndicWordMeaning(cleanActiveWord, 'hi')?.meaning || '' : '');
@@ -963,6 +974,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
     if (playAllPhase !== 'idle' || isPlayingAll) {
       stopPlayAll();
     }
+    setCompanionTab('analyzer');
     onWordClick(word);
   };
 
@@ -1425,11 +1437,11 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             {onToggleAnalyzer && !isGroupedLesson && (
               <button
                 type="button"
-                className={`textbook-action-chip textbook-action-chip--analyzer${isAnalyzerOpen ? ' active' : ''}`}
+                className={`textbook-action-chip textbook-action-chip--analyzer${isCompanionOpen ? ' active' : ''}`}
                 onClick={onToggleAnalyzer}
-                title={isAnalyzerOpen ? "Switch to Full Reading Canvas (Close Word Analyzer)" : "Open Sanskrit Word Analyzer (शब्द-विश्लेषणम्)"}
+                title={isCompanionOpen ? "Switch to Focused Reading Canvas (Hide Study Sidebar)" : "Open Sanskrit Study Companion & Word Analyzer Sidebar"}
               >
-                🪷 {isAnalyzerOpen ? '📖 Focused Reading' : 'शब्द-विश्लेषणम् · Word Analyzer'}
+                🪷 {isCompanionOpen ? '📖 Focused Reading' : 'शब्द-विश्लेषणम् · Companion'}
               </button>
             )}
           </div>
@@ -2543,7 +2555,9 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           )}
         </div>
       ) : (
-        <div className="textbook-sentence-block">
+        <div className={`textbook-study-layout${isCompanionOpen ? ' textbook-study-layout--with-sidebar' : ' textbook-study-layout--centered'}`}>
+          <div className="textbook-reading-canvas">
+            <div className="textbook-sentence-block">
           {pageBreakdown && (
             <div className="textbook-block-page-tag" title={`Refer to physical book: ${pageBreakdown.bookName}`}>
               <span className="block-page-icon">📖</span>
@@ -2973,10 +2987,15 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                       <button
                         type="button"
                         className="textbook-inline-analyzer-trigger-btn"
-                        onClick={onToggleAnalyzer}
+                        onClick={() => {
+                          if (!isCompanionOpen && onToggleAnalyzer) {
+                            onToggleAnalyzer();
+                          }
+                          setCompanionTab('analyzer');
+                        }}
                         title="Open Deep Sanskrit Word Analyzer (Dhatu roots, Vibhakti declension tables & sound examples)"
                       >
-                        🪷 {isAnalyzerOpen ? 'Close Side Analyzer' : 'Deep Morphology (धातु / रूप) ➔'}
+                        🪷 {isCompanionOpen && companionTab === 'analyzer' ? 'Inspecting in Sidebar ➔' : 'Deep Morphology (धातु / रूप) ➔'}
                       </button>
                     )}
                   </div>
@@ -3078,158 +3097,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </>
           )}
         </div>
-      )}
 
-      {/* End of Grade Lessons Completion & Exam Guide Banner */}
-      {!isGroupedLesson && isLastSentence && onOpenCbseGuide && (
-        <div className="textbook-grade-completion-guide" role="region" aria-label="CBSE Sanskrit Exam Blueprint & Guide">
-          <div className="grade-guide-header">
-            <span className="grade-guide-badge">
-              {activeLessonId.startsWith('grade9_')
-                ? 'शारदा · Class 9'
-                : activeLessonId.startsWith('grade8_')
-                ? 'Deepakam 8th grade · दीपकम'
-                : 'Deepakam 7th grade · दीपकम'}
-            </span>
-            <h4>📋 CBSE Sanskrit Exam Blueprint &amp; Question Directives</h4>
-          </div>
-          <p>
-            {activeLessonId === 'gsde115'
-              ? 'Congratulations on completing all 15 Deepakam Class 7 lessons! Prepare for your school and board exams with standardized instruction formulas (निर्देशाः), 10 core question words (क-कार शब्दाः), and grammatical directives.'
-              : activeLessonId === 'grade9_ch3'
-              ? 'Class 9 chapters completed! Master CBSE High School paper structure, अन्वय-पूरणम्, प्रश्ननिर्माणम्, and precision sentence corrections.'
-              : activeLessonId === 'grade8_app1' || activeLessonId === 'grade8_ch13'
-              ? 'Class 8 lessons completed! Master CBSE High School paper structure, अन्वय-पूरणम्, प्रश्ननिर्माणम्, and precision sentence corrections.'
-              : 'Prepare for school exams: master question instruction keywords (एकपदेन, पूर्णवाक्येन, अन्वयः) and grammatical directives (कर्तृपदम्, क्रियापदम्) for this grade.'}
-          </p>
-          <button type="button" className="grade-guide-action-btn" onClick={onOpenCbseGuide}>
-            📋 Open CBSE Sanskrit Exam Guide (Classes 7–10) ➔
-          </button>
-        </div>
-      )}
-
-      {/* Chapter Practice & Resource Hub Card */}
-      {!isGroupedLesson && (
-        <div className="textbook-chapter-bundle-card" role="region" aria-label="Chapter Resources and Practice Hub">
-          <div className="chapter-bundle-header">
-            <span className="chapter-bundle-badge">Chapter Resource Hub</span>
-            <h3 className="chapter-bundle-title">📚 {activeLesson?.title || 'Chapter Practice & Resources'}</h3>
-            <p className="chapter-bundle-subtitle">
-              Master this chapter with interactive 10-question quizzes, printable worksheets, complete NCERT solutions, and authentic dictionary lookups.
-            </p>
-          </div>
-          <div className="chapter-bundle-grid">
-            <div className="chapter-bundle-item">
-              <span className="bundle-item-icon">🎯</span>
-              <div className="bundle-item-content">
-                <h4>10-Question Chapter Quiz</h4>
-                <p>Test comprehension with instant scoring, timer, and detailed answer explanations.</p>
-                {onOpenQuiz && (
-                  <button
-                    type="button"
-                    className="bundle-action-btn bundle-action-btn--quiz"
-                    onClick={() => onOpenQuiz(currentChapterQuizCat)}
-                  >
-                    Start 10-Q Quiz ➔
-                  </button>
-                )}
-              </div>
-            </div>
-
-            <div className="chapter-bundle-item">
-              <span className="bundle-item-icon">📑</span>
-              <div className="bundle-item-content">
-                <h4>Printable Worksheets</h4>
-                <p>Word meanings, Sandhi breakdowns, shabdroop fill-ins, and classroom tests.</p>
-                {onOpenWorksheets && (
-                  <button
-                    type="button"
-                    className="bundle-action-btn bundle-action-btn--ws"
-                    onClick={() => onOpenWorksheets(currentChapterWsCat)}
-                  >
-                    Open Worksheets ➔
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {activeLessonId === 'gsde109' && onOpenPuzzle && (
-              <div
-                className="chapter-bundle-item"
-                style={{
-                  border: '2px solid #8b5cf6',
-                  background: 'linear-gradient(135deg, rgba(245, 243, 255, 0.95), rgba(238, 242, 255, 0.95))',
-                }}
-              >
-                <span className="bundle-item-icon">🔬</span>
-                <div className="bundle-item-content">
-                  <span
-                    style={{
-                      background: '#7c3aed',
-                      color: '#fff',
-                      fontSize: '0.72rem',
-                      fontWeight: 800,
-                      padding: '2px 8px',
-                      borderRadius: '999px',
-                      display: 'inline-block',
-                      marginBottom: '6px',
-                    }}
-                  >
-                    Interactive Match · Page 96
-                  </span>
-                  <h4>वैदिक-विज्ञानानि व्यवसायाः च Match</h4>
-                  <p>Match the 22 ancient Sanskrit sciences, astronomers, and scholars from Paragraph 3 with modern English references!</p>
-                  <button
-                    type="button"
-                    className="bundle-action-btn"
-                    style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)', color: '#fff' }}
-                    onClick={() => onOpenPuzzle('cat_deepakam_sciences')}
-                  >
-                    🎮 Play Sciences Match Game ➔
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {chapterPdfUrl && (
-              <div className="chapter-bundle-item">
-                <span className="bundle-item-icon">📥</span>
-                <div className="bundle-item-content">
-                  <h4>NCERT Solved Study Guide</h4>
-                  <p>Curated 45-page question bank with verse translations and grammatical notes.</p>
-                  <a
-                    href={chapterPdfUrl}
-                    download
-                    className="bundle-action-btn bundle-action-btn--dl"
-                  >
-                    Download PDF Guide ⬇
-                  </a>
-                </div>
-              </div>
-            )}
-
-            <div className="chapter-bundle-item">
-              <span className="bundle-item-icon">🔍</span>
-              <div className="bundle-item-content">
-                <h4>Koshashri Sanskrit Dictionary</h4>
-                <p>Look up roots, dhātus, and lexical meanings in the authoritative lexicon.</p>
-                <a
-                  href={`https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=${encodeURIComponent(
-                    activeLesson?.title?.split(' ')[0] || 'अ'
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bundle-action-btn bundle-action-btn--dict"
-                >
-                  Explore Dictionary ↗
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {!isGroupedLesson && (
         <div className="textbook-nav-buttons">
           <button
             type="button"
@@ -3259,7 +3127,254 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             </button>
           )}
         </div>
+
+        {/* End of Grade Lessons Completion & Exam Guide Banner */}
+        {isLastSentence && onOpenCbseGuide && (
+          <div className="textbook-grade-completion-guide" role="region" aria-label="CBSE Sanskrit Exam Blueprint & Guide">
+            <div className="grade-guide-header">
+              <span className="grade-guide-badge">
+                {activeLessonId.startsWith('grade9_')
+                  ? 'शारदा · Class 9'
+                  : activeLessonId.startsWith('grade8_')
+                  ? 'Deepakam 8th grade · दीपकम'
+                  : 'Deepakam 7th grade · दीपकम'}
+              </span>
+              <h4>📋 CBSE Sanskrit Exam Blueprint &amp; Question Directives</h4>
+            </div>
+            <p>
+              {activeLessonId === 'gsde115'
+                ? 'Congratulations on completing all 15 Deepakam Class 7 lessons! Prepare for your school and board exams with standardized instruction formulas (निर्देशाः), 10 core question words (क-कार शब्दाः), and grammatical directives.'
+                : activeLessonId === 'grade9_ch3'
+                ? 'Class 9 chapters completed! Master CBSE High School paper structure, अन्वय-पूरणम्, प्रश्ननिर्माणम्, and precision sentence corrections.'
+                : activeLessonId === 'grade8_app1' || activeLessonId === 'grade8_ch13'
+                ? 'Class 8 lessons completed! Master CBSE High School paper structure, अन्वय-पूरणम्, प्रश्ननिर्माणम्, and precision sentence corrections.'
+                : 'Prepare for school exams: master question instruction keywords (एकपदेन, पूर्णवाक्येन, अन्वयः) and grammatical directives (कर्तृपदम्, क्रियापदम्) for this grade.'}
+            </p>
+            <button type="button" className="grade-guide-action-btn" onClick={onOpenCbseGuide}>
+              📋 Open CBSE Sanskrit Exam Guide (Classes 7–10) ➔
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Sticky Interactive Companion Sidebar on Desktop / Widescreen */}
+      {isCompanionOpen ? (
+        <aside className="textbook-companion-sidebar" aria-label="Sanskrit Study Companion Sidebar">
+          <div className="textbook-companion-header">
+            <div className="textbook-companion-nav-tabs" role="tablist" aria-label="Companion Sidebar Tools">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={companionTab === 'analyzer'}
+                className={`textbook-companion-tab-btn${companionTab === 'analyzer' ? ' active' : ''}`}
+                onClick={() => setCompanionTab('analyzer')}
+                title="Live Word Morphology, Roots & Phonetics"
+              >
+                <span>🪷</span>
+                <span>शब्द-विश्लेषणम्</span>
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={companionTab === 'practice'}
+                className={`textbook-companion-tab-btn${companionTab === 'practice' ? ' active' : ''}`}
+                onClick={() => setCompanionTab('practice')}
+                title="10-Q Chapter Quiz, Worksheets & PDF Solutions"
+              >
+                <span>🎯</span>
+                <span>साधनानि</span>
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={companionTab === 'blueprint'}
+                className={`textbook-companion-tab-btn${companionTab === 'blueprint' ? ' active' : ''}`}
+                onClick={() => setCompanionTab('blueprint')}
+                title="CBSE Exam Directives & Question Keywords"
+              >
+                <span>📋</span>
+                <span>परीक्षा</span>
+              </button>
+            </div>
+            {onToggleAnalyzer && (
+              <button
+                type="button"
+                className="textbook-companion-close-btn"
+                onClick={onToggleAnalyzer}
+                title="Switch to Focused Reading Canvas (Hide Sidebar)"
+                aria-label="Hide Sidebar"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+
+          <div className="textbook-companion-content">
+            {companionTab === 'analyzer' && (
+              <WordAnalyzerCard
+                selection={currentSelection}
+                onClose={onToggleAnalyzer}
+                onSelectWord={(w) => {
+                  handleSpokenWord(w);
+                }}
+              />
+            )}
+
+            {companionTab === 'practice' && (
+              <div className="textbook-companion-practice-panel">
+                <div className="tcp-card tcp-card--quiz">
+                  <div className="tcp-card-head">
+                    <span className="tcp-card-icon" aria-hidden="true">🎯</span>
+                    <div>
+                      <div className="tcp-card-title">10-Question Chapter Quiz</div>
+                      <div className="tcp-card-sub">Instant scoring, timer &amp; answer review</div>
+                    </div>
+                  </div>
+                  {onOpenQuiz && (
+                    <button
+                      type="button"
+                      className="tcp-action-btn tcp-action-btn--quiz"
+                      onClick={() => onOpenQuiz(currentChapterQuizCat)}
+                    >
+                      Start 10-Q Quiz ➔
+                    </button>
+                  )}
+                </div>
+
+                <div className="tcp-card tcp-card--ws">
+                  <div className="tcp-card-head">
+                    <span className="tcp-card-icon" aria-hidden="true">📑</span>
+                    <div>
+                      <div className="tcp-card-title">Printable Worksheets</div>
+                      <div className="tcp-card-sub">Word meanings, sandhi &amp; classroom practice</div>
+                    </div>
+                  </div>
+                  {onOpenWorksheets && (
+                    <button
+                      type="button"
+                      className="tcp-action-btn tcp-action-btn--ws"
+                      onClick={() => onOpenWorksheets(currentChapterWsCat)}
+                    >
+                      Open Worksheets ➔
+                    </button>
+                  )}
+                </div>
+
+                {chapterPdfUrl && (
+                  <div className="tcp-card tcp-card--pdf">
+                    <div className="tcp-card-head">
+                      <span className="tcp-card-icon" aria-hidden="true">📥</span>
+                      <div>
+                        <div className="tcp-card-title">NCERT Solved Study Guide</div>
+                        <div className="tcp-card-sub">Curated question bank with verse translations</div>
+                      </div>
+                    </div>
+                    <a
+                      href={chapterPdfUrl}
+                      download
+                      className="tcp-action-btn tcp-action-btn--dl"
+                    >
+                      Download PDF Guide ⬇
+                    </a>
+                  </div>
+                )}
+
+                {activeLessonId === 'gsde109' && onOpenPuzzle && (
+                  <div className="tcp-card tcp-card--game">
+                    <div className="tcp-card-head">
+                      <span className="tcp-card-icon" aria-hidden="true">🔬</span>
+                      <div>
+                        <div className="tcp-card-title">Vedic Sciences Game</div>
+                        <div className="tcp-card-sub">Match 22 ancient sciences from Page 96</div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      className="tcp-action-btn tcp-action-btn--game"
+                      onClick={() => onOpenPuzzle('cat_deepakam_sciences')}
+                    >
+                      Play Match Game ➔
+                    </button>
+                  </div>
+                )}
+
+                <div className="tcp-card tcp-card--dict">
+                  <div className="tcp-card-head">
+                    <span className="tcp-card-icon" aria-hidden="true">🔍</span>
+                    <div>
+                      <div className="tcp-card-title">Koshashri Sanskrit Dictionary</div>
+                      <div className="tcp-card-sub">Authentic lexicon with dhātu roots</div>
+                    </div>
+                  </div>
+                  <a
+                    href={`https://koshashri-dc.ac.in/search/catalog/1/10?searchTerm=${encodeURIComponent(
+                      activeLesson?.title?.split(' ')[0] || 'अ'
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="tcp-action-btn tcp-action-btn--dict"
+                  >
+                    Explore Dictionary ↗
+                  </a>
+                </div>
+              </div>
+            )}
+
+            {companionTab === 'blueprint' && (
+              <div className="textbook-companion-blueprint-panel">
+                <div className="tcp-blueprint-header">
+                  <span className="tcp-blueprint-badge">CBSE Board Directives</span>
+                  <h4 className="tcp-blueprint-title">निर्देशाः एवं प्रश्नशब्दाः</h4>
+                </div>
+                <div className="tcp-blueprint-items">
+                  <div className="tcp-bp-item">
+                    <span className="tcp-bp-tag">एकपदेन</span>
+                    <p className="tcp-bp-desc">Answer in exactly one word. Do not write full sentences.</p>
+                  </div>
+                  <div className="tcp-bp-item">
+                    <span className="tcp-bp-tag">पूर्णवाक्येन</span>
+                    <p className="tcp-bp-desc">Answer in a complete grammatical sentence.</p>
+                  </div>
+                  <div className="tcp-bp-item">
+                    <span className="tcp-bp-tag">अन्वय-पूरणम्</span>
+                    <p className="tcp-bp-desc">Natural prose order: subject (कर्ता) → object (कर्म) → verb (क्रिया).</p>
+                  </div>
+                  <div className="tcp-bp-item">
+                    <span className="tcp-bp-tag">क-कार शब्दाः</span>
+                    <p className="tcp-bp-desc">किम् (what), कुत्र (where), कति (how many), कदा (when), कुतः (why), कथम् (how).</p>
+                  </div>
+                </div>
+                {onOpenCbseGuide && (
+                  <button
+                    type="button"
+                    className="tcp-action-btn tcp-action-btn--guide"
+                    onClick={onOpenCbseGuide}
+                  >
+                    Open Full CBSE Blueprint ➔
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+        </aside>
+      ) : (
+        onToggleAnalyzer && (
+          <aside className="textbook-floating-companion-wrap" aria-label="Open Companion Sidebar">
+            <button
+              type="button"
+              className="textbook-floating-companion-btn"
+              onClick={onToggleAnalyzer}
+              title="Expand Sanskrit Word Analyzer & Chapter Hub"
+            >
+              <span aria-hidden="true">🪷</span>
+              <span>शब्द-विश्लेषणम् व साधनानि</span>
+              <span aria-hidden="true">◀</span>
+            </button>
+          </aside>
+        )
       )}
+    </div>
+  )}
 
       {showEndGuide ? (
         <aside className="textbook-end-guide" aria-label="Bodhi, what to read next">

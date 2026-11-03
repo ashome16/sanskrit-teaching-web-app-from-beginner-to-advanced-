@@ -28,111 +28,27 @@
      the right with backdrop, so the reader text is never squished.
 */
 .dashboard.dashboard--reader {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem 4rem;
   overflow-x: clip;
   overflow-y: visible;
   height: auto;
   min-height: 100vh;
+  box-sizing: border-box;
+  gap: 1rem;
 }
 
-/* Collapsed Analyzer = Clean, Centered Reading Canvas (Eliminates empty right gap!) */
-.dashboard.dashboard--reader.dashboard--analyzer-collapsed {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 0.85rem 1.25rem 4rem;
-}
-
-.dashboard.dashboard--reader.dashboard--analyzer-collapsed .dashboard-header {
+.dashboard.dashboard--reader .dashboard-header {
   width: 100%;
 }
 
-.dashboard.dashboard--reader.dashboard--analyzer-collapsed .dashboard-main-content {
+.dashboard.dashboard--reader .dashboard-main-content {
   width: 100%;
-  max-width: 1040px;
-  margin: 0 auto;
-}
-
-/* Open Analyzer on Widescreen (>= 1180px): Balanced 2-Column with Viewport-Sticky Sidebar */
-@media (min-width: 1180px) {
-  .dashboard.dashboard--reader:not(.dashboard--analyzer-collapsed) {
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(360px, 1fr);
-    grid-template-rows: auto 1fr;
-    gap: 1.25rem;
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0.85rem 1.25rem 4rem;
-  }
-
-  .dashboard.dashboard--reader:not(.dashboard--analyzer-collapsed) .dashboard-header {
-    grid-column: 1 / -1;
-    width: 100%;
-  }
-
-  .dashboard.dashboard--reader:not(.dashboard--analyzer-collapsed) .dashboard-main-content {
-    grid-column: 1;
-    min-width: 0;
-    width: 100%;
-  }
-
-  .dashboard.dashboard--reader:not(.dashboard--analyzer-collapsed) .word-analyzer-card {
-    grid-column: 2;
-    min-width: 0;
-    position: sticky;
-    top: 1rem;
-    align-self: start;
-    max-height: calc(100vh - 2rem);
-    max-height: calc(100dvh - 2rem);
-    overflow-y: auto;
-    z-index: 80;
-  }
-}
-
-/* Open Analyzer on Smaller Screens (< 1180px): Elegant Slide-Over Drawer */
-@media (max-width: 1179px) {
-  .dashboard.dashboard--reader:not(.dashboard--analyzer-collapsed) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0.85rem 1.25rem 4rem;
-  }
-
-  .dashboard.dashboard--reader:not(.dashboard--analyzer-collapsed) .dashboard-header {
-    width: 100%;
-  }
-
-  .dashboard.dashboard--reader:not(.dashboard--analyzer-collapsed) .dashboard-main-content {
-    width: 100%;
-    max-width: 1040px;
-    margin: 0 auto;
-  }
-
-  .dashboard.dashboard--reader .word-analyzer-card {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: min(450px, 92vw);
-    height: 100vh;
-    height: 100dvh;
-    max-height: none;
-    z-index: 1000;
-    box-shadow: -8px 0 36px rgba(15, 23, 42, 0.28);
-    border-radius: 16px 0 0 16px;
-    animation: wacDrawerSlideIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  @keyframes wacDrawerSlideIn {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
+  min-width: 0;
 }
 
 /* Drawer Backdrop Blur for Drawer Mode */

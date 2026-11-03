@@ -880,3 +880,16 @@ button.wac-conjunct-box:hover {
   font-size: 0.8rem;
   color: #e5b958;
 }
+
+/* Seamless integration when nested inside Textbook Companion Sidebar */
+.textbook-companion-sidebar .word-analyzer-card {
+  position: static;
+  top: auto;
+  max-height: none;
+  box-shadow: none;
+  padding: 0.15rem 0.25rem 0.75rem;
+  border: none;
+  background: transparent;
+  overflow-y: visible;
+}
+
