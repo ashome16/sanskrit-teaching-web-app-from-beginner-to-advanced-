@@ -1,6 +1,6 @@
 /* ==========================================================================
    Preschool Varṇamālā Playground Styles (Play 2 Learn · Early Literacy)
-   Joyful, picture-first, high-contrast, tactile design for Ages 3–6
+   Ages 3–6: Very Large Tap Targets, Minimal Text, Audio Replay, Visual Feedback
    ========================================================================== */
 
 .pvg-root {
@@ -9,6 +9,7 @@
   gap: 1.25rem;
   width: 100%;
   box-sizing: border-box;
+  user-select: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -19,50 +20,49 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 0.85rem;
-  background: linear-gradient(135deg, rgba(255, 247, 237, 0.95) 0%, rgba(254, 242, 242, 0.95) 100%);
-  border: 1.5px solid rgba(249, 115, 22, 0.35);
-  border-radius: 16px;
-  padding: 0.85rem 1.25rem;
-  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.08);
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.98) 0%, rgba(254, 242, 242, 0.98) 100%);
+  border: 2px solid rgba(249, 115, 22, 0.4);
+  border-radius: 24px;
+  padding: 1rem 1.4rem;
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.1);
 }
 
 .pvg-hero-left {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
 .pvg-hero-icon {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   line-height: 1;
-  filter: drop-shadow(0 2px 8px rgba(249, 115, 22, 0.25));
+  filter: drop-shadow(0 4px 10px rgba(249, 115, 22, 0.3));
   animation: pvgGentleFloat 3s ease-in-out infinite alternate;
 }
 
 @keyframes pvgGentleFloat {
   0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(-4px) scale(1.05); }
+  100% { transform: translateY(-4px) scale(1.06); }
 }
 
 .pvg-kicker {
   display: block;
-  font-size: 0.74rem;
-  font-weight: 800;
+  font-size: 0.82rem;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: #ea580c;
 }
 
 .pvg-title {
   margin: 0;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   font-weight: 900;
   color: #1e293b;
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .pvg-title-sa {
@@ -73,70 +73,80 @@
 .pvg-top-actions {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.85rem;
   flex-wrap: wrap;
 }
 
 .pvg-star-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.45rem;
   background: #fef3c7;
-  border: 1.5px solid #f59e0b;
+  border: 2px solid #f59e0b;
   border-radius: 999px;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.85rem;
-  font-weight: 800;
+  padding: 0.5rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 900;
   color: #92400e;
-  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.2);
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25);
+  animation: pvgStarGlow 2s ease-in-out infinite alternate;
 }
 
-/* Play Mode Tabs */
+@keyframes pvgStarGlow {
+  0% { box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2); }
+  100% { box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45); }
+}
+
+/* Play Mode Tabs (Large Touch Targets min 52px) */
 .pvg-mode-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
   background: #ffffff;
-  padding: 0.35rem;
+  padding: 0.4rem;
   border-radius: 999px;
-  border: 1.5px solid #fed7aa;
+  border: 2px solid #fed7aa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .pvg-mode-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.45rem 1rem;
+  gap: 0.55rem;
+  padding: 0.65rem 1.25rem;
+  min-height: 50px;
   border-radius: 999px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   background: transparent;
-  color: #475569;
-  font-size: 0.84rem;
-  font-weight: 800;
+  color: #334155;
+  font-size: 0.95rem;
+  font-weight: 900;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pvg-mode-btn:hover {
   background: #fff7ed;
   color: #ea580c;
+  transform: translateY(-1px);
 }
 
 .pvg-mode-btn.is-active {
   background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
   color: #ffffff;
   border-color: #c2410c;
-  box-shadow: 0 3px 10px rgba(234, 88, 12, 0.3);
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+  transform: translateY(-2px);
 }
 
 /* --------------------------------------------------------------------------
-   Group Filter Chips (Sweet Vowels, Ka-Group, etc.)
+   Group Filter Chips (Large, Easy for Little Hands)
    -------------------------------------------------------------------------- */
 .pvg-group-filters {
   display: flex;
   overflow-x: auto;
-  gap: 0.45rem;
-  padding: 0.25rem 0.1rem;
+  gap: 0.55rem;
+  padding: 0.35rem 0.15rem;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
@@ -149,47 +159,49 @@
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.95rem;
+  gap: 0.45rem;
+  padding: 0.6rem 1.15rem;
+  min-height: 48px;
   border-radius: 999px;
-  border: 1.5px solid #e2e8f0;
+  border: 2px solid #e2e8f0;
   background: #ffffff;
   color: #334155;
-  font-size: 0.82rem;
-  font-weight: 800;
+  font-size: 0.92rem;
+  font-weight: 900;
   cursor: pointer;
-  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .pvg-group-chip:hover {
   border-color: #f97316;
   color: #ea580c;
   background: #fff7ed;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .pvg-group-chip.is-active {
   background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
   color: #ffffff;
   border-color: #5b21b6;
-  box-shadow: 0 3px 12px rgba(124, 58, 237, 0.28);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.32);
+  transform: translateY(-2px);
 }
 
 /* --------------------------------------------------------------------------
-   Mode 1: Letter Spotlight Banner (Huge, Bouncy, Audio-First Display)
+   Mode 1: Letter Spotlight Banner (Huge Touch Area & Minimal Text)
    -------------------------------------------------------------------------- */
 .pvg-spotlight-card {
   background: linear-gradient(135deg, #fefce8 0%, #fff7ed 50%, #fdf4ff 100%);
-  border: 2px solid #fde047;
-  border-radius: 20px;
-  padding: 1.25rem 1.5rem;
+  border: 3px solid #fde047;
+  border-radius: 28px;
+  padding: 1.4rem 1.8rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
-  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.12), inset 0 1px 0 #ffffff;
+  gap: 1.5rem;
+  box-shadow: 0 8px 28px rgba(245, 158, 11, 0.15), inset 0 2px 0 #ffffff;
   position: relative;
   overflow: hidden;
 }
@@ -197,24 +209,26 @@
 .pvg-spotlight-left {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  min-width: 280px;
+  gap: 1.5rem;
   flex: 1;
+  min-width: 280px;
 }
 
+/* Giant Akshara Badge (110px x 110px) */
 .pvg-spotlight-akshara-badge {
-  width: 90px;
-  height: 90px;
-  border-radius: 22px;
+  width: 110px;
+  height: 110px;
+  border-radius: 28px;
   background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3.4rem;
+  font-size: 4.4rem;
   font-weight: 900;
   font-family: 'Noto Sans Devanagari', serif;
-  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  border: 3px solid #ffffff;
+  box-shadow: 0 10px 26px rgba(234, 88, 12, 0.35);
   cursor: pointer;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
@@ -222,173 +236,169 @@
 
 .pvg-spotlight-akshara-badge:hover,
 .pvg-spotlight-akshara-badge:focus-visible {
-  transform: scale(1.08) rotate(3deg);
+  transform: scale(1.1) rotate(3deg);
 }
 
+/* Giant Emoji Box (100px x 100px) */
 .pvg-spotlight-emoji-box {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 26px;
   background: #ffffff;
-  border: 2px solid #fed7aa;
+  border: 3px solid #fed7aa;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  font-size: 4.2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
 }
 
 .pvg-spotlight-emoji-box:hover {
-  transform: scale(1.1) rotate(-4deg);
+  transform: scale(1.12) rotate(-4deg);
 }
 
 .pvg-spotlight-meta {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
 
 .pvg-spotlight-word-sa {
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   font-weight: 900;
   color: #1e293b;
   font-family: 'Noto Sans Devanagari', serif;
   margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.pvg-spotlight-word-iast {
-  font-size: 0.95rem;
-  color: #7c2d12;
-  font-weight: 700;
-  font-style: italic;
 }
 
 .pvg-spotlight-word-en {
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: #0369a1;
   margin: 0;
 }
 
-.pvg-spotlight-word-hi {
-  font-size: 0.88rem;
-  color: #64748b;
-  font-weight: 600;
-}
-
 .pvg-spotlight-actions {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.85rem;
   flex-wrap: wrap;
 }
 
-.pvg-speaker-btn {
+/* Big Audio Replay Button */
+.pvg-big-replay-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 1.15rem;
+  gap: 0.65rem;
+  padding: 0.85rem 1.8rem;
+  min-height: 56px;
   border-radius: 999px;
-  border: 1.5px solid #f97316;
-  background: #ffffff;
-  color: #ea580c;
-  font-size: 0.92rem;
-  font-weight: 800;
+  border: 3px solid #16a34a;
+  background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+  color: #ffffff;
+  font-size: 1.18rem;
+  font-weight: 900;
   cursor: pointer;
-  transition: all 0.15s ease;
-  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.15);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.pvg-speaker-btn:hover {
-  background: #ea580c;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+.pvg-big-replay-btn:hover,
+.pvg-big-replay-btn:focus-visible {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 28px rgba(34, 197, 94, 0.45);
 }
 
-.pvg-speaker-btn--letter {
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-  color: #ffffff;
-  border-color: #c2410c;
+.pvg-big-replay-btn:active {
+  transform: translateY(1px) scale(0.97);
 }
 
-.pvg-speaker-btn--letter:hover {
-  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
-  transform: translateY(-2px) scale(1.02);
+.pvg-speaker-pulse {
+  font-size: 1.5rem;
+  animation: pvgPulseIcon 1.5s ease-in-out infinite;
+}
+
+@keyframes pvgPulseIcon {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
 }
 
 .pvg-nav-steppers {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.65rem;
 }
 
-.pvg-step-btn {
-  padding: 0.45rem 0.85rem;
-  border-radius: 999px;
-  border: 1px solid #cbd5e1;
+.pvg-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
   background: #ffffff;
-  color: #475569;
-  font-size: 0.82rem;
-  font-weight: 800;
+  color: #334155;
+  font-size: 1.3rem;
+  font-weight: 900;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.18s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
 }
 
-.pvg-step-btn:hover {
+.pvg-nav-btn:hover {
   background: #f1f5f9;
-  color: #1e293b;
   border-color: #94a3b8;
+  transform: scale(1.08);
 }
 
 /* --------------------------------------------------------------------------
-   Interactive Letter Cards Grid
+   Mode 1: Alphabet Cards Grid (Large Tap Targets)
    -------------------------------------------------------------------------- */
 .pvg-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 0.85rem;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
   width: 100%;
 }
 
 .pvg-card {
   background: #ffffff;
-  border: 2px solid #fed7aa;
-  border-radius: 18px;
-  padding: 0.85rem 0.65rem;
+  border: 2.5px solid #fed7aa;
+  border-radius: 22px;
+  padding: 1rem 0.75rem;
+  min-height: 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
   cursor: pointer;
   position: relative;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
-  user-select: none;
 }
 
 .pvg-card:hover {
   border-color: #f97316;
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.18);
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 10px 24px rgba(249, 115, 22, 0.22);
 }
 
 .pvg-card.is-active {
   border-color: #ea580c;
   background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
-  box-shadow: 0 8px 24px rgba(234, 88, 12, 0.25), 0 0 0 2px #f97316;
-  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(234, 88, 12, 0.28), 0 0 0 3px #f97316;
+  transform: translateY(-4px);
 }
 
 .pvg-card-letter {
-  font-size: 2.6rem;
+  font-size: 3.4rem;
   font-weight: 900;
   line-height: 1;
   color: #7c2d12;
@@ -397,36 +407,29 @@
 }
 
 .pvg-card:hover .pvg-card-letter {
-  transform: scale(1.1);
+  transform: scale(1.12);
   color: #ea580c;
 }
 
 .pvg-card-emoji {
-  font-size: 2.1rem;
+  font-size: 2.6rem;
   line-height: 1;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.12));
 }
 
 .pvg-card-word-sa {
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: #1e293b;
   font-family: 'Noto Sans Devanagari', serif;
   margin: 0;
 }
 
-.pvg-card-word-en {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #0369a1;
-  margin: 0;
-}
-
 .pvg-card-star-tag {
   position: absolute;
-  top: 6px;
-  right: 8px;
-  font-size: 0.85rem;
+  top: 8px;
+  right: 10px;
+  font-size: 1.1rem;
   animation: pvgPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -436,92 +439,93 @@
 }
 
 /* --------------------------------------------------------------------------
-   Mode 2: Find-the-Letter Challenge Arena
+   Modes 2 & 3: Challenge Arena (Find the Letter & Picture Match)
    -------------------------------------------------------------------------- */
 .pvg-quiz-arena {
   background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 100%);
-  border: 2px solid #86efac;
-  border-radius: 20px;
-  padding: 1.5rem;
+  border: 3px solid #86efac;
+  border-radius: 28px;
+  padding: 1.8rem 1.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.1);
+  box-shadow: 0 8px 28px rgba(34, 197, 94, 0.12);
+  position: relative;
+  overflow: hidden;
 }
 
 .pvg-quiz-prompt {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.75rem;
 }
 
 .pvg-quiz-heading {
-  font-size: 1.35rem;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
   font-weight: 900;
   color: #14532d;
   margin: 0;
 }
 
-.pvg-quiz-target-chip {
+.pvg-target-highlight {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  background: #ffffff;
-  border: 2px solid #22c55e;
-  border-radius: 999px;
-  padding: 0.45rem 1.25rem;
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
-}
-
-.pvg-quiz-target-akshara {
-  font-size: 2.2rem;
+  gap: 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 900;
   color: #15803d;
   font-family: 'Noto Sans Devanagari', serif;
+  background: #ffffff;
+  padding: 0.4rem 1.25rem;
+  border-radius: 999px;
+  border: 2.5px solid #22c55e;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.2);
 }
 
-.pvg-quiz-target-word {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #166534;
-}
-
+/* VERY LARGE CHOICE CARDS (Min 140px x 160px) */
 .pvg-quiz-options-grid {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .pvg-quiz-option-card {
-  width: 120px;
-  height: 135px;
-  border-radius: 20px;
-  border: 2.5px solid #bbf7d0;
+  min-width: 145px;
+  min-height: 170px;
+  border-radius: 28px;
+  border: 3.5px solid #bbf7d0;
   background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  gap: 0.55rem;
+  padding: 1rem;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  position: relative;
+  user-select: none;
 }
 
 .pvg-quiz-option-card:hover {
-  transform: translateY(-4px) scale(1.05);
+  transform: translateY(-6px) scale(1.06);
   border-color: #22c55e;
-  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.25);
+  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.3);
+}
+
+.pvg-quiz-option-card:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 .pvg-quiz-option-akshara {
-  font-size: 3rem;
+  font-size: 4.2rem;
   font-weight: 900;
   color: #166534;
   font-family: 'Noto Sans Devanagari', serif;
@@ -529,52 +533,115 @@
 }
 
 .pvg-quiz-option-emoji {
-  font-size: 2.2rem;
+  font-size: 3rem;
   line-height: 1;
 }
 
+/* VISUAL FEEDBACK: CORRECT ANSWER */
 .pvg-quiz-option-card.is-correct {
-  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-  border-color: #16a34a;
-  animation: pvgSuccessPop 0.4s ease;
-}
-
-.pvg-quiz-option-card.is-wrong {
-  animation: pvgWobble 0.4s ease;
-  border-color: #f87171;
-  background: #fef2f2;
+  background: linear-gradient(135deg, #dcfce7 0%, #86efac 100%) !important;
+  border-color: #15803d !important;
+  box-shadow: 0 0 0 5px #22c55e, 0 16px 36px rgba(34, 197, 94, 0.45) !important;
+  animation: pvgSuccessPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @keyframes pvgSuccessPop {
   0% { transform: scale(1); }
-  50% { transform: scale(1.12); }
-  100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+  100% { transform: scale(1.08); }
+}
+
+/* VISUAL FEEDBACK: INCORRECT ANSWER */
+.pvg-quiz-option-card.is-wrong {
+  animation: pvgWobble 0.45s ease;
+  border-color: #ef4444 !important;
+  background: #fef2f2 !important;
+  box-shadow: 0 0 0 4px #f87171, 0 8px 20px rgba(239, 68, 68, 0.25) !important;
+  opacity: 0.65;
 }
 
 @keyframes pvgWobble {
   0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-6px); }
-  75% { transform: translateX(6px); }
+  20% { transform: translateX(-10px) rotate(-3deg); }
+  40% { transform: translateX(10px) rotate(3deg); }
+  60% { transform: translateX(-6px) rotate(-1deg); }
+  80% { transform: translateX(6px) rotate(1deg); }
 }
 
+/* Overlay Status Badges on Cards */
+.pvg-feedback-badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: pvgPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.pvg-feedback-badge--correct {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.pvg-feedback-badge--wrong {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* Floating Stars Celebration Burst */
+.pvg-burst-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.pvg-burst-star {
+  font-size: 2.8rem;
+  animation: pvgFloatUp 1.2s ease-out forwards;
+}
+
+@keyframes pvgFloatUp {
+  0% { transform: translateY(20px) scale(0.4); opacity: 0; }
+  50% { transform: translateY(-30px) scale(1.3); opacity: 1; }
+  100% { transform: translateY(-80px) scale(1.6); opacity: 0; }
+}
+
+/* Minimal Feedback Banners */
 .pvg-quiz-feedback {
-  font-size: 1.1rem;
-  font-weight: 800;
-  padding: 0.45rem 1rem;
+  font-size: 1.35rem;
+  font-weight: 900;
+  padding: 0.75rem 1.8rem;
   border-radius: 999px;
-  animation: pvgPopIn 0.2s ease;
+  animation: pvgPopIn 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
 }
 
 .pvg-quiz-feedback.is-win {
-  color: #15803d;
+  color: #14532d;
   background: #dcfce7;
-  border: 1px solid #86efac;
+  border: 2.5px solid #86efac;
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
 }
 
 .pvg-quiz-feedback.is-retry {
-  color: #b91c1c;
+  color: #991b1b;
   background: #fee2e2;
-  border: 1px solid #fca5a5;
+  border: 2.5px solid #fca5a5;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.15);
 }
 
 /* --------------------------------------------------------------------------
@@ -582,36 +649,41 @@
    -------------------------------------------------------------------------- */
 .pvg-picmatch-arena {
   background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
-  border: 2px solid #e879f9;
-  border-radius: 20px;
-  padding: 1.5rem;
+  border: 3px solid #e879f9;
+  border-radius: 28px;
+  padding: 1.8rem 1.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.4rem;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(217, 70, 239, 0.1);
+  box-shadow: 0 8px 28px rgba(217, 70, 239, 0.15);
+  position: relative;
+  overflow: hidden;
 }
 
 .pvg-picmatch-hero-emoji {
-  width: 110px;
-  height: 110px;
-  border-radius: 24px;
+  width: 130px;
+  height: 130px;
+  border-radius: 32px;
   background: #ffffff;
-  border: 3px solid #f0abfc;
+  border: 4px solid #f0abfc;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4.5rem;
-  box-shadow: 0 8px 24px rgba(217, 70, 239, 0.2);
+  font-size: 5.5rem;
+  box-shadow: 0 10px 28px rgba(217, 70, 239, 0.25);
   animation: pvgGentleFloat 2.5s ease-in-out infinite alternate;
 }
 
-.pvg-picmatch-prompt-text {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #86198f;
-  margin: 0;
+.pvg-big-replay-btn--pic {
+  border-color: #c026d3;
+  background: linear-gradient(135deg, #d946ef 0%, #a21caf 100%);
+  box-shadow: 0 6px 20px rgba(217, 70, 239, 0.35);
+}
+
+.pvg-big-replay-btn--pic:hover {
+  box-shadow: 0 10px 28px rgba(217, 70, 239, 0.45);
 }
 
 /* --------------------------------------------------------------------------
@@ -619,21 +691,21 @@
    -------------------------------------------------------------------------- */
 .pvg-train-arena {
   background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
-  border: 2px solid #38bdf8;
-  border-radius: 20px;
-  padding: 1.5rem;
+  border: 3px solid #38bdf8;
+  border-radius: 28px;
+  padding: 1.8rem 1.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.12);
+  gap: 1.5rem;
+  box-shadow: 0 8px 28px rgba(56, 189, 248, 0.15);
   overflow: hidden;
 }
 
 .pvg-train-track {
   display: flex;
   align-items: flex-end;
-  gap: 0.65rem;
+  gap: 0.85rem;
   overflow-x: auto;
   width: 100%;
   padding: 1rem 0.5rem 1.5rem;
@@ -642,49 +714,51 @@
 
 .pvg-train-engine {
   background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
-  border: 2px solid #f87171;
-  border-radius: 16px;
-  padding: 0.75rem 1rem;
+  border: 3px solid #f87171;
+  border-radius: 22px;
+  padding: 0.9rem 1.2rem;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.3rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
 }
 
 .pvg-train-carriage {
   background: #ffffff;
-  border: 2px solid #7dd3fc;
-  border-radius: 16px;
-  padding: 0.65rem 0.85rem;
+  border: 3px solid #7dd3fc;
+  border-radius: 22px;
+  padding: 0.85rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.3rem;
   flex-shrink: 0;
-  width: 95px;
+  width: 110px;
+  height: 130px;
+  justify-content: center;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   position: relative;
 }
 
 .pvg-train-carriage:hover {
-  transform: translateY(-4px) scale(1.05);
+  transform: translateY(-6px) scale(1.06);
   border-color: #0284c7;
 }
 
 .pvg-train-carriage.is-current {
   background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
   border-color: #ca8a04;
-  box-shadow: 0 6px 18px rgba(234, 179, 8, 0.35);
-  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 8px 24px rgba(234, 179, 8, 0.4);
+  transform: translateY(-8px) scale(1.1);
 }
 
 .pvg-train-carriage-letter {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 900;
   color: #0369a1;
   font-family: 'Noto Sans Devanagari', serif;
@@ -692,13 +766,13 @@
 }
 
 .pvg-train-carriage-emoji {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   line-height: 1;
 }
 
 .pvg-train-carriage-word {
-  font-size: 0.75rem;
-  font-weight: 800;
+  font-size: 0.9rem;
+  font-weight: 900;
   color: #1e293b;
   font-family: 'Noto Sans Devanagari', serif;
 }
@@ -706,7 +780,7 @@
 .pvg-train-controls {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -714,22 +788,23 @@
 .pvg-train-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 1.25rem;
+  gap: 0.65rem;
+  padding: 0.85rem 2rem;
+  min-height: 56px;
   border-radius: 999px;
-  border: 1.5px solid #0284c7;
+  border: 2.5px solid #0284c7;
   background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
   color: #ffffff;
-  font-size: 0.92rem;
-  font-weight: 800;
+  font-size: 1.15rem;
+  font-weight: 900;
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
-  transition: all 0.15s ease;
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.3);
+  transition: all 0.18s ease;
 }
 
 .pvg-train-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.4);
 }
 
 .pvg-train-btn.is-active {
@@ -737,24 +812,55 @@
   border-color: #be123c;
 }
 
+.pvg-skip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  min-height: 48px;
+  border-radius: 999px;
+  border: 2px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.pvg-skip-btn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
 /* --------------------------------------------------------------------------
-   Responsive Layout & Mobile Optimizations
+   Responsive Mobile Adjustments (Ensure Very Large Tap Targets)
    -------------------------------------------------------------------------- */
 @media (max-width: 640px) {
   .pvg-top-bar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .pvg-mode-bar {
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
+  }
+
+  .pvg-mode-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.88rem;
+    min-height: 46px;
   }
 
   .pvg-spotlight-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 1.2rem 1rem;
   }
 
   .pvg-spotlight-left {
@@ -763,24 +869,43 @@
   }
 
   .pvg-cards-grid {
-    grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
-    gap: 0.65rem;
+    grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .pvg-card {
+    min-height: 140px;
+    padding: 0.75rem 0.5rem;
   }
 
   .pvg-card-letter {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
   }
 
   .pvg-card-emoji {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+  }
+
+  .pvg-quiz-options-grid {
+    gap: 0.85rem;
   }
 
   .pvg-quiz-option-card {
-    width: 95px;
-    height: 110px;
+    min-width: 125px;
+    min-height: 145px;
+    padding: 0.75rem;
   }
 
   .pvg-quiz-option-akshara {
-    font-size: 2.4rem;
+    font-size: 3.5rem;
+  }
+
+  .pvg-quiz-option-emoji {
+    font-size: 2.5rem;
+  }
+
+  .pvg-big-replay-btn {
+    padding: 0.75rem 1.4rem;
+    font-size: 1.05rem;
   }
 }

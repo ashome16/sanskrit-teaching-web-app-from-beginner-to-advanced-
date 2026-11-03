@@ -24,68 +24,59 @@ type FilterGroup =
 
 const ALL_MNEMONICS: LetterMnemonic[] = Object.values(VARNAMALA_MNEMONICS);
 
-// Group definitions
-const FILTER_GROUPS: { id: FilterGroup; labelSa: string; labelEn: string; icon: string; letters: string[] }[] = [
+// Clean, child-friendly group chips with minimal text
+const FILTER_GROUPS: { id: FilterGroup; labelSa: string; icon: string; letters: string[] }[] = [
   {
     id: 'all',
-    labelSa: 'सर्वे वर्णाः',
-    labelEn: 'All Letters',
+    labelSa: 'सर्व (All)',
     icon: '🌟',
     letters: ALL_MNEMONICS.map((m) => m.letter),
   },
   {
     id: 'svara',
-    labelSa: 'स्वराः',
-    labelEn: 'Sweet Vowels',
+    labelSa: 'स्वराः (Vowels)',
     icon: '🍬',
     letters: ['अ', 'आ', 'इ', 'ई', 'उ', 'ऊ', 'ऋ', 'ॠ', 'ऌ', 'ए', 'ऐ', 'ओ', 'औ', 'अं', 'अः', 'अँ'],
   },
   {
     id: 'kavarga',
-    labelSa: 'क-वर्गः',
-    labelEn: 'Ka Family (Throat)',
+    labelSa: 'क-वर्ग',
     icon: '🪷',
     letters: ['क', 'ख', 'ग', 'घ', 'ङ'],
   },
   {
     id: 'cavarga',
-    labelSa: 'च-वर्गः',
-    labelEn: 'Cha Family (Palate)',
+    labelSa: 'च-वर्ग',
     icon: '🥄',
     letters: ['च', 'छ', 'ज', 'झ', 'ञ'],
   },
   {
     id: 'tavarga_retro',
-    labelSa: 'ट-वर्गः',
-    labelEn: 'Ta Family (Tongue-Tap)',
+    labelSa: 'ट-वर्ग',
     icon: '🔔',
     letters: ['ट', 'ठ', 'ड', 'ढ', 'ण'],
   },
   {
     id: 'tavarga_dental',
-    labelSa: 'त-वर्गः',
-    labelEn: 'Ta Family (Teeth)',
+    labelSa: 'त-वर्ग',
     icon: '⭐',
     letters: ['त', 'थ', 'द', 'ध', 'न'],
   },
   {
     id: 'pavarga',
-    labelSa: 'प-वर्गः',
-    labelEn: 'Pa Family (Lips)',
+    labelSa: 'प-वर्ग',
     icon: '🪁',
     letters: ['प', 'फ', 'ब', 'भ', 'म'],
   },
   {
     id: 'whispers',
-    labelSa: 'अन्तःस्थाः ऊष्माणः',
-    labelEn: 'Flow & Whispers',
+    labelSa: 'य-ह',
     icon: '💨',
     letters: ['य', 'र', 'ल', 'व', 'श', 'ष', 'स', 'ह'],
   },
   {
     id: 'samyukta',
-    labelSa: 'संयुक्ताक्षराणि',
-    labelEn: 'Super Stars',
+    labelSa: 'क्ष-श्र',
     icon: '✨',
     letters: ['क्ष', 'त्र', 'ज्ञ', 'श्र'],
   },
@@ -119,14 +110,14 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
   // Find Letter Challenge State
   const [findTarget, setFindTarget] = useState<LetterMnemonic>(VARNAMALA_MNEMONICS['अ']);
   const [findOptions, setFindOptions] = useState<LetterMnemonic[]>([]);
-  const [findStatus, setFindStatus] = useState<'idle' | 'correct' | 'wrong'>('idle');
-  const [findSelectedOption, setFindSelectedOption] = useState<string | null>(null);
+  const [findCorrectOption, setFindCorrectOption] = useState<string | null>(null);
+  const [findWrongOptions, setFindWrongOptions] = useState<Set<string>>(new Set());
 
   // Picture Match State
   const [picTarget, setPicTarget] = useState<LetterMnemonic>(VARNAMALA_MNEMONICS['आ']);
   const [picOptions, setPicOptions] = useState<LetterMnemonic[]>([]);
-  const [picStatus, setPicStatus] = useState<'idle' | 'correct' | 'wrong'>('idle');
-  const [picSelectedOption, setPicSelectedOption] = useState<string | null>(null);
+  const [picCorrectOption, setPicCorrectOption] = useState<string | null>(null);
+  const [picWrongOptions, setPicWrongOptions] = useState<Set<string>>(new Set());
 
   // Filtered letters based on active group
   const filteredMnemonics = useMemo(() => {
@@ -158,9 +149,14 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
     playPronunciation(letter.letter);
   };
 
-  // Speak both letter and mnemonic word
-  const speakLetterAndWord = (mnemonic: LetterMnemonic) => {
-    playSequence([mnemonic.letter, mnemonic.wordSan], { gapMs: 500 });
+  // Replay audio for spotlight card
+  const replaySpotlightAudio = () => {
+    try {
+      soundEffects.playStrokeChime();
+    } catch {
+      // safe fallback
+    }
+    playSequence([activeMnemonic.letter, activeMnemonic.wordSan], { gapMs: 450 });
   };
 
   // Step through letters in Explore mode
@@ -183,7 +179,7 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
     const pool = filteredMnemonics.length >= 3 ? filteredMnemonics : ALL_MNEMONICS;
     const target = pool[Math.floor(Math.random() * pool.length)] || ALL_MNEMONICS[0];
 
-    // Pick 2 or 3 distinct distractors from ALL_MNEMONICS
+    // Pick 2 distinct distractors
     const distractors: LetterMnemonic[] = [];
     const distractorPool = shuffleArray(ALL_MNEMONICS.filter((m) => m.letter !== target.letter));
     for (let i = 0; i < 2 && i < distractorPool.length; i++) {
@@ -193,21 +189,31 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
     const options = shuffleArray([target, ...distractors]);
     setFindTarget(target);
     setFindOptions(options);
-    setFindStatus('idle');
-    setFindSelectedOption(null);
+    setFindCorrectOption(null);
+    setFindWrongOptions(new Set());
 
-    // Speak prompt letter
+    // Audio instruction on load
     setTimeout(() => {
       playPronunciation(target.letter);
-    }, 200);
+    }, 250);
+  };
+
+  // Replay audio instruction for Find the Letter
+  const replayFindAudio = () => {
+    try {
+      soundEffects.playBubblePop();
+    } catch {
+      // safe fallback
+    }
+    playSequence([findTarget.letter, findTarget.wordSan], { gapMs: 400 });
   };
 
   const handlePickFindOption = (option: LetterMnemonic) => {
-    if (findStatus === 'correct') return;
-    setFindSelectedOption(option.letter);
+    if (findCorrectOption) return; // already solved, wait for transition
 
     if (option.letter === findTarget.letter) {
-      setFindStatus('correct');
+      // CORRECT VISUAL & AUDIO FEEDBACK
+      setFindCorrectOption(option.letter);
       setStarsCollected((prev) => prev + 1);
       try {
         soundEffects.playCelebrationChime();
@@ -217,23 +223,23 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
       playSequence([option.letter, option.wordSan], { gapMs: 400 });
       if (onEarnStar) onEarnStar();
 
-      // Auto advance to next question after 1.5s
+      // Auto advance after celebratory feedback
       setTimeout(() => {
         generateFindQuestion();
-      }, 1500);
+      }, 1600);
     } else {
-      setFindStatus('wrong');
+      // INCORRECT VISUAL & AUDIO FEEDBACK
+      setFindWrongOptions((prev) => {
+        const next = new Set(prev);
+        next.add(option.letter);
+        return next;
+      });
       try {
         soundEffects.playBubblePop();
       } catch {
         // safe fallback
       }
       playPronunciation(option.letter);
-      // Reset back to idle so child can try again
-      setTimeout(() => {
-        setFindStatus('idle');
-        setFindSelectedOption(null);
-      }, 900);
     }
   };
 
@@ -253,21 +259,31 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
     const options = shuffleArray([target, ...distractors]);
     setPicTarget(target);
     setPicOptions(options);
-    setPicStatus('idle');
-    setPicSelectedOption(null);
+    setPicCorrectOption(null);
+    setPicWrongOptions(new Set());
 
-    // Speak word
+    // Audio instruction on load
     setTimeout(() => {
       playPronunciation(target.wordSan);
-    }, 200);
+    }, 250);
+  };
+
+  // Replay audio instruction for Picture Match
+  const replayPicAudio = () => {
+    try {
+      soundEffects.playBubblePop();
+    } catch {
+      // safe fallback
+    }
+    playPronunciation(picTarget.wordSan);
   };
 
   const handlePickPicOption = (option: LetterMnemonic) => {
-    if (picStatus === 'correct') return;
-    setPicSelectedOption(option.letter);
+    if (picCorrectOption) return;
 
     if (option.letter === picTarget.letter) {
-      setPicStatus('correct');
+      // CORRECT VISUAL & AUDIO FEEDBACK
+      setPicCorrectOption(option.letter);
       setStarsCollected((prev) => prev + 1);
       try {
         soundEffects.playCelebrationChime();
@@ -281,17 +297,18 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
         generatePicQuestion();
       }, 1600);
     } else {
-      setPicStatus('wrong');
+      // INCORRECT VISUAL & AUDIO FEEDBACK
+      setPicWrongOptions((prev) => {
+        const next = new Set(prev);
+        next.add(option.letter);
+        return next;
+      });
       try {
         soundEffects.playBubblePop();
       } catch {
         // safe fallback
       }
       playPronunciation(option.letter);
-      setTimeout(() => {
-        setPicStatus('idle');
-        setPicSelectedOption(null);
-      }, 900);
     }
   };
 
@@ -348,21 +365,21 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
         <div className="pvg-hero-left">
           <span className="pvg-hero-icon" aria-hidden="true">🔤</span>
           <div>
-            <span className="pvg-kicker">Play 2 Learn · Early Literacy (Ages 3–6)</span>
+            <span className="pvg-kicker">Play 2 Learn · Ages 3–6</span>
             <h3 className="pvg-title">
-              <span className="pvg-title-sa">वर्णमाला-वाटिका</span>
+              <span className="pvg-title-sa">वर्णमाला</span>
               <span>Letter Garden</span>
             </h3>
           </div>
         </div>
 
         <div className="pvg-top-actions">
-          <div className="pvg-star-pill" title="Stars collected in this Varṇamālā session">
+          <div className="pvg-star-pill" title="Stars won">
             <span aria-hidden="true">⭐</span>
-            <span>{starsCollected} Stars Won</span>
+            <span>{starsCollected} Stars</span>
           </div>
 
-          <div className="pvg-mode-bar" role="tablist" aria-label="Varṇamālā Play Modes">
+          <div className="pvg-mode-bar" role="tablist" aria-label="Play Modes">
             <button
               type="button"
               role="tab"
@@ -374,7 +391,7 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
               }}
             >
               <span aria-hidden="true">🌸</span>
-              <span>Explore Letters</span>
+              <span>Explore</span>
             </button>
 
             <button
@@ -388,7 +405,7 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
               }}
             >
               <span aria-hidden="true">🎯</span>
-              <span>Find the Letter</span>
+              <span>Find</span>
             </button>
 
             <button
@@ -402,7 +419,7 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
               }}
             >
               <span aria-hidden="true">🥭</span>
-              <span>Picture Match</span>
+              <span>Match</span>
             </button>
 
             <button
@@ -416,16 +433,16 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
               }}
             >
               <span aria-hidden="true">🚂</span>
-              <span>Alphabet Train</span>
+              <span>Train</span>
             </button>
           </div>
         </div>
       </div>
 
       {/* ------------------------------------------------------------------
-          FAMILY FILTER CHIPS (Swara, Ka-Family, etc.)
+          MINIMAL, LARGE GROUP FILTER CHIPS
           ------------------------------------------------------------------ */}
-      <div className="pvg-group-filters" role="region" aria-label="Letter Family Groups">
+      <div className="pvg-group-filters" role="region" aria-label="Groups">
         {FILTER_GROUPS.map((group) => {
           const isActive = activeFilter === group.id;
           return (
@@ -440,7 +457,6 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
             >
               <span aria-hidden="true">{group.icon}</span>
               <span>{group.labelSa}</span>
-              <span style={{ opacity: 0.85, fontSize: '0.75rem' }}>({group.labelEn})</span>
             </button>
           );
         })}
@@ -451,10 +467,10 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
           ================================================================== */}
       {mode === 'explore' && (
         <>
-          {/* Spotlight Hero Banner */}
+          {/* Spotlight Hero Banner with Huge Touch Targets & Minimal Text */}
           <div className="pvg-spotlight-card">
             <div className="pvg-spotlight-left">
-              {/* Huge Akshara Tile */}
+              {/* Giant Akshara Tile */}
               <button
                 type="button"
                 className="pvg-spotlight-akshara-badge"
@@ -462,13 +478,12 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
                   soundEffects.playStrokeChime();
                   playPronunciation(activeMnemonic.letter);
                 }}
-                aria-label={`Letter ${activeMnemonic.letter}. Tap to hear sound.`}
-                title="Tap to hear letter sound!"
+                aria-label={`Letter ${activeMnemonic.letter}. Tap to hear.`}
               >
                 {activeMnemonic.letter}
               </button>
 
-              {/* Mnemonic Emoji Box */}
+              {/* Giant Mnemonic Emoji Box */}
               <button
                 type="button"
                 className="pvg-spotlight-emoji-box"
@@ -476,67 +491,56 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
                   soundEffects.playBubblePop();
                   playPronunciation(activeMnemonic.wordSan);
                 }}
-                aria-label={`${activeMnemonic.wordSan} (${activeMnemonic.wordEn}). Tap to hear.`}
-                title="Tap to hear word!"
+                aria-label={`${activeMnemonic.wordSan}. Tap to hear.`}
               >
                 {activeMnemonic.emoji}
               </button>
 
               <div className="pvg-spotlight-meta">
                 <h4 className="pvg-spotlight-word-sa">
-                  <span>{activeMnemonic.wordSan}</span>
-                  <span className="pvg-spotlight-word-iast">({activeMnemonic.wordIast})</span>
+                  {activeMnemonic.wordSan}
                 </h4>
                 <p className="pvg-spotlight-word-en">
-                  {activeMnemonic.emoji} {activeMnemonic.wordEn} · {activeMnemonic.wordHi}
+                  {activeMnemonic.emoji} {activeMnemonic.wordEn}
                 </p>
-                <span className="pvg-spotlight-word-hi">
-                  Family: <strong>{activeMnemonic.groupLabelSan}</strong> ({activeMnemonic.groupLabelEn})
-                </span>
               </div>
             </div>
 
             <div className="pvg-spotlight-actions">
+              {/* Big Replay Button */}
               <button
                 type="button"
-                className="pvg-speaker-btn pvg-speaker-btn--letter"
-                onClick={() => playPronunciation(activeMnemonic.letter)}
+                className="pvg-big-replay-btn"
+                onClick={replaySpotlightAudio}
+                aria-label="Replay sound"
               >
-                <span aria-hidden="true">🔊</span>
-                <span>Hear Letter &quot;{activeMnemonic.letter}&quot;</span>
+                <span className="pvg-speaker-pulse" aria-hidden="true">🔊</span>
+                <span>Listen Again</span>
               </button>
 
-              <button
-                type="button"
-                className="pvg-speaker-btn"
-                onClick={() => speakLetterAndWord(activeMnemonic)}
-              >
-                <span aria-hidden="true">🎵</span>
-                <span>Say &quot;{activeMnemonic.letter}&quot; as in {activeMnemonic.wordSan}</span>
-              </button>
-
+              {/* Large Round Steppers */}
               <div className="pvg-nav-steppers">
                 <button
                   type="button"
-                  className="pvg-step-btn"
+                  className="pvg-nav-btn"
                   onClick={() => handleStepLetter(-1)}
                   aria-label="Previous letter"
                 >
-                  ◀ Prev
+                  ◀
                 </button>
                 <button
                   type="button"
-                  className="pvg-step-btn"
+                  className="pvg-nav-btn"
                   onClick={() => handleStepLetter(1)}
                   aria-label="Next letter"
                 >
-                  Next ▶
+                  ▶
                 </button>
               </div>
             </div>
           </div>
 
-          {/* Grid of Letter Cards */}
+          {/* Grid of Big Letter Cards */}
           <div className="pvg-cards-grid" role="grid" aria-label="Alphabet Cards">
             {filteredMnemonics.map((mnemonic) => {
               const isSelected = mnemonic.letter === activeMnemonic.letter;
@@ -555,7 +559,7 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
                       handleSelectLetter(mnemonic);
                     }
                   }}
-                  aria-label={`Letter ${mnemonic.letter}, ${mnemonic.wordSan} (${mnemonic.wordEn})`}
+                  aria-label={`Letter ${mnemonic.letter}, ${mnemonic.wordSan}`}
                 >
                   {isExplored && (
                     <span className="pvg-card-star-tag" aria-label="Explored">
@@ -565,7 +569,6 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
                   <span className="pvg-card-letter">{mnemonic.letter}</span>
                   <span className="pvg-card-emoji" aria-hidden="true">{mnemonic.emoji}</span>
                   <p className="pvg-card-word-sa">{mnemonic.wordSan}</p>
-                  <p className="pvg-card-word-en">{mnemonic.wordEn}</p>
                 </div>
               );
             })}
@@ -578,31 +581,40 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
           ================================================================== */}
       {mode === 'find_letter' && (
         <div className="pvg-quiz-arena">
-          <div className="pvg-quiz-prompt">
-            <span style={{ fontSize: '2.5rem' }} aria-hidden="true">👂</span>
-            <h4 className="pvg-quiz-heading">Can you find this letter?</h4>
-            <div className="pvg-quiz-target-chip">
-              <span className="pvg-quiz-target-akshara">{findTarget.letter}</span>
-              <span className="pvg-quiz-target-word">
-                as in {findTarget.emoji} {findTarget.wordSan} ({findTarget.wordEn})
-              </span>
-              <button
-                type="button"
-                className="pvg-step-btn"
-                onClick={() => playPronunciation(findTarget.letter)}
-                title="Hear target letter sound"
-                aria-label="Replay sound"
-              >
-                🔊 Listen
-              </button>
+          {/* Confetti / Star burst when correct */}
+          {findCorrectOption && (
+            <div className="pvg-burst-overlay" aria-hidden="true">
+              <span className="pvg-burst-star">⭐</span>
+              <span className="pvg-burst-star" style={{ animationDelay: '0.15s' }}>🌟</span>
+              <span className="pvg-burst-star" style={{ animationDelay: '0.3s' }}>✨</span>
             </div>
+          )}
+
+          {/* Minimal Prompt Header */}
+          <div className="pvg-quiz-prompt">
+            <h4 className="pvg-quiz-heading">Find the Letter:</h4>
+            <div className="pvg-target-highlight">
+              <span>{findTarget.letter}</span>
+              <span style={{ fontSize: '1.8rem' }} aria-hidden="true">{findTarget.emoji}</span>
+            </div>
+
+            {/* VERY LARGE AUDIO REPLAY BUTTON */}
+            <button
+              type="button"
+              className="pvg-big-replay-btn"
+              onClick={replayFindAudio}
+              aria-label="Replay sound instructions"
+            >
+              <span className="pvg-speaker-pulse" aria-hidden="true">🔊</span>
+              <span>Listen Again · पुनः शृणोतु</span>
+            </button>
           </div>
 
+          {/* VERY LARGE TOUCH CHOICE CARDS (Min 145px x 170px) */}
           <div className="pvg-quiz-options-grid" role="group" aria-label="Letter choices">
             {findOptions.map((opt) => {
-              const isChosen = findSelectedOption === opt.letter;
-              const isCorrect = isChosen && findStatus === 'correct';
-              const isWrong = isChosen && findStatus === 'wrong';
+              const isCorrect = findCorrectOption === opt.letter;
+              const isWrong = findWrongOptions.has(opt.letter);
 
               return (
                 <button
@@ -610,8 +622,20 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
                   type="button"
                   className={`pvg-quiz-option-card ${isCorrect ? 'is-correct' : ''} ${isWrong ? 'is-wrong' : ''}`}
                   onClick={() => handlePickFindOption(opt)}
-                  aria-label={`Choose letter ${opt.letter}`}
+                  aria-label={`Letter ${opt.letter}`}
                 >
+                  {/* Visual Status Badges */}
+                  {isCorrect && (
+                    <span className="pvg-feedback-badge pvg-feedback-badge--correct" aria-hidden="true">
+                      ✅
+                    </span>
+                  )}
+                  {isWrong && (
+                    <span className="pvg-feedback-badge pvg-feedback-badge--wrong" aria-hidden="true">
+                      ❌
+                    </span>
+                  )}
+
                   <span className="pvg-quiz-option-akshara">{opt.letter}</span>
                   <span className="pvg-quiz-option-emoji">{opt.emoji}</span>
                 </button>
@@ -619,25 +643,25 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
             })}
           </div>
 
-          {findStatus === 'correct' && (
-            <div className="pvg-quiz-feedback is-win">
-              🎉 अद्भुतम्! Brilliant! You found <strong>{findTarget.letter}</strong> for {findTarget.emoji} {findTarget.wordSan}! (+1 ⭐)
+          {/* Minimal Visual Feedback Banners */}
+          {findCorrectOption && (
+            <div className="pvg-quiz-feedback is-win" role="status">
+              <span>🎉 उत्तमम्! Correct! (+1 ⭐)</span>
             </div>
           )}
 
-          {findStatus === 'wrong' && (
-            <div className="pvg-quiz-feedback is-retry">
-              😊 Almost! Listen again and try another card! 👂
+          {findWrongOptions.size > 0 && !findCorrectOption && (
+            <div className="pvg-quiz-feedback is-retry" role="status">
+              <span>👂 Listen again &amp; try another card! 🎧</span>
             </div>
           )}
 
           <button
             type="button"
-            className="pvg-step-btn"
-            style={{ marginTop: '0.5rem' }}
+            className="pvg-skip-btn"
             onClick={generateFindQuestion}
           >
-            ⏭️ Skip to Another Letter
+            <span>⏭️ Next Letter</span>
           </button>
         </div>
       )}
@@ -647,31 +671,43 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
           ================================================================== */}
       {mode === 'picture_match' && (
         <div className="pvg-picmatch-arena">
+          {/* Confetti / Star burst when correct */}
+          {picCorrectOption && (
+            <div className="pvg-burst-overlay" aria-hidden="true">
+              <span className="pvg-burst-star">⭐</span>
+              <span className="pvg-burst-star" style={{ animationDelay: '0.15s' }}>🌟</span>
+              <span className="pvg-burst-star" style={{ animationDelay: '0.3s' }}>✨</span>
+            </div>
+          )}
+
+          {/* Huge Picture Hero */}
           <div className="pvg-picmatch-hero-emoji" aria-hidden="true">
             {picTarget.emoji}
           </div>
 
-          <div>
-            <h4 className="pvg-picmatch-prompt-text">
-              Which letter starts &quot;{picTarget.wordSan}&quot; ({picTarget.wordEn})?
+          {/* Minimal Prompt & Big Replay Button */}
+          <div className="pvg-quiz-prompt">
+            <h4 className="pvg-quiz-heading">
+              Starts with which letter?
             </h4>
-            <div style={{ marginTop: '0.4rem', display: 'flex', justifyContent: 'center', gap: '0.5rem' }}>
-              <button
-                type="button"
-                className="pvg-step-btn"
-                onClick={() => playPronunciation(picTarget.wordSan)}
-                title="Hear word"
-              >
-                🔊 Listen: {picTarget.wordSan}
-              </button>
-            </div>
+
+            {/* VERY LARGE AUDIO REPLAY BUTTON */}
+            <button
+              type="button"
+              className="pvg-big-replay-btn pvg-big-replay-btn--pic"
+              onClick={replayPicAudio}
+              aria-label={`Listen to word ${picTarget.wordSan}`}
+            >
+              <span className="pvg-speaker-pulse" aria-hidden="true">🔊</span>
+              <span>Listen: {picTarget.wordSan} · पुनः शृणोतु</span>
+            </button>
           </div>
 
-          <div className="pvg-quiz-options-grid" role="group" aria-label="Letter choices for picture">
+          {/* VERY LARGE TOUCH CHOICE CARDS */}
+          <div className="pvg-quiz-options-grid" role="group" aria-label="Letter choices">
             {picOptions.map((opt) => {
-              const isChosen = picSelectedOption === opt.letter;
-              const isCorrect = isChosen && picStatus === 'correct';
-              const isWrong = isChosen && picStatus === 'wrong';
+              const isCorrect = picCorrectOption === opt.letter;
+              const isWrong = picWrongOptions.has(opt.letter);
 
               return (
                 <button
@@ -679,10 +715,22 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
                   type="button"
                   className={`pvg-quiz-option-card ${isCorrect ? 'is-correct' : ''} ${isWrong ? 'is-wrong' : ''}`}
                   onClick={() => handlePickPicOption(opt)}
-                  aria-label={`Choose letter ${opt.letter}`}
+                  aria-label={`Letter ${opt.letter}`}
                 >
+                  {/* Visual Status Badges */}
+                  {isCorrect && (
+                    <span className="pvg-feedback-badge pvg-feedback-badge--correct" aria-hidden="true">
+                      ✅
+                    </span>
+                  )}
+                  {isWrong && (
+                    <span className="pvg-feedback-badge pvg-feedback-badge--wrong" aria-hidden="true">
+                      ❌
+                    </span>
+                  )}
+
                   <span className="pvg-quiz-option-akshara">{opt.letter}</span>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#64748b' }}>
+                  <span style={{ fontSize: '1.1rem', fontWeight: 900, color: '#64748b' }}>
                     {opt.iast}
                   </span>
                 </button>
@@ -690,25 +738,25 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
             })}
           </div>
 
-          {picStatus === 'correct' && (
-            <div className="pvg-quiz-feedback is-win">
-              🌟 साधु! Excellent! <strong>{picTarget.letter}</strong> starts {picTarget.emoji} {picTarget.wordSan}! (+1 ⭐)
+          {/* Minimal Visual Feedback Banners */}
+          {picCorrectOption && (
+            <div className="pvg-quiz-feedback is-win" role="status">
+              <span>🎉 उत्तमम्! Correct! (+1 ⭐)</span>
             </div>
           )}
 
-          {picStatus === 'wrong' && (
-            <div className="pvg-quiz-feedback is-retry">
-              👂 Listen closely to &quot;{picTarget.wordSan}&quot; and pick its first letter!
+          {picWrongOptions.size > 0 && !picCorrectOption && (
+            <div className="pvg-quiz-feedback is-retry" role="status">
+              <span>👂 Listen to {picTarget.wordSan} &amp; pick!</span>
             </div>
           )}
 
           <button
             type="button"
-            className="pvg-step-btn"
-            style={{ marginTop: '0.5rem' }}
+            className="pvg-skip-btn"
             onClick={generatePicQuestion}
           >
-            ⏭️ Pick Another Picture
+            <span>⏭️ Next Picture</span>
           </button>
         </div>
       )}
@@ -719,24 +767,20 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
       {mode === 'train' && (
         <div className="pvg-train-arena">
           <div style={{ textAlign: 'center' }}>
-            <h4 style={{ margin: 0, fontSize: '1.3rem', fontWeight: 900, color: '#0369a1' }}>
-              🚂 अक्षर-रेलगाड़ी · Sing-Along Alphabet Train
+            <h4 style={{ margin: 0, fontSize: '1.6rem', fontWeight: 900, color: '#0369a1' }}>
+              🚂 अक्षर-रेलगाड़ी · Sing-Along Train
             </h4>
-            <p style={{ margin: '0.25rem 0 0', fontSize: '0.9rem', color: '#64748b', fontWeight: 600 }}>
-              Hop on the Bodhi Express! Watch each carriage roll by, hear its sound, and sing along!
-            </p>
           </div>
 
           {/* Train track with Engine and Carriages */}
           <div className="pvg-train-track" role="region" aria-label="Alphabet Train Track">
             {/* Engine */}
             <div className="pvg-train-engine">
-              <span style={{ fontSize: '2.5rem' }} aria-hidden="true">🚂</span>
-              <span style={{ fontWeight: 900, fontSize: '0.85rem' }}>BODHI</span>
-              <span style={{ fontSize: '0.72rem', opacity: 0.9 }}>Express</span>
+              <span style={{ fontSize: '3rem' }} aria-hidden="true">🚂</span>
+              <span style={{ fontWeight: 900, fontSize: '1rem' }}>BODHI</span>
             </div>
 
-            {/* Letter Carriages */}
+            {/* Letter Carriages (110px x 130px) */}
             {filteredMnemonics.map((item, idx) => {
               const isCurrent = (trainIndex % filteredMnemonics.length) === idx;
 
@@ -771,11 +815,11 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
             })}
           </div>
 
-          {/* Train controls */}
+          {/* Large Train controls */}
           <div className="pvg-train-controls">
             <button
               type="button"
-              className="pvg-step-btn"
+              className="pvg-nav-btn"
               onClick={() => {
                 setTrainIndex((prev) => {
                   const len = filteredMnemonics.length || 1;
@@ -784,7 +828,7 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
               }}
               aria-label="Previous carriage"
             >
-              ◀ Back Carriage
+              ◀
             </button>
 
             <button
@@ -796,12 +840,12 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
               }}
             >
               <span aria-hidden="true">{isPlayingTrain ? '⏸️' : '▶️'}</span>
-              <span>{isPlayingTrain ? 'Pause Train' : 'Start Sing-Along Train'}</span>
+              <span>{isPlayingTrain ? 'Pause Train' : 'Start Sing-Along'}</span>
             </button>
 
             <button
               type="button"
-              className="pvg-step-btn"
+              className="pvg-nav-btn"
               onClick={() => {
                 setTrainIndex((prev) => {
                   const len = filteredMnemonics.length || 1;
@@ -810,7 +854,7 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
               }}
               aria-label="Next carriage"
             >
-              Next Carriage ▶
+              ▶
             </button>
           </div>
         </div>
