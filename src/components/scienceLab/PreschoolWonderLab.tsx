@@ -2098,7 +2098,12 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
           ) : (
             <>
               Gentle, picture-first games made just for little ones — tap shapes, colors, India’s living map, animals, yoga poses &amp; numbers!
-              <span lang="sa" className="psw-hero-desc-sa"> स्पृश, शृणु, क्रीड! (Touch, listen, play!)</span>
+              <span className="psw-hero-motto-chip" aria-label="Preschool motto: Touch, listen, play">
+                <span className="psw-hero-motto-icon" aria-hidden="true">✨</span>
+                <span lang="sa" className="psw-hero-motto-sa">स्पृश · शृणु · क्रीड</span>
+                <span className="psw-hero-motto-sep">·</span>
+                <span className="psw-hero-motto-en">Touch, Listen, Play!</span>
+              </span>
             </>
           )}
         </p>

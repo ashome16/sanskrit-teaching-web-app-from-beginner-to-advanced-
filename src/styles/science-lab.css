@@ -6656,3 +6656,250 @@
   border-color: #0284c7 !important;
   outline: 2px solid #38bdf8 !important;
 }
+
+/* ==========================================================================
+   Preschool Wonder Motto Chip Typography & Styling (Fix for क्रीड Appearance)
+   ========================================================================== */
+.psw-hero-motto-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  margin-top: 0.65rem !important;
+  padding: 0.35rem 0.95rem 0.35rem 0.65rem !important;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #e0f2fe 100%) !important;
+  border: 1.5px solid #f59e0b !important;
+  border-radius: 999px !important;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.22), inset 0 1px 0 #ffffff !important;
+  vertical-align: middle !important;
+}
+
+.psw-hero-motto-icon {
+  font-size: 1.05rem !important;
+  line-height: 1 !important;
+}
+
+.psw-hero-motto-sa {
+  font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  color: #78350f !important;
+  letter-spacing: 0.04em !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.psw-hero-motto-sep {
+  color: #0284c7 !important;
+  font-weight: 800 !important;
+  opacity: 0.65 !important;
+}
+
+.psw-hero-motto-en {
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  color: #0f172a !important;
+  letter-spacing: 0.01em !important;
+}
+
+.psw-hero-desc-sa {
+  margin-top: 0.55rem !important;
+  display: block !important;
+}
+
+/* ==========================================================================
+   Ultra High-Contrast Bodhi Mission Briefing Box & Ṛṣi Lens (No Dark Font)
+   ========================================================================== */
+.vl-wb-bodhi-briefing-box {
+  background: linear-gradient(135deg, #090d16 0%, #0f172a 45%, #162032 100%) !important;
+  border: 1.5px solid #38bdf8 !important;
+  border-radius: 16px !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+.vl-wb-bodhi-kicker {
+  color: #38bdf8 !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.vl-wb-bodhi-kicker .vl-hud-blink {
+  color: #4ade80 !important;
+  text-shadow: 0 0 8px #4ade80 !important;
+}
+
+.vl-wb-audio-btn {
+  background: rgba(56, 189, 248, 0.2) !important;
+  border: 1.5px solid #38bdf8 !important;
+  color: #e0f2fe !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.25) !important;
+}
+
+.vl-wb-audio-btn:hover {
+  background: rgba(56, 189, 248, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.vl-wb-bodhi-goal-text {
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+}
+
+.vl-wb-bodhi-goal-text strong {
+  color: #fde047 !important;
+  font-weight: 900 !important;
+  text-shadow: 0 0 10px rgba(253, 224, 71, 0.4) !important;
+}
+
+.vl-wb-bodhi-goal-text .vl-wb-bodhi-goal-content {
+  color: #f8fafc !important;
+  font-weight: 600 !important;
+}
+
+/* Steps: 1 Drag two paramāṇus together, etc. */
+.vl-wb-bodhi-briefing-box .vl-quest-steps,
+.vl-quest-steps {
+  list-style: none !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+  margin: 0.85rem 0 !important;
+  padding: 0 !important;
+}
+
+.vl-wb-bodhi-briefing-box .vl-quest-steps li,
+.vl-quest-steps li {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border: 1.5px solid #38bdf8 !important;
+  border-radius: 999px !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  padding: 0.45rem 1.1rem 0.45rem 0.5rem !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), 0 0 10px rgba(56, 189, 248, 0.2) !important;
+  transition: transform 0.15s ease, border-color 0.15s ease !important;
+}
+
+.vl-wb-bodhi-briefing-box .vl-quest-steps li:hover,
+.vl-quest-steps li:hover {
+  border-color: #fde047 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5), 0 0 14px rgba(253, 224, 71, 0.35) !important;
+}
+
+.vl-quest-step-num,
+.vl-wb-bodhi-briefing-box .vl-quest-steps li span:first-child,
+.vl-quest-steps li span:first-child {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  font-size: 0.88rem !important;
+  width: 1.75rem !important;
+  height: 1.75rem !important;
+  border-radius: 50% !important;
+  border: 1.5px solid #7dd3fc !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.5) !important;
+  flex-shrink: 0 !important;
+}
+
+.vl-quest-step-text,
+.vl-wb-bodhi-briefing-box .vl-quest-steps li span.vl-quest-step-text {
+  color: #ffffff !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Ṛṣi Lens Box (निरीक्षणम्, प्रकृति-शिक्षा, प्रयोजनम्) */
+.vl-wb-bodhi-briefing-box .vl-quest-lens,
+.vl-quest-lens {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 0.75rem !important;
+  background: rgba(11, 19, 38, 0.95) !important;
+  border: 1.5px solid #38bdf8 !important;
+  border-radius: 14px !important;
+  padding: 0.9rem 1.15rem !important;
+  margin-top: 0.75rem !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.vl-quest-lens-item,
+.vl-wb-bodhi-briefing-box .vl-quest-lens span,
+.vl-quest-lens span {
+  color: #f1f5f9 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  gap: 0.45rem !important;
+}
+
+.vl-quest-lens-label,
+.vl-wb-bodhi-briefing-box .vl-quest-lens b,
+.vl-quest-lens b {
+  color: #fbbf24 !important;
+  font-weight: 900 !important;
+  font-size: 0.95rem !important;
+  font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', Georgia, serif !important;
+  letter-spacing: 0.03em !important;
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.5) !important;
+}
+
+.vl-quest-lens-desc {
+  color: #f8fafc !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Reward Pill (🏆 Reward: Unlock the Atom Architect badge (⚛️) + 3 Vidyā Stars!) */
+.vl-wb-bodhi-briefing-box .vl-wb-reward-pill,
+.vl-wb-reward-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  background: rgba(251, 191, 36, 0.14) !important;
+  border: 1.5px solid #facc15 !important;
+  border-radius: 999px !important;
+  padding: 0.45rem 1.1rem !important;
+  margin-top: 0.85rem !important;
+  color: #fef08a !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), 0 0 12px rgba(250, 204, 21, 0.25) !important;
+}
+
+.vl-wb-reward-pill * {
+  color: #fef08a !important;
+}
+
+.vl-wb-reward-heading {
+  color: #fde047 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.vl-wb-reward-desc {
+  color: #fef08a !important;
+}
+
+.vl-wb-reward-pill strong,
+.vl-wb-reward-pill .vl-wb-reward-badge {
+  color: #ffffff !important;
+  background: #ca8a04 !important;
+  padding: 0.1rem 0.45rem !important;
+  border-radius: 6px !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+  border: 1px solid #fde047 !important;
+}

@@ -1431,23 +1431,41 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
                 </button>
               </div>
               <p className="vl-wb-bodhi-goal-text">
-                🎯 <strong>Your mission:</strong> {quest?.goal || activeMissionCard?.missionGoal || seg.blurb}
+                🎯 <strong>Your mission:</strong> <span className="vl-wb-bodhi-goal-content">{quest?.goal || activeMissionCard?.missionGoal || seg.blurb}</span>
               </p>
               {quest && (
                 <>
                   <ol className="vl-quest-steps" aria-label="What to do">
-                    {quest.steps.map((st, i) => <li key={i}><span>{i + 1}</span>{st}</li>)}
+                    {quest.steps.map((st, i) => (
+                      <li key={i}>
+                        <span className="vl-quest-step-num">{i + 1}</span>
+                        <span className="vl-quest-step-text">{st}</span>
+                      </li>
+                    ))}
                   </ol>
                   <div className="vl-quest-lens" aria-label="Ṛṣi lens">
-                    <span><b lang="sa">निरीक्षणम्</b> {quest.observe}</span>
-                    <span><b lang="sa">प्रकृति-शिक्षा</b> {quest.nature}</span>
-                    <span><b lang="sa">प्रयोजनम्</b> {quest.purpose}</span>
+                    <span className="vl-quest-lens-item">
+                      <b lang="sa" className="vl-quest-lens-label">निरीक्षणम्</b>
+                      <span className="vl-quest-lens-desc">{quest.observe}</span>
+                    </span>
+                    <span className="vl-quest-lens-item">
+                      <b lang="sa" className="vl-quest-lens-label">प्रकृति-शिक्षा</b>
+                      <span className="vl-quest-lens-desc">{quest.nature}</span>
+                    </span>
+                    <span className="vl-quest-lens-item">
+                      <b lang="sa" className="vl-quest-lens-label">प्रयोजनम्</b>
+                      <span className="vl-quest-lens-desc">{quest.purpose}</span>
+                    </span>
                   </div>
                 </>
               )}
               {activeMissionCard && (
                 <div className="vl-wb-reward-pill">
-                  <span>🏆 <strong>Reward:</strong> Unlock the <strong>{activeMissionCard.badgeName}</strong> badge ({activeMissionCard.badgeIcon}) + 3 Vidyā Stars!</span>
+                  <span className="vl-wb-reward-icon">🏆</span>
+                  <strong className="vl-wb-reward-heading">Reward:</strong>
+                  <span className="vl-wb-reward-desc">
+                    Unlock the <strong className="vl-wb-reward-badge">{activeMissionCard.badgeName}</strong> badge ({activeMissionCard.badgeIcon}) + 3 Vidyā Stars!
+                  </span>
                 </div>
               )}
             </div>
