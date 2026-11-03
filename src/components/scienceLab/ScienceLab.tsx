@@ -1287,41 +1287,10 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
       {viewMode === 'workbench' && (
         <>
         <section id={active} ref={simRef} className="vl-segment vl-segment--mission-workbench" aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
-        {/* Kid-Centric Mission Workbench Header */}
+        {/* Kid-Centric Mission Workbench Header — Trimmed & De-cluttered */}
         <div className="vl-wb-mission-header">
-          <nav className="vl-wb-breadcrumbs" aria-label="Game navigation breadcrumbs">
-            {onGoHome && (
-              <>
-                <button
-                  type="button"
-                  className="vl-wb-bc-link"
-                  onClick={onGoHome}
-                  title="Return to Gurukul Homepage"
-                >
-                  🏠 Home
-                </button>
-                <span className="vl-wb-bc-sep">/</span>
-              </>
-            )}
-            <button
-              type="button"
-              className="vl-wb-bc-link"
-              onClick={() => {
-                setViewMode('catalog');
-                soundEffects.playStrokeChime();
-                catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              title="Return to Vijñāna Lab Games Hub"
-            >
-              🎮 Games Hub
-            </button>
-            <span className="vl-wb-bc-sep">/</span>
-            <span className="vl-wb-bc-stage">{seg.levelLabel} ({seg.ageRange})</span>
-            <span className="vl-wb-bc-sep">/</span>
-            <span className="vl-wb-bc-current">{seg.title}</span>
-          </nav>
-
           <div className="vl-wb-nav-row">
+            {/* Unified Hub Back Button */}
             <button
               type="button"
               className="vl-wb-return-btn"
@@ -1332,10 +1301,11 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               }}
               title="Return to Games Directory (All 41 Games)"
             >
-              <span aria-hidden="true">🎮 ◀</span>
+              <span aria-hidden="true">◀</span>
               <span>All Games Hub</span>
             </button>
 
+            {/* Active Simulation Title & Stage */}
             <div className="vl-wb-active-mission-title">
               <span className="vl-wb-icon">{seg.icon}</span>
               <div className="vl-wb-title-box">
@@ -1403,6 +1373,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               </button>
             </div>
 
+            {/* Action buttons — Trimmed without redundant Level Path */}
             <div className="vl-wb-actions-right">
               {(activeMissionCard || quest) && (
                 <button
@@ -1438,78 +1409,79 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
               >
                 <span>📘 Parent Notes</span>
               </button>
-              <button
-                type="button"
-                className="vl-wb-btn-ghost"
-                onClick={() => {
-                  setViewMode('catalog');
-                  soundEffects.playStrokeChime();
-                  catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-                title="Browse full 17-simulation catalog"
-              >
-                <span>🧭 Level path</span>
-              </button>
             </div>
           </div>
 
-          {/* Bodhi 1-Sentence Mission Briefing Box */}
+          {/* Bodhi Clean 1-Line Mission Briefing Strip with Collapsible Ṛṣi Lens */}
           <div className="vl-wb-bodhi-briefing-box">
             {active !== 'preschool-wonder' && (
-            <div className="vl-wb-bodhi-avatar-col">
-              <span className="vl-wb-bodhi-emoji">🧙‍♂️</span>
-              <span className="vl-wb-bodhi-tag">Bodhi</span>
-            </div>
+              <div className="vl-wb-bodhi-avatar-col">
+                <span className="vl-wb-bodhi-emoji">🧙‍♂️</span>
+                <span className="vl-wb-bodhi-tag">Bodhi</span>
+              </div>
             )}
             <div className="vl-wb-bodhi-content-col">
-              <div className="vl-wb-bodhi-kicker">
-                <span className="vl-hud-blink">●</span> 3-minute quest · कार्य-लक्ष्यम्
-                <button
-                  type="button"
-                  className={`vl-wb-audio-btn ${isSpeakingBodhiBriefing ? 'is-speaking' : ''}`}
-                  onClick={handleSpeakBriefing}
-                  aria-label={isSpeakingBodhiBriefing ? 'Stop audio' : 'Listen to Bodhi'}
-                >
-                  <span>{isSpeakingBodhiBriefing ? '⏹️ Stop' : '🔊 Listen'}</span>
-                </button>
-              </div>
-              <p className="vl-wb-bodhi-goal-text">
-                🎯 <strong>Your mission:</strong> <span className="vl-wb-bodhi-goal-content">{quest?.goal || activeMissionCard?.missionGoal || seg.blurb}</span>
-              </p>
-              {quest && (
-                <>
-                  <ol className="vl-quest-steps" aria-label="What to do">
-                    {quest.steps.map((st, i) => (
-                      <li key={i}>
-                        <span className="vl-quest-step-num">{i + 1}</span>
-                        <span className="vl-quest-step-text">{st}</span>
-                      </li>
-                    ))}
-                  </ol>
-                  <div className="vl-quest-lens" aria-label="Ṛṣi lens">
-                    <span className="vl-quest-lens-item">
-                      <b lang="sa" className="vl-quest-lens-label">निरीक्षणम्</b>
-                      <span className="vl-quest-lens-desc">{quest.observe}</span>
-                    </span>
-                    <span className="vl-quest-lens-item">
-                      <b lang="sa" className="vl-quest-lens-label">प्रकृति-शिक्षा</b>
-                      <span className="vl-quest-lens-desc">{quest.nature}</span>
-                    </span>
-                    <span className="vl-quest-lens-item">
-                      <b lang="sa" className="vl-quest-lens-label">प्रयोजनम्</b>
-                      <span className="vl-quest-lens-desc">{quest.purpose}</span>
+              <div className="vl-wb-bodhi-main-row">
+                <div className="vl-wb-bodhi-kicker">
+                  <span className="vl-hud-blink">●</span> 3-min quest
+                  <button
+                    type="button"
+                    className={`vl-wb-audio-btn ${isSpeakingBodhiBriefing ? 'is-speaking' : ''}`}
+                    onClick={handleSpeakBriefing}
+                    aria-label={isSpeakingBodhiBriefing ? 'Stop audio' : 'Listen to Bodhi'}
+                  >
+                    <span>{isSpeakingBodhiBriefing ? '⏹️ Stop' : '🔊 Listen'}</span>
+                  </button>
+                </div>
+
+                <p className="vl-wb-bodhi-goal-text">
+                  🎯 <strong>Mission:</strong> <span className="vl-wb-bodhi-goal-content">{quest?.goal || activeMissionCard?.missionGoal || seg.blurb}</span>
+                </p>
+
+                {activeMissionCard && (
+                  <div className="vl-wb-reward-pill">
+                    <span className="vl-wb-reward-icon">🏆</span>
+                    <span className="vl-wb-reward-desc">
+                      Reward: <strong className="vl-wb-reward-badge">{activeMissionCard.badgeName}</strong> ({activeMissionCard.badgeIcon}) +3 ⭐
                     </span>
                   </div>
-                </>
-              )}
-              {activeMissionCard && (
-                <div className="vl-wb-reward-pill">
-                  <span className="vl-wb-reward-icon">🏆</span>
-                  <strong className="vl-wb-reward-heading">Reward:</strong>
-                  <span className="vl-wb-reward-desc">
-                    Unlock the <strong className="vl-wb-reward-badge">{activeMissionCard.badgeName}</strong> badge ({activeMissionCard.badgeIcon}) + 3 Vidyā Stars!
-                  </span>
-                </div>
+                )}
+              </div>
+
+              {quest && (
+                <details className="vl-wb-lens-toggle">
+                  <summary className="vl-wb-lens-summary">
+                    <span className="vl-wb-lens-summary-left">
+                      <span className="vl-wb-lens-summary-icon">👁️</span>
+                      <span>3 Steps &amp; Ṛṣi Lens (निरीक्षणम् · प्रकृति · प्रयोजनम्)</span>
+                    </span>
+                    <span className="vl-wb-lens-summary-tag">Tap to view ▾</span>
+                  </summary>
+                  <div className="vl-wb-lens-body">
+                    <ol className="vl-quest-steps" aria-label="What to do">
+                      {quest.steps.map((st, i) => (
+                        <li key={i}>
+                          <span className="vl-quest-step-num">{i + 1}</span>
+                          <span className="vl-quest-step-text">{st}</span>
+                        </li>
+                      ))}
+                    </ol>
+                    <div className="vl-quest-lens" aria-label="Ṛṣi lens">
+                      <span className="vl-quest-lens-item">
+                        <b lang="sa" className="vl-quest-lens-label">निरीक्षणम्</b>
+                        <span className="vl-quest-lens-desc">{quest.observe}</span>
+                      </span>
+                      <span className="vl-quest-lens-item">
+                        <b lang="sa" className="vl-quest-lens-label">प्रकृति-शिक्षा</b>
+                        <span className="vl-quest-lens-desc">{quest.nature}</span>
+                      </span>
+                      <span className="vl-quest-lens-item">
+                        <b lang="sa" className="vl-quest-lens-label">प्रयोजनम्</b>
+                        <span className="vl-quest-lens-desc">{quest.purpose}</span>
+                      </span>
+                    </div>
+                  </div>
+                </details>
               )}
             </div>
           </div>

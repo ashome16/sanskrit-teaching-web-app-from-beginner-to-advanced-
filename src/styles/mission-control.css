@@ -326,3 +326,168 @@
   text-shadow: none !important;
   border: 1px solid #fde047 !important;
 }
+
+/* ==========================================================================
+   Trimmed & De-cluttered Mission Control Header & Bodhi Briefing Box
+   ========================================================================== */
+
+.vl-wb-bodhi-briefing-box {
+  padding: 0.75rem 1.25rem !important;
+  gap: 1rem !important;
+}
+
+.vl-wb-bodhi-main-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.vl-wb-bodhi-main-row .vl-wb-bodhi-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.vl-wb-bodhi-main-row .vl-wb-bodhi-goal-text {
+  margin: 0;
+  flex: 1;
+  min-width: 220px;
+}
+
+.vl-wb-bodhi-main-row .vl-wb-reward-pill {
+  margin-top: 0 !important;
+  padding: 0.25rem 0.75rem !important;
+  font-size: 0.8rem !important;
+  white-space: nowrap;
+}
+
+/* Collapsible Ṛṣi Lens & Steps Drawer */
+.vl-wb-lens-toggle {
+  width: 100%;
+  margin-top: 0.45rem;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.6);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.vl-wb-lens-toggle[open] {
+  border-color: rgba(56, 189, 248, 0.7);
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.vl-wb-lens-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  font-size: 0.82rem;
+  color: #7dd3fc;
+  font-weight: 700;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.vl-wb-lens-summary::-webkit-details-marker {
+  display: none;
+}
+
+.vl-wb-lens-summary:hover {
+  color: #ffffff;
+  background: rgba(56, 189, 248, 0.12);
+}
+
+.vl-wb-lens-summary-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.vl-wb-lens-summary-icon {
+  font-size: 0.95rem;
+}
+
+.vl-wb-lens-summary-tag {
+  color: #fde047;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.vl-wb-lens-toggle[open] .vl-wb-lens-summary-tag {
+  color: #94a3b8;
+}
+
+.vl-wb-lens-body {
+  padding: 0.65rem 0.85rem 0.85rem;
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  animation: vlLensFadeIn 0.2s ease;
+}
+
+@keyframes vlLensFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vl-wb-lens-body .vl-quest-steps {
+  margin: 0 !important;
+}
+
+.vl-wb-lens-body .vl-quest-lens {
+  margin-top: 0.25rem !important;
+}
+
+@media (max-width: 860px) {
+  .vl-wb-nav-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .vl-wb-return-btn {
+    align-self: flex-start;
+  }
+
+  .vl-wb-active-mission-title {
+    min-width: 0;
+  }
+
+  .vl-wb-quick-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .vl-wb-switcher-select {
+    flex: 1;
+    max-width: none;
+  }
+
+  .vl-wb-actions-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .vl-wb-bodhi-main-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
+
