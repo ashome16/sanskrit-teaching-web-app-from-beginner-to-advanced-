@@ -645,12 +645,19 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
   color: #ffffff;
 }
 
+.dashboard-nav-group--games .dashboard-nav-sub button .dashboard-nav-sub-en {
+  color: #0369a1;
+  font-weight: 800;
+  font-size: 0.72rem;
+}
+
 .dashboard-nav-group--games .dashboard-nav-sub button.active .dashboard-nav-sanskrit,
 .dashboard-nav-group--games .dashboard-nav-sub button.active .dashboard-nav-sub-en {
   color: #ffffff;
 }
 
-.dashboard-nav-stem-badge {
+.dashboard-nav-stem-badge,
+.dashboard-nav-dir-badge {
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -667,18 +674,35 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
   vertical-align: middle;
 }
 
+.dashboard-nav-dir-badge {
+  color: #0f766e;
+  background: rgba(15, 118, 110, 0.14);
+  border-color: rgba(15, 118, 110, 0.38);
+}
+
 .dashboard-nav-group--games .dashboard-nav-sub button:hover .dashboard-nav-stem-badge {
   background: rgba(2, 132, 199, 0.25);
   border-color: #0284c7;
   color: #0c4a6e;
 }
 
-.dashboard-nav-group--games .dashboard-nav-sub button.active .dashboard-nav-stem-badge {
+.dashboard-nav-group--games .dashboard-nav-sub button:hover .dashboard-nav-dir-badge {
+  background: rgba(15, 118, 110, 0.25);
+  border-color: #0f766e;
+  color: #115e59;
+}
+
+.dashboard-nav-group--games .dashboard-nav-sub button.active .dashboard-nav-stem-badge,
+.dashboard-nav-group--games .dashboard-nav-sub button.active .dashboard-nav-dir-badge {
   background: #ffffff;
   color: #0284c7;
   border-color: #ffffff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   font-weight: 900;
+}
+
+.dashboard-nav-group--games .dashboard-nav-sub button.active .dashboard-nav-dir-badge {
+  color: #0f766e;
 }
 
 .dashboard-nav-sub {
@@ -712,6 +736,56 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
   flex-shrink: 0;
   display: inline-block;
   vertical-align: middle;
+}
+
+/* NCERT / CBSE Sanskrit Group Styling */
+.dashboard-nav-group--ncert {
+  border-color: rgba(234, 88, 12, 0.45);
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.98) 0%, rgba(254, 242, 242, 0.98) 100%);
+  box-shadow: 0 2px 6px rgba(194, 65, 12, 0.08);
+}
+
+.dashboard-nav-group--ncert.dashboard-nav-group--active {
+  background: linear-gradient(135deg, rgba(255, 237, 213, 0.98) 0%, rgba(254, 226, 226, 0.98) 100%);
+  border-color: #ea580c;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.2);
+}
+
+.dashboard-nav-group--ncert .dashboard-nav-group-label {
+  color: #7c2d12 !important;
+  font-weight: 800 !important;
+  font-size: 0.72rem !important;
+  background: rgba(234, 88, 12, 0.12) !important;
+  border: 1px solid rgba(234, 88, 12, 0.35) !important;
+}
+
+.dashboard-nav-group--ncert .dashboard-nav-group-label:hover {
+  background: rgba(234, 88, 12, 0.22) !important;
+  border-color: #ea580c !important;
+  color: #9a3412 !important;
+}
+
+.dashboard-nav-group--ncert .dashboard-nav-group-label.dashboard-nav-group-label--active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+  border-color: #c2410c !important;
+}
+
+.dashboard-nav-group--ncert .dashboard-nav-group-label .dashboard-nav-sanskrit {
+  color: #7c2d12 !important;
+  font-weight: 900 !important;
+  font-size: 0.74rem !important;
+}
+
+.dashboard-nav-group--ncert .dashboard-nav-group-label.dashboard-nav-group-label--active .dashboard-nav-sanskrit,
+.dashboard-nav-group--ncert .dashboard-nav-group-label.dashboard-nav-group-label--active .dashboard-nav-sub-en {
+  color: #ffffff !important;
+}
+
+.dashboard-nav-group--ncert .dashboard-nav-sub-en {
+  color: #9a3412 !important;
+  font-weight: 800 !important;
+  font-size: 0.7rem !important;
 }
 
 /* NCERT / CBSE Sanskrit Grades (7, 8, 9) */
@@ -956,7 +1030,9 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 
   /* Keep Games & STEM sub-labels visible since duplicate texts were removed */
   .dashboard-nav-group--games .dashboard-nav-sub-en,
-  .dashboard-nav-stem-badge {
+  .dashboard-nav-stem-badge,
+  .dashboard-nav-dir-badge,
+  .dashboard-nav-group--ncert .dashboard-nav-sub-en {
     display: inline-flex !important;
   }
 

@@ -1238,10 +1238,11 @@ const Dashboard: React.FC = () => {
                   type="button"
                   className={activeView === 'science-lab' && (!labTarget.segment || labTarget.segment === 'catalog') ? 'active' : ''}
                   onClick={() => openScienceLab('catalog')}
-                  title="Browse All 41 Games Directory"
+                  title="Browse All 41 Games Directory (क्रीडा-सूची)"
                 >
                   <span aria-hidden="true">🗂️</span>
-                  <span className="dashboard-nav-sub-en">Directory</span>
+                  <span className="dashboard-nav-sanskrit">सूची</span>
+                  <span className="dashboard-nav-dir-badge">Directory</span>
                 </button>
               </div>
             </div>
