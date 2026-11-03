@@ -9,7 +9,7 @@ export interface PreschoolVarnamalaGameProps {
   className?: string;
 }
 
-type GameMode = 'explore' | 'find_letter' | 'picture_match' | 'train';
+type GameMode = 'explore' | 'find_letter' | 'sound_picture' | 'train';
 
 type FilterGroup =
   | 'all'
@@ -113,7 +113,8 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
   const [findCorrectOption, setFindCorrectOption] = useState<string | null>(null);
   const [findWrongOptions, setFindWrongOptions] = useState<Set<string>>(new Set());
 
-  // Picture Match State
+  // "Sound and Picture" State & Direction
+  const [soundPicDirection, setSoundPicDirection] = useState<'pic_to_sound' | 'sound_to_pic'>('pic_to_sound');
   const [picTarget, setPicTarget] = useState<LetterMnemonic>(VARNAMALA_MNEMONICS['आ']);
   const [picOptions, setPicOptions] = useState<LetterMnemonic[]>([]);
   const [picCorrectOption, setPicCorrectOption] = useState<string | null>(null);
@@ -209,7 +210,7 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
   };
 
   const handlePickFindOption = (option: LetterMnemonic) => {
-    if (findCorrectOption) return; // already solved, wait for transition
+    if (findCorrectOption) return;
 
     if (option.letter === findTarget.letter) {
       // CORRECT VISUAL & AUDIO FEEDBACK
@@ -223,7 +224,6 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
       playSequence([option.letter, option.wordSan], { gapMs: 400 });
       if (onEarnStar) onEarnStar();
 
-      // Auto advance after celebratory feedback
       setTimeout(() => {
         generateFindQuestion();
       }, 1600);
@@ -244,9 +244,9 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
   };
 
   // ==========================================
-  // Picture Match Game Generator
+  // "Sound and Picture" Game Generator
   // ==========================================
-  const generatePicQuestion = () => {
+  const generateSoundPicQuestion = (direction = soundPicDirection) => {
     const pool = filteredMnemonics.length >= 3 ? filteredMnemonics : ALL_MNEMONICS;
     const target = pool[Math.floor(Math.random() * pool.length)] || ALL_MNEMONICS[0];
 
@@ -262,23 +262,31 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
     setPicCorrectOption(null);
     setPicWrongOptions(new Set());
 
-    // Audio instruction on load
+    // Audio instruction depends on direction
     setTimeout(() => {
-      playPronunciation(target.wordSan);
+      if (direction === 'pic_to_sound') {
+        playPronunciation(target.wordSan);
+      } else {
+        playPronunciation(target.letter);
+      }
     }, 250);
   };
 
-  // Replay audio instruction for Picture Match
-  const replayPicAudio = () => {
+  // Replay audio instruction for Sound and Picture
+  const replaySoundPicAudio = () => {
     try {
       soundEffects.playBubblePop();
     } catch {
       // safe fallback
     }
-    playPronunciation(picTarget.wordSan);
+    if (soundPicDirection === 'pic_to_sound') {
+      playPronunciation(picTarget.wordSan);
+    } else {
+      playSequence([picTarget.letter, picTarget.wordSan], { gapMs: 400 });
+    }
   };
 
-  const handlePickPicOption = (option: LetterMnemonic) => {
+  const handlePickSoundPicOption = (option: LetterMnemonic) => {
     if (picCorrectOption) return;
 
     if (option.letter === picTarget.letter) {
@@ -290,11 +298,11 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
       } catch {
         // safe fallback
       }
-      playSequence([option.letter, picTarget.wordSan], { gapMs: 400 });
+      playSequence([picTarget.letter, picTarget.wordSan], { gapMs: 400 });
       if (onEarnStar) onEarnStar();
 
       setTimeout(() => {
-        generatePicQuestion();
+        generateSoundPicQuestion();
       }, 1600);
     } else {
       // INCORRECT VISUAL & AUDIO FEEDBACK
@@ -308,7 +316,11 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
       } catch {
         // safe fallback
       }
-      playPronunciation(option.letter);
+      if (soundPicDirection === 'pic_to_sound') {
+        playPronunciation(option.letter);
+      } else {
+        playPronunciation(option.wordSan);
+      }
     }
   };
 
@@ -316,8 +328,8 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
   useEffect(() => {
     if (mode === 'find_letter') {
       generateFindQuestion();
-    } else if (mode === 'picture_match') {
-      generatePicQuestion();
+    } else if (mode === 'sound_picture') {
+      generateSoundPicQuestion();
     } else if (mode === 'train') {
       setTrainIndex(0);
       setIsPlayingTrain(false);
@@ -408,18 +420,19 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
               <span>Find</span>
             </button>
 
+            {/* “Sound and Picture” Mode Tab */}
             <button
               type="button"
               role="tab"
-              aria-selected={mode === 'picture_match'}
-              className={`pvg-mode-btn ${mode === 'picture_match' ? 'is-active' : ''}`}
+              aria-selected={mode === 'sound_picture'}
+              className={`pvg-mode-btn ${mode === 'sound_picture' ? 'is-active' : ''}`}
               onClick={() => {
-                setMode('picture_match');
+                setMode('sound_picture');
                 soundEffects.playStrokeChime();
               }}
             >
-              <span aria-hidden="true">🥭</span>
-              <span>Match</span>
+              <span aria-hidden="true">🔊🖼️</span>
+              <span>Sound &amp; Picture</span>
             </button>
 
             <button
@@ -667,9 +680,10 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
       )}
 
       {/* ==================================================================
-          MODE 3: PICTURE-TO-LETTER MATCH (चित्र-मेलनम्)
+          MODE 3: “SOUND AND PICTURE” MATCH (ध्वनि-चित्र-मेलनम्)
+          Match an animal or object to its initial Sanskrit sound!
           ================================================================== */}
-      {mode === 'picture_match' && (
+      {mode === 'sound_picture' && (
         <div className="pvg-picmatch-arena">
           {/* Confetti / Star burst when correct */}
           {picCorrectOption && (
@@ -680,83 +694,181 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
             </div>
           )}
 
-          {/* Huge Picture Hero */}
-          <div className="pvg-picmatch-hero-emoji" aria-hidden="true">
-            {picTarget.emoji}
-          </div>
-
-          {/* Minimal Prompt & Big Replay Button */}
-          <div className="pvg-quiz-prompt">
-            <h4 className="pvg-quiz-heading">
-              Starts with which letter?
-            </h4>
-
-            {/* VERY LARGE AUDIO REPLAY BUTTON */}
+          {/* Dual Direction Mode Toggle */}
+          <div className="pvg-submode-bar" role="tablist" aria-label="Sound and Picture Direction">
             <button
               type="button"
-              className="pvg-big-replay-btn pvg-big-replay-btn--pic"
-              onClick={replayPicAudio}
-              aria-label={`Listen to word ${picTarget.wordSan}`}
+              role="tab"
+              aria-selected={soundPicDirection === 'pic_to_sound'}
+              className={`pvg-submode-btn ${soundPicDirection === 'pic_to_sound' ? 'is-active' : ''}`}
+              onClick={() => {
+                setSoundPicDirection('pic_to_sound');
+                soundEffects.playStrokeChime();
+                generateSoundPicQuestion('pic_to_sound');
+              }}
             >
-              <span className="pvg-speaker-pulse" aria-hidden="true">🔊</span>
-              <span>Listen: {picTarget.wordSan} · पुनः शृणोतु</span>
+              <span aria-hidden="true">🖼️ ➔ 🔤</span>
+              <span>Picture to Initial Sound</span>
+            </button>
+
+            <button
+              type="button"
+              role="tab"
+              aria-selected={soundPicDirection === 'sound_to_pic'}
+              className={`pvg-submode-btn ${soundPicDirection === 'sound_to_pic' ? 'is-active' : ''}`}
+              onClick={() => {
+                setSoundPicDirection('sound_to_pic');
+                soundEffects.playStrokeChime();
+                generateSoundPicQuestion('sound_to_pic');
+              }}
+            >
+              <span aria-hidden="true">🔤 ➔ 🖼️</span>
+              <span>Sound to Picture</span>
             </button>
           </div>
 
-          {/* VERY LARGE TOUCH CHOICE CARDS */}
-          <div className="pvg-quiz-options-grid" role="group" aria-label="Letter choices">
-            {picOptions.map((opt) => {
-              const isCorrect = picCorrectOption === opt.letter;
-              const isWrong = picWrongOptions.has(opt.letter);
+          {/* DIRECTION 1: PICTURE TO INITIAL SOUND */}
+          {soundPicDirection === 'pic_to_sound' && (
+            <>
+              {/* Huge Picture Hero */}
+              <div className="pvg-picmatch-hero-emoji" aria-hidden="true">
+                {picTarget.emoji}
+              </div>
 
-              return (
+              {/* Minimal Prompt & Big Replay Button */}
+              <div className="pvg-quiz-prompt">
+                <h4 className="pvg-quiz-heading">
+                  Initial Sanskrit Sound for {picTarget.wordSan} ({picTarget.wordEn})?
+                </h4>
+
                 <button
-                  key={opt.letter}
                   type="button"
-                  className={`pvg-quiz-option-card ${isCorrect ? 'is-correct' : ''} ${isWrong ? 'is-wrong' : ''}`}
-                  onClick={() => handlePickPicOption(opt)}
-                  aria-label={`Letter ${opt.letter}`}
+                  className="pvg-big-replay-btn pvg-big-replay-btn--pic"
+                  onClick={replaySoundPicAudio}
+                  aria-label={`Listen to ${picTarget.wordSan}`}
                 >
-                  {/* Visual Status Badges */}
-                  {isCorrect && (
-                    <span className="pvg-feedback-badge pvg-feedback-badge--correct" aria-hidden="true">
-                      ✅
-                    </span>
-                  )}
-                  {isWrong && (
-                    <span className="pvg-feedback-badge pvg-feedback-badge--wrong" aria-hidden="true">
-                      ❌
-                    </span>
-                  )}
-
-                  <span className="pvg-quiz-option-akshara">{opt.letter}</span>
-                  <span style={{ fontSize: '1.1rem', fontWeight: 900, color: '#64748b' }}>
-                    {opt.iast}
-                  </span>
+                  <span className="pvg-speaker-pulse" aria-hidden="true">🔊</span>
+                  <span>Listen: {picTarget.wordSan} · पुनः शृणोतु</span>
                 </button>
-              );
-            })}
-          </div>
+              </div>
+
+              {/* VERY LARGE LETTER CHOICE CARDS */}
+              <div className="pvg-quiz-options-grid" role="group" aria-label="Initial sound choices">
+                {picOptions.map((opt) => {
+                  const isCorrect = picCorrectOption === opt.letter;
+                  const isWrong = picWrongOptions.has(opt.letter);
+
+                  return (
+                    <button
+                      key={opt.letter}
+                      type="button"
+                      className={`pvg-quiz-option-card ${isCorrect ? 'is-correct' : ''} ${isWrong ? 'is-wrong' : ''}`}
+                      onClick={() => handlePickSoundPicOption(opt)}
+                      aria-label={`Initial sound ${opt.letter}`}
+                    >
+                      {isCorrect && (
+                        <span className="pvg-feedback-badge pvg-feedback-badge--correct" aria-hidden="true">
+                          ✅
+                        </span>
+                      )}
+                      {isWrong && (
+                        <span className="pvg-feedback-badge pvg-feedback-badge--wrong" aria-hidden="true">
+                          ❌
+                        </span>
+                      )}
+
+                      <span className="pvg-quiz-option-akshara">{opt.letter}</span>
+                      <span style={{ fontSize: '1.1rem', fontWeight: 900, color: '#64748b' }}>
+                        {opt.iast}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </>
+          )}
+
+          {/* DIRECTION 2: SOUND TO PICTURE */}
+          {soundPicDirection === 'sound_to_pic' && (
+            <>
+              {/* Huge Target Sound Tile */}
+              <div className="pvg-target-sound-card">
+                <div className="pvg-target-sound-badge" aria-label={`Target sound ${picTarget.letter}`}>
+                  {picTarget.letter}
+                </div>
+              </div>
+
+              {/* Minimal Prompt & Big Replay Button */}
+              <div className="pvg-quiz-prompt">
+                <h4 className="pvg-quiz-heading">
+                  Who starts with the sound &quot;{picTarget.letter}&quot;?
+                </h4>
+
+                <button
+                  type="button"
+                  className="pvg-big-replay-btn"
+                  onClick={replaySoundPicAudio}
+                  aria-label={`Listen to sound ${picTarget.letter}`}
+                >
+                  <span className="pvg-speaker-pulse" aria-hidden="true">🔊</span>
+                  <span>Listen Sound: &quot;{picTarget.letter}&quot; · पुनः शृणोतु</span>
+                </button>
+              </div>
+
+              {/* VERY LARGE ANIMAL / OBJECT PICTURE CARDS */}
+              <div className="pvg-quiz-options-grid" role="group" aria-label="Animal or object choices">
+                {picOptions.map((opt) => {
+                  const isCorrect = picCorrectOption === opt.letter;
+                  const isWrong = picWrongOptions.has(opt.letter);
+
+                  return (
+                    <button
+                      key={opt.letter}
+                      type="button"
+                      className={`pvg-quiz-option-card pvg-quiz-option-card--picture ${isCorrect ? 'is-correct' : ''} ${isWrong ? 'is-wrong' : ''}`}
+                      onClick={() => handlePickSoundPicOption(opt)}
+                      aria-label={`${opt.wordSan} (${opt.wordEn})`}
+                    >
+                      {isCorrect && (
+                        <span className="pvg-feedback-badge pvg-feedback-badge--correct" aria-hidden="true">
+                          ✅
+                        </span>
+                      )}
+                      {isWrong && (
+                        <span className="pvg-feedback-badge pvg-feedback-badge--wrong" aria-hidden="true">
+                          ❌
+                        </span>
+                      )}
+
+                      <span className="pvg-quiz-pic-emoji" aria-hidden="true">{opt.emoji}</span>
+                      <p className="pvg-quiz-pic-sa">{opt.wordSan}</p>
+                      <p className="pvg-quiz-pic-en">{opt.wordEn}</p>
+                    </button>
+                  );
+                })}
+              </div>
+            </>
+          )}
 
           {/* Minimal Visual Feedback Banners */}
           {picCorrectOption && (
             <div className="pvg-quiz-feedback is-win" role="status">
-              <span>🎉 उत्तमम्! Correct! (+1 ⭐)</span>
+              <span>🎉 उत्तमम्! Correct! {picTarget.letter} starts {picTarget.emoji} {picTarget.wordSan}! (+1 ⭐)</span>
             </div>
           )}
 
           {picWrongOptions.size > 0 && !picCorrectOption && (
             <div className="pvg-quiz-feedback is-retry" role="status">
-              <span>👂 Listen to {picTarget.wordSan} &amp; pick!</span>
+              <span>👂 Listen closely &amp; try another card! 🎧</span>
             </div>
           )}
 
           <button
             type="button"
             className="pvg-skip-btn"
-            onClick={generatePicQuestion}
+            onClick={() => generateSoundPicQuestion()}
           >
-            <span>⏭️ Next Picture</span>
+            <span>⏭️ Next Challenge</span>
           </button>
         </div>
       )}

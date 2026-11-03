@@ -824,8 +824,8 @@ const ACTIVITIES: ActivityItem[] = [
     cluster: 'creative',
     clusterLabel: 'रचना · Creative Play',
     gradeBadge: 'Ages 3–6 · Letters & Swaras',
-    desc: 'Tap cheerful letters, meet animal friends (अश्वः 🐴, आम्रम् 🥭, कमलम् 🪷), find secret letters & sing the alphabet train!',
-    features: ['🔊 Letter Phonics', '🐴 Mnemonic Picture Friends', '🎯 Find-the-Letter Game', '🚂 Alphabet Sing-Along Train'],
+    desc: 'Play “Sound and picture”: match friendly animals and objects (अश्वः 🐴, आम्रम् 🥭, कमलम् 🪷, गजः 🐘) to their initial Sanskrit sound!',
+    features: ['🔊🖼️ “Sound & Picture” Phonics Match', '🔊 Letter & Animal Audio', '🎯 Find-the-Letter Game', '🚂 Alphabet Sing-Along Train'],
     bannerGradient: 'linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f59e0b 100%)',
     accentColor: '#a855f7',
     bannerVisual: {
