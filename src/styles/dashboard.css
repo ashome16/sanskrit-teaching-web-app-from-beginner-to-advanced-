@@ -734,6 +734,37 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
   color: #ffffff;
 }
 
+.dashboard-nav-stem-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #0369a1;
+  background: rgba(2, 132, 199, 0.14);
+  border: 1px solid rgba(2, 132, 199, 0.35);
+  border-radius: 5px;
+  padding: 0.06rem 0.38rem;
+  margin-left: 0.25rem;
+  line-height: 1.15;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.15s ease;
+  vertical-align: middle;
+}
+
+.dashboard-nav-group--games .dashboard-nav-sub button:hover .dashboard-nav-stem-badge {
+  background: rgba(2, 132, 199, 0.25);
+  border-color: #0284c7;
+  color: #0c4a6e;
+}
+
+.dashboard-nav-group--games .dashboard-nav-sub button.active .dashboard-nav-stem-badge {
+  background: #ffffff;
+  color: #0284c7;
+  border-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 900;
+}
+
 .dashboard-nav-sub {
   display: inline-flex;
   flex-direction: row;
@@ -1005,6 +1036,12 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 
   .dashboard-nav-sub-en {
     display: none;
+  }
+
+  /* Keep Games & STEM sub-labels visible since duplicate texts were removed */
+  .dashboard-nav-group--games .dashboard-nav-sub-en,
+  .dashboard-nav-stem-badge {
+    display: inline-flex !important;
   }
 
   .dashboard-header .dashboard-search-trigger-kbd {

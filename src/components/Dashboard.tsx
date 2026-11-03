@@ -1206,7 +1206,7 @@ const Dashboard: React.FC = () => {
               >
                 <span className="dashboard-nav-icon" style={{ fontSize: '1.15rem', lineHeight: 1 }} aria-hidden="true">🎮</span>
                 <span className="dashboard-nav-sanskrit">क्रीडा-शाला</span>
-                <span className="dashboard-nav-sub-en">{englishFirst ? 'Games' : 'क्रीडाः'}</span>
+                {englishFirst && <span className="dashboard-nav-sub-en">Games</span>}
               </button>
               <div className="dashboard-nav-sub" role="group" aria-label="Direct games navigation">
                 <button
@@ -1216,7 +1216,7 @@ const Dashboard: React.FC = () => {
                   title="Direct entry: 24 Preschool Wonder Games (Shapes, Colors, Spices, Animals, Map & Yoga)"
                 >
                   <span aria-hidden="true">🌟</span>
-                  <span className="dashboard-nav-sanskrit">शिशु-क्रीडा</span> <span className="dashboard-nav-sub-en">Preschool</span>
+                  <span className="dashboard-nav-sanskrit">शिशु</span> <span className="dashboard-nav-sub-en">Preschool</span>
                 </button>
                 <button
                   type="button"
@@ -1225,7 +1225,7 @@ const Dashboard: React.FC = () => {
                   title="Direct entry: 17 STEM Science Labs & Physics Simulators"
                 >
                   <span aria-hidden="true">⚛️</span>
-                  <span className="dashboard-nav-sanskrit">विज्ञान-क्रीडा</span> <span className="dashboard-nav-sub-en">STEM</span>
+                  <span className="dashboard-nav-sanskrit">विज्ञान</span> <span className="dashboard-nav-stem-badge">STEM</span>
                 </button>
                 <button
                   type="button"
