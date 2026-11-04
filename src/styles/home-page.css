@@ -2214,6 +2214,29 @@ tr th {
   font-weight: 800;
 }
 
+.home-feature-inline-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: #b45309;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: rgba(180, 83, 9, 0.4);
+  text-underline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  transition: all 0.2s ease;
+}
+
+.home-feature-inline-link:hover {
+  color: #78350f;
+  text-decoration-color: #78350f;
+}
+
 .home-feature-btn {
   background: #F5EFE6;
   border: 1.5px solid #E5D7C5;

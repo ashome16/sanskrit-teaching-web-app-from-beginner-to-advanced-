@@ -986,7 +986,7 @@ const Board: React.FC<BoardProps> = ({
     const h = (typeof window !== 'undefined' ? window.location.hash : '').toLowerCase();
     const p = (typeof window !== 'undefined' ? window.location.pathname : '').toLowerCase();
     if (h === '#prahelika' || h === '#riddle' || h === '#riddles' || p.includes('prahelika') || p.includes('riddle')) return 'prahelika';
-    if (h === '#maze' || h === '#word-maze' || h === '#maze-games' || p.includes('maze')) return 'maze';
+    if (h === '#maze' || h === '#word-maze' || h === '#maze-games' || h.includes('panchatantra') || p.includes('maze')) return 'maze';
     if (h === '#match' || h === '#match-games' || h === '#match-the-following' || p.includes('match')) return 'match';
     return 'jodo';
   });
@@ -1002,7 +1002,7 @@ const Board: React.FC<BoardProps> = ({
       const h = (window.location.hash || '').toLowerCase();
       if (h === '#prahelika' || h === '#riddle' || h === '#riddles') {
         setBoardStudioMode('prahelika');
-      } else if (h === '#maze' || h === '#word-maze' || h === '#maze-games') {
+      } else if (h === '#maze' || h === '#word-maze' || h === '#maze-games' || h.includes('panchatantra') || h.includes('maze-')) {
         setBoardStudioMode('maze');
       } else if (h === '#match' || h === '#match-games' || h === '#match-the-following') {
         setBoardStudioMode('match');

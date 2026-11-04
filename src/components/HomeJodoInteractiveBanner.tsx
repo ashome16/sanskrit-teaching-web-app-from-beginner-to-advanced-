@@ -4,7 +4,7 @@ import { soundEffects } from '../utils/soundEffects';
 import '../styles/home-jodo-interactive-banner.css';
 
 export interface HomeJodoInteractiveBannerProps {
-  onOpenBoard: () => void;
+  onOpenBoard: (mode?: 'jodo' | 'match' | 'maze' | 'prahelika', category?: string) => void;
   className?: string;
 }
 
@@ -180,18 +180,58 @@ export const HomeJodoInteractiveBanner: React.FC<HomeJodoInteractiveBannerProps>
           </p>
 
           <div className="hjb-pills-row">
-            <span className="hjb-feature-pill">
-              <span>🧩</span> 6,000+ Syllable Puzzles
-            </span>
-            <span className="hjb-feature-pill">
-              <span>🎯</span> 18 Match Pairs
-            </span>
-            <span className="hjb-feature-pill">
-              <span>🦁</span> Panchatantra Mazes
-            </span>
-            <span className="hjb-feature-pill">
-              <span>📜</span> Classical Riddles (प्रहेलिकाः)
-            </span>
+            <button
+              type="button"
+              className="hjb-feature-pill"
+              onClick={(e) => {
+                e.stopPropagation();
+                soundEffects.playCelebrationChime();
+                onOpenBoard('jodo');
+              }}
+              title="Launch 6,000+ Sanskrit Syllable Puzzles (जोडो)"
+              aria-label="Launch 6,000+ Sanskrit Syllable Puzzles"
+            >
+              <span aria-hidden="true">🧩</span> 6,000+ Syllable Puzzles
+            </button>
+            <button
+              type="button"
+              className="hjb-feature-pill"
+              onClick={(e) => {
+                e.stopPropagation();
+                soundEffects.playCelebrationChime();
+                onOpenBoard('match');
+              }}
+              title="Launch 18 Match-the-Following Categories (युग्म-मेलनम्)"
+              aria-label="Launch 18 Match-the-Following Categories"
+            >
+              <span aria-hidden="true">🎯</span> 18 Match Pairs
+            </button>
+            <button
+              type="button"
+              className="hjb-feature-pill hjb-feature-pill--highlight"
+              onClick={(e) => {
+                e.stopPropagation();
+                soundEffects.playCelebrationChime();
+                onOpenBoard('maze', 'maze_thirsty_crow');
+              }}
+              title="Launch Panchatantra Word Mazes &amp; Story Quests (कथा-व्यूहाः)"
+              aria-label="Launch Panchatantra Word Mazes and Story Quests"
+            >
+              <span aria-hidden="true">🦁</span> Panchatantra Mazes
+            </button>
+            <button
+              type="button"
+              className="hjb-feature-pill"
+              onClick={(e) => {
+                e.stopPropagation();
+                soundEffects.playCelebrationChime();
+                onOpenBoard('prahelika');
+              }}
+              title="Launch Classical Sanskrit Riddles Studio (प्रहेलिकाः)"
+              aria-label="Launch Classical Sanskrit Riddles Studio"
+            >
+              <span aria-hidden="true">📜</span> Classical Riddles (प्रहेलिकाः)
+            </button>
           </div>
         </div>
 

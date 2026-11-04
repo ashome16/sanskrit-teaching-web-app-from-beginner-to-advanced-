@@ -1003,9 +1003,45 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   // --------------------------------------------------------------------------
   // 2. WORD MAZE QUEST STATE (शब्द-व्यूहः)
   // --------------------------------------------------------------------------
-  const [mazeAudienceFilter, setMazeAudienceFilter] = useState<GameLevelFilter>('level1');
+  const [mazeAudienceFilter, setMazeAudienceFilter] = useState<GameLevelFilter>(() => {
+    if (initialCategory) {
+      if (initialCategory === 'panchatantra' || initialCategory === 'maze_thirsty_crow' || initialCategory === 'maze_lion_mouse' || LEVEL2_MAZE_IDS.has(initialCategory)) return 'level2';
+      if (LEVEL1_MAZE_IDS.has(initialCategory)) return 'level1';
+      if (LEVEL3_MAZE_IDS.has(initialCategory)) return 'level3';
+    }
+    const h = typeof window !== 'undefined' ? (window.location.hash || '').toLowerCase() : '';
+    if (h.includes('panchatantra') || h.includes('story') || h.includes('crow') || h.includes('lion')) return 'level2';
+    return 'level1';
+  });
   const [mazeDifficulty, setMazeDifficulty] = useState<MazeDifficulty>('guided');
-  const [selectedQuestId, setSelectedQuestId] = useState<string>(WORD_MAZE_QUESTS[0].id);
+  const [selectedQuestId, setSelectedQuestId] = useState<string>(() => {
+    if (initialCategory) {
+      if (initialCategory === 'panchatantra') return 'maze_thirsty_crow';
+      if (WORD_MAZE_QUESTS.some((q) => q.id === initialCategory)) return initialCategory;
+    }
+    const h = typeof window !== 'undefined' ? (window.location.hash || '').toLowerCase() : '';
+    if (h.includes('crow')) return 'maze_thirsty_crow';
+    if (h.includes('lion')) return 'maze_lion_mouse';
+    if (h.includes('panchatantra')) return 'maze_thirsty_crow';
+    return WORD_MAZE_QUESTS[0].id;
+  });
+
+  useEffect(() => {
+    if (initialCategory) {
+      if (initialCategory === 'panchatantra' || initialCategory === 'maze_thirsty_crow' || initialCategory === 'maze_lion_mouse' || LEVEL2_MAZE_IDS.has(initialCategory)) {
+        setMazeAudienceFilter('level2');
+        setSelectedQuestId(initialCategory === 'panchatantra' ? 'maze_thirsty_crow' : initialCategory);
+      } else if (LEVEL1_MAZE_IDS.has(initialCategory)) {
+        setMazeAudienceFilter('level1');
+        setSelectedQuestId(initialCategory);
+      } else if (LEVEL3_MAZE_IDS.has(initialCategory)) {
+        setMazeAudienceFilter('level3');
+        setSelectedQuestId(initialCategory);
+      } else if (WORD_MAZE_QUESTS.some((q) => q.id === initialCategory)) {
+        setSelectedQuestId(initialCategory);
+      }
+    }
+  }, [initialCategory]);
 
   const displayedQuests = useMemo(() => {
     if (mazeAudienceFilter === 'level1') {

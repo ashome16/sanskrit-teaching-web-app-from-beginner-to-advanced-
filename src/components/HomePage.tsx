@@ -30,7 +30,7 @@ const VarnamalaFlashcardDownloadModal = lazy(() => import('./VarnamalaFlashcardD
 
 export interface HomePageProps {
   onOpenReader: (lessonId?: string) => void;
-  onOpenBoard: () => void;
+  onOpenBoard: (mode?: 'jodo' | 'match' | 'maze' | 'prahelika', category?: string) => void;
   onOpenVarnamala: () => void;
   onOpenGrammar: () => void;
   onOpenVedicMaths?: () => void;
@@ -1159,11 +1159,11 @@ const HomePage: React.FC<HomePageProps> = ({
               <div
                 id="step-2"
                 className="home-journey-step-card"
-                onClick={onOpenBoard}
+                onClick={() => onOpenBoard?.('jodo')}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') onOpenBoard?.();
+                  if (e.key === 'Enter' || e.key === ' ') onOpenBoard?.('jodo');
                 }}
                 title="Step 2: Build 6,000+ words playfully with interactive जोडो tile puzzles"
               >
@@ -1333,7 +1333,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <button
             type="button"
             className="home-hero-action-card home-hero-action-card--jodo"
-            onClick={onOpenBoard}
+            onClick={() => onOpenBoard?.('jodo')}
             title="Snap 6,000+ Sanskrit syllable tiles, match-pairs, and classical riddles"
           >
             <div className="hhac-icon-col" aria-hidden="true">
@@ -2122,9 +2122,39 @@ const HomePage: React.FC<HomePageProps> = ({
               <ul className="home-feature-points">
                 <li>Accelerate vocabulary recall 3× faster than traditional memorization</li>
                 <li>Master matra joining (e.g. क + आ → का) and letter ligatures hands-on</li>
-                <li>18 Match-the-Following categories: actions, relationships, time, vastu, ayurveda, occupations &amp; genders</li>
-                <li>Classical Sanskrit Riddles (प्रहेलिकाः): Antarālāpikā internal-answer verses, poetic paradoxes &amp; Gurukul wit</li>
-                <li>Word Maze story quests: navigate Panchatantra story paths, avoid traps &amp; assemble full sentences</li>
+                <li>
+                  <button
+                    type="button"
+                    className="home-feature-inline-link"
+                    onClick={() => onOpenBoard('match')}
+                    title="Play 18 Match-the-Following categories"
+                  >
+                    🎯 18 Match-the-Following categories
+                  </button>
+                  : actions, relationships, time, vastu, ayurveda, occupations &amp; genders
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className="home-feature-inline-link"
+                    onClick={() => onOpenBoard('prahelika')}
+                    title="Solve Classical Sanskrit Riddles (प्रहेलिकाः)"
+                  >
+                    📜 Classical Sanskrit Riddles (प्रहेलिकाः)
+                  </button>
+                  : Antarālāpikā internal-answer verses, poetic paradoxes &amp; Gurukul wit
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className="home-feature-inline-link"
+                    onClick={() => onOpenBoard('maze', 'maze_thirsty_crow')}
+                    title="Play Panchatantra Word Maze story quests"
+                  >
+                    🦁 Word Maze story quests
+                  </button>
+                  : navigate Panchatantra story paths, avoid traps &amp; assemble full sentences
+                </li>
                 <li>7 themed shelves covering animals, daily objects, verbs, and nature</li>
                 <li>Instant encouraging feedback with direct links back to textbook lessons</li>
               </ul>
@@ -2132,7 +2162,7 @@ const HomePage: React.FC<HomePageProps> = ({
             <button
               type="button"
               className="home-feature-btn"
-              onClick={onOpenBoard}
+              onClick={() => onOpenBoard?.('jodo')}
             >
               Play जोडो &amp; Sanskrit Games ▶
             </button>

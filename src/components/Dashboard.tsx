@@ -712,16 +712,27 @@ const Dashboard: React.FC = () => {
       const h = (window.location.hash || '').toLowerCase();
       const p = (window.location.pathname || '').toLowerCase();
       if (h === '#prahelika' || h === '#riddle' || h === '#riddles' || p.includes('prahelika') || p.includes('riddle')) return 'prahelika';
-      if (h === '#maze' || h === '#word-maze' || h === '#maze-games' || p.includes('maze')) return 'maze';
+      if (h === '#maze' || h === '#word-maze' || h === '#maze-games' || h.includes('panchatantra') || p.includes('maze')) return 'maze';
       if (h === '#match' || h === '#match-games' || h === '#match-the-following' || p.includes('match')) return 'match';
     } catch {}
     return 'jodo';
   });
-  const [boardCategory, setBoardCategory] = useState<string | undefined>(undefined);
+  const [boardCategory, setBoardCategory] = useState<string | undefined>(() => {
+    try {
+      const h = (window.location.hash || '').toLowerCase();
+      if (h.includes('panchatantra')) return 'maze_thirsty_crow';
+    } catch {}
+    return undefined;
+  });
 
   const handleOpenBoard = (mode: 'jodo' | 'match' | 'maze' | 'prahelika' = 'jodo', category?: string) => {
     setBoardStudioMode(mode);
     setBoardCategory(category);
+    if (mode === 'maze' && (category === 'maze_thirsty_crow' || category === 'panchatantra')) {
+      window.location.hash = '#maze-panchatantra';
+    } else {
+      window.location.hash = `#${mode}`;
+    }
     navigateToView('board');
   };
   const openCourseAddendum = (addendumId: string) => {
@@ -1591,7 +1602,7 @@ const Dashboard: React.FC = () => {
         {(activeView === 'home' || activeView === 'faq') && (
         <HomePage
           onOpenReader={(lessonId) => openDeepakam(lessonId)}
-          onOpenBoard={() => navigateToView('board')}
+          onOpenBoard={(mode, category) => handleOpenBoard(mode, category)}
           onOpenVarnamala={() => openVarnamala('sound')}
           onOpenGrammar={handleOpenGrammar}
           onOpenDhatupatha={() => navigateToView('dhatupatha')}
