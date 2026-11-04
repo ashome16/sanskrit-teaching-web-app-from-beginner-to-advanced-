@@ -379,9 +379,9 @@ const getPhysicalPageBreakdown = (lesson: Lesson | undefined): PhysicalPageBreak
     const isGrade8 = lesson.id.startsWith('grade8');
     const isGrade9 = lesson.id.startsWith('grade9');
     const bookName = isGrade8
-      ? 'NCERT Ruchira / Sanskrit (Class 8)'
+      ? 'NCERT दीपकम (Deepakam) / Sanskrit (Class 8)'
       : isGrade9
-        ? 'NCERT Shemushi / Sanskrit (Class 9)'
+        ? 'NCERT शारदा (Sharda) / Sanskrit (Class 9 · CBSE Code 122)'
         : 'NCERT Sanskrit Textbook';
     return {
       bookName,
@@ -1263,7 +1263,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
 
               {/* Class 9 Lessons */}
               {lessons.some((lesson) => lesson.id.startsWith('grade9_')) && (
-                <optgroup label="शारदा (नवमी कक्षा)">
+                <optgroup label="शारदा · Class 9 (CBSE Code 122)">
                   {lessons
                     .filter((lesson) => lesson.id.startsWith('grade9_'))
                     .map((lesson) => {
@@ -1277,7 +1277,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                     })}
                   {onOpenCbseGuide && (
                     <option value="__cbse_guide__">
-                      📋 CBSE Class 9 Exam Guide &amp; Question Directives
+                      📋 CBSE Class 9 Exam Guide &amp; Directives (Code 122)
                     </option>
                   )}
                 </optgroup>
@@ -3154,7 +3154,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
             <div className="grade-guide-header">
               <span className="grade-guide-badge">
                 {activeLessonId.startsWith('grade9_')
-                  ? 'शारदा · Class 9'
+                  ? 'शारदा · Class 9 (Code 122)'
                   : activeLessonId.startsWith('grade8_')
                   ? 'Deepakam 8th grade · दीपकम'
                   : 'Deepakam 7th grade · दीपकम'}
@@ -3663,18 +3663,18 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
         onSelectLesson={(id) => onSelectLesson(id)}
         onOpenCbseGuide={onOpenCbseGuide}
         syllabus={GRADE_9_SYLLABUS}
-        gradeBadge="नवमकक्षा-पाठ्यक्रमः · शारदा (NEP, CBSE exam)"
-        intro="Index of the Class 9 Sharda lessons in this reader, including the prayer, twelve chapters, and grammar appendices."
+        gradeBadge="नवमकक्षा-पाठ्यक्रमः · शारदा (CBSE Code 122 · NEP)"
+        intro="Index of the Class 9 NCERT Sharda (Subject Code 122) lessons in this reader, including the prayer, twelve chapters, and grammar appendices."
         coreLessonCount={12}
         appendixCount={4}
         pageSpan="Page iii to 244"
-        searchPlaceholder="🔍 Search Class 9 chapter, page, or grammar (e.g. समास, वन्दे मातरम्)..."
+        searchPlaceholder="🔍 Search Class 9 Sharda chapter, page, or grammar (e.g. समास, वन्दे मातरम्)..."
         lessonIdPrefix="grade9_"
         knownLessonIds={lessons.map((item) => item.id)}
         accessGated
-        accountNote="Class 9 lessons, worksheets, and quizzes are open to everyone with an account. Sign in or register for free to start learning!"
-        examTitle="CBSE Class 9 Sanskrit Exam Guide & Question Directives"
-        examBlurb="The same CBSE Sanskrit exam guide used with this reader: question words, section instructions, and board-pattern practice."
+        accountNote="Class 9 Sharda lessons, worksheets, and quizzes are open to everyone with an account. Sign in or register for free to start learning!"
+        examTitle="CBSE Class 9 Sanskrit Exam Guide & Question Directives (Subject Code 122)"
+        examBlurb="The same CBSE Sanskrit exam guide used with this reader: question words, section instructions, and Code 122 board-pattern practice."
       />
       <VarnamalaFlashcardDownloadModal
         isOpen={isFlashcardDownloadOpen}

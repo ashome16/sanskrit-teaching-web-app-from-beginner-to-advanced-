@@ -26,7 +26,7 @@ export const GRADE_9_SYLLABUS: Grade9Chapter[] = [
     page: "Page iii",
     category: "preface",
     genreBadge: "प्राक्कथनम् · Preface",
-    theme: "Curricular vision, pedagogical architecture, and national standards for Class 9 Sanskrit education under the NEP framework.",
+    theme: "Curricular vision, pedagogical architecture, and national standards for Class 9 Sanskrit education (CBSE Subject Code 122 · NCERT शारदा Sharda) under the NEP framework.",
     grammarFocus: "भाषा-शिक्षण-उद्देश्यानि",
     status: "overview",
     icon: "📜"

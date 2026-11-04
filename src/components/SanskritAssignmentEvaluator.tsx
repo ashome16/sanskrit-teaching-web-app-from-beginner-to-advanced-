@@ -379,8 +379,8 @@ export const SanskritAssignmentEvaluator: React.FC<SanskritAssignmentEvaluatorPr
                   <option value="Class 6 (Deepakam / NCERT)">Class 6 (Deepakam / NCERT)</option>
                   <option value="Class 7 (Deepakam)">Class 7 (Deepakam)</option>
                   <option value="Class 8 (Deepakam 2)">Class 8 (Deepakam 2)</option>
-                  <option value="Class 9 (Sharada / CBSE)">Class 9 (Sharada / CBSE)</option>
-                  <option value="Class 10 (Shemushi / CBSE)">Class 10 (Shemushi / CBSE)</option>
+                  <option value="Class 9 (Sharda · CBSE Code 122)">Class 9 (Sharda · CBSE Code 122)</option>
+                  <option value="Class 10 (Shemushi · CBSE Code 122)">Class 10 (Shemushi · CBSE Code 122)</option>
                   <option value="Beginner Sanskrit Course">Beginner Sanskrit Course</option>
                   <option value="University / Open Gurukul">University / Open Gurukul</option>
                 </select>

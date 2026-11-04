@@ -438,15 +438,15 @@ export const GUIDED_WRITING_PATHS: WritingPath[] = [
   },
   {
     id: 'grade9',
-    title: 'CBSE Class 9 Syllabus Path',
-    titleSanskrit: 'नवमी कक्षा · NCERT Sharada / Shemushi',
+    title: 'CBSE Class 9 Syllabus Path (Subject Code 122)',
+    titleSanskrit: 'नवमी कक्षा · NCERT शारदा (Sharda · Code 122)',
     icon: '📕',
-    badge: 'Class 9 · नवमी',
-    levelBadge: 'NCERT Grade 9',
+    badge: 'Class 9 · Code 122',
+    levelBadge: 'NCERT Sharda (Code 122)',
     accentColor: '#dc2626',
-    subtitle: 'Formal CBSE Class 9 topics: Sandhi, Letter writing, Picture description, and literature',
+    subtitle: 'Formal CBSE Class 9 (Code 122) topics: Sandhi, Letter writing, Picture description, and NCERT Sharda literature',
     description:
-      'Rigorous writing practice for Class 9 CBSE Sanskrit exams: write Saraswati invocations from Bharati-Vasantagiti, master compound Sandhi rules, formal leave applications (पत्र-लेखनम्), and Picture Description (चित्र-वर्णनम्).',
+      'Rigorous writing practice for CBSE Class 9 Sanskrit exams (Subject Code 122): write Saraswati invocations, master compound Sandhi rules, formal leave applications (पत्र-लेखनम्), and Picture Description (चित्र-वर्णनम्) aligned with the NCERT शारदा (Sharda) curriculum.',
     assignments: [
       {
         id: 'g9-1-bharati-vasanta',

@@ -61,7 +61,7 @@ const BLUEPRINT_ROWS: {
     weightage: '30 Marks',
     time: '55 Minutes',
     formats:
-      'Comprehension extracts pulled straight from your assigned NCERT textbooks (Deepakam for 7–8; Shemushi or Manika for 9–10).',
+      'Comprehension extracts pulled straight from your assigned NCERT textbooks: Deepakam (दीपकम) for Classes 6–8, Sharda (शारदा) for Class 9 (Subject Code 122), and Shemushi (शेमुषी) for Class 10 (Subject Code 122).',
   },
 ];
 
@@ -628,16 +628,70 @@ const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
         <section className="philosophy-section" aria-labelledby="blueprint">
           <h2 id="blueprint">Section-by-Section Exam Blueprint</h2>
           <p>
-            Whether you are in Class 7 or sitting for your Class 10 Board Exam (Subject Code 122),
+            Whether you are preparing for your Class 9 Annual Exam or sitting for your Class 10 Board Exam (both under CBSE Subject Code 122),
             the Sanskrit question paper is uniformly organized into four distinct sections (
             <span lang="sa">खण्ड</span>).
           </p>
           <p>
-            While middle school papers (Classes 7–8) may occasionally be scaled down by individual
+            While middle school papers (Classes 6–8 दीपकम) may occasionally be scaled down by individual
             schools (e.g., to 60 marks over 2.5 hours), the official CBSE structure for High School
             (Classes 9–10) consists of an 80-mark theory paper spanning a 3-hour (180 minutes)
             duration, alongside a 20-mark internal assessment.
           </p>
+
+          {/* CBSE Subject Code & Curricular Framework Box */}
+          <div
+            className="cbse-subject-code-box"
+            style={{
+              background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
+              border: '2px solid #f59e0b',
+              borderRadius: '16px',
+              padding: '1.25rem 1.5rem',
+              margin: '1.5rem 0',
+              boxShadow: '0 4px 6px -1px rgba(245, 158, 11, 0.1)',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
+              <span style={{ fontSize: '1.5rem' }}>🎯</span>
+              <h3 style={{ margin: 0, fontSize: '1.15rem', color: '#92400e', fontWeight: 800 }}>
+                CBSE Sanskrit Subject Codes &amp; NCERT Textbook Mapping
+              </h3>
+            </div>
+            <p style={{ margin: '0 0 1rem 0', fontSize: '0.95rem', color: '#78350f', lineHeight: 1.5 }}>
+              The Central Board of Secondary Education (CBSE) designs Sanskrit secondary assessments under standardized subject codes aligned with the National Curriculum Framework (NCF-SE / NEP 2020):
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+              <div style={{ background: '#ffffff', borderRadius: '12px', padding: '1rem', border: '1px solid #fde68a' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                  <strong style={{ color: '#b45309', fontSize: '1rem' }}>Class 9 · Subject Code 122</strong>
+                  <span style={{ background: '#dcfce7', color: '#15803d', fontSize: '0.75rem', fontWeight: 700, padding: '0.15rem 0.5rem', borderRadius: '9999px' }}>NCERT शारदा (Sharda)</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
+                  Features the new NEP textbook <strong>शारदा (Sharda)</strong> — comprising 12 chapters (from <em>सत्यं शिवं सुन्दरं संस्कृतम्</em> to AI &amp; <em>अन्वय-शिक्षा</em>), Saraswati Vandana, and comprehensive grammar appendices (समास, वाच्य, शब्दरूप, धातुरूप).
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', borderRadius: '12px', padding: '1rem', border: '1px solid #fde68a' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                  <strong style={{ color: '#b45309', fontSize: '1rem' }}>Class 10 · Subject Code 122</strong>
+                  <span style={{ background: '#e0e7ff', color: '#4338ca', fontSize: '0.75rem', fontWeight: 700, padding: '0.15rem 0.5rem', borderRadius: '9999px' }}>NCERT शेमुषी (Shemushi II)</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
+                  Features <strong>शेमुषी भाग २ (Shemushi Part 2)</strong>, testing cumulative board comprehension, dialogue completion, anvaya, and Paninian sandhi/samasa rules in the 80-mark board theory paper.
+                </p>
+              </div>
+
+              <div style={{ background: '#ffffff', borderRadius: '12px', padding: '1rem', border: '1px solid #fde68a' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                  <strong style={{ color: '#b45309', fontSize: '1rem' }}>Classes 6–8 · Middle School</strong>
+                  <span style={{ background: '#fef3c7', color: '#92400e', fontSize: '0.75rem', fontWeight: 700, padding: '0.15rem 0.5rem', borderRadius: '9999px' }}>NCERT दीपकम (Deepakam I–III)</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
+                  Covers the modern NEP middle school curriculum <strong>दीपकम (Deepakam)</strong> Parts 1, 2, and 3, building active conversational vocabulary, shlokas, and foundational vibhaktis before high school.
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div className="cbse-guide-table-wrap" role="region" aria-label="Section-by-section exam blueprint">
             <table className="cbse-guide-table">
@@ -868,7 +922,7 @@ const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
 
           <div className="cbse-guide-note" style={{ marginTop: '1.25rem' }}>
             <strong>📚 Academic Citations &amp; Blueprint Standards:</strong> Structured according to the official
-            CBSE Class 10 Sanskrit Sample Question Papers (Code 122), NCERT Middle School Sanskrit Curricula (Classes 7–8 दीपकम),
+            CBSE Secondary Sanskrit Blueprint (Subject Code 122 featuring NCERT शारदा Sharda for Class 9 and शेमुषी Shemushi for Class 10), NCERT Middle School Sanskrit Curricula (Classes 6–8 दीपकम),
             and standard Paninian question-framing conventions.
           </div>
         </section>
@@ -1041,9 +1095,9 @@ const CbseSanskritGuidePage: React.FC<CbseSanskritGuidePageProps> = ({
                 distinct terms (Half-Yearly and Annual components).
               </li>
               <li>
-                <strong>Classes 9 &amp; 10:</strong> The assessment shifts to a Centralized CBSE Board
-                framework. The Class 10 final exam is a cumulative review testing the entire academic
-                year&apos;s text syllabus.
+                <strong>Classes 9 &amp; 10 (Subject Code 122):</strong> The assessment shifts to the Centralized CBSE Secondary
+                framework. Class 9 studies the NCERT <em>शारदा (Sharda)</em> syllabus with comprehensive grammar appendices (समास, वाच्य, रूप),
+                and Class 10 culminates in the centralized 80-mark Board Examination based on <em>शेमुषी (Shemushi II)</em>.
               </li>
             </ul>
           </div>
