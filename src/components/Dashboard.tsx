@@ -782,6 +782,7 @@ const Dashboard: React.FC = () => {
       else if (anchor?.startsWith('solver-') || target.mathsTab === 'multiplication' || target.mathsTab === 'divisibility') tab = 'solvers';
       else if (anchor?.startsWith('article-') || anchor === 'articles' || anchor === 'spheres-of-certainty' || anchor === 'terracotta-matrix') tab = 'articles';
       else if (target.mathsTab === 'altars') tab = 'geometry';
+      else if (anchor === 'games' || anchor === 'tricks-game' || anchor === 'speed-math' || anchor?.startsWith('game-') || target.mathsTab === 'games') tab = 'games';
       setVedicTarget((prev) => ({ tab, anchor, key: prev.key + 1 }));
       navigateToView('vedic-maths');
       return;

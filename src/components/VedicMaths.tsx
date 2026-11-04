@@ -31,8 +31,10 @@ import { VedicLearningPath } from './VedicLearningPath';
 import VedicArticleFigure from './VedicArticleFigure';
 import { PosterLightbox } from './PosterLightbox';
 import ArticleGamesHub from './ArticleGamesHub';
+import VedicSpeedTricksGame, { type VedicTrickCategory } from './VedicSpeedTricksGame';
 import VedicAltarMastery from './scienceLab/VedicAltarMastery';
 import '../styles/vedic-maths.css';
+import '../styles/vedic-speed-tricks-game.css';
 import '../styles/resources.css';
 
 export type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'kerala' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay' | 'games';
@@ -509,6 +511,8 @@ ${bodyHtml}
   // Article Reader State
   const [selectedArticleId, setSelectedArticleId] = useState<string>('magic-intro');
   const [selectedGameId, setSelectedGameId] = useState<string>('rituparna');
+  const [gamesSubTab, setGamesSubTab] = useState<'tricks' | 'articles'>('tricks');
+  const [activeTrickCategory, setActiveTrickCategory] = useState<VedicTrickCategory>('all');
 
   // Absolute Zero & Place Value States
   const [romanInputNum, setRomanInputNum] = useState<number>(3888);
@@ -729,10 +733,19 @@ ${bodyHtml}
     } else if (clean === 'articles' || clean === 'essay') {
       setActiveTab('articles');
       scrollId = 'vedic-tabs';
-    } else if (clean === 'games' || clean.startsWith('game-')) {
+    } else if (
+      clean === 'games' ||
+      clean === 'tricks-game' ||
+      clean === 'speed-math' ||
+      clean === 'vedic-maths-games' ||
+      clean.startsWith('game-')
+    ) {
       if (clean.startsWith('game-')) {
         const targetGame = clean.replace('game-', '');
         setSelectedGameId(targetGame);
+        setGamesSubTab('articles');
+      } else {
+        setGamesSubTab('tricks');
       }
       setActiveTab('games');
       scrollId = 'vedic-tabs';
@@ -944,6 +957,22 @@ ${bodyHtml}
             </span>
           </p>
         )}
+
+        {/* Quick Game Action Pill */}
+        <div className="vedic-hero-game-pill-row">
+          <button
+            type="button"
+            className="vedic-hero-game-btn"
+            onClick={() => {
+              setGamesSubTab('tricks');
+              setActiveTab('games');
+              const el = document.getElementById('vedic-tabs');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+          >
+            <span>⚡ Play Vedic Maths Speed Tricks Game (60s Blitz &amp; Sutra Arcade) ➔</span>
+          </button>
+        </div>
 
 
         {/* Tab Navigation & Curriculum Track Guide */}
@@ -1238,8 +1267,8 @@ ${bodyHtml}
                     <span className="vedic-tab-num">12</span>
                     <span className="vedic-tab-icon" aria-hidden="true">🎮</span>
                     <div className="vedic-tab-content">
-                      <span className="vedic-tab-title">Games Arena · <span className="sanskrit-safe-text" lang="sa">क्रीडा-शाला</span></span>
-                      <span className="vedic-tab-sub">6 Playable Article Games</span>
+                      <span className="vedic-tab-title">Vedic Maths Tricks Games · <span className="sanskrit-safe-text" lang="sa">क्रीडा-शाला</span></span>
+                      <span className="vedic-tab-sub">Speed Blitz &amp; Article Simulations</span>
                     </div>
                   </button>
                 </div>
@@ -1853,6 +1882,27 @@ ${bodyHtml}
 
         {activeTab === 'solvers' && (
           <div>
+            {/* Quick Link to Vedic Speed Tricks Game */}
+            <div className="solver-game-cta-banner">
+              <div className="sg-cta-text">
+                <span className="sg-cta-badge">🎮 Mental Calculation Speed Game</span>
+                <h3 className="sg-cta-title">Want to test your speed with these Vedic calculation tricks?</h3>
+                <p className="sg-cta-sub">Play the 60-second Speed Blitz, spot fake arithmetic with Bījāṅka, and master mental shortcuts!</p>
+              </div>
+              <button
+                type="button"
+                className="sg-cta-btn"
+                onClick={() => {
+                  setGamesSubTab('tricks');
+                  setActiveTab('games');
+                  const el = document.getElementById('vedic-tabs');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                <span>⚡ Play Vedic Speed Tricks Game ➔</span>
+              </button>
+            </div>
+
           <div className="solver-layout" id="vedic-solver-layout">
             {/* Sidebar with Solver Methods */}
             <aside className="solver-sidebar">
@@ -2009,6 +2059,20 @@ ${bodyHtml}
                       <span className="solver-result-label">{ekaInput}² Calculation Result</span>
                       <span className="solver-result-val">{result.toLocaleString()}</span>
                     </div>
+
+                    <button
+                      type="button"
+                      className="solver-trick-practice-btn"
+                      onClick={() => {
+                        setActiveTrickCategory('ekadhikena-sq');
+                        setGamesSubTab('tricks');
+                        setActiveTab('games');
+                        const el = document.getElementById('vedic-tabs');
+                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }}
+                    >
+                      <span>🎮 Practice Squaring Ending in 5 in Speed Tricks Game ➔</span>
+                    </button>
                   </div>
                 );
               })()}
@@ -8304,19 +8368,56 @@ ${bodyHtml}
         )}
 
         {activeTab === 'games' && (
-          <ArticleGamesHub
-            initialGameId={selectedGameId}
-            onOpenArticle={(slug) => {
-              setActiveTab('articles');
-              const found = VEDIC_ARTICLES.find((a) => a.slug === slug);
-              if (found) selectArticle(found.id);
-              setTimeout(() => {
-                const el = document.getElementById('vedic-tabs');
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }, 60);
-            }}
-            onGoHome={onGoHome}
-          />
+          <div>
+            {/* Games Mode Switch Bar: Speed Tricks Arcade vs Article Games */}
+            <div className="vedic-games-mode-switch-bar">
+              <button
+                type="button"
+                className={`vedic-games-mode-btn${gamesSubTab === 'tricks' ? ' active' : ''}`}
+                onClick={() => setGamesSubTab('tricks')}
+              >
+                <span>⚡ Vedic Speed Tricks Arcade (वैदिक-गणित-गति-स्पर्धा)</span>
+                <span className="vedic-games-mode-badge">60s Blitz &amp; Sutra Mastery</span>
+              </button>
+              <button
+                type="button"
+                className={`vedic-games-mode-btn${gamesSubTab === 'articles' ? ' active' : ''}`}
+                onClick={() => setGamesSubTab('articles')}
+              >
+                <span>🏛️ Heritage Article Simulations (प्राचीन-विज्ञान-क्रीडाः)</span>
+                <span className="vedic-games-mode-badge">6 Historical Interactive Games</span>
+              </button>
+            </div>
+
+            {gamesSubTab === 'tricks' ? (
+              <VedicSpeedTricksGame
+                initialTrick={activeTrickCategory}
+                onOpenSolver={(solverKey) => {
+                  setActiveTab('solvers');
+                  setActiveSolver(solverKey as SolverKey);
+                  setTimeout(() => {
+                    const el = document.getElementById('vedic-solver-layout');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 60);
+                }}
+                onGoHome={onGoHome}
+              />
+            ) : (
+              <ArticleGamesHub
+                initialGameId={selectedGameId}
+                onOpenArticle={(slug) => {
+                  setActiveTab('articles');
+                  const found = VEDIC_ARTICLES.find((a) => a.slug === slug);
+                  if (found) selectArticle(found.id);
+                  setTimeout(() => {
+                    const el = document.getElementById('vedic-tabs');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 60);
+                }}
+                onGoHome={onGoHome}
+              />
+            )}
+          </div>
         )}
 
       </main>
