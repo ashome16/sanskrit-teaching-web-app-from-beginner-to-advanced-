@@ -2384,6 +2384,1016 @@
   font-family: inherit;
 }
 
+/* =========================================================================
+   Gamified RPG Fantasy Quest: HUD, Canvas Themes, Dark Mode & Sprites
+   ========================================================================= */
+
+/* 1. RPG Quest HUD Bar */
+.sgh-trail-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #ffffff 0%, #fffbeb 50%, #fef3c7 100%);
+  border: 2px solid #fde68a;
+  border-radius: 16px;
+  padding: 0.65rem 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.1);
+}
+
+.sgh-hud-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sgh-hud-group--center {
+  flex: 1;
+  justify-content: center;
+  min-width: 200px;
+}
+
+.sgh-hud-group--controls {
+  justify-content: flex-end;
+}
+
+/* Avatar Chip */
+.sgh-hud-avatar-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #ffffff;
+  border: 1.5px solid #f59e0b;
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem 0.25rem 0.45rem;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15);
+}
+
+.sgh-hud-avatar-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.sgh-hud-avatar-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.sgh-hud-avatar-name {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #78350f;
+}
+
+.sgh-hud-avatar-sa {
+  font-size: 0.62rem;
+  color: #b45309;
+  font-weight: 700;
+}
+
+.sgh-hud-avatar-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-left: 0.35rem;
+  padding-left: 0.35rem;
+  border-left: 1px solid #fed7aa;
+}
+
+.sgh-hud-av-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.15rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.15s ease;
+  opacity: 0.65;
+}
+
+.sgh-hud-av-btn:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.sgh-hud-av-btn.is-selected {
+  opacity: 1;
+  background: #fef08a;
+  border-color: #f59e0b;
+  transform: scale(1.12);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+/* Health / Hearts Card */
+.sgh-hud-hearts-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1.5px solid #fecdd3;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  box-shadow: 0 2px 6px rgba(244, 63, 94, 0.12);
+}
+
+.sgh-hud-hearts-row {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.sgh-heart-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.sgh-heart--active {
+  animation: heartPulseIdle 2s infinite ease-in-out;
+}
+
+@keyframes heartPulseIdle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.sgh-heart--broken {
+  opacity: 0.45;
+  filter: grayscale(80%);
+  animation: heartCrackShake 0.4s ease;
+}
+
+@keyframes heartCrackShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px) rotate(-6deg); }
+  75% { transform: translateX(3px) rotate(6deg); }
+}
+
+.sgh-infinite-heart {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #059669;
+}
+
+.sgh-hud-mode-toggle {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 0.18rem 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sgh-hud-mode-toggle:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Loot Pouch */
+.sgh-hud-loot-pouch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #ffffff;
+  border: 1.5px solid #fde68a;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.1);
+}
+
+.sgh-loot-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #78350f;
+}
+
+.sgh-loot-chip span {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Speedrun Stopwatch */
+.sgh-hud-timer-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.sgh-timer-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.sgh-timer-val {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.sgh-timer-rank {
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+  background: #f8fafc;
+}
+
+/* Tool Buttons & Theme Picker */
+.sgh-hud-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 0.28rem 0.65rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sgh-hud-tool-btn:hover {
+  border-color: #64748b;
+  transform: translateY(-1px);
+}
+
+.sgh-hud-tool-btn.is-active {
+  background: #0284c7;
+  border-color: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+}
+
+.sgh-hud-tool-btn small {
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.sgh-hud-theme-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 0.2rem 0.4rem;
+}
+
+.sgh-theme-dot {
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  padding: 0.18rem;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  opacity: 0.7;
+}
+
+.sgh-theme-dot:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.sgh-theme-dot.is-active {
+  opacity: 1;
+  background: #f1f5f9;
+  border-color: #f59e0b;
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.sgh-dark-toggle.is-active {
+  background: #0f172a;
+  border-color: #38bdf8;
+  color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+}
+
+/* =========================================================================
+   2. Dynamic Map Canvases (Temple Floor, Jungle Trail, Grove, Cosmic)
+   ========================================================================= */
+.sgh-maze-arena-canvas {
+  position: relative;
+  border-radius: 20px;
+  padding: 1.25rem 1rem 1.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.35s ease;
+  overflow: visible;
+}
+
+/* Theme 1: Ancient Temple Floor (प्राचीन-देवालयः) */
+.sgh-theme-temple {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.16), transparent 55%),
+    radial-gradient(circle at 50% 100%, rgba(217, 119, 6, 0.14), transparent 50%),
+    linear-gradient(135deg, #fffbeb 0%, #fef3c7 45%, #fde68a 100%);
+  border: 3px solid #d97706;
+  box-shadow:
+    inset 0 0 45px rgba(180, 83, 9, 0.12),
+    0 10px 30px rgba(217, 119, 6, 0.15);
+}
+
+/* Theme 2: Dense Jungle Trail (गहन-काननम्) */
+.sgh-theme-jungle {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(34, 197, 94, 0.2), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(16, 185, 129, 0.18), transparent 50%),
+    linear-gradient(135deg, #f0fdf4 0%, #dcfce7 45%, #bbf7d0 100%);
+  border: 3px solid #15803d;
+  box-shadow:
+    inset 0 0 45px rgba(21, 128, 61, 0.14),
+    0 10px 30px rgba(21, 128, 61, 0.15);
+}
+
+/* Theme 3: Tapovan Grove (तपोवनम्) */
+.sgh-theme-grove {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.2), transparent 50%),
+    radial-gradient(circle at 20% 85%, rgba(168, 85, 247, 0.15), transparent 50%),
+    linear-gradient(135deg, #f8fafc 0%, #f1f5f9 45%, #e2e8f0 100%);
+  border: 3px solid #0284c7;
+  box-shadow:
+    inset 0 0 45px rgba(2, 132, 199, 0.12),
+    0 10px 30px rgba(2, 132, 199, 0.15);
+}
+
+/* Theme 4: Starlit Cosmic Sky (नक्षत्र-मण्डलम्) */
+.sgh-theme-cosmic {
+  background:
+    radial-gradient(2px 2px at 30px 40px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 100px 90px, #fde047, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 180px 140px, #38bdf8, rgba(0,0,0,0)),
+    radial-gradient(circle at 50% 25%, rgba(99, 102, 241, 0.28), transparent 60%),
+    linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  border: 3px solid #6366f1;
+  box-shadow:
+    inset 0 0 55px rgba(99, 102, 241, 0.35),
+    0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================================================
+   3. Cyber-Vedic High-Contrast Dark Mode
+   ========================================================================= */
+.sgh-trail--dark-mode {
+  background: #090d16 !important;
+  border-color: #38bdf8 !important;
+  box-shadow:
+    inset 0 0 70px rgba(15, 23, 42, 0.95),
+    0 0 35px rgba(56, 189, 248, 0.25) !important;
+}
+
+.sgh-trail--dark-mode .sgh-maze-cell {
+  background: #111827;
+  border-color: #374151;
+  color: #f3f4f6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.sgh-trail--dark-mode .sgh-mc-word {
+  color: #67e8f9;
+  text-shadow: 0 0 10px rgba(103, 232, 249, 0.55);
+}
+
+.sgh-trail--dark-mode .sgh-mc-roman {
+  color: #cbd5e1;
+}
+
+.sgh-trail--dark-mode .sgh-mc-trans {
+  color: #94a3b8;
+}
+
+.sgh-trail--dark-mode .sgh-maze-cell--stepped {
+  background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+  border-color: #10b981;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.45);
+}
+
+.sgh-trail--dark-mode .sgh-maze-cell--stepped .sgh-mc-word {
+  color: #a7f3d0;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+}
+
+.sgh-trail--dark-mode .sgh-maze-cell--current,
+.sgh-trail--dark-mode .sgh-maze-cell--valid-adjacent {
+  border-color: #f59e0b;
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.6);
+}
+
+.sgh-trail--dark-mode .sgh-maze-cell--trap {
+  background: #450a0a;
+  border-color: #ef4444;
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.5);
+}
+
+.sgh-trail--dark-mode .sgh-maze-cell--neighbor {
+  border-color: #38bdf8;
+  background: #0f172a;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+}
+
+/* =========================================================================
+   4. Vibrant Illustration Cards Layout & Medallions
+   ========================================================================= */
+.sgh-maze-cell {
+  position: relative;
+  min-height: 94px;
+  padding: 0.55rem 0.4rem 0.5rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  border: 2.5px solid #ffedd5;
+  background: #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: visible;
+}
+
+.sgh-mc-top-bar {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.sgh-mc-illustration-frame {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.15rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.sgh-maze-cell:hover .sgh-mc-illustration-frame {
+  transform: scale(1.15) rotate(4deg);
+}
+
+.sgh-mc-icon-art {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+/* Medallion Categories */
+.sgh-frame--fruit {
+  background: radial-gradient(circle, #fef08a 0%, #fde68a 100%);
+  border: 1.5px solid #f59e0b;
+}
+
+.sgh-frame--animal {
+  background: radial-gradient(circle, #dcfce7 0%, #bbf7d0 100%);
+  border: 1.5px solid #16a34a;
+}
+
+.sgh-frame--sacred {
+  background: radial-gradient(circle, #ffedd5 0%, #fed7aa 100%);
+  border: 1.5px solid #ea580c;
+}
+
+.sgh-frame--trap {
+  background: radial-gradient(circle, #fee2e2 0%, #fecaca 100%);
+  border: 1.5px solid #ef4444;
+}
+
+.sgh-frame--action {
+  background: radial-gradient(circle, #e0f2fe 0%, #bae6fd 100%);
+  border: 1.5px solid #0284c7;
+}
+
+.sgh-frame--nature {
+  background: radial-gradient(circle, #f1f5f9 0%, #e2e8f0 100%);
+  border: 1.5px solid #94a3b8;
+}
+
+/* Traversed Lotus Footprint */
+.sgh-mc-lotus-footprint {
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+  font-size: 0.85rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 4px #f59e0b);
+  opacity: 0.88;
+}
+
+/* Collectible Loot Sparkle Badge on Cell */
+.sgh-cell-loot-sparkle {
+  margin-left: auto;
+  font-size: 1.15rem;
+  line-height: 1;
+  animation: lootBob 1.6s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 6px #f59e0b);
+}
+
+@keyframes lootBob {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-4px) scale(1.18); }
+}
+
+/* =========================================================================
+   5. Player Character Walking Sprite Token
+   ========================================================================= */
+.sgh-player-sprite-token {
+  position: absolute;
+  top: -16px;
+  right: -8px;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  padding: 0.15rem 0.45rem 0.15rem 0.35rem;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.45);
+  animation: spriteWalkHop 0.65s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.sgh-sprite-glyph {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.sgh-sprite-label {
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+@keyframes spriteWalkHop {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(4deg); }
+  100% { transform: translateY(-12px) rotate(-4deg); }
+}
+
+/* =========================================================================
+   6. Subtle Golden Guide Aura on Valid Adjacent Next Steps
+   ========================================================================= */
+.sgh-maze-cell--valid-adjacent {
+  border-color: #f59e0b !important;
+  animation: validAdjacentAura 2s ease-in-out infinite;
+}
+
+@keyframes validAdjacentAura {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.4), 0 0 12px rgba(245, 158, 11, 0.2);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(245, 158, 11, 0.65), 0 0 20px rgba(245, 158, 11, 0.4);
+    transform: translateY(-2px);
+  }
+}
+
+/* =========================================================================
+   7. Fog of War Veil
+   ========================================================================= */
+.sgh-maze-cell--fogged {
+  filter: blur(0);
+  cursor: help;
+  background: #64748b !important;
+  border-color: #475569 !important;
+}
+
+.sgh-fog-veil {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: radial-gradient(circle, rgba(148, 163, 184, 0.95) 0%, rgba(71, 85, 105, 0.96) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  z-index: 8;
+  backdrop-filter: blur(4px);
+  animation: mistPulse 3.5s ease-in-out infinite alternate;
+}
+
+.sgh-fog-icon {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.sgh-fog-rune {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #cbd5e1;
+}
+
+@keyframes mistPulse {
+  0% { opacity: 0.88; }
+  100% { opacity: 0.97; }
+}
+
+/* =========================================================================
+   8. Floating Loot Pickup Toast
+   ========================================================================= */
+.sgh-floating-loot-toast {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 100%);
+  color: #78350f;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 900;
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.45);
+  animation: floatLootToast 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+.sgh-flt-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+@keyframes floatLootToast {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 15px) scale(0.85);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -5px) scale(1.05);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -35px) scale(0.9);
+  }
+}
+
+/* =========================================================================
+   9. Game Over Stamina Modal
+   ========================================================================= */
+.sgh-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: sghFadeIn 0.25s ease;
+}
+
+.sgh-gameover-card {
+  background: #ffffff;
+  border: 3px solid #ef4444;
+  border-radius: 20px;
+  max-width: 440px;
+  width: 100%;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(239, 68, 68, 0.3);
+  animation: sghScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sgh-gameover-icon {
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  animation: heartCrackShake 0.6s ease infinite alternate;
+}
+
+.sgh-gameover-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #991b1b;
+}
+
+.sgh-gameover-card p {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.sgh-gameover-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.sgh-gameover-btn {
+  padding: 0.65rem 1.1rem;
+  border-radius: 12px;
+  font-size: 0.94rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.sgh-gameover-btn--revive {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.sgh-gameover-btn--revive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.sgh-gameover-btn--casual {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.sgh-gameover-btn--restart {
+  background: transparent;
+  color: #64748b;
+}
+
+/* =========================================================================
+   10. Level Clear Victory Modal & Confetti Burst
+   ========================================================================= */
+.sgh-confetti-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.sgh-confetti-piece {
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 18px;
+  opacity: 0.9;
+  border-radius: 3px;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg) skewX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg) skewX(20deg);
+    opacity: 0;
+  }
+}
+
+.sgh-victory-modal-card {
+  position: relative;
+  z-index: 1001;
+  background: linear-gradient(135deg, #ffffff 0%, #fffbeb 50%, #fef3c7 100%);
+  border: 3.5px solid #f59e0b;
+  border-radius: 24px;
+  max-width: 540px;
+  width: 100%;
+  padding: 1.85rem 1.65rem;
+  box-shadow:
+    0 25px 60px rgba(245, 158, 11, 0.35),
+    0 0 35px rgba(245, 158, 11, 0.2);
+  text-align: center;
+  animation: sghScaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sgh-vm-header {
+  margin-bottom: 1.1rem;
+}
+
+.sgh-vm-avatar-hero {
+  font-size: 3.2rem;
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  animation: spriteWalkHop 0.8s infinite alternate ease-in-out;
+}
+
+.sgh-vm-stars {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.sgh-vm-title {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #78350f;
+  letter-spacing: 0.02em;
+}
+
+.sgh-vm-sanskrit {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #b45309;
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.sgh-vm-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 1.15rem;
+}
+
+.sgh-vm-stat-box {
+  background: #ffffff;
+  border: 1.5px solid #fde68a;
+  border-radius: 14px;
+  padding: 0.6rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.sgh-vm-stat-lbl {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.sgh-vm-stat-val {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.sgh-vm-stat-sub {
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+/* Completed Inscription Story Box */
+.sgh-vm-story-box {
+  background: #ffffff;
+  border: 1.5px solid #fde68a;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+
+.sgh-vm-story-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #92400e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.sgh-vm-story-dev {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #78350f;
+  line-height: 1.4;
+}
+
+.sgh-vm-story-en {
+  margin: 0 0 0.45rem;
+  font-size: 0.86rem;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.sgh-vm-moral {
+  background: #fffbeb;
+  border-left: 3px solid #f59e0b;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.82rem;
+  color: #78350f;
+}
+
+.sgh-vm-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.sgh-vm-btn {
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.sgh-vm-btn--audio {
+  background: #fef3c7;
+  border: 1.5px solid #fde68a;
+  color: #78350f;
+}
+
+.sgh-vm-btn--audio:hover {
+  background: #fde68a;
+  transform: scale(1.04);
+}
+
+.sgh-vm-btn--replay {
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+}
+
+.sgh-vm-btn--replay:hover {
+  background: #e2e8f0;
+}
+
+.sgh-vm-btn--next {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.35);
+}
+
+.sgh-vm-btn--next:hover {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.45);
+}
+
+@keyframes sghFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes sghScaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .sgh-trail-hud {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sgh-hud-group {
+    justify-content: center;
+  }
+  .sgh-vm-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .sgh-blitz-options-grid {
     grid-template-columns: 1fr;

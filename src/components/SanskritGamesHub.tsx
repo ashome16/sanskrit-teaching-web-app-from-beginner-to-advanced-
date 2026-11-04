@@ -142,6 +142,189 @@ function getMatchLevelForCategory(catId?: string): GameLevelFilter {
   return 'level1';
 }
 
+export type PlayerAvatar = 'bodhi' | 'ganesha' | 'archer' | 'scout';
+
+export interface AvatarMeta {
+  id: PlayerAvatar;
+  name: string;
+  sanskrit: string;
+  icon: string;
+  desc: string;
+}
+
+export const AVATARS: Record<PlayerAvatar, AvatarMeta> = {
+  bodhi: {
+    id: 'bodhi',
+    name: 'Bodhi',
+    sanskrit: 'ऋषि-कुमारः',
+    icon: '🧙‍♂️',
+    desc: 'Wise young Sanskrit seeker from the Gurukul',
+  },
+  ganesha: {
+    id: 'ganesha',
+    name: 'Ganesha',
+    sanskrit: 'बाल-गणेशः',
+    icon: '🐘',
+    desc: 'Loving elephant god seeking sweet treats & Modak',
+  },
+  archer: {
+    id: 'archer',
+    name: 'Prince Rama',
+    sanskrit: 'वीर-धनुर्धरः',
+    icon: '🏹',
+    desc: 'Courageous hero of the forest trail',
+  },
+  scout: {
+    id: 'scout',
+    name: 'Vanachara',
+    sanskrit: 'वनचरः',
+    icon: '🦁',
+    desc: 'Agile forest tracker befriending animals',
+  },
+};
+
+export type TrailTheme = 'temple' | 'jungle' | 'grove' | 'cosmic';
+
+export interface ThemeMeta {
+  id: TrailTheme;
+  name: string;
+  sanskrit: string;
+  icon: string;
+}
+
+export const TRAIL_THEMES: Record<TrailTheme, ThemeMeta> = {
+  temple: {
+    id: 'temple',
+    name: 'Ancient Temple',
+    sanskrit: 'प्राचीन-देवालयः',
+    icon: '🛕',
+  },
+  jungle: {
+    id: 'jungle',
+    name: 'Dense Jungle',
+    sanskrit: 'गहन-काननम्',
+    icon: '🌴',
+  },
+  grove: {
+    id: 'grove',
+    name: 'Tapovan Grove',
+    sanskrit: 'तपोवन-कुटीरम्',
+    icon: '🪷',
+  },
+  cosmic: {
+    id: 'cosmic',
+    name: 'Starlit Cosmic',
+    sanskrit: 'नक्षत्र-लोकः',
+    icon: '🌌',
+  },
+};
+
+export function formatTime(totalSec: number): string {
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+}
+
+export function getSpeedrunRank(sec: number): { rank: string; badge: string; color: string } {
+  if (sec <= 20) return { rank: 'S-Rank Legendary', badge: '⚡ S-Rank', color: '#f59e0b' };
+  if (sec <= 38) return { rank: 'A-Rank Master', badge: '🥇 A-Rank', color: '#10b981' };
+  if (sec <= 60) return { rank: 'B-Rank Explorer', badge: '🥈 B-Rank', color: '#38bdf8' };
+  return { rank: 'C-Rank Seeker', badge: '🥉 C-Rank', color: '#a855f7' };
+}
+
+export interface LootItem {
+  type: 'coin' | 'gem' | 'scroll';
+  icon: string;
+  label: string;
+  points: number;
+}
+
+export function getCellLoot(_questId: string, cell: MazeCell): LootItem | null {
+  if (cell.isPath && (cell.stepOrder === 2 || cell.stepOrder === 5)) {
+    return { type: 'coin', icon: '🪙', label: '+10 🪙 Gold Coin!', points: 10 };
+  }
+  if (cell.isPath && cell.stepOrder === 4) {
+    return { type: 'gem', icon: '💎', label: '+25 💎 Mani Gem!', points: 25 };
+  }
+  if (cell.isPath && cell.stepOrder === 6) {
+    return { type: 'scroll', icon: '📜', label: '+50 📜 Sacred Lore Scroll!', points: 50 };
+  }
+  return null;
+}
+
+export function getCellVisual(
+  word: string,
+  translation: string,
+  isPath: boolean
+): { icon: string; category: 'fruit' | 'animal' | 'trap' | 'sacred' | 'nature' | 'action' } {
+  const emojiMatch = translation.match(/(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u);
+  let icon = emojiMatch ? emojiMatch[1] : '';
+
+  if (!icon) {
+    if (/आम्र/i.test(word)) icon = '🥭';
+    else if (/कदली/i.test(word)) icon = '🍌';
+    else if (/सेव/i.test(word)) icon = '🍎';
+    else if (/द्राक्षा/i.test(word)) icon = '🍇';
+    else if (/नारङ्ग/i.test(word)) icon = '🍊';
+    else if (/दाडिम/i.test(word)) icon = '❤️';
+    else if (/मोदक/i.test(word)) icon = '🥟';
+    else if (/गणेश/i.test(word)) icon = '🐘';
+    else if (/धेनु/i.test(word)) icon = '🐮';
+    else if (/श्वा|श्वान/i.test(word)) icon = '🐶';
+    else if (/बिडाल/i.test(word)) icon = '🐱';
+    else if (/मूषक/i.test(word)) icon = '🐭';
+    else if (/वानर/i.test(word)) icon = '🐒';
+    else if (/मयूर/i.test(word)) icon = '🦚';
+    else if (/गज/i.test(word)) icon = '🐘';
+    else if (/सिंह/i.test(word)) icon = '🦁';
+    else if (/काक/i.test(word)) icon = '🦅';
+    else if (/घट/i.test(word)) icon = '🏺';
+    else if (/जल/i.test(word)) icon = '💧';
+    else if (/पिब/i.test(word)) icon = '🥤';
+    else if (/पाषाण/i.test(word)) icon = '🪨';
+    else if (/उपानह/i.test(word)) icon = '👟';
+    else if (/कन्दुक/i.test(word)) icon = '⚽';
+    else if (/सम्मार्जनी/i.test(word)) icon = '🧹';
+    else if (/घटी/i.test(word)) icon = '⏰';
+    else if (/ताल/i.test(word)) icon = '🔒';
+    else if (/चक्र/i.test(word)) icon = '🛞';
+    else if (/छत्र/i.test(word)) icon = '☂️';
+    else if (/दीपक/i.test(word)) icon = '🪔';
+    else if (/वृक्ष/i.test(word)) icon = '🌳';
+    else if (/पुष्प/i.test(word)) icon = '🌸';
+    else if (/आकाश/i.test(word)) icon = '🌌';
+    else if (/सूर्य/i.test(word)) icon = '☀️';
+    else if (/चन्द्र/i.test(word)) icon = '🌙';
+    else if (/वायु/i.test(word)) icon = '💨';
+    else if (/अग्नि/i.test(word)) icon = '🔥';
+    else if (/भूमि/i.test(word)) icon = '🌍';
+    else if (/बालक/i.test(word)) icon = '👦';
+    else if (/चिकित्सा/i.test(word)) icon = '🏥';
+    else if (/वाहन/i.test(word)) icon = '🚗';
+    else if (/साहाय्य/i.test(word)) icon = '🤝';
+    else if (/पठ/i.test(word)) icon = '📖';
+    else if (/लिख/i.test(word)) icon = '✍️';
+    else if (/खाद/i.test(word)) icon = '🍽️';
+    else if (/गच्छ/i.test(word)) icon = '🚶';
+    else icon = isPath ? '✨' : '⚠️';
+  }
+
+  let category: 'fruit' | 'animal' | 'trap' | 'sacred' | 'nature' | 'action' = 'nature';
+  if (/आम्र|कदली|सेव|द्राक्षा|नारङ्ग|दाडिम|मोदक|फल|शाक|पलाण्डु|मूलक/i.test(word)) {
+    category = 'fruit';
+  } else if (/धेनु|श्वा|बिडाल|मूषक|वानर|मयूर|गज|सिंह|काक|मृग|व्याघ्र|शशक|पशु/i.test(word)) {
+    category = 'animal';
+  } else if (/गणेश|शिव|विष्णु|राम|कृष्ण|ऋषि|सूर्य|चन्द्र|दीपक/i.test(word)) {
+    category = 'sacred';
+  } else if (!isPath || /पाषाण|उपानह|कन्दुक|सम्मार्जनी|घटी|ताल|चक्र|छत्र/i.test(word)) {
+    category = isPath ? 'nature' : 'trap';
+  } else if (/पठ|लिख|खाद|पिब|गच्छ|धाव्|क्रीड्|अस्ति|भवति|करोति/i.test(word)) {
+    category = 'action';
+  }
+
+  return { icon, category };
+}
+
 export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   initialMode = 'match',
   initialCategory,
@@ -666,6 +849,38 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   const [trapMessage, setTrapMessage] = useState<string | null>(null);
   const [hintedStep, setHintedStep] = useState<number | null>(null);
 
+  // Gamified RPG Fantasy Quest States
+  const [selectedAvatar, setSelectedAvatar] = useState<PlayerAvatar>('bodhi');
+  const [questTheme, setQuestTheme] = useState<TrailTheme>('temple');
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        return localStorage.getItem('sgh_trail_dark_mode') === 'true';
+      } catch {}
+    }
+    return false;
+  });
+  const [fogOfWar, setFogOfWar] = useState<boolean>(false);
+  const [rpgMode, setRpgMode] = useState<'hero' | 'casual'>('hero');
+  const [hearts, setHearts] = useState<number>(3);
+  const [isGameOver, setIsGameOver] = useState<boolean>(false);
+  const [collectedLootIds, setCollectedLootIds] = useState<Set<string>>(new Set());
+  const [lootScores, setLootScores] = useState<{ coins: number; gems: number; scrolls: number }>({
+    coins: 0,
+    gems: 0,
+    scrolls: 0,
+  });
+  const [floatingLootToast, setFloatingLootToast] = useState<{
+    id: number;
+    icon: string;
+    label: string;
+  } | null>(null);
+  const [timerSeconds, setTimerSeconds] = useState<number>(0);
+  const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
+  const [showQuestVictoryModal, setShowQuestVictoryModal] = useState<boolean>(false);
+
+  const speedrunRank = useMemo(() => getSpeedrunRank(timerSeconds), [timerSeconds]);
+
   // Traffic visual scene interactive hotspot state
   const [trafficHotspot, setTrafficHotspot] = useState<{
     word: string;
@@ -692,6 +907,31 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     setTrapCell(null);
     setTrapMessage(null);
     setHintedStep(null);
+    setHearts(3);
+    setIsGameOver(false);
+    setShowQuestVictoryModal(false);
+    setTimerSeconds(0);
+    setIsTimerRunning(false);
+    setCollectedLootIds(new Set());
+    setLootScores({ coins: 0, gems: 0, scrolls: 0 });
+
+    // Intelligently default theme for the quest
+    if (
+      activeQuest.id === 'maze_preschool_animal_friends' ||
+      activeQuest.id === 'maze_lion_mouse' ||
+      activeQuest.id === 'maze_thirsty_crow'
+    ) {
+      setQuestTheme('jungle');
+    } else if (
+      activeQuest.id === 'maze_preschool_ganesha_fruits' ||
+      activeQuest.id === 'maze_preschool_numbers_1_10'
+    ) {
+      setQuestTheme('temple');
+    } else if (activeQuest.id === 'maze_srishti_krama') {
+      setQuestTheme('cosmic');
+    } else {
+      setQuestTheme('grove');
+    }
   }, [activeQuest]);
 
   const totalPathSteps = useMemo(() => {
@@ -704,6 +944,19 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
 
   const lastSteppedCell = steppedCells.length > 0 ? steppedCells[steppedCells.length - 1] : null;
   const isMazeCompleted = steppedCells.length >= totalPathSteps;
+
+  // Stopwatch timer ticker
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval> | null = null;
+    if (isTimerRunning && !isMazeCompleted) {
+      interval = setInterval(() => {
+        setTimerSeconds((prev) => prev + 1);
+      }, 1000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isTimerRunning, isMazeCompleted]);
 
   const steppedOrders = useMemo(() => {
     return new Set(steppedCells.map((c) => c.stepOrder).filter(Boolean) as number[]);
@@ -726,9 +979,17 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   };
 
   const handleMazeCellClick = (cell: MazeCell) => {
-    if (isMazeCompleted) return;
+    if (isGameOver) return;
+    if (isMazeCompleted) {
+      playPronunciation(cell.word);
+      return;
+    }
 
     if (cell.isPath && cell.stepOrder === currentMazeStep) {
+      if (!isTimerRunning && steppedCells.length === 0) {
+        setIsTimerRunning(true);
+      }
+      soundEffects.playFootstepSoft();
       if (activeQuest.id === 'maze_preschool_ganesha_fruits') {
         soundEffects.playFruitHarvestPop();
       } else {
@@ -741,6 +1002,24 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
       setTrapMessage(null);
       setHintedStep(null);
 
+      // Collectible Loot Pickup
+      const cellLoot = getCellLoot(activeQuest.id, cell);
+      if (cellLoot && !collectedLootIds.has(`${cell.row}-${cell.col}`)) {
+        setCollectedLootIds((prev) => new Set(prev).add(`${cell.row}-${cell.col}`));
+        setLootScores((prev) => ({
+          coins: prev.coins + (cellLoot.type === 'coin' ? cellLoot.points : 0),
+          gems: prev.gems + (cellLoot.type === 'gem' ? 1 : 0),
+          scrolls: prev.scrolls + (cellLoot.type === 'scroll' ? 1 : 0),
+        }));
+        setFloatingLootToast({ id: Date.now(), icon: cellLoot.icon, label: cellLoot.label });
+        soundEffects.playLootPickup();
+        setTimeout(() => setFloatingLootToast(null), 1800);
+      }
+
+      if (fogOfWar) {
+        soundEffects.playFogReveal();
+      }
+
       if (activeQuest.id === 'maze_preschool_ganesha_fruits') {
         if (cell.stepOrder === 7) {
           // Sweet Modak is collected!
@@ -750,15 +1029,28 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
           }, 650);
         } else if (cell.stepOrder === 8) {
           // Final goal: Ganesha reached with Modak in hand!
+          setIsTimerRunning(false);
           soundEffects.playVictoryFanfare();
-          awardStars(5);
+          soundEffects.playRetro8BitVictory();
+          awardStars(10);
           setTimeout(() => {
             speakAsBodhi("Modakahasta Shri Ganesha! Baby Ganesha happily received his favourite sweet Modak in his hand!", { lang: 'en' });
-          }, 600);
+            setShowQuestVictoryModal(true);
+          }, 700);
         }
       } else if (cell.stepOrder === totalPathSteps) {
+        setIsTimerRunning(false);
         soundEffects.playVictoryFanfare();
-        awardStars(5);
+        soundEffects.playRetro8BitVictory();
+        if (
+          activeQuest.id === 'maze_preschool_animal_friends' ||
+          activeQuest.id === 'maze_lion_mouse' ||
+          cell.word === 'सिंहः'
+        ) {
+          setTimeout(() => soundEffects.playLionRoar(), 900);
+        }
+        awardStars(10);
+        setTimeout(() => setShowQuestVictoryModal(true), 600);
       }
     } else if (cell.isPath && (cell.stepOrder || 0) < currentMazeStep) {
       playPronunciation(cell.word);
@@ -770,7 +1062,16 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
       );
       setTimeout(() => setTrapCell(null), 1400);
     } else {
-      if (isPreschoolMaze) {
+      if (rpgMode === 'hero') {
+        soundEffects.playHeartDamage();
+        setHearts((prev) => {
+          const nextH = Math.max(0, prev - 1);
+          if (nextH === 0) {
+            setTimeout(() => setIsGameOver(true), 400);
+          }
+          return nextH;
+        });
+      } else if (isPreschoolMaze) {
         soundEffects.playEncouragementDing();
       } else {
         soundEffects.playErrorBuzzer();
@@ -806,6 +1107,19 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     setTrapCell(null);
     setTrapMessage(null);
     setHintedStep(null);
+    setHearts(3);
+    setIsGameOver(false);
+    setShowQuestVictoryModal(false);
+    setTimerSeconds(0);
+    setIsTimerRunning(false);
+  };
+
+  const handleNextQuest = () => {
+    const currentIndex = WORD_MAZE_QUESTS.findIndex((q) => q.id === activeQuest.id);
+    const nextQuest = WORD_MAZE_QUESTS[(currentIndex + 1) % WORD_MAZE_QUESTS.length];
+    if (nextQuest) {
+      setSelectedQuestId(nextQuest.id);
+    }
   };
 
   const handleHearNextMazeWord = () => {
@@ -1588,6 +1902,149 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
               </div>
             </div>
 
+            {/* Gamified RPG Fantasy Quest HUD */}
+            <div className="sgh-trail-hud" role="region" aria-label="Quest HUD & Game Controls">
+              {/* Group 1: Avatar & Health */}
+              <div className="sgh-hud-group">
+                <div className="sgh-hud-avatar-chip" title="Selected Hero Avatar">
+                  <span className="sgh-hud-avatar-icon">{AVATARS[selectedAvatar].icon}</span>
+                  <div className="sgh-hud-avatar-meta">
+                    <span className="sgh-hud-avatar-name">{AVATARS[selectedAvatar].name}</span>
+                    <span className="sgh-hud-avatar-sa">{AVATARS[selectedAvatar].sanskrit.split(' ')[0]}</span>
+                  </div>
+                  <div className="sgh-hud-avatar-switcher" role="group" aria-label="Choose Character Sprite">
+                    {(Object.keys(AVATARS) as PlayerAvatar[]).map((avKey) => (
+                      <button
+                        key={avKey}
+                        type="button"
+                        className={`sgh-hud-av-btn${selectedAvatar === avKey ? ' is-selected' : ''}`}
+                        onClick={() => {
+                          setSelectedAvatar(avKey);
+                          soundEffects.playStrokeChime();
+                        }}
+                        title={`${AVATARS[avKey].name} (${AVATARS[avKey].sanskrit})`}
+                      >
+                        {AVATARS[avKey].icon}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div
+                  className="sgh-hud-hearts-card"
+                  title={rpgMode === 'hero' ? `${hearts} of 3 Hearts remaining` : 'Casual Mode (Infinite Hearts)'}
+                >
+                  <div className="sgh-hud-hearts-row">
+                    {rpgMode === 'hero' ? (
+                      [1, 2, 3].map((hIndex) => (
+                        <span
+                          key={hIndex}
+                          className={`sgh-heart-icon${hIndex <= hearts ? ' sgh-heart--active' : ' sgh-heart--broken'}`}
+                        >
+                          {hIndex <= hearts ? '❤️' : '💔'}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="sgh-infinite-heart">💚 Casual (∞)</span>
+                    )}
+                  </div>
+                  <button
+                    type="button"
+                    className="sgh-hud-mode-toggle"
+                    onClick={() => {
+                      setRpgMode((m) => (m === 'hero' ? 'casual' : 'hero'));
+                      soundEffects.playStrokeChime();
+                    }}
+                    title="Switch between 3-Heart Hero Mode and Infinite Casual Mode"
+                  >
+                    {rpgMode === 'hero' ? '⚔️ Hero Mode' : '🌱 Casual Mode'}
+                  </button>
+                </div>
+              </div>
+
+              {/* Group 2: Loot Pouch & Speedrun Stopwatch */}
+              <div className="sgh-hud-group sgh-hud-group--center">
+                <div className="sgh-hud-loot-pouch" title="Collected Quest Loot">
+                  <span className="sgh-loot-chip" title="Gold Coins (+10 XP)">
+                    <span>🪙</span>
+                    <strong>{lootScores.coins}</strong>
+                  </span>
+                  <span className="sgh-loot-chip" title="Vedic Gems (+25 XP)">
+                    <span>💎</span>
+                    <strong>{lootScores.gems}</strong>
+                  </span>
+                  <span className="sgh-loot-chip" title="Sacred Palm Scrolls (+50 XP)">
+                    <span>📜</span>
+                    <strong>{lootScores.scrolls}</strong>
+                  </span>
+                </div>
+
+                <div className="sgh-hud-timer-chip" title="Speedrun Stopwatch">
+                  <span className="sgh-timer-icon">⏱️</span>
+                  <strong className="sgh-timer-val">{formatTime(timerSeconds)}</strong>
+                  <span className="sgh-timer-rank" style={{ color: speedrunRank.color }}>
+                    {speedrunRank.badge}
+                  </span>
+                </div>
+              </div>
+
+              {/* Group 3: Environment Theme, Fog of War & High-Contrast Dark Mode */}
+              <div className="sgh-hud-group sgh-hud-group--controls">
+                <button
+                  type="button"
+                  className={`sgh-hud-tool-btn${fogOfWar ? ' is-active' : ''}`}
+                  onClick={() => {
+                    setFogOfWar((f) => {
+                      const next = !f;
+                      if (next) soundEffects.playFogReveal();
+                      else soundEffects.playStrokeChime();
+                      return next;
+                    });
+                  }}
+                  title="Fog of War: Hides tiles in mist until you step close"
+                >
+                  <span>🌫️ Fog</span>
+                  <small>{fogOfWar ? 'ON' : 'OFF'}</small>
+                </button>
+
+                <div className="sgh-hud-theme-picker" role="group" aria-label="Select Map Theme">
+                  {(Object.keys(TRAIL_THEMES) as TrailTheme[]).map((thmKey) => (
+                    <button
+                      key={thmKey}
+                      type="button"
+                      className={`sgh-theme-dot${questTheme === thmKey ? ' is-active' : ''}`}
+                      onClick={() => {
+                        setQuestTheme(thmKey);
+                        soundEffects.playStrokeChime();
+                      }}
+                      title={`${TRAIL_THEMES[thmKey].name} (${TRAIL_THEMES[thmKey].sanskrit})`}
+                    >
+                      <span>{TRAIL_THEMES[thmKey].icon}</span>
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  className={`sgh-hud-tool-btn sgh-dark-toggle${isDarkMode ? ' is-active' : ''}`}
+                  onClick={() => {
+                    setIsDarkMode((d) => {
+                      const next = !d;
+                      try {
+                        localStorage.setItem('sgh_trail_dark_mode', String(next));
+                      } catch {}
+                      soundEffects.playStrokeChime();
+                      return next;
+                    });
+                  }}
+                  title="Toggle Cyber-Vedic High-Contrast Dark Theme with neon text borders"
+                >
+                  <span>{isDarkMode ? '☀️' : '🌙'}</span>
+                  <small>{isDarkMode ? 'Light' : 'Dark'}</small>
+                </button>
+              </div>
+            </div>
+
             {/* Prominent Mission Objective Callout with Large Font & Audio Button */}
             <div className="sgh-maze-mission-callout" role="region" aria-label="Mission Objective">
               <span className="sgh-maze-mission-icon" aria-hidden="true">🎯</span>
@@ -2014,250 +2471,494 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
               </div>
             )}
 
-            {/* Interactive Ganesha Fruit & Modak Offering Stage (Preschool Special) */}
-            {activeQuest.id === 'maze_preschool_ganesha_fruits' && (
-              <div className="sgh-ganesha-stage" role="region" aria-label="Ganesha Fruit and Modak Feast Stage">
-                <div className="sgh-ganesha-stage-header">
-                  {/* Ganesha Avatar with Modak in Hand overlay */}
-                  <div className="sgh-ganesha-avatar-card">
-                    <div className="sgh-ganesha-avatar-frame">
-                      <img
-                        src="/preschool/festivals/ganesha.webp"
-                        alt="Baby Ganesha"
-                        className="sgh-ganesha-img"
-                        width={110}
-                        height={110}
-                      />
-                      {isGaneshaReached ? (
-                        <div className="sgh-ganesha-modak-hand" title="मोदकहस्तः · Sweet Modak in Ganesha's Hand!">
-                          <span className="sgh-gmh-aura" aria-hidden="true" />
-                          <span className="sgh-gmh-modak">🥟</span>
-                          <span className="sgh-gmh-sparkle">✨</span>
-                        </div>
-                      ) : isModakCollected ? (
-                        <div className="sgh-ganesha-waiting-hand" title="Waiting for you to tap Ganesha on the grid!">
-                          <span className="sgh-gwh-badge">मोदकं देहि 🤲</span>
-                        </div>
-                      ) : (
-                        <span className="sgh-ganesha-waiting-badge">क्षुधितः 🐘</span>
-                      )}
-                    </div>
-                    <div className="sgh-ganesha-avatar-label">
-                      {isGaneshaReached ? '🏆 मोदकहस्तः श्रीगणेशः' : '🐘 बाल-गणेशः (Baby Ganesha)'}
-                    </div>
-                  </div>
+            {/* THEMED ARENA CANVAS (Temple Floor, Dense Jungle, Tapovan Grove, Starlit Cosmic, Dark Mode) */}
+            <div
+              className={`sgh-maze-arena-canvas sgh-theme-${questTheme}${isDarkMode ? ' sgh-trail--dark-mode' : ''}`}
+            >
+              {/* Floating Loot Collection Toast */}
+              {floatingLootToast && (
+                <div className="sgh-floating-loot-toast" key={floatingLootToast.id}>
+                  <span className="sgh-flt-icon">{floatingLootToast.icon}</span>
+                  <span className="sgh-flt-label">{floatingLootToast.label}</span>
+                </div>
+              )}
 
-                  {/* Ganesha Speech & Dynamic Story Guidance */}
-                  <div className="sgh-ganesha-speech-wrap">
-                    <div className="sgh-ganesha-speech-bubble">
-                      <div className="sgh-gsb-header">
-                        <span className="sgh-gsb-speaker">🐘 श्रीगणेशः उवाच (Ganesha says):</span>
-                        <button
-                          type="button"
-                          className="sgh-speech-audio-btn"
-                          onClick={handleReplayGaneshaPrompt}
-                          title="Hear Ganesha's voice guidance"
-                          aria-label="Hear Ganesha's guidance"
-                        >
-                          🔊 Listen
-                        </button>
-                      </div>
-                      <div className="sgh-gsb-text">
+              {/* Interactive Ganesha Fruit & Modak Offering Stage (Preschool Special) */}
+              {activeQuest.id === 'maze_preschool_ganesha_fruits' && (
+                <div className="sgh-ganesha-stage" role="region" aria-label="Ganesha Fruit and Modak Feast Stage">
+                  <div className="sgh-ganesha-stage-header">
+                    {/* Ganesha Avatar with Modak in Hand overlay */}
+                    <div className="sgh-ganesha-avatar-card">
+                      <div className="sgh-ganesha-avatar-frame">
+                        <img
+                          src="/preschool/festivals/ganesha.webp"
+                          alt="Baby Ganesha"
+                          className="sgh-ganesha-img"
+                          width={110}
+                          height={110}
+                        />
                         {isGaneshaReached ? (
-                          <>
-                            <strong>🎉 अहो मोदकहस्तः श्रीगणेशः! (Modakahasta!)</strong>
-                            <p>
-                              "Thank you, dear friend! I have happily received my favourite sweet Modak in my hand! 🥟🐘 ॐ गं गणपतये नमः!"
-                            </p>
-                          </>
+                          <div className="sgh-ganesha-modak-hand" title="मोदकहस्तः · Sweet Modak in Ganesha's Hand!">
+                            <span className="sgh-gmh-aura" aria-hidden="true" />
+                            <span className="sgh-gmh-modak">🥟</span>
+                            <span className="sgh-gmh-sparkle">✨</span>
+                          </div>
                         ) : isModakCollected ? (
-                          <>
-                            <strong style={{ color: '#b45309' }}>🥟 अहो मोदकः प्राप्तः! (Sweet Modak Collected!)</strong>
-                            <p className="sgh-gsb-highlight">
-                              "You found my favourite Modak! Now tap <strong>[ श्रीगणेशः 🐘 ]</strong> on the grid below to put it in my hand!"
-                            </p>
-                          </>
-                        ) : steppedCells.length > 0 ? (
-                          <>
-                            <strong>😋 अतिस्वादिष्टम्! (Delicious {lastSteppedCell?.word}!)</strong>
-                            <p>
-                              "Yummy fruits for my plate! Keep following the sweet fruit trail to reach my Modak!"
-                            </p>
-                          </>
+                          <div className="sgh-ganesha-waiting-hand" title="Waiting for you to tap Ganesha on the grid!">
+                            <span className="sgh-gwh-badge">मोदकं देहि 🤲</span>
+                          </div>
                         ) : (
-                          <>
-                            <strong>🐘 नमो गणपतये! (Hello Friend!)</strong>
-                            <p>
-                              "Help me collect sweet fruits on my tray and reach my golden Modak! Tap <strong>[ आम्रम् 🥭 ]</strong> to begin!"
-                            </p>
-                          </>
+                          <span className="sgh-ganesha-waiting-badge">क्षुधितः 🐘</span>
                         )}
                       </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Ganesha's Sweet Offering Plate (नैवेद्य-थालम्) */}
-                <div className="sgh-ganesha-tray" role="region" aria-label="Ganesha's Sweet Treats Tray">
-                  <div className="sgh-tray-header">
-                    <div className="sgh-tray-title-wrap">
-                      <span className="sgh-tray-icon">🍽️</span>
-                      <div>
-                        <h4 className="sgh-tray-title">नैवेद्य-थालम् · Ganesha's Sweet Treat Plate</h4>
-                        <span className="sgh-tray-sub">Watch each fruit appear on Ganesha's plate as you step on it!</span>
+                      <div className="sgh-ganesha-avatar-label">
+                        {isGaneshaReached ? '🏆 मोदकहस्तः श्रीगणेशः' : '🐘 बाल-गणेशः (Baby Ganesha)'}
                       </div>
                     </div>
-                    <span className="sgh-tray-counter-pill">
-                      {steppedTreatCount} / {GANESHA_TREATS.length} Treats
-                    </span>
-                  </div>
 
-                  <div className="sgh-tray-grid">
-                    {GANESHA_TREATS.map((treat) => {
-                      const isCollected = steppedOrders.has(treat.stepOrder);
-                      const isNextTarget = currentMazeStep === treat.stepOrder;
-                      return (
-                        <button
-                          key={treat.stepOrder}
-                          type="button"
-                          className={`sgh-tray-slot${isCollected ? ' is-collected' : ''}${isNextTarget ? ' is-target' : ''}${treat.isModak ? ' is-modak-slot' : ''}${treat.isModak && isGaneshaReached ? ' is-in-hand' : ''}`}
-                          onClick={() => {
-                            if (isCollected) {
-                              soundEffects.playStrokeChime();
-                              playPronunciation(treat.wordDev);
-                            }
-                          }}
-                          title={isCollected ? `Hear: ${treat.wordDev} (${treat.wordEn})` : `Step ${treat.stepOrder}: ${treat.wordDev} (${treat.wordEn})`}
-                        >
-                          <div className="sgh-tray-slot-emoji-wrap">
-                            <span className="sgh-tray-slot-emoji">
-                              {isCollected ? treat.icon : '❓'}
-                            </span>
-                            {isCollected && (
-                              <span className="sgh-tray-slot-check" aria-hidden="true">✓</span>
-                            )}
-                            {isNextTarget && (
-                              <span className="sgh-tray-slot-next-badge">NEXT</span>
-                            )}
-                          </div>
-                          <span className="sgh-tray-slot-dev">{treat.wordDev}</span>
-                          <span className="sgh-tray-slot-en">{treat.wordEn}</span>
-                          {treat.isModak && isGaneshaReached && (
-                            <span className="sgh-tray-modak-tag">➔ In Hand 🖐️</span>
+                    {/* Ganesha Speech & Dynamic Story Guidance */}
+                    <div className="sgh-ganesha-speech-wrap">
+                      <div className="sgh-ganesha-speech-bubble">
+                        <div className="sgh-gsb-header">
+                          <span className="sgh-gsb-speaker">🐘 श्रीगणेशः उवाच (Ganesha says):</span>
+                          <button
+                            type="button"
+                            className="sgh-speech-audio-btn"
+                            onClick={handleReplayGaneshaPrompt}
+                            title="Hear Ganesha's voice guidance"
+                            aria-label="Hear Ganesha's guidance"
+                          >
+                            🔊 Listen
+                          </button>
+                        </div>
+                        <div className="sgh-gsb-text">
+                          {isGaneshaReached ? (
+                            <>
+                              <strong>🎉 अहो मोदकहस्तः श्रीगणेशः! (Modakahasta!)</strong>
+                              <p>
+                                "Thank you, dear friend! I have happily received my favourite sweet Modak in my hand! 🥟🐘 ॐ गं गणपतये नमः!"
+                              </p>
+                            </>
+                          ) : isModakCollected ? (
+                            <>
+                              <strong style={{ color: '#b45309' }}>🥟 अहो मोदकः प्राप्तः! (Sweet Modak Collected!)</strong>
+                              <p className="sgh-gsb-highlight">
+                                "You found my favourite Modak! Now tap <strong>[ श्रीगणेशः 🐘 ]</strong> on the grid below to put it in my hand!"
+                              </p>
+                            </>
+                          ) : steppedCells.length > 0 ? (
+                            <>
+                              <strong>😋 अतिस्वादिष्टम्! (Delicious {lastSteppedCell?.word}!)</strong>
+                              <p>
+                                "Yummy fruits for my plate! Keep following the sweet fruit trail to reach my Modak!"
+                              </p>
+                            </>
+                          ) : (
+                            <>
+                              <strong>🐘 नमो गणपतये! (Hello Friend!)</strong>
+                              <p>
+                                "Help me collect sweet fruits on my tray and reach my golden Modak! Tap <strong>[ आम्रम् 🥭 ]</strong> to begin!"
+                              </p>
+                            </>
                           )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Dedicated Instruction Bar when Modak is Collected (Step 7 -> Step 8) */}
-                {isModakCollected && !isGaneshaReached && (
-                  <div className="sgh-modak-feed-banner" role="alert">
-                    <span className="sgh-mfb-icon">🥟 👉 🐘</span>
-                    <div className="sgh-mfb-text">
-                      <strong>🥟 मोदकः प्राप्तः! Sweet Modak is in the tray!</strong>
-                      <p>
-                        Now tap on <strong>श्रीगणेशः (Ganesha 🐘)</strong> at row 4, col 3 on the grid below to put the sweet Modak in Baby Ganesha's hand!
-                      </p>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+
+                  {/* Ganesha's Sweet Offering Plate (नैवेद्य-थालम्) */}
+                  <div className="sgh-ganesha-tray" role="region" aria-label="Ganesha's Sweet Treats Tray">
+                    <div className="sgh-tray-header">
+                      <div className="sgh-tray-title-wrap">
+                        <span className="sgh-tray-icon">🍽️</span>
+                        <div>
+                          <h4 className="sgh-tray-title">नैवेद्य-थालम् · Ganesha's Sweet Treat Plate</h4>
+                          <span className="sgh-tray-sub">Watch each fruit appear on Ganesha's plate as you step on it!</span>
+                        </div>
+                      </div>
+                      <span className="sgh-tray-counter-pill">
+                        {steppedTreatCount} / {GANESHA_TREATS.length} Treats
+                      </span>
+                    </div>
+
+                    <div className="sgh-tray-grid">
+                      {GANESHA_TREATS.map((treat) => {
+                        const isCollected = steppedOrders.has(treat.stepOrder);
+                        const isNextTarget = currentMazeStep === treat.stepOrder;
+                        return (
+                          <button
+                            key={treat.stepOrder}
+                            type="button"
+                            className={`sgh-tray-slot${isCollected ? ' is-collected' : ''}${isNextTarget ? ' is-target' : ''}${treat.isModak ? ' is-modak-slot' : ''}${treat.isModak && isGaneshaReached ? ' is-in-hand' : ''}`}
+                            onClick={() => {
+                              if (isCollected) {
+                                soundEffects.playStrokeChime();
+                                playPronunciation(treat.wordDev);
+                              }
+                            }}
+                            title={isCollected ? `Hear: ${treat.wordDev} (${treat.wordEn})` : `Step ${treat.stepOrder}: ${treat.wordDev} (${treat.wordEn})`}
+                          >
+                            <div className="sgh-tray-slot-emoji-wrap">
+                              <span className="sgh-tray-slot-emoji">
+                                {isCollected ? treat.icon : '❓'}
+                              </span>
+                              {isCollected && (
+                                <span className="sgh-tray-slot-check" aria-hidden="true">✓</span>
+                              )}
+                              {isNextTarget && (
+                                <span className="sgh-tray-slot-next-badge">NEXT</span>
+                              )}
+                            </div>
+                            <span className="sgh-tray-slot-dev">{treat.wordDev}</span>
+                            <span className="sgh-tray-slot-en">{treat.wordEn}</span>
+                            {treat.isModak && isGaneshaReached && (
+                              <span className="sgh-tray-modak-tag">➔ In Hand 🖐️</span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Dedicated Instruction Bar when Modak is Collected (Step 7 -> Step 8) */}
+                  {isModakCollected && !isGaneshaReached && (
+                    <div className="sgh-modak-feed-banner" role="alert">
+                      <span className="sgh-mfb-icon">🥟 👉 🐘</span>
+                      <div className="sgh-mfb-text">
+                        <strong>🥟 मोदकः प्राप्तः! Sweet Modak is in the tray!</strong>
+                        <p>
+                          Now tap on <strong>श्रीगणेशः (Ganesha 🐘)</strong> at row 4, col 3 on the grid below to put the sweet Modak in Baby Ganesha's hand!
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        className="sgh-mission-audio-btn"
+                        onClick={() => speakAsBodhi("Sweet Modak collected! Now tap on Ganesha at the bottom of the grid to complete the quest!", { lang: 'en' })}
+                      >
+                        🔊 Hear Next Step
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Interactive Anti-Spoiler Maze Grid with RPG Cards & Character Sprite */}
+              <div className="sgh-maze-grid-container">
+                <div
+                  className="sgh-maze-grid"
+                  style={{
+                    gridTemplateColumns: `repeat(${activeQuest.gridCols}, 1fr)`,
+                  }}
+                >
+                  {activeQuest.cells.map((cell) => {
+                    const isStepped = steppedCells.some(
+                      (sc) => sc.row === cell.row && sc.col === cell.col
+                    );
+                    const isAvatarHere =
+                      lastSteppedCell?.row === cell.row && lastSteppedCell?.col === cell.col;
+                    const isStartEntrance =
+                      steppedCells.length === 0 && cell.isPath && cell.stepOrder === 1;
+                    const isHinted =
+                      hintedStep !== null && cell.isPath && cell.stepOrder === hintedStep;
+                    const isReachableNeighbor =
+                      mazeDifficulty === 'guided' &&
+                      !isMazeCompleted &&
+                      !isStepped &&
+                      lastSteppedCell !== null &&
+                      Math.abs(cell.row - lastSteppedCell.row) <= 1 &&
+                      Math.abs(cell.col - lastSteppedCell.col) <= 1;
+                    const isTrap = trapCell?.row === cell.row && trapCell?.col === cell.col;
+
+                    const isGaneshaReady =
+                      activeQuest.id === 'maze_preschool_ganesha_fruits' &&
+                      cell.isPath &&
+                      cell.stepOrder === 8 &&
+                      currentMazeStep === 8 &&
+                      !isStepped;
+
+                    // Fog of War Check
+                    const isFogged = (() => {
+                      if (!fogOfWar || isMazeCompleted || isStepped) return false;
+                      const ref = lastSteppedCell || activeQuest.cells.find((c) => c.isPath && c.stepOrder === 1);
+                      if (!ref) return false;
+                      const dR = Math.abs(cell.row - ref.row);
+                      const dC = Math.abs(cell.col - ref.col);
+                      return dR > 1 || dC > 1;
+                    })();
+
+                    // Subtle Golden Aura on valid next adjacent steps
+                    const isValidAdjacentNext =
+                      !isMazeCompleted &&
+                      !isStepped &&
+                      cell.isPath &&
+                      cell.stepOrder === currentMazeStep &&
+                      (lastSteppedCell === null
+                        ? cell.stepOrder === 1
+                        : Math.abs(cell.row - lastSteppedCell.row) <= 1 &&
+                          Math.abs(cell.col - lastSteppedCell.col) <= 1);
+
+                    // Collectible Loot Item
+                    const cellLoot = getCellLoot(activeQuest.id, cell);
+                    const hasLoot = cellLoot && !collectedLootIds.has(`${cell.row}-${cell.col}`) && !isStepped;
+
+                    const { icon: visualIcon, category: visualCategory } = getCellVisual(
+                      cell.word,
+                      cell.translation,
+                      cell.isPath
+                    );
+
+                    let cellClass = `sgh-maze-cell sgh-maze-cell--${visualCategory}`;
+                    if (isStepped) cellClass += ' sgh-maze-cell--stepped';
+                    if (isAvatarHere) cellClass += ' sgh-maze-cell--avatar';
+                    if (isStartEntrance || isHinted) cellClass += ' sgh-maze-cell--current';
+                    else if (isTrap) cellClass += ' sgh-maze-cell--trap';
+                    else if (isReachableNeighbor) cellClass += ' sgh-maze-cell--neighbor';
+                    if (isGaneshaReady) cellClass += ' sgh-maze-cell--ganesha-ready';
+                    if (isValidAdjacentNext) cellClass += ' sgh-maze-cell--valid-adjacent';
+                    if (isFogged) cellClass += ' sgh-maze-cell--fogged';
+
+                    const cleanedGloss = cleanMazeGloss(cell.translation);
+                    const showCellGloss = isStepped || mazeDifficulty === 'guided';
+
+                    return (
+                      <button
+                        key={`cell-${cell.row}-${cell.col}`}
+                        type="button"
+                        className={cellClass}
+                        onClick={() => {
+                          if (isFogged) {
+                            soundEffects.playStrokeChime();
+                            setTrapMessage('🌫️ Shrouded in mist! Step onto neighboring tiles first to part the fog!');
+                            setTimeout(() => setTrapMessage(null), 1400);
+                            return;
+                          }
+                          handleMazeCellClick(cell);
+                        }}
+                        title={isFogged ? 'Shrouded in mist' : showCellGloss ? `${cell.word} — ${cleanedGloss}` : cell.word}
+                      >
+                        {isFogged ? (
+                          <div className="sgh-fog-veil">
+                            <span className="sgh-fog-icon">🌫️</span>
+                            <span className="sgh-fog-rune">?</span>
+                          </div>
+                        ) : (
+                          <>
+                            {/* Top Badges & Loot indicator */}
+                            <div className="sgh-mc-top-bar">
+                              {isStepped && cell.stepOrder ? (
+                                <span className="sgh-step-badge sgh-step-badge--done">
+                                  ✓{cell.stepOrder}
+                                </span>
+                              ) : cell.stepOrder === 1 && !isStepped ? (
+                                <span className="sgh-step-badge sgh-step-badge--pill sgh-badge--start">
+                                  🚩 Start
+                                </span>
+                              ) : isGaneshaReady ? (
+                                <span className="sgh-step-badge sgh-step-badge--pill sgh-badge--ganesha-feed">
+                                  🥟 Feed!
+                                </span>
+                              ) : cell.stepOrder === totalPathSteps && !isStepped ? (
+                                <span className="sgh-step-badge sgh-step-badge--pill sgh-badge--goal">
+                                  🏆 Goal
+                                </span>
+                              ) : null}
+
+                              {hasLoot && (
+                                <span className="sgh-cell-loot-sparkle" title={cellLoot.label}>
+                                  {cellLoot.icon}
+                                </span>
+                              )}
+                            </div>
+
+                            {/* Vibrant Central Illustration Medallion */}
+                            <div className={`sgh-mc-illustration-frame sgh-frame--${visualCategory}`}>
+                              <span className="sgh-mc-icon-art">{visualIcon}</span>
+                            </div>
+
+                            {/* Player Physical Walking Sprite on Current Tile */}
+                            {isAvatarHere && (
+                              <div className="sgh-player-sprite-token" title={AVATARS[selectedAvatar].name}>
+                                <span className="sgh-sprite-glyph">{AVATARS[selectedAvatar].icon}</span>
+                                <span className="sgh-sprite-label">{AVATARS[selectedAvatar].name}</span>
+                              </div>
+                            )}
+
+                            {/* Traversed Golden Lotus Footstep Marker */}
+                            {isStepped && !isAvatarHere && (
+                              <span className="sgh-mc-lotus-footprint" title="Traversed path step">🪷</span>
+                            )}
+
+                            {/* Devanagari Sanskrit Word */}
+                            <span className="sgh-mc-word">{cell.word}</span>
+
+                            {/* Roman Transliteration */}
+                            {showRoman && (
+                              <span className="sgh-mc-roman">{devanagariToIast(cell.word)}</span>
+                            )}
+
+                            {/* English Meaning Gloss */}
+                            <span className="sgh-mc-trans">
+                              {showCellGloss ? cleanedGloss : '•••'}
+                            </span>
+                          </>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* Game Over Modal (Hero Mode Stamina Depleted) */}
+            {isGameOver && (
+              <div className="sgh-modal-backdrop" role="dialog" aria-modal="true">
+                <div className="sgh-gameover-card">
+                  <div className="sgh-gameover-icon">💔</div>
+                  <h3>प्राण-शक्तिः समाप्ता · Out of Stamina!</h3>
+                  <p>
+                    Your hero encountered too many hazard obstacles on the trail! Take a breath, regain your sacred stamina, and continue your Sanskrit quest!
+                  </p>
+                  <div className="sgh-gameover-actions">
                     <button
                       type="button"
-                      className="sgh-mission-audio-btn"
-                      onClick={() => speakAsBodhi("Sweet Modak collected! Now tap on Ganesha at the bottom of the grid to complete the quest!", { lang: 'en' })}
+                      className="sgh-gameover-btn sgh-gameover-btn--revive"
+                      onClick={() => {
+                        setHearts(3);
+                        setIsGameOver(false);
+                        soundEffects.playSuccessDing();
+                      }}
                     >
-                      🔊 Hear Next Step
+                      ❤️ Revive (3 Hearts) &amp; Continue
+                    </button>
+                    <button
+                      type="button"
+                      className="sgh-gameover-btn sgh-gameover-btn--casual"
+                      onClick={() => {
+                        setRpgMode('casual');
+                        setHearts(3);
+                        setIsGameOver(false);
+                        soundEffects.playStrokeChime();
+                      }}
+                    >
+                      🌱 Switch to Casual Mode (∞)
+                    </button>
+                    <button
+                      type="button"
+                      className="sgh-gameover-btn sgh-gameover-btn--restart"
+                      onClick={() => {
+                        handleResetMaze();
+                      }}
+                    >
+                      🔄 Restart Quest
                     </button>
                   </div>
-                )}
+                </div>
               </div>
             )}
 
-            {/* Interactive Anti-Spoiler Maze Grid */}
-            <div className="sgh-maze-grid-container">
-              <div
-                className="sgh-maze-grid"
-                style={{
-                  gridTemplateColumns: `repeat(${activeQuest.gridCols}, 1fr)`,
-                }}
-              >
-                {activeQuest.cells.map((cell) => {
-                  const isStepped = steppedCells.some(
-                    (sc) => sc.row === cell.row && sc.col === cell.col
-                  );
-                  const isAvatarHere =
-                    lastSteppedCell?.row === cell.row && lastSteppedCell?.col === cell.col;
-                  const isStartEntrance =
-                    steppedCells.length === 0 && cell.isPath && cell.stepOrder === 1;
-                  const isHinted =
-                    hintedStep !== null && cell.isPath && cell.stepOrder === hintedStep;
-                  const isReachableNeighbor =
-                    mazeDifficulty === 'guided' &&
-                    !isMazeCompleted &&
-                    !isStepped &&
-                    lastSteppedCell !== null &&
-                    Math.abs(cell.row - lastSteppedCell.row) <= 1 &&
-                    Math.abs(cell.col - lastSteppedCell.col) <= 1;
-                  const isTrap = trapCell?.row === cell.row && trapCell?.col === cell.col;
+            {/* Level Clear Fanfare & Quest Complete Modal with Confetti */}
+            {showQuestVictoryModal && (
+              <div className="sgh-modal-backdrop" role="dialog" aria-modal="true">
+                <div className="sgh-confetti-layer" aria-hidden="true">
+                  {Array.from({ length: 48 }).map((_, i) => (
+                    <span
+                      key={i}
+                      className="sgh-confetti-piece"
+                      style={{
+                        left: `${(i * 2.1 + (i % 7) * 3) % 100}%`,
+                        animationDelay: `${(i % 12) * 0.12}s`,
+                        animationDuration: `${1.7 + (i % 5) * 0.4}s`,
+                        backgroundColor: [
+                          '#f59e0b',
+                          '#10b981',
+                          '#38bdf8',
+                          '#ec4899',
+                          '#8b5cf6',
+                          '#f43f5e',
+                          '#fbbf24',
+                        ][i % 7],
+                      }}
+                    />
+                  ))}
+                </div>
 
-                  const isGaneshaReady =
-                    activeQuest.id === 'maze_preschool_ganesha_fruits' &&
-                    cell.isPath &&
-                    cell.stepOrder === 8 &&
-                    currentMazeStep === 8 &&
-                    !isStepped;
+                <div className="sgh-victory-modal-card">
+                  <div className="sgh-vm-header">
+                    <span className="sgh-vm-avatar-hero">{AVATARS[selectedAvatar].icon}</span>
+                    <div className="sgh-vm-stars">⭐⭐⭐⭐⭐</div>
+                    <h2 className="sgh-vm-title">QUEST COMPLETE!</h2>
+                    <span className="sgh-vm-sanskrit">विजय-यात्रा संपूर्णा!</span>
+                  </div>
 
-                  let cellClass = 'sgh-maze-cell';
-                  if (isStepped) cellClass += ' sgh-maze-cell--stepped';
-                  if (isAvatarHere) cellClass += ' sgh-maze-cell--avatar';
-                  if (isStartEntrance || isHinted) cellClass += ' sgh-maze-cell--current';
-                  else if (isTrap) cellClass += ' sgh-maze-cell--trap';
-                  else if (isReachableNeighbor) cellClass += ' sgh-maze-cell--neighbor';
-                  if (isGaneshaReady) cellClass += ' sgh-maze-cell--ganesha-ready';
-
-                  const cleanedGloss = cleanMazeGloss(cell.translation);
-                  const showCellGloss = isStepped || mazeDifficulty === 'guided';
-
-                  return (
-                    <button
-                      key={`cell-${cell.row}-${cell.col}`}
-                      type="button"
-                      className={cellClass}
-                      onClick={() => handleMazeCellClick(cell)}
-                      title={showCellGloss ? `${cell.word} — ${cleanedGloss}` : cell.word}
-                    >
-                      {isStepped && cell.stepOrder && (
-                        <span className="sgh-step-badge sgh-step-badge--done">
-                          {isAvatarHere ? `${activeQuest.icon}${cell.stepOrder}` : `✓${cell.stepOrder}`}
-                        </span>
-                      )}
-                      {cell.stepOrder === 1 && !isStepped && (
-                        <span className="sgh-step-badge sgh-step-badge--pill" style={{ background: '#10b981' }}>
-                          🚩 Start
-                        </span>
-                      )}
-                      {isGaneshaReady ? (
-                        <span className="sgh-step-badge sgh-step-badge--pill sgh-badge--ganesha-feed">
-                          🥟 Feed Ganesha! 🐘
-                        </span>
-                      ) : cell.stepOrder === totalPathSteps && !isStepped ? (
-                        <span className="sgh-step-badge sgh-step-badge--pill" style={{ background: '#d97706' }}>
-                          🏆 Goal
-                        </span>
-                      ) : null}
-
-                      <span className="sgh-mc-word">{cell.word}</span>
-                      {showRoman && (
-                        <span className="sgh-mc-roman">{devanagariToIast(cell.word)}</span>
-                      )}
-                      <span className="sgh-mc-trans">
-                        {showCellGloss ? cleanedGloss : '•••'}
+                  <div className="sgh-vm-stats-grid">
+                    <div className="sgh-vm-stat-box">
+                      <span className="sgh-vm-stat-lbl">⏱️ Quest Time</span>
+                      <strong className="sgh-vm-stat-val">{formatTime(timerSeconds)}</strong>
+                      <span className="sgh-vm-stat-sub" style={{ color: speedrunRank.color }}>
+                        {speedrunRank.badge}
                       </span>
+                    </div>
+                    <div className="sgh-vm-stat-box">
+                      <span className="sgh-vm-stat-lbl">🪙 Loot Collected</span>
+                      <strong className="sgh-vm-stat-val">
+                        {lootScores.coins > 0 ? `${lootScores.coins}c ` : ''}
+                        {lootScores.gems > 0 ? `${lootScores.gems}💎 ` : ''}
+                        {lootScores.scrolls > 0 ? `${lootScores.scrolls}📜` : ''}
+                        {lootScores.coins === 0 && lootScores.gems === 0 && lootScores.scrolls === 0 ? '✨ Clean Run' : ''}
+                      </strong>
+                      <span className="sgh-vm-stat-sub">Treasure Explorer</span>
+                    </div>
+                    <div className="sgh-vm-stat-box">
+                      <span className="sgh-vm-stat-lbl">👣 Trail Steps</span>
+                      <strong className="sgh-vm-stat-val">{steppedCells.length} / {totalPathSteps}</strong>
+                      <span className="sgh-vm-stat-sub">100% Path Accuracy</span>
+                    </div>
+                  </div>
+
+                  {/* Assembled Sanskrit Story Inscription */}
+                  <div className="sgh-vm-story-box">
+                    <span className="sgh-vm-story-tag">📜 Completed Sanskrit Inscription:</span>
+                    <p className="sgh-vm-story-dev">{activeQuest.fullSentenceOrStoryDev}</p>
+                    <p className="sgh-vm-story-en">{activeQuest.fullSentenceOrStoryEn}</p>
+                    {activeQuest.moral && (
+                      <div className="sgh-vm-moral">
+                        <strong>💡 Moral:</strong> {activeQuest.moral}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="sgh-vm-actions">
+                    <button
+                      type="button"
+                      className="sgh-vm-btn sgh-vm-btn--audio"
+                      onClick={() => playPronunciation(activeQuest.fullSentenceOrStoryDev)}
+                    >
+                      🔊 Listen to Full Tale
                     </button>
-                  );
-                })}
+                    <button
+                      type="button"
+                      className="sgh-vm-btn sgh-vm-btn--replay"
+                      onClick={() => {
+                        setShowQuestVictoryModal(false);
+                        handleResetMaze();
+                      }}
+                    >
+                      🔄 Play Again
+                    </button>
+                    <button
+                      type="button"
+                      className="sgh-vm-btn sgh-vm-btn--next"
+                      onClick={() => {
+                        setShowQuestVictoryModal(false);
+                        handleNextQuest();
+                      }}
+                    >
+                      Next Quest ➔
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </>
       )}

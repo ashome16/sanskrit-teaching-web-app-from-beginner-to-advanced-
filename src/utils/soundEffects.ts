@@ -1268,6 +1268,247 @@ class SoundEffectsEngine {
       osc.stop(now + 0.24);
     } catch {}
   }
+
+  /**
+   * RPG Trail: Soft organic stone/moss footstep when stepping between tiles
+   */
+  playFootstepSoft(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      // Soft low thud
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(190, now);
+      osc.frequency.exponentialRampToValueAtTime(55, now + 0.07);
+      gain.gain.setValueAtTime(0.22, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.075);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + 0.08);
+
+      // Organic rustle transient
+      const dur = 0.06;
+      const len = Math.floor(ctx.sampleRate * dur);
+      const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+      const src = ctx.createBufferSource();
+      src.buffer = buf;
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.value = 850;
+      filter.Q.value = 1.2;
+      const noiseGain = ctx.createGain();
+      noiseGain.gain.setValueAtTime(0.08, now);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+      src.connect(filter);
+      filter.connect(noiseGain);
+      noiseGain.connect(ctx.destination);
+      src.start(now);
+    } catch {}
+  }
+
+  /**
+   * RPG Trail: Majestic guttural lion roar for the forest predator goal
+   */
+  playLionRoar(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const dur = 1.2;
+
+      // Deep oscillating guttural growl
+      const osc = ctx.createOscillator();
+      const oscGain = ctx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(110, now);
+      osc.frequency.linearRampToValueAtTime(130, now + 0.25);
+      osc.frequency.linearRampToValueAtTime(65, now + dur);
+
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(450, now);
+      filter.frequency.linearRampToValueAtTime(750, now + 0.3);
+      filter.frequency.linearRampToValueAtTime(200, now + dur);
+      filter.Q.value = 4.5;
+
+      oscGain.gain.setValueAtTime(0.01, now);
+      oscGain.gain.linearRampToValueAtTime(0.35, now + 0.15);
+      oscGain.gain.setValueAtTime(0.32, now + 0.6);
+      oscGain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+      osc.connect(filter);
+      filter.connect(oscGain);
+      oscGain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + dur + 0.05);
+
+      // Breathy roar noise texture
+      const len = Math.floor(ctx.sampleRate * dur);
+      const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+      const nSrc = ctx.createBufferSource();
+      nSrc.buffer = buf;
+      const nFilt = ctx.createBiquadFilter();
+      nFilt.type = 'bandpass';
+      nFilt.frequency.setValueAtTime(600, now);
+      nFilt.frequency.linearRampToValueAtTime(900, now + 0.3);
+      nFilt.frequency.linearRampToValueAtTime(350, now + dur);
+      nFilt.Q.value = 1.8;
+      const nGain = ctx.createGain();
+      nGain.gain.setValueAtTime(0.02, now);
+      nGain.gain.linearRampToValueAtTime(0.18, now + 0.2);
+      nGain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+      nSrc.connect(nFilt);
+      nFilt.connect(nGain);
+      nGain.connect(ctx.destination);
+      nSrc.start(now);
+    } catch {}
+  }
+
+  /**
+   * RPG Trail: High magical sparkle chime for picking up coins, gems, and scrolls
+   */
+  playLootPickup(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const notes = [1046.5, 1318.51, 1567.98, 2093.0]; // C6, E6, G6, C7
+
+      notes.forEach((freq, idx) => {
+        const t = now + idx * 0.055;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, t);
+
+        gain.gain.setValueAtTime(0.2, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.28);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.3);
+      });
+    } catch {}
+  }
+
+  /**
+   * RPG Trail: Retro 8-bit descending crunch buzz when losing a heart
+   */
+  playHeartDamage(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(320, now);
+      osc.frequency.setValueAtTime(240, now + 0.06);
+      osc.frequency.setValueAtTime(160, now + 0.12);
+      osc.frequency.setValueAtTime(90, now + 0.18);
+
+      gain.gain.setValueAtTime(0.3, now);
+      gain.gain.setValueAtTime(0.25, now + 0.12);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.32);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + 0.34);
+    } catch {}
+  }
+
+  /**
+   * RPG Trail: Retro 8-bit square-wave RPG victory melody
+   */
+  playRetro8BitVictory(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      // Classic 8-bit triumphant victory arpeggio: C5, E5, G5, C6, G5, C6, E6
+      const seq = [
+        { freq: 523.25, t: 0.00, dur: 0.10 },
+        { freq: 659.25, t: 0.10, dur: 0.10 },
+        { freq: 783.99, t: 0.20, dur: 0.10 },
+        { freq: 1046.50, t: 0.30, dur: 0.14 },
+        { freq: 783.99, t: 0.44, dur: 0.09 },
+        { freq: 1046.50, t: 0.54, dur: 0.40 },
+        { freq: 1318.51, t: 0.54, dur: 0.40 }, // Harmonic top note
+      ];
+
+      seq.forEach(({ freq, t, dur }) => {
+        const start = now + t;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(freq, start);
+
+        gain.gain.setValueAtTime(0.18, start);
+        gain.gain.setValueAtTime(0.15, start + dur * 0.7);
+        gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(start);
+        osc.stop(start + dur + 0.02);
+      });
+    } catch {}
+  }
+
+  /**
+   * RPG Trail: Mystical wind & shimmer whoosh when revealing Fog of War
+   */
+  playFogReveal(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const dur = 0.35;
+
+      const len = Math.floor(ctx.sampleRate * dur);
+      const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+      const src = ctx.createBufferSource();
+      src.buffer = buf;
+
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(350, now);
+      filter.frequency.exponentialRampToValueAtTime(1800, now + 0.2);
+      filter.frequency.exponentialRampToValueAtTime(700, now + dur);
+      filter.Q.value = 2.0;
+
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.01, now);
+      gain.gain.linearRampToValueAtTime(0.12, now + 0.12);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+      src.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+      src.start(now);
+    } catch {}
+  }
 }
 
 export const soundEffects = new SoundEffectsEngine();
