@@ -682,7 +682,7 @@ export const MATCH_CATEGORIES: MatchCategoryMetadata[] = [
     titleEn: 'Classical Sanskrit Riddles & Wit (Prahelikā)',
     icon: '📜',
     description:
-      'Solve ancient Sanskrit riddles: musk & lion (अन्तरालापिका), smart messenger (अपदो दूरगामी), coconut (त्रिनेत्रधारी), and needle-thread (सूची-सूत्रम्)!',
+      'Solve ancient Sanskrit riddles: musk & lion (अन्तरालापिका), smart messenger (अपदो दूरगामी), coconut (त्रिनेत्रधारी), needle-thread (सूची-सूत्रम्), fountain pen (लेखनी), Sandhi word-puzzle (कंस-काशी-कम्बल), and the timekeeper (घटिका)!',
     pairs: [
       {
         id: 'pr_1_1',
@@ -731,6 +731,30 @@ export const MATCH_CATEGORIES: MatchCategoryMetadata[] = [
         transliteration: 'ekacakṣuḥ bilamicchan kṣīyate vardhate → sūcī-sūtram',
         hint: 'One eye, enters fabric holes, shrinks as sewing grows larger: Needle and thread (सूची-सूत्रम्).',
         emoji: '🪡',
+      },
+      {
+        id: 'pr_5_1',
+        sanskrit: 'कृष्णमुखी द्विजिह्वा पञ्चभर्ती',
+        english: 'लेखनी (Fountain Pen / Nib & Fingers)',
+        transliteration: 'kṛṣṇamukhī dvijihvā pañcabhartī → lekhanī',
+        hint: 'Black inky face, split 2-tine nib, held by 5 fingers: Fountain Pen (लेखनी).',
+        emoji: '✒️',
+      },
+      {
+        id: 'pr_6_1',
+        sanskrit: 'कं सञ्जघान कृष्णः का शीतलवाहिनी',
+        english: 'कंसम्, काशी, केदार, कम्बलम् (सन्धि-प्रहेलिका)',
+        transliteration: 'kaṁ sañjaghāna kṛṣṇaḥ kā śītalavāhinī → kaṁsam, kāśī, kedāra, kambalam',
+        hint: 'Merge the initial syllable with the word to reveal the 4 hidden answers (Sandhi puzzle).',
+        emoji: '🧩',
+      },
+      {
+        id: 'pr_7_1',
+        sanskrit: 'भोजनं न खादति निरंतरं चलती',
+        english: 'घटिका (A Clock / Timekeeper)',
+        transliteration: 'bhojanaṁ na khādati niraṁtaraṁ calatī → ghaṭikā',
+        hint: 'Eats no food, drinks no water, walks incessantly and announces the time: Clock (घटिका).',
+        emoji: '⏰',
       },
     ],
   },

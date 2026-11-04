@@ -363,4 +363,280 @@ export const PRAHELIKAS: PrahelikaItem[] = [
     illustrationCaption:
       'Pahari & Kalamkari Folk Painting: The Bronze Needle (सूची) & Crimson Thread (सूत्रम्) weaving silk tapestry with one-eyed crow & moon motifs.',
   },
+
+  // 5. पद-गूढम्: कृष्णमुखी न मार्जारी... (लेखनी)
+  {
+    id: 'prahelika-5-lekhani',
+    num: 5,
+    titleEn: 'The Multi-Faceted Scribe',
+    titleSa: 'कृष्णमुखी लेखनी (लेखनी)',
+    genre: 'पद-गूढम्',
+    genreDesc:
+      'Pada-gūḍham (The Concealed Scribe) — An enigma riddle contrasting animalistic and mythological traits with a classic writer’s pen.',
+    verseSa:
+      'कृष्णमुखी न मार्जारी द्विजिह्वा न च सर्पिणी ।\nपञ्चभर्ती न पाञ्चाली यो जानाति स पण्डितः ॥',
+    verseLines: [
+      'कृष्णमुखी न मार्जारी',
+      'द्विजिह्वा न च सर्पिणी ।',
+      'पञ्चभर्ती न पाञ्चाली',
+      'यो जानाति स पण्डितः ॥',
+    ],
+    iast:
+      'Kṛṣṇamukhī na mārjārī dvijihvā na ca sarpiṇī |\nPañcabhartī na pāñcālī yo jānāti sa paṇḍitaḥ ||',
+    iastLines: [
+      'Kṛṣṇamukhī na mārjārī',
+      'dvijihvā na ca sarpiṇī |',
+      'Pañcabhartī na pāñcālī',
+      'yo jānāti sa paṇḍitaḥ ||',
+    ],
+    englishTranslation:
+      'It has a black face but is not a cat; it has two tongues but is not a female snake; it has five masters/caretakers but is not Panchali (Draupadi). Whoever knows this is a scholar.',
+    answerSa: 'लेखनी (मषी-लेखनी / लेखनी-मुखम्)',
+    answerEn: 'A Fountain Pen / Writing Pen (Lekhanī)',
+    options: [
+      { id: 'opt1', sa: 'लेखनी', en: 'A Fountain Pen / Pen', isCorrect: true },
+      { id: 'opt2', sa: 'मार्जारी', en: 'A Black Cat', isCorrect: false },
+      { id: 'opt3', sa: 'सर्पिणी', en: 'A Female Serpent', isCorrect: false },
+      { id: 'opt4', sa: 'पाञ्चाली', en: 'Draupadi (Panchali)', isCorrect: false },
+    ],
+    clues: [
+      {
+        icon: '🖤',
+        textSa: 'कृष्णमुखी न मार्जारी',
+        textEn: 'Black-faced, but not a feline',
+        explanation: 'The metallic nib is dipped or filled with dark black ink (कृष्णमुखी).',
+      },
+      {
+        icon: '🐍',
+        textSa: 'द्विजिह्वा न च सर्पिणी',
+        textEn: 'Two-tongued, but not a serpent',
+        explanation:
+          'The classical fountain pen nib is split into two metal tines (द्विजिह्वा) to channel liquid ink smoothly to the parchment.',
+      },
+      {
+        icon: '🖐️',
+        textSa: 'पञ्चभर्ती न पाञ्चाली',
+        textEn: 'Held by five masters, but not Draupadi',
+        explanation:
+          'It is guided and held in the grasp of the writer’s five fingers (अङ्गुली-पञ्चकम्).',
+      },
+    ],
+    literarySecret:
+      'This puzzle relies on metaphorical descriptions of a classic fountain pen. The "black face" refers to the dark ink lining the nib tip. The "two tongues" refer to the dual metal tines of the split nib that channel ink to paper. The "five masters" are the five fingers of the human hand holding the pen to write.',
+    audioPronunciationText:
+      'कृष्णमुखी न मार्जारी द्विजिह्वा न च सर्पिणी । पञ्चभर्ती न पाञ्चाली यो जानाति स पण्डितः ॥',
+    emoji: '✒️',
+    funFact:
+      'This riddle helps students build vocabulary around anatomical parts (मुख, जिह्वा) while comparing stationery tools to animals and epic lore!',
+    illustrationUrl: '/images/prahelika/prahelika-5-lekhani.jpg',
+    illustrationCaption:
+      'Pahari-Mughal Miniature Folk Painting: The Ornate Golden Quill & Fountain Pen (लेखनी) with dual nib tines, inkpot, five writing fingers, and serpent & feline allegorical borders.',
+  },
+
+  // 6. अन्तरालापिका / सन्धि-प्रहेलिका: कं सञ्जघान कृष्णः...
+  {
+    id: 'prahelika-6-sandhi-prahelika',
+    num: 6,
+    titleEn: 'The Clever Word Splitting Game',
+    titleSa: 'सन्धि-प्रहेलिका (कं सञ्जघान कृष्णः)',
+    genre: 'अन्तरालापिका',
+    genreDesc:
+      'Antarālāpikā / Sandhi-Prahelikā — Internal answers revealed by merging the first syllable of each question with the subsequent word!',
+    verseSa:
+      'कं सञ्जघान कृष्णः? का शीतलवाहिनी गङ्गा?\nके दारपोषणरताः? कं बलवन्तं न बाधते शीतम्?',
+    verseLines: [
+      'कं सञ्जघान कृष्णः?',
+      'का शीतलवाहिनी गङ्गा?',
+      'के दारपोषणरताः?',
+      'कं बलवन्तं न बाधते शीतम्?',
+    ],
+    iast:
+      'Kaṁ sañjaghāna kṛṣṇaḥ? Kā śītalavāhinī gaṅgā? |\nKe dārapoṣaṇaratāḥ? Kaṁ balavantaṁ na bādhate śītam? ||',
+    iastLines: [
+      'Kaṁ sañjaghāna kṛṣṇaḥ?',
+      'Kā śītalavāhinī gaṅgā?',
+      'Ke dārapoṣaṇaratāḥ?',
+      'Kaṁ balavantaṁ na bādhate śītam?',
+    ],
+    englishTranslation:
+      '1. Whom did Krishna kill?\n2. Which river bears cold water?\n3. Who is constantly dedicated to nurturing their fields/wives?\n4. Which strong person is completely unaffected by the cold winter weather?',
+    questions: [
+      {
+        qId: 'q1',
+        num: 1,
+        questionSa: 'कं सञ्जघान कृष्णः?',
+        questionEn: 'Whom did Lord Krishna kill?',
+        answerSa: 'कंसम्',
+        answerEn: 'Kamsa (Join कं + सञ्जघान ➔ कंसं जघान कृष्णः)',
+        verseRefWord: 'कंसम्',
+        explanation:
+          'Join the first syllable "कं" with "सञ्जघान" to get "कंसं जघान कृष्णः" — Lord Krishna slew the tyrant king Kamsa!',
+      },
+      {
+        qId: 'q2',
+        num: 2,
+        questionSa: 'का शीतलवाहिनी गङ्गा?',
+        questionEn: 'Which river bears cool, refreshing water?',
+        answerSa: 'काशी',
+        answerEn: 'Kashi / Varanasi (Join का + शीतल ➔ काशी-तल-वाहिनी)',
+        verseRefWord: 'काशी',
+        explanation:
+          'Join "का" with "शीतल" to get "काशीतलवाहिनी गङ्गा" — the sacred Ganga flowing along the ghats and plains of holy Kashi!',
+      },
+      {
+        qId: 'q3',
+        num: 3,
+        questionSa: 'के दारपोषणरताः?',
+        questionEn: 'Who is constantly dedicated to field / family nourishment?',
+        answerSa: 'केदाराः',
+        answerEn: 'Farmers cultivating fields (Join के + दार ➔ केदार / कृषकाः)',
+        verseRefWord: 'केदाराः',
+        explanation:
+          'Join "के" with "दार" to get "केदारपोषणरताः" — "Kedāra" means agricultural land, so those nurturing the fields are the devoted farmers (कृषकाः)!',
+      },
+      {
+        qId: 'q4',
+        num: 4,
+        questionSa: 'कं बलवन्तं न बाधते शीतम्?',
+        questionEn: 'Which person is completely unaffected by the bitter cold?',
+        answerSa: 'कम्बलवन्तम्',
+        answerEn: 'The person wrapped in a blanket (Join कं + बलवन्तम् ➔ कम्बलवन्तम्)',
+        verseRefWord: 'कम्बलवन्तम्',
+        explanation:
+          'Join "कं" with "बलवन्तम्" to get "कम्बलवन्तं न बाधते शीतम्" — cold never bothers someone warmly swaddled in a wool blanket (कम्बल)!',
+      },
+    ],
+    answerSa: 'कंसम् · काशी · केदाराः · कम्बलवन्तम्',
+    answerEn: '1. Kamsa · 2. Kashi (Varanasi) · 3. Farmers (Kedara) · 4. Wool blanket wearer',
+    options: [
+      {
+        id: 'opt1',
+        sa: 'कंसम्, काशी, केदाराः, कम्बलवन्तम्',
+        en: 'Kamsa, Kashi, Farmers, Blanket wearer',
+        isCorrect: true,
+      },
+      {
+        id: 'opt2',
+        sa: 'रावणम्, प्रयागः, सैनिकाः, अग्निः',
+        en: 'Ravana, Prayag, Soldiers, Fire',
+        isCorrect: false,
+      },
+      {
+        id: 'opt3',
+        sa: 'कालयवनम्, हरिद्वारम्, वैद्याः, सूर्यः',
+        en: 'Kalayavana, Haridwar, Doctors, Sun',
+        isCorrect: false,
+      },
+      {
+        id: 'opt4',
+        sa: 'शिशुपालम्, ऋषिकेशः, राजा, प्रासादः',
+        en: 'Shishupala, Rishikesh, King, Palace',
+        isCorrect: false,
+      },
+    ],
+    clues: [
+      {
+        icon: '🦚',
+        textSa: 'कं + सञ्जघान ➔ कंसम्',
+        textEn: 'Krishna kills ➔ Kamsa',
+        explanation: 'Merge the first syllable with the verb to reveal the slain adversary.',
+      },
+      {
+        icon: '🌊',
+        textSa: 'का + शीतल ➔ काशी',
+        textEn: 'Cool river ➔ Kashi (Varanasi)',
+        explanation: 'Combines into काशीतलवाहिनी, the holy Ganga washing the Kashi riverbanks.',
+      },
+      {
+        icon: '🌾',
+        textSa: 'के + दार ➔ केदार (कृषकाः)',
+        textEn: 'Nurturers ➔ Farmers / Fields',
+        explanation: 'Kedāra means rich farmland; farmers dedicate their lives to cultivating crops.',
+      },
+      {
+        icon: '🧣',
+        textSa: 'कं + बलवन्तम् ➔ कम्बलवन्तम्',
+        textEn: 'Warm in winter ➔ Blanket owner',
+        explanation: 'One draped in a warm woolen kambala laughs at the freezing winter gale.',
+      },
+    ],
+    literarySecret:
+      'The brilliance of this riddle lies in grammar and word combination (Sandhi). Instead of looking outside for answers, the student simply merges the first syllable of each question with the subsequent word to reveal the hidden solution directly within the question itself!',
+    audioPronunciationText:
+      'कं सञ्जघान कृष्णः का शीतलवाहिनी गङ्गा । के दारपोषणरताः कं बलवन्तं न बाधते शीतम् ॥',
+    emoji: '🧩',
+    funFact:
+      'This riddle was historically used in Indian Gurukuls to teach Sandhi (phonetic combination) and Samāsa (compounding) through playful deduction!',
+    illustrationUrl: '/images/prahelika/prahelika-6-sandhi-prahelika.jpg',
+    illustrationCaption:
+      'Kangra-Pahari 4-Quadrant Miniature Painting: Krishna subduing Kamsa, Ganga waters flowing at Kashi ghats, farmers cultivating lush green fields (केदार), and a traveler wrapped warmly in a woolen shawl (कम्बल).',
+  },
+
+  // 7. पद-गूढम्: भोजनं न खादति न च पिबति पानीयं... (घटिका)
+  {
+    id: 'prahelika-7-ghatika',
+    num: 7,
+    titleEn: 'The Steadfast Traveler',
+    titleSa: 'निरन्तरं चलती (घटिका)',
+    genre: 'पद-गूढम्',
+    genreDesc:
+      'Pada-gūḍham (The Timekeeper) — Personifies an astronomical water-clock / timepiece as an untiring traveler that never eats or drinks.',
+    verseSa:
+      'भोजनं न खादति न च पिबति पानीयं,\nनिरंतरं चलती तथापि समयं ज्ञापयति।',
+    verseLines: [
+      'भोजनं न खादति',
+      'न च पिबति पानीयं,',
+      'निरंतरं चलती',
+      'तथापि समयं ज्ञापयति।',
+    ],
+    iast:
+      'Bhojanaṁ na khādati na ca pibati pānīyaṁ,\nniraṁtaraṁ calatī tathāpi samayaṁ jñāpayati.',
+    iastLines: [
+      'Bhojanaṁ na khādati',
+      'na ca pibati pānīyaṁ,',
+      'niraṁtaraṁ calatī',
+      'tathāpi samayaṁ jñāpayati.',
+    ],
+    englishTranslation:
+      'It never consumes any food and it absolutely never drinks water; it runs continuously without stopping, and it reliably tells the time.',
+    answerSa: 'घटिका (घटी-यन्त्रम् / समय-सूचकम्)',
+    answerEn: 'A Clock / Watch (Ghaṭikā)',
+    options: [
+      { id: 'opt1', sa: 'घटिका', en: 'A Clock / Watch (Ghaṭikā)', isCorrect: true },
+      { id: 'opt2', sa: 'सूर्यः', en: 'The Sun (Sūryaḥ)', isCorrect: false },
+      { id: 'opt3', sa: 'वायुः', en: 'The Wind (Vāyuḥ)', isCorrect: false },
+      { id: 'opt4', sa: 'नदी', en: 'A Flowing River (Nadī)', isCorrect: false },
+    ],
+    clues: [
+      {
+        icon: '🍲',
+        textSa: 'भोजनं न खादति',
+        textEn: 'Eats no meal or morsel',
+        explanation: 'Unlike living travelers, it requires zero physical food to sustain its perpetual motion.',
+      },
+      {
+        icon: '💧',
+        textSa: 'न च पिबति पानीयं',
+        textEn: 'Drinks not a single drop of water',
+        explanation: 'It quenches no thirst, yet continues its steady, ticking journey.',
+      },
+      {
+        icon: '⏱️',
+        textSa: 'निरंतरं चलती समयं ज्ञापयति',
+        textEn: 'Runs incessantly and informs the time',
+        explanation:
+          'Its hands or measuring flow move without pause to announce the hour, minute, and prahara.',
+      },
+    ],
+    literarySecret:
+      'This direct riddle frames an everyday mechanical tool as a living entity that exhibits signs of continuous activity (walking/moving) despite never needing organic sustenance like food or drink. The solution is घटिका (A Clock or Watch).',
+    audioPronunciationText:
+      'भोजनं न खादति न च पिबति पानीयं निरंतरं चलती तथापि समयं ज्ञापयति।',
+    emoji: '⏰',
+    funFact:
+      'Ancient Indian astronomers measured time using Ghaṭī-yantras (calibrated floating metal bowls in water basins) where 1 Ghaṭī equaled exactly 24 modern minutes!',
+    illustrationUrl: '/images/prahelika/prahelika-7-ghatika.jpg',
+    illustrationCaption:
+      'Classical Temple Astronomical & Rajasthani Folk Painting: The Ornate Astrolabe and Water Clock (घटिका-यन्त्रम्) marking hours and nakshatras, surrounded by untouched food offerings, water bowl, and cosmic sun-moon orbits.',
+  },
 ];

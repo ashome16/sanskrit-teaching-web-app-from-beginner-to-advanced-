@@ -182,17 +182,26 @@ const PrahelikaCardView: React.FC<PrahelikaCardViewProps> = ({
         </div>
       </div>
 
-      {/* MODE 1: ANTARĀLĀPIKĀ SEQUENTIAL GAMEPLAY (Riddle 1) */}
+      {/* MODE 1: ANTARĀLĀPIKĀ SEQUENTIAL GAMEPLAY (Riddles 1 & 6) */}
       {riddle.genre === 'अन्तरालापिका' && riddle.questions && (
         <div className="antaralapika-game-container">
           <div className="antaralapika-instructions">
             <h3>
-              <span>🎯</span> The Antarālāpikā Challenge (अन्तरालापिका)
+              <span>🎯</span> The Antarālāpikā Challenge ({riddle.titleSa})
             </h3>
             <p>
-              The last line looks like: <em>&ldquo;From a deer, a lion flees!&rdquo;</em> (absurd!).
-              In reality, it conceals the 3 answers in exact chronological order.
-              <strong> Tap the word in Line 4 that answers each question!</strong>
+              {riddle.id === 'prahelika-1-antaralapika' ? (
+                <>
+                  The last line looks like: <em>&ldquo;From a deer, a lion flees!&rdquo;</em> (absurd!).
+                  In reality, it conceals the 3 answers in exact chronological order.
+                  <strong> Tap the word in Line 4 that answers each question!</strong>
+                </>
+              ) : (
+                <>
+                  By joining the first syllable with the following word (सन्धि), the solution to each of the 4 questions is revealed!
+                  <strong> Tap each Sandhi compound word to answer each question in order!</strong>
+                </>
+              )}
             </p>
           </div>
 
@@ -200,7 +209,7 @@ const PrahelikaCardView: React.FC<PrahelikaCardViewProps> = ({
           {antaralapikaStep < riddle.questions.length ? (
             <div className="antaralapika-quest-card">
               <div className="antaralapika-quest-q-num">
-                Question {antaralapikaStep + 1} of 3
+                Question {antaralapikaStep + 1} of {riddle.questions.length}
               </div>
               <div className="antaralapika-quest-q-sa" lang="sa">
                 {riddle.questions[antaralapikaStep].questionSa}
@@ -211,22 +220,25 @@ const PrahelikaCardView: React.FC<PrahelikaCardViewProps> = ({
             </div>
           ) : null}
 
-          {/* Line 4 Interactive Tap Row */}
+          {/* Line 4 / Sandhi Words Interactive Tap Row */}
           <div className="antaralapika-line4-interactive">
             <div className="antaralapika-line4-label">
-              पादः ४ (Line 4) · Tap the Matching Answer Word:
+              {riddle.id === 'prahelika-1-antaralapika'
+                ? 'पादः ४ (Line 4) · Tap the Matching Answer Word:'
+                : 'सन्धि-पदानि (Sandhi Joined Words) · Tap the Matching Answer Word:'}
             </div>
             <div className="antaralapika-words-row">
-              {['मृगात्', 'सिंहः', 'पलायते'].map((w, wIdx) => {
+              {riddle.questions.map((q, wIdx) => {
+                const w = q.verseRefWord;
                 const isSolved = wIdx < antaralapikaStep;
                 const isWrong = antaralapikaWrongWord === w;
                 return (
                   <button
-                    key={w}
+                    key={`${q.qId}-${w}`}
                     type="button"
                     className={`antaralapika-word-btn${isSolved ? ' is-solved' : ''}${isWrong ? ' is-wrong' : ''}`}
                     onClick={() => handleAntaralapikaWordClick(w)}
-                    disabled={isSolved || antaralapikaStep >= 3}
+                    disabled={isSolved || antaralapikaStep >= riddle.questions!.length}
                   >
                     {w}
                     {isSolved && <span> ✔</span>}
