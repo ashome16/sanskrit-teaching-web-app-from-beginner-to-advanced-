@@ -452,6 +452,675 @@
   transform: translateY(0) scale(0.98);
 }
 
+/* =========================================================================
+   Interactive Ganesha Fruit & Modak Offering Stage (Preschool Special)
+   ========================================================================= */
+.sgh-ganesha-stage {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fff7ed 100%);
+  border: 2px solid #fde68a;
+  border-radius: 16px;
+  padding: 1.1rem 1.25rem;
+  margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.12);
+}
+
+.sgh-ganesha-stage-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.sgh-ganesha-avatar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.sgh-ganesha-avatar-frame {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 18px;
+  border: 3px solid #f59e0b;
+  overflow: visible;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sgh-ganesha-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+}
+
+/* Modak in Ganesha's Hand (मोदकहस्तः) */
+.sgh-ganesha-modak-hand {
+  position: absolute;
+  bottom: -8px;
+  right: -10px;
+  z-index: 10;
+  background: radial-gradient(circle, #fef08a 0%, #f59e0b 80%, #d97706 100%);
+  border: 2px solid #ffffff;
+  border-radius: 14px;
+  padding: 0.25rem 0.55rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  box-shadow: 0 0 18px #f59e0b, 0 4px 10px rgba(0, 0, 0, 0.25);
+  animation: ganeshaHandModakPulse 1.8s ease-in-out infinite;
+}
+
+.sgh-gmh-badge {
+  font-size: 0.62rem;
+  font-weight: 900;
+  color: #7c2d12;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.sgh-gmh-icon-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.sgh-gmh-sparkle {
+  font-size: 1rem;
+  animation: sparkleTwinkle 1.2s infinite alternate;
+}
+
+/* Waiting for Modak Open Hands Badge */
+.sgh-ganesha-waiting-hand {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  z-index: 10;
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  padding: 0.22rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  box-shadow: 0 3px 10px rgba(234, 88, 12, 0.4);
+  animation: waitingModakBounce 1.4s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.sgh-ganesha-waiting-badge {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  z-index: 10;
+  background: #f59e0b;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
+}
+
+.sgh-ganesha-avatar-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #78350f;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Ganesha Speech Bubble */
+.sgh-ganesha-speech-wrap {
+  flex: 1;
+  min-width: 260px;
+}
+
+.sgh-ganesha-speech-bubble {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid #fed7aa;
+  border-radius: 16px;
+  padding: 0.85rem 1.15rem;
+  box-shadow: 0 3px 10px rgba(217, 119, 6, 0.08);
+}
+
+.sgh-ganesha-speech-bubble::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 24px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #fed7aa;
+}
+
+.sgh-ganesha-speech-bubble::after {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 25px;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 9px solid #ffffff;
+}
+
+.sgh-gsb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.sgh-gsb-speaker {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #9a3412;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sgh-speech-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 999px;
+  padding: 0.22rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #92400e;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sgh-speech-audio-btn:hover {
+  background: #fde68a;
+  border-color: #f59e0b;
+  transform: scale(1.04);
+}
+
+.sgh-gsb-text {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: #451a03;
+}
+
+.sgh-gsb-text strong {
+  display: block;
+  font-size: 1.15rem;
+  color: #78350f;
+  margin-bottom: 0.2rem;
+}
+
+.sgh-gsb-text p {
+  margin: 0;
+}
+
+.sgh-gsb-highlight {
+  display: block;
+  background: #fff7ed;
+  border-left: 4px solid #ea580c;
+  padding: 0.4rem 0.65rem;
+  border-radius: 0 8px 8px 0;
+  margin-top: 0.35rem;
+  font-weight: 600;
+}
+
+/* Ganesha's Sweet Offering Plate (नैवेद्य-थालम्) */
+.sgh-ganesha-tray {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #d97706;
+  border-radius: 14px;
+  padding: 0.85rem 1.1rem;
+  margin-top: 0.85rem;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.16);
+}
+
+.sgh-tray-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.65rem;
+}
+
+.sgh-tray-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sgh-tray-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.sgh-tray-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #78350f;
+  line-height: 1.2;
+}
+
+.sgh-tray-sub {
+  font-size: 0.78rem;
+  color: #92400e;
+  font-weight: 600;
+  display: block;
+}
+
+.sgh-tray-counter-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #d97706;
+  border-radius: 999px;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #92400e;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* 7 Tray Slots Grid */
+.sgh-tray-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.55rem;
+}
+
+.sgh-tray-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1.5px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 0.6rem 0.35rem;
+  cursor: default;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  min-height: 96px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.sgh-tray-slot.is-collected {
+  background: #ffffff;
+  border: 2px solid #10b981;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.22);
+  cursor: pointer;
+  animation: fruitTrayPopIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sgh-tray-slot.is-collected:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.32);
+}
+
+.sgh-tray-slot.is-target {
+  border: 2px solid #f59e0b;
+  background: #fffbeb;
+  animation: trayTargetPulse 1.5s ease-in-out infinite;
+}
+
+.sgh-tray-slot.is-modak-slot.is-collected {
+  background: radial-gradient(circle, #fffbeb 0%, #fef3c7 70%, #fed7aa 100%);
+  border: 2.5px solid #d97706;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.5), 0 4px 10px rgba(217, 119, 6, 0.25);
+  animation: modakCollectedRadiance 1.6s ease-in-out infinite;
+}
+
+.sgh-tray-slot-emoji-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sgh-tray-slot-emoji {
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.sgh-tray-slot.is-collected:hover .sgh-tray-slot-emoji {
+  transform: scale(1.15) rotate(6deg);
+}
+
+.sgh-tray-slot-check {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #10b981;
+  color: #ffffff;
+  border-radius: 999px;
+  width: 18px;
+  height: 18px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.sgh-tray-slot-next-badge {
+  position: absolute;
+  top: -8px;
+  background: #ea580c;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.08rem 0.35rem;
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  border: 1px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(234, 88, 12, 0.4);
+}
+
+.sgh-tray-slot-dev {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #78350f;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.sgh-tray-slot-en {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #64748b;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.sgh-tray-slot.is-collected .sgh-tray-slot-en {
+  color: #065f46;
+  font-weight: 700;
+}
+
+.sgh-tray-modak-tag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #b45309;
+  background: #fef3c7;
+  border-radius: 999px;
+  padding: 0.08rem 0.35rem;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* Modak Collected Guidance Banner */
+.sgh-modak-feed-banner {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+  margin-top: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+  animation: modakFeedBannerBounce 2s ease-in-out infinite;
+  flex-wrap: wrap;
+}
+
+.sgh-mfb-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sgh-mfb-text {
+  flex: 1;
+  min-width: 220px;
+}
+
+.sgh-mfb-text strong {
+  display: block;
+  font-size: 1.15rem;
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.01em;
+}
+
+.sgh-mfb-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  opacity: 0.95;
+}
+
+/* Active Step 8 Ganesha Ready Grid Cell Pulsing */
+.sgh-maze-cell--ganesha-ready {
+  border: 3.5px solid #ea580c !important;
+  box-shadow: 0 0 24px rgba(234, 88, 12, 0.8), 0 0 8px #f59e0b inset !important;
+  animation: ganeshaReadyPulse 1.2s ease-in-out infinite !important;
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%) !important;
+  transform: scale(1.05) !important;
+  z-index: 5;
+}
+
+.sgh-badge--ganesha-feed {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  font-size: 0.78rem !important;
+  padding: 0.25rem 0.55rem !important;
+  box-shadow: 0 2px 8px rgba(194, 65, 12, 0.5) !important;
+  animation: feedBadgeBob 1s ease-in-out infinite alternate !important;
+  white-space: nowrap;
+}
+
+/* Ganesha Celebration Victory Hero */
+.sgh-ganesha-celebrate-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.5rem;
+}
+
+.sgh-gch-avatar-wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 22px;
+  border: 4px solid #f59e0b;
+  background: #ffffff;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sgh-gch-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.sgh-gch-modak-overlay {
+  position: absolute;
+  bottom: -10px;
+  right: -12px;
+  background: radial-gradient(circle, #fef08a 0%, #f59e0b 80%, #d97706 100%);
+  border: 2.5px solid #ffffff;
+  border-radius: 999px;
+  padding: 0.3rem 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  box-shadow: 0 0 20px #f59e0b, 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: ganeshaHandModakPulse 1.6s ease-in-out infinite;
+}
+
+.sgh-gch-modak {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.sgh-gch-sparkles {
+  font-size: 1.1rem;
+  animation: sparkleTwinkle 1s infinite alternate;
+}
+
+/* Keyframe Animations */
+@keyframes ganeshaHandModakPulse {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    box-shadow: 0 0 16px #f59e0b, 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 0 24px #f59e0b, 0 6px 14px rgba(217, 119, 6, 0.4);
+  }
+}
+
+@keyframes waitingModakBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes fruitTrayPopIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.3;
+  }
+  70% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes trayTargetPulse {
+  0%, 100% {
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 rgba(245, 158, 11, 0);
+  }
+  50% {
+    border-color: #d97706;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+  }
+}
+
+@keyframes modakCollectedRadiance {
+  0%, 100% {
+    box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.7);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes modakFeedBannerBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes ganeshaReadyPulse {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(234, 88, 12, 0.7);
+    border-color: #ea580c;
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(234, 88, 12, 1), 0 0 12px #f59e0b inset;
+    border-color: #c2410c;
+  }
+}
+
+@keyframes feedBadgeBob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes sparkleTwinkle {
+  from {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* Responsive adjustments for Ganesha stage */
+@media (max-width: 900px) {
+  .sgh-tray-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sgh-ganesha-stage-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .sgh-ganesha-speech-bubble::before,
+  .sgh-ganesha-speech-bubble::after {
+    display: none;
+  }
+  .sgh-tray-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sgh-tray-slot {
+    min-height: 85px;
+    padding: 0.45rem 0.25rem;
+  }
+  .sgh-tray-slot-emoji {
+    font-size: 1.6rem;
+  }
+  .sgh-tray-slot-dev {
+    font-size: 0.85rem;
+  }
+}
+
 .sgh-stats-row {
   display: flex;
   align-items: center;
