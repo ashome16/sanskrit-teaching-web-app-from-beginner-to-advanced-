@@ -282,7 +282,6 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             aria-label="Enter Gurukul"
             title="Enter Gurukul"
           >
-            <span className="gurukul-bell-enter-icon" aria-hidden="true">🔔</span>
             <span lang="sa">प्रविश</span> · <span>Enter Gurukul</span>
             <span className="gurukul-enter-arrow" aria-hidden="true">➔</span>
           </button>

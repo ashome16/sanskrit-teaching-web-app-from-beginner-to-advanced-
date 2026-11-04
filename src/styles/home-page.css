@@ -85,8 +85,8 @@ tr th {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.85rem;
-  padding: 0.5rem 0.5rem 0.25rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem 0.25rem;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -99,36 +99,38 @@ tr th {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
+  gap: 0.65rem;
   text-align: center;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   overflow: visible;
+  filter: drop-shadow(0 4px 14px rgba(180, 83, 9, 0.2));
 }
 
 .home-hero-sanskrit-calligraphy {
   display: inline-block;
-  font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', 'Martel', Georgia, serif;
-  font-size: clamp(2.35rem, 8vw, 4.5rem);
+  font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari MT', 'Martel', Georgia, serif;
+  font-size: clamp(2.2rem, 7.5vw, 4.25rem);
   font-weight: 900;
-  color: #3d1b04;
-  line-height: 1.35;
+  color: #78350f;
+  line-height: 1.6;
   letter-spacing: 0.04em;
-  padding: 0.35em 0.3em 0.45em;
-  margin: -0.2em 0 -0.15em;
+  padding: 0.55em 0.6em 0.65em;
+  margin: 0;
   max-width: 100%;
   box-sizing: border-box;
   overflow: visible;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: keep-all;
   background: linear-gradient(135deg, #78350f 0%, #b45309 35%, #c2410c 70%, #991b1b 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 4px 14px rgba(180, 83, 9, 0.25));
   user-select: none;
   cursor: default;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .home-hero-sanskrit-calligraphy:hover {
@@ -2842,9 +2844,9 @@ tr th {
 
 @media (max-width: 640px) {
   .home-hero-sanskrit-calligraphy {
-    font-size: clamp(2.05rem, 9.2vw, 2.85rem);
-    padding: 0.3em 0.2em 0.4em;
-    line-height: 1.3;
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    padding: 0.45em 0.4em 0.55em;
+    line-height: 1.55;
     letter-spacing: 0.02em;
   }
   .home-hero-sanskrit-shloka {
@@ -3858,8 +3860,9 @@ tr th {
 
 @media (max-width: 360px) {
   .home-hero-sanskrit-calligraphy {
-    font-size: 1.95rem;
-    padding: 0.25em 0.15em 0.35em;
+    font-size: 1.85rem;
+    padding: 0.4em 0.3em 0.5em;
+    line-height: 1.5;
     letter-spacing: 0.01em;
   }
   .home-hero-sanskrit-shloka {
