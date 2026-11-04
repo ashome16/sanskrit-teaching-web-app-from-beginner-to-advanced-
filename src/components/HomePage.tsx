@@ -1171,7 +1171,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 <h3 className="home-journey-step-title">Words &amp; Games</h3>
                 <span className="home-journey-step-sanskrit">शब्दाः · जोडो एवं क्रीडाः</span>
                 <p className="home-journey-step-desc">
-                  Build 6,000+ practical words with tile puzzles, 16 match-pair categories &amp; story word mazes.
+                  Build 6,000+ practical words with tile puzzles, 18 match-pair categories, word mazes &amp; classical Sanskrit riddles (प्रहेलिकाः).
                 </p>
                 <span className="home-journey-step-cta">Play &amp; Build →</span>
               </div>
@@ -2084,7 +2084,8 @@ const HomePage: React.FC<HomePageProps> = ({
               <ul className="home-feature-points">
                 <li>Accelerate vocabulary recall 3× faster than traditional memorization</li>
                 <li>Master matra joining (e.g. क + आ → का) and letter ligatures hands-on</li>
-                <li>14 Match-the-Following categories: actions, relationships, time, vastu, ayurveda, occupations &amp; genders</li>
+                <li>18 Match-the-Following categories: actions, relationships, time, vastu, ayurveda, occupations &amp; genders</li>
+                <li>Classical Sanskrit Riddles (प्रहेलिकाः): Antarālāpikā internal-answer verses, poetic paradoxes &amp; Gurukul wit</li>
                 <li>Word Maze story quests: navigate Panchatantra story paths, avoid traps &amp; assemble full sentences</li>
                 <li>7 themed shelves covering animals, daily objects, verbs, and nature</li>
                 <li>Instant encouraging feedback with direct links back to textbook lessons</li>

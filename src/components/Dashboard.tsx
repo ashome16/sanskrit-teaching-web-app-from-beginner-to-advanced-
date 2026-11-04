@@ -266,6 +266,10 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/match-games' ||
     clean === '/maze' ||
     clean === '/word-maze' ||
+    clean === '/prahelika' ||
+    clean === '/sanskrit-prahelika' ||
+    clean === '/sanskrit-riddles' ||
+    clean === '/riddles' ||
     clean === '/games' ||
     clean === '/sanskrit-games'
   ) return 'board';
@@ -703,10 +707,19 @@ const Dashboard: React.FC = () => {
   };
 
   const [worksheetsCategory, setWorksheetsCategory] = useState<string>('all');
-  const [boardStudioMode, setBoardStudioMode] = useState<'jodo' | 'match' | 'maze'>('jodo');
+  const [boardStudioMode, setBoardStudioMode] = useState<'jodo' | 'match' | 'maze' | 'prahelika'>(() => {
+    try {
+      const h = (window.location.hash || '').toLowerCase();
+      const p = (window.location.pathname || '').toLowerCase();
+      if (h === '#prahelika' || h === '#riddle' || h === '#riddles' || p.includes('prahelika') || p.includes('riddle')) return 'prahelika';
+      if (h === '#maze' || h === '#word-maze' || h === '#maze-games' || p.includes('maze')) return 'maze';
+      if (h === '#match' || h === '#match-games' || h === '#match-the-following' || p.includes('match')) return 'match';
+    } catch {}
+    return 'jodo';
+  });
   const [boardCategory, setBoardCategory] = useState<string | undefined>(undefined);
 
-  const handleOpenBoard = (mode: 'jodo' | 'match' | 'maze' = 'jodo', category?: string) => {
+  const handleOpenBoard = (mode: 'jodo' | 'match' | 'maze' | 'prahelika' = 'jodo', category?: string) => {
     setBoardStudioMode(mode);
     setBoardCategory(category);
     navigateToView('board');

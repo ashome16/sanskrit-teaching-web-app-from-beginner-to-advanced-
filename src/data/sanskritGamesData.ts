@@ -675,6 +675,65 @@ export const MATCH_CATEGORIES: MatchCategoryMetadata[] = [
       },
     ],
   },
+  // CATEGORY 18: प्रहेलिका-मञ्जरी (Classical Sanskrit Riddles & Wit)
+  {
+    id: 'cat_prahelika',
+    titleDev: 'प्रहेलिका-मञ्जरी (काव्य-रहस्यानि)',
+    titleEn: 'Classical Sanskrit Riddles & Wit (Prahelikā)',
+    icon: '📜',
+    description:
+      'Solve ancient Sanskrit riddles: musk & lion (अन्तरालापिका), smart messenger (अपदो दूरगामी), coconut (त्रिनेत्रधारी), and needle-thread (सूची-सूत्रम्)!',
+    pairs: [
+      {
+        id: 'pr_1_1',
+        sanskrit: 'कस्तूरी जायते कस्मात्',
+        english: 'मृगात् (From a Deer — Musk Source)',
+        transliteration: 'kastūrī jāyate kasmāt → mṛgāt',
+        hint: 'First question of the Antarālāpikā riddle: From where is musk produced? Answer: Deer (मृगात्).',
+        emoji: '🦌',
+      },
+      {
+        id: 'pr_1_2',
+        sanskrit: 'को हन्ति करिणां कुलम्',
+        english: 'सिंहः (A Lion — Elephant Slayer)',
+        transliteration: 'ko hanti kariṇāṁ kulam → siṁhaḥ',
+        hint: 'Second question of the Antarālāpikā riddle: Who destroys the herd of elephants? Answer: Lion (सिंहः).',
+        emoji: '🦁',
+      },
+      {
+        id: 'pr_1_3',
+        sanskrit: 'किं कुर्यात् कातरो युद्धे',
+        english: 'पलायते (Flees — Coward in Battle)',
+        transliteration: 'kiṁ kuryāt kātaro yuddhe → palāyate',
+        hint: 'Third question of the Antarālāpikā riddle: What does a coward do in battle? Answer: Flees (पलायते).',
+        emoji: '🏃',
+      },
+      {
+        id: 'pr_2_1',
+        sanskrit: 'अपदो दूरगामी साक्षरो न च पण्डितः',
+        english: 'पत्रम् (A Letter / Written Mail)',
+        transliteration: 'apado dūragāmī sākṣaro na ca paṇḍitaḥ → patram',
+        hint: 'No feet but travels far, full of characters but not a scholar, mouthless yet speaks: Letter (पत्रम्).',
+        emoji: '✉️',
+      },
+      {
+        id: 'pr_3_1',
+        sanskrit: 'वृक्षाग्रवासी त्रिनेत्रधारी जलं बिभ्रत्',
+        english: 'नारिकेलः (A Coconut / Śrīphalam)',
+        transliteration: 'vṛkṣāgravāsī trinetradhārī → nārikelaḥ',
+        hint: 'Lives atop palm tree, has 3 eyes like Shiva, wears bark robe, holds water: Coconut (नारिकेलः).',
+        emoji: '🥥',
+      },
+      {
+        id: 'pr_4_1',
+        sanskrit: 'एकचक्षुः बिलमिच्छन् क्षीयते वर्धते',
+        english: 'सूची-सूत्रम् (Needle & Thread)',
+        transliteration: 'ekacakṣuḥ bilamicchan kṣīyate vardhate → sūcī-sūtram',
+        hint: 'One eye, enters fabric holes, shrinks as sewing grows larger: Needle and thread (सूची-सूत्रम्).',
+        emoji: '🪡',
+      },
+    ],
+  },
 ];
 
 // ============================================================================

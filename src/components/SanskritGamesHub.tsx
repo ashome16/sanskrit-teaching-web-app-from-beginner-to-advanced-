@@ -14,10 +14,10 @@ import { devanagariToIast } from '../utils/devanagariToIast';
 import '../styles/sanskrit-games.css';
 
 export interface SanskritGamesHubProps {
-  initialMode?: 'match' | 'maze';
+  initialMode?: 'match' | 'maze' | 'prahelika';
   initialCategory?: string;
   onGoBack?: () => void;
-  onModeChange?: (mode: 'match' | 'maze') => void;
+  onModeChange?: (mode: 'match' | 'maze' | 'prahelika') => void;
   embeddedInBoard?: boolean;
 }
 
@@ -130,10 +130,14 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   onModeChange,
   embeddedInBoard = false,
 }) => {
-  const [activeGameMode, setActiveGameMode] = useState<'match' | 'maze'>(initialMode);
+  const [activeGameMode, setActiveGameMode] = useState<'match' | 'maze'>(
+    initialMode === 'maze' ? 'maze' : 'match'
+  );
 
   useEffect(() => {
-    setActiveGameMode(initialMode);
+    if (initialMode === 'match' || initialMode === 'maze') {
+      setActiveGameMode(initialMode);
+    }
   }, [initialMode]);
 
   const switchGameMode = useCallback(
@@ -825,6 +829,20 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                 <span>🌀</span>
                 <span>शब्द-व्यूहः</span>
               </button>
+              {onModeChange && (
+                <button
+                  type="button"
+                  className="sgh-mode-btn"
+                  onClick={() => {
+                    soundEffects.playStrokeChime();
+                    onModeChange('prahelika');
+                  }}
+                  title="Explore Classical Sanskrit Riddles (प्रहेलिकाः)"
+                >
+                  <span>📜</span>
+                  <span>प्रहेलिकाः</span>
+                </button>
+              )}
             </div>
           )}
         </div>

@@ -10,6 +10,7 @@ import {
   type LeitnerStats,
 } from '../utils/leitnerTracker';
 import { SanskritGamesHub } from './SanskritGamesHub';
+import { PrahelikaStudio } from './PrahelikaStudio';
 import { devanagariToIast } from '../utils/devanagariToIast';
 
 type ShelfId = 'prarambhah' | 'sariram' | 'ganitam' | 'bhugolah' | 'sanskritih' | 'krida' | 'prakrtih';
@@ -35,7 +36,7 @@ export interface BoardProps {
   onNavigateToReader?: (lessonId?: string) => void;
   onNavigateToVarnamala?: () => void;
   onNavigateToGrammar?: () => void;
-  initialStudioMode?: 'jodo' | 'match' | 'maze';
+  initialStudioMode?: 'jodo' | 'match' | 'maze' | 'prahelika';
   initialCategory?: string;
 }
 
@@ -980,10 +981,11 @@ const Board: React.FC<BoardProps> = ({
   initialStudioMode,
   initialCategory,
 }) => {
-  const [boardStudioMode, setBoardStudioMode] = useState<'jodo' | 'match' | 'maze'>(() => {
+  const [boardStudioMode, setBoardStudioMode] = useState<'jodo' | 'match' | 'maze' | 'prahelika'>(() => {
     if (initialStudioMode) return initialStudioMode;
     const h = (typeof window !== 'undefined' ? window.location.hash : '').toLowerCase();
     const p = (typeof window !== 'undefined' ? window.location.pathname : '').toLowerCase();
+    if (h === '#prahelika' || h === '#riddle' || h === '#riddles' || p.includes('prahelika') || p.includes('riddle')) return 'prahelika';
     if (h === '#maze' || h === '#word-maze' || h === '#maze-games' || p.includes('maze')) return 'maze';
     if (h === '#match' || h === '#match-games' || h === '#match-the-following' || p.includes('match')) return 'match';
     return 'jodo';
@@ -998,7 +1000,9 @@ const Board: React.FC<BoardProps> = ({
   useEffect(() => {
     const handleHash = () => {
       const h = (window.location.hash || '').toLowerCase();
-      if (h === '#maze' || h === '#word-maze' || h === '#maze-games') {
+      if (h === '#prahelika' || h === '#riddle' || h === '#riddles') {
+        setBoardStudioMode('prahelika');
+      } else if (h === '#maze' || h === '#word-maze' || h === '#maze-games') {
         setBoardStudioMode('maze');
       } else if (h === '#match' || h === '#match-games' || h === '#match-the-following') {
         setBoardStudioMode('match');
@@ -2247,6 +2251,8 @@ const Board: React.FC<BoardProps> = ({
             ? '🎯 युग्म-मेलनम् · Match Pairs'
             : boardStudioMode === 'maze'
             ? '🌀 शब्द-व्यूहः · Word Mazes'
+            : boardStudioMode === 'prahelika'
+            ? '📜 प्रहेलिकाः · Classical Riddles'
             : '🧩 जोडो Tile Puzzle'}
         </span>
       </nav>
@@ -2284,7 +2290,7 @@ const Board: React.FC<BoardProps> = ({
       </div>
     </div>
 
-    {/* Studio Mode Switcher: Jodo / Match Pairs / Word Maze */}
+    {/* Studio Mode Switcher: Jodo / Match Pairs / Word Maze / Classical Riddles */}
     <div className="board-mode-switcher-bar" role="tablist" aria-label="Game Studio Modes">
       <button
         type="button"
@@ -2336,11 +2342,38 @@ const Board: React.FC<BoardProps> = ({
           <span className="mode-tab-sub">Preschool Trails, Stories &amp; Grammar Quests</span>
         </div>
       </button>
+
+      <button
+        type="button"
+        role="tab"
+        aria-selected={boardStudioMode === 'prahelika'}
+        className={`board-mode-tab ${boardStudioMode === 'prahelika' ? 'active' : ''}`}
+        onClick={() => {
+          setBoardStudioMode('prahelika');
+          window.location.hash = '#prahelika';
+        }}
+      >
+        <span className="mode-tab-icon">📜</span>
+        <div className="mode-tab-text">
+          <span className="mode-tab-title">प्रहेलिकाः · Classical Riddles</span>
+          <span className="mode-tab-sub">Antarālāpikā, Paradoxes &amp; Wit</span>
+        </div>
+      </button>
     </div>
 
-    {boardStudioMode !== 'jodo' ? (
+    {boardStudioMode === 'prahelika' ? (
+      <PrahelikaStudio
+        onGoBack={() => {
+          setBoardStudioMode('jodo');
+          window.location.hash = '#jodo';
+        }}
+        onOpenIks={() => {
+          window.location.hash = '#vedic-knowledge-system';
+        }}
+      />
+    ) : boardStudioMode !== 'jodo' ? (
       <SanskritGamesHub
-        initialMode={boardStudioMode}
+        initialMode={boardStudioMode === 'maze' ? 'maze' : 'match'}
         initialCategory={initialCategory}
         embeddedInBoard
         onModeChange={(nextMode) => {
