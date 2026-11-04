@@ -93,6 +93,12 @@
 /vedic-math/ /vedic-maths/ 301
 /dhatu /dhatupatha/ 301
 /dhatu/ /dhatupatha/ 301
+/prahelika /board/#prahelika 302
+/prahelika/ /board/#prahelika 302
+/riddles /board/#prahelika 302
+/riddles/ /board/#prahelika 302
+/sanskrit-riddles /board/#prahelika 302
+/sanskrit-riddles/ /board/#prahelika 302
 
 # Old repository and staging path redirects
 /sanskrit-teaching-web-app-from-beginner-to-advanced-/* /:splat 301
