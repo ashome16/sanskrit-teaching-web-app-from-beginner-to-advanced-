@@ -14,18 +14,24 @@
 /vijnana-lab/ /vignana-lab/ 301
 /science-lab /vignana-lab/ 301
 /science-lab/ /vignana-lab/ 301
-/iks /vignana-lab/ 301
-/iks/ /vignana-lab/ 301
-/indian-knowledge-systems /vignana-lab/ 301
-/indian-knowledge-systems/ /vignana-lab/ 301
-/vedic-sciences /vignana-lab/ 301
-/vedic-sciences/ /vignana-lab/ 301
-/vedic-science /vignana-lab/ 301
-/vedic-science/ /vignana-lab/ 301
-/ancient-indian-sciences /vignana-lab/ 301
-/ancient-indian-sciences/ /vignana-lab/ 301
+/vedic-science /vedic-sciences/ 301
+/vedic-science/ /vedic-sciences/ 301
+/indian-knowledge-systems /iks/ 301
+/indian-knowledge-systems/ /iks/ 301
+/ancient-indian-sciences /iks/ 301
+/ancient-indian-sciences/ /iks/ 301
 /iks-curriculum /course/ 301
 /iks-curriculum/ /course/ 301
+
+# Play 2 Learn: Preschool Games aliases
+/preschool-games /preschool/ 301
+/preschool-games/ /preschool/ 301
+/play-2-learn /preschool/ 301
+/play-2-learn/ /preschool/ 301
+/play2learn /preschool/ 301
+/play2learn/ /preschool/ 301
+/free-preschool-games /preschool/ 301
+/free-preschool-games/ /preschool/ 301
 
 # Textbook reader and grade aliases
 /deepakam /reader/ 301
