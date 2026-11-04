@@ -1042,7 +1042,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       <div className="vl-ps-header-left">
                         <span className="vl-ps-badge">👶 24 Preschool Discovery Games · Ages 3–6</span>
                         <h3 className="vl-ps-title">
-                          Play 2 Learn: Free Preschool Games <span className="vl-ps-title-sa" lang="sa">शिशु-क्रीडा-वाटिका</span>
+                          Play 2 Learn: Free Preschool Games <span className="vl-ps-title-sa sanskrit-safe-text" lang="sa">शिशु-क्रीडा-वाटिका</span>
                         </h3>
                         <p className="vl-ps-desc">
                           Fun, safe activities for ages 3–6 that build early literacy, numeracy, and thinking skills. Pure picture-and-sound sensory playground: Indian geometry (ज्यामिति), vibrant color mixing, friendly animals, storybook living India map, yoga poses, and orchard fruits.
@@ -1139,7 +1139,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 <div className="vl-sgs-header">
                   <div className="vl-sgs-badge">
                     <span>🔬</span>
-                    <span>SCIENCE LAB CURRICULUM · विज्ञान-क्रीडा-शाला</span>
+                    <span>SCIENCE LAB CURRICULUM · <span className="sanskrit-safe-text" lang="sa">विज्ञान-क्रीडा-शाला</span></span>
                   </div>
                   <h2 className="vl-sgs-title">
                     Science Lab Games: Interactive Sanskrit STEM Sandboxes Across All Learning Levels
@@ -1405,7 +1405,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               <div className="vl-wb-title-box">
                 <span className="vl-wb-sector-code">{seg.levelLabel} · {seg.ageRange}</span>
                 <h2 id={`vl-h-${active}`} className="vl-wb-name">
-                  {seg.title} <span className="vl-wb-dev" lang="sa">({seg.dev})</span>
+                  {seg.title} <span className="vl-wb-dev sanskrit-safe-text" lang="sa">({seg.dev})</span>
                 </h2>
               </div>
             </div>
@@ -1635,7 +1635,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
           <section className="vl-preschool-gateway" aria-label="Preschool Next Adventure Gateway">
             <div className="vl-pgw-card">
               <div className="vl-pgw-header">
-                <span className="vl-pgw-badge">🌟 MORE WONDER GAMES · शिशु-क्रीडा</span>
+                <span className="vl-pgw-badge">🌟 MORE WONDER GAMES · <span className="sanskrit-safe-text" lang="sa">शिशु-क्रीडा</span></span>
                 <h3>Keep playing more games in the Wonder Playground:</h3>
               </div>
               <div className="vl-pgw-grid">

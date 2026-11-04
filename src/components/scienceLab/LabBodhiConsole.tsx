@@ -1254,7 +1254,7 @@ export const LabBodhiConsole: React.FC<LabBodhiConsoleProps> = ({ activeSegment 
               <span className="vl-bodhi-name">बोधि-मार्गदर्शकः</span> · Ask Bodhi Vijñāna
             </div>
             <div className="vl-bodhi-sub">
-              Your ancient science mentor for <b>{lore.title}</b> (<span lang="sa">{lore.dev}</span>)
+              Your ancient science mentor for <b>{lore.title}</b> (<span className="sanskrit-safe-text" lang="sa">{lore.dev}</span>)
             </div>
           </div>
         </div>

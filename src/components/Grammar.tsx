@@ -1154,7 +1154,7 @@ const Grammar: React.FC<GrammarProps> = ({
       <section className="grammar-page" aria-label="Conjunct games">
         <header className="grammar-page-header">
           {renderBreadcrumb('संयुक्त · Conjunct Games')}
-          <h2 className="grammar-title">संयुक्त-क्रीडा-मण्डलम् · Conjunct Games Studio</h2>
+          <h2 className="grammar-title"><span className="sanskrit-safe-text" lang="sa">संयुक्त-क्रीडा-मण्डलम्</span> · Conjunct Games Studio</h2>
           <p className="grammar-lead">
             Tactile letter forges, vertical piggyback stackers, superhero shape-shifters, and 3-level quiz arena with score tracking &amp; comic guides!
           </p>

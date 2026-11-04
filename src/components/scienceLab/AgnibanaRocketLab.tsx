@@ -378,7 +378,7 @@ export const AgnibanaRocketLab: React.FC = () => {
         <span className="apb-icon" aria-hidden="true">🚀</span>
         <div>
           <div className="apb-title-row">
-            <strong>अग्निबाण-क्रीडा · Rocket &amp; Sparkler Physics Playground (Ages 7–14)</strong>
+            <strong><span className="sanskrit-safe-text" lang="sa">अग्निबाण-क्रीडा</span> · Rocket &amp; Sparkler Physics Playground (Ages 7–14)</strong>
             <span className="apb-tag">Pyrotechnics &amp; Aerospace History</span>
           </div>
           <p className="apb-desc">

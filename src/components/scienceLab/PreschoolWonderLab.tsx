@@ -2120,15 +2120,17 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
             <span className="psw-hero-icon" aria-hidden="true">{levelTier === 'next' ? '🚀' : '🌱'}</span>
             <div>
               <span className="psw-hero-kicker">
-                {levelTier === 'next'
-                  ? 'Next Level Games · Ages 6–10 · बाल-अन्वेषणम्'
-                  : 'Level 1 · Play 2 Learn · Ages 3–6 · शिशु-क्रीडा'}
+                {levelTier === 'next' ? (
+                  <>Next Level Games · Ages 6–10 · <span className="sanskrit-safe-text" lang="sa">बाल-अन्वेषणम्</span></>
+                ) : (
+                  <>Level 1 · Play 2 Learn · Ages 3–6 · <span className="sanskrit-safe-text" lang="sa">शिशु-क्रीडा</span></>
+                )}
               </span>
               <h2 className="psw-hero-title">
                 {levelTier === 'next' ? (
-                  <>Next Level Games <span lang="sa">· अग्रिम-स्तर-क्रीडाः</span></>
+                  <>Next Level Games <span className="sanskrit-safe-text" lang="sa">· अग्रिम-स्तर-क्रीडाः</span></>
                 ) : (
-                  <>Play 2 Learn: Free Preschool Games <span lang="sa">· शिशु-क्रीडा-वाटिका</span></>
+                  <>Play 2 Learn: Free Preschool Games <span className="sanskrit-safe-text" lang="sa">· शिशु-क्रीडा-वाटिका</span></>
                 )}
               </h2>
             </div>
@@ -2388,7 +2390,7 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                   <span>🌏</span><span>🗓️</span><span>🌶️</span><span>🌙</span><span>🌸</span><span>📖</span>
                 </div>
                 <div className="psw-cc-sa-ribbon" lang="sa">
-                  अग्रिम-स्तर-क्रीडाः · Next Level!
+                  <span className="sanskrit-safe-text">अग्रिम-स्तर-क्रीडाः</span> · Next Level!
                 </div>
               </div>
               <div className="psw-cc-body">
@@ -3232,7 +3234,7 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
 
           {/* Magic Color Mixing Cauldron */}
           <div className="psw-magic-mixer-box psw-colors-mixer-side">
-            <h4 className="psw-mixer-title">🧪 वर्ण-मिश्रण-क्रीडा · Magic Color Mixing Cauldron!</h4>
+            <h4 className="psw-mixer-title">🧪 <span className="sanskrit-safe-text" lang="sa">वर्ण-मिश्रण-क्रीडा</span> · Magic Color Mixing Cauldron!</h4>
             <p className="psw-mixer-sub">
               Tap any two colors, then slide to add more of one — watch the colour change!
             </p>

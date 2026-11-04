@@ -2389,7 +2389,7 @@ const Board: React.FC<BoardProps> = ({
       <>
     <div className="board-heading">
       <div>
-        <p className="eyebrow">शब्द-निर्माण-क्रीडा · BUILD SANSKRIT WORDS</p>
+        <p className="eyebrow"><span className="sanskrit-safe-text" lang="sa">शब्द-निर्माण-क्रीडा</span> · BUILD SANSKRIT WORDS</p>
         <h1>जोडो · Sanskrit Jodo Puzzle Studio</h1>
         <p>Blend sounds into words, solve puzzles, and discover daily Sanskrit vocabulary.</p>
       </div>

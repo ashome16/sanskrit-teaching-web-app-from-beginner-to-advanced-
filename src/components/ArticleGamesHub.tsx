@@ -2279,9 +2279,9 @@ export const ArticleGamesHub: React.FC<ArticleGamesHubProps> = ({
       {/* Header Banner */}
       <header className="ag-header-card">
         <div className="ag-header-text">
-          <div className="ag-kicker">Interactive Arena · क्रीडा-शाला</div>
+          <div className="ag-kicker">Interactive Arena · <span className="sanskrit-safe-text" lang="sa">क्रीडा-शाला</span></div>
           <h2 className="ag-title">
-            Games of Ancient India · <span lang="sa">प्राचीन-विज्ञान-क्रीडाः</span>
+            Games of Ancient India · <span className="sanskrit-safe-text" lang="sa">प्राचीन-विज्ञान-क्रीडाः</span>
           </h2>
           <p className="ag-lead">
             Play interactive games based on our published articles: test King Rituparna’s tree sampling, formulate Śukranīti rocket propellant, solve Līlāvatī’s poetic riddles, pulverize Diophantine equations with Kuṭṭaka, master Dhanurveda ballistics, balance antique coins with botanical Guñjā seeds, accelerate Madhava’s infinite Pi series, unlock cosmic powers in the Colossal Vault, weave animal Saptasvara music, synchronize the Vedāṅga Jyotiṣa calendar wheel, double Baudhāyana fire altars, and transmute heavy numbers with Vinculum alchemy.

@@ -888,7 +888,7 @@ export const ActionPlayStudio: React.FC<{ actions: ActionDeckItem[]; onEarnStar?
       <div className="ppd-header-row">
         <div>
           <h3 className="psw-section-heading" style={{ margin: 0 }}>
-            🏃 <span lang="sa">क्रिया-क्रीडा</span> · Action Words &amp; “Ācārya Says!”
+            🏃 <span className="sanskrit-safe-text" lang="sa">क्रिया-क्रीडा</span> · Action Words &amp; “Ācārya Says!”
           </h3>
           <p className="psw-section-sub" style={{ margin: '4px 0 0' }}>
             Jump, run, clap, eat &amp; sleep — listen to the Sanskrit action word and act it out!

@@ -785,7 +785,7 @@ const ConjunctGames: React.FC = () => {
             🪔
           </div>
           <div className="cg-console-titles">
-            <h3>संयुक्त-क्रीडा-मण्डलम् · Sanskrit Conjunct Studio</h3>
+            <h3><span className="sanskrit-safe-text" lang="sa">संयुक्त-क्रीडा-मण्डलम्</span> · Sanskrit Conjunct Studio</h3>
             <p>Master half-letters, vertical piggyback stacks &amp; superhero fusions</p>
           </div>
         </div>

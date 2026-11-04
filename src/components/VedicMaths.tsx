@@ -1238,7 +1238,7 @@ ${bodyHtml}
                     <span className="vedic-tab-num">12</span>
                     <span className="vedic-tab-icon" aria-hidden="true">🎮</span>
                     <div className="vedic-tab-content">
-                      <span className="vedic-tab-title">Games Arena · क्रीडा-शाला</span>
+                      <span className="vedic-tab-title">Games Arena · <span className="sanskrit-safe-text" lang="sa">क्रीडा-शाला</span></span>
                       <span className="vedic-tab-sub">6 Playable Article Games</span>
                     </div>
                   </button>

@@ -299,7 +299,7 @@ const HomeLabBanner: React.FC<HomeLabBannerProps> = ({ onOpen }) => {
         <span className="hlb-fm-icon" aria-hidden="true">🌟</span>
         <span className="hlb-fm-text">
           <span className="hlb-fm-kicker">Free Preschool · Ages 3–6</span>
-          <span className="hlb-fm-title">Play 2 Learn: Free Preschool Games <span lang="sa">· शिशु-क्रीडा</span></span>
+          <span className="hlb-fm-title">Play 2 Learn: Free Preschool Games <span className="sanskrit-safe-text" lang="sa">· शिशु-क्रीडा</span></span>
           <span className="hlb-fm-sub">Fun, safe activities for ages 3–6 that build early literacy, numeracy, and thinking skills.</span>
         </span>
         <span className="hlb-fm-go">▶ Play</span>

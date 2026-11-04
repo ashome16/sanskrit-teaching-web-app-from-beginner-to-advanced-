@@ -5958,9 +5958,17 @@
 }
 
 .vl-ps-title-sa {
-  font-family: 'Noto Serif Devanagari', serif;
+  font-family: 'Noto Sans Devanagari', 'Kohinoor Devanagari', 'Nirmala UI', system-ui, sans-serif !important;
   color: #b45309;
   font-size: 1.15rem;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-variant-ligatures: normal !important;
+  font-feature-settings: "liga" 1, "clig" 1, "blwf" 1, "rphf" 1, "half" 1, "vatu" 1 !important;
+  font-synthesis: none !important;
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 .vl-ps-desc {
@@ -6679,12 +6687,18 @@
 }
 
 .psw-hero-motto-sa {
-  font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  font-weight: 800 !important;
+  font-family: 'Noto Sans Devanagari', 'Kohinoor Devanagari', 'Nirmala UI', system-ui, sans-serif !important;
+  font-weight: 700 !important;
   font-size: 1.05rem !important;
   color: #78350f !important;
-  letter-spacing: 0.04em !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-variant-ligatures: normal !important;
+  font-feature-settings: "liga" 1, "clig" 1, "blwf" 1, "rphf" 1, "half" 1, "vatu" 1 !important;
+  font-synthesis: none !important;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 .psw-hero-motto-sep {
@@ -7166,3 +7180,39 @@
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(2, 132, 199, 0.45);
 }
+
+/* ==========================================================================
+   Comprehensive Devanagari Sanskrit Typography Guard
+   Ensures pristine rendering for conjuncts (e.g. क्री, क्रीडा, क्र, प्र),
+   cures letter-spacing tracking tears, prevents matra collisions,
+   and disables faux-bold counter clogging across all platforms.
+   ========================================================================== */
+[lang="sa"],
+.sanskrit-safe-text,
+.vl-ps-title-sa,
+.vl-wb-dev,
+.psw-hero-title [lang="sa"],
+.psw-hero-title .sanskrit-safe-text,
+.psw-hero-kicker [lang="sa"],
+.psw-hero-kicker .sanskrit-safe-text,
+.vl-pgw-badge [lang="sa"],
+.vl-pgw-badge .sanskrit-safe-text,
+.vl-ps-title [lang="sa"],
+.vl-ps-title .sanskrit-safe-text,
+.vl-wb-name [lang="sa"],
+.vl-wb-name .sanskrit-safe-text,
+.psw-mixer-title [lang="sa"],
+.psw-mixer-title .sanskrit-safe-text {
+  font-family: 'Noto Sans Devanagari', 'Kohinoor Devanagari', 'Nirmala UI', system-ui, sans-serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-variant-ligatures: normal !important;
+  font-feature-settings: "liga" 1, "clig" 1, "blwf" 1, "rphf" 1, "half" 1, "vatu" 1 !important;
+  font-synthesis: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
