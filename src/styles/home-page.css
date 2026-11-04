@@ -364,6 +364,22 @@ tr th {
   font-weight: 800;
 }
 
+.home-hero-replay-intro-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.95), rgba(253, 230, 138, 0.92));
+  border: 1.5px solid rgba(217, 119, 6, 0.45);
+  color: #78350f;
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 0.42rem 1.15rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(217, 119, 6, 0.12);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .home-hero-replay-intro-btn:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, #fef3c7, #fde68a);
@@ -564,7 +580,8 @@ tr th {
   }
 }
 
-.home-hero-logo.is-arrived {
+.home-hero-logo.is-arrived,
+.home-hero-inst-logo.is-arrived {
   animation: heroLogoArrive 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 

@@ -769,11 +769,11 @@ const HomePage: React.FC<HomePageProps> = ({
   const [isGrade9ModalOpen, setIsGrade9ModalOpen] = useState<boolean>(false);
   const [isFlashcardModalOpen, setIsFlashcardModalOpen] = useState<boolean>(false);
   const [selectedGradeFilter, setSelectedGradeFilter] = useState<'all' | '7' | '8' | '9'>('all');
-  const [, setIsLogoArrived] = useState<boolean>(false);
+  const [isLogoArrived, setIsLogoArrived] = useState<boolean>(false);
   const [showEntranceIntro, setShowEntranceIntro] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
     try {
-      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen_v4');
+      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen_v5');
       return !alreadySeen;
     } catch {
       return false;
@@ -787,7 +787,7 @@ const HomePage: React.FC<HomePageProps> = ({
       setIsLogoArrived(false);
     }, 1200);
     try {
-      sessionStorage.setItem('ednet_gurukul_intro_seen_v4', 'true');
+      sessionStorage.setItem('ednet_gurukul_intro_seen_v5', 'true');
     } catch {}
   }, []);
 
@@ -1120,6 +1120,40 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span className="hhl-badge">Level 6</span>
                 <strong className="hhl-name">Exam Prep</strong>
                 <span className="hhl-sub">परीक्षा-सिद्धिः · CBSE</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Institutional Crest & Intro Replay */}
+          <div className="home-hero-institution-strip" role="region" aria-label="Gurukul Learning Platform">
+            <div className="home-hero-inst-badge">
+              <img
+                id="home-hero-crest-logo"
+                src="/logo.jpg"
+                alt="EdNet Gurukul - Learn Sanskrit Online &amp; Vedic Mathematics"
+                className={`home-hero-inst-logo${isLogoArrived ? ' is-arrived' : ''}`}
+                width={44}
+                height={44}
+                onClick={() => setShowEntranceIntro(true)}
+                title="EdNet Gurukul · Tap to experience Gurukul dawn animation"
+              />
+              <div className="home-hero-inst-text">
+                <span className="home-hero-inst-title">EdNet Learn Gurukul</span>
+                <span className="home-hero-inst-sub">The Darśana Series</span>
+              </div>
+            </div>
+
+            <div className="home-hero-top-actions-row" style={{ margin: 0 }}>
+              <button
+                type="button"
+                className="home-hero-replay-intro-btn"
+                onClick={() => setShowEntranceIntro(true)}
+                title="Replay Gurukul Dawn Intro &amp; Sacred Temple Bell Animation"
+                aria-label="Replay Gurukul Dawn Intro &amp; Sacred Temple Bell Animation"
+              >
+                <span className="hhri-icon" aria-hidden="true">🔔</span>
+                <span>Replay Gurukul Intro</span>
+                <span className="hhri-badge">Anime &amp; Bell</span>
               </button>
             </div>
           </div>
