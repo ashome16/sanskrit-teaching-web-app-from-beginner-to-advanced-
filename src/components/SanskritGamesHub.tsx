@@ -56,7 +56,8 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 // Strip spoiler tags like "(Trap)", "(Noun Trap)", "(Action)", "(Fruit)" from maze cell glosses
-function cleanMazeGloss(gloss: string): string {
+function cleanMazeGloss(gloss?: string): string {
+  if (!gloss) return '';
   return gloss
     .replace(/\s*\([^)]*(?:trap|action|fruit|vegetable|spice veg|item)\)/gi, '')
     .replace(/^trap\s+/i, '')
@@ -253,90 +254,92 @@ export function getCellLoot(_questId: string, cell: MazeCell): LootItem | null {
 }
 
 export function getCellVisual(
-  word: string,
-  translation: string,
-  isPath: boolean
+  word?: string,
+  translation?: string,
+  isPath: boolean = false
 ): { icon: string; category: 'fruit' | 'animal' | 'trap' | 'sacred' | 'nature' | 'action' | 'number' } {
-  const emojiMatch = translation.match(/(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u);
+  const safeWord = word || '';
+  const safeTrans = translation || '';
+  const emojiMatch = safeTrans.match(/(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u);
   let icon = emojiMatch ? emojiMatch[1] : '';
 
   if (!icon) {
-    if (/आम्र/i.test(word)) icon = '🥭';
-    else if (/कदली/i.test(word)) icon = '🍌';
-    else if (/सेव/i.test(word)) icon = '🍎';
-    else if (/द्राक्षा/i.test(word)) icon = '🍇';
-    else if (/नारङ्ग/i.test(word)) icon = '🍊';
-    else if (/दाडिम/i.test(word)) icon = '❤️';
-    else if (/मोदक/i.test(word)) icon = '🥟';
-    else if (/गणेश/i.test(word)) icon = '🐘';
-    else if (/धेनु/i.test(word)) icon = '🐮';
-    else if (/श्वा|श्वान/i.test(word)) icon = '🐶';
-    else if (/बिडाल/i.test(word)) icon = '🐱';
-    else if (/मूषक/i.test(word)) icon = '🐭';
-    else if (/वानर/i.test(word)) icon = '🐒';
-    else if (/मयूर/i.test(word)) icon = '🦚';
-    else if (/गज/i.test(word)) icon = '🐘';
-    else if (/सिंह/i.test(word)) icon = '🦁';
-    else if (/काक/i.test(word)) icon = '🦅';
-    else if (/घट/i.test(word)) icon = '🏺';
-    else if (/जल/i.test(word)) icon = '💧';
-    else if (/पिब/i.test(word)) icon = '🥤';
-    else if (/पाषाण/i.test(word)) icon = '🪨';
-    else if (/उपानह/i.test(word)) icon = '👟';
-    else if (/कन्दुक/i.test(word)) icon = '⚽';
-    else if (/सम्मार्जनी/i.test(word)) icon = '🧹';
-    else if (/घटी/i.test(word)) icon = '⏰';
-    else if (/ताल/i.test(word)) icon = '🔒';
-    else if (/चक्र/i.test(word)) icon = '🛞';
-    else if (/छत्र/i.test(word)) icon = '☂️';
-    else if (/दीपक/i.test(word)) icon = '🪔';
-    else if (/वृक्ष/i.test(word)) icon = '🌳';
-    else if (/पुष्प/i.test(word)) icon = '🌸';
-    else if (/आकाश/i.test(word)) icon = '🌌';
-    else if (/सूर्य/i.test(word)) icon = '☀️';
-    else if (/चन्द्र/i.test(word)) icon = '🌙';
-    else if (/वायु/i.test(word)) icon = '💨';
-    else if (/अग्नि/i.test(word)) icon = '🔥';
-    else if (/भूमि/i.test(word)) icon = '🌍';
-    else if (/बालक/i.test(word)) icon = '👦';
-    else if (/चिकित्सा/i.test(word)) icon = '🏥';
-    else if (/वाहन/i.test(word)) icon = '🚗';
-    else if (/साहाय्य/i.test(word)) icon = '🤝';
-    else if (/पठ/i.test(word)) icon = '📖';
-    else if (/लिख/i.test(word)) icon = '✍️';
-    else if (/खाद/i.test(word)) icon = '🍽️';
-    else if (/गच्छ/i.test(word)) icon = '🚶';
-    else if (/एकम्/i.test(word)) icon = '1️⃣';
-    else if (/द्वे/i.test(word)) icon = '2️⃣';
-    else if (/त्रीणि/i.test(word)) icon = '3️⃣';
-    else if (/चत्वारि/i.test(word)) icon = '4️⃣';
-    else if (/पञ्च/i.test(word)) icon = '5️⃣';
-    else if (/षट्/i.test(word)) icon = '6️⃣';
-    else if (/सप्त/i.test(word)) icon = '7️⃣';
-    else if (/अष्ट/i.test(word)) icon = '8️⃣';
-    else if (/नव/i.test(word)) icon = '9️⃣';
-    else if (/दश/i.test(word)) icon = '🔟';
-    else if (/शून्यम्/i.test(word)) icon = '0️⃣';
-    else if (/विंशतिः/i.test(word)) icon = '2️⃣0️⃣';
-    else if (/त्रिंशत्/i.test(word)) icon = '3️⃣0️⃣';
-    else if (/पञ्चाशत्/i.test(word)) icon = '5️⃣0️⃣';
-    else if (/शतम्/i.test(word)) icon = '💯';
-    else if (/सहस्रम्/i.test(word)) icon = '🔢';
+    if (/आम्र/i.test(safeWord)) icon = '🥭';
+    else if (/कदली/i.test(safeWord)) icon = '🍌';
+    else if (/सेव/i.test(safeWord)) icon = '🍎';
+    else if (/द्राक्षा/i.test(safeWord)) icon = '🍇';
+    else if (/नारङ्ग/i.test(safeWord)) icon = '🍊';
+    else if (/दाडिम/i.test(safeWord)) icon = '❤️';
+    else if (/मोदक/i.test(safeWord)) icon = '🥟';
+    else if (/गणेश/i.test(safeWord)) icon = '🐘';
+    else if (/धेनु/i.test(safeWord)) icon = '🐮';
+    else if (/श्वा|श्वान/i.test(safeWord)) icon = '🐶';
+    else if (/बिडाल/i.test(safeWord)) icon = '🐱';
+    else if (/मूषक/i.test(safeWord)) icon = '🐭';
+    else if (/वानर/i.test(safeWord)) icon = '🐒';
+    else if (/मयूर/i.test(safeWord)) icon = '🦚';
+    else if (/गज/i.test(safeWord)) icon = '🐘';
+    else if (/सिंह/i.test(safeWord)) icon = '🦁';
+    else if (/काक/i.test(safeWord)) icon = '🦅';
+    else if (/घट/i.test(safeWord)) icon = '🏺';
+    else if (/जल/i.test(safeWord)) icon = '💧';
+    else if (/पिब/i.test(safeWord)) icon = '🥤';
+    else if (/पाषाण/i.test(safeWord)) icon = '🪨';
+    else if (/उपानह/i.test(safeWord)) icon = '👟';
+    else if (/कन्दुक/i.test(safeWord)) icon = '⚽';
+    else if (/सम्मार्जनी/i.test(safeWord)) icon = '🧹';
+    else if (/घटी/i.test(safeWord)) icon = '⏰';
+    else if (/ताल/i.test(safeWord)) icon = '🔒';
+    else if (/चक्र/i.test(safeWord)) icon = '🛞';
+    else if (/छत्र/i.test(safeWord)) icon = '☂️';
+    else if (/दीपक/i.test(safeWord)) icon = '🪔';
+    else if (/वृक्ष/i.test(safeWord)) icon = '🌳';
+    else if (/पुष्प/i.test(safeWord)) icon = '🌸';
+    else if (/आकाश/i.test(safeWord)) icon = '🌌';
+    else if (/सूर्य/i.test(safeWord)) icon = '☀️';
+    else if (/चन्द्र/i.test(safeWord)) icon = '🌙';
+    else if (/वायु/i.test(safeWord)) icon = '💨';
+    else if (/अग्नि/i.test(safeWord)) icon = '🔥';
+    else if (/भूमि/i.test(safeWord)) icon = '🌍';
+    else if (/बालक/i.test(safeWord)) icon = '👦';
+    else if (/चिकित्सा/i.test(safeWord)) icon = '🏥';
+    else if (/वाहन/i.test(safeWord)) icon = '🚗';
+    else if (/साहाय्य/i.test(safeWord)) icon = '🤝';
+    else if (/पठ/i.test(safeWord)) icon = '📖';
+    else if (/लिख/i.test(safeWord)) icon = '✍️';
+    else if (/खाद/i.test(safeWord)) icon = '🍽️';
+    else if (/गच्छ/i.test(safeWord)) icon = '🚶';
+    else if (/एकम्/i.test(safeWord)) icon = '1️⃣';
+    else if (/द्वे/i.test(safeWord)) icon = '2️⃣';
+    else if (/त्रीणि/i.test(safeWord)) icon = '3️⃣';
+    else if (/चत्वारि/i.test(safeWord)) icon = '4️⃣';
+    else if (/पञ्च/i.test(safeWord)) icon = '5️⃣';
+    else if (/षट्/i.test(safeWord)) icon = '6️⃣';
+    else if (/सप्त/i.test(safeWord)) icon = '7️⃣';
+    else if (/अष्ट/i.test(safeWord)) icon = '8️⃣';
+    else if (/नव/i.test(safeWord)) icon = '9️⃣';
+    else if (/दश/i.test(safeWord)) icon = '🔟';
+    else if (/शून्यम्/i.test(safeWord)) icon = '0️⃣';
+    else if (/विंशतिः/i.test(safeWord)) icon = '2️⃣0️⃣';
+    else if (/त्रिंशत्/i.test(safeWord)) icon = '3️⃣0️⃣';
+    else if (/पञ्चाशत्/i.test(safeWord)) icon = '5️⃣0️⃣';
+    else if (/शतम्/i.test(safeWord)) icon = '💯';
+    else if (/सहस्रम्/i.test(safeWord)) icon = '🔢';
     else icon = isPath ? '✨' : '⚠️';
   }
 
   let category: 'fruit' | 'animal' | 'trap' | 'sacred' | 'nature' | 'action' | 'number' = 'nature';
-  if (/आम्र|कदली|सेव|द्राक्षा|नारङ्ग|दाडिम|मोदक|फल|शाक|पलाण्डु|मूलक/i.test(word)) {
+  if (/आम्र|कदली|सेव|द्राक्षा|नारङ्ग|दाडिम|मोदक|फल|शाक|पलाण्डु|मूलक/i.test(safeWord)) {
     category = 'fruit';
-  } else if (/एकम्|द्वे|त्रीणि|चत्वारि|पञ्च|षट्|सप्त|अष्ट|नव|दश/i.test(word)) {
+  } else if (/एकम्|द्वे|त्रीणि|चत्वारि|पञ्च|षट्|सप्त|अष्ट|नव|दश/i.test(safeWord)) {
     category = 'number';
-  } else if (/धेनु|श्वा|बिडाल|मूषक|वानर|मयूर|गज|सिंह|काक|मृग|व्याघ्र|शशक|पशु/i.test(word)) {
+  } else if (/धेनु|श्वा|बिडाल|मूषक|वानर|मयूर|गज|सिंह|काक|मृग|व्याघ्र|शशक|पशु/i.test(safeWord)) {
     category = 'animal';
-  } else if (/गणेश|शिव|विष्णु|राम|कृष्ण|ऋषि|सूर्य|चन्द्र|दीपक/i.test(word)) {
+  } else if (/गणेश|शिव|विष्णु|राम|कृष्ण|ऋषि|सूर्य|चन्द्र|दीपक/i.test(safeWord)) {
     category = 'sacred';
-  } else if (!isPath || /पाषाण|उपानह|कन्दुक|सम्मार्जनी|घटी|ताल|चक्र|छत्र|शून्यम्|विंशतिः|त्रिंशत्|पञ्चाशत्|शतम्|सहस्रम्/i.test(word)) {
+  } else if (!isPath || /पाषाण|उपानह|कन्दुक|सम्मार्जनी|घटी|ताल|चक्र|छत्र|शून्यम्|विंशतिः|त्रिंशत्|पञ्चाशत्|शतम्|सहस्रम्/i.test(safeWord)) {
     category = isPath ? 'nature' : 'trap';
-  } else if (/पठ|लिख|खाद|पिब|गच्छ|धाव्|क्रीड्|अस्ति|भवति|करोति/i.test(word)) {
+  } else if (/पठ|लिख|खाद|पिब|गच्छ|धाव्|क्रीड्|अस्ति|भवति|करोति/i.test(safeWord)) {
     category = 'action';
   }
 

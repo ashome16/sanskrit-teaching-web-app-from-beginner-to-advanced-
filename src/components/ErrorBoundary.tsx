@@ -10,15 +10,25 @@ interface ErrorBoundaryProps {
 interface ErrorBoundaryState {
   hasError: boolean;
   error: Error | null;
+  isRepeatedError: boolean;
 }
 
 export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
-    this.state = { hasError: false, error: null };
+    let isRepeated = false;
+    if (typeof window !== 'undefined') {
+      try {
+        const lastReload = sessionStorage.getItem('ednet_last_error_reload');
+        if (lastReload && Date.now() - Number(lastReload) < 25000) {
+          isRepeated = true;
+        }
+      } catch {}
+    }
+    this.state = { hasError: false, error: null, isRepeatedError: isRepeated };
   }
 
-  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+  static getDerivedStateFromError(error: Error): Partial<ErrorBoundaryState> {
     const msg = error?.message || String(error);
     // Ignore benign ResizeObserver notification warnings in browser
     if (
@@ -51,7 +61,22 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   };
 
   handleReload = (): void => {
-    window.location.reload();
+    if (typeof window !== 'undefined') {
+      try {
+        sessionStorage.setItem('ednet_last_error_reload', String(Date.now()));
+      } catch {}
+      window.location.reload();
+    }
+  };
+
+  handleGoHome = (): void => {
+    if (typeof window !== 'undefined') {
+      try {
+        sessionStorage.removeItem('ednet_last_error_reload');
+      } catch {}
+      window.location.hash = '';
+      window.location.href = '/';
+    }
   };
 
   render(): ReactNode {
@@ -99,6 +124,25 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               'A temporary display error occurred in this interactive section. Your progress and study records are completely safe.'}
           </p>
 
+          {this.state.isRepeatedError && (
+            <div
+              style={{
+                background: '#fef3c7',
+                border: '1px solid #f59e0b',
+                borderRadius: '10px',
+                padding: '0.65rem 1rem',
+                margin: '0 auto 1.25rem',
+                maxWidth: '520px',
+                color: '#92400e',
+                fontSize: '0.88rem',
+                fontWeight: 600,
+                lineHeight: 1.5,
+              }}
+            >
+              ⚠️ We noticed reloading the page encountered the same issue. Tapping <strong>&ldquo;Go to Main Home&rdquo;</strong> will safely reset the view and restore your learning session.
+            </div>
+          )}
+
           <div
             style={{
               display: 'flex',
@@ -124,6 +168,23 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               }}
             >
               🔄 Refresh Section (पुनरुज्जीवनम्)
+            </button>
+            <button
+              type="button"
+              onClick={this.handleGoHome}
+              style={{
+                background: '#0f766e',
+                color: '#ffffff',
+                border: 'none',
+                borderRadius: '10px',
+                padding: '0.65rem 1.4rem',
+                fontWeight: 700,
+                fontSize: '0.92rem',
+                cursor: 'pointer',
+                boxShadow: '0 4px 12px rgba(15, 118, 110, 0.25)',
+              }}
+            >
+              🏡 Go to Main Home (मुख्यपृष्ठम्)
             </button>
             <button
               type="button"

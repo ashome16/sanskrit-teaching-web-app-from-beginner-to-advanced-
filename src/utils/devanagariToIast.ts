@@ -18,7 +18,8 @@ const OTHER: Record<string, string> = {
   '०': '0', '१': '1', '२': '2', '३': '3', '४': '4', '५': '5', '६': '6', '७': '7', '८': '8', '९': '9',
 };
 
-export function devanagariToIast(text: string): string {
+export function devanagariToIast(text?: string): string {
+  if (!text || typeof text !== 'string') return '';
   let out = '';
   const chars = Array.from(text);
   for (let i = 0; i < chars.length; i++) {

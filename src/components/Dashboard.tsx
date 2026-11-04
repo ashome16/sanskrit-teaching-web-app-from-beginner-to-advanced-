@@ -18,7 +18,7 @@ const PhilosophyPage = lazy(() => import('./PhilosophyPage'));
 const CbseSanskritGuidePage = lazy(() => import('./CbseSanskritGuidePage'));
 const FreeResourcesPage = lazy(() => import('./FreeResourcesPage'));
 const TextbookReader = lazy(() => import('./TextbookReader'));
-import { isValidVarnamalaSubMode, type VarnamalaSubMode } from './TextbookReader';
+import { isValidVarnamalaSubMode, type VarnamalaSubMode } from '../types/varnamalaTypes';
 const Board = lazy(() => import('./Board'));
 const Grammar = lazy(() => import('./Grammar'));
 const VedicMaths = lazy(() => import('./VedicMaths'));
@@ -1630,9 +1630,8 @@ const Dashboard: React.FC = () => {
         fallbackTitle="पुनः प्रयत्नः क्रियताम् · Please Try Again"
         fallbackSubtitle="A temporary display error occurred in this interactive section. Your progress and study records are completely safe."
         onReset={() => {
-          const current = activeView;
           setActiveView('home');
-          setTimeout(() => setActiveView(current), 20);
+          window.location.hash = '';
         }}
       >
         <Suspense fallback={<ViewLoader />}>
@@ -1715,10 +1714,11 @@ const Dashboard: React.FC = () => {
         {activeView === 'board' && (
           <ErrorBoundary
             fallbackTitle="🧩 जोडो · Jodo Tile Studio"
-            fallbackSubtitle="The puzzle studio encountered a temporary display issue. Click Refresh Section to reload."
+            fallbackSubtitle="The puzzle studio encountered a temporary display issue. Tap Refresh Section to return to Jodo safely."
             onReset={() => {
-              setActiveView('home');
-              setTimeout(() => setActiveView('board'), 20);
+              setBoardStudioMode('jodo');
+              setBoardCategory(undefined);
+              window.location.hash = '#jodo';
             }}
           >
             <Board

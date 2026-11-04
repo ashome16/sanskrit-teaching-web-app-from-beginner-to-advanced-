@@ -46,11 +46,17 @@ import '../styles/varnamala-studio.css';
 import '../styles/vedic-knowledge-system.css';
 import VarnaColourExplainer from './VarnaColourExplainer';
 
-export const VALID_VARNAMALA_SUBMODES = ['sound', 'writing', 'quizzes', 'workbooks', 'worksheets'] as const;
-export type VarnamalaSubMode = (typeof VALID_VARNAMALA_SUBMODES)[number];
+import {
+  VALID_VARNAMALA_SUBMODES,
+  type VarnamalaSubMode,
+  isValidVarnamalaSubMode,
+} from '../types/varnamalaTypes';
 
-export const isValidVarnamalaSubMode = (mode: unknown): mode is VarnamalaSubMode =>
-  typeof mode === 'string' && (VALID_VARNAMALA_SUBMODES as readonly string[]).includes(mode);
+export {
+  VALID_VARNAMALA_SUBMODES,
+  type VarnamalaSubMode,
+  isValidVarnamalaSubMode,
+};
 
 export const SCRIPT_LABELS: Record<string, { native: string; en: string }> = {
   en: { native: 'English', en: 'English' },
