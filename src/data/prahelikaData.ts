@@ -50,6 +50,8 @@ export interface PrahelikaItem {
   audioPronunciationText: string;
   emoji: string;
   funFact: string;
+  illustrationUrl?: string;
+  illustrationCaption?: string;
 }
 
 export const PRAHELIKAS: PrahelikaItem[] = [
@@ -150,6 +152,9 @@ export const PRAHELIKAS: PrahelikaItem[] = [
     emoji: '🦌',
     funFact:
       'This verse is celebrated across India from classical Gurukuls to modern university debate halls as the crowning jewel of the Antarālāpikā genre!',
+    illustrationUrl: '/images/prahelika/prahelika-1-antaralapika.jpg',
+    illustrationCaption:
+      'Pahari-Kangra Folklore Miniature: Musk Deer (मृगः), Lion scattering elephant herds (सिंहः), and coward in battle (पलायते).',
   },
 
   // 2. पद-गूढम्: अपदो दूरगामी च... (पत्रम्)
@@ -214,6 +219,9 @@ export const PRAHELIKAS: PrahelikaItem[] = [
     emoji: '✉️',
     funFact:
       'This riddle was taught to royal princes in ancient India to sharpen their awareness of metaphor and wordplay!',
+    illustrationUrl: '/images/prahelika/prahelika-2-patram.jpg',
+    illustrationCaption:
+      'Rajasthani Folklore Painting: The Footless Messenger (पत्रम्) with royal courier dove above ancient temple spires and sacred rivers.',
   },
 
   // 3. विरोधाभासः: वृक्षाग्रवासी न च पक्षीराजः... (नारिकेलः)
@@ -284,6 +292,9 @@ export const PRAHELIKAS: PrahelikaItem[] = [
     emoji: '🥥',
     funFact:
       'Because of its three eyes, the coconut is revered in Indian tradition as a symbol of Lord Shiva and offered in temples as "Śrīphalam"!',
+    illustrationUrl: '/images/prahelika/prahelika-3-narikelah.jpg',
+    illustrationCaption:
+      'Kerala Mural Folk Art: The Three-Eyed Coconut (नारिकेलः / श्रीफलम्) with fresh coconut water, palm crown, and Shiva’s trident motifs.',
   },
 
   // 4. पद-गूढम्: एकचक्षुर्न काकोऽयं... (सूची-सूत्रम्)
@@ -348,5 +359,8 @@ export const PRAHELIKAS: PrahelikaItem[] = [
     emoji: '🪡',
     funFact:
       'In Vedic times, bronze and bone needles (सूची) were crafted with such microscopic precision in Harappa and Lothal that they amazed ancient traders!',
+    illustrationUrl: '/images/prahelika/prahelika-4-suchisutram.jpg',
+    illustrationCaption:
+      'Pahari & Kalamkari Folk Painting: The Bronze Needle (सूची) & Crimson Thread (सूत्रम्) weaving silk tapestry with one-eyed crow & moon motifs.',
   },
 ];

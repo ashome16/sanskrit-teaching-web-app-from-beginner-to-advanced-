@@ -47,6 +47,7 @@ const PrahelikaCardView: React.FC<PrahelikaCardViewProps> = ({
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
   const [isWrongSelection, setIsWrongSelection] = useState<boolean>(false);
   const [isSecretExpanded, setIsSecretExpanded] = useState<boolean>(false);
+  const [isImageModalOpen, setIsImageModalOpen] = useState<boolean>(false);
 
   // Handle word tap in Antarālāpikā Line 4
   const handleAntaralapikaWordClick = (word: string) => {
@@ -102,6 +103,46 @@ const PrahelikaCardView: React.FC<PrahelikaCardViewProps> = ({
           Riddle {riddle.num} of {totalRiddles}
         </span>
       </div>
+
+      {/* Indian Folklore Miniature Painting Artwork */}
+      {riddle.illustrationUrl && (
+        <div className="prahelika-folklore-card">
+          <div
+            className="prahelika-folklore-frame"
+            role="button"
+            tabIndex={0}
+            onClick={() => {
+              soundEffects.playStrokeChime();
+              setIsImageModalOpen(true);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setIsImageModalOpen(true);
+              }
+            }}
+            title="Click to view full-screen high-resolution Indian folklore painting"
+          >
+            <img
+              src={riddle.illustrationUrl}
+              alt={riddle.illustrationCaption || riddle.titleEn}
+              className="prahelika-folklore-img"
+              width={1024}
+              height={640}
+              loading="lazy"
+            />
+            <div className="prahelika-folklore-badge">
+              <span>🎨 भारतीय लोक-कला · Indian Folklore Miniature Painting</span>
+              <span className="prahelika-zoom-pill">🔍 Enlarge HD</span>
+            </div>
+          </div>
+          {riddle.illustrationCaption && (
+            <p className="prahelika-folklore-caption">
+              <strong>चित्र-रहस्यम् · Folklore Painting:</strong> {riddle.illustrationCaption}
+            </p>
+          )}
+        </div>
+      )}
 
       {/* Golden Shloka Box */}
       <div className="prahelika-shloka-box">
@@ -353,6 +394,47 @@ const PrahelikaCardView: React.FC<PrahelikaCardViewProps> = ({
           <span>▶</span>
         </button>
       </div>
+
+      {/* Lightbox Modal for Full-Screen HD Folklore Miniature Painting */}
+      {isImageModalOpen && riddle.illustrationUrl && (
+        <div
+          className="prahelika-lightbox-backdrop"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setIsImageModalOpen(false)}
+        >
+          <div
+            className="prahelika-lightbox-dialog"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="prahelika-lightbox-header">
+              <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700 }}>
+                🎨 {riddle.titleSa} · {riddle.titleEn} (Indian Folklore Miniature)
+              </h3>
+              <button
+                type="button"
+                className="prahelika-lightbox-close"
+                onClick={() => setIsImageModalOpen(false)}
+                title="Close Lightbox"
+              >
+                ✕ Close
+              </button>
+            </div>
+            <div className="prahelika-lightbox-body">
+              <img
+                src={riddle.illustrationUrl}
+                alt={riddle.illustrationCaption || riddle.titleEn}
+                className="prahelika-lightbox-img"
+              />
+            </div>
+            {riddle.illustrationCaption && (
+              <div className="prahelika-lightbox-footer">
+                {riddle.illustrationCaption}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
