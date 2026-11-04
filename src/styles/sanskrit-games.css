@@ -2897,6 +2897,11 @@
   border: 1.5px solid #0284c7;
 }
 
+.sgh-frame--number {
+  background: radial-gradient(circle, #e0f2fe 0%, #bae6fd 100%);
+  border: 1.5px solid #0284c7;
+}
+
 .sgh-frame--nature {
   background: radial-gradient(circle, #f1f5f9 0%, #e2e8f0 100%);
   border: 1.5px solid #94a3b8;
@@ -3379,6 +3384,282 @@
 @keyframes sghScaleIn {
   from { opacity: 0; transform: scale(0.92); }
   to { opacity: 1; transform: scale(1); }
+}
+
+/* =========================================================================
+   Interactive River Stepping Stones Bridge (Ages 3–7 Number Trail)
+   ========================================================================= */
+.sgh-river-stage {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #e0f2fe 100%);
+  border: 2.5px solid #38bdf8;
+  border-radius: 18px;
+  padding: 1.15rem 1.3rem;
+  margin-top: 0.85rem;
+  margin-bottom: 0.95rem;
+  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.16);
+  position: relative;
+  overflow: hidden;
+}
+
+.sgh-river-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.sgh-river-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.sgh-river-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  animation: riverWave 3s ease-in-out infinite alternate;
+}
+
+@keyframes riverWave {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-3px) rotate(8deg); }
+}
+
+.sgh-river-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0369a1;
+  line-height: 1.2;
+}
+
+.sgh-river-sub {
+  font-size: 0.8rem;
+  color: #0284c7;
+  font-weight: 600;
+  display: block;
+}
+
+.sgh-river-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.sgh-river-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #ffffff;
+  border: 1.5px solid #0284c7;
+  border-radius: 999px;
+  padding: 0.32rem 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #0284c7;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.12);
+  transition: all 0.15s ease;
+}
+
+.sgh-river-guide-btn:hover {
+  background: #0284c7;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.sgh-river-guide-btn.is-active {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.sgh-river-counter-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #38bdf8;
+  border-radius: 999px;
+  padding: 0.32rem 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #0369a1;
+}
+
+/* Route Walkthrough Guide Card */
+.sgh-river-guide-card {
+  background: #ffffff;
+  border: 2px solid #38bdf8;
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.95rem;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
+  animation: sghScaleIn 0.2s ease;
+}
+
+.sgh-rgc-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 0.65rem;
+  border-bottom: 1px solid #e0f2fe;
+  padding-bottom: 0.45rem;
+}
+
+.sgh-rgc-header strong {
+  font-size: 0.96rem;
+  color: #0369a1;
+}
+
+.sgh-rgc-header span {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.sgh-rgc-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.45rem 1rem;
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
+  color: #334155;
+}
+
+.sgh-rgc-list li {
+  padding: 0.25rem 0.45rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.sgh-rgc-list li.is-current-step {
+  background: #fef3c7;
+  border-left: 3px solid #d97706;
+  font-weight: 700;
+  color: #92400e;
+}
+
+.sgh-rgc-list li.is-done-step {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+/* River Stones Crossing Track */
+.sgh-river-stones-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding: 0.6rem 0.3rem 0.8rem;
+}
+
+.sgh-river-stone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 0.45rem 0.35rem 0.4rem;
+  min-width: 62px;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.sgh-river-stone:hover {
+  transform: translateY(-2px);
+  border-color: #38bdf8;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.2);
+}
+
+.sgh-rs-circle {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  border: 1.5px solid #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1rem;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+
+.sgh-river-stone.is-crossed {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-color: #10b981;
+}
+
+.sgh-river-stone.is-crossed .sgh-rs-circle {
+  background: #10b981;
+  border-color: #059669;
+  color: #ffffff;
+}
+
+.sgh-rs-check {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #059669;
+  color: #ffffff;
+  font-size: 0.65rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #ffffff;
+}
+
+.sgh-river-stone.is-current {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: #f59e0b;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.45);
+}
+
+.sgh-river-stone.is-current .sgh-rs-circle {
+  background: #f59e0b;
+  border-color: #d97706;
+  color: #ffffff;
+}
+
+.sgh-rs-hop-avatar {
+  position: absolute;
+  top: -12px;
+  font-size: 1.15rem;
+  line-height: 1;
+  animation: spriteWalkHop 0.6s infinite alternate ease-in-out;
+}
+
+.sgh-rs-word {
+  font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Sanskrit', serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.sgh-rs-en {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .sgh-rgc-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {

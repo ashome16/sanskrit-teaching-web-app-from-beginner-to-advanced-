@@ -256,7 +256,7 @@ export function getCellVisual(
   word: string,
   translation: string,
   isPath: boolean
-): { icon: string; category: 'fruit' | 'animal' | 'trap' | 'sacred' | 'nature' | 'action' } {
+): { icon: string; category: 'fruit' | 'animal' | 'trap' | 'sacred' | 'nature' | 'action' | 'number' } {
   const emojiMatch = translation.match(/(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u);
   let icon = emojiMatch ? emojiMatch[1] : '';
 
@@ -306,17 +306,35 @@ export function getCellVisual(
     else if (/लिख/i.test(word)) icon = '✍️';
     else if (/खाद/i.test(word)) icon = '🍽️';
     else if (/गच्छ/i.test(word)) icon = '🚶';
+    else if (/एकम्/i.test(word)) icon = '1️⃣';
+    else if (/द्वे/i.test(word)) icon = '2️⃣';
+    else if (/त्रीणि/i.test(word)) icon = '3️⃣';
+    else if (/चत्वारि/i.test(word)) icon = '4️⃣';
+    else if (/पञ्च/i.test(word)) icon = '5️⃣';
+    else if (/षट्/i.test(word)) icon = '6️⃣';
+    else if (/सप्त/i.test(word)) icon = '7️⃣';
+    else if (/अष्ट/i.test(word)) icon = '8️⃣';
+    else if (/नव/i.test(word)) icon = '9️⃣';
+    else if (/दश/i.test(word)) icon = '🔟';
+    else if (/शून्यम्/i.test(word)) icon = '0️⃣';
+    else if (/विंशतिः/i.test(word)) icon = '2️⃣0️⃣';
+    else if (/त्रिंशत्/i.test(word)) icon = '3️⃣0️⃣';
+    else if (/पञ्चाशत्/i.test(word)) icon = '5️⃣0️⃣';
+    else if (/शतम्/i.test(word)) icon = '💯';
+    else if (/सहस्रम्/i.test(word)) icon = '🔢';
     else icon = isPath ? '✨' : '⚠️';
   }
 
-  let category: 'fruit' | 'animal' | 'trap' | 'sacred' | 'nature' | 'action' = 'nature';
+  let category: 'fruit' | 'animal' | 'trap' | 'sacred' | 'nature' | 'action' | 'number' = 'nature';
   if (/आम्र|कदली|सेव|द्राक्षा|नारङ्ग|दाडिम|मोदक|फल|शाक|पलाण्डु|मूलक/i.test(word)) {
     category = 'fruit';
+  } else if (/एकम्|द्वे|त्रीणि|चत्वारि|पञ्च|षट्|सप्त|अष्ट|नव|दश/i.test(word)) {
+    category = 'number';
   } else if (/धेनु|श्वा|बिडाल|मूषक|वानर|मयूर|गज|सिंह|काक|मृग|व्याघ्र|शशक|पशु/i.test(word)) {
     category = 'animal';
   } else if (/गणेश|शिव|विष्णु|राम|कृष्ण|ऋषि|सूर्य|चन्द्र|दीपक/i.test(word)) {
     category = 'sacred';
-  } else if (!isPath || /पाषाण|उपानह|कन्दुक|सम्मार्जनी|घटी|ताल|चक्र|छत्र/i.test(word)) {
+  } else if (!isPath || /पाषाण|उपानह|कन्दुक|सम्मार्जनी|घटी|ताल|चक्र|छत्र|शून्यम्|विंशतिः|त्रिंशत्|पञ्चाशत्|शतम्|सहस्रम्/i.test(word)) {
     category = isPath ? 'nature' : 'trap';
   } else if (/पठ|लिख|खाद|पिब|गच्छ|धाव्|क्रीड्|अस्ति|भवति|करोति/i.test(word)) {
     category = 'action';
@@ -324,6 +342,28 @@ export function getCellVisual(
 
   return { icon, category };
 }
+
+export interface RiverStoneItem {
+  step: number;
+  wordDev: string;
+  wordEn: string;
+  digitSa: string;
+  directionHint: string;
+  iast: string;
+}
+
+export const RIVER_STONES_1_10: RiverStoneItem[] = [
+  { step: 1, wordDev: 'एकम्', wordEn: 'One', digitSa: '१', directionHint: 'Start tile (Top-Left)', iast: 'ekam' },
+  { step: 2, wordDev: 'द्वे', wordEn: 'Two', digitSa: '२', directionHint: 'Move right ➡️', iast: 'dve' },
+  { step: 3, wordDev: 'त्रीणि', wordEn: 'Three', digitSa: '३', directionHint: 'Move right ➡️', iast: 'trīṇi' },
+  { step: 4, wordDev: 'चत्वारि', wordEn: 'Four', digitSa: '४', directionHint: 'Move right ➡️', iast: 'catvāri' },
+  { step: 5, wordDev: 'पञ्च', wordEn: 'Five', digitSa: '५', directionHint: 'Move down ⬇️', iast: 'pañca' },
+  { step: 6, wordDev: 'षट्', wordEn: 'Six', digitSa: '६', directionHint: 'Move left ⬅️', iast: 'ṣaṭ' },
+  { step: 7, wordDev: 'सप्त', wordEn: 'Seven', digitSa: '७', directionHint: 'Move down ⬇️', iast: 'sapta' },
+  { step: 8, wordDev: 'अष्ट', wordEn: 'Eight', digitSa: '८', directionHint: 'Move left ⬅️', iast: 'aṣṭa' },
+  { step: 9, wordDev: 'नव', wordEn: 'Nine', digitSa: '९', directionHint: 'Move down ⬇️', iast: 'nava' },
+  { step: 10, wordDev: 'दश', wordEn: 'Ten', digitSa: '१०', directionHint: 'Move right to reach Goal 🏆', iast: 'daśa' },
+];
 
 export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   initialMode = 'match',
@@ -878,6 +918,7 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   const [timerSeconds, setTimerSeconds] = useState<number>(0);
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
   const [showQuestVictoryModal, setShowQuestVictoryModal] = useState<boolean>(false);
+  const [showRiverGuide, setShowRiverGuide] = useState<boolean>(false);
 
   const speedrunRank = useMemo(() => getSpeedrunRank(timerSeconds), [timerSeconds]);
 
@@ -922,11 +963,10 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
       activeQuest.id === 'maze_thirsty_crow'
     ) {
       setQuestTheme('jungle');
-    } else if (
-      activeQuest.id === 'maze_preschool_ganesha_fruits' ||
-      activeQuest.id === 'maze_preschool_numbers_1_10'
-    ) {
+    } else if (activeQuest.id === 'maze_preschool_ganesha_fruits') {
       setQuestTheme('temple');
+    } else if (activeQuest.id === 'maze_preschool_numbers_1_10') {
+      setQuestTheme('grove'); // Tapovan River Stones
     } else if (activeQuest.id === 'maze_srishti_krama') {
       setQuestTheme('cosmic');
     } else {
@@ -2639,6 +2679,89 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                       </button>
                     </div>
                   )}
+                </div>
+              )}
+
+              {/* Interactive River Stepping Stones Bridge (Ages 3–7 Number Trail) */}
+              {activeQuest.id === 'maze_preschool_numbers_1_10' && (
+                <div className="sgh-river-stage" role="region" aria-label="River Stepping Stones Bridge">
+                  <div className="sgh-river-stage-header">
+                    <div className="sgh-river-title-wrap">
+                      <span className="sgh-river-icon">🌊</span>
+                      <div>
+                        <h4 className="sgh-river-title">नद्यश्म-सेतुः · River Stepping Stones Bridge (१ ➔ १०)</h4>
+                        <span className="sgh-river-sub">
+                          Tap adjacent river stones in numerical order from १ एकम् to १० दश to cross the sacred river!
+                        </span>
+                      </div>
+                    </div>
+                    <div className="sgh-river-header-actions">
+                      <button
+                        type="button"
+                        className={`sgh-river-guide-btn${showRiverGuide ? ' is-active' : ''}`}
+                        onClick={() => {
+                          setShowRiverGuide((g) => !g);
+                          soundEffects.playStrokeChime();
+                        }}
+                        title="Toggle Step-by-Step Path Route Guide"
+                      >
+                        {showRiverGuide ? '✕ Hide Path Guide' : '🧭 View Path Guide'}
+                      </button>
+                      <span className="sgh-river-counter-pill">
+                        {steppedCells.length} / 10 Stones Crossed
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Expandable Step-by-Step Route Walkthrough */}
+                  {showRiverGuide && (
+                    <div className="sgh-river-guide-card">
+                      <div className="sgh-rgc-header">
+                        <strong>🗺️ Exact Step-by-Step River Crossing Route:</strong>
+                        <span>Follow this adjacent path to reach the goal safely:</span>
+                      </div>
+                      <ol className="sgh-rgc-list">
+                        {RIVER_STONES_1_10.map((s) => (
+                          <li
+                            key={s.step}
+                            className={currentMazeStep === s.step ? 'is-current-step' : steppedOrders.has(s.step) ? 'is-done-step' : ''}
+                          >
+                            <strong>{s.step}. {s.wordDev} ({s.iast} - {s.digitSa})</strong> ➔ {s.directionHint}
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  )}
+
+                  {/* The 10 River Stones Crossing Track */}
+                  <div className="sgh-river-stones-track">
+                    {RIVER_STONES_1_10.map((stone) => {
+                      const isCrossed = steppedOrders.has(stone.step);
+                      const isCurrent = currentMazeStep === stone.step;
+                      return (
+                        <button
+                          key={stone.step}
+                          type="button"
+                          className={`sgh-river-stone${isCrossed ? ' is-crossed' : ''}${isCurrent ? ' is-current' : ''}`}
+                          onClick={() => {
+                            if (isCrossed || isCurrent) {
+                              soundEffects.playStrokeChime();
+                              playPronunciation(stone.wordDev);
+                            }
+                          }}
+                          title={`${stone.step}. ${stone.wordDev} (${stone.wordEn} - ${stone.digitSa}) ➔ ${stone.directionHint}`}
+                        >
+                          <div className="sgh-rs-circle">
+                            <span className="sgh-rs-digit">{stone.digitSa}</span>
+                            {isCrossed && <span className="sgh-rs-check">✓</span>}
+                            {isCurrent && <span className="sgh-rs-hop-avatar">{AVATARS[selectedAvatar].icon}</span>}
+                          </div>
+                          <span className="sgh-rs-word">{stone.wordDev}</span>
+                          <small className="sgh-rs-en">{stone.wordEn}</small>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
 
