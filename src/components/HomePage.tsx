@@ -1049,7 +1049,7 @@ const HomePage: React.FC<HomePageProps> = ({
             <p className="home-hero-journey-subtitle">
               {englishFirst
                 ? 'Select your starting level below or explore the full 6-stage roadmap from alphabet basics to complete fluency.'
-                : 'प्रारम्भिक-स्तरात् आरभ्य प्रौढ-स्तरान्तं स्वप्रवेशं चिनुत, अथवा सोपान-क्रमेण संस्कृत-यात्रां पश्यन्तु।'}
+                : 'प्रारम्भिक-स्तरात् आरभ्य प्रौढ-स्तरान्तं स्वस्तरं चिनुत, अथवा सोपान-क्रमेण संस्कृत-यात्रां पश्यन्तु।'}
             </p>
           </div>
 
@@ -1908,7 +1908,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 style={{ background: '#4338ca', color: '#ffffff', borderColor: '#4338ca' }}
                 onClick={onOpenCourse}
               >
-                पाठ्यक्रम-प्रवेशः · Explore 28-Lesson Course ▶
+                पाठ्यक्रमम् आरभत · Explore 28-Lesson Course ▶
               </button>
             </div>
           )}

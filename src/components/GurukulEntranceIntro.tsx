@@ -256,9 +256,9 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             <span className="gurukul-intro-bell-icon" aria-hidden="true">🔔</span>
             <span className="gurukul-intro-bell-text">
               <span className="gurukul-bell-txt-main">
-                <span lang="sa">गुरुकुलं प्रविश</span> · <span>Tap Bell &amp; Enter</span>
+                <span>Tap Bell &amp; Enter</span>
               </span>
-              <small className="gurukul-bell-txt-sub" lang="sa">घण्टानादं कृत्वा प्रविश</small>
+              <small className="gurukul-bell-txt-sub" lang="sa">घण्टानादं कुरु</small>
             </span>
             {!isSuspended && !isMuted && (
               <div className="gurukul-sound-waves" aria-hidden="true">
