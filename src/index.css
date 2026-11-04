@@ -476,10 +476,11 @@ html,body{max-width:100%;overflow-x:clip}
 @media (width<=768px){.vl-mode-full{display:none!important}.vl-mode-short{display:inline!important}.nav-free-trial-text,.nav-free-trial-badge{display:none!important}.nav-auth-group{flex-shrink:1;min-width:0;gap:.3rem!important}}
 .dashboard-header{position:relative}
 .dashboard-more-menu{z-index:1200;background:#fffaf0;border:1px solid #b4530940;border-radius:12px;flex-direction:column;gap:.25rem;min-width:230px;padding:.5rem;display:flex;position:absolute;top:100%;right:1rem;box-shadow:0 12px 30px #3d1b042e}
-.dashboard-more-menu button{text-align:left;font:inherit;color:#3d1b04;cursor:pointer;background:0 0;border:0;border-radius:8px;align-items:center;gap:.4rem;padding:.55rem .7rem;display:flex}
+.dashboard-more-menu button{text-align:left;font:inherit;font-size:0.96rem;font-weight:600;color:#3d1b04;cursor:pointer;background:0 0;border:0;border-radius:8px;align-items:center;gap:.5rem;padding:.65rem .85rem;display:flex}
+.dashboard-more-menu .dashboard-nav-sanskrit{font-size:1.02rem}
 .dashboard-more-menu button:hover,.dashboard-more-menu button.active{background:#f59e0b26}
 @media (width<=768px){.dashboard-more-menu{min-width:0;left:.5rem;right:.5rem}}
-@media (width<=480px){.dashboard-nav-sub{flex-shrink:0;gap:.2rem}.dashboard-nav-sub button{height:32px;min-height:32px;padding:.2rem .5rem;font-size:.78rem}.dashboard-nav-sub button .dashboard-nav-sanskrit,.dashboard-nav-sub-img{display:none!important}.dashboard-nav-sub-en{font-weight:700;display:inline!important}}
+@media (width<=480px){.dashboard-nav-sub{flex-shrink:0;gap:.2rem}.dashboard-nav-sub button{height:36px;min-height:36px;padding:.24rem .55rem;font-size:.84rem}.dashboard-nav-sub button .dashboard-nav-sanskrit,.dashboard-nav-sub-img{display:none!important}.dashboard-nav-sub-en{font-weight:700;display:inline!important}}
 
 /* Global Sanskrit & Devanagari Pristine Rendering */
 .sanskrit-safe-text,

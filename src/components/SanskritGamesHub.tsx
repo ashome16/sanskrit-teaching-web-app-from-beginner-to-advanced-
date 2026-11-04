@@ -8,7 +8,7 @@ import {
   type WordMazeQuest,
   type MazeCell,
 } from '../data/sanskritGamesData';
-import { playPronunciation } from '../utils/pronunciation';
+import { playPronunciation, speakAsBodhi } from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
 import { devanagariToIast } from '../utils/devanagariToIast';
 import '../styles/sanskrit-games.css';
@@ -1500,10 +1500,9 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
           <div className="sgh-arena-card">
             <div className="sgh-arena-header">
               <div className="sgh-arena-title-wrap">
-                <span style={{ fontSize: '2.1rem', lineHeight: 1 }}>{activeQuest.icon}</span>
+                <span style={{ fontSize: '2.4rem', lineHeight: 1 }}>{activeQuest.icon}</span>
                 <div>
                   <h2>{activeQuest.titleDev} · {activeQuest.titleEn}</h2>
-                  <p className="sgh-arena-desc">{activeQuest.missionObjective}</p>
                 </div>
               </div>
 
@@ -1522,6 +1521,24 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                   <span>Restart</span>
                 </button>
               </div>
+            </div>
+
+            {/* Prominent Mission Objective Callout with Large Font & Audio Button */}
+            <div className="sgh-maze-mission-callout" role="region" aria-label="Mission Objective">
+              <span className="sgh-maze-mission-icon" aria-hidden="true">🎯</span>
+              <div className="sgh-maze-mission-body">
+                <span className="sgh-maze-mission-tag">लक्ष्यम् · Mission Objective</span>
+                <p className="sgh-maze-mission-text">{activeQuest.missionObjective}</p>
+              </div>
+              <button
+                type="button"
+                className="sgh-mission-audio-btn"
+                onClick={() => speakAsBodhi(activeQuest.missionObjective, { lang: 'en' })}
+                title="Listen to mission objective instructions"
+                aria-label="Listen to mission objective"
+              >
+                <span>🔊 Listen</span>
+              </button>
             </div>
 
             {/* Anti-Spoiler Difficulty & Audio Helper Bar */}

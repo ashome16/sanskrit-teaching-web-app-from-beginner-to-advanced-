@@ -277,16 +277,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.1rem;
+  gap: 0.15rem;
   background: #fffdf9;
   border: 1px solid rgba(212, 194, 169, 0.85);
   border-radius: 999px;
   color: #5c5349;
   cursor: pointer;
-  padding: 0.3rem 0.6rem;
+  padding: 0.32rem 0.72rem;
   font-weight: 600;
-  font-size: 0.8rem;
-  line-height: 1.15;
+  font-size: 0.94rem;
+  line-height: 1.2;
   white-space: nowrap;
   box-shadow: 0 1px 2px rgba(39, 59, 53, 0.05), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
@@ -319,10 +319,10 @@
   grid-auto-rows: auto;
   align-items: center;
   justify-items: start;
-  column-gap: 0.38rem;
-  row-gap: 0;
-  line-height: 1.1;
-  padding: 0.26rem 0.62rem 0.26rem 0.45rem;
+  column-gap: 0.45rem;
+  row-gap: 0.05rem;
+  line-height: 1.15;
+  padding: 0.32rem 0.75rem 0.32rem 0.55rem;
   text-align: left;
 }
 
@@ -332,15 +332,15 @@
 }
 
 .dashboard-nav button.dashboard-nav-home {
-  height: 38px;
-  min-height: 38px;
-  max-height: 38px;
+  height: 42px;
+  min-height: 42px;
+  max-height: 42px;
   box-sizing: border-box;
   display: inline-grid;
   grid-template-columns: auto auto;
   align-items: center;
-  column-gap: 0.36rem;
-  padding: 0.22rem 0.65rem 0.22rem 0.48rem;
+  column-gap: 0.45rem;
+  padding: 0.28rem 0.8rem 0.28rem 0.58rem;
   border-radius: 999px;
   flex-shrink: 0;
   margin-left: 0.2rem;
@@ -351,15 +351,15 @@
 }
 
 .dashboard-nav button.dashboard-nav-games {
-  height: 38px;
-  min-height: 38px;
-  max-height: 38px;
+  height: 42px;
+  min-height: 42px;
+  max-height: 42px;
   box-sizing: border-box;
   display: inline-grid;
   grid-template-columns: auto auto;
   align-items: center;
-  column-gap: 0.36rem;
-  padding: 0.22rem 0.72rem 0.22rem 0.52rem;
+  column-gap: 0.45rem;
+  padding: 0.28rem 0.82rem 0.28rem 0.6rem;
   border-radius: 999px;
   flex-shrink: 0;
   background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
@@ -401,8 +401,8 @@
 }
 
 .dashboard-nav-icon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
   display: block;
   transition: transform 0.2s ease;
@@ -419,14 +419,14 @@
 /* Sanskrit Highlight Badge in Top Navigation */
 .dashboard-nav-sanskrit {
   font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Sanskrit', 'Sanskrit Text', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.85rem;
+  font-size: 1.02rem;
   font-weight: 800;
   line-height: 1.25;
   color: #9a3412;
   background: rgba(245, 158, 11, 0.18);
   border: 1px solid rgba(217, 119, 6, 0.38);
-  border-radius: 5px;
-  padding: 0.05rem 0.36rem;
+  border-radius: 6px;
+  padding: 0.08rem 0.42rem;
   display: inline-block;
   letter-spacing: 0.015em;
   box-shadow: 0 1px 2px rgba(180, 83, 9, 0.06);
@@ -449,28 +449,28 @@
 }
 
 .dashboard-nav-sub button .dashboard-nav-sanskrit {
-  font-size: 0.72rem;
-  padding: 0.04rem 0.26rem;
+  font-size: 0.88rem;
+  padding: 0.06rem 0.32rem;
 }
 
 .dashboard-nav-sub-en {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   color: #64748b;
-  font-weight: 600;
-  margin-left: 2px;
+  font-weight: 700;
+  margin-left: 3px;
 }
 
 .dashboard-nav-primary {
-  font-size: 0.84rem;
+  font-size: 0.95rem;
   font-weight: 700;
 }
 
 .dashboard-nav-secondary {
-  font-size: 0.56rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   letter-spacing: 0.025em;
   text-transform: uppercase;
-  color: #78716c;
+  color: #64748b;
   background: transparent;
   border: none;
   padding: 0;
@@ -538,9 +538,9 @@
   background: rgba(255, 253, 249, 0.9);
   box-shadow: 0 1px 3px rgba(39, 59, 53, 0.04);
   max-width: 100%;
-  height: 38px;
-  min-height: 38px;
-  max-height: 38px;
+  height: 42px;
+  min-height: 42px;
+  max-height: 42px;
   box-sizing: border-box;
   flex-shrink: 0;
 }
@@ -555,13 +555,13 @@
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.3rem;
-  font-size: 0.66rem;
+  gap: 0.35rem;
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #9a3423;
-  padding: 0.18rem 0.52rem 0.18rem 0.4rem;
+  padding: 0.22rem 0.62rem 0.22rem 0.48rem;
   margin: 0;
   border: 1px solid rgba(179, 71, 47, 0.28);
   box-shadow: none;
@@ -572,7 +572,7 @@
   line-height: 1.15;
   text-align: left;
   white-space: nowrap;
-  height: 32px;
+  height: 36px;
   box-sizing: border-box;
 }
 
@@ -591,8 +591,8 @@ button.dashboard-nav-group-label:focus-visible,
 }
 
 .dashboard-nav-group-label .dashboard-nav-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
 /* Games navigation group styling */
@@ -648,7 +648,7 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 .dashboard-nav-group--games .dashboard-nav-sub button .dashboard-nav-sub-en {
   color: #0369a1;
   font-weight: 800;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
 }
 
 .dashboard-nav-group--games .dashboard-nav-sub button.active .dashboard-nav-sanskrit,
@@ -658,14 +658,14 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 
 .dashboard-nav-stem-badge,
 .dashboard-nav-dir-badge {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: #0369a1;
   background: rgba(2, 132, 199, 0.14);
   border: 1px solid rgba(2, 132, 199, 0.35);
   border-radius: 5px;
-  padding: 0.06rem 0.38rem;
+  padding: 0.08rem 0.42rem;
   margin-left: 0.25rem;
   line-height: 1.15;
   display: inline-flex;
@@ -720,11 +720,11 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  padding: 0.18rem 0.42rem;
-  font-size: 0.71rem;
+  padding: 0.22rem 0.52rem;
+  font-size: 0.82rem;
   border-radius: 999px;
   line-height: 1.15;
-  height: 32px;
+  height: 36px;
   box-sizing: border-box;
 }
 
@@ -756,7 +756,7 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 .dashboard-nav-group--ncert .dashboard-nav-group-label {
   color: #7c2d12 !important;
   font-weight: 800 !important;
-  font-size: 0.72rem !important;
+  font-size: 0.82rem !important;
   background: rgba(234, 88, 12, 0.12) !important;
   border: 1px solid rgba(234, 88, 12, 0.35) !important;
 }
@@ -776,7 +776,7 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 .dashboard-nav-group--ncert .dashboard-nav-group-label .dashboard-nav-sanskrit {
   color: #7c2d12 !important;
   font-weight: 900 !important;
-  font-size: 0.74rem !important;
+  font-size: 0.92rem !important;
 }
 
 .dashboard-nav-group--ncert .dashboard-nav-group-label.dashboard-nav-group-label--active .dashboard-nav-sanskrit,
@@ -799,16 +799,16 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 }
 
 .dashboard-nav-sub button.dashboard-nav-grade-num {
-  min-width: 29px;
-  width: 29px;
-  height: 29px;
+  min-width: 33px;
+  width: 33px;
+  height: 33px;
   padding: 0;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   font-family: inherit;
   color: #7c2d12;
   background: rgba(254, 243, 199, 0.8);
@@ -973,29 +973,33 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
   }
 
   .dashboard-nav-sub button {
-    padding: 0.18rem 0.36rem;
-    font-size: 0.69rem;
+    padding: 0.2rem 0.46rem;
+    font-size: 0.78rem;
   }
 
   .dashboard-nav-row--secondary {
-    gap: 0.22rem;
+    gap: 0.35rem;
   }
 
   .dashboard-nav-row--secondary button.dashboard-nav-item,
   .dashboard-nav-row--secondary button.dashboard-nav-stacked {
-    padding: 0.2rem 0.44rem 0.2rem 0.38rem;
-    font-size: 0.74rem;
+    padding: 0.28rem 0.65rem 0.28rem 0.5rem;
+    font-size: 0.88rem;
     flex-shrink: 0;
   }
 
   .dashboard-nav-row--secondary .dashboard-nav-icon {
-    width: 17px;
-    height: 17px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .dashboard-nav-row--secondary .dashboard-nav-sanskrit {
+    font-size: 0.96rem;
   }
 
   .dashboard-nav-row--secondary .dashboard-nav-secondary {
-    font-size: 0.5rem;
-    letter-spacing: 0.01em;
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
   }
 
   .dashboard-header .dashboard-search-trigger-btn {
@@ -1050,17 +1054,21 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 
   .dashboard-nav-row--secondary button.dashboard-nav-item,
   .dashboard-nav-row--secondary button.dashboard-nav-stacked {
-    padding: 0.18rem 0.38rem 0.18rem 0.34rem;
-    font-size: 0.7rem;
+    padding: 0.24rem 0.52rem 0.24rem 0.42rem;
+    font-size: 0.84rem;
   }
 
   .dashboard-nav-row--secondary .dashboard-nav-icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .dashboard-nav-row--secondary .dashboard-nav-sanskrit {
+    font-size: 0.92rem;
   }
 
   .dashboard-nav-row--secondary .dashboard-nav-secondary {
-    font-size: 0.48rem;
+    font-size: 0.65rem;
   }
 }
 
@@ -1188,8 +1196,9 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
   .dashboard-nav button {
     flex-shrink: 0;
     white-space: nowrap;
-    min-height: 40px;
-    padding: 0.32rem 0.68rem;
+    min-height: 44px;
+    padding: 0.38rem 0.75rem;
+    font-size: 0.92rem;
     touch-action: manipulation;
   }
 
@@ -1205,13 +1214,14 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
     flex-wrap: nowrap;
     max-width: none;
     border-radius: 999px;
-    padding: 0.16rem 0.28rem;
+    padding: 0.2rem 0.35rem;
     white-space: normal;
   }
 
   .dashboard-nav-sub button {
-    padding: 0.25rem 0.5rem;
-    min-height: 36px;
+    padding: 0.28rem 0.55rem;
+    min-height: 38px;
+    font-size: 0.84rem;
   }
 }
 
