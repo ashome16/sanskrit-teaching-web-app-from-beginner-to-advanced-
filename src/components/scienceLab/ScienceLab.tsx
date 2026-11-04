@@ -3,6 +3,7 @@ import type { LabSegmentId } from './common';
 import { soundEffects } from '../../utils/soundEffects';
 import '../../styles/science-lab.css';
 import '../../styles/mission-control.css';
+import '../../styles/vedic-knowledge-system.css';
 import { ScienceSparkModal } from './ScienceSparkModal';
 import { ParentNotesModal } from './ParentNotesModal';
 import { HowToPlayModal } from './HowToPlayModal';
@@ -503,6 +504,9 @@ export interface ScienceLabProps {
   initialSegment?: string | null;
   onGoHome?: () => void;
   onOpenResources?: () => void;
+  onOpenPhilosophy?: () => void;
+  onOpenGrammar?: () => void;
+  onOpenVedicMaths?: () => void;
 }
 
 const LEVEL_STEPS: { id: LabLevel; num: string; label: string; ages: string }[] = [
@@ -527,17 +531,25 @@ const CATEGORY_CHIP: Record<LabSegmentConfig['category'], string> = {
 
 const SimLoader = () => <div className="vl-loading">Loading the lab bench…</div>;
 
-const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpenResources }) => {
+const ScienceLab: React.FC<ScienceLabProps> = ({
+  initialSegment,
+  onGoHome,
+  onOpenResources,
+  onOpenPhilosophy,
+  onOpenGrammar,
+  onOpenVedicMaths,
+}) => {
   const [active, setActive] = useState<LabSegmentId>(() => {
-    if (initialSegment && initialSegment !== 'catalog' && SEGMENT_IDS.has(initialSegment)) return initialSegment as LabSegmentId;
+    if (initialSegment && initialSegment !== 'catalog' && initialSegment !== 'iks' && SEGMENT_IDS.has(initialSegment)) return initialSegment as LabSegmentId;
     if (initialSegment && HASH_ALIASES[initialSegment]) return HASH_ALIASES[initialSegment];
     return readHash() || 'preschool-wonder';
   });
   const [preschoolActivity, setPreschoolActivity] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'mission-control' | 'workbench' | 'catalog'>(() => {
-    if (!initialSegment || initialSegment === 'catalog') return 'catalog';
+    if (!initialSegment || initialSegment === 'catalog' || initialSegment === 'iks') return 'catalog';
     return 'workbench';
   });
+  const [isIksLightboxOpen, setIsIksLightboxOpen] = useState(false);
   const [explorerStats, setExplorerStats] = useState<ExplorerStats>(() => getExplorerStats());
   const [isScienceSparkOpen, setIsScienceSparkOpen] = useState(false);
   const [isParentNotesOpen, setIsParentNotesOpen] = useState(false);
@@ -668,6 +680,16 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
   }, [active]);
 
   useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isIksLightboxOpen) {
+        setIsIksLightboxOpen(false);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isIksLightboxOpen]);
+
+  useEffect(() => {
     const onHash = () => {
       const h = readHash();
       if (h) { setActive(h); setViewMode('workbench'); }
@@ -760,46 +782,117 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             </ul>
 
             {/* Vedic Indian Knowledge System Map */}
-            <div className="vl-iks-showcase-strip" aria-label="Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Map">
-              <details className="vl-iks-details" open={false}>
-                <summary className="vl-iks-summary">
-                  <span className="vl-iks-summary-left">
-                    <span className="vl-iks-summary-icon" aria-hidden="true">🗺️</span>
-                    <span>
-                      <strong className="vl-iks-summary-title">Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Map</strong>
+            <div className="vl-iks-showcase-strip" id="vedic-knowledge-system" aria-label="Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Map">
+              <div className="vl-iks-card-open">
+                <div className="vl-iks-header-bar">
+                  <div className="vl-iks-summary-left">
+                    <span className="vl-iks-summary-icon" aria-hidden="true">🕉️</span>
+                    <div>
+                      <strong className="vl-iks-summary-title">Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा)</strong>
                       <small className="vl-iks-summary-sub">Explore the 7 branches connecting ancient Indian sciences with our 16 STEM physics simulations</small>
-                    </span>
-                  </span>
-                  <span className="vl-iks-summary-badge">View Infographic ➔</span>
-                </summary>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    className="vl-iks-zoom-btn"
+                    onClick={() => {
+                      soundEffects.playCelebrationChime();
+                      setIsIksLightboxOpen(true);
+                    }}
+                    title="Click to view full-screen high-resolution infographic"
+                  >
+                    <span>🔍 Enlarge Infographic</span>
+                  </button>
+                </div>
                 <div className="vl-iks-details-body">
-                  <div className="vl-iks-img-wrap">
+                  <div
+                    className="vl-iks-img-wrap"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => {
+                      soundEffects.playCelebrationChime();
+                      setIsIksLightboxOpen(true);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setIsIksLightboxOpen(true);
+                      }
+                    }}
+                    title="Click to view full-screen high-resolution infographic"
+                  >
                     <img
                       src="/images/vedic-indian-knowledge-system.jpg"
-                      alt="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Seven Branches of Ancient Indian Sciences"
+                      alt="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Seven Branches of Ancient Indian Sciences: Philosophy, Mathematics, Cosmology, History, Ayurveda, Architecture, and Grammar"
                       className="vl-iks-img"
+                      width={1024}
+                      height={571}
                       loading="lazy"
                     />
+                    <div className="vl-iks-img-overlay">
+                      <span className="vl-iks-img-pill">✨ 7 Pillars of Vedic Sciences · Tap to Enlarge HD</span>
+                    </div>
                   </div>
                   <div className="vl-iks-branches-row">
-                    <button type="button" className="vl-iks-branch-pill" onClick={() => handleLaunchSim('paramanu')}>
-                      ⚛️ Matter &amp; Physics · परमाणु (Kaṇāda)
+                    <button
+                      type="button"
+                      className="vl-iks-branch-pill vl-iks-branch-pill--darshana"
+                      onClick={() => (onOpenPhilosophy ? onOpenPhilosophy() : handleLaunchSim('paramanu'))}
+                      title="Explore Nyāya, Vaiśeṣika, and the Six Systems of Indian Philosophy"
+                    >
+                      🧘 Philosophy · दर्शनम् (Nyāya &amp; Vaiśeṣika)
                     </button>
-                    <button type="button" className="vl-iks-branch-pill" onClick={() => handleLaunchSim('jyotisha')}>
-                      🪐 Cosmology &amp; Orbits · ज्योतिषम् (Āryabhaṭa)
+                    <button
+                      type="button"
+                      className="vl-iks-branch-pill vl-iks-branch-pill--ganita"
+                      onClick={() => (onOpenVedicMaths ? onOpenVedicMaths() : handleLaunchSim('chandahshastra'))}
+                      title="Launch Chandahshastra Piṅgala binary combinatorics, Baudhāyana geometry &amp; Vedic Mathematics"
+                    >
+                      📐 Mathematics · गणितम् (Baudhāyana &amp; Piṅgala)
                     </button>
-                    <button type="button" className="vl-iks-branch-pill" onClick={() => handleLaunchSim('prakriti')}>
+                    <button
+                      type="button"
+                      className="vl-iks-branch-pill vl-iks-branch-pill--jyotisha"
+                      onClick={() => handleLaunchSim('jyotisha')}
+                      title="Launch Āryabhaṭa Celestial Orbit &amp; Heliocentric simulator"
+                    >
+                      🪐 Cosmology · ज्योतिषम् (Āryabhaṭa)
+                    </button>
+                    <button
+                      type="button"
+                      className="vl-iks-branch-pill vl-iks-branch-pill--itihasa"
+                      onClick={() => handleLaunchSim('kautilya')}
+                      title="Launch Kauṭilya Statecraft &amp; Saptāṅga Rajya simulation"
+                    >
+                      📜 History &amp; Statecraft · इतिहास (Kauṭilya)
+                    </button>
+                    <button
+                      type="button"
+                      className="vl-iks-branch-pill vl-iks-branch-pill--ayurveda"
+                      onClick={() => handleLaunchSim('prakriti')}
+                      title="Launch Suśruta Tridoṣa Equilibrium &amp; Prakṛti simulation"
+                    >
                       🌿 Life &amp; Āyurveda · प्रकृति (Suśruta)
                     </button>
-                    <button type="button" className="vl-iks-branch-pill" onClick={() => handleLaunchSim('temple-engineering')}>
+                    <button
+                      type="button"
+                      className="vl-iks-branch-pill vl-iks-branch-pill--vastu"
+                      onClick={() => handleLaunchSim('temple-engineering')}
+                      title="Launch Temple Engineering, Acoustics &amp; Vāstu Puruṣa simulation"
+                    >
                       🏛️ Architecture · वास्तुशास्त्रम् (Vāstu)
                     </button>
-                    <button type="button" className="vl-iks-branch-pill" onClick={() => handleLaunchSim('chandahshastra')}>
-                      📐 Mathematics &amp; Rhythms · गणितम् (Piṅgala)
+                    <button
+                      type="button"
+                      className="vl-iks-branch-pill vl-iks-branch-pill--vyakarana"
+                      onClick={() => (onOpenGrammar ? onOpenGrammar() : handleLaunchSim('chandahshastra'))}
+                      title="Launch Pāṇinian Generative Grammar Engine"
+                    >
+                      🗣️ Linguistics · व्याकरणम् (Pāṇini)
                     </button>
                   </div>
                 </div>
-              </details>
+              </div>
             </div>
 
             {/* Popular Starting Quests across all 4 learning stages */}
@@ -1800,6 +1893,40 @@ const ScienceLab: React.FC<ScienceLabProps> = ({ initialSegment, onGoHome, onOpe
             setSelectedHowToPlay(null);
           }}
         />
+      )}
+
+      {/* Lightbox for Vedic Knowledge System Infographic */}
+      {isIksLightboxOpen && (
+        <div
+          className="vks-lightbox-backdrop"
+          onClick={() => setIsIksLightboxOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Vedic Indian Knowledge System Fullscreen Infographic"
+        >
+          <div className="vks-lightbox-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="vks-lightbox-bar">
+              <h3 className="vks-lightbox-title">
+                VEDIC INDIAN KNOWLEDGE SYSTEM · भारतीय ज्ञान परंपरा
+              </h3>
+              <button
+                type="button"
+                className="vks-lightbox-close"
+                onClick={() => setIsIksLightboxOpen(false)}
+                aria-label="Close fullscreen view"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="vks-lightbox-content">
+              <img
+                src="/images/vedic-indian-knowledge-system.jpg"
+                alt="Vedic Indian Knowledge System Fullscreen Infographic"
+                className="vks-lightbox-img"
+              />
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

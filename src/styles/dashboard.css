@@ -675,9 +675,11 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 }
 
 .dashboard-nav-dir-badge {
-  color: #0f766e;
-  background: rgba(15, 118, 110, 0.14);
-  border-color: rgba(15, 118, 110, 0.38);
+  color: #042f2e;
+  background: #2dd4bf;
+  border-color: #14b8a6;
+  font-weight: 800;
+  box-shadow: 0 1px 3px rgba(13, 148, 136, 0.25);
 }
 
 .dashboard-nav-group--games .dashboard-nav-sub button:hover .dashboard-nav-stem-badge {
@@ -687,9 +689,9 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 }
 
 .dashboard-nav-group--games .dashboard-nav-sub button:hover .dashboard-nav-dir-badge {
-  background: rgba(15, 118, 110, 0.25);
-  border-color: #0f766e;
-  color: #115e59;
+  background: #5eead4;
+  border-color: #2dd4bf;
+  color: #042f2e;
 }
 
 .dashboard-nav-group--games .dashboard-nav-sub button.active .dashboard-nav-stem-badge,
@@ -702,7 +704,7 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
 }
 
 .dashboard-nav-group--games .dashboard-nav-sub button.active .dashboard-nav-dir-badge {
-  color: #0f766e;
+  color: #0d9488;
 }
 
 .dashboard-nav-sub {

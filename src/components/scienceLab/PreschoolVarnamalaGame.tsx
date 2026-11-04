@@ -119,6 +119,31 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
   const [picOptions, setPicOptions] = useState<LetterMnemonic[]>([]);
   const [picCorrectOption, setPicCorrectOption] = useState<string | null>(null);
   const [picWrongOptions, setPicWrongOptions] = useState<Set<string>>(new Set());
+  const [isShareCopied, setIsShareCopied] = useState(false);
+
+  const handleShareVarnamala = async () => {
+    try {
+      soundEffects.playStrokeChime();
+    } catch {}
+    const shareData = {
+      title: 'Free Preschool Games for Ages 3–6 | Play 2 Learn – EdNet Learn',
+      text: 'Play free preschool games that build letters, numbers, shapes, memory, and early Sanskrit sounds. Safe, simple, and fun for ages 3–6.',
+      url: window.location.origin + '/preschool',
+    };
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch {}
+    }
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        setIsShareCopied(true);
+        setTimeout(() => setIsShareCopied(false), 2400);
+      } catch {}
+    }
+  };
 
   // Filtered letters based on active group
   const filteredMnemonics = useMemo(() => {
@@ -386,6 +411,16 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
         </div>
 
         <div className="pvg-top-actions">
+          <button
+            type="button"
+            className="pvg-share-btn"
+            onClick={handleShareVarnamala}
+            title="Share Play 2 Learn Varnamala with parents & teachers"
+            aria-label="Share preschool game"
+          >
+            <span>{isShareCopied ? '✅ Link Copied!' : '📤 Share'}</span>
+          </button>
+
           <div className="pvg-star-pill" title="Stars won">
             <span aria-hidden="true">⭐</span>
             <span>{starsCollected} Stars</span>

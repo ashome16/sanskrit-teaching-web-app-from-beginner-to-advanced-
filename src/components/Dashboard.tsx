@@ -197,6 +197,18 @@ export const BARAKHADI_METADATA: { title: string; desc: string } = {
   desc: 'Master all 12+ vowel modifier combinations with every consonant (क् + अ = क, क् + आ = का, etc.) with audio playback and phonetic charts.',
 };
 
+/** Dedicated SEO & Social Sharing metadata for Play 2 Learn: Free Preschool Games */
+export const PRESCHOOL_METADATA: { title: string; desc: string } = {
+  title: 'Free Preschool Games for Ages 3–6 | Play 2 Learn – EdNet Learn',
+  desc: 'Play free preschool games that build letters, numbers, shapes, memory, and early Sanskrit sounds. Safe, simple, and fun for ages 3–6.',
+};
+
+/** Dedicated SEO & Social Sharing metadata for Indian Knowledge Systems & Vedic Sciences */
+export const IKS_METADATA: { title: string; desc: string } = {
+  title: 'Indian Knowledge Systems (IKS) & Vedic Sciences | EdNet Learn',
+  desc: 'Explore the 7 pillars of ancient Indian sciences (भारतीय ज्ञान परंपरा): Philosophy (Darśana), Mathematics (Gaṇita), Cosmology (Jyotiṣa), History, Ayurveda, Architecture (Vāstu), and Pāṇinian Grammar with interactive STEM simulators.',
+};
+
 const pathToView = (pathname: string): DashboardView | null => {
   const clean = pathname.replace(/\/+$/, '') || '/';
   if (
@@ -286,7 +298,12 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/iks' ||
     clean === '/vedic-sciences' ||
     clean === '/vedic-science' ||
-    clean === '/ancient-indian-sciences'
+    clean === '/ancient-indian-sciences' ||
+    clean === '/preschool' ||
+    clean === '/preschool-games' ||
+    clean === '/play-2-learn' ||
+    clean === '/play2learn' ||
+    clean === '/free-preschool-games'
   ) return 'science-lab';
   if (
     clean === '/assignment-eval' ||
@@ -322,8 +339,17 @@ const viewToPath = (view: DashboardView): string => {
     return l ? l.path : '/';
   }
   if (view === 'science-lab') {
-    if (typeof window !== 'undefined' && window.location.pathname.replace(/\/+$/, '') === '/science-lab') {
-      return '/science-lab';
+    if (typeof window !== 'undefined') {
+      const clean = window.location.pathname.replace(/\/+$/, '');
+      if (clean === '/preschool' || clean === '/preschool-games' || clean === '/play-2-learn') {
+        return clean;
+      }
+      if (clean === '/iks' || clean === '/vedic-sciences' || clean === '/vedic-science' || clean === '/indian-knowledge-systems' || clean === '/ancient-indian-sciences') {
+        return clean;
+      }
+      if (clean === '/science-lab') {
+        return '/science-lab';
+      }
     }
     return '/vignana-lab';
   }
@@ -606,7 +632,41 @@ const Dashboard: React.FC = () => {
   }, [activeView]);
 
   // Deep link into a Vijñāna Lab segment (#paramanu, #prakriti, #jyotisha, #srishti-sthiti-laya) + remount key.
-  const [labTarget, setLabTarget] = useState<{ segment: string | null; key: number }>({ segment: null, key: 0 });
+  const isPreschoolPath = () => {
+    try {
+      const clean = window.location.pathname.replace(/\/+$/, '');
+      return (
+        clean === '/preschool' ||
+        clean === '/preschool-games' ||
+        clean === '/play-2-learn' ||
+        clean === '/play2learn' ||
+        clean === '/free-preschool-games' ||
+        window.location.hash === '#preschool-wonder'
+      );
+    } catch {
+      return false;
+    }
+  };
+  const isIksPath = () => {
+    try {
+      const clean = window.location.pathname.replace(/\/+$/, '');
+      return (
+        clean === '/iks' ||
+        clean === '/vedic-sciences' ||
+        clean === '/vedic-science' ||
+        clean === '/ancient-indian-sciences' ||
+        clean === '/indian-knowledge-systems' ||
+        window.location.hash === '#vedic-knowledge-system' ||
+        window.location.hash === '#iks'
+      );
+    } catch {
+      return false;
+    }
+  };
+  const [labTarget, setLabTarget] = useState<{ segment: string | null; key: number }>(() => ({
+    segment: isPreschoolPath() ? 'preschool-wonder' : isIksPath() ? 'iks' : null,
+    key: 0,
+  }));
   const openScienceLab = (segment?: string) => {
     setLabTarget((prev) => ({ segment: segment || null, key: prev.key + 1 }));
     navigateToView('science-lab');
@@ -882,6 +942,12 @@ const Dashboard: React.FC = () => {
     try {
       const onBarakhadi = activeView === 'reader' && lessons[lessonIndex]?.id === 'barakhadi';
       const current = window.location.pathname.replace(/\/+$/, '') || '/';
+      const onPreschool =
+        (activeView === 'science-lab' && labTarget.segment === 'preschool-wonder') ||
+        (activeView === 'science-lab' && isPreschoolPath());
+      const onIks =
+        (activeView === 'science-lab' && labTarget.segment === 'iks') ||
+        (activeView === 'science-lab' && isIksPath());
       const onManyNames =
         activeView === 'grammar' && grammarTargetArticleId === 'many-names-of-sanskrit' && current === '/many-names-of-sanskrit';
       const onSouthIndian =
@@ -895,7 +961,27 @@ const Dashboard: React.FC = () => {
       const onEurope =
         activeView === 'grammar' && grammarTargetArticleId === 'sanskrit-grammar-europe' && current === '/sanskrit-grammar-europe';
       const activeLanding = activeView === 'intent-landing' ? landingById(landingId) : null;
-      const desired = activeLanding ? activeLanding.path : onBarakhadi ? '/barakhadi' : onManyNames ? '/many-names-of-sanskrit' : onSouthIndian ? '/sanskrit-in-south-indian-languages' : onSapta ? '/sapta-varna' : onJambu ? '/jambudvipa' : onPancha ? '/panchatantra' : onEurope ? '/sanskrit-grammar-europe' : viewToPath(activeView);
+      const desired = activeLanding
+        ? activeLanding.path
+        : onPreschool
+        ? (current === '/preschool-games' || current === '/play-2-learn' ? current : '/preschool')
+        : onIks
+        ? (current === '/vedic-sciences' || current === '/vedic-science' || current === '/ancient-indian-sciences' ? current : '/iks')
+        : onBarakhadi
+        ? '/barakhadi'
+        : onManyNames
+        ? '/many-names-of-sanskrit'
+        : onSouthIndian
+        ? '/sanskrit-in-south-indian-languages'
+        : onSapta
+        ? '/sapta-varna'
+        : onJambu
+        ? '/jambudvipa'
+        : onPancha
+        ? '/panchatantra'
+        : onEurope
+        ? '/sanskrit-grammar-europe'
+        : viewToPath(activeView);
       const quizHash =
         activeView === 'quiz' && quizAnchor && categoryForLiteratureAnchor(quizAnchor)
           ? `#${quizAnchor}`
@@ -907,7 +993,15 @@ const Dashboard: React.FC = () => {
       }
 
       // Dynamically update document title & meta tags for SEO & social sharing
-      const meta = activeLanding ? { title: activeLanding.title, desc: activeLanding.desc } : onBarakhadi ? BARAKHADI_METADATA : VIEW_METADATA[activeView] || VIEW_METADATA.home;
+      const meta = activeLanding
+        ? { title: activeLanding.title, desc: activeLanding.desc }
+        : onPreschool
+        ? PRESCHOOL_METADATA
+        : onIks
+        ? IKS_METADATA
+        : onBarakhadi
+        ? BARAKHADI_METADATA
+        : VIEW_METADATA[activeView] || VIEW_METADATA.home;
       document.title = meta.title;
       const descEl = document.querySelector('meta[name="description"]');
       if (descEl) descEl.setAttribute('content', meta.desc);
@@ -915,14 +1009,24 @@ const Dashboard: React.FC = () => {
       if (ogTitleEl) ogTitleEl.setAttribute('content', meta.title);
       const ogDescEl = document.querySelector('meta[property="og:description"]');
       if (ogDescEl) ogDescEl.setAttribute('content', meta.desc);
+      const twTitleEl = document.querySelector('meta[name="twitter:title"]');
+      if (twTitleEl) twTitleEl.setAttribute('content', meta.title);
+      const twDescEl = document.querySelector('meta[name="twitter:description"]');
+      if (twDescEl) twDescEl.setAttribute('content', meta.desc);
       const canonicalHref = `https://ednetlearn.in${desired.endsWith('/') ? desired : `${desired}/`}`;
       const ogUrlEl = document.querySelector('meta[property="og:url"]');
       if (ogUrlEl) ogUrlEl.setAttribute('content', canonicalHref);
       const canonicalEl = document.querySelector('link[rel="canonical"]');
       if (canonicalEl) canonicalEl.setAttribute('href', canonicalHref);
+      if (onIks) {
+        const ogImgEl = document.querySelector('meta[property="og:image"]');
+        if (ogImgEl) ogImgEl.setAttribute('content', 'https://ednetlearn.in/images/vedic-indian-knowledge-system.jpg');
+        const twImgEl = document.querySelector('meta[name="twitter:image"]');
+        if (twImgEl) twImgEl.setAttribute('content', 'https://ednetlearn.in/images/vedic-indian-knowledge-system.jpg');
+      }
     } catch {}
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeView, lessons[lessonIndex]?.id, quizAnchor, landingId]);
+  }, [activeView, lessons[lessonIndex]?.id, quizAnchor, landingId, labTarget.segment]);
 
   useEffect(() => {
     const onPop = () => {
@@ -1242,7 +1346,7 @@ const Dashboard: React.FC = () => {
                 >
                   <span aria-hidden="true">🗂️</span>
                   <span className="dashboard-nav-sanskrit">सूची</span>
-                  <span className="dashboard-nav-dir-badge">Directory</span>
+                  <span className="dashboard-nav-dir-badge">All 41 Games</span>
                 </button>
               </div>
             </div>
@@ -1578,6 +1682,9 @@ const Dashboard: React.FC = () => {
             initialSegment={labTarget.segment}
             onGoHome={() => navigateToView('home')}
             onOpenResources={() => navigateToView('resources')}
+            onOpenPhilosophy={() => navigateToView('philosophy')}
+            onOpenGrammar={handleOpenGrammar}
+            onOpenVedicMaths={() => navigateToView('vedic-maths')}
           />
         )}
         {activeView === 'board' && (

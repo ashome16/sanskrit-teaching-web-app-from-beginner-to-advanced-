@@ -43,6 +43,7 @@ import SwarWorkbooksHub from './SwarWorkbooksHub';
 import { transliterateSanskrit } from '../utils/indicTransliteration';
 import '../styles/textbook-reader.css';
 import '../styles/varnamala-studio.css';
+import '../styles/vedic-knowledge-system.css';
 import VarnaColourExplainer from './VarnaColourExplainer';
 
 export const VALID_VARNAMALA_SUBMODES = ['sound', 'writing', 'quizzes', 'workbooks', 'worksheets'] as const;
@@ -516,6 +517,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
   const [isSymbolsOpen, setIsSymbolsOpen] = useState(false);
   const [isGunitaOpen, setIsGunitaOpen] = useState(false);
   const [isGrade8SyllabusOpen, setIsGrade8SyllabusOpen] = useState(false);
+  const [isIksMapOpen, setIsIksMapOpen] = useState(false);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
   /** Lesson paragraphs only. Grouped charts (Varṇamālā / Numbers / बारहखड़ी) stay on isPlayingAll. */
   const [playAllPhase, setPlayAllPhase] = useState<'idle' | 'playing' | 'paused'>('idle');
@@ -1471,6 +1473,24 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 >
                   <span>🔬</span>
                   <span>Vedic Sciences Game</span>
+                </button>
+              )}
+              {activeLessonId === 'gsde109' && (
+                <button
+                  type="button"
+                  className="chapter-tool-btn chapter-tool-btn--iks"
+                  onClick={() => setIsIksMapOpen(true)}
+                  title="View Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Visual Map"
+                  style={{
+                    background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)',
+                    color: '#ffffff',
+                    border: '1px solid #fcd34d',
+                    boxShadow: '0 2px 8px rgba(217, 119, 6, 0.25)',
+                    fontWeight: 700,
+                  }}
+                >
+                  <span>🕉️</span>
+                  <span>IKS Knowledge Map</span>
                 </button>
               )}
               {onOpenQuiz && (
@@ -3678,6 +3698,40 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
           )}
         </div>
       ) : null}
+
+      {/* Vedic Knowledge System Map Modal for Chapter 9 */}
+      {isIksMapOpen && (
+        <div
+          className="vks-lightbox-backdrop"
+          onClick={() => setIsIksMapOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Vedic Indian Knowledge System Fullscreen Infographic"
+        >
+          <div className="vks-lightbox-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="vks-lightbox-bar">
+              <h3 className="vks-lightbox-title">
+                VEDIC INDIAN KNOWLEDGE SYSTEM · भारतीय ज्ञान परंपरा (Class 7 Ch 9 Vedic Sciences)
+              </h3>
+              <button
+                type="button"
+                className="vks-lightbox-close"
+                onClick={() => setIsIksMapOpen(false)}
+                aria-label="Close fullscreen view"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="vks-lightbox-content">
+              <img
+                src="/images/vedic-indian-knowledge-system.jpg"
+                alt="Vedic Indian Knowledge System Fullscreen Infographic"
+                className="vks-lightbox-img"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -20,6 +20,7 @@ import { LilavatiPoeticMathStudio } from './LilavatiPoeticMathStudio';
 import { CymaticsHarmonicsStudio } from './CymaticsHarmonicsStudio';
 import { UjjainGeodesyStudio } from './UjjainGeodesyStudio';
 import GrammarLightFigure from './GrammarLightFigures';
+import { VedicKnowledgeSystemShowcase } from './VedicKnowledgeSystemShowcase';
 
 export interface PhilosophyPageProps {
   onOpenRegister?: () => void;
@@ -5809,6 +5810,21 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 it, state the best case <em>against</em> it. That is pūrvapakṣa — and it is the habit that makes the next
                 essay, on medhā and the mind, much easier to think through.
               </p>
+
+              {/* Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Showcase */}
+              <div style={{ margin: '2.5rem 0 1.5rem' }}>
+                <VedicKnowledgeSystemShowcase
+                  onOpenPhilosophy={() => {
+                    setActiveEssay('shad_darshana');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  onOpenVedicMaths={onOpenVedicMaths}
+                  onOpenScienceLab={onOpenScienceLab}
+                  onOpenGrammar={() => onOpenGrammarArticle?.('many-names-of-sanskrit')}
+                  onOpenReader={onOpenReader}
+                />
+              </div>
+
               <div className="philosophy-action-buttons">
                 <button
                   type="button"

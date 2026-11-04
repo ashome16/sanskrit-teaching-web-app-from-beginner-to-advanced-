@@ -61,6 +61,11 @@ const REQUIRED_PATHS = [
   '/sanskrit-grammar-lessons',
   '/sanskrit-pronunciation-guide',
   '/science-lab-games',
+  '/preschool',
+  '/preschool-games',
+  '/play-2-learn',
+  '/iks',
+  '/vedic-sciences',
 ];
 
 function extractObjectLiteral(source, exportName) {
@@ -519,6 +524,36 @@ function getRouteJsonLd(pathname, meta) {
       inLanguage: ['sa', 'en'],
       teaches: 'Sanskrit Phonetics, Sthāna and Karaṇa, Aspirated Sounds, Vedic Recitation Cadence',
     });
+  } else if (pathname === '/preschool' || pathname === '/preschool-games' || pathname === '/play-2-learn') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Free Preschool Games for Ages 3–6 | Play 2 Learn – EdNet Learn',
+      description: meta.desc,
+      url: canonical,
+      applicationCategory: 'EducationalApplication',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
+      audience: {
+        '@type': 'EducationalAudience',
+        educationalRole: 'student',
+        audienceType: 'Preschoolers (Ages 3–6)',
+      },
+      inLanguage: ['sa', 'en', 'hi'],
+      teaches: 'Early Literacy, Numeracy, Letters, Numbers, Shapes, Animals, Memory, Early Sanskrit Sounds',
+    });
+  } else if (pathname === '/iks' || pathname === '/vedic-sciences') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Indian Knowledge Systems (IKS) & Vedic Sciences | EdNet Learn',
+      description: meta.desc,
+      url: canonical,
+      image: `${HOST}/images/vedic-indian-knowledge-system.jpg`,
+      educationalLevel: 'School, College & Lifelong Learning (NEP 2020)',
+      inLanguage: ['sa', 'en', 'hi'],
+      teaches: 'Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा): Philosophy (Darśana), Mathematics (Gaṇita), Cosmology (Jyotiṣa), History, Ayurveda, Architecture (Vāstu), and Pāṇinian Linguistics',
+    });
   }
 
   return `\n    <script type="application/ld+json">\n${JSON.stringify(schemas, null, 2)}\n    </script>\n`;
@@ -535,6 +570,11 @@ const ROUTE_KEYWORDS = {
   '/reader': 'NCERT Class 7 Sanskrit Deepakam, CBSE Sanskrit reader, Deepakam solutions, Indian Knowledge Systems literature, word by word Sanskrit translation, shlokas with meaning, CBSE Sanskrit blueprint, Sanskrit reading studio',
   '/grammar': 'Paninian Sanskrit grammar, Ashtadhyayi sutras, Indian Knowledge Systems vyakarana, Sanskrit shabdroop, 5 lakaras dhaturoop, sandhi rules, vibhakti charts, computational linguistics Sanskrit',
   '/dhatupatha': 'Paninian Dhatupatha, Sanskrit verb roots, 2000 dhatus, 10 ganas, Indian Knowledge Systems morphology, Panini root matrix, Sanskrit conjugation generator, Krt pratyayas',
+  '/preschool': 'Play 2 Learn free preschool games, early literacy early numeracy ages 3-6, free preschool games, sanskrit for preschoolers, toddler phonics, sanskrit sounds, sound and picture match, varnamala for kids',
+  '/preschool-games': 'Play 2 Learn free preschool games, early literacy early numeracy ages 3-6, preschool games, shapes, colors, animals, fruits, sound and picture, sanskrit preschool activities',
+  '/play-2-learn': 'Play 2 Learn, free preschool games ages 3-6, early literacy, numeracy, thinking skills, sanskrit sounds, varnamala picture match, preschool games online free',
+  '/iks': 'Indian Knowledge Systems, IKS NEP 2020, Vedic sciences, ancient Indian sciences, Bharatiya Jnana Parampara, Darshana philosophy, Ganita mathematics, Jyotisha cosmology, Ayurveda medicine, Vastu architecture, Vyakarana grammar, Vedic physics, Kanada atomism',
+  '/vedic-sciences': 'Vedic sciences, Indian Knowledge Systems, IKS curriculum, ancient Indian sciences, Vedic physics, Aryabhata astronomy, Kanada atomism, Pingala binary combinatorics, Susruta surgery, Ayurveda, Temple architecture Vastu',
 };
 
 function applyMeta(html, meta, pathname) {
@@ -596,6 +636,21 @@ function applyMeta(html, meta, pathname) {
     `<meta name="twitter:description" content="${desc}" />`,
     'twitter:description',
   );
+  if (pathname === '/iks' || pathname === '/vedic-sciences') {
+    const iksImg = `${HOST}/images/vedic-indian-knowledge-system.jpg`;
+    out = replaceTag(
+      out,
+      /<meta property="og:image" content="[^"]*"\s*\/?>/,
+      `<meta property="og:image" content="${iksImg}" />`,
+      'og:image',
+    );
+    out = replaceTag(
+      out,
+      /<meta name="twitter:image" content="[^"]*"\s*\/?>/,
+      `<meta name="twitter:image" content="${iksImg}" />`,
+      'twitter:image',
+    );
+  }
   if (process.env.GITHUB_PAGES || process.env.GH_PAGES) {
     const ghBase = '/sanskrit-teaching-web-app-from-beginner-to-advanced-';
     out = out.replaceAll('href="/manifest.json"', `href="${ghBase}/manifest.json"`);
@@ -614,6 +669,8 @@ function applyMeta(html, meta, pathname) {
 const dashboard = fs.readFileSync(path.join(root, 'src/components/Dashboard.tsx'), 'utf8');
 const views = parseViewMetadata(extractObjectLiteral(dashboard, 'VIEW_METADATA'));
 const barakhadi = parseSingleMeta(extractObjectLiteral(dashboard, 'BARAKHADI_METADATA'));
+const preschool = parseSingleMeta(extractObjectLiteral(dashboard, 'PRESCHOOL_METADATA'));
+const iks = parseSingleMeta(extractObjectLiteral(dashboard, 'IKS_METADATA'));
 
 const routes = [];
 for (const [view, pathname] of Object.entries(PATH_BY_VIEW)) {
@@ -624,6 +681,11 @@ for (const [view, pathname] of Object.entries(PATH_BY_VIEW)) {
   routes.push({ pathname, ...meta });
 }
 routes.push({ pathname: '/barakhadi', ...barakhadi });
+routes.push({ pathname: '/preschool', ...preschool });
+routes.push({ pathname: '/preschool-games', ...preschool });
+routes.push({ pathname: '/play-2-learn', ...preschool });
+routes.push({ pathname: '/iks', ...iks });
+routes.push({ pathname: '/vedic-sciences', ...iks });
 routes.push({
   pathname: '/swar',
   title: 'Swar · स्वर — Sanskrit Workbook, Quizzes & Foundation Hub | EdNet Learn',

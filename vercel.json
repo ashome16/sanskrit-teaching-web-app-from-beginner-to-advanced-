@@ -37,6 +37,16 @@
     { "source": "/vignana-lab/", "destination": "/vignana-lab/index.html" },
     { "source": "/science-lab", "destination": "/science-lab/index.html" },
     { "source": "/science-lab/", "destination": "/science-lab/index.html" },
+    { "source": "/preschool", "destination": "/preschool/index.html" },
+    { "source": "/preschool/", "destination": "/preschool/index.html" },
+    { "source": "/preschool-games", "destination": "/preschool-games/index.html" },
+    { "source": "/preschool-games/", "destination": "/preschool-games/index.html" },
+    { "source": "/play-2-learn", "destination": "/play-2-learn/index.html" },
+    { "source": "/play-2-learn/", "destination": "/play-2-learn/index.html" },
+    { "source": "/iks", "destination": "/iks/index.html" },
+    { "source": "/iks/", "destination": "/iks/index.html" },
+    { "source": "/vedic-sciences", "destination": "/vedic-sciences/index.html" },
+    { "source": "/vedic-sciences/", "destination": "/vedic-sciences/index.html" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [

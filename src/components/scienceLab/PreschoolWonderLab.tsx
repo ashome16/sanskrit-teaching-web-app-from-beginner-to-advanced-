@@ -1672,6 +1672,33 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
   const [shapeQuizTarget, setShapeQuizTarget] = useState<ShapeItem | null>(null);
   const [quizScore, setQuizScore] = useState<number>(0);
   const [activeShapePoster, setActiveShapePoster] = useState<'shapes' | 'patterns'>('shapes');
+  const [isShareCopied, setIsShareCopied] = useState(false);
+
+  const handleSharePreschool = async () => {
+    soundEffects.playStrokeChime();
+    const shareData = {
+      title: 'Free Preschool Games for Ages 3–6 | Play 2 Learn – EdNet Learn',
+      text: 'Play free preschool games that build letters, numbers, shapes, memory, and early Sanskrit sounds. Safe, simple, and fun for ages 3–6.',
+      url: window.location.origin + '/preschool',
+    };
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch {
+        /* ignore abort */
+      }
+    }
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        setIsShareCopied(true);
+        setTimeout(() => setIsShareCopied(false), 2400);
+      } catch {
+        /* ignore */
+      }
+    }
+  };
 
   const visibleShapes = useMemo(() => {
     if (shapePack === 'first6') return SHAPES.slice(0, 6);
@@ -2106,10 +2133,21 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
               </h2>
             </div>
           </div>
-          <div className="psw-star-jar-pill" aria-label="Your golden star jar">
-            <span>🏺⭐ <strong>{totalStars}</strong> Stars</span>
-            <span className="psw-star-jar-sep">·</span>
-            <span>🏅 <strong>{playedTabs.length}</strong>/{ACTIVITIES.length} Explored</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              className="psw-share-btn"
+              onClick={handleSharePreschool}
+              title="Share Play 2 Learn: Free Preschool Games with parents and teachers"
+              aria-label="Share Play 2 Learn preschool games"
+            >
+              <span>{isShareCopied ? '✅ Link Copied!' : '📤 Share'}</span>
+            </button>
+            <div className="psw-star-jar-pill" aria-label="Your golden star jar">
+              <span>🏺⭐ <strong>{totalStars}</strong> Stars</span>
+              <span className="psw-star-jar-sep">·</span>
+              <span>🏅 <strong>{playedTabs.length}</strong>/{ACTIVITIES.length} Explored</span>
+            </div>
           </div>
         </div>
         <p className="psw-hero-desc">

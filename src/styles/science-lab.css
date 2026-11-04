@@ -6911,33 +6911,142 @@
   margin: 1.5rem 0 2rem;
 }
 
-.vl-iks-details {
-  background: linear-gradient(145deg, #070d18 0%, #0d1527 50%, #08101e 100%);
-  border: 1.5px solid rgba(245, 158, 11, 0.4);
-  border-radius: 18px;
+.vl-iks-card-open {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.12), transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(99, 102, 241, 0.14), transparent 45%),
+    linear-gradient(145deg, #070d18 0%, #0d1527 50%, #08101e 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 25px rgba(245, 158, 11, 0.12);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45), 0 0 35px rgba(245, 158, 11, 0.15);
   transition: all 0.25s ease;
 }
 
-.vl-iks-details[open] {
-  border-color: rgba(245, 158, 11, 0.7);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 35px rgba(245, 158, 11, 0.2);
-}
-
-.vl-iks-summary {
-  list-style: none;
-  cursor: pointer;
+.vl-iks-header-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.4rem;
-  color: #ffffff;
-  user-select: none;
+  padding: 1.15rem 1.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.vl-iks-summary::-webkit-details-marker {
-  display: none;
+.vl-iks-zoom-btn {
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  color: #fbbf24;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.vl-iks-zoom-btn:hover {
+  background: #f59e0b;
+  color: #000000;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+  transform: translateY(-1px);
+}
+
+.vl-iks-img-wrap {
+  position: relative;
+  margin: 1.25rem auto 1.5rem;
+  max-width: 980px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 0 0 30px rgba(245, 158, 11, 0.15);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vl-iks-img-wrap:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.75), 0 0 45px rgba(245, 158, 11, 0.28);
+  border-color: rgba(245, 158, 11, 0.7);
+}
+
+.vl-iks-img-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0.85rem 1.25rem;
+  background: linear-gradient(to top, rgba(7, 13, 24, 0.75) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.vl-iks-img-pill {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fef08a;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+}
+
+.vl-iks-branch-pill--darshana {
+  border-color: rgba(192, 132, 252, 0.5);
+}
+.vl-iks-branch-pill--darshana:hover {
+  background: #9333ea !important;
+  border-color: #c084fc !important;
+}
+
+.vl-iks-branch-pill--ganita {
+  border-color: rgba(251, 146, 60, 0.5);
+}
+.vl-iks-branch-pill--ganita:hover {
+  background: #ea580c !important;
+  border-color: #fb923c !important;
+}
+
+.vl-iks-branch-pill--jyotisha {
+  border-color: rgba(34, 211, 238, 0.5);
+}
+.vl-iks-branch-pill--jyotisha:hover {
+  background: #0891b2 !important;
+  border-color: #22d3ee !important;
+}
+
+.vl-iks-branch-pill--itihasa {
+  border-color: rgba(250, 204, 21, 0.5);
+}
+.vl-iks-branch-pill--itihasa:hover {
+  background: #ca8a04 !important;
+  border-color: #facc15 !important;
+}
+
+.vl-iks-branch-pill--ayurveda {
+  border-color: rgba(52, 211, 153, 0.5);
+}
+.vl-iks-branch-pill--ayurveda:hover {
+  background: #059669 !important;
+  border-color: #34d399 !important;
+}
+
+.vl-iks-branch-pill--vastu {
+  border-color: rgba(56, 189, 248, 0.5);
+}
+.vl-iks-branch-pill--vastu:hover {
+  background: #0284c7 !important;
+  border-color: #38bdf8 !important;
+}
+
+.vl-iks-branch-pill--vyakarana {
+  border-color: rgba(244, 63, 94, 0.5);
+}
+.vl-iks-branch-pill--vyakarana:hover {
+  background: #e11d48 !important;
+  border-color: #f43f5e !important;
 }
 
 .vl-iks-summary-left {
@@ -7033,4 +7142,27 @@
     align-items: flex-start;
     gap: 0.65rem;
   }
+}
+
+/* Preschool Share Button */
+.psw-share-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0.38rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
+  transition: all 0.2s ease;
+}
+
+.psw-share-btn:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.45);
 }
