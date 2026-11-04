@@ -789,14 +789,28 @@ tr th {
   }
 }
 
-/* 3. The 3 Primary Actions Grid */
+/* 3. The 4 Primary Actions Grid (Including Jodo Interactive Game) */
 .home-hero-three-actions {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.15rem;
-  max-width: 1040px;
+  max-width: 1180px;
   margin: 0 auto 1.35rem;
   width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .home-hero-three-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero-three-actions {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    gap: 0.85rem;
+  }
 }
 
 .home-hero-action-card {
@@ -953,6 +967,41 @@ tr th {
 .home-hero-action-card--sample .hhac-desc,
 .home-hero-action-card--lesson .hhac-desc {
   color: #fef08a;
+}
+
+/* Action 4: Play Jodo Puzzles (Vibrant Purple & Saffron) */
+.home-hero-action-card--jodo {
+  background: linear-gradient(135deg, #6b21a8 0%, #7e22ce 50%, #581c87 100%);
+  border-color: #f0abfc;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(126, 34, 206, 0.25);
+  position: relative;
+}
+
+.home-hero-action-card--jodo:hover {
+  background: linear-gradient(135deg, #7e22ce 0%, #9333ea 50%, #6b21a8 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(168, 85, 247, 0.4);
+}
+
+.hhac-tag--jodo {
+  background: #fdf4ff;
+  color: #701a75;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hhac-tag--jodo span.jodo-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: hjbDotPulse 1.8s infinite;
+}
+
+.home-hero-action-card--jodo .hhac-desc {
+  color: #f5d0fe;
 }
 
 @media (min-width: 921px) and (max-width: 1180px) {
@@ -1488,6 +1537,86 @@ tr th {
 .home-journey-step-card:hover .home-journey-step-cta {
   background: #BA3C00;
   color: #ffffff;
+}
+
+/* Step 2: Live Interactive Puzzle highlight */
+.home-journey-step-card#step-2 {
+  border-color: #d8b4fe;
+  background: linear-gradient(180deg, #fdf4ff 0%, #ffffff 100%);
+  position: relative;
+}
+
+.home-journey-step-card#step-2:hover {
+  border-color: #a855f7;
+  box-shadow: 0 10px 24px rgba(168, 85, 247, 0.22);
+}
+
+.home-journey-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #7e22ce;
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.home-journey-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: hjbDotPulse 1.8s infinite;
+}
+
+.home-step-jodo-mini-tiles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  margin: 0.25rem 0 0.35rem;
+}
+
+.hs-tile {
+  font-family: 'Sanskrit Text', 'Nirmala UI', 'Noto Sans Devanagari', serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  background: #ffffff;
+  border: 1.5px solid #d8b4fe;
+  border-radius: 6px;
+  padding: 0.1rem 0.35rem;
+  color: #581c87;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.home-journey-step-card#step-2:hover .hs-tile {
+  transform: translateY(-2px) scale(1.08);
+  border-color: #a855f7;
+  background: #faf5ff;
+}
+
+.hs-plus, .hs-eq {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #a855f7;
+}
+
+.hs-word {
+  font-family: 'Sanskrit Text', 'Nirmala UI', 'Noto Sans Devanagari', serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #15803d;
+  background: #dcfce7;
+  border: 1.5px solid #86efac;
+  border-radius: 6px;
+  padding: 0.1rem 0.4rem;
 }
 
 /* Step 6: Capstone Milestone styling */

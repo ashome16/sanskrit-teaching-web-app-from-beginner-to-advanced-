@@ -20,6 +20,7 @@ import { StudentStaircaseBlackboard } from './StudentStaircaseBlackboard';
 import { PracticeVaultShowcase } from './PracticeVaultShowcase';
 import { ChitraKavyaPathwayCard } from './ChitraKavyaPathwayCard';
 import { VedicKnowledgeSystemShowcase } from './VedicKnowledgeSystemShowcase';
+import { HomeJodoInteractiveBanner } from './HomeJodoInteractiveBanner';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 import '../styles/bodhi-online-classes.css';
@@ -1154,7 +1155,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
               <div className="home-journey-arrow" aria-hidden="true">→</div>
 
-              {/* Step 2: Basic words */}
+              {/* Step 2: Basic words & Jodo Interactive Puzzles */}
               <div
                 id="step-2"
                 className="home-journey-step-card"
@@ -1164,12 +1165,22 @@ const HomePage: React.FC<HomePageProps> = ({
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') onOpenBoard?.();
                 }}
-                title="Step 2: Build 6,000+ words playfully with interactive tile puzzles"
+                title="Step 2: Build 6,000+ words playfully with interactive जोडो tile puzzles"
               >
                 <span className="home-journey-step-num">Step 2</span>
                 <span className="home-journey-step-icon" aria-hidden="true">🧩</span>
+                <span className="home-journey-live-badge">
+                  <span className="home-journey-live-dot" /> 100% Interactive
+                </span>
                 <h3 className="home-journey-step-title">Words &amp; Games</h3>
                 <span className="home-journey-step-sanskrit">शब्दाः · जोडो एवं क्रीडाः</span>
+                <div className="home-step-jodo-mini-tiles" aria-hidden="true">
+                  <span className="hs-tile">जो</span>
+                  <span className="hs-plus">+</span>
+                  <span className="hs-tile">डो</span>
+                  <span className="hs-eq">=</span>
+                  <span className="hs-word">जोडो 🧩</span>
+                </div>
                 <p className="home-journey-step-desc">
                   Build 6,000+ practical words with tile puzzles, 18 match-pair categories, word mazes &amp; classical Sanskrit riddles (प्रहेलिकाः).
                 </p>
@@ -1286,7 +1297,10 @@ const HomePage: React.FC<HomePageProps> = ({
           onOpenBodhi={onOpenBodhi}
         />
 
-        {/* 3. The 3 Primary High-Conversion Calls to Action */}
+        {/* Animated Jodo Interactive Syllable Banner (Direct Launch to 6,000+ Word Studio) */}
+        <HomeJodoInteractiveBanner onOpenBoard={onOpenBoard} />
+
+        {/* 3. The 4 Primary High-Conversion Calls to Action */}
         <div className="home-hero-three-actions" role="region" aria-label="Primary Actions">
           {/* Action 1: Start Free Lesson */}
           <button
@@ -1315,7 +1329,31 @@ const HomePage: React.FC<HomePageProps> = ({
             <span className="hhac-arrow" aria-hidden="true">➔</span>
           </button>
 
-          {/* Action 2: Take Sanskrit Placement Test */}
+          {/* Action 2: Play Jodo Puzzles (Live Interactive Arcade) */}
+          <button
+            type="button"
+            className="home-hero-action-card home-hero-action-card--jodo"
+            onClick={onOpenBoard}
+            title="Snap 6,000+ Sanskrit syllable tiles, match-pairs, and classical riddles"
+          >
+            <div className="hhac-icon-col" aria-hidden="true">
+              <span className="hhac-icon">🧩</span>
+            </div>
+            <div className="hhac-text-col">
+              <div className="hhac-badge-row">
+                <span className="hhac-tag hhac-tag--jodo">
+                  <span className="jodo-live-dot" /> 100% Interactive
+                </span>
+              </div>
+              <strong className="hhac-title">Play जोडो (Jodo) Puzzles</strong>
+              <span className="hhac-desc">
+                Snap syllable tiles · 6,000+ words &amp; riddles
+              </span>
+            </div>
+            <span className="hhac-arrow" aria-hidden="true">➔</span>
+          </button>
+
+          {/* Action 3: Take Sanskrit Placement Test */}
           <button
             type="button"
             className="home-hero-action-card home-hero-action-card--placement"
@@ -1343,7 +1381,7 @@ const HomePage: React.FC<HomePageProps> = ({
             <span className="hhac-arrow" aria-hidden="true">➔</span>
           </button>
 
-          {/* Action 3: Begin in 5 Minutes (14-Day Free Access) */}
+          {/* Action 4: Begin in 5 Minutes (14-Day Free Access) */}
           <button
             type="button"
             className="home-hero-action-card home-hero-action-card--trial"
