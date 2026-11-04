@@ -3690,5 +3690,654 @@
   }
 }
 
+/* ==========================================================================
+   ADVENTURER DASHBOARD: MANA, INVENTORY SLOTS & SANSKRIT SPELLS
+   ========================================================================== */
+
+/* 1. Mana Card & Active Quest */
+.sgh-hud-group--mana {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sgh-hud-mana-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: #ffffff;
+  border: 1.5px solid #c084fc;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  box-shadow: 0 2px 8px rgba(168, 85, 247, 0.18);
+  min-width: 140px;
+}
+
+.sgh-hud-mana-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  line-height: 1;
+}
+
+.sgh-mana-icon {
+  font-size: 0.95rem;
+}
+
+.sgh-mana-label {
+  font-weight: 700;
+  color: #7e22ce;
+}
+
+.sgh-mana-value {
+  font-weight: 900;
+  color: #6b21a8;
+  font-family: monospace;
+  font-size: 0.82rem;
+}
+
+.sgh-hud-mana-track {
+  width: 100%;
+  height: 6px;
+  background: #f3e8ff;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sgh-hud-mana-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #a855f7, #38bdf8);
+  border-radius: 999px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+}
+
+.sgh-hud-quest-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #fef3c7;
+  border: 1.5px solid #f59e0b;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15);
+}
+
+.sgh-hqc-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.sgh-hqc-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.sgh-hqc-text small {
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #b45309;
+  letter-spacing: 0.04em;
+}
+
+.sgh-hqc-text strong {
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: #78350f;
+  white-space: nowrap;
+}
+
+/* 2. Inventory Slots Rack (वस्तूनां सम्पुटम्) */
+.sgh-inventory-rack {
+  margin: 0.6rem 0;
+  padding: 0.65rem 0.85rem;
+  background: linear-gradient(135deg, #fdfbf7 0%, #faf5eb 100%);
+  border: 2px solid #e2d9cc;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.sgh-inv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.sgh-inv-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #451a03;
+  font-size: 0.88rem;
+}
+
+.sgh-inv-icon {
+  font-size: 1.15rem;
+}
+
+.sgh-inv-counter {
+  display: inline-block;
+  background: #fef08a;
+  border: 1px solid #eab308;
+  color: #854d0e;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-left: 0.3rem;
+}
+
+.sgh-inv-hint {
+  font-size: 0.74rem;
+  color: #78716c;
+  font-weight: 600;
+}
+
+.sgh-inv-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.4rem;
+}
+
+.sgh-inv-slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  background: #ffffff;
+  border: 2px solid #e7e5e4;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.2rem;
+}
+
+.sgh-inv-slot-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+}
+
+.sgh-inv-slot-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.sgh-inv-slot-digit {
+  font-size: 0.68rem;
+  font-weight: 900;
+  color: #78716c;
+  line-height: 1;
+}
+
+.sgh-inv-slot.is-locked {
+  background: #f5f5f4;
+  border-color: #d6d3d1;
+  opacity: 0.65;
+}
+
+.sgh-inv-slot.is-locked:hover {
+  opacity: 0.9;
+  border-color: #a8a29e;
+  transform: translateY(-2px);
+}
+
+.sgh-inv-slot.is-unlocked {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-color: #f59e0b;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25);
+  animation: artifactPopBounce 0.4s ease-out;
+}
+
+.sgh-inv-slot.is-unlocked:hover {
+  transform: translateY(-3px) scale(1.06);
+  border-color: #d97706;
+  box-shadow: 0 6px 14px rgba(245, 158, 11, 0.35);
+}
+
+.sgh-inv-slot.is-unlocked .sgh-inv-slot-digit {
+  color: #b45309;
+  font-weight: 900;
+}
+
+.sgh-inv-slot-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px;
+  border: 2px solid #facc15;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: goldPulse 2s infinite ease-in-out;
+}
+
+@keyframes artifactPopBounce {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.14); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* 3. Sanskrit Power-Up Spells Bar */
+.sgh-spells-bar {
+  margin: 0.5rem 0 0.8rem;
+  padding: 0.6rem 0.85rem;
+  background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 100%);
+  border: 2px solid #ddd6fe;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px rgba(124, 58, 237, 0.05);
+}
+
+.sgh-spells-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.sgh-spells-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #581c87;
+  font-size: 0.88rem;
+}
+
+.sgh-spells-icon {
+  font-size: 1.15rem;
+}
+
+.sgh-spells-hint {
+  font-size: 0.72rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.sgh-spells-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.sgh-spell-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #ffffff;
+  border: 2px solid #c4b5fd;
+  border-radius: 12px;
+  padding: 0.4rem 0.65rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+}
+
+.sgh-spell-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+  border-color: #8b5cf6;
+}
+
+.sgh-spell-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sgh-spell-labels {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  min-width: 0;
+}
+
+.sgh-spell-name {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #4c1d95;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sgh-spell-cost {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #7c3aed;
+}
+
+.sgh-spell-btn.is-depleted {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f5f3ff;
+  border-color: #e2e8f0;
+}
+
+.sgh-spell-btn.is-active {
+  background: #fef08a;
+  border-color: #f59e0b;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+  transform: scale(1.02);
+}
+
+.sgh-spell-btn.is-active .sgh-spell-name {
+  color: #78350f;
+}
+
+.sgh-spell-btn.is-active .sgh-spell-cost {
+  color: #b45309;
+  font-weight: 900;
+}
+
+.sgh-spell--raksha.is-active {
+  background: #ccfbf1;
+  border-color: #0d9488;
+  box-shadow: 0 0 12px rgba(13, 148, 136, 0.5);
+}
+
+.sgh-spell--raksha.is-active .sgh-spell-name {
+  color: #134e4a;
+}
+
+.sgh-spell--raksha.is-active .sgh-spell-cost {
+  color: #0f766e;
+}
+
+.sgh-spell--marga.is-active {
+  background: #e0f2fe;
+  border-color: #0284c7;
+  box-shadow: 0 0 12px rgba(2, 132, 199, 0.5);
+}
+
+.sgh-spell--marga.is-active .sgh-spell-name {
+  color: #0c4a6e;
+}
+
+.sgh-spell--marga.is-active .sgh-spell-cost {
+  color: #0369a1;
+}
+
+/* 4. Active Spell Effects on Maze Cells */
+.sgh-maze-cell--drishti {
+  border: 3px solid #facc15 !important;
+  box-shadow: 0 0 18px 4px rgba(250, 204, 21, 0.75), inset 0 0 10px rgba(250, 204, 21, 0.4) !important;
+  animation: drishtiPulseGold 1.2s infinite ease-in-out !important;
+  z-index: 8;
+}
+
+@keyframes drishtiPulseGold {
+  0%, 100% {
+    transform: scale(1.04);
+    box-shadow: 0 0 14px 3px rgba(250, 204, 21, 0.65);
+  }
+  50% {
+    transform: scale(1.09);
+    box-shadow: 0 0 24px 8px rgba(250, 204, 21, 0.95);
+  }
+}
+
+.sgh-maze-cell--marga {
+  border: 2.5px solid #38bdf8 !important;
+  box-shadow: 0 0 14px 2px rgba(56, 189, 248, 0.6), inset 0 0 8px rgba(56, 189, 248, 0.3) !important;
+  animation: margaSpectralGlow 1.6s infinite ease-in-out !important;
+}
+
+@keyframes margaSpectralGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px 2px rgba(56, 189, 248, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px 6px rgba(56, 189, 248, 0.85);
+  }
+}
+
+/* Avatar Protective Shield Sphere (Rakṣā) */
+.sgh-avatar-shield {
+  position: absolute;
+  inset: -6px;
+  border-radius: 999px;
+  border: 2px dashed #2dd4bf;
+  box-shadow: 0 0 14px 3px rgba(45, 212, 191, 0.7), inset 0 0 10px rgba(45, 212, 191, 0.4);
+  animation: avatarShieldSpin 4s linear infinite;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sgh-shield-rune {
+  position: absolute;
+  top: -8px;
+  font-size: 0.85rem;
+  animation: avatarShieldCounterSpin 4s linear infinite;
+}
+
+@keyframes avatarShieldSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes avatarShieldCounterSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* 5. Sacred Artifact Lore Card Modal */
+.sgh-artifact-card {
+  position: relative;
+  background: #ffffff;
+  border: 3px solid #f59e0b;
+  border-radius: 20px;
+  max-width: 440px;
+  width: 90%;
+  padding: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  animation: modalPopIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+}
+
+.sgh-artc-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #b45309;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #fed7aa;
+  padding-bottom: 0.4rem;
+}
+
+.sgh-artc-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: #78716c;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.sgh-artc-close-btn:hover {
+  color: #1c1917;
+}
+
+.sgh-artc-icon-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2.5px solid #f59e0b;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.3);
+}
+
+.sgh-artc-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.sgh-artc-title-sa {
+  font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Sanskrit', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #78350f;
+  margin: 0.1rem 0;
+  line-height: 1.2;
+}
+
+.sgh-artc-iast {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #b45309;
+  font-style: italic;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.sgh-artc-title-en {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0.2rem 0 0.5rem;
+}
+
+.sgh-artc-step-pill {
+  display: inline-block;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+
+.sgh-artc-lore {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #334155;
+  background: #fdfbf7;
+  border: 1px solid #f5e8d3;
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.sgh-artc-actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+/* River Stone Artifact Mini Icon */
+.sgh-rs-artifact-mini {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 0.82rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+/* Dark Mode Overrides for Adventurer Dashboard */
+.sgh-trail--dark-mode .sgh-inventory-rack {
+  background: #18181b;
+  border-color: #3f3f46;
+}
+
+.sgh-trail--dark-mode .sgh-inv-title {
+  color: #fef08a;
+}
+
+.sgh-trail--dark-mode .sgh-inv-slot.is-locked {
+  background: #27272a;
+  border-color: #3f3f46;
+}
+
+.sgh-trail--dark-mode .sgh-inv-slot.is-unlocked {
+  background: #292524;
+  border-color: #f59e0b;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.sgh-trail--dark-mode .sgh-spells-bar {
+  background: #1e1b4b;
+  border-color: #4338ca;
+}
+
+.sgh-trail--dark-mode .sgh-spells-title {
+  color: #c7d2fe;
+}
+
+.sgh-trail--dark-mode .sgh-spell-btn {
+  background: #312e81;
+  border-color: #6366f1;
+}
+
+.sgh-trail--dark-mode .sgh-spell-name {
+  color: #e0e7ff;
+}
+
+.sgh-trail--dark-mode .sgh-spell-cost {
+  color: #a5b4fc;
+}
+
+.sgh-trail--dark-mode .sgh-hud-mana-card {
+  background: #18181b;
+  border-color: #9333ea;
+}
+
+.sgh-trail--dark-mode .sgh-mana-value {
+  color: #e9d5ff;
+}
+
+.sgh-trail--dark-mode .sgh-hud-quest-chip {
+  background: #451a03;
+  border-color: #d97706;
+}
+
+.sgh-trail--dark-mode .sgh-hqc-text strong {
+  color: #fef3c7;
+}
+
+@media (max-width: 768px) {
+  .sgh-inv-slots-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .sgh-spells-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .sgh-inv-slots-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .sgh-spells-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 

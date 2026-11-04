@@ -343,6 +343,169 @@ export function getCellVisual(
   return { icon, category };
 }
 
+export interface QuestArtifact {
+  step: number;
+  digitSa: string;
+  nameSa: string;
+  transliteration: string;
+  nameEn: string;
+  lore: string;
+  icon: string;
+  numberWord: string;
+}
+
+export const QUEST_ARTIFACTS_1_10: QuestArtifact[] = [
+  {
+    step: 1,
+    digitSa: '१',
+    nameSa: 'कुञ्चिका',
+    transliteration: 'kuñcikā',
+    nameEn: 'Ancient Key',
+    lore: 'Hidden in the starting shadows to unlock the grand collection.',
+    icon: '🔑',
+    numberWord: 'एकम्',
+  },
+  {
+    step: 2,
+    digitSa: '२',
+    nameSa: 'रत्नद्वयम्',
+    transliteration: 'ratnadvayam',
+    nameEn: 'Twin Gemstones',
+    lore: 'Glowing crystals that activate ancient mechanisms.',
+    icon: '💎',
+    numberWord: 'द्वे',
+  },
+  {
+    step: 3,
+    digitSa: '३',
+    nameSa: 'त्रिनेत्रम्',
+    transliteration: 'trinetram',
+    nameEn: 'Three-Eyed Statue',
+    lore: 'A stone guardian that reveals a hidden door when the gems are slotted in.',
+    icon: '🗿',
+    numberWord: 'त्रीणि',
+  },
+  {
+    step: 4,
+    digitSa: '४',
+    nameSa: 'चतुःस्तम्भ',
+    transliteration: 'catuḥstambha',
+    nameEn: 'Four-Carved Pillars',
+    lore: 'Grand marble structures holding up the chamber ceiling.',
+    icon: '🏛️',
+    numberWord: 'चत्वारि',
+  },
+  {
+    step: 5,
+    digitSa: '५',
+    nameSa: 'पञ्चकोण',
+    transliteration: 'pañcakoṇa',
+    nameEn: 'Five-Pointed Star',
+    lore: 'An engraved seal on the floor that begins to glow.',
+    icon: '⭐',
+    numberWord: 'पञ्च',
+  },
+  {
+    step: 6,
+    digitSa: '६',
+    nameSa: 'षट्कोण-अक्ष',
+    transliteration: 'ṣaṭkoṇa-akṣa',
+    nameEn: 'Six-Sided Dice',
+    lore: 'A mystical artifact used to roll for safe passage.',
+    icon: '🎲',
+    numberWord: 'षट्',
+  },
+  {
+    step: 7,
+    digitSa: '७',
+    nameSa: 'सप्तरङ्ग-स्फटिक',
+    transliteration: 'saptaraṅga-sphatika',
+    nameEn: 'Seven-Colored Prism',
+    lore: 'Refracts light across the room to reveal invisible tiles.',
+    icon: '🔮',
+    numberWord: 'सप्त',
+  },
+  {
+    step: 8,
+    digitSa: '८',
+    nameSa: 'अष्टदल-कमल',
+    transliteration: 'aṣṭadala-kamala',
+    nameEn: 'Eight-Petal Lotus',
+    lore: 'A golden mechanical floor tile that blooms when stepped on.',
+    icon: '🪷',
+    numberWord: 'अष्ट',
+  },
+  {
+    step: 9,
+    digitSa: '९',
+    nameSa: 'नवग्रह-कवच',
+    transliteration: 'navagraha-kavaca',
+    nameEn: 'Nine-Planet Amulet',
+    lore: 'Protects the adventurer from final stage traps.',
+    icon: '🛡️',
+    numberWord: 'नव',
+  },
+  {
+    step: 10,
+    digitSa: '१०',
+    nameSa: 'दशशिर-मुकुट',
+    transliteration: 'daśaśira-mukuṭa',
+    nameEn: 'Ten-Headed Crown',
+    lore: 'The ultimate prize sitting on the central altar!',
+    icon: '👑',
+    numberWord: 'दश',
+  },
+];
+
+export interface SanskritSpell {
+  id: 'drishti' | 'vega' | 'raksha' | 'marga';
+  nameDev: string;
+  nameEn: string;
+  iast: string;
+  manaCost: number;
+  icon: string;
+  desc: string;
+}
+
+export const SANSKRIT_SPELLS: SanskritSpell[] = [
+  {
+    id: 'drishti',
+    nameDev: 'दृष्टिः',
+    iast: 'Dṛṣṭiḥ',
+    nameEn: 'The Sight',
+    manaCost: 25,
+    icon: '👁️',
+    desc: 'Reveals the exact next tile in the sequence by making it pulse with bright gold energy for 5 seconds.',
+  },
+  {
+    id: 'vega',
+    nameDev: 'वेगः',
+    iast: 'Vegaḥ',
+    nameEn: 'Swiftness',
+    manaCost: 20,
+    icon: '💨',
+    desc: 'Adds 15 seconds bonus swiftness to your time attack score or speedrun clock.',
+  },
+  {
+    id: 'raksha',
+    nameDev: 'रक्षा',
+    iast: 'Rakṣā',
+    nameEn: 'Protection',
+    manaCost: 30,
+    icon: '🛡️',
+    desc: 'Creates a magical shield that absorbs one wrong tile click without losing a heart.',
+  },
+  {
+    id: 'marga',
+    nameDev: 'मार्गः',
+    iast: 'Mārgaḥ',
+    nameEn: 'The Path',
+    manaCost: 40,
+    icon: '🧭',
+    desc: 'Briefly highlights the full remaining path across the river stones in a ghostly blue trail.',
+  },
+];
+
 export interface RiverStoneItem {
   step: number;
   wordDev: string;
@@ -350,19 +513,23 @@ export interface RiverStoneItem {
   digitSa: string;
   directionHint: string;
   iast: string;
+  artifactNameDev: string;
+  artifactNameEn: string;
+  artifactIcon: string;
+  lore: string;
 }
 
 export const RIVER_STONES_1_10: RiverStoneItem[] = [
-  { step: 1, wordDev: 'एकम्', wordEn: 'One', digitSa: '१', directionHint: 'Start tile (Top-Left)', iast: 'ekam' },
-  { step: 2, wordDev: 'द्वे', wordEn: 'Two', digitSa: '२', directionHint: 'Move right ➡️', iast: 'dve' },
-  { step: 3, wordDev: 'त्रीणि', wordEn: 'Three', digitSa: '३', directionHint: 'Move right ➡️', iast: 'trīṇi' },
-  { step: 4, wordDev: 'चत्वारि', wordEn: 'Four', digitSa: '४', directionHint: 'Move right ➡️', iast: 'catvāri' },
-  { step: 5, wordDev: 'पञ्च', wordEn: 'Five', digitSa: '५', directionHint: 'Move down ⬇️', iast: 'pañca' },
-  { step: 6, wordDev: 'षट्', wordEn: 'Six', digitSa: '६', directionHint: 'Move left ⬅️', iast: 'ṣaṭ' },
-  { step: 7, wordDev: 'सप्त', wordEn: 'Seven', digitSa: '७', directionHint: 'Move down ⬇️', iast: 'sapta' },
-  { step: 8, wordDev: 'अष्ट', wordEn: 'Eight', digitSa: '८', directionHint: 'Move left ⬅️', iast: 'aṣṭa' },
-  { step: 9, wordDev: 'नव', wordEn: 'Nine', digitSa: '९', directionHint: 'Move down ⬇️', iast: 'nava' },
-  { step: 10, wordDev: 'दश', wordEn: 'Ten', digitSa: '१०', directionHint: 'Move right to reach Goal 🏆', iast: 'daśa' },
+  { step: 1, wordDev: 'एकम्', wordEn: 'One', digitSa: '१', directionHint: 'Start tile (Top-Left)', iast: 'ekam', artifactNameDev: 'कुञ्चिका', artifactNameEn: 'Ancient Key', artifactIcon: '🔑', lore: 'Hidden in the starting shadows to unlock the grand collection.' },
+  { step: 2, wordDev: 'द्वे', wordEn: 'Two', digitSa: '२', directionHint: 'Move right ➡️', iast: 'dve', artifactNameDev: 'रत्नद्वयम्', artifactNameEn: 'Twin Gemstones', artifactIcon: '💎', lore: 'Glowing crystals that activate ancient mechanisms.' },
+  { step: 3, wordDev: 'त्रीणि', wordEn: 'Three', digitSa: '३', directionHint: 'Move right ➡️', iast: 'trīṇi', artifactNameDev: 'त्रिनेत्रम्', artifactNameEn: 'Three-Eyed Statue', artifactIcon: '🗿', lore: 'A stone guardian that reveals a hidden door when the gems are slotted in.' },
+  { step: 4, wordDev: 'चत्वारि', wordEn: 'Four', digitSa: '४', directionHint: 'Move right ➡️', iast: 'catvāri', artifactNameDev: 'चतुःस्तम्भ', artifactNameEn: 'Four-Carved Pillars', artifactIcon: '🏛️', lore: 'Grand marble structures holding up the chamber ceiling.' },
+  { step: 5, wordDev: 'पञ्च', wordEn: 'Five', digitSa: '५', directionHint: 'Move down ⬇️', iast: 'pañca', artifactNameDev: 'पञ्चकोण', artifactNameEn: 'Five-Pointed Star', artifactIcon: '⭐', lore: 'An engraved seal on the floor that begins to glow.' },
+  { step: 6, wordDev: 'षट्', wordEn: 'Six', digitSa: '६', directionHint: 'Move left ⬅️', iast: 'ṣaṭ', artifactNameDev: 'षट्कोण-अक्ष', artifactNameEn: 'Six-Sided Dice', artifactIcon: '🎲', lore: 'A mystical artifact used to roll for safe passage.' },
+  { step: 7, wordDev: 'सप्त', wordEn: 'Seven', digitSa: '७', directionHint: 'Move down ⬇️', iast: 'sapta', artifactNameDev: 'सप्तरङ्ग-स्फटिक', artifactNameEn: 'Seven-Colored Prism', artifactIcon: '🔮', lore: 'Refracts light across the room to reveal invisible tiles.' },
+  { step: 8, wordDev: 'अष्ट', wordEn: 'Eight', digitSa: '८', directionHint: 'Move left ⬅️', iast: 'aṣṭa', artifactNameDev: 'अष्टदल-कमल', artifactNameEn: 'Eight-Petal Lotus', artifactIcon: '🪷', lore: 'A golden mechanical floor tile that blooms when stepped on.' },
+  { step: 9, wordDev: 'नव', wordEn: 'Nine', digitSa: '९', directionHint: 'Move down ⬇️', iast: 'nava', artifactNameDev: 'नवग्रह-कवच', artifactNameEn: 'Nine-Planet Amulet', artifactIcon: '🛡️', lore: 'Protects the adventurer from final stage traps.' },
+  { step: 10, wordDev: 'दश', wordEn: 'Ten', digitSa: '१०', directionHint: 'Move right to reach Goal 🏆', iast: 'daśa', artifactNameDev: 'दशशिर-मुकुट', artifactNameEn: 'Ten-Headed Crown', artifactIcon: '👑', lore: 'The ultimate prize sitting on the central altar!' },
 ];
 
 export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
@@ -920,6 +1087,23 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
   const [showQuestVictoryModal, setShowQuestVictoryModal] = useState<boolean>(false);
   const [showRiverGuide, setShowRiverGuide] = useState<boolean>(false);
 
+  // Adventurer HUD: Mana, Sanskrit Power-Up Spells & 10 Sacred Artifacts Inventory
+  const [mana, setMana] = useState<number>(100);
+  const [spellDrishtiActive, setSpellDrishtiActive] = useState<boolean>(false);
+  const [spellMargaActive, setSpellMargaActive] = useState<boolean>(false);
+  const [hasRakshaShield, setHasRakshaShield] = useState<boolean>(false);
+  const [unlockedArtifacts, setUnlockedArtifacts] = useState<Set<number>>(new Set());
+  const [inspectedArtifact, setInspectedArtifact] = useState<QuestArtifact | null>(null);
+
+  // Mana auto-regeneration (recharges +2 Mana every 3 seconds while questing, capped at 100)
+  useEffect(() => {
+    if (isGameOver) return;
+    const interval = setInterval(() => {
+      setMana((prev) => Math.min(100, prev + 2));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isGameOver]);
+
   const speedrunRank = useMemo(() => getSpeedrunRank(timerSeconds), [timerSeconds]);
 
   // Traffic visual scene interactive hotspot state
@@ -942,6 +1126,65 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     setTrafficHotspot({ word, trans, icon, note });
   };
 
+  const handleCastSpell = (spell: SanskritSpell) => {
+    if (mana < spell.manaCost) {
+      soundEffects.playHeartDamage();
+      setFloatingLootToast({
+        id: Date.now(),
+        icon: '⚠️',
+        label: `Not enough Mana! Need ${spell.manaCost} ✨ (Have ${mana} ✨)`,
+      });
+      setTimeout(() => setFloatingLootToast(null), 1800);
+      return;
+    }
+
+    setMana((prev) => Math.max(0, prev - spell.manaCost));
+    soundEffects.playSpellCast();
+
+    if (spell.id === 'drishti') {
+      soundEffects.playMysticGlow();
+      setSpellDrishtiActive(true);
+      setFloatingLootToast({
+        id: Date.now(),
+        icon: '👁️',
+        label: '👁️ दृष्टिः (Dṛṣṭiḥ) activated! The path illuminates in bright gold for 5 seconds!',
+      });
+      if (nextPathCell) {
+        playPronunciation(nextPathCell.word);
+      }
+      setTimeout(() => setSpellDrishtiActive(false), 5000);
+      setTimeout(() => setFloatingLootToast(null), 2400);
+    } else if (spell.id === 'vega') {
+      soundEffects.playTimeWarp();
+      setTimerSeconds((prev) => Math.max(0, prev - 15));
+      setFloatingLootToast({
+        id: Date.now(),
+        icon: '💨',
+        label: '💨 वेगः (Vegaḥ) cast! +15s Swiftness boost applied to your clock!',
+      });
+      setTimeout(() => setFloatingLootToast(null), 2400);
+    } else if (spell.id === 'raksha') {
+      soundEffects.playShieldBarrier();
+      setHasRakshaShield(true);
+      setFloatingLootToast({
+        id: Date.now(),
+        icon: '🛡️',
+        label: '🛡️ रक्षा (Rakṣā) active! Celestial barrier absorbs next wrong step!',
+      });
+      setTimeout(() => setFloatingLootToast(null), 2400);
+    } else if (spell.id === 'marga') {
+      soundEffects.playPathTrail();
+      setSpellMargaActive(true);
+      setFloatingLootToast({
+        id: Date.now(),
+        icon: '🧭',
+        label: '🧭 मार्गः (Mārgaḥ) revealed! Ghostly blue trail appears across the stones!',
+      });
+      setTimeout(() => setSpellMargaActive(false), 4200);
+      setTimeout(() => setFloatingLootToast(null), 2400);
+    }
+  };
+
   useEffect(() => {
     setCurrentMazeStep(1);
     setSteppedCells([]);
@@ -955,6 +1198,12 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     setIsTimerRunning(false);
     setCollectedLootIds(new Set());
     setLootScores({ coins: 0, gems: 0, scrolls: 0 });
+    setMana(100);
+    setSpellDrishtiActive(false);
+    setSpellMargaActive(false);
+    setHasRakshaShield(false);
+    setUnlockedArtifacts(new Set());
+    setInspectedArtifact(null);
 
     // Intelligently default theme for the quest
     if (
@@ -1051,9 +1300,33 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
           gems: prev.gems + (cellLoot.type === 'gem' ? 1 : 0),
           scrolls: prev.scrolls + (cellLoot.type === 'scroll' ? 1 : 0),
         }));
+        setMana((prev) =>
+          Math.min(
+            100,
+            prev + (cellLoot.type === 'coin' ? 10 : cellLoot.type === 'gem' ? 25 : 50)
+          )
+        );
         setFloatingLootToast({ id: Date.now(), icon: cellLoot.icon, label: cellLoot.label });
         soundEffects.playLootPickup();
         setTimeout(() => setFloatingLootToast(null), 1800);
+      }
+
+      // Mana reward for correct path stepping
+      setMana((prev) => Math.min(100, prev + 10));
+
+      // 10 Sacred Artifacts Unlock on Step
+      if (cell.stepOrder) {
+        const artifact = QUEST_ARTIFACTS_1_10.find((a) => a.step === cell.stepOrder);
+        if (artifact && !unlockedArtifacts.has(artifact.step)) {
+          setUnlockedArtifacts((prev) => new Set(prev).add(artifact.step));
+          soundEffects.playArtifactUnlock();
+          setFloatingLootToast({
+            id: Date.now(),
+            icon: artifact.icon,
+            label: `✨ Artifact #${artifact.step} Unlocked: ${artifact.nameSa} (${artifact.nameEn})!`,
+          });
+          setTimeout(() => setFloatingLootToast(null), 2500);
+        }
       }
 
       if (fogOfWar) {
@@ -1102,6 +1375,15 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
       );
       setTimeout(() => setTrapCell(null), 1400);
     } else {
+      if (hasRakshaShield) {
+        setHasRakshaShield(false);
+        soundEffects.playShieldBarrier();
+        setTrapCell({ row: cell.row, col: cell.col });
+        setTrapMessage('🛡️ रक्षा (Rakṣā) absorbed the blow! Heart is safely protected!');
+        setTimeout(() => setTrapCell(null), 1500);
+        return;
+      }
+
       if (rpgMode === 'hero') {
         soundEffects.playHeartDamage();
         setHearts((prev) => {
@@ -1152,6 +1434,12 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
     setShowQuestVictoryModal(false);
     setTimerSeconds(0);
     setIsTimerRunning(false);
+    setMana(100);
+    setSpellDrishtiActive(false);
+    setSpellMargaActive(false);
+    setHasRakshaShield(false);
+    setUnlockedArtifacts(new Set());
+    setInspectedArtifact(null);
   };
 
   const handleNextQuest = () => {
@@ -2002,18 +2290,44 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                 </div>
               </div>
 
-              {/* Group 2: Loot Pouch & Speedrun Stopwatch */}
+              {/* Group 2: Mana Bar & Active Quest Banner */}
+              <div className="sgh-hud-group sgh-hud-group--mana">
+                <div className="sgh-hud-mana-card" title={`Mana Energy: ${mana}/100 (Recharges +2 every 3s)`}>
+                  <div className="sgh-hud-mana-header">
+                    <span className="sgh-mana-icon">✨</span>
+                    <span className="sgh-mana-label">Mana:</span>
+                    <strong className="sgh-mana-value">{mana}/100</strong>
+                  </div>
+                  <div className="sgh-hud-mana-track">
+                    <div className="sgh-hud-mana-fill" style={{ width: `${mana}%` }} />
+                  </div>
+                </div>
+
+                <div className="sgh-hud-quest-chip" title="Active Adventure Quest">
+                  <span className="sgh-hqc-icon">📜</span>
+                  <div className="sgh-hqc-text">
+                    <small>Active Quest:</small>
+                    <strong>
+                      {activeQuest.id === 'maze_preschool_numbers_1_10'
+                        ? 'Find the Crown of Daśa (दशशिर-मुकुटम्)'
+                        : activeQuest.titleDev}
+                    </strong>
+                  </div>
+                </div>
+              </div>
+
+              {/* Group 3: Loot Pouch & Speedrun Stopwatch */}
               <div className="sgh-hud-group sgh-hud-group--center">
                 <div className="sgh-hud-loot-pouch" title="Collected Quest Loot">
-                  <span className="sgh-loot-chip" title="Gold Coins (+10 XP)">
+                  <span className="sgh-loot-chip" title="Gold Coins (+10 XP & +10 Mana)">
                     <span>🪙</span>
                     <strong>{lootScores.coins}</strong>
                   </span>
-                  <span className="sgh-loot-chip" title="Vedic Gems (+25 XP)">
+                  <span className="sgh-loot-chip" title="Vedic Gems (+25 XP & +25 Mana)">
                     <span>💎</span>
                     <strong>{lootScores.gems}</strong>
                   </span>
-                  <span className="sgh-loot-chip" title="Sacred Palm Scrolls (+50 XP)">
+                  <span className="sgh-loot-chip" title="Sacred Palm Scrolls (+50 XP & +50 Mana)">
                     <span>📜</span>
                     <strong>{lootScores.scrolls}</strong>
                   </span>
@@ -2028,7 +2342,7 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                 </div>
               </div>
 
-              {/* Group 3: Environment Theme, Fog of War & High-Contrast Dark Mode */}
+              {/* Group 4: Environment Theme, Fog of War & High-Contrast Dark Mode */}
               <div className="sgh-hud-group sgh-hud-group--controls">
                 <button
                   type="button"
@@ -2082,6 +2396,104 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                   <span>{isDarkMode ? '☀️' : '🌙'}</span>
                   <small>{isDarkMode ? 'Light' : 'Dark'}</small>
                 </button>
+              </div>
+            </div>
+
+            {/* 🎒 ADVENTURER INVENTORY SLOTS: 10 Sacred Quest Artifacts */}
+            <div className="sgh-inventory-rack" role="region" aria-label="Adventurer Inventory Slots">
+              <div className="sgh-inv-header">
+                <div className="sgh-inv-title">
+                  <span className="sgh-inv-icon">🎒</span>
+                  <strong>INVENTORY SLOTS (वस्तूनां सम्पुटम्):</strong>
+                  <span className="sgh-inv-counter">
+                    {unlockedArtifacts.size} / 10 Artifacts Found
+                  </span>
+                </div>
+                <span className="sgh-inv-hint">
+                  Tap any slot to inspect artifact &amp; hear Sanskrit pronunciation!
+                </span>
+              </div>
+              <div className="sgh-inv-slots-grid">
+                {QUEST_ARTIFACTS_1_10.map((art) => {
+                  const isUnlocked = unlockedArtifacts.has(art.step);
+                  return (
+                    <button
+                      key={art.step}
+                      type="button"
+                      className={`sgh-inv-slot${isUnlocked ? ' is-unlocked' : ' is-locked'}`}
+                      onClick={() => {
+                        if (isUnlocked) {
+                          soundEffects.playStrokeChime();
+                          playPronunciation(art.nameSa);
+                          setInspectedArtifact(art);
+                        } else {
+                          soundEffects.playStrokeChime();
+                          setFloatingLootToast({
+                            id: Date.now(),
+                            icon: '🔒',
+                            label: `Step on stone #${art.step} (${art.numberWord}) to unlock ${art.nameEn}!`,
+                          });
+                          setTimeout(() => setFloatingLootToast(null), 2200);
+                        }
+                      }}
+                      title={
+                        isUnlocked
+                          ? `${art.digitSa} ${art.nameSa} (${art.nameEn}) — Unlocked!`
+                          : `Slot #${art.step} (${art.digitSa}): Locked — Step on ${art.numberWord} to unlock`
+                      }
+                    >
+                      <div className="sgh-inv-slot-inner">
+                        <span className="sgh-inv-slot-icon">{isUnlocked ? art.icon : '🔒'}</span>
+                        <span className="sgh-inv-slot-digit">{art.digitSa}</span>
+                      </div>
+                      {isUnlocked && <span className="sgh-inv-slot-glow" aria-hidden="true" />}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* 🪄 SANSKRIT POWER-UP SPELLS BAR */}
+            <div className="sgh-spells-bar" role="region" aria-label="Sanskrit Power-Up Incantations">
+              <div className="sgh-spells-header">
+                <div className="sgh-spells-title">
+                  <span className="sgh-spells-icon">🪄</span>
+                  <strong>Sanskrit Power-Up Spells (तपो-मन्त्राः):</strong>
+                </div>
+                <span className="sgh-spells-hint">
+                  Spend Mana points to cast powerful incantations when stuck or avoiding traps!
+                </span>
+              </div>
+              <div className="sgh-spells-actions">
+                {SANSKRIT_SPELLS.map((spell) => {
+                  const canAfford = mana >= spell.manaCost;
+                  const isActive =
+                    (spell.id === 'drishti' && spellDrishtiActive) ||
+                    (spell.id === 'raksha' && hasRakshaShield) ||
+                    (spell.id === 'marga' && spellMargaActive);
+
+                  return (
+                    <button
+                      key={spell.id}
+                      type="button"
+                      className={`sgh-spell-btn sgh-spell--${spell.id}${isActive ? ' is-active' : ''}${!canAfford && !isActive ? ' is-depleted' : ''}`}
+                      onClick={() => handleCastSpell(spell)}
+                      disabled={!canAfford && !isActive}
+                      title={`${spell.nameDev} (${spell.iast} - ${spell.nameEn}): ${spell.desc}`}
+                    >
+                      <span className="sgh-spell-icon">{spell.icon}</span>
+                      <div className="sgh-spell-labels">
+                        <span className="sgh-spell-name">
+                          {spell.nameDev} ({spell.iast})
+                        </span>
+                        <span className="sgh-spell-cost">
+                          {isActive ? '⚡ ACTIVE' : `${spell.manaCost} ✨ Mana`}
+                        </span>
+                      </div>
+                      {isActive && <span className="sgh-spell-active-pulse" aria-hidden="true" />}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
@@ -2726,7 +3138,7 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                             key={s.step}
                             className={currentMazeStep === s.step ? 'is-current-step' : steppedOrders.has(s.step) ? 'is-done-step' : ''}
                           >
-                            <strong>{s.step}. {s.wordDev} ({s.iast} - {s.digitSa})</strong> ➔ {s.directionHint}
+                            <strong>{s.step}. {s.artifactIcon} {s.wordDev} ({s.iast} - {s.digitSa}) ➔ {s.artifactNameDev} ({s.artifactNameEn})</strong>: <em>{s.lore}</em> ➔ {s.directionHint}
                           </li>
                         ))}
                       </ol>
@@ -2749,15 +3161,16 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                               playPronunciation(stone.wordDev);
                             }
                           }}
-                          title={`${stone.step}. ${stone.wordDev} (${stone.wordEn} - ${stone.digitSa}) ➔ ${stone.directionHint}`}
+                          title={`${stone.step}. ${stone.artifactIcon} ${stone.wordDev} (${stone.wordEn} - ${stone.digitSa}) ➔ ${stone.artifactNameDev}: ${stone.lore}`}
                         >
                           <div className="sgh-rs-circle">
                             <span className="sgh-rs-digit">{stone.digitSa}</span>
+                            <span className="sgh-rs-artifact-mini">{stone.artifactIcon}</span>
                             {isCrossed && <span className="sgh-rs-check">✓</span>}
                             {isCurrent && <span className="sgh-rs-hop-avatar">{AVATARS[selectedAvatar].icon}</span>}
                           </div>
                           <span className="sgh-rs-word">{stone.wordDev}</span>
-                          <small className="sgh-rs-en">{stone.wordEn}</small>
+                          <small className="sgh-rs-en">{stone.artifactNameDev}</small>
                         </button>
                       );
                     })}
@@ -2830,6 +3243,9 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                       cell.isPath
                     );
 
+                    const isDrishtiActive = spellDrishtiActive && cell.isPath && cell.stepOrder === currentMazeStep;
+                    const isMargaActive = spellMargaActive && cell.isPath && (cell.stepOrder || 0) >= currentMazeStep;
+
                     let cellClass = `sgh-maze-cell sgh-maze-cell--${visualCategory}`;
                     if (isStepped) cellClass += ' sgh-maze-cell--stepped';
                     if (isAvatarHere) cellClass += ' sgh-maze-cell--avatar';
@@ -2838,6 +3254,8 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                     else if (isReachableNeighbor) cellClass += ' sgh-maze-cell--neighbor';
                     if (isGaneshaReady) cellClass += ' sgh-maze-cell--ganesha-ready';
                     if (isValidAdjacentNext) cellClass += ' sgh-maze-cell--valid-adjacent';
+                    if (isDrishtiActive) cellClass += ' sgh-maze-cell--drishti';
+                    if (isMargaActive) cellClass += ' sgh-maze-cell--marga';
                     if (isFogged) cellClass += ' sgh-maze-cell--fogged';
 
                     const cleanedGloss = cleanMazeGloss(cell.translation);
@@ -2901,6 +3319,11 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                             {/* Player Physical Walking Sprite on Current Tile */}
                             {isAvatarHere && (
                               <div className="sgh-player-sprite-token" title={AVATARS[selectedAvatar].name}>
+                                {hasRakshaShield && (
+                                  <div className="sgh-avatar-shield" title="Rakṣā Protection Shield Active!" aria-hidden="true">
+                                    <span className="sgh-shield-rune">🛡️</span>
+                                  </div>
+                                )}
                                 <span className="sgh-sprite-glyph">{AVATARS[selectedAvatar].icon}</span>
                                 <span className="sgh-sprite-label">{AVATARS[selectedAvatar].name}</span>
                               </div>
@@ -2931,6 +3354,59 @@ export const SanskritGamesHub: React.FC<SanskritGamesHubProps> = ({
                 </div>
               </div>
             </div>
+
+            {/* Sacred Artifact Lore Inspection Modal */}
+            {inspectedArtifact && (
+              <div
+                className="sgh-modal-backdrop"
+                role="dialog"
+                aria-modal="true"
+                onClick={() => setInspectedArtifact(null)}
+              >
+                <div className="sgh-artifact-card" onClick={(e) => e.stopPropagation()}>
+                  <div className="sgh-artc-badge">
+                    <span>पवित्र-वस्तु #{inspectedArtifact.step} · Sacred Artifact #{inspectedArtifact.step}</span>
+                    <button
+                      type="button"
+                      className="sgh-artc-close-btn"
+                      onClick={() => setInspectedArtifact(null)}
+                      aria-label="Close Artifact Modal"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <div className="sgh-artc-body">
+                    <div className="sgh-artc-icon-frame">
+                      <span className="sgh-artc-icon">{inspectedArtifact.icon}</span>
+                    </div>
+                    <h3 className="sgh-artc-title-sa">{inspectedArtifact.nameSa}</h3>
+                    <span className="sgh-artc-iast">({inspectedArtifact.transliteration})</span>
+                    <h4 className="sgh-artc-title-en">{inspectedArtifact.nameEn}</h4>
+                    <div className="sgh-artc-step-pill">
+                      <span>संख्या · Number: {inspectedArtifact.digitSa} ({inspectedArtifact.numberWord})</span>
+                    </div>
+                    <p className="sgh-artc-lore">{inspectedArtifact.lore}</p>
+                  </div>
+                  <div className="sgh-artc-actions">
+                    <button
+                      type="button"
+                      className="sgh-mode-btn"
+                      style={{ background: '#059669', color: '#ffffff' }}
+                      onClick={() => playPronunciation(inspectedArtifact.nameSa)}
+                    >
+                      <span>🔊 Listen: {inspectedArtifact.nameSa}</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="sgh-mode-btn sgh-mode-btn--active"
+                      onClick={() => setInspectedArtifact(null)}
+                    >
+                      <span>✕ Close Lore</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Game Over Modal (Hero Mode Stamina Depleted) */}
             {isGameOver && (

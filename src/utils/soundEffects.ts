@@ -1509,6 +1509,189 @@ class SoundEffectsEngine {
       src.start(now);
     } catch {}
   }
+
+  /**
+   * Sanskrit Power-Up: Generic Spell Casting Chime
+   */
+  playSpellCast(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      // Sparkling 3-note ascending ethereal chime
+      [587.33, 880.0, 1174.66].forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + i * 0.08);
+
+        gain.gain.setValueAtTime(0.18, now + i * 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.35);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now + i * 0.08);
+        osc.stop(now + i * 0.08 + 0.38);
+      });
+    } catch {}
+  }
+
+  /**
+   * Sanskrit Power-Up: 🛡️ Rakṣā (Protection Barrier / Absorbed hit)
+   */
+  playShieldBarrier(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      // Resonant harmonic crystalline bell ping
+      const osc = ctx.createOscillator();
+      const osc2 = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(440, now);
+      osc.frequency.exponentialRampToValueAtTime(880, now + 0.08);
+
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(1320, now);
+
+      gain.gain.setValueAtTime(0.25, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+
+      osc.connect(gain);
+      osc2.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(now);
+      osc2.start(now);
+      osc.stop(now + 0.5);
+      osc2.stop(now + 0.5);
+    } catch {}
+  }
+
+  /**
+   * Sanskrit Power-Up: 💨 Vegaḥ (Swiftness / Time Warp Boost)
+   */
+  playTimeWarp(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      // Fast rising frequency sweep
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(220, now);
+      osc.frequency.exponentialRampToValueAtTime(1480, now + 0.28);
+
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(600, now);
+      filter.frequency.exponentialRampToValueAtTime(3200, now + 0.28);
+
+      gain.gain.setValueAtTime(0.15, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.32);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(now);
+      osc.stop(now + 0.35);
+    } catch {}
+  }
+
+  /**
+   * Sanskrit Power-Up: 👁️ Dṛṣṭiḥ (The Sight / Gold Tile Glow)
+   */
+  playMysticGlow(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      // Dual harmonic shimmering chime (E6 + G#6)
+      [1318.51, 1661.22].forEach((freq) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+
+        gain.gain.setValueAtTime(0.16, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.42);
+      });
+    } catch {}
+  }
+
+  /**
+   * Sanskrit Power-Up: 🧭 Mārgaḥ (The Path / Spectral Blue Trail)
+   */
+  playPathTrail(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      // 4-note ethereal harp flourish (D5, F#5, A5, D6)
+      [587.33, 739.99, 880.0, 1174.66].forEach((freq, idx) => {
+        const start = now + idx * 0.06;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, start);
+
+        gain.gain.setValueAtTime(0.14, start);
+        gain.gain.exponentialRampToValueAtTime(0.001, start + 0.35);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(start);
+        osc.stop(start + 0.38);
+      });
+    } catch {}
+  }
+
+  /**
+   * Inventory: Unlocking a Sacred Quest Artifact
+   */
+  playArtifactUnlock(): void {
+    if (!this.soundEnabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      // Regal fanfare chord (C5, G5, C6)
+      [523.25, 783.99, 1046.5].forEach((freq) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, now);
+
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.65);
+      });
+    } catch {}
+  }
 }
 
 export const soundEffects = new SoundEffectsEngine();
