@@ -158,3 +158,16 @@ export function getDownloadGateReason(
   if (computePlanStatus(currentUser) === 'trial') return 'trial';
   return 'expired';
 }
+
+/**
+ * True when the learner may open Class 7 Think Labs (static pages + hub pills).
+ * Admins always allowed. Paid All-Access only — free trial does NOT unlock
+ * (same spirit as download / print gates).
+ */
+export function canAccessThinkLabs(
+  currentUser: UserProfile | null | undefined,
+  isAdminLoggedIn = false
+): boolean {
+  return hasPaidAccess(currentUser, isAdminLoggedIn);
+}
+

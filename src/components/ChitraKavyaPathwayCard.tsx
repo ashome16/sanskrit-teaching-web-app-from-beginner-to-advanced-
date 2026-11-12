@@ -206,6 +206,29 @@ export const ChitraKavyaPathwayCard: React.FC<ChitraKavyaPathwayCardProps> = ({
                 Ancient Gurukul scholar deciphering the 32-syllable Turanga matrix under sacred banyan tree.
               </div>
             </div>
+
+            {/* How-it-works strip + L-move diagram (fills empty column space) */}
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', marginTop: '0.75rem', padding: '0.65rem 0.75rem', border: '1px solid #e2d3bd', borderRadius: '10px', background: '#fffdf9', color: '#5a3e1b', fontSize: '0.8rem', lineHeight: 1.45 }}>
+              <div aria-label="Horse L-move diagram" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 18px)', gap: '2px', flexShrink: 0 }}>
+                {[0,1,2,3,4,5,6,7,8,9,10,11].map((i) => {
+                  const start = i === 0; const path = i === 3 || i === 6 || i === 9; const end = i === 10;
+                  return (
+                    <span key={i} style={{ width: 18, height: 18, borderRadius: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.7rem', border: '1px solid #e2d3bd', background: start || end ? '#fff' : path ? '#fbf3e6' : '#ffffff', borderColor: start ? '#b45309' : end ? '#15803d' : '#e2d3bd' }}>
+                      {start ? '♞' : end ? '•' : ''}
+                    </span>
+                  );
+                })}
+              </div>
+              <div>
+                <strong>🧭 कथम् · How it works</strong>
+                <ol style={{ margin: '0.25rem 0 0', paddingLeft: '1.1rem' }}>
+                  <li>Read the 4 rows left→right: that is Verse 929.</li>
+                  <li>The horse ♞ jumps in an <strong>L</strong>: 2 squares, then 1 sideways.</li>
+                  <li>Write down each syllable it lands on → Verse 930 appears!</li>
+                </ol>
+                <p style={{ margin: '0.35rem 0 0', fontSize: '0.76rem', opacity: 0.85 }}>💡 Kids tip: count “one, two… turn!” with your finger before you tap.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

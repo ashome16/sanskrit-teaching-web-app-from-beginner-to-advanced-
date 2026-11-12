@@ -65,6 +65,7 @@ const REQUIRED_PATHS = [
   '/preschool-games',
   '/play-2-learn',
   '/iks',
+  '/iks-labs',
   '/vedic-sciences',
 ];
 
@@ -90,19 +91,25 @@ function extractObjectLiteral(source, exportName) {
 
 function parseViewMetadata(objectSrc) {
   const re =
-    /(?:'([^']+)'|([A-Za-z_][\w-]*))\s*:\s*\{\s*title:\s*'([^']*)',\s*desc:\s*'([^']*)',/g;
+    /(?:'([^']+)'|([A-Za-z_][\w-]*))\s*:\s*\{\s*title:\s*'((?:[^'\\]|\\.)*)',\s*desc:\s*'((?:[^'\\]|\\.)*)',/g;
   const out = {};
   for (const match of objectSrc.matchAll(re)) {
-    out[match[1] || match[2]] = { title: match[3], desc: match[4] };
+    out[match[1] || match[2]] = {
+      title: match[3].replace(/\\'/g, "'"),
+      desc: match[4].replace(/\\'/g, "'"),
+    };
   }
   return out;
 }
 
 function parseSingleMeta(objectSrc) {
-  const title = objectSrc.match(/title:\s*'([^']*)'/);
-  const desc = objectSrc.match(/desc:\s*'([^']*)'/);
+  const title = objectSrc.match(/title:\s*'((?:[^'\\]|\\.)*)'/);
+  const desc = objectSrc.match(/desc:\s*'((?:[^'\\]|\\.)*)'/);
   if (!title || !desc) throw new Error('Could not parse BARAKHADI_METADATA');
-  return { title: title[1], desc: desc[1] };
+  return {
+    title: title[1].replace(/\\'/g, "'"),
+    desc: desc[1].replace(/\\'/g, "'"),
+  };
 }
 
 function escapeAttr(value) {
@@ -685,6 +692,7 @@ routes.push({ pathname: '/preschool', ...preschool });
 routes.push({ pathname: '/preschool-games', ...preschool });
 routes.push({ pathname: '/play-2-learn', ...preschool });
 routes.push({ pathname: '/iks', ...iks });
+routes.push({ pathname: '/iks-labs', ...iks });
 routes.push({ pathname: '/vedic-sciences', ...iks });
 routes.push({
   pathname: '/swar',

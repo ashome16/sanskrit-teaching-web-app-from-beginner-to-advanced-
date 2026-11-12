@@ -4,7 +4,7 @@ import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 import { playPronunciation } from '../../utils/pronunciation';
 
 type LangMode = 'both' | 'sanskrit' | 'modern';
-type VisualMode = 'wave' | 'cymatics' | 'sarana';
+type VisualMode = 'wave' | 'fft' | 'cymatics' | 'sarana';
 
 interface SaranaData {
   step: number;
@@ -23,23 +23,54 @@ const SARANA_DATA: SaranaData[] = [
   { step: 4, name: '4th Saraṇā: Catuḥśruti Cycle', dev: 'चतुःश्रुति-सारणा', cents: -90.0, beatHz: 23.5, desc: 'Calā lowered by 4 Śrutis. Closes the full 22-Śruti microtonal cycle empirically!' },
 ];
 
+export interface StringMaterial {
+  id: string;
+  name: string;
+  dev: string;
+  mu: number; // kg/m
+  gaugeMm: number;
+  desc: string;
+}
+
+export const MATERIALS: StringMaterial[] = [
+  { id: 'steel_thin', name: 'Fine Steel Wire (Chikārī)', dev: 'सूक्ष्म-अयस्', mu: 0.35e-3, gaugeMm: 0.22, desc: 'High pitch, fast snap, bright acoustic sheen' },
+  { id: 'brass_med', name: 'Medium Brass (Bāj Tantrī)', dev: 'मध्यम-पीतल', mu: 0.70e-3, gaugeMm: 0.32, desc: 'Warm resonance, balanced mid-frequency sustain' },
+  { id: 'bronze_heavy', name: 'Heavy Bronze (Kharaj)', dev: 'गुरु-कांस्य', mu: 1.40e-3, gaugeMm: 0.48, desc: 'Deep bass foundation, rich low overtones' },
+];
+
+export interface SvaraTarget {
+  id: string;
+  svara: string;
+  dev: string;
+  western: string;
+  freq: number;
+  raga: string;
+  hint: string;
+}
+
+export const SVARA_TARGETS: SvaraTarget[] = [
+  { id: 'sa', svara: 'Sa', dev: 'षड्ज (सा)', western: 'C3 (130.8 Hz)', freq: 130.81, raga: 'Bhūpālī / Universal', hint: 'The fundamental tonic root. Try 0.9m length with moderate tension (~12-16 N).' },
+  { id: 're', svara: 'Re', dev: 'ऋषभ (रे)', western: 'D3 (146.8 Hz)', freq: 146.83, raga: 'Bhūpālī / Yaman', hint: 'Major second (Catuḥśruti Ṛṣabha). Tighten tension slightly or shorten string.' },
+  { id: 'ga', svara: 'Ga', dev: 'गान्धार (ग)', western: 'E3 (164.8 Hz)', freq: 164.81, raga: 'Bhūpālī / Yaman', hint: 'Major third (Śuddha Gāndhāra). Increase tension further or shorten string to ~0.72m.' },
+  { id: 'pa', svara: 'Pa', dev: 'पञ्चम (प)', western: 'G3 (196.0 Hz)', freq: 196.00, raga: 'Bhūpālī / Universal', hint: 'Invariant fifth. Shorten string to ~0.60m or tighten tension.' },
+  { id: 'dha', svara: 'Dha', dev: 'धैवत (ध)', western: 'A3 (220.0 Hz)', freq: 220.00, raga: 'Bhūpālī', hint: 'Major sixth. High resonant pitch; shorten string to ~0.53m or select lighter wire.' },
+  { id: 'tara_sa', svara: 'Ṡa', dev: 'तार षड्ज (सां)', western: 'C4 (261.6 Hz)', freq: 261.63, raga: 'Octave', hint: 'Higher octave tonic. Double the fundamental frequency or select n = 2 harmonic!' },
+];
+
 const W = 720;
 const H = 300;
 const X0 = 60; // fixed end (left)
 const X1 = 660; // fixed end (right)
 const Y0 = 150;
 
-/** Nominal string: about a 0.3 mm steel wire, 0.90 m vibrating length. */
-const L_M = 0.9; // m
-const MU = 0.55e-3; // kg/m (0.55 g/m)
 const T_MIN = 2;
-const T_MAX = 60;
+const T_MAX = 80;
 const T_START = 12;
 const TOL = 0.01; // ±1 % counts as in tune (about ±17 cents)
 
 /** f = n/(2L)·√(T/μ) for an ideal string fixed at both ends. */
-const stringFreq = (n: number, T: number) => (n / (2 * L_M)) * Math.sqrt(T / MU);
-const tensionFor = (n: number, f: number) => MU * ((2 * L_M * f) / n) ** 2;
+const stringFreq = (n: number, T: number, L = 0.9, mu = 0.70e-3) => (n / (2 * Math.max(0.1, L))) * Math.sqrt(T / Math.max(1e-5, mu));
+const tensionFor = (n: number, f: number, L = 0.9, mu = 0.70e-3) => mu * ((2 * L * f) / n) ** 2;
 
 const NOTE_NAMES = ['C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯', 'A', 'A♯', 'B'];
 const nearestNote = (f: number) => {
@@ -95,6 +126,8 @@ const TERMS: LabTerm[] = [
 const CHALLENGES: LabChallenge[] = [
   { q: 'Keep the tension the same and switch from n = 1 to n = 2. The frequency…', options: ['halves', 'doubles', 'stays the same'], answer: 1, explain: 'f = n/(2L)·√(T/μ), so f grows in step with n: the 2nd harmonic is an octave above the 1st.' },
   { q: 'To make the frequency twice as high on the same harmonic, the tension must be…', options: ['doubled', 'made four times bigger', 'halved'], answer: 1, explain: 'f grows with √T, so 4 × the tension gives 2 × the frequency.' },
+  { q: 'If you shorten the vibrating length of the string to half its length (L/2), the frequency…', options: ['halves', 'doubles', 'remains unchanged'], answer: 1, explain: 'f is inversely proportional to length (f ∝ 1/L). Halving the length doubles the fundamental frequency.' },
+  { q: 'Why does a heavy bronze wire sound deeper than a thin steel wire under identical tension?', options: ['Because higher linear mass density μ reduces wave speed v = √(T/μ)', 'Because bronze absorbs sound waves', 'Because steel has magic frequency'], answer: 0, explain: 'Frequency f = (1/2L)√(T/μ). A heavier mass per unit length (μ) slows the wave speed, producing lower pitch.' },
   { q: 'In the standard Sāṅkhya pairing, rūpa (form, sight) goes with which mahābhūta?', options: ['ap (water)', 'tejas (fire, light)', 'ākāśa (space)'], answer: 1, explain: 'śabda–ākāśa, sparśa–vāyu, rūpa–tejas, rasa–ap, gandha–pṛthivī.' },
   { q: 'A plucked sitār string makes which kind of nāda?', options: ['āhata (struck)', 'anāhata (unstruck)', 'neither'], answer: 0, explain: 'Āhata means struck: a string, a drum, the voice. Anāhata, unstruck sound, is described as heard inwardly.' },
   { q: 'String theory is…', options: ['proved by experiment', 'a modern mathematical idea not yet confirmed by experiment', 'described in the Upaniṣads'], answer: 1, explain: 'It is a serious but unproven idea in physics. The old texts do not describe it.' },
@@ -116,75 +149,128 @@ const NadaBrahman: React.FC = () => {
   const [saranaStep, setSaranaStep] = useState<number>(0);
   const [n, setN] = useState(1);
   const [T, setT] = useState(T_START);
+  const [stringLength, setStringLength] = useState<number>(0.9); // meters (0.45 to 1.20)
+  const [materialId, setMaterialId] = useState<string>('brass_med');
   const [amp, setAmp] = useState(60);
   const [playing, setPlaying] = useState(true);
   const [sound, setSound] = useState(false);
   const [round, setRound] = useState(0);
   const [matched, setMatched] = useState<boolean[]>([false, false, false]);
 
-  const f = stringFreq(n, T);
+  // Ear training state
+  const [targetSvaraIdx, setTargetSvaraIdx] = useState<number>(0);
+  const [ragaModeActive, setRagaModeActive] = useState<boolean>(false);
+
+  const curMaterial = MATERIALS.find((m) => m.id === materialId) ?? MATERIALS[1];
+  const f = stringFreq(n, T, stringLength, curMaterial.mu);
   const curSarana = SARANA_DATA[saranaStep];
   const saranaF = f * Math.pow(2, curSarana.cents / 1200);
 
-  const live = useRef({ n, T, amp, playing, lang, f, visualMode, saranaStep, saranaF });
+  const analyserRef = useRef<AnalyserNode | null>(null);
+
+  const live = useRef({ n, T, amp, playing, lang, f, visualMode, saranaStep, saranaF, stringLength, material: curMaterial });
   useEffect(() => {
-    live.current = { n, T, amp, playing, lang, f, visualMode, saranaStep, saranaF };
-  }, [n, T, amp, playing, lang, f, visualMode, saranaStep, saranaF]);
+    live.current = { n, T, amp, playing, lang, f, visualMode, saranaStep, saranaF, stringLength, material: curMaterial };
+  }, [n, T, amp, playing, lang, f, visualMode, saranaStep, saranaF, stringLength, curMaterial]);
   const pluckAt = useRef(-10);
   const clock = useRef(0);
 
-  // ---- optional tone (off by default) ----
-  const audio = useRef<{ osc: OscillatorNode; oscTest?: OscillatorNode; gain: GainNode } | null>(null);
-  const sustainGain = useCallback((a: number, isPlaying: boolean) => (isPlaying ? 0.03 * (a / 100) : 0), []);
+  // ---- multi-harmonic sitar synthesizer with live AnalyserNode ----
+  const audio = useRef<{
+    oscs: OscillatorNode[];
+    oscTest?: OscillatorNode;
+    gain: GainNode;
+  } | null>(null);
+
+  const sustainGain = useCallback((a: number, isPlaying: boolean) => (isPlaying ? 0.04 * (a / 100) : 0), []);
+
   const startAudio = () => {
     const ctx = getCtx();
     if (!ctx) return;
     void ctx.resume();
     if (audio.current) return;
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = 'triangle';
-    osc.frequency.value = f;
-    gain.gain.value = 0;
-    osc.connect(gain).connect(ctx.destination);
-    osc.start();
+
+    const masterGain = ctx.createGain();
+    const analyser = ctx.createAnalyser();
+    analyser.fftSize = 256;
+    analyserRef.current = analyser;
+
+    masterGain.connect(analyser);
+    analyser.connect(ctx.destination);
+
+    // Synthesize fundamental + 4 harmonic overtones for authentic sitār/tānpurā timbre
+    const harmonicWeights = [1.0, 0.42, 0.24, 0.12, 0.06];
+    const oscs: OscillatorNode[] = [];
+
+    harmonicWeights.forEach((weight, idx) => {
+      const harmN = idx + 1;
+      const osc = ctx.createOscillator();
+      const hGain = ctx.createGain();
+      osc.type = harmN === 1 ? 'triangle' : 'sine';
+      osc.frequency.value = f * harmN;
+      hGain.gain.value = weight;
+      osc.connect(hGain).connect(masterGain);
+      osc.start();
+      oscs.push(osc);
+    });
 
     let oscTest: OscillatorNode | undefined;
     if (visualMode === 'sarana') {
       oscTest = ctx.createOscillator();
       oscTest.type = 'triangle';
       oscTest.frequency.value = saranaF;
-      oscTest.connect(gain);
+      oscTest.connect(masterGain);
       oscTest.start();
     }
 
-    audio.current = { osc, oscTest, gain };
-    gain.gain.setTargetAtTime(sustainGain(amp, playing), ctx.currentTime, 0.05);
+    audio.current = { oscs, oscTest, gain: masterGain };
+    masterGain.gain.setTargetAtTime(sustainGain(amp, playing), ctx.currentTime, 0.05);
   };
+
   const stopAudio = () => {
     const a = audio.current;
     if (!a) return;
     audio.current = null;
     try {
-      const ctx = a.osc.context;
+      const ctx = a.gain.context;
       a.gain.gain.setTargetAtTime(0, ctx.currentTime, 0.03);
-      a.osc.stop(ctx.currentTime + 0.2);
+      a.oscs.forEach((osc) => osc.stop(ctx.currentTime + 0.2));
       if (a.oscTest) a.oscTest.stop(ctx.currentTime + 0.2);
     } catch {
       /* ignore */
     }
   };
+
   useEffect(() => {
     const a = audio.current;
     if (!a) return;
-    const ctx = a.osc.context;
-    a.osc.frequency.setTargetAtTime(f, ctx.currentTime, 0.02);
+    const ctx = a.gain.context;
+    a.oscs.forEach((osc, idx) => {
+      const harmN = idx + 1;
+      osc.frequency.setTargetAtTime(f * harmN, ctx.currentTime, 0.02);
+    });
     if (a.oscTest) {
       a.oscTest.frequency.setTargetAtTime(saranaF, ctx.currentTime, 0.02);
     }
     a.gain.gain.setTargetAtTime(sustainGain(amp, playing), ctx.currentTime, 0.08);
   }, [f, saranaF, amp, playing, sustainGain]);
   useEffect(() => () => stopAudio(), []);
+
+  const playTargetPitch = (targetHz: number) => {
+    const ctx = getCtx();
+    if (!ctx) return;
+    void ctx.resume();
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = targetHz;
+    g.gain.setValueAtTime(0.001, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.25, ctx.currentTime + 0.05);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.4);
+    osc.connect(g).connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 1.5);
+  };
 
   const toggleSound = () => {
     if (sound) {
@@ -201,9 +287,9 @@ const NadaBrahman: React.FC = () => {
   const off = f / target.f - 1;
   const inTune = Math.abs(off) <= TOL;
   const allDone = matched.every(Boolean);
-  const check = (nextN: number, nextT: number) => {
+  const check = (nextN: number, nextT: number, nextL = stringLength, nextMu = curMaterial.mu) => {
     if (round >= TARGETS.length) return;
-    const fx = stringFreq(nextN, nextT);
+    const fx = stringFreq(nextN, nextT, nextL, nextMu);
     if (Math.abs(fx / TARGETS[round].f - 1) <= TOL) setMatched((m) => (m[round] ? m : m.map((v, i) => (i === round ? true : v))));
   };
   const pickN = (k: number) => {
@@ -215,17 +301,28 @@ const NadaBrahman: React.FC = () => {
     setT(t);
     check(n, t);
   };
+  const changeLength = (l: number) => {
+    const roundedL = Math.round(l * 100) / 100;
+    setStringLength(roundedL);
+    check(n, T, roundedL);
+  };
+  const changeMaterial = (matId: string) => {
+    setMaterialId(matId);
+    const m = MATERIALS.find((item) => item.id === matId) ?? MATERIALS[1];
+    check(n, T, stringLength, m.mu);
+  };
+
   const pluck = () => {
     pluckAt.current = clock.current;
     if (!playing) setPlaying(true);
     const a = audio.current;
     if (a && sound) {
-      const ctx = a.osc.context;
+      const ctx = a.gain.context;
       const g = a.gain.gain;
       const base = sustainGain(amp, true);
       g.cancelScheduledValues(ctx.currentTime);
       g.setValueAtTime(Math.max(base, 0.001), ctx.currentTime);
-      g.linearRampToValueAtTime(0.03 + 0.18 * (amp / 100), ctx.currentTime + 0.01);
+      g.linearRampToValueAtTime(0.05 + 0.22 * (amp / 100), ctx.currentTime + 0.01);
       g.setTargetAtTime(base, ctx.currentTime + 0.02, 0.6);
     }
   };
@@ -262,6 +359,124 @@ const NadaBrahman: React.FC = () => {
     ctx.fillRect(0, 0, W, H);
 
     // Check visual mode:
+    if (live.current.visualMode === 'fft') {
+      // -------------------------------------------------------------
+      // Live Oscilloscope Waveform & Discrete FFT Frequency Spectrum
+      // -------------------------------------------------------------
+      // Grid for upper oscilloscope
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
+      ctx.lineWidth = 1;
+      for (let x = 0; x <= W; x += 45) {
+        ctx.beginPath();
+        ctx.moveTo(x, 20);
+        ctx.lineTo(x, 140);
+        ctx.stroke();
+      }
+      for (let y = 30; y <= 140; y += 25) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(W, y);
+        ctx.stroke();
+      }
+
+      // Oscilloscope baseline
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.3)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(0, 80);
+      ctx.lineTo(W, 80);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Waveform trace (Oscilloscope)
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2.5;
+      ctx.shadowColor = '#38bdf8';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      const waveEnv = isPlaying ? 1 : 0.2;
+      for (let x = 0; x <= W; x += 3) {
+        const u = x / W;
+        // Composite multi-harmonic signal: fundamental + 4 harmonics
+        const sig =
+          0.6 * Math.sin(2 * Math.PI * (freq / 35) * u - t * 6) +
+          0.3 * Math.sin(4 * Math.PI * (freq / 35) * u - t * 12) +
+          0.16 * Math.sin(6 * Math.PI * (freq / 35) * u - t * 18) +
+          0.08 * Math.sin(8 * Math.PI * (freq / 35) * u - t * 24);
+        const y = 80 - sig * (a / 100) * 45 * waveEnv;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // Oscilloscope header
+      ctx.font = '700 11px monospace';
+      ctx.fillStyle = '#38bdf8';
+      ctx.textAlign = 'left';
+      ctx.fillText(`OSCILLOSCOPE: Time-Domain Vibration Waveform y(t) · ${freq.toFixed(1)} Hz`, 16, 24);
+
+      // Divider line
+      ctx.strokeStyle = 'rgba(148, 163, 184, 0.25)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(14, 150);
+      ctx.lineTo(W - 14, 150);
+      ctx.stroke();
+
+      // Lower FFT Spectrum Header
+      ctx.fillStyle = '#f59e0b';
+      ctx.fillText('FFT SPECTRUM: Discrete Fourier Overtones & Timbre (f₁, f₂, f₃, f₄, f₅)', 16, 168);
+
+      // FFT Spectrum base axis
+      const barBaseY = 270;
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(40, barBaseY);
+      ctx.lineTo(W - 40, barBaseY);
+      ctx.stroke();
+
+      const harmonicPeaks = [
+        { n: 1, label: 'f₁ Fundamental (Sa)', hz: freq * 1, relAmp: 85, col: '#818cf8' },
+        { n: 2, label: 'f₂ 2nd Harmonic (Ṡa)', hz: freq * 2, relAmp: 55, col: '#38bdf8' },
+        { n: 3, label: 'f₃ 3rd Harmonic (Pa)', hz: freq * 3, relAmp: 38, col: '#fb923c' },
+        { n: 4, label: 'f₄ 4th Harmonic (Ṡa\')', hz: freq * 4, relAmp: 24, col: '#2dd4bf' },
+        { n: 5, label: 'f₅ 5th Harmonic (Ga\')', hz: freq * 5, relAmp: 14, col: '#fbbf24' },
+      ];
+
+      const barW = 44;
+      harmonicPeaks.forEach((hp, idx) => {
+        const barX = 65 + idx * 125;
+        const curAmpH = (hp.relAmp * (a / 100)) * (isPlaying ? 1 + 0.08 * Math.sin(t * 10 + idx) : 0.85);
+
+        // Bar gradient
+        const barGrad = ctx.createLinearGradient(0, barBaseY - curAmpH, 0, barBaseY);
+        barGrad.addColorStop(0, hp.col);
+        barGrad.addColorStop(1, 'rgba(15, 23, 42, 0.8)');
+        ctx.fillStyle = barGrad;
+        ctx.fillRect(barX, barBaseY - curAmpH, barW, curAmpH);
+
+        ctx.strokeStyle = hp.col;
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(barX, barBaseY - curAmpH, barW, curAmpH);
+
+        // Peak frequency label
+        ctx.font = '700 11px monospace';
+        ctx.fillStyle = hp.col;
+        ctx.textAlign = 'center';
+        ctx.fillText(`${hp.hz.toFixed(1)} Hz`, barX + barW / 2, barBaseY - curAmpH - 6);
+
+        // Bottom Svara tag
+        ctx.font = '600 10px sans-serif';
+        ctx.fillStyle = '#cbd5e1';
+        ctx.fillText(hp.label, barX + barW / 2, barBaseY + 16);
+      });
+
+      return;
+    }
+
     if (live.current.visualMode === 'cymatics') {
       // -------------------------------------------------------------
       // 2D Chladni Cymatics Mandala Plate
@@ -535,8 +750,8 @@ const NadaBrahman: React.FC = () => {
 
   const hm = HARMONICS[n - 1];
   const note = nearestNote(f);
-  const v = Math.sqrt(T / MU);
-  const lambda = (2 * L_M) / n;
+  const v = Math.sqrt(T / curMaterial.mu);
+  const lambda = (2 * stringLength) / n;
   const needT = tensionFor(n, target.f);
   const unreachable = needT > T_MAX || needT < T_MIN;
   const cents = Math.round(1200 * Math.log2(f / target.f));
@@ -672,6 +887,14 @@ const NadaBrahman: React.FC = () => {
               </button>
               <button
                 type="button"
+                className={`vl-chip${visualMode === 'fft' ? ' is-on' : ''}`}
+                onClick={() => setVisualMode('fft')}
+                data-testid="nada-mode-fft"
+              >
+                📊 Waveform &amp; FFT Spectrum (तरङ्ग &amp; वर्णक्रम)
+              </button>
+              <button
+                type="button"
                 className={`vl-chip${visualMode === 'cymatics' ? ' is-on' : ''}`}
                 onClick={() => setVisualMode('cymatics')}
                 data-testid="nada-mode-cymatics"
@@ -749,9 +972,139 @@ const NadaBrahman: React.FC = () => {
               ariaLabel="String tension in newtons"
               testId="nada-tension"
             />
-            <div className="vl-leds">
+            <div className="vl-leds" style={{ marginBottom: '0.65rem' }}>
               <LedButton kind="action" onClick={() => changeT(T - 0.1)} testId="nada-tension-down">− 0.1 N</LedButton>
               <LedButton kind="action" onClick={() => changeT(T + 0.1)} testId="nada-tension-up">+ 0.1 N</LedButton>
+            </div>
+
+            <GlowSlider
+              label={<>📏 String Length L</>}
+              value={stringLength}
+              min={0.45}
+              max={1.20}
+              step={0.01}
+              onChange={changeLength}
+              valueText={`${stringLength.toFixed(2)} m (${Math.round(stringLength * 100)} cm)`}
+              color="#38bdf8"
+              ariaLabel="String length in meters"
+              testId="nada-length"
+            />
+
+            <div style={{ marginBottom: '0.75rem' }}>
+              <label style={{ fontSize: '0.76rem', color: '#94a3b8', fontWeight: 700, display: 'block', marginBottom: '0.35rem' }}>
+                🪵 WIRE MATERIAL &amp; GAUGE (तन्त्री-द्रव्यम्):
+              </label>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.35rem' }}>
+                {MATERIALS.map((mat) => (
+                  <button
+                    key={mat.id}
+                    type="button"
+                    className={`vl-chip${materialId === mat.id ? ' is-on' : ''}`}
+                    style={{ fontSize: '0.72rem', padding: '0.35rem 0.2rem', textAlign: 'center' }}
+                    onClick={() => changeMaterial(mat.id)}
+                  >
+                    {mat.name.split(' (')[0]}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Visual Acoustic Laws Summary Card */}
+            <div
+              style={{
+                background: 'rgba(15, 23, 42, 0.65)',
+                border: '1px solid rgba(56, 189, 248, 0.25)',
+                borderRadius: '8px',
+                padding: '0.55rem 0.75rem',
+                marginBottom: '0.75rem',
+                fontSize: '0.72rem',
+                color: '#cbd5e1',
+              }}
+            >
+              <b style={{ color: '#38bdf8', display: 'block', marginBottom: '0.25rem' }}>📐 Acoustic Laws of Strings:</b>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.25rem', lineHeight: '1.35' }}>
+                <div>📏 Longer wire → lower pitch (f ∝ 1/L)</div>
+                <div>📐 Shorter wire → higher pitch (f ∝ 1/L)</div>
+                <div>⚡ High tension → higher pitch (f ∝ √T)</div>
+                <div>🪵 Thicker wire → lower pitch (f ∝ 1/√μ)</div>
+              </div>
+            </div>
+
+            {/* Ear-Training & Śruti Alignment Challenge */}
+            <div
+              style={{
+                background: 'rgba(30, 27, 75, 0.45)',
+                border: '1px solid rgba(192, 132, 252, 0.35)',
+                borderRadius: '10px',
+                padding: '0.75rem',
+                marginBottom: '0.75rem',
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem', flexWrap: 'wrap', gap: '0.3rem' }}>
+                <b style={{ color: '#e879f9', fontSize: '0.82rem' }}>🪕 Ear-Training: Rāga Bhūpālī Svaras (श्रुति-साधना)</b>
+                <button
+                  type="button"
+                  className={`vl-chip${ragaModeActive ? ' is-on' : ''}`}
+                  onClick={() => setRagaModeActive(!ragaModeActive)}
+                  style={{ fontSize: '0.7rem' }}
+                >
+                  {ragaModeActive ? '✓ Ear Mode Active' : '▶ Practice Ear Tuning'}
+                </button>
+              </div>
+
+              <div style={{ display: 'flex', gap: '0.3rem', overflowX: 'auto', paddingBottom: '0.3rem', marginBottom: '0.5rem' }}>
+                {SVARA_TARGETS.map((st, idx) => (
+                  <button
+                    key={st.id}
+                    type="button"
+                    className={`vl-chip${targetSvaraIdx === idx ? ' is-on' : ''}`}
+                    style={{ fontSize: '0.72rem', padding: '0.25rem 0.5rem' }}
+                    onClick={() => {
+                      setTargetSvaraIdx(idx);
+                      playTargetPitch(st.freq);
+                    }}
+                  >
+                    {st.svara} ({st.freq.toFixed(0)}Hz)
+                  </button>
+                ))}
+              </div>
+
+              {(() => {
+                const curTarget = SVARA_TARGETS[targetSvaraIdx] || SVARA_TARGETS[0];
+                const centsDiff = Math.round(1200 * Math.log2(f / curTarget.freq));
+                const isAligned = Math.abs(centsDiff) <= 12;
+                return (
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.76rem', marginBottom: '0.35rem', color: '#cbd5e1' }}>
+                      <span>Target: <strong style={{ color: '#fde047' }}>{curTarget.svara} · {curTarget.dev}</strong> ({curTarget.freq.toFixed(1)} Hz)</span>
+                      <span>Your Pitch: <strong>{f.toFixed(1)} Hz</strong> (<span style={{ color: isAligned ? '#4ade80' : centsDiff > 0 ? '#f87171' : '#38bdf8' }}>{centsDiff >= 0 ? `+${centsDiff}` : centsDiff}¢</span>)</span>
+                    </div>
+                    <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.35rem' }}>
+                      <button
+                        type="button"
+                        className="vl-btn vl-btn--compact"
+                        style={{ fontSize: '0.72rem', padding: '0.3rem 0.55rem' }}
+                        onClick={() => playTargetPitch(curTarget.freq)}
+                      >
+                        🔊 Listen to Reference Tone ({curTarget.svara})
+                      </button>
+                      <button
+                        type="button"
+                        className="vl-btn vl-btn--compact"
+                        style={{ fontSize: '0.72rem', padding: '0.3rem 0.55rem', borderColor: isAligned ? '#22c55e' : undefined }}
+                        onClick={pluck}
+                      >
+                        🪕 Pluck String
+                      </button>
+                    </div>
+                    <div style={{ marginTop: '0.4rem', fontSize: '0.72rem', color: isAligned ? '#4ade80' : '#cbd5e1' }}>
+                      {isAligned
+                        ? `✨ Perfect Śruti Match! String frequency (${f.toFixed(1)} Hz) is aligned to ${curTarget.svara} within ±12 cents.`
+                        : curTarget.hint}
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
             <div className="vl-dials">
               <DialKnob label={<>〰️ Amplitude</>} ariaLabel="Amplitude in percent" value={amp} min={0} max={100} step={1} onChange={setAmp} format={(x) => `${Math.round(x)}%`} color={hm.color} testId="nada-amp" />

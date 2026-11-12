@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { gurukulAmbiance } from '../utils/gurukulAmbiance';
-import gurukulDawnUrl from '../assets/gurukul-dawn.jpg';
+import gurukulDawnUrl from '../assets/gurukul-dawn.webp';
 import '../styles/gurukul-intro.css';
 
 interface GurukulEntranceIntroProps {
@@ -201,7 +201,14 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
 
         {/* Scene Caption */}
         <div className="gurukul-scene-caption">
-          <span className="gsc-pill">🌅 प्रातः-स्मरणम् · Gurukul Dawn Awakening</span>
+          <span className="gsc-pill">🌅 Gurukul Dawn</span>
+        </div>
+
+        {/* Play → Wisdom brand overlay */}
+        <div className="gurukul-scene-tagline">
+          <p className="gst-main">Learn Through Play.</p>
+          <p className="gst-sub">Exploring Indian Knowledge Systems, creativity and the wonders of learning.</p>
+          <p className="gst-sub">A place where children can explore, question, experiment and discover connections between traditional knowledge and modern science.</p>
         </div>
       </div>
 
@@ -212,7 +219,11 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
           <div className="gurukul-intro-mandala" aria-hidden="true" style={{ pointerEvents: 'none' }} />
           <img
             ref={logoRef}
-            src="/logo.jpg"
+            src="/logo-intro.webp"
+            width={256}
+            height={256}
+            decoding="async"
+            fetchPriority="high"
             alt="EdNet Gurukul Brand Crest"
             className={`gurukul-intro-logo ${isFlying ? 'is-flying' : ''}`}
             style={isFlying ? flyStyle : undefined}
@@ -226,63 +237,28 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
         </div>
 
         <div className="gurukul-intro-brand-title">
-          <span className="gurukul-intro-badge">🏛️ EdNet Gurukul</span>
-          <h2 className="gurukul-intro-title" lang="sa">गुरुकुल-प्रवेशः</h2>
+          <span className="gurukul-intro-badge">EdNet Learn · Gurukul</span>
+          <p className="gurukul-intro-tagline">Play → Wisdom</p>
         </div>
 
-        <p className="gurukul-intro-verse">
-          सत्यं वद · धर्मं चर · स्वाध्यायान्मा प्रमदः
-        </p>
-        <p className="gurukul-intro-verse-en">
-          अपने ज्ञान, अध्ययन और आत्म-सुधार के कार्य में कभी आलसी या लापरवाह न बनें; यह एक आजीवन साधना है।
-        </p>
+        <p className="gurukul-intro-verse">स्वाध्यायान्मा प्रमदः</p>
 
-        {/* Sacred Temple Bell Entrance Action */}
-        <button
-          type="button"
-          className={`gurukul-intro-bell-btn${isSuspended ? ' is-suspended-prompt' : ''}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            void gurukulAmbiance.resume();
-            setIsSuspended(false);
-            gurukulAmbiance.playTempleBell(432);
-            triggerExit();
-          }}
-          aria-label="Ring the sacred temple bell and enter Gurukul"
-          title="Tap the bell to ring and enter the Gurukul"
-        >
-          <span className="gurukul-intro-bell-icon" aria-hidden="true">🔔</span>
-          <span className="gurukul-intro-bell-text">
-            <strong className="gurukul-bell-txt-en">Tap the bell and enter</strong>
-            <small className="gurukul-bell-txt-sa" lang="sa">घण्टानादं कृत्वा प्रविश</small>
-          </span>
-          {!isSuspended && !isMuted && (
-            <div className="gurukul-sound-waves" aria-hidden="true">
-              <div className="gurukul-sound-bar" />
-              <div className="gurukul-sound-bar" />
-              <div className="gurukul-sound-bar" />
-              <div className="gurukul-sound-bar" />
-            </div>
-          )}
-        </button>
-
-        {/* Controls */}
         <div className="gurukul-intro-actions">
           <button
             type="button"
-            className="gurukul-intro-enter-btn"
+            className={`gurukul-intro-enter-btn gurukul-intro-enter-combined${isSuspended ? ' is-suspended-prompt' : ''}`}
             onClick={(e) => {
               e.stopPropagation();
               void gurukulAmbiance.resume();
               setIsSuspended(false);
-              gurukulAmbiance.playTempleBell(432);
               triggerExit();
             }}
             autoFocus
             aria-label="Enter Gurukul"
             title="Enter Gurukul"
           >
-            <span lang="sa">प्रविश</span> · <span>Enter Gurukul</span>
+            <span aria-hidden="true">🔔</span>
+            <span lang="sa">प्रविश</span><span className="gec-sep">·</span><span>Enter Gurukul</span>
             <span className="gurukul-enter-arrow" aria-hidden="true">➔</span>
           </button>
 

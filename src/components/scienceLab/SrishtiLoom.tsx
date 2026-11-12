@@ -3,11 +3,27 @@ import { BodhiLabAnecdote, ChallengeList, CoreIdea, TermPanel, type LabChallenge
 import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 import { soundEffects } from '../../utils/soundEffects';
 import { playPronunciation } from '../../utils/pronunciation';
+import { useAuthStore } from '../../store/authStore';
+import { canAccessThinkLabs } from '../../utils/premiumAccess';
 
 type LangMode = 'both' | 'sanskrit' | 'modern';
 type Phase = 'cloud' | 'srishti' | 'sthiti' | 'laya' | 'done';
-type AruniNavTab = 'loom' | 'experiments' | 'codex' | 'challenges';
+type AruniNavTab = 'loom' | 'waves' | 'experiments' | 'codex' | 'challenges';
 type AruniExpTab = 'salt' | 'banyan' | 'fasting' | 'substratum';
+
+export interface SavedWavePattern {
+  id: string;
+  name: string;
+  timestamp: string;
+  freq: number;
+  wavelength: number;
+  amplitude: number;
+  tension: number;
+  damping: number;
+  phaseDiffDeg: number;
+  mode: 'standing' | 'interference' | 'resonance';
+  harmonics: number;
+}
 
 const W = 720;
 const H = 360;
@@ -169,6 +185,9 @@ const QUOTES = [
 ];
 
 const SrishtiLoom: React.FC = () => {
+  const { currentUser, isAdminLoggedIn, openAuthModal, openPaymentModal } = useAuthStore();
+  const thinkLabsUnlocked = canAccessThinkLabs(currentUser, isAdminLoggedIn);
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [lang, setLang] = useState<LangMode>('both');
   const [activeNav, setActiveNav] = useState<AruniNavTab>('loom');
@@ -189,6 +208,66 @@ const SrishtiLoom: React.FC = () => {
     params.current = { kala, freq, prana, mixed, lang };
   }, [kala, freq, prana, mixed, lang]);
   const [read, setRead] = useState({ manifest: 90, total: 90, scatter: 100, hold: 0 });
+
+  // Wave Physics & Interference Lab State
+  const waveCanvasRef = useRef<HTMLCanvasElement>(null);
+  const waveTimeRef = useRef<number>(0);
+  const [waveMode, setWaveMode] = useState<'standing' | 'interference' | 'resonance'>('standing');
+  const [waveFreq, setWaveFreq] = useState<number>(2.5); // Hz
+  const [waveWavelength, setWaveWavelength] = useState<number>(180); // px
+  const [waveAmp, setWaveAmp] = useState<number>(40); // px
+  const [waveTension, setWaveTension] = useState<number>(45); // N
+  const [waveDamping, setWaveDamping] = useState<number>(0.02);
+  const [phaseDiffDeg, setPhaseDiffDeg] = useState<number>(0);
+  const [standingHarmonic, setStandingHarmonic] = useState<number>(2);
+  const [savedPatterns, setSavedPatterns] = useState<SavedWavePattern[]>([
+    {
+      id: 'p-1',
+      name: 'Dvitiya Spandana (2nd Harmonic)',
+      timestamp: 'Initial Standard',
+      freq: 2.5,
+      wavelength: 240,
+      amplitude: 40,
+      tension: 45,
+      damping: 0.01,
+      phaseDiffDeg: 0,
+      mode: 'standing',
+      harmonics: 2,
+    },
+    {
+      id: 'p-2',
+      name: 'Samvada Constructive Wave',
+      timestamp: 'Constructive Preset',
+      freq: 3.0,
+      wavelength: 180,
+      amplitude: 35,
+      tension: 50,
+      damping: 0.02,
+      phaseDiffDeg: 0,
+      mode: 'interference',
+      harmonics: 1,
+    },
+    {
+      id: 'p-3',
+      name: 'Vinasha Destructive Cancellation',
+      timestamp: 'Destructive Null',
+      freq: 3.0,
+      wavelength: 180,
+      amplitude: 40,
+      tension: 50,
+      damping: 0.02,
+      phaseDiffDeg: 180,
+      mode: 'interference',
+      harmonics: 1,
+    },
+  ]);
+  const [patternTitleInput, setPatternTitleInput] = useState<string>('');
+  const [reflectionSelectedVar, setReflectionSelectedVar] = useState<'tension' | 'freq' | 'damping' | 'phase'>('tension');
+  const [reflectionAnswer, setReflectionAnswer] = useState<number | null>(null);
+  const [reflectionSubmitted, setReflectionSubmitted] = useState<boolean>(false);
+  const [activeChallengeIdx, setActiveChallengeIdx] = useState<number>(0);
+  const [challengeSuccess, setChallengeSuccess] = useState<Record<number, boolean>>({});
+  const [compareIds, setCompareIds] = useState<[string | null, string | null]>([null, null]);
 
   // Experiment 1: Salt-Water State
   const [saltStatus, setSaltStatus] = useState<'undissolved' | 'dissolved' | 'evaporated'>('undissolved');
@@ -427,6 +506,355 @@ const SrishtiLoom: React.FC = () => {
     return () => cancelAnimationFrame(raf);
   }, [playing, tick, paint, metrics]);
 
+  const WAVE_CHALLENGES = [
+    {
+      id: 'harmonics_3',
+      dev: 'तृतीय-कम्पनावस्था (3rd Harmonic Standing Wave)',
+      en: '3rd Harmonic Standing Wave',
+      goal: 'Configure a standing wave with exactly 3 antinodes and 4 stationary nodes (n = 3, f ≥ 2.5 Hz, T ≥ 30 N).',
+      check: () => waveMode === 'standing' && standingHarmonic === 3 && waveFreq >= 2.5 && waveTension >= 30,
+      hint: 'Select "Standing Waves", set Mode to n=3, adjust Frequency to at least 2.5 Hz and Tension to at least 30 N.',
+      physics: 'Standing waves satisfy L = n·(λ/2). The 3rd harmonic features 3 antinodal loops separated by 4 zero-motion boundary nodes.',
+    },
+    {
+      id: 'destructive_null',
+      dev: 'विनाशी-व्यतिकरणम् (Complete Phase Cancellation)',
+      en: 'Destructive Interference Null',
+      goal: 'Set up two interfering waves in exact antiphase (Δφ = 180° ± 6°) so the net wave flattens to zero.',
+      check: () => waveMode === 'interference' && Math.abs(phaseDiffDeg - 180) <= 6,
+      hint: 'Switch to "Interference Sandbox" and slide the Phase Difference Δφ knob to 180°.',
+      physics: 'When two identical waves are shifted by π radians (180°), every crest meets an identical trough, creating complete destructive cancellation.',
+    },
+    {
+      id: 'constructive_boost',
+      dev: 'सम्पोषी-व्यतिकरणम् (Constructive Wave In-Phase)',
+      en: 'Constructive Interference Peak',
+      goal: 'Align the two waves in-phase (Δφ ≤ 8° or ≥ 352°) with Amplitude ≥ 35 px to achieve maximum constructive gain (2A).',
+      check: () => waveMode === 'interference' && (phaseDiffDeg <= 8 || phaseDiffDeg >= 352) && waveAmp >= 35,
+      hint: 'Align Phase Difference to 0° (or 360°) and increase Amplitude to 35 px or more.',
+      physics: 'When wave crests coincide in phase (Δφ = 0), their displacements add linearly by the principle of superposition, doubling total height.',
+    },
+    {
+      id: 'resonance_lock',
+      dev: 'अनुनाद-समाधिः (Resonance Frequency Lock)',
+      en: 'Loom Resonant Amplitude Lock',
+      goal: 'Drive the loom near its natural frequency (2.8 Hz ≤ f ≤ 3.2 Hz) with low damping (γ ≤ 0.03) to maximize resonant Q-factor.',
+      check: () => waveMode === 'resonance' && Math.abs(waveFreq - 3.0) <= 0.25 && waveDamping <= 0.03,
+      hint: 'Switch to "Resonance Chamber", tune Spandana frequency near 3.0 Hz and reduce damping to 0.03 or less.',
+      physics: 'Resonance occurs when the driving frequency matches the system natural frequency (f ≈ f₀), causing energy transfer efficiency to spike dramatically.',
+    },
+  ];
+
+  const REFLECTION_QUESTIONS = {
+    tension: {
+      label: 'Tension (T) & Wave Velocity',
+      dev: 'तन्त्री-तनावः & वेगः',
+      q: 'What happens to the wavelength (λ) when you increase string tension (T) while keeping frequency (f) constant?',
+      options: [
+        { text: 'Wavelength decreases because the string gets tighter.', correct: false, note: 'Incorrect: A tighter string actually increases propagation speed!' },
+        { text: 'Wavelength increases because wave speed v = √(T/μ) rises, and λ = v/f.', correct: true, note: 'Correct! Increasing tension raises the wave velocity v. Since λ = v/f, the wavelength stretches proportionally.' },
+        { text: 'Wavelength does not change because frequency is unchanged.', correct: false, note: 'Incorrect: Wavelength depends directly on propagation speed in the medium.' },
+      ],
+    },
+    freq: {
+      label: 'Frequency (f) & Spatial Period',
+      dev: 'स्पन्दन-सङ्ख्या & तरङ्ग-दैर्घ्यम्',
+      q: 'When you double the oscillation frequency (f) on a string with constant tension, how does wavelength (λ) respond?',
+      options: [
+        { text: 'Wavelength doubles.', correct: false, note: 'Incorrect: Higher frequency packs more wave cycles into the same space, making them shorter.' },
+        { text: 'Wavelength is halved (λ = v/f).', correct: true, note: 'Correct! Because wave speed v is fixed by the medium, doubling frequency packs twice as many cycles per second, halving the spatial wavelength.' },
+        { text: 'Wave speed doubles while wavelength stays constant.', correct: false, note: 'Incorrect: Wave speed is set by the string medium (T and μ), not by the frequency generator.' },
+      ],
+    },
+    damping: {
+      label: 'Damping (γ) & Energy Dissipation',
+      dev: 'अवमन्दनम् & ऊर्जा-ह्रासः',
+      q: 'Why does wave amplitude diminish exponentially along the string when damping (γ) is increased?',
+      options: [
+        { text: 'Kinetic and potential energy are lost as heat due to internal friction in the medium.', correct: true, note: 'Correct! Damping dissipates mechanical oscillation energy into thermal micro-states, attenuating amplitude via e^(-γx).' },
+        { text: 'The wave frequency slows down to zero.', correct: false, note: 'Incorrect: Frequency remains constant; only the amplitude decays.' },
+        { text: 'Matter is converted into non-being (Asat).', correct: false, note: 'Incorrect: As Sage Uddālaka proved, energy and matter are conserved—dissipated into heat, never destroyed.' },
+      ],
+    },
+    phase: {
+      label: 'Phase Difference (Δφ) & Conservation',
+      dev: 'कला-भेदः & ऊर्जा-संरक्षणम्',
+      q: 'When two identical waves cancel completely in destructive interference (Δφ = 180°), where does their energy go?',
+      options: [
+        { text: 'The energy is permanently destroyed.', correct: false, note: 'Incorrect: The First Law of Thermodynamics forbids destroying energy.' },
+        { text: 'Displacements cancel, but particle velocity (dy/dt) is doubled at nodal crossings; total kinetic and potential energy across the system is strictly conserved.', correct: true, note: 'Correct! Complete cancellation of displacement does not mean energy disappears; it redistributes into kinetic energy or adjacent spatial regions.' },
+        { text: 'The energy turns into light radiation.', correct: false, note: 'Incorrect: Mechanical string waves remain within mechanical and acoustic modes.' },
+      ],
+    },
+  };
+
+  const handleSavePattern = () => {
+    const title = patternTitleInput.trim() || `Pattern #${savedPatterns.length + 1} (${waveMode})`;
+    const newP: SavedWavePattern = {
+      id: `pat-${Date.now()}`,
+      name: title,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+      freq: waveFreq,
+      wavelength: waveWavelength,
+      amplitude: waveAmp,
+      tension: waveTension,
+      damping: waveDamping,
+      phaseDiffDeg: phaseDiffDeg,
+      mode: waveMode,
+      harmonics: standingHarmonic,
+    };
+    setSavedPatterns((prev) => [newP, ...prev]);
+    setPatternTitleInput('');
+    soundEffects.playTrasarenuChime();
+  };
+
+  const handleLoadPattern = (p: SavedWavePattern) => {
+    setWaveMode(p.mode);
+    setWaveFreq(p.freq);
+    setWaveWavelength(p.wavelength);
+    setWaveAmp(p.amplitude);
+    setWaveTension(p.tension);
+    setWaveDamping(p.damping);
+    setPhaseDiffDeg(p.phaseDiffDeg);
+    setStandingHarmonic(p.harmonics);
+    soundEffects.playPuzzleSnap();
+  };
+
+  const handleDeletePattern = (id: string) => {
+    setSavedPatterns((prev) => prev.filter((p) => p.id !== id));
+    setCompareIds(([id1, id2]) => [id1 === id ? null : id1, id2 === id ? null : id2]);
+  };
+
+  const paintWaveLab = useCallback(() => {
+    const cv = waveCanvasRef.current;
+    if (!cv) return;
+    const ctx = cv.getContext('2d');
+    if (!ctx) return;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    if (cv.width !== W * dpr) {
+      cv.width = W * dpr;
+      cv.height = H * dpr;
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const t = waveTimeRef.current;
+    ctx.clearRect(0, 0, W, H);
+
+    // Deep cosmic background
+    const bg = ctx.createLinearGradient(0, 0, 0, H);
+    bg.addColorStop(0, '#0a0f1d');
+    bg.addColorStop(1, '#020617');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // Grid coordinates
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.12)';
+    ctx.lineWidth = 1;
+    for (let x = 0; x <= W; x += 60) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, H);
+      ctx.stroke();
+    }
+    for (let y = 0; y <= H; y += 40) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(W, y);
+      ctx.stroke();
+    }
+
+    // Baseline axis
+    ctx.strokeStyle = 'rgba(251, 113, 133, 0.35)';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([6, 6]);
+    ctx.beginPath();
+    ctx.moveTo(0, MID_Y);
+    ctx.lineTo(W, MID_Y);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    const f = waveFreq;
+    const omega = 2 * Math.PI * f;
+    const A = waveAmp;
+    const gamma = waveDamping;
+    const phi = (phaseDiffDeg * Math.PI) / 180;
+
+    if (waveMode === 'standing') {
+      const n = standingHarmonic;
+      const k = (n * Math.PI) / W;
+      const temporal = Math.cos(omega * t);
+
+      // Envelope
+      ctx.strokeStyle = 'rgba(244, 63, 94, 0.25)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      for (let x = 0; x <= W; x += 4) {
+        const yTop = MID_Y - 2 * A * Math.sin(k * x) * Math.exp((-gamma * x) / 200);
+        if (x === 0) ctx.moveTo(x, yTop);
+        else ctx.lineTo(x, yTop);
+      }
+      ctx.stroke();
+      ctx.beginPath();
+      for (let x = 0; x <= W; x += 4) {
+        const yBot = MID_Y + 2 * A * Math.sin(k * x) * Math.exp((-gamma * x) / 200);
+        if (x === 0) ctx.moveTo(x, yBot);
+        else ctx.lineTo(x, yBot);
+      }
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Dynamic wave
+      ctx.strokeStyle = '#fb7185';
+      ctx.lineWidth = 3.5;
+      ctx.shadowColor = '#fb7185';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      for (let x = 0; x <= W; x += 3) {
+        const y = MID_Y - 2 * A * Math.sin(k * x) * temporal * Math.exp((-gamma * x) / 200);
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // Nodes
+      for (let m = 0; m <= n; m++) {
+        const nx = (m * W) / n;
+        ctx.fillStyle = '#ef4444';
+        ctx.beginPath();
+        ctx.arc(nx, MID_Y, 5.5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.strokeStyle = '#fee2e2';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        ctx.font = '10px monospace';
+        ctx.fillStyle = '#fca5a5';
+        ctx.textAlign = 'center';
+        ctx.fillText(`Node ${m}`, nx, MID_Y + 18);
+      }
+
+      // Antinodes
+      for (let m = 0; m < n; m++) {
+        const ax = ((m + 0.5) * W) / n;
+        const curDisp = 2 * A * Math.sin(k * ax) * temporal * Math.exp((-gamma * ax) / 200);
+        ctx.fillStyle = '#10b981';
+        ctx.beginPath();
+        ctx.arc(ax, MID_Y - curDisp, 5, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.font = '10px monospace';
+        ctx.fillStyle = '#6ee7b7';
+        ctx.textAlign = 'center';
+        ctx.fillText(`Loop ${m + 1}`, ax, MID_Y - curDisp - 12);
+      }
+    } else if (waveMode === 'interference') {
+      const lambda = waveWavelength;
+      const k = (2 * Math.PI) / lambda;
+
+      // Wave 1 (Incident cyan)
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.7)';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath();
+      for (let x = 0; x <= W; x += 3) {
+        const y1 = MID_Y - A * Math.sin(k * x - omega * t) * Math.exp((-gamma * x) / 200);
+        if (x === 0) ctx.moveTo(x, y1);
+        else ctx.lineTo(x, y1);
+      }
+      ctx.stroke();
+
+      // Wave 2 (Interfering amber)
+      ctx.strokeStyle = 'rgba(251, 191, 36, 0.7)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (let x = 0; x <= W; x += 3) {
+        const y2 = MID_Y - A * Math.sin(k * x - omega * t + phi) * Math.exp((-gamma * x) / 200);
+        if (x === 0) ctx.moveTo(x, y2);
+        else ctx.lineTo(x, y2);
+      }
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Composite wave
+      const isDestructive = Math.abs(phaseDiffDeg - 180) <= 15;
+      const isConstructive = phaseDiffDeg <= 15 || phaseDiffDeg >= 345;
+      ctx.strokeStyle = isDestructive ? '#94a3b8' : isConstructive ? '#4ade80' : '#f43f5e';
+      ctx.lineWidth = 3.5;
+      ctx.shadowColor = ctx.strokeStyle;
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      for (let x = 0; x <= W; x += 3) {
+        const y1 = A * Math.sin(k * x - omega * t) * Math.exp((-gamma * x) / 200);
+        const y2 = A * Math.sin(k * x - omega * t + phi) * Math.exp((-gamma * x) / 200);
+        const yNet = MID_Y - (y1 + y2);
+        if (x === 0) ctx.moveTo(x, yNet);
+        else ctx.lineTo(x, yNet);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // Realtime readout
+      ctx.font = '700 12px monospace';
+      ctx.textAlign = 'left';
+      if (isDestructive) {
+        ctx.fillStyle = '#ef4444';
+        ctx.fillText('DESTRUCTIVE CANCELLATION (Δφ ≈ 180°): Zero Net Waveform', 24, 28);
+      } else if (isConstructive) {
+        ctx.fillStyle = '#4ade80';
+        ctx.fillText('CONSTRUCTIVE INTERFERENCE (Δφ ≈ 0°): Doubled Net Amplitude (2A)', 24, 28);
+      } else {
+        ctx.fillStyle = '#38bdf8';
+        ctx.fillText(`SUPERPOSITION ACTIVE (Δφ = ${phaseDiffDeg}°): Wave 1 (Cyan) + Wave 2 (Amber)`, 24, 28);
+      }
+    } else {
+      // Resonance
+      const f0 = 3.0;
+      const freqRatio = f / f0;
+      const denom = Math.sqrt((1 - freqRatio ** 2) ** 2 + (2 * gamma * freqRatio) ** 2);
+      const Q = Math.min(12, 1 / Math.max(0.08, denom));
+      const resAmp = A * (Q / 4);
+      const k = (3 * Math.PI) / W;
+
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 3;
+      ctx.shadowColor = '#f59e0b';
+      ctx.shadowBlur = 10 + Q * 2;
+      ctx.beginPath();
+      for (let x = 0; x <= W; x += 3) {
+        const y = MID_Y - resAmp * Math.sin(k * x) * Math.cos(omega * t);
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      ctx.font = '700 12px monospace';
+      ctx.fillStyle = Math.abs(f - f0) < 0.25 ? '#4ade80' : '#fbbf24';
+      ctx.fillText(
+        `RESONANCE GAIN: Q = ${Q.toFixed(2)}x | Driving f = ${f.toFixed(1)} Hz (f₀ = ${f0.toFixed(1)} Hz)`,
+        24,
+        28
+      );
+    }
+  }, [waveMode, waveFreq, waveWavelength, waveAmp, waveTension, waveDamping, phaseDiffDeg, standingHarmonic]);
+
+  useEffect(() => {
+    if (activeNav !== 'waves') return;
+    let raf = 0;
+    let last = performance.now();
+    const loop = (now: number) => {
+      const dt = (now - last) / 1000;
+      last = now;
+      waveTimeRef.current += Math.min(0.05, dt);
+      paintWaveLab();
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(raf);
+  }, [activeNav, paintWaveLab]);
+
   const restart = (n = density) => {
     sim.current = makeCloud(n);
     goPhase('cloud');
@@ -486,29 +914,47 @@ const SrishtiLoom: React.FC = () => {
   const handleFastRecite = () => {
     if (hasEatenDay16) {
       soundEffects.playTrasarenuChime();
-      setReciteFeedback('✨ “अग्निमीळे पुरोहितं यज्ञस्य देवमृत्विजम्...” Śvetaketu recites all three Vedas effortlessly! The subtle essence of food has revitalized the 16 cognitive Kalās of his brain.');
+      setReciteFeedback('“अग्निमीळे पुरोहितं यज्ञस्य देवमृत्विजम्...” Śvetaketu recites all three Vedas effortlessly! The subtle essence of food has revitalized the 16 cognitive Kalās of his brain.');
     } else if (fastingDays === 0) {
       soundEffects.playPuzzleSnap();
-      setReciteFeedback('📖 “अग्निमीळे पुरोहितम्...” Flawless recitation. Śvetaketu retains all 16 Kalās in vibrant health.');
+      setReciteFeedback('“अग्निमीळे पुरोहितम्...” Flawless recitation. Śvetaketu retains all 16 Kalās in vibrant health.');
     } else if (fastingDays <= 5) {
       soundEffects.playPuzzleSnap();
       setReciteFeedback('⏳ “उत त्वः पश्यन् न पश्यति...” Verses come with mild hesitation. Energy levels are declining.');
     } else if (fastingDays <= 12) {
       soundEffects.playPuzzleSnap();
-      setReciteFeedback('⚠️ “मा नस्तोक...” Verses blur together. Śvetaketu pauses frequently, rubbing his temples in mental fog.');
+      setReciteFeedback('[Notice] “मा नस्तोक...” Verses blur together. Śvetaketu pauses frequently, rubbing his temples in mental fog.');
     } else {
-      setReciteFeedback('🚨 “पिता! न मे किञ्चित् प्रतिषेधति! स्मृतिः नश्यति!” — “Father, my mind is blank! Not a single verse appears in my consciousness! My memory has failed!” (Chāndogya 6.7)');
+      setReciteFeedback('[Exhaustion] “पिता! न मे किञ्चित् प्रतिषेधति! स्मृतिः नश्यति!” — “Father, my mind is blank! Not a single verse appears in my consciousness! My memory has failed!” (Chāndogya 6.7)');
     }
   };
 
   const handleBreakFast = () => {
     soundEffects.playCelebrationChime();
     setHasEatenDay16(true);
-    setReciteFeedback('🍚 Śvetaketu consumes warm rice and clarified butter. The coarsest part forms waste, the middle builds flesh, and the subtlest neuro-active essence ascends to ignite his mind!');
+    setReciteFeedback('Śvetaketu consumes warm rice and clarified butter. The coarsest part forms waste, the middle builds flesh, and the subtlest neuro-active essence ascends to ignite his mind!');
   };
 
   return (
     <div className="vl-sim">
+      <p className="note" style={{ marginBottom: '0.85rem', padding: '0.75rem 1rem', background: 'rgba(253, 246, 234, 0.95)', border: '1px solid #eadfcd', borderRadius: 12, lineHeight: 1.55 }}>
+        <strong>Start here first:</strong>{' '}
+        {thinkLabsUnlocked ? (
+          <a href="/uddalaka-think-lab/" style={{ color: '#9a5b13', fontWeight: 600 }}>Sage Uddālaka Experiential Lab</a>
+        ) : (
+          <button
+            type="button"
+            onClick={() => {
+              if (!currentUser) openAuthModal('login');
+              else openPaymentModal();
+            }}
+            style={{ color: '#9a5b13', fontWeight: 600, background: 'none', border: 'none', padding: 0, cursor: 'pointer', font: 'inherit' }}
+          >
+            Sage Uddālaka Experiential Lab (All-Access)
+          </button>
+        )}
+        {' '}— salt, seed, clay, rivers, bees and a safe metabolic mind lab (Class 7). Then return to this Pattern Weaver loom.
+      </p>
       <BodhiLabAnecdote
         title="Sage Uddālaka Āruṇi: The Father of Empirical Philosophy & Spiritual Oneness"
         sanskritTitle="उद्दालक-आरुणेः प्रत्यक्ष-विज्ञानम्"
@@ -577,28 +1023,35 @@ const SrishtiLoom: React.FC = () => {
           className={`vl-aruni-nav-btn${activeNav === 'loom' ? ' is-active' : ''}`}
           onClick={() => setActiveNav('loom')}
         >
-          <span>🧵</span> 1. The Cosmic Loom (तन्तु-कक्षा)
+          I. The Cosmic Loom (तन्तु-कक्षा)
+        </button>
+        <button
+          type="button"
+          className={`vl-aruni-nav-btn${activeNav === 'waves' ? ' is-active' : ''}`}
+          onClick={() => setActiveNav('waves')}
+        >
+          II. Wave Mechanics & Interference (तरङ्ग-भौतिकी)
         </button>
         <button
           type="button"
           className={`vl-aruni-nav-btn${activeNav === 'experiments' ? ' is-active' : ''}`}
           onClick={() => setActiveNav('experiments')}
         >
-          <span>🧪</span> 2. Āruṇi’s 4 Empirical Labs (प्रत्यक्ष-प्रयोगाः)
+          III. Āruṇi’s 4 Empirical Labs (प्रत्यक्ष-प्रयोगाः)
         </button>
         <button
           type="button"
           className={`vl-aruni-nav-btn${activeNav === 'codex' ? ' is-active' : ''}`}
           onClick={() => setActiveNav('codex')}
         >
-          <span>📜</span> 3. Śvetaketu & Tat Tvam Asi (श्वेतकेतु-प्रबोधः)
+          IV. Śvetaketu & Tat Tvam Asi (श्वेतकेतु-प्रबोधः)
         </button>
         <button
           type="button"
           className={`vl-aruni-nav-btn${activeNav === 'challenges' ? ' is-active' : ''}`}
           onClick={() => setActiveNav('challenges')}
         >
-          <span>🎯</span> 4. Empirical Mastery Quiz ({CHALLENGES.length} Qs)
+          V. Empirical Mastery Quiz ({CHALLENGES.length} Qs)
         </button>
       </nav>
 
@@ -606,7 +1059,7 @@ const SrishtiLoom: React.FC = () => {
       {activeNav === 'loom' && (
         <section aria-label="Cosmic Wave Loom Simulation">
           <div className="vl-quest-head">
-            <h3 className="vl-quest-title">🧵 The Loom of Āruṇi · Sṛṣṭi-Sthiti-Laya</h3>
+            <h3 className="vl-quest-title">The Loom of Āruṇi · Sṛṣṭi-Sthiti-Laya</h3>
             <div className="vl-btn-row" role="radiogroup" aria-label="Language toggle">
               <span className="vl-small">Labels:</span>
               {(['both', 'sanskrit', 'modern'] as LangMode[]).map((m) => (
@@ -692,7 +1145,7 @@ const SrishtiLoom: React.FC = () => {
                   testId="loom-mix"
                   title="Trivṛtkaraṇa: make every particle threefold"
                 >
-                  🔴⚪⚫ {L('Trivṛtkaraṇa', 'Mix three elements')}
+                  {L('Trivṛtkaraṇa', 'Mix three elements')}
                 </LedButton>
                 <LedButton
                   kind="action"
@@ -706,7 +1159,7 @@ const SrishtiLoom: React.FC = () => {
                   testId="loom-entropy"
                   title="Inject thermal perturbation to test stability against entropy"
                 >
-                  ⚡ Test Entropy Resistance
+                  Test Entropy Resistance
                 </LedButton>
                 <LedButton kind="action" onClick={() => { setPlaying(false); restart(); }} testId="loom-reset">
                   Reset
@@ -781,7 +1234,7 @@ const SrishtiLoom: React.FC = () => {
               <span className="vl-readout">{L('Vyakta', 'Manifest')}: <b data-testid="loom-manifest">{read.manifest}</b> / {read.total}</span>
               <span className="vl-readout">{L('Vikṣepa', 'Scatter')}: <b data-testid="loom-scatter">{Math.round(read.scatter)}%</b></span>
               <span className="vl-readout" style={{ background: '#fef2f2', borderColor: '#fca5a5', color: '#991b1b', fontWeight: 800 }}>
-                ⚛️ Sat Conservation: <b>100.0%</b> ({read.total} Quanta Invariant)
+                Sat Conservation: <b>100.0%</b> ({read.total} Quanta Invariant)
               </span>
               {phase === 'sthiti' && (
                 <span className="vl-readout">
@@ -796,15 +1249,611 @@ const SrishtiLoom: React.FC = () => {
                 ? 'The loom is humming! Particles are gathering onto the wave…'
                 : 'Step 2: tune Spandana near the loom’s natural frequency (watch the green bar) and raise Prāṇa until the particles gather.')}
               {phase === 'sthiti' && !sthitiDone && `Step 3: keep the pattern steady for ${HOLD_SECONDS} seconds. Too much Prāṇa (over 85) makes it jitter; drifting off the natural frequency loosens it.`}
-              {sthitiDone && '🌿 Steady! The Vedic word ṛta (ऋत) names cosmic order: the regular way the universe keeps its course. Now set off Laya.'}
+              {sthitiDone && 'Steady! The Vedic word ṛta (ऋत) names cosmic order: the regular way the universe keeps its course. Now set off Laya.'}
               {phase === 'laya' && 'Step 4: Laya. The binding lets go; particles spread out and fade from view, but none is destroyed: they return to the unmanifest (Avyakta).'}
-              {phase === 'done' && '✨ The cycle is complete. Every particle is still on the loom, only faded. In the traditional picture, laya is followed by a new sṛṣṭi.'}
+              {phase === 'done' && 'The cycle is complete. Every particle is still on the loom, only faded. In the traditional picture, laya is followed by a new sṛṣṭi.'}
             </p>
           </div>
         </section>
       )}
 
-      {/* MODE 2: Āruṇi’s 4 Empirical Laboratories */}
+      {/* MODE 2: Wave Mechanics, Superposition & Interference */}
+      {activeNav === 'waves' && (
+        <section aria-label="Wave Mechanics and Interference Simulation" style={{ marginTop: '1rem' }}>
+          {/* Cultural Demarcation Banner */}
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%)',
+              border: '1.5px solid #38bdf8',
+              borderRadius: '16px',
+              padding: '1rem 1.25rem',
+              marginBottom: '1.25rem',
+              boxShadow: '0 4px 14px rgba(56, 189, 248, 0.12)',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.35rem' }}>
+              <h4 style={{ margin: 0, fontSize: '0.98rem', fontWeight: 800, color: '#0369a1' }}>
+                Philosophical Metaphor vs. Evidence-Based Science (संस्कृति-विज्ञान-विवेकः)
+              </h4>
+            </div>
+            <p style={{ margin: 0, fontSize: '0.88rem', color: '#334155', lineHeight: 1.55 }}>
+              In the Upaniṣadic discourse of Āruṇi, <strong>Sṛṣṭi-Sthiti-Laya</strong> (emergence, sustenance, absorption)
+              serves as an ancient Indian philosophical lens for observing cyclic change and conservation of being.
+              In empirical physics, however, waves are rigorously governed by <em>Newtonian mechanics</em>, the <em>partial differential wave equation</em>,
+              and <em>linear superposition</em> (v = √(T/μ) = f·λ). Here, explore the physical laws directly.
+            </p>
+            <div style={{ marginTop: '0.65rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(56, 189, 248, 0.3)', fontSize: '0.84rem', color: '#0369a1', fontWeight: 600 }}>
+              <strong>Observe. Question. Discover.</strong> Explore nature · Understand the universe · Explore the cosmos · Understand creation.
+            </div>
+          </div>
+
+          <div className="vl-quest-head">
+            <div>
+              <span className="vl-kicker">WAVE MECHANICS & SUPERPOSITION</span>
+              <h3 className="vl-quest-title">The Loom of Āruṇi · Waves & Interference (तरङ्ग-भौतिकी)</h3>
+            </div>
+            {/* Mode Selector */}
+            <div className="vl-btn-row" role="tablist" aria-label="Wave Mode Selector">
+              <button
+                type="button"
+                className={`vl-chip${waveMode === 'standing' ? ' is-on' : ''}`}
+                onClick={() => setWaveMode('standing')}
+              >
+                Standing Waves & Nodes
+              </button>
+              <button
+                type="button"
+                className={`vl-chip${waveMode === 'interference' ? ' is-on' : ''}`}
+                onClick={() => setWaveMode('interference')}
+              >
+                2-Wave Interference Sandbox
+              </button>
+              <button
+                type="button"
+                className={`vl-chip${waveMode === 'resonance' ? ' is-on' : ''}`}
+                onClick={() => setWaveMode('resonance')}
+              >
+                Resonance Chamber (Q-Factor)
+              </button>
+            </div>
+          </div>
+
+          {/* Canvas Stage */}
+          <div className="vl-sandbox">
+            <div className="vl-stage-wrap">
+              <HudFrame
+                accent="#38bdf8"
+                tl={<>f: {waveFreq.toFixed(1)} Hz · T: {waveTension} N</>}
+                tr={<>{waveMode.toUpperCase()} MODE</>}
+                bl={<>Speed v: {Math.round(Math.sqrt((waveTension * 1000) / 0.0015) * 0.08)} px/s</>}
+                br={<>Δφ: {phaseDiffDeg}° · γ: {waveDamping.toFixed(2)}</>}
+              >
+                <canvas
+                  ref={waveCanvasRef}
+                  className="vl-stage vl-stage--loom"
+                  width={W}
+                  height={H}
+                  role="img"
+                  aria-label="Interactive wave physics simulation canvas showing standing waves and interference"
+                />
+              </HudFrame>
+            </div>
+
+            {/* Parameter Controls Deck */}
+            <div className="vl-loom-controls">
+              <div className="vl-leds">
+                {waveMode === 'standing' && (
+                  <>
+                    <span style={{ fontSize: '0.82rem', fontWeight: 700, color: '#334155' }}>Harmonic Mode (n):</span>
+                    {[1, 2, 3, 4].map((hn) => (
+                      <LedButton
+                        key={hn}
+                        kind="action"
+                        color={standingHarmonic === hn ? '#38bdf8' : '#94a3b8'}
+                        onClick={() => {
+                          setStandingHarmonic(hn);
+                          soundEffects.playPuzzleSnap();
+                        }}
+                      >
+                        n = {hn} ({hn} loops)
+                      </LedButton>
+                    ))}
+                  </>
+                )}
+                {waveMode === 'interference' && (
+                  <>
+                    <LedButton
+                      kind="action"
+                      color="#4ade80"
+                      onClick={() => {
+                        setPhaseDiffDeg(0);
+                        soundEffects.playTrasarenuChime();
+                      }}
+                    >
+                      In-Phase (0° Constructive)
+                    </LedButton>
+                    <LedButton
+                      kind="action"
+                      color="#ef4444"
+                      onClick={() => {
+                        setPhaseDiffDeg(180);
+                        soundEffects.playPuzzleSnap();
+                      }}
+                    >
+                      Out-of-Phase (180° Destructive)
+                    </LedButton>
+                  </>
+                )}
+                {waveMode === 'resonance' && (
+                  <LedButton
+                    kind="action"
+                    color="#f59e0b"
+                    onClick={() => {
+                      setWaveFreq(3.0);
+                      setWaveDamping(0.01);
+                      soundEffects.playTrasarenuChime();
+                    }}
+                  >
+                    Lock Natural Resonant F₀ (3.0 Hz)
+                  </LedButton>
+                )}
+              </div>
+
+              <div className="vl-loom-deck">
+                <div className="vl-dials">
+                  <div className="vl-dial-group">
+                    <DialKnob
+                      label={<>Frequency (f · स्पन्दन)</>}
+                      ariaLabel="Wave frequency in Hz"
+                      value={waveFreq}
+                      min={0.5}
+                      max={8.0}
+                      step={0.1}
+                      onChange={setWaveFreq}
+                      format={(x) => `${x.toFixed(1)} Hz`}
+                      color="#38bdf8"
+                    />
+                  </div>
+                  <div className="vl-dial-group">
+                    <DialKnob
+                      label={<>String Tension (T · तनाव)</>}
+                      ariaLabel="String tension in Newtons"
+                      value={waveTension}
+                      min={10}
+                      max={100}
+                      step={1}
+                      onChange={setWaveTension}
+                      format={(x) => `${Math.round(x)} N`}
+                      color="#f59e0b"
+                    />
+                  </div>
+                  {waveMode === 'interference' && (
+                    <div className="vl-dial-group">
+                      <DialKnob
+                        label={<>Phase Shift (Δφ · कला-भेद)</>}
+                        ariaLabel="Phase difference in degrees"
+                        value={phaseDiffDeg}
+                        min={0}
+                        max={360}
+                        step={5}
+                        onChange={setPhaseDiffDeg}
+                        format={(x) => `${Math.round(x)}°`}
+                        color="#ec4899"
+                      />
+                    </div>
+                  )}
+                </div>
+
+                <div className="vl-loom-faders">
+                  <GlowSlider
+                    label={<>Amplitude (A · आयाम)</>}
+                    value={waveAmp}
+                    min={10}
+                    max={65}
+                    step={1}
+                    onChange={setWaveAmp}
+                    valueText={`${Math.round(waveAmp)} px`}
+                    color="#fb7185"
+                    ariaLabel="Wave amplitude in pixels"
+                  />
+                  <GlowSlider
+                    label={<>Medium Damping (γ · अवमन्दन)</>}
+                    value={waveDamping}
+                    min={0.0}
+                    max={0.08}
+                    step={0.005}
+                    onChange={setWaveDamping}
+                    valueText={waveDamping.toFixed(3)}
+                    color="#a78bfa"
+                    ariaLabel="Damping factor"
+                  />
+                  {waveMode === 'interference' && (
+                    <GlowSlider
+                      label={<>Wavelength (λ · तरङ्ग-दैर्घ्य)</>}
+                      value={waveWavelength}
+                      min={80}
+                      max={320}
+                      step={10}
+                      onChange={setWaveWavelength}
+                      valueText={`${Math.round(waveWavelength)} px`}
+                      color="#2dd4bf"
+                      ariaLabel="Wavelength in pixels"
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Realtime Telemetry Strip */}
+            <div className="vl-readouts">
+              <span className="vl-readout">
+                Wave Velocity (v = √(T/μ)): <b>{Math.round(Math.sqrt((waveTension * 1000) / 0.0015) * 0.08)} px/s</b>
+              </span>
+              <span className="vl-readout">
+                Wavelength (λ = v/f): <b>{Math.round((Math.sqrt((waveTension * 1000) / 0.0015) * 0.08) / waveFreq)} px</b>
+              </span>
+              <span className="vl-readout">
+                Wave Energy (E ∝ f²·A²): <b>{(waveFreq ** 2 * (waveAmp / 10) ** 2).toFixed(1)} arb</b>
+              </span>
+              <span className="vl-readout" style={{ background: '#f0fdf4', borderColor: '#86efac', color: '#166534', fontWeight: 700 }}>
+                {waveMode === 'standing'
+                  ? `Harmonic Loops: ${standingHarmonic} · Nodes: ${standingHarmonic + 1}`
+                  : waveMode === 'interference'
+                  ? Math.abs(phaseDiffDeg - 180) <= 15
+                    ? 'Complete Destructive Cancellation'
+                    : phaseDiffDeg <= 15 || phaseDiffDeg >= 345
+                    ? 'Peak Constructive Reinforcement'
+                    : `Partial Interference (Phase = ${phaseDiffDeg}°)`
+                  : `Resonance Chamber · f₀ = 3.0 Hz`}
+              </span>
+            </div>
+          </div>
+
+          {/* SECTION: Pattern Challenges */}
+          <div className="vl-panel vl-tradition" style={{ marginTop: '1.5rem', background: '#ffffff', border: '1.5px solid #cbd5e1' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <div>
+                <h3 className="vl-panel-title" style={{ margin: 0 }}>Wave Pattern Challenges (तरङ्ग-लक्ष्याणि)</h3>
+                <p className="vl-small" style={{ margin: '0.25rem 0 0', color: '#64748b' }}>
+                  Solve these 4 scientific wave challenges by adjusting frequency, tension, harmonics, and phase.
+                </p>
+              </div>
+              <div style={{ display: 'flex', gap: '0.35rem' }}>
+                {WAVE_CHALLENGES.map((ch, idx) => {
+                  const isDone = challengeSuccess[idx];
+                  return (
+                    <button
+                      key={ch.id}
+                      type="button"
+                      className={`vl-chip${activeChallengeIdx === idx ? ' is-on' : ''}`}
+                      onClick={() => setActiveChallengeIdx(idx)}
+                      style={{ fontSize: '0.8rem', padding: '0.3rem 0.65rem' }}
+                    >
+                      {isDone ? '✓ ' : ''}Mission {idx + 1}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Active Challenge Card */}
+            {(() => {
+              const curCh = WAVE_CHALLENGES[activeChallengeIdx];
+              const passed = curCh.check();
+              return (
+                <div
+                  style={{
+                    background: passed ? '#f0fdf4' : '#f8fafc',
+                    border: `1.5px solid ${passed ? '#4ade80' : '#e2e8f0'}`,
+                    borderRadius: '12px',
+                    padding: '1.1rem',
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <div>
+                      <h4 style={{ margin: '0 0 0.25rem', color: '#0f172a', fontSize: '1rem' }}>{curCh.dev}</h4>
+                      <p style={{ margin: 0, color: '#334155', fontWeight: 600 }}>{curCh.goal}</p>
+                    </div>
+                    <div>
+                      {passed ? (
+                        <span
+                          style={{
+                            background: '#16a34a',
+                            color: '#ffffff',
+                            fontWeight: 800,
+                            padding: '0.35rem 0.85rem',
+                            borderRadius: '999px',
+                            fontSize: '0.85rem',
+                          }}
+                        >
+                          MISSION ACCOMPLISHED
+                        </span>
+                      ) : (
+                        <button
+                          type="button"
+                          className="vl-btn vl-btn--cyber"
+                          style={{ fontSize: '0.82rem', padding: '0.35rem 0.8rem' }}
+                          onClick={() => {
+                            if (curCh.check()) {
+                              setChallengeSuccess((prev) => ({ ...prev, [activeChallengeIdx]: true }));
+                              soundEffects.playTrasarenuChime();
+                            } else {
+                              soundEffects.playPuzzleSnap();
+                            }
+                          }}
+                        >
+                          Verify Parameters
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                  <div style={{ marginTop: '0.75rem', fontSize: '0.84rem', color: '#475569' }}>
+                    <b>Mission Guidance:</b> {curCh.hint}
+                  </div>
+                  {passed && (
+                    <div
+                      style={{
+                        marginTop: '0.75rem',
+                        padding: '0.65rem 0.85rem',
+                        background: '#dcfce7',
+                        borderRadius: '8px',
+                        fontSize: '0.84rem',
+                        color: '#14532d',
+                      }}
+                    >
+                      <b>Physics Principle:</b> {curCh.physics}
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+          </div>
+
+          {/* SECTION: Pattern Journal (Save & Compare) */}
+          <div className="vl-panel vl-tradition" style={{ marginTop: '1.5rem', background: '#ffffff', border: '1.5px solid #cbd5e1' }}>
+            <h3 className="vl-panel-title">Pattern Journal &amp; Lab Notebook (तरङ्ग-कोशः)</h3>
+            <p className="vl-small" style={{ margin: '0 0 1rem', color: '#64748b' }}>
+              Save your experimental waveforms with exact physical variables, then compare saved patterns side by side.
+            </p>
+
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
+              <input
+                type="text"
+                placeholder="Name your wave pattern (e.g., 3rd Harmonic Braid, Zero Antiphase)..."
+                value={patternTitleInput}
+                onChange={(e) => setPatternTitleInput(e.target.value)}
+                style={{
+                  flex: '1 1 280px',
+                  padding: '0.6rem 0.85rem',
+                  borderRadius: '8px',
+                  border: '1.5px solid #cbd5e1',
+                  fontSize: '0.9rem',
+                }}
+              />
+              <button
+                type="button"
+                className="vl-btn vl-btn--cyber"
+                onClick={handleSavePattern}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+              >
+                Record Pattern to Journal
+              </button>
+            </div>
+
+            {/* Saved Pattern Cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem' }}>
+              {savedPatterns.map((pat) => {
+                const isSelectedForCompare = compareIds[0] === pat.id || compareIds[1] === pat.id;
+                return (
+                  <div
+                    key={pat.id}
+                    style={{
+                      background: isSelectedForCompare ? '#eff6ff' : '#f8fafc',
+                      border: `1.5px solid ${isSelectedForCompare ? '#3b82f6' : '#e2e8f0'}`,
+                      borderRadius: '10px',
+                      padding: '0.85rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                        <h4 style={{ margin: '0 0 0.25rem', fontSize: '0.92rem', color: '#0f172a' }}>{pat.name}</h4>
+                        <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>{pat.timestamp}</span>
+                      </div>
+                      <div style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.5, margin: '0.4rem 0' }}>
+                        <div>Mode: <b>{pat.mode}</b></div>
+                        <div>f: <b>{pat.freq.toFixed(1)} Hz</b> · T: <b>{pat.tension} N</b></div>
+                        <div>Amp: <b>{pat.amplitude} px</b> · Δφ: <b>{pat.phaseDiffDeg}°</b></div>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                      <button
+                        type="button"
+                        className="vl-chip is-on"
+                        onClick={() => handleLoadPattern(pat)}
+                        style={{ fontSize: '0.75rem', padding: '0.25rem 0.55rem' }}
+                      >
+                        Load
+                      </button>
+                      <button
+                        type="button"
+                        className={`vl-chip${isSelectedForCompare ? ' is-on' : ''}`}
+                        onClick={() => {
+                          setCompareIds(([id1, id2]) => {
+                            if (id1 === pat.id) return [null, id2];
+                            if (id2 === pat.id) return [id1, null];
+                            if (!id1) return [pat.id, id2];
+                            return [id1, pat.id];
+                          });
+                        }}
+                        style={{ fontSize: '0.75rem', padding: '0.25rem 0.55rem' }}
+                      >
+                        {isSelectedForCompare ? 'Selected' : 'Compare'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleDeletePattern(pat.id)}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          color: '#ef4444',
+                          cursor: 'pointer',
+                          fontSize: '0.75rem',
+                          marginLeft: 'auto',
+                        }}
+                        title="Delete pattern"
+                      >
+                        Clear
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Side-by-side comparison modal/card when 2 patterns are selected */}
+            {compareIds[0] && compareIds[1] && (() => {
+              const p1 = savedPatterns.find((p) => p.id === compareIds[0]);
+              const p2 = savedPatterns.find((p) => p.id === compareIds[1]);
+              if (!p1 || !p2) return null;
+              return (
+                <div
+                  style={{
+                    marginTop: '1.25rem',
+                    background: '#f0f9ff',
+                    border: '2px dashed #0284c7',
+                    borderRadius: '12px',
+                    padding: '1rem',
+                  }}
+                >
+                  <h4 style={{ margin: '0 0 0.75rem', color: '#0369a1', fontSize: '0.95rem' }}>
+                    Side-by-Side Pattern Comparison: {p1.name} vs. {p2.name}
+                  </h4>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    <div style={{ background: '#ffffff', padding: '0.75rem', borderRadius: '8px' }}>
+                      <h5 style={{ margin: '0 0 0.35rem', color: '#0284c7' }}>Pattern A: {p1.name}</h5>
+                      <ul style={{ margin: 0, paddingLeft: '1.1rem', fontSize: '0.82rem', color: '#334155' }}>
+                        <li>Mode: {p1.mode} (Harmonic n={p1.harmonics})</li>
+                        <li>Frequency: {p1.freq.toFixed(1)} Hz</li>
+                        <li>Tension: {p1.tension} N</li>
+                        <li>Phase Angle: {p1.phaseDiffDeg}°</li>
+                        <li>Amplitude: {p1.amplitude} px</li>
+                      </ul>
+                    </div>
+                    <div style={{ background: '#ffffff', padding: '0.75rem', borderRadius: '8px' }}>
+                      <h5 style={{ margin: '0 0 0.35rem', color: '#0284c7' }}>Pattern B: {p2.name}</h5>
+                      <ul style={{ margin: 0, paddingLeft: '1.1rem', fontSize: '0.82rem', color: '#334155' }}>
+                        <li>Mode: {p2.mode} (Harmonic n={p2.harmonics})</li>
+                        <li>Frequency: {p2.freq.toFixed(1)} Hz</li>
+                        <li>Tension: {p2.tension} N</li>
+                        <li>Phase Angle: {p2.phaseDiffDeg}°</li>
+                        <li>Amplitude: {p2.amplitude} px</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div style={{ marginTop: '0.65rem', textAlign: 'right' }}>
+                    <button
+                      type="button"
+                      className="vl-chip"
+                      onClick={() => setCompareIds([null, null])}
+                      style={{ fontSize: '0.75rem' }}
+                    >
+                      Close Comparison
+                    </button>
+                  </div>
+                </div>
+              );
+            })()}
+          </div>
+
+          {/* SECTION: Reflection Prompt */}
+          <div className="vl-panel vl-tradition" style={{ marginTop: '1.5rem', background: '#f8fafc', border: '1.5px solid #cbd5e1' }}>
+            <h3 className="vl-panel-title">Scientific Reflection Prompt (वैज्ञानिक-विमर्शः)</h3>
+            <p className="vl-small" style={{ margin: '0 0 0.85rem', color: '#64748b' }}>
+              <em>“What changed when you altered one variable, and why?”</em> Choose a variable you experimented with:
+            </p>
+
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+              {(Object.keys(REFLECTION_QUESTIONS) as (keyof typeof REFLECTION_QUESTIONS)[]).map((vKey) => (
+                <button
+                  key={vKey}
+                  type="button"
+                  className={`vl-chip${reflectionSelectedVar === vKey ? ' is-on' : ''}`}
+                  onClick={() => {
+                    setReflectionSelectedVar(vKey);
+                    setReflectionAnswer(null);
+                    setReflectionSubmitted(false);
+                  }}
+                  style={{ fontSize: '0.82rem' }}
+                >
+                  {REFLECTION_QUESTIONS[vKey].label}
+                </button>
+              ))}
+            </div>
+
+            {(() => {
+              const curRef = REFLECTION_QUESTIONS[reflectionSelectedVar];
+              return (
+                <div style={{ background: '#ffffff', padding: '1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                  <h4 style={{ margin: '0 0 0.6rem', color: '#0f172a', fontSize: '0.94rem' }}>{curRef.q}</h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    {curRef.options.map((opt, oIdx) => (
+                      <label
+                        key={oIdx}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '0.6rem',
+                          padding: '0.55rem 0.75rem',
+                          borderRadius: '8px',
+                          border: `1px solid ${reflectionAnswer === oIdx ? '#3b82f6' : '#e2e8f0'}`,
+                          background: reflectionAnswer === oIdx ? '#eff6ff' : '#ffffff',
+                          cursor: 'pointer',
+                          fontSize: '0.86rem',
+                          color: '#334155',
+                        }}
+                      >
+                        <input
+                          type="radio"
+                          name="reflection-opt"
+                          checked={reflectionAnswer === oIdx}
+                          onChange={() => {
+                            setReflectionAnswer(oIdx);
+                            setReflectionSubmitted(true);
+                            if (opt.correct) soundEffects.playTrasarenuChime();
+                            else soundEffects.playPuzzleSnap();
+                          }}
+                        />
+                        <span>{opt.text}</span>
+                      </label>
+                    ))}
+                  </div>
+
+                  {reflectionSubmitted && reflectionAnswer !== null && (
+                    <div
+                      style={{
+                        marginTop: '0.85rem',
+                        padding: '0.75rem',
+                        borderRadius: '8px',
+                        background: curRef.options[reflectionAnswer].correct ? '#dcfce7' : '#fee2e2',
+                        color: curRef.options[reflectionAnswer].correct ? '#166534' : '#991b1b',
+                        fontSize: '0.85rem',
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {curRef.options[reflectionAnswer].note}
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+          </div>
+        </section>
+      )}
+
+      {/* MODE 3: Āruṇi’s 4 Empirical Laboratories */}
       {activeNav === 'experiments' && (
         <section aria-label="Aruni 4 Empirical Experiments">
           {/* Sub-selector for the 4 experiments */}
@@ -814,7 +1863,7 @@ const SrishtiLoom: React.FC = () => {
               className={`vl-aruni-exp-btn${activeExp === 'salt' ? ' is-active' : ''}`}
               onClick={() => setActiveExp('salt')}
             >
-              <div className="vl-aruni-exp-badge"><span>EXP-01</span> <span>🧂</span></div>
+              <div className="vl-aruni-exp-badge"><span>EXP-01</span> <span>Salt Lab</span></div>
               <div className="vl-aruni-exp-dev">लवण-जल-संप्लवः</div>
               <div className="vl-aruni-exp-title">1. Salt in Water Dissolution</div>
               <div className="vl-aruni-exp-sub">Omnipresent subtle Sat permeating every single drop</div>
@@ -825,7 +1874,7 @@ const SrishtiLoom: React.FC = () => {
               className={`vl-aruni-exp-btn${activeExp === 'banyan' ? ' is-active' : ''}`}
               onClick={() => setActiveExp('banyan')}
             >
-              <div className="vl-aruni-exp-badge"><span>EXP-02</span> <span>🌰</span></div>
+              <div className="vl-aruni-exp-badge"><span>EXP-02</span> <span>Seed Lab</span></div>
               <div className="vl-aruni-exp-dev">न्यग्रोध-बीज-अणिमा</div>
               <div className="vl-aruni-exp-title">2. Banyan Seed Cleavage</div>
               <div className="vl-aruni-exp-sub">Unmanifest potentiality commanding the colossal tree</div>
@@ -836,7 +1885,7 @@ const SrishtiLoom: React.FC = () => {
               className={`vl-aruni-exp-btn${activeExp === 'fasting' ? ' is-active' : ''}`}
               onClick={() => setActiveExp('fasting')}
             >
-              <div className="vl-aruni-exp-badge"><span>EXP-03</span> <span>🧠</span></div>
+              <div className="vl-aruni-exp-badge"><span>EXP-03</span> <span>Mind Lab</span></div>
               <div className="vl-aruni-exp-dev">पञ्चदशाह-उपवासः</div>
               <div className="vl-aruni-exp-title">3. 15-Day Fasting Neuroscience</div>
               <div className="vl-aruni-exp-sub">Proof that mind & memory are rooted in biological food</div>
@@ -847,7 +1896,7 @@ const SrishtiLoom: React.FC = () => {
               className={`vl-aruni-exp-btn${activeExp === 'substratum' ? ' is-active' : ''}`}
               onClick={() => setActiveExp('substratum')}
             >
-              <div className="vl-aruni-exp-badge"><span>EXP-04</span> <span>🏺</span></div>
+              <div className="vl-aruni-exp-badge"><span>EXP-04</span> <span>Clay Lab</span></div>
               <div className="vl-aruni-exp-dev">मृत्तिका-सुवर्ण-न्यायः</div>
               <div className="vl-aruni-exp-title">4. Substratum & Modification</div>
               <div className="vl-aruni-exp-sub">Clay & gold invariant; names & forms are linguistic labels</div>
@@ -860,7 +1909,7 @@ const SrishtiLoom: React.FC = () => {
               <div className="vl-aruni-stage-header">
                 <div className="vl-aruni-stage-hgroup">
                   <h3>
-                    <span>🧂</span>
+                    <span>EXP-01</span>
                     <span>Experiment 1: The Salt in Water Permeation Test (लवण-जल-संप्लवः)</span>
                   </h3>
                   <p>
@@ -874,7 +1923,7 @@ const SrishtiLoom: React.FC = () => {
                   onClick={() => playPronunciation('लवणमेतदुदकेऽवधायाथ मा प्रातरुपसीदथाः')}
                   title="Hear the Sanskrit Sūtra"
                 >
-                  🔊 Chāndogya 6.13.1
+                  Chāndogya 6.13.1
                 </button>
               </div>
 
@@ -920,7 +1969,7 @@ const SrishtiLoom: React.FC = () => {
                       disabled={saltStatus === 'dissolved'}
                       onClick={handleDissolveSalt}
                     >
-                      💧 Dissolve Overnight (रात्रौ विलीनम्)
+                      Dissolve Overnight (रात्रौ विलीनम्)
                     </button>
                     <button
                       type="button"
@@ -928,7 +1977,7 @@ const SrishtiLoom: React.FC = () => {
                       disabled={saltStatus !== 'dissolved'}
                       onClick={handleEvaporate}
                     >
-                      🔥 Evaporate Water (बाष्पीभवनम्)
+                      Evaporate Water (बाष्पीभवनम्)
                     </button>
                     <button
                       type="button"
@@ -953,7 +2002,7 @@ const SrishtiLoom: React.FC = () => {
                       disabled={saltStatus !== 'dissolved'}
                       onClick={() => handleTasteDepth('surface')}
                     >
-                      <span>🥄 1. Sip from Surface (उपरीष्टात् / Upari)</span>
+                      <span>1. Sip from Surface (उपरीष्टात् / Upari)</span>
                       <span className="vl-sample-taste-result">
                         {tastedDepths.surface ? '✓ Lavaṇam eva! (Salty)' : 'Take a sip →'}
                       </span>
@@ -965,7 +2014,7 @@ const SrishtiLoom: React.FC = () => {
                       disabled={saltStatus !== 'dissolved'}
                       onClick={() => handleTasteDepth('middle')}
                     >
-                      <span>🥄 2. Sip from Middle (मध्यात् / Madhye)</span>
+                      <span>2. Sip from Middle (मध्यात् / Madhye)</span>
                       <span className="vl-sample-taste-result">
                         {tastedDepths.middle ? '✓ Lavaṇam eva! (Salty)' : 'Take a sip →'}
                       </span>
@@ -977,7 +2026,7 @@ const SrishtiLoom: React.FC = () => {
                       disabled={saltStatus !== 'dissolved'}
                       onClick={() => handleTasteDepth('bottom')}
                     >
-                      <span>🥄 3. Sip from Bottom (अधस्तात् / Adhastāt)</span>
+                      <span>3. Sip from Bottom (अधस्तात् / Adhastāt)</span>
                       <span className="vl-sample-taste-result">
                         {tastedDepths.bottom ? '✓ Lavaṇam eva! (Salty)' : 'Take a sip →'}
                       </span>
@@ -990,7 +2039,7 @@ const SrishtiLoom: React.FC = () => {
               {tastedDepths.surface && tastedDepths.middle && tastedDepths.bottom && (
                 <div className="vl-recite-output" style={{ borderLeftColor: '#4ade80' }}>
                   <h4 style={{ margin: '0 0 0.4rem', color: '#4ade80' }}>
-                    ✨ Empirical Proof of Omnipresent Being (Sat-Vyāpakatā):
+                    Empirical Proof of Omnipresent Being (Sat-Vyāpakatā):
                   </h4>
                   <p style={{ margin: 0, fontStyle: 'italic' }}>
                     “तद्ध तथा न विभावयसे, अत्रैव किल तद्भवति! स य एषोऽणिमैतदात्म्यमिदं सर्वं तत्सत्यं स आत्मा तत्त्वमसि श्वेतकेतो!”<br />
@@ -1009,7 +2058,7 @@ const SrishtiLoom: React.FC = () => {
               <div className="vl-aruni-stage-header">
                 <div className="vl-aruni-stage-hgroup">
                   <h3>
-                    <span>🌰</span>
+                    <span>EXP-02</span>
                     <span>Experiment 2: The Nyagrodha (Banyan) Seed Cleavage (न्यग्रोध-बीज-भेदः)</span>
                   </h3>
                   <p>
@@ -1023,7 +2072,7 @@ const SrishtiLoom: React.FC = () => {
                   onClick={() => playPronunciation('न्यग्रोधफलमत आहरोतीदं भगव इति भिन्द्धीति भिन्नं भगव इति')}
                   title="Hear the Sanskrit Sūtra"
                 >
-                  🔊 Chāndogya 6.12.1
+                  Chāndogya 6.12.1
                 </button>
               </div>
 
@@ -1032,7 +2081,7 @@ const SrishtiLoom: React.FC = () => {
                 <div className="vl-seed-lens-viewport">
                   {banyanStep === 0 && (
                     <div style={{ textAlign: 'center' }}>
-                      <div style={{ fontSize: '4.5rem', marginBottom: '0.5rem' }}>🫐</div>
+                      <div style={{ fontSize: '1.2rem', fontWeight: 700, color: '#a78bfa', padding: '1rem' }}>Nyagrodha-phalam (Ficus Fig)</div>
                       <div style={{ color: '#facc15', fontWeight: 800, fontSize: '0.92rem' }}>Nyagrodha Fruit (न्यग्रोध-फलम्)</div>
                       <div style={{ color: '#94a3b8', fontSize: '0.78rem' }}>Intact ripe banyan fig from the forest</div>
                     </div>
@@ -1040,7 +2089,7 @@ const SrishtiLoom: React.FC = () => {
 
                   {banyanStep === 1 && (
                     <div style={{ textAlign: 'center' }}>
-                      <div style={{ fontSize: '3rem', letterSpacing: '8px' }}>🌰 🌰 🌰</div>
+                      <div style={{ fontSize: '1rem', fontWeight: 700, color: '#fbbf24', padding: '0.5rem' }}>Sūkṣma-Bījāni (Microscopic Seeds)</div>
                       <div style={{ color: '#facc15', fontWeight: 800, fontSize: '0.92rem', marginTop: '0.5rem' }}>
                         Tiny Seeds (अण्व्यः धानाः)
                       </div>
@@ -1050,7 +2099,7 @@ const SrishtiLoom: React.FC = () => {
 
                   {banyanStep === 2 && (
                     <div style={{ textAlign: 'center' }}>
-                      <div style={{ fontSize: '4rem', filter: 'drop-shadow(0 0 10px #f59e0b)' }}>🌰</div>
+                      <div style={{ fontSize: '1rem', fontWeight: 700, color: '#34d399', padding: '0.5rem' }}>Eka-Bījam (Single Seed Split)</div>
                       <div style={{ color: '#fde047', fontWeight: 800, fontSize: '0.92rem' }}>Single Mustard-Sized Seed (एका धाना)</div>
                       <div style={{ color: '#94a3b8', fontSize: '0.78rem' }}>Under 500× optical magnification</div>
                     </div>
@@ -1133,7 +2182,7 @@ const SrishtiLoom: React.FC = () => {
                       onClick={() => handleBanyanStep(4)}
                     >
                       <span>4. Illuminate Subtle Potentiality (अणिमा)</span>
-                      <span style={{ color: '#fde047', fontWeight: 800 }}>Sprout Mighty Banyan 🌿</span>
+                      <span style={{ color: '#fde047', fontWeight: 800 }}>Sprout Mighty Banyan</span>
                     </button>
                   </div>
                 </div>
@@ -1142,7 +2191,7 @@ const SrishtiLoom: React.FC = () => {
               {banyanStep === 4 && (
                 <div className="vl-recite-output" style={{ borderLeftColor: '#facc15' }}>
                   <h4 style={{ margin: '0 0 0.4rem', color: '#facc15' }}>
-                    🌳 The Principle of Unmanifest Potential (Aṇiman):
+                    The Principle of Unmanifest Potential (Aṇiman):
                   </h4>
                   <p style={{ margin: 0, fontStyle: 'italic' }}>
                     “यं वै सोम्यैतमणिमानं न निभालयस एतस्य वै सोम्यैषोऽणिम्न एवं महान्न्यग्रोधस्तिष्ठति श्रद्धत्स्व सोम्येति!”<br />
@@ -1161,7 +2210,7 @@ const SrishtiLoom: React.FC = () => {
               <div className="vl-aruni-stage-header">
                 <div className="vl-aruni-stage-hgroup">
                   <h3>
-                    <span>🧠</span>
+                    <span>EXP-03</span>
                     <span>Experiment 3: The 15-Day Fasting Neuroscience Lab (पञ्चदशाह-उपवासः)</span>
                   </h3>
                   <p>
@@ -1176,7 +2225,7 @@ const SrishtiLoom: React.FC = () => {
                   onClick={() => playPronunciation('षोडशकलः सोम्य पुरुषः पञ्चदशाहानि माशीः काममपः पिब')}
                   title="Hear the Sanskrit Sūtra"
                 >
-                  🔊 Chāndogya 6.7.1
+                  Chāndogya 6.7.1
                 </button>
               </div>
 
@@ -1230,11 +2279,11 @@ const SrishtiLoom: React.FC = () => {
                   {/* Interactive Fasting Actions */}
                   <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap', marginTop: '1.25rem' }}>
                     <button type="button" className="vl-btn vl-btn--gold" onClick={handleFastRecite}>
-                      📜 Test Vedic Recall (स्मरण-परीक्षा)
+                      Test Vedic Recall (स्मरण-परीक्षा)
                     </button>
                     {fastingDays >= 12 && !hasEatenDay16 && (
                       <button type="button" className="vl-btn vl-btn--cyber" onClick={handleBreakFast}>
-                        🍚 Day 16: Feed Śvetaketu Rice & Ghee (अन्न-प्राशनम्)
+                        Day 16: Feed Śvetaketu Rice & Ghee (अन्न-प्राशनम्)
                       </button>
                     )}
                     {hasEatenDay16 && (
@@ -1292,7 +2341,7 @@ const SrishtiLoom: React.FC = () => {
               <div className="vl-aruni-stage-header">
                 <div className="vl-aruni-stage-hgroup">
                   <h3>
-                    <span>🏺</span>
+                    <span>EXP-04</span>
                     <span>Experiment 4: Principle of Substratum (मृत्तिका-सुवर्ण-लोह-न्यायः)</span>
                   </h3>
                   <p>
@@ -1306,7 +2355,7 @@ const SrishtiLoom: React.FC = () => {
                   onClick={() => playPronunciation('यथा सोम्यैकेन मृत्पिण्डेन सर्वं मृन्मयं विज्ञातं स्याद्वाचारम्भणं विकारो नामधेयं मृत्तिकेत्येव सत्यम्')}
                   title="Hear the Sanskrit Sūtra"
                 >
-                  🔊 Chāndogya 6.1.4
+                  Chāndogya 6.1.4
                 </button>
               </div>
 
@@ -1314,20 +2363,20 @@ const SrishtiLoom: React.FC = () => {
                 {/* Visual Morph Stage */}
                 <div className="vl-forge-display">
                   <div className="vl-morph-shape-icon">
-                    {selectedSubstance === 'clay' && activeShape === 'pot' && '🏺'}
-                    {selectedSubstance === 'clay' && activeShape === 'plate' && '🥣'}
-                    {selectedSubstance === 'clay' && activeShape === 'pitcher' && '🫖'}
-                    {selectedSubstance === 'clay' && activeShape === 'lump' && '🧱'}
+                    {selectedSubstance === 'clay' && activeShape === 'pot' && 'Ghaṭa (Pot)'}
+                    {selectedSubstance === 'clay' && activeShape === 'plate' && 'Śarāva (Dish)'}
+                    {selectedSubstance === 'clay' && activeShape === 'pitcher' && 'Udāñcana (Pitcher)'}
+                    {selectedSubstance === 'clay' && activeShape === 'lump' && 'Piṇḍa (Lump)'}
 
-                    {selectedSubstance === 'gold' && activeShape === 'pot' && '💍'}
-                    {selectedSubstance === 'gold' && activeShape === 'plate' && '👑'}
-                    {selectedSubstance === 'gold' && activeShape === 'pitcher' && '🪙'}
-                    {selectedSubstance === 'gold' && activeShape === 'lump' && '🧈'}
+                    {selectedSubstance === 'gold' && activeShape === 'pot' && 'Kuṇḍala (Ring)'}
+                    {selectedSubstance === 'gold' && activeShape === 'plate' && 'Mukuṭa (Crown)'}
+                    {selectedSubstance === 'gold' && activeShape === 'pitcher' && 'Niṣka (Coin)'}
+                    {selectedSubstance === 'gold' && activeShape === 'lump' && 'Maṇi (Bar)'}
 
-                    {selectedSubstance === 'iron' && activeShape === 'pot' && '✂️'}
-                    {selectedSubstance === 'iron' && activeShape === 'plate' && '🗡️'}
-                    {selectedSubstance === 'iron' && activeShape === 'pitcher' && '⚓'}
-                    {selectedSubstance === 'iron' && activeShape === 'lump' && '🔩'}
+                    {selectedSubstance === 'iron' && activeShape === 'pot' && 'Kṛntana (Cutter)'}
+                    {selectedSubstance === 'iron' && activeShape === 'plate' && 'Khaḍga (Blade)'}
+                    {selectedSubstance === 'iron' && activeShape === 'pitcher' && 'Laṅgara (Anchor)'}
+                    {selectedSubstance === 'iron' && activeShape === 'lump' && 'Kīla (Bolt)'}
                   </div>
                   <div style={{ color: '#facc15', fontWeight: 800, fontSize: '1.05rem', marginTop: '0.5rem' }}>
                     {selectedSubstance === 'clay' && activeShape === 'pot' && 'Ghaṭa (घटः / Water Pot)'}
@@ -1360,21 +2409,21 @@ const SrishtiLoom: React.FC = () => {
                         className={`vl-chip${selectedSubstance === 'clay' ? ' is-on' : ''}`}
                         onClick={() => { setSelectedSubstance('clay'); soundEffects.playPuzzleSnap(); }}
                       >
-                        🪨 Mṛttikā (Clay / 6.1.4)
+                        Mṛttikā (Clay / 6.1.4)
                       </button>
                       <button
                         type="button"
                         className={`vl-chip${selectedSubstance === 'gold' ? ' is-on' : ''}`}
                         onClick={() => { setSelectedSubstance('gold'); soundEffects.playPuzzleSnap(); }}
                       >
-                        ✨ Suvarṇa / Lohamaṇi (Gold / 6.1.5)
+                        Suvarṇa / Lohamaṇi (Gold / 6.1.5)
                       </button>
                       <button
                         type="button"
                         className={`vl-chip${selectedSubstance === 'iron' ? ' is-on' : ''}`}
                         onClick={() => { setSelectedSubstance('iron'); soundEffects.playPuzzleSnap(); }}
                       >
-                        ⚒️ Kārṣṇāyasa (Iron / 6.1.6)
+                        Kārṣṇāyasa (Iron / 6.1.6)
                       </button>
                     </div>
                   </div>
@@ -1438,7 +2487,7 @@ const SrishtiLoom: React.FC = () => {
           {/* Narrative Dialogue Card */}
           <div className="vl-dialogue-card">
             <h3 style={{ margin: '0 0 1rem', color: '#f8fafc', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-              <span>📜</span> The Awakening of Śvetaketu: From Conceit to Enlightenment
+              The Awakening of Śvetaketu: From Conceit to Enlightenment
             </h3>
 
             <div className="vl-speaker-dialogue is-uddalaka">
@@ -1473,7 +2522,7 @@ const SrishtiLoom: React.FC = () => {
           {/* The 9 Refrains of Tat Tvam Asi */}
           <div className="vl-panel vl-tradition">
             <h3 className="vl-panel-title">
-              <span>🪷</span> The 9 Empirical Analogies of Tat Tvam Asi (Chāndogya Chapter 6)
+              The 9 Empirical Analogies of Tat Tvam Asi (Chāndogya Chapter 6)
             </h3>
             <p style={{ color: '#94a3b8', fontSize: '0.88rem', margin: '0 0 1rem' }}>
               Nine times Śvetaketu asked for further demonstration, and nine times Uddālaka provided concrete, real-world analogies:
@@ -1503,7 +2552,7 @@ const SrishtiLoom: React.FC = () => {
           {/* Comparative Philosophy: Aruni vs Pre-Socratics */}
           <div className="vl-panel vl-modern">
             <h3 className="vl-panel-title">
-              <span>🌐</span> Historical Timeline: Uddālaka Āruṇi vs The Pre-Socratics
+              Historical Timeline: Uddālaka Āruṇi vs The Pre-Socratics
             </h3>
             <p style={{ color: '#94a3b8', fontSize: '0.86rem', margin: '0 0 1rem' }}>
               Uddālaka Āruṇi preceded the earliest Greek natural philosophers by centuries, introducing empirical observation
@@ -1563,7 +2612,7 @@ const SrishtiLoom: React.FC = () => {
           <div className="vl-grid-2">
             <ChallengeList items={CHALLENGES} title="Āruṇi’s Empirical Physics & Metaphysics Challenges" />
             <div className="vl-panel vl-tradition">
-              <h3 className="vl-panel-title">📜 Upaniṣadic Sūtra Reference Bank</h3>
+              <h3 className="vl-panel-title">Upaniṣadic Sūtra Reference Bank</h3>
               {QUOTES.map((q) => (
                 <figure key={q.ref} className="vl-quote" style={{ marginBottom: '1rem' }}>
                   <blockquote lang="sa">{q.dev}</blockquote>
@@ -1582,7 +2631,7 @@ const SrishtiLoom: React.FC = () => {
       <div className="vl-grid-2" style={{ marginTop: '2rem' }}>
         <TermPanel terms={TERMS} title="Sanskrit Scientific Terms in Āruṇi’s Discourse" />
         <section className="vl-panel vl-modern" aria-label="Modern scientific reflections">
-          <h3 className="vl-panel-title">🔬 Modern Scientific Parallels & Epistemology</h3>
+          <h3 className="vl-panel-title">Modern Scientific Parallels & Epistemology</h3>
           <ul className="vl-list">
             <li>
               <b>Conservation of Mass-Energy (Lavoisier & Einstein):</b> Āruṇi’s rejection of creation from nothing (*Katham asataḥ saj jāyeta*)

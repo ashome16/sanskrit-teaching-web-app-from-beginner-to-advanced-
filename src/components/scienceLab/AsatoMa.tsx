@@ -4,13 +4,14 @@ import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm } from './common';
 import { DialKnob, HudFrame, LedButton } from './controls';
 import { isSmallScreen, prefersReducedMotion } from './motion';
 import MatrixOverwatch from './MatrixOverwatch';
+import { HeatTransferSuite } from './HeatTransferSuite';
 import { playPronunciation } from '../../utils/pronunciation';
 import { soundEffects } from '../../utils/soundEffects';
 
 type LangMode = 'both' | 'sanskrit' | 'modern';
-type SubstanceId = 'gold' | 'wood' | 'water' | 'ice';
+export type SubstanceId = 'water' | 'ice' | 'steam' | 'metal' | 'wax' | 'non_newtonian' | 'gold' | 'wood';
 type Phase = 'solid' | 'liquid' | 'gas';
-type El = 'Au' | 'C' | 'H' | 'O' | 'W'; // W = one whole H₂O molecule, drawn as O + 2 H
+type El = 'Au' | 'C' | 'H' | 'O' | 'W' | 'Fe' | 'Wax' | 'Colloid';
 type LevelNo = 1 | 2 | 3;
 interface Levels {
   l1: boolean;
@@ -50,10 +51,14 @@ interface Substance {
 }
 
 const SUBSTANCES: Record<SubstanceId, Substance> = {
+  water: { id: 'water', name: 'Water', dev: 'जल', iast: 'jala', formula: 'H₂O (liquid)', massU: 18.015, massNote: 'one H₂O molecule, 18.015 u', melt: 273.15, boil: 373.15, startT: 300, color: '#38bdf8', sp: 30, thetaE: 180 },
+  ice: { id: 'ice', name: 'Ice', dev: 'हिम', iast: 'hima', formula: 'H₂O (solid)', massU: 18.015, massNote: 'one H₂O molecule, 18.015 u', melt: 273.15, boil: 373.15, startT: 250, color: '#bae6fd', sp: 30, thetaE: 180 },
+  steam: { id: 'steam', name: 'Steam', dev: 'बाष्प', iast: 'bāṣpa', formula: 'H₂O (gas)', massU: 18.015, massNote: 'one H₂O vapor molecule', melt: 273.15, boil: 373.15, startT: 410, color: '#e0f2fe', sp: 45, thetaE: 180 },
+  metal: { id: 'metal', name: 'Iron Metal', dev: 'अयस् (लोह)', iast: 'ayas (loha)', formula: 'Fe', massU: 55.845, massNote: 'one Fe atom, 55.85 u', melt: 1811, boil: 3134, startT: 300, color: '#94a3b8', sp: 22, thetaE: 470 },
+  wax: { id: 'wax', name: 'Paraffin Wax', dev: 'सिक्थक (मधूच्छिष्ट)', iast: 'sikthaka', formula: 'C₂₅H₅₂', massU: 352.7, massNote: 'long hydrocarbon chain', melt: 325.15, boil: 643.15, startT: 295, color: '#fef08a', sp: 32, thetaE: 90 },
+  non_newtonian: { id: 'non_newtonian', name: 'Shear-Thickening Fluid', dev: 'अ-न्यूटनीय द्रव', iast: 'a-nyūtanīya drava', formula: 'Starch/Water colloid', massU: 162.14, massNote: 'colloidal cluster suspension', melt: 273.15, boil: 373.15, startT: 298, color: '#fde68a', sp: 34, thetaE: 100 },
   gold: { id: 'gold', name: 'Gold', dev: 'सुवर्ण', iast: 'suvarṇa', formula: 'Au', massU: 196.97, massNote: 'one Au atom, 196.97 u', melt: 1337.33, boil: 3243, startT: 300, color: '#eab308', sp: 24, thetaE: 125 },
   wood: { id: 'wood', name: 'Wood', dev: 'काष्ठ', iast: 'kāṣṭha', formula: 'mostly cellulose (C₆H₁₀O₅)ₙ', massU: 12.011, massNote: 'one C atom, 12.011 u, for comparison', melt: null, boil: null, startT: 300, color: '#b45309', sp: 30, thetaE: 0 },
-  water: { id: 'water', name: 'Water', dev: 'जल', iast: 'jala', formula: 'H₂O', massU: 18.015, massNote: 'one H₂O molecule, 18.015 u', melt: 273.15, boil: 373.15, startT: 300, color: '#38bdf8', sp: 30, thetaE: 180 },
-  ice: { id: 'ice', name: 'Ice', dev: 'हिम', iast: 'hima', formula: 'H₂O', massU: 18.015, massNote: 'one H₂O molecule, 18.015 u', melt: 273.15, boil: 373.15, startT: 250, color: '#bae6fd', sp: 30, thetaE: 180 },
 };
 
 const phaseOf = (s: Substance, T: number): Phase => {
@@ -130,6 +135,44 @@ const gauss = () => {
 const mk = (el: El, x: number, y: number): Atom => ({ el, x, y, vx: 0, vy: 0, hx: x, hy: y, ang: Math.random() * 6.28, mol: -1, tx: x, ty: y, hist: [] });
 
 const buildAtoms = (sid: SubstanceId, o2: number): Atom[] => {
+  if (sid === 'metal') {
+    const out: Atom[] = [];
+    const cols = 14;
+    const rows = 8;
+    const sp = SUBSTANCES.metal.sp;
+    const x0 = W / 2 - ((cols - 1) * sp) / 2;
+    const y0 = BOX.y1 - 18 - (rows - 1) * sp;
+    for (let r = 0; r < rows; r += 1) for (let c = 0; c < cols; c += 1) out.push(mk('Fe', x0 + c * sp + (r % 2 ? sp / 2 : 0), y0 + r * sp));
+    return out;
+  }
+  if (sid === 'steam') {
+    const out: Atom[] = [];
+    for (let i = 0; i < 42; i++) {
+      const a = mk('W', BOX.x0 + 20 + Math.random() * (BOX.x1 - BOX.x0 - 40), BOX.y0 + 20 + Math.random() * (BOX.y1 - BOX.y0 - 40));
+      a.vx = (Math.random() - 0.5) * 400;
+      a.vy = (Math.random() - 0.5) * 400;
+      out.push(a);
+    }
+    return out;
+  }
+  if (sid === 'wax') {
+    const out: Atom[] = [];
+    const rows = 6;
+    const cols = 10;
+    const sp = SUBSTANCES.wax.sp;
+    const x0 = W / 2 - ((cols - 1) * sp) / 2;
+    const y0 = BOX.y1 - 22 - (rows - 1) * sp * 0.85;
+    for (let r = 0; r < rows; r += 1) for (let c = 0; c < cols; c += 1) out.push(mk('Wax', x0 + c * sp + (r % 2 ? sp / 3 : 0), y0 + r * sp * 0.85));
+    return out;
+  }
+  if (sid === 'non_newtonian') {
+    const out: Atom[] = [];
+    const count = 50;
+    for (let i = 0; i < count; i++) {
+      out.push(mk('Colloid', W / 2 + (Math.random() - 0.5) * 260, BOX.y1 - 25 - Math.random() * 110));
+    }
+    return out;
+  }
   if (sid === 'gold') {
     const out: Atom[] = [];
     const cols = 14;
@@ -177,7 +220,20 @@ const buildAtoms = (sid: SubstanceId, o2: number): Atom[] => {
 };
 
 /** How many atoms each set-up starts with (the simulation never adds or removes any). */
-const startCount = (sid: SubstanceId, o2: number) => (sid === 'gold' ? 14 * 8 : sid === 'wood' ? 21 + 2 * o2 : 11 * 6 * 3);
+const startCount = (sid: SubstanceId, o2: number) =>
+  sid === 'gold'
+    ? 14 * 8
+    : sid === 'metal'
+    ? 14 * 8
+    : sid === 'steam'
+    ? 42 * 3
+    : sid === 'wax'
+    ? 60
+    : sid === 'non_newtonian'
+    ? 50
+    : sid === 'wood'
+    ? 21 + 2 * o2
+    : 11 * 6 * 3;
 const atomCount = (list: Atom[]) => list.reduce((n, a) => n + (a.el === 'W' ? 3 : 1), 0);
 
 const ATOM_STYLE: Record<El, { r: number; fill: string; stroke: string }> = {
@@ -186,6 +242,9 @@ const ATOM_STYLE: Record<El, { r: number; fill: string; stroke: string }> = {
   H: { r: 5, fill: '#f8fafc', stroke: '#94a3b8' },
   O: { r: 7.5, fill: '#ef4444', stroke: '#fca5a5' },
   W: { r: 7, fill: '#ef4444', stroke: '#fca5a5' },
+  Fe: { r: 8.5, fill: '#94a3b8', stroke: '#e2e8f0' },
+  Wax: { r: 6.5, fill: '#fde047', stroke: '#fef9c3' },
+  Colloid: { r: 9.5, fill: '#fbbf24', stroke: '#fef08a' },
 };
 
 /** Trail colour by on-screen speed: slow = blue, fast = red. */
@@ -275,7 +334,7 @@ const AsatoMa: React.FC = () => {
       }
     }
     if (best) {
-      const massMap: Record<El, number> = { Au: 196.97, C: 12.011, H: 1.008, O: 15.999, W: 18.015 };
+      const massMap: Record<El, number> = { Au: 196.97, C: 12.011, H: 1.008, O: 15.999, W: 18.015, Fe: 55.845, Wax: 352.7, Colloid: 162.14 };
       const mU = massMap[best.el];
       const sp = Math.hypot(best.vx, best.vy) * 2.8;
       const massKg = mU * AMU;
@@ -1446,6 +1505,8 @@ const AsatoMa: React.FC = () => {
           </div>
         )}
       </div>
+
+      <HeatTransferSuite />
 
       <div className="vl-note">
         <strong>How much of an atom is empty space?</strong> Almost all of it: the nucleus is tiny compared with the atom.

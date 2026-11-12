@@ -10,7 +10,19 @@ export interface VedicKnowledgeSystemShowcaseProps {
   onOpenReader?: () => void;
   onOpenCourse?: () => void;
   className?: string;
+  imageSrc?: string;
+  imageWebpSrc?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  artBadge?: string;
 }
+
+const DEFAULT_IKS_IMAGE_SRC = '/images/vedic-indian-knowledge-system.jpg';
+const DEFAULT_IKS_IMAGE_ALT =
+  'Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Seven Branches of Ancient Indian Sciences: Philosophy, Mathematics, Cosmology, History, Ayurveda, Architecture, and Grammar';
+const DEFAULT_IKS_IMAGE_WIDTH = 1024;
+const DEFAULT_IKS_IMAGE_HEIGHT = 571;
 
 interface IksPillar {
   id: string;
@@ -32,7 +44,7 @@ interface IksPillar {
 const IKS_PILLARS: IksPillar[] = [
   {
     id: 'darshana',
-    icon: '🧘',
+    icon: 'I',
     accent: '#c084fc',
     glow: 'rgba(192, 132, 252, 0.35)',
     bg: 'rgba(147, 51, 234, 0.15)',
@@ -43,12 +55,12 @@ const IKS_PILLARS: IksPillar[] = [
     subtitle: 'Nyāya, Vaiśeṣika, Sāṅkhya, Yoga, Mīmāṁsā & Vedānta',
     desc: 'The 6 orthodox systems investigating valid knowledge (pramāṇa), the nature of consciousness, atomic reality, and cognitive reasoning.',
     treatises: 'Nyāya Sūtras · Vaiśeṣika Sūtras · Sāṅkhya Kārikā · Yoga Sūtras',
-    actionLabel: 'Explore 6 Darśanas ➔',
+    actionLabel: 'Explore 6 Darśanas ->',
     action: (props) => props.onOpenPhilosophy?.(),
   },
   {
     id: 'ganita',
-    icon: '📐',
+    icon: 'II',
     accent: '#fb923c',
     glow: 'rgba(251, 146, 60, 0.35)',
     bg: 'rgba(234, 88, 12, 0.15)',
@@ -59,12 +71,12 @@ const IKS_PILLARS: IksPillar[] = [
     subtitle: 'Śulba Sūtras, 16 Vedic Sūtras & Piṅgala Binary Combinatorics',
     desc: 'Ancient geometric proofs (Baudhāyana theorem), lightning mental arithmetic algorithms, and the world’s first binary metric system.',
     treatises: 'Śulba Sūtras · Āryabhaṭīya · Brāhmasphuṭasiddhānta · Līlāvatī',
-    actionLabel: 'Launch Vedic Gaṇitam ➔',
+    actionLabel: 'Launch Vedic Gaṇitam ->',
     action: (props) => props.onOpenVedicMaths?.(),
   },
   {
     id: 'jyotisha',
-    icon: '🌌',
+    icon: 'III',
     accent: '#22d3ee',
     glow: 'rgba(34, 211, 238, 0.35)',
     bg: 'rgba(8, 145, 178, 0.15)',
@@ -75,12 +87,12 @@ const IKS_PILLARS: IksPillar[] = [
     subtitle: 'Planetary Orbits, Earth Umbra & Heliocentric Geometry',
     desc: 'Diurnal earth rotation, astronomical calculation of lunar/solar eclipses, planetary orbits, and sidereal timekeeping in Sanskrit.',
     treatises: 'Sūrya Siddhānta · Āryabhaṭīya · Pañcasiddhāntikā',
-    actionLabel: 'Launch Jyotiṣa Orbit ➔',
+    actionLabel: 'Launch Jyotiṣa Orbit ->',
     action: (props) => props.onOpenScienceLab?.('jyotisha'),
   },
   {
     id: 'itihasa',
-    icon: '📜',
+    icon: 'IV',
     accent: '#facc15',
     glow: 'rgba(250, 204, 21, 0.35)',
     bg: 'rgba(202, 138, 4, 0.15)',
@@ -91,12 +103,12 @@ const IKS_PILLARS: IksPillar[] = [
     subtitle: 'Civilizational Memory, Dharma & Kauṭilya Arthaśāstra',
     desc: 'Epic narratives of human decision-making, ethical leadership, and Kauṭilya’s comprehensive treatise on governance and diplomacy.',
     treatises: 'Mahābhārata · Rāmāyaṇa · Kauṭilīya Arthaśāstra · Purāṇas',
-    actionLabel: 'Statecraft Simulation ➔',
+    actionLabel: 'Statecraft Simulation ->',
     action: (props) => props.onOpenScienceLab?.('kautilya'),
   },
   {
     id: 'ayurveda',
-    icon: '🌿',
+    icon: 'V',
     accent: '#34d399',
     glow: 'rgba(52, 211, 153, 0.35)',
     bg: 'rgba(5, 150, 105, 0.15)',
@@ -107,12 +119,12 @@ const IKS_PILLARS: IksPillar[] = [
     subtitle: 'Tridoṣa Equilibrium, Surgery & Vṛkṣāyurveda Botany',
     desc: 'Biological homeostasis of Vāta-Pitta-Kapha, Suśruta’s surgical tools, pulse diagnosis, and Parāśara’s botanical taxonomy.',
     treatises: 'Caraka Saṃhitā · Suśruta Saṃhitā · Vṛkṣāyurveda',
-    actionLabel: 'Prakṛti Balance Game ➔',
+    actionLabel: 'Prakṛti Balance Game ->',
     action: (props) => props.onOpenScienceLab?.('prakriti'),
   },
   {
     id: 'vastu',
-    icon: '🏛️',
+    icon: 'VI',
     accent: '#38bdf8',
     glow: 'rgba(56, 189, 248, 0.35)',
     bg: 'rgba(2, 132, 199, 0.15)',
@@ -123,12 +135,12 @@ const IKS_PILLARS: IksPillar[] = [
     subtitle: 'Temple Engineering, Sanctum Acoustics & Seismic Joinery',
     desc: 'Vāstu Puruṣa Maṇḍala spatial harmonics, interlocking stone joins resisting seismic shock, and cardinal solar alignment.',
     treatises: 'Mānasāra · Mayamata · Samarāṅgaṇa Sūtradhāra',
-    actionLabel: 'Temple Engineering Lab ➔',
+    actionLabel: 'Temple Engineering Lab ->',
     action: (props) => props.onOpenScienceLab?.('temple-engineering'),
   },
   {
     id: 'vyakarana',
-    icon: '🗣️',
+    icon: 'VII',
     accent: '#f43f5e',
     glow: 'rgba(244, 63, 94, 0.35)',
     bg: 'rgba(225, 29, 72, 0.15)',
@@ -139,14 +151,36 @@ const IKS_PILLARS: IksPillar[] = [
     subtitle: 'Pāṇini Aṣṭādhyāyī, Dhātupāṭha & Acoustic Phonetics',
     desc: 'The world’s first formal algorithmic grammar system: 4,000 recursive sūtras, 2,000+ verbal roots, context-free parsing, and vocal tract acoustics.',
     treatises: 'Aṣṭādhyāyī · Dhātupāṭha · Mahābhāṣya · Vākyapadīya',
-    actionLabel: 'Pāṇinian Studio ➔',
+    actionLabel: 'Pāṇinian Studio ->',
     action: (props) => props.onOpenGrammar?.(),
   },
 ];
 
 export const VedicKnowledgeSystemShowcase: React.FC<VedicKnowledgeSystemShowcaseProps> = (props) => {
-  const { className = '' } = props;
+  const {
+    className = '',
+    imageSrc = DEFAULT_IKS_IMAGE_SRC,
+    imageWebpSrc,
+    imageAlt = DEFAULT_IKS_IMAGE_ALT,
+    imageWidth = DEFAULT_IKS_IMAGE_WIDTH,
+    imageHeight = DEFAULT_IKS_IMAGE_HEIGHT,
+    artBadge,
+  } = props;
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const imageStyle = { aspectRatio: `${imageWidth} / ${imageHeight}` };
+
+  const artImage = (
+    <img
+      src={imageSrc}
+      alt={imageAlt}
+      className="vks-art-image"
+      width={imageWidth}
+      height={imageHeight}
+      style={imageStyle}
+      loading="lazy"
+      decoding="async"
+    />
+  );
 
   const handlePillarClick = (pillar: IksPillar) => {
     soundEffects.playStrokeChime();
@@ -165,13 +199,17 @@ export const VedicKnowledgeSystemShowcase: React.FC<VedicKnowledgeSystemShowcase
         {/* Section Header */}
         <div className="vks-header">
           <div className="vks-eyebrow-row">
-            <span>✨ भारतीय ज्ञान परंपरा · INDIAN KNOWLEDGE SYSTEMS (IKS)</span>
+            <span>भारतीय ज्ञान परंपरा · INDIAN KNOWLEDGE SYSTEMS (IKS)</span>
           </div>
 
           <h2 id="vks-heading" className="vks-title">
             Vedic Indian Knowledge System
             <span className="vks-title-sa" lang="sa">भारतीय ज्ञान परंपरा · सप्त-विज्ञानानि</span>
           </h2>
+
+          <div className="vks-taglines" style={{ marginTop: '0.65rem', marginBottom: '0.5rem', color: '#fef08a', fontSize: '0.94rem', fontWeight: 600, lineHeight: 1.5 }}>
+            <strong>Observe. Question. Discover.</strong> Explore nature · Understand the universe · Explore the cosmos · Understand creation.
+          </div>
 
           <p className="vks-subtitle">
             Aligned with India&apos;s National Education Policy (NEP 2020) — Where sacred sound, empirical physics,
@@ -197,22 +235,21 @@ export const VedicKnowledgeSystemShowcase: React.FC<VedicKnowledgeSystemShowcase
           aria-label="Enlarge Vedic Indian Knowledge System Infographic"
           title="Click to view full-screen high-resolution infographic"
         >
-          <img
-            src="/images/vedic-indian-knowledge-system.jpg"
-            alt="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Seven Branches of Ancient Indian Sciences: Philosophy, Mathematics, Cosmology, History, Ayurveda, Architecture, and Grammar"
-            className="vks-art-image"
-            width={1024}
-            height={571}
-            loading="lazy"
-            decoding="async"
-          />
+          {imageWebpSrc ? (
+            <picture>
+              <source srcSet={imageWebpSrc} type="image/webp" />
+              {artImage}
+            </picture>
+          ) : (
+            artImage
+          )}
 
           <div className="vks-art-overlay">
             <span className="vks-art-badge">
-              <span aria-hidden="true">🕉️</span> 7 Pillars of Vedic Sciences
+              {artBadge ?? '7 Pillars of Vedic Sciences'}
             </span>
             <span className="vks-art-zoom-hint">
-              <span aria-hidden="true">🔍</span> Tap to Enlarge HD Infographic
+              Tap to Enlarge HD Infographic
             </span>
           </div>
         </div>
@@ -299,11 +336,26 @@ export const VedicKnowledgeSystemShowcase: React.FC<VedicKnowledgeSystemShowcase
               </button>
             </div>
             <div className="vks-lightbox-content">
-              <img
-                src="/images/vedic-indian-knowledge-system.jpg"
-                alt="Vedic Indian Knowledge System Fullscreen Infographic"
-                className="vks-lightbox-img"
-              />
+              {imageWebpSrc ? (
+                <picture>
+                  <source srcSet={imageWebpSrc} type="image/webp" />
+                  <img
+                    src={imageSrc}
+                    alt={imageAlt}
+                    className="vks-lightbox-img"
+                    width={imageWidth}
+                    height={imageHeight}
+                  />
+                </picture>
+              ) : (
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="vks-lightbox-img"
+                  width={imageWidth}
+                  height={imageHeight}
+                />
+              )}
             </div>
           </div>
         </div>

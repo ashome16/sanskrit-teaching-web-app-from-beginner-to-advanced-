@@ -4,6 +4,7 @@ import { DialKnob, GlowSlider, HudFrame, LedButton } from './controls';
 import { isSmallScreen, prefersReducedMotion } from './motion';
 import { soundEffects } from '../../utils/soundEffects';
 import { playPronunciation } from '../../utils/pronunciation';
+import { SomayanaFlightDirector } from './SomayanaFlightDirector';
 
 type Phase = 'orbit' | 'descent' | 'rover';
 type Outcome = 'flying' | 'soft' | 'crash';
@@ -1210,6 +1211,8 @@ const Chandrayaan: React.FC = () => {
           )}
         </aside>
       </div>
+
+      <SomayanaFlightDirector />
 
       <div className="cy-lore-grid">
         <section className="cy-lore" aria-label="Chandrayaan-3 mission facts">

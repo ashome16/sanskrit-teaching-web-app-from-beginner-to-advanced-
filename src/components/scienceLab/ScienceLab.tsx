@@ -38,6 +38,14 @@ const LabBodhiConsole = lazy(() => import('./LabBodhiConsole'));
 import { BodhiWisdomCard } from '../BodhiWisdomCard';
 import { RISHI_QUESTS } from './rishiQuests';
 import { QuestDirectoryModal } from './QuestDirectoryModal';
+import '../../styles/iks-think-labs.css';
+import {
+  LabGamePictogram,
+  PreschoolActivityPictogram,
+  LabDomainPictogram,
+  LabPillarPictogram,
+  IksBranchPictogram,
+} from './LabPictograms';
 
 export type LabCategory = 'all' | 'matter' | 'cosmos' | 'life' | 'waves';
 export type LabLevel = 'all' | 'preschool' | 'primary' | 'middle' | 'high' | 'advanced';
@@ -66,7 +74,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'preschool-wonder',
     code: 'PRE-01',
-    icon: '🌟',
+    icon: '',
     dev: 'शिशु-क्रीडा-वाटिका',
     title: 'Play 2 Learn: Free Preschool Games',
     subject: 'Living Map of India, Shapes, Colors, Animals, Counting, Bells & Stories',
@@ -77,7 +85,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     levelDev: 'शिशु-क्रीडा',
     ageRange: 'Ages 3–6 · +Next Level 6–10',
     gameType: '12 Preschool + 12 Next Level',
-    blurb: 'Fun, safe activities for ages 3–6 that build early literacy, numeracy, and thinking skills (Shapes, Color Mixing, Fruit Orchard, Animal Safari, India Animal Map, Kids Yoga, Bugs, Birds, My Day, Action Play, Count 1–10 & Sacred Bells) plus 🚀 Next Level Games (Ages 6–10)!',
+    blurb: 'Fun, safe activities for ages 3–6 that build early literacy, numeracy, and thinking skills (Shapes, Color Mixing, Fruit Orchard, Animal Safari, India Animal Map, Kids Yoga, Bugs, Birds, My Day, Action Play, Count 1–10 & Sacred Bells) plus Next Level Games (Ages 6–10)!',
     tint: 'rgba(245, 158, 11, 0.16)',
     ink: '#fbbf24',
     glow: '#f59e0b',
@@ -85,7 +93,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'asato-ma',
     code: 'SEC-02',
-    icon: '🕯️',
+    icon: '',
     dev: 'पदार्थ-अवस्थाः · Rasaśāstra',
     title: 'Heat & Matter Mystery',
     subject: 'Mass Invariance',
@@ -104,18 +112,18 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'prakriti',
     code: 'SEC-03',
-    icon: '🌿',
-    dev: 'प्रकृति-जैवमण्डलम् · Tridoṣa',
-    title: 'Nature Balance Game',
-    subject: 'Cellular Homeostasis',
-    school: 'Tridoṣa Engine (आयुर्वेद)',
+    icon: '',
+    dev: 'प्रकृति-जैवमण्डलम् · Biosphere',
+    title: 'Prakṛti Biosphere',
+    subject: 'Ecology & Dynamic Balance',
+    school: 'Ecology & Tri-Doṣa Engine (आयुर्वेद)',
     category: 'life',
     level: 'primary',
     levelLabel: 'Primary Explorers',
     levelDev: 'प्रारम्भिक',
-    ageRange: 'Ages 8–10',
-    gameType: 'Biosphere Ecosystem Game',
-    blurb: 'Elemental survival sandbox. Control the seasons, heat and moisture to bring Vāta, Pitta and Kapha into dynamic balance with real-time Nāḍī waveform feedback.',
+    ageRange: 'Ages 8–12',
+    gameType: 'Biosphere Ecosystem Simulator',
+    blurb: 'Dynamic ecology sandbox: balance producers, herbivores, carnivores, and decomposers across rain and temperature shifts. Trace the Vedic food cycle: Annād bhavanti bhūtāni.',
     tint: 'rgba(16, 185, 129, 0.12)',
     ink: '#34d399',
     glow: '#10b981',
@@ -123,7 +131,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'chaturyoni',
     code: 'SEC-04',
-    icon: '🦢',
+    icon: '',
     dev: 'चतुर्योनि-प्राणिनः · Taxonomy',
     title: 'Life Explorer Map',
     subject: 'Bio-Galvanometry',
@@ -142,18 +150,18 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'jyotisha',
     code: 'SEC-05',
-    icon: '🪐',
+    icon: '',
     dev: 'गुरुत्व-कक्षा-क्रीडा · Jyotiṣa',
-    title: 'Planet Pull: Gravity Playground',
-    subject: 'Orbital Mechanics',
+    title: 'Jyotiṣa Gravity Sandbox',
+    subject: 'Orbital Mechanics & Gravity',
     school: 'Āryabhaṭīya (खगोल-शास्त्र)',
     category: 'cosmos',
     level: 'primary',
     levelLabel: 'Primary Explorers',
     levelDev: 'प्रारम्भिक',
-    ageRange: 'Ages 8–10',
+    ageRange: 'Ages 8–14',
     gameType: 'Orbital Gravity Sandbox Game',
-    blurb: 'Real-time orbit simulator. Master gravity with Sūrya, Pṛthivī and Candra: too slow and you crash, too fast and you escape. Track Candra through the 27 Nakṣatras.',
+    blurb: 'Interactive N-body celestial gravity sandbox: set masses, initial velocities, and observe orbits, slingshots, or collisions with real-time trajectory predictions.',
     tint: 'rgba(99, 102, 241, 0.12)',
     ink: '#a5b4fc',
     glow: '#6366f1',
@@ -161,7 +169,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'nada-brahman',
     code: 'SEC-07',
-    icon: '🪕',
+    icon: '',
     dev: 'नाद-विहारः · Nāda',
     title: 'Sound Detective',
     subject: 'Harmonics & Cymatics',
@@ -180,7 +188,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'paramanu',
     code: 'SEC-01',
-    icon: '⚛️',
+    icon: '',
     dev: 'परमाणु-निर्माणम् · Vaiśeṣika',
     title: 'Atom Builder: Make Matter!',
     subject: 'Atomic Crucible',
@@ -199,7 +207,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'chandrayaan',
     code: 'SEC-06',
-    icon: '🛰️',
+    icon: '',
     dev: 'चन्द्रयान-प्रक्षेपः · Somayāna',
     title: 'Moon Mission Launcher',
     subject: 'Lunar Telemetry',
@@ -218,7 +226,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'srishti-sthiti-laya',
     code: 'SEC-08',
-    icon: '🧵',
+    icon: '',
     dev: 'आरुणि-सृष्टि-तन्त्रम् · Āruṇi',
     title: 'Pattern Weaver',
     subject: 'Conservation Field',
@@ -229,7 +237,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
     levelDev: 'माध्यमिक',
     ageRange: 'Ages 11–14',
     gameType: 'Conservation of Energy Game',
-    blurb: 'Quantum particle survival challenge. Gather a wild, scattered cloud into shape (Sṛṣṭi), hold it steady (Sthiti), then set off Laya. Not a single quantum of reality is lost.',
+    blurb: 'Start with the free Uddālaka lab (salt · seed · clay), then play: gather a scattered cloud into shape (Sṛṣṭi), hold it (Sthiti), set off Laya — conservation you can feel.',
     tint: 'rgba(244, 63, 94, 0.12)',
     ink: '#fb7185',
     glow: '#f43f5e',
@@ -237,7 +245,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'agnibana',
     code: 'SEC-10',
-    icon: '🚀',
+    icon: '',
     dev: 'अग्निबाण-क्रीडा',
     title: 'Rocket Builder · Agnibāṇa',
     subject: 'Aerospace Ballistics',
@@ -256,7 +264,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'vedic-geometry',
     code: 'SEC-11',
-    icon: '📐',
+    icon: '',
     dev: 'जीवन्त-रेखागणितम्',
     title: 'Rope & Peg Geometry',
     subject: 'Rekhā-Gaṇita & Śulba',
@@ -275,7 +283,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'mantra-acoustics',
     code: 'SEC-12',
-    icon: '🎶',
+    icon: '',
     dev: 'मन्त्राकौस्टिक्स् · पदार्थस्य वाक्',
     title: 'Sound Shapes · Mantra Acoustics',
     subject: 'Harmonic Scale & Phonetic Physics',
@@ -294,7 +302,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'temple-engineering',
     code: 'SEC-13',
-    icon: '🏛️',
+    icon: '',
     dev: 'शिल्प-स्थापत्य-विज्ञानम्',
     title: 'Temple Tower Builder',
     subject: 'Dry Masonry & Sacred Fractals',
@@ -313,7 +321,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'rituparna',
     code: 'SEC-09',
-    icon: '🌳',
+    icon: '',
     dev: 'ऋतुपर्ण-साङ्ख्यानम्',
     title: 'Count the Tree · Ṛtuparṇa',
     subject: 'Monte Carlo Statistics',
@@ -332,7 +340,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'kautilya',
     code: 'SEC-14',
-    icon: '📜',
+    icon: '',
     dev: 'कौटिलीय-अर्थशास्त्रम्',
     title: 'Wise Kingdom · Kauṭilya',
     subject: 'Actuarial Risk & Demographics',
@@ -351,7 +359,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'chandahshastra',
     code: 'SEC-15',
-    icon: '🪘',
+    icon: '',
     dev: 'पिङ्गलस्य छन्दःशास्त्रम्',
     title: 'Rhythm Patterns · Piṅgala',
     subject: 'Binary Permutations & Pascal Meru',
@@ -370,7 +378,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'ujjain-geodesy',
     code: 'SEC-16',
-    icon: '🏛️',
+    icon: '',
     dev: 'उज्जयिनी-मध्यरेखा-विज्ञानम्',
     title: 'Sun-Shadow Compass · Ujjain',
     subject: 'Geodesy, 0° Longitude & Temple Geometry',
@@ -389,7 +397,7 @@ const LAB_SEGMENTS: LabSegmentConfig[] = [
   {
     id: 'citrakavya',
     code: 'SEC-17',
-    icon: '🔲',
+    icon: '',
     dev: 'चित्रकाव्य-शाला · विदग्धमुखमण्डनम्',
     title: 'Matrix of Mind · Citrakāvya',
     subject: '3×3 Syllable Grids, Lotus & Wheel Bandhas',
@@ -507,6 +515,7 @@ export interface ScienceLabProps {
   onOpenPhilosophy?: () => void;
   onOpenGrammar?: () => void;
   onOpenVedicMaths?: () => void;
+  onOpenIks?: () => void;
 }
 
 const LEVEL_STEPS: { id: LabLevel; num: string; label: string; ages: string }[] = [
@@ -518,11 +527,11 @@ const LEVEL_STEPS: { id: LabLevel; num: string; label: string; ages: string }[] 
 ];
 
 const CATEGORY_TABS: { id: LabCategory; label: string; icon: string }[] = [
-  { id: 'all', label: 'All Domains', icon: '🌌' },
-  { id: 'life', label: 'Living Nature', icon: '🌿' },
-  { id: 'matter', label: 'Matter & Physics', icon: '⚛️' },
-  { id: 'cosmos', label: 'Sky & Space', icon: '🪐' },
-  { id: 'waves', label: 'Sound & Math', icon: '🪕' },
+  { id: 'all', label: 'All Domains', icon: '' },
+  { id: 'life', label: 'Living Nature', icon: '' },
+  { id: 'matter', label: 'Matter & Physics', icon: '' },
+  { id: 'cosmos', label: 'Sky & Space', icon: '' },
+  { id: 'waves', label: 'Sound & Math', icon: '' },
 ];
 
 const CATEGORY_CHIP: Record<LabSegmentConfig['category'], string> = {
@@ -538,6 +547,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   onOpenPhilosophy,
   onOpenGrammar,
   onOpenVedicMaths,
+  onOpenIks,
 }) => {
   const [active, setActive] = useState<LabSegmentId>(() => {
     if (initialSegment && initialSegment !== 'catalog' && initialSegment !== 'iks' && SEGMENT_IDS.has(initialSegment)) return initialSegment as LabSegmentId;
@@ -561,9 +571,29 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   const [heroSrc, setHeroSrc] = useState<string>('/images/vignana-lab-hero.webp');
   const [, setIsQuestMode] = useState(true);
   const [isQuestDirectoryOpen, setIsQuestDirectoryOpen] = useState(false);
+  const [isIksDropdownOpen, setIsIksDropdownOpen] = useState(false);
+  const iksDropdownRef = useRef<HTMLDivElement>(null);
   const catalogSectionRef = useRef<HTMLDivElement>(null);
   const simRef = useRef<HTMLDivElement>(null);
   const firstRun = useRef(true);
+
+  useEffect(() => {
+    if (!isIksDropdownOpen) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (iksDropdownRef.current && !iksDropdownRef.current.contains(e.target as Node)) {
+        setIsIksDropdownOpen(false);
+      }
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsIksDropdownOpen(false);
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isIksDropdownOpen]);
 
 
   const activeMissionCard = useMemo(() => getMissionCardById(active), [active]);
@@ -734,12 +764,156 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               <div className="vl-hub-topline-left">
                 {onGoHome && <button type="button" className="vl-hub-link" onClick={onGoHome}>◀ Home</button>}
                 {onOpenResources && <button type="button" className="vl-hub-link" onClick={onOpenResources}>Toolkit</button>}
+                <div className="vl-iks-dropdown-container" ref={iksDropdownRef}>
+                  <button
+                    type="button"
+                    className={`vl-hub-link${isIksDropdownOpen ? ' is-active' : ''}`}
+                    onClick={() => setIsIksDropdownOpen((prev) => !prev)}
+                    aria-expanded={isIksDropdownOpen}
+                    aria-haspopup="true"
+                    title="Explore 14 Indian Knowledge Systems (IKS) Experiential Think Labs"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      fontWeight: 800,
+                      color: '#92400e',
+                      background: 'linear-gradient(135deg, rgba(254, 243, 199, 0.95), rgba(253, 230, 138, 0.95))',
+                      border: '1.5px solid rgba(217, 119, 6, 0.5)',
+                      boxShadow: '0 2px 8px rgba(217, 119, 6, 0.2)',
+                    }}
+                  >
+                    <span>IKS Think Labs (14)</span>
+                    <span aria-hidden="true" style={{ fontSize: '0.72rem' }}>{isIksDropdownOpen ? '▲' : '▼'}</span>
+                  </button>
+
+                  {isIksDropdownOpen && (
+                    <div className="vl-iks-dropdown-popover" role="dialog" aria-label="IKS Think Labs Navigation">
+                      <div className="vl-iks-dropdown-header">
+                        <div>
+                          <span className="vl-iks-dropdown-title">Indian Knowledge Systems</span>
+                          <span lang="sa" className="vl-iks-dropdown-title-sa">भारतीय ज्ञान परंपरा (14 Labs)</span>
+                        </div>
+                        <a
+                          href="/iks"
+                          className="vl-iks-dropdown-full-link"
+                          onClick={(e) => {
+                            if (onOpenIks) {
+                              e.preventDefault();
+                              setIsIksDropdownOpen(false);
+                              onOpenIks();
+                            }
+                          }}
+                        >
+                          Open Full IKS Portal &rarr;
+                        </a>
+                      </div>
+
+                      <div className="vl-iks-dropdown-grid">
+                        {/* Column 1: Astronomy & Math */}
+                        <div className="vl-iks-domain-col">
+                          <div className="vl-iks-domain-head">
+                            <span>Astronomy &amp; Time</span>
+                            <span lang="sa" className="vl-iks-domain-head-sa">सौर-कालज्ञानम्</span>
+                          </div>
+                          <a className="vl-iks-link-item" href="/konark-think-lab/">
+                            <span className="vl-iks-link-title">Konark Sun Temple Wheel</span>
+                            <span className="vl-iks-link-sub">24-spoke solar shadows &amp; azimuth</span>
+                          </a>
+                          <a className="vl-iks-link-item" href="/cosmic-alignment-lab/">
+                            <span className="vl-iks-link-title">Cosmic Alignment &amp; Pañcāṅga</span>
+                            <span className="vl-iks-link-sub">27 Nakṣatras &amp; 30 Tithis dynamics</span>
+                          </a>
+
+                          <div className="vl-iks-domain-head" style={{ marginTop: '0.65rem' }}>
+                            <span>Mathematics &amp; Codes</span>
+                            <span lang="sa" className="vl-iks-domain-head-sa">गणित-कूटलेखनम्</span>
+                          </div>
+                          <a className="vl-iks-link-item" href="/cipher-think-lab/">
+                            <span className="vl-iks-link-title">Kaṭapayādi Alphanumeric Cipher</span>
+                            <span className="vl-iks-link-sub">Mādhava 31-decimal pi verse &amp; binary</span>
+                          </a>
+                        </div>
+
+                        {/* Column 2: Metallurgy, Architecture & Medicine */}
+                        <div className="vl-iks-domain-col">
+                          <div className="vl-iks-domain-head">
+                            <span>Metallurgy &amp; Engineering</span>
+                            <span lang="sa" className="vl-iks-domain-head-sa">लोहशास्त्रम् व स्थापत्यम्</span>
+                          </div>
+                          <a className="vl-iks-link-item" href="/patina-think-lab/">
+                            <span className="vl-iks-link-title">Delhi Iron Pillar Passivation</span>
+                            <span className="vl-iks-link-sub">1,600-year rust-resistant film chemistry</span>
+                          </a>
+                          <a className="vl-iks-link-item" href="/wootz-think-lab/">
+                            <span className="vl-iks-link-title">Wootz Crucible Steel (Ukku)</span>
+                            <span className="vl-iks-link-sub">Hyper-eutectoid steel &amp; Damascus blades</span>
+                          </a>
+                          <a className="vl-iks-link-item" href="/stepwell-think-lab/">
+                            <span className="vl-iks-link-title">Rani ki Vav Stepwell Hydraulics</span>
+                            <span className="vl-iks-link-sub">Subterranean passive geothermal cooling</span>
+                          </a>
+
+                          <div className="vl-iks-domain-head" style={{ marginTop: '0.65rem' }}>
+                            <span>Medicine &amp; Mind</span>
+                            <span lang="sa" className="vl-iks-domain-head-sa">आयुर्वेद व मन</span>
+                          </div>
+                          <a className="vl-iks-link-item" href="/susruta-think-lab/">
+                            <span className="vl-iks-link-title">Suśruta Surgical &amp; Biomimetic Tools</span>
+                            <span className="vl-iks-link-sub">101+ instruments &amp; reconstructive flap</span>
+                          </a>
+                          <a className="vl-iks-link-item" href="/uddalaka-think-lab/">
+                            <span className="vl-iks-link-title">Sage Uddālaka Empirical Mind Lab</span>
+                            <span className="vl-iks-link-sub">Salt in water &amp; 15-day fasting test</span>
+                          </a>
+                        </div>
+
+                        {/* Column 3: Ecology, Agriculture & Workbooks */}
+                        <div className="vl-iks-domain-col">
+                          <div className="vl-iks-domain-head">
+                            <span>Ecology &amp; Agriculture</span>
+                            <span lang="sa" className="vl-iks-domain-head-sa">प्रकृति व कृषि</span>
+                          </div>
+                          <a className="vl-iks-link-item" href="/biodome-think-lab/">
+                            <span className="vl-iks-link-title">Prakṛti Closed-Loop Bio-Dome</span>
+                            <span className="vl-iks-link-sub">5 Mahābhūtas &amp; trophic balance</span>
+                          </a>
+                          <a className="vl-iks-link-item" href="/govardhan-soil-lab/">
+                            <span className="vl-iks-link-title">Govardhan Soil Ecology Lab</span>
+                            <span className="vl-iks-link-sub">Soil horizons &amp; microbial percolation</span>
+                          </a>
+                          <a className="vl-iks-link-item" href="/krishi-think-lab/">
+                            <span className="vl-iks-link-title">Kṛṣi-Parāśara Agricultural Science</span>
+                            <span className="vl-iks-link-sub">Ancient meteorology &amp; cloud science</span>
+                          </a>
+                          <a className="vl-iks-link-item" href="/food-sovereignty-lab/">
+                            <span className="vl-iks-link-title">Anna-Svarāj Heirloom Seeds</span>
+                            <span className="vl-iks-link-sub">Indigenous flood/saline landraces</span>
+                          </a>
+
+                          <div className="vl-iks-domain-head" style={{ marginTop: '0.65rem' }}>
+                            <span>Workbooks &amp; Assessments</span>
+                            <span lang="sa" className="vl-iks-domain-head-sa">पुस्तिका व प्रश्नोत्तरी</span>
+                          </div>
+                          <a className="vl-iks-link-item" href="/iks-experiential-workbook/">
+                            <span className="vl-iks-link-title">Class 7 IKS Workbook</span>
+                            <span className="vl-iks-link-sub">Printable CBSE hands-on science guide</span>
+                          </a>
+                          <a className="vl-iks-link-item" href="/wonders-science-quiz/">
+                            <span className="vl-iks-link-title">Wonders of Indian Science Quiz</span>
+                            <span className="vl-iks-link-sub">Formative heritage STEM assessment</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="vl-hub-stars-badge" title="Total Vidyā Stars unlocked across all Vijñāna Lab quests">
-                <span aria-hidden="true">⭐</span>
+                <span aria-hidden="true" style={{ color: '#fbbf24' }}>★</span>
                 <strong>{explorerStats.totalStars || 0}</strong> Vidyā Stars
                 <span className="vl-hub-stars-sep">·</span>
-                <span className="vl-hub-missions-count">🏆 {explorerStats.completedMissions?.length || 0}/17 Mastered</span>
+                <span className="vl-hub-missions-count">{explorerStats.completedMissions?.length || 0}/17 Mastered</span>
               </div>
             </div>
             <div className="vl-hub-banner">
@@ -747,7 +921,9 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 <h1 className="vl-hub-title">
                   Vijñāna Lab <span lang="sa" className="vl-hub-title-dev">विज्ञान-प्रयोगशाला</span>
                 </h1>
-                <p className="vl-hub-tagline">Look. Learn from nature. Know with purpose.</p>
+                <p className="vl-hub-tagline">
+                  <strong>Observe. Question. Discover.</strong> · Explore nature · Understand the universe · Explore the cosmos · Understand creation.
+                </p>
                 <p className="vl-hub-range">Soft play shapes → Kauṭilya’s harvest · Ages 2–16+</p>
                 <p className="vl-hub-sloka" lang="sa">प्रकृतिं पश्य, प्रकृतेः शिक्षस्व, प्रयोजनाय जानीहि।</p>
               </div>
@@ -776,9 +952,9 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               knowledge that serves life.
             </p>
             <ul className="vl-hub-pillars">
-              <li><span aria-hidden="true">👁️</span><strong lang="sa">निरीक्षणम्</strong><b>Observation</b><small>Look and listen carefully before answering.</small></li>
-              <li><span aria-hidden="true">🌿</span><strong lang="sa">प्रकृति-शिक्षा</strong><b>Learn from nature</b><small>Seasons, sky, sound and living things are the teachers.</small></li>
-              <li><span aria-hidden="true">🎯</span><strong lang="sa">प्रयोजन-युक्त ज्ञानम्</strong><b>Purpose-driven knowledge</b><small>Every game asks: how does this help us live well?</small></li>
+              <li><span className="vl-hub-pillar-icon" aria-hidden="true"><LabPillarPictogram id="observe" /></span><strong lang="sa">निरीक्षणम्</strong><b>Observation</b><small>Look and listen carefully before answering.</small></li>
+              <li><span className="vl-hub-pillar-icon" aria-hidden="true"><LabPillarPictogram id="nature" /></span><strong lang="sa">प्रकृति-शिक्षा</strong><b>Learn from nature</b><small>Seasons, sky, sound and living things are the teachers.</small></li>
+              <li><span className="vl-hub-pillar-icon" aria-hidden="true"><LabPillarPictogram id="purpose" /></span><strong lang="sa">प्रयोजन-युक्त ज्ञानम्</strong><b>Purpose-driven knowledge</b><small>Every game asks: how does this help us live well?</small></li>
             </ul>
 
             {/* Vedic Indian Knowledge System Map */}
@@ -786,7 +962,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               <div className="vl-iks-card-open">
                 <div className="vl-iks-header-bar">
                   <div className="vl-iks-summary-left">
-                    <span className="vl-iks-summary-icon" aria-hidden="true">🕉️</span>
+                    <span className="vl-iks-summary-icon" aria-hidden="true"><LabGamePictogram id="vedic-geometry" /></span>
                     <div>
                       <strong className="vl-iks-summary-title">Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा)</strong>
                       <small className="vl-iks-summary-sub">Explore the 7 branches connecting ancient Indian sciences with our 16 STEM physics simulations</small>
@@ -799,9 +975,9 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       soundEffects.playCelebrationChime();
                       setIsIksLightboxOpen(true);
                     }}
-                    title="Click to view full-screen high-resolution infographic"
+                    title="Click to watch the video full screen"
                   >
-                    <span>🔍 Enlarge Infographic</span>
+                    <span>Watch full screen</span>
                   </button>
                 </div>
                 <div className="vl-iks-details-body">
@@ -819,18 +995,23 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                         setIsIksLightboxOpen(true);
                       }
                     }}
-                    title="Click to view full-screen high-resolution infographic"
+                    title="Click to watch the video full screen"
                   >
-                    <img
-                      src="/images/vedic-indian-knowledge-system.jpg"
-                      alt="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Seven Branches of Ancient Indian Sciences: Philosophy, Mathematics, Cosmology, History, Ayurveda, Architecture, and Grammar"
+                    <video
                       className="vl-iks-img"
-                      width={1024}
-                      height={571}
-                      loading="lazy"
+                      src="/videos/vignana-lab-v4.mp4"
+                      poster="/images/vignana-lab-iks-poster-v4.jpg"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      width={1280}
+                      height={720}
+                      aria-label="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Seven Branches of Ancient Indian Sciences: Philosophy, Mathematics, Cosmology, History, Ayurveda, Architecture, and Grammar"
                     />
                     <div className="vl-iks-img-overlay">
-                      <span className="vl-iks-img-pill">✨ 7 Pillars of Vedic Sciences · Tap to Enlarge HD</span>
+                      <span className="vl-iks-img-pill">7 Pillars of Vedic Sciences · Tap to enlarge</span>
                     </div>
                   </div>
                   <div className="vl-iks-branches-row">
@@ -840,7 +1021,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       onClick={() => (onOpenPhilosophy ? onOpenPhilosophy() : handleLaunchSim('paramanu'))}
                       title="Explore Nyāya, Vaiśeṣika, and the Six Systems of Indian Philosophy"
                     >
-                      🧘 Philosophy · दर्शनम् (Nyāya &amp; Vaiśeṣika)
+                      <IksBranchPictogram branch="darshana" /> Philosophy · दर्शनम् (Nyāya &amp; Vaiśeṣika)
                     </button>
                     <button
                       type="button"
@@ -848,7 +1029,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       onClick={() => (onOpenVedicMaths ? onOpenVedicMaths() : handleLaunchSim('chandahshastra'))}
                       title="Launch Chandahshastra Piṅgala binary combinatorics, Baudhāyana geometry &amp; Vedic Mathematics"
                     >
-                      📐 Mathematics · गणितम् (Baudhāyana &amp; Piṅgala)
+                      <IksBranchPictogram branch="ganita" /> Mathematics · गणितम् (Baudhāyana &amp; Piṅgala)
                     </button>
                     <button
                       type="button"
@@ -856,7 +1037,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       onClick={() => handleLaunchSim('jyotisha')}
                       title="Launch Āryabhaṭa Celestial Orbit &amp; Heliocentric simulator"
                     >
-                      🪐 Cosmology · ज्योतिषम् (Āryabhaṭa)
+                      <IksBranchPictogram branch="jyotisha" /> Cosmology · ज्योतिषम् (Āryabhaṭa)
                     </button>
                     <button
                       type="button"
@@ -864,7 +1045,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       onClick={() => handleLaunchSim('kautilya')}
                       title="Launch Kauṭilya Statecraft &amp; Saptāṅga Rajya simulation"
                     >
-                      📜 History &amp; Statecraft · इतिहास (Kauṭilya)
+                      <IksBranchPictogram branch="itihasa" /> History &amp; Statecraft · इतिहास (Kauṭilya)
                     </button>
                     <button
                       type="button"
@@ -872,7 +1053,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       onClick={() => handleLaunchSim('prakriti')}
                       title="Launch Suśruta Tridoṣa Equilibrium &amp; Prakṛti simulation"
                     >
-                      🌿 Life &amp; Āyurveda · प्रकृति (Suśruta)
+                      <IksBranchPictogram branch="ayurveda" /> Life &amp; Āyurveda · प्रकृति (Suśruta)
                     </button>
                     <button
                       type="button"
@@ -880,7 +1061,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       onClick={() => handleLaunchSim('temple-engineering')}
                       title="Launch Temple Engineering, Acoustics &amp; Vāstu Puruṣa simulation"
                     >
-                      🏛️ Architecture · वास्तुशास्त्रम् (Vāstu)
+                      <IksBranchPictogram branch="vastu" /> Architecture · वास्तुशास्त्रम् (Vāstu)
                     </button>
                     <button
                       type="button"
@@ -888,7 +1069,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       onClick={() => (onOpenGrammar ? onOpenGrammar() : handleLaunchSim('chandahshastra'))}
                       title="Launch Pāṇinian Generative Grammar Engine"
                     >
-                      🗣️ Linguistics · व्याकरणम् (Pāṇini)
+                      <IksBranchPictogram branch="vyakarana" /> Linguistics · व्याकरणम् (Pāṇini)
                     </button>
                   </div>
                 </div>
@@ -898,7 +1079,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             {/* Popular Starting Quests across all 4 learning stages */}
             <div className="vl-hub-featured-strip">
               <div className="vl-hub-featured-header">
-                <span className="vl-hub-feat-kicker">🌟 Popular Explorations</span>
+                <span className="vl-hub-feat-kicker">Popular Explorations</span>
                 <h3 className="vl-hub-feat-heading">Recommended Starting Quests</h3>
               </div>
               <div className="vl-hub-featured-grid">
@@ -909,7 +1090,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('preschool-wonder')}
                 >
-                  <div className="vl-hub-feat-icon">🌟</div>
+                  <div className="vl-hub-feat-icon"><LabGamePictogram id="preschool-wonder" /></div>
                   <div className="vl-hub-feat-body">
                     <span className="vl-hub-feat-badge vl-badge--preschool">Stage 1 · Ages 2–6 · 24 Games</span>
                     <h4 className="vl-hub-feat-title">Wonder Playground &amp; Living India Map</h4>
@@ -924,7 +1105,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('asato-ma')}
                 >
-                  <div className="vl-hub-feat-icon">🕯️</div>
+                  <div className="vl-hub-feat-icon"><LabGamePictogram id="asato-ma" /></div>
                   <div className="vl-hub-feat-body">
                     <span className="vl-hub-feat-badge vl-badge--primary">Stage 2 · Ages 6–10 · Physics</span>
                     <h4 className="vl-hub-feat-title">Heat &amp; Matter Mystery (Mass Invariance)</h4>
@@ -939,7 +1120,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('chandrayaan')}
                 >
-                  <div className="vl-hub-feat-icon">🛰️</div>
+                  <div className="vl-hub-feat-icon"><LabGamePictogram id="chandrayaan" /></div>
                   <div className="vl-hub-feat-body">
                     <span className="vl-hub-feat-badge vl-badge--middle">Stage 3 · Ages 10–14 · Space</span>
                     <h4 className="vl-hub-feat-title">Chandrayaan Moon Mission</h4>
@@ -954,7 +1135,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('vedic-geometry')}
                 >
-                  <div className="vl-hub-feat-icon">📐</div>
+                  <div className="vl-hub-feat-icon"><LabGamePictogram id="vedic-geometry" /></div>
                   <div className="vl-hub-feat-body">
                     <span className="vl-hub-feat-badge vl-badge--scholar">Stage 4 · Ages 14+ · Geometry</span>
                     <h4 className="vl-hub-feat-title">Vedic Altar Mastery &amp; Rope Geometry</h4>
@@ -1006,7 +1187,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       aria-pressed={filterCat === cat.id}
                       onClick={() => { setFilterCat(cat.id); soundEffects.playStrokeChime(); }}
                     >
-                      <span aria-hidden="true">{cat.icon}</span>
+                      <span className="vl-cat-chip-pict" aria-hidden="true"><LabDomainPictogram id={cat.id} /></span>
                       <span>{cat.label}</span>
                       <small className="vl-cat-count">({count})</small>
                     </button>
@@ -1018,7 +1199,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
           <div className="vl-hub-search-row">
             <div className="vl-hub-search">
-              <span aria-hidden="true">🔍</span>
+              <span aria-hidden="true" style={{ opacity: 0.65, fontSize: '0.85rem' }}>⚲</span>
               <input type="text" placeholder="Search games, Sanskrit concepts, topics..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} aria-label="Search games" />
               {searchQuery && <button type="button" onClick={() => setSearchQuery('')} aria-label="Clear search">✕</button>}
             </div>
@@ -1040,7 +1221,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                   <div className="vl-preschool-showcase">
                     <div className="vl-ps-header-row">
                       <div className="vl-ps-header-left">
-                        <span className="vl-ps-badge">👶 24 Preschool Discovery Games · Ages 3–6</span>
+                        <span className="vl-ps-badge">24 Preschool Discovery Games · Ages 3–6</span>
                         <h3 className="vl-ps-title">
                           Play 2 Learn: Free Preschool Games <span className="vl-ps-title-sa sanskrit-safe-text" lang="sa">शिशु-क्रीडा-वाटिका</span>
                         </h3>
@@ -1053,25 +1234,25 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                         className="vl-ps-launch-btn"
                         onClick={() => handleLaunchSim('preschool-wonder')}
                       >
-                        <span>🚀 Enter Play 2 Learn: Free Preschool Games (25 Activities) ➔</span>
+                        <span>Enter Play 2 Learn: Free Preschool Games (25 Activities) ➔</span>
                       </button>
                     </div>
 
                     <div className="vl-ps-quick-bar">
                       <div className="vl-ps-quick-bar-heading">
-                        <span>⚡ Quick Play Popular Preschool Games:</span>
+                        <span>Quick Play Popular Preschool Games:</span>
                       </div>
                       <div className="vl-ps-activities-grid">
                         {[
-                          { id: 'varnamala', icon: '🔤', sa: 'वर्णमाला', en: 'Varṇamālā Letter Garden' },
-                          { id: 'shapes', icon: '🎨', sa: 'आकाराः', en: 'Shapes & Indian Geometry' },
-                          { id: 'colors', icon: '🧪', sa: 'वर्ण-मेलनम्', en: 'Color Magic Cauldron' },
-                          { id: 'fruits', icon: '🍎', sa: 'फल-सङ्ग्रहः', en: 'Orchard Fruit Picker' },
-                          { id: 'animals', icon: '🐮', sa: 'पशु-ध्वनयः', en: 'Animal Safari & Sounds' },
-                          { id: 'bharat', icon: '🗺️', sa: 'भारत-मानचित्रम्', en: 'Living Map of India' },
-                          { id: 'yoga', icon: '🧘', sa: 'योगासनानि', en: 'Yoga Pose Match' },
-                          { id: 'spices', icon: '🌶️', sa: 'उपस्कराः', en: 'Spice Aroma Adventure' },
-                          { id: 'seasons', icon: '🌸', sa: 'ऋतवः', en: '6 Seasons & Months' },
+                          { id: 'varnamala', sa: 'वर्णमाला', en: 'Varṇamālā Letter Garden' },
+                          { id: 'shapes', sa: 'आकाराः', en: 'Shapes & Indian Geometry' },
+                          { id: 'colors', sa: 'वर्ण-मेलनम्', en: 'Color Magic Cauldron' },
+                          { id: 'fruits', sa: 'फल-सङ्ग्रहः', en: 'Orchard Fruit Picker' },
+                          { id: 'animals', sa: 'पशु-ध्वनयः', en: 'Animal Safari & Sounds' },
+                          { id: 'bharat', sa: 'भारत-मानचित्रम्', en: 'Living Map of India' },
+                          { id: 'yoga', sa: 'योगासनानि', en: 'Yoga Pose Match' },
+                          { id: 'spices', sa: 'उपस्कराः', en: 'Spice Aroma Adventure' },
+                          { id: 'seasons', sa: 'ऋतवः', en: '6 Seasons & Months' },
                         ].map((item) => (
                           <button
                             key={item.id}
@@ -1080,7 +1261,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                             onClick={() => handleLaunchPreschoolActivity(item.id)}
                             title={`Play ${item.sa} (${item.en})`}
                           >
-                            <span className="vl-ps-act-icon">{item.icon}</span>
+                            <span className="vl-ps-act-icon"><PreschoolActivityPictogram id={item.id} /></span>
                             <span className="vl-ps-act-body">
                               <strong className="vl-ps-act-en">{item.en}</strong>
                               <span className="vl-ps-act-sa" lang="sa">{item.sa}</span>
@@ -1100,7 +1281,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 <div className="vl-band-grid">
                   {games.map((g) => (
                     <button key={g.id} type="button" className="vl-game-card" onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
-                      <span className="vl-game-icon" aria-hidden="true">{g.icon}</span>
+                      <span className="vl-game-icon" aria-hidden="true"><LabGamePictogram id={g.id} /></span>
                       <span className="vl-game-body">
                         <b className="vl-game-title">{g.title}</b>
                         <span className="vl-game-dev" lang="sa">{g.dev}</span>
@@ -1108,8 +1289,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                         <span className="vl-game-chips">
                           <span>{g.ageRange}</span>
                           <span>{CATEGORY_CHIP[g.category]}</span>
-                          {g.id === 'preschool-wonder' ? <span>24 activities (Map &amp; Spices)</span> : <span>⏱️ 3–5 min</span>}
-                          {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>⭐ {explorerStats.starsByGame[g.id]}</span>}
+                          {g.id === 'preschool-wonder' ? <span>24 activities (Map &amp; Spices)</span> : <span>3–5 min</span>}
+                          {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>{explorerStats.starsByGame[g.id]} Stars</span>}
                         </span>
                       </span>
                       <span className="vl-game-play">Play ➔</span>
@@ -1130,7 +1311,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               ================================================================ */}
           <details className="vl-curriculum-accordion">
             <summary className="vl-curriculum-summary">
-              <span className="vl-cs-icon">📚</span>
+              <span className="vl-cs-icon"><LabGamePictogram id="kautilya" /></span>
               <span className="vl-cs-title">Science Lab Curriculum &amp; STEM Standards Matrix</span>
               <span className="vl-cs-badge">NCERT · CBSE · NEP 2020 · Ages 2–16+ (Click to Expand)</span>
             </summary>
@@ -1138,7 +1319,6 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               <section className="vl-seo-games-section" aria-label="About Vijñāna Science Lab Games and STEM Learning Levels">
                 <div className="vl-sgs-header">
                   <div className="vl-sgs-badge">
-                    <span>🔬</span>
                     <span>SCIENCE LAB CURRICULUM · <span className="sanskrit-safe-text" lang="sa">विज्ञान-क्रीडा-शाला</span></span>
                   </div>
                   <h2 className="vl-sgs-title">
@@ -1153,7 +1333,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             <div className="vl-sgs-levels-grid">
               <div className="vl-sgs-level-card vl-slc--preschool">
                 <div className="vl-slc-top">
-                  <span className="vl-slc-icon">🌟</span>
+                  <span className="vl-slc-icon"><LabGamePictogram id="preschool-wonder" /></span>
                   <div>
                     <span className="vl-slc-tag">LEVEL 1 · AGES 2–6</span>
                     <h3 className="vl-slc-title">Preschool Wonder Playground (शिशु-बोध)</h3>
@@ -1174,7 +1354,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
               <div className="vl-sgs-level-card vl-slc--primary">
                 <div className="vl-slc-top">
-                  <span className="vl-slc-icon">🎒</span>
+                  <span className="vl-slc-icon"><LabGamePictogram id="asato-ma" /></span>
                   <div>
                     <span className="vl-slc-tag">LEVEL 2 · GRADES 3–5 (AGES 6–10)</span>
                     <h3 className="vl-slc-title">Primary School &amp; Hands-On Physics (प्रारम्भिक)</h3>
@@ -1195,7 +1375,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
               <div className="vl-sgs-level-card vl-slc--middle">
                 <div className="vl-slc-top">
-                  <span className="vl-slc-icon">🔬</span>
+                  <span className="vl-slc-icon"><LabGamePictogram id="paramanu" /></span>
                   <div>
                     <span className="vl-slc-tag">LEVEL 3 · GRADES 6–8 (AGES 11–14)</span>
                     <h3 className="vl-slc-title">Middle School &amp; CBSE/NCERT Alignment (माध्यमिक)</h3>
@@ -1216,7 +1396,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
               <div className="vl-sgs-level-card vl-slc--high">
                 <div className="vl-slc-top">
-                  <span className="vl-slc-icon">🚀</span>
+                  <span className="vl-slc-icon"><LabGamePictogram id="ujjain-geodesy" /></span>
                   <div>
                     <span className="vl-slc-tag">LEVEL 4 · GRADES 9–12 (AGES 14–18)</span>
                     <h3 className="vl-slc-title">High School STEM &amp; Mathematical Physics (उच्च-माध्यमिक)</h3>
@@ -1237,7 +1417,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
               <div className="vl-sgs-level-card vl-slc--advanced">
                 <div className="vl-slc-top">
-                  <span className="vl-slc-icon">🏛️</span>
+                  <span className="vl-slc-icon"><LabGamePictogram id="temple-engineering" /></span>
                   <div>
                     <span className="vl-slc-tag">LEVEL 5 · COLLEGE &amp; RESEARCH (GRADE 11+)</span>
                     <h3 className="vl-slc-title">Advanced Scholar &amp; Epistemological Lab (विद्वत्-शोध)</h3>
@@ -1357,17 +1537,17 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             {/* Benefits for Parents, Teachers & Schools */}
             <div className="vl-sgs-features-row">
               <div className="vl-sgs-feature-col">
-                <span className="vl-sfc-icon">🛡️</span>
+                <span className="vl-sfc-icon"><LabPillarPictogram id="observe" /></span>
                 <h4>100% Kid-Safe &amp; Ad-Free</h4>
                 <p>Zero advertisements, zero third-party tracking, and fully compliant with student privacy protections. Pure educational exploration.</p>
               </div>
               <div className="vl-sgs-feature-col">
-                <span className="vl-sfc-icon">⚡</span>
+                <span className="vl-sfc-icon"><LabPillarPictogram id="nature" /></span>
                 <h4>60 FPS WebGL Simulations</h4>
                 <p>Runs smoothly on laptops, tablets, and smartphones without downloading any app or plugins. Accessible directly through any web browser.</p>
               </div>
               <div className="vl-sgs-feature-col">
-                <span className="vl-sfc-icon">🇮🇳</span>
+                <span className="vl-sfc-icon"><LabPillarPictogram id="purpose" /></span>
                 <h4>Aligned with NEP 2020</h4>
                 <p>Embodies the National Education Policy (NEP 2020) vision of integrating Indian Knowledge Systems (IKS) with rigorous modern empirical STEM inquiry.</p>
               </div>
@@ -1401,7 +1581,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
             {/* Active Simulation Title & Stage */}
             <div className="vl-wb-active-mission-title">
-              <span className="vl-wb-icon">{seg.icon}</span>
+              <span className="vl-wb-icon"><LabGamePictogram id={seg.id} /></span>
               <div className="vl-wb-title-box">
                 <span className="vl-wb-sector-code">{seg.levelLabel} · {seg.ageRange}</span>
                 <h2 id={`vl-h-${active}`} className="vl-wb-name">
@@ -1432,26 +1612,26 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 aria-label="Switch science simulation"
               >
                 <optgroup label="Stage 1: Play 2 Learn: Free Preschool Games (Ages 3–6 · 25 Games)">
-                  <option value="preschool-wonder">🌟 Play 2 Learn: Free Preschool Games (Ages 3–6 · 25 Activities)</option>
+                  <option value="preschool-wonder">Play 2 Learn: Free Preschool Games (Ages 3–6 · 25 Activities)</option>
                 </optgroup>
                 <optgroup label="Stage 2: Primary Explorers (Ages 6–10)">
                   {LAB_SEGMENTS.filter((s) => s.level === 'primary').map((s) => (
                     <option key={s.id} value={s.id}>
-                      {s.icon} {s.title} ({s.ageRange})
+                      {s.title} ({s.ageRange})
                     </option>
                   ))}
                 </optgroup>
                 <optgroup label="Stage 3: Middle Missions (Ages 10–14)">
                   {LAB_SEGMENTS.filter((s) => s.level === 'middle').map((s) => (
                     <option key={s.id} value={s.id}>
-                      {s.icon} {s.title} ({s.ageRange})
+                      {s.title} ({s.ageRange})
                     </option>
                   ))}
                 </optgroup>
                 <optgroup label="Stage 4: Scholar Studio (Ages 14+)">
                   {LAB_SEGMENTS.filter((s) => s.level === 'high' || s.level === 'advanced').map((s) => (
                     <option key={s.id} value={s.id}>
-                      {s.icon} {s.title} ({s.ageRange})
+                      {s.title} ({s.ageRange})
                     </option>
                   ))}
                 </optgroup>
@@ -1476,7 +1656,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                   onClick={handleCompleteActiveMission}
                   title="Celebrate mission completion & unlock 3 Vidyā Stars!"
                 >
-                  <span>🎉 I did it! (+3 ⭐)</span>
+                  <span>I did it! (+3 Vidyā Stars)</span>
                 </button>
               )}
               {activeMissionCard && (
@@ -1489,7 +1669,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                   }}
                   title="How to play this science mission"
                 >
-                  <span>❓ How to Play</span>
+                  <span>How to Play</span>
                 </button>
               )}
               <button
@@ -1501,7 +1681,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 }}
                 title="Curriculum alignment, civilizational history, and parent notes"
               >
-                <span>📘 Parent Notes</span>
+                <span>Parent Notes</span>
               </button>
             </div>
           </div>
@@ -1510,7 +1690,6 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
           <div className="vl-wb-bodhi-briefing-box">
             {active !== 'preschool-wonder' && (
               <div className="vl-wb-bodhi-avatar-col">
-                <span className="vl-wb-bodhi-emoji">🧙‍♂️</span>
                 <span className="vl-wb-bodhi-tag">Bodhi</span>
               </div>
             )}
@@ -1524,19 +1703,19 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                     onClick={handleSpeakBriefing}
                     aria-label={isSpeakingBodhiBriefing ? 'Stop audio' : 'Listen to Bodhi'}
                   >
-                    <span>{isSpeakingBodhiBriefing ? '⏹️ Stop' : '🔊 Listen'}</span>
+                    <span>{isSpeakingBodhiBriefing ? 'Stop' : 'Listen'}</span>
                   </button>
                 </div>
 
                 <p className="vl-wb-bodhi-goal-text">
-                  🎯 <strong>Mission:</strong> <span className="vl-wb-bodhi-goal-content">{quest?.goal || activeMissionCard?.missionGoal || seg.blurb}</span>
+                  <strong>Mission:</strong> <span className="vl-wb-bodhi-goal-content">{quest?.goal || activeMissionCard?.missionGoal || seg.blurb}</span>
                 </p>
 
                 {activeMissionCard && (
                   <div className="vl-wb-reward-pill">
-                    <span className="vl-wb-reward-icon">🏆</span>
+                    <span className="vl-wb-reward-icon">★</span>
                     <span className="vl-wb-reward-desc">
-                      Reward: <strong className="vl-wb-reward-badge">{activeMissionCard.badgeName}</strong> ({activeMissionCard.badgeIcon}) +3 ⭐
+                      Reward: <strong className="vl-wb-reward-badge">{activeMissionCard.badgeName}</strong> (+3 Stars)
                     </span>
                   </div>
                 )}
@@ -1546,7 +1725,6 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 <details className="vl-wb-lens-toggle">
                   <summary className="vl-wb-lens-summary">
                     <span className="vl-wb-lens-summary-left">
-                      <span className="vl-wb-lens-summary-icon">👁️</span>
                       <span>3 Steps &amp; Ṛṣi Lens (निरीक्षणम् · प्रकृति · प्रयोजनम्)</span>
                     </span>
                     <span className="vl-wb-lens-summary-tag">Tap to view ▾</span>
@@ -1619,7 +1797,6 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
         {/* Optional Expandable Ancient Civilizational Context for Scholars & Parents */}
         <details className="vl-wb-heritage-accordion">
           <summary className="vl-wb-heritage-summary">
-            <span>📜</span>
             <span>Ancient Indian Scientific Heritage &amp; Darśana Context (Click to expand for scholars &amp; teachers)</span>
           </summary>
           <div className="vl-wb-heritage-content">
@@ -1635,19 +1812,19 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
           <section className="vl-preschool-gateway" aria-label="Preschool Next Adventure Gateway">
             <div className="vl-pgw-card">
               <div className="vl-pgw-header">
-                <span className="vl-pgw-badge">🌟 MORE WONDER GAMES · <span className="sanskrit-safe-text" lang="sa">शिशु-क्रीडा</span></span>
+                <span className="vl-pgw-badge">MORE WONDER GAMES · <span className="sanskrit-safe-text" lang="sa">शिशु-क्रीडा</span></span>
                 <h3>Keep playing more games in the Wonder Playground:</h3>
               </div>
               <div className="vl-pgw-grid">
                 {[
-                  { id: 'shapes', icon: '🎨', sa: 'आकाराः', en: 'Shapes & Indian Geometry' },
-                  { id: 'colors', icon: '🧪', sa: 'वर्ण-मेलनम्', en: 'Color Magic Cauldron' },
-                  { id: 'fruits', icon: '🍎', sa: 'फल-सङ्ग्रहः', en: 'Orchard Fruit Picker' },
-                  { id: 'animals', icon: '🐮', sa: 'पशु-ध्वनयः', en: 'Animal Safari & Sounds' },
-                  { id: 'bharat', icon: '🗺️', sa: 'भारत-मानचित्रम्', en: 'Living Map of India' },
-                  { id: 'yoga', icon: '🧘', sa: 'योगासनानि', en: 'Yoga Pose Match' },
-                  { id: 'spices', icon: '🌶️', sa: 'उपस्कराः', en: 'Spice Aroma Adventure' },
-                  { id: 'seasons', icon: '🌸', sa: 'ऋतवः', en: '6 Seasons & Months' },
+                  { id: 'shapes', sa: 'आकाराः', en: 'Shapes & Indian Geometry' },
+                  { id: 'colors', sa: 'वर्ण-मेलनम्', en: 'Color Magic Cauldron' },
+                  { id: 'fruits', sa: 'फल-सङ्ग्रहः', en: 'Orchard Fruit Picker' },
+                  { id: 'animals', sa: 'पशु-ध्वनयः', en: 'Animal Safari & Sounds' },
+                  { id: 'bharat', sa: 'भारत-मानचित्रम्', en: 'Living Map of India' },
+                  { id: 'yoga', sa: 'योगासनानि', en: 'Yoga Pose Match' },
+                  { id: 'spices', sa: 'उपस्कराः', en: 'Spice Aroma Adventure' },
+                  { id: 'seasons', sa: 'ऋतवः', en: '6 Seasons & Months' },
                 ].map((act) => (
                   <button
                     key={act.id}
@@ -1659,7 +1836,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    <span className="vl-pgw-icon">{act.icon}</span>
+                    <span className="vl-pgw-icon"><PreschoolActivityPictogram id={act.id} /></span>
                     <span className="vl-pgw-text">
                       <strong className="vl-pgw-en">{act.en}</strong>
                       <small className="vl-pgw-sa" lang="sa">{act.sa}</small>
@@ -1670,14 +1847,14 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
               <div className="vl-pgw-bottom-bar">
                 <div className="vl-pgw-graduate-box">
-                  <span className="vl-pgw-grad-badge">🎒 READY FOR BIGGER CHALLENGES?</span>
+                  <span className="vl-pgw-grad-badge">READY FOR BIGGER CHALLENGES?</span>
                   <p>Explore Primary School STEM (Ages 6–10): Heat &amp; Matter Mystery (Mass Invariance) or Planet Gravity Sandbox.</p>
                   <button
                     type="button"
                     className="vl-pgw-grad-btn"
                     onClick={() => handleNavigateLab('asato-ma')}
                   >
-                    <span>🚀 Try Primary Lab: Heat &amp; Matter ➔</span>
+                    <span>Try Primary Lab: Heat &amp; Matter ➔</span>
                   </button>
                 </div>
                 <button
@@ -1689,7 +1866,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                     catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  <span>🎮 🧭 Browse All 41 Games Directory</span>
+                  <span>Browse All 41 Games Directory</span>
                 </button>
               </div>
             </div>
@@ -1698,7 +1875,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
           <section className="vl-adventure-gateway" aria-label="Next science simulation">
             <div className="vl-ag-header">
               <div className="vl-ag-kicker-row">
-                <span className="vl-ag-kicker">✨ NEXT ADVENTURE ON YOUR PATH</span>
+                <span className="vl-ag-kicker">NEXT ADVENTURE ON YOUR PATH</span>
                 <span className="vl-ag-progress-pill">
                   Quest {currentIndex + 1} of {LAB_SEGMENTS.length}
                 </span>
@@ -1711,17 +1888,17 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             <div className="vl-ag-card">
               <div className="vl-ag-card-hero">
                 <div className="vl-ag-icon-badge" aria-hidden="true">
-                  <span className="vl-ag-big-icon">{nextSeg.icon}</span>
+                  <span className="vl-ag-big-icon"><LabGamePictogram id={nextSeg.id} /></span>
                   <span className="vl-ag-level-chip">{nextSeg.levelLabel}</span>
                 </div>
                 <div className="vl-ag-card-info">
                   <span className="vl-ag-dev" lang="sa">{nextSeg.dev}</span>
                   <h4 className="vl-ag-title">{nextSeg.title}</h4>
                   <div className="vl-ag-badges">
-                    <span className="vl-ag-badge vl-ag-badge--age">🎯 {nextSeg.ageRange}</span>
-                    <span className="vl-ag-badge vl-ag-badge--subj">🔬 {nextSeg.subject}</span>
-                    <span className="vl-ag-badge vl-ag-badge--cat">🏷️ {CATEGORY_CHIP[nextSeg.category]}</span>
-                    <span className="vl-ag-badge vl-ag-badge--time">⏱️ 3–5 min quest</span>
+                    <span className="vl-ag-badge vl-ag-badge--age">{nextSeg.ageRange}</span>
+                    <span className="vl-ag-badge vl-ag-badge--subj">{nextSeg.subject}</span>
+                    <span className="vl-ag-badge vl-ag-badge--cat">{CATEGORY_CHIP[nextSeg.category]}</span>
+                    <span className="vl-ag-badge vl-ag-badge--time">3–5 min quest</span>
                   </div>
                   <p className="vl-ag-blurb">{nextSeg.blurb}</p>
                 </div>
@@ -1757,7 +1934,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                     }}
                     title="View full 17-lab curriculum"
                   >
-                    🧭 All 17 Labs
+                    All 17 Labs
                   </button>
                   <button
                     type="button"
@@ -1774,7 +1951,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             {/* All 17 Simulations Navigation Grid — Clear, Non-Truncated Cards */}
             <div className="vl-ag-grid-wrap">
               <div className="vl-ag-grid-header">
-                <span className="vl-ag-grid-kicker">📚 COMPLETE SCIENCE EXPEDITION</span>
+                <span className="vl-ag-grid-kicker">COMPLETE SCIENCE EXPEDITION</span>
                 <h4>Explore All 17 Science Simulations:</h4>
               </div>
               <div className="vl-ag-cards-grid">
@@ -1790,7 +1967,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       title={`${idx + 1}. ${s.title} (${s.ageRange})`}
                     >
                       <span className="vl-ag-step-num">{idx + 1}</span>
-                      <span className="vl-ag-step-icon" aria-hidden="true">{s.icon}</span>
+                      <span className="vl-ag-step-icon" aria-hidden="true"><LabGamePictogram id={s.id} /></span>
                       <div className="vl-ag-step-text">
                         <b className="vl-ag-step-title">{s.title}</b>
                         <span className="vl-ag-step-meta">{s.ageRange} · {CATEGORY_CHIP[s.category]}</span>
@@ -1816,8 +1993,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             onClick={handleCompleteActiveMission}
             title="Complete 3-Minute Mission & Unlock Vidyā Stars"
           >
-            <span>🎉</span>
-            <span>Complete Mission &amp; Spark Science (+3 ⭐)</span>
+            <span>Complete Mission &amp; Spark Science (+3 Vidyā Stars)</span>
           </button>
         )}
       </section>
@@ -1844,7 +2020,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
       {!activeMissionCard && quest && isScienceSparkOpen && (
         <div className="vl-win-overlay" role="dialog" aria-label="Quest complete" onClick={() => setIsScienceSparkOpen(false)}>
           <div className="vl-win-card" onClick={(e) => e.stopPropagation()}>
-            <div className="vl-win-stars">⭐⭐⭐</div>
+            <div className="vl-win-stars">★★★</div>
             <h3>{quest.win}</h3>
             <p><b lang="sa">प्रयोजनम्</b> · {quest.purpose}</p>
             <div className="vl-win-btns">
@@ -1902,7 +2078,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
           onClick={() => setIsIksLightboxOpen(false)}
           role="dialog"
           aria-modal="true"
-          aria-label="Vedic Indian Knowledge System Fullscreen Infographic"
+          aria-label="Vedic Indian Knowledge System fullscreen video"
         >
           <div className="vks-lightbox-modal" onClick={(e) => e.stopPropagation()}>
             <div className="vks-lightbox-bar">
@@ -1919,10 +2095,18 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               </button>
             </div>
             <div className="vks-lightbox-content">
-              <img
-                src="/images/vedic-indian-knowledge-system.jpg"
-                alt="Vedic Indian Knowledge System Fullscreen Infographic"
+              <video
                 className="vks-lightbox-img"
+                src="/videos/vignana-lab-v4.mp4"
+                poster="/images/vignana-lab-iks-poster-v4.jpg"
+                controls
+                autoPlay
+                loop
+                playsInline
+                preload="metadata"
+                width={1280}
+                height={720}
+                aria-label="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा"
               />
             </div>
           </div>

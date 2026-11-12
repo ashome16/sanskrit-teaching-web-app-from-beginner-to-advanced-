@@ -1,11 +1,12 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   GUIDED_WRITING_PATHS,
   type WritingPath,
   type WritingAssignment,
 } from '../data/guidedWritingPathsData';
-import { playPronunciation } from '../utils/pronunciation';
+import { playPronunciation, playSanskritPassage } from '../utils/pronunciation';
 import '../styles/guided-writing-studio.css';
+import { WritingPracticeBoard } from './WritingPracticeBoard';
 
 export interface GuidedWritingStudioProps {
   initialPathId?: string;
@@ -14,13 +15,7 @@ export interface GuidedWritingStudioProps {
   onGoHome?: () => void;
 }
 
-const BRUSH_COLORS = [
-  { id: 'saffron', hex: '#d97706', name: 'केसर-वर्णः (Saffron)' },
-  { id: 'emerald', hex: '#059669', name: 'हरितम् (Emerald)' },
-  { id: 'azure', hex: '#2563eb', name: 'नीलम् (Royal Blue)' },
-  { id: 'slate', hex: '#0f172a', name: 'कृष्णम् (Ink Slate)' },
-  { id: 'ruby', hex: '#dc2626', name: 'रक्तम् (Ruby)' },
-];
+const WRITING_PATHS = GUIDED_WRITING_PATHS.filter(path => !['grade7', 'grade8'].includes(path.id));
 
 const DIACRITIC_CHARS = ['।', '॥', 'ऽ', 'ः', 'ं', '्', 'ॐ', 'ऋ', 'ॠ', 'ज्ञ', 'त्र', 'श्र'];
 
@@ -38,13 +33,13 @@ interface PathProgressMap {
 export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
   initialPathId = 'basics',
   onNavigateView: _onNavigateView,
-  onOpenGeneralEvaluator,
-  onGoHome,
+  onOpenGeneralEvaluator: _onOpenGeneralEvaluator,
+  onGoHome: _onGoHome,
 }) => {
   // Selected path and assignment
-  const [selectedPathId, setSelectedPathId] = useState<string>(initialPathId);
+  const [selectedPathId, setSelectedPathId] = useState<string>(WRITING_PATHS.some(p => p.id === initialPathId) ? initialPathId : 'basics');
   const currentPath: WritingPath =
-    GUIDED_WRITING_PATHS.find((p) => p.id === selectedPathId) || GUIDED_WRITING_PATHS[0];
+    WRITING_PATHS.find((p) => p.id === selectedPathId) || WRITING_PATHS[0];
 
   const [activeAssignmentIndex, setActiveAssignmentIndex] = useState<number>(0);
   const currentAssignment: WritingAssignment =
@@ -56,12 +51,8 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
   // Input states
   const [typedText, setTypedText] = useState<string>('');
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
-  const [showWatermark, setShowWatermark] = useState<boolean>(true);
-
-  // Drawing tools
-  const [brushColor, setBrushColor] = useState<string>(BRUSH_COLORS[0].hex);
-  const [brushWidth, setBrushWidth] = useState<number>(5);
-  const [isEraser, setIsEraser] = useState<boolean>(false);
+  const [hasPracticeInk, setHasPracticeInk] = useState(false);
+  const [practiceNotice, setPracticeNotice] = useState('');
 
   // Evaluation states
   const [isEvaluating, setIsEvaluating] = useState<boolean>(false);
@@ -79,14 +70,22 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
   // Progress tracking
   const [progressMap, setProgressMap] = useState<PathProgressMap>({});
 
-  // Canvas refs
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const isDrawingRef = useRef<boolean>(false);
-  const lastPointRef = useRef<{ x: number; y: number } | null>(null);
-  const strokesHistoryRef = useRef<ImageData[]>([]);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const cameraInputRef = useRef<HTMLInputElement | null>(null);
+
+  const stopModelAudioRef = useRef<(() => void) | null>(null);
+
+  // Do not keep reading the previous model after navigating or leaving the studio.
+  useEffect(() => () => {
+    stopModelAudioRef.current?.();
+    stopModelAudioRef.current = null;
+  }, [selectedPathId, currentAssignment.id, currentAssignment.targetSanskrit]);
+
+  const listenToModel = () => {
+    stopModelAudioRef.current?.();
+    stopModelAudioRef.current = playSanskritPassage(currentAssignment.targetSanskrit);
+  };
 
   // Load progress from localStorage
   useEffect(() => {
@@ -117,146 +116,10 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
     }
   };
 
-  // Sync canvas size and redraw ruled background
-  const drawRuledBackground = useCallback((ctx: CanvasRenderingContext2D, width: number, height: number) => {
-    ctx.fillStyle = '#fffdf9';
-    ctx.fillRect(0, 0, width, height);
-
-    // Left vertical margin line in red
-    ctx.beginPath();
-    ctx.strokeStyle = 'rgba(239, 68, 68, 0.4)';
-    ctx.lineWidth = 1.5;
-    ctx.moveTo(35, 0);
-    ctx.lineTo(35, height);
-    ctx.stroke();
-
-    // Horizontal ruled guidelines in soft blue
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.28)';
-    ctx.lineWidth = 1;
-    const lineSpacing = 42;
-    for (let y = lineSpacing; y < height; y += lineSpacing) {
-      ctx.beginPath();
-      ctx.moveTo(0, y);
-      ctx.lineTo(width, y);
-      ctx.stroke();
-
-      // Faint midline for shirorekha alignment
-      ctx.beginPath();
-      ctx.strokeStyle = 'rgba(203, 213, 225, 0.2)';
-      ctx.setLineDash([4, 4]);
-      ctx.moveTo(35, y - 14);
-      ctx.lineTo(width, y - 14);
-      ctx.stroke();
-      ctx.setLineDash([]);
-      ctx.strokeStyle = 'rgba(148, 163, 184, 0.28)';
-    }
-  }, []);
-
-  const resetCanvas = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    drawRuledBackground(ctx, canvas.width, canvas.height);
-    strokesHistoryRef.current = [ctx.getImageData(0, 0, canvas.width, canvas.height)];
-  }, [drawRuledBackground]);
-
-  // Initialize canvas on mount or assignment change
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = Math.max(rect.width * dpr, 600);
-    canvas.height = 280 * dpr;
-    const ctx = canvas.getContext('2d');
-    if (ctx) {
-      ctx.scale(dpr, dpr);
-      drawRuledBackground(ctx, canvas.width / dpr, canvas.height / dpr);
-      strokesHistoryRef.current = [ctx.getImageData(0, 0, canvas.width, canvas.height)];
-    }
-    setTypedText('');
-    setUploadedImage(null);
-    setEvaluationFeedback(null);
-  }, [currentAssignment.id, drawRuledBackground]);
-
-  // Pointer drawing handlers
-  const getCanvasCoords = (e: React.PointerEvent<HTMLCanvasElement>) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return { x: 0, y: 0 };
-    const rect = canvas.getBoundingClientRect();
-    return {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    };
-  };
-
-  const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    canvas.setPointerCapture(e.pointerId);
-    isDrawingRef.current = true;
-    const coords = getCanvasCoords(e);
-    lastPointRef.current = coords;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
-    ctx.strokeStyle = isEraser ? '#fffdf9' : brushColor;
-    ctx.lineWidth = isEraser ? brushWidth * 3 : brushWidth;
-    ctx.beginPath();
-    ctx.arc(coords.x, coords.y, (ctx.lineWidth / 2), 0, Math.PI * 2);
-    ctx.fillStyle = ctx.strokeStyle;
-    ctx.fill();
-  };
-
-  const handlePointerMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
-    if (!isDrawingRef.current || !lastPointRef.current) return;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const currentCoords = getCanvasCoords(e);
-    ctx.beginPath();
-    ctx.moveTo(lastPointRef.current.x, lastPointRef.current.y);
-    ctx.lineTo(currentCoords.x, currentCoords.y);
-    ctx.strokeStyle = isEraser ? '#fffdf9' : brushColor;
-    ctx.lineWidth = isEraser ? brushWidth * 3 : brushWidth;
-    ctx.stroke();
-
-    lastPointRef.current = currentCoords;
-  };
-
-  const handlePointerUp = (e: React.PointerEvent<HTMLCanvasElement>) => {
-    if (!isDrawingRef.current) return;
-    isDrawingRef.current = false;
-    lastPointRef.current = null;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    try {
-      canvas.releasePointerCapture(e.pointerId);
-    } catch {
-      // Ignore if not captured
-    }
-    const ctx = canvas.getContext('2d');
-    if (ctx) {
-      strokesHistoryRef.current.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
-    }
-  };
-
-  const handleUndo = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx || strokesHistoryRef.current.length <= 1) return;
-    strokesHistoryRef.current.pop();
-    const previous = strokesHistoryRef.current[strokesHistoryRef.current.length - 1];
-    if (previous) {
-      ctx.putImageData(previous, 0, 0);
-    }
-  };
+    setTypedText(''); setUploadedImage(null); setEvaluationFeedback(null);
+    setHasPracticeInk(false); setPracticeNotice('');
+  }, [currentAssignment.id]);
 
   // Diacritic helper
   const handleInsertDiacritic = (char: string) => {
@@ -277,6 +140,17 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
 
   // Evaluate writing
   const handleCheckWriting = () => {
+    setEvaluationFeedback(null);
+    if (inputMode === 'slate') {
+      setPracticeNotice(hasPracticeInk ? 'Practice completed on this page. Compare your letters and mātrās with the model. No automatic handwriting score is assigned.' : 'Trace or copy a word before marking practice complete.');
+      return;
+    }
+    if (inputMode === 'upload') {
+      setPracticeNotice(uploadedImage ? 'Your image is ready to compare with the model. This guided practice does not automatically recognise or grade handwriting.' : 'Add a photo of your writing first.');
+      return;
+    }
+    if (!typedText.trim()) { setPracticeNotice('Type your own Sanskrit text before checking the keywords.'); return; }
+    setPracticeNotice('');
     setIsEvaluating(true);
     setTimeout(() => {
       const maxScore = currentAssignment.suggestedMaxMarks;
@@ -286,7 +160,7 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
       let isPass = true;
 
       // Determine text source to inspect
-      const textToInspect = typedText.trim() || currentAssignment.targetSanskrit;
+      const textToInspect = typedText.trim();
       const targetKeywords = currentAssignment.expectedKeywords;
 
       // Check keyword coverage
@@ -297,7 +171,7 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
         actionableTip = currentAssignment.handwritingTips;
       } else {
         obtained = maxScore;
-        feedbackText = `उत्कृष्टम्! Flawless Sanskrit writing! Accurate character formation, shirorekha, and spelling.`;
+        feedbackText = `साधु! The expected keywords are present. This text check does not assess handwriting, stroke formation or complete grammar.`;
         actionableTip = 'Proceed to the next sequential assignment to build higher fluency!';
       }
 
@@ -382,103 +256,12 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
         }}
       />
 
-      {/* Header Banner */}
-      <header className="gws-header">
-        <div className="gws-header-top">
-          <div className="gws-badge-row">
-            <span className="gws-badge-pill">✍️ क्रमिक-लेखन-अभ्यासः · Learn Through Writing</span>
-            <span className="gws-badge-pill" style={{ background: 'rgba(5, 150, 105, 0.25)', borderColor: '#10b981', color: '#a7f3d0' }}>
-              {currentPath.badge}
-            </span>
-          </div>
-
-          <div style={{ display: 'flex', gap: '0.6rem' }}>
-            {onOpenGeneralEvaluator && (
-              <button
-                type="button"
-                className="sae-header-btn"
-                onClick={onOpenGeneralEvaluator}
-                title="Open open-ended assignment evaluator"
-              >
-                <span>📤 Free Upload Evaluator</span>
-              </button>
-            )}
-            {onGoHome && (
-              <button type="button" className="sae-header-btn" onClick={onGoHome}>
-                <span>🏠 Home</span>
-              </button>
-            )}
-          </div>
-        </div>
-
-        <h1 className="gws-header-title">संस्कृत-हस्तलेखन-शाला · Guided Sequential Writing</h1>
-        <h2 className="gws-header-subtitle">{currentPath.title} ({currentPath.titleSanskrit})</h2>
-        <p className="gws-header-desc">{currentPath.description}</p>
-      </header>
-
-      {/* Path Selector Carousel */}
-      <section className="gws-paths-section" aria-label="Curriculum Writing Path Selector">
-        <div className="gws-paths-title-row">
-          <h3 className="gws-paths-heading">
-            <span>🧭</span>
-            <span>Select Your Tailored Writing Path (मार्ग-चयनम्):</span>
-          </h3>
-          <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>
-            {completedInCurrentPath} of {currentPath.assignments.length} completed
-          </span>
-        </div>
-
-        <div className="gws-paths-grid">
-          {GUIDED_WRITING_PATHS.map((path) => {
-            const isActive = path.id === selectedPathId;
-            const completedCount = path.assignments.filter((a) => progressMap[a.id]?.completed).length;
-            const pct = Math.round((completedCount / path.assignments.length) * 100);
-
-            return (
-              <div
-                key={path.id}
-                className={`gws-path-card ${isActive ? 'active' : ''}`}
-                style={isActive ? { borderColor: path.accentColor } : undefined}
-                onClick={() => {
-                  setSelectedPathId(path.id);
-                  setActiveAssignmentIndex(0);
-                }}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    setSelectedPathId(path.id);
-                    setActiveAssignmentIndex(0);
-                  }
-                }}
-              >
-                <div className="gws-path-card-top">
-                  <span className="gws-path-icon">{path.icon}</span>
-                  <span className="gws-path-badge">{path.levelBadge}</span>
-                </div>
-
-                <div>
-                  <div className="gws-path-title-sa">{path.titleSanskrit}</div>
-                  <div className="gws-path-title-en">{path.title}</div>
-                </div>
-
-                <div className="gws-path-progress-wrap">
-                  <div className="gws-path-progress-meta">
-                    <span>{path.assignments.length} Assignments</span>
-                    <span>{pct}%</span>
-                  </div>
-                  <div className="gws-path-progress-track">
-                    <div
-                      className="gws-path-progress-bar"
-                      style={{ width: `${pct}%`, background: path.accentColor }}
-                    />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      <div className="gws-compact-paths">
+        <label>Writing path <select value={selectedPathId} onChange={e => { setSelectedPathId(e.target.value); setActiveAssignmentIndex(0); }}>
+          {WRITING_PATHS.map(path => <option key={path.id} value={path.id}>{path.title}</option>)}
+        </select></label>
+        <span>{completedInCurrentPath} of {currentPath.assignments.length} typed assignments completed</span>
+      </div>
 
       {/* Sequential Stepper Navigator */}
       <nav className="gws-stepper-wrap" aria-label="Sequential Assignment Stepper">
@@ -551,8 +334,8 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
               <button
                 type="button"
                 className="gws-audio-listen-btn"
-                onClick={() => playPronunciation(currentAssignment.targetSanskrit)}
-                title="Listen to authentic Sanskrit pronunciation"
+                onClick={listenToModel}
+                title="Listen to the Sanskrit model, sentence by sentence"
               >
                 <span>🔊 Listen</span>
               </button>
@@ -609,7 +392,7 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
               className={`gws-mode-btn ${inputMode === 'slate' ? 'active' : ''}`}
               onClick={() => setInputMode('slate')}
             >
-              <span>✍️ Ruled Ink Slate</span>
+              <span>Trace &amp; Copy Notebook</span>
             </button>
 
             <button
@@ -629,97 +412,8 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
             </button>
           </div>
 
-          {/* MODE 1: DIGITAL INK CANVAS */}
           {inputMode === 'slate' && (
-            <div>
-              {/* Canvas Toolbar */}
-              <div className="gws-canvas-toolbar">
-                <div className="gws-colors-group">
-                  <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#64748b', marginRight: '0.2rem' }}>
-                    Ink:
-                  </span>
-                  {BRUSH_COLORS.map((col) => (
-                    <button
-                      key={col.id}
-                      type="button"
-                      className={`gws-color-dot ${brushColor === col.hex && !isEraser ? 'active' : ''}`}
-                      style={{ background: col.hex }}
-                      onClick={() => {
-                        setBrushColor(col.hex);
-                        setIsEraser(false);
-                      }}
-                      title={col.name}
-                    />
-                  ))}
-                </div>
-
-                <div className="gws-tools-group">
-                  <button
-                    type="button"
-                    className={`gws-tool-btn ${brushWidth === 3 ? 'active' : ''}`}
-                    onClick={() => setBrushWidth(3)}
-                    title="Fine Pen"
-                  >
-                    Fine
-                  </button>
-                  <button
-                    type="button"
-                    className={`gws-tool-btn ${brushWidth === 6 ? 'active' : ''}`}
-                    onClick={() => setBrushWidth(6)}
-                    title="Medium Pen"
-                  >
-                    Medium
-                  </button>
-                  <button
-                    type="button"
-                    className={`gws-tool-btn ${brushWidth === 10 ? 'active' : ''}`}
-                    onClick={() => setBrushWidth(10)}
-                    title="Calligraphy Nib"
-                  >
-                    Bold
-                  </button>
-                  <button
-                    type="button"
-                    className={`gws-tool-btn ${isEraser ? 'active' : ''}`}
-                    onClick={() => setIsEraser(!isEraser)}
-                    title="Eraser"
-                  >
-                    🧹 Eraser
-                  </button>
-                  <button type="button" className="gws-tool-btn" onClick={handleUndo} title="Undo stroke">
-                    ↩ Undo
-                  </button>
-                  <button type="button" className="gws-tool-btn" onClick={resetCanvas} title="Clear Slate">
-                    🗑️ Clear
-                  </button>
-                  <button
-                    type="button"
-                    className={`gws-tool-btn ${showWatermark ? 'active' : ''}`}
-                    onClick={() => setShowWatermark(!showWatermark)}
-                    title="Toggle Faded Model Guide Watermark"
-                  >
-                    {showWatermark ? '👁️ Guide ON' : 'Guide OFF'}
-                  </button>
-                </div>
-              </div>
-
-              {/* Ruled Canvas */}
-              <div className="gws-canvas-wrap">
-                {showWatermark && (
-                  <div className="gws-watermark-overlay" aria-hidden="true">
-                    {currentAssignment.targetSanskrit}
-                  </div>
-                )}
-                <canvas
-                  ref={canvasRef}
-                  className="gws-drawing-canvas"
-                  onPointerDown={handlePointerDown}
-                  onPointerMove={handlePointerMove}
-                  onPointerUp={handlePointerUp}
-                  onPointerCancel={handlePointerUp}
-                />
-              </div>
-            </div>
+            <WritingPracticeBoard key={currentAssignment.id} modelText={currentAssignment.targetSanskrit} onInkChange={setHasPracticeInk} />
           )}
 
           {/* MODE 2: DEVANAGARI TYPING */}
@@ -764,7 +458,7 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
                   Upload Photo of your Handwritten Sanskrit Notebook
                 </h4>
                 <p style={{ margin: '0 0 0.85rem 0', fontSize: '0.8rem', color: '#64748b' }}>
-                  Write on physical paper, then snap a photo to evaluate!
+                  Write on paper, then add a photo for side-by-side review.
                 </p>
 
                 <div className="sae-upload-options-row" onClick={(e) => e.stopPropagation()}>
@@ -811,7 +505,7 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
               onClick={handleCheckWriting}
               disabled={isEvaluating}
             >
-              <span>{isEvaluating ? '⏳ Checking Strokes & Concord...' : '✨ Check My Writing · मूल्याङ्कनम्'}</span>
+              <span>{isEvaluating ? 'Checking keywords…' : inputMode === 'type' ? 'Check typed keywords' : 'Review my practice'}</span>
             </button>
 
             {activeAssignmentIndex < currentPath.assignments.length - 1 && (
@@ -826,6 +520,7 @@ export const GuidedWritingStudio: React.FC<GuidedWritingStudioProps> = ({
           </div>
 
           {/* Assessment Feedback Card */}
+          {practiceNotice && <p role="status" className="gws-practice-notice">{practiceNotice}</p>}
           {evaluationFeedback && (
             <div
               className={`gws-feedback-card ${evaluationFeedback.percentage < 75 ? 'needs-work' : ''}`}

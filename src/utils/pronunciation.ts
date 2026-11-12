@@ -1,4 +1,10 @@
-import { isBarakhadiAkshara, getGuninthaluSpeechText, CONSONANT_STEM, MATRA_VOWEL } from './barakhadiPhonetics';
+import { isBarakhadiAkshara, getGuninthaluSpeechText, CONSONANT_STEM, MATRA_VOWEL, INDEPENDENT_VOWELS, CONJUNCTS } from './barakhadiPhonetics';
+
+const STANDALONE_AUDIO_KEY = (w: string): string | undefined => {
+  const k = INDEPENDENT_VOWELS[w] || CONJUNCTS[w];
+  return k ? k.replace('ī', 'ii') : undefined;
+};
+const mp3Failed = new Set<string>();
 import {
   applySafeProsody,
   clampRate,
@@ -333,8 +339,15 @@ let speakGeneration = 0;
  * mantra reciter) notice when any other playback called stopPronunciation(). */
 export const getSpeechGeneration = (): number => speakGeneration;
 
+/** Letter MP3 currently playing (so Stop / the next item can silence it). */
+let activeLetterAudio: HTMLAudioElement | null = null;
+
 export const stopPronunciation = (): void => {
   speakGeneration += 1;
+  if (activeLetterAudio) {
+    try { activeLetterAudio.pause(); } catch { /* ignore */ }
+    activeLetterAudio = null;
+  }
   if (typeof window === 'undefined' || !window.speechSynthesis) return;
   window.speechSynthesis.cancel();
 };
@@ -415,13 +428,19 @@ const applyCallerRate = (utterance: SpeechSynthesisUtterance, rate?: number): vo
   utterance.pitch = 1;
 };
 
-const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?: number): void => {
-  if (pronunciationMuted) return;
+// Hold a reference so Chrome does not garbage-collect an in-flight utterance (lost onend / silence).
+let activeUtterance: SpeechSynthesisUtterance | null = null;
+export const getActiveUtterance = (): SpeechSynthesisUtterance | null => activeUtterance;
+const speakConfigured = (word: string, onEnd?: (ev?: unknown) => void, plain = false, rate?: number, preserveWrittenText = false): void => {
+  if (pronunciationMuted) {
+    if (onEnd) setTimeout(() => onEnd(), 0);
+    return;
+  }
 
   // Lesson cardinals are already Devanagari number-words. Skip letter MP3s,
   // roman cues, and the नव/सप्त overrides so "द्वि" stays द्वि.
   if (plain) {
-    const spokenText = word
+    const spokenText = preserveWrittenText ? word : word
       .replace(/मृत्योर्मा\s*ऽ?\s*अ?मृत[ंम्]/g, 'मृत्योर्मा, अमृतम्')
       .replace(/ऽ/g, ' अ')
       .replace(/अमृतं/g, 'अमृतम्')
@@ -442,6 +461,7 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?:
       utterance.onend = onEnd;
       utterance.onerror = onEnd;
     }
+    activeUtterance = utterance;
     window.speechSynthesis.speak(utterance);
     try {
       if (window.speechSynthesis.paused) window.speechSynthesis.resume();
@@ -452,6 +472,26 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?:
   }
 
   // 1. Intercept Barakhadi characters and play our local MP3 files
+  const standaloneKey = STANDALONE_AUDIO_KEY(word.trim());
+  if (standaloneKey && !mp3Failed.has(standaloneKey)) {
+    const audio = new Audio(`/audio/barakhadi/${standaloneKey}.mp3`);
+    activeLetterAudio = audio;
+    let done = false;
+    const fallback = () => {
+      if (done) return;
+      done = true;
+      mp3Failed.add(standaloneKey);
+      if (activeLetterAudio === audio) activeLetterAudio = null;
+      speakConfigured(word, onEnd, plain, rate);
+    };
+    audio.onended = () => { if (done) return; done = true; if (onEnd) onEnd(); };
+    audio.onerror = fallback;
+    audio.play().catch(err => {
+      if ((err as DOMException)?.name === 'NotAllowedError') { if (!done) { done = true; if (onEnd) onEnd(); } return; }
+      fallback();
+    });
+    return;
+  }
   if (isBarakhadiAkshara(word)) {
     const cons = word[0];
     const rest = word.slice(1);
@@ -463,6 +503,7 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?:
     if (stem && vowel) {
       const audioPath = `/audio/barakhadi/${stem}_${vowel}.mp3`;
       const audio = new Audio(audioPath);
+      activeLetterAudio = audio;
       
       if (onEnd) {
         audio.onended = onEnd;
@@ -497,6 +538,7 @@ const speakConfigured = (word: string, onEnd?: () => void, plain = false, rate?:
     utterance.onend = onEnd;
     utterance.onerror = onEnd;
   }
+  activeUtterance = utterance;
   window.speechSynthesis.speak(utterance);
   try {
     if (window.speechSynthesis.paused) window.speechSynthesis.resume();
@@ -569,6 +611,23 @@ export const playStoryLine = (text: string, narrationRate?: number): void => {
   });
 };
 
+/** Read a model passage without the single-word/letter pronunciation overrides.
+ * Always use the plain sequence path, even for a one-sentence assignment, and
+ * return its cancellation function so switching assignments stops the passage.
+ */
+export const playSanskritPassage = (text: string): (() => void) => {
+  const sentences = text
+    .split(/[।॥.!?\n]+/)
+    .map((sentence) => sentence.replace(/\s+/g, ' ').trim())
+    .filter((sentence) => /[\u0900-\u097F]/.test(sentence));
+  return playSequence(sentences, {
+    plainDevanagari: true,
+    preserveWrittenText: true,
+    gapMs: STORY_SENTENCE_PAUSE_MS,
+    rate: STORY_NARRATION_RATE,
+  });
+};
+
 /** Slower pace for the Pañcabhūta (Five Friends) Sanskrit story lines. */
 export const PANCHABHUTA_NARRATION_RATE = 0.65;
 
@@ -590,6 +649,8 @@ export const playSequence = (
     sanskritCardinals?: boolean;
     /** Speak every item as given Devanagari, with no letter-audio or roman cues. */
     plainDevanagari?: boolean;
+    /** Model passages: bypass mantra-specific respelling; keep the written text. */
+    preserveWrittenText?: boolean;
     /**
      * Playback rate for plain Devanagari items only. A function is read per item
      * so a page can change speed mid-queue. Pitch is not touched. Omitted = existing rates.
@@ -603,7 +664,7 @@ export const playSequence = (
     // Skip daṇḍa / double daṇḍa / verse-number tokens so Play-all never says "danda".
     if (isDandaOrVerseNumberToken(value)) continue;
     if (options?.plainDevanagari) {
-      const phrase = expandDigitsInLessonText(value).replace(/\s+/g, ' ').trim();
+      const phrase = (options.preserveWrittenText ? value : expandDigitsInLessonText(value)).replace(/\s+/g, ' ').trim();
       if (phrase) items.push({ word: phrase, plain: true, source });
       continue;
     }
@@ -644,11 +705,16 @@ export const playSequence = (
   const stop = () => {
     cancelled = true;
     clearTimer();
-    stopPronunciation();
+    if (gen === speakGeneration) stopPronunciation();
   };
 
   const speakNext = () => {
     if (cancelled) return;
+    if (gen !== speakGeneration) {
+      cancelled = true;
+      clearTimer();
+      return;
+    }
     if (index >= items.length) {
       options?.onDone?.();
       return;
@@ -680,17 +746,47 @@ export const playSequence = (
     // Some Chrome/Edge builds skip onend; advance after a safe upper bound.
     // Generous safety bound only; onend/onerror is the primary advance.
     const rateForEstimate = callerRate ?? 1;
-    const fallbackMs = Math.round(estimateSpeakMs(word, rateForEstimate) * 2.4);
+    // Single letters (MP3 or TTS) need a floor, or the safety timer fires before the
+    // sound ends and the next letter talks over / cuts off the previous one.
+    const fallbackMs = Math.max(item.plain ? 0 : 2200, Math.round(estimateSpeakMs(word, rateForEstimate) * 2.4));
     fallbackTimer = setTimeout(after, fallbackMs);
-    speakConfigured(word, after, item.plain, callerRate);
+    // Chrome/Edge often drop (or instantly error with "interrupted"/"canceled")
+    // a TTS utterance queued right after speechSynthesis.cancel(). Letter MP3 rows
+    // were unaffected, so only the TTS rows (vowels, conjuncts) went silent.
+    // Retry such an instant failure once, after a short settle.
+    let startedAt = Date.now();
+    let retries = 0;
+    const onEnd = (ev?: unknown) => {
+      const err = (ev as { error?: string } | undefined)?.error;
+      if (retries < 2 && err && err !== 'not-allowed' && Date.now() - startedAt < 600
+        && !cancelled && gen === speakGeneration && settledForIndex !== itemIndex) {
+        retries += 1;
+        setTimeout(() => {
+          if (cancelled || gen !== speakGeneration || settledForIndex === itemIndex) return;
+          startedAt = Date.now();
+          speakConfigured(word, onEnd, item.plain, callerRate, options?.preserveWrittenText);
+        }, 200);
+        return;
+      }
+      after();
+    };
+    if (pronunciationMuted) {
+      // speakConfigured returns without calling onEnd when muted; do not stall.
+      setTimeout(after, 0);
+      return;
+    }
+    speakConfigured(word, onEnd, item.plain, callerRate, options?.preserveWrittenText);
   };
 
   stopPronunciation();
   const gen = speakGeneration;
-  void whenVoicesReady().then(() => {
-    if (cancelled || gen !== speakGeneration) return;
-    speakNext();
-  });
+  // Speak item 0 SYNCHRONOUSLY inside the caller's click stack. Safari only lets
+  // speechSynthesis start within a user gesture; awaiting whenVoicesReady() or a
+  // settle setTimeout before the first utterance pushed it outside the gesture, so
+  // TTS-only rows (vowels, अं/अः/अँ, conjuncts) stayed silent while MP3 rows played.
+  // Once the engine is speaking, later items chain via onend (+gap) and are allowed.
+  // A Chrome cancel->speak instant error is still covered by the retry in onEnd.
+  speakNext();
   return stop;
 };
 

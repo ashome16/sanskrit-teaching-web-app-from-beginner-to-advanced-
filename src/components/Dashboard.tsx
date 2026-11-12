@@ -29,6 +29,7 @@ const SanskritThinkingCourse = lazy(() => import('./SanskritThinkingCourse'));
 const CertificatePage = lazy(() => import('./CertificatePage'));
 const ScienceLab = lazy(() => import('./scienceLab/ScienceLab'));
 const SanskritAssignmentEvaluator = lazy(() => import('./SanskritAssignmentEvaluator'));
+const IksThinkLabsPage = lazy(() => import('./IksThinkLabsPage'));
 
 // Lazy-loaded dialogs & modals
 const AuthModal = lazy(() => import('./AuthModal'));
@@ -39,7 +40,6 @@ const GlobalSearchModal = lazy(() => import('./GlobalSearchModal'));
 const VoiceSettingsModal = lazy(() => import('./VoiceSettingsModal'));
 const BodhiOnlineClassesModal = lazy(() => import('./BodhiOnlineClassesModal'));
 const HinduCalendarModal = lazy(() => import('./HinduCalendarModal'));
-import { getHinduDate } from '../utils/hinduCalendar';
 import '../styles/hindu-calendar.css';
 import { useAccessibilityStore } from '../utils/accessibilityStore';
 
@@ -86,7 +86,8 @@ type DashboardView =
   | 'certificate'
   | 'science-lab'
   | 'assignment-eval'
-  | 'intent-landing';
+  | 'intent-landing'
+  | 'iks';
 
 const PHILOSOPHY_PATHS = new Set([
   '/philosophy',
@@ -126,8 +127,8 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Focused Sanskrit study pages for CBSE classes, NCERT Deepakam and Sharada, alphabet audio, grammar and word deconstruction.',
   },
   home: {
-    title: 'Sanskrit & Indian Knowledge Systems (IKS): Spoken Samskrit, Vedic Sciences & Gurukul Learning | EdNet Learn',
-    desc: 'Interactive Sanskrit & Indian Knowledge Systems (IKS) online classes: spoken Samskrit, Vedic sciences, Kaṇāda physics lab, 28-lesson curriculum, CBSE NCERT Classes 6–10 coaching, Pāṇinian grammar, and Vedic math with live AI audio feedback.',
+    title: 'EdNet Learn | Free Learning Through Play – Sanskrit & Science',
+    desc: 'Explore Sanskrit, Vedic Mathematics, Indian Knowledge Systems, science and interactive educational games. Discover India\'s knowledge traditions through play, stories and exploration.',
   },
   course: {
     title: 'संस्कृत-चिन्तनम् · Sanskrit & Indian Knowledge Systems (IKS) as a Way of Thinking | EdNet Gurukul',
@@ -189,6 +190,16 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     title: 'Upload & Evaluate Written Sanskrit Assignment: AI Gurukul Parikshaka | EdNet Learn',
     desc: 'Upload a photo of your handwritten Sanskrit notebook, worksheet, or exam paper. Get instant AI Gurukul evaluation of Devanagari orthography, Paninian grammar concord, case endings, and printable marksheet with audio feedback.',
   },
+  iks: {
+    title: 'Indian Knowledge Systems (IKS) Experiential Think Labs | EdNet Learn',
+    desc: 'Explore 14 curriculum-linked experiential STEM inquiry sandboxes in Indian Knowledge Systems (IKS): solar astronomy sundials, 1,600-year Delhi pillar passivation metallurgy, Kaṭapayādi cipher, and Suśruta surgery.',
+  },
+};
+
+/** Homepage social (Open Graph / Twitter) copy; differs from the SERP title/description on purpose. Mirrors index.html. */
+export const HOME_SOCIAL_METADATA: { title: string; desc: string } = {
+  title: 'EdNet Learn – Learn Through Play',
+  desc: 'Exploring Indian Knowledge Systems, creativity and the wonders of learning — through interactive learning, games, stories and discovery.',
 };
 
 /** /barakhadi aliases the reader view. Copy is the existing search-index entry, not new marketing. */
@@ -292,17 +303,20 @@ const pathToView = (pathname: string): DashboardView | null => {
   if (clean === '/faq' || clean === '/sanskrit-faq' || clean === '/help') return 'faq';
   if (clean === '/certificate' || clean === '/swar-certificate') return 'certificate';
   if (
+    clean === '/iks' ||
+    clean === '/iks-labs' ||
+    clean === '/iks-think-labs' ||
+    clean === '/vedic-sciences' ||
+    clean === '/vedic-science' ||
+    clean === '/ancient-indian-sciences'
+  ) return 'iks';
+  if (
     clean === '/vignana-lab' ||
     clean === '/vignana' ||
     clean === '/vijnana-lab' ||
     clean === '/vijnana' ||
     clean === '/science-lab' ||
     clean === '/science-lab-games' ||
-    clean === '/indian-knowledge-systems' ||
-    clean === '/iks' ||
-    clean === '/vedic-sciences' ||
-    clean === '/vedic-science' ||
-    clean === '/ancient-indian-sciences' ||
     clean === '/preschool' ||
     clean === '/preschool-games' ||
     clean === '/play-2-learn' ||
@@ -342,13 +356,19 @@ const viewToPath = (view: DashboardView): string => {
     const l = typeof window !== 'undefined' ? landingForPath(window.location.pathname) : null;
     return l ? l.path : '/';
   }
+  if (view === 'iks') {
+    if (typeof window !== 'undefined') {
+      const clean = window.location.pathname.replace(/\/+$/, '');
+      if (clean === '/iks-labs' || clean === '/iks-think-labs' || clean === '/vedic-sciences' || clean === '/vedic-science' || clean === '/ancient-indian-sciences') {
+        return clean;
+      }
+    }
+    return '/iks';
+  }
   if (view === 'science-lab') {
     if (typeof window !== 'undefined') {
       const clean = window.location.pathname.replace(/\/+$/, '');
       if (clean === '/preschool' || clean === '/preschool-games' || clean === '/play-2-learn') {
-        return clean;
-      }
-      if (clean === '/iks' || clean === '/vedic-sciences' || clean === '/vedic-science' || clean === '/indian-knowledge-systems' || clean === '/ancient-indian-sciences') {
         return clean;
       }
       if (clean === '/science-lab') {
@@ -376,7 +396,8 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'dhatupatha' ||
   saved === 'certificate' ||
   saved === 'science-lab' ||
-  saved === 'assignment-eval';
+  saved === 'assignment-eval' ||
+  saved === 'iks';
 
 
 /** Strip punctuation / digits so only the Devanagari token remains for analysis. */
@@ -386,7 +407,7 @@ const cleanWord = (value: string): string =>
 // Views guests may open in smart_freemium (SEO deep links must not bounce to home).
 const GUEST_FREE_VIEWS: ReadonlySet<string> = new Set([
   'home', 'faq', 'philosophy', 'cbse-guide', 'resources', 'dhatupatha', 'science-lab', 'certificate',
-  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'assignment-eval', 'intent-landing',
+  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'assignment-eval', 'intent-landing', 'iks',
 ]);
 
 const Dashboard: React.FC = () => {
@@ -481,15 +502,6 @@ const Dashboard: React.FC = () => {
   const [isOnlineClassesOpen, setIsOnlineClassesOpen] = useState(false);
   const [isMoreNavOpen, setIsMoreNavOpen] = useState(false);
   const [isCalendarModalOpen, setIsCalendarModalOpen] = useState(false);
-  const [panchang, setPanchang] = useState(() => getHinduDate());
-
-  // Keep Hindu Panchang date and time updated every 30 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setPanchang(getHinduDate());
-    }, 30000);
-    return () => clearInterval(timer);
-  }, []);
 
   // Allow any section or widget to open the Hindu Calendar modal via event
   useEffect(() => {
@@ -656,10 +668,11 @@ const Dashboard: React.FC = () => {
       const clean = window.location.pathname.replace(/\/+$/, '');
       return (
         clean === '/iks' ||
+        clean === '/iks-labs' ||
+        clean === '/iks-think-labs' ||
         clean === '/vedic-sciences' ||
         clean === '/vedic-science' ||
         clean === '/ancient-indian-sciences' ||
-        clean === '/indian-knowledge-systems' ||
         window.location.hash === '#vedic-knowledge-system' ||
         window.location.hash === '#iks'
       );
@@ -971,8 +984,9 @@ const Dashboard: React.FC = () => {
         (activeView === 'science-lab' && labTarget.segment === 'preschool-wonder') ||
         (activeView === 'science-lab' && isPreschoolPath());
       const onIks =
+        activeView === 'iks' ||
         (activeView === 'science-lab' && labTarget.segment === 'iks') ||
-        (activeView === 'science-lab' && isIksPath());
+        isIksPath();
       const onManyNames =
         activeView === 'grammar' && grammarTargetArticleId === 'many-names-of-sanskrit' && current === '/many-names-of-sanskrit';
       const onSouthIndian =
@@ -991,7 +1005,7 @@ const Dashboard: React.FC = () => {
         : onPreschool
         ? (current === '/preschool-games' || current === '/play-2-learn' ? current : '/preschool')
         : onIks
-        ? (current === '/vedic-sciences' || current === '/vedic-science' || current === '/ancient-indian-sciences' ? current : '/iks')
+        ? (current === '/iks-labs' || current === '/iks-think-labs' || current === '/vedic-sciences' || current === '/vedic-science' || current === '/ancient-indian-sciences' ? current : '/iks')
         : onBarakhadi
         ? '/barakhadi'
         : onManyNames
@@ -1028,16 +1042,17 @@ const Dashboard: React.FC = () => {
         ? BARAKHADI_METADATA
         : VIEW_METADATA[activeView] || VIEW_METADATA.home;
       document.title = meta.title;
+      const social = !activeLanding && activeView === 'home' && desired === '/' ? HOME_SOCIAL_METADATA : meta;
       const descEl = document.querySelector('meta[name="description"]');
       if (descEl) descEl.setAttribute('content', meta.desc);
       const ogTitleEl = document.querySelector('meta[property="og:title"]');
-      if (ogTitleEl) ogTitleEl.setAttribute('content', meta.title);
+      if (ogTitleEl) ogTitleEl.setAttribute('content', social.title);
       const ogDescEl = document.querySelector('meta[property="og:description"]');
-      if (ogDescEl) ogDescEl.setAttribute('content', meta.desc);
+      if (ogDescEl) ogDescEl.setAttribute('content', social.desc);
       const twTitleEl = document.querySelector('meta[name="twitter:title"]');
-      if (twTitleEl) twTitleEl.setAttribute('content', meta.title);
+      if (twTitleEl) twTitleEl.setAttribute('content', social.title);
       const twDescEl = document.querySelector('meta[name="twitter:description"]');
-      if (twDescEl) twDescEl.setAttribute('content', meta.desc);
+      if (twDescEl) twDescEl.setAttribute('content', social.desc);
       const canonicalHref = `https://ednetlearn.in${desired.endsWith('/') ? desired : `${desired}/`}`;
       const ogUrlEl = document.querySelector('meta[property="og:url"]');
       if (ogUrlEl) ogUrlEl.setAttribute('content', canonicalHref);
@@ -1317,9 +1332,9 @@ const Dashboard: React.FC = () => {
           </div>
         </button>
         <nav className="dashboard-nav" aria-label="Main learning views">
-          {/* Desktop: row 1 sits between brand and tools (Home + CBSE Exam Guide group);
-              row 2 spans the full header width (learning tools). Mobile: rows flatten
-              into the single horizontal scroller. */}
+          {/* Desktop: row 1 = Home · Games (between brand and auth);
+              row 2 = learning tools + NCERT (before More); Voices/Search in tools cell (Pañcāṅga on homepage).
+              Mobile: nav rows flatten into the horizontal scroller; tools stay with auth. */}
           <div className="dashboard-nav-row dashboard-nav-row--primary">
             <button
               type="button"
@@ -1332,7 +1347,7 @@ const Dashboard: React.FC = () => {
               <span className="dashboard-nav-secondary">Home</span>
             </button>
             <div
-              className={`dashboard-nav-group dashboard-nav-group--games${activeView === 'science-lab' ? ' dashboard-nav-group--active' : ''}`}
+              className={`dashboard-nav-group dashboard-nav-group--games${activeView === 'science-lab' || activeView === 'iks' ? ' dashboard-nav-group--active' : ''}`}
             >
               <button
                 type="button"
@@ -1365,6 +1380,14 @@ const Dashboard: React.FC = () => {
                 </button>
                 <button
                   type="button"
+                  className={activeView === 'iks' ? 'active' : ''}
+                  onClick={() => navigateToView('iks')}
+                  title="Direct entry: 14 IKS Experiential Think Labs (Konark, Uddālaka, Bio-Dome, Wootz & more)"
+                >
+                  <span className="dashboard-nav-sanskrit">IKS</span> <span className="dashboard-nav-stem-badge">14 Labs</span>
+                </button>
+                <button
+                  type="button"
                   className={activeView === 'science-lab' && (!labTarget.segment || labTarget.segment === 'catalog') ? 'active' : ''}
                   onClick={() => openScienceLab('catalog')}
                   title="Browse All 41 Games Directory (क्रीडा-सूची)"
@@ -1372,53 +1395,6 @@ const Dashboard: React.FC = () => {
                   <span aria-hidden="true">🗂️</span>
                   <span className="dashboard-nav-sanskrit">सूची</span>
                   <span className="dashboard-nav-dir-badge">All 41 Games</span>
-                </button>
-              </div>
-            </div>
-            <div
-              className={`dashboard-nav-group dashboard-nav-group--ncert${(activeView === 'reader' && lesson?.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
-            >
-              <button
-                type="button"
-                className={`dashboard-nav-group-label${activeView === 'cbse-guide' ? ' dashboard-nav-group-label--active' : ''}`}
-                onClick={() => navigateToView('cbse-guide')}
-                title="NCERT / CBSE Sanskrit Curriculum, Exam Blueprint & Syllabi"
-              >
-                <img src="/nav/nav-deepakam.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={18} height={18} />
-                <span className="dashboard-nav-sanskrit">सीबीएसई / NCERT</span>
-                <span className="dashboard-nav-sub-en">Sanskrit</span>
-              </button>
-              <div className="dashboard-nav-sub dashboard-nav-sub--grades" role="group" aria-label="NCERT CBSE Sanskrit Grades 7, 8, and 9">
-                <button
-                  type="button"
-                  className={`dashboard-nav-grade-num${activeView === 'reader' && lesson?.id !== 'varnamala' && !lesson?.id?.startsWith('grade8_') && !lesson?.id?.startsWith('grade9_') ? ' active' : ''}`}
-                  onClick={() => openDeepakam()}
-                  title="NCERT Deepakam Class 7 Sanskrit (दीपकम् - कक्षा ७)"
-                  aria-label="Class 7 Deepakam Sanskrit"
-                >
-                  <span className="dashboard-nav-grade-badge">7</span>
-                </button>
-                <button
-                  type="button"
-                  className={`dashboard-nav-grade-num${activeView === 'reader' && lesson?.id?.startsWith('grade8_') ? ' active' : ''}`}
-                  onClick={() => {
-                    openDeepakam(canReadAllChapters ? 'grade8_prarthana' : 'grade8_ch1');
-                  }}
-                  title={canReadAllChapters ? 'NCERT Deepakam Class 8 Sanskrit (दीपकम् - कक्षा ८)' : 'Free preview: Deepakam Class 8 Chapter 1'}
-                  aria-label="Class 8 Deepakam Sanskrit"
-                >
-                  <span className="dashboard-nav-grade-badge">8</span>
-                </button>
-                <button
-                  type="button"
-                  className={`dashboard-nav-grade-num${activeView === 'reader' && lesson?.id?.startsWith('grade9_') ? ' active' : ''}`}
-                  onClick={() => {
-                    openDeepakam(canReadAllChapters ? 'grade9_prarthana' : 'grade9_ch1');
-                  }}
-                  title={canReadAllChapters ? 'NCERT Sharada Class 9 Sanskrit (शारदा - कक्षा ९)' : 'Free preview: Sharada Class 9 Chapter 1'}
-                  aria-label="Class 9 Sharada Sanskrit"
-                >
-                  <span className="dashboard-nav-grade-badge">9</span>
                 </button>
               </div>
             </div>
@@ -1474,13 +1450,60 @@ const Dashboard: React.FC = () => {
               <span className="dashboard-nav-sanskrit">लेखन-शाला</span>
               <span className="dashboard-nav-secondary">Writing</span>
             </button>
+            <div
+              className={`dashboard-nav-group dashboard-nav-group--ncert${(activeView === 'reader' && lesson?.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
+            >
+              <button
+                type="button"
+                className={`dashboard-nav-group-label${activeView === 'cbse-guide' ? ' dashboard-nav-group-label--active' : ''}`}
+                onClick={() => navigateToView('cbse-guide')}
+                title="NCERT / CBSE Sanskrit Curriculum, Exam Blueprint & Syllabi"
+              >
+                <img src="/nav/nav-deepakam.png" alt="" className="dashboard-nav-icon" aria-hidden="true" width={18} height={18} />
+                <span className="dashboard-nav-sanskrit">सीबीएसई / NCERT</span>
+                <span className="dashboard-nav-sub-en">Sanskrit</span>
+              </button>
+              <div className="dashboard-nav-sub dashboard-nav-sub--grades" role="group" aria-label="NCERT CBSE Sanskrit Grades 7, 8, and 9">
+                <button
+                  type="button"
+                  className={`dashboard-nav-grade-num${activeView === 'reader' && lesson?.id !== 'varnamala' && !lesson?.id?.startsWith('grade8_') && !lesson?.id?.startsWith('grade9_') ? ' active' : ''}`}
+                  onClick={() => openDeepakam()}
+                  title="NCERT Deepakam Class 7 Sanskrit (दीपकम् - कक्षा ७)"
+                  aria-label="Class 7 Deepakam Sanskrit"
+                >
+                  <span className="dashboard-nav-grade-badge">7</span>
+                </button>
+                <button
+                  type="button"
+                  className={`dashboard-nav-grade-num${activeView === 'reader' && lesson?.id?.startsWith('grade8_') ? ' active' : ''}`}
+                  onClick={() => {
+                    openDeepakam(canReadAllChapters ? 'grade8_prarthana' : 'grade8_ch1');
+                  }}
+                  title={canReadAllChapters ? 'NCERT Deepakam Class 8 Sanskrit (दीपकम् - कक्षा ८)' : 'Free preview: Deepakam Class 8 Chapter 1'}
+                  aria-label="Class 8 Deepakam Sanskrit"
+                >
+                  <span className="dashboard-nav-grade-badge">8</span>
+                </button>
+                <button
+                  type="button"
+                  className={`dashboard-nav-grade-num${activeView === 'reader' && lesson?.id?.startsWith('grade9_') ? ' active' : ''}`}
+                  onClick={() => {
+                    openDeepakam(canReadAllChapters ? 'grade9_prarthana' : 'grade9_ch1');
+                  }}
+                  title={canReadAllChapters ? 'NCERT Sharada Class 9 Sanskrit (शारदा - कक्षा ९)' : 'Free preview: Sharada Class 9 Chapter 1'}
+                  aria-label="Class 9 Sharada Sanskrit"
+                >
+                  <span className="dashboard-nav-grade-badge">9</span>
+                </button>
+              </div>
+            </div>
             <button
               type="button"
               className={`dashboard-nav-stacked dashboard-nav-item dashboard-nav-more-btn${moreViews.includes(activeView) || isMoreNavOpen ? ' active' : ''}`}
               onClick={() => setIsMoreNavOpen((o) => !o)}
               aria-expanded={isMoreNavOpen}
               aria-haspopup="menu"
-              title="More: Vedic Maths, Resources, Course, Online Classes"
+              title="More: Vedic Maths, Resources, Course, NCERT Curriculum, Online Classes"
             >
               <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">☰</span>
               <span className="dashboard-nav-sanskrit">अधिकम्</span>
@@ -1508,6 +1531,23 @@ const Dashboard: React.FC = () => {
             <button
               type="button"
               role="menuitem"
+              onClick={() => {
+                setIsMoreNavOpen(false);
+                navigateToView('home');
+                let tries = 0;
+                const go = () => {
+                  const el = document.getElementById('ncert-curriculum');
+                  if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); window.history.replaceState(null, '', '/#ncert-curriculum'); return; }
+                  if (tries++ < 25) window.setTimeout(go, 100);
+                };
+                window.setTimeout(go, 60);
+              }}
+            >
+              <span aria-hidden="true">🎒</span> <span className="dashboard-nav-sanskrit">पाठ्यपुस्तक-क्रमः</span> <span>NCERT Curriculum</span>
+            </button>
+            <button
+              type="button"
+              role="menuitem"
               onClick={() => { setIsMoreNavOpen(false); setIsOnlineClassesOpen(true); }}
             >
               <span aria-hidden="true">🎓</span> <span className="dashboard-nav-sanskrit">ऑनलाइन-वर्गाः</span> <span>Online Classes</span>
@@ -1516,85 +1556,72 @@ const Dashboard: React.FC = () => {
         )}
 
         <div className="dashboard-header-user">
-          {/* Hindu Calendar & Panchang Corner Widget */}
-          <button
-            type="button"
-            className="dashboard-panchang-btn"
-            onClick={() => setIsCalendarModalOpen(true)}
-            title="आज का पञ्चाङ्ग एवं हिन्दू कैलेण्डर · Vedic Hindu Calendar (Click for full calendar)"
-            aria-label="Open Hindu Calendar and Panchang"
-          >
-            <span className="dpb-icon" aria-hidden="true">🕉️</span>
-            <div className="dpb-text">
-              <span className="dpb-tithi">{panchang.formattedTithiPill}</span>
-              <span className="dpb-sub">
-                <span>{panchang.vara} · {panchang.timeIST}</span>
-                <span className="dpb-link-tag">📅 कैलेण्डर</span>
-              </span>
-            </div>
-          </button>
-          
-          <button
-            type="button"
-            className="dashboard-search-trigger-btn"
-            style={{ padding: '0.45rem 0.65rem' }}
-            onClick={() => setIsVoiceModalOpen(true)}
-            title="Audio & Voice Studio: Configure voices for Mantras, Deepakam, and Bodhi"
-            aria-label="Open Voice Studio"
-          >
-            <span aria-hidden="true">🔊</span>
-            <span className="dashboard-search-trigger-text">Voices</span>
-          </button>
-          <button
-            type="button"
-            className="dashboard-search-trigger-btn dashboard-search-trigger-btn--site"
-            onClick={() => setIsSearchModalOpen(true)}
-            title={searchShortcut.searchTitle}
-            aria-label="Search site and articles"
-          >
-            <span className="dashboard-search-trigger-icon" aria-hidden="true">🔍</span>
-            <span className="dashboard-search-trigger-text">Search…</span>
-            <kbd className="dashboard-search-trigger-kbd">{searchShortcut.kbd}</kbd>
-          </button>
-          {currentUser ? (
+          {/* Voices + Search sit on row 2 (desktop) / beside brand (mobile). Daily Pañcāṅga lives on the homepage. */}
+          <div className="dashboard-header-tools" role="group" aria-label="Voices and search">
             <button
               type="button"
-              className="nav-profile-chip"
-              onClick={openProfileModal}
-              title={`View profile for ${currentUser.fullName}`}
+              className="dashboard-search-trigger-btn"
+              style={{ padding: '0.45rem 0.65rem' }}
+              onClick={() => setIsVoiceModalOpen(true)}
+              title="Audio & Voice Studio: Configure voices for Mantras, Deepakam, and Bodhi"
+              aria-label="Open Voice Studio"
             >
-              <span className="nav-profile-avatar">{currentUser.avatar}</span>
-              <span className="nav-profile-name">{currentUser.fullName.split(' ')[0]}</span>
-              {currentUser.planStatus === 'active' ? (
-                <span className="nav-trial-pill nav-active-pill" title="Subscription Active">⭐ Active</span>
-              ) : currentUser.planStatus === 'trial' ? (
-                <span className="nav-trial-pill" title="14-Day Free Access Active">🎁 14d Trial</span>
-              ) : null}
+              <span aria-hidden="true">🔊</span>
+              <span className="dashboard-search-trigger-text">Voices</span>
             </button>
-          ) : (
-            <div className="nav-auth-group" style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+            <button
+              type="button"
+              className="dashboard-search-trigger-btn dashboard-search-trigger-btn--site"
+              onClick={() => setIsSearchModalOpen(true)}
+              title={searchShortcut.searchTitle}
+              aria-label="Search site and articles"
+            >
+              <span className="dashboard-search-trigger-icon" aria-hidden="true">🔍</span>
+              <span className="dashboard-search-trigger-text">Search…</span>
+              <kbd className="dashboard-search-trigger-kbd">{searchShortcut.kbd}</kbd>
+            </button>
+          </div>
+          <div className="dashboard-header-auth">
+            {currentUser ? (
               <button
                 type="button"
-                className="nav-free-trial-btn"
-                onClick={() => openAuthModal('register')}
-                title="Start free trial · No payment to create an account"
-                aria-label="Start 14-day free trial"
+                className="nav-profile-chip"
+                onClick={openProfileModal}
+                title={`View profile for ${currentUser.fullName}`}
               >
-                <span className="nav-free-trial-gift" aria-hidden="true">🎁</span>
-                <span className="nav-free-trial-text">Start free trial</span>
-                <span className="nav-free-trial-badge">No payment</span>
+                <span className="nav-profile-avatar">{currentUser.avatar}</span>
+                <span className="nav-profile-name">{currentUser.fullName.split(' ')[0]}</span>
+                {currentUser.planStatus === 'active' ? (
+                  <span className="nav-trial-pill nav-active-pill" title="Subscription Active">⭐ Active</span>
+                ) : currentUser.planStatus === 'trial' ? (
+                  <span className="nav-trial-pill" title="14-Day Free Access Active">🎁 14d Trial</span>
+                ) : null}
               </button>
-              <button
-                type="button"
-                className="nav-auth-btn"
-                onClick={() => openAuthModal('login')}
-                title="Sign in to your Gurukul account"
-              >
-                <span>👤</span>
-                <span>Sign In</span>
-              </button>
-            </div>
-          )}
+            ) : (
+              <div className="nav-auth-group" style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                <button
+                  type="button"
+                  className="nav-free-trial-btn"
+                  onClick={() => openAuthModal('register')}
+                  title="Start free trial · No payment to create an account"
+                  aria-label="Start 14-day free trial"
+                >
+                  <span className="nav-free-trial-gift" aria-hidden="true">🎁</span>
+                  <span className="nav-free-trial-text">Start free trial</span>
+                  <span className="nav-free-trial-badge">No payment</span>
+                </button>
+                <button
+                  type="button"
+                  className="nav-auth-btn"
+                  onClick={() => openAuthModal('login')}
+                  title="Sign in to your Gurukul account"
+                >
+                  <span>👤</span>
+                  <span>Sign In</span>
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </header>
 
@@ -1709,7 +1736,17 @@ const Dashboard: React.FC = () => {
             onOpenPhilosophy={() => navigateToView('philosophy')}
             onOpenGrammar={handleOpenGrammar}
             onOpenVedicMaths={() => navigateToView('vedic-maths')}
+            onOpenIks={() => navigateToView('iks')}
           />
+        )}
+        {activeView === 'iks' && (
+          <Suspense fallback={<ViewLoader />}>
+            <IksThinkLabsPage
+              onGoHome={() => navigateToView('home')}
+              onOpenScienceLab={() => navigateToView('science-lab')}
+              onOpenResources={() => navigateToView('resources')}
+            />
+          </Suspense>
         )}
         {activeView === 'board' && (
           <ErrorBoundary

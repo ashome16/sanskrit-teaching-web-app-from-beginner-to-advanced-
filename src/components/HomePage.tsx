@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback, lazy, Suspense } from 'react';
 import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
 import { useAuthStore } from '../store/authStore';
-import { canAccessAllChapters, isFreeTrialOpenLesson } from '../utils/premiumAccess';
+import { canAccessAllChapters, canAccessThinkLabs, isFreeTrialOpenLesson } from '../utils/premiumAccess';
 import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
 import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
 import { NCERT_TEXTBOOKS, getTextbookMetaForLesson } from '../utils/textbookCovers';
@@ -13,7 +13,6 @@ import ProofOfQuality from './ProofOfQuality';
 import BodhiMentorPositioning from './BodhiMentorPositioning';
 import { SegmentedLearningPaths } from './SegmentedLearningPaths';
 import { ToolInteractiveDemos } from './ToolInteractiveDemos';
-import { GamificationShowcase } from './GamificationShowcase';
 import { TrustAndMethodology } from './TrustAndMethodology';
 import { MobileStickyBar } from './MobileStickyBar';
 import { StudentStaircaseBlackboard } from './StudentStaircaseBlackboard';
@@ -21,6 +20,8 @@ import { PracticeVaultShowcase } from './PracticeVaultShowcase';
 import { ChitraKavyaPathwayCard } from './ChitraKavyaPathwayCard';
 import { VedicKnowledgeSystemShowcase } from './VedicKnowledgeSystemShowcase';
 import { HomeJodoInteractiveBanner } from './HomeJodoInteractiveBanner';
+import { getHinduDate } from '../utils/hinduCalendar';
+import '../styles/hindu-calendar.css';
 import '../styles/home-page.css';
 import '../styles/bodhi.css';
 import '../styles/bodhi-online-classes.css';
@@ -747,12 +748,15 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenTurangaBandha,
   onOpenRegister,
   onOpenCertificate,
+  onOpenCalendar,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
+  void onOpenCertificate; void FeatureTrialCallout;
   const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const { isAdminLoggedIn, currentUser, openAuthModal } = useAuthStore();
+  const { isAdminLoggedIn, currentUser, openAuthModal, openPaymentModal } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
+  const thinkLabsUnlocked = canAccessThinkLabs(currentUser, isAdminLoggedIn);
 
   const handleStartTrial = useCallback(() => {
     if (currentUser?.planStatus === 'active' || currentUser?.planStatus === 'trial') {
@@ -768,6 +772,11 @@ const HomePage: React.FC<HomePageProps> = ({
   const [isGrade8ModalOpen, setIsGrade8ModalOpen] = useState<boolean>(false);
   const [isGrade9ModalOpen, setIsGrade9ModalOpen] = useState<boolean>(false);
   const [isFlashcardModalOpen, setIsFlashcardModalOpen] = useState<boolean>(false);
+  const [homePanchang, setHomePanchang] = useState(() => getHinduDate());
+  useEffect(() => {
+    const timer = window.setInterval(() => setHomePanchang(getHinduDate()), 30000);
+    return () => window.clearInterval(timer);
+  }, []);
   const [selectedGradeFilter, setSelectedGradeFilter] = useState<'all' | '7' | '8' | '9'>('all');
   const [isLogoArrived, setIsLogoArrived] = useState<boolean>(false);
   const [showEntranceIntro, setShowEntranceIntro] = useState<boolean>(() => {
@@ -997,6 +1006,70 @@ const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
 
+          {/* EdNet Learn brand identity: play + IKS (Sanskrit is the gateway) */}
+          <div className="home-brand-identity" role="region" aria-label="EdNet Learn">
+            <p className="home-brand-kicker">EdNet Learn · Free &amp; interactive</p>
+            <h1 className="home-brand-h1">Learn Through Play.</h1>
+            <p className="home-brand-sub">Exploring Indian Knowledge Systems, creativity and the wonders of learning.</p>
+            <p className="home-brand-sub">A place where children can explore, question, experiment and discover connections between traditional knowledge and modern science.</p>
+            <p className="home-brand-taglines" style={{ marginTop: '0.65rem', marginBottom: '0.75rem', color: '#d97706', fontSize: '0.96rem', fontWeight: 600, letterSpacing: '0.01em' }}>
+              <strong>Observe. Question. Discover.</strong> Explore nature · Understand the universe · Explore the cosmos · Understand creation.
+            </p>
+            <section className="home-intro-video" aria-label="EdNet Learn introductory video" style={{ margin: "1rem auto 1.25rem", maxWidth: 760, textAlign: "center" }}>
+        {/* Sacred Mangalācaraṇam (मङ्गलाचरणम्) Invocation */}
+        <div className="home-mangalacaranam-strip" role="region" aria-label="मङ्गलाचरणम् · Sacred Invocation">
+          <div className="home-mangalacaranam-crest">
+            <span className="home-mangalacaranam-om" aria-hidden="true">ॐ</span>
+          </div>
+          <div className="home-mangalacaranam-body">
+            <div className="home-mangalacaranam-badge">
+              <span>मङ्गलाचरणम्</span>
+              <span className="home-mangalacaranam-sep">✦</span>
+              <span>बृहदारण्यकोपनिषत् (Bṛhadāraṇyaka Upaniṣad 1.3.28)</span>
+            </div>
+            <div className="home-mangalacaranam-verse">
+              ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥ ॐ शान्तिः शान्तिः शान्तिः ॥
+            </div>
+            <div className="home-mangalacaranam-translation">
+              <em>Lead me from falsehood to truth, from darkness to divine light, from mortality to immortality.</em>
+            </div>
+          </div>
+          <button
+            type="button"
+            className={`home-mangalacaranam-audio-btn${isChantingMangalam ? ' playing' : ''}`}
+            onClick={handleReciteMangalam}
+            title={isChantingMangalam ? 'Stop Chanting (विरामय)' : 'Recite Sacred Mangalācaraṇam at slow, peaceful pace (मङ्गलाचरण-श्रवणम्)'}
+            aria-label={isChantingMangalam ? 'Stop chant' : 'Listen to Mangalācaraṇam chant'}
+          >
+            <span className="home-mangalacaranam-icon">{isChantingMangalam ? '⏹' : '🔔'}</span>
+            <span className="home-mangalacaranam-btn-text">
+              <strong>{isChantingMangalam ? 'विरामय (Stop)' : 'मङ्गलाचरणम्'}</strong>
+              <small>{isChantingMangalam ? 'Chanting…' : 'Slow Chant · मन्द-पठनम्'}</small>
+            </span>
+          </button>
+        </div>
+              <video src="/videos/ednetlearn-intro.mp4" poster="/videos/ednetlearn-intro-poster.jpg" controls playsInline preload="metadata" aria-label="EdNet Learn introductory video" style={{ width: "100%", borderRadius: 16, boxShadow: "0 6px 24px rgba(0,0,0,.12)", background: "#000" }}>
+                Your browser does not support the video tag. <a href="/videos/ednetlearn-intro.mp4">Download the EdNet Learn introduction</a>.
+              </video>
+            </section>
+            <nav className="home-brand-strip" aria-label="Explore EdNet Learn">
+              {[
+                { href: '/indian-knowledge-systems/', icon: '🪷', t: 'Explore the World of Indian Knowledge Systems' },
+                { href: '/sanskrit-learning/', icon: 'अ', t: 'Sanskrit – The Language of Knowledge' },
+                { href: '/vedic-mathematics/', icon: '∑', t: 'Vedic Mathematics & Mathematical Thinking' },
+                { href: '/science-and-discovery/', icon: '🔭', t: 'Discover Science Through Exploration' },
+                { href: '/educational-games/', icon: '🎲', t: 'Learn with Stories, Games & Interactive Activities' },
+                { href: '/worksheets-and-learning-resources/', icon: '📝', t: 'Worksheets, Quizzes & Learning Resources' },
+                { href: '/philosophy/', icon: '🌉', t: 'Connecting Ancient Wisdom with Modern Knowledge' },
+              ].map((x) => (
+                <a key={x.href} href={x.href} className="home-brand-tile">
+                  <span className="home-brand-tile-icon" aria-hidden="true">{x.icon}</span>
+                  <h2 className="home-brand-tile-title">{x.t}</h2>
+                </a>
+              ))}
+            </nav>
+          </div>
+
           {/* Trust strip (under Devanagari centerpiece) */}
           <div className="home-trust-banner home-trust-banner--hero" role="region" aria-label="Academic Standards">
             <div className="home-trust-item">
@@ -1031,7 +1104,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
           {/* 2. STEP-BY-STEP JOURNEY HEADLINE (Moved to Top & Made Bigger) */}
           <div className="home-hero-journey-header">
-            <h1 style={{ margin: 0 }}>
+            <h2 style={{ margin: 0 }}>
               <a
                 href="#journey"
                 className="home-hero-journey-top-title"
@@ -1045,7 +1118,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 <span className="hhjt-text">Your Step-by-Step Sanskrit Journey</span>
                 <span className="hhjt-arrow" aria-hidden="true">➔</span>
               </a>
-            </h1>
+            </h2>
             <p className="home-hero-journey-subtitle">
               {englishFirst
                 ? 'Select your starting level below or explore the full 6-stage roadmap from alphabet basics to complete fluency.'
@@ -1363,29 +1436,6 @@ const HomePage: React.FC<HomePageProps> = ({
             <span className="hhac-arrow" aria-hidden="true">➔</span>
           </button>
 
-          {/* Action 2: Play Jodo Puzzles (Live Interactive Arcade) */}
-          <button
-            type="button"
-            className="home-hero-action-card home-hero-action-card--jodo"
-            onClick={() => onOpenBoard?.('jodo')}
-            title="Snap 6,000+ Sanskrit syllable tiles, match-pairs, and classical riddles"
-          >
-            <div className="hhac-icon-col" aria-hidden="true">
-              <span className="hhac-icon">🧩</span>
-            </div>
-            <div className="hhac-text-col">
-              <div className="hhac-badge-row">
-                <span className="hhac-tag hhac-tag--jodo">
-                  <span className="jodo-live-dot" /> 100% Interactive
-                </span>
-              </div>
-              <strong className="hhac-title">Play जोडो (Jodo) Puzzles</strong>
-              <span className="hhac-desc">
-                Snap syllable tiles · 6,000+ words &amp; riddles
-              </span>
-            </div>
-            <span className="hhac-arrow" aria-hidden="true">➔</span>
-          </button>
 
           {/* Action 3: Take Sanskrit Placement Test */}
           <button
@@ -1448,33 +1498,6 @@ const HomePage: React.FC<HomePageProps> = ({
           </button>
         </div>
 
-        {/* Trust Badges & Contact (WhatsApp + Email) */}
-        <div className="home-hero-trust-bar">
-          <span className="hhtb-item"><span>✓</span> 100% Free for 14 Days</span>
-          <span className="hhtb-item"><span>✓</span> No Credit Card / Auto-Debit</span>
-          <span className="hhtb-item"><span>✓</span> Instant Online Activation</span>
-          <div className="hhtb-contact-group">
-            <span className="hhtb-contact-label">Contact :</span>
-            <a
-              href="https://wa.me/919000335468?text=Hello%20EdNet%20Gurukul%2C%20I%20have%20a%20question%20about%20Sanskrit%20learning"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hhtb-item hhtb-whatsapp"
-              title="Message on WhatsApp: 9000335468 (Only WhatsApp)"
-            >
-              <span aria-hidden="true">💬</span> Message at (9000335468) <span className="hhtb-wa-only">(Only WhatsApp)</span>
-            </a>
-            <span className="hhtb-contact-or">or</span>
-            <a
-              href="mailto:admin@ednetlearn.in"
-              className="hhtb-item hhtb-email"
-              title="Email: admin@ednetlearn.in"
-            >
-              <span aria-hidden="true">✉️</span> Email : admin@ednetlearn.in
-            </a>
-          </div>
-        </div>
-
         {onOpenSearch && (
           <div
             className="home-hero-search-box"
@@ -1496,38 +1519,6 @@ const HomePage: React.FC<HomePageProps> = ({
         )}
 
 
-        {/* Sacred Mangalācaraṇam (मङ्गलाचरणम्) Invocation */}
-        <div className="home-mangalacaranam-strip" role="region" aria-label="मङ्गलाचरणम् · Sacred Invocation">
-          <div className="home-mangalacaranam-crest">
-            <span className="home-mangalacaranam-om" aria-hidden="true">ॐ</span>
-          </div>
-          <div className="home-mangalacaranam-body">
-            <div className="home-mangalacaranam-badge">
-              <span>🪷 मङ्गलाचरणम्</span>
-              <span className="home-mangalacaranam-sep">✦</span>
-              <span>बृहदारण्यकोपनिषत् (Bṛhadāraṇyaka Upaniṣad 1.3.28)</span>
-            </div>
-            <div className="home-mangalacaranam-verse">
-              ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥ ॐ शान्तिः शान्तिः शान्तिः ॥
-            </div>
-            <div className="home-mangalacaranam-translation">
-              <em>Lead me from falsehood to truth, from darkness to divine light, from mortality to immortality.</em>
-            </div>
-          </div>
-          <button
-            type="button"
-            className={`home-mangalacaranam-audio-btn${isChantingMangalam ? ' playing' : ''}`}
-            onClick={handleReciteMangalam}
-            title={isChantingMangalam ? 'Stop Chanting (विरामय)' : 'Recite Sacred Mangalācaraṇam at slow, peaceful pace (मङ्गलाचरण-श्रवणम्)'}
-            aria-label={isChantingMangalam ? 'Stop chant' : 'Listen to Mangalācaraṇam chant'}
-          >
-            <span className="home-mangalacaranam-icon">{isChantingMangalam ? '⏹' : '🔔'}</span>
-            <span className="home-mangalacaranam-btn-text">
-              <strong>{isChantingMangalam ? 'विरामय (Stop)' : 'मङ्गलाचरणम्'}</strong>
-              <small>{isChantingMangalam ? 'Chanting…' : 'Slow Chant · मन्द-पठनम्'}</small>
-            </span>
-          </button>
-        </div>
 
       {/* ================================================================
           PROOF OF QUALITY: EXPERIENCE BEFORE YOU SIGN UP
@@ -1619,67 +1610,6 @@ const HomePage: React.FC<HomePageProps> = ({
         />
 
 
-        {/* Featured Complete Course Banner: संस्कृत-चिन्तनम् */}
-        {onOpenCourse && (
-          <div
-            className="home-course-feature-card"
-            style={{
-              marginTop: '1.75rem',
-              background: 'linear-gradient(135deg, #134e4a 0%, #1e1b4b 100%)',
-              borderRadius: '16px',
-              padding: '1.5rem 1.75rem',
-              color: '#ffffff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: '1.25rem',
-              boxShadow: '0 8px 24px rgba(19, 78, 74, 0.25)',
-              border: '1.5px solid rgba(254, 240, 138, 0.3)',
-              cursor: 'pointer',
-              textAlign: 'left',
-            }}
-            onClick={onOpenCourse}
-          >
-            <div style={{ flex: 1, minWidth: '280px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem', flexWrap: 'wrap' }}>
-                <span style={{ background: '#fef08a', color: '#713f12', padding: '0.15rem 0.6rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase' }}>
-                  Complete Course · 6 Modules
-                </span>
-                <span style={{ color: '#99f6e4', fontSize: '0.8rem', fontWeight: 700 }}>
-                  All 28 Lessons · Audio · Interactive Drills
-                </span>
-              </div>
-              <h3 style={{ fontSize: '1.45rem', fontWeight: 900, color: '#fef08a', margin: '0 0 0.35rem', fontFamily: 'Noto Sans Devanagari, serif' }}>
-                संस्कृत-चिन्तनम् · Sanskrit as a Way of Thinking
-              </h3>
-              <p style={{ margin: 0, fontSize: '0.92rem', color: '#ccfbf1', lineHeight: 1.5, maxWidth: '44rem' }}>
-                Sound as Input → Rules as Processing → Meaning as Output. 28 structured lessons with audio, rules, interactive drills, and bridges to the Scientific Mind (algorithms &amp; logic) and Contemplative Mind (recitation &amp; darśana).
-              </p>
-            </div>
-            <button
-              type="button"
-              style={{
-                background: '#f59e0b',
-                color: '#ffffff',
-                border: 'none',
-                padding: '0.75rem 1.5rem',
-                borderRadius: '10px',
-                fontWeight: 800,
-                fontSize: '0.95rem',
-                cursor: 'pointer',
-                whiteSpace: 'nowrap',
-                boxShadow: '0 4px 12px rgba(245, 158, 11, 0.35)',
-              }}
-              onClick={(e) => {
-                e.stopPropagation();
-                onOpenCourse();
-              }}
-            >
-              Start Course →
-            </button>
-          </div>
-        )}
 
       </section>
 
@@ -1880,6 +1810,309 @@ const HomePage: React.FC<HomePageProps> = ({
         )}
       </section>
 
+      {/* NCERT Curriculum (moved above Vijñāna Lab) */}
+      <section id="ncert-curriculum" className="home-pathways-section" aria-label="NCERT Curriculum">
+        <div className="home-pathways-grid home-pathways-grid--duo" style={{ maxWidth: 1100, margin: '0 auto', alignItems: 'stretch' }}>
+          {/* Pathway 1: Beginner */}
+          <div className="home-pathway-card home-duo-beginner">
+            <div>
+              <span className="home-pathway-badge home-pathway-badge--beginner">
+                प्रारम्भिक-मार्गः · Beginner Track
+              </span>
+              <h3 className="home-pathway-title">🌱 Read Sanskrit Confidently in 7 Days</h3>
+              <p className="home-pathway-desc">
+                Learn to read Sanskrit letters, 400+ syllables, and essential starter vocabulary with guided native audio practice and mouth positions.
+              </p>
+              <div style={{ display: 'flex', gap: '0.35rem', margin: '0.6rem 0', flexWrap: 'wrap' }} aria-label="Sample letters">
+                {['अ', 'आ', 'क', 'का', 'कि', 'क्ष', 'ज्ञ', 'ॐ'].map((l) => (
+                  <span key={l} style={{ minWidth: '2rem', padding: '0.2rem 0.35rem', textAlign: 'center', fontSize: '1.05rem', border: '1px solid #e2d3bd', borderRadius: '6px', background: '#ffffff', color: '#5a3e1b' }}>{l}</span>
+                ))}
+              </div>
+              <div className="home-duo-plan" style={{ padding: '0.6rem 0.75rem', border: '1px solid #e2d3bd', borderRadius: '10px', background: '#fffdf9', fontSize: '0.8rem', color: '#5a3e1b', lineHeight: 1.45 }} aria-label="7-day plan">
+                <div style={{ fontWeight: 700, marginBottom: '0.3rem' }}>🗓️ सप्ताह-योजना · Your 7-day plan</div>
+                {[
+                  ['Day 1–2', 'Vowels (स्वराः) with audio & mouth positions'],
+                  ['Day 3–4', 'Consonants (व्यञ्जनानि), 5 articulation zones'],
+                  ['Day 5', 'Bārahkhaḍī: 400+ syllables with mātrās'],
+                  ['Day 6', 'Conjuncts (संयुक्ताक्षराणि) like क्ष, त्र, ज्ञ'],
+                  ['Day 7', 'Read real words with the Word Deconstructor'],
+                ].map(([d, t]) => (
+                  <div key={d} className="home-duo-plan-item" style={{ display: 'flex', gap: '0.5rem', padding: '0.2rem 0', borderLeft: '3px solid #15803d', paddingLeft: '0.45rem', marginBottom: '0.2rem' }}>
+                    <strong style={{ whiteSpace: 'nowrap', minWidth: '3.8rem' }}>{d}</strong><span>{t}</span>
+                  </div>
+                ))}
+                <div style={{ marginTop: '0.35rem', fontSize: '0.76rem', opacity: 0.85 }}>🔊 Native audio · 🖨️ Printable flashcards · ✅ Self-check quizzes</div>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="home-pathway-btn"
+              onClick={() => onOpenVarnamala?.()}
+            >
+              वर्णमाला · Start Alphabet ▶
+            </button>
+          </div>
+          {/* Pathway 5: CBSE & NCERT School Track */}
+          <div className="home-duo-right" style={{ display: 'contents' }}>
+          <div className="home-pathway-card home-duo-ncert">
+            <div>
+              <span className="home-pathway-badge home-pathway-badge--school">
+                पाठ्यपुस्तक-क्रमः · NCERT Curriculum (Classes 7–9)
+              </span>
+              <h3 className="home-pathway-title">🎒 Deepakam &amp; Sharada, Chapter by Chapter</h3>
+              <p className="home-pathway-desc">
+                Every Class 7–9 chapter in textbook order — listen, translate (EN / HI / TE / TA / ML), solutions, quizzes &amp; worksheets.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.6rem', margin: '0.75rem 0' }}>
+                {NCERT_TEXTBOOKS.map((tb) => (
+                  <div key={tb.id} style={{ textAlign: 'center' }}>
+                  <div
+                    title={`${tb.titleSa} · ${tb.classEn}`}
+                    style={{
+                      width: '100%',
+                      aspectRatio: '3 / 4',
+                      borderRadius: '5px',
+                      overflow: 'hidden',
+                      boxShadow: '0 2px 6px rgba(0,0,0,0.18)',
+                      border: '1px solid #d4c5b2',
+                      flexShrink: 0,
+                      cursor: 'pointer',
+                    }}
+                    onClick={() => {
+                      if (tb.id === 'class7') onOpenReader('gsde101');
+                      else if (tb.id === 'class8') onOpenReader('grade8_prarthana');
+                      else onOpenReader('grade9_prarthana');
+                    }}
+                  >
+                    <img
+                      src={tb.coverUrl}
+                      alt={tb.alt}
+                      loading="lazy"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                  </div>
+                  <div style={{ fontSize: '0.74rem', color: '#5a3e1b', marginTop: '0.3rem', lineHeight: 1.25 }}>
+                    <strong>{tb.titleSa}</strong><br />{tb.classEn}
+                  </div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: '0.4rem', padding: '0.65rem 0.75rem', border: '1px solid #e2d3bd', borderRadius: '10px', background: '#fffdf9', fontSize: '0.8rem', color: '#5a3e1b', lineHeight: 1.45 }} aria-label="Inside Deepakam and Sharada">
+                <div style={{ fontWeight: 700, marginBottom: '0.4rem' }}>📚 अन्तर्गतम् · What's inside</div>
+                {[
+                  { k: '7', t: 'दीपकम् · Class 7', d: '12 chapters + 2 grammar appendices', open: () => setIsGrade7ModalOpen(true) },
+                  { k: '8', t: 'दीपकम् · Class 8', d: '13 chapters + 3 appendices', open: () => setIsGrade8ModalOpen(true) },
+                  { k: '9', t: 'शारदा · Class 9', d: '12 chapters + 4 appendices', open: () => setIsGrade9ModalOpen(true) },
+                ].map((g) => (
+                  <button key={g.k} type="button" onClick={g.open} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', textAlign: 'left', gap: '0.5rem', padding: '0.4rem 0.55rem', marginBottom: '0.35rem', border: '1px solid #e2d3bd', borderLeft: '3px solid #b45309', borderRadius: '8px', background: '#ffffff', color: '#5a3e1b', cursor: 'pointer', font: 'inherit' }}>
+                    <span><strong>{g.t}</strong><br /><span style={{ fontSize: '0.74rem', opacity: 0.85 }}>{g.d}</span></span>
+                    <span style={{ whiteSpace: 'nowrap', fontWeight: 600 }}>Chapters →</span>
+                  </button>
+                ))}
+              </div>
+              <div style={{ marginTop: '0.6rem' }} aria-label="Included Academic Curriculum">
+                <div style={{ fontWeight: 700, fontSize: '0.8rem', color: '#5a3e1b', marginBottom: '0.35rem' }}>🎒 विद्यालय-वर्गः · CBSE &amp; State Boards (6–10)</div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
+                  {[
+                    { i: '📖', t: 'NCERT Reader', d: 'Audio, translation & अभ्यास solutions', go: () => onOpenReader('gsde101') },
+                    { i: '📑', t: 'Worksheets', d: 'Printable, with answer keys', go: () => (onOpenWorksheets ? onOpenWorksheets() : onOpenReader('worksheets')) },
+                    { i: '🎯', t: 'Practice Quizzes', d: 'Vibhakti, lakāra & pratyaya drills', go: () => onOpenQuiz?.() },
+                    { i: '📘', t: 'CBSE Exam Guide', d: '80-mark blueprint & mock papers', go: () => onOpenCbseGuide?.() },
+                  ].map((m) => (
+                    <button key={m.t} type="button" onClick={m.go} style={{ textAlign: 'left', padding: '0.45rem 0.55rem', border: '1px solid #e2d3bd', borderRadius: '8px', background: '#fffdf9', color: '#5a3e1b', cursor: 'pointer', font: 'inherit', fontSize: '0.76rem', lineHeight: 1.3 }}>
+                      <strong>{m.i} {m.t}</strong><br /><span style={{ opacity: 0.85 }}>{m.d}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="home-pathway-btn"
+              onClick={() => onOpenReader('gsde101')}
+            >
+              पाठ्यपुस्तकम् · Open Reader ▶
+            </button>
+          </div>
+        {/* Featured Complete Course Banner: संस्कृत-चिन्तनम् */}
+        {onOpenCourse && (
+          <div
+            className="home-course-feature-card"
+            style={{
+              marginTop: 0,
+              background: 'linear-gradient(135deg, #134e4a 0%, #1e1b4b 100%)',
+              borderRadius: '16px',
+              padding: '1.5rem 1.75rem',
+              color: '#ffffff',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '1.25rem',
+              boxShadow: '0 8px 24px rgba(19, 78, 74, 0.25)',
+              border: '1.5px solid rgba(254, 240, 138, 0.3)',
+              cursor: 'pointer',
+              textAlign: 'left',
+            }}
+            onClick={onOpenCourse}
+          >
+            <div style={{ minWidth: 0, flex: 1, display: 'flex', flexDirection: 'column' }}>
+              <span style={{ alignSelf: 'flex-start', display: 'inline-block', background: '#fef08a', color: '#713f12', padding: '0.2rem 0.65rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.02em' }}>
+                चिन्तन-मार्गः · Complete Course
+              </span>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 900, color: '#fef08a', margin: '0.6rem 0 0.2rem', fontFamily: 'Noto Sans Devanagari, serif', lineHeight: 1.3 }}>
+                🧠 संस्कृत-चिन्तनम्
+              </h3>
+              <div style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.45rem' }}>Sanskrit as a Way of Thinking</div>
+              <p style={{ margin: '0 0 0.75rem', fontSize: '0.86rem', color: '#ccfbf1', lineHeight: 1.5 }}>
+                Sound → Rules → Meaning. Learn how Sanskrit trains the mind, in 28 lessons with audio and interactive drills.
+              </p>
+              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#99f6e4', marginBottom: '0.4rem' }}>📚 6 Modules · 28 Lessons</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem', flex: 1 }} aria-label="Course modules">
+                {[
+                  ['🔊', 'ध्वनिः', 'Sound as Input'],
+                  ['✍️', 'लिपिः', 'Script & Symbols'],
+                  ['⚙️', 'व्याकरणम्', 'Rules as Processing'],
+                  ['📜', 'वाक्यम्', 'Meaning as Output'],
+                  ['🔬', 'गणितम्, तर्कः', 'The Scientific Mind'],
+                  ['🪔', 'दर्शनम्', 'The Contemplative Mind'],
+                ].map(([i, sa, en], idx) => (
+                  <div key={sa} style={{ flex: 1, maxHeight: '3.4rem', display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 0.6rem', borderRadius: '8px', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(153,246,228,0.18)', fontSize: '0.8rem', color: '#e6fffa' }}>
+                    <span style={{ opacity: 0.7, minWidth: '1rem' }}>{idx + 1}</span>
+                    <span>{i}</span>
+                    <span><strong style={{ color: '#fef08a' }}>{sa}</strong> · {en}</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: '0.7rem', fontSize: '0.76rem', color: '#ccfbf1', opacity: 0.9 }}>🔊 Audio · 🎯 Drills · 🏅 Progress tracking</div>
+            </div>
+            <button
+              type="button"
+              style={{
+                background: '#f59e0b',
+                color: '#ffffff',
+                border: 'none',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '10px',
+                fontWeight: 800,
+                fontSize: '0.95rem',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap',
+                width: '100%',
+                marginTop: '0.9rem',
+                boxShadow: '0 4px 12px rgba(245, 158, 11, 0.35)',
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenCourse();
+              }}
+            >
+              चिन्तनम् · Start Course ▶
+            </button>
+          </div>
+        )}
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* Daily Pañcāṅga — compact strip in the gap above Self-Study vault (moved off header menu) */}
+      <section
+        className="home-daily-panchang"
+        id="daily-panchang"
+        aria-label="आज का पञ्चाङ्गम् · Daily Pañcāṅga"
+      >
+        <button
+          type="button"
+          className="home-daily-panchang-card"
+          onClick={() => {
+            if (onOpenCalendar) onOpenCalendar();
+            else window.dispatchEvent(new Event('open-hindu-calendar'));
+          }}
+          title="आज का पञ्चाङ्ग एवं हिन्दू कैलेण्डर · Open full Vedic Hindu Calendar"
+          aria-label="Open Hindu Calendar and Daily Pañcāṅga"
+        >
+          <span className="home-daily-panchang-icon" aria-hidden="true">🕉️</span>
+          <div className="home-daily-panchang-main">
+            <span className="home-daily-panchang-kicker">आज का पञ्चाङ्गम् · Daily Pañcāṅga</span>
+            <span className="home-daily-panchang-tithi">{homePanchang.formattedTithiPill}</span>
+            <span className="home-daily-panchang-meta">
+              <span>{homePanchang.vara} · {homePanchang.varaEn}</span>
+              <span className="home-daily-panchang-dot" aria-hidden="true">·</span>
+              <span>{homePanchang.nakshatra} · {homePanchang.nakshatraEn}</span>
+              <span className="home-daily-panchang-dot" aria-hidden="true">·</span>
+              <span>{homePanchang.timeIST}</span>
+            </span>
+          </div>
+          <span className="home-daily-panchang-cta">
+            <span>📅 कैलेण्डर</span>
+            <span className="home-daily-panchang-arrow" aria-hidden="true">→</span>
+          </span>
+        </button>
+        {thinkLabsUnlocked ? (
+          <a className="home-daily-panchang-lab" href="/cosmic-alignment-lab/">How to read a Pañcāṅga · Open Cosmic Alignment →</a>
+        ) : (
+          <button
+            type="button"
+            className="home-daily-panchang-lab"
+            onClick={() => {
+              if (!currentUser) openAuthModal('login');
+              else openPaymentModal();
+            }}
+            style={{ cursor: 'pointer', border: 'none', background: 'inherit', font: 'inherit', textAlign: 'inherit' }}
+          >
+            How to read a Pañcāṅga · Cosmic Alignment (All-Access)
+          </button>
+        )}
+      </section>
+
+      {/* Workbooks + Writing Studio (moved above Vijñāna Lab) */}
+      <section className="home-features-section" aria-label="Workbooks and Writing Studio">
+        <div className="home-features-grid">
+            {/* Practice Vault: Workbooks, Quizzes & CBSE Worksheets Showcase (moved above Writing Studio) */}
+            <div style={{ gridColumn: '1 / -1', minWidth: 0 }}>
+              <PracticeVaultShowcase
+                onOpenQuiz={onOpenQuiz}
+                onOpenWorksheets={onOpenWorksheets}
+                onOpenResources={onOpenResources}
+              />
+            </div>
+
+            {/* Feature 4b: लेखन-शाला · Writing Studio */}
+            {onOpenAssignmentEvaluator && (
+              <div className="home-feature-card home-feature-card--full" id="writing-studio">
+                <div className="home-feature-card-top">
+                  <div className="home-feature-icon-row">
+                    <span className="home-feature-icon">✍️</span>
+                    <span className="home-feature-badge">Handwriting &amp; Composition Studio</span>
+                  </div>
+                  <h3 className="home-feature-title">लेखन-शाला · Writing Studio — Guided Writing Paths &amp; Feedback on Your Written Sanskrit</h3>
+                  <p className="home-feature-desc">
+                    Once you can read the letters, learn to write them — then compose and get your written Sanskrit checked.
+                  </p>
+                  <ul className="home-feature-points">
+                    <li>Guided sequential writing paths (क्रमिक-लेखन-अभ्यासः): basics → shlokas → Class 7–9</li>
+                    <li>Stroke-by-stroke handwriting practice for clean Devanāgarī</li>
+                    <li>Paste or upload written work for Pāṇinian grammar feedback</li>
+                    <li>CBSE letter (पत्र) and paragraph (अनुच्छेद) writing practice</li>
+                  </ul>
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto', flexWrap: 'wrap' }}>
+                  <button
+                    type="button"
+                    className="home-feature-btn"
+                    style={{ flex: 1, minWidth: '150px', background: '#1b352f', color: '#ffffff' }}
+                    onClick={onOpenAssignmentEvaluator}
+                  >
+                    Open Writing Studio ▶
+                  </button>
+                </div>
+              </div>
+            )}
+        </div>
+      </section>
+
       {/* Vijñāna Lab banner (moved down) */}
       {onOpenScienceLab && <HomeLabBanner onOpen={onOpenScienceLab} />}
 
@@ -1904,145 +2137,91 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         <div className="home-pathways-grid">
-          {/* Pathway 1: Beginner */}
-          <div className="home-pathway-card">
-            <div>
-              <span className="home-pathway-badge home-pathway-badge--beginner">
-                प्रारम्भिक-मार्गः · Beginner Track
-              </span>
-              <h3 className="home-pathway-title">🌱 Read Sanskrit Confidently in 7 Days</h3>
-              <p className="home-pathway-desc">
-                Learn to read Sanskrit letters, 400+ syllables, and essential starter vocabulary with guided native audio practice and mouth positions.
-              </p>
-            </div>
-            <button
-              type="button"
-              className="home-pathway-btn"
-              onClick={() => onOpenVarnamala?.()}
-            >
-              वर्णमाला-अभ्यासः · Start with Alphabet ▶
-            </button>
-          </div>
-
-          {/* Pathway 2: Sanskrit Thinking Course */}
+          {/* Visual poster panels: Course / Grammar / Vedic Math */}
           {onOpenCourse && (
-            <div className="home-pathway-card" style={{ borderColor: '#c7d2fe' }}>
-              <div>
-                <span className="home-pathway-badge home-pathway-badge--course">
-                  क्रमबद्ध-पाठ्यक्रमः · Structured Course
-                </span>
-                <h3 className="home-pathway-title">🧠 Think in Sanskrit &amp; Computational Logic</h3>
-                <p className="home-pathway-desc">
-                  Our flagship 6-module, 28-lesson program. Master Sanskrit through generative logic (Input ➔ Rules ➔ Meaning), bridging linguistics, computer science, and philosophical contemplation.
-                </p>
+            <div className="home-pathway-card vposter vposter--course">
+              <div className="vposter-art" aria-hidden="true">
+                <svg viewBox="0 0 220 90" className="vposter-svg">
+                  <g fill="none" stroke="#6366f1" strokeWidth="1.6" opacity=".55">
+                    <path d="M40 45 H95 M125 45 H180" strokeDasharray="4 4" />
+                  </g>
+                  <g fontFamily="inherit" fontSize="11" textAnchor="middle" fill="#3730a3">
+                    <circle cx="30" cy="45" r="22" fill="#eef2ff" stroke="#a5b4fc" />
+                    <text x="30" y="49">Input</text>
+                    <circle cx="110" cy="45" r="22" fill="#e0e7ff" stroke="#818cf8" />
+                    <text x="110" y="49">Rules</text>
+                    <circle cx="190" cy="45" r="22" fill="#eef2ff" stroke="#a5b4fc" />
+                    <text x="190" y="49">Meaning</text>
+                  </g>
+                </svg>
               </div>
-              <button
-                type="button"
-                className="home-pathway-btn"
-                style={{ background: '#4338ca', color: '#ffffff', borderColor: '#4338ca' }}
-                onClick={onOpenCourse}
-              >
+              <span className="vposter-kicker">क्रमबद्ध-पाठ्यक्रमः · Structured Course</span>
+              <h3 className="vposter-title">🧠 Think in Sanskrit &amp; Computational Logic</h3>
+              <div className="vposter-chips">
+                <span>6 modules</span><span>28 lessons</span><span>Logic + Linguistics</span>
+              </div>
+              <button type="button" className="vposter-btn" onClick={onOpenCourse}>
                 पाठ्यक्रमम् आरभत · Explore 28-Lesson Course ▶
               </button>
             </div>
           )}
 
-          {/* Pathway 3: Paninian Grammar & Dhatupatha */}
-          <div className="home-pathway-card">
-            <div>
-              <span className="home-pathway-badge home-pathway-badge--grammar">
-                पाणिनीय-व्याकरणम् · Pāṇinian Grammar
-              </span>
-              <h3 className="home-pathway-title">🌿 Master Cases &amp; Verb Roots Without Rote Fear</h3>
-              <p className="home-pathway-desc">
-                Deconstruct complex words to their roots in seconds, generate 5-lakāra verb tables with 1-tap audio, master all 7 Vibhaktis, and ace grammar questions.
-              </p>
+          <div className="home-pathway-card vposter vposter--grammar">
+            <div className="vposter-art" aria-hidden="true">
+              <svg viewBox="0 0 220 90" className="vposter-svg">
+                <g stroke="#65a30d" strokeWidth="1.5" fill="none" opacity=".6">
+                  <path d="M110 30 V48 M110 48 L45 66 M110 48 L110 66 M110 48 L175 66" />
+                </g>
+                <g fontSize="12" textAnchor="middle" fill="#3f6212">
+                  <rect x="78" y="6" width="64" height="24" rx="12" fill="#ecfccb" stroke="#bef264" />
+                  <text x="110" y="23">√गम्</text>
+                  <rect x="15" y="64" width="60" height="22" rx="11" fill="#f7fee7" stroke="#d9f99d" />
+                  <text x="45" y="80">गच्छति</text>
+                  <rect x="80" y="64" width="60" height="22" rx="11" fill="#f7fee7" stroke="#d9f99d" />
+                  <text x="110" y="80">गतः</text>
+                  <rect x="145" y="64" width="60" height="22" rx="11" fill="#f7fee7" stroke="#d9f99d" />
+                  <text x="175" y="80">गमनम्</text>
+                </g>
+              </svg>
             </div>
-            <button
-              type="button"
-              className="home-pathway-btn"
-              onClick={onOpenDhatupatha || onOpenGrammar}
-            >
+            <span className="vposter-kicker">पाणिनीय-व्याकरणम् · Pāṇinian Grammar</span>
+            <h3 className="vposter-title">🌿 Master Cases &amp; Verb Roots Without Rote Fear</h3>
+            <div className="vposter-chips">
+              <span>7 Vibhaktis</span><span>5 lakāras</span><span>🔊 1-tap audio</span>
+            </div>
+            <button type="button" className="vposter-btn" onClick={onOpenDhatupatha || onOpenGrammar}>
               व्याकरण-मण्डलम् · Launch Dhātupāṭha &amp; Vyakaran ▶
             </button>
           </div>
 
-          {/* Pathway 4: Vedic Mental Math */}
           {onOpenVedicMaths && (
-            <div className="home-pathway-card">
-              <div>
-                <span className="home-pathway-badge home-pathway-badge--maths">
-                  वेदाङ्ग-गणितम् · Speed Math &amp; Heritage
-                </span>
-                <h3 className="home-pathway-title">⚡ Solve Multi-Step Math in a Single Line</h3>
-                <p className="home-pathway-desc">
-                  Replace slow scratchpad calculations with 16 pattern-based Vedic sutras (Tirtha, 1965), cross-multiplication shortcuts, and instant digital-root verification.
-                </p>
+            <div className="home-pathway-card vposter vposter--maths">
+              <div className="vposter-art" aria-hidden="true">
+                <svg viewBox="0 0 220 90" className="vposter-svg">
+                  <g fontSize="15" textAnchor="middle" fill="#92400e">
+                    <text x="62" y="30">97</text>
+                    <text x="62" y="52">× 96</text>
+                    <line x1="40" y1="60" x2="85" y2="60" stroke="#d97706" strokeWidth="1.4" />
+                    <text x="62" y="80" fontWeight="700">9312</text>
+                  </g>
+                  <g fill="none" stroke="#f59e0b" opacity=".5">
+                    <circle cx="160" cy="45" r="34" />
+                    <polygon points="160,13 189,62 131,62" />
+                    <polygon points="160,77 131,28 189,28" />
+                  </g>
+                  <text x="160" y="50" fontSize="13" textAnchor="middle" fill="#92400e">16 सूत्र</text>
+                </svg>
               </div>
-              <button
-                type="button"
-                className="home-pathway-btn"
-                style={{ background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)', color: '#ffffff', borderColor: '#b45309' }}
-                onClick={onOpenVedicMaths}
-              >
+              <span className="vposter-kicker">वेदाङ्ग-गणितम् · Speed Math &amp; Heritage</span>
+              <h3 className="vposter-title">⚡ Solve Multi-Step Math in a Single Line</h3>
+              <div className="vposter-chips">
+                <span>16 sutras</span><span>Tirtha, 1965</span><span>Digital-root check</span>
+              </div>
+              <button type="button" className="vposter-btn" onClick={onOpenVedicMaths}>
                 गणित-सूत्र-शिक्षणम् · Start Vaidic Gaṇitam ▶
               </button>
             </div>
           )}
-
-          {/* Pathway 5: CBSE & NCERT School Track */}
-          <div className="home-pathway-card">
-            <div>
-              <span className="home-pathway-badge home-pathway-badge--school">
-                पाठ्यपुस्तक-क्रमः · NCERT Curriculum (Classes 7–9)
-              </span>
-              <h3 className="home-pathway-title">🎒 Deepakam &amp; Sharada, Chapter by Chapter</h3>
-              <p className="home-pathway-desc">
-                Every Class 7–9 NCERT chapter, in textbook order.
-              </p>
-              <div className="home-ncert-chips" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', margin: '0.5rem 0' }} aria-label="What you can do with NCERT chapters">
-                {['🔊 Listen', '🌐 Translate · English / Hindi / Telugu / Tamil / Malayalam', '✅ Solutions', '🎯 Quizzes', '📑 Worksheets'].map((c) => (
-                  <span key={c} style={{ fontSize: '0.78rem', padding: '0.2rem 0.55rem', borderRadius: '999px', background: '#f6efe4', border: '1px solid #e2d3bd', color: '#5a3e1b', whiteSpace: 'nowrap' }}>{c}</span>
-                ))}
-              </div>
-              <div style={{ display: 'flex', gap: '0.5rem', margin: '0.65rem 0' }}>
-                {NCERT_TEXTBOOKS.map((tb) => (
-                  <div
-                    key={tb.id}
-                    title={`${tb.titleSa} · ${tb.classEn}`}
-                    style={{
-                      width: '40px',
-                      height: '54px',
-                      borderRadius: '5px',
-                      overflow: 'hidden',
-                      boxShadow: '0 2px 6px rgba(0,0,0,0.18)',
-                      border: '1px solid #d4c5b2',
-                      flexShrink: 0,
-                      cursor: 'pointer',
-                    }}
-                    onClick={() => {
-                      if (tb.id === 'class7') onOpenReader('gsde101');
-                      else if (tb.id === 'class8') onOpenReader('grade8_prarthana');
-                      else onOpenReader('grade9_prarthana');
-                    }}
-                  >
-                    <img
-                      src={tb.coverUrl}
-                      alt={tb.alt}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <button
-              type="button"
-              className="home-pathway-btn"
-              onClick={() => onOpenReader('gsde101')}
-            >
-              एनसीईआरटी-वाचनम् · Start NCERT Reader ▶
-            </button>
-          </div>
 
           {/* Pathway 6 / Feature Card: Chitra-Kavya & The Sanskrit Knight's Tour (Fills the remaining 3 columns) */}
           <ChitraKavyaPathwayCard
@@ -2052,24 +2231,6 @@ const HomePage: React.FC<HomePageProps> = ({
           />
         </div>
       </section>
-
-      {/* ================================================================
-          FREE TRIAL CALLOUT 2: AFTER LEARNING PATHWAYS
-          ================================================================ */}
-      <FeatureTrialCallout
-        badge="🎁 ALL 4 PATHWAYS"
-        title={currentUser?.planStatus === 'active' ? 'All 4 Learning Pathways Unlocked' : 'Unlock All 4 Learning Pathways'}
-        subtitle="Beginner phonetics, NCERT Class 7–9 readers, Pāṇinian grammar conjugators, and 16 Vedic Mathematics sutras."
-        perks={[
-          'Deepakam 7 & 8 + Sharada 9',
-          '6,000+ Jodo Tile Puzzles',
-          '16 Vedic Sutras & Math Labs',
-        ]}
-        buttonText={currentUser?.planStatus ? 'Explore All Pathways ➔' : 'Unlock All 4 Pathways Free ➔'}
-        onAction={handleStartTrial}
-        accent="amber"
-        planStatus={currentUser?.planStatus}
-      />
 
       {/* ------------------------------------------------------------------
           Core Features Grid - Real Learner Outcomes
@@ -2245,37 +2406,6 @@ const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
 
-          {/* Feature 4b: लेखन-शाला · Writing Studio */}
-          {onOpenAssignmentEvaluator && (
-            <div className="home-feature-card home-feature-card--full" id="writing-studio">
-              <div className="home-feature-card-top">
-                <div className="home-feature-icon-row">
-                  <span className="home-feature-icon">✍️</span>
-                  <span className="home-feature-badge">Handwriting &amp; Composition Studio</span>
-                </div>
-                <h3 className="home-feature-title">लेखन-शाला · Writing Studio — Guided Writing Paths &amp; Feedback on Your Written Sanskrit</h3>
-                <p className="home-feature-desc">
-                  Once you can read the letters, learn to write them — then compose and get your written Sanskrit checked.
-                </p>
-                <ul className="home-feature-points">
-                  <li>Guided sequential writing paths (क्रमिक-लेखन-अभ्यासः): basics → shlokas → Class 7–9</li>
-                  <li>Stroke-by-stroke handwriting practice for clean Devanāgarī</li>
-                  <li>Paste or upload written work for Pāṇinian grammar feedback</li>
-                  <li>CBSE letter (पत्र) and paragraph (अनुच्छेद) writing practice</li>
-                </ul>
-              </div>
-              <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto', flexWrap: 'wrap' }}>
-                <button
-                  type="button"
-                  className="home-feature-btn"
-                  style={{ flex: 1, minWidth: '150px', background: '#1b352f', color: '#ffffff' }}
-                  onClick={onOpenAssignmentEvaluator}
-                >
-                  Open Writing Studio ▶
-                </button>
-              </div>
-            </div>
-          )}
 
           {/* Feature 5: Vyakarana Shelf */}
           <div className="home-feature-card">
@@ -2488,6 +2618,12 @@ const HomePage: React.FC<HomePageProps> = ({
         onOpenGrammar={onOpenGrammar}
         onOpenReader={onOpenReader}
         onOpenCourse={onOpenCourse}
+        imageSrc="/images/vedic-indian-knowledge-system-v2.jpg"
+        imageWebpSrc="/images/vedic-indian-knowledge-system-v2.webp"
+        imageAlt="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Philosophy (Darshana), Mathematics (Ganita), Martial Arts & Warfare (Dhanurveda), Statecraft & Polity, Cosmology & Astronomy, History, Ayurveda, Architecture (Vastu), and Grammar & Linguistics"
+        imageWidth={1920}
+        imageHeight={1072}
+        artBadge="Indian Knowledge Systems"
       />
 
       {/* ------------------------------------------------------------------
@@ -2695,25 +2831,6 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
 
-        {/* Bottom Callout Banner */}
-        <div className="hoc-bottom-banner">
-          <div className="hoc-banner-text">
-            <span style={{ fontSize: '2rem' }}>🪷</span>
-            <div>
-              <h4>Learn at Your Own Pace, Anytime</h4>
-              <p>Self-paced online lessons for spoken fluency, CBSE chapters, and shloka chanting — with Bodhi ready to answer your doubts 24/7.</p>
-            </div>
-          </div>
-          {onOpenOnlineClasses && (
-            <button
-              type="button"
-              className="hoc-banner-btn"
-              onClick={onOpenOnlineClasses}
-            >
-              Explore Self-Paced Tracks ➔
-            </button>
-          )}
-        </div>
       </section>
 
       {/* ------------------------------------------------------------------
@@ -3014,42 +3131,6 @@ const HomePage: React.FC<HomePageProps> = ({
         )}
 
               </section>
-
-      {/* ================================================================
-          FREE TRIAL CALLOUT 6: AFTER CURRICULUM DIRECTORY & CBSE BLUEPRINT
-          ================================================================ */}
-      <FeatureTrialCallout
-        badge="🎁 ALL 15 NCERT CHAPTERS"
-        title="Master Every Chapter & Ace Your Sanskrit Exams"
-        subtitle="Line-by-line textbook translations, grammatical glosses, CBSE question blueprints, and model answers."
-        perks={[
-          'All 15 Deepakam Chapters',
-          'Official 80-Mark Exam Blueprint',
-          'Downloadable Worksheets',
-        ]}
-        buttonText={currentUser?.planStatus ? 'Read All Chapters ➔' : 'Start Your 14-Day Free Trial ➔'}
-        onAction={handleStartTrial}
-        accent="amber"
-        planStatus={currentUser?.planStatus}
-      />
-
-      {/* ------------------------------------------------------------------
-          Practice Vault: Workbooks, Quizzes & CBSE Worksheets Showcase
-          ------------------------------------------------------------------ */}
-      <PracticeVaultShowcase
-        onOpenQuiz={onOpenQuiz}
-        onOpenWorksheets={onOpenWorksheets}
-        onOpenResources={onOpenResources}
-      />
-
-      {/* ------------------------------------------------------------------
-          GAMIFICATION & RETENTION: Streaks, Badges, 5 Ranks & Certificate
-          ------------------------------------------------------------------ */}
-      <GamificationShowcase
-        onOpenQuiz={onOpenQuiz}
-        onOpenCertificate={onOpenCertificate}
-        onOpenRegister={handleStartTrial}
-      />
 
       {/* ------------------------------------------------------------------
           Featured Video Masterclasses Section

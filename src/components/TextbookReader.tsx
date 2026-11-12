@@ -2415,6 +2415,7 @@ const TextbookReader: React.FC<TextbookReaderProps> = ({
                 return (
                   <div
                     key={group.category || groupIdx}
+                    id={isVarnamala ? `varnamala-row-${groupIdx}` : undefined}
                     className={`varnamala-row varnamala-row--${groupIdx % 10}${groupMeta?.isVarga ? ' varnamala-row--varga' : ''}`}
                   >
                     <div className="varnamala-row-header">

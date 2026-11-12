@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BodhiLabAnecdote, CoreIdea, TermPanel, type LabTerm, type LabSegmentProps } from './common';
 import { isSmallScreen, prefersReducedMotion } from './motion';
 import { playPronunciation } from '../../utils/pronunciation';
+import { ChaturyoniExpansions } from './ChaturyoniExpansions';
 
 type Mode = 'yoni' | 'sthiti' | 'plants';
 
@@ -105,6 +106,15 @@ const ANIMALS_AND_PLANTS: Specimen[] = [
   { id: 'lotus', icon: '🪷', en: 'Lotus', group: 'Plants', dev: 'पद्मम्', iast: 'padmam', zone: { yoni: 'udbhijja', sthiti: 'sthavara' }, note: 'Manu 1.46: all stationary plants are udbhijja, growing from seed or cutting.', lin: { rank: 'Kingdom Plantae', sci: 'Sacred lotus, Nelumbo nucifera', facts: 'A flowering plant (angiosperm) rooted in pond mud; grows from seed or rhizome.' } },
   { id: 'banyan', icon: '🌳', en: 'Banyan', group: 'Plants', dev: 'न्यग्रोधः', iast: 'nyagrodhaḥ', zone: { yoni: 'udbhijja', sthiti: 'sthavara' }, note: 'Trees sprout from seed: udbhijja and sthāvara (Manu 1.46).', lin: { rank: 'Kingdom Plantae', sci: 'Banyan, Ficus benghalensis (fig family, Moraceae)', facts: 'A flowering plant (angiosperm): its tiny flowers hide inside the fig, which is why figs fit Manu’s vanaspati, “fruit without (visible) flowers” (1.47).' } },
   { id: 'rice', icon: '🌾', en: 'Rice', group: 'Plants', dev: 'व्रीहिः', iast: 'vrīhiḥ', zone: { yoni: 'udbhijja', sthiti: 'sthavara' }, note: 'A crop that sprouts from seed: udbhijja and sthāvara (Manu 1.46).', lin: { rank: 'Kingdom Plantae', sci: 'Rice, Oryza sativa (grass family, Poaceae)', facts: 'A flowering grass grown as an annual: the plant dies after the grain ripens, matching Manu’s oṣadhi (1.46).' } },
+  { id: 'frog', icon: '🐸', en: 'Bullfrog', group: 'Amphibians', dev: 'मण्डूकः', iast: 'maṇḍūkaḥ', zone: { yoni: 'andaja', sthiti: 'jangama' }, note: 'Manu 1.44 names egg-born creatures; frogs lay jelly eggs in water.', lin: { rank: 'Class Amphibia', sci: 'Hoplobatrachus tigerinus', facts: 'Dual life-cycle: anamniotic eggs hatch into aquatic gill-breathing tadpoles, then metamorphose into lungs.' } },
+  { id: 'peafowl', icon: '🦚', en: 'Peafowl', group: 'Birds', dev: 'मयूरः', iast: 'mayūraḥ', zone: { yoni: 'andaja', sthiti: 'jangama' }, note: 'Manu 1.44: pakṣiṇaḥ (birds) are egg-born.', lin: { rank: 'Class Aves', sci: 'Pavo cristatus', facts: 'Endothermic archosaur with calcium carbonate-shelled eggs and iridescent structural feathers.' } },
+  { id: 'elephant', icon: '🐘', en: 'Elephant', group: 'Mammals', dev: 'गजः', iast: 'gajaḥ', zone: { yoni: 'jarayuja', sthiti: 'jangama' }, note: 'Manu 1.43: large quadrupeds are womb-born (jarāyuja).', lin: { rank: 'Class Mammalia', sci: 'Elephas maximus', facts: 'Placental mammal with 22-month gestation, social matriarchal herds, and acoustic infrasound rumbles.' } },
+  { id: 'bee', icon: '🐝', en: 'Honeybee', group: 'Insects', dev: 'मधुमक्षिका', iast: 'madhumakṣikā', zone: { yoni: 'svedaja', sthiti: 'jangama' }, note: 'Folk taxonomy placed insects under moisture-born; biology proves they hatch from queen eggs.', lin: { rank: 'Phylum Arthropoda · Insecta', sci: 'Apis cerana indica', facts: 'Eusocial hymenopteran with haplodiploid sex determination and sophisticated waggle-dance communication.' } },
+  { id: 'octopus', icon: '🐙', en: 'Octopus', group: 'Molluscs', dev: 'अष्टपादः', iast: 'aṣṭapādaḥ', zone: { yoni: 'andaja', sthiti: 'jangama' }, note: 'Marine egg-layer; mothers protect egg clutches until hatching.', lin: { rank: 'Phylum Mollusca · Cephalopoda', sci: 'Octopus vulgaris', facts: 'Highly intelligent invertebrate with 3 hearts, blue hemocyanin blood, and decentralized nervous system.' } },
+  { id: 'coral', icon: '🪸', en: 'Coral Reef Polyps', group: 'Cnidaria', dev: 'प्रवालः', iast: 'pravālaḥ', zone: { yoni: 'udbhijja', sthiti: 'sthavara' }, note: 'Debated historically between plant, animal, and stone; modern biology proves colonial animals!', lin: { rank: 'Phylum Cnidaria · Anthozoa', sci: 'Scleractinia hermatypic corals', facts: 'Sessile animal polyps secreting aragonite skeletons with endosymbiotic photosynthetic zooxanthellae.' } },
+  { id: 'mushroom', icon: '🍄', en: 'Mushroom', group: 'Fungi', dev: 'छत्रकम्', iast: 'chhatrakam', zone: { yoni: 'udbhijja', sthiti: 'sthavara' }, note: 'Sprouts from soil (udbhijja), but contains zero chlorophyll and absorbs decaying organic matter.', lin: { rank: 'Kingdom Fungi', sci: 'Agaricus bisporus', facts: 'Heterotrophic eukaryote with chitin cell walls, more closely related to animals than to green plants.' } },
+  { id: 'bacteria', icon: '🦠', en: 'Cyanobacteria', group: 'Bacteria', dev: 'नील-हरित जीवाणु', iast: 'nīla-harita jīvāṇu', zone: { yoni: 'svedaja', sthiti: 'sthavara' }, note: 'Microscopic single-celled beings; ancient texts described unseen micro-pests as sūkṣma-kṛmi.', lin: { rank: 'Domain Bacteria', sci: 'Nostoc / Anabaena', facts: 'Prokaryotes performing oxygenic photosynthesis; ancestral endosymbionts of all plant chloroplasts.' } },
+  { id: 'archaea', icon: '🌋', en: 'Vent Archaea', group: 'Archaea', dev: 'अग्नि-सूक्ष्मजीव', iast: 'agni-sūkṣmajīva', zone: { yoni: 'svedaja', sthiti: 'sthavara' }, note: 'Extremophiles living at 100°C; traditionally linked to heat/moisture.', lin: { rank: 'Domain Archaea', sci: 'Pyrococcus furiosus', facts: 'A distinct third domain of life; branched ether-linked cell membrane lipids resistant to autoclaving.' } },
 ];
 
 const PLANTS: Specimen[] = [
@@ -661,6 +671,8 @@ const Chaturyoni: React.FC<LabSegmentProps> = ({ onNextLab }) => {
           (guccha, gulma); this shelf uses four of its groups. Vanaspati usually just means a big tree; 1.47 gives the narrow sense.
         </p>
       )}
+
+      <ChaturyoniExpansions />
 
       <div className="cy-lore-grid">
         <section className="cy-lore" aria-label="Chāndogya Upaniṣad 6.3.1">

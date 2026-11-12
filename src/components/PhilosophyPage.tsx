@@ -32,7 +32,7 @@ export interface PhilosophyPageProps {
   /** Open a Course Addendum unit (e.g. Mantras & Ślokas). */
   onOpenCourseAddendum?: (addendumId: string) => void;
   onOpenScienceLab?: (segment?: string) => void;
-  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy';
+  initialEssay?: 'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy' | 'lokokti';
 }
 
 const GLOSSARY: { term: string; meaning: string }[] = [
@@ -181,6 +181,7 @@ const ESSAY_HASHES = {
   shad_darshana: 'shad-darshana',
   medha_mind: 'medha',
   ujjain_geodesy: 'ujjain',
+  lokokti: 'lokokti',
 } as const;
 
 const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
@@ -194,7 +195,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
   onOpenScienceLab,
   initialEssay = 'ai_sanskrit',
 }) => {
-  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy'>(initialEssay);
+  const [activeEssay, setActiveEssay] = useState<'ai_sanskrit' | 'sunyat_anantam' | 'tagore_sanskrit' | 'music_of_matter' | 'pingala_binary' | 'turanga_bandha' | 'lilavati_math' | 'shad_darshana' | 'medha_mind' | 'ujjain_geodesy' | 'lokokti'>(initialEssay);
   const [glossaryOpen, setGlossaryOpen] = useState(false);
 
   useEffect(() => {
@@ -265,6 +266,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
     } else if (activeEssay === 'ujjain_geodesy') {
       currentTitle = UJJAIN_ESSAY_TITLE;
       currentDesc = UJJAIN_ESSAY_DESC;
+    } else if (activeEssay === 'lokokti') {
+      currentTitle = 'लोकोक्तयः · Sanskrit Proverbs & Idioms · Darśana | EdNet Gurukul';
+      currentDesc = 'Sanskrit proverbs and idioms on life, wit and hard work — Devanagari, IAST, literal meaning and English equivalents.';
     }
 
     const prevTitle = document.title;
@@ -516,6 +520,20 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
             <div>
               <span className="philosophy-essay-tab-title">मध्यरेखा · Ujjain: The Sacred Meridian &amp; Geodesy</span>
               <span className="philosophy-essay-tab-sub">Ancient Prime Meridian (0°) · Śaṅku Latitude · Eclipse Longitude · Doṅglā Zero Shadow</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            className={`philosophy-essay-tab ${activeEssay === 'lokokti' ? 'active' : ''}`}
+            onClick={() => {
+              setActiveEssay('lokokti');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            <span className="philosophy-essay-tab-icon" aria-hidden="true">📜</span>
+            <div>
+              <span className="philosophy-essay-tab-title">लोकोक्तयः · Sanskrit Proverbs &amp; Idioms</span>
+              <span className="philosophy-essay-tab-sub">Life Lessons · Wit · Hard Work · Nyāyas · Perseverance</span>
             </div>
           </button>
         </nav>
@@ -5305,6 +5323,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 Darśana means “seeing,” not “doctrine.” Six schools, six vantage points — and a conversation that
                 never needed a single winner.
               </p>
+              <div className="philosophy-taglines" style={{ marginTop: '0.65rem', marginBottom: '0.5rem', color: '#60a5fa', fontSize: '0.96rem', fontWeight: 600 }}>
+                <strong>Observe. Question. Discover.</strong> Explore nature · Understand the universe · Explore the cosmos · Understand creation.
+              </div>
 
               <blockquote className="philosophy-pull-quote" style={{ maxWidth: '40rem', margin: '1.25rem auto 0.75rem' }}>
                 <p lang="sa" style={{ fontSize: '1.15rem' }}>
@@ -5838,6 +5859,201 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                 </button>
               </div>
             </div>
+          </div>
+        )}
+
+
+        {/* =========================================================================
+            ESSAY: लोकोक्तयः · Sanskrit Proverbs & Idioms
+           ========================================================================= */}
+        {activeEssay === 'lokokti' && (
+          <div className="philosophy-essay-body" id="lokokti">
+            <header className="philosophy-hero">
+              <span className="philosophy-kicker">Gurukul Darśana · लोकोक्तयः · सुभाषितानि</span>
+              <h1 className="philosophy-title">लोकोक्तयः · Sanskrit Proverbs &amp; Idioms</h1>
+              <p className="philosophy-mantra">
+                Indian philosophy in a single breath — life lessons, wit and human nature, compressed into sayings
+                that still travel from grandparents to grandchildren.
+              </p>
+            </header>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', margin: '0 0 1.75rem' }} aria-label="Article sections">
+              <a href="#lokokti-deep-life" className="philosophy-chip" style={{ textDecoration: 'none' }}>🪷 Deep Life Lessons &amp; Philosophy</a>
+              <a href="#lokokti-wit" className="philosophy-chip" style={{ textDecoration: 'none' }}>🧠 Wit, Insults &amp; Descriptive Idioms</a>
+              <a href="#lokokti-hard-work" className="philosophy-chip" style={{ textDecoration: 'none' }}>🤝 Hard Work &amp; Human Nature</a>
+              <a href="#lokokti-nyaya" className="philosophy-chip" style={{ textDecoration: 'none' }}>🐸 Vivid Descriptive Idioms &amp; Folk Analogies (Nyāyas)</a>
+              <a href="#lokokti-perseverance" className="philosophy-chip" style={{ textDecoration: 'none' }}>🌱 Perseverance, Growth &amp; Destiny</a>
+            </div>
+            <section className="philosophy-section" aria-labelledby="lokokti-deep-life">
+              <h2 id="lokokti-deep-life">🪷 Deep Life Lessons &amp; Philosophy</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>यथा कर्म तथा फलम्</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Yathā Karma Tathā Phalam</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> As the action, so the fruit.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> As you sow, so shall you reap.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>अति सर्वत्र वर्जयेत्</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Ati Sarvatra Varjayet</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Excess should be avoided everywhere.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> Too much of anything is bad.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>दूरतः पर्वता रम्याः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Dūrataḥ Parvatā Ramyāḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Mountains look beautiful from a distance.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> The grass is always greener on the other side / All that glitters is not gold.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>गते शोचो न कर्तव्यः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Gate Śoco Na Kartavyaḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> One should not grieve over what is gone.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> Don&rsquo;t cry over spilled milk.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>जननी जन्मभूमिश्च स्वर्गादपि गरीयसी</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Jananī Janmabhūmiśca Svargādapi Garīyasī</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Mother and motherland are superior even to heaven.</p>
+                </div>
+              </div>
+            </section>
+            <section className="philosophy-section" aria-labelledby="lokokti-wit">
+              <h2 id="lokokti-wit">🧠 Wit, Insults &amp; Descriptive Idioms</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>गेहेशूरः / पिण्डीशूरः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Geheśūraḥ / Piṇḍīśūraḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> A hero only inside one&rsquo;s own home / A hero over a ball of food.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> A couch warrior, or a bully who acts brave only where it is safe.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>अङ्गारः शतधौतेन मलिनत्वं न मुञ्चति</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Aṅgāraḥ Śatadhautena Malinatvaṃ Na Muñcati</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Charcoal does not lose its blackness even if washed a hundred times.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> A leopard cannot change its spots.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>नास्ति मूर्खस्य औषधम्</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Nāsti Mūrkhasya Auṣadham</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> There is no medicine (cure) for a fool.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>उदुम्बरमशकः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Udumbara-maśakaḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> A gnat inside a fig tree.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>Meaning:</strong> A person with a very narrow, limited worldview who thinks their tiny environment is the entire universe.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>कालाय तस्मै नमः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Kālāya Tasmai Namaḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Salutations to Time.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> Time and tide wait for no one.</p>
+                </div>
+              </div>
+            </section>
+            <section className="philosophy-section" aria-labelledby="lokokti-hard-work">
+              <h2 id="lokokti-hard-work">🤝 Hard Work &amp; Human Nature</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Ālasyaṃ Hi Manuṣyāṇāṃ Śarīrastho Mahān Ripuḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Laziness is the great enemy residing within the human body.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>जलबिन्दुनिपातेन क्रमशः पूर्यते घटः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Jalabindu-nipātena Kramaśaḥ Pūryate Ghaṭaḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> A pot gets filled drop by drop.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> Little strokes fell great oaks / Every penny counts.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>अतिपरिचयादवज्ञा भवति</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Atiparicayād-avajñā Bhavati</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Excessive familiarity breeds contempt.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>बुद्धिर्यस्य बलं तस्य</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Buddhir-yasya Balaṃ Tasya</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Whoever has intelligence has strength.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> Might does not make right; wisdom triumphs over brute force.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>अल्पविद्या महागर्वी</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Alpa-vidyā Mahā-garvī</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> A little knowledge brings immense arrogance.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> A little learning is a dangerous thing / Empty vessels make the most noise.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>मौनं सर्वार्थसाधनम्</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Maunaṃ Sarvārtha-sādhanam</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Silence is the means to achieve all goals.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> Silence is golden.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>यथा राजा तथा प्रजा</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Yathā Rājā Tathā Prajā</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> As the king is, so are the subjects.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> Like father, like son / The leader sets the tone.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>छिद्रेष्वनर्था बहुलीभवन्ति</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Chidreṣv-anarthā Bahulībhavanti</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Misfortunes multiply through the smallest cracks.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> Misfortunes seldom come alone / When it rains, it pours.</p>
+                </div>
+              </div>
+            </section>
+            <section className="philosophy-section" aria-labelledby="lokokti-nyaya">
+              <h2 id="lokokti-nyaya">🐸 Vivid Descriptive Idioms &amp; Folk Analogies (Nyāyas)</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>कूपमण्डूकः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Kūpa-maṇḍūkaḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> A frog in a narrow well.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>Meaning:</strong> Someone with a restricted viewpoint who thinks their small world is all that exists.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>अजाकृपाणन्यायः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Ajā-kṛpāṇa-nyāyaḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> The maxim of the goat and the sword.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>Meaning:</strong> Sudden, unexpected bad luck — like a goat rubbing its neck against a hidden sword.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>काकतालीयवादः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Kākatālīya-vādaḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> The coincidence of the crow and the palm fruit.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>Meaning:</strong> Pure coincidence — correlation is not causation.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>गड्डलिकाप्रवाहः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Gaḍḍalikā-pravāhaḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> The blind rush of a herd of sheep.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>Meaning:</strong> Bandwagon effect / herd mentality.</p>
+                </div>
+              </div>
+            </section>
+            <section className="philosophy-section" aria-labelledby="lokokti-perseverance">
+              <h2 id="lokokti-perseverance">🌱 Perseverance, Growth &amp; Destiny</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Udyamena Hi Sidhyanti Kāryāṇi Na Manorathaiḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Tasks are accomplished only through effort, never by mere wishing.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> Actions speak louder than words / God helps those who help themselves.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>चक्रेण विना न रथस्य गतिः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Cakreṇa Vinā Na Rathasya Gatiḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> A chariot cannot move on a single wheel.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>Meaning:</strong> Success needs collaboration and balance.</p>
+                </div>
+                <div className="philosophy-card">
+                  <p lang="sa" style={{ fontSize: '1.25rem', margin: '0 0 0.25rem' }}>न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मृगाः</p>
+                  <p style={{ fontStyle: 'italic', margin: '0 0 0.5rem', color: '#64748b' }}>Na Hi Suptasya Siṃhasya Praviśanti Mukhe Mṛgāḥ</p>
+                  <p style={{ margin: 0 }}><strong>Literal meaning:</strong> Deer do not walk into the mouth of a sleeping lion.</p>
+                  <p style={{ margin: '0.35rem 0 0' }}><strong>English equivalent:</strong> No pain, no gain / You must work for what you want.</p>
+                </div>
+              </div>
+            </section>
           </div>
         )}
 

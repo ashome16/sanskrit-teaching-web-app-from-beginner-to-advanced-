@@ -84,6 +84,18 @@ export const BodhiMentorPositioning: React.FC<BodhiMentorPositioningProps> = ({
         Bodhi is a <strong>hybrid Gurukul companion</strong> designed around three transparent tiers: an <strong>interactive guided lesson flow</strong> on every page, <strong>grounded AI retrieval</strong> locked to Pāṇinian grammar rules, and a <strong>learner care desk</strong> (care@ednetlearn.in) for account and site help.
       </p>
 
+      {/* Self-paced learning, merged into Bodhi */}
+      <div className="bodhi-pos-selfpaced" style={{ display: 'flex', alignItems: 'center', gap: '0.9rem', flexWrap: 'wrap', background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: 14, padding: '0.85rem 1.1rem', margin: '0 0 1.25rem' }}>
+        <span style={{ fontSize: '1.8rem' }} aria-hidden="true">🪷</span>
+        <div style={{ flex: '1 1 260px' }}>
+          <strong style={{ display: 'block', color: '#7c2d12' }}>Learn at Your Own Pace, Anytime</strong>
+          <span style={{ color: '#57534e', fontSize: '0.95rem' }}>Self-paced online lessons for spoken fluency, CBSE chapters, and shloka chanting — with Bodhi ready to answer your doubts 24/7.</span>
+        </div>
+        {onOpenOnlineClasses && (
+          <button type="button" className="hoc-banner-btn" onClick={onOpenOnlineClasses}>Explore Self-Paced Tracks ➔</button>
+        )}
+      </div>
+
       {/* 2. Interactive Navigation Tabs */}
       <nav className="bodhi-pos-tabs" role="tablist" aria-label="Bodhi Mentor Details">
         <button

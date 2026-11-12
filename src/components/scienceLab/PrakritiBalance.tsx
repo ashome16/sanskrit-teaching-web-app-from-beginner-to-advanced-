@@ -1,10 +1,122 @@
-import React, { useMemo, useState, useEffect, useRef } from 'react';
-import { BodhiLabAnecdote, ChallengeList, TermPanel, type LabChallenge, type LabTerm, type LabSegmentProps } from './common';
+import React, { useMemo, useState, useEffect, useCallback } from 'react';
+import { ChallengeList, TermPanel, type LabChallenge, type LabTerm, type LabSegmentProps } from './common';
 import { GlowSlider } from './controls';
 import { soundEffects } from '../../utils/soundEffects';
-import { playPronunciation } from '../../utils/pronunciation';
 
+/* =========================================================================
+   PRAKṚTI BIOSPHERE & CELLULAR HOMEOSTASIS
+   Combines Macro-Ecology (Food Web, Trophic Cascades, Annād Bhavanti Bhūtāni)
+   with Micro-Cellular Tri-Doṣa Homeostasis.
+   ========================================================================= */
 
+type LabViewMode = 'biosphere' | 'cellular';
+
+// -------------------------------------------------------------------------
+// 1. MACRO-ECOLOGICAL BIOSPHERE TYPES & CONFIG
+// -------------------------------------------------------------------------
+export type BiosphereScenario = 'free' | 'restore_degraded' | 'prevent_overgrazing' | 'manage_drought' | 'trophic_cascade';
+
+interface BiosphereScenarioConfig {
+  id: BiosphereScenario;
+  titleDev: string;
+  titleEn: string;
+  badge: string;
+  desc: string;
+  initial: {
+    rainfall: number;      // 0-100 mm
+    temperature: number;   // 10-45 °C
+    plantDensity: number;  // 0-100%
+    herbivores: number;    // 0-100
+    carnivores: number;    // 0-30
+    soilNutrients: number; // 0-100%
+  };
+  goal: string;
+  successCondition: (state: BiosphereState) => boolean;
+  explanation: string;
+}
+
+interface BiosphereState {
+  timeStep: number;
+  producers: number;     // Plant biomass 0-100
+  herbivores: number;    // Herbivore count 0-100
+  carnivores: number;    // Carnivore count 0-40
+  decomposers: number;   // Soil microbes/fungi 0-100
+  soilNutrients: number; // Organic humus 0-100
+  oxygen: number;        // Atmospheric O2 percentage (norm ~21%)
+  carbonDioxide: number; // Atmospheric CO2 relative index
+  biodiversity: number;  // Shannon-Wiener proxy index (0-100)
+  resilience: number;    // Resistance to collapse (0-100)
+}
+
+interface HistoryPoint {
+  step: number;
+  producers: number;
+  herbivores: number;
+  carnivores: number;
+  decomposers: number;
+}
+
+const SCENARIOS: Record<BiosphereScenario, BiosphereScenarioConfig> = {
+  free: {
+    id: 'free',
+    titleDev: 'मुक्त-अन्वेषणम्',
+    titleEn: 'Free Biome Exploration',
+    badge: 'Sandbox Mode',
+    desc: 'Freely adjust rainfall, temperature, plants, grazers, and apex predators to observe non-linear trophic oscillations.',
+    initial: { rainfall: 65, temperature: 26, plantDensity: 65, herbivores: 45, carnivores: 12, soilNutrients: 70 },
+    goal: 'Maintain stable multi-trophic cycles without any trophic tier falling to zero.',
+    successCondition: (s) => s.producers > 20 && s.herbivores > 10 && s.carnivores > 3 && s.timeStep > 15,
+    explanation: 'Natural ecosystems fluctuate continuously around dynamic equilibrium points. Diversity and feedback loops absorb shocks.',
+  },
+  restore_degraded: {
+    id: 'restore_degraded',
+    titleDev: 'मरुभूमि-पुनरुद्धारः',
+    titleEn: 'Restore Degraded Land',
+    badge: 'Mission 1',
+    desc: 'The ridge has been turned to arid dust: soil nutrients are stripped and zero plants survive. Rebuild the soil humus, cultivate pioneer vegetation, and bring back life.',
+    initial: { rainfall: 30, temperature: 36, plantDensity: 5, herbivores: 0, carnivores: 0, soilNutrients: 15 },
+    goal: 'Raise soil nutrients above 55% and plant density above 50% for 10 time steps.',
+    successCondition: (s) => s.soilNutrients >= 55 && s.producers >= 50,
+    explanation: 'Degraded land requires pioneer vegetation and decomposer microbes to rebuild organic humus before it can support herbivores.',
+  },
+  prevent_overgrazing: {
+    id: 'prevent_overgrazing',
+    titleDev: 'अतिचारण-नियन्त्रणम्',
+    titleEn: 'Prevent Overgrazing',
+    badge: 'Mission 2',
+    desc: 'Herbivore population has exploded with zero predators, threatening to devour all root networks and cause irreversible topsoil erosion.',
+    initial: { rainfall: 60, temperature: 27, plantDensity: 30, herbivores: 92, carnivores: 0, soilNutrients: 45 },
+    goal: 'Rebalance grazing pressure so plant density recovers above 45% while preserving at least 25 herbivores.',
+    successCondition: (s) => s.producers >= 45 && s.herbivores >= 25 && s.herbivores <= 60,
+    explanation: 'Without apex predators or managed grazing rotations, herbivores experience a boom-and-bust cycle that destroys primary producers.',
+  },
+  manage_drought: {
+    id: 'manage_drought',
+    titleDev: 'अनावृष्टि-प्रबन्धनम्',
+    titleEn: 'Drought Survival Crisis',
+    badge: 'Mission 3',
+    desc: 'The monsoon has failed: rainfall drops to 15 mm and heat spikes. Test how high soil organic matter and biodiversity protect the biome from total collapse.',
+    initial: { rainfall: 15, temperature: 40, plantDensity: 75, herbivores: 45, carnivores: 10, soilNutrients: 85 },
+    goal: 'Survive 15 time steps without plant biomass collapsing below 15%.',
+    successCondition: (s) => s.producers >= 15 && s.timeStep >= 15,
+    explanation: 'Deep-rooted perennial plants and rich organic soil hold groundwater like a sponge, allowing life to survive severe seasonal drought.',
+  },
+  trophic_cascade: {
+    id: 'trophic_cascade',
+    titleDev: 'परभक्षि-पुनरागमनम्',
+    titleEn: 'Apex Predator Reintroduction',
+    badge: 'Mission 4',
+    desc: 'Riverbanks are eroding because unchecked deer herds are trampling saplings. Reintroduce apex predators (tigers / wolves) to trigger a positive trophic cascade.',
+    initial: { rainfall: 70, temperature: 25, plantDensity: 20, herbivores: 85, carnivores: 2, soilNutrients: 50 },
+    goal: 'Introduce at least 10 predators and let the trophic cascade boost plant density above 60%.',
+    successCondition: (s) => s.carnivores >= 8 && s.producers >= 60,
+    explanation: 'Apex predators not only reduce grazer numbers but alter grazer behavior, keeping them moving and allowing riverbank vegetation and songbirds to recover.',
+  },
+};
+
+// -------------------------------------------------------------------------
+// 2. CELLULAR HOMEOSTASIS (TRI-DOṢA) TYPES & DATA (Preserved from earlier)
+// -------------------------------------------------------------------------
 type Ritu = 'grishma' | 'varsha' | 'sisira' | 'vasanta';
 
 const RITU_PRESETS: Record<Ritu, { dev: string; iast: string; name: string; icon: string; desc: string; heat: number; cold: number; dry: number; moist: number; activity: number }> = {
@@ -21,7 +133,7 @@ const RITU_PRESETS: Record<Ritu, { dev: string; iast: string; name: string; icon
     iast: 'varṣā',
     name: 'Monsoon Flooding',
     icon: '🌧️',
-    desc: 'Heavy atmospheric humidity and dampness weaken enzymatic digestion, inducing cellular sluggishness (High Kapha/Vāta).',
+    desc: 'Heavy atmospheric humidity weakens enzymatic digestion, inducing cellular sluggishness (High Kapha/Vāta).',
     heat: 3, cold: 6, dry: 1, moist: 9, activity: 2
   },
   sisira: {
@@ -29,7 +141,7 @@ const RITU_PRESETS: Record<Ritu, { dev: string; iast: string; name: string; icon
     iast: 'śiśira',
     name: 'Freezing Winter',
     icon: '❄️',
-    desc: 'Severe cryogenic dryness stiffens cytoskeletal filaments and increases transmembrane electrical shear (High Vāta).',
+    desc: 'Severe cryogenic dryness stiffens cytoskeletal filaments and increases electrical shear (High Vāta).',
     heat: 1, cold: 9, dry: 9, moist: 2, activity: 7
   },
   vasanta: {
@@ -37,7 +149,7 @@ const RITU_PRESETS: Record<Ritu, { dev: string; iast: string; name: string; icon
     iast: 'vasanta',
     name: 'Spring Thaw',
     icon: '🌸',
-    desc: 'Rising ambient warmth liquefies accumulated cytosolic lipids, increasing macromolecular crowding (Kapha liquefaction).',
+    desc: 'Rising ambient warmth liquefies accumulated cytosolic lipids, increasing macromolecular crowding.',
     heat: 6, cold: 4, dry: 4, moist: 7, activity: 5
   },
 };
@@ -53,26 +165,22 @@ interface EnvState {
   activity: number;
 }
 
-const clamp = (n: number) => Math.max(0, Math.min(100, n));
+const clamp = (n: number, min = 0, max = 100) => Math.max(min, Math.min(max, n));
 
-/** Interdependent Thermodynamic Tri-Doṣa Vector Model */
 const calculateThermodynamicDoshas = (e: EnvState) => {
   const d = (n: number) => n - 5;
   const rawPitta = 50 + 5.5 * d(e.heat) - 3.5 * d(e.cold) + 0.8 * d(e.activity);
   const rawVata = 50 + 4.0 * d(e.dry) + 2.5 * d(e.cold) + 3.0 * d(e.activity) - 2.8 * d(e.moist);
   const rawKapha = 50 + 4.5 * d(e.moist) + 2.0 * d(e.cold) - 3.2 * d(e.activity) - 2.8 * d(e.heat) - 2.0 * d(e.dry);
 
-  // Cross-coupling: High Pitta accelerates Vata and thins Kapha
   const pDelta = rawPitta - 50;
   const vCross = rawVata + 0.35 * Math.max(0, pDelta);
   const kCross = rawKapha - 0.40 * Math.max(0, pDelta);
 
-  // High Kapha dampens Vata and buffers Pitta
   const kDelta = kCross - 50;
   const vCoupled = vCross - 0.28 * Math.max(0, kDelta);
   const pCoupled = rawPitta - 0.22 * Math.max(0, kDelta);
 
-  // High Vata dehydrates Kapha
   const vDelta = vCoupled - 50;
   const finalKapha = kCross - 0.25 * Math.max(0, vDelta);
 
@@ -149,866 +257,1017 @@ const ORGANELLES: Record<OrganelleKey, OrganelleInfo> = {
   },
 };
 
-const SAMA_MIN = 40;
-const SAMA_MAX = 60;
-const isBalanced = (val: number) => val >= SAMA_MIN && val <= SAMA_MAX;
+const TERMS: LabTerm[] = [
+  { dev: 'जैवमण्डलम्', iast: 'jaivamaṇḍalam', en: 'Biosphere — the global ecological system integrating all living beings and their relationships' },
+  { dev: 'पर्जन्यः', iast: 'parjanyaḥ', en: 'Rain-cloud & atmospheric precipitation matrix sustaining terrestrial vegetation' },
+  { dev: 'अन्नम्', iast: 'annam', en: 'Biomass & nourishment — primary producer carbohydrates sustaining the food web' },
+  { dev: 'उत्पादकाः', iast: 'utpādakāḥ', en: 'Primary Producers (autotrophs): plants and photosynthetic vegetation' },
+  { dev: 'शाकाहारिणः', iast: 'śākāhāriṇaḥ', en: 'Herbivores (primary consumers): grazers directly consuming plant biomass' },
+  { dev: 'मांसाहारिणः', iast: 'māṁsāhāriṇaḥ', en: 'Carnivores (apex predators): regulators of herbivore populations and grazing pressure' },
+  { dev: 'अपघटकाः', iast: 'apaghaṭakāḥ', en: 'Decomposers (mycorrhizae & bacteria): recycling organic detritus into bioavailable soil humus' },
+];
 
 const CHALLENGES: LabChallenge[] = [
   {
-    q: 'During the harsh summer of Grīṣma Ṛtu, intracellular heat spikes (High Pitta). What is the immediate threat to the cell, and which Ayurvedic counter-measure restores equilibrium?',
+    q: 'According to the ecological principle “Annād bhavanti bhūtāni parjanyād anna-sambhavaḥ”, where does all life’s energy originate, and how does rain drive it?',
     options: [
-      'Membrane lipid peroxidation; deploy Śīta-Ghṛta (cooling lipid) to quench heat and restore membrane fluid stability',
-      'Osmotic bursting; deploy dry hot spices to dehydrate the cytosol',
-      'Cytoskeletal paralysis; freeze the cell with ice to stop all diffusion',
-      'Complete loss of RNA; inject dry grains into the nucleus',
+      'Rainfall (Parjanya) dissolves soil minerals and powers photosynthesis, yielding plant food (Anna) that sustains all living beings (Bhūtāni).',
+      'Rainfall directly turns into carbon dioxide inside animal lungs.',
+      'Animals create their own food without plants or moisture.',
+      'Plants eat herbivores to make rain in the sky.',
     ],
     answer: 0,
-    explain: 'According to Dravya-Guṇa opposites, excess Uṣṇa (heat) and Tīkṣṇa (sharpness) are neutralized by Śīta (cooling) and Snigdha (nourishing unctuous) substances like Ghṛta (clarified butter), preserving membrane fluidity.',
+    explain: 'Taittirīya Upaniṣad and Bhagavad Gītā 3.14 establish the solar-meteorological food chain: solar radiation cycles precipitation (Parjanya), which enables vegetative photosynthesis (Anna), nourishing all organisms (Bhūtāni).',
   },
   {
-    q: 'When Vāta spikes erratically above 75%, ion pumps fail to maintain resting potential, causing chaotic membrane ripples. Which pulse signature does this induce?',
+    q: 'Why is an ecosystem with high biodiversity more resilient to severe drought than a monoculture crop field?',
     options: [
-      'Haṁsa-Gati (slow majestic swan glide)',
-      'Sarpa-Gati (fast, delicate, winding snake-like ripple)',
-      'Maṇḍūka-Gati (sharp explosive frog leap)',
-      'A completely flat horizontal zero line',
+      'Different species have varied root depths, water-use strategies, and mycorrhizal networks that buffer the entire soil sponge from drying out.',
+      'Monocultures produce too much rain, causing flooding.',
+      'Biodiverse ecosystems have no herbivores, so plants never get eaten.',
+      'All plants in a biodiverse forest are identical clones.',
     ],
-    answer: 1,
-    explain: 'High kinetic Vāta manifests as Sarpa-Gati (winding snake), characterized by irregular high-frequency tactile oscillations and turbulent arterial wall deflection.',
+    answer: 0,
+    explain: 'Ecological resilience relies on functional redundancy and structural diversity: deep taproots draw deep groundwater, canopy layers reduce surface evaporation, and diverse fungi maintain nutrient flux even when surface rainfall drops.',
   },
   {
-    q: 'How does the ancient systems biology axiom “Yathā piṇḍe tathā brahmāṇḍe” (As in the body, so in the cosmos) translate into modern cellular biology?',
+    q: 'What ecological disaster occurs when all apex predators (Carnivores) are completely removed from a grassland?',
     options: [
-      'Human cells are made of tiny planetary orbits that rotate around the heart',
-      'The cell is an open thermodynamic micro-system in continuous dynamic exchange with external seasonal environments (Ṛtucaryā)',
-      'Seasonal weather has zero measurable impact on intracellular enzyme activity',
-      'Cells can survive indefinitely in a vacuum without exchanging energy or matter',
+      'Herbivores multiply unchecked, consume plants faster than regeneration rates, cause topsoil erosion, and eventually starve.',
+      'Plants grow exponentially without stopping, covering the entire planet.',
+      'Rainfall permanently stops across the continent.',
+      'Herbivores transform into carnivores within two days.',
     ],
-    answer: 1,
-    explain: 'The cell is an open thermodynamic system whose internal equilibrium (Samatva) constantly requires biochemical counter-forces to offset external environmental stressors.',
+    answer: 0,
+    explain: 'This classic trophic cascade (observed in Yellowstone and Indian protected forests) shows that without top-down predator regulation, overgrazing destroys the root matrix, leading to desertification and collapse of the grazer population itself.',
   },
 ];
 
-const TERMS: LabTerm[] = [
-  { dev: 'समत्वम्', iast: 'samatva', en: 'Dynamic Homeostasis', note: 'Viable biophysical balance window (40%–60%) across all three metabolic forces.' },
-  { dev: 'यथा पिण्डे तथा ब्रह्माण्डे', iast: 'yathā piṇḍe tathā brahmāṇḍe', en: 'Macrocosm-Microcosm Resonance', note: 'The cell mirrors universal thermodynamic laws.' },
-  { dev: 'द्रव्य-गुण-कर्म', iast: 'dravya-guṇa-karma', en: 'Substance, Attribute, and Action', note: 'Applying opposing physical attributes to counter environmental stressors.' },
-  { dev: 'नाडी-विज्ञानम्', iast: 'nāḍī-vijñāna', en: 'Radial Arterial Pulse Diagnostics', note: 'Reading systemic micro-cellular hemodynamics from arterial waveforms.' },
-];
-
+// -------------------------------------------------------------------------
+// 3. MAIN COMPONENT: PRAKRITI BIOSPHERE
+// -------------------------------------------------------------------------
 export const PrakritiBalance: React.FC<LabSegmentProps> = ({ onNextLab }) => {
-  const [env, setEnv] = useState<EnvState>({
-    ritu: 'grishma',
-    heat: 8,
-    cold: 2,
-    dry: 7,
-    moist: 3,
-    activity: 7,
+  const [viewMode, setViewMode] = useState<LabViewMode>('biosphere');
+
+  // --- Biosphere State ---
+  const [activeScenario, setActiveScenario] = useState<BiosphereScenario>('free');
+  const [rainfall, setRainfall] = useState<number>(65);
+  const [temperature, setTemperature] = useState<number>(26);
+
+
+  const [isRunning, setIsRunning] = useState<boolean>(true);
+  const [simSpeed, setSimSpeed] = useState<number>(1);
+  const [missionComplete, setMissionComplete] = useState<boolean>(false);
+
+  // Live state tracking
+  const [bioState, setBioState] = useState<BiosphereState>({
+    timeStep: 0,
+    producers: 65,
+    herbivores: 45,
+    carnivores: 12,
+    decomposers: 60,
+    soilNutrients: 70,
+    oxygen: 21.0,
+    carbonDioxide: 410,
+    biodiversity: 78,
+    resilience: 82,
   });
 
-  const [selectedOrgKey, setSelectedOrgKey] = useState<OrganelleKey>('tejas');
-  const [activeRemedy, setActiveRemedy] = useState<string | null>(null);
-  const [animTick, setAnimTick] = useState(0);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [history, setHistory] = useState<HistoryPoint[]>([
+    { step: 0, producers: 65, herbivores: 45, carnivores: 12, decomposers: 60 },
+  ]);
 
-  // 60fps animation loop for cell membrane undulation
+  // Load Scenario Presets
+  const handleSelectScenario = (sc: BiosphereScenario) => {
+    setActiveScenario(sc);
+    const cfg = SCENARIOS[sc];
+    setRainfall(cfg.initial.rainfall);
+    setTemperature(cfg.initial.temperature);
+    setMissionComplete(false);
+
+    setBioState({
+      timeStep: 0,
+      producers: cfg.initial.plantDensity,
+      herbivores: cfg.initial.herbivores,
+      carnivores: cfg.initial.carnivores,
+      decomposers: Math.round((cfg.initial.soilNutrients + cfg.initial.plantDensity) / 2),
+      soilNutrients: cfg.initial.soilNutrients,
+      oxygen: 20.9,
+      carbonDioxide: 415,
+      biodiversity: Math.round((cfg.initial.plantDensity + cfg.initial.herbivores + cfg.initial.carnivores * 2) / 3),
+      resilience: 75,
+    });
+
+    setHistory([
+      {
+        step: 0,
+        producers: cfg.initial.plantDensity,
+        herbivores: cfg.initial.herbivores,
+        carnivores: cfg.initial.carnivores,
+        decomposers: Math.round((cfg.initial.soilNutrients + cfg.initial.plantDensity) / 2),
+      },
+    ]);
+    soundEffects.playStrokeChime();
+  };
+
+  // --- Dynamic Simulation Tick Engine (Lotka-Volterra with Nutrients & Climate) ---
+  const stepSimulation = useCallback(() => {
+    setBioState((prev) => {
+      // 1. Photosynthetic growth driver (optimal temp: 22-28°C, needs rainfall + nutrients)
+      const tempFactor = Math.max(0.05, 1 - Math.pow(Math.abs(temperature - 25) / 22, 2));
+      const rainFactor = rainfall / 60;
+      const nutrientFactor = prev.soilNutrients / 60;
+      const intrinsicPlantGrowth = 4.2 * tempFactor * Math.min(1.8, rainFactor) * Math.min(1.6, nutrientFactor);
+
+      // 2. Herbivore consumption & predation
+      const herbivoreConsumption = 0.045 * prev.herbivores;
+      const nextProducers = clamp(
+        prev.producers + intrinsicPlantGrowth * (1 - prev.producers / 120) - herbivoreConsumption * prev.producers * 0.06,
+        1,
+        100
+      );
+
+      // 3. Herbivore dynamics
+      const herbivoreBirth = 0.05 * prev.producers * (prev.herbivores / 50);
+      const carnivorePredation = 0.065 * prev.carnivores * (prev.herbivores / 45);
+      const herbivoreStarvation = prev.producers < 25 ? (25 - prev.producers) * 0.12 : 0;
+      const nextHerbivores = clamp(
+        prev.herbivores + herbivoreBirth - carnivorePredation - herbivoreStarvation,
+        0,
+        120
+      );
+
+      // 4. Carnivore dynamics
+      const carnivoreBirth = 0.04 * (prev.herbivores / 40) * prev.carnivores;
+      const carnivoreMortality = 0.05 * prev.carnivores + (prev.herbivores < 15 ? 0.08 * prev.carnivores : 0);
+      const nextCarnivores = clamp(
+        prev.carnivores + carnivoreBirth - carnivoreMortality,
+        0,
+        40
+      );
+
+      // 5. Decomposers & Soil Humus recycling
+      const organicWaste = (100 - nextProducers) * 0.08 + (prev.herbivores * 0.05) + (prev.carnivores * 0.04);
+      const nextDecomposers = clamp(prev.decomposers * 0.95 + organicWaste * 0.7, 5, 100);
+      const nextSoilNutrients = clamp(
+        prev.soilNutrients - (intrinsicPlantGrowth * 0.25) + (nextDecomposers * 0.32),
+        5,
+        100
+      );
+
+      // 6. Atmospheric gases
+      const netPhotosynthesis = (nextProducers - 50) * 0.015;
+      const nextOxygen = Number(clamp(20.9 + netPhotosynthesis, 16.5, 24.5).toFixed(2));
+      const nextCO2 = Math.round(clamp(415 - netPhotosynthesis * 650 + (nextHerbivores * 0.4), 280, 750));
+
+      // 7. Biodiversity & Resilience
+      const richness = (nextProducers > 10 ? 1 : 0) + (nextHerbivores > 5 ? 1 : 0) + (nextCarnivores > 2 ? 1 : 0) + (nextDecomposers > 15 ? 1 : 0);
+      const nextBiodiversity = clamp(Math.round((richness / 4) * 60 + (nextProducers * 0.2) + (nextHerbivores * 0.2)));
+      const nextResilience = clamp(Math.round((nextSoilNutrients * 0.4) + (nextBiodiversity * 0.4) + (tempFactor * 20)));
+
+      const nextState: BiosphereState = {
+        timeStep: prev.timeStep + 1,
+        producers: Math.round(nextProducers),
+        herbivores: Math.round(nextHerbivores),
+        carnivores: Math.round(nextCarnivores),
+        decomposers: Math.round(nextDecomposers),
+        soilNutrients: Math.round(nextSoilNutrients),
+        oxygen: nextOxygen,
+        carbonDioxide: nextCO2,
+        biodiversity: nextBiodiversity,
+        resilience: nextResilience,
+      };
+
+      // Check scenario win condition
+      const cfg = SCENARIOS[activeScenario];
+      if (activeScenario !== 'free' && cfg.successCondition(nextState) && !missionComplete) {
+        setMissionComplete(true);
+        soundEffects.playSuccessDing();
+      }
+
+      setHistory((h) => {
+        const nextH = [...h, {
+          step: nextState.timeStep,
+          producers: nextState.producers,
+          herbivores: nextState.herbivores,
+          carnivores: nextState.carnivores,
+          decomposers: nextState.decomposers,
+        }];
+        return nextH.slice(-32); // Keep last 32 steps for sparkline
+      });
+
+      return nextState;
+    });
+  }, [rainfall, temperature, activeScenario, missionComplete]);
+
+  // Simulation timer
   useEffect(() => {
-    let frameId: number;
-    const loop = () => {
-      setAnimTick((t) => t + 0.05);
-      frameId = requestAnimationFrame(loop);
-    };
-    frameId = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(frameId);
-  }, []);
+    if (!isRunning || viewMode !== 'biosphere') return;
+    const interval = 1200 / simSpeed;
+    const timer = setInterval(() => {
+      stepSimulation();
+    }, interval);
+    return () => clearInterval(timer);
+  }, [isRunning, simSpeed, stepSimulation, viewMode]);
+
+  // --- Cellular Homeostasis State (Preserved) ---
+  const [env, setEnv] = useState<EnvState>({
+    ritu: 'vasanta',
+    heat: 6,
+    cold: 4,
+    dry: 4,
+    moist: 7,
+    activity: 5,
+  });
 
   const doshas = useMemo(() => calculateThermodynamicDoshas(env), [env]);
 
-  const allBalanced = isBalanced(doshas.vata) && isBalanced(doshas.pitta) && isBalanced(doshas.kapha);
-
-  // Determine pulse diagnosis based on dominant Doṣa
-  const pulseSignature = useMemo(() => {
-    if (allBalanced) {
-      return {
-        name: 'Sama-Nāḍī (सम-नाडी)',
-        type: 'Harmonic Sinusoid',
-        icon: '🟢',
-        color: '#10b981',
-        desc: 'Smooth, balanced sinusoidal rhythm reflecting optimal vascular elasticity and stroke volume.',
-        freq: 1.1,
-      };
-    }
-    const maxVal = Math.max(doshas.vata, doshas.pitta, doshas.kapha);
-    if (doshas.pitta === maxVal) {
-      return {
-        name: 'Maṇḍūka-Gati (मण्डूक-गति)',
-        type: 'Jumping Frog Leap',
-        icon: '🔥',
-        color: '#f97316',
-        desc: 'Sharp, explosive dicrotic peaks indicating thermal vasodilation and hyper-metabolic catalytic surge.',
-        freq: 1.8,
-      };
-    }
-    if (doshas.vata === maxVal) {
-      return {
-        name: 'Sarpa-Gati (सर्प-गति)',
-        type: 'Winding Snake Ripple',
-        icon: '💨',
-        color: '#c084fc',
-        desc: 'Rapid, erratic, delicate ripples caused by irregular arterial wall tension and kinetic shear flux.',
-        freq: 2.2,
-      };
-    }
-    return {
-      name: 'Haṁsa-Gati (हंस-गति)',
-      type: 'Majestic Swan Glide',
-      icon: '🌊',
-      color: '#38bdf8',
-      desc: 'Slow, deep, broad wave swells reflecting high cytoplasmic viscosity and increased structural density.',
-      freq: 0.7,
-    };
-  }, [doshas, allBalanced]);
-
-  // Real-time canvas oscilloscope renderer
-  useEffect(() => {
-    const cvs = canvasRef.current;
-    if (!cvs) return;
-    const ctx = cvs.getContext('2d');
-    if (!ctx) return;
-
-    const w = cvs.width;
-    const h = cvs.height;
-    ctx.clearRect(0, 0, w, h);
-
-    // Subtle dark grid
-    ctx.strokeStyle = 'rgba(56, 189, 248, 0.08)';
-    ctx.lineWidth = 1;
-    for (let x = 0; x < w; x += 40) {
-      ctx.beginPath();
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, h);
-      ctx.stroke();
-    }
-    for (let y = 0; y < h; y += 25) {
-      ctx.beginPath();
-      ctx.moveTo(0, y);
-      ctx.lineTo(w, y);
-      ctx.stroke();
-    }
-
-    // Baseline
-    const midY = h / 2;
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.2)';
-    ctx.beginPath();
-    ctx.moveTo(0, midY);
-    ctx.lineTo(w, midY);
-    ctx.stroke();
-
-    // Pulse Waveform
-    ctx.strokeStyle = pulseSignature.color;
-    ctx.lineWidth = 2.5;
-    ctx.shadowColor = pulseSignature.color;
-    ctx.shadowBlur = 8;
-    ctx.beginPath();
-
-    const t = animTick * 2;
-    const freq = pulseSignature.freq;
-
-    for (let px = 0; px < w; px++) {
-      const theta = (px * 0.035 * freq) - t;
-      let waveY = 0;
-
-      if (allBalanced) {
-        // Pure smooth sinusoid
-        waveY = Math.sin(theta) * 32 + Math.sin(theta * 2) * 8;
-      } else if (pulseSignature.name.includes('Maṇḍūka')) {
-        // Frog leap: sharp systolic spikes
-        const s = Math.sin(theta);
-        waveY = Math.sign(s) * Math.pow(Math.abs(s), 0.4) * 44;
-      } else if (pulseSignature.name.includes('Sarpa')) {
-        // Snake: high-frequency fast ripples
-        waveY = Math.sin(theta * 1.8) * 22 + Math.sin(theta * 3.6) * 14;
-      } else {
-        // Swan: broad, slow swells
-        waveY = Math.sin(theta * 0.6) * 36;
-      }
-
-      const py = midY - waveY;
-      if (px === 0) ctx.moveTo(px, py);
-      else ctx.lineTo(px, py);
-    }
-    ctx.stroke();
-    ctx.shadowBlur = 0;
-  }, [animTick, pulseSignature, allBalanced]);
-
-  // Adjust an individual Doṣa directly via cross-coupled slider
-  const handleAdjustDosha = (key: 'vata' | 'pitta' | 'kapha', targetVal: number) => {
-    soundEffects.playStrokeChime();
-    setEnv((prev) => {
-      const next = { ...prev };
-      const diff = (targetVal - 50) / 10;
-      if (key === 'pitta') {
-        next.heat = clamp(Math.round(5 + diff));
-        next.cold = clamp(Math.round(5 - diff * 0.8));
-      } else if (key === 'vata') {
-        next.dry = clamp(Math.round(5 + diff));
-        next.activity = clamp(Math.round(5 + diff * 0.7));
-        next.moist = clamp(Math.round(5 - diff * 0.6));
-      } else {
-        next.moist = clamp(Math.round(5 + diff));
-        next.activity = clamp(Math.round(5 - diff * 0.7));
-        next.heat = clamp(Math.round(5 - diff * 0.5));
-      }
-      return next;
-    });
-  };
-
-  // Select seasonal stressor
-  const selectRitu = (rKey: Ritu) => {
-    soundEffects.playStrokeChime();
-    const p = RITU_PRESETS[rKey];
+  const selectRitu = (r: Ritu) => {
+    const p = RITU_PRESETS[r];
     setEnv({
-      ritu: rKey,
+      ritu: r,
       heat: p.heat,
       cold: p.cold,
       dry: p.dry,
       moist: p.moist,
       activity: p.activity,
     });
-    setActiveRemedy(null);
+    soundEffects.playStrokeChime();
   };
-
-
-  // Deploy Dravya-Guṇa Counter-Forces
-  const applyRemedy = (remedyKey: 'sita_ghrita' | 'trikatu' | 'taila' | 'reset') => {
-    soundEffects.playPuzzleSnap();
-    setActiveRemedy(remedyKey);
-
-    if (remedyKey === 'sita_ghrita') {
-      // Cooling Ghee: quenches Pitta, nourishes membrane lipids
-      setEnv((prev) => ({
-        ...prev,
-        heat: Math.max(2, prev.heat - 4),
-        cold: Math.min(8, prev.cold + 3),
-        moist: Math.min(8, prev.moist + 2),
-      }));
-    } else if (remedyKey === 'trikatu') {
-      // Warming Spice: clears Kapha, kindles Agni
-      setEnv((prev) => ({
-        ...prev,
-        moist: Math.max(2, prev.moist - 4),
-        heat: Math.min(8, prev.heat + 3),
-        activity: Math.min(8, prev.activity + 2),
-      }));
-    } else if (remedyKey === 'taila') {
-      // Unctuous Oil: grounds Vāta, calms dryness
-      setEnv((prev) => ({
-        ...prev,
-        dry: Math.max(2, prev.dry - 4),
-        moist: Math.min(8, prev.moist + 3),
-        activity: Math.max(3, prev.activity - 2),
-      }));
-    } else {
-      // Samatva Reset
-      setEnv({
-        ritu: 'vasanta',
-        heat: 5,
-        cold: 5,
-        dry: 5,
-        moist: 5,
-        activity: 5,
-      });
-    }
-  };
-
-  const selectedOrg = ORGANELLES[selectedOrgKey];
-
-  // Dynamic Morphing Cell Points
-  const cellRadius = 88 + (doshas.kapha - 50) * 0.35 + (env.moist - 5) * 2;
-  const numPts = 32;
-  const cellPath = useMemo(() => {
-    const pts: [number, number][] = [];
-    const cx = 150;
-    const cy = 135;
-    const wobbleIntensity = (doshas.vata / 100) * 9;
-    const speed = animTick * 1.5;
-
-    for (let i = 0; i < numPts; i++) {
-      const angle = (i / numPts) * Math.PI * 2;
-      const ripple = Math.sin(angle * 4 + speed) * wobbleIntensity + Math.cos(angle * 2 - speed * 0.8) * (wobbleIntensity * 0.5);
-      const r = cellRadius + ripple;
-      const x = cx + Math.cos(angle) * r;
-      const y = cy + Math.sin(angle) * r;
-      pts.push([x, y]);
-    }
-
-    let d = `M ${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
-    for (let i = 1; i < pts.length; i++) {
-      d += ` L ${pts[i][0].toFixed(1)},${pts[i][1].toFixed(1)}`;
-    }
-    d += ' Z';
-    return d;
-  }, [cellRadius, doshas.vata, animTick]);
 
   return (
-    <div className="vl-sim" data-testid="prakriti-balance-root">
-      {/* Preschool Seasons Playground Banner */}
-      <div className="prakriti-preschool-banner" role="region" aria-label="Preschool Seasons Playground">
-        <span className="ppb-icon" aria-hidden="true">☀️</span>
-        <div className="ppb-content">
-          <div className="ppb-title-row">
-            <strong>ऋतु-वाटिका · Little Explorers Seasons Playground (Ages 3–7)</strong>
-            <span className="ppb-tag">Weather &amp; Nature</span>
-          </div>
-          <p className="ppb-sub">
-            Change the weather! Tap any season below to hear its Sanskrit name and watch nature adapt:
-          </p>
-          <div className="ppb-season-btns">
-            {(Object.entries(RITU_PRESETS) as [Ritu, typeof RITU_PRESETS[Ritu]][]).map(([k, p]) => (
-              <button
-                key={k}
-                type="button"
-                className={`ppb-season-pill ${env.ritu === k ? 'is-active' : ''}`}
-                onClick={() => {
-                  selectRitu(k);
-                  playPronunciation(p.dev);
-                }}
-                aria-pressed={env.ritu === k}
-                title={`Select ${p.name} (${p.dev})`}
-              >
-                <span>{p.icon}</span>
-                <span lang="sa" className="ppb-sa">{p.dev}</span>
-                <span className="ppb-en">({p.name.split(' ')[0]})</span>
-                <span className="ppb-speaker" aria-hidden="true">🔊</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-      {/* Biological Continuum Track Stage 1 Callout */}
-      <div className="vl-bio-continuum-banner" role="region" aria-label="Life Sciences Continuum Stage 1">
-        <div className="vl-bio-continuum-title">
-          <span className="vl-hud-blink">●</span> STAGE 1 OF BIOLOGICAL CONTINUUM // जीव-विज्ञान-परम्परा · सूक्ष्म-सृष्टि-विज्ञानम्
-        </div>
-        <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.84rem', color: '#cbd5e1', lineHeight: 1.5 }}>
-          Welcome to the <strong>Biology &amp; Life Sciences Track</strong>. We begin at the <strong>microscopic, sub-cellular scale</strong>:
-          balancing thermodynamic Tridoṣa ion forces, mitochondrial ATP synthesis, and lipid bilayers under seasonal stressors (<em>Ṛtucaryā</em>).
-          Next in <em>SEC-04 Chaturyoni</em>, you will scale upward to multicellular embryogenesis and plant action potentials.
-        </p>
-      </div>
-
-      {/* Educational Anecdote */}
-      <BodhiLabAnecdote
-        title="Yathā Piṇḍe Tathā Brahmāṇḍe · The Cellular Microcosm"
-        sanskritTitle="यथा पिण्डे तथा ब्रह्माण्डे · प्रकृति-सन्तुलनम्"
-        mood="scholar"
-        anecdote={
-          <>
-
-            In classical Āyurvedic biophysics (<em>Caraka Saṃhitā, Śārīrasthāna 5.3</em>), the human body is not an isolated machine; it is a resonant mirror of the cosmos (<em>Brahmāṇḍa</em>). A single living cell is a micro-cosmic ecosystem constantly forced out of balance by external environmental seasons (<em>Ṛtucaryā</em>). Ancient physicians discovered that longevity is not static stillness, but <strong>Samatva (समत्वम्)</strong>: the dynamic continuous neutralization of external stressors using opposing dietary and medicinal qualities (<em>Dravya-Guṇa-Karma</em>).
-          </>
-        }
-        sutra={{
-          dev: 'यथा पिण्डे तथा ब्रह्माण्डे यद् ब्रह्माण्डे तद् पिण्डे।',
-          iast: 'yathā piṇḍe tathā brahmāṇḍe yad brahmāṇḍe tad piṇḍe |',
-          source: 'Yajurveda & Caraka Saṃhitā (Śārīra 5.3)',
-          meaning: 'As in the individual microcosm (the cell & body), so in the cosmic macrocosm (nature & seasons).',
+    <div className="vl-segment-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      {/* =========================================================================
+          TOP LAB BANNER & MODE SELECTOR
+          ========================================================================= */}
+      <div
+        style={{
+          background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(6, 78, 59, 0.25) 100%)',
+          border: '1.5px solid rgba(52, 211, 153, 0.35)',
+          borderRadius: '16px',
+          padding: '1.25rem 1.5rem',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '1rem',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
         }}
-        modernBridge={{
-          ancientConcept: 'Tridoṣa thermodynamic vector equilibrium (Vāta kinetic flux, Pitta thermal catalysis, Kapha structural viscosity).',
-          modernScience: 'Cellular Systems Biology: Homeostatic regulation of transmembrane electrochemical potentials, mitochondrial ATP synthesis, and cytoskeletal viscoelasticity.',
-          relevanceNote: 'Modern cell biologists measure the exact same parameters: fluid mosaic membrane shear (Vāta), enzymatic heat dissipation (Pitta), and cytoplasmic colloid density (Kapha).',
-        }}
-        societalValue={
-          <>
-            Understanding bodily homeostasis empowers preventative lifestyle medicine. By learning how seasonal heat, cold, and humidity alter cellular metabolism, learners appreciate how traditional Indian dietary rhythms (<em>Ṛtucaryā</em>) provide proactive immunity and sustainable mental wellness.
-          </>
-        }
-      />
-
-      {/* Primary Mission HUD Kicker */}
-      <div className="vl-panel" style={{ background: 'linear-gradient(135deg, rgba(15,23,42,0.95), rgba(30,41,59,0.85))', border: '1px solid rgba(56,189,248,0.3)', borderRadius: '16px', padding: '1rem 1.25rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.72rem', fontFamily: 'JetBrains Mono, monospace', color: '#38bdf8', fontWeight: 800 }}>
-              <span className="vl-hud-blink">●</span> VIJÑĀNA LAB · SECTOR 03 // CELLULAR BIOPHYSICS BENCH
-            </div>
-            <h3 style={{ margin: '0.2rem 0 0', fontSize: '1.25rem', color: '#f8fafc', fontWeight: 900 }}>
-              Prakṛti Biosphere · Cellular Homeostasis Sandbox
-            </h3>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span
-              style={{
-                fontSize: '0.8rem',
-                fontFamily: 'JetBrains Mono, monospace',
-                padding: '0.3rem 0.75rem',
-                borderRadius: '8px',
-                fontWeight: 800,
-                background: allBalanced ? 'rgba(16,185,129,0.18)' : 'rgba(239,68,68,0.18)',
-                color: allBalanced ? '#34d399' : '#f87171',
-                border: `1px solid ${allBalanced ? '#10b981' : '#ef4444'}`,
-              }}
-            >
-              {allBalanced ? '✨ SAMATVA EQUILIBRIUM ACHIEVED' : '⚠️ CELLULAR HOMEOSTASIS DISRUPTED'}
+      >
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+            <span style={{ fontSize: '1.8rem' }}>🌿</span>
+            <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#34d399', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              SEC-03 · LIFE SCIENCES &amp; DYNAMIC EQUILIBRIUM
             </span>
           </div>
+          <h2 style={{ fontSize: '1.65rem', fontWeight: 900, color: '#f8fafc', margin: '0.3rem 0 0.2rem' }}>
+            Prakṛti Biosphere <span lang="sa" style={{ color: '#86efac', fontWeight: 700 }}>प्रकृति-जैवमण्डलम्</span>
+          </h2>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#cbd5e1', maxWidth: '720px', lineHeight: 1.5 }}>
+            <strong>Observe. Question. Discover.</strong> Explore how nature achieves dynamic balance across plants, grazers, predators, and soil nutrients. Discover that resilience stems from diversity and feedback loops.
+          </p>
         </div>
-        <p style={{ margin: '0.45rem 0 0', fontSize: '0.86rem', color: '#cbd5e1', lineHeight: 1.5 }}>
-          Test the macro-micro resonance: subject the cell to seasonal environmental stressors, observe membrane shear and mitochondrial heat in real time, and deploy Ayurvedic counter-forces (<em>Dravya-Guṇa</em>) to lock all three Doṣas into the 40%–60% viable equilibrium window.
-        </p>
+
+        {/* Dual Mode Switcher */}
+        <div style={{ display: 'inline-flex', background: 'rgba(15, 23, 42, 0.6)', padding: '4px', borderRadius: '12px', border: '1px solid rgba(148, 163, 184, 0.2)' }}>
+          <button
+            type="button"
+            onClick={() => { setViewMode('biosphere'); soundEffects.playStrokeChime(); }}
+            style={{
+              padding: '0.45rem 0.95rem',
+              borderRadius: '8px',
+              border: 'none',
+              background: viewMode === 'biosphere' ? 'linear-gradient(135deg, #10b981, #059669)' : 'transparent',
+              color: viewMode === 'biosphere' ? '#ffffff' : '#94a3b8',
+              fontWeight: 800,
+              fontSize: '0.82rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              transition: 'all 0.2s',
+            }}
+          >
+            <span>🌍</span>
+            <span>Biosphere Ecology</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => { setViewMode('cellular'); soundEffects.playStrokeChime(); }}
+            style={{
+              padding: '0.45rem 0.95rem',
+              borderRadius: '8px',
+              border: 'none',
+              background: viewMode === 'cellular' ? 'linear-gradient(135deg, #10b981, #059669)' : 'transparent',
+              color: viewMode === 'cellular' ? '#ffffff' : '#94a3b8',
+              fontWeight: 800,
+              fontSize: '0.82rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              transition: 'all 0.2s',
+            }}
+          >
+            <span>🧬</span>
+            <span>Cellular Tri-Doṣa</span>
+          </button>
+        </div>
       </div>
 
       {/* =========================================================================
-          THE UNIFIED INTERACTIVE BIO-BENCH (2 COLUMNS: CELL/WAVEFORM + CONTROLS)
+          MODE 1: BIOSPHERE ECOLOGY SIMULATOR (PRIMARY REQUEST)
           ========================================================================= */}
-      <div className="vl-grid-2" style={{ gap: '1.25rem', alignItems: 'start' }}>
-        {/* Column 1: The Living Cell & Live Pulse Oscilloscope */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          {/* Living Cell Visualizer */}
-          <div style={{ background: '#020617', border: '1.5px solid rgba(56,189,248,0.3)', borderRadius: '16px', padding: '1rem', textAlign: 'center', position: 'relative' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
-              <span style={{ fontSize: '0.78rem', color: '#38bdf8', fontFamily: 'JetBrains Mono, monospace', fontWeight: 800 }}>
-                🔬 SŪKṢMA-KOŚIKĀ (LIVING CELL MEMBRANE)
-              </span>
-              <span style={{ fontSize: '0.72rem', color: '#fef08a', background: 'rgba(234,179,8,0.15)', padding: '0.15rem 0.5rem', borderRadius: '4px', border: '1px solid rgba(234,179,8,0.3)' }}>
-                Turgor: {Math.round(180 + (env.moist - 5) * 12)} kPa
-              </span>
-            </div>
-
-            {/* SVG Living Cell */}
-            <svg viewBox="0 0 300 270" style={{ width: '100%', maxHeight: '250px' }}>
-              <defs>
-                <radialGradient id="cytoGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#0369a1" stopOpacity="0.45" />
-                  <stop offset="70%" stopColor="#0f172a" stopOpacity="0.85" />
-                  <stop offset="100%" stopColor={doshas.pitta > 60 ? '#7c2d12' : '#020617'} stopOpacity="0.95" />
-                </radialGradient>
-                <filter id="pittaGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation={doshas.pitta > 60 ? '6' : '2'} result="glow" />
-                  <feComposite in="SourceGraphic" in2="glow" operator="over" />
-                </filter>
-              </defs>
-
-              {/* Membrane Outer Wave */}
-              <path
-                d={cellPath}
-                fill="url(#cytoGrad)"
-                stroke={doshas.pitta > 65 ? '#f97316' : doshas.vata > 65 ? '#c084fc' : '#38bdf8'}
-                strokeWidth={doshas.kapha > 60 ? '4.5' : '2.5'}
-                filter="url(#pittaGlow)"
-                style={{ transition: 'stroke 0.3s ease, stroke-width 0.3s ease' }}
-              />
-
-              {/* Organelle 1: Nucleus & Void (Ākāśa) */}
-              <g
-                style={{ cursor: 'pointer' }}
-                onClick={() => setSelectedOrgKey('akasa')}
-              >
-                <title>Ākāśa · Intracellular Void &amp; Nucleus</title>
-                <circle cx={150} cy={135} r={32} fill="rgba(56,189,248,0.2)" stroke="#38bdf8" strokeWidth={1.5} strokeDasharray="3 3" />
-                <circle cx={150} cy={135} r={16} fill="rgba(14,165,233,0.4)" stroke="#38bdf8" strokeWidth={2} />
-                <text x={150} y={139} textAnchor="middle" fontSize={11} fill="#e0f2fe" fontWeight="bold">आकाश</text>
-              </g>
-
-              {/* Organelle 2: Mitochondria Cristae (Tejas) */}
-              <g
-                style={{ cursor: 'pointer' }}
-                onClick={() => setSelectedOrgKey('tejas')}
-              >
-                <title>Tejas · Mitochondrial ATP Synthesis</title>
-                <ellipse cx={105} cy={95} rx={22} ry={13} fill="#7c2d12" stroke="#f97316" strokeWidth={2} transform="rotate(-25 105 95)" />
-                <path d="M 94 95 Q 100 89 105 95 T 116 95" fill="none" stroke="#fdba74" strokeWidth={1.5} transform="rotate(-25 105 95)" />
-                <text x={105} y={118} textAnchor="middle" fontSize={9.5} fill="#fdba74" fontWeight="bold">तेजस्</text>
-              </g>
-
-              {/* Organelle 3: Ion Pumps / Transport Channels (Vāyu) */}
-              <g
-                style={{ cursor: 'pointer' }}
-                onClick={() => setSelectedOrgKey('vayu')}
-              >
-                <title>Vāyu · Na⁺/K⁺ Ion Transmembrane Pumps</title>
-                <circle cx={198} cy={90} r={16} fill="#3b0764" stroke="#c084fc" strokeWidth={2} />
-                <text x={198} y={88} textAnchor="middle" fontSize={10} fill="#e9d5ff" fontWeight="bold">⚡ वायु</text>
-                <text x={198} y={99} textAnchor="middle" fontSize={7.5} fill="#c084fc">Na⁺/K⁺</text>
-              </g>
-
-              {/* Organelle 4: Cytoskeleton Microtubules (Pṛthivī) */}
-              <g
-                style={{ cursor: 'pointer' }}
-                onClick={() => setSelectedOrgKey('prithivi')}
-              >
-                <title>Pṛthivī · Cytoskeletal Scaffolding</title>
-                <line x1={80} y1={175} x2={130} y2={185} stroke="#eab308" strokeWidth={3} strokeLinecap="round" />
-                <line x1={120} y1={185} x2={165} y2={195} stroke="#eab308" strokeWidth={3} strokeLinecap="round" />
-                <circle cx={105} cy={180} r={12} fill="#713f12" stroke="#eab308" strokeWidth={1.5} />
-                <text x={105} y={184} textAnchor="middle" fontSize={9.5} fill="#fef08a" fontWeight="bold">पृथिवी</text>
-              </g>
-
-              {/* Organelle 5: Hydration Shell & Solutes (Ap) */}
-              <g
-                style={{ cursor: 'pointer' }}
-                onClick={() => setSelectedOrgKey('ap')}
-              >
-                <title>Ap · Cytoplasmic Solvent &amp; Lipid Bilayer</title>
-                <circle cx={195} cy={175} r={15} fill="#064e3b" stroke="#34d399" strokeWidth={2} />
-                <text x={195} y={179} textAnchor="middle" fontSize={10} fill="#a7f3d0" fontWeight="bold">अप्</text>
-              </g>
-            </svg>
-
-            {/* Organelle Selection Tabs */}
-            <div style={{ display: 'flex', gap: '0.4rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '0.5rem' }}>
-              {(Object.keys(ORGANELLES) as OrganelleKey[]).map((k) => {
-                const org = ORGANELLES[k];
-                const active = selectedOrgKey === k;
-                return (
-                  <button
-                    key={k}
-                    type="button"
-                    onClick={() => {
-                      soundEffects.playStrokeChime();
-                      setSelectedOrgKey(k);
-                    }}
-
-                    style={{
-                      background: active ? `${org.color}25` : 'rgba(15,23,42,0.6)',
-                      border: `1px solid ${active ? org.color : 'rgba(148,163,184,0.2)'}`,
-                      color: active ? org.color : '#94a3b8',
-                      borderRadius: '8px',
-                      padding: '0.35rem 0.65rem',
-                      fontSize: '0.76rem',
-                      fontWeight: active ? 800 : 600,
-                      cursor: 'pointer',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.35rem',
-                      transition: 'all 0.15s ease',
-                    }}
-                  >
-                    <span>{org.icon}</span>
-                    <span>{org.dev} ({org.element.split(' ')[0]})</span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Selected Organelle Brief Summary */}
-            <div style={{ marginTop: '0.75rem', background: 'rgba(15,23,42,0.85)', border: `1px solid ${selectedOrg.color}40`, borderRadius: '10px', padding: '0.65rem 0.85rem', textAlign: 'left' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '0.85rem', fontWeight: 800, color: selectedOrg.color }}>
-                  {selectedOrg.icon} {selectedOrg.element} · {selectedOrg.organelle}
-                </span>
-                <span style={{ fontSize: '0.68rem', fontFamily: 'JetBrains Mono, monospace', color: '#fef08a' }}>
-                  {selectedOrg.biophysics}
-                </span>
-              </div>
-              <p style={{ margin: '0.25rem 0 0', fontSize: '0.8rem', color: '#cbd5e1', lineHeight: 1.45 }}>
-                {selectedOrg.role}
-              </p>
-            </div>
-          </div>
-
-          {/* Live Arterial Pulse Oscilloscope */}
-          <div style={{ background: 'rgba(15,23,42,0.9)', border: '1px solid rgba(148,163,184,0.2)', borderRadius: '16px', padding: '1rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem', flexWrap: 'wrap', gap: '0.4rem' }}>
+      {viewMode === 'biosphere' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          {/* Scenario Mission Selector */}
+          <div
+            style={{
+              background: 'rgba(15, 23, 42, 0.65)',
+              border: '1px solid rgba(52, 211, 153, 0.25)',
+              borderRadius: '16px',
+              padding: '1.1rem 1.35rem',
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.85rem' }}>
               <div>
-                <span style={{ fontSize: '0.7rem', color: '#94a3b8', fontFamily: 'JetBrains Mono, monospace', textTransform: 'uppercase' }}>
-                  TACTILE PULSE WAVEFORM OSCILLOSCOPE (नाडी-तरङ्गः)
+                <span style={{ fontSize: '0.74rem', color: '#34d399', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  🎯 GUIDED ECOLOGICAL SCENARIOS
                 </span>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: pulseSignature.color, display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: '0.1rem' }}>
-                  <span>{pulseSignature.icon}</span>
-                  <span>{pulseSignature.name}</span>
-                  <span style={{ fontSize: '0.75rem', color: '#cbd5e1', fontWeight: 500 }}>({pulseSignature.type})</span>
-                </div>
+                <h3 style={{ margin: '0.15rem 0 0', fontSize: '1.1rem', color: '#f8fafc', fontWeight: 800 }}>
+                  Select an Ecosystem Mission:
+                </h3>
               </div>
-              <span style={{ fontSize: '0.72rem', fontFamily: 'JetBrains Mono, monospace', padding: '0.2rem 0.6rem', borderRadius: '6px', background: `${pulseSignature.color}20`, color: pulseSignature.color, border: `1px solid ${pulseSignature.color}50` }}>
-                FREQ: {pulseSignature.freq} Hz · V: {Math.round(doshas.vata * 1.5)} cm/s
-              </span>
+              {missionComplete && (
+                <div style={{ background: 'rgba(34, 197, 94, 0.2)', border: '1.5px solid #22c55e', color: '#86efac', padding: '0.35rem 0.85rem', borderRadius: '999px', fontSize: '0.82rem', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <span>🏆</span> Mission Objective Accomplished!
+                </div>
+              )}
             </div>
 
-            <canvas ref={canvasRef} width={640} height={110} style={{ width: '100%', height: '110px', background: '#020617', borderRadius: '10px', border: '1px solid rgba(56,189,248,0.2)' }} />
-
-            <p style={{ margin: '0.5rem 0 0', fontSize: '0.78rem', color: '#94a3b8', lineHeight: 1.45 }}>
-              {pulseSignature.desc}
-            </p>
-          </div>
-        </div>
-
-        {/* Column 2: Controls, Stressors, and Counter-Measures */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          {/* Seasonal Stressor Bar */}
-          <div style={{ background: 'rgba(15,23,42,0.9)', border: '1px solid rgba(148,163,184,0.2)', borderRadius: '16px', padding: '1.1rem' }}>
-            <span style={{ fontSize: '0.72rem', color: '#38bdf8', fontFamily: 'JetBrains Mono, monospace', fontWeight: 800, letterSpacing: '0.06em' }}>
-              STEP 1 // SELECT EXTERNAL SEASONAL STRESSOR (ऋतु)
-            </span>
-            <p style={{ margin: '0.2rem 0 0.75rem', fontSize: '0.82rem', color: '#cbd5e1' }}>
-              Select a season to perturb cellular equilibrium with natural thermal and moisture shifts:
-            </p>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-              {RITU_KEYS.map((k) => {
-                const preset = RITU_PRESETS[k];
-                const isSelected = env.ritu === k;
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.65rem' }}>
+              {(Object.keys(SCENARIOS) as BiosphereScenario[]).map((scKey) => {
+                const sc = SCENARIOS[scKey];
+                const isSelected = activeScenario === scKey;
                 return (
                   <button
-                    key={k}
+                    key={scKey}
                     type="button"
-                    onClick={() => selectRitu(k)}
+                    onClick={() => handleSelectScenario(scKey)}
                     style={{
-                      background: isSelected ? 'rgba(56,189,248,0.18)' : 'rgba(30,41,59,0.7)',
-                      border: `1.5px solid ${isSelected ? '#38bdf8' : 'rgba(148,163,184,0.2)'}`,
-                      borderRadius: '10px',
-                      padding: '0.6rem 0.75rem',
+                      padding: '0.7rem 0.85rem',
+                      borderRadius: '12px',
+                      border: isSelected ? '1.5px solid #10b981' : '1px solid rgba(148, 163, 184, 0.2)',
+                      background: isSelected ? 'rgba(16, 185, 129, 0.18)' : 'rgba(30, 41, 59, 0.5)',
+                      color: isSelected ? '#ffffff' : '#cbd5e1',
                       textAlign: 'left',
                       cursor: 'pointer',
-                      transition: 'all 0.15s ease',
-                      boxShadow: isSelected ? '0 0 12px rgba(56,189,248,0.3)' : 'none',
+                      transition: 'all 0.2s',
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                      <span style={{ fontSize: '1.1rem' }}>{preset.icon}</span>
-                      <strong style={{ fontSize: '0.85rem', color: isSelected ? '#ffffff' : '#e2e8f0' }}>
-                        {preset.dev} ({preset.name})
-                      </strong>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.2rem' }}>
+                      <span style={{ fontSize: '0.7rem', fontWeight: 800, color: isSelected ? '#34d399' : '#94a3b8' }}>
+                        {sc.badge}
+                      </span>
+                      <span lang="sa" style={{ fontSize: '0.75rem', color: '#86efac' }}>
+                        {sc.titleDev}
+                      </span>
                     </div>
+                    <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#f8fafc' }}>{sc.titleEn}</div>
                   </button>
                 );
               })}
             </div>
 
-            <div style={{ marginTop: '0.65rem', fontSize: '0.78rem', color: '#fef08a', background: 'rgba(234,179,8,0.1)', padding: '0.45rem 0.65rem', borderRadius: '8px', borderLeft: '3px solid #facc15' }}>
-              <strong>Active Stress:</strong> {RITU_PRESETS[env.ritu].desc}
+            {/* Active Scenario Briefing */}
+            <div style={{ marginTop: '0.85rem', padding: '0.75rem 1rem', background: 'rgba(6, 78, 59, 0.25)', borderLeft: '3px solid #10b981', borderRadius: '4px' }}>
+              <div style={{ fontSize: '0.84rem', color: '#f1f5f9', fontWeight: 600 }}>
+                <strong>Scenario Brief:</strong> {SCENARIOS[activeScenario].desc}
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#86efac', marginTop: '0.25rem' }}>
+                <strong>Goal:</strong> {SCENARIOS[activeScenario].goal}
+              </div>
             </div>
           </div>
 
-          {/* Tri-Doṣa Cross-Coupled Sliders */}
-          <div style={{ background: 'rgba(15,23,42,0.9)', border: '1px solid rgba(148,163,184,0.2)', borderRadius: '16px', padding: '1.1rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-              <span style={{ fontSize: '0.72rem', color: '#38bdf8', fontFamily: 'JetBrains Mono, monospace', fontWeight: 800, letterSpacing: '0.06em' }}>
-                STEP 2 // INTERDEPENDENT BIOPHYSICAL VECTORS
-              </span>
-              <span style={{ fontSize: '0.7rem', color: '#94a3b8', fontFamily: 'JetBrains Mono, monospace' }}>
-                TARGET: 40%–60%
-              </span>
+          {/* Biome Living Visualization & Simulation Dashboard */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(320px, 1.4fr) minmax(280px, 1fr)', gap: '1.25rem' }}>
+            {/* Visual Living Biome Canvas */}
+            <div
+              style={{
+                background: 'linear-gradient(180deg, #09131d 0%, #0d221c 60%, #1a150e 100%)',
+                border: '1.5px solid rgba(52, 211, 153, 0.3)',
+                borderRadius: '16px',
+                padding: '1.25rem',
+                position: 'relative',
+                overflow: 'hidden',
+                minHeight: '380px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: 'inset 0 0 40px rgba(0,0,0,0.6)',
+              }}
+            >
+              {/* Sky Atmosphere Header */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', zIndex: 2 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '1.6rem' }}>{temperature > 32 ? '☀️' : rainfall > 60 ? '🌧️' : '⛅'}</span>
+                  <div>
+                    <span style={{ fontSize: '0.72rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: 800 }}>Atmosphere</span>
+                    <div style={{ fontSize: '0.85rem', color: '#f8fafc', fontWeight: 700 }}>
+                      {temperature}°C · {rainfall} mm Rain
+                    </div>
+                  </div>
+                </div>
+
+                {/* Gas Metrics Pill */}
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.3rem 0.65rem', borderRadius: '8px', border: '1px solid rgba(56, 189, 248, 0.3)', textAlign: 'center' }}>
+                    <span style={{ fontSize: '0.68rem', color: '#38bdf8', fontWeight: 800 }}>O₂ (Oxygen)</span>
+                    <div style={{ fontSize: '0.85rem', color: '#f8fafc', fontWeight: 900 }}>{bioState.oxygen}%</div>
+                  </div>
+                  <div style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '0.3rem 0.65rem', borderRadius: '8px', border: '1px solid rgba(251, 146, 60, 0.3)', textAlign: 'center' }}>
+                    <span style={{ fontSize: '0.68rem', color: '#fb923c', fontWeight: 800 }}>CO₂ Level</span>
+                    <div style={{ fontSize: '0.85rem', color: '#f8fafc', fontWeight: 900 }}>{bioState.carbonDioxide} ppm</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Rain Particle Visualization if rainfall high */}
+              {rainfall > 40 && (
+                <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: rainfall / 100, overflow: 'hidden' }}>
+                  <svg width="100%" height="100%">
+                    {Array.from({ length: Math.min(25, Math.round(rainfall / 4)) }).map((_, i) => (
+                      <line
+                        key={i}
+                        x1={`${(i * 19) % 100}%`}
+                        y1="0%"
+                        x2={`${(i * 19 + 5) % 100}%`}
+                        y2="100%"
+                        stroke="#38bdf8"
+                        strokeWidth="1.2"
+                        strokeDasharray="4 12"
+                        opacity="0.45"
+                      />
+                    ))}
+                  </svg>
+                </div>
+              )}
+
+              {/* Central Living Organisms Arena */}
+              <div style={{ position: 'relative', margin: '2rem 0', minHeight: '140px', zIndex: 2 }}>
+                {/* Roaming Herbivores (Deer & Rabbits) */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', alignItems: 'center', marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '0.72rem', color: '#60a5fa', fontWeight: 800, textTransform: 'uppercase', width: '100%' }}>
+                    Herbivores ({bioState.herbivores}) · शाकाहारिणः
+                  </span>
+                  {Array.from({ length: Math.min(18, Math.max(1, Math.round(bioState.herbivores / 5))) }).map((_, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        fontSize: '1.35rem',
+                        filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.5))',
+                        animation: `vlGamerBlink ${2 + (idx % 3)}s infinite ease-in-out`,
+                      }}
+                      title="Grazer: consuming vegetation"
+                    >
+                      {idx % 3 === 0 ? '🦌' : '🐇'}
+                    </span>
+                  ))}
+                  {bioState.herbivores === 0 && (
+                    <span style={{ fontSize: '0.8rem', color: '#f87171', fontStyle: 'italic' }}>
+                      ⚠️ Zero herbivores remaining (Local Extinction)
+                    </span>
+                  )}
+                </div>
+
+                {/* Patrolling Carnivores (Apex Predators) */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.72rem', color: '#f87171', fontWeight: 800, textTransform: 'uppercase', width: '100%' }}>
+                    Carnivores ({bioState.carnivores}) · मांसाहारिणः
+                  </span>
+                  {Array.from({ length: Math.min(8, Math.max(0, Math.round(bioState.carnivores / 4))) }).map((_, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        fontSize: '1.45rem',
+                        filter: 'drop-shadow(0 2px 6px rgba(239, 68, 68, 0.6))',
+                        animation: `vlGamerBlink ${1.8 + (idx % 2)}s infinite ease-in-out`,
+                      }}
+                      title="Apex Predator: regulating grazer density"
+                    >
+                      {idx % 2 === 0 ? '🐅' : '🦅'}
+                    </span>
+                  ))}
+                  {bioState.carnivores === 0 && (
+                    <span style={{ fontSize: '0.8rem', color: '#94a3b8', fontStyle: 'italic' }}>
+                      No apex predators present (Unchecked grazer growth risk)
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Soil & Flora Strata (Producers & Decomposers) */}
+              <div
+                style={{
+                  background: `linear-gradient(180deg, ${bioState.producers > 40 ? 'rgba(34,197,94,0.45)' : 'rgba(180,83,9,0.45)'} 0%, rgba(20, 14, 8, 0.95) 100%)`,
+                  borderTop: `3px solid ${bioState.producers > 40 ? '#22c55e' : '#d97706'}`,
+                  borderRadius: '12px',
+                  padding: '0.75rem 1rem',
+                  zIndex: 2,
+                }}
+              >
+                {/* Plants / Producers Layer */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                  <span style={{ fontSize: '0.72rem', color: '#86efac', fontWeight: 800, textTransform: 'uppercase' }}>
+                    Producers: Plants &amp; Crops ({bioState.producers}%) · उत्पादकाः
+                  </span>
+                  <div style={{ display: 'flex', gap: '0.3rem' }}>
+                    {Array.from({ length: Math.min(14, Math.max(1, Math.round(bioState.producers / 7))) }).map((_, i) => (
+                      <span key={i} style={{ fontSize: '1.15rem' }}>{i % 2 === 0 ? '🌱' : '🌳'}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Subterranean Decomposers & Humus Layer */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '0.4rem', borderTop: '1px dashed rgba(148, 163, 184, 0.2)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <span style={{ fontSize: '1rem' }}>🍄</span>
+                    <span style={{ fontSize: '0.7rem', color: '#fde047', fontWeight: 700 }}>
+                      Soil Humus: {bioState.soilNutrients}% · Decomposers: {bioState.decomposers}%
+                    </span>
+                  </div>
+                  <span style={{ fontSize: '0.7rem', color: '#cbd5e1' }}>
+                    Resilience: <strong>{bioState.resilience}%</strong>
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {/* Time-Series Population Dynamics Chart & Simulation Controls */}
+            <div
+              style={{
+                background: 'rgba(15, 23, 42, 0.7)',
+                border: '1px solid rgba(52, 211, 153, 0.25)',
+                borderRadius: '16px',
+                padding: '1.25rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <div>
+                    <span style={{ fontSize: '0.72rem', color: '#34d399', fontWeight: 800, textTransform: 'uppercase' }}>
+                      Real-Time Population Oscillations
+                    </span>
+                    <h4 style={{ margin: 0, fontSize: '1rem', color: '#f8fafc', fontWeight: 800 }}>
+                      Multi-Trophic History Chart
+                    </h4>
+                  </div>
+                  <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
+                    Tick: <strong>#{bioState.timeStep}</strong>
+                  </div>
+                </div>
+
+                {/* SVG Multi-Line Chart */}
+                <div style={{ background: '#0b1118', borderRadius: '10px', padding: '0.5rem', border: '1px solid rgba(148, 163, 184, 0.15)', height: '160px', position: 'relative' }}>
+                  <svg width="100%" height="100%" viewBox="0 0 300 120" preserveAspectRatio="none">
+                    {/* Grid lines */}
+                    <line x1="0" y1="30" x2="300" y2="30" stroke="#1e293b" strokeDasharray="2 4" />
+                    <line x1="0" y1="60" x2="300" y2="60" stroke="#1e293b" strokeDasharray="2 4" />
+                    <line x1="0" y1="90" x2="300" y2="90" stroke="#1e293b" strokeDasharray="2 4" />
+
+                    {/* Producers Line (Green) */}
+                    <polyline
+                      fill="none"
+                      stroke="#22c55e"
+                      strokeWidth="2.5"
+                      points={history.map((pt, idx) => `${(idx / (history.length - 1 || 1)) * 300},${120 - (pt.producers / 100) * 110}`).join(' ')}
+                    />
+
+                    {/* Herbivores Line (Blue) */}
+                    <polyline
+                      fill="none"
+                      stroke="#38bdf8"
+                      strokeWidth="2"
+                      points={history.map((pt, idx) => `${(idx / (history.length - 1 || 1)) * 300},${120 - (pt.herbivores / 100) * 110}`).join(' ')}
+                    />
+
+                    {/* Carnivores Line (Red) */}
+                    <polyline
+                      fill="none"
+                      stroke="#ef4444"
+                      strokeWidth="2"
+                      points={history.map((pt, idx) => `${(idx / (history.length - 1 || 1)) * 300},${120 - (pt.carnivores / 40) * 110}`).join(' ')}
+                    />
+                  </svg>
+
+                  {/* Chart Legend */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', marginTop: '0.35rem', color: '#94a3b8' }}>
+                    <span style={{ color: '#22c55e' }}>● Plants ({bioState.producers})</span>
+                    <span style={{ color: '#38bdf8' }}>● Herbivores ({bioState.herbivores})</span>
+                    <span style={{ color: '#ef4444' }}>● Carnivores ({bioState.carnivores})</span>
+                  </div>
+                </div>
+
+                {/* Core Ecological Insight: Nature Fluctuates */}
+                <div style={{ marginTop: '0.85rem', padding: '0.65rem 0.85rem', background: 'rgba(51, 65, 85, 0.4)', borderRadius: '8px', fontSize: '0.78rem', color: '#cbd5e1', lineHeight: 1.45 }}>
+                  <strong style={{ color: '#86efac' }}>💡 Dynamic Nature Insight:</strong> Ecosystems are never frozen in static balance. As plant biomass swells, grazers follow with a delayed peak, which then pulls predator numbers upward, creating natural self-correcting waves.
+                </div>
+              </div>
+
+              {/* Simulation Controls: Play / Pause / Step / Speed */}
+              <div style={{ marginTop: '1rem', paddingTop: '0.85rem', borderTop: '1px solid rgba(148, 163, 184, 0.15)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.65rem' }}>
+                <div style={{ display: 'flex', gap: '0.45rem' }}>
+                  <button
+                    type="button"
+                    onClick={() => { setIsRunning(!isRunning); soundEffects.playStrokeChime(); }}
+                    style={{
+                      padding: '0.45rem 0.85rem',
+                      borderRadius: '8px',
+                      border: 'none',
+                      background: isRunning ? '#f59e0b' : '#10b981',
+                      color: '#0f172a',
+                      fontWeight: 800,
+                      fontSize: '0.8rem',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {isRunning ? '⏸ Pause' : '▶ Run'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { stepSimulation(); soundEffects.playStrokeChime(); }}
+                    style={{
+                      padding: '0.45rem 0.75rem',
+                      borderRadius: '8px',
+                      border: '1px solid rgba(148,163,184,0.3)',
+                      background: 'rgba(30,41,59,0.6)',
+                      color: '#f8fafc',
+                      fontSize: '0.8rem',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    ⏭ Step
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { handleSelectScenario(activeScenario); }}
+                    style={{
+                      padding: '0.45rem 0.75rem',
+                      borderRadius: '8px',
+                      border: '1px solid rgba(148,163,184,0.3)',
+                      background: 'rgba(30,41,59,0.6)',
+                      color: '#f8fafc',
+                      fontSize: '0.8rem',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    🔄 Reset
+                  </button>
+                </div>
+
+                {/* Speed Toggles */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.74rem', color: '#94a3b8' }}>
+                  <span>Speed:</span>
+                  {[1, 2, 5].map((spd) => (
+                    <button
+                      key={spd}
+                      type="button"
+                      onClick={() => setSimSpeed(spd)}
+                      style={{
+                        padding: '0.2rem 0.45rem',
+                        borderRadius: '4px',
+                        border: simSpeed === spd ? '1px solid #10b981' : '1px solid rgba(148,163,184,0.2)',
+                        background: simSpeed === spd ? 'rgba(16,185,129,0.3)' : 'transparent',
+                        color: simSpeed === spd ? '#86efac' : '#94a3b8',
+                        fontWeight: 700,
+                        fontSize: '0.74rem',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {spd}×
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Environmental Variable Control Deck (Sliders) */}
+          <div
+            style={{
+              background: 'rgba(15, 23, 42, 0.65)',
+              border: '1px solid rgba(52, 211, 153, 0.25)',
+              borderRadius: '16px',
+              padding: '1.25rem 1.5rem',
+            }}
+          >
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '0.74rem', color: '#34d399', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                CLIMATE &amp; TROPHIC VARIABLE ADJUSTMENT
+              </span>
+              <h3 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', color: '#f8fafc', fontWeight: 800 }}>
+                Tune Abiotic Conditions &amp; Population Densities
+              </h3>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem 1.75rem' }}>
               <GlowSlider
-                label="वात Vāta · Kinetic Flux & Diffusion Velocity (V⃗)"
-                value={doshas.vata}
-                min={10}
-                max={95}
-                step={2}
-                color="#c084fc"
-                valueText={`${doshas.vata}% ${isBalanced(doshas.vata) ? '✓ Balanced' : doshas.vata > 60 ? '⚠️ High Shear' : '⚠️ Sluggish'}`}
-                onChange={(v) => handleAdjustDosha('vata', v)}
+                label="🌧️ Rainfall Rate (पर्जन्यः)"
+                value={rainfall}
+                min={0}
+                max={100}
+                step={5}
+                color="#38bdf8"
+                onChange={(v) => { setRainfall(v); soundEffects.playStrokeChime(); }}
               />
 
               <GlowSlider
-                label="पित्त Pitta · Thermal Catalysis & ATP Heat (ΔH)"
-                value={doshas.pitta}
+                label="☀️ Ambient Temperature (तापमानम्)"
+                value={temperature}
                 min={10}
-                max={95}
-                step={2}
-                color="#f97316"
-                valueText={`${doshas.pitta}% ${isBalanced(doshas.pitta) ? '✓ Balanced' : doshas.pitta > 60 ? '🔥 Hyper-Heat' : '❄️ Low Agni'}`}
-                onChange={(v) => handleAdjustDosha('pitta', v)}
+                max={45}
+                step={1}
+                color="#fbbf24"
+                onChange={(v) => { setTemperature(v); soundEffects.playStrokeChime(); }}
               />
 
               <GlowSlider
-                label="कफ Kapha · Structural Viscosity & Density (ρ)"
-                value={doshas.kapha}
-                min={10}
-                max={95}
-                step={2}
-                color="#10b981"
-                valueText={`${doshas.kapha}% ${isBalanced(doshas.kapha) ? '✓ Balanced' : doshas.kapha > 60 ? '💧 Heavy Crowding' : '⚠️ Brittle'}`}
-                onChange={(v) => handleAdjustDosha('kapha', v)}
+                label="🌱 Plant / Producer Target (उत्पादकाः)"
+                value={bioState.producers}
+                min={0}
+                max={100}
+                step={5}
+                color="#22c55e"
+                onChange={(v) => { setBioState((s) => ({ ...s, producers: v })); soundEffects.playStrokeChime(); }}
+              />
+
+              <GlowSlider
+                label="🦌 Herbivore Grazing Load (शाकाहारिणः)"
+                value={bioState.herbivores}
+                min={0}
+                max={100}
+                step={5}
+                color="#60a5fa"
+                onChange={(v) => { setBioState((s) => ({ ...s, herbivores: v })); soundEffects.playStrokeChime(); }}
+              />
+
+              <GlowSlider
+                label="🐅 Apex Predator Count (मांसाहारिणः)"
+                value={bioState.carnivores}
+                min={0}
+                max={30}
+                step={1}
+                color="#f87171"
+                onChange={(v) => { setBioState((s) => ({ ...s, carnivores: v })); soundEffects.playStrokeChime(); }}
+              />
+
+              <GlowSlider
+                label="🍂 Soil Organic Nutrients (मृत्तिका-सारः)"
+                value={bioState.soilNutrients}
+                min={0}
+                max={100}
+                step={5}
+                color="#eab308"
+                onChange={(v) => { setBioState((s) => ({ ...s, soilNutrients: v })); soundEffects.playStrokeChime(); }}
               />
             </div>
           </div>
 
-          {/* Dravya-Guṇa Counter-Force Actions */}
-          <div style={{ background: 'rgba(15,23,42,0.9)', border: '1px solid rgba(148,163,184,0.2)', borderRadius: '16px', padding: '1.1rem' }}>
-            <span style={{ fontSize: '0.72rem', color: '#38bdf8', fontFamily: 'JetBrains Mono, monospace', fontWeight: 800, letterSpacing: '0.06em' }}>
-              STEP 3 // DEPLOY DRAVYA-GUṆA COUNTER-FORCES
+          {/* =========================================================================
+              VEDIC ECOLOGICAL CYCLE: ANNĀD BHAVANTI BHŪTĀNI
+              ========================================================================= */}
+          <div
+            style={{
+              background: 'linear-gradient(135deg, rgba(20, 83, 45, 0.25) 0%, rgba(15, 23, 42, 0.8) 100%)',
+              border: '1.5px solid rgba(52, 211, 153, 0.4)',
+              borderRadius: '16px',
+              padding: '1.35rem 1.6rem',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.75rem' }}>
+              <span style={{ fontSize: '1.6rem' }}>🌾</span>
+              <div>
+                <span style={{ fontSize: '0.72rem', color: '#86efac', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  CURRICULAR HERITAGE INTEGRATION // NCERT CLASS 7 CH 9 &amp; BG 3.14
+                </span>
+                <h3 style={{ margin: '0.15rem 0 0', fontSize: '1.25rem', color: '#f8fafc', fontWeight: 900 }}>
+                  The Living Ecological Cycle: Annād Bhavanti Bhūtāni
+                </h3>
+              </div>
+            </div>
+
+            {/* Shloka Card */}
+            <div
+              style={{
+                background: 'rgba(6, 78, 59, 0.3)',
+                border: '1px solid rgba(52, 211, 153, 0.3)',
+                borderRadius: '12px',
+                padding: '1rem 1.25rem',
+                marginBottom: '1.25rem',
+                textAlign: 'center',
+              }}
+            >
+              <div lang="sa" style={{ fontSize: '1.2rem', fontWeight: 800, color: '#fef08a', lineHeight: 1.6 }}>
+                अन्नाद् भवन्ति भूतानि पर्जन्यादन्नसम्भवः।<br />
+                यज्ञाद् भवति पर्जन्यो यज्ञः कर्मसमुद्भवः॥
+              </div>
+              <div style={{ fontSize: '0.85rem', color: '#cbd5e1', marginTop: '0.5rem', fontStyle: 'italic' }}>
+                &ldquo;From food (Anna) all living beings arise; from rain (Parjanya) food is produced; from ecological balance &amp; sacrifice (Yajña) rain is sustained; and Yajña is born of right action (Karma).&rdquo;
+              </div>
+            </div>
+
+            {/* 5-Step Visual Circular Loop */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.85rem' }}>
+              <div style={{ background: 'rgba(30, 41, 59, 0.6)', padding: '0.85rem', borderRadius: '10px', borderTop: '3px solid #38bdf8' }}>
+                <span style={{ fontSize: '0.7rem', color: '#38bdf8', fontWeight: 800 }}>STEP 1 · पर्जन्यः</span>
+                <h4 style={{ margin: '0.2rem 0', color: '#f8fafc', fontSize: '0.92rem' }}>1. Rainfall &amp; Moisture</h4>
+                <p style={{ margin: 0, fontSize: '0.78rem', color: '#94a3b8', lineHeight: 1.4 }}>
+                  Atmospheric precipitation replenishes rivers and ground aquifers.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(30, 41, 59, 0.6)', padding: '0.85rem', borderRadius: '10px', borderTop: '3px solid #22c55e' }}>
+                <span style={{ fontSize: '0.7rem', color: '#22c55e', fontWeight: 800 }}>STEP 2 · अन्नम्</span>
+                <h4 style={{ margin: '0.2rem 0', color: '#f8fafc', fontSize: '0.92rem' }}>2. Vegetative Food</h4>
+                <p style={{ margin: 0, fontSize: '0.78rem', color: '#94a3b8', lineHeight: 1.4 }}>
+                  Sunlight and rain drive plant photosynthesis, producing primary biomass.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(30, 41, 59, 0.6)', padding: '0.85rem', borderRadius: '10px', borderTop: '3px solid #60a5fa' }}>
+                <span style={{ fontSize: '0.7rem', color: '#60a5fa', fontWeight: 800 }}>STEP 3 · भूतानि</span>
+                <h4 style={{ margin: '0.2rem 0', color: '#f8fafc', fontSize: '0.92rem' }}>3. Living Beings</h4>
+                <p style={{ margin: 0, fontSize: '0.78rem', color: '#94a3b8', lineHeight: 1.4 }}>
+                  Herbivores, carnivores, and humans derive life energy from food networks.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(30, 41, 59, 0.6)', padding: '0.85rem', borderRadius: '10px', borderTop: '3px solid #f59e0b' }}>
+                <span style={{ fontSize: '0.7rem', color: '#f59e0b', fontWeight: 800 }}>STEP 4 · अपघटकाः</span>
+                <h4 style={{ margin: '0.2rem 0', color: '#f8fafc', fontSize: '0.92rem' }}>4. Decomposition</h4>
+                <p style={{ margin: 0, fontSize: '0.78rem', color: '#94a3b8', lineHeight: 1.4 }}>
+                  Decomposers recycle dead organic matter back into bioavailable soil humus.
+                </p>
+              </div>
+
+              <div style={{ background: 'rgba(30, 41, 59, 0.6)', padding: '0.85rem', borderRadius: '10px', borderTop: '3px solid #a855f7' }}>
+                <span style={{ fontSize: '0.7rem', color: '#a855f7', fontWeight: 800 }}>STEP 5 · यज्ञ / कर्म</span>
+                <h4 style={{ margin: '0.2rem 0', color: '#f8fafc', fontSize: '0.92rem' }}>5. Stewardship</h4>
+                <p style={{ margin: 0, fontSize: '0.78rem', color: '#94a3b8', lineHeight: 1.4 }}>
+                  Human ecological responsibility maintains the canopy, preventing drought.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =========================================================================
+          MODE 2: CELLULAR HOMEOSTASIS (TRI-DOṢA VECTOR MODEL)
+          ========================================================================= */}
+      {viewMode === 'cellular' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          {/* Season Selector */}
+          <div style={{ background: 'rgba(15, 23, 42, 0.65)', padding: '1.25rem', borderRadius: '16px', border: '1px solid rgba(52, 211, 153, 0.25)' }}>
+            <span style={{ fontSize: '0.74rem', color: '#34d399', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              ṚTUCARYĀ CELLULAR ADAPTATION
             </span>
-            <p style={{ margin: '0.2rem 0 0.75rem', fontSize: '0.82rem', color: '#cbd5e1' }}>
-              Deploy classical opposing formulations to neutralize imbalances back into Samatva:
-            </p>
+            <h3 style={{ margin: '0.2rem 0 0.85rem', fontSize: '1.15rem', color: '#f8fafc', fontWeight: 800 }}>
+              Select a Seasonal Environmental Shock:
+            </h3>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0.5rem' }}>
-              <button
-                type="button"
-                onClick={() => applyRemedy('sita_ghrita')}
-                style={{
-                  background: activeRemedy === 'sita_ghrita' ? 'rgba(56,189,248,0.2)' : 'rgba(30,41,59,0.7)',
-                  border: '1px solid rgba(56,189,248,0.3)',
-                  borderRadius: '10px',
-                  padding: '0.6rem 0.85rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                  transition: 'all 0.15s ease',
-                }}
-              >
-                <div>
-                  <strong style={{ fontSize: '0.85rem', color: '#e0f2fe', display: 'block' }}>
-                    🥥 Śīta-Ghṛta (शीत-घृत) · Cooling Lipid
-                  </strong>
-                  <span style={{ fontSize: '0.74rem', color: '#94a3b8' }}>
-                    Opposes hot/sharp Pitta · Reinforces fluid lipid bilayer
-                  </span>
-                </div>
-                <span style={{ fontSize: '0.72rem', color: '#38bdf8', fontWeight: 700 }}>
-                  -Pitta / +Membrane
-                </span>
-              </button>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
+              {RITU_KEYS.map((r) => {
+                const p = RITU_PRESETS[r];
+                const active = env.ritu === r;
+                return (
+                  <button
+                    key={r}
+                    type="button"
+                    onClick={() => selectRitu(r)}
+                    style={{
+                      padding: '0.75rem 1rem',
+                      borderRadius: '12px',
+                      border: active ? '1.5px solid #10b981' : '1px solid rgba(148, 163, 184, 0.2)',
+                      background: active ? 'rgba(16, 185, 129, 0.2)' : 'rgba(30, 41, 59, 0.5)',
+                      color: active ? '#ffffff' : '#cbd5e1',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: '1.4rem' }}>{p.icon}</span>
+                      <span lang="sa" style={{ fontSize: '0.82rem', fontWeight: 700, color: '#86efac' }}>{p.dev}</span>
+                    </div>
+                    <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#f8fafc', marginTop: '0.25rem' }}>{p.name}</div>
+                    <p style={{ margin: '0.35rem 0 0', fontSize: '0.74rem', color: '#94a3b8', lineHeight: 1.35 }}>{p.desc}</p>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-              <button
-                type="button"
-                onClick={() => applyRemedy('trikatu')}
-                style={{
-                  background: activeRemedy === 'trikatu' ? 'rgba(249,115,22,0.2)' : 'rgba(30,41,59,0.7)',
-                  border: '1px solid rgba(249,115,22,0.3)',
-                  borderRadius: '10px',
-                  padding: '0.6rem 0.85rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                  transition: 'all 0.15s ease',
-                }}
-              >
+          {/* Tri-Dosa Meters & Micro-Macro Resonance */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+            <div style={{ background: 'rgba(15, 23, 42, 0.7)', padding: '1.25rem', borderRadius: '16px', border: '1px solid rgba(148, 163, 184, 0.2)' }}>
+              <h4 style={{ margin: '0 0 0.85rem', color: '#f8fafc', fontSize: '1rem', fontWeight: 800 }}>
+                Intracellular Tri-Doṣa Resonance
+              </h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 <div>
-                  <strong style={{ fontSize: '0.85rem', color: '#fed7aa', display: 'block' }}>
-                    🍯 Laghu-Trikaṭu (त्रिकटु) · Metabolic Activator
-                  </strong>
-                  <span style={{ fontSize: '0.74rem', color: '#94a3b8' }}>
-                    Opposes heavy/cold Kapha · Stimulates mitochondrial catabolism
-                  </span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', marginBottom: '0.2rem' }}>
+                    <span style={{ color: '#c084fc', fontWeight: 800 }}>💨 Vāta (Kinetic Diffusion)</span>
+                    <strong style={{ color: '#f8fafc' }}>{doshas.vata}%</strong>
+                  </div>
+                  <div style={{ height: '8px', background: '#1e293b', borderRadius: '4px', overflow: 'hidden' }}>
+                    <div style={{ width: `${doshas.vata}%`, height: '100%', background: '#c084fc', transition: 'width 0.3s' }} />
+                  </div>
                 </div>
-                <span style={{ fontSize: '0.72rem', color: '#fb923c', fontWeight: 700 }}>
-                  -Kapha / +Agni
-                </span>
-              </button>
 
-              <button
-                type="button"
-                onClick={() => applyRemedy('taila')}
-                style={{
-                  background: activeRemedy === 'taila' ? 'rgba(192,132,252,0.2)' : 'rgba(30,41,59,0.7)',
-                  border: '1px solid rgba(192,132,252,0.3)',
-                  borderRadius: '10px',
-                  padding: '0.6rem 0.85rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                  transition: 'all 0.15s ease',
-                }}
-              >
                 <div>
-                  <strong style={{ fontSize: '0.85rem', color: '#e9d5ff', display: 'block' }}>
-                    🫖 Snigdha-Taila (तैल) · Nourishing Balm
-                  </strong>
-                  <span style={{ fontSize: '0.74rem', color: '#94a3b8' }}>
-                    Opposes dry/kinetic Vāta · Stabilizes electrochemical gradients
-                  </span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', marginBottom: '0.2rem' }}>
+                    <span style={{ color: '#fb923c', fontWeight: 800 }}>🔥 Pitta (Metabolic Heat)</span>
+                    <strong style={{ color: '#f8fafc' }}>{doshas.pitta}%</strong>
+                  </div>
+                  <div style={{ height: '8px', background: '#1e293b', borderRadius: '4px', overflow: 'hidden' }}>
+                    <div style={{ width: `${doshas.pitta}%`, height: '100%', background: '#fb923c', transition: 'width 0.3s' }} />
+                  </div>
                 </div>
-                <span style={{ fontSize: '0.72rem', color: '#c084fc', fontWeight: 700 }}>
-                  -Vāta / +Hydration
-                </span>
-              </button>
+
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', marginBottom: '0.2rem' }}>
+                    <span style={{ color: '#34d399', fontWeight: 800 }}>💧 Kapha (Membrane Stability)</span>
+                    <strong style={{ color: '#f8fafc' }}>{doshas.kapha}%</strong>
+                  </div>
+                  <div style={{ height: '8px', background: '#1e293b', borderRadius: '4px', overflow: 'hidden' }}>
+                    <div style={{ width: `${doshas.kapha}%`, height: '100%', background: '#34d399', transition: 'width 0.3s' }} />
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div style={{ marginTop: '0.65rem', textAlign: 'center' }}>
-              <button
-                type="button"
-                onClick={() => applyRemedy('reset')}
-                className="vl-btn vl-btn--cyber"
-                style={{ width: '100%', fontSize: '0.82rem', padding: '0.5rem', background: 'rgba(56,189,248,0.1)', border: '1px solid rgba(56,189,248,0.4)', color: '#38bdf8' }}
-              >
-                🔄 Restore Universal Equilibrium (समत्व-संस्थापनम्)
-              </button>
+            {/* Organelle Five Bhūtas Table */}
+            <div style={{ background: 'rgba(15, 23, 42, 0.7)', padding: '1.25rem', borderRadius: '16px', border: '1px solid rgba(148, 163, 184, 0.2)' }}>
+              <h4 style={{ margin: '0 0 0.85rem', color: '#f8fafc', fontSize: '1rem', fontWeight: 800 }}>
+                Five Bhūtas ➔ Cellular Organelle Mapping
+              </h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
+                {(Object.keys(ORGANELLES) as OrganelleKey[]).map((k) => {
+                  const org = ORGANELLES[k];
+                  return (
+                    <div key={k} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.78rem', padding: '0.35rem 0.5rem', background: 'rgba(30, 41, 59, 0.4)', borderRadius: '6px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                        <span>{org.icon}</span>
+                        <strong style={{ color: org.color }}>{org.element}:</strong>
+                        <span style={{ color: '#e2e8f0' }}>{org.organelle}</span>
+                      </div>
+                      <span style={{ color: '#94a3b8', fontSize: '0.72rem' }}>{org.biophysics}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* =========================================================================
-          TRIMMED CORE SCIENCE WALKTHROUGH (3 CLEAR CARDS)
+          CROSS-CUTTING EDUCATIONAL TERMS & CHALLENGES
           ========================================================================= */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
-        <div style={{ background: 'rgba(15,23,42,0.7)', border: '1px solid rgba(148,163,184,0.15)', borderRadius: '12px', padding: '1rem' }}>
-          <h4 style={{ margin: '0 0 0.35rem', color: '#38bdf8', fontSize: '0.95rem' }}>
-            🌌 1. The Organelle Elements
-          </h4>
-          <p style={{ margin: 0, fontSize: '0.82rem', color: '#cbd5e1', lineHeight: 1.5 }}>
-            Ancient systems biology maps the 5 elements directly to cellular components: <strong>Ākāśa</strong> is cytosolic void, <strong>Vāyu</strong> is ion pump transport, <strong>Tejas</strong> is mitochondrial heat, <strong>Ap</strong> is solvent hydration, and <strong>Pṛthivī</strong> is cytoskeletal scaffolding.
-          </p>
-        </div>
+      <TermPanel terms={TERMS} />
+      <ChallengeList items={CHALLENGES} />
 
-        <div style={{ background: 'rgba(15,23,42,0.7)', border: '1px solid rgba(148,163,184,0.15)', borderRadius: '12px', padding: '1rem' }}>
-          <h4 style={{ margin: '0 0 0.35rem', color: '#f59e0b', fontSize: '0.95rem' }}>
-            ⚖️ 2. The 3 Thermodynamic Forces
-          </h4>
-          <p style={{ margin: 0, fontSize: '0.82rem', color: '#cbd5e1', lineHeight: 1.5 }}>
-            The three Doṣas are not static entities; they are vectors: <strong>Vāta</strong> (diffusion speed &amp; shear), <strong>Pitta</strong> (metabolic reaction rate), and <strong>Kapha</strong> (viscoelastic density). Health is the continuous dynamic balance (<em>Samatva</em>) among all three.
-          </p>
-        </div>
-
-        <div style={{ background: 'rgba(15,23,42,0.7)', border: '1px solid rgba(148,163,184,0.15)', borderRadius: '12px', padding: '1rem' }}>
-          <h4 style={{ margin: '0 0 0.35rem', color: '#10b981', fontSize: '0.95rem' }}>
-            📈 3. Arterial Pulse Feedback
-          </h4>
-          <p style={{ margin: 0, fontSize: '0.82rem', color: '#cbd5e1', lineHeight: 1.5 }}>
-            Because systemic hemodynamics respond to cellular metabolic state, ancient radial pulse diagnosis (<em>Nāḍī-Vijñāna</em>) detected cellular imbalance through tactile waveform signatures: <em>Maṇḍūka-Gati</em> for heat, <em>Sarpa-Gati</em> for kinetic shear, and <em>Haṁsa-Gati</em> for viscous heavy density.
-          </p>
-        </div>
-      </div>
-
-      {/* Challenges & Terms */}
-      <div className="vl-grid-2" style={{ marginTop: '1rem' }}>
-        <ChallengeList items={CHALLENGES} title="🧠 Cellular Biophysics Challenges" />
-        <TermPanel terms={TERMS} title="🧬 Sanskrit Biological Terminology" />
-      </div>
-
-      {/* =========================================================================
-          DIRECT NEXT BIOLOGY LAB GATEWAY (SEQUENCED: PRAKṚTI ➔ CHATURYONI)
-          ========================================================================= */}
+      {/* Direct Next Biology Lab (Chaturyoni) Gateway */}
       {onNextLab && (
         <div
-          className="vl-panel"
           style={{
-            marginTop: '1.5rem',
-            background: 'linear-gradient(135deg, rgba(16,185,129,0.12), rgba(249,115,22,0.12))',
+            background: 'linear-gradient(135deg, rgba(16,185,129,0.15), rgba(249,115,22,0.15))',
             border: '1.5px solid rgba(249,115,22,0.4)',
             borderRadius: '16px',
-            padding: '1.35rem 1.6rem',
+            padding: '1.25rem 1.5rem',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: '1.25rem',
             flexWrap: 'wrap',
-            boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <span style={{ fontSize: '2.5rem', lineHeight: 1 }}>🦢</span>
             <div>
-              <span style={{ fontSize: '0.72rem', color: '#fb923c', fontFamily: 'JetBrains Mono, monospace', fontWeight: 800 }}>
-                BIOLOGY CURRICULUM PIPELINE // NEXT LIFE SCIENCE SECTOR
+              <span style={{ fontSize: '0.72rem', color: '#fb923c', fontWeight: 800, textTransform: 'uppercase' }}>
+                NEXT BIOLOGY LAB // SEC-04
               </span>
-              <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.2rem', color: '#f8fafc', fontWeight: 900 }}>
-                SEC-04 Chaturyoni Spawn Map · Botanical Galvanometry
+              <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', color: '#f8fafc', fontWeight: 900 }}>
+                Chaturyoni Spawn Map · Botanical Galvanometry
               </h4>
-              <p style={{ margin: '0.25rem 0 0', fontSize: '0.84rem', color: '#cbd5e1' }}>
-                Advance from sub-cellular homeostasis to whole-organism taxonomy &amp; Sir J.C. Bose&rsquo;s plant action potentials!
+              <p style={{ margin: '0.25rem 0 0', fontSize: '0.82rem', color: '#cbd5e1' }}>
+                Advance from ecological food webs to 4-fold taxonomy &amp; Sir J.C. Bose&rsquo;s plant action potentials!
               </p>
             </div>
           </div>
@@ -1019,12 +1278,11 @@ export const PrakritiBalance: React.FC<LabSegmentProps> = ({ onNextLab }) => {
             onClick={onNextLab}
             style={{
               padding: '0.75rem 1.4rem',
-              fontSize: '0.95rem',
+              fontSize: '0.92rem',
               fontWeight: 800,
               background: 'linear-gradient(135deg, #f97316, #10b981)',
               color: '#090e17',
               border: 'none',
-              boxShadow: '0 4px 16px rgba(249,115,22,0.4)',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
             }}

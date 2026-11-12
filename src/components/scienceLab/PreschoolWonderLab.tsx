@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { devanagariToIast } from '../../utils/devanagariToIast';
 import { CoreIdea, type LabSegmentProps } from './common';
 import { playStoryLine as playStoryLineBase, playPronunciation, playSequence, PANCHABHUTA_NARRATION_RATE } from '../../utils/pronunciation';
+import { PreschoolActivityPictogram, LabGamePictogram } from './LabPictograms';
+import { PreschoolBlackboard } from './PreschoolBlackboard';
 
 /** Pañcabhūta story lines read slower than the shared story default. */
 const playStoryLine = (text: string): void => playStoryLineBase(text, PANCHABHUTA_NARRATION_RATE);
@@ -1623,13 +1625,21 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
     }
   }, [initialActivity]);
 
-  // Persistent Preschool Star Jar & Sticker Progress
+  // Persistent Preschool Star Jar, Khan-Style Energy Points & Sticker Progress
   const [totalStars, setTotalStars] = useState<number>(() => {
     try {
       const saved = Number(localStorage.getItem('ednet_preschool_stars_v1') || '0');
       return Number.isFinite(saved) && saved >= 0 ? saved : 0;
     } catch { return 0; }
   });
+  const [energyPoints, setEnergyPoints] = useState<number>(() => {
+    try {
+      const saved = Number(localStorage.getItem('ednet_preschool_points_v1') || '100');
+      return Number.isFinite(saved) && saved >= 0 ? saved : 100;
+    } catch { return 100; }
+  });
+  const [arenaMode, setArenaMode] = useState<'split' | 'game' | 'blackboard'>('split');
+  const blackboardRef = useRef<HTMLDivElement>(null);
   const [playedTabs, setPlayedTabs] = useState<string[]>(() => {
     try {
       const raw = JSON.parse(localStorage.getItem('ednet_preschool_played_v1') || '[]');
@@ -1638,12 +1648,20 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
   });
 
   const [winBurst, setWinBurst] = useState<number>(0);
+  const awardEnergyPoints = (pts: number) => {
+    setEnergyPoints((prev) => {
+      const next = prev + pts;
+      try { localStorage.setItem('ednet_preschool_points_v1', String(next)); } catch { /* ignore */ }
+      return next;
+    });
+  };
   const awardPreschoolStar = () => {
     setTotalStars((prev) => {
       const next = prev + 1;
       try { localStorage.setItem('ednet_preschool_stars_v1', String(next)); } catch { /* ignore */ }
       return next;
     });
+    awardEnergyPoints(25);
   };
   const celebrateWin = () => {
     awardPreschoolStar();
@@ -1651,9 +1669,10 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
     setTimeout(() => setWinBurst(0), 1600);
   };
 
-  const launchActivity = (actId: PreschoolTab) => {
+  const launchActivity = (actId: PreschoolTab, targetMode: 'split' | 'game' | 'blackboard' = 'split') => {
     setTab(actId);
     setViewMode('play');
+    setArenaMode(targetMode);
     setPlayedTabs((prev) => {
       if (prev.includes(actId)) return prev;
       const next = [...prev, actId];
@@ -1662,7 +1681,11 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
     });
     soundEffects.playCelebrationChime();
     setTimeout(() => {
-      playArenaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (targetMode === 'blackboard' && blackboardRef.current) {
+        blackboardRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        playArenaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }, 60);
   };
 
@@ -1673,6 +1696,21 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
   const [quizScore, setQuizScore] = useState<number>(0);
   const [activeShapePoster, setActiveShapePoster] = useState<'shapes' | 'patterns'>('shapes');
   const [isShareCopied, setIsShareCopied] = useState(false);
+
+  const [isIntroLightboxOpen, setIsIntroLightboxOpen] = useState(false);
+  useEffect(() => {
+    if (!isIntroLightboxOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsIntroLightboxOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isIntroLightboxOpen]);
 
   const handleSharePreschool = async () => {
     soundEffects.playStrokeChime();
@@ -2096,19 +2134,19 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
         </div>
         <div className="psw-mlp-chips" role="navigation" aria-label="Elder science simulations">
           <button type="button" className="psw-mlp-chip" onClick={() => onSelectMainLab ? onSelectMainLab('paramanu') : onNextLab?.()} title="Atom Builder: Make Matter (Ages 11–14)">
-            ⚛️ Atom Builder (11–14)
+            <span className="psw-mlp-chip-pict"><LabGamePictogram id="paramanu" /></span> Atom Builder (11–14)
           </button>
           <button type="button" className="psw-mlp-chip" onClick={() => onSelectMainLab ? onSelectMainLab('jyotisha') : onNextLab?.()} title="Planet Pull Gravity (Ages 8–10)">
-            🪐 Planet Pull (8–10)
+            <span className="psw-mlp-chip-pict"><LabGamePictogram id="jyotisha" /></span> Planet Pull (8–10)
           </button>
           <button type="button" className="psw-mlp-chip" onClick={() => onSelectMainLab ? onSelectMainLab('chandrayaan') : onNextLab?.()} title="Moon Mission (Ages 11–14)">
-            🛰️ Moon Mission (11–14)
+            <span className="psw-mlp-chip-pict"><LabGamePictogram id="chandrayaan" /></span> Moon Mission (11–14)
           </button>
           <button type="button" className="psw-mlp-chip" onClick={() => onSelectMainLab ? onSelectMainLab('prakriti') : onNextLab?.()} title="Nature Balance (Ages 8–10)">
-            🌿 Nature Balance (8–10)
+            <span className="psw-mlp-chip-pict"><LabGamePictogram id="prakriti" /></span> Nature Balance (8–10)
           </button>
           <button type="button" className="psw-mlp-chip" onClick={() => onSelectMainLab ? onSelectMainLab('agnibana') : onNextLab?.()} title="Rocket Builder (Ages 12–14)">
-            🚀 Rocket Lab (12–14)
+            <span className="psw-mlp-chip-pict"><LabGamePictogram id="agnibana" /></span> Rocket Lab (12–14)
           </button>
         </div>
       </div>
@@ -2145,10 +2183,12 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
             >
               <span>{isShareCopied ? '✅ Link Copied!' : '📤 Share'}</span>
             </button>
-            <div className="psw-star-jar-pill" aria-label="Your golden star jar">
-              <span>🏺⭐ <strong>{totalStars}</strong> Stars</span>
+            <div className="psw-star-jar-pill" aria-label="Your golden star jar and Khan-style energy points">
+              <span>⚡ <strong>{energyPoints}</strong> Energy Pts</span>
               <span className="psw-star-jar-sep">·</span>
-              <span>🏅 <strong>{playedTabs.length}</strong>/{ACTIVITIES.length} Explored</span>
+              <span>★ <strong>{totalStars}</strong> Stars</span>
+              <span className="psw-star-jar-sep">·</span>
+              <span><strong>{playedTabs.length}</strong>/{ACTIVITIES.length} Explored</span>
             </div>
           </div>
         </div>
@@ -2169,6 +2209,38 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
             </>
           )}
         </p>
+
+        <div className="psw-intro-banner">
+          <div
+            className="psw-intro-banner-hit"
+            role="button"
+            tabIndex={0}
+            onClick={() => setIsIntroLightboxOpen(true)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setIsIntroLightboxOpen(true);
+              }
+            }}
+            title="Tap to watch full screen"
+            aria-label="Indian Knowledge Systems intro video. Tap to watch full screen with sound"
+          >
+            <video
+              className="psw-intro-video"
+              src="/videos/preschool-games-intro-v2.mp4"
+              poster="/images/preschool-games-intro-poster-v2.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              width={1280}
+              height={720}
+              aria-hidden="true"
+            />
+            <span className="psw-intro-banner-pill">Tap to watch with sound</span>
+          </div>
+        </div>
 
         {/* Progressive Level Ladder Switcher: Preschool (Default) vs Next Level Games */}
         <div
@@ -2251,10 +2323,10 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
               >
                 {wasPlayed && (
                   <span className="psw-qt-star-badge" aria-label="Explored">
-                    ⭐
+                    ★
                   </span>
                 )}
-                <span className="psw-qt-icon" aria-hidden="true">{act.icon}</span>
+                <span className="psw-qt-icon" aria-hidden="true"><PreschoolActivityPictogram id={act.id} /></span>
                 <span className="psw-qt-en">{act.labelEn}</span>
                 <span className="psw-qt-dev" lang="sa">{act.labelSa}</span>
               </button>
@@ -2265,7 +2337,6 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
         {/* View Mode Toggle Row */}
         <div className="psw-view-toggle-row">
           <div className="psw-vtr-kicker">
-            <span>🌟</span>
             <span><strong>{displayedActivities.length}</strong> games · pick one and tap Play!</span>
           </div>
           <div className="psw-view-toggle-btns" role="tablist">
@@ -2274,14 +2345,21 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
               className={`psw-view-mode-pill ${viewMode === 'cards' ? 'is-active' : ''}`}
               onClick={() => { setViewMode('cards'); soundEffects.playStrokeChime(); }}
             >
-              <span>🎴</span> All games
+              All games
             </button>
             <button
               type="button"
-              className={`psw-view-mode-pill ${viewMode === 'play' ? 'is-active' : ''}`}
-              onClick={() => launchActivity(tab)}
+              className={`psw-view-mode-pill ${viewMode === 'play' && arenaMode !== 'blackboard' ? 'is-active' : ''}`}
+              onClick={() => launchActivity(tab, 'split')}
             >
-              <span>{currentActivity.icon}</span> Playing: {currentActivity.labelEn}
+              <span className="psw-vmp-pict"><PreschoolActivityPictogram id={currentActivity.id} /></span> Playing: {currentActivity.labelEn}
+            </button>
+            <button
+              type="button"
+              className={`psw-view-mode-pill psw-view-mode-pill--chalk ${viewMode === 'play' && arenaMode === 'blackboard' && tab !== 'varnamala' ? 'is-active' : ''}`}
+              onClick={() => launchActivity(tab === 'varnamala' ? 'shapes' : tab, 'blackboard')}
+            >
+              🖍️ Blackboard &amp; Quiz ({tab === 'varnamala' ? 'Shapes' : currentActivity.labelEn})
             </button>
           </div>
         </div>
@@ -2305,7 +2383,7 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                 <div className="psw-cc-banner">
                   {wasPlayed && (
                     <span className="psw-card-sticker-badge" title="Explored!">
-                      ⭐ Explored
+                      ★ Explored
                     </span>
                   )}
                   {act.bannerVisual.image ? (
@@ -2325,16 +2403,9 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                       <div className="psw-cc-hero-scrim" />
                     </div>
                   ) : (
-                    <>
-                      <div className="psw-cc-hero-pod">
-                        <span className="psw-cc-lead-emoji" aria-hidden="true">{act.bannerVisual.emojiLead}</span>
-                      </div>
-                      <div className="psw-cc-decor-row" aria-hidden="true">
-                        {act.bannerVisual.decorEmojis.slice(0, 4).map((em, i) => (
-                          <span key={i} className="psw-cc-decor-bubble">{em}</span>
-                        ))}
-                      </div>
-                    </>
+                    <div className="psw-cc-hero-pod psw-cc-hero-pod--pict">
+                      <PreschoolActivityPictogram id={act.id} />
+                    </div>
                   )}
                   <div className="psw-cc-sa-ribbon" lang="sa">
                     {act.bannerVisual.taglineSa}
@@ -2348,7 +2419,7 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                   </div>
 
                   <h3 className="psw-cc-title">
-                    <span className="psw-cc-title-icon" aria-hidden="true">{act.icon}</span>
+                    <span className="psw-cc-title-icon" aria-hidden="true"><PreschoolActivityPictogram id={act.id} /></span>
                     <div className="psw-cc-title-text">
                       <strong className="psw-cc-title-en">{act.labelEn}</strong>
                       <span className="psw-cc-title-sa" lang="sa">{act.labelSa}</span>
@@ -2363,13 +2434,25 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
                     ))}
                   </div>
 
-                  <button
-                    type="button"
-                    className={`psw-cc-play-btn${isCurrent ? ' is-active-btn' : ''}`}
-                    onClick={() => launchActivity(act.id)}
-                  >
-                    {isCurrent ? '▶ Keep Playing' : '▶ Play'}
-                  </button>
+                  <div className="psw-cc-action-pair">
+                    <button
+                      type="button"
+                      className={`psw-cc-play-btn${isCurrent ? ' is-active-btn' : ''}`}
+                      onClick={() => launchActivity(act.id, act.id === 'varnamala' ? 'game' : 'split')}
+                    >
+                      {isCurrent ? '▶ Keep Playing' : '▶ Play Game'}
+                    </button>
+                    {act.id !== 'varnamala' && (
+                      <button
+                        type="button"
+                        className="psw-cc-chalk-btn"
+                        onClick={() => launchActivity(act.id, 'blackboard')}
+                        title={`Open Khan-Style Blackboard Explanation & Interlocked Quiz for ${act.labelEn}`}
+                      >
+                        🖍️ Blackboard + Quiz
+                      </button>
+                    )}
+                  </div>
                 </div>
               </article>
             );
@@ -2523,15 +2606,77 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
             </div>
           </div>
           <div className="psw-what-to-do" role="status" aria-live="polite">
-            <span className="psw-wtd-label">👉 What to do:</span>
-            <span className="psw-wtd-text">{currentActivity.desc}</span>
+            <div className="psw-wtd-left">
+              <span className="psw-wtd-label">👉 What to do:</span>
+              <span className="psw-wtd-text">{currentActivity.desc}</span>
+            </div>
+            {tab !== 'varnamala' && (
+              <div className="psw-arena-mode-bar" role="tablist" aria-label="Game and Blackboard mode switcher">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={arenaMode === 'split'}
+                  className={`psw-amb-btn ${arenaMode === 'split' ? 'is-active' : ''}`}
+                  onClick={() => { setArenaMode('split'); soundEffects.playStrokeChime(); }}
+                >
+                  ⚡ Game + Blackboard
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={arenaMode === 'blackboard'}
+                  className={`psw-amb-btn psw-amb-btn--chalk ${arenaMode === 'blackboard' ? 'is-active' : ''}`}
+                  onClick={() => { setArenaMode('blackboard'); soundEffects.playStrokeChime(); }}
+                >
+                  🖍️ Blackboard &amp; Quiz Only
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={arenaMode === 'game'}
+                  className={`psw-amb-btn ${arenaMode === 'game' ? 'is-active' : ''}`}
+                  onClick={() => { setArenaMode('game'); soundEffects.playStrokeChime(); }}
+                >
+                  🎨 Game Only
+                </button>
+              </div>
+            )}
           </div>
           {winBurst > 0 && (
             <div className="psw-win-burst" key={winBurst} role="status" aria-live="assertive">
               <span>⭐</span><span>🌟</span><span>⭐</span>
-              <strong>Great job! शोभनम्!</strong>
+              <strong>Great job! शोभनम्! (+25 Energy Pts &amp; +1 ★)</strong>
             </div>
           )}
+
+          {/* Khan Academy–Style Blackboard Explanation + Interlocked Quiz Studio */}
+          {tab !== 'varnamala' && (arenaMode === 'blackboard' || arenaMode === 'split') && (
+            <div ref={blackboardRef} className="psw-blackboard-mount">
+              <PreschoolBlackboard
+                activityId={tab}
+                labelEn={currentActivity.labelEn}
+                labelSa={currentActivity.labelSa}
+                desc={currentActivity.desc}
+                taglineSa={currentActivity.bannerVisual.taglineSa}
+                gameStars={totalStars}
+                energyPoints={energyPoints}
+                onAwardPoints={(pts) => {
+                  awardEnergyPoints(pts);
+                  if (pts >= 100) {
+                    setTotalStars((prev) => {
+                      const next = prev + 1;
+                      try { localStorage.setItem('ednet_preschool_stars_v1', String(next)); } catch { /* ignore */ }
+                      return next;
+                    });
+                  }
+                }}
+                onSwitchToPlay={arenaMode === 'blackboard' ? () => setArenaMode('split') : undefined}
+              />
+            </div>
+          )}
+
+          {(arenaMode !== 'blackboard' || tab === 'varnamala') && (
+          <div className="psw-interactive-game-stage">
 
       {/* ===================================================================
           TAB 0: VARNAMALA LETTER GARDEN (वर्णमाला-वाटिका)
@@ -4680,6 +4825,8 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
           Next Game ➡️
         </button>
       </div>
+      </div>
+      )}
 
       {/* Code.org Style "More Adventures" Carousel scoped to Current Level + Next Level Upgrade */}
       <div className="psw-more-carousel-wrap">
@@ -4826,9 +4973,46 @@ export const PreschoolWonderLab: React.FC<PreschoolWonderLabProps> = ({
         through tangible shapes, the smiling moon in the night sky, daily sunrises, changing seasons, and friendly animals.
         In Sanatan Dharma, all aspects of nature—from the smallest mouse (Mūṣaka) to the five elements (Pṛthivī, Jala, Agni, Vāyu, Ākāśa)—are revered as one joyful family (<em>Sarva-bhūta-hita</em>).
       </CoreIdea>
+
+      {isIntroLightboxOpen && (
+        <div
+          className="psw-intro-lightbox"
+          onClick={() => setIsIntroLightboxOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Indian Knowledge Systems intro video"
+        >
+          <div className="psw-intro-lightbox-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="psw-intro-lightbox-bar">
+              <span>Indian Knowledge Systems</span>
+              <button
+                type="button"
+                className="psw-intro-lightbox-close"
+                onClick={() => setIsIntroLightboxOpen(false)}
+                aria-label="Close video"
+              >
+                ✕
+              </button>
+            </div>
+            <video
+              className="psw-intro-lightbox-video"
+              src="/videos/preschool-games-intro-v2.mp4"
+              poster="/images/preschool-games-intro-poster-v2.jpg"
+              controls
+              autoPlay
+              loop
+              playsInline
+              preload="metadata"
+              width={1280}
+              height={720}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
+
 
 
 const pswHexToRgb = (h: string) => {

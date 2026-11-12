@@ -33,7 +33,7 @@ export const SanskritAssignmentEvaluator: React.FC<SanskritAssignmentEvaluatorPr
 
   // Input State
   const [studentName, setStudentName] = useState<string>('संस्कृत-जिज्ञासुः');
-  const [gradeLevel, setGradeLevel] = useState<string>('Class 7 (Deepakam)');
+  const [gradeLevel, setGradeLevel] = useState<string>('Class 7');
   const [assignmentTitle, setAssignmentTitle] = useState<string>('वन्दे भारतमातरम् · अभ्यास-प्रश्नोत्तराणि');
   const [totalMarks, setTotalMarks] = useState<number>(20);
   const [transcribedText, setTranscribedText] = useState<string>(SAMPLE_ASSIGNMENT_PRESETS[0].sampleText);
@@ -177,7 +177,7 @@ export const SanskritAssignmentEvaluator: React.FC<SanskritAssignmentEvaluatorPr
         <div className="sae-header-top">
           <div className="sae-badge-pill">
             <span>✍️</span>
-            <span>गुरुकुल-लिखित-मूल्याङ्कनम् · Sanskrit Assignment AI Evaluator</span>
+            <span>लेखनशाला · Sanskrit Writing Lab</span>
           </div>
 
           <div className="sae-header-actions">
@@ -196,10 +196,10 @@ export const SanskritAssignmentEvaluator: React.FC<SanskritAssignmentEvaluatorPr
           </div>
         </div>
 
-        <h1 className="sae-title-sanskrit">संस्कृत-हस्तलिखित-अभ्यास-मूल्याङ्कनम्</h1>
-        <h2 className="sae-title-english">Written Sanskrit Assignment &amp; Handwriting Evaluator</h2>
+        <h1 className="sae-title-sanskrit">लेखनशाला</h1>
+        <h2 className="sae-title-english">Sanskrit Writing Lab</h2>
         <p className="sae-header-desc">
-          Upload a photo or scan of your handwritten Sanskrit homework, worksheet, or exam paper. Our Gurukul Parikshaka engine inspects Devanagari letterforms, verifies Pāṇinian subject-verb concord, detects case ending (विभक्ति) and sandhi slips, and generates an official printable evaluation marksheet with spoken Sanskrit audio explanations!
+          See a word, hear it, trace its dotted letters and write it yourself. Explore words, short passages and notebook practice in one place.
         </p>
       </header>
 
@@ -376,9 +376,9 @@ export const SanskritAssignmentEvaluator: React.FC<SanskritAssignmentEvaluatorPr
                   value={gradeLevel}
                   onChange={(e) => setGradeLevel(e.target.value)}
                 >
-                  <option value="Class 6 (Deepakam / NCERT)">Class 6 (Deepakam / NCERT)</option>
-                  <option value="Class 7 (Deepakam)">Class 7 (Deepakam)</option>
-                  <option value="Class 8 (Deepakam 2)">Class 8 (Deepakam 2)</option>
+                  <option value="Class 6">Class 6</option>
+                  <option value="Class 7">Class 7</option>
+                  <option value="Class 8">Class 8</option>
                   <option value="Class 9 (Sharda · CBSE Code 122)">Class 9 (Sharda · CBSE Code 122)</option>
                   <option value="Class 10 (Shemushi · CBSE Code 122)">Class 10 (Shemushi · CBSE Code 122)</option>
                   <option value="Beginner Sanskrit Course">Beginner Sanskrit Course</option>

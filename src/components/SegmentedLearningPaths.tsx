@@ -20,14 +20,15 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
   onOpenBoard,
   onOpenReader,
   onOpenGrammar,
-  onOpenCbseGuide,
-  onOpenWorksheets,
-  onOpenQuiz,
+  onOpenCbseGuide: _cbse,
+  onOpenWorksheets: _ws,
+  onOpenQuiz: _quiz,
   onOpenDhatupatha,
   onOpenCourse,
   onOpenVedicMaths,
   onOpenScienceLab,
 }) => {
+  void _cbse; void _ws; void _quiz;
   return (
     <section className="slp-section" id="learning-paths" aria-label="Targeted Sanskrit Learning Pathways">
       <div className="slp-header">
@@ -122,89 +123,7 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
             </div>
           </div>
 
-        {/* PATH 2: For School Students (CBSE & NCERT 6–10) */}
-          <div className="slp-card slp-card--school">
-            <div className="slp-card-accent-bar slp-card-accent-bar--indigo" />
-            <div className="slp-card-inner">
-              <div className="slp-card-top">
-                <span className="slp-card-badge slp-badge--indigo">Classes 6–10 · CBSE &amp; State Boards</span>
-                <span className="slp-card-sanskrit">विद्यालय-वर्गः</span>
-              </div>
-
-              <div className="slp-card-icon-title">
-                <div className="slp-card-avatar slp-avatar--indigo" aria-hidden="true">🎒</div>
-                <div>
-                  <h3 className="slp-card-title">For School Students</h3>
-                  <p className="slp-card-promise">NCERT Deepakam (7–8) &amp; Sharada (9), chapter by chapter</p>
-                </div>
-              </div>
-
-              <p className="slp-card-desc">
-                Listen · Translate (English / Hindi / Telugu / Tamil / Malayalam) · Solutions · Quizzes · Worksheets
-              </p>
-
-              <div className="slp-modules-list">
-                <h4 className="slp-modules-heading">Included Academic Curriculum:</h4>
-                <div className="slp-module-item" onClick={() => onOpenReader('gsde101')} role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onOpenReader('gsde101')}>
-                  <span className="slp-mod-icon">📖</span>
-                  <div className="slp-mod-info">
-                    <strong>NCERT Reader</strong>
-                    <span>Audio and tap-to-translate on every line; अभ्यास solutions</span>
-                  </div>
-                  <span className="slp-mod-arrow">➔</span>
-                </div>
-
-                <div className="slp-module-item" onClick={onOpenWorksheets || (() => onOpenReader('worksheets'))} role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (onOpenWorksheets ? onOpenWorksheets() : onOpenReader('worksheets'))}>
-                  <span className="slp-mod-icon">📑</span>
-                  <div className="slp-mod-info">
-                    <strong>Worksheets</strong>
-                    <span>Printable, with answer keys</span>
-                  </div>
-                  <span className="slp-mod-arrow">➔</span>
-                </div>
-
-                <div className="slp-module-item" onClick={onOpenQuiz} role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onOpenQuiz?.()}>
-                  <span className="slp-mod-icon">🎯</span>
-                  <div className="slp-mod-info">
-                    <strong>Practice Quizzes</strong>
-                    <span>Vibhakti, lakāra, avyaya &amp; pratyaya drills</span>
-                  </div>
-                  <span className="slp-mod-arrow">➔</span>
-                </div>
-
-                <div className="slp-module-item" onClick={onOpenCbseGuide} role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onOpenCbseGuide?.()}>
-                  <span className="slp-mod-icon">📘</span>
-                  <div className="slp-mod-info">
-                    <strong>80-Mark CBSE Exam Blueprint</strong>
-                    <span>Question generation (किम्-पद), unseen prose, letter writing &amp; mock papers</span>
-                  </div>
-                  <span className="slp-mod-arrow">➔</span>
-                </div>
-              </div>
-
-              <div className="slp-card-actions">
-                <button
-                  type="button"
-                  className="slp-primary-btn slp-btn--indigo"
-                  onClick={() => onOpenReader('gsde101')}
-                  title="Open NCERT Deepakam Chapter 1"
-                >
-                  Start School Path ➔
-                </button>
-                {onOpenCbseGuide && (
-                  <button
-                    type="button"
-                    className="slp-secondary-btn"
-                    onClick={onOpenCbseGuide}
-                    title="Open CBSE Exam Guide"
-                  >
-                    📘 Exam Blueprint
-                  </button>
-                )}
-              </div>
-            </div>
-          </div>
-
+        {/* PATH 2 (School Students) merged into homepage #ncert-curriculum section */}
         {/* PATH 3: For Scholars & Advanced Learners */}
           <div className="slp-card slp-card--scholars">
             <div className="slp-card-accent-bar slp-card-accent-bar--amber" />

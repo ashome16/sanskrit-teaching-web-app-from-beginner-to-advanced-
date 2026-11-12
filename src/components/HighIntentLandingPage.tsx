@@ -22,6 +22,7 @@ export interface IntentLanding {
   ctas: { label: string; action: string; primary?: boolean }[];
   faq: { q: string; a: string }[];
   related: string[];
+  links?: { label: string; href: string }[];
 }
 
 export const INTENT_LANDINGS = landingsData as IntentLanding[];
@@ -134,6 +135,17 @@ const HighIntentLandingPage: React.FC<Props> = ({ landing, onAction }) => {
         </section>
       )}
 
+      {landing.links && landing.links.length > 0 && (
+        <nav className="intent-landing__section intent-landing__related" aria-label="Explore">
+          <h2>Explore on EdNet Learn</h2>
+          <ul>
+            {landing.links.map((l) => (
+              <li key={l.href}><a href={l.href}>{l.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
       <section className="intent-landing__section">
         <h2>Frequently asked questions</h2>
         {landing.faq.map((f) => (
@@ -145,7 +157,7 @@ const HighIntentLandingPage: React.FC<Props> = ({ landing, onAction }) => {
       </section>
 
       <nav className="intent-landing__section intent-landing__related" aria-label="Related study goals">
-        <h2>Related study goals</h2>
+        <h2>{landing.links ? 'Keep exploring' : 'Related study goals'}</h2>
         <ul>
           {landing.related.map((rid) => {
             const r = landingById(rid);

@@ -1,10 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
+import { playLessonText, playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
+import WordAnalyzerCard, { type WordSelection } from './WordAnalyzerCard';
 import '../styles/proof-of-quality.css';
 import '../styles/varnamala-studio.css';
-import { VARNAMALA_LETTER_GROUPS, VARGA_COLUMN_GUIDE, getVarnamalaGroupMeta } from '../data/varnamalaGroups';
 import { varnamalaLabel } from '../utils/barakhadiPhonetics';
 import { getLetterMnemonic } from '../data/varnamalaMnemonics';
+
+import { VARNAMALA_LETTER_GROUPS, getVarnamalaGroupMeta } from '../data/varnamalaGroups';
+
+/** Few visible samples per group; Play all still uses the full VARNAMALA_LETTER_GROUPS row. */
+const POQ_SAMPLES_PER_GROUP = (letters: string[], idx: number): string[] =>
+  idx === 0 ? letters.slice(0, 4) : letters.slice(0, 3);
 
 export interface ProofOfQualityProps {
   onOpenReader: (lessonId?: string) => void;
@@ -110,59 +116,6 @@ const SAMPLE_TRACKS: AudioTrack[] = [
   },
 ];
 
-interface AnalyzerWord {
-  devanagari: string;
-  transliteration: string;
-  prefix: { sa: string; type: string; gloss: string };
-  root: { sa: string; type: string; gloss: string };
-  suffix: { sa: string; type: string; gloss: string };
-  meaningEn: string;
-  meaningHi: string;
-  grammarNotes: string;
-}
-
-const ANALYZER_DEMO_WORDS: AnalyzerWord[] = [
-  {
-    devanagari: 'संस्कृतम्',
-    transliteration: 'saṃskṛtam',
-    prefix: { sa: 'सम् (sam)', type: 'उपसर्गः (Prefix)', gloss: 'Together / Perfectly / Thoroughly' },
-    root: { sa: '√कृ (kṛ)', type: 'धातुः (Root Verb)', gloss: 'To do / To refine / To sculpt' },
-    suffix: { sa: '-क्त (-kta)', type: 'कृत्-प्रत्ययः (Passive Suffix)', gloss: 'Completed / Past Passive' },
-    meaningEn: 'Refined, polished, perfected, consecrated language',
-    meaningHi: 'सुसंस्कृत, परिष्कृत, शुद्ध और नियमबद्ध भाषा',
-    grammarNotes: 'सम् + सुट् + कृ + क्त (कर्मणि वा भावे) — सम्बन्धे व्याकरण-सिद्धिः',
-  },
-  {
-    devanagari: 'गच्छति',
-    transliteration: 'gacchati',
-    prefix: { sa: '—', type: 'उपसर्गः (Prefix)', gloss: 'Direct verb root' },
-    root: { sa: '√गम् (gam)', type: 'धातुः (Root Verb)', gloss: 'To go / To move toward' },
-    suffix: { sa: '-शप् + तिप् (-śap + tip)', type: 'तिङ्-प्रत्ययः (Verb Infix & Ending)', gloss: 'Present 3rd Person Singular' },
-    meaningEn: 'He / She / It goes (Present Tense)',
-    meaningHi: 'वह जाता है / वह जाती है (वर्तमानकालः / लट्-लकारः)',
-    grammarNotes: 'इषुकमिगमिभ्यः छः (पाणिनि ६.४.१३) — गम्-धातोः गच्छ् आदेशः',
-  },
-  {
-    devanagari: 'विद्यालये',
-    transliteration: 'vidyālaye',
-    prefix: { sa: 'विद्या (vidyā)', type: 'पूर्वपदम् (First Noun)', gloss: 'Knowledge / Wisdom' },
-    root: { sa: 'आलय (ālaya)', type: 'उत्तरपदम् (Second Noun)', gloss: 'Abode / Temple / Home' },
-    suffix: { sa: '-ङि (-ṅi / ए)', type: 'सुप्-प्रत्ययः (Case Suffix)', gloss: '7th Case (सप्तमी / Locative)' },
-    meaningEn: 'In the school / In the house of knowledge',
-    meaningHi: 'विद्यालय में / पाठशाला में (सप्तमी-एकवचनम्)',
-    grammarNotes: 'विद्या + आलय = विद्यालय (दीर्घ-सन्धिः) + ङि = विद्यालये',
-  },
-  {
-    devanagari: 'अहिंसा',
-    transliteration: 'ahiṃsā',
-    prefix: { sa: 'नञ् (nañ / अ-)', type: 'न-उपसर्गः (Negative Prefix)', gloss: 'Absence of / Non-' },
-    root: { sa: '√हिंस् (hiṃs)', type: 'धातुः (Root Verb)', gloss: 'To injure / To strike / To harm' },
-    suffix: { sa: '-अङ् + टाप् (-aṅ + ṭāp)', type: 'स्त्री-प्रत्ययः (Feminine Abstract)', gloss: 'Abstract virtue noun' },
-    meaningEn: 'Non-violence, complete absence of harm to any being',
-    meaningHi: 'किसी भी प्राणी को कष्ट न पहुँचाना / अक्रूरता',
-    grammarNotes: 'न हिंसनम् इति अहिंसा (नञ्-तत्पुरुष-समासः)',
-  },
-];
 
 interface Chapter1WordGloss {
   word: string;
@@ -185,7 +138,6 @@ const CHAPTER1_GLOSSES: Record<string, Chapter1WordGloss> = {
 export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
   onOpenReader,
   onOpenVarnamala,
-  onOpenGrammar,
   onOpenRegister,
 }) => {
   const [activeTab, setActiveTab] = useState<PoqTab>('lessons');
@@ -193,12 +145,12 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
   const [activeTrackIdx, setActiveTrackIdx] = useState<number>(0);
   const [isPlayingAudio, setIsPlayingAudio] = useState<boolean>(false);
   const [speechRate, setSpeechRate] = useState<number>(0.75);
-  const [selectedWordIdx, setSelectedWordIdx] = useState<number>(0);
   const [mathBase, setMathBase] = useState<number>(35);
   const [sentenceOrder, setSentenceOrder] = useState<number>(0);
   const [selectedSentenceToken, setSelectedSentenceToken] = useState<string>('रामः');
   const [selectedChapterWord, setSelectedChapterWord] = useState<string | null>('शृणुमः');
 
+  const [deconSelection, setDeconSelection] = useState<WordSelection | null>({ text: 'अग्निः', nonce: 1 });
   const stopAudioRef = useRef<(() => void) | null>(null);
 
   // Stop any ongoing audio on unmount or tab switch
@@ -235,19 +187,26 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
 
   const [playingRowIdx, setPlayingRowIdx] = useState<number | null>(null);
   const stopRowRef = useRef<(() => void) | null>(null);
+  const [playingLetter, setPlayingLetter] = useState<string | null>(null);
+  useEffect(() => () => { if (stopRowRef.current) stopRowRef.current(); }, []);
   const handlePlayRow = (letters: string[], idx: number) => {
     if (stopRowRef.current) stopRowRef.current();
-    stopPronunciation();
+    stopRowRef.current = null;
     if (playingRowIdx === idx) {
+      stopPronunciation();
       setPlayingRowIdx(null);
+      setPlayingLetter(null);
       return;
     }
     setPlayingRowIdx(idx);
+    // Same letter-audio path as a single tap; highlight the tile being spoken.
     stopRowRef.current = playSequence(letters, {
-      gapMs: 240,
+      gapMs: 320,
+      onItem: (_w, _i, src) => setPlayingLetter(letters[src] ?? null),
       onDone: () => {
         stopRowRef.current = null;
         setPlayingRowIdx(null);
+        setPlayingLetter(null);
       },
     });
   };
@@ -287,7 +246,6 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
   };
 
   const selectedTrack = SAMPLE_TRACKS[activeTrackIdx];
-  const selectedAnalyzerWord = ANALYZER_DEMO_WORDS[selectedWordIdx];
 
   // Sentence reordering simulator
   const sentenceOrders = [
@@ -321,6 +279,23 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
   const mathLeft = Math.floor(mathBase / 10);
   const mathStep1 = mathLeft * (mathLeft + 1);
   const mathResult = mathStep1 * 100 + 25;
+
+  const openVarnamalaRow = (gIdx: number) => {
+    onOpenVarnamala?.();
+    const id = `varnamala-row-${gIdx}`;
+    let tries = 0;
+    const tick = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.classList.add('varnamala-row--flash');
+        window.setTimeout(() => el.classList.remove('varnamala-row--flash'), 1800);
+      } else if (tries++ < 40) {
+        window.setTimeout(tick, 100);
+      }
+    };
+    window.setTimeout(tick, 150);
+  };
 
   return (
     <section className="poq-section" id="proof-of-quality" aria-label="Proof of Quality - Experience Before You Sign Up">
@@ -363,16 +338,6 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
           >
             <span className="poq-tab-icon">🎧</span>
             <span>Sample Audio Recitations</span>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTab === 'analyzer'}
-            className={`poq-tab-btn${activeTab === 'analyzer' ? ' active' : ''}`}
-            onClick={() => handleTabChange('analyzer')}
-          >
-            <span className="poq-tab-icon">🔍</span>
-            <span>Word Analyzer &amp; Jodo UI</span>
           </button>
           <button
             type="button"
@@ -430,76 +395,43 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
             {activeSubLesson === 'sounds' && (
               <div className="poq-lesson-card" id="poq-audio-lesson">
                 <div className="poq-lesson-card-header">
-                  <span className="poq-lesson-badge">वर्णमाला · Alphabet &amp; Sound Places</span>
-                  <h3 className="poq-lesson-title">वर्णमाला · From Throat to Lips, the Original Sanskrit Order</h3>
-                  <p className="poq-lesson-desc">
-                    The same rows as our full Varṇamālā studio: vowels, the five vargas by स्थानम् (place of articulation), semivowels, sibilants, ayogavāha and conjuncts. Tap any letter to hear it, or play a whole row.
-                  </p>
-                  <a
-                    href="/swar/"
-                    className="poq-play-shiva-btn poq-full-varnamala-link"
-                    style={{ display: 'inline-block', marginTop: '0.6rem', textDecoration: 'none' }}
-                    onClick={(e) => {
-                      if (onOpenVarnamala) {
-                        e.preventDefault();
-                        onOpenVarnamala();
-                      }
-                    }}
-                  >
-                    पूर्ण-वर्णमाला · Open Full Varṇamālā → (word deconstructor, writing pad, flashcards)
-                  </a>
+                  <span className="poq-lesson-badge">वर्णमाला · Sample Syllables</span>
+                  <h3 className="poq-lesson-title">Every group, a few sounds — Play all recites the full row</h3>
                 </div>
-
-                <div className="poq-varnamala varnamala-rows">
-                  {VARNAMALA_LETTER_GROUPS.map((letters, groupIdx) => {
-                    const meta = getVarnamalaGroupMeta(groupIdx);
-                    const isRowPlaying = playingRowIdx === groupIdx;
+                <div className="poq-varnamala-groups">
+                  {VARNAMALA_LETTER_GROUPS.map((group, gIdx) => {
+                    const meta = getVarnamalaGroupMeta(gIdx);
+                    const samples = POQ_SAMPLES_PER_GROUP(group, gIdx);
+                    const rowActive = playingRowIdx === gIdx;
                     return (
-                      <div
-                        key={groupIdx}
-                        className={`varnamala-row varnamala-row--${groupIdx % 10}${meta.isVarga ? ' varnamala-row--varga' : ''}`}
-                      >
-                        <div className="varnamala-row-header">
-                          <div className="varnamala-row-header-title-wrap">
-                            <div className="varnamala-row-header-top">
-                              <span className="varnamala-row-label">{meta.title}</span>
-                              <span className="varnamala-row-badge">{meta.articulation}</span>
-                              <span className="varnamala-row-count-badge">{meta.count}</span>
-                            </div>
-                            <p className="varnamala-row-subtext">{meta.description}</p>
-                          </div>
+                      <React.Fragment key={gIdx}>
+                      <div className="poq-varnamala-group">
+                        <div className="poq-varnamala-group-head">
+                          <span className="poq-varnamala-group-title">{meta.title}</span>
                           <button
                             type="button"
-                            className={`textbook-playrow-btn${isRowPlaying ? ' textbook-playrow-btn--active' : ''}`}
-                            onClick={() => handlePlayRow(letters, groupIdx)}
-                            aria-pressed={isRowPlaying}
+                            className={`textbook-playrow-btn${rowActive ? ' textbook-playrow-btn--active' : ''}`}
+                            onClick={() => handlePlayRow(group, gIdx)}
+                            title={`Play all ${group.length} letters`}
                           >
-                            <span className="playrow-icon">{isRowPlaying ? '⏹' : '▶'}</span>
-                            <span className="playrow-text">{isRowPlaying ? 'Stop' : 'Play all'}</span>
+                            <span className="playrow-icon">{rowActive ? '⏹' : '▶'}</span>
+                            <span className="playrow-text">{rowActive ? 'Stop' : `Play all (${group.length})`}</span>
                           </button>
                         </div>
-                        {groupIdx === 1 && (
-                          <div className="varnamala-varga-columns-guide" aria-hidden="true">
-                            {VARGA_COLUMN_GUIDE.map((c) => (
-                              <div className="varga-guide-col" key={c.badge}>
-                                <span className="varga-guide-badge">{c.badge}</span>
-                                <strong>{c.title}</strong>
-                                <small>{c.sub}</small>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                        <div className={`varnamala-row-letters ${meta.layoutClass}`}>
-                          {letters.map((letter) => {
+                        <div className="poq-varnamala-teaser">
+                          {samples.map((letter) => {
                             const m = getLetterMnemonic(letter);
+                            const isPlaying = rowActive && playingLetter === letter;
                             return (
                               <button
                                 key={letter}
                                 type="button"
-                                className="varnamala-bouncy-card"
+                                className={`varnamala-bouncy-card${isPlaying ? ' varnamala-bouncy-card--playing' : ''}`}
                                 onClick={() => {
                                   if (stopRowRef.current) stopRowRef.current();
+                                  stopRowRef.current = null;
                                   setPlayingRowIdx(null);
+                                  setPlayingLetter(null);
                                   stopPronunciation();
                                   playPronunciation(letter);
                                 }}
@@ -507,18 +439,55 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
                               >
                                 <span className="v-card-akshara">{letter}</span>
                                 <small className="v-card-roman">{varnamalaLabel(letter)}</small>
-                                {m && (
-                                  <small className="poq-v-mnemonic">
-                                    {m.emoji} {m.wordSan}
-                                  </small>
-                                )}
                               </button>
                             );
                           })}
                         </div>
+                        <a
+                          href={`/swar/#varnamala-row-${gIdx}`}
+                          className="poq-varnamala-row-link"
+                          onClick={(e) => {
+                            if (onOpenVarnamala) {
+                              e.preventDefault();
+                              openVarnamalaRow(gIdx);
+                            }
+                          }}
+                        >
+                          {`See all ${group.length} · ${meta.title.split(' (')[0]} →`}
+                        </a>
                       </div>
+                      {gIdx === 0 && (
+                        <div className="poq-varnamala-decon-panel">
+                          <WordAnalyzerCard
+                            selection={deconSelection}
+                            onSelectWord={(w) => {
+                              setDeconSelection({ text: w, nonce: Date.now() });
+                              playLessonText(w);
+                            }}
+                          />
+                        </div>
+                      )}
+                      </React.Fragment>
                     );
                   })}
+                </div>
+                <div className="poq-teaser-actions">
+                  <button type="button" className="poq-play-shiva-btn" onClick={() => handleTabChange('audio')}>
+                    🔊 Full Audio →
+                  </button>
+                  <a
+                    href="/swar/"
+                    className="poq-play-shiva-btn poq-full-varnamala-link"
+                    style={{ textDecoration: 'none' }}
+                    onClick={(e) => {
+                      if (onOpenVarnamala) {
+                        e.preventDefault();
+                        onOpenVarnamala();
+                      }
+                    }}
+                  >
+                    More · पूर्ण-वर्णमाला →
+                  </a>
                 </div>
 
 
@@ -823,218 +792,6 @@ export const ProofOfQuality: React.FC<ProofOfQualityProps> = ({
                 </div>
               </div>
             </div>
-          </div>
-        )}
-
-        {/* ==================================================================
-            TAB 3: WORD ANALYZER & JODO STUDIO UI SHOWCASE
-            ================================================================== */}
-        {activeTab === 'analyzer' && (
-          <div className="poq-panel-body" role="tabpanel">
-            <div className="poq-analyzer-interactive-header">
-              <span className="poq-lesson-badge">पद-विश्लेषणम् · Interactive Word Deconstructor</span>
-              <h3 className="poq-lesson-title">Experience the Pāṇinian Morphological Engine</h3>
-              <p className="poq-lesson-desc">
-                Every word in our 6,000+ word library is broken down into its elemental root (धातु), prefix (उपसर्ग), and grammatical suffix (प्रत्यय). Tap any word below to see the live engine in action:
-              </p>
-            </div>
-
-            {/* Word Chips */}
-            <div className="poq-analyzer-word-chips">
-              {ANALYZER_DEMO_WORDS.map((w, idx) => (
-                <button
-                  key={w.devanagari}
-                  type="button"
-                  className={`poq-aw-chip${selectedWordIdx === idx ? ' active' : ''}`}
-                  onClick={() => {
-                    setSelectedWordIdx(idx);
-                    handlePlaySound(w.devanagari);
-                  }}
-                >
-                  <span>✨ {w.devanagari}</span>
-                </button>
-              ))}
-            </div>
-
-            {/* Live Morphological Breakdown Card */}
-            <div className="poq-analyzer-live-card">
-              <div className="poq-alc-top">
-                <div>
-                  <span className="poq-alc-word">{selectedAnalyzerWord.devanagari}</span>
-                  <span className="poq-alc-translit">[{selectedAnalyzerWord.transliteration}]</span>
-                </div>
-                <button
-                  type="button"
-                  className="poq-alc-audio-btn"
-                  onClick={() => handlePlaySound(selectedAnalyzerWord.devanagari)}
-                >
-                  <span>🔊 Pronounce Word</span>
-                </button>
-              </div>
-
-              {/* Flowchart Nodes */}
-              <div className="poq-flow-nodes">
-                <div className="poq-flow-node poq-flow-node--prefix">
-                  <div className="poq-fn-type">{selectedAnalyzerWord.prefix.type}</div>
-                  <div className="poq-fn-sanskrit">{selectedAnalyzerWord.prefix.sa}</div>
-                  <div className="poq-fn-gloss">{selectedAnalyzerWord.prefix.gloss}</div>
-                </div>
-
-                <div className="poq-flow-arrow">+</div>
-
-                <div className="poq-flow-node poq-flow-node--root">
-                  <div className="poq-fn-type">{selectedAnalyzerWord.root.type}</div>
-                  <div className="poq-fn-sanskrit">{selectedAnalyzerWord.root.sa}</div>
-                  <div className="poq-fn-gloss">{selectedAnalyzerWord.root.gloss}</div>
-                </div>
-
-                <div className="poq-flow-arrow">+</div>
-
-                <div className="poq-flow-node poq-flow-node--suffix">
-                  <div className="poq-fn-type">{selectedAnalyzerWord.suffix.type}</div>
-                  <div className="poq-fn-sanskrit">{selectedAnalyzerWord.suffix.sa}</div>
-                  <div className="poq-fn-gloss">{selectedAnalyzerWord.suffix.gloss}</div>
-                </div>
-
-                <div className="poq-flow-arrow">=</div>
-
-                <div className="poq-flow-node poq-flow-node--result">
-                  <div className="poq-fn-type">Final Deconstructed Form</div>
-                  <div className="poq-fn-sanskrit">{selectedAnalyzerWord.devanagari}</div>
-                  <div className="poq-fn-gloss">Grammar Verified ✓</div>
-                </div>
-              </div>
-
-              <div className="poq-alc-meanings">
-                <div>
-                  <strong>English Meaning:</strong> {selectedAnalyzerWord.meaningEn}
-                </div>
-                <div>
-                  <strong>हिन्दी अर्थ:</strong> {selectedAnalyzerWord.meaningHi}
-                </div>
-                <div style={{ width: '100%', fontSize: '0.82rem', color: '#64748b', borderTop: '1px solid #fed7aa', paddingTop: '0.5rem' }}>
-                  <strong>Pāṇinian Derivation Note:</strong> {selectedAnalyzerWord.grammarNotes}
-                </div>
-              </div>
-            </div>
-
-            {/* Visual UI Screenshots & System Mockups */}
-            <div style={{ marginBottom: '1rem' }}>
-              <span className="poq-lesson-badge">UI WALKTHROUGH &amp; SCREENSHOTS</span>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.85rem' }}>
-                How the Actual Reader &amp; Puzzle Studio Looks
-              </h4>
-            </div>
-
-            <div className="poq-mockup-gallery">
-              {/* Mockup Card 1: Jodo Studio */}
-              <div className="poq-mockup-card">
-                <div className="poq-mockup-top-bar">
-                  <div className="poq-mockup-dots">
-                    <span className="poq-mockup-dot" />
-                    <span className="poq-mockup-dot" />
-                    <span className="poq-mockup-dot" />
-                  </div>
-                  <span>Jodo Studio · 7-Shelf Syllable Assembly</span>
-                </div>
-                <div className="poq-mockup-view">
-                  <div className="poq-mv-title">Interactive Drag &amp; Drop Tile Puzzle</div>
-                  <div className="poq-mv-desc">
-                    Assemble 6,000+ words tile by tile. Instant audio feedback on every letter snap:
-                  </div>
-                  <div className="poq-mock-tiles-tray">
-                    <span className="poq-mock-tile">सं (sam)</span>
-                    <span className="poq-mock-tile">स्कृ (skṛ)</span>
-                    <span className="poq-mock-tile">तम् (tam)</span>
-                  </div>
-                  <div style={{ fontSize: '0.78rem', color: '#15803d', fontWeight: 700 }}>
-                    ✓ Perfect Match: संस्कृतम् (Refined Language)
-                  </div>
-                </div>
-              </div>
-
-              {/* Mockup Card 2: 7 Vibhakti Case Matrix */}
-              <div className="poq-mockup-card">
-                <div className="poq-mockup-top-bar">
-                  <div className="poq-mockup-dots">
-                    <span className="poq-mockup-dot" />
-                    <span className="poq-mockup-dot" />
-                    <span className="poq-mockup-dot" />
-                  </div>
-                  <span>7 Vibhakti Case Declension Matrix</span>
-                </div>
-                <div className="poq-mockup-view">
-                  <div className="poq-mv-title">Instant Noun Declension Table</div>
-                  <div className="poq-mv-desc">
-                    Click any noun in the textbook to view its 21-case grid across Singular, Dual, and Plural:
-                  </div>
-                  <table className="poq-mock-matrix-table">
-                    <thead>
-                      <tr>
-                        <th>Case (विभक्तिः)</th>
-                        <th>एकवचनम् (Singular)</th>
-                        <th>बहुवचनम् (Plural)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1st (प्रथमा - Subject)</td>
-                        <td>रामः (rāmaḥ)</td>
-                        <td>रामाः (rāmāḥ)</td>
-                      </tr>
-                      <tr>
-                        <td>2nd (द्वितीया - Object)</td>
-                        <td>रामम् (rāmam)</td>
-                        <td>रामान् (rāmān)</td>
-                      </tr>
-                      <tr>
-                        <td>3rd (तृतीया - By/With)</td>
-                        <td>रामेण (rāmeṇa)</td>
-                        <td>रामैः (rāmaiḥ)</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              {/* Mockup Card 3: Reverse Word Deconstruction */}
-              <div className="poq-mockup-card">
-                <div className="poq-mockup-top-bar">
-                  <div className="poq-mockup-dots">
-                    <span className="poq-mockup-dot" />
-                    <span className="poq-mockup-dot" />
-                    <span className="poq-mockup-dot" />
-                  </div>
-                  <span>Reverse Word Deconstructor Flow</span>
-                </div>
-                <div className="poq-mockup-view">
-                  <div className="poq-mv-title">Grammatical Breakdown Popover</div>
-                  <div className="poq-mv-desc">
-                    Click any compound word to inspect sandhi splits, verb roots, and trilingual dictionary glosses:
-                  </div>
-                  <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '0.65rem' }}>
-                    <div style={{ fontWeight: 800, color: '#3d1b04', fontSize: '0.9rem' }}>
-                      पठनम् = √पठ् (To Read) + -ल्युट् (Action Noun)
-                    </div>
-                    <div style={{ fontSize: '0.76rem', color: '#64748b', marginTop: '0.2rem' }}>
-                      Meaning: The act of reading / study · Neuter Noun
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {onOpenGrammar && (
-              <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                <button
-                  type="button"
-                  className="poq-rw-secondary-cta"
-                  onClick={onOpenGrammar}
-                >
-                  <span>📐 Explore Full Grammar Studio &amp; Verb Paradigms ➔</span>
-                </button>
-              </div>
-            )}
           </div>
         )}
 

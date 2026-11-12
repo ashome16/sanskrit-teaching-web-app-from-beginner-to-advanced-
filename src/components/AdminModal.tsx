@@ -416,6 +416,35 @@ const AdminModal: React.FC = () => {
                     </div>
                   </div>
 
+                  
+                  {/* Class 7 labs admin preview board */}
+                  <div className="admin-inventory-card" style={{ marginTop: '1rem' }}>
+                    <div className="admin-inventory-title">
+                      Class 7 labs (admin preview)
+                    </div>
+                    <p style={{ margin: '0 0 0.75rem', fontSize: '0.85rem', color: '#475569', lineHeight: 1.5 }}>
+                      Visible to admins and paid subscribers; hidden from guests/trial until subscribed.
+                      Hub games on Vijñāna Lab stay public; Class 7 lab pills appear when an admin session is on.
+                    </p>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                      <a className="admin-btn-secondary" href="/vignana-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Hub · /vignana-lab/</a>
+                      <a className="admin-btn-secondary" href="/konark-think-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Konark</a>
+                      <a className="admin-btn-secondary" href="/patina-think-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Patina</a>
+                      <a className="admin-btn-secondary" href="/cipher-think-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Cipher</a>
+                      <a className="admin-btn-secondary" href="/biodome-think-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Bio-Dome</a>
+                      <a className="admin-btn-secondary" href="/uddalaka-think-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Uddālaka</a>
+                      <a className="admin-btn-secondary" href="/cosmic-alignment-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Cosmic Alignment</a>
+                      <a className="admin-btn-secondary" href="/stepwell-think-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Stepwell</a>
+                      <a className="admin-btn-secondary" href="/wootz-think-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Wootz</a>
+                      <a className="admin-btn-secondary" href="/susruta-think-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Suśruta</a>
+                      <a className="admin-btn-secondary" href="/govardhan-soil-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Govardhan</a>
+                      <a className="admin-btn-secondary" href="/krishi-think-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Kṛṣi</a>
+                      <a className="admin-btn-secondary" href="/food-sovereignty-lab/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Anna-Svarāj</a>
+                      <a className="admin-btn-secondary" href="/iks-experiential-workbook/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>IKS Workbook</a>
+                      <a className="admin-btn-secondary" href="/wonders-science-quiz/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>Wonders Quiz</a>
+                    </div>
+                  </div>
+
                   {/* Quick Guide */}
                   <div style={{ background: '#f8fafc', padding: '1rem 1.25rem', borderRadius: '10px', border: '1px solid #e2e8f0', fontSize: '0.85rem' }}>
                     <strong>💡 Administrator Tips:</strong>

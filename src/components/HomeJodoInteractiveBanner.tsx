@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { playPronunciation } from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
 import '../styles/home-jodo-interactive-banner.css';
+import '../styles/home-calm-overrides.css';
 
 export interface HomeJodoInteractiveBannerProps {
   onOpenBoard: (mode?: 'jodo' | 'match' | 'maze' | 'prahelika', category?: string) => void;

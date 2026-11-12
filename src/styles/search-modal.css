@@ -553,6 +553,19 @@
   line-height: 1.2;
 }
 
+/* Laptop / mid desktop: hide Search label + kbd early so tools row stays light. */
+@media (min-width: 901px) and (max-width: 1360px) {
+  .dashboard-search-trigger-btn.dashboard-search-trigger-btn--site .dashboard-search-trigger-text,
+  .dashboard-search-trigger-btn.dashboard-search-trigger-btn--site .dashboard-search-trigger-kbd {
+    display: none;
+  }
+
+  .dashboard-search-trigger-btn.dashboard-search-trigger-btn--site {
+    padding: 0.38rem 0.55rem;
+    gap: 0;
+  }
+}
+
 @media (max-width: 900px) {
   .dashboard-search-trigger-text,
   .dashboard-search-trigger-kbd {

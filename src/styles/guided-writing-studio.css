@@ -454,6 +454,7 @@
 .gws-slate-modes-bar {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   border-bottom: 2px solid #f1f5f9;
   padding-bottom: 0.65rem;
@@ -698,4 +699,430 @@
 
 .gws-feedback-card.needs-work .gws-feedback-tips {
   color: #b45309;
+}
+
+/* Interactive Model Sanskrit Tokens & Audio Playback State */
+.gws-audio-listen-btn.playing {
+  background: #b45309;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.28);
+}
+
+.gws-audio-listen-btn.playing:hover {
+  background: #92400e;
+}
+
+.gws-model-tokens-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem 0.5rem;
+  align-items: center;
+  margin: 0.2rem 0 0.35rem;
+}
+
+.gws-model-token {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', 'Kohinoor Devanagari', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.45;
+  color: #1b352f;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid #fed7aa;
+  border-radius: 10px;
+  padding: 0.12em 0.42em 0.2em;
+  cursor: pointer;
+  overflow: visible;
+  transition: transform 0.14s ease, background-color 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
+}
+
+.gws-model-token:hover {
+  background: #fff7ed;
+  border-color: #f59e0b;
+  transform: translateY(-1px);
+}
+
+.gws-model-token.active {
+  background: #fef3c7;
+  border-color: #d97706;
+  color: #7c2d12;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.22);
+}
+
+.gws-notebook-ink-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 0.65rem;
+}
+
+/* ==========================================================================
+   लेखनशाला · WordPracticeBook (Trace & Copy Notebook — Overhang & Long-Word Safe)
+   ========================================================================== */
+
+.wpb {
+  background: #ffffff;
+  border: 1px solid #dbe5f0;
+  border-radius: 14px;
+  padding: 1.15rem 1.25rem 1.25rem;
+  color: #1e293b;
+}
+
+.wpb-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.wpb-heading h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.wpb-heading p {
+  margin: 0.2rem 0 0;
+  font-size: 0.86rem;
+  color: #475569;
+}
+
+.wpb-heading > button,
+.wpb-chain-picker > button,
+.wpb-words > button,
+.wpb-custom > button,
+.wpb-model-actions > button,
+.wpb-toolbar > button {
+  appearance: none;
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #1e293b;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.wpb-heading > button:hover:not(:disabled),
+.wpb-chain-picker > button:hover:not(:disabled),
+.wpb-words > button:hover:not(:disabled),
+.wpb-custom > button:hover:not(:disabled),
+.wpb-model-actions > button:hover:not(:disabled),
+.wpb-toolbar > button:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.wpb-model-actions > button:disabled,
+.wpb-toolbar > button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.wpb-chain-picker > button[aria-pressed='true'],
+.wpb-words > button[aria-pressed='true'],
+.wpb-model-actions > button[aria-pressed='true'],
+.wpb-toolbar > button[aria-pressed='true'] {
+  background: #e0effe;
+  border-color: #60a5fa;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+.wpb-chain-picker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.88rem;
+  color: #1e293b;
+}
+
+.wpb-chain-note {
+  margin: 0 0 0.85rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 9px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.wpb-picker {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(190px, 1.3fr) auto;
+  gap: 0.75rem;
+  align-items: end;
+  margin-bottom: 0.85rem;
+}
+
+@media (max-width: 680px) {
+  .wpb-picker {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+}
+
+.wpb-picker label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.wpb-picker select,
+.wpb-picker input,
+.wpb-toolbar select {
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #0f172a;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.48rem 0.65rem;
+}
+
+.wpb-picker > span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  padding-bottom: 0.5rem;
+}
+
+.wpb-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.48rem;
+  margin-bottom: 0.85rem;
+}
+
+.wpb-words > button {
+  font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', 'Kohinoor Devanagari', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  padding: 0.36rem 0.9rem 0.44rem;
+  overflow: visible;
+}
+
+.wpb-words > p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.wpb-custom {
+  margin-bottom: 0.95rem;
+  font-size: 0.86rem;
+  color: #334155;
+}
+
+.wpb-custom summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.wpb-custom p {
+  margin: 0.45rem 0 0;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.wpb-model {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  background: #f3f7fc;
+  border: 1px solid #dde7f3;
+  border-radius: 12px;
+  padding: 0.95rem 1.15rem;
+  margin-bottom: 0.95rem;
+  overflow: visible;
+}
+
+.wpb-step {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.wpb-model strong {
+  display: inline-block;
+  font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', 'Kohinoor Devanagari', sans-serif;
+  font-size: clamp(1.9rem, 4.6vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.52;
+  color: #16243b;
+  /* Extra right & bottom glyph padding prevents Mac/WebKit virāma (मित्रम्) & visarga overhang clipping */
+  padding: 0.08em 0.24em 0.18em 0.04em;
+  max-width: 100%;
+  overflow: visible;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.wpb-model-gloss {
+  flex: 1 1 180px;
+  font-size: 0.92rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.wpb-model-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-left: auto;
+}
+
+.wpb-toolbar {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.wpb-toolbar label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.wpb-toolbar input[type='color'] {
+  width: 40px;
+  height: 36px;
+  padding: 2px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.wpb-practised[aria-pressed='true'] {
+  background: #dcfce7 !important;
+  border-color: #22c55e !important;
+  color: #14532d !important;
+}
+
+.wpb-message {
+  min-height: 1.15rem;
+  margin: 0.25rem 0 0.45rem;
+  font-size: 0.82rem;
+  color: #1e40af;
+}
+
+.wpb-surface-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #d5e1ee;
+  border-radius: 12px;
+  background: #fffefa;
+}
+
+.wpb-surface {
+  position: relative;
+  overflow: visible;
+  background: #fffefa;
+  user-select: none;
+}
+
+.wpb-guide {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.wpb-row-label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  fill: #64748b;
+}
+
+.wpb-ink {
+  position: relative;
+  z-index: 1;
+  display: block;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.wpb-help {
+  margin: 0.65rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #64748b;
+}
+
+#writing-practice-print-root {
+  display: none;
+}
+
+@media print {
+  body.writing-practice-print > *:not(#writing-practice-print-root) {
+    display: none !important;
+  }
+
+  body.writing-practice-print #writing-practice-print-root {
+    display: block !important;
+    padding: 18mm 14mm;
+    background: #ffffff;
+    color: #0f172a;
+    font-family: system-ui, -apple-system, 'Noto Sans Devanagari', sans-serif;
+  }
+
+  body.writing-practice-print #writing-practice-print-root h1 {
+    margin: 0 0 4mm;
+    font-size: 16pt;
+  }
+
+  body.writing-practice-print #writing-practice-print-root h2 {
+    display: inline-block;
+    margin: 0 0 2mm;
+    padding: 0 0.2em 0.14em 0;
+    font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', sans-serif;
+    font-size: 28pt;
+    line-height: 1.45;
+  }
+
+  body.writing-practice-print #writing-practice-print-root svg {
+    overflow: visible;
+    margin: 4mm 0;
+  }
 }
