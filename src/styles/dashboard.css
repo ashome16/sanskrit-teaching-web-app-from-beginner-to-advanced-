@@ -672,6 +672,33 @@ button.dashboard-nav-group-label:focus-visible,
   border-color: rgba(2, 132, 199, 0.3);
 }
 
+/* Free Trial Button in Top Navigation */
+.dashboard-nav-trial-btn {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%) !important;
+  border: 1.5px solid #10b981 !important;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.15) !important;
+}
+
+.dashboard-nav-trial-btn:hover {
+  background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%) !important;
+  border-color: #059669 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25) !important;
+}
+
+.dashboard-nav-sanskrit--trial {
+  color: #065f46 !important;
+  background: rgba(16, 185, 129, 0.18) !important;
+  border-color: rgba(5, 150, 105, 0.45) !important;
+  font-weight: 800 !important;
+}
+
+.dashboard-nav-secondary--trial {
+  color: #047857 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+}
+
 /* Games navigation group styling */
 .dashboard-nav-group--games {
   border-color: rgba(56, 189, 248, 0.45);

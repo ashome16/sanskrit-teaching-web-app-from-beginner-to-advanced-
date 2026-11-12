@@ -1351,7 +1351,7 @@ const Dashboard: React.FC = () => {
     setIsMoreNavOpen(false);
     setIsSimNavOpen(false);
   }, [activeView]);
-  const moreViews: string[] = ['assignment-eval', 'vedic-maths', 'resources', 'course', 'about'];
+  const moreViews: string[] = ['assignment-eval', 'resources', 'course', 'about'];
   return (
     <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}${isAnalyzerCollapsed ? ' dashboard--analyzer-collapsed' : ''}`}>
       <header className="dashboard-header">
@@ -1392,7 +1392,7 @@ const Dashboard: React.FC = () => {
               >
                 <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true">⚛️</span>
                 <span className="dashboard-nav-sanskrit">विज्ञान-प्रयोगशाला</span>
-                <span className="dashboard-nav-secondary">Simulations ▾</span>
+                <span className="dashboard-nav-secondary">Science Simulations ▾</span>
               </button>
               {isSimNavOpen && (
                 <div className="dashboard-sim-menu" role="menu" aria-label="Science Simulations Menu">
@@ -1439,6 +1439,36 @@ const Dashboard: React.FC = () => {
                 </div>
               )}
             </div>
+            <button
+              type="button"
+              className={`dashboard-nav-item dashboard-nav-stacked${activeView === 'vedic-maths' ? ' active' : ''}`}
+              onClick={() => navigateToView('vedic-maths')}
+              title="Vedic Mathematics (वैदिक-गणितम् · 16 Sutras, Mental Maths & Sulba Geometry)"
+            >
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true">🧮</span>
+              <span className="dashboard-nav-sanskrit">वैदिक-गणितम्</span>
+              <span className="dashboard-nav-secondary">Vedic Maths</span>
+            </button>
+            <button
+              type="button"
+              className="dashboard-nav-item dashboard-nav-stacked"
+              onClick={() => setIsOnlineClassesOpen(true)}
+              title="EdNet Gurukul Live Online Classes (ऑनलाइन-वर्गाः)"
+            >
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true">🎓</span>
+              <span className="dashboard-nav-sanskrit">ऑनलाइन-वर्गाः</span>
+              <span className="dashboard-nav-secondary">Online Classes</span>
+            </button>
+            <button
+              type="button"
+              className="dashboard-nav-item dashboard-nav-stacked dashboard-nav-trial-btn"
+              onClick={() => openAuthModal('register')}
+              title="Start 14-Day Free Trial · Zero Cost"
+            >
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.15rem', lineHeight: 1 }} aria-hidden="true">🎁</span>
+              <span className="dashboard-nav-sanskrit dashboard-nav-sanskrit--trial">निःशुल्कम्</span>
+              <span className="dashboard-nav-secondary dashboard-nav-secondary--trial">Free Trial · Zero Cost</span>
+            </button>
           </div>
           <div className="dashboard-nav-row dashboard-nav-row--secondary">
             <button
@@ -1546,7 +1576,6 @@ const Dashboard: React.FC = () => {
           <div className="dashboard-more-menu" role="menu" aria-label="More learning views">
             {([
               ['assignment-eval', '✍️', 'लेखन-शाला', 'Writing Studio'],
-              ['vedic-maths', '🧮', 'वैदिक-गणितम्', 'Vedic Maths'],
               ['resources', '📚', 'साधनानि', 'Free Resources'],
               ['course', '🧠', 'संस्कृत-चिन्तनम्', 'Thinking Course'],
               ['about', '🏛️', 'परिचयः', 'About EdNet Learn'],
