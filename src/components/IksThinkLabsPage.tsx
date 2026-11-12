@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import '../styles/iks-think-labs.css';
 import { IksLabGraphic } from './scienceLab/IksLabSchematics';
 import { IKS_LAB_QUIZZES } from '../data/iksQuizzesData';
+import { IksCertificateModal } from './IksCertificateModal';
 
 export interface IksLabItem {
   id: string;
@@ -475,6 +476,76 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
   const [quizScore, setQuizScore] = useState<number>(0);
   const [isQuizCompleted, setIsQuizCompleted] = useState<boolean>(false);
 
+  // Certificate Modal State
+  const [isCertModalOpen, setIsCertModalOpen] = useState<boolean>(false);
+
+  // Interactive In-Card Simulation State for Metallurgy (MET-01 Patina & MET-02 Wootz)
+  const [patinaPhosphorus, setPatinaPhosphorus] = useState<number>(0.25);
+  const [patinaHumidity, setPatinaHumidity] = useState<number>(75);
+  const [wootzTemp, setWootzTemp] = useState<number>(1350);
+  const [wootzCarbon, setWootzCarbon] = useState<number>(1.5);
+
+  const patinaTelemetry = useMemo(() => {
+    const isHighP = patinaPhosphorus >= 0.20;
+    const isModerateP = patinaPhosphorus >= 0.12;
+
+    if (isHighP) {
+      const barrier = Math.min(100, Math.round((patinaPhosphorus / 0.25) * 100));
+      return {
+        statusClass: 'is-success',
+        statusText: 'Active Passivation: δ-FeOOH (Misawite) Protective Barrier',
+        desc: `High slag phosphorus (${patinaPhosphorus.toFixed(2)}%) catalytically converts initial iron rust into an impenetrable crystalline 100µm misawite film. Corrosion rate: 0.00 mm/century.`,
+        barrierPercent: barrier,
+        barrierColor: '#059669',
+      };
+    } else if (isModerateP) {
+      return {
+        statusClass: 'is-warning',
+        statusText: 'Partial Passivation: Localized Pitting Risk',
+        desc: `Marginal phosphorus (${patinaPhosphorus.toFixed(2)}%) shields only dense slag fibers. High humidity (${patinaHumidity}% RH) causes localized surface pitting in unpassivated voids.`,
+        barrierPercent: 55,
+        barrierColor: '#d97706',
+      };
+    } else {
+      return {
+        statusClass: 'is-danger',
+        statusText: 'Severe Flaking Corrosion (Modern Mild Steel Behavior)',
+        desc: `Phosphorus below 0.10% fails to catalyze misawite crystallization. Unprotected hydrated ferric oxide (rust) flakes off continuously at ~0.15 mm/year.`,
+        barrierPercent: 18,
+        barrierColor: '#dc2626',
+      };
+    }
+  }, [patinaPhosphorus, patinaHumidity]);
+
+  const wootzTelemetry = useMemo(() => {
+    if (wootzTemp >= 1250 && wootzCarbon >= 1.2) {
+      const quality = Math.min(100, Math.round(((wootzTemp - 1200) / 250) * 50 + (wootzCarbon / 1.5) * 50));
+      return {
+        statusClass: 'is-success',
+        statusText: 'Hyper-Eutectoid Crucible Steel Smelted (Ukku)',
+        desc: `Sealed refractory Mūṣā crucible maintains reducing atmosphere >1,250°C. Spheroidized cementite micro-bands and carbon nanotubes form the wavy Damascus watering pattern (Jauhar).`,
+        qualityPercent: quality,
+        qualityColor: '#059669',
+      };
+    } else if (wootzTemp < 1200) {
+      return {
+        statusClass: 'is-danger',
+        statusText: 'Under-Temperature: Solid-State Fusion Failure',
+        desc: `Furnace temperature (${wootzTemp}°C) is below crucible smelting threshold (1,250°C). Magnetite ore remains unliquified; carbonaceous Cassia leaves burn into ash before diffusing into iron.`,
+        qualityPercent: 22,
+        qualityColor: '#dc2626',
+      };
+    } else {
+      return {
+        statusClass: 'is-warning',
+        statusText: 'Hypo-Eutectoid Low-Carbon Steel (<1.0% C)',
+        desc: `Iron is molten at ${wootzTemp}°C, but carbon (${wootzCarbon.toFixed(1)}% C) is insufficient for Damascus cementite carbide crystallization. The blade lacks razor-edge resilience.`,
+        qualityPercent: 50,
+        qualityColor: '#ea580c',
+      };
+    }
+  }, [wootzTemp, wootzCarbon]);
+
   useEffect(() => {
     try {
       const path = window.location.pathname.replace(/\/+$/, '');
@@ -671,6 +742,14 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
               <span className="iks-tier-pill" title="Current Academic Rank">
                 <span>{currentTier.title}</span>
               </span>
+              <button
+                type="button"
+                className="iks-cert-claim-btn"
+                onClick={() => setIsCertModalOpen(true)}
+                title="Open verified IKS Certificate of Mastery Studio"
+              >
+                Claim Certificate
+              </button>
             </div>
 
             <div className="iks-mode-toggle-wrap">
@@ -871,6 +950,127 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
                   <IksLabGraphic id={lab.id} />
                 </div>
 
+                {/* In-Card Interactive Simulation Workbench for Metallurgy Labs */}
+                {lab.id === 'patina' && (
+                  <div className="iks-card-workbench">
+                    <div className="iks-workbench-header">
+                      <span className="iks-workbench-title">Interactive Passivation Simulator</span>
+                      <span className="iks-workbench-badge">Solid-State Chemistry</span>
+                    </div>
+
+                    <div className="iks-slider-row">
+                      <div className="iks-slider-label">
+                        <span>Slag Phosphorus Content:</span>
+                        <strong>{patinaPhosphorus.toFixed(2)}% P</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={0.05}
+                        max={0.4}
+                        step={0.01}
+                        value={patinaPhosphorus}
+                        onChange={(e) => setPatinaPhosphorus(parseFloat(e.target.value))}
+                        className="iks-slider-input"
+                        aria-label="Slag Phosphorus Content percentage"
+                      />
+                    </div>
+
+                    <div className="iks-slider-row">
+                      <div className="iks-slider-label">
+                        <span>Ambient Relative Humidity:</span>
+                        <strong>{patinaHumidity}% RH</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={20}
+                        max={95}
+                        step={1}
+                        value={patinaHumidity}
+                        onChange={(e) => setPatinaHumidity(parseInt(e.target.value, 10))}
+                        className="iks-slider-input"
+                        aria-label="Ambient Relative Humidity percentage"
+                      />
+                    </div>
+
+                    <div className="iks-telemetry-box">
+                      <div className={`iks-telemetry-indicator ${patinaTelemetry.statusClass}`}>
+                        <span>●</span>
+                        <span>{patinaTelemetry.statusText}</span>
+                      </div>
+                      <p style={{ margin: 0 }}>{patinaTelemetry.desc}</p>
+                      <div className="iks-gauge-bar-wrap">
+                        <div
+                          className="iks-gauge-bar-fill"
+                          style={{
+                            width: `${patinaTelemetry.barrierPercent}%`,
+                            background: patinaTelemetry.barrierColor,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {lab.id === 'wootz' && (
+                  <div className="iks-card-workbench">
+                    <div className="iks-workbench-header">
+                      <span className="iks-workbench-title">Mūṣā Crucible Pyrotechnology Simulator</span>
+                      <span className="iks-workbench-badge">Crucible Steel</span>
+                    </div>
+
+                    <div className="iks-slider-row">
+                      <div className="iks-slider-label">
+                        <span>Crucible Furnace Temp:</span>
+                        <strong>{wootzTemp}°C</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={900}
+                        max={1450}
+                        step={25}
+                        value={wootzTemp}
+                        onChange={(e) => setWootzTemp(parseInt(e.target.value, 10))}
+                        className="iks-slider-input"
+                        aria-label="Crucible Furnace Temperature in Celsius"
+                      />
+                    </div>
+
+                    <div className="iks-slider-row">
+                      <div className="iks-slider-label">
+                        <span>Carbon Infusion:</span>
+                        <strong>{wootzCarbon.toFixed(1)}% C</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={0.2}
+                        max={1.8}
+                        step={0.1}
+                        value={wootzCarbon}
+                        onChange={(e) => setWootzCarbon(parseFloat(e.target.value))}
+                        className="iks-slider-input"
+                        aria-label="Carbon Content percentage"
+                      />
+                    </div>
+
+                    <div className="iks-telemetry-box">
+                      <div className={`iks-telemetry-indicator ${wootzTelemetry.statusClass}`}>
+                        <span>●</span>
+                        <span>{wootzTelemetry.statusText}</span>
+                      </div>
+                      <p style={{ margin: 0 }}>{wootzTelemetry.desc}</p>
+                      <div className="iks-gauge-bar-wrap">
+                        <div
+                          className="iks-gauge-bar-fill"
+                          style={{
+                            width: `${wootzTelemetry.qualityPercent}%`,
+                            background: wootzTelemetry.qualityColor,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <div className="iks-card-inquiry-box">
                   <span className="iks-card-inquiry-label">Inquiry Question</span>
                   <p style={{ margin: 0 }}>{lab.inquiryPrompt}</p>
@@ -1052,6 +1252,15 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
           </div>
         </div>
       )}
+
+      {/* IKS Certificate of Mastery Modal */}
+      <IksCertificateModal
+        isOpen={isCertModalOpen}
+        onClose={() => setIsCertModalOpen(false)}
+        points={progress.points}
+        masteredCount={masteredCount}
+        isTeacherMode={progress.isTeacherMode}
+      />
 
       {/* Footer Callout */}
       <footer className="iks-hub-callout">

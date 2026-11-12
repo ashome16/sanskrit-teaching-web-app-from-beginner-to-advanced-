@@ -798,6 +798,27 @@
   flex-wrap: wrap;
 }
 
+.iks-cert-claim-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.35);
+  transition: all 0.2s ease;
+}
+
+.iks-cert-claim-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.45);
+}
+
 .iks-points-badge {
   display: inline-flex;
   align-items: center;
@@ -1167,4 +1188,217 @@
   color: #475569;
   line-height: 1.5;
   margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   IKS CERTIFICATE STUDIO MODAL & CANVAS WRAP
+   ========================================================================== */
+.iks-cert-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(6px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.iks-cert-modal {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 960px;
+  max-height: 94vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  border: 1.5px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.iks-cert-header {
+  padding: 1.25rem 1.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fdfbf7;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.iks-cert-body {
+  padding: 1.5rem 1.75rem;
+}
+
+.iks-cert-controls {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.iks-cert-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  outline: none;
+  background: #ffffff;
+}
+
+.iks-cert-input:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+.iks-cert-actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.iks-cert-btn {
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.iks-cert-btn--gold {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+}
+
+.iks-cert-btn--gold:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+}
+
+.iks-cert-btn--primary {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.iks-cert-btn--primary:hover {
+  background: #0369a1;
+}
+
+.iks-cert-canvas-wrap {
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  background: #fdfbf7;
+}
+
+/* ==========================================================================
+   INTERACTIVE IN-CARD EXPERIMENT SLIDER WORKBENCHES
+   ========================================================================== */
+.iks-card-workbench {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  margin: 0.85rem 0;
+}
+
+.iks-workbench-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.iks-workbench-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.iks-workbench-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: #e2e8f0;
+  color: #334155;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+
+.iks-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.65rem;
+}
+
+.iks-slider-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.iks-slider-input {
+  width: 100%;
+  accent-color: #0284c7;
+  cursor: pointer;
+}
+
+.iks-telemetry-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: #1e293b;
+}
+
+.iks-telemetry-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+}
+
+.iks-telemetry-indicator.is-success {
+  color: #059669;
+}
+
+.iks-telemetry-indicator.is-warning {
+  color: #d97706;
+}
+
+.iks-telemetry-indicator.is-danger {
+  color: #dc2626;
+}
+
+.iks-gauge-bar-wrap {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 0.4rem;
+}
+
+.iks-gauge-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
