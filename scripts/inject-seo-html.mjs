@@ -33,10 +33,13 @@ const PATH_BY_VIEW = {
   certificate: '/certificate',
   'assignment-eval': '/evaluate-assignment',
   'science-lab': '/vignana-lab',
+  about: '/about',
 };
 
 const REQUIRED_PATHS = [
   '/',
+  '/about',
+  '/about-us',
   '/course',
   '/reader',
   '/barakhadi',
@@ -694,6 +697,7 @@ routes.push({ pathname: '/play-2-learn', ...preschool });
 routes.push({ pathname: '/iks', ...iks });
 routes.push({ pathname: '/iks-labs', ...iks });
 routes.push({ pathname: '/vedic-sciences', ...iks });
+routes.push({ pathname: '/about-us', ...views.about });
 routes.push({
   pathname: '/swar',
   title: 'Swar · स्वर — Sanskrit Workbook, Quizzes & Foundation Hub | EdNet Learn',

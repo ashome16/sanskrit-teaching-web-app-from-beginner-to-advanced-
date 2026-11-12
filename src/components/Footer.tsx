@@ -19,6 +19,7 @@ export interface FooterProps {
   onOpenRoadmap?: () => void;
   onOpenCourse?: () => void;
   onOpenScienceLab?: () => void;
+  onOpenAbout?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -38,6 +39,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenRoadmap,
   onOpenCourse,
   onOpenScienceLab,
+  onOpenAbout,
 }) => {
   const [legalModal, setLegalModal] = useState<LegalModalType>(null);
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
@@ -371,6 +373,19 @@ export const Footer: React.FC<FooterProps> = ({
                   <span className="nav-btn-text">कोशश्रीः · Sanskrit Dictionary</span>
                 </a>
               </li>
+              {onOpenAbout && (
+                <li>
+                  <button
+                    type="button"
+                    className="footer-nav-btn"
+                    onClick={onOpenAbout}
+                    style={{ fontWeight: 700 }}
+                  >
+                    <span className="nav-btn-icon">🏛️</span>
+                    <span className="nav-btn-text">About EdNet Learn · Our Story</span>
+                  </button>
+                </li>
+              )}
               <li>
                 <button
                   type="button"
@@ -435,6 +450,19 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
 
           <div className="footer-legal-links">
+            {onOpenAbout && (
+              <>
+                <button
+                  type="button"
+                  className="footer-legal-btn"
+                  onClick={onOpenAbout}
+                  style={{ fontWeight: 700, color: '#fef08a' }}
+                >
+                  About EdNet Learn
+                </button>
+                <span className="legal-sep">·</span>
+              </>
+            )}
             <button
               type="button"
               className="footer-legal-btn"

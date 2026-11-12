@@ -30,6 +30,7 @@ const CertificatePage = lazy(() => import('./CertificatePage'));
 const ScienceLab = lazy(() => import('./scienceLab/ScienceLab'));
 const SanskritAssignmentEvaluator = lazy(() => import('./SanskritAssignmentEvaluator'));
 const IksThinkLabsPage = lazy(() => import('./IksThinkLabsPage'));
+const AboutEdNetPage = lazy(() => import('./AboutEdNetPage'));
 
 // Lazy-loaded dialogs & modals
 const AuthModal = lazy(() => import('./AuthModal'));
@@ -87,7 +88,15 @@ type DashboardView =
   | 'science-lab'
   | 'assignment-eval'
   | 'intent-landing'
-  | 'iks';
+  | 'iks'
+  | 'about';
+
+const ABOUT_PATHS = new Set([
+  '/about',
+  '/about-us',
+  '/about-ednet',
+  '/about-ednet-learn',
+]);
 
 const PHILOSOPHY_PATHS = new Set([
   '/philosophy',
@@ -215,6 +224,10 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
   iks: {
     title: 'Indian Knowledge Systems (IKS) Experiential Think Labs | EdNet Learn',
     desc: 'Explore 14 curriculum-linked experiential STEM inquiry sandboxes in Indian Knowledge Systems (IKS): solar astronomy sundials, 1,600-year Delhi pillar passivation metallurgy, Kaṭapayādi cipher, and Suśruta surgery.',
+  },
+  about: {
+    title: 'About EdNet Learn | Learn Through Play – Sanskrit, Vedic Maths & Science',
+    desc: 'EdNet Learn is a free, play-based platform for exploring Sanskrit, Vedic Mathematics, Indian Knowledge Systems and science through games, stories and simulations.',
   },
 };
 
@@ -349,10 +362,12 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/sanskrit-writing-paths' ||
     clean === '/writing-assignments'
   ) return 'assignment-eval';
+  if (ABOUT_PATHS.has(clean)) return 'about';
   return null;
 };
 
 const viewToPath = (view: DashboardView): string => {
+  if (view === 'about') return '/about';
   if (view === 'course') return '/sanskrit-thinking';
   if (view === 'philosophy') return '/philosophy';
   if (view === 'cbse-guide') return '/cbse-sanskrit-guide';
@@ -412,7 +427,8 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'certificate' ||
   saved === 'science-lab' ||
   saved === 'assignment-eval' ||
-  saved === 'iks';
+  saved === 'iks' ||
+  saved === 'about';
 
 
 /** Strip punctuation / digits so only the Devanagari token remains for analysis. */
@@ -422,7 +438,7 @@ const cleanWord = (value: string): string =>
 // Views guests may open in smart_freemium (SEO deep links must not bounce to home).
 const GUEST_FREE_VIEWS: ReadonlySet<string> = new Set([
   'home', 'faq', 'philosophy', 'cbse-guide', 'resources', 'dhatupatha', 'science-lab', 'certificate',
-  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'assignment-eval', 'intent-landing', 'iks',
+  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'assignment-eval', 'intent-landing', 'iks', 'about',
 ]);
 
 const Dashboard: React.FC = () => {
@@ -1331,7 +1347,7 @@ const Dashboard: React.FC = () => {
   };
 
   useEffect(() => { setIsMoreNavOpen(false); }, [activeView]);
-  const moreViews: string[] = ['vedic-maths', 'resources', 'course'];
+  const moreViews: string[] = ['vedic-maths', 'resources', 'course', 'about'];
   return (
     <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}${isAnalyzerCollapsed ? ' dashboard--analyzer-collapsed' : ''}`}>
       <header className="dashboard-header">
@@ -1532,6 +1548,7 @@ const Dashboard: React.FC = () => {
               ['vedic-maths', '🧮', 'वैदिक-गणितम्', 'Vedic Maths'],
               ['resources', '📚', 'साधनानि', 'Free Resources'],
               ['course', '🧠', 'संस्कृत-चिन्तनम्', 'Thinking Course'],
+              ['about', '🏛️', 'परिचयः', 'About EdNet Learn'],
             ] as const).map(([view, icon, sa, en]) => (
               <button
                 key={view}
@@ -1763,6 +1780,22 @@ const Dashboard: React.FC = () => {
             />
           </Suspense>
         )}
+        {activeView === 'about' && (
+          <Suspense fallback={<ViewLoader />}>
+            <AboutEdNetPage
+              onGoHome={() => navigateToView('home')}
+              onOpenScienceLab={() => openScienceLab()}
+              onOpenIks={() => navigateToView('iks')}
+              onOpenVedicMaths={() => navigateToView('vedic-maths')}
+              onOpenGurukul={() => openVarnamala('sound')}
+              onOpenPuzzles={() => navigateToView('board')}
+              onOpenWorksheets={() => handleOpenWorksheets('all')}
+              onOpenQuiz={() => navigateToView('quiz')}
+              onOpenResources={() => navigateToView('resources')}
+              onOpenCourse={() => navigateToView('course')}
+            />
+          </Suspense>
+        )}
         {activeView === 'board' && (
           <ErrorBoundary
             fallbackTitle="🧩 जोडो · Jodo Tile Studio"
@@ -1955,6 +1988,7 @@ const Dashboard: React.FC = () => {
           onOpenBodhi={() => setIsBodhiGuideOpen(true)}
           onOpenCourse={() => navigateToView('course')}
           onOpenScienceLab={() => openScienceLab()}
+          onOpenAbout={() => navigateToView('about')}
         />
       )}
 
