@@ -532,6 +532,7 @@ const Dashboard: React.FC = () => {
   const [isBodhiGuideOpen, setIsBodhiGuideOpen] = useState(false);
   const [isOnlineClassesOpen, setIsOnlineClassesOpen] = useState(false);
   const [isMoreNavOpen, setIsMoreNavOpen] = useState(false);
+  const [isSimNavOpen, setIsSimNavOpen] = useState(false);
   const [isCalendarModalOpen, setIsCalendarModalOpen] = useState(false);
 
   // Allow any section or widget to open the Hindu Calendar modal via event
@@ -1346,8 +1347,11 @@ const Dashboard: React.FC = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
-  useEffect(() => { setIsMoreNavOpen(false); }, [activeView]);
-  const moreViews: string[] = ['vedic-maths', 'resources', 'course', 'about'];
+  useEffect(() => {
+    setIsMoreNavOpen(false);
+    setIsSimNavOpen(false);
+  }, [activeView]);
+  const moreViews: string[] = ['assignment-eval', 'vedic-maths', 'resources', 'course', 'about'];
   return (
     <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}${isAnalyzerCollapsed ? ' dashboard--analyzer-collapsed' : ''}`}>
       <header className="dashboard-header">
@@ -1377,57 +1381,63 @@ const Dashboard: React.FC = () => {
               <span className="dashboard-nav-sanskrit">गृहम्</span>
               <span className="dashboard-nav-secondary">Home</span>
             </button>
-            <div
-              className={`dashboard-nav-group dashboard-nav-group--games${activeView === 'science-lab' || activeView === 'iks' ? ' dashboard-nav-group--active' : ''}`}
-            >
+            <div className="dashboard-nav-sim-dropdown-container">
               <button
                 type="button"
-                className={`dashboard-nav-group-label dashboard-nav-games-label${activeView === 'science-lab' ? ' dashboard-nav-group-label--active' : ''}`}
-                onClick={() => openScienceLab('catalog')}
-                title="Enter Games Section (क्रीडा-शाला · All 41 Interactive Games)"
+                className={`dashboard-nav-item dashboard-nav-stacked dashboard-nav-sim-btn${activeView === 'science-lab' || activeView === 'iks' ? ' active' : ''}`}
+                onClick={() => setIsSimNavOpen((o) => !o)}
+                aria-expanded={isSimNavOpen}
+                aria-haspopup="menu"
+                title="Science Simulations (विज्ञान-प्रयोगशाला · All 41 STEM & IKS Labs)"
               >
-                <span className="dashboard-nav-icon" style={{ fontSize: '1.15rem', lineHeight: 1 }} aria-hidden="true">🎮</span>
-                <span className="dashboard-nav-sanskrit">क्रीडा-शाला</span>
-                {englishFirst && <span className="dashboard-nav-sub-en">Games</span>}
+                <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true">⚛️</span>
+                <span className="dashboard-nav-sanskrit">विज्ञान-प्रयोगशाला</span>
+                <span className="dashboard-nav-secondary">Simulations ▾</span>
               </button>
-              <div className="dashboard-nav-sub" role="group" aria-label="Direct games navigation">
-                <button
-                  type="button"
-                  className={activeView === 'science-lab' && labTarget.segment === 'preschool-wonder' ? 'active' : ''}
-                  onClick={() => openScienceLab('preschool-wonder')}
-                  title="Direct entry: Play 2 Learn: Free Preschool Games · Ages 3–6 (Shapes, Colors, Spices, Animals, Map & Yoga)"
-                >
-                  <span aria-hidden="true">🌟</span>
-                  <span className="dashboard-nav-sanskrit">शिशु</span> <span className="dashboard-nav-sub-en">Preschool</span>
-                </button>
-                <button
-                  type="button"
-                  className={activeView === 'science-lab' && labTarget.segment === 'paramanu' ? 'active' : ''}
-                  onClick={() => openScienceLab('paramanu')}
-                  title="Direct entry: 17 STEM Science Labs & Physics Simulators"
-                >
-                  <span aria-hidden="true">⚛️</span>
-                  <span className="dashboard-nav-sanskrit">विज्ञान</span> <span className="dashboard-nav-stem-badge">STEM</span>
-                </button>
-                <button
-                  type="button"
-                  className={activeView === 'iks' ? 'active' : ''}
-                  onClick={() => navigateToView('iks')}
-                  title="Direct entry: 14 IKS Experiential Think Labs (Konark, Uddālaka, Bio-Dome, Wootz & more)"
-                >
-                  <span className="dashboard-nav-sanskrit">IKS</span> <span className="dashboard-nav-stem-badge">14 Labs</span>
-                </button>
-                <button
-                  type="button"
-                  className={activeView === 'science-lab' && (!labTarget.segment || labTarget.segment === 'catalog') ? 'active' : ''}
-                  onClick={() => openScienceLab('catalog')}
-                  title="Browse All 41 Games Directory (क्रीडा-सूची)"
-                >
-                  <span aria-hidden="true">🗂️</span>
-                  <span className="dashboard-nav-sanskrit">सूची</span>
-                  <span className="dashboard-nav-dir-badge">All 41 Games</span>
-                </button>
-              </div>
+              {isSimNavOpen && (
+                <div className="dashboard-sim-menu" role="menu" aria-label="Science Simulations Menu">
+                  <button
+                    type="button"
+                    role="menuitem"
+                    className={activeView === 'science-lab' && (!labTarget.segment || labTarget.segment === 'catalog') ? 'active' : ''}
+                    onClick={() => { setIsSimNavOpen(false); openScienceLab('catalog'); }}
+                  >
+                    <span aria-hidden="true">🗂️</span>
+                    <span className="dashboard-nav-sanskrit">क्रीडा-सूची</span>
+                    <span>All 41 Games &amp; Labs</span>
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitem"
+                    className={activeView === 'science-lab' && labTarget.segment === 'paramanu' ? 'active' : ''}
+                    onClick={() => { setIsSimNavOpen(false); openScienceLab('paramanu'); }}
+                  >
+                    <span aria-hidden="true">⚛️</span>
+                    <span className="dashboard-nav-sanskrit">विज्ञान-सिम्युलेशन्स्</span>
+                    <span>17 STEM Science Labs</span>
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitem"
+                    className={activeView === 'iks' ? 'active' : ''}
+                    onClick={() => { setIsSimNavOpen(false); navigateToView('iks'); }}
+                  >
+                    <span aria-hidden="true">🏛️</span>
+                    <span className="dashboard-nav-sanskrit">भारतीय ज्ञान परंपरा</span>
+                    <span>14 IKS Think Labs</span>
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitem"
+                    className={activeView === 'science-lab' && labTarget.segment === 'preschool-wonder' ? 'active' : ''}
+                    onClick={() => { setIsSimNavOpen(false); openScienceLab('preschool-wonder'); }}
+                  >
+                    <span aria-hidden="true">🌟</span>
+                    <span className="dashboard-nav-sanskrit">शिशु-क्रीडा</span>
+                    <span>Preschool Wonder (3–6)</span>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
           <div className="dashboard-nav-row dashboard-nav-row--secondary">
@@ -1470,16 +1480,6 @@ const Dashboard: React.FC = () => {
               <img src="/nav/nav-dhatu.svg" alt="" className="dashboard-nav-icon" aria-hidden="true" width={22} height={22} />
               <span className="dashboard-nav-sanskrit">धातुपाठः</span>
               <span className="dashboard-nav-secondary">{englishFirst ? 'Verb Roots' : 'Dhātupāṭha'}</span>
-            </button>
-            <button
-              type="button"
-              className={`dashboard-nav-stacked dashboard-nav-item${activeView === 'assignment-eval' ? ' active' : ''}`}
-              onClick={() => navigateToView('assignment-eval')}
-              title="लेखन-शाला · Writing Studio - guided writing paths & feedback on written Sanskrit"
-            >
-              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">✍️</span>
-              <span className="dashboard-nav-sanskrit">लेखन-शाला</span>
-              <span className="dashboard-nav-secondary">Writing</span>
             </button>
             <div
               className={`dashboard-nav-group dashboard-nav-group--ncert${(activeView === 'reader' && lesson?.id !== 'varnamala') || activeView === 'cbse-guide' ? ' dashboard-nav-group--active' : ''}`}
@@ -1545,6 +1545,7 @@ const Dashboard: React.FC = () => {
         {isMoreNavOpen && (
           <div className="dashboard-more-menu" role="menu" aria-label="More learning views">
             {([
+              ['assignment-eval', '✍️', 'लेखन-शाला', 'Writing Studio'],
               ['vedic-maths', '🧮', 'वैदिक-गणितम्', 'Vedic Maths'],
               ['resources', '📚', 'साधनानि', 'Free Resources'],
               ['course', '🧠', 'संस्कृत-चिन्तनम्', 'Thinking Course'],

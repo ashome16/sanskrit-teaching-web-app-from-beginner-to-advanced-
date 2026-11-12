@@ -595,6 +595,83 @@ button.dashboard-nav-group-label:focus-visible,
   height: 20px;
 }
 
+/* Science Simulations dropdown container and menu */
+.dashboard-nav-sim-dropdown-container {
+  position: relative;
+  display: inline-flex;
+}
+
+.dashboard-nav-sim-btn {
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%) !important;
+  border: 1.5px solid #38bdf8 !important;
+  color: #0369a1 !important;
+}
+
+.dashboard-nav-sim-btn:hover {
+  background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 100%) !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+}
+
+.dashboard-nav-sim-btn.active {
+  background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%) !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+.dashboard-nav-sim-btn.active .dashboard-nav-sanskrit,
+.dashboard-nav-sim-btn.active .dashboard-nav-secondary {
+  color: #ffffff !important;
+}
+
+.dashboard-sim-menu {
+  z-index: 1200;
+  background: #ffffff;
+  border: 1px solid rgba(2, 132, 199, 0.35);
+  border-radius: 12px;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 260px;
+  padding: 0.5rem;
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.18);
+  margin-top: 4px;
+}
+
+.dashboard-sim-menu button {
+  text-align: left;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.75rem;
+  display: flex;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.dashboard-sim-menu button:hover,
+.dashboard-sim-menu button.active {
+  background: rgba(2, 132, 199, 0.12);
+  color: #0369a1;
+}
+
+.dashboard-sim-menu .dashboard-nav-sanskrit {
+  font-size: 0.96rem;
+  color: #0369a1;
+  background: rgba(2, 132, 199, 0.12);
+  border-color: rgba(2, 132, 199, 0.3);
+}
+
 /* Games navigation group styling */
 .dashboard-nav-group--games {
   border-color: rgba(56, 189, 248, 0.45);
@@ -942,15 +1019,7 @@ button.dashboard-nav-games-label.dashboard-nav-group-label--active,
     padding-top: 0.38rem;
     padding-bottom: 0.12rem;
     border-top: 1px solid rgba(212, 194, 169, 0.45);
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .dashboard-nav-row--secondary::-webkit-scrollbar {
-    display: none;
+    overflow: visible;
   }
 
   .dashboard-header-user {

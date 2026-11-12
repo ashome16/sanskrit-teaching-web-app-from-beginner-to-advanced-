@@ -91,7 +91,7 @@ export const AboutEdNetPage: React.FC<AboutEdNetPageProps> = ({
             <h1 className="about-hero-title">About EdNet<br />Learn.</h1>
             <p className="about-hero-tagline">Learn Through Play.</p>
             <p className="about-hero-sub">
-              A free, play-based home for Sanskrit, Vedic Maths and science.
+              Discovering India’s knowledge traditions alongside modern science, creativity and technology.
             </p>
           </div>
 
@@ -100,21 +100,21 @@ export const AboutEdNetPage: React.FC<AboutEdNetPageProps> = ({
             <svg viewBox="0 0 320 320" className="about-mandala-svg">
               <defs>
                 <radialGradient id="mandalaGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.25" />
-                  <stop offset="100%" stopColor="#18342c" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2" />
+                  <stop offset="100%" stopColor="#f7f3ea" stopOpacity="0" />
                 </radialGradient>
               </defs>
 
               {/* Concentric decorative background circles */}
-              <circle cx="210" cy="130" r="140" fill="none" stroke="#254d42" strokeWidth="1.2" opacity="0.6" />
-              <circle cx="210" cy="130" r="105" fill="none" stroke="#2c5a4d" strokeWidth="1.2" opacity="0.7" />
-              <circle cx="210" cy="130" r="70" fill="none" stroke="#376d5e" strokeWidth="1.5" opacity="0.8" />
+              <circle cx="210" cy="130" r="140" fill="none" stroke="#d5c8b5" strokeWidth="1.2" opacity="0.6" />
+              <circle cx="210" cy="130" r="105" fill="none" stroke="#ccbc9e" strokeWidth="1.2" opacity="0.7" />
+              <circle cx="210" cy="130" r="70" fill="none" stroke="#ba9e74" strokeWidth="1.5" opacity="0.8" />
               <circle cx="210" cy="130" r="60" fill="url(#mandalaGlow)" />
 
               {/* Ambient dots */}
-              <circle cx="90" cy="60" r="3.5" fill="#5eead4" opacity="0.8" />
-              <circle cx="75" cy="205" r="3" fill="#5eead4" opacity="0.7" />
-              <circle cx="125" cy="265" r="2.5" fill="#5eead4" opacity="0.6" />
+              <circle cx="90" cy="60" r="3.5" fill="#d97706" opacity="0.7" />
+              <circle cx="75" cy="205" r="3" fill="#d97706" opacity="0.6" />
+              <circle cx="125" cy="265" r="2.5" fill="#d97706" opacity="0.5" />
 
               {/* Radiating 16-point Geometric Mandala Star */}
               <g transform="translate(210, 130)">
