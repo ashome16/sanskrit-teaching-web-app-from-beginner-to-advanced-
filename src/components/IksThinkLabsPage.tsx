@@ -453,6 +453,208 @@ function calculateTier(points: number): { title: string; dev: string } {
   return { title: 'Tier 1: Novice Inquirer', dev: 'आरम्भक' };
 }
 
+/* ==========================================================================
+   AUTHENTIC SANSKRIT PRONUNCIATION ENGINE (Zero Emojis, Native Audio/Speech)
+   ========================================================================== */
+
+export const playSanskritAudio = (term: string, phoneticSa?: string) => {
+  if (typeof window === 'undefined') return;
+
+  // 1. Warm harmonic acoustic chime (528 Hz bell tone)
+  try {
+    const AudioContextClass =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    if (AudioContextClass) {
+      const ctx = new AudioContextClass();
+      if (ctx.state === 'suspended') {
+        ctx.resume();
+      }
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(528, ctx.currentTime);
+      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.6);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.6);
+    }
+  } catch {
+    // AudioContext fallback
+  }
+
+  // 2. Browser native SpeechSynthesis
+  if ('speechSynthesis' in window) {
+    try {
+      window.speechSynthesis.cancel();
+      const textToSpeak = phoneticSa || term;
+      const utterance = new SpeechSynthesisUtterance(textToSpeak);
+      utterance.rate = 0.82;
+      utterance.pitch = 1.05;
+
+      const voices = window.speechSynthesis.getVoices();
+      const saVoice =
+        voices.find((v) => v.lang.startsWith('sa') || v.lang.startsWith('hi') || v.lang === 'hi_IN' || v.lang === 'sa_IN') ||
+        voices.find((v) => v.lang.includes('IN') || v.lang.includes('India'));
+      if (saVoice) {
+        utterance.voice = saVoice;
+      }
+      window.speechSynthesis.speak(utterance);
+    } catch {
+      // Speech synthesis fallback
+    }
+  }
+};
+
+export const PronounceButton: React.FC<{
+  term: string;
+  phoneticSa?: string;
+  label?: string;
+}> = ({ term, phoneticSa, label }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsPlaying(true);
+    playSanskritAudio(term, phoneticSa);
+    setTimeout(() => setIsPlaying(false), 900);
+  };
+
+  return (
+    <button
+      type="button"
+      className={`iks-pronounce-btn ${isPlaying ? 'is-playing' : ''}`}
+      onClick={handleClick}
+      title={`Listen to authentic Sanskrit pronunciation of ${term}`}
+      aria-label={`Pronounce ${term}`}
+    >
+      <svg
+        width="11"
+        height="11"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" fillOpacity="0.2" />
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+      </svg>
+      <span>{label || term}</span>
+    </button>
+  );
+};
+
+export const SANSKRIT_AUDIO_TERMS = [
+  { term: 'Dhātu-Śāstra', sa: 'धातुशास्त्रम्', phonetic: 'Dhaatu Shaastram', desc: 'Indian Metallurgical Science' },
+  { term: 'Mūṣā', sa: 'मूषा', phonetic: 'Mooshaa', desc: 'Refractory Smelting Crucible (>1,250°C)' },
+  { term: 'Koṣṭhī', sa: 'कोष्ठिका', phonetic: 'Koshthikaa', desc: 'Inverted Zinc Distillation Retort' },
+  { term: 'Misawite', sa: 'मिसावाइट', phonetic: 'Misawaait', desc: 'δ-FeOOH Passive Rust Barrier' },
+  { term: 'Kaṭapayādi', sa: 'कटपयादि', phonetic: 'Katapayaadi', desc: 'Alphanumeric Mathematical Cipher' },
+  { term: 'Aṅkānāṁ vāmato gatiḥ', sa: 'अङ्कानां वामतो गतिः', phonetic: 'Ankaanaam vaamato gatihi', desc: 'Numbers read right-to-left canon' },
+  { term: 'Prahara', sa: 'प्रहर', phonetic: 'Prahara', desc: '3-Hour Astronomical Solar Watch' },
+  { term: 'Ghaṭikā', sa: 'घटिका', phonetic: 'Ghatikaa', desc: '24-Minute Solar Chronometric Unit' },
+  { term: 'Annamayaṁ Manaḥ', sa: 'अन्नमयं मनः', phonetic: 'Annamayam manaha', desc: 'Mind is biochemically derived from food' },
+  { term: 'Śodhana-Māraṇa', sa: 'शोधन-मारण', phonetic: 'Shodhana Maarana', desc: 'Ayurvedic alchemical calcination into Bhasma' },
+];
+
+export const IksPronunciationBar: React.FC = () => {
+  return (
+    <div className="iks-lexicon-bar" aria-label="Sanskrit Technical Terminology Pronunciation">
+      <span className="iks-lexicon-title">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" fillOpacity="0.2" />
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+        </svg>
+        Sanskrit Scientific Lexicon (Audio):
+      </span>
+      {SANSKRIT_AUDIO_TERMS.map((item) => (
+        <PronounceButton
+          key={item.term}
+          term={item.term}
+          phoneticSa={item.sa}
+          label={`${item.term} (${item.sa})`}
+        />
+      ))}
+    </div>
+  );
+};
+
+/* ==========================================================================
+   KAṬAPAYĀDI ALPHANUMERIC CIPHER CONSTANTS & DECODER
+   ========================================================================== */
+
+const KATAPAYADI_PRESETS = [
+  {
+    name: 'Archimedes/Mādhava Pi (π/10)',
+    verse: 'गोपीभाग्यमधुव्रातः',
+    meaning: 'Devotional verse dedicated to Krishna which decodes π to 8 decimal places: 3.1415926...',
+  },
+  {
+    name: 'Astronomical Moon Coordinates',
+    verse: 'भद्राम्बुधिसिद्धजन्मगणित',
+    meaning: 'Vararuchi’s Vākyakaraṇa lunar anomaly mnemonic table.',
+  },
+  {
+    name: 'Cipher Rule Signature',
+    verse: 'कटपयादि',
+    meaning: 'The acronym designating the 4 consonant family roots: ka=1, ta=1, pa=1, ya=1.',
+  },
+];
+
+const KATAPAYADI_MAP: Record<string, number> = {
+  'क': 1, 'ख': 2, 'ग': 3, 'घ': 4, 'ङ': 5, 'च': 6, 'छ': 7, 'ज': 8, 'झ': 9, 'ञ': 0,
+  'ट': 1, 'ठ': 2, 'ड': 3, 'ढ': 4, 'ण': 5, 'त': 6, 'थ': 7, 'द': 8, 'ध': 9, 'न': 0,
+  'प': 1, 'फ': 2, 'ब': 3, 'भ': 4, 'म': 5,
+  'य': 1, 'र': 2, 'ल': 3, 'व': 4, 'श': 5, 'ष': 6, 'स': 7, 'ह': 8,
+};
+
+function parseKatapayadiSyllables(text: string) {
+  const consonants = 'कखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसह';
+  const virama = '\u094d';
+  const vowelSigns = 'ािीुूृॄॢॣेैोौ';
+
+  const results: Array<{ syllable: string; consonant: string; digit: number }> = [];
+  let i = 0;
+  while (i < text.length) {
+    const c = text[i];
+    if (consonants.includes(c)) {
+      let currC = c;
+      let currChunk = c;
+      let j = i + 1;
+      while (j < text.length) {
+        if (text[j] === virama && j + 1 < text.length && consonants.includes(text[j + 1])) {
+          currChunk += virama + text[j + 1];
+          currC = text[j + 1];
+          j += 2;
+        } else if (vowelSigns.includes(text[j]) || 'ंःँ'.includes(text[j])) {
+          currChunk += text[j];
+          j += 1;
+        } else {
+          break;
+        }
+      }
+      if (KATAPAYADI_MAP[currC] !== undefined) {
+        results.push({
+          syllable: currChunk,
+          consonant: currC,
+          digit: KATAPAYADI_MAP[currC],
+        });
+      }
+      i = j;
+    } else {
+      i += 1;
+    }
+  }
+  return results;
+}
+
 interface IksThinkLabsPageProps {
   onGoHome?: () => void;
   onOpenScienceLab?: () => void;
@@ -545,6 +747,138 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
       };
     }
   }, [wootzTemp, wootzCarbon]);
+
+  // Interactive Simulation State: Stepwell Hydraulics (MET-03)
+  const [stepwellRainfall, setStepwellRainfall] = useState<number>(650);
+  const [stepwellAmbientTemp, setStepwellAmbientTemp] = useState<number>(42);
+
+  // Interactive Simulation State: Konark Solar Chronometry (AST-01)
+  const [konarkHour, setKonarkHour] = useState<number>(10.5); // 10:30 AM
+  const [konarkSeason, setKonarkSeason] = useState<'equinox' | 'solstice'>('equinox');
+
+  // Interactive Simulation State: Kaṭapayādi Cryptography (MAT-01)
+  const [katapayadiInput, setKatapayadiInput] = useState<string>('गोपीभाग्यमधुव्रातः');
+
+  // Interactive Simulation State: Sage Uddālaka Epistemology (MED-01)
+  const [uddalakaFastingDays, setUddalakaFastingDays] = useState<number>(0);
+  const [uddalakaIsRefed, setUddalakaIsRefed] = useState<boolean>(false);
+
+  const stepwellTelemetry = useMemo(() => {
+    const isHighRain = stepwellRainfall >= 750;
+    const isModerateRain = stepwellRainfall >= 350;
+    const tempDrop = Math.min(10, +(4.0 + (stepwellRainfall / 1200) * 4.5).toFixed(1));
+    const subterraneanTemp = +(stepwellAmbientTemp - tempDrop).toFixed(1);
+    const rechargeCapacity = Math.min(100, Math.round((stepwellRainfall / 1000) * 100));
+
+    let tierReached = 'Pavilion Level 6–7 (Deep Base Shaft · 27m)';
+    if (isHighRain) {
+      tierReached = 'Pavilion Level 2–3 (Upper Colonnades · 9m)';
+    } else if (isModerateRain) {
+      tierReached = 'Pavilion Level 4–5 (Mid-Tier Hypostyle Hall · 18m)';
+    }
+
+    return {
+      statusClass: isModerateRain ? 'is-success' : 'is-warning',
+      statusText: `Aquifer Recharge: ${tierReached}`,
+      desc: `Subterranean evaporative convection reduces ambient heat from ${stepwellAmbientTemp}°C to ${subterraneanTemp}°C (a ${tempDrop}°C cooling effect). Porous Dhrangadhra sandstone naturally filters silt before water enters the central well shaft (Kūpa).`,
+      tempDrop,
+      subterraneanTemp,
+      tierReached,
+      rechargeCapacity,
+      rechargeColor: isHighRain ? '#0284c7' : isModerateRain ? '#059669' : '#d97706',
+    };
+  }, [stepwellRainfall, stepwellAmbientTemp]);
+
+  const konarkTelemetry = useMemo(() => {
+    const hourInt = Math.floor(konarkHour);
+    const minuteInt = Math.round((konarkHour - hourInt) * 60);
+    const timeFormatted = `${hourInt.toString().padStart(2, '0')}:${minuteInt.toString().padStart(2, '0')}`;
+    const daytimeElapsedHours = Math.max(0, konarkHour - 6);
+    const praharaNum = Math.min(4, Math.floor(daytimeElapsedHours / 3) + 1);
+    const praharaNames = [
+      'Prahara 1: Prātaḥkāla (Dawn Watch · 06:00 - 09:00)',
+      'Prahara 2: Saṅgava (Forenoon Watch · 09:00 - 12:00)',
+      'Prahara 3: Madhyāhna (Solar Meridian Zenith · 12:00 - 15:00)',
+      'Prahara 4: Aparāhna (Late Afternoon Watch · 15:00 - 18:00)',
+    ];
+    const praharaName = praharaNames[praharaNum - 1] || praharaNames[0];
+
+    const elapsedMinutes = daytimeElapsedHours * 60;
+    const ghatika = (elapsedMinutes / 24).toFixed(1);
+    const shadowAngle = ((konarkHour - 6) / 12) * 180 - 90;
+    const altitudeDeg = 90 - Math.abs(konarkHour - 12) * 12;
+    const shadowLengthRatio = +(1 / Math.tan((Math.max(10, altitudeDeg) * Math.PI) / 180)).toFixed(2);
+    const spokeIndex = Math.min(24, Math.max(1, Math.round(((konarkHour - 6) / 12) * 23) + 1));
+
+    return {
+      timeFormatted,
+      praharaNum,
+      praharaName,
+      ghatika,
+      shadowAngle,
+      shadowLengthRatio,
+      spokeIndex,
+      altitudeDeg,
+    };
+  }, [konarkHour, konarkSeason]);
+
+  const katapayadiParsed = useMemo(() => {
+    return parseKatapayadiSyllables(katapayadiInput);
+  }, [katapayadiInput]);
+
+  const uddalakaTelemetry = useMemo(() => {
+    if (uddalakaIsRefed) {
+      return {
+        statusClass: 'is-success',
+        statusText: 'Cognitive Fire Rekindled: Annamayaṁ Manaḥ Restored',
+        kalasRemaining: 16,
+        recallPercent: 100,
+        desc: `Refeeding with subtle food essence (barley gruel / yava) acts like dry grass fanning the last surviving spark. All 16 kalās and Vedic mnemonic retrieval are instantaneously restored: "अन्नमयं हि सोम्य मन आपोमयः प्राणस्तेजोमयी वागिति" (Chāndogya 6.7.6).`,
+        gaugeColor: '#059669',
+      };
+    }
+
+    const kalas = Math.max(1, 16 - uddalakaFastingDays);
+    const recall = Math.max(6, Math.round((kalas / 16) * 100));
+
+    if (uddalakaFastingDays === 0) {
+      return {
+        statusClass: 'is-success',
+        statusText: 'Full Cognitive Vitality (16/16 Kalās)',
+        kalasRemaining: 16,
+        recallPercent: 100,
+        desc: `Śvetaketu has full subtle food nourishment. Memory recall is 100% across all Ṛgveda, Sāmaveda, and Yajurveda sūtras.`,
+        gaugeColor: '#059669',
+      };
+    } else if (uddalakaFastingDays <= 5) {
+      return {
+        statusClass: 'is-warning',
+        statusText: `Mild Fasting (${kalas}/16 Kalās) · Glycogen Depletion`,
+        kalasRemaining: kalas,
+        recallPercent: recall,
+        desc: `Subtle food reserves deplete. Memory recall begins to require extra conscious effort. Vital breath (Prāṇa) remains robust because water is consumed without restriction.`,
+        gaugeColor: '#d97706',
+      };
+    } else if (uddalakaFastingDays <= 10) {
+      return {
+        statusClass: 'is-warning',
+        statusText: `Deep Fasting (${kalas}/16 Kalās) · Cognitive Sluggishness`,
+        kalasRemaining: kalas,
+        recallPercent: recall,
+        desc: `Subtle manas essence is exhausted. Complex mantra recitations hesitate. Ketone metabolism maintains gross survival, but intellectual focus wanes.`,
+        gaugeColor: '#ea580c',
+      };
+    } else {
+      return {
+        statusClass: 'is-danger',
+        statusText: `Critical 15-Day Fast (1/16 Kalā Remains) · "Na Mā Pratibhānti"`,
+        kalasRemaining: 1,
+        recallPercent: 6,
+        desc: `Śvetaketu confesses: "Na mā pratibhānti" ("They do not come to my mind!"). Just as a lone firefly-sized coal left from a massive bonfire cannot burn fuel, a single kalā of mind cannot access memory until rekindled by food.`,
+        gaugeColor: '#dc2626',
+      };
+    }
+  }, [uddalakaFastingDays, uddalakaIsRefed]);
 
   useEffect(() => {
     try {
@@ -808,6 +1142,9 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
         </div>
       </header>
 
+      {/* Sanskrit Scientific Lexicon Audio Player (Zero Emojis, Authentic Pitch) */}
+      <IksPronunciationBar />
+
       {/* Filter and Search Controls (No emojis) */}
       <section className="iks-controls-card" aria-label="Filter and Search IKS Labs">
         <div className="iks-filter-tabs">
@@ -958,6 +1295,11 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
                       <span className="iks-workbench-badge">Solid-State Chemistry</span>
                     </div>
 
+                    <div className="iks-workbench-actions">
+                      <PronounceButton term="Misawite" phoneticSa="मिसावाइट" label="Misawite (मिसावाइट)" />
+                      <PronounceButton term="Dhātu-Śāstra" phoneticSa="धातुशास्त्रम्" label="Dhātu-Śāstra (धातुशास्त्रम्)" />
+                    </div>
+
                     <div className="iks-slider-row">
                       <div className="iks-slider-label">
                         <span>Slag Phosphorus Content:</span>
@@ -1018,6 +1360,11 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
                       <span className="iks-workbench-badge">Crucible Steel</span>
                     </div>
 
+                    <div className="iks-workbench-actions">
+                      <PronounceButton term="Mūṣā" phoneticSa="मूषा" label="Mūṣā (मूषा Crucible)" />
+                      <PronounceButton term="Ukku" phoneticSa="उक्कु" label="Ukku (Crucible Steel)" />
+                    </div>
+
                     <div className="iks-slider-row">
                       <div className="iks-slider-label">
                         <span>Crucible Furnace Temp:</span>
@@ -1067,6 +1414,337 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
                           }}
                         />
                       </div>
+                    </div>
+                  </div>
+                )}
+
+                {lab.id === 'stepwell' && (
+                  <div className="iks-card-workbench">
+                    <div className="iks-workbench-header">
+                      <span className="iks-workbench-title">Stepwell Subterranean Hydraulics Simulator</span>
+                      <span className="iks-workbench-badge">Microclimate &amp; Aquifer</span>
+                    </div>
+
+                    <div className="iks-workbench-actions">
+                      <PronounceButton term="Vāpī" phoneticSa="वापी" label="Vāpī (वापी Stepwell)" />
+                      <PronounceButton term="Kūpa" phoneticSa="कूपः" label="Kūpa (कूपः Well Shaft)" />
+                    </div>
+
+                    <div className="iks-slider-row">
+                      <div className="iks-slider-label">
+                        <span>Monsoon Annual Inflow:</span>
+                        <strong>{stepwellRainfall} mm/year</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={150}
+                        max={1200}
+                        step={25}
+                        value={stepwellRainfall}
+                        onChange={(e) => setStepwellRainfall(parseInt(e.target.value, 10))}
+                        className="iks-slider-input"
+                        aria-label="Monsoon Annual Inflow in millimeters per year"
+                      />
+                    </div>
+
+                    <div className="iks-slider-row">
+                      <div className="iks-slider-label">
+                        <span>Ambient Surface Temperature:</span>
+                        <strong>{stepwellAmbientTemp}°C</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={30}
+                        max={48}
+                        step={1}
+                        value={stepwellAmbientTemp}
+                        onChange={(e) => setStepwellAmbientTemp(parseInt(e.target.value, 10))}
+                        className="iks-slider-input"
+                        aria-label="Ambient Surface Air Temperature in Celsius"
+                      />
+                    </div>
+
+                    <div className="iks-telemetry-box">
+                      <div className={`iks-telemetry-indicator ${stepwellTelemetry.statusClass}`}>
+                        <span>●</span>
+                        <span>{stepwellTelemetry.statusText}</span>
+                      </div>
+                      <p style={{ margin: 0 }}>{stepwellTelemetry.desc}</p>
+                      <div className="iks-gauge-bar-wrap">
+                        <div
+                          className="iks-gauge-bar-fill"
+                          style={{
+                            width: `${stepwellTelemetry.rechargeCapacity}%`,
+                            background: stepwellTelemetry.rechargeColor,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {lab.id === 'konark' && (
+                  <div className="iks-card-workbench">
+                    <div className="iks-workbench-header">
+                      <span className="iks-workbench-title">Konark Sun Wheel Horology Simulator</span>
+                      <span className="iks-workbench-badge">Solar Chronometry</span>
+                    </div>
+
+                    <div className="iks-workbench-actions">
+                      <PronounceButton term="Prahara" phoneticSa="प्रहर" label="Prahara (प्रहर)" />
+                      <PronounceButton term="Ghaṭikā" phoneticSa="घटिका" label="Ghaṭikā (घटिका)" />
+                      <PronounceButton term="Chāyā" phoneticSa="छाया" label="Chāyā (Shadow Vector)" />
+                    </div>
+
+                    <div className="iks-slider-row">
+                      <div className="iks-slider-label">
+                        <span>Solar Local Time:</span>
+                        <strong>{konarkTelemetry.timeFormatted} IST</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={6.0}
+                        max={18.0}
+                        step={0.25}
+                        value={konarkHour}
+                        onChange={(e) => setKonarkHour(parseFloat(e.target.value))}
+                        className="iks-slider-input"
+                        aria-label="Solar Local Time from 6 AM to 6 PM"
+                      />
+                    </div>
+
+                    <div className="iks-season-row">
+                      <button
+                        type="button"
+                        className={`iks-season-btn ${konarkSeason === 'solstice' ? 'is-active' : ''}`}
+                        onClick={() => setKonarkSeason('solstice')}
+                      >
+                        Solstice (+23.4° Declination)
+                      </button>
+                      <button
+                        type="button"
+                        className={`iks-season-btn ${konarkSeason === 'equinox' ? 'is-active' : ''}`}
+                        onClick={() => setKonarkSeason('equinox')}
+                      >
+                        Equinox (0° Mean Solar Meridian)
+                      </button>
+                    </div>
+
+                    <div className="iks-telemetry-box">
+                      <div className="iks-telemetry-indicator is-success">
+                        <span>●</span>
+                        <span>{konarkTelemetry.praharaName}</span>
+                      </div>
+                      <p style={{ margin: 0 }}>
+                        Gnomon shadow falls on <strong>Spoke #{konarkTelemetry.spokeIndex} of 24</strong>. Active time elapsed: <strong>{konarkTelemetry.ghatika} Ghaṭikās</strong> (1 Ghaṭikā = 24 minutes). Solar altitude: {konarkTelemetry.altitudeDeg}° (Shadow ratio: {konarkTelemetry.shadowLengthRatio}× height).
+                      </p>
+
+                      <div className="iks-konark-wrap">
+                        <svg
+                          viewBox="-100 -100 200 200"
+                          width="180"
+                          height="180"
+                          className="iks-konark-dial-svg"
+                          aria-label="Konark 24-spoke wheel shadow diagram"
+                        >
+                          <circle cx="0" cy="0" r="88" fill="#f8fafc" stroke="#64748b" strokeWidth="3" />
+                          <circle cx="0" cy="0" r="76" fill="none" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="3 3" />
+                          <circle cx="0" cy="0" r="28" fill="#e2e8f0" stroke="#475569" strokeWidth="2.5" />
+                          {Array.from({ length: 24 }).map((_, idx) => {
+                            const angle = (idx * 360) / 24;
+                            const isMajor = idx % 3 === 0;
+                            const rad = (angle * Math.PI) / 180;
+                            const x2 = 76 * Math.sin(rad);
+                            const y2 = -76 * Math.cos(rad);
+                            return (
+                              <g key={idx}>
+                                <line
+                                  x1="0"
+                                  y1="0"
+                                  x2={x2}
+                                  y2={y2}
+                                  stroke={isMajor ? '#b45309' : '#94a3b8'}
+                                  strokeWidth={isMajor ? 2.5 : 1.2}
+                                />
+                                {isMajor && (
+                                  <circle
+                                    cx={50 * Math.sin(rad)}
+                                    cy={-50 * Math.cos(rad)}
+                                    r="4"
+                                    fill="#d97706"
+                                  />
+                                )}
+                              </g>
+                            );
+                          })}
+                          <circle cx="0" cy="0" r="7" fill="#0f172a" />
+                          <line
+                            x1="0"
+                            y1="0"
+                            x2={Math.min(70, Math.max(25, 60 * konarkTelemetry.shadowLengthRatio)) * Math.sin((konarkTelemetry.shadowAngle * Math.PI) / 180)}
+                            y2={-Math.min(70, Math.max(25, 60 * konarkTelemetry.shadowLengthRatio)) * Math.cos((konarkTelemetry.shadowAngle * Math.PI) / 180)}
+                            stroke="#0284c7"
+                            strokeWidth="3.5"
+                            strokeLinecap="round"
+                          />
+                          <circle
+                            cx={Math.min(70, Math.max(25, 60 * konarkTelemetry.shadowLengthRatio)) * Math.sin((konarkTelemetry.shadowAngle * Math.PI) / 180)}
+                            cy={-Math.min(70, Math.max(25, 60 * konarkTelemetry.shadowLengthRatio)) * Math.cos((konarkTelemetry.shadowAngle * Math.PI) / 180)}
+                            r="4"
+                            fill="#0284c7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {lab.id === 'katapayadi' && (
+                  <div className="iks-card-workbench">
+                    <div className="iks-workbench-header">
+                      <span className="iks-workbench-title">Kaṭapayādi Alphanumeric Hashing Decoder</span>
+                      <span className="iks-workbench-badge">Classical Cryptography</span>
+                    </div>
+
+                    <div className="iks-workbench-actions">
+                      <PronounceButton term="Kaṭapayādi" phoneticSa="कटपयादि" label="Kaṭapayādi (कटपयादि)" />
+                      <PronounceButton term="Aṅkānāṁ vāmato gatiḥ" phoneticSa="अङ्कानां वामतो गतिः" label="Aṅkānāṁ vāmato gatiḥ" />
+                    </div>
+
+                    <div className="iks-preset-row">
+                      {KATAPAYADI_PRESETS.map((preset) => (
+                        <button
+                          key={preset.name}
+                          type="button"
+                          className={`iks-preset-btn ${katapayadiInput === preset.verse ? 'is-active' : ''}`}
+                          onClick={() => setKatapayadiInput(preset.verse)}
+                        >
+                          {preset.name}
+                        </button>
+                      ))}
+                    </div>
+
+                    <input
+                      type="text"
+                      value={katapayadiInput}
+                      onChange={(e) => setKatapayadiInput(e.target.value)}
+                      className="iks-katapayadi-input"
+                      placeholder="Type Devanagari verse or select preset..."
+                      aria-label="Kaṭapayādi Devanagari verse input"
+                    />
+
+                    <div className="iks-katapayadi-grid" aria-label="Parsed syllables and mapped digits">
+                      {katapayadiParsed.length > 0 ? (
+                        katapayadiParsed.map((item, idx) => (
+                          <div key={idx} className="iks-katapayadi-chip" title={`${item.syllable} -> ${item.consonant} = ${item.digit}`}>
+                            <span className="iks-katapayadi-syllable">{item.syllable}</span>
+                            <span className="iks-katapayadi-arrow">↓</span>
+                            <span className="iks-katapayadi-digit">{item.digit}</span>
+                          </div>
+                        ))
+                      ) : (
+                        <span style={{ fontSize: '0.75rem', color: '#64748b' }}>Enter Sanskrit Devanagari characters to decode digits.</span>
+                      )}
+                    </div>
+
+                    <div className="iks-telemetry-box">
+                      <div className="iks-telemetry-indicator is-success">
+                        <span>●</span>
+                        <span>Decoded Numeric Sequence: {katapayadiParsed.map((p) => p.digit).join(' ')}</span>
+                      </div>
+                      <p style={{ margin: 0 }}>
+                        Rule: <em>कादिर्नव टादिर्नव पादिपञ्चक याद्यष्टक</em>. Each Sanskrit consonant maps to 1–9 or 0; standalone vowels and non-final conjunct consonants are skipped. Enables poetic mnemonic transmission of mathematical constants.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {lab.id === 'uddalaka' && (
+                  <div className="iks-card-workbench">
+                    <div className="iks-workbench-header">
+                      <span className="iks-workbench-title">Chāndogya 6.7 Mind-Metabolism Fasting Simulator</span>
+                      <span className="iks-workbench-badge">Cognitive Epistemology</span>
+                    </div>
+
+                    <div className="iks-workbench-actions">
+                      <PronounceButton term="Annamayaṁ Manaḥ" phoneticSa="अन्नमयं मनः" label="Annamayaṁ Manaḥ (अन्नमयं मनः)" />
+                      <PronounceButton term="Śvetaketu" phoneticSa="श्वेतकेतुः" label="Śvetaketu (श्वेतकेतुः)" />
+                    </div>
+
+                    <div className="iks-slider-row">
+                      <div className="iks-slider-label">
+                        <span>Fasting Duration (Drinking Water Only):</span>
+                        <strong>Day {uddalakaFastingDays} of 15</strong>
+                      </div>
+                      <input
+                        type="range"
+                        min={0}
+                        max={15}
+                        step={1}
+                        value={uddalakaFastingDays}
+                        onChange={(e) => {
+                          setUddalakaFastingDays(parseInt(e.target.value, 10));
+                          setUddalakaIsRefed(false);
+                        }}
+                        className="iks-slider-input"
+                        aria-label="Fasting duration from 0 to 15 days"
+                      />
+                    </div>
+
+                    <div className="iks-slider-label" style={{ marginTop: '0.35rem' }}>
+                      <span>16 Kalās (Facets of Conscious Memory):</span>
+                      <strong>{uddalakaTelemetry.kalasRemaining} / 16 Remaining</strong>
+                    </div>
+
+                    <div className="iks-kalas-dots" aria-label="16 Kalās status bar">
+                      {Array.from({ length: 16 }).map((_, idx) => (
+                        <div
+                          key={idx}
+                          className={`iks-kala-dot ${idx < uddalakaTelemetry.kalasRemaining ? 'is-active' : ''}`}
+                          title={`Kalā ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+
+                    <div className="iks-telemetry-box">
+                      <div className={`iks-telemetry-indicator ${uddalakaTelemetry.statusClass}`}>
+                        <span>●</span>
+                        <span>{uddalakaTelemetry.statusText}</span>
+                      </div>
+                      <p style={{ margin: 0 }}>{uddalakaTelemetry.desc}</p>
+                      <div className="iks-gauge-bar-wrap">
+                        <div
+                          className="iks-gauge-bar-fill"
+                          style={{
+                            width: `${uddalakaTelemetry.recallPercent}%`,
+                            background: uddalakaTelemetry.gaugeColor,
+                          }}
+                        />
+                      </div>
+
+                      {uddalakaFastingDays > 0 && !uddalakaIsRefed && (
+                        <button
+                          type="button"
+                          className="iks-refeed-btn"
+                          onClick={() => setUddalakaIsRefed(true)}
+                          title="Offer barley gruel to rekindle subtle cognitive fire"
+                        >
+                          <span>Nourish with Gruel (भोजनम्)</span>
+                        </button>
+                      )}
+                      {uddalakaIsRefed && (
+                        <button
+                          type="button"
+                          className="iks-refeed-btn is-fasting"
+                          onClick={() => {
+                            setUddalakaIsRefed(false);
+                            setUddalakaFastingDays(15);
+                          }}
+                          title="Resume fasting protocol to observe depletion"
+                        >
+                          <span>Resume 15-Day Fast</span>
+                        </button>
+                      )}
                     </div>
                   </div>
                 )}

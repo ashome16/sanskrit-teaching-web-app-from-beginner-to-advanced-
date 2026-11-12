@@ -1402,3 +1402,249 @@
   border-radius: 9999px;
   transition: width 0.3s ease, background-color 0.3s ease;
 }
+
+/* ==========================================================================
+   INTERACTIVE SIMULATION WORKBENCHES EXTENSION & SANSKRIT PRONUNCIATION
+   ========================================================================== */
+
+/* Pronounce Button */
+.iks-pronounce-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.22rem 0.55rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.iks-pronounce-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+.iks-pronounce-btn.is-playing {
+  background: #e0e7ff;
+  color: #3730a3;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.iks-workbench-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.65rem;
+}
+
+/* Sanskrit Audio Quick Lexicon Bar */
+.iks-lexicon-bar {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  margin: 1.25rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.iks-lexicon-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: 0.35rem;
+}
+
+/* Kaṭapayādi Chip Grid */
+.iks-katapayadi-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.65rem 0;
+  background: #ffffff;
+  padding: 0.65rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.iks-katapayadi-chip {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 44px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.iks-katapayadi-chip:hover {
+  transform: translateY(-2px);
+  border-color: #0284c7;
+  background: #f0f9ff;
+}
+
+.iks-katapayadi-syllable {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  font-family: 'Noto Sans Devanagari', 'Mukta', sans-serif;
+}
+
+.iks-katapayadi-arrow {
+  font-size: 0.65rem;
+  color: #64748b;
+  line-height: 1;
+  margin: 2px 0;
+}
+
+.iks-katapayadi-digit {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0284c7;
+  font-family: monospace;
+}
+
+.iks-preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.65rem;
+}
+
+.iks-preset-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #334155;
+  padding: 0.25rem 0.55rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.iks-preset-btn:hover,
+.iks-preset-btn.is-active {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+.iks-katapayadi-input {
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.85rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 0.65rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.iks-katapayadi-input:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+/* Konark Sundial Mini Graphic & Spoke List */
+.iks-konark-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 0.5rem 0;
+}
+
+.iks-konark-dial-svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.iks-season-row {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.65rem;
+}
+
+.iks-season-btn {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #334155;
+  padding: 0.25rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.iks-season-btn.is-active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+/* Fasting / Kalas Bar */
+.iks-kalas-dots {
+  display: flex;
+  gap: 4px;
+  margin: 0.5rem 0;
+}
+
+.iks-kala-dot {
+  flex: 1;
+  height: 9px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  transition: background 0.25s ease;
+}
+
+.iks-kala-dot.is-active {
+  background: #059669;
+}
+
+.iks-refeed-btn {
+  background: #059669;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background 0.2s ease;
+}
+
+.iks-refeed-btn:hover {
+  background: #047857;
+}
+
+.iks-refeed-btn.is-fasting {
+  background: #dc2626;
+}
+.iks-refeed-btn.is-fasting:hover {
+  background: #b91c1c;
+}
