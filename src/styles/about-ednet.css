@@ -1,481 +1,828 @@
 /* ==========================================================================
-   ABOUT EDNET LEARN PAGE STYLES (Zero Emojis, Clean Typography, Responsive)
+   About EdNet Learn — PDF-Accurate Editorial Design System
+   Matches 3-page brochure layout: forest greens, amber accents, custom SVGs
    ========================================================================== */
 
-.about-page {
+.about-pdf-page {
+  width: 100%;
   min-height: 100vh;
-  background: #fdfbf7;
-  color: #1e293b;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  padding-bottom: 5rem;
+  background-color: #f7f6f2;
+  color: #1f2937;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  padding: 24px 16px 64px;
+  box-sizing: border-box;
 }
 
-.about-container {
-  max-width: 1140px;
+.about-pdf-container {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  border: 1px solid #e8e5dc;
 }
 
-/* Top Navigation Bar */
-.about-topbar {
+/* --------------------------------------------------------------------------
+   Topline Navigation
+   -------------------------------------------------------------------------- */
+.about-pdf-topbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid #e2e8f0;
-  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 24px;
+  background: #0f241e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.about-topbar-left,
-.about-topbar-right {
+.about-pdf-topbar-left {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
-.about-nav-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.9rem;
-  background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 8px;
-  color: #334155;
-  font-size: 0.85rem;
-  font-weight: 700;
+.about-topbar-link {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #d1fae5;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 9999px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.about-nav-btn:hover {
-  background: #f1f5f9;
-  border-color: #94a3b8;
-  color: #0f172a;
-}
-
-.about-nav-btn--primary {
-  background: #0f172a;
-  border-color: #0f172a;
+.about-topbar-link:hover {
+  background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
+  border-color: #5eead4;
 }
 
-.about-nav-btn--primary:hover {
-  background: #1e293b;
-  border-color: #1e293b;
+.about-topbar-pill {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE 1: Hero Banner (Deep Forest Green, Concentric Line-Art, Mandala)
+   -------------------------------------------------------------------------- */
+.about-hero-banner {
+  background: linear-gradient(135deg, #142e26 0%, #1c3c33 55%, #18342c 100%);
   color: #ffffff;
+  padding: 48px 48px 44px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border-bottom: 4px solid #e58b37;
 }
 
-/* Hero Section */
-.about-hero {
-  text-align: center;
-  padding: 2.5rem 1rem 3rem;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-  border: 1.5px solid #e2e8f0;
-  border-radius: 24px;
-  margin-bottom: 3rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+.about-hero-content {
+  flex: 1 1 520px;
+  z-index: 2;
 }
 
 .about-hero-kicker {
-  display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #b45309;
-  background: #fef3c7;
-  padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
-  margin-bottom: 1.25rem;
-  border: 1px solid #fde68a;
+  color: #e58b37;
+  margin-bottom: 12px;
 }
 
 .about-hero-title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 900;
-  color: #0f172a;
-  line-height: 1.15;
-  margin: 0 0 0.5rem;
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.08;
   letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  font-family: "Georgia", "Times New Roman", serif;
 }
 
-.about-hero-subtitle {
-  font-size: clamp(1.15rem, 2vw, 1.5rem);
-  font-weight: 700;
-  color: #2563eb;
-  margin: 0 0 1.5rem;
+.about-hero-tagline {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #e58b37;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+  font-family: "Georgia", "Times New Roman", serif;
 }
 
-.about-hero-lead {
-  font-size: 1.15rem;
+.about-hero-sub {
+  font-size: 1.05rem;
+  color: #d1d5db;
+  margin: 0;
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+.about-hero-graphic {
+  flex: 0 0 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.about-mandala-svg {
+  width: 260px;
+  height: 260px;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+}
+
+/* --------------------------------------------------------------------------
+   General Section Styling & Orange Underline Headers
+   -------------------------------------------------------------------------- */
+.about-section {
+  padding: 44px 48px;
+  border-bottom: 1px solid #ebe7df;
+}
+
+.about-heading-underlined {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 24px 0;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 8px;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.about-heading-underlined::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 54px;
+  height: 3.5px;
+  background-color: #e58b37;
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Intro Section & Lead Paragraphs
+   -------------------------------------------------------------------------- */
+.about-intro-section {
+  background-color: #ffffff;
+}
+
+.about-lead-p {
+  font-size: 1.12rem;
   line-height: 1.7;
-  color: #334155;
-  max-width: 820px;
-  margin: 0 auto 1.25rem;
+  color: #27272a;
+  margin: 0 0 16px 0;
 }
 
-.about-hero-secondary {
+.about-lead-p strong {
+  color: #111827;
+}
+
+.about-secondary-p {
+  font-size: 1.02rem;
+  line-height: 1.68;
+  color: #4b5563;
+  margin: 0 0 36px 0;
+}
+
+.about-mission-block,
+.about-vision-block {
+  margin-bottom: 28px;
+}
+
+.about-mission-text,
+.about-vision-text {
   font-size: 1.05rem;
   line-height: 1.65;
-  color: #475569;
-  max-width: 780px;
-  margin: 0 auto;
-}
-
-/* Mission & Vision Section */
-.about-mission-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3.5rem;
-}
-
-.about-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.about-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-}
-
-.about-card-badge {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.25rem 0.65rem;
-  border-radius: 6px;
-  margin-bottom: 0.85rem;
-}
-
-.about-card-badge--mission {
-  background: #e0f2fe;
-  color: #0369a1;
-  border: 1px solid #bae6fd;
-}
-
-.about-card-badge--vision {
-  background: #fef3c7;
-  color: #92400e;
-  border: 1px solid #fde68a;
-}
-
-.about-card-title {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin: 0 0 0.85rem;
-}
-
-.about-card-body {
-  font-size: 1rem;
-  line-height: 1.65;
-  color: #475569;
+  color: #374151;
   margin: 0;
 }
 
-/* Section Header */
-.about-section-header {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 2.5rem;
+.about-mission-text strong {
+  color: #111827;
 }
 
-.about-section-kicker {
-  font-size: 0.76rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #64748b;
-  margin-bottom: 0.4rem;
+/* --------------------------------------------------------------------------
+   PAGE 1: Centerpiece Infographic ("a conversation across time")
+   -------------------------------------------------------------------------- */
+.about-conversation-card {
+  margin-top: 36px;
+  background: #fbf9f4;
+  border: 1px solid #e9e4d6;
+  border-radius: 14px;
+  padding: 28px 24px 22px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.about-section-title {
-  font-size: 1.95rem;
-  font-weight: 900;
-  color: #0f172a;
-  margin: 0 0 0.6rem;
-  letter-spacing: -0.01em;
+.about-conversation-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.about-section-sub {
-  font-size: 1rem;
-  line-height: 1.55;
-  color: #475569;
-  margin: 0;
-}
-
-/* What You'll Find Here Grid */
-.about-offerings-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 1.35rem;
-  margin-bottom: 4rem;
-}
-
-.about-offering-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 1.6rem 1.4rem;
+.about-tradition-node,
+.about-science-node {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.2s ease;
-}
-
-.about-offering-card:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-}
-
-.about-offering-top {
-  margin-bottom: 1.25rem;
-}
-
-.about-offering-tag {
-  font-size: 0.7rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: #64748b;
-  margin-bottom: 0.35rem;
-}
-
-.about-offering-title {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin: 0 0 0.65rem;
-}
-
-.about-offering-desc {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: #475569;
-  margin: 0;
-}
-
-.about-offering-btn {
-  display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: #f8fafc;
-  border: 1px solid #cbd5e1;
-  color: #0f172a;
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 0.45rem 0.85rem;
-  border-radius: 8px;
-  cursor: pointer;
-  width: fit-content;
-  transition: all 0.2s ease;
+  text-align: center;
 }
 
-.about-offering-btn:hover {
-  background: #0284c7;
-  color: #ffffff;
-  border-color: #0284c7;
-}
-
-/* Our Approach (4 Pillars) */
-.about-pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 4rem;
-}
-
-.about-pillar-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 1.5rem;
-}
-
-.about-pillar-num {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #0f172a;
-  color: #ffffff;
+.about-tradition-icon-box,
+.about-science-icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
+  height: 90px;
 }
 
-.about-pillar-title {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin: 0 0 0.45rem;
+.about-pothi-svg {
+  width: 140px;
+  height: 85px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.08));
 }
 
-.about-pillar-desc {
+.about-atom-svg {
+  width: 90px;
+  height: 90px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.08));
+}
+
+.about-node-label {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 10px;
+}
+
+.about-bridge-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 1 240px;
+}
+
+.about-bridge-svg {
+  width: 220px;
+  height: 55px;
+}
+
+.about-bridge-text {
   font-size: 0.88rem;
-  line-height: 1.55;
-  color: #475569;
+  font-weight: 600;
+  font-style: italic;
+  color: #92400e;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE 2: What You'll Find Here (6 Discipline Rows with Distinct Circles)
+   -------------------------------------------------------------------------- */
+.about-offerings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-offering-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background-color: #faf9f6;
+  border: 1px solid #ebe7df;
+  transition: all 0.2s ease;
+}
+
+.about-offering-row:hover {
+  background-color: #ffffff;
+  border-color: #d6cfbe;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.about-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.about-icon-circle--teal {
+  background-color: #247869;
+}
+
+.about-icon-circle--coral {
+  background-color: #d65345;
+}
+
+.about-icon-circle--blue {
+  background-color: #2a5982;
+}
+
+.about-icon-circle--amber {
+  background-color: #d87c26;
+}
+
+.about-icon-circle--purple {
+  background-color: #6f5680;
+}
+
+.about-icon-circle--forest {
+  background-color: #24453b;
+}
+
+.about-row-svg {
+  width: 26px;
+  height: 26px;
+}
+
+.about-offering-text {
+  flex: 1 1 auto;
+}
+
+.about-offering-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.about-offering-body {
+  font-size: 0.94rem;
+  color: #4b5563;
+  line-height: 1.6;
   margin: 0;
 }
 
-/* Who It's For */
+.about-jump-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.about-jump-btn {
+  align-self: center;
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.about-jump-btn:hover {
+  background: #18342c;
+  color: #ffffff;
+  border-color: #18342c;
+  transform: translateX(2px);
+}
+
+/* --------------------------------------------------------------------------
+   PAGE 2: Our Approach (4 Numbered Column Cards)
+   -------------------------------------------------------------------------- */
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.about-pillar-card {
+  background: #fbf9f4;
+  border: 1px solid #ebe6da;
+  border-radius: 12px;
+  padding: 24px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-pillar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+}
+
+.about-pillar-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.about-pillar-badge--teal {
+  background-color: #247869;
+}
+
+.about-pillar-badge--coral {
+  background-color: #d65345;
+}
+
+.about-pillar-badge--blue {
+  background-color: #2a5982;
+}
+
+.about-pillar-badge--amber {
+  background-color: #d87c26;
+}
+
+.about-pillar-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+  line-height: 1.35;
+}
+
+.about-pillar-desc {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE 3: Who It's For (4 Columns with Circular Icons)
+   -------------------------------------------------------------------------- */
 .about-audience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
 }
 
 .about-audience-card {
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px 8px;
+}
+
+.about-audience-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.about-audience-circle--teal {
+  background-color: #247869;
+}
+
+.about-audience-circle--coral {
+  background-color: #d65345;
+}
+
+.about-audience-circle--blue {
+  background-color: #2a5982;
+}
+
+.about-audience-circle--purple {
+  background-color: #6f5680;
+}
+
+.about-audience-svg {
+  width: 28px;
+  height: 28px;
 }
 
 .about-audience-title {
   font-size: 1.05rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin: 0 0 0.45rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px 0;
 }
 
 .about-audience-desc {
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: #475569;
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.5;
   margin: 0;
 }
 
-/* Our Story */
-.about-story-card {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: #ffffff;
-  border-radius: 24px;
-  padding: 3rem 2.5rem;
-  margin-bottom: 4rem;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+/* --------------------------------------------------------------------------
+   PAGE 3: Our Story + Interspersed Team Studio Photo
+   -------------------------------------------------------------------------- */
+.about-story-section {
+  background-color: #ffffff;
 }
 
-.about-story-kicker {
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #f59e0b;
-  margin-bottom: 0.75rem;
-}
-
-.about-story-title {
-  font-size: 1.85rem;
-  font-weight: 900;
-  color: #ffffff;
-  margin: 0 0 1.25rem;
-}
-
-.about-story-p {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: #cbd5e1;
-  margin: 0 0 1.25rem;
-}
-
-.about-story-p:last-child {
-  margin-bottom: 0;
-}
-
-/* Join Us (CTA) */
-.about-cta-card {
-  background: #ffffff;
-  border: 2px solid #b45309;
-  border-radius: 20px;
-  padding: 2.75rem 2rem;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(180, 83, 9, 0.08);
-}
-
-.about-cta-title {
-  font-size: 1.85rem;
-  font-weight: 900;
-  color: #0f172a;
-  margin: 0 0 0.65rem;
-}
-
-.about-cta-desc {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #475569;
-  max-width: 650px;
-  margin: 0 auto 1.75rem;
-}
-
-.about-cta-actions {
+.about-story-editorial {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 28px;
 }
 
-.about-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #0f172a;
+.about-story-photo-box {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e5e0d3;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background-color: #f7f5ed;
+}
+
+.about-story-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 480px;
+}
+
+.about-story-photo-caption {
+  font-size: 0.88rem;
+  color: #6b7280;
+  padding: 10px 16px;
+  background-color: #fbf9f4;
+  border-top: 1px solid #ece7dc;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.about-story-callout {
+  background: #fbf9f4;
+  border-left: 4.5px solid #e58b37;
+  border-radius: 0 12px 12px 0;
+  padding: 24px 28px;
+  border-top: 1px solid #ebe6da;
+  border-right: 1px solid #ebe6da;
+  border-bottom: 1px solid #ebe6da;
+}
+
+.about-story-italic {
+  font-size: 1.08rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #111827;
+  margin: 0 0 14px 0;
+  line-height: 1.6;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.about-story-body {
+  font-size: 0.98rem;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.about-story-body em {
+  font-weight: 600;
+  color: #111827;
+  font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE 3: Explore, play and discover (Bottom CTA Banner)
+   -------------------------------------------------------------------------- */
+.about-cta-banner {
+  background: linear-gradient(135deg, #18342c 0%, #152d26 100%);
   color: #ffffff;
-  border: 1.5px solid #0f172a;
-  font-size: 0.95rem;
+  padding: 36px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.about-cta-text-side {
+  flex: 1 1 540px;
+}
+
+.about-cta-heading {
+  font-size: 1.85rem;
   font-weight: 800;
-  padding: 0.75rem 1.6rem;
-  border-radius: 10px;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.about-cta-sub {
+  font-size: 1.02rem;
+  color: #d1fae5;
+  margin: 0 0 18px 0;
+}
+
+.about-cta-contact-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.about-cta-contact-label {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+}
+
+.about-cta-contact-btn {
+  background: #ffffff;
+  color: #18342c;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: 9999px;
+  border: none;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.about-cta-btn:hover {
-  background: #1e293b;
-  transform: translateY(-2px);
+.about-cta-contact-btn:hover {
+  background: #fbbf24;
+  color: #18342c;
+  transform: translateY(-1px);
 }
 
-.about-cta-btn--secondary {
-  background: #ffffff;
-  color: #0f172a;
-  border-color: #cbd5e1;
-}
-
-.about-cta-btn--secondary:hover {
-  background: #f1f5f9;
-  border-color: #94a3b8;
-}
-
-.about-copied-toast {
-  font-size: 0.8rem;
+.about-cta-copied-pill {
+  font-size: 0.82rem;
   font-weight: 700;
-  color: #059669;
-  margin-top: 0.75rem;
+  background: #047857;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 9999px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .about-story-card {
-    padding: 2rem 1.5rem;
+.about-cta-graphic-side {
+  flex: 0 0 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-cta-play-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.about-cta-play-btn:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 4px 14px rgba(245, 158, 11, 0.45));
+}
+
+.about-cta-play-svg {
+  width: 100px;
+  height: 100px;
+}
+
+/* --------------------------------------------------------------------------
+   Document Footer Line
+   -------------------------------------------------------------------------- */
+.about-pdf-footer {
+  padding: 16px 24px;
+  background: #fbf9f4;
+  border-top: 1px solid #ebe7df;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.about-footer-back-link {
+  background: transparent;
+  border: none;
+  color: #18342c;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.about-footer-back-link:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Media Queries (Mobile & Tablet)
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .about-hero-banner {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 36px 24px;
   }
-  .about-hero {
-    padding: 2rem 1rem;
+
+  .about-hero-sub {
+    margin: 0 auto;
+  }
+
+  .about-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .about-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .about-cta-contact-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-pdf-page {
+    padding: 12px 8px 48px;
+  }
+
+  .about-section {
+    padding: 32px 20px;
+  }
+
+  .about-hero-title {
+    font-size: 2.3rem;
+  }
+
+  .about-hero-tagline {
+    font-size: 1.25rem;
+  }
+
+  .about-mandala-svg {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-offering-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-jump-btn-group {
+    align-self: flex-start;
+    margin-top: 6px;
+  }
+
+  .about-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-audience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-conversation-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-bridge-svg {
+    transform: rotate(90deg);
+    margin: 12px 0;
   }
 }
