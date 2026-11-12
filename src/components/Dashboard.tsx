@@ -120,6 +120,28 @@ const COURSE_PATHS = new Set([
   '/iks-curriculum',
   '/indian-knowledge-systems-curriculum',
 ]);
+const IKS_PATHS = new Set([
+  '/iks',
+  '/iks-labs',
+  '/iks-think-labs',
+  '/vedic-sciences',
+  '/vedic-science',
+  '/ancient-indian-sciences',
+  '/konark-think-lab',
+  '/patina-think-lab',
+  '/cipher-think-lab',
+  '/biodome-think-lab',
+  '/uddalaka-think-lab',
+  '/cosmic-alignment-lab',
+  '/stepwell-think-lab',
+  '/wootz-think-lab',
+  '/susruta-think-lab',
+  '/govardhan-soil-lab',
+  '/krishi-think-lab',
+  '/food-sovereignty-lab',
+  '/iks-experiential-workbook',
+  '/wonders-science-quiz',
+]);
 
 export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string }> = {
   'intent-landing': {
@@ -302,14 +324,7 @@ const pathToView = (pathname: string): DashboardView | null => {
   ) return 'reader';
   if (clean === '/faq' || clean === '/sanskrit-faq' || clean === '/help') return 'faq';
   if (clean === '/certificate' || clean === '/swar-certificate') return 'certificate';
-  if (
-    clean === '/iks' ||
-    clean === '/iks-labs' ||
-    clean === '/iks-think-labs' ||
-    clean === '/vedic-sciences' ||
-    clean === '/vedic-science' ||
-    clean === '/ancient-indian-sciences'
-  ) return 'iks';
+  if (IKS_PATHS.has(clean)) return 'iks';
   if (
     clean === '/vignana-lab' ||
     clean === '/vignana' ||
@@ -359,7 +374,7 @@ const viewToPath = (view: DashboardView): string => {
   if (view === 'iks') {
     if (typeof window !== 'undefined') {
       const clean = window.location.pathname.replace(/\/+$/, '');
-      if (clean === '/iks-labs' || clean === '/iks-think-labs' || clean === '/vedic-sciences' || clean === '/vedic-science' || clean === '/ancient-indian-sciences') {
+      if (IKS_PATHS.has(clean)) {
         return clean;
       }
     }

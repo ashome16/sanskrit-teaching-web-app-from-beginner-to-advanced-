@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import '../styles/iks-think-labs.css';
 import { IksLabGraphic } from './scienceLab/IksLabSchematics';
 
@@ -335,6 +335,24 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
   const [selectedCat, setSelectedCat] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
+  useEffect(() => {
+    try {
+      const path = window.location.pathname.replace(/\/+$/, '');
+      const matched = IKS_LABS_CATALOG.find(
+        (l) => l.url.replace(/\/+$/, '') === path || path.endsWith(l.id)
+      );
+      if (matched) {
+        setTimeout(() => {
+          const el = document.getElementById(`iks-lab-${matched.id}`);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            el.classList.add('iks-card--targeted');
+          }
+        }, 250);
+      }
+    } catch {}
+  }, []);
+
   const filteredLabs = useMemo(() => {
     return IKS_LABS_CATALOG.filter((lab) => {
       const matchesCat = selectedCat === 'all' || lab.category === selectedCat;
@@ -523,6 +541,7 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
         {filteredLabs.map((lab) => (
           <article
             key={lab.id}
+            id={`iks-lab-${lab.id}`}
             className="iks-card"
             style={{
               ['--card-accent' as any]: lab.accentColor,
@@ -558,11 +577,9 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
                 ))}
               </div>
 
-              {['patina', 'cipher', 'biodome', 'uddalaka'].includes(lab.id) && (
-                <div className="iks-card-schematic-wrap" aria-label={`${lab.title} scientific schematic`}>
-                  <IksLabGraphic id={lab.id} />
-                </div>
-              )}
+              <div className="iks-card-schematic-wrap" aria-label={`${lab.title} scientific schematic`}>
+                <IksLabGraphic id={lab.id} />
+              </div>
 
               <div className="iks-card-inquiry-box">
                 <span className="iks-card-inquiry-label">Inquiry Question</span>
