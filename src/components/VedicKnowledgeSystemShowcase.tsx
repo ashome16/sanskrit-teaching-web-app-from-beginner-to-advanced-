@@ -207,10 +207,6 @@ export const VedicKnowledgeSystemShowcase: React.FC<VedicKnowledgeSystemShowcase
             <span className="vks-title-sa" lang="sa">भारतीय ज्ञान परंपरा · सप्त-विज्ञानानि</span>
           </h2>
 
-          <div className="vks-taglines" style={{ marginTop: '0.65rem', marginBottom: '0.5rem', color: '#fef08a', fontSize: '0.94rem', fontWeight: 600, lineHeight: 1.5 }}>
-            <strong>Observe. Question. Discover.</strong> Explore nature · Understand the universe · Explore the cosmos · Understand creation.
-          </div>
-
           <p className="vks-subtitle">
             Aligned with India&apos;s National Education Policy (NEP 2020) — Where sacred sound, empirical physics,
             computational linguistics, celestial astronomy, and holistic health unite into a living, interconnected civilizational matrix.

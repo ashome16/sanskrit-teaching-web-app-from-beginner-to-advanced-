@@ -616,6 +616,9 @@ export const SanskritThinkingCourse: React.FC<SanskritThinkingCourseProps> = ({
           <h1 className="stc-hero-title">{SANSKRIT_THINKING_COURSE_METADATA.titleDevanagari}</h1>
           <div className="stc-hero-subtitle">{SANSKRIT_THINKING_COURSE_METADATA.titleEnglish}</div>
           <p className="stc-hero-intro">{SANSKRIT_THINKING_COURSE_METADATA.introduction}</p>
+          <p className="stc-hero-taglines" style={{ marginTop: '0.65rem', marginBottom: '0.85rem', color: '#fef08a', fontSize: '0.94rem', fontWeight: 600, letterSpacing: '0.01em' }}>
+            <strong>Observe. Question. Discover.</strong> Explore nature · Understand the universe · Explore the cosmos · Understand creation.
+          </p>
 
           <div className="stc-progress-box">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.35rem' }}>

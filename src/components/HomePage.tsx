@@ -1012,9 +1012,6 @@ const HomePage: React.FC<HomePageProps> = ({
             <h1 className="home-brand-h1">Learn Through Play.</h1>
             <p className="home-brand-sub">Exploring Indian Knowledge Systems, creativity and the wonders of learning.</p>
             <p className="home-brand-sub">A place where children can explore, question, experiment and discover connections between traditional knowledge and modern science.</p>
-            <p className="home-brand-taglines" style={{ marginTop: '0.65rem', marginBottom: '0.75rem', color: '#d97706', fontSize: '0.96rem', fontWeight: 600, letterSpacing: '0.01em' }}>
-              <strong>Observe. Question. Discover.</strong> Explore nature · Understand the universe · Explore the cosmos · Understand creation.
-            </p>
             <section className="home-intro-video" aria-label="EdNet Learn introductory video" style={{ margin: "1rem auto 1.25rem", maxWidth: 760, textAlign: "center" }}>
         {/* Sacred Mangalācaraṇam (मङ्गलाचरणम्) Invocation */}
         <div className="home-mangalacaranam-strip" role="region" aria-label="मङ्गलाचरणम् · Sacred Invocation">
