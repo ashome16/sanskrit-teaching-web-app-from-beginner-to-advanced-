@@ -30,6 +30,7 @@ const CertificatePage = lazy(() => import('./CertificatePage'));
 const ScienceLab = lazy(() => import('./scienceLab/ScienceLab'));
 const SanskritAssignmentEvaluator = lazy(() => import('./SanskritAssignmentEvaluator'));
 const IksThinkLabsPage = lazy(() => import('./IksThinkLabsPage'));
+const VvmPreparationPage = lazy(() => import('./VvmPreparationPage'));
 const AboutEdNetPage = lazy(() => import('./AboutEdNetPage'));
 
 // Lazy-loaded dialogs & modals
@@ -89,7 +90,16 @@ type DashboardView =
   | 'assignment-eval'
   | 'intent-landing'
   | 'iks'
+  | 'vvm'
   | 'about';
+
+const VVM_PATHS = new Set([
+  '/vvm',
+  '/vvm-preparation',
+  '/vvm-exam',
+  '/vidyarthi-vigyan-manthan',
+  '/vvm-study-material',
+]);
 
 const ABOUT_PATHS = new Set([
   '/about',
@@ -224,6 +234,10 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
   iks: {
     title: 'Indian Knowledge Systems (IKS) Experiential Think Labs | EdNet Learn',
     desc: 'Explore 14 curriculum-linked experiential STEM inquiry sandboxes in Indian Knowledge Systems (IKS): solar astronomy sundials, 1,600-year Delhi pillar passivation metallurgy, Kaṭapayādi cipher, and Suśruta surgery.',
+  },
+  vvm: {
+    title: 'VVM Exam Preparation · Vidyarthi Vigyan Manthan (विद्यार्थी विज्ञान मंथन) | EdNet Learn',
+    desc: 'Comprehensive preparation guide for Vidyarthi Vigyan Manthan (VVM): Indian Contributions to Science, biographies of Indian scientists, NCERT Science & Maths simulations, logic puzzles, and mock quizzes.',
   },
   about: {
     title: 'About EdNet Learn | Learn Through Play – Sanskrit, Vedic Maths & Science',
@@ -362,12 +376,14 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/sanskrit-writing-paths' ||
     clean === '/writing-assignments'
   ) return 'assignment-eval';
+  if (VVM_PATHS.has(clean)) return 'vvm';
   if (ABOUT_PATHS.has(clean)) return 'about';
   return null;
 };
 
 const viewToPath = (view: DashboardView): string => {
   if (view === 'about') return '/about';
+  if (view === 'vvm') return '/vvm';
   if (view === 'course') return '/sanskrit-thinking';
   if (view === 'philosophy') return '/philosophy';
   if (view === 'cbse-guide') return '/cbse-sanskrit-guide';
@@ -428,6 +444,7 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'science-lab' ||
   saved === 'assignment-eval' ||
   saved === 'iks' ||
+  saved === 'vvm' ||
   saved === 'about';
 
 
@@ -438,7 +455,7 @@ const cleanWord = (value: string): string =>
 // Views guests may open in smart_freemium (SEO deep links must not bounce to home).
 const GUEST_FREE_VIEWS: ReadonlySet<string> = new Set([
   'home', 'faq', 'philosophy', 'cbse-guide', 'resources', 'dhatupatha', 'science-lab', 'certificate',
-  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'assignment-eval', 'intent-landing', 'iks', 'about',
+  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'assignment-eval', 'intent-landing', 'iks', 'vvm', 'about',
 ]);
 
 const Dashboard: React.FC = () => {
@@ -1384,11 +1401,11 @@ const Dashboard: React.FC = () => {
             <div className="dashboard-nav-sim-dropdown-container">
               <button
                 type="button"
-                className={`dashboard-nav-item dashboard-nav-stacked dashboard-nav-sim-btn${activeView === 'science-lab' || activeView === 'iks' ? ' active' : ''}`}
+                className={`dashboard-nav-item dashboard-nav-stacked dashboard-nav-sim-btn${activeView === 'science-lab' || activeView === 'iks' || activeView === 'vvm' ? ' active' : ''}`}
                 onClick={() => setIsSimNavOpen((o) => !o)}
                 aria-expanded={isSimNavOpen}
                 aria-haspopup="menu"
-                title="Science Simulations (विज्ञान-प्रयोगशाला · All 41 STEM & IKS Labs)"
+                title="Science Simulations (विज्ञान-प्रयोगशाला · All 41 STEM & IKS Labs & VVM Preparation)"
               >
                 <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true">⚛️</span>
                 <span className="dashboard-nav-sanskrit">विज्ञान-प्रयोगशाला</span>
@@ -1405,6 +1422,16 @@ const Dashboard: React.FC = () => {
                     <span aria-hidden="true">🗂️</span>
                     <span className="dashboard-nav-sanskrit">क्रीडा-सूची</span>
                     <span>All 41 Games &amp; Labs</span>
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitem"
+                    className={activeView === 'vvm' ? 'active' : ''}
+                    onClick={() => { setIsSimNavOpen(false); navigateToView('vvm'); }}
+                  >
+                    <span aria-hidden="true">🔭</span>
+                    <span className="dashboard-nav-sanskrit">विद्यार्थी विज्ञान मंथन</span>
+                    <span>VVM Exam Preparation</span>
                   </button>
                   <button
                     type="button"
@@ -1807,6 +1834,18 @@ const Dashboard: React.FC = () => {
               onGoHome={() => navigateToView('home')}
               onOpenScienceLab={() => navigateToView('science-lab')}
               onOpenResources={() => navigateToView('resources')}
+            />
+          </Suspense>
+        )}
+        {activeView === 'vvm' && (
+          <Suspense fallback={<ViewLoader />}>
+            <VvmPreparationPage
+              onGoHome={() => navigateToView('home')}
+              onOpenScienceLab={(seg) => openScienceLab(seg)}
+              onOpenIks={() => navigateToView('iks')}
+              onOpenVedicMaths={() => navigateToView('vedic-maths')}
+              onOpenResources={() => navigateToView('resources')}
+              onOpenQuiz={() => navigateToView('quiz')}
             />
           </Suspense>
         )}

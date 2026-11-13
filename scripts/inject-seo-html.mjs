@@ -33,6 +33,7 @@ const PATH_BY_VIEW = {
   certificate: '/certificate',
   'assignment-eval': '/evaluate-assignment',
   'science-lab': '/vignana-lab',
+  vvm: '/vvm',
   about: '/about',
 };
 
@@ -40,6 +41,8 @@ const REQUIRED_PATHS = [
   '/',
   '/about',
   '/about-us',
+  '/vvm',
+  '/vvm-preparation',
   '/course',
   '/reader',
   '/barakhadi',
@@ -564,6 +567,18 @@ function getRouteJsonLd(pathname, meta) {
       inLanguage: ['sa', 'en', 'hi'],
       teaches: 'Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा): Philosophy (Darśana), Mathematics (Gaṇita), Cosmology (Jyotiṣa), History, Ayurveda, Architecture (Vāstu), and Pāṇinian Linguistics',
     });
+  } else if (pathname === '/vvm' || pathname === '/vvm-preparation') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Vidyarthi Vigyan Manthan (VVM) Preparation Hub · National Science Talent Search',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Classes 6 to 11',
+      inLanguage: ['en', 'hi', 'sa'],
+      learningResourceType: ['ExamGuide', 'PracticeQuiz', 'StudyMaterial'],
+      teaches: 'Indian Contributions to Science, Biographies of Indian Scientists, NCERT Science and Mathematics, Logic and Reasoning',
+    });
   }
 
   return `\n    <script type="application/ld+json">\n${JSON.stringify(schemas, null, 2)}\n    </script>\n`;
@@ -698,6 +713,9 @@ routes.push({ pathname: '/iks', ...iks });
 routes.push({ pathname: '/iks-labs', ...iks });
 routes.push({ pathname: '/vedic-sciences', ...iks });
 routes.push({ pathname: '/about-us', ...views.about });
+if (views.vvm) {
+  routes.push({ pathname: '/vvm-preparation', ...views.vvm });
+}
 routes.push({
   pathname: '/swar',
   title: 'Swar · स्वर — Sanskrit Workbook, Quizzes & Foundation Hub | EdNet Learn',

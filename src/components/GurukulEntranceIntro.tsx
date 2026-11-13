@@ -246,7 +246,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
         <div className="gurukul-intro-actions">
           <button
             type="button"
-            className={`gurukul-intro-enter-btn gurukul-intro-enter-combined${isSuspended ? ' is-suspended-prompt' : ''}`}
+            className={`gurukul-intro-unified-enter-btn${isSuspended ? ' is-suspended-prompt' : ''}`}
             onClick={(e) => {
               e.stopPropagation();
               void gurukulAmbiance.resume();
@@ -257,19 +257,35 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             aria-label="Enter Gurukul"
             title="Enter Gurukul"
           >
-            <span aria-hidden="true">🔔</span>
-            <span lang="sa">प्रविश</span><span className="gec-sep">·</span><span>Enter Gurukul</span>
+            <span className="gurukul-intro-bell-icon" aria-hidden="true">🔔</span>
+            <span className="gurukul-unified-text">
+              <span lang="sa" className="gurukul-unified-sa">प्रविश</span>
+              <span className="gec-sep">·</span>
+              <span className="gurukul-unified-en">Enter Gurukul</span>
+            </span>
+            <span
+              className="gurukul-unified-sound-chip"
+              role="button"
+              tabIndex={0}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleSound(e);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  const muted = gurukulAmbiance.toggleMute();
+                  setIsMuted(muted);
+                  setHasInteracted(true);
+                }
+              }}
+              title={isMuted ? 'Unmute dawn sounds' : 'Mute dawn sounds'}
+              aria-label={isMuted ? 'Unmute sounds' : 'Mute sounds'}
+            >
+              <span aria-hidden="true">{isMuted ? '🔇' : '🔊'}</span>
+            </span>
             <span className="gurukul-enter-arrow" aria-hidden="true">➔</span>
-          </button>
-
-          <button
-            type="button"
-            className="gurukul-intro-mute-btn"
-            onClick={toggleSound}
-            aria-label={isMuted ? 'Unmute sounds' : 'Mute sounds'}
-            title={isMuted ? 'Unmute sounds' : 'Mute sounds'}
-          >
-            <span>{isMuted ? '🔇' : '🔊'}</span>
           </button>
         </div>
 

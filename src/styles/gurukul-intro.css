@@ -524,13 +524,86 @@
   100% { transform: scaleY(1.15); opacity: 1; }
 }
 
-/* Entrance Actions */
+/* Entrance Actions - Single Unified Button */
 .gurukul-intro-actions {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
   flex-wrap: wrap;
+}
+
+.gurukul-intro-unified-enter-btn {
+  background: linear-gradient(135deg, #c2410c 0%, #9a3412 50%, #7c2d12 100%);
+  color: #ffffff;
+  border: 1.5px solid #f59e0b;
+  border-radius: 999px;
+  padding: 0.6rem 0.85rem 0.6rem 1.4rem;
+  font-size: 1.02rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 22px rgba(154, 52, 18, 0.45), 0 0 18px rgba(245, 158, 11, 0.35);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gurukul-intro-unified-enter-btn:hover {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 8px 28px rgba(154, 52, 18, 0.55), 0 0 25px rgba(251, 191, 36, 0.5);
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 50%, #9a3412 100%);
+  border-color: #fbbf24;
+}
+
+.gurukul-intro-unified-enter-btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.gurukul-unified-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.gurukul-unified-sa {
+  font-family: 'Noto Serif Devanagari', 'Noto Sans Devanagari', serif;
+  font-size: 1.08rem;
+  color: #fde68a;
+}
+
+.gurukul-unified-en {
+  font-size: 0.98rem;
+}
+
+.gurukul-unified-sound-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.55rem;
+  margin-left: 0.25rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(254, 240, 138, 0.4);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  line-height: 1;
+}
+
+.gurukul-unified-sound-chip:hover {
+  background: rgba(254, 240, 138, 0.22);
+  border-color: #fde68a;
+  transform: scale(1.1);
+}
+
+.gurukul-intro-unified-enter-btn.is-suspended-prompt {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  border-color: #fde047;
+  animation: promptPulse 1.8s ease-in-out infinite;
 }
 
 .gurukul-intro-enter-btn {
