@@ -1063,7 +1063,7 @@ const HomePage: React.FC<HomePageProps> = ({
               ].map((x) => (
                 <a key={x.href} href={x.href} className="home-brand-tile">
                   <span className="home-brand-tile-icon" aria-hidden="true">{x.icon}</span>
-                  <h2 className="home-brand-tile-title">{x.t}</h2>
+                  <h2 className="home-brand-tile-title" style={{ color: '#0f172a' }}>{x.t}</h2>
                 </a>
               ))}
             </nav>
