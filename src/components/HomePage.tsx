@@ -18,6 +18,8 @@ import { MobileStickyBar } from './MobileStickyBar';
 import { StudentStaircaseBlackboard } from './StudentStaircaseBlackboard';
 import { PracticeVaultShowcase } from './PracticeVaultShowcase';
 import { ChitraKavyaPathwayCard } from './ChitraKavyaPathwayCard';
+import { VvmPathwayCard } from './VvmPathwayCard';
+import type { VvmTab } from './VvmPreparationPage';
 import { VedicKnowledgeSystemShowcase } from './VedicKnowledgeSystemShowcase';
 import { HomeJodoInteractiveBanner } from './HomeJodoInteractiveBanner';
 import { getHinduDate } from '../utils/hinduCalendar';
@@ -51,7 +53,7 @@ export interface HomePageProps {
   onOpenRegister?: () => void;
   onOpenCertificate?: () => void;
   onOpenCalendar?: () => void;
-  onOpenVvm?: () => void;
+  onOpenVvm?: (tab?: VvmTab) => void;
   onOpenAbout?: () => void;
 }
 
@@ -2120,7 +2122,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 </svg>
               </div>
               <span className="vposter-kicker">क्रमबद्ध-पाठ्यक्रमः · Structured Course</span>
-              <h3 className="vposter-title">🧠 Think in Sanskrit &amp; Computational Logic</h3>
+              <h3 className="vposter-title">Think in Sanskrit &amp; Computational Logic</h3>
               <div className="vposter-chips">
                 <span>6 modules</span><span>28 lessons</span><span>Logic + Linguistics</span>
               </div>
@@ -2149,9 +2151,9 @@ const HomePage: React.FC<HomePageProps> = ({
               </svg>
             </div>
             <span className="vposter-kicker">पाणिनीय-व्याकरणम् · Pāṇinian Grammar</span>
-            <h3 className="vposter-title">🌿 Master Cases &amp; Verb Roots Without Rote Fear</h3>
+            <h3 className="vposter-title">Master Cases &amp; Verb Roots Without Rote Fear</h3>
             <div className="vposter-chips">
-              <span>7 Vibhaktis</span><span>5 lakāras</span><span>🔊 1-tap audio</span>
+              <span>7 Vibhaktis</span><span>5 lakāras</span><span>1-tap audio</span>
             </div>
             <button type="button" className="vposter-btn" onClick={onOpenDhatupatha || onOpenGrammar}>
               व्याकरण-मण्डलम् · Launch Dhātupāṭha &amp; Vyakaran ▶
@@ -2177,7 +2179,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 </svg>
               </div>
               <span className="vposter-kicker">वेदाङ्ग-गणितम् · Speed Math &amp; Heritage</span>
-              <h3 className="vposter-title">⚡ Solve Multi-Step Math in a Single Line</h3>
+              <h3 className="vposter-title">Solve Multi-Step Math in a Single Line</h3>
               <div className="vposter-chips">
                 <span>16 sutras</span><span>Tirtha, 1965</span><span>Digital-root check</span>
               </div>
@@ -2187,28 +2189,9 @@ const HomePage: React.FC<HomePageProps> = ({
             </div>
           )}
 
-          {/* Pathway: Vidyarthi Vigyan Manthan (VVM) Preparation */}
+          {/* Pathway: Vidyarthi Vigyan Manthan (VVM) Preparation Feature Card */}
           {onOpenVvm && (
-            <div className="home-pathway-card vposter vposter--vvm">
-              <div className="vposter-art" aria-hidden="true">
-                <svg viewBox="0 0 220 90" className="vposter-svg">
-                  <circle cx="110" cy="45" r="32" fill="none" stroke="#2dd4bf" strokeWidth="1.4" opacity="0.4" />
-                  <ellipse cx="110" cy="45" rx="42" ry="16" fill="none" stroke="#5eead4" strokeWidth="1.2" strokeDasharray="3 3" opacity="0.6" />
-                  <ellipse cx="110" cy="45" rx="16" ry="42" fill="none" stroke="#5eead4" strokeWidth="1.2" strokeDasharray="3 3" opacity="0.6" />
-                  <circle cx="110" cy="45" r="7" fill="#fde68a" />
-                  <circle cx="150" cy="45" r="4" fill="#67e8f9" />
-                  <circle cx="110" cy="18" r="4" fill="#f472b6" />
-                </svg>
-              </div>
-              <span className="vposter-kicker">विद्यार्थी विज्ञान मंथन · National Talent Search</span>
-              <h3 className="vposter-title">VVM 2026–27 Science &amp; Heritage Hub</h3>
-              <div className="vposter-chips">
-                <span>Classes 6–11</span><span>40% Heritage &amp; Bio</span><span>50% NCERT</span><span>30-Q Mock</span>
-              </div>
-              <button type="button" className="vposter-btn" onClick={onOpenVvm}>
-                विज्ञान-मंथन-सज्जता · Open VVM Prep &amp; Mock Test ➔
-              </button>
-            </div>
+            <VvmPathwayCard onOpenVvm={onOpenVvm} />
           )}
 
           {/* Pathway 6 / Feature Card: Chitra-Kavya & The Sanskrit Knight's Tour (Fills the remaining 3 columns) */}

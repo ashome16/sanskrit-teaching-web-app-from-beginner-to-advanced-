@@ -12,6 +12,7 @@ import type { SearchItem, SearchTarget } from '../data/searchIndex';
 import { categoryForLiteratureAnchor } from '../data/literatureGrammarQuizzes';
 import type { VedicTab } from './VedicMaths';
 import type { GrammarTopic } from './Grammar';
+import type { VvmTab } from './VvmPreparationPage';
 
 // Lazy-loaded heavy modules for fast initial homepage performance
 const PhilosophyPage = lazy(() => import('./PhilosophyPage'));
@@ -561,6 +562,7 @@ const Dashboard: React.FC = () => {
   const searchShortcut = getSearchShortcut();
   const [bodhiGuideInitialTab, setBodhiGuideInitialTab] = useState<'context' | 'qa' | 'subhashita' | 'phrases'>('context');
   const [bodhiGuideQuestionId, setBodhiGuideQuestionId] = useState<string | null>(null);
+  const [vvmInitialTab, setVvmInitialTab] = useState<VvmTab>('blueprint');
   const { englishFirst } = useAccessibilityStore();
   const {
     currentUser,
@@ -1746,7 +1748,10 @@ const Dashboard: React.FC = () => {
           onOpenTurangaBandha={() => { setPhilosophyEssay('turanga_bandha'); navigateToView('philosophy'); }}
           onOpenRegister={() => openAuthModal('login')}
           onOpenCertificate={() => navigateToView('certificate')}
-          onOpenVvm={() => navigateToView('vvm')}
+          onOpenVvm={(tab) => {
+            if (tab) setVvmInitialTab(tab);
+            navigateToView('vvm');
+          }}
           onOpenAbout={() => navigateToView('about')}
         />
       )}
@@ -1856,6 +1861,7 @@ const Dashboard: React.FC = () => {
               onOpenVedicMaths={() => navigateToView('vedic-maths')}
               onOpenResources={() => navigateToView('resources')}
               onOpenQuiz={() => navigateToView('quiz')}
+              initialTab={vvmInitialTab}
             />
           </Suspense>
         )}

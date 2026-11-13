@@ -1,0 +1,449 @@
+/* ==========================================================================
+   VVM 2026–27 SCIENCE & HERITAGE HUB PATHWAY FEATURE CARD
+   High-contrast, professional, responsive, and 100% emoji-free
+   ========================================================================== */
+
+.home-pathway-card--vvm {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #022c22 0%, #064e3b 45%, #0f766e 100%);
+  border: 1.5px solid #14b8a6;
+  border-radius: 20px;
+  color: #f0fdfa;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 10px 30px rgba(4, 47, 46, 0.22);
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-pathway-card--vvm:hover {
+  border-color: #2dd4bf;
+  box-shadow: 0 14px 40px rgba(4, 47, 46, 0.32);
+}
+
+/* Background watermark SVG */
+.vvm-card-art-bg {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 320px;
+  height: 320px;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vvm-card-art-bg svg {
+  width: 100%;
+  height: 100%;
+}
+
+.vvm-card-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Overview, Badges & 3 Pillars
+   -------------------------------------------------------------------------- */
+.vvm-card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vvm-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.65rem;
+}
+
+.vvm-badge-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(20, 184, 166, 0.25);
+  color: #5eead4;
+  border: 1px solid rgba(94, 234, 212, 0.45);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+}
+
+.vvm-badge-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ccfbf1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+}
+
+.vvm-card-kicker {
+  color: #5eead4;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 0.35rem;
+}
+
+.vvm-card-title {
+  color: #ffffff;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 900;
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.vvm-card-desc {
+  color: #ccfbf1;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+  max-width: 640px;
+}
+
+/* The 3 Pillars Grid */
+.vvm-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.35rem;
+}
+
+.vvm-pillar-card {
+  background: rgba(4, 47, 46, 0.55);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.18s ease;
+  cursor: pointer;
+}
+
+.vvm-pillar-card:hover {
+  background: rgba(15, 118, 110, 0.45);
+  border-color: #2dd4bf;
+  transform: translateY(-2px);
+}
+
+.vvm-pillar-tag {
+  color: #fde68a;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vvm-pillar-tag-pct {
+  background: rgba(253, 230, 138, 0.2);
+  color: #fef08a;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.68rem;
+}
+
+.vvm-pillar-title {
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.vvm-pillar-desc {
+  color: #99f6e4;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+/* Actions Bar */
+.vvm-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.vvm-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: #ffffff;
+  border: 1.5px solid #2dd4bf;
+  border-radius: 10px;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+  text-decoration: none;
+}
+
+.vvm-btn-primary:hover {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  border-color: #5eead4;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(20, 184, 166, 0.5);
+}
+
+.vvm-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f0fdfa;
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.vvm-btn-secondary:hover {
+  background: rgba(20, 184, 166, 0.25);
+  border-color: #5eead4;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Interactive Challenge Teaser
+   -------------------------------------------------------------------------- */
+.vvm-card-right {
+  background: rgba(2, 44, 34, 0.85);
+  border: 1.5px solid rgba(45, 212, 191, 0.35);
+  border-radius: 16px;
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.vvm-quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(45, 212, 191, 0.2);
+}
+
+.vvm-quiz-kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #5eead4;
+  letter-spacing: 0.05em;
+}
+
+.vvm-quiz-weightage {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #fde68a;
+  background: rgba(253, 230, 138, 0.15);
+  border: 1px solid rgba(253, 230, 138, 0.3);
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+}
+
+/* Question Switcher Pills */
+.vvm-quiz-nav {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 0.95rem;
+}
+
+.vvm-quiz-nav-btn {
+  flex: 1 1 auto;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  color: #99f6e4;
+  border-radius: 6px;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.vvm-quiz-nav-btn:hover {
+  background: rgba(20, 184, 166, 0.2);
+  color: #ffffff;
+}
+
+.vvm-quiz-nav-btn.active {
+  background: #0d9488;
+  border-color: #2dd4bf;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.4);
+}
+
+/* Question Text */
+.vvm-question-text {
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0 0 1rem;
+}
+
+/* Options */
+.vvm-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.vvm-option-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: 8px;
+  color: #e6fffa;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  transition: all 0.15s ease;
+}
+
+.vvm-option-btn:hover:not(:disabled) {
+  background: rgba(20, 184, 166, 0.22);
+  border-color: #5eead4;
+  transform: translateX(2px);
+}
+
+.vvm-option-letter {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(20, 184, 166, 0.3);
+  color: #5eead4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.vvm-option-btn.correct {
+  background: rgba(16, 185, 129, 0.25) !important;
+  border-color: #34d399 !important;
+  color: #ffffff !important;
+}
+
+.vvm-option-btn.correct .vvm-option-letter {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.vvm-option-btn.incorrect {
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: #f87171 !important;
+  color: #fecaca !important;
+}
+
+.vvm-option-btn.incorrect .vvm-option-letter {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* Feedback Box */
+.vvm-feedback-box {
+  background: rgba(6, 78, 59, 0.6);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: 10px;
+  padding: 0.75rem 0.95rem;
+  margin-top: auto;
+}
+
+.vvm-feedback-box.incorrect {
+  border-color: rgba(248, 113, 113, 0.4);
+  background: rgba(69, 10, 10, 0.4);
+}
+
+.vvm-feedback-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 0.3rem;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.vvm-feedback-box.correct .vvm-feedback-title {
+  color: #6ee7b7;
+}
+
+.vvm-feedback-box.incorrect .vvm-feedback-title {
+  color: #fca5a5;
+}
+
+.vvm-feedback-text {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #ccfbf1;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .vvm-card-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .vvm-pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-pathway-card--vvm {
+    padding: 1.35rem 1.15rem;
+  }
+  .vvm-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .vvm-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .vvm-btn-primary,
+  .vvm-btn-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+}
