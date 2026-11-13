@@ -905,6 +905,14 @@ const Dashboard: React.FC = () => {
       return;
     }
 
+    if (target.view === 'vvm') {
+      if (target.vvmTab) {
+        window.location.hash = `#${target.vvmTab}`;
+      }
+      navigateToView('vvm');
+      return;
+    }
+
     navigateToView(target.view);
   };
 
@@ -1738,6 +1746,7 @@ const Dashboard: React.FC = () => {
           onOpenTurangaBandha={() => { setPhilosophyEssay('turanga_bandha'); navigateToView('philosophy'); }}
           onOpenRegister={() => openAuthModal('login')}
           onOpenCertificate={() => navigateToView('certificate')}
+          onOpenVvm={() => navigateToView('vvm')}
         />
       )}
       {/* FAQ lives at the bottom of the home page (no longer in the top menu). /faq scrolls here. */}

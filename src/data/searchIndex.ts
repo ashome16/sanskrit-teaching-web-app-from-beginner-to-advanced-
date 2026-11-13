@@ -24,7 +24,9 @@ export interface SearchTarget {
     | 'certificate'
     | 'assignment-eval'
     | 'intent-landing'
-    | 'home';
+    | 'home'
+    | 'vvm';
+  vvmTab?: 'blueprint' | 'heritage' | 'scientists' | 'ncert' | 'logic' | 'quiz' | 'journey';
   grammarTopic?:
     | 'home'
     | 'vibhakti'
@@ -72,6 +74,54 @@ export interface SearchItem {
 }
 
 export const SEARCH_INDEX: SearchItem[] = [
+  {
+    id: 'vvm-hub',
+    title: "Vidyarthi Vigyan Manthan (VVM) Preparation Hub",
+    subtitle: "VIBHA · NCERT · Classes 6–11 · विद्यार्थी विज्ञान मंथन",
+    category: 'guides',
+    categoryLabel: 'Science & Heritage',
+    badgeEmoji: '🔬',
+    badgeColor: '#0284c7',
+    description: "National science talent search preparation hub: Level-1 blueprint, 40% Indian scientific heritage & biographies (Anna Mani, Asima Chatterjee, Rohini Godbole), 50% NCERT simulations, and 30-question diagnostic mock quiz.",
+    keywords: ["vvm", "vidyarthi vigyan manthan", "vvm preparation", "vvm exam", "vvm mock test", "vvm 2026", "vibhaga", "vijnana bharati", "vvm.org.in", "science talent search"],
+    target: { view: 'vvm', vvmTab: 'blueprint' },
+  },
+  {
+    id: 'vvm-mock-test',
+    title: "VVM Diagnostic Mock Test (Level 1)",
+    subtitle: "Interactive Test · Indian Science & Logic",
+    category: 'tools',
+    categoryLabel: 'Interactive Quiz',
+    badgeEmoji: '📝',
+    badgeColor: '#ea580c',
+    description: "Practice VVM diagnostic test questions across all four exam pillars: Indian Contributions to Science, Eminent Scientists, NCERT principles, and Logical Reasoning with instant scoring and explanations.",
+    keywords: ["vvm mock test", "vvm quiz", "vvm practice test", "vvm questions", "vvm diagnostic test", "vidyarthi vigyan manthan quiz"],
+    target: { view: 'vvm', vvmTab: 'quiz' },
+  },
+  {
+    id: 'vvm-indian-scientists',
+    title: "Eminent Indian Scientists Guide · VVM Section A",
+    subtitle: "Anna Mani · Asima Chatterjee · Rohini Godbole · Raman · Bose",
+    category: 'guides',
+    categoryLabel: 'Biographies',
+    badgeEmoji: '🌟',
+    badgeColor: '#7c3aed',
+    description: "Detailed biographies of visionary Indian scientists for VVM: Anna Mani (weather instruments, ozone), Asima Chatterjee (Ayush-56, alkaloids), Rohini Godbole (Higgs boson), C.V. Raman, J.C. Bose, Meghnad Saha, S.N. Bose, and Bhabha.",
+    keywords: ["indian scientists", "anna mani", "asima chatterjee", "rohini godbole", "vvm scientists", "cv raman", "jc bose", "meghnad saha", "homi bhabha", "satyendra nath bose"],
+    target: { view: 'vvm', vvmTab: 'scientists' },
+  },
+  {
+    id: 'vvm-science-heritage',
+    title: "Indian Contributions to Science (ICS) · VVM 20% Weightage",
+    subtitle: "Acharya Kanada · Sushruta · Aryabhata · Wootz Steel · Sulba Sutras",
+    category: 'guides',
+    categoryLabel: 'Heritage Science',
+    badgeEmoji: '🏛️',
+    badgeColor: '#059669',
+    description: "Master VIBHA study material on ancient Indian atomism (Paramāṇu), metallurgy (Misawite passive film on Delhi pillar), surgery (Sushruta Samhita 120+ instruments), astronomy, and Sulba Sutra geometry.",
+    keywords: ["indian contributions to science", "kanada", "paramanu theory", "sushruta", "wootz steel", "delhi iron pillar", "aryabhata", "kerala school of mathematics", "vvm heritage"],
+    target: { view: 'vvm', vvmTab: 'heritage' },
+  },
   {
     id: 'intent-cbse-class-8',
     title: "Sanskrit Online Classes for CBSE Class 8",

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/vvm-prep.css';
 
 export interface VvmPreparationPageProps {
@@ -8,9 +8,10 @@ export interface VvmPreparationPageProps {
   onOpenVedicMaths?: () => void;
   onOpenResources?: () => void;
   onOpenQuiz?: () => void;
+  initialTab?: VvmTab;
 }
 
-type VvmTab = 'blueprint' | 'heritage' | 'scientists' | 'ncert' | 'logic' | 'quiz' | 'journey';
+export type VvmTab = 'blueprint' | 'heritage' | 'scientists' | 'ncert' | 'logic' | 'quiz' | 'journey';
 
 interface QuizQuestion {
   id: number;
@@ -217,6 +218,111 @@ const VVM_QUIZ_QUESTIONS: QuizQuestion[] = [
     correctIndex: 0,
     explanation: 'This is a classical Barbara-form categorical syllogism (All A are B, All B are C ∴ All A are C), which is logically valid.',
   },
+  {
+    id: 21,
+    category: 'Indian Contributions to Science',
+    question: 'Ancient Indian metallurgists at Zawar (Rajasthan) achieved a world milestone in extractive metallurgy by developing the earliest industrial process for smelting which volatile metal using inverted retort furnaces?',
+    options: [
+      'Zinc (Zn) distillation via downward condensation (Tiryak-pātana-yantra)',
+      'Pure Titanium extraction',
+      'Liquid Mercury condensation only',
+      'Aluminum electrolysis'
+    ],
+    correctIndex: 0,
+    explanation: 'Zinc boils at 907°C and oxidizes immediately in open air. Medieval Indian metallurgists at Zawar invented the world’s first industrial downward condensation retorts (tiryak-patana) centuries before William Champion patented zinc smelting in England in 1738.',
+  },
+  {
+    id: 22,
+    category: 'Indian Contributions to Science',
+    question: 'Which monumental classical Indian medical text authored by Acharya Charaka establishes the foundational principles of internal medicine (Kāyacikitsā), etiology, and pharmacological therapeutics?',
+    options: ['Caraka Saṁhitā', 'Suśruta Saṁhitā', 'Kāśyapa Saṁhitā', 'Rasaratnasamuccaya'],
+    correctIndex: 0,
+    explanation: 'The Caraka Saṁhitā is the foundational text of internal medicine (Kāyacikitsā) in Ayurveda, detailing the Tridosha balance (Vāta, Pitta, Kapha), pharmacological classification of medicinal herbs, and dietetics.',
+  },
+  {
+    id: 23,
+    category: 'Indian Contributions to Science',
+    question: 'In the 6th-century encyclopedic treatise Bṛhat Saṁhitā, polymath Varāhamihira dedicated an entire chapter (Dakārgala) to which applied scientific discipline?',
+    options: [
+      'Groundwater hydrology and botanical water-divining indicators (Dakārgala)',
+      'Deep-sea submarine construction',
+      'Hot air balloon navigation',
+      'Electric battery voltaic piles'
+    ],
+    correctIndex: 0,
+    explanation: 'Varāhamihira’s Dakārgala chapter in Bṛhat Saṁhitā provides systematic empirical correlation between specific surface flora, termite mounds (Vālmīka), soil types, and subterranean aquifers for digging wells.',
+  },
+  {
+    id: 24,
+    category: 'Biographies of Eminent Indian Scientists',
+    question: 'Dr. E.K. Janaki Ammal (1897–1984), the first Indian woman to obtain a Ph.D. in Botany, made groundbreaking national contributions to:',
+    options: [
+      'Cytogenetics and breeding indigenous high-yield sweet sugarcane hybrids at Sugarcane Breeding Institute Coimbatore',
+      'Synthesizing artificial plastics',
+      'Designing rocket propulsion nozzles',
+      'Mapping Antarctic ice sheets'
+    ],
+    correctIndex: 0,
+    explanation: 'Dr. Janaki Ammal did pioneering cytogenetic research, cross-breeding Saccharum officinarum with wild grasses to create high-yielding sugarcane hybrids that made India self-sufficient in sugar production.',
+  },
+  {
+    id: 25,
+    category: 'Biographies of Eminent Indian Scientists',
+    question: 'Dr. Vikram Sarabhai (1919–1971), universally revered as the Father of the Indian Space Program, founded which pioneer institutions in India?',
+    options: [
+      'Physical Research Laboratory (PRL), ISRO, and Indian Institute of Management (IIM) Ahmedabad',
+      'Bhabha Atomic Research Centre',
+      'National Chemical Laboratory Pune',
+      'Tata Memorial Hospital'
+    ],
+    correctIndex: 0,
+    explanation: 'Vikram Sarabhai established the Physical Research Laboratory (PRL) in Ahmedabad, founded ISRO, set up the Thumba Equatorial Rocket Launching Station (TERLS) in Kerala, and co-founded IIM Ahmedabad.',
+  },
+  {
+    id: 26,
+    category: 'Biographies of Eminent Indian Scientists',
+    question: 'Prof. C.R. Rao (1920–2023), one of the world’s most celebrated mathematical statisticians, received the 2023 International Prize in Statistics primarily for formulation of:',
+    options: [
+      'Cramér–Rao Bound and the Rao–Blackwell Theorem',
+      'Quantum Chromodynamics Equations',
+      'Theory of General Relativity',
+      'Penicillin Antibiotic Synthesis'
+    ],
+    correctIndex: 0,
+    explanation: 'C.R. Rao published his monumental 1945 paper establishing the Cramér–Rao Lower Bound (minimum variance for estimators) and Rao–Blackwellization, which revolutionized statistical inference, signal processing, and machine learning.',
+  },
+  {
+    id: 27,
+    category: 'NCERT Science & Mathematics',
+    question: 'When 10 grams of calcium carbonate (CaCO₃) is heated strongly in a closed vessel, it decomposes into calcium oxide (CaO) and carbon dioxide (CO₂). If 5.6 grams of CaO is produced, what mass of CO₂ is released, verifying the Law of Conservation of Mass?',
+    options: ['4.4 grams', '5.6 grams', '10.0 grams', '2.2 grams'],
+    correctIndex: 0,
+    explanation: 'By the Law of Conservation of Mass, Mass of Reactants = Mass of Products. Mass of CaCO₃ (10 g) = Mass of CaO (5.6 g) + Mass of CO₂ ⇒ Mass of CO₂ = 10 - 5.6 = 4.4 grams.',
+  },
+  {
+    id: 28,
+    category: 'NCERT Science & Mathematics',
+    question: 'A rocket of mass 1000 kg ejects propellant gas at an exhaust velocity of 2000 m/s at a steady rate of 5 kg/s. What is the thrust force exerted on the rocket?',
+    options: ['10,000 N', '20,000 N', '5,000 N', '1,000 N'],
+    correctIndex: 0,
+    explanation: 'Thrust Force F = (dm/dt) × v_exhaust = 5 kg/s × 2000 m/s = 10,000 N, demonstrating Newton’s Third Law of Motion and Conservation of Linear Momentum.',
+  },
+  {
+    id: 29,
+    category: 'Logic & Analytical Reasoning',
+    question: 'At 3:15, what is the exact angle between the hour hand and the minute hand of a standard 12-hour analog clock?',
+    options: ['7.5 degrees', '0 degrees', '15 degrees', '30 degrees'],
+    correctIndex: 0,
+    explanation: 'At 3:15, the minute hand is exactly on 3 (90° from 12). The hour hand advances 0.5° every minute. In 15 minutes, it moves 15 × 0.5° = 7.5° past the 3 mark. The angle between them is 7.5°.',
+  },
+  {
+    id: 30,
+    category: 'Logic & Analytical Reasoning',
+    question: 'In a school cohort of 100 students preparing for VVM: 60 participate in Science Labs, 50 participate in Vedic Maths, and 20 participate in both. How many students participate in neither?',
+    options: ['10 students', '20 students', '15 students', '30 students'],
+    correctIndex: 0,
+    explanation: 'Using the principle of inclusion-exclusion: N(A ∪ B) = N(A) + N(B) - N(A ∩ B) = 60 + 50 - 20 = 90. Therefore, students in neither = 100 - 90 = 10 students.',
+  },
 ];
 
 export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
@@ -226,8 +332,36 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
   onOpenVedicMaths,
   onOpenResources,
   onOpenQuiz,
+  initialTab,
 }) => {
-  const [activeTab, setActiveTab] = useState<VvmTab>('blueprint');
+  const [activeTab, setActiveTab] = useState<VvmTab>(() => {
+    if (initialTab) return initialTab;
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const h = window.location.hash.replace('#', '') as VvmTab;
+      if (['blueprint', 'heritage', 'scientists', 'ncert', 'logic', 'quiz', 'journey'].includes(h)) {
+        return h;
+      }
+    }
+    return 'blueprint';
+  });
+
+  useEffect(() => {
+    const handleHash = () => {
+      const h = window.location.hash.replace('#', '') as VvmTab;
+      if (['blueprint', 'heritage', 'scientists', 'ncert', 'logic', 'quiz', 'journey'].includes(h)) {
+        setActiveTab(h);
+      }
+    };
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
+  const handleTabClick = (tab: VvmTab) => {
+    setActiveTab(tab);
+    if (typeof window !== 'undefined') {
+      window.history.replaceState(null, '', `#${tab}`);
+    }
+  };
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
 
   const handleSelectAnswer = (questionId: number, optionIndex: number) => {
@@ -339,7 +473,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
           <button
             type="button"
             className={`vvm-tab-btn${activeTab === 'blueprint' ? ' active' : ''}`}
-            onClick={() => setActiveTab('blueprint')}
+            onClick={() => handleTabClick('blueprint')}
           >
             <span>Exam Blueprint</span>
             <span className="vvm-tab-badge">Level 1</span>
@@ -347,7 +481,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
           <button
             type="button"
             className={`vvm-tab-btn${activeTab === 'heritage' ? ' active' : ''}`}
-            onClick={() => setActiveTab('heritage')}
+            onClick={() => handleTabClick('heritage')}
           >
             <span>Indian Science Heritage</span>
             <span className="vvm-tab-badge">20%</span>
@@ -355,7 +489,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
           <button
             type="button"
             className={`vvm-tab-btn${activeTab === 'scientists' ? ' active' : ''}`}
-            onClick={() => setActiveTab('scientists')}
+            onClick={() => handleTabClick('scientists')}
           >
             <span>Indian Scientists</span>
             <span className="vvm-tab-badge">20%</span>
@@ -363,7 +497,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
           <button
             type="button"
             className={`vvm-tab-btn${activeTab === 'ncert' ? ' active' : ''}`}
-            onClick={() => setActiveTab('ncert')}
+            onClick={() => handleTabClick('ncert')}
           >
             <span>NCERT Science &amp; Maths</span>
             <span className="vvm-tab-badge">50%</span>
@@ -371,7 +505,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
           <button
             type="button"
             className={`vvm-tab-btn${activeTab === 'logic' ? ' active' : ''}`}
-            onClick={() => setActiveTab('logic')}
+            onClick={() => handleTabClick('logic')}
           >
             <span>Logic &amp; Reasoning</span>
             <span className="vvm-tab-badge">10%</span>
@@ -379,15 +513,15 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
           <button
             type="button"
             className={`vvm-tab-btn${activeTab === 'quiz' ? ' active' : ''}`}
-            onClick={() => setActiveTab('quiz')}
+            onClick={() => handleTabClick('quiz')}
           >
-            <span>20-Q Mock Test</span>
-            <span className="vvm-tab-badge">{answeredCount}/20</span>
+            <span>30-Q Mock Test</span>
+            <span className="vvm-tab-badge">{answeredCount}/{VVM_QUIZ_QUESTIONS.length}</span>
           </button>
           <button
             type="button"
             className={`vvm-tab-btn${activeTab === 'journey' ? ' active' : ''}`}
-            onClick={() => setActiveTab('journey')}
+            onClick={() => handleTabClick('journey')}
           >
             <span>Competition Stages &amp; Awards</span>
           </button>
@@ -846,6 +980,70 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
                 )}
               </div>
             </div>
+
+            {/* Class-wise NCERT Curriculum Roadmap */}
+            <div className="vvm-ncert-roadmap" style={{ marginTop: '2.5rem' }}>
+              <div className="vvm-section-header">
+                <div className="vvm-section-kicker">Curriculum Mapping</div>
+                <h3 className="vvm-section-title" style={{ fontSize: '1.45rem' }}>NCERT Class-Wise Science &amp; Mathematics Focus</h3>
+                <p className="vvm-section-desc">
+                  VVM questions are strictly aligned with your registered class level. Master these core themes from your NCERT science and maths textbooks:
+                </p>
+              </div>
+
+              <div className="vvm-cohort-grid">
+                <div className="vvm-cohort-card">
+                  <div className="vvm-cohort-badge junior">Junior Group · Classes 6, 7 &amp; 8</div>
+                  <ul className="vvm-cohort-topics">
+                    <li><strong>Class 6:</strong> Motion &amp; Distances, Light, Shadows &amp; Reflections, Electricity &amp; Circuits, Components of Food, Living Organisms, Fractions &amp; Number Lines.</li>
+                    <li><strong>Class 7:</strong> Heat &amp; Temperature, Acids, Bases &amp; Salts, Physical &amp; Chemical Changes, Motion &amp; Time, Electric Current &amp; Its Effects, Light, Plant Nutrition &amp; Respiration.</li>
+                    <li><strong>Class 8:</strong> Force &amp; Pressure, Friction, Sound, Chemical Effects of Electric Current, Light &amp; Vision, Microorganisms, Algebraic Expressions &amp; Mensuration.</li>
+                  </ul>
+                </div>
+
+                <div className="vvm-cohort-card">
+                  <div className="vvm-cohort-badge senior">Senior Group · Classes 9, 10 &amp; 11</div>
+                  <ul className="vvm-cohort-topics">
+                    <li><strong>Class 9:</strong> Laws of Motion, Universal Gravitation, Work &amp; Energy, Sound, Matter in Our Surroundings, Atoms &amp; Molecules, Cell &amp; Tissues, Number Systems, Polynomials.</li>
+                    <li><strong>Class 10:</strong> Light Reflection &amp; Refraction, Human Eye, Electricity, Magnetic Effects, Chemical Reactions, Carbon Compounds, Life Processes, Control &amp; Coordination, Heredity.</li>
+                    <li><strong>Class 11:</strong> Units &amp; Dimensions, Kinematics, Laws of Motion, Work Energy &amp; Power, Thermodynamics, Atomic Structure, Chemical Bonding, Cell Biology, Coordinate Geometry.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Official Study Material Download Reference */}
+            <div className="vvm-official-downloads-box">
+              <div className="vvm-odb-header">
+                <h4>Official VVM 2026–27 Study Resources &amp; Booklets</h4>
+                <p>
+                  VIBHA provides dedicated preparation booklets for Section A in digital format on the official registration portal.
+                </p>
+              </div>
+              <div className="vvm-odb-grid">
+                <div className="vvm-odb-item">
+                  <strong>1. Indian Contributions to Science (ICS)</strong>
+                  <span>Official text compiled by VIBHA covering ancient to modern Indian scientific heritage.</span>
+                  <a href="https://vvm.org.in/" target="_blank" rel="noopener noreferrer" className="vvm-odb-link">
+                    Download from vvm.org.in ↗
+                  </a>
+                </div>
+                <div className="vvm-odb-item">
+                  <strong>2. Life Stories of Eminent Indian Scientists</strong>
+                  <span>Dedicated booklets on Anna Mani, Asima Chatterjee, and contemporary pioneers.</span>
+                  <a href="https://vvm.org.in/" target="_blank" rel="noopener noreferrer" className="vvm-odb-link">
+                    Download from vvm.org.in ↗
+                  </a>
+                </div>
+                <div className="vvm-odb-item">
+                  <strong>3. VVM Dedicated Exam Mobile App</strong>
+                  <span>App available on Android Play Store and iOS for Mock practice and final exam.</span>
+                  <a href="https://vvm.org.in/" target="_blank" rel="noopener noreferrer" className="vvm-odb-link">
+                    Get App Instructions ↗
+                  </a>
+                </div>
+              </div>
+            </div>
           </section>
         )}
 
@@ -925,7 +1123,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
           <section className="vvm-section" aria-labelledby="quiz-heading">
             <div className="vvm-section-header">
               <div className="vvm-section-kicker">Interactive Practice Test</div>
-              <h2 id="quiz-heading" className="vvm-section-title">VVM 20-Question Diagnostic Mock Quiz</h2>
+              <h2 id="quiz-heading" className="vvm-section-title">VVM 30-Question Diagnostic Mock Quiz</h2>
               <p className="vvm-section-desc">
                 Test your knowledge across all four pillars: Indian Contributions to Science, Eminent Scientists, NCERT Principles, and Analytical Logic. Select an answer to reveal instant explanations.
               </p>

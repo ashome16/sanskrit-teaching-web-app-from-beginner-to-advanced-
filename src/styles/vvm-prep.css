@@ -881,3 +881,224 @@
     left: -1.75rem;
   }
 }
+
+/* ==========================================================================
+   Cohort Roadmap & Official Downloads
+   ========================================================================== */
+
+.vvm-cohort-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.vvm-cohort-card {
+  background: #ffffff;
+  border: 1px solid #e2d9cd;
+  border-radius: 14px;
+  padding: 1.4rem;
+  box-shadow: 0 4px 12px rgba(61, 27, 4, 0.04);
+}
+
+.vvm-cohort-badge {
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 0.85rem;
+}
+
+.vvm-cohort-badge.junior {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.vvm-cohort-badge.senior {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.vvm-cohort-topics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.vvm-cohort-topics li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.vvm-cohort-topics li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #d97706;
+  font-weight: bold;
+}
+
+.vvm-official-downloads-box {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1.5px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.vvm-odb-header h4 {
+  font-size: 1.15rem;
+  color: #0f233d;
+  margin: 0 0 0.35rem;
+}
+
+.vvm-odb-header p {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0 0 1.25rem;
+}
+
+.vvm-odb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.vvm-odb-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.86rem;
+}
+
+.vvm-odb-item strong {
+  color: #0f233d;
+  font-size: 0.92rem;
+}
+
+.vvm-odb-item span {
+  color: #64748b;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.vvm-odb-link {
+  color: #0284c7;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.84rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  transition: color 0.18s ease;
+}
+
+.vvm-odb-link:hover {
+  color: #0369a1;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Home Pathway Card variant: .vposter--vvm
+   ========================================================================== */
+
+.vposter--vvm {
+  background: linear-gradient(135deg, #042f2e 0%, #115e59 55%, #134e4a 100%);
+  border: 1.5px solid #14b8a6;
+  border-radius: 20px;
+  color: #f0fdfa;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(4, 47, 46, 0.18);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
+}
+
+.vposter--vvm:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(4, 47, 46, 0.28);
+  border-color: #2dd4bf;
+}
+
+.vposter--vvm .vposter-art {
+  position: absolute;
+  right: -10px;
+  top: 10px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.vposter--vvm .vposter-kicker {
+  color: #5eead4;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.vposter--vvm .vposter-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin: 0 0 0.85rem;
+}
+
+.vposter--vvm .vposter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.vposter--vvm .vposter-chips span {
+  background: rgba(20, 184, 166, 0.22);
+  color: #ccfbf1;
+  border: 1px solid rgba(45, 212, 191, 0.38);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+}
+
+.vposter--vvm .vposter-btn {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: #ffffff;
+  border: 1px solid #2dd4bf;
+  border-radius: 12px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
+}
+
+.vposter--vvm .vposter-btn:hover {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  border-color: #5eead4;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(20, 184, 166, 0.45);
+}

@@ -51,6 +51,7 @@ export interface HomePageProps {
   onOpenRegister?: () => void;
   onOpenCertificate?: () => void;
   onOpenCalendar?: () => void;
+  onOpenVvm?: () => void;
 }
 
 interface DemoWord {
@@ -749,6 +750,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenRegister,
   onOpenCertificate,
   onOpenCalendar,
+  onOpenVvm,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   void onOpenCertificate; void FeatureTrialCallout;
@@ -2216,6 +2218,30 @@ const HomePage: React.FC<HomePageProps> = ({
               </div>
               <button type="button" className="vposter-btn" onClick={onOpenVedicMaths}>
                 गणित-सूत्र-शिक्षणम् · Start Vaidic Gaṇitam ▶
+              </button>
+            </div>
+          )}
+
+          {/* Pathway: Vidyarthi Vigyan Manthan (VVM) Preparation */}
+          {onOpenVvm && (
+            <div className="home-pathway-card vposter vposter--vvm">
+              <div className="vposter-art" aria-hidden="true">
+                <svg viewBox="0 0 220 90" className="vposter-svg">
+                  <circle cx="110" cy="45" r="32" fill="none" stroke="#2dd4bf" strokeWidth="1.4" opacity="0.4" />
+                  <ellipse cx="110" cy="45" rx="42" ry="16" fill="none" stroke="#5eead4" strokeWidth="1.2" strokeDasharray="3 3" opacity="0.6" />
+                  <ellipse cx="110" cy="45" rx="16" ry="42" fill="none" stroke="#5eead4" strokeWidth="1.2" strokeDasharray="3 3" opacity="0.6" />
+                  <circle cx="110" cy="45" r="7" fill="#fde68a" />
+                  <circle cx="150" cy="45" r="4" fill="#67e8f9" />
+                  <circle cx="110" cy="18" r="4" fill="#f472b6" />
+                </svg>
+              </div>
+              <span className="vposter-kicker">विद्यार्थी विज्ञान मंथन · National Talent Search</span>
+              <h3 className="vposter-title">VVM 2026–27 Science &amp; Heritage Hub</h3>
+              <div className="vposter-chips">
+                <span>Classes 6–11</span><span>40% Heritage &amp; Bio</span><span>50% NCERT</span><span>30-Q Mock</span>
+              </div>
+              <button type="button" className="vposter-btn" onClick={onOpenVvm}>
+                विज्ञान-मंथन-सज्जता · Open VVM Prep &amp; Mock Test ➔
               </button>
             </div>
           )}
