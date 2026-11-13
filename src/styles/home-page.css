@@ -830,12 +830,12 @@ tr th {
   }
 }
 
-/* 3. The 4 Primary Actions Grid (Including Jodo Interactive Game) */
+/* 3. Primary Hero Actions Grid */
 .home-hero-three-actions {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.15rem;
-  max-width: 1180px;
+  max-width: 960px;
   margin: 0 auto 1.35rem;
   width: 100%;
 }

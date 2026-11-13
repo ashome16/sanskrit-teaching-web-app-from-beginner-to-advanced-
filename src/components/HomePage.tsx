@@ -1463,38 +1463,6 @@ const HomePage: React.FC<HomePageProps> = ({
             </div>
             <span className="hhac-arrow" aria-hidden="true">➔</span>
           </button>
-
-          {/* Action 4: Begin in 5 Minutes (14-Day Free Access) */}
-          <button
-            type="button"
-            className="home-hero-action-card home-hero-action-card--trial"
-            onClick={handleStartTrial}
-            title={currentUser?.planStatus ? 'Continue to your Gurukul lessons' : 'Begin learning in 5 minutes with full 14-day unrestricted access'}
-          >
-            <div className="hhac-icon-col" aria-hidden="true">
-              <span className="hhac-icon">⚡</span>
-            </div>
-            <div className="hhac-text-col">
-              <div className="hhac-badge-row">
-                <span className="hhac-tag hhac-tag--trial">
-                  {currentUser?.planStatus === 'active'
-                    ? 'Active'
-                    : currentUser?.planStatus === 'trial'
-                      ? 'Trial Active'
-                      : '14-Day Free Access'}
-                </span>
-              </div>
-              <strong className="hhac-title">
-                {currentUser?.planStatus ? 'Continue Learning' : 'Begin Learning in 5 Minutes'}
-              </strong>
-              <span className="hhac-desc">
-                {currentUser?.planStatus
-                  ? 'Jump back into your curriculum'
-                  : 'Unlock all 6 stages · No credit card required'}
-              </span>
-            </div>
-            <span className="hhac-arrow" aria-hidden="true">➔</span>
-          </button>
         </div>
 
         {onOpenSearch && (
