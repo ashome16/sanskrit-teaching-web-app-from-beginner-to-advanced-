@@ -17,7 +17,6 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
   const [isExiting, setIsExiting] = useState(false);
   const [isFlying, setIsFlying] = useState(false);
   const [flyStyle, setFlyStyle] = useState<React.CSSProperties>({});
-  const [isMuted, setIsMuted] = useState(false);
   const [isSuspended, setIsSuspended] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [, setSecondsLeft] = useState(() => Math.ceil(autoAdvanceMs / 1000));
@@ -129,13 +128,6 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
     }
   }, [isExiting, onComplete, targetLogoId]);
 
-  const toggleSound = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const muted = gurukulAmbiance.toggleMute();
-    setIsMuted(muted);
-    setHasInteracted(true);
-  };
-
   const handleContainerClick = () => {
     if (!hasInteracted) {
       setHasInteracted(true);
@@ -164,17 +156,6 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
       role="dialog"
       aria-label="Gurukul Welcome Entrance"
     >
-      {/* Floating Corner Sound Toggle (Top-Right) */}
-      <button
-        type="button"
-        className="gurukul-intro-corner-sound"
-        onClick={toggleSound}
-        aria-label={isMuted ? 'Unmute sounds' : 'Mute sounds'}
-        title={isMuted ? 'Unmute sounds' : 'Mute sounds'}
-      >
-        <span aria-hidden="true">{isMuted ? '🔇' : '🔊'}</span>
-      </button>
-
       {/* 2/3rd Space: Gurukul Painting Scene (Dawn Courtyard & River) */}
       <div className="gurukul-intro-scene" aria-hidden="true">
         <div
@@ -259,11 +240,17 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
               triggerExit();
             }}
             autoFocus
-            aria-label="Enter Gurukul"
-            title="Enter Gurukul"
+            aria-label="गुरुकुलं प्रविश · Enter Gurukul"
+            title="गुरुकुलं प्रविश · Enter Gurukul"
           >
-            <span className="gurukul-intro-bell-icon" aria-hidden="true">🔔</span>
-            <span className="gurukul-enter-label">Enter Gurukul</span>
+            <span className="gurukul-intro-bell-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" className="gurukul-intro-bell-svg">
+                <path d="M12 2C10.34 2 9 3.34 9 5c0 .35.06.69.17 1A7.002 7.002 0 005 13v4l-2 2v1h18v-1l-2-2v-4a7.002 7.002 0 00-4.17-7c.11-.31.17-.65.17-1 0-1.66-1.34-3-3-3zm0 20a3 3 0 003-3H9a3 3 0 003 3z" />
+              </svg>
+            </span>
+            <span className="gurukul-btn-txt-sa" lang="sa">गुरुकुलं प्रविश</span>
+            <span className="gec-sep" aria-hidden="true">·</span>
+            <span className="gurukul-btn-txt-en">Enter Gurukul</span>
             <span className="gurukul-enter-arrow" aria-hidden="true">➔</span>
           </button>
         </div>
