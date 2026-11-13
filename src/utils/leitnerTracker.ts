@@ -41,11 +41,11 @@ export const LEITNER_INTERVALS_MS: Record<number, number> = {
 };
 
 export const LEITNER_BOX_LABELS: Record<number, { title: string; interval: string; color: string; icon: string }> = {
-  1: { title: 'Box 1: Novice', interval: 'Review in 4h', color: '#ef4444', icon: '🌱' },
-  2: { title: 'Box 2: Learning', interval: 'Review in 1d', color: '#f59e0b', icon: '🌿' },
-  3: { title: 'Box 3: Familiar', interval: 'Review in 3d', color: '#3b82f6', icon: '🌳' },
-  4: { title: 'Box 4: Retained', interval: 'Review in 7d', color: '#8b5cf6', icon: '⭐' },
-  5: { title: 'Box 5: Mastered', interval: 'Review in 14d', color: '#10b981', icon: '🌟' },
+  1: { title: 'Box 1: Novice', interval: 'Review in 4h', color: '#ef4444', icon: '1' },
+  2: { title: 'Box 2: Learning', interval: 'Review in 1d', color: '#f59e0b', icon: '2' },
+  3: { title: 'Box 3: Familiar', interval: 'Review in 3d', color: '#3b82f6', icon: '3' },
+  4: { title: 'Box 4: Retained', interval: 'Review in 7d', color: '#8b5cf6', icon: '4' },
+  5: { title: 'Box 5: Mastered', interval: 'Review in 14d', color: '#10b981', icon: '5' },
 };
 
 class LeitnerTracker {

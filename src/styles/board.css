@@ -2568,9 +2568,9 @@
   padding: 0.75rem 1.15rem;
   margin-bottom: 0.65rem;
   border-radius: 14px;
-  background: linear-gradient(135deg, #ffffff 0%, #fbf8f2 100%);
-  border: 1.5px solid #ebd8be;
-  box-shadow: 0 4px 14px rgba(120, 53, 15, 0.04);
+  background: #ffffff;
+  border: 1.5px solid #e8dbca;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   flex-wrap: wrap;
 }
 
@@ -2578,19 +2578,6 @@
   display: flex;
   align-items: center;
   gap: 0.85rem;
-}
-
-.shelf-summary-icon {
-  font-size: 1.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: #fffdf8;
-  border: 1px solid #e8dbca;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .shelf-summary-title {
@@ -2605,6 +2592,13 @@
   margin: 0.15rem 0 0;
   font-size: 0.82rem;
   color: #6b5a45;
+}
+
+.shelf-summary-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .shelf-summary-count-badge {
@@ -3524,75 +3518,214 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Progressive Jodo Shelf Level Switcher */
-.jodo-level-filter-bar {
+/* ==========================================================================
+   Streamlined Unified Jodo Shelf Selector & Clean Tier Switcher
+   ========================================================================== */
+.jodo-shelves-control-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
-  margin: 0.25rem 0 0.7rem;
   align-items: center;
+  gap: 0.65rem;
+  margin: 0.35rem 0 0.85rem;
+  background: #ffffff;
+  border: 1.5px solid #e2d9cc;
+  border-radius: 14px;
+  padding: 0.45rem 0.65rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
 }
 
-.jodo-level-pill {
+.jodo-tier-segmented {
+  display: inline-flex;
+  background: #f4ede4;
+  border: 1px solid #e5dacd;
   border-radius: 999px;
-  padding: 0.45rem 0.95rem;
-  font-size: 0.84rem;
-  font-weight: 800;
-  border: 1.5px solid #cbd5e1;
-  background: #ffffff;
-  color: #334155;
+  padding: 3px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.jodo-tier-tab {
+  border: none;
+  background: transparent;
+  color: #5c5348;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.38rem 0.85rem;
+  border-radius: 999px;
   cursor: pointer;
   transition: all 0.16s ease;
+  white-space: nowrap;
 }
 
-.jodo-level-pill:hover {
-  transform: translateY(-1px);
+.jodo-tier-tab:hover {
+  color: #1b352f;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.jodo-tier-tab.is-active {
+  background: #1b352f;
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(27, 53, 47, 0.28);
+}
+
+.jodo-shelves-control-bar .wing-nav {
+  margin: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   Simpler, Professional Game Guide
+   ========================================================================== */
+.jodo-how-to-play-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fcfaf6 100%);
+  border: 1.5px solid #ebdccb;
+  border-left: 4px solid #b45309;
+  border-radius: 12px;
+  padding: 0.65rem 0.95rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 6px rgba(120, 53, 15, 0.03);
+}
+
+.jodo-guide-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.jodo-guide-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  padding: 0.22rem 0.6rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.jodo-guide-steps-compact {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 1;
+  min-width: 280px;
+  font-size: 0.84rem;
+  color: #44372a;
+  line-height: 1.4;
+  flex-wrap: wrap;
+}
+
+.jodo-step-item strong {
+  color: #1b352f;
+}
+
+.jodo-step-divider {
+  color: #b45309;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.jodo-guide-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.jodo-guide-toggle-btn {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.32rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.jodo-guide-toggle-btn:hover {
+  background: #f8fafc;
   border-color: #94a3b8;
+  color: #0f172a;
 }
 
-.jodo-level-pill.is-active {
-  background: #0f172a;
-  border-color: #0f172a;
-  color: #ffffff;
-  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.22);
+.jodo-guide-help-link {
+  border: 1px solid #fed7aa;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.32rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-.jodo-level-pill--starter {
-  border-color: #86efac;
-  background: #f0fdf4;
-  color: #065f46;
+.jodo-guide-help-link:hover {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #78350f;
 }
 
-.jodo-level-pill--starter.is-active {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  border-color: #047857;
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.28);
+.jodo-guide-drawer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #ebdccb;
 }
 
-.jodo-level-pill--next {
-  border-color: #a5b4fc;
-  background: #eef2ff;
-  color: #3730a3;
+.jodo-drawer-col {
+  background: #ffffff;
+  border: 1px solid #e8dbca;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
 }
 
-.jodo-level-pill--next.is-active {
-  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-  border-color: #4338ca;
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.28);
+.jodo-drawer-col h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #78350f;
 }
 
-.wing-button--nextlevel {
-  background: linear-gradient(135deg, #eef2ff 0%, #ede9fe 100%) !important;
-  border-color: #818cf8 !important;
-  color: #3730a3 !important;
-  font-weight: 800 !important;
+.jodo-drawer-col p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #5c5348;
+  line-height: 1.45;
 }
 
-.wing-button--nextlevel:hover {
-  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
-  color: #ffffff !important;
+@media (max-width: 768px) {
+  .jodo-shelves-control-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .jodo-tier-segmented {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .jodo-tier-tab {
+    flex: 1;
+    text-align: center;
+  }
+  .jodo-guide-steps-compact {
+    font-size: 0.8rem;
+  }
 }
 
 
