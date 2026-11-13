@@ -208,7 +208,7 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     desc: 'Complete NCERT Class 7 Sanskrit Deepakam solutions, Indian Knowledge Systems (IKS) literary extracts, chapter-wise verse translations, word-by-word shabdarth, physical textbook page mapping, audio pronunciation, worksheets and quizzes.',
   },
   philosophy: {
-    title: 'Indian Knowledge Systems (IKS) Philosophy, Darśana & Computational Linguistics in AI | EdNet Gurukul',
+    title: 'Indian Knowledge Systems (IKS) Philosophy & Computational Linguistics in AI | EdNet Gurukul',
     desc: 'Explore Indian Knowledge Systems (IKS) philosophical foundations: Nyāya epistemology (pramāṇa), Vaiśeṣika atomism, Pāṇinian formal linguistics, and why Sanskrit is vital for cognitive science and AI.',
   },
   faq: {

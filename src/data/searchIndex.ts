@@ -5585,7 +5585,7 @@ export const SEARCH_INDEX: SearchItem[] = [
   },
   {
     id: 'guide-philosophy-ai',
-    title: 'Why Learn Sanskrit in the Age of AI? (दर्शनम् · Darśana)',
+    title: 'Why Learn Sanskrit in the Age of AI?',
     subtitle: 'Transfer vs. Bind, Pāṇinian Phonetics & The Four Levels of Vāk',
     category: 'guides',
     categoryLabel: 'Essay · Philosophy',
@@ -6622,7 +6622,7 @@ export const SEARCH_INDEX: SearchItem[] = [
   // =========================================================================
   {
     id: 'essay-ai-sanskrit',
-    title: 'Why Learn a Language — Especially Sanskrit — in the Age of AI · Darśana',
+    title: 'Why Learn Sanskrit in the Age of AI',
     subtitle: 'Machines will make communication efficient. They will not make it living · The Guru is Not a Faster Model',
     category: 'guides',
     categoryLabel: 'Darśana · Essay',

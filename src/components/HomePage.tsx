@@ -3350,10 +3350,10 @@ const HomePage: React.FC<HomePageProps> = ({
                 display: 'inline-block',
                 marginBottom: '0.5rem',
               }}>
-                दर्शनम् · DARŚANA ESSAY
+                चिन्तनम् · PHILOSOPHY ESSAY
               </span>
               <h4 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#2b2118', margin: '0 0 0.35rem' }}>
-                Why Learn a Language — Especially Sanskrit — in the Age of AI
+                Why Learn Sanskrit in the Age of AI
               </h4>
               <p style={{ fontSize: '0.98rem', fontWeight: 700, color: '#9a3423', margin: '0 0 0.4rem' }}>
                 Machines will make communication efficient. They will not make it living.

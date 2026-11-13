@@ -127,7 +127,7 @@ const DEFAULT_DESC =
   'Unlock your child\'s potential with interactive Sanskrit and Vedic Math for kids. Start learning with a 14-day free trial.';
 
 const AI_ESSAY_TITLE =
-  'Why Learn a Language — Especially Sanskrit — in the Age of AI · Darśana | EdNet Gurukul';
+  'Why Learn Sanskrit in the Age of AI | EdNet Gurukul';
 const AI_ESSAY_DESC =
   'Machines will make communication efficient. They will not make it living. Explore why Sanskrit phonetics, Pāṇinian grammar, and presence matter in an automated age.';
 
@@ -544,9 +544,9 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
         {activeEssay === 'ai_sanskrit' && (
           <div className="philosophy-essay-body">
             <header className="philosophy-hero">
-              <span className="philosophy-kicker">Gurukul Darśana · दर्शनम्</span>
+              <span className="philosophy-kicker">Gurukul Philosophy · चिन्तनम्</span>
               <h1 className="philosophy-title">
-                Why Learn a Language — Especially Sanskrit — in the Age of AI
+                Why Learn Sanskrit in the Age of AI
               </h1>
               <p className="philosophy-mantra">
                 Machines will make communication efficient. They will not make it living.
@@ -1276,7 +1276,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                 >
-                  🤖 Read “Why Learn Sanskrit in the Age of AI” ➔
+                  Read “Why Learn Sanskrit in the Age of AI” ➔
                 </button>
               </div>
             </section>
@@ -1948,7 +1948,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
                   >
-                    🤖 Why Learn Sanskrit in the Age of AI ➔
+                    Why Learn Sanskrit in the Age of AI ➔
                   </button>
                   <button
                     type="button"
@@ -6565,7 +6565,7 @@ const PhilosophyPage: React.FC<PhilosophyPageProps> = ({
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                 >
-                  🤖 Why Learn Sanskrit in the Age of AI ➔
+                  Why Learn Sanskrit in the Age of AI ➔
                 </button>
                 <button
                   type="button"

@@ -496,8 +496,8 @@ export const BODHI_CONTEXT_TIPS: Record<string, BodhiContextTip> = {
   },
   philosophy: {
     viewId: 'philosophy',
-    title: 'Darśana: Why Learn Sanskrit in the Age of AI',
-    sanskritTitle: 'दर्शनम् · ए.आई. युगे किमर्थं संस्कृतम्?',
+    title: 'Why Learn Sanskrit in the Age of AI',
+    sanskritTitle: 'ए.आई. युगे किमर्थं संस्कृतम्?',
     summary: 'Deep reflections on human speech, ancient geodesy, and why AI will make language chosen rather than obsolete.',
     bulletPoints: [
       'Communication has two faces: Transfer (information) and Bind (breath, body, presence).',
