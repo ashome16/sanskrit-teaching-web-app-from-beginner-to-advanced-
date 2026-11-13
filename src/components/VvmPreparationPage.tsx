@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { soundEffects } from '../utils/soundEffects';
 import {
-  VVM_2026_JR_MOCK_01,
-  VVM_2026_JR_MOCK_QUESTIONS,
-  calculateVvmJuniorScore,
+  VVM_MOCK_EXAMS,
+  calculateVvmCohortScore,
+  type VvmCohort,
+  type VvmMockExam,
   type VvmScoreSummary,
 } from '../data/vvmJuniorMockData';
 import '../styles/vvm-prep.css';
@@ -64,28 +65,45 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
     }
   };
 
-  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
+  const [mockCohort, setMockCohort] = useState<VvmCohort>('junior');
+  const [cohortAnswers, setCohortAnswers] = useState<Record<VvmCohort, Record<number, number>>>({
+    junior: {},
+    senior: {},
+  });
   const [quizFilter, setQuizFilter] = useState<'all' | 'partA' | 'partB'>('all');
 
+  const activeExam: VvmMockExam = VVM_MOCK_EXAMS[mockCohort];
+  const activeQuestions = activeExam.questions;
+  const currentAnswers = cohortAnswers[mockCohort];
+
   const handleSelectAnswer = (questionId: number, optionIndex: number) => {
-    if (selectedAnswers[questionId] !== undefined) return;
-    const q = VVM_2026_JR_MOCK_QUESTIONS.find((item) => item.id === questionId);
-    setSelectedAnswers((prev) => ({ ...prev, [questionId]: optionIndex }));
+    if (currentAnswers[questionId] !== undefined) return;
+    const q = activeQuestions.find((item) => item.id === questionId);
+    setCohortAnswers((prev) => ({
+      ...prev,
+      [mockCohort]: {
+        ...prev[mockCohort],
+        [questionId]: optionIndex,
+      },
+    }));
     if (q && optionIndex === q.correctIndex) {
       soundEffects.playSuccessDing();
     }
   };
 
   const handleResetQuiz = () => {
-    setSelectedAnswers({});
+    setCohortAnswers((prev) => ({
+      ...prev,
+      [mockCohort]: {},
+    }));
     setQuizFilter('all');
   };
 
-  const scoreSummary: VvmScoreSummary = calculateVvmJuniorScore(selectedAnswers);
+  const scoreSummary: VvmScoreSummary = calculateVvmCohortScore(mockCohort, currentAnswers);
   const answeredCount = scoreSummary.totalAttempted;
   const currentScore = scoreSummary.totalScore;
 
-  const displayedQuestions = VVM_2026_JR_MOCK_QUESTIONS.filter((q) => {
+  const displayedQuestions = activeQuestions.filter((q) => {
     if (quizFilter === 'partA') return q.section === 'Part A';
     if (quizFilter === 'partB') return q.section === 'Part B';
     return true;
@@ -221,7 +239,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
             onClick={() => handleTabClick('quiz')}
           >
             <span>30-Q Mock Test</span>
-            <span className="vvm-tab-badge">{answeredCount}/{VVM_2026_JR_MOCK_QUESTIONS.length}</span>
+            <span className="vvm-tab-badge">{answeredCount}/{activeQuestions.length}</span>
           </button>
           <button
             type="button"
@@ -519,58 +537,143 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
         {activeTab === 'scientists' && (
           <section className="vvm-section" aria-labelledby="scientists-heading">
             <div className="vvm-section-header">
-              <div className="vvm-section-kicker">Section A Qualifier (20% Weightage)</div>
+              <div className="vvm-section-kicker">Section A Qualifier (20% Weightage) · Official Curriculum</div>
               <h2 id="scientists-heading" className="vvm-section-title">Tri-Shakti: Featured Indian Women Scientists (VVM 2026–27)</h2>
               <p className="vvm-section-desc">
                 Dive into the inspiring life journeys and research milestones of the three featured Indian women scientists for VVM 2026–27: Dr. Anna Mani (The Weather Woman of India), Dr. Asima Chatterjee (Organic Chemistry &amp; Phytomedicine), and Prof. Rohini Godbole (Theoretical Particle Physics &amp; CERN LHC Higgs Boson).
               </p>
             </div>
 
+            {/* TRI-SHAKTI SPOTLIGHT HERO */}
+            <div className="vvm-trishakti-hero-box">
+              <div className="vvm-trishakti-badge">
+                Featured 20% Section A Syllabus · VVM 2026–27
+              </div>
+              <h3 className="vvm-trishakti-title">
+                Tri-Shakti: Inspiring Journeys of India&apos;s Women in Science
+              </h3>
+              <p className="vvm-trishakti-subtitle">
+                Master the official life stories, breakthrough experiments, and institutional milestones for the 20-mark Section A qualifier.
+              </p>
+            </div>
+
+            <div className="vvm-trishakti-grid">
+              {/* Card 1: Dr. Anna Mani */}
+              <div className="vvm-trishakti-card">
+                <div className="vvm-trishakti-card-head">
+                  <div className="vvm-trishakti-badge-chip">Atmospheric Physics</div>
+                  <span className="vvm-trishakti-dates">1918 – 2001</span>
+                </div>
+                <h4 className="vvm-trishakti-name">Dr. Anna Mani</h4>
+                <div className="vvm-trishakti-epithet">The Weather Woman of India</div>
+
+                <div className="vvm-trishakti-meta-row">
+                  <div>
+                    <span className="vvm-trishakti-meta-label">Core Domain:</span>
+                    <span className="vvm-trishakti-meta-val">Atmospheric Physics &amp; Meteorological Instrumentation</span>
+                  </div>
+                  <div>
+                    <span className="vvm-trishakti-meta-label">Key Institutions:</span>
+                    <span className="vvm-trishakti-meta-val">IISc Bengaluru (Raman Lab) · IMD Pune &amp; New Delhi</span>
+                  </div>
+                </div>
+
+                <div className="vvm-trishakti-block">
+                  <span className="vvm-trishakti-block-title">Major Breakthroughs:</span>
+                  <ul className="vvm-trishakti-list">
+                    <li><strong>100+ Weather Instruments:</strong> Designed and standardized indigenous instruments in India, eliminating dependence on costly foreign imports.</li>
+                    <li><strong>Indian Ozonesonde:</strong> Developed the specialized balloon-borne ozonesonde to measure vertical ozone concentration profiles in the atmosphere.</li>
+                    <li><strong>Renewable Energy Pioneer:</strong> Authored definitive reference handbooks <em>The Handbook of Solar Radiation Data for India</em> and <em>Wind Energy Data for India</em>.</li>
+                  </ul>
+                </div>
+
+                <div className="vvm-trishakti-quickfact">
+                  <strong>VVM Exam Quick-Fact:</strong>
+                  <span>Began research under Nobel Laureate <strong>Sir C. V. Raman</strong> studying spectroscopy of diamonds and rubies before mastering meteorological instruments at Imperial College London. Awarded the INSA <strong>K. R. Ramanathan Medal (1987)</strong>.</span>
+                </div>
+              </div>
+
+              {/* Card 2: Dr. Asima Chatterjee */}
+              <div className="vvm-trishakti-card">
+                <div className="vvm-trishakti-card-head">
+                  <div className="vvm-trishakti-badge-chip">Organic Chemistry</div>
+                  <span className="vvm-trishakti-dates">1917 – 2006</span>
+                </div>
+                <h4 className="vvm-trishakti-name">Dr. Asima Chatterjee</h4>
+                <div className="vvm-trishakti-epithet">Pioneer of Indian Phytomedicine</div>
+
+                <div className="vvm-trishakti-meta-row">
+                  <div>
+                    <span className="vvm-trishakti-meta-label">Core Domain:</span>
+                    <span className="vvm-trishakti-meta-val">Organic Chemistry &amp; Natural Product Phytochemistry</span>
+                  </div>
+                  <div>
+                    <span className="vvm-trishakti-meta-label">Key Institutions:</span>
+                    <span className="vvm-trishakti-meta-val">University of Calcutta (Khaira Professor of Chemistry)</span>
+                  </div>
+                </div>
+
+                <div className="vvm-trishakti-block">
+                  <span className="vvm-trishakti-block-title">Major Breakthroughs:</span>
+                  <ul className="vvm-trishakti-list">
+                    <li><strong>First Indian Woman D.Sc.:</strong> First woman to earn a Doctorate of Science from an Indian university (Calcutta University, 1944).</li>
+                    <li><strong>Indole &amp; Vinca Alkaloids:</strong> Elucidated the molecular structures and stereochemistry of indole alkaloids from <em>Rauvolfia</em> and vinca species (vital for cancer chemotherapy).</li>
+                    <li><strong>Ayush-56 Drug:</strong> Developed the patented anti-epileptic formulation <em>Ayush-56</em> from the aquatic herb <em>Marsilea minuta</em> (Sunsuniya) and anti-malarial therapies.</li>
+                  </ul>
+                </div>
+
+                <div className="vvm-trishakti-quickfact">
+                  <strong>VVM Exam Quick-Fact:</strong>
+                  <span>In 1975, became the <strong>first woman elected General President of the Indian Science Congress</strong>. Conferred the <strong>Padma Bhushan</strong> and Shanti Swarup Bhatnagar Prize.</span>
+                </div>
+              </div>
+
+              {/* Card 3: Prof. Rohini Godbole */}
+              <div className="vvm-trishakti-card">
+                <div className="vvm-trishakti-card-head">
+                  <div className="vvm-trishakti-badge-chip">Particle Physics</div>
+                  <span className="vvm-trishakti-dates">1952 – 2024</span>
+                </div>
+                <h4 className="vvm-trishakti-name">Prof. Rohini Godbole</h4>
+                <div className="vvm-trishakti-epithet">Architect of Particle Phenomenology</div>
+
+                <div className="vvm-trishakti-meta-row">
+                  <div>
+                    <span className="vvm-trishakti-meta-label">Core Domain:</span>
+                    <span className="vvm-trishakti-meta-val">Theoretical High-Energy Particle Physics</span>
+                  </div>
+                  <div>
+                    <span className="vvm-trishakti-meta-label">Key Institutions:</span>
+                    <span className="vvm-trishakti-meta-val">TIFR Mumbai · Centre for High Energy Physics, IISc Bengaluru</span>
+                  </div>
+                </div>
+
+                <div className="vvm-trishakti-block">
+                  <span className="vvm-trishakti-block-title">Major Breakthroughs:</span>
+                  <ul className="vvm-trishakti-list">
+                    <li><strong>Photon Hadronic Structure:</strong> Co-authored the globally recognized Drees–Godbole model on photon-hadron cross-sections, essential for CERN&apos;s <strong>Large Hadron Collider (LHC)</strong>.</li>
+                    <li><strong>Higgs Boson Phenomenology:</strong> Guided high-energy collider searches for the Higgs boson and supersymmetric particles beyond the Standard Model.</li>
+                    <li><strong>Lilavati&apos;s Daughters:</strong> Co-edited the landmark book profiling nearly 100 Indian women scientists to mentor and inspire female scientists in STEM.</li>
+                  </ul>
+                </div>
+
+                <div className="vvm-trishakti-quickfact">
+                  <strong>VVM Exam Quick-Fact:</strong>
+                  <span>Conferred India&apos;s <strong>Padma Shri (2019)</strong> and France&apos;s <strong>Ordre National du Mérite (2021)</strong> for international high-energy physics leadership and Indo-French scientific cooperation.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Sub-heading for other classical scientists */}
+            <div className="vvm-section-header" style={{ marginTop: '2.5rem' }}>
+              <div className="vvm-section-kicker">Modern Indian Scientific Heritage</div>
+              <h3 className="vvm-section-title" style={{ fontSize: '1.35rem' }}>Foundational Pioneers of Modern Indian Science</h3>
+              <p className="vvm-section-desc">
+                Classical Indian physicists, chemists, and mathematicians whose pioneering discoveries shaped global 20th-century science:
+              </p>
+            </div>
+
             <div className="vvm-scientists-grid">
-              <div className="vvm-scientist-card">
-                <div className="vvm-scientist-header">
-                  <h3 className="vvm-scientist-name">Anna Mani</h3>
-                  <div className="vvm-scientist-dates">1918 – 2001 · Atmospheric Physics &amp; Instrumentation</div>
-                </div>
-                <div className="vvm-scientist-field">Deputy Director General, India Meteorological Department (IMD)</div>
-                <p className="vvm-scientist-desc">
-                  A pioneer who worked with C.V. Raman studying spectroscopy of diamonds. At IMD Pune, she standardized and indigenously manufactured over 100 weather instruments, designed the ozonesonde for upper atmospheric ozone measurement, and mapped India&apos;s solar/wind energy resources.
-                </p>
-                <div className="vvm-scientist-milestones">
-                  <strong>VVM Exam Focus:</strong>
-                  Indigenous weather instruments · Ozonesonde · Solar radiation handbooks · Women in STEM leadership.
-                </div>
-              </div>
-
-              <div className="vvm-scientist-card">
-                <div className="vvm-scientist-header">
-                  <h3 className="vvm-scientist-name">Dr. Asima Chatterjee</h3>
-                  <div className="vvm-scientist-dates">1917 – 2006 · Organic Chemistry &amp; Phytomedicine</div>
-                </div>
-                <div className="vvm-scientist-field">Calcutta University · First Indian Woman D.Sc.</div>
-                <p className="vvm-scientist-desc">
-                  Pioneered natural products chemistry, investigating vinca alkaloids, coumarins, and terpenoids. She formulated the Ayurvedic anti-epileptic drug <em>Ayush-56</em> from Marsilea quadrifolia and developed clinically effective anti-malarial compounds.
-                </p>
-                <div className="vvm-scientist-milestones">
-                  <strong>VVM Exam Focus:</strong>
-                  Ayush-56 formulation · Alkaloid isolation · First woman president of Indian Science Congress Association (1975).
-                </div>
-              </div>
-
-              <div className="vvm-scientist-card">
-                <div className="vvm-scientist-header">
-                  <h3 className="vvm-scientist-name">Prof. Rohini Godbole</h3>
-                  <div className="vvm-scientist-dates">1952 – 2024 · Theoretical Particle Physics</div>
-                </div>
-                <div className="vvm-scientist-field">Centre for High Energy Physics, IISc Bengaluru</div>
-                <p className="vvm-scientist-desc">
-                  An internationally acclaimed particle theorist who worked on the Standard Model, supersymmetry, and top quark physics. Her computations guided experimental searches at the Large Hadron Collider (CERN), leading to the discovery of the Higgs boson.
-                </p>
-                <div className="vvm-scientist-milestones">
-                  <strong>VVM Exam Focus:</strong>
-                  Higgs boson search phenomenology · Linear Collider physics · Padma Shri (2019) · Champion of gender equity in science.
-                </div>
-              </div>
 
               <div className="vvm-scientist-card">
                 <div className="vvm-scientist-header">
@@ -893,9 +996,40 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
         {/* TAB 6: MOCK QUIZ */}
         {activeTab === 'quiz' && (
           <section className="vvm-section" aria-labelledby="quiz-heading">
+            {/* Cohort Switcher Bar */}
+            <div className="vvm-cohort-selector-bar">
+              <span className="vvm-cohort-selector-label">Select Exam Track:</span>
+              <button
+                type="button"
+                className={`vvm-cohort-btn${mockCohort === 'junior' ? ' active' : ''}`}
+                onClick={() => {
+                  setMockCohort('junior');
+                  setQuizFilter('all');
+                }}
+              >
+                <span>Junior Group (Classes 6–8)</span>
+                <span className="vvm-cohort-btn-pill">
+                  {Object.keys(cohortAnswers.junior).length}/30 Qs
+                </span>
+              </button>
+              <button
+                type="button"
+                className={`vvm-cohort-btn${mockCohort === 'senior' ? ' active' : ''}`}
+                onClick={() => {
+                  setMockCohort('senior');
+                  setQuizFilter('all');
+                }}
+              >
+                <span>Senior Group (Classes 9–11)</span>
+                <span className="vvm-cohort-btn-pill">
+                  {Object.keys(cohortAnswers.senior).length}/30 Qs
+                </span>
+              </button>
+            </div>
+
             <div className="vvm-section-header">
-              <div className="vvm-section-kicker">Interactive Diagnostic Mock Exam · Junior Group (Classes 6–8)</div>
-              <h2 id="quiz-heading" className="vvm-section-title">{VVM_2026_JR_MOCK_01.title}</h2>
+              <div className="vvm-section-kicker">Interactive Diagnostic Mock Exam · {activeExam.cohortLabel}</div>
+              <h2 id="quiz-heading" className="vvm-section-title">{activeExam.title}</h2>
               <p className="vvm-section-desc">
                 Full 30-question diagnostic mock exam strictly adhering to the VVM 2026–27 curriculum and marking scheme. Section A tests Indian Scientific Heritage and Tri-Shakti Biographies (+4 marks, 0 negative, 50% cutoff to qualify). Section B tests NCERT Science, Mathematics, and Logic (+4 marks, -1 mark penalty).
               </p>
@@ -906,7 +1040,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
               <div className="vvm-quiz-rules-title">
                 <span>VVM Exam Structure &amp; Qualifier Thresholds</span>
                 <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>
-                  Exam ID: {VVM_2026_JR_MOCK_01.examId} · Duration: {VVM_2026_JR_MOCK_01.durationMinutes} Mins · Total: 120 Marks
+                  Exam ID: {activeExam.examId} · Duration: {activeExam.durationMinutes} Mins · Total: 120 Marks
                 </span>
               </div>
               <div className="vvm-quiz-rules-grid">
@@ -1016,7 +1150,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
             {/* Questions Container */}
             <div className="vvm-quiz-container">
               {displayedQuestions.map((q) => {
-                const userChoice = selectedAnswers[q.id];
+                const userChoice = currentAnswers[q.id];
                 const isAnswered = userChoice !== undefined;
                 const isCorrect = userChoice === q.correctIndex;
                 const isPartA = q.section === 'Part A';

@@ -1,7 +1,7 @@
 /**
- * Official Vidyarthi Vigyan Manthan (VVM) 2026–27
- * Junior Group (Classes 6–8) — 30-Question Diagnostic Mock Exam
- * Exam ID: VVM-2026-JR-MOCK-01
+ * Official Vidyarthi Vigyan Manthan (VVM) 2026–27 Mock Exam Datasets
+ * - Junior Group (Classes 6–8): Exam ID VVM-2026-JR-MOCK-01
+ * - Senior Group (Classes 9–11): Exam ID VVM-2026-SR-MOCK-01
  */
 
 export type VvmSectionType = 'Part A' | 'Part B';
@@ -11,6 +11,8 @@ export type VvmCategoryType =
   | 'Tri-Shakti Biographies'
   | 'NCERT Science & Maths'
   | 'Logic & Reasoning';
+
+export type VvmCohort = 'junior' | 'senior';
 
 export interface VvmMockQuestion {
   id: number;
@@ -49,12 +51,14 @@ export interface VvmMockRules {
 export interface VvmMockExam {
   examId: string;
   title: string;
+  cohort: VvmCohort;
+  cohortLabel: string;
   durationMinutes: number;
   rules: VvmMockRules;
   questions: VvmMockQuestion[];
 }
 
-export const VVM_2026_JR_MOCK_RULES: VvmMockRules = {
+export const VVM_2026_MOCK_RULES: VvmMockRules = {
   partA: {
     questionsCount: 12,
     marksPerCorrect: 4,
@@ -73,6 +77,9 @@ export const VVM_2026_JR_MOCK_RULES: VvmMockRules = {
   totalMaxMarks: 120,
   durationMinutes: 30,
 };
+
+export const VVM_2026_JR_MOCK_RULES = VVM_2026_MOCK_RULES;
+export const VVM_2026_SR_MOCK_RULES = VVM_2026_MOCK_RULES;
 
 export const VVM_2026_JR_MOCK_QUESTIONS: VvmMockQuestion[] = [
   {
@@ -467,12 +474,422 @@ export const VVM_2026_JR_MOCK_QUESTIONS: VvmMockQuestion[] = [
   },
 ];
 
+export const VVM_2026_SR_MOCK_QUESTIONS: VvmMockQuestion[] = [
+  {
+    id: 1,
+    section: "Part A",
+    category: "Indian Contributions to Science",
+    question: "In the Kerala School of Astronomy and Mathematics, who discovered the infinite series expansion for π (Madhava–Leibniz series) in the 14th century?",
+    options: ["Nīlakaṇṭha Somayājī", "Mādhava of Saṅgamagrāma", "Parameśvara", "Jyeṣṭhadeva"],
+    rawOptions: ["A) Nīlakaṇṭha Somayājī", "B) Mādhava of Saṅgamagrāma", "C) Parameśvara", "D) Jyeṣṭhadeva"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Mādhava of Saṅgamagrāma pioneered infinite series approximations for trigonometric functions and π centuries before European calculus.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 2,
+    section: "Part A",
+    category: "Indian Contributions to Science",
+    question: "Which ancient Indian alchemical treatise by Nāgārjuna systematically classifies minerals, mercury compounds, and laboratory apparatus (Yantras)?",
+    options: ["Rasaratnākara", "Līlāvatī", "Bṛhat Saṃhitā", "Sūrya Siddhānta"],
+    rawOptions: ["A) Rasaratnākara", "B) Līlāvatī", "C) Bṛhat Saṃhitā", "D) Sūrya Siddhānta"],
+    correctOption: "A",
+    correctIndex: 0,
+    explanation: "Rasaratnākara details extraction of metals, distillation techniques, and medicinal preparations using purified mercury and minerals.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 3,
+    section: "Part A",
+    category: "Indian Contributions to Science",
+    question: "Wootz steel, renowned globally for making Damascus blades, was produced in ancient South India using which specialized technique?",
+    options: ["Open-hearth blast smelting", "Crucible carburization of wrought iron", "Electrolysis of iron ore", "Bessemer converter process"],
+    rawOptions: ["A) Open-hearth blast smelting", "B) Crucible carburization of wrought iron", "C) Electrolysis of iron ore", "D) Bessemer converter process"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Wootz steel was created by heating wrought iron with carbon-rich organic matter inside sealed clay crucibles.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 4,
+    section: "Part A",
+    category: "Indian Contributions to Science",
+    question: "Who authored the 'Tantrasaṅgraha' (1500 CE) and proposed a quasi-heliocentric planetary model where Mercury, Venus, Mars, Jupiter, and Saturn orbit the Sun?",
+    options: ["Brahmagupta", "Nīlakaṇṭha Somayājī", "Bhāskara I", "Śrīdharācārya"],
+    rawOptions: ["A) Brahmagupta", "B) Nīlakaṇṭha Somayājī", "C) Bhāskara I", "D) Śrīdharācārya"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Nīlakaṇṭha Somayājī revised planetary latitudes in Tantrasaṅgraha, presenting a model similar to the later Tychonic system.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 5,
+    section: "Part A",
+    category: "Indian Contributions to Science",
+    question: "The Chakravala method, an optimal cyclic algorithm for solving indeterminate quadratic equations (Pell's equation: Nx² + 1 = y²), was perfected by:",
+    options: ["Bhāskara II", "Pingala", "Halāyudha", "Mahāvīra"],
+    rawOptions: ["A) Bhāskara II", "B) Pingala", "C) Halāyudha", "D) Mahāvīra"],
+    correctOption: "A",
+    correctIndex: 0,
+    explanation: "Bhāskara II refined Jayadeva's Chakravala method in his Bījagaṇita to find minimal integer solutions.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 6,
+    section: "Part A",
+    category: "Indian Contributions to Science",
+    question: "Which traditional Indian water-harvesting architecture in Gujarat and Rajasthan utilizes subterranean stepped wells to minimize evaporation?",
+    options: ["Suranga", "Vav / Baoli", "Zabo", "Ahar-Pyne"],
+    rawOptions: ["A) Suranga", "B) Vav / Baoli", "C) Zabo", "D) Ahar-Pyne"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Stepwells (Vavs in Gujarat, Baolis in Rajasthan) access deep groundwater tables while keeping water cool and shaded.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 7,
+    section: "Part A",
+    category: "Tri-Shakti Biographies",
+    question: "Dr. Anna Mani established a network of radiation measuring stations across India and authored two landmark reference books on:",
+    options: ["Monsoon Oceanography", "Solar Radiation and Wind Energy over India", "Himalayan Glaciology", "Ionospheric Radio Propagation"],
+    rawOptions: ["A) Monsoon Oceanography", "B) Solar Radiation and Wind Energy over India", "C) Himalayan Glaciology", "D) Ionospheric Radio Propagation"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Anna Mani published 'The Handbook of Solar Radiation Data for India' and 'Wind Energy Data for India', laying the foundation for renewable energy.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 8,
+    section: "Part A",
+    category: "Tri-Shakti Biographies",
+    question: "Which national honour was awarded to Dr. Anna Mani in 1987 by the Indian National Science Academy (INSA) for her meteorological contributions?",
+    options: ["Shanti Swarup Bhatnagar Prize", "K. R. Ramanathan Medal", "Meghnad Saha Medal", "Aryabhata Medal"],
+    rawOptions: ["A) Shanti Swarup Bhatnagar Prize", "B) K. R. Ramanathan Medal", "C) Meghnad Saha Medal", "D) Aryabhata Medal"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "INSA awarded Anna Mani the K. R. Ramanathan Medal in 1987 for her lifetime contributions to atmospheric sciences.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 9,
+    section: "Part A",
+    category: "Tri-Shakti Biographies",
+    question: "Dr. Asima Chatterjee conducted seminal structural and stereochemical studies on which class of plant-derived alkaloids?",
+    options: ["Opium alkaloids", "Indole and Vinca alkaloids", "Tropane alkaloids", "Purine alkaloids"],
+    rawOptions: ["A) Opium alkaloids", "B) Indole and Vinca alkaloids", "C) Tropane alkaloids", "D) Purine alkaloids"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Asima Chatterjee elucidated the structures and stereochemistry of indole alkaloids from Rauvolfia and Vinca species.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 10,
+    section: "Part A",
+    category: "Tri-Shakti Biographies",
+    question: "In 1975, Dr. Asima Chatterjee achieved a historic milestone in Indian science by becoming the first woman elected as:",
+    options: ["Director of CSIR", "General President of the Indian Science Congress", "Chairperson of ISRO", "President of INSA"],
+    rawOptions: ["A) Director of CSIR", "B) General President of the Indian Science Congress", "C) Chairperson of ISRO", "D) President of INSA"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "She presided over the 62nd session of the Indian Science Congress in 1975, the first woman to hold the office.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 11,
+    section: "Part A",
+    category: "Tri-Shakti Biographies",
+    question: "Prof. Rohini Godbole's theoretical research on 'hadronic structure of high-energy photons' was crucial for designing experiments at:",
+    options: ["LIGO Gravitational Observatory", "Large Hadron Collider (LHC) & future e+e- colliders", "James Webb Space Telescope", "ITER Fusion Reactor"],
+    rawOptions: ["A) LIGO Gravitational Observatory", "B) Large Hadron Collider (LHC) & future e+e- colliders", "C) James Webb Space Telescope", "D) ITER Fusion Reactor"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Her calculations on photon-photon interactions and parton distributions directly informed collider physics at CERN's LHC and linear colliders.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 12,
+    section: "Part A",
+    category: "Tri-Shakti Biographies",
+    question: "In recognition of her contributions to science and France–India scientific collaboration, Prof. Rohini Godbole was awarded which French civilian distinction in 2021?",
+    options: ["Legion of Honour", "Ordre National du Mérite", "Ordre des Palmes Académiques", "Prix Marie Curie"],
+    rawOptions: ["A) Legion of Honour", "B) Ordre National du Mérite", "C) Ordre des Palmes Académiques", "D) Prix Marie Curie"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "France conferred the Ordre National du Mérite on Rohini Godbole in 2021, alongside India's Padma Shri in 2019.",
+    marksCorrect: 4,
+    marksIncorrect: 0,
+  },
+  {
+    id: 13,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "A body of mass 4 kg is moving with a velocity of 5 m/s. What is its kinetic energy?",
+    options: ["20 J", "40 J", "50 J", "100 J"],
+    rawOptions: ["A) 20 J", "B) 40 J", "C) 50 J", "D) 100 J"],
+    correctOption: "C",
+    correctIndex: 2,
+    explanation: "KE = (1/2)mv² = 0.5 × 4 × 5² = 2 × 25 = 50 J.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 14,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "Which functional group is present in ethanoic acid (CH₃COOH)?",
+    options: ["Aldehyde (-CHO)", "Ketone (>C=O)", "Carboxylic acid (-COOH)", "Alcohol (-OH)"],
+    rawOptions: ["A) Aldehyde (-CHO)", "B) Ketone (>C=O)", "C) Carboxylic acid (-COOH)", "D) Alcohol (-OH)"],
+    correctOption: "C",
+    correctIndex: 2,
+    explanation: "Ethanoic acid contains the -COOH (carboxyl) functional group.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 15,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "During aerobic respiration in human muscle cells, pyruvate is broken down into carbon dioxide and water inside which organelle?",
+    options: ["Cytoplasm", "Mitochondria", "Golgi apparatus", "Endoplasmic reticulum"],
+    rawOptions: ["A) Cytoplasm", "B) Mitochondria", "C) Golgi apparatus", "D) Endoplasmic reticulum"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "The Krebs cycle and oxidative phosphorylation occur inside mitochondria, yielding ATP, CO₂, and H₂O.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 16,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "If the roots of the quadratic equation x² - 5x + k = 0 are equal, what is the value of k?",
+    options: ["25", "25/4", "5/2", "-25/4"],
+    rawOptions: ["A) 25", "B) 25/4", "C) 5/2", "D) -25/4"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "For equal roots, discriminant b² - 4ac = 0 → (-5)² - 4(1)(k) = 0 → 25 = 4k → k = 25/4.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 17,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "Two resistors of 6 Ω and 3 Ω are connected in parallel across a 6 V battery. What is the total current drawn from the battery?",
+    options: ["0.67 A", "2 A", "3 A", "9 A"],
+    rawOptions: ["A) 0.67 A", "B) 2 A", "C) 3 A", "D) 9 A"],
+    correctOption: "C",
+    correctIndex: 2,
+    explanation: "1/R_eq = 1/6 + 1/3 = 3/6 = 1/2 → R_eq = 2 Ω. Current I = V / R_eq = 6 / 2 = 3 A.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 18,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "Which chemical compound is commonly known as Plaster of Paris?",
+    options: ["CaSO₄ · 2H₂O", "CaSO₄ · ½H₂O", "CaCO₃", "CaOCl₂"],
+    rawOptions: ["A) CaSO₄ · 2H₂O", "B) CaSO₄ · ½H₂O", "C) CaCO₃", "D) CaOCl₂"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Calcium sulphate hemihydrate (CaSO₄ · ½H₂O) is obtained by heating gypsum at 373 K.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 19,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "Which plant hormone promotes cell division and is found in high concentrations in fruits and seeds?",
+    options: ["Abscisic acid", "Cytokinin", "Ethylene", "Gibberellin"],
+    rawOptions: ["A) Abscisic acid", "B) Cytokinin", "C) Ethylene", "D) Gibberellin"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Cytokinins stimulate rapid cell division (cytokinesis) in actively growing plant tissues.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 20,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "What is the value of sin² 30° + cos² 30° + tan 45°?",
+    options: ["1", "1.5", "2", "2.5"],
+    rawOptions: ["A) 1", "B) 1.5", "C) 2", "D) 2.5"],
+    correctOption: "C",
+    correctIndex: 2,
+    explanation: "Using the identity sin²θ + cos²θ = 1 and tan 45° = 1, the sum is 1 + 1 = 2.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 21,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "An object is placed at the centre of curvature (C) of a concave mirror. The image formed is:",
+    options: ["Virtual, erect, and magnified", "Real, inverted, and of the same size", "Real, inverted, and diminished", "Virtual, inverted, and at infinity"],
+    rawOptions: ["A) Virtual, erect, and magnified", "B) Real, inverted, and of the same size", "C) Real, inverted, and diminished", "D) Virtual, inverted, and at infinity"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "When an object is placed at C of a concave mirror, a real and inverted image of equal size forms at C.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 22,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "According to Avogadro's law, 1 mole of any ideal gas at STP (273.15 K, 1 bar) occupies approximately:",
+    options: ["11.2 L", "22.7 L", "24.0 L", "44.8 L"],
+    rawOptions: ["A) 11.2 L", "B) 22.7 L", "C) 24.0 L", "D) 44.8 L"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "At IUPAC STP (1 bar, 273.15 K), the molar volume of an ideal gas is 22.71 L (22.4 L at 1 atm).",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 23,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "In Mendel's dihybrid cross (RrYy × RrYy), what is the phenotypic ratio of offspring in the F2 generation?",
+    options: ["3 : 1", "1 : 2 : 1", "9 : 3 : 3 : 1", "9 : 7"],
+    rawOptions: ["A) 3 : 1", "B) 1 : 2 : 1", "C) 9 : 3 : 3 : 1", "D) 9 : 7"],
+    correctOption: "C",
+    correctIndex: 2,
+    explanation: "Independent assortment of two traits yields a 9:3:3:1 F2 phenotypic ratio.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 24,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "Find the 10th term of the Arithmetic Progression (AP): 7, 13, 19, 25, ...",
+    options: ["55", "61", "67", "73"],
+    rawOptions: ["A) 55", "B) 61", "C) 67", "D) 73"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "a = 7, d = 6; a₁₀ = a + (10 - 1)d = 7 + 9(6) = 7 + 54 = 61.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 25,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "Which phenomenon explains why the sky appears blue during a clear day?",
+    options: ["Total internal reflection", "Dispersion of light", "Rayleigh scattering of shorter wavelengths", "Refraction through atmosphere"],
+    rawOptions: ["A) Total internal reflection", "B) Dispersion of light", "C) Rayleigh scattering of shorter wavelengths", "D) Refraction through atmosphere"],
+    correctOption: "C",
+    correctIndex: 2,
+    explanation: "Fine air molecules scatter shorter blue wavelengths much more strongly than longer red wavelengths.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 26,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "Which metal is extracted from its sulphide ore (ZnS) by roasting followed by reduction with carbon?",
+    options: ["Sodium", "Zinc", "Aluminium", "Gold"],
+    rawOptions: ["A) Sodium", "B) Zinc", "C) Aluminium", "D) Gold"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Zinc blende (ZnS) is roasted to ZnO and then reduced with coke (carbon) to obtain metallic zinc.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 27,
+    section: "Part B",
+    category: "NCERT Science & Maths",
+    question: "A fair die is thrown once. What is the probability of getting a prime number?",
+    options: ["1/6", "1/3", "1/2", "2/3"],
+    rawOptions: ["A) 1/6", "B) 1/3", "C) 1/2", "D) 2/3"],
+    correctOption: "C",
+    correctIndex: 2,
+    explanation: "Prime numbers on a die are {2, 3, 5} (3 outcomes out of 6), so P = 3/6 = 1/2.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 28,
+    section: "Part B",
+    category: "Logic & Reasoning",
+    question: "In a certain code, 'VIGYAN' is written as 'WJIZBO'. How is 'SHAKTI' written in that code?",
+    options: ["TIBLUJ", "TIBLVJ", "THBLUJ", "UJCMVK"],
+    rawOptions: ["A) TIBLUJ", "B) TIBLVJ", "C) THBLUJ", "D) UJCMVK"],
+    correctOption: "A",
+    correctIndex: 0,
+    explanation: "Every letter advances by +1: S→T, H→I, A→B, K→L, T→U, I→J.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 29,
+    section: "Part B",
+    category: "Logic & Reasoning",
+    question: "Pointing to a photograph, Meera said, 'He is the only son of my grandfather's only daughter.' How is the person in the photograph related to Meera?",
+    options: ["Uncle", "Brother", "Cousin", "Father"],
+    rawOptions: ["A) Uncle", "B) Brother", "C) Cousin", "D) Father"],
+    correctOption: "B",
+    correctIndex: 1,
+    explanation: "Grandfather's only daughter is Meera's mother; her only son is Meera's brother.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+  {
+    id: 30,
+    section: "Part B",
+    category: "Logic & Reasoning",
+    question: "Find the next term in the alphanumeric series: B2D, E4H, H8L, K16P, ?",
+    options: ["N32T", "M32S", "N24T", "O32U"],
+    rawOptions: ["A) N32T", "B) M32S", "C) N24T", "D) O32U"],
+    correctOption: "A",
+    correctIndex: 0,
+    explanation: "First letters (+3): B, E, H, K, N; Numbers (×2): 2, 4, 8, 16, 32; Last letters (+4): D, H, L, P, T.",
+    marksCorrect: 4,
+    marksIncorrect: -1,
+  },
+];
+
 export const VVM_2026_JR_MOCK_01: VvmMockExam = {
   examId: "VVM-2026-JR-MOCK-01",
   title: "VVM 2026–27 Science & Heritage 30-Q Mock (Classes 6–8)",
+  cohort: 'junior',
+  cohortLabel: 'Junior Group (Classes 6–8)',
   durationMinutes: 30,
-  rules: VVM_2026_JR_MOCK_RULES,
+  rules: VVM_2026_MOCK_RULES,
   questions: VVM_2026_JR_MOCK_QUESTIONS,
+};
+
+export const VVM_2026_SR_MOCK_01: VvmMockExam = {
+  examId: "VVM-2026-SR-MOCK-01",
+  title: "VVM 2026–27 Science & Heritage 30-Q Mock (Classes 9–11)",
+  cohort: 'senior',
+  cohortLabel: 'Senior Group (Classes 9–11)',
+  durationMinutes: 30,
+  rules: VVM_2026_MOCK_RULES,
+  questions: VVM_2026_SR_MOCK_QUESTIONS,
+};
+
+export const VVM_MOCK_EXAMS: Record<VvmCohort, VvmMockExam> = {
+  junior: VVM_2026_JR_MOCK_01,
+  senior: VVM_2026_SR_MOCK_01,
 };
 
 export interface VvmScoreSummary {
@@ -491,7 +908,10 @@ export interface VvmScoreSummary {
   maxPossibleScore: number; // 120
 }
 
-export function calculateVvmJuniorScore(answers: Record<number, number>): VvmScoreSummary {
+export function calculateVvmScoreForQuestions(
+  questions: VvmMockQuestion[],
+  answers: Record<number, number>
+): VvmScoreSummary {
   let partAAttempted = 0;
   let partACorrect = 0;
   let partAIncorrect = 0;
@@ -502,7 +922,7 @@ export function calculateVvmJuniorScore(answers: Record<number, number>): VvmSco
   let partBIncorrect = 0;
   let partBScore = 0;
 
-  for (const q of VVM_2026_JR_MOCK_QUESTIONS) {
+  for (const q of questions) {
     const userChoice = answers[q.id];
     if (userChoice === undefined) continue;
 
@@ -513,7 +933,6 @@ export function calculateVvmJuniorScore(answers: Record<number, number>): VvmSco
         partAScore += 4;
       } else {
         partAIncorrect++;
-        // 0 negative marks in Part A
       }
     } else {
       partBAttempted++;
@@ -522,15 +941,14 @@ export function calculateVvmJuniorScore(answers: Record<number, number>): VvmSco
         partBScore += 4;
       } else {
         partBIncorrect++;
-        partBScore -= 1; // -1 negative mark in Part B
+        partBScore -= 1;
       }
     }
   }
 
-  const isPartAQualified = partAScore >= VVM_2026_JR_MOCK_RULES.partA.cutoffMarks;
+  const isPartAQualified = partAScore >= VVM_2026_MOCK_RULES.partA.cutoffMarks;
   const totalAttempted = partAAttempted + partBAttempted;
-  const totalUnanswered = VVM_2026_JR_MOCK_QUESTIONS.length - totalAttempted;
-  // If Part A is qualified, total score includes Part B; otherwise Part B is not added to official rank score
+  const totalUnanswered = questions.length - totalAttempted;
   const totalScore = isPartAQualified ? (partAScore + partBScore) : partAScore;
 
   return {
@@ -548,4 +966,20 @@ export function calculateVvmJuniorScore(answers: Record<number, number>): VvmSco
     totalScore,
     maxPossibleScore: 120,
   };
+}
+
+export function calculateVvmCohortScore(
+  cohort: VvmCohort,
+  answers: Record<number, number>
+): VvmScoreSummary {
+  const questions = cohort === 'senior' ? VVM_2026_SR_MOCK_QUESTIONS : VVM_2026_JR_MOCK_QUESTIONS;
+  return calculateVvmScoreForQuestions(questions, answers);
+}
+
+export function calculateVvmJuniorScore(answers: Record<number, number>): VvmScoreSummary {
+  return calculateVvmScoreForQuestions(VVM_2026_JR_MOCK_QUESTIONS, answers);
+}
+
+export function calculateVvmSeniorScore(answers: Record<number, number>): VvmScoreSummary {
+  return calculateVvmScoreForQuestions(VVM_2026_SR_MOCK_QUESTIONS, answers);
 }
