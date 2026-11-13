@@ -594,6 +594,73 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
               </div>
             </div>
 
+            {/* 30-Question VVM Mock Test Engine Blueprint */}
+            <div className="vvm-blueprint-card" style={{ marginTop: '1.5rem', background: '#ffffff', border: '1.5px solid #2dd4bf' }}>
+              <div className="vvm-blueprint-card-head">
+                <span className="vvm-bp-tag vvm-bp-tag--a">EdNet Practice Engine</span>
+                <span className="vvm-bp-weight">30 Questions · 120 Marks · 30 Mins</span>
+              </div>
+              <h3 style={{ margin: '0.35rem 0 0.5rem', color: '#0f766e' }}>The 30-Question VVM Mini-Mock Blueprint</h3>
+              <p style={{ fontSize: '0.86rem', color: '#334155', margin: '0 0 1rem', lineHeight: 1.5 }}>
+                Configured strictly to mirror the real VVM Level-I exam structure, marking scheme, and qualification thresholds:
+              </p>
+
+              <div style={{ overflowX: 'auto', marginBottom: '1rem' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.84rem' }}>
+                  <thead>
+                    <tr style={{ background: '#f0fdfa', borderBottom: '2px solid #14b8a6', textAlign: 'left', color: '#0f766e' }}>
+                      <th style={{ padding: '0.55rem 0.75rem' }}>Mock Section</th>
+                      <th style={{ padding: '0.55rem 0.75rem' }}>Topic Area</th>
+                      <th style={{ padding: '0.55rem 0.75rem' }}>Questions</th>
+                      <th style={{ padding: '0.55rem 0.75rem' }}>Marks</th>
+                      <th style={{ padding: '0.55rem 0.75rem' }}>Negative Marking</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.55rem 0.75rem' }}><strong>Part A (Qualifier)</strong></td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>Indian Contributions to Science</td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>6 Qs</td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>24 Marks</td>
+                      <td style={{ padding: '0.55rem 0.75rem', color: '#166534' }}>None (0)</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.55rem 0.75rem' }}><strong>Part A (Qualifier)</strong></td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>Tri-Shakti Biographies (Mani, Chatterjee, Godbole)</td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>6 Qs</td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>24 Marks</td>
+                      <td style={{ padding: '0.55rem 0.75rem', color: '#166534' }}>None (0)</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.55rem 0.75rem' }}><strong>Part B (Core)</strong></td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>NCERT Science &amp; Mathematics (Class-Specific)</td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>15 Qs</td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>60 Marks</td>
+                      <td style={{ padding: '0.55rem 0.75rem', color: '#dc2626' }}>-1 Mark per wrong answer</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.55rem 0.75rem' }}><strong>Part B (Core)</strong></td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>Logic &amp; Reasoning</td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>3 Qs</td>
+                      <td style={{ padding: '0.55rem 0.75rem' }}>12 Marks</td>
+                      <td style={{ padding: '0.55rem 0.75rem', color: '#dc2626' }}>-1 Mark per wrong answer</td>
+                    </tr>
+                    <tr style={{ background: '#f8fafc', fontWeight: 800, color: '#0f172a' }}>
+                      <td style={{ padding: '0.65rem 0.75rem' }}>Total</td>
+                      <td style={{ padding: '0.65rem 0.75rem' }}>Full 30-Minute Mini-Mock</td>
+                      <td style={{ padding: '0.65rem 0.75rem' }}>30 Qs</td>
+                      <td style={{ padding: '0.65rem 0.75rem' }}>120 Marks</td>
+                      <td style={{ padding: '0.65rem 0.75rem' }}>Part B evaluated only if Part A ≥ 50%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div style={{ background: '#fef3c7', border: '1px solid #fde68a', borderRadius: '8px', padding: '0.75rem 1rem', fontSize: '0.82rem', color: '#92400e', lineHeight: 1.5 }}>
+                <strong>VVM Section A Qualifier Rule:</strong> Part B is evaluated only if a student scores at least 50% in Part A (minimum 24 out of 48 marks in Indian Contributions &amp; Tri-Shakti Biographies). No negative marking in Part A encourages full attempt of heritage questions!
+              </div>
+            </div>
+
             <div className="vvm-ncert-callout">
               <div className="vvm-ncert-callout-text">
                 <h4>Registered Student Cohorts</h4>
@@ -747,10 +814,10 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
         {activeTab === 'scientists' && (
           <section className="vvm-section" aria-labelledby="scientists-heading">
             <div className="vvm-section-header">
-              <div className="vvm-section-kicker">Section A Study Guide (20% Weightage)</div>
-              <h2 id="scientists-heading" className="vvm-section-title">Eminent Indian Scientists</h2>
+              <div className="vvm-section-kicker">Section A Qualifier (20% Weightage)</div>
+              <h2 id="scientists-heading" className="vvm-section-title">Tri-Shakti: Featured Indian Women Scientists (VVM 2026–27)</h2>
               <p className="vvm-section-desc">
-                Biographical profiles, scientific breakthroughs, and historical impacts of visionary Indian scientists prominently featured in the official VVM curriculum.
+                Dive into the inspiring life journeys and research milestones of the three featured Indian women scientists for VVM 2026–27: Dr. Anna Mani (The Weather Woman of India), Dr. Asima Chatterjee (Organic Chemistry &amp; Phytomedicine), and Prof. Rohini Godbole (Theoretical Particle Physics &amp; CERN LHC Higgs Boson).
               </p>
             </div>
 
