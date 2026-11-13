@@ -2221,6 +2221,24 @@ const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* ------------------------------------------------------------------
+          Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Showcase
+          ------------------------------------------------------------------ */}
+      <VedicKnowledgeSystemShowcase
+        onOpenPhilosophy={onOpenPhilosophy}
+        onOpenVedicMaths={onOpenVedicMaths}
+        onOpenScienceLab={onOpenScienceLab}
+        onOpenGrammar={onOpenGrammar}
+        onOpenReader={onOpenReader}
+        onOpenCourse={onOpenCourse}
+        imageSrc="/images/vedic-indian-knowledge-system-v2.jpg"
+        imageWebpSrc="/images/vedic-indian-knowledge-system-v2.webp"
+        imageAlt="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Philosophy (Darshana), Mathematics (Ganita), Martial Arts & Warfare (Dhanurveda), Statecraft & Polity, Cosmology & Astronomy, History, Ayurveda, Architecture (Vastu), and Grammar & Linguistics"
+        imageWidth={1920}
+        imageHeight={1072}
+        artBadge="Indian Knowledge Systems"
+      />
+
+      {/* ------------------------------------------------------------------
           Core Features Grid - Real Learner Outcomes
           ------------------------------------------------------------------ */}
       <section className="home-features-section">
@@ -2595,24 +2613,6 @@ const HomePage: React.FC<HomePageProps> = ({
           )}
         </div>
       </section>
-
-      {/* ------------------------------------------------------------------
-          Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Showcase
-          ------------------------------------------------------------------ */}
-      <VedicKnowledgeSystemShowcase
-        onOpenPhilosophy={onOpenPhilosophy}
-        onOpenVedicMaths={onOpenVedicMaths}
-        onOpenScienceLab={onOpenScienceLab}
-        onOpenGrammar={onOpenGrammar}
-        onOpenReader={onOpenReader}
-        onOpenCourse={onOpenCourse}
-        imageSrc="/images/vedic-indian-knowledge-system-v2.jpg"
-        imageWebpSrc="/images/vedic-indian-knowledge-system-v2.webp"
-        imageAlt="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Philosophy (Darshana), Mathematics (Ganita), Martial Arts & Warfare (Dhanurveda), Statecraft & Polity, Cosmology & Astronomy, History, Ayurveda, Architecture (Vastu), and Grammar & Linguistics"
-        imageWidth={1920}
-        imageHeight={1072}
-        artBadge="Indian Knowledge Systems"
-      />
 
       {/* ------------------------------------------------------------------
           Sanskrit Online Classes with Bodhi Showcase (Direct Lessons)
