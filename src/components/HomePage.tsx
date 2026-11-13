@@ -52,6 +52,7 @@ export interface HomePageProps {
   onOpenCertificate?: () => void;
   onOpenCalendar?: () => void;
   onOpenVvm?: () => void;
+  onOpenAbout?: () => void;
 }
 
 interface DemoWord {
@@ -751,6 +752,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenCertificate,
   onOpenCalendar,
   onOpenVvm,
+  onOpenAbout,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   void onOpenCertificate; void FeatureTrialCallout;
@@ -1069,36 +1071,31 @@ const HomePage: React.FC<HomePageProps> = ({
             </nav>
           </div>
 
-          {/* Trust strip (under Devanagari centerpiece) */}
-          <div className="home-trust-banner home-trust-banner--hero" role="region" aria-label="Academic Standards">
-            <div className="home-trust-item">
-              <span className="home-trust-icon">🌟</span>
-              <div className="home-trust-text">
-                <strong>सर्वजन-हितम् · For All Ages</strong>
-                <span>Beginners, students &amp; scholars</span>
+          {/* Link to About Us section */}
+          <div className="home-about-link-strip" role="region" aria-label="About EdNet Learn">
+            <a
+              href="/about-us"
+              className="home-about-link-card"
+              onClick={(e) => {
+                if (onOpenAbout) {
+                  e.preventDefault();
+                  onOpenAbout();
+                }
+              }}
+            >
+              <div className="home-about-link-content">
+                <span className="home-about-link-kicker">परिचयः · ABOUT US</span>
+                <h3 className="home-about-link-title">About EdNet Learn — Learn Through Play</h3>
+                <p className="home-about-link-sub">
+                  Discovering India’s knowledge traditions alongside modern science, creative pedagogy, and computational linguistics. Explore our mission, vision, and team.
+                </p>
               </div>
-            </div>
-            <div className="home-trust-item">
-              <span className="home-trust-icon">🎧</span>
-              <div className="home-trust-text">
-                <strong>शुद्धोच्चारणम् · Native Speech Audio</strong>
-                <span>Alphabet, syllables &amp; shlokas in clear classical pronunciation</span>
+              <div className="home-about-link-action">
+                <span className="home-about-link-btn">
+                  Explore About Us <span className="home-about-link-arrow" aria-hidden="true">→</span>
+                </span>
               </div>
-            </div>
-            <div className="home-trust-item">
-              <span className="home-trust-icon">🏛️</span>
-              <div className="home-trust-text">
-                <strong>पाणिनीय-गम्भीरता · Pāṇinian Depth</strong>
-                <span>Dhātus, vibhaktis &amp; meaning</span>
-              </div>
-            </div>
-            <div className="home-trust-item">
-              <span className="home-trust-icon">🎒</span>
-              <div className="home-trust-text">
-                <strong>सीबीएसई-एनसीईआरटी · CBSE &amp; NEP Aligned</strong>
-                <span>NCERT Classes 7–9 + exam prep</span>
-              </div>
-            </div>
+            </a>
           </div>
 
           {/* 2. STEP-BY-STEP JOURNEY HEADLINE (Moved to Top & Made Bigger) */}

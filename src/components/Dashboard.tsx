@@ -1747,6 +1747,7 @@ const Dashboard: React.FC = () => {
           onOpenRegister={() => openAuthModal('login')}
           onOpenCertificate={() => navigateToView('certificate')}
           onOpenVvm={() => navigateToView('vvm')}
+          onOpenAbout={() => navigateToView('about')}
         />
       )}
       {/* FAQ lives at the bottom of the home page (no longer in the top menu). /faq scrolls here. */}
