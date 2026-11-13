@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { soundEffects } from '../utils/soundEffects';
+import {
+  VVM_2026_JR_MOCK_01,
+  VVM_2026_JR_MOCK_QUESTIONS,
+  calculateVvmJuniorScore,
+  type VvmScoreSummary,
+} from '../data/vvmJuniorMockData';
 import '../styles/vvm-prep.css';
 
 export interface VvmPreparationPageProps {
@@ -12,318 +19,6 @@ export interface VvmPreparationPageProps {
 }
 
 export type VvmTab = 'blueprint' | 'heritage' | 'scientists' | 'ncert' | 'logic' | 'quiz' | 'journey';
-
-interface QuizQuestion {
-  id: number;
-  category: string;
-  question: string;
-  options: string[];
-  correctIndex: number;
-  explanation: string;
-}
-
-const VVM_QUIZ_QUESTIONS: QuizQuestion[] = [
-  {
-    id: 1,
-    category: 'Indian Contributions to Science',
-    question: 'In the Vaiśeṣika system of Indian philosophy, which ancient sage formulated the atomic theory describing indivisible particles called "Paramaṇu"?',
-    options: ['Acharya Kanada', 'Sage Kapila', 'Rishi Patanjali', 'Sage Gautama'],
-    correctIndex: 0,
-    explanation: 'Acharya Kanada (c. 6th century BCE) founded the Vaisheshika school and propounded that all physical matter consists of indestructible, indivisible particles termed "Paramāṇu" that combine in dyads (dvyaṇuka) and triads (tryaṇuka).',
-  },
-  {
-    id: 2,
-    category: 'Indian Contributions to Science',
-    question: 'The renowned rustless Delhi Iron Pillar at Qutub complex has withstood corrosion for over 1600 years primarily due to the formation of which protective passive layer?',
-    options: ['Misawite (crystalline iron oxyhydroxide film)', 'Galvanized zinc oxide layer', 'Chromium oxide passive alloy', 'Pure magnetite surface burnishing'],
-    correctIndex: 0,
-    explanation: 'Metallurgical analysis by Indian scientists revealed that high phosphorus content and lack of sulfur/manganese in ancient bloomery wrought iron catalyzed a protective catalytic layer of "misawite" (δ-FeOOH) that shields the metal from atmospheric corrosion.',
-  },
-  {
-    id: 3,
-    category: 'Indian Contributions to Science',
-    question: 'Which ancient surgical text describes over 120 surgical instruments (Yantras & Śastras) as well as the world\'s earliest techniques of rhinoplasty (plastic surgery)?',
-    options: ['Suśruta Saṁhitā', 'Caraka Saṁhitā', 'Aṣṭāṅga Hṛdayam', 'Mādhava Nidāna'],
-    correctIndex: 0,
-    explanation: 'Acharya Sushruta (father of surgery) authored the Suśruta Saṁhitā, detailing intricate surgical procedures including forehead pedicle flap rhinoplasty, cataract couch surgery, bone setting, and 121 precision surgical instruments.',
-  },
-  {
-    id: 4,
-    category: 'Indian Contributions to Science',
-    question: 'In the 5th century CE treatise Āryabhaṭīya, Āryabhaṭa correctly asserted that:',
-    options: [
-      'The Earth rotates daily on its own axis and planetary orbits are elliptical/epicyclic',
-      'The Earth is completely stationary at the center of the firmament',
-      'Solar eclipses occur when the demon Rahu swallows the Sun',
-      'The speed of sound is faster than the speed of light'
-    ],
-    correctIndex: 0,
-    explanation: 'Aryabhata explicitly stated in Goladhyaya that the apparent daily motion of stars is caused by Earth\'s axial rotation ("Like a person in a moving boat sees stationary trees moving backwards, so do stars appear to move westward due to Earth rotating eastward").',
-  },
-  {
-    id: 5,
-    category: 'Indian Contributions to Science',
-    question: 'Which medieval school of Indian mathematics in Kerala developed infinite power series approximations for Pi (π), sine, and cosine nearly 250 years before Newton and Leibniz?',
-    options: ['Kerala School of Astronomy and Mathematics (Madhava of Sangamagrama)', 'Ujjain Observatory School', 'Pataliputra Academy', 'Nalanda Mahavihara'],
-    correctIndex: 0,
-    explanation: 'Madhava of Sangamagrama (c. 1340–1425 CE) and successors like Nilakantha Somayaji in Kerala developed infinite series for π, arctan, and trigonometric functions (the Madhava-Leibniz and Madhava-Gregory series).',
-  },
-  {
-    id: 6,
-    category: 'Biographies of Eminent Indian Scientists',
-    question: 'Anna Mani (1918–2001), one of India\'s most celebrated women in science, made pioneering national contributions in:',
-    options: [
-      'Meteorological instrumentation, atmospheric ozone profiling & solar/wind radiation mapping',
-      'Discovery of deep underground diamond deposits',
-      'Synthesis of synthetic nylon polymers',
-      'Designing heavy steam locomotives for railways'
-    ],
-    correctIndex: 0,
-    explanation: 'Anna Mani was a premier meteorologist who worked under C.V. Raman and later IMD, indigenously fabricating nearly 100 meteorological instruments, the ozonesonde, and publishing standard solar and wind energy resource manuals for India.',
-  },
-  {
-    id: 7,
-    category: 'Biographies of Eminent Indian Scientists',
-    question: 'Dr. Asima Chatterjee (1917–2006), the first woman to receive a Doctorate of Science from an Indian university, is world-famous for her work on:',
-    options: [
-      'Alkaloids and medicinal phytochemistry, developing the anti-epileptic drug Ayush-56',
-      'First quantum radar and supersonic stealth materials',
-      'Nuclear reactor core moderation using heavy water',
-      'Seismological mapping of the Deccan Plateau'
-    ],
-    correctIndex: 0,
-    explanation: 'Asima Chatterjee made milestone breakthroughs in alkaloid chemistry, researching Vinca alkaloids from Madagascar periwinkle and developing the anti-epileptic formulation Ayush-56 as well as anti-malarial therapies.',
-  },
-  {
-    id: 8,
-    category: 'Biographies of Eminent Indian Scientists',
-    question: 'Prof. Rohini Godbole (1952–2024), renowned theoretical physicist at IISc Bengaluru, was a global leader in which frontier scientific domain?',
-    options: [
-      'Collider physics, top quark phenomenology, and the Higgs boson searches at CERN',
-      'Deep ocean geothermal vents mapping',
-      'Plant cytology and pollen tube germination',
-      'Radioactive carbon dating of Vedic pottery'
-    ],
-    correctIndex: 0,
-    explanation: 'Rohini Godbole was a distinguished particle phenomenologist whose computations on photon colliders and top-quark / Higgs physics played an instrumental role in searches at CERN Large Hadron Collider.',
-  },
-  {
-    id: 9,
-    category: 'Biographies of Eminent Indian Scientists',
-    question: 'Sir C.V. Raman was awarded the Nobel Prize in Physics in 1930 for which discovery made on February 28, 1928 (celebrated as National Science Day)?',
-    options: [
-      'The Raman Effect: Inelastic scattering of photons by molecular energy states',
-      'Discovery of the cosmic microwave background radiation',
-      'Discovery of nuclear magnetic resonance (NMR)',
-      'Formulation of the theory of general relativity'
-    ],
-    correctIndex: 0,
-    explanation: 'The Raman Effect demonstrated that when light traverses a transparent chemical compound, a small fraction of the scattered light exhibits modified wavelengths characteristic of the molecules, proving optical inelastic scattering.',
-  },
-  {
-    id: 10,
-    category: 'Biographies of Eminent Indian Scientists',
-    question: 'The Saha Ionization Equation, which explains the spectral classification of stars based on thermal ionization equilibrium, was formulated by:',
-    options: ['Prof. Meghnad Saha', 'Dr. Homi Jehangir Bhabha', 'Acharya P.C. Ray', 'Prof. Satyendra Nath Bose'],
-    correctIndex: 0,
-    explanation: 'Meghnad Saha (1920) linked thermal ionization of gaseous atoms to temperature and pressure, providing the fundamental key to decoding stellar temperatures and spectral types in modern astrophysics.',
-  },
-  {
-    id: 11,
-    category: 'NCERT Science & Mathematics',
-    question: 'When white light passes through a glass prism, which colour of the visible spectrum undergoes the maximum deviation (bending)?',
-    options: ['Violet', 'Red', 'Yellow', 'Green'],
-    correctIndex: 0,
-    explanation: 'Violet light has the shortest wavelength in the visible spectrum and travels slowest in glass, resulting in the highest refractive index and consequently the greatest angle of deviation.',
-  },
-  {
-    id: 12,
-    category: 'NCERT Science & Mathematics',
-    question: 'What is the pH value of a completely neutral aqueous solution at 25°C (such as pure distilled water)?',
-    options: ['pH 7.0', 'pH 1.0', 'pH 14.0', 'pH 0.0'],
-    correctIndex: 0,
-    explanation: 'At 25°C, pure water has equal concentrations of H⁺ and OH⁻ ions (1 × 10⁻⁷ mol/L), yielding a neutral pH of 7.',
-  },
-  {
-    id: 13,
-    category: 'NCERT Science & Mathematics',
-    question: 'In vascular plants, which complex permanent tissue is responsible for the unidirectional upward transport of water and dissolved minerals from roots to leaves?',
-    options: ['Xylem', 'Phloem', 'Parenchyma', 'Collenchyma'],
-    correctIndex: 0,
-    explanation: 'Xylem vessels and tracheids transport water and dissolved minerals upward from the soil via root pressure and transpirational pull, whereas phloem translocates soluble organic sugars bidirectionally.',
-  },
-  {
-    id: 14,
-    category: 'NCERT Science & Mathematics',
-    question: 'According to Ohm\'s Law, for a conductor at constant temperature, the electric current (I) flowing through it is directly proportional to:',
-    options: ['The potential difference (V) applied across its terminals', 'The square of its resistance (R²)', 'The ambient air pressure', 'The mass of the conductor'],
-    correctIndex: 0,
-    explanation: 'Ohm\'s Law states V = I · R; at a constant physical state and temperature, the electric current passing through a conductor is proportional to the potential difference across its ends.',
-  },
-  {
-    id: 15,
-    category: 'NCERT Science & Mathematics',
-    question: 'In geometry, what is the sum of the interior angles of a regular hexagon (6-sided polygon)?',
-    options: ['720°', '540°', '360°', '1080°'],
-    correctIndex: 0,
-    explanation: 'The sum of interior angles of any n-sided polygon is given by (n − 2) × 180°. For a hexagon: (6 − 2) × 180° = 4 × 180° = 720° (each interior angle is 120°).',
-  },
-  {
-    id: 16,
-    category: 'NCERT Science & Mathematics',
-    question: 'An object is dropped from a height of 20 m above the ground. Neglecting air friction and taking g = 10 m/s², how long does it take to hit the ground?',
-    options: ['2.0 seconds', '1.0 second', '4.0 seconds', '3.5 seconds'],
-    correctIndex: 0,
-    explanation: 'Using the kinematic equation s = ut + ½gt² with initial velocity u = 0: 20 = 0 + ½(10)t² ⇒ 20 = 5t² ⇒ t² = 4 ⇒ t = 2 seconds.',
-  },
-  {
-    id: 17,
-    category: 'Logic & Analytical Reasoning',
-    question: 'Find the next number in the series: 3, 7, 15, 31, 63, ?',
-    options: ['127', '125', '128', '119'],
-    correctIndex: 0,
-    explanation: 'The pattern is multiply by 2 and add 1 (or 2^(n+1) - 1): 3×2+1=7, 7×2+1=15, 15×2+1=31, 31×2+1=63, 63×2+1 = 127.',
-  },
-  {
-    id: 18,
-    category: 'Logic & Analytical Reasoning',
-    question: 'In a code language, if "VARAHAMIHIRA" is coded based on the ancient Katapayadi cipher where each consonant maps to 1–9 and 0, how were astronomical and mathematical constants traditionally preserved in Sanskrit verses?',
-    options: [
-      'As metric poetical verses with syllable-to-number mappings read right-to-left (aṅkānāṁ vāmato gatiḥ)',
-      'As randomized acoustic hums without numerical values',
-      'Exclusively through knotted ropes (quipu)',
-      'Through Roman numerals chiseled into stone only'
-    ],
-    correctIndex: 0,
-    explanation: 'The Kaṭapayādi cipher assigned consonants numbers from 1 to 9 and 0, enabling mathematicians like Madhava and Aryabhata to write easy-to-remember poetic verses that decoded directly into high-precision astronomical tables.',
-  },
-  {
-    id: 19,
-    category: 'Logic & Analytical Reasoning',
-    question: 'A student starts walking East for 10 meters, turns left and walks 15 meters, then turns left again and walks 10 meters. In which direction and distance is the student from the starting point?',
-    options: ['15 meters North', '15 meters South', '20 meters East', '10 meters West'],
-    correctIndex: 0,
-    explanation: 'East 10m (+x), left turn is North 15m (+y), another left turn is West 10m (-x). The x-displacement is 10 - 10 = 0; the remaining displacement is 15 meters North.',
-  },
-  {
-    id: 20,
-    category: 'Logic & Analytical Reasoning',
-    question: 'Statement 1: All scientists are keen observers. Statement 2: All keen observers make systematic hypotheses. Conclusion: All scientists make systematic hypotheses. Is this deduction valid?',
-    options: [
-      'Valid (Valid categorical syllogism of form: All A are B, All B are C, hence All A are C)',
-      'Invalid (Fallacy of undistributed middle)',
-      'Cannot be determined without empirical testing',
-      'Invalid because some scientists work without hypotheses'
-    ],
-    correctIndex: 0,
-    explanation: 'This is a classical Barbara-form categorical syllogism (All A are B, All B are C ∴ All A are C), which is logically valid.',
-  },
-  {
-    id: 21,
-    category: 'Indian Contributions to Science',
-    question: 'Ancient Indian metallurgists at Zawar (Rajasthan) achieved a world milestone in extractive metallurgy by developing the earliest industrial process for smelting which volatile metal using inverted retort furnaces?',
-    options: [
-      'Zinc (Zn) distillation via downward condensation (Tiryak-pātana-yantra)',
-      'Pure Titanium extraction',
-      'Liquid Mercury condensation only',
-      'Aluminum electrolysis'
-    ],
-    correctIndex: 0,
-    explanation: 'Zinc boils at 907°C and oxidizes immediately in open air. Medieval Indian metallurgists at Zawar invented the world’s first industrial downward condensation retorts (tiryak-patana) centuries before William Champion patented zinc smelting in England in 1738.',
-  },
-  {
-    id: 22,
-    category: 'Indian Contributions to Science',
-    question: 'Which monumental classical Indian medical text authored by Acharya Charaka establishes the foundational principles of internal medicine (Kāyacikitsā), etiology, and pharmacological therapeutics?',
-    options: ['Caraka Saṁhitā', 'Suśruta Saṁhitā', 'Kāśyapa Saṁhitā', 'Rasaratnasamuccaya'],
-    correctIndex: 0,
-    explanation: 'The Caraka Saṁhitā is the foundational text of internal medicine (Kāyacikitsā) in Ayurveda, detailing the Tridosha balance (Vāta, Pitta, Kapha), pharmacological classification of medicinal herbs, and dietetics.',
-  },
-  {
-    id: 23,
-    category: 'Indian Contributions to Science',
-    question: 'In the 6th-century encyclopedic treatise Bṛhat Saṁhitā, polymath Varāhamihira dedicated an entire chapter (Dakārgala) to which applied scientific discipline?',
-    options: [
-      'Groundwater hydrology and botanical water-divining indicators (Dakārgala)',
-      'Deep-sea submarine construction',
-      'Hot air balloon navigation',
-      'Electric battery voltaic piles'
-    ],
-    correctIndex: 0,
-    explanation: 'Varāhamihira’s Dakārgala chapter in Bṛhat Saṁhitā provides systematic empirical correlation between specific surface flora, termite mounds (Vālmīka), soil types, and subterranean aquifers for digging wells.',
-  },
-  {
-    id: 24,
-    category: 'Biographies of Eminent Indian Scientists',
-    question: 'Dr. E.K. Janaki Ammal (1897–1984), the first Indian woman to obtain a Ph.D. in Botany, made groundbreaking national contributions to:',
-    options: [
-      'Cytogenetics and breeding indigenous high-yield sweet sugarcane hybrids at Sugarcane Breeding Institute Coimbatore',
-      'Synthesizing artificial plastics',
-      'Designing rocket propulsion nozzles',
-      'Mapping Antarctic ice sheets'
-    ],
-    correctIndex: 0,
-    explanation: 'Dr. Janaki Ammal did pioneering cytogenetic research, cross-breeding Saccharum officinarum with wild grasses to create high-yielding sugarcane hybrids that made India self-sufficient in sugar production.',
-  },
-  {
-    id: 25,
-    category: 'Biographies of Eminent Indian Scientists',
-    question: 'Dr. Vikram Sarabhai (1919–1971), universally revered as the Father of the Indian Space Program, founded which pioneer institutions in India?',
-    options: [
-      'Physical Research Laboratory (PRL), ISRO, and Indian Institute of Management (IIM) Ahmedabad',
-      'Bhabha Atomic Research Centre',
-      'National Chemical Laboratory Pune',
-      'Tata Memorial Hospital'
-    ],
-    correctIndex: 0,
-    explanation: 'Vikram Sarabhai established the Physical Research Laboratory (PRL) in Ahmedabad, founded ISRO, set up the Thumba Equatorial Rocket Launching Station (TERLS) in Kerala, and co-founded IIM Ahmedabad.',
-  },
-  {
-    id: 26,
-    category: 'Biographies of Eminent Indian Scientists',
-    question: 'Prof. C.R. Rao (1920–2023), one of the world’s most celebrated mathematical statisticians, received the 2023 International Prize in Statistics primarily for formulation of:',
-    options: [
-      'Cramér–Rao Bound and the Rao–Blackwell Theorem',
-      'Quantum Chromodynamics Equations',
-      'Theory of General Relativity',
-      'Penicillin Antibiotic Synthesis'
-    ],
-    correctIndex: 0,
-    explanation: 'C.R. Rao published his monumental 1945 paper establishing the Cramér–Rao Lower Bound (minimum variance for estimators) and Rao–Blackwellization, which revolutionized statistical inference, signal processing, and machine learning.',
-  },
-  {
-    id: 27,
-    category: 'NCERT Science & Mathematics',
-    question: 'When 10 grams of calcium carbonate (CaCO₃) is heated strongly in a closed vessel, it decomposes into calcium oxide (CaO) and carbon dioxide (CO₂). If 5.6 grams of CaO is produced, what mass of CO₂ is released, verifying the Law of Conservation of Mass?',
-    options: ['4.4 grams', '5.6 grams', '10.0 grams', '2.2 grams'],
-    correctIndex: 0,
-    explanation: 'By the Law of Conservation of Mass, Mass of Reactants = Mass of Products. Mass of CaCO₃ (10 g) = Mass of CaO (5.6 g) + Mass of CO₂ ⇒ Mass of CO₂ = 10 - 5.6 = 4.4 grams.',
-  },
-  {
-    id: 28,
-    category: 'NCERT Science & Mathematics',
-    question: 'A rocket of mass 1000 kg ejects propellant gas at an exhaust velocity of 2000 m/s at a steady rate of 5 kg/s. What is the thrust force exerted on the rocket?',
-    options: ['10,000 N', '20,000 N', '5,000 N', '1,000 N'],
-    correctIndex: 0,
-    explanation: 'Thrust Force F = (dm/dt) × v_exhaust = 5 kg/s × 2000 m/s = 10,000 N, demonstrating Newton’s Third Law of Motion and Conservation of Linear Momentum.',
-  },
-  {
-    id: 29,
-    category: 'Logic & Analytical Reasoning',
-    question: 'At 3:15, what is the exact angle between the hour hand and the minute hand of a standard 12-hour analog clock?',
-    options: ['7.5 degrees', '0 degrees', '15 degrees', '30 degrees'],
-    correctIndex: 0,
-    explanation: 'At 3:15, the minute hand is exactly on 3 (90° from 12). The hour hand advances 0.5° every minute. In 15 minutes, it moves 15 × 0.5° = 7.5° past the 3 mark. The angle between them is 7.5°.',
-  },
-  {
-    id: 30,
-    category: 'Logic & Analytical Reasoning',
-    question: 'In a school cohort of 100 students preparing for VVM: 60 participate in Science Labs, 50 participate in Vedic Maths, and 20 participate in both. How many students participate in neither?',
-    options: ['10 students', '20 students', '15 students', '30 students'],
-    correctIndex: 0,
-    explanation: 'Using the principle of inclusion-exclusion: N(A ∪ B) = N(A) + N(B) - N(A ∩ B) = 60 + 50 - 20 = 90. Therefore, students in neither = 100 - 90 = 10 students.',
-  },
-];
 
 export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
   onGoHome,
@@ -346,6 +41,12 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
   });
 
   useEffect(() => {
+    if (initialTab) {
+      setActiveTab(initialTab);
+    }
+  }, [initialTab]);
+
+  useEffect(() => {
     const handleHash = () => {
       const h = window.location.hash.replace('#', '') as VvmTab;
       if (['blueprint', 'heritage', 'scientists', 'ncert', 'logic', 'quiz', 'journey'].includes(h)) {
@@ -362,29 +63,33 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
       window.history.replaceState(null, '', `#${tab}`);
     }
   };
+
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
+  const [quizFilter, setQuizFilter] = useState<'all' | 'partA' | 'partB'>('all');
 
   const handleSelectAnswer = (questionId: number, optionIndex: number) => {
     if (selectedAnswers[questionId] !== undefined) return;
+    const q = VVM_2026_JR_MOCK_QUESTIONS.find((item) => item.id === questionId);
     setSelectedAnswers((prev) => ({ ...prev, [questionId]: optionIndex }));
+    if (q && optionIndex === q.correctIndex) {
+      soundEffects.playSuccessDing();
+    }
   };
 
   const handleResetQuiz = () => {
     setSelectedAnswers({});
+    setQuizFilter('all');
   };
 
-  const calculateScore = () => {
-    let score = 0;
-    VVM_QUIZ_QUESTIONS.forEach((q) => {
-      if (selectedAnswers[q.id] === q.correctIndex) {
-        score += 1;
-      }
-    });
-    return score;
-  };
+  const scoreSummary: VvmScoreSummary = calculateVvmJuniorScore(selectedAnswers);
+  const answeredCount = scoreSummary.totalAttempted;
+  const currentScore = scoreSummary.totalScore;
 
-  const answeredCount = Object.keys(selectedAnswers).length;
-  const currentScore = calculateScore();
+  const displayedQuestions = VVM_2026_JR_MOCK_QUESTIONS.filter((q) => {
+    if (quizFilter === 'partA') return q.section === 'Part A';
+    if (quizFilter === 'partB') return q.section === 'Part B';
+    return true;
+  });
 
   return (
     <div className="vvm-page">
@@ -516,7 +221,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
             onClick={() => handleTabClick('quiz')}
           >
             <span>30-Q Mock Test</span>
-            <span className="vvm-tab-badge">{answeredCount}/{VVM_QUIZ_QUESTIONS.length}</span>
+            <span className="vvm-tab-badge">{answeredCount}/{VVM_2026_JR_MOCK_QUESTIONS.length}</span>
           </button>
           <button
             type="button"
@@ -1189,42 +894,163 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
         {activeTab === 'quiz' && (
           <section className="vvm-section" aria-labelledby="quiz-heading">
             <div className="vvm-section-header">
-              <div className="vvm-section-kicker">Interactive Practice Test</div>
-              <h2 id="quiz-heading" className="vvm-section-title">VVM 30-Question Diagnostic Mock Quiz</h2>
+              <div className="vvm-section-kicker">Interactive Diagnostic Mock Exam · Junior Group (Classes 6–8)</div>
+              <h2 id="quiz-heading" className="vvm-section-title">{VVM_2026_JR_MOCK_01.title}</h2>
               <p className="vvm-section-desc">
-                Test your knowledge across all four pillars: Indian Contributions to Science, Eminent Scientists, NCERT Principles, and Analytical Logic. Select an answer to reveal instant explanations.
+                Full 30-question diagnostic mock exam strictly adhering to the VVM 2026–27 curriculum and marking scheme. Section A tests Indian Scientific Heritage and Tri-Shakti Biographies (+4 marks, 0 negative, 50% cutoff to qualify). Section B tests NCERT Science, Mathematics, and Logic (+4 marks, -1 mark penalty).
               </p>
             </div>
 
+            {/* Official Exam Rules Banner */}
+            <div className="vvm-quiz-rules-banner">
+              <div className="vvm-quiz-rules-title">
+                <span>VVM Exam Structure &amp; Qualifier Thresholds</span>
+                <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>
+                  Exam ID: {VVM_2026_JR_MOCK_01.examId} · Duration: {VVM_2026_JR_MOCK_01.durationMinutes} Mins · Total: 120 Marks
+                </span>
+              </div>
+              <div className="vvm-quiz-rules-grid">
+                <div className="vvm-quiz-rule-card">
+                  <strong>Part A: Qualifier (Questions 1–12 · 48 Marks)</strong>
+                  <span>6 Indian Contributions to Science + 6 Tri-Shakti Biographies (Mani, Chatterjee, Godbole). +4 marks per correct, 0 negative marks. <strong>Must score &ge; 24 marks (50%) to qualify.</strong></span>
+                </div>
+                <div className="vvm-quiz-rule-card">
+                  <strong>Part B: Core Syllabus (Questions 13–30 · 72 Marks)</strong>
+                  <span>15 NCERT Science &amp; Maths + 3 Logic &amp; Reasoning. +4 marks per correct, <strong>-1 mark deduction</strong> for incorrect answers. Evaluated only if Part A achieves &ge; 50%.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Section A Qualifier Status Alert */}
+            {scoreSummary.partAAttempted > 0 && (
+              <div className={`vvm-qualifier-banner ${scoreSummary.isPartAQualified ? 'qualified' : 'pending'}`}>
+                <div>
+                  <h4 className="vvm-qualifier-banner-title">
+                    {scoreSummary.isPartAQualified
+                      ? 'Part A Qualifier Achieved: Qualified for Section B Evaluation!'
+                      : 'Part A Cutoff Status: Qualification Pending (Minimum 24 / 48 Marks Required)'}
+                  </h4>
+                  <div className="vvm-qualifier-banner-sub">
+                    {scoreSummary.isPartAQualified
+                      ? `You scored ${scoreSummary.partAScore} / 48 marks in Part A (Cutoff: 24). Part B score (${scoreSummary.partBScore} marks) is eligible and factored into your National Rank merit score!`
+                      : `You have scored ${scoreSummary.partAScore} / 48 marks so far with ${scoreSummary.partACorrect} correct out of 12. Under VVM rules, Part B is evaluated only when Part A reaches 24 marks.`}
+                  </div>
+                </div>
+                <div style={{ fontWeight: 800, fontSize: '1.1rem' }}>
+                  Part A: {scoreSummary.partAScore} / 48
+                </div>
+              </div>
+            )}
+
+            {/* Scorecard Summary Grid */}
+            <div className="vvm-quiz-score-cards-grid">
+              <div className="vvm-score-card">
+                <div className="vvm-score-card-kicker">Overall Progress</div>
+                <div className="vvm-score-card-num">{answeredCount} / 30</div>
+                <div className="vvm-score-card-desc">
+                  {scoreSummary.totalUnanswered} questions remaining
+                </div>
+              </div>
+
+              <div className="vvm-score-card">
+                <div className="vvm-score-card-kicker">Part A Score (Qualifier)</div>
+                <div className="vvm-score-card-num">{scoreSummary.partAScore} / 48</div>
+                <div className="vvm-score-card-desc">
+                  {scoreSummary.partACorrect} correct · {scoreSummary.partAIncorrect} wrong · No negative
+                </div>
+              </div>
+
+              <div className="vvm-score-card">
+                <div className="vvm-score-card-kicker">Part B Score (Core)</div>
+                <div className="vvm-score-card-num">{scoreSummary.partBScore} / 72</div>
+                <div className="vvm-score-card-desc">
+                  {scoreSummary.partBCorrect} correct (+4) · {scoreSummary.partBIncorrect} wrong (-1)
+                </div>
+              </div>
+
+              <div className="vvm-score-card highlight">
+                <div className="vvm-score-card-kicker">Total Merit Score</div>
+                <div className="vvm-score-card-num">{currentScore} / 120</div>
+                <div className="vvm-score-card-desc">
+                  {scoreSummary.isPartAQualified
+                    ? 'Official combined score (Part A + Part B)'
+                    : 'Part A score only (qualifier pending)'}
+                </div>
+              </div>
+            </div>
+
+            {/* Status & Filter Bar */}
             <div className="vvm-quiz-status-bar">
-              <div>
-                <strong>Answered:</strong> {answeredCount} / {VVM_QUIZ_QUESTIONS.length} Questions
+              <div className="vvm-quiz-filter-group">
+                <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#64748b' }}>Filter:</span>
+                <button
+                  type="button"
+                  className={`vvm-quiz-filter-btn${quizFilter === 'all' ? ' active' : ''}`}
+                  onClick={() => setQuizFilter('all')}
+                >
+                  All Questions (30)
+                </button>
+                <button
+                  type="button"
+                  className={`vvm-quiz-filter-btn${quizFilter === 'partA' ? ' active' : ''}`}
+                  onClick={() => setQuizFilter('partA')}
+                >
+                  Part A: Heritage &amp; Biographies (12)
+                </button>
+                <button
+                  type="button"
+                  className={`vvm-quiz-filter-btn${quizFilter === 'partB' ? ' active' : ''}`}
+                  onClick={() => setQuizFilter('partB')}
+                >
+                  Part B: NCERT &amp; Logic (18)
+                </button>
               </div>
-              <div className="vvm-quiz-score-pill">
-                Current Score: {currentScore} / {VVM_QUIZ_QUESTIONS.length} ({answeredCount > 0 ? Math.round((currentScore / answeredCount) * 100) : 0}%)
-              </div>
+
               {answeredCount > 0 && (
                 <button type="button" className="vvm-quiz-reset-btn" onClick={handleResetQuiz}>
-                  Reset Quiz ↺
+                  Reset Mock Exam ↺
                 </button>
               )}
             </div>
 
+            {/* Questions Container */}
             <div className="vvm-quiz-container">
-              {VVM_QUIZ_QUESTIONS.map((q, idx) => {
+              {displayedQuestions.map((q) => {
                 const userChoice = selectedAnswers[q.id];
                 const isAnswered = userChoice !== undefined;
+                const isCorrect = userChoice === q.correctIndex;
+                const isPartA = q.section === 'Part A';
 
                 return (
                   <div key={q.id} className="vvm-question-card">
                     <div className="vvm-q-meta">
-                      <span className="vvm-q-category">{q.category}</span>
-                      <span className="vvm-q-index">Question {idx + 1} of {VVM_QUIZ_QUESTIONS.length}</span>
+                      <div className="vvm-q-badges">
+                        <span className={`vvm-q-section-pill ${isPartA ? 'part-a' : 'part-b'}`}>
+                          {q.section} · {isPartA ? 'Qualifier' : 'Core'}
+                        </span>
+                        <span className="vvm-q-category">{q.category}</span>
+                        <span className="vvm-q-marking-pill">
+                          {isPartA ? '+4 Marks | 0 Negative' : '+4 Marks | -1 Negative'}
+                        </span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        {isAnswered && (
+                          <span
+                            className={`vvm-q-earned-pill ${
+                              isCorrect ? 'plus' : isPartA ? 'zero' : 'minus'
+                            }`}
+                          >
+                            {isCorrect ? '+4 Marks' : isPartA ? '0 Marks' : '-1 Mark'}
+                          </span>
+                        )}
+                        <span className="vvm-q-index">Question {q.id} of 30</span>
+                      </div>
                     </div>
+
                     <div className="vvm-q-text">{q.question}</div>
 
                     <div className="vvm-options-grid">
-                      {q.options.map((opt, optIdx) => {
+                      {q.options.map((optText, optIdx) => {
                         let btnClass = 'vvm-option-btn';
                         if (isAnswered) {
                           if (optIdx === q.correctIndex) {
@@ -1238,14 +1064,14 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
 
                         return (
                           <button
-                            key={opt}
+                            key={optIdx}
                             type="button"
                             className={btnClass}
                             onClick={() => handleSelectAnswer(q.id, optIdx)}
                             disabled={isAnswered}
                           >
                             <span className="vvm-opt-letter">{optionLetters[optIdx]}</span>
-                            <span>{opt}</span>
+                            <span>{optText}</span>
                           </button>
                         );
                       })}
@@ -1253,7 +1079,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
 
                     {isAnswered && (
                       <div className="vvm-q-explanation">
-                        <strong>Explanation:</strong>
+                        <strong>Explanation &amp; VVM Insight:</strong>
                         <span>{q.explanation}</span>
                       </div>
                     )}
