@@ -59,10 +59,6 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
                 </div>
               </div>
 
-              <p className="slp-card-desc">
-                Zero prerequisites needed. Designed with playful visual cues, native pronunciation audio on every letter, and interactive syllable building to eliminate all fear of Sanskrit.
-              </p>
-
               <div className="slp-modules-list">
                 <h4 className="slp-modules-heading">Included Foundation Modules:</h4>
                 <div className="slp-module-item" onClick={onOpenVarnamala} role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onOpenVarnamala()}>
@@ -140,10 +136,6 @@ export const SegmentedLearningPaths: React.FC<SegmentedLearningPathsProps> = ({
                   <p className="slp-card-promise">Master generative Pāṇinian science &amp; mental Vedic math</p>
                 </div>
               </div>
-
-              <p className="slp-card-desc">
-                For university researchers, adult polymaths, and shastric enthusiasts. Delve into the generative root mathematics of Pāṇini’s Aṣṭādhyāyī and ancient Indian computational sciences.
-              </p>
 
               <div className="slp-modules-list">
                 <h4 className="slp-modules-heading">Included Scholarly Tools:</h4>
