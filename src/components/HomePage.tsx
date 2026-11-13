@@ -782,7 +782,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [showEntranceIntro, setShowEntranceIntro] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
     try {
-      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen_v5');
+      const alreadySeen = sessionStorage.getItem('ednet_gurukul_intro_seen_v6');
       return !alreadySeen;
     } catch {
       return false;
@@ -796,7 +796,7 @@ const HomePage: React.FC<HomePageProps> = ({
       setIsLogoArrived(false);
     }, 1200);
     try {
-      sessionStorage.setItem('ednet_gurukul_intro_seen_v5', 'true');
+      sessionStorage.setItem('ednet_gurukul_intro_seen_v6', 'true');
     } catch {}
   }, []);
 

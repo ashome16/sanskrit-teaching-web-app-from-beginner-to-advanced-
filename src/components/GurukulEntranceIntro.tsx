@@ -164,6 +164,17 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
       role="dialog"
       aria-label="Gurukul Welcome Entrance"
     >
+      {/* Floating Corner Sound Toggle (Top-Right) */}
+      <button
+        type="button"
+        className="gurukul-intro-corner-sound"
+        onClick={toggleSound}
+        aria-label={isMuted ? 'Unmute sounds' : 'Mute sounds'}
+        title={isMuted ? 'Unmute sounds' : 'Mute sounds'}
+      >
+        <span aria-hidden="true">{isMuted ? '🔇' : '🔊'}</span>
+      </button>
+
       {/* 2/3rd Space: Gurukul Painting Scene (Dawn Courtyard & River) */}
       <div className="gurukul-intro-scene" aria-hidden="true">
         <div
@@ -227,12 +238,6 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             alt="EdNet Gurukul Brand Crest"
             className={`gurukul-intro-logo ${isFlying ? 'is-flying' : ''}`}
             style={isFlying ? flyStyle : undefined}
-            role="button"
-            tabIndex={0}
-            title="Enter Gurukul"
-            aria-label="Enter Gurukul homepage"
-            onClick={(e) => { e.stopPropagation(); setHasInteracted(true); triggerExit(); }}
-            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerExit(); } }}
           />
         </div>
 
@@ -246,7 +251,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
         <div className="gurukul-intro-actions">
           <button
             type="button"
-            className={`gurukul-intro-unified-enter-btn${isSuspended ? ' is-suspended-prompt' : ''}`}
+            className={`gurukul-intro-enter-btn${isSuspended ? ' is-suspended-prompt' : ''}`}
             onClick={(e) => {
               e.stopPropagation();
               void gurukulAmbiance.resume();
@@ -258,33 +263,7 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
             title="Enter Gurukul"
           >
             <span className="gurukul-intro-bell-icon" aria-hidden="true">🔔</span>
-            <span className="gurukul-unified-text">
-              <span lang="sa" className="gurukul-unified-sa">प्रविश</span>
-              <span className="gec-sep">·</span>
-              <span className="gurukul-unified-en">Enter Gurukul</span>
-            </span>
-            <span
-              className="gurukul-unified-sound-chip"
-              role="button"
-              tabIndex={0}
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleSound(e);
-              }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  const muted = gurukulAmbiance.toggleMute();
-                  setIsMuted(muted);
-                  setHasInteracted(true);
-                }
-              }}
-              title={isMuted ? 'Unmute dawn sounds' : 'Mute dawn sounds'}
-              aria-label={isMuted ? 'Unmute sounds' : 'Mute sounds'}
-            >
-              <span aria-hidden="true">{isMuted ? '🔇' : '🔊'}</span>
-            </span>
+            <span className="gurukul-enter-label">Enter Gurukul</span>
             <span className="gurukul-enter-arrow" aria-hidden="true">➔</span>
           </button>
         </div>
