@@ -36,6 +36,7 @@ export interface BoardProps {
   onNavigateToReader?: (lessonId?: string) => void;
   onNavigateToVarnamala?: () => void;
   onNavigateToGrammar?: () => void;
+  onNavigateToSugriva?: () => void;
   initialStudioMode?: 'jodo' | 'match' | 'maze' | 'prahelika';
   initialCategory?: string;
 }
@@ -993,6 +994,7 @@ const Board: React.FC<BoardProps> = ({
   onNavigateToReader,
   onNavigateToVarnamala,
   onNavigateToGrammar,
+  onNavigateToSugriva,
   initialStudioMode,
   initialCategory,
 }) => {
@@ -2362,6 +2364,25 @@ const Board: React.FC<BoardProps> = ({
         <div className="mode-tab-text">
           <span className="mode-tab-title">प्रहेलिकाः · Classical Riddles</span>
           <span className="mode-tab-sub">Antarālāpikā, Paradoxes &amp; Wit</span>
+        </div>
+      </button>
+
+      <button
+        type="button"
+        role="tab"
+        className="board-mode-tab"
+        onClick={() => {
+          if (onNavigateToSugriva) {
+            onNavigateToSugriva();
+          } else {
+            window.location.pathname = '/sugriva-journey';
+          }
+        }}
+        title="Sugriva's Global Directional Journey & Ramayana Geography Studio"
+      >
+        <div className="mode-tab-text">
+          <span className="mode-tab-title">सुग्रीव-दिग्विजय · Sugrīva&apos;s Journey</span>
+          <span className="mode-tab-sub">Aṣṭa-Diśā Geography &amp; Epic Quests</span>
         </div>
       </button>
     </div>

@@ -1,0 +1,1187 @@
+/* ==========================================================================
+   Sugrīva's Journey & Ancient Indian Directional Geography Studio
+   Vālmīki Rāmāyaṇa · Kiṣkindhā-Kāṇḍa (Sargas 40–43)
+   STRICTLY ZERO EMOJIS — Pure Vector & Clean Typographic Indian Aesthetic
+   ========================================================================== */
+
+:root {
+  --sj-bg-dark: #090d16;
+  --sj-bg-surface: #111827;
+  --sj-bg-elevated: #1e293b;
+  --sj-border: #334155;
+  --sj-border-light: #475569;
+  --sj-gold: #f59e0b;
+  --sj-gold-glow: rgba(245, 158, 11, 0.25);
+  --sj-amber: #d97706;
+  --sj-emerald: #10b981;
+  --sj-indigo: #6366f1;
+  --sj-sky: #0ea5e9;
+  --sj-text-main: #f8fafc;
+  --sj-text-muted: #94a3b8;
+  --sj-text-dim: #64748b;
+  --sj-font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sj-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.sj-studio-container {
+  min-height: 100vh;
+  background-color: var(--sj-bg-dark);
+  color: var(--sj-text-main);
+  font-family: var(--sj-font-sans);
+  padding-bottom: 5rem;
+}
+
+/* ---------------- Top Hero Header ---------------- */
+.sj-hero-section {
+  position: relative;
+  background: radial-gradient(circle at 50% 20%, #1e1b4b 0%, #0f172a 60%, #090d16 100%);
+  border-bottom: 1.5px solid var(--sj-border);
+  padding: 3rem 1.5rem 2.5rem;
+  overflow: hidden;
+}
+
+.sj-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sj-nav-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--sj-text-muted);
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sj-nav-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--sj-bg-elevated);
+  border: 1px solid var(--sj-border);
+  color: var(--sj-text-main);
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.sj-nav-back-btn:hover {
+  background: #334155;
+  border-color: var(--sj-gold);
+  color: #ffffff;
+}
+
+.sj-hero-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.sj-hero-kicker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.sj-hero-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  color: #a5b4fc;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.sj-hero-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.sj-hero-title span.highlight-gold {
+  color: var(--sj-gold);
+  text-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
+}
+
+.sj-hero-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: var(--sj-text-muted);
+  max-width: 860px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.sj-hero-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.sj-stat-card {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--sj-border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.sj-stat-num {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: block;
+}
+
+.sj-stat-label {
+  font-size: 0.76rem;
+  color: var(--sj-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* ---------------- Studio Tab Navigation ---------------- */
+.sj-nav-tabs-wrapper {
+  background: var(--sj-bg-surface);
+  border-bottom: 1.5px solid var(--sj-border);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(12px);
+}
+
+.sj-nav-tabs-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.sj-tab-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--sj-text-muted);
+  padding: 0.65rem 1.15rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.sj-tab-button:hover {
+  background: var(--sj-bg-elevated);
+  color: var(--sj-text-main);
+}
+
+.sj-tab-button.active {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
+.sj-tab-badge {
+  background: #334155;
+  color: #f1f5f9;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+}
+
+.sj-tab-button.active .sj-tab-badge {
+  background: var(--sj-gold);
+  color: #090d16;
+}
+
+/* ---------------- Main Content Layout ---------------- */
+.sj-main-layout {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+}
+
+/* ---------------- TAB 1: World Map & Expeditions ---------------- */
+.sj-map-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .sj-map-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sj-map-canvas-card {
+  background: #0b1120;
+  border: 1.5px solid var(--sj-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.sj-map-header {
+  padding: 1rem 1.25rem;
+  background: #0f172a;
+  border-bottom: 1px solid var(--sj-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.sj-map-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sj-map-h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.sj-map-filter-group {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.sj-filter-chip {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: var(--sj-text-muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sj-filter-chip:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+.sj-filter-chip.active {
+  background: var(--sj-gold);
+  border-color: var(--sj-gold);
+  color: #090d16;
+}
+
+.sj-svg-map-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 900 / 620;
+  background: radial-gradient(ellipse at 50% 50%, #151e33 0%, #0b1120 100%);
+}
+
+.sj-interactive-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* SVG Elements Styling */
+.sj-svg-grid-line {
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-dasharray: 4 4;
+}
+
+.sj-svg-meridian-prime {
+  stroke: rgba(245, 158, 11, 0.3);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 3;
+}
+
+.sj-svg-equator {
+  stroke: rgba(14, 165, 233, 0.3);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 3;
+}
+
+.sj-svg-path-vector {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 8 6;
+  animation: sjDash 30s linear infinite;
+}
+
+@keyframes sjDash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+.sj-svg-path-vector.east {
+  stroke: #f59e0b;
+}
+
+.sj-svg-path-vector.south {
+  stroke: #10b981;
+}
+
+.sj-svg-path-vector.west {
+  stroke: #818cf8;
+}
+
+.sj-svg-path-vector.north {
+  stroke: #38bdf8;
+}
+
+.sj-node-circle {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sj-node-circle:hover {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.sj-node-origin {
+  fill: #f59e0b;
+  stroke: #ffffff;
+  stroke-width: 2.5;
+}
+
+/* Side Compass & Direction Controller */
+.sj-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sj-panel-box {
+  background: var(--sj-bg-surface);
+  border: 1.5px solid var(--sj-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.sj-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--sj-border);
+  padding-bottom: 0.5rem;
+}
+
+.sj-box-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #cbd5e1;
+}
+
+/* 8-Direction Compass Wheel (Aṣṭa-Diśā) */
+.sj-compass-outer {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0.5rem auto 1rem;
+  border-radius: 50%;
+  border: 2px solid var(--sj-border-light);
+  background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.sj-compass-ring {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px dashed rgba(245, 158, 11, 0.3);
+}
+
+.sj-compass-hub {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #090d16;
+  border: 2px solid var(--sj-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 0 15px var(--sj-gold-glow);
+}
+
+.sj-compass-hub-sa {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--sj-gold);
+}
+
+.sj-compass-hub-en {
+  font-size: 0.55rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.sj-compass-dir-node {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #1e293b;
+  border: 1px solid #475569;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  z-index: 5;
+}
+
+.sj-compass-dir-node:hover {
+  transform: scale(1.15);
+  border-color: var(--sj-gold);
+  background: #334155;
+}
+
+.sj-compass-dir-node.active {
+  background: var(--sj-gold);
+  border-color: #ffffff;
+  color: #090d16;
+  box-shadow: 0 0 12px var(--sj-gold-glow);
+}
+
+/* Positions for 8 Directions around 240px circle */
+.sj-dir-n  { top: 4px; left: 101px; }
+.sj-dir-ne { top: 32px; right: 28px; }
+.sj-dir-e  { top: 101px; right: 4px; }
+.sj-dir-se { bottom: 32px; right: 28px; }
+.sj-dir-s  { bottom: 4px; left: 101px; }
+.sj-dir-sw { bottom: 32px; left: 28px; }
+.sj-dir-w  { top: 101px; left: 4px; }
+.sj-dir-nw { top: 32px; left: 28px; }
+
+.sj-compass-active-info {
+  background: #0b1120;
+  border: 1px solid var(--sj-border);
+  border-radius: 10px;
+  padding: 0.85rem;
+  font-size: 0.82rem;
+}
+
+.sj-cai-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.sj-cai-title {
+  font-weight: 800;
+  color: var(--sj-gold);
+}
+
+.sj-cai-meta {
+  color: var(--sj-text-muted);
+  font-size: 0.74rem;
+}
+
+.sj-cai-desc {
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Selected Landmark Card */
+.sj-active-landmark-card {
+  background: #0f172a;
+  border: 1.5px solid var(--sj-border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.sj-alc-kicker {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: var(--sj-gold);
+  margin-bottom: 0.2rem;
+}
+
+.sj-alc-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.sj-alc-loc {
+  font-size: 0.78rem;
+  color: #38bdf8;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.sj-alc-desc {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------------- TAB 2: The 4 Expeditions ---------------- */
+.sj-expeditions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.sj-exp-card {
+  background: var(--sj-bg-surface);
+  border: 1.5px solid var(--sj-border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.sj-exp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.sj-exp-card.theme-east { border-top: 4px solid #f59e0b; }
+.sj-exp-card.theme-south { border-top: 4px solid #10b981; }
+.sj-exp-card.theme-west { border-top: 4px solid #818cf8; }
+.sj-exp-card.theme-north { border-top: 4px solid #38bdf8; }
+
+.sj-exp-header {
+  padding: 1.5rem 1.25rem 1rem;
+  border-bottom: 1px solid var(--sj-border);
+  background: #0f172a;
+}
+
+.sj-exp-kicker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.sj-exp-dir-tag {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.sj-exp-dir-tag.east { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.sj-exp-dir-tag.south { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.sj-exp-dir-tag.west { background: rgba(129, 140, 248, 0.15); color: #a5b4fc; }
+.sj-exp-dir-tag.north { background: rgba(56, 189, 248, 0.15); color: #7dd3fc; }
+
+.sj-exp-sarga {
+  font-size: 0.72rem;
+  color: var(--sj-text-muted);
+  font-family: var(--sj-font-mono);
+}
+
+.sj-exp-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.35rem;
+}
+
+.sj-exp-commander-lead {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sj-exp-body {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sj-exp-brief {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Shloka Quote Box */
+.sj-shloka-box {
+  background: #090d16;
+  border: 1px solid #1e293b;
+  border-left: 3px solid var(--sj-gold);
+  border-radius: 8px;
+  padding: 0.85rem;
+}
+
+.sj-shloka-sa {
+  font-family: 'Noto Sans Devanagari', 'Siddhanta', serif;
+  font-size: 0.95rem;
+  color: #fde68a;
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+  white-space: pre-line;
+}
+
+.sj-shloka-translit {
+  font-size: 0.76rem;
+  font-style: italic;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.sj-shloka-meaning {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Checkpoints Step List */
+.sj-checkpoints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid #1e293b;
+  padding-top: 1rem;
+}
+
+.sj-cp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.8rem;
+}
+
+.sj-cp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 0.35rem;
+  flex-shrink: 0;
+}
+
+.sj-cp-dot.east { background: #f59e0b; }
+.sj-cp-dot.south { background: #10b981; }
+.sj-cp-dot.west { background: #818cf8; }
+.sj-cp-dot.north { background: #38bdf8; }
+
+.sj-cp-text-wrap strong {
+  color: #ffffff;
+  display: block;
+  font-size: 0.82rem;
+}
+
+.sj-cp-text-wrap span {
+  color: var(--sj-text-muted);
+  font-size: 0.74rem;
+}
+
+.sj-terminal-highlight {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.sj-terminal-title {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fbbf24;
+  margin-bottom: 0.25rem;
+}
+
+.sj-terminal-desc {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ---------------- TAB 3: Landmark Quests ---------------- */
+.sj-quest-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sj-quest-progress-box {
+  background: var(--sj-bg-surface);
+  border: 1.5px solid var(--sj-border);
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sj-progress-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sj-progress-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--sj-text-muted);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.sj-progress-count {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--sj-gold);
+}
+
+.sj-progress-bar-wrap {
+  width: 140px;
+  height: 8px;
+  background: #1e293b;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.sj-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b 0%, #10b981 100%);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.sj-badge-reset-btn {
+  background: transparent;
+  border: 1px solid var(--sj-border);
+  color: var(--sj-text-muted);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sj-badge-reset-btn:hover {
+  background: #1e293b;
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+/* Quest Card */
+.sj-quests-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.sj-quest-card {
+  background: var(--sj-bg-surface);
+  border: 1.5px solid var(--sj-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.2s ease;
+}
+
+.sj-quest-card.solved {
+  border-color: rgba(16, 185, 129, 0.5);
+  background: linear-gradient(180deg, #111827 0%, rgba(6, 78, 59, 0.1) 100%);
+}
+
+.sj-quest-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sj-quest-num-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: #1e293b;
+  border: 1px solid var(--sj-border-light);
+  color: #cbd5e1;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.sj-quest-source {
+  font-size: 0.75rem;
+  color: var(--sj-text-muted);
+  font-family: var(--sj-font-mono);
+}
+
+.sj-quest-title-sa {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.sj-quest-title-en {
+  font-size: 0.92rem;
+  color: var(--sj-text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Shloka Display in Quest */
+.sj-quest-shloka-card {
+  background: #090d16;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.sj-q-shloka-sa {
+  font-family: 'Noto Sans Devanagari', 'Siddhanta', serif;
+  font-size: 1.05rem;
+  color: #fde68a;
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+}
+
+.sj-q-shloka-translit {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.sj-quest-prompt {
+  font-size: 0.95rem;
+  color: #f8fafc;
+  line-height: 1.6;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+/* Multi-Choice Options */
+.sj-options-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.sj-option-btn {
+  background: #0f172a;
+  border: 1.5px solid #334155;
+  border-radius: 10px;
+  padding: 0.9rem 1.25rem;
+  text-align: left;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sj-option-btn:hover:not(:disabled) {
+  background: #1e293b;
+  border-color: var(--sj-gold);
+}
+
+.sj-option-btn.selected-correct {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+  color: #34d399;
+  font-weight: 700;
+}
+
+.sj-option-btn.selected-wrong {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+  color: #f87171;
+}
+
+.sj-option-btn.reveal-correct {
+  border-color: #10b981;
+  color: #34d399;
+}
+
+.sj-option-status-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.sj-option-status-tag.correct {
+  background: #10b981;
+  color: #090d16;
+}
+
+.sj-option-status-tag.wrong {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* Feedback & Grammar Note */
+.sj-quest-feedback-box {
+  background: #090d16;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+
+.sj-badge-celebration-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.sj-feedback-explanation {
+  font-size: 0.88rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+
+.sj-grammar-callout {
+  background: #0f172a;
+  border-left: 3px solid #38bdf8;
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #bae6fd;
+  line-height: 1.5;
+  font-family: var(--sj-font-mono);
+}
+
+/* ---------------- TAB 4: Ancient Geodesy & Bhūgola ---------------- */
+.sj-geodesy-article {
+  background: var(--sj-bg-surface);
+  border: 1.5px solid var(--sj-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .sj-geodesy-article {
+    padding: 1.5rem;
+  }
+}
+
+.sj-article-kicker {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--sj-gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.sj-article-title {
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.sj-article-lead {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.sj-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sj-info-tile {
+  background: #0b1120;
+  border: 1px solid var(--sj-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.sj-info-tile-h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.65rem;
+}
+
+.sj-info-tile p {
+  font-size: 0.86rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sj-comparison-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--sj-border);
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+
+.sj-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.sj-comparison-table th {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.9rem 1.15rem;
+  border-bottom: 1.5px solid var(--sj-border);
+  font-weight: 700;
+}
+
+.sj-comparison-table td {
+  padding: 0.85rem 1.15rem;
+  border-bottom: 1px solid #1e293b;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+.sj-comparison-table tr:hover td {
+  background: #1e293b;
+}
+
+/* ---------------- Badges Vault Modal / Section ---------------- */
+.sj-badges-vault {
+  background: #0f172a;
+  border: 1px solid var(--sj-border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sj-bv-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sj-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.sj-badge-chip {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #94a3b8;
+  transition: all 0.2s ease;
+}
+
+.sj-badge-chip.unlocked {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
+.sj-badge-icon-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: #090d16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

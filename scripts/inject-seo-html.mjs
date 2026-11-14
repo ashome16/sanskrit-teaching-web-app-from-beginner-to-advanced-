@@ -34,6 +34,7 @@ const PATH_BY_VIEW = {
   'assignment-eval': '/evaluate-assignment',
   'science-lab': '/vignana-lab',
   vvm: '/vvm',
+  'sugriva-journey': '/sugriva-journey',
   about: '/about',
 };
 
@@ -43,6 +44,7 @@ const REQUIRED_PATHS = [
   '/about-us',
   '/vvm',
   '/vvm-preparation',
+  '/sugriva-journey',
   '/course',
   '/reader',
   '/barakhadi',

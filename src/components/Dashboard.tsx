@@ -33,6 +33,7 @@ const SanskritAssignmentEvaluator = lazy(() => import('./SanskritAssignmentEvalu
 const IksThinkLabsPage = lazy(() => import('./IksThinkLabsPage'));
 const VvmPreparationPage = lazy(() => import('./VvmPreparationPage'));
 const AboutEdNetPage = lazy(() => import('./AboutEdNetPage'));
+const SugrivaJourneyStudio = lazy(() => import('./SugrivaJourneyStudio'));
 
 // Lazy-loaded dialogs & modals
 const AuthModal = lazy(() => import('./AuthModal'));
@@ -92,7 +93,17 @@ type DashboardView =
   | 'intent-landing'
   | 'iks'
   | 'vvm'
+  | 'sugriva-journey'
   | 'about';
+
+const SUGRIVA_PATHS = new Set([
+  '/sugriva-journey',
+  '/sugriva',
+  '/sugriva-digvijaya',
+  '/ramayana-geography',
+  '/sugriva-quest',
+  '/sugrivas-journey',
+]);
 
 const VVM_PATHS = new Set([
   '/vvm',
@@ -240,6 +251,10 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     title: 'VVM Exam Preparation · Vidyarthi Vigyan Manthan (विद्यार्थी विज्ञान मंथन) | EdNet Learn',
     desc: 'Comprehensive preparation guide for Vidyarthi Vigyan Manthan (VVM): Indian Contributions to Science, biographies of Indian scientists, NCERT Science & Maths simulations, logic puzzles, and mock quizzes.',
   },
+  'sugriva-journey': {
+    title: 'Sugrīva’s Journey (सुग्रीव-दिग्विजय) · Ramayana Directional Geography | EdNet Learn',
+    desc: 'Explore the 4 cardinal search expeditions from Valmiki Ramayana Kishkindha Kanda (Sargas 40–43): 8 Vedic directions (Aṣṭa-Diśā), ancient world rivers, mountains, and Sanskrit exploration quests.',
+  },
   about: {
     title: 'About EdNet Learn | Learn Through Play – Sanskrit, Vedic Maths & Science',
     desc: 'EdNet Learn is a free, play-based platform for exploring Sanskrit, Vedic Mathematics, Indian Knowledge Systems and science through games, stories and simulations.',
@@ -377,6 +392,7 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/sanskrit-writing-paths' ||
     clean === '/writing-assignments'
   ) return 'assignment-eval';
+  if (SUGRIVA_PATHS.has(clean)) return 'sugriva-journey';
   if (VVM_PATHS.has(clean)) return 'vvm';
   if (ABOUT_PATHS.has(clean)) return 'about';
   return null;
@@ -385,6 +401,7 @@ const pathToView = (pathname: string): DashboardView | null => {
 const viewToPath = (view: DashboardView): string => {
   if (view === 'about') return '/about';
   if (view === 'vvm') return '/vvm';
+  if (view === 'sugriva-journey') return '/sugriva-journey';
   if (view === 'course') return '/sanskrit-thinking';
   if (view === 'philosophy') return '/philosophy';
   if (view === 'cbse-guide') return '/cbse-sanskrit-guide';
@@ -1411,11 +1428,11 @@ const Dashboard: React.FC = () => {
             <div className="dashboard-nav-sim-dropdown-container">
               <button
                 type="button"
-                className={`dashboard-nav-item dashboard-nav-stacked dashboard-nav-sim-btn${activeView === 'science-lab' || activeView === 'iks' || activeView === 'vvm' ? ' active' : ''}`}
+                className={`dashboard-nav-item dashboard-nav-stacked dashboard-nav-sim-btn${activeView === 'science-lab' || activeView === 'iks' || activeView === 'vvm' || activeView === 'sugriva-journey' ? ' active' : ''}`}
                 onClick={() => setIsSimNavOpen((o) => !o)}
                 aria-expanded={isSimNavOpen}
                 aria-haspopup="menu"
-                title="Science Simulations (विज्ञान-प्रयोगशाला · All 41 STEM & IKS Labs & VVM Preparation)"
+                title="Science Simulations &amp; Games (विज्ञान-प्रयोगशाला · All 41 STEM &amp; IKS Labs, VVM &amp; Sugriva's Journey)"
               >
                 <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true">⚛️</span>
                 <span className="dashboard-nav-sanskrit">विज्ञान-प्रयोगशाला</span>
@@ -1423,6 +1440,18 @@ const Dashboard: React.FC = () => {
               </button>
               {isSimNavOpen && (
                 <div className="dashboard-sim-menu" role="menu" aria-label="Science Simulations Menu">
+                  <button
+                    type="button"
+                    role="menuitem"
+                    className={activeView === 'sugriva-journey' ? 'active' : ''}
+                    onClick={() => { setIsSimNavOpen(false); navigateToView('sugriva-journey'); }}
+                  >
+                    <span aria-hidden="true" style={{ display: 'inline-flex', verticalAlign: 'middle', marginRight: '4px' }}>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                    </span>
+                    <span className="dashboard-nav-sanskrit">सुग्रीव-दिग्विजय</span>
+                    <span>Sugrīva&apos;s Journey (Ramayana Geography)</span>
+                  </button>
                   <button
                     type="button"
                     role="menuitem"
@@ -1865,6 +1894,15 @@ const Dashboard: React.FC = () => {
             />
           </Suspense>
         )}
+        {activeView === 'sugriva-journey' && (
+          <Suspense fallback={<ViewLoader />}>
+            <SugrivaJourneyStudio
+              onGoHome={() => navigateToView('home')}
+              onOpenGamesHub={() => navigateToView('board')}
+              onOpenIks={() => navigateToView('iks')}
+            />
+          </Suspense>
+        )}
         {activeView === 'about' && (
           <Suspense fallback={<ViewLoader />}>
             <AboutEdNetPage
@@ -1896,6 +1934,7 @@ const Dashboard: React.FC = () => {
               onNavigateToReader={(lessonId) => openDeepakam(lessonId)}
               onNavigateToVarnamala={() => openVarnamala('sound')}
               onNavigateToGrammar={handleOpenGrammar}
+              onNavigateToSugriva={() => navigateToView('sugriva-journey')}
               initialStudioMode={boardStudioMode}
               initialCategory={boardCategory}
             />
