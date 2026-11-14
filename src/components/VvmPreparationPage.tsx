@@ -19,7 +19,7 @@ export interface VvmPreparationPageProps {
   initialTab?: VvmTab;
 }
 
-export type VvmTab = 'blueprint' | 'heritage' | 'scientists' | 'ncert' | 'logic' | 'quiz' | 'journey';
+export type VvmTab = 'blueprint' | 'heritage' | 'scientists' | 'ncert' | 'logic' | 'quiz' | 'stages';
 
 export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
   onGoHome,
@@ -31,10 +31,11 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
   initialTab,
 }) => {
   const [activeTab, setActiveTab] = useState<VvmTab>(() => {
-    if (initialTab) return initialTab;
+    if (initialTab) return initialTab === ('journey' as any) ? 'stages' : initialTab;
     if (typeof window !== 'undefined' && window.location.hash) {
-      const h = window.location.hash.replace('#', '') as VvmTab;
-      if (['blueprint', 'heritage', 'scientists', 'ncert', 'logic', 'quiz', 'journey'].includes(h)) {
+      const raw = window.location.hash.replace('#', '');
+      const h = raw === 'journey' ? 'stages' : (raw as VvmTab);
+      if (['blueprint', 'heritage', 'scientists', 'ncert', 'logic', 'quiz', 'stages'].includes(h)) {
         return h;
       }
     }
@@ -43,14 +44,15 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
 
   useEffect(() => {
     if (initialTab) {
-      setActiveTab(initialTab);
+      setActiveTab(initialTab === ('journey' as any) ? 'stages' : initialTab);
     }
   }, [initialTab]);
 
   useEffect(() => {
     const handleHash = () => {
-      const h = window.location.hash.replace('#', '') as VvmTab;
-      if (['blueprint', 'heritage', 'scientists', 'ncert', 'logic', 'quiz', 'journey'].includes(h)) {
+      const raw = window.location.hash.replace('#', '');
+      const h = raw === 'journey' ? 'stages' : (raw as VvmTab);
+      if (['blueprint', 'heritage', 'scientists', 'ncert', 'logic', 'quiz', 'stages'].includes(h)) {
         setActiveTab(h);
       }
     };
@@ -243,8 +245,8 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
           </button>
           <button
             type="button"
-            className={`vvm-tab-btn${activeTab === 'journey' ? ' active' : ''}`}
-            onClick={() => handleTabClick('journey')}
+            className={`vvm-tab-btn${activeTab === 'stages' ? ' active' : ''}`}
+            onClick={() => handleTabClick('stages')}
           >
             <span>Competition Stages &amp; Awards</span>
           </button>
@@ -1224,12 +1226,12 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
           </section>
         )}
 
-        {/* TAB 7: JOURNEY & AWARDS */}
-        {activeTab === 'journey' && (
-          <section className="vvm-section" aria-labelledby="journey-heading">
+        {/* TAB 7: COMPETITION STAGES & AWARDS */}
+        {activeTab === 'stages' && (
+          <section className="vvm-section" aria-labelledby="stages-heading">
             <div className="vvm-section-header">
               <div className="vvm-section-kicker">Multi-Tier Competition Pathway</div>
-              <h2 id="journey-heading" className="vvm-section-title">The 4-Stage VVM Competition Journey</h2>
+              <h2 id="stages-heading" className="vvm-section-title">The 4-Stage VVM Competition &amp; Mentorship Roadmap</h2>
               <p className="vvm-section-desc">
                 From your school classroom to India’s premier atomic research centers and space laboratories.
               </p>
