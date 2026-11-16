@@ -785,3 +785,448 @@ export const LANDMARK_QUESTS: LandmarkQuest[] = [
     badgeEarned: 'Polar Axis Chronicler',
   },
 ];
+
+/* ==========================================================================
+   COLLECTIBLE TRAVEL CARDS GAMEPLAY DATA (12 CARDS ACROSS 4 SUITS)
+   ========================================================================== */
+
+export type CardSuit = 'dakshina' | 'purva' | 'paschima' | 'uttara';
+
+export interface CollectibleCard {
+  id: string;
+  cardNumber: string;
+  name: string;
+  nameSa: string;
+  suit: CardSuit;
+  suitName: string;
+  suitColor: string;
+  staminaCost: number;
+  terrainType: 'forest' | 'river' | 'mountain' | 'ocean' | 'desert' | 'polar';
+  hint: string;
+  graphicDesc: string;
+  frontImage?: string;
+  backImage?: string;
+  modernMatch: string;
+  whyItChanged: string;
+  satelliteTag: string;
+  mapNode: {
+    x: number;
+    y: number;
+    label: string;
+  };
+  challenge: {
+    question: string;
+    options: string[];
+    correctIndex: number;
+    successFact: string;
+  };
+}
+
+export interface DirectionRelic {
+  suit: CardSuit;
+  name: string;
+  nameSa: string;
+  themeColor: string;
+  description: string;
+  fastTravelPerk: string;
+  shlokaSnippet: string;
+}
+
+export const DIRECTION_RELICS: Record<CardSuit, DirectionRelic> = {
+  dakshina: {
+    suit: 'dakshina',
+    name: 'Agastya Emerald Conch',
+    nameSa: 'दक्षिणाम्नाय-शङ्खः (Dakṣiṇāmnāya-Śaṅkhaḥ)',
+    themeColor: '#059669',
+    description: 'Forged in the hermitage of Sage Agastya where the Vindhyas bowed down. Calms treacherous coastal waves and jungle thickets.',
+    fastTravelPerk: 'Southern Fast-Travel: Teleport instantly anywhere along the Southern Trail with zero stamina depletion.',
+    shlokaSnippet: 'अगस्त्यस्याश्रमो रम्यो ददृशुस्ते महाबलाः (Kiṣkindhā 41.15)',
+  },
+  purva: {
+    suit: 'purva',
+    name: 'Saumanasa Solar Chariot',
+    nameSa: 'सौमनस-स्वर्णरथः (Saumanasa-Svarṇarathaḥ)',
+    themeColor: '#d97706',
+    description: 'Crafted from the golden crest of Mount Udayagiri. Catches the morning solar winds of dawn to glide across eastern archipelagos.',
+    fastTravelPerk: 'Eastern Fast-Travel: Leap across river basins and island waterways without boat delays.',
+    shlokaSnippet: 'तत्र पूर्वं पदं कृत्वा पुरा विष्णुरुदक्रमत् (Kiṣkindhā 40.58)',
+  },
+  paschima: {
+    suit: 'paschima',
+    name: 'Varuna Desert Pearl',
+    nameSa: 'वारुण-सागरमौक्तिकम् (Vāruṇa-Sāgaramauktikam)',
+    themeColor: '#ea580c',
+    description: 'Blest by Lord Varuna in the 10,000 sunset summits of Astagiri. Prevents thirst in dry desert corridors.',
+    fastTravelPerk: 'Western Fast-Travel: March through arid salt marshes and estuaries at full speed.',
+    shlokaSnippet: 'अस्तं गच्छति यत्रासौ सविता सर्वलोकदृक् (Kiṣkindhā 42.45)',
+  },
+  uttara: {
+    suit: 'uttara',
+    name: 'Meru Sapphire Crest',
+    nameSa: 'मेरु-नीलमणि-चूडा (Meru-Nīlamaṇi-Cūḍā)',
+    themeColor: '#0284c7',
+    description: 'Radiating the azure glow of the celestial polar axis. Protects against blizzard frost and guides through Himalayan cloud passes.',
+    fastTravelPerk: 'Northern Fast-Travel: Traverse frozen summits and high passes without mountain sickness or cold penalties.',
+    shlokaSnippet: 'उत्तरं तु दिशं रम्यां हिमवन्तं महागिरिम् (Kiṣkindhā 43.12)',
+  },
+};
+
+export const COLLECTIBLE_CARDS_DECK: CollectibleCard[] = [
+  /* -------------------------------------------------------------------------
+     SUIT I: DAKSHINA (The Southern Trail — Emerald Border)
+     ------------------------------------------------------------------------- */
+  {
+    id: 'card-01',
+    cardNumber: '01',
+    name: 'Vindhya Wall',
+    nameSa: 'विन्ध्य-प्राकारः (Vindhya-Prākāraḥ)',
+    suit: 'dakshina',
+    suitName: 'Suit I: Dakshina (The Southern Trail)',
+    suitColor: '#059669',
+    staminaCost: 25,
+    terrainType: 'mountain',
+    hint: 'A green stone wall splits the land in two; only those who find the hidden forest passes may march south.',
+    graphicDesc: 'Misty emerald cliffs with a narrow winding trail.',
+    frontImage: '/images/sugriva-cards/card-01-vindhya-wall-front.jpg',
+    backImage: '/images/sugriva-cards/card-01-vindhya-wall-back.jpg',
+    modernMatch: 'Central Indian Highlands',
+    whyItChanged: 'Ancient travelers walked dense jungle trails; modern highways and tunnels now cut straight through.',
+    satelliteTag: 'Central Indian Highlands · Satpura & Narmada Valley',
+    mapNode: { x: 430, y: 340, label: 'Vindhya Wall' },
+    challenge: {
+      question: 'Which geographical barrier traditionally divided ancient India into Aryavarta (North) and Dakshinapatha (South)?',
+      options: [
+        'A) The Thar Desert sand dunes',
+        'B) The Vindhya and Satpura mountain ranges',
+        'C) The Aravalli hills',
+        'D) The Sundarbans mangrove swamp',
+      ],
+      correctIndex: 1,
+      successFact: 'The Vindhya-Satpura horst ranges formed a formidable geological divide that required ancient travelers like Agastya and Rama to navigate deep river valleys like the Narmada.',
+    },
+  },
+  {
+    id: 'card-02',
+    cardNumber: '02',
+    name: 'Dandaka Canopy',
+    nameSa: 'दण्डकारण्य-वितानम् (Daṇḍaka-Vitānam)',
+    suit: 'dakshina',
+    suitName: 'Suit I: Dakshina (The Southern Trail)',
+    suitColor: '#059669',
+    staminaCost: 15,
+    terrainType: 'forest',
+    hint: 'Beneath a roof of endless trees, three sacred rivers twist like silver serpents.',
+    graphicDesc: 'Dense canopy with glowing blue river ribbons.',
+    frontImage: '/images/sugriva-cards/card-02-dandaka-canopy-front.jpg',
+    backImage: '/images/sugriva-cards/card-02-dandaka-canopy-back.jpg',
+    modernMatch: 'Deccan Plateau & Godavari Basin',
+    whyItChanged: 'Continuous ancient riverine forests were cleared over centuries for cities and farmland.',
+    satelliteTag: 'Deccan Plateau · Godavari Basin River Corridors',
+    mapNode: { x: 440, y: 440, label: 'Dandaka Canopy' },
+    challenge: {
+      question: 'The vast ancient forest of Dandakaranya covered parts of which modern Indian river basins?',
+      options: [
+        'A) Godavari, Krishna, and Mahanadi basins across the Deccan',
+        'B) Indus and Jhelum basins in the northwest',
+        'C) Brahmaputra valley in Assam',
+        'D) Sabarmati basin in Gujarat',
+      ],
+      correctIndex: 0,
+      successFact: 'Dandakaranya was an immense contiguous forest belt spanning modern Maharashtra, Chhattisgarh, Odisha, and Andhra Pradesh, watered by the Godavari and Indravati.',
+    },
+  },
+  {
+    id: 'card-03',
+    cardNumber: '03',
+    name: 'Nala Setu Shoals',
+    nameSa: 'नलसेतु-सिकताः (Nalasetu-Sikatāḥ)',
+    suit: 'dakshina',
+    suitName: 'Suit I: Dakshina (The Southern Trail)',
+    suitColor: '#059669',
+    staminaCost: 20,
+    terrainType: 'ocean',
+    hint: 'Where the southern shore ends, white limestone stepping-stones peek through turquoise waves.',
+    graphicDesc: 'Shallow coral sandbars linking land to an island.',
+    frontImage: '/images/sugriva-cards/card-03-nala-setu-front.jpg',
+    backImage: '/images/sugriva-cards/card-03-nala-setu-back.jpg',
+    modernMatch: 'Palk Strait & Adam’s Bridge',
+    whyItChanged: 'Post-Ice Age sea-level rise submerged the shallow land bridge beneath deeper ocean water.',
+    satelliteTag: 'Palk Strait · Adam’s Bridge Coral Shoal Chain',
+    mapNode: { x: 450, y: 550, label: 'Nala Setu Shoals' },
+    challenge: {
+      question: 'Geologically, the chain of shoals between Rameswaram and Mannar Island represents what feature?',
+      options: [
+        'A) An active volcanic island arc',
+        'B) A natural chain of limestone shoals and coral reefs formerly walkable before sea levels rose',
+        'C) An iceberg deposit left by glaciers',
+        'D) A modern concrete breakwater',
+      ],
+      correctIndex: 1,
+      successFact: 'Historical records (including temple accounts at Rameswaram) indicate that the shoal was above sea level and walkable on foot until major cyclone breaches in 1480 CE.',
+    },
+  },
+
+  /* -------------------------------------------------------------------------
+     SUIT II: PURVA (The Eastern Trail — Gold Border)
+     ------------------------------------------------------------------------- */
+  {
+    id: 'card-04',
+    cardNumber: '04',
+    name: 'Magadha Plains',
+    nameSa: 'मागध-सस्यक्षेत्रम् (Māgadha-Sasyakṣetram)',
+    suit: 'purva',
+    suitName: 'Suit II: Purva (The Eastern Trail)',
+    suitColor: '#d97706',
+    staminaCost: 10,
+    terrainType: 'river',
+    hint: 'Follow the broad, slow river where fertile fields feed great eastern kingdoms.',
+    graphicDesc: 'Golden riverbanks with ancient wooden riverboats.',
+    modernMatch: 'Middle Gangetic Plain (Bihar)',
+    whyItChanged: 'River courses shifted naturally across flat floodplains while embankments fixed modern towns.',
+    satelliteTag: 'Middle Gangetic Plain · Bihar Alluvial Belt',
+    mapNode: { x: 570, y: 260, label: 'Magadha Plains' },
+    challenge: {
+      question: 'Why did the Gangetic plains of Magadha become the economic and political center of early Indian empires?',
+      options: [
+        'A) Vast gold deposits found directly in surface soil',
+        'B) Deep alluvial soil, monsoon agriculture, navigable rivers, and nearby iron ore in Chota Nagpur',
+        'C) Extreme desert climate that prevented invading armies',
+        'D) Perpetual freezing weather that preserved harvest',
+      ],
+      correctIndex: 1,
+      successFact: 'Annual Himalayan silt deposition made Magadha one of the most productive agricultural belts on Earth, supporting large populations and riverine trade.',
+    },
+  },
+  {
+    id: 'card-05',
+    cardNumber: '05',
+    name: 'Ganga-Sagara Maze',
+    nameSa: 'गङ्गासागर-सङ्गमव्यूहः (Gaṅgāsāgara-Vyūhaḥ)',
+    suit: 'purva',
+    suitName: 'Suit II: Purva (The Eastern Trail)',
+    suitColor: '#d97706',
+    staminaCost: 15,
+    terrainType: 'river',
+    hint: 'The river shatters into a hundred watery fingers where tigers guard the mangrove islands.',
+    graphicDesc: 'Braided delta channels meeting a golden sunrise.',
+    modernMatch: 'Sundarbans & Bengal Delta',
+    whyItChanged: 'Himalayan silt continuously builds new delta islands while reshaping tidal waterways.',
+    satelliteTag: 'Sundarbans Mangrove Delta · Bay of Bengal Estuary',
+    mapNode: { x: 670, y: 310, label: 'Ganga-Sagara Maze' },
+    challenge: {
+      question: 'What is the ecological and geographical significance of the Sundarbans where the Ganga meets the sea?',
+      options: [
+        'A) The world\'s largest contiguous mangrove delta ecosystem, acting as a natural storm surge buffer',
+        'B) A freshwater lake surrounded by alpine pine forests',
+        'C) An inland desert salt basin',
+        'D) A geothermal geyser field',
+      ],
+      correctIndex: 0,
+      successFact: 'The Bengal delta formed by the confluence of the Ganga, Brahmaputra, and Meghna rivers carries over a billion tons of sediment annually into the Bay of Bengal.',
+    },
+  },
+  {
+    id: 'card-06',
+    cardNumber: '06',
+    name: 'Yavadvipa Isle',
+    nameSa: 'सप्तराज्य-यवद्वीपम् (Saptarājya-Yavadvīpam)',
+    suit: 'purva',
+    suitName: 'Suit II: Purva (The Eastern Trail)',
+    suitColor: '#d97706',
+    staminaCost: 25,
+    terrainType: 'ocean',
+    hint: 'Sail across the eastern sea to a volcanic island rich in golden grain and seven realms.',
+    graphicDesc: 'Twin smoking volcanoes rising from a sapphire sea.',
+    modernMatch: 'Java & Sumatra (Indonesia)',
+    whyItChanged: 'Rising seas flooded the ancient Sundaland shelf, widening the ocean gap between islands.',
+    satelliteTag: 'Indonesian Archipelago · Sunda Shelf & Volcanic Arc',
+    mapNode: { x: 790, y: 380, label: 'Yavadvipa Isle' },
+    challenge: {
+      question: 'Sugriva describes Yavadvipa as "saptarājyasamāśritam" (possessing seven kingdoms). What modern geographical term describes this landmass?',
+      options: [
+        'A) The Arabian Peninsula',
+        'B) The Greater Sunda Islands of Indonesia (Java and Sumatra)',
+        'C) The Japanese archipelago',
+        'D) The Mediterranean island of Crete',
+      ],
+      correctIndex: 1,
+      successFact: 'Ancient Indian mariners used seasonal southwest monsoon trade winds to sail directly to Java and Sumatra, trading cotton and spices along Suvarnadvipa.',
+    },
+  },
+
+  /* -------------------------------------------------------------------------
+     SUIT III: PASCHIMA (The Western Trail — Amber Border)
+     ------------------------------------------------------------------------- */
+  {
+    id: 'card-07',
+    cardNumber: '07',
+    name: 'Saurashtra Harbor',
+    nameSa: 'सौराष्ट्र-पोतस्थानम् (Saurāṣṭra-Potasthānam)',
+    suit: 'paschima',
+    suitName: 'Suit III: Paschima (The Western Trail)',
+    suitColor: '#ea580c',
+    staminaCost: 15,
+    terrainType: 'ocean',
+    hint: 'Coastal fortresses watch over shallow tidal bays where river water meets salt spray.',
+    graphicDesc: 'Stone seawalls beside shimmering white flats.',
+    modernMatch: 'Gujarat Coast & Rann of Kutch',
+    whyItChanged: 'Tectonic uplift and siltation turned ancient navigable sea bays into seasonal salt deserts.',
+    satelliteTag: 'Gujarat Coast · Gulf of Kutch & Tidal Salt Marshes',
+    mapNode: { x: 310, y: 320, label: 'Saurashtra Harbor' },
+    challenge: {
+      question: 'How did tectonic activity and silting change the ancient coastline of the Rann of Kutch in Gujarat?',
+      options: [
+        'A) It transformed an ancient navigable arm of the sea into an expansive seasonal salt marsh',
+        'B) It created a permanent deep-water glacier fjord',
+        'C) It sank the entire peninsula under 100 meters of water',
+        'D) It caused volcanic lava to cover the entire coast',
+      ],
+      correctIndex: 0,
+      successFact: 'During the Harappan and Vedic eras, the Rann was an open, navigable marine gulf where trading ships sailed to ports like Dholavira and Lothal before earthquakes uplifted the sea bed.',
+    },
+  },
+  {
+    id: 'card-08',
+    cardNumber: '08',
+    name: 'Sindhu Delta',
+    nameSa: 'सिन्धु-मुख-सङ्गमः (Sindhu-Mukha-Saṅgamaḥ)',
+    suit: 'paschima',
+    suitName: 'Suit III: Paschima (The Western Trail)',
+    suitColor: '#ea580c',
+    staminaCost: 15,
+    terrainType: 'river',
+    hint: 'A mighty northern river fans out into the western ocean, guiding merchant sails.',
+    graphicDesc: 'Wide turquoise estuary framed by desert dunes.',
+    modernMatch: 'Indus River Delta',
+    whyItChanged: 'Shifting river channels and coastal sediment pushed the shoreline kilometers seaward.',
+    satelliteTag: 'Indus River Delta · Arabian Sea Estuary',
+    mapNode: { x: 220, y: 270, label: 'Sindhu Delta' },
+    challenge: {
+      question: 'Why did the mouths of the Indus River (Sindhu-sāgara-saṅgama) continually migrate over historical centuries?',
+      options: [
+        'A) Frequent tectonic quakes and massive alluvial sediment buildup continuously formed new delta branches',
+        'B) The river froze every winter and carved new trenches',
+        'C) Artificial dams built in prehistoric times redirected the flow',
+        'D) Ocean currents pushed the river backward toward Tibet',
+      ],
+      correctIndex: 0,
+      successFact: 'The Indus carries immense sediment loads from the Karakoram and Himalayas, causing its 17+ delta branches (creeks) to shift continually across centuries.',
+    },
+  },
+  {
+    id: 'card-09',
+    cardNumber: '09',
+    name: 'Astachala Ridge',
+    nameSa: 'अस्ताचल-शिखरम् (Astācala-Śikharam)',
+    suit: 'paschima',
+    suitName: 'Suit III: Paschima (The Western Trail)',
+    suitColor: '#ea580c',
+    staminaCost: 25,
+    terrainType: 'mountain',
+    hint: 'At the edge of the western sea, jagged desert peaks swallow the setting sun.',
+    graphicDesc: 'Crimson sun sinking behind dark coastal cliffs.',
+    modernMatch: 'Makran & Oman Coastal Ranges',
+    whyItChanged: 'Ancient mariners named western peaks after the visual horizon where the sun appeared to set.',
+    satelliteTag: 'Makran Coastal Range · Western Arabian Sea Horizon',
+    mapNode: { x: 110, y: 260, label: 'Astachala Ridge' },
+    challenge: {
+      question: 'In ancient Indian spherical geodesy, what did "Astagiri / Astācala" signify astronomically?',
+      options: [
+        'A) The exact western horizon 90 degrees west of the Ujjayini Prime Meridian where the sun sets',
+        'B) A crater formed by a fallen meteor',
+        'C) An underground kingdom beneath the Earth',
+        'D) A lunar observatory tower',
+      ],
+      correctIndex: 0,
+      successFact: 'Ancient Indian astronomers paired Udayagiri in the far east with Astagiri in the far west to define the 180° diurnal horizon of solar traverse across Jambudvipa.',
+    },
+  },
+
+  /* -------------------------------------------------------------------------
+     SUIT IV: UTTARA (The Northern Trail — Sapphire Border)
+     ------------------------------------------------------------------------- */
+  {
+    id: 'card-10',
+    cardNumber: '10',
+    name: 'Himavat Fortress',
+    nameSa: 'हिमवत्-महादुर्गम् (Himavat-Mahādurgam)',
+    suit: 'uttara',
+    suitName: 'Suit IV: Uttara (The Northern Trail)',
+    suitColor: '#0284c7',
+    staminaCost: 25,
+    terrainType: 'mountain',
+    hint: 'White crystal spears pierce the clouds, guarding the birthplaces of sacred rivers.',
+    graphicDesc: 'Towering snow peaks above glacial blue lakes.',
+    modernMatch: 'The Himalayas',
+    whyItChanged: 'Tectonic collision continues lifting the range slowly while modern passes connect high valleys.',
+    satelliteTag: 'Greater Himalayan Range · Continental Collision Zone',
+    mapNode: { x: 450, y: 160, label: 'Himavat Fortress' },
+    challenge: {
+      question: 'What ongoing geological process created and continues to elevate the towering Himavat (Himalayan) mountain wall?',
+      options: [
+        'A) The ongoing northward collision of the Indian tectonic plate with the Eurasian plate',
+        'B) Massive volcanic eruptions in the Indian Ocean',
+        'C) Erosion caused by polar winds',
+        'D) Coral reef accretion along an ancient coastline',
+      ],
+      correctIndex: 0,
+      successFact: 'The Indian tectonic plate continues to push into Eurasia at roughly 5 cm per year, driving the steady uplift of Everest and the Himalayan massif.',
+    },
+  },
+  {
+    id: 'card-11',
+    cardNumber: '11',
+    name: 'Uttarakuru Steppe',
+    nameSa: 'उत्तरकुरु-तृणभूमिः (Uttarakuru-Tṛṇabhūmiḥ)',
+    suit: 'uttara',
+    suitName: 'Suit IV: Uttara (The Northern Trail)',
+    suitColor: '#0284c7',
+    staminaCost: 20,
+    terrainType: 'forest',
+    hint: 'Beyond the snow wall stretch endless cold grasslands where nomads ride under wide skies.',
+    graphicDesc: 'Wind-swept golden tundra with distant mountains.',
+    modernMatch: 'Tibetan Plateau & Siberian Steppe',
+    whyItChanged: 'Ancient accounts relied on overland caravan stories; satellites now map every plateau basin.',
+    satelliteTag: 'Tibetan High Plateau & Eurasian Steppe Corridors',
+    mapNode: { x: 460, y: 95, label: 'Uttarakuru Steppe' },
+    challenge: {
+      question: 'Why was the realm of Uttarakuru described in ancient Indian epics as having vast grasslands and river Sailoda?',
+      options: [
+        'A) It was the high-altitude trans-Himalayan steppe and Tarim Basin traversed by ancient Silk Road merchants',
+        'B) It was a tropical swamp on the equator',
+        'C) It was an island in the Pacific Ocean',
+        'D) It was a desert inside Australia',
+      ],
+      correctIndex: 0,
+      successFact: 'Beyond the Himalayan rainshadow lies the high Tibetan plateau and the expansive Eurasian steppe, where ancient pastoral nomads grazed horses across open grasslands.',
+    },
+  },
+  {
+    id: 'card-12',
+    cardNumber: '12',
+    name: 'Somagiri Crown',
+    nameSa: 'सोमगिरि-ध्रुवकिरीटम् (Somagiri-Dhruvakirīṭam)',
+    suit: 'uttara',
+    suitName: 'Suit IV: Uttara (The Northern Trail)',
+    suitColor: '#0284c7',
+    staminaCost: 30,
+    terrainType: 'polar',
+    hint: 'In a sunless frozen realm, a mountain glows with dancing green and violet sky-fire.',
+    graphicDesc: 'Dark snowy ridge lit by glowing aurora ribbons.',
+    modernMatch: 'Arctic Circle (Aurora Borealis)',
+    whyItChanged: 'Travelers saw polar nights and magnetic auroras firsthand without knowing Earth’s axial tilt.',
+    satelliteTag: 'Arctic High Latitude · Geomagnetic Aurora Zone',
+    mapNode: { x: 470, y: 35, label: 'Somagiri Crown' },
+    challenge: {
+      question: 'The dancing "sky-fire" (green and violet atmospheric light) described around Somagiri corresponds to what geophysical phenomenon?',
+      options: [
+        'A) Aurora Borealis (Northern Lights) caused by solar wind particles colliding with Earth’s upper magnetic atmosphere',
+        'B) Lightning from undersea volcanoes',
+        'C) Forest fires reflected in low clouds',
+        'D) City spotlights from modern stadiums',
+      ],
+      correctIndex: 0,
+      successFact: 'Earth\'s magnetic field channels charged solar particles into polar atmospheres, exciting oxygen and nitrogen atoms to produce glowing green and violet auroral curtains.',
+    },
+  },
+];

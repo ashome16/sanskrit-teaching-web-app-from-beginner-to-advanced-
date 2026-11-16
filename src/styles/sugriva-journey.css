@@ -1185,3 +1185,723 @@
   justify-content: center;
   flex-shrink: 0;
 }
+
+/* ==========================================================================
+   COLLECTIBLE TRAVEL CARDS GAMEPLAY & PARCHMENT BOARD STYLES
+   ========================================================================== */
+
+/* ---------------- Travel Hud & Stamina Bar ---------------- */
+.sj-travel-hud {
+  background: #0f172a;
+  border: 1.5px solid var(--sj-border);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.sj-hud-stamina-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.sj-stamina-meter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sj-stamina-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sj-text-muted);
+}
+
+.sj-stamina-val-num {
+  font-family: var(--sj-font-mono);
+  font-weight: 800;
+  color: #fbbf24;
+}
+
+.sj-stamina-track {
+  width: 220px;
+  height: 10px;
+  background: #1e293b;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.sj-stamina-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+}
+
+.sj-stamina-fill.high { background: linear-gradient(90deg, #10b981 0%, #34d399 100%); }
+.sj-stamina-fill.medium { background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%); }
+.sj-stamina-fill.low { background: linear-gradient(90deg, #ef4444 0%, #f87171 100%); }
+
+.sj-hud-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--sj-bg-elevated);
+  border: 1px solid var(--sj-border-light);
+  color: #f1f5f9;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sj-hud-action-btn:hover {
+  background: #334155;
+  border-color: var(--sj-gold);
+  color: #ffffff;
+}
+
+.sj-deck-summary-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+  padding: 0.45rem 1.15rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sj-deck-summary-pill:hover {
+  background: rgba(245, 158, 11, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ---------------- Parchment Trail Stage Board ---------------- */
+.sj-parchment-stage {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, #151e33 0%, #0b1120 70%, #060911 100%);
+  border: 2px solid #334155;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  aspect-ratio: 920 / 640;
+  width: 100%;
+}
+
+.sj-stage-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Trail Corridors */
+.sj-trail-path {
+  fill: none;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-dasharray: 6 6;
+  transition: stroke 0.3s ease;
+}
+
+.sj-trail-path.dakshina { stroke: #059669; }
+.sj-trail-path.purva { stroke: #d97706; }
+.sj-trail-path.paschima { stroke: #ea580c; }
+.sj-trail-path.uttara { stroke: #0284c7; }
+
+/* Interactive Map Trail Node */
+.sj-board-node-g {
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sj-board-node-g:hover {
+  transform: scale(1.2);
+}
+
+.sj-node-ring {
+  fill: #0f172a;
+  stroke-width: 2.5;
+  transition: all 0.2s ease;
+}
+
+.sj-node-ring.collected {
+  stroke-width: 3.5;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Animated Vanara Scout Token */
+.sj-vanara-token-g {
+  transition: transform 0.8s cubic-bezier(0.34, 1.25, 0.64, 1);
+  pointer-events: none;
+}
+
+.sj-token-halo {
+  animation: sjHaloPulse 2s ease-in-out infinite;
+}
+
+@keyframes sjHaloPulse {
+  0%, 100% { r: 16; opacity: 0.3; }
+  50% { r: 24; opacity: 0.7; }
+}
+
+/* ---------------- 3D Mystery & Collectible Card Modal ---------------- */
+.sj-card-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 12, 0.82);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.sj-card-modal-container {
+  max-width: 580px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sj-modal-close-btn {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  background: var(--sj-bg-elevated);
+  border: 1px solid var(--sj-border);
+  color: #cbd5e1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  z-index: 10;
+}
+
+.sj-modal-close-btn:hover {
+  background: #334155;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+/* The 3D Flip Card Frame */
+.sj-3d-card-stage {
+  perspective: 1200px;
+  width: 380px;
+  max-width: 100%;
+  height: 520px;
+  margin: 0 auto;
+}
+
+.sj-3d-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+  border-radius: 20px;
+}
+
+.sj-3d-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.sj-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Front Face: Ancient Art & Clue */
+.sj-card-front {
+  background: linear-gradient(180deg, #162032 0%, #0d131f 100%);
+  border: 3.5px solid #059669;
+}
+
+.sj-card-front.dakshina { border-color: #059669; }
+.sj-card-front.purva { border-color: #d97706; }
+.sj-card-front.paschima { border-color: #ea580c; }
+.sj-card-front.uttara { border-color: #0284c7; }
+
+.sj-cf-header {
+  padding: 0.75rem 1rem;
+  background: rgba(15, 23, 42, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sj-cf-suit-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sj-cf-suit-badge.dakshina { color: #34d399; }
+.sj-cf-suit-badge.purva { color: #fbbf24; }
+.sj-cf-suit-badge.paschima { color: #fb923c; }
+.sj-cf-suit-badge.uttara { color: #38bdf8; }
+
+.sj-cf-number-seal {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #090d16;
+  border: 1.5px solid var(--sj-gold);
+  color: #fbbf24;
+  font-family: var(--sj-font-mono);
+  font-size: 0.76rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card Visual Graphic Area */
+.sj-cf-visual-wrap {
+  position: relative;
+  height: 220px;
+  background: #0b1120;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sj-cf-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sj-cf-visual-canvas-fallback {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at 50% 40%, rgba(245, 158, 11, 0.15) 0%, #0b1120 80%);
+}
+
+.sj-cf-fallback-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--sj-gold);
+  margin-bottom: 0.75rem;
+}
+
+.sj-cf-name-scroll {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+  color: #78350f;
+  padding: 0.35rem 1.25rem;
+  border-radius: 6px;
+  border: 1px solid #d97706;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  font-weight: 800;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Clue & Challenge Bottom Area */
+.sj-cf-bottom {
+  padding: 1rem 1.25rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sj-cf-hint-scroll {
+  background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #d97706;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  color: #451a03;
+  font-style: italic;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.75rem;
+}
+
+.sj-cf-challenge-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.sj-challenge-btn {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #f1f5f9;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sj-challenge-btn:hover:not(:disabled) {
+  border-color: var(--sj-gold);
+  background: #334155;
+}
+
+.sj-challenge-btn.correct {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+  color: #34d399;
+  font-weight: 700;
+}
+
+/* Back Face: Time-Shift Reveal */
+.sj-card-back {
+  background: linear-gradient(180deg, #091222 0%, #030712 100%);
+  border: 3.5px solid #0284c7;
+  transform: rotateY(180deg);
+}
+
+.sj-card-back.dakshina { border-color: #059669; }
+.sj-card-back.purva { border-color: #d97706; }
+.sj-card-back.paschima { border-color: #ea580c; }
+.sj-card-back.uttara { border-color: #0284c7; }
+
+.sj-cb-header {
+  padding: 0.75rem 1rem;
+  background: #0b1426;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sj-cb-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sj-cb-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.sj-cb-subtitle {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  display: block;
+}
+
+.sj-cb-visual-wrap {
+  position: relative;
+  height: 200px;
+  background: #020617;
+  overflow: hidden;
+}
+
+.sj-cb-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sj-cb-body {
+  padding: 1rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sj-cb-match-box {
+  background: rgba(2, 132, 199, 0.1);
+  border: 1px solid rgba(2, 132, 199, 0.3);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.sj-cb-match-kicker {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.sj-cb-match-val {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.sj-cb-why-box {
+  background: #0b1120;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.sj-cb-why-kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--sj-gold);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.sj-cb-why-text {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.sj-cb-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #1e293b;
+  padding-top: 0.75rem;
+}
+
+.sj-collected-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1.5px solid #10b981;
+  color: #34d399;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sj-flip-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--sj-border-light);
+  color: #cbd5e1;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sj-flip-toggle-btn:hover {
+  background: #1e293b;
+  color: #ffffff;
+  border-color: var(--sj-gold);
+}
+
+/* ---------------- Folio Binder View (Slide-out Tray) ---------------- */
+.sj-folio-binder-section {
+  background: #0f172a;
+  border: 1.5px solid var(--sj-border);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.sj-folio-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--sj-border);
+  padding-bottom: 1rem;
+}
+
+.sj-folio-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sj-folio-h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.sj-folio-filter-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+/* 4 Relics Banner Showcase */
+.sj-relics-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.sj-relic-card {
+  background: #0b1120;
+  border: 1.5px solid #1e293b;
+  border-radius: 14px;
+  padding: 1.25rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sj-relic-card.unlocked {
+  border-color: var(--sj-gold);
+  background: linear-gradient(180deg, #162032 0%, #0d131f 100%);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
+}
+
+.sj-relic-status-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.sj-relic-status-badge.unlocked {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+.sj-relic-status-badge.locked {
+  background: #1e293b;
+  color: #64748b;
+}
+
+.sj-relic-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.sj-relic-desc {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
+}
+
+.sj-relic-perk-pill {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  padding: 0.4rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+/* Collected Cards Grid in Folio */
+.sj-folio-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.sj-binder-card-item {
+  perspective: 1000px;
+  height: 380px;
+  cursor: pointer;
+}
+
+.sj-binder-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+  border-radius: 16px;
+}
+
+.sj-binder-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.sj-binder-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 2px solid #334155;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sj-binder-card-front {
+  background: #0f172a;
+}
+
+.sj-binder-card-back {
+  background: #090d16;
+  transform: rotateY(180deg);
+}
