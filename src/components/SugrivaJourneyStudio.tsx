@@ -7,6 +7,9 @@ import {
   type CollectibleCard,
   type CardSuit,
 } from '../data/sugrivaJourneyData';
+import { SugrivaCardFace } from './SugrivaCollectibleCardView';
+import { playPronunciation } from '../utils/pronunciation';
+import { soundEffects } from '../utils/soundEffects';
 import '../styles/sugriva-journey.css';
 
 interface SugrivaStudioProps {
@@ -117,6 +120,7 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
 
   // Rest at Ashram
   const handleRestAtAshram = () => {
+    soundEffects.playCelebrationChime();
     setTravelStamina(100);
     setScoutPos({ x: 430, y: 390, label: 'Kiṣkindhā Basecamp' });
     setStaminaNotice('Stamina restored to 100! Sage blessings replenish your journey.');
@@ -130,12 +134,15 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
     const cost = hasRelicFastTravel ? 0 : card.staminaCost;
 
     if (!isCollected && travelStamina < cost) {
+      soundEffects.playErrorBuzzer();
       setStaminaNotice(
         `Low Stamina! This difficult terrain requires ${cost} stamina. Rest at Kiṣkindhā Basecamp to replenish.`
       );
       setTimeout(() => setStaminaNotice(''), 5000);
       return;
     }
+
+    soundEffects.playStrokeChime();
 
     // Move Scout Token
     setScoutPos({
@@ -161,19 +168,34 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
     setModalSelectedOption(optionIndex);
 
     if (optionIndex === modalCard.challenge.correctIndex) {
+      soundEffects.playSuccessDing();
       // Mark as collected
       if (!collectedCardIds.includes(modalCard.id)) {
-        setCollectedCardIds((prev) => [...prev, modalCard.id]);
+        const nextCollected = [...collectedCardIds, modalCard.id];
+        setCollectedCardIds(nextCollected);
+
+        // Check if suit completed
+        const suitCards = COLLECTIBLE_CARDS_DECK.filter((c) => c.suit === modalCard.suit);
+        const willCompleteSuit = suitCards.every((c) => nextCollected.includes(c.id));
+        if (willCompleteSuit) {
+          setTimeout(() => {
+            soundEffects.playCelebrationChime();
+          }, 800);
+        }
       }
       // 3D Flip to back reveal
       setTimeout(() => {
         setModalCardFlipped(true);
+        soundEffects.playStrokeChime();
       }, 700);
+    } else {
+      soundEffects.playErrorBuzzer();
     }
   };
 
   const handleToggleCardFlipInModal = () => {
     setModalCardFlipped((prev) => !prev);
+    soundEffects.playStrokeChime();
   };
 
   const handleToggleBinderCardFlip = (cardId: string) => {
@@ -181,6 +203,7 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
       ...prev,
       [cardId]: !prev[cardId],
     }));
+    soundEffects.playStrokeChime();
   };
 
   const handleResetDeck = () => {
@@ -286,10 +309,33 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
     </svg>
   );
 
-  const SatelliteIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="3" />
-      <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m12.72-4.24a12 12 0 0 1 0 16.97m-16.96 0a12 12 0 0 1 0-16.97" />
+  const StaminaIcon = ({ size = 14, color = 'currentColor' }: { size?: number; color?: string }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} stroke="none" aria-hidden="true">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>
+  );
+
+  const AudioIcon = ({ size = 15 }: { size?: number }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+    </svg>
+  );
+
+  const LockIcon = ({ size = 16 }: { size?: number }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+    </svg>
+  );
+
+  const FlipIcon = ({ size = 15 }: { size?: number }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+      <path d="M3 3v5h5" />
+      <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
+      <path d="M16 21h5v-5" />
     </svg>
   );
 
@@ -597,17 +643,29 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
 
                       {/* Stamina Cost Pill */}
                       {!isCollected && (
-                        <text
-                          x={card.mapNode.x}
-                          y={card.mapNode.y - 18}
-                          textAnchor="middle"
-                          fill="#fbbf24"
-                          fontSize="8.5"
-                          fontFamily="var(--sj-font-mono)"
-                          fontWeight="700"
-                        >
-                          -{card.staminaCost}⚡
-                        </text>
+                        <g>
+                          <rect
+                            x={card.mapNode.x - 24}
+                            y={card.mapNode.y - 27}
+                            width="48"
+                            height="13"
+                            rx="6.5"
+                            fill="rgba(9, 13, 22, 0.85)"
+                            stroke="#fbbf24"
+                            strokeWidth="0.8"
+                          />
+                          <text
+                            x={card.mapNode.x}
+                            y={card.mapNode.y - 17.5}
+                            textAnchor="middle"
+                            fill="#fbbf24"
+                            fontSize="8"
+                            fontFamily="var(--sj-font-mono)"
+                            fontWeight="800"
+                          >
+                            -{card.staminaCost} pts
+                          </text>
+                        </g>
                       )}
                     </g>
                   );
@@ -729,100 +787,75 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
                 return (
                   <div
                     key={card.id}
-                    className="sj-binder-card-item"
-                    onClick={() => handleToggleBinderCardFlip(card.id)}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`Toggle card ${card.name} 3D view`}
+                    className={`sj-folio-card-wrapper${isCollected ? ' collected' : ' uncollected'}`}
                   >
-                    <div className={`sj-binder-card-inner${isFlipped ? ' is-flipped' : ''}`}>
-                      {/* FRONT FACE */}
-                      <div className="sj-binder-card-face sj-binder-card-front" style={{ borderColor: card.suitColor }}>
-                        <div>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                            <span style={{ fontSize: '0.72rem', fontWeight: 800, color: card.suitColor, textTransform: 'uppercase' }}>
-                              {card.suit.toUpperCase()}
-                            </span>
-                            <span className="sj-cf-number-seal">{card.cardNumber}</span>
+                    {isCollected ? (
+                      <div
+                        className="sj-folio-card-3d"
+                        onClick={() => handleToggleBinderCardFlip(card.id)}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`Toggle 3D view for ${card.name}`}
+                      >
+                        <div className={`sj-folio-card-inner${isFlipped ? ' is-flipped' : ''}`}>
+                          {/* Front Face */}
+                          <div className={`sj-card-face sj-card-front ${card.suit}`}>
+                            <SugrivaCardFace card={card} />
                           </div>
-                          <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.25rem' }}>
-                            {card.name}
-                          </h4>
-                          <div style={{ fontSize: '0.78rem', color: '#94a3b8', marginBottom: '0.75rem' }}>
-                            {card.nameSa}
-                          </div>
-
-                          {/* Image preview or graphic canvas */}
-                          <div style={{ height: '140px', borderRadius: '10px', overflow: 'hidden', background: '#0b1120', marginBottom: '0.75rem' }}>
-                            {card.frontImage ? (
-                              <img src={card.frontImage} alt={card.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                            ) : (
-                              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: card.suitColor, fontSize: '0.85rem', fontWeight: 700, padding: '1rem', textAlign: 'center' }}>
-                                {card.graphicDesc}
-                              </div>
-                            )}
-                          </div>
-
-                          <div style={{ background: '#fffbeb', color: '#78350f', padding: '0.65rem 0.85rem', borderRadius: '8px', fontSize: '0.76rem', fontStyle: 'italic', lineHeight: 1.4 }}>
-                            &ldquo;{card.hint}&rdquo;
+                          {/* Back Face (Time-Shift Reveal) */}
+                          <div className={`sj-card-face sj-card-back ${card.suit}`}>
+                            <SugrivaCardFace card={card} isBack={true} />
                           </div>
                         </div>
 
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '0.5rem', borderTop: '1px solid #1e293b' }}>
-                          <span style={{ fontSize: '0.72rem', color: isCollected ? '#34d399' : '#64748b', fontWeight: 800 }}>
-                            {isCollected ? 'COLLECTED' : 'UNCHARTED'}
+                        <div className="sj-folio-card-footer">
+                          <span className="sj-folio-flip-tip">
+                            <FlipIcon size={12} /> {isFlipped ? 'View Ancient Clue' : 'View Time-Shift Reveal'}
                           </span>
-                          <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Tap to Flip ➔</span>
+                          <button
+                            type="button"
+                            className="sj-folio-audio-btn"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              playPronunciation(card.nameSa);
+                              soundEffects.playStrokeChime();
+                            }}
+                            title="Pronounce Sanskrit Name"
+                            aria-label={`Pronounce ${card.nameSa}`}
+                          >
+                            <AudioIcon size={13} />
+                          </button>
                         </div>
                       </div>
-
-                      {/* BACK FACE (Time-Shift Reveal) */}
-                      <div className="sj-binder-card-face sj-binder-card-back" style={{ borderColor: card.suitColor }}>
+                    ) : (
+                      <div className={`sj-folio-locked-card ${card.suit}`}>
+                        <div className="sj-locked-card-header">
+                          <span className="sj-locked-suit-name">{card.suit.toUpperCase()}</span>
+                          <span className="sj-pcf-number-seal">{card.cardNumber}</span>
+                        </div>
+                        <div className="sj-locked-icon-wrap">
+                          <LockIcon size={26} />
+                        </div>
                         <div>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.72rem', color: '#38bdf8', fontWeight: 800 }}>
-                              <SatelliteIcon /> TIME-SHIFT REVEAL
-                            </span>
-                            <span className="sj-cf-number-seal">{card.cardNumber}</span>
-                          </div>
-
-                          <div style={{ height: '120px', borderRadius: '10px', overflow: 'hidden', background: '#020617', marginBottom: '0.75rem' }}>
-                            {card.backImage ? (
-                              <img src={card.backImage} alt={`Satellite view of ${card.name}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                            ) : (
-                              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38bdf8', fontSize: '0.8rem', padding: '0.75rem', textAlign: 'center' }}>
-                                Satellite Topography · {card.modernMatch}
-                              </div>
-                            )}
-                          </div>
-
-                          <div style={{ background: 'rgba(2, 132, 199, 0.1)', border: '1px solid rgba(2, 132, 199, 0.3)', borderRadius: '6px', padding: '0.5rem', marginBottom: '0.5rem' }}>
-                            <span style={{ display: 'block', fontSize: '0.65rem', textTransform: 'uppercase', color: '#38bdf8', fontWeight: 800 }}>
-                              Modern Match
-                            </span>
-                            <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#ffffff' }}>
-                              {card.modernMatch}
-                            </span>
-                          </div>
-
-                          <div style={{ background: '#0b1120', border: '1px solid #1e293b', borderRadius: '6px', padding: '0.5rem' }}>
-                            <span style={{ display: 'block', fontSize: '0.65rem', color: '#fbbf24', fontWeight: 800 }}>
-                              Why It Changed?
-                            </span>
-                            <p style={{ fontSize: '0.74rem', color: '#cbd5e1', margin: 0, lineHeight: 1.4 }}>
-                              {card.whyItChanged}
-                            </p>
-                          </div>
+                          <h4 className="sj-locked-card-name">{card.name}</h4>
+                          <div className="sj-locked-card-sa">{card.nameSa.split('(')[0].trim()}</div>
                         </div>
-
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '0.5rem', borderTop: '1px solid #1e293b' }}>
-                          <span className="sj-collected-seal">
-                            <CheckIcon /> In Deck
-                          </span>
-                          <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Tap to Flip ➔</span>
-                        </div>
+                        <p className="sj-locked-card-desc">
+                          Uncharted node along the {card.suit} corridor. Advance on the parchment board to unlock this card!
+                        </p>
+                        <button
+                          type="button"
+                          className="sj-locked-travel-btn"
+                          onClick={() => {
+                            setActiveTab('stage');
+                            handleNodeClick(card);
+                          }}
+                        >
+                          <MapIcon />
+                          <span>Explore on Board</span>
+                        </button>
                       </div>
-                    </div>
+                    )}
                   </div>
                 );
               })}
@@ -1168,7 +1201,7 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
       </main>
 
       {/* ===================================================================
-          3D MYSTERY & COLLECTIBLE CARD MODAL
+          3D MYSTERY & COLLECTIBLE CARD MODAL (TWO-COLUMN ARCHITECTURE)
           =================================================================== */}
       {modalCard && (
         <div className="sj-card-modal-backdrop" onClick={() => setModalCard(null)}>
@@ -1182,135 +1215,139 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
               <CrossIcon />
             </button>
 
-            <div className="sj-3d-card-stage">
-              <div className={`sj-3d-card-inner${modalCardFlipped ? ' is-flipped' : ''}`}>
-                {/* ---------------- FRONT FACE ---------------- */}
-                <div className={`sj-card-face sj-card-front ${modalCard.suit}`}>
-                  <div className="sj-cf-header">
-                    <div className={`sj-cf-suit-badge ${modalCard.suit}`}>
-                      <CompassIcon />
-                      <span>{modalCard.suitName}</span>
-                    </div>
-                    <span className="sj-cf-number-seal">{modalCard.cardNumber}</span>
-                  </div>
-
-                  <div className="sj-cf-visual-wrap">
-                    {modalCard.frontImage ? (
-                      <img
-                        src={modalCard.frontImage}
-                        alt={modalCard.name}
-                        className="sj-cf-visual-img"
-                      />
-                    ) : (
-                      <div className="sj-cf-visual-canvas-fallback">
-                        <div className="sj-cf-fallback-icon">
-                          <CompassIcon />
-                        </div>
-                        <span style={{ fontSize: '0.85rem', color: '#ffffff', fontWeight: 700 }}>
-                          {modalCard.graphicDesc}
-                        </span>
-                      </div>
-                    )}
-                    <div className="sj-cf-name-scroll">
-                      {modalCard.name}
-                    </div>
-                  </div>
-
-                  <div className="sj-cf-bottom">
-                    <div className="sj-cf-hint-scroll">
-                      &ldquo;{modalCard.hint}&rdquo;
+            <div className="sj-card-modal-layout">
+              {/* LEFT COLUMN: 3D CARD DISPLAY */}
+              <div className="sj-modal-card-col">
+                <div
+                  className="sj-3d-card-stage"
+                  onClick={handleToggleCardFlipInModal}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Flip card ${modalCard.name}`}
+                >
+                  <div className={`sj-3d-card-inner${modalCardFlipped ? ' is-flipped' : ''}`}>
+                    {/* FRONT FACE */}
+                    <div className={`sj-card-face sj-card-front ${modalCard.suit}`}>
+                      <SugrivaCardFace card={modalCard} />
                     </div>
 
-                    <div className="sj-cf-challenge-wrap">
-                      <div style={{ fontSize: '0.78rem', color: '#cbd5e1', fontWeight: 700, marginBottom: '0.2rem' }}>
-                        Travel Riddle: {modalCard.challenge.question}
-                      </div>
-
-                      {modalCard.challenge.options.map((opt, optIdx) => {
-                        const isChosen = modalSelectedOption === optIdx;
-                        const isCorrect = optIdx === modalCard.challenge.correctIndex;
-
-                        return (
-                          <button
-                            key={optIdx}
-                            type="button"
-                            className={`sj-challenge-btn${isChosen && isCorrect ? ' correct' : ''}`}
-                            onClick={() => handleModalOptionChoose(optIdx)}
-                            disabled={collectedCardIds.includes(modalCard.id)}
-                          >
-                            <span>{opt}</span>
-                          </button>
-                        );
-                      })}
+                    {/* BACK FACE: TIME-SHIFT REVEAL */}
+                    <div className={`sj-card-face sj-card-back ${modalCard.suit}`}>
+                      <SugrivaCardFace card={modalCard} isBack={true} />
                     </div>
-
-                    {collectedCardIds.includes(modalCard.id) && (
-                      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '0.75rem' }}>
-                        <button
-                          type="button"
-                          className="sj-flip-toggle-btn"
-                          onClick={handleToggleCardFlipInModal}
-                        >
-                          Flip to Time-Shift Reveal ➔
-                        </button>
-                      </div>
-                    )}
                   </div>
                 </div>
 
-                {/* ---------------- BACK FACE: TIME-SHIFT REVEAL ---------------- */}
-                <div className={`sj-card-face sj-card-back ${modalCard.suit}`}>
-                  <div className="sj-cb-header">
-                    <div className="sj-cb-title-wrap">
-                      <SatelliteIcon />
-                      <div>
-                        <span className="sj-cb-title">Time-Shift Reveal</span>
-                        <span className="sj-cb-subtitle">Ancient Land ➔ Modern Geography</span>
-                      </div>
-                    </div>
-                    <span className="sj-cf-number-seal">{modalCard.cardNumber}</span>
+                <div className="sj-modal-card-actions">
+                  <button
+                    type="button"
+                    className="sj-card-action-btn flip"
+                    onClick={handleToggleCardFlipInModal}
+                  >
+                    <FlipIcon size={14} />
+                    <span>{modalCardFlipped ? 'View Ancient Clue' : 'View Time-Shift Reveal'}</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="sj-card-action-btn audio"
+                    onClick={() => {
+                      playPronunciation(modalCard.nameSa);
+                      soundEffects.playStrokeChime();
+                    }}
+                    title="Listen to Sanskrit Pronunciation"
+                    aria-label={`Listen to ${modalCard.nameSa}`}
+                  >
+                    <AudioIcon size={14} />
+                    <span>Hear Sanskrit</span>
+                  </button>
+                </div>
+                <div className="sj-modal-flip-hint">
+                  Click or tap the card to flip in 3D
+                </div>
+              </div>
+
+              {/* RIGHT COLUMN: WAYFINDER QUEST & TERRAIN CHALLENGE */}
+              <div className="sj-modal-quest-col">
+                <div className="sj-quest-top-badges">
+                  <span className={`sj-quest-suit-pill ${modalCard.suit}`}>
+                    {modalCard.suit.toUpperCase()} TRAIL · CARD #{modalCard.cardNumber}
+                  </span>
+                  <span className="sj-quest-effort-pill">
+                    <StaminaIcon size={12} color="#fbbf24" />
+                    <span>
+                      {unlockedRelics[modalCard.suit]
+                        ? 'Relic Fast-Travel (0 pts)'
+                        : `Effort: ${modalCard.staminaCost} pts`}
+                    </span>
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="sj-quest-card-title">{modalCard.name}</h3>
+                  <div className="sj-quest-card-sa">{modalCard.nameSa}</div>
+                </div>
+
+                <div className="sj-quest-hint-banner">
+                  <span className="sj-quest-hint-kicker">Sugrīva&apos;s Travel Riddle &amp; Clue</span>
+                  <p className="sj-quest-hint-quote">&ldquo;{modalCard.hint}&rdquo;</p>
+                </div>
+
+                <div className="sj-quest-obstacle-box">
+                  <div className="sj-quest-q-title">
+                    <strong>Wayfinder Riddle:</strong> {modalCard.challenge.question}
                   </div>
 
-                  <div className="sj-cb-visual-wrap">
-                    {modalCard.backImage ? (
-                      <img
-                        src={modalCard.backImage}
-                        alt={`Satellite view of ${modalCard.name}`}
-                        className="sj-cb-visual-img"
-                      />
-                    ) : (
-                      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#020617', color: '#38bdf8', padding: '1rem', textAlign: 'center', fontSize: '0.82rem', fontWeight: 700 }}>
-                        Satellite Topography View · {modalCard.satelliteTag}
-                      </div>
-                    )}
+                  <div className="sj-quest-options-grid">
+                    {modalCard.challenge.options.map((opt, optIdx) => {
+                      const isChosen = modalSelectedOption === optIdx;
+                      const isCorrect = optIdx === modalCard.challenge.correctIndex;
+                      const isCollected = collectedCardIds.includes(modalCard.id);
+
+                      let btnClass = 'sj-quest-option-btn';
+                      if (isCollected && isCorrect) {
+                        btnClass += ' correct';
+                      } else if (isChosen && isCorrect) {
+                        btnClass += ' correct';
+                      } else if (isChosen && !isCorrect) {
+                        btnClass += ' wrong';
+                      }
+
+                      return (
+                        <button
+                          key={optIdx}
+                          type="button"
+                          className={btnClass}
+                          onClick={() => handleModalOptionChoose(optIdx)}
+                          disabled={isCollected}
+                        >
+                          <span>{opt}</span>
+                        </button>
+                      );
+                    })}
                   </div>
 
-                  <div className="sj-cb-body">
-                    <div>
-                      <div className="sj-cb-match-box">
-                        <span className="sj-cb-match-kicker">Modern Match</span>
-                        <div className="sj-cb-match-val">{modalCard.modernMatch}</div>
-                      </div>
-
-                      <div className="sj-cb-why-box">
-                        <span className="sj-cb-why-kicker">Why It Changed?</span>
-                        <p className="sj-cb-why-text">{modalCard.whyItChanged}</p>
-                      </div>
-                    </div>
-
-                    <div className="sj-cb-footer-bar">
-                      <span className="sj-collected-seal">
-                        <CheckIcon /> Collected to Deck!
+                  {collectedCardIds.includes(modalCard.id) && (
+                    <div className="sj-quest-success-revelation">
+                      <span className="sj-quest-success-seal">
+                        <CheckIcon /> Wayfinder Discovery Unlocked!
                       </span>
-                      <button
-                        type="button"
-                        className="sj-flip-toggle-btn"
-                        onClick={handleToggleCardFlipInModal}
-                      >
-                        Flip to Clue ➔
-                      </button>
+                      <p className="sj-quest-success-fact">
+                        {modalCard.challenge.successFact}
+                      </p>
+
+                      <div className="sj-quest-modern-facts">
+                        <div className="sj-quest-fact-pill">
+                          <span className="sj-quest-fact-label">Modern Geographic Match</span>
+                          <p className="sj-quest-fact-val">{modalCard.modernMatch}</p>
+                        </div>
+                        <div className="sj-quest-fact-pill">
+                          <span className="sj-quest-fact-label">Why It Changed Across Eras?</span>
+                          <p className="sj-quest-fact-val">{modalCard.whyItChanged}</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
