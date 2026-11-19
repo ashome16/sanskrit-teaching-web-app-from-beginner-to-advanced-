@@ -1787,6 +1787,7 @@ const Dashboard: React.FC = () => {
           onOpenGrammar={handleOpenGrammar}
           onOpenDhatupatha={() => navigateToView('dhatupatha')}
           onOpenVedicMaths={() => navigateToView('vedic-maths')}
+          onOpenIndianMath={() => navigateToView('indian-mathematics')}
           onOpenQuiz={() => navigateToView('quiz')}
           onOpenWorksheets={() => handleOpenWorksheets('all')}
           onOpenAssignmentEvaluator={() => navigateToView('assignment-eval')}

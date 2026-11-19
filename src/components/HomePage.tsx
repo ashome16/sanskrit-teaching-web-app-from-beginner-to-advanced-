@@ -37,6 +37,7 @@ export interface HomePageProps {
   onOpenVarnamala: () => void;
   onOpenGrammar: () => void;
   onOpenVedicMaths?: () => void;
+  onOpenIndianMath?: () => void;
   onOpenPhilosophy?: () => void;
   onOpenCbseGuide?: () => void;
   onOpenOnlineClasses?: () => void;
@@ -74,7 +75,7 @@ const DEMO_WORDS: DemoWord[] = [
     english: 'Knowledge / Learning / Science',
     sanskrit: 'ज्ञानम्, पाण्डित्यम्',
     hindi: 'ज्ञान, विद्या, शिक्षा',
-    icon: '📚',
+    icon: '',
     syllables: ['वि (vi)', 'द्या (dyā)'],
   },
   {
@@ -83,7 +84,7 @@ const DEMO_WORDS: DemoWord[] = [
     english: 'Truth / Reality / Virtue',
     sanskrit: 'यथार्थवचनम्, ऋतम्',
     hindi: 'सत्य, सच, यथार्थ',
-    icon: '⚖️',
+    icon: '',
     syllables: ['स (sa)', 'त्यम् (tyam)'],
   },
   {
@@ -92,7 +93,7 @@ const DEMO_WORDS: DemoWord[] = [
     english: 'Peace / Tranquility / Calm',
     sanskrit: 'उपशमः, प्रशान्तिः',
     hindi: 'शांति, अमन, सुख',
-    icon: '🕊️',
+    icon: '',
     syllables: ['शान् (śān)', 'तिः (tiḥ)'],
   },
   {
@@ -101,7 +102,7 @@ const DEMO_WORDS: DemoWord[] = [
     english: 'Bliss / Supreme Joy / Delight',
     sanskrit: 'हर्षः, प्रमोदः, सुखम्',
     hindi: 'आनंद, परम सुख, उल्लास',
-    icon: '✨',
+    icon: '',
     syllables: ['आ (ā)', 'नन् (nan)', 'दः (daḥ)'],
   },
   {
@@ -110,7 +111,7 @@ const DEMO_WORDS: DemoWord[] = [
     english: 'Friend / Companion / Ally',
     sanskrit: 'सखा, सुहृत्',
     hindi: 'मित्र, दोस्त, सखा',
-    icon: '🤝',
+    icon: '',
     syllables: ['मि (mi)', 'त्रम् (tram)'],
   },
   {
@@ -119,7 +120,7 @@ const DEMO_WORDS: DemoWord[] = [
     english: 'Teacher / Spiritual Mentor',
     sanskrit: 'आचार्यः, उपाध्यायः',
     hindi: 'गुरु, शिक्षक, मार्गदर्शक',
-    icon: '📿',
+    icon: '',
     syllables: ['गु (gu)', 'रुः (ruḥ)'],
   },
   {
@@ -128,7 +129,7 @@ const DEMO_WORDS: DemoWord[] = [
     english: 'Tree / Plant',
     sanskrit: 'तरुः, पादपः, द्रुमः',
     hindi: 'पेड़, वृक्ष, तरु',
-    icon: '🌳',
+    icon: '',
     syllables: ['वृ (vṛ)', 'क्षः (kṣaḥ)'],
   },
   {
@@ -137,7 +138,7 @@ const DEMO_WORDS: DemoWord[] = [
     english: 'Sun / Solar Deity',
     sanskrit: 'आदित्यः, भानुः, रविः',
     hindi: 'सूर्य, सूरज, रवि',
-    icon: '☀️',
+    icon: '️',
     syllables: ['सूर् (sūr)', 'यः (yaḥ)'],
   },
 ];
@@ -283,7 +284,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 1 (Pages 1–7)',
     title: 'वन्दे भारतमातरम् (पाठः पृष्ठानि १-७)',
     english: 'Salutations to Mother India',
-    icon: '🇮🇳',
+    icon: '',
     category: 'shlokas',
     genreBadge: 'प्रार्थना · Patriotism',
     theme: 'National prayer celebrating the natural and spiritual glory of India',
@@ -294,7 +295,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 2 (Pages 15–21)',
     title: 'नित्यं पिबामः सुभाषितरसम् (पाठः पृष्ठानि १५-२१)',
     english: 'Daily Nectar of Wise Sayings',
-    icon: '📜',
+    icon: '',
     category: 'shlokas',
     genreBadge: 'सुभाषितानि · Moral Wisdom',
     theme: 'Timeless morals on sweet speech, charity, virtue, and steadfast conduct',
@@ -305,7 +306,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 3 (Pages 29–31)',
     title: 'मित्राय नमः (पाठः पृष्ठानि २९-३१)',
     english: 'Salutations to the Friend (Sun)',
-    icon: '☀️',
+    icon: '️',
     category: 'dialogue',
     genreBadge: 'संवादः · Health & Yoga',
     theme: 'Conversation on Surya Namaskar, physical wellness, and solar salutations',
@@ -316,7 +317,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 4 (Pages 39–41)',
     title: 'न लभ्यते चेत् आम्लं द्राक्षाफलम् (पाठः पृष्ठानि ३९-४१)',
     english: 'Sour Grapes (Animal Fable)',
-    icon: '🍇',
+    icon: '',
     category: 'stories',
     genreBadge: 'नीतिकथा · Animal Fable',
     theme: 'Humorous fable of the thirsty fox and sour grapes illustrating rationalization',
@@ -327,7 +328,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 5 (Pages 47–50)',
     title: 'सेवा हि परमो धर्मः (पाठः पृष्ठानि ४७-५०)',
     english: 'Service is the Highest Virtue',
-    icon: '🤝',
+    icon: '',
     category: 'stories',
     genreBadge: 'कथा · Character Building',
     theme: 'Inspiring story of selfless devotion, serving the elderly, and moral duty',
@@ -338,7 +339,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 6',
     title: 'क्रीडाम वयं श्लोकान्त्याक्षरीम्',
     english: 'Let’s Play Shloka Antyakshari',
-    icon: '🎵',
+    icon: '',
     category: 'shlokas',
     genreBadge: 'काव्यक्रीडा · Poetry Game',
     theme: 'Engaging classroom Antyakshari game reciting shlokas across poetic meters',
@@ -349,7 +350,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 7',
     title: 'ईशावास्यम् इदं सर्वम्',
     english: 'The Divine in Everything',
-    icon: '🕉️',
+    icon: 'OM',
     category: 'shlokas',
     genreBadge: 'उपनिषद् · Spiritual Wisdom',
     theme: 'Isha Upanishad teachings on renunciation, detachment, and divine omnipresence',
@@ -360,7 +361,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 8',
     title: 'हितं मनोहारि च दुर्लभं वचः',
     english: 'Beneficial & Pleasing Words are Rare',
-    icon: '💬',
+    icon: '',
     category: 'dialogue',
     genreBadge: 'संवादः · Class Discussion',
     theme: 'Kirātārjunīyam wisdom: words that are simultaneously beneficial and pleasant',
@@ -371,7 +372,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 9',
     title: 'अन्नाद् भवन्ति भूतानि',
     english: 'All Beings Arise from Food',
-    icon: '🌾',
+    icon: '',
     category: 'dialogue',
     genreBadge: 'संवादः · Science & Ecology',
     theme: 'Gita ecology: The cosmic cycle of rain, agriculture, food, and living beings',
@@ -382,7 +383,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 10',
     title: 'दशमः कः ?',
     english: 'Who is the Tenth? (Story of Wisdom)',
-    icon: '🤔',
+    icon: '',
     category: 'stories',
     genreBadge: 'हास्यकथा · Humorous Riddle',
     theme: 'The famous philosophical tale of the ten boys counting everyone except oneself',
@@ -393,7 +394,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 11',
     title: 'द्वीपेषु रम्यः द्वीपोऽण्डमानः',
     english: 'The Beautiful Andaman Islands',
-    icon: '🏝️',
+    icon: '',
     category: 'dialogue',
     genreBadge: 'भूगोलः · Geography & Travel',
     theme: 'Rich exploration of Andaman & Nicobar archipelago, freedom struggle, and nature',
@@ -404,7 +405,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Chapter 12',
     title: 'वीराङ्गना पन्नाधाया',
     english: 'The Heroic Panna Dhai',
-    icon: '🛡️',
+    icon: '',
     category: 'stories',
     genreBadge: 'इतिहासः · Heroic History',
     theme: 'The supreme sacrifice of foster-mother Panna Dhai saving Prince Uday Singh of Mewar',
@@ -415,7 +416,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Extra Study',
     title: 'वर्णमात्रा-परिचयः',
     english: 'Alphabet & Accent Guide',
-    icon: '🔤',
+    icon: '',
     category: 'grammar',
     genreBadge: 'ध्वनिविज्ञानम् · Phonetics',
     theme: 'Comprehensive guide to Hrasva, Dirgha, and Pluta vowels and Vedic pitch accents',
@@ -426,7 +427,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Appendix 1',
     title: 'शब्दरूपाणि',
     english: 'Noun Declensions (Shabdarupani)',
-    icon: '📊',
+    icon: '',
     category: 'grammar',
     genreBadge: 'व्याकरणम् · Noun Tables',
     theme: 'Complete declension reference for masculine, feminine, neuter nouns and pronouns',
@@ -437,7 +438,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Appendix 2',
     title: 'धातुरूपाणि',
     english: 'Verb Conjugations (Dhaturupani)',
-    icon: '⚡',
+    icon: '',
     category: 'grammar',
     genreBadge: 'व्याकरणम् · Verb Paradigms',
     theme: 'Full verb conjugation paradigms for Parasmaipada, Atmanepada & Ubhayapada roots',
@@ -448,7 +449,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Invocations',
     title: 'सरस्वतीप्रार्थना एवं राष्ट्र-गानम्',
     english: 'Goddess Saraswati Prayer & The National Anthem',
-    icon: '🪕',
+    icon: '',
     category: 'shlokas',
     genreBadge: 'प्रार्थना · Sacred Hymn & Anthem',
     theme: 'Sacred invocation to Goddess Saraswati (जय जय हे भगवति सुरभारति) and the National Anthem in authentic Sanskrit orthography',
@@ -459,7 +460,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 1',
     title: 'संगच्छध्वं संवदध्वम् (Pages 1–9)',
     english: 'May We Walk Together, Speak Together in Harmony (Rigveda)',
-    icon: '🏛️',
+    icon: '',
     category: 'shlokas',
     genreBadge: 'ऋग्वेद-मन्त्रः · Vedic Hymn',
     theme: 'The timeless Rigvedic hymn of universal solidarity: cultivating unified speech, harmony of thought, and collective cooperation.',
@@ -470,7 +471,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 2',
     title: 'अल्पानामपि वस्तूनां संहतिः कार्यसाधिका (Pages 10–22)',
     english: 'Unity of Small Things Accomplishes the Task (Hitopadesha)',
-    icon: '🕊️',
+    icon: '',
     category: 'stories',
     genreBadge: 'नीतिकथा · Moral Fable',
     theme: 'The celebrated Hitopadesha fable of the united flock of doves lifting the hunter\'s snare through collective solidarity.',
@@ -481,7 +482,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 3',
     title: 'सुभाषितरसं पीत्वा जीवनं सफलं कुरु (Pages 24–35)',
     english: 'Drinking the Nectar of Epigrams, Make Life Successful (Subhashitas)',
-    icon: '🍯',
+    icon: '',
     category: 'shlokas',
     genreBadge: 'सुभाषितानि · Moral Epigrams',
     theme: 'Priceless classical epigrams on virtue, humility, discriminating true friends, testing gold vs humans, eight noble qualities, and human effort.',
@@ -492,7 +493,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 4',
     title: 'प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः (Pages 36–44)',
     english: 'The Venerable Patriot Gopabandhu Das, the Great-Souled',
-    icon: '🇮🇳',
+    icon: '',
     category: 'stories',
     genreBadge: 'चरितम् · Patriotic Biography',
     theme: 'The moving life of Utkalmani Pandit Gopabandhu Das: selfless flood relief in Odisha, Satyavadi open-air forest school, and total devotion to Bharat.',
@@ -503,7 +504,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 5',
     title: 'गीता सुगीता कर्तव्या (Pages 49–58)',
     english: 'The Gita Should Be Well-Studied and Practiced',
-    icon: '🕉️',
+    icon: 'OM',
     category: 'shlokas',
     genreBadge: 'श्रीमद्भगवद्गीता · Spiritual Wisdom',
     theme: 'Foundational teachings of the Bhagavad Gita: steady intellect (Sthitadhi), sense restraint, selfless action, holy speech, and mastery over anger.',
@@ -514,7 +515,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 6',
     title: 'डिजिभारतम् – युगपरिवर्तनम् (Pages 61–66)',
     english: 'Digital India – An Epochal Transformation',
-    icon: '💻',
+    icon: '',
     category: 'dialogue',
     genreBadge: 'विज्ञान-प्रौद्योगिकी · Modern Era',
     theme: 'India\'s digital revolution: from oral Shruti and palm leaves to modern computers, smartphones, cashless transactions, and green paperless living.',
@@ -525,7 +526,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 7',
     title: 'मञ्जुलमञ्जूषा सुन्दरसुरभाषा (Pages 75–83)',
     english: 'The Charming Treasury of the Divine Sanskrit Language',
-    icon: '💎',
+    icon: '',
     category: 'shlokas',
     genreBadge: 'काव्यम् · Linguistic Glory',
     theme: 'Sanskrit Day celebration, Valmiki-Vyasa-Kalidasa-Bana literature, nine rasas, and scientific heritage.',
@@ -536,7 +537,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 8',
     title: 'पश्यत कोणमैशान्यं भारतस्य मनोहरम् (Pages 85–88)',
     english: 'Behold the Enchanting Northeast Corner of India',
-    icon: '🏞️',
+    icon: '',
     category: 'dialogue',
     genreBadge: 'भूगोलः · Geography & Culture',
     theme: 'The Seven Sisters and Brother Sikkim, Barak-Brahmaputra rivers, tribal arts, and bamboo craftsmanship.',
@@ -547,7 +548,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 9',
     title: 'कोऽरुक् ? कोऽरुक् ? कोऽरुक् ? (Pages 97–105)',
     english: 'Who is Free from Disease? (Ayurvedic Health Riddle)',
-    icon: '🌿',
+    icon: '',
     category: 'dialogue',
     genreBadge: 'आयुर्वेदः · Holistic Health',
     theme: 'Lord Dhanvantari and Vagbhata: the threefold health axioms—Hitabhuk, Mitabhuk, Ritubhuk—and daily regimens.',
@@ -558,7 +559,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 10',
     title: 'सन्निमित्ते वरं त्यागः (क-भागः) (Pages 111–122)',
     english: 'Better to Sacrifice for a Noble Cause (Part 1)',
-    icon: '⚖️',
+    icon: '',
     category: 'stories',
     genreBadge: 'नीतिकथा · Noble Sacrifice',
     theme: 'Hitopadesha tale of prince Viravara: righteous fourfold division of salary, unmatched loyalty to King Shudraka, and encounter with weeping Rajalaxmi.',
@@ -569,7 +570,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 11',
     title: 'सन्निमित्ते वरं त्यागः (ख-भागः) (Pages 124–135)',
     english: 'Better to Sacrifice for a Noble Cause (Part 2)',
-    icon: '🕊️',
+    icon: '',
     category: 'stories',
     genreBadge: 'नीतिकथा · Supreme Sacrifice',
     theme: 'Viravara\'s family sacrifice at the temple of Sarvamangala, King Shudraka\'s boundless devotion to his servant, divine resurrection, and coronation over Karnataka.',
@@ -580,7 +581,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 12',
     title: 'सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (Pages 137–145)',
     english: 'Through Perfect Pronunciation One Attains Glory in Brahmaloka',
-    icon: '🗣️',
+    icon: '',
     category: 'grammar',
     genreBadge: 'पाणिनीय-शिक्षा · Articulation & Reader Qualities',
     theme: 'Paniniya Shiksha principles: the Vritrasura/Indrashatru accent parable, maternal tigress grip metaphor, 6 attributes of ideal readers, and 6 flaws of poor readers.',
@@ -591,7 +592,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Chapter 13',
     title: 'वर्णोच्चारण-शिक्षा १ (Pages 146–156)',
     english: 'Science of Sound Articulation 1 (Anatomy & Places)',
-    icon: '🔤',
+    icon: '',
     category: 'grammar',
     genreBadge: 'ध्वनिविज्ञानम् · Places & Tools of Articulation',
     theme: 'Anatomy of voice production: 4 bodily systems (muscular, air-pressure, phonatory, articulatory), 6 places (स्थानम्) with flute-holes analogy, and active tools (करणम्) with playing-fingers analogy.',
@@ -602,7 +603,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 8 · Appendix 1',
     title: 'परिशिष्टम् १: व्याकरणम् (Pages 159–165)',
     english: 'Comprehensive Grammar (Prefixes, Suffixes, Cases & Sandhi)',
-    icon: '📐',
+    icon: '',
     category: 'grammar',
     genreBadge: 'व्याकरणम् · Prefixes, Suffixes & Cases',
     theme: 'Foundational Paninian grammar: 22 Upasargas with meaning shifts, Krit suffixes (ktva, lyap, tumun, ktavatu past participle), 6 Karakas, Upapada case rules, and vowel/consonant Sandhis.',
@@ -613,7 +614,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 9 · मङ्गलाचरणम्',
     title: 'मङ्गलाचरणम् (प्रार्थना)',
     english: 'Auspicious Vedic Invocation (Rigveda 10.191 Concord Mantras)',
-    icon: '🕉️',
+    icon: 'OM',
     category: 'shlokas',
     genreBadge: 'प्रार्थना · Rigveda Samvad',
     theme: 'Sangachhadhvam mantras fostering universal unity, common purpose, harmonized hearts, and concord across all people.',
@@ -624,7 +625,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 9 · Chapter 1',
     title: 'अहं वृक्षः अस्मि (Pages 1–8)',
     english: 'I am a Tree (Autobiography of a Tree)',
-    icon: '🌳',
+    icon: '',
     category: 'stories',
     genreBadge: 'आत्मकथा · Ecological Heritage',
     theme: 'The life journey of a tree: selfless service, universal shelter, shade, oxygen, and environmental guardianship.',
@@ -635,7 +636,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 9 · Chapter 2',
     title: 'सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः (Pages 9–18)',
     english: 'Righteousness is the Root of Happiness; Wealth is the Root of Righteousness',
-    icon: '⚖️',
+    icon: '',
     category: 'dialogue',
     genreBadge: 'नीतिशास्त्रम् · Arthashastra & Ethics',
     theme: 'Kautilya Arthashastra and Upanishadic wisdom on ethical wealth creation, purity of livelihood, and disciplined conduct.',
@@ -646,7 +647,7 @@ const CHAPTERS_INFO: ChapterInfo[] = [
     num: 'Grade 9 · Chapter 3',
     title: 'आत्मवत्सर्वभूतेषु यः पश्यति सः पण्डितः (Pages 19–30)',
     english: 'He Who Sees All Beings as Himself is Truly Wise',
-    icon: '🪷',
+    icon: '',
     category: 'stories',
     genreBadge: 'महात्मा-चरितम् · Compassion & Universal Empathy',
     theme: 'Sant Namdev, compassion towards animals and all creatures, and realizing the divine presence in every living being.',
@@ -666,7 +667,7 @@ interface FeatureTrialCalloutProps {
 }
 
 const FeatureTrialCallout: React.FC<FeatureTrialCalloutProps> = ({
-  badge = '🎁 14-DAY FULL ACCESS TRIAL',
+  badge = ' 14-DAY FULL ACCESS TRIAL',
   title,
   subtitle,
   perks,
@@ -676,17 +677,17 @@ const FeatureTrialCallout: React.FC<FeatureTrialCalloutProps> = ({
   planStatus,
 }) => {
   const displayBadge = planStatus === 'active'
-    ? '⭐ FULL ACCESS ACTIVE'
+    ? ' FULL ACCESS ACTIVE'
     : planStatus === 'trial'
-      ? '🎁 14-DAY TRIAL ACTIVE'
+      ? ' 14-DAY TRIAL ACTIVE'
       : badge;
 
   const displayButtonText = buttonText || (
     planStatus === 'active'
-      ? 'Explore Curriculum ➔'
+      ? 'Explore Curriculum  &rarr; '
       : planStatus === 'trial'
-        ? 'Continue Learning ➔'
-        : 'Start 14-Day Free Access ➔'
+        ? 'Continue Learning  &rarr; '
+        : 'Start 14-Day Free Access  &rarr; '
   );
 
   return (
@@ -707,7 +708,7 @@ const FeatureTrialCallout: React.FC<FeatureTrialCalloutProps> = ({
         <div className="home-ftc-perks">
           {perks.map((perk, idx) => (
             <span key={idx} className="home-ftc-perk-item">
-              <span className="home-ftc-check" aria-hidden="true">✓</span> {perk}
+              <span className="home-ftc-check" aria-hidden="true">[OK]</span> {perk}
             </span>
           ))}
         </div>
@@ -737,6 +738,7 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenVarnamala,
   onOpenGrammar,
   onOpenVedicMaths,
+  onOpenIndianMath,
   onOpenPhilosophy,
   onOpenCbseGuide,
   onOpenOnlineClasses,
@@ -823,10 +825,10 @@ const HomePage: React.FC<HomePageProps> = ({
 
   const categories = [
     { id: 'all', label: 'All Content', count: visibleChapters.length },
-    { id: 'stories', label: '📖 Stories & Fables', count: visibleChapters.filter((c) => c.category === 'stories').length },
-    { id: 'shlokas', label: '📜 Shlokas & Wisdom', count: visibleChapters.filter((c) => c.category === 'shlokas').length },
-    { id: 'dialogue', label: '💬 Dialogues & Culture', count: visibleChapters.filter((c) => c.category === 'dialogue').length },
-    { id: 'grammar', label: '📐 Grammar Reference', count: visibleChapters.filter((c) => c.category === 'grammar').length },
+    { id: 'stories', label: ' Stories & Fables', count: visibleChapters.filter((c) => c.category === 'stories').length },
+    { id: 'shlokas', label: ' Shlokas & Wisdom', count: visibleChapters.filter((c) => c.category === 'shlokas').length },
+    { id: 'dialogue', label: ' Dialogues & Culture', count: visibleChapters.filter((c) => c.category === 'dialogue').length },
+    { id: 'grammar', label: ' Grammar Reference', count: visibleChapters.filter((c) => c.category === 'grammar').length },
   ];
 
   const filteredChapters = visibleChapters.filter((ch) => {
@@ -981,7 +983,7 @@ const HomePage: React.FC<HomePageProps> = ({
       <div className="homepage-container">
         {englishFirst && (
           <div className="a11y-parent-guide-banner" role="region" aria-label="Parent and Beginner Mode Active">
-            <div className="a11y-parent-guide-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+            <div className="a11y-parent-guide-icon" aria-hidden="true">‍‍‍</div>
             <div className="a11y-parent-guide-content">
               <strong>English-First (Beginner &amp; Parent) Mode Active:</strong>
               <span> Core learning areas, verb conjugations, and syllabus chapters prioritize intuitive English names and layman glosses first, with classical Devanagari script displayed as secondary subtitles.</span>
@@ -1027,7 +1029,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-mangalacaranam-body">
             <div className="home-mangalacaranam-badge">
               <span>मङ्गलाचरणम्</span>
-              <span className="home-mangalacaranam-sep">✦</span>
+              <span className="home-mangalacaranam-sep">*</span>
               <span>बृहदारण्यकोपनिषत् (Bṛhadāraṇyaka Upaniṣad 1.3.28)</span>
             </div>
             <div className="home-mangalacaranam-verse">
@@ -1044,7 +1046,7 @@ const HomePage: React.FC<HomePageProps> = ({
             title={isChantingMangalam ? 'Stop Chanting (विरामय)' : 'Recite Sacred Mangalācaraṇam at slow, peaceful pace (मङ्गलाचरण-श्रवणम्)'}
             aria-label={isChantingMangalam ? 'Stop chant' : 'Listen to Mangalācaraṇam chant'}
           >
-            <span className="home-mangalacaranam-icon">{isChantingMangalam ? '⏹' : '🔔'}</span>
+            <span className="home-mangalacaranam-icon">{isChantingMangalam ? '[Stop]' : ''}</span>
             <span className="home-mangalacaranam-btn-text">
               <strong>{isChantingMangalam ? 'विरामय (Stop)' : 'मङ्गलाचरणम्'}</strong>
               <small>{isChantingMangalam ? 'Chanting…' : 'Slow Chant · मन्द-पठनम्'}</small>
@@ -1057,13 +1059,13 @@ const HomePage: React.FC<HomePageProps> = ({
             </section>
             <nav className="home-brand-strip" aria-label="Explore EdNet Learn">
               {[
-                { href: '/indian-knowledge-systems/', icon: '🪷', t: 'Explore the World of Indian Knowledge Systems' },
+                { href: '/indian-knowledge-systems/', icon: '', t: 'Explore the World of Indian Knowledge Systems' },
                 { href: '/sanskrit-learning/', icon: 'अ', t: 'Sanskrit – The Language of Knowledge' },
                 { href: '/vedic-mathematics/', icon: '∑', t: 'Vedic Mathematics & Mathematical Thinking' },
-                { href: '/science-and-discovery/', icon: '🔭', t: 'Discover Science Through Exploration' },
-                { href: '/educational-games/', icon: '🎲', t: 'Learn with Stories, Games & Interactive Activities' },
-                { href: '/worksheets-and-learning-resources/', icon: '📝', t: 'Worksheets, Quizzes & Learning Resources' },
-                { href: '/philosophy/', icon: '🌉', t: 'Connecting Ancient Wisdom with Modern Knowledge' },
+                { href: '/science-and-discovery/', icon: '', t: 'Discover Science Through Exploration' },
+                { href: '/educational-games/', icon: '', t: 'Learn with Stories, Games & Interactive Activities' },
+                { href: '/worksheets-and-learning-resources/', icon: '', t: 'Worksheets, Quizzes & Learning Resources' },
+                { href: '/philosophy/', icon: '', t: 'Connecting Ancient Wisdom with Modern Knowledge' },
               ].map((x) => (
                 <a key={x.href} href={x.href} className="home-brand-tile">
                   <span className="home-brand-tile-icon" aria-hidden="true">{x.icon}</span>
@@ -1114,7 +1116,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 title="Explore the complete 6-stage step-by-step Sanskrit roadmap"
               >
                 <span className="hhjt-text">Your Step-by-Step Sanskrit Journey</span>
-                <span className="hhjt-arrow" aria-hidden="true">➔</span>
+                <span className="hhjt-arrow" aria-hidden="true"> &rarr; </span>
               </a>
             </h2>
             <p className="home-hero-journey-subtitle">
@@ -1222,7 +1224,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 title="Replay Gurukul Dawn Intro &amp; Sacred Temple Bell Animation"
                 aria-label="Replay Gurukul Dawn Intro &amp; Sacred Temple Bell Animation"
               >
-                <span className="hhri-icon" aria-hidden="true">🔔</span>
+                <span className="hhri-icon" aria-hidden="true"></span>
                 <span>Replay Gurukul Intro</span>
                 <span className="hhri-badge">Anime &amp; Bell</span>
               </button>
@@ -1249,7 +1251,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 title="Step 1: Read letters and 400+ syllables with guided audio practice in 7 days"
               >
                 <span className="home-journey-step-num">Step 1</span>
-                <span className="home-journey-step-icon" aria-hidden="true">🌱</span>
+                <span className="home-journey-step-icon" aria-hidden="true"></span>
                 <h3 className="home-journey-step-title">Alphabet</h3>
                 <span className="home-journey-step-sanskrit">वर्णमाला</span>
                 <p className="home-journey-step-desc">
@@ -1273,7 +1275,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 title="Step 2: Build 6,000+ words playfully with interactive जोडो tile puzzles"
               >
                 <span className="home-journey-step-num">Step 2</span>
-                <span className="home-journey-step-icon" aria-hidden="true">🧩</span>
+                <span className="home-journey-step-icon" aria-hidden="true"></span>
                 <span className="home-journey-live-badge">
                   <span className="home-journey-live-dot" /> 100% Interactive
                 </span>
@@ -1284,7 +1286,7 @@ const HomePage: React.FC<HomePageProps> = ({
                   <span className="hs-plus">+</span>
                   <span className="hs-tile">डो</span>
                   <span className="hs-eq">=</span>
-                  <span className="hs-word">जोडो 🧩</span>
+                  <span className="hs-word">जोडो </span>
                 </div>
                 <p className="home-journey-step-desc">
                   Build 6,000+ practical words with tile puzzles, 18 match-pair categories, word mazes &amp; classical Sanskrit riddles (प्रहेलिकाः).
@@ -1307,7 +1309,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 title="Step 3: Root words, verb formation, and everyday conversational sentences"
               >
                 <span className="home-journey-step-num">Step 3</span>
-                <span className="home-journey-step-icon" aria-hidden="true">💬</span>
+                <span className="home-journey-step-icon" aria-hidden="true"></span>
                 <h3 className="home-journey-step-title">Simple Sentences &amp; Roots</h3>
                 <span className="home-journey-step-sanskrit">सरल-वाक्यानि एवं धातवः</span>
                 <p className="home-journey-step-desc">
@@ -1331,7 +1333,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 title="Step 4: Master all 7 case endings (Vibhaktis) & verb forms without rote fear"
               >
                 <span className="home-journey-step-num">Step 4</span>
-                <span className="home-journey-step-icon" aria-hidden="true">🌿</span>
+                <span className="home-journey-step-icon" aria-hidden="true"></span>
                 <h3 className="home-journey-step-title">Grammar</h3>
                 <span className="home-journey-step-sanskrit">व्याकरणम् · धातुपाठः</span>
                 <p className="home-journey-step-desc">
@@ -1355,7 +1357,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 title="Step 5: NCERT chapters — listen, translate, practise"
               >
                 <span className="home-journey-step-num">Step 5</span>
-                <span className="home-journey-step-icon" aria-hidden="true">📖</span>
+                <span className="home-journey-step-icon" aria-hidden="true"></span>
                 <h3 className="home-journey-step-title">NCERT Texts</h3>
                 <span className="home-journey-step-sanskrit">दीपकम् · शारदा</span>
                 <p className="home-journey-step-desc">
@@ -1379,7 +1381,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 title="Step 6: Score 95%+ in school & CBSE exams with solved blueprints and mock tests"
               >
                 <span className="home-journey-step-num">Step 6</span>
-                <span className="home-journey-step-icon" aria-hidden="true">🎯</span>
+                <span className="home-journey-step-icon" aria-hidden="true"></span>
                 <h3 className="home-journey-step-title">Exam Readiness</h3>
                 <span className="home-journey-step-sanskrit">परीक्षा-सिद्धिः</span>
                 <p className="home-journey-step-desc">
@@ -1420,7 +1422,7 @@ const HomePage: React.FC<HomePageProps> = ({
             title="Start your first free interactive lesson with audio and word analyzer (No sign-up required)"
           >
             <div className="hhac-icon-col" aria-hidden="true">
-              <span className="hhac-icon">🚀</span>
+              <span className="hhac-icon"></span>
             </div>
             <div className="hhac-text-col">
               <div className="hhac-badge-row">
@@ -1431,7 +1433,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 Begin learning in 5 minutes with audio &amp; word tools
               </span>
             </div>
-            <span className="hhac-arrow" aria-hidden="true">➔</span>
+            <span className="hhac-arrow" aria-hidden="true"> &rarr; </span>
           </button>
 
 
@@ -1449,7 +1451,7 @@ const HomePage: React.FC<HomePageProps> = ({
             title="Assess your Sanskrit knowledge in 3 minutes to find your starting level"
           >
             <div className="hhac-icon-col" aria-hidden="true">
-              <span className="hhac-icon">🎯</span>
+              <span className="hhac-icon"></span>
             </div>
             <div className="hhac-text-col">
               <div className="hhac-badge-row">
@@ -1460,7 +1462,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 Find your level: Alphabet, Words, or CBSE
               </span>
             </div>
-            <span className="hhac-arrow" aria-hidden="true">➔</span>
+            <span className="hhac-arrow" aria-hidden="true"> &rarr; </span>
           </button>
         </div>
 
@@ -1478,7 +1480,7 @@ const HomePage: React.FC<HomePageProps> = ({
               }
             }}
           >
-            <span className="home-hero-search-icon" aria-hidden="true">🔍</span>
+            <span className="home-hero-search-icon" aria-hidden="true"></span>
             <span className="home-hero-search-text">Search articles, lessons, 16 Vedic Sutras, Kaṭapayādi, Vibhakti...</span>
             <kbd className="home-hero-search-badge">{getSearchShortcut().searchBadge}</kbd>
           </div>
@@ -1500,7 +1502,7 @@ const HomePage: React.FC<HomePageProps> = ({
         {/* Daily Spoken Sanskrit Bar (दैनिक-सम्भाषणम्) */}
         <div className="home-spoken-phrase-pill" role="region" aria-label="दैनिक-सम्भाषणम् · Daily Spoken Sanskrit">
           <div className="hsp-tag">
-            <span>💬</span>
+            <span></span>
             <span>दैनिक-सम्भाषणम्</span>
           </div>
           <div className="hsp-content">
@@ -1515,7 +1517,7 @@ const HomePage: React.FC<HomePageProps> = ({
               title="Hear Pronunciation (उच्चारण-श्रवणम्)"
               aria-label={`Listen to ${currentSpoken.sa}`}
             >
-              🔊
+              [Audio]
             </button>
             <button
               type="button"
@@ -1587,7 +1589,7 @@ const HomePage: React.FC<HomePageProps> = ({
         <div className="home-subhashita-card">
           <div className="hsub-header">
             <div className="hsub-badge-group">
-              <span className="hsub-lotus" aria-hidden="true">🪷</span>
+              <span className="hsub-lotus" aria-hidden="true"></span>
               <div>
                 <span className="hsub-kicker">दैनिक-सुभाषित-मञ्जरी · Daily Shloka Jewel</span>
                 <h2 className="hsub-title">
@@ -1607,7 +1609,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 onClick={handleNextSubhashita}
                 title="Next Subhāṣita (अग्रिम-सुभाषितम्)"
               >
-                <span>अग्रे सुभाषितम् ➔</span>
+                <span>अग्रे सुभाषितम्  &rarr; </span>
               </button>
             </div>
           </div>
@@ -1629,18 +1631,18 @@ const HomePage: React.FC<HomePageProps> = ({
                 title={isChantingSubhashita ? 'Stop Recitation (विरामय)' : 'Hear Shloka Recitation at a slow, clear pace'}
                 aria-label={isChantingSubhashita ? 'Stop recitation' : `Listen to ${currentSubhashita.line1}`}
               >
-                <span aria-hidden="true">{isChantingSubhashita ? '⏹' : '🎶'}</span>
+                <span aria-hidden="true">{isChantingSubhashita ? '[Stop]' : ''}</span>
                 <span>{isChantingSubhashita ? 'विरामय · Stop' : 'श्लोक-श्रवणम् · Slow Chant'}</span>
               </button>
               <span className="hsub-source-pill">
-                📜 {currentSubhashita.source}
+                 {currentSubhashita.source}
               </span>
             </div>
           </div>
 
           <div className="hsub-breakdown-section">
             <div className="hsub-breakdown-heading">
-              <span>🌿 पदच्छेदः एवं प्रतिपदार्थः (Tap word to listen):</span>
+              <span> पदच्छेदः एवं प्रतिपदार्थः (Tap word to listen):</span>
             </div>
             <div className="hsub-word-chips">
               {currentSubhashita.words.map((w, idx) => (
@@ -1660,19 +1662,19 @@ const HomePage: React.FC<HomePageProps> = ({
 
           <div className="hsub-meanings-grid">
             <div className="hsub-meaning-item">
-              <strong className="hsub-meaning-label">🇬🇧 English Translation:</strong>
+              <strong className="hsub-meaning-label"> English Translation:</strong>
               <p className="hsub-meaning-text">{currentSubhashita.meaningEn}</p>
             </div>
             <div className="hsub-meaning-item">
-              <strong className="hsub-meaning-label">🇮🇳 हिन्दी भावार्थः:</strong>
+              <strong className="hsub-meaning-label"> हिन्दी भावार्थः:</strong>
               <p className="hsub-meaning-text">{currentSubhashita.meaningHi}</p>
             </div>
           </div>
 
           <div className="hsub-fleuron" aria-hidden="true">
-            <span>✦</span>
+            <span>*</span>
             <span>॥ ॐ तत्सत् ॥</span>
-            <span>✦</span>
+            <span>*</span>
           </div>
         </div>
       </section>
@@ -1686,7 +1688,7 @@ const HomePage: React.FC<HomePageProps> = ({
             पद-विश्लेषणम् · Lexicon Breakdown
           </span>
           <h2 className="home-demo-title">
-            <span>✨</span> शब्द-विश्लेषणम् · Interactive Word Analyzer
+            <span></span> शब्द-विश्लेषणम् · Interactive Word Analyzer
           </h2>
           <p className="home-demo-desc">
             Tap a word to see how it works.
@@ -1698,7 +1700,7 @@ const HomePage: React.FC<HomePageProps> = ({
 @media (prefers-reduced-motion:reduce){.wd-steps li{animation:none;opacity:1}}`}</style>
           <ol className="wd-steps" aria-label="How the word analyzer works">
             <li>① Tap a word</li>
-            <li>② 🔊 Hear it</li>
+            <li>② [Audio] Hear it</li>
             <li>③ Split into syllables</li>
             <li>④ Read the meaning</li>
           </ol>
@@ -1728,7 +1730,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 title="Hear Pronunciation"
                 aria-label={`Hear ${selectedDemo.devanagari}`}
               >
-                🔊
+                [Audio]
               </button>
               <div>
                 <span className="home-demo-devanagari">{selectedDemo.devanagari}</span>
@@ -1785,7 +1787,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <span className="home-pathway-badge home-pathway-badge--beginner">
                 प्रारम्भिक-मार्गः · Beginner Track
               </span>
-              <h3 className="home-pathway-title">🌱 Read Sanskrit Confidently in 7 Days</h3>
+              <h3 className="home-pathway-title"> Read Sanskrit Confidently in 7 Days</h3>
               <p className="home-pathway-desc">
                 Learn to read Sanskrit letters, 400+ syllables, and essential starter vocabulary with guided native audio practice and mouth positions.
               </p>
@@ -1795,7 +1797,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 ))}
               </div>
               <div className="home-duo-plan" style={{ padding: '0.6rem 0.75rem', border: '1px solid #e2d3bd', borderRadius: '10px', background: '#fffdf9', fontSize: '0.8rem', color: '#5a3e1b', lineHeight: 1.45 }} aria-label="7-day plan">
-                <div style={{ fontWeight: 700, marginBottom: '0.3rem' }}>🗓️ सप्ताह-योजना · Your 7-day plan</div>
+                <div style={{ fontWeight: 700, marginBottom: '0.3rem' }}> सप्ताह-योजना · Your 7-day plan</div>
                 {[
                   ['Day 1–2', 'Vowels (स्वराः) with audio & mouth positions'],
                   ['Day 3–4', 'Consonants (व्यञ्जनानि), 5 articulation zones'],
@@ -1807,7 +1809,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     <strong style={{ whiteSpace: 'nowrap', minWidth: '3.8rem' }}>{d}</strong><span>{t}</span>
                   </div>
                 ))}
-                <div style={{ marginTop: '0.35rem', fontSize: '0.76rem', opacity: 0.85 }}>🔊 Native audio · 🖨️ Printable flashcards · ✅ Self-check quizzes</div>
+                <div style={{ marginTop: '0.35rem', fontSize: '0.76rem', opacity: 0.85 }}>[Audio] Native audio ·  Printable flashcards · [OK] Self-check quizzes</div>
               </div>
             </div>
             <button
@@ -1825,7 +1827,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <span className="home-pathway-badge home-pathway-badge--school">
                 पाठ्यपुस्तक-क्रमः · NCERT Curriculum (Classes 7–9)
               </span>
-              <h3 className="home-pathway-title">🎒 Deepakam &amp; Sharada, Chapter by Chapter</h3>
+              <h3 className="home-pathway-title"> Deepakam &amp; Sharada, Chapter by Chapter</h3>
               <p className="home-pathway-desc">
                 Every Class 7–9 chapter in textbook order — listen, translate (EN / HI / TE / TA / ML), solutions, quizzes &amp; worksheets.
               </p>
@@ -1864,7 +1866,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 ))}
               </div>
               <div style={{ marginTop: '0.4rem', padding: '0.65rem 0.75rem', border: '1px solid #e2d3bd', borderRadius: '10px', background: '#fffdf9', fontSize: '0.8rem', color: '#5a3e1b', lineHeight: 1.45 }} aria-label="Inside Deepakam and Sharada">
-                <div style={{ fontWeight: 700, marginBottom: '0.4rem' }}>📚 अन्तर्गतम् · What's inside</div>
+                <div style={{ fontWeight: 700, marginBottom: '0.4rem' }}> अन्तर्गतम् · What's inside</div>
                 {[
                   { k: '7', t: 'दीपकम् · Class 7', d: '12 chapters + 2 grammar appendices', open: () => setIsGrade7ModalOpen(true) },
                   { k: '8', t: 'दीपकम् · Class 8', d: '13 chapters + 3 appendices', open: () => setIsGrade8ModalOpen(true) },
@@ -1877,13 +1879,13 @@ const HomePage: React.FC<HomePageProps> = ({
                 ))}
               </div>
               <div style={{ marginTop: '0.6rem' }} aria-label="Included Academic Curriculum">
-                <div style={{ fontWeight: 700, fontSize: '0.8rem', color: '#5a3e1b', marginBottom: '0.35rem' }}>🎒 विद्यालय-वर्गः · CBSE &amp; State Boards (6–10)</div>
+                <div style={{ fontWeight: 700, fontSize: '0.8rem', color: '#5a3e1b', marginBottom: '0.35rem' }}> विद्यालय-वर्गः · CBSE &amp; State Boards (6–10)</div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
                   {[
-                    { i: '📖', t: 'NCERT Reader', d: 'Audio, translation & अभ्यास solutions', go: () => onOpenReader('gsde101') },
-                    { i: '📑', t: 'Worksheets', d: 'Printable, with answer keys', go: () => (onOpenWorksheets ? onOpenWorksheets() : onOpenReader('worksheets')) },
-                    { i: '🎯', t: 'Practice Quizzes', d: 'Vibhakti, lakāra & pratyaya drills', go: () => onOpenQuiz?.() },
-                    { i: '📘', t: 'CBSE Exam Guide', d: '80-mark blueprint & mock papers', go: () => onOpenCbseGuide?.() },
+                    { i: '', t: 'NCERT Reader', d: 'Audio, translation & अभ्यास solutions', go: () => onOpenReader('gsde101') },
+                    { i: '', t: 'Worksheets', d: 'Printable, with answer keys', go: () => (onOpenWorksheets ? onOpenWorksheets() : onOpenReader('worksheets')) },
+                    { i: '', t: 'Practice Quizzes', d: 'Vibhakti, lakāra & pratyaya drills', go: () => onOpenQuiz?.() },
+                    { i: '', t: 'CBSE Exam Guide', d: '80-mark blueprint & mock papers', go: () => onOpenCbseGuide?.() },
                   ].map((m) => (
                     <button key={m.t} type="button" onClick={m.go} style={{ textAlign: 'left', padding: '0.45rem 0.55rem', border: '1px solid #e2d3bd', borderRadius: '8px', background: '#fffdf9', color: '#5a3e1b', cursor: 'pointer', font: 'inherit', fontSize: '0.76rem', lineHeight: 1.3 }}>
                       <strong>{m.i} {m.t}</strong><br /><span style={{ opacity: 0.85 }}>{m.d}</span>
@@ -1927,21 +1929,21 @@ const HomePage: React.FC<HomePageProps> = ({
                 चिन्तन-मार्गः · Complete Course
               </span>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 900, color: '#fef08a', margin: '0.6rem 0 0.2rem', fontFamily: 'Noto Sans Devanagari, serif', lineHeight: 1.3 }}>
-                🧠 संस्कृत-चिन्तनम्
+                 संस्कृत-चिन्तनम्
               </h3>
               <div style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.45rem' }}>Sanskrit as a Way of Thinking</div>
               <p style={{ margin: '0 0 0.75rem', fontSize: '0.86rem', color: '#ccfbf1', lineHeight: 1.5 }}>
                 Sound → Rules → Meaning. Learn how Sanskrit trains the mind, in 28 lessons with audio and interactive drills.
               </p>
-              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#99f6e4', marginBottom: '0.4rem' }}>📚 6 Modules · 28 Lessons</div>
+              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#99f6e4', marginBottom: '0.4rem' }}> 6 Modules · 28 Lessons</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem', flex: 1 }} aria-label="Course modules">
                 {[
-                  ['🔊', 'ध्वनिः', 'Sound as Input'],
-                  ['✍️', 'लिपिः', 'Script & Symbols'],
-                  ['⚙️', 'व्याकरणम्', 'Rules as Processing'],
-                  ['📜', 'वाक्यम्', 'Meaning as Output'],
-                  ['🔬', 'गणितम्, तर्कः', 'The Scientific Mind'],
-                  ['🪔', 'दर्शनम्', 'The Contemplative Mind'],
+                  ['[Audio]', 'ध्वनिः', 'Sound as Input'],
+                  ['', 'लिपिः', 'Script & Symbols'],
+                  ['', 'व्याकरणम्', 'Rules as Processing'],
+                  ['', 'वाक्यम्', 'Meaning as Output'],
+                  ['', 'गणितम्, तर्कः', 'The Scientific Mind'],
+                  ['', 'दर्शनम्', 'The Contemplative Mind'],
                 ].map(([i, sa, en], idx) => (
                   <div key={sa} style={{ flex: 1, maxHeight: '3.4rem', display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 0.6rem', borderRadius: '8px', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(153,246,228,0.18)', fontSize: '0.8rem', color: '#e6fffa' }}>
                     <span style={{ opacity: 0.7, minWidth: '1rem' }}>{idx + 1}</span>
@@ -1950,7 +1952,7 @@ const HomePage: React.FC<HomePageProps> = ({
                   </div>
                 ))}
               </div>
-              <div style={{ marginTop: '0.7rem', fontSize: '0.76rem', color: '#ccfbf1', opacity: 0.9 }}>🔊 Audio · 🎯 Drills · 🏅 Progress tracking</div>
+              <div style={{ marginTop: '0.7rem', fontSize: '0.76rem', color: '#ccfbf1', opacity: 0.9 }}>[Audio] Audio ·  Drills ·  Progress tracking</div>
             </div>
             <button
               type="button"
@@ -1999,7 +2001,7 @@ const HomePage: React.FC<HomePageProps> = ({
           title="आज का पञ्चाङ्ग एवं हिन्दू कैलेण्डर · Open full Vedic Hindu Calendar"
           aria-label="Open Hindu Calendar and Daily Pañcāṅga"
         >
-          <span className="home-daily-panchang-icon" aria-hidden="true">🕉️</span>
+          <span className="home-daily-panchang-icon" aria-hidden="true">OM</span>
           <div className="home-daily-panchang-main">
             <span className="home-daily-panchang-kicker">आज का पञ्चाङ्गम् · Daily Pañcāṅga</span>
             <span className="home-daily-panchang-tithi">{homePanchang.formattedTithiPill}</span>
@@ -2012,7 +2014,7 @@ const HomePage: React.FC<HomePageProps> = ({
             </span>
           </div>
           <span className="home-daily-panchang-cta">
-            <span>📅 कैलेण्डर</span>
+            <span> कैलेण्डर</span>
             <span className="home-daily-panchang-arrow" aria-hidden="true">→</span>
           </span>
         </button>
@@ -2050,7 +2052,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <div className="home-feature-card home-feature-card--full" id="writing-studio">
                 <div className="home-feature-card-top">
                   <div className="home-feature-icon-row">
-                    <span className="home-feature-icon">✍️</span>
+                    <span className="home-feature-icon"></span>
                     <span className="home-feature-badge">Handwriting &amp; Composition Studio</span>
                   </div>
                   <h3 className="home-feature-title">लेखन-शाला · Writing Studio — Guided Writing Paths &amp; Feedback on Your Written Sanskrit</h3>
@@ -2148,7 +2150,7 @@ const HomePage: React.FC<HomePageProps> = ({
             <div className="home-feature-card">
               <div className="home-feature-card-top">
                 <div className="home-feature-icon-row">
-                  <span className="home-feature-icon">🧠</span>
+                  <span className="home-feature-icon"></span>
                   <span className="home-feature-badge" style={{ background: '#ede9fe', color: '#4f46e5' }}>
                     Cognitive Linguistics &amp; Computational Track
                   </span>
@@ -2158,7 +2160,7 @@ const HomePage: React.FC<HomePageProps> = ({
                   Transform Sanskrit from a memorization chore into an algorithmic mental superpower bridging ancient grammar, context-free languages, and philosophical clarity across 28 structured lessons.
                 </p>
                 <ul className="home-feature-points">
-                  <li>Understand the generative rule model: Sound (Input) ➔ Rules (Processing) ➔ Meaning (Output)</li>
+                  <li>Understand the generative rule model: Sound (Input)  &rarr;  Rules (Processing)  &rarr;  Meaning (Output)</li>
                   <li>Connect Sanskrit grammar to modern computer science: BNF syntax &amp; algorithmic parsing</li>
                   <li>Interactive comprehension quizzes, recitation audio &amp; study notes</li>
                   <li>Accredited Certificate of Completion with milestone progress tracking</li>
@@ -2179,7 +2181,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
-                <span className="home-feature-icon">📖</span>
+                <span className="home-feature-icon"></span>
                 <span className="home-feature-badge">NCERT &amp; CBSE Textbooks (Classes 6–9)</span>
               </div>
               <h3 className="home-feature-title">मूलपाठम् अवगच्छत · Read the Original Text</h3>
@@ -2205,7 +2207,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
-                <span className="home-feature-icon">🧩</span>
+                <span className="home-feature-icon"></span>
                 <span className="home-feature-badge">Gamified Vocabulary Builder</span>
               </div>
               <h3 className="home-feature-title">शब्दकोशः · Build a 6,000+ Sanskrit Vocabulary Through Addictive 3-Minute Games</h3>
@@ -2222,7 +2224,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     onClick={() => onOpenBoard('match')}
                     title="Play 18 Match-the-Following categories"
                   >
-                    🎯 18 Match-the-Following categories
+                     18 Match-the-Following categories
                   </button>
                   : actions, relationships, time, vastu, ayurveda, occupations &amp; genders
                 </li>
@@ -2233,7 +2235,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     onClick={() => onOpenBoard('prahelika')}
                     title="Solve Classical Sanskrit Riddles (प्रहेलिकाः)"
                   >
-                    📜 Classical Sanskrit Riddles (प्रहेलिकाः)
+                     Classical Sanskrit Riddles (प्रहेलिकाः)
                   </button>
                   : Antarālāpikā internal-answer verses, poetic paradoxes &amp; Gurukul wit
                 </li>
@@ -2244,7 +2246,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     onClick={() => onOpenBoard('maze', 'maze_thirsty_crow')}
                     title="Play Panchatantra Word Maze story quests"
                   >
-                    🦁 Word Maze story quests
+                     Word Maze story quests
                   </button>
                   : navigate Panchatantra story paths, avoid traps &amp; assemble full sentences
                 </li>
@@ -2265,7 +2267,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
-                <span className="home-feature-icon">🔤</span>
+                <span className="home-feature-icon"></span>
                 <span className="home-feature-badge">Phonetics &amp; Reading Studio</span>
               </div>
               <h3 className="home-feature-title">वर्णमाला · Learn to Read Sanskrit Confidently in 7 Days with Guided Audio Practice</h3>
@@ -2299,7 +2301,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 onClick={() => setIsFlashcardModalOpen(true)}
                 title="Download / Print Varṇamālā & Bārahkhaḍī Flashcards or PDF"
               >
-                📥 Flashcards &amp; PDF
+                 Flashcards &amp; PDF
               </button>
             </div>
           </div>
@@ -2309,7 +2311,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
-                <span className="home-feature-icon">📚</span>
+                <span className="home-feature-icon"></span>
                 <span className="home-feature-badge">Grammar &amp; Case Mastery</span>
               </div>
               <h3 className="home-feature-title">विभक्तयः · Master All 7 Cases (Vibhaktis) &amp; Verb Forms Without Rote Confusion</h3>
@@ -2336,7 +2338,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
-                <span className="home-feature-icon">🌿</span>
+                <span className="home-feature-icon"></span>
                 <span className="home-feature-badge" style={{ background: '#dcfce7', color: '#15803d' }}>
                   Pāṇinian Generative Root Science
                 </span>
@@ -2346,7 +2348,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 Reverse-engineer verbs and participles to their generative roots (dhātu) and suffixes (pratyaya), unlocking the generative DNA of the entire Sanskrit vocabulary.
               </p>
               <ul className="home-feature-points">
-                <li>Reverse Word Deconstructor (गत्वा ➔ गम् + क्त्वा, पठितुम् ➔ पठ् + तुमुन्)</li>
+                <li>Reverse Word Deconstructor (गत्वा  &rarr;  गम् + क्त्वा, पठितुम्  &rarr;  पठ् + तुमुन्)</li>
                 <li>Instant 3×3 conjugation tables for 5 school Lakāras with 1-tap audio</li>
                 <li>Master Kṛt Participles (क्त्वा, तुमुन्, ल्यप्, क्त, शतृ) &amp; CBSE Lakāra rules</li>
                 <li>Interactive Pratyaya Challenge Quiz with detailed grammatical explanations</li>
@@ -2364,11 +2366,42 @@ const HomePage: React.FC<HomePageProps> = ({
             )}
           </div>
 
+          {/* Feature: Sequential Indian Mathematics & Epistemology Lineage */}
+          <div className="home-feature-card" style={{ border: "2px solid #f59e0b", background: "#fffdf9" }}>
+            <div className="home-feature-card-top">
+              <div className="home-feature-icon-row">
+                <span className="home-feature-badge" style={{ background: "#f59e0b", color: "#09261e", fontWeight: 800 }}>
+                  Avicchinna-Paramparā · 12 Historical Eras
+                </span>
+              </div>
+              <h3 className="home-feature-title">भारतीय-गणित-परम्परा · The 3,000-Year Unbroken Mathematical Continuum</h3>
+              <p className="home-feature-desc">
+                Explore the organic chronological evolution of Indian mathematics from Vedic Śulbasūtra geometry to modern analysis, complete with our Foundational Historiographical Disclaimer and deep Epistemological Contrasts.
+              </p>
+              <ul className="home-feature-points">
+                <li>12 Sequential Historical Eras: Baudhāyana, Piṅgala, Bakhshālī, Āryabhaṭa, Brahmagupta, Bhāskara, Nārāyaṇa, Mādhava, and Rāmānujan</li>
+                <li>Foundational Manuscript Disclaimer: Textual preservation dates vs. intellectual antiquity and oral tradition (Maukhika-Paramparā)</li>
+                <li>Epistemological Matrix: Constructive Upapatti &amp; Pramāṇa contrasted with modern formal axiomatic proofs</li>
+                <li>12 Interactive Computational Simulators: √2, Pascal triangle, Kuṭṭaka, rational sine, and Mādhava π series</li>
+              </ul>
+            </div>
+            {onOpenIndianMath && (
+              <button
+                type="button"
+                className="home-feature-btn"
+                style={{ background: "linear-gradient(135deg, #09261e 0%, #114234 100%)", color: "#ffffff", border: "1px solid #f59e0b" }}
+                onClick={onOpenIndianMath}
+              >
+                Launch Indian Mathematics Studio &rarr;
+              </button>
+            )}
+          </div>
+
           {/* Feature 7: Vedic Mathematics */}
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
-                <span className="home-feature-icon">📐</span>
+                <span className="home-feature-icon"></span>
                 <span className="home-feature-badge" style={{ background: '#fef3c7', color: '#92400e' }}>
                   Mental Arithmetic &amp; Speed Math
                 </span>
@@ -2400,7 +2433,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="home-feature-card">
             <div className="home-feature-card-top">
               <div className="home-feature-icon-row">
-                <span className="home-feature-icon">🔢</span>
+                <span className="home-feature-icon"></span>
                 <span className="home-feature-badge" style={{ background: '#dbeafe', color: '#1d4ed8' }}>
                   Numbers &amp; Counting Masterclass
                 </span>
@@ -2431,7 +2464,7 @@ const HomePage: React.FC<HomePageProps> = ({
             <div className="home-feature-card">
               <div className="home-feature-card-top">
                 <div className="home-feature-icon-row">
-                  <span className="home-feature-icon">🎯</span>
+                  <span className="home-feature-icon"></span>
                   <span className="home-feature-badge" style={{ background: '#dcfce7', color: '#166534' }}>
                     Exam Readiness &amp; Assessment
                   </span>
@@ -2477,7 +2510,7 @@ const HomePage: React.FC<HomePageProps> = ({
             <div className="home-feature-card">
               <div className="home-feature-card-top">
                 <div className="home-feature-icon-row">
-                  <span className="home-feature-icon">🌐</span>
+                  <span className="home-feature-icon"></span>
                   <span className="home-feature-badge" style={{ background: '#e0f2fe', color: '#0369a1' }}>
                     Free Open-Access Study Vault
                   </span>
@@ -2512,7 +2545,7 @@ const HomePage: React.FC<HomePageProps> = ({
       <section className="home-online-classes-section" id="online-classes" aria-label="Sanskrit Direct Lessons and Classes">
         <div className="hoc-header">
           <div className="hoc-badge">
-            <span>🎓 DIRECT GUIDED LESSONS</span>
+            <span> DIRECT GUIDED LESSONS</span>
           </div>
           <h2 className="hoc-title">
             Direct Guided Lessons
@@ -2528,7 +2561,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="hoc-card">
             <div>
               <div className="hoc-card-header-row">
-                <span className="hoc-card-icon" aria-hidden="true">🗣️</span>
+                <span className="hoc-card-icon" aria-hidden="true"></span>
                 <span className="hoc-card-badge">Level 1</span>
               </div>
               <h3 className="hoc-card-title">Spoken Sanskrit</h3>
@@ -2544,7 +2577,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 >
                   <span className="hoc-pill-num">1</span>
                   <span className="hoc-pill-label">वर्णमाला · Alphabet &amp; Sounds</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
                 </button>
 
                 <button
@@ -2555,7 +2588,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 >
                   <span className="hoc-pill-num">2</span>
                   <span className="hoc-pill-label">शिष्टाचारः · Daily Greetings</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
                 </button>
 
                 <button
@@ -2566,7 +2599,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 >
                   <span className="hoc-pill-num">3</span>
                   <span className="hoc-pill-label">सङ्ख्याः · Numbers 1–100</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
                 </button>
               </div>
             </div>
@@ -2575,7 +2608,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="hoc-card-btn"
               onClick={() => onOpenVarnamala?.()}
             >
-              Explore Spoken Lessons ➔
+              Explore Spoken Lessons  &rarr; 
             </button>
           </div>
 
@@ -2583,7 +2616,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="hoc-card">
             <div>
               <div className="hoc-card-header-row">
-                <span className="hoc-card-icon" aria-hidden="true">🏫</span>
+                <span className="hoc-card-icon" aria-hidden="true"></span>
                 <span className="hoc-card-badge">Classes 6–10</span>
               </div>
               <h3 className="hoc-card-title">CBSE Exam Prep</h3>
@@ -2599,7 +2632,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 >
                   <span className="hoc-pill-num">Ch 1</span>
                   <span className="hoc-pill-label">सुभाषितानि · Gems of Wisdom</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
                 </button>
 
                 <button
@@ -2610,7 +2643,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 >
                   <span className="hoc-pill-num">Ch 2</span>
                   <span className="hoc-pill-label">दुर्बुद्धिः विनश्यति · Turtle Fable</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
                 </button>
 
                 <button
@@ -2621,7 +2654,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 >
                   <span className="hoc-pill-num">Ch 3</span>
                   <span className="hoc-pill-label">स्वावलम्बनम् · Self-Reliance</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
                 </button>
               </div>
             </div>
@@ -2630,7 +2663,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="hoc-card-btn"
               onClick={() => (onOpenCbseGuide ? onOpenCbseGuide() : onOpenReader('gsde101'))}
             >
-              Browse CBSE Chapters ➔
+              Browse CBSE Chapters  &rarr; 
             </button>
           </div>
 
@@ -2638,7 +2671,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="hoc-card">
             <div>
               <div className="hoc-card-header-row">
-                <span className="hoc-card-icon" aria-hidden="true">🏛️</span>
+                <span className="hoc-card-icon" aria-hidden="true"></span>
                 <span className="hoc-card-badge">Classical</span>
               </div>
               <h3 className="hoc-card-title">Pāṇinian Grammar</h3>
@@ -2654,7 +2687,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 >
                   <span className="hoc-pill-num">1</span>
                   <span className="hoc-pill-label">७ विभक्तयः · Case Declensions</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
                 </button>
 
                 <button
@@ -2665,7 +2698,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 >
                   <span className="hoc-pill-num">2</span>
                   <span className="hoc-pill-label">धातुपाठः · 2,000+ Verb Roots</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
                 </button>
 
                 <button
@@ -2676,7 +2709,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 >
                   <span className="hoc-pill-num">3</span>
                   <span className="hoc-pill-label">सन्धि-प्रकरणम् · Sandhi Rules</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true">➔</span>
+                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
                 </button>
               </div>
             </div>
@@ -2685,7 +2718,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="hoc-card-btn"
               onClick={onOpenGrammar}
             >
-              Open Grammar Studio ➔
+              Open Grammar Studio  &rarr; 
             </button>
           </div>
 
@@ -2693,7 +2726,7 @@ const HomePage: React.FC<HomePageProps> = ({
           <div className="hoc-card">
             <div>
               <div className="hoc-card-header-row">
-                <span className="hoc-card-icon" aria-hidden="true">⚡</span>
+                <span className="hoc-card-icon" aria-hidden="true"></span>
                 <span className="hoc-card-badge">Mental Agility</span>
               </div>
               <h3 className="hoc-card-title">Vedic Mathematics</h3>
@@ -2706,7 +2739,7 @@ const HomePage: React.FC<HomePageProps> = ({
               className="hoc-card-btn"
               onClick={() => (onOpenVedicMaths ? onOpenVedicMaths() : onOpenCourse?.())}
             >
-              Practice 16 Sutras ➔
+              Practice 16 Sutras  &rarr; 
             </button>
           </div>
         </div>
@@ -2759,14 +2792,14 @@ const HomePage: React.FC<HomePageProps> = ({
                             border: '1px solid rgba(16, 185, 129, 0.3)',
                           }}
                         >
-                          🎁 Free Trial Open
+                           Free Trial Open
                         </span>
                       )}
                     </div>
                     <h3 className="home-ncert-book-title-sa">{tb.titleSa} ({tb.titleEn})</h3>
                     <p className="home-ncert-book-subtitle">{tb.subtitle}</p>
                     <div className="home-ncert-book-stats">
-                      📚 {tb.totalLessons} · 📄 {tb.pageSpan}
+                       {tb.totalLessons} ·  {tb.pageSpan}
                     </div>
                     <div className="home-ncert-book-actions">
                       <button
@@ -2776,7 +2809,7 @@ const HomePage: React.FC<HomePageProps> = ({
                           onOpenReader(tb.firstLessonId);
                         }}
                       >
-                        📖 Read {tb.titleSa} {!canReadAllChapters ? '(Free Trial)' : ''}
+                         Read {tb.titleSa} {!canReadAllChapters ? '(Free Trial)' : ''}
                       </button>
                       <button
                         type="button"
@@ -2787,7 +2820,7 @@ const HomePage: React.FC<HomePageProps> = ({
                           else openGrade9Syllabus();
                         }}
                       >
-                        📜 Index (पाठानुक्रमणिका)
+                         Index (पाठानुक्रमणिका)
                       </button>
                     </div>
                   </div>
@@ -2799,7 +2832,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
         {/* Quick Grade Filter Bar */}
         <div className="home-grade-filter-bar" role="group" aria-label="Filter by NCERT Class">
-          <span className="home-grade-filter-label">📚 Textbook Filter:</span>
+          <span className="home-grade-filter-label"> Textbook Filter:</span>
           {[
             { id: 'all', label: 'All Classes (सर्वम्)', thumb: null },
             { id: '7', label: 'दीपकम् · Class 7', thumb: '/textbooks/ncert-deepakam-class7.webp' },
@@ -2828,7 +2861,7 @@ const HomePage: React.FC<HomePageProps> = ({
         {/* Search & Category Filter Controls */}
         <div className="home-curriculum-controls">
           <div className="home-curriculum-search-wrap">
-            <span className="home-curriculum-search-icon">🔍</span>
+            <span className="home-curriculum-search-icon"></span>
             <input
               type="text"
               className="home-curriculum-search-input"
@@ -2844,7 +2877,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 onClick={() => setSearchQuery('')}
                 title="Clear search"
               >
-                ✕
+                ×
               </button>
             )}
           </div>
@@ -2936,13 +2969,13 @@ const HomePage: React.FC<HomePageProps> = ({
                 <div className="home-chapter-card-bottom">
                   {ch.grammarFocus && (
                     <div className="home-grammar-tag">
-                      <span className="home-grammar-tag-label">{englishFirst ? '🔖 Grammar Rules:' : '🔖 व्याकरणम्:'}</span> {ch.grammarFocus}
+                      <span className="home-grammar-tag-label">{englishFirst ? ' Grammar Rules:' : ' व्याकरणम्:'}</span> {ch.grammarFocus}
                     </div>
                   )}
 
                   <div className="home-chapter-footer-row">
                     <span className="home-chapter-read-cta">
-                      Read Lesson ➔
+                      Read Lesson  &rarr; 
                     </span>
                     {ch.id.startsWith('grade8_') && (
                       <button
@@ -2962,7 +2995,7 @@ const HomePage: React.FC<HomePageProps> = ({
                           setIsGrade8ModalOpen(true);
                         }}
                       >
-                        📜 Class 8 Syllabus
+                         Class 8 Syllabus
                       </button>
                     )}
                   </div>
@@ -2985,7 +3018,7 @@ const HomePage: React.FC<HomePageProps> = ({
                       <span className="home-chapter-num">परीक्षा-मार्गदर्शिका</span>
                       <span className="home-genre-badge">CBSE Board Exam Blueprint</span>
                     </div>
-                    <span className="home-chapter-icon">📋</span>
+                    <span className="home-chapter-icon"></span>
                   </div>
 
                   <h4 className="home-chapter-title-sanskrit">CBSE संस्कृत-परीक्षा-मार्गदर्शिका</h4>
@@ -2997,11 +3030,11 @@ const HomePage: React.FC<HomePageProps> = ({
 
                 <div className="home-chapter-card-bottom">
                   <div className="home-grammar-tag">
-                    <span className="home-grammar-tag-label">🎯 Board Exam Prep:</span> एकपदेन, पूर्णवाक्येन, प्रश्ननिर्माणम्, क-कार शब्दाः
+                    <span className="home-grammar-tag-label"> Board Exam Prep:</span> एकपदेन, पूर्णवाक्येन, प्रश्ननिर्माणम्, क-कार शब्दाः
                   </div>
                   <div className="home-chapter-footer-row">
                     <span className="home-chapter-read-cta">
-                      Explore Exam Guide ➔
+                      Explore Exam Guide  &rarr; 
                     </span>
                   </div>
                 </div>
@@ -3034,7 +3067,7 @@ const HomePage: React.FC<HomePageProps> = ({
             letterSpacing: '0.06em',
             marginBottom: '0.75rem',
           }}>
-            🎥 Curated Video Masterclasses
+             Curated Video Masterclasses
           </span>
           <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#3D1B04', margin: '0 0 0.6rem 0' }}>
             The Science of Sound &amp; Shapes
@@ -3108,7 +3141,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     textDecoration: 'underline',
                   }}
                 >
-                  Explore in Alphabet &amp; Syllables ➔
+                  Explore in Alphabet &amp; Syllables  &rarr; 
                 </button>
               </div>
             </div>
@@ -3174,7 +3207,7 @@ const HomePage: React.FC<HomePageProps> = ({
                         boxShadow: '0 2px 8px rgba(186, 60, 0, 0.25)',
                       }}
                     >
-                      Open Vedic Geometry Lab ➔
+                      Open Vedic Geometry Lab  &rarr; 
                     </button>
                   )}
                   {onOpenVedicMaths && (
@@ -3191,7 +3224,7 @@ const HomePage: React.FC<HomePageProps> = ({
                         textDecoration: 'underline',
                       }}
                     >
-                      Vedic Maths ➔
+                      Vedic Maths  &rarr; 
                     </button>
                   )}
                 </div>
@@ -3259,7 +3292,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 style={{ background: '#7c2d12', padding: '0.55rem 1.25rem', fontSize: '0.88rem' }}
                 onClick={onOpenPhilosophy}
               >
-                Read Philosophy Essay ➔
+                Read Philosophy Essay  &rarr; 
               </button>
             </div>
           </div>
