@@ -1458,7 +1458,7 @@ const Dashboard: React.FC = () => {
                 aria-haspopup="menu"
                 title="Science Simulations &amp; Games (विज्ञान-प्रयोगशाला · All 41 STEM &amp; IKS Labs, VVM &amp; Sugriva's Journey)"
               >
-                <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true">⚛️</span>
+                <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true"></span>
                 <span className="dashboard-nav-sanskrit">विज्ञान-प्रयोगशाला</span>
                 <span className="dashboard-nav-secondary">Science Simulations ▾</span>
               </button>
@@ -1482,7 +1482,7 @@ const Dashboard: React.FC = () => {
                     className={activeView === 'science-lab' && (!labTarget.segment || labTarget.segment === 'catalog') ? 'active' : ''}
                     onClick={() => { setIsSimNavOpen(false); openScienceLab('catalog'); }}
                   >
-                    <span aria-hidden="true">🗂️</span>
+                    <span aria-hidden="true"></span>
                     <span className="dashboard-nav-sanskrit">क्रीडा-सूची</span>
                     <span>All 41 Games &amp; Labs</span>
                   </button>
@@ -1492,7 +1492,7 @@ const Dashboard: React.FC = () => {
                     className={activeView === 'vvm' ? 'active' : ''}
                     onClick={() => { setIsSimNavOpen(false); navigateToView('vvm'); }}
                   >
-                    <span aria-hidden="true">🔭</span>
+                    <span aria-hidden="true"></span>
                     <span className="dashboard-nav-sanskrit">विद्यार्थी विज्ञान मंथन</span>
                     <span>VVM Exam Preparation</span>
                   </button>
@@ -1502,7 +1502,7 @@ const Dashboard: React.FC = () => {
                     className={activeView === 'science-lab' && labTarget.segment === 'paramanu' ? 'active' : ''}
                     onClick={() => { setIsSimNavOpen(false); openScienceLab('paramanu'); }}
                   >
-                    <span aria-hidden="true">⚛️</span>
+                    <span aria-hidden="true"></span>
                     <span className="dashboard-nav-sanskrit">विज्ञान-सिम्युलेशन्स्</span>
                     <span>17 STEM Science Labs</span>
                   </button>
@@ -1512,7 +1512,7 @@ const Dashboard: React.FC = () => {
                     className={activeView === 'iks' ? 'active' : ''}
                     onClick={() => { setIsSimNavOpen(false); navigateToView('iks'); }}
                   >
-                    <span aria-hidden="true">🏛️</span>
+                    <span aria-hidden="true"></span>
                     <span className="dashboard-nav-sanskrit">भारतीय ज्ञान परंपरा</span>
                     <span>14 IKS Think Labs</span>
                   </button>
@@ -1522,7 +1522,7 @@ const Dashboard: React.FC = () => {
                     className={activeView === 'science-lab' && labTarget.segment === 'preschool-wonder' ? 'active' : ''}
                     onClick={() => { setIsSimNavOpen(false); openScienceLab('preschool-wonder'); }}
                   >
-                    <span aria-hidden="true">🌟</span>
+                    <span aria-hidden="true"></span>
                     <span className="dashboard-nav-sanskrit">शिशु-क्रीडा</span>
                     <span>Preschool Wonder (3–6)</span>
                   </button>
@@ -1545,7 +1545,7 @@ const Dashboard: React.FC = () => {
               onClick={() => setIsOnlineClassesOpen(true)}
               title="EdNet Gurukul Live Online Classes (ऑनलाइन-वर्गाः)"
             >
-              <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true">🎓</span>
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true"></span>
               <span className="dashboard-nav-sanskrit">ऑनलाइन-वर्गाः</span>
               <span className="dashboard-nav-secondary">Online Classes</span>
             </button>
@@ -1555,7 +1555,7 @@ const Dashboard: React.FC = () => {
               onClick={() => openAuthModal('register')}
               title="Start 14-Day Free Trial · Zero Cost"
             >
-              <span className="dashboard-nav-icon" style={{ fontSize: '1.15rem', lineHeight: 1 }} aria-hidden="true">🎁</span>
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.15rem', lineHeight: 1 }} aria-hidden="true"></span>
               <span className="dashboard-nav-sanskrit dashboard-nav-sanskrit--trial">निःशुल्कम्</span>
               <span className="dashboard-nav-secondary dashboard-nav-secondary--trial">Free Trial · Zero Cost</span>
             </button>
@@ -1656,7 +1656,7 @@ const Dashboard: React.FC = () => {
               aria-haspopup="menu"
               title="More: Vedic Maths, Resources, Course, NCERT Curriculum, Online Classes"
             >
-              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true">☰</span>
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.25rem', lineHeight: 1 }} aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></span>
               <span className="dashboard-nav-sanskrit">अधिकम्</span>
               <span className="dashboard-nav-secondary">More ▾</span>
             </button>
@@ -1666,10 +1666,10 @@ const Dashboard: React.FC = () => {
           <div className="dashboard-more-menu" role="menu" aria-label="More learning views">
             {([
               ['indian-mathematics', '∑', 'भारतीय-गणितम्', 'Indian Math Lineage'],
-              ['assignment-eval', '✍️', 'लेखन-शाला', 'Writing Studio'],
-              ['resources', '📚', 'साधनानि', 'Free Resources'],
-              ['course', '🧠', 'संस्कृत-चिन्तनम्', 'Thinking Course'],
-              ['about', '🏛️', 'परिचयः', 'About EdNet Learn'],
+              ['assignment-eval', '', 'लेखन-शाला', 'Writing Studio'],
+              ['resources', '', 'साधनानि', 'Free Resources'],
+              ['course', '', 'संस्कृत-चिन्तनम्', 'Thinking Course'],
+              ['about', '', 'परिचयः', 'About EdNet Learn'],
             ] as const).map(([view, icon, sa, en]) => (
               <button
                 key={view}
@@ -1696,14 +1696,14 @@ const Dashboard: React.FC = () => {
                 window.setTimeout(go, 60);
               }}
             >
-              <span aria-hidden="true">🎒</span> <span className="dashboard-nav-sanskrit">पाठ्यपुस्तक-क्रमः</span> <span>NCERT Curriculum</span>
+              <span aria-hidden="true"></span> <span className="dashboard-nav-sanskrit">पाठ्यपुस्तक-क्रमः</span> <span>NCERT Curriculum</span>
             </button>
             <button
               type="button"
               role="menuitem"
               onClick={() => { setIsMoreNavOpen(false); setIsOnlineClassesOpen(true); }}
             >
-              <span aria-hidden="true">🎓</span> <span className="dashboard-nav-sanskrit">ऑनलाइन-वर्गाः</span> <span>Online Classes</span>
+              <span aria-hidden="true"></span> <span className="dashboard-nav-sanskrit">ऑनलाइन-वर्गाः</span> <span>Online Classes</span>
             </button>
           </div>
         )}
@@ -1719,7 +1719,7 @@ const Dashboard: React.FC = () => {
               title="Audio & Voice Studio: Configure voices for Mantras, Deepakam, and Bodhi"
               aria-label="Open Voice Studio"
             >
-              <span aria-hidden="true">🔊</span>
+              <span aria-hidden="true">[Audio]</span>
               <span className="dashboard-search-trigger-text">Voices</span>
             </button>
             <button
@@ -1729,7 +1729,7 @@ const Dashboard: React.FC = () => {
               title={searchShortcut.searchTitle}
               aria-label="Search site and articles"
             >
-              <span className="dashboard-search-trigger-icon" aria-hidden="true">🔍</span>
+              <span className="dashboard-search-trigger-icon" aria-hidden="true"></span>
               <span className="dashboard-search-trigger-text">Search…</span>
               <kbd className="dashboard-search-trigger-kbd">{searchShortcut.kbd}</kbd>
             </button>
@@ -1745,9 +1745,9 @@ const Dashboard: React.FC = () => {
                 <span className="nav-profile-avatar">{currentUser.avatar}</span>
                 <span className="nav-profile-name">{currentUser.fullName.split(' ')[0]}</span>
                 {currentUser.planStatus === 'active' ? (
-                  <span className="nav-trial-pill nav-active-pill" title="Subscription Active">⭐ Active</span>
+                  <span className="nav-trial-pill nav-active-pill" title="Subscription Active"> Active</span>
                 ) : currentUser.planStatus === 'trial' ? (
-                  <span className="nav-trial-pill" title="14-Day Free Access Active">🎁 14d Trial</span>
+                  <span className="nav-trial-pill" title="14-Day Free Access Active"> 14d Trial</span>
                 ) : null}
               </button>
             ) : (
@@ -1759,7 +1759,7 @@ const Dashboard: React.FC = () => {
                   title="Start free trial · No payment to create an account"
                   aria-label="Start 14-day free trial"
                 >
-                  <span className="nav-free-trial-gift" aria-hidden="true">🎁</span>
+                  <span className="nav-free-trial-gift" aria-hidden="true"></span>
                   <span className="nav-free-trial-text">Start free trial</span>
                   <span className="nav-free-trial-badge">No payment</span>
                 </button>
@@ -1769,7 +1769,7 @@ const Dashboard: React.FC = () => {
                   onClick={() => openAuthModal('login')}
                   title="Sign in to your Gurukul account"
                 >
-                  <span>👤</span>
+                  <span></span>
                   <span>Sign In</span>
                 </button>
               </div>
@@ -1947,7 +1947,7 @@ const Dashboard: React.FC = () => {
         )}
         {activeView === 'board' && (
           <ErrorBoundary
-            fallbackTitle="🧩 जोडो · Jodo Tile Studio"
+            fallbackTitle=" जोडो · Jodo Tile Studio"
             fallbackSubtitle="The puzzle studio encountered a temporary display issue. Tap Refresh Section to return to Jodo safely."
             onReset={() => {
               setBoardStudioMode('jodo');
