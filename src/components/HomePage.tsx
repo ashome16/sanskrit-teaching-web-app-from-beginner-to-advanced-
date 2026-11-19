@@ -2092,116 +2092,25 @@ const HomePage: React.FC<HomePageProps> = ({
       />
 
       {/* ------------------------------------------------------------------
-          Learning Pathways Section (5 Clear Learner Tracks)
+          Featured Interactive Hubs: VVM 2026-27 & Chitra-Kavya
           ------------------------------------------------------------------ */}
-      <section id="courses" className="home-pathways-section" aria-label="Learning Pathways">
-        <div className="home-section-header">
-          <h2 className="home-section-title">अध्ययन-मार्गाः · Choose Your Track</h2>
-          <p className="home-section-subtitle">
-            Whether you are learning your first Sanskrit syllable, researching Pāṇinian linguistics, computing mental math, or preparing for exams:
-          </p>
-        </div>
+      {(onOpenVvm || onOpenTurangaBandha) && (
+        <section id="featured-hubs" className="home-pathways-section" aria-label="Featured Learning Hubs">
+          <div className="home-pathways-grid">
+            {/* Pathway: Vidyarthi Vigyan Manthan (VVM) Preparation Feature Card */}
+            {onOpenVvm && (
+              <VvmPathwayCard onOpenVvm={onOpenVvm} />
+            )}
 
-        <div className="home-pathways-grid">
-          {/* Visual poster panels: Course / Grammar / Vedic Math */}
-          {onOpenCourse && (
-            <div className="home-pathway-card vposter vposter--course">
-              <div className="vposter-art" aria-hidden="true">
-                <svg viewBox="0 0 220 90" className="vposter-svg">
-                  <g fill="none" stroke="#6366f1" strokeWidth="1.6" opacity=".55">
-                    <path d="M40 45 H95 M125 45 H180" strokeDasharray="4 4" />
-                  </g>
-                  <g fontFamily="inherit" fontSize="11" textAnchor="middle" fill="#3730a3">
-                    <circle cx="30" cy="45" r="22" fill="#eef2ff" stroke="#a5b4fc" />
-                    <text x="30" y="49">Input</text>
-                    <circle cx="110" cy="45" r="22" fill="#e0e7ff" stroke="#818cf8" />
-                    <text x="110" y="49">Rules</text>
-                    <circle cx="190" cy="45" r="22" fill="#eef2ff" stroke="#a5b4fc" />
-                    <text x="190" y="49">Meaning</text>
-                  </g>
-                </svg>
-              </div>
-              <span className="vposter-kicker">क्रमबद्ध-पाठ्यक्रमः · Structured Course</span>
-              <h3 className="vposter-title">Think in Sanskrit &amp; Computational Logic</h3>
-              <div className="vposter-chips">
-                <span>6 modules</span><span>28 lessons</span><span>Logic + Linguistics</span>
-              </div>
-              <button type="button" className="vposter-btn" onClick={onOpenCourse}>
-                पाठ्यक्रमम् आरभत · Explore 28-Lesson Course ▶
-              </button>
-            </div>
-          )}
-
-          <div className="home-pathway-card vposter vposter--grammar">
-            <div className="vposter-art" aria-hidden="true">
-              <svg viewBox="0 0 220 90" className="vposter-svg">
-                <g stroke="#65a30d" strokeWidth="1.5" fill="none" opacity=".6">
-                  <path d="M110 30 V48 M110 48 L45 66 M110 48 L110 66 M110 48 L175 66" />
-                </g>
-                <g fontSize="12" textAnchor="middle" fill="#3f6212">
-                  <rect x="78" y="6" width="64" height="24" rx="12" fill="#ecfccb" stroke="#bef264" />
-                  <text x="110" y="23">√गम्</text>
-                  <rect x="15" y="64" width="60" height="22" rx="11" fill="#f7fee7" stroke="#d9f99d" />
-                  <text x="45" y="80">गच्छति</text>
-                  <rect x="80" y="64" width="60" height="22" rx="11" fill="#f7fee7" stroke="#d9f99d" />
-                  <text x="110" y="80">गतः</text>
-                  <rect x="145" y="64" width="60" height="22" rx="11" fill="#f7fee7" stroke="#d9f99d" />
-                  <text x="175" y="80">गमनम्</text>
-                </g>
-              </svg>
-            </div>
-            <span className="vposter-kicker">पाणिनीय-व्याकरणम् · Pāṇinian Grammar</span>
-            <h3 className="vposter-title">Master Cases &amp; Verb Roots Without Rote Fear</h3>
-            <div className="vposter-chips">
-              <span>7 Vibhaktis</span><span>5 lakāras</span><span>1-tap audio</span>
-            </div>
-            <button type="button" className="vposter-btn" onClick={onOpenDhatupatha || onOpenGrammar}>
-              व्याकरण-मण्डलम् · Launch Dhātupāṭha &amp; Vyakaran ▶
-            </button>
+            {/* Feature Card: Chitra-Kavya & The Sanskrit Knight's Tour */}
+            <ChitraKavyaPathwayCard
+              onOpenTurangaBandha={onOpenTurangaBandha}
+              onOpenGrammar={onOpenGrammar}
+              onOpenCourse={onOpenCourse}
+            />
           </div>
-
-          {onOpenVedicMaths && (
-            <div className="home-pathway-card vposter vposter--maths">
-              <div className="vposter-art" aria-hidden="true">
-                <svg viewBox="0 0 220 90" className="vposter-svg">
-                  <g fontSize="15" textAnchor="middle" fill="#92400e">
-                    <text x="62" y="30">97</text>
-                    <text x="62" y="52">× 96</text>
-                    <line x1="40" y1="60" x2="85" y2="60" stroke="#d97706" strokeWidth="1.4" />
-                    <text x="62" y="80" fontWeight="700">9312</text>
-                  </g>
-                  <g fill="none" stroke="#f59e0b" opacity=".5">
-                    <circle cx="160" cy="45" r="34" />
-                    <polygon points="160,13 189,62 131,62" />
-                    <polygon points="160,77 131,28 189,28" />
-                  </g>
-                  <text x="160" y="50" fontSize="13" textAnchor="middle" fill="#92400e">16 सूत्र</text>
-                </svg>
-              </div>
-              <span className="vposter-kicker">वेदाङ्ग-गणितम् · Speed Math &amp; Heritage</span>
-              <h3 className="vposter-title">Solve Multi-Step Math in a Single Line</h3>
-              <div className="vposter-chips">
-                <span>16 sutras</span><span>Tirtha, 1965</span><span>Digital-root check</span>
-              </div>
-              <button type="button" className="vposter-btn" onClick={onOpenVedicMaths}>
-                गणित-सूत्र-शिक्षणम् · Start Vaidic Gaṇitam ▶
-              </button>
-            </div>
-          )}
-
-          {/* Pathway: Vidyarthi Vigyan Manthan (VVM) Preparation Feature Card */}
-          {onOpenVvm && (
-            <VvmPathwayCard onOpenVvm={onOpenVvm} />
-          )}
-
-          {/* Pathway 6 / Feature Card: Chitra-Kavya & The Sanskrit Knight's Tour (Fills the remaining 3 columns) */}
-          <ChitraKavyaPathwayCard
-            onOpenTurangaBandha={onOpenTurangaBandha}
-            onOpenGrammar={onOpenGrammar}
-            onOpenCourse={onOpenCourse}
-          />
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ------------------------------------------------------------------
           Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Showcase
