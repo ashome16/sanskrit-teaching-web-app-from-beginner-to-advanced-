@@ -981,6 +981,8 @@ export const COLLECTIBLE_CARDS_DECK: CollectibleCard[] = [
     terrainType: 'river',
     hint: 'Follow the broad, slow river where fertile fields feed great eastern kingdoms.',
     graphicDesc: 'Golden riverbanks with ancient wooden riverboats.',
+    frontImage: '/images/sugriva-cards/card-04-magadha-front.jpg',
+    backImage: '/images/sugriva-cards/card-04-magadha-back.jpg',
     modernMatch: 'Middle Gangetic Plain (Bihar)',
     whyItChanged: 'River courses shifted naturally across flat floodplains while embankments fixed modern towns.',
     satelliteTag: 'Middle Gangetic Plain · Bihar Alluvial Belt',
