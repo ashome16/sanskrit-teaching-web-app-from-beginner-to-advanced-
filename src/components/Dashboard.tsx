@@ -1535,7 +1535,7 @@ const Dashboard: React.FC = () => {
               onClick={() => navigateToView('vedic-maths')}
               title="Vedic Mathematics (वैदिक-गणितम् · 16 Sutras, Mental Maths & Sulba Geometry)"
             >
-              <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true">🧮</span>
+              <span className="dashboard-nav-icon" style={{ fontSize: '1.2rem', lineHeight: 1 }} aria-hidden="true">∑</span>
               <span className="dashboard-nav-sanskrit">वैदिक-गणितम्</span>
               <span className="dashboard-nav-secondary">Vedic Maths</span>
             </button>

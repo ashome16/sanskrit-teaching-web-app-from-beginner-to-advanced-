@@ -8028,3 +8028,65 @@
   background: #10b981;
   color: #064e3b;
 }
+
+/* Sutra Historical Bedrock Banner */
+.sutra-bedrock-badge-box {
+  margin: 0.85rem 0 0;
+  background: #fdfbf7;
+  border: 1px solid #e2d9cc;
+  border-left: 3px solid #d97706;
+  border-radius: 8px;
+  padding: 0.75rem 0.95rem;
+  font-size: 0.88rem;
+}
+.sutra-bedrock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.sutra-bedrock-kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #b45309;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.sutra-bedrock-period {
+  font-size: 0.75rem;
+  color: #78716c;
+  font-weight: 600;
+}
+.sutra-bedrock-title {
+  color: #0c4a38;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.35;
+}
+.sutra-bedrock-insight {
+  color: #44403c;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+}
+.sutra-bedrock-link-btn {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  border-radius: 6px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.sutra-bedrock-link-btn:hover {
+  background: #fde68a;
+  color: #78350f;
+  transform: translateX(2px);
+}

@@ -77,6 +77,8 @@ export interface IndianMathEra {
   breakthroughs: MathematicalBreakthrough[];
   epistemicEvolution: string;
   interactiveDemoId?: 'baudhayana' | 'pingala' | 'jaina' | 'bakhshali' | 'aryabhata' | 'bhaskara1' | 'brahmagupta' | 'mahavira' | 'bhaskara2' | 'narayana' | 'kerala' | 'ramanujan';
+  relatedVedicTab?: string;
+  relatedVedicSectionName?: string;
 }
 
 /**
@@ -357,6 +359,8 @@ export const EPISTEMOLOGICAL_COMPARISONS: EpistemologicalDimension[] = [
 export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   {
     id: 'era-1-vedic-sulba',
+    relatedVedicTab: 'geometry',
+    relatedVedicSectionName: 'Vedic Geometry & Śulbasūtra Altars',
     eraNumber: 1,
     slug: 'vedic-sulba-sutras',
     titleSa: 'वैदिक-शुल्बसूत्र-युगम्',
@@ -436,6 +440,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-2-pingala-combinatorics',
+    relatedVedicTab: 'logic',
+    relatedVedicSectionName: 'Logic & Binary Combinatorics (Piṅgala Meru)',
     eraNumber: 2,
     slug: 'pingala-binary-combinatorics',
     titleSa: 'पिङ्गल-च्छन्दःशास्त्र-युगम्',
@@ -513,6 +519,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-3-jaina-mathematics',
+    relatedVedicTab: 'algebra',
+    relatedVedicSectionName: 'Combinatorics & Indeterminate Algebra',
     eraNumber: 3,
     slug: 'jaina-infinity-combinatorics',
     titleSa: 'जैन-गणित-परम्परा',
@@ -591,6 +599,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-4-bakhshali-era',
+    relatedVedicTab: 'zero',
+    relatedVedicSectionName: 'Bakhshālī Zero Dot & Decimal Place-Value',
     eraNumber: 4,
     slug: 'bakhshali-zero-and-algebra',
     titleSa: 'बख्शाली-ग्रन्थ-युगम्',
@@ -669,6 +679,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-5-aryabhata-revolution',
+    relatedVedicTab: 'algebra',
+    relatedVedicSectionName: 'Āryabhaṭa Kuṭṭaka & Trigonometric Jyā',
     eraNumber: 5,
     slug: 'aryabhata-kusumapura-revolution',
     titleSa: 'आर्यभटीय-क्रान्ति-युगम्',
@@ -758,6 +770,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-6-varahamihira-bhaskara1',
+    relatedVedicTab: 'geometry',
+    relatedVedicSectionName: 'Bhāskara I Rational Sine Formula',
     eraNumber: 6,
     slug: 'varahamihira-bhaskara1-trigonometry',
     titleSa: 'वराहमिहिर-भास्कर-प्रथम-युगम्',
@@ -822,6 +836,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-7-brahmagupta-algebra',
+    relatedVedicTab: 'zero',
+    relatedVedicSectionName: 'Brahmagupta Laws of Zero & Negative Numbers',
     eraNumber: 7,
     slug: 'brahmagupta-algebra-and-zero',
     titleSa: 'ब्रह्मगुप्त-बीजगणित-युगम्',
@@ -898,6 +914,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-8-mahavira-sridhara',
+    relatedVedicTab: 'algebra',
+    relatedVedicSectionName: 'Śrīdharācārya Quadratic Formula & Mahāvīra',
     eraNumber: 8,
     slug: 'mahavira-sridhara-pure-math',
     titleSa: 'महावीर-श्रीधर-युगम्',
@@ -973,6 +991,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-9-bhaskara2-calculus-precursors',
+    relatedVedicTab: 'algebra',
+    relatedVedicSectionName: 'Bhāskarācārya II Chakravāla Cyclic Algorithm',
     eraNumber: 9,
     slug: 'bhaskara2-chakravala-and-calculus',
     titleSa: 'भास्कराचार्य-सिद्धान्तशिरोमणि-युगम्',
@@ -1046,6 +1066,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-10-narayana-pandita',
+    relatedVedicTab: 'solvers',
+    relatedVedicSectionName: 'Nārāyaṇa Paṇḍita Magic Squares & Combinatorics',
     eraNumber: 10,
     slug: 'narayana-pandita-combinatorics',
     titleSa: 'नारायण-पण्डित-गणितकौमुदी-युगम्',
@@ -1121,6 +1143,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-11-kerala-school-calculus',
+    relatedVedicTab: 'kerala',
+    relatedVedicSectionName: 'Kerala Infinite Series & Mādhava Calculus',
     eraNumber: 11,
     slug: 'kerala-school-birth-of-calculus',
     titleSa: 'केरलीय-गणित-परम्परा (कलन-शास्त्रस्य जननी)',
@@ -1220,6 +1244,8 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
   },
   {
     id: 'era-12-modern-bridges',
+    relatedVedicTab: 'sutras',
+    relatedVedicSectionName: '16 Mental Math Sutras & Worksheets',
     eraNumber: 12,
     slug: 'modern-resurgence-ramanujan',
     titleSa: 'आधुनिक-पुनर्जागरण-युगम्',
@@ -1314,5 +1340,213 @@ export const INDIAN_MATH_ERAS: IndianMathEra[] = [
     epistemicEvolution:
       'Unified ancient intuitive Sūtras with modern quantum, algorithmic, and algebraic number theory.',
     interactiveDemoId: 'ramanujan'
+  }
+];
+
+export interface SutraHistoricalBedrock {
+  sutraId: number;
+  sutraNameSa: string;
+  sutraNameIast: string;
+  eraId: string;
+  eraNumber: number;
+  eraNameSa: string;
+  eraNameEn: string;
+  pioneeringMathematician: string;
+  century: string;
+  continuityInsight: string;
+}
+
+export const SUTRA_HISTORICAL_BEDROCKS: SutraHistoricalBedrock[] = [
+  {
+    sutraId: 1,
+    sutraNameSa: "एकाधिकेन पूर्वेण",
+    sutraNameIast: "Ekādhikena Pūrveṇa",
+    eraId: "era-2-pingala-combinatorics",
+    eraNumber: 2,
+    eraNameSa: "पिङ्गल-च्छन्दःशास्त्र-युगम्",
+    eraNameEn: "Piṅgala Combinatorics & Meru Prastāra",
+    pioneeringMathematician: "Ācārya Piṅgala",
+    century: "c. 300–200 BCE",
+    continuityInsight: "Recursive arithmetic stepping (n -> n+1) and power generation, later generalized by Mādhava into infinite power series summation."
+  },
+  {
+    sutraId: 2,
+    sutraNameSa: "निखिलं नवतश्चरमं दशतः",
+    sutraNameIast: "Nikhilaṁ Navataścaramaṁ Daśataḥ",
+    eraId: "era-4-bakhshali-era",
+    eraNumber: 4,
+    eraNameSa: "बख्शाली-ग्रन्थ-युगम्",
+    eraNameEn: "Bakhshālī Arithmetic & Solid Dot Zero",
+    pioneeringMathematician: "Bakhshālī Mercantile Tradition & Brahmagupta",
+    century: "c. 3rd–4th Century CE",
+    continuityInsight: "Ten’s complement base arithmetic used in ancient trade to calculate deficits from powers of 10 without column-wise borrowing."
+  },
+  {
+    sutraId: 3,
+    sutraNameSa: "ऊर्ध्वतिर्यग्भ्याम्",
+    sutraNameIast: "Ūrdhva-Tiryagbhyām",
+    eraId: "era-5-aryabhata-revolution",
+    eraNumber: 5,
+    eraNameSa: "आर्यभटीय-क्रान्ति-युगम्",
+    eraNameEn: "Āryabhaṭīya Revolution & Trigonometry",
+    pioneeringMathematician: "Āryabhaṭa I & Mahāvīrācārya",
+    century: "476–550 CE",
+    continuityInsight: "Systematic vertical-and-crosswise decimal matrix multiplication, computing cross-products diagonally in working memory without intermediate scratchpad lines."
+  },
+  {
+    sutraId: 4,
+    sutraNameSa: "परावर्त्य योजयेत्",
+    sutraNameIast: "Parāvartya Yojayet",
+    eraId: "era-7-brahmagupta-algebra",
+    eraNumber: 7,
+    eraNameSa: "ब्रह्मगुप्त-बीजगणित-युगम्",
+    eraNameEn: "Brahmagupta Algebra & Laws of Zero",
+    pioneeringMathematician: "Brahmagupta",
+    century: "598–668 CE",
+    continuityInsight: "Algebraic transposition and fundamental sign inversion laws: negative times negative equals positive (Ṛṇa × Ṛṇa = Dhana)."
+  },
+  {
+    sutraId: 5,
+    sutraNameSa: "शून्यं साम्यसमुच्चये",
+    sutraNameIast: "Śūnyaṁ Sāmyasamuccaye",
+    eraId: "era-7-brahmagupta-algebra",
+    eraNumber: 7,
+    eraNameSa: "ब्रह्मगुप्त-बीजगणित-युगम्",
+    eraNameEn: "Brahmagupta Algebra & Laws of Zero",
+    pioneeringMathematician: "Brahmagupta",
+    century: "598–668 CE",
+    continuityInsight: "First formal axiomatic formulation of zero (a - a = 0) and the principle of equality elimination in algebraic polynomials."
+  },
+  {
+    sutraId: 6,
+    sutraNameSa: "आनुरूप्ये शून्यमन्यत्",
+    sutraNameIast: "Ānurūpye Śūnyamanyat",
+    eraId: "era-5-aryabhata-revolution",
+    eraNumber: 5,
+    eraNameSa: "आर्यभटीय-क्रान्ति-युगम्",
+    eraNameEn: "Āryabhaṭīya Revolution & Trigonometry",
+    pioneeringMathematician: "Āryabhaṭa I",
+    century: "476–550 CE",
+    continuityInsight: "Application of the Trairāśika (Rule of Three) ratio method to set proportional terms to zero and solve linear simultaneous systems."
+  },
+  {
+    sutraId: 7,
+    sutraNameSa: "सङ्कलन-व्यवकलनाभ्याम्",
+    sutraNameIast: "Saṅkalana-Vyavakalanābhyām",
+    eraId: "era-8-mahavira-sridhara",
+    eraNumber: 8,
+    eraNameSa: "महावीर-श्रीधर-युगम्",
+    eraNameEn: "Mahāvīra Pure Math & Śrīdhara Quadratic Rule",
+    pioneeringMathematician: "Mahāvīrācārya",
+    century: "c. 850–900 CE",
+    continuityInsight: "Cyclic elimination of simultaneous linear equations by taking their immediate sum and difference."
+  },
+  {
+    sutraId: 8,
+    sutraNameSa: "पूरणापूरणाभ्याम्",
+    sutraNameIast: "Pūraṇāpūraṇābhyām",
+    eraId: "era-8-mahavira-sridhara",
+    eraNumber: 8,
+    eraNameSa: "महावीर-श्रीधर-युगम्",
+    eraNameEn: "Mahāvīra Pure Math & Śrīdhara Quadratic Rule",
+    pioneeringMathematician: "Śrīdharācārya",
+    century: "c. 850–900 CE",
+    continuityInsight: "The historic quadratic completion formula (4a·ax² + 4abx + b² = b² - 4ac), turning incomplete polynomials into solvable perfect squares."
+  },
+  {
+    sutraId: 9,
+    sutraNameSa: "चलन-कलनाभ्याम्",
+    sutraNameIast: "Calana-Kalanābhyām",
+    eraId: "era-9-bhaskara2-calculus-precursors",
+    eraNumber: 9,
+    eraNameSa: "भास्कराचार्य-सिद्धान्तशिरोमणि-युगम्",
+    eraNameEn: "Bhāskarācārya II & Calculus Precursors",
+    pioneeringMathematician: "Bhāskarācārya II",
+    century: "1114–1185 CE",
+    continuityInsight: "Differential calculus precursor: instantaneous velocity (Tātkālikī Gati dθ/dt) and differential change where delta approaches zero."
+  },
+  {
+    sutraId: 10,
+    sutraNameSa: "यावदूनम्",
+    sutraNameIast: "Yāvadūnam",
+    eraId: "era-1-vedic-sulba",
+    eraNumber: 1,
+    eraNameSa: "वैदिक-शुल्बसूत्र-युगम्",
+    eraNameEn: "Vedic Śulbasūtras & Altar Geometry",
+    pioneeringMathematician: "Baudhāyana & Āpastamba",
+    century: "c. 800–500 BCE",
+    continuityInsight: "Geometric expansion of square altars using deficit/excess from a standard base: x² = (x - d)(x + d) + d²."
+  },
+  {
+    sutraId: 11,
+    sutraNameSa: "व्यष्टिसमष्टिः",
+    sutraNameIast: "Vyaṣṭisamaṣṭiḥ",
+    eraId: "era-3-jaina-mathematics",
+    eraNumber: 3,
+    eraNameSa: "जैन-गणित-परम्परा",
+    eraNameEn: "Jaina Infinity, Indices & Combinatorics",
+    pioneeringMathematician: "Bhadrabāhu & Umāsvāti",
+    century: "c. 500–200 BCE",
+    continuityInsight: "Combinatorial partitioning and classifying orders of infinity (Ananta), analyzing parts in relation to the whole system."
+  },
+  {
+    sutraId: 12,
+    sutraNameSa: "शेषाण्यङ्केन चरमेण",
+    sutraNameIast: "Śeṣāṇyaṅkena Carameṇa",
+    eraId: "era-5-aryabhata-revolution",
+    eraNumber: 5,
+    eraNameSa: "आर्यभटीय-क्रान्ति-युगम्",
+    eraNameEn: "Āryabhaṭīya Revolution & Trigonometry",
+    pioneeringMathematician: "Āryabhaṭa I",
+    century: "476–550 CE",
+    continuityInsight: "The Kuṭṭaka (pulverizer) continued fraction division algorithm for determining integer solutions to linear congruences ax - by = c."
+  },
+  {
+    sutraId: 13,
+    sutraNameSa: "सोपान्त्यद्वयमन्त्यम्",
+    sutraNameIast: "Sopāntyadvayamantyam",
+    eraId: "era-10-narayana-pandita",
+    eraNumber: 10,
+    eraNameSa: "नारायण-पण्डित-गणितकौमुदी-युगम्",
+    eraNameEn: "Nārāyaṇa Paṇḍita & Combinatorics",
+    pioneeringMathematician: "Nārāyaṇa Paṇḍita",
+    century: "1340–1400 CE",
+    continuityInsight: "Boundary recurrence analysis and weighted combinatorial sums in higher-order polynomial expansions and pan-diagonal magic squares."
+  },
+  {
+    sutraId: 14,
+    sutraNameSa: "एकन्यूनेन पूर्वेण",
+    sutraNameIast: "Ekanyūnena Pūrveṇa",
+    eraId: "era-2-pingala-combinatorics",
+    eraNumber: 2,
+    eraNameSa: "पिङ्गल-च्छन्दःशास्त्र-युगम्",
+    eraNameEn: "Piṅgala Combinatorics & Meru Prastāra",
+    pioneeringMathematician: "Ācārya Piṅgala",
+    century: "c. 300–200 BCE",
+    continuityInsight: "State-decrementing in binary permutations (Laghu/Guru) and multiplication by strings of nines using unit deficit."
+  },
+  {
+    sutraId: 15,
+    sutraNameSa: "गुणितसमुच्चयः",
+    sutraNameIast: "Guṇitasamuccayaḥ",
+    eraId: "era-8-mahavira-sridhara",
+    eraNumber: 8,
+    eraNameSa: "महावीर-श्रीधर-युगम्",
+    eraNameEn: "Mahāvīra Pure Math & Śrīdhara Quadratic Rule",
+    pioneeringMathematician: "Mahāvīrācārya",
+    century: "c. 850–900 CE",
+    continuityInsight: "Digital root verification (Bījāṅka / Navāṅka checksum) ensuring product congruences mod 9 across complex polynomials."
+  },
+  {
+    sutraId: 16,
+    sutraNameSa: "गुणकसमुच्चयः",
+    sutraNameIast: "Guṇakasamuccayaḥ",
+    eraId: "era-7-brahmagupta-algebra",
+    eraNumber: 7,
+    eraNameSa: "ब्रह्मगुप्त-बीजगणित-युगम्",
+    eraNameEn: "Brahmagupta Algebra & Laws of Zero",
+    pioneeringMathematician: "Brahmagupta",
+    century: "598–668 CE",
+    continuityInsight: "The Bhāvanā composition law: compositing solution vectors of second-order indeterminate equations Nx² + 1 = y²."
   }
 ];

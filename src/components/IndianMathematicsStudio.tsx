@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   INDIAN_MATH_DISCLAIMER,
   EPISTEMOLOGICAL_COMPARISONS,
@@ -10,6 +10,7 @@ import '../styles/indian-mathematics.css';
 export interface IndianMathematicsStudioProps {
   onGoHome?: () => void;
   onOpenVedicMaths?: () => void;
+  onOpenVedicTab?: (tab: string) => void;
   onOpenPhilosophy?: () => void;
   onOpenScienceLab?: (segment?: string) => void;
   initialEraId?: string;
@@ -19,6 +20,7 @@ export interface IndianMathematicsStudioProps {
 export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = ({
   onGoHome,
   onOpenVedicMaths,
+  onOpenVedicTab,
   onOpenPhilosophy,
   onOpenScienceLab,
   initialEraId,
@@ -32,6 +34,18 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
     : 0;
   const [selectedEraIndex, setSelectedEraIndex] = useState<number>(initialIndex >= 0 ? initialIndex : 0);
   const [expandedPillar, setExpandedPillar] = useState<string | null>(null);
+
+  // Update selected era if initialEraId prop changes
+  useEffect(() => {
+    if (initialEraId) {
+      const idx = INDIAN_MATH_ERAS.findIndex((e) => e.id === initialEraId || e.slug === initialEraId);
+      if (idx >= 0) {
+        setSelectedEraIndex(idx);
+        setActiveTab('timeline');
+      }
+    }
+  }, [initialEraId]);
+
 
   // Current active era
   const currentEra: IndianMathEra = INDIAN_MATH_ERAS[selectedEraIndex] || INDIAN_MATH_ERAS[0];
@@ -523,6 +537,45 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
                   <strong>Centers:</strong> {currentEra.geographicCenters.join(' · ')}
                 </div>
               </div>
+
+              {currentEra.relatedVedicTab && onOpenVedicTab && (
+                <div
+                  className="im-era-curriculum-bridge"
+                  style={{
+                    margin: "1.25rem 0 0.5rem",
+                    background: "linear-gradient(135deg, #09261e 0%, #114234 100%)",
+                    border: "1px solid #f59e0b",
+                    borderRadius: "12px",
+                    padding: "1rem 1.4rem",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                    gap: "0.85rem",
+                    color: "#ffffff"
+                  }}
+                >
+                  <div style={{ maxWidth: "650px" }}>
+                    <div style={{ fontSize: "0.72rem", fontWeight: 800, color: "#f59e0b", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                      CURRICULUM DEEP DIVE · VEDIC MATHEMATICS
+                    </div>
+                    <h4 style={{ margin: "0.2rem 0 0.3rem", fontSize: "1.05rem", color: "#ffffff", fontWeight: 800 }}>
+                      Explore {currentEra.relatedVedicSectionName}
+                    </h4>
+                    <p style={{ margin: 0, fontSize: "0.85rem", color: "#e2e8f0", lineHeight: 1.5 }}>
+                      Practice interactive drills, mental math algorithms, and sacred geometry applications directly mapped to this historical breakthrough.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    className="im-btn im-btn-primary"
+                    onClick={() => onOpenVedicTab(currentEra.relatedVedicTab!)}
+                    style={{ whiteSpace: "nowrap" }}
+                  >
+                    Open Domain Track &rarr;
+                  </button>
+                </div>
+              )}
             </div>
 
             <div className="im-era-body">
@@ -1194,7 +1247,7 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
                     {era.breakthroughs[0]?.title}
                   </p>
                   <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0c4a38' }}>
-                    Launch Simulator →
+                    Launch Simulator &rarr;
                   </span>
                 </div>
               ))}

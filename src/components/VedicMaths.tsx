@@ -34,6 +34,7 @@ import ArticleGamesHub from './ArticleGamesHub';
 import VedicSpeedTricksGame, { type VedicTrickCategory } from './VedicSpeedTricksGame';
 import VedicAltarMastery from './scienceLab/VedicAltarMastery';
 import IndianMathematicsStudio from './IndianMathematicsStudio';
+import { SUTRA_HISTORICAL_BEDROCKS } from '../data/indianMathematicsData';
 import '../styles/vedic-maths.css';
 import '../styles/vedic-speed-tricks-game.css';
 import '../styles/resources.css';
@@ -85,7 +86,7 @@ const DHANUR_STANCES: DhanurStance[] = [
     nameSa: 'आलीढ स्थानम्',
     nameIast: 'Ālīḍha Sthānam',
     nameEn: 'The Forward Bow Stance',
-    shapeEmoji: '📐',
+    shapeEmoji: '',
     shapeName: 'Right-Angled Scalene Triangle',
     shapeGeometry: 'Scalene right-angled triangle between front foot, rear foot, and pelvic center of gravity.',
     spanLabel: '3 Cubits (त्र्यरत्नि / ~4.5 ft / ~1.37 m)',
@@ -97,7 +98,7 @@ const DHANUR_STANCES: DhanurStance[] = [
     recoilPhysics: 'Converts full body momentum forward into the arrow shaft, while the straight trailing leg anchors and absorbs heavy recoil.',
     bodyMechanics: 'Right knee bent deeply forward directly above ankle; left leg stretched out straight behind. Torso leans aggressively forward toward the target.',
     sourceText: 'Agni Purāṇa (Ch. 249) & Vasiṣṭha Dhanurveda Saṃhitā',
-    textDiagram: `[Target Direction ->] 🎯
+    textDiagram: `[Target Direction ->] 
        ( Head/Torso )
           /       \\
          /         \\
@@ -114,7 +115,7 @@ const DHANUR_STANCES: DhanurStance[] = [
     nameSa: 'प्रत्यालीढ स्थानम्',
     nameIast: 'Pratyālīḍha Sthānam',
     nameEn: 'The Defensive Wedge Stance',
-    shapeEmoji: '📐',
+    shapeEmoji: '',
     shapeName: 'Reflected / Inverted Triangle',
     shapeGeometry: 'Exact mirror reflection of the Ālīḍha triangle, anchored rearward for defensive counter-strikes.',
     spanLabel: '3 Cubits (त्र्यरत्नि / ~4.5 ft / ~1.37 m)',
@@ -126,7 +127,7 @@ const DHANUR_STANCES: DhanurStance[] = [
     recoilPhysics: 'The deeply bent rear leg acts as a compressed mechanical shock absorber that catches backward recoil and launches immediate return volleys.',
     bodyMechanics: 'Left knee drawn back and deeply bent; right leg extended straight forward toward target. Torso reclines back defensively to evade incoming missiles.',
     sourceText: 'Agni Purāṇa (Ch. 249) & Vasiṣṭha Dhanurveda Saṃhitā',
-    textDiagram: `🎯 [<- Target Direction]
+    textDiagram: ` [<- Target Direction]
        ( Head/Torso )
           /       \\
          /         \\
@@ -170,7 +171,7 @@ const DHANUR_STANCES: DhanurStance[] = [
     nameSa: 'वैशाख स्थानम्',
     nameIast: 'Vaiśākha Sthānam',
     nameEn: 'The Equilateral Power Squat',
-    shapeEmoji: '⏃',
+    shapeEmoji: '',
     shapeName: 'Equilateral Triangle / Isosceles Trapezoid',
     shapeGeometry: 'Broad trapezoidal power base with dropped pelvic center of gravity and outward knee flares.',
     spanLabel: '3 Spans (त्रि-वितस्ति / ~2 to 2.5 ft / ~75 cm)',
@@ -272,7 +273,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
   onOpenGrammar,
   onOpenRegister,
   onOpenLogin,
-  initialTab = 'sutras',
+  initialTab = 'indian-math',
   initialAnchor,
   onOpenNumbers,
 }) => {
@@ -282,6 +283,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
 
   const [activeTab, setActiveTab] = useState<VedicTab>(initialTab);
   const [selectedTrack, setSelectedTrack] = useState<'all' | 'lineage' | 'core' | 'domains' | 'heritage' | 'mastery'>('all');
+  const [selectedStudioEra, setSelectedStudioEra] = useState<string | undefined>(undefined);
 
   // Sub-Sutra Practice Worksheet States
   const [activeWorksheetSubSutraId, setActiveWorksheetSubSutraId] = useState<number | null>(null);
@@ -403,8 +405,8 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
       .map((p, idx) => {
         const answerBlock = wsIncludeAnswersInDownload
           ? `<div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem 0.8rem; margin-top:0.6rem; color:#166534; font-size:0.95rem;">
-              <strong>✓ Vedic Answer:</strong> ${escapeHtml(p.answer)}<br/>
-              <strong>⚡ Vedic Method Steps:</strong>
+              <strong>[OK] Vedic Answer:</strong> ${escapeHtml(p.answer)}<br/>
+              <strong> Vedic Method Steps:</strong>
               <ol style="margin:0.4rem 0 0.4rem 1.2rem; padding:0;">
                 ${p.solutionSteps.map((s) => `<li>${escapeHtml(s)}</li>`).join('')}
               </ol>
@@ -872,11 +874,11 @@ ${bodyHtml}
                 onClick={onGoHome}
                 title="Return to Home page"
               >
-                🏠 Deepakam · Home
+                 Deepakam · Home
               </button>
             )}
             <span className="vedic-breadcrumb-sep" aria-hidden="true">›</span>
-            <span className="vedic-breadcrumb-current">📐 वैदिक-गणितम् (Vedic Mathematics)</span>
+            <span className="vedic-breadcrumb-current"> वैदिक-गणितम् (Vedic Mathematics)</span>
           </div>
 
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -887,7 +889,7 @@ ${bodyHtml}
                 onClick={onOpenPhilosophy}
                 title="Our Philosophy · Darśana"
               >
-                🪔 Darśana
+                 Darśana
               </button>
             )}
             {onOpenGrammar && (
@@ -897,7 +899,7 @@ ${bodyHtml}
                 onClick={onOpenGrammar}
                 title="Grammar Shelf · Kaṭapayādi & more"
               >
-                📚 Grammar · Kaṭapayādi
+                 Grammar · Kaṭapayādi
               </button>
             )}
             {onOpenReader && (
@@ -906,7 +908,7 @@ ${bodyHtml}
                 className="vedic-header-nav-btn"
                 onClick={onOpenReader}
               >
-                📖 Deepakam Lessons
+                 Deepakam Lessons
               </button>
             )}
             {onGoHome && (
@@ -938,7 +940,7 @@ ${bodyHtml}
 
         {onOpenNumbers && (
           <p className="vedic-numbers-start">
-            <span aria-hidden="true">🔢</span> New here?{' '}
+            <span aria-hidden="true"></span> New here?{' '}
             <a
               href="/sanskrit-grammar"
               onClick={(e) => {
@@ -971,7 +973,7 @@ ${bodyHtml}
               if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }}
           >
-            <span>⚡ Play Vedic Maths Speed Tricks Game (60s Blitz &amp; Sutra Arcade) ➔</span>
+            <span> Play Vedic Maths Speed Tricks Game (60s Blitz &amp; Sutra Arcade)  &rarr; </span>
           </button>
         </div>
 
@@ -1042,7 +1044,7 @@ ${bodyHtml}
               className={`vedic-track-filter-btn${selectedTrack === 'all' ? ' active' : ''}`}
               onClick={() => setSelectedTrack('all')}
             >
-              <span>🌟 Complete Curriculum</span>
+              <span> Complete Curriculum</span>
               <span className="vedic-track-filter-count">11 Modules</span>
             </button>
             <button
@@ -1050,7 +1052,7 @@ ${bodyHtml}
               className={`vedic-track-filter-btn${selectedTrack === 'lineage' ? ' active' : ''}`}
               onClick={() => setSelectedTrack('lineage')}
             >
-              <span>🏛️ 0. Historical Lineage</span>
+              <span> 0. Historical Lineage</span>
               <span className="vedic-track-filter-count">1</span>
             </button>
             <button
@@ -1058,7 +1060,7 @@ ${bodyHtml}
               className={`vedic-track-filter-btn${selectedTrack === 'core' ? ' active' : ''}`}
               onClick={() => setSelectedTrack('core')}
             >
-              <span>📜 1. Core Curriculum</span>
+              <span> 1. Core Curriculum</span>
               <span className="vedic-track-filter-count">2</span>
             </button>
             <button
@@ -1066,7 +1068,7 @@ ${bodyHtml}
               className={`vedic-track-filter-btn${selectedTrack === 'domains' ? ' active' : ''}`}
               onClick={() => setSelectedTrack('domains')}
             >
-              <span>📐 2. Domains</span>
+              <span> 2. Domains</span>
               <span className="vedic-track-filter-count">3</span>
             </button>
             <button
@@ -1074,7 +1076,7 @@ ${bodyHtml}
               className={`vedic-track-filter-btn${selectedTrack === 'heritage' ? ' active' : ''}`}
               onClick={() => setSelectedTrack('heritage')}
             >
-              <span>🏛️ 3. Heritage &amp; Logic</span>
+              <span> 3. Heritage &amp; Logic</span>
               <span className="vedic-track-filter-count">3</span>
             </button>
             <button
@@ -1082,7 +1084,7 @@ ${bodyHtml}
               className={`vedic-track-filter-btn${selectedTrack === 'mastery' ? ' active' : ''}`}
               onClick={() => setSelectedTrack('mastery')}
             >
-              <span>⚡ 4. Mastery &amp; Treatises</span>
+              <span> 4. Mastery &amp; Treatises</span>
               <span className="vedic-track-filter-count">2</span>
             </button>
           </div>
@@ -1149,7 +1151,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">1</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">📜</span>
+                    <span className="vedic-tab-icon" aria-hidden="true"></span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">16 Sūtras &amp; Learning Path</span>
                       <span className="vedic-tab-sub">Foundations · Path · Worksheets</span>
@@ -1165,7 +1167,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">2</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">🧮</span>
+                    <span className="vedic-tab-icon" aria-hidden="true"></span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Interactive Solvers Studio</span>
                       <span className="vedic-tab-sub">7 Mental Math Calculators</span>
@@ -1196,7 +1198,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">3</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">📐</span>
+                    <span className="vedic-tab-icon" aria-hidden="true"></span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Universal Algebra Engine</span>
                       <span className="vedic-tab-sub">Vilokanam &amp; Parāvartya</span>
@@ -1212,7 +1214,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">4</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">🔺</span>
+                    <span className="vedic-tab-icon" aria-hidden="true"></span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Vedic Geometry &amp; Śulba</span>
                       <span className="vedic-tab-sub">Baudhāyana · Altars · Pi</span>
@@ -1228,7 +1230,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">5</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">🌊</span>
+                    <span className="vedic-tab-icon" aria-hidden="true"></span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Fluid Space &amp; Mental Math</span>
                       <span className="vedic-tab-sub">Visual Grid &amp; Parallel Streams</span>
@@ -1259,7 +1261,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">6</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">🪐</span>
+                    <span className="vedic-tab-icon" aria-hidden="true"></span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">The Numerical Grid &amp; Zero</span>
                       <span className="vedic-tab-sub">Śūnya &amp; Positional Notation</span>
@@ -1275,7 +1277,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">7</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">🗣️</span>
+                    <span className="vedic-tab-icon" aria-hidden="true"></span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Logic &amp; Language (AI)</span>
                       <span className="vedic-tab-sub">Nyāya · Kaṭapayādi · NASA AI</span>
@@ -1291,7 +1293,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">8</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">♾️</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">&infin;</span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">The Kerala School &amp; Calculus</span>
                       <span className="vedic-tab-sub">Mādhava · Yuktibhāṣā · Series</span>
@@ -1307,7 +1309,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">9</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">🕉️</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">OM</span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Guru Paramparā &amp; Lineage</span>
                       <span className="vedic-tab-sub">Āryabhaṭa to Bhāratī Kṛṣṇa</span>
@@ -1338,7 +1340,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">10</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">⚡</span>
+                    <span className="vedic-tab-icon" aria-hidden="true"></span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Speed Math Challenge</span>
                       <span className="vedic-tab-sub">Timed Quiz &amp; Mastery Check</span>
@@ -1354,7 +1356,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">11</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">📖</span>
+                    <span className="vedic-tab-icon" aria-hidden="true"></span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Articles Masterclass</span>
                       <span className="vedic-tab-sub">18 Illustrated Treatises</span>
@@ -1370,7 +1372,7 @@ ${bodyHtml}
                     }}
                   >
                     <span className="vedic-tab-num">12</span>
-                    <span className="vedic-tab-icon" aria-hidden="true">🎮</span>
+                    <span className="vedic-tab-icon" aria-hidden="true"></span>
                     <div className="vedic-tab-content">
                       <span className="vedic-tab-title">Vedic Maths Tricks Games · <span className="sanskrit-safe-text" lang="sa">क्रीडा-शाला</span></span>
                       <span className="vedic-tab-sub">Speed Blitz &amp; Article Simulations</span>
@@ -1389,8 +1391,18 @@ ${bodyHtml}
         {activeTab === 'indian-math' && (
           <div className="vedic-indian-math-tab-wrapper" style={{ marginTop: '0.5rem' }}>
             <IndianMathematicsStudio
+              initialEraId={selectedStudioEra}
               onGoHome={onGoHome}
-              onOpenVedicMaths={() => setActiveTab('sutras')}
+              onOpenVedicMaths={() => {
+                setActiveTab('sutras');
+                const el = document.getElementById('vedic-tabs');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              onOpenVedicTab={(tab) => {
+                setActiveTab(tab as VedicTab);
+                const el = document.getElementById('vedic-tabs');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
               onOpenPhilosophy={onOpenPhilosophy}
             />
           </div>
@@ -1412,7 +1424,7 @@ ${bodyHtml}
                 />
               </div>
               <div className="vedic-poster-content">
-                <span className="vedic-poster-badge">✦ Official Academy Wall Poster ✦</span>
+                <span className="vedic-poster-badge">* Official Academy Wall Poster *</span>
                 <h3 className="vedic-poster-title">16 Foundational Sutras of Vedic Mathematics</h3>
                 <p className="vedic-poster-quote">
                   "Vedic Mathematics is not just a method, it is a way of thinking."
@@ -1426,7 +1438,7 @@ ${bodyHtml}
                     className="vedic-poster-btn-primary"
                     onClick={() => setIsPosterModalOpen(true)}
                   >
-                    <span>🔍</span>
+                    <span></span>
                     <span>View Full Poster</span>
                   </button>
                   <a
@@ -1434,7 +1446,7 @@ ${bodyHtml}
                     download="EdNet_Learn_16_Foundational_Sutras_Vedic_Maths.png"
                     className="vedic-poster-btn-secondary"
                   >
-                    <span>📥</span>
+                    <span></span>
                     <span>Download High-Res (PNG)</span>
                   </a>
                 </div>
@@ -1443,7 +1455,7 @@ ${bodyHtml}
 
             {/* Practical Starting Path Card */}
             <div className="vedic-starting-path-card">
-              <div className="vedic-path-badge">🎯 Recommended 4-Step Learning Sequence</div>
+              <div className="vedic-path-badge"> Recommended 4-Step Learning Sequence</div>
               <h3>A Practical Starting Path with the 16 Sutras</h3>
               <ol className="vedic-path-steps">
                 <li>
@@ -1463,7 +1475,7 @@ ${bodyHtml}
 
             <VedicLearningPath
               id="vedic-path"
-              heading="🧭 Step-by-step path: Numbers → Vedic Maths (Classes 6–8)"
+              heading=" Step-by-step path: Numbers → Vedic Maths (Classes 6–8)"
               intro="The sutra cards below follow this same order. Start at Step 1 and use ← Previous / Next → on each card."
               onOpen={(anchor, e) => {
                 if (goToAnchor(anchor)) e.preventDefault();
@@ -1474,7 +1486,7 @@ ${bodyHtml}
               <input
                 type="text"
                 className="sutra-search-input"
-                placeholder="🔍 Search sutra by Sanskrit name, English meaning, or formula..."
+                placeholder=" Search sutra by Sanskrit name, English meaning, or formula..."
                 value={sutraSearch}
                 onChange={(e) => setSutraSearch(e.target.value)}
               />
@@ -1482,11 +1494,11 @@ ${bodyHtml}
               <div className="sutra-filter-chips">
                 {[
                   { id: 'all', label: 'All (16)' },
-                  { id: 'multiplication', label: '✖️ Multiplication' },
+                  { id: 'multiplication', label: '× Multiplication' },
                   { id: 'squaring', label: '² Squaring' },
-                  { id: 'subtraction', label: '➖ Subtraction' },
-                  { id: 'division', label: '➗ Division' },
-                  { id: 'algebra', label: '📐 Algebra' }
+                  { id: 'subtraction', label: '- Subtraction' },
+                  { id: 'division', label: '÷ Division' },
+                  { id: 'algebra', label: ' Algebra' }
                 ].map((chip) => (
                   <button
                     key={chip.id}
@@ -1534,7 +1546,7 @@ ${bodyHtml}
                             padding: '0.15rem 0.45rem'
                           }}
                         >
-                          🔊
+                          [Audio]
                         </button>
                         <span className="sutra-card-cat">{sutra.category}</span>
                       </div>
@@ -1547,14 +1559,43 @@ ${bodyHtml}
                   </div>
 
                   <div className="sutra-card-example">
-                    <div className="sutra-card-example-title">💡 Example: {sutra.example.problem}</div>
+                    <div className="sutra-card-example-title">Example: {sutra.example.problem}</div>
                     <ul className="sutra-card-example-steps">
                       {sutra.example.steps.map((st, sIdx) => (
                         <li key={sIdx}>{st}</li>
                       ))}
                     </ul>
-                    <div className="sutra-card-example-ans">➔ Answer: {sutra.example.answer}</div>
+                    <div className="sutra-card-example-ans">Answer: {sutra.example.answer}</div>
                   </div>
+
+                  {(() => {
+                    const bedrock = SUTRA_HISTORICAL_BEDROCKS.find((b) => b.sutraId === sutra.id);
+                    if (!bedrock) return null;
+                    return (
+                      <div className="sutra-bedrock-badge-box">
+                        <div className="sutra-bedrock-header">
+                          <span className="sutra-bedrock-kicker">HISTORICAL BEDROCK · ERA {bedrock.eraNumber}</span>
+                          <span className="sutra-bedrock-period">{bedrock.century}</span>
+                        </div>
+                        <div className="sutra-bedrock-title">
+                          <strong>{bedrock.pioneeringMathematician}</strong> · {bedrock.eraNameSa} ({bedrock.eraNameEn})
+                        </div>
+                        <p className="sutra-bedrock-insight">{bedrock.continuityInsight}</p>
+                        <button
+                          type="button"
+                          className="sutra-bedrock-link-btn"
+                          onClick={() => {
+                            setSelectedStudioEra(bedrock.eraId);
+                            setActiveTab('indian-math');
+                            const el = document.getElementById('vedic-tabs');
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }}
+                        >
+                          View Era {bedrock.eraNumber} in Lineage &rarr;
+                        </button>
+                      </div>
+                    );
+                  })()}
 
                   {pathStep && (
                     <nav className="sutra-step-nav" aria-label={`Learning path step ${stepIdx + 1}`}>
@@ -1575,7 +1616,7 @@ ${bodyHtml}
                           Next: {nextStep.title} →
                         </a>
                       ) : (
-                        <span className="sutra-step-nav-done">🎉 Path complete — explore the other sutras below</span>
+                        <span className="sutra-step-nav-done"> Path complete — explore the other sutras below</span>
                       )}
                     </nav>
                   )}
@@ -1598,12 +1639,12 @@ ${bodyHtml}
                 <div className="subsutras-status-row">
                   {isSubscribed ? (
                     <div className="subsutras-member-chip active">
-                      <span className="chip-icon">👑</span>
+                      <span className="chip-icon"></span>
                       <span><strong>Gurukul Member Active:</strong> All 13 Sub-Sutra Interactive Worksheets Unlocked</span>
                     </div>
                   ) : (
                     <div className="subsutras-member-chip preview">
-                      <span className="chip-icon">⭐</span>
+                      <span className="chip-icon"></span>
                       <span>
                         <strong>Member Preview Mode:</strong> Problem 1 open on each Sub-Sutra.
                       </span>
@@ -1619,7 +1660,7 @@ ${bodyHtml}
                 </div>
 
                 <div className="subsutras-quick-select-wrap">
-                  <span className="subsutras-quick-label">⚡ Jump to Practice Worksheet:</span>
+                  <span className="subsutras-quick-label"> Jump to Practice Worksheet:</span>
                   <div className="subsutras-quick-pills">
                     {VEDIC_SUBSUTRAS.map((sub) => (
                       <button
@@ -1671,7 +1712,7 @@ ${bodyHtml}
                               onClick={() => handleToggleWorksheet(sub.id)}
                               title={`Open Practice Worksheet for Sub-Sutra #${sub.id}`}
                             >
-                              {activeWorksheetSubSutraId === sub.id ? 'Close Sheet ▲' : '📝 Practice Sheet ▼'}
+                              {activeWorksheetSubSutraId === sub.id ? 'Close Sheet ▲' : ' Practice Sheet ▼'}
                             </button>
                           </td>
                         </tr>
@@ -1691,11 +1732,11 @@ ${bodyHtml}
                                       <div className="subsutra-ws-tag-row">
                                         <span className="subsutra-ws-num-badge">Sub-Sutra #{sub.id}</span>
                                         <span className="subsutra-ws-level-badge">{ws.level}</span>
-                                        <span className="subsutra-ws-time-badge">⏱️ {ws.targetTimeMinutes} mins</span>
+                                        <span className="subsutra-ws-time-badge"> {ws.targetTimeMinutes} mins</span>
                                         {isSubscribed ? (
-                                          <span className="subsutra-ws-access-badge member">👑 Gurukul Member Access</span>
+                                          <span className="subsutra-ws-access-badge member"> Gurukul Member Access</span>
                                         ) : (
-                                          <span className="subsutra-ws-access-badge trial">⭐ Free Preview Mode (Problem 1 Open)</span>
+                                          <span className="subsutra-ws-access-badge trial"> Free Preview Mode (Problem 1 Open)</span>
                                         )}
                                       </div>
                                       <h3 className="subsutra-ws-title">
@@ -1719,11 +1760,11 @@ ${bodyHtml}
                                         onClick={() => handleDownloadWorksheet(ws)}
                                         title={canDownload ? "Download printable HTML/PDF worksheet" : "Upgrade to download printable worksheet"}
                                       >
-                                        📥 Download Printable Sheet
+                                         Download Printable Sheet
                                       </button>
                                       {wsDownloadSuccessMsg && (
                                         <div className="subsutra-ws-download-toast">
-                                          ✓ {wsDownloadSuccessMsg}
+                                          [OK] {wsDownloadSuccessMsg}
                                         </div>
                                       )}
                                     </div>
@@ -1742,7 +1783,7 @@ ${bodyHtml}
                                         return (
                                           <div key={problem.id} className="subsutra-problem-card locked">
                                             <div className="subsutra-locked-ribbon">
-                                              <span className="subsutra-lock-icon">🔒</span>
+                                              <span className="subsutra-lock-icon"></span>
                                               <span>Gurukul Member Problem #{pIdx + 1}</span>
                                             </div>
                                             <div className="subsutra-locked-body">
@@ -1758,7 +1799,7 @@ ${bodyHtml}
                                                   className="subsutra-unlock-btn"
                                                   onClick={handleUnlockWorksheet}
                                                 >
-                                                  ⭐ Unlock All 13 Sub-Sutra Worksheets
+                                                   Unlock All 13 Sub-Sutra Worksheets
                                                 </button>
                                                 <button
                                                   type="button"
@@ -1802,7 +1843,7 @@ ${bodyHtml}
                                                   }))
                                                 }
                                               >
-                                                💡 {hintShown ? 'Hide Hint' : 'Hint'}
+                                                 {hintShown ? 'Hide Hint' : 'Hint'}
                                               </button>
                                               <button
                                                 type="button"
@@ -1814,7 +1855,7 @@ ${bodyHtml}
                                                   }))
                                                 }
                                               >
-                                                ⚡ {stepsShown ? 'Hide Vedic Steps' : 'Vedic Steps'}
+                                                 {stepsShown ? 'Hide Vedic Steps' : 'Vedic Steps'}
                                               </button>
                                             </div>
                                           </div>
@@ -1825,7 +1866,7 @@ ${bodyHtml}
 
                                           {hintShown && (
                                             <div className="subsutra-hint-card">
-                                              <strong>💡 Vedic Hint:</strong> {problem.hint}
+                                              <strong> Vedic Hint:</strong> {problem.hint}
                                             </div>
                                           )}
 
@@ -1872,10 +1913,10 @@ ${bodyHtml}
                                               }`}
                                             >
                                               {feedback.isCorrect ? (
-                                                <span>✓ उत्तमोत्तमम्! Correct answer ({problem.answer}). Great Vedic calculation!</span>
+                                                <span>[OK] उत्तमोत्तमम्! Correct answer ({problem.answer}). Great Vedic calculation!</span>
                                               ) : (
                                                 <span>
-                                                  ✗ Not quite ({userVal || 'no answer'}). Check the hint or view the Vedic steps!
+                                                  [X] Not quite ({userVal || 'no answer'}). Check the hint or view the Vedic steps!
                                                 </span>
                                               )}
                                             </div>
@@ -1885,7 +1926,7 @@ ${bodyHtml}
                                           {stepsShown && (
                                             <div className="subsutra-solution-steps-card">
                                               <div className="subsutra-steps-header">
-                                                <strong>⚡ Step-by-Step Vedic Algorithmic Solution:</strong>
+                                                <strong> Step-by-Step Vedic Algorithmic Solution:</strong>
                                                 <span className="subsutra-steps-ans">
                                                   Answer: <strong>{problem.answer}</strong>
                                                 </span>
@@ -1910,9 +1951,9 @@ ${bodyHtml}
                                     <div className="subsutra-ws-footer-score">
                                       {scoreInfo ? (
                                         <span className="subsutra-score-pill">
-                                          🎯 Score: <strong>{scoreInfo.score} / {scoreInfo.total}</strong> (
+                                           Score: <strong>{scoreInfo.score} / {scoreInfo.total}</strong> (
                                           {Math.round((scoreInfo.score / scoreInfo.total) * 100)}%)
-                                          {scoreInfo.score === scoreInfo.total ? ' 🌟 Adbhutam!' : ' Keep practicing!'}
+                                          {scoreInfo.score === scoreInfo.total ? '  Adbhutam!' : ' Keep practicing!'}
                                         </span>
                                       ) : (
                                         <span className="subsutra-unscored-pill">
@@ -1928,21 +1969,21 @@ ${bodyHtml}
                                         className="subsutra-check-all-btn"
                                         onClick={() => handleCheckAllForSubSutra(ws)}
                                       >
-                                        ✓ Check All Answers
+                                        [OK] Check All Answers
                                       </button>
                                       <button
                                         type="button"
                                         className="subsutra-reset-btn"
                                         onClick={() => handleResetSubSutraWorksheet(ws)}
                                       >
-                                        🔄 Reset Sheet
+                                         Reset Sheet
                                       </button>
                                       <button
                                         type="button"
                                         className="subsutra-close-btn"
                                         onClick={() => setActiveWorksheetSubSutraId(null)}
                                       >
-                                        ✕ Close Sheet
+                                        × Close Sheet
                                       </button>
                                     </div>
                                   </div>
@@ -1977,7 +2018,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  🧮 Launch Interactive Solvers Studio →
+                   Launch Interactive Solvers Studio →
                 </button>
                 <button
                   type="button"
@@ -1988,7 +2029,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  ⚡ Take Speed Math Quiz
+                   Take Speed Math Quiz
                 </button>
               </div>
             </div>
@@ -2000,7 +2041,7 @@ ${bodyHtml}
             {/* Quick Link to Vedic Speed Tricks Game */}
             <div className="solver-game-cta-banner">
               <div className="sg-cta-text">
-                <span className="sg-cta-badge">🎮 Mental Calculation Speed Game</span>
+                <span className="sg-cta-badge"> Mental Calculation Speed Game</span>
                 <h3 className="sg-cta-title">Want to test your speed with these Vedic calculation tricks?</h3>
                 <p className="sg-cta-sub">Play the 60-second Speed Blitz, spot fake arithmetic with Bījāṅka, and master mental shortcuts!</p>
               </div>
@@ -2014,14 +2055,14 @@ ${bodyHtml}
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
               >
-                <span>⚡ Play Vedic Speed Tricks Game ➔</span>
+                <span> Play Vedic Speed Tricks Game  &rarr; </span>
               </button>
             </div>
 
           <div className="solver-layout" id="vedic-solver-layout">
             {/* Sidebar with Solver Methods */}
             <aside className="solver-sidebar">
-              <h3 className="solver-sidebar-title">⚡ Vedic Techniques</h3>
+              <h3 className="solver-sidebar-title"> Vedic Techniques</h3>
 
               <button
                 type="button"
@@ -2186,7 +2227,7 @@ ${bodyHtml}
                         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                       }}
                     >
-                      <span>🎮 Practice Squaring Ending in 5 in Speed Tricks Game ➔</span>
+                      <span> Practice Squaring Ending in 5 in Speed Tricks Game  &rarr; </span>
                     </button>
                   </div>
                 );
@@ -2508,7 +2549,7 @@ ${bodyHtml}
                           <div className="solver-step-content">
                             <div className="solver-step-title">Vertical Right: Units × Units (↓)</div>
                             <div className="solver-step-calc">
-                              {aUnits} × {bUnits} = {step1Val} ➔ Write <strong>{step1Unit}</strong>, carry <strong>{step1Carry}</strong>
+                              {aUnits} × {bUnits} = {step1Val}  &rarr;  Write <strong>{step1Unit}</strong>, carry <strong>{step1Carry}</strong>
                             </div>
                           </div>
                         </div>
@@ -2516,9 +2557,9 @@ ${bodyHtml}
                         <div className="solver-step-item">
                           <div className="solver-step-num">2</div>
                           <div className="solver-step-content">
-                            <div className="solver-step-title">Crosswise: Sum of cross-products + carry (✕)</div>
+                            <div className="solver-step-title">Crosswise: Sum of cross-products + carry (×)</div>
                             <div className="solver-step-calc">
-                              ({aTens} × {bUnits}) + ({aUnits} × {bTens}) + {step1Carry} = ({aTens * bUnits}) + ({aUnits * bTens}) + {step1Carry} = {step2Val} ➔ Write <strong>{step2Unit}</strong>, carry <strong>{step2Carry}</strong>
+                              ({aTens} × {bUnits}) + ({aUnits} × {bTens}) + {step1Carry} = ({aTens * bUnits}) + ({aUnits * bTens}) + {step1Carry} = {step2Val}  &rarr;  Write <strong>{step2Unit}</strong>, carry <strong>{step2Carry}</strong>
                             </div>
                           </div>
                         </div>
@@ -2780,7 +2821,7 @@ ${bodyHtml}
                           <div className="solver-step-content">
                             <div className="solver-step-title">Product of Roots</div>
                             <div className="solver-step-calc">
-                              {rootA} × {rootB} = {rootA * rootB} ➔ Root = <strong>{rootProd}</strong>
+                              {rootA} × {rootB} = {rootA * rootB}  &rarr;  Root = <strong>{rootProd}</strong>
                             </div>
                           </div>
                         </div>
@@ -2802,7 +2843,7 @@ ${bodyHtml}
                         Verification Status
                       </span>
                       <span className="solver-result-val" style={{ color: isMatch ? '#15803d' : '#b91c1c', fontSize: '1.4rem' }}>
-                        {isMatch ? `✅ Verified Correct! (${rootProd} = ${rootAns})` : '❌ Mismatch detected'}
+                        {isMatch ? `[OK] Verified Correct! (${rootProd} = ${rootAns})` : '[X] Mismatch detected'}
                       </span>
                     </div>
                   </div>
@@ -2830,7 +2871,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  📐 Open Universal Algebra Engine →
+                   Open Universal Algebra Engine →
                 </button>
                 <button
                   type="button"
@@ -2867,7 +2908,7 @@ ${bodyHtml}
             {/* Interactive Algebra Bridge */}
             <div className="algebra-bridge-box" style={{ marginTop: '1.5rem' }}>
               <h3 className="algebra-bridge-title">
-                📐 Interactive Proof: Identical Coefficient Vector [1, a+b, ab]
+                 Interactive Proof: Identical Coefficient Vector [1, a+b, ab]
               </h3>
               <p className="algebra-bridge-desc">
                 Notice how the Vedic Sutra <em>Ūrdhva-Tiryagbhyām</em> generates the exact identical coefficient array whether the base is concrete 10 or unknown variable x:
@@ -2968,7 +3009,7 @@ ${bodyHtml}
                 {/* Vyakta Card */}
                 <div className="vyakta-card">
                   <div className="va-header-badge" style={{ background: '#dcfce7', color: '#15803d' }}>
-                    <span>🌱 Manifest &amp; Concrete</span>
+                    <span> Manifest &amp; Concrete</span>
                   </div>
                   <h3 className="va-card-title" style={{ color: '#166534' }}>
                     Vyakta Gaṇitam (వ్యక్త గణితం)
@@ -2976,24 +3017,24 @@ ${bodyHtml}
                   <div className="va-card-subtitle">व्यक्तगणितम् · Expressed Mathematics</div>
                   <ul className="va-points-list">
                     <li>
-                      <span>🌿</span>
+                      <span></span>
                       <span><strong>Etymology:</strong> <em>Vyakta</em> means &quot;unfolded, manifest, tangible, and visible&quot;.</span>
                     </li>
                     <li>
-                      <span>📐</span>
+                      <span></span>
                       <span><strong>Domain:</strong> Concrete arithmetic, fractions, proportions, interest calculations, permutations &amp; combinations (<em>Aṅka-Pāśa</em>), and practical surveying geometry.</span>
                     </li>
                     <li>
-                      <span>📜</span>
+                      <span></span>
                       <span><strong>Canonical Treatise:</strong> The world-renowned <strong>Līlāvatī (లీలావతి)</strong>, where Bhāskara II frames algorithmic brilliance inside poetic riddles featuring swarms of bees, swans, and lotus flowers.</span>
                     </li>
                     <li>
-                      <span>✨</span>
+                      <span></span>
                       <span><strong>Philosophy:</strong> Deals with known, tangible quantities directly accessible to sensory observation and daily commerce.</span>
                     </li>
                   </ul>
                   <div className="va-treatise-pill" style={{ background: '#dcfce7', color: '#14532d' }}>
-                    <span>📖 Primary Text:</span>
+                    <span> Primary Text:</span>
                     <span>Līlāvatī (277 Verses) by Bhāskarācārya II (1150 CE)</span>
                   </div>
                 </div>
@@ -3001,7 +3042,7 @@ ${bodyHtml}
                 {/* Avyakta Card */}
                 <div className="avyakta-card">
                   <div className="va-header-badge" style={{ background: '#dbeafe', color: '#1d4ed8' }}>
-                    <span>🌌 Unmanifest &amp; Symbolic</span>
+                    <span> Unmanifest &amp; Symbolic</span>
                   </div>
                   <h3 className="va-card-title" style={{ color: '#1e40af' }}>
                     Avyakta Gaṇitam (అవ్యక్త గణితం)
@@ -3009,24 +3050,24 @@ ${bodyHtml}
                   <div className="va-card-subtitle">अव्यक्तगणितम् · Unexpressed / Symbolic Algebra</div>
                   <ul className="va-points-list">
                     <li>
-                      <span>🔮</span>
+                      <span></span>
                       <span><strong>Etymology:</strong> <em>Avyakta</em> means &quot;unmanifested, latent, hidden, and formless&quot;.</span>
                     </li>
                     <li>
-                      <span>🔣</span>
+                      <span></span>
                       <span><strong>Domain:</strong> Higher multivariate algebra, signed numbers, negative signs via <em>Bindu</em> (dot), zero arithmetic (<em>Khahara</em>: a/0 = ∞), and indeterminate analysis.</span>
                     </li>
                     <li>
-                      <span>📜</span>
+                      <span></span>
                       <span><strong>Canonical Treatise:</strong> The monumental <strong>Bījagaṇita (బీజగణితం)</strong>, containing the world’s earliest multivariate algebraic notation and the <em>Cakravāla</em> cyclic algorithm.</span>
                     </li>
                     <li>
-                      <span>✨</span>
+                      <span></span>
                       <span><strong>Philosophy:</strong> Manipulates the invisible potential of unknowns before they crystallize into definite numerical values.</span>
                     </li>
                   </ul>
                   <div className="va-treatise-pill" style={{ background: '#dbeafe', color: '#1e3a8a' }}>
-                    <span>📖 Primary Text:</span>
+                    <span> Primary Text:</span>
                     <span>Bījagaṇita (213 Verses) by Bhāskarācārya II (1150 CE)</span>
                   </div>
                 </div>
@@ -3039,7 +3080,7 @@ ${bodyHtml}
                     The World’s First Multivariate Notation
                   </span>
                   <h3 style={{ marginTop: '0.5rem' }}>
-                    🎨 Bhāskarācārya’s Varṇa (Color-Variable) System
+                     Bhāskarācārya’s Varṇa (Color-Variable) System
                   </h3>
                   <p style={{ fontSize: '0.94rem', color: '#475569', lineHeight: 1.55 }}>
                     Centuries before European algebra adopted x, y, and z, Indian mathematicians invented multivariate algebraic symbolism using <strong>Varṇa</strong> (वर्णाः — meaning both &quot;colors&quot; and &quot;alphabetic letters&quot;). Each unknown quantity was assigned a distinct cosmic hue:
@@ -3049,7 +3090,7 @@ ${bodyHtml}
                 <div className="varna-palette-grid">
                   <div className="varna-chip-card" style={{ background: '#f8fafc', borderColor: '#0f172a' }}>
                     <div className="varna-chip-top">
-                      <span className="varna-chip-color">🖤</span>
+                      <span className="varna-chip-color">[Black]</span>
                       <span className="varna-chip-var" style={{ color: '#0f172a' }}>x</span>
                     </div>
                     <div className="varna-chip-name" style={{ color: '#0f172a' }}>Kālaka (కాలక)</div>
@@ -3059,7 +3100,7 @@ ${bodyHtml}
 
                   <div className="varna-chip-card" style={{ background: '#eff6ff', borderColor: '#3b82f6' }}>
                     <div className="varna-chip-top">
-                      <span className="varna-chip-color">💙</span>
+                      <span className="varna-chip-color">[Blue]</span>
                       <span className="varna-chip-var" style={{ color: '#2563eb' }}>y</span>
                     </div>
                     <div className="varna-chip-name" style={{ color: '#1e40af' }}>Nīlaka (నీలక)</div>
@@ -3069,7 +3110,7 @@ ${bodyHtml}
 
                   <div className="varna-chip-card" style={{ background: '#fefce8', borderColor: '#eab308' }}>
                     <div className="varna-chip-top">
-                      <span className="varna-chip-color">💛</span>
+                      <span className="varna-chip-color">[Yellow]</span>
                       <span className="varna-chip-var" style={{ color: '#ca8a04' }}>z</span>
                     </div>
                     <div className="varna-chip-name" style={{ color: '#854d0e' }}>Pītaka (పీతక)</div>
@@ -3079,7 +3120,7 @@ ${bodyHtml}
 
                   <div className="varna-chip-card" style={{ background: '#f0fdf4', borderColor: '#22c55e' }}>
                     <div className="varna-chip-top">
-                      <span className="varna-chip-color">💚</span>
+                      <span className="varna-chip-color">[Green]</span>
                       <span className="varna-chip-var" style={{ color: '#16a34a' }}>w</span>
                     </div>
                     <div className="varna-chip-name" style={{ color: '#166534' }}>Haritaka (హరితక)</div>
@@ -3089,7 +3130,7 @@ ${bodyHtml}
 
                   <div className="varna-chip-card" style={{ background: '#f1f5f9', borderColor: '#64748b' }}>
                     <div className="varna-chip-top">
-                      <span className="varna-chip-color">⚪</span>
+                      <span className="varna-chip-color">[White]</span>
                       <span className="varna-chip-var" style={{ color: '#475569' }}>c</span>
                     </div>
                     <div className="varna-chip-name" style={{ color: '#334155' }}>Rūpa (రూప)</div>
@@ -3101,7 +3142,7 @@ ${bodyHtml}
                 {/* Interactive Varna Playground */}
                 <div className="varna-playground-card">
                   <div className="varna-playground-title">
-                    <span>🧪</span>
+                    <span></span>
                     <span>Interactive Varṇa Expression Calculator</span>
                   </div>
                   <p style={{ fontSize: '0.88rem', color: '#475569', marginBottom: '1rem' }}>
@@ -3136,7 +3177,7 @@ ${bodyHtml}
                   <div className="varna-sliders-grid">
                     <div className="varna-slider-col">
                       <label htmlFor="varna-slider-x">
-                        <span>🖤 Kālaka (x):</span>
+                        <span>[Black] Kālaka (x):</span>
                         <strong style={{ color: '#0f172a' }}>{varnaVarX}</strong>
                       </label>
                       <input
@@ -3151,7 +3192,7 @@ ${bodyHtml}
                     </div>
                     <div className="varna-slider-col">
                       <label htmlFor="varna-slider-y">
-                        <span>💙 Nīlaka (y):</span>
+                        <span>[Blue] Nīlaka (y):</span>
                         <strong style={{ color: '#2563eb' }}>{varnaVarY}</strong>
                       </label>
                       <input
@@ -3167,7 +3208,7 @@ ${bodyHtml}
                     {varnaPreset === 'trivariate' && (
                       <div className="varna-slider-col">
                         <label htmlFor="varna-slider-z">
-                          <span>💛 Pītaka (z):</span>
+                          <span>[Yellow] Pītaka (z):</span>
                           <strong style={{ color: '#ca8a04' }}>{varnaVarZ}</strong>
                         </label>
                         <input
@@ -3254,7 +3295,7 @@ ${bodyHtml}
               {/* Verse Banner */}
               <div className="bhuta-shloka-banner">
                 <div className="bhuta-banner-badge">
-                  <span>📜 Siddhānta Śiromaṇi · Golādhyāya (Praśnādhyāya)</span>
+                  <span> Siddhānta Śiromaṇi · Golādhyāya (Praśnādhyāya)</span>
                 </div>
                 <div className="bhuta-verse-sa">
                   {BHASKARA_DOB_RECORD.shlokaDevanagari.split('\n').map((line, idx) => (
@@ -3281,7 +3322,7 @@ ${bodyHtml}
                     className="bhuta-audio-btn"
                     onClick={() => playPronunciation(BHASKARA_DOB_RECORD.shlokaDevanagari)}
                   >
-                    <span>🔊</span>
+                    <span>[Audio]</span>
                     <span>Listen to Sanskrit Shloka</span>
                   </button>
                   <span style={{ fontSize: '0.85rem', color: '#92400e', fontWeight: 700 }}>
@@ -3293,7 +3334,7 @@ ${bodyHtml}
               {/* Decryptor Pipeline */}
               <div className="bhuta-decryptor-flow">
                 <h3 className="bhuta-decryptor-title">
-                  <span>🔐</span>
+                  <span></span>
                   <span>Step-by-Step Cryptographic Decryption</span>
                 </h3>
                 <p style={{ fontSize: '0.92rem', color: '#475569', marginBottom: '1.25rem' }}>
@@ -3314,7 +3355,7 @@ ${bodyHtml}
                 {/* Rule of Reversal */}
                 <div className="bhuta-reversal-box">
                   <div className="bhuta-reversal-rule">
-                    <span>🔄</span>
+                    <span></span>
                     <span>The Foundational Rule of Reversal: अङ्कानां वामतो गतिः (Aṅkānāṃ Vāmato Gatiḥ)</span>
                   </div>
                   <p style={{ fontSize: '0.92rem', color: '#7c2d12', margin: 0, lineHeight: 1.5 }}>
@@ -3330,7 +3371,7 @@ ${bodyHtml}
                       <span>+</span>
                       <span className="bhuta-digit-pill">Mahī (1)</span>
                     </div>
-                    <span style={{ color: '#ea580c' }}>➔ Read Right-to-Left (Vāmato Gatiḥ) ➔</span>
+                    <span style={{ color: '#ea580c' }}> &rarr;  Read Right-to-Left (Vāmato Gatiḥ)  &rarr; </span>
                     <span style={{ fontSize: '1.45rem', color: '#9a3412', background: '#ffffff', padding: '0.35rem 1rem', borderRadius: '10px', border: '2px solid #ea580c' }}>
                       <strong>1 0 3 6</strong> (Shaka Year)
                     </span>
@@ -3341,7 +3382,7 @@ ${bodyHtml}
                 <div className="bhuta-result-cards-grid">
                   <div className="bhuta-result-card birth">
                     <div className="bhuta-result-label" style={{ color: '#15803d' }}>
-                      🎂 Decoded Date of Birth (D.O.B.)
+                       Decoded Date of Birth (D.O.B.)
                     </div>
                     <div className="bhuta-result-year" style={{ color: '#166534' }}>
                       1114 CE (శక 1036)
@@ -3354,7 +3395,7 @@ ${bodyHtml}
 
                   <div className="bhuta-result-card composition">
                     <div className="bhuta-result-label" style={{ color: '#a16207' }}>
-                      📜 Siddhānta Śiromaṇi Composition
+                       Siddhānta Śiromaṇi Composition
                     </div>
                     <div className="bhuta-result-year" style={{ color: '#854d0e' }}>
                       1150 CE (At Age 36)
@@ -3374,7 +3415,7 @@ ${bodyHtml}
                   Cryptographic Reference
                 </span>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.35rem 0' }}>
-                  📖 Bhūta-Saṅkhyā Word Numeral Dictionary (Digits 0 to 9)
+                   Bhūta-Saṅkhyā Word Numeral Dictionary (Digits 0 to 9)
                 </h3>
                 <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.55 }}>
                   Click on any digit from 0 to 9 to inspect its traditional Sanskrit and Telugu cosmological word mappings used across ancient Indian astronomical treatises:
@@ -3432,7 +3473,7 @@ ${bodyHtml}
                 {/* Custom Year Cryptogram Generator */}
                 <div className="bhuta-encoder-box">
                   <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#1e293b' }}>
-                    ✍️ Try Custom Year Encoder (Vāmato Gatiḥ)
+                     Try Custom Year Encoder (Vāmato Gatiḥ)
                   </div>
                   <div className="bhuta-encoder-input-row">
                     <label htmlFor="custom-bhuta-input" style={{ fontSize: '0.88rem', fontWeight: 700, color: '#475569' }}>
@@ -3462,7 +3503,7 @@ ${bodyHtml}
                     return (
                       <div className="bhuta-encoder-output">
                         <div>
-                          <strong>Digits:</strong> {digits.join(', ')} ➔ <strong>Reversed (Vāmato Gatiḥ):</strong> {rev.join(', ')}
+                          <strong>Digits:</strong> {digits.join(', ')}  &rarr;  <strong>Reversed (Vāmato Gatiḥ):</strong> {rev.join(', ')}
                         </div>
                         <div style={{ marginTop: '0.35rem', fontSize: '1.05rem', fontWeight: 800, color: '#c2410c' }}>
                           Bhūta-Saṅkhyā Verse Form: <em>{phrase}-sama-samaye</em>
@@ -3476,7 +3517,7 @@ ${bodyHtml}
               {/* The Four Quadrants of Siddhānta Śiromaṇi */}
               <div style={{ marginTop: '2rem' }}>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.35rem' }}>
-                  📚 The Four Quadrants of Siddhānta Śiromaṇi (1150 CE)
+                   The Four Quadrants of Siddhānta Śiromaṇi (1150 CE)
                 </h3>
                 <p style={{ fontSize: '0.92rem', color: '#475569', marginBottom: '1.25rem' }}>
                   At age 36, Bhāskarācārya organized his life&apos;s magnum opus into four monumental books covering arithmetic, multivariate algebra, computational astronomy, and celestial physics:
@@ -3515,7 +3556,7 @@ ${bodyHtml}
               {/* Shloka Hero Card */}
               <div className="surya-shloka-hero">
                 <div className="surya-hero-badge">
-                  <span>🌌 Sūrya Siddhānta (1.1) · Opening Maṅgalācaraṇa</span>
+                  <span> Sūrya Siddhānta (1.1) · Opening Maṅgalācaraṇa</span>
                 </div>
                 <div className="surya-verse-sa">
                   {SURYA_SIDDHANTA_MANGALACHARANA.shlokaDevanagari.split('\n').map((line, idx) => (
@@ -3542,7 +3583,7 @@ ${bodyHtml}
                     className="surya-audio-btn"
                     onClick={() => playPronunciation(SURYA_SIDDHANTA_MANGALACHARANA.shlokaDevanagari)}
                   >
-                    <span>🔊</span>
+                    <span>[Audio]</span>
                     <span>Listen to Sūrya Siddhānta Shloka</span>
                   </button>
                   <span style={{ fontSize: '0.85rem', color: '#c7d2fe', fontWeight: 600 }}>
@@ -3574,7 +3615,7 @@ ${bodyHtml}
               {/* Epistemology Conclusion */}
               <div className="surya-epistemology-box">
                 <div className="surya-epistemology-title">
-                  <span>⚛️</span>
+                  <span></span>
                   <span>Gaṇita as Darśana: Mathematics as Sacred Epistemology</span>
                 </div>
                 <p className="surya-epistemology-text">
@@ -3592,7 +3633,7 @@ ${bodyHtml}
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    📖 Read In-Depth Masterclass Article →
+                     Read In-Depth Masterclass Article →
                   </button>
                   <button
                     type="button"
@@ -3602,7 +3643,7 @@ ${bodyHtml}
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    🔐 Bhāskara D.O.B. Cryptogram ↑
+                     Bhāskara D.O.B. Cryptogram ↑
                   </button>
                   <button
                     type="button"
@@ -3612,7 +3653,7 @@ ${bodyHtml}
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    🎨 Varṇa Color Algebra ↑
+                     Varṇa Color Algebra ↑
                   </button>
                 </div>
               </div>
@@ -3636,7 +3677,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  🔺 Explore Vedic Geometry &amp; Śulba →
+                   Explore Vedic Geometry &amp; Śulba →
                 </button>
                 <button
                   type="button"
@@ -3648,7 +3689,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  📖 Read Universal Algebra Article
+                   Read Universal Algebra Article
                 </button>
                 <button
                   type="button"
@@ -3731,7 +3772,7 @@ ${bodyHtml}
               >
                 <div>
                   <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#1c1917' }}>
-                    🎥 Masterclass: Vedic Geometry — The Science of Shapes
+                     Masterclass: Vedic Geometry — The Science of Shapes
                   </div>
                   <div style={{ fontSize: '0.85rem', color: '#78716c', marginTop: '0.2rem' }}>
                     Curated Documentary by <strong>Conscious Cosmos</strong> · Timestamp: starts at 0:11
@@ -3754,7 +3795,7 @@ ${bodyHtml}
                       boxShadow: '0 2px 8px rgba(245, 158, 11, 0.3)',
                     }}
                   >
-                    <span>📐 Launch Living Geometry Lab &amp; Treatise ➔</span>
+                    <span> Launch Living Geometry Lab &amp; Treatise  &rarr; </span>
                   </a>
                   <a
                     href="https://www.youtube.com/watch?v=bp9m53Tp6xg&t=11s"
@@ -3782,7 +3823,7 @@ ${bodyHtml}
             {/* In-depth geometric cards */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginTop: '1.5rem' }}>
               <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>📐</div>
+                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}></div>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
                   The Śulba Sūtras (शुल्बसूत्राणि)
                 </h3>
@@ -3792,7 +3833,7 @@ ${bodyHtml}
               </div>
 
               <div style={{ background: '#ffffff', padding: '1.5rem', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>🔺</div>
+                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}></div>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.5rem 0' }}>
                   Baudhāyana’s Theorem (The Diagonal Principle)
                 </h3>
@@ -3813,7 +3854,7 @@ ${bodyHtml}
 
               <div style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%)', padding: '1.5rem', borderRadius: '12px', border: '1.5px solid #86efac', boxShadow: '0 2px 8px rgba(16, 185, 129, 0.08)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>🏛️</div>
+                  <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}></div>
                   <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#10b981', color: '#ffffff', padding: '0.2rem 0.55rem', borderRadius: '999px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Scholarly Research</span>
                 </div>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#065f46', margin: '0 0 0.5rem 0' }}>
@@ -3897,14 +3938,14 @@ ${bodyHtml}
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.25rem' }}>
                       <div>
                         <h3 style={{ margin: 0, fontSize: '1.15rem', fontWeight: 800, color: '#1e293b' }}>
-                          ⚡ Interactive Baudhāyana Chord &amp; Area Lab
+                           Interactive Baudhāyana Chord &amp; Area Lab
                         </h3>
                         <p style={{ margin: '0.2rem 0 0', fontSize: '0.85rem', color: '#64748b' }}>
                           Adjust base (पार्श्वमानी) and height (तिर्यङ्मानी) to see the rope area verification.
                         </p>
                       </div>
                       <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: isIntTriple ? '#dcfce7' : '#fef3c7', color: isIntTriple ? '#166534' : '#92400e', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.85rem', fontWeight: 800 }}>
-                        {isIntTriple ? `✓ Whole-Number Baudhāyana Triple (${baudA}, ${baudB}, ${cVal})` : `Irrational Chord (c ≈ ${cVal.toFixed(3)})`}
+                        {isIntTriple ? `[OK] Whole-Number Baudhāyana Triple (${baudA}, ${baudB}, ${cVal})` : `Irrational Chord (c ≈ ${cVal.toFixed(3)})`}
                       </div>
                     </div>
 
@@ -4024,7 +4065,7 @@ ${bodyHtml}
               {/* Comparative Table: Baudhāyana vs. Pythagoras */}
               <div style={{ marginBottom: '1.75rem' }}>
                 <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', marginBottom: '0.75rem' }}>
-                  🏛️ The Direct Bridge: Baudhāyana (800 BCE) to Pythagoras (530 BCE)
+                   The Direct Bridge: Baudhāyana (800 BCE) to Pythagoras (530 BCE)
                 </h3>
                 <div style={{ overflowX: 'auto', border: '1px solid #e2e8f0', borderRadius: '12px' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem', textAlign: 'left' }}>
@@ -4070,7 +4111,7 @@ ${bodyHtml}
               <div style={{ marginBottom: '1.75rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                   <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', margin: 0 }}>
-                    📖 Complete Sanskrit Vyākaraṇa Breakdown (12 Morphological Steps)
+                     Complete Sanskrit Vyākaraṇa Breakdown (12 Morphological Steps)
                   </h3>
                   <button
                     type="button"
@@ -4125,7 +4166,7 @@ ${bodyHtml}
               {/* Vedic Parity & The Lone Even Prime (2) Card */}
               <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.5rem', marginBottom: '1.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '1.4rem' }}>🪐</span>
+                  <span style={{ fontSize: '1.4rem' }}></span>
                   <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#1e293b' }}>
                     Vedic Roots of Parity &amp; Why 2 Sits as the Only Even Prime
                   </h4>
@@ -4151,7 +4192,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  📖 Read Full Illustrated Masterclass on Baudhāyana &amp; The Even Prime →
+                   Read Full Illustrated Masterclass on Baudhāyana &amp; The Even Prime →
                 </button>
               </div>
             </div>
@@ -4159,7 +4200,7 @@ ${bodyHtml}
             {/* Sacred Altars & The Invariant Area Problem */}
             <div style={{ marginTop: '2.5rem', background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: '16px', padding: '1.75rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🔥</span>
+                <span style={{ fontSize: '1.5rem' }}></span>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
                   The Invariant Area Problem &amp; Sacred Altars (यज्ञकुण्डानि)
                 </h3>
@@ -4172,7 +4213,7 @@ ${bodyHtml}
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
                 <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
-                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🦅</div>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}></div>
                   <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
                     Śyenaciti (श्येनचितिः · Falcon Altar)
                   </h4>
@@ -4182,7 +4223,7 @@ ${bodyHtml}
                 </div>
 
                 <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
-                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🐢</div>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}></div>
                   <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
                     Kūrmaciti (कूर्मचितिः · Tortoise Altar)
                   </h4>
@@ -4192,7 +4233,7 @@ ${bodyHtml}
                 </div>
 
                 <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
-                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>☸️</div>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}></div>
                   <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
                     Rathacakraciti (रथचक्रचितिः · Chariot Wheel)
                   </h4>
@@ -4202,7 +4243,7 @@ ${bodyHtml}
                 </div>
 
                 <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.25rem' }}>
-                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}>🏺</div>
+                  <div style={{ fontSize: '1.6rem', marginBottom: '0.25rem' }}></div>
                   <h4 style={{ margin: '0 0 0.35rem', color: '#0f172a', fontSize: '1rem', fontWeight: 800 }}>
                     Droṇaciti (द्रोणचितिः · Trough Altar)
                   </h4>
@@ -4216,7 +4257,7 @@ ${bodyHtml}
             {/* Baudhayana's √2 Approximation Masterclass */}
             <div style={{ marginTop: '2rem', background: 'linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%)', border: '1.5px solid #a7f3d0', borderRadius: '16px', padding: '1.75rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>✨</span>
+                <span style={{ fontSize: '1.5rem' }}></span>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#065f46', margin: 0 }}>
                   Baudhāyana’s √2 Approximation Formula (800 BCE)
                 </h3>
@@ -4258,7 +4299,7 @@ ${bodyHtml}
             {/* Modern Echoes in Computer Science & Algorithms */}
             <div style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem' }}>
               <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
-                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>💻</div>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}></div>
                 <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
                   1. Constructive Algorithmic Geometry (CAD)
                 </h4>
@@ -4268,7 +4309,7 @@ ${bodyHtml}
               </div>
 
               <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
-                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>🏛️</div>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}></div>
                 <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
                   2. Vāstu Śāstra &amp; Sustainable Architecture
                 </h4>
@@ -4278,7 +4319,7 @@ ${bodyHtml}
               </div>
 
               <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '1.4rem' }}>
-                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>🔐</div>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}></div>
                 <h4 style={{ margin: '0 0 0.4rem', color: '#0f172a', fontSize: '1.05rem', fontWeight: 800 }}>
                   3. Continued Fractions &amp; Signal Processing
                 </h4>
@@ -4301,7 +4342,7 @@ ${bodyHtml}
                     <span>The Sacred Upaveda of the Bow</span>
                   </div>
                   <h2 style={{ fontSize: '1.65rem', fontWeight: 800, color: '#9a3412', margin: '0 0 0.4rem 0' }}>
-                    🏹 The Geometry of Dhanurveda: Stances, Ballistics &amp; Sanskrit Phonetics
+                     The Geometry of Dhanurveda: Stances, Ballistics &amp; Sanskrit Phonetics
                   </h2>
                   <p style={{ fontSize: '0.95rem', color: '#4b5563', margin: 0, maxWidth: '880px', lineHeight: 1.6 }}>
                     In ancient India, archery was not mere physical combat—it was a sacred, systematic <strong>Upaveda</strong> (applied Vedic science) connected to the Yajurveda.
@@ -4397,7 +4438,7 @@ ${bodyHtml}
                               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', background: '#ffedd5', border: '1px solid #fdba74', color: '#c2410c', padding: '0.25rem 0.6rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700, cursor: 'pointer' }}
                               title="Hear pronunciation in Sanskrit"
                             >
-                              🔊 Listen
+                              [Audio] Listen
                             </button>
                           </div>
 
@@ -4432,7 +4473,7 @@ ${bodyHtml}
                           </div>
 
                           <div style={{ background: '#ffffff', borderLeft: '3px solid #ea580c', padding: '0.65rem 0.85rem', borderRadius: '0 8px 8px 0', fontSize: '0.84rem', color: '#475569', lineHeight: 1.5, marginBottom: '0.85rem' }}>
-                            <strong>💡 Śulba Sūtra Geometry Link:</strong> {current.tacticalTip}
+                            <strong> Śulba Sūtra Geometry Link:</strong> {current.tacticalTip}
                           </div>
 
                           <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '0.65rem 0.85rem', borderRadius: '8px', fontSize: '0.8rem', color: '#64748b' }}>
@@ -4478,7 +4519,7 @@ ${bodyHtml}
                                   <polygon points="90,160 290,160 120,60" fill="rgba(234, 88, 12, 0.15)" stroke="#ea580c" strokeWidth="2.5" />
                                   {/* Torso & Head */}
                                   <circle cx="120" cy="45" r="14" fill="#ffedd5" stroke="#ea580c" strokeWidth="2" />
-                                  <text x="120" y="49" textAnchor="middle" fontSize="11">🏹</text>
+                                  <text x="120" y="49" textAnchor="middle" fontSize="11"></text>
                                   {/* Bent Front Knee */}
                                   <circle cx="105" cy="115" r="5" fill="#ea580c" />
                                   <line x1="120" y1="60" x2="105" y2="115" stroke="#ea580c" strokeWidth="3" />
@@ -4495,7 +4536,7 @@ ${bodyHtml}
                                   <text x="135" y="104" fill="#b45309" fontSize="9" fontWeight="bold">CG (70% fwd)</text>
                                   {/* Arrow vector */}
                                   <line x1="120" y1="50" x2="330" y2="50" stroke="#dc2626" strokeWidth="2.5" markerEnd="url(#arrowHead)" />
-                                  <text x="320" y="42" textAnchor="end" fill="#dc2626" fontSize="10" fontWeight="bold">Target Direction 🎯</text>
+                                  <text x="320" y="42" textAnchor="end" fill="#dc2626" fontSize="10" fontWeight="bold">Target Direction </text>
                                 </g>
                               )}
 
@@ -4505,7 +4546,7 @@ ${bodyHtml}
                                   <polygon points="90,160 290,160 260,60" fill="rgba(59, 130, 246, 0.15)" stroke="#2563eb" strokeWidth="2.5" />
                                   {/* Torso & Head leaning back */}
                                   <circle cx="260" cy="45" r="14" fill="#dbeafe" stroke="#2563eb" strokeWidth="2" />
-                                  <text x="260" y="49" textAnchor="middle" fontSize="11">🏹</text>
+                                  <text x="260" y="49" textAnchor="middle" fontSize="11"></text>
                                   {/* Bent Rear Knee */}
                                   <circle cx="275" cy="115" r="5" fill="#2563eb" />
                                   <line x1="260" y1="60" x2="275" y2="115" stroke="#2563eb" strokeWidth="3" />
@@ -4522,7 +4563,7 @@ ${bodyHtml}
                                   <text x="245" y="104" textAnchor="end" fill="#1d4ed8" fontSize="9" fontWeight="bold">CG (70% rear)</text>
                                   {/* Arrow vector forward */}
                                   <line x1="250" y1="50" x2="50" y2="50" stroke="#dc2626" strokeWidth="2.5" markerEnd="url(#arrowHead)" />
-                                  <text x="60" y="42" fill="#dc2626" fontSize="10" fontWeight="bold">Counter-Fire 🎯</text>
+                                  <text x="60" y="42" fill="#dc2626" fontSize="10" fontWeight="bold">Counter-Fire </text>
                                 </g>
                               )}
 
@@ -4532,7 +4573,7 @@ ${bodyHtml}
                                   <rect x="160" y="60" width="60" height="100" fill="rgba(16, 185, 129, 0.15)" stroke="#059669" strokeWidth="2.5" />
                                   {/* Torso & Head */}
                                   <circle cx="190" cy="40" r="14" fill="#d1fae5" stroke="#059669" strokeWidth="2" />
-                                  <text x="190" y="44" textAnchor="middle" fontSize="11">🙏</text>
+                                  <text x="190" y="44" textAnchor="middle" fontSize="11"></text>
                                   {/* Parallel legs */}
                                   <line x1="175" y1="60" x2="175" y2="160" stroke="#059669" strokeWidth="3" />
                                   <line x1="205" y1="60" x2="205" y2="160" stroke="#059669" strokeWidth="3" />
@@ -4552,7 +4593,7 @@ ${bodyHtml}
                                   <polygon points="110,160 270,160 230,85 150,85" fill="rgba(217, 119, 6, 0.15)" stroke="#d97706" strokeWidth="2.5" />
                                   {/* Torso & Head */}
                                   <circle cx="190" cy="65" r="14" fill="#fef3c7" stroke="#d97706" strokeWidth="2" />
-                                  <text x="190" y="69" textAnchor="middle" fontSize="11">⚔️</text>
+                                  <text x="190" y="69" textAnchor="middle" fontSize="11"></text>
                                   {/* Outward bent knees */}
                                   <circle cx="130" cy="120" r="5" fill="#d97706" />
                                   <circle cx="250" cy="120" r="5" fill="#d97706" />
@@ -4578,7 +4619,7 @@ ${bodyHtml}
                                   <circle cx="190" cy="110" r="55" fill="none" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="3 3" />
                                   {/* Torso & Head */}
                                   <circle cx="190" cy="45" r="14" fill="#f3e8ff" stroke="#9333ea" strokeWidth="2" />
-                                  <text x="190" y="49" textAnchor="middle" fontSize="11">🔄</text>
+                                  <text x="190" y="49" textAnchor="middle" fontSize="11"></text>
                                   {/* Radial outward legs */}
                                   <circle cx="145" cy="120" r="5" fill="#9333ea" />
                                   <circle cx="235" cy="120" r="5" fill="#9333ea" />
@@ -4618,7 +4659,7 @@ ${bodyHtml}
               {/* MODULE 2: THE LINGUISTIC CONNECTION (THE MOUTH AS A BOW) */}
               <div style={{ background: '#fdf4ff', border: '1.5px solid #f0abfc', borderRadius: '16px', padding: '1.5rem', marginBottom: '2.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '1.4rem' }}>🏹</span>
+                  <span style={{ fontSize: '1.4rem' }}></span>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#86198f', margin: 0 }}>
                     2. The Linguistic Connection: The Mouth as a Bow (Dhanuṣ &amp; Sanskrit Phonetics)
                   </h3>
@@ -4655,7 +4696,7 @@ ${bodyHtml}
                 {/* Interactive Retroflex Consonants Soundboard */}
                 <div style={{ background: '#ffffff', border: '1px solid #f5d0fe', borderRadius: '12px', padding: '1.25rem' }}>
                   <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#86198f', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                    🔊 Interactive Mūrdhanya Soundboard (Click to hear each sound-arrow release):
+                    [Audio] Interactive Mūrdhanya Soundboard (Click to hear each sound-arrow release):
                   </div>
 
                   <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
@@ -4702,7 +4743,7 @@ ${bodyHtml}
                             onClick={() => playPronunciation(sel.letterSa)}
                             style={{ background: '#e9d5ff', border: 'none', color: '#581c87', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer' }}
                           >
-                            🔊 Play Sound
+                            [Audio] Play Sound
                           </button>
                         </div>
                         <div style={{ fontSize: '0.86rem', color: '#374151', lineHeight: 1.5, marginBottom: '0.4rem' }}>
@@ -4720,7 +4761,7 @@ ${bodyHtml}
               {/* MODULE 3: THE VEDIC MATH CONNECTION (BALLISTICS & ŚARA-ABHYĀSA) */}
               <div style={{ background: '#f0fdf4', border: '1.5px solid #bbf7d0', borderRadius: '16px', padding: '1.5rem', marginBottom: '1.75rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '1.4rem' }}>📐</span>
+                  <span style={{ fontSize: '1.4rem' }}></span>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#166534', margin: 0 }}>
                     3. The Vedic Math Connection: Ballistics &amp; Trajectory Triangles
                   </h3>
@@ -4795,21 +4836,21 @@ ${bodyHtml}
                                 onClick={() => { setDhanurDistA(25); setDhanurElevB(12); }}
                                 style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.25rem 0.55rem', borderRadius: '6px', fontSize: '0.74rem', cursor: 'pointer', fontWeight: 600 }}
                               >
-                                🎯 Arjuna's Matsya-Vedha (25m, 12m)
+                                 Arjuna's Matsya-Vedha (25m, 12m)
                               </button>
                               <button
                                 type="button"
                                 onClick={() => { setDhanurDistA(50); setDhanurElevB(0); }}
                                 style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.25rem 0.55rem', borderRadius: '6px', fontSize: '0.74rem', cursor: 'pointer', fontWeight: 600 }}
                               >
-                                ⚔️ Cavalry Flat Shot (50m, 0m)
+                                 Cavalry Flat Shot (50m, 0m)
                               </button>
                               <button
                                 type="button"
                                 onClick={() => { setDhanurDistA(70); setDhanurElevB(25); }}
                                 style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.25rem 0.55rem', borderRadius: '6px', fontSize: '0.74rem', cursor: 'pointer', fontWeight: 600 }}
                               >
-                                🏰 Fortress Siege (70m, 25m)
+                                 Fortress Siege (70m, 25m)
                               </button>
                             </div>
                           </div>
@@ -4871,7 +4912,7 @@ ${bodyHtml}
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', background: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)', border: '1.5px solid #fed7aa', borderRadius: '14px', padding: '1.25rem 1.5rem' }}>
                 <div>
                   <div style={{ fontWeight: 800, color: '#9a3412', fontSize: '1rem' }}>
-                    📖 Read the Scholarly Treatise on Dhanurveda
+                     Read the Scholarly Treatise on Dhanurveda
                   </div>
                   <div style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '0.2rem' }}>
                     Explore the complete 10-minute masterclass on Dhanurveda, the 5 combat stances, Mūrdhanya phonetics, and Yogic Dhāraṇā.
@@ -4917,7 +4958,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  🌊 Enter Fluid Space &amp; Parallel Math →
+                   Enter Fluid Space &amp; Parallel Math →
                 </button>
                 <button
                   type="button"
@@ -4930,7 +4971,7 @@ ${bodyHtml}
                   }}
                   style={{ background: '#fef3c7', borderColor: '#f59e0b', color: '#92400e', fontWeight: 800 }}
                 >
-                  📐 Read: The Universe in the Language of Geometry (ब्रह्माण्डं रेखागणितं च) →
+                   Read: The Universe in the Language of Geometry (ब्रह्माण्डं रेखागणितं च) →
                 </button>
                 <button
                   type="button"
@@ -4942,7 +4983,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  📖 Read Sacred Geometry Article
+                   Read Sacred Geometry Article
                 </button>
                 <button
                   type="button"
@@ -5068,7 +5109,7 @@ ${bodyHtml}
                         </div>
 
                         <p style={{ fontSize: '0.85rem', color: '#6b7280', margin: 0, lineHeight: 1.5 }}>
-                          ⚠️ Requires 3 distinct rows of paper writing, indenting with placeholder zeros, multiple isolated carries, and vertical column addition.
+                          [Note] Requires 3 distinct rows of paper writing, indenting with placeholder zeros, multiple isolated carries, and vertical column addition.
                         </p>
                       </div>
 
@@ -5083,16 +5124,16 @@ ${bodyHtml}
                               <span>↓ Vertical Right (Units):</span>
                             </div>
                             <div className="fluid-vedic-step-calc">
-                              {a0} × {b0} = {prod1} ➔ <strong>{unitDigit}</strong> (carry {carry1})
+                              {a0} × {b0} = {prod1}  &rarr;  <strong>{unitDigit}</strong> (carry {carry1})
                             </div>
                           </div>
 
                           <div className="fluid-vedic-step">
                             <div className="fluid-vedic-step-label">
-                              <span>✕ Crosswise (Tens):</span>
+                              <span>× Crosswise (Tens):</span>
                             </div>
                             <div className="fluid-vedic-step-calc">
-                              ({a1}×{b0}) + ({a0}×{b1}) + {carry1} = {crossSum} ➔ <strong>{tensDigit}</strong> (carry {carry2})
+                              ({a1}×{b0}) + ({a0}×{b1}) + {carry1} = {crossSum}  &rarr;  <strong>{tensDigit}</strong> (carry {carry2})
                             </div>
                           </div>
 
@@ -5151,7 +5192,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  🪐 Explore The Numerical Grid &amp; Zero →
+                   Explore The Numerical Grid &amp; Zero →
                 </button>
                 <button
                   type="button"
@@ -5163,7 +5204,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  📖 Read Fluid Space Article
+                   Read Fluid Space Article
                 </button>
                 <button
                   type="button"
@@ -5208,7 +5249,7 @@ ${bodyHtml}
             {/* Interactive Roman vs Decimal Place-Value Tester */}
             <div className="roman-compare-card">
               <div className="roman-compare-header">
-                <span>🏛️ Interactive Grid Test: Roman Tally vs. Indian Decimal System</span>
+                <span> Interactive Grid Test: Roman Tally vs. Indian Decimal System</span>
               </div>
               <p style={{ fontSize: '0.9rem', color: '#4b5563', marginBottom: '1rem' }}>
                 Test any number to see why Roman numerals required immense paper real estate, while the Indian positional system represents numbers dynamically:
@@ -5303,7 +5344,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  🗣️ Explore Logic, Language &amp; AI →
+                   Explore Logic, Language &amp; AI →
                 </button>
                 <button
                   type="button"
@@ -5315,7 +5356,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  📖 Read The Birth of the Grid Article
+                   Read The Birth of the Grid Article
                 </button>
                 <button
                   type="button"
@@ -5371,7 +5412,7 @@ ${bodyHtml}
                           padding: '0.15rem 0.45rem'
                         }}
                       >
-                        🔊
+                        [Audio]
                       </button>
                     </div>
                     <h3 className="anchor-sutra-title">{sutra.sanskrit}</h3>
@@ -5381,7 +5422,7 @@ ${bodyHtml}
                   </div>
                   {sutra.example && (
                     <div className="anchor-sutra-ex">
-                      <strong>💡 Example:</strong> {sutra.example}
+                      <strong> Example:</strong> {sutra.example}
                     </div>
                   )}
                 </div>
@@ -5431,12 +5472,12 @@ ${bodyHtml}
 
             <div className="cognitive-load-box">
               <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e293b', marginBottom: '0.5rem' }}>
-                🧠 Cognitive Load: Western Columnar Arithmetic vs. Vedic Sanskrit Aphorisms
+                 Cognitive Load: Western Columnar Arithmetic vs. Vedic Sanskrit Aphorisms
               </h3>
               <div className="cognitive-grid">
                 <div className="cognitive-card">
                   <div className="cognitive-card-title" style={{ color: '#b91c1c' }}>
-                    <span>⚠️ Conventional Columnar Arithmetic</span>
+                    <span>[Note] Conventional Columnar Arithmetic</span>
                   </div>
                   <div className="cognitive-card-desc">
                     High cognitive strain on working memory. Requires keeping multiple carries in mind, shifting partial product rows with placeholder zeroes, and performing multi-tier vertical addition. Focus is absorbed by scrap management rather than holistic problem structure.
@@ -5445,7 +5486,7 @@ ${bodyHtml}
 
                 <div className="cognitive-card" style={{ borderColor: '#86efac', background: '#f0fdf4' }}>
                   <div className="cognitive-card-title" style={{ color: '#15803d' }}>
-                    <span>✨ Vedic Sanskrit Cognitive Triggers</span>
+                    <span> Vedic Sanskrit Cognitive Triggers</span>
                   </div>
                   <div className="cognitive-card-desc">
                     Low working memory load. Short poetic Sanskrit aphorisms trigger spatial, geometric visualization and whole-number pattern recognition. Problems are perceived globally, processed in parallel, and solved in a single line.
@@ -5478,7 +5519,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  🕉️ Meet the Masters in Guru Paramparā →
+                  OM Meet the Masters in Guru Paramparā →
                 </button>
                 {onOpenGrammar && (
                   <button
@@ -5486,7 +5527,7 @@ ${bodyHtml}
                     className="article-pager-btn"
                     onClick={onOpenGrammar}
                   >
-                    📚 Explore Grammar &amp; Kaṭapayādi Shelf
+                     Explore Grammar &amp; Kaṭapayādi Shelf
                   </button>
                 )}
                 <button
@@ -5969,42 +6010,42 @@ ${bodyHtml}
                       className={`kerala-subnav-pill ${keralaSubTab === 'all' ? 'active' : ''}`}
                       onClick={() => setKeralaSubTab('all')}
                     >
-                      🌟 Overview (All)
+                       Overview (All)
                     </button>
                     <button
                       type="button"
                       className={`kerala-subnav-pill ${keralaSubTab === 'series' ? 'active' : ''}`}
                       onClick={() => setKeralaSubTab('series')}
                     >
-                      ♾️ Infinite Series &amp; Errors
+                      &infin; Infinite Series &amp; Errors
                     </button>
                     <button
                       type="button"
                       className={`kerala-subnav-pill ${keralaSubTab === 'yuktibhasa' ? 'active' : ''}`}
                       onClick={() => setKeralaSubTab('yuktibhasa')}
                     >
-                      📐 Yuktibhāṣā Proof
+                       Yuktibhāṣā Proof
                     </button>
                     <button
                       type="button"
                       className={`kerala-subnav-pill ${keralaSubTab === 'astronomy' ? 'active' : ''}`}
                       onClick={() => setKeralaSubTab('astronomy')}
                     >
-                      🪐 Astronomy &amp; Parallax
+                       Astronomy &amp; Parallax
                     </button>
                     <button
                       type="button"
                       className={`kerala-subnav-pill ${keralaSubTab === 'cipher' ? 'active' : ''}`}
                       onClick={() => setKeralaSubTab('cipher')}
                     >
-                      🎵 Kaṭapayādi Cipher
+                       Kaṭapayādi Cipher
                     </button>
                     <button
                       type="button"
                       className={`kerala-subnav-pill ${keralaSubTab === 'yantras' ? 'active' : ''}`}
                       onClick={() => setKeralaSubTab('yantras')}
                     >
-                      🔭 Yantras &amp; Transmission
+                       Yantras &amp; Transmission
                     </button>
                   </div>
 
@@ -6018,7 +6059,7 @@ ${bodyHtml}
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    📖 Read Academic Masterclass Treatise →
+                     Read Academic Masterclass Treatise →
                   </button>
                 </div>
               </div>
@@ -6154,7 +6195,7 @@ ${bodyHtml}
                   {/* Precision Meter */}
                   <div className="kerala-meter-card">
                     <div className="kerala-meter-title">
-                      🎯 Live Pi Decimal Precision Meter (Target: <code>3.14159265358979...</code>)
+                       Live Pi Decimal Precision Meter (Target: <code>3.14159265358979...</code>)
                     </div>
                     <div className="kerala-precision-display">
                       <span className="kerala-digit-match">3.</span>
@@ -6179,7 +6220,7 @@ ${bodyHtml}
                   {/* Madhava Sine & Cosine Series Simulator */}
                   <div className="kerala-submodule-card">
                     <h4 className="kerala-submodule-title">
-                      🌸 Mādhava’s Power Series for Sine (Jīvā-Saṅkalita)
+                       Mādhava’s Power Series for Sine (Jīvā-Saṅkalita)
                     </h4>
                     <p className="kerala-submodule-desc">
                       Formulated in the 14th century: sin(θ) = θ - (θ³ / 3!) + (θ⁵ / 5!) - (θ⁷ / 7!) + ... (known today as Taylor-Maclaurin series).
@@ -6496,7 +6537,7 @@ ${bodyHtml}
                   <div className="kerala-astro-grid">
                     {/* Planetary Orbit Model Card */}
                     <div className="kerala-astro-card">
-                      <h4>☀️ Nīlakaṇṭha’s Geo-Heliocentric Architecture</h4>
+                      <h4> Nīlakaṇṭha’s Geo-Heliocentric Architecture</h4>
                       <p className="kerala-card-desc">
                         Mercury, Venus, Mars, Jupiter, and Saturn revolve directly around the Sun; the Sun and Moon orbit the central Earth.
                       </p>
@@ -6506,14 +6547,14 @@ ${bodyHtml}
                           <div className="kerala-orbit-ring ring-mid">
                             <span className="kerala-planet-dot mars" title="Mars (Maṅgala)">Maṅgala</span>
                             <div className="kerala-orbit-sun-path">
-                              <span className="kerala-planet-dot sun" title="Sun (Sūrya)">Sūrya ☀️</span>
+                              <span className="kerala-planet-dot sun" title="Sun (Sūrya)">Sūrya </span>
                               <div className="kerala-inner-orbit">
                                 <span className="kerala-planet-dot venus" title="Venus (Śukra)">Śukra</span>
                                 <span className="kerala-planet-dot mercury" title="Mercury (Budha)">Budha</span>
                               </div>
                             </div>
                             <div className="kerala-earth-center">
-                              🌍 Bhūmi
+                               Bhūmi
                             </div>
                           </div>
                         </div>
@@ -6526,7 +6567,7 @@ ${bodyHtml}
 
                     {/* Instantaneous Velocity & Inverse Sine */}
                     <div className="kerala-astro-card">
-                      <h4>⚡ Instantaneous Velocity (Sphuṭa-Gati)</h4>
+                      <h4> Instantaneous Velocity (Sphuṭa-Gati)</h4>
                       <p className="kerala-card-desc">
                         Nīlakaṇṭha calculated true instantaneous orbital speeds using differential increments:
                         \(V_t = V_m (1 \pm k \cos\phi)\), recognizing the derivative of \(\sin(\phi)\) is \(\cos(\phi)\).
@@ -6567,7 +6608,7 @@ ${bodyHtml}
                       {/* Rapid Inverse Sine Formula */}
                       <div className="kerala-inv-sine-box">
                         <div className="kerala-inv-title">
-                          📐 Nīlakaṇṭha’s Rapid Inverse Sine: θ ≈ S + (S³ / 6) · [1 / (1 - S² / 10)]
+                           Nīlakaṇṭha’s Rapid Inverse Sine: θ ≈ S + (S³ / 6) · [1 / (1 - S² / 10)]
                         </div>
                         <div className="kerala-inv-control">
                           <label>Sine Chord Ratio \(S\): <strong>{inverseSineS}</strong></label>
@@ -6593,7 +6634,7 @@ ${bodyHtml}
                   {/* Solar Eclipse Parallax Simulator */}
                   <div className="kerala-submodule-card">
                     <h4 className="kerala-submodule-title">
-                      🌑 Solar Eclipse Parallax Mechanics (Lambana &amp; Nati)
+                       Solar Eclipse Parallax Mechanics (Lambana &amp; Nati)
                     </h4>
                     <p className="kerala-submodule-desc">
                       Unlike lunar eclipses (which occur globally simultaneously), solar eclipses require topocentric parallax corrections.
@@ -6759,7 +6800,7 @@ ${bodyHtml}
 
                   {/* Custom Word Kaṭapayādi Parser */}
                   <div className="kerala-custom-cipher-card">
-                    <h4>🔤 Interactive Custom Kaṭapayādi Word Decoder</h4>
+                    <h4> Interactive Custom Kaṭapayādi Word Decoder</h4>
                     <p className="kerala-cipher-sub">
                       Type any word or verse snippet in English transliteration or Indian script (e.g. <code>kanakangi</code>, <code>harikambhoji</code>, <code>gopibhagyamadhuvrata</code>)
                       to see consonants dynamically mapped to digits and reversed:
@@ -6809,7 +6850,7 @@ ${bodyHtml}
 
                   {/* Consonant Mapping Grid Table */}
                   <div className="kerala-consonant-matrix">
-                    <h4>📋 The 10-Digit Kaṭapayādi Consonant Reference Matrix</h4>
+                    <h4> The 10-Digit Kaṭapayādi Consonant Reference Matrix</h4>
                     <div className="kerala-matrix-grid">
                       {KATAPAYADI_DIGIT_MAP.map((mapItem) => (
                         <div key={mapItem.digit} className="kerala-matrix-card">
@@ -6898,7 +6939,7 @@ ${bodyHtml}
                           if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }}
                       >
-                        📜 Read Full Article with Manuscript Citations →
+                         Read Full Article with Manuscript Citations →
                       </button>
                     </div>
                   </div>
@@ -6994,35 +7035,35 @@ ${bodyHtml}
                       className={`parampara-subnav-pill ${paramparaSubTab === 'all' ? 'active' : ''}`}
                       onClick={() => setParamparaSubTab('all')}
                     >
-                      🌟 All Dimensions
+                       All Dimensions
                     </button>
                     <button
                       type="button"
                       className={`parampara-subnav-pill ${paramparaSubTab === 'historiography' ? 'active' : ''}`}
                       onClick={() => setParamparaSubTab('historiography')}
                     >
-                      📜 5 Historiographical Pillars
+                       5 Historiographical Pillars
                     </button>
                     <button
                       type="button"
                       className={`parampara-subnav-pill ${paramparaSubTab === 'shaka-matrix' ? 'active' : ''}`}
                       onClick={() => setParamparaSubTab('shaka-matrix')}
                     >
-                      ⏱️ Shaka ⟷ CE Matrix ({SHAKA_ERA_CHRONOLOGY.length} Masters)
+                       Shaka ⟷ CE Matrix ({SHAKA_ERA_CHRONOLOGY.length} Masters)
                     </button>
                     <button
                       type="button"
                       className={`parampara-subnav-pill ${paramparaSubTab === 'lineage' ? 'active' : ''}`}
                       onClick={() => setParamparaSubTab('lineage')}
                     >
-                      🕉️ Modern Guru Paramparā
+                      OM Modern Guru Paramparā
                     </button>
                     <button
                       type="button"
                       className={`parampara-subnav-pill ${paramparaSubTab === 'epistemology' ? 'active' : ''}`}
                       onClick={() => setParamparaSubTab('epistemology')}
                     >
-                      🙏 Sacred Epistemology &amp; Guru-Bhakti
+                       Sacred Epistemology &amp; Guru-Bhakti
                     </button>
                   </div>
                   <button
@@ -7035,7 +7076,7 @@ ${bodyHtml}
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    📖 Read Masterclass Article →
+                     Read Masterclass Article →
                   </button>
                 </div>
               </div>
@@ -7054,21 +7095,21 @@ ${bodyHtml}
                   {/* 3 Core Historical Contrasts */}
                   <div className="historiography-contrasts-grid">
                     <div className="contrast-card">
-                      <div className="contrast-icon">🌿</div>
+                      <div className="contrast-icon"></div>
                       <h4 className="contrast-title">Monsoon vs Arid Sands</h4>
                       <p className="contrast-desc">
                         Unlike Egyptian papyrus or Sumerian clay that lasted 4,000 years in dry sands, organic <strong>Tālapatra (palm leaves)</strong> decay within 300–500 years under tropical humidity and silverfish, requiring constant manual recopying (<em>punarlekhana</em>). Surviving manuscripts are almost always late copies of ancient originals.
                       </p>
                     </div>
                     <div className="contrast-card">
-                      <div className="contrast-icon">🗣️</div>
+                      <div className="contrast-icon"></div>
                       <h4 className="contrast-title">Oral Sūtras vs Paper Ceilings</h4>
                       <p className="contrast-desc">
                         Knowledge was memorized through metered <strong>Sūtras (Anuṣṭubh, Āryā)</strong> with built-in phonetic checksums and mathematical ciphers (Kaṭapayādi). Theorems lived in the disciplined memory of gurus and disciples centuries before being written down. <em>Text absence does not mean idea absence.</em>
                       </p>
                     </div>
                     <div className="contrast-card">
-                      <div className="contrast-icon">🏛️</div>
+                      <div className="contrast-icon"></div>
                       <h4 className="contrast-title">Floor Date (Terminus Ante Quem)</h4>
                       <p className="contrast-desc">
                         An excavated manuscript date marks the latest date by which the math was already in routine use, not its birthday. The <strong>Bakhshālī Manuscript (3rd c. CE)</strong> was a merchant’s trade ledger; a standard dot zero in everyday accounting proves the decimal system was standard practice centuries prior.
@@ -7108,12 +7149,12 @@ ${bodyHtml}
                               <div className="pillar-full-desc">{pillar.fullDescription}</div>
                               
                               <div className="pillar-impact-box">
-                                <div className="pillar-impact-label">💡 Historiographical Reality &amp; Methodological Rule:</div>
+                                <div className="pillar-impact-label"> Historiographical Reality &amp; Methodological Rule:</div>
                                 <div className="pillar-impact-text">{pillar.historiographicalImpact}</div>
                               </div>
 
                               <div className="pillar-examples-wrap">
-                                <div className="pillar-examples-label">🔍 Canonical Historical Evidence:</div>
+                                <div className="pillar-examples-label"> Canonical Historical Evidence:</div>
                                 <ul className="pillar-examples-list">
                                   {pillar.keyExamples.map((ex, eIdx) => (
                                     <li key={eIdx}>{ex}</li>
@@ -7187,7 +7228,7 @@ ${bodyHtml}
                     {/* Matched Astronomer Highlight */}
                     {matchedAstronomer && (
                       <div className="converter-match-card exact">
-                        <div className="match-tag">🎯 Exact Landmark Astronomer Match!</div>
+                        <div className="match-tag"> Exact Landmark Astronomer Match!</div>
                         <div className="match-title">
                           <span className="match-te">{matchedAstronomer.teluguName}</span>
                           <span className="match-sep">·</span>
@@ -7195,9 +7236,9 @@ ${bodyHtml}
                           <span className="match-sa">({matchedAstronomer.sanskritName})</span>
                         </div>
                         <div className="match-meta">
-                          <span>📅 {matchedAstronomer.shakaYear} Shaka ({matchedAstronomer.ceYear})</span>
+                          <span> {matchedAstronomer.shakaYear} Shaka ({matchedAstronomer.ceYear})</span>
                           <span>·</span>
-                          <span>📜 Treatise: {matchedAstronomer.primaryTreatise}</span>
+                          <span> Treatise: {matchedAstronomer.primaryTreatise}</span>
                           <span>·</span>
                           <span className="match-focus-pill">{matchedAstronomer.focusArea}</span>
                         </div>
@@ -7207,7 +7248,7 @@ ${bodyHtml}
 
                     {!matchedAstronomer && nearbyAstronomers.length > 0 && (
                       <div className="converter-match-card nearby">
-                        <div className="match-tag">🔍 Epoch Contemporaries (within 25 years):</div>
+                        <div className="match-tag"> Epoch Contemporaries (within 25 years):</div>
                         <div className="nearby-chips">
                           {nearbyAstronomers.map((ast) => (
                             <button
@@ -7225,7 +7266,7 @@ ${bodyHtml}
 
                     {/* Quick Preset Buttons */}
                     <div className="converter-presets-wrap">
-                      <div className="presets-label">⚡ Jump to Landmark Astronomical Epochs:</div>
+                      <div className="presets-label"> Jump to Landmark Astronomical Epochs:</div>
                       <div className="presets-grid">
                         {SHAKA_ERA_CHRONOLOGY.map((ast) => (
                           <button
@@ -7254,7 +7295,7 @@ ${bodyHtml}
                   <div className="chrono-matrix-directory">
                     <div className="matrix-controls-bar">
                       <div className="matrix-search-box">
-                        <span className="search-icon">🔍</span>
+                        <span className="search-icon"></span>
                         <input
                           type="text"
                           className="matrix-search-input"
@@ -7268,7 +7309,7 @@ ${bodyHtml}
                             className="search-clear-btn"
                             onClick={() => setChronoSearch('')}
                           >
-                            ✕
+                            ×
                           </button>
                         )}
                       </div>
@@ -7286,35 +7327,35 @@ ${bodyHtml}
                           className={`matrix-filter-pill ${chronoFilter === 'astronomy' ? 'active' : ''}`}
                           onClick={() => setChronoFilter('astronomy')}
                         >
-                          🪐 Astronomy &amp; Siddhānta
+                           Astronomy &amp; Siddhānta
                         </button>
                         <button
                           type="button"
                           className={`matrix-filter-pill ${chronoFilter === 'algebra' ? 'active' : ''}`}
                           onClick={() => setChronoFilter('algebra')}
                         >
-                          🧮 Arithmetic &amp; Algebra
+                           Arithmetic &amp; Algebra
                         </button>
                         <button
                           type="button"
                           className={`matrix-filter-pill ${chronoFilter === 'geometry' ? 'active' : ''}`}
                           onClick={() => setChronoFilter('geometry')}
                         >
-                          📐 Geometry &amp; Trigonometry
+                           Geometry &amp; Trigonometry
                         </button>
                         <button
                           type="button"
                           className={`matrix-filter-pill ${chronoFilter === 'commentary' ? 'active' : ''}`}
                           onClick={() => setChronoFilter('commentary')}
                         >
-                          📜 Commentary &amp; Reconstruction
+                           Commentary &amp; Reconstruction
                         </button>
                         <button
                           type="button"
                           className={`matrix-filter-pill ${chronoFilter === 'observational' ? 'active' : ''}`}
                           onClick={() => setChronoFilter('observational')}
                         >
-                          ⏱️ Observational &amp; Calendrical
+                           Observational &amp; Calendrical
                         </button>
                       </div>
                     </div>
@@ -7375,7 +7416,7 @@ ${bodyHtml}
                                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                                     }}
                                   >
-                                    ⚡ Calculate
+                                     Calculate
                                   </button>
                                 </td>
                               </tr>
@@ -7400,7 +7441,7 @@ ${bodyHtml}
 
                           <div className="mobile-era-row">
                             <span className="shaka-badge">Shaka: {m.shakaYear}</span>
-                            <span className="era-arrow">➜</span>
+                            <span className="era-arrow"> &rarr; </span>
                             <span className="ce-badge">{m.ceYear}</span>
                             <span className="century-badge">{m.century}</span>
                           </div>
@@ -7420,7 +7461,7 @@ ${bodyHtml}
                               if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }}
                           >
-                            ⚡ Test in Shaka Converter ({m.shakaNumeric} + 78 = {m.ceNumeric})
+                             Test in Shaka Converter ({m.shakaNumeric} + 78 = {m.ceNumeric})
                           </button>
                         </div>
                       ))}
@@ -7456,7 +7497,7 @@ ${bodyHtml}
 
                         <div className="lineage-role-period">
                           <span className="lineage-role">{member.role}</span>
-                          <span className="lineage-period">📅 {member.period}</span>
+                          <span className="lineage-period"> {member.period}</span>
                         </div>
 
                         <p className="lineage-desc">{member.description}</p>
@@ -7496,13 +7537,13 @@ ${bodyHtml}
                     </p>
                     <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                       <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.85rem', fontWeight: 700 }}>
-                        🙏 Vinaya &amp; Non-Ego Ownership
+                         Vinaya &amp; Non-Ego Ownership
                       </span>
                       <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.85rem', fontWeight: 700 }}>
-                        ⚛️ Vijñāna as an Integral Wing of Jñāna
+                         Vijñāna as an Integral Wing of Jñāna
                       </span>
                       <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.85rem', fontWeight: 700 }}>
-                        🌍 Lokasaṅgraha: Universal Service
+                         Lokasaṅgraha: Universal Service
                       </span>
                     </div>
                   </div>
@@ -7577,13 +7618,13 @@ ${bodyHtml}
                   {/* Cause and Purpose Breakdown Box */}
                   <div className="epistemology-cause-effect-box">
                     <div className="epistemology-ce-title">
-                      <span>⚖️</span>
+                      <span></span>
                       <span>The Non-Individualistic Architecture of Knowledge: Cause (Hetu) &amp; Effect (Prayojana)</span>
                     </div>
                     <div className="epistemology-ce-grid">
                       <div className="epistemology-ce-col">
                         <div className="epistemology-ce-col-title">
-                          <span>🌱</span>
+                          <span></span>
                           <span>In Terms of its Cause (Hetu): Trans-Personal Origin</span>
                         </div>
                         <p className="epistemology-ce-col-desc">
@@ -7593,7 +7634,7 @@ ${bodyHtml}
 
                       <div className="epistemology-ce-col">
                         <div className="epistemology-ce-col-title">
-                          <span>🌊</span>
+                          <span></span>
                           <span>In Terms of its Purpose (Prayojana): Universal Welfare</span>
                         </div>
                         <p className="epistemology-ce-col-desc">
@@ -7631,21 +7672,21 @@ ${bodyHtml}
                         className={`cosmic-mode-btn${selectedBridgeMode === 'triad' ? ' active' : ''}`}
                         onClick={() => setSelectedBridgeMode('triad')}
                       >
-                        🏛️ The Cosmic Triad
+                         The Cosmic Triad
                       </button>
                       <button
                         type="button"
                         className={`cosmic-mode-btn${selectedBridgeMode === 'spans' ? ' active' : ''}`}
                         onClick={() => setSelectedBridgeMode('spans')}
                       >
-                        🌉 The 5 Bridge Spans
+                         The 5 Bridge Spans
                       </button>
                       <button
                         type="button"
                         className={`cosmic-mode-btn${selectedBridgeMode === 'resonance' ? ' active' : ''}`}
                         onClick={() => setSelectedBridgeMode('resonance')}
                       >
-                        ⚡ Resonance Matrix
+                         Resonance Matrix
                       </button>
                       <button
                         type="button"
@@ -7657,7 +7698,7 @@ ${bodyHtml}
                           if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }}
                       >
-                        📖 Read Full Article →
+                         Read Full Article →
                       </button>
                     </div>
 
@@ -7694,7 +7735,7 @@ ${bodyHtml}
                             {/* Vertex 1: Universe */}
                             <g onClick={() => setSelectedBridgeNodeId('universe')} style={{ cursor: 'pointer' }}>
                               <circle cx="350" cy="70" r={selectedBridgeNodeId === 'universe' ? 56 : 50} fill="url(#gradUnivApp)" stroke={selectedBridgeNodeId === 'universe' ? '#ffffff' : '#bae6fd'} strokeWidth={selectedBridgeNodeId === 'universe' ? 3 : 1.5} />
-                              <text x="350" y="60" fontSize="18" textAnchor="middle">🌌</text>
+                              <text x="350" y="60" fontSize="18" textAnchor="middle"></text>
                               <text x="350" y="78" fontSize="12" fontWeight="900" fill="#ffffff" textAnchor="middle">UNIVERSE</text>
                               <text x="350" y="93" fontSize="9.5" fontWeight="600" fill="#e0f2fe" textAnchor="middle">Mathematics · Ṛta</text>
                             </g>
@@ -7702,7 +7743,7 @@ ${bodyHtml}
                             {/* Vertex 2: Humans */}
                             <g onClick={() => setSelectedBridgeNodeId('humans')} style={{ cursor: 'pointer' }}>
                               <circle cx="160" cy="290" r={selectedBridgeNodeId === 'humans' ? 56 : 50} fill="url(#gradHumApp)" stroke={selectedBridgeNodeId === 'humans' ? '#ffffff' : '#c7d2fe'} strokeWidth={selectedBridgeNodeId === 'humans' ? 3 : 1.5} />
-                              <text x="160" y="280" fontSize="18" textAnchor="middle">🧠</text>
+                              <text x="160" y="280" fontSize="18" textAnchor="middle"></text>
                               <text x="160" y="298" fontSize="12" fontWeight="900" fill="#ffffff" textAnchor="middle">HUMANS</text>
                               <text x="160" y="313" fontSize="9.5" fontWeight="600" fill="#e0e7ff" textAnchor="middle">Consciousness · Draṣṭā</text>
                             </g>
@@ -7710,7 +7751,7 @@ ${bodyHtml}
                             {/* Vertex 3: Sanskrit */}
                             <g onClick={() => setSelectedBridgeNodeId('sanskrit')} style={{ cursor: 'pointer' }}>
                               <circle cx="540" cy="290" r={selectedBridgeNodeId === 'sanskrit' ? 56 : 50} fill="url(#gradSansApp)" stroke={selectedBridgeNodeId === 'sanskrit' ? '#ffffff' : '#fde68a'} strokeWidth={selectedBridgeNodeId === 'sanskrit' ? 3 : 1.5} />
-                              <text x="540" y="280" fontSize="18" textAnchor="middle">🕉️</text>
+                              <text x="540" y="280" fontSize="18" textAnchor="middle">OM</text>
                               <text x="540" y="298" fontSize="12" fontWeight="900" fill="#ffffff" textAnchor="middle">SANSKRIT</text>
                               <text x="540" y="313" fontSize="9.5" fontWeight="600" fill="#fef3c7" textAnchor="middle">The Algorithmic Bridge</text>
                             </g>
@@ -7726,7 +7767,7 @@ ${bodyHtml}
                             <text x="350" y="331" fontSize="9" fontWeight="700" fill="#c7d2fe" textAnchor="middle">Acoustic Matrix (Śikṣā)</text>
                           </svg>
                           <div style={{ textAlign: 'center', fontSize: '0.8rem', color: '#94a3b8', marginTop: '0.5rem' }}>
-                            💡 Click on any node (Universe, Humans, or Sanskrit) above to inspect its epistemic function.
+                             Click on any node (Universe, Humans, or Sanskrit) above to inspect its epistemic function.
                           </div>
                         </div>
 
@@ -7792,7 +7833,7 @@ ${bodyHtml}
                                   <div className="cosmic-span-sa">{activeSpan.sanskritTitle}</div>
                                 </div>
                                 <div className="cosmic-span-treatise">
-                                  <span>📜</span>
+                                  <span></span>
                                   <span>{activeSpan.ancientTreatise}</span>
                                 </div>
                               </div>
@@ -7843,31 +7884,31 @@ ${bodyHtml}
                             <div className="cosmic-resonance-pipeline">
                               <div className="cosmic-res-stage">
                                 <div className="cosmic-res-stage-num">Stage 1 · Universe</div>
-                                <div className="cosmic-res-stage-title">🌌 Cosmic Reality</div>
+                                <div className="cosmic-res-stage-title"> Cosmic Reality</div>
                                 <div className="cosmic-res-stage-desc">{activeFlow.cosmicManifestation}</div>
                               </div>
 
-                              <div className="cosmic-res-arrow">➔</div>
+                              <div className="cosmic-res-arrow"> &rarr; </div>
 
                               <div className="cosmic-res-stage">
                                 <div className="cosmic-res-stage-num">Stage 2 · Mathematics</div>
-                                <div className="cosmic-res-stage-title">📐 Mathematical Law</div>
+                                <div className="cosmic-res-stage-title"> Mathematical Law</div>
                                 <div className="cosmic-res-stage-desc">{activeFlow.mathematicalSyntax}</div>
                               </div>
 
-                              <div className="cosmic-res-arrow">➔</div>
+                              <div className="cosmic-res-arrow"> &rarr; </div>
 
                               <div className="cosmic-res-stage highlight">
                                 <div className="cosmic-res-stage-num">Stage 3 · The Bridge</div>
-                                <div className="cosmic-res-stage-title">🕉️ Sanskrit Acoustic Code</div>
+                                <div className="cosmic-res-stage-title">OM Sanskrit Acoustic Code</div>
                                 <div className="cosmic-res-stage-desc">{activeFlow.sanskritAcousticBridge}</div>
                               </div>
 
-                              <div className="cosmic-res-arrow">➔</div>
+                              <div className="cosmic-res-arrow"> &rarr; </div>
 
                               <div className="cosmic-res-stage">
                                 <div className="cosmic-res-stage-num">Stage 4 · Consciousness</div>
-                                <div className="cosmic-res-stage-title">👁️ Human Realization</div>
+                                <div className="cosmic-res-stage-title"> Human Realization</div>
                                 <div className="cosmic-res-stage-desc">{activeFlow.humanConsciousRealization}</div>
                               </div>
                             </div>
@@ -7898,7 +7939,7 @@ ${bodyHtml}
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    ⚡ Take Speed Math Challenge Quiz →
+                     Take Speed Math Challenge Quiz →
                   </button>
                   <button
                     type="button"
@@ -7910,7 +7951,7 @@ ${bodyHtml}
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                   >
-                    📖 Read Historiography Masterclass
+                     Read Historiography Masterclass
                   </button>
                   <button
                     type="button"
@@ -7960,7 +8001,7 @@ ${bodyHtml}
                   return (
                     <div>
                       <div className="quiz-sutra-badge">
-                        <span>⚡ Apply: {q.sutraSanskrit}</span>
+                        <span> Apply: {q.sutraSanskrit}</span>
                         <span>({q.sutraName})</span>
                       </div>
 
@@ -7999,11 +8040,11 @@ ${bodyHtml}
                         >
                           <div className="quiz-feedback-title">
                             {selectedOption === q.correctAnswer
-                              ? '🎉 Correct! Brilliant Mental Math!'
-                              : `❌ Not quite! The correct answer is ${q.correctAnswer}`}
+                              ? ' Correct! Brilliant Mental Math!'
+                              : `[X] Not quite! The correct answer is ${q.correctAnswer}`}
                           </div>
                           <div className="quiz-feedback-trick">
-                            <strong>⚡ Fast Vedic Trick:</strong> {q.quickTrick}
+                            <strong> Fast Vedic Trick:</strong> {q.quickTrick}
                           </div>
                           <div className="quiz-feedback-explanation">
                             <strong>Step-by-step:</strong> {q.explanation}
@@ -8019,8 +8060,8 @@ ${bodyHtml}
                             onClick={handleNextQuestion}
                           >
                             {quizIndex < VEDIC_QUIZ_QUESTIONS.length - 1
-                              ? 'Next Question ➔'
-                              : 'View Final Score 🏆'}
+                              ? 'Next Question  &rarr; '
+                              : 'View Final Score '}
                           </button>
                         </div>
                       )}
@@ -8030,7 +8071,7 @@ ${bodyHtml}
               </div>
             ) : (
               <div className="quiz-complete-card">
-                <div className="quiz-complete-icon">🏆</div>
+                <div className="quiz-complete-icon"></div>
                 <h2 className="quiz-complete-title">Vedic Speed Challenge Completed!</h2>
                 <p className="quiz-complete-score">
                   You scored <strong>{quizScore} out of {VEDIC_QUIZ_QUESTIONS.length}</strong> (
@@ -8041,7 +8082,7 @@ ${bodyHtml}
                   className="quiz-next-btn"
                   onClick={handleRestartQuiz}
                 >
-                  🔄 Retake Challenge
+                   Retake Challenge
                 </button>
               </div>
             )}
@@ -8065,7 +8106,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  📖 Read Articles Masterclass →
+                   Read Articles Masterclass →
                 </button>
                 <button
                   type="button"
@@ -8076,7 +8117,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  📜 Review 16 Sūtras Directory
+                   Review 16 Sūtras Directory
                 </button>
                 <button
                   type="button"
@@ -8087,7 +8128,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  🧮 Practice in Solvers Studio
+                   Practice in Solvers Studio
                 </button>
               </div>
             </div>
@@ -8113,7 +8154,7 @@ ${bodyHtml}
             {/* Article Selector Navigation Pills */}
             <div className="article-nav-pills-wrap">
               <div className="article-nav-pills-label">
-                <span>📚 Vedic Knowledge Library · Select Article</span>
+                <span> Vedic Knowledge Library · Select Article</span>
               </div>
               <div className="article-nav-pills">
                 {VEDIC_ARTICLES.map((article, idx) => (
@@ -8143,10 +8184,10 @@ ${bodyHtml}
               )}
               <div className="article-meta-header">
                 <span className="article-badge-tag">
-                  ✦ {currentArticle.badge}
+                  * {currentArticle.badge}
                 </span>
                 <span className="article-reading-time">
-                  ⏱️ {currentArticle.readingTime}
+                   {currentArticle.readingTime}
                 </span>
               </div>
 
@@ -8157,18 +8198,18 @@ ${bodyHtml}
               {/* Optional Game Launcher Banner for this article */}
               {(() => {
                 const gameMap: Record<string, { id: string; title: string; dev: string; icon: string }> = {
-                  'analytical-mind-of-ancient-india': { id: 'rituparna', title: 'Rituparna’s Canopy Estimator & Pingala Pyramid', dev: 'ऋतुपर्ण-प्रतिदर्श-क्रीडा', icon: '🌳' },
-                  'agnichurna-pyrotechnics-rocketry': { id: 'agnicurna', title: 'Śukranīti Agnicūrṇa & Mysorean Siege Artillery', dev: 'अग्निचूर्ण-क्षेपणास्त्र-क्रीडा', icon: '🚀' },
-                  'bhaskaracharya-dob-algebra-and-cosmic-consciousness': { id: 'lilavati', title: 'Līlāvatī’s Poetic Math Quest', dev: 'लीलावती-गणित-पहेलिका', icon: '🪷' },
-                  'universal-engine-of-algebra': { id: 'kuttaka', title: 'The Kuṭṭaka Pulverizer Engine', dev: 'कुट्टक-यन्त्रम्', icon: '🔨' },
-                  'dhanurveda-geometry-phonetics': { id: 'dhanurveda', title: 'Dhanurveda Stance & Ballistics Arena', dev: 'धनुर्वेद-लक्ष्यवेध-क्रीडा', icon: '🎯' },
-                  'before-the-carat': { id: 'metrology', title: 'The Ancient Metrology Scale', dev: 'गुञ्जा-तुला-सन्तुलनम्', icon: '⚖️' },
-                  'kerala-school-calculus-and-infinite-series': { id: 'madhavapi', title: 'Madhava’s Infinite Pi Accelerator', dev: 'माधव-अनन्त-श्रेणी-त्वरकः', icon: '♾️' },
-                  'naming-the-colossal': { id: 'colossal', title: 'The Colossal Powers Vault', dev: 'सङ्ख्या-विस्तार-भाण्डागारः', icon: '🌌' },
-                  'animal-names-yoga-sounds': { id: 'swara', title: 'Animal Swara Melodic Weaver', dev: 'सप्तस्वर-नाद-चक्रम्', icon: '🎵' },
-                  'ganita-and-the-calendar': { id: 'calendar', title: 'Vedāṅga Jyotiṣa Calendar Wheel', dev: 'वेदाङ्ग-ज्योतिष-कालचक्रम्', icon: '☀️' },
-                  'baudhayana-even-prime-geometry': { id: 'altar', title: 'Baudhāyana Fire Altar Architect', dev: 'बौधायन-वेदी-निर्माणम्', icon: '🔥' },
-                  'fluid-space-simultaneous-processing': { id: 'vinculum', title: 'The Vinculum Number Alchemist', dev: 'रेखाङ्क-शोधन-यन्त्रम्', icon: '✨' },
+                  'analytical-mind-of-ancient-india': { id: 'rituparna', title: 'Rituparna’s Canopy Estimator & Pingala Pyramid', dev: 'ऋतुपर्ण-प्रतिदर्श-क्रीडा', icon: '' },
+                  'agnichurna-pyrotechnics-rocketry': { id: 'agnicurna', title: 'Śukranīti Agnicūrṇa & Mysorean Siege Artillery', dev: 'अग्निचूर्ण-क्षेपणास्त्र-क्रीडा', icon: '' },
+                  'bhaskaracharya-dob-algebra-and-cosmic-consciousness': { id: 'lilavati', title: 'Līlāvatī’s Poetic Math Quest', dev: 'लीलावती-गणित-पहेलिका', icon: '' },
+                  'universal-engine-of-algebra': { id: 'kuttaka', title: 'The Kuṭṭaka Pulverizer Engine', dev: 'कुट्टक-यन्त्रम्', icon: '' },
+                  'dhanurveda-geometry-phonetics': { id: 'dhanurveda', title: 'Dhanurveda Stance & Ballistics Arena', dev: 'धनुर्वेद-लक्ष्यवेध-क्रीडा', icon: '' },
+                  'before-the-carat': { id: 'metrology', title: 'The Ancient Metrology Scale', dev: 'गुञ्जा-तुला-सन्तुलनम्', icon: '' },
+                  'kerala-school-calculus-and-infinite-series': { id: 'madhavapi', title: 'Madhava’s Infinite Pi Accelerator', dev: 'माधव-अनन्त-श्रेणी-त्वरकः', icon: '&infin;' },
+                  'naming-the-colossal': { id: 'colossal', title: 'The Colossal Powers Vault', dev: 'सङ्ख्या-विस्तार-भाण्डागारः', icon: '' },
+                  'animal-names-yoga-sounds': { id: 'swara', title: 'Animal Swara Melodic Weaver', dev: 'सप्तस्वर-नाद-चक्रम्', icon: '' },
+                  'ganita-and-the-calendar': { id: 'calendar', title: 'Vedāṅga Jyotiṣa Calendar Wheel', dev: 'वेदाङ्ग-ज्योतिष-कालचक्रम्', icon: '' },
+                  'baudhayana-even-prime-geometry': { id: 'altar', title: 'Baudhāyana Fire Altar Architect', dev: 'बौधायन-वेदी-निर्माणम्', icon: '' },
+                  'fluid-space-simultaneous-processing': { id: 'vinculum', title: 'The Vinculum Number Alchemist', dev: 'रेखाङ्क-शोधन-यन्त्रम्', icon: '' },
                 };
                 const g = gameMap[currentArticle.slug];
                 if (!g) return null;
@@ -8190,7 +8231,7 @@ ${bodyHtml}
                   >
                     <div>
                       <div style={{ fontSize: '0.74rem', fontWeight: 800, textTransform: 'uppercase', color: '#15803d', letterSpacing: '0.05em' }}>
-                        🎮 Interactive Game Available
+                         Interactive Game Available
                       </div>
                       <div style={{ fontWeight: 800, fontSize: '0.96rem', color: '#0f172a' }}>
                         {g.icon} {g.title} <span lang="sa" style={{ color: '#047857', fontWeight: 600 }}>({g.dev})</span>
@@ -8261,7 +8302,7 @@ ${bodyHtml}
                           onClick={() => playPronunciation(term.sa)}
                           title={`Listen: ${term.iast}`}
                         >
-                          <span className="article-term-audio" aria-hidden="true">🔊</span>
+                          <span className="article-term-audio" aria-hidden="true">[Audio]</span>
                           <span className="article-term-sa" lang="sa">{term.sa}</span>
                           <span className="article-term-iast">{term.iast}</span>
                           <span className="article-term-gloss">{term.gloss}</span>
@@ -8271,7 +8312,7 @@ ${bodyHtml}
                   )}
                   {sec.highlight && (
                     <div className="article-highlight-box">
-                      💡 {sec.highlight}
+                       {sec.highlight}
                     </div>
                   )}
                   {sec.links && sec.links.length > 0 && (
@@ -8297,11 +8338,11 @@ ${bodyHtml}
                   {sec.takeaways && sec.takeaways.length > 0 && (
                     <div className="article-takeaways-card">
                       <div className="article-takeaways-title">
-                        <span>🎯 Key Takeaways</span>
+                        <span> Key Takeaways</span>
                       </div>
                       {sec.takeaways.map((point, kIdx) => (
                         <div key={kIdx} className="article-takeaway-item">
-                          <span className="article-takeaway-icon">✓</span>
+                          <span className="article-takeaway-icon">[OK]</span>
                           <span>{point}</span>
                         </div>
                       ))}
@@ -8322,11 +8363,11 @@ ${bodyHtml}
               {currentArticle.keyTakeaways.length > 0 && (
               <div className="article-takeaways-card">
                 <div className="article-takeaways-title">
-                  <span>🎯 Key Architectural Takeaways</span>
+                  <span> Key Architectural Takeaways</span>
                 </div>
                 {currentArticle.keyTakeaways.map((point, kIdx) => (
                   <div key={kIdx} className="article-takeaway-item">
-                    <span className="article-takeaway-icon">✓</span>
+                    <span className="article-takeaway-icon">[OK]</span>
                     <span>{point}</span>
                   </div>
                 ))}
@@ -8379,7 +8420,7 @@ ${bodyHtml}
                     className="article-interactive-cta"
                     onClick={() => setActiveTab('zero')}
                   >
-                    🏛️ Test Roman vs. Decimal Grid Laboratory →
+                     Test Roman vs. Decimal Grid Laboratory →
                   </button>
                 )}
                 {currentArticle.id === 'fluid-space' && (
@@ -8388,7 +8429,7 @@ ${bodyHtml}
                     className="article-interactive-cta"
                     onClick={() => setActiveTab('fluid')}
                   >
-                    🌊 Open Fluid Space &amp; Parallel Math Visualizer →
+                     Open Fluid Space &amp; Parallel Math Visualizer →
                   </button>
                 )}
                 {currentArticle.id === 'algebra-engine' && (
@@ -8397,7 +8438,7 @@ ${bodyHtml}
                     className="article-interactive-cta"
                     onClick={() => setActiveTab('algebra')}
                   >
-                    📐 Launch Universal Algebra Engine Proof →
+                     Launch Universal Algebra Engine Proof →
                   </button>
                 )}
                 {currentArticle.id === 'source-lineage' && (
@@ -8406,7 +8447,7 @@ ${bodyHtml}
                     className="article-interactive-cta"
                     onClick={() => setActiveTab('parampara')}
                   >
-                    🕉️ Explore Guru Parampara Sacred Lineage →
+                    OM Explore Guru Parampara Sacred Lineage →
                   </button>
                 )}
                 {(currentArticle.id === 'magic-intro' || currentArticle.id === 'geometry-infinite') && (
@@ -8415,7 +8456,7 @@ ${bodyHtml}
                     className="article-interactive-cta"
                     onClick={() => setActiveTab('solvers')}
                   >
-                    🧮 Try Interactive Mental Math Solvers →
+                     Try Interactive Mental Math Solvers →
                   </button>
                 )}
               </div>
@@ -8429,7 +8470,7 @@ ${bodyHtml}
                   onClick={onOpenGrammar}
                   title="Open Grammar Shelf — Kaṭapayādi article"
                 >
-                  🔢 Sanskrit &amp; Maths heritage · Kaṭapayādi (Grammar Shelf) →
+                   Sanskrit &amp; Maths heritage · Kaṭapayādi (Grammar Shelf) →
                 </button>
               </div>
             )}
@@ -8453,7 +8494,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  📜 Return to Step 1: 16 Sūtras &amp; Path →
+                   Return to Step 1: 16 Sūtras &amp; Path →
                 </button>
                 <button
                   type="button"
@@ -8464,7 +8505,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  🧮 Practice with Interactive Solvers
+                   Practice with Interactive Solvers
                 </button>
                 <button
                   type="button"
@@ -8475,7 +8516,7 @@ ${bodyHtml}
                     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
-                  ⚡ Challenge Speed Math Quiz
+                   Challenge Speed Math Quiz
                 </button>
               </div>
             </div>
@@ -8491,7 +8532,7 @@ ${bodyHtml}
                 className={`vedic-games-mode-btn${gamesSubTab === 'tricks' ? ' active' : ''}`}
                 onClick={() => setGamesSubTab('tricks')}
               >
-                <span>⚡ Vedic Speed Tricks Arcade (वैदिक-गणित-गति-स्पर्धा)</span>
+                <span> Vedic Speed Tricks Arcade (वैदिक-गणित-गति-स्पर्धा)</span>
                 <span className="vedic-games-mode-badge">60s Blitz &amp; Sutra Mastery</span>
               </button>
               <button
@@ -8499,7 +8540,7 @@ ${bodyHtml}
                 className={`vedic-games-mode-btn${gamesSubTab === 'articles' ? ' active' : ''}`}
                 onClick={() => setGamesSubTab('articles')}
               >
-                <span>🏛️ Heritage Article Simulations (प्राचीन-विज्ञान-क्रीडाः)</span>
+                <span> Heritage Article Simulations (प्राचीन-विज्ञान-क्रीडाः)</span>
                 <span className="vedic-games-mode-badge">6 Historical Interactive Games</span>
               </button>
             </div>
@@ -8537,7 +8578,7 @@ ${bodyHtml}
 
       </main>
 
-      {/* POSTER LIGHTBOX: full-screen, portaled to <body>, Esc / ✕ / backdrop to close */}
+      {/* POSTER LIGHTBOX: full-screen, portaled to <body>, Esc / × / backdrop to close */}
       <PosterLightbox
         open={isPosterModalOpen}
         onClose={() => setIsPosterModalOpen(false)}
