@@ -3624,7 +3624,7 @@
 }
 
 .lineage-contribution-bullet::before {
-  content: '✦';
+  content: '•';
   color: #f59e0b;
   font-size: 0.8rem;
   margin-top: 0.1rem;
@@ -6629,7 +6629,7 @@
 }
 
 .surya-shloka-hero::before {
-  content: '✨';
+  content: '';
   position: absolute;
   top: 1rem;
   right: 1.5rem;
