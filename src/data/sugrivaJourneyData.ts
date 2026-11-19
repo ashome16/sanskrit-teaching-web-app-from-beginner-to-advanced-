@@ -939,7 +939,7 @@ export const COLLECTIBLE_CARDS_DECK: CollectibleCard[] = [
     id: 'card-03',
     cardNumber: '03',
     name: 'Nala Setu Shoals',
-    nameSa: 'नलसेतु-सिकताः (Nalasetu-Sikatāḥ)',
+    nameSa: 'नलसेतु-पुलिनम् (Nalasetu-Pulinam)',
     suit: 'dakshina',
     suitName: 'Suit I: Dakshina (The Southern Trail)',
     suitColor: '#059669',
