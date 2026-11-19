@@ -25,6 +25,7 @@ export interface SearchTarget {
     | 'assignment-eval'
     | 'intent-landing'
     | 'home'
+    | 'indian-mathematics'
     | 'vvm';
   vvmTab?: 'blueprint' | 'heritage' | 'scientists' | 'ncert' | 'logic' | 'quiz' | 'journey';
   grammarTopic?:
@@ -234,6 +235,85 @@ export const SEARCH_INDEX: SearchItem[] = [
       'Finished the Swar workbook? Enter the book code from page 149, answer one question from each part of the book (8 questions), score 70% and download or print your certificate with your name and the date.',
     keywords: ['certificate', 'swar', 'svara', 'स्वर', 'workbook', 'book code', 'completion', 'darsana series', 'darshana', 'get my certificate', 'award', 'badge', 'book quiz', 'sesha'],
     target: { view: 'certificate' },
+  },
+  {
+    id: 'guide-indian-mathematics-lineage',
+    title: 'Indian Mathematics (भारतीय-गणित-परम्परा) · Sequential Lineage & Epistemology',
+    subtitle: '12 Historical Eras from Vedic Sulba to Ramanujan · Foundational Disclaimer · Epistemological Matrix',
+    category: 'maths',
+    categoryLabel: 'History & Lineage · IKS',
+    badgeEmoji: '∑',
+    badgeColor: '#0c4a38',
+    description:
+      'Explore the unbroken sequential continuity of Indian mathematics across 12 eras: Vedic Sulba geometry, Pingala binary combinatorics, Jaina transfinite infinities, Bakhshali zero, Aryabhata pi and trigonometry, Brahmagupta algebra, Bhaskara II calculus precursors, and Kerala School infinite series.',
+    keywords: [
+      'indian mathematics',
+      'bharatiya ganita',
+      'history of indian mathematics',
+      'indian mathematicians',
+      'baudhayana',
+      'pingala',
+      'aryabhata',
+      'brahmagupta',
+      'bhaskara',
+      'madhava',
+      'ramanujan',
+      'kerala school',
+      'upapatti',
+      'pramana',
+      'chakravala',
+      'kuttaka',
+      'meru prastara',
+      'vedic mathematics history'
+    ],
+    target: { view: 'indian-mathematics' },
+  },
+  {
+    id: 'guide-indian-math-disclaimer',
+    title: 'Foundational Disclaimer: Textual Preservation vs. Concept Origin (कालक्रम-निर्णयः)',
+    subtitle: 'Why manuscript survival dates do not determine the origin of mathematical concepts',
+    category: 'maths',
+    categoryLabel: 'Epistemology · Philology',
+    badgeEmoji: '∑',
+    badgeColor: '#c2410c',
+    description:
+      'Detailed historiographical analysis: oral transmission (Sruti-Smrti), tropical decay of palm-leaf manuscripts (Talapatra), archaeological floor dates (terminus ante quem), and the unbroken continuity of Indian mathematical traditions.',
+    keywords: [
+      'disclaimer',
+      'historiography',
+      'manuscript preservation',
+      'talapatra',
+      'bhurjapatra',
+      'oral tradition',
+      'terminus ante quem',
+      'bakhshali carbon dating',
+      'origin of zero',
+      'indian math origin'
+    ],
+    target: { view: 'indian-mathematics' },
+  },
+  {
+    id: 'guide-indian-math-epistemology',
+    title: 'Epistemological Comparison: Indian Gaṇita vs. Modern Western Mathematics',
+    subtitle: 'Constructive Upapatti & Ṛta vs. Euclidean Axiomatic Deductivism',
+    category: 'maths',
+    categoryLabel: 'Philosophy · Epistemology',
+    badgeEmoji: '∑',
+    badgeColor: '#1e40af',
+    description:
+      'Contrast between Indian algorithmic constructivism (Upapatti, Laghava, Pramana) and modern Western formal axiomatic systems across six philosophical dimensions with case studies.',
+    keywords: [
+      'epistemology',
+      'upapatti',
+      'western mathematics vs indian mathematics',
+      'axiomatic formalism',
+      'pramana',
+      'laghava',
+      'algorithmic constructivism',
+      'sacred geometry',
+      'bhavana'
+    ],
+    target: { view: 'indian-mathematics' },
   },
   {
     id: 'tool-sanskrit-assignment-evaluator',

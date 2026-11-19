@@ -34,6 +34,7 @@ const IksThinkLabsPage = lazy(() => import('./IksThinkLabsPage'));
 const VvmPreparationPage = lazy(() => import('./VvmPreparationPage'));
 const AboutEdNetPage = lazy(() => import('./AboutEdNetPage'));
 const SugrivaJourneyStudio = lazy(() => import('./SugrivaJourneyStudio'));
+const IndianMathematicsStudio = lazy(() => import('./IndianMathematicsStudio'));
 
 // Lazy-loaded dialogs & modals
 const AuthModal = lazy(() => import('./AuthModal'));
@@ -79,6 +80,7 @@ type DashboardView =
   | 'reader'
   | 'grammar'
   | 'vedic-maths'
+  | 'indian-mathematics'
   | 'quiz'
   | 'worksheets'
   | 'faq'
@@ -95,6 +97,16 @@ type DashboardView =
   | 'vvm'
   | 'sugriva-journey'
   | 'about';
+
+const INDIAN_MATH_PATHS = new Set([
+  '/indian-mathematics',
+  '/bharatiya-ganita',
+  '/history-of-indian-mathematics',
+  '/indian-math',
+  '/indian-maths',
+  '/indian-mathematics-timeline',
+  '/sequential-indian-math'
+]);
 
 const SUGRIVA_PATHS = new Set([
   '/sugriva-journey',
@@ -203,6 +215,10 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     title: 'Vedic Mathematics & Ancient Indian Computational Sciences (वैदिक-गणितम्): 16 Sutras & Sulba Geometry | EdNet Gurukul',
     desc: 'Master Vedic mathematics, Śulba Sūtras geometry, Kaṭapayādi cipher, 16 Vedic mental calculation sutras, and ancient Indian astronomical calendar science with interactive tools.',
   },
+  'indian-mathematics': {
+    title: 'Indian Mathematics (भारतीय-गणित-परम्परा) · Sequential Lineage & Epistemology | EdNet Gurukul',
+    desc: 'Explore the unbroken continuity of Indian contributions to mathematics from Vedic Sulba geometry and Pingala binary combinatorics to Kerala calculus and modern analysis, with foundational historiographical principles and epistemological comparisons.',
+  },
   grammar: {
     title: 'Pāṇinian Sanskrit Grammar & Computational Linguistics: 100 Shabdroop, 5 Lakāras & Sandhi | EdNet Learn',
     desc: 'Indian Knowledge Systems (IKS) Vyākaraṇa guide: Pāṇini Aṣṭādhyāyī formal rules, declensions (shabdroop), verb conjugations (dhaturoop), Sandhi engine, vibhakti charts, and phonetic audio.',
@@ -310,6 +326,7 @@ const pathToView = (pathname: string): DashboardView | null => {
   ) return 'cbse-guide';
   if (RESOURCES_PATHS.has(clean)) return 'resources';
   if (clean === '/worksheets' || clean === '/sanskrit-worksheets' || clean === '/samskrit-worksheets') return 'worksheets';
+  if (INDIAN_MATH_PATHS.has(clean)) return 'indian-mathematics';
   if (clean === '/vedic-maths' || clean === '/vedic-math') return 'vedic-maths';
   if (
     clean === '/grammar' ||
@@ -408,6 +425,7 @@ const viewToPath = (view: DashboardView): string => {
   if (view === 'resources') return '/sanskrit-resources';
   if (view === 'worksheets') return '/sanskrit-worksheets';
   if (view === 'vedic-maths') return '/vedic-maths';
+  if (view === 'indian-mathematics') return '/indian-mathematics';
   if (view === 'grammar') return '/sanskrit-grammar';
   if (view === 'dhatupatha') return '/sanskrit-dhatupatha';
   if (view === 'quiz') return '/sanskrit-quiz';
@@ -451,6 +469,7 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'reader' ||
   saved === 'grammar' ||
   saved === 'vedic-maths' ||
+  saved === 'indian-mathematics' ||
   saved === 'quiz' ||
   saved === 'worksheets' ||
   saved === 'faq' ||
@@ -473,7 +492,7 @@ const cleanWord = (value: string): string =>
 // Views guests may open in smart_freemium (SEO deep links must not bounce to home).
 const GUEST_FREE_VIEWS: ReadonlySet<string> = new Set([
   'home', 'faq', 'philosophy', 'cbse-guide', 'resources', 'dhatupatha', 'science-lab', 'certificate',
-  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'assignment-eval', 'intent-landing', 'iks', 'vvm', 'about',
+  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'indian-mathematics', 'assignment-eval', 'intent-landing', 'iks', 'vvm', 'about',
 ]);
 
 const Dashboard: React.FC = () => {
@@ -862,6 +881,11 @@ const Dashboard: React.FC = () => {
 
     if (target.view === 'reader' && target.lessonId) {
       openDeepakam(target.lessonId);
+      return;
+    }
+
+    if (target.view === 'indian-mathematics') {
+      navigateToView('indian-mathematics');
       return;
     }
 
@@ -1395,7 +1419,7 @@ const Dashboard: React.FC = () => {
     setIsMoreNavOpen(false);
     setIsSimNavOpen(false);
   }, [activeView]);
-  const moreViews: string[] = ['assignment-eval', 'resources', 'course', 'about'];
+  const moreViews: string[] = ['assignment-eval', 'resources', 'course', 'indian-mathematics', 'about'];
   return (
     <div className={`dashboard dashboard--${activeView}${activeView !== 'reader' ? ' dashboard--scrollable' : ''}${isAnalyzerCollapsed ? ' dashboard--analyzer-collapsed' : ''}`}>
       <header className="dashboard-header">
@@ -1641,6 +1665,7 @@ const Dashboard: React.FC = () => {
         {isMoreNavOpen && (
           <div className="dashboard-more-menu" role="menu" aria-label="More learning views">
             {([
+              ['indian-mathematics', '∑', 'भारतीय-गणितम्', 'Indian Math Lineage'],
               ['assignment-eval', '✍️', 'लेखन-शाला', 'Writing Studio'],
               ['resources', '📚', 'साधनानि', 'Free Resources'],
               ['course', '🧠', 'संस्कृत-चिन्तनम्', 'Thinking Course'],
@@ -1958,6 +1983,18 @@ const Dashboard: React.FC = () => {
             onGoBack={() => handleOpenGrammar('home')}
             onGoHome={() => navigateToView('home')}
           />
+        )}
+        {activeView === 'indian-mathematics' && (
+          <ErrorBoundary>
+            <Suspense fallback={<ViewLoader />}>
+              <IndianMathematicsStudio
+                onGoHome={() => setActiveView('home')}
+                onOpenVedicMaths={() => navigateToView('vedic-maths')}
+                onOpenPhilosophy={() => navigateToView('philosophy')}
+                onOpenScienceLab={(seg) => openScienceLab(seg)}
+              />
+            </Suspense>
+          </ErrorBoundary>
         )}
         {activeView === 'vedic-maths' && (
           <VedicMaths

@@ -23,6 +23,7 @@ const PATH_BY_VIEW = {
   grammar: '/grammar',
   dhatupatha: '/dhatupatha',
   'vedic-maths': '/vedic-maths',
+  'indian-mathematics': '/indian-mathematics',
   board: '/board',
   worksheets: '/worksheets',
   quiz: '/quiz',
@@ -51,6 +52,8 @@ const REQUIRED_PATHS = [
   '/grammar',
   '/dhatupatha',
   '/vedic-maths',
+  '/indian-mathematics',
+  '/bharatiya-ganita',
   '/board',
   '/worksheets',
   '/quiz',
@@ -285,6 +288,18 @@ function getRouteJsonLd(pathname, meta) {
       inLanguage: ['sa', 'en', 'hi'],
       learningResourceType: ['Course', 'Interactive Exercise'],
       teaches: '16 Vedic Mathematics Sutras, Indian Knowledge Systems (IKS), Mental Speed Calculation, Baudhayana Geometry, Sulba Sutras',
+    });
+  } else if (pathname === '/indian-mathematics' || pathname === '/bharatiya-ganita') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: 'Indian Mathematics (भारतीय-गणित-परम्परा) · Sequential Lineage & Epistemological Framework',
+      description: meta.desc,
+      url: canonical,
+      educationalLevel: 'Middle School, High School, University, Research Scholar',
+      inLanguage: ['sa', 'en', 'hi'],
+      learningResourceType: ['Historical Archive', 'Interactive Simulation', 'Epistemology Guide'],
+      teaches: 'History of Indian Mathematics, Baudhayana Sulba Sutras, Pingala Binary Prosody, Jaina Infinities, Aryabhata Kusumapura School, Brahmagupta Zero and Algebra, Bhaskara II Calculus Precursors, Kerala School of Mathematics and Infinite Series, Ramanujan',
     });
   } else if (pathname === '/vignana-lab' || pathname === '/science-lab' || pathname === '/science-lab-games') {
     schemas.push({
@@ -593,6 +608,8 @@ const ROUTE_KEYWORDS = {
   '/science-lab-games': 'Play 2 Learn free preschool games, early literacy early numeracy ages 3-6, Indian Knowledge Systems, IKS NEP 2020, Vedic sciences, Vedic science, ancient Indian sciences, Vaidika Vijnana, Kanada paramanu atomism, Vaisheshika physics, Aryabhata astronomy, Surya Siddhanta, Sulba Sutras geometry, Baudhayana theorem, Charaka Sushruta medical Sanskrit, Rasashastra metallurgy, Sanskrit STEM lab, science lab games, preschool science Sanskrit',
   '/course': 'Indian Knowledge Systems, IKS curriculum, Sanskrit thinking course, Sanskrit as a way of thinking, Samskrta Cintanam, Paninian generative grammar, sound as input, rules as processing, Vedic epistemology, Nyaya pramana, cognitive linguistics Sanskrit, Vedic sciences',
   '/vedic-maths': 'Vedic mathematics, Vaidika Ganitam, 16 Vedic math sutras, Sulba Sutras geometry, Baudhayana theorem, mental speed calculation, Lilavati Bhaskara, Pingala binary combinatorics, Katapayadi cipher, ancient Indian computational algorithms, Indian Knowledge Systems math',
+  '/indian-mathematics': 'Indian mathematics, Bharatiya Ganita, history of Indian mathematics, Baudhayana theorem, Sulba Sutras, Pingala binary, Jaina mathematics transfinite infinity, Aryabhata pi, Brahmagupta zero and negatives, Bhaskara II calculus precursors, Chakravala algorithm, Kerala school of mathematics, Madhava infinite series, Ramanujan, Upapatti vs axiomatic formalism, Indian Knowledge Systems math',
+  '/bharatiya-ganita': 'Bharatiya Ganita, Indian mathematics lineage, ancient Indian mathematicians, Aryabhata, Brahmagupta, Bhaskaracharya, Madhava, Ramanujan, Sulba Sutras, Vedic mathematics',
   '/philosophy': 'Indian Knowledge Systems philosophy, Sad Darsanas, Nyaya logic epistemology, Vaisheshika physics, Sankhya dualism, Yoga psychology, Mimamsa hermeneutics, Vedanta consciousness, Sanskrit in AI, cognitive science Sanskrit, computational linguistics',
   '/reader': 'NCERT Class 7 Sanskrit Deepakam, CBSE Sanskrit reader, Deepakam solutions, Indian Knowledge Systems literature, word by word Sanskrit translation, shlokas with meaning, CBSE Sanskrit blueprint, Sanskrit reading studio',
   '/grammar': 'Paninian Sanskrit grammar, Ashtadhyayi sutras, Indian Knowledge Systems vyakarana, Sanskrit shabdroop, 5 lakaras dhaturoop, sandhi rules, vibhakti charts, computational linguistics Sanskrit',
@@ -715,6 +732,10 @@ routes.push({ pathname: '/iks', ...iks });
 routes.push({ pathname: '/iks-labs', ...iks });
 routes.push({ pathname: '/vedic-sciences', ...iks });
 routes.push({ pathname: '/about-us', ...views.about });
+if (views['indian-mathematics']) {
+  routes.push({ pathname: '/bharatiya-ganita', ...views['indian-mathematics'] });
+  routes.push({ pathname: '/history-of-indian-mathematics', ...views['indian-mathematics'] });
+}
 if (views.vvm) {
   routes.push({ pathname: '/vvm-preparation', ...views.vvm });
 }

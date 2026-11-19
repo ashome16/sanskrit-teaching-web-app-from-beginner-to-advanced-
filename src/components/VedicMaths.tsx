@@ -33,11 +33,12 @@ import { PosterLightbox } from './PosterLightbox';
 import ArticleGamesHub from './ArticleGamesHub';
 import VedicSpeedTricksGame, { type VedicTrickCategory } from './VedicSpeedTricksGame';
 import VedicAltarMastery from './scienceLab/VedicAltarMastery';
+import IndianMathematicsStudio from './IndianMathematicsStudio';
 import '../styles/vedic-maths.css';
 import '../styles/vedic-speed-tricks-game.css';
 import '../styles/resources.css';
 
-export type VedicTab = 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'kerala' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay' | 'games';
+export type VedicTab = 'indian-math' | 'solvers' | 'articles' | 'zero' | 'fluid' | 'algebra' | 'geometry' | 'kerala' | 'parampara' | 'logic' | 'sutras' | 'quiz' | 'essay' | 'games';
 type SolverKey = 'ekadhikena' | 'nikhilam-sub' | 'nikhilam-mul' | 'urdhva' | 'ekanyunena' | 'antya' | 'beejank';
 
 export interface VedicMathsProps {
@@ -280,7 +281,7 @@ const VedicMaths: React.FC<VedicMathsProps> = ({
   const canDownload = canDownloadContent(currentUser, isAdminLoggedIn);
 
   const [activeTab, setActiveTab] = useState<VedicTab>(initialTab);
-  const [selectedTrack, setSelectedTrack] = useState<'all' | 'core' | 'domains' | 'heritage' | 'mastery'>('all');
+  const [selectedTrack, setSelectedTrack] = useState<'all' | 'lineage' | 'core' | 'domains' | 'heritage' | 'mastery'>('all');
 
   // Sub-Sutra Practice Worksheet States
   const [activeWorksheetSubSutraId, setActiveWorksheetSubSutraId] = useState<number | null>(null);
@@ -974,6 +975,63 @@ ${bodyHtml}
           </button>
         </div>
 
+        {/* Foundational Indian Mathematics Lineage & Epistemology Callout */}
+        <div
+          className="vedic-hero-lineage-callout"
+          style={{
+            margin: '1.25rem 0 1.75rem',
+            background: 'linear-gradient(135deg, #09261e 0%, #114234 50%, #1a5644 100%)',
+            border: '2px solid #f59e0b',
+            borderRadius: '14px',
+            padding: '1.25rem 1.75rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1.25rem',
+            boxShadow: '0 8px 24px rgba(9, 38, 30, 0.25)'
+          }}
+        >
+          <div style={{ maxWidth: '820px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.35rem' }}>
+              <span style={{ background: '#f59e0b', color: '#09261e', fontSize: '0.78rem', fontWeight: 800, padding: '0.2rem 0.6rem', borderRadius: '9999px', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                FOUNDATIONAL LINEAGE
+              </span>
+              <span style={{ color: '#fef3c7', fontSize: '0.88rem', fontWeight: 700 }}>
+                ॥ अविच्छिन्न-परम्परा · The Unbroken Continuum ॥
+              </span>
+            </div>
+            <h3 style={{ color: '#ffffff', fontSize: '1.25rem', fontWeight: 800, margin: '0.25rem 0 0.4rem', lineHeight: 1.3 }}>
+              Sequential Contribution of Indians to Mathematics &amp; Epistemology
+            </h3>
+            <p style={{ color: '#e2e8f0', fontSize: '0.92rem', margin: 0, lineHeight: 1.6 }}>
+              Comprehensive 12-era sequential historical lineage from Vedic geometry to modern analysis, featuring our <strong>Foundational Historiographical Disclaimer</strong> on manuscript survival vs. intellectual antiquity, and deep <strong>Epistemological Contrasts</strong> (Pramāṇa &amp; Upapatti vs. Western Axiomatic Formalism).
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              setActiveTab('indian-math');
+              const el = document.getElementById('vedic-tabs');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            style={{
+              background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+              color: '#ffffff',
+              fontWeight: 800,
+              fontSize: '0.95rem',
+              padding: '0.75rem 1.4rem',
+              borderRadius: '8px',
+              border: 'none',
+              cursor: 'pointer',
+              boxShadow: '0 4px 14px rgba(217, 119, 6, 0.4)',
+              whiteSpace: 'nowrap',
+              transition: 'transform 0.2s ease'
+            }}
+          >
+            Explore 12 Historical Eras &rarr;
+          </button>
+        </div>
 
         {/* Tab Navigation & Curriculum Track Guide */}
         <div className="vedic-curriculum-nav" id="vedic-tabs">
@@ -985,7 +1043,15 @@ ${bodyHtml}
               onClick={() => setSelectedTrack('all')}
             >
               <span>🌟 Complete Curriculum</span>
-              <span className="vedic-track-filter-count">10 Modules</span>
+              <span className="vedic-track-filter-count">11 Modules</span>
+            </button>
+            <button
+              type="button"
+              className={`vedic-track-filter-btn${selectedTrack === 'lineage' ? ' active' : ''}`}
+              onClick={() => setSelectedTrack('lineage')}
+            >
+              <span>🏛️ 0. Historical Lineage</span>
+              <span className="vedic-track-filter-count">1</span>
             </button>
             <button
               type="button"
@@ -1023,6 +1089,45 @@ ${bodyHtml}
 
           {/* Grouped Tracks Grid */}
           <div className="vedic-tracks-grid">
+            {(selectedTrack === 'all' || selectedTrack === 'lineage') && (
+              <div className="vedic-track-card" style={{ border: '2px solid #f59e0b', background: '#fffdf9' }}>
+                <div className="vedic-track-header">
+                  <div className="vedic-track-badge" style={{ background: '#f59e0b', color: '#09261e', fontWeight: 800 }}>
+                    Track 0 · परम्परा
+                  </div>
+                  <div className="vedic-track-title-wrap">
+                    <h3 className="vedic-track-title">Sequential Indian Mathematics &amp; Epistemology</h3>
+                    <span className="vedic-track-sa">भारतीय-गणित-परम्परा कालक्रम-निर्णयः च</span>
+                  </div>
+                  <p className="vedic-track-desc">
+                    12 sequential historical eras (Baudhāyana to Rāmānujan), foundational manuscript survival disclaimer, and Indian constructive Upapatti vs. Western formal axioms.
+                  </p>
+                </div>
+                <div className="vedic-track-btns">
+                  <button
+                    type="button"
+                    className={`vedic-tab-btn${activeTab === 'indian-math' ? ' active' : ''}`}
+                    onClick={() => {
+                      setActiveTab('indian-math');
+                      const el = document.getElementById('vedic-tabs');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <span className="vedic-tab-num">0</span>
+                    <span className="vedic-tab-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                      </svg>
+                    </span>
+                    <div className="vedic-tab-content">
+                      <span className="vedic-tab-title">12 Eras &amp; Epistemological Framework</span>
+                      <span className="vedic-tab-sub">Sulba · Pingala · Aryabhata · Kerala · Ramanujan</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            )}
             {(selectedTrack === 'all' || selectedTrack === 'core') && (
               <div className="vedic-track-card">
                 <div className="vedic-track-header">
@@ -1280,6 +1385,16 @@ ${bodyHtml}
 
       {/* Main Content Area */}
       <main className="vedic-content-wrap">
+
+        {activeTab === 'indian-math' && (
+          <div className="vedic-indian-math-tab-wrapper" style={{ marginTop: '0.5rem' }}>
+            <IndianMathematicsStudio
+              onGoHome={onGoHome}
+              onOpenVedicMaths={() => setActiveTab('sutras')}
+              onOpenPhilosophy={onOpenPhilosophy}
+            />
+          </div>
+        )}
 
         {activeTab === 'sutras' && (
           <div>
