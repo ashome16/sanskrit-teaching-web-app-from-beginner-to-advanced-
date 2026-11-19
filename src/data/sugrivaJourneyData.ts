@@ -1103,6 +1103,8 @@ export const COLLECTIBLE_CARDS_DECK: CollectibleCard[] = [
     terrainType: 'river',
     hint: 'A mighty northern river fans out into the western ocean, guiding merchant sails.',
     graphicDesc: 'Wide turquoise estuary framed by desert dunes.',
+    frontImage: '/images/sugriva-cards/card-08-sindhu-delta-front.jpg',
+    backImage: '/images/sugriva-cards/card-08-sindhu-delta-back.jpg',
     modernMatch: 'Indus River Delta',
     whyItChanged: 'Shifting river channels and coastal sediment pushed the shoreline kilometers seaward.',
     satelliteTag: 'Indus River Delta · Arabian Sea Estuary',
