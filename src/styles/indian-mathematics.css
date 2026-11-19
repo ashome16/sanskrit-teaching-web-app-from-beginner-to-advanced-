@@ -1124,3 +1124,197 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   ADVANCED COMPUTATIONAL ENGINES: ALTARS, KUTTAKA, CHAKRAVALA & WORKBENCH
+   ========================================================================== */
+.im-altar-selector-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  background: #f1f5f9;
+  padding: 0.35rem;
+  border-radius: 8px;
+}
+
+.im-altar-btn {
+  padding: 0.45rem 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.im-altar-btn:hover {
+  color: #0c4a38;
+  background: rgba(12, 74, 56, 0.06);
+}
+
+.im-altar-btn.active {
+  background: #0c4a38;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(12, 74, 56, 0.25);
+}
+
+.im-altar-svg-wrap {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.im-altar-svg {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  overflow: visible;
+}
+
+.im-preset-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.75rem 0 1rem;
+}
+
+.im-preset-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.im-preset-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.im-preset-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.im-preset-btn.active {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #f59e0b;
+  font-weight: 700;
+}
+
+.im-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.im-calc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+  background: #ffffff;
+}
+
+.im-calc-table th {
+  background: #f8fafc;
+  color: #0c4a38;
+  font-weight: 700;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.im-calc-table td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+}
+
+.im-calc-table tr:hover td {
+  background: #f8fafc;
+}
+
+.im-calc-table tr.highlight-row td {
+  background: #ecfdf5;
+  font-weight: 700;
+  color: #065f46;
+}
+
+.im-pedagogical-callout {
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  padding: 0.85rem 1.15rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+  color: #78350f;
+  line-height: 1.6;
+}
+
+.im-pedagogical-callout strong {
+  color: #92400e;
+}
+
+/* Workbench Subnavigation in Tab 4 */
+.im-workbench-nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.im-workbench-pill {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.im-workbench-pill:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0c4a38;
+}
+
+.im-workbench-pill.active {
+  background: #0c4a38;
+  border-color: #0c4a38;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(12, 74, 56, 0.25);
+}
+

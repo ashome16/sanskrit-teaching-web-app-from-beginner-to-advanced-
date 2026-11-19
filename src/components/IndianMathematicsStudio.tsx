@@ -5,6 +5,9 @@ import {
   INDIAN_MATH_ERAS,
   type IndianMathEra
 } from '../data/indianMathematicsData';
+import { SulbaAltarStudio } from './indian-math/SulbaAltarStudio';
+import { KuttakaSolver } from './indian-math/KuttakaSolver';
+import { ChakravalaEngine } from './indian-math/ChakravalaEngine';
 import '../styles/indian-mathematics.css';
 
 export interface IndianMathematicsStudioProps {
@@ -34,6 +37,7 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
     : 0;
   const [selectedEraIndex, setSelectedEraIndex] = useState<number>(initialIndex >= 0 ? initialIndex : 0);
   const [expandedPillar, setExpandedPillar] = useState<string | null>(null);
+  const [workbenchSim, setWorkbenchSim] = useState<string>('kuttaka');
 
   // Update selected era if initialEraId prop changes
   useEffect(() => {
@@ -50,10 +54,6 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
   // Current active era
   const currentEra: IndianMathEra = INDIAN_MATH_ERAS[selectedEraIndex] || INDIAN_MATH_ERAS[0];
 
-  // Interactive Demo State: Era 1 (Baudhayana)
-  const [baudhayanaBase, setBaudhayanaBase] = useState<number>(3);
-  const [baudhayanaHeight, setBaudhayanaHeight] = useState<number>(4);
-
   // Interactive Demo State: Era 2 (Pingala Meru-Prastara)
   const [meruRows, setMeruRows] = useState<number>(6);
 
@@ -63,11 +63,6 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
 
   // Interactive Demo State: Era 4 (Bakhshali Sqrt)
   const [bakhshaliA, setBakhshaliA] = useState<number>(41);
-
-  // Interactive Demo State: Era 5 (Aryabhata Kuttaka)
-  const [kuttakaA, setKuttakaA] = useState<number>(137);
-  const [kuttakaB, setKuttakaB] = useState<number>(60);
-  const [kuttakaC, setKuttakaC] = useState<number>(1);
 
   // Interactive Demo State: Era 6 (Bhaskara I Sine)
   const [bhaskaraAngle, setBhaskaraAngle] = useState<number>(30);
@@ -82,9 +77,6 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
   const [quadCoeffA, setQuadCoeffA] = useState<number>(1);
   const [quadCoeffB, setQuadCoeffB] = useState<number>(-7);
   const [quadCoeffC, setQuadCoeffC] = useState<number>(12);
-
-  // Interactive Demo State: Era 9 (Bhaskara II Chakravala)
-  const [chakravalaN, setChakravalaN] = useState<number>(61);
 
   // Interactive Demo State: Era 11 (Kerala Madhava Series)
   const [madhavaTerms, setMadhavaTerms] = useState<number>(10);
@@ -650,50 +642,7 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
 
               {/* Embedded Interactive Demonstrator */}
               {currentEra.interactiveDemoId === 'baudhayana' && (
-                <div className="im-interactive-box">
-                  <div className="im-interactive-header">
-                    <h5 className="im-interactive-title">Baudhāyana Geometric Triple & √2 Approximation Simulator</h5>
-                    <span className="im-interactive-badge">Era 1 Simulator</span>
-                  </div>
-                  <div className="im-control-group">
-                    <div className="im-control-item">
-                      <label className="im-control-label">Base Pārśvamānī (a):</label>
-                      <input
-                        type="number"
-                        min="1"
-                        max="100"
-                        className="im-input"
-                        value={baudhayanaBase}
-                        onChange={(e) => setBaudhayanaBase(Number(e.target.value))}
-                      />
-                    </div>
-                    <div className="im-control-item">
-                      <label className="im-control-label">Height Tiryaṅmānī (b):</label>
-                      <input
-                        type="number"
-                        min="1"
-                        max="100"
-                        className="im-input"
-                        value={baudhayanaHeight}
-                        onChange={(e) => setBaudhayanaHeight(Number(e.target.value))}
-                      />
-                    </div>
-                  </div>
-                  <div className="im-result-panel">
-                    <div className="im-result-value-row">
-                      <span className="im-result-label">Diagonal Akṣṇayā Rajjuḥ (c = √(a² + b²)):</span>
-                      <span className="im-result-val">
-                        √({baudhayanaBase}² + {baudhayanaHeight}²) = {Math.sqrt(baudhayanaBase * baudhayanaBase + baudhayanaHeight * baudhayanaHeight).toFixed(4)}
-                      </span>
-                    </div>
-                    <div className="im-result-value-row">
-                      <span className="im-result-label">Baudhāyana √2 Formula (1 + 1/3 + 1/12 - 1/408):</span>
-                      <span className="im-result-val highlight">
-                        577 / 408 = {(577 / 408).toFixed(7)} (Error: {(Math.abs(577 / 408 - Math.SQRT2) * 100).toFixed(6)}%)
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <SulbaAltarStudio />
               )}
 
               {currentEra.interactiveDemoId === 'pingala' && (
@@ -820,57 +769,7 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
               )}
 
               {currentEra.interactiveDemoId === 'aryabhata' && (
-                <div className="im-interactive-box">
-                  <div className="im-interactive-header">
-                    <h5 className="im-interactive-title">Āryabhaṭa’s π Ratio &amp; Planetary Kuṭṭaka Pulverizer</h5>
-                    <span className="im-interactive-badge">Era 5 Simulator</span>
-                  </div>
-                  <div className="im-control-group">
-                    <div className="im-control-item">
-                      <label className="im-control-label">Dividend a:</label>
-                      <input
-                        type="number"
-                        className="im-input"
-                        value={kuttakaA}
-                        onChange={(e) => setKuttakaA(Number(e.target.value))}
-                      />
-                    </div>
-                    <div className="im-control-item">
-                      <label className="im-control-label">Divisor b:</label>
-                      <input
-                        type="number"
-                        className="im-input"
-                        value={kuttakaB}
-                        onChange={(e) => setKuttakaB(Number(e.target.value))}
-                      />
-                    </div>
-                    <div className="im-control-item">
-                      <label className="im-control-label">Constant c:</label>
-                      <input
-                        type="number"
-                        className="im-input"
-                        value={kuttakaC}
-                        onChange={(e) => setKuttakaC(Number(e.target.value))}
-                      />
-                    </div>
-                  </div>
-                  <div className="im-result-panel">
-                    <div className="im-result-value-row">
-                      <span className="im-result-label">Āryabhaṭa’s Ratio: 62,832 / 20,000:</span>
-                      <span className="im-result-val highlight">3.1416 (Āsanna / Incommensurable)</span>
-                    </div>
-                    <div className="im-result-value-row">
-                      <span className="im-result-label">Kuṭṭaka Equation Formulation:</span>
-                      <span className="im-result-val">
-                        {kuttakaA}x + {kuttakaC} = {kuttakaB}y
-                      </span>
-                    </div>
-                    <div className="im-result-value-row">
-                      <span className="im-result-label">True π Value:</span>
-                      <span className="im-result-val">{Math.PI.toFixed(6)} (Error &lt; 0.002%)</span>
-                    </div>
-                  </div>
-                </div>
+                <KuttakaSolver />
               )}
 
               {currentEra.interactiveDemoId === 'bhaskara1' && (
@@ -1051,53 +950,7 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
               )}
 
               {currentEra.interactiveDemoId === 'bhaskara2' && (
-                <div className="im-interactive-box">
-                  <div className="im-interactive-header">
-                    <h5 className="im-interactive-title">Bhāskara II Chakravāla Cyclic Solver for Nx² + 1 = y²</h5>
-                    <span className="im-interactive-badge">Era 9 Simulator</span>
-                  </div>
-                  <div className="im-control-group">
-                    <div className="im-control-item">
-                      <label className="im-control-label">Parameter N (e.g. 61, 67, 13, 7):</label>
-                      <input
-                        type="number"
-                        min="2"
-                        max="100"
-                        className="im-input"
-                        value={chakravalaN}
-                        onChange={(e) => setChakravalaN(Number(e.target.value))}
-                      />
-                    </div>
-                  </div>
-                  <div className="im-result-panel">
-                    <div className="im-result-value-row">
-                      <span className="im-result-label">Target Equation:</span>
-                      <span className="im-result-val highlight">
-                        {chakravalaN}x² + 1 = y²
-                      </span>
-                    </div>
-                    <div className="im-result-value-row">
-                      <span className="im-result-label">Smallest Integer Solution:</span>
-                      <span className="im-result-val">
-                        {chakravalaN === 61
-                          ? 'x = 226,153,980  ·  y = 1,766,319,049 (Fermat 1657 Challenge)'
-                          : chakravalaN === 67
-                          ? 'x = 5,967  ·  y = 48,842'
-                          : chakravalaN === 13
-                          ? 'x = 180  ·  y = 649'
-                          : chakravalaN === 7
-                          ? 'x = 3  ·  y = 8'
-                          : `Computed via Bhāskara II Bhāvanā cyclic algorithm`}
-                      </span>
-                    </div>
-                    <div className="im-result-value-row">
-                      <span className="im-result-label">Differential Calculus Insight:</span>
-                      <span className="im-result-val" style={{ color: '#0c4a38' }}>
-                        Tātkālikī Gati (dθ/dt) vanishes at apogee: d(sin θ) = cos θ · dθ
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <ChakravalaEngine />
               )}
 
               {currentEra.interactiveDemoId === 'narayana' && (
@@ -1207,51 +1060,491 @@ export const IndianMathematicsStudio: React.FC<IndianMathematicsStudioProps> = (
       )}
 
       {/* =========================================================================
-          TAB 4: ALL INTERACTIVE SIMULATORS HUB
+          TAB 4: ALL INTERACTIVE SIMULATORS HUB & WORKBENCH
          ========================================================================= */}
       {activeTab === 'solvers' && (
         <section aria-label="Interactive Mathematical Solvers Hub">
           <div className="im-section-intro">
-            <h3 className="im-section-title">Interactive Algorithmic Simulators (करण-शाला)</h3>
+            <h3 className="im-section-title">Interactive Algorithmic Workbench (करण-शाला)</h3>
             <p className="im-section-desc">
-              Experience the computational engines of ancient and classical Indian mathematics: evaluate Baudhāyana’s square root of 2, generate Piṅgala’s Pascal triangle, calculate Bhāskara’s rational sine, and verify Mādhava’s infinite series corrections.
+              Directly experiment with the algorithmic engines of Indian mathematics: solve linear Diophantine equations with Āryabhaṭa’s Kuṭṭaka, crack quadratic indeterminate equations with Bhāskara II’s Chakravāla, construct sacred fire altars with Baudhāyana, generate Piṅgala’s binary combinations, and verify Mādhava’s calculus series with remainder terms.
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-            {/* Quick jump cards to all eras */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
-              {INDIAN_MATH_ERAS.filter((e) => e.interactiveDemoId).map((era) => (
-                <div
-                  key={era.id}
-                  style={{
-                    background: '#ffffff',
-                    border: '1px solid #cbd5e1',
-                    borderRadius: '10px',
-                    padding: '1.25rem',
-                    cursor: 'pointer',
-                    boxShadow: '0 2px 6px rgba(0,0,0,0.04)'
-                  }}
-                  onClick={() => {
-                    setSelectedEraIndex(era.eraNumber - 1);
-                    setActiveTab('timeline');
-                  }}
-                >
-                  <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#f59e0b', textTransform: 'uppercase' }}>
-                    Era {era.eraNumber} Simulator
-                  </div>
-                  <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0c4a38', margin: '0.25rem 0' }}>
-                    {era.titleEn}
-                  </h4>
-                  <p style={{ fontSize: '0.85rem', color: '#64748b', margin: '0 0 0.5rem' }}>
-                    {era.breakthroughs[0]?.title}
-                  </p>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0c4a38' }}>
-                    Launch Simulator &rarr;
-                  </span>
+          {/* Workbench Pill Navigation Bar */}
+          <div className="im-workbench-nav" role="tablist" aria-label="Computational Workbench Simulators">
+            {[
+              { id: 'kuttaka', label: '1. Āryabhaṭa Kuṭṭaka (ax + c = by)', era: 'Era 5' },
+              { id: 'chakravala', label: '2. Bhāskara II Chakravāla (Nx² + 1 = y²)', era: 'Era 9' },
+              { id: 'altars', label: '3. Baudhāyana Sacred Altars & √2', era: 'Era 1' },
+              { id: 'pingala', label: '4. Piṅgala Meru (Pascal Triangle)', era: 'Era 2' },
+              { id: 'bakhshali', label: '5. Bakhshālī Precision √A', era: 'Era 4' },
+              { id: 'bhaskara1', label: '6. Bhāskara I Rational Sine', era: 'Era 6' },
+              { id: 'brahmagupta', label: '7. Brahmagupta Cyclic Quad', era: 'Era 7' },
+              { id: 'sridhara', label: '8. Śrīdhara Quadratic Formula', era: 'Era 8' },
+              { id: 'madhava', label: '9. Mādhava π Infinite Series', era: 'Era 11' },
+              { id: 'narayana', label: '10. Nārāyaṇa Pan-Diagonal Magic Square', era: 'Era 10' },
+              { id: 'ramanujan', label: '11. Rāmānujan Taxicab 1729 & 1/π', era: 'Era 12' },
+              { id: 'jaina', label: '12. Jaina Combinations (ⁿCᵣ)', era: 'Era 3' },
+            ].map((sim) => (
+              <button
+                key={sim.id}
+                type="button"
+                className={`im-workbench-pill ${workbenchSim === sim.id ? 'active' : ''}`}
+                onClick={() => setWorkbenchSim(sim.id)}
+                role="tab"
+                aria-selected={workbenchSim === sim.id}
+              >
+                <span>{sim.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Active Workbench Simulator Display */}
+          <div style={{ marginBottom: '3rem' }}>
+            {workbenchSim === 'kuttaka' && <KuttakaSolver />}
+            {workbenchSim === 'chakravala' && <ChakravalaEngine />}
+            {workbenchSim === 'altars' && <SulbaAltarStudio />}
+
+            {workbenchSim === 'pingala' && (
+              <div className="im-interactive-box">
+                <div className="im-interactive-header">
+                  <h5 className="im-interactive-title">Piṅgala Meru-Prastāra (Pascal’s Triangle) Generator</h5>
+                  <span className="im-interactive-badge">Era 2 Simulator</span>
                 </div>
-              ))}
-            </div>
+                <div className="im-control-group">
+                  <div className="im-control-item">
+                    <label className="im-control-label">Number of Rows (n):</label>
+                    <input
+                      type="number"
+                      min="1"
+                      max="9"
+                      className="im-input"
+                      value={meruRows}
+                      onChange={(e) => setMeruRows(Number(e.target.value))}
+                    />
+                  </div>
+                </div>
+                <div className="im-meru-triangle">
+                  {generateMeruTriangle(meruRows).map((row, rIdx) => (
+                    <div key={rIdx} className="im-meru-row">
+                      {row.map((val, cIdx) => (
+                        <div key={cIdx} className="im-meru-cell">
+                          {val}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {workbenchSim === 'bakhshali' && (
+              <div className="im-interactive-box">
+                <div className="im-interactive-header">
+                  <h5 className="im-interactive-title">Bakhshālī High-Precision Square Root Simulator</h5>
+                  <span className="im-interactive-badge">Era 4 Simulator</span>
+                </div>
+                <div className="im-control-group">
+                  <div className="im-control-item">
+                    <label className="im-control-label">Number to Root (A):</label>
+                    <input
+                      type="number"
+                      min="2"
+                      max="1000"
+                      className="im-input"
+                      value={bakhshaliA}
+                      onChange={(e) => setBakhshaliA(Number(e.target.value))}
+                    />
+                  </div>
+                </div>
+                {(() => {
+                  const res = computeBakhshaliSqrt(bakhshaliA);
+                  return (
+                    <div className="im-result-panel">
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Decomposition A = a² + r:</span>
+                        <span className="im-result-val">
+                          {bakhshaliA} = {res.a}² + {res.r}
+                        </span>
+                      </div>
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Bakhshālī Quadratic Approximation:</span>
+                        <span className="im-result-val highlight">{res.approx.toFixed(8)}</span>
+                      </div>
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">True Square Root Value (IEEE-754):</span>
+                        <span className="im-result-val">{res.trueVal.toFixed(8)}</span>
+                      </div>
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Relative Error Percentage:</span>
+                        <span className="im-result-val" style={{ color: '#16a34a' }}>
+                          {res.errorPct.toExponential(3)}%
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {workbenchSim === 'bhaskara1' && (
+              <div className="im-interactive-box">
+                <div className="im-interactive-header">
+                  <h5 className="im-interactive-title">Bhāskara I Rational Sine Formula Visualizer</h5>
+                  <span className="im-interactive-badge">Era 6 Simulator</span>
+                </div>
+                <div className="im-control-group">
+                  <div className="im-control-item">
+                    <label className="im-control-label">Angle in Degrees (0° to 180°):</label>
+                    <input
+                      type="range"
+                      min="0"
+                      max="180"
+                      value={bhaskaraAngle}
+                      onChange={(e) => setBhaskaraAngle(Number(e.target.value))}
+                      style={{ width: '220px' }}
+                    />
+                    <span style={{ fontWeight: 700, color: '#0c4a38' }}>{bhaskaraAngle}°</span>
+                  </div>
+                </div>
+                {(() => {
+                  const res = computeBhaskaraSine(bhaskaraAngle);
+                  return (
+                    <div className="im-result-panel">
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Bhāskara I Formula Value:</span>
+                        <span className="im-result-val highlight">{res.bhaskaraVal.toFixed(6)}</span>
+                      </div>
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">True Math.sin({bhaskaraAngle}°):</span>
+                        <span className="im-result-val">{res.trueVal.toFixed(6)}</span>
+                      </div>
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Relative Error:</span>
+                        <span className="im-result-val" style={{ color: '#16a34a' }}>
+                          {res.errorPct.toFixed(3)}% (Always &lt; 1.9%)
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {workbenchSim === 'brahmagupta' && (
+              <div className="im-interactive-box">
+                <div className="im-interactive-header">
+                  <h5 className="im-interactive-title">Brahmagupta’s Cyclic Quadrilateral Area Calculator</h5>
+                  <span className="im-interactive-badge">Era 7 Simulator</span>
+                </div>
+                <div className="im-control-group">
+                  <div className="im-control-item">
+                    <label className="im-control-label">Side a:</label>
+                    <input
+                      type="number"
+                      min="1"
+                      max="100"
+                      className="im-input"
+                      value={quadA}
+                      onChange={(e) => setQuadA(Number(e.target.value))}
+                    />
+                  </div>
+                  <div className="im-control-item">
+                    <label className="im-control-label">Side b:</label>
+                    <input
+                      type="number"
+                      min="1"
+                      max="100"
+                      className="im-input"
+                      value={quadB}
+                      onChange={(e) => setQuadB(Number(e.target.value))}
+                    />
+                  </div>
+                  <div className="im-control-item">
+                    <label className="im-control-label">Side c:</label>
+                    <input
+                      type="number"
+                      min="1"
+                      max="100"
+                      className="im-input"
+                      value={quadC}
+                      onChange={(e) => setQuadC(Number(e.target.value))}
+                    />
+                  </div>
+                  <div className="im-control-item">
+                    <label className="im-control-label">Side d:</label>
+                    <input
+                      type="number"
+                      min="1"
+                      max="100"
+                      className="im-input"
+                      value={quadD}
+                      onChange={(e) => setQuadD(Number(e.target.value))}
+                    />
+                  </div>
+                </div>
+                {(() => {
+                  const res = computeBrahmaguptaQuad(quadA, quadB, quadC, quadD);
+                  return (
+                    <div className="im-result-panel">
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Semi-perimeter s = (a+b+c+d)/2:</span>
+                        <span className="im-result-val">{res.s}</span>
+                      </div>
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Area = √[(s-a)(s-b)(s-c)(s-d)]:</span>
+                        <span className="im-result-val highlight">
+                          {res.valid ? `${res.area.toFixed(2)} sq units` : 'Invalid Quadrilateral'}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {workbenchSim === 'sridhara' && (
+              <div className="im-interactive-box">
+                <div className="im-interactive-header">
+                  <h5 className="im-interactive-title">Śrīdharācārya Method Quadratic Solver</h5>
+                  <span className="im-interactive-badge">Era 8 Simulator</span>
+                </div>
+                <div className="im-control-group">
+                  <div className="im-control-item">
+                    <label className="im-control-label">Coefficient a:</label>
+                    <input
+                      type="number"
+                      className="im-input"
+                      value={quadCoeffA}
+                      onChange={(e) => setQuadCoeffA(Number(e.target.value))}
+                    />
+                  </div>
+                  <div className="im-control-item">
+                    <label className="im-control-label">Coefficient b:</label>
+                    <input
+                      type="number"
+                      className="im-input"
+                      value={quadCoeffB}
+                      onChange={(e) => setQuadCoeffB(Number(e.target.value))}
+                    />
+                  </div>
+                  <div className="im-control-item">
+                    <label className="im-control-label">Coefficient c:</label>
+                    <input
+                      type="number"
+                      className="im-input"
+                      value={quadCoeffC}
+                      onChange={(e) => setQuadCoeffC(Number(e.target.value))}
+                    />
+                  </div>
+                </div>
+                {(() => {
+                  const res = computeSridharaRoots(quadCoeffA, quadCoeffB, quadCoeffC);
+                  return (
+                    <div className="im-result-panel">
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Equation:</span>
+                        <span className="im-result-val">
+                          {quadCoeffA}x² + ({quadCoeffB})x + ({quadCoeffC}) = 0
+                        </span>
+                      </div>
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Discriminant (b² - 4ac):</span>
+                        <span className="im-result-val">{res.disc}</span>
+                      </div>
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Roots via Śrīdhara Rule:</span>
+                        <span className="im-result-val highlight">
+                          {res.real ? `x₁ = ${res.r1},  x₂ = ${res.r2}` : 'Complex Roots'}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {workbenchSim === 'madhava' && (
+              <div className="im-interactive-box">
+                <div className="im-interactive-header">
+                  <h5 className="im-interactive-title">Mādhava Infinite Series for π with Remainder Correction</h5>
+                  <span className="im-interactive-badge">Era 11 Simulator</span>
+                </div>
+                <div className="im-control-group">
+                  <div className="im-control-item">
+                    <label className="im-control-label">Terms Evaluated (n):</label>
+                    <input
+                      type="number"
+                      min="2"
+                      max="50"
+                      className="im-input"
+                      value={madhavaTerms}
+                      onChange={(e) => setMadhavaTerms(Number(e.target.value))}
+                    />
+                  </div>
+                </div>
+                {(() => {
+                  const res = computeMadhavaPi(madhavaTerms);
+                  return (
+                    <div className="im-result-panel">
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Raw Leibniz/Gregory Sum (4 ∑ (-1)ⁿ/(2n+1)):</span>
+                        <span className="im-result-val">{res.rawPi.toFixed(7)} (Err: {res.rawError.toFixed(4)})</span>
+                      </div>
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">Mādhava with Remainder Term R_n:</span>
+                        <span className="im-result-val highlight">
+                          {res.correctedPi.toFixed(9)} (Err: {res.correctedError.toExponential(3)})
+                        </span>
+                      </div>
+                      <div className="im-result-value-row">
+                        <span className="im-result-label">True π Constant:</span>
+                        <span className="im-result-val">{res.truePi.toFixed(9)}</span>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {workbenchSim === 'narayana' && (
+              <div className="im-interactive-box">
+                <div className="im-interactive-header">
+                  <h5 className="im-interactive-title">Nārāyaṇa Paṇḍita Pan-Diagonal 4×4 Magic Square</h5>
+                  <span className="im-interactive-badge">Era 10 Simulator</span>
+                </div>
+                <p style={{ fontSize: '0.88rem', color: '#475569', margin: '0 0 1rem' }}>
+                  Every row, column, main diagonal, broken diagonal, and 2×2 corner quadrant sums to exactly <strong>34</strong>:
+                </p>
+                <div className="im-magic-square-grid">
+                  {[
+                    [7, 12, 1, 14],
+                    [2, 13, 8, 11],
+                    [16, 3, 10, 5],
+                    [9, 6, 15, 4]
+                  ].flat().map((num, i) => (
+                    <div key={i} className="im-magic-cell">
+                      {num}
+                    </div>
+                  ))}
+                </div>
+                <div className="im-result-panel" style={{ marginTop: '1rem' }}>
+                  <div className="im-result-value-row">
+                    <span className="im-result-label">Magic Constant M(4):</span>
+                    <span className="im-result-val highlight">34 in all 16 directions</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {workbenchSim === 'ramanujan' && (
+              <div className="im-interactive-box">
+                <div className="im-interactive-header">
+                  <h5 className="im-interactive-title">Śrīnivāsa Rāmānujan Taxicab 1729 &amp; 1/π Series</h5>
+                  <span className="im-interactive-badge">Era 12 Simulator</span>
+                </div>
+                <div className="im-result-panel">
+                  <div className="im-result-value-row">
+                    <span className="im-result-label">Hardy-Ramanujan Taxicab Number:</span>
+                    <span className="im-result-val highlight">1729</span>
+                  </div>
+                  <div className="im-result-value-row">
+                    <span className="im-result-label">Pair 1: 1³ + 12³:</span>
+                    <span className="im-result-val">1 + 1728 = 1729</span>
+                  </div>
+                  <div className="im-result-value-row">
+                    <span className="im-result-label">Pair 2: 9³ + 10³:</span>
+                    <span className="im-result-val">729 + 1000 = 1729</span>
+                  </div>
+                  <div className="im-result-value-row">
+                    <span className="im-result-label">Ramanujan 1/π Formula (First Term k = 0):</span>
+                    <span className="im-result-val highlight">
+                      1/π ≈ (2√2 / 9801) × 1103 = 0.318309886... &rarr; π ≈ 3.14159273 (Accurate to 6 decimals in 1 step!)
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {workbenchSim === 'jaina' && (
+              <div className="im-interactive-box">
+                <div className="im-interactive-header">
+                  <h5 className="im-interactive-title">Jaina Vikalpa Combinations Calculator (ⁿCᵣ)</h5>
+                  <span className="im-interactive-badge">Era 3 Simulator</span>
+                </div>
+                <div className="im-control-group">
+                  <div className="im-control-item">
+                    <label className="im-control-label">Total Elements (n):</label>
+                    <input
+                      type="number"
+                      min="1"
+                      max="20"
+                      className="im-input"
+                      value={jainaN}
+                      onChange={(e) => setJainaN(Number(e.target.value))}
+                    />
+                  </div>
+                  <div className="im-control-item">
+                    <label className="im-control-label">Chosen Elements (r):</label>
+                    <input
+                      type="number"
+                      min="0"
+                      max={jainaN}
+                      className="im-input"
+                      value={jainaR}
+                      onChange={(e) => setJainaR(Number(e.target.value))}
+                    />
+                  </div>
+                </div>
+                <div className="im-result-panel">
+                  <div className="im-result-value-row">
+                    <span className="im-result-label">Combinatorial Permutations (ⁿCᵣ):</span>
+                    <span className="im-result-val highlight">
+                      {computeCombinations(jainaN, jainaR)} possible combinations
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Quick jump cards to all eras */}
+          <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0c4a38', marginBottom: '1rem' }}>
+            Browse All 12 Eras in the Sequential Historical Continuum
+          </h4>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+            {INDIAN_MATH_ERAS.map((era) => (
+              <div
+                key={era.id}
+                style={{
+                  background: '#ffffff',
+                  border: '1px solid #cbd5e1',
+                  borderRadius: '10px',
+                  padding: '1.25rem',
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 6px rgba(0,0,0,0.04)',
+                  transition: 'all 0.2s ease',
+                }}
+                onClick={() => {
+                  setSelectedEraIndex(era.eraNumber - 1);
+                  setActiveTab('timeline');
+                }}
+              >
+                <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#f59e0b', textTransform: 'uppercase' }}>
+                  Era {era.eraNumber} &bull; {era.centuryLabel}
+                </div>
+                <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0c4a38', margin: '0.25rem 0' }}>
+                  {era.titleEn}
+                </h4>
+                <p style={{ fontSize: '0.85rem', color: '#64748b', margin: '0 0 0.5rem' }}>
+                  {era.breakthroughs[0]?.title}
+                </p>
+                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0c4a38' }}>
+                  Open Era {era.eraNumber} in Lineage &rarr;
+                </span>
+              </div>
+            ))}
           </div>
         </section>
       )}
