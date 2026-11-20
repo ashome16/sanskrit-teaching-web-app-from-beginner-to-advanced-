@@ -3,6 +3,7 @@ import '../styles/iks-think-labs.css';
 import { IksLabGraphic } from './scienceLab/IksLabSchematics';
 import { IKS_LAB_QUIZZES } from '../data/iksQuizzesData';
 import { IksCertificateModal } from './IksCertificateModal';
+import { IksVijnanaSubjectDirectory } from './IksVijnanaHub';
 
 export interface IksLabItem {
   id: string;
@@ -1141,6 +1142,11 @@ export const IksThinkLabsPage: React.FC<IksThinkLabsPageProps> = ({
           </div>
         </div>
       </header>
+
+      <IksVijnanaSubjectDirectory
+        heading="Readings, Vijñāna Lab games, and Think Labs by subject"
+        lead="Start with a subject from the Indian Knowledge Systems map. Each group lists the related reading, the Vijñāna Lab games, and the Think Labs that belong with it."
+      />
 
       {/* Sanskrit Scientific Lexicon Audio Player (Zero Emojis, Authentic Pitch) */}
       <IksPronunciationBar />

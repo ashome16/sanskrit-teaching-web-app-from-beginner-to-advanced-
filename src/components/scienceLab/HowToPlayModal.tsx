@@ -38,7 +38,7 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({
         <div className="vl-htp-body">
           {/* Mission Goal */}
           <div className="vl-htp-goal-banner">
-            <span className="vl-htp-goal-tag">🎯 YOUR 3-MINUTE MISSION</span>
+            <span className="vl-htp-goal-tag">YOUR 3-MINUTE MISSION</span>
             <p className="vl-htp-goal-text">{mission.missionGoal}</p>
           </div>
 
@@ -54,7 +54,7 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({
 
           {/* Reward Preview */}
           <div className="vl-htp-reward-preview">
-            <span>🏆 Reward upon completion: <strong>{mission.badgeName} Badge ({mission.badgeSanskrit})</strong> + <strong>3 Vidyā Stars ⭐</strong></span>
+            <span>Reward upon completion: <strong>{mission.badgeName} Badge ({mission.badgeSanskrit})</strong> + <strong>3 Vidyā Stars</strong></span>
           </div>
         </div>
 
@@ -76,7 +76,7 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({
               onClose();
             }}
           >
-            ▶️ Launch Mission (3 min)
+            Launch Mission (3 min)
           </button>
         </div>
       </div>

@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect, useCallback, lazy, Suspense } from 'react';
 import { playPronunciation, playSequence, stopPronunciation } from '../utils/pronunciation';
 import { useAuthStore } from '../store/authStore';
-import { canAccessAllChapters, canAccessThinkLabs, isFreeTrialOpenLesson } from '../utils/premiumAccess';
+import { canAccessAllChapters, canAccessThinkLabs } from '../utils/premiumAccess';
 import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
 import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
-import { NCERT_TEXTBOOKS, getTextbookMetaForLesson } from '../utils/textbookCovers';
-import HomeLabBanner from './HomeLabBanner';
+import { NCERT_TEXTBOOKS } from '../utils/textbookCovers';
+import { IksVijnanaHomeEntry } from './IksVijnanaHub';
 import { getSearchShortcut } from '../utils/platformShortcut';
 import { GurukulEntranceIntro } from './GurukulEntranceIntro';
 import { useAccessibilityStore } from '../utils/accessibilityStore';
@@ -18,9 +18,8 @@ import { MobileStickyBar } from './MobileStickyBar';
 import { StudentStaircaseBlackboard } from './StudentStaircaseBlackboard';
 import { PracticeVaultShowcase } from './PracticeVaultShowcase';
 import { ChitraKavyaPathwayCard } from './ChitraKavyaPathwayCard';
-import { VvmPathwayCard } from './VvmPathwayCard';
+import { VvmHub } from './VvmHub';
 import type { VvmTab } from './VvmPreparationPage';
-import { VedicKnowledgeSystemShowcase } from './VedicKnowledgeSystemShowcase';
 import { HomeJodoInteractiveBanner } from './HomeJodoInteractiveBanner';
 import { getHinduDate } from '../utils/hinduCalendar';
 import '../styles/hindu-calendar.css';
@@ -55,6 +54,7 @@ export interface HomePageProps {
   onOpenCertificate?: () => void;
   onOpenCalendar?: () => void;
   onOpenVvm?: (tab?: VvmTab) => void;
+  onOpenVvmLevel2?: () => void;
   onOpenAbout?: () => void;
 }
 
@@ -266,394 +266,6 @@ const SPOKEN_PHRASES: SpokenPhraseItem[] = [
   },
 ];
 
-interface ChapterInfo {
-  id: string;
-  num: string;
-  title: string;
-  english: string;
-  icon: string;
-  category: 'stories' | 'shlokas' | 'dialogue' | 'grammar';
-  genreBadge: string;
-  theme: string;
-  grammarFocus: string;
-}
-
-const CHAPTERS_INFO: ChapterInfo[] = [
-  {
-    id: 'gsde101',
-    num: 'Chapter 1 (Pages 1–7)',
-    title: 'वन्दे भारतमातरम् (पाठः पृष्ठानि १-७)',
-    english: 'Salutations to Mother India',
-    icon: '',
-    category: 'shlokas',
-    genreBadge: 'प्रार्थना · Patriotism',
-    theme: 'National prayer celebrating the natural and spiritual glory of India',
-    grammarFocus: 'सम्बोधनम् & द्वितीया-विभक्तिः',
-  },
-  {
-    id: 'gsde102',
-    num: 'Chapter 2 (Pages 15–21)',
-    title: 'नित्यं पिबामः सुभाषितरसम् (पाठः पृष्ठानि १५-२१)',
-    english: 'Daily Nectar of Wise Sayings',
-    icon: '',
-    category: 'shlokas',
-    genreBadge: 'सुभाषितानि · Moral Wisdom',
-    theme: 'Timeless morals on sweet speech, charity, virtue, and steadfast conduct',
-    grammarFocus: 'प्रथमा-तृतीया विभक्तयः, अव्ययानि',
-  },
-  {
-    id: 'gsde103',
-    num: 'Chapter 3 (Pages 29–31)',
-    title: 'मित्राय नमः (पाठः पृष्ठानि २९-३१)',
-    english: 'Salutations to the Friend (Sun)',
-    icon: '️',
-    category: 'dialogue',
-    genreBadge: 'संवादः · Health & Yoga',
-    theme: 'Conversation on Surya Namaskar, physical wellness, and solar salutations',
-    grammarFocus: 'चतुर्थी-विभक्तिः (नमः योगे)',
-  },
-  {
-    id: 'gsde104',
-    num: 'Chapter 4 (Pages 39–41)',
-    title: 'न लभ्यते चेत् आम्लं द्राक्षाफलम् (पाठः पृष्ठानि ३९-४१)',
-    english: 'Sour Grapes (Animal Fable)',
-    icon: '',
-    category: 'stories',
-    genreBadge: 'नीतिकथा · Animal Fable',
-    theme: 'Humorous fable of the thirsty fox and sour grapes illustrating rationalization',
-    grammarFocus: 'लट्-लकारः, विशेषण-विशेष्यम्',
-  },
-  {
-    id: 'gsde105',
-    num: 'Chapter 5 (Pages 47–50)',
-    title: 'सेवा हि परमो धर्मः (पाठः पृष्ठानि ४७-५०)',
-    english: 'Service is the Highest Virtue',
-    icon: '',
-    category: 'stories',
-    genreBadge: 'कथा · Character Building',
-    theme: 'Inspiring story of selfless devotion, serving the elderly, and moral duty',
-    grammarFocus: 'तृतीया-विभक्तिः (सह योगे), क्त्वा-प्रत्ययः',
-  },
-  {
-    id: 'gsde106',
-    num: 'Chapter 6',
-    title: 'क्रीडाम वयं श्लोकान्त्याक्षरीम्',
-    english: 'Let’s Play Shloka Antyakshari',
-    icon: '',
-    category: 'shlokas',
-    genreBadge: 'काव्यक्रीडा · Poetry Game',
-    theme: 'Engaging classroom Antyakshari game reciting shlokas across poetic meters',
-    grammarFocus: 'श्लोकरचना, अनुष्टुप्-छन्दः, सन्धयः',
-  },
-  {
-    id: 'gsde107',
-    num: 'Chapter 7',
-    title: 'ईशावास्यम् इदं सर्वम्',
-    english: 'The Divine in Everything',
-    icon: 'OM',
-    category: 'shlokas',
-    genreBadge: 'उपनिषद् · Spiritual Wisdom',
-    theme: 'Isha Upanishad teachings on renunciation, detachment, and divine omnipresence',
-    grammarFocus: 'अव्ययानि, सर्वनामपदानि, सप्तमी',
-  },
-  {
-    id: 'gsde108',
-    num: 'Chapter 8',
-    title: 'हितं मनोहारि च दुर्लभं वचः',
-    english: 'Beneficial & Pleasing Words are Rare',
-    icon: '',
-    category: 'dialogue',
-    genreBadge: 'संवादः · Class Discussion',
-    theme: 'Kirātārjunīyam wisdom: words that are simultaneously beneficial and pleasant',
-    grammarFocus: 'विशेषण-विशेष्य-भावः, सुभाषित-प्रयोगाः',
-  },
-  {
-    id: 'gsde109',
-    num: 'Chapter 9',
-    title: 'अन्नाद् भवन्ति भूतानि',
-    english: 'All Beings Arise from Food',
-    icon: '',
-    category: 'dialogue',
-    genreBadge: 'संवादः · Science & Ecology',
-    theme: 'Gita ecology: The cosmic cycle of rain, agriculture, food, and living beings',
-    grammarFocus: 'पञ्चमी-विभक्तिः (अपादानम् — अन्नात्)',
-  },
-  {
-    id: 'gsde110',
-    num: 'Chapter 10',
-    title: 'दशमः कः ?',
-    english: 'Who is the Tenth? (Story of Wisdom)',
-    icon: '',
-    category: 'stories',
-    genreBadge: 'हास्यकथा · Humorous Riddle',
-    theme: 'The famous philosophical tale of the ten boys counting everyone except oneself',
-    grammarFocus: 'संख्यावाचक-शब्दाः (एकः तः दशमः)',
-  },
-  {
-    id: 'gsde111',
-    num: 'Chapter 11',
-    title: 'द्वीपेषु रम्यः द्वीपोऽण्डमानः',
-    english: 'The Beautiful Andaman Islands',
-    icon: '',
-    category: 'dialogue',
-    genreBadge: 'भूगोलः · Geography & Travel',
-    theme: 'Rich exploration of Andaman & Nicobar archipelago, freedom struggle, and nature',
-    grammarFocus: 'सप्तमी-विभक्तिः, गुणवाचक-विशेषणानि',
-  },
-  {
-    id: 'gsde112',
-    num: 'Chapter 12',
-    title: 'वीराङ्गना पन्नाधाया',
-    english: 'The Heroic Panna Dhai',
-    icon: '',
-    category: 'stories',
-    genreBadge: 'इतिहासः · Heroic History',
-    theme: 'The supreme sacrifice of foster-mother Panna Dhai saving Prince Uday Singh of Mewar',
-    grammarFocus: 'लङ्-लकारः (भूतकालः / Past Tense)',
-  },
-  {
-    id: 'gsde113',
-    num: 'Extra Study',
-    title: 'वर्णमात्रा-परिचयः',
-    english: 'Alphabet & Accent Guide',
-    icon: '',
-    category: 'grammar',
-    genreBadge: 'ध्वनिविज्ञानम् · Phonetics',
-    theme: 'Comprehensive guide to Hrasva, Dirgha, and Pluta vowels and Vedic pitch accents',
-    grammarFocus: 'मात्राज्ञानम्, उदात्तः-अनुदात्तः-स्वरितः',
-  },
-  {
-    id: 'gsde114',
-    num: 'Appendix 1',
-    title: 'शब्दरूपाणि',
-    english: 'Noun Declensions (Shabdarupani)',
-    icon: '',
-    category: 'grammar',
-    genreBadge: 'व्याकरणम् · Noun Tables',
-    theme: 'Complete declension reference for masculine, feminine, neuter nouns and pronouns',
-    grammarFocus: 'अजन्त-हलन्त-रूपाणि, 7 विभक्तयः',
-  },
-  {
-    id: 'gsde115',
-    num: 'Appendix 2',
-    title: 'धातुरूपाणि',
-    english: 'Verb Conjugations (Dhaturupani)',
-    icon: '',
-    category: 'grammar',
-    genreBadge: 'व्याकरणम् · Verb Paradigms',
-    theme: 'Full verb conjugation paradigms for Parasmaipada, Atmanepada & Ubhayapada roots',
-    grammarFocus: 'लट्, लोट्, लङ्, विधिलिङ्, लृट् लकाराः',
-  },
-  {
-    id: 'grade8_prarthana',
-    num: 'Grade 8 · Invocations',
-    title: 'सरस्वतीप्रार्थना एवं राष्ट्र-गानम्',
-    english: 'Goddess Saraswati Prayer & The National Anthem',
-    icon: '',
-    category: 'shlokas',
-    genreBadge: 'प्रार्थना · Sacred Hymn & Anthem',
-    theme: 'Sacred invocation to Goddess Saraswati (जय जय हे भगवति सुरभारति) and the National Anthem in authentic Sanskrit orthography',
-    grammarFocus: 'सम्बोधन-विभक्तिः, विशेषण-पदानि, संस्कृत-वर्तनी',
-  },
-  {
-    id: 'grade8_ch1',
-    num: 'Grade 8 · Chapter 1',
-    title: 'संगच्छध्वं संवदध्वम् (Pages 1–9)',
-    english: 'May We Walk Together, Speak Together in Harmony (Rigveda)',
-    icon: '',
-    category: 'shlokas',
-    genreBadge: 'ऋग्वेद-मन्त्रः · Vedic Hymn',
-    theme: 'The timeless Rigvedic hymn of universal solidarity: cultivating unified speech, harmony of thought, and collective cooperation.',
-    grammarFocus: 'लोट्-लकारः (Imperative Mood), प्रश्ननिर्माणम् (किम-शब्दाः), लट्-लोट् परिवर्तनम्',
-  },
-  {
-    id: 'grade8_ch2',
-    num: 'Grade 8 · Chapter 2',
-    title: 'अल्पानामपि वस्तूनां संहतिः कार्यसाधिका (Pages 10–22)',
-    english: 'Unity of Small Things Accomplishes the Task (Hitopadesha)',
-    icon: '',
-    category: 'stories',
-    genreBadge: 'नीतिकथा · Moral Fable',
-    theme: 'The celebrated Hitopadesha fable of the united flock of doves lifting the hunter\'s snare through collective solidarity.',
-    grammarFocus: 'ल्यप्-प्रत्ययः, सन्धिविच्छेदः, षष्ठी-विभक्तिः',
-  },
-  {
-    id: 'grade8_ch3',
-    num: 'Grade 8 · Chapter 3',
-    title: 'सुभाषितरसं पीत्वा जीवनं सफलं कुरु (Pages 24–35)',
-    english: 'Drinking the Nectar of Epigrams, Make Life Successful (Subhashitas)',
-    icon: '',
-    category: 'shlokas',
-    genreBadge: 'सुभाषितानि · Moral Epigrams',
-    theme: 'Priceless classical epigrams on virtue, humility, discriminating true friends, testing gold vs humans, eight noble qualities, and human effort.',
-    grammarFocus: 'सुभाषित-मञ्जरी, विसर्गसन्धिः (नम्रास्तरवः), यण्-सन्धिः (अभ्युपैति)',
-  },
-  {
-    id: 'grade8_ch4',
-    num: 'Grade 8 · Chapter 4',
-    title: 'प्रणम्यो देशभक्तोऽयं गोपबन्धुर्महामनाः (Pages 36–44)',
-    english: 'The Venerable Patriot Gopabandhu Das, the Great-Souled',
-    icon: '',
-    category: 'stories',
-    genreBadge: 'चरितम् · Patriotic Biography',
-    theme: 'The moving life of Utkalmani Pandit Gopabandhu Das: selfless flood relief in Odisha, Satyavadi open-air forest school, and total devotion to Bharat.',
-    grammarFocus: 'यत्-तद् सर्वनाम-प्रयोगाः, अनीयर्/ण्यत्-प्रत्ययः (प्रणम्यः), विसर्ग-उत्व-सन्धिः',
-  },
-  {
-    id: 'grade8_ch5',
-    num: 'Grade 8 · Chapter 5',
-    title: 'गीता सुगीता कर्तव्या (Pages 49–58)',
-    english: 'The Gita Should Be Well-Studied and Practiced',
-    icon: 'OM',
-    category: 'shlokas',
-    genreBadge: 'श्रीमद्भगवद्गीता · Spiritual Wisdom',
-    theme: 'Foundational teachings of the Bhagavad Gita: steady intellect (Sthitadhi), sense restraint, selfless action, holy speech, and mastery over anger.',
-    grammarFocus: 'तव्यत्-प्रत्ययः (कर्तव्या), क्तवतु-प्रत्ययः, विसर्ग-उत्व-पूर्वरूप-सन्धयः',
-  },
-  {
-    id: 'grade8_ch6',
-    num: 'Grade 8 · Chapter 6',
-    title: 'डिजिभारतम् – युगपरिवर्तनम् (Pages 61–66)',
-    english: 'Digital India – An Epochal Transformation',
-    icon: '',
-    category: 'dialogue',
-    genreBadge: 'विज्ञान-प्रौद्योगिकी · Modern Era',
-    theme: 'India\'s digital revolution: from oral Shruti and palm leaves to modern computers, smartphones, cashless transactions, and green paperless living.',
-    grammarFocus: 'कर्मवाच्य-प्रयोगाः (पठ्यते, लिख्यते, कृत्यन्ते), ल्युट्-प्रत्ययः, पारिभाषिक-शब्दाः',
-  },
-  {
-    id: 'grade8_ch7',
-    num: 'Grade 8 · Chapter 7',
-    title: 'मञ्जुलमञ्जूषा सुन्दरसुरभाषा (Pages 75–83)',
-    english: 'The Charming Treasury of the Divine Sanskrit Language',
-    icon: '',
-    category: 'shlokas',
-    genreBadge: 'काव्यम् · Linguistic Glory',
-    theme: 'Sanskrit Day celebration, Valmiki-Vyasa-Kalidasa-Bana literature, nine rasas, and scientific heritage.',
-    grammarFocus: 'सन्धयः, समास-परिचयः (तत्पुरुष, कर्मधारय), नवरसाः, सम्बोधन-रूपाणि',
-  },
-  {
-    id: 'grade8_ch8',
-    num: 'Grade 8 · Chapter 8',
-    title: 'पश्यत कोणमैशान्यं भारतस्य मनोहरम् (Pages 85–88)',
-    english: 'Behold the Enchanting Northeast Corner of India',
-    icon: '',
-    category: 'dialogue',
-    genreBadge: 'भूगोलः · Geography & Culture',
-    theme: 'The Seven Sisters and Brother Sikkim, Barak-Brahmaputra rivers, tribal arts, and bamboo craftsmanship.',
-    grammarFocus: 'प्रत्ययाः (तुमुन्, अनीयर्, ल्यप्, क्त), विशेषण-विशेष्य-सम्बन्धः, षष्ठी-विभक्तिः',
-  },
-  {
-    id: 'grade8_ch9',
-    num: 'Grade 8 · Chapter 9',
-    title: 'कोऽरुक् ? कोऽरुक् ? कोऽरुक् ? (Pages 97–105)',
-    english: 'Who is Free from Disease? (Ayurvedic Health Riddle)',
-    icon: '',
-    category: 'dialogue',
-    genreBadge: 'आयुर्वेदः · Holistic Health',
-    theme: 'Lord Dhanvantari and Vagbhata: the threefold health axioms—Hitabhuk, Mitabhuk, Ritubhuk—and daily regimens.',
-    grammarFocus: 'पूर्वरूप-सन्धिः (कोऽरुक् = कः + अरुक्), विशेषण-विशेष्य-मेलनम्, दिनचर्या-नियमाः',
-  },
-  {
-    id: 'grade8_ch10',
-    num: 'Grade 8 · Chapter 10',
-    title: 'सन्निमित्ते वरं त्यागः (क-भागः) (Pages 111–122)',
-    english: 'Better to Sacrifice for a Noble Cause (Part 1)',
-    icon: '',
-    category: 'stories',
-    genreBadge: 'नीतिकथा · Noble Sacrifice',
-    theme: 'Hitopadesha tale of prince Viravara: righteous fourfold division of salary, unmatched loyalty to King Shudraka, and encounter with weeping Rajalaxmi.',
-    grammarFocus: 'अन्वय-रचना, भूतकालिक-प्रयोगाः (स्म, क्त, क्तवतु, लङ्), सन्धि-विच्छेदः, सर्वनामपदानि',
-  },
-  {
-    id: 'grade8_ch11',
-    num: 'Grade 8 · Chapter 11',
-    title: 'सन्निमित्ते वरं त्यागः (ख-भागः) (Pages 124–135)',
-    english: 'Better to Sacrifice for a Noble Cause (Part 2)',
-    icon: '',
-    category: 'stories',
-    genreBadge: 'नीतिकथा · Supreme Sacrifice',
-    theme: 'Viravara\'s family sacrifice at the temple of Sarvamangala, King Shudraka\'s boundless devotion to his servant, divine resurrection, and coronation over Karnataka.',
-    grammarFocus: 'वाच्य-प्रकरणम् (कर्तृवाच्य, कर्मवाच्य, भाववाच्य), अकर्मक-सकर्मक-धातवः, सन्धिकार्यम्',
-  },
-  {
-    id: 'grade8_ch12',
-    num: 'Grade 8 · Chapter 12',
-    title: 'सम्यग्वर्णप्रयोगेण ब्रह्मलोके महीयते (Pages 137–145)',
-    english: 'Through Perfect Pronunciation One Attains Glory in Brahmaloka',
-    icon: '',
-    category: 'grammar',
-    genreBadge: 'पाणिनीय-शिक्षा · Articulation & Reader Qualities',
-    theme: 'Paniniya Shiksha principles: the Vritrasura/Indrashatru accent parable, maternal tigress grip metaphor, 6 attributes of ideal readers, and 6 flaws of poor readers.',
-    grammarFocus: 'तृतीया-विभक्तिः (प्रयोगेण), कर्मणि-लट् (महीयते), वर्णोच्चारणम्, पाठकगुणाः, सन्धि-विच्छेदः',
-  },
-  {
-    id: 'grade8_ch13',
-    num: 'Grade 8 · Chapter 13',
-    title: 'वर्णोच्चारण-शिक्षा १ (Pages 146–156)',
-    english: 'Science of Sound Articulation 1 (Anatomy & Places)',
-    icon: '',
-    category: 'grammar',
-    genreBadge: 'ध्वनिविज्ञानम् · Places & Tools of Articulation',
-    theme: 'Anatomy of voice production: 4 bodily systems (muscular, air-pressure, phonatory, articulatory), 6 places (स्थानम्) with flute-holes analogy, and active tools (करणम्) with playing-fingers analogy.',
-    grammarFocus: 'ध्वनिविज्ञानम्, षडुच्चारणस्थानानि (कण्ठ, तालु, मूर्धा, दन्त, ओष्ठ, नासिका), करणम् (जिह्वा, स्वस्थानकरणम्)',
-  },
-  {
-    id: 'grade8_app1',
-    num: 'Grade 8 · Appendix 1',
-    title: 'परिशिष्टम् १: व्याकरणम् (Pages 159–165)',
-    english: 'Comprehensive Grammar (Prefixes, Suffixes, Cases & Sandhi)',
-    icon: '',
-    category: 'grammar',
-    genreBadge: 'व्याकरणम् · Prefixes, Suffixes & Cases',
-    theme: 'Foundational Paninian grammar: 22 Upasargas with meaning shifts, Krit suffixes (ktva, lyap, tumun, ktavatu past participle), 6 Karakas, Upapada case rules, and vowel/consonant Sandhis.',
-    grammarFocus: 'उपसर्गाः (२२), क्त्वा, ल्यप्, तुमुन्, क्तवतु (त्रिषु लिङ्गेषु), षट् कारकाणि, उपपद-विभक्तयः, अयादि-पूर्वरूप-व्यञ्जन-सन्धयः',
-  },
-  {
-    id: 'grade9_prarthana',
-    num: 'Grade 9 · मङ्गलाचरणम्',
-    title: 'मङ्गलाचरणम् (प्रार्थना)',
-    english: 'Auspicious Vedic Invocation (Rigveda 10.191 Concord Mantras)',
-    icon: 'OM',
-    category: 'shlokas',
-    genreBadge: 'प्रार्थना · Rigveda Samvad',
-    theme: 'Sangachhadhvam mantras fostering universal unity, common purpose, harmonized hearts, and concord across all people.',
-    grammarFocus: 'ऋग्वेदमन्त्राः, लोट्-लकारः (सङ्गच्छध्वम्, संवदध्वम्), समान-विभक्ति-प्रयोगाः (समानम्, समानेन)',
-  },
-  {
-    id: 'grade9_ch1',
-    num: 'Grade 9 · Chapter 1',
-    title: 'अहं वृक्षः अस्मि (Pages 1–8)',
-    english: 'I am a Tree (Autobiography of a Tree)',
-    icon: '',
-    category: 'stories',
-    genreBadge: 'आत्मकथा · Ecological Heritage',
-    theme: 'The life journey of a tree: selfless service, universal shelter, shade, oxygen, and environmental guardianship.',
-    grammarFocus: 'उत्तमपुरुष-प्रयोगाः (अस्मि, यच्छामि), ल्यप्/तुमुन् प्रत्ययाः, विशेषण-विशेष्य-सम्बन्धः',
-  },
-  {
-    id: 'grade9_ch2',
-    num: 'Grade 9 · Chapter 2',
-    title: 'सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः (Pages 9–18)',
-    english: 'Righteousness is the Root of Happiness; Wealth is the Root of Righteousness',
-    icon: '',
-    category: 'dialogue',
-    genreBadge: 'नीतिशास्त्रम् · Arthashastra & Ethics',
-    theme: 'Kautilya Arthashastra and Upanishadic wisdom on ethical wealth creation, purity of livelihood, and disciplined conduct.',
-    grammarFocus: 'षष्ठी-विभक्तिः (सुखस्य, धर्मस्य), कर्मधारय-समासः, सूक्ति-सङ्ग्रहः, अव्ययपदानि',
-  },
-  {
-    id: 'grade9_ch3',
-    num: 'Grade 9 · Chapter 3',
-    title: 'आत्मवत्सर्वभूतेषु यः पश्यति सः पण्डितः (Pages 19–30)',
-    english: 'He Who Sees All Beings as Himself is Truly Wise',
-    icon: '',
-    category: 'stories',
-    genreBadge: 'महात्मा-चरितम् · Compassion & Universal Empathy',
-    theme: 'Sant Namdev, compassion towards animals and all creatures, and realizing the divine presence in every living being.',
-    grammarFocus: 'सप्तमी-विभक्तिः (सर्वभूतेषु), यत्-तत् प्रयोगाः (यः... सः), कृदन्त-रूपाणि (दृष्ट्वा, गत्वा), अन्वय-रचना',
-  },
-];
 
 interface FeatureTrialCalloutProps {
   badge?: string;
@@ -756,12 +368,11 @@ const HomePage: React.FC<HomePageProps> = ({
   onOpenCertificate,
   onOpenCalendar,
   onOpenVvm,
+  onOpenVvmLevel2,
   onOpenAbout,
 }) => {
   const [selectedDemo, setSelectedDemo] = useState<DemoWord>(DEMO_WORDS[0]);
   void onOpenCertificate; void FeatureTrialCallout;
-  const [curriculumCategory, setCurriculumCategory] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState<string>('');
   const { isAdminLoggedIn, currentUser, openAuthModal, openPaymentModal } = useAuthStore();
   const canReadAllChapters = canAccessAllChapters(currentUser, isAdminLoggedIn);
   const thinkLabsUnlocked = canAccessThinkLabs(currentUser, isAdminLoggedIn);
@@ -785,7 +396,6 @@ const HomePage: React.FC<HomePageProps> = ({
     const timer = window.setInterval(() => setHomePanchang(getHinduDate()), 30000);
     return () => window.clearInterval(timer);
   }, []);
-  const [selectedGradeFilter, setSelectedGradeFilter] = useState<'all' | '7' | '8' | '9'>('all');
   const [isLogoArrived, setIsLogoArrived] = useState<boolean>(false);
   const [showEntranceIntro, setShowEntranceIntro] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
@@ -818,40 +428,6 @@ const HomePage: React.FC<HomePageProps> = ({
       }, 1600);
     }
   }, []);
-
-  const visibleChapters = CHAPTERS_INFO.filter(
-    (ch) => canReadAllChapters || isFreeTrialOpenLesson(ch.id) || (!ch.id.startsWith('grade8_') && !ch.id.startsWith('grade9_'))
-  );
-
-  const categories = [
-    { id: 'all', label: 'All Content', count: visibleChapters.length },
-    { id: 'stories', label: ' Stories & Fables', count: visibleChapters.filter((c) => c.category === 'stories').length },
-    { id: 'shlokas', label: ' Shlokas & Wisdom', count: visibleChapters.filter((c) => c.category === 'shlokas').length },
-    { id: 'dialogue', label: ' Dialogues & Culture', count: visibleChapters.filter((c) => c.category === 'dialogue').length },
-    { id: 'grammar', label: ' Grammar Reference', count: visibleChapters.filter((c) => c.category === 'grammar').length },
-  ];
-
-  const filteredChapters = visibleChapters.filter((ch) => {
-    const matchesCategory = curriculumCategory === 'all' || ch.category === curriculumCategory;
-    const matchesGrade =
-      selectedGradeFilter === 'all' ||
-      (selectedGradeFilter === '7' && !ch.id.startsWith('grade8_') && !ch.id.startsWith('grade9_')) ||
-      (selectedGradeFilter === '8' && ch.id.startsWith('grade8_')) ||
-      (selectedGradeFilter === '9' && ch.id.startsWith('grade9_'));
-
-    const query = searchQuery.trim().toLowerCase();
-    if (!query) return matchesCategory && matchesGrade;
-
-    const matchesSearch =
-      ch.title.toLowerCase().includes(query) ||
-      ch.english.toLowerCase().includes(query) ||
-      ch.num.toLowerCase().includes(query) ||
-      (ch.theme ? ch.theme.toLowerCase().includes(query) : false) ||
-      (ch.grammarFocus ? ch.grammarFocus.toLowerCase().includes(query) : false) ||
-      (ch.genreBadge ? ch.genreBadge.toLowerCase().includes(query) : false);
-
-    return matchesCategory && matchesGrade && matchesSearch;
-  });
 
   const openGrade7Syllabus = () => {
     setIsGrade7ModalOpen(true);
@@ -1101,7 +677,15 @@ const HomePage: React.FC<HomePageProps> = ({
               </div>
             </a>
           </div>
+        </section>
 
+        {onOpenVvm && (
+          <section id="home-vvm" className="home-vvm-section" aria-label="VVM 2026–27 preparation">
+            <VvmHub variant="compact" onOpenVvm={onOpenVvm} onOpenVvmLevel2={onOpenVvmLevel2} />
+          </section>
+        )}
+
+        <section className="home-hero" aria-label="Sanskrit learner journey">
           {/* 2. STEP-BY-STEP JOURNEY HEADLINE (Moved to Top & Made Bigger) */}
           <div className="home-hero-journey-header">
             <h2 style={{ margin: 0 }}>
@@ -2081,8 +1665,8 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* Vijñāna Lab banner (moved down) */}
-      {onOpenScienceLab && <HomeLabBanner onOpen={onOpenScienceLab} />}
+      {/* Combined IKS + Vijñāna Lab entry (single homepage section) */}
+      <IksVijnanaHomeEntry />
 
       {/* ------------------------------------------------------------------
           INTERACTIVE TOOL DEMOS: Dhātupāṭha Deconstructor & Jodo Tile Mini-Puzzle
@@ -2094,16 +1678,11 @@ const HomePage: React.FC<HomePageProps> = ({
       />
 
       {/* ------------------------------------------------------------------
-          Featured Interactive Hubs: VVM 2026-27 & Chitra-Kavya
+          Featured Interactive Hubs: Chitra-Kavya
           ------------------------------------------------------------------ */}
       {(onOpenVvm || onOpenTurangaBandha) && (
         <section id="featured-hubs" className="home-pathways-section" aria-label="Featured Learning Hubs">
-          <div className="home-pathways-grid">
-            {/* Pathway: Vidyarthi Vigyan Manthan (VVM) Preparation Feature Card */}
-            {onOpenVvm && (
-              <VvmPathwayCard onOpenVvm={onOpenVvm} />
-            )}
-
+          <div className="home-pathways-grid home-pathways-grid--solo">
             {/* Feature Card: Chitra-Kavya & The Sanskrit Knight's Tour */}
             <ChitraKavyaPathwayCard
               onOpenTurangaBandha={onOpenTurangaBandha}
@@ -2113,24 +1692,6 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </section>
       )}
-
-      {/* ------------------------------------------------------------------
-          Vedic Indian Knowledge System (भारतीय ज्ञान परंपरा) Showcase
-          ------------------------------------------------------------------ */}
-      <VedicKnowledgeSystemShowcase
-        onOpenPhilosophy={onOpenPhilosophy}
-        onOpenVedicMaths={onOpenVedicMaths}
-        onOpenScienceLab={onOpenScienceLab}
-        onOpenGrammar={onOpenGrammar}
-        onOpenReader={onOpenReader}
-        onOpenCourse={onOpenCourse}
-        imageSrc="/images/vedic-indian-knowledge-system-v2.jpg"
-        imageWebpSrc="/images/vedic-indian-knowledge-system-v2.webp"
-        imageAlt="Vedic Indian Knowledge System · भारतीय ज्ञान परंपरा — Philosophy (Darshana), Mathematics (Ganita), Martial Arts & Warfare (Dhanurveda), Statecraft & Polity, Cosmology & Astronomy, History, Ayurveda, Architecture (Vastu), and Grammar & Linguistics"
-        imageWidth={1920}
-        imageHeight={1072}
-        artBadge="Indian Knowledge Systems"
-      />
 
       {/* ------------------------------------------------------------------
           Core Features Grid - Real Learner Outcomes
@@ -2544,19 +2105,16 @@ const HomePage: React.FC<HomePageProps> = ({
           ------------------------------------------------------------------ */}
       <section className="home-online-classes-section" id="online-classes" aria-label="Sanskrit Direct Lessons and Classes">
         <div className="hoc-header">
-          <div className="hoc-badge">
-            <span> DIRECT GUIDED LESSONS</span>
-          </div>
           <h2 className="hoc-title">
             Direct Guided Lessons
             <span className="hoc-title-sa">प्रत्यक्ष-पाठाः · Instant 1-Tap Access</span>
           </h2>
           <p className="hoc-subtitle">
-            Jump straight into interactive micro-lessons across Spoken Sanskrit, CBSE, Grammar, and Vedic Math.
+            Jump straight into interactive micro-lessons across Spoken Sanskrit, Grammar, and Vedic Math.
           </p>
         </div>
 
-        <div className="hoc-grid">
+        <div className="hoc-grid hoc-grid--three">
           {/* Track 1: Spoken Sanskrit */}
           <div className="hoc-card">
             <div>
@@ -2609,61 +2167,6 @@ const HomePage: React.FC<HomePageProps> = ({
               onClick={() => onOpenVarnamala?.()}
             >
               Explore Spoken Lessons  &rarr; 
-            </button>
-          </div>
-
-          {/* Track 2: CBSE School Track */}
-          <div className="hoc-card">
-            <div>
-              <div className="hoc-card-header-row">
-                <span className="hoc-card-icon" aria-hidden="true"></span>
-                <span className="hoc-card-badge">Classes 6–10</span>
-              </div>
-              <h3 className="hoc-card-title">CBSE Exam Prep</h3>
-              <p className="hoc-card-desc">
-                NCERT solutions, sandhi breakdown &amp; mock papers.
-              </p>
-              <div className="hoc-lesson-links">
-                <button
-                  type="button"
-                  className="hoc-lesson-pill"
-                  onClick={() => onOpenReader('gsde101')}
-                  title="Open Class 7 Chapter 1: Subhashitani"
-                >
-                  <span className="hoc-pill-num">Ch 1</span>
-                  <span className="hoc-pill-label">सुभाषितानि · Gems of Wisdom</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
-                </button>
-
-                <button
-                  type="button"
-                  className="hoc-lesson-pill"
-                  onClick={() => onOpenReader('gsde102')}
-                  title="Open Class 7 Chapter 2: Durbuddhir Vinashyati"
-                >
-                  <span className="hoc-pill-num">Ch 2</span>
-                  <span className="hoc-pill-label">दुर्बुद्धिः विनश्यति · Turtle Fable</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
-                </button>
-
-                <button
-                  type="button"
-                  className="hoc-lesson-pill"
-                  onClick={() => onOpenReader('gsde103')}
-                  title="Open Class 7 Chapter 3: Swavalambanam"
-                >
-                  <span className="hoc-pill-num">Ch 3</span>
-                  <span className="hoc-pill-label">स्वावलम्बनम् · Self-Reliance</span>
-                  <span className="hoc-pill-arrow" aria-hidden="true"> &rarr; </span>
-                </button>
-              </div>
-            </div>
-            <button
-              type="button"
-              className="hoc-card-btn"
-              onClick={() => (onOpenCbseGuide ? onOpenCbseGuide() : onOpenReader('gsde101'))}
-            >
-              Browse CBSE Chapters  &rarr; 
             </button>
           </div>
 
@@ -2733,7 +2236,12 @@ const HomePage: React.FC<HomePageProps> = ({
               <p className="hoc-card-desc">
                 16 Vedic Sutras for lightning mental arithmetic &amp; roots.
               </p>
-                          </div>
+              <div className="hoc-topic-chips" aria-label="Sutras">
+                <span className="hoc-topic-chip">Ekādhikena</span>
+                <span className="hoc-topic-chip">Nikhilaṁ</span>
+                <span className="hoc-topic-chip">Ūrdhva</span>
+              </div>
+            </div>
             <button
               type="button"
               className="hoc-card-btn"
@@ -2830,218 +2338,37 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
 
-        {/* Quick Grade Filter Bar */}
-        <div className="home-grade-filter-bar" role="group" aria-label="Filter by NCERT Class">
-          <span className="home-grade-filter-label"> Textbook Filter:</span>
-          {[
-            { id: 'all', label: 'All Classes (सर्वम्)', thumb: null },
-            { id: '7', label: 'दीपकम् · Class 7', thumb: '/textbooks/ncert-deepakam-class7.webp' },
-            { id: '8', label: 'दीपकम् · Class 8', thumb: '/textbooks/ncert-deepakam-class8.jpg' },
-            { id: '9', label: 'शारदा · Class 9', thumb: '/textbooks/ncert-sharada-class9.jpg' },
-          ].map((gradeTab) => (
-            <button
-              key={gradeTab.id}
-              type="button"
-              className={`home-grade-filter-btn ${selectedGradeFilter === gradeTab.id ? 'active' : ''}`}
-              onClick={() => setSelectedGradeFilter(gradeTab.id as any)}
-            >
-              {gradeTab.thumb && (
-                <img
-                  src={gradeTab.thumb}
-                  alt=""
-                  className="home-grade-filter-thumb"
-                  aria-hidden="true"
-                />
-              )}
-              <span>{gradeTab.label}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* Search & Category Filter Controls */}
-        <div className="home-curriculum-controls">
-          <div className="home-curriculum-search-wrap">
-            <span className="home-curriculum-search-icon"></span>
-            <input
-              type="text"
-              className="home-curriculum-search-input"
-              placeholder="Search by chapter, theme, grammar rule (e.g. लट्, पञ्चमी, सम्बोधनम्)..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              aria-label="Search Sanskrit Curriculum"
-            />
-            {searchQuery && (
-              <button
-                type="button"
-                className="home-curriculum-search-clear"
-                onClick={() => setSearchQuery('')}
-                title="Clear search"
-              >
-                ×
-              </button>
-            )}
-          </div>
-
-          <div className="home-curriculum-filters">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                type="button"
-                className={`home-filter-btn ${curriculumCategory === cat.id ? 'active' : ''}`}
-                onClick={() => setCurriculumCategory(cat.id)}
-              >
-                <span>{cat.label}</span>
-                <span className="home-filter-count">{cat.count}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {filteredChapters.length === 0 ? (
-          <div className="home-curriculum-empty">
-            <p className="home-empty-title">No chapters found</p>
-            <p className="home-empty-desc">
-              No lessons match your current search query "{searchQuery}".
+        {/* CBSE in one place: exam prep + board exam blueprint */}
+        <div className="home-cbse-strip" role="region" aria-label="CBSE Exam Prep and Board Exam Blueprint">
+          <div className="home-cbse-strip-text">
+            <div className="home-cbse-strip-tags">
+              <span className="home-cbse-strip-badge">Classes 6–10</span>
+              <span className="home-cbse-strip-kicker">परीक्षा-मार्गदर्शिका · CBSE Board Exam Blueprint</span>
+            </div>
+            <h3 className="home-cbse-strip-title">CBSE Exam Prep · CBSE संस्कृत-परीक्षा-मार्गदर्शिका</h3>
+            <p className="home-cbse-strip-desc">
+              NCERT solutions, sandhi breakdown &amp; mock papers, with the 4-section exam blueprint (खण्ड क–घ) and 10 core question words (क-कार शब्दाः).
             </p>
+          </div>
+          <div className="home-cbse-strip-actions">
             <button
               type="button"
-              className="home-btn-secondary"
-              onClick={() => {
-                setCurriculumCategory('all');
-                setSearchQuery('');
-              }}
+              className="home-cbse-strip-btn home-cbse-strip-btn--primary"
+              onClick={() => (onOpenCbseGuide ? onOpenCbseGuide() : onOpenReader('gsde101'))}
             >
-              Reset All Filters
+              Browse CBSE Chapters &rarr;
             </button>
-          </div>
-        ) : (
-          <div className="home-chapter-grid">
-            {filteredChapters.map((ch) => (
-              <div
-                key={ch.id}
-                className="home-chapter-card"
-                onClick={() => onOpenReader(ch.id)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') onOpenReader(ch.id);
-                }}
-              >
-                <div className="home-chapter-card-top">
-                  <div className="home-chapter-card-header">
-                    <div className="home-chapter-meta-left">
-                      <span className="home-chapter-num">{ch.num}</span>
-                      {ch.genreBadge && (
-                        <span className="home-genre-badge">{ch.genreBadge}</span>
-                      )}
-                    <div className="home-chapter-profile-thumb" title={getTextbookMetaForLesson(ch.id).tagline}>
-                      <img
-                        src={getTextbookMetaForLesson(ch.id).coverUrl}
-                        alt={getTextbookMetaForLesson(ch.id).alt}
-                        className="home-chapter-profile-img"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                  {englishFirst ? (
-                    <>
-                      <h4 className="home-chapter-meaning-en" style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', margin: '0.35rem 0 0.2rem' }}>
-                        {ch.english}
-                      </h4>
-                      <div className="home-chapter-title-sanskrit" style={{ fontSize: '0.92rem', fontWeight: 600, color: '#9a3412', marginBottom: '0.4rem' }}>
-                        {ch.title}
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <h4 className="home-chapter-title-sanskrit">{ch.title}</h4>
-                      <p className="home-chapter-meaning-en">{ch.english}</p>
-                    </>
-                  )}
-                  
-                  {ch.theme && (
-                    <p className="home-chapter-theme-desc">{ch.theme}</p>
-                  )}
-                </div>
-
-                <div className="home-chapter-card-bottom">
-                  {ch.grammarFocus && (
-                    <div className="home-grammar-tag">
-                      <span className="home-grammar-tag-label">{englishFirst ? ' Grammar Rules:' : ' व्याकरणम्:'}</span> {ch.grammarFocus}
-                    </div>
-                  )}
-
-                  <div className="home-chapter-footer-row">
-                    <span className="home-chapter-read-cta">
-                      Read Lesson  &rarr; 
-                    </span>
-                    {ch.id.startsWith('grade8_') && (
-                      <button
-                        type="button"
-                        style={{
-                          background: '#fef3c7',
-                          color: '#92400e',
-                          border: '1px solid #fcd34d',
-                          borderRadius: '6px',
-                          padding: '0.2rem 0.6rem',
-                          fontSize: '0.76rem',
-                          fontWeight: 700,
-                          cursor: 'pointer',
-                        }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setIsGrade8ModalOpen(true);
-                        }}
-                      >
-                         Class 8 Syllabus
-                      </button>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
             {onOpenCbseGuide && (
-              <div
-                className="home-chapter-card home-chapter-card--guide"
+              <button
+                type="button"
+                className="home-cbse-strip-btn"
                 onClick={onOpenCbseGuide}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') onOpenCbseGuide();
-                }}
               >
-                <div className="home-chapter-card-top">
-                  <div className="home-chapter-card-header">
-                    <div className="home-chapter-meta-left">
-                      <span className="home-chapter-num">परीक्षा-मार्गदर्शिका</span>
-                      <span className="home-genre-badge">CBSE Board Exam Blueprint</span>
-                    </div>
-                    <span className="home-chapter-icon"></span>
-                  </div>
-
-                  <h4 className="home-chapter-title-sanskrit">CBSE संस्कृत-परीक्षा-मार्गदर्शिका</h4>
-                  <p className="home-chapter-meaning-en">CBSE NCERT Sanskrit Exam Blueprint &amp; Question Formula Guide</p>
-                  <p className="home-chapter-theme-desc">
-                    Standardized 4-section exam blueprint (खण्ड क–घ), formulaic instruction headings (निर्देशाः), 10 core question words (क-कार शब्दाः), and grammatical directives (कर्तृपदम्, क्रियापदम्, अन्वयः).
-                  </p>
-                </div>
-
-                <div className="home-chapter-card-bottom">
-                  <div className="home-grammar-tag">
-                    <span className="home-grammar-tag-label"> Board Exam Prep:</span> एकपदेन, पूर्णवाक्येन, प्रश्ननिर्माणम्, क-कार शब्दाः
-                  </div>
-                  <div className="home-chapter-footer-row">
-                    <span className="home-chapter-read-cta">
-                      Explore Exam Guide  &rarr; 
-                    </span>
-                  </div>
-                </div>
-              </div>
+                Explore Exam Guide &rarr;
+              </button>
             )}
           </div>
-        )}
+        </div>
 
               </section>
 

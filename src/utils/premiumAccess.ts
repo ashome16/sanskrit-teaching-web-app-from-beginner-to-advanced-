@@ -165,9 +165,10 @@ export function getDownloadGateReason(
  * (same spirit as download / print gates).
  */
 export function canAccessThinkLabs(
-  currentUser: UserProfile | null | undefined,
-  isAdminLoggedIn = false
+  _currentUser?: UserProfile | null,
+  _isAdminLoggedIn = false
 ): boolean {
-  return hasPaidAccess(currentUser, isAdminLoggedIn);
+  // All labs are open to everyone: no login, payment or trial required.
+  return true;
 }
 

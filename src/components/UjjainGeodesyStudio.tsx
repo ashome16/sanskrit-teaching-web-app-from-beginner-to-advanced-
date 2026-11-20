@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { soundEffects } from '../utils/soundEffects';
+import { LabTokenIcon } from './scienceLab/LabTokenIcon';
+import LabChallengeLadder from './scienceLab/LabChallengeLadder';
 
 interface UjjainStudioProps {
   onPlayAudio?: (term: string) => void;
@@ -15,6 +17,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
   // 1. Shanku Latitude State
   // Default: Ujjain equinoctial noon shadow ~ 5.14 Angulas for ~ 23.18° N
   const [shadowLength, setShadowLength] = useState<number>(5.14);
+  const [ujjainDone, setUjjainDone] = useState<string[]>([]);
 
   // 2. Deshantara Longitude State
   // Time difference in minutes from Ujjain (+ = East, - = West)
@@ -72,6 +75,25 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
   const angleRad = (angleDeg * Math.PI) / 180;
   const indianJya = Math.sin(angleRad); // normalized to 1
   const indianKotijya = Math.cos(angleRad);
+
+  useEffect(() => {
+    if (shadowLength <= 0.08) {
+      setUjjainDone((d) => (d.includes('equator') ? d : [...d, 'equator']));
+    }
+    if (shadowLength > 5.02 && shadowLength < 5.32) {
+      setUjjainDone((d) => {
+        if (!d.includes('equator') || d.includes('ujjain')) return d;
+        return [...d, 'ujjain'];
+      });
+    }
+    if (Math.abs(angleDeg - 90) <= 1) {
+      setUjjainDone((d) => {
+        if (!d.includes('ujjain') || d.includes('kotijya')) return d;
+        return [...d, 'kotijya'];
+      });
+    }
+  }, [shadowLength, angleDeg]);
+
   const greekChord = 2 * Math.sin(angleRad); // crd(2θ) for comparison
 
   // --- Calculations for Makar Sankranti & Precession Drift ---
@@ -111,7 +133,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
       lon: "75° 46' 06\" E (75.7682° E)",
       role: 'Tropic of Cancer Solar Solstice Alignment & Lord of Time',
       description: 'The name Mahakal translates to the "Lord of Time" or "Great Time". The temple spire was mathematically aligned so that the Tropic of Cancer crossed directly through it during antiquity. It functioned as both the sacred spiritual epicenter and a physical astronomical marker to track the Sun’s summer solstice zenith.',
-      icon: '🔱',
+      icon: 'temple',
       color: '#b45309',
     },
     mangalnath: {
@@ -121,7 +143,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
       lon: "75° 46' 00\" E (75.7667° E)",
       role: 'Planetary Mars Tracking & Perihelic Observation Node',
       description: 'According to Hindu cosmogony, this temple is revered as the birthplace of the planet Mars (Mangala). Ancient Indian astronomers calculated this specific latitudinal coordinate as the location on Earth where Mars and Earth were closest in their celestial orbits, establishing it as an indispensable observatory node for tracking planetary retrogrades (Vakra-gati).',
-      icon: '🔴',
+      icon: 'tejas',
       color: '#dc2626',
     },
     vedhashala: {
@@ -131,7 +153,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
       lon: "75° 46' 03\" E (75.7675° E)",
       role: 'Massive Stone Gnomons to Recalibrate Planetary & Solar Drift',
       description: 'When Maharaja Sawai Jai Singh II built this observatory in 1725, he was fully aware of planetary drift and obliquity oscillations. He constructed massive non-moving stone instruments—such as the Samrat Yantra (equinoctial sundial) and Dakshinottara Bhitti Yantra (Transit Wall Instrument)—specifically to calculate the exact real-time local declination of the Sun and stars regardless of how much the planet had wobbled since antiquity, allowing 18th-century scientists to recalibrate mathematical ephemerides.',
-      icon: '🔭',
+      icon: 'gnomon',
       color: '#0284c7',
     },
     dongla: {
@@ -141,7 +163,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
       lon: "75° 46' 00\" E (75.7667° E)",
       role: 'Modern Tropic of Cancer Precession Node & Zero Shadow Day',
       description: 'Located 30 km north of Ujjain along the exact same ancient 0° meridian. Due to the 41,000-year obliquity cycle of the Earth (14.5 m/year southward drift), the modern Tropic of Cancer now cuts through Dongla Village, where scientists observe Zero Shadow Day on June 21.',
-      icon: '☀️',
+      icon: 'sun',
       color: '#059669',
     },
   };
@@ -162,6 +184,21 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
         boxShadow: '0 10px 30px rgba(15, 23, 42, 0.08)',
       }}
     >
+      <LabChallengeLadder
+        labId="ujjain-geodesy"
+        title="Śaṅku and jyā ladder"
+        rungs={[
+          { id: 'equator', label: 'Equator palabhā', target: 'Set the equinoctial shadow to 0 aṅgulas (φ = 0° at Laṅkā).' },
+          { id: 'ujjain', label: 'Ujjain palabhā', target: 'Set the noon shadow between 5.14 and 5.30 aṅgulas (Ujjain / ~23.5° N).' },
+          { id: 'kotijya', label: 'Koṭijyā at 90°', target: 'In the jyā table, set the angle to 90° so koṭijyā = 0.' },
+        ]}
+        doneIds={ujjainDone}
+        feedback={
+          ujjainDone.includes('kotijya')
+            ? 'Equator, Ujjain palabhā, and koṭijyā(90°) = 0 are all verified.'
+            : `Shadow ${shadowLength.toFixed(2)} aṅgulas · φ = ${(Math.atan(shadowLength / 12) * 180 / Math.PI).toFixed(2)}° · angle ${angleDeg}°.`
+        }
+      />
       {/* Studio Header */}
       <div
         style={{
@@ -205,10 +242,10 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
           }}
         >
           {[
-            { id: 'temple', label: '🏛️ मन्दिर-रेखागणितम् (Temples & 0° Meridian)', sub: '0° Longitude & Temples' },
-            { id: 'shanku', label: '📐 शङ्कु (Śaṅku Gnomon)', sub: 'Latitude (अक्षांश)' },
-            { id: 'deshantara', label: '🌖 देशान्तर (Deśāntara)', sub: 'Longitude (रेखांश)' },
-            { id: 'dongla', label: '☀️ दोङ्गला व वेधशाला (Drift & Jantar Mantar)', sub: 'Cosmic Wobble & Recalibration' },
+            { id: 'temple', label: 'मन्दिर-रेखागणितम् (Temples & 0° Meridian)', sub: '0° Longitude & Temples' },
+            { id: 'shanku', label: 'शङ्कु (Śaṅku Gnomon)', sub: 'Latitude (अक्षांश)' },
+            { id: 'deshantara', label: 'देशान्तर (Deśāntara)', sub: 'Longitude (रेखांश)' },
+            { id: 'dongla', label: 'दोङ्गला व वेधशाला (Drift & Jantar Mantar)', sub: 'Cosmic Wobble & Recalibration' },
             { id: 'trig', label: '⭕ ज्या (Jyā vs Chord)', sub: 'Sine Trigonometry' },
           ].map((tab) => (
             <button
@@ -286,7 +323,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                   gap: '0.4rem',
                 }}
               >
-                🔊 Chant Sūrya Siddhānta Meridian Verse
+                Chant Sūrya Siddhānta Meridian Verse
               </button>
             </div>
             <h4 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 800, color: '#f8fafc' }}>
@@ -332,7 +369,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                         transition: 'all 0.15s ease',
                       }}
                     >
-                      <span style={{ fontSize: '1.1rem' }}>{t.icon}</span>
+                      <span className="ug-token"><LabTokenIcon name={t.icon} size={20} /></span>
                       <span style={{ fontSize: '0.84rem', fontWeight: 800, color: isSel ? t.color : '#1e293b' }}>
                         {t.name.split('(')[0].trim()}
                       </span>
@@ -360,7 +397,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                   >
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <span style={{ fontSize: '1.5rem' }}>{current.icon}</span>
+                        <span className="ug-token"><LabTokenIcon name={current.icon} size={28} /></span>
                         <div>
                           <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: current.color }}>
                             {current.name}
@@ -382,7 +419,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                           color: '#334155',
                         }}
                       >
-                        🔊 Pronounce
+                        Pronounce
                       </button>
                     </div>
 
@@ -531,7 +568,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                   lineHeight: 1.45,
                 }}
               >
-                💡 <em>Sūrya Siddhānta (1.62):</em> The line between Laṅkā on the equator and Meru at the pole constitutes the zero reference for calculating <strong>Ahargaṇa</strong> (elapsed civil days) and planetary positions across Bharatavarsha.
+                <em>Sūrya Siddhānta (1.62):</em> The line between Laṅkā on the equator and Meru at the pole constitutes the zero reference for calculating <strong>Ahargaṇa</strong> (elapsed civil days) and planetary positions across Bharatavarsha.
               </div>
             </div>
           </div>
@@ -722,7 +759,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                   style={{ background: '#ffffff', border: '1px solid #bae6fd', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', padding: '0.15rem 0.4rem', color: '#0369a1' }}
                   title="Pronounce Śaṅku"
                 >
-                  🔊 शङ्कुः
+                  शङ्कुः
                 </button>
               </h4>
               <p style={{ margin: 0, fontSize: '0.86rem', color: '#334155', lineHeight: 1.5 }}>
@@ -865,10 +902,14 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
               <rect x="20" y="200" width="300" height="20" fill="#1e293b" opacity="0.6" />
 
               {/* Gnomon base at x=140, y=200 */}
-              {/* Gnomon height: 12 units -> 90 px on screen */}
-              <line x1="140" y1="200" x2="140" y2="110" stroke="#f59e0b" strokeWidth="6" strokeLinecap="round" />
-              {/* Gnomon tip marker */}
-              <circle cx="140" cy="110" r="4" fill="#fbbf24" />
+              <defs>
+                <linearGradient id="ug-gnomon-wood" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#fde68a" />
+                  <stop offset="100%" stopColor="#92400e" />
+                </linearGradient>
+              </defs>
+              <polygon points="132,200 148,200 142,110 138,110" fill="url(#ug-gnomon-wood)" stroke="#fbbf24" strokeWidth="1" />
+              <circle cx="140" cy="110" r="5" fill="#fbbf24" stroke="#78350f" strokeWidth="1" />
 
               {/* Shadow length: mapped to pixels (1 Angula ≈ 7.5 px) */}
               {/* Shadow extends to the right: from 140 to 140 + shadowLength*7.5 */}
@@ -886,8 +927,14 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
 
               {/* Sunlight ray from sun through gnomon tip to shadow tip */}
               {/* Sun position */}
-              <circle cx="70" cy="40" r="14" fill="#fbbf24" opacity="0.9" />
-              <circle cx="70" cy="40" r="22" fill="#f59e0b" opacity="0.25" />
+              <circle cx="70" cy="40" r="24" fill="#f59e0b" opacity="0.22" />
+              <circle cx="70" cy="40" r="16" fill="#fbbf24" />
+              <g stroke="#fde68a" strokeWidth="2" strokeLinecap="round">
+                <line x1="70" y1="10" x2="70" y2="18" />
+                <line x1="70" y1="62" x2="70" y2="70" />
+                <line x1="40" y1="40" x2="48" y2="40" />
+                <line x1="92" y1="40" x2="100" y2="40" />
+              </g>
               {/* Solar Ray */}
               <line
                 x1="70"
@@ -937,6 +984,14 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
               >
                 φ = {calculatedLatDeg.toFixed(1)}°
               </text>
+              {Math.abs(shadowLength - 5.14) < 0.15 && (
+                <g>
+                  <rect x="160" y="20" width="160" height="22" rx="6" fill="rgba(6, 95, 70, 0.85)" />
+                  <text x="240" y="36" fill="#a7f3d0" fontSize="11" fontWeight="800" textAnchor="middle">
+                    Noon · true north marked
+                  </text>
+                </g>
+              )}
             </svg>
             <p style={{ margin: '0.75rem 0 0', fontSize: '0.78rem', color: '#94a3b8', textAlign: 'center' }}>
               At Ujjain (23.18° N), the equinoctial shadow measures exactly <strong>5.14 Aṅgulas</strong>. On the Tropic of Cancer at the summer solstice, the noon shadow collapses to <strong>0</strong>.
@@ -967,7 +1022,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                   style={{ background: '#ffffff', border: '1px solid #fde68a', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', padding: '0.15rem 0.4rem', color: '#92400e' }}
                   title="Pronounce Deśāntara"
                 >
-                  🔊 देशान्तरम्
+                  देशान्तरम्
                 </button>
               </h4>
               <p style={{ margin: 0, fontSize: '0.86rem', color: '#451a03', lineHeight: 1.5 }}>
@@ -1211,7 +1266,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                 }}
                 title="Pronounce Vedha-śālā"
               >
-                🔊 वेधशाला
+                वेधशाला
               </button>
             </div>
             <h4 style={{ margin: '0.35rem 0 0.4rem', color: '#831843', fontSize: '1.2rem', fontWeight: 800 }}>
@@ -1227,7 +1282,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
             {/* 1. Precession Wobble */}
             <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <span style={{ fontSize: '1.25rem' }}>🌀</span>
+                
                 <h5 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 800, color: '#0f172a' }}>
                   1. The Precession Wobble (A Cosmic Top)
                 </h5>
@@ -1240,7 +1295,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
             {/* 2. Milankovitch Obliquity */}
             <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <span style={{ fontSize: '1.25rem' }}>📐</span>
+                
                 <h5 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 800, color: '#0f172a' }}>
                   2. The Real Culprit: Milankovitch Obliquity
                 </h5>
@@ -1266,7 +1321,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
             {/* 4. Genius of Jantar Mantar */}
             <div style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <span style={{ fontSize: '1.25rem' }}>🔭</span>
+                
                 <h5 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 800, color: '#0f172a' }}>
                   4. The Genius of Jantar Mantar (1725 CE)
                 </h5>
@@ -1381,7 +1436,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                   lineHeight: 1.45,
                 }}
               >
-                💡 <strong>Scientific Convergence:</strong> In 1725, Maharaja Sawai Jai Singh recognized that brass astrolabes were unreliable over centuries due to mechanical warping. By using immovable stone masonry, the Jantar Mantar enabled direct measurement of actual solar meridian transits, keeping Indian astronomy dynamically aligned with cosmic shifts.
+                <strong>Scientific Convergence:</strong> In 1725, Maharaja Sawai Jai Singh recognized that brass astrolabes were unreliable over centuries due to mechanical warping. By using immovable stone masonry, the Jantar Mantar enabled direct measurement of actual solar meridian transits, keeping Indian astronomy dynamically aligned with cosmic shifts.
               </div>
             </div>
 
@@ -1417,7 +1472,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                     cursor: 'pointer',
                   }}
                 >
-                  ☀️ Doṅglā Zero Shadow Day
+                  Doṅglā Zero Shadow Day
                 </button>
                 <button
                   type="button"
@@ -1437,7 +1492,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                     cursor: 'pointer',
                   }}
                 >
-                  🔭 Jantar Mantar Transit Wall (1725)
+                  Jantar Mantar Transit Wall (1725)
                 </button>
               </div>
 
@@ -1573,7 +1628,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
               >
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                    <span style={{ fontSize: '1.3rem' }}>🪁</span>
+                    
                     <h5 style={{ margin: 0, fontSize: '0.98rem', fontWeight: 800, color: '#9a3412' }}>
                       Why Makar Sankranti Shifts 1 Day Every 72 Years
                     </h5>
@@ -1592,7 +1647,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                       color: '#c2410c',
                     }}
                   >
-                    🔊 मकरसंक्रान्तिः
+                    मकरसंक्रान्तिः
                   </button>
                 </div>
 
@@ -1706,7 +1761,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                     lineHeight: 1.45,
                   }}
                 >
-                  <strong>⚖️ The Ongoing Sāyana vs Nirāyana Debate:</strong> Should India reform the Pañcāṅga to match the seasonal Winter Solstice on Dec 21 (as urged by Dr. Meghnad Saha&apos;s 1952 Calendar Reform Committee), or preserve the sidereal star continuum? Meanwhile, sister festivals like <strong>Baisakhi, Puthandu, and Vishu</strong> have experienced the exact same 24-day drift from the Vernal Equinox (March 21) to <strong>April 14/15</strong>!
+                  <strong>The Ongoing Sāyana vs Nirāyana Debate:</strong> Should India reform the Pañcāṅga to match the seasonal Winter Solstice on Dec 21 (as urged by Dr. Meghnad Saha&apos;s 1952 Calendar Reform Committee), or preserve the sidereal star continuum? Meanwhile, sister festivals like <strong>Baisakhi, Puthandu, and Vishu</strong> have experienced the exact same 24-day drift from the Vernal Equinox (March 21) to <strong>April 14/15</strong>!
                 </div>
               </div>
 
@@ -1743,7 +1798,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                       color: '#0369a1',
                     }}
                   >
-                    🔊 सम्राट्-यन्त्रम्
+                    सम्राट्-यन्त्रम्
                   </button>
                 </div>
 
@@ -1849,7 +1904,7 @@ export const UjjainGeodesyStudio: React.FC<UjjainStudioProps> = ({ onPlayAudio, 
                   style={{ background: '#ffffff', border: '1px solid #bbf7d0', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', padding: '0.15rem 0.4rem', color: '#166534' }}
                   title="Pronounce Ardha-jyā"
                 >
-                  🔊 अर्धज्या
+                  अर्धज्या
                 </button>
               </h4>
               <p style={{ margin: 0, fontSize: '0.86rem', color: '#14532d', lineHeight: 1.5 }}>

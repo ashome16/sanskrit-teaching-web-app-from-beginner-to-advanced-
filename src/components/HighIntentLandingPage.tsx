@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import landingsData from '../data/intentLandings.json';
+import { IksVijnanaSubjectDirectory } from './IksVijnanaHub';
 import { GRADE_7_SYLLABUS } from '../data/grade7Syllabus';
 import { GRADE_8_SYLLABUS } from '../data/grade8Syllabus';
 import { GRADE_9_SYLLABUS } from '../data/grade9Syllabus';
@@ -109,6 +110,12 @@ const HighIntentLandingPage: React.FC<Props> = ({ landing, onAction }) => {
             ))}
           </div>
           <WordAnalyzer externalSelection={selection} />
+        </section>
+      )}
+
+      {landing.id === 'indian-knowledge-systems' && (
+        <section className="intent-landing__section">
+          <IksVijnanaSubjectDirectory includeResources />
         </section>
       )}
 

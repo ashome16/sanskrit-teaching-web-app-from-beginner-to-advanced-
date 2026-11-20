@@ -16,6 +16,8 @@ export interface VedicKnowledgeSystemShowcaseProps {
   imageWidth?: number;
   imageHeight?: number;
   artBadge?: string;
+  /** When set, clicking the IKS image goes to this page instead of opening a lightbox. */
+  imageHref?: string;
 }
 
 const DEFAULT_IKS_IMAGE_SRC = '/images/vedic-indian-knowledge-system.jpg';
@@ -165,6 +167,7 @@ export const VedicKnowledgeSystemShowcase: React.FC<VedicKnowledgeSystemShowcase
     imageWidth = DEFAULT_IKS_IMAGE_WIDTH,
     imageHeight = DEFAULT_IKS_IMAGE_HEIGHT,
     artBadge,
+    imageHref,
   } = props;
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const imageStyle = { aspectRatio: `${imageWidth} / ${imageHeight}` };
@@ -214,41 +217,61 @@ export const VedicKnowledgeSystemShowcase: React.FC<VedicKnowledgeSystemShowcase
         </div>
 
         {/* Central Infographic Artwork Showcase */}
-        <div
-          className="vks-art-showcase"
-          role="button"
-          tabIndex={0}
-          onClick={() => {
-            soundEffects.playCelebrationChime();
-            setIsLightboxOpen(true);
-          }}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
+        {imageHref ? (
+          <a
+            href={imageHref}
+            className="vks-art-showcase"
+            aria-label="Explore the World of Indian Knowledge Systems"
+            title="Explore the World of Indian Knowledge Systems"
+          >
+            {imageWebpSrc ? (
+              <picture>
+                <source srcSet={imageWebpSrc} type="image/webp" />
+                {artImage}
+              </picture>
+            ) : (
+              artImage
+            )}
+            {artBadge ? (
+              <div className="vks-art-overlay">
+                <span className="vks-art-badge">{artBadge}</span>
+              </div>
+            ) : null}
+          </a>
+        ) : (
+          <div
+            className="vks-art-showcase"
+            role="button"
+            tabIndex={0}
+            onClick={() => {
+              soundEffects.playCelebrationChime();
               setIsLightboxOpen(true);
-            }
-          }}
-          aria-label="Enlarge Vedic Indian Knowledge System Infographic"
-          title="Click to view full-screen high-resolution infographic"
-        >
-          {imageWebpSrc ? (
-            <picture>
-              <source srcSet={imageWebpSrc} type="image/webp" />
-              {artImage}
-            </picture>
-          ) : (
-            artImage
-          )}
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setIsLightboxOpen(true);
+              }
+            }}
+            aria-label="Enlarge Vedic Indian Knowledge System Infographic"
+            title="Click to view full-screen high-resolution infographic"
+          >
+            {imageWebpSrc ? (
+              <picture>
+                <source srcSet={imageWebpSrc} type="image/webp" />
+                {artImage}
+              </picture>
+            ) : (
+              artImage
+            )}
 
-          <div className="vks-art-overlay">
-            <span className="vks-art-badge">
-              {artBadge ?? '7 Pillars of Vedic Sciences'}
-            </span>
-            <span className="vks-art-zoom-hint">
-              Tap to Enlarge HD Infographic
-            </span>
+            <div className="vks-art-overlay">
+              <span className="vks-art-badge">
+                {artBadge ?? '7 Pillars of Vedic Sciences'}
+              </span>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Pillars Header */}
         <div className="vks-pillars-header">
@@ -306,7 +329,7 @@ export const VedicKnowledgeSystemShowcase: React.FC<VedicKnowledgeSystemShowcase
       </div>
 
       {/* Lightbox Modal */}
-      {isLightboxOpen && (
+      {!imageHref && isLightboxOpen && (
         <div
           className="vks-lightbox-backdrop"
           onClick={() => setIsLightboxOpen(false)}

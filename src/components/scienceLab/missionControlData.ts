@@ -578,3 +578,35 @@ export function getLevelRankTitle(level: number): { title: string; dev: string }
 export function getMissionCardById(id: string): MissionCardData | undefined {
   return CORE_MISSION_CARDS.find((c) => c.id === id);
 }
+
+/** Record a game win so catalog cards and Vidyā Stars stay in sync. */
+export function markLabCompleted(labId: string, stars = 3): ExplorerStats {
+  const prev = getExplorerStats();
+  const card = getMissionCardById(labId);
+  const nextStarsByGame = {
+    ...prev.starsByGame,
+    [labId]: Math.max(prev.starsByGame[labId] || 0, stars),
+  };
+  const totalStars = Object.keys(nextStarsByGame).reduce((acc, k) => acc + (nextStarsByGame[k] || 0), 0);
+  const unlockedBadges =
+    !card || prev.unlockedBadges.includes(card.badgeId)
+      ? prev.unlockedBadges
+      : [...prev.unlockedBadges, card.badgeId];
+  const completedMissions = prev.completedMissions.includes(labId)
+    ? prev.completedMissions
+    : [...prev.completedMissions, labId];
+  const updated: ExplorerStats = {
+    ...prev,
+    totalStars,
+    starsByGame: nextStarsByGame,
+    unlockedBadges,
+    completedMissions,
+  };
+  saveExplorerStats(updated);
+  try {
+    window.dispatchEvent(new CustomEvent('vl-explorer-stats', { detail: updated }));
+  } catch {
+    /* ignore */
+  }
+  return updated;
+}

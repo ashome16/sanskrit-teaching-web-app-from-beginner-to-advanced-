@@ -7,6 +7,7 @@ import {
   type VvmMockExam,
   type VvmScoreSummary,
 } from '../data/vvmJuniorMockData';
+import { VvmHub } from './VvmHub';
 import '../styles/vvm-prep.css';
 
 export interface VvmPreparationPageProps {
@@ -16,6 +17,7 @@ export interface VvmPreparationPageProps {
   onOpenVedicMaths?: () => void;
   onOpenResources?: () => void;
   onOpenQuiz?: () => void;
+  onOpenVvmLevel2?: () => void;
   initialTab?: VvmTab;
 }
 
@@ -28,6 +30,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
   onOpenVedicMaths,
   onOpenResources,
   onOpenQuiz,
+  onOpenVvmLevel2,
   initialTab,
 }) => {
   const [activeTab, setActiveTab] = useState<VvmTab>(() => {
@@ -193,6 +196,8 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
           </div>
         </header>
 
+        <VvmHub variant="full" onOpenVvm={(tab) => handleTabClick(tab ?? 'blueprint')} onOpenVvmLevel2={onOpenVvmLevel2} />
+
         {/* Nav Tabs */}
         <nav className="vvm-tabs-nav" aria-label="VVM Study Sections">
           <button
@@ -225,7 +230,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
             onClick={() => handleTabClick('ncert')}
           >
             <span>NCERT Science &amp; Maths</span>
-            <span className="vvm-tab-badge">50%</span>
+            <span className="vvm-tab-badge">Core</span>
           </button>
           <button
             type="button"
@@ -233,7 +238,7 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
             onClick={() => handleTabClick('logic')}
           >
             <span>Logic &amp; Reasoning</span>
-            <span className="vvm-tab-badge">10%</span>
+            <span className="vvm-tab-badge">Logic</span>
           </button>
           <button
             type="button"
@@ -299,17 +304,17 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
                 <h3>NCERT Curriculum &amp; Analytical Reasoning</h3>
                 <ul className="vvm-blueprint-sublist">
                   <li className="vvm-blueprint-subitem">
-                    <span className="vvm-subitem-badge">50 Questions</span>
+                    <span className="vvm-subitem-badge">45–48 Questions</span>
                     <div className="vvm-subitem-text">
-                      <strong>NCERT Science and Mathematics (50%)</strong>
-                      <span>Questions tailored to the student&apos;s registered class level (Classes 6 to 11).</span>
+                      <strong>NCERT Science and Mathematics (45% or 48%)</strong>
+                      <span>Classes 6–10: 48% core (12 Physics + 12 Chemistry + 12 Biology + 12 Maths). Class 11 PCM: 15 Physics + 15 Chemistry + 15 Maths. Class 11 PCB: 15 Physics + 15 Chemistry + 15 Biology.</span>
                     </div>
                   </li>
                   <li className="vvm-blueprint-subitem">
-                    <span className="vvm-subitem-badge">10 Questions</span>
+                    <span className="vvm-subitem-badge">12–15 Questions</span>
                     <div className="vvm-subitem-text">
-                      <strong>Logic and Analytical Reasoning (10%)</strong>
-                      <span>Series completion, spatial deduction, patterns, and mathematical reasoning.</span>
+                      <strong>Logic and Analytical Reasoning (12% or 15%)</strong>
+                      <span>Classes 6–10: 12 logic questions (12%). Class 11: 15 logic questions (15%). Use the class switcher above for the exact split.</span>
                     </div>
                   </li>
                 </ul>
@@ -774,10 +779,10 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
         {activeTab === 'ncert' && (
           <section className="vvm-section" aria-labelledby="ncert-heading">
             <div className="vvm-section-header">
-              <div className="vvm-section-kicker">Section B Study Guide (50% Weightage)</div>
+              <div className="vvm-section-kicker">Section B Study Guide (Class-wise Core Weightage)</div>
               <h2 id="ncert-heading" className="vvm-section-title">NCERT Science &amp; Mathematics Modules</h2>
               <p className="vvm-section-desc">
-                Section B accounts for half of your total score. Prepare key NCERT Class 6–10 concepts through EdNet Learn’s interactive virtual laboratories.
+                Section B is 60% of the Level-I paper: 48% core science and maths (Classes 6–10) or 45% stream core (Class 11), plus logic. Prepare key NCERT concepts through EdNet Learn’s interactive virtual laboratories.
               </p>
             </div>
 
@@ -928,10 +933,10 @@ export const VvmPreparationPage: React.FC<VvmPreparationPageProps> = ({
         {activeTab === 'logic' && (
           <section className="vvm-section" aria-labelledby="logic-heading">
             <div className="vvm-section-header">
-              <div className="vvm-section-kicker">Section B Study Guide (10% Weightage)</div>
+              <div className="vvm-section-kicker">Section B Study Guide (Class-wise Logic Weightage)</div>
               <h2 id="logic-heading" className="vvm-section-title">Logic &amp; Analytical Reasoning Guide</h2>
               <p className="vvm-section-desc">
-                Section B includes 10 questions testing spatial, analytical, and relational logic. Master the fundamental patterns asked in VVM exams.
+                Section B includes 12 logic questions for Classes 6–10 (12%) and 15 questions for Class 11 (15%). Master the fundamental patterns asked in VVM exams.
               </p>
             </div>
 

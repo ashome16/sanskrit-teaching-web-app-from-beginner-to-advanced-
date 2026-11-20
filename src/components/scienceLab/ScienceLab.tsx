@@ -10,8 +10,8 @@ import { HowToPlayModal } from './HowToPlayModal';
 import { playPronunciation, stopPronunciation } from '../../utils/pronunciation';
 import {
   getExplorerStats,
-  saveExplorerStats,
   getMissionCardById,
+  markLabCompleted,
   type ExplorerStats,
   type MissionCardData,
 } from './missionControlData';
@@ -39,10 +39,15 @@ import { BodhiWisdomCard } from '../BodhiWisdomCard';
 import { RISHI_QUESTS } from './rishiQuests';
 import { QuestDirectoryModal } from './QuestDirectoryModal';
 import '../../styles/iks-think-labs.css';
+import { IksRelatedStrip } from '../IksVijnanaHub';
+import LabWrapUp from './LabWrapUp';
+import LabResumeButton from './LabResumeButton';
+import { LAB_WRAP_UPS } from './labWrapUps';
+import { foldLabSearch, saveLabProgress } from './labProgress';
+import { IKS_HUB_SUBJECTS, subjectsForLab } from '../../data/iksVijnanaHub';
 import {
   LabGamePictogram,
   PreschoolActivityPictogram,
-  LabDomainPictogram,
   LabPillarPictogram,
   IksBranchPictogram,
 } from './LabPictograms';
@@ -526,17 +531,70 @@ const LEVEL_STEPS: { id: LabLevel; num: string; label: string; ages: string }[] 
   { id: 'high', num: '4', label: 'Scholar Studio', ages: 'Ages 14+' },
 ];
 
-const CATEGORY_TABS: { id: LabCategory; label: string; icon: string }[] = [
-  { id: 'all', label: 'All Domains', icon: '' },
-  { id: 'life', label: 'Living Nature', icon: '' },
-  { id: 'matter', label: 'Matter & Physics', icon: '' },
-  { id: 'cosmos', label: 'Sky & Space', icon: '' },
-  { id: 'waves', label: 'Sound & Math', icon: '' },
-];
-
 const CATEGORY_CHIP: Record<LabSegmentConfig['category'], string> = {
   matter: 'Matter', cosmos: 'Sky & Space', life: 'Living world', waves: 'Sound & Number',
 };
+
+/** Science games only — preschool stays in its own catalog band and is skipped by Try next. */
+const SCIENCE_SEGMENTS = LAB_SEGMENTS.filter((s) => s.level !== 'preschool');
+
+function labIdFromIksHref(href: string): LabSegmentId | null {
+  const m = href.match(/#([a-z0-9-]+)/i);
+  if (!m) return null;
+  const id = m[1];
+  return SEGMENT_IDS.has(id) ? (id as LabSegmentId) : null;
+}
+
+const IKS_SUBJECT_TABS: { id: string; sa: string; en: string; labIds: LabSegmentId[] }[] = IKS_HUB_SUBJECTS
+  .filter((s) => s.labs.length > 0)
+  .map((s) => ({
+    id: s.id,
+    sa: s.sa,
+    en: s.en,
+    labIds: s.labs
+      .map((l) => labIdFromIksHref(l.href))
+      .filter((id): id is LabSegmentId => !!id),
+  }));
+
+/** Breadcrumb subject: one primary IKS group per game (catalog still lists a game under every matching subject). */
+const PRIMARY_SUBJECT_ID: Partial<Record<LabSegmentId, string>> = {
+  paramanu: 'physics',
+  'srishti-sthiti-laya': 'physics',
+  'asato-ma': 'chemistry',
+  prakriti: 'ayurveda',
+  chaturyoni: 'ayurveda',
+  jyotisha: 'jyotisha',
+  chandrayaan: 'jyotisha',
+  'ujjain-geodesy': 'jyotisha',
+  'vedic-geometry': 'ganita',
+  chandahshastra: 'ganita',
+  rituparna: 'ganita',
+  kautilya: 'arthashastra',
+  agnibana: 'dhanurveda',
+  'temple-engineering': 'vastu',
+  'nada-brahman': 'vyakarana',
+  'mantra-acoustics': 'vyakarana',
+  citrakavya: 'vyakarana',
+};
+
+function subjectTabById(id: string) {
+  return IKS_SUBJECT_TABS.find((s) => s.id === id) || null;
+}
+
+function primarySubjectFor(labId: LabSegmentId) {
+  const preferred = PRIMARY_SUBJECT_ID[labId];
+  if (preferred) {
+    const tab = subjectTabById(preferred);
+    if (tab) return tab;
+  }
+  const listed = subjectsForLab(labId)[0];
+  return listed ? subjectTabById(listed.id) : null;
+}
+
+function labMatchesSubject(labId: LabSegmentId, subjectId: string) {
+  const tab = subjectTabById(subjectId);
+  return !!tab && tab.labIds.includes(labId);
+}
 
 const SimLoader = () => <div className="vl-loading">Loading the lab bench…</div>;
 
@@ -549,6 +607,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   onOpenVedicMaths,
   onOpenIks,
 }) => {
+
   const [active, setActive] = useState<LabSegmentId>(() => {
     if (initialSegment && initialSegment !== 'catalog' && initialSegment !== 'iks' && SEGMENT_IDS.has(initialSegment)) return initialSegment as LabSegmentId;
     if (initialSegment && HASH_ALIASES[initialSegment]) return HASH_ALIASES[initialSegment];
@@ -556,8 +615,10 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   });
   const [preschoolActivity, setPreschoolActivity] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'mission-control' | 'workbench' | 'catalog'>(() => {
-    if (!initialSegment || initialSegment === 'catalog' || initialSegment === 'iks') return 'catalog';
-    return 'workbench';
+    if (initialSegment && initialSegment !== 'catalog' && initialSegment !== 'iks') return 'workbench';
+    // Deep links such as /vignana-lab/#paramanu must open the game, not the catalog.
+    if (readHash()) return 'workbench';
+    return 'catalog';
   });
   const [isIksLightboxOpen, setIsIksLightboxOpen] = useState(false);
   const [explorerStats, setExplorerStats] = useState<ExplorerStats>(() => getExplorerStats());
@@ -566,6 +627,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   const [selectedHowToPlay, setSelectedHowToPlay] = useState<MissionCardData | null>(null);
   const [isSpeakingBodhiBriefing, setIsSpeakingBodhiBriefing] = useState(false);
   const [filterCat, setFilterCat] = useState<LabCategory>('all');
+  const [filterSubject, setFilterSubject] = useState<string>('all');
   const [filterLevel, setFilterLevel] = useState<LabLevel>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [heroSrc, setHeroSrc] = useState<string>('/images/vignana-lab-hero.webp');
@@ -576,6 +638,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   const catalogSectionRef = useRef<HTMLDivElement>(null);
   const simRef = useRef<HTMLDivElement>(null);
   const firstRun = useRef(true);
+  const didNormalizeUrl = useRef(false);
 
   useEffect(() => {
     if (!isIksDropdownOpen) return;
@@ -598,10 +661,43 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
   const activeMissionCard = useMemo(() => getMissionCardById(active), [active]);
 
+  const getLabBasePath = () => {
+    const currentPath = window.location.pathname.replace(/\/+$/, '');
+    return currentPath === '/science-lab' ? '/science-lab' : '/vignana-lab';
+  };
+
+  const writeLabUrl = (
+    mode: 'mission-control' | 'workbench' | 'catalog',
+    labId: LabSegmentId,
+    method: 'push' | 'replace',
+  ) => {
+    try {
+      const hash = mode === 'workbench' ? `#${labId}` : '#catalog';
+      const url = `${getLabBasePath()}${hash}`;
+      const here = `${window.location.pathname.replace(/\/+$/, '')}${window.location.hash}`;
+      if (here === url) return;
+      if (method === 'push') window.history.pushState({ view: 'science-lab', mode, labId }, '', url);
+      else window.history.replaceState({ view: 'science-lab', mode, labId }, '', url);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const goToCatalog = () => {
+    setViewMode('catalog');
+    soundEffects.playStrokeChime();
+    writeLabUrl('catalog', active, 'push');
+    window.requestAnimationFrame(() => {
+      catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
+
   const handleLaunchSim = (targetId: LabSegmentId) => {
     setActive(targetId);
     setPreschoolActivity(null);
     setViewMode('workbench');
+    writeLabUrl('workbench', targetId, 'push');
     soundEffects.playCelebrationChime();
     window.requestAnimationFrame(() => {
       simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -612,6 +708,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
     setActive('preschool-wonder');
     setPreschoolActivity(actId);
     setViewMode('workbench');
+    writeLabUrl('workbench', 'preschool-wonder', 'push');
     soundEffects.playCelebrationChime();
     window.requestAnimationFrame(() => {
       simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -620,27 +717,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
   const handleCompleteActiveMission = () => {
     soundEffects.playCelebrationChime();
-    setExplorerStats((prev) => {
-      const nextStarsByGame = { ...prev.starsByGame, [active]: 3 };
-      const currentKeys = Object.keys(nextStarsByGame);
-      const totalStars = currentKeys.reduce((acc, k) => acc + (nextStarsByGame[k] || 0), 0);
-      const unlockedBadges = !activeMissionCard || prev.unlockedBadges.includes(activeMissionCard.badgeId)
-        ? prev.unlockedBadges
-        : [...prev.unlockedBadges, activeMissionCard.badgeId];
-      const completedMissions = prev.completedMissions.includes(active)
-        ? prev.completedMissions
-        : [...prev.completedMissions, active];
-
-      const updated: ExplorerStats = {
-        ...prev,
-        totalStars,
-        starsByGame: nextStarsByGame,
-        unlockedBadges,
-        completedMissions,
-      };
-      saveExplorerStats(updated);
-      return updated;
-    });
+    setExplorerStats(markLabCompleted(active, 3));
     setIsScienceSparkOpen(true);
   };
 
@@ -665,49 +742,53 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
   const visibleSegments = useMemo<LabSegmentConfig[]>(() => {
     return LAB_SEGMENTS.filter((s) => {
-      // Category filter
+      // Category filter (kept for featured-card compatibility)
       if (filterCat !== 'all' && s.category !== filterCat) return false;
+      // IKS subject filter (catalog groups)
+      if (filterSubject !== 'all' && !labMatchesSubject(s.id, filterSubject)) return false;
       // Level filter
       if (filterLevel !== 'all' && s.level !== filterLevel) return false;
       // Keyword search
       if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase().trim();
-        const matches =
-          s.title.toLowerCase().includes(q) ||
-          s.dev.includes(q) ||
-          s.code.toLowerCase().includes(q) ||
-          s.subject.toLowerCase().includes(q) ||
-          s.school.toLowerCase().includes(q) ||
-          s.gameType.toLowerCase().includes(q) ||
-          s.levelLabel.toLowerCase().includes(q) ||
-          s.blurb.toLowerCase().includes(q);
-        if (!matches) return false;
+        const q = foldLabSearch(searchQuery.trim());
+        const terms = LAB_WRAP_UPS[s.id]?.terms ?? [];
+        const hay = foldLabSearch([
+          s.title,
+          s.dev,
+          s.code,
+          s.subject,
+          s.school,
+          s.gameType,
+          s.levelLabel,
+          s.blurb,
+          RISHI_QUESTS[s.id]?.goal ?? '',
+          ...terms.flatMap((term) => [term.dev, term.iast, term.en]),
+        ].join(' '));
+        if (!hay.includes(q)) return false;
       }
       return true;
     });
-  }, [filterCat, filterLevel, searchQuery]);
+  }, [filterCat, filterSubject, filterLevel, searchQuery]);
+
+  // First load: canonicalize empty hash to #catalog, or alias hashes to the game id.
+  useEffect(() => {
+    if (didNormalizeUrl.current) return;
+    didNormalizeUrl.current = true;
+    writeLabUrl(viewMode, active, 'replace');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Keep /vignana-lab#segment in the address bar so every segment is a deep link.
   useEffect(() => {
-    try {
-      const currentPath = window.location.pathname.replace(/\/+$/, '');
-      const basePath = currentPath === '/science-lab' ? '/science-lab' : '/vignana-lab';
-      const url = `${basePath}#${active}`;
-      const onLab = currentPath === '/vignana-lab' || currentPath === '/science-lab' || currentPath === '/vijnana-lab';
-      if (!onLab) window.history.pushState({ view: 'science-lab' }, '', url);
-      else if (window.location.hash !== `#${active}`) window.history.replaceState({ view: 'science-lab' }, '', url);
-    } catch {
-      /* ignore */
-    }
     const shouldScroll = !firstRun.current || !!initialSegment || !!readHash();
     firstRun.current = false;
-    if (shouldScroll) {
+    if (shouldScroll && viewMode === 'workbench') {
       const t = window.setTimeout(() => simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
       return () => window.clearTimeout(t);
     }
     return undefined;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [active]);
+  }, [active, viewMode]);
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -720,12 +801,48 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   }, [isIksLightboxOpen]);
 
   useEffect(() => {
-    const onHash = () => {
-      const h = readHash();
-      if (h) { setActive(h); setViewMode('workbench'); }
+    const applyUrl = () => {
+      // Always follow the address bar. Applying the same mode/game again is a no-op,
+      // so programmatic pushState/replaceState cannot fight the Back button.
+      let raw = '';
+      try { raw = window.location.hash.replace(/^#/, ''); } catch { /* ignore */ }
+      if (!raw || raw === 'catalog') {
+        setViewMode('catalog');
+        return;
+      }
+      const lab = readHash();
+      if (lab) {
+        setActive(lab);
+        setViewMode('workbench');
+      }
     };
-    window.addEventListener('hashchange', onHash);
-    return () => window.removeEventListener('hashchange', onHash);
+    window.addEventListener('hashchange', applyUrl);
+    window.addEventListener('popstate', applyUrl);
+    return () => {
+      window.removeEventListener('hashchange', applyUrl);
+      window.removeEventListener('popstate', applyUrl);
+    };
+  }, []);
+
+  useEffect(() => {
+    const open = viewMode === 'workbench' && active !== 'preschool-wonder';
+    document.body.classList.toggle('vl-lab-workbench-open', open);
+    return () => document.body.classList.remove('vl-lab-workbench-open');
+  }, [viewMode, active]);
+
+  useEffect(() => {
+    if (viewMode !== 'workbench') return;
+    const segNow = LAB_SEGMENTS.find((s) => s.id === active);
+    saveLabProgress({ labId: active, title: segNow?.title });
+  }, [viewMode, active]);
+
+  useEffect(() => {
+    const onStats = (e: Event) => {
+      const detail = (e as CustomEvent<ExplorerStats>).detail;
+      if (detail) setExplorerStats(detail);
+    };
+    window.addEventListener('vl-explorer-stats', onStats as EventListener);
+    return () => window.removeEventListener('vl-explorer-stats', onStats as EventListener);
   }, []);
 
   const seg = LAB_SEGMENTS.find((s) => s.id === active)!;
@@ -737,18 +854,31 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   }, [active]);
 
   const prevSeg = useMemo(() => {
-    const idx = currentIndex > 0 ? currentIndex - 1 : LAB_SEGMENTS.length - 1;
-    return LAB_SEGMENTS[idx];
-  }, [currentIndex]);
+    if (active === 'preschool-wonder') return SCIENCE_SEGMENTS[SCIENCE_SEGMENTS.length - 1];
+    const idx = SCIENCE_SEGMENTS.findIndex((s) => s.id === active);
+    if (idx < 0) {
+      const fallback = currentIndex > 0 ? currentIndex - 1 : LAB_SEGMENTS.length - 1;
+      return LAB_SEGMENTS[fallback];
+    }
+    return SCIENCE_SEGMENTS[idx > 0 ? idx - 1 : SCIENCE_SEGMENTS.length - 1];
+  }, [active, currentIndex]);
 
   const nextSeg = useMemo(() => {
-    const idx = currentIndex < LAB_SEGMENTS.length - 1 ? currentIndex + 1 : 0;
-    return LAB_SEGMENTS[idx];
-  }, [currentIndex]);
+    if (active === 'preschool-wonder') return SCIENCE_SEGMENTS[0];
+    const idx = SCIENCE_SEGMENTS.findIndex((s) => s.id === active);
+    if (idx < 0) {
+      const fallback = currentIndex < LAB_SEGMENTS.length - 1 ? currentIndex + 1 : 0;
+      return LAB_SEGMENTS[fallback];
+    }
+    return SCIENCE_SEGMENTS[idx < SCIENCE_SEGMENTS.length - 1 ? idx + 1 : 0];
+  }, [active, currentIndex]);
+
+  const activeSubject = active === 'preschool-wonder' ? null : primarySubjectFor(active);
 
   const handleNavigateLab = (targetId: LabSegmentId) => {
     setActive(targetId);
     setViewMode('workbench');
+    writeLabUrl('workbench', targetId, 'push');
     soundEffects.playStrokeChime();
     window.requestAnimationFrame(() => {
       simRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1154,8 +1284,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               <nav className="vl-level-rail" aria-label="Learning levels">
                 {LEVEL_STEPS.map((step) => {
                   const count = step.id === 'all'
-                    ? LAB_SEGMENTS.filter((s) => filterCat === 'all' || s.category === filterCat).length
-                    : LAB_SEGMENTS.filter((x) => x.level === step.id && (filterCat === 'all' || x.category === filterCat)).length;
+                    ? LAB_SEGMENTS.filter((s) => filterSubject === 'all' || labMatchesSubject(s.id, filterSubject)).length
+                    : LAB_SEGMENTS.filter((x) => x.level === step.id && (filterSubject === 'all' || labMatchesSubject(x.id, filterSubject))).length;
                   return (
                     <button
                       key={step.id}
@@ -1173,22 +1303,33 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             </div>
 
             <div className="vl-rail-group">
-              <span className="vl-rail-label">Scientific Domain:</span>
-              <nav className="vl-cat-rail" aria-label="Scientific domains">
-                {CATEGORY_TABS.map((cat) => {
-                  const count = cat.id === 'all'
-                    ? LAB_SEGMENTS.filter((s) => filterLevel === 'all' || s.level === filterLevel).length
-                    : LAB_SEGMENTS.filter((s) => s.category === cat.id && (filterLevel === 'all' || s.level === filterLevel)).length;
+              <span className="vl-rail-label">Subject (as on the IKS hub):</span>
+              <nav className="vl-cat-rail" aria-label="IKS subjects">
+                <button
+                  type="button"
+                  className={`vl-cat-chip${filterSubject === 'all' ? ' is-active' : ''}`}
+                  aria-pressed={filterSubject === 'all'}
+                  onClick={() => { setFilterSubject('all'); soundEffects.playStrokeChime(); }}
+                >
+                  <span>All subjects</span>
+                  <small className="vl-cat-count">({SCIENCE_SEGMENTS.filter((s) => filterLevel === 'all' || s.level === filterLevel).length})</small>
+                </button>
+                {IKS_SUBJECT_TABS.map((sub) => {
+                  const count = sub.labIds.filter((id) => {
+                    const seg = LAB_SEGMENTS.find((s) => s.id === id);
+                    return seg && (filterLevel === 'all' || seg.level === filterLevel);
+                  }).length;
+                  if (count === 0 && filterLevel !== 'all') return null;
                   return (
                     <button
-                      key={cat.id}
+                      key={sub.id}
                       type="button"
-                      className={`vl-cat-chip${filterCat === cat.id ? ' is-active' : ''}`}
-                      aria-pressed={filterCat === cat.id}
-                      onClick={() => { setFilterCat(cat.id); soundEffects.playStrokeChime(); }}
+                      className={`vl-cat-chip${filterSubject === sub.id ? ' is-active' : ''}`}
+                      aria-pressed={filterSubject === sub.id}
+                      onClick={() => { setFilterSubject(sub.id); soundEffects.playStrokeChime(); }}
                     >
-                      <span className="vl-cat-chip-pict" aria-hidden="true"><LabDomainPictogram id={cat.id} /></span>
-                      <span>{cat.label}</span>
+                      <span lang="sa">{sub.sa}</span>
+                      <span>{sub.en}</span>
                       <small className="vl-cat-count">({count})</small>
                     </button>
                   );
@@ -1207,16 +1348,14 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               Showing <strong>{visibleSegments.length}</strong> of {LAB_SEGMENTS.length} simulations
             </span>
           </div>
+          <div className="vl-resume-row">
+            <LabResumeButton variant="catalog" />
+          </div>
 
-          {LEVEL_STEPS.filter((st) => st.id !== 'all' && (filterLevel === 'all' || filterLevel === st.id)).map((st) => {
-            const games = visibleSegments.filter((x) => x.level === st.id);
-            if (!games.length) return null;
-
-            if (st.id === 'preschool') {
-              return (
-                <section key={st.id} className="vl-level-band vl-level-band--preschool" aria-label={st.label}>
+          {visibleSegments.some((x) => x.level === 'preschool') && (filterLevel === 'all' || filterLevel === 'preschool') && (
+              <section key="preschool" className="vl-level-band vl-level-band--preschool" aria-label="Play 2 Learn: Free Preschool Games">
                   <h2 className="vl-band-title">
-                    <span className="vl-level-num">{st.num}</span> {st.label} <small>{st.ages} · 24 Interactive Games</small>
+                    <span className="vl-level-num">1</span> Play 2 Learn: Free Preschool Games <small>Ages 3–6 · 24 Interactive Games</small>
                   </h2>
                   <div className="vl-preschool-showcase">
                     <div className="vl-ps-header-row">
@@ -1272,15 +1411,21 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                     </div>
                   </div>
                 </section>
-              );
-            }
+          )}
 
+          {IKS_SUBJECT_TABS.filter((sub) => filterSubject === 'all' || filterSubject === sub.id).map((sub) => {
+            const games = visibleSegments.filter((g) => sub.labIds.includes(g.id) && g.level !== 'preschool');
+            if (!games.length) return null;
             return (
-              <section key={st.id} className="vl-level-band" aria-label={st.label}>
-                <h2 className="vl-band-title"><span className="vl-level-num">{st.num}</span> {st.label} <small>{st.ages} · {games.length} simulations</small></h2>
+              <section key={sub.id} id={`vl-subject-${sub.id}`} className="vl-level-band vl-subject-band" aria-label={sub.en}>
+                <h2 className="vl-band-title">
+                  <span className="vl-subject-sa sanskrit-safe-text" lang="sa">{sub.sa}</span>
+                  {sub.en}
+                  <small>{games.length} {games.length === 1 ? 'game' : 'games'}</small>
+                </h2>
                 <div className="vl-band-grid">
                   {games.map((g) => (
-                    <button key={g.id} type="button" className="vl-game-card" onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
+                    <button key={g.id} type="button" className={`vl-game-card${(explorerStats.completedMissions || []).includes(g.id) ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
                       <span className="vl-game-icon" aria-hidden="true"><LabGamePictogram id={g.id} /></span>
                       <span className="vl-game-body">
                         <b className="vl-game-title">{g.title}</b>
@@ -1288,21 +1433,24 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                         {RISHI_QUESTS[g.id] && <span className="vl-game-goal">{RISHI_QUESTS[g.id].goal}</span>}
                         <span className="vl-game-chips">
                           <span>{g.ageRange}</span>
-                          <span>{CATEGORY_CHIP[g.category]}</span>
-                          {g.id === 'preschool-wonder' ? <span>24 activities (Map &amp; Spices)</span> : <span>3–5 min</span>}
+                          <span>{g.levelLabel}</span>
+                          {(explorerStats.completedMissions || []).includes(g.id) && <span className="vl-game-chip-done">Completed</span>}
                           {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>{explorerStats.starsByGame[g.id]} Stars</span>}
                         </span>
                       </span>
-                      <span className="vl-game-play">Play ➔</span>
+                      <span className="vl-game-play">{(explorerStats.completedMissions || []).includes(g.id) ? 'Play again ➔' : 'Play ➔'}</span>
                     </button>
                   ))}
                 </div>
               </section>
             );
           })}
+          {visibleSegments.filter((s) => s.level !== 'preschool').length === 0 && visibleSegments.every((s) => s.level === 'preschool') && searchQuery && filterSubject !== 'all' && (
+            <p className="vl-hub-empty">No science games match this subject and search.</p>
+          )}
           {visibleSegments.length === 0 && (
             <p className="vl-hub-empty">
-              No games match your current filter. <button type="button" onClick={() => { setSearchQuery(''); setFilterLevel('all'); setFilterCat('all'); }}>Show all simulations</button>
+              No games match your current filter. <button type="button" onClick={() => { setSearchQuery(''); setFilterLevel('all'); setFilterCat('all'); setFilterSubject('all'); }}>Show all simulations</button>
             </p>
           )}
 
@@ -1560,25 +1708,93 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
       {viewMode === 'workbench' && (
         <>
-        <section id={active} ref={simRef} className="vl-segment vl-segment--mission-workbench" aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
+        <section id={active} ref={simRef} className={`vl-segment vl-segment--mission-workbench${active !== 'preschool-wonder' ? ' vl-segment--play-first' : ''}`} aria-labelledby={`vl-h-${active}`} data-testid="lab-segment" data-segment={active}>
         {/* Kid-Centric Mission Workbench Header — Trimmed & De-cluttered */}
-        <div className="vl-wb-mission-header">
-          <div className="vl-wb-nav-row">
-            {/* Unified Hub Back Button */}
+        <div className="vl-wb-sticky-nav" aria-label="Game location and switcher">
+          <nav className="vl-wb-crumb" aria-label="Breadcrumb">
+            <ol>
+              <li>
+                <button type="button" onClick={goToCatalog}>Vijñāna Lab</button>
+              </li>
+              {active === 'preschool-wonder' ? (
+                <li aria-current="page"><span>Play 2 Learn</span></li>
+              ) : activeSubject ? (
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFilterSubject(activeSubject.id);
+                      goToCatalog();
+                    }}
+                  >
+                    <span lang="sa">{activeSubject.sa}</span> {activeSubject.en}
+                  </button>
+                </li>
+              ) : null}
+              {active !== 'preschool-wonder' && (
+                <li aria-current="page"><span>{seg.title}</span></li>
+              )}
+            </ol>
+          </nav>
+          <button
+            type="button"
+            className="vl-wb-return-btn"
+            onClick={goToCatalog}
+            title="Back to all games"
+          >
+            <span aria-hidden="true">◀</span>
+            <span>Back to all games</span>
+          </button>
+          <div className="vl-wb-quick-nav" aria-label="Quick simulation switcher">
             <button
               type="button"
-              className="vl-wb-return-btn"
-              onClick={() => {
-                setViewMode('catalog');
-                soundEffects.playStrokeChime();
-                catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              title="Return to Games Directory (All 41 Games)"
+              className="vl-wb-arrow-btn"
+              onClick={() => handleNavigateLab(prevSeg.id)}
+              title={`Previous: ${prevSeg.title}`}
+              aria-label={`Previous: ${prevSeg.title}`}
             >
-              <span aria-hidden="true">◀</span>
-              <span>All Games Hub</span>
+              ◀ Prev
             </button>
+            <select
+              id="vl-lab-switch"
+              className="vl-wb-switcher-select"
+              value={active}
+              onChange={(e) => {
+                handleLaunchSim(e.target.value as LabSegmentId);
+              }}
+              aria-label="Switch science simulation"
+            >
+              <optgroup label="Play 2 Learn: Free Preschool Games (Ages 3–6)">
+                <option value="preschool-wonder">Play 2 Learn: Free Preschool Games</option>
+              </optgroup>
+              {IKS_SUBJECT_TABS.map((sub) => (
+                <optgroup key={sub.id} label={`${sub.en} (${sub.sa})`}>
+                  {sub.labIds.map((id) => {
+                    const s = LAB_SEGMENTS.find((segItem) => segItem.id === id);
+                    if (!s) return null;
+                    return (
+                      <option key={`${sub.id}-${s.id}`} value={s.id}>
+                        {s.title} ({s.ageRange})
+                      </option>
+                    );
+                  })}
+                </optgroup>
+              ))}
+            </select>
+            <button
+              type="button"
+              className="vl-wb-arrow-btn"
+              onClick={() => handleNavigateLab(nextSeg.id)}
+              title={`Next: ${nextSeg.title}`}
+              aria-label={`Next: ${nextSeg.title}`}
+            >
+              Next ▶
+            </button>
+          </div>
+        </div>
 
+        <div className="vl-wb-mission-header">
+          <div className="vl-wb-nav-row">
             {/* Active Simulation Title & Stage */}
             <div className="vl-wb-active-mission-title">
               <span className="vl-wb-icon"><LabGamePictogram id={seg.id} /></span>
@@ -1590,75 +1806,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               </div>
             </div>
 
-            {/* In-workbench quick navigation bar */}
-            <div className="vl-wb-quick-nav" aria-label="Quick simulation switcher">
-              <button
-                type="button"
-                className="vl-wb-arrow-btn"
-                onClick={() => handleNavigateLab(prevSeg.id)}
-                title={`Previous: ${prevSeg.title}`}
-                aria-label={`Previous: ${prevSeg.title}`}
-              >
-                ◀ Prev
-              </button>
-              <select
-                id="vl-lab-switch"
-                className="vl-wb-switcher-select"
-                value={active}
-                onChange={(e) => {
-                  handleLaunchSim(e.target.value as LabSegmentId);
-                  soundEffects.playStrokeChime();
-                }}
-                aria-label="Switch science simulation"
-              >
-                <optgroup label="Stage 1: Play 2 Learn: Free Preschool Games (Ages 3–6 · 25 Games)">
-                  <option value="preschool-wonder">Play 2 Learn: Free Preschool Games (Ages 3–6 · 25 Activities)</option>
-                </optgroup>
-                <optgroup label="Stage 2: Primary Explorers (Ages 6–10)">
-                  {LAB_SEGMENTS.filter((s) => s.level === 'primary').map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.title} ({s.ageRange})
-                    </option>
-                  ))}
-                </optgroup>
-                <optgroup label="Stage 3: Middle Missions (Ages 10–14)">
-                  {LAB_SEGMENTS.filter((s) => s.level === 'middle').map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.title} ({s.ageRange})
-                    </option>
-                  ))}
-                </optgroup>
-                <optgroup label="Stage 4: Scholar Studio (Ages 14+)">
-                  {LAB_SEGMENTS.filter((s) => s.level === 'high' || s.level === 'advanced').map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.title} ({s.ageRange})
-                    </option>
-                  ))}
-                </optgroup>
-              </select>
-              <button
-                type="button"
-                className="vl-wb-arrow-btn"
-                onClick={() => handleNavigateLab(nextSeg.id)}
-                title={`Next: ${nextSeg.title}`}
-                aria-label={`Next: ${nextSeg.title}`}
-              >
-                Next ▶
-              </button>
-            </div>
-
             {/* Action buttons — Trimmed without redundant Level Path */}
             <div className="vl-wb-actions-right">
-              {(activeMissionCard || quest) && (
-                <button
-                  type="button"
-                  className="vl-wb-spark-btn"
-                  onClick={handleCompleteActiveMission}
-                  title="Celebrate mission completion & unlock 3 Vidyā Stars!"
-                >
-                  <span>I did it! (+3 Vidyā Stars)</span>
-                </button>
-              )}
               {activeMissionCard && (
                 <button
                   type="button"
@@ -1683,6 +1832,26 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               >
                 <span>Parent Notes</span>
               </button>
+              {active !== 'preschool-wonder' && (activeMissionCard || quest) && (
+                <button
+                  type="button"
+                  className="vl-wb-spark-btn vl-wb-spark-btn--quiet"
+                  onClick={handleCompleteActiveMission}
+                  title="Celebrate mission completion & unlock 3 Vidyā Stars!"
+                >
+                  <span>I did it! (+3 Vidyā Stars)</span>
+                </button>
+              )}
+              {active === 'preschool-wonder' && (activeMissionCard || quest) && (
+                <button
+                  type="button"
+                  className="vl-wb-spark-btn"
+                  onClick={handleCompleteActiveMission}
+                  title="Celebrate mission completion & unlock 3 Vidyā Stars!"
+                >
+                  <span>I did it! (+3 Vidyā Stars)</span>
+                </button>
+              )}
             </div>
           </div>
 
@@ -1721,7 +1890,43 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 )}
               </div>
 
-              {quest && (
+              {quest && active !== 'preschool-wonder' && (
+                <>
+                  <ol className="vl-quest-steps" aria-label="What to do">
+                    {quest.steps.map((st, i) => (
+                      <li key={i}>
+                        <span className="vl-quest-step-num">{i + 1}</span>
+                        <span className="vl-quest-step-text">{st}</span>
+                      </li>
+                    ))}
+                  </ol>
+                  <details className="vl-wb-lens-toggle">
+                    <summary className="vl-wb-lens-summary">
+                      <span className="vl-wb-lens-summary-left">
+                        <span>Ṛṣi Lens (निरीक्षणम् · प्रकृति · प्रयोजनम्)</span>
+                      </span>
+                      <span className="vl-wb-lens-summary-tag">Tap to view ▾</span>
+                    </summary>
+                    <div className="vl-wb-lens-body">
+                      <div className="vl-quest-lens" aria-label="Ṛṣi lens">
+                        <span className="vl-quest-lens-item">
+                          <b lang="sa" className="vl-quest-lens-label">निरीक्षणम्</b>
+                          <span className="vl-quest-lens-desc">{quest.observe}</span>
+                        </span>
+                        <span className="vl-quest-lens-item">
+                          <b lang="sa" className="vl-quest-lens-label">प्रकृति-शिक्षा</b>
+                          <span className="vl-quest-lens-desc">{quest.nature}</span>
+                        </span>
+                        <span className="vl-quest-lens-item">
+                          <b lang="sa" className="vl-quest-lens-label">प्रयोजनम्</b>
+                          <span className="vl-quest-lens-desc">{quest.purpose}</span>
+                        </span>
+                      </div>
+                    </div>
+                  </details>
+                </>
+              )}
+              {quest && active === 'preschool-wonder' && (
                 <details className="vl-wb-lens-toggle">
                   <summary className="vl-wb-lens-summary">
                     <span className="vl-wb-lens-summary-left">
@@ -1766,11 +1971,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               <PreschoolWonderLab
                 initialActivity={preschoolActivity}
                 onNextLab={() => handleNavigateLab('asato-ma')}
-                onBrowseMainLabs={() => {
-                  setViewMode('catalog');
-                  soundEffects.playStrokeChime();
-                  catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
+                onBrowseMainLabs={goToCatalog}
                 onSelectMainLab={(targetId) => handleNavigateLab(targetId as LabSegmentId)}
               />
             )}
@@ -1793,6 +1994,21 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             {active === 'citrakavya' && <CitrakavyaStudio onNextLab={() => handleNavigateLab(nextSeg.id)} onPrevLab={() => handleNavigateLab(prevSeg.id)} />}
           </Suspense>
         </div>
+
+        {active !== 'preschool-wonder' && (
+          <LabWrapUp
+            labId={active}
+            labTitle={seg.title}
+            prevLabel={prevSeg.title}
+            nextLabel={nextSeg.title}
+            onPrev={() => handleNavigateLab(prevSeg.id)}
+            onNext={() => handleNavigateLab(nextSeg.id)}
+            onBackToCatalog={goToCatalog}
+          />
+        )}
+
+        {active !== 'preschool-wonder' && <IksRelatedStrip labId={active} />}
+
 
         {/* Optional Expandable Ancient Civilizational Context for Scholars & Parents */}
         <details className="vl-wb-heritage-accordion">
@@ -1860,11 +2076,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 <button
                   type="button"
                   className="vl-pgw-hub-btn"
-                  onClick={() => {
-                    setViewMode('catalog');
-                    soundEffects.playStrokeChime();
-                    catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
+                  onClick={goToCatalog}
                 >
                   <span>Browse All 41 Games Directory</span>
                 </button>
@@ -1927,14 +2139,10 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                   <button
                     type="button"
                     className="vl-ag-ghost-btn"
-                    onClick={() => {
-                      setViewMode('catalog');
-                      soundEffects.playStrokeChime();
-                      catalogSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}
-                    title="View full 17-lab curriculum"
+                    onClick={goToCatalog}
+                    title="Back to all games"
                   >
-                    All 17 Labs
+                    Back to all games
                   </button>
                   <button
                     type="button"
@@ -2043,9 +2251,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
           onPlayAgain={() => {
             setIsScienceSparkOpen(false);
           }}
-          onReturnToDashboard={() => {
-            setViewMode('catalog');
-          }}
+          onReturnToDashboard={goToCatalog}
         />
       )}
 

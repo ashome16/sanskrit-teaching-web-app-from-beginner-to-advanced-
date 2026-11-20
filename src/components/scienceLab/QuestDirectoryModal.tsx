@@ -36,7 +36,7 @@ export const QuestDirectoryModal: React.FC<QuestDirectoryModalProps> = ({
       <div className="vl-quest-directory-panel">
         <div className="vl-quest-directory-head">
           <div>
-            <span className="vl-quest-directory-badge">🧭 लक्ष्य-सारणी · QUEST ARCHIVE</span>
+            <span className="vl-quest-directory-badge">लक्ष्य-सारणी · Quest archive</span>
             <h3 className="vl-quest-directory-title">Reality Sandbox 3-Minute Quests</h3>
             <p className="vl-quest-directory-sub">
               Master ancient Indian scientific principles across atomic physics, cymatics, cosmology, and mathematics through curated gamified missions.
@@ -76,7 +76,7 @@ export const QuestDirectoryModal: React.FC<QuestDirectoryModalProps> = ({
               <div key={labKey} className={`vl-quest-sector-card${isCurrentSector ? ' is-current' : ''}`}>
                 <div className="vl-quest-sector-head">
                   <span className="vl-quest-sector-name">
-                    {isCurrentSector ? '📍 ' : ''}Sector: {labKey.toUpperCase()}
+                    {isCurrentSector ? 'Current · ' : ''}Sector: {labKey.toUpperCase()}
                   </span>
                   <span className="vl-quest-sector-count">{labQuests.length} Quests</span>
                 </div>

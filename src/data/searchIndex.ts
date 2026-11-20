@@ -26,7 +26,10 @@ export interface SearchTarget {
     | 'intent-landing'
     | 'home'
     | 'indian-mathematics'
-    | 'vvm';
+    | 'vvm'
+    | 'vvm-level-2'
+    | 'vvm-class-pack'
+    | 'iks';
   vvmTab?: 'blueprint' | 'heritage' | 'scientists' | 'ncert' | 'logic' | 'quiz' | 'journey';
   grammarTopic?:
     | 'home'
@@ -75,6 +78,41 @@ export interface SearchItem {
 }
 
 export const SEARCH_INDEX: SearchItem[] = [
+  {
+    id: 'vvm-class-6-pack',
+    title: 'Class 6 VVM Study Notes, Interactive Quiz, and Printable Worksheet Pack',
+    subtitle: 'VVM 2026–27 · Quick-revision notes, printable worksheet, interactive quiz · /vvm/class-6',
+    category: 'guides',
+    categoryLabel: 'Science & Heritage',
+    badgeEmoji: '6',
+    badgeColor: '#9a3412',
+    description:
+      'Class 6 VVM pack: Quick-Revision Study Notes on Indian contributions, Tri-Shakti pioneers, and core science and maths; a printable 15-question worksheet with a hidden answer key; and an interactive quiz with hints, explanations, and a final score.',
+    keywords: [
+      'vvm class 6',
+      'class 6 vvm notes',
+      'vvm worksheet',
+      'vvm quiz class 6',
+      'anna mani',
+      'asima chatterjee',
+      'harappan bricks',
+      'vidyarthi vigyan manthan class 6',
+    ],
+    target: { view: 'vvm-class-pack' },
+  },
+
+  {
+    id: 'vvm-level-2-hub',
+    title: "VVM Level-II State-Level Camp (SLC) Prep Hub",
+    subtitle: "VVM 2026–27 · Classes 6–11 · State-Level Camp",
+    category: 'guides',
+    categoryLabel: 'Science & Heritage',
+    badgeEmoji: 'L2',
+    badgeColor: '#9a3412',
+    description: "Prepare for the Vidyarthi Vigyan Manthan State-Level Camp (Level-II): official 2026–27 dates, SLC evaluation blueprint, and class-band EST, ICAST, AOSAT, IKS and logic modules for Classes 6–7, 8–9 and 10–11.",
+    keywords: ["vvm level 2", "vvm level-ii", "vvm state level camp", "vvm slc", "state camp", "experimental skill test", "aosat", "icast", "iks video", "vidyarthi vigyan manthan camp", "vvm 2026"],
+    target: { view: 'vvm-level-2' },
+  },
   {
     id: 'vvm-hub',
     title: "Vidyarthi Vigyan Manthan (VVM) Preparation Hub",
@@ -8556,6 +8594,32 @@ export const SEARCH_INDEX: SearchItem[] = [
     ],
     target: { view: 'science-lab', labAnchor: 'asato-ma' },
   },
+  {
+    id: 'iks-vijnana-hub',
+    title: 'Indian Knowledge Systems and Vijñāna Lab hub',
+    subtitle: 'Readings, games and Think Labs organised by subject · /iks',
+    category: 'tools',
+    categoryLabel: 'Interactive Lab',
+    badgeEmoji: '',
+    badgeColor: '#b45309',
+    description:
+      'One hub for Indian Knowledge Systems and the Vijñāna Lab: Darśana, Gaṇita, Jyotiṣa, Itihāsa, Arthaśāstra, Dhanurveda, Āyurveda, Vāstu, Vyākaraṇa, plus physics, chemistry, and agriculture — each with its readings, lab games, and Think Labs.',
+    keywords: [
+      'IKS',
+      'Indian Knowledge Systems',
+      'Vijnana Lab',
+      'Vijñāna Lab',
+      'Think Labs',
+      'Darśana',
+      'Ganita',
+      'Jyotisha',
+      'Ayurveda',
+      'Vastu',
+      'science lab',
+    ],
+    target: { view: 'iks' },
+  },
+
   {
     id: 'lab-chaturyoni',
     title: 'Chaturyoni Spawn Map · चतुर्योनि-मानचित्रम्',

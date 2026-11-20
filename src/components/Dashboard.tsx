@@ -9,6 +9,7 @@ const SupportWidget = lazy(() => import('./SupportWidget'));
 const BodhiGuideWidget = lazy(() => import('./BodhiGuideWidget'));
 import { getSearchShortcut } from '../utils/platformShortcut';
 import type { SearchItem, SearchTarget } from '../data/searchIndex';
+import { getVvmClassPack, parseVvmClassPackPath } from '../data/vvmClassPacks';
 import { categoryForLiteratureAnchor } from '../data/literatureGrammarQuizzes';
 import type { VedicTab } from './VedicMaths';
 import type { GrammarTopic } from './Grammar';
@@ -32,6 +33,8 @@ const ScienceLab = lazy(() => import('./scienceLab/ScienceLab'));
 const SanskritAssignmentEvaluator = lazy(() => import('./SanskritAssignmentEvaluator'));
 const IksThinkLabsPage = lazy(() => import('./IksThinkLabsPage'));
 const VvmPreparationPage = lazy(() => import('./VvmPreparationPage'));
+const VvmLevel2Page = lazy(() => import('./VvmLevel2Page'));
+const VvmClassPackPage = lazy(() => import('./VvmClassPackPage'));
 const AboutEdNetPage = lazy(() => import('./AboutEdNetPage'));
 const SugrivaJourneyStudio = lazy(() => import('./SugrivaJourneyStudio'));
 const IndianMathematicsStudio = lazy(() => import('./IndianMathematicsStudio'));
@@ -95,6 +98,8 @@ type DashboardView =
   | 'intent-landing'
   | 'iks'
   | 'vvm'
+  | 'vvm-level-2'
+  | 'vvm-class-pack'
   | 'sugriva-journey'
   | 'about';
 
@@ -123,6 +128,12 @@ const VVM_PATHS = new Set([
   '/vvm-exam',
   '/vidyarthi-vigyan-manthan',
   '/vvm-study-material',
+]);
+
+const VVM_LEVEL2_PATHS = new Set([
+  '/vvm-level-2',
+  '/vvm-level-ii',
+  '/vvm-state-camp',
 ]);
 
 const ABOUT_PATHS = new Set([
@@ -267,6 +278,14 @@ export const VIEW_METADATA: Record<DashboardView, { title: string; desc: string 
     title: 'VVM Exam Preparation · Vidyarthi Vigyan Manthan (विद्यार्थी विज्ञान मंथन) | EdNet Learn',
     desc: 'Comprehensive preparation guide for Vidyarthi Vigyan Manthan (VVM): Indian Contributions to Science, biographies of Indian scientists, NCERT Science & Maths simulations, logic puzzles, and mock quizzes.',
   },
+  'vvm-level-2': {
+    title: 'VVM Level-II State-Level Camp (SLC) Prep Hub · 2026–27 | EdNet Learn',
+    desc: 'Prepare for the Vidyarthi Vigyan Manthan 2026–27 State-Level Camp (Level-II): official dates, SLC evaluation blueprint, and class-band EST, ICAST, AOSAT, IKS and logic prep for Classes 6–11.',
+  },
+  'vvm-class-pack': {
+    title: 'Class 6 VVM Study Notes, Interactive Quiz, and Printable Worksheet Pack | EdNet Learn',
+    desc: 'Class 6 VVM quick-revision study notes, a printable 15-question worksheet with answer key, and an interactive quiz on Indian heritage, science, mathematics and reasoning.',
+  },
   'sugriva-journey': {
     title: 'Sugrīva’s Journey (सुग्रीव-दिग्विजय) · Ramayana Directional Geography | EdNet Learn',
     desc: 'Explore the 4 cardinal search expeditions from Valmiki Ramayana Kishkindha Kanda (Sargas 40–43): 8 Vedic directions (Aṣṭa-Diśā), ancient world rivers, mountains, and Sanskrit exploration quests.',
@@ -410,6 +429,8 @@ const pathToView = (pathname: string): DashboardView | null => {
     clean === '/writing-assignments'
   ) return 'assignment-eval';
   if (SUGRIVA_PATHS.has(clean)) return 'sugriva-journey';
+  if (VVM_LEVEL2_PATHS.has(clean)) return 'vvm-level-2';
+  if (parseVvmClassPackPath(clean)) return 'vvm-class-pack';
   if (VVM_PATHS.has(clean)) return 'vvm';
   if (ABOUT_PATHS.has(clean)) return 'about';
   return null;
@@ -418,6 +439,17 @@ const pathToView = (pathname: string): DashboardView | null => {
 const viewToPath = (view: DashboardView): string => {
   if (view === 'about') return '/about';
   if (view === 'vvm') return '/vvm';
+  if (view === 'vvm-level-2') return '/vvm-level-2';
+  if (view === 'vvm-class-pack') {
+    if (typeof window !== 'undefined') {
+      const parsed = parseVvmClassPackPath(window.location.pathname);
+      if (parsed) {
+        const pack = getVvmClassPack(parsed.classId);
+        if (pack) return pack.path.replace(/\/+$/, '') || pack.path;
+      }
+    }
+    return '/vvm/class-6';
+  }
   if (view === 'sugriva-journey') return '/sugriva-journey';
   if (view === 'course') return '/sanskrit-thinking';
   if (view === 'philosophy') return '/philosophy';
@@ -482,6 +514,9 @@ const isValidSavedView = (saved: string | null): saved is DashboardView =>
   saved === 'assignment-eval' ||
   saved === 'iks' ||
   saved === 'vvm' ||
+  saved === 'vvm-level-2' ||
+  saved === 'vvm-class-pack' ||
+  saved === 'sugriva-journey' ||
   saved === 'about';
 
 
@@ -492,7 +527,7 @@ const cleanWord = (value: string): string =>
 // Views guests may open in smart_freemium (SEO deep links must not bounce to home).
 const GUEST_FREE_VIEWS: ReadonlySet<string> = new Set([
   'home', 'faq', 'philosophy', 'cbse-guide', 'resources', 'dhatupatha', 'science-lab', 'certificate',
-  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'indian-mathematics', 'assignment-eval', 'intent-landing', 'iks', 'vvm', 'about',
+  'grammar', 'board', 'course', 'worksheets', 'vedic-maths', 'indian-mathematics', 'assignment-eval', 'intent-landing', 'iks', 'vvm', 'vvm-level-2', 'vvm-class-pack', 'sugriva-journey', 'about',
 ]);
 
 const Dashboard: React.FC = () => {
@@ -1099,6 +1134,7 @@ const Dashboard: React.FC = () => {
         activeView === 'grammar' && grammarTargetArticleId === 'panchatantra-niti-world' && current === '/panchatantra';
       const onEurope =
         activeView === 'grammar' && grammarTargetArticleId === 'sanskrit-grammar-europe' && current === '/sanskrit-grammar-europe';
+      const onClassPack = activeView === 'vvm-class-pack';
       const activeLanding = activeView === 'intent-landing' ? landingById(landingId) : null;
       const desired = activeLanding
         ? activeLanding.path
@@ -1120,6 +1156,8 @@ const Dashboard: React.FC = () => {
         ? '/panchatantra'
         : onEurope
         ? '/sanskrit-grammar-europe'
+        : onClassPack
+        ? (parseVvmClassPackPath(current) ? current : '/vvm/class-6')
         : viewToPath(activeView);
       const quizHash =
         activeView === 'quiz' && quizAnchor && categoryForLiteratureAnchor(quizAnchor)
@@ -1807,6 +1845,7 @@ const Dashboard: React.FC = () => {
             if (tab) setVvmInitialTab(tab);
             navigateToView('vvm');
           }}
+          onOpenVvmLevel2={() => navigateToView('vvm-level-2')}
           onOpenAbout={() => navigateToView('about')}
         />
       )}
@@ -1916,11 +1955,30 @@ const Dashboard: React.FC = () => {
               onOpenVedicMaths={() => navigateToView('vedic-maths')}
               onOpenResources={() => navigateToView('resources')}
               onOpenQuiz={() => navigateToView('quiz')}
+              onOpenVvmLevel2={() => navigateToView('vvm-level-2')}
               initialTab={vvmInitialTab}
             />
           </Suspense>
         )}
+        {activeView === 'vvm-level-2' && (
+          <Suspense fallback={<ViewLoader />}>
+            <VvmLevel2Page
+              onGoHome={() => navigateToView('home')}
+              onOpenLevel1={() => navigateToView('vvm')}
+            />
+          </Suspense>
+        )}
+        {activeView === 'vvm-class-pack' && (
+          <Suspense fallback={<ViewLoader />}>
+            <VvmClassPackPage
+              classId={parseVvmClassPackPath(typeof window !== 'undefined' ? window.location.pathname : '/vvm/class-6')?.classId ?? 6}
+              onGoHome={() => navigateToView('home')}
+              onOpenVvm={() => navigateToView('vvm')}
+            />
+          </Suspense>
+        )}
         {activeView === 'sugriva-journey' && (
+
           <Suspense fallback={<ViewLoader />}>
             <SugrivaJourneyStudio
               onGoHome={() => navigateToView('home')}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   SUGRIVA_EXPEDITIONS,
   LANDMARK_QUESTS,
@@ -8,9 +8,11 @@ import {
   type CardSuit,
 } from '../data/sugrivaJourneyData';
 import { SugrivaCardFace } from './SugrivaCollectibleCardView';
+import { SugrivaJourneyMap, SUIT_THEME } from './sugriva/SugrivaJourneyMap';
 import { playPronunciation } from '../utils/pronunciation';
 import { soundEffects } from '../utils/soundEffects';
 import '../styles/sugriva-journey.css';
+import '../styles/sugriva-journey-v2.css';
 
 interface SugrivaStudioProps {
   onGoHome?: () => void;
@@ -27,6 +29,14 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
   onOpenIks,
 }) => {
   const [activeTab, setActiveTab] = useState<StudioTab>('stage');
+  const mapScrollRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    // On narrow screens the map scrolls sideways; start centred on Kiṣkindhā.
+    const el = mapScrollRef.current;
+    if (el && el.scrollWidth > el.clientWidth) {
+      el.scrollLeft = Math.max(0, el.scrollWidth * (430 / 920) - el.clientWidth / 2);
+    }
+  }, [activeTab]);
   const [activeDirectionFilter] = useState<'all' | 'east' | 'south' | 'west' | 'north'>('all');
 
   // ---------------- Travel Stamina & Gameplay State ----------------
@@ -251,6 +261,32 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
       ? COLLECTIBLE_CARDS_DECK
       : COLLECTIBLE_CARDS_DECK.filter((c) => c.suit === folioSuitFilter);
 
+  // Per-direction collection progress (presentation only)
+  const SuitProgress = ({ large = false }: { large?: boolean }) => (
+    <div className={`sjx-suit-progress${large ? ' is-large' : ''}`} aria-label="Cards collected in each direction">
+      {(['purva', 'dakshina', 'paschima', 'uttara'] as CardSuit[]).map((suit) => {
+        const suitCards = COLLECTIBLE_CARDS_DECK.filter((c) => c.suit === suit);
+        const got = suitCards.filter((c) => collectedCardIds.includes(c.id)).length;
+        const t = SUIT_THEME[suit];
+        return (
+          <div
+            key={suit}
+            className={`sjx-suit-chip${got === suitCards.length ? ' is-complete' : ''}`}
+            style={{ ['--sjx-c' as string]: t.main, ['--sjx-l' as string]: t.light }}
+            title={`${t.en}: ${got} of ${suitCards.length}`}
+          >
+            <span className="sjx-suit-sa" lang="sa">{t.sa}</span>
+            {large && <span className="sjx-suit-en">{t.en}</span>}
+            <span className="sjx-suit-pips" aria-hidden="true">
+              {suitCards.map((c) => <i key={c.id} className={collectedCardIds.includes(c.id) ? 'on' : ''} />)}
+            </span>
+            <span className="sjx-sr">{got} of {suitCards.length}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+
   // Clean SVG Icons (Strictly ZERO EMOJIS)
   const CompassIcon = () => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -474,8 +510,11 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
                     <span>Travel Stamina &amp; Ration</span>
                     <span className="sj-stamina-val-num">{travelStamina}/100</span>
                   </div>
-                  <div className="sj-stamina-track" role="progressbar" aria-valuenow={travelStamina} aria-valuemin={0} aria-valuemax={100}>
+                  <div className="sj-stamina-track" role="progressbar" aria-label="Travel stamina" aria-valuenow={travelStamina} aria-valuemin={0} aria-valuemax={100}>
                     <div className={`sj-stamina-fill ${staminaColorClass}`} style={{ width: `${travelStamina}%` }} />
+                    <div className="sjx-stamina-ticks" aria-hidden="true">
+                      {Array.from({ length: 9 }, (_, i) => <span key={i} />)}
+                    </div>
                   </div>
                 </div>
 
@@ -491,6 +530,7 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
               </div>
 
               <div className="sj-hud-stamina-wrap">
+                <SuitProgress />
                 <button
                   type="button"
                   className="sj-deck-summary-pill"
@@ -537,165 +577,16 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
             )}
 
             {/* Hand-Illustrated Parchment Stage */}
-            <div className="sj-parchment-stage">
-              <svg
-                className="sj-stage-svg"
-                viewBox="0 0 920 640"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-label="Interactive Parchment Board with 12 Trail Nodes"
-              >
-                <defs>
-                  <filter id="parchmentGlow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="3" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                  </filter>
-                </defs>
-
-                {/* Ancient Meridian & Horizon Guides */}
-                <line x1="60" y1="320" x2="860" y2="320" stroke="rgba(255, 255, 255, 0.08)" strokeDasharray="4 4" />
-                <line x1="430" y1="40" x2="430" y2="600" stroke="rgba(245, 158, 11, 0.25)" strokeDasharray="6 4" />
-                <text x="438" y="55" fill="#f59e0b" fontSize="9" fontWeight="800" opacity="0.75">
-                  0° UJJAYINĪ PRIME MERIDIAN
-                </text>
-
-                {/* Trail Corridors Radiating from Kishkindha (x: 430, y: 390) */}
-                {/* Dakshina (South) Trail */}
-                <path d="M 430 390 L 430 340 L 440 440 L 450 550" className="sj-trail-path dakshina" />
-
-                {/* Purva (East) Trail */}
-                <path d="M 430 390 Q 500 320 570 260 T 670 310 T 790 380" className="sj-trail-path purva" />
-
-                {/* Paschima (West) Trail */}
-                <path d="M 430 390 Q 370 350 310 320 T 220 270 L 110 260" className="sj-trail-path paschima" />
-
-                {/* Uttara (North) Trail */}
-                <path d="M 430 390 L 450 160 L 460 95 L 470 35" className="sj-trail-path uttara" />
-
-                {/* 12 Collectible Trail Nodes */}
-                {COLLECTIBLE_CARDS_DECK.map((card) => {
-                  const isCollected = collectedCardIds.includes(card.id);
-                  const isCurrentScout = scoutPos.x === card.mapNode.x && scoutPos.y === card.mapNode.y;
-
-                  return (
-                    <g
-                      key={card.id}
-                      className="sj-board-node-g"
-                      onClick={() => handleNodeClick(card)}
-                      role="button"
-                      tabIndex={0}
-                      aria-label={`Travel to ${card.name}`}
-                    >
-                      {/* Active Pulse Ring */}
-                      {isCurrentScout && (
-                        <circle
-                          cx={card.mapNode.x}
-                          cy={card.mapNode.y}
-                          r="22"
-                          fill="none"
-                          stroke={card.suitColor}
-                          strokeWidth="2"
-                          opacity="0.8"
-                        >
-                          <animate attributeName="r" values="14;26;14" dur="2s" repeatCount="indefinite" />
-                          <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2s" repeatCount="indefinite" />
-                        </circle>
-                      )}
-
-                      {/* Main Node Circle */}
-                      <circle
-                        cx={card.mapNode.x}
-                        cy={card.mapNode.y}
-                        r={isCollected ? 14 : 12}
-                        className={`sj-node-ring${isCollected ? ' collected' : ''}`}
-                        stroke={card.suitColor}
-                      />
-
-                      {/* Inner Emblem / Stamp */}
-                      {isCollected ? (
-                        <circle cx={card.mapNode.x} cy={card.mapNode.y} r="6" fill={card.suitColor} />
-                      ) : (
-                        <text
-                          x={card.mapNode.x}
-                          y={card.mapNode.y + 3.5}
-                          textAnchor="middle"
-                          fill="#f8fafc"
-                          fontSize="9"
-                          fontFamily="var(--sj-font-mono)"
-                          fontWeight="800"
-                        >
-                          {card.cardNumber}
-                        </text>
-                      )}
-
-                      {/* Node Label Text */}
-                      <text
-                        x={card.mapNode.x}
-                        y={card.mapNode.y + 24}
-                        textAnchor="middle"
-                        fill="#ffffff"
-                        fontSize="10"
-                        fontWeight="700"
-                        filter="drop-shadow(0 2px 4px rgba(0,0,0,0.9))"
-                      >
-                        {card.name}
-                      </text>
-
-                      {/* Stamina Cost Pill */}
-                      {!isCollected && (
-                        <g>
-                          <rect
-                            x={card.mapNode.x - 24}
-                            y={card.mapNode.y - 27}
-                            width="48"
-                            height="13"
-                            rx="6.5"
-                            fill="rgba(9, 13, 22, 0.85)"
-                            stroke="#fbbf24"
-                            strokeWidth="0.8"
-                          />
-                          <text
-                            x={card.mapNode.x}
-                            y={card.mapNode.y - 17.5}
-                            textAnchor="middle"
-                            fill="#fbbf24"
-                            fontSize="8"
-                            fontFamily="var(--sj-font-mono)"
-                            fontWeight="800"
-                          >
-                            -{card.staminaCost} pts
-                          </text>
-                        </g>
-                      )}
-                    </g>
-                  );
-                })}
-
-                {/* ORIGIN: KISHKINDHA BASECAMP */}
-                <g onClick={handleRestAtAshram} style={{ cursor: 'pointer' }}>
-                  <circle cx="430" cy="390" r="18" fill="rgba(245, 158, 11, 0.25)" />
-                  <circle cx="430" cy="390" r="10" fill="#f59e0b" stroke="#ffffff" strokeWidth="2.5" />
-                  <text x="430" y="420" textAnchor="middle" fill="#fbbf24" fontSize="11" fontWeight="900" filter="drop-shadow(0 2px 4px #000)">
-                    किष्किन्धा (Basecamp)
-                  </text>
-                </g>
-
-                {/* ANIMATED VANARA SCOUT TOKEN */}
-                <g
-                  className="sj-vanara-token-g"
-                  style={{
-                    transform: `translate(${scoutPos.x}px, ${scoutPos.y}px)`,
-                  }}
-                >
-                  <circle cx="0" cy="0" r="16" fill="rgba(245, 158, 11, 0.3)" className="sj-token-halo" />
-                  {/* Clean SVG Vanara Scout Silhouette */}
-                  <circle cx="0" cy="-6" r="6" fill="#f59e0b" stroke="#090d16" strokeWidth="1.5" />
-                  <rect x="-4" y="0" width="8" height="10" rx="3" fill="#ea580c" />
-                  <line x1="5" y1="-8" x2="7" y2="10" stroke="#fde68a" strokeWidth="2" strokeLinecap="round" />
-                  <circle cx="0" cy="0" r="1.5" fill="#ffffff" />
-                </g>
-              </svg>
+            <div className="sj-parchment-stage" ref={mapScrollRef}>
+              <SugrivaJourneyMap
+                cards={COLLECTIBLE_CARDS_DECK}
+                collectedCardIds={collectedCardIds}
+                scoutPos={scoutPos}
+                onNodeClick={handleNodeClick}
+                onRest={handleRestAtAshram}
+              />
             </div>
+            <p className="sjx-map-hint">Swipe the map to explore · tap a marker to travel</p>
           </div>
         )}
 
@@ -754,6 +645,8 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
               </div>
             </div>
 
+            <SuitProgress large />
+
             {/* 4 Cardinal Direction Relic Cards (Synergy Unlocks) */}
             <div className="sj-relics-showcase-grid">
               {(['dakshina', 'purva', 'paschima', 'uttara'] as CardSuit[]).map((suitKey) => {
@@ -761,7 +654,16 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
                 const isUnlocked = unlockedRelics[suitKey];
 
                 return (
-                  <div key={suitKey} className={`sj-relic-card${isUnlocked ? ' unlocked' : ''}`}>
+                  <div
+                    key={suitKey}
+                    className={`sj-relic-card sjx-relic ${suitKey}${isUnlocked ? ' unlocked' : ''}`}
+                    style={{ ['--sjx-c' as string]: SUIT_THEME[suitKey].main, ['--sjx-l' as string]: SUIT_THEME[suitKey].light, ['--sjx-d' as string]: SUIT_THEME[suitKey].deep }}
+                  >
+                    <svg className="sjx-relic-gem" viewBox="0 0 60 60" aria-hidden="true">
+                      <circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" strokeOpacity="0.5" strokeDasharray="3 3" />
+                      <path d="M30 8 L46 24 L30 52 L14 24 Z" fill="currentColor" fillOpacity={isUnlocked ? 0.95 : 0.25} stroke="currentColor" strokeWidth="1.5" />
+                      <path d="M14 24 L46 24 M30 8 L24 24 L30 52 L36 24 Z" fill="none" stroke="#fffbeb" strokeOpacity={isUnlocked ? 0.8 : 0.3} strokeWidth="1" />
+                    </svg>
                     <span className={`sj-relic-status-badge ${isUnlocked ? 'unlocked' : 'locked'}`}>
                       {isUnlocked ? 'Relic Unlocked · Fast Travel Active' : 'Locked · Collect All 3 Suit Cards'}
                     </span>
@@ -788,6 +690,7 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
                   <div
                     key={card.id}
                     className={`sj-folio-card-wrapper${isCollected ? ' collected' : ' uncollected'}`}
+                    style={{ ['--sjx-c' as string]: SUIT_THEME[card.suit].main, ['--sjx-l' as string]: SUIT_THEME[card.suit].light }}
                   >
                     {isCollected ? (
                       <div
@@ -828,9 +731,25 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
                         </div>
                       </div>
                     ) : (
-                      <div className={`sj-folio-locked-card ${card.suit}`}>
+                      <div
+                        className={`sj-folio-locked-card sjx-card-back ${card.suit}`}
+                        style={{ ['--sjx-c' as string]: SUIT_THEME[card.suit].main, ['--sjx-l' as string]: SUIT_THEME[card.suit].light, ['--sjx-d' as string]: SUIT_THEME[card.suit].deep }}
+                      >
+                        <svg className="sjx-back-mandala" viewBox="0 0 200 200" aria-hidden="true">
+                          <g fill="none" stroke="currentColor" strokeWidth="1.2">
+                            <circle cx="100" cy="100" r="86" />
+                            <circle cx="100" cy="100" r="70" strokeDasharray="3 4" />
+                            <circle cx="100" cy="100" r="40" />
+                            {Array.from({ length: 16 }, (_, i) => (
+                              <path key={i} d="M100 30 Q 112 60 100 60 Q 88 60 100 30 Z" transform={`rotate(${i * 22.5} 100 100)`} />
+                            ))}
+                            {Array.from({ length: 8 }, (_, i) => (
+                              <path key={`p${i}`} d="M100 62 Q 108 80 100 100 Q 92 80 100 62 Z" transform={`rotate(${i * 45} 100 100)`} />
+                            ))}
+                          </g>
+                        </svg>
                         <div className="sj-locked-card-header">
-                          <span className="sj-locked-suit-name">{card.suit.toUpperCase()}</span>
+                          <span className="sj-locked-suit-name"><span lang="sa">{SUIT_THEME[card.suit].sa}</span><span className="sjx-suit-en-inline"> · {SUIT_THEME[card.suit].en}</span></span>
                           <span className="sj-pcf-number-seal">{card.cardNumber}</span>
                         </div>
                         <div className="sj-locked-icon-wrap">
@@ -1219,7 +1138,8 @@ export const SugrivaJourneyStudio: React.FC<SugrivaStudioProps> = ({
               {/* LEFT COLUMN: 3D CARD DISPLAY */}
               <div className="sj-modal-card-col">
                 <div
-                  className="sj-3d-card-stage"
+                  className={`sj-3d-card-stage${collectedCardIds.includes(modalCard.id) ? ' sjx-is-collected' : ''}`}
+                  style={{ ['--sjx-c' as string]: SUIT_THEME[modalCard.suit].main, ['--sjx-l' as string]: SUIT_THEME[modalCard.suit].light }}
                   onClick={handleToggleCardFlipInModal}
                   role="button"
                   tabIndex={0}

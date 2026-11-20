@@ -28,9 +28,9 @@ export const RISHI_QUESTS: Record<string, RishiQuest> = {
     win: 'Mystery solved! Matter changes form but never vanishes.',
   },
   prakriti: {
-    goal: 'Keep the forest healthy by balancing Vāta, Pitta and Kapha through the seasons.',
-    steps: ['Watch the season and the meters', 'Add wind, sun or water to balance', 'Keep all three in the green zone'],
-    observe: 'Notice which meter rises when the season turns.',
+    goal: 'Keep the forest healthy by balancing plants, grazers and predators — the same idea of balance that Āyurveda calls Vāta, Pitta and Kapha.',
+    steps: ['Pick a forest mission', 'Use the sliders to change rain, temperature, plants, grazers and predators', 'Keep every group above zero'],
+    observe: 'Watch how plants, grazers and predators rise and fall together.',
     nature: 'Every season shifts the balance — nature teaches rhythm.',
     purpose: 'Balance keeps living things healthy — in forests and in us.',
     win: 'The ecosystem is in balance! You are a Nature Guardian.',
