@@ -381,36 +381,122 @@ export const LabSchematicGraphic: React.FC<{ labId: LabSegmentId; className?: st
   className = '',
 }) => {
   const meta = STEM_BLUEPRINTS[labId];
+  const isPreschool = labId === 'preschool-wonder';
   return (
     <svg
-      className={`vl-schematic-svg ${className}`}
+      className={`vl-schematic-svg${isPreschool ? ' vl-schematic-svg--preschool' : ''} ${className}`}
       viewBox="0 0 180 86"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label={`${meta.domainTag} schematic blueprint`}
+      aria-label={isPreschool ? 'Sunny Storybook Preschool Playland illustration' : `${meta.domainTag} schematic blueprint`}
     >
-      <defs>
-        <pattern id={`grid-${labId}`} width="12" height="12" patternUnits="userSpaceOnUse">
-          <path d="M 12 0 L 0 0 0 12" fill="none" stroke="rgba(148,163,184,0.14)" strokeWidth="0.6" />
-        </pattern>
-      </defs>
-      <rect width="180" height="86" rx="8" fill="#0f172a" />
-      <rect width="180" height="86" rx="8" fill={`url(#grid-${labId})`} />
-      {/* Corner Blueprint Registration Ticks */}
-      <path d="M 6 12 L 6 6 L 12 6 M 168 6 L 174 6 L 174 12 M 6 74 L 6 80 L 12 80 M 168 80 L 174 80 L 174 74" fill="none" stroke="rgba(148,163,184,0.38)" strokeWidth="1" />
+      {isPreschool ? (
+        <>
+          <defs>
+            <linearGradient id="ps-sky-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#38bdf8" />
+              <stop offset="55%" stopColor="#bae6fd" />
+              <stop offset="100%" stopColor="#fef9c3" />
+            </linearGradient>
+            <linearGradient id="ps-hill-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#4ade80" />
+              <stop offset="100%" stopColor="#16a34a" />
+            </linearGradient>
+          </defs>
+          {/* Bright Sunny Sky */}
+          <rect width="180" height="86" rx="10" fill="url(#ps-sky-grad)" />
+          {/* Soft Pastel Rainbow Arch */}
+          <path d="M 32 62 A 58 46 0 0 1 148 62" fill="none" stroke="#f43f5e" strokeWidth="3.2" strokeLinecap="round" opacity="0.84" />
+          <path d="M 36 62 A 54 42 0 0 1 144 62" fill="none" stroke="#fb923c" strokeWidth="3.2" strokeLinecap="round" opacity="0.86" />
+          <path d="M 40 62 A 50 38 0 0 1 140 62" fill="none" stroke="#facc15" strokeWidth="3.2" strokeLinecap="round" opacity="0.9" />
+          <path d="M 44 62 A 46 34 0 0 1 136 62" fill="none" stroke="#22c55e" strokeWidth="3.2" strokeLinecap="round" opacity="0.84" />
+          <path d="M 48 62 A 42 30 0 0 1 132 62" fill="none" stroke="#38bdf8" strokeWidth="3" strokeLinecap="round" opacity="0.84" />
 
-      {labId === 'preschool-wonder' && (
-        <g>
-          {/* Triangle, Circle, Square + Sensory Sound Waves */}
-          <polygon points="44,18 26,50 62,50" fill="rgba(251,191,36,0.22)" stroke="#fbbf24" strokeWidth="1.6" />
-          <circle cx="90" cy="36" r="16" fill="rgba(52,211,153,0.2)" stroke="#34d399" strokeWidth="1.6" />
-          <rect x="120" y="20" width="32" height="32" rx="5" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" strokeWidth="1.6" />
-          <path d="M 62 36 L 74 36 M 106 36 L 120 36" stroke="#f472b6" strokeWidth="1.6" strokeDasharray="2 2" />
-          <circle cx="44" cy="39" r="2.5" fill="#fde68a" />
-          <circle cx="90" cy="36" r="3" fill="#6ee7b7" />
-          <circle cx="136" cy="36" r="2.5" fill="#bae6fd" />
-          <text x="90" y="76" fill="#fde68a" fontSize="7.8" fontWeight="800" textAnchor="middle">SHAPE + COLOR + SOUND &rarr; 24 GAMES</text>
-        </g>
+          {/* Smiling Golden Sun */}
+          <g className="vl-ps-sun">
+            <circle cx="24" cy="20" r="10.5" fill="#fde047" stroke="#f59e0b" strokeWidth="1.5" />
+            <circle cx="21" cy="18.5" r="1.1" fill="#92400e" />
+            <circle cx="27" cy="18.5" r="1.1" fill="#92400e" />
+            <path d="M 21 22.5 Q 24 25 27 22.5" fill="none" stroke="#92400e" strokeWidth="1.3" strokeLinecap="round" />
+            <g stroke="#f59e0b" strokeWidth="1.4" strokeLinecap="round">
+              <line x1="24" y1="5" x2="24" y2="7.5" />
+              <line x1="37" y1="20" x2="39.5" y2="20" />
+              <line x1="33" y1="11" x2="35" y2="9" />
+              <line x1="15" y1="11" x2="13" y2="9" />
+              <line x1="9" y1="20" x2="11.5" y2="20" />
+            </g>
+          </g>
+
+          {/* Fluffy Clouds */}
+          <g fill="#ffffff" opacity="0.94">
+            <ellipse cx="146" cy="18" rx="11" ry="5.5" />
+            <circle cx="140" cy="16" r="5" />
+            <circle cx="151" cy="15.5" r="6" />
+            <ellipse cx="74" cy="14" rx="8" ry="4" />
+            <circle cx="70" cy="13" r="3.8" />
+            <circle cx="77" cy="12.5" r="4.2" />
+          </g>
+
+          {/* Rolling Green Hills */}
+          <path d="M 0 64 Q 44 48 92 60 T 180 56 L 180 86 L 0 86 Z" fill="#86efac" />
+          <path d="M 0 68 Q 55 56 115 66 T 180 62 L 180 86 L 0 86 Z" fill="url(#ps-hill-grad)" />
+
+          {/* Colorful Toy Steam Train */}
+          <g transform="translate(26, 40)">
+            {/* Steam Puffs */}
+            <circle cx="13" cy="-3" r="3" fill="#ffffff" opacity="0.92" />
+            <circle cx="19" cy="-6" r="3.8" fill="#ffffff" opacity="0.82" />
+            <circle cx="27" cy="-8" r="4.2" fill="#ffffff" opacity="0.68" />
+            {/* Locomotive */}
+            <rect x="8" y="6" width="24" height="14" rx="4" fill="#ef4444" stroke="#b91c1c" strokeWidth="1.2" />
+            <rect x="21" y="1" width="12" height="19" rx="3" fill="#f97316" stroke="#c2410c" strokeWidth="1.2" />
+            <rect x="24" y="4" width="6" height="6" rx="1.5" fill="#fef08a" />
+            <rect x="11" y="1" width="5" height="6" rx="1.5" fill="#334155" />
+            <polygon points="8,14 3,20 8,20" fill="#fbbf24" />
+            {/* Coach 1 (Sunshine Yellow with अ) */}
+            <line x1="33" y1="15" x2="39" y2="15" stroke="#475569" strokeWidth="2" />
+            <rect x="39" y="5" width="26" height="15" rx="4" fill="#facc15" stroke="#ca8a04" strokeWidth="1.2" />
+            <rect x="43" y="8" width="18" height="9" rx="2" fill="#ffffff" />
+            <text x="52" y="15.2" fill="#dc2626" fontSize="8.5" fontWeight="900" textAnchor="middle">अ</text>
+            {/* Coach 2 (Sky Mint with Star) */}
+            <line x1="65" y1="15" x2="71" y2="15" stroke="#475569" strokeWidth="2" />
+            <rect x="71" y="5" width="26" height="15" rx="4" fill="#06b6d4" stroke="#0e7490" strokeWidth="1.2" />
+            <rect x="75" y="8" width="18" height="9" rx="2" fill="#ffffff" />
+            <polygon points="84,9.2 85.4,12 88.4,12.4 86.2,14.5 86.7,17.4 84,16 81.3,17.4 81.8,14.5 79.6,12.4 82.6,12" fill="#f59e0b" />
+            {/* Coach 3 (Berry Pink with Circle) */}
+            <line x1="97" y1="15" x2="103" y2="15" stroke="#475569" strokeWidth="2" />
+            <rect x="103" y="5" width="22" height="15" rx="4" fill="#ec4899" stroke="#be185d" strokeWidth="1.2" />
+            <rect x="107" y="8" width="14" height="9" rx="2" fill="#ffffff" />
+            <circle cx="114" cy="12.5" r="3" fill="#a855f7" />
+            {/* Wheels */}
+            <circle cx="14" cy="21" r="3.4" fill="#1e293b" stroke="#fde047" strokeWidth="1.1" />
+            <circle cx="27" cy="21" r="3.4" fill="#1e293b" stroke="#fde047" strokeWidth="1.1" />
+            <circle cx="46" cy="21" r="3.2" fill="#1e293b" stroke="#fb923c" strokeWidth="1.1" />
+            <circle cx="58" cy="21" r="3.2" fill="#1e293b" stroke="#fb923c" strokeWidth="1.1" />
+            <circle cx="78" cy="21" r="3.2" fill="#1e293b" stroke="#fde047" strokeWidth="1.1" />
+            <circle cx="90" cy="21" r="3.2" fill="#1e293b" stroke="#fde047" strokeWidth="1.1" />
+            <circle cx="109" cy="21" r="3.2" fill="#1e293b" stroke="#fde047" strokeWidth="1.1" />
+            <circle cx="119" cy="21" r="3.2" fill="#1e293b" stroke="#fde047" strokeWidth="1.1" />
+          </g>
+
+          {/* Cheerful Ribbon Pill Banner */}
+          <rect x="12" y="68" width="156" height="14" rx="7" fill="#ffffff" fillOpacity="0.95" stroke="#f97316" strokeWidth="1.2" />
+          <text x="90" y="77.4" fill="#c2410c" fontSize="6.9" fontWeight="900" textAnchor="middle" letterSpacing="0.02em">
+            24 FUN KIDS GAMES · PLAY, SING &amp; EXPLORE
+          </text>
+        </>
+      ) : (
+        <>
+          <defs>
+            <pattern id={`grid-${labId}`} width="12" height="12" patternUnits="userSpaceOnUse">
+              <path d="M 12 0 L 0 0 0 12" fill="none" stroke="rgba(148,163,184,0.14)" strokeWidth="0.6" />
+            </pattern>
+          </defs>
+          <rect width="180" height="86" rx="8" fill="#0f172a" />
+          <rect width="180" height="86" rx="8" fill={`url(#grid-${labId})`} />
+          {/* Corner Blueprint Registration Ticks */}
+          <path d="M 6 12 L 6 6 L 12 6 M 168 6 L 174 6 L 174 12 M 6 74 L 6 80 L 12 80 M 168 80 L 174 80 L 174 74" fill="none" stroke="rgba(148,163,184,0.38)" strokeWidth="1" />
+        </>
       )}
 
       {labId === 'paramanu' && (
@@ -549,7 +635,7 @@ export const LabSchematicGraphic: React.FC<{ labId: LabSegmentId; className?: st
           <line x1="130" y1="39" x2="153.7" y2="39" stroke="#38bdf8" strokeWidth="1.3" strokeDasharray="2 2" />
           <text x="59" y="42" fill="#fde68a" fontSize="7" fontWeight="800" textAnchor="middle">a√2</text>
           <text x="130" y="35" fill="#bae6fd" fontSize="7" fontWeight="800" textAnchor="middle">Area A</text>
-          <text x="90" y="77" fill="#fde68a" fontSize="7.8" fontWeight="800" textAnchor="middle">ŚULBA INVARIANT · c² = a² + b² · √2 ≈ 577/408</text>
+          <text x="90" y="77" fill="#fde68a" fontSize="6.7" fontWeight="800" textAnchor="middle">ŚULBA INVARIANT · c² = a² + b² · √2 ≈ 577/408</text>
         </g>
       )}
 

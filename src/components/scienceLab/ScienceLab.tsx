@@ -932,7 +932,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   }, [viewMode, prevSeg.id, nextSeg.id]);
 
   return (
-    <div className="vl-page vl-page--arcade">
+    <div className={`vl-page vl-page--arcade${viewMode === 'workbench' && active === 'preschool-wonder' ? ' vl-page--preschool-playland' : ''}`}>
       {viewMode !== 'workbench' && (
         <div ref={catalogSectionRef} className="vl-hub">
           <header className="vl-hub-hero">
@@ -1284,7 +1284,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               </div>
               <div className="vl-hub-featured-grid">
                 <div
-                  className="vl-hub-feat-card vl-hub-feat-card--blueprint"
+                  className="vl-hub-feat-card vl-hub-feat-card--blueprint vl-hub-feat-card--preschool-kids"
                   onClick={() => handleLaunchSim('preschool-wonder')}
                   role="button"
                   tabIndex={0}
@@ -1292,10 +1292,10 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 >
                   <LabSchematicGraphic labId="preschool-wonder" className="vl-feat-schematic" />
                   <div className="vl-hub-feat-body">
-                    <span className="vl-hub-feat-badge vl-badge--preschool">Stage 1 · Ages 2–6 · 24 Games</span>
+                    <span className="vl-hub-feat-badge vl-badge--preschool">Stage 1 · Ages 2–6 · 24 Fun Games</span>
                     <h4 className="vl-hub-feat-title">Wonder Playground &amp; Living India Map</h4>
-                    <p className="vl-hub-feat-desc">The Spice Adventure, living India Map, animal safari, color mixing, and temple bells with gentle audio.</p>
-                    <span className="vl-hub-feat-cta">Launch Playground &rarr;</span>
+                    <p className="vl-hub-feat-desc">The Sanskrit Train, living India Map, animal safari, color mixing, and temple bells with gentle audio.</p>
+                    <span className="vl-hub-feat-cta vl-hub-feat-cta--preschool">Play 24 Fun Games &rarr;</span>
                   </div>
                 </div>
                 <div
@@ -1639,7 +1639,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                         const bp = STEM_BLUEPRINTS[g.id];
                         const isDone = (explorerStats.completedMissions || []).includes(g.id);
                         return (
-                          <button key={g.id} type="button" className={`vl-game-card vl-game-card--arcade${isDone ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink, '--g-glow': g.glow } as React.CSSProperties}>
+                          <button key={g.id} type="button" className={`vl-game-card vl-game-card--arcade${g.id === 'preschool-wonder' ? ' vl-game-card--preschool' : ''}${isDone ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink, '--g-glow': g.glow } as React.CSSProperties}>
                             {showCardSchematics && (
                               <div className="vl-card-visual-top">
                                 <LabSchematicGraphic labId={g.id} className="vl-card-schematic" />
@@ -1709,7 +1709,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                     const bp = STEM_BLUEPRINTS[g.id];
                     const isDone = (explorerStats.completedMissions || []).includes(g.id);
                     return (
-                      <button key={g.id} type="button" className={`vl-game-card vl-game-card--arcade${isDone ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink, '--g-glow': g.glow } as React.CSSProperties}>
+                      <button key={g.id} type="button" className={`vl-game-card vl-game-card--arcade${g.id === 'preschool-wonder' ? ' vl-game-card--preschool' : ''}${isDone ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink, '--g-glow': g.glow } as React.CSSProperties}>
                         {showCardSchematics && (
                           <div className="vl-card-visual-top">
                             <LabSchematicGraphic labId={g.id} className="vl-card-schematic" />
@@ -1759,7 +1759,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                     const bp = STEM_BLUEPRINTS[g.id];
                     const isDone = (explorerStats.completedMissions || []).includes(g.id);
                     return (
-                      <button key={g.id} type="button" className={`vl-game-card vl-game-card--arcade${isDone ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink, '--g-glow': g.glow } as React.CSSProperties}>
+                      <button key={g.id} type="button" className={`vl-game-card vl-game-card--arcade${g.id === 'preschool-wonder' ? ' vl-game-card--preschool' : ''}${isDone ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink, '--g-glow': g.glow } as React.CSSProperties}>
                         {showCardSchematics && (
                           <div className="vl-card-visual-top">
                             <LabSchematicGraphic labId={g.id} className="vl-card-schematic" />
