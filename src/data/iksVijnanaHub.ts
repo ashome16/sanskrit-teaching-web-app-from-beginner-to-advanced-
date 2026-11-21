@@ -54,6 +54,7 @@ export const IKS_HUB_SUBJECTS: IksHubSubject[] = [
       { href: '/vignana-lab/#vedic-geometry', label: 'Vedic Geometry', kind: 'lab' },
       { href: '/vignana-lab/#chandahshastra', label: 'Piṅgala Chandaḥśāstra', kind: 'lab' },
       { href: '/vignana-lab/#rituparna', label: 'Count the Tree (Ṛtuparṇa)', kind: 'lab' },
+      { href: '/indian-mathematics/', label: 'Kuṭṭaka, Chakravāla & Śulba Workbench', kind: 'lab' },
     ],
     thinkLabs: [
       { href: '/cipher-think-lab/', label: 'Kaṭapayādi cipher', kind: 'think-lab' },

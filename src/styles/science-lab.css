@@ -8600,3 +8600,474 @@
 /* === Merged from live Cloudflare deployment === */
 .vl-segment--play-first{padding-bottom:5.5rem}.vl-segment--play-first .vl-bodhi-anecdote:not(.is-expanded){margin-bottom:.55rem;padding:.4rem .75rem}.vl-segment--play-first .vl-bodhi-anecdote:not(.is-expanded) .vl-bodhi-lead{display:none}.vl-segment--play-first .vl-bodhi-anecdote:not(.is-expanded) .vl-bodhi-header{align-items:center;gap:.55rem}.vl-segment--play-first .vl-bodhi-anecdote:not(.is-expanded) .vl-bodhi-avatar-frame{transform-origin:0;margin-right:-.4rem;transform:scale(.72)}.vl-segment--play-first .vl-bodhi-anecdote:not(.is-expanded) .vl-bodhi-title,.vl-segment--play-first .vl-bodhi-anecdote:not(.is-expanded) .vl-bodhi-title-sa{margin:0;font-size:.92rem;line-height:1.3}.vl-segment--play-first .vl-bodhi-anecdote:not(.is-expanded) .vl-bodhi-badge{margin-bottom:.1rem}.vl-segment--play-first .vl-bodhi-anecdote:not(.is-expanded) .vl-bodhi-voice-btn{display:none}.vl-segment--play-first .vl-wb-spark-btn--quiet{color:#e2e8f0;box-shadow:none;background:0 0;border:1.5px solid #94a3b873}.vl-wb-mission-complete-dock{z-index:40;max-width:min(420px,100vw - 1.5rem)}.vl-segment--play-first .vl-wb-mission-header{margin-bottom:.65rem}.vl-segment--play-first .vl-wb-bodhi-briefing-box .vl-quest-steps,.vl-segment--play-first .vl-quest-steps{width:100%;flex-wrap:unset!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:.6rem!important;margin:.7rem 0 .55rem!important;display:grid!important}.vl-segment--play-first .vl-wb-bodhi-briefing-box .vl-quest-steps li,.vl-segment--play-first .vl-quest-steps li{white-space:normal!important;box-sizing:border-box!important;border-radius:14px!important;align-items:flex-start!important;gap:.55rem!important;width:auto!important;max-width:none!important;height:auto!important;min-height:52px!important;padding:.55rem .75rem .55rem .45rem!important;display:flex!important;overflow:visible!important}.vl-segment--play-first .vl-quest-step-text,.vl-segment--play-first .vl-wb-bodhi-briefing-box .vl-quest-steps li span.vl-quest-step-text{white-space:normal!important;width:auto!important;min-width:0!important;height:auto!important;text-shadow:none!important;place-items:unset!important;box-shadow:none!important;color:#f8fafc!important;background:0 0!important;border-radius:0!important;flex:auto!important;padding:.15rem 0 0!important;font-weight:700!important;line-height:1.4!important;display:block!important;overflow:visible!important}.vl-segment--play-first .vl-wb-lens-toggle{z-index:1;margin-top:.15rem;position:relative}@media (width<=900px){.vl-segment--play-first .vl-wb-nav-row{flex-wrap:wrap;gap:.65rem}.vl-segment--play-first .vl-wb-actions-right{flex-wrap:wrap;gap:.45rem;width:100%;display:flex}.vl-segment--play-first .vl-wb-actions-right>button{min-height:44px}.vl-segment--play-first .vl-wb-bodhi-briefing-box .vl-quest-steps,.vl-segment--play-first .vl-quest-steps{grid-template-columns:1fr!important}.vl-wb-mission-complete-dock{width:auto;max-width:none;bottom:.75rem;left:.75rem;right:.75rem}.vl-segment--play-first .vl-wb-mission-complete-dock{display:none!important}}.vl-lab-hub-wrap{background:#fff;border:1.5px solid #94a3b859;border-radius:16px;margin:.75rem 0 1.1rem;padding:.2rem .2rem .35rem}.vl-lab-hub-summary{cursor:pointer;color:#0f172a;justify-content:space-between;align-items:center;gap:.75rem;padding:.7rem 1rem;font-size:.95rem;font-weight:800;list-style:none;display:flex}.vl-lab-hub-summary::-webkit-details-marker{display:none}.vl-lab-hub-summary-hint{color:#64748b;font-size:.78rem;font-weight:600}.vl-lab-hub-wrap .vl-lab-hub{box-shadow:none;border:none;margin:0;padding:0 .65rem .75rem}.vl-lab-station-icon svg{display:block}.cy-badge-icon svg,.cy-chip-icon svg,.cy-ro-icon svg,.cy-placed-icon svg{flex-shrink:0;display:block}.cy-chip{align-items:center;gap:.4rem;display:inline-flex}.cy-placed{background:#ffffffb3;border-radius:999px;align-items:center;gap:.3rem;padding:.15rem .45rem .15rem .25rem;display:inline-flex}.cy-zone.is-right{transition:box-shadow .25s,transform .25s;transform:translateY(-2px);box-shadow:0 0 0 3px #10b98173,0 8px 20px #10b98126}.cy-zone.is-wrong{animation:.45s cy-shake}.cy-complete{color:#065f46;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1.5px solid #34d399;border-radius:12px;margin:.65rem 0 0;padding:.65rem .85rem;font-weight:700;animation:.45s cy-complete-in}@keyframes cy-complete-in{0%{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@media (prefers-reduced-motion:reduce){.cy-zone.is-wrong,.cy-complete{animation:none}}.cpb-token,.ug-token{vertical-align:middle;display:inline-flex}.vl-segment--play-first .vl-wb-nav-row{background:#1e293b!important;border:1.5px solid #fde0478c!important;box-shadow:0 4px 20px #0f172a59!important}.vl-segment--play-first .vl-wb-name{color:#f8fafc!important}.vl-segment--play-first .vl-wb-dev{color:#fde68a!important}.vl-segment--play-first .vl-wb-sector-code{color:#fcd34d!important}.vl-segment--play-first .vl-wb-btn-ghost,.vl-segment--play-first .vl-wb-sub-btn{color:#f1f5f9!important;background:#0f172a59!important;border:1.5px solid #94a3b8!important}.vl-segment--play-first .vl-wb-btn-ghost:hover,.vl-segment--play-first .vl-wb-sub-btn:hover{color:#fff!important;background:#0f172a99!important;border-color:#e2e8f0!important}.vl-segment--play-first .vl-wb-spark-btn--quiet{color:#f1f5f9!important;border:1.5px solid #94a3b8!important}.vl-segment--play-first .vl-wb-spark-btn--quiet:hover{color:#fff!important;background:#0f172a8c!important}.vl-segment--play-first .vl-wb-switcher-select{color:#0f172a!important;background:#f8fafc!important;border:1.5px solid #cbd5e1!important}.vl-segment--play-first .vl-wb-bodhi-briefing-box{color:#f8fafc!important;background:linear-gradient(135deg,#1a2740 0%,#1e293b 48%,#24344f 100%)!important;border:1.5px solid #7dd3fc!important}.vl-segment--play-first .vl-wb-bodhi-goal-text,.vl-segment--play-first .vl-wb-bodhi-goal-content{color:#f8fafc!important}.vl-segment--play-first .vl-wb-bodhi-kicker{color:#7dd3fc!important}.vl-segment--play-first .vl-wb-lens-summary{color:#7dd3fc!important;border-color:#67e8f9!important}.vl-segment--play-first .vl-wb-lens-summary-tag{color:#fde68a!important}.vl-segment--play-first .vl-wb-lens-toggle[open] .vl-wb-lens-summary-tag{color:#cbd5e1!important}.vl-segment--play-first .vl-wb-lens-body,.vl-segment--play-first .vl-quest-lens,.vl-segment--play-first .vl-wb-bodhi-briefing-box .vl-quest-lens{color:#e2e8f0!important;background:#0f172a8c!important;border-color:#38bdf8!important}.vl-segment--play-first .vl-wb-bodhi-briefing-box .vl-quest-steps li,.vl-segment--play-first .vl-quest-steps li{color:#f8fafc!important;background:#24344f!important;border:1.5px solid #7dd3fc!important}.vl-segment--play-first .vl-quest-step-text,.vl-segment--play-first .vl-wb-bodhi-briefing-box .vl-quest-steps li span.vl-quest-step-text{color:#f8fafc!important}.vl-segment--play-first .vl-controls,.vl-segment--play-first .vl-target,.vl-segment--play-first .vl-quest-head,.vl-segment--play-first .vl-msg,.vl-segment--play-first .cy-window-head,.vl-segment--play-first .cy-ticker,.vl-segment--play-first .vl-panel.vl-tradition,.vl-segment--play-first .vl-sandbox .vl-controls{color:#f1f5f9}.vl-segment--play-first .vl-small,.vl-segment--play-first .cy-label,.vl-segment--play-first .vl-readout,.vl-segment--play-first .cy-zone-en,.vl-segment--play-first .cy-zone-src,.vl-segment--play-first .cy-zone-iast{color:#cbd5e1}.vl-segment--play-first .vl-chip,.vl-segment--play-first .cy-reset,.vl-segment--play-first .cy-notes,.vl-segment--play-first .cy-pause{border-color:#94a3b8}.vl-segment--play-first .vl-wb-bodhi-briefing-box [style*=\#64748b],.vl-segment--play-first [style*="color: #64748b"],.vl-segment--play-first [style*="color:#64748b"]{color:#cbd5e1!important}.vl-lab-lore-wrap{background:#fff;border:1.5px solid #cbd5e1;border-radius:14px;margin:0 0 1rem;padding:.15rem .15rem .25rem}.vl-lab-lore-summary{cursor:pointer;color:#0f172a;justify-content:space-between;align-items:center;gap:.75rem;padding:.7rem 1rem;font-size:.95rem;font-weight:800;list-style:none;display:flex}.vl-lab-lore-summary::-webkit-details-marker{display:none}.vl-lab-lore-hint{color:#475569;font-size:.78rem;font-weight:600}.vl-lab-lore-body{padding:0 .75rem .85rem}.vl-lab-lore-wrap .vl-core{margin:0}.vl-lab-lore-wrap--on-dark{background:#1e293b8c;border-color:#cbd5e159}.vl-lab-lore-wrap--on-dark .vl-lab-lore-summary{color:#f8fafc}.vl-lab-lore-wrap--on-dark .vl-lab-lore-hint{color:#cbd5e1}.vl-lab-lore-wrap--on-dark .vl-lab-lore-body,.vl-lab-lore-wrap--on-dark .vl-lab-lore-body p{color:#e2e8f0}.vl-lab-success{color:#065f46;background:linear-gradient(135deg,#ecfdf5,#f0fdfa);border:1.5px solid #34d399;border-radius:10px;margin:.75rem 0 0;padding:.7rem .9rem;font-size:.92rem;font-weight:800;animation:.45s ease-out vl-lab-success-in}.vl-lab-success--on-dark{color:#bbf7d0;background:linear-gradient(135deg,#064e3b8c,#0f766e59);border-color:#34d399}@keyframes vl-lab-success-in{0%{opacity:0;transform:translateY(6px)scale(.98)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.vl-lab-success{animation:none}}.vl-segment--play-first .vl-lab-hub-summary-hint{color:#475569}.cks-header .cks-subtitle{color:#334155}.apb-audio-btn svg,.cks-tab-btn svg,.akasa-nav-tab-btn svg{vertical-align:middle;flex-shrink:0;display:inline-block}.apb-rocket-plume{transform-origin:110px 99px;animation:.28s ease-in-out infinite alternate apb-plume}@keyframes apb-plume{0%{opacity:.7}to{opacity:1}}@media (prefers-reduced-motion:reduce){.apb-rocket-plume{animation:none}}@media (width>=901px){.vl-segment--play-first{padding-bottom:5.75rem}}body.vl-lab-workbench-open .bodhi-mini-bubble{display:none!important}@media (width>=901px){body.vl-lab-workbench-open .vl-page{box-sizing:border-box;padding-right:13.5rem}body.vl-lab-workbench-open .vl-wb-mission-complete-dock{white-space:normal;text-align:center;z-index:40;justify-content:center;width:11.5rem;max-width:11.5rem;padding:.7rem .9rem;font-size:.82rem;line-height:1.3;bottom:1.25rem;left:auto;right:1rem}}@media (width<=900px){body.vl-lab-workbench-open .bodhi-trigger-text-wrap,body.vl-lab-workbench-open .bodhi-trigger-minimize{display:none!important}body.vl-lab-workbench-open .bodhi-floating-trigger{gap:0;padding:.3rem .35rem}body.vl-lab-workbench-open .bodhi-trigger-badge{display:none}body.vl-lab-workbench-open .bodhi-widget-container{left:auto;right:.65rem;bottom:calc(4.1rem + env(safe-area-inset-bottom,0px))}body.vl-lab-workbench-open .vl-page{padding-bottom:5.5rem}}.vl-lab-first-hint{color:#9a3412;background:#fff7ed;border:1px solid #fdba74;border-radius:12px;margin:0 0 .85rem;padding:.65rem .9rem;font-size:.92rem;line-height:1.45}.vl-lab-first-hint strong{color:#7c2d12}.vl-bio-continuum-banner{background:linear-gradient(135deg,#ecfdf5,#fff7ed);border:1.5px solid #34d399}.vl-bio-continuum-title{color:#047857}.vl-subject-sa{color:#0f766e;margin-right:.45rem;font-weight:800;display:inline-block}.vl-subject-band .vl-band-title{flex-wrap:wrap;align-items:baseline;gap:.25rem .5rem;display:flex}.vl-wb-sticky-nav{z-index:40;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);background:#f8fafcf0;border:1px solid #cbd5e1;border-radius:12px;flex-wrap:wrap;align-items:center;gap:.45rem .7rem;margin:0 0 .8rem;padding:.45rem .7rem;display:flex;position:sticky;top:0;box-shadow:0 4px 16px #0f172a14}.vl-wb-crumb ol{color:#334155;flex-wrap:wrap;align-items:center;gap:.15rem;margin:0;padding:0;font-size:.78rem;font-weight:700;list-style:none;display:flex}.vl-wb-crumb li{align-items:center;display:inline-flex}.vl-wb-crumb li:not(:last-child):after{content:">";color:#64748b;margin:0 .35rem 0 .3rem;font-weight:800}.vl-wb-crumb button{color:#0f766e;font:inherit;cursor:pointer;text-underline-offset:2px;background:0 0;border:none;padding:0;font-weight:800;text-decoration:underline}.vl-wb-crumb button:hover,.vl-wb-crumb button:focus-visible{color:#115e59}.vl-wb-crumb li[aria-current=page] span{color:#0f172a}.vl-wb-sticky-nav .vl-wb-return-btn{margin-left:auto}.vl-wb-sticky-nav .vl-wb-quick-nav{flex:16rem;justify-content:flex-end;min-width:0}.vl-wb-sticky-nav .vl-wb-switcher-select{max-width:min(280px,52vw)}.vl-wrapup{color:#0f172a;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;margin:1.25rem 0 1rem;padding:1.1rem 1.15rem 1.2rem}.vl-wrapup-kicker{letter-spacing:.06em;text-transform:uppercase;color:#0f766e;margin:0 0 .2rem;font-size:.7rem;font-weight:800}.vl-wrapup-title{color:#0f172a;margin:0 0 .65rem;font-size:1.15rem;font-weight:850}.vl-wrapup-learned{color:#1e293b;margin:0 0 .85rem;font-size:.95rem;line-height:1.55}.vl-wrapup-terms{gap:.45rem;margin:0 0 1rem;padding:0;list-style:none;display:grid}.vl-wrapup-terms li{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;grid-template-columns:auto auto 1fr;align-items:baseline;gap:.35rem .7rem;padding:.45rem .65rem;display:grid}.vl-wrapup-term-dev{color:#0f172a;font-weight:800}.vl-wrapup-term-iast{color:#334155;font-style:italic}.vl-wrapup-term-en{color:#475569;font-size:.9rem}.vl-wrapup-quiz{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;margin:.4rem 0 1rem;padding:.85rem .9rem}.vl-wrapup-quiz-title{color:#0f172a;margin:0 0 .2rem;font-size:1rem}.vl-wrapup-quiz-lead{color:#475569;margin:0 0 .75rem;font-size:.85rem}.vl-wrapup-quiz-list{gap:.85rem;margin:0;padding:0 0 0 1.15rem;display:grid}.vl-wrapup-q-stem{color:#0f172a;margin:0 0 .4rem;font-weight:700}.vl-wrapup-choices{gap:.35rem;display:grid}.vl-wrapup-choice{text-align:left;color:#1e293b;cursor:pointer;background:#fff;border:1.5px solid #cbd5e1;border-radius:8px;padding:.45rem .65rem;font-size:.9rem}.vl-wrapup-choice:hover,.vl-wrapup-choice:focus-visible{border-color:#0f766e}.vl-wrapup-choice.is-selected{background:#f0fdfa;border-color:#0f766e}.vl-wrapup-choice.is-correct,.vl-wrapup-choice.is-answer{background:#ecfdf5;border-color:#047857}.vl-wrapup-choice.is-wrong{background:#fef2f2;border-color:#b91c1c}.vl-wrapup-quiz-actions{flex-wrap:wrap;align-items:center;gap:.65rem;margin-top:.75rem;display:flex}.vl-wrapup-check-btn,.vl-wrapup-back,.vl-wrapup-prev,.vl-wrapup-next{cursor:pointer;border-radius:999px;padding:.45rem .9rem;font-size:.86rem;font-weight:800}.vl-wrapup-check-btn{color:#fff;background:#0f766e;border:none}.vl-wrapup-check-btn:disabled{opacity:.5;cursor:not-allowed}.vl-wrapup-score{color:#0f172a;margin:0;font-weight:700}.vl-wrapup-nav{flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.55rem;display:flex}.vl-wrapup-prevnext{flex-wrap:wrap;gap:.45rem;display:flex}.vl-wrapup-back,.vl-wrapup-prev{color:#0f172a;background:#fff;border:1.5px solid #cbd5e1}.vl-wrapup-next{color:#fff;background:#0f766e;border:1.5px solid #0f766e}@media (width<=900px){.vl-wb-sticky-nav{z-index:40;border-radius:0 0 12px 12px;margin-left:-.35rem;margin-right:-.35rem;padding:.4rem .55rem .5rem;top:0}.vl-wb-sticky-nav .vl-wb-return-btn{margin-left:0}.vl-wb-sticky-nav .vl-wb-quick-nav{justify-content:space-between;width:100%}.vl-wb-sticky-nav .vl-wb-switcher-select{flex:1;min-width:0;max-width:none}.vl-wrapup-terms li{grid-template-columns:1fr;gap:.15rem}.vl-wrapup{padding-bottom:5.5rem}}@media (prefers-reduced-motion:reduce){.vl-wb-sticky-nav{-webkit-backdrop-filter:none;backdrop-filter:none}}.vl-resume-row{margin:0 0 1rem}.vl-resume-btn{color:#064e3b;background:#ecfdf5;border:1.5px solid #0f766e;border-radius:12px;flex-direction:column;align-items:flex-start;gap:.15rem;max-width:100%;padding:.65rem 1rem;text-decoration:none;display:inline-flex}.vl-resume-kicker{letter-spacing:.04em;text-transform:uppercase;color:#0f766e;font-size:.72rem;font-weight:800}.vl-resume-game{color:#064e3b;font-size:.95rem;font-weight:800}.vl-resume-btn:hover,.vl-resume-btn:focus-visible{background:#d1fae5}.vl-game-card.is-complete{box-shadow:inset 0 0 0 1.5px #0f766e}.vl-game-chip-done{border:1px solid #0f766e;font-weight:800;color:#065f46!important;background:#ecfdf5!important}@media (width<=900px){.vl-resume-btn{box-sizing:border-box;width:100%}}.vl-ladder{color:#0f172a;background:#f8fafc;border:1.5px solid #334155;border-radius:14px;margin:0 0 1rem;padding:.9rem 1rem 1rem}.vl-ladder-head{flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.4rem 1rem;margin-bottom:.65rem;display:flex}.vl-ladder-title{color:#0f172a;margin:0;font-size:.95rem;font-weight:800}.vl-ladder-progress{color:#0f766e;margin:0;font-size:.85rem;font-weight:800}.vl-ladder-list{gap:.45rem;margin:0;padding:0;list-style:none;display:grid}.vl-ladder-rung{background:#fff;border:1.5px solid #64748b;border-radius:10px;margin:0}.vl-ladder-rung.is-current{background:#ecfdf5;border-color:#0f766e;box-shadow:0 0 0 1px #0f766e}.vl-ladder-rung.is-done{background:#dcfce7;border-color:#166534}.vl-ladder-btn,.vl-ladder-static{box-sizing:border-box;text-align:left;width:100%;min-height:44px;color:inherit;cursor:default;font:inherit;background:0 0;border:0;align-items:flex-start;gap:.7rem;padding:.7rem .75rem;display:flex}.vl-ladder-btn{cursor:pointer}.vl-ladder-btn:hover,.vl-ladder-btn:focus-visible{outline-offset:-2px;outline:2px solid #0f766e}.vl-ladder-idx{letter-spacing:.04em;text-transform:uppercase;color:#0f172a;flex:none;min-width:2.4rem;padding-top:.1rem;font-size:.72rem;font-weight:800}.vl-ladder-rung.is-done .vl-ladder-idx{color:#14532d}.vl-ladder-copy{flex-direction:column;gap:.15rem;min-width:0;display:flex}.vl-ladder-label{color:#0f172a;font-size:.9rem;font-weight:800}.vl-ladder-target{color:#1e293b;font-size:.8rem;line-height:1.35}.vl-ladder-feedback{color:#0f172a;background:#e2e8f0;border-radius:8px;margin:.7rem 0 0;padding:.55rem .7rem;font-size:.85rem;font-weight:650;line-height:1.4}.vl-ladder-feedback.is-ok{color:#14532d;background:#dcfce7}.vl-ladder-award{color:#713f12;background:#fef9c3;border-radius:8px;margin:.55rem 0 0;padding:.55rem .7rem;font-size:.85rem;font-weight:800;line-height:1.4}@media (width<=640px){.vl-ladder{padding:.8rem}.vl-ladder-list{grid-template-columns:1fr}}
 
+
+/* ==========================================================================
+   Vijnana Lab Journey Strip, View Organization Tabs & IKS Bridge Pills
+   ========================================================================== */
+.vl-journey-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0.75rem 0 1.4rem;
+  padding: 1rem 1.15rem;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.vl-journey-progress-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vl-journey-progress-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.vl-journey-kicker {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f766e;
+}
+
+.vl-journey-stat {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.vl-journey-bar-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.vl-journey-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0f766e 0%, #f59e0b 100%);
+  transition: width 0.35s ease;
+}
+
+.vl-journey-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.65rem;
+}
+
+.vl-next-quest-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+  padding: 0.55rem 1rem;
+  border-radius: 12px;
+  border: 1.5px solid #d97706;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  color: #78350f;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.vl-next-quest-btn:hover,
+.vl-next-quest-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.22);
+}
+
+.vl-next-quest-kicker {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #b45309;
+}
+
+.vl-next-quest-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #451a03;
+}
+
+.vl-org-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.vl-org-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.vl-org-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 0.15rem;
+}
+
+.vl-org-tab {
+  padding: 0.42rem 0.8rem;
+  border-radius: 999px;
+  border: 1.5px solid #cbd5e1;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.vl-org-tab:hover {
+  border-color: #0f766e;
+  color: #0f766e;
+}
+
+.vl-org-tab.is-active {
+  background: #0c4a38;
+  border-color: #0c4a38;
+  color: #ffffff;
+}
+
+.vl-reset-filters-btn {
+  padding: 0.38rem 0.75rem;
+  border-radius: 8px;
+  border: 1.5px solid #dc2626;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.vl-stage-header {
+  margin-bottom: 0.75rem;
+}
+
+.vl-stage-desc {
+  margin: 0.15rem 0 0;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.vl-game-chip-sub {
+  background: #ecfdf5 !important;
+  color: #065f46 !important;
+  border-color: #a7f3d0 !important;
+  font-weight: 700;
+}
+
+.vl-subject-bridge-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.vl-bridge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid #cbd5e1;
+  transition: transform 0.14s ease;
+}
+
+.vl-bridge-pill:hover {
+  transform: translateY(-1px);
+}
+
+.vl-bridge-pill--think {
+  background: #fffbeb;
+  border-color: #fcd34d;
+  color: #92400e;
+}
+
+.vl-bridge-pill--read {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  color: #3730a3;
+}
+
+/* ==========================================================================
+   STEM Engineering Blueprints, Schematic Graphics & 4-Step Gaming HUD
+   ========================================================================== */
+.vl-hub-feat-card--blueprint {
+  flex-direction: column !important;
+  align-items: stretch !important;
+  padding: 0.85rem !important;
+  gap: 0.65rem !important;
+}
+
+.vl-feat-schematic {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.vl-game-formula {
+  display: inline-block;
+  margin-top: 0.2rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #0f766e;
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 6px;
+  padding: 0.14rem 0.42rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vl-game-chip-diff {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #fde68a !important;
+  font-weight: 800;
+}
+
+/* In-Workbench STEM Blueprint & Gaming Schematic HUD */
+.vl-stem-hud {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0.6rem 0 0.85rem;
+}
+
+.vl-schematic-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+  background: #0f172a;
+  border: 1.5px solid #334155;
+  color: #e2e8f0;
+}
+
+.vl-flow-steps-mini {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.vl-flow-node {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #94a3b8;
+}
+
+.vl-flow-node.is-active {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: #f59e0b;
+  color: #fde68a;
+}
+
+.vl-flow-node.is-done {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+  color: #6ee7b7;
+}
+
+.vl-flow-arrow {
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.vl-rank-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.24rem 0.68rem;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.16);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  font-size: 0.76rem;
+}
+
+.vl-rank-sa {
+  color: #fde68a;
+  font-weight: 800;
+}
+
+.vl-rank-en {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.vl-rank-stars {
+  color: #6ee7b7;
+  font-weight: 800;
+  padding-left: 0.35rem;
+  border-left: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.vl-blueprint-details {
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  overflow: hidden;
+}
+
+.vl-blueprint-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+  list-style: none;
+  background: #f8fafc;
+}
+
+.vl-blueprint-summary::-webkit-details-marker {
+  display: none;
+}
+
+.vl-blueprint-summary-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vl-blueprint-domain {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0c4a38;
+  background: #d1fae5;
+  padding: 0.16rem 0.52rem;
+  border-radius: 999px;
+}
+
+.vl-blueprint-formula {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.vl-blueprint-toggle {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #0f766e;
+}
+
+.vl-blueprint-body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0.9rem;
+  padding: 0.85rem;
+  border-top: 1px solid #e2e8f0;
+  align-items: start;
+}
+
+.vl-blueprint-visual .vl-schematic-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.vl-blueprint-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.65rem;
+}
+
+.vl-bp-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.vl-bp-cell--hint {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.vl-bp-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.vl-bp-cell--hint .vl-bp-label {
+  color: #b45309;
+}
+
+.vl-bp-cell strong {
+  font-size: 0.85rem;
+  color: #0f172a;
+}
+
+.vl-bp-cell p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.vl-bp-code {
+  display: inline-block;
+  margin-top: 0.15rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #0f766e;
+  background: #ecfdf5;
+  padding: 0.15rem 0.4rem;
+  border-radius: 5px;
+}
+
+@media (max-width: 720px) {
+  .vl-blueprint-body {
+    grid-template-columns: 1fr;
+  }
+}

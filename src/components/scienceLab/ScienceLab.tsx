@@ -51,6 +51,12 @@ import {
   LabPillarPictogram,
   IksBranchPictogram,
 } from './LabPictograms';
+import {
+  LabSchematicGraphic,
+  LabStemBlueprintCard,
+  STEM_BLUEPRINTS,
+  getExplorerRank,
+} from './LabStemSchematic';
 
 export type LabCategory = 'all' | 'matter' | 'cosmos' | 'life' | 'waves';
 export type LabLevel = 'all' | 'preschool' | 'primary' | 'middle' | 'high' | 'advanced';
@@ -629,6 +635,8 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   const [filterCat, setFilterCat] = useState<LabCategory>('all');
   const [filterSubject, setFilterSubject] = useState<string>('all');
   const [filterLevel, setFilterLevel] = useState<LabLevel>('all');
+  const [organizeBy, setOrganizeBy] = useState<'age' | 'subject' | 'grid'>('age');
+  const [isIksVideoExpanded, setIsIksVideoExpanded] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [heroSrc, setHeroSrc] = useState<string>('/images/vignana-lab-hero.webp');
   const [, setIsQuestMode] = useState(true);
@@ -1098,19 +1106,31 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       <small className="vl-iks-summary-sub">Explore the 7 branches connecting ancient Indian sciences with our 16 STEM physics simulations</small>
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    className="vl-iks-zoom-btn"
-                    onClick={() => {
-                      soundEffects.playCelebrationChime();
-                      setIsIksLightboxOpen(true);
-                    }}
-                    title="Click to watch the video full screen"
-                  >
-                    <span>Watch full screen</span>
-                  </button>
+                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    <button
+                      type="button"
+                      className="vl-iks-zoom-btn"
+                      onClick={() => setIsIksVideoExpanded((prev) => !prev)}
+                      aria-expanded={isIksVideoExpanded}
+                      title="Toggle 7-Pillar IKS Map video preview"
+                    >
+                      <span>{isIksVideoExpanded ? 'Hide Map Video' : 'Preview 7-Pillar Video'}</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="vl-iks-zoom-btn"
+                      onClick={() => {
+                        soundEffects.playCelebrationChime();
+                        setIsIksLightboxOpen(true);
+                      }}
+                      title="Click to watch the video full screen"
+                    >
+                      <span>Watch Full Screen</span>
+                    </button>
+                  </div>
                 </div>
                 <div className="vl-iks-details-body">
+                  {isIksVideoExpanded && (
                   <div
                     className="vl-iks-img-wrap"
                     role="button"
@@ -1144,6 +1164,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       <span className="vl-iks-img-pill">7 Pillars of Vedic Sciences · Tap to enlarge</span>
                     </div>
                   </div>
+                  )}
                   <div className="vl-iks-branches-row">
                     <button
                       type="button"
@@ -1214,63 +1235,63 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               </div>
               <div className="vl-hub-featured-grid">
                 <div
-                  className="vl-hub-feat-card"
+                  className="vl-hub-feat-card vl-hub-feat-card--blueprint"
                   onClick={() => handleLaunchSim('preschool-wonder')}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('preschool-wonder')}
                 >
-                  <div className="vl-hub-feat-icon"><LabGamePictogram id="preschool-wonder" /></div>
+                  <LabSchematicGraphic labId="preschool-wonder" className="vl-feat-schematic" />
                   <div className="vl-hub-feat-body">
                     <span className="vl-hub-feat-badge vl-badge--preschool">Stage 1 · Ages 2–6 · 24 Games</span>
                     <h4 className="vl-hub-feat-title">Wonder Playground &amp; Living India Map</h4>
                     <p className="vl-hub-feat-desc">The Spice Adventure, living India Map, animal safari, color mixing, and temple bells with gentle audio.</p>
-                    <span className="vl-hub-feat-cta">Launch Playground ➔</span>
+                    <span className="vl-hub-feat-cta">Launch Playground &rarr;</span>
                   </div>
                 </div>
                 <div
-                  className="vl-hub-feat-card"
+                  className="vl-hub-feat-card vl-hub-feat-card--blueprint"
                   onClick={() => handleLaunchSim('asato-ma')}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('asato-ma')}
                 >
-                  <div className="vl-hub-feat-icon"><LabGamePictogram id="asato-ma" /></div>
+                  <LabSchematicGraphic labId="asato-ma" className="vl-feat-schematic" />
                   <div className="vl-hub-feat-body">
                     <span className="vl-hub-feat-badge vl-badge--primary">Stage 2 · Ages 6–10 · Physics</span>
                     <h4 className="vl-hub-feat-title">Heat &amp; Matter Mystery (Mass Invariance)</h4>
                     <p className="vl-hub-feat-desc">Fire up the Viveka Scanner in the Rasaśāstra crucible. Melt, boil, and burn matter — mass stays constant.</p>
-                    <span className="vl-hub-feat-cta">Launch Crucible ➔</span>
+                    <span className="vl-hub-feat-cta">Launch Crucible &rarr;</span>
                   </div>
                 </div>
                 <div
-                  className="vl-hub-feat-card"
+                  className="vl-hub-feat-card vl-hub-feat-card--blueprint"
                   onClick={() => handleLaunchSim('chandrayaan')}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('chandrayaan')}
                 >
-                  <div className="vl-hub-feat-icon"><LabGamePictogram id="chandrayaan" /></div>
+                  <LabSchematicGraphic labId="chandrayaan" className="vl-feat-schematic" />
                   <div className="vl-hub-feat-body">
                     <span className="vl-hub-feat-badge vl-badge--middle">Stage 3 · Ages 10–14 · Space</span>
                     <h4 className="vl-hub-feat-title">Chandrayaan Moon Mission</h4>
                     <p className="vl-hub-feat-desc">Execute soft touchdown at Shiv Shakti point, deploy Pragyan rover, and fire the LIBS laser spectrometer.</p>
-                    <span className="vl-hub-feat-cta">Launch Moon Mission ➔</span>
+                    <span className="vl-hub-feat-cta">Launch Moon Mission &rarr;</span>
                   </div>
                 </div>
                 <div
-                  className="vl-hub-feat-card"
+                  className="vl-hub-feat-card vl-hub-feat-card--blueprint"
                   onClick={() => handleLaunchSim('vedic-geometry')}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && handleLaunchSim('vedic-geometry')}
                 >
-                  <div className="vl-hub-feat-icon"><LabGamePictogram id="vedic-geometry" /></div>
+                  <LabSchematicGraphic labId="vedic-geometry" className="vl-feat-schematic" />
                   <div className="vl-hub-feat-body">
                     <span className="vl-hub-feat-badge vl-badge--scholar">Stage 4 · Ages 14+ · Geometry</span>
                     <h4 className="vl-hub-feat-title">Vedic Altar Mastery &amp; Rope Geometry</h4>
                     <p className="vl-hub-feat-desc">Build Śulba fire altars (Kūrma, Rathacakra, Śyena), solve transformation theorems, and explore cosmic geometry.</p>
-                    <span className="vl-hub-feat-cta">Launch Altar Studio ➔</span>
+                    <span className="vl-hub-feat-cta">Launch Altar Studio &rarr;</span>
                   </div>
                 </div>
               </div>
@@ -1338,19 +1359,115 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             </div>
           </div>
 
-          <div className="vl-hub-search-row">
-            <div className="vl-hub-search">
-              <span aria-hidden="true" style={{ opacity: 0.65, fontSize: '0.85rem' }}>⚲</span>
-              <input type="text" placeholder="Search games, Sanskrit concepts, topics..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} aria-label="Search games" />
-              {searchQuery && <button type="button" onClick={() => setSearchQuery('')} aria-label="Clear search">✕</button>}
-            </div>
-            <span className="vl-search-tally">
-              Showing <strong>{visibleSegments.length}</strong> of {LAB_SEGMENTS.length} simulations
-            </span>
-          </div>
-          <div className="vl-resume-row">
-            <LabResumeButton variant="catalog" />
-          </div>
+          {/* Explorer Progress & Smart Next Quest Bar */}
+          {(() => {
+            const scienceList = LAB_SEGMENTS.filter((s) => s.level !== 'preschool');
+            const completedList = explorerStats.completedMissions || [];
+            const masteredCount = scienceList.filter((s) => completedList.includes(s.id)).length;
+            const pct = scienceList.length ? Math.round((masteredCount / scienceList.length) * 100) : 0;
+            const nextQuest =
+              visibleSegments.find((s) => s.level !== 'preschool' && !completedList.includes(s.id)) ||
+              scienceList.find((s) => !completedList.includes(s.id)) ||
+              scienceList[0];
+            const hasActiveFilters =
+              filterLevel !== 'all' || filterSubject !== 'all' || searchQuery.trim().length > 0;
+
+            const rank = getExplorerRank(explorerStats.totalStars || 0);
+
+            return (
+              <div className="vl-journey-strip" aria-label="Explorer progress and organization controls">
+                <div className="vl-journey-progress-box">
+                  <div className="vl-journey-progress-head">
+                    <span className="vl-journey-kicker">
+                      Your Vijñāna Journey &middot; Rank: <strong style={{ color: '#92400e' }}>{rank.rankEn}</strong> (<span lang="sa">{rank.rankSa}</span>)
+                    </span>
+                    <strong className="vl-journey-stat">
+                      {masteredCount} of {scienceList.length} Science Missions Mastered ({pct}%) &middot; {explorerStats.totalStars || 0} Stars
+                    </strong>
+                  </div>
+                  <div className="vl-journey-bar-track" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
+                    <div className="vl-journey-bar-fill" style={{ width: `${Math.max(pct, 4)}%` }} />
+                  </div>
+                </div>
+
+                <div className="vl-journey-actions">
+                  <LabResumeButton variant="catalog" />
+                  {nextQuest && (
+                    <button
+                      type="button"
+                      className="vl-next-quest-btn"
+                      onClick={() => handleLaunchSim(nextQuest.id)}
+                    >
+                      <span className="vl-next-quest-kicker">Recommended Next Quest</span>
+                      <span className="vl-next-quest-title">{nextQuest.title} &rarr;</span>
+                    </button>
+                  )}
+                </div>
+
+                {/* View Organization Switcher + Search */}
+                <div className="vl-org-row">
+                  <div className="vl-org-tabs" role="tablist" aria-label="Organize simulations by">
+                    <span className="vl-org-label">View by:</span>
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={organizeBy === 'age'}
+                      className={`vl-org-tab${organizeBy === 'age' ? ' is-active' : ''}`}
+                      onClick={() => { setOrganizeBy('age'); soundEffects.playStrokeChime(); }}
+                    >
+                      Guided by Age (No Duplicates)
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={organizeBy === 'subject'}
+                      className={`vl-org-tab${organizeBy === 'subject' ? ' is-active' : ''}`}
+                      onClick={() => { setOrganizeBy('subject'); soundEffects.playStrokeChime(); }}
+                    >
+                      By IKS Subject + Think Labs
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={organizeBy === 'grid'}
+                      className={`vl-org-tab${organizeBy === 'grid' ? ' is-active' : ''}`}
+                      onClick={() => { setOrganizeBy('grid'); soundEffects.playStrokeChime(); }}
+                    >
+                      All Games Grid
+                    </button>
+                  </div>
+
+                  <div className="vl-hub-search-row" style={{ margin: 0, flex: '1 1 260px' }}>
+                    <div className="vl-hub-search">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ opacity: 0.7, flexShrink: 0 }}>
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                      </svg>
+                      <input type="text" placeholder="Search games, Sanskrit concepts, topics..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} aria-label="Search games" />
+                      {searchQuery && <button type="button" onClick={() => setSearchQuery('')} aria-label="Clear search">Clear</button>}
+                    </div>
+                    <span className="vl-search-tally">
+                      Showing <strong>{visibleSegments.length}</strong> of {LAB_SEGMENTS.length}
+                    </span>
+                    {hasActiveFilters && (
+                      <button
+                        type="button"
+                        className="vl-reset-filters-btn"
+                        onClick={() => {
+                          setSearchQuery('');
+                          setFilterLevel('all');
+                          setFilterCat('all');
+                          setFilterSubject('all');
+                        }}
+                      >
+                        Reset filters
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
 
           {visibleSegments.some((x) => x.level === 'preschool') && (filterLevel === 'all' || filterLevel === 'preschool') && (
               <section key="preschool" className="vl-level-band vl-level-band--preschool" aria-label="Play 2 Learn: Free Preschool Games">
@@ -1373,7 +1490,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                         className="vl-ps-launch-btn"
                         onClick={() => handleLaunchSim('preschool-wonder')}
                       >
-                        <span>Enter Play 2 Learn: Free Preschool Games (25 Activities) ➔</span>
+                        <span>Enter Play 2 Learn: Free Preschool Games (25 Activities) &rarr;</span>
                       </button>
                     </div>
 
@@ -1413,16 +1530,110 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 </section>
           )}
 
-          {IKS_SUBJECT_TABS.filter((sub) => filterSubject === 'all' || filterSubject === sub.id).map((sub) => {
+          {/* MODE A: GUIDED BY AGE / LEARNING STAGE (Deduplicated, 1 card per game) */}
+          {organizeBy === 'age' && (
+            <>
+              {[
+                {
+                  id: 'primary',
+                  num: '2',
+                  title: 'Primary Explorers',
+                  sa: 'प्रारम्भिक-विज्ञानम्',
+                  ages: 'Ages 7–10 · Grades 2–5',
+                  desc: 'Visual, hands-on physics, gravity, and ecology sandboxes — instant feedback with gentle explanations.',
+                  levels: ['primary'] as LabSegmentConfig['level'][],
+                },
+                {
+                  id: 'middle',
+                  num: '3',
+                  title: 'Middle School Missions',
+                  sa: 'माध्यमिक-अन्वेषणम्',
+                  ages: 'Ages 11–14 · Grades 6–8',
+                  desc: 'Build atoms, land on the Moon, test plant bio-signals, design temples, and measure sun shadows.',
+                  levels: ['middle'] as LabSegmentConfig['level'][],
+                },
+                {
+                  id: 'scholar',
+                  num: '4',
+                  title: 'High School & Scholars',
+                  sa: 'उच्च-शास्त्र-अभ्यासः',
+                  ages: 'Ages 14+ · Grades 9–12 & Beyond',
+                  desc: 'Sacred Śulba geometry, Piṅgala binary combinatorics, mantra acoustics, Kauṭilya statecraft, and Citrakāvya.',
+                  levels: ['high', 'advanced'] as LabSegmentConfig['level'][],
+                },
+              ].map((stage) => {
+                const games = visibleSegments.filter((g) => stage.levels.includes(g.level));
+                if (!games.length) return null;
+                return (
+                  <section key={stage.id} className="vl-level-band vl-stage-band" aria-label={stage.title}>
+                    <div className="vl-stage-header">
+                      <h2 className="vl-band-title" style={{ marginBottom: '0.2rem' }}>
+                        <span className="vl-level-num">{stage.num}</span>
+                        {stage.title}
+                        <span className="vl-subject-sa sanskrit-safe-text" lang="sa">{stage.sa}</span>
+                        <small>{stage.ages} · {games.length} {games.length === 1 ? 'simulation' : 'simulations'}</small>
+                      </h2>
+                      <p className="vl-stage-desc">{stage.desc}</p>
+                    </div>
+                    <div className="vl-band-grid">
+                      {games.map((g) => {
+                        const sub = primarySubjectFor(g.id);
+                        const bp = STEM_BLUEPRINTS[g.id];
+                        return (
+                          <button key={g.id} type="button" className={`vl-game-card${(explorerStats.completedMissions || []).includes(g.id) ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
+                            <span className="vl-game-icon" aria-hidden="true"><LabGamePictogram id={g.id} /></span>
+                            <span className="vl-game-body">
+                              <b className="vl-game-title">{g.title}</b>
+                              <span className="vl-game-dev" lang="sa">{g.dev}</span>
+                              {RISHI_QUESTS[g.id] && <span className="vl-game-goal">{RISHI_QUESTS[g.id].goal}</span>}
+                              {bp && <span className="vl-game-formula">{bp.formula}</span>}
+                              <span className="vl-game-chips">
+                                {sub && <span className="vl-game-chip-sub">{sub.en.split(' (')[0]}</span>}
+                                {bp && <span className="vl-game-chip-diff">Tier {bp.difficulty}</span>}
+                                <span>{g.ageRange}</span>
+                                {(explorerStats.completedMissions || []).includes(g.id) && <span className="vl-game-chip-done">Completed</span>}
+                                {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>{explorerStats.starsByGame[g.id]} Stars</span>}
+                              </span>
+                            </span>
+                            <span className="vl-game-play">{(explorerStats.completedMissions || []).includes(g.id) ? 'Play again \u2192' : 'Play \u2192'}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                );
+              })}
+            </>
+          )}
+
+          {/* MODE B: BY IKS SUBJECT (+ Inline Think Labs & Readings Bridge) */}
+          {organizeBy === 'subject' && IKS_SUBJECT_TABS.filter((sub) => filterSubject === 'all' || filterSubject === sub.id).map((sub) => {
             const games = visibleSegments.filter((g) => sub.labIds.includes(g.id) && g.level !== 'preschool');
             if (!games.length) return null;
+            const fullSub = IKS_HUB_SUBJECTS.find((s) => s.id === sub.id);
             return (
               <section key={sub.id} id={`vl-subject-${sub.id}`} className="vl-level-band vl-subject-band" aria-label={sub.en}>
-                <h2 className="vl-band-title">
-                  <span className="vl-subject-sa sanskrit-safe-text" lang="sa">{sub.sa}</span>
-                  {sub.en}
-                  <small>{games.length} {games.length === 1 ? 'game' : 'games'}</small>
-                </h2>
+                <div className="vl-stage-header">
+                  <h2 className="vl-band-title" style={{ marginBottom: '0.3rem' }}>
+                    <span className="vl-subject-sa sanskrit-safe-text" lang="sa">{sub.sa}</span>
+                    {sub.en}
+                    <small>{games.length} {games.length === 1 ? 'game' : 'games'}</small>
+                  </h2>
+                  {fullSub && (fullSub.thinkLabs.length > 0 || fullSub.readings.length > 0) && (
+                    <div className="vl-subject-bridge-links">
+                      {fullSub.thinkLabs.map((tl) => (
+                        <a key={tl.href} href={tl.href} className="vl-bridge-pill vl-bridge-pill--think">
+                          Think Lab: {tl.label} &rarr;
+                        </a>
+                      ))}
+                      {fullSub.readings.map((rd) => (
+                        <a key={rd.href} href={rd.href} className="vl-bridge-pill vl-bridge-pill--read">
+                          Reading: {rd.label} &rarr;
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <div className="vl-band-grid">
                   {games.map((g) => (
                     <button key={g.id} type="button" className={`vl-game-card${(explorerStats.completedMissions || []).includes(g.id) ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
@@ -1438,13 +1649,49 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                           {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>{explorerStats.starsByGame[g.id]} Stars</span>}
                         </span>
                       </span>
-                      <span className="vl-game-play">{(explorerStats.completedMissions || []).includes(g.id) ? 'Play again ➔' : 'Play ➔'}</span>
+                      <span className="vl-game-play">{(explorerStats.completedMissions || []).includes(g.id) ? 'Play again \u2192' : 'Play \u2192'}</span>
                     </button>
                   ))}
                 </div>
               </section>
             );
           })}
+
+          {/* MODE C: ALL SCIENCE GAMES FLAT GRID */}
+          {organizeBy === 'grid' && (() => {
+            const flatGames = visibleSegments.filter((g) => g.level !== 'preschool');
+            if (!flatGames.length) return null;
+            return (
+              <section className="vl-level-band" aria-label="All Science Simulations">
+                <h2 className="vl-band-title">
+                  All Science Simulations <small>{flatGames.length} playable labs</small>
+                </h2>
+                <div className="vl-band-grid">
+                  {flatGames.map((g) => {
+                    const sub = primarySubjectFor(g.id);
+                    return (
+                      <button key={g.id} type="button" className={`vl-game-card${(explorerStats.completedMissions || []).includes(g.id) ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
+                        <span className="vl-game-icon" aria-hidden="true"><LabGamePictogram id={g.id} /></span>
+                        <span className="vl-game-body">
+                          <b className="vl-game-title">{g.title}</b>
+                          <span className="vl-game-dev" lang="sa">{g.dev}</span>
+                          {RISHI_QUESTS[g.id] && <span className="vl-game-goal">{RISHI_QUESTS[g.id].goal}</span>}
+                          <span className="vl-game-chips">
+                            {sub && <span className="vl-game-chip-sub">{sub.en.split(' (')[0]}</span>}
+                            <span>{g.ageRange}</span>
+                            <span>{g.levelLabel}</span>
+                            {(explorerStats.completedMissions || []).includes(g.id) && <span className="vl-game-chip-done">Completed</span>}
+                            {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>{explorerStats.starsByGame[g.id]} Stars</span>}
+                          </span>
+                        </span>
+                        <span className="vl-game-play">{(explorerStats.completedMissions || []).includes(g.id) ? 'Play again \u2192' : 'Play \u2192'}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })()}
           {visibleSegments.filter((s) => s.level !== 'preschool').length === 0 && visibleSegments.every((s) => s.level === 'preschool') && searchQuery && filterSubject !== 'all' && (
             <p className="vl-hub-empty">No science games match this subject and search.</p>
           )}
@@ -1963,6 +2210,16 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             </div>
           </div>
         </div>
+
+        {/* STEM Blueprint & 4-Step Gaming Schematic HUD */}
+        {active !== 'preschool-wonder' && (
+          <LabStemBlueprintCard
+            labId={active}
+            isCompleted={(explorerStats.completedMissions || []).includes(active)}
+            starsForLab={explorerStats.starsByGame?.[active] ?? 0}
+            totalStars={explorerStats.totalStars || 0}
+          />
+        )}
 
         {/* Immediate Pure Playable Simulation Canvas — Play First! */}
         <div className="vl-wb-playable-canvas">
