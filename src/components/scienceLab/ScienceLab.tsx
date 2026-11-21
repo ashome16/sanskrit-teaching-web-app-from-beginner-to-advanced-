@@ -642,6 +642,9 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
   const [, setIsQuestMode] = useState(true);
   const [isQuestDirectoryOpen, setIsQuestDirectoryOpen] = useState(false);
   const [isIksDropdownOpen, setIsIksDropdownOpen] = useState(false);
+  const [showCardSchematics, setShowCardSchematics] = useState<boolean>(true);
+  const [isWbMapOpen, setIsWbMapOpen] = useState<boolean>(false);
+  const [wbMapStageFilter, setWbMapStageFilter] = useState<LabLevel>('all');
   const iksDropdownRef = useRef<HTMLDivElement>(null);
   const catalogSectionRef = useRef<HTMLDivElement>(null);
   const simRef = useRef<HTMLDivElement>(null);
@@ -756,10 +759,11 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
       if (filterSubject !== 'all' && !labMatchesSubject(s.id, filterSubject)) return false;
       // Level filter
       if (filterLevel !== 'all' && s.level !== filterLevel) return false;
-      // Keyword search
+      // Keyword search (includes STEM blueprint equations, laws, sutras, and NCERT tags)
       if (searchQuery.trim()) {
         const q = foldLabSearch(searchQuery.trim());
         const terms = LAB_WRAP_UPS[s.id]?.terms ?? [];
+        const bp = STEM_BLUEPRINTS[s.id];
         const hay = foldLabSearch([
           s.title,
           s.dev,
@@ -770,6 +774,15 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
           s.levelLabel,
           s.blurb,
           RISHI_QUESTS[s.id]?.goal ?? '',
+          bp?.domainTag ?? '',
+          bp?.formula ?? '',
+          bp?.modernLaw ?? '',
+          bp?.indianSource ?? '',
+          bp?.sanskritSutra ?? '',
+          bp?.sutraGloss ?? '',
+          bp?.curriculumTag ?? '',
+          bp?.controlMechanics ?? '',
+          bp?.winTelemetry ?? '',
           ...terms.flatMap((term) => [term.dev, term.iast, term.en]),
         ].join(' '));
         if (!hay.includes(q)) return false;
@@ -885,6 +898,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
 
   const handleNavigateLab = (targetId: LabSegmentId) => {
     setActive(targetId);
+    setIsWbMapOpen(false);
     setViewMode('workbench');
     writeLabUrl('workbench', targetId, 'push');
     soundEffects.playStrokeChime();
@@ -893,8 +907,32 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
     });
   };
 
+  // Workbench keyboard shortcuts: [ or Alt+Left (Prev), ] or Alt+Right (Next), M (Toggle Lab Map)
+  useEffect(() => {
+    if (viewMode !== 'workbench') return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement | null)?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (e.target as HTMLElement | null)?.isContentEditable) {
+        return;
+      }
+      if ((e.altKey && e.key === 'ArrowLeft') || (!e.metaKey && !e.ctrlKey && e.key === '[')) {
+        e.preventDefault();
+        handleNavigateLab(prevSeg.id);
+      } else if ((e.altKey && e.key === 'ArrowRight') || (!e.metaKey && !e.ctrlKey && e.key === ']')) {
+        e.preventDefault();
+        handleNavigateLab(nextSeg.id);
+      } else if (!e.metaKey && !e.ctrlKey && !e.altKey && (e.key === 'm' || e.key === 'M')) {
+        e.preventDefault();
+        setIsWbMapOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [viewMode, prevSeg.id, nextSeg.id]);
+
   return (
-    <div className="vl-page">
+    <div className="vl-page vl-page--arcade">
       {viewMode !== 'workbench' && (
         <div ref={catalogSectionRef} className="vl-hub">
           <header className="vl-hub-hero">
@@ -902,6 +940,17 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               <div className="vl-hub-topline-left">
                 {onGoHome && <button type="button" className="vl-hub-link" onClick={onGoHome}>◀ Home</button>}
                 {onOpenResources && <button type="button" className="vl-hub-link" onClick={onOpenResources}>Toolkit</button>}
+                <button
+                  type="button"
+                  className="vl-hub-link"
+                  onClick={() => {
+                    soundEffects.playStrokeChime();
+                    setIsQuestDirectoryOpen(true);
+                  }}
+                  title="Open 3-Minute Quest Directory for all 18 Science Labs"
+                >
+                  All 18 Quests Map
+                </button>
                 <div className="vl-iks-dropdown-container" ref={iksDropdownRef}>
                   <button
                     type="button"
@@ -1435,6 +1484,15 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                     >
                       All Games Grid
                     </button>
+                    <button
+                      type="button"
+                      className={`vl-org-tab vl-org-tab--blueprint${showCardSchematics ? ' is-active' : ''}`}
+                      aria-pressed={showCardSchematics}
+                      onClick={() => { setShowCardSchematics((prev) => !prev); soundEffects.playStrokeChime(); }}
+                      title="Toggle STEM Engineering Blueprint Schematics on game cards"
+                    >
+                      {showCardSchematics ? 'STEM Schematics: ON' : 'STEM Schematics: OFF'}
+                    </button>
                   </div>
 
                   <div className="vl-hub-search-row" style={{ margin: 0, flex: '1 1 260px' }}>
@@ -1579,23 +1637,35 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                       {games.map((g) => {
                         const sub = primarySubjectFor(g.id);
                         const bp = STEM_BLUEPRINTS[g.id];
+                        const isDone = (explorerStats.completedMissions || []).includes(g.id);
                         return (
-                          <button key={g.id} type="button" className={`vl-game-card${(explorerStats.completedMissions || []).includes(g.id) ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
-                            <span className="vl-game-icon" aria-hidden="true"><LabGamePictogram id={g.id} /></span>
+                          <button key={g.id} type="button" className={`vl-game-card vl-game-card--arcade${isDone ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink, '--g-glow': g.glow } as React.CSSProperties}>
+                            {showCardSchematics && (
+                              <div className="vl-card-visual-top">
+                                <LabSchematicGraphic labId={g.id} className="vl-card-schematic" />
+                                <span className="vl-card-age-pill">{g.ageRange}</span>
+                                {isDone && <span className="vl-card-done-pill">MASTERED</span>}
+                              </div>
+                            )}
                             <span className="vl-game-body">
-                              <b className="vl-game-title">{g.title}</b>
-                              <span className="vl-game-dev" lang="sa">{g.dev}</span>
+                              <span className="vl-card-title-row">
+                                <span className="vl-game-icon vl-game-icon--mini" aria-hidden="true"><LabGamePictogram id={g.id} /></span>
+                                <span className="vl-card-title-stack">
+                                  <b className="vl-game-title">{g.title}</b>
+                                  <span className="vl-game-dev" lang="sa">{g.dev}</span>
+                                </span>
+                              </span>
                               {RISHI_QUESTS[g.id] && <span className="vl-game-goal">{RISHI_QUESTS[g.id].goal}</span>}
                               {bp && <span className="vl-game-formula">{bp.formula}</span>}
+                              {bp && <span className="vl-game-curriculum-line">{bp.modernLaw} &middot; {bp.indianSource}</span>}
                               <span className="vl-game-chips">
                                 {sub && <span className="vl-game-chip-sub">{sub.en.split(' (')[0]}</span>}
-                                {bp && <span className="vl-game-chip-diff">Tier {bp.difficulty}</span>}
-                                <span>{g.ageRange}</span>
-                                {(explorerStats.completedMissions || []).includes(g.id) && <span className="vl-game-chip-done">Completed</span>}
-                                {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>{explorerStats.starsByGame[g.id]} Stars</span>}
+                                {bp && <span className="vl-game-chip-diff">LVL {bp.difficulty}</span>}
+                                {!showCardSchematics && <span>{g.ageRange}</span>}
+                                {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span className="vl-game-chip-stars">{explorerStats.starsByGame[g.id]} Stars</span>}
                               </span>
                             </span>
-                            <span className="vl-game-play">{(explorerStats.completedMissions || []).includes(g.id) ? 'Play again \u2192' : 'Play \u2192'}</span>
+                            <span className="vl-game-play vl-game-play--arcade">{isDone ? 'REPLAY MISSION \u2192' : 'PLAY NOW \u2192'}</span>
                           </button>
                         );
                       })}
@@ -1635,23 +1705,40 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                   )}
                 </div>
                 <div className="vl-band-grid">
-                  {games.map((g) => (
-                    <button key={g.id} type="button" className={`vl-game-card${(explorerStats.completedMissions || []).includes(g.id) ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
-                      <span className="vl-game-icon" aria-hidden="true"><LabGamePictogram id={g.id} /></span>
-                      <span className="vl-game-body">
-                        <b className="vl-game-title">{g.title}</b>
-                        <span className="vl-game-dev" lang="sa">{g.dev}</span>
-                        {RISHI_QUESTS[g.id] && <span className="vl-game-goal">{RISHI_QUESTS[g.id].goal}</span>}
-                        <span className="vl-game-chips">
-                          <span>{g.ageRange}</span>
-                          <span>{g.levelLabel}</span>
-                          {(explorerStats.completedMissions || []).includes(g.id) && <span className="vl-game-chip-done">Completed</span>}
-                          {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>{explorerStats.starsByGame[g.id]} Stars</span>}
+                  {games.map((g) => {
+                    const bp = STEM_BLUEPRINTS[g.id];
+                    const isDone = (explorerStats.completedMissions || []).includes(g.id);
+                    return (
+                      <button key={g.id} type="button" className={`vl-game-card vl-game-card--arcade${isDone ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink, '--g-glow': g.glow } as React.CSSProperties}>
+                        {showCardSchematics && (
+                          <div className="vl-card-visual-top">
+                            <LabSchematicGraphic labId={g.id} className="vl-card-schematic" />
+                            <span className="vl-card-age-pill">{g.ageRange}</span>
+                            {isDone && <span className="vl-card-done-pill">MASTERED</span>}
+                          </div>
+                        )}
+                        <span className="vl-game-body">
+                          <span className="vl-card-title-row">
+                            <span className="vl-game-icon vl-game-icon--mini" aria-hidden="true"><LabGamePictogram id={g.id} /></span>
+                            <span className="vl-card-title-stack">
+                              <b className="vl-game-title">{g.title}</b>
+                              <span className="vl-game-dev" lang="sa">{g.dev}</span>
+                            </span>
+                          </span>
+                          {RISHI_QUESTS[g.id] && <span className="vl-game-goal">{RISHI_QUESTS[g.id].goal}</span>}
+                          {bp && <span className="vl-game-formula">{bp.formula}</span>}
+                          {bp && <span className="vl-game-curriculum-line">{bp.modernLaw} &middot; {bp.indianSource}</span>}
+                          <span className="vl-game-chips">
+                            {bp && <span className="vl-game-chip-diff">LVL {bp.difficulty}</span>}
+                            <span>{g.levelLabel}</span>
+                            {!showCardSchematics && <span>{g.ageRange}</span>}
+                            {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span className="vl-game-chip-stars">{explorerStats.starsByGame[g.id]} Stars</span>}
+                          </span>
                         </span>
-                      </span>
-                      <span className="vl-game-play">{(explorerStats.completedMissions || []).includes(g.id) ? 'Play again \u2192' : 'Play \u2192'}</span>
-                    </button>
-                  ))}
+                        <span className="vl-game-play vl-game-play--arcade">{isDone ? 'REPLAY MISSION \u2192' : 'PLAY NOW \u2192'}</span>
+                      </button>
+                    );
+                  })}
                 </div>
               </section>
             );
@@ -1669,22 +1756,36 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
                 <div className="vl-band-grid">
                   {flatGames.map((g) => {
                     const sub = primarySubjectFor(g.id);
+                    const bp = STEM_BLUEPRINTS[g.id];
+                    const isDone = (explorerStats.completedMissions || []).includes(g.id);
                     return (
-                      <button key={g.id} type="button" className={`vl-game-card${(explorerStats.completedMissions || []).includes(g.id) ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink } as React.CSSProperties}>
-                        <span className="vl-game-icon" aria-hidden="true"><LabGamePictogram id={g.id} /></span>
+                      <button key={g.id} type="button" className={`vl-game-card vl-game-card--arcade${isDone ? ' is-complete' : ''}`} onClick={() => handleLaunchSim(g.id)} style={{ '--g-tint': g.tint, '--g-ink': g.ink, '--g-glow': g.glow } as React.CSSProperties}>
+                        {showCardSchematics && (
+                          <div className="vl-card-visual-top">
+                            <LabSchematicGraphic labId={g.id} className="vl-card-schematic" />
+                            <span className="vl-card-age-pill">{g.ageRange}</span>
+                            {isDone && <span className="vl-card-done-pill">MASTERED</span>}
+                          </div>
+                        )}
                         <span className="vl-game-body">
-                          <b className="vl-game-title">{g.title}</b>
-                          <span className="vl-game-dev" lang="sa">{g.dev}</span>
+                          <span className="vl-card-title-row">
+                            <span className="vl-game-icon vl-game-icon--mini" aria-hidden="true"><LabGamePictogram id={g.id} /></span>
+                            <span className="vl-card-title-stack">
+                              <b className="vl-game-title">{g.title}</b>
+                              <span className="vl-game-dev" lang="sa">{g.dev}</span>
+                            </span>
+                          </span>
                           {RISHI_QUESTS[g.id] && <span className="vl-game-goal">{RISHI_QUESTS[g.id].goal}</span>}
+                          {bp && <span className="vl-game-formula">{bp.formula}</span>}
+                          {bp && <span className="vl-game-curriculum-line">{bp.modernLaw} &middot; {bp.indianSource}</span>}
                           <span className="vl-game-chips">
                             {sub && <span className="vl-game-chip-sub">{sub.en.split(' (')[0]}</span>}
-                            <span>{g.ageRange}</span>
+                            {bp && <span className="vl-game-chip-diff">LVL {bp.difficulty}</span>}
                             <span>{g.levelLabel}</span>
-                            {(explorerStats.completedMissions || []).includes(g.id) && <span className="vl-game-chip-done">Completed</span>}
-                            {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span>{explorerStats.starsByGame[g.id]} Stars</span>}
+                            {(explorerStats.starsByGame?.[g.id] ?? 0) > 0 && <span className="vl-game-chip-stars">{explorerStats.starsByGame[g.id]} Stars</span>}
                           </span>
                         </span>
-                        <span className="vl-game-play">{(explorerStats.completedMissions || []).includes(g.id) ? 'Play again \u2192' : 'Play \u2192'}</span>
+                        <span className="vl-game-play vl-game-play--arcade">{isDone ? 'REPLAY MISSION \u2192' : 'PLAY NOW \u2192'}</span>
                       </button>
                     );
                   })}
@@ -1993,11 +2094,14 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             <span>Back to all games</span>
           </button>
           <div className="vl-wb-quick-nav" aria-label="Quick simulation switcher">
+            <span className="vl-wb-pos-pill" title="Current mission index">
+              Lab {currentIndex + 1}/{LAB_SEGMENTS.length}
+            </span>
             <button
               type="button"
               className="vl-wb-arrow-btn"
               onClick={() => handleNavigateLab(prevSeg.id)}
-              title={`Previous: ${prevSeg.title}`}
+              title={`Previous: ${prevSeg.title} (Shortcut: [ or Alt+←)`}
               aria-label={`Previous: ${prevSeg.title}`}
             >
               ◀ Prev
@@ -2032,13 +2136,84 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
               type="button"
               className="vl-wb-arrow-btn"
               onClick={() => handleNavigateLab(nextSeg.id)}
-              title={`Next: ${nextSeg.title}`}
+              title={`Next: ${nextSeg.title} (Shortcut: ] or Alt+→)`}
               aria-label={`Next: ${nextSeg.title}`}
             >
               Next ▶
             </button>
+            <button
+              type="button"
+              className={`vl-wb-map-toggle-btn${isWbMapOpen ? ' is-open' : ''}`}
+              onClick={() => {
+                soundEffects.playStrokeChime();
+                setIsWbMapOpen((prev) => !prev);
+              }}
+              aria-expanded={isWbMapOpen}
+              title="Toggle visual 18-Lab schematic map drawer (Shortcut: M)"
+            >
+              <span>All 18 Labs Map {isWbMapOpen ? '▲' : '▼'}</span>
+            </button>
           </div>
         </div>
+
+        {/* Inline Visual 18-Lab Schematic Map Drawer for Fast Workbench Navigation */}
+        {isWbMapOpen && (
+          <div className="vl-wb-map-drawer" role="region" aria-label="All 18 Science Labs Visual Switcher">
+            <div className="vl-wb-map-drawer-head">
+              <div className="vl-wb-map-stage-tabs" role="tablist" aria-label="Filter lab map by stage">
+                {LEVEL_STEPS.map((st) => (
+                  <button
+                    key={st.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={wbMapStageFilter === st.id}
+                    className={`vl-wb-map-stage-chip${wbMapStageFilter === st.id ? ' is-active' : ''}`}
+                    onClick={() => setWbMapStageFilter(st.id)}
+                  >
+                    {st.num ? `${st.num}. ` : ''}{st.label.replace('Play 2 Learn: ', '')} ({st.ages})
+                  </button>
+                ))}
+              </div>
+              <button
+                type="button"
+                className="vl-wb-map-close-btn"
+                onClick={() => setIsWbMapOpen(false)}
+                aria-label="Close lab map drawer"
+              >
+                Close ✕
+              </button>
+            </div>
+            <div className="vl-wb-map-grid">
+              {LAB_SEGMENTS.filter((s) => wbMapStageFilter === 'all' || s.level === wbMapStageFilter).map((s, idx) => {
+                const isCurrent = s.id === active;
+                const isDone = (explorerStats.completedMissions || []).includes(s.id);
+                const bp = STEM_BLUEPRINTS[s.id];
+                return (
+                  <button
+                    key={s.id}
+                    type="button"
+                    className={`vl-wb-map-card${isCurrent ? ' is-current' : ''}${isDone ? ' is-done' : ''}`}
+                    onClick={() => handleNavigateLab(s.id)}
+                  >
+                    <LabSchematicGraphic labId={s.id} className="vl-wb-map-card-svg" />
+                    <div className="vl-wb-map-card-info">
+                      <div className="vl-wb-map-card-top">
+                        <span className="vl-wb-map-card-num">#{idx + 1} · {s.ageRange}</span>
+                        {isCurrent ? (
+                          <span className="vl-wb-map-badge vl-wb-map-badge--now">Active</span>
+                        ) : isDone ? (
+                          <span className="vl-wb-map-badge vl-wb-map-badge--done">★ Mastered</span>
+                        ) : null}
+                      </div>
+                      <strong className="vl-wb-map-card-title">{s.title}</strong>
+                      {bp && <code className="vl-wb-map-card-formula">{bp.formula}</code>}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         <div className="vl-wb-mission-header">
           <div className="vl-wb-nav-row">
@@ -2218,6 +2393,7 @@ const ScienceLab: React.FC<ScienceLabProps> = ({
             isCompleted={(explorerStats.completedMissions || []).includes(active)}
             starsForLab={explorerStats.starsByGame?.[active] ?? 0}
             totalStars={explorerStats.totalStars || 0}
+            onCompleteMission={handleCompleteActiveMission}
           />
         )}
 
