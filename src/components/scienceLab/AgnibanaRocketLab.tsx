@@ -8,13 +8,13 @@ import '../../styles/science-lab.css';
 // DATA: Sanskrit Pyrotechnic & Artillery Terms
 // ---------------------------------------------------------------------------
 const AGNIBANA_SOUNDS = [
-  { dev: 'अग्निबाणः', iast: 'Agnibāṇaḥ', en: 'Fire Arrow / Rocket', icon: '🚀' },
-  { dev: 'अग्निचूर्णम्', iast: 'Agnicūrṇam', en: 'Gunpowder Mixture', icon: '⚗️' },
-  { dev: 'शतघ्नी', iast: 'Śataghnī', en: 'Rampart Engine', icon: '🛡️' },
-  { dev: 'उल्कादानम्', iast: 'Ulkādānam', en: 'Sky Sparkler / Flare', icon: '✨' },
-  { dev: 'सुवर्चिलवणम्', iast: 'Suvarcilavaṇam', en: 'Saltpetre Oxidizer', icon: '🧪' },
-  { dev: 'अङ्गारः', iast: 'Aṅgāraḥ', en: 'Porous Charcoal', icon: '🪵' },
-  { dev: 'तारामण्डलपेटम्', iast: 'Tāramaṇḍalapeṭam', en: 'Rocket Foundry', icon: '🏰' },
+  { dev: 'अग्निबाणः', iast: 'Agnibāṇaḥ', en: 'Fire Arrow / Rocket', code: 'RKT' },
+  { dev: 'अग्निचूर्णम्', iast: 'Agnicūrṇam', en: 'Gunpowder Mixture', code: 'MIX' },
+  { dev: 'शतघ्नी', iast: 'Śataghnī', en: 'Rampart Engine', code: 'DEF' },
+  { dev: 'उल्कादानम्', iast: 'Ulkādānam', en: 'Sky Sparkler / Flare', code: 'FLR' },
+  { dev: 'सुवर्चिलवणम्', iast: 'Suvarcilavaṇam', en: 'Saltpetre Oxidizer', code: 'KNO3' },
+  { dev: 'अङ्गारः', iast: 'Aṅgāraḥ', en: 'Porous Charcoal', code: 'C-6' },
+  { dev: 'तारामण्डलपेटम्', iast: 'Tāramaṇḍalapeṭam', en: 'Rocket Foundry', code: 'LAB' },
 ];
 
 const AGNIBANA_TERMS: LabTerm[] = [
@@ -207,6 +207,9 @@ export const AgnibanaRocketLab: React.FC = () => {
   const [hasSwordBlade, setHasSwordBlade] = useState<boolean>(true);
   const [launchAngle, setLaunchAngle] = useState<number>(45);
   const [launching, setLaunching] = useState<boolean>(false);
+  const [bestRange, setBestRange] = useState<number>(0);
+  const [launchCount, setLaunchCount] = useState<number>(0);
+  const [successCount, setSuccessCount] = useState<number>(0);
   const [launchResult, setLaunchResult] = useState<{
     success: boolean;
     range: number;
@@ -216,10 +219,29 @@ export const AgnibanaRocketLab: React.FC = () => {
     message: string;
   } | null>(null);
 
+  const applyRocketBlueprint = (
+    casing: 'bamboo' | 'iron',
+    blade: boolean,
+    angle: number,
+    kno3: number,
+    s: number,
+    c: number,
+  ) => {
+    setCasingType(casing);
+    setHasSwordBlade(blade);
+    setLaunchAngle(angle);
+    setSaltpetre(kno3);
+    setSulphur(s);
+    setCharcoal(c);
+    setLaunchResult(null);
+    soundEffects.playStrokeChime();
+  };
+
   // Handle Rocket Launch
   const handleLaunchRocket = () => {
     setLaunching(true);
     setLaunchResult(null);
+    setLaunchCount((n) => n + 1);
     soundEffects.playRocketLaunchSound(3.5);
 
     // Internal combustion pressure based on chemistry
@@ -239,12 +261,15 @@ export const AgnibanaRocketLab: React.FC = () => {
             altitude: Math.max(15, Math.round(40 * altitudeScale)),
             pressure: peakPressure,
             angle: launchAngle,
-            message: '💥 CASING RUPTURE! Soft bamboo cylinder cracked at 22 atm. Gas leaked early with severe thrust loss.',
+            message: 'CASING RUPTURE: Soft bamboo cylinder cracked at 22 atm. Gas leaked early with severe thrust loss.',
           });
         } else {
+          const r = Math.round(280 * angleEfficiency);
+          setSuccessCount((n) => n + 1);
+          setBestRange((prev) => Math.max(prev, r));
           setLaunchResult({
             success: true,
-            range: Math.round(280 * angleEfficiency),
+            range: r,
             altitude: Math.round(90 * altitudeScale),
             pressure: peakPressure,
             angle: launchAngle,
@@ -257,14 +282,16 @@ export const AgnibanaRocketLab: React.FC = () => {
         const baseRange = 1800 + (hasSwordBlade ? 350 : 0);
         const finalRange = Math.round(baseRange * (combustionQuality.eff / 100) * angleEfficiency);
         const finalAltitude = Math.round(420 * (combustionQuality.eff / 100) * altitudeScale);
+        setSuccessCount((n) => n + 1);
+        setBestRange((prev) => Math.max(prev, finalRange));
         setLaunchResult({
           success: true,
           range: finalRange,
           altitude: finalAltitude,
           pressure: peakPressure,
           angle: launchAngle,
-          message: `🚀 HISTORIC SUCCESS! Hammered iron withstood ${peakPressure} atm internal chamber pressure at ${launchAngle}° elevation. ${
-            hasSwordBlade ? 'Sword blade aerodynamic stabilizer sustained lethal trajectory!' : ''
+          message: `HISTORIC SUCCESS: Hammered iron withstood ${peakPressure} atm internal chamber pressure at ${launchAngle}° elevation. ${
+            hasSwordBlade ? 'Sword blade aerodynamic stabilizer sustained high-velocity trajectory.' : ''
           }`,
         });
       }
@@ -375,7 +402,7 @@ export const AgnibanaRocketLab: React.FC = () => {
 
       {/* Rocket & Sparklers STEM Playground Banner */}
       <div className="agnibana-playground-banner" role="region" aria-label="Agnibana Rocket Physics Playground">
-        <span className="apb-icon" aria-hidden="true">🚀</span>
+        <span className="apb-icon" aria-hidden="true" style={{ fontSize: '0.78rem', fontWeight: 900, letterSpacing: '0.08em', padding: '0.35rem 0.55rem', borderRadius: '8px', background: 'rgba(249, 115, 22, 0.16)', border: '1px solid rgba(249, 115, 22, 0.45)', color: '#fb923c' }}>AGNI-01</span>
         <div>
           <div className="apb-title-row">
             <strong><span className="sanskrit-safe-text" lang="sa">अग्निबाण-क्रीडा</span> · Rocket &amp; Sparkler Physics Playground (Ages 7–14)</strong>
@@ -394,10 +421,10 @@ export const AgnibanaRocketLab: React.FC = () => {
                 onClick={() => playPronunciation(s.dev)}
                 title={`Listen to ${s.dev} (${s.en})`}
               >
-                <span>{s.icon}</span>
+                <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.05em', color: '#fb923c', background: 'rgba(249,115,22,0.14)', padding: '0.1rem 0.32rem', borderRadius: '4px' }}>{s.code}</span>
                 <span lang="sa" className="apb-sa">{s.dev}</span>
                 <span className="apb-en">({s.en})</span>
-                <span className="apb-speaker" aria-hidden="true">🔊</span>
+                <span className="apb-speaker" aria-hidden="true">PLAY</span>
               </button>
             ))}
           </div>
@@ -412,7 +439,7 @@ export const AgnibanaRocketLab: React.FC = () => {
           onClick={() => setActiveTab('alchemy')}
           style={{ background: activeTab === 'alchemy' ? '#0f766e' : undefined, color: activeTab === 'alchemy' ? '#fff' : undefined }}
         >
-          ⚗️ Agnicūrṇa Chemistry (5:1:1 Forge)
+          1. Agnicūrṇa Chemistry (5:1:1 Forge)
         </button>
         <button
           type="button"
@@ -420,7 +447,7 @@ export const AgnibanaRocketLab: React.FC = () => {
           onClick={() => setActiveTab('rocket')}
           style={{ background: activeTab === 'rocket' ? '#0f766e' : undefined, color: activeTab === 'rocket' ? '#fff' : undefined }}
         >
-          🚀 Tāramaṇḍalpeṭ Rocket Stand (Bamboo vs Iron)
+          2. Tāramaṇḍalpeṭ Rocket Stand (Bamboo vs Iron)
         </button>
         <button
           type="button"
@@ -428,7 +455,7 @@ export const AgnibanaRocketLab: React.FC = () => {
           onClick={() => setActiveTab('fireworks')}
           style={{ background: activeTab === 'fireworks' ? '#0f766e' : undefined, color: activeTab === 'fireworks' ? '#fff' : undefined }}
         >
-          🎆 Deepavali &amp; Kautuka Cintāmaṇi Lightshow
+          3. Deepavali &amp; Kautuka Cintāmaṇi Lightshow
         </button>
         <button
           type="button"
@@ -436,7 +463,7 @@ export const AgnibanaRocketLab: React.FC = () => {
           onClick={() => setActiveTab('dossier')}
           style={{ background: activeTab === 'dossier' ? '#0f766e' : undefined, color: activeTab === 'dossier' ? '#fff' : undefined }}
         >
-          📜 The Evolution Dossier (Sataghni to ISRO)
+          4. The Evolution Dossier (Sataghni to ISRO)
         </button>
       </div>
 
@@ -447,7 +474,7 @@ export const AgnibanaRocketLab: React.FC = () => {
         <div className="vl-bench" style={{ background: '#f8fafc', border: '1.5px solid #cbd5e1', borderRadius: '16px', padding: '1.5rem' }}>
           <div style={{ marginBottom: '1.25rem' }}>
             <h3 style={{ margin: 0, fontSize: '1.3rem', color: '#0f766e', fontWeight: 800 }}>
-              ⚗️ The Śukranīti Propellant Forge (Agnicūrṇa 5:1:1 Ratio)
+              The Śukranīti Propellant Forge (Agnicūrṇa 5:1:1 Ratio)
             </h3>
             <p style={{ margin: '0.3rem 0 0', fontSize: '0.88rem', color: '#64748b' }}>
               Adjust the 3 elemental reagents from the <em>Śukranīti</em> to discover why this specific stoichiometric ratio was selected.
@@ -467,7 +494,7 @@ export const AgnibanaRocketLab: React.FC = () => {
               }}
               style={{ fontSize: '0.82rem' }}
             >
-              ⭐ Ideal Śukranīti (5:1:1 Optimal)
+              Ideal Śukranīti (5:1:1 Optimal)
             </button>
             <button
               type="button"
@@ -480,7 +507,7 @@ export const AgnibanaRocketLab: React.FC = () => {
               }}
               style={{ fontSize: '0.82rem' }}
             >
-              💨 Arthaśāstra Smoke Screen (High Carbon)
+              Arthaśāstra Smoke Screen (High Carbon)
             </button>
             <button
               type="button"
@@ -493,7 +520,7 @@ export const AgnibanaRocketLab: React.FC = () => {
               }}
               style={{ fontSize: '0.82rem' }}
             >
-              🌟 Candrajyoti Moonlight Flare (High Nitre)
+              Candrajyoti Moonlight Flare (High Nitre)
             </button>
           </div>
 
@@ -614,7 +641,7 @@ export const AgnibanaRocketLab: React.FC = () => {
                     fontWeight: 700,
                   }}
                 >
-                  {crucibleFired ? '🔥 Ignited! Deflagration Active' : '⚡ Test Crucible Deflagration'}
+                  {crucibleFired ? 'Ignited! Deflagration Active' : 'Test Crucible Deflagration'}
                 </button>
               </div>
             </div>
@@ -624,7 +651,7 @@ export const AgnibanaRocketLab: React.FC = () => {
           <div style={{ marginTop: '1.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
             <div style={{ background: '#eff6ff', padding: '1rem', borderRadius: '10px', border: '1px solid #bfdbfe' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#1e40af', fontSize: '0.9rem' }}>
-                🌿 Why Arka / Snuhi Wood Charcoal?
+                Why Arka / Snuhi Wood Charcoal?
               </h4>
               <p style={{ margin: 0, fontSize: '0.8rem', color: '#1e3a8a', lineHeight: 1.45 }}>
                 Ordinary hardwoods like teak leave dense non-combustible ash. The <em>Śukranīti</em> specifically prescribes <em>Arka</em> (Calotropis gigantea) because its pithy wood forms lightweight, ultra-porous charcoal with millions of microscopic air channels for rapid flame spread.
@@ -633,7 +660,7 @@ export const AgnibanaRocketLab: React.FC = () => {
 
             <div style={{ background: '#fef3c7', padding: '1rem', borderRadius: '10px', border: '1px solid #fde68a' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#92400e', fontSize: '0.9rem' }}>
-                🧄 Why Garlic (Rasona) &amp; Arka Juice?
+                Why Garlic (Rasona) &amp; Arka Juice?
               </h4>
               <p style={{ margin: 0, fontSize: '0.8rem', color: '#78350f', lineHeight: 1.45 }}>
                 The text instructs soaking the ground powder in garlic and Arka juice before sun-drying. The sticky natural polysaccharides act as a chemical binder, agglomerating loose grains into cake matrices to prevent powder segregation during shipping and storage.
@@ -642,7 +669,7 @@ export const AgnibanaRocketLab: React.FC = () => {
 
             <div style={{ background: '#f0fdf4', padding: '1rem', borderRadius: '10px', border: '1px solid #bbf7d0' }}>
               <h4 style={{ margin: '0 0 0.35rem', color: '#166534', fontSize: '0.9rem' }}>
-                ⚖️ Why the 5:1:1 Ratio Works
+                Why the 5:1:1 Ratio Works
               </h4>
               <p style={{ margin: 0, fontSize: '0.8rem', color: '#14532d', lineHeight: 1.45 }}>
                 Modern stoichiometric black powder uses a 75:15:10 ratio (2 KNO₃ + S + 3C → K₂S + N₂ + 3 CO₂). The Sanskrit 5:1:1 ratio (approx 71.4% : 14.3% : 14.3%) is remarkably close to the thermodynamic optimum!
@@ -657,13 +684,62 @@ export const AgnibanaRocketLab: React.FC = () => {
          =================================================================== */}
       {activeTab === 'rocket' && (
         <div className="vl-bench" style={{ background: '#f8fafc', border: '1.5px solid #cbd5e1', borderRadius: '16px', padding: '1.5rem' }}>
-          <div style={{ marginBottom: '1.25rem' }}>
-            <h3 style={{ margin: 0, fontSize: '1.3rem', color: '#0f766e', fontWeight: 800 }}>
-              🚀 Tāramaṇḍalpeṭ Rocket Stand: The Metallurgical Revolution
-            </h3>
-            <p style={{ margin: '0.3rem 0 0', fontSize: '0.88rem', color: '#64748b' }}>
-              Test how Mysore’s hammered soft-iron casing shattered the pressure ceiling of traditional bamboo rockets.
-            </p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem' }}>
+            <div>
+              <h3 style={{ margin: 0, fontSize: '1.3rem', color: '#0f766e', fontWeight: 800 }}>
+                Tāramaṇḍalpeṭ Rocket Stand: The Metallurgical Revolution
+              </h3>
+              <p style={{ margin: '0.3rem 0 0', fontSize: '0.88rem', color: '#64748b' }}>
+                Test how Mysore’s hammered soft-iron casing shattered the pressure ceiling of traditional bamboo rockets.
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <div style={{ background: '#0f172a', color: '#38bdf8', padding: '0.4rem 0.7rem', borderRadius: '8px', fontSize: '0.76rem', fontWeight: 800 }}>
+                BEST RANGE: {bestRange > 0 ? `${bestRange} m` : '--'}
+              </div>
+              <div style={{ background: '#0f172a', color: '#4ade80', padding: '0.4rem 0.7rem', borderRadius: '8px', fontSize: '0.76rem', fontWeight: 800 }}>
+                LAUNCHES: {successCount}/{launchCount}
+              </div>
+            </div>
+          </div>
+
+          {/* Historic Rocket Blueprint Quick-Presets */}
+          <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap', marginBottom: '1.1rem', alignItems: 'center' }}>
+            <span style={{ fontSize: '0.74rem', fontWeight: 800, color: '#475569', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Historic Blueprints:
+            </span>
+            <button
+              type="button"
+              className="vl-btn vl-btn--ghost"
+              style={{ fontSize: '0.78rem', padding: '0.35rem 0.65rem' }}
+              onClick={() => applyRocketBlueprint('iron', true, 45, 5.0, 1.0, 1.0)}
+            >
+              Pollilur Iron Rocket (1780 · 45°)
+            </button>
+            <button
+              type="button"
+              className="vl-btn vl-btn--ghost"
+              style={{ fontSize: '0.78rem', padding: '0.35rem 0.65rem' }}
+              onClick={() => applyRocketBlueprint('bamboo', false, 45, 5.0, 1.0, 1.0)}
+            >
+              Over-Pressured Bamboo Test
+            </button>
+            <button
+              type="button"
+              className="vl-btn vl-btn--ghost"
+              style={{ fontSize: '0.78rem', padding: '0.35rem 0.65rem' }}
+              onClick={() => applyRocketBlueprint('iron', false, 70, 5.0, 1.0, 1.0)}
+            >
+              High-Arc Siege Mortar (70°)
+            </button>
+            <button
+              type="button"
+              className="vl-btn vl-btn--ghost"
+              style={{ fontSize: '0.78rem', padding: '0.35rem 0.65rem' }}
+              onClick={() => applyRocketBlueprint('iron', true, 20, 5.0, 1.0, 1.0)}
+            >
+              Flat Cavalry Barrage (20°)
+            </button>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', alignItems: 'center' }}>
@@ -693,7 +769,7 @@ export const AgnibanaRocketLab: React.FC = () => {
                       fontSize: '0.86rem',
                     }}
                   >
-                    🎋 Traditional Bamboo
+                    Traditional Bamboo
                     <div style={{ fontSize: '0.72rem', fontWeight: 500, marginTop: '0.2rem' }}>Max Pressure: ~20 atm</div>
                   </button>
 
@@ -715,7 +791,7 @@ export const AgnibanaRocketLab: React.FC = () => {
                       fontSize: '0.86rem',
                     }}
                   >
-                    ⚔️ Mysorean Hammered Iron
+                    Mysorean Hammered Iron
                     <div style={{ fontSize: '0.72rem', fontWeight: 500, marginTop: '0.2rem' }}>Max Pressure: ~85 atm</div>
                   </button>
                 </div>
@@ -783,7 +859,7 @@ export const AgnibanaRocketLab: React.FC = () => {
                   boxShadow: '0 4px 12px rgba(234, 88, 12, 0.3)',
                 }}
               >
-                {launching ? '🔥 Igniting Propellant Plume…' : '🚀 Launch Test Rocket'}
+                {launching ? 'Igniting Propellant Plume...' : 'Launch Test Rocket'}
               </button>
             </div>
 

@@ -10,13 +10,13 @@ type Phase = 'orbit' | 'descent' | 'rover';
 type Outcome = 'flying' | 'soft' | 'crash';
 
 const MISSION_SOUNDS = [
-  { dev: 'सोमयानम्', iast: 'Somayānam', en: 'Moon Craft', icon: '🚀' },
-  { dev: 'विक्रमः', iast: 'Vikramaḥ', en: 'Valour (Lander)', icon: '🛬' },
-  { dev: 'प्रज्ञानम्', iast: 'Prajñānam', en: 'Wisdom (Rover)', icon: '🤖' },
-  { dev: 'चन्द्र-भूमिः', iast: 'Candra-bhūmiḥ', en: 'Lunar Surface', icon: '🌕' },
-  { dev: 'शिव-शक्ति-बिन्दुः', iast: 'Śiva-Śakti-Binduḥ', en: 'Touchdown Site', icon: '☀️' },
-  { dev: 'गन्धकः', iast: 'Gandhakaḥ', en: 'Sulphur', icon: '💎' },
-  { dev: 'अप्-तत्त्वम्', iast: 'Ap-tattvam', en: 'Water Principle', icon: '🧊' },
+  { dev: 'सोमयानम्', iast: 'Somayānam', en: 'Moon Craft', code: 'ORB' },
+  { dev: 'विक्रमः', iast: 'Vikramaḥ', en: 'Valour (Lander)', code: 'LND' },
+  { dev: 'प्रज्ञानम्', iast: 'Prajñānam', en: 'Wisdom (Rover)', code: 'RVR' },
+  { dev: 'चन्द्र-भूमिः', iast: 'Candra-bhūmiḥ', en: 'Lunar Surface', code: 'SUR' },
+  { dev: 'शिव-शक्ति-बिन्दुः', iast: 'Śiva-Śakti-Binduḥ', en: 'Touchdown Site', code: 'SSP' },
+  { dev: 'गन्धकः', iast: 'Gandhakaḥ', en: 'Sulphur', code: 'S-16' },
+  { dev: 'अप्-तत्त्वम्', iast: 'Ap-tattvam', en: 'Water Principle', code: 'H2O' },
 ];
 
 const MOON_G = 1.62; // m/s², lunar surface gravity (public value)
@@ -834,6 +834,68 @@ const Chandrayaan: React.FC = () => {
     if (p === 'rover') resetRover();
   };
 
+  // Arcade keyboard flight controls (WASD / Arrow keys / H=Hover Trim / E=LIBS Scan)
+  const fireLibsRef = useRef(fireLibs);
+  fireLibsRef.current = fireLibs;
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) return;
+      const k = e.key.toLowerCase();
+      if (phase === 'orbit') {
+        if (k === 'arrowleft' || k === 'a') {
+          e.preventDefault();
+          setBurn((b) => Math.max(-100, b - 5));
+        } else if (k === 'arrowright' || k === 'd') {
+          e.preventDefault();
+          setBurn((b) => Math.min(100, b + 5));
+        } else if (k === 'r') {
+          resetOrbit();
+        }
+      } else if (phase === 'descent' && outcome === 'flying') {
+        if (k === 'arrowup' || k === 'w') {
+          e.preventDefault();
+          setVertThrust((v) => Math.min(1, Number((v + 0.06).toFixed(2))));
+        } else if (k === 'arrowdown' || k === 's') {
+          e.preventDefault();
+          setVertThrust((v) => Math.max(0, Number((v - 0.06).toFixed(2))));
+        } else if (k === 'h') {
+          setVertThrust(0.51);
+          soundEffects.playStrokeChime();
+        } else if (k === 'arrowleft' || k === 'a') {
+          e.preventDefault();
+          setAttitudeCmd((a) => Math.max(-1, Number((a - 0.14).toFixed(2))));
+        } else if (k === 'arrowright' || k === 'd') {
+          e.preventDefault();
+          setAttitudeCmd((a) => Math.min(1, Number((a + 0.14).toFixed(2))));
+        } else if (k === 'g') {
+          setAssist((a) => !a);
+        }
+      } else if (phase === 'rover') {
+        if (k === 'arrowup' || k === 'w') {
+          e.preventDefault();
+          setRoverDrive((d) => Math.min(1, Number((d + 0.25).toFixed(2))));
+        } else if (k === 'arrowdown' || k === 's') {
+          e.preventDefault();
+          setRoverDrive((d) => Math.max(-1, Number((d - 0.25).toFixed(2))));
+        } else if (k === 'x') {
+          setRoverDrive(0);
+          setRoverSteer(0);
+        } else if (k === 'arrowleft' || k === 'a') {
+          e.preventDefault();
+          setRoverSteer((st) => Math.max(-1, Number((st - 0.25).toFixed(2))));
+        } else if (k === 'arrowright' || k === 'd') {
+          e.preventDefault();
+          setRoverSteer((st) => Math.min(1, Number((st + 0.25).toFixed(2))));
+        } else if (k === 'e') {
+          fireLibsRef.current();
+        }
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [phase, outcome]);
+
   const small = isSmallScreen();
   const sunNow = sunFromTithi(tithi);
   const popM = pop ? MINERALS.find((m) => m.id === pop.mid) : undefined;
@@ -937,7 +999,7 @@ const Chandrayaan: React.FC = () => {
 
       {/* Kids Lunar Explorer Mission Banner */}
       <div className="chandrayaan-playground-banner" role="region" aria-label="Kids Lunar Explorer Mission">
-        <span className="cpb-icon" aria-hidden="true">🚀</span>
+        <span className="cpb-icon" aria-hidden="true" style={{ fontSize: '0.78rem', fontWeight: 900, letterSpacing: '0.08em', padding: '0.35rem 0.55rem', borderRadius: '8px', background: 'rgba(56, 189, 248, 0.16)', border: '1px solid rgba(56, 189, 248, 0.45)', color: '#38bdf8' }}>ISRO-03</span>
         <div>
           <div className="cpb-title-row">
             <strong>सोमयान-३ बाल-अन्तरिक्षयात्री · Kids Lunar Explorer Mission (Ages 7–14)</strong>
@@ -956,10 +1018,10 @@ const Chandrayaan: React.FC = () => {
                 onClick={() => playPronunciation(s.dev)}
                 title={`Listen to ${s.dev} (${s.en})`}
               >
-                <span>{s.icon}</span>
+                <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.05em', color: '#38bdf8', background: 'rgba(56,189,248,0.12)', padding: '0.1rem 0.32rem', borderRadius: '4px' }}>{s.code}</span>
                 <span lang="sa" className="cpb-sa">{s.dev}</span>
                 <span className="cpb-en">({s.en})</span>
-                <span className="cpb-speaker" aria-hidden="true">🔊</span>
+                <span className="cpb-speaker" aria-hidden="true">PLAY</span>
               </button>
             ))}
             <button
@@ -972,7 +1034,7 @@ const Chandrayaan: React.FC = () => {
               style={{ borderColor: freeNav ? '#4ade80' : '#38bdf8', background: freeNav ? 'rgba(74, 222, 128, 0.2)' : undefined }}
               title="Toggle unlocking all phases for quick teaching demonstration"
             >
-              <span>{freeNav ? '🔓 Explorer: All Open' : '🔒 Progressive Mission'}</span>
+              <span>{freeNav ? 'Explorer Mode: All Phases Open' : 'Progressive Mission Lock'}</span>
             </button>
           </div>
         </div>
@@ -1087,7 +1149,7 @@ const Chandrayaan: React.FC = () => {
                     </div>
                     {popM.lines.some((l) => Math.abs(tuningWl - l) < 25) && laserPower >= 40 ? (
                       <div style={{ color: '#4ade80', fontSize: '0.74rem', fontWeight: 'bold', marginTop: '0.25rem' }}>
-                        ✨ RESONANCE LOCKED · {popM.id} ({popM.lines.join(', ')} nm)
+                        RESONANCE LOCKED · {popM.id} ({popM.lines.join(', ')} nm)
                       </div>
                     ) : (
                       <small style={{ color: '#fb923c' }}>
@@ -1117,8 +1179,33 @@ const Chandrayaan: React.FC = () => {
             <div className={`cy-ticker${hud.tamas ? ' is-alert' : ''}`} role="status" data-testid="cy-ticker">
               <p className="cy-feed is-new">
                 <b lang="sa">{hud.statusSa}</b> <span>{hud.status}</span>
-                {hud.tamas && phase === 'descent' && outcome === 'flying' && <span className="cy-modern">⚠ Tamas (chaos) rising — vertical speed too high for the height left, or tilt past ±12°.</span>}
+                {hud.tamas && phase === 'descent' && outcome === 'flying' && <span className="cy-modern">ALERT: Tamas (chaos) rising — vertical speed too high for the height left, or tilt past ±12°.</span>}
               </p>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '0.5rem',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '0.45rem 0.75rem',
+                background: 'rgba(15, 23, 42, 0.78)',
+                borderTop: '1px solid rgba(56, 189, 248, 0.2)',
+                fontSize: '0.72rem',
+                color: '#94a3b8',
+              }}
+            >
+              <strong style={{ color: '#38bdf8', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Flight Keys</strong>
+              {phase === 'orbit' && (
+                <span><code>A</code> / <code>D</code> or <code>←</code> <code>→</code> Burn &nbsp;·&nbsp; <code>R</code> Reset Orbit</span>
+              )}
+              {phase === 'descent' && (
+                <span><code>W</code> / <code>S</code> or <code>↑</code> <code>↓</code> Thrust &nbsp;·&nbsp; <code>A</code> / <code>D</code> Tilt &nbsp;·&nbsp; <code>H</code> Hover Trim (51%) &nbsp;·&nbsp; <code>G</code> Assist</span>
+              )}
+              {phase === 'rover' && (
+                <span><code>W</code> / <code>S</code> Drive &nbsp;·&nbsp; <code>A</code> / <code>D</code> Steer &nbsp;·&nbsp; <code>X</code> Stop &nbsp;·&nbsp; <code>E</code> Fire LIBS Laser</span>
+              )}
             </div>
           </div>
         </div>
@@ -1156,6 +1243,19 @@ const Chandrayaan: React.FC = () => {
                 </LedButton>
                 <button
                   type="button"
+                  className="cy-reset"
+                  disabled={outcome !== 'flying'}
+                  onClick={() => {
+                    setVertThrust(0.51);
+                    setAttitudeCmd(0);
+                    soundEffects.playStrokeChime();
+                  }}
+                  title="Snap thrust to 51% lunar gravity balance and level attitude"
+                >
+                  Hover Trim (51%)
+                </button>
+                <button
+                  type="button"
                   className={`cy-autopilot-btn ${autoPilot ? 'is-active' : ''}`}
                   onClick={() => {
                     setAutoPilot((p) => !p);
@@ -1163,7 +1263,7 @@ const Chandrayaan: React.FC = () => {
                   }}
                   title="Automatic safe touchdown control for younger learners"
                 >
-                  {autoPilot ? '🤖 Autopilot Active' : '🚀 Autopilot Soft-Landing (सरल-अवतरणम्)'}
+                  {autoPilot ? 'Autopilot Active' : 'Autopilot Soft-Landing (सरल-अवतरणम्)'}
                 </button>
               </div>
               <p className="vl-small">
@@ -1184,7 +1284,7 @@ const Chandrayaan: React.FC = () => {
                 Tithi = 12° steps of Moon–Sun elongation, which also sets local time at the landing site. Here the Sun is up from about Śukla 5 to Kṛṣṇa 5 and never climbs above ~{MAX_SUN_EL.toFixed(0)}° — long polar shadows.
                 Map is time-warped ×{TIME_WARP}; Gati shows the real-pace equivalent (Pragyan ≈ 1 cm/s, ISRO).
               </p>
-              <LedButton on kind="action" onClick={fireLibs} color="#38bdf8" testId="cy-libs" title="Fire LIBS-style scan">⚡ LIBS Scan</LedButton>
+              <LedButton on kind="action" onClick={fireLibs} color="#38bdf8" testId="cy-libs" title="Fire LIBS-style scan">Fire LIBS Scan</LedButton>
               <p className="vl-small" data-testid="cy-scan-msg">{scanMsg}</p>
               <ul className="cy-scan-list" data-testid="cy-scan-list">
                 {MINERALS.map((m) => (
@@ -1195,7 +1295,7 @@ const Chandrayaan: React.FC = () => {
                     style={{ cursor: 'pointer' }}
                     title={`Click to pronounce ${m.sa} (${m.en})`}
                   >
-                    <b>{m.id}</b> <span lang="sa">{m.shard}</span> · {m.kind === 'ap' ? 'ap-tattva' : 'pṛthivī-tattva'} <span style={{ opacity: 0.7, fontSize: '0.75rem' }}>🔊</span>
+                    <b>{m.id}</b> <span lang="sa">{m.shard}</span> · {m.kind === 'ap' ? 'ap-tattva' : 'pṛthivī-tattva'} <span style={{ opacity: 0.7, fontSize: '0.7rem', letterSpacing: '0.04em' }}>[AUDIO]</span>
                   </li>
                 ))}
               </ul>
@@ -1216,7 +1316,7 @@ const Chandrayaan: React.FC = () => {
 
       <div className="cy-lore-grid">
         <section className="cy-lore" aria-label="Chandrayaan-3 mission facts">
-          <h3 className="cy-lore-title">📜 Scroll I <i>//</i> Chandrayaan-3 · soft landing</h3>
+          <h3 className="cy-lore-title">Scroll I <i>//</i> Chandrayaan-3 · soft landing</h3>
           <ul className="cy-list">
             <li>ISRO’s Chandrayaan-3 soft-landed on <b>23 August 2023</b> near the lunar south pole (public ISRO / PIB timeline).</li>
             <li>Lander <b>Vikram</b>; rover <b>Pragyan</b>. ISRO touchdown spec: vertical velocity ≤ 2 m/s, horizontal ≤ 0.5 m/s, slope ≤ 12°.</li>
@@ -1225,7 +1325,7 @@ const Chandrayaan: React.FC = () => {
           </ul>
         </section>
         <section className="cy-lore" aria-label="LIBS and ice framing">
-          <h3 className="cy-lore-title">📜 Scroll II <i>//</i> LIBS · sulphur · ice hunt</h3>
+          <h3 className="cy-lore-title">Scroll II <i>//</i> LIBS · sulphur · ice hunt</h3>
           <ul className="cy-list">
             <li>Pragyan’s <b>LIBS</b> made the first in-situ elemental measurements near the south pole and <b>confirmed sulphur (S)</b> (ISRO, 28 Aug 2023).</li>
             <li>Preliminary analyses also indicated Al, Ca, Fe, Cr, Ti, then Mn, Si, O.</li>
@@ -1234,7 +1334,7 @@ const Chandrayaan: React.FC = () => {
           </ul>
         </section>
         <section className="cy-lore" aria-label="Sanskrit HUD teaching note">
-          <h3 className="cy-lore-title">📜 Scroll III <i>//</i> Sanskrit names · teaching parallels</h3>
+          <h3 className="cy-lore-title">Scroll III <i>//</i> Sanskrit names · teaching parallels</h3>
           <p className="vl-small">
             Kakṣyā, Gati, Vega, Gurutvākarṣaṇa, Tithi and Nakṣatra are real Sanskrit / Jyotiṣa vocabulary.
             Mapping them onto HUD readouts is a <b>teaching parallel</b> so learners hear the words beside modern quantities.
@@ -1242,7 +1342,7 @@ const Chandrayaan: React.FC = () => {
           </p>
         </section>
         <section className="cy-lore" aria-label="Modern comparison">
-          <h3 className="cy-lore-title">🔬 Modern comparison (for fun)</h3>
+          <h3 className="cy-lore-title">Modern comparison (for fun)</h3>
           <ul className="cy-list">
             <li>Lunar surface gravity ≈ <b>1.62 m/s²</b> (~1/6 of Earth’s 9.81); a 100 km lunar orbit moves at ≈ 1.6 km/s.</li>
             <li>Soft landing = low residual vertical speed + level attitude + hazard avoidance.</li>

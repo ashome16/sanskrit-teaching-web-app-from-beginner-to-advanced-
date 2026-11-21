@@ -644,7 +644,7 @@ export const HeatTransferSuite: React.FC = () => {
                   />
                   <div style={{ fontSize: '0.78rem', color: '#fde047', marginBottom: '0.75rem' }}>Heat Power: {convectionHeat}%</div>
                   <p style={{ fontSize: '0.74rem', color: '#cbd5e1', lineHeight: '1.45' }}>
-                    <strong>Convection</strong> requires a fluid (liquid or gas). Hot fluid expands, density decreases ($\rho \downarrow$), creating buoyant upward lift while cooler denser fluid sinks.
+                    <strong>Convection</strong> requires a fluid (liquid or gas). Hot fluid expands, density decreases (ρ ↓), creating buoyant upward lift while cooler denser fluid sinks.
                   </p>
                 </div>
               )}

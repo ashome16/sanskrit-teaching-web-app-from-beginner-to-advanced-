@@ -79,7 +79,7 @@ const GEOMETRY_CHALLENGES: LabChallenge[] = [
       'It is an astronomical term for solar eclipses.',
     ],
     answer: 1,
-    explain: 'Ghana denotes both cubic volume ($a^3$) and solid state matter (such as ice freezing into a crystalline cube lattice), unifying chemistry and geometry.',
+    explain: 'Ghana denotes both cubic volume (a³) and solid state matter (such as ice freezing into a crystalline cube lattice), unifying chemistry and geometry.',
   },
   {
     q: 'What astronomical truth was embedded in the Vedic name for the universe, ‘Brahmāṇḍa’ (ब्रह्माण्ड)?',
@@ -206,7 +206,7 @@ const SHAPES: Record<ShapeKey, ShapeMeta> = {
     root: 'Han / Ghan (हन् / घन्)',
     rootMeaning: 'To strike together, solidify, compact',
     physicalEvent: 'Phase change to crystalline lattice',
-    blurb: 'Ghana means both a geometric cube ($a^3$) and physical solid crystal, seamlessly unifying geometry with phase chemistry.',
+    blurb: 'Ghana means both a geometric cube (a³) and physical solid crystal, seamlessly unifying geometry with phase chemistry.',
   },
 };
 

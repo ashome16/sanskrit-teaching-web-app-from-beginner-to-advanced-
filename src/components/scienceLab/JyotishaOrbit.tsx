@@ -41,10 +41,10 @@ const NAKSHATRAS: { dev: string; iast: string }[] = [
 ];
 
 const TERMS: LabTerm[] = [
-  { dev: 'गुरुत्वाकर्षणम्', iast: 'gurutvākarṣaṇam', en: 'Gravitational attraction — mutual pulling force between mass bodies ($F = G \\frac{M m}{r^2}$)' },
+  { dev: 'गुरुत्वाकर्षणम्', iast: 'gurutvākarṣaṇam', en: 'Gravitational attraction — mutual pulling force between mass bodies (F = G · M·m / r²)' },
   { dev: 'कक्षा', iast: 'kakṣā', en: 'Orbit — continuous freefall trajectory where forward speed balances inward gravitational pull' },
-  { dev: 'कक्षीय-वेगः', iast: 'kakṣīya-vegaḥ', en: 'Orbital velocity — required speed ($v = \\sqrt{GM/r}$) to maintain stable circular orbit' },
-  { dev: 'पलायन-वेगः', iast: 'palāyana-vegaḥ', en: 'Escape velocity — speed ($v_{esc} = \\sqrt{2GM/r}$) required to break free from gravitational binding energy' },
+  { dev: 'कक्षीय-वेगः', iast: 'kakṣīya-vegaḥ', en: 'Orbital velocity — required speed (v = √(GM / r)) to maintain stable circular orbit' },
+  { dev: 'पलायन-वेगः', iast: 'palāyana-vegaḥ', en: 'Escape velocity — speed (v_esc = √(2GM / r)) required to break free from gravitational binding energy' },
   { dev: 'उपग्रहः', iast: 'upagrahaḥ', en: 'Satellite (natural or artificial) revolving around a primary planet' },
   { dev: 'राहु-केतु', iast: 'Rāhu, Ketu', en: 'The two lunar orbital nodes where the Moon’s 5.14° inclined path intersects Earth’s ecliptic' },
 ];
@@ -62,7 +62,7 @@ const CHALLENGES: LabChallenge[] = [
     explain: 'An orbit is continuous perpetual freefall: gravity bends the planet’s path into an ellipse/circle, but the forward velocity ensures it constantly misses the central body.',
   },
   {
-    q: 'If a probe accelerates past escape velocity ($v > \\sqrt{2} \\cdot v_{circ}$), what trajectory shape does its path become?',
+    q: 'If a probe accelerates past escape velocity (v > √2 · v_circ), what trajectory shape does its path become?',
     options: [
       'Hyperbolic escape trajectory (it never returns to the star).',
       'It immediately stops moving and freezes.',
@@ -70,7 +70,7 @@ const CHALLENGES: LabChallenge[] = [
       'A sharp right angle zigzag.',
     ],
     answer: 0,
-    explain: 'When total mechanical energy ($E = K + U$) is greater than zero ($v > v_{esc}$), the orbital eccentricity $e > 1$, forming an open hyperbolic escape trajectory.',
+    explain: 'When total mechanical energy (E = K + U) is greater than zero (v > v_esc), the orbital eccentricity e > 1, forming an open hyperbolic escape trajectory.',
   },
   {
     q: 'In classical Indian astronomy (Āryabhaṭīya & Sūrya Siddhānta), what physically are Rāhu and Ketu?',
@@ -113,7 +113,7 @@ const GRAVITY_CHALLENGES: Record<ChallengeId, GravityChallengeConfig> = {
     desc: 'Calibrate the tangential velocity of Pṛthivī so it achieves a stable near-circular path without spiraling in or escaping.',
     goal: 'Maintain an orbital eccentricity < 0.15 for 3 complete revolutions.',
     setup: { sunMass: 1.0, planetMass: 1.0, speedFactor: 1.0, distance: 168, moon: true, binary: false, slingshotProbe: false },
-    diagnostic: 'Circular orbital speed requires $v = \\sqrt{GM/r}$. If velocity is too low, the planet plunges into the star; if too high, it stretches into an ellipse or escapes.',
+    diagnostic: 'Circular orbital speed requires v = √(GM / r). If velocity is too low, the planet plunges into the star; if too high, it stretches into an ellipse or escapes.',
   },
   binary_stars: {
     id: 'binary_stars',
@@ -777,7 +777,7 @@ export const JyotishaOrbit: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                   }}
                 >
                   <div style={{ fontWeight: 800, fontSize: '0.9rem', marginBottom: '0.2rem' }}>
-                    🔍 DIAGNOSTIC: WHY DID THIS HAPPEN?
+                    DIAGNOSTIC: WHY DID THIS HAPPEN?
                   </div>
                   <div>{stateRef.current.statusExplanation}</div>
                   <button
@@ -795,17 +795,17 @@ export const JyotishaOrbit: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                       cursor: 'pointer',
                     }}
                   >
-                    🔄 Re-launch Simulation
+                    Re-launch Simulation
                   </button>
                 </div>
               )}
             </div>
 
-            {/* Control Panel: Sliders & Quick Thrust Impulses */}
+            {/* Control Panel: Quick Presets, Sliders & Quick Thrust Impulses */}
             <div
               style={{
-                background: 'rgba(15, 23, 42, 0.75)',
-                border: '1px solid rgba(129, 140, 248, 0.25)',
+                background: 'rgba(15, 23, 42, 0.85)',
+                border: '1.5px solid rgba(56, 189, 248, 0.3)',
                 borderRadius: '16px',
                 padding: '1.25rem',
                 display: 'flex',
@@ -814,18 +814,53 @@ export const JyotishaOrbit: React.FC<LabSegmentProps> = ({ onNextLab }) => {
               }}
             >
               <div>
-                <div style={{ marginBottom: '1rem' }}>
-                  <span style={{ fontSize: '0.74rem', color: '#a5b4fc', fontWeight: 800, textTransform: 'uppercase' }}>
-                    ASTROPHYSICAL VARIABLE TUNING
+                <div style={{ marginBottom: '0.9rem' }}>
+                  <span style={{ fontSize: '0.74rem', color: '#38bdf8', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                    MISSION CONTROL · ASTROPHYSICS DECK
                   </span>
-                  <h3 style={{ margin: '0.15rem 0 0', fontSize: '1.15rem', color: '#f8fafc', fontWeight: 800 }}>
-                    Adjust Mass, Radius &amp; Velocity
+                  <h3 style={{ margin: '0.15rem 0 0', fontSize: '1.12rem', color: '#f8fafc', fontWeight: 800 }}>
+                    Quick Launch Presets &amp; Orbital Tuning
                   </h3>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                {/* 1-Click Arcade Orbit Presets */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.45rem', marginBottom: '1.1rem' }}>
+                  {[
+                    { label: 'Circular Orbit', sun: 1.0, rad: 168, spd: 1.0 },
+                    { label: 'Comet Ellipse', sun: 1.1, rad: 195, spd: 0.72 },
+                    { label: 'Fast Sling', sun: 1.4, rad: 135, spd: 1.25 },
+                    { label: 'Hyperbolic Escape', sun: 0.9, rad: 150, spd: 1.55 },
+                  ].map((preset) => (
+                    <button
+                      key={preset.label}
+                      type="button"
+                      onClick={() => {
+                        setSunMassMult(preset.sun);
+                        setOrbitalRadius(preset.rad);
+                        setSpeedMult(preset.spd);
+                        stateRef.current = initState(preset.sun, planetMassMult, preset.spd, preset.rad);
+                        setPaused(false);
+                        soundEffects.playStrokeChime();
+                      }}
+                      style={{
+                        padding: '0.42rem 0.6rem',
+                        borderRadius: '8px',
+                        border: '1px solid rgba(56, 189, 248, 0.38)',
+                        background: 'rgba(30, 41, 59, 0.9)',
+                        color: '#e0f2fe',
+                        fontSize: '0.76rem',
+                        fontWeight: 800,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {preset.label}
+                    </button>
+                  ))}
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
                   <GlowSlider
-                    label="☀️ Central Star Mass (M_sun)"
+                    label="Central Star Mass (M_sun)"
                     value={sunMassMult}
                     min={0.3}
                     max={2.5}
@@ -835,7 +870,7 @@ export const JyotishaOrbit: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                   />
 
                   <GlowSlider
-                    label="🪐 Orbital Distance (Radius r)"
+                    label="Orbital Distance (Radius r)"
                     value={orbitalRadius}
                     min={80}
                     max={220}
@@ -845,7 +880,7 @@ export const JyotishaOrbit: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                   />
 
                   <GlowSlider
-                    label="🚀 Initial Velocity Factor (v / v_circ)"
+                    label="Initial Velocity Factor (v / v_circ)"
                     value={speedMult}
                     min={0.3}
                     max={1.8}
@@ -856,9 +891,9 @@ export const JyotishaOrbit: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                 </div>
 
                 {/* Planetary Rescue Thrust Buttons */}
-                <div style={{ marginTop: '1.25rem', padding: '0.85rem', background: 'rgba(30, 41, 59, 0.5)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '0.74rem', color: '#94a3b8', fontWeight: 800, textTransform: 'uppercase', marginBottom: '0.45rem' }}>
-                    ⚡ Real-Time Thrust Burn (Δv)
+                <div style={{ marginTop: '1.15rem', padding: '0.85rem', background: 'rgba(30, 41, 59, 0.65)', border: '1px solid rgba(148, 163, 184, 0.22)', borderRadius: '10px' }}>
+                  <div style={{ fontSize: '0.74rem', color: '#fde047', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
+                    Real-Time Thrust Burn (Δv)
                   </div>
                   <div style={{ display: 'flex', gap: '0.5rem' }}>
                     <button
@@ -866,34 +901,34 @@ export const JyotishaOrbit: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                       onClick={() => applyVelocityImpulse(1.15)}
                       style={{
                         flex: 1,
-                        padding: '0.45rem 0.65rem',
+                        padding: '0.48rem 0.65rem',
                         background: 'linear-gradient(135deg, #10b981, #059669)',
                         color: '#ffffff',
                         border: 'none',
-                        borderRadius: '6px',
+                        borderRadius: '8px',
                         fontWeight: 800,
                         fontSize: '0.78rem',
                         cursor: 'pointer',
                       }}
                     >
-                      🚀 Prograde Thrust (+15% v)
+                      Prograde Boost (+15% v)
                     </button>
                     <button
                       type="button"
                       onClick={() => applyVelocityImpulse(0.85)}
                       style={{
                         flex: 1,
-                        padding: '0.45rem 0.65rem',
+                        padding: '0.48rem 0.65rem',
                         background: 'linear-gradient(135deg, #ef4444, #b91c1c)',
                         color: '#ffffff',
                         border: 'none',
-                        borderRadius: '6px',
+                        borderRadius: '8px',
                         fontWeight: 800,
                         fontSize: '0.78rem',
                         cursor: 'pointer',
                       }}
                     >
-                      🛑 Retrograde Burn (-15% v)
+                      Retrograde Brake (-15% v)
                     </button>
                   </div>
                 </div>
@@ -916,7 +951,7 @@ export const JyotishaOrbit: React.FC<LabSegmentProps> = ({ onNextLab }) => {
                       cursor: 'pointer',
                     }}
                   >
-                    {paused ? '▶ Resume' : '⏸ Pause'}
+                    {paused ? 'Resume' : 'Pause'}
                   </button>
                   <button
                     type="button"

@@ -648,7 +648,7 @@ const SEGMENT_LORE: Record<LabSegmentId, SegmentLore> = {
           'It calculates planetary eclipses.',
         ],
         correct: 1,
-        explanation: 'Ghana means both a geometric cube ($a^3$) and solid crystal (like ice), joining volume mathematics with crystallization chemistry.',
+        explanation: 'Ghana means both a geometric cube (a³) and solid crystal (like ice), joining volume mathematics with crystallization chemistry.',
         sanskritContext: 'घनः मूर्तिः स्फटिकश्च।',
       },
       {
