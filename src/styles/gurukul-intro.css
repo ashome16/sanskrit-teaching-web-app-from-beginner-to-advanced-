@@ -1013,3 +1013,328 @@
     max-width: 260px;
   }
 }
+
+/* ==========================================================================
+   CINEMATIC FAR-DISTANCE GURUKUL SHORT-CLIP ANIMATION LAYERS
+   Refined painterly establishing-shot camera pan, mist, shimmer & hearth smoke
+   ========================================================================== */
+.gurukul-intro-scene--cinema {
+  background-color: #0e0703;
+}
+
+.gurukul-cinema-stage {
+  position: absolute;
+  inset: -4%;
+  width: 108%;
+  height: 108%;
+  transform-origin: 55% 48%;
+  animation: gurukulCinemaPan 12s cubic-bezier(0.22, 0.12, 0.25, 1) forwards;
+  will-change: transform;
+  pointer-events: none;
+}
+
+@keyframes gurukulCinemaPan {
+  0% {
+    transform: scale(1.06) translate3d(2.4%, 0.8%, 0);
+  }
+  100% {
+    transform: scale(1.18) translate3d(-2.4%, -1.4%, 0);
+  }
+}
+
+.gurukul-intro-bg--panorama {
+  animation: none !important;
+  background-position: 54% 48% !important;
+  filter: brightness(1.02) contrast(1.04) saturate(1.05);
+}
+
+/* Rising Golden Dawn Sun behind the Mountain Saddle */
+.gurukul-dawn-sun-glow {
+  position: absolute;
+  top: -12%;
+  left: 36%;
+  width: 48%;
+  height: 54%;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(255, 244, 194, 0.52) 0%,
+    rgba(251, 191, 36, 0.24) 36%,
+    rgba(245, 158, 11, 0.08) 65%,
+    transparent 85%
+  );
+  mix-blend-mode: screen;
+  animation: gurukulDawnBloom 9s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes gurukulDawnBloom {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.88) translateY(8%);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1.14) translateY(-2%);
+  }
+}
+
+/* Diagonal Volumetric Morning Sunlight Shafts */
+.gurukul-volumetric-rays {
+  position: absolute;
+  inset: -15%;
+  background:
+    linear-gradient(
+      118deg,
+      transparent 18%,
+      rgba(254, 240, 138, 0.09) 28%,
+      transparent 38%,
+      rgba(253, 224, 71, 0.11) 48%,
+      transparent 58%,
+      rgba(251, 191, 36, 0.08) 68%,
+      transparent 78%
+    );
+  mix-blend-mode: screen;
+  animation: gurukulRaysSweep 11s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes gurukulRaysSweep {
+  0% {
+    opacity: 0.55;
+    transform: translateX(-3%) rotate(-1.5deg);
+  }
+  100% {
+    opacity: 0.92;
+    transform: translateX(3%) rotate(1.5deg);
+  }
+}
+
+/* Dual-Plane Parallax Valley Mist Ribbons */
+.gurukul-mist-ribbon {
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  border-radius: 50%;
+  filter: blur(18px);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.gurukul-mist-far {
+  top: 32%;
+  height: 16%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 248, 225, 0.22) 25%,
+    rgba(254, 243, 199, 0.14) 55%,
+    rgba(255, 251, 235, 0.2) 80%,
+    transparent 100%
+  );
+  animation: gurukulMistDriftFar 24s linear infinite;
+}
+
+.gurukul-mist-near {
+  top: 52%;
+  height: 14%;
+  background: linear-gradient(
+    90deg,
+    transparent 5%,
+    rgba(254, 243, 199, 0.18) 32%,
+    rgba(255, 251, 235, 0.24) 60%,
+    transparent 92%
+  );
+  animation: gurukulMistDriftNear 17s linear infinite;
+}
+
+@keyframes gurukulMistDriftFar {
+  0% { transform: translateX(-6%); opacity: 0.55; }
+  50% { transform: translateX(6%); opacity: 0.85; }
+  100% { transform: translateX(-6%); opacity: 0.55; }
+}
+
+@keyframes gurukulMistDriftNear {
+  0% { transform: translateX(7%); opacity: 0.45; }
+  50% { transform: translateX(-7%); opacity: 0.78; }
+  100% { transform: translateX(7%); opacity: 0.45; }
+}
+
+/* Sunlit River Water Shimmer Glints */
+.gurukul-river-shimmer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.gurukul-glint {
+  position: absolute;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 251, 235, 0.85), transparent);
+  box-shadow: 0 0 8px rgba(253, 224, 71, 0.65);
+  animation: gurukulGlintPulse 3.6s ease-in-out infinite;
+}
+
+.gurukul-glint-1 { top: 44%; left: 39%; width: 34px; animation-delay: 0s; }
+.gurukul-glint-2 { top: 51%; left: 31%; width: 42px; animation-delay: 0.8s; }
+.gurukul-glint-3 { top: 58%; left: 26%; width: 38px; animation-delay: 1.5s; }
+.gurukul-glint-4 { top: 67%; left: 35%; width: 46px; animation-delay: 2.2s; }
+.gurukul-glint-5 { top: 76%; left: 56%; width: 36px; animation-delay: 1.1s; }
+
+@keyframes gurukulGlintPulse {
+  0%, 100% { opacity: 0.15; transform: scaleX(0.7); }
+  50% { opacity: 0.88; transform: scaleX(1.25); }
+}
+
+/* Rising Sacred Yajna / Hearth Smoke Wisps from Distant Courtyard */
+.gurukul-hearth-smoke {
+  position: absolute;
+  left: 86.5%;
+  top: 56%;
+  width: 28px;
+  height: 150px;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+}
+
+.gurukul-smoke-wisp {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 14px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 251, 235, 0.55) 0%, rgba(226, 232, 240, 0.2) 55%, transparent 100%);
+  filter: blur(5px);
+  animation: gurukulSmokeRise 6.5s ease-out infinite;
+}
+
+.gurukul-smoke-1 { animation-delay: 0s; }
+.gurukul-smoke-2 { animation-delay: 2.1s; }
+.gurukul-smoke-3 { animation-delay: 4.2s; }
+
+@keyframes gurukulSmokeRise {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.6);
+  }
+  20% {
+    opacity: 0.65;
+  }
+  70% {
+    opacity: 0.38;
+    transform: translate(-30%, -90px) scale(1.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-15%, -145px) scale(2.3);
+  }
+}
+
+/* Refined Small Distant Valley Cranes */
+.gurukul-sky-birds--distant {
+  top: 6%;
+  height: 26%;
+}
+
+.gurukul-sky-birds--distant .gurukul-bird {
+  opacity: 0.72;
+}
+
+.gurukul-sky-birds--distant .gurukul-bird-svg {
+  width: 16px;
+  height: 10px;
+  fill: #2c2438;
+}
+
+.gurukul-sky-birds--distant .gurukul-bird-5 {
+  top: 46%;
+  left: -8%;
+  animation: gurukulBirdGlide 15s linear 2.6s infinite;
+}
+
+@keyframes gurukulBirdGlide {
+  0% { transform: translate(0, 0) scale(0.75); opacity: 0; }
+  12% { opacity: 0.72; }
+  88% { opacity: 0.68; }
+  100% { transform: translate(118vw, -22px) scale(0.55); opacity: 0; }
+}
+
+/* Floating Golden Foreground Dawn Motes */
+.gurukul-dawn-motes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  overflow: hidden;
+}
+
+.gurukul-mote {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(254, 240, 138, 0.85);
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.75);
+  animation: gurukulMoteFloat 9s ease-in-out infinite;
+}
+
+.gurukul-mote-1 { left: 12%; top: 72%; animation-delay: 0s; animation-duration: 8.5s; }
+.gurukul-mote-2 { left: 24%; top: 58%; animation-delay: 1.4s; animation-duration: 10s; width: 3px; height: 3px; }
+.gurukul-mote-3 { left: 37%; top: 82%; animation-delay: 0.6s; animation-duration: 9.2s; }
+.gurukul-mote-4 { left: 48%; top: 38%; animation-delay: 2.2s; animation-duration: 11s; width: 3px; height: 3px; }
+.gurukul-mote-5 { left: 56%; top: 68%; animation-delay: 1.1s; animation-duration: 8.8s; }
+.gurukul-mote-6 { left: 64%; top: 46%; animation-delay: 2.9s; animation-duration: 10.5s; width: 5px; height: 5px; }
+.gurukul-mote-7 { left: 73%; top: 76%; animation-delay: 0.4s; animation-duration: 9.6s; }
+.gurukul-mote-8 { left: 82%; top: 34%; animation-delay: 1.8s; animation-duration: 11.2s; width: 3px; height: 3px; }
+.gurukul-mote-9 { left: 18%; top: 30%; animation-delay: 3.1s; animation-duration: 10.2s; }
+.gurukul-mote-10 { left: 90%; top: 64%; animation-delay: 0.9s; animation-duration: 9.4s; }
+
+@keyframes gurukulMoteFloat {
+  0%, 100% {
+    opacity: 0.15;
+    transform: translate3d(0, 0, 0) scale(0.8);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translate3d(18px, -28px, 0) scale(1.2);
+  }
+}
+
+/* Cinematic Framing Vignette */
+.gurukul-cinema-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(14, 7, 3, 0.36) 0%, transparent 18%, transparent 72%, rgba(14, 7, 3, 0.68) 100%),
+    radial-gradient(ellipse at 55% 45%, transparent 55%, rgba(14, 7, 3, 0.45) 100%);
+  pointer-events: none;
+  z-index: 7;
+}
+
+.gurukul-scene-tagline--cinema {
+  animation: gurukulTaglineFade 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+@keyframes gurukulTaglineFade {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gurukul-cinema-stage,
+  .gurukul-dawn-sun-glow,
+  .gurukul-volumetric-rays,
+  .gurukul-mist-ribbon,
+  .gurukul-glint,
+  .gurukul-smoke-wisp,
+  .gurukul-mote {
+    animation: none !important;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { gurukulAmbiance } from '../utils/gurukulAmbiance';
-import gurukulDawnUrl from '../assets/gurukul-dawn.webp';
+import gurukulPanoramaUrl from '../assets/gurukul-dawn-panorama.jpg';
 import '../styles/gurukul-intro.css';
 
 interface GurukulEntranceIntroProps {
@@ -156,48 +156,75 @@ export const GurukulEntranceIntro: React.FC<GurukulEntranceIntroProps> = ({
       role="dialog"
       aria-label="Gurukul Welcome Entrance"
     >
-      {/* 2/3rd Space: Gurukul Painting Scene (Dawn Courtyard & River) */}
-      <div className="gurukul-intro-scene" aria-hidden="true">
-        <div
-          className="gurukul-intro-bg"
-          style={{ backgroundImage: `url(${gurukulDawnUrl})` }}
-        />
+      {/* 2/3rd Space: Far-Distance Animated Cinema Establishing Shot */}
+      <div className="gurukul-intro-scene gurukul-intro-scene--cinema" aria-hidden="true">
+        {/* Synchronized Camera Pan & Crane Push-In Stage */}
+        <div className="gurukul-cinema-stage">
+          <div
+            className="gurukul-intro-bg gurukul-intro-bg--panorama"
+            style={{ backgroundImage: `url(${gurukulPanoramaUrl})` }}
+          />
 
-        {/* Atmospheric Mist & Golden Sunrise Beams */}
-        <div className="gurukul-intro-mist" />
-        <div className="gurukul-intro-sunbeams" />
+          {/* Rising Dawn Sun Glow behind Mountain Saddle */}
+          <div className="gurukul-dawn-sun-glow" />
 
-        {/* Flying Morning Birds Flock */}
-        <div className="gurukul-intro-sky-birds">
-          <span className="gurukul-bird gurukul-bird-1">
-            <svg viewBox="0 0 32 20" className="gurukul-bird-svg">
-              <path d="M 0 10 Q 8 0 16 8 Q 24 0 32 10 Q 24 14 16 9 Q 8 14 0 10 Z" />
-            </svg>
-          </span>
-          <span className="gurukul-bird gurukul-bird-2">
-            <svg viewBox="0 0 32 20" className="gurukul-bird-svg">
-              <path d="M 0 10 Q 8 0 16 8 Q 24 0 32 10 Q 24 14 16 9 Q 8 14 0 10 Z" />
-            </svg>
-          </span>
-          <span className="gurukul-bird gurukul-bird-3">
-            <svg viewBox="0 0 32 20" className="gurukul-bird-svg">
-              <path d="M 0 10 Q 8 0 16 8 Q 24 0 32 10 Q 24 14 16 9 Q 8 14 0 10 Z" />
-            </svg>
-          </span>
-          <span className="gurukul-bird gurukul-bird-4">
-            <svg viewBox="0 0 32 20" className="gurukul-bird-svg">
-              <path d="M 0 10 Q 8 0 16 8 Q 24 0 32 10 Q 24 14 16 9 Q 8 14 0 10 Z" />
-            </svg>
-          </span>
+          {/* Diagonal Volumetric Dawn Light Shafts */}
+          <div className="gurukul-volumetric-rays" />
+
+          {/* Dual-Plane Parallax Valley Mist Drifting over River */}
+          <div className="gurukul-mist-ribbon gurukul-mist-far" />
+          <div className="gurukul-mist-ribbon gurukul-mist-near" />
+
+          {/* Sunlit River Shimmer Glints */}
+          <div className="gurukul-river-shimmer">
+            <span className="gurukul-glint gurukul-glint-1" />
+            <span className="gurukul-glint gurukul-glint-2" />
+            <span className="gurukul-glint gurukul-glint-3" />
+            <span className="gurukul-glint gurukul-glint-4" />
+            <span className="gurukul-glint gurukul-glint-5" />
+          </div>
+
+          {/* Rising Sacred Yajna / Hearth Smoke Wisps from Distant Courtyard */}
+          <div className="gurukul-hearth-smoke">
+            <span className="gurukul-smoke-wisp gurukul-smoke-1" />
+            <span className="gurukul-smoke-wisp gurukul-smoke-2" />
+            <span className="gurukul-smoke-wisp gurukul-smoke-3" />
+          </div>
+
+          {/* Graceful Distant Valley Cranes Gliding in Staggered Formation */}
+          <div className="gurukul-intro-sky-birds gurukul-sky-birds--distant">
+            {[1, 2, 3, 4, 5].map((n) => (
+              <span key={n} className={`gurukul-bird gurukul-bird-${n}`}>
+                <svg viewBox="0 0 32 20" className="gurukul-bird-svg">
+                  <path d="M 0 10 Q 8 1 16 8 Q 24 1 32 10 Q 24 13 16 9 Q 8 13 0 10 Z" />
+                </svg>
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Scene Caption */}
+        {/* Foreground Floating Golden Dawn Motes (Depth-of-Field Parallax) */}
+        <div className="gurukul-dawn-motes">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((m) => (
+            <span key={m} className={`gurukul-mote gurukul-mote-${m}`} />
+          ))}
+        </div>
+
+        {/* Subtle Atmospheric Vignette & Cinema Framing */}
+        <div className="gurukul-cinema-vignette" />
+
+        {/* Scene Caption (Zero-Emoji SVG Sunrise Icon) */}
         <div className="gurukul-scene-caption">
-          <span className="gsc-pill">🌅 Gurukul Dawn</span>
+          <span className="gsc-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ marginRight: '6px', verticalAlign: '-2px' }}>
+              <path d="M12 2v4M4.93 10.93l2.83 2.83M2 18h20M19.07 10.93l-2.83 2.83M6 18a6 6 0 0 1 12 0" />
+            </svg>
+            Gurukul Dawn &middot; <span lang="sa">प्रातःकालः</span>
+          </span>
         </div>
 
         {/* Play → Wisdom brand overlay */}
-        <div className="gurukul-scene-tagline">
+        <div className="gurukul-scene-tagline gurukul-scene-tagline--cinema">
           <p className="gst-main">Learn Through Play.</p>
           <p className="gst-sub">Exploring Indian Knowledge Systems, creativity and the wonders of learning.</p>
           <p className="gst-sub">A place where children can explore, question, experiment and discover connections between traditional knowledge and modern science.</p>
