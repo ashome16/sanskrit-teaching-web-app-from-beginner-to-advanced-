@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { VARNAMALA_MNEMONICS, type LetterMnemonic } from '../../data/varnamalaMnemonics';
 import { playPronunciation, playSequence } from '../../utils/pronunciation';
 import { soundEffects } from '../../utils/soundEffects';
+import { trainSoundEngine } from '../../utils/trainSoundEngine';
 import '../../styles/preschool-varnamala.css';
 
 export interface PreschoolVarnamalaGameProps {
@@ -105,6 +106,17 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
   // Train playback state
   const [isPlayingTrain, setIsPlayingTrain] = useState<boolean>(false);
   const [trainIndex, setTrainIndex] = useState<number>(0);
+  const [trainSpeedMs, setTrainSpeedMs] = useState<number>(2000);
+  const [trainSoundOn, setTrainSoundOn] = useState<boolean>(true);
+  const [isWhistleBurst, setIsWhistleBurst] = useState<boolean>(false);
+
+  const triggerWhistle = () => {
+    if (trainSoundOn) {
+      trainSoundEngine.playWhistle();
+    }
+    setIsWhistleBurst(true);
+    window.setTimeout(() => setIsWhistleBurst(false), 900);
+  };
   const carriageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // Find Letter Challenge State
@@ -361,13 +373,16 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
     }
   }, [mode]);
 
-  // Train Sing-Along Interval Engine
+  // Train Sing-Along Interval Engine with synchronized chug-chug + rail click-clack audio
   useEffect(() => {
     if (!isPlayingTrain || mode !== 'train') return;
 
     const list = filteredMnemonics.length > 0 ? filteredMnemonics : ALL_MNEMONICS;
     const currentItem = list[trainIndex % list.length];
     if (currentItem) {
+      if (trainSoundOn) {
+        trainSoundEngine.playChugBeat();
+      }
       playPronunciation(currentItem.letter);
       const elem = carriageRefs.current[trainIndex % list.length];
       if (elem) {
@@ -380,6 +395,9 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
         const next = (prev + 1) % list.length;
         const item = list[next];
         if (item) {
+          if (trainSoundOn) {
+            trainSoundEngine.playChugBeat();
+          }
           playPronunciation(item.letter);
           const elem = carriageRefs.current[next];
           if (elem) {
@@ -388,10 +406,10 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
         }
         return next;
       });
-    }, 1800);
+    }, trainSpeedMs);
 
     return () => clearInterval(timer);
-  }, [isPlayingTrain, mode, filteredMnemonics, trainIndex]);
+  }, [isPlayingTrain, mode, filteredMnemonics, trainIndex, trainSpeedMs, trainSoundOn]);
 
   return (
     <div className={`pvg-root ${className}`}>
@@ -909,103 +927,311 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
       )}
 
       {/* ==================================================================
-          MODE 4: SING-ALONG ALPHABET TRAIN (अक्षर-रेलगाड़ी)
+          MODE 4: SING-ALONG ALPHABET TRAIN (अक्षर-रेलगाड़ी · AKSHARA EXPRESS)
           ================================================================== */}
-      {mode === 'train' && (
-        <div className="pvg-train-arena">
-          <div style={{ textAlign: 'center' }}>
-            <h4 style={{ margin: 0, fontSize: '1.6rem', fontWeight: 900, color: '#0369a1' }}>
-              🚂 अक्षर-रेलगाड़ी · Sing-Along Train
-            </h4>
-          </div>
+      {mode === 'train' && (() => {
+        const trainList = filteredMnemonics.length > 0 ? filteredMnemonics : ALL_MNEMONICS;
+        const activeIdx = trainIndex % trainList.length;
+        const activeItem = trainList[activeIdx] || trainList[0];
+        const coachThemes = ['crimson', 'saffron', 'teal', 'indigo', 'emerald'] as const;
 
-          {/* Train track with Engine and Carriages */}
-          <div className="pvg-train-track" role="region" aria-label="Alphabet Train Track">
-            {/* Engine */}
-            <div className="pvg-train-engine">
-              <span style={{ fontSize: '3rem' }} aria-hidden="true">🚂</span>
-              <span style={{ fontWeight: 900, fontSize: '1rem' }}>BODHI</span>
+        return (
+          <div className={`pvg-train-arena pvg-express-arena ${isPlayingTrain ? 'is-running' : ''}`}>
+            {/* Scenic Sky + Station Signboard Header */}
+            <div className="pvg-express-sky">
+              <div className="pvg-express-clouds" aria-hidden="true">
+                <span className="pvg-cloud pvg-cloud-1" />
+                <span className="pvg-cloud pvg-cloud-2" />
+                <span className="pvg-cloud pvg-cloud-3" />
+              </div>
+
+              <div className="pvg-station-header">
+                <div className="pvg-station-title-block">
+                  <span className="pvg-station-kicker">SANSKRIT AKṢARA EXPRESS</span>
+                  <h4 className="pvg-station-heading">
+                    <span lang="sa">अक्षर-रेलगाड़ी</span> &middot; Syllable Train
+                  </h4>
+                </div>
+
+                {/* Live Active Station Signboard */}
+                {activeItem && (
+                  <div className="pvg-station-board" aria-live="polite">
+                    <span className="pvg-board-coach-no">COACH {String(activeIdx + 1).padStart(2, '0')}</span>
+                    <span className="pvg-board-letter" lang="sa">{activeItem.letter}</span>
+                    <div className="pvg-board-meta">
+                      <strong lang="sa">{activeItem.wordSan}</strong>
+                      <span>{activeItem.wordEn}</span>
+                    </div>
+                    <button
+                      type="button"
+                      className="pvg-board-speak-btn"
+                      onClick={() => {
+                        if (trainSoundOn) trainSoundEngine.playChugBeat();
+                        playPronunciation(activeItem.letter);
+                      }}
+                      title="Hear this syllable again"
+                    >
+                      Speak
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              {/* Distant Scenic Rolling Hills */}
+              <svg className="pvg-express-hills" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0 90 Q180 22 360 66 T740 44 T1200 60 L1200 90 Z" fill="rgba(16, 185, 129, 0.22)" />
+                <path d="M0 90 Q240 42 520 74 T980 38 T1200 72 L1200 90 Z" fill="rgba(5, 150, 105, 0.3)" />
+              </svg>
             </div>
 
-            {/* Letter Carriages (110px x 130px) */}
-            {filteredMnemonics.map((item, idx) => {
-              const isCurrent = (trainIndex % filteredMnemonics.length) === idx;
-
-              return (
-                <div
-                  key={item.letter}
-                  ref={(el) => {
-                    carriageRefs.current[idx] = el;
-                  }}
-                  role="button"
-                  tabIndex={0}
-                  className={`pvg-train-carriage ${isCurrent ? 'is-current' : ''}`}
-                  onClick={() => {
-                    setTrainIndex(idx);
-                    soundEffects.playStrokeChime();
-                    playPronunciation(item.letter);
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setTrainIndex(idx);
-                      playPronunciation(item.letter);
-                    }
-                  }}
-                  aria-label={`Carriage ${item.letter}, ${item.wordSan}`}
+            {/* Scrollable Railway Corridor with Locomotive, Couplers, Compartments & Steel Track */}
+            <div className="pvg-express-corridor">
+              <div className="pvg-train-track pvg-express-track" role="region" aria-label="Sanskrit Syllable Train Track">
+                {/* Authentic SVG Steam Locomotive Engine (Click to Blow Whistle!) */}
+                <button
+                  type="button"
+                  className={`pvg-locomotive ${isPlayingTrain ? 'is-running' : ''} ${isWhistleBurst ? 'is-whistling' : ''}`}
+                  onClick={triggerWhistle}
+                  title="Tap the Bodhi Express Locomotive to blow the steam whistle!"
+                  aria-label="Bodhi Express Steam Locomotive. Click to blow whistle."
                 >
-                  <span className="pvg-train-carriage-letter">{item.letter}</span>
-                  <span className="pvg-train-carriage-emoji" aria-hidden="true">{item.emoji}</span>
-                  <span className="pvg-train-carriage-word">{item.wordSan}</span>
+                  {/* Animated Rising Steam Puffs from Chimney */}
+                  <span className="pvg-steam-stack" aria-hidden="true">
+                    <span className="pvg-steam-puff pvg-puff-1" />
+                    <span className="pvg-steam-puff pvg-puff-2" />
+                    <span className="pvg-steam-puff pvg-puff-3" />
+                    <span className="pvg-steam-puff pvg-puff-4" />
+                  </span>
+
+                  {/* Detailed Vector Steam Locomotive */}
+                  <svg className="pvg-loco-svg" viewBox="0 0 210 142" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    {/* Headlight Beam when running */}
+                    <polygon points="18,62 0,44 0,88" fill="rgba(254, 240, 138, 0.45)" className="pvg-headlight-beam" />
+                    {/* Front Cowcatcher Bumper */}
+                    <polygon points="18,108 4,124 28,124 28,108" fill="#334155" stroke="#94a3b8" strokeWidth="1.5" />
+                    {/* Chimney Funnel */}
+                    <path d="M36,52 L30,22 L52,22 L46,52 Z" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.8" />
+                    <rect x="27" y="18" width="28" height="6" rx="2" fill="#f59e0b" />
+                    {/* Steam Dome */}
+                    <path d="M74,52 Q84,34 94,52 Z" fill="#d97706" stroke="#fef3c7" strokeWidth="1.4" />
+                    {/* Boiler Body */}
+                    <rect x="24" y="52" width="106" height="54" rx="8" fill="#0f766e" stroke="#f59e0b" strokeWidth="2.2" />
+                    {/* Brass Boiler Bands */}
+                    <line x1="56" y1="52" x2="56" y2="106" stroke="#fbbf24" strokeWidth="3" />
+                    <line x1="94" y1="52" x2="94" y2="106" stroke="#fbbf24" strokeWidth="3" />
+                    {/* Headlight Lamp */}
+                    <circle cx="22" cy="64" r="6" fill="#fef08a" stroke="#f59e0b" strokeWidth="2" />
+                    {/* Driver Cabin */}
+                    <rect x="126" y="26" width="72" height="80" rx="6" fill="#991b1b" stroke="#f59e0b" strokeWidth="2.2" />
+                    {/* Curved Cabin Roof */}
+                    <path d="M120,28 Q162,14 204,28 L200,34 L124,34 Z" fill="#f59e0b" stroke="#78350f" strokeWidth="1.5" />
+                    {/* Arched Cabin Window */}
+                    <rect x="138" y="42" width="46" height="30" rx="6" fill="#fef3c7" stroke="#fbbf24" strokeWidth="2" />
+                    {/* Nameplate on Boiler */}
+                    <rect x="34" y="70" width="84" height="20" rx="4" fill="#1e293b" stroke="#fbbf24" strokeWidth="1.2" />
+                    <text x="76" y="84" fill="#fef08a" fontSize="9.5" fontWeight="900" textAnchor="middle" letterSpacing="1">BODHI EXP</text>
+                    {/* Chassis Frame */}
+                    <rect x="20" y="102" width="182" height="12" rx="3" fill="#1e293b" stroke="#64748b" strokeWidth="1.5" />
+
+                    {/* 3 Rotating Spoked Locomotive Wheels */}
+                    {[48, 102, 162].map((cx, wIdx) => (
+                      <g key={cx} className="pvg-wheel-group" style={{ transformOrigin: `${cx}px 120px` }}>
+                        <circle cx={cx} cy="120" r={wIdx === 2 ? 17 : 15} fill="#0f172a" stroke="#f59e0b" strokeWidth="3" />
+                        <circle cx={cx} cy="120" r="4.5" fill="#fbbf24" />
+                        <line x1={cx - 12} y1="120" x2={cx + 12} y2="120" stroke="#94a3b8" strokeWidth="1.8" />
+                        <line x1={cx} y1="108" x2={cx} y2="132" stroke="#94a3b8" strokeWidth="1.8" />
+                      </g>
+                    ))}
+                    {/* Reciprocating Piston Connecting Rod */}
+                    <line x1="48" y1="120" x2="162" y2="120" stroke="#e2e8f0" strokeWidth="3.2" strokeLinecap="round" className="pvg-piston-rod" />
+                  </svg>
+                  <span className="pvg-loco-hint">Tap to Whistle</span>
+                </button>
+
+                {/* Linked Syllable Compartments (Each Syllable = Authentic Railway Coach) */}
+                {trainList.map((item, idx) => {
+                  const isCurrent = activeIdx === idx;
+                  const theme = coachThemes[idx % coachThemes.length];
+
+                  return (
+                    <React.Fragment key={item.letter}>
+                      {/* Metallic Iron Coupler Linking Adjacent Compartments */}
+                      <div className="pvg-coupler" aria-hidden="true">
+                        <span className="pvg-coupler-bar" />
+                        <span className="pvg-coupler-pin" />
+                      </div>
+
+                      {/* Authentic Railway Compartment Coach */}
+                      <div
+                        ref={(el) => {
+                          carriageRefs.current[idx] = el;
+                        }}
+                        role="button"
+                        tabIndex={0}
+                        className={`pvg-coach pvg-coach--${theme} ${isCurrent ? 'is-current' : ''}`}
+                        onClick={() => {
+                          setTrainIndex(idx);
+                          if (trainSoundOn) trainSoundEngine.playChugBeat();
+                          playPronunciation(item.letter);
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            setTrainIndex(idx);
+                            if (trainSoundOn) trainSoundEngine.playChugBeat();
+                            playPronunciation(item.letter);
+                          }
+                        }}
+                        aria-label={`Compartment ${idx + 1}: ${item.letter}, ${item.wordSan}`}
+                      >
+                        {/* Curved Heritage Coach Roof & Number Plate */}
+                        <div className="pvg-coach-roof">
+                          <span className="pvg-coach-vent" aria-hidden="true" />
+                          <span className="pvg-coach-num">{String(idx + 1).padStart(2, '0')}</span>
+                          <span className="pvg-coach-vent" aria-hidden="true" />
+                        </div>
+
+                        {/* Painted Coach Body with Dual Arched Compartment Windows */}
+                        <div className="pvg-coach-body">
+                          <div className="pvg-coach-windows">
+                            <div className="pvg-window pvg-window--letter">
+                              <span className="pvg-coach-letter" lang="sa">{item.letter}</span>
+                            </div>
+                            <div className="pvg-window pvg-window--word">
+                              <span className="pvg-coach-word-sa" lang="sa">{item.wordSan}</span>
+                              <span className="pvg-coach-word-en">{item.wordEn}</span>
+                            </div>
+                          </div>
+                          <div className="pvg-coach-stripe" aria-hidden="true" />
+                        </div>
+
+                        {/* Underframe Chassis & Dual Rotating Spoked Bogie Wheels */}
+                        <div className="pvg-coach-chassis" aria-hidden="true">
+                          <svg className="pvg-bogie-svg" viewBox="0 0 156 34" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="2" width="148" height="8" rx="3" fill="#1e293b" stroke="#64748b" strokeWidth="1.2" />
+                            {[34, 122].map((cx) => (
+                              <g key={cx} className="pvg-wheel-group" style={{ transformOrigin: `${cx}px 18px` }}>
+                                <circle cx={cx} cy="18" r="13" fill="#0f172a" stroke="#f59e0b" strokeWidth="2.8" />
+                                <circle cx={cx} cy="18" r="3.8" fill="#fbbf24" />
+                                <line x1={cx - 10} y1="18" x2={cx + 10} y2="18" stroke="#94a3b8" strokeWidth="1.6" />
+                                <line x1={cx} y1="8" x2={cx} y2="28" stroke="#94a3b8" strokeWidth="1.6" />
+                              </g>
+                            ))}
+                          </svg>
+                        </div>
+                      </div>
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+
+              {/* Continuous Steel Railway Track & Wooden Sleepers */}
+              <div className="pvg-steel-rails" aria-hidden="true">
+                <div className="pvg-rail-beam" />
+                <div className="pvg-rail-sleepers" />
+              </div>
+            </div>
+
+            {/* Train Driver Control Deck */}
+            <div className="pvg-driver-deck">
+              <div className="pvg-train-controls">
+                <button
+                  type="button"
+                  className="pvg-nav-btn"
+                  onClick={() => {
+                    if (trainSoundOn) trainSoundEngine.playChugBeat();
+                    setTrainIndex((prev) => {
+                      const len = trainList.length || 1;
+                      const next = (prev - 1 + len) % len;
+                      playPronunciation(trainList[next].letter);
+                      carriageRefs.current[next]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                      return next;
+                    });
+                  }}
+                  aria-label="Previous compartment"
+                >
+                  &larr; Prev
+                </button>
+
+                <button
+                  type="button"
+                  className={`pvg-train-btn pvg-express-play-btn ${isPlayingTrain ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setIsPlayingTrain((prev) => {
+                      const starting = !prev;
+                      if (starting) {
+                        triggerWhistle();
+                      } else if (trainSoundOn) {
+                        trainSoundEngine.playBrakeHiss();
+                      }
+                      return starting;
+                    });
+                  }}
+                >
+                  <span>{isPlayingTrain ? 'Pause Train' : 'Start Akṣara Express'}</span>
+                </button>
+
+                <button
+                  type="button"
+                  className="pvg-whistle-btn"
+                  onClick={triggerWhistle}
+                  title="Blow the steam whistle"
+                >
+                  Blow Whistle
+                </button>
+
+                <button
+                  type="button"
+                  className="pvg-nav-btn"
+                  onClick={() => {
+                    if (trainSoundOn) trainSoundEngine.playChugBeat();
+                    setTrainIndex((prev) => {
+                      const len = trainList.length || 1;
+                      const next = (prev + 1) % len;
+                      playPronunciation(trainList[next].letter);
+                      carriageRefs.current[next]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                      return next;
+                    });
+                  }}
+                  aria-label="Next compartment"
+                >
+                  Next &rarr;
+                </button>
+              </div>
+
+              {/* Speed & Train Sound Options */}
+              <div className="pvg-driver-subcontrols">
+                <div className="pvg-speed-group" role="group" aria-label="Train speed">
+                  <span className="pvg-deck-label">Speed:</span>
+                  {[
+                    { label: 'Slow', ms: 2500 },
+                    { label: 'Normal', ms: 1900 },
+                    { label: 'Fast', ms: 1300 },
+                  ].map((sp) => (
+                    <button
+                      key={sp.label}
+                      type="button"
+                      className={`pvg-speed-pill ${trainSpeedMs === sp.ms ? 'is-active' : ''}`}
+                      onClick={() => setTrainSpeedMs(sp.ms)}
+                    >
+                      {sp.label}
+                    </button>
+                  ))}
                 </div>
-              );
-            })}
+
+                <button
+                  type="button"
+                  className={`pvg-sfx-toggle ${trainSoundOn ? 'is-on' : ''}`}
+                  onClick={() => setTrainSoundOn((prev) => !prev)}
+                  aria-pressed={trainSoundOn}
+                >
+                  Train Sounds: {trainSoundOn ? 'ON' : 'OFF'}
+                </button>
+              </div>
+            </div>
           </div>
-
-          {/* Large Train controls */}
-          <div className="pvg-train-controls">
-            <button
-              type="button"
-              className="pvg-nav-btn"
-              onClick={() => {
-                setTrainIndex((prev) => {
-                  const len = filteredMnemonics.length || 1;
-                  return (prev - 1 + len) % len;
-                });
-              }}
-              aria-label="Previous carriage"
-            >
-              ◀
-            </button>
-
-            <button
-              type="button"
-              className={`pvg-train-btn ${isPlayingTrain ? 'is-active' : ''}`}
-              onClick={() => {
-                setIsPlayingTrain((prev) => !prev);
-                soundEffects.playStrokeChime();
-              }}
-            >
-              <span aria-hidden="true">{isPlayingTrain ? '⏸️' : '▶️'}</span>
-              <span>{isPlayingTrain ? 'Pause Train' : 'Start Sing-Along'}</span>
-            </button>
-
-            <button
-              type="button"
-              className="pvg-nav-btn"
-              onClick={() => {
-                setTrainIndex((prev) => {
-                  const len = filteredMnemonics.length || 1;
-                  return (prev + 1) % len;
-                });
-              }}
-              aria-label="Next carriage"
-            >
-              ▶
-            </button>
-          </div>
-        </div>
-      )}
+        );
+      })()}
     </div>
   );
 };

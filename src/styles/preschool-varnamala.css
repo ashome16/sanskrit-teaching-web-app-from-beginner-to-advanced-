@@ -1028,3 +1028,572 @@
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(2, 132, 199, 0.45);
 }
+
+/* ==========================================================================
+   PRESCHOOL SANSKRIT AKSHARA EXPRESS · AUTHENTIC ANIMATED TRAIN & COMPARTMENTS
+   ========================================================================== */
+@keyframes pvgWheelSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes pvgPistonMove {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-4px, -3px); }
+  50% { transform: translate(-8px, 0); }
+  75% { transform: translate(-4px, 3px); }
+}
+
+@keyframes pvgCoachBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2.5px); }
+}
+
+@keyframes pvgSteamRise {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.45);
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(34px, -68px) scale(2.1);
+  }
+}
+
+@keyframes pvgTrackScroll {
+  from { background-position-x: 0; }
+  to { background-position-x: 48px; }
+}
+
+@keyframes pvgCloudDrift {
+  0% { transform: translateX(-12%); }
+  100% { transform: translateX(112%); }
+}
+
+.pvg-express-arena {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #cbd5e1;
+  background: #f8fafc;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+  padding: 0 !important;
+  gap: 0 !important;
+}
+
+/* Scenic Sky & Station Signboard */
+.pvg-express-sky {
+  position: relative;
+  background: linear-gradient(180deg, #bae6fd 0%, #e0f2fe 58%, #fef3c7 100%);
+  padding: 1.1rem 1.25rem 2.4rem;
+  overflow: hidden;
+}
+
+.pvg-express-clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pvg-cloud {
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  filter: blur(1px);
+  animation: pvgCloudDrift 28s linear infinite;
+}
+
+.pvg-cloud-1 { top: 14%; left: 5%; width: 78px; height: 22px; animation-duration: 30s; }
+.pvg-cloud-2 { top: 28%; left: 42%; width: 96px; height: 26px; animation-duration: 38s; animation-delay: -12s; }
+.pvg-cloud-3 { top: 12%; left: 74%; width: 64px; height: 18px; animation-duration: 24s; animation-delay: -6s; }
+
+.pvg-station-header {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+}
+
+.pvg-station-kicker {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  color: #0f766e;
+  text-transform: uppercase;
+}
+
+.pvg-station-heading {
+  margin: 0.1rem 0 0;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+/* Heritage Indian Railway Station Signboard */
+.pvg-station-board {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 14px;
+  background: #fef08a;
+  border: 2.5px solid #1e293b;
+  box-shadow: 0 4px 0 #1e293b;
+  color: #0f172a;
+}
+
+.pvg-board-coach-no {
+  font-size: 0.68rem;
+  font-weight: 900;
+  padding: 0.18rem 0.45rem;
+  border-radius: 6px;
+  background: #1e293b;
+  color: #fef08a;
+  letter-spacing: 0.05em;
+}
+
+.pvg-board-letter {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #991b1b;
+}
+
+.pvg-board-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.pvg-board-meta strong {
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.pvg-board-meta span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.pvg-board-speak-btn {
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  border: none;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.pvg-board-speak-btn:hover {
+  background: #115e59;
+}
+
+.pvg-express-hills {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 54px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Railway Corridor, Locomotive, Couplers & Compartments */
+.pvg-express-corridor {
+  position: relative;
+  background: linear-gradient(180deg, #dcfce7 0%, #bbf7d0 58%, #e2e8f0 58%, #cbd5e1 100%);
+  padding: 1.5rem 0 0;
+}
+
+.pvg-express-track {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  gap: 0 !important;
+  overflow-x: auto;
+  padding: 2.2rem 1.5rem 0.15rem !important;
+  background: transparent !important;
+  border: none !important;
+  scroll-behavior: smooth;
+}
+
+/* Steam Locomotive Engine */
+.pvg-locomotive {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: -4px;
+  transition: transform 0.2s ease;
+}
+
+.pvg-locomotive:hover {
+  transform: scale(1.03);
+}
+
+.pvg-loco-svg {
+  width: 210px;
+  height: 142px;
+  display: block;
+  filter: drop-shadow(0 6px 10px rgba(15, 23, 42, 0.28));
+}
+
+.pvg-headlight-beam {
+  opacity: 0.2;
+  transition: opacity 0.25s ease;
+}
+
+.pvg-express-arena.is-running .pvg-headlight-beam,
+.pvg-locomotive.is-whistling .pvg-headlight-beam {
+  opacity: 0.92;
+}
+
+.pvg-loco-hint {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.14rem 0.5rem;
+  border-radius: 999px;
+  background: #1e293b;
+  color: #fde047;
+  white-space: nowrap;
+}
+
+/* Chimney Steam Puffs */
+.pvg-steam-stack {
+  position: absolute;
+  top: 4px;
+  left: 34px;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+
+.pvg-steam-puff {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(226, 232, 240, 0.5) 65%, transparent 100%);
+  opacity: 0;
+}
+
+.pvg-express-arena.is-running .pvg-steam-puff,
+.pvg-locomotive.is-whistling .pvg-steam-puff {
+  animation: pvgSteamRise 1.6s ease-out infinite;
+}
+
+.pvg-puff-1 { animation-delay: 0s !important; }
+.pvg-puff-2 { animation-delay: 0.4s !important; }
+.pvg-puff-3 { animation-delay: 0.8s !important; }
+.pvg-puff-4 { animation-delay: 1.2s !important; }
+
+/* Metallic Iron Coupler Linking Compartments */
+.pvg-coupler {
+  flex-shrink: 0;
+  width: 18px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.pvg-coupler-bar {
+  width: 100%;
+  height: 6px;
+  background: #334155;
+  border-top: 1px solid #94a3b8;
+  border-bottom: 1px solid #0f172a;
+}
+
+.pvg-coupler-pin {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  border-radius: 3px;
+  background: #f59e0b;
+  border: 1.5px solid #78350f;
+}
+
+/* Authentic Painted Railway Compartment Coach */
+.pvg-coach {
+  flex-shrink: 0;
+  width: 158px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  cursor: pointer;
+  margin-bottom: -4px;
+  transition: transform 0.22s ease, filter 0.22s ease;
+  outline: none;
+}
+
+.pvg-coach:hover {
+  transform: translateY(-4px);
+}
+
+.pvg-coach.is-current {
+  transform: translateY(-7px);
+  filter: drop-shadow(0 10px 18px rgba(245, 158, 11, 0.45));
+}
+
+.pvg-express-arena.is-running .pvg-coach {
+  animation: pvgCoachBounce 0.55s ease-in-out infinite;
+}
+
+.pvg-express-arena.is-running .pvg-coach:nth-child(even) {
+  animation-delay: 0.22s;
+}
+
+/* Curved Heritage Roof */
+.pvg-coach-roof {
+  height: 18px;
+  margin: 0 5px;
+  border-radius: 12px 12px 2px 2px;
+  background: linear-gradient(180deg, #475569 0%, #1e293b 100%);
+  border: 1.5px solid #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.pvg-coach-vent {
+  width: 16px;
+  height: 4px;
+  border-radius: 999px;
+  background: #94a3b8;
+}
+
+.pvg-coach-num {
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #fde047;
+  letter-spacing: 0.06em;
+}
+
+/* Coach Painted Body Themes */
+.pvg-coach-body {
+  border-radius: 6px 6px 2px 2px;
+  padding: 8px 8px 6px;
+  border: 2px solid #1e293b;
+  position: relative;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.22);
+}
+
+.pvg-coach--crimson .pvg-coach-body { background: linear-gradient(180deg, #dc2626 0%, #991b1b 100%); }
+.pvg-coach--saffron .pvg-coach-body { background: linear-gradient(180deg, #f59e0b 0%, #b45309 100%); }
+.pvg-coach--teal .pvg-coach-body { background: linear-gradient(180deg, #0d9488 0%, #115e59 100%); }
+.pvg-coach--indigo .pvg-coach-body { background: linear-gradient(180deg, #4f46e5 0%, #3730a3 100%); }
+.pvg-coach--emerald .pvg-coach-body { background: linear-gradient(180deg, #10b981 0%, #047857 100%); }
+
+.pvg-coach.is-current .pvg-coach-body {
+  border-color: #fde047;
+  box-shadow: 0 0 0 2px #f59e0b, inset 0 0 16px rgba(254, 240, 138, 0.45);
+}
+
+/* Dual Arched Compartment Windows */
+.pvg-coach-windows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.pvg-window {
+  height: 66px;
+  border-radius: 10px 10px 4px 4px;
+  background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+  border: 2px solid #78350f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  text-align: center;
+  box-shadow: inset 0 3px 6px rgba(15, 23, 42, 0.14);
+}
+
+.pvg-coach.is-current .pvg-window {
+  background: linear-gradient(180deg, #ffffff 0%, #fef08a 100%);
+  box-shadow: 0 0 12px rgba(254, 240, 138, 0.9), inset 0 2px 4px rgba(245, 158, 11, 0.2);
+}
+
+.pvg-coach-letter {
+  font-size: 2.15rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.pvg-coach-word-sa {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #7c2d12;
+  line-height: 1.15;
+}
+
+.pvg-coach-word-en {
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.15;
+  margin-top: 2px;
+}
+
+.pvg-coach-stripe {
+  height: 4px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fde047, #f59e0b, #fde047);
+}
+
+/* Chassis & Rotating Bogie Wheels */
+.pvg-coach-chassis {
+  width: 100%;
+  height: 32px;
+}
+
+.pvg-bogie-svg {
+  width: 100%;
+  height: 32px;
+  display: block;
+}
+
+.pvg-express-arena.is-running .pvg-wheel-group {
+  animation: pvgWheelSpin 0.85s linear infinite;
+}
+
+.pvg-express-arena.is-running .pvg-piston-rod {
+  animation: pvgPistonMove 0.85s linear infinite;
+}
+
+/* Continuous Steel Railway Track & Wooden Sleepers */
+.pvg-steel-rails {
+  position: relative;
+  width: 100%;
+  height: 22px;
+  background: #475569;
+  border-top: 4px solid #e2e8f0;
+  border-bottom: 3px solid #1e293b;
+  overflow: hidden;
+}
+
+.pvg-rail-sleepers {
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #78350f 0px,
+    #78350f 14px,
+    transparent 14px,
+    transparent 48px
+  );
+}
+
+.pvg-express-arena.is-running .pvg-rail-sleepers {
+  animation: pvgTrackScroll 0.45s linear infinite;
+}
+
+/* Train Driver Control Deck */
+.pvg-driver-deck {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pvg-express-play-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid #6ee7b7 !important;
+  font-weight: 900 !important;
+  padding: 0.65rem 1.4rem !important;
+  border-radius: 999px !important;
+}
+
+.pvg-express-play-btn.is-active {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  border-color: #fde047 !important;
+  color: #1c1917 !important;
+}
+
+.pvg-whistle-btn {
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  border: 2px solid #fbbf24;
+  background: rgba(245, 158, 11, 0.18);
+  color: #fde68a;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.pvg-whistle-btn:hover {
+  background: rgba(245, 158, 11, 0.34);
+  transform: scale(1.04);
+}
+
+.pvg-driver-subcontrols {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.pvg-speed-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pvg-deck-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.pvg-speed-pill,
+.pvg-sfx-toggle {
+  padding: 0.32rem 0.75rem;
+  border-radius: 999px;
+  border: 1.5px solid #475569;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pvg-speed-pill.is-active,
+.pvg-sfx-toggle.is-on {
+  background: #0ea5e9;
+  border-color: #38bdf8;
+  color: #031525;
+  font-weight: 800;
+}
