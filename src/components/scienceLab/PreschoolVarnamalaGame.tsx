@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { VARNAMALA_MNEMONICS, type LetterMnemonic } from '../../data/varnamalaMnemonics';
-import { playPronunciation, playSequence } from '../../utils/pronunciation';
+import { playPronunciation, playSequence, stopPronunciation } from '../../utils/pronunciation';
 import { soundEffects } from '../../utils/soundEffects';
 import { trainSoundEngine } from '../../utils/trainSoundEngine';
 import '../../styles/preschool-varnamala.css';
@@ -109,6 +109,22 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
   const [trainSpeedMs, setTrainSpeedMs] = useState<number>(2000);
   const [trainSoundOn, setTrainSoundOn] = useState<boolean>(true);
   const [isWhistleBurst, setIsWhistleBurst] = useState<boolean>(false);
+  const trainTrackRef = useRef<HTMLDivElement | null>(null);
+  const trainJustStartedRef = useRef<boolean>(false);
+
+  const scrollTrainToCoach = (idx: number) => {
+    const track = trainTrackRef.current;
+    if (!track) return;
+    if (idx === 0) {
+      // Keep the entire locomotive + Coach 01 cleanly visible at the start
+      track.scrollTo({ left: 0, behavior: 'smooth' });
+      return;
+    }
+    const elem = carriageRefs.current[idx];
+    if (!elem) return;
+    const targetLeft = elem.offsetLeft - track.clientWidth / 2 + elem.clientWidth / 2;
+    track.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+  };
 
   const triggerWhistle = () => {
     if (trainSoundOn) {
@@ -373,42 +389,42 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
     }
   }, [mode]);
 
-  // Train Sing-Along Interval Engine with synchronized chug-chug + rail click-clack audio
+  // Train Sing-Along Step Sequencer (100% locked audio-visual sync, zero double-play)
   useEffect(() => {
-    if (!isPlayingTrain || mode !== 'train') return;
+    if (!isPlayingTrain || mode !== 'train') {
+      trainJustStartedRef.current = false;
+      return;
+    }
 
     const list = filteredMnemonics.length > 0 ? filteredMnemonics : ALL_MNEMONICS;
-    const currentItem = list[trainIndex % list.length];
-    if (currentItem) {
+    if (!list.length) return;
+    const safeIdx = trainIndex % list.length;
+    const currentItem = list[safeIdx];
+
+    // If the user just clicked Start, let the steam whistle finish (~600ms) before speaking Coach 01
+    const startDelay = trainJustStartedRef.current ? 600 : 140;
+    trainJustStartedRef.current = false;
+
+    scrollTrainToCoach(safeIdx);
+
+    const speakTimer = window.setTimeout(() => {
+      stopPronunciation();
       if (trainSoundOn) {
         trainSoundEngine.playChugBeat();
       }
-      playPronunciation(currentItem.letter);
-      const elem = carriageRefs.current[trainIndex % list.length];
-      if (elem) {
-        elem.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      if (currentItem) {
+        playPronunciation(currentItem.letter);
       }
-    }
+    }, startDelay);
 
-    const timer = setInterval(() => {
-      setTrainIndex((prev) => {
-        const next = (prev + 1) % list.length;
-        const item = list[next];
-        if (item) {
-          if (trainSoundOn) {
-            trainSoundEngine.playChugBeat();
-          }
-          playPronunciation(item.letter);
-          const elem = carriageRefs.current[next];
-          if (elem) {
-            elem.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-          }
-        }
-        return next;
-      });
-    }, trainSpeedMs);
+    const advanceTimer = window.setTimeout(() => {
+      setTrainIndex((prev) => (prev + 1) % list.length);
+    }, startDelay + trainSpeedMs);
 
-    return () => clearInterval(timer);
+    return () => {
+      window.clearTimeout(speakTimer);
+      window.clearTimeout(advanceTimer);
+    };
   }, [isPlayingTrain, mode, filteredMnemonics, trainIndex, trainSpeedMs, trainSoundOn]);
 
   return (
@@ -986,7 +1002,12 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
 
             {/* Scrollable Railway Corridor with Locomotive, Couplers, Compartments & Steel Track */}
             <div className="pvg-express-corridor">
-              <div className="pvg-train-track pvg-express-track" role="region" aria-label="Sanskrit Syllable Train Track">
+              <div
+                ref={trainTrackRef}
+                className="pvg-train-track pvg-express-track"
+                role="region"
+                aria-label="Sanskrit Syllable Train Track"
+              >
                 {/* Authentic SVG Steam Locomotive Engine (Click to Blow Whistle!) */}
                 <button
                   type="button"
@@ -1070,14 +1091,20 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
                         tabIndex={0}
                         className={`pvg-coach pvg-coach--${theme} ${isCurrent ? 'is-current' : ''}`}
                         onClick={() => {
+                          setIsPlayingTrain(false);
+                          stopPronunciation();
                           setTrainIndex(idx);
+                          scrollTrainToCoach(idx);
                           if (trainSoundOn) trainSoundEngine.playChugBeat();
                           playPronunciation(item.letter);
                         }}
                         onKeyDown={(e) => {
                           if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault();
+                            setIsPlayingTrain(false);
+                            stopPronunciation();
                             setTrainIndex(idx);
+                            scrollTrainToCoach(idx);
                             if (trainSoundOn) trainSoundEngine.playChugBeat();
                             playPronunciation(item.letter);
                           }
@@ -1139,14 +1166,14 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
                   type="button"
                   className="pvg-nav-btn"
                   onClick={() => {
+                    setIsPlayingTrain(false);
+                    stopPronunciation();
                     if (trainSoundOn) trainSoundEngine.playChugBeat();
-                    setTrainIndex((prev) => {
-                      const len = trainList.length || 1;
-                      const next = (prev - 1 + len) % len;
-                      playPronunciation(trainList[next].letter);
-                      carriageRefs.current[next]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-                      return next;
-                    });
+                    const len = trainList.length || 1;
+                    const next = (activeIdx - 1 + len) % len;
+                    setTrainIndex(next);
+                    scrollTrainToCoach(next);
+                    playPronunciation(trainList[next].letter);
                   }}
                   aria-label="Previous compartment"
                 >
@@ -1160,9 +1187,11 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
                     setIsPlayingTrain((prev) => {
                       const starting = !prev;
                       if (starting) {
+                        trainJustStartedRef.current = true;
                         triggerWhistle();
-                      } else if (trainSoundOn) {
-                        trainSoundEngine.playBrakeHiss();
+                      } else {
+                        stopPronunciation();
+                        if (trainSoundOn) trainSoundEngine.playBrakeHiss();
                       }
                       return starting;
                     });
@@ -1184,14 +1213,14 @@ export const PreschoolVarnamalaGame: React.FC<PreschoolVarnamalaGameProps> = ({
                   type="button"
                   className="pvg-nav-btn"
                   onClick={() => {
+                    setIsPlayingTrain(false);
+                    stopPronunciation();
                     if (trainSoundOn) trainSoundEngine.playChugBeat();
-                    setTrainIndex((prev) => {
-                      const len = trainList.length || 1;
-                      const next = (prev + 1) % len;
-                      playPronunciation(trainList[next].letter);
-                      carriageRefs.current[next]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-                      return next;
-                    });
+                    const len = trainList.length || 1;
+                    const next = (activeIdx + 1) % len;
+                    setTrainIndex(next);
+                    scrollTrainToCoach(next);
+                    playPronunciation(trainList[next].letter);
                   }}
                   aria-label="Next compartment"
                 >

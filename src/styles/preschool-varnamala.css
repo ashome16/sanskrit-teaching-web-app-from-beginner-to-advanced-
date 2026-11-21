@@ -1074,6 +1074,10 @@
 }
 
 .pvg-express-arena {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  align-items: stretch !important;
   border-radius: 20px;
   overflow: hidden;
   border: 2px solid #cbd5e1;
@@ -1085,6 +1089,8 @@
 
 /* Scenic Sky & Station Signboard */
 .pvg-express-sky {
+  width: 100%;
+  box-sizing: border-box;
   position: relative;
   background: linear-gradient(180deg, #bae6fd 0%, #e0f2fe 58%, #fef3c7 100%);
   padding: 1.1rem 1.25rem 2.4rem;
@@ -1210,18 +1216,25 @@
 
 /* Railway Corridor, Locomotive, Couplers & Compartments */
 .pvg-express-corridor {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   position: relative;
-  background: linear-gradient(180deg, #dcfce7 0%, #bbf7d0 58%, #e2e8f0 58%, #cbd5e1 100%);
-  padding: 1.5rem 0 0;
+  background: linear-gradient(180deg, #dcfce7 0%, #bbf7d0 62%, #e2e8f0 62%, #cbd5e1 100%);
+  padding: 0.75rem 0 0;
 }
 
 .pvg-express-track {
   display: flex !important;
   flex-direction: row !important;
   align-items: flex-end !important;
+  justify-content: flex-start !important;
   gap: 0 !important;
+  width: 100%;
+  box-sizing: border-box;
   overflow-x: auto;
-  padding: 2.2rem 1.5rem 0.15rem !important;
+  overflow-y: visible;
+  padding: 3.6rem 1.75rem 0.25rem !important;
   background: transparent !important;
   border: none !important;
   scroll-behavior: smooth;
@@ -1247,8 +1260,8 @@
 }
 
 .pvg-loco-svg {
-  width: 210px;
-  height: 142px;
+  width: 196px;
+  height: 132px;
   display: block;
   filter: drop-shadow(0 6px 10px rgba(15, 23, 42, 0.28));
 }
@@ -1516,6 +1529,8 @@
 
 /* Train Driver Control Deck */
 .pvg-driver-deck {
+  width: 100%;
+  box-sizing: border-box;
   background: #0f172a;
   color: #f8fafc;
   padding: 1rem 1.25rem;
